@@ -49,3 +49,25 @@ fi
 
 # AC_DEFINE(HAVE_LIBLIRC_CLIENT) LIRC="-llirc_client"   <--- how do I put this in?
 
+
+
+dnl ---------------------------------------------------------------------
+dnl V4L2
+
+
+AC_ARG_ENABLE(v4l2, AC_HELP_STRING([--enable-v4l2], [enable use of V4L2 if found, default = true]))
+
+
+if test -z "$enable_v4l2" -o "$enable_v4l2" = "yes"; then
+
+	AC_MSG_CHECKING([for v4l2 support])
+	AC_DEFINE_UNQUOTED(HAVE_V4L2, 1, [Define if you have V4L2 support])
+	AC_MSG_RESULT([v4l2 support enabled])
+
+else
+
+    AC_MSG_CHECKING([for v4l2 support])
+	AC_MSG_RESULT([disabled])
+
+fi
+

@@ -19,7 +19,10 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
-#include <linux/videodev.h>
+#ifdef HAVE_V4L2
+#include "linux/videodev2.h"
+#endif
+#include "linux/videodev.h"
 #include <linux/soundcard.h>
 
 #include <qlayout.h>
@@ -59,9 +62,14 @@ V4LRadio::V4LRadio(const QString &name)
 	QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
 	m_pollTimer.start(333);
 
+	m_audio = new video_audio;
 	m_tuner = new video_tuner;
 	m_tuner->tuner = 0;
-	m_audio = new video_audio;
+#ifdef HAVE_V4L2
+	m_tuner2 = new v4l2_tuner;
+	m_tuner2->index = 0;
+#endif
+	m_v4lVersion = 1;
 
 	m_seekHelper.connect(this);
 }
@@ -73,6 +81,9 @@ V4LRadio::~V4LRadio()
 
 	delete m_audio;
 	delete m_tuner;
+#ifdef HAVE_V4L2
+	delete m_tuner2;
+#endif
 }
 
 
@@ -220,10 +231,10 @@ bool V4LRadio::mute (bool mute)
 	   return false;
 
     if (m_muted != mute) {
-		if (mute)		m_audio->flags |= VIDEO_AUDIO_MUTE;
-		else			m_audio->flags &= ~VIDEO_AUDIO_MUTE;
-
-		return writeAudioInfo();
+		m_muted = mute;
+		bool r = writeAudioInfo();
+		notifyMuted(m_muted);
+		return r;
 	}
 	return false;
 }
@@ -403,7 +414,21 @@ bool V4LRadio::setFrequency(float freq)
 	    	return false;
 	    }
 
-  		if (ioctl(m_radio_fd, VIDIOCSFREQ, &lfreq)) {
+		int r = -1;
+		if (m_v4lVersion == 1) {
+			r = ioctl(m_radio_fd, VIDIOCSFREQ, &lfreq);
+		}
+#ifdef HAVE_V4L2
+		else if (m_v4lVersion == 2) {
+			v4l2_frequency   tmp;
+			tmp.tuner = 0;
+			tmp.type = V4L2_TUNER_RADIO;
+			tmp.frequency = lfreq;
+			r = ioctl(m_radio_fd, VIDIOC_S_FREQUENCY, &tmp);
+		}
+#endif
+		
+  		if (r) {
   			kdDebug() << "V4LRadio::setFrequency: "
                       << i18n("error setting frequency to")
                       << freq << endl;
@@ -720,6 +745,33 @@ int V4LRadio::set_treble(__u16 ltreble)
 */
 
 
+void V4LRadio::readV4LVersion()
+{
+	int r;
+	
+	if (m_radio_fd < 0) {
+		m_v4lVersion = 0;
+		return;
+	}
+#ifdef HAVE_V4L2
+	v4l2_capability caps2;   // not yet used
+	r = ioctl(m_radio_fd, VIDIOC_QUERYCAP, caps2);
+	if (r == 0) {
+		m_v4lVersion = 2;
+		kdDebug() << "V4L2 detected\n";
+		return;
+	}
+#endif
+	video_capability caps;   // not yet used
+	r = ioctl(m_radio_fd, VIDIOCGCAP, caps);
+	if (r == 0) {
+		m_v4lVersion = 1;
+		return;
+	}
+
+	m_v4lVersion = 0;	
+}
+
 
 bool V4LRadio::readTunerInfo() const
 {
@@ -736,26 +788,50 @@ bool V4LRadio::readTunerInfo() const
 	}
 
     if (m_radio_fd > 0) {
-		int r = ioctl(m_radio_fd, VIDIOCGTUNER, m_tuner);
+		int r = 0;
 		
-		if (r == 0) {
-			if ((m_tuner->flags & VIDEO_TUNER_LOW) != 0)
-				m_tunercache.deltaF = 1.0 / 16000.0;
+		// v4l1
+		if (m_v4lVersion == 1) {
+			r = ioctl(m_radio_fd, VIDIOCGTUNER, m_tuner);
+		
+			if (r == 0) {
+				if ((m_tuner->flags & VIDEO_TUNER_LOW) != 0)
+					m_tunercache.deltaF = 1.0 / 16000.0;
 
-			m_tunercache.minF = float(m_tuner->rangelow)  * m_tunercache.deltaF;
-			m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
+				m_tunercache.minF = float(m_tuner->rangelow)  * m_tunercache.deltaF;
+				m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
 
-			m_tunercache.valid = true;
+				m_tunercache.valid = true;
+			}
+		}
+#ifdef HAVE_V4L2
+	    // v4l2
+		else {                 
+			r = ioctl(m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
 
-		} else {
+			if (r == 0) {
+				if ((m_tuner2->capability & V4L2_TUNER_CAP_LOW) != 0)
+					m_tunercache.deltaF = 1.0 / 16000.0;
+
+				m_tunercache.minF = float(m_tuner2->rangelow)  * m_tunercache.deltaF;
+				m_tunercache.maxF = float(m_tuner2->rangehigh) * m_tunercache.deltaF;
+
+				m_tunercache.valid = true;
+			}
+		}
+#endif
+		if (r != 0) {
 			kdDebug() << "V4LRadio::readTunerInfo: "
-			          << i18n("cannot get tuner info")
-			          << " (" << i18n("error") << " " << r << ")"
-			          << endl;
+					  << i18n("cannot get tuner info")
+					  << " (" << i18n("error") << " " << r << ")"
+					  << endl;
 			return false;
 		}
 	} else {
-		m_tuner->signal = 0;
+		m_tuner->signal  = 0;
+#ifdef HAVE_V4L2
+		m_tuner2->signal = 0;
+#endif
 	}
 
 	// prevent loops, if noticeXYZ-method is reading my state
@@ -770,7 +846,14 @@ bool V4LRadio::readTunerInfo() const
 		
 	// extract information on current state
 	float oldq = m_signalQuality;
-	m_signalQuality = float(m_tuner->signal) / 32767.0;
+	if (m_v4lVersion == 1) {
+		m_signalQuality = float(m_tuner->signal) / 32767.0;
+	} 
+#ifdef HAVE_V4L2
+    else if (m_v4lVersion == 2) {
+		m_signalQuality = float(m_tuner2->signal) / 32767.0;
+    }
+#endif
 
 	if (m_signalQuality != oldq)
 		notifySignalQualityChanged(m_signalQuality);
@@ -788,25 +871,44 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	if (m_blockReadAudio && !write)
 		return true;
 
-	if (m_radio_fd > 0) {
-		if (ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, m_audio) != 0) {
-			kdDebug() << "V4LRadio::updateAudioInfo: "
-			          << i18n("error updating radio audio info") << " ("
-			          << i18n(write ? "write" : "read") << ")"
-			          << endl;
-
-			return false;
-		}
-	} else {
-		m_audio->mode  &= ~VIDEO_SOUND_STEREO;
-		m_audio->flags &= ~VIDEO_AUDIO_MUTE;
-	}
-
 	bool oldStereo = m_stereo;
 	bool oldMute   = m_muted;
 
-	m_stereo = (m_audio->mode  & VIDEO_SOUND_STEREO) != 0;
-	m_muted  = (m_audio->flags & VIDEO_AUDIO_MUTE) != 0;
+	if (m_radio_fd > 0) {
+		int r = -1;
+		if (m_v4lVersion == 1) {
+		    if (m_muted) m_audio->flags |=  VIDEO_AUDIO_MUTE;
+		    else         m_audio->flags &= ~VIDEO_AUDIO_MUTE;
+		
+			r = ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, m_audio);
+			
+			m_stereo = (r == 0) && ((m_audio->mode  & VIDEO_SOUND_STEREO) != 0);
+			m_muted  = (r != 0) || ((m_audio->flags & VIDEO_AUDIO_MUTE) != 0);
+		}
+#ifdef HAVE_V4L2
+		else if (m_v4lVersion == 2) {
+			v4l2_control   muteCtl;
+            muteCtl.id    = V4L2_CID_AUDIO_MUTE;
+			if (write) {
+                muteCtl.value = m_muted;				
+                r = ioctl (m_radio_fd, VIDIOC_S_CTRL, &muteCtl);
+			} else {
+                r = ioctl (m_radio_fd, VIDIOC_G_CTRL, &muteCtl);
+                m_muted  = (r != 0) || muteCtl.value;
+                r = ioctl (m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
+                m_stereo = (r == 0) && ((m_tuner2->rxsubchans & V4L2_TUNER_SUB_STEREO) != 0);
+			}
+		}
+#endif
+		if (r) {
+			kdDebug() << "V4LRadio::updateAudioInfo: "
+					  << i18n("error updating radio audio info") << " ("
+					  << i18n(write ? "write" : "read") << ")"
+					  << endl;
+			return false;
+		}
+	}
+
 
 	// prevent loops, if noticeXYZ-method is reading my state
 	bool oldBlock = m_blockReadAudio;

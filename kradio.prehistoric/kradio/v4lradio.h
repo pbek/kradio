@@ -145,6 +145,7 @@ protected:
 	void  radio_init();
 	void  radio_done();
 
+	void  readV4LVersion();
 	bool  readTunerInfo() const;
 	bool  updateAudioInfo(bool write) const;
 	bool  readAudioInfo() const { return updateAudioInfo(false); }
@@ -171,8 +172,13 @@ protected:
 	int                    m_radio_fd;
 	int                    m_mixer_fd;
 	
-	mutable struct video_tuner   *m_tuner;
+
+	int                           m_v4lVersion;
 	mutable struct video_audio   *m_audio;
+	mutable struct video_tuner   *m_tuner;
+#ifdef HAVE_V4L2
+	mutable struct v4l2_tuner    *m_tuner2;
+#endif
 
 	QTimer                 m_pollTimer;
 
