@@ -7,6 +7,8 @@
 				- setupdialog: make it non-modal
 				- setupdialog: "about" tab for station preset lists
 				- setupdialog: fix update of station info after preset load
+				- setupdialog: use current volume for alarm volume of new alarm
+				- setupdialog: fix tab order
 
 0.2.6   emw     - activate station in setupdialog by freq, not stationId
                 - add "unknown station" to kradio->cbStations
