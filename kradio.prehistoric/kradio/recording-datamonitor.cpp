@@ -24,6 +24,8 @@
 #include <qpixmap.h>
 #include <kimageeffect.h>  // fading, blending, ...
 #include <kpixmapio.h>     // fast conversion between QPixmap/QImage
+#include <limits.h>
+#include <stdlib.h>
 
 #define CHANNEL_H_MIN   20
 #define BLOCK_W_MIN     10
