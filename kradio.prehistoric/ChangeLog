@@ -1,47 +1,61 @@
 0.3.0 alpha 2
 
-        emw     - kde3.0 compatibility fixes
-                - v4l2 support
-                - v4l configuration improvements: device volume controls
-                  in v4l configuration page
-                - respect device volume control min/max values
+        emw     Compilation & Compatibility
+
+	        - kde3.0 compatibility fixes
                 - replace round -> rint
                 - correct missing video_dev forward declaration
-                - store preset file button
-                - fixed device-volume-set2zero after mute/unmute
-                  with some radio cards
-                - move widget geometry saving/restoring to class
-                  WidgetPluginBase
-                - finally fixed the nasty positioning/sticky problem when 
-                  window is restored
-                - fixed "changes-ignored"-problem in preset-about page
-                - encoding detection for preset files (Locale->UTF8)
-                - sensefull names/descriptions for plugins
-                - upper case in show/hide docking menu entries
-                - fix pixmap/text usage on quickbar buttons
+
+		V4L/V4L2
+	 
+                - v4l2 support, usable for older and bleeding edge 
+	          releases of V4L2
+                - v4l configuration improvements: device volume controls
+                  in v4l configuration page	
+                - respect device volume control min/max values
+                - fixed device-volume-set2zero-problem after mute/unmute
+                  (radio cards do reset volume controls on mute)
+
+	        Recording
+
                 - recording
                 - select recording source and igain automatically
                 - recording monitor
                 - recording doesn't restore monitoring state on startup,
                   kradio might be blocked if another app uses /dev/dsp
-                - convert preset files to new format
-                - converter: add xml-encoding-line
+	
+		GUI
+	
+                - store-preset-file button in station configuration page
+                - move widget geometry saving/restoring to class
+                  WidgetPluginBase
+                - finally fixed the nasty positioning/sticky problem when 
+                  window is restored
+                - fixed "changes-ignored"-problem in preset-about page
+                - sensefull names/descriptions for plugins
+                - upper case in show/hide docking menu entries
+                - fix pixmap/text usage on quickbar buttons
                 - font selector for display
                 - choosable inactive text color
                 - error loggin plugin
-                - translation preparation
-                - german translation
-                - credits in about dialog
-                - remove dependency on kalarm
                 - recording button: +menu for recording/monitoring
-                -  symbol for station search button
-                - use special mail-adress for preset files
-                - country/city in preset file mail
+                - symbol for station search button
                 - about dialog
 
+		Preset File Format
+	
+                - encoding detection for preset files (Locale->UTF8)
+                - convert preset files to new format
+                - converter: add xml-encoding-line
 
-(not working yet) - fixed segfault on app quit in InterfaceBase::disconnect
+	        Other
 
+                - translation preparation
+                - german translation	
+                - credits in about dialog
+                - remove dependency on kalarm
+                - use special mail-adress for preset files
+                - country/city in preset file mail
 
         Will Stephenson
 

@@ -74,6 +74,7 @@ V4LRadio::V4LRadio(const QString &name)
 	m_mixerChannel(0),	
 	m_radio_fd(-1),
 	m_mixer_fd(-1),
+	m_useOldV4L2Calls(true),
 	m_pollTimer(this),
 
 	m_blockReadTuner(false),
@@ -750,6 +751,7 @@ void   V4LRadio::saveState (KConfig *config) const
     config->writeEntry("DeviceVolume",     m_deviceVolume);
 
     config->writeEntry("PowerOn",          isPowerOn());
+    config->writeEntry("UseOldV4L2Calls",  m_useOldV4L2Calls);
 }
 
 
@@ -786,6 +788,8 @@ void   V4LRadio::restoreState (KConfig *config)
     setBass(config->readDoubleNumEntry     ("Bass",      0.5));
     setBalance(config->readDoubleNumEntry  ("Balance",   0.0));
     setDeviceVolume(config->readDoubleNumEntry("DeviceVolume", 0.9));
+
+    m_useOldV4L2Calls = config->readBoolEntry("UseOldV4L2Calls",  true);
 }
 
 
@@ -1107,7 +1111,14 @@ bool V4LRadio::readTunerInfo() const
 #define V4L2_S_CTRL(what,val) \
  {  ctl.value = (val); \
 	ctl.id    = (what); \
-	r = ioctl (m_radio_fd, VIDIOC_S_CTRL, &ctl); \
+	/* Problem: Current V4L2 development has changed the IOCTL-IDs for VIDIOC_S_CTRL */ \
+	/* => we must du "try and error" to figure out what version we should use */ \
+	r = ioctl (m_radio_fd,      m_useOldV4L2Calls ? VIDIOC_S_CTRL_OLD : VIDIOC_S_CTRL, &ctl); \
+	/* in case this did not work, try the other version of the call */ \
+	if (r) { \
+	    r = ioctl (m_radio_fd, !m_useOldV4L2Calls ? VIDIOC_S_CTRL_OLD : VIDIOC_S_CTRL, &ctl); \
+	    if (!r) m_useOldV4L2Calls = !m_useOldV4L2Calls; \
+	} \
 	x = x ? x : r; \
 	if (r) \
 		logError(i18n("error setting %1: %2").arg(#what).arg(QString().setNum(r))); \

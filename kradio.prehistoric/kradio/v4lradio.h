@@ -208,6 +208,8 @@ protected:
 	int                    m_mixerChannel;
 	int                    m_radio_fd;
 	int                    m_mixer_fd;
+
+	bool                   m_useOldV4L2Calls;
 	
 
 	mutable struct video_audio   *m_audio;
