@@ -89,8 +89,8 @@ public:
 	bool connect    (Interface *i);
 	bool disconnect (Interface *i);
 
-	void noticeConnected (IRadioDeviceClient::cmplInterface *i);
-	void noticeDisconnect(IRadioDeviceClient::cmplInterface *i);
+	void noticeConnected (IRadioDeviceClient::cmplInterface *i, bool pointer_valid);
+	void noticeDisconnect(IRadioDeviceClient::cmplInterface *i, bool pointer_valid);
 
 	// IRadioDevicePool methods
 

@@ -56,14 +56,14 @@ IF_IMPL_QUERY   (   int            IV4LCfgClient::queryMixerChannel(),
                     SOUND_MIXER_LINE
                 )
 
-void IV4LCfgClient::noticeConnected    (cmplInterface *)
+void IV4LCfgClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeRadioDeviceChanged(queryRadioDevice());
 	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
 }
 
 
-void IV4LCfgClient::noticeDisconnected (cmplInterface *)
+void IV4LCfgClient::noticeDisconnected (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeRadioDeviceChanged(queryRadioDevice());
 	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());

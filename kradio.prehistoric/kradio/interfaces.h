@@ -230,6 +230,31 @@
                    (int)"default return value"
                 )
 
+/////////////////////////////////////////////////////////////////////////////
+
+   How do I use it ?   - Disconnect/Connect notifications
+
+
+   Usually the virtual methods notifyDisconnect(ed) or notifyConnect(ed)
+   will be called within connect/disconnect methods.
+
+   As constructors and destructors are not able to call virtual methods
+   of derived classes, there are two possible problems:
+
+   * Constructors: Calling a connect method in a constructor will not result
+     in a connect notification of any derived class. Thus do not use connect
+     calls in contructors if any derived class hast to receive all
+     connect/disconnect notifications.
+
+   * Destructors: If connections are still present if the interface destructor
+     is called, it will only call its own empty noticedisconnect method. That
+     shouldn't be a big problem as the derived class is already gone and
+     doesn't have any interest in this notification any more. But it might be
+     possible that the connected object wants to call a function of the just
+     destroyed derived class. That is not possible. Dynamic casts to the
+     derived class will return NULL. Do not try to call methods of this class
+     by use of cached pointers.
+   
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -325,20 +350,28 @@ protected:
 	
 public:
 
-	virtual void     noticeConnect     (cmplInterface *) {}
-	virtual void     noticeConnected   (cmplInterface *) {}
-	virtual void     noticeDisconnect  (cmplInterface *) {}
-	virtual void     noticeDisconnected(cmplInterface *) {}
+   	// It might be compfortable to derived Interfaces to get an argument
+	// of the Interface class, but that part of the object might
+	// already be destroyed. Thus it is necessary to evaluate the additional
+	// pointer_valid argument. A null pointer is not transmitted, as the
+	// pointer value might be needed to clean up some references in derived
+	// classes
+	virtual void     noticeConnect     (cmplInterface *, bool /*pointer_valid*/) {}
+	virtual void     noticeConnected   (cmplInterface *, bool /*pointer_valid*/) {}
+	virtual void     noticeDisconnect  (cmplInterface *, bool /*pointer_valid*/) {}
+	virtual void     noticeDisconnected(cmplInterface *, bool /*pointer_valid*/) {}
 
 	virtual bool     isConnectionFree() const;
 	virtual unsigned connected()        const { return connections.count(); }
 
 protected :
 
-	IFList connections;
+	IFList connections;	
 	int    maxConnections;
 
+private:
 	thisInterface *me;
+	bool           me_valid;
 };
 
 
@@ -349,10 +382,9 @@ protected :
 	class cmplIF; \
 	class IF : public InterfaceBase<IF, cmplIF> \
 
-
 #define IF_CON_DESTRUCTOR(IF, n) \
 	IF() : BaseClass((n)) {} \
-	virtual ~IF() { disconnectAll(); }
+	virtual ~IF() { }
 
 // macros to make sending messages or queries easier
 
@@ -428,7 +460,8 @@ protected :
 template <class thisIF, class cmplIF>
 InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
   : maxConnections(_maxConnections),
-    me(NULL)
+    me(NULL),
+    me_valid(false)
 {
 }
 
@@ -436,6 +469,7 @@ InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
 template <class thisIF, class cmplIF>
 InterfaceBase<thisIF, cmplIF>::~InterfaceBase()
 {
+	me_valid = false;
 	// In this state the derived interfaces may already be destroyed
 	// so that dereferencing cached upcasted me-pointers in noticeDisconnect(ed)
 	// will fail.
@@ -446,9 +480,9 @@ InterfaceBase<thisIF, cmplIF>::~InterfaceBase()
 	// more bad will happen
 
 	if (connections.count() > 0) {
-		kdDebug() << "WARNING: The devoloper forgot to call disconnectAll in Interface Destructor!" << endl
-		          << "I'm sorry I (InterfaceBase<?,?>) cannot tell where" << endl
-		          << "There could arise problems if pointers are dereferenced in noticeDisconnect(ed) " << endl;
+//		kdDebug() << "WARNING: The devoloper forgot to call disconnectAll in Interface Destructor!" << endl
+//		          << "I'm sorry I (InterfaceBase<?,?>) cannot tell where" << endl
+//		          << "There could arise problems if pointers are dereferenced in noticeDisconnect(ed) " << endl;
 
 		disconnectAll();
 	}
@@ -469,16 +503,17 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *__i)
 	// cache upcasted pointer, especially important for disconnects
 	// where already destructed derived parts cannot be reached with dynamic casts
 	if (!me) me = dynamic_cast<thisIF*>(this);
+	me_valid = me != NULL;
 
 	// same with the other interface
 	cmplClass *_i = dynamic_cast<cmplClass*>(__i);
 	if (!_i) return false;
 		
-	if (!_i->me) _i->me = dynamic_cast<cmplIF*>(_i);
-		
+	if (!_i->me) _i->me = dynamic_cast<cmplIF*>(_i);		
 	cmplIF    *i = _i->me;
+	_i->me_valid = _i->me != NULL;
 	
-	if (i) {
+	if (i && me) {
 		bool i_connected  = connections.containsRef(i);
 		bool me_connected = i->connections.containsRef(me);
 
@@ -486,16 +521,16 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *__i)
 			return true;
 		} else if (isConnectionFree() && i->isConnectionFree()) {
 
-			noticeConnect(i);
-			i->noticeConnect(me);
+			noticeConnect(i, i != NULL);
+			_i->noticeConnect(me, me != NULL);
 		
 			if (!i_connected)
 				connections.append(i);
 			if (!me_connected)
-				i->connections.append(me);
+				_i->connections.append(me);
 
-			noticeConnected(i);
-			i->noticeConnected(me);
+			noticeConnected(i, i != NULL);
+			_i->noticeConnected(me, me != NULL);
 			
 			return true;
 		} else {
@@ -511,17 +546,23 @@ template <class thisIF, class cmplIF>
 bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 {
 	cmplClass *_i  = dynamic_cast<cmplClass*>(__i);
+
+	// use cache to find pointer in connections list
 	cmplIF *i = _i ? _i->me : NULL;
 
+	// The cached me pointer might already point to an destroyed
+	// object. We must use it only for identifying the entry in
+	// connections list
+
     if (i) {
-		noticeDisconnect(i);
-		i->noticeDisconnect(me);
+		noticeDisconnect(i, _i->me_valid);
+		_i->noticeDisconnect(me, me_valid);
 		
 		connections.remove (i);
 		i->connections.remove(me);
 		
-		noticeDisconnected(i);
-		i->noticeDisconnected(me);
+		noticeDisconnected(i, _i->me_valid);
+		_i->noticeDisconnected(me, me_valid);
 	}
 		
 	return true;

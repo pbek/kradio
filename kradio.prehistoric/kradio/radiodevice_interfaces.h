@@ -85,8 +85,8 @@ QUERIES:
 	IF_QUERY   (  const RadioStation  &  queryCurrentStation()     )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *);
-	virtual void noticeDisconnected (cmplInterface *);
+	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -151,8 +151,8 @@ QUERIES:
 	IF_QUERY   (  bool    queryIsMuted()                         )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *);
-	virtual void noticeDisconnected (cmplInterface *);
+	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -204,8 +204,8 @@ QUERIES:
     IF_QUERY  (  bool queryIsSeekDownRunning()                        )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *);
-	virtual void noticeDisconnected (cmplInterface *);
+	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -265,8 +265,8 @@ QUERIES:
 	IF_QUERY   (  float queryScanStep()                                          )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *);
-	virtual void noticeDisconnected (cmplInterface *);
+	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -306,8 +306,8 @@ QUERIES:
 	IF_QUERY   (  const KURL &queryURL()                                         )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *);
-	virtual void noticeDisconnected (cmplInterface *);
+	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
 };
 
 

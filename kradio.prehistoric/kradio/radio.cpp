@@ -311,18 +311,18 @@ bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *se
 }
 
 
-void Radio::noticeConnected(IRadioDeviceClient::cmplInterface *dev)
+void Radio::noticeConnected(IRadioDeviceClient::cmplInterface *dev, bool pointer_valid)
 {
-	IRadioDeviceClient::noticeConnected(dev);
+	IRadioDeviceClient::noticeConnected(dev, pointer_valid);
 	
-	if (! m_activeDevice)
+	if (! m_activeDevice && pointer_valid)
 		setActiveDevice (dev, false);
 }
 
 
-void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd)
+void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd, bool pointer_valid)
 {
-	IRadioDeviceClient::noticeDisconnected(rd);
+	IRadioDeviceClient::noticeDisconnected(rd, pointer_valid);
 	
 	if (rd == m_activeDevice) {
 

@@ -63,8 +63,8 @@ QUERIES:
     IF_QUERY   (   int            queryMixerChannel()                            )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *);
-	virtual void noticeDisconnected (cmplInterface *);
+	virtual void noticeConnected    (cmplInterface *, bool /*pointer_valid*/);
+	virtual void noticeDisconnected (cmplInterface *, bool /*pointer_valid*/);
 };
 
 #endif
