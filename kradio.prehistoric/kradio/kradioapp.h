@@ -2,7 +2,7 @@
                           kradioapp.h  -  description
                              -------------------
     begin                : Sa Feb  9 2002
-    copyright            : (C) 2002 by Klas Kalass
+    copyright            : (C) 2002 by Klas Kalass / Martin Witte / Frank Schwanz
     email                : klas.kalass@gmx.de
  ***************************************************************************/
 
