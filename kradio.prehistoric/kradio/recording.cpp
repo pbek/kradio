@@ -57,6 +57,9 @@ Recording::Recording(const QString &name)
       m_encodingThread(NULL),
       m_skipCount(0)
 {
+
+    QObject::connect(&m_pollTimer, SIGNAL(timeout()), this, SLOT(slotSoundDataAvailable()));
+
 }
 
 
@@ -314,7 +317,7 @@ bool Recording::openDevice()
 {
     // opening and seeting up the device file
 
-    m_devfd = open(m_config.device, O_RDONLY | O_NDELAY);
+    m_devfd = open(m_config.device, O_RDONLY | O_NONBLOCK);
 
     bool err = m_devfd < 0;
     if (err)
@@ -364,19 +367,31 @@ bool Recording::openDevice()
     if (err)
         logError(i18n("Cannot read recording buffer size"));
 
-    m_buffer = new char[m_bufferBlockSize * 2];
+    logInfo(i18n("Hardware uses buffer blocks of %1 bytes").arg(QString::number(m_bufferBlockSize)));
+
+    m_buffer = new char[m_config.encodeBufferSize];
 
     int trigger = ~PCM_ENABLE_INPUT;
-    ioctl(m_devfd,SNDCTL_DSP_SETTRIGGER, &trigger);
+    ioctl(m_devfd, SNDCTL_DSP_SETTRIGGER, &trigger);
     trigger = PCM_ENABLE_INPUT;
-    ioctl(m_devfd,SNDCTL_DSP_SETTRIGGER, &trigger);
+    ioctl(m_devfd, SNDCTL_DSP_SETTRIGGER, &trigger);
 
-    // setup Socket Notifier
-    m_notifier = new QSocketNotifier(m_devfd, QSocketNotifier::Read, this);
-    QObject::connect(m_notifier, SIGNAL(activated(int)),
-                     this, SLOT(slotSoundDataAvailable()));
-
-    // setup the input soundfile pointer
+    if (!err) {
+/*        fd_set rfds;
+        struct timeval tv;
+        FD_ZERO(&rfds); FD_SET(m_devfd,&rfds);
+        tv.tv_sec=0; tv.tv_usec = 0;
+        if(!select(m_devfd+1, &rfds, NULL, NULL, &tv)) {
+            logWarning(i18n("Your sound device does not support the select function. Using polling timer."));*/
+            // setup polling
+            m_pollTimer.start(40);
+/*         } else {
+            // setup Socket Notifier
+            m_notifier = new QSocketNotifier(m_devfd, QSocketNotifier::Read, this);
+            QObject::connect(m_notifier, SIGNAL(activated(int)),
+                              this, SLOT(slotSoundDataAvailable()));
+         }*/
+    }
 
     if (err) closeDevice();
 
@@ -388,6 +403,8 @@ bool Recording::openDevice()
 
 void Recording::closeDevice()
 {
+    m_pollTimer.stop();
+
     if (m_notifier) delete m_notifier;
     m_notifier = NULL;
 
@@ -495,33 +512,38 @@ void Recording::slotSoundDataAvailable()
     if (m_context.state() == RecordingContext::rsRunning ||
         m_context.state() == RecordingContext::rsMonitor)
     {
-        char *buf = NULL;
+        char *buf = m_buffer;
+        bool skip = false;
+        unsigned int bufferSize = m_config.encodeBufferSize;
         if (m_encodingThread) {
-            buf = m_encodingThread->lockInputBuffer(m_bufferBlockSize);
+            buf = m_encodingThread->lockInputBuffer(bufferSize);
             if (buf && m_skipCount) {
-                logWarning(i18n("Input buffer overflow. %1 Frames skipped").arg(QString::number(m_skipCount)));
+                logWarning(i18n("Input buffer overflow. Skipped %1 input bytes").arg(QString::number(m_skipCount)));
                 m_skipCount = 0;
             }
             if (!buf) {
                 buf = m_buffer;
-                ++m_skipCount;
+                skip = true;
             }
-        } else {
-            buf = m_buffer;
         }
-        //buf = m_buffer;
-        int err = false;
+        int err = 0;
+        int bytesRead = 0;
         if (buf) {
-            //int bytesRead = m_bufferBlockSize;
-            int bytesRead = read(m_devfd, buf, m_bufferBlockSize);
-            if (bytesRead <= 0) {
+            bytesRead = read(m_devfd, buf, bufferSize);
+            if (bytesRead > 0) {
+                   m_context.addInput(buf, bytesRead, 0);
+                if (skip)
+                    m_skipCount += bytesRead;
+            } else if (bytesRead < 0 && errno == EAGAIN) {
+                bytesRead = 0;
+               } else if (bytesRead == 0) {
+                   err = -1;
+                   logError(i18n("No data to record"));
+               } else {
                 err = errno;
-                logError(i18n("No data to record"));
-            } else {
-                m_context.addInput(buf, bytesRead, 0);
             }
 
-            if (!m_skipCount && m_encodingThread)
+            if (!skip && m_encodingThread)
                 m_encodingThread->unlockInputBuffer(bytesRead > 0 ? bytesRead : 0);
         }
 
@@ -531,7 +553,7 @@ void Recording::slotSoundDataAvailable()
         }
 
         if (!err) {
-            notifyRecordingContextChanged(m_context);
+            if (bytesRead) notifyRecordingContextChanged(m_context);
         } else {
             logError(i18n("Error %1 while recording").arg(QString().setNum(err)));
             m_context.setError();
@@ -598,25 +620,27 @@ RecordingEncoding::~RecordingEncoding()
 }
 
 
-char *RecordingEncoding::lockInputBuffer(unsigned int bufferSize)
+char *RecordingEncoding::lockInputBuffer(unsigned int &bufferSize)
 {
     if (m_done)
         return NULL;
 
     m_bufferInputLock.lock();
 
-    if (m_config.encodeBufferSize - m_buffersInputFill[m_currentInputBuffer] >= bufferSize) {
-        return m_buffersInput[m_currentInputBuffer] + m_buffersInputFill[m_currentInputBuffer];
-    } else if (m_currentInputBuffer+1 < m_config.encodeBufferCount &&
-                 m_config.encodeBufferSize - m_buffersInputFill[m_currentInputBuffer+1] >= bufferSize)
-    {
-        m_currentInputBuffer++;
-           m_inputAvailableLock--;
-        return m_buffersInput[m_currentInputBuffer] + m_buffersInputFill[m_currentInputBuffer];
-    } else {
-        m_bufferInputLock.unlock();
-        return NULL;
-    }
+    unsigned int bytesAvailable = 0;
+
+    do {
+        bytesAvailable = m_config.encodeBufferSize - m_buffersInputFill[m_currentInputBuffer];
+        if (bytesAvailable > 0) {
+            bufferSize = bytesAvailable;
+            return m_buffersInput[m_currentInputBuffer] + m_buffersInputFill[m_currentInputBuffer];
+        } else if (m_currentInputBuffer + 1 < m_config.encodeBufferCount) {
+            ++m_currentInputBuffer;
+            m_inputAvailableLock--;
+        }
+    } while (m_currentInputBuffer + 1 < m_config.encodeBufferCount);
+    m_bufferInputLock.unlock();
+    return NULL;
 }
 
 

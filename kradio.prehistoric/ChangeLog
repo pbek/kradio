@@ -27,6 +27,8 @@
                 - add button for sleep countdown to display plugin
                 - open /dev/dsp is no more blocking
                 - set correct PCM_ENABLE_INPUT flag when starting recording
+                - recording: replaced QSocketNotifier by polling/nonblocking 
+                  IO with QTimer. Some sound drivers do not support select()
 
 
 0.3.0 alpha 2

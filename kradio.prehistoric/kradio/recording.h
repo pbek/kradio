@@ -33,6 +33,7 @@
 #include <qmutex.h>
 #include <qsemaphore.h>
 #include <qthread.h>
+#include <qtimer.h>
 
 #include "plugins.h"
 #include "recording-interfaces.h"
@@ -126,6 +127,7 @@ protected:
     QSocketNotifier   *m_notifier;
     RecordingEncoding *m_encodingThread;
     int                m_skipCount;
+    QTimer             m_pollTimer;
 };
 
 
@@ -137,8 +139,8 @@ public:
 
     void run();
 
-    char              *lockInputBuffer(unsigned int bufferSize);    // bytes we whish to write
-    void               unlockInputBuffer(unsigned int bufferSize);  // bytes we actually wrote
+    char              *lockInputBuffer(unsigned int &bufferSize);    // bytes we whish to write, returns number of bytes available
+    void               unlockInputBuffer(unsigned int bufferSize);   // bytes we actually wrote
 
     bool               error() const { return m_error; }
     const QString     &errorString() const { return m_errorString; }
