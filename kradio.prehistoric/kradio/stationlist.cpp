@@ -250,7 +250,7 @@ void StationList::merge(const StationList & other)
 StationList &StationList::operator = (const StationList &other)
 {
 	m_metaData = other.metaData();
-	m_all = other.all();
+	m_all      = other.all();
 	return *this;
 }
 

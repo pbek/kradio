@@ -476,6 +476,15 @@ void RadioConfiguration::slotSearchStations(int idev)
 
 void RadioConfiguration::slotOK()
 {
+	StationListMetaData &i = m_stations.metaData();
+
+	i.maintainer = editMaintainer->text();
+	i.lastChange = editLastChange->dateTime();
+	i.country    = editCountry->text();
+	i.city       = editCity->text();
+	i.media      = editMedia->text();
+	i.comment    = editComment->text();
+	
 	sendStations(m_stations);
 }
 
