@@ -545,7 +545,7 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *__i)
 
 template <class thisIF, class cmplIF>
 bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
-{   
+{
 	kdDebug() << "InterfaceBase::disconnect(" << __i << ") ENTER" << endl;
 	cmplClass *_i = dynamic_cast<cmplClass*>(__i);
 
@@ -569,9 +569,9 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 			_i->noticeDisconnect(me, me_valid);
 		
 		kdDebug() << "this->remove(i)" << endl;
-		connections.remove (i);
+		if (i) connections.removeRef(i);
 		kdDebug() << "i->remove(me)" << endl;
-		i->connections.remove(me);
+		if (me) i->connections.removeRef(me);
 		
 		kdDebug() << "this->noticeDisconnected" << endl;
 		if (me_valid)
