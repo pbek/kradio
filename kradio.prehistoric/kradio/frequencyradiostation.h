@@ -37,7 +37,7 @@
 
 class FrequencyRadioStation : public RadioStation  {
 public:
-	FrequencyRadioStation ();
+    FrequencyRadioStation ();
     FrequencyRadioStation (float frequency);
     FrequencyRadioStation (const QString &name, const QString &shortName, float frequency);
     FrequencyRadioStation (const FrequencyRadioStation &);
@@ -47,7 +47,8 @@ public:
     float  frequency()  const             { return m_frequency; }
     void   setFrequency (float frequency) { m_frequency = frequency; }
 
-    virtual QString	longName() const;
+    virtual QString    longName() const;
+    virtual QString    description() const;
     virtual bool    isValid () const;
 
     /*  = 0 : "this" is same as "s", i.e. approximately same frequency
@@ -61,12 +62,12 @@ public:
     virtual RadioStation *copy() const;
 
     virtual RadioStationConfig *createEditor() const;
-    
-	// for XML-Parsing/Export
-	virtual bool setProperty(const QString &property_name, const QString &val);
-	virtual QString getProperty(const QString &property_name) const;
-	virtual QStringList getPropertyNames() const;
-	virtual QString getClassName() const { return "FrequencyRadioStation"; }
+
+    // for XML-Parsing/Export
+    virtual bool setProperty(const QString &property_name, const QString &val);
+    virtual QString getProperty(const QString &property_name) const;
+    virtual QStringList getPropertyNames() const;
+    virtual QString getClassName() const { return "FrequencyRadioStation"; }
 
 protected:
 

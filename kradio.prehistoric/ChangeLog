@@ -31,7 +31,11 @@
                 - recording: replaced QSocketNotifier by polling/nonblocking 
                   IO with QTimer. Some sound drivers do not support select()
                 - fixed nebulous recording error logging/reporting
+                - fix of kradio.pot generation
 
+        Rafael Rodriguez
+
+                - spanish translation
 
 0.3.0 alpha 2
 

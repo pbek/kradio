@@ -53,7 +53,7 @@
 
       get/setProperty
       getPropertyNames
-  
+
 */
 
 /////////////////////////////////////////////////////////////////////////////
@@ -69,35 +69,36 @@ class RadioStation
 protected:
     RadioStation (RegisterStationClass, const QString &classname);
 public:
-	RadioStation ();
-	RadioStation (const QString &name, const QString &shortName);
-	RadioStation (const RadioStation &);
-	virtual ~RadioStation();
+    RadioStation ();
+    RadioStation (const QString &name, const QString &shortName);
+    RadioStation (const RadioStation &);
+    virtual ~RadioStation();
 
     const QString  &stationID() const { return m_stationID; }
 
-    virtual QString	longName() const = 0;
+    virtual QString    longName()    const = 0;
+    virtual QString    description() const = 0;
 
-	const QString  &name()           const { return m_name;          }
-	const QString  &shortName()      const { return m_shortName;     }
-	const QString  &iconName()       const { return m_iconName;      }
-	float           initialVolume()  const { return m_initialVolume; }
+    const QString  &name()           const { return m_name;          }
+    const QString  &shortName()      const { return m_shortName;     }
+    const QString  &iconName()       const { return m_iconName;      }
+    float           initialVolume()  const { return m_initialVolume; }
 
-	void  setName         (const QString &name)       { m_name          = name;          }
-	void  setShortName    (const QString &shortName)  { m_shortName     = shortName;     }
+    void  setName         (const QString &name)       { m_name          = name;          }
+    void  setShortName    (const QString &shortName)  { m_shortName     = shortName;     }
     void  setIconName     (const QString &iconName)   { m_iconName      = iconName;      }
-	void  setInitialVolume(float initialVolume)       { m_initialVolume = initialVolume; }
+    void  setInitialVolume(float initialVolume)       { m_initialVolume = initialVolume; }
 
-	void  copyDescriptionFrom(const RadioStation &rs);
+    void  copyDescriptionFrom(const RadioStation &rs);
 
-	// for XML-Parsing/Export
-	virtual bool        setProperty(const QString &property_name, const QString &val);
-	virtual QString     getProperty(const QString &property_name) const;
-	virtual QStringList getPropertyNames() const;
-	virtual QString     getClassName() const = 0;
+    // for XML-Parsing/Export
+    virtual bool        setProperty(const QString &property_name, const QString &val);
+    virtual QString     getProperty(const QString &property_name) const;
+    virtual QStringList getPropertyNames() const;
+    virtual QString     getClassName() const = 0;
 
-	// get empty derived stations by classname from registry
-	static RadioStation const *getStationClass(const QString &classname);
+    // get empty derived stations by classname from registry
+    static RadioStation const *getStationClass(const QString &classname);
            RadioStation const *getStationClass() const { return getStationClass(getClassName()); }
 
     // = 0 : "this" is same as "s", e.g. approximately same frequency, same url, ...
@@ -105,27 +106,27 @@ public:
     // < 0 : "this" is numerically (frequencies) or alphanumerically (urls) or ... smaller than "s"
     virtual int compare(const RadioStation &s) const = 0;
 
-    // is this station setup correctly ? 
+    // is this station setup correctly ?
     virtual bool isValid() const = 0;
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const = 0;
 
-	void generateNewStationID();
+    void generateNewStationID();
 
-	virtual RadioStationConfig *createEditor() const = 0;
+    virtual RadioStationConfig *createEditor() const = 0;
 
 protected :
-	QString  m_stationID;
+    QString  m_stationID;
 
-	QString  m_name;
-	QString	 m_shortName;
-	float	 m_initialVolume;		// <0: => Don't use
-	QString	 m_iconName;
+    QString  m_name;
+    QString     m_shortName;
+    float     m_initialVolume;        // <0: => Don't use
+    QString     m_iconName;
 
 private:
-	static QDict<RadioStation>  *stationClassRegistry;
-};                                           
+    static QDict<RadioStation>  *stationClassRegistry;
+};
 
 
 
@@ -138,13 +139,14 @@ class UndefinedRadioStation : public RadioStation
 public:
     UndefinedRadioStation (RegisterStationClass) : RadioStation (registerStationClass, getClassName()) {}
 
-	virtual QString       longName() const { return "unknown"; }
-	virtual bool          isValid()  const { return false; }
-	virtual RadioStation *copy()     const { return new UndefinedRadioStation(*this); }
-	virtual int           compare(const RadioStation &s) const;
+    virtual QString       longName() const { return "unknown"; }
+    virtual QString       description() const { return "unknown"; }
+    virtual bool          isValid()  const { return false; }
+    virtual RadioStation *copy()     const { return new UndefinedRadioStation(*this); }
+    virtual int           compare(const RadioStation &s) const;
 
-	virtual QString       getClassName() const { return "UndefinedRadioStation"; }
-	virtual RadioStationConfig *createEditor() const;
+    virtual QString       getClassName() const { return "UndefinedRadioStation"; }
+    virtual RadioStationConfig *createEditor() const;
 };
 
 

@@ -79,21 +79,21 @@ InternetRadioStation::~InternetRadioStation()
 */
 int InternetRadioStation::compare(const RadioStation &_s) const
 {
-	InternetRadioStation const *s = dynamic_cast<InternetRadioStation const*>(&_s);
+    InternetRadioStation const *s = dynamic_cast<InternetRadioStation const*>(&_s);
 
-	if (!s)
-		return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;
+    if (!s)
+        return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;
 
-	QString thisurl = m_url.url(-1);    // -1: remove trailing '/'
-	QString thaturl = s->m_url.url(-1);
+    QString thisurl = m_url.url(-1);    // -1: remove trailing '/'
+    QString thaturl = s->m_url.url(-1);
 
-	// empty urls are never identical
-	if (thisurl.length () == 0)
-		return -1;
-	if (thaturl.length() == 0)
-		return 1;
+    // empty urls are never identical
+    if (thisurl.length () == 0)
+        return -1;
+    if (thaturl.length() == 0)
+        return 1;
 
-	return thisurl.compare(thaturl);
+    return thisurl.compare(thaturl);
 }
 
 
@@ -106,45 +106,51 @@ bool InternetRadioStation::isValid() const
 
 QString InternetRadioStation::longName() const
 {
-	QString longN = m_name;
-	if ( ! longN.isEmpty() )
-		longN = longN + ", ";
+    QString longN = m_name;
+    if ( ! longN.isEmpty() )
+        longN = longN + ", ";
 
-	return longN + m_url.url();
+    return longN + description();
+}
+
+
+QString InternetRadioStation::description() const
+{
+    return m_url.url();
 }
 
 
 bool InternetRadioStation::setProperty(const QString &pn, const QString &val)
 {
-	bool retval = false;
-	if (pn == StationUrlElement) {
-		m_url = val;
-		retval = true;
-	} else {
-		retval = RadioStation::setProperty(pn, val);
-	}
-	return retval;
+    bool retval = false;
+    if (pn == StationUrlElement) {
+        m_url = val;
+        retval = true;
+    } else {
+        retval = RadioStation::setProperty(pn, val);
+    }
+    return retval;
 }
 
 QString InternetRadioStation::getProperty(const QString &pn) const
 {
-	if (pn == StationUrlElement) {
-		return m_url.url();
-	} else {
-		return RadioStation::getProperty(pn);
-	}
+    if (pn == StationUrlElement) {
+        return m_url.url();
+    } else {
+        return RadioStation::getProperty(pn);
+    }
 }
 
 QStringList InternetRadioStation::getPropertyNames() const
 {
-	QStringList l = RadioStation::getPropertyNames();
-	l.push_back(StationUrlElement);
-	return l;
+    QStringList l = RadioStation::getPropertyNames();
+    l.push_back(StationUrlElement);
+    return l;
 }
 
 
 RadioStationConfig *InternetRadioStation::createEditor() const
 {
-	return new UndefinedRadioStationConfig(NULL);
+    return new UndefinedRadioStationConfig(NULL);
 }
 

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-02-28 12:54+0100\n"
-"PO-Revision-Date: 2004-02-28 13:30+0000\n"
+"PO-Revision-Date: 2004-02-28 22:45+0000\n"
 "Last-Translator: Rafael Rodríguez Martín <apt-drink@telefonica.net>\n"
 "Language-Team: es_ES <kde-es@kybs.de>\n"
 "MIME-Version: 1.0\n"
@@ -239,7 +239,7 @@ msgid ""
 "with much patience"
 msgstr ""
 "... que ha contribuido con archivos de configuración de emisoras \n"
-"y ha testeado los primeros e inestables versiones no oficales de KRadio \n"
+"y ha testeado las primeras versiones inestables no oficiales de KRadio \n"
 "con mucha paciencia"
 
 #: kradioapp.cpp:121 kradioapp.cpp:132
@@ -401,7 +401,6 @@ msgid "Start/Stop Recording"
 msgstr "Iniciar/detener grabación"
 
 #: radioview.cpp:152
-#, fuzzy
 msgid "Start/Stop Sleep Countdown"
 msgstr "Iniciar cuenta atrás para dormir"
 
@@ -435,7 +434,7 @@ msgstr "Pantalla estándar de radio para KRadio"
 
 #: radioview_frequencyradio.cpp:98 radioview_frequencyradio.cpp:99
 msgid "Frequency Display"
-msgstr "Pantalla de frecuencia"
+msgstr "Pantalla de la frecuencia"
 
 #: radioview_frequencyradio.cpp:388 radioview_frequencyradio.cpp:389
 msgid "AM"
@@ -486,7 +485,6 @@ msgid "Available Stations"
 msgstr "Emisoras disponibles"
 
 #: rc.cpp:7
-#, fuzzy
 msgid "RadioConfigurationUI"
 msgstr "RadioConfigurationUI"
 
@@ -523,7 +521,6 @@ msgid " %"
 msgstr " %"
 
 #: rc.cpp:22
-#, fuzzy
 msgid "Volume Preset"
 msgstr "Volumen predefinido"
 
@@ -572,7 +569,6 @@ msgid "RadioView_SeekInterface"
 msgstr "RadioView_SeekInterface"
 
 #: rc.cpp:35
-#, fuzzy
 msgid "search previous station"
 msgstr "Buscar anterior emisora"
 
@@ -822,13 +818,12 @@ msgid "minimum signal quality"
 msgstr "calidad mínima de señal"
 
 #: rc.cpp:124
-#, fuzzy
 msgid "station scan step"
-msgstr "paso mínimo al buscar emisoras"
+msgstr "Paso mínimo al buscar emisoras"
 
 #: rc.cpp:125
 msgid "allowed frequency range"
-msgstr "rango de frecuencias permitidas"
+msgstr "Rango de frecuencias permitidas"
 
 #: rc.cpp:126
 msgid "V4L Device Controls"
@@ -897,7 +892,7 @@ msgstr "&Detener"
 
 #: recording-monitor.cpp:217
 msgid "not running"
-msgstr "no está corriendo"
+msgstr "no está ejecutándose"
 
 #: recording-monitor.cpp:223
 msgid "recording"
@@ -996,7 +991,6 @@ msgid "Hardware uses buffer blocks of %1 bytes"
 msgstr "El hardware utiliza blóques de búfer de %1 bytes"
 
 #: recording.cpp:449
-#, fuzzy
 msgid "Recording::outputFile: "
 msgstr "Recording::outputFile: "
 

@@ -30,20 +30,21 @@
 /**
  * @author Klas Kalass, Ernst Martin Witte
  */
- 
+
 class InternetRadioStation : public RadioStation  {
 public:
-	InternetRadioStation();
+    InternetRadioStation();
     InternetRadioStation(KURL const &url);
     InternetRadioStation(const QString &name, const QString &shortName, KURL const &url);
     InternetRadioStation(const InternetRadioStation &);
-	InternetRadioStation(RegisterStationClass, const QString &classname = QString::null);
+    InternetRadioStation(RegisterStationClass, const QString &classname = QString::null);
     ~InternetRadioStation();
 
     const KURL & url() const             { return m_url; }
     void         setUrl(KURL const &url) { m_url = url;  }
 
     virtual QString longName() const;
+    virtual QString description() const;
     virtual bool    isValid () const;
 
     /*  = 0 : this.url == s.url
@@ -55,14 +56,14 @@ public:
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;
-   
+
     virtual RadioStationConfig *createEditor() const;
 
-	// for XML-Parsing/Export
-	virtual bool setProperty(const QString &property_name, const QString &val);
-	virtual QString getProperty(const QString &property_name) const;
-	virtual QStringList getPropertyNames() const;
-	virtual QString getClassName() const { return "InternetRadioStation"; }
+    // for XML-Parsing/Export
+    virtual bool setProperty(const QString &property_name, const QString &val);
+    virtual QString getProperty(const QString &property_name) const;
+    virtual QStringList getPropertyNames() const;
+    virtual QString getClassName() const { return "InternetRadioStation"; }
 
 protected:
     KURL m_url;

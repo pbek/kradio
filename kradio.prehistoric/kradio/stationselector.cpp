@@ -18,8 +18,8 @@
 #include "stationselector.h"
 #include "stationlist.h"
 #include "radiostation.h"
+#include "radiostation-listview.h"
 
-#include <klistbox.h>
 #include <kpushbutton.h>
 
 #include <algorithm>
@@ -27,10 +27,13 @@
 using namespace std;
 
 StationSelector::StationSelector (QWidget *parent)
-	: StationSelectorUI(parent)
+    : StationSelectorUI(parent)
 {
-	QObject::connect(buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
-	QObject::connect(buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
+    QObject::connect(buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
+    QObject::connect(buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
+
+    listSelected->setSelectionMode(QListView::Extended);
+    listAvailable->setSelectionMode(QListView::Extended);
 }
 
 
@@ -41,172 +44,188 @@ StationSelector::~StationSelector ()
 
 bool StationSelector::connectI(Interface *i)
 {
-	bool a = IStationSelectionClient::connectI(i);
-	bool b = IRadioClient::connectI(i);
-	return a || b;
+    bool a = IStationSelectionClient::connectI(i);
+    bool b = IRadioClient::connectI(i);
+    return a || b;
 }
 
 
 bool StationSelector::disconnectI(Interface *i)
 {
-	bool a = IStationSelectionClient::disconnectI(i);
-	bool b = IRadioClient::disconnectI(i);
-	return a || b;
+    bool a = IStationSelectionClient::disconnectI(i);
+    bool b = IRadioClient::disconnectI(i);
+    return a || b;
 }
 
 
 bool StationSelector::noticeStationSelectionChanged(const QStringList &sl)
 {
-	stationsNotDisplayed.clear();
+    m_stationIDsNotDisplayed.clear();
+    m_stationIDsSelected.clear();
+    m_stationIDsAvailable.clear();
 
-    while (listSelected->count()) {
-		moveItem (listSelected, stationsSelected, 0, listAvailable, stationsAvailable);
-    }
-
-	for (QStringList::const_iterator it = sl.begin(); it != sl.end(); ++it) {
-		const QString &id = *it;
-
-        if (::find(stationsAvailable.begin(), stationsAvailable.end(), id) != stationsAvailable.end()) {
-			// get index in stationsAvailable
-			unsigned int idx = 0;
-			while (idx < stationsAvailable.size() && stationsAvailable[idx] != id) ++idx;
-			if (idx < stationsAvailable.size())
-				moveItem(listAvailable, stationsAvailable, idx, listSelected, stationsSelected);
+    for (unsigned int i = 0; i < m_stationIDsAll.count(); ++i) {
+        if (sl.contains(m_stationIDsAll[i])) {
+            m_stationIDsSelected.append(m_stationIDsAll[i]);
         } else {
-			stationsNotDisplayed.push_back(id);
+            m_stationIDsAvailable.append(m_stationIDsAll[i]);
         }
-	}
-	return true;
-}
-
-
-bool StationSelector::noticePowerChanged(bool /*on*/)
-{
-	return false;
-}
-
-
-bool StationSelector::noticeStationChanged (const RadioStation &, int /*idx*/)
-{
-	return false;
+    }
+    for (unsigned int i = 0; i < sl.count(); ++i) {
+        if (!m_stationIDsAll.contains(sl[i]))
+            m_stationIDsNotDisplayed.append(sl[i]);
+    }
+    updateListViews();
+    return true;
 }
 
 
 bool StationSelector::noticeStationsChanged(const StationList &sl)
 {
-	listAvailable->clear();
-	stationsAvailable.clear();
-	listSelected->clear();
-	stationsNotDisplayed.insert(stationsNotDisplayed.begin(), stationsSelected.begin(), stationsSelected.end());
-	stationsSelected.clear();
+    listAvailable->clear();
+    listSelected->clear();
 
-	for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {
-	    const QString &id = i.current()->stationID();
+    m_stationIDsAvailable.clear();
+    m_stationIDsAll.clear();
 
-	    stationsAll.push_back(id);
+    for (unsigned int i = 0; i < m_stationIDsSelected.count(); ++i)
+        m_stationIDsNotDisplayed.append(m_stationIDsSelected[i]);
 
-	    vector<QString>::iterator f = ::find(stationsNotDisplayed.begin(), stationsNotDisplayed.end(), id);
-	    if (f != stationsNotDisplayed.end()) {
-			listSelected->insertItem(i.current()->iconName(),
-			                         i.current()->longName());
-			stationsSelected.push_back(id);
-			stationsNotDisplayed.erase(f);
-	    } else {
-			listAvailable->insertItem(i.current()->iconName(),
-			                          i.current()->longName());
-			stationsAvailable.push_back(id);
-		}
-	}
-	return true;
+    m_stationIDsSelected.clear();
+
+    for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {
+        const QString &id = i.current()->stationID();
+
+        m_stationIDsAll.append(id);
+        if (m_stationIDsNotDisplayed.contains(id)) {
+            m_stationIDsNotDisplayed.remove(id);
+            m_stationIDsSelected.append(id);
+        } else {
+            m_stationIDsAvailable.append(id);
+        }
+    }
+
+    updateListViews();
+    return true;
 }
 
 
 void StationSelector::slotButtonToLeft()
 {
-	unsigned int i = 0;
-	while (i < listSelected->count()) {
-		if (listSelected->isSelected(i)) {
-			moveItem(listSelected, stationsSelected,
-				     i,
-				     listAvailable, stationsAvailable);
-		} else {
-			++i;
-		}
-	}
+    QListViewItem *item = listSelected->firstChild();
+    int idx_from = 0;
+    while (item) {
+        QListViewItem *next_item = item->nextSibling();
+
+        if (item->isSelected()) {
+
+            moveItem (listSelected,  m_stationIDsSelected,
+                      item,          idx_from,
+                      listAvailable, m_stationIDsAvailable);
+
+            --idx_from;
+        }
+        item = next_item;
+        ++idx_from;
+    }
 }
 
 
 void StationSelector::slotButtonToRight()
 {
-	unsigned int i = 0;
-	while (i < listAvailable->count()) {
-		if (listAvailable->isSelected(i)) {
-			moveItem(listAvailable, stationsAvailable,
-				     i,
-				     listSelected, stationsSelected);
-		} else {
-			++i;
-		}
-	}
-}
+    QListViewItem *item = listAvailable->firstChild();
+    int idx_from = 0;
+    while (item) {
+        QListViewItem *next_item = item->nextSibling();
 
-void StationSelector::moveItem (
-	KListBox *&lbFrom, vector<QString> &vFrom,
-    unsigned int idxFrom,
-	KListBox *&lbTo, vector<QString> &vTo)
-{
-	QString         id  =  vFrom[idxFrom];
-	QString         txt =  lbFrom->text(idxFrom);
-	const QPixmap  *p   =  lbFrom->pixmap(idxFrom);
+        if (item->isSelected()) {
 
-	insertItem (lbTo, vTo, id, p, txt);
+            moveItem (listAvailable, m_stationIDsAvailable,
+                      item,          idx_from,
+                      listSelected,  m_stationIDsSelected);
 
-	vFrom.erase(::find(vFrom.begin(), vFrom.end(), id));
-	lbFrom->removeItem(idxFrom);
+            --idx_from;
+        }
+        item = next_item;
+        ++idx_from;
+    }
 }
 
 
-void StationSelector::insertItem (
-	KListBox *&lb,
-	vector<QString> &v,
-	const QString &id,
-	const QPixmap *p,
-	const QString &txt)
+void StationSelector::moveItem(
+  RadioStationListView *fromListView,
+  QStringList          &fromIDList,
+  QListViewItem        *item,
+  int                   idx_from,
+  RadioStationListView *toListView,
+  QStringList          &toIDList
+)
 {
-	// calculate where to insert the new item
-	unsigned int k = 0,
-                idx = 0;
-	for (; idx < v.size(); ++idx) {
+    fromListView->takeItem(item);
 
-		while (   k  <  stationsAll.size()
-		       && id != stationsAll[k]
-		       && v[idx] != stationsAll[k])
-		{ ++k; }
+    QString id = fromIDList[idx_from];
+    fromIDList.remove(fromIDList.at(idx_from));
 
-		if (k < stationsAll.size() && id == stationsAll[k])
-			break;
-	}
+    unsigned int  idx_to  = 0,
+                  idx_all = 0;
+    bool found = false;
+    QListViewItem *item_to      = toListView->firstChild(),
+                  *prev_item_to = NULL;
 
-	vector<QString>::iterator  it = v.begin();
-	unsigned int c = 0;
-	while (it != v.end() && c < idx) ++it, ++c;
+    while (idx_all < m_stationIDsAll.count() &&
+           idx_to  < toIDList.count())
+    {
+        while (m_stationIDsAll[idx_all] != toIDList[idx_to])
+        {
+            if (m_stationIDsAll[idx_all] == id) {
+                found = true;
+                break;
+            }
+            ++idx_all;
+        }
+        if (found)
+            break;
 
-	v.insert(it, id);
-	if (p)
-		lb->insertItem(*p, txt, idx);
-	else
-		lb->insertItem(txt, idx);
+        prev_item_to = item_to;
+        item_to = item_to->nextSibling();
+        ++idx_to;
+    }
+
+    toIDList.insert(toIDList.at(idx_to), id);
+    toListView->insertItem(item);
+    if (prev_item_to) {
+        item->moveItem(prev_item_to);
+    } else {
+        item->moveItem(item_to);
+        if (item_to) item_to->moveItem(item);
+    }
+}
+
+
+void StationSelector::updateListViews()
+{
+    listAvailable->clear();
+    listSelected->clear();
+    const StationList &stations = queryStations();
+    const RawStationList    &sl = stations.all();
+
+    for (unsigned int i = 0; i < m_stationIDsAvailable.count(); ++i) {
+        QString id = m_stationIDsAvailable[i];
+        listAvailable->appendStation(sl.stationWithID(id), sl.idxWithID(id)+1);
+    }
+    for (unsigned int i = 0; i < m_stationIDsSelected.count(); ++i) {
+        QString id = m_stationIDsSelected[i];
+        listSelected->appendStation(sl.stationWithID(id), sl.idxWithID(id)+1);
+    }
 }
 
 
 void StationSelector::slotOK()
 {
-	QStringList l;
-	for (vector<QString>::iterator it = stationsSelected.begin(); it != stationsSelected.end(); ++it)
-		l.push_back(*it);
-	for (vector<QString>::iterator it = stationsNotDisplayed.begin(); it != stationsNotDisplayed.end(); ++it)
-		l.push_back(*it);
-	sendStationSelection(l);
+    QStringList l = m_stationIDsSelected;
+    for (unsigned int i = 0; i < m_stationIDsNotDisplayed.count(); ++i)
+        l.append(m_stationIDsNotDisplayed[i]);
+    sendStationSelection(l);
 }
 
 
@@ -215,4 +234,17 @@ void StationSelector::slotCancel()
     noticeStationSelectionChanged(queryStationSelection());
 }
 
+
+void StationSelector::saveState (KConfig *cfg) const
+{
+    listSelected->saveState(cfg);
+    listAvailable->saveState(cfg);
+}
+
+
+void StationSelector::restoreState (KConfig *cfg)
+{
+    listSelected->restoreState(cfg);
+    listAvailable->restoreState(cfg);
+}
 

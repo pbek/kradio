@@ -23,6 +23,7 @@
 #include "standardscandialog.h"
 #include "radiostation-config.h"
 #include "errorlog.h"
+#include "radiostation-listview.h"
 
 #include <qlistbox.h>
 #include <klistbox.h>
@@ -49,7 +50,7 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
       devicePopup(NULL),
       m_logger(logger)
 {
-    QObject::connect(listStations, SIGNAL(highlighted(int)),
+    QObject::connect(listStations, SIGNAL(sigCurrentStationChanged(int)),
                      this, SLOT(slotStationSelectionChanged(int)));
     QObject::connect(buttonSelectPixmapFile, SIGNAL(clicked()),
                      this, SLOT(slotSelectPixmap()));
@@ -69,7 +70,7 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
                      this, SLOT(slotStationUp()));
     QObject::connect(buttonStationDown, SIGNAL(clicked()),
                      this, SLOT(slotStationDown()));
-    QObject::connect(listStations, SIGNAL(selected(int)),
+    QObject::connect(listStations, SIGNAL(sigStationActivated(int)),
                      this, SLOT(slotActivateStation( int )));
     QObject::connect(buttonLoadPresets, SIGNAL(clicked()),
                      this, SLOT(slotLoadPresets()));
@@ -146,20 +147,8 @@ bool RadioConfiguration::noticeDeviceDescriptionChanged(const QString &)
 bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 {
     m_stations = sl;
-    listStations->clear();
 
-    for (RawStationList::Iterator it(m_stations.all()); it.current(); ++it) {
-        RadioStation *s = it.current();
-        QString icon = s->iconName();
-        if (icon.length() && QFile(icon).exists()) {
-            QImage img(icon);
-            int   h = img.height();
-            float f = (float)(listStations->itemHeight()) / (h ? (float)h : 1.0);
-            listStations->insertItem(img.smoothScale((int)(img.width()*f), (int)(h * f)), s->longName());
-        } else {
-            listStations->insertItem(s->longName());
-        }
-    }
+    listStations->setStations(sl);
 
     StationListMetaData &info = m_stations.metaData();
 
@@ -170,7 +159,7 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
     editMedia->setText(info.media);
     editComment->setText(info.comment);
 
-    slotStationSelectionChanged(listStations->currentItem());
+    slotStationSelectionChanged(listStations->currentStationIndex());
 
     return true;
 }
@@ -212,7 +201,14 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
     editStationShortName  ->setText  (s ? s->shortName() : QString::null);
     editPixmapFile        ->setText  (s ? s->iconName() : QString::null);
     editVolumePreset      ->setValue (s ? (int)rint(s->initialVolume()*100) : -1);
-    pixmapStation         ->setPixmap(s ? QPixmap(s->iconName()) : QPixmap());
+
+    QPixmap pixmap(s ? s->iconName() : QString::null);
+    if (!pixmap.isNull()) {
+           pixmapStation     ->setPixmap(pixmap);
+    } else {
+        pixmapStation     ->setText("");
+    }
+
 
     stackStationEdit->setDisabled(!s);
     if (s) {
@@ -247,51 +243,40 @@ void RadioConfiguration::slotNewStation()
         m_stations.all().append(st);
     }
     if (m_stations.count() > n) {
-        QString icon = st->iconName();
-        if (icon.length() && QFile(icon).exists()) {
-            QImage img(icon);
-            int   h = img.height();
-            float f = (float)(listStations->itemHeight()) / (h ? (float)h : 1.0);
-            listStations->insertItem(img.smoothScale((int)(img.width()*f), (int)(h * f)), st->longName());
-        } else {
-            listStations->insertItem(st->longName());
-        }
-        listStations->setCurrentItem (listStations->count()-1);
+        listStations->appendStation(*st);
+        listStations->setCurrentStation (listStations->count()-1);
     }
 }
 
 
 void RadioConfiguration::slotDeleteStation()
 {
-    int idx = listStations->currentItem();
+    int idx = listStations->currentStationIndex();
 
     if (idx >= 0 && idx < m_stations.count()) {
         m_stations.all().remove(idx);
-        listStations->removeItem(idx);
+        listStations->removeStation(idx);
     }
 }
+
 
 void RadioConfiguration::slotStationEditorChanged(RadioStationConfig *c)
 {
     if (!c) return;
     if (ignoreChanges) return;
 
-    int idx = listStations->currentItem();
+
+    int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
         RadioStation &st = m_stations.at(idx);
-        c->storeStationData(st);
+
         ignoreChanges = true;
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
-        QString icon = st.iconName();
-        if (icon.length() && QFile(icon).exists()) {
-            QImage img(st.iconName());
-            int   h = img.height();
-            float f = (float)(listStations->itemHeight()) / (h ? (float)h : 1.0);
-            listStations->changeItem(img.smoothScale((int)(img.width()*f), (int)(h * f)), st.longName(), idx);
-        } else {
-            listStations->changeItem(st.longName(), idx);
-        }
+
+        c->storeStationData(st);
+        listStations->setStation(idx, st);
+
         listStations->blockSignals(o);
         ignoreChanges = false;
     }
@@ -302,14 +287,14 @@ void RadioConfiguration::slotStationNameChanged( const QString & s)
 {
     if (ignoreChanges) return;
 
-    int idx = listStations->currentItem();
+    int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
         RadioStation &st = m_stations.at(idx);
         st.setName(s);
         ignoreChanges = true;
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
-        listStations->changeItem(st.iconName(), st.longName(), idx);
+        listStations->setStation(idx, st);
         listStations->blockSignals(o);
         ignoreChanges = false;
     }
@@ -320,14 +305,14 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 {
     if (ignoreChanges) return;
 
-    int idx = listStations->currentItem();
+    int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
         RadioStation &st = m_stations.at(idx);
         st.setShortName(sn);
         ignoreChanges = true;
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
-        listStations->changeItem(st.iconName(), st.longName(), idx);
+        listStations->setStation(idx, st);
         listStations->blockSignals(o);
         ignoreChanges = false;
     }
@@ -354,7 +339,7 @@ void RadioConfiguration::slotPixmapChanged( const QString &s )
 {
     if (ignoreChanges) return;
 
-    int idx = listStations->currentItem();
+    int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
         RadioStation &st = m_stations.at(idx);
         st.setIconName(s);
@@ -362,7 +347,7 @@ void RadioConfiguration::slotPixmapChanged( const QString &s )
         pixmapStation->setPixmap(QPixmap(s));
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
-        listStations->changeItem(st.iconName(), st.longName(), idx);
+        listStations->setStation(idx, st);
         listStations->blockSignals(o);
         ignoreChanges = false;
     }
@@ -371,7 +356,7 @@ void RadioConfiguration::slotPixmapChanged( const QString &s )
 
 void RadioConfiguration::slotVolumePresetChanged(int v)
 {
-    int idx = listStations->currentItem();
+    int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
         RadioStation &s = m_stations.at(idx);
         s.setInitialVolume(0.01 * (double)v);
@@ -382,7 +367,7 @@ void RadioConfiguration::slotVolumePresetChanged(int v)
 
 void RadioConfiguration::slotStationUp()
 {
-    int idx = listStations->currentItem();
+    int idx = listStations->currentStationIndex();
     if (idx > 0 && idx < m_stations.count()) {
         RawStationList &sl = m_stations.all();
 
@@ -393,9 +378,9 @@ void RadioConfiguration::slotStationUp()
         ignoreChanges = true;
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
-        listStations->changeItem(sl.at(idx-1)->iconName(), sl.at(idx-1)->longName(), idx-1);
-        listStations->changeItem(sl.at(idx)  ->iconName(), sl.at(idx)  ->longName(), idx);
-        listStations->setCurrentItem(idx-1);
+        listStations->setStation(idx-1, *sl.at(idx-1));
+        listStations->setStation(idx,   *sl.at(idx));
+        listStations->setCurrentStation(idx-1);
         listStations->blockSignals(o);
         ignoreChanges = false;
     }
@@ -404,7 +389,7 @@ void RadioConfiguration::slotStationUp()
 
 void RadioConfiguration::slotStationDown()
 {
-    int idx = listStations->currentItem();
+    int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count() - 1) {
         RawStationList &sl = m_stations.all();
 
@@ -415,18 +400,17 @@ void RadioConfiguration::slotStationDown()
         ignoreChanges = true;
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
-        listStations->changeItem(sl.at(idx)  ->iconName(), sl.at(idx)  ->longName(), idx);
-        listStations->changeItem(sl.at(idx+1)->iconName(), sl.at(idx+1)->longName(), idx+1);
-        listStations->setCurrentItem(idx+1);
+        listStations->setStation(idx,   *sl.at(idx));
+        listStations->setStation(idx+1, *sl.at(idx+1));
+        listStations->setCurrentStation(idx+1);
         listStations->blockSignals(o);
         ignoreChanges = false;
     }
 }
 
 
-void RadioConfiguration::slotActivateStation( int )
+void RadioConfiguration::slotActivateStation(int idx)
 {
-    int idx = listStations->currentItem();
     if (idx >= 0 && idx < m_stations.count()) {
         sendActivateStation(m_stations.at(idx));
         sendPowerOn();

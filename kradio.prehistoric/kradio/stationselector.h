@@ -22,14 +22,16 @@
 #include <config.h>
 #endif
 
+#include <qstringlist.h>
+
 #include "stationselector-ui.h"
 #include "radio_interfaces.h"
 #include "stationselection_interfaces.h"
+#include "stationlist.h"
+#include "radiostation-listview.h"
 
-#include <vector>
-using std::vector;
 
-class KListBox;
+class RadioStationListView;
 
 class StationSelector : public StationSelectorUI,
                         public IRadioClient,
@@ -49,10 +51,13 @@ public :
 
 // IRadioClient
 
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int idx);
+    bool noticePowerChanged(bool /*on*/)                          { return false; }
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }
     bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePresetFileChanged(const QString &/*f*/)            { return false; }
+
+    void   saveState    (KConfig *) const;
+    void   restoreState (KConfig *);
 
 protected slots:
 
@@ -64,17 +69,17 @@ protected slots:
 
 protected:
 
-    void moveItem (KListBox *&lbFrom, vector<QString> &vFrom,
-                   unsigned int idxFrom,
-                   KListBox *&lbTo, vector<QString> &vTo);
-    void insertItem (KListBox *&lb, vector<QString> &v, const QString &id, const QPixmap *p, const QString &txt);
+    void moveItem (RadioStationListView *fromListView,    QStringList          &fromIDList,
+                   QListViewItem        *item,            int                   fromIdx,
+                   RadioStationListView *toListView,      QStringList          &toIDList);
 
-    vector<QString>   stationsAvailable,
-                      stationsSelected,
-                      stationsNotDisplayed,
-                      stationsAll;
+    void updateListViews();
 
-
+    // station ids
+    QStringList   m_stationIDsAvailable,
+                  m_stationIDsSelected,
+                  m_stationIDsNotDisplayed,
+                  m_stationIDsAll;
 };
 
 #endif
