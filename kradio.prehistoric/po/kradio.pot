@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-01-24 13:57+0100\n"
+"POT-Creation-Date: 2003-01-30 05:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,71 +15,71 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: docking.cpp:84
+#: docking.cpp:86
 msgid "Search Next Station"
 msgstr ""
 
-#: docking.cpp:87
+#: docking.cpp:89
 msgid "Search Previous Station"
 msgstr ""
 
-#: docking.cpp:94
+#: docking.cpp:96
 msgid "&About"
 msgstr ""
 
-#: docking.cpp:102
+#: docking.cpp:104
 msgid "&Quit"
 msgstr ""
 
-#: docking.cpp:110
+#: docking.cpp:112
 msgid "Show radio interface"
 msgstr ""
 
-#: docking.cpp:111
+#: docking.cpp:113
 msgid "Minimize radio interface"
 msgstr ""
 
-#: docking.cpp:113
+#: docking.cpp:115
 msgid "Show station quickbar"
 msgstr ""
 
-#: docking.cpp:114
+#: docking.cpp:116
 msgid "Minimize station quickbar"
 msgstr ""
 
-#: docking.cpp:159
+#: docking.cpp:161
 msgid "KRadio: "
 msgstr ""
 
-#: docking.cpp:161
+#: docking.cpp:163
 msgid "Power Off"
 msgstr ""
 
-#: docking.cpp:161
+#: docking.cpp:163
 msgid "Power On"
 msgstr ""
 
-#: docking.cpp:197
+#: docking.cpp:199
 msgid "next alarm: "
 msgstr ""
 
-#: docking.cpp:199
+#: docking.cpp:201
 msgid "<no alarm pending>"
 msgstr ""
 
-#: docking.cpp:235
+#: docking.cpp:237
 msgid "stop sleep (running until "
 msgstr ""
 
-#: docking.cpp:237
+#: docking.cpp:239
 msgid "start sleep countdown"
 msgstr ""
 
-#: kradio.cpp:140
+#: kradio.cpp:145
 msgid "<unknown>"
 msgstr ""
 
-#: quickbar.cpp:229
+#: quickbar.cpp:232
 msgid "KRadio"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 msgid "tuned"
 msgstr ""
 
-#: radiobase.cpp:356 RadioView.cpp:420
+#: radiobase.cpp:356
 msgid "Stereo"
 msgstr ""
 
@@ -181,7 +181,9 @@ msgid "Pixmap File"
 msgstr ""
 
 #: setupdialog_stations.cpp:471 setupdialog_general_options.cpp:213
-#: setupdialog_general_options.cpp:214 RadioView.cpp:415
+#: setupdialog_general_options.cpp:214 RadioView.cpp:278 RadioView.cpp:280
+#: RadioView.cpp:283 RadioView.cpp:285 RadioView.cpp:287 RadioView.cpp:289
+#: RadioView.cpp:291 RadioView.cpp:293
 msgid "..."
 msgstr ""
 
@@ -271,6 +273,14 @@ msgstr ""
 msgid "A&bout"
 msgstr ""
 
+#: stationsearchdialog_uic.ui.h:55
+msgid "new station "
+msgstr ""
+
+#: stationsearchdialog_uic.ui.h:115 stationsearchdialog_uic.ui.h:119
+msgid "unknown"
+msgstr ""
+
 #: setupdialog_alarms.cpp:172
 msgid "SetupDialogAlarms"
 msgstr ""
@@ -297,14 +307,6 @@ msgstr ""
 
 #: setupdialog_alarms.cpp:182
 msgid "Radio Station"
-msgstr ""
-
-#: stationsearchdialog_uic.ui.h:55
-msgid "new station "
-msgstr ""
-
-#: stationsearchdialog_uic.ui.h:115 stationsearchdialog_uic.ui.h:119
-msgid "unknown"
 msgstr ""
 
 #: setupdialog_general_options.cpp:209
@@ -367,55 +369,51 @@ msgstr ""
 msgid "<p align=\"right\">nothing here</p>"
 msgstr ""
 
-#: RadioView.cpp:404
+#: kradioview.cpp:67 RadioView.cpp:276
 msgid "Form1"
 msgstr ""
 
-#: RadioView.cpp:405
-msgid "Volume control"
-msgstr ""
-
-#: RadioView.cpp:407
-msgid "search previous station"
-msgstr ""
-
-#: RadioView.cpp:409
-msgid "decrease freq. by 0.05 MHz"
-msgstr ""
-
-#: RadioView.cpp:411
-msgid "increase freq. by 0.05 MHz"
-msgstr ""
-
-#: RadioView.cpp:413
-msgid "search next station"
-msgstr ""
-
-#: RadioView.cpp:414
-msgid "Power"
-msgstr ""
-
-#: RadioView.cpp:416
-msgid "Toggle the Quickbar"
-msgstr ""
-
-#: RadioView.cpp:417
-msgid "Configure"
-msgstr ""
-
-#: RadioView.cpp:418
+#: kradioview.cpp:68 RadioView.cpp:282
 msgid "Frequency control"
 msgstr ""
 
-#: RadioView.cpp:419
-msgid "Tune"
+#: kradioview.cpp:69
+msgid "87.5"
 msgstr ""
 
-#: RadioView.cpp:421
-msgid "About"
+#: RadioView.cpp:277
+msgid "Volume control"
 msgstr ""
 
-#: RadioView.cpp:422 RadioView.cpp:423
+#: RadioView.cpp:279
+msgid "search previous station"
+msgstr ""
+
+#: RadioView.cpp:281
+msgid "decrease freq. by 0.05 MHz"
+msgstr ""
+
+#: RadioView.cpp:284
+msgid "increase freq. by 0.05 MHz"
+msgstr ""
+
+#: RadioView.cpp:286
+msgid "search next station"
+msgstr ""
+
+#: RadioView.cpp:288
+msgid "Toggle the Quickbar"
+msgstr ""
+
+#: RadioView.cpp:290
+msgid "Configure KRadio"
+msgstr ""
+
+#: RadioView.cpp:292
+msgid "Power On/Off"
+msgstr ""
+
+#: RadioView.cpp:294
 msgid "Quit"
 msgstr ""
 
@@ -465,4 +463,16 @@ msgstr ""
 
 #: setupdialog_stations.ui.h:341
 msgid "preset file selection"
+msgstr ""
+
+#: kradiomw.cpp:360
+msgid "Cus&tom Menuitem"
+msgstr ""
+
+#: kradiodisplay.cpp:173 kradiodisplay.cpp:174
+msgid "AM"
+msgstr ""
+
+#: kradiodisplay.cpp:179 kradiodisplay.cpp:180
+msgid "FM"
 msgstr ""

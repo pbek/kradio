@@ -91,11 +91,17 @@ void LircSupport::slotLIRC(int /*socket*/ )
 					radio->setVolume (radio->getVolume() + 1.0/32.0);
 				else if (strcasecmp (c, "VOL-") == 0)
 					radio->setVolume (radio->getVolume() - 1.0/32.0);
-				else if (strcasecmp (c, "CH+") == 0)
-					radio->setFrequency(radio->getFrequency() + radio->getScanStep());
-				else if (strcasecmp (c, "CH-") == 0)
-					radio->setFrequency(radio->getFrequency() - radio->getScanStep());
-				else if (strcasecmp (c, "CH+SEARCH") == 0)
+				else if (strcasecmp (c, "CH+") == 0) {
+					int k = radio->currentStation() + 1;
+					if (k >= (int)radio->getStations().size())
+						k = 0;
+					radio->activateStation(k);
+				} else if (strcasecmp (c, "CH-") == 0) {
+					int k = radio->currentStation() - 1;
+					if (k < 0)
+						k = radio->getStations().size() - 1;
+					radio->activateStation(k);
+				} else if (strcasecmp (c, "CH+SEARCH") == 0)
 					radio->startSeekUp();
 				else if (strcasecmp (c, "CH-SEARCH") == 0)
 					radio->startSeekDown();

@@ -3,11 +3,11 @@ bin_PROGRAMS = kradio
 
 ## INCLUDES were found outside kdevelop specific part
 
-kradio_SOURCES = setupdialog_stations.ui setupdialog_alarms.ui setupdialog_general_options.ui radiocfgxmlhandler.cpp timecontrol.cpp utils.cpp stationsearchdialog.cpp stationsearchdialog_uic.ui setupdialog.cpp buttonflowlayout.cpp quickbar.cpp lircsupport.cpp alarm.cpp radiobase.cpp radiostation.cpp docking.cpp v4lradio.cpp RadioView.ui kradioview.ui kradioapp.cpp kradiomw.cpp kradio.cpp main.cpp 
+kradio_SOURCES = kradiodisplay.cpp setupdialog_stations.ui setupdialog_alarms.ui setupdialog_general_options.ui radiocfgxmlhandler.cpp timecontrol.cpp utils.cpp stationsearchdialog.cpp stationsearchdialog_uic.ui setupdialog.cpp buttonflowlayout.cpp quickbar.cpp lircsupport.cpp alarm.cpp radiobase.cpp radiostation.cpp docking.cpp v4lradio.cpp kradioview.ui RadioView.ui kradioapp.cpp kradiomw.cpp kradio.cpp main.cpp 
 kradio_LDADD   =  $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
 
 
-EXTRA_DIST = main.cpp kradio.cpp kradio.h kradiomw.cpp kradiomw.h kradioapp.cpp kradioapp.h kradio.desktop lo32-app-kradio.png lo16-app-kradio.png RadioView.ui kradioview.ui v4lradio.cpp v4lradio.h docking.cpp docking.h lo22-app-kradio.png hi16-app-kradio.png hi22-app-kradio.png hi32-app-kradio.png dot-lircrc.example kradiorc.example hi24-app-kradio.png lo24-app-kradio.png radiostation.cpp radiostation.h radiobase.cpp radiobase.h utils.h alarm.cpp alarm.h lircsupport.cpp lircsupport.h hi48-app-kradio.png hi64-app-kradio.png lo48-app-kradio.png lo64-app-kradio.png quickbar.cpp quickbar.h buttonflowlayout.cpp buttonflowlayout.h setupdialog.h setupdialog.cpp stationsearchdialog_uic.ui stationsearchdialog.h stationsearchdialog.cpp utils.cpp timecontrol.h timecontrol.cpp radiocfgxmlhandler.h radiocfgxmlhandler.cpp setupdialog_general_options.ui stationsearchdialog_uic.ui.h setupdialog_general_options.ui.h setupdialog_alarms.ui setupdialog_stations.ui setupdialog_alarms.ui.h setupdialog_stations.ui.h kradio_muteoff.png kradio_muteon.png kradio_muteoff_16x16.png kradio_muteon_16x16.png 
+EXTRA_DIST = main.cpp kradio.cpp kradio.h kradiomw.cpp kradiomw.h kradioapp.cpp kradioapp.h kradio.desktop lo32-app-kradio.png lo16-app-kradio.png RadioView.ui kradioview.ui v4lradio.cpp v4lradio.h docking.cpp docking.h lo22-app-kradio.png hi16-app-kradio.png hi22-app-kradio.png hi32-app-kradio.png dot-lircrc.example kradiorc.example hi24-app-kradio.png lo24-app-kradio.png radiostation.cpp radiostation.h radiobase.cpp radiobase.h utils.h alarm.cpp alarm.h lircsupport.cpp lircsupport.h hi48-app-kradio.png hi64-app-kradio.png lo48-app-kradio.png lo64-app-kradio.png quickbar.cpp quickbar.h buttonflowlayout.cpp buttonflowlayout.h setupdialog.h setupdialog.cpp stationsearchdialog_uic.ui stationsearchdialog.h stationsearchdialog.cpp utils.cpp timecontrol.h timecontrol.cpp radiocfgxmlhandler.h radiocfgxmlhandler.cpp setupdialog_general_options.ui stationsearchdialog_uic.ui.h setupdialog_general_options.ui.h setupdialog_alarms.ui setupdialog_stations.ui setupdialog_alarms.ui.h setupdialog_stations.ui.h kradio_muteoff.png kradio_muteon.png kradio_muteoff_16x16.png kradio_muteon_16x16.png kradiodisplay.cpp kradiodisplay.h 
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/
@@ -97,12 +97,9 @@ rc_DATA = kradioui.rc
 
 # instead of 
 
-# messages:
-messages: rc.cpp
+# messages: rc.cpp
+messages:
 	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
 	if test -n "$$LIST"; then \
-	  for I in $(top_srcdir)/po/*.po ; do \
-	    $(XGETTEXT) -C -ki18n -ktr2i18n $$LIST -j -o $$I ; \
-	  done ; \
 	  $(XGETTEXT) -C -ki18n -ktr2i18n $$LIST -o $(top_srcdir)/po/kradio.pot ; \
 	fi

@@ -29,7 +29,7 @@
 #include <qbuttongroup.h>
 
 #include <kconfig.h>
-#include <kpushbutton.h>
+#include <ktoolbarbutton.h>
 
 #include <list>
 #include "radiobase.h"
@@ -42,7 +42,7 @@ class RadioStation;
   */
 
 
-typedef list<KPushButton *>         ButtonList;
+typedef list<QToolButton *>         ButtonList;
 typedef ButtonList::iterator        iButtonList;
 typedef ButtonList::const_iterator  ciButtonList;
 

@@ -20,6 +20,7 @@
 #include <qhbuttongroup.h>
 #include <qvbuttongroup.h>
 #include <kglobal.h>
+#include <qtoolbutton.h>
 
 #include <kwin.h>
 #include <klocale.h>
@@ -142,9 +143,9 @@ void QuickBar::rebuildGUI()
 			continue;
 		
         QString iconstr = (*i)->getIconString();
-       	KPushButton *b = showShortName ?
-							   new KPushButton((*i)->getShortName(), this)
-							 : new KPushButton((*i)->name(), this);
+       	QToolButton *b = new QToolButton(this, "");
+
+        b->setText(showShortName ? (*i)->getShortName() : QString((*i)->name()));
 
 	    b->setToggleButton(true);
        	if (iconstr.length()) {
@@ -154,7 +155,7 @@ void QuickBar::rebuildGUI()
 
         QToolTip::add(b, (*i)->getLongName());
         if (isVisible()) b->show();
-        b->resize (b->sizeHint());
+        // b->resize (b->sizeHint());
 
         Buttons.push_back(b);
         connect (b, SIGNAL(clicked()), (*i), SLOT(activate()));
@@ -226,8 +227,18 @@ void QuickBar::hide()
 
 void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
 {
-  setCaption ((s ? QString(s->name()) : i18n("KRadio")));
-  if (buttonGroup) buttonGroup->setButton(radio->currentStation());
+    const StationVector &stations = radio->getStations();
+
+	setCaption ((s ? QString(s->name()) : i18n("KRadio")));
+	int k = -1, _k = -1;
+	for (ciStationVector i = stations.begin(); k < 0 && i != stations.end(); ++i) {
+		if ( !(*i)->useQuickSelect())
+			continue;
+		++_k;
+		if (s && (*i)->getFrequency() == s->getFrequency())
+			k = _k;
+	}
+	if (buttonGroup) buttonGroup->setButton(k);
 }
 
 
