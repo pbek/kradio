@@ -71,10 +71,6 @@ int main(int argc, char *argv[])
 
     quickbar->show();
     
-//    radio.powerOn();
-//    radio.activateStation(4);
-//    v4lradio->setVolume(1.0);
-
     a.setMainWidget(quickbar);
 
     return a.exec();

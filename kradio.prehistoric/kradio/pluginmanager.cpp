@@ -29,7 +29,7 @@ PluginManager::~PluginManager()
 {
 	PluginBase *p = NULL;
 	while ((p = m_plugins.getFirst())) {
-		removePlugin(p);
+		deletePlugin(p);
 	}
 }
 
