@@ -35,10 +35,10 @@ bool SeekHelper::connect   (Interface *i)
 {
 	bool a = IRadioDeviceClient::connect(i);
 	bool b = IRadioSoundClient::connect(i);
-
+/*
     if (a) kdDebug() << "SeekHelper: IRadioDeviceClient connected\n";
     if (b) kdDebug() << "SeekHelper: IRadioSoundClient connected\n";
-
+*/
 	return a || b;
 }
 
@@ -47,10 +47,10 @@ bool SeekHelper::disconnect(Interface *i)
 {
 	bool a = IRadioDeviceClient::disconnect(i);
 	bool b = IRadioSoundClient::disconnect(i);
-
+/*
     if (a) kdDebug() << "SeekHelper: IRadioDeviceClient disconnected\n";
     if (b) kdDebug() << "SeekHelper: IRadioSoundClient disconnected\n";
-
+*/
 	return a || b;
 }
 
@@ -96,7 +96,7 @@ void SeekHelper::finish ()
 
 
 void SeekHelper::step ()
-{
+{                     
 	if (m_state == off)
 		return;
 
@@ -122,7 +122,6 @@ void SeekHelper::step ()
 			} else if (isBetter() && isGood()) {
 				rememberBest();
 			}
-
 			if (! nextSeekStep()) {
 				if (isGood() && bestFound()) {
 					finish();
@@ -130,7 +129,6 @@ void SeekHelper::step ()
 					stop();
 				}
 			}
-
 			break;
 	}
 }

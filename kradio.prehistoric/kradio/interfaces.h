@@ -278,6 +278,9 @@
 class Interface
 {
 public:
+	Interface () {}
+	virtual ~Interface() {}
+
 	virtual bool     connect   (Interface *) { return false; }
 	virtual bool     disconnect(Interface *) { return false; }
 
@@ -292,39 +295,50 @@ public:
 template <class thisIF, class cmplIF>
 class InterfaceBase : virtual public Interface
 {
-    friend class InterfaceBase<cmplIF, thisIF>;    // necessary for connects (to keep
-                                                   // number of connect functions low)
+private:
+	typedef InterfaceBase<thisIF, cmplIF>  thisClass;
+	typedef InterfaceBase<cmplIF, thisIF>  cmplClass;
+
+    friend class cmplClass; // necessary for connects (to keep number of different connect functions low)
+
 public:
                                                
-	typedef thisIF                   thisInterface;
-	typedef cmplIF                   cmplInterface;
+	typedef thisIF                    thisInterface;
+	typedef cmplIF                    cmplInterface;
 
-	typedef QPtrList<cmplIF>         IFList;
-	typedef QPtrListIterator<cmplIF> IFIterator;
+	typedef QPtrList<cmplIF>          IFList;
+	typedef QPtrListIterator<cmplIF>  IFIterator;
 
-	typedef InterfaceBase<thisInterface, cmplInterface> BaseClass;
+	typedef thisClass BaseClass;
     
 public :
 	InterfaceBase (int maxConnections = -1);
 	virtual ~InterfaceBase ();
 
+	// duplicate connects will add no more entries to connection list
 	virtual bool     connect(Interface *i);
 	virtual bool     disconnect(Interface *i);
 
+protected:
+	virtual void     disconnectAll();
+
+	
+public:
+
+	virtual void     noticeConnect     (cmplInterface *) {}
+	virtual void     noticeConnected   (cmplInterface *) {}
+	virtual void     noticeDisconnect  (cmplInterface *) {}
+	virtual void     noticeDisconnected(cmplInterface *) {}
+
 	virtual bool     isConnectionFree() const;
 	virtual unsigned connected()        const { return connections.count(); }
-
-protected:
-
-	virtual void noticeConnect      (cmplIF *) {}
-	virtual void noticeConnected    (cmplIF *) {}
-	virtual void noticeDisconnect   (cmplIF *) {}
-	virtual void noticeDisconnected (cmplIF *) {}
 
 protected :
 
 	IFList connections;
 	int    maxConnections;
+
+	thisInterface *me;
 };
 
 
@@ -335,6 +349,10 @@ protected :
 	class cmplIF; \
 	class IF : public InterfaceBase<IF, cmplIF> \
 
+
+#define IF_CON_DESTRUCTOR(IF, n) \
+	IF() : BaseClass((n)) {} \
+	virtual ~IF() { disconnectAll(); }
 
 // macros to make sending messages or queries easier
 
@@ -409,7 +427,8 @@ protected :
 
 template <class thisIF, class cmplIF>
 InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
-  : maxConnections(_maxConnections)
+  : maxConnections(_maxConnections),
+    me(NULL)
 {
 }
 
@@ -417,9 +436,21 @@ InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
 template <class thisIF, class cmplIF>
 InterfaceBase<thisIF, cmplIF>::~InterfaceBase()
 {
-	cmplIF *i = 0;
-	while (i = connections.getFirst()) {
-		disconnect(i);
+	// In this state the derived interfaces may already be destroyed
+	// so that dereferencing cached upcasted me-pointers in noticeDisconnect(ed)
+	// will fail.
+	// Thus we must ensure that disconnectAll() is called in the (upper) thisIF
+	// destructor, not here (see macro IF_CON_DESTRUCTOR).
+	// If this has not taken place (i.e. the programmer forgot to do so)
+	// we can only warn, clear our list now and hope that nothing
+	// more bad will happen
+
+	if (connections.count() > 0) {
+		kdDebug() << "WARNING: The devoloper forgot to call disconnectAll in Interface Destructor!" << endl
+		          << "I'm sorry I (InterfaceBase<?,?>) cannot tell where" << endl
+		          << "There could arise problems if pointers are dereferenced in noticeDisconnect(ed) " << endl;
+
+		disconnectAll();
 	}
 }
 
@@ -433,22 +464,43 @@ bool InterfaceBase<thisIF, cmplIF>::isConnectionFree () const
 
 
 template <class thisIF, class cmplIF>
-bool InterfaceBase<thisIF, cmplIF>::connect (Interface *_i)
+bool InterfaceBase<thisIF, cmplIF>::connect (Interface *__i)
 {
-	thisIF *me = dynamic_cast<thisIF*>(this);
-	cmplIF *i  = dynamic_cast<cmplIF*>(_i);
-	if (i && isConnectionFree() && i->isConnectionFree()) {
+	// cache upcasted pointer, especially important for disconnects
+	// where already destructed derived parts cannot be reached with dynamic casts
+	if (!me) me = dynamic_cast<thisIF*>(this);
 
-		noticeConnect(i);
-		i->noticeConnect(me);
+	// same with the other interface
+	cmplClass *_i = dynamic_cast<cmplClass*>(__i);
+	if (!_i) return false;
 		
-		connections.append(i);
-		i->connections.append(me);
+	if (!_i->me) _i->me = dynamic_cast<cmplIF*>(_i);
+		
+	cmplIF    *i = _i->me;
+	
+	if (i) {
+		bool i_connected  = connections.containsRef(i);
+		bool me_connected = i->connections.containsRef(me);
 
-		noticeConnected(i);
-		i->noticeConnected(me);
+		if (i_connected && me_connected) {
+			return true;
+		} else if (isConnectionFree() && i->isConnectionFree()) {
+
+			noticeConnect(i);
+			i->noticeConnect(me);
 		
-		return true;
+			if (!i_connected)
+				connections.append(i);
+			if (!me_connected)
+				i->connections.append(me);
+
+			noticeConnected(i);
+			i->noticeConnected(me);
+			
+			return true;
+		} else {
+			return false;
+		}
 	}
 	return false;
 }
@@ -456,12 +508,12 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *_i)
 
 
 template <class thisIF, class cmplIF>
-bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *_i)
+bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 {
-	thisIF *me = dynamic_cast<thisIF*>(this);
-	cmplIF *i  = dynamic_cast<cmplIF*>(_i);
-	if (i) {
+	cmplClass *_i  = dynamic_cast<cmplClass*>(__i);
+	cmplIF *i = _i ? _i->me : NULL;
 
+    if (i) {
 		noticeDisconnect(i);
 		i->noticeDisconnect(me);
 		
@@ -470,12 +522,18 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *_i)
 		
 		noticeDisconnected(i);
 		i->noticeDisconnected(me);
-		
-		return true;
 	}
-	return false;
+		
+	return true;
 }
 
-/////////////////////////////////////////////////////////////////////////////
-					
+
+template <class thisIF, class cmplIF>
+void InterfaceBase<thisIF, cmplIF>::disconnectAll()
+{
+	while (cmplIF *i = connections.getFirst()) {
+		disconnect(i);
+	}
+}
+
 #endif

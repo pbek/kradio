@@ -21,39 +21,17 @@
 #include <kdialogbase.h>
 #include <kdebug.h>
 
-WidgetDestroyNotifier::WidgetDestroyNotifier(PluginBase *parent)
-	: m_parent(parent)
-{
-}
-
-WidgetDestroyNotifier::~WidgetDestroyNotifier()
-{
-}
-
-void WidgetDestroyNotifier::noticeDestroy(QObject *o)
-{
-	if (m_parent) m_parent->unregisterGuiElement(o);
-}
-
-
-///////////////////////////////////////////////////////////////////////
-
 
 PluginBase::PluginBase(const QString &name)
 	: m_name(name),
 	  m_manager(NULL)
 {
-	m_destroyNotifier = new WidgetDestroyNotifier(this);
 }
 
 
 PluginBase::~PluginBase()
 {
-	while (m_guiElements.first()) {
-		delete m_guiElements.first();
-	}
 	unsetManager();
-	delete m_destroyNotifier;
 }
 
 
@@ -84,22 +62,6 @@ bool PluginBase::isManagerSet () const
 }
 
 
-QFrame *PluginBase::createConfigurationPage(KDialogBase *dlg)
-{
-	QFrame *f = internal_createConfigurationPage(dlg);
-	if (f)
-		registerGuiElement(f);
-	return f;
-}
-
-QFrame *PluginBase::createAboutPage(QWidget *parent)
-{
-	QFrame *f = internal_createAboutPage(parent);
-	if (f)
-		registerGuiElement(f);
-	return f;
-}
-
 void   PluginBase::saveState (KConfig *) const
 {
 	// do nothing
@@ -111,20 +73,17 @@ void   PluginBase::restoreState (KConfig *)
 	// do nothing
 }
 
-void PluginBase::registerGuiElement(QObject *o)
-{
-	if (o) {
-		m_guiElements.append(o);
-		QObject::connect(o, SIGNAL(destroyed(QObject *)), m_destroyNotifier, SLOT(noticeDestroy(QObject *)));
-	}
-}
 
-void PluginBase::unregisterGuiElement(QObject *o)
+///////////////////////////////////////////////////////////////////////////
+
+QWidget *WidgetPluginBase::getWidget()
 {
-	if (o) {
-		m_guiElements.removeRef(o);
-	}
+	return dynamic_cast<QWidget*>(this);
 }
 
 
-
+void WidgetPluginBase::notifyManager(bool shown)
+{
+	if (m_manager)
+		m_manager->noticeWidgetPluginShown(this, shown);
+}

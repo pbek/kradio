@@ -25,7 +25,8 @@
 #include "radiodevice_interfaces.h"
 
 
-class SeekHelper : public IRadioDeviceClient, public IRadioSoundClient
+class SeekHelper : public IRadioDeviceClient,
+                   public IRadioSoundClient
 {
 public:
     typedef enum { off, searchWorse, searchBest } state_t;
@@ -56,6 +57,7 @@ RECEIVERS:
 	bool noticeVolumeChanged(float /*v*/)        { return false; }
 	bool noticeSignalQualityChanged(float /*q*/) { return false; }
 	bool noticeSignalQualityChanged(bool/*good*/){ return false; }
+	bool noticeSignalMinQualityChanged(float /*q*/){ return false; }
 	bool noticeStereoChanged(bool /*s*/)         { return false; }
 	bool noticeMuted(bool /*m*/)                 { return false; }
 	

@@ -51,6 +51,7 @@ class KConfig;
 */
 
 
+class WidgetPluginBase;
 
 class PluginBase : virtual public Interface
 {
@@ -70,50 +71,48 @@ protected:
 
 public:
 
-	// creates QFrames with configuration or about page.
+	// these two methods will request a configuration page or
+	// plugin page from plugin manager
 	// they will be deleted automatically when this plugin
-	// is deleted.
-	QFrame *createConfigurationPage (KDialogBase *dlg);	
-	QFrame *createAboutPage (QWidget *parent);
+	// is deleted, because we disconnect from pluginmanager
+	// and the plugin manager will delete all associated gui elements
+	virtual void createConfigurationPage () = 0;	
+	virtual void createAboutPage () = 0;
+
+	// save/restore status, window position, etc...
 
 	virtual void   saveState (KConfig *) const = 0;
 	virtual void   restoreState (KConfig *) = 0;
 
-protected :
-
-	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg) = 0;
-	virtual QFrame *internal_createAboutPage(QWidget *parent) = 0;
-
-	void registerGuiElement   (QObject *o);
-	void unregisterGuiElement (QObject *o);
-
+	//
+	
+	virtual void noticeWidgetPluginShown(WidgetPluginBase *, bool /*shown*/) {}
+	
 protected :
 	QString            m_name;
     PluginManager     *m_manager;
-    QPtrList<QObject>  m_guiElements;
-
-    
-    friend class WidgetDestroyNotifier;
-    
-    WidgetDestroyNotifier *m_destroyNotifier;    
 };
 
 
 
-
-class WidgetDestroyNotifier : public QObject
+class WidgetPluginBase : public PluginBase
 {
-Q_OBJECT
-public:
-	WidgetDestroyNotifier(PluginBase *parent);
-	virtual ~WidgetDestroyNotifier();
+public :
+	WidgetPluginBase(const QString &name) : PluginBase(name) {}
 
-public slots:
-	virtual void noticeDestroy(QObject *o);
+	virtual void     show () = 0;
+	virtual void     show (bool show) = 0;
+	virtual void     hide () = 0;
+
+	virtual QWidget *getWidget();
 
 protected:
-	PluginBase *m_parent;
+	virtual void showEvent(QShowEvent *) = 0;
+	virtual void hideEvent(QHideEvent *) = 0;
+
+	virtual void notifyManager(bool shown);
 };
+
 
 
 #endif

@@ -25,7 +25,6 @@
 IF_IMPL_SENDER  (  IRadioDevicePool::notifyActiveDeviceChanged(IRadioDevice *rd),
                    noticeActiveDeviceChanged(rd)      )
 
-
 // IRadioDevicePoolClient
 
 IF_IMPL_SENDER  (  IRadioDevicePoolClient::sendActiveDevice(IRadioDevice *rd, bool keepPower ),
@@ -40,5 +39,16 @@ static const QPtrList<IRadioDevice> emptyList;
 IF_IMPL_QUERY   (  const QPtrList<IRadioDevice> &IRadioDevicePoolClient::queryDevices(),
                    getDevices(),
                    emptyList                          )
+
+
+void IRadioDevicePoolClient::noticeConnected    (cmplInterface *)
+{
+	noticeActiveDeviceChanged(queryActiveDevice());
+}
+
+void IRadioDevicePoolClient::noticeDisconnected   (cmplInterface *)
+{
+	noticeActiveDeviceChanged(queryActiveDevice());
+}
 
 

@@ -22,7 +22,15 @@
 #include <linux/videodev.h>
 #include <linux/soundcard.h>
 
+#include <qlayout.h>
+
+#include <kconfig.h>
+#include <kiconloader.h>
+#include <kdialogbase.h>
+
 #include "v4lradio.h"
+#include "v4lradio-configuration.h"
+#include "pluginmanager.h"
 
 struct _lrvol { unsigned char l, r; short dummy; };
 
@@ -51,11 +59,11 @@ V4LRadio::V4LRadio(const QString &name)
 	QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
 	m_pollTimer.start(333);
 
-	m_seekHelper.connect(this);
-
 	m_tuner = new video_tuner;
 	m_tuner->tuner = 0;
 	m_audio = new video_audio;
+
+	m_seekHelper.connect(this);
 }
 
 
@@ -74,13 +82,14 @@ bool V4LRadio::connect (Interface *i)
 	bool b = IRadioSound::connect(i);
 	bool c = ISeekRadio::connect(i);
 	bool d = IFrequencyRadio::connect(i);
-
+	bool e = IV4LCfg::connect(i);
+/*
     if (a) kdDebug() << "V4LRadio: IRadioDevice connected\n";
     if (b) kdDebug() << "V4LRadio: IRadioSound connected\n";
     if (c) kdDebug() << "V4LRadio: ISeekRadio connected\n";
     if (d) kdDebug() << "V4LRadio: IFrequency connected\n";
-	
-	return a || b || c || d;
+*/
+	return a || b || c || d || e;
 }
 
 
@@ -90,13 +99,14 @@ bool V4LRadio::disconnect (Interface *i)
 	bool b = IRadioSound::disconnect(i);
 	bool c = ISeekRadio::disconnect(i);
 	bool d = IFrequencyRadio::disconnect(i);
-
+	bool e = IV4LCfg::disconnect(i);
+/*
     if (a) kdDebug() << "V4LRadio: IRadioDevice disconnected\n";
     if (b) kdDebug() << "V4LRadio: IRadioSound disconnected\n";
     if (c) kdDebug() << "V4LRadio: ISeekRadio disconnected\n";
     if (d) kdDebug() << "V4LRadio: IFrequency disconnected\n";
-
-	return a || b || c || d;
+*/
+	return a || b || c || d || e;
 }
 
 
@@ -228,7 +238,15 @@ bool V4LRadio::unmute (bool unmute)
 bool V4LRadio::setSignalMinQuality (float mq)
 {
 	m_minQuality = mq;
+	notifySignalMinQualityChanged(m_minQuality);
 	return true;
+}
+
+
+bool    V4LRadio::setStereo(bool /*b*/)
+{
+	// FIXME if possible
+	return false;  // we can't do that currently, not even switch stereo to mono
 }
 
 
@@ -286,7 +304,6 @@ bool    V4LRadio::isMuted() const
 }
 
 
-
 // ISeekRadio
 
 bool V4LRadio::startSeekUp()
@@ -301,8 +318,12 @@ bool V4LRadio::startSeekDown()
 
 bool V4LRadio::startSeek(bool up)
 {
-	m_seekHelper.start(up ? SeekHelper::up : SeekHelper::down);
-	return true;
+	if (isPowerOn()) {
+		m_seekHelper.start(up ? SeekHelper::up : SeekHelper::down);
+		return true;
+	} else {
+		return false;
+	}
 }
 
 bool V4LRadio::stopSeek()
@@ -334,7 +355,8 @@ bool V4LRadio::isSeekDownRunning() const
 
 bool V4LRadio::setFrequency(float freq)
 {
-	stopSeek();
+//	if (isSeekRunning())
+//		stopSeek();
 	
 	if (m_currentStation.frequency() == freq) {
 		return true;
@@ -353,8 +375,9 @@ bool V4LRadio::setFrequency(float freq)
 
 	  	if (freq > getMaxFrequency() || freq < getMinFrequency()) {
 	  		kdDebug() << "V4LRadio::setFrequency: "
-	                  << i18n("invalid frequency")
+	                  << i18n("invalid frequency") << " "
 	                  << freq << endl;
+            if (!oldMute) unmute();
 	    	return false;
 	    }
 
@@ -366,9 +389,9 @@ bool V4LRadio::setFrequency(float freq)
             if (!oldMute) unmute();
             return false;
         }
+
         // unmute this radio device, because we now have the current
         // radio station
-
   		if (!oldMute) unmute();
 	}
 	
@@ -457,6 +480,50 @@ float V4LRadio::getScanStep()      const
 }
 
 
+
+// IV4LCfg methods
+
+bool  V4LRadio::setRadioDevice(const QString &s)
+{
+	if (m_radioDev != s) {
+		bool p = isPowerOn();
+		powerOff();
+		m_radioDev = s;
+		setPower(p);
+	}
+	return true;
+}
+
+
+bool  V4LRadio::setMixerDevice(const QString &s, int ch)
+{
+	if (m_mixerDev != s || m_mixerChannel != ch) {
+		bool p = isPowerOn();
+		powerOff();
+		m_mixerDev = s;
+		m_mixerChannel = ch;
+		setPower(p);
+	}
+	return true;
+}
+
+
+bool  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
+{
+	if (m_radioDev != r || m_mixerDev != m || m_mixerChannel != ch) {
+		bool p = isPowerOn();
+		powerOff();
+		m_radioDev = r;
+		m_mixerDev = m;
+		m_mixerChannel = ch;
+		setPower(p);
+	}
+	return true;
+}
+
+
+
+
 // PluginBase methods
 
 void   V4LRadio::saveState (KConfig *config) const
@@ -502,26 +569,42 @@ void   V4LRadio::restoreState (KConfig *config)
 
 	m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
 	m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
+    notifyMinMaxFrequencyChanged(getMinFrequency(),getMaxFrequency());
 
 	m_minQuality            = config->readDoubleNumEntry ("signalMinQuality", 0.75);
+	notifySignalMinQualityChanged(m_minQuality);
 	m_scanStep              = config->readDoubleNumEntry ("scanStep", 0.05);
+	notifyScanStepChanged(getScanStep());
 
     setFrequency(config->readDoubleNumEntry("Frequency", 88));
     setVolume(config->readNumEntry         ("Volume",    65535));
     setPower(config->readBoolEntry         ("PowerOn",   false));
+
 }
 
 
-QFrame *V4LRadio::internal_createConfigurationPage(KDialogBase */*dlg*/)
+void V4LRadio::createConfigurationPage()
 {
-	// FIXME
-	return NULL;
+	QFrame *f = m_manager->addConfigurationPage(
+	  this,
+      i18n("V4L Radio Options"),
+	  i18n("V4L Radio Options"),
+	  KGlobal::instance()->iconLoader()->loadIcon( "package_utilities", KIcon::NoGroup, KIcon::SizeMedium )
+    );
+
+    QGridLayout *l = new QGridLayout(f);
+    l->setSpacing( 0 );
+    l->setMargin( 0 );
+
+    V4LRadioConfiguration *v4lconf = new V4LRadioConfiguration(f, this);
+    connect(v4lconf);
+    l->addWidget( v4lconf, 0, 0 );
 }
 
-QFrame *V4LRadio::internal_createAboutPage(QWidget */*parent*/)
+
+void V4LRadio::createAboutPage()
 {
 	// FIXME
-	return NULL;
 }
 	
 ////////////////////////////////////////
@@ -529,7 +612,8 @@ QFrame *V4LRadio::internal_createAboutPage(QWidget */*parent*/)
 
 void V4LRadio::radio_init()
 {
-	stopSeek();
+	if (isSeekRunning())
+		stopSeek();
 	
 	m_mixer_fd = open(m_mixerDev, O_RDONLY);
 	if (m_mixer_fd <= 0) {
@@ -566,7 +650,8 @@ void V4LRadio::radio_init()
 
 void V4LRadio::radio_done()
 {
-	stopSeek();
+	if (isSeekRunning())
+		stopSeek();
 	
 	if (m_radio_fd > 0) close (m_radio_fd);
 	if (m_mixer_fd > 0) close (m_mixer_fd);
@@ -614,42 +699,6 @@ int V4LRadio::set_treble(__u16 ltreble)
 
 */
 
-
-
-void  V4LRadio::setRadioDevice(const QString &s)
-{
-	if (m_radioDev != s) {
-		bool p = isPowerOn();
-		powerOff();
-		m_radioDev = s;
-		setPower(p);
-	}
-}
-
-
-void  V4LRadio::setMixerDevice(const QString &s, int ch)
-{
-	if (m_mixerDev != s || m_mixerChannel != ch) {
-		bool p = isPowerOn();
-		powerOff();
-		m_mixerDev = s;
-		m_mixerChannel = ch;
-		setPower(p);
-	}
-}
-
-
-void  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
-{
-	if (m_radioDev != r || m_mixerDev != m || m_mixerChannel != ch) {
-		bool p = isPowerOn();
-		powerOff();
-		m_radioDev = r;
-		m_mixerDev = m;
-		m_mixerChannel = ch;
-		setPower(p);
-	}
-}
 
 
 bool V4LRadio::readTunerInfo() const

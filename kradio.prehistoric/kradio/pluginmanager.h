@@ -18,18 +18,21 @@
 #ifndef KRADIO_PLUGINMANAGER_INTERFACES_H
 #define KRADIO_PLUGINMANAGER_INTERFACES_H
 
-#include "interfaces.h"
 #include <qstring.h>
+#include <qptrdict.h>
+
+#include "interfaces.h"
 
 class PluginBase;
-class KDialogBase;
+class WidgetPluginBase;
+class PluginConfigurationDialog;
 class QWidget;
 class KConfig;
 
 class PluginManager
 {
 public :
-	         PluginManager();
+	         PluginManager(const QString &configDialogTitle);
 	virtual ~PluginManager();
 
 
@@ -46,19 +49,39 @@ public :
 
 	// operations on all plugins
 
-	virtual KDialogBase* createSetupDialog(QWidget *parent = 0,
-		                                   const QString &title = QString(),
-		                                   bool modal = true);
-
 	virtual void         saveState    (KConfig *) const;
 	virtual void         restoreState (KConfig *);
 
-protected :
+	// configuration dialog handling
 
+	virtual PluginConfigurationDialog *getConfigDialog() { return m_configDialog; }
+
+    virtual QFrame      *addConfigurationPage (PluginBase *forWhom,
+                                               const QString &itemname,
+									           const QString &header,
+									           const QPixmap &icon);
+	
+	virtual void         noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
+	
+protected :
+	virtual void         createConfigDialog(const QString &title = QString());
+
+
+	// PluginManager's data & types ;)
+protected:
     typedef QPtrList<PluginBase>           PluginList;
     typedef QPtrListIterator<PluginBase>   PluginIterator;
+    typedef QPtrDict<QFrame>               QFrameDict;
+    typedef QPtrDictIterator<QFrame>       QFrameDictIterator;
+    
 
     PluginList   m_plugins;
+    QFrameDict   m_configPages;
+    
+    PluginConfigurationDialog *m_configDialog;
 };
+
+
+
 
 #endif

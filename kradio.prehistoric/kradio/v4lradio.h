@@ -28,6 +28,7 @@
 #include "plugins.h"
 #include "frequencyradiostation.h"
 #include "frequencyseekhelper.h"
+#include "v4lcfg_interfaces.h"
 
 
 class V4LRadio : public QObject,
@@ -35,7 +36,8 @@ class V4LRadio : public QObject,
                  public IRadioDevice,
                  public IRadioSound,
                  public ISeekRadio,
-                 public IFrequencyRadio
+                 public IFrequencyRadio,
+                 public IV4LCfg
 {
 Q_OBJECT
 public:
@@ -54,9 +56,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-protected:
-	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
-	virtual QFrame *internal_createAboutPage(QWidget *parent);
+	virtual void   createConfigurationPage();
+	virtual void   createAboutPage();
 
 	// IRadioDevice methods
 
@@ -79,6 +80,7 @@ RECEIVERS:
 	virtual bool mute (bool mute = true);
 	virtual bool unmute (bool unmute = true);
 	virtual bool setSignalMinQuality(float q);
+	virtual bool setStereo(bool s);
 
 ANSWERS:
 	virtual float   getVolume() const;
@@ -119,17 +121,19 @@ ANSWERS:
 	virtual float getMaxDeviceFrequency()  const;
 	virtual float getScanStep()            const;
 
-    // anything else
-public:
 
+	// IV4LCfg
+RECEIVERS:
+    bool  setRadioDevice (const QString &s);
+    bool  setMixerDevice (const QString &s, int ch);
+    bool  setDevices (const QString &r, const QString &m, int ch);
+
+ANSWERS:
     const QString &getRadioDevice () const { return m_radioDev; }
-    void           setRadioDevice (const QString &s);
-
     const QString &getMixerDevice () const { return m_mixerDev; }
-    void           setMixerDevice (const QString &s, int ch);
+    int            getMixerChannel() const { return m_mixerChannel; }
 
-    void  setDevices (const QString &r, const QString &m, int ch);
-    int   getMixerChannel() const { return m_mixerChannel; }
+    // anything else
 
 protected slots:
 	void  poll();

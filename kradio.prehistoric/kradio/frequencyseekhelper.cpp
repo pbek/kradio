@@ -38,10 +38,10 @@ bool FrequencySeekHelper::connect   (Interface *i)
 {
 	bool a = SeekHelper::connect(i);
 	bool b = IFrequencyRadioClient::connect(i);
-
+/*
     if (a) kdDebug() << "FrequencySeekHelper: SeekHelper connected\n";
     if (b) kdDebug() << "FrequencySeekHelper: IFrequencyRadioClient connected\n";
-
+*/
 	return a || b;
 }
 
@@ -50,10 +50,10 @@ bool FrequencySeekHelper::disconnect(Interface *i)
 {
 	bool a = SeekHelper::disconnect(i);
 	bool b = IFrequencyRadioClient::disconnect(i);
-
+/*
     if (a) kdDebug() << "FrequencySeekHelper: SeekHelper disconnected\n";
     if (b) kdDebug() << "FrequencySeekHelper: IFrequencyRadioClient disconnected\n";
-
+*/
 	return a || b;
 }
 
@@ -69,6 +69,7 @@ bool FrequencySeekHelper::nextSeekStep()
 {
 	float f = queryFrequency();
 	f += (m_direction == up ? 1 : -1) * queryScanStep();
+
 	if (f > queryMaxFrequency() || f < queryMinFrequency())
 		return false;
 

@@ -31,7 +31,7 @@ class IRadioDevice;
 INTERFACE(IRadioDevicePool, IRadioDevicePoolClient)
 {
 public:
-	IRadioDevicePool() : IRadioDevicePool::BaseClass(-1) {}
+	IF_CON_DESTRUCTOR(IRadioDevicePool, -1)
 
 RECEIVERS:
 	IF_RECEIVER(  setActiveDevice(IRadioDevice *rd, bool keepPower = true))
@@ -42,13 +42,14 @@ SENDERS:
 ANSWERS:
 	IF_ANSWER  (  IRadioDevice                  * getActiveDevice() const )
 	IF_ANSWER  (  const QPtrList<IRadioDevice>  & getDevices() const      )
+
 };
 
 
 INTERFACE(IRadioDevicePoolClient, IRadioDevicePool)
 {
 public:
-	IRadioDevicePoolClient() : IRadioDevicePoolClient::BaseClass(1) {}
+	IF_CON_DESTRUCTOR(IRadioDevicePoolClient, -1)
 
 SENDERS:
 	IF_SENDER  (  sendActiveDevice(IRadioDevice *rd, bool keepPower = true))
@@ -59,6 +60,10 @@ RECEIVERS:
 QUERIES:
 	IF_QUERY   (  IRadioDevice                  *queryActiveDevice()      )
 	IF_QUERY   (  const QPtrList<IRadioDevice>  &queryDevices()           )
+
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 

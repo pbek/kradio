@@ -224,14 +224,14 @@ void    TimeControl::saveState    (KConfig *config) const
 	config->writeEntry("countdownSeconds",  m_countdownSeconds);
 }
 
-QFrame *TimeControl::internal_createConfigurationPage(KDialogBase */*dlg*/)
+
+void TimeControl::createConfigurationPage()
 {
 	// FIXME
-	return NULL;
 }
 
-QFrame *TimeControl::internal_createAboutPage(QWidget */*parent*/)
+
+void TimeControl::createAboutPage()
 {
 	// FIXME
-	return NULL;
 }

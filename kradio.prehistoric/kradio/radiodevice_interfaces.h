@@ -42,7 +42,7 @@ class KURL;
 INTERFACE(IRadioDevice, IRadioDeviceClient)
 {
 public:
-	IRadioDevice() : IRadioDevice::BaseClass(-1) {}
+	IF_CON_DESTRUCTOR(IRadioDevice, -1)
 
 RECEIVERS:
 	IF_RECEIVER(  setPower(bool on)                                )
@@ -58,6 +58,7 @@ ANSWERS:
 	IF_ANSWER  (  bool                   isPowerOn() const         )
 	IF_ANSWER  (  bool                   isPowerOff() const        )
 	IF_ANSWER  (  const RadioStation  &  getCurrentStation() const )
+
 };
 
 
@@ -65,7 +66,8 @@ ANSWERS:
 INTERFACE(IRadioDeviceClient, IRadioDevice)
 {
 public :
-	IRadioDeviceClient(int _maxConnections = 1) : IRadioDeviceClient::BaseClass(_maxConnections) {}
+	IF_CON_DESTRUCTOR(IRadioDeviceClient, 1)
+	IRadioDeviceClient(int _maxConnections) : IRadioDeviceClient::BaseClass(_maxConnections) {}
 
 SENDERS:
 	IF_SENDER  (  sendPower(bool on)                                 )
@@ -81,6 +83,10 @@ QUERIES:
 	IF_QUERY   (  bool                   queryIsPowerOn()             )
 	IF_QUERY   (  bool                   queryIsPowerOff()            )
 	IF_QUERY   (  const RadioStation  &  queryCurrentStation()     )
+
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 
@@ -89,46 +95,50 @@ QUERIES:
 INTERFACE(IRadioSound, IRadioSoundClient)
 {
 public :
-	IRadioSound() : IRadioSound::BaseClass(-1) {}
+	IF_CON_DESTRUCTOR(IRadioSound, -1)
 
 RECEIVERS:
 	IF_RECEIVER(  setVolume (float v)                            )
 	IF_RECEIVER(  mute (bool mute)                               )
 	IF_RECEIVER(  unmute (bool unmute)                           )
 	IF_RECEIVER(  setSignalMinQuality(float q)                   )
+	IF_RECEIVER(  setStereo(bool s)                              )
 
 SENDERS:
 	IF_SENDER  (  notifyVolumeChanged(float v)                   )
+	IF_SENDER  (  notifyMuted(bool m)                            )
 	IF_SENDER  (  notifySignalQualityChanged(float q)            )
 	IF_SENDER  (  notifySignalQualityChanged(bool good)          )
+	IF_SENDER  (  notifySignalMinQualityChanged(float q)         )
 	IF_SENDER  (  notifyStereoChanged(bool  s)                   )
-	IF_SENDER  (  notifyMuted(bool m)                            )
 
 ANSWERS:
 	IF_ANSWER  (  float   getVolume() const                      )
+	IF_ANSWER  (  bool    isMuted() const                        )
 	IF_ANSWER  (  float   getSignalQuality() const               )
 	IF_ANSWER  (  float   getSignalMinQuality() const            )
 	IF_ANSWER  (  bool    hasGoodQuality() const                 )
 	IF_ANSWER  (  bool    isStereo() const                       )
-	IF_ANSWER  (  bool    isMuted() const                        )
 };
 
 
 INTERFACE(IRadioSoundClient, IRadioSound)
 {
 public :
-	IRadioSoundClient() : IRadioSoundClient::BaseClass(1) {}
+	IF_CON_DESTRUCTOR(IRadioSoundClient, 1)
 
 SENDERS:
 	IF_SENDER  (  sendVolume (float v)                           )
 	IF_SENDER  (  sendMute (bool mute = true)                    )
 	IF_SENDER  (  sendUnmute (bool unmute = true)                )
 	IF_SENDER  (  sendSignalMinQuality (float q)                 )
+	IF_SENDER  (  sendStereo(bool s)                             )
 
 RECEIVERS:
 	IF_RECEIVER(  noticeVolumeChanged(float v)                   )
 	IF_RECEIVER(  noticeSignalQualityChanged(float q)            )
 	IF_RECEIVER(  noticeSignalQualityChanged(bool good)          )
+	IF_RECEIVER(  noticeSignalMinQualityChanged(float q)         )
 	IF_RECEIVER(  noticeStereoChanged(bool  s)                   )
 	IF_RECEIVER(  noticeMuted(bool m)                            )
 
@@ -136,20 +146,23 @@ QUERIES:
 	IF_QUERY   (  float   queryVolume()                          )
 	IF_QUERY   (  float   querySignalQuality()                   )
 	IF_QUERY   (  float   querySignalMinQuality()                )
-	IF_QUERY   (  bool    queryHasGoodQuality()                   )
+	IF_QUERY   (  bool    queryHasGoodQuality()                  )
 	IF_QUERY   (  bool    queryIsStereo()                        )
 	IF_QUERY   (  bool    queryIsMuted()                         )
+
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 
 /////////////////////////////////////////////////////////////////////////////
 INTERFACE(ISeekRadio, ISeekRadioClient)
 {
-
     friend class SeekHelper;
 
 public :
-	ISeekRadio() : ISeekRadio::BaseClass(-1) {}
+	IF_CON_DESTRUCTOR(ISeekRadio, -1)
 
 RECEIVERS:
 	IF_RECEIVER(  startSeek (bool up)                            )
@@ -172,7 +185,7 @@ ANSWERS:
 INTERFACE(ISeekRadioClient, ISeekRadio)
 {
 public :
-	ISeekRadioClient() : ISeekRadioClient::BaseClass(1) {}
+	IF_CON_DESTRUCTOR(ISeekRadioClient, 1)
 
 SENDERS:
 	IF_SENDER  (  sendStartSeek (bool up)                             )
@@ -189,6 +202,10 @@ QUERIES:
     IF_QUERY  (  bool queryIsSeekRunning()                            )
     IF_QUERY  (  bool queryIsSeekUpRunning()                          )
     IF_QUERY  (  bool queryIsSeekDownRunning()                        )
+
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 
@@ -198,7 +215,7 @@ QUERIES:
 INTERFACE(IFrequencyRadio, IFrequencyRadioClient)
 {
 public :
-	IFrequencyRadio() : IFrequencyRadio::BaseClass(-1) {}
+	IF_CON_DESTRUCTOR(IFrequencyRadio, -1)
 
 RECEIVERS:
 	IF_RECEIVER(  setFrequency(float f)                                          )
@@ -225,7 +242,7 @@ ANSWERS:
 INTERFACE(IFrequencyRadioClient, IFrequencyRadio)
 {
 public :
-	IFrequencyRadioClient() : IFrequencyRadioClient::BaseClass(1) {}
+	IF_CON_DESTRUCTOR(IFrequencyRadioClient, 1)
 
 SENDERS:
 	IF_SENDER  (  sendFrequency(float f)                                         )
@@ -246,6 +263,10 @@ QUERIES:
 	IF_QUERY   (  float queryMaxFrequency()                                      )
 	IF_QUERY   (  float queryMaxDeviceFrequency()                                )
 	IF_QUERY   (  float queryScanStep()                                          )
+
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 
@@ -254,17 +275,16 @@ QUERIES:
 INTERFACE(IInternetRadio, IInternetRadioClient)
 {
 public :
-	IInternetRadio() : IInternetRadio::BaseClass(-1) {}
+	IF_CON_DESTRUCTOR(IInternetRadio, -1)
 
 RECEIVERS:
 	IF_RECEIVER(  setURL(const KURL &url)                                        )
 
 SENDERS:
-	IF_SENDER  (  notifyURLChanged(const KURL &u, const RadioStation &s)         )
+	IF_SENDER  (  notifyURLChanged(const KURL &u)                                )
 
 ANSWERS:
 	IF_ANSWER  (  const KURL &          getURL() const                           )
- 	IF_ANSWER  (  const RadioStation &  getStation (const KURL &url) const       )
 };
 
 
@@ -273,17 +293,21 @@ ANSWERS:
 INTERFACE(IInternetRadioClient, IInternetRadio)
 {
 public :
-	IInternetRadioClient() : IInternetRadioClient::BaseClass(1) {}
+	IF_CON_DESTRUCTOR(IInternetRadioClient, 1)
 
 
 SENDERS:
 	IF_SENDER  (  sendURL(const KURL &url)                                       )
 
 RECEIVERS:
-	IF_RECEIVER(  noticeURLChanged(const KURL &url, const RadioStation &s)       )
+	IF_RECEIVER(  noticeURLChanged(const KURL &url)                              )
 
 QUERIES:
 	IF_QUERY   (  const KURL &queryURL()                                         )
+
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 

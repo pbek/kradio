@@ -37,7 +37,7 @@
 INTERFACE(ITimeControl, ITimeControlClient)
 {
 public :
-	ITimeControl() : ITimeControl::BaseClass(-1) {}
+	IF_CON_DESTRUCTOR(ITimeControl, -1)
 
 RECEIVERS:
     IF_RECEIVER(    setAlarms(const AlarmVector &sl)                 )
@@ -68,7 +68,7 @@ ANSWERS:
 INTERFACE(ITimeControlClient, ITimeControl)
 {
 public :
-	ITimeControlClient() : ITimeControlClient::BaseClass(1) {}
+	IF_CON_DESTRUCTOR(ITimeControlClient, 1)
 
 SENDERS:
     IF_SENDER  (    sendAlarms(const AlarmVector &sl)                )
@@ -93,6 +93,9 @@ QUERIES:
     IF_QUERY   (    int                 queryCountdownSeconds ()     )
     IF_QUERY   (    QDateTime           queryCountdownEnd ()         )
 
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 

@@ -42,7 +42,7 @@ class StationList;
 INTERFACE(IRadio, IRadioClient)
 {
 public :
-    IRadio() : IRadio::BaseClass (-1) {}
+	IF_CON_DESTRUCTOR(IRadio, -1)
 
 RECEIVERS:
 	IF_RECEIVER(  powerOn()                                      )
@@ -69,8 +69,10 @@ ANSWERS:
 
 INTERFACE(IRadioClient, IRadio)
 {
+friend class IRadio;
+
 public :
-    IRadioClient() : IRadioClient::BaseClass (-1) {}
+	IF_CON_DESTRUCTOR(IRadioClient, 1)
 
 SENDERS:
 	IF_SENDER  (  sendPowerOn()                                      )
@@ -92,6 +94,9 @@ QUERIES:
 	IF_QUERY   (  int                    queryCurrentStationIdx()  )
 	IF_QUERY   (  const StationList &    queryStations()           )
 
+RECEIVERS:
+	virtual void noticeConnected    (cmplInterface *);
+	virtual void noticeDisconnected (cmplInterface *);
 };
 
 

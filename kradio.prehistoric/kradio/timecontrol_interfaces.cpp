@@ -39,6 +39,7 @@ IF_IMPL_SENDER  (  ITimeControl::notifyCountdownStopped(),
 IF_IMPL_SENDER  (  ITimeControl::notifyCountdownZero(),
                    noticeCountdownZero()                                     )
 
+                   
 // ITimeControlClient
 
 IF_IMPL_SENDER  (  ITimeControlClient::sendAlarms(const AlarmVector &sl),
@@ -73,4 +74,29 @@ IF_IMPL_QUERY   (  int            ITimeControlClient::queryCountdownSeconds (),
 IF_IMPL_QUERY   (  QDateTime      ITimeControlClient::queryCountdownEnd (),
                    getCountdownEnd(),
                    QDateTime()                                               )
+
+
+void ITimeControlClient::noticeConnected(cmplInterface *)
+{
+	noticeAlarmsChanged(queryAlarms());
+	noticeNextAlarmChanged(queryNextAlarm());
+	QDateTime end = queryCountdownEnd();
+	if (end > QDateTime::currentDateTime())
+		noticeCountdownStarted(end);
+	else
+		noticeCountdownStopped();
+}
+
+
+void ITimeControlClient::noticeDisconnected(cmplInterface *)
+{
+	noticeAlarmsChanged(queryAlarms());
+	noticeNextAlarmChanged(queryNextAlarm());
+	QDateTime end = queryCountdownEnd();
+	if (end > QDateTime::currentDateTime())
+		noticeCountdownStarted(end);
+	else
+		noticeCountdownStopped();
+}
+
 

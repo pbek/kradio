@@ -50,11 +50,11 @@ bool RadioDocking::connect (Interface *i)
 	bool a = IRadioClient::connect(i);
 	bool b = ITimeControlClient::connect(i);
 	bool c = IRadioDevicePoolClient::connect(i);
-
+/*
     if (a) kdDebug() << "V4LRadio: IRadioClient connected\n";
     if (b) kdDebug() << "V4LRadio: ITimeControlClient connected\n";
     if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient connected\n";
-
+*/
 	return a || b || c;
 }
 
@@ -64,11 +64,11 @@ bool RadioDocking::disconnect (Interface *i)
 	bool a = IRadioClient::disconnect(i);
 	bool b = ITimeControlClient::disconnect(i);
 	bool c = IRadioDevicePoolClient::disconnect(i);
-
+/*
     if (a) kdDebug() << "V4LRadio: IRadioClientClient disconnected\n";
     if (b) kdDebug() << "V4LRadio: ITimeControlClient disconnected\n";
     if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient disconnected\n";
-
+*/
 	return a || b || c;
 }
 
@@ -102,16 +102,14 @@ void RadioDocking::saveState (KConfig *config) const
 }
 
 
-QFrame *RadioDocking::internal_createConfigurationPage(KDialogBase */*dlg*/)
+void RadioDocking::createConfigurationPage()
 {
 	// FIXME
-	return NULL;
 }
 
-QFrame *RadioDocking::internal_createAboutPage(QWidget */*parent*/)
+void RadioDocking::createAboutPage()
 {
 	// FIXME
-	return NULL;
 }
 
 

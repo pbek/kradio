@@ -65,3 +65,18 @@ IF_IMPL_QUERY   (  const StationList &  IRadioClient::queryStations(),
                    getStations(),
                    emptyStationList               )
 
+
+void IRadioClient::noticeConnected    (cmplInterface *)
+{
+	noticeStationsChanged(queryStations());
+	noticeStationChanged (queryCurrentStation(), queryCurrentStationIdx());
+	noticePowerChanged   (queryIsPowerOn());
+}
+
+void IRadioClient::noticeDisconnected   (cmplInterface *)
+{
+	noticeStationsChanged(queryStations());
+	noticeStationChanged(queryCurrentStation(), queryCurrentStationIdx());
+	noticePowerChanged(queryIsPowerOn());
+}
+

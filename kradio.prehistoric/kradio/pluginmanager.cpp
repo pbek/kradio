@@ -17,19 +17,37 @@
 
 #include "plugins.h"
 #include "pluginmanager.h"
-#include <kdialogbase.h>
+#include "plugin_configuration_dialog.h"
 #include <kdebug.h>
 
-PluginManager::PluginManager()
+PluginManager::PluginManager(const QString &configDialogTitle)
+ : m_configDialog (NULL)
 {
+	createConfigDialog(configDialogTitle);
 }
 
 
 PluginManager::~PluginManager()
 {
-	PluginBase *p = NULL;
-	while ((p = m_plugins.getFirst())) {
+	// config Dialog must be deleted first, so we can clear m_configPages
+	// without problems (this is the only place where our config dialog is deleted)
+	// Without clearing this list, those pages would be deleted, but
+	// we would try to delete them another time when the associated plugin is
+	// deleted, because m_configPages is out of date.
+	delete m_configDialog;
+	m_configPages.clear();
+	m_configDialog = NULL;
+
+	while (PluginBase *p = m_plugins.getFirst()) {
 		deletePlugin(p);
+	}
+}
+
+
+void PluginManager::noticeWidgetPluginShown(WidgetPluginBase *p, bool shown)
+{
+	for (PluginIterator it(m_plugins); it.current(); ++it) {
+		it.current()->noticeWidgetPluginShown(p, shown);
 	}
 }
 
@@ -39,14 +57,17 @@ void PluginManager::insertPlugin(PluginBase *p)
 	if (p) {
 		m_plugins.append(p);
 		p->setManager(this);
+		p->createConfigurationPage();
 
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
 			if (it.current() != p) {
-				bool r = p->connect(it.current());
-				kdDebug() << "PluginManager::insertPlugin: "
+/*				bool r = */
+                p->connect(it.current());
+/*				kdDebug() << "PluginManager::insertPlugin: "
 				          << p->name() << " <-> " << it.current()->name()
 				          << ": "
 				          << (r ? "ok" : "failed") << endl;
+*/
 			}
 		}
 	}
@@ -67,38 +88,66 @@ void PluginManager::removePlugin(PluginBase *p)
 	if (p && m_plugins.contains(p)) {
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
 			if (it.current() != p) {
-				bool r = p->disconnect(it.current());
-				kdDebug() << "PluginManager::removePlugin: "
+/*				bool r = */
+                p->disconnect(it.current());
+/*				kdDebug() << "PluginManager::removePlugin: "
 				          << p->name() << " <-> " << it.current()->name()
 				          << ": "
 				          << (r ? "ok" : "failed") << endl;
-			}
+*/			}
+		}
+
+		// remove config page from config dialog, only chance is to delete it
+		// plugin will be notified automatically (mechanism implemented by
+		// PluginBase)
+		while (QFrame *f = m_configPages.find(p)) {
+			m_configPages.remove(p);
+			delete f;			
 		}
 		
+		// remove bindings between me and plugin
 		m_plugins.remove(p);
 		p->unsetManager();
 	}
 }
 
 
-KDialogBase *PluginManager::createSetupDialog(QWidget *parent,
-                                              const QString &title,
-                                              bool modal)
+QFrame *PluginManager::addConfigurationPage (PluginBase *forWhom,
+                                             const QString &itemname,
+                                             const QString &header,
+                                             const QPixmap &icon)
 {
-	KDialogBase *sud = new KDialogBase( KDialogBase::IconList,
-	                                    title,
-								    	KDialogBase::Apply|KDialogBase::Ok|KDialogBase::Cancel,
-    									KDialogBase::Ok,
-                                        parent, title, modal, true);
+	if (!forWhom || !m_plugins.containsRef(forWhom) || !m_configDialog)
+		return NULL;
+		
+	QFrame *f = m_configDialog->addPage( itemname, header, icon );
+	m_configPages.insert(forWhom, f);
+	return f;
+}
+
+
+void PluginManager::createConfigDialog(const QString &title)
+{
+	PluginConfigurationDialog *cfg = new PluginConfigurationDialog(
+	    KDialogBase::IconList,
+	    title,
+		KDialogBase::Apply|KDialogBase::Ok|KDialogBase::Cancel,
+    	KDialogBase::Ok,
+        /*parent = */ NULL,
+        title,
+        /*modal = */ false,
+        true);
+
+    m_configDialog = cfg;
+
+    insertPlugin(cfg);
 
 	// FIXME:
 	// add an own page for plugin management
 
-	for (PluginIterator i(m_plugins); sud && i.current(); ++i) {
-		i.current()->createConfigurationPage(sud);
+	for (PluginIterator i(m_plugins); m_configDialog && i.current(); ++i) {
+		i.current()->createConfigurationPage();
 	}
-
-	return sud;
 }
 
 

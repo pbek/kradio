@@ -62,9 +62,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-protected:
-	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
-	virtual QFrame *internal_createAboutPage(QWidget *parent);
+	virtual void   createConfigurationPage();
+	virtual void   createAboutPage();
 
 
     // IRadio methods
@@ -88,7 +87,10 @@ ANSWERS:
 
 public:
 	bool connect    (Interface *i);
-	bool disconnect (Interface *i);				
+	bool disconnect (Interface *i);
+
+	void noticeConnected (IRadioDeviceClient::cmplInterface *i);
+	void noticeDisconnect(IRadioDeviceClient::cmplInterface *i);
 
 	// IRadioDevicePool methods
 
@@ -118,9 +120,6 @@ RECEIVERS:
 	virtual bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
 	virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
 
-	virtual void noticeConnected(IRadioDevice *rd);
-	virtual void noticeDisconnect(IRadioDevice *rd);
-	
 protected:
 
 	QString        m_presetFile;

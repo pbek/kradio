@@ -112,7 +112,7 @@ QString RadioStation::createStationID() const
 	for (int i = 0; i < buffersize; ++i)
 		srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
 
-    kdDebug() << i18n("generated StationID: ") << stime << srandom << endl;
+    // kdDebug() << i18n("generated StationID: ") << stime << srandom << endl;
 	
 	return stime + srandom;
 }

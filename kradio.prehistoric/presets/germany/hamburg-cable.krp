@@ -9,6 +9,15 @@
 			<comments></comments>
 		</info>
 		<station>
+			<name>NDR 2</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+ 			<frequency>87.5625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
 			<name>Radio Hamburg</name>
 			<shortname>RHH </shortname>
 			<icon></icon>
@@ -27,7 +36,7 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>NDR 1 Radio Niederachsen</name>
+			<name>NDR 1 Radio Niedersachsen</name>
 			<shortname>NDR 1 RN</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
@@ -45,8 +54,8 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>NDR 4 Mittelwelle</name>
-			<shortname>NDR 4 MW</shortname>
+			<name>NDR 4 Info Spezial</name>
+			<shortname>NDR 4</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>90.15</frequency>
@@ -77,6 +86,15 @@
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>91.85</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR Info</name>
+			<shortname>NDR Info</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.3125</frequency>
 			<volumepreset>-1</volumepreset>
 			<dockingmenu>1</dockingmenu>
 		</station>
@@ -126,8 +144,8 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>Radio 3</name>
-			<shortname>Radio 3</shortname>
+			<name>NDR Kultur</name>
+			<shortname>NDR Kultur</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>95.75</frequency>
@@ -153,8 +171,8 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>Fun Fun Radio 95.0</name>
-			<shortname>FFR</shortname>
+			<name>Oldie 95</name>
+			<shortname>O95</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>97.25</frequency>
@@ -216,6 +234,15 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
+			<name>BBC</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
 			<name>FSK Freies Sender Kombinat</name>
 			<shortname>FSK</shortname>
 			<icon></icon>
@@ -270,8 +297,8 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>Funkhaus Europa</name>
-			<shortname>Funkhaus</shortname>
+			<name>Radio 21</name>
+			<shortname>R21</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>105.2</frequency>
@@ -288,7 +315,7 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>Antenne MV</name>
+			<name>Antenne Mecklenburg-Vorpommern</name>
 			<shortname>Antenne MV</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>

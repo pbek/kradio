@@ -37,6 +37,7 @@
 
 KRadioApp::KRadioApp()
 //  : setupDialog(0, false)
+  : PluginManager ("KRadio Configuration")
 {
     config = KGlobal::config();
 

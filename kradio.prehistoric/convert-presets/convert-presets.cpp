@@ -160,6 +160,10 @@ int main(int argc, char *argv[])
 				kdDebug() << x << ": ok" << endl;
 	    }
     }
+    if (args->count() == 0) {
+        kdDebug() << "no input" << endl;
+        return -1;
+    }
 
     return 0;
 }

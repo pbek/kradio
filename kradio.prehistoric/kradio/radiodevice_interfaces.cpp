@@ -48,6 +48,22 @@ IF_IMPL_QUERY   (  const RadioStation  &  IRadioDeviceClient::queryCurrentStatio
                    getCurrentStation(),
                    undefinedRadioStation          )
 
+void IRadioDeviceClient::noticeConnected    (cmplInterface *c)
+{
+	noticePowerChanged(queryIsPowerOn());
+	noticeStationChanged(queryCurrentStation(), c);
+}
+
+void IRadioDeviceClient::noticeDisconnected    (cmplInterface *c)
+{
+	noticePowerChanged(queryIsPowerOn());
+	noticeStationChanged(queryCurrentStation(), c);
+}
+
+
+
+
+                   
 // IRadioSound
 
 IF_IMPL_SENDER  (  IRadioSound::notifyVolumeChanged(float v),
@@ -56,11 +72,13 @@ IF_IMPL_SENDER  (  IRadioSound::notifySignalQualityChanged(float q),
                    noticeSignalQualityChanged(q)           )
 IF_IMPL_SENDER  (  IRadioSound::notifySignalQualityChanged(bool good),
                    noticeSignalQualityChanged(good)        )
+IF_IMPL_SENDER  (  IRadioSound::notifySignalMinQualityChanged(float q),
+                   noticeSignalMinQualityChanged(q)
+                )
 IF_IMPL_SENDER  (  IRadioSound::notifyStereoChanged(bool  s),
                    noticeStereoChanged(s)                   )
 IF_IMPL_SENDER  (  IRadioSound::notifyMuted(bool m),
                    noticeMuted(m)                           )
-
 
 // IRadioSoundClient
 
@@ -72,6 +90,9 @@ IF_IMPL_SENDER  (  IRadioSoundClient::sendUnmute (bool unmute),
                    unmute (unmute)                            )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendSignalMinQuality (float q),
                    setSignalMinQuality (q)                  )
+IF_IMPL_SENDER  (  IRadioSoundClient::sendStereo(bool s),
+                   setStereo(s)
+                )
 
 IF_IMPL_QUERY   (  float  IRadioSoundClient::queryVolume(),
                    getVolume(),
@@ -93,6 +114,31 @@ IF_IMPL_QUERY   (  bool   IRadioSoundClient::queryIsMuted(),
                    true               )
 
 
+void IRadioSoundClient::noticeConnected    (cmplInterface *)
+{
+	noticeVolumeChanged          (queryVolume());
+	noticeSignalQualityChanged   (querySignalQuality());
+	noticeSignalQualityChanged   (queryHasGoodQuality());
+	noticeSignalMinQualityChanged(querySignalMinQuality());
+	noticeStereoChanged          (queryIsStereo());
+	noticeMuted                  (queryIsMuted());
+}
+
+
+void IRadioSoundClient::noticeDisconnected   (cmplInterface *)
+{
+	noticeVolumeChanged          (queryVolume());
+	noticeSignalQualityChanged   (querySignalQuality());
+	noticeSignalQualityChanged   (queryHasGoodQuality());
+	noticeSignalMinQualityChanged(querySignalMinQuality());
+	noticeStereoChanged          (queryIsStereo());
+	noticeMuted                  (queryIsMuted());
+}
+
+
+
+
+
 // ISeekRadio
 
 IF_IMPL_SENDER  (  ISeekRadio::notifySeekStarted (bool up),
@@ -101,6 +147,7 @@ IF_IMPL_SENDER  (  ISeekRadio::notifySeekStopped (),
                    noticeSeekStopped ()                           )
 IF_IMPL_SENDER  (  ISeekRadio::notifySeekFinished (const RadioStation &s),
                    noticeSeekFinished (s)                         )
+
 
 // ISeekRadioClient
 
@@ -122,6 +169,21 @@ IF_IMPL_QUERY   (  bool ISeekRadioClient::queryIsSeekUpRunning(),
 IF_IMPL_QUERY   (  bool ISeekRadioClient::queryIsSeekDownRunning(),
                    isSeekDownRunning(),
                    false                                          )
+
+void ISeekRadioClient::noticeConnected    (cmplInterface *)
+{
+	if (queryIsSeekRunning())
+		noticeSeekStarted(queryIsSeekUpRunning());
+	else
+		noticeSeekStopped();
+}
+
+
+void ISeekRadioClient::noticeDisconnected   (cmplInterface *)
+{
+	noticeSeekStopped();
+}
+
 
 // IFrequencyRadio
 
@@ -162,13 +224,31 @@ IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryMaxDeviceFrequency(),
                    0                                              )
 IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryScanStep(),
                    getScanStep(),
-                   1                                              )
+                   0.05                                           )
+
+void IFrequencyRadioClient::noticeConnected    (cmplInterface *)
+{
+	noticeFrequencyChanged(queryFrequency(), NULL);
+	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
+	noticeDeviceMinMaxFrequencyChanged(queryMinDeviceFrequency(), queryMaxDeviceFrequency());
+	noticeScanStepChanged(queryScanStep());
+}
+
+
+void IFrequencyRadioClient::noticeDisconnected   (cmplInterface *)
+{
+	noticeFrequencyChanged(queryFrequency(), NULL);
+	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
+	noticeDeviceMinMaxFrequencyChanged(queryMinDeviceFrequency(), queryMaxDeviceFrequency());
+	noticeScanStepChanged(queryScanStep());
+}
+
+
 
 // IInternetRadio
 
-IF_IMPL_SENDER  (  IInternetRadio::notifyURLChanged(const KURL &u, const RadioStation &s),
-                   noticeURLChanged(u, s)                         )
-
+IF_IMPL_SENDER  (  IInternetRadio::notifyURLChanged(const KURL &u),
+                   noticeURLChanged(u)                            )
 
 // IInternetRadioClient
 
@@ -182,5 +262,15 @@ IF_IMPL_QUERY   (  const KURL &IInternetRadioClient::queryURL(),
                    getURL(),
                    emptyURL                                       )
 
+void IInternetRadioClient::noticeConnected    (cmplInterface *)
+{
+	noticeURLChanged(queryURL());
+}
+
+
+void IInternetRadioClient::noticeDisconnected (cmplInterface *)
+{
+	noticeURLChanged(queryURL());
+}
 
 

@@ -41,11 +41,11 @@ bool Radio::connect    (Interface *i)
 	bool a = IRadio::connect(i);
 	bool b = IRadioDeviceClient::connect(i);
 	bool c = IRadioDevicePool::connect(i);
-
+/*
     if (a) kdDebug() << "Radio: IRadio connected\n";
     if (b) kdDebug() << "Radio: IRadioDeviceClient connected\n";
     if (c) kdDebug() << "Radio: IRadioDevicePool connected\n";
-
+*/
 	// no "return IA::connect() | return IB::connnect to
 	// prevent "early termination" optimization in boolean expressions
 	return a || b || c;
@@ -57,11 +57,11 @@ bool Radio::disconnect (Interface *i)
 	bool a = IRadio::disconnect(i);
 	bool b = IRadioDeviceClient::disconnect(i);
 	bool c = IRadioDevicePool::disconnect(i);
-
+/*
     if (a) kdDebug() << "Radio: IRadio disconnected\n";
     if (b) kdDebug() << "Radio: IRadioDeviceClient disconnected\n";
     if (c) kdDebug() << "Radio: IRadioDevicePool disconnected\n";
-
+*/
 	// no "return IA::connect() | return IB::connnect to
 	// prevent "early termination" optimization in boolean expressions
 	return a || b || c;
@@ -86,21 +86,21 @@ void Radio::restoreState (KConfig *config)
                                      locateLocal("data", "kradio/stations-new.krp"));
 
     m_stationList.readXML(KURL(m_presetFile));
+
+    notifyStationsChanged(m_stationList);
 }
 
 
 
-QFrame *Radio::internal_createConfigurationPage(KDialogBase */*dlg*/)
+void Radio::createConfigurationPage()
 {
 	// FIXME
-	return NULL;
 }
 
 
-QFrame *Radio::internal_createAboutPage(QWidget */*parent*/)
+void Radio::createAboutPage()
 {
 	// FIXME
-	return NULL;
 }
 
 
@@ -311,17 +311,22 @@ bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *se
 }
 
 
-void Radio::noticeConnected(IRadioDevice *dev)
+void Radio::noticeConnected(IRadioDeviceClient::cmplInterface *dev)
 {
+	IRadioDeviceClient::noticeConnected(dev);
+	
 	if (! m_activeDevice)
 		setActiveDevice (dev, false);
 }
 
 
-void Radio::noticeDisconnect(IRadioDevice *rd)
+void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd)
 {
+	IRadioDeviceClient::noticeDisconnected(rd);
+	
 	if (rd == m_activeDevice) {
 
+	    // search a new active device
 		if (IRadioDeviceClient::connections.findRef(rd) >= 0) {
 
 			IRadioDevice *new_rd = NULL;

@@ -2,8 +2,8 @@
                           quickbar.h  -  description
                              -------------------
     begin                : Mon Feb 11 2002
-    copyright            : (C) 2002 by Martin Witte / Frank Schwanz / Klas Kalass
-    email                : witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
+    copyright            : (C) 2002 by Martin Witte / Klas Kalass
+    email                : witte@kawo1.rwth-aachen.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -58,9 +58,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-protected:
-	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
-	virtual QFrame *internal_createAboutPage(QWidget *parent);
+	virtual void   createConfigurationPage();
+	virtual void   createAboutPage();
 
 	// IRadioClient
 

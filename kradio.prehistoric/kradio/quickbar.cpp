@@ -51,7 +51,7 @@ bool QuickBar::connect(Interface *i)
 {
 	bool a = IRadioClient::connect(i);
 
-	if (a) kdDebug() << "QuickBar: IRadioClient connected\n";
+//	if (a) kdDebug() << "QuickBar: IRadioClient connected\n";
 	
 	return a;
 }
@@ -61,7 +61,7 @@ bool QuickBar::disconnect(Interface *i)
 {
 	bool a = IRadioClient::disconnect(i);
 
-	if (a) kdDebug() << "QuickBar: IRadioClient disconnected\n";
+//	if (a) kdDebug() << "QuickBar: IRadioClient disconnected\n";
 
 	return a;
 }
@@ -114,17 +114,15 @@ void QuickBar::saveState (KConfig *config) const
 }
 
 
-QFrame *QuickBar::internal_createConfigurationPage(KDialogBase */*dlg*/)
+void QuickBar::createConfigurationPage()
 {
 	// FIXME
-	return NULL;
 }
 
 
-QFrame *QuickBar::internal_createAboutPage(QWidget */*parent*/)
+void QuickBar::createAboutPage()
 {
 	// FIXME
-	return NULL;
 }
 
 
