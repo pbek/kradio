@@ -1,4 +1,10 @@
-0.2.7   emw     - added pseudo lirc key "QUIT"
+0.2.7a  (beta)
+
+        emw     - fix missing xml quotings
+
+0.2.7   (beta)
+
+        emw     - added pseudo lirc key "QUIT"
 				- fixed some more quickbar bugs
 				- make "good signal" level configurable, sometimes autoscan did not find all stations
 				- fix ugly setup dialog layout frame problem
@@ -9,8 +15,14 @@
 				- setupdialog: fix update of station info after preset load
 				- setupdialog: use current volume for alarm volume of new alarm
 				- setupdialog: fix tab order
+				
+        kalass  - fix min/max typo
+                - add germany/hamburg-antenna preset file
 
-0.2.6   emw     - activate station in setupdialog by freq, not stationId
+
+0.2.6   (beta)
+
+        emw     - activate station in setupdialog by freq, not stationId
                 - add "unknown station" to kradio->cbStations
                 - fix alarm inconsistencies
                 - make alarm management independent from radiobase: new class TimeControl
@@ -18,9 +30,10 @@
                 - remove alarm configuration from xml file, put to standard kde/kradio config file (downward compatibility kept)
                 - sleep countdown function, countdown stopped by poweron/off, accessible via lirc/docking menu
                 - make kradioapp responsible for lircHelper
-                - fixed config autosave bug
                 - make use of <KDEDIR>/share/apps/kradio/presets possible
                 - include first station preset file in dist (germany/aachen-cable.krp, still a bit incomplete;)
+
+        kalass  - fixed config autosave bug
 
                 Release notes:
                 * ~/.kradiorc is still read for compatibility, but only if ~/<dot-kdedir>/share/data/kradio/stations.krp does not exist/contain valid data
@@ -29,7 +42,9 @@
                 * I'd like to provide ready-to-use-kradio preset files within the dist.
                   I'd be pleased if you like to contribute your personal preset file to this project.
                 
-0.2.5   emw:    - configuration dialog part 3: alarms
+0.2.5   (alpha)
+
+        emw:    - configuration dialog part 3: alarms
                 - frequency range override
                 - improve alarms by station/volume preset
                 - only selected stations in docking menu
@@ -37,16 +52,22 @@
                 - activate stations in setup by double-click/<return>
                 - fix volume preset
 
-0.2.4   emw:    - qt 3.0.x compatibility fixes
+0.2.4   (alpha)
+
+        emw:    - qt 3.0.x compatibility fixes
 				- quickbar/buttonflowlayout fixes
                 - configuration dialog (part 2)
                 - radiobase poweron/off fixes
 
-0.2.3   emw:    - added configuration dialog (part 1)
+0.2.3   (alpha)
+
+        emw:    - added configuration dialog (part 1)
                 - added station scan
                 - improve station/alarm list handling
 
-0.2.2   emw:    - small fixes concerning window restoring
+0.2.2   (alpha)
+
+        emw:    - small fixes concerning window restoring
                 - gcc 3.2 ready
                 - further fixes in stereo/signal quality display
 

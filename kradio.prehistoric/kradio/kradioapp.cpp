@@ -437,21 +437,21 @@ void writeXMLCfg (const QString &FileName,
 	fprintf (f, "<%s>\n", KRadioConfigElement);
 	fprintf (f, "\t<%s>\n", StationListElement);
     fprintf (f, "\t\t<%s>\n", StationListInfo);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMaintainer, info.Maintainer.ascii(),            StationListInfoMaintainer);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoChanged,    info.LastChange.toString(Qt::ISODate).ascii(), StationListInfoChanged);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCountry,    info.Country.ascii(),               StationListInfoCountry);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCity,       info.City.ascii(),                  StationListInfoCity);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMedia,      info.Media.ascii(),                 StationListInfoMedia);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoComments,   info.Comment.ascii(),               StationListInfoComments);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMaintainer, (const char*)XMLEscape(info.Maintainer),            StationListInfoMaintainer);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoChanged,    (const char*)XMLEscape(info.LastChange.toString(Qt::ISODate)), StationListInfoChanged);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCountry,    (const char*)XMLEscape(info.Country),               StationListInfoCountry);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCity,       (const char*)XMLEscape(info.City),                  StationListInfoCity);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMedia,      (const char*)XMLEscape(info.Media),                 StationListInfoMedia);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoComments,   (const char*)XMLEscape(info.Comment),               StationListInfoComments);
     fprintf (f, "\t\t</%s>\n", StationListInfo);
 
 	
 	for (ciStationVector i = sl.begin(); i != sl.end(); ++i) {
 		const RadioStation *st = *i;
 		fprintf (f, "\t\t<%s>\n", StationElement);
-		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationNameElement,         (const char*)st->name(),		   StationNameElement);
-		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationShortNameElement,    (const char*)st->getShortName(),  StationShortNameElement);
-		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationIconStringElement,   (const char*)st->getIconString(), StationIconStringElement);
+		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationNameElement,         (const char*)XMLEscape(st->name()),		  StationNameElement);
+		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationShortNameElement,    (const char*)XMLEscape(st->getShortName()),  StationShortNameElement);
+		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationIconStringElement,   (const char*)XMLEscape(st->getIconString()), StationIconStringElement);
 		fprintf (f, "\t\t\t<%s>%i</%s>\n",   StationQuickSelectElement,  st->useQuickSelect(),			   StationQuickSelectElement);
 		fprintf (f, "\t\t\t<%s>%.6f</%s>\n", StationFrequencyElement,    st->getFrequency(),    		   StationFrequencyElement);
 		fprintf (f, "\t\t\t<%s>%.6f</%s>\n", StationVolumePresetElement, st->getVolumePreset(), 		   StationVolumePresetElement);
@@ -461,23 +461,6 @@ void writeXMLCfg (const QString &FileName,
 	fprintf (f, "\t</%s>\n", StationListElement);
 
 	// write alarm list
-
-/*	fprintf (f, "\t<%s>\n", AlarmListElement);
-	for (ciAlarmVector i = al.begin(); i != al.end(); ++i) {
-		const Alarm *a = *i;
-		QDate d = a->alarmTime().date();
-		QTime t = a->alarmTime().time();
-		fprintf (f, "\t\t<%s>\n", AlarmElement);
-		fprintf (f, "\t\t\t<%s>%04i-%02i-%02i</%s>\n",  AlarmDateElement,    d.year(), d.month(),  d.day(),	   AlarmDateElement);
-		fprintf (f, "\t\t\t<%s>%02i:%02i:%02i</%s>\n",  AlarmTimeElement,    t.hour(), t.minute(), t.second(), AlarmTimeElement);
-		fprintf (f, "\t\t\t<%s>%i</%s>\n",              AlarmEnabledElement, a->isEnabled(),		   	       AlarmEnabledElement);
-		fprintf (f, "\t\t\t<%s>%i</%s>\n",              AlarmDailyElement,   a->isDaily(),                     AlarmDailyElement);
-		fprintf (f, "\t\t\t<%s>%.6f</%s>\n",            AlarmVolumeElement,  a->getVolumePreset(),             AlarmVolumeElement);
-		fprintf (f, "\t\t\t<%s>%i</%s>\n",              AlarmStationIDElement, a->getStationID(),              AlarmStationIDElement);
-		fprintf (f, "\t\t</%s>\n", AlarmElement);
-	}
-	fprintf (f, "\t</%s>\n", AlarmListElement);
-*/
 
 	fprintf (f, "</%s>\n", KRadioConfigElement);
 	fclose (f);

@@ -15,9 +15,20 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <qregexp.h>
 #include "utils.h"
 #include <linux/soundcard.h>
 
 const char *mixerChannelLabels[] = SOUND_DEVICE_LABELS;
 const char *mixerChannelNames[]  = SOUND_DEVICE_NAMES;
 
+QString XMLEscape (const QString &s)
+{
+	QString c = s;
+	c.replace(QRegExp("&"),  "&amp;");
+	c.replace(QRegExp("<"),  "&lt;");
+	c.replace(QRegExp(">"),  "&gt;");
+	c.replace(QRegExp("\""), "&quot;");
+	c.replace(QRegExp("'"),  "&apos;");
+	return c;
+}
