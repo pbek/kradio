@@ -24,6 +24,7 @@
 #endif
 #include "linux/videodev.h"
 #include <linux/soundcard.h>
+
 #include <string.h> // memcpy needed
 
 #include <qlayout.h>
@@ -519,8 +520,8 @@ bool V4LRadio::setFrequency(float freq)
 
   		if (r) {
   			kdDebug() << "V4LRadio::setFrequency: "
-                      << i18n("error setting frequency to")
-                      << freq << endl;
+                      << i18n("error setting frequency to ")
+                      << freq << " (" << r << ")" << endl;
             // unmute the old radio with the old radio station
             if (!oldMute) unmute();
             return false;
@@ -1071,7 +1072,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 		if (r) {
 			kdDebug() << "V4LRadio::updateAudioInfo: "
 					  << i18n("error updating radio audio info") << " ("
-					  << i18n(write ? "write" : "read") << ")"
+					  << i18n(write ? "write" : "read") << "): " << r
 					  << endl;
 			return false;
 		}

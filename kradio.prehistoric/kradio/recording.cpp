@@ -167,13 +167,16 @@ bool Recording::stopRecording()
 	kdDebug() << "oldstate: " << oldState << endl;
 	switch (m_context.state()) {
 		case RecordingContext::rsRunning:
+		case RecordingContext::rsError:
 			closeDevice();
 			closeOutput();
 			notifyRecordingContextChanged(m_context);
 			notifyRecordingStopped();
 			kdDebug() << "recording stopped" << endl;
-			if (oldState == RecordingContext::rsMonitor)
-				startMonitoring();
+			if (m_context.state() != RecordingContext::rsError &&
+			    oldState == RecordingContext::rsMonitor) {
+				     startMonitoring();
+			}
 			break;
 		case RecordingContext::rsMonitor:
 			stopMonitoring();
@@ -189,6 +192,7 @@ bool Recording::stopMonitoring()
 {
 	switch (m_context.state()) {
 		case RecordingContext::rsMonitor:
+		case RecordingContext::rsError:
 			closeDevice();
 			m_context.stop();
 			notifyRecordingContextChanged(m_context);
