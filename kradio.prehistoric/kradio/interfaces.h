@@ -36,11 +36,14 @@
    Our interfaces have to be able to support the following "functions":
 
    - send and receive messages (e.g. notifications, commands, ...) to
-     all connected interfaces. These functions must not have a return value.
+     all connected interfaces. These functions do not need a return value,
+     but in some cases the sender might want to know if anyone has received
+     his message. Thus a boolean return value should indicate if the message
+     was handled or ignored.
 
    - query for information on connected interfaces / answer queries. These
-     functions usually have a return value.
-   
+     functions usually have a return value. A query is only executed on the
+     "current" or - if not selected - the first or only connection.
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -52,8 +55,8 @@
    But there are some problems:
 
    - Signals/slots do not support return values, except "call by reference".
-     To provide queries for an interface, wrapper functions would have been
-     necessary.
+     To provide queries or a delivery feedback for messages, wrapper functions
+     would have been necessary.
      
    - Qt does not support multiple inheritance of QObjects. Thus even signals
      have to be declared abstract by the interface though the (later)
@@ -134,10 +137,11 @@
    
    - sending Messages
 
-     Declare a virtual constant method with return value void and the desired
-     paramters:
+     Declare a virtual constant method with return value "int" and the desired
+     parameters. The return value will indicate how many receivers have handled
+     the message:
 
-         virtual void  SendingMessages(int any_or_non_param) const;
+         virtual bool  SendingMessages(int any_or_non_param) const;
 
      Abbreviation by macros:
 
@@ -146,17 +150,18 @@
 
    - receiving Messages
 
-     Declare an abstract Method with return value void, and the desired
-     paramters:
+     Declare an abstract Method with return value "bool", and the desired
+     paramters. The return value indicates wether the message was handled or not:
 
-         virtual void  ReceivingMessages(int any_or_non_param) = 0;
+         virtual bool  ReceivingMessages(int any_or_non_param) = 0;
 
      Abbreviation by macros:
 
      	 IF_RECEIVER(  ReceivingMessages(int any_or_non_param)   )
 
 
-     The method has to be implemented by a derived class.
+     The method has to be implemented by a derived class. The current item of the
+     receivers conntions list is set to the sender.
      
 
    - querying queries
@@ -182,15 +187,13 @@
 
      	 IF_ANSWER(    AnsweringQueries(int another_param)   )
 
-     The method has to be implemented by a derived class.
+     The method has to be implemented by a derived class. The current item of the
+     receivers conntions list is set to the sender.
 
 
-   At last a note on maxConnections. This is an abstract method in
-   InterfaceBase. You have to overwrite this method in your own interface
-   so that InterfaceBase knows how many connections are allowed - either
-   statically way where the interface returns a constant or dynamically
-   where the implementation provides this information. Negative values are
-   interpreted as "unlimited".
+   At last a note on maxConnections. This member is set on initialization by
+   the constructor and thus can be set in a derived class in it's own
+   constructor. Negative values are interpreted as "unlimited".
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -203,9 +206,10 @@
    done where it belongs to. Especially because there are easy to use macros
    to do this:
 
-   int   ComplementaryInterface::SendingQueries(int any_or_non_param) const
+   int   ComplementaryInterface::SendingMessages(int any_or_non_param) const
    {
        IF_SEND_MESSAGE( ReceivingMessages(any_or_non_param)  )
+       // macro includes "return #receivers"
    }
 
    int   ComplementaryInterface::QueryingQueries(int another_param) const
@@ -280,7 +284,6 @@ class InterfaceBase : public Interface
 {
     friend class InterfaceBase<cmplIF, thisIF>;    // necessary for connects (to keep
                                                    // number of connect functions low)
-
 public:
                                                
 	typedef thisIF                   thisInterface;
@@ -288,9 +291,11 @@ public:
 
 	typedef QPtrList<cmplIF>         IFList;
 	typedef QPtrListIterator<cmplIF> IFIterator;
+
+	typedef InterfaceBase<thisInterface, cmplInterface> BaseClass;
     
 public :
-	InterfaceBase ();
+	InterfaceBase (int maxConnections = -1);
 	virtual ~InterfaceBase ();
 
 	virtual bool     connect(Interface *i);
@@ -299,13 +304,18 @@ public :
 	virtual bool     connect   (Interface &i) { return connect (&i); }
 	virtual bool     disconnect(Interface &i) { return disconnect (&i); }
 
-    virtual int      maxConnections()   const = 0;
 	virtual bool     isConnectionFree() const;
 	virtual unsigned connected()        const { return connections.count(); }
+
+protected:
+
+	virtual void noticeConnect    (cmplIF *) {}
+	virtual void noticeDisconnect (cmplIF *) {}
 
 protected :
 
 	IFList connections;
+	int    maxConnections;
 };
 
 
@@ -319,47 +329,58 @@ protected :
 
 // macros to make sending messages or queries easier
 
+
 // debug util
 #ifdef DEBUG
-	#include <iostream>
-	using namespace std;
-#define IF_QUERY_DEBUG \
-		if (connections.count() > 1) { \
-			cerr << "class " << typeid(this).name() << ": using IF_QUERY with #connections > 1"; \
-		}
+    #include <iostream>
+    using namespace std;
+    #define IF_QUERY_DEBUG \
+        if (connections.count() > 1) { \
+            cerr << "class " << typeid(this).name() << ": using IF_QUERY with #connections > 1"; \
+        }
 #else
-	#define IF_QUERY_DEBUG
+    #define IF_QUERY_DEBUG
 #endif
+
 
 
 // messages
 
+#define SENDERS   protected
+#define RECEIVERS public
+
 #define IF_SENDER(decl) \
-		virtual void decl const;
+		virtual int decl const;
 
 #define IF_SEND_MESSAGE(call) \
+		int ____n = 0; \
 		for (IFIterator i(connections); i.current(); ++i) {   \
-			i.current()->call; \
+			if (i.current()->call ) ++____n; \
 		}  \
+		return ____n;
 
 #define IF_IMPL_SENDER(decl, call) \
-		void decl const \
+		int decl const \
 		{ \
 			IF_SEND_MESSAGE(call) \
 		}
 
 #define IF_RECEIVER(decl) \
-		virtual void decl = 0;
+		virtual bool decl = 0;
+
 
 // queries
+
+#define ANSWERS public
+#define QUERIES protected
 
 #define IF_QUERY(decl) \
 		virtual decl const;
 
 #define IF_SEND_QUERY(call, default) \
-		cmplInterface *o = connections.getFirst(); \
+		cmplInterface *o = IFIterator(connections).current(); \
 		if (o) { \
-			IF_QUERY_DEBUG  \
+			IF_QUERY_DEBUG \
 			return o->call; \
 		} else { \
 			return default; \
@@ -374,12 +395,12 @@ protected :
 		virtual decl = 0;
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 
 
 template <class thisIF, class cmplIF>
-InterfaceBase<thisIF, cmplIF>::InterfaceBase()
+InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
+  : maxConnections(_maxConnections)
 {
 }
 
@@ -397,7 +418,7 @@ InterfaceBase<thisIF, cmplIF>::~InterfaceBase()
 template <class thisIF, class cmplIF>
 bool InterfaceBase<thisIF, cmplIF>::isConnectionFree () const
 {
-	int m = maxConnections();
+	int m = maxConnections;
 	return  (m < 0) || (connections.count() < (unsigned) m);
 }
 
@@ -405,10 +426,16 @@ bool InterfaceBase<thisIF, cmplIF>::isConnectionFree () const
 template <class thisIF, class cmplIF>
 bool InterfaceBase<thisIF, cmplIF>::connect (Interface *_i)
 {
-	cmplIF *i = dynamic_cast<cmplIF*>(_i);
+	thisIF *me = dynamic_cast<thisIF*>(this);
+	cmplIF *i  = dynamic_cast<cmplIF*>(_i);
 	if (i && isConnectionFree() && i->isConnectionFree()) {
+
 		connections.append(i);
-		i->connections.append(dynamic_cast<thisIF*>(this));
+		i->connections.append(me);
+
+		noticeConnect(i);
+		i->noticeConnect(me);
+		
 		return true;
 	}
 	return false;
@@ -419,10 +446,16 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *_i)
 template <class thisIF, class cmplIF>
 bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *_i)
 {
-	cmplIF *i = dynamic_cast<cmplIF*>(_i);
+	thisIF *me = dynamic_cast<thisIF*>(this);
+	cmplIF *i  = dynamic_cast<cmplIF*>(_i);
 	if (i) {
+
+		noticeDisconnect(i);
+		i->noticeDisconnect(me);
+		
 		connections.remove (i);
-		i->connections.remove(dynamic_cast<thisIF*>(this));
+		i->connections.remove(me);
+		
 		return true;
 	}
 	return false;

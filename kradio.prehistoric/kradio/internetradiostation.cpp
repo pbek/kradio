@@ -16,6 +16,19 @@
  ***************************************************************************/
 
 #include "internetradiostation.h"
+#include <typeinfo>
+
+InternetRadioStation::InternetRadioStation()
+    : RadioStation(),
+      m_url()
+{
+}
+
+InternetRadioStation::InternetRadioStation(const KURL &url)
+    : RadioStation(),
+      m_url(url)
+{
+}
 
 InternetRadioStation::InternetRadioStation(const QString &name,
                                            const QString &shortName,
@@ -38,19 +51,31 @@ RadioStation *InternetRadioStation::copy() const
     return new InternetRadioStation(*this);
 }
 
+
 InternetRadioStation::~InternetRadioStation()
 {
 }
 
-bool InternetRadioStation::equals(const RadioStation &_s) const
+
+/*  = 0 : this.url = s.url
+    > 0 : this.url > s.url
+    < 0 : this.url < s.url
+    other class than FrequencyRadioStation: compare typeid(.).name()
+*/
+int InternetRadioStation::compare(const RadioStation &_s) const
 {
 	InternetRadioStation const *s = dynamic_cast<InternetRadioStation const*>(&_s);
 
 	if (!s)
-		return false;
+		return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;
 
-    return m_url.equals ( s->m_url, true /*ignore trailing / */ );
+	QString thisurl = m_url.url(-1);    // -1: remove trailing '/'
+	QString thaturl = s->m_url.url(-1);
+
+	return thisurl.compare(thaturl);
 }
+
+
 
 bool InternetRadioStation::isValid() const
 {

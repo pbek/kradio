@@ -78,9 +78,10 @@ public:
     void  setIconName     (const QString &iconName)   { m_iconName      = iconName;      }
 	void  setInitialVolume(float initialVolume)       { m_initialVolume = initialVolume; }
 
-    // is this station equivalent to another station?
-    // e.g. same url or aproximate same frequency
-    virtual bool equals(const RadioStation &s) const = 0;
+    // = 0 : "this" is same as "s", e.g. approximately same frequency, same url, ...
+    // > 0 : "this" is numerically (frequencies) or alphanumerically (urls) or ... greater than "s"
+    // < 0 : "this" is numerically (frequencies) or alphanumerically (urls) or ... smaller than "s"
+    virtual int compare(const RadioStation &s) const = 0;
 
     // is this station setup correctly ? 
     virtual bool isValid() const = 0;
@@ -94,5 +95,23 @@ protected :
 	float	 m_initialVolume;		// <0: => Don't use
 	QString	 m_iconName;
 };
+
+
+
+
+
+
+
+class UndefinedRadioStation : public RadioStation
+{
+public:
+	virtual QString       longName() const { return "unknown"; }
+	virtual bool          isValid()  const { return false; }
+	virtual RadioStation *copy()     const { return new UndefinedRadioStation(*this); }
+	virtual int           compare(const RadioStation &s) const;
+};
+
+
+extern const UndefinedRadioStation undefinedRadioStation;
 
 #endif

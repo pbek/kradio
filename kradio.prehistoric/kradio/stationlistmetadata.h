@@ -31,6 +31,7 @@
  * Meta Data about a stationlist
  * @author  Martin Witte
  */
+
 class StationListMetaData  {
 public:
 	QString    maintainer;

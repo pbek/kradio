@@ -29,43 +29,97 @@
 
 // forward declarations
 class RadioStation;
-class KURL;
+
+
+/*
+
+   Why an own Station List ?
+
+   RadioStations are used everywhere. But who is responsible for them?
+   Especially after a list merge?
+
+   A very simple solution should be a StationList with "deep copies". Though
+   this is not very efficient, we can assume, that copy operations do not
+   take place very often and thus are not critical.
+
+
+   Why don't we use QValueList then?
+
+   We are using polymorphic radio stations, thus we cannot use a template
+   using instances of a base class and copying them with a copy constructor.
+   But as each derived class has its own copy() function, we are able to create
+   exact copies from a pointer with the type of our base class "RadioStation".
+
+*/
+   
+
+class RawStationList : public QPtrList<RadioStation>
+{
+public:
+
+	typedef QPtrListIterator<RadioStation>  Iterator;
+
+public:
+	RawStationList ();
+	RawStationList (const RawStationList &sl);
+	~RawStationList ();
+
+protected:
+
+	QPtrCollection::Item newItem (QPtrCollection::Item s);
+	void                 deleteItem (QPtrCollection::Item s);
+
+	int compareItems (QPtrCollection::Item a, QPtrCollection::Item b);
+};
+
+
+
 
 /**
- * Contains a list of stations
- * @author Klas Kalass
+ * Contains a list of stations, including meta data
+ * @author Klas Kalass, Ernst Martin Witte
  */
 
 class StationList  {
 public:
     StationList();
+    StationList(const StationList &sl);
     ~StationList();
 
+    // some usefull "proxy" functions
+
+    int                   count() const { return m_all.count(); }
+    const RadioStation &  at(int idx) const;
+          RadioStation &  at(int idx);
+
     // all stations, with full access
-    QPtrList<RadioStation> & all() {return m_all;};
-    QPtrList<RadioStation> const & all() const {return m_all;};
+    RawStationList &       all()       { return m_all; }
+    RawStationList const & all() const { return m_all; }
+    
     // the meta data for this station List, with full access
-    StationListMetaData & metaData() {return m_metaData;};
-    StationListMetaData const & metaData() const {return m_metaData;};
+    StationListMetaData &       metaData()       { return m_metaData; }
+    StationListMetaData const & metaData() const { return m_metaData; }
+
+    // we do not need a special matchingStation/find/... method because
+    // it is already implemented in RawStationList
 
     /**
-     * returns a station from the list that has the same URL
+     * merges  the other list into this one. creates copies from the stations.
      */
-    RadioStation* matchingRadioStation(KURL const &url);
-    /**
-     * returns a station from the list that has the same frequency
-     */
-    RadioStation* matchingRadioStation(float frequency);
+    void merge(const StationList &other);
 
-    /**
-     * merges  the other list into this one.
-     */
-    void merge(StationList * other);
+
+    // assignment
+
+    StationList &operator = (const StationList &sl);
 
 protected:
-    QPtrList<RadioStation> m_all;
-    StationListMetaData m_metaData;
+    RawStationList        m_all;
+    StationListMetaData   m_metaData;
 
 };
+
+
+extern const StationList emptyStationList;
 
 #endif

@@ -2,8 +2,8 @@
                           radio.h  -  description
                              -------------------
     begin                : Sat March 29 2003
-    copyright            : (C) 2003 by Klas Kalass
-    email                : klas@kde.org
+    copyright            : (C) 2003 by Klas Kalass, Ernst Martin Witte
+    email                : klas@kde.org, witte@kawo1.rwth-aachen.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -15,92 +15,100 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef RADIO_H
-#define RADIO_H
+#ifndef KRADIO_RADIO_H
+#define KRADIO_RADIO_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
-#include <qobject.h>
+
+#include "radio_interfaces.h"
+#include "radiodevicepool_interface.h"
+#include "radiodevice_interfaces.h"
 #include "stationlist.h"
-
-// forward declarations
-class RadioDevice;
-class FrequencyRadio;
-class InternetRadio;
-class RadioStation;
-
-// Qt forwards
-class QString;
-
-// KDE forwards
-class KURL;
 
 /**
  * The main Radio class, which is used as the interface of the radio functionality
  * to the GUI parts of the application
- * @author Klas Kalass
+ * @author Klas Kalass, Ernst Martin Witte
  */
 
-class Radio : public QObject {
-    Q_OBJECT
+/////////////////////////////////////////////////////////////////////////////
+
+/*  A class, that is able to manage more than one radio device, one of those
+    is active at a time. This class behaves represents the active device,
+    the active devices can be changed either by selecting a station or by
+    explicitly changing the devices.
+
+    At any time a valid active device exists as long as any device is connected.
+
+*/
+
+class Radio : public IRadio,
+              public IRadioDevicePool,
+              public IRadioDeviceClient
+{
 public:
     Radio();
     ~Radio();
 
-    /** currently active radio station */
-    RadioStation *currentStation();
-protected slots:
-    /**
-     * Set the currently active radio station, this is really only for internal use.
-     * If you wish to activate a station, call station->activate()!
-     */
-    void slotCurrentStationChanged(RadioStation *station);
 
-public:
-    // create stations, be aware that you need to take care of memory Management
-    // yourself because those stations are not managed by this class!
-    /**
-     * Create a station for a frequency based Radio station.
-     */
-    RadioStation *createFrequencyRadioStation(QString const &name, float frequency);
-    RadioStation *createInternetRadioStation(QString const &name, KURL const &url);
 
-    StationList &stations(){return m_stations;};
+    // IRadio methods
 
-    bool muted();
-    bool power();
+RECEIVERS:    
+	bool powerOn()        { return sendPowerOn()  > 0; }
+	bool powerOff()       { return sendPowerOff() > 0; }
+    bool activateStation(const RadioStation &rs);
+    bool activateStation(int index);
+	bool setStations(const StationList &sl);
 
-public slots:
-    void slotPowerOn();
-    void slotPowerOff();
-    void slotPowerToggle();
-    void slotMute();
-    void slotUnmute();
+ANSWERS:
+	bool                   isPowerOn() const;
+	bool                   isPowerOff() const;
+	const RadioStation  &  getCurrentStation() const;
+	const StationList   &  getStations() const;
 
-signals:
-    /** inform the outer world that a new radio station was activated,
-     this actually just passes the signal from the station on.*/
-    void signalStationChanged(RadioStation *);
-    void signalPowerChanged(bool on);
+    
 
+	// IRadioDevicePool methods
+
+RECEIVERS:
+	bool                           setActiveDevice(IRadioDevice *rd, bool keepPower = true);
+
+ANSWERS:
+	IRadioDevice                 * getActiveDevice() const;
+	const QPtrList<IRadioDevice> & getDevices() const;
+
+
+
+	// IRadioDeviceClient methods, even sending methods overwritten
+	// to provide "1-of-N" functionality
+
+SENDERS:
+	IF_SENDER  (  sendPowerOn()                                      )
+	IF_SENDER  (  sendPowerOff()                                     )
+    IF_SENDER  (  sendActivateStation (const RadioStation &rs)       )
+
+QUERIES:
+	IF_QUERY   (  bool                   queryIsPowerOn()            )
+	IF_QUERY   (  bool                   queryIsPowerOff()           )
+	IF_QUERY   (  const RadioStation  &  queryCurrentStation()       )
+
+RECEIVERS:
+	virtual bool noticePowerOn        (IRadioDevice *sender = NULL);
+	virtual bool noticePowerOff       (IRadioDevice *sender = NULL);
+	virtual bool noticeStationChanged (const RadioStation &rs, IRadioDevice *sender = NULL);
+
+	virtual void noticeConnect(IRadioDevice *rd);
+	virtual void noticeDisconnect(IRadioDevice *rd);
+	
 protected:
-    /**
-     * register the radio station with this radio, connect
-     * signals
-     */
-    void registerStation(RadioStation *station);
-    /**
-     * register the radio device with this radio, connect
-     * signals
-     */
-    void registerDevice(RadioDevice *radiodevice);
 
-    StationList m_stations;
-    RadioStation *m_currentStation;
-    FrequencyRadio *m_frequencyRadio;
-    InternetRadio *m_artsStreamRadio;
+    StationList    m_stationList;
+    IRadioDevice  *m_activeDevice;
 };
+
 
 #endif

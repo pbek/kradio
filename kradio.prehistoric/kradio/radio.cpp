@@ -2,8 +2,8 @@
                           radio.cpp  -  description
                              -------------------
     begin                : Sat March 29 2003
-    copyright            : (C) 2003 by Klas Kalass
-    email                : klas@kde.org
+    copyright            : (C) 2003 by Klas Kalass, Ernst Martin Witte
+    email                : klas@kde.org, witte@kawo1.rwth-aachen.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -17,112 +17,211 @@
 
 #include "radio.h"
 #include "radiostation.h"
-#include "frequencyradiostation.h"
-#include "internetradiostation.h"
-#include "artsstreamradio.h"
-#include "v4lradio.h"
+
+/////////////////////////////////////////////////////////////////////////////
 
 Radio::Radio()
-    : m_currentStation(0),
-      m_frequencyRadio(0),
-      m_artsStreamRadio(0)
+  : IRadioDeviceClient(-1),
+    m_activeDevice (NULL)
 {
 }
 
-Radio::~Radio()
-{
+
+// offer new station to current device.
+// if that does not accept, try all other devices.
+// Any device will be powered off if it does not accept the station
+bool Radio::activateStation (const RadioStation &rs) {
+
+	if (sendActivateStation(rs)) {    // first try activeDevice
+
+		return true;
+
+	} else {                          // hmm... active device did not want it. Try others...
+
+		int n = 0;
+
+		for (IRadioDeviceClient::IFIterator it(IRadioDeviceClient::connections); it.current(); ++it) {
+
+			if (it.current()->activateStation(rs)) {
+
+				setActiveDevice(it.current());  // select new device
+				++n;
+
+			} else {
+
+				it.current()->powerOff();
+
+			}
+		}
+
+		return n > 0;
+	}
 }
 
-void Radio::slotCurrentStationChanged(RadioStation *station)
+
+bool Radio::activateStation(int index)
 {
-    m_currentStation = station;
-    emit signalStationChanged(station);
+	if (index < 0 || index >= m_stationList.count())
+		return false;
+
+	return activateStation(m_stationList.at(index));
 }
 
-RadioStation *Radio::createFrequencyRadioStation(QString const &name, float frequency)
-{
-    if (!m_frequencyRadio) {
-        // no instance of an ArtsStreamRadio yet, create one
-        m_frequencyRadio = new V4LRadio(this);
-    }
 
-    FrequencyRadioStation *station = new FrequencyRadioStation(this, name, m_frequencyRadio,frequency);
-    registerStation(station);
-    return station;
+bool Radio::setStations(const StationList &sl)
+{
+	m_stationList = sl;
 }
 
-RadioStation *Radio::createInternetRadioStation(QString const &name, KURL const &url)
-{
-    // TODO: when there are other internet stream implementations,
-    // choose the right one here!
-    if (!m_artsStreamRadio) {
-        // no instance of an ArtsStreamRadio yet, create one
-        m_artsStreamRadio = new ArtsStreamRadio(this);
-    }
 
-    InternetRadioStation * station = new InternetRadioStation(this, name, m_artsStreamRadio, url);
-    registerStation(station);
-    return station;
+
+/* IRadioDevicePool Interface Methods
+
+*/
+
+
+bool Radio::setActiveDevice(IRadioDevice *rd, bool keepPower)
+{
+	// do nothing if old == new
+	if (m_activeDevice == rd)
+		return true;
+
+	// check if new station is in "connections"
+	// special case: rd == NULL: power off active device, new active device = NULL
+
+	if (!rd || IRadioDeviceClient::connections.containsRef(rd)) {     // new device is ok
+
+		// save old power state and power off old device
+		bool oldPowerOn = false;
+		if (m_activeDevice) {
+			oldPowerOn = m_activeDevice->isPowerOn();
+			m_activeDevice->powerOff();
+		}
+
+		// setup new active device && send notifications
+		m_activeDevice = rd;
+	    notifyActiveDeviceChanged(m_activeDevice);
+	    notifyStationChanged(queryCurrentStation());
+
+        if (keepPower)
+			oldPowerOn ? sendPowerOn() : sendPowerOff();
+
+		return true;
+
+	} else {
+		return false;
+	}
 }
 
-bool Radio::power()
+
+IRadioDevice *Radio::getActiveDevice() const
 {
-    return (m_currentStation && m_currentStation->radio())
-        ? m_currentStation->radio()->power()
-        : false;
+	return m_activeDevice;
 }
 
-void Radio::slotPowerOn()
+
+const QPtrList<IRadioDevice> &Radio::getDevices() const
 {
-    if (m_currentStation && m_currentStation->radio())
-        m_currentStation->radio()->setPower(true);
-    emit signalPowerChanged(power());
+	return IRadioDeviceClient::connections;
 }
 
-void Radio::slotPowerOff()
+
+
+/* IRadioDeviceClient Interface Methods
+
+   Many things are overwritten, particularly all sending methods
+   
+*/
+
+int Radio::sendPowerOn() const
 {
-    if (m_currentStation && m_currentStation->radio())
-        m_currentStation->radio()->setPower(false);
-    emit signalPowerChanged(power());
+	return m_activeDevice ? m_activeDevice->powerOn() : 0;
 }
 
-void Radio::slotPowerToggle()
+
+int Radio::sendPowerOff() const
 {
-    if (m_currentStation && m_currentStation->radio())
-        m_currentStation->radio()->setPower(!m_currentStation->radio()->power());
-    emit signalPowerChanged(power());
+	return m_activeDevice ? m_activeDevice->powerOff() : 0;
 }
 
-bool Radio::muted()
+int Radio::sendActivateStation (const RadioStation &rs) const
 {
-    return (m_currentStation && m_currentStation->radio())
-        ? m_currentStation->radio()->muted()
-        : false;
+	return m_activeDevice ? m_activeDevice->activateStation(rs) : 0;
 }
 
-void Radio::slotMute()
+
+	
+bool Radio::queryIsPowerOn() const
 {
-    if (m_currentStation && m_currentStation->radio())
-        m_currentStation->radio()->setMute(true);
+	return m_activeDevice ? m_activeDevice->isPowerOn() : false;
 }
 
-void Radio::slotUnmute()
+
+bool Radio::queryIsPowerOff() const
 {
-    if (m_currentStation && m_currentStation->radio())
-        m_currentStation->radio()->setMute(false);
+	return m_activeDevice ? m_activeDevice->isPowerOff() : true;
 }
 
-void Radio::registerStation(RadioStation * station)
+
+const RadioStation & Radio::queryCurrentStation() const
 {
-    // this connect is not really correct, because the radiodevice
-    // implementation should notify us when a different station has been
-    // tuned in
-//    connect(station, SIGNAL(signalActivated(const RadioStation *)),
-//            this, SLOT(slotCurrentStationChanged(const RadioStation *)));
+	return m_activeDevice ? m_activeDevice->getCurrentStation() : undefinedRadioStation;
 }
 
-void Radio::registerDevice(RadioDevice * radiodevice)
+
+bool Radio::noticePowerOn (IRadioDevice *sender)
 {
-    connect(radiodevice, SIGNAL(sigStationChanged(const RadioStation *)),
-            this, SLOT(slotCurrentStationChanged(const RadioStation *)));
+	setActiveDevice(sender, false);  // false: do not set power state on new device
+	notifyPowerOn();
+	return true;
+}
+
+
+bool Radio::noticePowerOff(IRadioDevice *sender)
+{
+	if (sender == m_activeDevice) {
+		notifyPowerOff();
+		return true;
+	}
+	return false;
+}
+
+
+bool Radio::noticeStationChanged (const RadioStation &rs, IRadioDevice *sender)
+{
+	if (sender == m_activeDevice) {
+		notifyStationChanged(rs);
+		return true;
+	}
+	return false;
+}
+
+
+void Radio::noticeConnect(IRadioDevice *)
+{
+	// hopefully nothing to do
+}
+
+
+void Radio::noticeDisconnect(IRadioDevice *rd)
+{
+	if (rd == m_activeDevice) {
+
+		if (IRadioDeviceClient::connections.findRef(rd) >= 0) {
+
+			IRadioDevice *new_rd = NULL;
+
+			new_rd =  IRadioDeviceClient::connections.next();    // choose next device as active device if next exists
+			if (!new_rd) {
+				IRadioDeviceClient::connections.findRef(rd);				
+				new_rd = IRadioDeviceClient::connections.prev(); // otherwise try prev then, may be NULL (no connections)
+			}
+			setActiveDevice(new_rd);
+			
+        } else {
+			// strange error occurred, m_activeDevice not in connections... set to first.
+			
+			setActiveDevice(IRadioDeviceClient::connections.first());
+        }
+	}
 }

@@ -30,6 +30,8 @@
 
 class FrequencyRadioStation : public RadioStation  {
 public:
+	FrequencyRadioStation ();
+    FrequencyRadioStation (float frequency);
     FrequencyRadioStation (const QString &name, const QString &shortName, float frequency);
     FrequencyRadioStation (const FrequencyRadioStation &);
     ~FrequencyRadioStation();
@@ -38,9 +40,14 @@ public:
     void   setFrequency (float frequency);
 
     virtual QString	longName() const;
+    virtual bool    isValid () const;
 
-    virtual bool equals(const RadioStation &s) const;
-    virtual bool isValid() const;
+    /*  = 0 : "this" is same as "s", i.e. approximately same frequency
+        > 0 : this.frequency > s.frequency
+        < 0 : this.frequency < s.frequency
+        other class than FrequencyRadioStation: compare typeid(.).name()
+    */
+    virtual int    compare (const RadioStation &s) const;
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;

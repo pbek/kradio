@@ -33,6 +33,8 @@
  
 class InternetRadioStation : public RadioStation  {
 public:
+	InternetRadioStation();
+    InternetRadioStation(KURL const &url);
     InternetRadioStation(const QString &name, const QString &shortName, KURL const &url);
     InternetRadioStation(const InternetRadioStation &);
     ~InternetRadioStation();
@@ -41,8 +43,14 @@ public:
     void         setUrl(KURL const &url) { m_url = url;  }
 
     virtual QString longName() const;
-    virtual bool    equals(const RadioStation &s) const;
-    virtual bool    isValid() const;
+    virtual bool    isValid () const;
+
+    /*  = 0 : this.url == s.url
+        > 0 : this.url >  s.url
+        < 0 : this.url <  s.url
+        other class than InternetRadioStation: compare typeid(.).name()
+    */
+    virtual int     compare (const RadioStation &s) const;
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;

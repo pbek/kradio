@@ -16,12 +16,25 @@
  ***************************************************************************/
 
 #include "frequencyradiostation.h"
+#include <typeinfo>
 
 // Kopenhagener Wellenplan: 300kHz
 #define STATION_FREQ_INTERVAL_FM   0.3
 
 // Kopenhagener Wellenplan:   9kHz
 #define STATION_FREQ_INTERVAL_AM   0.009
+
+FrequencyRadioStation::FrequencyRadioStation()
+    : RadioStation(),
+      m_frequency(0)
+{
+}
+
+FrequencyRadioStation::FrequencyRadioStation(float frequency)
+    : RadioStation(),
+      m_frequency(frequency)
+{
+}
 
 FrequencyRadioStation::FrequencyRadioStation(const QString &name,
                                              const QString &shortName,
@@ -50,18 +63,29 @@ FrequencyRadioStation::~FrequencyRadioStation()
 }
 
 
-bool FrequencyRadioStation::equals(const RadioStation &_s) const
+/*  = 0 : "this" is same as "s", i.e. approximately same frequency
+    > 0 : this.frequency > s.frequency
+    < 0 : this.frequency < s.frequency
+    other class than FrequencyRadioStation: compare typeid(.).name()
+*/
+int FrequencyRadioStation::compare(const RadioStation &_s) const
 {
 	FrequencyRadioStation const *s = dynamic_cast<FrequencyRadioStation const*>(&_s);
 
 	if (!s)
-	    return false;
+		return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;			
 	
     float delta = m_frequency < 10 ? STATION_FREQ_INTERVAL_AM : STATION_FREQ_INTERVAL_FM;
     
-    return    m_frequency + delta/2 > s->m_frequency
-           && m_frequency - delta/2 < s->m_frequency;
+    if (   m_frequency + delta/2 > s->m_frequency
+        && m_frequency - delta/2 < s->m_frequency)
+    {    
+		return 0;
+	} else {
+		return (m_frequency > s->m_frequency) ? 1 : -1;
+	}	
 }
+
 
 QString FrequencyRadioStation::longName() const
 {

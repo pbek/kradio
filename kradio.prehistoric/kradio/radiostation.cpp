@@ -17,6 +17,13 @@
 
 #include "radiostation.h"
 
+
+/////////////////////////////////////////////////////////////////////////////
+
+const UndefinedRadioStation undefinedRadioStation;
+
+/////////////////////////////////////////////////////////////////////////////
+
 RadioStation::RadioStation()
     : m_name(""),
       m_shortName(""),
@@ -48,3 +55,18 @@ RadioStation::~RadioStation()
 }
 
 
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+int UndefinedRadioStation::compare(const RadioStation &_s) const
+{
+	UndefinedRadioStation const *s = dynamic_cast<UndefinedRadioStation const*>(&_s);
+
+	if (!s)
+		return -1;
+
+	return 0;
+
+}
