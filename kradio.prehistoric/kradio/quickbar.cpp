@@ -85,7 +85,7 @@ void QuickBar::restoreState (KConfig *config)
 {
     config->setGroup(QString("quickBar-") + name());
 
-	WidgetPluginBase::restoreState(config);
+	WidgetPluginBase::restoreState(config, false);
 
 	int nStations = config->readNumEntry("nStations", 0);
 	for (int i = 1; i <= nStations; ++i) {

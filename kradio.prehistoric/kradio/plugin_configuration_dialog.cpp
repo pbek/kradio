@@ -42,7 +42,7 @@ void   PluginConfigurationDialog::saveState (KConfig *c) const
 void   PluginConfigurationDialog::restoreState (KConfig *c)
 {
     c->setGroup(QString("config-dialog-") + WidgetPluginBase::name());
-	WidgetPluginBase::restoreState(c);
+	WidgetPluginBase::restoreState(c, false);
 }
 
 
