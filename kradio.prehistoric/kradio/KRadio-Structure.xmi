@@ -9,12 +9,9 @@
   <XMI.metamodel xmi.name="UML" href="UML.xml" xmi.version="1.3" />
  </XMI.header>
  <XMI.content>
-  <docsettings viewid="617" documentation="Those classes replace the former RadioBase, RadioStation V4LRadio classes.
-" uniqueid="732" />
+  <docsettings viewid="733" documentation="Those classes replace the former RadioBase, RadioStation V4LRadio classes.
+" uniqueid="733" />
   <umlobjects>
-   <UML:Interface stereotype="interface" package="" xmi.id="619" abstract="0" documentation="" name="RadioStation" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="664" type="RadioDevice" abstract="0" documentation="" name="getRadio" static="0" scope="200" />
-   </UML:Interface>
    <UML:Class stereotype="class" package="" xmi.id="620" abstract="1" documentation="Frequency Radios usually require some hardware that can receive &quot;normal&quot; radio." name="FrequencyRadio" static="0" scope="200" >
     <UML:Operation stereotype="" package="" xmi.id="661" type="bool" abstract="0" documentation="" name="activateStation" static="0" scope="200" >
      <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="FrequencyRadioStation" abstract="0" documentation="" name="station" static="0" scope="200" />
@@ -62,7 +59,6 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
      <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioStation" abstract="0" documentation="" name="station" static="0" scope="200" />
     </UML:Operation>
    </UML:Class>
-   <UML:Class stereotype="class" package="" xmi.id="636" abstract="0" documentation="" name="StationVector" static="0" scope="200" />
    <UML:Class stereotype="class" package="" xmi.id="644" abstract="0" documentation="holds the common methods for accessing stations in the list." name="StationList" static="0" scope="200" >
     <UML:Operation stereotype="" package="" xmi.id="684" type="RadioStation" abstract="0" documentation="returns the Station in the list which points to the given URL, or a null pointer. " name="matchingRadioStation" static="0" scope="200" >
      <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="KURL" abstract="0" documentation="return the station from the station list that matches the given URL." name="url" static="0" scope="200" />
@@ -98,7 +94,6 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
     </UML:Operation>
     <UML:Attribute stereotype="" package="" xmi.id="711" value="" type="float" abstract="0" documentation="" name="frequency" static="0" scope="200" />
    </UML:Class>
-   <UML:Class stereotype="class" package="" xmi.id="654" abstract="0" documentation="" name="RadioDevice" static="0" scope="200" />
    <UML:Interface stereotype="interface" package="" xmi.id="655" abstract="0" documentation="" name="RadioDevice" static="0" scope="200" >
     <UML:Operation stereotype="" package="" xmi.id="698" type="float" abstract="1" documentation="" name="getVolume" static="0" scope="200" />
     <UML:Operation stereotype="" package="" xmi.id="699" type="void" abstract="0" documentation="" name="setVolume" static="0" scope="200" >
@@ -113,8 +108,6 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
      <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="bool" abstract="0" documentation="" name="mute" static="0" scope="200" />
     </UML:Operation>
    </UML:Interface>
-   <UML:Class stereotype="class" package="" xmi.id="657" abstract="0" documentation="" name="ArtsRadioStation" static="0" scope="200" />
-   <UML:Interface stereotype="interface" package="" xmi.id="658" abstract="0" documentation="" name="StreamRadio" static="0" scope="200" />
    <UML:Class stereotype="class" package="" xmi.id="659" abstract="1" documentation="An Internet Radio does not handle frequencies but URLs, which point to streams
 " name="InternetRadio" static="0" scope="200" >
     <UML:Operation stereotype="" package="" xmi.id="660" type="bool" abstract="0" documentation="" name="activateStation" static="0" scope="200" >
@@ -155,7 +148,7 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
    <UML:Association nameb="currentRadio" stereotype="" visibilitya="202" visibilityb="202" assoctype="503" rolea="627" roleb="655" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="radio" />
   </umlobjects>
   <diagrams>
-   <diagram snapgrid="1" showattsig="1" fillcolor="#ffffff" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="1504" snapy="10" showatts="1" xmi.id="617" documentation="" type="402" showops="1" showpackage="0" name="RadioStructure" localid="30000" showstereotype="0" showscope="1" snapcsgrid="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="694" >
+   <diagram snapgrid="1" showattsig="1" fillcolor="#ffffff" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="1504" snapy="10" showatts="1" xmi.id="617" documentation="" type="402" showops="1" showpackage="0" name="class diagram - radio" localid="30000" showstereotype="0" showscope="1" snapcsgrid="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="694" >
     <widgets>
      <UML:ClassWidget usesdiagramfillcolour="0" width="320" showattsigs="601" usesdiagramusefillcolour="0" x="10" linecolour="#000000" y="410" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="200" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="620" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
      <UML:ClassWidget usesdiagramfillcolour="0" width="80" showattsigs="601" usesdiagramusefillcolour="0" x="120" linecolour="#000000" y="650" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="30" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="621" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
@@ -285,6 +278,15 @@ activate() {
      </UML:AssocWidget>
     </associations>
    </diagram>
+   <diagram snapgrid="1" showattsig="1" fillcolor="#ffffff" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="752" snapy="10" showatts="1" xmi.id="733" documentation="" type="402" showops="1" showpackage="0" name="class diagram - overview" localid="30000" showstereotype="0" showscope="1" snapcsgrid="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="611" >
+    <widgets>
+     <UML:ClassWidget usesdiagramfillcolour="1" width="420" showattsigs="601" usesdiagramusefillcolour="1" x="90" linecolour="none" y="80" showopsigs="601" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="150" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="627" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+     <UML:ClassWidget usesdiagramfillcolour="1" width="250" showattsigs="601" usesdiagramusefillcolour="1" x="410" linecolour="none" y="320" showopsigs="601" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="170" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="665" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+     <interfacewidget usesdiagramfillcolour="1" width="190" usesdiagramusefillcolour="1" x="200" linecolour="none" y="350" drawascircle="0" showopsigs="601" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="120" usefillcolor="1" isinstance="0" xmi.id="655" showoperations="1" showpackage="0" showscope="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+    </widgets>
+    <messages/>
+    <associations/>
+   </diagram>
   </diagrams>
   <listview>
    <listitem open="1" type="800" id="-1" label="Views" >
@@ -292,9 +294,8 @@ activate() {
     <listitem open="1" type="827" id="-1" label="Deployment View" />
     <listitem open="0" type="823" id="-1" label="Diagrams" />
     <listitem open="1" type="801" id="-1" label="Logical View" >
-     <listitem open="1" type="813" id="657" label="ArtsRadioStation" />
      <listitem open="1" type="813" id="622" label="ArtsStreamRadio" />
-     <listitem open="1" type="813" id="620" label="FrequencyRadio" >
+     <listitem open="0" type="813" id="620" label="FrequencyRadio" >
       <listitem open="0" type="815" id="661" label="activateStation" />
       <listitem open="0" type="815" id="695" label="deltaF" />
       <listitem open="0" type="814" id="694" label="frequency" />
@@ -309,22 +310,22 @@ activate() {
       <listitem open="0" type="815" id="702" label="slotStartSeekUp" />
       <listitem open="0" type="815" id="704" label="slotStopSeek" />
      </listitem>
-     <listitem open="1" type="813" id="653" label="FrequencyRadioStation" >
-      <listitem open="0" type="815" id="718" label="slotActivate" />
+     <listitem open="0" type="813" id="653" label="FrequencyRadioStation" >
       <listitem open="0" type="814" id="711" label="frequency" />
-      <listitem open="0" type="815" id="717" label="radio" />
       <listitem open="0" type="815" id="720" label="frequencyMatch" />
+      <listitem open="0" type="815" id="717" label="radio" />
+      <listitem open="0" type="815" id="718" label="slotActivate" />
      </listitem>
-     <listitem open="1" type="813" id="659" label="InternetRadio" >
+     <listitem open="0" type="813" id="659" label="InternetRadio" >
       <listitem open="0" type="815" id="660" label="activateStation" />
      </listitem>
-     <listitem open="1" type="813" id="652" label="InternetRadioStation" >
-      <listitem open="0" type="815" id="714" label="slotActivate" />
+     <listitem open="0" type="813" id="652" label="InternetRadioStation" >
       <listitem open="0" type="815" id="713" label="radio" />
-      <listitem open="0" type="815" id="715" label="urlMatch" />
+      <listitem open="0" type="815" id="714" label="slotActivate" />
       <listitem open="0" type="814" id="712" label="url" />
+      <listitem open="0" type="815" id="715" label="urlMatch" />
      </listitem>
-     <listitem open="1" type="813" id="627" label="Radio" >
+     <listitem open="0" type="813" id="627" label="Radio" >
       <listitem open="0" type="815" id="726" label="createFrequencyRadioStation" />
       <listitem open="0" type="815" id="727" label="createInternetRadioStation" />
       <listitem open="0" type="815" id="630" label="currentStation" />
@@ -335,7 +336,7 @@ activate() {
       <listitem open="0" type="815" id="641" label="slotPowerToggle" />
       <listitem open="0" type="815" id="651" label="slotUnmute" />
      </listitem>
-     <listitem open="1" type="817" id="655" label="RadioDevice" >
+     <listitem open="0" type="817" id="655" label="RadioDevice" >
       <listitem open="0" type="815" id="698" label="getVolume" />
       <listitem open="0" type="815" id="701" label="isMuted" />
       <listitem open="0" type="815" id="700" label="isPowerOn" />
@@ -343,30 +344,25 @@ activate() {
       <listitem open="0" type="815" id="706" label="setPowerOn" />
       <listitem open="0" type="815" id="699" label="setVolume" />
      </listitem>
-     <listitem open="1" type="813" id="654" label="RadioDevice" />
-     <listitem open="1" type="817" id="619" label="RadioStation" >
-      <listitem open="0" type="815" id="664" label="getRadio" />
-     </listitem>
-     <listitem open="1" type="813" id="665" label="RadioStation" >
-      <listitem open="0" type="815" id="666" label="radio" />
+     <listitem open="0" type="813" id="665" label="RadioStation" >
+      <listitem open="0" type="815" id="687" label="frequencyMatch" />
       <listitem open="0" type="814" id="672" label="iconName" />
       <listitem open="0" type="814" id="673" label="initialVolume" />
       <listitem open="0" type="814" id="671" label="longName" />
-      <listitem open="0" type="815" id="687" label="frequencyMatch" />
-      <listitem open="0" type="815" id="686" label="urlMatch" />
+      <listitem open="0" type="815" id="666" label="radio" />
       <listitem open="0" type="814" id="670" label="shortName" />
       <listitem open="0" type="815" id="730" label="signalActivated" />
       <listitem open="0" type="815" id="674" label="slotActivate" />
+      <listitem open="0" type="815" id="686" label="urlMatch" />
       <listitem open="0" type="814" id="669" label="useInDockingMenu" />
       <listitem open="0" type="814" id="668" label="useQuickSelect" />
      </listitem>
-     <listitem open="0" type="807" id="617" label="RadioStructure" />
-     <listitem open="1" type="813" id="644" label="StationList" >
-      <listitem open="0" type="815" id="732" label="matchingRadioStation" />
+     <listitem open="0" type="813" id="644" label="StationList" >
       <listitem open="0" type="815" id="684" label="matchingRadioStation" />
+      <listitem open="0" type="815" id="732" label="matchingRadioStation" />
       <listitem open="0" type="815" id="729" label="merge" />
      </listitem>
-     <listitem open="1" type="813" id="647" label="StationListMetaData" >
+     <listitem open="0" type="813" id="647" label="StationListMetaData" >
       <listitem open="0" type="814" id="678" label="city" />
       <listitem open="0" type="814" id="680" label="comment" />
       <listitem open="0" type="814" id="677" label="country" />
@@ -374,9 +370,9 @@ activate() {
       <listitem open="0" type="814" id="675" label="maintainer" />
       <listitem open="0" type="814" id="679" label="media" />
      </listitem>
-     <listitem open="1" type="813" id="636" label="StationVector" />
-     <listitem open="1" type="817" id="658" label="StreamRadio" />
      <listitem open="1" type="813" id="621" label="V4LRadio" />
+     <listitem open="0" type="807" id="733" label="class diagram - overview" />
+     <listitem open="0" type="807" id="617" label="class diagram - radio" />
     </listitem>
     <listitem open="1" type="802" id="-1" label="Use Case View" />
    </listitem>
