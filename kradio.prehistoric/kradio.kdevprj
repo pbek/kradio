@@ -464,6 +464,7 @@ type=normal
 
 [presets/germany/Makefile.am]
 files=presets/germany/aachen-cable.krp
+files=presets/germany/hamburg-antenna.krp
 sub_dirs=
 type=normal
 
@@ -471,4 +472,10 @@ type=normal
 dist=true
 install=true
 install_location=$$(kde_datadir)/kradio/presets/germany/aachen-cable.krp
+type=DATA
+
+[presets/germany/hamburg-antenna.krp]
+dist=true
+install=true
+install_location=$$(kde_datadir)/kradio/presets/germany/hamburg-antenna.krp
 type=DATA
