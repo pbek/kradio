@@ -3,14 +3,14 @@
 # the error to ian geiser <geiseri@msoe.edu>
 Summary:   V4L/V4L2-Radio Application for KDE 3.x
 Name:      KRadio
-Version:   0.3.0-snapshot-2004-02-22e
+Version:   0.3.0-snapshot-2004-02-23
 Release:   1.suse
 Copyright: GPL
 Vendor:    Martin Witte <witte@kawo1.rwth-aachen.de>
 Url:       http://sourceforge.net/projects/kradio
 Packager:  Martin Witte <witte@kawo1.rwth-aachen.de>
 Group:     kde3
-Source:    /usr/src/kradio-cvs/kradio/kradio-0.3.0-snapshot-2004-02-22e.tar.gz
+Source:    /usr/src/kradio-cvs/kradio/kradio-0.3.0-snapshot-2004-02-23.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
