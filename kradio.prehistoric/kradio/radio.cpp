@@ -102,6 +102,17 @@ bool Radio::setStations(const StationList &sl)
 }
 
 
+int Radio::getStationIdx(const RadioStation &rs) const
+{
+	RawStationList &sl = const_cast<RawStationList&>(m_stationList.all());
+	return sl.find(&rs);
+}
+
+int Radio::getCurrentStationIdx() const
+{
+	return getStationIdx(getCurrentStation());
+}
+
 
 /* IRadioDevicePool Interface Methods
 
@@ -131,7 +142,8 @@ bool Radio::setActiveDevice(IRadioDevice *rd, bool keepPower)
 
 		// send notifications
 	    notifyActiveDeviceChanged(m_activeDevice);
-	    notifyStationChanged(queryCurrentStation());
+	    const RadioStation &rs = queryCurrentStation();
+	    notifyStationChanged(rs, getStationIdx(rs));
 
         if (keepPower)
 			oldPowerOn ? sendPowerOn() : sendPowerOff();
@@ -232,7 +244,7 @@ bool Radio::noticePowerChanged (bool on, const IRadioDevice *sender)
 bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender)
 {
 	if (sender == m_activeDevice) {
-		notifyStationChanged(rs);
+		notifyStationChanged(rs, getStationIdx(rs));
 		return true;
 	}
 	return false;

@@ -68,6 +68,8 @@ ANSWERS:
 	bool                   isPowerOn() const { return queryIsPowerOn(); }
 	bool                   isPowerOff() const { return queryIsPowerOff(); }
 	const RadioStation  &  getCurrentStation() const { return queryCurrentStation(); }
+	int                    getStationIdx(const RadioStation &) const;
+	int                    getCurrentStationIdx() const;
 	const StationList   &  getStations() const { return m_stationList; }
 
 

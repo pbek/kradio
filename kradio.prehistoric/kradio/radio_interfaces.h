@@ -52,14 +52,16 @@ RECEIVERS:
 	IF_RECEIVER(  setStations(const StationList &sl)             )
 
 SENDERS:
-	IF_SENDER  (  notifyPowerChanged(bool on)                    )
-	IF_SENDER  (  notifyStationChanged (const RadioStation &)    )
-	IF_SENDER  (  notifyStationsChanged(const StationList &sl)   )
+	IF_SENDER  (  notifyPowerChanged(bool on)                          )	
+	IF_SENDER  (  notifyStationChanged (const RadioStation &, int idx) )
+	IF_SENDER  (  notifyStationsChanged(const StationList &sl)         )
 
 ANSWERS:
 	IF_ANSWER  (  bool                   isPowerOn() const         )
 	IF_ANSWER  (  bool                   isPowerOff() const        )
 	IF_ANSWER  (  const RadioStation  &  getCurrentStation() const )
+	IF_ANSWER  (  int                    getStationIdx(const RadioStation &rs) const )
+	IF_ANSWER  (  int                    getCurrentStationIdx() const )
 	IF_ANSWER  (  const StationList   &  getStations() const       )
 
 };
@@ -78,14 +80,16 @@ SENDERS:
 	IF_SENDER  (  sendStations(const StationList &sl)                )
 
 RECEIVERS:
-	IF_RECEIVER(  noticePowerChanged(bool on)                      )
-	IF_RECEIVER(  noticeStationChanged (const RadioStation &)      )
-	IF_RECEIVER(  noticeStationsChanged(const StationList &sl)     )
+	IF_RECEIVER(  noticePowerChanged(bool on)                          )
+	IF_RECEIVER(  noticeStationChanged (const RadioStation &, int idx) )
+	IF_RECEIVER(  noticeStationsChanged(const StationList &sl)         )
 
 QUERIES:
 	IF_QUERY   (  bool                   queryIsPowerOn()          )
 	IF_QUERY   (  bool                   queryIsPowerOff()         )
 	IF_QUERY   (  const RadioStation  &  queryCurrentStation()     )
+	IF_QUERY   (  int                    queryStationIdx(const RadioStation &rs)  )
+	IF_QUERY   (  int                    queryCurrentStationIdx()  )
 	IF_QUERY   (  const StationList &    queryStations()           )
 
 };

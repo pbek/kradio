@@ -22,44 +22,88 @@
 #include <config.h>
 #endif
 
-#include "utils.h"
-
 #include <qobject.h>
-#include <qsocketnotifier.h>
-#include <qtimer.h>
-#include "timecontrol.h"
-
-#ifdef HAVE_LIRC_CLIENT
-#include <lirc/lirc_client.h>
-#endif
+#include "timecontrol_interfaces.h"
+#include "radio_interfaces.h"
+#include "radiodevicepool_interface.h"
+#include "plugins.h"
 
 
-class RadioBase;
+struct lirc_config;
+class QSocketNotifier;
+class QTimer;
 
-class LircSupport : public QObject  {
+class LircSupport : public QObject,
+					public PluginBase,
+                    public IRadioClient,
+                    public ITimeControlClient,
+                    public IRadioDevicePoolClient
+{
 Q_OBJECT
-protected:
-#ifdef HAVE_LIRC_CLIENT
-	QSocketNotifier		*lirc_notify;
-	int					fd_lirc;	
-	struct lirc_config	*lircConfig;
-#endif	
-	QTimer				*kbdTimer;
-	int					addIndex;
-	
-	RadioBase			*radio;
-	TimeControl         *timeControl;
-	
 public:
-	LircSupport(QObject *parent, RadioBase *radio, TimeControl *timeControl);
+	LircSupport(const QString &name);
 	~LircSupport();
 
+	virtual bool connect (Interface *);
+	virtual bool disconnect (Interface *);
+
+	virtual const QString &name() const { return PluginBase::name(); }
+	virtual       QString &name()       { return PluginBase::name(); }
+	
+	// IRadioClient methods
+
+RECEIVERS:
+	bool noticePowerChanged(bool on)                              { return false; }
+	bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }
+	bool noticeStationsChanged(const StationList &sl)             { return false; }
+
+
+    // ITimeControlClient
+
+RECEIVERS:
+	bool noticeAlarmsChanged(const AlarmVector &)      { return false; }
+	bool noticeAlarm(const Alarm &)                    { return false; }
+	bool noticeNextAlarmChanged(const Alarm *)         { return false; }
+	bool noticeCountdownStarted(const QDateTime &/*end*/) { return false; }
+	bool noticeCountdownStopped()                      { return false; }
+	bool noticeCountdownZero()                         { return false; }
+
+    // IRadioDevicePoolClient
+
+RECEIVERS:
+	bool noticeActiveDeviceChanged(IRadioDevice *)     { return false; }
+
+	// PluginBase
+
+public:
+	virtual void   saveState (KConfig *) const;
+	virtual void   restoreState (KConfig *);
+
+	virtual void   connect (PluginBase *p)    { connect ((Interface*)p); }
+	virtual void   disconnect (PluginBase *p) { disconnect ((Interface*)p); }
+
 protected:
-	void	activateStation(int i);
+	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
+	virtual QFrame *internal_createAboutPage(QWidget *parent);
+
+	
+protected:
+	void 	activateStation(int i);
 		
 protected slots:
 	void slotLIRC(int socket);
 	void slotKbdTimedOut();
+
+protected:
+
+#ifdef HAVE_LIRC_CLIENT
+	QSocketNotifier		*m_lirc_notify;
+	int					 m_fd_lirc;
+	struct lirc_config	*m_lircConfig;
+#endif
+
+	QTimer				*m_kbdTimer;
+	int					 m_addIndex;
 };
 
 

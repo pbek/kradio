@@ -28,8 +28,11 @@
 // well, it has to be a QObject :(  , but only for
 // receiving QTimer - timeouts
 
-class TimeControl : public QObject, public PluginBase, public ITimeControl
+class TimeControl : public QObject,
+                    public PluginBase,
+                    public ITimeControl
 {
+Q_OBJECT
 protected:
     AlarmVector       m_alarms;
     Alarm const *     m_waitingFor;         // m_alarmTimer is exactly for this date/time

@@ -16,50 +16,56 @@
  ***************************************************************************/
 
 #include "lircsupport.h"
-#include "radiobase.h"
+
+#ifdef HAVE_LIRC_CLIENT
+#include <lirc/lirc_client.h>
+#endif
+
+#include <qsocketnotifier.h>
+#include <qtimer.h>
 #include <kapplication.h>
 
+#include "stationlist.h"
+#include "radiodevice_interfaces.h"
 
-LircSupport::LircSupport(QObject *_parent, RadioBase *_radio, TimeControl *_timeControl)
-	: QObject(_parent)
+LircSupport::LircSupport(const QString &name)
+	: PluginBase(name)
 {
-	radio = _radio;
-	timeControl = _timeControl;
 
 #ifdef HAVE_LIRC_CLIENT
 	char *prg = (char*)"kradio";
-	fd_lirc = lirc_init(prg, 1);
-    lirc_notify = 0;
-    lircConfig  = 0;
+	m_fd_lirc = lirc_init(prg, 1);
+    m_lirc_notify = 0;
+    m_lircConfig  = 0;
 
-	if (fd_lirc != -1) {
-		if (lirc_readconfig (NULL, &lircConfig, NULL) == 0) {
-			lirc_notify = new QSocketNotifier(fd_lirc, QSocketNotifier::Read, this, "lirc_notifier");
-			if (lirc_notify)
-				connect(lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
+	if (m_fd_lirc != -1) {
+		if (lirc_readconfig (NULL, &m_lircConfig, NULL) == 0) {
+			m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this, "lirc_notifier");
+			if (m_lirc_notify)
+				QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
 		} else {
 			lirc_deinit();
-			fd_lirc = -1;
+			m_fd_lirc = -1;
 		}
 	}
 #endif	
 	
-	kbdTimer = new QTimer (this);
-	connect (kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
+	m_kbdTimer = new QTimer (this);
+	QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
 	
-	addIndex = 0;
+	m_addIndex = 0;
 }
 
 
 LircSupport::~LircSupport()
 {
 #ifdef HAVE_LIRC_CLIENT
-	if (fd_lirc != -1)
+	if (m_fd_lirc != -1)
 		lirc_deinit();
-	if (lircConfig)
-		lirc_freeconfig(lircConfig);
-	fd_lirc = -1;
-	lircConfig = 0;
+	if (m_lircConfig)
+		lirc_freeconfig(m_lircConfig);
+	m_fd_lirc = -1;
+	m_lircConfig = 0;
 #endif
 }
 
@@ -67,84 +73,77 @@ LircSupport::~LircSupport()
 void LircSupport::slotLIRC(int /*socket*/ )
 {
 #ifdef HAVE_LIRC_CLIENT
-	if (!lircConfig || !lirc_notify || fd_lirc == -1)
+	if (!m_lircConfig || !m_lirc_notify || m_fd_lirc == -1)
 		return;
 
-	char *code = 0, *c = 0;
-	int numStations, curStation;
+	IRadioDevice *currentDevice = queryActiveDevice();
+	ISeekRadio  *seeker = dynamic_cast<ISeekRadio*> (currentDevice);
+	IRadioSound *sound  = dynamic_cast<IRadioSound*>(currentDevice);
 
+	char *code = 0, *c = 0;
 	if (lirc_nextcode(&code) == 0) {
-		while(lirc_code2char (lircConfig, code, &c) == 0 && c != NULL) {
+		while(lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL) {
+		
 			if (strcasecmp (c, "TV") == 0) {
-				radio->PowerOff();
+				sendPowerOff();				
 			} else if (strcasecmp (c, "RADIO") == 0) {
-				radio->PowerOn();
+				sendPowerOn();				
 			} else if (strcasecmp (c, "POWER") == 0) {
-				if (radio->isPowerOn())
-					radio->PowerOff();
-				else
-					radio->PowerOn();
+				if (queryIsPowerOn()) sendPowerOff();
+				else                  sendPowerOn();
 			}
 			
-			if (radio->isPowerOn()) {
-				     if (strcasecmp (c, "VOL+") == 0)
-					radio->setVolume (radio->getVolume() + 1.0/32.0);
-				else if (strcasecmp (c, "VOL-") == 0)
-					radio->setVolume (radio->getVolume() - 1.0/32.0);
-				else if (strcasecmp (c, "CH+") == 0) {
-					int k = radio->currentStation() + 1;
-					if (k >= (int)radio->getStations().size())
+			if (queryIsPowerOn()) {
+				if (sound && strcasecmp (c, "VOL+") == 0) {
+					sound->setVolume (sound->getVolume() + 1.0/32.0);
+					
+				} else if (sound && strcasecmp (c, "VOL-") == 0) {
+					sound->setVolume (sound->getVolume() - 1.0/32.0);
+					
+				} else if (   (strcasecmp (c, "CH+") == 0)
+				           || (strcasecmp (c, "NEXT") == 0))
+				{
+					int k = queryCurrentStationIdx() + 1;
+					if (k >= queryStations().count())
 						k = 0;
-					radio->activateStation(k);
-				} else if (strcasecmp (c, "CH-") == 0) {
-					int k = radio->currentStation() - 1;
+					sendActivateStation(k);
+					
+				} else if (   (strcasecmp (c, "CH-") == 0)
+				           || (strcasecmp (c, "PREV") == 0))
+				{
+					int k = queryCurrentStationIdx() - 1;
 					if (k < 0)
-						k = radio->getStations().size() - 1;
-					radio->activateStation(k);
-				} else if (strcasecmp (c, "CH+SEARCH") == 0)
-					radio->startSeekUp();
-				else if (strcasecmp (c, "CH-SEARCH") == 0)
-					radio->startSeekDown();
-				else if (strcasecmp (c, "NEXT") == 0) {
-				    numStations = radio->nStations();
-				    curStation = radio->whichStation() + 1;
-				    if (curStation < numStations && curStation != -1)
-						activateStation(curStation + 1);
-				    else
-						activateStation(1);
-				}
-				else if (strcasecmp (c, "PREV") == 0) {
-				    numStations = radio->nStations();
-				    curStation = radio->whichStation() + 1;
-				    if (curStation > 1)
-					activateStation(curStation - 1);
-				    else if (curStation != -1)
-						activateStation(numStations);
-				    else
-						activateStation(1);
-				}
-				else if (strcasecmp (c, "SLEEP") == 0) {
-					timeControl->startCountdown();
-				}
-				else if (strcasecmp (c, "QUIT") == 0) {
+						k = queryStations().count() - 1;
+					sendActivateStation(k);
+					
+				} else if (seeker && strcasecmp (c, "CH+SEARCH") == 0) {
+					seeker->startSeekUp();
+					
+				} else if (strcasecmp (c, "CH-SEARCH") == 0) {
+					seeker->startSeekDown();
+					
+				} else if (strcasecmp (c, "SLEEP") == 0) {
+					sendStartCountdown();
+					
+				} else if (strcasecmp (c, "QUIT") == 0) {
 					kapp->quit();
 				}
 			
 				int k = -1;
 				if (sscanf (c, "%i", &k) == 1 ) {
-					if (addIndex || k == 0) {
-						if (!addIndex && k == 0) k = 10;	// interpret single 0 as 10
-					    activateStation(addIndex * 10 + k);
-					    kbdTimer->stop();
-					    addIndex = 0;
+					if (m_addIndex || k == 0) {
+					    activateStation(m_addIndex * 10 + k);
+					    m_kbdTimer->stop();
+					    m_addIndex = 0;
 					} else {
-						addIndex = k;
-						kbdTimer->start(500, true);
+						m_addIndex = k;
+						m_kbdTimer->start(500, true);
 					}
 				}
 			}
 		}
 	}
+	
 	if (code)
 		free (code);
 #endif
@@ -153,17 +152,33 @@ void LircSupport::slotLIRC(int /*socket*/ )
 
 void LircSupport::slotKbdTimedOut()
 {
-	activateStation (addIndex);
-	addIndex = 0;
+	activateStation (m_addIndex);
+	m_addIndex = 0;
 }
 
 
 void LircSupport::activateStation (int i)
 {
-	int im10=i%10;
-	RadioStation *s = radio->getStation(i - 1);	
-	if (!s) s = radio->getStation(im10 ? im10 - 1 : 9);
-	if (s)
-		s->activate();
+	if (! sendActivateStation(i - 1))
+		sendActivateStation( (i + 9) % 10);
 }
+
+
+
+
+bool LircSupport::connect (Interface *i)
+{
+	return IRadioClient::connect (i) ||
+		   ITimeControlClient::connect (i) ||
+		   IRadioDevicePoolClient::connect (i);
+}
+
+bool LircSupport::disconnect (Interface *i)
+{
+	return IRadioClient::disconnect (i) ||
+		   ITimeControlClient::disconnect (i) ||
+		   IRadioDevicePoolClient::disconnect (i);
+}
+
+
 

@@ -24,10 +24,10 @@
 
 IF_IMPL_SENDER  (  IRadio::notifyPowerChanged(bool on),
                    noticePowerChanged(on)                                         )
-IF_IMPL_SENDER  (  IRadio::notifyStationChanged (const RadioStation &s),
-                   noticeStationChanged (s)                                )
+IF_IMPL_SENDER  (  IRadio::notifyStationChanged (const RadioStation &s, int idx),
+                   noticeStationChanged (s, idx)                                  )
 IF_IMPL_SENDER  (  IRadio::notifyStationsChanged(const StationList &sl),
-                   noticeStationsChanged(sl)                               )
+                   noticeStationsChanged(sl)                                      )
 
 // IRadioClient
 
@@ -52,6 +52,14 @@ IF_IMPL_QUERY   (  bool IRadioClient::queryIsPowerOff(),
 IF_IMPL_QUERY   (  const RadioStation  &  IRadioClient::queryCurrentStation(),
                    getCurrentStation(),
                    undefinedRadioStation          )
+
+IF_IMPL_QUERY   (  int IRadioClient::queryCurrentStationIdx(),
+                   getCurrentStationIdx(),
+                   -1 )
+
+IF_IMPL_QUERY   (  int IRadioClient::queryStationIdx(const RadioStation &rs),
+                   getStationIdx(rs),
+                   -1 )
 
 IF_IMPL_QUERY   (  const StationList &  IRadioClient::queryStations(),
                    getStations(),

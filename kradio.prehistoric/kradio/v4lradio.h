@@ -36,6 +36,7 @@ class V4LRadio : public QObject,
                  public ISeekRadio,
                  public IFrequencyRadio
 {
+Q_OBJECT
 public:
 	V4LRadio (const QString &name);
 	virtual ~V4LRadio ();
