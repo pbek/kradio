@@ -274,7 +274,7 @@ void RecordingContext::setError()
 }
 
 
-void RecordingContext::bufferAdded(unsigned int samples, const RecordingConfig &c)
+void RecordingContext::bufferAdded(unsigned int sizeDelta, const RecordingConfig &c)
 {
 	if (running) {
 		int sampleSize = 1;
@@ -282,9 +282,10 @@ void RecordingContext::bufferAdded(unsigned int samples, const RecordingConfig &
 		if (c.bits > 16) sampleSize = 4;
 		sampleSize *= c.channels;
 
-		unsigned int sizeDelta = samples * sampleSize;
 		size_low += sizeDelta;
 		if (size_low < sizeDelta) ++size_high;
+
+		unsigned int samples = sizeDelta / sizeDelta;
 		subSecondSamples += samples;
 		seconds += subSecondSamples / c.rate;
 		subSecondSamples %= c.rate;

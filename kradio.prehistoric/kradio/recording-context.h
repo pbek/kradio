@@ -86,7 +86,7 @@ struct RecordingContext
 	void start(const QString &o);
 	void stop();
 	void setError();
-	void bufferAdded(unsigned int samples, const RecordingConfig &c);
+	void bufferAdded(unsigned int deltaSize, const RecordingConfig &c);
 };
 
 
