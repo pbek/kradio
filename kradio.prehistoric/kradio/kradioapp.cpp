@@ -143,17 +143,31 @@ void KRadioApp::readOptions()
 		AlarmVector al;
 		int nAlarms = config->readNumEntry ("nAlarms", 0);
 		for (int idx = 1; idx <= nAlarms; ++idx) {
-			QDateTime d = config->readDateTimeEntry(AlarmTimeElement    + QString().setNum(idx));
-			bool enable = config->readBoolEntry(AlarmEnabledElement     + QString().setNum(idx), false);
-			bool daily  = config->readBoolEntry(AlarmDailyElement       + QString().setNum(idx), false);
-			float vol   = config->readDoubleNumEntry(AlarmVolumeElement + QString().setNum(idx), 1);
-			int   stId  = config->readNumEntry(AlarmStationIDElement    + QString().setNum(idx), 0);
+			QString num = QString().setNum(idx);
+			QDateTime d = config->readDateTimeEntry(AlarmTimeElement       + num);
+			bool enable = config->readBoolEntry(AlarmEnabledElement        + num, false);
+			bool daily  = config->readBoolEntry(AlarmDailyElement          + num, false);
+			float vol   = config->readDoubleNumEntry(AlarmVolumeElement    + num, 1);
+			float freq  = config->readDoubleNumEntry(AlarmFrequencyElement + num, -1234);
+
+			// read StationID only for compatibility
+			int   stId  = config->readNumEntry(AlarmStationIDElement       + num, -1);
+
+			// for compatibility
+			if (freq != -1234) { // the freq entry already exists
+				// nothing to do
+			} else {             // the freq entry does not yet exist, use stationID if exists
+				freq = -1;
+				RadioStation *st = radio->getStation(stId);
+				if (st)
+					freq = st->getFrequency();
+			}
 
 			enable &= d.isValid();
 
 			Alarm *a = new Alarm ( this, d, daily, enable);
 			a->setVolumePreset(vol);
-			a->setStationID(stId);
+			a->setFrequency(freq);
 			al.push_back(a);
 		}
 
@@ -203,11 +217,13 @@ void KRadioApp::saveOptions()
 		int idx = 1;
 		for (ciAlarmVector i = al.begin(); i != al.end(); ++i, ++idx) {
 			const Alarm *a = *i;
-			config->writeEntry(AlarmTimeElement      + QString().setNum(idx), a->alarmTime());
-			config->writeEntry(AlarmEnabledElement   + QString().setNum(idx), a->isEnabled());
-			config->writeEntry(AlarmDailyElement     + QString().setNum(idx), a->isDaily());
-			config->writeEntry(AlarmVolumeElement    + QString().setNum(idx), a->getVolumePreset());
-			config->writeEntry(AlarmStationIDElement + QString().setNum(idx), a->getStationID());
+			QString num = QString().setNum(idx);
+			config->writeEntry (AlarmTimeElement      + num, a->alarmTime());
+			config->writeEntry (AlarmEnabledElement   + num, a->isEnabled());
+			config->writeEntry (AlarmDailyElement     + num, a->isDaily());
+			config->writeEntry (AlarmVolumeElement    + num, a->getVolumePreset());
+			config->writeEntry (AlarmFrequencyElement + num, a->getFrequency());
+			config->deleteEntry(AlarmStationIDElement + num);
 		}
 
 
@@ -289,15 +305,16 @@ void KRadioApp::slotAlarm (Alarm *a)
 {
 	if (radio && a) {
 
-		int id = a->getStationID();
-		if (id >= 0)
-			radio->activateStation (id);
+		float f = a->getFrequency();
+		if (f >= 0)
+			radio->setFrequency (f);
 
 		radio->PowerOn ();
 
 		float v = a->getVolumePreset();
 
-		radio->setVolume (v < 0 ? 1.0 : v);
+		if (v >= 0)
+			radio->setVolume (v);
 
 	}
 }

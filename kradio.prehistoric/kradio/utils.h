@@ -36,6 +36,10 @@ typedef vector<int>					IntVector;
 typedef IntVector::iterator			iIntVector;
 typedef IntVector::const_iterator	ciIntVector;
 
+typedef vector<float>				FloatVector;
+typedef FloatVector::iterator		iFloatVector;
+typedef FloatVector::const_iterator	ciFloatVector;
+
 
 extern const char *mixerChannelLabels[];
 extern const char *mixerChannelNames[];

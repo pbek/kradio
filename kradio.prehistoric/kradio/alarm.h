@@ -41,7 +41,7 @@ protected:
 	bool		daily;
 	bool        done;
 
-	int			stationID;    // < 0 : disabled
+	float		frequency;    // < 0 : disabled
 	float		volumePreset; // < 0: disabled
 
 public:
@@ -55,14 +55,14 @@ public:
 	bool 		isDaily() const { return daily; }
 	QDateTime   nextAlarm (bool ignoreEnable = false) const;
 	QDateTime	alarmTime () const { return time; }
-	int		getStationID () const { return stationID; }
+	float		getFrequency () const { return frequency; }
 	float	getVolumePreset () const { return volumePreset; }
 	
 	void	setEnabled (bool enable = true) { enabled = enable; done = false; }
 	void	setDaily (bool d = true) { daily = d; done = false; }
 	void	setDate (const QDate &d) { time.setDate(d); done = false; }
 	void	setTime (const QTime &d) { time.setTime(d); done = false; }
-    void    setStationID(int id) { stationID = id; }
+    void    setFrequency(float f) { frequency = f; }
     void    setVolumePreset(float v) { volumePreset = v; }
 	
 	
