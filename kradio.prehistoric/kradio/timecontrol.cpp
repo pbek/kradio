@@ -19,20 +19,21 @@
 #include "timecontrol.h"
 
 
-#define ALARM_TIMER_INTERVALL 5
-
 TimeControl::TimeControl (QObject *p, const QString &n)
-	: QObject(p, n)
+	: QObject(p, n),
+	  alarmTimer(this),
+	  countdownTimer(this)
 {
-	alarmTimer = new QTimer(this);
-	alarmTimer->start(ALARM_TIMER_INTERVALL * 1000);
-	connect(alarmTimer, SIGNAL(timeout()), this, SLOT(slotPoll()));
-	countdownSeconds = 0;	
+	connect(&alarmTimer,     SIGNAL(timeout()),          this, SLOT(slotAlarmTimeout()));
+	connect(&countdownTimer, SIGNAL(timeout()),          this, SLOT(slotCountdownTimeout()));
+	countdownSeconds = 0;
+	waitingFor = NULL;
 }
 
 
 TimeControl::~TimeControl ()
 {
+	waitingFor = NULL;
 	for (iAlarmVector i = Alarms.begin(); i != Alarms.end(); ++i)
 		delete *i;
 }
@@ -40,6 +41,7 @@ TimeControl::~TimeControl ()
 
 void TimeControl::setAlarms (const AlarmVector &al)
 {
+	waitingFor = NULL;
 	for (iAlarmVector i = Alarms.begin(); i != Alarms.end(); ++i) {
 		delete *i;
 	}
@@ -54,29 +56,28 @@ void TimeControl::addAlarms (const AlarmVector &al)
 	for (ciAlarmVector i = al.begin(); i != al.end(); ++i) {
 		Alarm *a = new Alarm (this, **i);
 		Alarms.push_back(a);
-		connect (a, SIGNAL(alarm(Alarm*)), this, SLOT(slotAlarm(Alarm*)));
-		connect (alarmTimer, SIGNAL(timeout()), a, SLOT(poll()));
 	}
+
+	waitingFor = NULL;
+	slotAlarmTimeout();
+
 	emit sigConfigChanged();
 }
 
 
-QDateTime TimeControl::nextAlarm () const
+QDateTime TimeControl::nextAlarm (Alarm **save) const
 {
 	QDateTime now = QDateTime::currentDateTime(),
 	          next;
+	if (save) *save = 0;
 	for (ciAlarmVector i = Alarms.begin(); i != Alarms.end(); ++i) {
 		QDateTime n = (*i)->nextAlarm();
-		if (n.isValid() && n.addSecs(60) >= now && (!next.isValid() || n < next))
+		if (n.isValid() && n >= now && (!next.isValid() || n < next)) {
 			next = n;
+			if (save) *save = *i;
+		}
 	}
 	return next;
-}
-
-
-void TimeControl::slotAlarm(Alarm *a)
-{
-	emit sigAlarm(a);
 }
 
 
@@ -89,31 +90,76 @@ void TimeControl::setCountdownSeconds(int n)
 
 void TimeControl::startCountdown()
 {
-	countdownStart = QDateTime::currentDateTime();
+	countdownEnd = QDateTime::currentDateTime().addSecs(countdownSeconds);
+	countdownTimer.start(countdownSeconds * 1000, true);
 	emit sigStartCountdown();
 }
 
 
 void TimeControl::stopCountdown()
 {
-	countdownStart = QDateTime();
+	countdownTimer.stop();
+	countdownEnd = QDateTime();
 	emit sigStopCountdown();
 }
 
 
-void TimeControl::slotPoll()
-{
-	QDateTime now = QDateTime::currentDateTime();
-	if (countdownStart.isValid() && countdownStart.addSecs(countdownSeconds) <= now) {
-		stopCountdown();
-		emit sigCountdownZero();
-	}
-}
-
 void TimeControl::startStopCountdown()
 {
-    if (countdownStart.isValid())
+    if (countdownEnd.isValid())
 		stopCountdown();
 	else
 		startCountdown();
 }
+
+
+const QDateTime TimeControl::getCountdownEnd () const
+{
+	if (countdownTimer.isActive())
+		return countdownEnd;
+	else
+		return QDateTime();
+}
+
+
+void TimeControl::slotCountdownTimeout()
+{
+	stopCountdown();
+	emit sigCountdownZero();
+}
+
+
+void TimeControl::slotAlarmTimeout()
+{
+	if (waitingFor) {
+		waitingFor->raiseAlarm();
+		emit sigAlarm(waitingFor);
+	}
+
+	Alarm     *n = NULL;
+	QDateTime now          = QDateTime::currentDateTime();
+    QDateTime na           = nextAlarm(&n);
+
+	waitingFor = NULL;
+	if (na.isValid()) {
+	
+		int days  = now.daysTo(na);
+		int msecs = now.time().msecsTo(na.time());
+
+		if (days > 1) {
+			alarmTimer.start(24 * 3600 * 1000, true);
+			
+		} else if (days >= 0) {
+		
+			if (days > 0)
+				msecs += days * 24 * 3600 * 1000;
+
+			if (msecs >= 0) {
+				waitingFor = n;
+				alarmTimer.start(msecs, true);
+			}
+		}
+	}
+}
+
+

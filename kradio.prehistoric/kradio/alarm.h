@@ -39,7 +39,7 @@ protected:
 	QDateTime	time;
 	bool		enabled;
 	bool		daily;
-	QDateTime	done;
+	bool        done;
 
 	int			stationID;    // < 0 : disabled
 	float		volumePreset; // < 0: disabled
@@ -58,16 +58,16 @@ public:
 	int		getStationID () const { return stationID; }
 	float	getVolumePreset () const { return volumePreset; }
 	
-	void	setEnabled (bool enable = true) { enabled = enable; done = QDateTime();  }
-	void	setDaily (bool d = true) { daily = d; done = QDateTime(); }
-	void	setDate (const QDate &d) { time.setDate(d); done = QDateTime();  }
-	void	setTime (const QTime &d) { time.setTime(d); done = QDateTime();  }
+	void	setEnabled (bool enable = true) { enabled = enable; done = false; }
+	void	setDaily (bool d = true) { daily = d; done = false; }
+	void	setDate (const QDate &d) { time.setDate(d); done = false; }
+	void	setTime (const QTime &d) { time.setTime(d); done = false; }
     void    setStationID(int id) { stationID = id; }
     void    setVolumePreset(float v) { volumePreset = v; }
 	
 	
 public slots:
-	void poll ();
+	void raiseAlarm();
 
 signals:
 	void alarm (Alarm *);

@@ -21,19 +21,20 @@
 #include <qobject.h>
 #include "alarm.h"
 #include <qtimer.h>
-//#include "countdown.h"
 
 class TimeControl : public QObject
 {
 Q_OBJECT
 
 protected:
-    QTimer          *alarmTimer;
+    QTimer          alarmTimer;
+    QTimer          countdownTimer;
 
     AlarmVector     Alarms;
+    Alarm           *waitingFor;
 
     int				countdownSeconds;   // in seconds
-    QDateTime		countdownStart;
+    QDateTime		countdownEnd;
     
 
 public:
@@ -45,7 +46,7 @@ public:
 
     virtual void                addAlarms   (const AlarmVector &sl);
     virtual void                setAlarms   (const AlarmVector &sl);
-    virtual QDateTime           nextAlarm	() const;
+    virtual QDateTime           nextAlarm	(Alarm **na = NULL) const;
     virtual const AlarmVector   &getAlarms  () const { return Alarms; }
 
 
@@ -53,16 +54,17 @@ public:
 
     virtual void setCountdownSeconds (int n);
     virtual int  getCountdownSeconds () const { return countdownSeconds; }
-    virtual const QDateTime &getCountdownStart () const { return countdownStart; }
+    virtual const QDateTime getCountdownEnd () const;
     
 
 public slots:
-    virtual void    slotAlarm(Alarm *);
-
     virtual void    startCountdown();
     virtual void    stopCountdown();
     virtual void    startStopCountdown(); // start if not running, stop if running
-    virtual void    slotPoll();
+
+protected slots:
+    virtual void    slotAlarmTimeout();
+    virtual void    slotCountdownTimeout();
 
 signals:
     void    sigConfigChanged();

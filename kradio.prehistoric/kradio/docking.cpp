@@ -229,9 +229,7 @@ void RadioDocking::mousePressEvent( QMouseEvent *e )
 void RadioDocking::slotSleepChanged()
 {
     KPopupMenu *menu = contextMenu();
-	QDateTime s = timeControl->getCountdownStart();
-	int n = timeControl->getCountdownSeconds();
-	QDateTime e = s.isValid() ? s.addSecs(n) : s;
+	QDateTime e = timeControl->getCountdownEnd();
 
 	if (e.isValid())
 		menu->changeItem (sleepID, i18n("stop sleep (running until ") + e.toString() + ")");
