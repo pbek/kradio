@@ -45,6 +45,7 @@ public:
 	IRadioDevice() : IRadioDevice::BaseClass(-1) {}
 
 RECEIVERS:
+	IF_RECEIVER(  setPower(bool on)                                )
 	IF_RECEIVER(  powerOn()                                        )
 	IF_RECEIVER(  powerOff()                                       )
     IF_RECEIVER(  activateStation(const RadioStation &rs)          )
@@ -68,6 +69,7 @@ public :
 	IRadioDeviceClient(int _maxConnections = 1) : IRadioDeviceClient::BaseClass(_maxConnections) {}
 
 SENDERS:
+	IF_SENDER  (  sendPower(bool on)                                 )
 	IF_SENDER  (  sendPowerOn()                                      )
 	IF_SENDER  (  sendPowerOff()                                     )
     IF_SENDER  (  sendActivateStation (const RadioStation &rs)       )
@@ -95,16 +97,20 @@ RECEIVERS:
 	IF_RECEIVER(  setVolume (float v)                            )
 	IF_RECEIVER(  mute (bool mute)                               )
 	IF_RECEIVER(  unmute (bool mute)                             )
+	IF_RECEIVER(  setSignalMinQuality(float q)                   )
 
 SENDERS:
 	IF_SENDER  (  notifyVolumeChanged(float v)                   )
 	IF_SENDER  (  notifySignalQualityChanged(float q)            )
+	IF_SENDER  (  notifySignalQualityChanged(bool good)          )
 	IF_SENDER  (  notifyStereoChanged(bool  s)                   )
 	IF_SENDER  (  notifyMuted(bool m)                            )
 
 ANSWERS:
 	IF_ANSWER  (  float   getVolume() const                      )
 	IF_ANSWER  (  float   getSignalQuality() const               )
+	IF_ANSWER  (  float   getSignalMinQuality() const            )
+	IF_ANSWER  (  bool    hasGoodQuality() const                 )
 	IF_ANSWER  (  bool    isStereo() const                       )
 	IF_ANSWER  (  bool    isMuted() const                        )
 };
@@ -117,27 +123,33 @@ public :
 
 SENDERS:
 	IF_SENDER  (  sendVolume (float v)                           )
-	IF_SENDER  (  sendMute (bool mute)                           )
-	IF_SENDER  (  sendUnmute (bool mute)                         )
+	IF_SENDER  (  sendMute (bool mute = false)                   )
+	IF_SENDER  (  sendUnmute (bool mute = false)                 )
+	IF_SENDER  (  sendSignalMinQuality (float q)                 )
 
 RECEIVERS:
 	IF_RECEIVER(  noticeVolumeChanged(float v)                   )
 	IF_RECEIVER(  noticeSignalQualityChanged(float q)            )
+	IF_RECEIVER(  noticeSignalQualityChanged(bool good)          )
 	IF_RECEIVER(  noticeStereoChanged(bool  s)                   )
 	IF_RECEIVER(  noticeMuted(bool m)                            )
 
 QUERIES:
 	IF_QUERY   (  float   queryVolume()                          )
 	IF_QUERY   (  float   querySignalQuality()                   )
+	IF_QUERY   (  float   querySignalMinQuality()                )
+	IF_QUERY   (  bool    queryHasGoodQuality()                   )
 	IF_QUERY   (  bool    queryIsStereo()                        )
 	IF_QUERY   (  bool    queryIsMuted()                         )
 };
 
 
 /////////////////////////////////////////////////////////////////////////////
-
 INTERFACE(ISeekRadio, ISeekRadioClient)
 {
+
+    friend class SeekHelper;
+
 public :
 	ISeekRadio() : ISeekRadio::BaseClass(-1) {}
 
@@ -196,6 +208,8 @@ public :
 
 RECEIVERS:
 	IF_RECEIVER(  setFrequency(float f)                                          )
+	IF_RECEIVER(  setMinFrequency(float mf)                                      )
+	IF_RECEIVER(  setMaxFrequency(float mf)                                      )
 	IF_RECEIVER(  setScanStep(float s)                                           )
 
 SENDERS:
@@ -204,11 +218,12 @@ SENDERS:
 	IF_SENDER  (  notifyScanStepChanged(float s)                                 )
 
 ANSWERS:
-	IF_ANSWER  (  float                getFrequency()     const                  )
-	IF_ANSWER  (  float                getMinFrequency()  const                  )
-	IF_ANSWER  (  float                getMaxFrequency()  const                  )
-	IF_ANSWER  (  float                getScanStep()      const                  )
- 	IF_ANSWER  (  const RadioStation&  getStation (float freq) const             )
+	IF_ANSWER  (  float        getFrequency()     const                  )
+	IF_ANSWER  (  float        getMinFrequency()  const                  )
+    IF_ANSWER  (  float        getMinDeviceFrequency() const             )
+	IF_ANSWER  (  float        getMaxFrequency()  const                  )
+	IF_ANSWER  (  float        getMaxDeviceFrequency()  const            )
+	IF_ANSWER  (  float        getScanStep()      const                  )
 };
 
 
@@ -219,6 +234,8 @@ public :
 
 SENDERS:
 	IF_SENDER  (  sendFrequency(float f)                                         )
+	IF_SENDER  (  sendMinFrequency(float mf)                                     )
+	IF_SENDER  (  sendMaxFrequency(float mf)                                     )
 	IF_SENDER  (  sendScanStep(float s)                                          )
 
 RECEIVERS:
@@ -229,7 +246,9 @@ RECEIVERS:
 QUERIES:
 	IF_QUERY   (  float queryFrequency()                                         )
 	IF_QUERY   (  float queryMinFrequency()                                      )
+	IF_QUERY   (  float queryMinDeviceFrequency()                                )
 	IF_QUERY   (  float queryMaxFrequency()                                      )
+	IF_QUERY   (  float queryMaxDeviceFrequency()                                )
 	IF_QUERY   (  float queryScanStep()                                          )
 };
 

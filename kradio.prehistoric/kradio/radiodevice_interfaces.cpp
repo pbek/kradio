@@ -31,6 +31,8 @@ IF_IMPL_SENDER  (  IRadioDevice::notifyStationChanged (const RadioStation &s),
 
 // IRadioDeviceClient
 
+IF_IMPL_SENDER  (  IRadioDeviceClient::sendPower(bool on),
+                   setPower(on)                                   )
 IF_IMPL_SENDER  (  IRadioDeviceClient::sendPowerOn(),
                    powerOn()                                      )
 IF_IMPL_SENDER  (  IRadioDeviceClient::sendPowerOff(),
@@ -53,7 +55,9 @@ IF_IMPL_QUERY   (  const RadioStation  &  IRadioDeviceClient::queryCurrentStatio
 IF_IMPL_SENDER  (  IRadioSound::notifyVolumeChanged(float v),
                    noticeVolumeChanged(v)                   )
 IF_IMPL_SENDER  (  IRadioSound::notifySignalQualityChanged(float q),
-                    noticeSignalQualityChanged(q)           )
+                   noticeSignalQualityChanged(q)           )
+IF_IMPL_SENDER  (  IRadioSound::notifySignalQualityChanged(bool good),
+                   noticeSignalQualityChanged(good)        )
 IF_IMPL_SENDER  (  IRadioSound::notifyStereoChanged(bool  s),
                    noticeStereoChanged(s)                   )
 IF_IMPL_SENDER  (  IRadioSound::notifyMuted(bool m),
@@ -68,6 +72,8 @@ IF_IMPL_SENDER  (  IRadioSoundClient::sendMute (bool mute),
                    mute (mute)                              )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendUnmute (bool mute),
                    unmute (mute)                            )
+IF_IMPL_SENDER  (  IRadioSoundClient::sendSignalMinQuality (float q),
+                   setSignalMinQuality (q)                  )
 
 IF_IMPL_QUERY   (  float  IRadioSoundClient::queryVolume(),
                    getVolume(),
@@ -75,6 +81,12 @@ IF_IMPL_QUERY   (  float  IRadioSoundClient::queryVolume(),
 IF_IMPL_QUERY   (  float  IRadioSoundClient::querySignalQuality(),
                    getSignalQuality(),
                    0.0      )
+IF_IMPL_QUERY   (  float  IRadioSoundClient::querySignalMinQuality(),
+                   getSignalMinQuality(),
+                   0.75     )
+IF_IMPL_QUERY   (  bool   IRadioSoundClient::queryHasGoodQuality(),
+                   hasGoodQuality(),
+                   false              )
 IF_IMPL_QUERY   (  bool   IRadioSoundClient::queryIsStereo(),
                    isStereo(),
                    false              )
@@ -130,6 +142,10 @@ IF_IMPL_SENDER  (  IFrequencyRadio::notifyScanStepChanged(float s),
 
 IF_IMPL_SENDER  (  IFrequencyRadioClient::sendFrequency(float f),
                    setFrequency(f)                                )
+IF_IMPL_SENDER  (  IFrequencyRadioClient::sendMinFrequency(float mf),
+                   setMinFrequency(mf)                            )
+IF_IMPL_SENDER  (  IFrequencyRadioClient::sendMaxFrequency(float mf),
+                   setMaxFrequency(mf)                            )
 IF_IMPL_SENDER  (  IFrequencyRadioClient::sendScanStep(float s),
                    setScanStep(s)                                 )
 
@@ -139,8 +155,14 @@ IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryFrequency(),
 IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryMinFrequency(),
                    getMinFrequency(),
                    0                                              )
+IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryMinDeviceFrequency(),
+                   getMinDeviceFrequency(),
+                   0                                              )
 IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryMaxFrequency(),
                    getMaxFrequency(),
+                   0                                              )
+IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryMaxDeviceFrequency(),
+                   getMaxDeviceFrequency(),
                    0                                              )
 IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryScanStep(),
                    getScanStep(),

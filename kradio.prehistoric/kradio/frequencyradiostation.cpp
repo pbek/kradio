@@ -18,12 +18,6 @@
 #include "frequencyradiostation.h"
 #include <typeinfo>
 
-// Kopenhagener Wellenplan: 300kHz
-#define STATION_FREQ_INTERVAL_FM   0.3
-
-// Kopenhagener Wellenplan:   9kHz
-#define STATION_FREQ_INTERVAL_AM   0.009
-
 /////////////////////////////////////////////////////////////////////////////
 
 const char *StationFrequencyElement		= "frequency";

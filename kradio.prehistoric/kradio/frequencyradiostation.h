@@ -28,7 +28,12 @@
  * @author Klas Kalass, Ernst Martin Witte
  */
 
-//extern const char *StationFrequencyElement;
+
+// Kopenhagener Wellenplan: 300kHz
+#define STATION_FREQ_INTERVAL_FM   0.3
+
+// Kopenhagener Wellenplan:   9kHz
+#define STATION_FREQ_INTERVAL_AM   0.009
 
 
 class FrequencyRadioStation : public RadioStation  {

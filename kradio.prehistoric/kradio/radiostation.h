@@ -15,15 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-
-/*
-
-  Each radio station is described by a KURL. Thus internet radio stations are
-  no longer a problem, AM/FM stations can be described by a special protocol,
-  for example frequency://95.10
-
-*/ 
-
 #ifndef KRADIO_RADIOSTATION_H
 #define KRADIO_RADIOSTATION_H
 
@@ -59,7 +50,11 @@
   
 */
 
+/////////////////////////////////////////////////////////////////////////////
+
 extern struct RegisterStationClass {} registerStationClass;
+
+/////////////////////////////////////////////////////////////////////////////
 
 class RadioStation
 {

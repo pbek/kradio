@@ -87,7 +87,7 @@ void FrequencySeekHelper::getData()
 	m_oldFrequency     = m_currentFrequency;
 
 	m_currentSignal    = querySignalQuality();
-	m_goodSignal       = queryIsGoodQuality();
+	m_goodSignal       = queryHasGoodQuality();
 	m_currentFrequency = queryFrequency();
 }
 

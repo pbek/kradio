@@ -1,12 +1,9 @@
 /***************************************************************************
-                          radio.h  -  description
+                          v4lradio.h  -  description
                              -------------------
-    begin                : Thu Mar 8 2001
-    copyright            : (C) 2001, 2002 by Frank Schwanz, Ernst Martin Witte
-                               2003 by Klas Kalass
-    email                : schwanz@fh-brandenburg.de, witte@kawo1.rwth-aachen.de,
-                           klas@kde.org
-    based on             : libradio
+    begin                : Jan 2002
+    copyright            : (C) 2002, 2003 Ernst Martin Witte, Klas Kalass
+    email                : witte@kawo1.rwth-aachen.de, klas@kde.org
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,112 +15,162 @@
  *                                                                         *
  ***************************************************************************/
 
-/*
- *  libradio, a simple fm tuner control library
- *  Copyright (C) 1999, 2000  Dan Johnson <dj51d@progworks.net>
- *
- *  This library is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU Library General Public
- *  License as published by the Free Software Foundation; either
- *  version 2 of the License, or (at your option) any later version.
- *
- *  This library is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- *  Library General Public License for more details.
- *
- *  You should have received a copy of the GNU Library General Public
- *  License along with this library; if not, write to the Free
- *  Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
- *  MA 02111-1307, USA
- */
-
-#ifndef V4LRADIO_H
-#define V4LRADIO_H
+#ifndef KRADIO_V4LRADIO_H
+#define KRADIO_V4LRADIO_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
-#include "utils.h"
+#include <qtimer.h>
+#include "radiodevice_interfaces.h"
+#include "plugins.h"
+#include "frequencyradiostation.h"
+#include "frequencyseekhelper.h"
 
-#include "frequencyradio.h"
 
-// forward declarations
-class Radio;
+class V4LRadio : public PluginBase,
+                 public IRadioDevice,
+                 public IRadioSound,
+                 public ISeekRadio,
+                 public IFrequencyRadio
+{
+public:
+	V4LRadio ();
+	virtual ~V4LRadio ();
 
-class V4LRadio : public FrequencyRadio {
+	virtual bool connect (Interface *);
+	virtual bool disconnect (Interface *);
+
+
+	// IRadioDevice methods
+
+RECEIVERS:
+	virtual bool setPower(bool p);
+	virtual bool powerOn();
+	virtual bool powerOff();
+	virtual bool activateStation(const RadioStation &rs);
+
+ANSWERS:
+	virtual bool                   isPowerOn() const;
+	virtual bool                   isPowerOff() const;
+	virtual const RadioStation  &  getCurrentStation() const;
+
+
+	// IRadioSound
+
+RECEIVERS:
+	virtual bool setVolume (float v);
+	virtual bool mute (bool mute = false);
+	virtual bool unmute (bool mute = false);
+	virtual bool setSignalMinQuality(float q);
+
+ANSWERS:
+	virtual float   getVolume() const;
+	virtual float   getSignalQuality() const;
+	virtual float   getSignalMinQuality() const;
+	virtual bool    hasGoodQuality() const;
+	virtual bool    isStereo() const;
+	virtual bool    isMuted() const;
+
+
+    // ISeekRadio
+	
+RECEIVERS:
+	virtual bool startSeek (bool up);
+	virtual bool startSeekUp();
+	virtual bool startSeekDown();
+	virtual bool stopSeek();
+
+ANSWERS:
+	virtual bool isSeekRunning() const;
+	virtual bool isSeekUpRunning() const;
+	virtual bool isSeekDownRunning() const;
+
+
+    // IFrequencyRadio
+
+RECEIVERS:
+	virtual bool setFrequency(float f);
+	virtual bool setScanStep(float s);
+
+ANSWERS:
+	virtual float                getFrequency()     const;
+	virtual float                getMinFrequency()  const;
+	virtual float                getMinDeviceFrequency()  const;
+	virtual float                getMaxFrequency()  const;
+	virtual float                getMaxDeviceFrequency()  const;
+	virtual float                getScanStep()      const;
+
+	// PluginBase
 
 public:
-//	V4LRadio(QObject *parent, const QString &name,
-//	         const QString &RadioDev = "", const QString &MixerDev = "", int MixerChannel = 0);
-    V4LRadio(Radio *mainRadio);
-	~V4LRadio();
-
-    virtual const QString &radioDevice()  const { return m_RadioDev; }
-    virtual void  setRadioDevice(const QString &s);
-
-    virtual const QString &mixerDevice()  const { return m_MixerDev; }
-    virtual void  setMixerDevice(const QString &s, int ch);
-
-    virtual void  setDevices(const QString &r, const QString &m, int ch);
-
-    virtual int mixerChannel() const { return m_MixerChannel; }
-
-    virtual float signal() const;
-    virtual bool  isStereo() const;
-
-
-    virtual	float deltaF () const;
-
-    virtual float volume() const;
-    virtual void setVolume(float volume);
-
-    virtual bool power() const;
-    virtual void setPower(bool on);
-
-    virtual bool muted() const;
-    virtual void setMute(bool mute);
-
-    // this function is only supposed to be called by a FrequencyRadioStation
-    virtual bool activateStation(FrequencyRadioStation *station);
+	virtual void   saveState (KConfig *) const;
+	virtual void   restoreState (KConfig *);
 
 protected:
-	void radio_init();
-	void radio_done();
+	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
+	virtual QFrame *internal_createAboutPage(QWidget *parent);
 
-	bool readTunerInfo() const;
-	bool readAudioInfo() const;
-	bool writeAudioInfo();
 
-    virtual float minPossibleFrequency() const;
-    virtual float maxPossibleFrequency() const;
-    virtual bool setFrequencyImpl(float freq);
+    // anything else
+public:
+
+    const QString &getRadioDevice () const { return m_radioDev; }
+    void           setRadioDevice (const QString &s);
+
+    const QString &getMixerDevice () const { return m_mixerDev; }
+    void           setMixerDevice (const QString &s, int ch);
+
+    void  setDevices (const QString &r, const QString &m, int ch);
+    int   getMixerChannel() const { return m_mixerChannel; }
 
 protected:
-	struct TunerCache {
+    float deltaF () const;
+	void  radio_init();
+	void  radio_done();
+	void  poll();
+
+	bool  readTunerInfo() const;
+	bool  readAudioInfo() const;
+	bool  writeAudioInfo();
+
+
+protected:
+
+	FrequencyRadioStation  m_currentStation;
+	float                  m_volume;
+	float                  m_minQuality;
+
+	float                  m_minFrequency;
+	float                  m_maxFrequency;
+
+	FrequencySeekHelper    m_seekHelper;
+	float                  m_scanStep;
+
+
+	QString                m_radioDev;
+	QString                m_mixerDev;
+	int                    m_mixerChannel;
+	int                    m_radio_fd;
+	int                    m_mixer_fd;
+	
+	struct video_tuner     m_tuner;
+	struct video_audio     m_audio;
+
+	QTimer                 m_pollTimer;
+
+	mutable struct TunerCache {
 		bool  m_valid;
 		float m_deltaF;
 		float m_minF, m_maxF;
-
 		TunerCache() { m_valid = false; }
-	};
-
-
-	QString m_RadioDev;
-	QString m_MixerDev;
-	int m_MixerChannel;
-	int m_radio_fd;
-	int m_mixer_fd;
-	struct video_tuner *m_tuner;
-	struct video_audio *m_audio;
-
-
-	mutable TunerCache  m_tunercache;
+	}
+	                       m_tunercache;
+	
 //	__u16 balance;
 //	__u16 bass ;
 //	__u16 treble;
-
 };
 
 #endif

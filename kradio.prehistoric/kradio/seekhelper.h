@@ -55,6 +55,7 @@ RECEIVERS:
 RECEIVERS:
 	bool noticeVolumeChanged(float /*v*/)        { return false; }
 	bool noticeSignalQualityChanged(float /*q*/) { return false; }
+	bool noticeSignalQualityChanged(bool/*good*/){ return false; }
 	bool noticeStereoChanged(bool /*s*/)         { return false; }
 	bool noticeMuted(bool /*m*/)                 { return false; }
 	
