@@ -1,21 +1,25 @@
 # translation of pl.po to 
 # translation of pl.po to
+# translation of pl.po to
+# translation of pl.po to
+# translation of pl.po to
+# translation of pl.po to
 # translation of kradio.po to
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2003.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2003, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2003-09-14 15:08+0200\n"
-"PO-Revision-Date: 2003-10-05 10:47+0200\n"
+"PO-Revision-Date: 2004-01-05 13:29+0000\n"
 "Last-Translator: \n"
 "Language-Team:  <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.2\n"
+"X-Generator: KBabel 1.3\n"
 
 #: docking.cpp:39
 msgid "Docking Plugin"
@@ -59,11 +63,11 @@ msgstr "O progr&amie..."
 
 #: docking.cpp:214 docking.cpp:423
 msgid "Hide %1"
-msgstr "Ukryj %1"
+msgstr "Ukryj: %1"
 
 #: docking.cpp:214 docking.cpp:423
 msgid "Show %1"
-msgstr "Pokaż %1"
+msgstr "Pokaż: %1"
 
 #: docking.cpp:224
 msgid "&Quit"
@@ -106,7 +110,7 @@ msgid ""
 "project. Just send it to one of the authors. <P>If you like to contribute "
 "your ideas, your own plugins or translations, don't hesitate to contact one "
 "of the authors.<P>"
-msgstr "KRadio - Aplikacja do obsługi radia pod KDE<P>KRadio służy do słuchania radia z wykorzystaniem karty radiowej kompatybilnej ze standardem V4l/V4l2. <P> Projekt KRadio zawiera bazę danych stacji radiowych. Aby uzupełnić tę bazę potrzebna jest pomoc użytkowników - zachęcamy więc do stworzenia listy stacji w twojej okolicy i przesłanie jej do autorów KRadio. <P> Jeśli chcielibyście podzielić się swoimi pomysłami, wtyczkami czy tłumaczeniami skontaktujcie się koniecznie z którymś a autorów. <P>. "
+msgstr "KRadio - Aplikacja do obsługi radia pod KDE<P>KRadio służy do słuchania radia z wykorzystaniem karty radiowej kompatybilnej ze standardem V4L/V4L2. <P> Projekt KRadio zawiera bazę danych stacji radiowych. Aby uzupełnić tę bazę potrzebna jest pomoc użytkowników - zachęcamy więc do stworzenia listy stacji, które można odbierać w twojej okolicy i przesłanie jej do autorów KRadio. <P> Jeśli chcielibyście podzielić się swoimi pomysłami, wtyczkami czy tłumaczeniami skontaktujcie się koniecznie z którymś a autorów. <P>. "
 
 #: kradioapp.cpp:53
 msgid ""
@@ -120,11 +124,11 @@ msgstr "Różne"
 
 #: kradioapp.cpp:55 main.cpp:51
 msgid "idea, first basic application"
-msgstr ""
+msgstr "Pomysł, pierwsza wersja aplikacji"
 
 #: kradioapp.cpp:57
 msgid "Many People around the World ... "
-msgstr ""
+msgstr "Wielu osób w różnych częściach świata..."
 
 #: kradioapp.cpp:58
 msgid ""
@@ -132,6 +136,9 @@ msgid ""
 "and tested early and unstable snapshots of KRadio \n"
 "with much patience"
 msgstr ""
+"które przesyłały zestawy zapamiętanych stacji \n"
+" i cierpliwe testowały wczesne i niestabilne \n"
+"wersje KRadio"
 
 #: kradioapp.cpp:75
 msgid "KRadio Configuration"
@@ -171,7 +178,7 @@ msgstr "KRadio"
 
 #: main.cpp:49
 msgid "rewrite for 0.3.0, recording, lirc support, alarms, misc"
-msgstr ""
+msgstr "przepisanie wersji 0.3.0, nagrywanie, obsługa lirc, alarmy, różne"
 
 #: quickbar.cpp:40 quickbar.cpp:146
 msgid "Quickbar Plugin"
@@ -233,7 +240,7 @@ msgstr "Opcje radia V4L"
 msgid ""
 "V4L/V4L2 Plugin for KRadio.<P>Provides Support for V4L/V4L2 based Radio "
 "Cards<P>"
-msgstr ""
+msgstr "Wtyczka V4L/V4L2 dla KRadio. <p>Umożliwia obsługę kart radiowych zgodnych z V4L/V4L2<p>"
 
 #: v4lradio.cpp:826
 msgid "V4L/V4L2"
@@ -241,7 +248,7 @@ msgstr "V4L/V4LV2"
 
 #: v4lradio.cpp:827
 msgid "V4L/V4L2 Plugin"
-msgstr ""
+msgstr "Wtyczka V4L/V4L2"
 
 #: v4lradio.cpp:849
 msgid "Cannot open mixer device %1"
@@ -289,11 +296,11 @@ msgstr "nieudane"
 
 #: v4lradio.cpp:1010
 msgid "V4L %1 detected"
-msgstr ""
+msgstr "Wykryto V4l %1"
 
 #: v4lradio.cpp:1012
 msgid "V4L not detected"
-msgstr ""
+msgstr "Nie wykryto V4L"
 
 #: v4lradio.cpp:1015
 msgid "Radio is mutable"
@@ -353,7 +360,7 @@ msgstr ""
 
 #: radio.cpp:31
 msgid "Radio Multiplexer Plugin"
-msgstr ""
+msgstr "Wtyczka Mulipleksera Radia"
 
 #: radio.cpp:98
 msgid "Radio Stations"
@@ -365,15 +372,15 @@ msgstr "Stacje"
 
 #: radio.cpp:110
 msgid "Radio Device Multiplexer and Station Management for KRadio"
-msgstr ""
+msgstr "Multiplekser urządzenia radia i zarządzanie stacjami dla KRadio"
 
 #: radio.cpp:121
 msgid "Device and Station Management"
-msgstr ""
+msgstr "Urządzenia i zarządzanie stacjami"
 
 #: radio.cpp:122
 msgid "Radio Device Multiplexer and Station Management"
-msgstr ""
+msgstr "Multiplekser urządzenia radia i zarządzanie stacjami"
 
 #: radio.cpp:314 standardscandialog.cpp:148 standardscandialog.cpp:151
 msgid "unknown"
@@ -412,7 +419,7 @@ msgstr "nieudane."
 
 #: stationlist.cpp:337
 msgid "temporary file: "
-msgstr ""
+msgstr "plik tymczasowy"
 
 #: stationlist.cpp:343
 msgid "error opening preset file %1"
@@ -424,7 +431,7 @@ msgstr "nieudane."
 
 #: stationlist.cpp:365
 msgid "Old Preset File Format detected"
-msgstr ""
+msgstr "Wykryto stary format pliku zapamiętanych stacji"
 
 #: stationlist.cpp:441 errorlog.cpp:222
 msgid "error writing to tempfile %1"
@@ -489,11 +496,11 @@ msgstr "nieznany"
 
 #: stationlistxmlhandler.cpp:142
 msgid "expected element %1, but found %2"
-msgstr ""
+msgstr "oczekiwano %1; znaleziono %2"
 
 #: stationlistxmlhandler.cpp:146
 msgid "unexpected element %1"
-msgstr ""
+msgstr "nieoczekiwany element: %1"
 
 #: stationlistxmlhandler.cpp:154
 msgid "invalid data for element %1"
@@ -513,23 +520,23 @@ msgstr ""
 
 #: radioview_frequencyseeker.cpp:76
 msgid "Search for previous Radio Station"
-msgstr ""
+msgstr "Szukaj poprzedniej stacji radiowej"
 
 #: radioview_frequencyseeker.cpp:77
 msgid "Search for next Radio Station"
-msgstr ""
+msgstr "Szukaj następnej stacji radiowej"
 
 #: radioview_frequencyseeker.cpp:78
 msgid "Decrement Frequency"
-msgstr ""
+msgstr "Zmniejsz częstotliwość"
 
 #: radioview_frequencyseeker.cpp:79
 msgid "Increment Frequency"
-msgstr ""
+msgstr "Zwiększ częstotliwość"
 
 #: radioview_frequencyseeker.cpp:80
 msgid "Change Frequency"
-msgstr ""
+msgstr "Zmień częstotliwość"
 
 #: v4lradio-configuration.cpp:347 v4lradio-configuration.cpp:359
 msgid "any ( * )"
@@ -537,63 +544,63 @@ msgstr "dowolny"
 
 #: v4lradio-configuration.cpp:347
 msgid "Radio Device Selection"
-msgstr ""
+msgstr "Wybór urządzenia radia"
 
 #: v4lradio-configuration.cpp:349
 msgid "Select Radio Device"
-msgstr ""
+msgstr "Wybierz urządzenie radia"
 
 #: v4lradio-configuration.cpp:359
 msgid "Mixer Device Selection"
-msgstr ""
+msgstr "Wybór urządzenia miksera"
 
 #: v4lradio-configuration.cpp:361
 msgid "Select Mixer Device"
-msgstr ""
+msgstr "Wybierz urządzenie miksera"
 
 #: errorlog.cpp:39
 msgid "KRadio Logger"
-msgstr ""
+msgstr "Dziennik Kradio"
 
 #: errorlog.cpp:46
 msgid "Save &as"
-msgstr ""
+msgstr "Zapisz j&ako"
 
 #: errorlog.cpp:48
 msgid "Error Logger"
-msgstr ""
+msgstr "Dziennik błędów"
 
 #: errorlog.cpp:53
 msgid "Information"
-msgstr ""
+msgstr "Informacje"
 
 #: errorlog.cpp:65 errorlog.cpp:79 errorlog.cpp:94 errorlog.cpp:108
 msgid "logging started"
-msgstr ""
+msgstr "Zapisywanie rozpoczęte"
 
 #: errorlog.cpp:68
 msgid "Warnings"
-msgstr ""
+msgstr "Ostrzeżenia"
 
 #: errorlog.cpp:83
 msgid "Errors"
-msgstr ""
+msgstr "Błędy"
 
 #: errorlog.cpp:96
 msgid "Debugging"
-msgstr ""
+msgstr "Debugowanie"
 
 #: errorlog.cpp:194
 msgid "Log Files"
-msgstr ""
+msgstr "Pliki dziennika"
 
 #: errorlog.cpp:196
 msgid "Select Log File"
-msgstr ""
+msgstr "Wybierz plik dziennika"
 
 #: errorlog.cpp:200
 msgid "Save KRadio Logging Data as ..."
-msgstr ""
+msgstr "Zapisz dziennik KRadio jako..."
 
 #: recording-configuration-ui.cpp:147
 msgid "RecordingConfigurationUI"
@@ -601,23 +608,23 @@ msgstr ""
 
 #: recording-configuration-ui.cpp:148
 msgid "Output"
-msgstr ""
+msgstr "Wyjście"
 
 #: recording-configuration-ui.cpp:149
 msgid "Recording Directory"
-msgstr ""
+msgstr "Katalog zapisywania"
 
 #: recording-configuration-ui.cpp:151
 msgid "Microsoft Wave (.wav)"
-msgstr ""
+msgstr "Microsoft Wave (.wav)"
 
 #: recording-configuration-ui.cpp:152
 msgid "Apple/SGI (.aiff)"
-msgstr ""
+msgstr "Apple/SGI (.aiff)"
 
 #: recording-configuration-ui.cpp:153
 msgid "Sun/NeXT (.au)"
-msgstr ""
+msgstr "Sun/NeXT (.au)"
 
 #: recording-configuration-ui.cpp:154
 msgid "raw pcm output (.raw)"
@@ -625,51 +632,51 @@ msgstr ""
 
 #: recording-configuration-ui.cpp:155
 msgid "File Format"
-msgstr ""
+msgstr "Format pliku"
 
 #: recording-configuration-ui.cpp:156
 msgid "Input"
-msgstr ""
+msgstr "Wejście"
 
 #: recording-configuration-ui.cpp:157
 msgid "Sample Bits"
-msgstr ""
+msgstr "Próbkowanie"
 
 #: recording-configuration-ui.cpp:158
 msgid "Recording Device"
-msgstr ""
+msgstr "Urządzenie nagrywające"
 
 #: recording-configuration-ui.cpp:159 recording-monitor.cpp:51
 msgid "Sample Rate"
-msgstr ""
+msgstr "Częstotliwość próbkowania"
 
 #: recording-configuration-ui.cpp:160
 msgid "Channels"
-msgstr ""
+msgstr "Kanały"
 
 #: recording-configuration-ui.cpp:162
 msgid "44100"
-msgstr ""
+msgstr "44100"
 
 #: recording-configuration-ui.cpp:163
 msgid "22050"
-msgstr ""
+msgstr "22050"
 
 #: recording-configuration-ui.cpp:164
 msgid "11025"
-msgstr ""
+msgstr "11025"
 
 #: recording-configuration-ui.cpp:166
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: recording-configuration-ui.cpp:167
 msgid "8"
-msgstr ""
+msgstr "7"
 
 #: recording-configuration-ui.cpp:168
 msgid "/dev/dsp"
-msgstr ""
+msgstr "/dev/dsp"
 
 #: recording-configuration-ui.cpp:170
 msgid "Signed"
@@ -685,23 +692,23 @@ msgstr "Stereo"
 
 #: recording-configuration-ui.cpp:174
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #: recording-configuration-ui.cpp:175
 msgid "Endianess"
-msgstr ""
+msgstr "Kolejność bajtów"
 
 #: recording-configuration-ui.cpp:177
 msgid "Little Endian"
-msgstr ""
+msgstr "Little Endian"
 
 #: recording-configuration-ui.cpp:178
 msgid "Big Endian"
-msgstr ""
+msgstr "Big Endian"
 
 #: plugin_configuration_dialog.cpp:29
 msgid "Configuration Dialog"
-msgstr ""
+msgstr "Okno Konfiguracji"
 
 #: standardscandialog-ui.cpp:85
 msgid "Stations search in progress ..."
@@ -717,7 +724,7 @@ msgstr "Pozostały czas"
 
 #: standardscandialog-ui.cpp:88
 msgid "<p align=\"right\">nothing here</p>"
-msgstr ""
+msgstr "<p align=\"right\">nic</p>"
 
 #: radio-configuration-ui.cpp:295
 msgid "RadioConfigurationUI"
@@ -819,35 +826,35 @@ msgstr "Okno radia"
 
 #: radioview.cpp:107
 msgid "Start Recording and display Recording Monitor"
-msgstr ""
+msgstr "Rozpocznij nagrywanie i pokaż monitor"
 
 #: radioview.cpp:109
 msgid "Start Monitoring"
-msgstr ""
+msgstr "Rozpocznij monitorowanie"
 
 #: radioview.cpp:140
 msgid "Configure KRadio"
-msgstr ""
+msgstr "Konfiguruj: KRadio"
 
 #: radioview.cpp:141
 msgid "Power On/Off"
-msgstr ""
+msgstr "Włącz/Wyłącz"
 
 #: radioview.cpp:142
 msgid "Quit KRadio Application"
-msgstr ""
+msgstr "Zakończ KRadio"
 
 #: radioview.cpp:143
 msgid "Start/Stop Recording"
-msgstr ""
+msgstr "Rozpocznij/Zakończ nagrywanie"
 
 #: radioview.cpp:144
 msgid "Select a Radio Station"
-msgstr ""
+msgstr "Wybierz stację"
 
 #: radioview.cpp:265
 msgid "no preset defined"
-msgstr ""
+msgstr "nie zdefiniowano ustawień"
 
 #: radioview.cpp:382 radioview.cpp:446
 msgid "Display"
@@ -871,7 +878,7 @@ msgstr "Standardowy wyświetlacz dla KRadio"
 
 #: timecontrol-configuration.cpp:158
 msgid "<don't change>"
-msgstr ""
+msgstr "<nie zmieniać>"
 
 #: timecontrol-configuration-ui.cpp:187
 msgid "TimeControlConfigurationUI"
@@ -1100,11 +1107,11 @@ msgstr "Nie można ustawić częstotliwości próbkowania dla nagrywania"
 
 #: recording.cpp:326
 msgid "Cannot read recording buffer size"
-msgstr ""
+msgstr "Nie można odczytać wielkości bufora nagrywania"
 
 #: recording.cpp:375
 msgid "Recording::outputFile: "
-msgstr ""
+msgstr "Nagrywanie::outputFile: "
 
 #: recording.cpp:385
 msgid "Cannot open output file %1"
@@ -1221,7 +1228,7 @@ msgstr "&Tłumaczenie"
 
 #: aboutwidget.cpp:571
 msgid "&License Agreement"
-msgstr ""
+msgstr "Umowa &licencyjne"
 
 #: aboutwidget.cpp:585
 msgid "Image missing"
