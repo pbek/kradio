@@ -37,8 +37,8 @@ int main(int argc, char *argv[])
 {
 	KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
     					 VERSION, description, KAboutData::License_GPL,
-					     "(c) 2002 Martin Witte, Frank Schwanz", 0, "http://www.kawo1.rwth-aachen.de/~witte/kradio.html", "witte@kawo1.rwth-aachen.de");
-	aboutData.addAuthor("Martin Witte", "revision, lirc support, docking, alarm function", "witte@kawo1.rwth-aachen.de", "http://www.kawo1.rwth-aachen.de/~witte");
+					     "(c) 2002 Martin Witte, Frank Schwanz", 0, "http://sourceforge.net/projects/kradio", "witte@kawo1.rwth-aachen.de");
+	aboutData.addAuthor("Martin Witte", "revision, lirc support, docking, alarm function", "witte@kawo1.rwth-aachen.de", "http://sourceforge.net/projects/kradio/");
 	aboutData.addAuthor("Frank Schwanz", "idea, first basic application", "schwanz@fh-brandenburg.de");
 	KCmdLineArgs::init( argc, argv, &aboutData );
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.

@@ -1,22 +1,56 @@
-This is a small radio application for kde 2 with lirc support
+This is a small radio application for kde 2/3 with lirc support
 You can get the latest version from
 
-   http://www.kawo1.rwth-aachen.de/~witte/kradio.html
+   http://sourceforge.net/projects/kradio/
+
+------------------
+Compile CVS tree
+------------------
+
+First checkout kradio from CVS and do in ./
+
+  make -f Makefile.dist
+  ./configure
+  make
+  make install
+
+
+------------------
+KDE3
+------------------
+
+To compile KRadio against KDE3 you have to perform a 
+
+  cvs update -r KDE3
+
+within your ./admin directory after cvs checkout. After that kradio
+should compile without problems for KDE3.
+
 
 ------------------
 Configuration
 ------------------
 
-At the current state, most configuration options for are only accessible by your
-kradiorc file, usually found in ~/.kde/share/config/kradiorc or /etc/kde2/kradiorc, etc.
-An example configuration file can be found in ./kradio/kradiorc.example.
+At the current state, most configuration options for are only
+accessible by your kradiorc file, usually found in
+~/.kde/share/config/kradiorc or /etc/kde2/kradiorc, etc.  An example
+configuration file can be found in ./kradio/kradiorc.example.
+
+CVS-NOTE: 
+
+At the moment, there is another configuration file that contains
+station and alarm configuration in an xml format. That file should be
+~/.kradiorc . An example can be found in
+./kradio/dot-kradiorc.example. Please note, that the configuration
+file format and/or concept may change in future.
+
 
 ------------------
 lirc support
 ------------------
 
-lirc support is realized by the lirc_client lib. It should be detected automatically
-by ./configure. This library is used to translate the remote control key names to
-names used by kradio, and may additionally be used for state management (tv, etc).
-An example for an apropriate .lircrc file can be found in ./kradio/dot-lircrc.example.
-
+lirc support is realized by the lirc_client lib. It should be detected
+automatically by ./configure. This library is used to translate the
+remote control key names to names used by kradio, and may additionally
+be used for state management (tv, etc).  An example for an apropriate
+.lircrc file can be found in ./kradio/dot-lircrc.example.
