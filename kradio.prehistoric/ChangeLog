@@ -1,7 +1,10 @@
 0.2.5   emw:    - configuration dialog part 3: alarms
-                - range override
+                - frequency range override
                 - improve alarms by station/volume preset
                 - only selected stations in docking menu
+                - restore power/frequency after station scan
+                - activate stations in setup by double-click/<return>
+                - fix volume preset
 
 0.2.4   emw:    - qt 3.0.x compatibility fixes
 				- quickbar/buttonflowlayout fixes
