@@ -3,7 +3,7 @@ bin_PROGRAMS = kradio
 
 ## INCLUDES were found outside kdevelop specific part
 
-kradio_SOURCES = kradiodisplay.cpp setupdialog_stations.ui setupdialog_alarms.ui setupdialog_general_options.ui radiocfgxmlhandler.cpp timecontrol.cpp utils.cpp stationsearchdialog.cpp stationsearchdialog_uic.ui setupdialog.cpp buttonflowlayout.cpp quickbar.cpp lircsupport.cpp alarm.cpp radiobase.cpp radiostation.cpp docking.cpp v4lradio.cpp kradioview.ui RadioView.ui kradioapp.cpp kradiomw.cpp kradio.cpp main.cpp 
+kradio_SOURCES = kradiodisplay.cpp setupdialog_stations.ui setupdialog_alarms.ui setupdialog_general_options.ui radiocfgxmlhandler.cpp timecontrol.cpp utils.cpp stationsearchdialog.cpp stationsearchdialog_uic.ui setupdialog.cpp buttonflowlayout.cpp quickbar.cpp lircsupport.cpp alarm.cpp radiobase.cpp radiostation.cpp docking.cpp v4lradio.cpp kradioview.ui RadioView.ui kradioapp.cpp kradiomw.cpp kradio.cpp main.cpp radiointerface.h radiointerface.cpp
 kradio_LDADD   =  $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
 
 
