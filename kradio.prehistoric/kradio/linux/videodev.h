@@ -5,8 +5,8 @@
 #include <linux/version.h>
 //#include <linux/device.h>
 
-#define HAVE_V4L2 1
-#include <linux/videodev2.h>
+//#define HAVE_V4L2 1
+//#include <linux/videodev2.h>
 
 #ifdef __KERNEL__
 
