@@ -28,6 +28,17 @@
                 - converter: add xml-encoding-line
                 - font selector for display
                 - choosable inactive text color
+                - error loggin plugin
+                - translation preparation
+                - german translation
+                - credits in about dialog
+                - remove dependency on kalarm
+                - recording button: +menu for recording/monitoring
+                -  symbol for station search button
+                - use special mail-adress for preset files
+                - country/city in preset file mail
+                - about dialog
+
 
 (not working yet) - fixed segfault on app quit in InterfaceBase::disconnect
 
