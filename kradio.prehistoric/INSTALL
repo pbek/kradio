@@ -1,3 +1,16 @@
+Note on automake/autoconf versions
+==================================
+
+KRadio should build with automake >= 1.6.1 and autoconf 2.5*
+
+If you have such a version but configure/make complains it needs e.g. 
+automake 1.7.x you should try to run 
+
+  make -f Makefile.dist
+
+before you run ./configure.
+
+
 Basic Installation
 ==================
 

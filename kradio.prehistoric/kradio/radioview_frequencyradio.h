@@ -62,10 +62,14 @@ ANSWERS:
 RECEIVERS:
 	bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
 	bool noticeStationChanged (const RadioStation &, const IRadioDevice *sender = NULL);
+	bool noticeDescriptionChanged (const QString &, const IRadioDevice *sender = NULL);
 
 // IRadioSoundClient	
 RECEIVERS:
 	bool noticeVolumeChanged(float v);
+	bool noticeTrebleChanged(float v)    { return false; }  // ignore it
+	bool noticeBassChanged(float v)      { return false; }  // ignore it
+	bool noticeBalanceChanged(float v)   { return false; }  // ignore it
 	bool noticeSignalQualityChanged(float q);
 	bool noticeSignalQualityChanged(bool good);
 	bool noticeSignalMinQualityChanged(float q);

@@ -26,6 +26,8 @@ IF_IMPL_SENDER  (  IRadioDevice::notifyPowerChanged(bool on),
                    noticePowerChanged(on, this)                                )
 IF_IMPL_SENDER  (  IRadioDevice::notifyStationChanged (const RadioStation &s),
                    noticeStationChanged (s, this)                              )
+IF_IMPL_SENDER  (  IRadioDevice::notifyDescriptionChanged (const QString&s),
+                   noticeDescriptionChanged (s, this)                          )
 
 // IRadioDeviceClient
 
@@ -46,18 +48,25 @@ IF_IMPL_QUERY   (  bool IRadioDeviceClient::queryIsPowerOff(),
                    true                      )
 IF_IMPL_QUERY   (  const RadioStation  &  IRadioDeviceClient::queryCurrentStation(),
                    getCurrentStation(),
-                   undefinedRadioStation          )
+                   undefinedRadioStation     )
+
+static QString unknown("unknown");
+IF_IMPL_QUERY   (  const QString       &  IRadioDeviceClient::queryDescription(),
+                   getDescription(),
+                   unknown                   )
 
 void IRadioDeviceClient::noticeConnected    (cmplInterface *c, bool /*pointer_valid*/)
 {
 	noticePowerChanged(queryIsPowerOn());
 	noticeStationChanged(queryCurrentStation(), c);
+	noticeDescriptionChanged(queryDescription(), c);
 }
 
 void IRadioDeviceClient::noticeDisconnected    (cmplInterface *c, bool /*pointer_valid*/)
 {
 	noticePowerChanged(queryIsPowerOn());
 	noticeStationChanged(queryCurrentStation(), c);
+	noticeDescriptionChanged(queryDescription(), c);
 }
 
 
@@ -68,13 +77,18 @@ void IRadioDeviceClient::noticeDisconnected    (cmplInterface *c, bool /*pointer
 
 IF_IMPL_SENDER  (  IRadioSound::notifyVolumeChanged(float v),
                    noticeVolumeChanged(v)                   )
+IF_IMPL_SENDER  (  IRadioSound::notifyTrebleChanged(float v),
+                   noticeTrebleChanged(v)                   )
+IF_IMPL_SENDER  (  IRadioSound::notifyBassChanged(float v),
+                   noticeBassChanged(v)                     )
+IF_IMPL_SENDER  (  IRadioSound::notifyBalanceChanged(float v),
+                   noticeBalanceChanged(v)                  )
 IF_IMPL_SENDER  (  IRadioSound::notifySignalQualityChanged(float q),
-                   noticeSignalQualityChanged(q)           )
+                   noticeSignalQualityChanged(q)            )
 IF_IMPL_SENDER  (  IRadioSound::notifySignalQualityChanged(bool good),
-                   noticeSignalQualityChanged(good)        )
+                   noticeSignalQualityChanged(good)         )
 IF_IMPL_SENDER  (  IRadioSound::notifySignalMinQualityChanged(float q),
-                   noticeSignalMinQualityChanged(q)
-                )
+                   noticeSignalMinQualityChanged(q)         )
 IF_IMPL_SENDER  (  IRadioSound::notifyStereoChanged(bool  s),
                    noticeStereoChanged(s)                   )
 IF_IMPL_SENDER  (  IRadioSound::notifyMuted(bool m),
@@ -84,18 +98,32 @@ IF_IMPL_SENDER  (  IRadioSound::notifyMuted(bool m),
 
 IF_IMPL_SENDER  (  IRadioSoundClient::sendVolume (float v),
                    setVolume (v)                            )
+IF_IMPL_SENDER  (  IRadioSoundClient::sendTreble (float v),
+                   setTreble (v)                            )
+IF_IMPL_SENDER  (  IRadioSoundClient::sendBass (float v),
+                   setBass (v)                              )
+IF_IMPL_SENDER  (  IRadioSoundClient::sendBalance (float v),
+                   setBalance (v)                           )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendMute (bool mute),
                    mute (mute)                              )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendUnmute (bool unmute),
-                   unmute (unmute)                            )
+                   unmute (unmute)                          )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendSignalMinQuality (float q),
                    setSignalMinQuality (q)                  )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendStereo(bool s),
-                   setStereo(s)
-                )
+                   setStereo(s)                             )
 
 IF_IMPL_QUERY   (  float  IRadioSoundClient::queryVolume(),
                    getVolume(),
+                   0.0            )
+IF_IMPL_QUERY   (  float  IRadioSoundClient::queryTreble(),
+                   getTreble(),
+                   0.0            )
+IF_IMPL_QUERY   (  float  IRadioSoundClient::queryBass(),
+                   getBass(),
+                   0.0            )
+IF_IMPL_QUERY   (  float  IRadioSoundClient::queryBalance(),
+                   getBalance(),
                    0.0            )
 IF_IMPL_QUERY   (  float  IRadioSoundClient::querySignalQuality(),
                    getSignalQuality(),
@@ -117,6 +145,9 @@ IF_IMPL_QUERY   (  bool   IRadioSoundClient::queryIsMuted(),
 void IRadioSoundClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeVolumeChanged          (queryVolume());
+	noticeTrebleChanged          (queryTreble());
+	noticeBassChanged            (queryBass());
+	noticeBalanceChanged         (queryBalance());
 	noticeSignalQualityChanged   (querySignalQuality());
 	noticeSignalQualityChanged   (queryHasGoodQuality());
 	noticeSignalMinQualityChanged(querySignalMinQuality());
@@ -128,6 +159,9 @@ void IRadioSoundClient::noticeConnected    (cmplInterface *, bool /*pointer_vali
 void IRadioSoundClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeVolumeChanged          (queryVolume());
+	noticeTrebleChanged          (queryTreble());
+	noticeBassChanged            (queryBass());
+	noticeBalanceChanged         (queryBalance());
 	noticeSignalQualityChanged   (querySignalQuality());
 	noticeSignalQualityChanged   (queryHasGoodQuality());
 	noticeSignalMinQualityChanged(querySignalMinQuality());

@@ -49,12 +49,16 @@ public:
 
 // IRadioDeviceClient
 RECEIVERS:	
-	bool noticePowerChanged   (bool /*on*/, const IRadioDevice */*sender*/) { return false; }
+	bool noticePowerChanged   (bool /*on*/, const IRadioDevice */*sender*/)          { return false; }
 	bool noticeStationChanged (const RadioStation &, const IRadioDevice */*sender*/) { return false; }
+	bool noticeDescriptionChanged (const QString &, const IRadioDevice */*sender*/)  { return false; }
 
 // IRadioSoundClient
 RECEIVERS:
 	bool noticeVolumeChanged(float /*v*/)        { return false; }
+	bool noticeTrebleChanged(float /*v*/)        { return false; }
+	bool noticeBassChanged(float /*v*/)          { return false; }
+	bool noticeBalanceChanged(float /*v*/)       { return false; }
 	bool noticeSignalQualityChanged(float /*q*/) { return false; }
 	bool noticeSignalQualityChanged(bool/*good*/){ return false; }
 	bool noticeSignalMinQualityChanged(float /*q*/){ return false; }

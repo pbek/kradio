@@ -26,6 +26,9 @@ IF_IMPL_SENDER  (   IV4LCfg::notifyRadioDeviceChanged(const QString &s),
 IF_IMPL_SENDER  (   IV4LCfg::notifyMixerDeviceChanged(const QString &s, int Channel),
                     noticeMixerDeviceChanged(s, Channel)
                 )
+IF_IMPL_SENDER  (   IV4LCfg::notifyDeviceVolumeChanged(float v),
+                    noticeDeviceVolumeChanged(v)
+                )
 
 
 // IV4LCfgClient
@@ -38,6 +41,9 @@ IF_IMPL_SENDER  (   IV4LCfgClient::sendMixerDevice (const QString &s, int ch),
                 )
 IF_IMPL_SENDER  (   IV4LCfgClient::sendDevices     (const QString &r, const QString &m, int ch),
 					setDevices(r, m, ch)
+                )
+IF_IMPL_SENDER  (   IV4LCfgClient::sendDeviceVolume(float v),
+                    setDeviceVolume(v)
                 )
 
 static QString defaultRDev("/dev/radio");
@@ -55,11 +61,16 @@ IF_IMPL_QUERY   (   int            IV4LCfgClient::queryMixerChannel(),
                     getMixerChannel(),
                     SOUND_MIXER_LINE
                 )
+IF_IMPL_QUERY   (   float IV4LCfgClient::queryDeviceVolume (),
+					getDeviceVolume(),
+					0.0
+                )
 
 void IV4LCfgClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeRadioDeviceChanged(queryRadioDevice());
 	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
+	noticeDeviceVolumeChanged(queryDeviceVolume());
 }
 
 
@@ -67,6 +78,7 @@ void IV4LCfgClient::noticeDisconnected (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeRadioDeviceChanged(queryRadioDevice());
 	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
+	noticeDeviceVolumeChanged(queryDeviceVolume());
 }
 
 

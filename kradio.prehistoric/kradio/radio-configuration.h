@@ -49,6 +49,7 @@ public :
 RECEIVERS:
 	bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
 	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &);
+	bool noticeDeviceDescriptionChanged(const QString &);
 
     // IRadioClient
     

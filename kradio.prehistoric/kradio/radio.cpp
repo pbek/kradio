@@ -238,6 +238,12 @@ const QPtrList<IRadioDevice> &Radio::getDevices() const
 }
 
 
+const QString &Radio::getDeviceDescription() const
+{
+	return queryDescription();
+}
+
+
 
 /* IRadioDeviceClient Interface Methods
 
@@ -294,6 +300,14 @@ const RadioStation & Radio::queryCurrentStation() const
 }
 
 
+static QString qstrUnknown("unknown");
+const QString &Radio::queryDescription() const
+{
+	return m_activeDevice ? m_activeDevice->getDescription() : qstrUnknown;
+}
+
+
+
 bool Radio::noticePowerChanged (bool on, const IRadioDevice *sender)
 {
 	if (on) {
@@ -324,6 +338,14 @@ bool Radio::noticeStationChanged (const RadioStation &_rs, const IRadioDevice *s
 
 	if (sender == m_activeDevice)
 		notifyStationChanged(rs, idx);
+	return true;
+}
+
+
+bool Radio::noticeDescriptionChanged (const QString &s, const IRadioDevice *sender)
+{
+	if (sender == m_activeDevice)
+		notifyDeviceDescriptionChanged(s);
 	return true;
 }
 

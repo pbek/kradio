@@ -53,11 +53,13 @@ RECEIVERS:
 SENDERS:
 	IF_SENDER  (  notifyPowerChanged(bool on)                      )
 	IF_SENDER  (  notifyStationChanged (const RadioStation &)      )
+	IF_SENDER  (  notifyDescriptionChanged (const QString &)       )
 
 ANSWERS:
 	IF_ANSWER  (  bool                   isPowerOn() const         )
 	IF_ANSWER  (  bool                   isPowerOff() const        )
 	IF_ANSWER  (  const RadioStation  &  getCurrentStation() const )
+	IF_ANSWER  (  const QString       &  getDescription() const    )
 };
 
 
@@ -77,11 +79,13 @@ SENDERS:
 RECEIVERS:
 	IF_RECEIVER(  noticePowerChanged   (bool on, const IRadioDevice *sender = NULL)                 )
 	IF_RECEIVER(  noticeStationChanged (const RadioStation &, const IRadioDevice *sender = NULL)    )
+	IF_RECEIVER(  noticeDescriptionChanged (const QString &, const IRadioDevice *sender = NULL)     )
 
 QUERIES:
 	IF_QUERY   (  bool                   queryIsPowerOn()             )
 	IF_QUERY   (  bool                   queryIsPowerOff()            )
-	IF_QUERY   (  const RadioStation  &  queryCurrentStation()     )
+	IF_QUERY   (  const RadioStation  &  queryCurrentStation()        )
+	IF_QUERY   (  const QString       &  queryDescription()           )
 
 RECEIVERS:
 	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
@@ -98,6 +102,9 @@ public :
 
 RECEIVERS:
 	IF_RECEIVER(  setVolume (float v)                            )
+	IF_RECEIVER(  setTreble (float v)                            )
+	IF_RECEIVER(  setBass   (float v)                            )
+	IF_RECEIVER(  setBalance (float v)                           )
 	IF_RECEIVER(  mute (bool mute)                               )
 	IF_RECEIVER(  unmute (bool unmute)                           )
 	IF_RECEIVER(  setSignalMinQuality(float q)                   )
@@ -105,6 +112,9 @@ RECEIVERS:
 
 SENDERS:
 	IF_SENDER  (  notifyVolumeChanged(float v)                   )
+	IF_SENDER  (  notifyTrebleChanged(float v)                   )
+	IF_SENDER  (  notifyBassChanged(float v)                     )
+	IF_SENDER  (  notifyBalanceChanged(float v)                  )
 	IF_SENDER  (  notifyMuted(bool m)                            )
 	IF_SENDER  (  notifySignalQualityChanged(float q)            )
 	IF_SENDER  (  notifySignalQualityChanged(bool good)          )
@@ -113,6 +123,9 @@ SENDERS:
 
 ANSWERS:
 	IF_ANSWER  (  float   getVolume() const                      )
+	IF_ANSWER  (  float   getTreble() const                      )
+	IF_ANSWER  (  float   getBass  () const                      )
+	IF_ANSWER  (  float   getBalance () const                    )	
 	IF_ANSWER  (  bool    isMuted() const                        )
 	IF_ANSWER  (  float   getSignalQuality() const               )
 	IF_ANSWER  (  float   getSignalMinQuality() const            )
@@ -127,7 +140,10 @@ public :
 	IF_CON_DESTRUCTOR(IRadioSoundClient, 1)
 
 SENDERS:
-	IF_SENDER  (  sendVolume (float v)                           )
+	IF_SENDER  (  sendVolume  (float v)                          )
+	IF_SENDER  (  sendTreble  (float v)                          )
+	IF_SENDER  (  sendBass    (float v)                          )
+	IF_SENDER  (  sendBalance (float v)                          )
 	IF_SENDER  (  sendMute (bool mute = true)                    )
 	IF_SENDER  (  sendUnmute (bool unmute = true)                )
 	IF_SENDER  (  sendSignalMinQuality (float q)                 )
@@ -135,6 +151,9 @@ SENDERS:
 
 RECEIVERS:
 	IF_RECEIVER(  noticeVolumeChanged(float v)                   )
+	IF_RECEIVER(  noticeTrebleChanged(float v)                   )
+	IF_RECEIVER(  noticeBassChanged(float v)                     )
+	IF_RECEIVER(  noticeBalanceChanged(float v)                  )
 	IF_RECEIVER(  noticeSignalQualityChanged(float q)            )
 	IF_RECEIVER(  noticeSignalQualityChanged(bool good)          )
 	IF_RECEIVER(  noticeSignalMinQualityChanged(float q)         )
@@ -143,6 +162,9 @@ RECEIVERS:
 
 QUERIES:
 	IF_QUERY   (  float   queryVolume()                          )
+	IF_QUERY   (  float   queryTreble()                          )
+	IF_QUERY   (  float   queryBass()                            )
+	IF_QUERY   (  float   queryBalance ()                        )
 	IF_QUERY   (  float   querySignalQuality()                   )
 	IF_QUERY   (  float   querySignalMinQuality()                )
 	IF_QUERY   (  bool    queryHasGoodQuality()                  )

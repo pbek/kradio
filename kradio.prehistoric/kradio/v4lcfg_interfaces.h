@@ -29,15 +29,18 @@ RECEIVERS:
 	IF_RECEIVER(   setRadioDevice (const QString &s)                            )
 	IF_RECEIVER(   setMixerDevice (const QString &s, int ch)                    )
 	IF_RECEIVER(   setDevices     (const QString &r, const QString &m, int ch)  )
+	IF_RECEIVER(   setDeviceVolume(float v)                                     )
 	
 SENDERS:
 	IF_SENDER  (   notifyRadioDeviceChanged(const QString &s)                   )
 	IF_SENDER  (   notifyMixerDeviceChanged(const QString &s, int Channel)      )
+	IF_SENDER  (   notifyDeviceVolumeChanged(float v)                           )
 
 ANSWERS:
     IF_ANSWER  (   const QString &getRadioDevice () const                       )
     IF_ANSWER  (   const QString &getMixerDevice () const                       )
     IF_ANSWER  (   int            getMixerChannel() const                       )
+    IF_ANSWER  (   float          getDeviceVolume() const                       )
 
 };
 
@@ -52,15 +55,18 @@ SENDERS:
 	IF_SENDER  (   sendRadioDevice (const QString &s)                            )
 	IF_SENDER  (   sendMixerDevice (const QString &s, int ch)                    )
 	IF_SENDER  (   sendDevices     (const QString &r, const QString &m, int ch)  )
+	IF_SENDER  (   sendDeviceVolume(float v)                                     )
 
 RECEIVERS:
 	IF_RECEIVER(   noticeRadioDeviceChanged(const QString &s)                    )
 	IF_RECEIVER(   noticeMixerDeviceChanged(const QString &s, int Channel)       )
+	IF_RECEIVER(   noticeDeviceVolumeChanged(float v)                            )
 
 QUERIES:
     IF_QUERY   (   const QString &queryRadioDevice ()                            )
     IF_QUERY   (   const QString &queryMixerDevice ()                            )
     IF_QUERY   (   int            queryMixerChannel()                            )
+    IF_QUERY   (   float          queryDeviceVolume()                            )
 
 RECEIVERS:
 	virtual void noticeConnected    (cmplInterface *, bool /*pointer_valid*/);

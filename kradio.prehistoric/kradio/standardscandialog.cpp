@@ -119,7 +119,7 @@ bool StandardScanDialog::noticeSeekFinished (const RadioStation &)
 		delete st;
 	}
 
-    if (round(queryProgress() * 1000) < 1000) {     // round to 4 digits
+    if (rint(queryProgress() * 1000) < 1000) {     // round to 4 digits
 		if (m_running) sendStartSeekUp();
 	}
 	return true;
@@ -127,7 +127,7 @@ bool StandardScanDialog::noticeSeekFinished (const RadioStation &)
 
 bool StandardScanDialog::noticeSeekStopped ()
 {
-    if (round(queryProgress() * 1000) >= 1000) {     // round to 4 digits
+    if (rint(queryProgress() * 1000) >= 1000) {     // round to 4 digits
 		buttonCancel->setText("&Done");
 		stop();
 	}
@@ -139,11 +139,11 @@ bool StandardScanDialog::noticeProgress (float f)
 {
 	if (!m_running) return true;
 
-	progressBar->setProgress((int)round(f * 100));
+	progressBar->setProgress((int)rint(f * 100));
 
 	if (m_running) {
 		int secs = m_startTime.secsTo(QDateTime::currentDateTime());
-		int ms = (int)round((1 - f) * (float) secs / f * 1000.0);
+		int ms = (int)rint((1 - f) * (float) secs / f * 1000.0);
 
 		if (ms > 0 && ms < 86400000)   // max one day
 			labelTime->setText("<p align=\"right\">" + QTime(0,0).addMSecs(ms).toString() + "</p>");

@@ -73,6 +73,7 @@ RECEIVERS:
 RECEIVERS:
 	bool noticeActiveDeviceChanged(IRadioDevice *rd);
 	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
+	bool noticeDeviceDescriptionChanged(const QString &) { return false; }
 
 	// WidgetPluginBase
 

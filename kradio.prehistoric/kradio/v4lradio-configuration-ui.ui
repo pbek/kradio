@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>511</width>
-            <height>244</height>
+            <width>607</width>
+            <height>508</height>
         </rect>
     </property>
     <property name="caption">
@@ -34,12 +34,12 @@
             </property>
             <property name="sizeHint">
                 <size>
-                    <width>285</width>
+                    <width>70</width>
                     <height>20</height>
                 </size>
             </property>
         </spacer>
-        <spacer row="2" column="0">
+        <spacer row="3" column="0">
             <property name="name">
                 <cstring>spacer9</cstring>
             </property>
@@ -52,34 +52,363 @@
             <property name="sizeHint">
                 <size>
                     <width>20</width>
-                    <height>16</height>
+                    <height>30</height>
                 </size>
             </property>
         </spacer>
-        <widget class="QLayoutWidget" row="1" column="0">
+        <widget class="QButtonGroup" row="2" column="0">
             <property name="name">
-                <cstring>layout7</cstring>
+                <cstring>buttonGroup1</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="title">
+                <string>V4L Device Controls</string>
             </property>
             <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="2" column="0">
+                <property name="margin">
+                    <number>8</number>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>labelSignalMinQuality</cstring>
+                        <cstring>layout18</cstring>
                     </property>
-                    <property name="text">
-                        <string>minimum signal quality</string>
-                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelDeviceVolume</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p align="center"&gt;volume&lt;/p&gt;</string>
+                            </property>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout10</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer4</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>1</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                                <widget class="QSlider">
+                                    <property name="name">
+                                        <cstring>sliderDeviceVolume</cstring>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>65535</number>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Vertical</enum>
+                                    </property>
+                                </widget>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer5</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>1</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </hbox>
+                        </widget>
+                        <widget class="KDoubleNumInput">
+                            <property name="name">
+                                <cstring>editDeviceVolume</cstring>
+                            </property>
+                            <property name="maxValue">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </vbox>
                 </widget>
-                <widget class="QLabel" row="1" column="2">
+                <widget class="QLayoutWidget" row="0" column="1">
                     <property name="name">
-                        <cstring>textLabel1_3</cstring>
+                        <cstring>layout19</cstring>
                     </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelTreble</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p align="center"&gt;treble&lt;/p&gt;</string>
+                            </property>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout12</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer4_2</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>7</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                                <widget class="QSlider">
+                                    <property name="name">
+                                        <cstring>sliderTreble</cstring>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>65535</number>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Vertical</enum>
+                                    </property>
+                                </widget>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer4_2_2</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>7</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </hbox>
+                        </widget>
+                        <widget class="KDoubleNumInput">
+                            <property name="name">
+                                <cstring>editTreble</cstring>
+                            </property>
+                            <property name="maxValue">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </vbox>
                 </widget>
+                <widget class="QLayoutWidget" row="0" column="2">
+                    <property name="name">
+                        <cstring>layout20</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelBass</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p align="center"&gt;bass&lt;/p&gt;</string>
+                            </property>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout14</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer4_2_3</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>7</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                                <widget class="QSlider">
+                                    <property name="name">
+                                        <cstring>sliderBass</cstring>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>65535</number>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Vertical</enum>
+                                    </property>
+                                </widget>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer4_2_4</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>7</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </hbox>
+                        </widget>
+                        <widget class="KDoubleNumInput">
+                            <property name="name">
+                                <cstring>editBass</cstring>
+                            </property>
+                            <property name="maxValue">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="3">
+                    <property name="name">
+                        <cstring>layout21</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelBalance</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p align="center"&gt;balance&lt;/p&gt;</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer12</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>20</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QSlider">
+                            <property name="name">
+                                <cstring>sliderBalance</cstring>
+                            </property>
+                            <property name="minValue">
+                                <number>0</number>
+                            </property>
+                            <property name="maxValue">
+                                <number>65535</number>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer13</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>20</width>
+                                    <height>25</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="KDoubleNumInput">
+                            <property name="name">
+                                <cstring>editBalance</cstring>
+                            </property>
+                            <property name="minValue">
+                                <number>-1</number>
+                            </property>
+                            <property name="maxValue">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QButtonGroup" row="1" column="0">
+            <property name="name">
+                <cstring>buttonGroup3</cstring>
+            </property>
+            <property name="title">
+                <string>Options</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>8</number>
+                </property>
                 <widget class="QLayoutWidget" row="0" column="2">
                     <property name="name">
                         <cstring>layout37</cstring>
@@ -127,20 +456,12 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLabel" row="1" column="0">
+                <widget class="QLabel" row="2" column="2">
                     <property name="name">
-                        <cstring>labelScanStep</cstring>
+                        <cstring>textLabel1_4_2</cstring>
                     </property>
                     <property name="text">
-                        <string>station scan step</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0">
-                    <property name="name">
-                        <cstring>labelMinMaxFrequency</cstring>
-                    </property>
-                    <property name="text">
-                        <string>allowed frequency range</string>
+                        <string></string>
                     </property>
                 </widget>
                 <widget class="QSpinBox" row="1" column="1">
@@ -158,6 +479,30 @@
                     </property>
                     <property name="value">
                         <number>50</number>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="2">
+                    <property name="name">
+                        <cstring>textLabel1_3</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>labelSignalMinQuality</cstring>
+                    </property>
+                    <property name="text">
+                        <string>minimum signal quality</string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="2" column="1">
+                    <property name="name">
+                        <cstring>editSignalMinQuality</cstring>
+                    </property>
+                    <property name="value">
+                        <number>75</number>
                     </property>
                 </widget>
                 <widget class="QSpinBox" row="0" column="1">
@@ -183,54 +528,44 @@
                         <number>0</number>
                     </property>
                 </widget>
-                <widget class="QLabel" row="2" column="2">
+                <widget class="QLabel" row="1" column="0">
                     <property name="name">
-                        <cstring>textLabel1_4_2</cstring>
+                        <cstring>labelScanStep</cstring>
                     </property>
                     <property name="text">
-                        <string></string>
+                        <string>station scan step</string>
                     </property>
                 </widget>
-                <widget class="QSpinBox" row="2" column="1">
+                <widget class="QLabel" row="0" column="0">
                     <property name="name">
-                        <cstring>editSignalMinQuality</cstring>
+                        <cstring>labelMinMaxFrequency</cstring>
                     </property>
-                    <property name="value">
-                        <number>75</number>
+                    <property name="text">
+                        <string>allowed frequency range</string>
                     </property>
                 </widget>
             </grid>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout9</cstring>
+                <cstring>buttonGroup2</cstring>
+            </property>
+            <property name="title">
+                <string>Devices</string>
             </property>
             <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="0" column="0">
+                <property name="margin">
+                    <number>8</number>
+                </property>
+                <widget class="QLabel" row="1" column="1">
                     <property name="name">
-                        <cstring>labelRadioDevice</cstring>
+                        <cstring>labelDescription</cstring>
                     </property>
                     <property name="text">
-                        <string>Radio Device</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="1" column="0">
-                    <property name="name">
-                        <cstring>labelMixerDevice</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Mixer Device</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="0">
-                    <property name="name">
-                        <cstring>labelMixerChannel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Mixer Channel</string>
+                        <string>unknown v4l device</string>
                     </property>
                 </widget>
                 <widget class="QLineEdit" row="0" column="1">
@@ -238,36 +573,24 @@
                         <cstring>editRadioDevice</cstring>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="1" column="1">
+                <spacer row="1" column="0">
                     <property name="name">
-                        <cstring>editMixerDevice</cstring>
+                        <cstring>spacer18_3_3</cstring>
                     </property>
-                </widget>
-                <widget class="QComboBox" row="2" column="1">
-                    <property name="name">
-                        <cstring>comboMixerChannel</cstring>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
                     </property>
-                </widget>
-                <widget class="QPushButton" row="0" column="2">
-                    <property name="name">
-                        <cstring>buttonSelectRadioDevice</cstring>
+                    <property name="sizeType">
+                        <enum>Preferred</enum>
                     </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>21</height>
+                        </size>
                     </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                        <property name="iconSet">
-                        <iconset>"fileopen"</iconset>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="1" column="2">
+                </spacer>
+                <widget class="QPushButton" row="2" column="2">
                     <property name="name">
                         <cstring>buttonSelectMixerDevice</cstring>
                     </property>
@@ -286,7 +609,61 @@
                         <iconset>"fileopen"</iconset>
                     </property>
                 </widget>
-                <spacer  row="2" column="2">
+                <widget class="QPushButton" row="0" column="2">
+                    <property name="name">
+                        <cstring>buttonSelectRadioDevice</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>"fileopen"</iconset>
+                    </property>
+                </widget>
+                <spacer row="1" column="2">
+                    <property name="name">
+                        <cstring>spacer18_3_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Preferred</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QComboBox" row="3" column="1">
+                    <property name="name">
+                        <cstring>comboMixerChannel</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>labelMixerChannel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Mixer Channel</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="2" column="1">
+                    <property name="name">
+                        <cstring>editMixerDevice</cstring>
+                    </property>
+                </widget>
+                <spacer row="3" column="2">
                     <property name="name">
                         <cstring>spacer18_3</cstring>
                     </property>
@@ -298,11 +675,27 @@
                     </property>
                     <property name="sizeHint">
                         <size>
-                           <width>28</width>
-                           <height>21</height>
+                            <width>40</width>
+                            <height>21</height>
                         </size>
                     </property>
                 </spacer>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>labelMixerDevice</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Mixer Device</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>labelRadioDevice</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Radio Device</string>
+                    </property>
+                </widget>
             </grid>
         </widget>
     </grid>
@@ -322,4 +715,10 @@
 </includes>
 <pixmapfunction>SmallIconSet</pixmapfunction>
 <layoutdefaults spacing="6" margin="0"/>
+<includehints>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+</includehints>
 </UI>

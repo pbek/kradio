@@ -26,33 +26,41 @@ IF_IMPL_SENDER  (  IRadioDevicePool::notifyActiveDeviceChanged(IRadioDevice *rd)
                    noticeActiveDeviceChanged(rd)      )
 IF_IMPL_SENDER  (  IRadioDevicePool::notifyDevicesChanged(const QPtrList<IRadioDevice> &l),
                    noticeDevicesChanged(l)            )
+IF_IMPL_SENDER  (  IRadioDevicePool::notifyDeviceDescriptionChanged(const QString &s),
+                   noticeDeviceDescriptionChanged(s)  )
 
 // IRadioDevicePoolClient
 
 IF_IMPL_SENDER  (  IRadioDevicePoolClient::sendActiveDevice(IRadioDevice *rd, bool keepPower ),
-                   setActiveDevice(rd, keepPower)                )
+                   setActiveDevice(rd, keepPower)     )
 
 IF_IMPL_QUERY   (  IRadioDevice *IRadioDevicePoolClient::queryActiveDevice(),
                    getActiveDevice(),
                    NULL                               )
 
 static const QPtrList<IRadioDevice> emptyList;
-
 IF_IMPL_QUERY   (  const QPtrList<IRadioDevice> &IRadioDevicePoolClient::queryDevices(),
                    getDevices(),
                    emptyList                          )
+
+static QString unknown("unknown");
+IF_IMPL_QUERY   (  const QString &IRadioDevicePoolClient::queryDeviceDescription(),
+                   getDeviceDescription(),
+                   unknown                            )
 
 
 void IRadioDevicePoolClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeActiveDeviceChanged(queryActiveDevice());
 	noticeDevicesChanged(queryDevices());
+	noticeDeviceDescriptionChanged(queryDeviceDescription());
 }
 
 void IRadioDevicePoolClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeActiveDeviceChanged(queryActiveDevice());
 	noticeDevicesChanged(queryDevices());
+	noticeDeviceDescriptionChanged(queryDeviceDescription());
 }
 
 

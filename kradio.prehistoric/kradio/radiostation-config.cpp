@@ -79,7 +79,7 @@ void FrequencyRadioStationConfig::setStationData   (const RadioStation &x)
 {
 	const FrequencyRadioStation *rs = dynamic_cast<const FrequencyRadioStation*>(&x);
 	if (rs) {
-		m_editFrequency->setValue((int)round(rs->frequency() * 1000));
+		m_editFrequency->setValue((int)rint(rs->frequency() * 1000));
 	}
 }
 

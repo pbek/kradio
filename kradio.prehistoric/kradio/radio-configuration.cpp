@@ -114,10 +114,10 @@ bool RadioConfiguration::noticeDevicesChanged(const QPtrList<IRadioDevice> &l)
 	devices.clear();
 	int id = 0;
 	for (; it.current(); ++it) {
-		PluginBase *p = dynamic_cast<PluginBase*>(it.current());
-		if (p && dynamic_cast<ISeekRadio*>(it.current())) {
-			devicePopup->insertItem(p->name(), id++);
-			devices.append(it.current());
+		IRadioDevice *d = it.current();
+		if (dynamic_cast<ISeekRadio*>(d)) {
+			devicePopup->insertItem(d->getDescription(), id++);
+			devices.append(d);
 		}
 	}
 	QObject::connect(devicePopup, SIGNAL(activated(int)),
@@ -126,6 +126,14 @@ bool RadioConfiguration::noticeDevicesChanged(const QPtrList<IRadioDevice> &l)
 	if (oldPopup) delete oldPopup;
 	return true;
 }
+
+
+bool RadioConfiguration::noticeDeviceDescriptionChanged(const QString &)
+{
+	noticeDevicesChanged(queryDevices());
+	return true;
+}
+
 
 // IRadioClient
 
@@ -183,7 +191,7 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
 	editStationName       ->setText  (s ? s->name() : QString::null);
 	editStationShortName  ->setText  (s ? s->shortName() : QString::null);
 	editPixmapFile        ->setText  (s ? s->iconName() : QString::null);
-	editVolumePreset      ->setValue (s ? (int)round(s->initialVolume()*100) : -1);
+	editVolumePreset      ->setValue (s ? (int)rint(s->initialVolume()*100) : -1);
 	pixmapStation         ->setPixmap(s ? QPixmap(s->iconName()) : QPixmap());
 
 	stackStationEdit->setDisabled(!s);

@@ -39,11 +39,12 @@ RECEIVERS:
 SENDERS:
 	IF_SENDER  (  notifyActiveDeviceChanged(IRadioDevice *rd)             )
 	IF_SENDER  (  notifyDevicesChanged(const QPtrList<IRadioDevice> &)    )
+	IF_SENDER  (  notifyDeviceDescriptionChanged(const QString &)         )
 
 ANSWERS:
 	IF_ANSWER  (  IRadioDevice                  * getActiveDevice() const )
 	IF_ANSWER  (  const QPtrList<IRadioDevice>  & getDevices() const      )
-
+	IF_ANSWER  (  const QString                 & getDeviceDescription() const )
 };
 
 
@@ -58,10 +59,12 @@ SENDERS:
 RECEIVERS:
 	IF_RECEIVER(  noticeActiveDeviceChanged(IRadioDevice *rd)             )
 	IF_RECEIVER(  noticeDevicesChanged(const QPtrList<IRadioDevice> &)    )
+	IF_RECEIVER(  noticeDeviceDescriptionChanged(const QString &)         )
 
 QUERIES:
 	IF_QUERY   (  IRadioDevice                  *queryActiveDevice()      )
 	IF_QUERY   (  const QPtrList<IRadioDevice>  &queryDevices()           )
+	IF_QUERY   (  const QString                 &queryDeviceDescription() )
 
 RECEIVERS:
 	virtual void noticeConnected    (cmplInterface *, bool /*pointer_valid*/);

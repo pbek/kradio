@@ -134,7 +134,7 @@ bool TimeControlConfiguration::noticeCountdownZero()
 
 bool TimeControlConfiguration::noticeCountdownSecondsChanged(int n)
 {
-	editSleep->setValue((int)round(n / 60));
+	editSleep->setValue((int)rint(n / 60));
 	return false;
 }
 
@@ -157,8 +157,8 @@ bool TimeControlConfiguration::noticeStationsChanged(const StationList &sl)
 	stationIDs.clear();
 	comboStationSelection->insertItem("<any>");
 	stationIDs.push_back(QString::null);
-	
-	for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {		
+
+	for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {
 		comboStationSelection->insertItem(i.current()->iconName(),
 		                				  i.current()->longName());
 		stationIDs.push_back(i.current()->stationID());
@@ -177,7 +177,7 @@ void TimeControlConfiguration::slotDateChanged( const QDate &d )
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
         QWidget *oldfocus = focusWidget();
-    
+
 		Alarm &a = alarms[idx];
 		a.setDate(d);
 		ignoreChanges = true;
@@ -227,7 +227,7 @@ void TimeControlConfiguration::slotDailyChanged (bool b)
 
 		editAlarmDate ->setDisabled(a.isDaily());
 		labelAlarmDate->setDisabled(a.isDaily());
-	
+
 		oldfocus->setFocus();
     }
 }
@@ -277,7 +277,7 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 
     Alarm a;
     bool  valid = false;
-    
+
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
 
 		a = alarms[idx];
@@ -302,7 +302,7 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 	editAlarmTime        ->setTime(a.alarmTime().time());
 	checkboxAlarmDaily   ->setChecked(a.isDaily());
 	checkboxAlarmEnable  ->setChecked(a.isEnabled());
-	editAlarmVolume      ->setValue((int)round(a.volumePreset() * 100));
+	editAlarmVolume      ->setValue((int)rint(a.volumePreset() * 100));
 	comboAlarmType       ->setCurrentItem(a.alarmType());
 
 	int k = 0;

@@ -60,6 +60,9 @@ RECEIVERS:
 
 RECEIVERS:
 	bool noticeVolumeChanged(float /*v*/)           { return false; }
+	bool noticeTrebleChanged(float /*v*/)           { return false; }
+	bool noticeBassChanged(float /*v*/)             { return false; }
+	bool noticeBalanceChanged(float /*v*/)          { return false; }
 	bool noticeSignalQualityChanged(float /*q*/)    { return false; }
 	bool noticeSignalQualityChanged(bool /*good*/)  { return false; }
 	bool noticeSignalMinQualityChanged(float /*q*/) { return false; }

@@ -32,7 +32,8 @@ class QWidget;
 class V4LRadioConfiguration : public V4LRadioConfigurationUI,
                               public IV4LCfgClient,
                               public IFrequencyRadioClient,
-                              public IRadioSoundClient
+                              public IRadioSoundClient,
+                              public IRadioDeviceClient
 {
 Q_OBJECT
 public :
@@ -47,6 +48,14 @@ public :
 RECEIVERS:
 	bool noticeRadioDeviceChanged(const QString &s);
 	bool noticeMixerDeviceChanged(const QString &s, int Channel);
+	bool noticeDeviceVolumeChanged(float v);
+
+// IRadiODeviceClient
+
+RECEIVERS:
+	bool noticePowerChanged   (bool /*on*/, const IRadioDevice */*sender = NULL*/)          { return false; }
+	bool noticeStationChanged (const RadioStation &, const IRadioDevice */*sender = NULL*/) { return false; }
+	bool noticeDescriptionChanged (const QString &, const IRadioDevice *sender = NULL);
 
 // IFrequencyRadioClient
 
@@ -58,6 +67,9 @@ RECEIVERS:
 
 RECEIVERS:
 	bool noticeVolumeChanged(float v);
+	bool noticeTrebleChanged(float t);
+	bool noticeBassChanged(float b);
+	bool noticeBalanceChanged(float b);
 	bool noticeSignalQualityChanged(float q);
 	bool noticeSignalQualityChanged(bool good);
 	bool noticeSignalMinQualityChanged(float q);
@@ -68,6 +80,8 @@ protected slots:
 
 	void selectMixerDevice();
 	void selectRadioDevice();
+	void slotEditRadioDeviceChanged(const QString &s);
+	void slotEditMixerDeviceChanged(const QString &s);
 
 	void slotOK();
 	void slotCancel();
@@ -75,9 +89,26 @@ protected slots:
 	void guiMinFrequencyChanged(int v);
 	void guiMaxFrequencyChanged(int v);
 
+	void slotDeviceVolumeChanged (double v); // for KDoubleNumInput,  0.0..1.0
+	void slotTrebleChanged (double t);       // for KDoubleNumInput,  0.0..1.0
+	void slotBassChanged   (double b);       // for KDoubleNumInput,  0.0..1.0
+	void slotBalanceChanged(double b);       // for KDoubleNumInput, -1.0..1.0
+
+	void slotDeviceVolumeChanged (int v);    // for slider, 0..65535
+	void slotTrebleChanged (int t);          // for slider, 0..65535
+	void slotBassChanged   (int b);          // for slider, 0..65535
+	void slotBalanceChanged(int b);          // for slider, 0..65535
+
 protected:
 
-	int m_mixerChannelMask;
+	int  m_mixerChannelMask;
+	bool m_ignoreGUIChanges;
+	int  m_myChange;
+
+	float m_orgTreble,
+	      m_orgBass,
+	      m_orgBalance,
+	      m_orgDeviceVolume;
 
 };
 

@@ -16,24 +16,54 @@
 #include <qlabel.h>
 #include <qfile.h>
 #include <qpushbutton.h>
+#include <qslider.h>
 
 #include <kfiledialog.h>
+#include <knuminput.h>
 
 #include "v4lradio-configuration.h"
 #include "v4lradio.h"
 
 V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent)
   : V4LRadioConfigurationUI(parent),
-    m_mixerChannelMask (0)
+    m_mixerChannelMask (0),
+    m_ignoreGUIChanges(false),
+    m_myChange(0),
+    m_orgTreble(-1),
+    m_orgBass(-1),
+    m_orgBalance(-2),
+    m_orgDeviceVolume(-1)
 {
 	QObject::connect(buttonSelectRadioDevice, SIGNAL(clicked()),
 					 this, SLOT(selectRadioDevice()));
 	QObject::connect(buttonSelectMixerDevice, SIGNAL(clicked()),
 					 this, SLOT(selectMixerDevice()));
+	QObject::connect(editRadioDevice, SIGNAL(textChanged(const QString &)),
+					 this, SLOT(slotEditRadioDeviceChanged(const QString &)));
+	QObject::connect(editMixerDevice, SIGNAL(textChanged(const QString &)),
+					 this, SLOT(slotEditMixerDeviceChanged(const QString &)));
 	QObject::connect(editMinFrequency, SIGNAL(valueChanged(int)),
 					 this, SLOT(guiMinFrequencyChanged(int)));
 	QObject::connect(editMaxFrequency, SIGNAL(valueChanged(int)),
 					 this, SLOT(guiMaxFrequencyChanged(int)));
+
+	QObject::connect(editDeviceVolume, SIGNAL(valueChanged(double)),
+					 this, SLOT(slotDeviceVolumeChanged(double)));
+	QObject::connect(editTreble, SIGNAL(valueChanged(double)),
+					 this, SLOT(slotTrebleChanged(double)));
+	QObject::connect(editBass, SIGNAL(valueChanged(double)),
+					 this, SLOT(slotBassChanged(double)));
+	QObject::connect(editBalance, SIGNAL(valueChanged(double)),
+					 this, SLOT(slotBalanceChanged(double)));
+
+	QObject::connect(sliderDeviceVolume, SIGNAL(valueChanged(int)),
+					 this, SLOT(slotDeviceVolumeChanged(int)));
+	QObject::connect(sliderTreble, SIGNAL(valueChanged(int)),
+					 this, SLOT(slotTrebleChanged(int)));
+	QObject::connect(sliderBass, SIGNAL(valueChanged(int)),
+					 this, SLOT(slotBassChanged(int)));
+	QObject::connect(sliderBalance, SIGNAL(valueChanged(int)),
+					 this, SLOT(slotBalanceChanged(int)));
 }
 
 
@@ -47,7 +77,8 @@ bool V4LRadioConfiguration::connect (Interface *i)
 	bool a = IV4LCfgClient::connect(i);
 	bool b = IFrequencyRadioClient::connect(i);
 	bool c = IRadioSoundClient::connect(i);
-	return a || b || c;
+	bool d = IRadioDeviceClient::connect(i);
+	return a || b || c || d;
 }
 
 
@@ -56,7 +87,8 @@ bool V4LRadioConfiguration::disconnect (Interface *i)
 	bool a = IV4LCfgClient::disconnect(i);
 	bool b = IFrequencyRadioClient::disconnect(i);
 	bool c = IRadioSoundClient::disconnect(i);
-	return a || b || c;
+	bool d = IRadioDeviceClient::disconnect(i);
+	return a || b || c || d;
 }
 
 
@@ -64,13 +96,21 @@ bool V4LRadioConfiguration::disconnect (Interface *i)
 
 bool V4LRadioConfiguration::noticeRadioDeviceChanged(const QString &s)
 {
+	bool old = m_ignoreGUIChanges;
+	m_ignoreGUIChanges = true;
+	
 	editRadioDevice->setText(s);
+	
+	m_ignoreGUIChanges = old;
 	return true;
 }
 
 
 bool V4LRadioConfiguration::noticeMixerDeviceChanged(const QString &s, int Channel)
 {
+	bool old = m_ignoreGUIChanges;
+	m_ignoreGUIChanges = true;
+
 	editMixerDevice->setText(s);
 
     m_mixerChannelMask = 0;
@@ -101,6 +141,33 @@ bool V4LRadioConfiguration::noticeMixerDeviceChanged(const QString &s, int Chann
 	}
     comboMixerChannel->setCurrentItem(idx);
 
+	m_ignoreGUIChanges = old;
+	return true;
+}
+
+
+bool V4LRadioConfiguration::noticeDeviceVolumeChanged(float v)
+{
+	bool old = m_ignoreGUIChanges;
+	m_ignoreGUIChanges = true;
+	v = v > 1 ? 1 : v;
+	v = v < 0 ? 0 : v;
+
+	if (!m_myChange)
+		m_orgDeviceVolume = v;
+
+	editDeviceVolume->setValue(v);
+	sliderDeviceVolume->setValue(65535 - (int)rint(v*65535));
+	m_ignoreGUIChanges = old;
+	return true;
+}
+
+
+// IRadioDeviceClient
+
+bool V4LRadioConfiguration::noticeDescriptionChanged (const QString &s, const IRadioDevice */*sender*/)
+{
+	labelDescription->setText(s);
 	return true;
 }
 
@@ -115,23 +182,23 @@ bool V4LRadioConfiguration::noticeFrequencyChanged(float /*f*/, const RadioStati
 
 bool V4LRadioConfiguration::noticeMinMaxFrequencyChanged(float min, float max)
 {
-	editMinFrequency->setValue((int)round(min*1000));
-	editMaxFrequency->setValue((int)round(max*1000));
+	editMinFrequency->setValue((int)rint(min*1000));
+	editMaxFrequency->setValue((int)rint(max*1000));
 	return true;
 }
 
 
 bool V4LRadioConfiguration::noticeDeviceMinMaxFrequencyChanged(float min, float max)
 {
-	editMinFrequency->setMinValue((int)round(min*1000));
-	editMaxFrequency->setMaxValue((int)round(max*1000));
+	editMinFrequency->setMinValue((int)rint(min*1000));
+	editMaxFrequency->setMaxValue((int)rint(max*1000));
 	return true;
 }
 
 
 bool V4LRadioConfiguration::noticeScanStepChanged(float s)
 {
-	editScanStep->setValue((int)round(s * 1000));
+	editScanStep->setValue((int)rint(s * 1000));
 	return true;
 }
 
@@ -141,6 +208,57 @@ bool V4LRadioConfiguration::noticeScanStepChanged(float s)
 bool V4LRadioConfiguration::noticeVolumeChanged(float /*v*/)
 {
 	return false; // we don't care
+}
+
+
+bool V4LRadioConfiguration::noticeTrebleChanged(float t)
+{
+	bool old = m_ignoreGUIChanges;
+	m_ignoreGUIChanges = true;
+	t = t > 1 ? 1 : t;
+	t = t < 0 ? 0 : t;
+
+	if (!m_myChange)
+		m_orgTreble = t;
+			
+	editTreble->setValue(t);
+	sliderTreble->setValue(65535 - (int)rint(t*65535));
+	m_ignoreGUIChanges = old;
+	return true;
+}
+
+
+bool V4LRadioConfiguration::noticeBassChanged(float b)
+{
+	bool old = m_ignoreGUIChanges;
+	m_ignoreGUIChanges = true;
+	b = b > 1 ? 1 : b;
+	b = b < 0 ? 0 : b;
+
+	if (!m_myChange)
+		m_orgBass = b;
+
+	editBass->setValue(b);
+	sliderBass->setValue(65535 - (int)rint(b*65535));
+	m_ignoreGUIChanges = old;
+	return true;
+}
+
+
+bool V4LRadioConfiguration::noticeBalanceChanged(float b)
+{
+	bool old = m_ignoreGUIChanges;
+	m_ignoreGUIChanges = true;
+	b = b >  1 ?  1 : b;
+	b = b < -1 ? -1 : b;
+
+	if (!m_myChange)
+		m_orgBalance = b;
+
+	editBalance->setValue(b);
+	sliderBalance->setValue(32768 + (int)rint(b*32767));
+	m_ignoreGUIChanges = old;
+	return true;
 }
 
 
@@ -158,7 +276,7 @@ bool V4LRadioConfiguration::noticeSignalQualityChanged(bool /*good*/)
 
 bool V4LRadioConfiguration::noticeSignalMinQualityChanged(float q)
 {
-	editSignalMinQuality->setValue((int)round(q * 100));
+	editSignalMinQuality->setValue((int)rint(q * 100));
 	return true;
 }
 
@@ -199,7 +317,25 @@ void V4LRadioConfiguration::selectMixerDevice()
     if (fd.exec() == QDialog::Accepted) {
 		editMixerDevice->setText(fd.selectedFile());
     }
+}
 
+
+void V4LRadioConfiguration::slotEditRadioDeviceChanged(const QString &s)
+{
+	if (m_ignoreGUIChanges) return;
+	if (s != queryRadioDevice()) {
+		V4LCaps c = V4LRadio::readV4LCaps(s);
+		noticeDescriptionChanged(c.description);
+	} else {
+		noticeDescriptionChanged(queryDescription());
+	}
+}
+
+
+void V4LRadioConfiguration::slotEditMixerDeviceChanged(const QString &s)
+{
+	if (m_ignoreGUIChanges) return;
+	noticeMixerDeviceChanged(s, queryMixerChannel());
 }
 
 
@@ -224,12 +360,16 @@ void V4LRadioConfiguration::slotOK()
 
 
 void V4LRadioConfiguration::slotCancel()
-{
+{	
 	noticeRadioDeviceChanged(queryRadioDevice());
 	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
 	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
 	noticeSignalMinQualityChanged(querySignalMinQuality());
 	noticeScanStepChanged(queryScanStep());
+	noticeTrebleChanged(m_orgTreble);
+	noticeBassChanged(m_orgBass);
+	noticeBalanceChanged(m_orgBalance);
+	noticeDeviceVolumeChanged(m_orgDeviceVolume);
 }
 
 
@@ -242,5 +382,70 @@ void V4LRadioConfiguration::guiMinFrequencyChanged(int v)
 void V4LRadioConfiguration::guiMaxFrequencyChanged(int v)
 {
 	editMinFrequency->setMaxValue(v);
+}
+
+void V4LRadioConfiguration::slotDeviceVolumeChanged (double v) // for KDoubleNumInput, 0.0..1.0
+{
+	if (m_ignoreGUIChanges) return;
+	sendDeviceVolume(v);
+}
+
+void V4LRadioConfiguration::slotTrebleChanged (double t) // for KDoubleNumInput, 0.0..1.0
+{
+	if (m_ignoreGUIChanges) return;
+	sendTreble(t);
+}
+
+void V4LRadioConfiguration::slotBassChanged   (double b) // for KDoubleNumInput, 0.0..1.0
+{
+	if (m_ignoreGUIChanges) return;
+	sendBass(b);
+}
+
+void V4LRadioConfiguration::slotBalanceChanged(double b) // for KDoubleNumInput, 0.0..1.0
+{
+	if (m_ignoreGUIChanges) return;
+	sendBalance(b);
+}
+
+
+void V4LRadioConfiguration::slotDeviceVolumeChanged (int v) // for slider, 0..65535
+{
+	if (m_ignoreGUIChanges) return;
+	v = v >  65535 ? 65535 : v;
+	v = v <      0 ?     0 : v;
+	++m_myChange;
+	sendDeviceVolume((float)(65535-v) / 65535.0);
+	--m_myChange;
+}
+
+void V4LRadioConfiguration::slotTrebleChanged (int t) // for slider, 0..65535
+{
+	if (m_ignoreGUIChanges) return;
+	t = t >  65535 ? 65535 : t;
+	t = t <      0 ?     0 : t;
+	++m_myChange;
+	sendTreble((float)(65535-t) / 65535.0);
+	--m_myChange;
+}
+
+void V4LRadioConfiguration::slotBassChanged   (int b) // for slider, 0..65535
+{
+	if (m_ignoreGUIChanges) return;
+	b = b >  65535 ? 65535 : b;
+	b = b <      0 ?     0 : b;
+	++m_myChange;
+	sendBass((float)(65535-b) / 65535.0);
+	--m_myChange;
+}
+
+void V4LRadioConfiguration::slotBalanceChanged(int b) // for slider, 0..65535
+{
+	if (m_ignoreGUIChanges) return;
+	b = b >  65535 ? 65535 : b;
+	b = b <      0 ?     0 : b;
+	++m_myChange;
+	sendBalance((float)(b - 32768) / 32767);
+	--m_myChange;
 }
 

@@ -45,6 +45,9 @@ public:
 // IRadioSoundClient
 RECEIVERS:
 	bool noticeVolumeChanged(float v);
+	bool noticeTrebleChanged(float /*v*/)        { return false; }
+	bool noticeBassChanged(float /*v*/)          { return false; }
+	bool noticeBalanceChanged(float /*v*/)       { return false; }
 	bool noticeSignalQualityChanged(float q);
 	bool noticeSignalQualityChanged(bool good);
 	bool noticeSignalMinQualityChanged(float q);

@@ -2,6 +2,9 @@
 
         emw     - kde3.0 compatibility fixes
                 - v4l2 support
+                - v4l configuration improvements
+                - replace round -> rint
+                - correct missing video_dev forward declaration
 
         Will Stephenson
 

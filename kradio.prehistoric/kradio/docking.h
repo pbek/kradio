@@ -75,6 +75,7 @@ ANSWERS:
 RECEIVERS:
 	bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
 	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
+	bool noticeDeviceDescriptionChanged(const QString &) { return false; }
 
 	// ITimeControlClient
 

@@ -220,19 +220,19 @@ void StationList::merge(const StationList & other)
     m_metaData.lastChange = QDateTime::currentDateTime();
 
     if (!metaData.maintainer.isEmpty())
-        m_metaData.maintainer += (count() ? " / " : QString::null) + metaData.maintainer;
+        m_metaData.maintainer += (count() ? QString(" / ") : QString::null) + metaData.maintainer;
 
     if (!metaData.country.isEmpty())
-        m_metaData.country += (count() ? " / " : QString::null) + metaData.country;
+        m_metaData.country += (count() ? QString(" / ") : QString::null) + metaData.country;
 
     if (!metaData.city.isEmpty())
-        m_metaData.city = (count() ? " / " : QString::null) + metaData.city;
+        m_metaData.city = (count()     ? QString(" / ") : QString::null) + metaData.city;
 
     if (!metaData.media.isEmpty())
-        m_metaData.media += (count() ? " / " : QString::null) + metaData.media;
+        m_metaData.media += (count()   ? QString(" / ") : QString::null) + metaData.media;
 
     if (!metaData.comment.isEmpty())
-        m_metaData.comment += (count() ? " / " : QString::null) + metaData.comment;
+        m_metaData.comment += (count() ? QString(" / ") : QString::null) + metaData.comment;
     if (count() && other.count())
 		m_metaData.comment += " " + i18n("Contains merged Data");
 

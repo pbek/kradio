@@ -154,7 +154,7 @@ bool RadioViewFrequencySeeker::noticeFrequencyChanged(float f, const RadioStatio
 	if (step == 0) step = 0.000001;
 	
 	m_ignoreChanges = true;
-	m_sldFrequency->setValue((int)round(f / step));
+	m_sldFrequency->setValue((int)rint(f / step));
 	m_ignoreChanges = false;
 	return true;
 }
@@ -164,11 +164,11 @@ bool RadioViewFrequencySeeker::noticeMinMaxFrequencyChanged(float min, float max
 {
 	float step = queryScanStep();
 	if (step == 0) step = 0.000001;
-	
+
 	m_ignoreChanges = true;
-	m_sldFrequency->setMinValue((int)round(min / step));
-	m_sldFrequency->setMaxValue((int)round(max / step));
-	m_sldFrequency->setValue   ((int)round(queryFrequency() / step));
+	m_sldFrequency->setMinValue((int)rint(min / step));
+	m_sldFrequency->setMaxValue((int)rint(max / step));
+	m_sldFrequency->setValue   ((int)rint(queryFrequency() / step));
 	m_ignoreChanges = false;
 	return true;
 }
@@ -184,9 +184,9 @@ bool RadioViewFrequencySeeker::noticeScanStepChanged(float s)
 {
 	if (s == 0) s = 0.000001;
 	m_ignoreChanges = true;
-	m_sldFrequency->setMinValue((int)round(queryMinFrequency() / s));
-	m_sldFrequency->setMaxValue((int)round(queryMaxFrequency() / s));
-	m_sldFrequency->setValue   ((int)round(queryFrequency() / s));
+	m_sldFrequency->setMinValue((int)rint(queryMinFrequency() / s));
+	m_sldFrequency->setMaxValue((int)rint(queryMaxFrequency() / s));
+	m_sldFrequency->setValue   ((int)rint(queryFrequency() / s));
 	m_ignoreChanges = false;
 	return true;
 }

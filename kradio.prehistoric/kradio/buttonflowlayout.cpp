@@ -179,20 +179,20 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 
 //		fprintf (stderr, "x = %i    y = %i\n", x, (int)y);
 		++it;
-		int btnRight = (int)round(x + buttonWidth) - 1,
-			btnLeft  = (int)round(x);
-			
+		int btnRight = (int)rint(x + buttonWidth) - 1,
+			btnLeft  = (int)rint(x);
+
         if ( btnRight > r.right() && h > 0 ) {
 		    x = r.x();
-		    btnRight = (int)round(x + buttonWidth) - 1;
-			btnLeft  = (int)round(x);
-		    
+		    btnRight = (int)rint(x + buttonWidth) - 1;
+			btnLeft  = (int)rint(x);
+
     	    y += h + spacing() + deltaH;
   	        h = 0;
 	        linecount++;
     	}
         if (!testonly)
-      	    o->setGeometry( QRect( QPoint( btnLeft, (int)round(y) ),
+      	    o->setGeometry( QRect( QPoint( btnLeft, (int)rint(y) ),
 			                       QSize(  btnRight - btnLeft + 1,
 									       buttonHeight) )
 			              );
@@ -201,7 +201,7 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
         h = QMAX( h,  buttonHeight );
     }
 
-    int ret = (int)round(y + h + deltaH) - r.y();
+    int ret = (int)rint(y + h + deltaH) - r.y();
 
 //    fprintf (stderr, "ButtonFlowLayout::doLayout() = %i\n", ret);
     return ret;

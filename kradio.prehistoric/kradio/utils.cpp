@@ -37,13 +37,13 @@ QString XMLEscape (const QString &s)
 
 QString xmlOpenTag (const QString &tag, bool nl)
 {
-	return "<" + tag + ">" + (nl ? "\n" : QString::null);
+	return "<" + tag + ">" + (nl ? QString("\n") : QString::null);
 }
 
 
 QString xmlCloseTag (const QString &tag, bool nl)
 {
-	return "</" + tag + ">" + (nl ? "\n" : QString::null);
+	return "</" + tag + ">" + (nl ? QString("\n") : QString::null);
 }
 
 
@@ -64,6 +64,6 @@ QString xmlTag (const QString &tag, const QString &data, bool nl)
 	return   xmlOpenTag(tag, false)
 	       + XMLEscape(data)
 	       + xmlCloseTag(tag, false)
-	       + (nl ? "\n" : QString::null);
+	       + (nl ? QString("\n") : QString::null);
 }
 

@@ -129,7 +129,7 @@ int RadioViewVolume::getSlider4Volume(float volume)
 {
 	if (volume >= 1) volume = 1;
 	if (volume < 0) volume = 0;
-    return SLIDER_MAXVAL - (int)round(SLIDER_RANGE * volume);
+    return SLIDER_MAXVAL - (int)rint(SLIDER_RANGE * volume);
 }
 
 

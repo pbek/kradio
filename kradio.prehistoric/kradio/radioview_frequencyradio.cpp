@@ -192,6 +192,12 @@ bool RadioViewFrequencyRadio::noticeStationChanged (const RadioStation &, const 
 }
 
 
+bool RadioViewFrequencyRadio::noticeDescriptionChanged (const QString &, const IRadioDevice */*sender*/)
+{
+	return false;   // we don't care
+}
+
+
 // IRadioSoundClient
 
 
@@ -284,7 +290,7 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 		 xx_am = xx_st,
 		 xy_am = xy_st + xh_st + margin / 2,
 		 xh_am = (r.bottom() - margin - xy_am + 1 - margin/2) / 2,
-		 
+
 		 xx_fm = xx_am,
 		 xy_fm = xy_am + xh_am + margin/2,
 		 xh_fm = xh_am,
@@ -292,7 +298,7 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 		 xh_sg = r.height() - margin * 2,
 		 xx_sg = r.x() + margin,
 		 xy_sg = r.y() + margin;
-		 
+
 	QPen activePen (colorGroup().color(QColorGroup::Text), penw);
 	QPen inactivePen (colorGroup().color(QColorGroup::Mid), penw);
 	QBrush activeBrush = colorGroup().brush(QColorGroup::Text);
@@ -306,7 +312,7 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 	paint->drawArc((int)(xx_st + xd_st/2), (int)xy_st,
 				   (int)(xd_st - penw), (int)(xd_st - penw),
 				   0, 360*16);
-				   
+
 	// draw signal quality symbol
 	float cx = xx_sg,
 		  cy = xy_sg,
@@ -316,8 +322,8 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 	float open_a = 30.0;
 	// outer circle
 	paint->setPen(  (m_quality > 0.75 && m_power) ? activePen : inactivePen);
-	paint->drawArc((int)round(cx),       (int)round(cy),
-	               (int)round(cw),       (int)round(ch),
+	paint->drawArc((int)rint(cx),       (int)rint(cy),
+	               (int)rint(cw),       (int)rint(ch),
 	               (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16
 	               );
 
@@ -325,8 +331,8 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 	paint->setPen(  (m_quality > 0.50 && m_power) ? activePen : inactivePen);
 	cx += (float)xw/5.0;  cy += (float)xw/5.0;
 	cw -= (float)xw/2.5;  ch -= (float)xw/2.5;
-	paint->drawArc((int)round(cx),       (int)round(cy),
-	               (int)round(cw),       (int)round(ch),
+	paint->drawArc((int)rint(cx),       (int)rint(cy),
+	               (int)rint(cw),       (int)rint(ch),
 	               (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16
 	               );
 
@@ -334,8 +340,8 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 	paint->setPen(  (m_quality > 0.25 && m_power) ? activePen : inactivePen);
 	cx += (float)xw/5.0;  cy += (float)xw/5.0;
 	cw -= (float)xw/2.5;  ch -= (float)xw/2.5;
-	paint->drawArc((int)round(cx),       (int)round(cy),
-	               (int)round(cw),       (int)round(ch),
+	paint->drawArc((int)rint(cx),       (int)rint(cy),
+	               (int)rint(cw),       (int)rint(ch),
 	               (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16
 	               );
 
@@ -379,8 +385,8 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 		s = QString().setNum((int)(m_frequency * 1000)) + " kHz";
 	} else {
 		s = QString().setNum((int)m_frequency) + ".";
-		int r = (int)round((m_frequency-(int)m_frequency) * 100);
-		s = s + (r < 10 ? "0" : QString::null) + QString().setNum(r) + " MHz";
+		int r = (int)rint((m_frequency-(int)m_frequency) * 100);
+		s = s + (r < 10 ? QString("0") : QString::null) + QString().setNum(r) + " MHz";
 	}
 
 	float pxs = xh_f;

@@ -225,7 +225,7 @@ void QuickBar::activateButton(const RadioStation &rs)
 			b->setOn(false);
 		}
 	}
-	setCaption(pwr && rs.isValid() ? rs.longName() : "KRadio");
+	setCaption(pwr && rs.isValid() ? rs.longName() : QString("KRadio"));
 }
 
 

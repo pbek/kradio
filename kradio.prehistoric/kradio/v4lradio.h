@@ -31,6 +31,21 @@
 #include "v4lcfg_interfaces.h"
 
 
+struct video_tuner;
+struct video_audio;
+struct v4l2_tuner;
+
+
+struct V4LCaps
+{
+	int     version;
+	QString description;
+
+	V4LCaps(int v, const QString &d)
+		: version(v), description(d) {}
+};
+
+
 class V4LRadio : public QObject,
 	             public PluginBase,
                  public IRadioDevice,
@@ -71,12 +86,16 @@ ANSWERS:
 	virtual bool                   isPowerOn() const;
 	virtual bool                   isPowerOff() const;
 	virtual const RadioStation  &  getCurrentStation() const;
+	virtual const QString       &  getDescription() const;
 
 
 	// IRadioSound
 
 RECEIVERS:
-	virtual bool setVolume (float v);
+	virtual bool setVolume  (float v);
+	virtual bool setTreble  (float v);
+	virtual bool setBass    (float v);
+	virtual bool setBalance (float v);
 	virtual bool mute (bool mute = true);
 	virtual bool unmute (bool unmute = true);
 	virtual bool setSignalMinQuality(float q);
@@ -84,6 +103,9 @@ RECEIVERS:
 
 ANSWERS:
 	virtual float   getVolume() const;
+	virtual float   getTreble() const;
+	virtual float   getBass  () const;
+	virtual float   getBalance () const;
 	virtual float   getSignalQuality() const;
 	virtual float   getSignalMinQuality() const;
 	virtual bool    hasGoodQuality() const;
@@ -130,22 +152,28 @@ RECEIVERS:
     bool  setRadioDevice (const QString &s);
     bool  setMixerDevice (const QString &s, int ch);
     bool  setDevices (const QString &r, const QString &m, int ch);
+	bool  setDeviceVolume(float v);
 
 ANSWERS:
     const QString &getRadioDevice () const { return m_radioDev; }
     const QString &getMixerDevice () const { return m_mixerDev; }
     int            getMixerChannel() const { return m_mixerChannel; }
+	float          getDeviceVolume() const;
 
     // anything else
 
 protected slots:
 	void  poll();
 	
+
+
+public:
+	static V4LCaps readV4LCaps(const QString &device);
+
 protected:
 	void  radio_init();
 	void  radio_done();
 
-	void  readV4LVersion();
 	bool  readTunerInfo() const;
 	bool  updateAudioInfo(bool write) const;
 	bool  readAudioInfo() const { return updateAudioInfo(false); }
@@ -155,6 +183,10 @@ protected:
 
 	FrequencyRadioStation  m_currentStation;
 	mutable float          m_volume;
+	mutable float          m_treble;
+	mutable float          m_bass;
+	mutable float          m_balance;
+	mutable float          m_deviceVolume;
 	mutable bool           m_muted;
 	mutable float          m_signalQuality;
 	mutable bool           m_stereo;
@@ -166,6 +198,7 @@ protected:
 	FrequencySeekHelper    m_seekHelper;
 	float                  m_scanStep;
 
+	QString                m_description;
 	QString                m_radioDev;
 	QString                m_mixerDev;
 	int                    m_mixerChannel;
@@ -180,23 +213,20 @@ protected:
 	mutable struct v4l2_tuner    *m_tuner2;
 #endif
 
-	QTimer                 m_pollTimer;
+	QTimer                        m_pollTimer;
 
-	mutable struct TunerCache {
+	struct TunerCache {
 		bool  valid;
 		float deltaF;
 		float minF, maxF;
 		TunerCache() { valid = false; }
-	}
-	                       m_tunercache;
+	};
+	mutable struct TunerCache     m_tunercache;
 
 
-	mutable bool           m_blockReadTuner,
-	                       m_blockReadAudio;
+	mutable bool                  m_blockReadTuner,
+	                              m_blockReadAudio;
 	
-//	__u16 balance;
-//	__u16 bass ;
-//	__u16 treble;
 };
 
 #endif

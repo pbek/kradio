@@ -102,6 +102,7 @@ RECEIVERS:
 ANSWERS:
 	IRadioDevice                 * getActiveDevice() const;
 	const QPtrList<IRadioDevice> & getDevices() const;
+	const QString                & getDeviceDescription() const;
 
 
 
@@ -117,10 +118,12 @@ QUERIES:
 	IF_QUERY   (  bool                   queryIsPowerOn()            )
 	IF_QUERY   (  bool                   queryIsPowerOff()           )
 	IF_QUERY   (  const RadioStation  &  queryCurrentStation()       )
+	IF_QUERY   (  const QString       &  queryDescription()          )
 
 RECEIVERS:
 	virtual bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
 	virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
+	virtual bool noticeDescriptionChanged (const QString &, const IRadioDevice *sender = NULL);
 
 
 	// ITimeControlClient
