@@ -45,8 +45,8 @@ public:
     FrequencyRadioStation (RegisterStationClass, const QString &classname = "");
     ~FrequencyRadioStation();
 
-    float  frequency()  const;
-    void   setFrequency (float frequency);
+    float  frequency()  const             { return m_frequency; }
+    void   setFrequency (float frequency) { m_frequency = frequency; }
 
     virtual QString	longName() const;
     virtual bool    isValid () const;

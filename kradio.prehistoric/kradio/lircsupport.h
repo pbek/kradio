@@ -53,9 +53,9 @@ public:
 	// IRadioClient methods
 
 RECEIVERS:
-	bool noticePowerChanged(bool on)                              { return false; }
+	bool noticePowerChanged(bool /*on*/)                          { return false; }
 	bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }
-	bool noticeStationsChanged(const StationList &sl)             { return false; }
+	bool noticeStationsChanged(const StationList &/*sl*/)         { return false; }
 
 
     // ITimeControlClient
@@ -79,8 +79,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   connect (PluginBase *p)    { connect ((Interface*)p); }
-	virtual void   disconnect (PluginBase *p) { disconnect ((Interface*)p); }
+	virtual bool   connect (PluginBase *p)    { return connect ((Interface*)p); }
+	virtual bool   disconnect (PluginBase *p) { return disconnect ((Interface*)p); }
 
 protected:
 	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);

@@ -30,6 +30,7 @@ class FrequencySeekHelper : public QObject,
 							public SeekHelper,
                             public IFrequencyRadioClient
 {
+Q_OBJECT
 public:
 
     FrequencySeekHelper(ISeekRadio &parent);
@@ -46,6 +47,10 @@ public:
 
 	virtual bool     connect   (Interface *i);
 	virtual bool     disconnect(Interface *i);
+
+public slots:
+
+	virtual void step() { SeekHelper::step(); }
 
 protected:
 	virtual void abort();

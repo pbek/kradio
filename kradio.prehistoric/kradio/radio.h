@@ -27,6 +27,7 @@
 #include "radiodevicepool_interface.h"
 #include "radiodevice_interfaces.h"
 #include "stationlist.h"
+#include "plugins.h"
 
 /**
  * The main Radio class, which is used as the interface of the radio functionality
@@ -45,14 +46,28 @@
 
 */
 
-class Radio : public IRadio,
+class Radio : public PluginBase,
+	          public IRadio,
               public IRadioDevicePool,
               public IRadioDeviceClient
 {
 public:
-    Radio();
+    Radio(const QString &name);
     ~Radio();
 
+
+	// PluginBase
+
+public:
+	virtual void   saveState (KConfig *) const;
+	virtual void   restoreState (KConfig *);
+
+	virtual bool   connect (PluginBase *p)    { return connect ((Interface*)p); }
+	virtual bool   disconnect (PluginBase *p) { return disconnect ((Interface*)p); }
+
+protected:
+	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
+	virtual QFrame *internal_createAboutPage(QWidget *parent);
 
 
     // IRadio methods

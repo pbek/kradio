@@ -2,8 +2,8 @@
                           main.cpp  -  description
                              -------------------
     begin                : Don Mär  8 21:57:17 CET 2001
-    copyright            : (C) 2001, 2002 by Frank Schwanz, Ernst Martin Witte
-    email                : schwanz@fh-brandenburg.de, witte@kawo1.rwth-aachen.de
+    copyright            : (C) 2001, 2002, 2003 by Ernst Martin Witte, Frank Schwanz
+    email                : witte@kawo1.rwth-aachen.de, schwanz@fh-brandenburg.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,34 +18,57 @@
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
-#include <kwin.h>
 
 #include "kradioapp.h"
 
-static const char *description = "KRadio";
+#include "v4lradio.h"
+#include "radio.h"
+#include "timecontrol.h"
+#include "lircsupport.h"
 
+static const char *description = "KRadio";
 
 static KCmdLineOptions options[] =
 {
   { 0, 0, 0 }
 };
 
+
 int main(int argc, char *argv[])
 {
-  KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
-                      VERSION, description, KAboutData::License_GPL,
-                      "(c) 2002 Martin Witte, Frank Schwanz, Klas Kalass",
-                      0,
-                      "http://sourceforge.net/projects/kradio",
-                      0);
-  aboutData.addAuthor("Martin Witte",  I18N_NOOP("misc, lirc support, alarm function"), "witte@kawo1.rwth-aachen.de");
-  aboutData.addAuthor("Klas Kalass",   I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
-  aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
+    KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
+                         VERSION, description, KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte, Klas Kalass, Frank Schwanz",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  I18N_NOOP("misc, lirc support, alarms"), "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Klas Kalass",   I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
+    aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
 
-  KCmdLineArgs::init( argc, argv, &aboutData );
-  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+    KCmdLineArgs::init( argc, argv, &aboutData );
+    KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-  KRadioApp a;
+    KRadioApp a;
 
-  return a.exec();
+	/* Some Tests */
+    
+    LircSupport lircsupport("lirc-1");
+    V4LRadio    *v4lradio = new V4LRadio("v4lradio-1");
+    Radio       radio("radio-1");
+    TimeControl timecontrol("timecontrol-1");
+
+    a.insertPlugin(&lircsupport);
+    a.insertPlugin(v4lradio);
+    a.insertPlugin(&radio);
+    a.insertPlugin(&timecontrol);
+
+    a.restoreState(KGlobal::config());
+
+    radio.powerOn();
+    v4lradio->setFrequency(90.85);
+    v4lradio->setVolume(1.0);
+    
+    return a.exec();
 }
+

@@ -18,6 +18,7 @@
 #include "plugins.h"
 #include "pluginmanager.h"
 #include <kdialogbase.h>
+#include <kdebug.h>
 
 PluginManager::PluginManager()
 {
@@ -38,6 +39,15 @@ void PluginManager::insertPlugin(PluginBase *p)
 	if (p) {
 		m_plugins.append(p);
 		p->setManager(this);
+
+		for (PluginIterator it(m_plugins); it.current(); ++it) {
+			if (it.current() != p) {
+				kdDebug() << "PluginManager::insertPlugin: "
+				          << p->name() << " <-> " << it.current()->name()
+				          << ": "
+				          << (p->connect(it.current()) ? "ok" : "failed") << endl;
+			}
+		}
 	}
 }
 
@@ -45,6 +55,11 @@ void PluginManager::insertPlugin(PluginBase *p)
 void PluginManager::removePlugin(PluginBase *p)
 {
 	if (p && m_plugins.contains(p)) {
+		for (PluginIterator it(m_plugins); it.current(); ++it) {
+			if (it.current() != p)
+				p->disconnect(it.current());
+		}
+		
 		m_plugins.remove(p);
 		p->unsetManager();
 	}

@@ -20,9 +20,15 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-Radio::Radio()
-  : IRadioDeviceClient(-1),
+Radio::Radio(const QString &name)
+  : PluginBase(name),
+    IRadioDeviceClient(-1),
     m_activeDevice (NULL)
+{
+}
+
+
+Radio::~Radio()
 {
 }
 
@@ -32,6 +38,10 @@ bool Radio::connect    (Interface *i)
 	bool a = IRadio::connect(i);
 	bool b = IRadioDeviceClient::connect(i);
 	bool c = IRadioDevicePool::connect(i);
+
+    if (a) kdDebug() << "Radio: IRadio connected\n";
+    if (b) kdDebug() << "Radio: IRadioDeviceClient connected\n";
+    if (c) kdDebug() << "Radio: IRadioDevicePool connected\n";
 
 	// no "return IA::connect() | return IB::connnect to
 	// prevent "early termination" optimization in boolean expressions
@@ -48,6 +58,36 @@ bool Radio::disconnect (Interface *i)
 	// prevent "early termination" optimization in boolean expressions
 	return a || b || c;
 }
+
+
+void Radio::saveState (KConfig *) const
+{
+	// FIXME
+}
+
+
+void Radio::restoreState (KConfig *)
+{
+	// FIXME
+}                       
+
+
+QFrame *Radio::internal_createConfigurationPage(KDialogBase */*dlg*/)
+{
+	// FIXME
+	return NULL;
+}
+
+
+QFrame *Radio::internal_createAboutPage(QWidget */*parent*/)
+{
+	// FIXME
+	return NULL;
+}
+
+
+
+
 
 
 /* IRadio Interface Methods
@@ -99,6 +139,7 @@ bool Radio::activateStation(int index)
 bool Radio::setStations(const StationList &sl)
 {
 	m_stationList = sl;
+	return true;
 }
 
 
@@ -251,9 +292,10 @@ bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *se
 }
 
 
-void Radio::noticeConnect(IRadioDevice *)
+void Radio::noticeConnect(IRadioDevice *dev)
 {
-	// hopefully nothing to do
+	if (! m_activeDevice)
+		setActiveDevice (dev, false);
 }
 
 

@@ -38,12 +38,13 @@ public:
 	virtual bool     disconnect(Interface *i);
 
 	virtual void start(direction_t dir);
-	virtual void stop();
 	virtual void step();
+	virtual void stop();
 
 	bool isRunning()     const { return m_state != off; }
 	bool isRunningUp()   const { return m_state != off && m_direction == up; }
 	bool isRunningDown() const { return m_state != off && m_direction == down; }
+
 
 // IRadioDeviceClient
 RECEIVERS:	

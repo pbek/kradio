@@ -46,6 +46,7 @@ class KConfig;
 */
 
 
+
 class PluginBase : virtual public Interface
 {
 friend class PluginManager;
@@ -59,8 +60,8 @@ public :
 	// Only the plugin itself knows what interfaces it implements. Thus it has
 	// to call the apropriate InterfaceBase::establishConnection methods
 
-	virtual void connect    (PluginBase *p) = 0;
-	virtual void disconnect (PluginBase *p) = 0;
+	virtual bool connect    (PluginBase *p) = 0;
+	virtual bool disconnect (PluginBase *p) = 0;
 
 	// interaction with pluginmanager
 protected:
@@ -86,7 +87,6 @@ protected :
 	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg) = 0;
 	virtual QFrame *internal_createAboutPage(QWidget *parent) = 0;
 
-protected slots:	
 	void registerGuiElement   (QObject *o);
 	void unregisterGuiElement (QObject *o);
 
@@ -101,6 +101,22 @@ protected :
     WidgetDestroyNotifier *m_destroyNotifier;    
 };
 
+
+
+
+class WidgetDestroyNotifier : public QObject
+{
+Q_OBJECT
+public:
+	WidgetDestroyNotifier(PluginBase *parent);
+	virtual ~WidgetDestroyNotifier();
+
+public slots:
+	virtual void noticeDestroy(QObject *o);
+
+protected:
+	PluginBase *m_parent;
+};
 
 
 #endif

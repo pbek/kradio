@@ -164,21 +164,50 @@ void LircSupport::activateStation (int i)
 }
 
 
-
-
 bool LircSupport::connect (Interface *i)
 {
-	return IRadioClient::connect (i) ||
-		   ITimeControlClient::connect (i) ||
-		   IRadioDevicePoolClient::connect (i);
+	bool a = IRadioClient::connect (i);
+	bool b = ITimeControlClient::connect (i);
+	bool c = IRadioDevicePoolClient::connect (i);
+
+    if (a) kdDebug() << "LircSupport: IRadioClient connected\n";
+    if (b) kdDebug() << "LircSupport: ITimeControlClient connected\n";
+    if (c) kdDebug() << "LircSupport: IRadioDevicePoolClient connected\n";
+
+	return a || b || c;
 }
+
 
 bool LircSupport::disconnect (Interface *i)
 {
-	return IRadioClient::disconnect (i) ||
-		   ITimeControlClient::disconnect (i) ||
-		   IRadioDevicePoolClient::disconnect (i);
+	bool a = IRadioClient::disconnect (i);
+	bool b = ITimeControlClient::disconnect (i);
+	bool c = IRadioDevicePoolClient::disconnect (i);
+	return a || b || c;
 }
 
+
+
+void   LircSupport::saveState (KConfig *) const
+{
+	// FIXME
+}
+
+void   LircSupport::restoreState (KConfig *)
+{
+    // FIXME
+}
+
+QFrame *LircSupport::internal_createConfigurationPage(KDialogBase */*dlg*/)
+{
+	// FIXME
+	return NULL;
+}
+
+QFrame *LircSupport::internal_createAboutPage(QWidget */*parent*/)
+{
+	// FIXME
+	return NULL;
+}
 
 

@@ -23,6 +23,7 @@
 #endif
 
 #include <qtimer.h>
+
 #include "radiodevice_interfaces.h"
 #include "plugins.h"
 #include "frequencyradiostation.h"
@@ -65,8 +66,8 @@ ANSWERS:
 
 RECEIVERS:
 	virtual bool setVolume (float v);
-	virtual bool mute (bool mute = false);
-	virtual bool unmute (bool mute = false);
+	virtual bool mute (bool mute = true);
+	virtual bool unmute (bool unmute = true);
 	virtual bool setSignalMinQuality(float q);
 
 ANSWERS:
@@ -114,8 +115,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   connect (PluginBase *p)    { connect ((Interface*)p); }
-	virtual void   disconnect (PluginBase *p) { disconnect ((Interface*)p); }
+	virtual bool   connect (PluginBase *p)    { return connect ((Interface*)p); }
+	virtual bool   disconnect (PluginBase *p) { return disconnect ((Interface*)p); }
 
 protected:
 	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
@@ -134,10 +135,12 @@ public:
     void  setDevices (const QString &r, const QString &m, int ch);
     int   getMixerChannel() const { return m_mixerChannel; }
 
+protected slots:
+	void  poll();
+	
 protected:
 	void  radio_init();
 	void  radio_done();
-	void  poll();
 
 	bool  readTunerInfo() const;
 	bool  updateAudioInfo(bool write) const;
@@ -165,8 +168,8 @@ protected:
 	int                    m_radio_fd;
 	int                    m_mixer_fd;
 	
-	mutable struct video_tuner     m_tuner;
-	mutable struct video_audio     m_audio;
+	mutable struct video_tuner   *m_tuner;
+	mutable struct video_audio   *m_audio;
 
 	QTimer                 m_pollTimer;
 

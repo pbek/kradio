@@ -17,6 +17,8 @@
 
 #include "frequencyseekhelper.h"
 #include <qtimer.h>
+
+#include <kdebug.h>
   
 FrequencySeekHelper::FrequencySeekHelper(ISeekRadio &parent)
   : SeekHelper(parent)
@@ -34,15 +36,22 @@ FrequencySeekHelper::~FrequencySeekHelper()
 
 bool FrequencySeekHelper::connect   (Interface *i)
 {
-	return IRadioSoundClient::connect(i) ||
-	       IFrequencyRadioClient::connect(i);
+	bool a = SeekHelper::connect(i);
+	bool b = IFrequencyRadioClient::connect(i);
+
+    if (a) kdDebug() << "FrequencySeekHelper: SeekHelper connected\n";
+    if (b) kdDebug() << "FrequencySeekHelper: IFrequencyRadioClient connected\n";
+
+	return a || b;
 }
 
 
 bool FrequencySeekHelper::disconnect(Interface *i)
 {
-	return IRadioSoundClient::disconnect(i) ||
-	       IFrequencyRadioClient::disconnect(i);
+	bool a = SeekHelper::disconnect(i);
+	bool b = IFrequencyRadioClient::disconnect(i);
+
+	return a || b;
 }
 
 

@@ -14,6 +14,8 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
+
 #include "quickbar.h"
 
 #include <qtooltip.h>
@@ -279,4 +281,5 @@ void    QuickBar::connectInterface(QObjectList &ol)
         quietconnect (i, SIGNAL(sigFrequencyChanged(float, const RadioStation*), this, SLOT(frequencyChanged(float, const RadioStation *)));
     }
 }
+
 

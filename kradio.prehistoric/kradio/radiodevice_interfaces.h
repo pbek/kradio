@@ -94,7 +94,7 @@ public :
 RECEIVERS:
 	IF_RECEIVER(  setVolume (float v)                            )
 	IF_RECEIVER(  mute (bool mute)                               )
-	IF_RECEIVER(  unmute (bool mute)                             )
+	IF_RECEIVER(  unmute (bool unmute)                           )
 	IF_RECEIVER(  setSignalMinQuality(float q)                   )
 
 SENDERS:

@@ -17,6 +17,8 @@
 
 #include "timecontrol_interfaces.h"
 
+static AlarmVector emptyAlarms;
+
 // ITimeControl
 
 IF_IMPL_SENDER  (  ITimeControl::notifyAlarmsChanged(const AlarmVector &sl),
@@ -60,6 +62,10 @@ IF_IMPL_QUERY   (  const Alarm *  ITimeControlClient::queryNextAlarm (),
                    getNextAlarm(),
                    NULL                                                      )
                    
+IF_IMPL_QUERY   (  const AlarmVector &ITimeControlClient::queryAlarms (),
+                   getAlarms(),
+                   emptyAlarms                                               )
+
 IF_IMPL_QUERY   (  int            ITimeControlClient::queryCountdownSeconds (),
                    getCountdownSeconds(),
                    30*60                                                     )

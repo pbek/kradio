@@ -15,116 +15,32 @@
  *                                                                         *
  ***************************************************************************/
 
-
-
-#ifndef KRADIOAPP_H
-#define KRADIOAPP_H
+#ifndef KRADIO_KRADIOAPP_H
+#define KRADIO_KRADIOAPP_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
 #include <kapplication.h>
-#include <qstring.h>
 #include <kaboutapplication.h>
+#include "pluginmanager.h"
 
-#include "quickbar.h" // HACK!!
-
-#include "v4lradio.h"
-#include "timecontrol.h"
-#include "lircsupport.h"
-#include "setupdialog.h"
-
-class RadioDocking;
-
-class KRadio;
-// *REALLY DIRTY HACK* for development only.
-//#define KRadio KRadioMW
-//class KRadioMW;
-
-
-
-
-class KRadioApp : public KApplication
+class KRadioApp : public KApplication,
+				  public PluginManager
 {
 Q_OBJECT
 public:
     KRadioApp();
     virtual ~KRadioApp();
 
-public slots:
-
-    virtual void slotRunConfigure();
-    virtual void slotApplyConfig ();
-
-    // interface connection slot
-
-    virtual void    connectPlugin(QObjectList &otherPlugins);
-
-    // configuration slots
-
-	virtual void    restoreState (KConfig *c);
-	virtual void    saveState    (KConfig *c);
-    virtual void    configurationChanged (const SetupData &sud);
-
-	// radio interface notification slots
-
-    virtual void    alarm(const Alarm *);
-
-signals:
-
-	// radio interface notification signals
-	// should be transferred to setupdialog
-	
-	void sigConfigurationChanged(const SetupData &d);
-    void sigSaveState           (KConfig *config);
-    void sigRestoreState        (KConfig *config);
-
 private:
-    void restoreState();
-    void saveState();
-
-    void readConfiguration();
-    void saveConfiguration();
-
-    void addPlugin(QObject *o);
-
     KAboutApplication AboutApplication;
 
     KConfig       *config;
 
-/*
-    KRadio        *kradio;
-    RadioDocking  *tray;
-    QuickBar      *quickbar;
-    TimeControl   *timeControl;
-    V4LRadio      *radio;
-
-#ifdef HAVE_LIRC_CLIENT
-    LircSupport   *lircHelper;
-#endif
-*/
-
-    SetupDialog    setupDialog;
-    SetupData	   setupData;
-    QObjectList    plugins;
-
+//    SetupDialog    setupDialog;
 };
 
-
-void readXMLCfg (const QString &url,
-                 StationVector &sl,
-                 StationListMetaData &info,
-                 AlarmVector &al
-                );
-
-void writeXMLCfg (const QString &FileName,
-                  const StationVector &sl,
-                  const StationListMetaData &info
-                 );
-
-QString writeXMLCfg (const StationVector &sl,
-                     const StationListMetaData &info
-                    );
 
 #endif

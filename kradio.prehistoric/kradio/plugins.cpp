@@ -20,17 +20,22 @@
 
 #include <kdialogbase.h>
 
-class WidgetDestroyNotifier : public QObject
+WidgetDestroyNotifier::WidgetDestroyNotifier(PluginBase *parent)
+	: m_parent(parent)
 {
-Q_OBJECT
-public:
-	WidgetDestroyNotifier(PluginBase *parent) { m_parent = parent; }
-	void noticeDestroy(QObject *o) { if (m_parent) m_parent->unregisterGuiElement(o); }
+}
 
-protected:
-	PluginBase *m_parent;
-};
+WidgetDestroyNotifier::~WidgetDestroyNotifier()
+{
+}
 
+void WidgetDestroyNotifier::noticeDestroy(QObject *o)
+{
+	if (m_parent) m_parent->unregisterGuiElement(o);
+}
+
+
+///////////////////////////////////////////////////////////////////////
 
 
 PluginBase::PluginBase(const QString &name)

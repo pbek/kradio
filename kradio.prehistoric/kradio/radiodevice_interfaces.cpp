@@ -68,8 +68,8 @@ IF_IMPL_SENDER  (  IRadioSoundClient::sendVolume (float v),
                    setVolume (v)                            )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendMute (bool mute),
                    mute (mute)                              )
-IF_IMPL_SENDER  (  IRadioSoundClient::sendUnmute (bool mute),
-                   unmute (mute)                            )
+IF_IMPL_SENDER  (  IRadioSoundClient::sendUnmute (bool unmute),
+                   unmute (unmute)                            )
 IF_IMPL_SENDER  (  IRadioSoundClient::sendSignalMinQuality (float q),
                    setSignalMinQuality (q)                  )
 

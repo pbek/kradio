@@ -74,8 +74,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   connect (PluginBase *p)    { ITimeControl::connect (p); }
-	virtual void   disconnect (PluginBase *p) { ITimeControl::disconnect (p); }
+	virtual bool   connect (PluginBase *p)    { return ITimeControl::connect (p); }
+	virtual bool   disconnect (PluginBase *p) { return ITimeControl::disconnect (p); }
 
 protected:
 	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);

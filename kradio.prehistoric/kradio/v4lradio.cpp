@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+
 #include <linux/videodev.h>
 #include <linux/soundcard.h>
 
@@ -50,30 +50,47 @@ V4LRadio::V4LRadio(const QString &name)
 {
 	QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
 	m_pollTimer.start(333);
+
+	m_seekHelper.connect(this);
+
+	m_tuner = new video_tuner;
+	m_tuner->tuner = 0;
+	m_audio = new video_audio;
 }
 
 
 V4LRadio::~V4LRadio()
 {
 	setPower(false);
+
+	delete m_audio;
+	delete m_tuner;
 }
 
 
 bool V4LRadio::connect (Interface *i)
 {
-	return IRadioDevice::connect(i) || 
-           IRadioSound::connect(i) || 
-           ISeekRadio::connect(i) || 
-           IFrequencyRadio::connect(i);
+	bool a = IRadioDevice::connect(i);
+	bool b = IRadioSound::connect(i);
+	bool c = ISeekRadio::connect(i);
+	bool d = IFrequencyRadio::connect(i);
+
+    if (a) kdDebug() << "V4LRadio: IRadioDevice connected\n";
+    if (b) kdDebug() << "V4LRadio: IRadioSound connected\n";
+    if (c) kdDebug() << "V4LRadio: ISeekRadio connected\n";
+    if (d) kdDebug() << "V4LRadio: IFrequency connected\n";
+	
+	return a || b || c || d;
 }
 
 
 bool V4LRadio::disconnect (Interface *i)
 {
-	return IRadioDevice::disconnect(i) ||
-           IRadioSound::disconnect(i) ||
-           ISeekRadio::disconnect(i) ||
-           IFrequencyRadio::disconnect(i);
+	bool a = IRadioDevice::disconnect(i);
+	bool b = IRadioSound::disconnect(i);
+	bool c = ISeekRadio::disconnect(i);
+	bool d = IFrequencyRadio::disconnect(i);
+	return a || b || c || d;
 }
 
 
@@ -183,8 +200,8 @@ bool V4LRadio::mute (bool mute)
 	   return false;
 
     if (m_muted != mute) {
-		if (mute)		m_audio.flags |= VIDEO_AUDIO_MUTE;
-		else			m_audio.flags &= ~VIDEO_AUDIO_MUTE;
+		if (mute)		m_audio->flags |= VIDEO_AUDIO_MUTE;
+		else			m_audio->flags &= ~VIDEO_AUDIO_MUTE;
 
 		return writeAudioInfo();
 	}
@@ -640,24 +657,26 @@ bool V4LRadio::readTunerInfo() const
 	}
 
     if (m_radio_fd > 0) {
-		if (ioctl(m_radio_fd, VIDIOCGTUNER, &m_tuner) == 0) {
-
-			if ((m_tuner.flags & VIDEO_TUNER_LOW) != 0)
+		int r = ioctl(m_radio_fd, VIDIOCGTUNER, m_tuner);
+		
+		if (r == 0) {
+			if ((m_tuner->flags & VIDEO_TUNER_LOW) != 0)
 				m_tunercache.deltaF = 1.0 / 16000.0;
 
-			m_tunercache.minF = float(m_tuner.rangelow)  * m_tunercache.deltaF;
-			m_tunercache.maxF = float(m_tuner.rangehigh) * m_tunercache.deltaF;
+			m_tunercache.minF = float(m_tuner->rangelow)  * m_tunercache.deltaF;
+			m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
 
 			m_tunercache.valid = true;
 
 		} else {
 			kdDebug() << "V4LRadio::readTunerInfo: "
 			          << i18n("cannot get tuner info")
+			          << " (" << i18n("error") << " " << r << ")"
 			          << endl;
 			return false;
 		}
 	} else {
-		m_tuner.signal = 0;
+		m_tuner->signal = 0;
 	}
 
 	// prevent loops, if noticeXYZ-method is reading my state
@@ -672,7 +691,7 @@ bool V4LRadio::readTunerInfo() const
 		
 	// extract information on current state
 	float oldq = m_signalQuality;
-	m_signalQuality = float(m_tuner.signal) / 32767.0;
+	m_signalQuality = float(m_tuner->signal) / 32767.0;
 
 	if (m_signalQuality != oldq)
 		notifySignalQualityChanged(m_signalQuality);
@@ -691,7 +710,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 		return true;
 
 	if (m_radio_fd > 0) {
-		if (ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, &m_audio) != 0) {
+		if (ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, m_audio) != 0) {
 			kdDebug() << "V4LRadio::updateAudioInfo: "
 			          << i18n("error updating radio audio info") << " ("
 			          << i18n(write ? "write" : "read") << ")"
@@ -700,15 +719,15 @@ bool V4LRadio::updateAudioInfo(bool write) const
 			return false;
 		}
 	} else {
-		m_audio.mode  &= ~VIDEO_SOUND_STEREO;
-		m_audio.flags &= ~VIDEO_AUDIO_MUTE;
+		m_audio->mode  &= ~VIDEO_SOUND_STEREO;
+		m_audio->flags &= ~VIDEO_AUDIO_MUTE;
 	}
 
 	bool oldStereo = m_stereo;
 	bool oldMute   = m_muted;
 
-	m_stereo = (m_audio.mode  & VIDEO_SOUND_STEREO) != 0;
-	m_muted  = (m_audio.flags & VIDEO_AUDIO_MUTE) != 0;
+	m_stereo = (m_audio->mode  & VIDEO_SOUND_STEREO) != 0;
+	m_muted  = (m_audio->flags & VIDEO_AUDIO_MUTE) != 0;
 
 	// prevent loops, if noticeXYZ-method is reading my state
 	bool oldBlock = m_blockReadAudio;

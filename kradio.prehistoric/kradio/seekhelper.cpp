@@ -16,12 +16,13 @@
  ***************************************************************************/
 
 #include "seekhelper.h"
+
+#include <kdebug.h>
  
 SeekHelper::SeekHelper(ISeekRadio &parent)
   : m_state(off),
     m_parent(parent)
 {
-	connect(&m_parent);
 }
 
 
@@ -32,15 +33,21 @@ SeekHelper::~SeekHelper()
 
 bool SeekHelper::connect   (Interface *i)
 {
-	return IRadioDeviceClient::connect(i) ||
-		   IRadioSoundClient::connect(i);
+	bool a = IRadioDeviceClient::connect(i);
+	bool b = IRadioSoundClient::connect(i);
+
+    if (a) kdDebug() << "SeekHelper: IRadioDeviceClient connected\n";
+    if (b) kdDebug() << "SeekHelper: IRadioSoundClient connected\n";
+
+	return a || b;
 }
 
 
 bool SeekHelper::disconnect(Interface *i)
 {
-	return IRadioDeviceClient::disconnect(i) ||
-		   IRadioSoundClient::disconnect(i);
+	bool a = IRadioDeviceClient::disconnect(i);
+	bool b = IRadioSoundClient::disconnect(i);
+	return a || b;
 }
 
 
