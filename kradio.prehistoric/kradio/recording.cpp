@@ -17,6 +17,7 @@
 
 #include "recording.h"
 #include "recording-context.h"
+#include "recording-configuration.h"
 
 #include <qthread.h>
 #include <qevent.h>
@@ -37,17 +38,20 @@
 #define  STOP_EVENT     ((QEvent::Type)(QEvent::User+3))
 
 
-#define BUFFER_SIZE 4096
+#define BUFFER_SIZE_SAMPLES 4096
 
 class RecordingThread : public QThread
 {
 public:
-	RecordingThread(QObject *parent, const RecordingConfig &c);
+	RecordingThread(QObject *parent);
 	~RecordingThread();
 	void run();
 
+	void start(const QString &outputFile);
 	void stop(bool sync);
 
+	void setConfig(const RecordingConfig &c);
+	
 protected:
 
 	void notifyParent(QEvent::Type MessageID);
@@ -63,7 +67,8 @@ protected:
 	
 protected:
 	int              m_devfd;
-	char            *m_buffer;
+	int             *m_buffer;
+	SNDFILE         *m_input;
 	SNDFILE         *m_output;
 
 	QObject         *m_parent;
@@ -74,19 +79,27 @@ protected:
 
 ///////////////////////////////////////////////////////////////////////
 
-RecordingThread::RecordingThread(QObject *parent, const RecordingConfig &c)
+RecordingThread::RecordingThread(QObject *parent)
 	: m_devfd(-1),
 	  m_buffer(NULL),
 	  m_output(NULL),
       m_parent(parent),
 	  m_stopFlag(false),
-	  m_config(c)
+	  m_context(),
+	  m_config()
 {
 }
 
 RecordingThread::~RecordingThread()
 {
 	stop(true);
+}
+
+
+void RecordingThread::start(const QString &outputFile)
+{
+	m_context.start(outputFile);
+	QThread::start();
 }
 
 
@@ -99,6 +112,8 @@ void RecordingThread::stop(bool sync)
 
 bool RecordingThread::openDevice()
 {
+	// opening and seeting up the device file
+
 	m_devfd = open(m_config.device, O_RDONLY);
 
     bool err = m_devfd < 0;
@@ -114,14 +129,24 @@ bool RecordingThread::openDevice()
 
     if (err) closeDevice();
 
-    m_buffer = new char[BUFFER_SIZE];
-    
-    return !err && m_buffer;
+    // setup the input soundfile pointer
+
+	SF_INFO sinfo;
+	m_config.getSoundFileInfo(sinfo, true);
+    m_input = sf_open_fd(m_devfd, SFM_READ, &sinfo, false);    
+
+    // setup buffer
+        
+    m_buffer = new int[BUFFER_SIZE_SAMPLES * m_config.channels];
+
+    return !err && m_buffer && m_input;
 }
 
 
 void RecordingThread::closeDevice()
 {
+	if (m_input)      sf_close(m_input);
+	m_input = NULL;
 	if (m_devfd >= 0) close (m_devfd);
 	m_devfd = -1;
 	if (m_buffer) delete m_buffer;
@@ -130,22 +155,10 @@ void RecordingThread::closeDevice()
 bool RecordingThread::openOutput()
 {
 	SF_INFO sinfo;
-	sinfo.samplerate = m_config.rate;
-	sinfo.channels   = m_config.channels;
-	sinfo.format     = SF_FORMAT_WAV;
-
-	if (m_config.bits == 8 && m_config.sign)
-		sinfo.format |= SF_FORMAT_PCM_S8;
-	if (m_config.bits == 8 && !m_config.sign)
-		sinfo.format |= SF_FORMAT_PCM_U8;
-	if (m_config.bits == 16)
-		sinfo.format |= SF_FORMAT_PCM_16;
-
-	sinfo.format |= m_config.littleEndian ? SF_ENDIAN_LITTLE : SF_ENDIAN_BIG;
-
-	m_context.start(m_config.output);
-
-    m_output = sf_open(m_config.output, SFM_WRITE, &sinfo);
+	m_config.getSoundFileInfo(sinfo, false);
+    m_output = sf_open(m_context.outputFile, SFM_WRITE, &sinfo);
+    
+	m_context.start();
 	return m_output;
 }
 
@@ -161,10 +174,11 @@ bool RecordingThread::internalStart()
 {
 	if (openDevice() && openOutput()) {
 		notifyParent(START_EVENT);
+		m_stopFlag = false;
 		return true;
 	} else {
 		return false;
-	}	
+	}
 }
 
 
@@ -178,21 +192,27 @@ void RecordingThread::internalStop()
 
 void RecordingThread::run()
 {
+	kdDebug() << "recording started" << endl;
 	if (!internalStart()) {
 		internalStop();
 		return;
-	}	
+	}
 	while (!m_stopFlag) {
-		int r = read(m_devfd, m_buffer, BUFFER_SIZE);
-		if (r > 0 && sf_write_raw(m_output, m_buffer, r) == r) {
+
+		kdDebug() << "starting sf_read" << endl;
+		int r = sf_readf_int(m_input, m_buffer, BUFFER_SIZE_SAMPLES);
+		kdDebug() << "done sf_read, samples read: " << r << endl;
+		
+		if (r > 0 && sf_writef_int(m_output, m_buffer, r) == r) {
 			m_context.bufferAdded(r, m_config);
 			notifyParent(PROCESS_EVENT);
 		} else {
 			m_context.setError();
-			m_stopFlag = 1;
+			m_stopFlag = true;
 		}
 	}
 	internalStop();
+	kdDebug() << "recording stopped" << endl;
 }
 
 
@@ -203,13 +223,18 @@ void RecordingThread::notifyParent(QEvent::Type MessageID)
 }
 
 
+void RecordingThread::setConfig(const RecordingConfig &c)
+{
+	m_config = c;
+}
+
+
 ///////////////////////////////////////////////////////////////////////
 
 Recording::Recording(const QString &name)
-	: PluginBase(name),
-	  m_recordingDirectory(".")
+	: PluginBase(name)
 {
-	m_recordingThread = new RecordingThread(this, m_config);
+	m_recordingThread = new RecordingThread(this);
 }
 
 
@@ -218,6 +243,7 @@ Recording::~Recording()
 	if (m_recordingThread) {
 		m_recordingThread->stop(true);
 		delete m_recordingThread;
+		m_recordingThread = NULL;
 	}
 }
 
@@ -225,13 +251,18 @@ Recording::~Recording()
 bool Recording::connect(Interface *i)
 {
 	bool a = IRecording::connect(i);
-	return a;
+	bool b = ITimeControlClient::connect(i);
+	bool c = IRadioClient::connect(i);
+	return a || b || c;
 }
+
 
 bool Recording::disconnect(Interface *i)
 {
 	bool a = IRecording::disconnect(i);
-	return a;
+	bool b = ITimeControlClient::disconnect(i);
+	bool c = IRadioClient::disconnect(i);
+	return a || b || c;
 }
 
 // PluginBase
@@ -252,8 +283,12 @@ void Recording::restoreState (KConfig *c)
 
 ConfigPageInfo  Recording::createConfigurationPage()
 {
-	// FIXME
-	return ConfigPageInfo();
+	RecordingConfiguration *c = new RecordingConfiguration(NULL);
+	connect(c);
+    return ConfigPageInfo(c,
+                          "Recording",
+                          "Recording",
+                          "kradio_record");
 }
 
 
@@ -268,14 +303,17 @@ QWidget        *Recording::createAboutPage()
 
 bool  Recording::startRecording()
 {
+	if (!m_recordingThread)
+		return false;
+		
 	if (!m_recordingThread->running()) {
-
-		m_config.output = m_recordingDirectory
+		QString output = m_config.directory
 	       + "/kradio-recording"
 	       + QDateTime::currentDateTime().toString(Qt::ISODate)
 	       + ".wav";
-	
-		m_recordingThread->start();
+
+		m_recordingThread->setConfig(m_config);
+		m_recordingThread->start(output);
 	}
 	return true;
 }
@@ -283,38 +321,73 @@ bool  Recording::startRecording()
 
 bool Recording::stopRecording()
 {
-	m_recordingThread->stop(false);
+	if (m_recordingThread)
+		m_recordingThread->stop(false);
 	return true;
 }
 
 
-bool Recording::setRecordingDirectory(const QString &s)
+bool Recording::setRecordingConfig(const RecordingConfig &c)
 {
-	if (s != m_recordingDirectory) {
-		m_recordingDirectory = s;
-		notifyRecordingDirectoryChanged(s);
-	}
+	m_config = c;
+	// do not set recordingThread config, it might be running.
+	notifyRecordingConfigChanged(m_config);
 	return true;
 }
 
 
 bool Recording::isRecording() const
 {
-	return m_recordingThread->running();
+	if (m_recordingThread)
+		return m_recordingThread->running();
+	else
+		return false;
 }
 
 
-const QString  &Recording::getRecordingDirectory() const
+const RecordingConfig  &Recording::getRecordingConfig() const
 {
-	return m_recordingDirectory;
+	return m_config;
 }
 
+
+const RecordingContext  &Recording::getRecordingContext() const
+{
+	return m_context;
+}
+
+
+// ITimeControlClient
+
+bool Recording::noticeAlarm(const Alarm &a)
+{
+	if (a.alarmType() == Alarm::StartRecording && !isRecording()) {
+		startRecording();
+	} else if (a.alarmType() == Alarm::StopRecording && isRecording()) {
+		stopRecording();
+	}
+	return true;
+}
+
+
+// IRadioClient
+
+bool Recording::noticePowerChanged(bool on)
+{
+	if (isRecording() && !on) {
+		stopRecording();
+	}
+	return true;
+}
+
+// QT/KDE
 
 void Recording::customEvent(QCustomEvent *e)
 {
 	if (!e) return;
 	RecordingContext *c = (RecordingContext *)e->data();
 	if (!c) return;
+	m_context = *c;
 	
 	switch(e->type()) {
 		case START_EVENT :

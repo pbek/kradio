@@ -17,6 +17,7 @@
 
 #include "recording-context.h"
 
+#include <sndfile.h>
 #include <sys/soundcard.h>
 #include <kconfig.h>
 
@@ -27,12 +28,15 @@ RecordingConfig::RecordingConfig ()
     sign(true),
     rate(44100),
     device("/dev/dsp"),
-    output("/dev/null")
+    directory("/tmp"),
+    outputFormat(outputWAV)
 {
+	checkFormatSettings();
 }
 
 RecordingConfig::RecordingConfig (const QString &dev,
-                                  const QString &o,
+                                  const QString &directory,
+                                  OutputFormat of,
                                   int c, int b, bool le, bool s, int r)
   : channels(c),
     bits(b),
@@ -40,20 +44,25 @@ RecordingConfig::RecordingConfig (const QString &dev,
     sign(s),
     rate(r),
     device(dev),
-    output(o)
+    directory(directory),
+    outputFormat(of)
 {
+	checkFormatSettings();
 }
 
 
 RecordingConfig::RecordingConfig (const QString &dev,
-	                              const QString &o,
+                                  const QString &directory,
+                                  OutputFormat of,
 	                              int c, int ossFormat, int r)
   : channels(c),
     rate(r),
     device(dev),
-    output(o)
+    directory(directory),
+    outputFormat(of)
 {
 	setOSSFormat(ossFormat);
+	checkFormatSettings();
 }
 
 
@@ -64,13 +73,16 @@ RecordingConfig::RecordingConfig (const RecordingConfig &c)
     sign(c.sign),
     rate(c.rate),
     device(c.device),
-    output(c.output)
+    directory(c.directory),
+    outputFormat(c.outputFormat)
 {
+	checkFormatSettings();
 }
 
 
-int RecordingConfig::getOSSFormat() const
+int RecordingConfig::getOSSFormat()
 {
+	checkFormatSettings();
 	if (bits == 16) {
 		switch (2*sign + littleEndian) {
 			case 0: return AFMT_U16_BE;
@@ -104,6 +116,8 @@ void RecordingConfig::setOSSFormat(int f)
 	littleEndian = (t & 1) != 0;
 	sign         = (t & 2) != 0;
 	bits         = (t & 4) ? 16 : 8;
+
+	checkFormatSettings();
 }
 
 
@@ -115,7 +129,21 @@ void  RecordingConfig::restoreConfig(KConfig *c)
 	rate = c->readNumEntry("rate", 44100);
 	littleEndian = c->readBoolEntry("littleEndian", true);
 	device       = c->readEntry("device", "/dev/dsp");
-	output       = c->readEntry("outputFile", "/dev/null");
+	directory    = c->readEntry("directory", "/tmp");
+
+	QString of = c->readEntry("outputFileFormat", ".wav");
+	if (of == ".wav")
+		outputFormat = outputWAV;
+	else if (of == ".aiff")
+		outputFormat = outputAIFF;
+	else if (of == ".au")
+		outputFormat = outputAU;
+	else if (of == ".raw")
+		outputFormat = outputRAW;
+	else
+		outputFormat = outputWAV;
+
+	checkFormatSettings();
 }
 
 
@@ -127,10 +155,70 @@ void  RecordingConfig::saveConfig(KConfig *c) const
 	c->writeEntry("rate",         rate);
 	c->writeEntry("littleEndian", littleEndian);
 	c->writeEntry("device",       device);
-	c->writeEntry("outputFile",   output);
+	c->writeEntry("directory",    directory);
+
+	switch(outputFormat) {
+		case outputWAV:  c->writeEntry("outputFormat", ".wav");
+		case outputAIFF: c->writeEntry("outputFormat", ".aiff");
+		case outputAU:   c->writeEntry("outputFormat", ".au");
+		case outputRAW:  c->writeEntry("outputFormat", ".raw");
+		default:         c->writeEntry("outputFormat", ".wav");
+	}
 }
 
-	
+
+void RecordingConfig::getSoundFileInfo(SF_INFO &sinfo, bool input)
+{
+	checkFormatSettings();
+
+	sinfo.samplerate = rate;
+	sinfo.channels   = channels;
+	sinfo.format     = 0;
+
+	// U8 only supported for RAW and WAV
+	if (bits == 8) {
+		sinfo.format |= SF_FORMAT_PCM_S8;
+		if (!sign && (outputFormat == outputRAW || outputFormat != outputWAV))
+			sinfo.format |= SF_FORMAT_PCM_U8;
+	}
+	if (bits == 16)
+		sinfo.format |= SF_FORMAT_PCM_16;
+
+	if (littleEndian)
+		sinfo.format |= SF_ENDIAN_LITTLE;
+	else
+		sinfo.format |= SF_ENDIAN_BIG;
+
+	if (input) {
+		sinfo.format |= SF_FORMAT_RAW;
+	} else {
+		switch (outputFormat) {
+			case outputWAV:  sinfo.format |= SF_FORMAT_WAV;  break;
+			case outputAIFF: sinfo.format |= SF_FORMAT_AIFF; break;
+			case outputAU:   sinfo.format |= SF_FORMAT_AU;   break;
+			case outputRAW:  sinfo.format |= SF_FORMAT_RAW;  break;
+			default:         sinfo.format |= SF_FORMAT_WAV; break;
+		}
+	}
+}
+
+void RecordingConfig::checkFormatSettings()
+{
+	// libsndfile only supports signed 16 bit samples
+	if (bits == 16)
+		sign = true;
+
+	// correct Endianess and Signs for specific formats
+	switch (outputFormat) {
+		case outputWAV:  littleEndian = true; break;
+		case outputAIFF: littleEndian = false; sign = true; break;
+		case outputAU:   littleEndian = false; sign = true; break;
+		case outputRAW:  break;
+		default:         break;
+	}
+}
+
+
 ///////////////////////////////////////////////////////////////////////
 
 RecordingContext::RecordingContext()
@@ -185,7 +273,7 @@ void RecordingContext::setError()
 }
 
 
-void RecordingContext::bufferAdded(unsigned int size, const RecordingConfig &c)
+void RecordingContext::bufferAdded(unsigned int samples, const RecordingConfig &c)
 {
 	if (running) {
 		int sampleSize = 1;
@@ -193,9 +281,10 @@ void RecordingContext::bufferAdded(unsigned int size, const RecordingConfig &c)
 		if (c.bits > 16) sampleSize = 4;
 		sampleSize *= c.channels;
 
-		size_low += size;
-		if (size_low < size) ++size_high;
-		subSecondSamples += size / sampleSize;
+		unsigned int sizeDelta = samples * sampleSize;
+		size_low += sizeDelta;
+		if (size_low < sizeDelta) ++size_high;
+		subSecondSamples += samples;
 		seconds += subSecondSamples / c.rate;
 		subSecondSamples %= c.rate;
 	}

@@ -28,6 +28,7 @@
 #include "radiodevicepool_interface.h"
 #include "widgetplugins.h"
 #include "radioview_element.h"
+#include "recording-interfaces.h"
 
 class QWidgetStack;
 class QToolButton;
@@ -41,7 +42,8 @@ class QTabWidget;
 class RadioView : public QWidget,
 				  public WidgetPluginBase,
                   public IRadioClient,
-                  public IRadioDevicePoolClient
+                  public IRadioDevicePoolClient,
+                  public IRecordingClient
 {
 Q_OBJECT
 public:
@@ -75,6 +77,15 @@ RECEIVERS:
 	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
 	bool noticeDeviceDescriptionChanged(const QString &) { return false; }
 
+	// IRecordingClient
+	
+RECEIVERS:
+	bool noticeRecordingStarted();
+	bool noticeRecordingStopped();
+	bool noticeRecordingConfigChanged(const RecordingConfig &)   { return false; }
+	bool noticeRecordingContextChanged(const RecordingContext &) { return false; }
+
+	
 	// WidgetPluginBase
 
 public:
@@ -93,6 +104,7 @@ protected slots:
 
     void slotPower (bool on);
     void slotConfigure (bool show);
+    void slotRecord (bool start);
     void slotComboStationSelected(int);
 
     void slotConfigPageDeleted(QObject*);
@@ -118,7 +130,7 @@ protected:
 	QToolButton          *btnPower;
 	QToolButton          *btnConfigure;
 	QToolButton          *btnQuit;
-	QToolButton          *btnQuickbar;
+	QToolButton          *btnRecording;
 	KComboBox            *comboStations;
 
 	struct ElementCfg

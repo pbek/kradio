@@ -24,12 +24,12 @@ IF_IMPL_SENDER  (  IRecording::notifyRecordingStarted(),
                    noticeRecordingStarted()                                )
 
 IF_IMPL_SENDER  (  IRecording::notifyRecordingStopped(),
-                   noticeRecordingStarted()                                )
+                   noticeRecordingStopped()                                )
 
-IF_IMPL_SENDER  (  IRecording::notifyRecordingDirectoryChanged(const QString &s),
-                   noticeRecordingDirectoryChanged(s)                      )
+IF_IMPL_SENDER  (  IRecording::notifyRecordingConfigChanged(const RecordingConfig &s),
+                   noticeRecordingConfigChanged(s)                         )
 IF_IMPL_SENDER  (  IRecording::notifyRecordingContextChanged(const RecordingContext &s),
-                   noticeRecordingContextChanged(s)                      )
+                   noticeRecordingContextChanged(s)                        )
 
 // IRecordingClient
 
@@ -39,16 +39,17 @@ IF_IMPL_SENDER  (  IRecordingClient::sendStartRecording(),
 IF_IMPL_SENDER  (  IRecordingClient::sendStopRecording(),
                    stopRecording()                                         )
 
-IF_IMPL_SENDER  (  IRecordingClient::sendRecordingDirectory(const QString &s),
-                   setRecordingDirectory(s)                                )
+IF_IMPL_SENDER  (  IRecordingClient::sendRecordingConfig(const RecordingConfig &s),
+                   setRecordingConfig(s)                                   )
 
 IF_IMPL_QUERY   (  bool IRecordingClient::queryIsRecording(),
                    isRecording(),
                    false                                                   )
 
-IF_IMPL_QUERY   (  const QString &IRecordingClient::queryRecordingDirectory(),
-                   getRecordingDirectory(),
-                   QString::null                                           )
+static const RecordingConfig defaultConfig;
+IF_IMPL_QUERY   (  const RecordingConfig &IRecordingClient::queryRecordingConfig(),
+                   getRecordingConfig(),
+                   defaultConfig                                           )
 
 static const RecordingContext invalidContext;
 IF_IMPL_QUERY   (  const RecordingContext &IRecordingClient::queryRecordingContext(),
@@ -60,7 +61,7 @@ void IRecordingClient::noticeConnected  (cmplInterface *, bool /*pointer_valid*/
 {
 	if (queryIsRecording()) noticeRecordingStarted();
 	else                    noticeRecordingStopped();
-	noticeRecordingDirectoryChanged(queryRecordingDirectory());
+	noticeRecordingConfigChanged(queryRecordingConfig());
 	noticeRecordingContextChanged(queryRecordingContext());
 }
 
@@ -69,7 +70,7 @@ void IRecordingClient::noticeDisconnected   (cmplInterface *, bool /*pointer_val
 {
 	if (queryIsRecording()) noticeRecordingStarted();
 	else                    noticeRecordingStopped();
-	noticeRecordingDirectoryChanged(queryRecordingDirectory());
+	noticeRecordingConfigChanged(queryRecordingConfig());
 	noticeRecordingContextChanged(queryRecordingContext());
 }
 

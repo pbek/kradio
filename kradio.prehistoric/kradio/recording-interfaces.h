@@ -25,6 +25,7 @@
 #include "interfaces.h"
 
 struct RecordingContext;
+struct RecordingConfig;
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -34,20 +35,20 @@ public :
 	IF_CON_DESTRUCTOR(IRecording, -1)
 
 RECEIVERS:
-	IF_RECEIVER(  startRecording()                                 )
-	IF_RECEIVER(  stopRecording()                                  )
-    IF_RECEIVER(  setRecordingDirectory(const QString &)           )
+	IF_RECEIVER(  startRecording()                                        )
+	IF_RECEIVER(  stopRecording()                                         )
+    IF_RECEIVER(  setRecordingConfig(const RecordingConfig &)             )
 
 SENDERS:
-	IF_SENDER  (  notifyRecordingStarted()                         )
-	IF_SENDER  (  notifyRecordingStopped()                         )
-    IF_SENDER  (  notifyRecordingDirectoryChanged(const QString &) )
+	IF_SENDER  (  notifyRecordingStarted()                                )
+	IF_SENDER  (  notifyRecordingStopped()                                )
+    IF_SENDER  (  notifyRecordingConfigChanged(const RecordingConfig &)   )
 	IF_SENDER  (  notifyRecordingContextChanged(const RecordingContext &c))
 
 ANSWERS:
-	IF_ANSWER  (  bool             isRecording() const             )
-	IF_ANSWER  (  const QString   &getRecordingDirectory() const   )
-	IF_ANSWER  (  const RecordingContext &getRecordingContext() const  )
+	IF_ANSWER  (  bool                    isRecording() const             )
+	IF_ANSWER  (  const RecordingConfig  &getRecordingConfig() const      )
+	IF_ANSWER  (  const RecordingContext &getRecordingContext() const     )
 };
 
 
@@ -59,20 +60,20 @@ public :
 	IF_CON_DESTRUCTOR(IRecordingClient, 1)
 
 SENDERS:
-	IF_SENDER  (  sendStartRecording()                             )
-	IF_SENDER  (  sendStopRecording()                              )
-    IF_SENDER  (  sendRecordingDirectory(const QString &)          )
+	IF_SENDER  (  sendStartRecording()                                    )
+	IF_SENDER  (  sendStopRecording()                                     )
+    IF_SENDER  (  sendRecordingConfig(const RecordingConfig &)            )
 
 RECEIVERS:
-	IF_RECEIVER(  noticeRecordingStarted()                         )
-	IF_RECEIVER(  noticeRecordingStopped()                         )
-    IF_RECEIVER(  noticeRecordingDirectoryChanged(const QString &) )
+	IF_RECEIVER(  noticeRecordingStarted()                                )
+	IF_RECEIVER(  noticeRecordingStopped()                                )
+    IF_RECEIVER(  noticeRecordingConfigChanged(const RecordingConfig &)   )
 	IF_RECEIVER(  noticeRecordingContextChanged(const RecordingContext &c))
 
 QUERIES:
-	IF_QUERY   (  bool            queryIsRecording()               )
-	IF_QUERY   (  const QString  &queryRecordingDirectory()        )
-	IF_QUERY   (  const RecordingContext &queryRecordingContext()  )
+	IF_QUERY   (  bool                    queryIsRecording()              )
+	IF_QUERY   (  const RecordingConfig  &queryRecordingConfig()          )
+	IF_QUERY   (  const RecordingContext &queryRecordingContext()         )
 
 RECEIVERS:
 	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);

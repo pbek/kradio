@@ -20,6 +20,7 @@
 #include <qtoolbutton.h>
 #include <qslider.h>
 #include <qfile.h>
+#include <qtooltip.h>
 
 #include <kcombobox.h>
 #include <kiconloader.h>
@@ -81,17 +82,18 @@ RadioView::RadioView(QWidget *parent, const QString &name)
 	QGridLayout *l04 = new QGridLayout (l03, /*rows=*/ 2, /*cols=*/ 2);
 	btnPower         = new QToolButton(this);
 	btnPower->setToggleButton(true);
-	btnQuickbar      = new QToolButton(this);
+	btnRecording     = new QToolButton(this);
+	btnRecording->setToggleButton(true);
 	btnConfigure     = new QToolButton(this);
 	btnConfigure->setToggleButton(true);
 	btnQuit          = new QToolButton(this);
 	l04->addWidget (btnPower,     0, 0);
-	l04->addWidget (btnQuickbar,  0, 1);
+	l04->addWidget (btnRecording, 0, 1);
 	l04->addWidget (btnConfigure, 1, 0);
 	l04->addWidget (btnQuit,      1, 1);
 
 	btnPower->setIconSet(SmallIconSet("kradio_muteoff"));
-	btnQuickbar->setIconSet(SmallIconSet("1uparrow"));
+	btnRecording->setIconSet(SmallIconSet("kradio_record"));
 	btnConfigure->setIconSet(SmallIconSet("configure"));
 	btnQuit->setIconSet(SmallIconSet("exit"));
 
@@ -108,14 +110,25 @@ RadioView::RadioView(QWidget *parent, const QString &name)
                      kapp,          SLOT(quit()));
 	QObject::connect(btnConfigure,  SIGNAL(toggled(bool)),
                      this,          SLOT(slotConfigure(bool)));
+	QObject::connect(btnRecording,  SIGNAL(toggled(bool)),
+                     this,          SLOT(slotRecord(bool)));
     QObject::connect(comboStations, SIGNAL(activated(int)),
 	                 this,          SLOT(slotComboStationSelected(int)));
 
+    // tooltips
+
+    QToolTip::add(btnConfigure,  i18n("Configure KRadio"));
+    QToolTip::add(btnPower,      i18n("Power On/Off"));
+    QToolTip::add(btnQuit,       i18n("Quit KRadio Application"));
+    QToolTip::add(btnRecording,  i18n("Start/Stop Recording"));
+    QToolTip::add(comboStations, i18n("Select a Radio Station"));	
 
     // testing
     addElement (new RadioViewFrequencyRadio (this, QString::null));
     addElement (new RadioViewVolume(this, QString::null));
     addElement (new RadioViewFrequencySeeker(this, QString::null));
+
+
 }
 
 
@@ -267,8 +280,8 @@ bool RadioView::connect(Interface *i)
 {
 	bool a = IRadioClient::connect(i);
 	bool b = IRadioDevicePoolClient::connect(i);
-
-	return a || b;
+	bool c = IRecordingClient::connect(i);
+	return a || b || c;
 }
 
 
@@ -276,11 +289,26 @@ bool RadioView::disconnect(Interface *i)
 {
 	bool a = IRadioClient::disconnect(i);
 	bool b = IRadioDevicePoolClient::disconnect(i);
+	bool c = IRecordingClient::disconnect(i);
+	return a || b || c;
+}
 
-	return a || b;
+// IRecordingClient
+
+bool RadioView::noticeRecordingStarted()
+{
+	btnRecording->setOn(true);
+	return true;
 }
 
 
+bool RadioView::noticeRecordingStopped()
+{
+	btnRecording->setOn(false);
+	return true;
+}
+
+	
 // WidgetPluginBase
 
 void   RadioView::saveState (KConfig *config) const
@@ -385,6 +413,13 @@ void RadioView::slotConfigure(bool b)
 		btnConfigure->setOn(false);
 }
 
+void RadioView::slotRecord(bool b)
+{
+    if (b && !queryIsRecording())
+		sendStartRecording();
+	else if (!b && queryIsRecording())
+		sendStopRecording();		
+}
 
 void RadioView::slotComboStationSelected(int idx)
 {

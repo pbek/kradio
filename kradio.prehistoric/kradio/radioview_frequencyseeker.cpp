@@ -20,8 +20,10 @@
 #include <qslider.h>
 #include <qtoolbutton.h>
 #include <qaccel.h>
+#include <qtooltip.h>
 
 #include <kiconloader.h>
+#include <klocale.h>
 
 #include "radioview_frequencyseeker.h"
 
@@ -68,6 +70,16 @@ RadioViewFrequencySeeker::RadioViewFrequencySeeker(QWidget *parent, const QStrin
 					 m_sldFrequency,     SLOT(subtractStep()));
 	QObject::connect(m_btnStepRight,   SIGNAL(clicked()),
 					 m_sldFrequency,     SLOT(addStep()));
+
+	// Tooltips
+	
+    QToolTip::add(m_btnSearchLeft,  i18n("Search for previous Radio Station"));
+    QToolTip::add(m_btnSearchRight, i18n("Search for next Radio Station"));
+    QToolTip::add(m_btnStepLeft,    i18n("Decrement Frequency"));
+    QToolTip::add(m_btnStepRight,   i18n("Increment Frequency"));
+    QToolTip::add(m_sldFrequency,   i18n("Change Frequency"));
+
+	// Accelerators
 
     QAccel *Accel = new QAccel (this);
     Accel->insertItem (Key_Left,  100);

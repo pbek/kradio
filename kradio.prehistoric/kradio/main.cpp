@@ -28,6 +28,7 @@
 #include "quickbar.h"
 #include "docking.h"
 #include "radioview.h"
+#include "recording.h"
 
 
 static const char *description = "KRadio";
@@ -57,13 +58,15 @@ int main(int argc, char *argv[])
 
 	/* Some Tests */
     
-    LircSupport  *lircsupport = new LircSupport("lirc-1");
-    V4LRadio     *v4lradio    = new V4LRadio("v4lradio-1");
-    Radio        *radio       = new Radio("radio-1");
-    TimeControl  *timecontrol = new TimeControl("timecontrol-1");
-    QuickBar     *quickbar    = new QuickBar(NULL, "quickbar-1");
-    RadioDocking *docking     = new RadioDocking("docking-1");
-    RadioView    *view        = new RadioView(NULL, "radioview-1");
+    LircSupport  *lircsupport = new LircSupport (      "lirc-1");
+    V4LRadio     *v4lradio    = new V4LRadio    (      "v4lradio-1");
+    Radio        *radio       = new Radio       (      "radio-1");
+    TimeControl  *timecontrol = new TimeControl (      "timecontrol-1");
+    QuickBar     *quickbar    = new QuickBar    (NULL, "quickbar-1");
+    RadioDocking *docking     = new RadioDocking(      "docking-1");
+    docking->show();
+    RadioView    *view        = new RadioView   (NULL, "radioview-1");
+    Recording    *record      = new Recording   (      "recording-1");
     
     a.insertPlugin(lircsupport);
     a.insertPlugin(v4lradio);
@@ -72,13 +75,10 @@ int main(int argc, char *argv[])
     a.insertPlugin(quickbar);
     a.insertPlugin(docking);
     a.insertPlugin(view);
+	a.insertPlugin(record);
 
     a.restoreState(KGlobal::config());
-
-    quickbar->show();
-    docking->show();
-    view->show();
-    
+   
     int ret = a.exec();
 
     return ret;

@@ -29,12 +29,18 @@
 #include "plugins.h"
 #include "recording-interfaces.h"
 #include "recording-context.h"
+#include "timecontrol_interfaces.h"
+#include "radio_interfaces.h"
 
 class RecordingThread;
+class RadioStation;
+class StationList;
 
 class Recording : public QObject,
                   public PluginBase,
-                  public IRecording
+                  public IRecording,
+                  public ITimeControlClient,
+                  public IRadioClient
 {
 Q_OBJECT
 public:
@@ -54,25 +60,43 @@ public:
 	virtual QWidget        *createAboutPage();
 
 
-    // IRecording
+// IRecording
+    
 RECEIVERS:
    	bool  startRecording();
 	bool  stopRecording();
-    bool  setRecordingDirectory(const QString &);
+    bool  setRecordingConfig(const RecordingConfig &);
     
 ANSWERS:
-	bool            isRecording() const;
-	const QString  &getRecordingDirectory() const;
+	bool                    isRecording() const;
+	const RecordingConfig  &getRecordingConfig() const;
+	const RecordingContext &getRecordingContext() const;
+
+// ITimeControlClient
+
+	bool noticeAlarmsChanged(const AlarmVector &)         { return false; }
+	bool noticeAlarm(const Alarm &);
+	bool noticeNextAlarmChanged(const Alarm *)            { return false; }
+	bool noticeCountdownStarted(const QDateTime &/*end*/) { return false; }
+	bool noticeCountdownStopped()                         { return false; }
+	bool noticeCountdownZero()                            { return false; }
+	bool noticeCountdownSecondsChanged(int /*n*/)         { return false; }
 
 
+// IRadioClient
+	bool noticePowerChanged(bool on);
+	bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
+	bool noticeStationsChanged(const StationList &)              { return false; }
+
+	
 protected:
 
 	void customEvent(QCustomEvent *e);	
 
 protected:
-	QString          m_recordingDirectory;
 	RecordingThread *m_recordingThread;
 	RecordingConfig  m_config;
+	RecordingContext m_context;
 };
 
 

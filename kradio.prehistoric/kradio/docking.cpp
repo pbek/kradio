@@ -56,12 +56,8 @@ bool RadioDocking::connect (Interface *i)
 	bool b = ITimeControlClient::connect(i);
 	bool c = IRadioDevicePoolClient::connect(i);
 	bool d = IStationSelection::connect(i);
-/*
-    if (a) kdDebug() << "V4LRadio: IRadioClient connected\n";
-    if (b) kdDebug() << "V4LRadio: ITimeControlClient connected\n";
-    if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient connected\n";
-*/
-	return a || b || c || d;
+	bool e = IRecordingClient::connect(i);
+	return a || b || c || d || e;
 }
 
 
@@ -71,12 +67,8 @@ bool RadioDocking::disconnect (Interface *i)
 	bool b = ITimeControlClient::disconnect(i);
 	bool c = IRadioDevicePoolClient::disconnect(i);
 	bool d = IStationSelection::disconnect(i);
-/*
-    if (a) kdDebug() << "V4LRadio: IRadioClientClient disconnected\n";
-    if (b) kdDebug() << "V4LRadio: ITimeControlClient disconnected\n";
-    if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient disconnected\n";
-*/
-	return a || b || c || d;
+	bool e = IRecordingClient::disconnect(i);
+	return a || b || c || d || e;
 }
 
 
@@ -85,6 +77,21 @@ bool RadioDocking::setStationSelection(const QStringList &sl)
 	m_stationIDs = sl;
 	buildContextMenu();
 	notifyStationSelectionChanged(m_stationIDs);
+	return true;
+}
+
+// IRecordingClient
+
+bool RadioDocking::noticeRecordingStarted()
+{
+	m_menu->changeItem(m_recordingID, SmallIcon("kradio_record"), i18n("Stop Recording"));
+	return true;
+}
+
+
+bool RadioDocking::noticeRecordingStopped()
+{
+	m_menu->changeItem(m_recordingID, SmallIcon("kradio_record"), i18n("Start Recording"));
 	return true;
 }
 
@@ -157,11 +164,15 @@ void RadioDocking::buildContextMenu()
 	                              this, SLOT(slotSeekFwd()));
 	m_seekbwID = m_menu->insertItem(SmallIcon("back"),    i18n("Search Previous Station"),
 	                              this, SLOT(slotSeekBkwd()));
-	// FIXME: no seek callback function yet
 
-	m_powerID = m_menu->insertItem("power-dummy", this, SLOT(slotPower()));
+	m_recordingID = m_menu->insertItem(SmallIcon("kradio_record"), "record-dummy",
+		                               this, SLOT(slotRecording()));
+	queryIsRecording() ? noticeRecordingStarted() : noticeRecordingStopped();
+
+	m_powerID = m_menu->insertItem(SmallIcon("kradio_muteoff"), "power-dummy",
+	                               this, SLOT(slotPower()));
 	noticePowerChanged(queryIsPowerOn());
-
+	
 	m_menu->insertSeparator();
 
 	m_menu->insertItem(SmallIcon("kradio"), i18n("&About"), this, SLOT(slotShowAbout()));
@@ -303,7 +314,8 @@ bool RadioDocking::noticeCountdownZero()
 
 bool RadioDocking::noticePowerChanged(bool on)
 {
-  	m_menu->changeItem(m_powerID, on ? i18n("Power Off") : i18n("Power On"));
+  	m_menu->changeItem(m_powerID, SmallIcon(on ? "kradio_muteon" : "kradio_muteoff"),
+                       on ? i18n("Power Off") : i18n("Power On"));
 	return true;
 }
 
@@ -391,3 +403,14 @@ void RadioDocking::noticePluginsChanged(const PluginList &/*l*/)
 {
 	buildContextMenu();
 }
+
+
+void RadioDocking::slotRecording()
+{
+	if (queryIsRecording()) {
+		sendStartRecording();
+	} else {
+		sendStopRecording();
+	}
+}
+

@@ -30,6 +30,7 @@
 #include "radio_interfaces.h"
 #include "radiodevicepool_interface.h"
 #include "stationselection_interfaces.h"
+#include "recording-interfaces.h"
 #include "plugins.h"
 
 class RadioDocking : public KSystemTray,
@@ -37,7 +38,8 @@ class RadioDocking : public KSystemTray,
                      public IRadioClient,
                      public ITimeControlClient,
                      public IRadioDevicePoolClient,
-                     public IStationSelection
+                     public IStationSelection,
+                     public IRecordingClient
 {
 Q_OBJECT
 public:
@@ -97,6 +99,15 @@ RECEIVERS:
     bool noticeStationsChanged(const StationList &sl);
 
 
+	// IRecordingClient
+
+RECEIVERS:
+	bool noticeRecordingStarted();
+	bool noticeRecordingStopped();
+	bool noticeRecordingConfigChanged(const RecordingConfig &)   { return false; }
+	bool noticeRecordingContextChanged(const RecordingContext &) { return false; }
+
+
 protected slots:
 
 	void slotSeekFwd();
@@ -105,6 +116,8 @@ protected slots:
 	void slotPower();
 	void slotSleepCountdown();
 	void slotShowAbout();
+
+	void slotRecording();
 
 	void slotMenuItemActivated(int id);
 	
@@ -127,6 +140,7 @@ protected:
 	// menu Item IDs
 	int			m_titleID;
 	int 		m_alarmID;
+	int			m_recordingID;
 	int			m_powerID;
 	int			m_sleepID;
 	int         m_seekfwID;

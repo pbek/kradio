@@ -19,7 +19,10 @@
 #include <qslider.h>
 #include <qlayout.h>
 #include <qaccel.h>
+#include <qtooltip.h>
    
+#include <klocale.h>
+
 #include "radioview_volume.h"
 
 #define SLIDER_MINVAL   0
@@ -43,6 +46,11 @@ RadioViewVolume::RadioViewVolume(QWidget *parent, const QString &name)
 	QBoxLayout *l = new QBoxLayout(this, QBoxLayout::LeftToRight);
 	l->addWidget(m_slider);
 
+	// Tooltips
+	
+    QToolTip::add(m_slider, i18n("Change Volume"));
+
+	// Accelerators
     QAccel *Accel = new QAccel (this);
     Accel->insertItem (Key_Up,  100);
     Accel->insertItem (Key_Down, 101);

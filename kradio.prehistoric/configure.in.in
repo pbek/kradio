@@ -74,5 +74,6 @@ fi
 dnl ---------------------------------------------------------------------
 dnl LibSndFile
 
-AC_CHECK_LIB(sndfile, sf_open, [], AC_MSG_ERROR([libsndfile library not found]))
+AC_CHECK_LIB(sndfile, sf_open_fd, [], AC_MSG_ERROR([libsndfile > 1.0.5 not found]))
 AC_CHECK_HEADERS([sndfile.h], [], AC_MSG_ERROR([libsndfile header not found]))
+AC_CHECK_HEADERS([sys/soundcard.h], [], AC_MSG_ERROR([sys/soundcard.h not found]))
