@@ -21,6 +21,7 @@
 
 #include "kradioapp.h"
 #include <kaboutdata.h>
+#include <klocale.h>
 #include "aboutwidget.h"
 
 // KRadioAbout

@@ -109,8 +109,8 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
 		// check done later when characters arrive
 
 	} else { // unknown
-		logError("StationListXmlHandler::startElement: " +
-		         i18n("unknown or unexpected element %1").arg(qname));
+		logWarning("StationListXmlHandler::startElement: " +
+		           i18n("unknown or unexpected element %1").arg(qname));
 	}
 
 	m_status.push_back(qname);
@@ -201,10 +201,10 @@ bool StationListXmlHandler::characters (const QString &ch)
 	} else if (m_newStation && m_newStation->getClassName() != stat) {
 
 		if (!m_newStation->setProperty(stat, str)) {
-			logError("StationListXmlHandler::characters: " +
-			         i18n("unknown property %1 for class %2")
-			         .arg(stat)
-			         .arg(m_newStation->getClassName()));
+			logWarning("StationListXmlHandler::characters: " +
+			           i18n("unknown property %1 for class %2")
+			           .arg(stat)
+			           .arg(m_newStation->getClassName()));
 		}
 
 	} else if (str.length()) {

@@ -77,6 +77,10 @@ RECEIVERS:
 	bool noticeStereoChanged(bool  s);
 	bool noticeMuted(bool m);
 
+protected:
+
+	bool eventFilter(QObject *o, QEvent *e);
+
 protected slots:
 
 	void selectMixerDevice();

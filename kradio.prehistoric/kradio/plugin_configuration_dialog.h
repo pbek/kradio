@@ -47,6 +47,7 @@ public slots:
 	        void toggleShown() { WidgetPluginBase::toggleShown(); }
     virtual void show();
     virtual void hide();
+    virtual void cancel() { slotCancel(); }
 
     // QWidget overrides
 

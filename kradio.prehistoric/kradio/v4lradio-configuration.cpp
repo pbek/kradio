@@ -48,10 +48,8 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent)
 					 this, SLOT(selectRadioDevice()));
 	QObject::connect(buttonSelectMixerDevice, SIGNAL(clicked()),
 					 this, SLOT(selectMixerDevice()));
-	QObject::connect(editRadioDevice, SIGNAL(lostFocus()),
-					 this, SLOT(slotEditRadioDeviceChanged()));
-	QObject::connect(editMixerDevice, SIGNAL(lostFocus()),
-					 this, SLOT(slotEditMixerDeviceChanged()));
+	editRadioDevice->installEventFilter(this);
+	editMixerDevice->installEventFilter(this);
 	QObject::connect(editMinFrequency, SIGNAL(valueChanged(int)),
 					 this, SLOT(guiMinFrequencyChanged(int)));
 	QObject::connect(editMaxFrequency, SIGNAL(valueChanged(int)),
@@ -365,12 +363,21 @@ void V4LRadioConfiguration::selectMixerDevice()
     }
 }
 
+bool V4LRadioConfiguration::eventFilter(QObject *o, QEvent *e)
+{
+	if (e->type() == QEvent::FocusOut && o == editRadioDevice) {
+		slotEditRadioDeviceChanged();
+	} else if (e->type() == QEvent::FocusOut && o == editMixerDevice) {
+		slotEditMixerDeviceChanged();
+	}
+	return false;
+}
 
 void V4LRadioConfiguration::slotEditRadioDeviceChanged()
 {
 	if (m_ignoreGUIChanges) return;
 	const QString &s = editRadioDevice->text();
-	if (s != queryRadioDevice()) {
+	if (s != queryRadioDevice() || !queryIsPowerOn()) {
 		V4LCaps c = V4LRadio::readV4LCaps(s);
 		noticeDescriptionChanged(c.description);
 	} else {

@@ -30,7 +30,7 @@
 
 #include <kglobalsettings.h>
 #include <ktextbrowser.h>
-#include <ktextedit.h>
+#include <qtextedit.h>
 #include <kdebug.h>
 #include <kapplication.h>
 #include <klocale.h>
@@ -241,7 +241,7 @@ QFrame *KRadioAboutWidget::addTextPage( const QString &title,
   }
   else
   {
-    KTextEdit *textEdit = new KTextEdit( page, "text" );
+    QTextEdit *textEdit = new QTextEdit( page, "text" );
     textEdit->setReadOnly( true );
     textEdit->setMinimumHeight( fontMetrics().lineSpacing()*numLines );
     textEdit->setWordWrap( QTextEdit::NoWrap );
@@ -260,7 +260,7 @@ QFrame *KRadioAboutWidget::addLicensePage( const QString &title,
 
   QVBoxLayout *vbox = new QVBoxLayout( page, KDialog::spacingHint() );
 
-  KTextEdit *textEdit = new KTextEdit( page, "license" );
+  QTextEdit *textEdit = new QTextEdit( page, "license" );
   textEdit->setFont( KGlobalSettings::fixedFont() );
   textEdit->setReadOnly( true );
   textEdit->setWordWrap( QTextEdit::NoWrap );
@@ -474,14 +474,16 @@ void KRadioAboutWidget::slotMouseTrack( int mode, const QMouseEvent *e )
 
 void KRadioAboutWidget::slotUrlClick( const QString &url )
 {
-  emit urlClick( url );
+	if ( kapp )
+		kapp->invokeBrowser( url );
 }
 
 
-void KRadioAboutWidget::slotMailClick( const QString &_name,
+void KRadioAboutWidget::slotMailClick( const QString &/*_name*/,
                      const QString &_address )
 {
-  emit mailClick( _name, _address );
+	if ( kapp )
+		kapp->invokeMailer( _address, QString::null );
 }
 
 

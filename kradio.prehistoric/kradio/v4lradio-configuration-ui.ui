@@ -712,13 +712,8 @@
 </tabstops>
 <includes>
     <include location="global" impldecl="in implementation">kiconloader.h</include>
+    <include location="global" impldecl="in implementation">knuminput.h</include>
 </includes>
 <pixmapfunction>SmallIconSet</pixmapfunction>
 <layoutdefaults spacing="6" margin="0"/>
-<includehints>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-</includehints>
 </UI>
