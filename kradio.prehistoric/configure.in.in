@@ -41,8 +41,8 @@ fi
 
 AC_SUBST(LIRC)
 LIRC=""
-AC_CHECK_LIB(lirc_client, lirc_init, LIRC="-llirc_client",,)
-if test -n $LIRC ; then
+AC_CHECK_LIB(lirc_client, lirc_init, LIRC="-llirc_client",LIRC="",)
+if test -n "$LIRC" ; then
   AC_DEFINE_UNQUOTED(HAVE_LIRC_CLIENT, 1, [is lirc_client library present?])
 fi
 
