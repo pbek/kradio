@@ -23,10 +23,10 @@
 #include "kradioapp.h"
 
 static const char *description =
-	I18N_NOOP("KRadio");
+  I18N_NOOP("KRadio");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 
-	
+
 static KCmdLineOptions options[] =
 {
   { 0, 0, 0 }
@@ -35,16 +35,20 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-	KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
-    					 VERSION, description, KAboutData::License_GPL,
-					     "(c) 2002 Martin Witte, Frank Schwanz, Klas Kalass", 0, "http://sourceforge.net/projects/kradio", "witte@kawo1.rwth-aachen.de");
-	aboutData.addAuthor("Martin Witte", I18N_NOOP("revision, lirc support, docking, alarm function"), "witte@kawo1.rwth-aachen.de", "http://sourceforge.net/projects/kradio/");
-	aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
-	aboutData.addAuthor("Klas Kalass", I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
-	KCmdLineArgs::init( argc, argv, &aboutData );
-	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+  KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
+                      VERSION, description, KAboutData::License_GPL,
+                      "(c) 2002 Martin Witte, Frank Schwanz, Klas Kalass",
+                      0,
+                      "http://sourceforge.net/projects/kradio",
+                      0);
+  aboutData.addAuthor("Martin Witte",  I18N_NOOP("misc, lirc support, alarm function"), "witte@kawo1.rwth-aachen.de");
+  aboutData.addAuthor("Klas Kalass",   I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
+  aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
 
-	KRadioApp a;
+  KCmdLineArgs::init( argc, argv, &aboutData );
+  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-	return a.exec();
+  KRadioApp a;
+
+  return a.exec();
 }

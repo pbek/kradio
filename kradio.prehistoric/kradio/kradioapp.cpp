@@ -49,7 +49,7 @@ KRadioApp::KRadioApp()
     kradio->readXOptions(config);
 
   // restore Configuration
-  restoreConfig();
+  restoreState();
 
   if (kradio){
     connect(kradio, SIGNAL(showAbout()),
@@ -62,19 +62,20 @@ KRadioApp::KRadioApp()
     tray->show();
   }
 
+  kradio->show();
 }
 
 KRadioApp::~KRadioApp()
 {
   saveOptions();
-  saveConfig();
+  saveState();
 
   if (kradio){
     kradio->saveOptions(config);
-    delete kradio;
+    delete kradio;      // not needed, 'cause it's a QObject
   }
   if (radio)
-    delete radio;
+    delete radio;       // not needed, 'cause it's a QObject
   radio = 0;
 }
 
@@ -93,7 +94,7 @@ void KRadioApp::saveOptions()
   config->writeEntry("RadioDev", RadioDev);
 }
 
-void KRadioApp::restoreConfig()
+void KRadioApp::restoreState()
 {
   config->setGroup("Recent");
   float freq = config->readDoubleNumEntry("Frequency", 88);
@@ -109,7 +110,7 @@ void KRadioApp::restoreConfig()
     kradio->slotPowerOn (radio->isPowerOn());
 }
 
-void KRadioApp::saveConfig()
+void KRadioApp::saveState()
 {
   config->setGroup("Recent");
   if (radio)

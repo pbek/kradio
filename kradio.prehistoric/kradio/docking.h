@@ -37,24 +37,18 @@ public slots:
     void slotSearchNextStation(void);
     void slotNOP();
     void slotUpdateToolTips ();
+    void slotToggleUI();
+
 signals:
     void showAbout();
 
 private:
-  void clearStationList();
 	void buildStationList();
 	void contextMenuAboutToShow( KPopupMenu* menu );
 
 	RadioBase 	*radio;
 
-  int			stationSeparatorID;// make sure the position of the corresponding item is STATION_0_POSITION !
-  int 			nextID;
-  int 			prevID;
-  int			currID;
-  int			powerID;
-  int			alarmID;
-
-  QPixmap 		miniKRadioPixmap;
+    QPixmap     miniKRadioPixmap;
 };
 
 #endif

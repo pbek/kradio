@@ -40,10 +40,10 @@ class KRadioApp : public KApplication
   virtual ~KRadioApp();
   
  private:
-  void restoreConfig();
+  void restoreState();
   void readOptions();
 
-  void saveConfig();
+  void saveState();
   void saveOptions();
 
   KRadio *kradio;
