@@ -2,73 +2,72 @@
 	<stationlist>
 		<info>
 			<maintainer>Ian Hay</maintainer>
-			<changed>2003-01-18T14:48:48</changed>
+			<changed>2003-01-25T22:35:18</changed>
 			<country>England</country>
-			<city>Milton Keynes - Buckinghamshire</city>
-			<media>fm antenna</media>
-			<comments>a poorly served and weak reception area</comments>
+			<city>Milton Keynes, BUCKS</city>
+			<media>Antenna</media>
+			<comments>A poorly served and weak area for reception</comments>
 		</info>
 		<station>
-			<name>BBC Radio 1</name>
-			<shortname>Radio 1</shortname>
-			<quickselect>1</quickselect>
-			<frequency>98.2</frequency>
-			<volumepreset>0.8</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
 			<name>BBC Radio 2</name>
-			<shortname>Radio 2</shortname>
+			<shortname>BBC Radio 2</shortname>
+			<icon></icon>
 			<quickselect>1</quickselect>
-			<frequency>88.63</frequency>
+			<frequency>88.6097</frequency>
 			<volumepreset>0.8</volumepreset>
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
 			<name>BBC Radio 3</name>
-			<shortname>Radio 3</shortname>
+			<shortname>BBC Radio 3</shortname>
+			<icon></icon>
 			<quickselect>1</quickselect>
-			<frequency>90.8</frequency>
-			<volumepreset>0.8</volumepreset>
+			<frequency>90.8185</frequency>
+			<volumepreset>1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio 3</name>
+			<shortname>BBC Radio 3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.8634</frequency>
+			<volumepreset>1</volumepreset>
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
 			<name>BBC Radio 4</name>
-			<shortname>Radio 4</shortname>
+			<shortname>BBC Radio 4</shortname>
+			<icon></icon>
 			<quickselect>1</quickselect>
-			<frequency>93</frequency>
-			<volumepreset>0.8</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
-			<name>3CR (Luton)</name>
-			<shortname>3CR (BEDS)</shortname>
-			<quickselect>1</quickselect>
-			<frequency>95.55</frequency>
-			<volumepreset>0.8</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
-			<name>3CR (MK)</name>
-			<shortname>3CR (BUCKS)</shortname>
-			<quickselect>1</quickselect>
-			<frequency>104.5</frequency>
-			<volumepreset>0.8</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
-			<name>Horizon Radio</name>
-			<shortname>Horizon</shortname>
-			<quickselect>1</quickselect>
-			<frequency>103.3</frequency>
-			<volumepreset>0.8</volumepreset>
+			<frequency>93.0197</frequency>
+			<volumepreset>1</volumepreset>
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
 			<name>Classic FM</name>
 			<shortname>Classic FM</shortname>
+			<icon></icon>
 			<quickselect>1</quickselect>
-			<frequency>100.46</frequency>
+			<frequency>100.446</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Horizon FM</name>
+			<shortname>Horizon FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.324</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC 3 Counties Radio</name>
+			<shortname>BBC 3 Counties Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.518</frequency>
 			<volumepreset>0.8</volumepreset>
 			<dockingmenu>1</dockingmenu>
 		</station>

@@ -1,0 +1,111 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Vincent sanders, vince@kyllikki.org</maintainer>
+			<changed>2003-01-15T18:50:00</changed>
+			<country>England</country>
+			<city>Leeds</city>
+			<media>antenna</media>
+			<comments>Discovered by channel hopping</comments>
+		</info>
+		<station>
+			<name>BBC Radio 1</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.900000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio 2</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>2</quickselect>
+			<frequency>89.300000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio 3</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>3</quickselect>
+			<frequency>91.500000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio 4</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>4</quickselect>
+			<frequency>93.700000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio Leeds</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect></quickselect>
+			<frequency>92.400000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect></quickselect>
+			<frequency>101.100000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Pulse</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect></quickselect>
+			<frequency>102.500000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Galaxy 105</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect></quickselect>
+			<frequency>105.100000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Aire FM (central leeds only)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect></quickselect>
+			<frequency>96.300000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Ridings (good antemma required)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect></quickselect>
+			<frequency>106.800000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Century FM (good antemma required)</name>
+			<shortname>Century</shortname>
+			<icon></icon>
+			<quickselect></quickselect>
+			<frequency>105.400000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
