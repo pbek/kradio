@@ -171,6 +171,13 @@ begin TV-off
 		repeat = 0
 		config = SLEEP
 	end
+
+ 	begin
+		prog = kradio
+		button = FULL_SCREEN
+		repeat = 0
+		config = QUIT
+	end
 	
 
 end TV-off

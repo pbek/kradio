@@ -17,6 +17,7 @@
 
 #include "lircsupport.h"
 #include "radiobase.h"
+#include <kapplication.h>
 
 
 LircSupport::LircSupport(QObject *_parent, RadioBase *_radio, TimeControl *_timeControl)
@@ -118,6 +119,9 @@ void LircSupport::slotLIRC(int /*socket*/ )
 				}
 				else if (strcasecmp (c, "SLEEP") == 0) {
 					timeControl->startCountdown();
+				}
+				else if (strcasecmp (c, "QUIT") == 0) {
+					kapp->quit();
 				}
 			
 				int k = -1;

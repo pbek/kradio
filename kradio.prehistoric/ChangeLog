@@ -1,3 +1,5 @@
+0.2.7   emw     - added pseudo lirc key "QUIT"
+
 0.2.6   emw     - activate station in setupdialog by freq, not stationId
                 - add "unknown station" to kradio->cbStations
                 - fix alarm inconsistencies
