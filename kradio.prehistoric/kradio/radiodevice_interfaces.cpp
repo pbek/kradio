@@ -147,10 +147,16 @@ IF_IMPL_SENDER  (  ISeekRadio::notifySeekStopped (),
                    noticeSeekStopped ()                           )
 IF_IMPL_SENDER  (  ISeekRadio::notifySeekFinished (const RadioStation &s),
                    noticeSeekFinished (s)                         )
+IF_IMPL_SENDER  (  ISeekRadio::notifyProgress (float f),
+                   noticeProgress (f)                             )
 
 
 // ISeekRadioClient
 
+IF_IMPL_SENDER  (  ISeekRadioClient::sendToBeginning(),
+                   toBeginning()                                  )
+IF_IMPL_SENDER  (  ISeekRadioClient::sendToEnd(),
+                   toEnd()                                        )
 IF_IMPL_SENDER  (  ISeekRadioClient::sendStartSeek (bool up),
                    startSeek (up)                                 )
 IF_IMPL_SENDER  (  ISeekRadioClient::sendStartSeekUp(),
@@ -169,19 +175,26 @@ IF_IMPL_QUERY   (  bool ISeekRadioClient::queryIsSeekUpRunning(),
 IF_IMPL_QUERY   (  bool ISeekRadioClient::queryIsSeekDownRunning(),
                    isSeekDownRunning(),
                    false                                          )
+IF_IMPL_QUERY   (  float ISeekRadioClient::queryProgress(),
+                   getProgress(),
+                   1.0                                            )
+
 
 void ISeekRadioClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
-	if (queryIsSeekRunning())
+	if (queryIsSeekRunning()) {
 		noticeSeekStarted(queryIsSeekUpRunning());
-	else
+	} else {
 		noticeSeekStopped();
+	}
+	noticeProgress(queryProgress());
 }
 
 
 void ISeekRadioClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeSeekStopped();
+	noticeProgress(queryProgress());
 }
 
 

@@ -203,14 +203,16 @@ void   LircSupport::restoreState (KConfig *)
     // FIXME
 }
 
-void LircSupport::createConfigurationPage()
+ConfigPageInfo LircSupport::createConfigurationPage()
 {
 	// FIXME
+	return ConfigPageInfo ();
 }
 
-void LircSupport::createAboutPage()
+QWidget *LircSupport::createAboutPage()
 {
 	// FIXME
+	return NULL;
 }
 
 

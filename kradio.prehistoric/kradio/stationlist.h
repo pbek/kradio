@@ -113,7 +113,7 @@ public:
     // all stations, with full access
     RawStationList &       all()       { return m_all; }
     RawStationList const & all() const { return m_all; }
-    
+
     // the meta data for this station List, with full access
     StationListMetaData &       metaData()       { return m_metaData; }
     StationListMetaData const & metaData() const { return m_metaData; }

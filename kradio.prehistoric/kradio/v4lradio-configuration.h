@@ -36,7 +36,7 @@ class V4LRadioConfiguration : public V4LRadioConfigurationUI,
 {
 Q_OBJECT
 public :
-	V4LRadioConfiguration (QWidget *parent, V4LRadio *radio);
+	V4LRadioConfiguration (QWidget *parent);
 	~V4LRadioConfiguration ();
 
 	bool connect (Interface *i);
@@ -71,6 +71,9 @@ protected slots:
 
 	void slotOk();
 	void slotCancel();
+
+	void guiMinFrequencyChanged(int v);
+	void guiMaxFrequencyChanged(int v);
 
 protected:
 

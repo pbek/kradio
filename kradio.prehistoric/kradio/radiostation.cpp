@@ -45,6 +45,11 @@ QDict<RadioStation> *RadioStation::stationClassRegistry = 0;
 RegisterStationClass registerStationClass;
 const UndefinedRadioStation undefinedRadioStation (registerStationClass);
 
+const RadioStation *UndefinedRadioStation::getEmptyStation() const
+{
+	return &undefinedRadioStation;
+}
+
 /////////////////////////////////////////////////////////////////////////////
 
 

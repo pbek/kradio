@@ -70,12 +70,23 @@ bool FrequencySeekHelper::nextSeekStep()
 	float f = queryFrequency();
 	f += (m_direction == up ? 1 : -1) * queryScanStep();
 
-	if (f > queryMaxFrequency() || f < queryMinFrequency())
-		return false;
+	bool bounds = false;
+	if (f > queryMaxFrequency()) {
+		f = queryMaxFrequency();
+		bounds = true;
+	}
+	if (f < queryMinFrequency()) {
+		f = queryMinFrequency();
+		bounds = true;
+	}
 
 	if (sendFrequency(f) > 0) {
-		m_timer->start (50, true);
-		return true;
+		if (!bounds) {
+			m_timer->start (50, true);
+			return true;
+		} else {
+			return false;
+		}
 	} else {
 		return false;
 	}

@@ -29,6 +29,10 @@ class PluginConfigurationDialog;
 class QWidget;
 class KConfig;
 
+
+struct ConfigPageInfo;
+
+
 class PluginManager
 {
 public :
@@ -56,17 +60,13 @@ public :
 
 	virtual PluginConfigurationDialog *getConfigDialog() { return m_configDialog; }
 
-    virtual QFrame      *addConfigurationPage (PluginBase *forWhom,
-                                               const QString &itemname,
-									           const QString &header,
-									           const QPixmap &icon);
-	virtual void         connectWithConfigDialog(QObject *o);
-	
-	virtual void         noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
+    virtual void         noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
 	
 protected :
 	virtual void         createConfigDialog(const QString &title = QString());
 
+    virtual void         addConfigurationPage (PluginBase *forWhom,
+											   const ConfigPageInfo	&info);
 
 	// PluginManager's data & types ;)
 protected:
@@ -74,10 +74,12 @@ protected:
     typedef QPtrListIterator<PluginBase>   PluginIterator;
     typedef QPtrDict<QFrame>               QFrameDict;
     typedef QPtrDictIterator<QFrame>       QFrameDictIterator;
-    
+    typedef QPtrDict<QWidget>              QWidgetDict;
+    typedef QPtrDictIterator<QWidget>      QWidgetDictIterator;
 
     PluginList   m_plugins;
-    QFrameDict   m_configPages;
+    QFrameDict   m_configPageFrames;
+    QWidgetDict  m_configPages;
     
     PluginConfigurationDialog *m_configDialog;
 };

@@ -58,7 +58,6 @@ ANSWERS:
 	IF_ANSWER  (  bool                   isPowerOn() const         )
 	IF_ANSWER  (  bool                   isPowerOff() const        )
 	IF_ANSWER  (  const RadioStation  &  getCurrentStation() const )
-
 };
 
 
@@ -165,6 +164,8 @@ public :
 	IF_CON_DESTRUCTOR(ISeekRadio, -1)
 
 RECEIVERS:
+	IF_RECEIVER(  toBeginning()                                  )
+	IF_RECEIVER(  toEnd()                                        )
 	IF_RECEIVER(  startSeek (bool up)                            )
 	IF_RECEIVER(  startSeekUp()                                  )
 	IF_RECEIVER(  startSeekDown()                                )
@@ -174,11 +175,13 @@ SENDERS:
 	IF_SENDER  (  notifySeekStarted (bool up)                    )
 	IF_SENDER  (  notifySeekStopped ()                           )
 	IF_SENDER  (  notifySeekFinished (const RadioStation &s)     )
+	IF_SENDER  (  notifyProgress (float f)                       )
 
 ANSWERS:
-    IF_ANSWER  (  bool isSeekRunning() const                     )
-    IF_ANSWER  (  bool isSeekUpRunning() const                   )
-    IF_ANSWER  (  bool isSeekDownRunning() const                 )
+    IF_ANSWER  (  bool  isSeekRunning() const                    )
+    IF_ANSWER  (  bool  isSeekUpRunning() const                  )
+    IF_ANSWER  (  bool  isSeekDownRunning() const                )
+	IF_ANSWER  (  float getProgress () const                     )
 };
 
 
@@ -188,6 +191,8 @@ public :
 	IF_CON_DESTRUCTOR(ISeekRadioClient, 1)
 
 SENDERS:
+	IF_SENDER  (  sendToBeginning()                                   )
+	IF_SENDER  (  sendToEnd()                                         )
 	IF_SENDER  (  sendStartSeek (bool up)                             )
 	IF_SENDER  (  sendStartSeekUp()                                   )
 	IF_SENDER  (  sendStartSeekDown()                                 )
@@ -197,11 +202,13 @@ RECEIVERS:
 	IF_RECEIVER(  noticeSeekStarted (bool up)                         )
 	IF_RECEIVER(  noticeSeekStopped ()                                )
 	IF_RECEIVER(  noticeSeekFinished (const RadioStation &s)          )
+	IF_RECEIVER(  noticeProgress (float f)                            )
 
 QUERIES:
-    IF_QUERY  (  bool queryIsSeekRunning()                            )
-    IF_QUERY  (  bool queryIsSeekUpRunning()                          )
-    IF_QUERY  (  bool queryIsSeekDownRunning()                        )
+    IF_QUERY  (  bool  queryIsSeekRunning()                           )
+    IF_QUERY  (  bool  queryIsSeekUpRunning()                         )
+    IF_QUERY  (  bool  queryIsSeekDownRunning()                       )
+	IF_QUERY  (  float queryProgress ()                               )
 
 RECEIVERS:
 	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);

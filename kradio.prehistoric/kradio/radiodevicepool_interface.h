@@ -38,6 +38,7 @@ RECEIVERS:
 
 SENDERS:
 	IF_SENDER  (  notifyActiveDeviceChanged(IRadioDevice *rd)             )
+	IF_SENDER  (  notifyDevicesChanged(const QPtrList<IRadioDevice> &)    )
 
 ANSWERS:
 	IF_ANSWER  (  IRadioDevice                  * getActiveDevice() const )
@@ -56,6 +57,7 @@ SENDERS:
 
 RECEIVERS:
 	IF_RECEIVER(  noticeActiveDeviceChanged(IRadioDevice *rd)             )
+	IF_RECEIVER(  noticeDevicesChanged(const QPtrList<IRadioDevice> &)    )
 
 QUERIES:
 	IF_QUERY   (  IRadioDevice                  *queryActiveDevice()      )

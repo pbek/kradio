@@ -45,6 +45,7 @@ RECEIVERS:
 	bool noticeSeekStarted (bool up);
 	bool noticeSeekStopped ();
 	bool noticeSeekFinished (const RadioStation &s);
+	bool noticeProgress (float ) { return false; }
 
 // IFrequencyRadioClient
 RECEIVERS:

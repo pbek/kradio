@@ -275,15 +275,15 @@ void   RadioView::restoreState (KConfig *)
 }
 
 
-void RadioView::createConfigurationPage()
+ConfigPageInfo RadioView::createConfigurationPage()
 {
-	// FIXME
+	return ConfigPageInfo();	// FIXME
 }
 
 
-void RadioView::createAboutPage()
+QWidget *RadioView::createAboutPage()
 {
-	// FIXME
+	return NULL; // FIXME
 }
 
 

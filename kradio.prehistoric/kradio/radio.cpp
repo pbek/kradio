@@ -17,6 +17,8 @@
 
 #include "radio.h"
 #include "radiostation.h"
+#include "radio-configuration.h"
+
 #include <kstandarddirs.h>
 #include <kurl.h>
 
@@ -92,15 +94,23 @@ void Radio::restoreState (KConfig *config)
 
 
 
-void Radio::createConfigurationPage()
+ConfigPageInfo Radio::createConfigurationPage()
 {
-	// FIXME
+	RadioConfiguration *conf = new RadioConfiguration (NULL);
+	connect (conf);
+	return ConfigPageInfo(
+		conf,
+		"Radio Stations",
+		"Setup Radio Stations",
+		"kradio"
+	);
 }
 
 
-void Radio::createAboutPage()
+QWidget *Radio::createAboutPage()
 {
 	// FIXME
+	return NULL;
 }
 
 
@@ -272,12 +282,12 @@ const RadioStation & Radio::queryCurrentStation() const
 
     // I'm terribly sorry for that const_cast, but the f...ing QPtrList
     // has no "int find(...) const" method :(
-	RawStationList &l = const_cast<RawStationList &>(m_stationList.all());
-    if (l.find(&rs) >= 0) {
-		return *(l.current());
-    } else {
-		return rs;
-	}
+    RawStationList::Iterator it (m_stationList.all());
+    for (; it.current(); ++it) {
+		if (rs.compare(*it.current()) == 0)
+			return *it.current();
+    }
+	return rs;
 }
 
 
@@ -317,6 +327,8 @@ void Radio::noticeConnected(IRadioDeviceClient::cmplInterface *dev, bool pointer
 	
 	if (! m_activeDevice && pointer_valid)
 		setActiveDevice (dev, false);
+
+	notifyDevicesChanged(IRadioDeviceClient::connections);
 }
 
 
@@ -344,6 +356,7 @@ void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd, bool pointer
 			setActiveDevice(IRadioDeviceClient::connections.first());
         }
 	}
+	notifyDevicesChanged(IRadioDeviceClient::connections);
 }
 
 

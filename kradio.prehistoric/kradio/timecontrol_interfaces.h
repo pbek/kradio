@@ -53,6 +53,7 @@ SENDERS:
     IF_SENDER  (    notifyCountdownStarted(const QDateTime &end)     )
     IF_SENDER  (    notifyCountdownStopped()                         )
     IF_SENDER  (    notifyCountdownZero()                            )
+    IF_SENDER  (    notifyCountdownSecondsChanged(int n)             )
     
 
 ANSWERS:
@@ -84,6 +85,7 @@ RECEIVERS:
     IF_RECEIVER(    noticeCountdownStarted(const QDateTime &end)     )
     IF_RECEIVER(    noticeCountdownStopped()                         )
     IF_RECEIVER(    noticeCountdownZero()                            )
+    IF_RECEIVER(    noticeCountdownSecondsChanged(int n)             )
 
 
 QUERIES:

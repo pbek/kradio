@@ -106,6 +106,9 @@ public:
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const = 0;
 
+    /** to get a complete new radio station **/
+    virtual const RadioStation *getEmptyStation() const = 0;
+
 protected:
 
 	QString createStationID() const;
@@ -136,6 +139,7 @@ public:
 	virtual QString       longName() const { return "unknown"; }
 	virtual bool          isValid()  const { return false; }
 	virtual RadioStation *copy()     const { return new UndefinedRadioStation(*this); }
+	virtual const RadioStation *getEmptyStation() const;
 	virtual int           compare(const RadioStation &s) const;
 
 	virtual QString       getClassName() const { return "UndefinedRadioStation"; }

@@ -39,6 +39,8 @@ IF_IMPL_SENDER  (  ITimeControl::notifyCountdownStopped(),
 IF_IMPL_SENDER  (  ITimeControl::notifyCountdownZero(),
                    noticeCountdownZero()                                     )
 
+IF_IMPL_SENDER  (  ITimeControl::notifyCountdownSecondsChanged(int n),
+                   noticeCountdownSecondsChanged(n)                          )
                    
 // ITimeControlClient
 

@@ -16,7 +16,7 @@
  ***************************************************************************/
 #include "alarm.h"
 
-Alarm::Alarm(QDateTime time, bool daily, bool enabled)
+Alarm::Alarm(const QDateTime &time, bool daily, bool enabled)
 	: m_time         (time),
 	  m_daily        (daily),
 	  m_enabled      (enabled),

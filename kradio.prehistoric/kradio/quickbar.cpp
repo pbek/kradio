@@ -30,6 +30,7 @@
 #include "quickbar.h"
 #include "stationlist.h"
 #include "radiostation.h"
+#include "quickbar-configuration.h"
 
 QuickBar::QuickBar(QWidget * parent, const char * name)
   : QWidget(parent, name),
@@ -50,22 +51,34 @@ QuickBar::~QuickBar()
 bool QuickBar::connect(Interface *i)
 {
 	bool a = IRadioClient::connect(i);
+	bool b = IStationSelection::connect(i);
 
 //	if (a) kdDebug() << "QuickBar: IRadioClient connected\n";
 	
-	return a;
+	return a || b;
 }
 
 
 bool QuickBar::disconnect(Interface *i)
 {
 	bool a = IRadioClient::disconnect(i);
+	bool b = IStationSelection::disconnect(i);
 
 //	if (a) kdDebug() << "QuickBar: IRadioClient disconnected\n";
 
-	return a;
+	return a || b;
 }
 
+
+// IStationSelection
+
+bool QuickBar::setStationSelection(const QStringList &sl)
+{
+	m_stationIDs = sl;
+	rebuildGUI();
+	notifyStationSelectionChanged(m_stationIDs);
+	return true;
+}
 
 // PluginBase methods
 
@@ -91,6 +104,7 @@ void QuickBar::restoreState (KConfig *config)
 	}
 
 	rebuildGUI();
+	notifyStationSelectionChanged(m_stationIDs);
 }
 
 
@@ -114,15 +128,23 @@ void QuickBar::saveState (KConfig *config) const
 }
 
 
-void QuickBar::createConfigurationPage()
+ConfigPageInfo QuickBar::createConfigurationPage()
 {
-	// FIXME
+	QuickbarConfiguration *conf = new QuickbarConfiguration(NULL);
+	connect (conf);
+	return ConfigPageInfo(
+		conf,
+		"Quickbar",
+		"Quickbar Configuration",
+		"view_icon"
+	);
 }
 
 
-void QuickBar::createAboutPage()
+QWidget *QuickBar::createAboutPage()
 {
 	// FIXME
+	return NULL;
 }
 
 
@@ -226,19 +248,22 @@ void QuickBar::getKWinState() const
 void QuickBar::rebuildGUI()
 {
 	if (m_layout) delete m_layout;
-	m_layout = new ButtonFlowLayout(this);
+	if (m_buttonGroup) delete m_buttonGroup;
 
+	for (QPtrListIterator<QToolButton> it(m_buttons); it.current(); ++it)
+		delete it.current();
+   	m_buttons.clear();
+
+	m_layout = new ButtonFlowLayout(this);
 	m_layout->setMargin(1);
 	m_layout->setSpacing(2);
-
-	if (m_buttonGroup) delete m_buttonGroup;
+	
 	m_buttonGroup = new QButtonGroup(this);
     QObject::connect (m_buttonGroup, SIGNAL(clicked(int)), this, SLOT(buttonClicked(int)));
-	
 	// we use buttonGroup to enable automatic toggle/untoggle
 	m_buttonGroup->setExclusive(true);
 	m_buttonGroup->setFrameStyle(QFrame::NoFrame);
-	m_buttons.clear();
+	m_buttonGroup->show();
 
     int buttonID = 0;
     const RawStationList &stations = queryStations().all();

@@ -79,8 +79,6 @@ int main(int argc, char *argv[])
     docking->show();
     view->show();
     
-    a.setMainWidget(quickbar);
-
     int ret = a.exec();
 
     return ret;

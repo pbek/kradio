@@ -26,6 +26,7 @@
 
 #include <qwidget.h>
 #include "radio_interfaces.h"
+#include "stationselection_interfaces.h"
 #include "plugins.h"
 
 class ButtonFlowLayout;
@@ -39,7 +40,8 @@ class QToolButton;
 
 class QuickBar : public QWidget,
                  public PluginBase,
-                 public IRadioClient
+                 public IRadioClient,
+                 public IStationSelection
 {
 Q_OBJECT
 public:
@@ -52,14 +54,23 @@ public:
 	virtual bool   connect(Interface *i);
 	virtual bool   disconnect(Interface *i);
 	
+	// IStationSelection
+
+RECEIVERS:
+    bool setStationSelection(const QStringList &sl);
+
+ANSWERS:
+    const QStringList & getStationSelection () const { return m_stationIDs; }
+
+
 	// PluginBase
 
 public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   createConfigurationPage();
-	virtual void   createAboutPage();
+	virtual ConfigPageInfo  createConfigurationPage();
+	virtual QWidget        *createAboutPage();
 
 	// IRadioClient
 

@@ -306,6 +306,18 @@ bool    V4LRadio::isMuted() const
 
 // ISeekRadio
 
+bool V4LRadio::toBeginning()
+{
+	setFrequency(getMinFrequency());
+	return true;
+}
+
+bool V4LRadio::toEnd()
+{
+	setFrequency(getMaxFrequency());
+	return true;
+}
+
 bool V4LRadio::startSeekUp()
 {
 	return startSeek(true);
@@ -349,6 +361,13 @@ bool V4LRadio::isSeekDownRunning() const
 	return m_seekHelper.isRunningDown();
 }
 
+float V4LRadio::getProgress () const
+{
+	float min = getMinFrequency();
+	float max = getMaxFrequency();
+	
+	return (getFrequency() - min) / (max - min);
+}
 
 
 // IFrequencyRadio
@@ -361,6 +380,9 @@ bool V4LRadio::setFrequency(float freq)
 	if (m_currentStation.frequency() == freq) {
 		return true;
 	}
+
+	float minf = getMinFrequency();
+	float maxf = getMaxFrequency();
 	
 	if (m_radio_fd > 0) {
 		
@@ -373,7 +395,7 @@ bool V4LRadio::setFrequency(float freq)
 		
   		unsigned long lfreq = (unsigned long) round(freq / df);
 
-	  	if (freq > getMaxFrequency() || freq < getMinFrequency()) {
+	  	if (freq > maxf || freq < minf) {
 	  		kdDebug() << "V4LRadio::setFrequency: "
 	                  << i18n("invalid frequency") << " "
 	                  << freq << endl;
@@ -398,6 +420,7 @@ bool V4LRadio::setFrequency(float freq)
     m_currentStation.setFrequency(freq);
     notifyFrequencyChanged(freq, &m_currentStation);
     notifyStationChanged(m_currentStation);
+    notifyProgress((freq - minf) / (maxf - minf));
     return true;
 }
 
@@ -587,29 +610,21 @@ void   V4LRadio::restoreState (KConfig *config)
 }
 
 
-void V4LRadio::createConfigurationPage()
+ConfigPageInfo V4LRadio::createConfigurationPage()
 {
-	QFrame *f = m_manager->addConfigurationPage(
-	  this,
-      i18n("V4L Radio Options"),
-	  i18n("V4L Radio Options"),
-	  KGlobal::instance()->iconLoader()->loadIcon( "package_utilities", KIcon::NoGroup, KIcon::SizeMedium )
-    );
-
-    QGridLayout *l = new QGridLayout(f);
-    l->setSpacing( 0 );
-    l->setMargin( 0 );
-
-    V4LRadioConfiguration *v4lconf = new V4LRadioConfiguration(f, this);
+    V4LRadioConfiguration *v4lconf = new V4LRadioConfiguration(NULL);
     connect(v4lconf);
-    l->addWidget( v4lconf, 0, 0 );
-    m_manager->connectWithConfigDialog(v4lconf);
+    return ConfigPageInfo (v4lconf,
+						   i18n("V4L Radio Options"),
+						   i18n("V4L Radio Options"),
+						   "package_utilities");
 }
 
 
-void V4LRadio::createAboutPage()
+QWidget *V4LRadio::createAboutPage()
 {
 	// FIXME
+	return NULL;
 }
 	
 ////////////////////////////////////////

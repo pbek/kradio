@@ -66,6 +66,10 @@ RadioStation *InternetRadioStation::copy() const
     return new InternetRadioStation(*this);
 }
 
+const RadioStation *InternetRadioStation::getEmptyStation() const
+{
+	return &emptyInternetRadioStation;
+}
 
 InternetRadioStation::~InternetRadioStation()
 {
@@ -86,6 +90,12 @@ int InternetRadioStation::compare(const RadioStation &_s) const
 
 	QString thisurl = m_url.url(-1);    // -1: remove trailing '/'
 	QString thaturl = s->m_url.url(-1);
+
+	// empty urls are never identical
+	if (thisurl.length () == 0)
+		return -1;
+	if (thaturl.length() == 0)
+		return 1;
 
 	return thisurl.compare(thaturl);
 }

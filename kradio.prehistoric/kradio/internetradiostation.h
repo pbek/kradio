@@ -55,6 +55,8 @@ public:
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;
+    virtual const RadioStation *getEmptyStation() const;
+    
 
 	// for XML-Parsing/Export
 	virtual bool setProperty(const QString &property_name, const QString &val);

@@ -66,6 +66,12 @@ RadioStation *FrequencyRadioStation::copy() const
 }
 
 
+const RadioStation *FrequencyRadioStation::getEmptyStation() const
+{
+	return &emptyFrequencyRadioStation;
+}
+
+
 FrequencyRadioStation::~FrequencyRadioStation()
 {
 }
@@ -81,13 +87,19 @@ int FrequencyRadioStation::compare(const RadioStation &_s) const
 	FrequencyRadioStation const *s = dynamic_cast<FrequencyRadioStation const*>(&_s);
 
 	if (!s)
-		return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;			
+		return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;
+
+	// stations with no valid frequency are never identical
+	if (m_frequency == 0)	
+		return -1;
+	if (s->m_frequency == 0)
+		return 1;
 	
     float delta = m_frequency < 10 ? STATION_FREQ_INTERVAL_AM : STATION_FREQ_INTERVAL_FM;
     
-    if (   m_frequency + delta/2 > s->m_frequency
-        && m_frequency - delta/2 < s->m_frequency)
-    {    
+    if (   m_frequency + delta/4 > s->m_frequency
+        && m_frequency - delta/4 < s->m_frequency)
+    {
 		return 0;
 	} else {
 		return (m_frequency > s->m_frequency) ? 1 : -1;

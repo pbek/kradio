@@ -15,8 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #include "timecontrol.h"
+#include "timecontrol-configuration.h"
+#include "pluginmanager.h"
 
 //const char *AlarmListElement            = "alarmlist";
 //const char *AlarmElement                = "alarm";
@@ -63,7 +64,10 @@ bool TimeControl::setAlarms (const AlarmVector &al)
 
 bool TimeControl::setCountdownSeconds(int n)
 {
-	m_countdownSeconds = n;	
+	int old = m_countdownSeconds;
+	m_countdownSeconds = n;
+	if (old != n)
+		notifyCountdownSecondsChanged(n);
 	return true;
 }
 
@@ -218,20 +222,22 @@ void    TimeControl::saveState    (KConfig *config) const
 		config->writeEntry (AlarmDailyElement     + num, i->isDaily());
 		config->writeEntry (AlarmVolumeElement    + num, i->getVolumePreset());
 		config->writeEntry (AlarmStationIDElement + num, i->getStationID());
-		config->deleteEntry(AlarmStationIDElement + num);
 	}
 
 	config->writeEntry("countdownSeconds",  m_countdownSeconds);
 }
 
 
-void TimeControl::createConfigurationPage()
+ConfigPageInfo TimeControl::createConfigurationPage()
 {
-	// FIXME
+    TimeControlConfiguration *conf = new TimeControlConfiguration(NULL);
+    connect(conf);
+    return ConfigPageInfo (conf, i18n("Alarms"), i18n("Setup Alarms"), "kalarm");
 }
 
 
-void TimeControl::createAboutPage()
+QWidget *TimeControl::createAboutPage()
 {
 	// FIXME
+	return NULL;
 }

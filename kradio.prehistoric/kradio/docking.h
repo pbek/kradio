@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #ifndef KRADIO_DOCKING_H
-#define KRADIO_DOCKING_H_
+#define KRADIO_DOCKING_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -28,13 +28,15 @@
 #include "timecontrol_interfaces.h"
 #include "radio_interfaces.h"
 #include "radiodevicepool_interface.h"
+#include "stationselection_interfaces.h"
 #include "plugins.h"
 
 class RadioDocking : public KSystemTray,
                      public PluginBase,
                      public IRadioClient,
                      public ITimeControlClient,
-                     public IRadioDevicePoolClient
+                     public IRadioDevicePoolClient,
+                     public IStationSelection
 {
 Q_OBJECT
 public:
@@ -47,19 +49,31 @@ public:
 	virtual const QString &name() const { return PluginBase::name(); }
 	virtual       QString &name()       { return PluginBase::name(); }
 
+
 	// PluginBase
 
 public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   createConfigurationPage();
-	virtual void   createAboutPage();
+	virtual ConfigPageInfo  createConfigurationPage();
+	virtual QWidget        *createAboutPage();
+    
 
+	// IStationSelection
+
+RECEIVERS:
+    bool setStationSelection(const QStringList &sl);
+
+ANSWERS:
+    const QStringList & getStationSelection () const { return m_stationIDs; }
+
+	
 	// IRadioDevicePoolClient
 
 RECEIVERS:
 	bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
+	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
 
 	// ITimeControlClient
 
@@ -70,6 +84,7 @@ RECEIVERS:
     bool noticeCountdownStarted(const QDateTime &/*end*/);
     bool noticeCountdownStopped();
     bool noticeCountdownZero();
+    bool noticeCountdownSecondsChanged(int n);
 
 
 	// IRadioClient

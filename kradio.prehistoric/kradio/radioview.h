@@ -64,6 +64,7 @@ RECEIVERS:
 
 RECEIVERS:
 	bool noticeActiveDeviceChanged(IRadioDevice *rd);
+	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
 
 	// PluginBase
 
@@ -76,8 +77,8 @@ public:
 
 	virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
 	
-	virtual void   createConfigurationPage();
-	virtual void   createAboutPage();
+	virtual ConfigPageInfo  createConfigurationPage();
+	virtual QWidget        *createAboutPage();
 
 
 /* Ideas for the seeker:

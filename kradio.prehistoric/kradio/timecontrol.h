@@ -52,14 +52,17 @@ public:
 	virtual const QString &name() const { return PluginBase::name(); }
 	virtual       QString &name()       { return PluginBase::name(); }
 
+	virtual bool   connect (Interface *i)    { return ITimeControl::connect(i); }
+	virtual bool   disconnect (Interface *i) { return ITimeControl::disconnect(i); }
+
 	// PluginBase
 
 public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   createConfigurationPage();
-	virtual void   createAboutPage();
+	virtual ConfigPageInfo  createConfigurationPage();
+	virtual QWidget        *createAboutPage();
 
 
     // ITimeControl Interface methods

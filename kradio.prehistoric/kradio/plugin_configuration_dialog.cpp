@@ -40,13 +40,15 @@ void   PluginConfigurationDialog::restoreState (KConfig *)
 }
 
 
-void PluginConfigurationDialog::createConfigurationPage()
+ConfigPageInfo PluginConfigurationDialog::createConfigurationPage()
 {
+	return ConfigPageInfo();
 }
 
 
-void PluginConfigurationDialog::createAboutPage()
+QWidget *PluginConfigurationDialog::createAboutPage()
 {
+	return NULL;
 }
 
 

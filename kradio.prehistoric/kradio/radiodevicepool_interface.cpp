@@ -24,6 +24,8 @@
 
 IF_IMPL_SENDER  (  IRadioDevicePool::notifyActiveDeviceChanged(IRadioDevice *rd),
                    noticeActiveDeviceChanged(rd)      )
+IF_IMPL_SENDER  (  IRadioDevicePool::notifyDevicesChanged(const QPtrList<IRadioDevice> &l),
+                   noticeDevicesChanged(l)            )
 
 // IRadioDevicePoolClient
 
@@ -44,11 +46,13 @@ IF_IMPL_QUERY   (  const QPtrList<IRadioDevice> &IRadioDevicePoolClient::queryDe
 void IRadioDevicePoolClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeActiveDeviceChanged(queryActiveDevice());
+	noticeDevicesChanged(queryDevices());
 }
 
 void IRadioDevicePoolClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeActiveDeviceChanged(queryActiveDevice());
+	noticeDevicesChanged(queryDevices());
 }
 
 

@@ -56,8 +56,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   createConfigurationPage();
-	virtual void   createAboutPage();
+	virtual ConfigPageInfo  createConfigurationPage();
+	virtual QWidget        *createAboutPage();
 
 	// IRadioClient methods
 
@@ -76,11 +76,13 @@ RECEIVERS:
 	bool noticeCountdownStarted(const QDateTime &/*end*/) { return false; }
 	bool noticeCountdownStopped()                      { return false; }
 	bool noticeCountdownZero()                         { return false; }
+    bool noticeCountdownSecondsChanged(int /*n*/)      { return false; }
 
     // IRadioDevicePoolClient
 
 RECEIVERS:
 	bool noticeActiveDeviceChanged(IRadioDevice *)     { return false; }
+	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
 
 	
 protected:

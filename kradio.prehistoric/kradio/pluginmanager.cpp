@@ -18,7 +18,12 @@
 #include "plugins.h"
 #include "pluginmanager.h"
 #include "plugin_configuration_dialog.h"
+
 #include <kdebug.h>
+#include <kiconloader.h>
+
+#include <qlayout.h>
+#include <qframe.h>
 
 PluginManager::PluginManager(const QString &configDialogTitle)
  : m_configDialog (NULL)
@@ -36,6 +41,7 @@ PluginManager::~PluginManager()
 	// deleted, because m_configPages is out of date.
 	delete m_configDialog;
 	m_configPages.clear();
+	m_configPageFrames.clear();
 	m_configDialog = NULL;
 
 	while (PluginBase *p = m_plugins.getFirst()) {
@@ -57,8 +63,10 @@ void PluginManager::insertPlugin(PluginBase *p)
 	if (p) {
 		m_plugins.append(p);
 		p->setManager(this);
-		p->createConfigurationPage();
+		
+		addConfigurationPage (p, p->createConfigurationPage());
 
+		// connect plugins with each other
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
 			if (it.current() != p) {
 /*				bool r = */
@@ -69,6 +77,14 @@ void PluginManager::insertPlugin(PluginBase *p)
 				          << (r ? "ok" : "failed") << endl;
 */
 			}
+		}
+
+		// perhaps some existing config pages will profit from new plugin
+		// example: timecontrol profits from radio plugin
+		for (QWidgetDictIterator it(m_configPages); it.current(); ++it) {
+			Interface *i = dynamic_cast<Interface *>(it.current());
+			if (i)
+				i->connect(p);
 		}
 	}
 }
@@ -100,9 +116,10 @@ void PluginManager::removePlugin(PluginBase *p)
 		// remove config page from config dialog, only chance is to delete it
 		// plugin will be notified automatically (mechanism implemented by
 		// PluginBase)
-		while (QFrame *f = m_configPages.find(p)) {
+		while (QFrame *f = m_configPageFrames.find(p)) {
+			m_configPageFrames.remove(p);
 			m_configPages.remove(p);
-			delete f;			
+			delete f;
 		}
 		
 		// remove bindings between me and plugin
@@ -112,27 +129,45 @@ void PluginManager::removePlugin(PluginBase *p)
 }
 
 
-QFrame *PluginManager::addConfigurationPage (PluginBase *forWhom,
-                                             const QString &itemname,
-                                             const QString &header,
-                                             const QPixmap &icon)
+void PluginManager::addConfigurationPage (PluginBase *forWhom,
+										  const ConfigPageInfo &info)
 {
-	if (!forWhom || !m_plugins.containsRef(forWhom) || !m_configDialog)
-		return NULL;
-		
-	QFrame *f = m_configDialog->addPage( itemname, header, icon );
-	m_configPages.insert(forWhom, f);
-	return f;
-}
+	if (   !forWhom || !m_plugins.containsRef(forWhom)
+	    || !m_configDialog || !info.configPage)
+		return;
 
+	// create empty config frame
+	QFrame *f = m_configDialog->addPage(
+	  info.itemName,
+	  info.pageHeader,
+      KGlobal::instance()->iconLoader()->loadIcon( info.iconName, KIcon::NoGroup, KIcon::SizeMedium )
+    );
 
-void PluginManager::connectWithConfigDialog(QObject *o)
-{
-	if (m_configDialog) {
-		QObject::connect(m_configDialog, SIGNAL(okClicked()),     o, SLOT(slotOk()));
-		QObject::connect(m_configDialog, SIGNAL(applyClicked()),  o, SLOT(slotOk()));
-		QObject::connect(m_configDialog, SIGNAL(cancelClicked()), o, SLOT(slotCancel()));
-	}
+    // register this frame and config page
+	m_configPageFrames.insert(forWhom, f);
+	m_configPages.insert(forWhom, info.configPage);
+
+	// fill config frame with layout ...
+    QGridLayout *l = new QGridLayout(f);
+    l->setSpacing( 0 );
+    l->setMargin( 0 );
+
+    // ... and externally created config page
+    info.configPage->reparent (f, QPoint(0,0), true);
+    l->addWidget( info.configPage, 0, 0 );
+
+	// perhaps new config page profits from existing plugins
+	// example: timecontrol profits from radio plugin
+    Interface *i = dynamic_cast<Interface *>(info.configPage);
+    if (i) {
+		for (PluginIterator it(m_plugins); it.current(); ++it)
+			i->connect(it.current());
+    }
+
+    // make sure, that config page receives ok, apply and cancel signals
+	QObject::connect(m_configDialog, SIGNAL(okClicked()),     info.configPage, SLOT(slotOk()));
+	QObject::connect(m_configDialog, SIGNAL(applyClicked()),  info.configPage, SLOT(slotOk()));
+	QObject::connect(m_configDialog, SIGNAL(cancelClicked()), info.configPage, SLOT(slotCancel()));
 }
 
 
@@ -156,7 +191,8 @@ void PluginManager::createConfigDialog(const QString &title)
 	// add an own page for plugin management
 
 	for (PluginIterator i(m_plugins); m_configDialog && i.current(); ++i) {
-		i.current()->createConfigurationPage();
+		addConfigurationPage(i.current(),
+		                     i.current()->createConfigurationPage());
 	}
 }
 

@@ -56,8 +56,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual void   createConfigurationPage();
-	virtual void   createAboutPage();
+	virtual ConfigPageInfo  createConfigurationPage();
+	virtual QWidget        *createAboutPage();
 
 	// IRadioDevice methods
 
@@ -94,15 +94,18 @@ ANSWERS:
     // ISeekRadio
 	
 RECEIVERS:
+	virtual bool toBeginning();
+	virtual bool toEnd();
 	virtual bool startSeek (bool up);
 	virtual bool startSeekUp();
 	virtual bool startSeekDown();
 	virtual bool stopSeek();
 
 ANSWERS:
-	virtual bool isSeekRunning() const;
-	virtual bool isSeekUpRunning() const;
-	virtual bool isSeekDownRunning() const;
+	virtual bool  isSeekRunning() const;
+	virtual bool  isSeekUpRunning() const;
+	virtual bool  isSeekDownRunning() const;
+	virtual float getProgress () const;
 
 
     // IFrequencyRadio

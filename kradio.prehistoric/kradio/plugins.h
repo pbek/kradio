@@ -53,6 +53,26 @@ class KConfig;
 
 class WidgetPluginBase;
 
+struct ConfigPageInfo
+{
+	ConfigPageInfo () : configPage(NULL) {}
+	ConfigPageInfo (QWidget *cp,
+	                const QString &in,
+	                const QString &ph,
+	                const QString &icon)
+	  : configPage (cp),
+	    itemName(in),
+	    pageHeader(ph),
+	    iconName(icon)
+	{}
+
+	QWidget  *configPage;
+	QString   itemName,
+			  pageHeader,
+			  iconName;
+};
+
+
 class PluginBase : virtual public Interface
 {
 friend class PluginManager;
@@ -76,8 +96,8 @@ public:
 	// they will be deleted automatically when this plugin
 	// is deleted, because we disconnect from pluginmanager
 	// and the plugin manager will delete all associated gui elements
-	virtual void createConfigurationPage () = 0;	
-	virtual void createAboutPage () = 0;
+	virtual ConfigPageInfo createConfigurationPage () = 0;	
+	virtual QWidget *createAboutPage () = 0;
 
 	// save/restore status, window position, etc...
 

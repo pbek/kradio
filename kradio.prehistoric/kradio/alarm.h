@@ -41,7 +41,7 @@ protected:
 
 public:
 	Alarm();
-	Alarm(QDateTime time, bool daily, bool enabled);
+	Alarm(const QDateTime &time, bool daily, bool enabled);
 	Alarm(const Alarm &);
 	~Alarm();
 	

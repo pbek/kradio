@@ -26,6 +26,7 @@
 #include "stationlist.h"
 #include "radiostation.h"
 #include "radiodevice_interfaces.h"
+#include "docking-configuration.h"
 
 RadioDocking::RadioDocking(const QString &name)
   : KSystemTray (NULL, name),
@@ -50,12 +51,13 @@ bool RadioDocking::connect (Interface *i)
 	bool a = IRadioClient::connect(i);
 	bool b = ITimeControlClient::connect(i);
 	bool c = IRadioDevicePoolClient::connect(i);
+	bool d = IStationSelection::connect(i);
 /*
     if (a) kdDebug() << "V4LRadio: IRadioClient connected\n";
     if (b) kdDebug() << "V4LRadio: ITimeControlClient connected\n";
     if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient connected\n";
 */
-	return a || b || c;
+	return a || b || c || d;
 }
 
 
@@ -64,12 +66,22 @@ bool RadioDocking::disconnect (Interface *i)
 	bool a = IRadioClient::disconnect(i);
 	bool b = ITimeControlClient::disconnect(i);
 	bool c = IRadioDevicePoolClient::disconnect(i);
+	bool d = IStationSelection::disconnect(i);
 /*
     if (a) kdDebug() << "V4LRadio: IRadioClientClient disconnected\n";
     if (b) kdDebug() << "V4LRadio: ITimeControlClient disconnected\n";
     if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient disconnected\n";
 */
-	return a || b || c;
+	return a || b || c || d;
+}
+
+
+bool RadioDocking::setStationSelection(const QStringList &sl)
+{
+	m_stationIDs = sl;
+	buildContextMenu();
+	notifyStationSelectionChanged(m_stationIDs);
+	return true;
 }
 
 
@@ -87,6 +99,7 @@ void   RadioDocking::restoreState (KConfig *config)
 	}
 	
 	buildContextMenu();
+	notifyStationSelectionChanged(m_stationIDs);
 }
 
 
@@ -102,14 +115,22 @@ void RadioDocking::saveState (KConfig *config) const
 }
 
 
-void RadioDocking::createConfigurationPage()
+ConfigPageInfo RadioDocking::createConfigurationPage()
 {
-	// FIXME
+	DockingConfiguration *conf = new DockingConfiguration(NULL);
+	connect (conf);
+	return ConfigPageInfo(
+		conf,
+		"Docking Menu",
+		"Docking Menu Configuration",
+		"kmenuedit"
+	);
 }
 
-void RadioDocking::createAboutPage()
+QWidget *RadioDocking::createAboutPage()
 {
 	// FIXME
+	return NULL;
 }
 
 
@@ -265,6 +286,12 @@ bool RadioDocking::noticePowerChanged(bool on)
   	m_menu->changeItem(m_powerID, on ? i18n("Power Off") : i18n("Power On"));
 	return true;
 }
+
+bool RadioDocking::noticeCountdownSecondsChanged(int /*n*/)
+{
+	return false;
+}
+
 
 
 bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)

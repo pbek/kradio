@@ -37,8 +37,8 @@ public:
 
 protected :
 
-	virtual void createConfigurationPage();
-	virtual void createAboutPage();
+	virtual ConfigPageInfo  createConfigurationPage();
+	virtual QWidget        *createAboutPage();
 
 	// WidgetPluginBase
 
