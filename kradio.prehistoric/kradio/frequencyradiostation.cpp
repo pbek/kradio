@@ -17,6 +17,7 @@
 
 #include "frequencyradiostation.h"
 #include <typeinfo>
+#include "radiostation-config.h"
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -164,5 +165,11 @@ QStringList FrequencyRadioStation::getPropertyNames() const
 	QStringList l = RadioStation::getPropertyNames();
 	l.push_back(StationFrequencyElement);
 	return l;
+}
+
+
+RadioStationConfig *FrequencyRadioStation::createEditor() const
+{
+	return new FrequencyRadioStationConfig(NULL);
 }
 

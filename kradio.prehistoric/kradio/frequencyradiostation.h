@@ -35,7 +35,6 @@
 // Kopenhagener Wellenplan:   9kHz
 #define STATION_FREQ_INTERVAL_AM   0.009
 
-
 class FrequencyRadioStation : public RadioStation  {
 public:
 	FrequencyRadioStation ();
@@ -61,6 +60,8 @@ public:
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;
 
+    virtual RadioStationConfig *createEditor() const;
+    
 	// for XML-Parsing/Export
 	virtual bool setProperty(const QString &property_name, const QString &val);
 	virtual QString getProperty(const QString &property_name) const;

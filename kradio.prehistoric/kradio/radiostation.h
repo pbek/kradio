@@ -62,6 +62,8 @@ extern struct RegisterStationClass {} registerStationClass;
 
 /////////////////////////////////////////////////////////////////////////////
 
+class RadioStationConfig;
+
 class RadioStation
 {
 protected:
@@ -111,6 +113,8 @@ public:
 
 	void generateNewStationID();
 
+	virtual RadioStationConfig *createEditor() const = 0;
+
 protected :
 	QString  m_stationID;
 
@@ -140,6 +144,7 @@ public:
 	virtual int           compare(const RadioStation &s) const;
 
 	virtual QString       getClassName() const { return "UndefinedRadioStation"; }
+	virtual RadioStationConfig *createEditor() const;
 };
 
 

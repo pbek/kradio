@@ -22,12 +22,15 @@
 #include <config.h>
 #endif
 
+#include <qdict.h>
+
 #include "radio_interfaces.h"
 #include "radio-configuration-ui.h"
 #include "stationlist.h"
 #include "radiodevicepool_interface.h"
 
 class QPopupMenu;
+class RadioStationConfig;
 
 class RadioConfiguration : public RadioConfigurationUI,
 						   public IRadioClient,
@@ -59,6 +62,7 @@ protected slots:
 	void slotStationSelectionChanged(int idx);
 	void slotNewStation();
 	void slotDeleteStation();
+	void slotStationEditorChanged(RadioStationConfig *c);
 	void slotStationNameChanged( const QString & s);
 	void slotStationShortNameChanged( const QString & sn);
 	void slotPixmapChanged( const QString &s );
@@ -80,11 +84,14 @@ protected slots:
 
 protected:
 
-	StationList           m_stations;
-    bool                  ignoreChanges;
+	StationList                 m_stations;
+    bool                        ignoreChanges;
     
-    QPopupMenu            *devicePopup;
-    QPtrList<IRadioDevice> devices;
+    QPopupMenu                 *devicePopup;
+    QPtrList<IRadioDevice>      devices;
+
+    QDict<RadioStationConfig>   stationEditors;
+
 };
 
 #endif

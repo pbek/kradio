@@ -21,6 +21,7 @@
 #include "plugins.h"
 #include "radiodevice_interfaces.h"
 #include "standardscandialog.h"
+#include "radiostation-config.h"
 
 #include <qlistbox.h>
 #include <klistbox.h>
@@ -31,6 +32,7 @@
 #include <qpushbutton.h>
 #include <qpopupmenu.h>
 #include <qtoolbutton.h>
+#include <qwidgetstack.h>
 
 #include <kfiledialog.h>
 #include <kstandarddirs.h>
@@ -77,6 +79,7 @@ RadioConfiguration::RadioConfiguration (QWidget *parent)
 
 	QObject::connect(buttonSearchStations, SIGNAL(clicked()),
 					 this, SLOT(slotSearchStations0()));
+
 }
 
 
@@ -160,8 +163,6 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
 		s = &m_stations.at(idx);
     }
 
-	editFrequency         ->setDisabled(!s);
-	labelFrequency        ->setDisabled(!s);
 	editStationName       ->setDisabled(!s);
 	labelStationName      ->setDisabled(!s);
 	editPixmapFile        ->setDisabled(!s);
@@ -179,15 +180,34 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
     if (ignoreChanges) return;
     ignoreChanges = true;
     
-//	editFrequency->setValue(s ? (int)round(s->getFrequency()*1000.0) : 0);
 	editStationName       ->setText  (s ? s->name() : QString::null);
 	editStationShortName  ->setText  (s ? s->shortName() : QString::null);
 	editPixmapFile        ->setText  (s ? s->iconName() : QString::null);
 	editVolumePreset      ->setValue (s ? (int)round(s->initialVolume()*100) : -1);
 	pixmapStation         ->setPixmap(s ? QPixmap(s->iconName()) : QPixmap());
 
+	stackStationEdit->setDisabled(!s);
+	if (s) {
+		RadioStationConfig *c = stationEditors.find(s->getClassName());
+        if (!c) {
+			c = s->createEditor();
+			if (c) {
+				c->reparent(this, QPoint(0,0), true);
+				QObject::connect(c, SIGNAL(changed(RadioStationConfig*)),
+			                     this, SLOT(slotStationEditorChanged(RadioStationConfig*)));
+			    stationEditors.insert(s->getClassName(), c);
+			    stackStationEdit->addWidget(c);
+			}
+        }
+        if (c) {
+			c->setStationData(*s);
+			stackStationEdit->raiseWidget(c);			
+		}		
+	}
+
     ignoreChanges = false;
 }
+
 
 void RadioConfiguration::slotNewStation()
 {
@@ -215,6 +235,20 @@ void RadioConfiguration::slotDeleteStation()
     }
 }
 
+void RadioConfiguration::slotStationEditorChanged(RadioStationConfig *c)
+{
+	if (!c) return;
+	if (ignoreChanges) return;
+	
+    int idx = listStations->currentItem();
+    if (idx >= 0 && idx < m_stations.count()) {
+		RadioStation &st = m_stations.at(idx);
+		c->storeStationData(st);
+		ignoreChanges = true;
+		listStations->changeItem(st.iconName(), st.longName(), idx);
+		ignoreChanges = false;
+	}
+}
 
 
 void RadioConfiguration::slotStationNameChanged( const QString & s)

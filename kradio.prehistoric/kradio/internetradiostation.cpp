@@ -17,6 +17,7 @@
 
 #include "internetradiostation.h"
 #include <typeinfo>
+#include "radiostation-config.h"
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -140,3 +141,10 @@ QStringList InternetRadioStation::getPropertyNames() const
 	l.push_back(StationUrlElement);
 	return l;
 }
+
+
+RadioStationConfig *InternetRadioStation::createEditor() const
+{
+	return new UndefinedRadioStationConfig(NULL);
+}
+

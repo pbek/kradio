@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "radiostation.h"
-
+#include "radiostation-config.h"
 
 #include <unistd.h>
 #include <time.h>
@@ -200,4 +200,10 @@ int UndefinedRadioStation::compare(const RadioStation &_s) const
 
 	return 0;
 
+}
+
+
+RadioStationConfig *UndefinedRadioStation::createEditor() const
+{
+	return new UndefinedRadioStationConfig(NULL);
 }
