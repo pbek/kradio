@@ -1,0 +1,57 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Saskatchewan</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<station>
+			<name>CHR @ CHMX-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ CFQC-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ CFMC-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ CFMM-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ CFWF-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,642 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Wisconsin</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<station>
+			<name>Smooth Jazz @ WUWM-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Alternative @ WORT-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WSUM-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Soft AC @ WEZY-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AMERICANA @ WJMQ-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WECL-FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Smooth Jazz @ WJZI-FM</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WOZZ-FM</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WLSL-FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ WJJO-FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WQPC-FM</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WKTI-FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Active Rock @ WZOR-FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WOLX-FM</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ WLST-FM</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WGMO-FM</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ WIFC-FM</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WRIT-FM</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WMQA-FM</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WJMC-FM</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WSFQ-FM</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Hits @ WKLH-FM</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WYTE-FM</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ WWWX-FM</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WCOW-FM</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WLTQ-FM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WHDG-FM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WSRG-FM</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hot AC @ WSPT-FM</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WMGN-FM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WCQM-FM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hot AC @ WQLH-FM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WMDC-FM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ KTCO-FM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WOWN-FM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WPKR-FM</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WIZD-FM</name>
+			<shortname>37</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WGLB-FM</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WNCY-FM</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Talk @ WTLX-FM</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Urban @ WKKV-FM</name>
+			<shortname>41</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WRCO-FM</name>
+			<shortname>42</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ WIXX-FM</name>
+			<shortname>43</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ WIBA-FM</name>
+			<shortname>44</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WDEZ-FM</name>
+			<shortname>45</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Active Rock @ WLUM-FM</name>
+			<shortname>46</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WVRQ-FM</name>
+			<shortname>47</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Christian @ WNWC-FM</name>
+			<shortname>48</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WRVM-FM</name>
+			<shortname>49</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ WLZR-FM</name>
+			<shortname>50</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WOGB-FM</name>
+			<shortname>51</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WGLX-FM</name>
+			<shortname>52</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ WXSS-FM</name>
+			<shortname>53</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ WMZK-FM</name>
+			<shortname>54</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Hits @ WECB-FM</name>
+			<shortname>55</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WXER-FM</name>
+			<shortname>56</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WEXT-FM</name>
+			<shortname>57</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WKQH-FM</name>
+			<shortname>58</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Eighties @ WBZU-FM</name>
+			<shortname>59</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WRLO-FM</name>
+			<shortname>60</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AAA @ WMMM-FM</name>
+			<shortname>61</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ WAPL-FM</name>
+			<shortname>62</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WEGZ-FM</name>
+			<shortname>63</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WMIL-FM</name>
+			<shortname>64</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WATQ-FM</name>
+			<shortname>65</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rhythmic Oldies @ WMJR-FM</name>
+			<shortname>66</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hot AC @ KFIZ-FM</name>
+			<shortname>67</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WCCN-FM</name>
+			<shortname>68</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hot AC @ KUSZ-FM</name>
+			<shortname>69</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WYCO-FM</name>
+			<shortname>70</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

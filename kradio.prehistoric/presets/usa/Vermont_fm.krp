@@ -1,0 +1,282 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Vermont</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<station>
+			<name>Alternative @ WWPV-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Alternative @ WRUV-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Alternative @ WGDR-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Alternative @ WIUV-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Alternative @ WWLR-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WMOO-FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock @ WKVT-FM</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Modern AC @ WXAL-FM</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WLVB-FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ WHGC-FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WJAN-FM</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ WXXX-FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AAA @ WDOT-FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>CHR @ WZRT-FM</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WGMT-FM</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WJJR-FM</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WOKO-FM</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Alternative @ WBTZ-FM</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WWFY-FM</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WYKR-FM</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classical @ WCVT-FM</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WCVR-FM</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WLKC-FM</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AAA @ WNCS-FM</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WKOL-FM</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AAA @ WEBK-FM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WKXH-FM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rock @ WIZN-FM</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hot AC @ WORK-FM</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NPR @ WVPS-FM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

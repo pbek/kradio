@@ -1,0 +1,111 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>New Jersey</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<station>
+			<name>Sports @ WPHY-AM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.92</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Urban @ WIMG-AM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WADB-AM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.31</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WNJC-AM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.36</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WOND-AM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WHTG-AM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.41</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WMVB-AM</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.44</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WKXW-AM</name>
+			<shortname>37</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WGHT-AM</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Spanish @ WWRU-AM</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.66</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WTTM-AM</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.68</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,498 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Ohio</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<station>
+			<name>Full Service @ WKRC-AM</name>
+			<shortname>85</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.55</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Talk @ WKBN-AM</name>
+			<shortname>86</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.57</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WSOM-AM</name>
+			<shortname>87</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WTVN-AM</name>
+			<shortname>88</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.61</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WHLO-AM</name>
+			<shortname>89</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.64</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WXIC-AM</name>
+			<shortname>90</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.66</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Full Service @ WLW-AM</name>
+			<shortname>91</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WNOP-AM</name>
+			<shortname>92</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.74</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WPIC-AM</name>
+			<shortname>93</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.79</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WKTX-AM</name>
+			<shortname>94</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.83</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports @ WKNR-AM</name>
+			<shortname>95</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.85</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WRFD-AM</name>
+			<shortname>96</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.88</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports/News @ WCER-AM</name>
+			<shortname>97</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WMNI-AM</name>
+			<shortname>98</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.92</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Urban @ WLJM-AM</name>
+			<shortname>99</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.94</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WFUN-AM</name>
+			<shortname>100</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.97</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WONE-AM</name>
+			<shortname>101</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.98</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WTIG-AM</name>
+			<shortname>102</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>0.99</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Christian @ WCCD-AM</name>
+			<shortname>103</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WIOI-AM</name>
+			<shortname>104</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.01</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WTSJ-AM</name>
+			<shortname>105</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WTAM-AM</name>
+			<shortname>106</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WGNZ-AM</name>
+			<shortname>107</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.11</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WIMA-AM</name>
+			<shortname>108</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports @ WBOB-AM</name>
+			<shortname>109</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.16</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports/Talk @ WZNW-AM</name>
+			<shortname>110</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.23</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WHIZ-AM</name>
+			<shortname>111</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.24</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WNXT-AM</name>
+			<shortname>112</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.26</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WHIO-AM</name>
+			<shortname>113</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.29</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WDPN-AM</name>
+			<shortname>114</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.31</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious @ WCVG-AM</name>
+			<shortname>115</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.32</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Talk @ WASN-AM</name>
+			<shortname>116</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.33</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WSTV-AM</name>
+			<shortname>117</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.34</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WCSM-AM</name>
+			<shortname>118</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WCKY-AM</name>
+			<shortname>119</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.36</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WDLW-AM</name>
+			<shortname>120</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.38</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WNIO-AM</name>
+			<shortname>121</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.39</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WPAY-AM</name>
+			<shortname>122</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports/News @ WING-AM</name>
+			<shortname>123</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.41</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WRMR-AM</name>
+			<shortname>124</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.42</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Full Service @ WFOB-AM</name>
+			<shortname>125</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.43</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports/News @ WMOH-AM</name>
+			<shortname>126</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports/Talk @ WBNS-AM</name>
+			<shortname>127</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.46</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports/Talk @ WLQR-AM</name>
+			<shortname>128</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.47</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WCIN-AM</name>
+			<shortname>129</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.48</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AC @ WBEX-AM</name>
+			<shortname>130</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.49</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country @ WBZI-AM</name>
+			<shortname>131</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WVAC-AM</name>
+			<shortname>132</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.51</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies @ WSAI-AM</name>
+			<shortname>133</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.53</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WBCO-AM</name>
+			<shortname>134</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.54</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports @ WATJ-AM</name>
+			<shortname>135</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.56</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sports/News @ WANR-AM</name>
+			<shortname>136</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.57</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nostalgia @ WAKR-AM</name>
+			<shortname>137</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.59</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>News/Talk @ WBLY-AM</name>
+			<shortname>138</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>1.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
