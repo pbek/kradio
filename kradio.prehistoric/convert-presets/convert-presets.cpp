@@ -60,6 +60,7 @@ bool convertFile(const QString &file)
     // make sure that qtextstream is gone when we close presetFile
     {
         QTextStream ins(&presetFile);
+        ins.setEncoding(QTextStream::Locale);
         xmlData = ins.read();
     }
 	

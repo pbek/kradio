@@ -71,3 +71,8 @@ else
 
 fi
 
+dnl ---------------------------------------------------------------------
+dnl LibSndFile
+
+AC_CHECK_LIB(sndfile, sf_open, [], AC_MSG_ERROR([libsndfile library not found]))
+AC_CHECK_HEADERS([sndfile.h], [], AC_MSG_ERROR([libsndfile header not found]))
