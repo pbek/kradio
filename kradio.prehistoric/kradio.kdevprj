@@ -24,12 +24,12 @@ ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE)
 ldflags=
 
 [General]
-AMChanged=true
+AMChanged=false
 author=Martin Witte / Frank Schwanz
 configure_args=--prefix=/usr --sysconfdir=/etc/kde2
 email=witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
 kdevprj_version=1.3
-lfv_open_groups=Andere,Header,Quellen
+lfv_open_groups=
 make_options=\s-j1
 makefiles=Makefile.am,kradio/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true

@@ -120,9 +120,9 @@ void V4LRadio::PowerOn ()
 void V4LRadio::PowerOff () {
 	if (!isPowerOn())
 		return;
-	RadioBase::PowerOff();
 	mute ();
 	radio_done();
+	RadioBase::PowerOff();
 }
 
 
@@ -194,7 +194,7 @@ float V4LRadio::maxFrequency() const
 
 void V4LRadio::_setFrequency(float freq)
 {
-  	if (radio_fd != 0) {  	
+  	if (radio_fd != 0) {
   		bool oldMute = isMuted();
   		if (!oldMute) mute();
   		
