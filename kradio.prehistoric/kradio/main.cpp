@@ -20,7 +20,7 @@
 #include <klocale.h>
 #include <kwin.h>
 
-#include "kradio.h"
+#include "kradioapp.h"
 
 static const char *description =
 	I18N_NOOP("KRadio");
@@ -44,15 +44,7 @@ int main(int argc, char *argv[])
 	KCmdLineArgs::init( argc, argv, &aboutData );
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-	KApplication a;
-	KRadio *kradio = new KRadio();
-	// we do not set kradio as the main widget, because the application would be quit
-	// on close, which is wrong considering the tray Icon
+	KRadioApp a;
 
-	kradio->show();
-	kradio->readXOptions();
-	int ret = a.exec();
-	if (kradio)
-		delete kradio;
-	return ret;
+	return a.exec();
 }
