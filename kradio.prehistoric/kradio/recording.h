@@ -23,6 +23,8 @@
 #endif
 
 
+#include <sndfile.h>
+
 #include <qobject.h>
 #include <qstring.h>
 
@@ -32,9 +34,9 @@
 #include "timecontrol_interfaces.h"
 #include "radio_interfaces.h"
 
-class RecordingThread;
 class RadioStation;
 class StationList;
+class QSocketNotifier;
 
 class Recording : public QObject,
                   public PluginBase,
@@ -82,21 +84,35 @@ ANSWERS:
 	bool noticeCountdownZero()                            { return false; }
 	bool noticeCountdownSecondsChanged(int /*n*/)         { return false; }
 
-
 // IRadioClient
+
 	bool noticePowerChanged(bool on);
 	bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
 	bool noticeStationsChanged(const StationList &)              { return false; }
 
-	
+
+
+protected slots:
+
+	void slotSoundDataAvailable();
+
 protected:
 
-	void customEvent(QCustomEvent *e);	
+	bool openDevice();
+	void closeDevice();
+
+	bool openOutput();
+	void closeOutput();
 
 protected:
-	RecordingThread *m_recordingThread;
-	RecordingConfig  m_config;
-	RecordingContext m_context;
+	int               m_devfd;
+	char             *m_buffer;
+	int               m_bufferSize;
+	SNDFILE          *m_output;
+
+	RecordingConfig   m_config;
+	RecordingContext  m_context;
+	QSocketNotifier  *m_notifier;
 };
 
 

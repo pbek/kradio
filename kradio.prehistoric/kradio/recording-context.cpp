@@ -220,76 +220,182 @@ void RecordingConfig::checkFormatSettings()
 }
 
 
+int RecordingConfig::sampleSize() const
+{
+	if (bits <= 8)  return 1;
+	if (bits <= 16) return 2;
+	if (bits <= 32) return 4;
+
+	// unknown
+	return -1;
+}
+
+
+int RecordingConfig::frameSize() const
+{
+	return sampleSize() * channels;
+}
+
+
+int RecordingConfig::minValue() const
+{
+    if (!sign) return 0;
+	return -(1 << (bits-1));
+}
+
+
+int RecordingConfig::maxValue() const
+{
+	return (1 << (bits-sign)) - 1;
+}
+
+
 ///////////////////////////////////////////////////////////////////////
 
+
 RecordingContext::RecordingContext()
- : valid(false),
-   running(false),
-   error(false),
-   outputFile(QString::null),
-   size_low(0),
-   size_high(0),
-   seconds(0),
-   subSecondSamples(0)
+ : m_state(rsInvalid),
+   m_config(),
+   m_buffer(NULL),
+   m_bufValidElements(0),
+   m_bufAvailElements(0),
+   m_outputFile(QString::null),
+   m_size_low(0),
+   m_size_high(0)
 {
 }
 
 
 RecordingContext::RecordingContext(const RecordingContext &c)
- : valid(c.valid),
-   running(c.running),
-   error(c.error),
-   outputFile(c.outputFile),
-   size_low(c.size_low),
-   size_high(c.size_high),
-   seconds(c.seconds),
-   subSecondSamples(c.subSecondSamples)
+ : m_state (c.m_state),
+   m_config(c.m_config),
+   m_buffer(NULL),
+   m_bufValidElements(0),
+   m_bufAvailElements(0),
+   m_outputFile(c.m_outputFile),
+   m_size_low  (c.m_size_low),
+   m_size_high (c.m_size_high)
 {
+	resizeBuffer(c.m_bufAvailElements);
+	if (m_buffer && c.m_buffer) {
+		m_bufAvailElements = c.m_bufAvailElements;
+		for (int i = 0; i < m_bufAvailElements; ++i)
+			m_buffer[i] = c.m_buffer[i];
+	}
 }
 
 
-void RecordingContext::start(const QString &o)
+RecordingContext::~RecordingContext()
 {
-	running          = true;
-	valid            = true;
-	error            = false;
-	outputFile       = o;
-	size_low         = 0;
-    size_high        = 0;
-    seconds          = 0;
-    subSecondSamples = 0;
+	resizeBuffer(0);
+}
+
+
+void RecordingContext::startMonitor(const RecordingConfig &c)
+{
+	m_state            = rsMonitor;
+	m_config           = c;
+
+	m_outputFile       = QString::null;
+	m_size_low         = 0;
+    m_size_high        = 0;
+}
+
+
+void RecordingContext::start(const QString &o, const RecordingConfig &c)
+{
+	m_state            = rsRunning;
+	m_config           = c;
+	m_outputFile       = o;
+	m_size_low         = 0;
+    m_size_high        = 0;
 }
 
 
 void RecordingContext::stop()
 {
-	running          = false;
+	switch (m_state) {
+		case rsMonitor:
+			m_state = rsInvalid;
+			break;
+		case rsRunning:
+			m_state = rsFinished;
+			break;
+		default:  break; // do not change state
+	}
+	resizeBuffer (0);
 }
 
 
 void RecordingContext::setError()
 {
-	error            = true;
-	stop();
+	m_state = rsError;
+	resizeBuffer (0);
 }
 
 
-void RecordingContext::bufferAdded(unsigned int sizeDelta, const RecordingConfig &c)
+void RecordingContext::addInput(char *raw, unsigned int rawSize)
 {
-	if (running) {
-		int sampleSize = 1;
-		if (c.bits >  8) sampleSize = 2;
-		if (c.bits > 16) sampleSize = 4;
-		sampleSize *= c.channels;
+	if (m_state == rsRunning || m_state == rsMonitor) {
+		if (m_state == rsRunning) {
+			m_size_low += rawSize;
+			if (m_size_low < rawSize) ++m_size_high;
+		}
 
-		size_low += sizeDelta;
-		if (size_low < sizeDelta) ++size_high;
+		int sampleSize = m_config.sampleSize();
+		int samples    = rawSize / sampleSize;
 
-		unsigned int samples = sizeDelta / sampleSize;
-		subSecondSamples += samples;
-		seconds += subSecondSamples / c.rate;
-		subSecondSamples %= c.rate;
+		resizeBuffer(samples);
+
+		if (samples > m_bufAvailElements) samples = m_bufAvailElements;
+
+		// convert raw input into   int*
+		int delta = m_config.littleEndian ? -1 : 1;
+		int start = m_config.littleEndian ? sampleSize-1 : 0,
+		    end   = m_config.littleEndian ? -1 : sampleSize;
+
+        for (int i = 0; i < samples; ++i) {
+			int k   = start;
+			int val = m_config.sign ? (int)(signed char)raw[k] : (int)(unsigned char)raw[k];
+			for (k += delta; k != end; k += delta) {
+				val <<= 8;
+				val |= (unsigned char)raw[k];
+			}
+			m_buffer[i] = val;
+			raw += sampleSize;
+        }
+
+        m_bufValidElements = samples;
+
 	}
+}
+
+
+void RecordingContext::resizeBuffer(int nElements)
+{
+	if (m_bufAvailElements < nElements) {
+		if (m_buffer) delete m_buffer;
+		m_buffer = new int[nElements];
+		m_bufAvailElements = m_buffer ? nElements : 0;
+		m_bufValidElements = 0;
+	} else if (nElements == 0) {
+		if (m_buffer) delete m_buffer;
+		m_buffer = NULL;
+		m_bufValidElements = 0;
+		m_bufAvailElements = 0;
+	}
+}
+
+
+double RecordingContext::outputSize() const
+{
+	return m_size_low + 65536.0 * 65536.0 * (double)m_size_high;
+}
+
+
+double RecordingContext::outputTime() const
+{
+	return outputSize() / m_config.frameSize() / m_config.rate;
 }
 
 

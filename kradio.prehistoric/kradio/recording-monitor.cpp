@@ -147,35 +147,45 @@ bool RecordingMonitor::noticeRecordingConfigChanged(const RecordingConfig &c)
 
 bool RecordingMonitor::noticeRecordingContextChanged(const RecordingContext &c)
 {
-	if (!c.valid) {
+	switch (c.state()) {
+	case RecordingContext::rsInvalid:
 		m_labelStatus->setText(i18n("not running"));
 		m_labelTime->setText(QString::null);
 		m_labelSize->setText(QString::null);
 		m_labelFileName->setText(QString::null);
 		return true;
-	} else if (c.running) {
+	case RecordingContext::rsRunning:
 		m_labelStatus->setText(i18n("recording"));
-	} else if (c.error) {
+		break;
+	case RecordingContext::rsMonitor:
+		m_labelStatus->setText(i18n("monitoring"));
+		m_labelTime->setText(QString::null);
+		m_labelSize->setText(QString::null);
+		m_labelFileName->setText(QString::null);
+		return true;
+	case RecordingContext::rsError:
 		m_labelStatus->setText(i18n("error occurred"));
-	} else {
+		break;
+	case RecordingContext::rsFinished:
 		m_labelStatus->setText(i18n("finished"));
+		break;
 	}
 
-	m_labelFileName->setText(c.outputFile);
+	m_labelFileName->setText(c.outputFile());
 	
-	int s = c.seconds;
-	int m = s / 60;   s %= 60;
+	double s = c.outputTime();
+	int m = (int)(s / 60);   s -= 60 * m;
 	int h = m / 60;   m %= 60;
 	int d = h / 24;   h %= 24;
 	QString time;
 	if (d) {
-		time.sprintf("%dd - %02d:%02d:%02d", d, h, m, s);
+		time.sprintf("%dd - %02d:%02d:%05.2f", d, h, m, s);
 	} else {
-		time.sprintf("%02d:%02d:%02d", h, m, s);
+		time.sprintf("%02d:%02d:%05.2f", h, m, s);
 	}		
 	m_labelTime->setText(time);
 
-    double B  = c.size_low + ((double)c.size_high)*((double)(1 << 16))*((double)(1 << 16));
+    double B  = c.outputSize();
     double kB = B / 1024;
     double MB = kB / 1024;
     double GB = MB / 1024;

@@ -1,9 +1,12 @@
 0.3.0-alpha2
 
-       recording
        segfault fixes with 2.95.3
        old format detection for preset files (Locale->UTF8)
        background pixmap for display
+       sensefull names/descriptions for plugins
+       upper case in show/hide docking menu entries
+       v4l2 support (implemented, not tested)
+       recording (implemented, hardly tested)
 
 0.3.0  gui-errormessages
 
@@ -11,14 +14,8 @@
        prepare for translation: check for missing i18n
        translations?
        
-       recording plugin
-       v4l2 support (implemented, not tested)
-
-unsolved problems:
-* fix sticky behavior on "window-close/restore" (both kradio & quickbar)
-  (seems to be fixed at last)
 
 future:
 * mediacontrol applet integration
-* collect location information for cannel sets  // emw, started
+* collect location information for cannel sets  // started
 * dcop interface

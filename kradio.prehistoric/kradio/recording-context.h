@@ -56,7 +56,13 @@ public:
 	void     getSoundFileInfo(SF_INFO &info, bool input);
 
 	void     checkFormatSettings();
+	
+	int      sampleSize() const;      // size of a single sample
+	int      frameSize() const;       // sampleSize * channels
+	int      minValue() const;
+	int      maxValue() const;
 
+public:
 	int          channels;
 	int          bits;
 	bool         littleEndian;
@@ -69,24 +75,47 @@ public:
 
  
 
-struct RecordingContext
+class RecordingContext
 {
-	bool          valid;
-	bool          running;
-	bool          error;
-	QString       outputFile;
-	size_t        size_low, size_high;
-	unsigned int  seconds;
-	unsigned int  subSecondSamples;
+public:
+	enum RecordingState { rsInvalid, rsRunning, rsFinished, rsError, rsMonitor };
+	
+protected:
+	RecordingState   m_state;
+	RecordingConfig  m_config;
 
+	int             *m_buffer;
+	int              m_bufValidElements; // # of valid Elements in Buffer
+	int              m_bufAvailElements; // real BufferSize in ints
+	
+	QString          m_outputFile;
+	size_t           m_size_low,
+	                 m_size_high;
+
+public:
 	RecordingContext();
 	RecordingContext(const RecordingContext &c);
+	~RecordingContext();
 
-	void start()                      { start(outputFile); }
-	void start(const QString &o);
-	void stop();
-	void setError();
-	void bufferAdded(unsigned int deltaSize, const RecordingConfig &c);
+	void                    startMonitor(const RecordingConfig &c);
+	void                    start(const QString &o, const RecordingConfig &c);
+	void                    stop();
+	void                    setError();
+	
+    RecordingState          state() const           { return m_state;  }
+    const RecordingConfig & config() const          { return m_config; }
+    const int             * buffer() const          { return m_buffer; }
+    const int               samplesInBuffer() const { return m_bufValidElements; }
+    const int               framesInBuffer() const  { return m_bufValidElements / m_config.channels; }
+
+    const QString         & outputFile() const      { return m_outputFile; }
+    double                  outputSize() const;
+    double                  outputTime() const;
+	
+	void addInput(char *rawBuffer, unsigned int rawSize);
+	
+protected:
+	void resizeBuffer(int elements);
 };
 
 

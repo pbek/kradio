@@ -15,6 +15,7 @@
                   window is restored
                 - fixed "changes-ignored"-problem in preset-about page
                 - first recording capabilities (recording icon still missing)
+                - fixed segfault on app quit in InterfaceBase::disconnect
 
         Will Stephenson
 

@@ -160,7 +160,8 @@ bool RadioView::addElement (RadioViewElement *e)
 
 	// connect Element with device, disconnect doesn't matter (comp. removeElement)
 	// other devices follow if currentDevice changes
-	e->connect(currentDevice);
+	if (currentDevice)
+		e->connect(currentDevice);
 
 	QPtrListIterator<QObject> it(configPages);
 	for (; it.current(); ++it) {
@@ -186,7 +187,8 @@ bool RadioView::removeElement (QObject *_e)
 		// by slotElementConfigPageDeleted
 	}
 
-    e->disconnect(currentDevice);
+	if (currentDevice)
+		e->disconnect(currentDevice);
 	RadioViewClass cls = e->getClass();
 	QObject::disconnect(e,    SIGNAL(destroyed(QObject*)),
 	                    this, SLOT(removeElement(QObject*)));
@@ -265,8 +267,10 @@ bool RadioView::noticeActiveDeviceChanged(IRadioDevice *newDevice)
 	
 	for (ElementListIterator i(elements); i.current(); ++i) {
 		RadioViewElement *e = i.current();
-		e->disconnect(oldDevice);
-		e->connect(currentDevice);
+		if (oldDevice)
+			e->disconnect(oldDevice);
+		if (newDevice)
+		    e->connect(currentDevice);
 	}
 	
 	selectTopWidgets();
