@@ -516,7 +516,7 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *__i)
 		bool i_connected  = connections.containsRef(i);
 		bool me_connected = i->connections.containsRef(me);
 
-		if (i_connected && me_connected) {
+		if (i_connected || me_connected) {
 			return true;
 		} else if (isConnectionFree() && i->isConnectionFree()) {
 
@@ -562,24 +562,28 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 		kdDebug() << "this->noticeDisconnect" << endl;
 		if (me_valid)
 			noticeDisconnect(i, _i->me_valid);
+    }
+
+	if (me) {		
 		kdDebug() << "_i->noticeDisconnect" << endl;
 		if (_i->me_valid)
 			_i->noticeDisconnect(me, me_valid);
-		
-		kdDebug() << "this->removeRef(i)" << endl;
-		if (i && connections.containsRef(i))
-			connections.removeRef(i);
-		kdDebug() << "i->removeRef(me)" << endl;
-		if (me && i && i->connections.containsRef(me))
-			i->connections.removeRef(me);
-		
-		kdDebug() << "this->noticeDisconnected" << endl;
-		if (me_valid)
-			noticeDisconnected(i, _i->me_valid);
-		kdDebug() << "_i->noticeDisconnected" << endl;
-		if (_i->me_valid)
-			_i->noticeDisconnected(me, me_valid);
 	}
+		
+	kdDebug() << "this->removeRef(i)" << endl;
+	if (i && connections.containsRef(i))
+		connections.removeRef(i);
+		
+	kdDebug() << "i->removeRef(me)" << endl;
+	if (me && i && i->connections.containsRef(me))
+		i->connections.removeRef(me);
+		
+	kdDebug() << "this->noticeDisconnected" << endl;
+	if (me_valid && i)
+		noticeDisconnected(i, _i->me_valid);
+	kdDebug() << "_i->noticeDisconnected" << endl;
+	if (_i->me_valid && me)
+		_i->noticeDisconnected(me, me_valid);
 		
 	kdDebug() << "InterfaceBase::disconnect EXIT" << endl;
 	return true;
@@ -589,8 +593,9 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 template <class thisIF, class cmplIF>
 void InterfaceBase<thisIF, cmplIF>::disconnectAll()
 {
-	while (cmplIF *i = connections.getFirst()) {
-		disconnect(i);
+	while (connections.count()) {
+		cmplIF *i = connections.getFirst();
+		if (i) disconnect(i);
 	}
 }
 
