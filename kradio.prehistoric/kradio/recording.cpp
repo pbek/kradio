@@ -27,6 +27,7 @@
 #include <qregexp.h>
 
 #include <kconfig.h>
+#include <kdeversion.h>
 
 #include <sndfile.h>
 #include <sys/types.h>
@@ -145,6 +146,9 @@ AboutPageInfo Recording::createAboutPage()
 
 bool  Recording::startRecording()
 {
+    bool oldPower = queryIsPowerOn();
+    sendPowerOn();
+
     bool ok = true;
     if (m_context.state() == RecordingContext::rsRunning)
         return true;
@@ -156,12 +160,13 @@ bool  Recording::startRecording()
     ok &= openOutput(filename);
     logInfo(i18n("Recording starting"));
     if (ok) {
-        sendPowerOn();
         m_context.start(filename, m_config);
         notifyRecordingStarted();
         notifyRecordingContextChanged(m_context);
         return true;
     } else {
+        if (!oldPower)
+            sendPowerOff();
         logError(i18n("Recording stopped with error"));
         m_context.setError();
         stopRecording();
@@ -461,12 +466,17 @@ void Recording::closeOutput()
 {
     if (m_encodingThread) {
         m_encodingThread->setDone();
+#if (KDE_VERSION_MAJOR >= 3) && (KDE_VERSION_MINOR >= 1)
         if (!m_encodingThread->wait(5000)) {
             m_context.setError();
-               logError(i18n("The encoding thread did not finish. It will be killed now."));
+            logError(i18n("The encoding thread did not finish. It will be killed now."));
             m_encodingThread->terminate();
             m_encodingThread->wait();
         } else {
+#else
+            logError(i18n("Waiting for encoding thread to terminate."));
+            m_encodingThread->wait();
+#endif
             if (m_encodingThread->error()) {
                 m_context.setError();
                 logError(m_encodingThread->errorString());
@@ -531,15 +541,15 @@ void Recording::slotSoundDataAvailable()
         if (buf) {
             bytesRead = read(m_devfd, buf, bufferSize);
             if (bytesRead > 0) {
-                   m_context.addInput(buf, bytesRead, 0);
+                m_context.addInput(buf, bytesRead, 0);
                 if (skip)
                     m_skipCount += bytesRead;
             } else if (bytesRead < 0 && errno == EAGAIN) {
                 bytesRead = 0;
-               } else if (bytesRead == 0) {
-                   err = -1;
-                   logError(i18n("No data to record"));
-               } else {
+            } else if (bytesRead == 0) {
+                err = -1;
+                logError(i18n("No data to record"));
+            } else {
                 err = errno;
             }
 

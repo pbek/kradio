@@ -2,6 +2,7 @@
 
         emw     - kde 3.0 & include file fixes
                 - segfault fix that occured after station scan
+                - polish translation
                 - mp3 recording
                 - fix for recording configuration save/restore
                 - alarms configurable for weekdays
@@ -57,7 +58,7 @@
                 - recording doesn't restore monitoring state on startup,
                   kradio might be blocked if another app uses /dev/dsp
 
-               GUI
+                GUI
 
                 - store-preset-file button in station configuration page
                 - move widget geometry saving/restoring to class
