@@ -220,5 +220,3 @@ QString StationList::writeXML () const
 	return data;
 }
 
-
-

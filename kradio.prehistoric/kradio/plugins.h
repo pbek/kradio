@@ -21,6 +21,8 @@
 #define KRADIO_PLUGINS_INTERFACES_H
 
 #include "interfaces.h"
+#include <qstring.h>
+#include <qobject.h>
 
 class PluginManager;
 class KDialogBase;
@@ -28,8 +30,12 @@ class QWidget;
 class QFrame;
 class KConfig;
 
-class PluginBase : public Interface
+/////////////////////////////////////////////////////////////////////////////
+
+
+class PluginBase : public QObject, virtual public Interface
 {
+friend class PluginManager;
 public :
 	         PluginBase();
 	virtual ~PluginBase();
@@ -42,59 +48,38 @@ public :
 	virtual void disconnect (PluginBase *p) = 0;
 
 	// interaction with pluginmanager
-
+protected:
 	virtual bool setManager (PluginManager *);
 	virtual void unsetManager ();
 	virtual bool isManagerSet () const;
 
 	////////////////////////////////////
 
-	virtual QFrame *createConfigurationPage(KDialogBase *);
-	virtual QFrame *getConfigurationPage();
-	virtual QFrame *getAboutPage();
+public:
 
+	// creates QFrames with configuration or about page.
+	// they will be deleted automatically when this plugin
+	// is deleted.
+	QFrame *createConfigurationPage (KDialogBase *dlg);	
+	QFrame *createAboutPage (QWidget *parent);
 
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
-
-
-protected :
-
-    PluginManager *manager;
-    QFrame        *configurationPage;
-};
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-class PluginManager
-{
-public :
-	         PluginManager();
-	virtual ~PluginManager();
-
-
-	// managing plugins
-	
-	virtual void         insertPlugin(PluginBase *);
-	virtual void         removePlugin(PluginBase *);
-
-	// operations on all plugins
-
-	virtual KDialogBase* createSetupDialog(QWidget *parent = 0,
-		                                   const QString &title = QString(),
-		                                   bool modal = true);
-		                                   
-	virtual void         saveState (KConfig *) const;
-	virtual void         restoreState (KConfig *);
+	virtual void   saveState (KConfig *) const = 0;
+	virtual void   restoreState (KConfig *) = 0;
 
 protected :
 
-    typedef QPtrList<PluginBase>           PluginList;
-    typedef QPtrListIterator<PluginBase>   PluginIterator;
+	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg) = 0;
+	virtual QFrame *internal_createAboutPage(QWidget *parent) = 0;
 
-    PluginList   plugins;
+protected slots:	
+	void registerGuiElement   (QObject *o);
+	void unregisterGuiElement (QObject *o);
+
+protected :	
+    PluginManager     *m_manager;
+    QPtrList<QObject>  m_guiElements;
 };
+
 
 
 #endif

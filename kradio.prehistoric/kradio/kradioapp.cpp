@@ -422,48 +422,6 @@ void readXMLCfg (const QString &url,
 
 
 
-QString writeXMLCfg (const StationVector &sl,
-				     const StationListMetaData &info
-				    )
-{
-	QString data = "";
-
-	// write station list
-
-	QString t   = "\t";
-	QString tt  = "\t\t";
-	QString ttt = "\t\t\t";
-
-	data +=       xmlOpenTag(KRadioConfigElement) +
-	        t   + xmlOpenTag(StationListElement) +
-	        tt  + xmlOpenTag(StationListInfo) +
-	        ttt + xmlTag(StationListInfoMaintainer, info.Maintainer) +
-	        ttt + xmlTag(StationListInfoChanged,    info.LastChange.toString(Qt::ISODate)) +
-	        ttt + xmlTag(StationListInfoCountry,    info.Country) +
-	        ttt + xmlTag(StationListInfoCity,       info.City) +
-	        ttt + xmlTag(StationListInfoMedia,      info.Media) +
-	        ttt + xmlTag(StationListInfoComments,   info.Comment) +
-	        tt  + xmlCloseTag (StationListInfo);
-
-	for (ciStationVector i = sl.begin(); i != sl.end(); ++i) {
-		data += tt  + xmlOpenTag (StationElement) +
-				ttt + xmlTag (StationNameElement,         i->name()) +
-				ttt + xmlTag (StationShortNameElement,    i->getShortName()) +
-				ttt + xmlTag (StationIconStringElement,   i->getIconString()) +
-				ttt + xmlTag (StationQuickSelectElement,  i->useQuickSelect()) +
-				ttt + xmlTag (StationFrequencyElement,    i->getFrequency()) +
-				ttt + xmlTag (StationVolumePresetElement, i->getVolumePreset()) +
-				ttt + xmlTag (StationDockingMenuElement,  i->useInDockingMenu()) +
-				tt  + xmlCloseTag(StationElement);
-	}
-	data += t + xmlCloseTag(StationListElement) +
-			    xmlCloseTag(KRadioConfigElement);
-
-	return data;
-}
-
-
-
 void writeXMLCfg (const QString &FileName,
 				  const StationVector &sl,
 				  const StationListMetaData &info

@@ -315,8 +315,9 @@ public :
 
 protected:
 
-	virtual void noticeConnect    (cmplIF *) {}
-	virtual void noticeDisconnect (cmplIF *) {}
+	virtual void noticeConnect      (cmplIF *) {}
+	virtual void noticeDisconnect   (cmplIF *) {}
+	virtual void noticeDisconnected (cmplIF *) {}
 
 protected :
 
@@ -461,6 +462,9 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *_i)
 		
 		connections.remove (i);
 		i->connections.remove(me);
+		
+		noticeDisconnected(i);
+		i->noticeDisconnected(me);
 		
 		return true;
 	}

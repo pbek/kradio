@@ -16,26 +16,29 @@
  ***************************************************************************/
 
 #include "plugins.h"
+#include "pluginmanager.h"
+
 #include <kdialogbase.h>
 
 PluginBase::PluginBase()
+	: m_manager(NULL)
 {
-	manager = NULL;
-	configurationPage = NULL;
 }
 
 
 PluginBase::~PluginBase()
 {
-	if (manager)
-		manager->removePlugin(this);
+	while (m_guiElements.first()) {
+		delete m_guiElements.first();
+	}
+	unsetManager();
 }
 
 
 bool PluginBase::setManager (PluginManager *m)
 {
-	if (!manager && m) {
-		manager = m;
+	if (!m_manager && m) {
+		m_manager = m;
 		return true;
 	} else {
 		return false;
@@ -45,9 +48,9 @@ bool PluginBase::setManager (PluginManager *m)
 
 void PluginBase::unsetManager ()
 {
-	if (manager) {
-		PluginManager *old = manager;
-		manager = 0;
+	if (m_manager) {
+		PluginManager *old = m_manager;
+		m_manager = NULL;
 		old->removePlugin(this);
 	}
 }
@@ -55,25 +58,24 @@ void PluginBase::unsetManager ()
 
 bool PluginBase::isManagerSet () const
 {
-	return manager != NULL;
+	return m_manager != NULL;
 }
 
 
-QFrame *PluginBase::getConfigurationPage()
+QFrame *PluginBase::createConfigurationPage(KDialogBase *dlg)
 {
-	return configurationPage;
+	QFrame *f = internal_createConfigurationPage(dlg);
+	if (f)
+		registerGuiElement(f);
+	return f;
 }
 
-QFrame *PluginBase::createConfigurationPage(KDialogBase *)
+QFrame *PluginBase::createAboutPage(QWidget *parent)
 {
-	// we do not have a config page yet
-	return configurationPage = NULL;
-}
-
-QFrame *PluginBase::getAboutPage()
-{
-	// we do not have an about page yet
-	return NULL;
+	QFrame *f = internal_createAboutPage(parent);
+	if (f)
+		registerGuiElement(f);
+	return f;
 }
 
 void   PluginBase::saveState (KConfig *) const
@@ -87,72 +89,20 @@ void   PluginBase::restoreState (KConfig *)
 	// do nothing
 }
 
-
-/////////////////////////////////////////////////////////////////////////////
-
-PluginManager::PluginManager()
+void PluginBase::registerGuiElement(QObject *o)
 {
+	if (o) {
+		m_guiElements.append(o);
+		QObject::connect(o, SIGNAL(destroyed(QObject *)), this, SLOT(unregisterGuiElement(QObject *)));
+	}
 }
 
-
-PluginManager::~PluginManager()
+void PluginBase::unregisterGuiElement(QObject *o)
 {
-	PluginBase *p = NULL;
-	while ((p = plugins.getFirst())) {
-		removePlugin(p);
+	if (o) {
+		m_guiElements.removeRef(o);
 	}
 }
 
 
-void PluginManager::insertPlugin(PluginBase *p)
-{
-	if (p) {
-		plugins.append(p);
-		p->setManager(this);
-	}
-}
-
-
-void PluginManager::removePlugin(PluginBase *p)
-{
-	if (p && plugins.contains(p)) {
-		plugins.remove(p);
-		p->unsetManager();
-	}
-}
-
-
-KDialogBase *PluginManager::createSetupDialog(QWidget *parent, const QString &title, bool modal)
-{
-	KDialogBase *sud = new KDialogBase( KDialogBase::IconList,
-	                                    title,
-								    	KDialogBase::Apply|KDialogBase::Ok|KDialogBase::Cancel,
-    									KDialogBase::Ok,
-                                        parent, title, modal, true);
-
-	// FIXME:
-	// add an own page for plugin management
-
-	for (PluginIterator i(plugins); sud && i.current(); ++i) {
-		i.current()->createConfigurationPage(sud);
-	}
-
-	return sud;
-}
-
-
-void PluginManager::saveState (KConfig *c) const
-{
-	for (PluginIterator i(plugins); i.current(); ++i) {
-		i.current()->saveState(c);
-	}
-}
-
-
-void PluginManager::restoreState (KConfig *c)
-{
-	for (PluginIterator i(plugins); i.current(); ++i) {
-		i.current()->restoreState(c);
-	}
-}
 
