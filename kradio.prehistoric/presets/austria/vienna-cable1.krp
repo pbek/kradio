@@ -1,0 +1,330 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>dp (apatsche@gmx.at)</maintainer>
+			<changed>2003-05-03T19:54:30</changed>
+			<country>austria</country>
+			<city>vienna</city>
+			<media>cabel</media>
+			<comments>radio stations telekabel vienna</comments>
+		</info>
+		<station>
+			<name>Radio Stephansdom</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.6875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>OE1</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Wien</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Niedersterreich</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Burgenland</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.4375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hitradio OE3</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.8125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>FM 4</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>88,6 Der Musiksender</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Arabella</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.3125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Orange 94,0</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Krone Hit Radio</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>HR 2</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 1</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.0625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 2 Radio</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 3</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 4 Klassik</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.4375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>B5 Aktuell</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melodie</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutsche Welle</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.3125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RFI</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.4375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL Radio Oldie</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.438</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC World Service</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.812</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Energy</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.188</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschland Radio Berlin</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Maria</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Nordwest Radio</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 3 Koeln</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 2</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>DRS2</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Österreich Intern. </name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WRN EuroMax</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RNE Radio 1</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>107.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NPR Worldwide </name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>107.812</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+

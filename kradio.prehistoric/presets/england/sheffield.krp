@@ -1,0 +1,102 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>David Bellamy &lt;dbellamy@dbellamy.solis.co.uk&gt;</maintainer>
+			<changed>2935093-02-28T00:00:00</changed>
+			<country>UK</country>
+			<city>Sheffield</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>Radio Sheffield</name>
+			<shortname>Sheff</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.6014</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 2</name>
+			<shortname>BBC2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.9265</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 3</name>
+			<shortname>BBC3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.1267</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 4</name>
+			<shortname>BBC4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.2768</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic FM</name>
+			<shortname>FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.727</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 5</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.427</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 6</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.527</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 7</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.5271</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Galaxy</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.577</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Galaxy</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.627</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

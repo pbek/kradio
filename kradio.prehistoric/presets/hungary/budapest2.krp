@@ -1,0 +1,93 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Akos Putz, &lt;solyom2@westel900.net&gt;</maintainer>
+			<changed>2003-03-29T11:44:16</changed>
+			<country>Hungary</country>
+			<city>Budapest</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>Juventus radio</name>
+			<shortname>Juventus</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.4375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Petofi radio</name>
+			<shortname>Pet?fi</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.75</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Fix radio</name>
+			<shortname>Fix</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio cafe</name>
+			<shortname>Cafe</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.5625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Slager radio</name>
+			<shortname>Slager</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sztar FM</name>
+			<shortname>Sztar FM</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.062</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Danubius radio</name>
+			<shortname>Danubius</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Kossuth radio</name>
+			<shortname>Kossuth</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
