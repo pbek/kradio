@@ -2,30 +2,30 @@
 
         emw     Compilation & Compatibility
 
-	        - kde3.0 compatibility fixes
+                - kde3.0 compatibility fixes
                 - replace round -> rint
                 - correct missing video_dev forward declaration
 
-		V4L/V4L2
-	 
+                V4L/V4L2
+ 
                 - v4l2 support, usable for older and bleeding edge 
-	          releases of V4L2
+                  releases of V4L2
                 - v4l configuration improvements: device volume controls
-                  in v4l configuration page	
+                  in v4l configuration page
                 - respect device volume control min/max values
                 - fixed device-volume-set2zero-problem after mute/unmute
                   (radio cards do reset volume controls on mute)
 
-	        Recording
+                Recording
 
                 - recording
                 - select recording source and igain automatically
                 - recording monitor
                 - recording doesn't restore monitoring state on startup,
                   kradio might be blocked if another app uses /dev/dsp
-	
-		GUI
-	
+
+               GUI
+
                 - store-preset-file button in station configuration page
                 - move widget geometry saving/restoring to class
                   WidgetPluginBase
@@ -42,20 +42,24 @@
                 - symbol for station search button
                 - about dialog
 
-		Preset File Format
-	
+                Preset File Format
+
                 - encoding detection for preset files (Locale->UTF8)
                 - convert preset files to new format
                 - converter: add xml-encoding-line
 
-	        Other
+                Other
 
                 - translation preparation
-                - german translation	
+                - german translation
                 - credits in about dialog
                 - remove dependency on kalarm
                 - use special mail-adress for preset files
                 - country/city in preset file mail
+
+        Klas Kalass
+
+                - some more include file fixes
 
         Will Stephenson
 
@@ -86,14 +90,14 @@
 0.2.8   (beta)
 
         emw     - setupdialog: fix cancel button behaviour
-				- configurable scanStep for station search
-				- made frequency setting independent from device quantisation
-				- min/max Frequency config in kHz (before in MHz)
-				- display Frequency in kHz if < 10 MHz
-				- fix min/max settings in station configuration page
-				- quickbar fixes (wrong use of button IDs vs. station IDs)
-				- redesign kradio gui. new class kradiodisplay
-				- make kradio AM-ready (hopefully)
+                - configurable scanStep for station search
+                - made frequency setting independent from device quantisation
+                - min/max Frequency config in kHz (before in MHz)
+                - display Frequency in kHz if < 10 MHz
+                - fix min/max settings in station configuration page
+                - quickbar fixes (wrong use of button IDs vs. station IDs)
+                - redesign kradio gui. new class kradiodisplay
+                - make kradio AM-ready (hopefully)
 
 0.2.7a  (beta)
 
@@ -105,17 +109,17 @@
 0.2.7   (beta)
 
         emw     - added pseudo lirc key "QUIT"
-				- fixed some more quickbar bugs
-				- make "good signal" level configurable, sometimes autoscan did not find all stations
-				- fix ugly setup dialog layout frame problem
-				- fix "alarm-enable is unset on restart" - problem
-				- setupdialog: use kdialogbase to get usual kde like configuration dialog
-				- setupdialog: make it non-modal
-				- setupdialog: "about" tab for station preset lists
-				- setupdialog: fix update of station info after preset load
-				- setupdialog: use current volume for alarm volume of new alarm
-				- setupdialog: fix tab order
-				
+                - fixed some more quickbar bugs
+                - make "good signal" level configurable, sometimes autoscan did not find all stations
+                - fix ugly setup dialog layout frame problem
+                - fix "alarm-enable is unset on restart" - problem
+                - setupdialog: use kdialogbase to get usual kde like configuration dialog
+                - setupdialog: make it non-modal
+                - setupdialog: "about" tab for station preset lists
+                - setupdialog: fix update of station info after preset load
+                - setupdialog: use current volume for alarm volume of new alarm
+                - setupdialog: fix tab order
+
         kalass  - fix min/max typo
                 - add germany/hamburg-antenna preset file
 
@@ -155,7 +159,7 @@
 0.2.4   (alpha)
 
         emw:    - qt 3.0.x compatibility fixes
-				- quickbar/buttonflowlayout fixes
+                - quickbar/buttonflowlayout fixes
                 - configuration dialog (part 2)
                 - radiobase poweron/off fixes
 
@@ -193,11 +197,11 @@
                 - add Power On/Off functions (=> kradio may still run while watching tv)
                 - simplify "class Radio"
 
-0.1.2	frank:  - fixed float/integer conversion on set frequence (stationbutton)
-			    - seek will end on all over frequence change button
-			    - balance set included in volumesetting
+0.1.2   frank:  - fixed float/integer conversion on set frequence (stationbutton)
+                - seek will end on all over frequence change button
+                - balance set included in volumesetting
 
-0.1.1	frank:  - changed Frequence Range to 87.00 (min) and 109.00 (max)
+0.1.1   frank:  - changed Frequence Range to 87.00 (min) and 109.00 (max)
                 - tray for panel added
 
 0.1     frank:  - initial Release

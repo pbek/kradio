@@ -386,9 +386,10 @@ void RadioDocking::mousePressEvent( QMouseEvent *e )
 
 	switch ( e->button() ) {
 	case LeftButton:
-// FIXME: which gui-plugin to toggle ?
-//		if (leftMouseTogglesQB) slotToggleQB ();
-//		if (leftMouseTogglesUI) slotToggleUI ();
+		if (queryIsPowerOn())
+			sendPowerOff();
+		else
+			sendPowerOn();
 		break;
 	default:
 		// nothing
