@@ -39,16 +39,14 @@ INTERFACE(ITimeControl, ITimeControlClient)
 public :
     virtual int   maxConnections () const { return -1; }
 
-    // receiving commands
-
+RECEIVERS:
     IF_RECEIVER(    setAlarms(const AlarmVector &sl)                 )
     IF_RECEIVER(    setCountdownSeconds(int n)                       )
     IF_RECEIVER(    startCountdown()                                 )
     IF_RECEIVER(    stopCountdown()                                  )
     
 
-    // sending notifications
-
+SENDERS:
     IF_SENDER  (    notifyAlarmsChanged(const AlarmVector &sl)       )
     IF_SENDER  (    notifyAlarm(const Alarm &)                       )
     IF_SENDER  (    notifyNextAlarmChanged(const Alarm &)            )
@@ -57,8 +55,7 @@ public :
     IF_SENDER  (    notifyCountdownZero()                            )
     
 
-    // answering queries		
-
+ANSWERS:
     IF_ANSWER  (    QDateTime      getNextAlarmTime ()               )
     IF_ANSWER  (    const Alarm*   getNextAlarm ()                   )
     IF_ANSWER  (    int            getCountdownSeconds ()            )
@@ -72,16 +69,14 @@ INTERFACE(ITimeControlClient, ITimeControl)
 public :
     virtual int   maxConnections () const { return -1; }
 
-    // sending commands
-
+SENDERS:
     IF_SENDER  (    setAlarms(const AlarmVector &sl)                 )
     IF_SENDER  (    setCountdownSeconds(int n)                       )
     IF_SENDER  (    startCountdown()                                 )
     IF_SENDER  (    stopCountdown()                                  )
 
 
-    // receiving notifications
-
+RECEIVERS:
     IF_RECEIVER(    notifyAlarmsChanged(const AlarmVector &sl)       )
     IF_RECEIVER(    notifyAlarm(const Alarm &)                       )
     IF_RECEIVER(    notifyNextAlarmChanged(const Alarm &)            )
@@ -90,8 +85,7 @@ public :
     IF_RECEIVER(    notifyCountdownZero()                            )
 
 
-    // queries
-
+QUERIES:
     IF_QUERY   (    QDateTime      getNextAlarmTime()                )
     IF_QUERY   (    const Alarm*   getNextAlarm ()                   )
     IF_QUERY   (    int            getCountdownSeconds ()            )
