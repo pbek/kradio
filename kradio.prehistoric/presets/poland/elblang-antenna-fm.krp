@@ -1,0 +1,104 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Radoslaw PRL Wawrzyniak &lt;prlalfa@wp.pl&gt;</maintainer>
+			<changed>2003-04-30T17:01:52</changed>
+			<country>Poland</country>
+			<city>Elblag</city>
+			<media>FM Antenna</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>Radio EL</name>
+			<shortname>Radio EL</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RMF FM</name>
+			<shortname>RMF FM</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Trojka</name>
+			<shortname>Trojka</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Polskie Radio PR1</name>
+			<shortname>Polskie Radio PR1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Plus</name>
+			<shortname>Radio Plus</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Bis</name>
+			<shortname>Radio Bis</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Olsztyn</name>
+			<shortname>Radio Olsztyn</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Gdansk</name>
+			<shortname>Radio Gdansk</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Maryja</name>
+			<shortname>Radio Maryja</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio ZET</name>
+			<shortname>Radio ZET</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+

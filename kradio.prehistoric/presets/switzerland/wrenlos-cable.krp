@@ -11,7 +11,7 @@
 		<station>
 			<name>DRS 1 (Region AG/SO)</name>
 			<shortname>DRS 1</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>87.9375</frequency>
 			<volumepreset>-1</volumepreset>
@@ -20,7 +20,7 @@
 		<station>
 			<name>DRS 1 (Region ZH)</name>
 			<shortname>2</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>88.2</frequency>
 			<volumepreset>-1</volumepreset>
@@ -29,7 +29,7 @@
 		<station>
 			<name>VIRUS</name>
 			<shortname>3</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>93.6</frequency>
 			<volumepreset>-1</volumepreset>
@@ -38,7 +38,7 @@
 		<station>
 			<name>DRS 2</name>
 			<shortname>DRS 2</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>95.475</frequency>
 			<volumepreset>-1</volumepreset>
@@ -47,7 +47,7 @@
 		<station>
 			<name>DRS 3</name>
 			<shortname>DRS 3</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>91.538</frequency>
 			<volumepreset>-1</volumepreset>
@@ -56,7 +56,7 @@
 		<station>
 			<name>Radio Rumantsch</name>
 			<shortname>6</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/rtr_ch.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>103.125</frequency>
 			<volumepreset>-1</volumepreset>
@@ -65,7 +65,7 @@
 		<station>
 			<name>Musigw?le 531</name>
 			<shortname>7</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>92</frequency>
 			<volumepreset>-1</volumepreset>
@@ -74,7 +74,7 @@
 		<station>
 			<name>Radio Swiss Classic</name>
 			<shortname>RSC</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/swissclasic.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>88.6</frequency>
 			<volumepreset>-1</volumepreset>
@@ -83,7 +83,7 @@
 		<station>
 			<name>Radio Swiss Pop</name>
 			<shortname>RSP</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/swisspop.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>88.9375</frequency>
 			<volumepreset>-1</volumepreset>
@@ -92,7 +92,7 @@
 		<station>
 			<name>Radio Swiss Jazz</name>
 			<shortname>RSJ</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/swissjazz.jpg</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>89.625</frequency>
 			<volumepreset>-1</volumepreset>
@@ -101,7 +101,7 @@
 		<station>
 			<name>Radio Argovia</name>
 			<shortname>Argovia</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/argovia_logo.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>89.3</frequency>
 			<volumepreset>-1</volumepreset>
@@ -110,7 +110,7 @@
 		<station>
 			<name>Radio 24</name>
 			<shortname>Rado 24</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/radio24.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>90.0625</frequency>
 			<volumepreset>-1</volumepreset>
@@ -119,7 +119,7 @@
 		<station>
 			<name>Hitradio Z</name>
 			<shortname>Radio Z</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/radioz-logo.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>90.5</frequency>
 			<volumepreset>-1</volumepreset>
@@ -128,7 +128,7 @@
 		<station>
 			<name>Kanal K</name>
 			<shortname>Kanal K</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/kanal-K.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>93</frequency>
 			<volumepreset>-1</volumepreset>
@@ -137,7 +137,7 @@
 		<station>
 			<name>Radio Sunshine</name>
 			<shortname>Sunshine</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/Sunshine.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>104.7</frequency>
 			<volumepreset>-1</volumepreset>
@@ -146,7 +146,7 @@
 		<station>
 			<name>Radio 7</name>
 			<shortname>radio7</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/radio7.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>102.625</frequency>
 			<volumepreset>-1</volumepreset>
@@ -155,7 +155,7 @@
 		<station>
 			<name>Radio Regenbogen</name>
 			<shortname>Regenbogen</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/regenbogen.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>99.8125</frequency>
 			<volumepreset>-1</volumepreset>
@@ -173,7 +173,7 @@
 		<station>
 			<name>Radio Eviva</name>
 			<shortname>Eviva</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/eviva.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>104</frequency>
 			<volumepreset>-1</volumepreset>
@@ -200,7 +200,7 @@
 		<station>
 			<name>RSR 3 (Couleur 3)</name>
 			<shortname>Couleur 3</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/couleur3.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>96.9</frequency>
 			<volumepreset>-1</volumepreset>
@@ -245,7 +245,7 @@
 		<station>
 			<name>?terreich 1</name>
 			<shortname>?1</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/oe1-logo.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>94.3125</frequency>
 			<volumepreset>-1</volumepreset>
@@ -254,7 +254,7 @@
 		<station>
 			<name>?terreich 2</name>
 			<shortname>?2</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/oe2-logo.gif</icon>
+			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>94.825</frequency>
 			<volumepreset>-1</volumepreset>
@@ -263,7 +263,7 @@
 		<station>
 			<name>?terreich 3</name>
 			<shortname>?3</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/oe3-logo.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>95.8125</frequency>
 			<volumepreset>-1</volumepreset>
@@ -272,7 +272,7 @@
 		<station>
 			<name>SWR 1 BW</name>
 			<shortname>SWR 1</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/swr1.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>92.3125</frequency>
 			<volumepreset>-1</volumepreset>
@@ -281,7 +281,7 @@
 		<station>
 			<name>SWR 2 BW</name>
 			<shortname>SWR 2</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/swr2.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>92.7</frequency>
 			<volumepreset>-1</volumepreset>
@@ -290,7 +290,7 @@
 		<station>
 			<name>SWR 3</name>
 			<shortname>SWR 3</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/swr3.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>97.3125</frequency>
 			<volumepreset>-1</volumepreset>
@@ -299,7 +299,7 @@
 		<station>
 			<name>SWR 4 BW</name>
 			<shortname>SWR4</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/swr4.jpg</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>104.3</frequency>
 			<volumepreset>-1</volumepreset>
@@ -353,7 +353,7 @@
 		<station>
 			<name>Radio 105 Network</name>
 			<shortname>Radio 105</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/logo105.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>105.062</frequency>
 			<volumepreset>-1</volumepreset>
@@ -380,7 +380,7 @@
 		<station>
 			<name>Voice of America</name>
 			<shortname>VOA</shortname>
-			<icon>/home/dieter/.kde/share/apps/kradio/voa.gif</icon>
+			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>107.125</frequency>
 			<volumepreset>-1</volumepreset>

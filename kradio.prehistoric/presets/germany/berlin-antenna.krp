@@ -1,0 +1,259 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Rolf Kottenhagen &lt;rolf.kottenhagen@t-online.de&gt;</maintainer>
+			<changed>2003-05-20T18:00:00</changed>
+			<country>Germany</country>
+			<city>Berlin</city>
+			<media>Antenne</media>
+			<comments>frequencies checked manually by list from 
+http://www.frequenzliste.de</comments>
+		</info>
+		<station>
+			<name>87.9 STAR FM</name>
+			<shortname>StarFM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RBB Berlin 88,8</name>
+			<shortname>RBB Bln</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>DLR Berlin</name>
+			<shortname>DLR Berlin</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC World</name>
+			<shortname>BBC</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Berliner Rundfunk</name>
+			<shortname>BLRfk</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RBB Radio Kultur</name>
+			<shortname>Kultur</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RBB Inforadio</name>
+			<shortname>Inforadio</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>JAM FM</name>
+			<shortname>JAM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>94.3 rs2</name>
+			<shortname>rs2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Metropol FM</name>
+			<shortname>Metropol</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RBB Radio Eins</name>
+			<shortname>Radio Eins</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RBB Radio 3</name>
+			<shortname>Radio 3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Veranstaltungsfunk</name>
+			<shortname>Veranstaltung 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk Kln</name>
+			<shortname>DLF Kln</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Paradiso</name>
+			<shortname>Paradiso</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KISS FM</name>
+			<shortname>KISS FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Brandenburg</name>
+			<shortname>Antenne Bbg.</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Huntert,6</name>
+			<shortname>Hundert,6</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname>Klassik Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RBB Fritz</name>
+			<shortname>Fritz</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Energy</name>
+			<shortname>Energy</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Veranstaltungsfunk</name>
+			<shortname>Veranstaltung 2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>104.6 RTL Berlin</name>
+			<shortname>RTL Berlin</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SpreeRadio</name>
+			<shortname>SpreeRadio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio France International</name>
+			<shortname>France Inter</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Multikulti</name>
+			<shortname>Multikulti</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BB Radio</name>
+			<shortname>BB Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+
