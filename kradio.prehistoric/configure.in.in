@@ -1,6 +1,6 @@
 #MIN_CONFIG(3)
 
-AM_INIT_AUTOMAKE(kradio,0.3.0)
+AM_INIT_AUTOMAKE(kradio,0.3.0-alpha1)
 AC_CONFIG_SRCDIR(kradio/main.cpp)
 
 dnl Checks for header files.

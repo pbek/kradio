@@ -1,7 +1,19 @@
-0.3.0   emw     - introduce interfaces
-                - introduce plugin concept
-                - complete redesign with interfaces & plugins
+0.3.0 alpha 1
 
+        Update Information:
+
+        Due to the new station list format you will have to rebuild your
+        station selections for the quickbar and the docking menu. The
+        stations should be read without problems. As soon as you quit
+        kradio and the configuration files are written, any versions 0.2.x
+        will not be able to read the station list and configuration files.
+
+        BACKUP YOUR CONFIGURATION FILES!        
+
+        emw     - major rewrite (interfaces, plugins, ...)
+                - AM/FM readyness
+                - display redesign
+                - new station list format        
 
 0.2.8   (beta)
 

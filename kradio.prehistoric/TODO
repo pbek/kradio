@@ -1,52 +1,16 @@
-0.2.90 give the setup-dialog cancel button the right behaviour // done
-       distinguish ukw/fm and MW/am // done
-       make kradio AM ready // seems to be done
-       redesign kradio interface: use symbols for stereo and signal quality, display ukw/fm and MW/am  // done
-       prepare for translation: check for missing i18n //done
-
-       gui-errormessages in xml parsing code
-
-       rework of internal structures based on interfaces/plugins
-       reorganize configuration pages
-       
-       setupdialog: color selection, independent device page
-       conserve old stations after station scan / clear button
-       remove unnecessary include dependencies
-       tristate buttons for station scan
-
-       use kde widgets in dialogs
+0.3.0  gui-errormessages
 
        tooltips complete?
+       prepare for translation: check for missing i18n
        translations?
-
-       umlauts-problem in xml parsing code
-
-0.2.99 ? force mono mode (not been possible on my system (bttv) so far) ?
-       dcop interface
-
-0.3.0  recording capabilities
-       ? quick radio applet
+       
+       recording plugin
+       v4l2 plugin
 
 unsolved problems:
-* better Icon for QuickBar Button
 * fix sticky behavior on "window-close/restore" (both kradio & quickbar)
 
 future:
 * mediacontrol applet integration
 * collect location information for cannel sets  // emw, started
-
-DONE:
-//0.2.7  kde like configuration dialog // done, emw
-//       precise alarms // done, emw
-//* make use of ~/.kde/share/apps/kradio/... concept //emw
-//* some graphical configuration dialog(s) for  //emw
-//  - station quick select
-//  - alarm functions
-//  - station management
-//  - device settings
-// * kde3 port //kalass
-// * replace StationButton by ordinary buttons // completely removed - kalass
-// * use kde menus (emw, long time ago)
-// * QuickBar (emw)
-// * xml based station configuration (emw)
-// * beautify quickbar buttons (horrible alignments...)
+* dcop interface
