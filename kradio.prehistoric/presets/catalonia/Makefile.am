@@ -1,0 +1,10 @@
+SUBDIRS =
+EXTRA_DIST = "barcelona.krp"
+
+install-data-local:
+	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/catalonia/"
+	$(INSTALL_DATA) "$(srcdir)/barcelona.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/catalonia/barcelona.krp"
+
+
+uninstall-local:
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/catalonia/barcelona.krp"
