@@ -92,15 +92,17 @@ ANSWERS:
 
 RECEIVERS:
 	virtual bool setFrequency(float f);
+	virtual bool setMinFrequency(float mf);
+	virtual bool setMaxFrequency(float mf);
 	virtual bool setScanStep(float s);
 
 ANSWERS:
-	virtual float                getFrequency()     const;
-	virtual float                getMinFrequency()  const;
-	virtual float                getMinDeviceFrequency()  const;
-	virtual float                getMaxFrequency()  const;
-	virtual float                getMaxDeviceFrequency()  const;
-	virtual float                getScanStep()      const;
+	virtual float getFrequency()           const;
+	virtual float getMinFrequency()        const;
+	virtual float getMinDeviceFrequency()  const;
+	virtual float getMaxFrequency()        const;
+	virtual float getMaxDeviceFrequency()  const;
+	virtual float getScanStep()            const;
 
 	// PluginBase
 
@@ -132,22 +134,23 @@ protected:
 	void  poll();
 
 	bool  readTunerInfo() const;
-	bool  readAudioInfo() const;
-	bool  writeAudioInfo();
+	bool  updateAudioInfo(bool write) const;
 
 
 protected:
 
 	FrequencyRadioStation  m_currentStation;
-	float                  m_volume;
+	mutable float          m_volume;
+	mutable bool           m_muted;
+	mutable float          m_signalQuality;
+	mutable bool           m_stereo;
+	
 	float                  m_minQuality;
-
 	float                  m_minFrequency;
 	float                  m_maxFrequency;
 
 	FrequencySeekHelper    m_seekHelper;
 	float                  m_scanStep;
-
 
 	QString                m_radioDev;
 	QString                m_mixerDev;
@@ -155,16 +158,16 @@ protected:
 	int                    m_radio_fd;
 	int                    m_mixer_fd;
 	
-	struct video_tuner     m_tuner;
-	struct video_audio     m_audio;
+	mutable struct video_tuner     m_tuner;
+	mutable struct video_audio     m_audio;
 
 	QTimer                 m_pollTimer;
 
 	mutable struct TunerCache {
-		bool  m_valid;
-		float m_deltaF;
-		float m_minF, m_maxF;
-		TunerCache() { m_valid = false; }
+		bool  valid;
+		float deltaF;
+		float minF, maxF;
+		TunerCache() { valid = false; }
 	}
 	                       m_tunercache;
 	

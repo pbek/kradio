@@ -65,10 +65,10 @@ RECEIVERS:
 	bool setStations(const StationList &sl);
 
 ANSWERS:
-	bool                   isPowerOn() const;
-	bool                   isPowerOff() const;
-	const RadioStation  &  getCurrentStation() const;
-	const StationList   &  getStations() const;
+	bool                   isPowerOn() const { return queryIsPowerOn(); }
+	bool                   isPowerOff() const { return queryIsPowerOff(); }
+	const RadioStation  &  getCurrentStation() const { return queryCurrentStation(); }
+	const StationList   &  getStations() const { return m_stationList; }
 
 
 
@@ -101,8 +101,7 @@ QUERIES:
 	IF_QUERY   (  const RadioStation  &  queryCurrentStation()       )
 
 RECEIVERS:
-	virtual bool noticePowerOn        (const IRadioDevice *sender = NULL);
-	virtual bool noticePowerOff       (const IRadioDevice *sender = NULL);
+	virtual bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
 	virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
 
 	virtual void noticeConnect(IRadioDevice *rd);

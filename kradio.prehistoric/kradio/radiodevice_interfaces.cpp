@@ -22,10 +22,8 @@
 
 // IRadioDevice
 
-IF_IMPL_SENDER  (  IRadioDevice::notifyPowerOn(),
-                   noticePowerOn(this)                                         )
-IF_IMPL_SENDER  (  IRadioDevice::notifyPowerOff(),
-                   noticePowerOff(this)                                        )
+IF_IMPL_SENDER  (  IRadioDevice::notifyPowerChanged(bool on),
+                   noticePowerChanged(on, this)                                )
 IF_IMPL_SENDER  (  IRadioDevice::notifyStationChanged (const RadioStation &s),
                    noticeStationChanged (s, this)                              )
 
@@ -99,10 +97,6 @@ IF_IMPL_QUERY   (  bool   IRadioSoundClient::queryIsMuted(),
 
 IF_IMPL_SENDER  (  ISeekRadio::notifySeekStarted (bool up),
                    noticeSeekStarted (up)                         )
-IF_IMPL_SENDER  (  ISeekRadio::notifySeekUpStarted(),
-                   noticeSeekUpStarted()                          )
-IF_IMPL_SENDER  (  ISeekRadio::notifySeekDownStarted(),
-                   noticeSeekDownStarted()                        )
 IF_IMPL_SENDER  (  ISeekRadio::notifySeekStopped (),
                    noticeSeekStopped ()                           )
 IF_IMPL_SENDER  (  ISeekRadio::notifySeekFinished (const RadioStation &s),
@@ -135,6 +129,8 @@ IF_IMPL_SENDER  (  IFrequencyRadio::notifyFrequencyChanged(float f, const RadioS
                    noticeFrequencyChanged(f, s)                   )
 IF_IMPL_SENDER  (  IFrequencyRadio::notifyMinMaxFrequencyChanged(float min, float max),
                    noticeMinMaxFrequencyChanged(min, max)         )
+IF_IMPL_SENDER  (  IFrequencyRadio::notifyDeviceMinMaxFrequencyChanged(float min, float max),
+                   noticeDeviceMinMaxFrequencyChanged(min, max)         )
 IF_IMPL_SENDER  (  IFrequencyRadio::notifyScanStepChanged(float s),
                     noticeScanStepChanged(s)                      )
 

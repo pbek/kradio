@@ -55,10 +55,6 @@ void SeekHelper::start(direction_t dir)
 		sendMute(true);
 	
 		m_parent.notifySeekStarted(m_direction == up);
-		if (m_direction == up)
-			m_parent.notifySeekUpStarted();
-		else
-			m_parent.notifySeekDownStarted();
 
 		step();
 	}

@@ -22,10 +22,8 @@
 
 // IRadio
 
-IF_IMPL_SENDER  (  IRadio::notifyPowerOn(),
-                   noticePowerOn()                                         )
-IF_IMPL_SENDER  (  IRadio::notifyPowerOff(),
-                   noticePowerOff()                                        )
+IF_IMPL_SENDER  (  IRadio::notifyPowerChanged(bool on),
+                   noticePowerChanged(on)                                         )
 IF_IMPL_SENDER  (  IRadio::notifyStationChanged (const RadioStation &s),
                    noticeStationChanged (s)                                )
 IF_IMPL_SENDER  (  IRadio::notifyStationsChanged(const StationList &sl),

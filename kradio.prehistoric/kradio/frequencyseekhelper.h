@@ -39,6 +39,7 @@ public:
 RECEIVERS:    
 	bool noticeFrequencyChanged(float /*f*/, const RadioStation */*s*/)  { return false; }
 	bool noticeMinMaxFrequencyChanged(float /*min*/, float /*max*/)      { return false; }
+	bool noticeDeviceMinMaxFrequencyChanged(float /*min*/, float /*max*/){ return false; }
 	bool noticeScanStepChanged(float /*s*/)                              { return false; }
 
 public:

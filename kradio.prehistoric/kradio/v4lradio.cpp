@@ -28,7 +28,7 @@
 
 TODO:
 
-  * notifications
+  prevent loops (read...info -> notify -> readinfo) ??
 
 */
 
@@ -36,12 +36,18 @@ struct _lrvol { unsigned char l, r; short dummy; };
 
 V4LRadio::V4LRadio()
   : m_volume(0),
+    m_muted(true),
+    m_signalQuality(0),
+    m_stereo(false),
+    
 	m_minQuality(0.75),
 	m_minFrequency(0),
 	m_maxFrequency(0),
-	m_seekHelper(*this),
+
+	m_seekHelper(*this),	
 	m_scanStep(0.05),
-	m_mixerChannel(0),
+	
+	m_mixerChannel(0),	
 	m_radio_fd(0),
 	m_mixer_fd(0),
 	m_pollTimer(this)
@@ -89,7 +95,7 @@ bool V4LRadio::powerOn ()
 
     radio_init();
     unmute();
-    notifyPowerOn();
+    notifyPowerChanged(true);
 
     return true;
 }
@@ -102,7 +108,7 @@ bool V4LRadio::powerOff ()
 
     mute();
     radio_done();
-    notifyPowerOff();
+    notifyPowerChanged(false);
 
     return true;
 }
@@ -176,21 +182,17 @@ bool V4LRadio::setVolume (float vol)
 
 bool V4LRadio::mute (bool mute)
 {
-	if (m_radio_fd != 0) {
+	// mute
+  	if (!updateAudioInfo(false))
+	   return false;
 
-		// mute
-	  	if (!readAudioInfo())
-	  		return false;
+    if (m_muted != mute) {
+		if (mute)		m_audio.flags |= VIDEO_AUDIO_MUTE;
+		else			m_audio.flags &= ~VIDEO_AUDIO_MUTE;
 
-        if (mute)
-            m_audio.flags |= VIDEO_AUDIO_MUTE;
-        else
-            m_audio.flags &= ~VIDEO_AUDIO_MUTE;
-
-	  	if (!writeAudioInfo())
-	  		return false;
-    }
-    return true;
+		return updateAudioInfo(true);
+	}
+	return false;
 }
 
 
@@ -220,7 +222,7 @@ float   V4LRadio::getVolume() const
 		float v = float(tmpvol.l) / 100.0;
 
 		if (m_volume != v) {
-			const_cast<float&>(m_volume) = v;
+			m_volume = v;
 			notifyVolumeChanged(m_volume);
 		}
 	}
@@ -236,10 +238,8 @@ float   V4LRadio::getSignalMinQuality() const
 
 float   V4LRadio::getSignalQuality() const
 {
-  	if (m_radio_fd > 0 && readTunerInfo())
-		return float(m_tuner.signal) / 32767.0;
-    else
-		return 0;
+  	readTunerInfo();
+    return m_signalQuality;
 }
 
 
@@ -251,22 +251,15 @@ bool   V4LRadio::hasGoodQuality() const
 
 bool    V4LRadio::isStereo() const
 {
-	if (m_radio_fd > 0 && readAudioInfo())
-		return (m_audio.mode & VIDEO_SOUND_STEREO);
-	else
-		return false;
+	updateAudioInfo(false);
+	return m_stereo;
 }
 
 
 bool    V4LRadio::isMuted() const
 {
-	if (m_radio_fd <= 0)
-		return true;
-
-  	if (!readAudioInfo())
-  		return true;
-    
-  	return (m_audio.flags & VIDEO_AUDIO_MUTE) != 0;
+  	updateAudioInfo(false);
+    return m_muted;
 }
 
 
@@ -318,7 +311,13 @@ bool V4LRadio::isSeekDownRunning() const
 
 bool V4LRadio::setFrequency(float freq)
 {
-  	if (m_radio_fd > 0) {
+	stopSeek();
+	
+	if (m_radio_fd > 0) {
+		if (m_currentStation.frequency() == freq) {
+			return true;
+		}
+		
   		bool oldMute = isMuted();
   		if (!oldMute) mute();
 
@@ -342,8 +341,13 @@ bool V4LRadio::setFrequency(float freq)
         }
         // unmute this radio device, because we now have the current
         // radio station
+
         m_currentStation.setFrequency(freq);
   		if (!oldMute) unmute();
+
+        notifyFrequencyChanged(freq, &m_currentStation);
+        notifyStationChanged(m_currentStation);
+    
 		return true;
 	} else {
 		return false;
@@ -351,9 +355,38 @@ bool V4LRadio::setFrequency(float freq)
 }
 
 
+bool V4LRadio::setMinFrequency (float minF)
+{
+	float oldm = getMinFrequency();
+	m_minFrequency = minF;
+
+	float newm = getMinFrequency();
+	if (oldm != newm)
+	    notifyMinMaxFrequencyChanged(newm, getMaxFrequency());
+	    
+	return true;
+}
+
+
+bool V4LRadio::setMaxFrequency (float maxF)
+{
+	float oldm = getMaxFrequency();
+	m_maxFrequency = maxF;
+
+	float newm = getMaxFrequency();
+	if (oldm != newm)
+	    notifyMinMaxFrequencyChanged(getMinFrequency(), newm);
+
+	return true;
+}
+
+
 bool V4LRadio::setScanStep(float s)
 {
+	float old = m_scanStep;
 	m_scanStep = s;
+
+	if (old != s) notifyScanStepChanged(m_scanStep);
 	return true;
 }
 
@@ -376,6 +409,24 @@ float V4LRadio::getMaxFrequency()  const
 }
 
 
+float V4LRadio::getMinDeviceFrequency() const
+{
+	if (!m_tunercache.valid)
+		readTunerInfo();
+
+	return m_tunercache.minF;
+}
+
+
+float V4LRadio::getMaxDeviceFrequency() const
+{
+	if (!m_tunercache.valid)
+		readTunerInfo();
+
+	return m_tunercache.maxF;
+}
+
+
 float V4LRadio::getScanStep()      const
 {
 	return m_scanStep;
@@ -388,8 +439,8 @@ float V4LRadio::getScanStep()      const
 
 void V4LRadio::radio_init()
 {
-	m_tunercache.m_valid = false;
-
+	stopSeek();
+	
 	m_mixer_fd = open(m_mixerDev, O_RDONLY);
 	if (m_mixer_fd <= 0) {
 		radio_done();
@@ -410,9 +461,8 @@ void V4LRadio::radio_init()
     	return;
 	}
 
-	m_tuner.tuner = 0;
-
 	readTunerInfo();
+    updateAudioInfo(false);
 
   	// restore frequency
   	setFrequency(getFrequency());
@@ -424,8 +474,8 @@ void V4LRadio::radio_init()
 
 void V4LRadio::radio_done()
 {
-	m_tunercache.m_valid = false;
-
+	stopSeek();
+	
 	if (m_radio_fd > 0) close (m_radio_fd);
 	if (m_mixer_fd > 0) close (m_mixer_fd);
 
@@ -435,29 +485,12 @@ void V4LRadio::radio_done()
 
 float V4LRadio::deltaF() const
 {
-	if (!m_tunercache.m_valid)
+	if (!m_tunercache.valid)
 		readTunerInfo();
 
-	return m_tunercache.m_deltaF;
+	return m_tunercache.deltaF;
 }
 
-
-float V4LRadio::getMinDeviceFrequency() const
-{
-	if (!m_tunercache.m_valid)
-		readTunerInfo();
-
-	return m_tunercache.m_minF;
-}
-
-
-float V4LRadio::getMaxDeviceFrequency() const
-{
-	if (!m_tunercache.m_valid)
-		readTunerInfo();
-
-	return m_tunercache.m_maxF;
-}
 
 
 
@@ -539,67 +572,93 @@ void  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
 
 bool V4LRadio::readTunerInfo() const
 {
-	m_tunercache.m_minF   = 87;
-	m_tunercache.m_maxF   = 109;
-	m_tunercache.m_deltaF = 1.0/16.0;
-	m_tunercache.m_valid  = false;
+	float oldminf = m_tunercache.minF;
+	float oldmaxf = m_tunercache.maxF;
+
+	if (!m_tunercache.valid) {
+		m_tunercache.minF   = 87;
+		m_tunercache.maxF   = 109;
+		m_tunercache.deltaF = 1.0/16.0;
+		m_tunercache.valid  = true;
+	}
 
     if (m_radio_fd > 0) {
 		if (ioctl(m_radio_fd, VIDIOCGTUNER, &m_tuner) == 0) {
 
 			if ((m_tuner.flags & VIDEO_TUNER_LOW) != 0)
-				m_tunercache.m_deltaF = 1.0 / 16000.0;
+				m_tunercache.deltaF = 1.0 / 16000.0;
 
-			m_tunercache.m_minF = float(m_tuner.rangelow)  * m_tunercache.m_deltaF;
-			m_tunercache.m_maxF = float(m_tuner.rangehigh) * m_tunercache.m_deltaF;
+			m_tunercache.minF = float(m_tuner.rangelow)  * m_tunercache.deltaF;
+			m_tunercache.maxF = float(m_tuner.rangehigh) * m_tunercache.deltaF;
 
-			m_tunercache.m_valid = true;
+			m_tunercache.valid = true;
 
-			return true;
 		} else {
 			kdDebug() << "V4LRadio::readTunerInfo: "
 			          << i18n("cannot get tuner info")
 			          << endl;
+			return false;
 		}
+	} else {
+		m_tuner.signal = 0;
 	}
-	return false;
+
+	if (oldminf != m_tunercache.minF || oldmaxf != m_tunercache.maxF)
+		notifyDeviceMinMaxFrequencyChanged(m_tunercache.minF, m_tunercache.maxF);
+
+	if (  ! m_minFrequency && (oldminf != m_tunercache.minF)
+	   || ! m_maxFrequency && (oldmaxf != m_tunercache.maxF))
+		notifyMinMaxFrequencyChanged(getMinFrequency(), getMaxFrequency());
+		
+	// extract information on current state
+	float oldq = m_signalQuality;
+	m_signalQuality = float(m_tuner.signal) / 32767.0;
+
+	if (m_signalQuality != oldq)
+		notifySignalQualityChanged(m_signalQuality);
+	if ( (m_signalQuality >= m_minQuality) != (oldq >= m_minQuality))
+		notifySignalQualityChanged(m_signalQuality > m_minQuality);		
+
+	return true;
 }
 
 
-bool V4LRadio::readAudioInfo() const
+bool V4LRadio::updateAudioInfo(bool write) const
 {
 	if (m_radio_fd > 0) {
-		if (ioctl(m_radio_fd, VIDIOCGAUDIO, &m_audio) == 0) {
-			return true;
-		} else {
-			kdDebug() << "V4LRadio::readAudioInfo: "
-			          << i18n("error reading radio audio info")
+		if (ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, &m_audio) != 0) {
+			kdDebug() << "V4LRadio::updateAudioInfo: "
+			          << i18n("error updating radio audio info") << " ("
+			          << i18n(write ? "write" : "read") << ")"
 			          << endl;
+			return false;
 		}
+	} else {
+		m_audio.mode  &= ~VIDEO_SOUND_STEREO;
+		m_audio.flags &= ~VIDEO_AUDIO_MUTE;
 	}
-	return false;
+
+	bool oldStereo = m_stereo;
+	bool oldMute   = m_muted;
+
+	m_stereo = (m_audio.mode  & VIDEO_SOUND_STEREO) != 0;
+	m_muted  = (m_audio.flags & VIDEO_AUDIO_MUTE) != 0;
+
+	if (oldStereo != m_stereo)
+		notifyStereoChanged(m_stereo);
+	if (oldMute != m_muted)
+		notifyMuted(m_muted);
+	
+	return (m_radio_fd > 0);
 }
 
 
-bool V4LRadio::writeAudioInfo()
-{
-  	if (m_radio_fd > 0) {
-		if (ioctl(m_radio_fd, VIDIOCSAUDIO, &m_audio) == 0) {
-			return true;
-		} else {
-			kdDebug() << "V4LRadio::writeAudioInfo: "
-			          << i18n("error writing radio audio info")
-			          << endl;
-		}
-    }
-	return false;
-}
 
 
 void V4LRadio::poll()
 {
-	isStereo ();
-	getSignalQuality();
+	readTunerInfo();
+	updateAudioInfo(false);
 	getVolume();
 }
 

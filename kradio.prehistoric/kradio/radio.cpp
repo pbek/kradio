@@ -195,27 +195,37 @@ bool Radio::queryIsPowerOff() const
 
 const RadioStation & Radio::queryCurrentStation() const
 {
-	return m_activeDevice ? m_activeDevice->getCurrentStation() : undefinedRadioStation;
-}
+	const RadioStation &rs = m_activeDevice ?
+	                            m_activeDevice->getCurrentStation() :
+	                            undefinedRadioStation;
 
-
-bool Radio::noticePowerOn (const IRadioDevice *sender)
-{
-	setActiveDevice(const_cast<IRadioDevice*>(sender), false);
-	                // false: do not set power state on new device
-	                // constcast valid because power-state of sender is not changed
-	notifyPowerOn();
-	return true;
-}
-
-
-bool Radio::noticePowerOff(const IRadioDevice *sender)
-{
-	if (sender == m_activeDevice) {
-		notifyPowerOff();
-		return true;
+    // I'm terribly sorry for that const_cast, but the f...ing QPtrList
+    // has no "int find(...) const" method :(
+	RawStationList &l = const_cast<RawStationList &>(m_stationList.all());
+    if (l.find(&rs) >= 0) {
+		return *(l.current());
+    } else {
+		return rs;
 	}
-	return false;
+}
+
+
+bool Radio::noticePowerChanged (bool on, const IRadioDevice *sender)
+{
+	if (on) {
+		setActiveDevice(const_cast<IRadioDevice*>(sender), false);
+	                    // false: do not set power state on new device
+	                    // constcast valid because power-state of sender is not changed
+		notifyPowerChanged(true);
+	    return true;
+	    
+	} else {
+		if (sender == m_activeDevice) {
+			notifyPowerChanged(false);
+			return true;
+		}
+		return false;
+	}
 }
 
 

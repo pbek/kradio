@@ -51,8 +51,7 @@ RECEIVERS:
     IF_RECEIVER(  activateStation(const RadioStation &rs)          )
 
 SENDERS:
-	IF_SENDER  (  notifyPowerOn()                                  )
-	IF_SENDER  (  notifyPowerOff()                                 )
+	IF_SENDER  (  notifyPowerChanged(bool on)                      )
 	IF_SENDER  (  notifyStationChanged (const RadioStation &)      )
 
 ANSWERS:
@@ -75,8 +74,7 @@ SENDERS:
     IF_SENDER  (  sendActivateStation (const RadioStation &rs)       )
 
 RECEIVERS:
-	IF_RECEIVER(  noticePowerOn        (const IRadioDevice *sender = NULL)                          )
-	IF_RECEIVER(  noticePowerOff       (const IRadioDevice *sender = NULL)                          )
+	IF_RECEIVER(  noticePowerChanged   (bool on, const IRadioDevice *sender = NULL)                 )
 	IF_RECEIVER(  noticeStationChanged (const RadioStation &, const IRadioDevice *sender = NULL)    )
 
 QUERIES:
@@ -123,8 +121,8 @@ public :
 
 SENDERS:
 	IF_SENDER  (  sendVolume (float v)                           )
-	IF_SENDER  (  sendMute (bool mute = false)                   )
-	IF_SENDER  (  sendUnmute (bool mute = false)                 )
+	IF_SENDER  (  sendMute (bool mute = true)                    )
+	IF_SENDER  (  sendUnmute (bool unmute = true)                )
 	IF_SENDER  (  sendSignalMinQuality (float q)                 )
 
 RECEIVERS:
@@ -161,8 +159,6 @@ RECEIVERS:
 
 SENDERS:
 	IF_SENDER  (  notifySeekStarted (bool up)                    )
-	IF_SENDER  (  notifySeekUpStarted()                          )
-	IF_SENDER  (  notifySeekDownStarted()                        )
 	IF_SENDER  (  notifySeekStopped ()                           )
 	IF_SENDER  (  notifySeekFinished (const RadioStation &s)     )
 
@@ -186,8 +182,6 @@ SENDERS:
 
 RECEIVERS:
 	IF_RECEIVER(  noticeSeekStarted (bool up)                         )
-	IF_RECEIVER(  noticeSeekUpStarted()                               )
-	IF_RECEIVER(  noticeSeekDownStarted()                             )
 	IF_RECEIVER(  noticeSeekStopped ()                                )
 	IF_RECEIVER(  noticeSeekFinished (const RadioStation &s)          )
 
@@ -215,6 +209,7 @@ RECEIVERS:
 SENDERS:
 	IF_SENDER  (  notifyFrequencyChanged(float f, const RadioStation *s)         )
 	IF_SENDER  (  notifyMinMaxFrequencyChanged(float min, float max)             )
+	IF_SENDER  (  notifyDeviceMinMaxFrequencyChanged(float min, float max)       )
 	IF_SENDER  (  notifyScanStepChanged(float s)                                 )
 
 ANSWERS:
@@ -241,6 +236,7 @@ SENDERS:
 RECEIVERS:
 	IF_RECEIVER(  noticeFrequencyChanged(float f, const RadioStation *s)         )
 	IF_RECEIVER(  noticeMinMaxFrequencyChanged(float min, float max)             )
+	IF_RECEIVER(  noticeDeviceMinMaxFrequencyChanged(float min, float max)       )
 	IF_RECEIVER(  noticeScanStepChanged(float s)                                 )
 
 QUERIES:

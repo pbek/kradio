@@ -47,8 +47,7 @@ public:
 
 // IRadioDeviceClient
 RECEIVERS:	
-	bool noticePowerOn        (const IRadioDevice */*sender*/) { return false; }
-	bool noticePowerOff       (const IRadioDevice */*sender*/) { return false; }
+	bool noticePowerChanged   (bool /*on*/, const IRadioDevice */*sender*/) { return false; }
 	bool noticeStationChanged (const RadioStation &, const IRadioDevice */*sender*/) { return false; }
 
 // IRadioSoundClient

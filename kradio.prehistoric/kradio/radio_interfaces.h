@@ -52,8 +52,7 @@ RECEIVERS:
 	IF_RECEIVER(  setStations(const StationList &sl)             )
 
 SENDERS:
-	IF_SENDER  (  notifyPowerOn()                                )
-	IF_SENDER  (  notifyPowerOff()                               )
+	IF_SENDER  (  notifyPowerChanged(bool on)                    )
 	IF_SENDER  (  notifyStationChanged (const RadioStation &)    )
 	IF_SENDER  (  notifyStationsChanged(const StationList &sl)   )
 
@@ -79,8 +78,7 @@ SENDERS:
 	IF_SENDER  (  sendStations(const StationList &sl)                )
 
 RECEIVERS:
-	IF_RECEIVER(  noticePowerOn()                                  )
-	IF_RECEIVER(  noticePowerOff()                                 )
+	IF_RECEIVER(  noticePowerChanged(bool on)                      )
 	IF_RECEIVER(  noticeStationChanged (const RadioStation &)      )
 	IF_RECEIVER(  noticeStationsChanged(const StationList &sl)     )
 
