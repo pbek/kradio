@@ -15,7 +15,7 @@
 
 short-term:
 * better Icon for QuickBar Button
-
+* use session management for saving of options (currently options are not saved on quit, because application->quit is called instead of window->close)
 
 
 DONE:
