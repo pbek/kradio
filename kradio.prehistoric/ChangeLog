@@ -1,6 +1,9 @@
 0.2.7   emw     - added pseudo lirc key "QUIT"
 				- fixed some more quickbar bugs
 				- make "good signal" level configurable, sometimes autoscan did not find all stations
+				- fix ugly setup dialog layout frame problem
+				- fix "alarm-enable is unset on restart" - problem
+				- kde like configuration dialog
 
 0.2.6   emw     - activate station in setupdialog by freq, not stationId
                 - add "unknown station" to kradio->cbStations

@@ -1,19 +1,19 @@
-short-term:
+0.2.7  kde like configuration dialog
+       precise alarms
+       
+0.2.8  make use of properties
+       dcop interface
+
+0.3    recording capabilities
+       ? quick radio applet
+
+unsolved problems:
 * better Icon for QuickBar Button
 * fix sticky behavior on "window-close/restore" (both kradio & quickbar)
-	(maybe make it configurable: if (kradio->trayClose())...; and if(quickbar->trayClose())...; )
-
-// * use session management for saving of options (currently options are not saved on quit, because application->quit is called instead of window->close)
-// session management only works on kde-exit, not program-exit :(
-
-next release:
-* collect location information for cannel sets  // emw, started
 
 future:
-* recording capabilities
-* quick radio applet
-* DCOP Interface
 * mediacontrol applet integration
+* collect location information for cannel sets  // emw, started
 
 DONE:
 //* make use of ~/.kde/share/apps/kradio/... concept //emw
