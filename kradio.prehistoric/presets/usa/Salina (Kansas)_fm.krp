@@ -1,0 +1,114 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Paul Benjamin (pben_suse@cox.net)</maintainer>
+			<changed>2003-04-22T16:59:46</changed>
+			<country>USA</country>
+			<city>Salina, Kansas</city>
+			<media>FM Radio</media>
+			<comments>FM radio stations available in the middle of Kansas</comments>
+		</info>
+		<station>
+			<name>American Family Radio (AFR)</name>
+			<shortname>KAKA</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Kansas - NPR</name>
+			<shortname>KHCD</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Religious</name>
+			<shortname>KCVS</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>92 7 The Zoo</name>
+			<shortname>KILS</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KY Country 94</name>
+			<shortname>KYEz</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Light Rock 95.5</name>
+			<shortname>KQNS</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldies 98.5</name>
+			<shortname>KSAJ</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Eagle Country 99 9</name>
+			<shortname>KSKG</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Sunny 102.5</name>
+			<shortname>KBLS</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>The Buzz 104.9</name>
+			<shortname>KZBZ</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country</name>
+			<shortname>KZLS</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+

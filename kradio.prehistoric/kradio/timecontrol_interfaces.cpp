@@ -20,51 +20,51 @@
 // ITimeControl
 
 IF_IMPL_SENDER  (  ITimeControl::notifyAlarmsChanged(const AlarmVector &sl),
-				   notifyAlarmsChanged(sl)			                         )
+				   noticeAlarmsChanged(sl)			                         )
 
 IF_IMPL_SENDER  (  ITimeControl::notifyAlarm(const Alarm &a),
-                   notifyAlarm(a)                                            )
+                   noticeAlarm(a)                                            )
 
 IF_IMPL_SENDER  (  ITimeControl::notifyNextAlarmChanged(const Alarm &a),
-                   notifyNextAlarmChanged(a)                                 )
+                   noticeNextAlarmChanged(a)                                 )
 
 IF_IMPL_SENDER  (  ITimeControl::notifyCountdownStarted(const QDateTime &end),
-                   notifyCountdownStarted(end)                               )
+                   noticeCountdownStarted(end)                               )
 
 IF_IMPL_SENDER  (  ITimeControl::notifyCountdownStopped(),
-                   notifyCountdownStopped()                                  )
+                   noticeCountdownStopped()                                  )
 
 IF_IMPL_SENDER  (  ITimeControl::notifyCountdownZero(),
-                   notifyCountdownZero()                                     )
+                   noticeCountdownZero()                                     )
 
 // ITimeControlClient
 
-IF_IMPL_SENDER  (  ITimeControlClient::setAlarms(const AlarmVector &sl),
+IF_IMPL_SENDER  (  ITimeControlClient::sendAlarms(const AlarmVector &sl),
                    setAlarms(sl)                                             )
                    
-IF_IMPL_SENDER  (  ITimeControlClient::setCountdownSeconds(int n),
+IF_IMPL_SENDER  (  ITimeControlClient::sendCountdownSeconds(int n),
                    setCountdownSeconds(n)                                    )
                    
-IF_IMPL_SENDER  (  ITimeControlClient::startCountdown(),
+IF_IMPL_SENDER  (  ITimeControlClient::sendStartCountdown(),
                    startCountdown()                                          )
                    
-IF_IMPL_SENDER  (  ITimeControlClient::stopCountdown(),
+IF_IMPL_SENDER  (  ITimeControlClient::sendStopCountdown(),
                    stopCountdown()                                           )
 
 
-IF_IMPL_QUERY   (  QDateTime      ITimeControlClient::getNextAlarmTime (),
+IF_IMPL_QUERY   (  QDateTime      ITimeControlClient::queryNextAlarmTime (),
                    getNextAlarmTime(),
                    QDateTime()                                               )
 
-IF_IMPL_QUERY   (  const Alarm *  ITimeControlClient::getNextAlarm (),
+IF_IMPL_QUERY   (  const Alarm *  ITimeControlClient::queryNextAlarm (),
                    getNextAlarm(),
                    NULL                                                      )
                    
-IF_IMPL_QUERY   (  int            ITimeControlClient::getCountdownSeconds (),
+IF_IMPL_QUERY   (  int            ITimeControlClient::queryCountdownSeconds (),
                    getCountdownSeconds(),
                    30*60                                                     )
 
-IF_IMPL_QUERY   (  QDateTime      ITimeControlClient::getCountdownEnd (),
+IF_IMPL_QUERY   (  QDateTime      ITimeControlClient::queryCountdownEnd (),
                    getCountdownEnd(),
                    QDateTime()                                               )
 

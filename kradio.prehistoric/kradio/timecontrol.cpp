@@ -21,136 +21,154 @@
 
 TimeControl::TimeControl (QObject *p, const QString &n)
 	: QObject(p, n),
-	  alarmTimer(this),
-	  countdownTimer(this)
+	  m_waitingFor(NULL),
+	  m_countdownSeconds(0),
+	  m_alarmTimer(this),
+	  m_countdownTimer(this)
 {
-	connect(&alarmTimer,     SIGNAL(timeout()),          this, SLOT(slotAlarmTimeout()));
-	connect(&countdownTimer, SIGNAL(timeout()),          this, SLOT(slotCountdownTimeout()));
-	countdownSeconds = 0;
-	waitingFor = NULL;
+	QObject::connect(&m_alarmTimer,     SIGNAL(timeout()), this, SLOT(slotQTimerAlarmTimeout()));
+	QObject::connect(&m_countdownTimer, SIGNAL(timeout()), this, SLOT(slotQTimerCountdownTimeout()));
 }
 
 
 TimeControl::~TimeControl ()
 {
-	waitingFor = NULL;
+	m_waitingFor = NULL;
 }
 
 
-void TimeControl::setAlarms (const AlarmVector &al)
+bool TimeControl::setAlarms (const AlarmVector &al)
 {
-	waitingFor = NULL;
-	Alarms.clear();
-	addAlarms(al);
+	m_waitingFor = NULL;
+
+	m_alarms = al;
+	
+	slotQTimerAlarmTimeout();
+
+	notifyAlarmsChanged(m_alarms);
+
+	return true;
 }
 
 
-void TimeControl::addAlarms (const AlarmVector &al)
+bool TimeControl::setCountdownSeconds(int n)
 {
-	Alarms.insert(Alarms.end(), al.begin(), al.end());
-
-	waitingFor = NULL;
-	slotAlarmTimeout();
+	m_countdownSeconds = n;	
+	return true;
 }
 
 
-QDateTime TimeControl::nextAlarm (Alarm **save) const
+bool TimeControl::startCountdown()
 {
-	QDateTime now = QDateTime::currentDateTime(),
-	          next;
-	if (save) *save = 0;
-	for (ciAlarmVector i = Alarms.begin(); i != Alarms.end(); ++i) {
-		QDateTime n = i->nextAlarm();
-		if (n.isValid() && n >= now && (!next.isValid() || n < next)) {
-			next = n;
-			if (save) *save = &(*i);
-		}
-	}
-	return next;
+	m_countdownEnd = QDateTime::currentDateTime().addSecs(m_countdownSeconds);
+	m_countdownTimer.start(m_countdownSeconds * 1000, true);
+
+	notifyCountdownStarted(getCountdownEnd());
+	
+	return true;
 }
 
 
-void TimeControl::setCountdownSeconds(int n)
+bool TimeControl::stopCountdown()
 {
-	countdownSeconds = n;
+	m_countdownTimer.stop();
+	m_countdownEnd = QDateTime();
+
+	notifyCountdownStopped();
+
+	return true;
 }
 
 
-void TimeControl::startSleepCountdown()
+QDateTime TimeControl::getNextAlarmTime() const
 {
-	countdownEnd = QDateTime::currentDateTime().addSecs(countdownSeconds);
-	countdownTimer.start(countdownSeconds * 1000, true);
-	emit sigSleepCountdownStarted(countdownEnd);
-}
-
-
-void TimeControl::stopSleepCountdown()
-{
-	countdownTimer.stop();
-	countdownEnd = QDateTime();
-	emit sigSleepCountdownStopped();
-}
-
-
-void TimeControl::startStopSleepCountdown()
-{
-    if (countdownEnd.isValid())
-		stopCountdown();
-	else
-		startCountdown();
-}
-
-
-const QDateTime TimeControl::getCountdownEnd () const
-{
-	if (countdownTimer.isActive())
-		return countdownEnd;
+	const Alarm *a = getNextAlarm();
+	if (a)
+		return a->nextAlarm();
 	else
 		return QDateTime();
 }
 
 
-void TimeControl::slotCountdownTimeout()
+const Alarm *TimeControl::getNextAlarm () const
 {
-	stopCountdown();
-	emit sigSleepCountdownZero();
+	QDateTime now = QDateTime::currentDateTime(),
+	          next;
+
+	const Alarm *retval = NULL;
+
+	for (ciAlarmVector i = m_alarms.begin(); i != m_alarms.end(); ++i) {
+		QDateTime n = i->nextAlarm();
+		if (n.isValid() && n > now && ( ! next.isValid() || n < next)) {
+			next = n;
+			retval = &(*i);
+		}
+	}
+
+	QDateTime old = m_nextAlarm_tmp;
+	m_nextAlarm_tmp = next;
+	if (old != m_nextAlarm_tmp) {
+		notifyNextAlarmChanged(retval);
+	}
+
+	return retval;
 }
 
 
-void TimeControl::slotAlarmTimeout()
+QDateTime TimeControl::getCountdownEnd () const
 {
-	if (waitingFor) {
-		waitingFor->raiseAlarm();
-		emit sigAlarm(waitingFor);
+	if (m_countdownTimer.isActive())
+		return m_countdownEnd;
+	else
+		return QDateTime();
+}
+
+
+
+
+
+void TimeControl::slotQTimerCountdownTimeout()
+{
+	stopCountdown();
+
+	notifyCountdownZero();
+}
+
+
+void TimeControl::slotQTimerAlarmTimeout()
+{
+	if (m_waitingFor) {
+		notifyAlarm(*m_waitingFor);
 	}
 
-	Alarm     *n = NULL;
-	QDateTime now          = QDateTime::currentDateTime();
-    QDateTime na           = nextAlarm(&n);
+	QDateTime now  = QDateTime::currentDateTime();
+	Alarm const *n = getNextAlarm();
+    QDateTime na   = getNextAlarmTime();
 
-	waitingFor = NULL;
+	m_waitingFor = NULL;
+	
 	if (na.isValid()) {
 	
 		int days  = now.daysTo(na);
 		int msecs = now.time().msecsTo(na.time());
 
 		if (days > 1) {
-			alarmTimer.start(24 * 3600 * 1000, true);
+			m_alarmTimer.start(24 * 3600 * 1000, true);
 			
 		} else if (days >= 0) {
 		
 			if (days > 0)
 				msecs += days * 24 * 3600 * 1000;
 
-			if (msecs >= 0) {
-				waitingFor = n;
-				alarmTimer.start(msecs, true);
+			if (msecs > 0) {
+				m_waitingFor = n;
+				m_alarmTimer.start(msecs, true);
 			}
 		}
 	}
 }
 
-
+/*
 void    TimeControl::restoreState (KConfig *)
 {
 }
@@ -197,4 +215,4 @@ void    TimeControl::connectInterface(QObjectList &ol)
         quietconnect (this, SIGNAL(sigSleepCountDownStopped()),                  i, SLOT(sleepCountdownStopped), ());
     }
 }
-
+*/

@@ -23,8 +23,6 @@
 #endif
 
 #include "utils.h"
-
-#include <qobject.h>
 #include <qdatetime.h>
 #include <vector>
 
@@ -32,44 +30,38 @@
   *@author Martin Witte
   */
 
-class Alarm : public QObject  {
-Q_OBJECT
+class RadioStation;
 
+class Alarm
+{
 protected:
-	QDateTime	time;
-	bool		enabled;
-	bool		daily;
-	bool        done;
+	QDateTime	  m_time;
+	bool		  m_daily;
 
-	float		frequency;    // < 0 : disabled
-	float		volumePreset; // < 0: disabled
+	bool		  m_enabled;
+
+	RadioStation *m_station;
+	float		  m_volumePreset;  // < 0: disabled
 
 public:
-	            Alarm();
-	            Alarm(QDateTime time, bool daily, bool enabled);
-	            Alarm(const Alarm &);
-	virtual     ~Alarm();
+	Alarm();
+	Alarm(QDateTime time, bool daily, bool enabled);
+	Alarm(const Alarm &);
+	~Alarm();
 	
-	bool		isEnabled() const { return enabled;}
-	bool 		isDaily() const { return daily; }
+	bool		isEnabled() const        { return m_enabled;}
+	bool 		isDaily() const          { return m_daily; }
 	QDateTime   nextAlarm (bool ignoreEnable = false) const;
-	QDateTime	alarmTime () const { return time; }
-	float		getFrequency () const { return frequency; }
-	float	    getVolumePreset () const { return volumePreset; }
+	QDateTime	alarmTime () const       { return m_time; }
+	const RadioStation &getStation () const;
+	float	    getVolumePreset () const { return m_volumePreset; }
 	
-	void	    setEnabled (bool enable = true) { enabled = enable; done = false; }
-	void	    setDaily (bool d = true) { daily = d; done = false; }
-	void	    setDate (const QDate &d) { time.setDate(d); done = false; }
-	void	    setTime (const QTime &d) { time.setTime(d); done = false; }
-    void        setFrequency(float f) { frequency = f; }
-    void        setVolumePreset(float v) { volumePreset = v; }
-	
-	
-public slots:
-	void raiseAlarm();
-
-signals:
-	void alarm (Alarm *);
+	void	    setEnabled (bool enable = true) { m_enabled = enable; }
+	void	    setDaily (bool d = true)        { m_daily = d; }
+	void	    setDate (const QDate &d)        { m_time.setDate(d); }
+	void	    setTime (const QTime &d)        { m_time.setTime(d); }
+    void        setStation(const RadioStation &rs);
+    void        setVolumePreset(float v)        { m_volumePreset = v; }
 };
 
 typedef vector<Alarm>		        AlarmVector;

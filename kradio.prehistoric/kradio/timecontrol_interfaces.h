@@ -37,7 +37,7 @@
 INTERFACE(ITimeControl, ITimeControlClient)
 {
 public :
-    virtual int   maxConnections () const { return -1; }
+	ITimeControl() : ITimeControl::BaseClass(-1) {}
 
 RECEIVERS:
     IF_RECEIVER(    setAlarms(const AlarmVector &sl)                 )
@@ -49,17 +49,18 @@ RECEIVERS:
 SENDERS:
     IF_SENDER  (    notifyAlarmsChanged(const AlarmVector &sl)       )
     IF_SENDER  (    notifyAlarm(const Alarm &)                       )
-    IF_SENDER  (    notifyNextAlarmChanged(const Alarm &)            )
+    IF_SENDER  (    notifyNextAlarmChanged(const Alarm *)            )
     IF_SENDER  (    notifyCountdownStarted(const QDateTime &end)     )
     IF_SENDER  (    notifyCountdownStopped()                         )
     IF_SENDER  (    notifyCountdownZero()                            )
     
 
 ANSWERS:
-    IF_ANSWER  (    QDateTime      getNextAlarmTime ()               )
-    IF_ANSWER  (    const Alarm*   getNextAlarm ()                   )
-    IF_ANSWER  (    int            getCountdownSeconds ()            )
-    IF_ANSWER  (    QDateTime      getCountdownEnd ()                )
+    IF_ANSWER  (    QDateTime           getNextAlarmTime () const    )
+    IF_ANSWER  (    const Alarm*        getNextAlarm () const        )
+    IF_ANSWER  (    const AlarmVector & getAlarms () const           )
+    IF_ANSWER  (    int                 getCountdownSeconds () const )
+    IF_ANSWER  (    QDateTime           getCountdownEnd () const     )
 
 };
 
@@ -67,29 +68,30 @@ ANSWERS:
 INTERFACE(ITimeControlClient, ITimeControl)
 {
 public :
-    virtual int   maxConnections () const { return -1; }
+	ITimeControlClient() : ITimeControlClient::BaseClass(1) {}
 
 SENDERS:
-    IF_SENDER  (    setAlarms(const AlarmVector &sl)                 )
-    IF_SENDER  (    setCountdownSeconds(int n)                       )
-    IF_SENDER  (    startCountdown()                                 )
-    IF_SENDER  (    stopCountdown()                                  )
+    IF_SENDER  (    sendAlarms(const AlarmVector &sl)                )
+    IF_SENDER  (    sendCountdownSeconds(int n)                      )
+    IF_SENDER  (    sendStartCountdown()                             )
+    IF_SENDER  (    sendStopCountdown()                              )
 
 
 RECEIVERS:
-    IF_RECEIVER(    notifyAlarmsChanged(const AlarmVector &sl)       )
-    IF_RECEIVER(    notifyAlarm(const Alarm &)                       )
-    IF_RECEIVER(    notifyNextAlarmChanged(const Alarm &)            )
-    IF_RECEIVER(    notifyCountdownStarted(const QDateTime &end)     )
-    IF_RECEIVER(    notifyCountdownStopped()                         )
-    IF_RECEIVER(    notifyCountdownZero()                            )
+    IF_RECEIVER(    noticeAlarmsChanged(const AlarmVector &sl)       )
+    IF_RECEIVER(    noticeAlarm(const Alarm &)                       )
+    IF_RECEIVER(    noticeNextAlarmChanged(const Alarm *)            )
+    IF_RECEIVER(    noticeCountdownStarted(const QDateTime &end)     )
+    IF_RECEIVER(    noticeCountdownStopped()                         )
+    IF_RECEIVER(    noticeCountdownZero()                            )
 
 
 QUERIES:
-    IF_QUERY   (    QDateTime      getNextAlarmTime()                )
-    IF_QUERY   (    const Alarm*   getNextAlarm ()                   )
-    IF_QUERY   (    int            getCountdownSeconds ()            )
-    IF_QUERY   (    QDateTime      getCountdownEnd ()                )
+    IF_QUERY   (    QDateTime           queryNextAlarmTime()         )
+    IF_QUERY   (    const Alarm*        queryNextAlarm ()            )
+    IF_QUERY   (    const AlarmVector & queryAlarms ()               )
+    IF_QUERY   (    int                 queryCountdownSeconds ()     )
+    IF_QUERY   (    QDateTime           queryCountdownEnd ()         )
 
 };
 
