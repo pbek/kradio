@@ -23,6 +23,8 @@ using namespace std;
 #include <qstring.h>
 #include <list>
 #include <vector>
+#define __USE_ISOC99 1
+#include <math.h>
 
 typedef list<QString>				StringList;
 typedef StringList::iterator		iStirngList;

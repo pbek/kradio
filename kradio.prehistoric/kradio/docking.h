@@ -31,6 +31,7 @@
 
 class KRadioApp;
 
+
 class RadioDocking : public KSystemTray {
 	Q_OBJECT
 public:

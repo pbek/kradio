@@ -24,6 +24,8 @@ Alarm::Alarm(QObject *_parent, QDateTime _time, bool _daily, bool _enabled)
 	enabled = _enabled;
 	time = _time;
 	done = false;
+	volumePreset = -1;
+	stationID = -1;
 }
 
 
@@ -33,15 +35,19 @@ Alarm::Alarm (QObject *_parent)
 	daily = false;
 	enabled = false;
 	done = false;
+	stationID = -1;
+	volumePreset = -1;
 }
 
 Alarm::Alarm (const Alarm &a)
 	: QObject (a.parent(), a.name())
 {
-	daily   = a.daily;
-	enabled = a.enabled;
-	done    = a.done;
-	time    = a.time;
+	daily        = a.daily;
+	enabled      = a.enabled;
+	done         = a.done;
+	time         = a.time;
+	stationID    = a.stationID;
+	volumePreset = a.volumePreset;
 }
 
 
@@ -52,6 +58,8 @@ Alarm::Alarm (QObject *_parent, const Alarm &a)
 	enabled = a.enabled;
 	done    = a.done;
 	time    = a.time;
+	stationID    = a.stationID;
+	volumePreset = a.volumePreset;
 }
 
 

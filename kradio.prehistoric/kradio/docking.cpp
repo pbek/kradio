@@ -106,14 +106,20 @@ void RadioDocking::buildStationList()
 {
 	KPopupMenu *m = contextMenu();
 	StationIDs.clear();
-	const RadioStation *c = radio->getCurrentStation();
-  	for (int i = 0; i < radio->nStations(); ++i) {
-    	const RadioStation *stn = radio->getStation(i);
-    	QString StationText = QString().setNum(i+1) + " " + stn->getLongName();
 
-    	int id = m->insertItem(StationText, stn, SLOT(activate()));
-    	StationIDs.push_back(id);
-    	m->setItemChecked (id, c == stn);
+	const RadioStation *c = radio->getCurrentStation();
+	
+  	for (int i = 0, k = 0; i < radio->nStations(); ++i) {
+    	const RadioStation *stn = radio->getStation(i);
+
+        if (stn->useInDockingMenu()) {			
+			QString StationText = QString().setNum(++k) + " " + stn->getLongName();
+			int id = m->insertItem(StationText, stn, SLOT(activate()));
+			StationIDs.push_back(id);
+			m->setItemChecked (id, c == stn);
+		} else {
+			StationIDs.push_back(-1);
+		}
   	}
 }
 
@@ -143,8 +149,10 @@ void RadioDocking::slotUpdateToolTips ()
 	
 	const RadioStation *c = radio->getCurrentStation();
 	for (uint i = 0; i < StationIDs.size(); ++i) {
-    	const RadioStation *stn = radio->getStation(i);
-    	menu->setItemChecked (StationIDs[i], c == stn);
+		if (StationIDs[i] != -1) {
+			const RadioStation *stn = radio->getStation(i);
+			menu->setItemChecked (StationIDs[i], c == stn);
+		}
 	}
 }
 

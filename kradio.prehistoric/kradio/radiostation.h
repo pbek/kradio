@@ -37,6 +37,7 @@ protected :
 	float	Frequency;
 	QString	ShortName;
 	bool	QuickSelect;
+	bool    DockingMenu;
 
 	float	VolumePreset;		// <0: => Don't use
 	
@@ -58,12 +59,14 @@ public:
 	float	getFrequency() const     { return Frequency; }
 	float	getVolumePreset() const  { return VolumePreset; }
 	bool	useQuickSelect() const   { return QuickSelect; }
+	bool    useInDockingMenu() const { return DockingMenu; }
 	
 	void	setQuickSelect(bool qs)  { QuickSelect = qs; }
 	void 	setFrequency(float f)    { Frequency = f; }
 	void	setShortName(QString n)  { ShortName = n; }
 	void	setIconString(QString s) { iconString = s; }
 	void	setVolumePreset(float v) { VolumePreset = v; }
+	void    setUseInDockingMenu (bool b) { DockingMenu = b; }
 	
 public slots:
 	void activate ();

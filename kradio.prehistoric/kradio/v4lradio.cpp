@@ -24,8 +24,6 @@
 #include <linux/soundcard.h>
 #include <stdio.h>
 #include <string.h>
-#define __USE_ISOC99 1
-#include <math.h>
 #include "v4lradio.h"
 
 

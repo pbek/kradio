@@ -41,6 +41,9 @@ protected:
 	bool		daily;
 	bool		done;
 
+	int			stationID;    // < 0 : disabled
+	float		volumePreset; // < 0: disabled
+
 public:
 	Alarm(QObject *parent, QDateTime time, bool daily, bool enabled);
 	Alarm(QObject *parent);
@@ -52,11 +55,16 @@ public:
 	bool 		isDaily() const { return daily; }
 	QDateTime   nextAlarm (bool ignoreEnable = false) const;
 	QDateTime	alarmTime () const { return time; }
+	int		getStationID () const { return stationID; }
+	float	getVolumePreset () const { return volumePreset; }
 	
 	void	setEnabled (bool enable = true) { enabled = enable; }
 	void	setDaily (bool d = true) { daily = d; }
 	void	setDate (const QDate &d) { time.setDate(d); }
 	void	setTime (const QTime &d) { time.setTime(d); }
+    void    setStationID(int id) { stationID = id; }
+    void    setVolumePreset(float v) { volumePreset = v; }
+	
 	
 public slots:
 	void poll ();

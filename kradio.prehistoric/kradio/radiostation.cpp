@@ -25,6 +25,7 @@ RadioStation::RadioStation(QObject *_parent)
 	VolumePreset = -1;
 	QuickSelect = false;
 	iconString = "";
+	DockingMenu = true;
 }
 
 RadioStation::RadioStation(QObject *_parent, QString _name, QString _ShortName,
@@ -37,6 +38,7 @@ RadioStation::RadioStation(QObject *_parent, QString _name, QString _ShortName,
 	VolumePreset = _volumePreset;
 	QuickSelect = false;
 	iconString = _iconString;
+	DockingMenu = true;
 }
 
 
@@ -48,6 +50,7 @@ RadioStation::RadioStation(const RadioStation &s)
 	VolumePreset = s.VolumePreset;
 	QuickSelect = s.QuickSelect;
 	iconString = s.iconString;
+	DockingMenu = s.DockingMenu;
 }
 
 
@@ -59,6 +62,7 @@ RadioStation::RadioStation(QObject *_parent, const RadioStation &s)
 	VolumePreset = s.VolumePreset;
 	QuickSelect = s.QuickSelect;
 	iconString = s.iconString;
+	DockingMenu = s.DockingMenu;
 }
 
 
