@@ -1003,7 +1003,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 		}
 
 	} else {
-		logError(i18n("V4LRadio::readV4LCaps: Reading V4L2 caps failed"));
+		logWarning(i18n("V4LRadio::readV4LCaps: Reading V4L2 caps failed"));
 	}
 #endif
 	if (c.version > 0) {

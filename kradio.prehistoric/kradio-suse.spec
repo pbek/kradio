@@ -14,19 +14,25 @@ Source:    /usr/src/kradio-cvs/kradio/kradio-0.3.0-alpha2.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
-V4L-Radio Application for KDE 3.x
+Comfortable Radio Application for KDE 3.x
 
-KRadio provides:
+KRadio is a comfortable radio application for KDE 3.x with support for 
+V4L and V4L2 radio cards drivers.
 
-V4L/V4L2 Radio support
-Remote Control support (LIRC)
-Alarms, Sleep Countdown
-Several GUI Controls (Docking Menu, Station Quickbar, Radio Display)
-Recording Capabilities
-extendable Plugin Architecture
+KRadio currently provides:
 
-This Package also incluse a Station Preset File Database contributed
-by KRadio Users around the world.
+* V4L/V4L2 Radio support
+* Remote Control support (LIRC)
+* Alarms, Sleep Countdown
+* Several GUI Controls (Docking Menu, Station Quickbar, Radio Display)
+* Recording Capabilities
+* Extendable Plugin Architecture
+
+This Package also includes a growing collection of station preset
+files for many cities around the world contributed by KRadio Users.
+
+As KRadio is based on an extendable plugin architecture, contributions
+of new plugins (e.g. Internet Radio Streams, new cool GUIs) are welcome.
 
 %prep
 %setup
