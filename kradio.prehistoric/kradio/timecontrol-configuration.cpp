@@ -155,7 +155,7 @@ bool TimeControlConfiguration::noticeStationsChanged(const StationList &sl)
 {
 	comboStationSelection->clear();
 	stationIDs.clear();
-	comboStationSelection->insertItem(i18n("<any>"));
+	comboStationSelection->insertItem(i18n("<don't change>"));
 	stationIDs.push_back(QString::null);
 
 	for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {

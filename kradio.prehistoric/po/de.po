@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-13 20:25+0200\n"
-"PO-Revision-Date: 2003-09-13 21:24+0200\n"
+"POT-Creation-Date: 2003-09-13 22:03+0200\n"
+"PO-Revision-Date: 2003-09-13 22:19+0200\n"
 "Last-Translator: Ernst Martin Witte <witte@kawo1.rwth-aachen.de>\n"
 "Language-Team: german <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -130,11 +130,25 @@ msgstr "Verschiedenens"
 msgid "idea, first basic application"
 msgstr "Idee, erstes einfaches Programm"
 
-#: kradioapp.cpp:70
+#: kradioapp.cpp:57
+msgid "Many People around the World ... "
+msgstr "Viele Leute aus der ganzen Welt ... "
+
+#: kradioapp.cpp:58
+msgid ""
+"... which contributed station preset files \n"
+"and tested early and unstable snapshots of KRadio \n"
+"with much patience"
+msgstr ""
+"... die Senderdateien eingesandt \n"
+"und frühe und instabile Versionen von KRadio \n"
+"mit viel Geduld getestet haben"
+
+#: kradioapp.cpp:75
 msgid "KRadio Configuration"
 msgstr "Konfiguration von KRadio"
 
-#: kradioapp.cpp:70
+#: kradioapp.cpp:75
 msgid "About KRadio Components"
 msgstr "Über die Komponenten von KRadio"
 
@@ -761,7 +775,7 @@ msgstr "Konfiguration der Radio-Anzeige"
 
 #: radioview.cpp:419
 msgid "set Toolbar-Flag for Display"
-msgstr ""
+msgstr "Werkzeugleisten-Flag für das Displayfenster"
 
 #: radioview.cpp:422
 msgid "Common"
@@ -772,8 +786,8 @@ msgid "Standard Radio Display for KRadio"
 msgstr "Standard-Radioanzeige für KRadio"
 
 #: timecontrol-configuration.cpp:158
-msgid "<any>"
-msgstr "<beliebig>"
+msgid "<don't change>"
+msgstr "<nicht verändern>"
 
 #: timecontrol-configuration-ui.cpp:187
 msgid "TimeControlConfigurationUI"

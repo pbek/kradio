@@ -54,6 +54,11 @@ AboutPageInfo  KRadioAbout::createAboutPage ()
     aboutData.addAuthor("Klas Kalass",   I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
     aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
 
+    aboutData.addCredit(I18N_NOOP("Many People around the World ... "),
+                        I18N_NOOP("... which contributed station preset files \n"
+                                  "and tested early and unstable snapshots of KRadio \n"
+                                  "with much patience"));
+    
 	return AboutPageInfo(
 	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtAppStandard),
 	          "KRadio",

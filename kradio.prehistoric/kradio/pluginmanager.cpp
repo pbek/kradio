@@ -22,6 +22,7 @@
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <kdialogbase.h>
+#include <klocale.h>
 
 #include <qlayout.h>
 #include <qframe.h>
@@ -74,9 +75,9 @@ void PluginManager::insertPlugin(PluginBase *p)
 {
 	if (p) {
 	    if (!m_configDialog)
-			createConfigDialog(m_configDialogTitle);
+			createConfigDialog(i18n(m_configDialogTitle));
 	    if (!m_aboutDialog)
-			createAboutDialog(m_aboutDialogTitle);
+			createAboutDialog(i18n(m_aboutDialogTitle));
 	
 		m_plugins.append(p);
 		p->setManager(this);
@@ -172,7 +173,7 @@ void PluginManager::addConfigurationPage (PluginBase *forWhom,
 										  const ConfigPageInfo &info)
 {
 	if (!m_configDialog)
-		createConfigDialog(m_configDialogTitle);
+		createConfigDialog(i18n(m_configDialogTitle));
 
 	if (   !forWhom || !m_plugins.containsRef(forWhom)
 	    || !m_configDialog || !info.page)
@@ -246,7 +247,7 @@ void PluginManager::addAboutPage (PluginBase *forWhom,
 								  const AboutPageInfo &info)
 {
 	if (!m_aboutDialog)
-		createAboutDialog(m_aboutDialogTitle);
+		createAboutDialog(i18n(m_aboutDialogTitle));
 		
 	if (   !forWhom || !m_plugins.containsRef(forWhom)
 	    || !m_aboutDialog || !info.page)

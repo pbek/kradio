@@ -543,7 +543,7 @@ void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
 		for (it = aboutData->credits().begin();
 			it != aboutData->credits().end(); ++it)
 		{
-			creditsPage->addPerson( (*it).name(), (*it).emailAddress(),
+			creditsPage->addPerson( i18n((*it).name()), (*it).emailAddress(),
 									(*it).webAddress(), (*it).task() );
 		}
 	}

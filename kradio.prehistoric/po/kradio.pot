@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-13 20:25+0200\n"
+"POT-Creation-Date: 2003-09-13 22:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,11 +121,22 @@ msgstr ""
 msgid "idea, first basic application"
 msgstr ""
 
-#: kradioapp.cpp:70
+#: kradioapp.cpp:57
+msgid "Many People around the World ... "
+msgstr ""
+
+#: kradioapp.cpp:58
+msgid ""
+"... which contributed station preset files \n"
+"and tested early and unstable snapshots of KRadio \n"
+"with much patience"
+msgstr ""
+
+#: kradioapp.cpp:75
 msgid "KRadio Configuration"
 msgstr ""
 
-#: kradioapp.cpp:70
+#: kradioapp.cpp:75
 msgid "About KRadio Components"
 msgstr ""
 
@@ -757,7 +768,7 @@ msgid "Standard Radio Display for KRadio"
 msgstr ""
 
 #: timecontrol-configuration.cpp:158
-msgid "<any>"
+msgid "<don't change>"
 msgstr ""
 
 #: timecontrol-configuration-ui.cpp:187
