@@ -242,7 +242,6 @@ RadioStation &StationList::stationWithID(const QString &sid)
 bool StationList::readXML (const QString &dat)
 {
 	// FIXME: TODO: error handling
-	// FIXME: umlauts do not work
 	QXmlInputSource source;
 	source.setData(dat);
 	QXmlSimpleReader      reader;

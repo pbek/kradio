@@ -278,8 +278,8 @@
 class Interface
 {
 public:
-	virtual bool     connect   (Interface *i) = 0;
-	virtual bool     disconnect(Interface *i) = 0;
+	virtual bool     connect   (Interface *) { return false; }
+	virtual bool     disconnect(Interface *) { return false; }
 
 	// "Interface &"-Versions for convienience, not virtual, only "Interface*"
 	// versions have to / may  be overwritten in case of multiple inheritance

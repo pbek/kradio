@@ -113,8 +113,10 @@ bool V4LRadio::powerOn ()
 		return true;
 
     radio_init();
-    unmute();
-    notifyPowerChanged(true);
+    if (isPowerOn()) {
+		unmute();
+		notifyPowerChanged(true);
+	}
 
     return true;
 }
@@ -127,7 +129,9 @@ bool V4LRadio::powerOff ()
 
     mute();
     radio_done();
-    notifyPowerChanged(false);
+    if (isPowerOff()) {
+		notifyPowerChanged(false);
+	}
 
     return true;
 }
@@ -368,7 +372,7 @@ bool V4LRadio::setFrequency(float freq)
   		if (!oldMute) unmute();
 	}
 	
-    m_currentStation.setFrequency(freq);	
+    m_currentStation.setFrequency(freq);
     notifyFrequencyChanged(freq, &m_currentStation);
     notifyStationChanged(m_currentStation);
     return true;

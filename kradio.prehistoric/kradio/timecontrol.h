@@ -52,6 +52,17 @@ public:
 	virtual const QString &name() const { return PluginBase::name(); }
 	virtual       QString &name()       { return PluginBase::name(); }
 
+	// PluginBase
+
+public:
+	virtual void   saveState (KConfig *) const;
+	virtual void   restoreState (KConfig *);
+
+protected:
+	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
+	virtual QFrame *internal_createAboutPage(QWidget *parent);
+
+
     // ITimeControl Interface methods
 	
 RECEIVERS:
@@ -66,20 +77,6 @@ ANSWERS:
     const AlarmVector & getAlarms () const { return m_alarms; }
     int                 getCountdownSeconds () const { return m_countdownSeconds; }
     QDateTime           getCountdownEnd () const;
-
-
-	// PluginBase
-
-public:
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
-
-	virtual bool   connect (PluginBase *p)    { return ITimeControl::connect (p); }
-	virtual bool   disconnect (PluginBase *p) { return ITimeControl::disconnect (p); }
-
-protected:
-	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
-	virtual QFrame *internal_createAboutPage(QWidget *parent);
 
 
 	// slots for receiving timeout messages of timers

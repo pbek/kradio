@@ -26,6 +26,7 @@
 #include "timecontrol.h"
 #include "lircsupport.h"
 #include "quickbar.h"
+#include "docking.h"
 
 static const char *description = "KRadio";
 
@@ -54,11 +55,12 @@ int main(int argc, char *argv[])
 
 	/* Some Tests */
     
-    LircSupport *lircsupport = new LircSupport("lirc-1");
-    V4LRadio    *v4lradio = new V4LRadio("v4lradio-1");
-    Radio       *radio = new Radio("radio-1");
-    TimeControl *timecontrol = new TimeControl("timecontrol-1");
-    QuickBar    *quickbar = new QuickBar(NULL, "quickbar-1");
+    LircSupport  *lircsupport = new LircSupport("lirc-1");
+    V4LRadio     *v4lradio = new V4LRadio("v4lradio-1");
+    Radio        *radio = new Radio("radio-1");
+    TimeControl  *timecontrol = new TimeControl("timecontrol-1");
+    QuickBar     *quickbar = new QuickBar(NULL, "quickbar-1");
+    RadioDocking *docking = new RadioDocking("docking-1");
 
 
     a.insertPlugin(lircsupport);
@@ -66,10 +68,12 @@ int main(int argc, char *argv[])
     a.insertPlugin(radio);
     a.insertPlugin(timecontrol);
     a.insertPlugin(quickbar);
+    a.insertPlugin(docking);
 
     a.restoreState(KGlobal::config());
 
     quickbar->show();
+    docking->show();
     
     a.setMainWidget(quickbar);
 

@@ -15,76 +15,104 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef _DOCKING_H_
-#define _DOCKING_H_
+#ifndef KRADIO_DOCKING_H
+#define KRADIO_DOCKING_H_
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
-#include "utils.h"
-
-#include <kpopupmenu.h>
 #include <ksystemtray.h>
-#include "quickbar.h"
-#include "timecontrol.h"
+#include <qpixmap.h>
 
-class KRadio;
-// *REALLY DIRTY HACK* for development only.
-//#define KRadio KRadioMW
-//class KRadioMW;
+#include "timecontrol_interfaces.h"
+#include "radio_interfaces.h"
+#include "radiodevicepool_interface.h"
+#include "plugins.h"
 
-class RadioDocking : public KSystemTray {
-	Q_OBJECT
+class RadioDocking : public KSystemTray,
+                     public PluginBase,
+                     public IRadioClient,
+                     public ITimeControlClient,
+                     public IRadioDevicePoolClient
+{
+Q_OBJECT
 public:
-	RadioDocking (KRadio *widget, QuickBar *qb, RadioBase *radio, TimeControl *tc, const char *name = 0);
+	RadioDocking (const QString &name);
 	virtual ~RadioDocking();
 
-	virtual void showEvent (QShowEvent *);
+	virtual bool connect (Interface *);
+	virtual bool disconnect (Interface *);
 
-private slots:
+	virtual const QString &name() const { return PluginBase::name(); }
+	virtual       QString &name()       { return PluginBase::name(); }
 
-public slots:
-    virtual void slotSearchPrevStation(void);
-    virtual void slotSearchNextStation(void);
-    virtual void slotNOP();
-    virtual void slotToggleUI();
-    virtual void slotToggleQB();
+	// PluginBase
 
-    virtual void slotUpdateToolTips ();
-    virtual void slotAlarm ();
-    virtual void slotConfigChanged();
-    virtual void slotSleepChanged();
+public:
+	virtual void   saveState (KConfig *) const;
+	virtual void   restoreState (KConfig *);
 
-signals:
-    void showAbout();
+protected:
+	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
+	virtual QFrame *internal_createAboutPage(QWidget *parent);
+
+	// IRadioDevicePoolClient
+
+RECEIVERS:
+	bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
+
+	// ITimeControlClient
+
+RECEIVERS:
+    bool noticeAlarmsChanged(const AlarmVector &)   { return false; }
+    bool noticeAlarm(const Alarm &)                 { return false; }
+    bool noticeNextAlarmChanged(const Alarm *);
+    bool noticeCountdownStarted(const QDateTime &/*end*/);
+    bool noticeCountdownStopped();
+    bool noticeCountdownZero();
+
+
+	// IRadioClient
+
+RECEIVERS:
+    bool noticePowerChanged(bool on);
+    bool noticeStationChanged (const RadioStation &, int idx);
+    bool noticeStationsChanged(const StationList &sl);
+
+
+protected slots:
+
+	void slotSeekFwd();
+	void slotSeekBkwd();
+
+	void slotPower();
+	void slotSleepCountdown();
+	void slotShowAbout();
+
+	void slotMenuItemActivated(int id);
 
 protected:
     void mousePressEvent( QMouseEvent *e );
 
-private:
 	void buildContextMenu();
 	void buildStationList();
-	void contextMenuAboutToShow( KPopupMenu* menu );
 
-	int			titleID;
-	int 		alarmID;
-	int			powerID;
-	int			guiID;
-	int     	qbID;
-	int			sleepID;
-	IntVector   StationIDs;
 
-	RadioBase 	*radio;
-	QWidget		*radioControl;
-	QuickBar    *quickbar;
-	TimeControl *timeControl;
+protected:
 
-    QPixmap     miniKRadioPixmap;
+	KPopupMenu *m_menu;
+	QStringList m_stationIDs;
 
-    // configuration
-    bool leftMouseTogglesQB;
-    bool leftMouseTogglesUI;
+	// menu Item IDs
+	int			m_titleID;
+	int 		m_alarmID;
+	int			m_powerID;
+	int			m_sleepID;
+	int         m_seekfwID;
+	int         m_seekbwID;
+	QValueList<int> m_stationMenuIDs;
+
 };
 
 #endif

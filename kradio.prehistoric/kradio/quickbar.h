@@ -58,9 +58,6 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual bool   connect (PluginBase *p)    { return connect ((Interface*)p); }
-	virtual bool   disconnect (PluginBase *p) { return disconnect ((Interface*)p); }
-
 protected:
 	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
 	virtual QFrame *internal_createAboutPage(QWidget *parent);

@@ -15,53 +15,29 @@
  *                                                                         *
  ***************************************************************************/
 
-
-#include <kiconloader.h>
-#include <kwin.h>
-#include <kapp.h>
-#include <klocale.h>
-#include <kaction.h>
-#include <kstdaction.h>
-#include <math.h>
-#include <qtooltip.h>
 #include <kdebug.h>
+#include <kiconloader.h>
+#include <qtooltip.h>
+#include <kpopupmenu.h>
+#include <kapplication.h>
+
 
 #include "docking.h"
-#include "kradioapp.h"
+#include "stationlist.h"
+#include "radiostation.h"
+#include "radiodevice_interfaces.h"
 
-#include "kradio.h"
-//#include "kradiomw.h"
-
-RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, TimeControl *tc, const char *name)
-  : KSystemTray (0, name),
-    leftMouseTogglesQB(false),
-    leftMouseTogglesUI(true)
+RadioDocking::RadioDocking(const QString &name)
+  : KSystemTray (NULL, name),
+    PluginBase(name)
 {
-  radio = _radio;
-  radioControl = _widget;
-  quickbar = qb;
-  timeControl = tc;
+	setPixmap(BarIcon("kradio"));
 
-  miniKRadioPixmap = UserIcon("kradio");
-
-  // connect radio with tray
-  connect(radio, SIGNAL(sigUpdateTips()),
-	  this, SLOT(slotUpdateToolTips()));
-  connect(timeControl, SIGNAL(sigAlarm(Alarm *)),
-	  this, SLOT(slotAlarm()));
-  connect(radio, SIGNAL(sigConfigChanged()),
-  	  this, SLOT(slotConfigChanged()));
-  connect(timeControl, SIGNAL(sigConfigChanged()),
-  	  this, SLOT(slotConfigChanged()));
-
-  connect(timeControl, SIGNAL(sigStartCountdown()),
-	  this, SLOT(slotSleepChanged()));
-  connect(timeControl, SIGNAL(sigStopCountdown()),
-	  this, SLOT(slotSleepChanged()));
-  connect(timeControl, SIGNAL(sigCountdownZero()),
-	  this, SLOT(slotSleepChanged()));
-
-  buildContextMenu ();
+	m_menu = contextMenu();
+	QObject::connect(m_menu, SIGNAL(activated(int)),
+	                 this, SLOT(slotMenuItemActivated(int)));
+	
+	buildContextMenu ();
 }
 
 RadioDocking::~RadioDocking()
@@ -69,174 +45,288 @@ RadioDocking::~RadioDocking()
 }
 
 
-void RadioDocking::buildContextMenu()
+bool RadioDocking::connect (Interface *i)
 {
-  KPopupMenu *menu = contextMenu();
-  menu->clear();
+	bool a = IRadioClient::connect(i);
+	bool b = ITimeControlClient::connect(i);
+	bool c = IRadioDevicePoolClient::connect(i);
 
-  titleID = menu->insertTitle ("KRadio: " + radio->getStationString(true, true, true));
+    if (a) kdDebug() << "V4LRadio: IRadioClient connected\n";
+    if (b) kdDebug() << "V4LRadio: ITimeControlClient connected\n";
+    if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient connected\n";
 
-  buildStationList();
-
-  alarmID = menu->insertTitle ("alarm-dummy");
-  slotAlarm();
-
-  sleepID = menu->insertItem("sleep-dummy", timeControl, SLOT(startStopCountdown()));
-  slotSleepChanged();
-
-  menu->insertItem(SmallIcon("forward"), i18n("Search Next Station"),
-			       this, SLOT( slotSearchNextStation()));
-
-  menu->insertItem(SmallIcon("back"), i18n("Search Previous Station"),
-	               this, SLOT( slotSearchPrevStation()));
-
-  powerID = menu->insertItem("power-dummy", radio, SLOT( PowerToggle()));
-
-  menu->insertSeparator();
-
-  menu->insertItem(SmallIcon("kradio"), i18n("&About"), this, SIGNAL(showAbout()));
-
-  menu->insertSeparator();
-
-  guiID = menu->insertItem("gui-show-dummy", this, SLOT(slotToggleUI()) );
-  qbID  = menu->insertItem("quickbar-dummy", this, SLOT(slotToggleQB()) );
-//  showAllID = menu->insertItem("showall-dummy", this, SLOT(slotToogleAll()) );
-
-  menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
-
-  slotUpdateToolTips();
+	return a || b || c;
 }
 
-void RadioDocking::contextMenuAboutToShow( KPopupMenu* menu )
-{
-    bool b = radioControl->isMinimized() || radioControl->isHidden();
-	menu->changeItem(guiID, b ? i18n("Show radio interface") :
-                                i18n("Minimize radio interface"));
-    b = quickbar->isMinimized() || quickbar->isHidden();
-    menu->changeItem(qbID,  b ? i18n("Show station quickbar") :
-                                i18n("Minimize station quickbar"));
 
+bool RadioDocking::disconnect (Interface *i)
+{
+	bool a = IRadioClient::disconnect(i);
+	bool b = ITimeControlClient::disconnect(i);
+	bool c = IRadioDevicePoolClient::disconnect(i);
+
+    if (a) kdDebug() << "V4LRadio: IRadioClientClient disconnected\n";
+    if (b) kdDebug() << "V4LRadio: ITimeControlClient disconnected\n";
+    if (c) kdDebug() << "V4LRadio: IRadioDevicePoolClient disconnected\n";
+
+	return a || b || c;
 }
 
-void RadioDocking::buildStationList()
+
+// PluginBase
+
+void   RadioDocking::restoreState (KConfig *config)
 {
-	KPopupMenu *m = contextMenu();
-	StationIDs.clear();
+    config->setGroup(QString("radiodocking-") + name());
 
-	const RadioStation *c = radio->getCurrentStation();
-
-  	for (int i = 0, k = 0; i < radio->nStations(); ++i) {
-    	const RadioStation *stn = radio->getStation(i);
-
-        if (stn->useInDockingMenu()) {
-			QString StationText = QString().setNum(++k) + " " + stn->getLongName();
-			int id = m->insertItem(StationText, stn, SLOT(activate()));
-			StationIDs.push_back(id);
-			m->setItemChecked (id, c == stn);
-		} else {
-			StationIDs.push_back(-1);
-		}
-  	}
-}
-
-void RadioDocking::slotSearchNextStation()
-{
-  radio->startSeek(true);
-}
-
-void RadioDocking::slotSearchPrevStation()
-{
-  radio->startSeek(false);
-}
-
-void RadioDocking::slotNOP()
-{
-}
-
-void RadioDocking::slotUpdateToolTips ()
-{
-  	QToolTip::add(this, radio->getStationString(true, true, true));
-
-  	KPopupMenu *menu = contextMenu();
-
-	menu->changeTitle (titleID, i18n("KRadio: ")+ radio->getStationString(true, true, true));
-
-  	menu->changeItem(powerID, radio->isPowerOn() ? i18n("Power Off") : i18n("Power On"));
-
-	const RadioStation *c = radio->getCurrentStation();
-	for (uint i = 0; i < StationIDs.size(); ++i) {
-		if (StationIDs[i] != -1) {
-			const RadioStation *stn = radio->getStation(i);
-			menu->setItemChecked (StationIDs[i], c == stn);
-		}
+	int nStations = config->readNumEntry("nStations", 0);
+	for (int i = 1; i <= nStations; ++i) {
+		QString s = config->readEntry(QString("stationID-") + QString().setNum(i), "");
+		if (s.length())
+			m_stationIDs += s;
 	}
-}
-
-
-void RadioDocking::slotToggleUI ()
-{
-    if (radioControl->isMinimized() || radioControl->isHidden())
-        radioControl->show();
-    else
-        radioControl->hide();
-}
-
-
-void RadioDocking::slotToggleQB ()
-{
-    if (quickbar->isMinimized() || quickbar->isHidden())
-        quickbar->showNormal();
-    else
-        quickbar->hide();
-}
-
-
-void RadioDocking::slotAlarm()
-{
-  KPopupMenu *menu = contextMenu();
-  QDateTime a = timeControl->nextAlarm();
-
-  if (a.isValid())
-    menu->changeTitle (alarmID, i18n("next alarm: ") + a.toString());
-  else
-    menu->changeTitle (alarmID, i18n("<no alarm pending>"));
-}
-
-
-void RadioDocking::slotConfigChanged()
-{
+	
 	buildContextMenu();
 }
 
 
-void RadioDocking::showEvent (QShowEvent *)
+void RadioDocking::saveState (KConfig *config) const
 {
+    config->setGroup(QString("radiodocking-") + name());
+
+	config->writeEntry("nStations", m_stationIDs.size());
+	int i = 1;
+	for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++i) {
+		config->writeEntry(QString("stationID-") + QString().setNum(i), *it);
+	}
 }
+
+
+QFrame *RadioDocking::internal_createConfigurationPage(KDialogBase */*dlg*/)
+{
+	// FIXME
+	return NULL;
+}
+
+QFrame *RadioDocking::internal_createAboutPage(QWidget */*parent*/)
+{
+	// FIXME
+	return NULL;
+}
+
+
+
+void RadioDocking::buildContextMenu()
+{
+	m_menu->clear();
+
+	m_titleID  = m_menu->insertTitle ("title-dummy");
+	noticeStationChanged(queryCurrentStation(), -1);
+
+	buildStationList();
+
+	m_alarmID  = m_menu->insertTitle ("alarm-dummy");
+	noticeNextAlarmChanged(queryNextAlarm());
+	
+	m_sleepID  = m_menu->insertItem("sleep-dummy", this, SLOT(slotSleepCountdown()));
+	noticeCountdownStarted(queryCountdownEnd());
+
+	m_seekfwID = m_menu->insertItem(SmallIcon("forward"), i18n("Search Next Station"),
+	                              this, SLOT(slotSeekFwd()));
+	m_seekbwID = m_menu->insertItem(SmallIcon("back"),    i18n("Search Previous Station"),
+	                              this, SLOT(slotSeekBkwd()));
+	// FIXME: no seek callback function yet
+
+	m_powerID = m_menu->insertItem("power-dummy", this, SLOT(slotPower()));
+	noticePowerChanged(queryIsPowerOn());
+
+	m_menu->insertSeparator();
+
+	m_menu->insertItem(SmallIcon("kradio"), i18n("&About"), this, SLOT(slotShowAbout()));
+
+//	m_menu->insertSeparator();
+
+	/* FIXME: disabled for now, we do not have an apropriate interface yet
+
+	guiID = m_menu->insertItem("gui-show-dummy", this, SLOT(slotToggleUI()) );
+	qbID  = m_menu->insertItem("quickbar-dummy", this, SLOT(slotToggleQB()) );
+
+	*/
+
+//	m_menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
+}
+
+
+void RadioDocking::buildStationList()
+{
+	m_stationMenuIDs.clear();
+
+	const RawStationList  &sl = queryStations().all();
+	const RadioStation   &crs = queryCurrentStation();
+
+	int k = 0;
+	for (QStringList::iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it) {
+		const RadioStation &rs = sl.stationWithID(*it);
+
+		if (rs.isValid()) {
+
+			int id = m_menu->insertItem(QString().setNum(++k) + " " + rs.longName());
+
+			m_stationMenuIDs.push_back(id);
+			m_menu->setItemChecked (id, rs.compare(crs) == 0);
+
+		} else {
+			m_stationMenuIDs.push_back(-1);
+		}
+  	}
+}
+
+
+void RadioDocking::slotSeekFwd()
+{
+	ISeekRadio *seeker = dynamic_cast<ISeekRadio*>(queryActiveDevice());
+    if (seeker)
+		seeker->startSeekUp();
+}
+
+
+void RadioDocking::slotSeekBkwd()
+{
+	ISeekRadio *seeker = dynamic_cast<ISeekRadio*>(queryActiveDevice());
+    if (seeker)
+		seeker->startSeekUp();
+}
+
+
+
+void RadioDocking::slotShowAbout()
+{
+	// FIXME
+}
+
+
+void RadioDocking::slotPower()
+{
+	if (queryIsPowerOn()) {
+		sendPowerOff();
+	} else {
+		sendPowerOn();
+	}
+}
+
+
+void RadioDocking::slotSleepCountdown()
+{
+	if (queryCountdownEnd().isValid()) {
+		sendStopCountdown();
+	} else {
+		sendStartCountdown();
+	}
+}
+
+
+bool RadioDocking::noticeNextAlarmChanged(const Alarm *a)
+{
+	QDateTime d;
+	if (a) d = a->nextAlarm();
+
+	if (d.isValid())
+		m_menu->changeTitle (m_alarmID, i18n("next alarm: ") + d.toString());
+	else
+		m_menu->changeTitle (m_alarmID, i18n("<no alarm pending>"));
+	return true;
+}
+
+
+bool RadioDocking::noticeCountdownStarted(const QDateTime &end)
+{
+	if (end.isValid())
+		m_menu->changeItem (m_sleepID, i18n("stop sleep (running until ") + end.toString() + ")");
+	else
+		m_menu->changeItem (m_sleepID, i18n("start sleep countdown"));
+	return true;
+}
+
+
+bool RadioDocking::noticeCountdownStopped()
+{
+	m_menu->changeItem (m_sleepID, i18n("start sleep countdown"));
+	return true;
+}
+
+
+bool RadioDocking::noticeCountdownZero()
+{
+	m_menu->changeItem (m_sleepID, i18n("start sleep countdown"));
+	return true;
+}
+
+
+bool RadioDocking::noticePowerChanged(bool on)
+{
+  	m_menu->changeItem(m_powerID, on ? i18n("Power Off") : i18n("Power On"));
+	return true;
+}
+
+
+bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
+{
+    QString s = "KRadio: invalid station";
+    if (rs.isValid())
+		s = rs.longName();
+
+  	QToolTip::add(this, s);
+    m_menu->changeTitle (m_titleID, i18n("KRadio: ") + s);
+    // FIXME: title does not change in opened popupmenu
+
+    QValueList<int>::iterator iit = m_stationMenuIDs.begin();
+    QStringList::iterator     sit = m_stationIDs.begin();
+	for (; iit != m_stationMenuIDs.end(); ++iit, ++sit) {
+		if (*iit != -1) {
+			bool on = rs.stationID() == *sit;
+			m_menu->setItemChecked (*iit, on);
+		}
+	}
+
+	return true;
+}
+
+
+bool RadioDocking::noticeStationsChanged(const StationList &/*sl*/)
+{
+	buildContextMenu();
+	return true;
+}
+
 
 void RadioDocking::mousePressEvent( QMouseEvent *e )
 {
-  KSystemTray::mousePressEvent(e);
+	KSystemTray::mousePressEvent(e);
 
-  switch ( e->button() ) {
-  case LeftButton:
-    if (leftMouseTogglesQB) slotToggleQB ();
-    if (leftMouseTogglesUI) slotToggleUI ();
-    break;
-  default:
-	// nothing
-	break;
-  }
+	switch ( e->button() ) {
+	case LeftButton:
+// FIXME: which gui-plugin to toggle ?
+//		if (leftMouseTogglesQB) slotToggleQB ();
+//		if (leftMouseTogglesUI) slotToggleUI ();
+		break;
+	default:
+		// nothing
+		break;
+	}
 }
 
 
-void RadioDocking::slotSleepChanged()
+void RadioDocking::slotMenuItemActivated(int id)
 {
-    KPopupMenu *menu = contextMenu();
-	QDateTime e = timeControl->getCountdownEnd();
-
-	if (e.isValid())
-		menu->changeItem (sleepID, i18n("stop sleep (running until ") + e.toString() + ")");
-	else
-		menu->changeItem (sleepID, i18n("start sleep countdown"));
+	const StationList &sl = queryStations();
+    QValueList<int>::iterator iit = m_stationMenuIDs.begin();
+    QStringList::iterator     sit = m_stationIDs.begin();
+	for (; iit != m_stationMenuIDs.end(); ++iit, ++sit) {
+		if (*iit == id) {
+			const RadioStation &rs = sl.stationWithID(*sit);
+			if (rs.isValid())
+				sendActivateStation(rs);
+		}
+	}
 }
 

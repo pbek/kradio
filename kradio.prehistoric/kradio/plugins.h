@@ -43,6 +43,11 @@ class KConfig;
    configuration pages. Thus we need the special callback member
    m_destroyNotifier.
 
+   PluginBase is derived from Interface to provide connection facilities.
+   In case of multiple inheritance from interface classes, connect and disconnect
+   methods have to be reimplemented in order to call all inherited
+   connect/disconnect methods.
+
 */
 
 
@@ -57,19 +62,11 @@ public :
 	const QString &name() const { return m_name; }
 	      QString &name()       { return m_name; }
 
-	// Only the plugin itself knows what interfaces it implements. Thus it has
-	// to call the apropriate InterfaceBase::establishConnection methods
-
-	virtual bool connect    (PluginBase */*p*/) { return false; }
-	virtual bool disconnect (PluginBase */*p*/) { return false; }
-
 	// interaction with pluginmanager
 protected:
 	virtual bool setManager (PluginManager *);
 	virtual void unsetManager ();
 	virtual bool isManagerSet () const;
-
-	////////////////////////////////////
 
 public:
 
