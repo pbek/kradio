@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-14 06:14+0200\n"
+"POT-Creation-Date: 2003-09-14 15:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,11 +56,11 @@ msgstr ""
 msgid "&About"
 msgstr ""
 
-#: docking.cpp:214 docking.cpp:422
+#: docking.cpp:214 docking.cpp:423
 msgid "Hide %1"
 msgstr ""
 
-#: docking.cpp:214 docking.cpp:422
+#: docking.cpp:214 docking.cpp:423
 msgid "Show %1"
 msgstr ""
 
@@ -192,161 +192,161 @@ msgstr ""
 msgid "Video For Linux Plugin"
 msgstr ""
 
-#: v4lradio.cpp:233
+#: v4lradio.cpp:234
 msgid "error %1 while setting volume to %2"
 msgstr ""
 
-#: v4lradio.cpp:343
+#: v4lradio.cpp:344
 msgid "error %1 while reading volume"
 msgstr ""
 
-#: v4lradio.cpp:513
+#: v4lradio.cpp:514
 msgid "invalid frequency %1"
 msgstr ""
 
-#: v4lradio.cpp:533 v4lradio.cpp:1069 v4lradio.cpp:1209
+#: v4lradio.cpp:534 v4lradio.cpp:1075 v4lradio.cpp:1222
 msgid "don't known how to handle V4L-version %1"
 msgstr ""
 
-#: v4lradio.cpp:539
+#: v4lradio.cpp:540
 msgid "error setting frequency to %1 (%2)"
 msgstr ""
 
-#: v4lradio.cpp:701
+#: v4lradio.cpp:702
 msgid "Selecting V4L radio input as recording source failed with error code %1"
 msgstr ""
 
-#: v4lradio.cpp:706
+#: v4lradio.cpp:707
 msgid "Reading igain volume failed with error code %1"
 msgstr ""
 
-#: v4lradio.cpp:712
+#: v4lradio.cpp:713
 msgid "Setting igain volume failed with error code %1"
 msgstr ""
 
-#: v4lradio.cpp:797 v4lradio.cpp:798
+#: v4lradio.cpp:801 v4lradio.cpp:802
 msgid "V4L Radio Options"
 msgstr ""
 
-#: v4lradio.cpp:808
+#: v4lradio.cpp:812
 msgid ""
 "V4L/V4L2 Plugin for KRadio.<P>Provides Support for V4L/V4L2 based Radio "
 "Cards<P>"
 msgstr ""
 
-#: v4lradio.cpp:822
+#: v4lradio.cpp:826
 msgid "V4L/V4L2"
 msgstr ""
 
-#: v4lradio.cpp:823
+#: v4lradio.cpp:827
 msgid "V4L/V4L2 Plugin"
 msgstr ""
 
-#: v4lradio.cpp:845
+#: v4lradio.cpp:849
 msgid "Cannot open mixer device %1"
 msgstr ""
 
-#: v4lradio.cpp:854
+#: v4lradio.cpp:858
 msgid "Cannot open radio device %1"
 msgstr ""
 
-#: v4lradio.cpp:900
+#: v4lradio.cpp:904
 msgid "cannot open %1"
 msgstr ""
 
-#: v4lradio.cpp:924
+#: v4lradio.cpp:928
 msgid "audio caps = %1"
 msgstr ""
 
-#: v4lradio.cpp:938
+#: v4lradio.cpp:942
 msgid "error reading V4L1 caps"
 msgstr ""
 
-#: v4lradio.cpp:965
+#: v4lradio.cpp:971
 msgid "V4L2: Querying mute control failed"
 msgstr ""
 
-#: v4lradio.cpp:972
+#: v4lradio.cpp:978
 msgid "V4L2: Querying volume control failed"
 msgstr ""
 
-#: v4lradio.cpp:980
+#: v4lradio.cpp:986
 msgid "V4L2: Querying treble control failed"
 msgstr ""
 
-#: v4lradio.cpp:988
+#: v4lradio.cpp:994
 msgid "V4L2: Querying bass control failed"
 msgstr ""
 
-#: v4lradio.cpp:996
+#: v4lradio.cpp:1002
 msgid "V4L2: Querying balance control failed"
 msgstr ""
 
-#: v4lradio.cpp:1000
+#: v4lradio.cpp:1006
 msgid "V4LRadio::readV4LCaps: Reading V4L2 caps failed"
 msgstr ""
 
-#: v4lradio.cpp:1004
+#: v4lradio.cpp:1010
 msgid "V4L %1 detected"
 msgstr ""
 
-#: v4lradio.cpp:1006
+#: v4lradio.cpp:1012
 msgid "V4L not detected"
 msgstr ""
 
-#: v4lradio.cpp:1009
+#: v4lradio.cpp:1015
 msgid "Radio is mutable"
 msgstr ""
 
-#: v4lradio.cpp:1009
+#: v4lradio.cpp:1015
 msgid "Radio is not mutable"
 msgstr ""
 
-#: v4lradio.cpp:1010
+#: v4lradio.cpp:1016
 msgid "Radio has Volume Control"
 msgstr ""
 
-#: v4lradio.cpp:1010
+#: v4lradio.cpp:1016
 msgid "Radio has no Volume Control"
 msgstr ""
 
-#: v4lradio.cpp:1011
+#: v4lradio.cpp:1017
 msgid "Radio has Bass Control"
 msgstr ""
 
-#: v4lradio.cpp:1011
+#: v4lradio.cpp:1017
 msgid "Radio has no Bass Control"
 msgstr ""
 
-#: v4lradio.cpp:1012
+#: v4lradio.cpp:1018
 msgid "Radio has Treble Control"
 msgstr ""
 
-#: v4lradio.cpp:1012
+#: v4lradio.cpp:1018
 msgid "Radio has no Treble Control"
 msgstr ""
 
-#: v4lradio.cpp:1076
+#: v4lradio.cpp:1082
 msgid "cannot get tuner info (error %1)"
 msgstr ""
 
-#: v4lradio.cpp:1111
+#: v4lradio.cpp:1124
 msgid "error setting %1: %2"
 msgstr ""
 
-#: v4lradio.cpp:1119
+#: v4lradio.cpp:1132
 msgid "error reading %1: %2"
 msgstr ""
 
-#: v4lradio.cpp:1215
+#: v4lradio.cpp:1228
 msgid "error updating radio audio info (%1): %2"
 msgstr ""
 
-#: v4lradio.cpp:1216
+#: v4lradio.cpp:1229
 msgid "write"
 msgstr ""
 
-#: v4lradio.cpp:1216
+#: v4lradio.cpp:1229
 msgid "read"
 msgstr ""
 
