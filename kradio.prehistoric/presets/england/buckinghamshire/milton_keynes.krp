@@ -1,0 +1,76 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Ian Hay</maintainer>
+			<changed>2003-01-18T14:48:48</changed>
+			<country>England</country>
+			<city>Milton Keynes - Buckinghamshire</city>
+			<media>fm antenna</media>
+			<comments>a poorly served and weak reception area</comments>
+		</info>
+		<station>
+			<name>BBC Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<quickselect>1</quickselect>
+			<frequency>98.2</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio 2</name>
+			<shortname>Radio 2</shortname>
+			<quickselect>1</quickselect>
+			<frequency>88.63</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio 3</name>
+			<shortname>Radio 3</shortname>
+			<quickselect>1</quickselect>
+			<frequency>90.8</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio 4</name>
+			<shortname>Radio 4</shortname>
+			<quickselect>1</quickselect>
+			<frequency>93</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>3CR (Luton)</name>
+			<shortname>3CR (BEDS)</shortname>
+			<quickselect>1</quickselect>
+			<frequency>95.55</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>3CR (MK)</name>
+			<shortname>3CR (BUCKS)</shortname>
+			<quickselect>1</quickselect>
+			<frequency>104.5</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Horizon Radio</name>
+			<shortname>Horizon</shortname>
+			<quickselect>1</quickselect>
+			<frequency>103.3</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic FM</name>
+			<shortname>Classic FM</shortname>
+			<quickselect>1</quickselect>
+			<frequency>100.46</frequency>
+			<volumepreset>0.8</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
