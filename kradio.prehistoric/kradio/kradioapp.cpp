@@ -26,6 +26,7 @@
 #include "kradio.h"
 #include "kradioapp.h"
 #include "docking.h"
+#include "SetupDialog.h"
 
 
 KRadioApp::KRadioApp()
@@ -59,6 +60,7 @@ KRadioApp::KRadioApp()
   }
   if (kradio){
     connect(kradio, SIGNAL(showAbout()), &AboutApplication, SLOT(show()));
+    connect(kradio, SIGNAL(runConfigure()), this, SLOT(slotConfigure()));
   }
 }
 
@@ -134,3 +136,22 @@ void KRadioApp::saveState()
       quickbar->saveState(config);
 }
 
+
+
+void KRadioApp::slotConfigure()
+{
+	SetupDialog	sud (0, "setup", true);
+	sud.setStations(radio->getStations(), radio);
+	connect (&sud, SIGNAL(sigSaveConfig(const StationVector &)),
+		this, SLOT(slotSaveConfig(const StationVector &)));
+	if (sud.exec() == QDialog::Accepted) {
+		radio->setStations(sud.getStations());
+	}
+}
+
+
+void KRadioApp::slotSaveConfig (const StationVector &sl)
+{
+	radio->setStations(sl);
+	radio->writeCfg(QString(getenv("HOME")) + "/.kradiorc");
+}

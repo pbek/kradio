@@ -35,6 +35,25 @@ Alarm::Alarm (QObject *_parent)
 	done = false;
 }
 
+Alarm::Alarm (const Alarm &a)
+	: QObject (a.parent(), a.name())
+{
+	daily   = a.daily;
+	enabled = a.enabled;
+	done    = a.done;
+	time    = a.time;
+}
+
+
+Alarm::Alarm (QObject *_parent, const Alarm &a)
+	: QObject (_parent, a.name())
+{
+	daily   = a.daily;
+	enabled = a.enabled;
+	done    = a.done;
+	time    = a.time;
+}
+
 
 Alarm::~Alarm()
 {

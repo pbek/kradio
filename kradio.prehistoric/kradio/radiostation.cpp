@@ -51,6 +51,17 @@ RadioStation::RadioStation(const RadioStation &s)
 }
 
 
+RadioStation::RadioStation(QObject *_parent, const RadioStation &s)
+	: QObject (_parent, s.name())
+{
+	Frequency = s.Frequency;
+	ShortName = s.ShortName;
+	VolumePreset = s.VolumePreset;
+	QuickSelect = s.QuickSelect;
+	iconString = s.iconString;
+}
+
+
 RadioStation::~RadioStation()
 {
 }

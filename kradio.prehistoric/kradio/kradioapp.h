@@ -34,13 +34,19 @@
 class RadioDocking;
 class KRadio;
 
-class KRadioApp : public KApplication 
+class KRadioApp : public KApplication
 {
- public:
+Q_OBJECT	
+public:
   KRadioApp();
   virtual ~KRadioApp();
+
+public slots:
+
+  virtual void slotConfigure();
+  virtual void slotSaveConfig(const StationVector &);
   
- private:
+private:
   void restoreState();
   void readOptions();
 

@@ -47,6 +47,7 @@ public:
 	RadioStation(QObject *parent, QString Name, QString ShortName, QString iconString,
 				 float Frequency, float VolumePreset = -1);
 	RadioStation(const RadioStation &);
+	RadioStation(QObject *_parent, const RadioStation &);
 	virtual ~RadioStation();
 	
 	bool    isValid() const;

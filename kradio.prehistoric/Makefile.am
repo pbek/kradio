@@ -1,8 +1,8 @@
 ####### kdevelop will overwrite this part!!! (begin)##########
 
-SUBDIRS = kradio po
+SUBDIRS = kradio po 
 
-EXTRA_DIST = kradio.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO kradio.lsm kradio.spec admin
+EXTRA_DIST = kradio.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO kradio.lsm kradio.spec 
 
 ####### kdevelop will overwrite this part!!! (end)############
 # not a GNU package. You can remove this line, if 

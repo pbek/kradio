@@ -44,6 +44,8 @@ protected:
 public:
 	Alarm(QObject *parent, QDateTime time, bool daily, bool enabled);
 	Alarm(QObject *parent);
+	Alarm(const Alarm &);
+	Alarm(QObject *parent, const Alarm &);
 	virtual ~Alarm();
 	
 	bool		isEnabled() const { return enabled;}
