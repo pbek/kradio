@@ -1,25 +1,3 @@
-0.3.0-alpha2
-
-       debianize
-       packaging (deb, suse-rpm, mandrake-rpm)
-       option um V4L2-Version einzustellen
-       errorlog                                 // done
-       translation preparation                  // done
-       german translation                       // done
-       thanks                                   // done
-       remove dependency on kalarm              // done
-       v4l2 support (implemented, hardly tested) // done
-       recording button: +menu for recording/monitoring // done
-       symbol for station search button         // done
-       use special mail-adress for preset files // done
-       country/city in preset file mail         // done
-       about dialog                             // done
-       convert preset files                     // done
-       converter: add xml-encoding-line         // done
-       font selector for display                // done
-       optional inactive text color             // done
-       recording icon improvements (whiter)     // done
-
 0.3.0-alpha3
 
        segfault fixes with 2.95.3
