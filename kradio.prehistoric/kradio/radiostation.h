@@ -40,13 +40,19 @@
    should not contain information on a matching device as well. The device has
    to decide on its own to use or not to use a station.
 
-   There are some important abstract functions, that have to be overridden by
+   There are some important abstract functions, that have to be overwritten by
    a derived radio station:
 
-      copy        create an exact copy of a station (in case we only have a RadioStation*
-      longName    return a verbous station description
-      isValid     is this station setup correctly ?
-      equals      is this station equivalent to another station, e.g. approximately same frequency
+      copy         create an exact copy of a station (in case we only have a RadioStation*
+      longName     return a verbous station description
+      isValid      is this station setup correctly ?
+      compare      is this station equivalent to another station, e.g. approximately same frequency
+      getclassname classname string for station registry
+
+   Other methods "should" be overwritten, but still call inherited methods for completeness!
+
+      get/setProperty
+      getPropertyNames
   
 */
 
@@ -81,10 +87,10 @@ public:
 	void  setInitialVolume(float initialVolume)       { m_initialVolume = initialVolume; }
 
 	// for XML-Parsing/Export
-	virtual bool setProperty(const QString &property_name, const QString &val);
-	virtual QString getProperty(const QString &property_name) const;
+	virtual bool        setProperty(const QString &property_name, const QString &val);
+	virtual QString     getProperty(const QString &property_name) const;
 	virtual QStringList getPropertyNames() const;
-	virtual QString getClassName() const = 0;
+	virtual QString     getClassName() const = 0;
 
 	// get empty derived stations by classname from registry
 	static RadioStation const *getStationClass(const QString &classname);

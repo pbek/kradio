@@ -58,12 +58,27 @@ class RawStationList : public QPtrList<RadioStation>
 public:
 
 	typedef QPtrListIterator<RadioStation>  Iterator;
+	typedef QPtrList<RadioStation>          BaseClass;
 
 public:
 	RawStationList ();
 	RawStationList (const RawStationList &sl);
 	~RawStationList ();
 
+	// overwrite all insert-methods in order to change
+	// multiple insertion of same station_id into an update
+
+	bool insert  (uint index, const RadioStation *item);
+	void inSort  (const RadioStation *item);
+	void prepend (const RadioStation *item);
+	void append  (const RadioStation *item);
+	bool replace (uint index, const RadioStation *item);
+
+	// simplify stationIDSearch
+	
+    const RadioStation &  stationWithID(const QString &sid) const;
+          RadioStation &  stationWithID(const QString &sid);
+          
 protected:
 
 	QPtrCollection::Item newItem (QPtrCollection::Item s);
@@ -91,6 +106,9 @@ public:
     int                   count() const { return m_all.count(); }
     const RadioStation &  at(int idx) const;
           RadioStation &  at(int idx);
+
+    const RadioStation &  stationWithID(const QString &sid) const;
+          RadioStation &  stationWithID(const QString &sid);
 
     // all stations, with full access
     RawStationList &       all()       { return m_all; }
