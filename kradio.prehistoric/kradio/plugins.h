@@ -27,12 +27,17 @@
 #include "interfaces.h"
 #include <qstring.h>
 #include <qobject.h>
+#include <qptrlist.h>
 
 class PluginManager;
+class PluginBase;
 class KDialogBase;
 class QWidget;
 class QFrame;
 class KConfig;
+
+typedef QPtrList<PluginBase>           PluginList;
+typedef QPtrListIterator<PluginBase>   PluginIterator;
 
 /* PluginBase must be inherited from Interface so that a plugin can be used
    in Interface::connect functions.
@@ -107,6 +112,7 @@ public:
 	//
 	
 	virtual void noticeWidgetPluginShown(WidgetPluginBase *, bool /*shown*/) {}
+	virtual void noticePluginsChanged(const PluginList &) {}
 	
 protected :
 	QString            m_name;
@@ -114,24 +120,29 @@ protected :
 };
 
 
-
 class WidgetPluginBase : public PluginBase
 {
 public :
 	WidgetPluginBase(const QString &name) : PluginBase(name) {}
 
+
+	virtual void     toggleShown () = 0;
 	virtual void     show () = 0;
 	virtual void     show (bool show) = 0;
 	virtual void     hide () = 0;
+	virtual bool     isHidden () const = 0;
 
 	virtual QWidget *getWidget();
-
+	
 protected:
 	virtual void showEvent(QShowEvent *) = 0;
 	virtual void hideEvent(QHideEvent *) = 0;
 
 	virtual void notifyManager(bool shown);
 };
+
+
+
 
 
 

@@ -23,6 +23,7 @@
 class PluginConfigurationDialog : public KDialogBase,
                                   public WidgetPluginBase
 {
+Q_OBJECT
 public:
     PluginConfigurationDialog(
                  int dialogFace, const QString &caption,
@@ -42,10 +43,12 @@ protected :
 
 	// WidgetPluginBase
 
-public:
+public slots:
+    virtual void toggleShown();
     virtual void show();
     virtual void show(bool on);
     virtual void hide();
+    virtual bool isHidden() const { return KDialogBase::isHidden(); }
 
     // QWidget overrides
 

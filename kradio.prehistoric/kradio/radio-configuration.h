@@ -74,7 +74,7 @@ protected slots:
 	void slotSearchStations(int i);
 	void slotSearchStations0() { slotSearchStations(0); }
 
-	void slotOk();
+	void slotOK();
 	void slotCancel();
 
 

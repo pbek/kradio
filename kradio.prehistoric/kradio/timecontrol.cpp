@@ -220,8 +220,8 @@ void    TimeControl::saveState    (KConfig *config) const
 		config->writeEntry (AlarmTimeElement      + num, i->alarmTime());
 		config->writeEntry (AlarmEnabledElement   + num, i->isEnabled());
 		config->writeEntry (AlarmDailyElement     + num, i->isDaily());
-		config->writeEntry (AlarmVolumeElement    + num, i->getVolumePreset());
-		config->writeEntry (AlarmStationIDElement + num, i->getStationID());
+		config->writeEntry (AlarmVolumeElement    + num, i->volumePreset());
+		config->writeEntry (AlarmStationIDElement + num, i->stationID());
 	}
 
 	config->writeEntry("countdownSeconds",  m_countdownSeconds);

@@ -23,6 +23,7 @@
 #include <kimageeffect.h>  // fading, blending, ...
 #include <kpixmapio.h>     // fast conversion between QPixmap/QImage
 #include "radioview_frequencyradio.h"
+#include "displaycfg.h"
 
 RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString &name )
 	: RadioViewElement(parent, name, clsRadioDisplay),
@@ -36,57 +37,11 @@ RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString 
 	setLineWidth(1);
 	setMidLineWidth(1);
 
-	QPalette pl = palette();
-	QColorGroup cg = pl.inactive();
 
-	QBrush fg  = cg.brush(QColorGroup::Foreground),
-	       btn = cg.brush(QColorGroup::Button),
-	       lgt = cg.brush(QColorGroup::Light),
-	       drk = cg.brush(QColorGroup::Dark),
-	       mid = cg.brush(QColorGroup::Mid),
-	       txt = cg.brush(QColorGroup::Text),
-	       btx = cg.brush(QColorGroup::BrightText),
-	       bas = cg.brush(QColorGroup::Base),
-	       bg  = cg.brush(QColorGroup::Background);
-	       
-	fg.setColor (QColor( 20, 244,  20));
-	btn.setColor(QColor( 77, 117,  77));
-	lgt.setColor(QColor(134, 214, 134));
-	drk.setColor(QColor(  4,  66,   4));
-	mid.setColor(QColor( 36,  87,  36));
-	txt.setColor(QColor( 20, 244,  20));
-	btx.setColor(QColor( 20, 244,  20));
-	bas.setColor(QColor(  4,  66,   4));
-	bg.setColor (QColor(  4,  66,   4));
-
-	/* Benötigte Farben
-
-	* active text => button text, text
-	* inactive text <= mid
-	* Button => *2=light, *.5=dark, *.75=mid
-
-	nicht benötigte Farben:
-
-	* foreground == text
-	* background == button
-	* base == background
-
-	*/
-
-	QColorGroup ncg(fg, btn, lgt, drk, mid, txt, btx, bas, bg);
-	pl.setInactive(ncg);
-	pl.setActive(ncg);
-	setPalette(pl);
-
-	if (parentWidget() && parentWidget()->backgroundPixmap() ){
-		KPixmapIO io;
-		QImage  i = io.convertToImage(*parentWidget()->backgroundPixmap());
-		KImageEffect::fade(i, 0.5, colorGroup().color(QColorGroup::Dark));
-		setPaletteBackgroundPixmap(io.convertToPixmap(i));
-		setBackgroundOrigin(WindowOrigin);
-	} else {
-		setBackgroundColor(colorGroup().color(QColorGroup::Button));
-	}
+	// set some sensless default colors
+	// real values are read in restoreState
+	setColors(QColor(20, 244, 20),
+			  QColor(10, 117, 10));
 }
 
 
@@ -103,19 +58,52 @@ float RadioViewFrequencyRadio::getUsability (Interface *i) const
 }
 
 
+void   RadioViewFrequencyRadio::saveState (KConfig *config) const
+{
+	config->writeEntry("frequency-view-colorActiveText", m_colorActiveText);
+	config->writeEntry("frequency-view-colorButton",     m_colorButton);
+}
+
+
+void   RadioViewFrequencyRadio::restoreState (KConfig *config)
+{
+	QColor defaultActive(20, 244, 20),
+	       defaultButton(10, 117, 10);
+	QColor a, b;
+	a = config->readColorEntry ("frequency-view-colorActiveText",
+	                            &defaultActive);
+	b = config->readColorEntry ("frequency-view-colorButton",
+	                            &defaultButton);
+	setColors(a, b);
+}
+
+
+ConfigPageInfo RadioViewFrequencyRadio::createConfigurationPage()
+{
+	DisplayConfiguration *a = new DisplayConfiguration(NULL);
+	connect(a);
+	return ConfigPageInfo (a,
+	                       "Frequency Display",
+	                       "Frequency Display",
+	                       ""
+	                       );
+}
+
+
 // Interface
 
 bool RadioViewFrequencyRadio::connect(Interface *i)
 {
+	bool o = IDisplayCfg::connect(i);
 	if (dynamic_cast<IFrequencyRadio *>(i)) {
 
 		bool a = IRadioDeviceClient::connect(i);
 		bool b = IRadioSoundClient::connect(i);
 		bool c = IFrequencyRadioClient::connect(i);
-		return a || b || c;
+		return o || a || b || c;
 		
 	} else {
-		return false;
+		return o;
 	}
 }
 
@@ -127,8 +115,63 @@ bool RadioViewFrequencyRadio::disconnect(Interface *i)
 	bool a = IRadioDeviceClient::disconnect(i);
 	bool b = IRadioSoundClient::disconnect(i);
 	bool c = IFrequencyRadioClient::disconnect(i);
+	bool o = IDisplayCfg::disconnect(i);
 
-	return a || b || c;
+	return a || b || c || o;
+}
+
+
+// IDisplayCfg
+
+bool RadioViewFrequencyRadio::setColors(const QColor &activeText,
+                                        const QColor &button)
+{
+	bool change = (activeText != m_colorActiveText || button != m_colorButton);
+
+	m_colorActiveText = activeText;
+	m_colorButton     = button;
+
+	QPalette pl = palette();
+	QColorGroup cg = pl.inactive();
+
+	QBrush fg  = cg.brush(QColorGroup::Foreground),
+	       btn = cg.brush(QColorGroup::Button),
+	       lgt = cg.brush(QColorGroup::Light),
+	       drk = cg.brush(QColorGroup::Dark),
+	       mid = cg.brush(QColorGroup::Mid),
+	       txt = cg.brush(QColorGroup::Text),
+	       btx = cg.brush(QColorGroup::BrightText),
+	       bas = cg.brush(QColorGroup::Base),
+	       bg  = cg.brush(QColorGroup::Background);
+
+	fg.setColor (m_colorActiveText);
+	btn.setColor(m_colorButton);
+	lgt.setColor(m_colorButton.light(180));
+	drk.setColor(m_colorButton.light( 50));
+	mid.setColor(m_colorButton.light( 75));
+	txt.setColor(m_colorActiveText);
+	btx.setColor(m_colorActiveText);
+	bas.setColor(m_colorButton);
+	bg.setColor (m_colorButton);
+
+	QColorGroup ncg(fg, btn, lgt, drk, mid, txt, btx, bas, bg);
+	pl.setInactive(ncg);
+	pl.setActive(ncg);
+	setPalette(pl);
+
+	if (parentWidget() && parentWidget()->backgroundPixmap() ){
+		KPixmapIO io;
+		QImage  i = io.convertToImage(*parentWidget()->backgroundPixmap());
+		KImageEffect::fade(i, 0.5, colorGroup().color(QColorGroup::Dark));
+		setPaletteBackgroundPixmap(io.convertToPixmap(i));
+		setBackgroundOrigin(WindowOrigin);
+	} else {
+		setBackgroundColor(colorGroup().color(QColorGroup::Button));
+	}
+
+	if (change)
+		notifyColorsChanged(m_colorActiveText, m_colorButton);
+	return true;
 }
 
 
@@ -357,3 +400,16 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 	paint->drawText(xx_f, xy_f, xw_f, xh_f, Qt::AlignRight | Qt::AlignVCenter, s);
 }
 
+
+
+
+
+
+void RadioViewFrequencyRadio::reparent (QWidget *prnt,
+                                        WFlags f,
+                                        const QPoint &p,
+                                        bool showIt)
+{
+	RadioViewElement::reparent(prnt, f, p, showIt);
+	setColors(m_colorActiveText, m_colorButton);
+}

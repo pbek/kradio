@@ -24,6 +24,7 @@
 
 #include <qframe.h>
 #include "interfaces.h"
+#include "plugins.h"
 
 enum RadioViewClass { clsRadioSound   = 0,
                       clsRadioSeek,
@@ -50,6 +51,11 @@ public:
     RadioViewClass getClass() const { return myClass; }
 
 	// Configuration ??
+	virtual ConfigPageInfo  createConfigurationPage() { return ConfigPageInfo(); }
+
+	virtual void   saveState (KConfig *) const {}
+	virtual void   restoreState (KConfig *)    {}
+
 
 protected :
 

@@ -22,6 +22,8 @@
 #include <config.h>
 #endif
 
+#include <qobjectlist.h>
+
 #include "radio_interfaces.h"
 #include "radiodevicepool_interface.h"
 #include "plugins.h"
@@ -30,10 +32,14 @@
 class QWidgetStack;
 class QToolButton;
 class KComboBox;
-                    
+class QTabWidget;
+
+
+
+
 
 class RadioView : public QWidget,
-				  public PluginBase,
+				  public WidgetPluginBase,
                   public IRadioClient,
                   public IRadioDevicePoolClient
 {
@@ -43,6 +49,9 @@ public:
 	RadioView(QWidget *parent, const QString &name);
 	virtual ~RadioView();
 
+	const QString &name() const { return PluginBase::name(); }
+	      QString &name()       { return PluginBase::name(); }
+
 public slots:
 	// connects destroy-msg with remove-function
 	bool addElement    (RadioViewElement *);
@@ -50,7 +59,6 @@ public slots:
 	
 protected:
 	void selectTopWidgets();
-
 
 	
     // IRadioClient
@@ -66,7 +74,7 @@ RECEIVERS:
 	bool noticeActiveDeviceChanged(IRadioDevice *rd);
 	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
 
-	// PluginBase
+	// WidgetPluginBase
 
 public:
 	virtual void   saveState (KConfig *) const;
@@ -80,30 +88,32 @@ public:
 	virtual ConfigPageInfo  createConfigurationPage();
 	virtual QWidget        *createAboutPage();
 
-
-/* Ideas for the seeker:
-
-   universal seeker:  just a seekleft+seekright button. right aligned under normal buttons.
-                      this increases the main gui's height.
-   frequency seeker:  gui as in current implementation
-
-
-
-   Some other ideas:
-
-   RadioView manages some GuiControls with a common interface. Calls
-   GuiControl->(dis)connect for each ActiveDevice change. Turns GuiControl
-   on/off, depending on return value of connect call.
-
-*/
-
 protected slots:
 
     void slotPower (bool on);
     void slotConfigure (bool show);
     void slotComboStationSelected(int);
 
+    void slotConfigPageDeleted(QObject*);
+    void slotElementConfigPageDeleted(QObject*);
 
+public slots:
+
+	void    toggleShown ();
+	void    show();
+	void    show (bool show);
+	void    hide();
+
+protected:
+	bool    isHidden () const { return QWidget::isHidden(); }
+	virtual void showEvent(QShowEvent *);
+	virtual void hideEvent(QHideEvent *);
+
+
+    void	getKWinState() const;
+    void    addConfigurationTabFor(RadioViewElement *, QTabWidget *);
+
+    
 protected:
 	QToolButton          *btnPower;
 	QToolButton          *btnConfigure;
@@ -111,14 +121,34 @@ protected:
 	QToolButton          *btnQuickbar;
 	KComboBox            *comboStations;
 
+	struct ElementCfg
+	{
+		RadioViewElement *element;
+		QObject          *cfg;		
+		ElementCfg()                                : element(NULL), cfg(NULL) {}
+		ElementCfg(RadioViewElement *e, QObject *w) : element(e), cfg(w) {}
+		ElementCfg(RadioViewElement *e)             : element(e), cfg(NULL) {}
+		ElementCfg(QObject *w)                      : element(NULL), cfg(w) {}
+		bool operator == (const ElementCfg &x) const;
+	};
+	
 	typedef  QPtrList<RadioViewElement>         ElementList;
 	typedef  QPtrListIterator<RadioViewElement> ElementListIterator;
+    typedef  QValueList<ElementCfg>             ElementCfgList;
+    typedef  QValueListIterator<ElementCfg>     ElementCfgListIterator;
 
 	ElementList           elements;
+	ElementCfgList        elementConfigPages;
+	QObjectList           configPages;
 	QWidgetStack *        widgetStacks[clsClassMAX];
 	float                 maxUsability[clsClassMAX];
 
 	IRadioDevice          *currentDevice;
+
+    // temporary data
+    mutable bool		  m_saveSticky;
+    mutable int		      m_saveDesktop;
+    mutable QRect		  m_saveGeometry;
 };
 
 

@@ -413,7 +413,7 @@ void RadioConfiguration::slotSearchStations(int idev)
 }
 
 
-void RadioConfiguration::slotOk()
+void RadioConfiguration::slotOK()
 {
 	sendStations(m_stations);
 }

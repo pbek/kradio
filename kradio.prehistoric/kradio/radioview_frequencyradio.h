@@ -20,6 +20,7 @@
 
 #include "radioview_element.h"
 #include "radiodevice_interfaces.h"
+#include "displaycfg_interfaces.h"
 
 /**
   *@author Martin Witte
@@ -28,7 +29,8 @@
 class RadioViewFrequencyRadio : public RadioViewElement,  // is a QObject, must be first
 					            public IRadioDeviceClient,
 					            public IFrequencyRadioClient,
-					            public IRadioSoundClient
+					            public IRadioSoundClient,
+					            public IDisplayCfg
 {
 Q_OBJECT
 public:
@@ -37,10 +39,24 @@ public:
 
 	float getUsability (Interface *) const;
 
+	virtual void   saveState (KConfig *) const;
+	virtual void   restoreState (KConfig *);
+
+	ConfigPageInfo createConfigurationPage();
+	
 // Interface
 
 	bool connect   (Interface *);
 	bool disconnect(Interface *);
+
+// IDisplayCfg
+
+RECEIVERS:
+	bool  setColors(const QColor &activeColor, const QColor &bkgnd);
+
+ANSWERS:
+	QColor   getActiveColor() const { return m_colorActiveText; }
+	QColor   getBkgndColor() const  { return m_colorButton; }
 
 // IRadioDeviceClient	
 RECEIVERS:
@@ -63,13 +79,19 @@ RECEIVERS:
 	bool noticeDeviceMinMaxFrequencyChanged(float min, float max);
 	bool noticeScanStepChanged(float s);
 
-// own stuff ;)	
+// own stuff ;)
+
+public:
+
+	void reparent (QWidget *parent, WFlags f, const QPoint &p, bool showIt = FALSE);
 
 protected:
 
 	void drawContents(QPainter *p);
 
 protected:
+
+	QColor  m_colorActiveText, m_colorButton;
 
 	bool  m_power;
 	bool  m_valid;

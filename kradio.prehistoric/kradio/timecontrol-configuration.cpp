@@ -131,7 +131,7 @@ bool TimeControlConfiguration::noticeCountdownZero()
 
 bool TimeControlConfiguration::noticeCountdownSecondsChanged(int n)
 {
-	editSleep->setValue(n);
+	editSleep->setValue((int)round(n / 60));
 	return false;
 }
 
@@ -207,7 +207,7 @@ void TimeControlConfiguration::slotTimeChanged(const QTime &t)
 }
 
 
-void TimeControlConfiguration::slotDailyChanged ( bool b)
+void TimeControlConfiguration::slotDailyChanged (bool b)
 {
     if (ignoreChanges) return;
 
@@ -222,6 +222,9 @@ void TimeControlConfiguration::slotDailyChanged ( bool b)
 		noticeAlarmsChanged(alarms);
 		ignoreChanges = false;
 
+		editAlarmDate ->setDisabled(a.isDaily());
+		labelAlarmDate->setDisabled(a.isDaily());
+	
 		oldfocus->setFocus();
     }
 }
@@ -286,10 +289,10 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 	editAlarmTime        ->setTime(a.alarmTime().time());
 	checkboxAlarmDaily   ->setChecked(a.isDaily());
 	checkboxAlarmEnable  ->setChecked(a.isEnabled());
-	editAlarmVolume      ->setValue((int)round(a.getVolumePreset() * 100));
+	editAlarmVolume      ->setValue((int)round(a.volumePreset() * 100));
 
 	int k = 0;
-	const QString &sID = a.getStationID();
+	const QString &sID = a.stationID();
 	for (int i = 0; !k && i < (int)stationIDs.size(); ++i)
 		if (stationIDs[i] == sID) k = i;
 	comboStationSelection->setCurrentItem(k);
@@ -324,10 +327,10 @@ void TimeControlConfiguration::slotDeleteAlarm()
 }
 
 
-void TimeControlConfiguration::slotOk()
+void TimeControlConfiguration::slotOK()
 {
 	sendAlarms(alarms);
-	sendCountdownSeconds(editSleep->value());
+	sendCountdownSeconds(editSleep->value() * 60);
 }
 
 void TimeControlConfiguration::slotCancel()

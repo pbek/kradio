@@ -21,7 +21,9 @@ Alarm::Alarm(const QDateTime &time, bool daily, bool enabled)
 	  m_daily        (daily),
 	  m_enabled      (enabled),
 	  m_stationID    (""),
-      m_volumePreset (-1)
+      m_volumePreset (-1),
+      m_type         (Start),
+      m_record       (false)
 {	  
 }
 
@@ -31,7 +33,9 @@ Alarm::Alarm ()
 	  m_daily       (false),
 	  m_enabled     (false),
 	  m_stationID   (""),
-	  m_volumePreset(-1)
+	  m_volumePreset(-1),
+      m_type         (Start),
+      m_record       (false)
 {
 }
 
@@ -41,7 +45,9 @@ Alarm::Alarm (const Alarm &a)
      m_daily       (a.m_daily),
      m_enabled     (a.m_enabled),
      m_stationID   (a.m_stationID),
-     m_volumePreset(a.m_volumePreset)
+     m_volumePreset(a.m_volumePreset),
+     m_type        (a.m_type),
+     m_record      (a.m_record)
 {
 }
 

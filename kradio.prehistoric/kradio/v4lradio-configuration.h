@@ -69,7 +69,7 @@ protected slots:
 	void selectMixerDevice();
 	void selectRadioDevice();
 
-	void slotOk();
+	void slotOK();
 	void slotCancel();
 
 	void guiMinFrequencyChanged(int v);

@@ -203,7 +203,7 @@ void V4LRadioConfiguration::selectMixerDevice()
 }
 
 
-void V4LRadioConfiguration::slotOk()
+void V4LRadioConfiguration::slotOK()
 {
 	sendMinFrequency(((float)editMinFrequency->value()) / 1000.0);
 	sendMaxFrequency(((float)editMaxFrequency->value()) / 1000.0);

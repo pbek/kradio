@@ -20,6 +20,7 @@
 #include <qtooltip.h>
 #include <kpopupmenu.h>
 #include <kapplication.h>
+#include <kaction.h>
 
 
 #include "docking.h"
@@ -27,17 +28,19 @@
 #include "radiostation.h"
 #include "radiodevice_interfaces.h"
 #include "docking-configuration.h"
+#include "pluginmanager.h"
 
 RadioDocking::RadioDocking(const QString &name)
   : KSystemTray (NULL, name),
     PluginBase(name)
 {
 	setPixmap(BarIcon("kradio"));
+	m_widgetPluginIDs.setAutoDelete(true);
 
 	m_menu = contextMenu();
 	QObject::connect(m_menu, SIGNAL(activated(int)),
 	                 this, SLOT(slotMenuItemActivated(int)));
-	
+
 	buildContextMenu ();
 }
 
@@ -163,16 +166,30 @@ void RadioDocking::buildContextMenu()
 
 	m_menu->insertItem(SmallIcon("kradio"), i18n("&About"), this, SLOT(slotShowAbout()));
 
-//	m_menu->insertSeparator();
 
-	/* FIXME: disabled for now, we do not have an apropriate interface yet
+	// build list of widgets for hide/show items
+	m_widgetPluginIDs.clear();
+    if (m_manager) {
+		m_menu->insertSeparator();
 
-	guiID = m_menu->insertItem("gui-show-dummy", this, SLOT(slotToggleUI()) );
-	qbID  = m_menu->insertItem("quickbar-dummy", this, SLOT(slotToggleQB()) );
+		const PluginList &plugins = m_manager->plugins();
+		for (PluginIterator it(plugins); it.current(); ++it) {
+            WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(it.current());
+            if (!b) continue;
+			
+			const QString &name = b->name();
+			QWidget *w = b->getWidget();
+			bool h = w->isHidden();
+			
+			int id = m_menu->insertItem(QIconSet(SmallIconSet(h ? "1uparrow" : "1downarrow")),
+			                            i18n(h ? "show " : "hide ") + name,
+			                            w, SLOT(toggleShown()));
+			m_widgetPluginIDs.insert(b, new int(id));
+		}
+	}
 
-	*/
-
-//	m_menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
+	m_menu->insertSeparator();
+	m_menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
 }
 
 
@@ -355,3 +372,18 @@ void RadioDocking::slotMenuItemActivated(int id)
 	}
 }
 
+
+void RadioDocking::noticeWidgetPluginShown(WidgetPluginBase *b, bool shown)
+{
+	if (!b) return;
+	int *id = m_widgetPluginIDs.find(b);
+	m_menu->changeItem(*id,
+		               QIconSet(SmallIconSet(!shown ? "1uparrow" : "1downarrow")),
+	                   i18n(!shown ? "show" : "hide") + " " + b->name());
+}
+
+
+void RadioDocking::noticePluginsChanged(const PluginList &/*l*/)
+{
+	buildContextMenu();
+}

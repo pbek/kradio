@@ -199,7 +199,7 @@ void StationSelector::insertItem (
 }
 
 
-void StationSelector::slotOk()
+void StationSelector::slotOK()
 {
 	QStringList l;
 	for (vector<QString>::iterator it = stationsSelected.begin(); it != stationsSelected.end(); ++it)

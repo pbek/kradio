@@ -39,7 +39,7 @@ class QToolButton;
   */
 
 class QuickBar : public QWidget,
-                 public PluginBase,
+                 public WidgetPluginBase,
                  public IRadioClient,
                  public IStationSelection
 {
@@ -98,9 +98,11 @@ protected:
 
 public slots:
 	
-    void    setOn(bool on);
+	void    toggleShown();
+	void    show(bool on);
 	void    show();
 	void    hide();
+	bool    isHidden() const { return QWidget::isHidden(); }
 	void    setGeometry (const QRect &r);
 	void    setGeometry (int x, int y, int w, int h);
 
@@ -108,6 +110,8 @@ protected:
     void	getKWinState() const;
 	void    rebuildGUI();
 	void    resizeEvent(QResizeEvent *);
+	void    showEvent(QShowEvent *);
+	void    hideEvent(QHideEvent *);
 
 protected :
 

@@ -87,6 +87,9 @@ void PluginManager::insertPlugin(PluginBase *p)
 				i->connect(p);
 		}
 	}
+	for (PluginIterator it(m_plugins); it.current(); ++it) {
+		it.current()->noticePluginsChanged(m_plugins);
+	}
 }
 
 
@@ -125,6 +128,11 @@ void PluginManager::removePlugin(PluginBase *p)
 		// remove bindings between me and plugin
 		m_plugins.remove(p);
 		p->unsetManager();
+
+		p->noticePluginsChanged(PluginList());
+		for (PluginIterator it(m_plugins); it.current(); ++it) {
+			it.current()->noticePluginsChanged(m_plugins);
+		}
 	}
 }
 
@@ -165,8 +173,8 @@ void PluginManager::addConfigurationPage (PluginBase *forWhom,
     }
 
     // make sure, that config page receives ok, apply and cancel signals
-	QObject::connect(m_configDialog, SIGNAL(okClicked()),     info.configPage, SLOT(slotOk()));
-	QObject::connect(m_configDialog, SIGNAL(applyClicked()),  info.configPage, SLOT(slotOk()));
+	QObject::connect(m_configDialog, SIGNAL(okClicked()),     info.configPage, SLOT(slotOK()));
+	QObject::connect(m_configDialog, SIGNAL(applyClicked()),  info.configPage, SLOT(slotOK()));
 	QObject::connect(m_configDialog, SIGNAL(cancelClicked()), info.configPage, SLOT(slotCancel()));
 }
 

@@ -22,6 +22,7 @@
 #include <qptrdict.h>
 
 #include "interfaces.h"
+#include "plugins.h"
 
 class PluginBase;
 class WidgetPluginBase;
@@ -32,7 +33,6 @@ class KConfig;
 
 struct ConfigPageInfo;
 
-
 class PluginManager
 {
 public :
@@ -41,6 +41,8 @@ public :
 
 
 	// managing plugins
+
+	const PluginList     &plugins() const { return m_plugins; }
 
 	// after insert, pluginManager is responsible for deletion
 	virtual void         insertPlugin(PluginBase *);
@@ -70,8 +72,6 @@ protected :
 
 	// PluginManager's data & types ;)
 protected:
-    typedef QPtrList<PluginBase>           PluginList;
-    typedef QPtrListIterator<PluginBase>   PluginIterator;
     typedef QPtrDict<QFrame>               QFrameDict;
     typedef QPtrDictIterator<QFrame>       QFrameDictIterator;
     typedef QPtrDict<QWidget>              QWidgetDict;

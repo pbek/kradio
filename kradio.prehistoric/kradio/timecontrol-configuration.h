@@ -69,7 +69,7 @@ protected slots:
 	void slotNewAlarm();
 	void slotDeleteAlarm();
 
-	void slotOk();
+	void slotOK();
 	void slotCancel();
 
 protected:

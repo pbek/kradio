@@ -33,6 +33,7 @@ LircSupport::LircSupport(const QString &name)
 {
 
 #ifdef HAVE_LIRC_CLIENT
+	kdDebug() << "initializing kradio lirc plugin\n";
 	char *prg = (char*)"kradio";
 	m_fd_lirc = lirc_init(prg, 1);
     m_lirc_notify = 0;
@@ -47,6 +48,12 @@ LircSupport::LircSupport(const QString &name)
 			lirc_deinit();
 			m_fd_lirc = -1;
 		}
+	}
+
+	if (m_fd_lirc == -1) {
+		kdDebug() << "initializing kradio lirc plugin failed\n";
+	} else {
+		kdDebug() << "initializing kradio lirc plugin successful\n";
 	}
 #endif	
 	

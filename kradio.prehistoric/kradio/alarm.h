@@ -32,6 +32,10 @@
 
 class Alarm
 {
+public:
+
+	enum AlarmType { Start, Stop };
+
 protected:
 	QDateTime	  m_time;
 	bool		  m_daily;
@@ -39,6 +43,9 @@ protected:
 	QString       m_stationID;
 	float		  m_volumePreset;  // < 0: disabled
 
+    AlarmType     m_type;
+    bool          m_record;
+	
 public:
 	Alarm();
 	Alarm(const QDateTime &time, bool daily, bool enabled);
@@ -49,15 +56,19 @@ public:
 	bool 		   isDaily() const              { return m_daily;     }
 	QDateTime	   alarmTime () const           { return m_time;      }
 	QDateTime      nextAlarm (bool ignoreEnable = false) const;
-	const QString &getStationID () const        { return m_stationID; }
-	float	       getVolumePreset () const     { return m_volumePreset; }
-	
+	const QString &stationID () const           { return m_stationID; }
+	float	       volumePreset () const        { return m_volumePreset; }
+	bool           recordFlag() const           { return m_record; }
+	AlarmType      alarmType() const            { return m_type; }
+
 	void	    setEnabled (bool enable = true) { m_enabled = enable; }
-	void	    setDaily (bool d = true)        { m_daily = d;        }
+	void	    setDaily (bool d = true)        { m_daily        = d; }
 	void	    setDate (const QDate &d)        { m_time.setDate(d);  }
 	void	    setTime (const QTime &d)        { m_time.setTime(d);  }
     void        setVolumePreset(float v)        { m_volumePreset = v; }
-    void        setStationID(const QString &id) { m_stationID = id;   }
+    void        setStationID(const QString &id) { m_stationID    = id;}
+	void        setRecordFlag(bool f)           { m_record       = f; }
+	void        setAlarmType(AlarmType t)       { m_type         = t; }
 };
 
 typedef vector<Alarm>		        AlarmVector;

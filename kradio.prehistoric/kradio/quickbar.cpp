@@ -34,7 +34,7 @@
 
 QuickBar::QuickBar(QWidget * parent, const char * name)
   : QWidget(parent, name),
-    PluginBase(name),
+    WidgetPluginBase(name),
 
     m_layout(NULL),
     m_buttonGroup(NULL),
@@ -305,7 +305,16 @@ void QuickBar::rebuildGUI()
 
 
 
-void QuickBar::setOn(bool on)
+void QuickBar::toggleShown()
+{
+	if (!isVisible())
+		show();
+	else
+		hide();
+}
+
+
+void QuickBar::show(bool on)
 {
 	if (on && !isVisible())
 		show();
@@ -345,6 +354,20 @@ void QuickBar::resizeEvent (QResizeEvent *e)
 	}
 
 	QWidget::resizeEvent (e);
+}
+
+
+void    QuickBar::showEvent(QShowEvent *e)
+{
+	QWidget::showEvent(e);
+	notifyManager(true);
+}
+
+
+void    QuickBar::hideEvent(QHideEvent *e)
+{
+	QWidget::hideEvent(e);
+	notifyManager(false);
 }
 
 

@@ -25,6 +25,8 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kapplication.h>
+#include <kwin.h>
+#include <kconfig.h>
 
 #include "radioview.h"
 #include "radiodevice_interfaces.h"
@@ -38,24 +40,24 @@
 #include "radioview_volume.h"
 #include "radioview_frequencyseeker.h"
 
-class MyToolButton : public QToolButton
+#include "radioview-configuration.h"
+
+///////////////////////////////////////////////////////////////////////
+
+bool RadioView::ElementCfg::operator == (const ElementCfg &x) const
 {
-public :
-	MyToolButton (QWidget *parent) : QToolButton (parent) {}
+	if (!x.element || !element)
+		return x.cfg == cfg;
+	if (!x.cfg || !cfg)
+		return x.element == element;
+	return element == x.element && cfg == x.cfg;
+}
 
-/*	void resizeEvent(QResizeEvent *re) {
-		QSize s = re->size();		
-		kdDebug() << s.width() << ", " << s.height() << endl;
-		QToolButton::resizeEvent(re);
-		setMinimumSize(s.height(), minimumHeight());
-	}
-*/
-};
-
+///////////////////////////////////////////////////////////////////////
 
 RadioView::RadioView(QWidget *parent, const QString &name)
   : QWidget(parent, (const char*)name),
-    PluginBase(name),
+    WidgetPluginBase(name),
     currentDevice(NULL)
 {
 	for (int i = 0; i < clsClassMAX; ++i)
@@ -77,12 +79,12 @@ RadioView::RadioView(QWidget *parent, const QString &name)
 	l03->addWidget(widgetStacks[clsRadioDisplay]);
 
 	QGridLayout *l04 = new QGridLayout (l03, /*rows=*/ 2, /*cols=*/ 2);
-	btnPower         = new MyToolButton(this);
+	btnPower         = new QToolButton(this);
 	btnPower->setToggleButton(true);
-	btnQuickbar      = new MyToolButton(this);
-	btnConfigure     = new MyToolButton(this);
+	btnQuickbar      = new QToolButton(this);
+	btnConfigure     = new QToolButton(this);
 	btnConfigure->setToggleButton(true);
-	btnQuit          = new MyToolButton(this);
+	btnQuit          = new QToolButton(this);
 	l04->addWidget (btnPower,     0, 0);
 	l04->addWidget (btnQuickbar,  0, 1);
 	l04->addWidget (btnConfigure, 1, 0);
@@ -119,6 +121,11 @@ RadioView::RadioView(QWidget *parent, const QString &name)
 
 RadioView::~RadioView ()
 {
+	QObjectListIterator it(configPages);
+	while (configPages.first()) {
+		delete configPages.first();
+	}
+	configPages.clear();
 }
 
 
@@ -131,7 +138,8 @@ bool RadioView::addElement (RadioViewElement *e)
 	if (cls < 0 || cls >= clsClassMAX)
 		return false;
 
-		
+
+	e->reparent(this, QPoint(0, 0), true);
 	QObject::connect(e,    SIGNAL(destroyed(QObject*)),
 	                 this, SLOT(removeElement(QObject*)));
 	elements.append(e);
@@ -140,6 +148,11 @@ bool RadioView::addElement (RadioViewElement *e)
 	// connect Element with device, disconnect doesn't matter (comp. removeElement)
 	// other devices follow if currentDevice changes
 	e->connect(currentDevice);
+
+	QObjectListIterator it(configPages);
+	for (; it.current(); ++it) {
+		addConfigurationTabFor(e, (QTabWidget *)it.current());
+	}
 
 	selectTopWidgets();
 	
@@ -152,6 +165,13 @@ bool RadioView::removeElement (QObject *_e)
 	RadioViewElement *e = dynamic_cast<RadioViewElement*>(_e);
     if (!e)
 		return false;
+
+	ElementCfgListIterator it;
+	while ((it = elementConfigPages.find(e)) != elementConfigPages.end()) {
+		delete (*it).cfg;
+		// it must not used behind, the element will be deleted automatically
+		// by slotElementConfigPageDeleted
+	}
 
     e->disconnect(currentDevice);
 	RadioViewClass cls = e->getClass();
@@ -261,23 +281,88 @@ bool RadioView::disconnect(Interface *i)
 }
 
 
-// PluginBase
+// WidgetPluginBase
 
-void   RadioView::saveState (KConfig *) const
+void   RadioView::saveState (KConfig *config) const
 {
-	// FIXME
+    config->setGroup(QString("radioview-") + name());
+
+	getKWinState();
+
+    config->writeEntry("hidden", isHidden());
+
+	config->writeEntry("sticky",   m_saveSticky);
+	config->writeEntry("desktop",  m_saveDesktop);
+	config->writeEntry("geometry", m_saveGeometry);
+
+	for (ElementListIterator i(elements); i.current(); ++i) {
+		RadioViewElement *e  = i.current();
+		e->saveState(config);
+	}
 }
 
 
-void   RadioView::restoreState (KConfig *)
+void   RadioView::restoreState (KConfig *config)
 {
-	// FIXME
+	config->setGroup(QString("radioview-") + name());
+
+	m_saveDesktop  = config->readNumEntry ("desktop", 1);
+	m_saveSticky   = config->readBoolEntry("sticky",  false);
+	m_saveGeometry = config->readRectEntry("geometry");
+
+    if (config->readBoolEntry("hidden", false))
+        hide();
+    else
+        show();
+
+
+	for (ElementListIterator i(elements); i.current(); ++i) {
+		RadioViewElement *e  = i.current();
+		e->restoreState(config);
+	}
 }
 
 
 ConfigPageInfo RadioView::createConfigurationPage()
 {
-	return ConfigPageInfo();	// FIXME
+	RadioViewConfiguration *c = new RadioViewConfiguration();
+
+	for (ElementListIterator i(elements); i.current(); ++i) {
+		addConfigurationTabFor(i.current(), c);
+	}
+
+	configPages.append(c);
+	QObject::connect(c,    SIGNAL(destroyed(QObject *)),
+	                 this, SLOT(slotConfigPageDeleted(QObject *)));
+	
+	return ConfigPageInfo(
+		c,
+		"Display",
+		"Display Configuration",
+		"openterm"
+	);
+}
+
+
+void RadioView::addConfigurationTabFor(RadioViewElement *e, QTabWidget *c)
+{
+	if (!e || !c)
+		return;
+
+	ConfigPageInfo inf = e->createConfigurationPage();
+
+	if (inf.configPage) {
+
+		if (inf.iconName.length()) {
+			c->addTab(inf.configPage, QIconSet(SmallIconSet(inf.iconName)), inf.itemName);
+		} else {
+			c->addTab(inf.configPage, inf.itemName);
+		}
+
+		elementConfigPages.push_back(ElementCfg(e, inf.configPage));
+		QObject::connect(inf.configPage, SIGNAL(destroyed(QObject *)),
+						 this, SLOT(slotElementConfigPageDeleted(QObject *)));
+	}
 }
 
 
@@ -320,3 +405,82 @@ void RadioView::slotComboStationSelected(int idx)
 		comboStations->setCurrentItem(queryCurrentStationIdx() + 1);		
 	}
 }
+
+
+void RadioView::slotConfigPageDeleted(QObject *o)
+{
+	configPages.remove(o);
+}
+
+
+void RadioView::slotElementConfigPageDeleted(QObject *o)
+{
+	ElementCfgListIterator it;
+	while ((it = elementConfigPages.find(o)) != elementConfigPages.end()) {
+		elementConfigPages.remove(it);		
+	}
+}
+
+void RadioView::toggleShown()
+{
+	if (isHidden())
+		show();
+	else
+		hide();
+}
+
+void RadioView::show(bool on)
+{
+	if (on && isHidden())
+		show();
+	else if (!on && !isHidden())
+		hide();
+}
+
+void RadioView::show()
+{
+	bool wasHidden = !isVisible();
+
+	QWidget::show();
+
+    if (wasHidden) {
+     	KWin::setOnAllDesktops(winId(), m_saveSticky);
+    	KWin::setType(winId(), NET::Toolbar);
+
+    	setGeometry(m_saveGeometry);
+    }
+}
+
+
+void RadioView::hide()
+{
+    getKWinState();
+    QWidget::hide();
+}
+
+
+void RadioView::showEvent(QShowEvent *e)
+{
+	QWidget::showEvent(e);
+	notifyManager(true);
+}
+
+
+void RadioView::hideEvent(QHideEvent *e)
+{
+	QWidget::hideEvent(e);
+	notifyManager(false);
+}
+
+
+void RadioView::getKWinState() const
+{
+	if (isVisible()) {
+		KWin::Info    i = KWin::info(winId());
+		m_saveSticky    = i.onAllDesktops;
+		m_saveDesktop   = i.desktop;
+		m_saveGeometry  = geometry();
+	}
+}
+
+

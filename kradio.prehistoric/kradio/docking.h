@@ -24,6 +24,7 @@
 
 #include <ksystemtray.h>
 #include <qpixmap.h>
+#include <qptrdict.h>
 
 #include "timecontrol_interfaces.h"
 #include "radio_interfaces.h"
@@ -105,13 +106,17 @@ protected slots:
 	void slotShowAbout();
 
 	void slotMenuItemActivated(int id);
-
+	
 protected:
     void mousePressEvent( QMouseEvent *e );
 
 	void buildContextMenu();
 	void buildStationList();
 
+	void noticeWidgetPluginShown(WidgetPluginBase *, bool shown);
+	void noticePluginsChanged(const PluginList &);
+
+	void showEvent(QShowEvent *) {}
 
 protected:
 
@@ -127,6 +132,8 @@ protected:
 	int         m_seekbwID;
 	QValueList<int> m_stationMenuIDs;
 
+	QPtrDict<int>   m_widgetPluginIDs;
 };
+
 
 #endif

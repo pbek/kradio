@@ -28,6 +28,7 @@
 #include "radiodevice_interfaces.h"
 #include "stationlist.h"
 #include "plugins.h"
+#include "timecontrol_interfaces.h"
 
 /**
  * The main Radio class, which is used as the interface of the radio functionality
@@ -49,7 +50,8 @@
 class Radio : public PluginBase,
 	          public IRadio,
               public IRadioDevicePool,
-              public IRadioDeviceClient
+              public IRadioDeviceClient,
+              public ITimeControlClient
 {
 public:
     Radio(const QString &name);
@@ -119,6 +121,19 @@ QUERIES:
 RECEIVERS:
 	virtual bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
 	virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
+
+
+	// ITimeControlClient
+	
+RECEIVERS:
+    bool noticeAlarmsChanged(const AlarmVector &)        { return false; } // ignore
+    bool noticeAlarm(const Alarm &);
+    bool noticeNextAlarmChanged(const Alarm *)           { return false; } // ignore
+    bool noticeCountdownStarted(const QDateTime &/*end*/){ return false; } // ignore
+    bool noticeCountdownStopped()                        { return false; } // ignore
+    bool noticeCountdownZero();
+    bool noticeCountdownSecondsChanged(int /*n*/)        { return false; } // ignore
+
 
 protected:
 

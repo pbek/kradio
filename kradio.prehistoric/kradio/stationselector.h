@@ -57,7 +57,7 @@ protected slots:
 	void slotButtonToLeft();
 	void slotButtonToRight();
 
-	void slotOk();
+	void slotOK();
 	void slotCancel();
 
 protected:

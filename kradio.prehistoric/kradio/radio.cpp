@@ -360,3 +360,24 @@ void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd, bool pointer
 }
 
 
+// ITimeControlClient
+
+bool Radio::noticeAlarm(const Alarm &a)
+{
+	if (a.alarmType() == Alarm::Start) {
+		const RawStationList &sl = getStations().all();
+		const RadioStation &rs = sl.stationWithID(a.stationID());
+		activateStation(rs);
+		powerOn();
+	} else {
+		powerOff();
+	}
+	return true;
+}
+
+
+bool Radio::noticeCountdownZero()
+{
+	powerOff();
+	return true;
+}

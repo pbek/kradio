@@ -54,19 +54,30 @@ QWidget *PluginConfigurationDialog::createAboutPage()
 
 // WidgetPluginBase
 
-void PluginConfigurationDialog::PluginConfigurationDialog::show()
+void PluginConfigurationDialog::toggleShown()
+{
+	if (isHidden())
+		show();
+	else
+		hide();
+}
+
+void PluginConfigurationDialog::show()
 {
 	KDialogBase::show();
 }
 
 
-void PluginConfigurationDialog::PluginConfigurationDialog::show(bool on)
+void PluginConfigurationDialog::show(bool on)
 {
-	on ? show() : hide();
+	if (on && isHidden())
+		show();
+	else if (!on && !isHidden())
+		hide();
 }
 
 
-void PluginConfigurationDialog::PluginConfigurationDialog::hide()
+void PluginConfigurationDialog::hide()
 {
 	KDialogBase::hide();
 }
@@ -74,14 +85,16 @@ void PluginConfigurationDialog::PluginConfigurationDialog::hide()
 
 // QWidget overrides
 
-void PluginConfigurationDialog::showEvent(QShowEvent *)
+void PluginConfigurationDialog::showEvent(QShowEvent *e)
 {
+	KDialogBase::showEvent(e);
 	notifyManager (true);
 }
 
 
-void PluginConfigurationDialog::hideEvent(QHideEvent *)
+void PluginConfigurationDialog::hideEvent(QHideEvent *e)
 {
+	KDialogBase::hideEvent(e);
 	notifyManager (false);
 }
 
