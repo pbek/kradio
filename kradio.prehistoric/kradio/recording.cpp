@@ -78,7 +78,7 @@ bool Recording::disconnect(Interface *i)
 void Recording::saveState (KConfig *c) const
 {
     c->setGroup(QString("recording-") + PluginBase::name());
-    c->writeEntry ("monitoring", (m_context.state() == RecordingContext::rsMonitor));
+//    c->writeEntry ("monitoring", (m_context.state() == RecordingContext::rsMonitor));
 	m_config.saveConfig(c);
 }
 
@@ -87,8 +87,8 @@ void Recording::restoreState (KConfig *c)
 {
     c->setGroup(QString("recording-") + PluginBase::name());
 	m_config.restoreConfig(c);
-    if (c->readBoolEntry("monitoring", false) && m_context.state() != RecordingContext::rsRunning)
-		startMonitoring();  
+//    if (c->readBoolEntry("monitoring", false) && m_context.state() != RecordingContext::rsRunning)
+//		startMonitoring();  
 }
 
 

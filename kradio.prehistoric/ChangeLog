@@ -22,6 +22,8 @@
                 - recording
                 - select recording source and igain automatically
                 - recording monitor
+                - recording doesn't restore monitoring state on startup,
+                  kradio might be blocked if another app uses /dev/dsp
 
 (not working yet) - fixed segfault on app quit in InterfaceBase::disconnect
 
