@@ -79,7 +79,15 @@ private:
 };
 
 
-void readXMLCfg (const QString &url, StationVector &sl, AlarmVector &al);
-void writeXMLCfg (const QString &FileName, const StationVector &sl /*, const AlarmVector &al*/);
+void readXMLCfg (const QString &url,
+                 StationVector &sl,
+                 StationListMetaData &info,
+                 AlarmVector &al
+                );
+                 
+void writeXMLCfg (const QString &FileName,
+                  const StationVector &sl,
+                  const StationListMetaData &info
+                 );
 
 #endif

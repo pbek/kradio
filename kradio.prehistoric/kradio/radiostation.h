@@ -81,4 +81,15 @@ typedef StationVector::iterator			iStationVector;
 typedef StationVector::const_iterator	ciStationVector;
 
 
+struct StationListMetaData
+{
+	QString    Maintainer;
+	QDateTime  LastChange;
+	QString    Country;
+	QString    City;
+	QString    Media;
+	QString    Comment;
+};
+
+
 #endif

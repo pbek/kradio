@@ -278,6 +278,7 @@ void KRadioApp::slotApplyConfig ()
 
     // stations
 	radio->setStations(*d.stations);
+	radio->setStationListMetaData(d.info);
 
 	// alarms
 	timeControl->setAlarms(*d.alarms);
@@ -305,7 +306,10 @@ void KRadioApp::slotAlarm (Alarm *a)
 void KRadioApp::saveConfiguration ()
 {
 	if (radio)
-		writeXMLCfg(locateLocal("data", "kradio/stations.krp"), radio->getStations());
+		writeXMLCfg(locateLocal("data", "kradio/stations.krp"),
+								radio->getStations(),
+								radio->getStationListMetaData()
+							   );
 	saveOptions();
 }
 
@@ -317,12 +321,15 @@ void KRadioApp::readConfiguration()
 	
 	AlarmVector   al;
 	StationVector sl;
+	StationListMetaData info;
 
-	readXMLCfg (locateLocal("data", "kradio/stations.krp"), sl, al);
-	readXMLCfg (QString(getenv("HOME")) + "/.kradiorc",     sl, al);  // for backward compatibility
+	readXMLCfg (locateLocal("data", "kradio/stations.krp"), sl, info, al);
+	readXMLCfg (QString(getenv("HOME")) + "/.kradiorc",     sl, info, al);  // for backward compatibility
 
-	if (radio && radio->getStations().size() == 0)
+	if (radio && radio->getStations().size() == 0) {
 		radio->setStations (sl);
+		radio->setStationListMetaData(info);
+	}
 
 	if (timeControl && timeControl->getAlarms().size() == 0)  // should be now in std kde config file,
 		timeControl->setAlarms (al);                          // but take care for compatibility
@@ -357,6 +364,8 @@ void KRadioApp::readConfiguration()
 	// Station Options
 	d.stations = radio ? &radio->getStations() : NULL;
 	d.radio    = radio;
+	if (radio)
+		d.info = radio->getStationListMetaData();
 
 	// Alarm Options
 	d.alarms   = &timeControl->getAlarms();
@@ -380,7 +389,11 @@ void KRadioApp::slotRunConfigure()
 //////////////////////////////////////////////////////////////////////////////////////
 
 
-void readXMLCfg (const QString &url, StationVector &sl, AlarmVector &al)
+void readXMLCfg (const QString &url,
+				 StationVector &sl,
+                 StationListMetaData &info,
+                 AlarmVector &al
+                )
 {
 	// TODO: error handling
 	QString tmpfile;
@@ -397,6 +410,7 @@ void readXMLCfg (const QString &url, StationVector &sl, AlarmVector &al)
 		const StationVector &_sl = handler.getStations();
 		for (ciStationVector i = _sl.begin(); i != _sl.end(); ++i)
 			sl.push_back(new RadioStation(**i));
+		info = handler.getStationListMetaData();
 	}
 
 	if (al.size() == 0) {
@@ -407,11 +421,11 @@ void readXMLCfg (const QString &url, StationVector &sl, AlarmVector &al)
 }
 
 
-void writeXMLCfg (const QString &FileName, const StationVector &sl /*, const AlarmVector &al*/)
+void writeXMLCfg (const QString &FileName,
+				  const StationVector &sl,
+				  const StationListMetaData &info
+				 )
 {
-//	const StationVector &sl = radio->getStations();
-//	const AlarmVector   &al = timeControl->getAlarms();
-
 	// TODO: create backup copy!
 	// TODO: error handling
 	::rename(FileName, FileName + "~");
@@ -422,6 +436,16 @@ void writeXMLCfg (const QString &FileName, const StationVector &sl /*, const Ala
 
 	fprintf (f, "<%s>\n", KRadioConfigElement);
 	fprintf (f, "\t<%s>\n", StationListElement);
+    fprintf (f, "\t\t<%s>\n", StationListInfo);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMaintainer, info.Maintainer.ascii(),            StationListInfoMaintainer);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoChanged,    info.LastChange.toString(Qt::ISODate).ascii(), StationListInfoChanged);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCountry,    info.Country.ascii(),               StationListInfoCountry);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCity,       info.City.ascii(),                  StationListInfoCity);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMedia,      info.Media.ascii(),                 StationListInfoMedia);
+    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoComments,   info.Comment.ascii(),               StationListInfoComments);
+    fprintf (f, "\t\t</%s>\n", StationListInfo);
+
+	
 	for (ciStationVector i = sl.begin(); i != sl.end(); ++i) {
 		const RadioStation *st = *i;
 		fprintf (f, "\t\t<%s>\n", StationElement);

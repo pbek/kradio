@@ -2,11 +2,11 @@
 	<stationlist>
 		<info>
 			<maintainer>Ernst Martin Witte, witte@kawo1.rwth-aachen.de</maintainer>
-			<changed>2003-01-15 01:50</changed>
+			<changed>2003-01-16T01:42:00</changed>
 			<country>Germany</country>
 			<city>Aachen</city>
 			<media>cable</media>
-			<comments>does anyone have a recent frequency table?</comments>
+			<comments>got data from http://rincewind.rol3.com/service/prod/puek/verfueg.php</comments>
 		</info>
 		<station>
 			<name>Eins Live</name>
@@ -18,7 +18,7 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>WDR 2</name>
+			<name>WDR 2 - Aachen</name>
 			<shortname>2</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
@@ -54,8 +54,17 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>Deutschlandfunk</name>
+			<name>WDR Radio 5 Funkhaus Europa</name>
 			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.849998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname>7</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>100.550003</frequency>
@@ -64,7 +73,7 @@
 		</station>
 		<station>
 			<name>Deutschlandradio Berlin</name>
-			<shortname>7</shortname>
+			<shortname>8</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>104.300003</frequency>
@@ -73,7 +82,7 @@
 		</station>
 		<station>
 			<name>Klassikradio</name>
-			<shortname>8</shortname>
+			<shortname>9</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>87.550003</frequency>
@@ -81,17 +90,17 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>SWF1</name>
-			<shortname>9</shortname>
+			<name>SWR1 - Rheinland-Pfalz</name>
+			<shortname>10</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
-			<frequency>99.650002</frequency>
+			<frequency>99.599998</frequency>
 			<volumepreset>-1.000000</volumepreset>
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>SWF3</name>
-			<shortname>10</shortname>
+			<name>SWR3</name>
+			<shortname>11</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>91.849998</frequency>
@@ -99,8 +108,8 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
-			<name>SWF4</name>
-			<shortname>11</shortname>
+			<name>SWR4 - Rheinland</name>
+			<shortname>12</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>93.449997</frequency>
@@ -108,8 +117,26 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
+			<name>RPR2</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.250000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>RPR1 - Rheinland</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.000000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
 			<name>Antenne AC</name>
-			<shortname>12</shortname>
+			<shortname>15</shortname>
 			<icon></icon>
 			<quickselect>1</quickselect>
 			<frequency>103.800003</frequency>
@@ -117,8 +144,26 @@
 			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
+			<name>Radio Aachen</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.849998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>100,5 DAS HITRADIO</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.599998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
 			<name>BFBS</name>
-			<shortname>13</shortname>
+			<shortname>18</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>94.849998</frequency>
@@ -126,8 +171,8 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>BRF</name>
-			<shortname>14</shortname>
+			<name>Belgischer Rundfunk (deutsch)</name>
+			<shortname>19</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>97.250000</frequency>
@@ -135,8 +180,8 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>BRT1</name>
-			<shortname>15</shortname>
+			<name>VRT RA 1</name>
+			<shortname>20</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>107.650002</frequency>
@@ -144,8 +189,8 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>BRT2</name>
-			<shortname>16</shortname>
+			<name>VRT RA 2</name>
+			<shortname>21</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>106.550003</frequency>
@@ -153,8 +198,8 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>BRT3</name>
-			<shortname>17</shortname>
+			<name>VRT RA 3</name>
+			<shortname>22</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>96.750000</frequency>
@@ -162,17 +207,8 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>JAM-FM</name>
-			<shortname>18</shortname>
-			<icon></icon>
-			<quickselect>0</quickselect>
-			<frequency>97.550003</frequency>
-			<volumepreset>-1.000000</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
 			<name>NL1</name>
-			<shortname>19</shortname>
+			<shortname>23</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>96.349998</frequency>
@@ -181,16 +217,16 @@
 		</station>
 		<station>
 			<name>NL2</name>
-			<shortname>20</shortname>
+			<shortname>24</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
-			<frequency>90.062500</frequency>
+			<frequency>90.050003</frequency>
 			<volumepreset>-1.000000</volumepreset>
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
 			<name>NL3</name>
-			<shortname>21</shortname>
+			<shortname>25</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>93.750000</frequency>
@@ -199,7 +235,7 @@
 		</station>
 		<station>
 			<name>NL4</name>
-			<shortname>22</shortname>
+			<shortname>26</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>95.650002</frequency>
@@ -207,8 +243,44 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>Radio Campanile</name>
-			<shortname>23</shortname>
+			<name>RTBF - Frequence Wallonie</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.750000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>RTBF - Musique Trois</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.349998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>RTBF - Radio 21</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.849998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>JAM-FM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.550003</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>sunshine live</name>
+			<shortname>31</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>92.949997</frequency>
@@ -217,7 +289,7 @@
 		</station>
 		<station>
 			<name>Radio Contact Eupen</name>
-			<shortname>24</shortname>
+			<shortname>32</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>99.150002</frequency>
@@ -225,8 +297,8 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>Radio Fantasy</name>
-			<shortname>25</shortname>
+			<name>Radio Fantasy Raeren</name>
+			<shortname>33</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>105.849998</frequency>
@@ -234,8 +306,8 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>Radio Melodie</name>
-			<shortname>26</shortname>
+			<name>Radio Melodie - Heimatfunk mit Herz</name>
+			<shortname>34</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>102.250000</frequency>
@@ -243,62 +315,17 @@
 			<dockingmenu>0</dockingmenu>
 		</station>
 		<station>
-			<name>Radio Aachen</name>
-			<shortname>27</shortname>
+			<name>Radio Ostbelgien</name>
+			<shortname>35</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
-			<frequency>87.849998</frequency>
+			<frequency>95.349998</frequency>
 			<volumepreset>-1.000000</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
-			<name>RPR1</name>
-			<shortname>28</shortname>
-			<icon></icon>
-			<quickselect>0</quickselect>
-			<frequency>105.000000</frequency>
-			<volumepreset>-1.000000</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
-			<name>RPR2</name>
-			<shortname>29</shortname>
-			<icon></icon>
-			<quickselect>0</quickselect>
-			<frequency>88.250000</frequency>
-			<volumepreset>-1.000000</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
-			<name>RTBF2</name>
-			<shortname>30</shortname>
-			<icon></icon>
-			<quickselect>0</quickselect>
-			<frequency>101.750000</frequency>
-			<volumepreset>-1.000000</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
-			<name>RTBF3</name>
-			<shortname>31</shortname>
-			<icon></icon>
-			<quickselect>0</quickselect>
-			<frequency>101.349998</frequency>
-			<volumepreset>-1.000000</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
-			<name>RTBF4</name>
-			<shortname>32</shortname>
-			<icon></icon>
-			<quickselect>0</quickselect>
-			<frequency>102.849998</frequency>
-			<volumepreset>-1.000000</volumepreset>
-			<dockingmenu>0</dockingmenu>
+			<dockingmenu>1</dockingmenu>
 		</station>
 		<station>
 			<name>RTL - Der Oldie-Sender</name>
-			<shortname>33</shortname>
+			<shortname>36</shortname>
 			<icon></icon>
 			<quickselect>0</quickselect>
 			<frequency>90.375000</frequency>
