@@ -1,0 +1,327 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Ernst Martin Witte, witte@kawo1.rwth-aachen.de</maintainer>
+			<changed>2003-01-13 03:50</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media>cable</media>
+			<comments>not yet completely named stations</comments>
+		</info>
+		<station>
+			<name>Eins Live</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.750000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 2</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.550003</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 3</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.250000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 4</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.349998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR Radio 5</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.849998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.550003</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandradio Berlin</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.300003</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BRT3</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.750000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassikradio</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.550003</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne AC</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.849998</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 1</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>80.187500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 2</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.250000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 5</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.062500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 6</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.375000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 11</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.000000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 12</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.500000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 13</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.750000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 14</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.875000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 15</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.375000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 16</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.375000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 18</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.312500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 19</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.562500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 20</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.187500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 21</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.625000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 23</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.375000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 24</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.812500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 25</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.250000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 26</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.875000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 27</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.812500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 29</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.625000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 30</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.062500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 31</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.875000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 32</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.562500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 33</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.875000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>new station 34</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>107.687500</frequency>
+			<volumepreset>-1.000000</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
