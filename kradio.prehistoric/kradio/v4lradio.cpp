@@ -41,6 +41,9 @@
 #include "v4lradio-configuration.h"
 #include "pluginmanager.h"
 
+#include <kaboutdata.h>
+#include "aboutwidget.h"
+
 struct _lrvol { unsigned char l, r; short dummy; };
 
 
@@ -783,10 +786,29 @@ ConfigPageInfo V4LRadio::createConfigurationPage()
 }
 
 
-QWidget *V4LRadio::createAboutPage()
+AboutPageInfo V4LRadio::createAboutPage()
 {
-	// FIXME
-	return NULL;
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("V4L/V4L2 Plugin for KRadio."
+                                   "<P>"
+                                   "Provides Support for V4L/V4L2 based Radio Cards"
+                                   "<P>"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("V4L/V4L2"),
+	          i18n("V4L/V4L2 Plugin"),
+	          "package_utilities"
+		   );
 }
 
 ////////////////////////////////////////

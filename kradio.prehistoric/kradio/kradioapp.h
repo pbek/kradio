@@ -25,21 +25,31 @@
 #include <kapplication.h>
 #include <kaboutapplication.h>
 #include "pluginmanager.h"
+#include "plugins.h"
 
-class KRadioApp : public KApplication,
-				  public PluginManager
+class KRadioAbout : public PluginBase
+{
+public:
+	KRadioAbout(const QString &name) : PluginBase(name, "KRadio Application") {}
+	
+	virtual ConfigPageInfo createConfigurationPage () { return ConfigPageInfo(); }
+	virtual AboutPageInfo  createAboutPage ();
+
+	virtual void   saveState (KConfig *) const {}
+	virtual void   restoreState (KConfig *)    {}
+};
+
+
+class KRadioApp : public    KApplication,
+				  public    PluginManager
 {
 Q_OBJECT
 public:
     KRadioApp();
     virtual ~KRadioApp();
 
-private:
-    KAboutApplication AboutApplication;
-
-    KConfig       *config;
-
-//    SetupDialog    setupDialog;
+	virtual void   saveState    (KConfig *c) const { PluginManager::saveState(c);    }
+	virtual void   restoreState (KConfig *c)       { PluginManager::restoreState(c); }
 };
 
 

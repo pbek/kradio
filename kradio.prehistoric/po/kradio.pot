@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-12 21:02+0200\n"
+"POT-Creation-Date: 2003-09-13 16:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,72 +16,92 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: docking.cpp:87 timecontrol-configuration-ui.cpp:204
+#: docking.cpp:40
+msgid "Docking Plugin"
+msgstr ""
+
+#: docking.cpp:91 timecontrol-configuration-ui.cpp:204
 msgid "Stop Recording"
 msgstr ""
 
-#: docking.cpp:94 timecontrol-configuration-ui.cpp:203
+#: docking.cpp:98 timecontrol-configuration-ui.cpp:203
 msgid "Start Recording"
 msgstr ""
 
-#: docking.cpp:163
+#: docking.cpp:139 docking.cpp:158
+msgid "Docking Menu"
+msgstr ""
+
+#: docking.cpp:140
+msgid "Docking Menu Configuration"
+msgstr ""
+
+#: docking.cpp:147
+msgid "KRadio Docking Plugin"
+msgstr ""
+
+#: docking.cpp:159
+msgid "Docking Menu Plugin"
+msgstr ""
+
+#: docking.cpp:180
 msgid "Search Next Station"
 msgstr ""
 
-#: docking.cpp:165
+#: docking.cpp:182
 msgid "Search Previous Station"
 msgstr ""
 
-#: docking.cpp:178
+#: docking.cpp:195 aboutwidget.cpp:505
 msgid "&About"
 msgstr ""
 
-#: docking.cpp:196
-msgid "Hide "
+#: docking.cpp:212
+msgid "Hide %1"
 msgstr ""
 
-#: docking.cpp:196
-msgid "Show "
+#: docking.cpp:212
+msgid "Show %1"
 msgstr ""
 
-#: docking.cpp:203
+#: docking.cpp:222
 msgid "&Quit"
 msgstr ""
 
-#: docking.cpp:284
+#: docking.cpp:306
 msgid "next alarm: "
 msgstr ""
 
-#: docking.cpp:286
+#: docking.cpp:308
 msgid "<no alarm pending>"
 msgstr ""
 
-#: docking.cpp:294
-msgid "stop sleep (running until "
+#: docking.cpp:316
+msgid "Stop Sleep Countdown (running until %1)"
 msgstr ""
 
-#: docking.cpp:296 docking.cpp:303 docking.cpp:310
-msgid "start sleep countdown"
+#: docking.cpp:318 docking.cpp:325 docking.cpp:332
+msgid "Start Sleep Countdown"
 msgstr ""
 
-#: docking.cpp:318
+#: docking.cpp:340
 msgid "Power Off"
 msgstr ""
 
-#: docking.cpp:318
+#: docking.cpp:340
 msgid "Power On"
 msgstr ""
 
-#: docking.cpp:336
-msgid "KRadio: "
+#: docking.cpp:353
+msgid "invalid station"
 msgstr ""
 
-#: docking.cpp:398
-msgid "Show"
+#: docking.cpp:420
+msgid "Show %1 "
 msgstr ""
 
-#: docking.cpp:398
-msgid "Hide"
+#: docking.cpp:420
+msgid "Hide %1 "
 msgstr ""
 
 #: deprecated/radiobase.cpp:351
@@ -199,6 +219,40 @@ msgstr ""
 msgid "Setup Colors and Fonts"
 msgstr ""
 
+#: kradioapp.cpp:31
+msgid ""
+"KRadio - The Radio Application for KDE<p>With KRadio you can listen to radio "
+"broadcasts with the help of yourV4L/V4L2 compatible radio card."
+msgstr ""
+
+#: kradioapp.cpp:37 main.cpp:45
+msgid "KRadio"
+msgstr ""
+
+#: kradioapp.cpp:45
+msgid "misc, lirc support, alarms"
+msgstr ""
+
+#: kradioapp.cpp:46 main.cpp:52
+msgid "Miscellaneous"
+msgstr ""
+
+#: kradioapp.cpp:47 main.cpp:53
+msgid "idea, first basic application"
+msgstr ""
+
+#: kradioapp.cpp:62
+msgid "KRadio Configuration"
+msgstr ""
+
+#: kradioapp.cpp:62
+msgid "About KRadio Components"
+msgstr ""
+
+#: main.cpp:51
+msgid "rewrite for 0.3.0, recording, lirc support, alarms, misc"
+msgstr ""
+
 #: v4lradio.cpp:227
 msgid "error setting volume to"
 msgstr ""
@@ -219,31 +273,31 @@ msgstr ""
 msgid "V4L Radio Options"
 msgstr ""
 
-#: v4lradio.cpp:809
+#: v4lradio.cpp:808
 msgid "cannot open mixer device"
 msgstr ""
 
-#: v4lradio.cpp:819
+#: v4lradio.cpp:818
 msgid "cannot open radio device"
 msgstr ""
 
-#: v4lradio.cpp:1037
+#: v4lradio.cpp:1036
 msgid "cannot get tuner info"
 msgstr ""
 
-#: v4lradio.cpp:1038
+#: v4lradio.cpp:1037
 msgid "error"
 msgstr ""
 
-#: v4lradio.cpp:1175
+#: v4lradio.cpp:1174
 msgid "error updating radio audio info"
 msgstr ""
 
-#: v4lradio.cpp:1176
+#: v4lradio.cpp:1175
 msgid "write"
 msgstr ""
 
-#: v4lradio.cpp:1176
+#: v4lradio.cpp:1175
 msgid "read"
 msgstr ""
 
@@ -498,85 +552,85 @@ msgstr ""
 msgid "<p align=\"right\">nothing here</p>"
 msgstr ""
 
-#: radio-configuration-ui.cpp:295
+#: radio-configuration-ui.cpp:296
 msgid "RadioConfigurationUI"
 msgstr ""
 
-#: radio-configuration-ui.cpp:296
+#: radio-configuration-ui.cpp:297
 msgid "Stations"
 msgstr ""
 
-#: radio-configuration-ui.cpp:301
+#: radio-configuration-ui.cpp:302
 msgid "&Search Stations"
 msgstr ""
 
-#: radio-configuration-ui.cpp:302
+#: radio-configuration-ui.cpp:303
 msgid "Load"
 msgstr ""
 
-#: radio-configuration-ui.cpp:303
+#: radio-configuration-ui.cpp:304
 msgid "Save As"
 msgstr ""
 
-#: radio-configuration-ui.cpp:304
+#: radio-configuration-ui.cpp:305
 msgid "Name"
 msgstr ""
 
-#: radio-configuration-ui.cpp:305
+#: radio-configuration-ui.cpp:306
 msgid "Short Name"
 msgstr ""
 
-#: radio-configuration-ui.cpp:306
+#: radio-configuration-ui.cpp:307
 msgid "Pixmap File"
 msgstr ""
 
-#: radio-configuration-ui.cpp:308 timecontrol-configuration-ui.cpp:196
+#: radio-configuration-ui.cpp:309 timecontrol-configuration-ui.cpp:196
 msgid " %"
 msgstr ""
 
-#: radio-configuration-ui.cpp:309
+#: radio-configuration-ui.cpp:310
 msgid "Volume Preset (-1 = disabled)"
 msgstr ""
 
-#: radio-configuration-ui.cpp:310
+#: radio-configuration-ui.cpp:311
 msgid "Station &Presets"
 msgstr ""
 
-#: radio-configuration-ui.cpp:311
+#: radio-configuration-ui.cpp:312
 msgid "City"
 msgstr ""
 
-#: radio-configuration-ui.cpp:312
+#: radio-configuration-ui.cpp:313
 msgid "Country"
 msgstr ""
 
-#: radio-configuration-ui.cpp:313
+#: radio-configuration-ui.cpp:314
 msgid "&Now"
 msgstr ""
 
-#: radio-configuration-ui.cpp:314
+#: radio-configuration-ui.cpp:315
 msgid "Comment"
 msgstr ""
 
-#: radio-configuration-ui.cpp:315
+#: radio-configuration-ui.cpp:316
 msgid "Media"
 msgstr ""
 
-#: radio-configuration-ui.cpp:316
+#: radio-configuration-ui.cpp:317
 msgid "Maintainer"
 msgstr ""
 
-#: radio-configuration-ui.cpp:317
+#: radio-configuration-ui.cpp:318
 msgid "Last Change"
 msgstr ""
 
-#: radio-configuration-ui.cpp:318
+#: radio-configuration-ui.cpp:319
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
 msgstr ""
 
-#: radio-configuration-ui.cpp:319
+#: radio-configuration-ui.cpp:320
 msgid "A&bout"
 msgstr ""
 
@@ -798,30 +852,62 @@ msgstr ""
 msgid "Monitor Input"
 msgstr ""
 
-#: recording-monitor.cpp:143
+#: recording-monitor.cpp:142
 msgid "&Stop"
 msgstr ""
 
-#: recording-monitor.cpp:165
+#: recording-monitor.cpp:164
 msgid "&Start"
 msgstr ""
 
-#: recording-monitor.cpp:194
+#: recording-monitor.cpp:193
 msgid "not running"
 msgstr ""
 
-#: recording-monitor.cpp:200
+#: recording-monitor.cpp:199
 msgid "recording"
 msgstr ""
 
-#: recording-monitor.cpp:203
+#: recording-monitor.cpp:202
 msgid "monitoring"
 msgstr ""
 
-#: recording-monitor.cpp:209
+#: recording-monitor.cpp:208
 msgid "error occurred"
 msgstr ""
 
-#: recording-monitor.cpp:212
+#: recording-monitor.cpp:211
 msgid "finished"
+msgstr ""
+
+#: aboutwidget.cpp:450
+msgid "%1 %2 (Using KDE %3)"
+msgstr ""
+
+#: aboutwidget.cpp:452
+msgid "%1 %2, %3"
+msgstr ""
+
+#: aboutwidget.cpp:524
+msgid "A&uthor"
+msgstr ""
+
+#: aboutwidget.cpp:524
+msgid "A&uthors"
+msgstr ""
+
+#: aboutwidget.cpp:539
+msgid "&Thanks To"
+msgstr ""
+
+#: aboutwidget.cpp:553
+msgid "T&ranslation"
+msgstr ""
+
+#: aboutwidget.cpp:569
+msgid "&License Agreement"
+msgstr ""
+
+#: aboutwidget.cpp:583
+msgid "Image missing"
 msgstr ""

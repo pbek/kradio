@@ -35,6 +35,8 @@
 #include <fcntl.h>
 #include <errno.h>
 
+#include <kaboutdata.h>
+#include "aboutwidget.h"
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -105,10 +107,25 @@ ConfigPageInfo  Recording::createConfigurationPage()
 }
 
 
-QWidget        *Recording::createAboutPage()
+AboutPageInfo Recording::createAboutPage()
 {
-	// FIXME
-	return NULL;
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("Recording Monitor for KRadio"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("Recording"),
+	          i18n("Recording Plugin"),
+	          "kradio_record"
+		   );
 }
 
 

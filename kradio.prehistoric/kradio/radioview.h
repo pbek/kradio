@@ -98,7 +98,7 @@ public:
 	virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
 	
 	virtual ConfigPageInfo  createConfigurationPage();
-	virtual QWidget        *createAboutPage();
+	virtual AboutPageInfo   createAboutPage();
 
 protected slots:
 

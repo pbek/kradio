@@ -30,14 +30,15 @@ class PluginConfigurationDialog;
 class QWidget;
 class KConfig;
 class QFrame;
-
+class KAboutDialog;
+class KDialogBase;
 
 struct ConfigPageInfo;
 
 class PluginManager
 {
 public :
-	         PluginManager(const QString &configDialogTitle);
+	         PluginManager(const QString &configDialogTitle, const QString &aboutTitle);
 	virtual ~PluginManager();
 
 
@@ -61,15 +62,19 @@ public :
 
 	// configuration dialog handling
 
-	virtual PluginConfigurationDialog *getConfigDialog() { return m_configDialog; }
+	virtual PluginConfigurationDialog *getConfigDialog();
+	virtual KDialogBase               *getAboutDialog();
 
     virtual void         noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
 	
 protected :
-	virtual void         createConfigDialog(const QString &title = QString());
+	virtual void         createConfigDialog(const QString &title = QString::null);
+	virtual void         createAboutDialog (const QString &title = QString::null);
 
     virtual void         addConfigurationPage (PluginBase *forWhom,
 											   const ConfigPageInfo	&info);
+    virtual void         addAboutPage         (PluginBase *forWhom,
+											   const AboutPageInfo	&info);
 
 	// PluginManager's data & types ;)
 protected:
@@ -79,10 +84,17 @@ protected:
     typedef QPtrDictIterator<QWidget>      QWidgetDictIterator;
 
     PluginList   m_plugins;
+    
     QFrameDict   m_configPageFrames;
     QWidgetDict  m_configPages;
     
+    QFrameDict   m_aboutPageFrames;
+    QWidgetDict  m_aboutPages;
+    
     PluginConfigurationDialog *m_configDialog;
+    KDialogBase               *m_aboutDialog;
+    QString                    m_configDialogTitle;
+    QString                    m_aboutDialogTitle;
 };
 
 

@@ -51,9 +51,9 @@ ConfigPageInfo PluginConfigurationDialog::createConfigurationPage()
 }
 
 
-QWidget *PluginConfigurationDialog::createAboutPage()
+AboutPageInfo  PluginConfigurationDialog::createAboutPage()
 {
-	return NULL;
+	return AboutPageInfo();
 }
 
 

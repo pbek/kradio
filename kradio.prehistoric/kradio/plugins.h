@@ -58,22 +58,25 @@ class WidgetPluginBase;
 
 struct ConfigPageInfo
 {
-	ConfigPageInfo () : configPage(NULL) {}
-	ConfigPageInfo (QWidget *cp,
+	ConfigPageInfo () : page(NULL) {}
+	ConfigPageInfo (QWidget *p,
 	                const QString &in,
 	                const QString &ph,
 	                const QString &icon)
-	  : configPage (cp),
+	  : page (p),
 	    itemName(in),
 	    pageHeader(ph),
 	    iconName(icon)
 	{}
 
-	QWidget  *configPage;
+	QWidget  *page;
 	QString   itemName,
 			  pageHeader,
 			  iconName;
 };
+
+typedef ConfigPageInfo AboutPageInfo;
+
 
 
 class PluginBase : virtual public Interface
@@ -102,7 +105,7 @@ public:
 	// is deleted, because we disconnect from pluginmanager
 	// and the plugin manager will delete all associated gui elements
 	virtual ConfigPageInfo createConfigurationPage () = 0;	
-	virtual QWidget *createAboutPage () = 0;
+	virtual AboutPageInfo  createAboutPage () = 0;
 
 	// save/restore status, window position, etc...
 

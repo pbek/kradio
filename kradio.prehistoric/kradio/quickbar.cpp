@@ -26,6 +26,9 @@
 #include <kglobal.h>
 #include <kconfig.h>
 
+#include <kaboutdata.h>
+#include <aboutwidget.h>
+
 #include "buttonflowlayout.h"
 #include "quickbar.h"
 #include "stationlist.h"
@@ -127,10 +130,26 @@ ConfigPageInfo QuickBar::createConfigurationPage()
 }
 
 
-QWidget *QuickBar::createAboutPage()
+AboutPageInfo QuickBar::createAboutPage()
 {
-	// FIXME
-	return NULL;
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("Quickback for KRadio"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("Quickbar"),
+	          i18n("Quickbar Plugin"),
+	          "view_icon"
+		   );
 }
 
 

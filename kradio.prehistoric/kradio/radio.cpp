@@ -22,6 +22,9 @@
 #include <kstandarddirs.h>
 #include <kurl.h>
 
+#include <kaboutdata.h>
+#include "aboutwidget.h"
+
 /////////////////////////////////////////////////////////////////////////////
 
 Radio::Radio(const QString &name)
@@ -107,10 +110,26 @@ ConfigPageInfo Radio::createConfigurationPage()
 }
 
 
-QWidget *Radio::createAboutPage()
+AboutPageInfo Radio::createAboutPage()
 {
-	// FIXME
-	return NULL;
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("Radio Device Multiplexer and Station Management for KRadio"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("Device and Station Management"),
+	          i18n("Radio Device Multiplexer and Station Management"),
+	          "kradio"
+		   );
 }
 
 

@@ -57,7 +57,7 @@ public:
 	virtual void   restoreState (KConfig *);
 
 	virtual ConfigPageInfo  createConfigurationPage();
-	virtual QWidget        *createAboutPage();
+	virtual AboutPageInfo   createAboutPage();
 
 	// IRadioClient methods
 

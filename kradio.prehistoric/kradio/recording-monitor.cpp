@@ -27,6 +27,9 @@
 #include <klocale.h>
 #include <kconfig.h>
 
+#include <kaboutdata.h>
+#include "aboutwidget.h"
+
 RecordingMonitor::RecordingMonitor(QWidget *parent, const QString &name)
   : QWidget(parent, (const char*)name),
     WidgetPluginBase(name, "Recording Monitor"),
@@ -127,10 +130,25 @@ ConfigPageInfo  RecordingMonitor::createConfigurationPage()
 	return ConfigPageInfo();
 }
 
-QWidget        *RecordingMonitor::createAboutPage()
+AboutPageInfo   RecordingMonitor::createAboutPage()
 {
-	// FIXME
-	return NULL;
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("Recording Monitor Plugin for KRadio"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("Recording Monitor"),
+	          i18n("Recording Monitor Plugin"),
+	          "goto"
+		   );
 }
 
 

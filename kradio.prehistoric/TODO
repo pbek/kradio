@@ -2,7 +2,12 @@
 
        segfault fixes with 2.95.3
        about dialog
-       v4l2 support (implemented, hardly tested)
+       optimize recording data monitor (repaint only what is necessary)
+       recording button: +menu for recording/monitoring
+       translation preparation
+       use special mail-adress for preset files 
+       country/city in preset file mail
+       v4l2 support (implemented, hardly tested)      
        convert preset files                 // done
        converter: add xml-encoding-line     // done
        font selector for display            // done

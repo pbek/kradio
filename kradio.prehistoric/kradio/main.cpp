@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);
-    aboutData.addAuthor("Martin Witte",  I18N_NOOP("misc, lirc support, alarms"), "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Martin Witte",  I18N_NOOP("rewrite for 0.3.0, recording, lirc support, alarms, misc"), "witte@kawo1.rwth-aachen.de");
     aboutData.addAuthor("Klas Kalass",   I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
     aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
 
@@ -57,19 +57,21 @@ int main(int argc, char *argv[])
 
     KRadioApp a;
 
-	/* Some Tests */
-    
-    LircSupport  *lircsupport = new LircSupport (      "lirc-1");
-    V4LRadio     *v4lradio    = new V4LRadio    (      "v4lradio-1");
-    Radio        *radio       = new Radio       (      "radio-1");
-    TimeControl  *timecontrol = new TimeControl (      "timecontrol-1");
-    QuickBar     *quickbar    = new QuickBar    (NULL, "quickbar-1");
-    RadioDocking *docking     = new RadioDocking(      "docking-1");
+	/* Until we don't have library plugins we must instantiate them hard-wired */
+
+    KRadioAbout  *about       = new KRadioAbout (          "kradio-about-1");
+    LircSupport  *lircsupport = new LircSupport (          "lirc-1");
+    V4LRadio     *v4lradio    = new V4LRadio    (          "v4lradio-1");
+    Radio        *radio       = new Radio       (          "radio-1");
+    TimeControl  *timecontrol = new TimeControl (          "timecontrol-1");
+    QuickBar     *quickbar    = new QuickBar    (NULL,     "quickbar-1");
+    RadioDocking *docking     = new RadioDocking(          "docking-1");
     docking->show();
-    RadioView    *view        = new RadioView   (NULL, "radioview-1");
-    Recording    *record      = new Recording   (      "recording-1");
+    RadioView    *view        = new RadioView   (NULL,     "radioview-1");
+    Recording    *record      = new Recording   (          "recording-1");
     RecordingMonitor *monitor = new RecordingMonitor(NULL, "recordingmonitor-1");
     
+    a.insertPlugin(about);
     a.insertPlugin(lircsupport);
     a.insertPlugin(v4lradio);
     a.insertPlugin(radio);
@@ -80,9 +82,9 @@ int main(int argc, char *argv[])
 	a.insertPlugin(record);
 	a.insertPlugin(monitor);
 
-    a.restoreState(KGlobal::config());
-   
+    a.restoreState(KGlobal::config());   
     int ret = a.exec();
+    a.saveState(KGlobal::config());
 
     return ret;
 }

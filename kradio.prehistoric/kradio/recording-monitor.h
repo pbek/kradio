@@ -56,7 +56,7 @@ public:
 	virtual bool   disconnect(Interface *i);
 
 	virtual ConfigPageInfo  createConfigurationPage();
-	virtual QWidget        *createAboutPage();
+	virtual AboutPageInfo   createAboutPage();
 
 	// IRecordingClient
 

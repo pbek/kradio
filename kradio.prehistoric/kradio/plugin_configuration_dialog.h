@@ -39,7 +39,7 @@ public:
 protected :
 
 	virtual ConfigPageInfo  createConfigurationPage();
-	virtual QWidget        *createAboutPage();
+	virtual AboutPageInfo   createAboutPage();
 
 	// WidgetPluginBase
 

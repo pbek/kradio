@@ -21,14 +21,17 @@
 
 #include <kdebug.h>
 #include <kiconloader.h>
+#include <kdialogbase.h>
 
 #include <qlayout.h>
 #include <qframe.h>
 
-PluginManager::PluginManager(const QString &configDialogTitle)
- : m_configDialog (NULL)
+PluginManager::PluginManager(const QString &configDialogTitle, const QString &aboutDialogTitle)
+ : m_configDialog (NULL),
+   m_aboutDialog(NULL),
+   m_configDialogTitle(configDialogTitle),
+   m_aboutDialogTitle (aboutDialogTitle)
 {
-	createConfigDialog(configDialogTitle);
 }
 
 
@@ -39,10 +42,19 @@ PluginManager::~PluginManager()
 	// Without clearing this list, those pages would be deleted, but
 	// we would try to delete them another time when the associated plugin is
 	// deleted, because m_configPages is out of date.
-	delete m_configDialog;
+	if (m_configDialog) {
+		m_configDialog->cancel();
+		delete m_configDialog;
+	}
 	m_configPages.clear();
 	m_configPageFrames.clear();
 	m_configDialog = NULL;
+
+	if (m_aboutDialog)
+		delete m_aboutDialog;
+	m_aboutPages.clear();
+	m_aboutPageFrames.clear();
+	m_aboutDialog = NULL;
 
 	while (PluginBase *p = m_plugins.getFirst()) {
 		deletePlugin(p);
@@ -61,10 +73,16 @@ void PluginManager::noticeWidgetPluginShown(WidgetPluginBase *p, bool shown)
 void PluginManager::insertPlugin(PluginBase *p)
 {
 	if (p) {
+	    if (!m_configDialog)
+			createConfigDialog(m_configDialogTitle);
+	    if (!m_aboutDialog)
+			createAboutDialog(m_aboutDialogTitle);
+	
 		m_plugins.append(p);
 		p->setManager(this);
 		
 		addConfigurationPage (p, p->createConfigurationPage());
+		addAboutPage         (p, p->createAboutPage());
 
 		// connect plugins with each other
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
@@ -132,6 +150,11 @@ void PluginManager::removePlugin(PluginBase *p)
 			m_configPages.remove(p);
 			delete f;
 		}
+		while (QFrame *f = m_aboutPageFrames.find(p)) {
+			m_aboutPageFrames.remove(p);
+			m_aboutPages.remove(p);
+			delete f;
+		}
 		
 		// remove bindings between me and plugin
 		m_plugins.remove(p);
@@ -148,8 +171,11 @@ void PluginManager::removePlugin(PluginBase *p)
 void PluginManager::addConfigurationPage (PluginBase *forWhom,
 										  const ConfigPageInfo &info)
 {
+	if (!m_configDialog)
+		createConfigDialog(m_configDialogTitle);
+
 	if (   !forWhom || !m_plugins.containsRef(forWhom)
-	    || !m_configDialog || !info.configPage)
+	    || !m_configDialog || !info.page)
 		return;
 
 	// create empty config frame
@@ -161,7 +187,7 @@ void PluginManager::addConfigurationPage (PluginBase *forWhom,
 
     // register this frame and config page
 	m_configPageFrames.insert(forWhom, f);
-	m_configPages.insert(forWhom, info.configPage);
+	m_configPages.insert(forWhom, info.page);
 
 	// fill config frame with layout ...
     QGridLayout *l = new QGridLayout(f);
@@ -169,26 +195,29 @@ void PluginManager::addConfigurationPage (PluginBase *forWhom,
     l->setMargin( 0 );
 
     // ... and externally created config page
-    info.configPage->reparent (f, QPoint(0,0), true);
-    l->addWidget( info.configPage, 0, 0 );
+    info.page->reparent (f, QPoint(0,0), true);
+    l->addWidget( info.page, 0, 0 );
 
 	// perhaps new config page profits from existing plugins
 	// example: timecontrol profits from radio plugin
-    Interface *i = dynamic_cast<Interface *>(info.configPage);
+    Interface *i = dynamic_cast<Interface *>(info.page);
     if (i) {
 		for (PluginIterator it(m_plugins); it.current(); ++it)
 			i->connect(it.current());
     }
 
     // make sure, that config page receives ok, apply and cancel signals
-	QObject::connect(m_configDialog, SIGNAL(okClicked()),     info.configPage, SLOT(slotOK()));
-	QObject::connect(m_configDialog, SIGNAL(applyClicked()),  info.configPage, SLOT(slotOK()));
-	QObject::connect(m_configDialog, SIGNAL(cancelClicked()), info.configPage, SLOT(slotCancel()));
+	QObject::connect(m_configDialog, SIGNAL(okClicked()),     info.page, SLOT(slotOK()));
+	QObject::connect(m_configDialog, SIGNAL(applyClicked()),  info.page, SLOT(slotOK()));
+	QObject::connect(m_configDialog, SIGNAL(cancelClicked()), info.page, SLOT(slotCancel()));
 }
 
 
 void PluginManager::createConfigDialog(const QString &title)
 {
+    if (m_configDialog) delete m_configDialog;
+    m_configDialog = NULL;
+    
 	PluginConfigurationDialog *cfg = new PluginConfigurationDialog(
 	    KDialogBase::IconList,
 	    title,
@@ -213,6 +242,60 @@ void PluginManager::createConfigDialog(const QString &title)
 }
 
 
+void PluginManager::addAboutPage (PluginBase *forWhom,
+								  const AboutPageInfo &info)
+{
+	if (!m_aboutDialog)
+		createAboutDialog(m_aboutDialogTitle);
+		
+	if (   !forWhom || !m_plugins.containsRef(forWhom)
+	    || !m_aboutDialog || !info.page)
+		return;
+
+
+	// create empty about frame
+	QFrame *f = m_aboutDialog->addPage(
+	  info.itemName,
+	  info.pageHeader,
+      KGlobal::instance()->iconLoader()->loadIcon( info.iconName, KIcon::NoGroup, KIcon::SizeMedium )
+    );
+
+    // register this frame and config page
+	m_aboutPageFrames.insert(forWhom, f);
+	m_aboutPages.insert(forWhom, info.page);
+
+	// fill config frame with layout ...
+    QGridLayout *l = new QGridLayout(f);
+    l->setSpacing( 0 );
+    l->setMargin( 0 );
+
+    // ... and externally created config page
+    info.page->reparent (f, QPoint(0,0), true);
+    l->addWidget( info.page, 0, 0 );
+}
+
+
+void PluginManager::createAboutDialog(const QString &title)
+{
+    if (m_aboutDialog) delete m_aboutDialog;
+    m_aboutDialog = NULL;
+
+    m_aboutDialog = new KDialogBase(KDialogBase::IconList,
+								    title,
+									KDialogBase::Close,
+									KDialogBase::Close,
+									/*parent = */ NULL,
+									title,
+									/*modal = */ false,
+									true);
+
+	for (PluginIterator i(m_plugins); m_aboutDialog && i.current(); ++i) {
+		addAboutPage(i.current(),
+				     i.current()->createAboutPage());
+	}
+}
+
+
 void PluginManager::saveState (KConfig *c) const
 {
 	for (PluginIterator i(m_plugins); i.current(); ++i) {
@@ -228,3 +311,16 @@ void PluginManager::restoreState (KConfig *c)
 	}
 }
 
+PluginConfigurationDialog *PluginManager::getConfigDialog()
+{
+	if (!m_configDialog)
+		createConfigDialog();
+	return m_configDialog;
+}
+
+KDialogBase               *PluginManager::getAboutDialog()
+{
+	if (!m_aboutDialog)
+		createAboutDialog();
+	return m_aboutDialog;
+}

@@ -24,7 +24,7 @@
                 - recording monitor
                 - recording doesn't restore monitoring state on startup,
                   kradio might be blocked if another app uses /dev/dsp
-                - convert preset file
+                - convert preset files to new format
                 - converter: add xml-encoding-line
                 - font selector for display
                 - choosable inactive text color

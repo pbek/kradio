@@ -19,6 +19,9 @@
 #include "timecontrol-configuration.h"
 #include "pluginmanager.h"
 
+#include <kaboutdata.h>
+#include "aboutwidget.h"
+
 //const char *AlarmListElement            = "alarmlist";
 //const char *AlarmElement                = "alarm";
 const char *AlarmDateElement            = "date";
@@ -240,8 +243,27 @@ ConfigPageInfo TimeControl::createConfigurationPage()
 }
 
 
-QWidget *TimeControl::createAboutPage()
+AboutPageInfo TimeControl::createAboutPage()
 {
-	// FIXME
-	return NULL;
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("Time Control Plugin for KRadio."
+                                   "<P>"
+                                   "Provides Alarms and Sleep Countdown"
+                                   "<P>"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("Alarms"),
+	          i18n("Time Control Plugin"),
+	          "kalarm"
+		   );
 }

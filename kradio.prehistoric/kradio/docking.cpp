@@ -21,6 +21,10 @@
 #include <kpopupmenu.h>
 #include <kapplication.h>
 #include <kaction.h>
+#include <kdialogbase.h>
+
+#include <kaboutdata.h>
+#include "aboutwidget.h"
 
 
 #include "docking.h"
@@ -33,7 +37,7 @@
 
 RadioDocking::RadioDocking(const QString &name)
   : KSystemTray (NULL, name),
-    PluginBase(name, "Docking Plugin")
+    PluginBase(name, i18n("Docking Plugin"))
 {
 	setPixmap(BarIcon("kradio"));
 	m_widgetPluginIDs.setAutoDelete(true);
@@ -132,16 +136,32 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
 	connect (conf);
 	return ConfigPageInfo(
 		conf,
-		"Docking Menu",
-		"Docking Menu Configuration",
+		i18n("Docking Menu"),
+		i18n("Docking Menu Configuration"),
 		"kmenuedit"
 	);
 }
 
-QWidget *RadioDocking::createAboutPage()
+AboutPageInfo RadioDocking::createAboutPage()
 {
-	// FIXME
-	return NULL;
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("Docking Menu for KRadio"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("Docking Menu"),
+	          i18n("Docking Menu Plugin"),
+	          "kmenuedit"
+		   );
 }
 
 
@@ -191,9 +211,11 @@ void RadioDocking::buildContextMenu()
 			const QString &name = b->description();
 			QWidget *w = b->getWidget();
 			bool v = b->isReallyVisible();
+
+			QString text = (v ? i18n("Hide %1") : i18n("Show %1")).arg(name);
 			
 			int id = m_menu->insertItem(QIconSet(SmallIconSet(v ? "1downarrow" : "1uparrow")),
-			                            i18n(v ? "Hide " : "Show ") + name,
+			                            text,
 			                            w, SLOT(toggleShown()));
 			m_widgetPluginIDs.insert(b, new int(id));
 		}
@@ -251,7 +273,10 @@ void RadioDocking::slotSeekBkwd()
 
 void RadioDocking::slotShowAbout()
 {
-	// FIXME
+	if (m_manager) {
+		KDialogBase *d = m_manager->getAboutDialog();
+		if (d) d->show();
+	}
 }
 
 
@@ -291,23 +316,23 @@ bool RadioDocking::noticeNextAlarmChanged(const Alarm *a)
 bool RadioDocking::noticeCountdownStarted(const QDateTime &end)
 {
 	if (end.isValid())
-		m_menu->changeItem (m_sleepID, i18n("stop sleep (running until ") + end.toString() + ")");
+		m_menu->changeItem (m_sleepID, i18n("Stop Sleep Countdown (running until %1)").arg(end.toString()));
 	else
-		m_menu->changeItem (m_sleepID, i18n("start sleep countdown"));
+		m_menu->changeItem (m_sleepID, i18n("Start Sleep Countdown"));
 	return true;
 }
 
 
 bool RadioDocking::noticeCountdownStopped()
 {
-	m_menu->changeItem (m_sleepID, i18n("start sleep countdown"));
+	m_menu->changeItem (m_sleepID, i18n("Start Sleep Countdown"));
 	return true;
 }
 
 
 bool RadioDocking::noticeCountdownZero()
 {
-	m_menu->changeItem (m_sleepID, i18n("start sleep countdown"));
+	m_menu->changeItem (m_sleepID, i18n("Start Sleep Countdown"));
 	return true;
 }
 
@@ -328,12 +353,12 @@ bool RadioDocking::noticeCountdownSecondsChanged(int /*n*/)
 
 bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
 {
-    QString s = "KRadio: invalid station";
+    QString s = i18n("invalid station");
     if (rs.isValid())
 		s = rs.longName();
 
   	QToolTip::add(this, s);
-    m_menu->changeTitle (m_titleID, i18n("KRadio: ") + s);
+    m_menu->changeTitle (m_titleID, "KRadio: " + s);
     // FIXME: title does not change in opened popupmenu
 
     QValueList<int>::iterator iit = m_stationMenuIDs.begin();
@@ -395,7 +420,7 @@ void RadioDocking::noticeWidgetPluginShown(WidgetPluginBase *b, bool shown)
 	if (!id) return;
 	m_menu->changeItem(*id,
 		               QIconSet(SmallIconSet(!shown ? "1uparrow" : "1downarrow")),
-	                   i18n(!shown ? "Show" : "Hide") + " " + b->description());
+	                   (!shown ? i18n("Show %1 ") : i18n("Hide %1 ")).arg(b->description()));
 }
 
 

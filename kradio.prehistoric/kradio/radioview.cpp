@@ -44,6 +44,9 @@
 
 #include "radioview-configuration.h"
 
+#include <kaboutdata.h>
+#include "aboutwidget.h"
+
 ///////////////////////////////////////////////////////////////////////
 
 bool RadioView::ElementCfg::operator == (const ElementCfg &x) const
@@ -375,16 +378,16 @@ void RadioView::addConfigurationTabFor(RadioViewElement *e, QTabWidget *c)
 
 	ConfigPageInfo inf = e->createConfigurationPage();
 
-	if (inf.configPage) {
+	if (inf.page) {
 
 		if (inf.iconName.length()) {
-			c->addTab(inf.configPage, QIconSet(SmallIconSet(inf.iconName)), inf.itemName);
+			c->addTab(inf.page, QIconSet(SmallIconSet(inf.iconName)), inf.itemName);
 		} else {
-			c->addTab(inf.configPage, inf.itemName);
+			c->addTab(inf.page, inf.itemName);
 		}
 
-		elementConfigPages.push_back(ElementCfg(e, inf.configPage));
-		QObject::connect(inf.configPage, SIGNAL(destroyed(QObject *)),
+		elementConfigPages.push_back(ElementCfg(e, inf.page));
+		QObject::connect(inf.page, SIGNAL(destroyed(QObject *)),
 						 this, SLOT(slotElementConfigPageDeleted(QObject *)));
 	}
 }
@@ -409,9 +412,26 @@ void RadioView::addCommonConfigurationTab(QTabWidget *c)
 }
 
 
-QWidget *RadioView::createAboutPage()
+AboutPageInfo RadioView::createAboutPage()
 {
-	return NULL; // FIXME
+    KAboutData aboutData("kradio",
+						 NULL,
+                         NULL,
+                         I18N_NOOP("Standard Radio Display for KRadio"),
+                         KAboutData::License_GPL,
+                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         0,
+                         "http://sourceforge.net/projects/kradio",
+                         0);
+    aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
+
+	return AboutPageInfo(
+	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+	          i18n("Display"),
+	          i18n("Standard Radio Display for KRadio"),
+	          "openterm"
+		   );
 }
 
 
