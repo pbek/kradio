@@ -26,12 +26,13 @@
 
 #include <kpopupmenu.h>
 #include <ksystemtray.h>
-#include "kradio.h"
 #include "quickbar.h"
 #include "timecontrol.h"
 
-class KRadioApp;
-
+class KRadio;
+// *REALLY DIRTY HACK* for development only.
+//#define KRadio KRadioMW
+//class KRadioMW;
 
 class RadioDocking : public KSystemTray {
 	Q_OBJECT
@@ -40,7 +41,7 @@ public:
 	virtual ~RadioDocking();
 
 	virtual void showEvent (QShowEvent *);
-	
+
 private slots:
 
 public slots:
@@ -66,7 +67,7 @@ private:
 	void buildStationList();
 	void contextMenuAboutToShow( KPopupMenu* menu );
 
-	int			titleID;	
+	int			titleID;
 	int 		alarmID;
 	int			powerID;
 	int			guiID;

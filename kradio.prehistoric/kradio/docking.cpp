@@ -27,7 +27,9 @@
 
 #include "docking.h"
 #include "kradioapp.h"
+
 #include "kradio.h"
+//#include "kradiomw.h"
 
 RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, TimeControl *tc, const char *name)
   : KSystemTray (0, name),
@@ -50,14 +52,14 @@ RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, Ti
   	  this, SLOT(slotConfigChanged()));
   connect(timeControl, SIGNAL(sigConfigChanged()),
   	  this, SLOT(slotConfigChanged()));
-     
+
   connect(timeControl, SIGNAL(sigStartCountdown()),
 	  this, SLOT(slotSleepChanged()));
   connect(timeControl, SIGNAL(sigStopCountdown()),
 	  this, SLOT(slotSleepChanged()));
   connect(timeControl, SIGNAL(sigCountdownZero()),
 	  this, SLOT(slotSleepChanged()));
-  	
+
   buildContextMenu ();
 }
 
@@ -121,11 +123,11 @@ void RadioDocking::buildStationList()
 	StationIDs.clear();
 
 	const RadioStation *c = radio->getCurrentStation();
-	
+
   	for (int i = 0, k = 0; i < radio->nStations(); ++i) {
     	const RadioStation *stn = radio->getStation(i);
 
-        if (stn->useInDockingMenu()) {			
+        if (stn->useInDockingMenu()) {
 			QString StationText = QString().setNum(++k) + " " + stn->getLongName();
 			int id = m->insertItem(StationText, stn, SLOT(activate()));
 			StationIDs.push_back(id);
@@ -155,11 +157,11 @@ void RadioDocking::slotUpdateToolTips ()
   	QToolTip::add(this, radio->getStationString(true, true, true));
 
   	KPopupMenu *menu = contextMenu();
-  	
+
 	menu->changeTitle (titleID, i18n("KRadio: ")+ radio->getStationString(true, true, true));
-  	
+
   	menu->changeItem(powerID, radio->isPowerOn() ? i18n("Power Off") : i18n("Power On"));
-	
+
 	const RadioStation *c = radio->getCurrentStation();
 	for (uint i = 0; i < StationIDs.size(); ++i) {
 		if (StationIDs[i] != -1) {

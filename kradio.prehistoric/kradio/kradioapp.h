@@ -28,19 +28,24 @@
 #include <qstring.h>
 #include <kaboutapplication.h>
 
-#include "quickbar.h"
+#include "quickbar.h" // HACK!!
+
 #include "v4lradio.h"
 #include "timecontrol.h"
 #include "lircsupport.h"
 #include "setupdialog.h"
 
 class RadioDocking;
-class KRadio;
 class SetupDialog;
+
+class KRadio;
+// *REALLY DIRTY HACK* for development only.
+//#define KRadio KRadioMW
+//class KRadioMW;
 
 class KRadioApp : public KApplication
 {
-Q_OBJECT	
+Q_OBJECT
 public:
   KRadioApp();
   virtual ~KRadioApp();
@@ -61,16 +66,16 @@ private:
 
   void readConfiguration();
   void saveConfiguration();
-  
+
   KAboutApplication AboutApplication;
-  
+
   KConfig       *config;
   KRadio        *kradio;
   RadioDocking  *tray;
   QuickBar      *quickbar;
   TimeControl   *timeControl;
   V4LRadio      *radio;
-  
+
 #ifdef HAVE_LIRC_CLIENT
   LircSupport     *lircHelper;
 #endif
@@ -85,7 +90,7 @@ void readXMLCfg (const QString &url,
                  StationListMetaData &info,
                  AlarmVector &al
                 );
-                 
+
 void writeXMLCfg (const QString &FileName,
                   const StationVector &sl,
                   const StationListMetaData &info

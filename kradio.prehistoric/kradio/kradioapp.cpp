@@ -26,10 +26,11 @@
 #include <linux/soundcard.h>
 
 #include "kradio.h"
+//#include "kradiomw.h"
+
 #include "kradioapp.h"
 #include "docking.h"
 #include "radiocfgxmlhandler.h"
-
 
 KRadioApp::KRadioApp()
   :kradio(0),
@@ -50,7 +51,7 @@ KRadioApp::KRadioApp()
 
   // the main dialog
   kradio = new KRadio(quickbar, radio, 0, "kradio-gui");
- 
+
   // timeControl
   timeControl = new TimeControl(this, "kradio-timecontrol");
 
@@ -61,9 +62,9 @@ KRadioApp::KRadioApp()
 #ifdef HAVE_LIRC_CLIENT
 	lircHelper = new LircSupport (this, radio, timeControl);
 #endif
-  
+
   // read configuration
-  readConfiguration();  
+  readConfiguration();
 
   // restore gui state
   restoreState();
@@ -138,9 +139,9 @@ void KRadioApp::readOptions()
 
 
 	if (timeControl) {
-	
+
 		config->setGroup("alarms");
-		
+
 		AlarmVector al;
 		int nAlarms = config->readNumEntry ("nAlarms", 0);
 		for (int idx = 1; idx <= nAlarms; ++idx) {
@@ -180,7 +181,7 @@ void KRadioApp::readOptions()
 
 
 		config->setGroup("sleep");
-		
+
 		timeControl->setCountdownSeconds(config->readNumEntry("sleepMinutes", 30) * 60);
 	}
 
@@ -244,7 +245,7 @@ void KRadioApp::restoreState()
   radio->setFrequency(freq);
   unsigned int vol = config->readNumEntry("Volume", 65535);
   radio->setVolume(vol);
-  
+
   if (config->readBoolEntry ("PowerOn"))
     radio->PowerOn();
 
@@ -267,7 +268,7 @@ void KRadioApp::saveState()
   if (radio)
     config->writeEntry("Frequency", radio->getFrequency());
   config->writeEntry("Volume", radio->getVolume());
-  
+
   config->writeEntry("PowerOn", radio->isPowerOn());
 
   // kradio: save window size and position
@@ -285,7 +286,7 @@ void KRadioApp::slotApplyConfig ()
 {
     SetupData  d;
 
-	setupDialog.getData(d);	
+	setupDialog.getData(d);
 
 	// general options
 	quickbar->setShowShortName(d.displayOnlyShortNames);
@@ -339,7 +340,7 @@ void KRadioApp::readConfiguration()
 {
 
 	// first read XML station presets (and alarms for compatibility
-	
+
 	AlarmVector   al;
 	StationVector sl;
 	StationListMetaData info;
@@ -364,7 +365,7 @@ void KRadioApp::readConfiguration()
     // load "normal" configuration
     readOptions();
 
-    
+
     // initializeSetupDialog
     initSetupDialog();
 }
@@ -433,7 +434,7 @@ void readXMLCfg (const QString &url,
 	reader.setContentHandler (&handler);
 	reader.parse(source);
 	KIO::NetAccess::removeTempFile(tmpfile);
-	
+
 	if (sl.size() == 0) {                                     // first non-empty configuration
 		const StationVector &_sl = handler.getStations();
 		for (ciStationVector i = _sl.begin(); i != _sl.end(); ++i)
@@ -456,7 +457,7 @@ QString writeXMLCfg (const StationVector &sl,
 				    )
 {
 	QString data = "";
-	
+
 	// write station list
 
 	QString t   = "\t";
@@ -490,7 +491,7 @@ QString writeXMLCfg (const StationVector &sl,
 	data += t + xmlCloseTag(StationListElement) +
 			    xmlCloseTag(KRadioConfigElement);
 
-	return data;				   
+	return data;
 }
 
 
