@@ -23,6 +23,7 @@
 #include <qtooltip.h>
 #include <qcheckbox.h>
 #include <qpopupmenu.h>
+#include <qimage.h>
 
 #include <kcombobox.h>
 #include <kiconloader.h>
@@ -274,7 +275,10 @@ bool RadioView::noticeStationsChanged(const StationList &sl)
         RadioStation *stn = i.current();
         QString icon = stn->iconName();
         if (icon.length() && QFile(icon).exists()) {
-            comboStations->insertItem(QPixmap(icon));
+            QImage img(icon);
+            int   h = img.height();
+            float f = (float)(comboStations->height() - 4) / (h ? (float)h : 1.0);
+            comboStations->insertItem(img.smoothScale((int)(img.width()*f), (int)(h * f)), stn->name());
         } else {
             comboStations->insertItem(stn->name());
         }

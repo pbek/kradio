@@ -34,6 +34,7 @@
 #include <qpopupmenu.h>
 #include <qtoolbutton.h>
 #include <qwidgetstack.h>
+#include <qimage.h>
 
 #include <kfiledialog.h>
 #include <kstandarddirs.h>
@@ -149,7 +150,15 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 
     for (RawStationList::Iterator it(m_stations.all()); it.current(); ++it) {
         RadioStation *s = it.current();
-        listStations->insertItem(s->iconName(), s->longName());
+        QString icon = s->iconName();
+        if (icon.length() && QFile(icon).exists()) {
+            QImage img(icon);
+            int   h = img.height();
+            float f = (float)(listStations->itemHeight()) / (h ? (float)h : 1.0);
+            listStations->insertItem(img.smoothScale((int)(img.width()*f), (int)(h * f)), s->longName());
+        } else {
+            listStations->insertItem(s->longName());
+        }
     }
 
     StationListMetaData &info = m_stations.metaData();
@@ -238,7 +247,15 @@ void RadioConfiguration::slotNewStation()
         m_stations.all().append(st);
     }
     if (m_stations.count() > n) {
-        listStations->insertItem (st->iconName(), st->longName());
+        QString icon = st->iconName();
+        if (icon.length() && QFile(icon).exists()) {
+            QImage img(icon);
+            int   h = img.height();
+            float f = (float)(listStations->itemHeight()) / (h ? (float)h : 1.0);
+            listStations->insertItem(img.smoothScale((int)(img.width()*f), (int)(h * f)), st->longName());
+        } else {
+            listStations->insertItem(st->longName());
+        }
         listStations->setCurrentItem (listStations->count()-1);
     }
 }
@@ -266,7 +283,15 @@ void RadioConfiguration::slotStationEditorChanged(RadioStationConfig *c)
         ignoreChanges = true;
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
-        listStations->changeItem(st.iconName(), st.longName(), idx);
+        QString icon = st.iconName();
+        if (icon.length() && QFile(icon).exists()) {
+            QImage img(st.iconName());
+            int   h = img.height();
+            float f = (float)(listStations->itemHeight()) / (h ? (float)h : 1.0);
+            listStations->changeItem(img.smoothScale((int)(img.width()*f), (int)(h * f)), st.longName(), idx);
+        } else {
+            listStations->changeItem(st.longName(), idx);
+        }
         listStations->blockSignals(o);
         ignoreChanges = false;
     }

@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>RecordingConfigurationUI</class>
-<widget class="QDialog">
+<widget class="QWidget">
     <property name="name">
         <cstring>RecordingConfigurationUI</cstring>
     </property>
