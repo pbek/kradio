@@ -1,0 +1,68 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Philipp Droessler &lt;reo@gmx.at&gt;</maintainer>
+			<changed>2003-02-02T06:19:43</changed>
+			<country>Austria</country>
+			<city>Vienna</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>88.6</name>
+			<shortname>88.6</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Wien</name>
+			<shortname>Radio Wien</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>OE1</name>
+			<shortname>OE1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>OE3</name>
+			<shortname>OE3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.99</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>FM4</name>
+			<shortname>FM4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Krone Hit</name>
+			<shortname>Krone</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
