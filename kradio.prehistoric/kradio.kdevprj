@@ -23,13 +23,13 @@ cflags=
 cppflags=
 cxxflags=\s-O0 -pg -g3 -Wall
 ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE)
-ldflags=
+ldflags=\s \s
 
 [General]
-AMChanged=false
-author=Martin Witte / Frank Schwanz
-configure_args=
-email=witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
+AMChanged=true
+author=Martin Witte
+configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
+email=witte@kawo1.rwth-aachen.de
 kdevprj_version=1.3
 lfv_open_groups=Benutzerschnittstelle,GNU,Header,Quellen
 make_options=\s-j1
@@ -40,7 +40,7 @@ project_type=mini_kde2
 sgml_file=/home/schwanz/Dokumente/Programmierung/Projekte/kradio/doc/en/index.docbook
 short_info=
 sub_dir=kradio/
-version=0.2.3-emw
+version=0.2.5
 version_control=CVS
 workspace=1
 
@@ -51,13 +51,13 @@ install_location=
 type=DATA
 
 [KPP]
-kpp_appgrp=
-kpp_bldroot=
+kpp_appgrp=kde3
+kpp_bldroot=/opt/kde3
 kpp_icon=0
 kpp_license=5
 kpp_summary=v4l-radio application for KDE3
 kpp_url=http://sourceforge.net/projects/kradio
-kpp_version=0.2.3-emw
+kpp_version=0.2.3a
 
 [LFV Groups]
 Andere=*
@@ -119,7 +119,7 @@ install_location=
 type=DATA
 
 [kradio/Makefile.am]
-files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/dot-kradiorc.example,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/SetupDialog.ui,kradio/SetupDialog.ui.h,kradio/stationsearchdialog.ui
+files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/dot-kradiorc.example,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/setupdialog.h,kradio/setupdialog.cpp,kradio/setupdialog_uic.ui,kradio/stationsearchdialog_uic.ui,kradio/stationsearchdialog.h,kradio/stationsearchdialog.cpp,kradio/utils.cpp
 sub_dirs=
 type=prog_main
 
@@ -128,18 +128,6 @@ dist=true
 install=false
 install_location=
 type=SOURCE
-
-[kradio/SetupDialog.ui]
-dist=true
-install=false
-install_location=
-type=SOURCE
-
-[kradio/SetupDialog.ui.h]
-dist=true
-install=false
-install_location=
-type=HEADER
 
 [kradio/alarm.cpp]
 dist=true
@@ -351,7 +339,43 @@ install=false
 install_location=
 type=HEADER
 
-[kradio/stationsearchdialog.ui]
+[kradio/setupdialog.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kradio/setupdialog.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
+[kradio/setupdialog_uic.ui]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kradio/stationsearchdialog.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kradio/stationsearchdialog.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
+[kradio/stationsearchdialog_uic.ui]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kradio/utils.cpp]
 dist=true
 install=false
 install_location=

@@ -45,6 +45,7 @@ public slots:
 
   virtual void slotConfigure();
   virtual void slotSaveConfig (const StationVector &sl,
+							   const AlarmVector &al,
 							   const QString &rdev,
 							   const QString &mdev,
 							   int ch,

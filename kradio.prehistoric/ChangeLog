@@ -1,3 +1,10 @@
+0.2.5   emw:    - configuration dialog part 3: alarms
+
+0.2.4   emw:    - qt 3.0.x compatibility fixes
+				- quickbar/buttonflowlayout fixes
+                - configuration dialog (part 2)
+                - radiobase poweron/off fixes
+
 0.2.3   emw:    - added configuration dialog (part 1)
                 - added station scan
                 - improve station/alarm list handling
@@ -5,6 +12,10 @@
 0.2.2   emw:    - small fixes concerning window restoring
                 - gcc 3.2 ready
                 - further fixes in stereo/signal quality display
+                - many other improvements, see CVS
+
+        rizsanyi: - added lirc option RADIO (which turns kradio on)
+                  - further small fixes
 
 0.2.1   emw:    - added alarm clock functions
                 - line in volume monitoring

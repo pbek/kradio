@@ -26,7 +26,7 @@
 
 #include <qobject.h>
 #include <qdatetime.h>
-#include <list>
+#include <vector>
 
 /**
   *@author Martin Witte / Frank Schwanz
@@ -50,7 +50,7 @@ public:
 	
 	bool		isEnabled() const { return enabled;}
 	bool 		isDaily() const { return daily; }
-	QDateTime   nextAlarm () const;
+	QDateTime   nextAlarm (bool ignoreEnable = false) const;
 	QDateTime	alarmTime () const { return time; }
 	
 	void	setEnabled (bool enable = true) { enabled = enable; }
@@ -66,8 +66,8 @@ signals:
 };
 
 
-typedef list<Alarm *>				AlarmList;
-typedef AlarmList::iterator			iAlarmList;
-typedef AlarmList::const_iterator	ciAlarmList;
+typedef vector<Alarm *>				AlarmVector;
+typedef AlarmVector::iterator		iAlarmVector;
+typedef AlarmVector::const_iterator	ciAlarmVector;
 
 #endif

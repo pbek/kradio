@@ -152,12 +152,14 @@ void KRadioApp::slotConfigure()
 {
 	SetupDialog	sud (0, RadioDev, MixerDev, MixerChannel, quickbar ? quickbar->getShowShortName() : false);
 	sud.setStations(radio->getStations(), radio);
+	sud.setAlarms(radio->getAlarms());
 
-	connect (&sud, SIGNAL(sigSaveConfig(const StationVector &, const QString &, const QString &, int, bool)),
-		this, SLOT(slotSaveConfig(const StationVector &, const QString &, const QString &, int, bool)));
+	connect (&sud, SIGNAL(sigSaveConfig(const StationVector &, const AlarmVector &, const QString &, const QString &, int, bool)),
+		this, SLOT(slotSaveConfig(const StationVector &, const AlarmVector &, const QString &, const QString &, int, bool)));
 		
 	if (sud.exec() == QDialog::Accepted) {
 		radio->setStations(sud.getStations());
+		radio->setAlarms(sud.getAlarms());
 		if (quickbar)
 			quickbar->setShowShortName(sud.displayOnlyShortNames());
 		RadioDev = sud.getRadioDevice();
@@ -169,12 +171,14 @@ void KRadioApp::slotConfigure()
 
 
 void KRadioApp::slotSaveConfig (const StationVector &sl,
+								const AlarmVector &al,
 							    const QString &rdev,
 							    const QString &mdev,
 							    int ch,
 							    bool sn)
 {
 	radio->setStations(sl);
+	radio->setAlarms(al);
 	if (quickbar)
 		quickbar->setShowShortName(sn);
 	RadioDev = rdev;

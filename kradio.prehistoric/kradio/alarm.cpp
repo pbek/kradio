@@ -60,7 +60,7 @@ Alarm::~Alarm()
 }
 
 
-QDateTime Alarm::nextAlarm() const
+QDateTime Alarm::nextAlarm(bool ignoreEnable) const
 {
 	QDateTime now = QDateTime::currentDateTime(),
 			  alarm = time;
@@ -69,8 +69,8 @@ QDateTime Alarm::nextAlarm() const
 		if (alarm.addSecs(60) < now)
 			alarm = alarm.addDays(1);
 	}
-	const_cast<Alarm*>(this)->time = alarm;
-	return enabled && !done ? time : QDateTime();
+	//const_cast<Alarm*>(this)->time = alarm;
+	return (enabled && !done) || ignoreEnable ? alarm : QDateTime();
 }
 
 
