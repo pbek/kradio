@@ -1,10 +1,10 @@
 [Alarm]
-Alarm_1 daily=false
-Alarm_1 enable=true
-Alarm_1_D=15
-Alarm_1_M=12
+Alarm_1 daily=true
+Alarm_1 enable=false
+Alarm_1_D=5
+Alarm_1_M=2
 Alarm_1_Y=2002
-Alarm_1_h=8
+Alarm_1_h=7
 Alarm_1_m=0
 Alarm_2 daily=false
 Alarm_2 enable=false
@@ -29,12 +29,12 @@ Alarm_4_h=0
 Alarm_4_m=0
 
 [Recent]
-LastFrequence=90.8125
-LastVolume=65535
+LastFrequence=87.5
+LastVolume=57016
 MixerDev=/dev/mixer
 PositionX=0
 PositionY=-11
-PowerOn=true
+PowerOn=false
 RadioDev=/dev/radio
 desktop=-1
 sticky=true

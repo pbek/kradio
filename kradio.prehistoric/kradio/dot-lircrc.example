@@ -1,53 +1,33 @@
 begin
     flags = startup_mode
-    mode = all-off
+    mode = TV-off
 end
 
 
-begin all-off
+begin TV-off
 
 	begin
-	    button = TV
+		button = TV
 		repeat = 0
 		prog = irexec
-	    config = kwintv &
+		config = kwintv &
 	end
 
+
+ 	begin
+		prog = kradio
+		button = TV
+		repeat = 0
+		config = TV
+	end
+
+
 	begin
-	    button = TV
+		button = TV
 		mode = TV-on
 		flags = quit
 	end
 
- 	begin
-		prog = kradio
-		button = RADIO
-		repeat = 0
-		config = POWER
-	end
-	
-	begin
-	    button = RADIO
-		mode = RADIO-on
-		flags = quit
-	end
-
-end all-off
-
-
-
-begin TV-on
-
-	begin
-	    button = MINIMIZE
-		mode = all-off
-		flags = quit
-	end
-
-end TV-on
-
-
-begin RADIO-on
 
  	begin
 		prog = kradio
@@ -55,6 +35,7 @@ begin RADIO-on
 		repeat = 0
 		config = 1
 	end
+
 
  	begin
 		prog = kradio
@@ -116,7 +97,7 @@ begin RADIO-on
 		prog = kradio
 		button = 0
 		repeat = 0
-		config = 10
+		config = 0
 	end
 
  	begin
@@ -165,23 +146,23 @@ begin RADIO-on
 
  	begin
 		prog = kradio
-		button = RESERVED
-		repeat = 0
-		config = MODE
-	end
-
-
- 	begin
-		prog = kradio
 		button = RADIO
 		repeat = 0
 		config = POWER
 	end
 	
+
+end TV-off
+
+
+
+begin TV-on
+
 	begin
-	    button = RADIO
-		mode = all-off
+	    button = MINIMIZE
+		mode = TV-off
 		flags = quit
 	end
 
-end RADIO-on
+end TV-on
+
