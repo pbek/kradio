@@ -1,0 +1,132 @@
+<kradiorc>
+    <stationlist>
+        <info>
+            <maintainer>Eduard Pertíñez, eduardp@tango04.net</maintainer>
+            <changed>2003-02-19T12:14:44</changed>
+            <country>Catalunya</country>
+            <city>Barcelona</city>
+            <media>Catalan Radio Stations</media>
+            <comments></comments>
+        </info>
+        <station>
+            <name>M80 Ràdio</name>
+            <shortname>3</shortname>
+            <quickselect>0</quickselect>
+            <frequency>90.5266</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Com Ràdio</name>
+            <shortname>4</shortname>
+            <quickselect>0</quickselect>
+            <frequency>91.0016</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Ràdio Barcelona 2 40 principales</name>
+            <shortname>6</shortname>
+            <quickselect>0</quickselect>
+            <frequency>93.9268</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Ràdio Barcelona</name>
+            <shortname>7</shortname>
+            <quickselect>0</quickselect>
+            <frequency>96.9019</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Ràdio 4</name>
+            <shortname>11</shortname>
+            <quickselect>0</quickselect>
+            <frequency>100.802</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Ràdio DOS 84 Hostalric</name>
+            <shortname>12</shortname>
+            <quickselect>0</quickselect>
+            <frequency>105.95</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Catalunya Informació 2</name>
+            <shortname>13</shortname>
+            <quickselect>0</quickselect>
+            <frequency>106.85</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Catalunya Ràdio</name>
+            <shortname></shortname>
+            <quickselect>0</quickselect>
+            <frequency>102.8</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Catalunya Informació</name>
+            <shortname>2</shortname>
+            <quickselect>0</quickselect>
+            <frequency>92</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>RAC1</name>
+            <shortname>3</shortname>
+            <quickselect>0</quickselect>
+            <frequency>87.7</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Catalunya Cultura</name>
+            <shortname></shortname>
+            <quickselect>0</quickselect>
+            <frequency>92.5</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Flaix FM Catalunya Central</name>
+            <shortname>10</shortname>
+            <quickselect>0</quickselect>
+            <frequency>101.7</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Ona Catalana Barcelona</name>
+            <shortname></shortname>
+            <quickselect>0</quickselect>
+            <frequency>103.5</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Ona Música</name>
+            <shortname></shortname>
+            <quickselect>0</quickselect>
+            <frequency>96</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+        <station>
+            <name>Onda Rambla</name>
+            <shortname></shortname>
+            <quickselect>0</quickselect>
+            <frequency>89.8</frequency>
+            <volumepreset>-1</volumepreset>
+            <dockingmenu>1</dockingmenu>
+        </station>
+    </stationlist>
+</kradiorc>
