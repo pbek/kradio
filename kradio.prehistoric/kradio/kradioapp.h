@@ -29,11 +29,13 @@
 #include <kaboutapplication.h>
 
 #include "quickbar.h"
-#include "setupdialog.h"
 #include "v4lradio.h"
+#include "timecontrol.h"
+#include "lircsupport.h"
 
 class RadioDocking;
 class KRadio;
+class SetupDialog;
 
 class KRadioApp : public KApplication
 {
@@ -47,6 +49,7 @@ public slots:
   virtual void slotConfigure();
   virtual void slotApplyConfig (SetupDialog &sud);
   virtual void slotSaveConfig  (SetupDialog &sud);
+  virtual void slotAlarm(Alarm *);
 
 private:
   void restoreState();
@@ -54,16 +57,25 @@ private:
 
   void saveState();
   void saveOptions();
+  void readXMLConfig();
 
   KAboutApplication AboutApplication;
   
   KConfig       *config;
-  V4LRadio      *radio;
-  
   KRadio        *kradio;
   RadioDocking  *tray;
   QuickBar      *quickbar;
+  TimeControl   *timeControl;
+  V4LRadio      *radio;
   
+#ifdef HAVE_LIRC_CLIENT
+  LircSupport     *lircHelper;
+#endif
+
 };
+
+
+void readXMLCfg (const QString &url, StationVector &sl, AlarmVector &al);
+void writeXMLCfg (const QString &FileName, const StationVector &sl /*, const AlarmVector &al*/);
 
 #endif

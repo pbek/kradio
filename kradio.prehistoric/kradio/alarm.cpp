@@ -23,7 +23,7 @@ Alarm::Alarm(QObject *_parent, QDateTime _time, bool _daily, bool _enabled)
 	daily = _daily;
 	enabled = _enabled;
 	time = _time;
-	done = false;
+	done = QDateTime();
 	volumePreset = -1;
 	stationID = -1;
 }
@@ -34,7 +34,7 @@ Alarm::Alarm (QObject *_parent)
 {
 	daily = false;
 	enabled = false;
-	done = false;
+	done = QDateTime();
 	stationID = -1;
 	volumePreset = -1;
 }
@@ -72,24 +72,23 @@ QDateTime Alarm::nextAlarm(bool ignoreEnable) const
 {
 	QDateTime now = QDateTime::currentDateTime(),
 			  alarm = time;
-	if (daily && alarm < now) {
+	if (daily) {
 		alarm.setDate (now.date());
-		if (alarm.addSecs(60) < now)
+		if ((done.isValid() && done >= alarm) || alarm.addSecs(60) < now)
 			alarm = alarm.addDays(1);
 	}
-	//const_cast<Alarm*>(this)->time = alarm;
-	return (enabled && !done) || ignoreEnable ? alarm : QDateTime();
+	return (enabled && (!done.isValid() || daily)) || ignoreEnable ? alarm : QDateTime();
 }
 
 
 void Alarm::poll ()
 {
-	QDateTime now = QDateTime::currentDateTime(),
-			  next = nextAlarm();	
-	if (enabled && !done && next.isValid() && now > next && now < next.addSecs(60)) {
+	QDateTime now  = QDateTime::currentDateTime(),
+			  next = nextAlarm();
+	if (next.isValid() && now >= next && now < next.addSecs(60)) {
+//		time = time.addDays(daily);
+		done = next;
 		emit alarm(this);
-		time = time.addDays(daily);
-		done = !daily;
 	}
 }
 

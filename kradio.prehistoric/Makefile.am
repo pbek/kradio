@@ -1,6 +1,6 @@
 ####### kdevelop will overwrite this part!!! (begin)##########
 
-SUBDIRS = kradio po 
+SUBDIRS = kradio po presets 
 
 EXTRA_DIST = kradio.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO kradio.lsm kradio.spec 
 

@@ -29,7 +29,7 @@
 #include "kradioapp.h"
 #include "kradio.h"
 
-RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, const char *name)
+RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, TimeControl *tc, const char *name)
   : KSystemTray (0, name),
     leftMouseTogglesQB(false),
     leftMouseTogglesUI(true)
@@ -37,16 +37,26 @@ RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, co
   radio = _radio;
   radioControl = _widget;
   quickbar = qb;
+  timeControl = tc;
 
   miniKRadioPixmap = UserIcon("kradio");
 
   // connect radio with tray
   connect(radio, SIGNAL(sigUpdateTips()),
 	  this, SLOT(slotUpdateToolTips()));
-  connect(radio, SIGNAL(sigAlarm()),
+  connect(timeControl, SIGNAL(sigAlarm(Alarm *)),
 	  this, SLOT(slotAlarm()));
   connect(radio, SIGNAL(sigConfigChanged()),
   	  this, SLOT(slotConfigChanged()));
+  connect(timeControl, SIGNAL(sigConfigChanged()),
+  	  this, SLOT(slotConfigChanged()));
+     
+  connect(timeControl, SIGNAL(sigStartCountdown()),
+	  this, SLOT(slotSleepChanged()));
+  connect(timeControl, SIGNAL(sigStopCountdown()),
+	  this, SLOT(slotSleepChanged()));
+  connect(timeControl, SIGNAL(sigCountdownZero()),
+	  this, SLOT(slotSleepChanged()));
   	
   buildContextMenu ();
 }
@@ -67,6 +77,9 @@ void RadioDocking::buildContextMenu()
 
   alarmID = menu->insertTitle ("alarm-dummy");
   slotAlarm();
+
+  sleepID = menu->insertItem("sleep-dummy", timeControl, SLOT(startStopCountdown()));
+  slotSleepChanged();
 
   menu->insertItem(SmallIcon("forward"), i18n("Search Next Station"),
 			       this, SLOT( slotSearchNextStation()));
@@ -178,12 +191,14 @@ void RadioDocking::slotToggleQB ()
 void RadioDocking::slotAlarm()
 {
   KPopupMenu *menu = contextMenu();
-  QDateTime a = radio->nextAlarm();
+  QDateTime a = timeControl->nextAlarm();
+
   if (a.isValid())
     menu->changeTitle (alarmID, i18n("next alarm: ") + a.toString());
   else
     menu->changeTitle (alarmID, i18n("<no alarm pending>"));
 }
+
 
 void RadioDocking::slotConfigChanged()
 {
@@ -209,3 +224,18 @@ void RadioDocking::mousePressEvent( QMouseEvent *e )
 	break;
   }
 }
+
+
+void RadioDocking::slotSleepChanged()
+{
+    KPopupMenu *menu = contextMenu();
+	QDateTime s = timeControl->getCountdownStart();
+	int n = timeControl->getCountdownSeconds();
+	QDateTime e = s.isValid() ? s.addSecs(n) : s;
+
+	if (e.isValid())
+		menu->changeItem (sleepID, i18n("stop sleep (running until ") + e.toString() + ")");
+	else
+		menu->changeItem (sleepID, i18n("start sleep countdown"));
+}
+

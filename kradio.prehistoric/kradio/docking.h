@@ -28,6 +28,7 @@
 #include <ksystemtray.h>
 #include "kradio.h"
 #include "quickbar.h"
+#include "timecontrol.h"
 
 class KRadioApp;
 
@@ -35,7 +36,7 @@ class KRadioApp;
 class RadioDocking : public KSystemTray {
 	Q_OBJECT
 public:
-	RadioDocking (KRadio *widget, QuickBar *qb, RadioBase *radio, const char *name = 0);
+	RadioDocking (KRadio *widget, QuickBar *qb, RadioBase *radio, TimeControl *tc, const char *name = 0);
 	virtual ~RadioDocking();
 
 	virtual void showEvent (QShowEvent *);
@@ -43,15 +44,16 @@ public:
 private slots:
 
 public slots:
-    void slotSearchPrevStation(void);
-    void slotSearchNextStation(void);
-    void slotNOP();
-    void slotToggleUI();
-    void slotToggleQB();
+    virtual void slotSearchPrevStation(void);
+    virtual void slotSearchNextStation(void);
+    virtual void slotNOP();
+    virtual void slotToggleUI();
+    virtual void slotToggleQB();
 
-    void slotUpdateToolTips ();
-    void slotAlarm ();
-    void slotConfigChanged();
+    virtual void slotUpdateToolTips ();
+    virtual void slotAlarm ();
+    virtual void slotConfigChanged();
+    virtual void slotSleepChanged();
 
 signals:
     void showAbout();
@@ -69,11 +71,13 @@ private:
 	int			powerID;
 	int			guiID;
 	int     	qbID;
+	int			sleepID;
 	IntVector   StationIDs;
 
 	RadioBase 	*radio;
 	QWidget		*radioControl;
 	QuickBar    *quickbar;
+	TimeControl *timeControl;
 
     QPixmap     miniKRadioPixmap;
 

@@ -26,6 +26,8 @@
 
 #include <qobject.h>
 #include <qsocketnotifier.h>
+#include <qtimer.h>
+#include "timecontrol.h"
 
 #ifdef HAVE_LIRC_CLIENT
 #include <lirc/lirc_client.h>
@@ -46,9 +48,10 @@ protected:
 	int					addIndex;
 	
 	RadioBase			*radio;
+	TimeControl         *timeControl;
 	
 public:
-	LircSupport(RadioBase *parent);
+	LircSupport(QObject *parent, RadioBase *radio, TimeControl *timeControl);
 	~LircSupport();
 
 protected:

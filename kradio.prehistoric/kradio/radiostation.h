@@ -44,7 +44,7 @@ protected :
 	QString	iconString;
 
 public:
-	RadioStation(QObject *parent);
+	RadioStation(QObject *parent = NULL);
 	RadioStation(QObject *parent, QString Name, QString ShortName, QString iconString,
 				 float Frequency, float VolumePreset = -1);
 	RadioStation(const RadioStation &);

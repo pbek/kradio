@@ -39,14 +39,14 @@ protected:
 	QDateTime	time;
 	bool		enabled;
 	bool		daily;
-	bool		done;
+	QDateTime	done;
 
 	int			stationID;    // < 0 : disabled
 	float		volumePreset; // < 0: disabled
 
 public:
 	Alarm(QObject *parent, QDateTime time, bool daily, bool enabled);
-	Alarm(QObject *parent);
+	Alarm(QObject *parent = NULL);
 	Alarm(const Alarm &);
 	Alarm(QObject *parent, const Alarm &);
 	virtual ~Alarm();
@@ -58,10 +58,10 @@ public:
 	int		getStationID () const { return stationID; }
 	float	getVolumePreset () const { return volumePreset; }
 	
-	void	setEnabled (bool enable = true) { enabled = enable; }
-	void	setDaily (bool d = true) { daily = d; }
-	void	setDate (const QDate &d) { time.setDate(d); }
-	void	setTime (const QTime &d) { time.setTime(d); }
+	void	setEnabled (bool enable = true) { enabled = enable; done = QDateTime();  }
+	void	setDaily (bool d = true) { daily = d; done = QDateTime(); }
+	void	setDate (const QDate &d) { time.setDate(d); done = QDateTime();  }
+	void	setTime (const QTime &d) { time.setTime(d); done = QDateTime();  }
     void    setStationID(int id) { stationID = id; }
     void    setVolumePreset(float v) { volumePreset = v; }
 	

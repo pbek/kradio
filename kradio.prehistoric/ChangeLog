@@ -1,6 +1,22 @@
 0.2.6   emw     - activate station in setupdialog by freq, not stationId
                 - add "unknown station" to kradio->cbStations
+                - fix alarm inconsistencies
+                - make alarm management independent from radiobase: new class TimeControl
+                - make xml-config independent from radiobase: kradioapp is now responsible for it
+                - remove alarm configuration from xml file, put to standard kde/kradio config file (downward compatibility kept)
+                - sleep countdown function, countdown stopped by poweron/off, accessible via lirc/docking menu
+                - make kradioapp responsible for lircHelper
+                - fixed config autosave bug
+                - make use of <KDEDIR>/share/apps/kradio/presets possible
+                - include first station preset file in dist (germany/aachen-cable.krp, still a bit incomplete;)
 
+                Release notes:
+                * ~/.kradiorc is still read for compatibility, but only if ~/<dot-kdedir>/share/data/kradio/stations.krp does not exist/contain valid data
+                * alarms are now in ~/<dot-kdedir>/share/config/kradiorc, ~/.kradiorc is read for compatibility
+
+                * I'd like to provide ready-to-use-kradio preset files within the dist.
+                  I'd be pleased if you like to contribute your personal preset file to this project.
+                
 0.2.5   emw:    - configuration dialog part 3: alarms
                 - frequency range override
                 - improve alarms by station/volume preset

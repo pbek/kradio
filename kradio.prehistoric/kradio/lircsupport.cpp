@@ -19,10 +19,11 @@
 #include "radiobase.h"
 
 
-LircSupport::LircSupport(RadioBase *_parent)
+LircSupport::LircSupport(QObject *_parent, RadioBase *_radio, TimeControl *_timeControl)
 	: QObject(_parent)
 {
-	radio = _parent;
+	radio = _radio;
+	timeControl = _timeControl;
 
 #ifdef HAVE_LIRC_CLIENT
 	char *prg = (char*)"kradio";
@@ -100,11 +101,10 @@ void LircSupport::slotLIRC(int /*socket*/ )
 				else if (strcasecmp (c, "NEXT") == 0) {
 				    numStations = radio->nStations();
 				    curStation = radio->whichStation() + 1;
-				    if (curStation < numStations &&
-					curStation != -1)
-					activateStation(curStation + 1);
+				    if (curStation < numStations && curStation != -1)
+						activateStation(curStation + 1);
 				    else
-					activateStation(1);
+						activateStation(1);
 				}
 				else if (strcasecmp (c, "PREV") == 0) {
 				    numStations = radio->nStations();
@@ -112,9 +112,12 @@ void LircSupport::slotLIRC(int /*socket*/ )
 				    if (curStation > 1)
 					activateStation(curStation - 1);
 				    else if (curStation != -1)
-					activateStation(numStations);
+						activateStation(numStations);
 				    else
-					activateStation(1);
+						activateStation(1);
+				}
+				else if (strcasecmp (c, "SLEEP") == 0) {
+					timeControl->startCountdown();
 				}
 			
 				int k = -1;
@@ -126,7 +129,7 @@ void LircSupport::slotLIRC(int /*socket*/ )
 					    addIndex = 0;
 					} else {
 						addIndex = k;
-						kbdTimer->start(700, true);
+						kbdTimer->start(500, true);
 					}
 				}
 			}
