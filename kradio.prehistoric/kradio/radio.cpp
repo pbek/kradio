@@ -27,9 +27,37 @@ Radio::Radio()
 }
 
 
-// offer new station to current device.
-// if that does not accept, try all other devices.
-// Any device will be powered off if it does not accept the station
+bool Radio::connect    (Interface *i)
+{
+	bool a = IRadio::connect(i);
+	bool b = IRadioDeviceClient::connect(i);
+	bool c = IRadioDevicePool::connect(i);
+
+	// no "return IA::connect() | return IB::connnect to
+	// prevent "early termination" optimization in boolean expressions
+	return a || b || c;
+}
+
+bool Radio::disconnect (Interface *i)
+{
+	bool a = IRadio::disconnect(i);
+	bool b = IRadioDeviceClient::disconnect(i);
+	bool c = IRadioDevicePool::disconnect(i);
+
+	// no "return IA::connect() | return IB::connnect to
+	// prevent "early termination" optimization in boolean expressions
+	return a || b || c;
+}
+
+
+/* IRadio Interface Methods
+*/
+
+/* offer new station to current device.
+   if that does not accept, try all other devices.
+   Any device will be powered off if it does not accept the station
+*/
+
 bool Radio::activateStation (const RadioStation &rs) {
 
 	if (sendActivateStation(rs)) {    // first try activeDevice
@@ -100,6 +128,8 @@ bool Radio::setActiveDevice(IRadioDevice *rd, bool keepPower)
 
 		// setup new active device && send notifications
 		m_activeDevice = rd;
+
+		// send notifications
 	    notifyActiveDeviceChanged(m_activeDevice);
 	    notifyStationChanged(queryCurrentStation());
 
@@ -169,15 +199,17 @@ const RadioStation & Radio::queryCurrentStation() const
 }
 
 
-bool Radio::noticePowerOn (IRadioDevice *sender)
+bool Radio::noticePowerOn (const IRadioDevice *sender)
 {
-	setActiveDevice(sender, false);  // false: do not set power state on new device
+	setActiveDevice(const_cast<IRadioDevice*>(sender), false);
+	                // false: do not set power state on new device
+	                // constcast valid because power-state of sender is not changed
 	notifyPowerOn();
 	return true;
 }
 
 
-bool Radio::noticePowerOff(IRadioDevice *sender)
+bool Radio::noticePowerOff(const IRadioDevice *sender)
 {
 	if (sender == m_activeDevice) {
 		notifyPowerOff();
@@ -187,7 +219,7 @@ bool Radio::noticePowerOff(IRadioDevice *sender)
 }
 
 
-bool Radio::noticeStationChanged (const RadioStation &rs, IRadioDevice *sender)
+bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender)
 {
 	if (sender == m_activeDevice) {
 		notifyStationChanged(rs);
@@ -225,3 +257,5 @@ void Radio::noticeDisconnect(IRadioDevice *rd)
         }
 	}
 }
+
+

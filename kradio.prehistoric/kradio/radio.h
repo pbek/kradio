@@ -70,7 +70,11 @@ ANSWERS:
 	const RadioStation  &  getCurrentStation() const;
 	const StationList   &  getStations() const;
 
-    
+
+
+public:
+	bool connect    (Interface *i);
+	bool disconnect (Interface *i);				
 
 	// IRadioDevicePool methods
 
@@ -97,9 +101,9 @@ QUERIES:
 	IF_QUERY   (  const RadioStation  &  queryCurrentStation()       )
 
 RECEIVERS:
-	virtual bool noticePowerOn        (IRadioDevice *sender = NULL);
-	virtual bool noticePowerOff       (IRadioDevice *sender = NULL);
-	virtual bool noticeStationChanged (const RadioStation &rs, IRadioDevice *sender = NULL);
+	virtual bool noticePowerOn        (const IRadioDevice *sender = NULL);
+	virtual bool noticePowerOff       (const IRadioDevice *sender = NULL);
+	virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
 
 	virtual void noticeConnect(IRadioDevice *rd);
 	virtual void noticeDisconnect(IRadioDevice *rd);

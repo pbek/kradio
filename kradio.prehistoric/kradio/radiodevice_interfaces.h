@@ -73,9 +73,9 @@ SENDERS:
     IF_SENDER  (  sendActivateStation (const RadioStation &rs)       )
 
 RECEIVERS:
-	IF_RECEIVER(  noticePowerOn        (IRadioDevice *sender = NULL)                          )
-	IF_RECEIVER(  noticePowerOff       (IRadioDevice *sender = NULL)                          )
-	IF_RECEIVER(  noticeStationChanged (const RadioStation &, IRadioDevice *sender = NULL)    )
+	IF_RECEIVER(  noticePowerOn        (const IRadioDevice *sender = NULL)                          )
+	IF_RECEIVER(  noticePowerOff       (const IRadioDevice *sender = NULL)                          )
+	IF_RECEIVER(  noticeStationChanged (const RadioStation &, const IRadioDevice *sender = NULL)    )
 
 QUERIES:
 	IF_QUERY   (  bool                   queryIsPowerOn()             )

@@ -266,21 +266,30 @@
 
 */
 
+
 /////////////////////////////////////////////////////////////////////////////
 
-// a polymorphic base class so that we can make use of dynamic_casts
-// in connect/disconnect
+// a polymorphic and *virtual* base class so that we can make use of
+// dynamic_casts in connect/disconnect and to be able to merge
+// connect/disconnect methods to one single function in case of multiple
+// inheritance
 
 class Interface
 {
 public:
-	virtual ~Interface() {}
+	virtual bool     connect   (Interface *i) = 0;
+	virtual bool     disconnect(Interface *i) = 0;
+
+	// "Interface &"-Versions for convienience, not virtual, only "Interface*"
+	// versions have to / may  be overwritten in case of multiple inheritance
+	bool     connect   (Interface &i) { return connect    (&i); }
+	bool     disconnect(Interface &i) { return disconnect (&i); }
 };
 
 /////////////////////////////////////////////////////////////////////////////
 
 template <class thisIF, class cmplIF>
-class InterfaceBase : public Interface
+class InterfaceBase : virtual public Interface
 {
     friend class InterfaceBase<cmplIF, thisIF>;    // necessary for connects (to keep
                                                    // number of connect functions low)
@@ -300,9 +309,6 @@ public :
 
 	virtual bool     connect(Interface *i);
 	virtual bool     disconnect(Interface *i);
-
-	virtual bool     connect   (Interface &i) { return connect (&i); }
-	virtual bool     disconnect(Interface &i) { return disconnect (&i); }
 
 	virtual bool     isConnectionFree() const;
 	virtual unsigned connected()        const { return connections.count(); }
