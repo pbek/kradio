@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-01-22 23:38+0100\n"
+"POT-Creation-Date: 2003-01-24 13:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "tuned"
 msgstr ""
 
-#: radiobase.cpp:356
+#: radiobase.cpp:356 RadioView.cpp:420
 msgid "Stereo"
 msgstr ""
 
@@ -147,12 +147,156 @@ msgstr ""
 msgid "Setup Station Presets"
 msgstr ""
 
-#: setupdialog.cpp:90
+#: setupdialog.cpp:90 setupdialog_alarms.cpp:173
 msgid "Alarms"
 msgstr ""
 
 #: setupdialog.cpp:91
 msgid "Setup Alarms"
+msgstr ""
+
+#: setupdialog_stations.cpp:465
+msgid "SetupDialogStations"
+msgstr ""
+
+#: setupdialog_stations.cpp:466
+msgid "Frequency"
+msgstr ""
+
+#: setupdialog_stations.cpp:467 setupdialog_general_options.cpp:218
+#: setupdialog_general_options.cpp:219 setupdialog_general_options.cpp:227
+msgid " kHz"
+msgstr ""
+
+#: setupdialog_stations.cpp:468
+msgid "Name"
+msgstr ""
+
+#: setupdialog_stations.cpp:469
+msgid "Short Name"
+msgstr ""
+
+#: setupdialog_stations.cpp:470
+msgid "Pixmap File"
+msgstr ""
+
+#: setupdialog_stations.cpp:471 setupdialog_general_options.cpp:213
+#: setupdialog_general_options.cpp:214 RadioView.cpp:415
+msgid "..."
+msgstr ""
+
+#: setupdialog_stations.cpp:472 setupdialog_alarms.cpp:179
+msgid " %"
+msgstr ""
+
+#: setupdialog_stations.cpp:473
+msgid "Volume Preset (-1 = disabled)"
+msgstr ""
+
+#: setupdialog_stations.cpp:474
+msgid "use in station bar"
+msgstr ""
+
+#: setupdialog_stations.cpp:475
+msgid "use in docking menu"
+msgstr ""
+
+#: setupdialog_stations.cpp:476
+msgid "Stations"
+msgstr ""
+
+#: setupdialog_stations.cpp:477 setupdialog_alarms.cpp:174
+msgid "&New"
+msgstr ""
+
+#: setupdialog_stations.cpp:478 setupdialog_alarms.cpp:175
+msgid "&Delete"
+msgstr ""
+
+#: setupdialog_stations.cpp:479
+msgid "&Up"
+msgstr ""
+
+#: setupdialog_stations.cpp:480
+msgid "D&own"
+msgstr ""
+
+#: setupdialog_stations.cpp:481
+msgid "&Search Stations"
+msgstr ""
+
+#: setupdialog_stations.cpp:482
+msgid "&Load Preset File"
+msgstr ""
+
+#: setupdialog_stations.cpp:483
+msgid "Station &Presets"
+msgstr ""
+
+#: setupdialog_stations.cpp:484
+msgid "City"
+msgstr ""
+
+#: setupdialog_stations.cpp:485
+msgid "Country"
+msgstr ""
+
+#: setupdialog_stations.cpp:486
+msgid "&Now"
+msgstr ""
+
+#: setupdialog_stations.cpp:487
+msgid "Comment"
+msgstr ""
+
+#: setupdialog_stations.cpp:488
+msgid "Media"
+msgstr ""
+
+#: setupdialog_stations.cpp:489
+msgid "Maintainer"
+msgstr ""
+
+#: setupdialog_stations.cpp:490
+msgid "Last Change"
+msgstr ""
+
+#: setupdialog_stations.cpp:491
+msgid ""
+"<p align=\"center\">Click on the link below to contribute this station "
+"preset file to the kradio project.</p>"
+msgstr ""
+
+#: setupdialog_stations.cpp:492
+msgid "A&bout"
+msgstr ""
+
+#: setupdialog_alarms.cpp:172
+msgid "SetupDialogAlarms"
+msgstr ""
+
+#: setupdialog_alarms.cpp:176
+msgid "Date"
+msgstr ""
+
+#: setupdialog_alarms.cpp:177
+msgid "Time"
+msgstr ""
+
+#: setupdialog_alarms.cpp:178
+msgid "Volume"
+msgstr ""
+
+#: setupdialog_alarms.cpp:180
+msgid "daily"
+msgstr ""
+
+#: setupdialog_alarms.cpp:181
+msgid "enabled"
+msgstr ""
+
+#: setupdialog_alarms.cpp:182
+msgid "Radio Station"
 msgstr ""
 
 #: stationsearchdialog_uic.ui.h:55
@@ -161,6 +305,118 @@ msgstr ""
 
 #: stationsearchdialog_uic.ui.h:115 stationsearchdialog_uic.ui.h:119
 msgid "unknown"
+msgstr ""
+
+#: setupdialog_general_options.cpp:209
+msgid "SetupDialogGeneral"
+msgstr ""
+
+#: setupdialog_general_options.cpp:210
+msgid "Radio Device"
+msgstr ""
+
+#: setupdialog_general_options.cpp:211
+msgid "Mixer Device"
+msgstr ""
+
+#: setupdialog_general_options.cpp:212
+msgid "Mixer Channel"
+msgstr ""
+
+#: setupdialog_general_options.cpp:215
+msgid "override frequency range"
+msgstr ""
+
+#: setupdialog_general_options.cpp:221
+msgid "sleep countdown"
+msgstr ""
+
+#: setupdialog_general_options.cpp:222
+msgid "minimum signal quality"
+msgstr ""
+
+#: setupdialog_general_options.cpp:223
+msgid "station scan step"
+msgstr ""
+
+#: setupdialog_general_options.cpp:224
+msgid " min"
+msgstr ""
+
+#: setupdialog_general_options.cpp:226
+msgid "to"
+msgstr ""
+
+#: setupdialog_general_options.cpp:229
+msgid "only short names in quickbar"
+msgstr ""
+
+#: stationsearchdialog_uic.cpp:87
+msgid "Stations Search in progress"
+msgstr ""
+
+#: stationsearchdialog_uic.cpp:88
+msgid "&Cancel"
+msgstr ""
+
+#: stationsearchdialog_uic.cpp:89
+msgid "remaining time"
+msgstr ""
+
+#: stationsearchdialog_uic.cpp:90
+msgid "<p align=\"right\">nothing here</p>"
+msgstr ""
+
+#: RadioView.cpp:404
+msgid "Form1"
+msgstr ""
+
+#: RadioView.cpp:405
+msgid "Volume control"
+msgstr ""
+
+#: RadioView.cpp:407
+msgid "search previous station"
+msgstr ""
+
+#: RadioView.cpp:409
+msgid "decrease freq. by 0.05 MHz"
+msgstr ""
+
+#: RadioView.cpp:411
+msgid "increase freq. by 0.05 MHz"
+msgstr ""
+
+#: RadioView.cpp:413
+msgid "search next station"
+msgstr ""
+
+#: RadioView.cpp:414
+msgid "Power"
+msgstr ""
+
+#: RadioView.cpp:416
+msgid "Toggle the Quickbar"
+msgstr ""
+
+#: RadioView.cpp:417
+msgid "Configure"
+msgstr ""
+
+#: RadioView.cpp:418
+msgid "Frequency control"
+msgstr ""
+
+#: RadioView.cpp:419
+msgid "Tune"
+msgstr ""
+
+#: RadioView.cpp:421
+msgid "About"
+msgstr ""
+
+#: RadioView.cpp:422 RadioView.cpp:423
+msgid "Quit"
 msgstr ""
 
 #: radiocfgxmlhandler.cpp:85

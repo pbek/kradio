@@ -7,7 +7,7 @@ kradio_SOURCES = setupdialog_stations.ui setupdialog_alarms.ui setupdialog_gener
 kradio_LDADD   =  $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
 
 
-EXTRA_DIST = main.cpp kradio.cpp kradio.h kradiomw.cpp kradiomw.h kradioapp.cpp kradioapp.h kradio.desktop lo32-app-kradio.png lo16-app-kradio.png RadioView.ui kradioview.ui v4lradio.cpp v4lradio.h docking.cpp docking.h lo22-app-kradio.png hi16-app-kradio.png hi22-app-kradio.png hi32-app-kradio.png dot-lircrc.example kradiorc.example hi24-app-kradio.png lo24-app-kradio.png radiostation.cpp radiostation.h radiobase.cpp radiobase.h utils.h alarm.cpp alarm.h lircsupport.cpp lircsupport.h hi48-app-kradio.png hi64-app-kradio.png lo48-app-kradio.png lo64-app-kradio.png quickbar.cpp quickbar.h buttonflowlayout.cpp buttonflowlayout.h setupdialog.h setupdialog.cpp stationsearchdialog_uic.ui stationsearchdialog.h stationsearchdialog.cpp utils.cpp timecontrol.h timecontrol.cpp radiocfgxmlhandler.h radiocfgxmlhandler.cpp setupdialog_general_options.ui stationsearchdialog_uic.ui.h setupdialog_general_options.ui.h setupdialog_alarms.ui setupdialog_stations.ui setupdialog_alarms.ui.h setupdialog_stations.ui.h 
+EXTRA_DIST = main.cpp kradio.cpp kradio.h kradiomw.cpp kradiomw.h kradioapp.cpp kradioapp.h kradio.desktop lo32-app-kradio.png lo16-app-kradio.png RadioView.ui kradioview.ui v4lradio.cpp v4lradio.h docking.cpp docking.h lo22-app-kradio.png hi16-app-kradio.png hi22-app-kradio.png hi32-app-kradio.png dot-lircrc.example kradiorc.example hi24-app-kradio.png lo24-app-kradio.png radiostation.cpp radiostation.h radiobase.cpp radiobase.h utils.h alarm.cpp alarm.h lircsupport.cpp lircsupport.h hi48-app-kradio.png hi64-app-kradio.png lo48-app-kradio.png lo64-app-kradio.png quickbar.cpp quickbar.h buttonflowlayout.cpp buttonflowlayout.h setupdialog.h setupdialog.cpp stationsearchdialog_uic.ui stationsearchdialog.h stationsearchdialog.cpp utils.cpp timecontrol.h timecontrol.cpp radiocfgxmlhandler.h radiocfgxmlhandler.cpp setupdialog_general_options.ui stationsearchdialog_uic.ui.h setupdialog_general_options.ui.h setupdialog_alarms.ui setupdialog_stations.ui setupdialog_alarms.ui.h setupdialog_stations.ui.h kradio_muteoff.png kradio_muteon.png kradio_muteoff_16x16.png kradio_muteon_16x16.png 
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/
@@ -36,6 +36,14 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/lo48-app-kradio.png $(kde_icondir)/locolor/48x48/apps/kradio.png
 	$(mkinstalldirs) $(kde_icondir)/locolor/64x64/apps/
 	$(INSTALL_DATA) $(srcdir)/lo64-app-kradio.png $(kde_icondir)/locolor/64x64/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/22x22/apps/
+	$(INSTALL_DATA) $(srcdir)/kradio_muteoff.png $(kde_icondir)/hicolor/22x22/apps/kradio_muteoff.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/22x22/apps/
+	$(INSTALL_DATA) $(srcdir)/kradio_muteon.png $(kde_icondir)/hicolor/22x22/apps/kradio_muteon.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/16x16/apps/
+	$(INSTALL_DATA) $(srcdir)/kradio_muteoff_16x16.png $(kde_icondir)/hicolor/16x16/apps/kradio_muteoff.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/16x16/apps/
+	$(INSTALL_DATA) $(srcdir)/kradio_muteon_16x16.png $(kde_icondir)/hicolor/16x16/apps/kradio_muteon.png
 
 uninstall-local:
 	-rm -f $(kde_appsdir)/Applications/kradio.desktop
@@ -51,6 +59,10 @@ uninstall-local:
 	-rm -f $(kde_icondir)/hicolor/64x64/apps/kradio.png
 	-rm -f $(kde_icondir)/locolor/48x48/apps/kradio.png
 	-rm -f $(kde_icondir)/locolor/64x64/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/22x22/apps/kradio_muteoff.png
+	-rm -f $(kde_icondir)/hicolor/22x22/apps/kradio_muteon.png
+	-rm -f $(kde_icondir)/hicolor/16x16/apps/kradio_muteoff.png
+	-rm -f $(kde_icondir)/hicolor/16x16/apps/kradio_muteon.png
 
 ####### kdevelop will overwrite this part!!! (end)############
 # this 10 paths are KDE specific. Use them:
@@ -89,5 +101,8 @@ rc_DATA = kradioui.rc
 messages: rc.cpp
 	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
 	if test -n "$$LIST"; then \
-	 $(XGETTEXT) -C -ki18n $$LIST -o $(top_srcdir)/po/kradio.pot; \
+	  for I in $(top_srcdir)/po/*.po ; do \
+	    $(XGETTEXT) -C -ki18n -ktr2i18n $$LIST -j -o $$I ; \
+	  done ; \
+	  $(XGETTEXT) -C -ki18n -ktr2i18n $$LIST -o $(top_srcdir)/po/kradio.pot ; \
 	fi

@@ -2,6 +2,7 @@
        distinguish ukw/fm and MW/am
        make kradio AM ready
        redesign kradio interface: use symbols for stereo and signal quality, display ukw/fm and MW/am
+          Hintergrund: RGB=034200  Vordergrund: RGB=14F400
        gui-errormessages in xml parsing code
        prepare for translation: check for missing i18n //done
 

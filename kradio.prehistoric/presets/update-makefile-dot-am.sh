@@ -39,12 +39,12 @@ if [ -n "$THISDIR" ] ; then
 	echo >> $OUT
 
 	echo -e "\ninstall-data-local:" >> $OUT
-	echo "	\$(mkinstalldirs) \"\$(kde_datadir)/kradio/presets/$THISDIR/\"" >> $OUT
+	echo "	\$(mkinstalldirs) \"\$(DESTDIR)\$(kde_datadir)/kradio/presets/$THISDIR/\"" >> $OUT
 	
 	find -mindepth 1 -maxdepth 1 -name "*.krp" | sed 's/^\.\///' | \
 	  while read line; do
 		
-	    echo "	\$(INSTALL_DATA) \"\$(srcdir)/$line\" \"\$(kde_datadir)/kradio/presets/$THISDIR/$line\"" >> $OUT
+	    echo "	\$(INSTALL_DATA) \"\$(srcdir)/$line\" \"\$(DESTDIR)\$(kde_datadir)/kradio/presets/$THISDIR/$line\"" >> $OUT
 
 	  done
 
@@ -54,7 +54,7 @@ if [ -n "$THISDIR" ] ; then
 	find -mindepth 1 -maxdepth 1 -name "*.krp" | sed 's/^\.\///' | \
 	  while read line; do
 
-		echo "	-rm -f \"\$(kde_datadir)/kradio/presets/$THISDIR/$line\"" >> $OUT	
+		echo "	-rm -f \"\$(DESTDIR)\$(kde_datadir)/kradio/presets/$THISDIR/$line\"" >> $OUT	
 
 	  done
 

@@ -10,7 +10,7 @@ Vendor:    Martin Witte <witte@kawo1.rwth-aachen.de>
 Url:       http://sourceforge.net/projects/kradio
 Packager:  Martin Witte <witte@kawo1.rwth-aachen.de>
 Group:     kde3
-Source:    /usr/src/kradio-cvs/kradio/kradio-0.2.8pre1
+Source:    /usr/src/kradio-cvs/kradio/kradio-0.2.8pre1.tar.gz
 Requires:  kdepim3-time-management
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
@@ -36,9 +36,9 @@ make -j$numprocs
 make install-strip DESTDIR=$RPM_BUILD_ROOT
 
 cd $RPM_BUILD_ROOT
-find . -type d | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' > $RPM_BUILD_DIR/file.list.kradio
-find . -type f | sed 's,^\.,\%attr(-\,root\,root) ,' >> $RPM_BUILD_DIR/file.list.kradio
-find . -type l | sed 's,^\.,\%attr(-\,root\,root) ,' >> $RPM_BUILD_DIR/file.list.kradio
+find . -type d | sed '1,2d;s,^\.\(.*\)$,\%attr(-\,root\,root) \%dir "\1",' > $RPM_BUILD_DIR/file.list.kradio
+find . -type f | sed 's,^\.\(.*\)$,\%attr(-\,root\,root) "\1",' >> $RPM_BUILD_DIR/file.list.kradio
+find . -type l | sed 's,^\.\(.*\)$,\%attr(-\,root\,root) "\1",' >> $RPM_BUILD_DIR/file.list.kradio
 
 %clean
 rm -rf $RPM_BUILD_ROOT/*
