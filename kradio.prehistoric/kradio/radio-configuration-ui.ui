@@ -34,10 +34,16 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
                     <widget class="QLayoutWidget" row="0" column="0">
                         <property name="name">
                             <cstring>layout32</cstring>
                         </property>
+	                <property name="margin">
+        	            <number>6</number>
+                	</property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
@@ -682,9 +688,10 @@
 </tabstops>
 <includes>
     <include location="global" impldecl="in implementation">kiconloader.h</include>
+    <include location="global" impldecl="in implementation">qwidgetstack.h</include>
 </includes>
 <pixmapfunction>SmallIconSet</pixmapfunction>
-<layoutdefaults spacing="6" margin="6"/>
+<layoutdefaults spacing="6" margin="0"/>
 <includehints>
     <includehint>kurllabel.h</includehint>
 </includehints>

@@ -15,6 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <algorithm>
+using std::sort;
+
 #include <qdatetime.h>
 #include <qlistbox.h>
 #include <qcombobox.h>
@@ -24,8 +27,6 @@
 #include <qspinbox.h>
 #include <qcheckbox.h>
 #include <qpushbutton.h>
-
-#include <algorithm>
 
 #include "timecontrol-configuration.h"
 #include "stationlist.h"

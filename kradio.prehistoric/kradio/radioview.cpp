@@ -121,7 +121,7 @@ RadioView::RadioView(QWidget *parent, const QString &name)
 
 RadioView::~RadioView ()
 {
-	QObjectListIterator it(configPages);
+	QPtrListIterator<QObject> it(configPages);
 	while (configPages.first()) {
 		delete configPages.first();
 	}
@@ -149,7 +149,7 @@ bool RadioView::addElement (RadioViewElement *e)
 	// other devices follow if currentDevice changes
 	e->connect(currentDevice);
 
-	QObjectListIterator it(configPages);
+	QPtrListIterator<QObject> it(configPages);
 	for (; it.current(); ++it) {
 		addConfigurationTabFor(e, (QTabWidget *)it.current());
 	}

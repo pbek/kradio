@@ -284,7 +284,7 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 void RadioConfiguration::slotSelectPixmap()
 {
     KFileDialog fd(QString::null,
-				   "(*.gif *.png *.jpg *.xpm)|" + i18n("images"),
+				   "*.gif *.png *.jpg *.xpm|" + i18n("images") + "(*.gif, *.png, *.jpg, *.xpm)",
 				   this, i18n("pixmap selection"), true);
     fd.setMode(KFile::File | KFile::ExistingOnly);
     fd.setCaption (i18n("Select station pixmap"));

@@ -14,6 +14,8 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
+#include <math.h>
 #include <qslider.h>
 #include <qlayout.h>
 #include <qaccel.h>

@@ -79,12 +79,15 @@ int RawStationList::compareItems(QPtrCollection::Item a, QPtrCollection::Item b)
 	return ((RadioStation*)a)->compare(*(RadioStation*)b);
 }
 
+
 bool RawStationList::insert (uint index, const RadioStation * item )
 {
 	if (!item) return false;
-	RadioStation &rs = stationWithID(item->stationID());
-	bool r = BaseClass::insert(index, item);
-	removeRef(&rs);
+	RadioStation *rs = &stationWithID(item->stationID());
+	if (rs != item) {
+		bool r = BaseClass::insert(index, item);
+		removeRef(rs);
+	}
 	return r;
 }
 
@@ -105,30 +108,44 @@ bool RawStationList::insert (const RadioStation * item )
 void RawStationList::inSort ( const RadioStation * item )
 {
 	if (!item) return;
-	removeRef(&stationWithID(item->stationID()));
-	BaseClass::inSort(item);
+	RadioStation *rs = &stationWithID(item->stationID());
+	if (rs != item) {
+		removeRef(rs);
+		BaseClass::inSort(item);
+	}
 }
 
 
 void RawStationList::prepend ( const RadioStation * item )
 {
 	if (!item) return;
-	removeRef(&stationWithID(item->stationID()));
-	BaseClass::prepend(item);
+	RadioStation *rs = &stationWithID(item->stationID());
+	if (rs != item) {
+		removeRef(rs);
+		BaseClass::prepend(item);
+	}
 }
 
 
 void RawStationList::append ( const RadioStation * item )
 {
 	if (!item) return;
-	removeRef(&stationWithID(item->stationID()));
-	BaseClass::append(item);
+	RadioStation *rs = &stationWithID(item->stationID());
+	if (rs != item) {
+		removeRef(rs);
+		BaseClass::append(item);
+	}
 }
 
 
 bool RawStationList::replace ( uint index, const RadioStation * item )
 {
-	bool r = BaseClass::replace(index, item);
+	bool r = true;
+	RadioStation *rs = &stationWithID(item->stationID());
+	if (rs != item) {
+		BaseClass::removeRef(rs);
+		r = BaseClass::insert(index, item);
+	}
 	return r;
 }
 

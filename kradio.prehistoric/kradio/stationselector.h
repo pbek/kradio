@@ -27,6 +27,7 @@
 #include "stationselection_interfaces.h"
 
 #include <vector>
+using std::vector;
 
 class KListBox;
 

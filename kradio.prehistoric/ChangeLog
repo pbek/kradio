@@ -1,3 +1,17 @@
+0.3.0 alpha 2
+
+        emw     - kde3.0 compatibility fixes
+                - v4l2 support
+
+        Will Stephenson
+
+                - radio-configuration.cpp: fix for pixmap selection dialog
+        
+        Andreas Pour
+
+                - fix for math and STL issues
+
+
 0.3.0 alpha 1
 
         Update Information:

@@ -1076,7 +1076,7 @@ else
   kde_qtsubver=`echo "$1" | sed -e 's#[0-9][0-9]*\.\([0-9][0-9]*\).*#\1#'`
   # following is the check if subversion isnt found in passed argument
   if test "$kde_qtsubver" = "$1"; then
-    kde_qtsubver=1
+    kde_qtsubver=0
   fi
   kde_qtver=`echo "$1" | sed -e 's#^\([0-9][0-9]*\)\..*#\1#'`
   if test "$kde_qtver" = "1"; then

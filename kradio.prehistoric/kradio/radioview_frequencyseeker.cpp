@@ -15,6 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <math.h>
 #include <qlayout.h>
 #include <qslider.h>
 #include <qtoolbutton.h>
