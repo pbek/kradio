@@ -33,7 +33,7 @@ protected :
 	bool	QuickSelect;
 
 	float	VolumePreset;		// <0: => Don't use
-	
+
 public:
 	RadioStation (QObject *parent);
 	RadioStation(QObject *parent, QString Name, QString ShortName,
@@ -44,6 +44,7 @@ public:
 	bool    isValid() const;
 	
 	QString getShortName() const     { return ShortName; }
+	QString getLongName(int i) const;
 	float	getFrequency() const     { return Frequency; }
 	float	getVolumePreset() const  { return VolumePreset; }
 	bool	useQuickSelect() const   { return QuickSelect; }

@@ -29,8 +29,6 @@ public:
 	virtual ~RadioDocking();
 
 private slots:
-    void toggleWindowState();
-    void mousePressEvent(QMouseEvent *e);
 
 public slots:
     void slotSearchPrevStation(void);
@@ -40,12 +38,14 @@ public slots:
     void slotNOP();
 
 private:
-  RadioBase 	*radio;
+  void clearStationList();
+	void buildStationList();
+	void contextMenuAboutToShow( KPopupMenu* menu );
+
+	RadioBase 	*radio;
   KRadio		*widget;
 
-  KPopupMenu	*menu;
-  int 			toggleID;
-  int			stationSeparatorID;
+  int			stationSeparatorID;// make sure the position of the corresponding item is STATION_0_POSITION !
   int 			nextID;
   int 			prevID;
   int			currID;
