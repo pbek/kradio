@@ -4,6 +4,6 @@
 * automake >= 1.6.1
 * autoconf 2.5*
 * v4l or v4l2 enabled kernel
-* libsndfile >= 1.0.5 (development package or header for compilation, library for execution)
+* libsndfile (development package or header for compilation, library for execution)
 * oss support (mixer, dsp/pcm)
 * radio card ;)

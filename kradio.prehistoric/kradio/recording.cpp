@@ -68,7 +68,6 @@ protected:
 protected:
 	int              m_devfd;
 	int             *m_buffer;
-//	SNDFILE         *m_input;
 	SNDFILE         *m_output;
 
 	QObject         *m_parent;
@@ -130,30 +129,23 @@ bool RecordingThread::openDevice()
     err |= (ioctl(m_devfd, SNDCTL_DSP_SPEED, &rate) != 0);
     kdDebug() << "err after SPEED: " << err << endl;
 
-//    int frag = 0x7fff000d;
-//    err |= (ioctl(m_devfd, SNDCTL_DSP_SETFRAGMENT, &frag) != 0);
-//    kdDebug() << "err after SETFRAGMENT: " << err << endl;
-
     if (err) closeDevice();
 
     // setup the input soundfile pointer
 
 	SF_INFO sinfo;
 	m_config.getSoundFileInfo(sinfo, true);
-//    m_input = sf_open_fd(m_devfd, SFM_READ, &sinfo, false);    
 
     // setup buffer
         
     m_buffer = new int[BUFFER_SIZE_SAMPLES * m_config.channels];
 
-    return !err && m_buffer; // && m_input;
+    return !err && m_buffer;
 }
 
 
 void RecordingThread::closeDevice()
 {
-//	if (m_input)      sf_close(m_input);
-//	m_input = NULL;
 	if (m_devfd >= 0) close (m_devfd);
 	m_devfd = -1;
 	if (m_buffer) delete m_buffer;
@@ -212,11 +204,7 @@ void RecordingThread::run()
 	
 	while (!m_stopFlag) {
 
-//		kdDebug() << "starting sf_read" << endl;
 		int r = read(m_devfd, m_buffer, bufferSize);
-//		kdDebug() << "read, bytes read: " << x << endl;
-//		int r = sf_readf_int(m_input, m_buffer, BUFFER_SIZE_SAMPLES);
-//		kdDebug() << "done sf_read, samples read: " << r << endl;
 		
 		if (r > 0 && sf_write_raw(m_output, m_buffer, r) == r) {
 			m_context.bufferAdded(r, m_config);
