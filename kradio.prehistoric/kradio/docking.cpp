@@ -22,8 +22,11 @@
 #include <kaction.h>
 #include <kstdaction.h>
 #include <math.h>
+#include <qtooltip.h>
+#include <kdebug.h>
 
 #include "docking.h"
+#include "kradioapp.h"
 #include "kradio.h"
 
 // this is the position of the very first station in the list
@@ -35,7 +38,6 @@ RadioDocking::RadioDocking(KRadio *_widget, RadioBase *_radio, const char *name)
   : KSystemTray (_widget, name)
 {
   radio = _radio;
-  widget = _widget;
 
   miniKRadioPixmap = UserIcon("kradio");
 
@@ -47,21 +49,27 @@ RadioDocking::RadioDocking(KRadio *_widget, RadioBase *_radio, const char *name)
   alarmID = menu->insertTitle (i18n("Wake Up"));
   stationSeparatorID = alarmID; // make sure the position of the corresponding item is STATION_0_POSITION !
 
-  nextID = menu->insertItem(i18n("Search Next Station"), this, SLOT( slotSearchNextStation()));
+  nextID = menu->insertItem(i18n("Search Next Station"), 
+			    this, SLOT( slotSearchNextStation()));
   menu->changeItem(nextID, SmallIcon("forward"), i18n("Search Next Station"));
 
-  prevID = menu->insertItem(i18n("Search Previous Station"), this, SLOT( slotSearchPrevStation()));
+  prevID = menu->insertItem(i18n("Search Previous Station"), 
+			    this, SLOT( slotSearchPrevStation()));
   menu->changeItem(prevID, SmallIcon("back"), i18n("Search Previous Station"));
 
-  powerID = menu->insertItem(i18n("Power On"), this, SLOT( slotPowerToggle()));
+  powerID = menu->insertItem(i18n("Power On"), 
+			     radio, SLOT( PowerToggle()));
 
   menu->insertSeparator();
 
   menu->changeItem(menu->insertItem(i18n("&About"),
-				    parentWidget(),
-				    SLOT( slotAbout())),
+				    this,
+				    SIGNAL( showAbout())),
 		   SmallIcon("kradio"), i18n("About"));
 
+  // connect radio with tray
+  connect(radio, SIGNAL(sigUpdateTips()), 
+	  this, SLOT(slotUpdateToolTips()));
 }
 
 
@@ -70,7 +78,7 @@ void RadioDocking::contextMenuAboutToShow( KPopupMenu* menu )
   clearStationList();
   buildStationList();
 
-  menu->changeTitle (currID, i18n("KRadio: ")+ widget->getStationString(true, true, true));
+  menu->changeTitle (currID, i18n("KRadio: ")+ radio->getStationString(true, true, true));
   menu->changeItem (powerID, radio->isPowerOn() ? i18n("Power Off") : i18n("Power On"));
 
   QDateTime a = radio->nextAlarm();
@@ -126,8 +134,7 @@ void RadioDocking::slotNOP()
 {
 }
 
-void RadioDocking::slotPowerToggle()
+void RadioDocking::slotUpdateToolTips ()
 {
-  widget->slotPowerClicked();
+  QToolTip::add(this, radio->getStationString(true, true, true));
 }
-

@@ -22,10 +22,12 @@
 #include <ksystemtray.h>
 #include "kradio.h"
 
+class KRadioApp;
+
 class RadioDocking : public KSystemTray {
 	Q_OBJECT
 public:
-	RadioDocking (class KRadio *widget, RadioBase *radio, const char *name = 0);
+	RadioDocking (KRadio *widget, RadioBase *radio, const char *name = 0);
 	virtual ~RadioDocking();
 
 private slots:
@@ -33,9 +35,10 @@ private slots:
 public slots:
     void slotSearchPrevStation(void);
     void slotSearchNextStation(void);
-//    void slotSelStation(int);
-    void slotPowerToggle();
     void slotNOP();
+    void slotUpdateToolTips ();
+signals:
+    void showAbout();
 
 private:
   void clearStationList();
@@ -43,7 +46,6 @@ private:
 	void contextMenuAboutToShow( KPopupMenu* menu );
 
 	RadioBase 	*radio;
-  KRadio		*widget;
 
   int			stationSeparatorID;// make sure the position of the corresponding item is STATION_0_POSITION !
   int 			nextID;
