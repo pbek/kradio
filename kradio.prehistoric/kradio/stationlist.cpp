@@ -88,6 +88,19 @@ bool RawStationList::insert (uint index, const RadioStation * item )
 }
 
 
+bool RawStationList::insert (const RadioStation * item )
+{
+	if (!item) return false;
+	int idx = idxWithID(item->stationID());
+	if (idx >= 0) {
+		return replace(idx, item);
+	} else {
+		append(item);
+		return true;
+	}
+}
+
+
 void RawStationList::inSort ( const RadioStation * item )
 {
 	if (!item) return;
@@ -114,9 +127,7 @@ void RawStationList::append ( const RadioStation * item )
 
 bool RawStationList::replace ( uint index, const RadioStation * item )
 {
-	RadioStation &rs = stationWithID(item->stationID());
-	bool r = replace(index, item);
-	removeRef(&rs);
+	bool r = BaseClass::replace(index, item);
 	return r;
 }
 
@@ -141,6 +152,20 @@ RadioStation &RawStationList::stationWithID(const QString &sid)
 	}
 	return (RadioStation &) undefinedRadioStation;
 }
+
+
+
+int RawStationList::idxWithID(const QString &sid) const
+{
+	int i = 0;
+	Iterator it(*this);
+	for (; const RadioStation *s = it.current(); ++it, ++i) {
+		if (s->stationID() == sid)
+			return i;
+	}
+	return -1;
+}
+
 
 
 
@@ -173,32 +198,31 @@ void StationList::merge(const StationList & other)
     if (! m_metaData.comment.isEmpty())
 		m_metaData.comment += "\n";
 
-    m_metaData.comment += i18n("Contains merged Data: ") + "\n";
-
-    if (!metaData.lastChange.isValid())
-        m_metaData.comment = "  " + i18n("Last Changed: ") + metaData.lastChange.toString() + "\n";
+    m_metaData.lastChange = QDateTime::currentDateTime();
 
     if (!metaData.maintainer.isEmpty())
-        m_metaData.comment = "  " + i18n("Maintainer: ")   + metaData.maintainer + "\n";
+        m_metaData.maintainer += (count() ? " / " : QString::null) + metaData.maintainer;
 
     if (!metaData.country.isEmpty())
-        m_metaData.comment = "  " + i18n("Country: ")      + metaData.country    + "\n";
+        m_metaData.country += (count() ? " / " : QString::null) + metaData.country;
 
     if (!metaData.city.isEmpty())
-        m_metaData.comment = "  " + i18n("City: ")         + metaData.city       + "\n";
+        m_metaData.city = (count() ? " / " : QString::null) + metaData.city;
 
     if (!metaData.media.isEmpty())
-        m_metaData.comment = "  " + i18n("Media: ")        + metaData.media      + "\n";
+        m_metaData.media += (count() ? " / " : QString::null) + metaData.media;
 
     if (!metaData.comment.isEmpty())
-        m_metaData.comment = "  " + i18n("Comment: ")      + metaData.comment    + "\n";
+        m_metaData.comment += (count() ? " / " : QString::null) + metaData.comment;
+    if (count() && other.count())
+		m_metaData.comment += " " + i18n("Contains merged Data");
 
 
     // merge stations
 
     QPtrListIterator<RadioStation> it(other.all());
     for (RadioStation *s = it.current(); s; s = ++it) {
-		m_all.append(s);
+		m_all.insert(s);
     }
 }
 
@@ -300,7 +324,7 @@ bool StationList::readXML (const KURL &url)
 
 QString StationList::writeXML () const
 {
-	QString data = "";
+	QString data = QString::null;
 
 	// write station list
 

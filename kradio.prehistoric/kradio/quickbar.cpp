@@ -98,7 +98,7 @@ void QuickBar::restoreState (KConfig *config)
 
 	int nStations = config->readNumEntry("nStations", 0);
 	for (int i = 1; i <= nStations; ++i) {
-		QString s = config->readEntry(QString("stationID-") + QString().setNum(i), "");
+		QString s = config->readEntry(QString("stationID-") + QString().setNum(i), QString::null);
 		if (s.length())
 			m_stationIDs += s;
 	}
@@ -225,8 +225,7 @@ void QuickBar::activateButton(const RadioStation &rs)
 			b->setOn(false);
 		}
 	}
-
-	setCaption(pwr && rs.isValid() ? rs.name() : "KRadio");
+	setCaption(pwr && rs.isValid() ? rs.longName() : "KRadio");
 }
 
 
@@ -273,7 +272,7 @@ void QuickBar::rebuildGUI()
 		const RadioStation &rs = stations.stationWithID(*it);
 		if (! rs.isValid()) continue;
 
-        QToolButton *b = new QToolButton(this, "");
+        QToolButton *b = new QToolButton(this, QString::null);
         m_buttons.append(b);
 	    b->setToggleButton(true);
 	    b->setIconSet(QPixmap(rs.iconName()));

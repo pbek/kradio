@@ -113,9 +113,9 @@ RadioView::RadioView(QWidget *parent, const QString &name)
 
 
     // testing
-    addElement (new RadioViewFrequencyRadio (this, ""));
-    addElement (new RadioViewVolume(this, ""));
-    addElement (new RadioViewFrequencySeeker(this, ""));
+    addElement (new RadioViewFrequencyRadio (this, QString::null));
+    addElement (new RadioViewVolume(this, QString::null));
+    addElement (new RadioViewFrequencySeeker(this, QString::null));
 }
 
 

@@ -58,6 +58,7 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
 	QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotNewAlarm()));
 	QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotDeleteAlarm()));
 
+	QObject::connect(comboAlarmType,        SIGNAL(highlighted(int)),            this, SLOT(slotAlarmTypeChanged(int)));
 }
 
 TimeControlConfiguration::~TimeControlConfiguration ()
@@ -153,7 +154,7 @@ bool TimeControlConfiguration::noticeStationsChanged(const StationList &sl)
 	comboStationSelection->clear();
 	stationIDs.clear();
 	comboStationSelection->insertItem("<any>");
-	stationIDs.push_back("");
+	stationIDs.push_back(QString::null);
 	
 	for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {		
 		comboStationSelection->insertItem(i.current()->iconName(),
@@ -258,6 +259,15 @@ void TimeControlConfiguration::slotVolumeChanged( int v )
 }
 
 
+void TimeControlConfiguration::slotAlarmTypeChanged(int t)
+{
+    int idx = listAlarms->currentItem();
+    if (idx >= 0 && (unsigned)idx < alarms.size()) {
+		alarms[idx].setAlarmType((Alarm::AlarmType)t);
+    }
+}
+
+
 void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 {
     if (ignoreChanges) return;
@@ -284,12 +294,14 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 	comboStationSelection->setDisabled(!valid);
 	labelStationSelection->setDisabled(!valid);
 	buttonDeleteAlarm    ->setDisabled(!valid);
+	comboAlarmType       ->setDisabled(!valid);
 
 	editAlarmDate        ->setDate(a.alarmTime().date());
 	editAlarmTime        ->setTime(a.alarmTime().time());
 	checkboxAlarmDaily   ->setChecked(a.isDaily());
 	checkboxAlarmEnable  ->setChecked(a.isEnabled());
 	editAlarmVolume      ->setValue((int)round(a.volumePreset() * 100));
+	comboAlarmType       ->setCurrentItem(a.alarmType());
 
 	int k = 0;
 	const QString &sID = a.stationID();
@@ -338,3 +350,5 @@ void TimeControlConfiguration::slotCancel()
 	noticeAlarmsChanged(queryAlarms());
 	noticeCountdownSecondsChanged(queryCountdownSeconds());
 }
+
+

@@ -31,7 +31,7 @@ RadioViewFrequencySeeker::RadioViewFrequencySeeker(QWidget *parent, const QStrin
     m_btnStepRight(NULL),
     m_btnSearchRight(NULL),
     m_sldFrequency(NULL),
-    m_blockSliderSigs(false)
+    m_ignoreChanges(false)
 {
 	QBoxLayout *l = new QBoxLayout(this, QBoxLayout::LeftToRight, /*spacing=*/ 3);
 	l->setMargin(0);
@@ -116,24 +116,30 @@ bool RadioViewFrequencySeeker::disconnect(Interface *i)
 
 bool RadioViewFrequencySeeker::noticeSeekStarted (bool up)
 {
+	m_ignoreChanges = true;
 	m_btnSearchLeft->setOn(!up);
 	m_btnSearchRight->setOn(up);
+	m_ignoreChanges = false;
 	return true;
 }
 
 
 bool RadioViewFrequencySeeker::noticeSeekStopped ()
 {
+	m_ignoreChanges = true;
 	m_btnSearchLeft->setOn(false);
 	m_btnSearchRight->setOn(false);
+	m_ignoreChanges = false;
 	return true;
 }
 
 
 bool RadioViewFrequencySeeker::noticeSeekFinished (const RadioStation &/*s*/)
 {
+	m_ignoreChanges = true;
 	m_btnSearchLeft->setOn(false);
 	m_btnSearchRight->setOn(false);
+	m_ignoreChanges = false;
 	return true;
 }
 
@@ -146,7 +152,9 @@ bool RadioViewFrequencySeeker::noticeFrequencyChanged(float f, const RadioStatio
 	float step = queryScanStep();
 	if (step == 0) step = 0.000001;
 	
+	m_ignoreChanges = true;
 	m_sldFrequency->setValue((int)round(f / step));
+	m_ignoreChanges = false;
 	return true;
 }
 
@@ -156,9 +164,11 @@ bool RadioViewFrequencySeeker::noticeMinMaxFrequencyChanged(float min, float max
 	float step = queryScanStep();
 	if (step == 0) step = 0.000001;
 	
+	m_ignoreChanges = true;
 	m_sldFrequency->setMinValue((int)round(min / step));
 	m_sldFrequency->setMaxValue((int)round(max / step));
 	m_sldFrequency->setValue   ((int)round(queryFrequency() / step));
+	m_ignoreChanges = false;
 	return true;
 }
 
@@ -172,22 +182,26 @@ bool RadioViewFrequencySeeker::noticeDeviceMinMaxFrequencyChanged(float /*min*/,
 bool RadioViewFrequencySeeker::noticeScanStepChanged(float s)
 {
 	if (s == 0) s = 0.000001;
+	m_ignoreChanges = true;
 	m_sldFrequency->setMinValue((int)round(queryMinFrequency() / s));
 	m_sldFrequency->setMaxValue((int)round(queryMaxFrequency() / s));
 	m_sldFrequency->setValue   ((int)round(queryFrequency() / s));
+	m_ignoreChanges = false;
 	return true;
 }
 
 
 void RadioViewFrequencySeeker::slotSearchLeft(bool on)
 {
+	if (m_ignoreChanges) return;
 	if (on) {
 		if (queryIsSeekUpRunning())
 			sendStopSeek();
 		if (!queryIsSeekRunning())
 			sendStartSeekDown();
-	} else if (!m_btnSearchRight->isOn()) {
-		sendStopSeek();
+	} else {
+		if (queryIsSeekDownRunning())
+			sendStopSeek();
 	}
 	if (!queryIsSeekDownRunning())
 		m_btnSearchLeft->setOn(false);
@@ -196,13 +210,15 @@ void RadioViewFrequencySeeker::slotSearchLeft(bool on)
 
 void RadioViewFrequencySeeker::slotSearchRight(bool on)
 {
+	if (m_ignoreChanges) return;
 	if (on) {
 		if (queryIsSeekDownRunning())
 			sendStopSeek();
 		if (!queryIsSeekRunning())
 			sendStartSeekUp();
-	} else if (!m_btnSearchLeft->isOn()) {
-		sendStopSeek();
+	} else {
+		if (queryIsSeekUpRunning())
+			sendStopSeek();
 	}
 	if (!queryIsSeekUpRunning())
 		m_btnSearchRight->setOn(false);
@@ -211,10 +227,8 @@ void RadioViewFrequencySeeker::slotSearchRight(bool on)
 
 void RadioViewFrequencySeeker::slotSliderChanged(int val)
 {
-	if (m_blockSliderSigs) return;
-	m_blockSliderSigs = true;
+	if (m_ignoreChanges) return;
 	sendFrequency(val * queryScanStep());
-	m_blockSliderSigs = false;
 }
 
 

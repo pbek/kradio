@@ -86,6 +86,8 @@ public:
     void  setIconName     (const QString &iconName)   { m_iconName      = iconName;      }
 	void  setInitialVolume(float initialVolume)       { m_initialVolume = initialVolume; }
 
+	void  copyDescriptionFrom(const RadioStation &rs);
+
 	// for XML-Parsing/Export
 	virtual bool        setProperty(const QString &property_name, const QString &val);
 	virtual QString     getProperty(const QString &property_name) const;
@@ -94,6 +96,7 @@ public:
 
 	// get empty derived stations by classname from registry
 	static RadioStation const *getStationClass(const QString &classname);
+           RadioStation const *getStationClass() const { return getStationClass(getClassName()); }
 
     // = 0 : "this" is same as "s", e.g. approximately same frequency, same url, ...
     // > 0 : "this" is numerically (frequencies) or alphanumerically (urls) or ... greater than "s"
@@ -106,12 +109,7 @@ public:
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const = 0;
 
-    /** to get a complete new radio station **/
-    virtual const RadioStation *getEmptyStation() const = 0;
-
-protected:
-
-	QString createStationID() const;
+	void generateNewStationID();
 
 protected :
 	QString  m_stationID;
@@ -139,7 +137,6 @@ public:
 	virtual QString       longName() const { return "unknown"; }
 	virtual bool          isValid()  const { return false; }
 	virtual RadioStation *copy()     const { return new UndefinedRadioStation(*this); }
-	virtual const RadioStation *getEmptyStation() const;
 	virtual int           compare(const RadioStation &s) const;
 
 	virtual QString       getClassName() const { return "UndefinedRadioStation"; }

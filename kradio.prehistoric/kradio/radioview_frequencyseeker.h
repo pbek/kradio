@@ -70,7 +70,7 @@ protected:
 	            *m_btnSearchRight;
 	QSlider     *m_sldFrequency;
 
-	bool         m_blockSliderSigs;
+	bool         m_ignoreChanges;
 };
 
 

@@ -48,6 +48,8 @@ public:
 	virtual bool     connect   (Interface *i);
 	virtual bool     disconnect(Interface *i);
 
+	virtual void     start(direction_t dir);
+
 public slots:
 
 	virtual void step() { SeekHelper::step(); }

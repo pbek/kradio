@@ -276,18 +276,20 @@ bool Radio::queryIsPowerOff() const
 
 const RadioStation & Radio::queryCurrentStation() const
 {
-	const RadioStation &rs = m_activeDevice ?
-	                            m_activeDevice->getCurrentStation() :
-	                            undefinedRadioStation;
+	if (m_activeDevice) {
+		RadioStation &rs = const_cast<RadioStation&>(m_activeDevice->getCurrentStation());
+		int idx = getStationIdx(rs);
 
-    // I'm terribly sorry for that const_cast, but the f...ing QPtrList
-    // has no "int find(...) const" method :(
-    RawStationList::Iterator it (m_stationList.all());
-    for (; it.current(); ++it) {
-		if (rs.compare(*it.current()) == 0)
-			return *it.current();
-    }
-	return rs;
+		if (idx >= 0) {
+			rs.copyDescriptionFrom(m_stationList.at(idx));
+		} else {
+			rs.copyDescriptionFrom(undefinedRadioStation);
+		}
+
+		return rs;
+	} else {
+		return undefinedRadioStation;
+	}
 }
 
 
@@ -310,14 +312,18 @@ bool Radio::noticePowerChanged (bool on, const IRadioDevice *sender)
 }
 
 
-bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender)
+bool Radio::noticeStationChanged (const RadioStation &_rs, const IRadioDevice *sender)
 {
-	if (sender == m_activeDevice) {
-		int idx = getStationIdx(rs);
-		notifyStationChanged(m_stationList.at(idx), idx);
-		return true;
-	}
-	return false;
+	RadioStation &rs = const_cast<RadioStation&>(_rs);
+	int idx = getStationIdx(rs);
+
+	RadioStation &known = (idx >= 0) ? (RadioStation&)m_stationList.at(idx) :
+	                                   (RadioStation&)undefinedRadioStation;
+	rs.copyDescriptionFrom(known);
+
+	if (sender == m_activeDevice)
+		notifyStationChanged(rs, idx);
+	return true;
 }
 
 
@@ -364,7 +370,8 @@ void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd, bool pointer
 
 bool Radio::noticeAlarm(const Alarm &a)
 {
-	if (a.alarmType() == Alarm::Start) {
+	if (a.alarmType() == Alarm::StartPlaying ||
+	    a.alarmType() == Alarm::StartRecording) {
 		const RawStationList &sl = getStations().all();
 		const RadioStation &rs = sl.stationWithID(a.stationID());
 		activateStation(rs);

@@ -180,9 +180,9 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
     ignoreChanges = true;
     
 //	editFrequency->setValue(s ? (int)round(s->getFrequency()*1000.0) : 0);
-	editStationName       ->setText  (s ? s->name() : "");
-	editStationShortName  ->setText  (s ? s->shortName() : "");
-	editPixmapFile        ->setText  (s ? s->iconName() : "");
+	editStationName       ->setText  (s ? s->name() : QString::null);
+	editStationShortName  ->setText  (s ? s->shortName() : QString::null);
+	editPixmapFile        ->setText  (s ? s->iconName() : QString::null);
 	editVolumePreset      ->setValue (s ? (int)round(s->initialVolume()*100) : -1);
 	pixmapStation         ->setPixmap(s ? QPixmap(s->iconName()) : QPixmap());
 
@@ -195,12 +195,13 @@ void RadioConfiguration::slotNewStation()
 	int n = m_stations.count();
 	m_stations.all().append(st);
 	if (m_stations.count() == n) {
-		st = st->getEmptyStation();
+		st = st->getStationClass();
 		m_stations.all().append(st);
 	}
-	if (m_stations.count() > n)
+	if (m_stations.count() > n) {
 		listStations->insertItem (st->iconName(), st->longName());
-	listStations->setCurrentItem (listStations->count()-1);
+		listStations->setCurrentItem (listStations->count()-1);
+	}
 }
 
 

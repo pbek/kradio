@@ -20,10 +20,9 @@ Alarm::Alarm(const QDateTime &time, bool daily, bool enabled)
 	: m_time         (time),
 	  m_daily        (daily),
 	  m_enabled      (enabled),
-	  m_stationID    (""),
+	  m_stationID    (QString::null),
       m_volumePreset (-1),
-      m_type         (Start),
-      m_record       (false)
+      m_type         (StartPlaying)
 {	  
 }
 
@@ -32,10 +31,9 @@ Alarm::Alarm ()
 	: m_time        (QDateTime (QDate(1800, 1,1), QTime(0,0,0))),
 	  m_daily       (false),
 	  m_enabled     (false),
-	  m_stationID   (""),
+	  m_stationID   (QString::null),
 	  m_volumePreset(-1),
-      m_type         (Start),
-      m_record       (false)
+      m_type         (StartPlaying)
 {
 }
 
@@ -46,8 +44,7 @@ Alarm::Alarm (const Alarm &a)
      m_enabled     (a.m_enabled),
      m_stationID   (a.m_stationID),
      m_volumePreset(a.m_volumePreset),
-     m_type        (a.m_type),
-     m_record      (a.m_record)
+     m_type        (a.m_type)
 {
 }
 

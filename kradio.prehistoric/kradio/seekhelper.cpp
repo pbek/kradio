@@ -75,10 +75,13 @@ void SeekHelper::start(direction_t dir)
 void SeekHelper::stop ()
 {
 	if (m_state != off) {
+//		kdDebug() << "seekhelper::stop enter\n";
 		m_state = off;
+//		kdDebug() << "seekhelper::state = off\n";
 		abort();
 		sendMute(m_oldMute);
 		m_parent.notifySeekStopped();
+//		kdDebug() << "seekhelper::stop exit\n";
 	}
 }
 
@@ -86,6 +89,7 @@ void SeekHelper::stop ()
 void SeekHelper::finish ()
 {
 	if (m_state != off) {
+//		kdDebug() << "seekhelper::finish\n";
 		applyBest();
 		const RadioStation &rs = queryCurrentStation();
 	
@@ -111,6 +115,7 @@ void SeekHelper::step ()
 				m_state = searchBest;
 
 			if (! nextSeekStep()) {
+//				kdDebug() << "searchWorse: nextStep failed\n";
 				stop();
 			}
 
@@ -119,14 +124,17 @@ void SeekHelper::step ()
 		case searchBest :
 			if (isWorse() && bestFound()) {
 				finish();
-			} else if (isBetter() && isGood()) {
-				rememberBest();
-			}
-			if (! nextSeekStep()) {
-				if (isGood() && bestFound()) {
-					finish();
-				} else {
-					stop();
+			} else {
+				if (isBetter() && isGood()) {
+					rememberBest();
+				}
+				if (! nextSeekStep()) {
+					if (isGood() && bestFound()) {
+						finish();
+					} else {
+//						kdDebug() << "searchBest: nextStep failed && no good station\n";
+						stop();
+					}
 				}
 			}
 			break;

@@ -69,6 +69,7 @@ public:
 	// multiple insertion of same station_id into an update
 
 	bool insert  (uint index, const RadioStation *item);
+	bool insert  (const RadioStation *item);
 	void inSort  (const RadioStation *item);
 	void prepend (const RadioStation *item);
 	void append  (const RadioStation *item);
@@ -78,6 +79,8 @@ public:
 	
     const RadioStation &  stationWithID(const QString &sid) const;
           RadioStation &  stationWithID(const QString &sid);
+
+    int                   idxWithID(const QString &sid) const;
           
 protected:
 

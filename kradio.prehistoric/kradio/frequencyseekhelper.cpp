@@ -58,6 +58,13 @@ bool FrequencySeekHelper::disconnect(Interface *i)
 }
 
 
+void FrequencySeekHelper::start(direction_t dir)
+{
+	SeekHelper::start(dir);
+	m_bestFrequency = 0;
+}
+
+
 void FrequencySeekHelper::abort()
 {
 	m_timer->stop();

@@ -65,6 +65,7 @@ protected slots:
 	void slotDateChanged(const QDate &d);
 	void slotTimeChanged(const QTime &d);
 	void slotVolumeChanged(int v);
+	void slotAlarmTypeChanged(int idx);
 
 	void slotNewAlarm();
 	void slotDeleteAlarm();

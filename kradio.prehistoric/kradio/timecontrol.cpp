@@ -28,6 +28,7 @@ const char *AlarmEnabledElement         = "enabled";
 const char *AlarmStationIDElement       = "stationID";
 //const char *AlarmFrequencyElement       = "frequency";
 const char *AlarmVolumeElement          = "volume";
+const char *AlarmTypeElement            = "type";
 
 
 TimeControl::TimeControl (const QString &n)
@@ -194,13 +195,15 @@ void    TimeControl::restoreState (KConfig *config)
 		bool enable = config->readBoolEntry(AlarmEnabledElement        + num, false);
 		bool daily  = config->readBoolEntry(AlarmDailyElement          + num, false);
 		float vol   = config->readDoubleNumEntry(AlarmVolumeElement    + num, 1);
-        QString sid = config->readEntry(AlarmStationIDElement          + num, "");
+        QString sid = config->readEntry(AlarmStationIDElement          + num, QString::null);
+        int type    = config->readNumEntry(AlarmTypeElement            + num, 0);
 
 		enable &= d.isValid();
 
 		Alarm a ( d, daily, enable);
 		a.setVolumePreset(vol);
 		a.setStationID(sid);
+		a.setAlarmType((Alarm::AlarmType)type);
 		al.push_back(a);
 	}
 
@@ -222,6 +225,7 @@ void    TimeControl::saveState    (KConfig *config) const
 		config->writeEntry (AlarmDailyElement     + num, i->isDaily());
 		config->writeEntry (AlarmVolumeElement    + num, i->volumePreset());
 		config->writeEntry (AlarmStationIDElement + num, i->stationID());
+		config->writeEntry (AlarmTypeElement      + num, i->alarmType());
 	}
 
 	config->writeEntry("countdownSeconds",  m_countdownSeconds);

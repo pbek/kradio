@@ -54,7 +54,7 @@ InternetRadioStation::InternetRadioStation(const InternetRadioStation &s)
 
 
 InternetRadioStation::InternetRadioStation(RegisterStationClass, const QString &classname)
-    : RadioStation(registerStationClass, classname.length() ? classname : getClassName()),
+    : RadioStation(registerStationClass, !classname.isNull() ? classname : getClassName()),
       m_url()
 {
 }
@@ -64,11 +64,6 @@ InternetRadioStation::InternetRadioStation(RegisterStationClass, const QString &
 RadioStation *InternetRadioStation::copy() const
 {
     return new InternetRadioStation(*this);
-}
-
-const RadioStation *InternetRadioStation::getEmptyStation() const
-{
-	return &emptyInternetRadioStation;
 }
 
 InternetRadioStation::~InternetRadioStation()

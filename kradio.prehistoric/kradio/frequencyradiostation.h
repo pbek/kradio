@@ -42,7 +42,7 @@ public:
     FrequencyRadioStation (float frequency);
     FrequencyRadioStation (const QString &name, const QString &shortName, float frequency);
     FrequencyRadioStation (const FrequencyRadioStation &);
-    FrequencyRadioStation (RegisterStationClass, const QString &classname = "");
+    FrequencyRadioStation (RegisterStationClass, const QString &classname = QString::null);
     ~FrequencyRadioStation();
 
     float  frequency()  const             { return m_frequency; }
@@ -60,7 +60,6 @@ public:
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;
-    virtual const RadioStation *getEmptyStation() const;
 
 	// for XML-Parsing/Export
 	virtual bool setProperty(const QString &property_name, const QString &val);

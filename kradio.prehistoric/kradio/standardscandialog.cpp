@@ -96,32 +96,41 @@ bool StandardScanDialog::noticeSeekStarted (bool /*up*/)
 
 bool StandardScanDialog::noticeSeekFinished (const RadioStation &)
 {
-	return noticeSeekStopped();
-}
-
-bool StandardScanDialog::noticeSeekStopped ()
-{
-    if (queryHasGoodQuality()) {		
+    if (queryHasGoodQuality()) {
 		++m_count;
 		QString s;
 		s.setNum(m_count);
 
 		RadioStation *st = queryCurrentStation().copy();
-		if (st->name().length() == 0)
+		if (st->name().isNull()) {
 			st->setName("new station " + s);
-		st->setShortName(s);
+			st->setShortName(s);
+			st->generateNewStationID();
+		}
+
+        int oldcount = m_stations.count();
 		m_stations.all().append(st);
 
-		kdDebug() << st->longName() << "\n";
+		kdDebug() << "newstation " << m_count << ": " << st->longName() << "\n";
+		if (oldcount != m_stations.count()) {
+		} else {
+			--m_count;
+		}
 		delete st;
 	}
 
     if (round(queryProgress() * 1000) < 1000) {     // round to 4 digits
-		sendStartSeekUp();
-    } else {
+		if (m_running) sendStartSeekUp();
+	}
+	return true;
+}
+
+bool StandardScanDialog::noticeSeekStopped ()
+{
+    if (round(queryProgress() * 1000) >= 1000) {     // round to 4 digits
 		buttonCancel->setText("&Done");
 		stop();
-    }
+	}
     return true;
 }
 

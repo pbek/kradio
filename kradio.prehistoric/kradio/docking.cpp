@@ -96,7 +96,7 @@ void   RadioDocking::restoreState (KConfig *config)
 
 	int nStations = config->readNumEntry("nStations", 0);
 	for (int i = 1; i <= nStations; ++i) {
-		QString s = config->readEntry(QString("stationID-") + QString().setNum(i), "");
+		QString s = config->readEntry(QString("stationID-") + QString().setNum(i), QString::null);
 		if (s.length())
 			m_stationIDs += s;
 	}

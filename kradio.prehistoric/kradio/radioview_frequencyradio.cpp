@@ -85,7 +85,7 @@ ConfigPageInfo RadioViewFrequencyRadio::createConfigurationPage()
 	return ConfigPageInfo (a,
 	                       "Frequency Display",
 	                       "Frequency Display",
-	                       ""
+	                       QString::null
 	                       );
 }
 
@@ -380,7 +380,7 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 	} else {
 		s = QString().setNum((int)m_frequency) + ".";
 		int r = (int)round((m_frequency-(int)m_frequency) * 100);
-		s = s + (r < 10 ? "0" : "") + QString().setNum(r) + " MHz";
+		s = s + (r < 10 ? "0" : QString::null) + QString().setNum(r) + " MHz";
 	}
 
 	float pxs = xh_f;
