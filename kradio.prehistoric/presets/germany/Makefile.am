@@ -1,5 +1,5 @@
 SUBDIRS =
-EXTRA_DIST = "aachen-cable.krp" "bonn-antenna.krp" "braunschweig-cable.krp" "freiburg-cable.krp" "hamburg-antenna.krp" "hilden-cable.krp" "langenfeld-cable.krp" "leichlingen-cable.krp" "leverkusen-cable.krp" "monheim-cable.krp" "muensterland-antenna.krp" "wernigerode-antenna.krp"
+EXTRA_DIST = "aachen-cable.krp" "bonn-antenna.krp" "braunschweig-cable.krp" "freiburg-cable.krp" "hamburg-antenna.krp" "hilden-cable.krp" "langenfeld-cable.krp" "leichlingen-cable.krp" "leverkusen-cable.krp" "monheim-cable.krp" "muenchen-cable.krp" "muensterland-antenna.krp" "wernigerode-antenna.krp"
 
 install-data-local:
 	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/"
@@ -15,6 +15,7 @@ install-data-local:
 	$(INSTALL_DATA) "$(srcdir)/monheim-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/monheim-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/leverkusen-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/leverkusen-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/braunschweig-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/braunschweig-cable.krp"
+	$(INSTALL_DATA) "$(srcdir)/muenchen-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-cable.krp"
 
 
 uninstall-local:
@@ -30,3 +31,4 @@ uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/monheim-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/leverkusen-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/braunschweig-cable.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-cable.krp"
