@@ -46,6 +46,9 @@ public:
 	TimeControl (const QString &name);
 	~TimeControl();
 
+	virtual const QString &name() const { return PluginBase::name(); }
+	virtual       QString &name()       { return PluginBase::name(); }
+
     // ITimeControl Interface methods
 	
 RECEIVERS:

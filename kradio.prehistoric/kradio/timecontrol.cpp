@@ -18,6 +18,16 @@
 
 #include "timecontrol.h"
 
+//const char *AlarmListElement            = "alarmlist";
+//const char *AlarmElement                = "alarm";
+const char *AlarmDateElement            = "date";
+const char *AlarmTimeElement            = "time";
+const char *AlarmDailyElement           = "daily";
+const char *AlarmEnabledElement         = "enabled";
+const char *AlarmStationIDElement       = "stationID";
+//const char *AlarmFrequencyElement       = "frequency";
+const char *AlarmVolumeElement          = "volume";
+
 
 TimeControl::TimeControl (const QString &n)
 	: PluginBase(n),
@@ -124,9 +134,6 @@ QDateTime TimeControl::getCountdownEnd () const
 }
 
 
-
-
-
 void TimeControl::slotQTimerCountdownTimeout()
 {
 	stopCountdown();
@@ -169,17 +176,53 @@ void TimeControl::slotQTimerAlarmTimeout()
 }
 
 
-void    TimeControl::restoreState (KConfig *)
+void    TimeControl::restoreState (KConfig *config)
 {
-	// FIXME
+    AlarmVector al;
+
+	config->setGroup(QString("timecontrol-") + name());
+
+	int nAlarms = config->readNumEntry ("nAlarms", 0);
+	for (int idx = 1; idx <= nAlarms; ++idx) {
+	
+		QString num = QString().setNum(idx);
+		QDateTime d = config->readDateTimeEntry(AlarmTimeElement       + num);
+		bool enable = config->readBoolEntry(AlarmEnabledElement        + num, false);
+		bool daily  = config->readBoolEntry(AlarmDailyElement          + num, false);
+		float vol   = config->readDoubleNumEntry(AlarmVolumeElement    + num, 1);
+        QString sid = config->readEntry(AlarmStationIDElement          + num, "");
+
+		enable &= d.isValid();
+
+		Alarm a ( d, daily, enable);
+		a.setVolumePreset(vol);
+		a.setStationID(sid);
+		al.push_back(a);
+	}
+
+	setAlarms(al);
+	setCountdownSeconds(config->readNumEntry("countdownSeconds", 30*60));
 }
 
 
-void    TimeControl::saveState    (KConfig *) const
+void    TimeControl::saveState    (KConfig *config) const
 {
-	// FIXME
-}
+	config->setGroup(QString("timecontrol-") + name());
 
+	config->writeEntry("nAlarms", m_alarms.size());
+	int idx = 1;
+	for (ciAlarmVector i = m_alarms.begin(); i != m_alarms.end(); ++i, ++idx) {
+		QString num = QString().setNum(idx);
+		config->writeEntry (AlarmTimeElement      + num, i->alarmTime());
+		config->writeEntry (AlarmEnabledElement   + num, i->isEnabled());
+		config->writeEntry (AlarmDailyElement     + num, i->isDaily());
+		config->writeEntry (AlarmVolumeElement    + num, i->getVolumePreset());
+		config->writeEntry (AlarmStationIDElement + num, i->getStationID());
+		config->deleteEntry(AlarmStationIDElement + num);
+	}
+
+	config->writeEntry("countdownSeconds",  m_countdownSeconds);
+}
 
 QFrame *TimeControl::internal_createConfigurationPage(KDialogBase */*dlg*/)
 {

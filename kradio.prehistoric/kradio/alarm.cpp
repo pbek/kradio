@@ -15,13 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 #include "alarm.h"
-#include "radiostation.h"
 
 Alarm::Alarm(QDateTime time, bool daily, bool enabled)
 	: m_time         (time),
 	  m_daily        (daily),
 	  m_enabled      (enabled),
-	  m_station      (undefinedRadioStation.copy()),
+	  m_stationID    (""),
       m_volumePreset (-1)
 {	  
 }
@@ -31,7 +30,7 @@ Alarm::Alarm ()
 	: m_time        (QDateTime (QDate(1800, 1,1), QTime(0,0,0))),
 	  m_daily       (false),
 	  m_enabled     (false),
-	  m_station     (undefinedRadioStation.copy()),
+	  m_stationID   (""),
 	  m_volumePreset(-1)
 {
 }
@@ -41,7 +40,7 @@ Alarm::Alarm (const Alarm &a)
    : m_time        (a.m_time),
      m_daily       (a.m_daily),
      m_enabled     (a.m_enabled),
-     m_station     (a.m_station ? a.m_station->copy() : undefinedRadioStation.copy()),
+     m_stationID   (a.m_stationID),
      m_volumePreset(a.m_volumePreset)
 {
 }
@@ -49,7 +48,6 @@ Alarm::Alarm (const Alarm &a)
 
 Alarm::~Alarm()
 {
-	delete m_station;
 }
 
 
@@ -66,14 +64,3 @@ QDateTime Alarm::nextAlarm(bool ignoreEnable) const
 }
 
 
-void Alarm::setStation(const RadioStation &rs)
-{
-	if (m_station)
-		delete m_station;
-	m_station = rs.copy();
-}
-
-const RadioStation &Alarm::getStation() const
-{
-	return m_station ? (const RadioStation&)*m_station : (const RadioStation&)undefinedRadioStation;
-}

@@ -30,17 +30,13 @@
   *@author Martin Witte
   */
 
-class RadioStation;
-
 class Alarm
 {
 protected:
 	QDateTime	  m_time;
 	bool		  m_daily;
-
 	bool		  m_enabled;
-
-	RadioStation *m_station;
+	QString       m_stationID;
 	float		  m_volumePreset;  // < 0: disabled
 
 public:
@@ -49,19 +45,19 @@ public:
 	Alarm(const Alarm &);
 	~Alarm();
 	
-	bool		isEnabled() const        { return m_enabled;}
-	bool 		isDaily() const          { return m_daily; }
-	QDateTime   nextAlarm (bool ignoreEnable = false) const;
-	QDateTime	alarmTime () const       { return m_time; }
-	const RadioStation &getStation () const;
-	float	    getVolumePreset () const { return m_volumePreset; }
+	bool		   isEnabled() const            { return m_enabled;   }
+	bool 		   isDaily() const              { return m_daily;     }
+	QDateTime	   alarmTime () const           { return m_time;      }
+	QDateTime      nextAlarm (bool ignoreEnable = false) const;
+	const QString &getStationID () const        { return m_stationID; }
+	float	       getVolumePreset () const     { return m_volumePreset; }
 	
 	void	    setEnabled (bool enable = true) { m_enabled = enable; }
-	void	    setDaily (bool d = true)        { m_daily = d; }
-	void	    setDate (const QDate &d)        { m_time.setDate(d); }
-	void	    setTime (const QTime &d)        { m_time.setTime(d); }
-    void        setStation(const RadioStation &rs);
+	void	    setDaily (bool d = true)        { m_daily = d;        }
+	void	    setDate (const QDate &d)        { m_time.setDate(d);  }
+	void	    setTime (const QTime &d)        { m_time.setTime(d);  }
     void        setVolumePreset(float v)        { m_volumePreset = v; }
+    void        setStationID(const QString &id) { m_stationID = id;   }
 };
 
 typedef vector<Alarm>		        AlarmVector;

@@ -66,6 +66,8 @@ public:
 	RadioStation (const RadioStation &);
 	virtual ~RadioStation();
 
+    const QString  &stationID() const { return m_stationID; }
+
     virtual QString	longName() const = 0;
 
 	const QString  &name()           const { return m_name;          }
@@ -98,7 +100,13 @@ public:
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const = 0;
 
+protected:
+
+	QString createStationID() const;
+
 protected :
+	QString  m_stationID;
+
 	QString  m_name;
 	QString	 m_shortName;
 	float	 m_initialVolume;		// <0: => Don't use

@@ -17,15 +17,24 @@
 
 #include "radiostation.h"
 
+
+#include <unistd.h>
+#include <time.h>
+#include <fcntl.h>
+
 extern const char *StationNameElement;
 extern const char *StationShortNameElement;
 extern const char *StationIconStringElement;
 extern const char *StationVolumePresetElement;
+extern const char *StationIDElement;
 
 const char *StationNameElement			= "name";
 const char *StationShortNameElement		= "shortname";
 const char *StationIconStringElement	= "icon";
 const char *StationVolumePresetElement	= "volumepreset";
+const char *StationIDElement            = "stationID";
+
+const char *dev_urandom = "/dev/urandom";
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -45,6 +54,8 @@ RadioStation::RadioStation(RegisterStationClass, const QString &classname)
       m_initialVolume(-1),
       m_iconName("")
 {
+	m_stationID = createStationID();
+
 	if (! stationClassRegistry)
 		stationClassRegistry = new QDict<RadioStation>;
 	stationClassRegistry->insert(classname, this);
@@ -56,6 +67,7 @@ RadioStation::RadioStation()
       m_initialVolume(-1),
       m_iconName("")
 {
+	m_stationID = createStationID();
 }
 
 RadioStation::RadioStation(const QString &name, const QString &shortName)
@@ -64,11 +76,13 @@ RadioStation::RadioStation(const QString &name, const QString &shortName)
       m_initialVolume(-1),
       m_iconName("")
 {
+	m_stationID = createStationID();
 }
 
 
 RadioStation::RadioStation(const RadioStation &s)
-    : m_name(s.m_name),
+    : m_stationID(s.m_stationID),
+      m_name(s.m_name),
       m_shortName(s.m_shortName),
       m_initialVolume(s.m_initialVolume),
       m_iconName(s.m_iconName)
@@ -78,6 +92,24 @@ RadioStation::RadioStation(const RadioStation &s)
 
 RadioStation::~RadioStation()
 {
+}
+
+
+QString RadioStation::createStationID() const
+{
+	const int buffersize = 32;
+	unsigned char buffer[buffersize];
+
+	QString stime, srandom = "";
+	stime.setNum(time(NULL));
+	
+	int fd = open (dev_urandom, O_RDONLY);
+	read(fd, buffer, buffersize);
+	close(fd);
+	for (int i = 0; i < buffersize; ++i)
+		srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
+	
+	return stime + srandom;
 }
 
 
@@ -93,7 +125,10 @@ RadioStation const *RadioStation::getStationClass(const QString &classname)
 bool RadioStation::setProperty(const QString &pn, const QString &val)
 {
 	bool retval = false;
-	if (pn == StationNameElement) {
+	if (pn == StationIDElement) {
+		m_stationID = val;
+		retval = true;
+	} else if (pn == StationNameElement) {
 		m_name = val;
 		retval = true;
 	} else if (pn == StationShortNameElement) {
@@ -113,7 +148,9 @@ bool RadioStation::setProperty(const QString &pn, const QString &val)
 
 QString RadioStation::getProperty(const QString &pn) const
 {
-	if (pn == StationNameElement) {
+	if (pn == StationIDElement) {
+		return m_stationID;
+	} else if (pn == StationNameElement) {
 		return m_name;
 	} else if (pn == StationShortNameElement) {
 		return m_shortName;
@@ -130,6 +167,7 @@ QString RadioStation::getProperty(const QString &pn) const
 QStringList RadioStation::getPropertyNames() const
 {
 	QStringList l;
+	l.push_back(StationIDElement);
 	l.push_back(StationNameElement);
 	l.push_back(StationShortNameElement);
 	l.push_back(StationIconStringElement);
