@@ -26,7 +26,7 @@
 #include "kradio.h"
 #include "kradioapp.h"
 #include "docking.h"
-#include "SetupDialog.h"
+#include "setupdialog.h"
 
 
 KRadioApp::KRadioApp()
@@ -38,7 +38,7 @@ KRadioApp::KRadioApp()
   readOptions();
 
   // the actual radio
-  radio = new V4LRadio(this, "", RadioDev, MixerDev);
+  radio = new V4LRadio(this, "", RadioDev, MixerDev, MixerChannel);
   radio->readCfg (QString(getenv("HOME")) + "/.kradiorc");
 
   // the quick selection buttons
@@ -84,7 +84,14 @@ void KRadioApp::readOptions()
   config->setGroup("devices");
   RadioDev = config->readEntry ("RadioDev", "/dev/radio");
   MixerDev = config->readEntry ("MixerDev", "/dev/mixer");	
-  
+  QString s = config->readEntry ("MixerChannel", "line");
+  MixerChannel = 0;
+  for (MixerChannel = 0; MixerChannel < SOUND_MIXER_NRDEVICES; ++MixerChannel)
+	  if (s == mixerChannelLabels[MixerChannel] ||
+		  s == mixerChannelNames[MixerChannel])
+		  break;
+  if (MixerChannel == SOUND_MIXER_NRDEVICES)
+	  MixerChannel = SOUND_MIXER_LINE;
 }
 
 void KRadioApp::saveOptions()
@@ -92,6 +99,9 @@ void KRadioApp::saveOptions()
     config->setGroup("devices");
     config->writeEntry("MixerDev", MixerDev);
     config->writeEntry("RadioDev", RadioDev);
+    if(MixerChannel <= 0 || MixerChannel >= SOUND_MIXER_NRDEVICES)
+		MixerChannel = SOUND_MIXER_LINE;
+    config->writeEntry("MixerChannel", mixerChannelNames[MixerChannel]);
 }
 
 void KRadioApp::restoreState()
@@ -140,18 +150,39 @@ void KRadioApp::saveState()
 
 void KRadioApp::slotConfigure()
 {
-	SetupDialog	sud (0, "setup", true);
+	SetupDialog	sud (0, RadioDev, MixerDev, MixerChannel, quickbar ? quickbar->getShowShortName() : false);
 	sud.setStations(radio->getStations(), radio);
-	connect (&sud, SIGNAL(sigSaveConfig(const StationVector &)),
-		this, SLOT(slotSaveConfig(const StationVector &)));
+
+	connect (&sud, SIGNAL(sigSaveConfig(const StationVector &, const QString &, const QString &, int, bool)),
+		this, SLOT(slotSaveConfig(const StationVector &, const QString &, const QString &, int, bool)));
+		
 	if (sud.exec() == QDialog::Accepted) {
 		radio->setStations(sud.getStations());
+		if (quickbar)
+			quickbar->setShowShortName(sud.displayOnlyShortNames());
+		RadioDev = sud.getRadioDevice();
+		MixerDev = sud.getMixerDevice();
+		MixerChannel = sud.getMixerChannel();
+		radio->setDevices(RadioDev, MixerDev, MixerChannel);
 	}
 }
 
 
-void KRadioApp::slotSaveConfig (const StationVector &sl)
+void KRadioApp::slotSaveConfig (const StationVector &sl,
+							    const QString &rdev,
+							    const QString &mdev,
+							    int ch,
+							    bool sn)
 {
 	radio->setStations(sl);
+	if (quickbar)
+		quickbar->setShowShortName(sn);
+	RadioDev = rdev;
+	MixerDev = mdev;
+	MixerChannel = ch;
+	radio->setDevices(RadioDev, MixerDev, MixerChannel);
+
 	radio->writeCfg(QString(getenv("HOME")) + "/.kradiorc");
+	saveOptions();
 }
+

@@ -32,11 +32,12 @@
 struct _lrvol { unsigned char l, r; short dummy; };
 
 V4LRadio::V4LRadio (QObject *_parent, const QString &_name,
-                    const QString &_RadioDev, const QString &_MixerDev)
+                    const QString &_RadioDev, const QString &_MixerDev, int _MixerChannel)
  : RadioBase (_parent, _name)
 {
 	RadioDev = _RadioDev;
 	MixerDev = _MixerDev;
+	MixerChannel = _MixerChannel;
 	radio_fd = 0;
 	mixer_fd = 0;
 	tuner = 0;
@@ -56,23 +57,27 @@ void V4LRadio::radio_init()
 	if (mixer_fd == -1) {
 		mixer_fd = 0;
 		fprintf (stderr, "cannot open mixer\n");
-    	return;
+		return;
 	}
 	radio_fd = open(RadioDev, O_RDONLY);
   	if (radio_fd == -1) {
 		fprintf (stderr, "cannot open radio device\n");
-		radio_fd = 0;
+		close (mixer_fd);
+		radio_fd = mixer_fd = 0;		
     	return;
 	}
-  	tuner = new struct video_tuner;
-  	audio = new struct video_audio;
-  	if((audio == NULL) || (tuner == NULL)) {
-  		radio_fd = mixer_fd = 0;
-  		tuner = 0; audio = 0;
-    	return;
-    }
+	tuner = new struct video_tuner;
+	audio = new struct video_audio;
+	if((audio == NULL) || (tuner == NULL)) {
+		close(radio_fd);
+		close(mixer_fd);
+		radio_fd = mixer_fd = 0;
+		tuner = 0; audio = 0;
+		return;
+	}
 
-  	tuner->tuner = 0;
+	tuner->tuner = 0;
+
   	
   	// restore frequency
   	setFrequency(RadioBase::getFrequency());
@@ -272,7 +277,7 @@ void V4LRadio::setVolume(float vol)
 */
 		_lrvol tmpvol;
 		tmpvol.r = tmpvol.l = (unsigned int)(round(vol * divs));
-		if (ioctl(mixer_fd, SOUND_MIXER_WRITE_LINE, &tmpvol)) {
+		if (ioctl(mixer_fd, MIXER_WRITE(MixerChannel), &tmpvol)) {
 			fprintf (stderr, "V4LRadio::setVolume: error setting volume to %.2f\n", vol);
 			return;
 		}
@@ -285,7 +290,7 @@ float V4LRadio::getVolume() const
 {
 	if (radio_fd != 0) {
 		_lrvol tmpvol;
-		if(ioctl(mixer_fd, SOUND_MIXER_READ_LINE, &tmpvol)) {
+		if(ioctl(mixer_fd, MIXER_READ(MixerChannel), &tmpvol)) {
 			fprintf (stderr, "V4LRadio::getVolume: error reading volume\n");
 			tmpvol.l = tmpvol.r = 0;
 		}
@@ -376,5 +381,35 @@ int V4LRadio::set_treble(__u16 ltreble)
 */
 
 
+void  V4LRadio::setRadioDevice(const QString &s)
+{
+	if (RadioDev != s) {
+		bool p = isPowerOn();
+		PowerOff();
+		RadioDev = s;
+		if (p) PowerOn();
+	}
+}
 
+void  V4LRadio::setMixerDevice(const QString &s, int ch)
+{
+	if (MixerDev != s || MixerChannel != ch) {
+		bool p = isPowerOn();
+		PowerOff();
+		MixerDev = s;
+		MixerChannel = ch;
+		if (p) PowerOn();
+	}
+}
 
+void  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
+{
+	if (RadioDev != r || MixerDev != m || MixerChannel != ch) {
+		bool p = isPowerOn();
+		PowerOff();
+		RadioDev = r;
+		MixerDev = m;
+		MixerChannel = ch;
+		if (p) PowerOn();
+	}
+}

@@ -75,6 +75,8 @@ void LircSupport::slotLIRC(int /*socket*/ )
 		while(lirc_code2char (lircConfig, code, &c) == 0 && c != NULL) {
 			if (strcasecmp (c, "TV") == 0) {
 				radio->PowerOff();
+			} else if (strcasecmp (c, "RADIO") == 0) {
+				radio->PowerOn();
 			} else if (strcasecmp (c, "POWER") == 0) {
 				if (radio->isPowerOn())
 					radio->PowerOff();

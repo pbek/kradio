@@ -36,16 +36,14 @@ QuickBar::QuickBar(RadioBase *_radio, QWidget * parent, const char * name)
     showShortName(true)
 {
     radio = _radio;
-    rebuildGUI();
-
-    restoreState(KGlobal::config());
 
     connect (radio, SIGNAL(sigConfigChanged()), 
-	     this, SLOT(slotConfigChanged()));
+	    this, SLOT(slotConfigChanged()));
     connect(radio, SIGNAL(sigFrequencyChanged(float, const RadioStation *)), 
 	    this, SLOT(slotFrequencyChanged(float, const RadioStation *)));
 
 }
+
 
 QuickBar::~QuickBar()
 {
@@ -53,6 +51,7 @@ QuickBar::~QuickBar()
     delete layout;
   }
 }
+
 
 void QuickBar::restoreState (KConfig *config)
 {
@@ -69,7 +68,10 @@ void QuickBar::restoreState (KConfig *config)
         show();
 
 	showShortName = config->readBoolEntry("showShortName", true);
+
+	rebuildGUI();
 }
+
 
 void QuickBar::saveState (KConfig *config)
 {
@@ -119,39 +121,53 @@ void QuickBar::rebuildGUI()
 	buttonGroup->setFrameStyle(QFrame::NoFrame);
 
     const StationVector &stations = radio->getStations();
+
     int index=0;
     for (ciStationVector i = stations.begin(); i != stations.end(); ++i) {
-        if ((*i)->useQuickSelect()) {
-        	QString iconstr = (*i)->getIconString();
-        	KPushButton *b = showShortName
-		  ? new KPushButton((*i)->getShortName(),this)
-		  : new KPushButton((*i)->name(), this);
+		if ( !(*i)->useQuickSelect())
+			continue;
+		
+        QString iconstr = (*i)->getIconString();
+       	KPushButton *b = showShortName ?
+							   new KPushButton((*i)->getShortName(), this)
+							 : new KPushButton((*i)->name(), this);
 
-		b->setToggleButton(true);
-        	if (iconstr.length()) {
-        		b->setIconSet (QPixmap(iconstr));
-        	}
+	    b->setToggleButton(true);
+       	if (iconstr.length()) {
+       		b->setIconSet (QPixmap(iconstr));
+       	}
+        b->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred));
 
-            QToolTip::add(b, (*i)->getLongName());
-            b->resize (b->sizeHint());
-	    Buttons.push_back(b);
-	    connect (b, SIGNAL(clicked()), (*i), SLOT(activate()));
-	    buttonGroup->insert(b,index);
-	    layout->add(b);
-	    index++;
-    	}
+        QToolTip::add(b, (*i)->getLongName());
+        if (isVisible()) b->show();
+        b->resize (b->sizeHint());
+
+        Buttons.push_back(b);
+        connect (b, SIGNAL(clicked()), (*i), SLOT(activate()));
+        buttonGroup->insert(b,index);
+        layout->add(b);
+        index++;
     }
     
     // activate correct button
     buttonGroup->setButton(radio->currentStation());
+
+    // calculate geometry
+    if (layout) {
+		QRect r = geometry();
+		int h = layout->heightForWidth( r.width());
+		if (h > r.height())
+			setGeometry(r.x(), r.y(), r.width(), h);
+    }
 }
+
 
 void QuickBar::slotConfigChanged()
 {
   rebuildGUI();
-  // make sure the dialog does not look funny ;)
-  adjustSize();
+  // adjustSize();
 }
+
 
 void QuickBar::setOn(bool on)
 {
@@ -160,6 +176,7 @@ void QuickBar::setOn(bool on)
   else if (!on && isVisible())
     hide();
 }
+
 
 void QuickBar::show()
 {
@@ -174,6 +191,7 @@ void QuickBar::show()
   }
 }
 
+
 void QuickBar::hide()
 {
   getState();
@@ -181,50 +199,24 @@ void QuickBar::hide()
   emit toggled(false);
 }
 
+
 void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
 {
   setCaption ((s ? QString(s->name()) : i18n("KRadio")));
   if (buttonGroup) buttonGroup->setButton(radio->currentStation());
 }
 
+
 void QuickBar::resizeEvent (QResizeEvent *e)
 {
   // minimumSize might change because of the flow layout
   if (layout) setMinimumSize(layout->minimumSize());
   QWidget::resizeEvent (e);
+}
 
-//     IntVector   c_w;
-//     int         c = 0,
-//       nc = Buttons.size();
 
-//     int x, y, maxy;
-//     QSize mys = size();
-//  restart1:
-//     c_w.clear();
-//     c_w.insert(c_w.end(), nc, 0);
-//  restart2:
-//     c = 0;
-//     x = y = maxy = 0;
-//     for (ciButtonList i = Buttons.begin(); i != Buttons.end(); ++i) {
-//       QSize s = (*i)->sizeHint();  	
-//       if (x && x + s.width() > mys.width()) {
-// 	nc = c;
-// 	goto restart1;
-//       } else {
-// 	if (c_w[c] < s.width()) {
-// 	  c_w[c] = s.width();
-// 	  goto restart2;
-// 	}
-// 	s.setWidth(c_w[c]);
-//       }
-//       (*i)->move(x, y);
-//       (*i)->resize(s.width(), s.height());
-//       maxy = s.height() > maxy ? s.height() : maxy;	
-//       x += s.width();
-//       if (++c >= nc) {
-// 	c = 0;
-// 	x = 0;
-// 	y += maxy;
-//       }
-//     }
+void QuickBar::setShowShortName (bool b)
+{
+	showShortName = b;
+	rebuildGUI();
 }

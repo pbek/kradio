@@ -1,8 +1,8 @@
 /***************************************************************************
-                          utils.h  -  description
+                          utils.cpp  -  description
                              -------------------
-    begin                : Sun Feb 3 2002
-    copyright            : (C) 2002 by Martin Witte / Frank Schwanz
+    begin                : Don Jan 9 2003
+    copyright            : (C) 2003 by Martin Witte / Frank Schwanz
     email                : witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
  ***************************************************************************/
 
@@ -15,25 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KRADIO_UTILS_H
-#define KRADIO_UTILS_H
+#include "utils.h"
+#include <linux/soundcard.h>
 
-using namespace std;
-
-#include <qstring.h>
-#include <list>
-#include <vector>
-
-typedef list<QString>				StringList;
-typedef StringList::iterator		iStirngList;
-typedef StringList::const_iterator	ciStringList;
-
-typedef vector<int>					IntVector;
-typedef IntVector::iterator			iIntVector;
-typedef IntVector::const_iterator	ciIntVector;
-
-
-extern const char *mixerChannelLabels[];
-extern const char *mixerChannelNames[];
-
-#endif
+const char *mixerChannelLabels[] = SOUND_DEVICE_LABELS;
+const char *mixerChannelNames[]  = SOUND_DEVICE_NAMES;

@@ -44,7 +44,11 @@ public:
 public slots:
 
   virtual void slotConfigure();
-  virtual void slotSaveConfig(const StationVector &);
+  virtual void slotSaveConfig (const StationVector &sl,
+							   const QString &rdev,
+							   const QString &mdev,
+							   int ch,
+							   bool sn);
   
 private:
   void restoreState();
@@ -62,6 +66,7 @@ private:
   QuickBar      *quickbar;
   
   QString MixerDev, RadioDev;
+  int     MixerChannel;
 
 };
 

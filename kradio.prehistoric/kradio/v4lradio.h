@@ -53,6 +53,7 @@ protected:
 	
 	QString RadioDev;
 	QString MixerDev;
+	int MixerChannel;
 	int radio_fd;
 	int mixer_fd;
 	struct video_tuner *tuner;
@@ -64,8 +65,12 @@ protected:
 
 public:
 	V4LRadio(QObject *parent, const QString &name,
-	         const QString &RadioDev, const QString &MixerDev);
+	         const QString &RadioDev, const QString &MixerDev, int MixerChannel);
 	~V4LRadio();
+
+	virtual void  setRadioDevice(const QString &s);
+	virtual void  setMixerDevice(const QString &s, int ch);
+	virtual void  setDevices(const QString &r, const QString &m, int ch);
 	
 	virtual float signal() const;				
 	virtual bool  isStereo() const;

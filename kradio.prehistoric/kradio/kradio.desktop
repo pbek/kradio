@@ -1,6 +1,7 @@
 # KDE Config File  
 [Desktop Entry]
-Type=Multimedia
+Encoding=UTF-8
+Type=Application
 Exec=kradio -caption "%c" %i %m  
 Icon=kradio.png
 MiniIcon=kradio.png

@@ -85,23 +85,23 @@ ButtonFlowLayout::~ButtonFlowLayout()
 int ButtonFlowLayout::heightForWidth( int w ) const
 {
     if ( cached_width != w ) {
-	//Not all C++ compilers support "mutable" yet:
-	ButtonFlowLayout * mthis = (ButtonFlowLayout*)this;
-	int h = mthis->doLayout( QRect(0,0,w,0), TRUE );
-	mthis->cached_hfw = h;
-	return h;
+		//Not all C++ compilers support "mutable" yet:
+		ButtonFlowLayout * mthis = (ButtonFlowLayout*)this;
+		int h = mthis->doLayout( QRect(0,0,w,0), TRUE );
+		mthis->cached_hfw = h;
+		return h;
     }
     return cached_hfw;
 }
 
 void ButtonFlowLayout::addItem( QLayoutItem *item)
 {
-    list.append( item );
+	list.append( item );
 }
 
 bool ButtonFlowLayout::hasHeightForWidth() const
 {
- return TRUE;
+	return TRUE;
 }
 
 QSize ButtonFlowLayout::sizeHint() const
@@ -128,59 +128,73 @@ void ButtonFlowLayout::setGeometry( const QRect &r )
 int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 {
     int x = r.x();
-    int y = r.y();
+    float y = r.y();
     int h = 0;		//height of this line so far.
     int buttonWidth = 0;
     int buttonHeight = 0;
     int linecount = 0;
+    int totalWidth  = r.right()  - r.left();
+    int totalHeight = r.bottom() - r.top();
 
     QListIterator<QLayoutItem> it(list);
     QLayoutItem *o;
 
     // get the width of the biggest Button
-    //    it.toFirst();
+
+    it.toFirst();
     while ( (o=it.current()) != 0 ) {
       ++it;
-      buttonWidth = QMAX( buttonWidth,  o->sizeHint().width() );
-      buttonHeight = o->sizeHint().height();
+      buttonWidth  = QMAX( buttonWidth,  o->sizeHint().width() );
+      buttonHeight = QMAX( buttonHeight, o->sizeHint().height() );
     }
 
     // calculate the optimal width
-    int totalWidth = r.right() - r.left();
-    unsigned int columns = totalWidth/ (buttonWidth + spacing());// integer division, same as floor(float division)
+    unsigned int columns = (totalWidth + spacing()) /
+                           (buttonWidth + spacing());
     if (columns > it.count() ) columns=it.count();
-    if (columns == 0) columns=1; // avoid division by zero
+    if (columns == 0) columns = 1; // avoid division by zero
 
-    int rows = (int) ceil((float)it.count() / (float)columns);
-    int deltaH = (r.bottom()- r. top() - rows*buttonHeight 
-		  - (rows - 1)*spacing()) / (rows +1) ; //
+    
+    int rows   = (it.count() - 1) / columns + 1;
+    float deltaH = (float)(totalHeight - rows * buttonHeight - (rows - 1) * spacing()) /
+		           (float)(rows + 1) ;
     y += deltaH;
-    minHeight = rows*buttonHeight + (rows - 1)*spacing();
+    minHeight = rows * buttonHeight + (rows - 1) * spacing();
 
-    buttonWidth = (totalWidth - spacing()*(columns-1))/ columns;
+    buttonWidth = (totalWidth - spacing()*(columns-1)) / columns;
 
+
+/*    fprintf (stderr, "cols = %i      col-width  = %i\n"
+					 "rows = %i      row-height = %i\n"
+					 "w = %i         h = %i\n",
+			 columns, buttonWidth,
+			 rows, buttonHeight,
+			 totalWidth, totalHeight
+			 );
+*/
     // calculate the positions and sizes
     it.toFirst();
-    while ( (o=it.current()) != 0 ) {
-    	++it;
-    	int nextX = x + buttonWidth + spacing();
-    	if ( nextX - spacing() > r.right() && h > 0 ) {
-        x = r.x();
-    	  y = y + h + spacing() + deltaH;
-	      nextX = x + buttonWidth + spacing();
-  	    h = 0;
-	      linecount++;
-    	}
-      if (!testonly)
-      	o->setGeometry( QRect( QPoint( x, y ),// o->sizeHint()));
-			       QSize(buttonWidth,o->sizeHint().height()) ) );
+    while ( (o = it.current()) != 0 ) {
 
-      x = nextX;
-      h = QMAX( h,  o->sizeHint().height() );
+//		fprintf (stderr, "x = %i    y = %i\n", x, (int)y);
+		++it;
+        if ( x + buttonWidth > r.right() && h > 0 ) {
+		    x = r.x();
+    	    y += h + spacing() + deltaH;
+  	        h = 0;
+	        linecount++;
+    	}
+        if (!testonly)
+      	    o->setGeometry( QRect( QPoint( x, (int)y ),
+			                       QSize(buttonWidth, buttonHeight) ) );
+
+        x += buttonWidth + spacing();
+        h = QMAX( h,  buttonHeight );
     }
 
-    return y + h - r.y();
+    return (int)y + h - r.y();
 }
+
 
 QSize ButtonFlowLayout::minimumSize() const
 {

@@ -49,12 +49,12 @@ class QuickBar : public QWidget  {
    Q_OBJECT
 protected :
 
-    RadioBase   *radio;
-    ButtonList  Buttons;
-    QLayout *layout;
-    QButtonGroup *buttonGroup;
+    RadioBase     *radio;
+    ButtonList    Buttons;
+    QLayout       *layout;
+    QButtonGroup  *buttonGroup;
     // config
-    bool showShortName;
+    bool          showShortName;
 public:
 	QuickBar(RadioBase *radio, QWidget * parent = 0, const char * name = 0);
 	~QuickBar();
@@ -62,6 +62,9 @@ public:
 	void    restoreState (KConfig *c);
 	void    saveState (KConfig *c);
     void	getState();
+
+    bool	getShowShortName() const { return showShortName; }
+    void    setShowShortName(bool b);
 	
 protected:
 	void resizeEvent(QResizeEvent *);
