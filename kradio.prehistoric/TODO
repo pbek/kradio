@@ -5,7 +5,7 @@
        translations?
        
        recording plugin
-       v4l2 plugin
+       v4l2 support (implemented, not tested)
 
 unsolved problems:
 * fix sticky behavior on "window-close/restore" (both kradio & quickbar)
