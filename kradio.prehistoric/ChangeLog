@@ -18,6 +18,11 @@
 0.2.2   emw:    - small fixes concerning window restoring
                 - gcc 3.2 ready
                 - further fixes in stereo/signal quality display
+
+        kalass  - kde3 port
+                - quickbar makes use of buttonflowlayout
+                - fixes to conform with kde styleguide
+                - make kradio/docking/quickbar independent
                 - many other improvements, see CVS
 
         rizsanyi: - added lirc option RADIO (which turns kradio on)
