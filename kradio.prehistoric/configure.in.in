@@ -1,0 +1,50 @@
+#MIN_CONFIG
+
+AM_INIT_AUTOMAKE(kradio,0.2.1-emw)
+
+dnl Checks for header files.
+AC_HEADER_DIRENT
+AC_HEADER_STDC
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_HEADER_TIME
+
+
+test_extranorms=1
+
+
+dnl ---------------------------------------------------------------------
+dnl IRC
+
+AC_MSG_CHECKING([for IRC device])
+if test -c "/dev/lirc"; then
+  AC_DEFINE_UNQUOTED(HAVE_IRC, 1, [Define if you have the IRC device])
+  AC_MSG_RESULT([/dev/lirc])
+else 
+  if test -c "/dev/lirc/0"; then
+    AC_DEFINE_UNQUOTED(HAVE_IRC, 1, [Define if you have the IRC device])
+    AC_MSG_RESULT([/dev/lirc/0])
+  else
+    AC_MSG_RESULT([not found])
+  fi
+fi
+
+AC_MSG_CHECKING([for lirc daemon device])
+if test -S "/dev/lircd"; then
+  AC_MSG_RESULT([/dev/lircd])
+
+  AC_DEFINE_UNQUOTED(LIRCD_DEVICE, "/dev/lircd", [what is the lirc device?])
+else
+  AC_MSG_RESULT([not found])
+fi
+
+
+AC_SUBST(LIRC)
+LIRC=""
+AC_CHECK_LIB(lirc_client, lirc_init, LIRC="-llirc_client",,)
+if test -n $LIRC ; then
+  AC_DEFINE_UNQUOTED(HAVE_LIRC_CLIENT, 1, [is lirc_client library present?])
+fi
+
+# AC_DEFINE(HAVE_LIBLIRC_CLIENT) LIRC="-llirc_client"   <--- how do I put this in?
+

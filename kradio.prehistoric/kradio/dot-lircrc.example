@@ -1,0 +1,187 @@
+begin
+    flags = startup_mode
+    mode = all-off
+end
+
+
+begin all-off
+
+	begin
+	    button = TV
+		repeat = 0
+		prog = irexec
+	    config = kwintv &
+	end
+
+	begin
+	    button = TV
+		mode = TV-on
+		flags = quit
+	end
+
+ 	begin
+		prog = kradio
+		button = RADIO
+		repeat = 0
+		config = POWER
+	end
+	
+	begin
+	    button = RADIO
+		mode = RADIO-on
+		flags = quit
+	end
+
+end all-off
+
+
+
+begin TV-on
+
+	begin
+	    button = MINIMIZE
+		mode = all-off
+		flags = quit
+	end
+
+end TV-on
+
+
+begin RADIO-on
+
+ 	begin
+		prog = kradio
+		button = 1
+		repeat = 0
+		config = 1
+	end
+
+ 	begin
+		prog = kradio
+		button = 2
+		repeat = 0
+		config = 2
+	end
+
+ 	begin
+		prog = kradio
+		button = 3
+		repeat = 0
+		config = 3
+	end
+
+ 	begin
+		prog = kradio
+		button = 4
+		repeat = 0
+		config = 4
+	end
+
+ 	begin
+		prog = kradio
+		button = 5
+		repeat = 0
+		config = 5
+	end
+
+ 	begin
+		prog = kradio
+		button = 6
+		repeat = 0
+		config = 6
+	end
+
+ 	begin
+		prog = kradio
+		button = 7
+		repeat = 0
+		config = 7
+	end
+
+ 	begin
+		prog = kradio
+		button = 8
+		repeat = 0
+		config = 8
+	end
+
+ 	begin
+		prog = kradio
+		button = 9
+		repeat = 0
+		config = 9
+	end
+
+ 	begin
+		prog = kradio
+		button = 0
+		repeat = 0
+		config = 10
+	end
+
+ 	begin
+		prog = kradio
+		button = CH+
+		repeat = 1
+		config = CH+
+	end
+
+
+ 	begin
+		prog = kradio
+		button = CH-
+		repeat = 1
+		config = CH-
+	end
+
+ 	begin
+		prog = kradio
+		button = VOL-
+		repeat = 1
+		config = VOL-
+	end
+
+ 	begin
+		prog = kradio
+		button = VOL+
+		repeat = 1
+		config = VOL+
+	end
+
+ 	begin
+		prog = kradio
+		button = MUTE
+		repeat = 0
+		config = CH-SEARCH
+	end
+
+ 	begin
+		prog = kradio
+		button = SOURCE
+		repeat = 0
+		config = CH+SEARCH
+	end
+
+
+ 	begin
+		prog = kradio
+		button = RESERVED
+		repeat = 0
+		config = MODE
+	end
+
+
+ 	begin
+		prog = kradio
+		button = RADIO
+		repeat = 0
+		config = POWER
+	end
+	
+	begin
+	    button = RADIO
+		mode = all-off
+		flags = quit
+	end
+
+end RADIO-on

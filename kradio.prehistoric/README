@@ -1,0 +1,22 @@
+This is a small radio application for kde 2 with lirc support
+You can get the latest version from
+
+   http://www.kawo1.rwth-aachen.de/~witte/kradio.html
+
+------------------
+Configuration
+------------------
+
+At the current state, most configuration options for are only accessible by your
+kradiorc file, usually found in ~/.kde/share/config/kradiorc or /etc/kde2/kradiorc, etc.
+An example configuration file can be found in ./kradio/kradiorc.example.
+
+------------------
+lirc support
+------------------
+
+lirc support is realized by the lirc_client lib. It should be detected automatically
+by ./configure. This library is used to translate the remote control key names to
+names used by kradio, and may additionally be used for state management (tv, etc).
+An example for an apropriate .lircrc file can be found in ./kradio/dot-lircrc.example.
+

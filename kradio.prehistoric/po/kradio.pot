@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: RadioView.cpp:239 RadioView.cpp:248 RadioView.cpp:257 RadioView.cpp:265
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-01-17 11:50+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kradio.cpp:71 kradio.cpp:321 kradio.cpp:324
+msgid "KRadio"
+msgstr ""
+
+#: kradio.cpp:115
+msgid "&"
+msgstr ""
+
+#: kradio.cpp:320
+msgid "next wakeup: "
+msgstr ""
+
+#: kradio.cpp:601
+msgid "tuned"
+msgstr ""
+
+#: RadioView.cpp:149 kradio.cpp:604
+msgid "Stereo"
+msgstr ""
+
+#: stationbutton.cpp:40
+msgid "set station to current frequency"
+msgstr ""
+
+#: stationbutton.cpp:41
+msgid "Stationname"
+msgstr ""
+
+#: RadioView.cpp:124
+msgid "Form1"
+msgstr ""
+
+#: RadioView.cpp:142
+msgid "Tune"
+msgstr ""
+
+#: RadioView.cpp:172
+msgid "&Power"
+msgstr ""
+
+#: RadioView.cpp:243
+msgid "decrease freq. by 0.05 MHz"
+msgstr ""
+
+#: RadioView.cpp:252
+msgid "increase freq. by 0.05 MHz"
+msgstr ""
+
+#: RadioView.cpp:260
+msgid "search next station"
+msgstr ""
+
+#: RadioView.cpp:268
+msgid "search previous station"
+msgstr ""
+
+#: RadioView.cpp:282
+msgid "Volume control"
+msgstr ""
+
+#: RadioView.cpp:296
+msgid "Frequency control"
+msgstr ""
+
+#: docking.cpp:35
+msgid "Current"
+msgstr ""
+
+#: docking.cpp:36
+msgid "Wake Up"
+msgstr ""
+
+#: docking.cpp:40 docking.cpp:41
+msgid "Search Next Station"
+msgstr ""
+
+#: docking.cpp:43
+msgid "Serarch Previous Station"
+msgstr ""
+
+#: docking.cpp:44
+msgid "Search Previous Station"
+msgstr ""
+
+#: docking.cpp:46 docking.cpp:101
+msgid "Power On"
+msgstr ""
+
+#: docking.cpp:50 docking.cpp:51
+msgid "Restore"
+msgstr ""
+
+#: docking.cpp:73
+msgid "&Minimize"
+msgstr ""
+
+#: docking.cpp:75
+msgid "&Restore"
+msgstr ""
+
+#: docking.cpp:101
+msgid "Power Off"
+msgstr ""

@@ -1,0 +1,69 @@
+/***************************************************************************
+                          radiostation.h  -  description
+                             -------------------
+    begin                : Sat Feb 2 2002
+    copyright            : (C) 2002 by Martin Witte / Frank Schwanz
+    email                : witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef RADIOSTATION_H
+#define RADIOSTATION_H
+
+#include <qobject.h>
+#include <vector>
+
+/**
+  *@author Martin Witte
+  */
+
+class RadioStation : public QObject  {
+	Q_OBJECT
+protected :	
+	float	Frequency;
+	QString	ShortName;
+	bool	QuickSelect;
+
+	float	VolumePreset;		// <0: => Don't use
+	
+public:
+	RadioStation (QObject *parent);
+	RadioStation(QObject *parent, QString Name, QString ShortName,
+				 float Frequency, float VolumePreset = -1);
+	RadioStation(const RadioStation &);
+	virtual ~RadioStation();
+	
+	bool    isValid() const;
+	
+	QString getShortName() const     { return ShortName; }
+	float	getFrequency() const     { return Frequency; }
+	float	getVolumePreset() const  { return VolumePreset; }
+	bool	useQuickSelect() const   { return QuickSelect; }
+	
+	void	setQuickSelect(bool qs)  { QuickSelect = qs; }
+	void 	setFrequency(float f)    { Frequency = f; }
+	void	setShortName(QString n)  { ShortName = n; }
+	void	setVolumePreset(float v) { VolumePreset = v; }
+	
+public slots:
+	void activate ();
+	
+signals:
+	void activated (const RadioStation *);
+};
+
+
+typedef vector<RadioStation*>			StationVector;
+typedef StationVector::iterator			iStationVector;
+typedef StationVector::const_iterator	ciStationVector;
+
+
+#endif
