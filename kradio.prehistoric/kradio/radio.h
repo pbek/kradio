@@ -91,6 +91,11 @@ protected:
      * signals
      */
     void registerStation(RadioStation *station);
+    /**
+     * register the radio device with this radio, connect
+     * signals
+     */
+    void registerDevice(RadioDevice *radiodevice);
 
     StationList m_stations;
     RadioStation *m_currentStation;

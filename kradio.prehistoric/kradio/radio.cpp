@@ -114,6 +114,15 @@ void Radio::slotUnmute()
 
 void Radio::registerStation(RadioStation * station)
 {
-    connect(station, SIGNAL(signalActivated(const RadioStation *)),
+    // this connect is not really correct, because the radiodevice
+    // implementation should notify us when a different station has been
+    // tuned in
+//    connect(station, SIGNAL(signalActivated(const RadioStation *)),
+//            this, SLOT(slotCurrentStationChanged(const RadioStation *)));
+}
+
+void Radio::registerDevice(RadioDevice * radiodevice)
+{
+    connect(radiodevice, SIGNAL(sigStationChanged(const RadioStation *)),
             this, SLOT(slotCurrentStationChanged(const RadioStation *)));
 }

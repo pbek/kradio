@@ -179,7 +179,7 @@ float V4LRadio::maxPossibleFrequency() const
 }
 
 
-void V4LRadio::setFrequencyImpl(float freq)
+bool V4LRadio::setFrequencyImpl(float freq)
 {
   	if (radio_fd != 0) {
   		bool oldMute = isMuted();
@@ -191,16 +191,19 @@ void V4LRadio::setFrequencyImpl(float freq)
 
 	  	if (freq > maxFrequency() || freq < minFrequency()) {
 	  		fprintf (stderr, "V4LRadio::setFrequency: %s %.2g\n", (const char*)i18n("invalid frequency"), freq);
-	    	return;
+	    	return false;
 	    }
 
-  		if (ioctl(radio_fd, VIDIOCSFREQ, &lfreq))
+  		if (ioctl(radio_fd, VIDIOCSFREQ, &lfreq)) {
   			fprintf (stderr, "V4LRadio::setFrequency: %s %.2g\n", (const char*)i18n("error setting frequency to"), freq);
+                        if (!oldMute) unmute();
+                        return false;
+                }
 
   		if (!oldMute) unmute();
 	}
 
-	RadioBase::setFrequencyImpl(freq);
+	return RadioBase::setFrequencyImpl(freq);
 }
 
 

@@ -101,7 +101,7 @@ protected:
 
     virtual float minPossibleFrequency() const;
     virtual float maxPossibleFrequency() const;
-    virtual void setFrequencyImpl(float freq);
+    virtual bool setFrequencyImpl(float freq);
 
 protected:
 	struct TunerCache {
