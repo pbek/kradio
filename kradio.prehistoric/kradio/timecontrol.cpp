@@ -186,33 +186,4 @@ void    TimeControl::configurationChanged (const SetupData &d)
 }
 
 
-void    TimeControl::connectInterface(QObjectList &ol)
-{
-	for (QObject *i = objects.first(); i; i = objects.next()) {
-		if (this == i)
-			continue;
-
-		// configuration
-
-		quietconnect (i, SIGNAL(sigConfigurationChanged(const SetupData &)),
-					  this, SLOT(configurationChanged(const SetupData &)));
-        quietconnect (i, SIGNAL(sigSaveState(KConfig *)),
-		              this, SLOT(saveState(KConfig *)));
-    	quietconnect (i, SIGNAL(sigRestoreState(KConfig *)),
-				      this, SLOT(restoreState(KConfig *)));
-
-    	// commands
-
-		quietconnect (i, SIGNAL(sigStartSleepCountdown()),     this, SLOT(startSleepCountdown()));
-		quietconnect (i, SIGNAL(sigStopSleepCountdown()),      this, SLOT(stopSleepCountdown()));
-		quietconnect (i, SIGNAL(sigStartStopSleepCountdown()), this, SLOT(startStopSleepCountdown()));
-
-		// notifications
-
-        quietconnect (this, SIGNAL(sigAlarm(Alarm*)),                            i, SLOT(alarm(Alarm *)));
-        quietconnect (this, SIGNAL(sigSleepCountdownZero()),                     i, SLOT(sleepCountdownZero), ());
-        quietconnect (this, SIGNAL(sigSleepCountDownStarted(const QDateTime &)), i, SLOT(sleepCountdownStarted(const QDateTime &)));
-        quietconnect (this, SIGNAL(sigSleepCountDownStopped()),                  i, SLOT(sleepCountdownStopped), ());
-    }
-}
 */

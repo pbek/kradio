@@ -67,26 +67,3 @@ QString xmlTag (const QString &tag, const QString &data, bool nl)
 	       + (nl ? "\n" : "");
 }
 
-
-bool hasSignal(const QObject *o, const char *signal)
-{
-	if (!o) return false;
-	QMetaObject *m = o->metaObject();
-    if (!m) return false;
-    return m->findSignal(signal, true) >= 0;
-}
-
-bool hasSlot  (const QObject *o, const char *slot)
-{
-	if (!o) return false;
-	QMetaObject *m = o->metaObject();
-    if (!m) return false;
-    return m->findSlot(slot, true) >= 0;
-}
-
-bool quietConnect(const QObject *sender, const char *sig, const QObject *receiver, const char *slot)
-{
-	if (hasSignal (sender, sig) && hasSlot(receiver, slot))
-		return QObject::connect(sender, sig, receiver, slot);
-	return false;
-}

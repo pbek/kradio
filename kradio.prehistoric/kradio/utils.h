@@ -24,23 +24,8 @@ using namespace std;
 #include <klocale.h>
 #include <kdebug.h>
 #include <qstring.h>
-#include <list>
-#include <vector>
 #define __USE_ISOC99 1
 #include <math.h>
-
-typedef list<QString>				StringList;
-typedef StringList::iterator		iStirngList;
-typedef StringList::const_iterator	ciStringList;
-
-typedef vector<int>					IntVector;
-typedef IntVector::iterator			iIntVector;
-typedef IntVector::const_iterator	ciIntVector;
-
-typedef vector<float>				FloatVector;
-typedef FloatVector::iterator		iFloatVector;
-typedef FloatVector::const_iterator	ciFloatVector;
-
 
 extern const char *mixerChannelLabels[];
 extern const char *mixerChannelNames[];
@@ -51,11 +36,6 @@ QString xmlTag      (const QString &tag, const QString &s, bool newline = true);
 QString xmlTag      (const QString &tag, int i,            bool newline = true);
 QString xmlTag      (const QString &tag, float f,          bool newline = true);
 QString xmlCloseTag (const QString &tag, bool newline = true);
-
-
-bool hasSignal(const QObject *o, const char *signal);
-bool hasSlot  (const QObject *o, const char *slot);
-bool quietConnect(const QObject *sender, const char *sig, const QObject *receiver, const char *slot);
 
 
 #endif

@@ -25,7 +25,7 @@ IF_IMPL_SENDER  (  ITimeControl::notifyAlarmsChanged(const AlarmVector &sl),
 IF_IMPL_SENDER  (  ITimeControl::notifyAlarm(const Alarm &a),
                    noticeAlarm(a)                                            )
 
-IF_IMPL_SENDER  (  ITimeControl::notifyNextAlarmChanged(const Alarm &a),
+IF_IMPL_SENDER  (  ITimeControl::notifyNextAlarmChanged(const Alarm *a),
                    noticeNextAlarmChanged(a)                                 )
 
 IF_IMPL_SENDER  (  ITimeControl::notifyCountdownStarted(const QDateTime &end),
