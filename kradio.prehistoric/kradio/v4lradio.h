@@ -3,7 +3,9 @@
                              -------------------
     begin                : Thu Mar 8 2001
     copyright            : (C) 2001, 2002 by Frank Schwanz, Ernst Martin Witte
-    email                : schwanz@fh-brandenburg.de, witte@kawo1.rwth-aachen.de
+                               2003 by Klas Kalass
+    email                : schwanz@fh-brandenburg.de, witte@kawo1.rwth-aachen.de,
+                           klas@kde.org
     based on             : libradio
  ***************************************************************************/
 
@@ -45,12 +47,61 @@
 
 #include "utils.h"
 
-#include "radiobase.h"
+#include "frequencyradio.h"
 
-class V4LRadio : public RadioBase {
+// forward declarations
+class Radio;
+
+class V4LRadio : public FrequencyRadio {
+
+public:
+//	V4LRadio(QObject *parent, const QString &name,
+//	         const QString &RadioDev = "", const QString &MixerDev = "", int MixerChannel = 0);
+    V4LRadio(Radio *mainRadio);
+	~V4LRadio();
+
+    virtual const QString &radioDevice()  const { return RadioDev; }
+    virtual void  setRadioDevice(const QString &s);
+
+    virtual const QString &mixerDevice()  const { return MixerDev; }
+    virtual void  setMixerDevice(const QString &s, int ch);
+
+    virtual void  setDevices(const QString &r, const QString &m, int ch);
+
+    virtual int mixerChannel() const { return MixerChannel; }
+
+    virtual float signal() const;
+    virtual bool  isStereo() const;
+
+
+    virtual	float deltaF () const;
+    virtual float minFrequency () const;
+    virtual float maxFrequency () const;
+
+    virtual	float currentFrequency() const;
+    virtual void  setCurrentFrequency(float freq);
+
+    virtual float volume() const;
+    virtual void setVolume(float volume);
+
+    virtual bool power() const;
+    virtual void setPower(bool on);
+
+    virtual bool muted() const;
+    virtual void setMute(bool mute);
+
+    // this function is only supposed to be called by a FrequencyRadioStation
+    virtual bool activateStation(FrequencyRadioStation *station);
 
 protected:
+	void radio_init();
+	void radio_done();
 
+	bool readTunerInfo() const;
+	bool readAudioInfo() const;
+	bool writeAudioInfo();
+
+protected:
 	struct TunerCache {
 		bool  valid;
 		float deltaF;
@@ -59,7 +110,7 @@ protected:
 		TunerCache() { valid = false; }
 	};
 
-	
+
 	QString RadioDev;
 	QString MixerDev;
 	int MixerChannel;
@@ -69,52 +120,11 @@ protected:
 	struct video_audio *audio;
 
 
-	mutable TunerCache  tunercache;	
+	mutable TunerCache  tunercache;
 //	__u16 balance;
 //	__u16 bass ;
 //	__u16 treble;
 
-public:
-	V4LRadio(QObject *parent, const QString &name,
-	         const QString &RadioDev = "", const QString &MixerDev = "", int MixerChannel = 0);
-	~V4LRadio();
-
-	virtual void  setRadioDevice(const QString &s);
-	virtual void  setMixerDevice(const QString &s, int ch);
-	virtual void  setDevices(const QString &r, const QString &m, int ch);
-
-	virtual const QString &radioDevice()  const { return RadioDev; }
-	virtual const QString &mixerDevice()  const { return MixerDev; }
-	virtual const int      mixerChannel() const { return MixerChannel; }
-	
-	virtual float signal() const;				
-	virtual bool  isStereo() const;
-
-	virtual void  _setFrequency(float freq);
-	virtual	float getFrequency() const;
-	virtual	float deltaF () const;
-	virtual float minFrequency () const;
-	virtual float maxFrequency () const;
-
-	virtual void  setVolume(float vol);			
-	virtual float getVolume() const;
-
-	virtual bool  isPowerOn () const;
-	virtual bool  isMuted() const;
-
-public slots:
-	virtual void  PowerOn ();
-	virtual void  PowerOff ();
-	virtual void  unmute();
-	virtual void  mute();
-
-protected:
-	void radio_init();
-	void radio_done();
-
-	bool readTunerInfo() const;
-	bool readAudioInfo() const;
-	bool writeAudioInfo();
 };
 
 #endif

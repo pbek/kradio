@@ -10,14 +10,14 @@
  </XMI.header>
  <XMI.content>
   <docsettings viewid="617" documentation="Those classes replace the former RadioBase, RadioStation V4LRadio classes.
-" uniqueid="728" />
+" uniqueid="732" />
   <umlobjects>
    <UML:Interface stereotype="interface" package="" xmi.id="619" abstract="0" documentation="" name="RadioStation" static="0" scope="200" >
     <UML:Operation stereotype="" package="" xmi.id="664" type="RadioDevice" abstract="0" documentation="" name="getRadio" static="0" scope="200" />
    </UML:Interface>
-   <UML:Class stereotype="class" package="" xmi.id="620" abstract="1" documentation="Hardware Radios are based on the radio frequency." name="HardwareRadio" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="661" type="void" abstract="0" documentation="" name="activateStation" static="0" scope="200" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="HardwareRadioStation" abstract="0" documentation="" name="station" static="0" scope="200" />
+   <UML:Class stereotype="class" package="" xmi.id="620" abstract="1" documentation="Frequency Radios usually require some hardware that can receive &quot;normal&quot; radio." name="FrequencyRadio" static="0" scope="200" >
+    <UML:Operation stereotype="" package="" xmi.id="661" type="bool" abstract="0" documentation="" name="activateStation" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="FrequencyRadioStation" abstract="0" documentation="" name="station" static="0" scope="200" />
     </UML:Operation>
     <UML:Operation stereotype="" package="" xmi.id="690" type="void" abstract="0" documentation="" name="setRangeOverride" static="0" scope="200" >
      <UML:Parameter stereotype="" package="" xmi.id="2" value="-1" type="float" abstract="0" documentation="" name="minf" static="0" scope="200" />
@@ -26,9 +26,9 @@
     <UML:Operation stereotype="" package="" xmi.id="695" type="float" abstract="1" documentation="" name="deltaF" static="0" scope="200" />
     <UML:Operation stereotype="" package="" xmi.id="696" type="float" abstract="1" documentation="" name="minFrequency" static="0" scope="200" />
     <UML:Operation stereotype="" package="" xmi.id="697" type="float" abstract="1" documentation="" name="maxFrequency" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="702" type="void" abstract="0" documentation="" name="startSeekUp" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="703" type="void" abstract="0" documentation="" name="startSeekDown" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="704" type="void" abstract="0" documentation="" name="stopSeek" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="702" type="void" abstract="0" documentation="" name="slotStartSeekUp" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="703" type="void" abstract="0" documentation="" name="slotStartSeekDown" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="704" type="void" abstract="0" documentation="" name="slotStopSeek" static="0" scope="200" />
     <UML:Operation stereotype="" package="" xmi.id="705" type="bool" abstract="0" documentation="" name="isSeeking" static="0" scope="200" />
     <UML:Attribute stereotype="" package="" xmi.id="691" value="" type="bool" abstract="0" documentation="" name="rangeOverrideEnabled" static="0" scope="200" />
     <UML:Attribute stereotype="" package="" xmi.id="692" value="" type="float" abstract="0" documentation="" name="signalMinQuality" static="0" scope="200" />
@@ -38,7 +38,7 @@
    <UML:Class stereotype="class" package="" xmi.id="621" abstract="0" documentation="" name="V4LRadio" static="0" scope="200" />
    <UML:Class stereotype="class" package="" xmi.id="622" abstract="0" documentation="" name="ArtsStreamRadio" static="0" scope="200" />
    <UML:Class stereotype="class" package="" xmi.id="627" abstract="0" documentation="The concrete RadioDevice classes need to be stored in a way such that the appropriate Radio Device may be found and created if not existing yet." name="Radio" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="630" type="RadioStation" abstract="0" documentation="" name="getCurrentStation" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="630" type="RadioStation" abstract="0" documentation="" name="currentStation" static="0" scope="200" />
     <UML:Operation stereotype="" package="" xmi.id="639" type="void" abstract="0" documentation="Switches the power on, this blocks the hardware device.
 Implemented as Qt Slot" name="slotPowerOn" static="0" scope="200" />
     <UML:Operation stereotype="" package="" xmi.id="640" type="void" abstract="0" documentation="Switches the power off, this releases the hardware device.
@@ -50,23 +50,28 @@ Implemented as Qt slot." name="slotMute" static="0" scope="200" />
     <UML:Operation stereotype="" package="" xmi.id="651" type="void" abstract="0" documentation="Unmute the radio. This is different to powerOn, because it undoes mute, not powerOff. This is usefull for avoiding noice when switching between Radio Stations.
 
 Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="708" type="RadioDevice" abstract="0" documentation="" name="getCurrentRadio" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="709" type="void" abstract="0" documentation="" name="changeCurrentRadio" static="0" scope="200" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioDevice" abstract="0" documentation="" name="radio" static="0" scope="200" />
-    </UML:Operation>
-    <UML:Operation stereotype="" package="" xmi.id="726" type="RadioStation" abstract="0" documentation="" name="createHardwareStation" static="0" scope="200" >
+    <UML:Operation stereotype="" package="" xmi.id="726" type="RadioStation" abstract="0" documentation="" name="createFrequencyRadioStation" static="0" scope="200" >
      <UML:Parameter stereotype="" package="" xmi.id="2" value="" type="QString" abstract="0" documentation="" name="name" static="0" scope="200" />
      <UML:Parameter stereotype="" package="" xmi.id="4" value="" type="float" abstract="0" documentation="" name="frequency" static="0" scope="200" />
     </UML:Operation>
-    <UML:Operation stereotype="" package="" xmi.id="727" type="RadioStation" abstract="0" documentation="" name="createStreamStation" static="0" scope="200" >
+    <UML:Operation stereotype="" package="" xmi.id="727" type="RadioStation" abstract="0" documentation="" name="createInternetRadioStation" static="0" scope="200" >
      <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="QString" abstract="0" documentation="" name="name" static="0" scope="200" />
      <UML:Parameter stereotype="" package="" xmi.id="3" value="" type="KURL" abstract="0" documentation="" name="url" static="0" scope="200" />
+    </UML:Operation>
+    <UML:Operation stereotype="" package="" xmi.id="731" type="void" abstract="0" documentation="" name="slotCurrentStationChanged" static="0" scope="202" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioStation" abstract="0" documentation="" name="station" static="0" scope="200" />
     </UML:Operation>
    </UML:Class>
    <UML:Class stereotype="class" package="" xmi.id="636" abstract="0" documentation="" name="StationVector" static="0" scope="200" />
    <UML:Class stereotype="class" package="" xmi.id="644" abstract="0" documentation="holds the common methods for accessing stations in the list." name="StationList" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="684" type="RadioStation" abstract="0" documentation="returns the closest match to templateStation in the list, or a null pointer. The semantics of closest match beeing whatever RadioStation::matches() returns" name="matchingStation" static="0" scope="200" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioStation" abstract="0" documentation="return the station from the station list that matches the given Station." name="template" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="684" type="RadioStation" abstract="0" documentation="returns the Station in the list which points to the given URL, or a null pointer. " name="matchingRadioStation" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="KURL" abstract="0" documentation="return the station from the station list that matches the given URL." name="url" static="0" scope="200" />
+    </UML:Operation>
+    <UML:Operation stereotype="" package="" xmi.id="732" type="RadioStation" abstract="0" documentation="" name="matchingRadioStation" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="float" abstract="0" documentation="" name="frequency" static="0" scope="200" />
+    </UML:Operation>
+    <UML:Operation stereotype="" package="" xmi.id="729" type="void" abstract="0" documentation="" name="merge" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="StationList" abstract="0" documentation="The other List which should be merged into this list." name="otherList" static="0" scope="200" />
     </UML:Operation>
    </UML:Class>
    <UML:Class stereotype="class" package="" xmi.id="647" abstract="0" documentation="" name="StationListMetaData" static="0" scope="200" >
@@ -77,25 +82,19 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
     <UML:Attribute stereotype="" package="" xmi.id="679" value="" type="QString" abstract="0" documentation="" name="media" static="0" scope="200" />
     <UML:Attribute stereotype="" package="" xmi.id="680" value="" type="QString" abstract="0" documentation="" name="comment" static="0" scope="200" />
    </UML:Class>
-   <UML:Class stereotype="class" package="" xmi.id="652" abstract="0" documentation="" name="StreamRadioStation" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="713" type="RadioDevice" abstract="0" documentation="" name="getRadio" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="714" type="void" abstract="0" documentation="" name="activate" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="715" type="bool" abstract="0" documentation="" name="matches" static="0" scope="200" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioStation" abstract="0" documentation="" name="templateStation" static="0" scope="200" />
-    </UML:Operation>
-    <UML:Operation stereotype="" package="" xmi.id="716" type="bool" abstract="0" documentation="" name="matchesStreamRadioStation" static="0" scope="202" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="StreamRadioStation" abstract="0" documentation="" name="templateStation" static="0" scope="200" />
+   <UML:Class stereotype="class" package="" xmi.id="652" abstract="0" documentation="" name="InternetRadioStation" static="0" scope="200" >
+    <UML:Operation stereotype="" package="" xmi.id="713" type="RadioDevice" abstract="0" documentation="" name="radio" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="714" type="void" abstract="0" documentation="" name="slotActivate" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="715" type="bool" abstract="0" documentation="returns true, if the given URL equals the URL of this station" name="urlMatch" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="KURL" abstract="0" documentation="" name="url" static="0" scope="200" />
     </UML:Operation>
     <UML:Attribute stereotype="" package="" xmi.id="712" value="" type="KURL" abstract="0" documentation="" name="url" static="0" scope="200" />
    </UML:Class>
-   <UML:Class stereotype="class" package="" xmi.id="653" abstract="0" documentation="" name="HardwareRadioStation" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="717" type="RadioDevice" abstract="0" documentation="" name="getRadio" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="718" type="void" abstract="0" documentation="" name="activate" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="719" type="bool" abstract="0" documentation="" name="matches" static="0" scope="200" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioStation" abstract="0" documentation="" name="templateStation" static="0" scope="200" />
-    </UML:Operation>
-    <UML:Operation stereotype="" package="" xmi.id="720" type="void" abstract="0" documentation="" name="matchesHardwareRadioStation" static="0" scope="202" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="HardwareRadioStation" abstract="0" documentation="" name="templateStation" static="0" scope="200" />
+   <UML:Class stereotype="class" package="" xmi.id="653" abstract="0" documentation="" name="FrequencyRadioStation" static="0" scope="200" >
+    <UML:Operation stereotype="" package="" xmi.id="717" type="RadioDevice" abstract="0" documentation="" name="radio" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="718" type="void" abstract="0" documentation="" name="slotActivate" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="720" type="bool" abstract="0" documentation="" name="frequencyMatch" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="float" abstract="0" documentation="" name="frequency" static="0" scope="200" />
     </UML:Operation>
     <UML:Attribute stereotype="" package="" xmi.id="711" value="" type="float" abstract="0" documentation="" name="frequency" static="0" scope="200" />
    </UML:Class>
@@ -116,23 +115,23 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
    </UML:Interface>
    <UML:Class stereotype="class" package="" xmi.id="657" abstract="0" documentation="" name="ArtsRadioStation" static="0" scope="200" />
    <UML:Interface stereotype="interface" package="" xmi.id="658" abstract="0" documentation="" name="StreamRadio" static="0" scope="200" />
-   <UML:Class stereotype="class" package="" xmi.id="659" abstract="1" documentation="A Stream Radio does not handle frequencies but URLs
-" name="StreamRadio" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="660" type="void" abstract="0" documentation="" name="activateStation" static="0" scope="200" >
+   <UML:Class stereotype="class" package="" xmi.id="659" abstract="1" documentation="An Internet Radio does not handle frequencies but URLs, which point to streams
+" name="InternetRadio" static="0" scope="200" >
+    <UML:Operation stereotype="" package="" xmi.id="660" type="bool" abstract="0" documentation="" name="activateStation" static="0" scope="200" >
      <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="StreamRadioStation" abstract="0" documentation="" name="station" static="0" scope="200" />
     </UML:Operation>
    </UML:Class>
    <UML:Class stereotype="class" package="" xmi.id="665" abstract="1" documentation="" name="RadioStation" static="0" scope="200" >
-    <UML:Operation stereotype="" package="" xmi.id="666" type="RadioDevice" abstract="1" documentation="" name="getRadio" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="674" type="void" abstract="1" documentation="" name="activate" static="0" scope="200" />
-    <UML:Operation stereotype="" package="" xmi.id="685" type="bool" abstract="1" documentation="" name="matches" static="0" scope="200" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioStation" abstract="0" documentation="" name="templateStation" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="666" type="RadioDevice" abstract="1" documentation="radio() may be null, this means that the station can not be used and should be shown as deactivated in the GUI. " name="radio" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="674" type="void" abstract="1" documentation="" name="slotActivate" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="686" type="bool" abstract="0" documentation="True if the station points to the given URL" name="urlMatch" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="KURL" abstract="0" documentation="" name="url" static="0" scope="200" />
     </UML:Operation>
-    <UML:Operation stereotype="" package="" xmi.id="686" type="bool" abstract="0" documentation="" name="matchesStreamRadioStation" static="0" scope="202" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="StreamRadioStation" abstract="0" documentation="" name="templateStation" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="687" type="bool" abstract="0" documentation="true if this station has the given frequency (or is close)." name="frequencyMatch" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="float" abstract="0" documentation="" name="frequency" static="0" scope="200" />
     </UML:Operation>
-    <UML:Operation stereotype="" package="" xmi.id="687" type="bool" abstract="0" documentation="" name="matchesHardwareRadioStation" static="0" scope="202" >
-     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="HardwareRadioStation" abstract="0" documentation="" name="templateStation" static="0" scope="200" />
+    <UML:Operation stereotype="" package="" xmi.id="730" type="void" abstract="0" documentation="" name="signalActivated" static="0" scope="200" >
+     <UML:Parameter stereotype="" package="" xmi.id="1" value="" type="RadioStation" abstract="0" documentation="" name="station" static="0" scope="200" />
     </UML:Operation>
     <UML:Attribute stereotype="" package="" xmi.id="668" value="" type="bool" abstract="0" documentation="" name="useQuickSelect" static="0" scope="200" />
     <UML:Attribute stereotype="" package="" xmi.id="669" value="" type="bool" abstract="0" documentation="" name="useInDockingMenu" static="0" scope="200" />
@@ -147,8 +146,8 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
    <UML:Association nameb="" stereotype="" visibilitya="200" visibilityb="200" assoctype="511" rolea="620" roleb="655" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
    <UML:Association nameb="" stereotype="" visibilitya="200" visibilityb="200" assoctype="511" rolea="659" roleb="655" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
    <UML:Association nameb="" stereotype="" visibilitya="200" visibilityb="200" assoctype="500" rolea="622" roleb="659" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
-   <UML:Association nameb="streamRadio" stereotype="" visibilitya="200" visibilityb="202" assoctype="512" rolea="652" roleb="659" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
-   <UML:Association nameb="hwRadio" stereotype="" visibilitya="200" visibilityb="202" assoctype="512" rolea="653" roleb="620" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
+   <UML:Association nameb="internetRadio" stereotype="" visibilitya="200" visibilityb="202" assoctype="512" rolea="652" roleb="659" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
+   <UML:Association nameb="frequencyRadio" stereotype="" visibilitya="200" visibilityb="202" assoctype="512" rolea="653" roleb="620" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
    <UML:Association nameb="" stereotype="" visibilitya="200" visibilityb="200" assoctype="501" rolea="665" roleb="644" multia="*" doca="" multib="1" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
    <UML:Association nameb="" stereotype="" visibilitya="200" visibilityb="200" assoctype="500" rolea="653" roleb="665" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
    <UML:Association nameb="" stereotype="" visibilitya="200" visibilityb="200" assoctype="500" rolea="652" roleb="665" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="" />
@@ -156,27 +155,24 @@ Implemented as Qt slot." name="slotUnmute" static="0" scope="200" />
    <UML:Association nameb="currentRadio" stereotype="" visibilitya="202" visibilityb="202" assoctype="503" rolea="627" roleb="655" multia="" doca="" multib="" docb="" package="" xmi.id="-1" abstract="0" documentation="" name="" static="0" scope="200" changeabilitya="900" changeabilityb="900" namea="radio" />
   </umlobjects>
   <diagrams>
-   <diagram snapgrid="1" showattsig="1" fillcolor="#ffffff" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="1554" snapy="10" showatts="1" xmi.id="617" documentation="" type="402" showops="1" showpackage="0" name="RadioStructure" localid="30000" showstereotype="0" showscope="1" snapcsgrid="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="694" >
+   <diagram snapgrid="1" showattsig="1" fillcolor="#ffffff" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="1504" snapy="10" showatts="1" xmi.id="617" documentation="" type="402" showops="1" showpackage="0" name="RadioStructure" localid="30000" showstereotype="0" showscope="1" snapcsgrid="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="694" >
     <widgets>
      <UML:ClassWidget usesdiagramfillcolour="0" width="320" showattsigs="601" usesdiagramusefillcolour="0" x="10" linecolour="#000000" y="410" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="200" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="620" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
      <UML:ClassWidget usesdiagramfillcolour="0" width="80" showattsigs="601" usesdiagramusefillcolour="0" x="120" linecolour="#000000" y="650" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="30" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="621" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
      <UML:ClassWidget usesdiagramfillcolour="0" width="110" showattsigs="601" usesdiagramusefillcolour="0" x="410" linecolour="#000000" y="660" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="30" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="622" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-     <UML:ClassWidget usesdiagramfillcolour="0" width="380" showattsigs="601" usesdiagramusefillcolour="0" x="300" linecolour="#000000" y="0" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="170" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="627" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-     <UML:ClassWidget usesdiagramfillcolour="0" width="310" showattsigs="601" usesdiagramusefillcolour="0" x="870" linecolour="#000000" y="30" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="40" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="644" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+     <UML:ClassWidget usesdiagramfillcolour="0" width="420" showattsigs="601" usesdiagramusefillcolour="0" x="300" linecolour="#000000" y="0" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="150" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="627" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+     <UML:ClassWidget usesdiagramfillcolour="0" width="300" showattsigs="601" usesdiagramusefillcolour="0" x="870" linecolour="#000000" y="30" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="70" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="644" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
      <UML:ClassWidget usesdiagramfillcolour="0" width="150" showattsigs="601" usesdiagramusefillcolour="0" x="1350" linecolour="#000000" y="60" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="110" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="647" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-     <UML:ClassWidget usesdiagramfillcolour="0" width="400" showattsigs="601" usesdiagramusefillcolour="0" x="1150" linecolour="#000000" y="420" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="90" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="652" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-     <UML:ClassWidget usesdiagramfillcolour="0" width="420" showattsigs="601" usesdiagramusefillcolour="0" x="670" linecolour="#000000" y="490" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="90" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="653" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+     <UML:ClassWidget usesdiagramfillcolour="0" width="160" showattsigs="601" usesdiagramusefillcolour="0" x="1150" linecolour="#000000" y="420" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="70" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="652" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+     <UML:ClassWidget usesdiagramfillcolour="0" width="230" showattsigs="601" usesdiagramusefillcolour="0" x="670" linecolour="#000000" y="490" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="70" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="653" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
      <interfacewidget usesdiagramfillcolour="0" width="190" usesdiagramusefillcolour="0" x="90" linecolour="#000000" y="150" drawascircle="0" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="120" usefillcolor="1" isinstance="0" xmi.id="655" showoperations="1" showpackage="0" showscope="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
      <UML:ClassWidget usesdiagramfillcolour="0" width="290" showattsigs="601" usesdiagramusefillcolour="0" x="350" linecolour="#000000" y="420" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="40" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="659" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-     <UML:ClassWidget usesdiagramfillcolour="0" width="420" showattsigs="601" usesdiagramusefillcolour="0" x="900" linecolour="#000000" y="150" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="170" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="665" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-     <UML:NoteWidget usesdiagramfillcolour="1" width="310" usesdiagramusefillcolour="1" x="1230" linecolour="none" y="550" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="140" usefillcolor="1" isinstance="0" xmi.id="688" text="getRadio() { 
-  return streamRadio;
+     <UML:ClassWidget usesdiagramfillcolour="0" width="250" showattsigs="601" usesdiagramusefillcolour="0" x="900" linecolour="#000000" y="150" showopsigs="601" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffff" height="170" usefillcolor="1" showattributes="1" isinstance="0" xmi.id="665" showoperations="1" showpackage="0" showscope="1" showstereotype="0" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+     <UML:NoteWidget usesdiagramfillcolour="1" width="210" usesdiagramusefillcolour="1" x="1230" linecolour="none" y="550" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="100" usefillcolor="1" isinstance="0" xmi.id="688" text="radio() { 
+  return internetRadio;
 }
 activate() {
-  streamRadio->activateStation(this);
-}
-matches(RadioStation* templateStation) {
-  return templateStation->matchesStreamRadioStation(this);
+  internetRadio->activateStation(this);
 }" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
     </widgets>
     <messages/>
@@ -188,26 +184,26 @@ matches(RadioStation* templateStation) {
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="644" roleBdoc="" widgetaid="647" roleAdoc="" documentation="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1360" linecolour="none" y="170" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1370" linecolour="none" y="180" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1340" linecolour="none" y="120" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1180" linecolour="none" y="30" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1170" linecolour="none" y="50" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1290" linecolour="none" y="90" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="metaData" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1180" linecolour="none" y="50" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1170" linecolour="none" y="70" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1280" linecolour="none" y="70" operation="" instancename="" posttext="}" usesdiagramlinecolour="1" role="711" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="{" isinstance="0" xmi.id="-1" text="changeable" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <linepath>
        <startpoint startx="1350" starty="115" />
-       <endpoint endx="1180" endy="50" />
+       <endpoint endx="1170" endy="65" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="644" roleBdoc="" widgetaid="627" roleAdoc="" documentation="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="775" linecolour="none" y="67" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="682" linecolour="none" y="87" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="862" linecolour="none" y="28" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="682" linecolour="none" y="63" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="798" linecolour="none" y="52" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="allStations" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="780" linecolour="none" y="80" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="720" linecolour="none" y="90" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="860" linecolour="none" y="50" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="720" linecolour="none" y="60" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="800" linecolour="none" y="70" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="allStations" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <linepath>
-       <startpoint startx="680" starty="85" />
-       <endpoint endx="870" endy="50" />
+       <startpoint startx="720" starty="75" />
+       <endpoint endx="870" endy="65" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="3" indexb="1" widgetbid="655" roleBdoc="" widgetaid="620" roleAdoc="" documentation="" type="511" changeabilityA="900" changeabilityB="900" visibilityA="200" >
@@ -229,64 +225,61 @@ matches(RadioStation* templateStation) {
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="202" totalcountb="2" indexb="1" widgetbid="659" roleBdoc="" widgetaid="652" roleAdoc="" documentation="" type="512" changeabilityA="900" changeabilityB="900" visibilityA="200" >
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="870" linecolour="none" y="440" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1040" linecolour="none" y="520" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="650" linecolour="none" y="420" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1030" linecolour="none" y="460" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="650" linecolour="none" y="440" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="#" isinstance="0" xmi.id="-1" text="streamRadio" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="900" linecolour="none" y="450" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1140" linecolour="none" y="460" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="640" linecolour="none" y="420" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1130" linecolour="none" y="430" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="650" linecolour="none" y="440" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="#" isinstance="0" xmi.id="-1" text="internetRadio" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <linepath>
-       <startpoint startx="1150" starty="465" />
+       <startpoint startx="1150" starty="455" />
        <endpoint endx="640" endy="440" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="202" totalcountb="2" indexb="1" widgetbid="620" roleBdoc="" widgetaid="653" roleAdoc="" documentation="" type="512" changeabilityA="900" changeabilityB="900" visibilityA="200" >
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="420" linecolour="none" y="450" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="720" linecolour="none" y="560" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="500" linecolour="none" y="520" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="660" linecolour="none" y="530" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="330" linecolour="none" y="490" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="710" linecolour="none" y="550" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="330" linecolour="none" y="510" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="#" isinstance="0" xmi.id="-1" text="hwRadio" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="650" linecolour="none" y="500" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="330" linecolour="none" y="510" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="#" isinstance="0" xmi.id="-1" text="frequencyRadio" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <linepath>
-       <startpoint startx="670" starty="535" />
+       <startpoint startx="670" starty="525" />
        <endpoint endx="330" endy="510" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="644" roleBdoc="" widgetaid="665" roleAdoc="" documentation="" type="501" changeabilityA="900" changeabilityB="900" visibilityA="200" >
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1090" linecolour="none" y="160" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="*" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1020" linecolour="none" y="80" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1040" linecolour="none" y="140" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="*" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="1010" linecolour="none" y="130" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="1" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <linepath>
-       <startpoint startx="1110" starty="150" />
-       <endpoint endx="1025" endy="70" />
+       <startpoint startx="1025" starty="150" />
+       <endpoint endx="1020" endy="100" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="3" indexb="1" widgetbid="665" roleBdoc="" widgetaid="653" roleAdoc="" documentation="" type="500" changeabilityA="900" changeabilityB="900" visibilityA="200" >
       <linepath>
-       <startpoint startx="880" starty="490" />
-       <endpoint endx="1040" endy="320" />
+       <startpoint startx="785" starty="490" />
+       <endpoint endx="983" endy="320" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="3" indexb="2" widgetbid="665" roleBdoc="" widgetaid="652" roleAdoc="" documentation="" type="500" changeabilityA="900" changeabilityB="900" visibilityA="200" >
       <linepath>
-       <startpoint startx="1350" starty="420" />
-       <endpoint endx="1180" endy="320" />
+       <startpoint startx="1230" starty="420" />
+       <endpoint endx="1066" endy="320" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="652" roleBdoc="" widgetaid="688" roleAdoc="" documentation="" type="513" changeabilityA="900" changeabilityB="900" visibilityA="200" >
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="510" linecolour="none" y="240" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="660" linecolour="none" y="150" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="470" linecolour="none" y="230" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="+" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <linepath>
-       <startpoint startx="1385" starty="550" />
-       <endpoint endx="1350" endy="510" />
+       <startpoint startx="1335" starty="550" />
+       <endpoint endx="1230" endy="490" />
       </linepath>
      </UML:AssocWidget>
      <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="202" totalcountb="2" indexb="1" widgetbid="655" roleBdoc="" widgetaid="627" roleAdoc="" documentation="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="202" >
-      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="240" linecolour="none" y="110" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="240" linecolour="none" y="130" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="290" linecolour="none" y="80" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="190" linecolour="none" y="150" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="" isinstance="0" xmi.id="-1" text="" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="260" linecolour="none" y="110" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="709" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="#" isinstance="0" xmi.id="-1" text="radio" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <UML:FloatingTextWidget usesdiagramfillcolour="1" width="0" usesdiagramusefillcolour="1" x="190" linecolour="none" y="130" operation="" instancename="" posttext="" usesdiagramlinecolour="1" role="710" fillcolour="none" height="0" usefillcolor="1" seqnum="" pretext="#" isinstance="0" xmi.id="-1" text="currentRadio" font="Helvetica,10,-1,5,50,0,0,0,0,0" />
       <linepath>
-       <startpoint startx="300" starty="85" />
+       <startpoint startx="300" starty="75" />
        <endpoint endx="185" endy="150" />
       </linepath>
      </UML:AssocWidget>
@@ -301,7 +294,7 @@ matches(RadioStation* templateStation) {
     <listitem open="1" type="801" id="-1" label="Logical View" >
      <listitem open="1" type="813" id="657" label="ArtsRadioStation" />
      <listitem open="1" type="813" id="622" label="ArtsStreamRadio" />
-     <listitem open="1" type="813" id="620" label="HardwareRadio" >
+     <listitem open="1" type="813" id="620" label="FrequencyRadio" >
       <listitem open="0" type="815" id="661" label="activateStation" />
       <listitem open="0" type="815" id="695" label="deltaF" />
       <listitem open="0" type="814" id="694" label="frequency" />
@@ -312,30 +305,36 @@ matches(RadioStation* templateStation) {
       <listitem open="0" type="814" id="693" label="scanStep" />
       <listitem open="0" type="815" id="690" label="setRangeOverride" />
       <listitem open="0" type="814" id="692" label="signalMinQuality" />
-      <listitem open="0" type="815" id="703" label="startSeekDown" />
-      <listitem open="0" type="815" id="702" label="startSeekUp" />
-      <listitem open="0" type="815" id="704" label="stopSeek" />
+      <listitem open="0" type="815" id="703" label="slotStartSeekDown" />
+      <listitem open="0" type="815" id="702" label="slotStartSeekUp" />
+      <listitem open="0" type="815" id="704" label="slotStopSeek" />
      </listitem>
-     <listitem open="1" type="813" id="653" label="HardwareRadioStation" >
-      <listitem open="0" type="815" id="718" label="activate" />
+     <listitem open="1" type="813" id="653" label="FrequencyRadioStation" >
+      <listitem open="0" type="815" id="718" label="slotActivate" />
       <listitem open="0" type="814" id="711" label="frequency" />
-      <listitem open="0" type="815" id="717" label="getRadio" />
-      <listitem open="0" type="815" id="719" label="matches" />
-      <listitem open="0" type="815" id="720" label="matchesHardwareRadioStation" />
+      <listitem open="0" type="815" id="717" label="radio" />
+      <listitem open="0" type="815" id="720" label="frequencyMatch" />
+     </listitem>
+     <listitem open="1" type="813" id="659" label="InternetRadio" >
+      <listitem open="0" type="815" id="660" label="activateStation" />
+     </listitem>
+     <listitem open="1" type="813" id="652" label="InternetRadioStation" >
+      <listitem open="0" type="815" id="714" label="slotActivate" />
+      <listitem open="0" type="815" id="713" label="radio" />
+      <listitem open="0" type="815" id="715" label="urlMatch" />
+      <listitem open="0" type="814" id="712" label="url" />
      </listitem>
      <listitem open="1" type="813" id="627" label="Radio" >
-      <listitem open="0" type="815" id="709" label="changeCurrentRadio" />
-      <listitem open="0" type="815" id="726" label="createHardwareStation" />
-      <listitem open="0" type="815" id="727" label="createStreamStation" />
-      <listitem open="0" type="815" id="708" label="getCurrentRadio" />
-      <listitem open="0" type="815" id="630" label="getCurrentStation" />
+      <listitem open="0" type="815" id="726" label="createFrequencyRadioStation" />
+      <listitem open="0" type="815" id="727" label="createInternetRadioStation" />
+      <listitem open="0" type="815" id="630" label="currentStation" />
+      <listitem open="0" type="815" id="731" label="slotCurrentStationChanged" />
       <listitem open="0" type="815" id="650" label="slotMute" />
       <listitem open="0" type="815" id="640" label="slotPowerOff" />
       <listitem open="0" type="815" id="639" label="slotPowerOn" />
       <listitem open="0" type="815" id="641" label="slotPowerToggle" />
       <listitem open="0" type="815" id="651" label="slotUnmute" />
      </listitem>
-     <listitem open="1" type="813" id="654" label="RadioDevice" />
      <listitem open="1" type="817" id="655" label="RadioDevice" >
       <listitem open="0" type="815" id="698" label="getVolume" />
       <listitem open="0" type="815" id="701" label="isMuted" />
@@ -344,25 +343,28 @@ matches(RadioStation* templateStation) {
       <listitem open="0" type="815" id="706" label="setPowerOn" />
       <listitem open="0" type="815" id="699" label="setVolume" />
      </listitem>
-     <listitem open="1" type="813" id="665" label="RadioStation" >
-      <listitem open="0" type="815" id="674" label="activate" />
-      <listitem open="0" type="815" id="666" label="getRadio" />
-      <listitem open="0" type="814" id="672" label="iconName" />
-      <listitem open="0" type="814" id="673" label="initialVolume" />
-      <listitem open="0" type="814" id="671" label="longName" />
-      <listitem open="0" type="815" id="685" label="matches" />
-      <listitem open="0" type="815" id="687" label="matchesHardwareRadioStation" />
-      <listitem open="0" type="815" id="686" label="matchesStreamRadioStation" />
-      <listitem open="0" type="814" id="670" label="shortName" />
-      <listitem open="0" type="814" id="669" label="useInDockingMenu" />
-      <listitem open="0" type="814" id="668" label="useQuickSelect" />
-     </listitem>
+     <listitem open="1" type="813" id="654" label="RadioDevice" />
      <listitem open="1" type="817" id="619" label="RadioStation" >
       <listitem open="0" type="815" id="664" label="getRadio" />
      </listitem>
+     <listitem open="1" type="813" id="665" label="RadioStation" >
+      <listitem open="0" type="815" id="666" label="radio" />
+      <listitem open="0" type="814" id="672" label="iconName" />
+      <listitem open="0" type="814" id="673" label="initialVolume" />
+      <listitem open="0" type="814" id="671" label="longName" />
+      <listitem open="0" type="815" id="687" label="frequencyMatch" />
+      <listitem open="0" type="815" id="686" label="urlMatch" />
+      <listitem open="0" type="814" id="670" label="shortName" />
+      <listitem open="0" type="815" id="730" label="signalActivated" />
+      <listitem open="0" type="815" id="674" label="slotActivate" />
+      <listitem open="0" type="814" id="669" label="useInDockingMenu" />
+      <listitem open="0" type="814" id="668" label="useQuickSelect" />
+     </listitem>
      <listitem open="0" type="807" id="617" label="RadioStructure" />
      <listitem open="1" type="813" id="644" label="StationList" >
-      <listitem open="0" type="815" id="684" label="matchingStation" />
+      <listitem open="0" type="815" id="732" label="matchingRadioStation" />
+      <listitem open="0" type="815" id="684" label="matchingRadioStation" />
+      <listitem open="0" type="815" id="729" label="merge" />
      </listitem>
      <listitem open="1" type="813" id="647" label="StationListMetaData" >
       <listitem open="0" type="814" id="678" label="city" />
@@ -374,16 +376,6 @@ matches(RadioStation* templateStation) {
      </listitem>
      <listitem open="1" type="813" id="636" label="StationVector" />
      <listitem open="1" type="817" id="658" label="StreamRadio" />
-     <listitem open="1" type="813" id="659" label="StreamRadio" >
-      <listitem open="0" type="815" id="660" label="activateStation" />
-     </listitem>
-     <listitem open="1" type="813" id="652" label="StreamRadioStation" >
-      <listitem open="0" type="815" id="714" label="activate" />
-      <listitem open="0" type="815" id="713" label="getRadio" />
-      <listitem open="0" type="815" id="715" label="matches" />
-      <listitem open="0" type="815" id="716" label="matchesStreamRadioStation" />
-      <listitem open="0" type="814" id="712" label="url" />
-     </listitem>
      <listitem open="1" type="813" id="621" label="V4LRadio" />
     </listitem>
     <listitem open="1" type="802" id="-1" label="Use Case View" />

@@ -3,7 +3,9 @@
                              -------------------
     begin                : Sat Feb 2 2002
     copyright            : (C) 2002 by Martin Witte / Frank Schwanz
+                               2003 by Klas Kalass
     email                : witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
+                           / klas@kde.org
  ***************************************************************************/
 
 /***************************************************************************
@@ -27,73 +29,66 @@
 #include <qobject.h>
 #include <vector>
 
+// forward declarations
+class KURL;
+
+class RadioDevice;
 /**
-  *@author Martin Witte
+  *@author Martin Witte, Klas Kalass
   */
 
 class RadioStation : public QObject  {
 Q_OBJECT
-protected :	
-	float	Frequency;
-	QString	ShortName;
-	bool	QuickSelect;
-	bool    DockingMenu;
-
-	float	VolumePreset;		// <0: => Don't use
-	
-	QString	iconString;
-
 public:
-			RadioStation();
-			RadioStation(QString Name, QString ShortName, QString iconString,
-					     float Frequency, float VolumePreset = -1);
-			RadioStation(const RadioStation &);
+	RadioStation(QObject *parent, QString name);
+	RadioStation(const RadioStation &);
+	RadioStation(QObject *_parent, const RadioStation &);
 	virtual ~RadioStation();
-	
-	bool    isValid() const;
-	
-	QString getShortName() const     { return ShortName; }
-	QString getLongName() const;
-	QString getIconString() const    { return iconString; }
-	float	getFrequency() const     { return Frequency; }
-	bool    hasFrequency(float f) const;
-	float	getVolumePreset() const  { return VolumePreset; }
-	bool	useQuickSelect() const   { return QuickSelect; }
-	bool    useInDockingMenu() const { return DockingMenu; }
-	
-	void	setQuickSelect(bool qs)  { QuickSelect = qs; }
-	void 	setFrequency(float f)    { Frequency = f; }
-	void	setShortName(QString n)  { ShortName = n; }
-	void	setIconString(QString s) { iconString = s; }
-	void	setVolumePreset(float v) { VolumePreset = v; }
-	void    setUseInDockingMenu (bool b) { DockingMenu = b; }
-	
+
+    // several settings
+	bool	useInQuickSelect() const { return m_useInQuickSelect; }
+	void	setUseInQuickSelect(bool useInQuickSelect)  { m_useInQuickSelect = useInQuickSelect; }
+
+        virtual QString	longName() const;
+
+	QString	shortName() const  { return m_shortName; }
+	void	setShortName(QString shortName)  { m_shortName = shortName; }
+
+	QString	iconName() { return m_iconName; }
+	void	setIconName(QString iconName) { m_iconName = iconName; }
+
+	float	initialVolume() const { return m_initialVolume; }
+	void	setInitialVolume(float initialVolume) { m_initialVolume = initialVolume; }
+
+	bool    useInDockingMenu () const { return m_useInDockingMenu; }
+	void    setUseInDockingMenu (bool useInDockingMenu) { m_useInDockingMenu = useInDockingMenu; }
+
+    // station functionality
+    virtual RadioDevice *radio() = 0;
+    virtual bool urlMatch(KURL const &url) {return false;};
+    virtual bool frequencyMatch(float frequency) {return false;};
+    virtual bool isValid() const = 0;
+
+    /** returns an exact copy of this station, but the parent is the one given */
+    virtual RadioStation *copy(QObject *parent) = 0;
+
 public slots:
-	void activate ();
-	
+    // activate this station
+	virtual void slotActivate () = 0;
+
 signals:
-	void activated (const RadioStation *);
+    // this signal is emitted when this station has been sucessfully activated
+	void signalActivated (const RadioStation *);
+
+protected :
+	float	m_frequency;
+	QString	m_shortName;
+	bool	m_useInQuickSelect;
+	bool    m_useInDockingMenu;
+
+	float	m_initialVolume;		// <0: => Don't use
+
+	QString	m_iconName;
 };
-
-struct StationListMetaData
-{
-	QString    Maintainer;
-	QDateTime  LastChange;
-	QString    Country;
-	QString    City;
-	QString    Media;
-	QString    Comment;
-};
-
-
-
-typedef vector<RadioStation>			StationVector;
-typedef StationVector::iterator			iStationVector;
-typedef StationVector::const_iterator	ciStationVector;
-
-
-
-
-
 
 #endif

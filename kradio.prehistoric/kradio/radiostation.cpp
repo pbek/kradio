@@ -17,87 +17,43 @@
 
 #include "radiostation.h"
 
-// Kopenhagener Wellenplan: 300kHz
-#define STATION_FREQ_INTERVAL_FM   0.3
-
-// Kopenhagener Wellenplan:   9kHz
-#define STATION_FREQ_INTERVAL_AM   0.009
-
-
-RadioStation::RadioStation()
+RadioStation::RadioStation(QObject *_parent, QString _name)
+    : QObject (_parent, _name),
+      m_frequency(0),
+      m_useInQuickSelect(false),
+      m_useInDockingMenu(true),
+      m_initialVolume(-1)
 {
-	Frequency = 0;
-	ShortName = "";
-	VolumePreset = -1;
-	QuickSelect = false;
-	iconString = "";
-	DockingMenu = true;
-}
-
-RadioStation::RadioStation(QString _name, QString _ShortName,
-						   QString _iconString,
-                           float _Frequency, float _volumePreset)
- : QObject (NULL, _name)
-{
-	Frequency = _Frequency;
-	ShortName = _ShortName;
-	VolumePreset = _volumePreset;
-	QuickSelect = false;
-	iconString = _iconString;
-	DockingMenu = true;
 }
 
 
 RadioStation::RadioStation(const RadioStation &s)
-	: QObject (NULL, s.name())
+    : QObject (s.parent(), s.name()),
+      m_frequency(s.m_frequency),
+      m_shortName(s.m_shortName),
+      m_useInQuickSelect(s.m_useInQuickSelect),
+      m_useInDockingMenu(s.m_useInDockingMenu),
+      m_initialVolume(s.m_initialVolume),
+      m_iconName(s.m_iconName)
 {
-	Frequency = s.Frequency;
-	ShortName = s.ShortName;
-	VolumePreset = s.VolumePreset;
-	QuickSelect = s.QuickSelect;
-	iconString = s.iconString;
-	DockingMenu = s.DockingMenu;
 }
 
+RadioStation::RadioStation(QObject *_parent, const RadioStation &s)
+    : QObject (_parent, s.name()),
+      m_frequency(s.m_frequency),
+      m_shortName(s.m_shortName),
+      m_useInQuickSelect(s.m_useInQuickSelect),
+      m_useInDockingMenu(s.m_useInDockingMenu),
+      m_initialVolume(s.m_initialVolume),
+      m_iconName(s.m_iconName)
+{
+}
 
 RadioStation::~RadioStation()
 {
 }
 
-
-QString RadioStation::getLongName() const
+QString RadioStation::longName() const
 {
-	QString longName = name();
-	if (!longName.isEmpty())
-        longName += ", ";
-
-    float   cf = getFrequency();
-    QString f;
-    if (cf >= 10)
-		f = QString().setNum(cf, 'f', 2) + " MHz";
-	else
-		f = QString().setNum(cf * 1000, 'f', 0) + " kHz";
-    
-    longName = longName + f;
-	return longName;
-}
-
-void RadioStation::activate()
-{
-	if (isValid()) {
-		emit activated (this);
-	}
-}
-
-
-bool RadioStation::isValid() const
-{
-	return Frequency > 0;
-}
-
-
-bool RadioStation::hasFrequency(float f) const
-{
-	float delta = f < 10 ? STATION_FREQ_INTERVAL_AM : STATION_FREQ_INTERVAL_FM;
-	return (Frequency + delta/2 > f && Frequency - delta/2 < f);
+    return name();
 }
