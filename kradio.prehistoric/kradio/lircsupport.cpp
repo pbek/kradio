@@ -68,8 +68,9 @@ void LircSupport::slotLIRC(int /*socket*/ )
 	if (!lircConfig || !lirc_notify || fd_lirc == -1)
 		return;
 
-	char *code = 0,
-		 *c = 0;
+	char *code = 0, *c = 0;
+	int numStations, curStation;
+
 	if (lirc_nextcode(&code) == 0) {
 		while(lirc_code2char (lircConfig, code, &c) == 0 && c != NULL) {
 			if (strcasecmp (c, "TV") == 0) {
@@ -94,6 +95,25 @@ void LircSupport::slotLIRC(int /*socket*/ )
 					radio->startSeekUp();
 				else if (strcasecmp (c, "CH-SEARCH") == 0)
 					radio->startSeekDown();
+				else if (strcasecmp (c, "NEXT") == 0) {
+				    numStations = radio->nStations();
+				    curStation = radio->whichStation() + 1;
+				    if (curStation < numStations &&
+					curStation != -1)
+					activateStation(curStation + 1);
+				    else
+					activateStation(1);
+				}
+				else if (strcasecmp (c, "PREV") == 0) {
+				    numStations = radio->nStations();
+				    curStation = radio->whichStation() + 1;
+				    if (curStation > 1)
+					activateStation(curStation - 1);
+				    else if (curStation != -1)
+					activateStation(numStations);
+				    else
+					activateStation(1);
+				}
 			
 				int k = -1;
 				if (sscanf (c, "%i", &k) == 1 ) {
@@ -104,7 +124,7 @@ void LircSupport::slotLIRC(int /*socket*/ )
 					    addIndex = 0;
 					} else {
 						addIndex = k;
-						kbdTimer->start(333, true);
+						kbdTimer->start(700, true);
 					}
 				}
 			}
