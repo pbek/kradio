@@ -33,6 +33,7 @@
 
 #include <list>
 #include "radiobase.h"
+#include "buttonflowlayout.h"
 
 class RadioStation;
 
@@ -49,10 +50,10 @@ class QuickBar : public QWidget  {
    Q_OBJECT
 protected :
 
-    RadioBase     *radio;
-    ButtonList    Buttons;
-    QLayout       *layout;
-    QButtonGroup  *buttonGroup;
+    RadioBase        *radio;
+    ButtonList       Buttons;
+    ButtonFlowLayout *layout;
+    QButtonGroup     *buttonGroup;
     // config
     bool          showShortName;
 public:
@@ -73,11 +74,13 @@ private:
 	void rebuildGUI();
 
 public slots:
-        void setOn(bool on);
+    void setOn(bool on);
 	void slotConfigChanged();
 	void slotFrequencyChanged(float, const RadioStation *);
 	void show();
 	void hide();
+	void setGeometry (const QRect &r);
+	void setGeometry (int x, int y, int w, int h);
 
 signals:
 	void toggled(bool);

@@ -91,12 +91,6 @@ void QuickBar::saveState (KConfig *config)
 	config->writeEntry("desktop", saveDesktop);
 	config->writeEntry("Geometry", saveGeometry);
 
-/*	fprintf (stderr, "%i, %i -  %i x %i\n",
-			 geometry().x(),
-			 geometry().y(),
-			 geometry().width(),
-			 geometry().height());
-*/		
 	config->writeEntry("showShortName", showShortName);
 }
 
@@ -109,6 +103,14 @@ void QuickBar::getState()
 		saveDesktop   = i.desktop;
 		saveGeometry  = geometry();
 	}
+
+/*	fprintf (stderr, "%i, %i -  %i x %i\n",
+			 geometry().x(),
+			 geometry().y(),
+			 geometry().width(),
+			 geometry().height());
+
+*/
 }
 
 
@@ -197,6 +199,8 @@ void QuickBar::show()
 {
   bool wasHidden = !isVisible();
 
+  QWidget::show();
+
   if (wasHidden) {
 	KWin::setOnAllDesktops(winId(), saveSticky);
 	KWin::setType(winId(), NET::Toolbar);
@@ -208,7 +212,6 @@ void QuickBar::show()
 	setGeometry(saveGeometry);
   }
 
-  QWidget::show();
   emit toggled(true);
 }
 
@@ -234,11 +237,14 @@ void QuickBar::resizeEvent (QResizeEvent *e)
 			 e->oldSize().width(), e->oldSize().height(),
 			 e->size().width(), e->size().height());
 */
-	QWidget::resizeEvent (e);
 
 	// minimumSize might change because of the flow layout
-	if (layout)
-		setMinimumSize(layout->minimumSize() + QSize(layout->margin()*2, layout->margin())*2);
+	if (layout) {
+		QSize marginSize(layout->margin()*2, layout->margin()*2);
+		setMinimumSize(layout->minimumSize(e->size() - marginSize) + marginSize);
+	}
+
+	QWidget::resizeEvent (e);
 }
 
 
@@ -246,4 +252,20 @@ void QuickBar::setShowShortName (bool b)
 {
 	showShortName = b;
 	rebuildGUI();
+}
+
+void QuickBar::setGeometry (int x, int y, int w, int h)
+{
+//	fprintf (stderr, "Quickbar::setGeometry(): %i, %i - %i x %i\n",
+//			 x,y,w,h);
+	if (layout) {
+		QSize marginSize(layout->margin()*2, layout->margin()*2);
+		setMinimumSize(layout->minimumSize(QSize(w, h) - marginSize) + marginSize);
+	}
+	QWidget::setGeometry (x, y, w, h);
+}
+
+void QuickBar::setGeometry (const QRect &r)
+{
+	setGeometry (r.x(), r.y(), r.width(), r.height());
 }

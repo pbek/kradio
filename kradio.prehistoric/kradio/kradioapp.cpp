@@ -149,7 +149,7 @@ void KRadioApp::readOptions()
 			int   stId  = config->readNumEntry(AlarmStationIDElement    + QString().setNum(idx), 0);
 
 			enable &= d.isValid();
-			
+
 			Alarm *a = new Alarm ( this, d, daily, enable);
 			a->setVolumePreset(vol);
 			a->setStationID(stId);

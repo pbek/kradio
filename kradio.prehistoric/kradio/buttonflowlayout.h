@@ -43,6 +43,7 @@ public:
     int heightForWidth( int ) const;
     QSize sizeHint() const;
     QSize minimumSize() const;
+    QSize minimumSize(const QSize &r) const;  // minimumSize is dependent from width
     QLayoutIterator iterator();
     QSizePolicy::ExpandData expanding() const;
 

@@ -210,16 +210,20 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 
 QSize ButtonFlowLayout::minimumSize() const
 {
+	return minimumSize(geometry().size());
+}
+
+
+QSize ButtonFlowLayout::minimumSize(const QSize &r) const
+{
     QSize s(0, 0);
-    
+
     for (QListIterator<QLayoutItem> it(list); it.current(); ++it) {
 		QLayoutItem *o = it.current();
     	s = s.expandedTo( o->sizeHint()); //minimumSize() );
     }
 
-    s.setHeight(heightForWidth(geometry().width()));
+    s.setHeight(heightForWidth(r.width()));
 
-//    fprintf(stderr, "buttonflowlayout::minimumsize == %i x %i\n", s.width(), s.height());
-    
     return s;
 }

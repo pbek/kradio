@@ -37,7 +37,9 @@ Alarm::Alarm (QObject *_parent)
 	done = QDateTime();
 	stationID = -1;
 	volumePreset = -1;
+	time = QDateTime (QDate(1800, 1,1), QTime(0,0,0));
 }
+
 
 Alarm::Alarm (const Alarm &a)
 	: QObject (a.parent(), a.name())
