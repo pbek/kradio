@@ -1,0 +1,222 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Stephan Grodde &lt;st.grodde@gmx.de&gt;</maintainer>
+			<changed>2003-06-18T18:40:30</changed>
+			<country>Deutschland</country>
+			<city>Chemnitz</city>
+			<media>Kabel</media>
+			<comments>RFC Breitbandkabelanlage Chemnitz</comments>
+		</info>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.85</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandradio Berlin</name>
+			<shortname>DLR</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Chemnitz</name>
+			<shortname>Chemnitz</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>MDR 1 Radio Sachsen</name>
+			<shortname>MDR 1 Sachsen</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>MDR 1 Radio Thüringen</name>
+			<shortname>MDR 1 Thüringen</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>MDR Kultur</name>
+			<shortname>MDR Kultur</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>MDR Sputnik</name>
+			<shortname>MDR Sputnik</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Sachsen</name>
+			<shortname>Ant. Sachsen</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Sachs.-Anhalt</name>
+			<shortname>Ant. Sa.-A.</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Bayern</name>
+			<shortname>Ant. Bayern</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL Radio</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>R.SA</name>
+			<shortname>R.SA</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.55</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Jump</name>
+			<shortname>Jump</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.55</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Energy</name>
+			<shortname>Energy</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio PSR</name>
+			<shortname>Radio PSR</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 1</name>
+			<shortname>Bayern 1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 2</name>
+			<shortname>Bayern 2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 3</name>
+			<shortname>Bayern 3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio SAW</name>
+			<shortname>SAW</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 2</name>
+			<shortname>NDR 2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.95</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWF 3</name>
+			<shortname>SWF 3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname>Klassik</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melody</name>
+			<shortname>Melody</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+

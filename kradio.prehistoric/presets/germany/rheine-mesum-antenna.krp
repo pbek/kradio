@@ -1,0 +1,113 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Frank Quotschalla, Gutschy@NetzwerkInfo.de</maintainer>
+			<changed>2003-05-26T22:07:44</changed>
+			<country>Germany</country>
+			<city>48432 Rheine-Mesum</city>
+			<media>Antenna: D-Link DRU-R100 USB-Radio</media>
+			<comments>got data from terrestrial irradiation activity. ;)</comments>
+		</info>
+		<station>
+			<name>Eins Live</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio FFN</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio RST</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hit-Radio Antenne</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 2</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 3</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 4</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 5</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 1</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 2</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR Kultur</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+

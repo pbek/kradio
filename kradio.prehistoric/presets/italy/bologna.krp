@@ -1,0 +1,39 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>ukuia</maintainer>
+			<changed>2003-06-09T09:34:15</changed>
+			<country>Italy</country>
+			<city>Bologna</city>
+			<media>Generical commercial radio</media>
+			<comments>The first private radio for audience</comments>
+		</info>
+		<station>
+			<name>RMC</name>
+			<shortname>Radio MonteCarlo</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RETE 105</name>
+			<shortname>Rete 105</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>K-Rock</name>
+			<shortname>K-Rock Radio Station</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,412 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Dr. Andreas Rainer &lt;dr.andreas.rainer@nea-net.de&gt;</maintainer>
+			<changed>2003-05-28T15:09:34</changed>
+			<country>Germany</country>
+			<city>Nürnberg</city>
+			<media>Cable</media>
+			<comments>Fortsetzung folgt - alle Angaben ohne Gewähr!</comments>
+		</info>
+		<station>
+			<name>new station 1</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>67.8252</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 2</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>80.1759</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>HR 1</name>
+			<shortname>HR 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.5264</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Vil Radio</name>
+			<shortname>Vil</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.8014</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 5</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.2514</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 1</name>
+			<shortname>SWR 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.8015</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 2</name>
+			<shortname>SWR 2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.4265</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 3</name>
+			<shortname>SWR 3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.8515</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>mdr Kultur</name>
+			<shortname>mdr Kultur</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.3765</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 10</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.6266</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 11</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.3766</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 12</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.5266</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 13</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.7766</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 4</name>
+			<shortname>BR 4</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.5517</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>B5 Aktuell</name>
+			<shortname>B5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.0517</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 1</name>
+			<shortname>BR 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.4767</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 2</name>
+			<shortname>BR 2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.7518</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 18</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.6018</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Bayern 3</name>
+			<shortname>BR 3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.1268</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Thüringen</name>
+			<shortname>Antenne Thüringen</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.5519</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandradio Berlin</name>
+			<shortname>Deutschlandradio Berlin</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.1769</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname>Deutschlandfunk</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.7519</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 23</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.202</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Bayern</name>
+			<shortname>Antenne Bayern</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.502</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio F/Jazztime</name>
+			<shortname>Radio F/Jazztime</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.377</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 26</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.527</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>AFN Frankfurt</name>
+			<shortname>AFN</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.3021</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>N1</name>
+			<shortname>N1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.6521</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Energy/Radio Z</name>
+			<shortname>Energy/Radio Z</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.377</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 30</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.527</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Gong</name>
+			<shortname>Gong</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.827</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Charivari/Aladin</name>
+			<shortname>Charivari/Aladin</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.677</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 33</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.627</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 34</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.777</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname>Klassik Radio</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.427</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 36</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.927</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>JAM-FM</name>
+			<shortname>JAM-FM</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.302</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 38</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.602</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 39</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.427</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 40</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.003</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 41</name>
+			<shortname>41</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.353</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 42</name>
+			<shortname>42</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.478</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>new station 43</name>
+			<shortname>43</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.753</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melodie</name>
+			<shortname>Radio Melodie</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.603</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+
+

@@ -1,0 +1,120 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Fredrik Sörensson</maintainer>
+			<changed>2003-05-17T22:50:45</changed>
+			<country>Sweden</country>
+			<city>Göteborg</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>Sveriges Radio P1</name>
+			<shortname>Program1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sveriges Radio P2</name>
+			<shortname>Program2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sveriges Radio P3</name>
+			<shortname>Program3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sveriges Radio P4 Göteborg</name>
+			<shortname>Program4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Göteborgs närradio 1</name>
+			<shortname>Närradio 1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Göteborgs närradio 2</name>
+			<shortname>Närradio2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Göteborgs närradio 3</name>
+			<shortname>Närradio3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Lugna favoriter</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NRJ Göteborg</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RIX FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio City</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Mix Megapol</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

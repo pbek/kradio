@@ -1,0 +1,259 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Oli Pursche &lt;oli@s-a-d.de&gt;</maintainer>
+			<changed>2003-07-03T21:10:59</changed>
+			<country>Deutschland</country>
+			<city>Ulm</city>
+			<media>Kabel</media>
+			<comments>Ob schweiz1, radio energy und radio fantasy ok sind weiss ich 
+nicht!</comments>
+		</info>
+		<station>
+			<name>Radio Donau 1</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.55</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk DLF</name>
+			<shortname>Oe1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.85</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 1 BW</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 3 BW</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 2</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 4 BW (Ulm)</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR 2</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 7 (Ulm)</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.3003</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR 1</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.4004</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL Oldisender</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.95</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Schweiz 1</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.6005</frequency>
+			<volumepreset>0.9</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Österreich 1</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.95</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>DeutschlandRadio Berlin</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Energy</name>
+			<shortname>NRJ</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Free FM / Canale Grande</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Schweiz 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.4</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR 5</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Bayern</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.7508</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melodie</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>JAM FM</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR 4 Klassik</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Schweiz 2</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.301</frequency>
+			<volumepreset>-0.01</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Fantasy</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Österreich regional</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Österreich 3</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+

@@ -1,0 +1,132 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Sarah Bransdor, u15051@gmx.de</maintainer>
+			<changed>2003-06-10T14:05:10</changed>
+			<country>Deutschland</country>
+			<city>Berlin-Adlershof</city>
+			<media>antenne</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>SFB Stadtradio</name>
+			<shortname>SFB Stadtradio</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschland Radio Berlin</name>
+			<shortname>D Radio Berlin</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC</name>
+			<shortname>BBC</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Berliner Rundfunk</name>
+			<shortname>Berliner Rundfunk</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.4375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RS 2</name>
+			<shortname>RS2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.3125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 1</name>
+			<shortname>Radio1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RBB Radio 3</name>
+			<shortname>Radio3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.3125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschland Funk</name>
+			<shortname>D Funk</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Paradiso</name>
+			<shortname>Paradiso</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.85</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Brandenburg</name>
+			<shortname>Antenne BRB</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.6875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Fritz</name>
+			<shortname>Fritz</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Energy</name>
+			<shortname>Radio Energy</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.438</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+

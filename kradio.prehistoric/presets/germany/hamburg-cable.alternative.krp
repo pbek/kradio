@@ -1,0 +1,329 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Thies Möller</maintainer>
+			<changed>2003-05-29T19:25:24</changed>
+			<country>Germany</country>
+			<city>Hamburg</city>
+			<media>cable</media>
+			<comments>Frequencies taken from http://www.ham-online.de</comments>
+		</info>
+		<station>
+			<name>Radio Hamburg</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>DeutschlandRadio Berlin</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 1 Radio Niedersachsen</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 1 Welle Nord</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.85</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR Info Spezial (Mittelwelle)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>N-Joy</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.55</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>sunshine live</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Hamburg mit City-Fenster</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.85</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 90.3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.55</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR Info</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.65</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Offener Kanal Hamburg</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR Kultur</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Jazz Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>alster radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oldie 95</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>bremen eins</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.55</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RADIO NORA</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>radio ffn</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>ENERGY 97.1 Hamburg</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.65</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>NDR 1 Radio MV</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>FSK</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hit-Radio Antenne</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>delta radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>R.SH Radio Schleswig-Holstein</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 21</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melodie</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Mecklenburg-Vorpommern</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BFBS</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>JAM-FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>bremen vier</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+

@@ -1,0 +1,88 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Matthew Churcher &lt;M.Churcher@exeter.ac.uk&gt;</maintainer>
+			<changed>2003-06-08T16:55:48</changed>
+			<country>England</country>
+			<city>Exeter</city>
+			<media>Broadcast</media>
+			<comments>as from Exeter University. May nead adjusting around 
+Devon.</comments>
+		</info>
+		<station>
+			<name>Gemini FM (Mixed Network)</name>
+			<shortname>Gemini</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.027</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio DEVON</name>
+			<shortname>Devon</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.8269</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio ONE</name>
+			<shortname>BBC 1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.727</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio TWO</name>
+			<shortname>BBC 2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.0265</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio THREE</name>
+			<shortname>BBC 3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.3015</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC Radio FOUR</name>
+			<shortname>BBC 4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.4017</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic FM</name>
+			<shortname>Classic</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.9771</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Gemini FM (Mixed Network) [alternative Frequency)</name>
+			<shortname>Gemini[2]</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+

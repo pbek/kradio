@@ -1,0 +1,273 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Gerd S. Reschka &lt;Gerd.Reschka@t-online.de&gt;</maintainer>
+			<changed>2935093-02-28T00:00:00</changed>
+			<country>Germany</country>
+			<city>Düsseldorf</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>SWR1 - Rheinland-Pfalz</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR4 - Rheinland</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 2 - Wuppertal</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.95</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>JAM-FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 2 - Rhein-Ruhr</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Neandertal</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>DeutschlandRadio Berlin</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Eins Live (WDR)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL RADIO - Die grössten Oldies</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR Radio 5 Funkhaus Europa</name>
+			<shortname>WDR 5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.7519</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname>KR</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.077</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Berg</name>
+			<shortname>RB</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.7771</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>HR3</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.4771</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BFBS (GB)</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.9521</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 3 (NL)</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.902</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Belgischer Rundfunk (deutsch)</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.627</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>sunshine live</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.002</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melodie</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.502</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR2 - Rheinland Pfalz</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio RPR Eins - Rheinland</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio RSG</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RPR Zwei</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 2 (NL)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 4 (NL)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.45</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>domradio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>107.05</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

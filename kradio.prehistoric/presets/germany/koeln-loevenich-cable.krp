@@ -1,0 +1,165 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Waldemar  Ciszek &lt;ciszek.moeck@t-online.de&gt;</maintainer>
+			<changed>2003-07-12T00:00:00</changed>
+			<country>Nordrhein-Westfalen</country>
+			<city>Köln-Lövenich</city>
+			<media></media>
+			<comments>:-) Kabelnetz Lövenich </comments>
+		</info>
+		<station>
+			<name>EINS LIVE</name>
+			<shortname>1LIVE</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 2</name>
+			<shortname>W2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 3</name>
+			<shortname>W3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 5</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Köln</name>
+			<shortname>K</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Funkhaus Europa</name>
+			<shortname>Eu</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.15</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 1 RP</name>
+			<shortname>S1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 3</name>
+			<shortname>S3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 4 Ko</name>
+			<shortname>S4</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.35</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname>Klassik</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.2</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Hessen 3</name>
+			<shortname>H 3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RPR EINS</name>
+			<shortname>R1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RPR ZWEI</name>
+			<shortname>R2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.65</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>ERFT</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

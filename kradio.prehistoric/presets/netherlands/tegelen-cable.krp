@@ -1,0 +1,366 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Twan vdn Hombergh</maintainer>
+			<changed>2003-06-29T09:56:30</changed>
+			<country>Netherlands</country>
+			<city>Tegelen</city>
+			<media>Essent Cable</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 2</name>
+			<shortname>Radio 2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 3</name>
+			<shortname>Radio 3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 4</name>
+			<shortname>Radio 4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>747 AM</name>
+			<shortname>747 AM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Yorin FM</name>
+			<shortname>Yorin FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 538</name>
+			<shortname>Radio 538</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sky Radio</name>
+			<shortname>Sky Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Noordzee FM</name>
+			<shortname>Nordzee FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 10 FM</name>
+			<shortname>Radio 10</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 192</name>
+			<shortname>Radio 192</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Veronica FM</name>
+			<shortname>Veronica FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>L1 Radio</name>
+			<shortname>L1 Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Limburg</name>
+			<shortname>Radio Limburg</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Lokaal</name>
+			<shortname>Lokaal</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>ID and T Radio</name>
+			<shortname>ID and T Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>XFM</name>
+			<shortname>XFM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Country FM</name>
+			<shortname>Country FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Kink FM</name>
+			<shortname>Kink FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic FM</name>
+			<shortname>Classic FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Concert Zender</name>
+			<shortname>Concert Zender</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Colorful Radio</name>
+			<shortname>Colorful Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>102.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Nationaal</name>
+			<shortname>Radio Nationaal</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Business Nieuws Radio</name>
+			<shortname>Business Nieuws Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Arrow Classic Rock</name>
+			<shortname>Arrow Classic Rock</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>93.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>VRT Radio 1</name>
+			<shortname>VRT Radio 1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>VRT Klara</name>
+			<shortname>VRT Klara</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BBC World Service</name>
+			<shortname>BBC World Service</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>89.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Studio Brussel</name>
+			<shortname>Studio Brussel</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>VRT Radio 2</name>
+			<shortname>VRT Radio 2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>65</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 192</name>
+			<shortname>Radio 192</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>95.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 538</name>
+			<shortname>Radio 538</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Nationaal</name>
+			<shortname>Radio Nationaal</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Sky Radio</name>
+			<shortname>Sky Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>98.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Eins Live</name>
+			<shortname>Eins Live</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>105.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 2 Radio</name>
+			<shortname>WDR 2 Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 3 Radio</name>
+			<shortname>WDR 3 Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>106.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>WDR 4 Radio</name>
+			<shortname>WDR 4 Radio</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTBF 2</name>
+			<shortname>RTBF 2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+

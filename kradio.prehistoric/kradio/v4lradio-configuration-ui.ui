@@ -1,0 +1,367 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>V4LRadioConfigurationUI</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>V4LRadioConfigurationUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>532</width>
+            <height>226</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>SetupDialogGeneral</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout42</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout40</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelRadioDevice</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Radio Device</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelMixerDevice</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Mixer Device</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelMixerChannel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Mixer Channel</string>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout41</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>editRadioDevice</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>editMixerDevice</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox">
+                            <property name="name">
+                                <cstring>comboMixerChannel</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout35</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonSelectRadioDevice</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>...</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonSelectMixerDevice</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>...</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer18_3</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Preferred</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>71</width>
+                                    <height>21</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </vbox>
+                </widget>
+            </hbox>
+        </widget>
+        <spacer row="1" column="1">
+            <property name="name">
+                <cstring>spacer10</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>285</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="2" column="0">
+            <property name="name">
+                <cstring>spacer9</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>50</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>layout8</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>labelScanStep</cstring>
+                    </property>
+                    <property name="text">
+                        <string>station scan step</string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="3" column="1">
+                    <property name="name">
+                        <cstring>editSignalMinQuality</cstring>
+                    </property>
+                    <property name="value">
+                        <number>75</number>
+                    </property>
+                </widget>
+                <widget class="QCheckBox" row="0" column="0">
+                    <property name="name">
+                        <cstring>checkboxOverrideRange</cstring>
+                    </property>
+                    <property name="text">
+                        <string>override frequency range</string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="1" column="1" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>editScanStep</cstring>
+                    </property>
+                    <property name="suffix">
+                        <string> kHz</string>
+                    </property>
+                    <property name="maxValue">
+                        <number>500</number>
+                    </property>
+                    <property name="minValue">
+                        <number>1</number>
+                    </property>
+                    <property name="value">
+                        <number>50</number>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="2">
+                    <property name="name">
+                        <cstring>textLabel1_4_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>labelSignalMinQuality</cstring>
+                    </property>
+                    <property name="text">
+                        <string>minimum signal quality</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="2">
+                    <property name="name">
+                        <cstring>layout37</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelFrequencyRange</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>to</string>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox">
+                            <property name="name">
+                                <cstring>editMaxFrequency</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="suffix">
+                                <string> kHz</string>
+                            </property>
+                            <property name="maxValue">
+                                <number>300000</number>
+                            </property>
+                            <property name="minValue">
+                                <number>1</number>
+                            </property>
+                            <property name="lineStep">
+                                <number>1000</number>
+                            </property>
+                            <property name="value">
+                                <number>300000</number>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLabel" row="1" column="2" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>textLabel1_3</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="0" column="1">
+                    <property name="name">
+                        <cstring>editMinFrequency</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="suffix">
+                        <string> kHz</string>
+                    </property>
+                    <property name="maxValue">
+                        <number>2999999</number>
+                    </property>
+                    <property name="minValue">
+                        <number>0</number>
+                    </property>
+                    <property name="lineStep">
+                        <number>1000</number>
+                    </property>
+                    <property name="value">
+                        <number>0</number>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>checkboxOverrideRange</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>editMinFrequency</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkboxOverrideRange</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>editMaxFrequency</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkboxOverrideRange</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>labelFrequencyRange</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>editRadioDevice</tabstop>
+    <tabstop>buttonSelectRadioDevice</tabstop>
+    <tabstop>editMixerDevice</tabstop>
+    <tabstop>buttonSelectMixerDevice</tabstop>
+    <tabstop>comboMixerChannel</tabstop>
+    <tabstop>checkboxOverrideRange</tabstop>
+    <tabstop>editMinFrequency</tabstop>
+    <tabstop>editMaxFrequency</tabstop>
+    <tabstop>editSignalMinQuality</tabstop>
+</tabstops>
+<pixmapfunction>SmallIconSet</pixmapfunction>
+<layoutdefaults spacing="6" margin="0"/>
+</UI>

@@ -1,5 +1,5 @@
 SUBDIRS =
-EXTRA_DIST = "aachen-cable.krp" "berlin-adlershof-antenna.krp" "berlin-antenna.krp" "bonn-antenna.krp" "braunschweig-cable.krp" "freiburg-cable.krp" "hamburg-antenna.krp" "hamburg-cable.alternative.krp" "hamburg-cable.krp" "hilden-cable.krp" "langenfeld-cable.krp" "leichlingen-cable.krp" "leverkusen-cable.krp" "monheim-cable.krp" "muenchen-cable.krp" "muenchen-forstenried-antenna.krp" "muensterland-antenna.krp" "nuernberg-cable.krp" "rheine-mesum-antenna.krp" "wernigerode-antenna.krp"
+EXTRA_DIST = "aachen-antenna.krp" "aachen-cable.krp" "berlin-adlershof-antenna.krp" "berlin-antenna.krp" "bonn-antenna.krp" "braunschweig-cable.krp" "chemnitz-cable.krp" "duesseldorf.krp" "freiburg-cable.krp" "hamburg-antenna.krp" "hamburg-cable2.krp" "hamburg-cable.alternative.krp" "hamburg-cable.krp" "hilden-cable.krp" "koeln-loevenich-cable.krp" "langenfeld-cable.krp" "leichlingen-cable.krp" "leverkusen-cable.krp" "monheim-cable.krp" "muenchen-cable.krp" "muenchen-forstenried-antenna.krp" "muensterland-antenna.krp" "nuernberg-cable.krp" "rheine-mesum-antenna.krp" "ulm-cable.krp" "wernigerode-antenna.krp"
 
 install-data-local:
 	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/"
@@ -20,9 +20,15 @@ install-data-local:
 	$(INSTALL_DATA) "$(srcdir)/berlin-adlershof-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/berlin-adlershof-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/rheine-mesum-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/rheine-mesum-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/muenchen-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-cable.krp"
+	$(INSTALL_DATA) "$(srcdir)/chemnitz-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/chemnitz-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/berlin-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/berlin-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/muenchen-forstenried-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-forstenried-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/hamburg-cable.alternative.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable.alternative.krp"
+	$(INSTALL_DATA) "$(srcdir)/duesseldorf.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/duesseldorf.krp"
+	$(INSTALL_DATA) "$(srcdir)/ulm-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/ulm-cable.krp"
+	$(INSTALL_DATA) "$(srcdir)/hamburg-cable2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable2.krp"
+	$(INSTALL_DATA) "$(srcdir)/aachen-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/aachen-antenna.krp"
+	$(INSTALL_DATA) "$(srcdir)/koeln-loevenich-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/koeln-loevenich-cable.krp"
 
 
 uninstall-local:
@@ -43,6 +49,12 @@ uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/berlin-adlershof-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/rheine-mesum-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-cable.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/chemnitz-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/berlin-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-forstenried-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable.alternative.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/duesseldorf.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/ulm-cable.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable2.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/aachen-antenna.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/koeln-loevenich-cable.krp"
