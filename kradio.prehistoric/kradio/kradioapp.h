@@ -29,6 +29,7 @@
 #include <kaboutapplication.h>
 
 #include "quickbar.h"
+#include "setupdialog.h"
 #include "v4lradio.h"
 
 class RadioDocking;
@@ -44,13 +45,9 @@ public:
 public slots:
 
   virtual void slotConfigure();
-  virtual void slotSaveConfig (const StationVector &sl,
-							   const AlarmVector &al,
-							   const QString &rdev,
-							   const QString &mdev,
-							   int ch,
-							   bool sn);
-  
+  virtual void slotApplyConfig (SetupDialog &sud);
+  virtual void slotSaveConfig  (SetupDialog &sud);
+
 private:
   void restoreState();
   void readOptions();
@@ -58,17 +55,15 @@ private:
   void saveState();
   void saveOptions();
 
-  KRadio *kradio;
   KAboutApplication AboutApplication;
   
   KConfig       *config;
-  RadioDocking  *tray;
   V4LRadio      *radio;
+  
+  KRadio        *kradio;
+  RadioDocking  *tray;
   QuickBar      *quickbar;
   
-  QString MixerDev, RadioDev;
-  int     MixerChannel;
-
 };
 
 #endif

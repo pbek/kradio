@@ -34,12 +34,11 @@ KRadioApp::KRadioApp()
    tray(0),
    quickbar(0)
 {
-  config = KGlobal::config(); 
-  readOptions();
+  radio = 0;
 
   // the actual radio
-  radio = new V4LRadio(this, "", RadioDev, MixerDev, MixerChannel);
-  radio->readCfg (QString(getenv("HOME")) + "/.kradiorc");
+  radio = new V4LRadio(this, "");
+  radio->readCfg (QString(getenv("HOME")) + "/.kradiorc");  //stations & alarms
 
   // the quick selection buttons
   quickbar = new QuickBar (radio, 0, "kradio-quickbar");
@@ -49,6 +48,11 @@ KRadioApp::KRadioApp()
  
   // Tray
   tray = new RadioDocking(kradio, quickbar, radio);
+
+
+  // load Configuration
+  config = KGlobal::config();
+  readOptions();
 
   // restore Configuration
   restoreState();
@@ -81,28 +85,45 @@ KRadioApp::~KRadioApp()
 
 void KRadioApp::readOptions()
 {
-  config->setGroup("devices");
-  RadioDev = config->readEntry ("RadioDev", "/dev/radio");
-  MixerDev = config->readEntry ("MixerDev", "/dev/mixer");	
-  QString s = config->readEntry ("MixerChannel", "line");
-  MixerChannel = 0;
-  for (MixerChannel = 0; MixerChannel < SOUND_MIXER_NRDEVICES; ++MixerChannel)
-	  if (s == mixerChannelLabels[MixerChannel] ||
-		  s == mixerChannelNames[MixerChannel])
-		  break;
-  if (MixerChannel == SOUND_MIXER_NRDEVICES)
-	  MixerChannel = SOUND_MIXER_LINE;
+    config->setGroup("devices");
+
+	if (radio) {
+
+		QString rDev = config->readEntry ("RadioDev", "/dev/radio");
+		QString mDev = config->readEntry ("MixerDev", "/dev/mixer");
+		QString s = config->readEntry ("MixerChannel", "line");
+		int MixerChannel = 0;
+		for (MixerChannel = 0; MixerChannel < SOUND_MIXER_NRDEVICES; ++MixerChannel) {
+			if (s == mixerChannelLabels[MixerChannel] ||
+				s == mixerChannelNames[MixerChannel])
+				break;
+		}
+		if (MixerChannel == SOUND_MIXER_NRDEVICES)
+			MixerChannel = SOUND_MIXER_LINE;
+
+		radio->setDevices(rDev, mDev, MixerChannel);
+
+		radio->setRangeOverride(config->readBoolEntry ("fRangeOverride", false),
+		  					    config->readDoubleNumEntry ("fMinOverride", 87.0),
+							    config->readDoubleNumEntry ("fMaxOverride", 108.0));
+	}
 }
+
 
 void KRadioApp::saveOptions()
 {
     config->setGroup("devices");
-    config->writeEntry("MixerDev", MixerDev);
-    config->writeEntry("RadioDev", RadioDev);
-    if(MixerChannel <= 0 || MixerChannel >= SOUND_MIXER_NRDEVICES)
-		MixerChannel = SOUND_MIXER_LINE;
-    config->writeEntry("MixerChannel", mixerChannelNames[MixerChannel]);
+    config->writeEntry("MixerDev", radio ? radio->mixerDevice() : QString("/dev/radio"));
+    config->writeEntry("RadioDev", radio ? radio->radioDevice() : QString("/dev/mixer"));
+    int ch = radio ? radio->mixerChannel() : 0;
+    if(ch < 0 || ch >= SOUND_MIXER_NRDEVICES)
+		ch = SOUND_MIXER_LINE;
+    config->writeEntry("MixerChannel", mixerChannelNames[ch]);
+    config->writeEntry("fRangeOverride", radio ? radio->isRangeOverrideSet() : false);
+    config->writeEntry("fMinOverride",   radio ? radio->minFrequency() : 87.0);
+    config->writeEntry("fMaxOverride",   radio ? radio->maxFrequency() : 108.0);
 }
+
 
 void KRadioApp::restoreState()
 {
@@ -150,41 +171,46 @@ void KRadioApp::saveState()
 
 void KRadioApp::slotConfigure()
 {
-	SetupDialog	sud (0, RadioDev, MixerDev, MixerChannel, quickbar ? quickbar->getShowShortName() : false);
+	SetupDialog	sud (0, radio ? radio->radioDevice() : QString("/dev/radio"),
+						radio ? radio->mixerDevice() : QString("/dev/mixer"),
+						radio ? radio->mixerChannel() : 0,
+						quickbar ? quickbar->getShowShortName() : false);
 	sud.setStations(radio->getStations(), radio);
 	sud.setAlarms(radio->getAlarms());
+	sud.setRangeOverride(radio->isRangeOverrideSet(),
+						 radio->minFrequency(),
+						 radio->maxFrequency());
 
-	connect (&sud, SIGNAL(sigSaveConfig(const StationVector &, const AlarmVector &, const QString &, const QString &, int, bool)),
-		this, SLOT(slotSaveConfig(const StationVector &, const AlarmVector &, const QString &, const QString &, int, bool)));
+	connect (&sud, SIGNAL(sigSaveConfig(SetupDialog &)),
+		this, SLOT(slotSaveConfig(SetupDialog &)));
+	connect (&sud, SIGNAL(sigApplyConfig(SetupDialog &)),
+		this, SLOT(slotApplyConfig(SetupDialog &)));
 		
 	if (sud.exec() == QDialog::Accepted) {
-		radio->setStations(sud.getStations());
-		radio->setAlarms(sud.getAlarms());
-		if (quickbar)
-			quickbar->setShowShortName(sud.displayOnlyShortNames());
-		RadioDev = sud.getRadioDevice();
-		MixerDev = sud.getMixerDevice();
-		MixerChannel = sud.getMixerChannel();
-		radio->setDevices(RadioDev, MixerDev, MixerChannel);
+		slotApplyConfig (sud);
 	}
 }
 
 
-void KRadioApp::slotSaveConfig (const StationVector &sl,
-								const AlarmVector &al,
-							    const QString &rdev,
-							    const QString &mdev,
-							    int ch,
-							    bool sn)
+void KRadioApp::slotApplyConfig (SetupDialog &sud)
 {
-	radio->setStations(sl);
-	radio->setAlarms(al);
+	radio->setStations(sud.getStations());
+	radio->setAlarms(sud.getAlarms());
 	if (quickbar)
-		quickbar->setShowShortName(sn);
-	RadioDev = rdev;
-	MixerDev = mdev;
-	MixerChannel = ch;
-	radio->setDevices(RadioDev, MixerDev, MixerChannel);
+		quickbar->setShowShortName(sud.displayOnlyShortNames());
+	radio->setDevices(sud.getRadioDevice(),
+	                  sud.getMixerDevice(),
+	                  sud.getMixerChannel()
+					 );
+	radio->setRangeOverride(sud.isRangeOverrideSet(),
+							sud.fMinOverride(),
+							sud.fMaxOverride());
+}
+
+
+void KRadioApp::slotSaveConfig (SetupDialog &sud)
+{
+	slotApplyConfig(sud);
 
 	radio->writeCfg(QString(getenv("HOME")) + "/.kradiorc");
 	saveOptions();

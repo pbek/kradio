@@ -172,6 +172,8 @@ float V4LRadio::deltaF() const
 
 float V4LRadio::minFrequency() const
 {
+	if (rangeOverride)
+		return fMinOverride;
   	if (radio_fd != 0) {  	
 	  	if (ioctl(radio_fd, VIDIOCGTUNER, tuner) != 0)
 	  		fprintf (stderr, "V4LRadio::deltaF: cannot get tuner info\n");
@@ -184,6 +186,8 @@ float V4LRadio::minFrequency() const
 
 float V4LRadio::maxFrequency() const
 {
+	if (rangeOverride)
+		return fMaxOverride;
   	if (radio_fd != 0) {  	
 	  	if (ioctl(radio_fd, VIDIOCGTUNER, tuner) != 0)
 	  		fprintf (stderr, "V4LRadio::deltaF: cannot get tuner info\n");

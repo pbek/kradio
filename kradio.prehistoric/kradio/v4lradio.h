@@ -65,12 +65,16 @@ protected:
 
 public:
 	V4LRadio(QObject *parent, const QString &name,
-	         const QString &RadioDev, const QString &MixerDev, int MixerChannel);
+	         const QString &RadioDev = "", const QString &MixerDev = "", int MixerChannel = 0);
 	~V4LRadio();
 
 	virtual void  setRadioDevice(const QString &s);
 	virtual void  setMixerDevice(const QString &s, int ch);
 	virtual void  setDevices(const QString &r, const QString &m, int ch);
+
+	virtual const QString &radioDevice()  const { return RadioDev; }
+	virtual const QString &mixerDevice()  const { return MixerDev; }
+	virtual const int      mixerChannel() const { return MixerChannel; }
 	
 	virtual float signal() const;				
 	virtual bool  isStereo() const;
