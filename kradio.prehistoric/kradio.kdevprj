@@ -463,8 +463,7 @@ sub_dirs=germany
 type=normal
 
 [presets/germany/Makefile.am]
-files=presets/germany/aachen-cable.krp
-files=presets/germany/hamburg-antenna.krp
+files=presets/germany/aachen-cable.krp,presets/germany/hamburg-antenna.krp
 sub_dirs=
 type=normal
 
