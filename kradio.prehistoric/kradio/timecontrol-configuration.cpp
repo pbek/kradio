@@ -25,6 +25,7 @@
 #include <qcheckbox.h>
 #include <qpushbutton.h>
 
+#include <algorithm>
 
 #include "timecontrol-configuration.h"
 #include "stationlist.h"
