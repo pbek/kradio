@@ -17,43 +17,34 @@
 
 #include "radiostation.h"
 
-RadioStation::RadioStation(QObject *_parent, QString _name)
-    : QObject (_parent, _name),
-      m_frequency(0),
-      m_useInQuickSelect(false),
-      m_useInDockingMenu(true),
-      m_initialVolume(-1)
+RadioStation::RadioStation()
+    : m_name(""),
+      m_shortName(""),
+      m_initialVolume(-1),
+      m_iconName("")
+{
+}
+
+RadioStation::RadioStation(const QString &name, const QString &shortName)
+    : m_name(name),
+      m_shortName(shortName),
+      m_initialVolume(-1),
+      m_iconName("")
 {
 }
 
 
 RadioStation::RadioStation(const RadioStation &s)
-    : QObject (s.parent(), s.name()),
-      m_frequency(s.m_frequency),
+    : m_name(s.m_name),
       m_shortName(s.m_shortName),
-      m_useInQuickSelect(s.m_useInQuickSelect),
-      m_useInDockingMenu(s.m_useInDockingMenu),
       m_initialVolume(s.m_initialVolume),
       m_iconName(s.m_iconName)
 {
 }
 
-RadioStation::RadioStation(QObject *_parent, const RadioStation &s)
-    : QObject (_parent, s.name()),
-      m_frequency(s.m_frequency),
-      m_shortName(s.m_shortName),
-      m_useInQuickSelect(s.m_useInQuickSelect),
-      m_useInDockingMenu(s.m_useInDockingMenu),
-      m_initialVolume(s.m_initialVolume),
-      m_iconName(s.m_iconName)
-{
-}
 
 RadioStation::~RadioStation()
 {
 }
 
-QString RadioStation::longName() const
-{
-    return name();
-}
+

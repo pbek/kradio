@@ -322,7 +322,8 @@ protected :
 // debug util
 #ifdef DEBUG
 	#include <iostream>
-	#define IF_QUERY_DEBUG \
+	using namespace std;
+#define IF_QUERY_DEBUG \
 		if (connections.count() > 1) { \
 			cerr << "class " << typeid(this).name() << ": using IF_QUERY with #connections > 1"; \
 		}

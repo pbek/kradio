@@ -17,67 +17,52 @@
 
 #include "internetradiostation.h"
 
-#include "internetradio.h"
-
-// KDE includes
-#include <kdebug.h>
-
-InternetRadioStation::InternetRadioStation(QObject *parent, QString name,
-                                           InternetRadio* radio, KURL const &url)
-    : RadioStation(parent, name),
-      m_url(url),
-      m_internetRadio(radio)
+InternetRadioStation::InternetRadioStation(const QString &name,
+                                           const QString &shortName,
+                                           const KURL &url)
+    : RadioStation(name, shortName),
+      m_url(url)
 {
 }
 
-InternetRadioStation::InternetRadioStation(QObject *parent, InternetRadioStation const &s)
-    : RadioStation(parent,s),
-      m_url(s.m_url),
-      m_internetRadio(s.m_internetRadio)
-{
-}
-
-InternetRadioStation::InternetRadioStation(InternetRadioStation const &s)
+InternetRadioStation::InternetRadioStation(const InternetRadioStation &s)
     : RadioStation(s),
-      m_url(s.m_url),
-      m_internetRadio(s.m_internetRadio)
+      m_url(s.m_url)
 {
 }
 
-/** returns an exact copy of this station, but the parent is the one given */
-RadioStation *InternetRadioStation::copy(QObject *parent)
+
+/** returns an exact copy of this station*/
+RadioStation *InternetRadioStation::copy() const
 {
-    return new InternetRadioStation(parent, (*this));
+    return new InternetRadioStation(*this);
 }
 
 InternetRadioStation::~InternetRadioStation()
 {
 }
 
-// implementation of the RadioStation pure virtuals
-RadioDevice *InternetRadioStation::radio()
+bool InternetRadioStation::equals(const RadioStation &_s) const
 {
-    return m_internetRadio;
-}
+	InternetRadioStation const *s = dynamic_cast<InternetRadioStation const*>(&_s);
 
-bool InternetRadioStation::urlMatch(KURL const &url)
-{
-    return m_url.equals(url,true /*ignore trailing / */);
-}
+	if (!s)
+		return false;
 
-void InternetRadioStation::slotActivate()
-{
-    if (!isValid())
-        kdDebug()<< "InternetRadioStation::slotActivate cannot activate invalid URL "<<m_url.url()<<"!" << endl;
-    if (m_internetRadio) {
-        if (m_internetRadio->activateStation(this))
-            emit signalActivated(this);
-    } else
-        kdDebug()<< "InternetRadioStation::slotActivate called but there is no Radio device for this Station!" << endl;
+    return m_url.equals ( s->m_url, true /*ignore trailing / */ );
 }
 
 bool InternetRadioStation::isValid() const
 {
     // TODO: maybe we need to do more to validate this...
     return !m_url.isEmpty();
+}
+
+QString InternetRadioStation::longName() const
+{
+	QString longN = m_name;
+	if ( ! longN.isEmpty() )
+		longN = longN + ", ";
+
+	return longN + m_url.url();
 }

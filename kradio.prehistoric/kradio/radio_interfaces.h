@@ -31,6 +31,9 @@
 
 #include "interfaces.h"
 
+class RadioStation;
+class StationVector;
+
 INTERFACE(IRadio, IRadioClient)
 {
 public :
@@ -86,7 +89,6 @@ public :
 	IF_QUERY   (  bool                   isPowerOn()             )
 	IF_QUERY   (  bool                   isPowerOff()            )
 	IF_QUERY   (  const RadioStation  &  getCurrentStation()     )
- 	IF_QUERY   (  const RadioStation  &  getStation (float freq) )
 	IF_QUERY   (  const StationVector &  getStations()           )
 
 };
@@ -101,8 +103,8 @@ public :
 	// receiving messages/commands
 
 	IF_RECEIVER(  setVolume (float v)                            )
-	IF_RECEIVER(  mute (bool true)                               )
-	IF_RECEIVER(  unmute (bool true)                             )
+	IF_RECEIVER(  mute (bool mute)                               )
+	IF_RECEIVER(  unmute (bool mute)                             )
 
 	// sending notifications
 
@@ -128,8 +130,8 @@ public :
 	// sending commands
 
 	IF_SENDER  (  setVolume (float v)                            )
-	IF_SENDER  (  mute (bool true)                               )
-	IF_SENDER  (  unmute (bool true)                             )
+	IF_SENDER  (  mute (bool mute)                               )
+	IF_SENDER  (  unmute (bool mute)                             )
 
 	// receiving notifications
 

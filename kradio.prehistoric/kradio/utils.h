@@ -22,6 +22,7 @@ using namespace std;
 
 #include <kconfig.h>
 #include <klocale.h>
+#include <kdebug.h>
 #include <qstring.h>
 #include <list>
 #include <vector>

@@ -24,8 +24,8 @@
  ***************************************************************************/
 
 
-#ifndef KRADIO_RADIO_INTERFACES_H
-#define KRADIO_RADIO_INTERFACES_H
+#ifndef KRADIO_TIMECONTROL_INTERFACES_H
+#define KRADIO_TIMECONTROL_INTERFACES_H
 
 #include "interfaces.h"
 #include "alarm.h"

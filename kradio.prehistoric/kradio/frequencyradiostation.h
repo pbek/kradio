@@ -2,8 +2,8 @@
                           frequencyradiostation.h  -  description
                              -------------------
     begin                : Sat March 29 2003
-    copyright            : (C) 2003 by Klas Kalass
-    email                : klas@kde.org
+    copyright            : (C) 2003 by Klas Kalass, Ernst Martin Witte
+    email                : klas@kde.org, witte@kawo1.rwth-aachen.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef FREQUENCYRADIOSTATION_H
-#define FREQUENCYRADIOSTATION_H
+#ifndef KRADIO_FREQUENCYRADIOSTATION_H
+#define KRADIO_FREQUENCYRADIOSTATION_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -24,39 +24,29 @@
 
 #include "radiostation.h"
 
-// forward declarations
-class FrequencyRadio;
-class RadioDevice;
-
 /**
- * @author Klas Kalass
+ * @author Klas Kalass, Ernst Martin Witte
  */
 
 class FrequencyRadioStation : public RadioStation  {
 public:
-    FrequencyRadioStation(QObject *parent, QString name, FrequencyRadio* radio, float frequency);
-    FrequencyRadioStation(QObject *parent, FrequencyRadioStation const &);
-    FrequencyRadioStation(FrequencyRadioStation const &);
+    FrequencyRadioStation (const QString &name, const QString &shortName, float frequency);
+    FrequencyRadioStation (const FrequencyRadioStation &);
     ~FrequencyRadioStation();
 
-    float frequency() const {return m_frequency;};
-    void setFrequency(float frequency) {m_frequency = frequency;};
+    float  frequency()  const;
+    void   setFrequency (float frequency);
 
-    // implementation of the RadioStation pure virtuals
-    RadioDevice *radio();
+    virtual QString	longName() const;
 
-    QString	longName() const;
-    bool frequencyMatch(float frequency);
-    bool isValid() const;
+    virtual bool equals(const RadioStation &s) const;
+    virtual bool isValid() const;
 
-    /** returns an exact copy of this station, but the parent is the one given */
-    virtual RadioStation *copy(QObject *parent);
-
-public slots:
-    void slotActivate();
+    /** returns an exact copy of this station */
+    virtual RadioStation *copy() const;
 
 protected:
-    FrequencyRadio *m_frequencyRadio;
+
     float m_frequency;
 };
 

@@ -29,7 +29,7 @@
 #include <vector>
 
 /**
-  *@author Martin Witte / Frank Schwanz
+  *@author Martin Witte
   */
 
 class Alarm : public QObject  {
