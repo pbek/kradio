@@ -1,13 +1,28 @@
-This is a small radio application for kde 2/3 with lirc support
-You can get the latest version from
+This is a small radio application for KDE3 with lirc support and some more
+nice features. You can get the latest version from
 
    http://sourceforge.net/projects/kradio/
+
+------------------
+Mailing Lists
+------------------
+
+  http://lists.sourceforge.net/lists/listinfo/kradio-user
+  http://lists.sourceforge.net/lists/listinfo/kradio-devel
+  http://lists.sourceforge.net/lists/listinfo/kradio-announce
 
 ------------------
 Compile CVS tree
 ------------------
 
-First checkout kradio from CVS and do in ./
+First checkout kradio from CVS
+
+  mkdir kradio-cvs
+  cd kradio-cvs
+  # next follow instructions on http://sourceforge.net/cvs/?group_id=45668
+  cd kradio
+
+and compile it
 
   make -f Makefile.dist
   ./configure
