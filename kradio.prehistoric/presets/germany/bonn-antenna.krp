@@ -11,7 +11,6 @@
 		<station>
 			<name>EinsLive</name>
 			<shortname>EinsLive</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/einslive.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>102.438</frequency>
 			<volumepreset>-1</volumepreset>
@@ -20,7 +19,6 @@
 		<station>
 			<name>WDR2</name>
 			<shortname>WDR2</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/wdr2.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>100.438</frequency>
 			<volumepreset>-1</volumepreset>
@@ -29,7 +27,6 @@
 		<station>
 			<name>WDR3</name>
 			<shortname>WDR3</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/wdr3.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>93.125</frequency>
 			<volumepreset>-1</volumepreset>
@@ -38,7 +35,6 @@
 		<station>
 			<name>WDR4</name>
 			<shortname>WDR4</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/wdr4.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>90.6875</frequency>
 			<volumepreset>-1</volumepreset>
@@ -47,7 +43,6 @@
 		<station>
 			<name>WDR5</name>
 			<shortname>WDR5</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/wdr5.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>88</frequency>
 			<volumepreset>-1</volumepreset>
@@ -56,7 +51,6 @@
 		<station>
 			<name>Radio Bonn/RheinSieg</name>
 			<shortname>BonnRheinSieg</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/radiobonn.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>98.9375</frequency>
 			<volumepreset>-1</volumepreset>
@@ -65,7 +59,6 @@
 		<station>
 			<name>BFBS</name>
 			<shortname>BFBS</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/bfbs.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>97.875</frequency>
 			<volumepreset>-1</volumepreset>
@@ -74,7 +67,6 @@
 		<station>
 			<name>SWR3</name>
 			<shortname>SWR3</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/srw3.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>94.8</frequency>
 			<volumepreset>-1</volumepreset>
@@ -83,7 +75,6 @@
 		<station>
 			<name>DLF</name>
 			<shortname>DLF</shortname>
-			<icon>/home/dirk/.kde/share/apps/kradio/dlf.png</icon>
 			<quickselect>1</quickselect>
 			<frequency>89.1</frequency>
 			<volumepreset>-1</volumepreset>

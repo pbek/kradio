@@ -1,0 +1,66 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Sarah Bransdor</maintainer>
+			<changed>2003-01-17T17:08:55</changed>
+			<country>Germany</country>
+			<city>Wernigerode</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>Projekt 89.0</name>
+			<shortname>PRJ89</shortname>
+			<quickselect>1</quickselect>
+			<frequency>89.0625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Jump</name>
+			<shortname>Jump</shortname>
+			<quickselect>1</quickselect>
+			<frequency>91.5625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>MDR 1 Radio Sachsen-Anhalt</name>
+			<shortname>MDR 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschland Radio</name>
+			<shortname>D-Radio</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.4375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio SAW</name>
+			<shortname>SAW</shortname>
+			<quickselect>1</quickselect>
+			<frequency>101.438</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>MDR classic</name>
+			<shortname>6</shortname>
+			<quickselect>0</quickselect>
+			<frequency>107.812</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+
+
