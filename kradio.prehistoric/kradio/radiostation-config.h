@@ -37,7 +37,7 @@ public:
     virtual void storeStationData (RadioStation &rs) = 0;
 
 signals:
-	virtual void changed(RadioStationConfig *) = 0;
+	virtual void changed(RadioStationConfig *);
 };
 
 
@@ -50,9 +50,6 @@ public:
 
     virtual void setStationData   (const RadioStation &rs);
     virtual void storeStationData (RadioStation &rs);
-
-signals:
-	virtual void changed(RadioStationConfig *);
 };
 
 
@@ -68,9 +65,6 @@ public:
 
     virtual void setStationData   (const RadioStation &rs);
     virtual void storeStationData (RadioStation &rs);
-
-signals:
-	virtual void changed(RadioStationConfig *);
 
 protected slots:
 	virtual void slotValueChanged(int);

@@ -72,6 +72,7 @@ bool convertFile(const QString &file)
     QRegExp qselect("<quickselect>.*</quickselect>");
     QRegExp docking("<dockingmenu>.*</dockingmenu>");
     QRegExp station("<station>(.*)</station>");
+    QRegExp stationlist("<stationlist>");
     QRegExp emptyLines("\\n\\s*\\n");
 
     #define stationIDElement  "stationID"
@@ -80,6 +81,7 @@ bool convertFile(const QString &file)
     docking.setMinimal(true);
     station.setMinimal(true);
 
+    xmlData.replace(stationlist, "<stationlist>\n\t\t<format>kradio-1.0</format>");
     xmlData.replace(qselect, "");
     xmlData.replace(docking, "");
     xmlData.replace(station, "<FrequencyRadioStation>\n"

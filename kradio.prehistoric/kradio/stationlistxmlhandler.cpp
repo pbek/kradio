@@ -21,6 +21,7 @@
 const char *KRadioConfigElement         = "kradiorc";
 
 const char *StationListElement			= "stationlist";
+const char *compatStationElement		= "station";
 
 const char *StationListInfo             = "info";
 const char *StationListInfoMaintainer   = "maintainer";
@@ -30,7 +31,11 @@ const char *StationListInfoMedia        = "media";
 const char *StationListInfoComments     = "comments";
 const char *StationListInfoChanged      = "changed";
 
+const char *StationListFormat           = "format";
+
+
 StationListXmlHandler::StationListXmlHandler ()
+	: m_compatMode (false)
 {
 	m_newStation = NULL;
 }
@@ -59,8 +64,9 @@ bool StationListXmlHandler::startDocument ()
 							   return false;
 							   
 bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &/*localname*/,
-				                       const QString& qname, const QXmlAttributes &)
+				                          const QString& _qname, const QXmlAttributes &)
 {
+	QString qname = _qname;
 	if (qname == KRadioConfigElement) {
 		if (m_status.size()) { START_ELEMENT_ERROR }
 
@@ -69,6 +75,9 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
 		if (!m_status.size() || m_status.back() != KRadioConfigElement) { START_ELEMENT_ERROR }
 		m_stations.clear();
 		clearNewStation();
+
+	} else if (qname == StationListFormat) {
+		if (!m_status.size() || m_status.back() != StationListElement) { START_ELEMENT_ERROR }
 
 	} else if (qname == StationListInfo) {
 		if (!m_status.size() || m_status.back() != StationListElement) { START_ELEMENT_ERROR }
@@ -84,6 +93,11 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
 		if (!m_status.size() || m_status.back() != StationListInfo) { START_ELEMENT_ERROR }
 
 	} else if (!m_newStation && m_status.size() && m_status.back() == StationListElement) {
+
+	    if (qname == compatStationElement) {
+			qname = "FrequencyRadioStation";
+			m_compatMode = true;
+	    }
 	
 		const RadioStation *x = RadioStation::getStationClass(qname);
 		m_newStation = x ? x->copy() : NULL;
@@ -106,10 +120,16 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
 
 
 bool StationListXmlHandler::endElement (const QString &/*ns*/, const QString &/*localname*/,
-	                                    const QString &qname)
+	                                    const QString &_qname)
 {
+	QString qname = _qname;
+	if (qname == compatStationElement) {
+		qname = "FrequencyRadioStation";
+		m_compatMode = true;
+	}
+
 	if (m_status.size() && m_status.back() == qname) {
-	
+
 		if (m_newStation && qname == m_newStation->getClassName()) {
 			m_stations.append(m_newStation);
 			clearNewStation();
@@ -143,7 +163,14 @@ bool StationListXmlHandler::characters (const QString &ch)
 	// Station parsing
 
 	// information on list
-	if (stat == StationListInfo) {
+	if (stat == StationListFormat) {
+
+		if (str != STATION_LIST_FORMAT) {
+			kdDebug() << "found a station list with unknown format >>"+str+"<<\n";
+			return false;
+		}
+
+	} else if (stat == StationListInfo) {
 
 	} else if (stat == StationListInfoMaintainer) {
 

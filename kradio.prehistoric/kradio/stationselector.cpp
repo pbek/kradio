@@ -75,7 +75,6 @@ bool StationSelector::noticeStationSelectionChanged(const QStringList &sl)
         } else {
 			stationsNotDisplayed.push_back(id);
         }
-
 	}
 	return true;
 }
@@ -108,7 +107,8 @@ bool StationSelector::noticeStationsChanged(const StationList &sl)
 
 	    vector<QString>::iterator f = ::find(stationsNotDisplayed.begin(), stationsNotDisplayed.end(), id);
 	    if (f != stationsNotDisplayed.end()) {
-			listSelected->insertItem(i.current()->longName());
+			listSelected->insertItem(i.current()->iconName(),
+			                         i.current()->longName());
 			stationsSelected.push_back(id);
 			stationsNotDisplayed.erase(f);
 	    } else {

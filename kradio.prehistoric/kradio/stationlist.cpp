@@ -20,6 +20,7 @@
 #include "stationlistxmlhandler.h"
 
 #include <qfile.h>
+#include <qmessagebox.h>
 #include <kio/netaccess.h>
 #include <ktempfile.h>
 
@@ -264,7 +265,7 @@ RadioStation &StationList::stationWithID(const QString &sid)
 }
 
 
-bool StationList::readXML (const QString &dat)
+bool StationList::readXML (const QString &dat, bool enableMessageBox)
 {
 	// FIXME: TODO: error handling
 	QXmlInputSource source;
@@ -273,23 +274,43 @@ bool StationList::readXML (const QString &dat)
 	StationListXmlHandler handler;
 	reader.setContentHandler (&handler);
 	if (reader.parse(source)) {
+		if (handler.wasCompatMode() && enableMessageBox) {
+			QMessageBox::information(NULL, "KRadio",
+								     "Probably an old station preset file was read.\n"
+								     "You have to rebuild your station selections for "
+								     "the quickbar and the docking menu."
+								     );
+		}
+	
 		m_all      = handler.getStations();
 		m_metaData = handler.getMetaData();
 		return true;
 	} else {
-		kdDebug() << "StationList::readXML: parsing failed\n";
+		kdDebug() << "StationList::readXML: " << i18n("parsing failed") << endl;
+
+		if (enableMessageBox) {
+			QMessageBox::warning(NULL, "KRadio",
+								 i18n("Parsing the station preset file failed.\n"
+									  "See console output for more details."));
+		}
 		return false;
 	}
 }
 
 
-bool StationList::readXML (const KURL &url)
+bool StationList::readXML (const KURL &url, bool enableMessageBox)
 {
 	QString tmpfile;
 	if (!KIO::NetAccess::download(url, tmpfile)) {
 		kdDebug() << "StationList::readXML: "
 		          << i18n("error downloading preset file")
 		          << " " << url.url() << endl;
+		if (enableMessageBox) {
+			QMessageBox::warning(NULL, "KRadio",
+								 i18n("Download of the station preset file at") +
+								 " " + url.url() + " " +
+								 i18n("failed") + ".");
+		}
 		return false;
 	}
 
@@ -302,6 +323,12 @@ bool StationList::readXML (const KURL &url)
 		kdDebug() << "StationList::readXML: "
 		          << i18n("error opening preset file")
 		          << " " << tmpfile << endl;
+		if (enableMessageBox) {
+			QMessageBox::warning(NULL, "KRadio",
+								 i18n("Opening of the station preset file at") +
+								 " " + tmpfile + " " +
+								 i18n("failed") + ".");
+		}
 		return false;
 	}
 
@@ -318,7 +345,7 @@ bool StationList::readXML (const KURL &url)
 
 	KIO::NetAccess::removeTempFile(tmpfile);
 
-	return readXML(xmlData);
+	return readXML(xmlData, enableMessageBox);
 }
 
 
@@ -334,6 +361,7 @@ QString StationList::writeXML () const
 
 	data +=       xmlOpenTag(KRadioConfigElement) +
 	        t   + xmlOpenTag(StationListElement) +
+	        tt  + xmlTag(StationListFormat, STATION_LIST_FORMAT) +
 	        tt  + xmlOpenTag(StationListInfo) +
 	        ttt + xmlTag(StationListInfoMaintainer, m_metaData.maintainer) +
 	        ttt + xmlTag(StationListInfoChanged,    m_metaData.lastChange.toString(Qt::ISODate)) +

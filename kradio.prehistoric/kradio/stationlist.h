@@ -136,8 +136,8 @@ public:
 
     // xml in/out
 
-    bool    readXML (const QString &dat);
-    bool    readXML (const KURL &url);
+    bool    readXML (const QString &dat, bool enableMessageBox = true);
+    bool    readXML (const KURL &url, bool enableMessageBox = true);
     
     QString writeXML () const;
     bool    writeXML (const KURL &url) const;

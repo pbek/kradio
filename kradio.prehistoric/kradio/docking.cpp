@@ -143,7 +143,6 @@ void RadioDocking::buildContextMenu()
 	m_menu->clear();
 
 	m_titleID  = m_menu->insertTitle ("title-dummy");
-	noticeStationChanged(queryCurrentStation(), -1);
 
 	buildStationList();
 
@@ -190,6 +189,9 @@ void RadioDocking::buildContextMenu()
 
 	m_menu->insertSeparator();
 	m_menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
+
+
+	noticeStationChanged(queryCurrentStation(), -1);
 }
 
 

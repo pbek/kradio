@@ -27,7 +27,7 @@
 Radio::Radio(const QString &name)
   : PluginBase(name),
     IRadioDeviceClient(-1),
-    m_presetFile(locateLocal("data", "kradio/stations-new.krp")),
+    m_presetFile(locateLocal("data", "kradio/stations.krp")),
     m_activeDevice (NULL)
 {
 }
@@ -85,7 +85,7 @@ void Radio::restoreState (KConfig *config)
     config->setGroup(QString("radio-") + name());
 
     m_presetFile = config->readEntry("presetfile",
-                                     locateLocal("data", "kradio/stations-new.krp"));
+                                     locateLocal("data", "kradio/stations.krp"));
 
     m_stationList.readXML(KURL(m_presetFile));
 
@@ -167,6 +167,7 @@ bool Radio::activateStation(int index)
 bool Radio::setStations(const StationList &sl)
 {
 	m_stationList = sl;
+    notifyStationsChanged(m_stationList);
 	return true;
 }
 

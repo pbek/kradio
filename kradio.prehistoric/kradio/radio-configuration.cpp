@@ -382,9 +382,9 @@ void RadioConfiguration::slotLoadPresets()
 
     if (fd.exec() == QDialog::Accepted) {
 		StationList sl;
-		if (sl.readXML(fd.selectedURL()))
+		if (sl.readXML(fd.selectedURL())) {
 			noticeStationsChanged(sl);
-		// FIXME: error message
+		}
     }
 }
 

@@ -32,6 +32,8 @@ protected:
     
     RadioStation	     *m_newStation;
 
+    bool                  m_compatMode;
+
 public :
     StationListXmlHandler ();
     virtual ~StationListXmlHandler ();
@@ -44,6 +46,9 @@ public :
 
     const RawStationList &getStations() const { return m_stations; }
     const StationListMetaData &getMetaData() const { return m_metaData; }
+
+
+    bool  wasCompatMode() const { return m_compatMode; }
     
 protected:
 
@@ -63,10 +68,11 @@ extern const char *StationListInfoMedia;
 extern const char *StationListInfoComments;
 extern const char *StationListInfoChanged;
 
-//extern const char *StationElement;
 extern const char *StationQuickSelectElement;
 extern const char *StationDockingMenuElement;
+extern const char *StationListFormat;
 
+#define STATION_LIST_FORMAT   "kradio-1.0"
 
 
 #endif
