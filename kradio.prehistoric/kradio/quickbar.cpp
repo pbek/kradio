@@ -195,7 +195,7 @@ void QuickBar::setOn(bool on)
 
 void QuickBar::show()
 {
-  bool wasHidden = !isVisible();
+  bool wasHidden = false; //!isVisible();
 
   if (wasHidden) {
 	KWin::setOnAllDesktops(winId(), saveSticky);
