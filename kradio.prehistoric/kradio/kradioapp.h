@@ -90,4 +90,8 @@ void writeXMLCfg (const QString &FileName,
                   const StationListMetaData &info
                  );
 
+QString writeXMLCfg (const StationVector &sl,
+                     const StationListMetaData &info
+                    );
+
 #endif

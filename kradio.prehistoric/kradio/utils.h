@@ -45,6 +45,11 @@ extern const char *mixerChannelLabels[];
 extern const char *mixerChannelNames[];
 
 extern QString XMLEscape (const QString &s);
+QString xmlOpenTag  (const QString &tag, bool newline = true);
+QString xmlTag      (const QString &tag, const QString &s, bool newline = true);
+QString xmlTag      (const QString &tag, int i,            bool newline = true);
+QString xmlTag      (const QString &tag, float f,          bool newline = true);
+QString xmlCloseTag (const QString &tag, bool newline = true);
 
 
 #endif

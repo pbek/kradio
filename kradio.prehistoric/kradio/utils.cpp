@@ -22,6 +22,7 @@
 const char *mixerChannelLabels[] = SOUND_DEVICE_LABELS;
 const char *mixerChannelNames[]  = SOUND_DEVICE_NAMES;
 
+
 QString XMLEscape (const QString &s)
 {
 	QString c = s;
@@ -32,3 +33,37 @@ QString XMLEscape (const QString &s)
 	c.replace(QRegExp("'"),  "&apos;");
 	return c;
 }
+
+
+QString xmlOpenTag (const QString &tag, bool nl)
+{
+	return "<" + tag + ">" + (nl ? "\n" : "");
+}
+
+
+QString xmlCloseTag (const QString &tag, bool nl)
+{
+	return "</" + tag + ">" + (nl ? "\n" : "");
+}
+
+
+QString xmlTag (const QString &tag, int v, bool nl)
+{
+	return xmlTag (tag, QString().setNum(v), nl);
+}
+
+
+QString xmlTag (const QString &tag, float f, bool nl)
+{
+	return xmlTag(tag, QString().setNum(f), nl);
+}
+
+
+QString xmlTag (const QString &tag, const QString &data, bool nl)
+{
+	return   xmlOpenTag(tag, false)
+	       + XMLEscape(data)
+	       + xmlCloseTag(tag, false)
+	       + (nl ? "\n" : "");
+}
+

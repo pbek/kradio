@@ -438,6 +438,52 @@ void readXMLCfg (const QString &url,
 }
 
 
+
+
+QString writeXMLCfg (const StationVector &sl,
+				     const StationListMetaData &info
+				    )
+{
+	QString data = "";
+	
+	// write station list
+
+	QString t   = "\t";
+	QString tt  = "\t\t";
+	QString ttt = "\t\t\t";
+
+	data +=       xmlOpenTag(KRadioConfigElement) +
+	        t   + xmlOpenTag(StationListElement) +
+	        tt  + xmlOpenTag(StationListInfo) +
+	        ttt + xmlTag(StationListInfoMaintainer, info.Maintainer) +
+	        ttt + xmlTag(StationListInfoChanged, info.LastChange.toString(Qt::ISODate)) +
+	        ttt + xmlTag(StationListInfoCountry, info.Country) +
+	        ttt + xmlTag(StationListInfoCity, info.City) +
+	        ttt + xmlTag(StationListInfoMedia, info.Media) +
+	        ttt + xmlTag(StationListInfoComments, info.Comment) +
+	        tt  + xmlCloseTag (StationListInfo);
+
+	for (ciStationVector i = sl.begin(); i != sl.end(); ++i) {
+		const RadioStation *st = *i;
+
+		data += tt  + xmlOpenTag (StationElement) +
+				ttt + xmlTag (StationNameElement,         st->name()) +
+				ttt + xmlTag (StationShortNameElement,    st->getShortName()) +
+				ttt + xmlTag (StationIconStringElement,   st->getIconString()) +
+				ttt + xmlTag (StationQuickSelectElement,  st->useQuickSelect()) +
+				ttt + xmlTag (StationFrequencyElement,    st->getFrequency()) +
+				ttt + xmlTag (StationVolumePresetElement, st->getVolumePreset()) +
+				ttt + xmlTag (StationDockingMenuElement,  st->useInDockingMenu()) +
+				tt  + xmlCloseTag(StationElement);
+	}
+	data += t + xmlCloseTag(StationListElement) +
+			    xmlCloseTag(KRadioConfigElement);
+
+	return data;				   
+}
+
+
+
 void writeXMLCfg (const QString &FileName,
 				  const StationVector &sl,
 				  const StationListMetaData &info
@@ -451,6 +497,9 @@ void writeXMLCfg (const QString &FileName,
 
 	// write station list
 
+	fprintf (f, "%s", (const char*)writeXMLCfg(sl, info));
+
+/*
 	fprintf (f, "<%s>\n", KRadioConfigElement);
 	fprintf (f, "\t<%s>\n", StationListElement);
     fprintf (f, "\t\t<%s>\n", StationListInfo);
@@ -462,7 +511,7 @@ void writeXMLCfg (const QString &FileName,
     fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoComments,   (const char*)XMLEscape(info.Comment),               StationListInfoComments);
     fprintf (f, "\t\t</%s>\n", StationListInfo);
 
-	
+
 	for (ciStationVector i = sl.begin(); i != sl.end(); ++i) {
 		const RadioStation *st = *i;
 		fprintf (f, "\t\t<%s>\n", StationElement);
@@ -480,6 +529,9 @@ void writeXMLCfg (const QString &FileName,
 	// write alarm list
 
 	fprintf (f, "</%s>\n", KRadioConfigElement);
+*/
+
 	fclose (f);
 }
+
 
