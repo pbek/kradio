@@ -126,7 +126,7 @@ void QuickBar::rebuildGUI()
 	    Buttons.push_back(b);
 	    connect (b, SIGNAL(clicked()), (*i), SLOT(activate()));
 	    buttonGroup->insert(b,index);
-	    layout->addWidget(b);
+	    //layout->addWidget(b);
 	    index++;
     	}
     }
@@ -168,42 +168,42 @@ void QuickBar::slotFrequencyChanged(float, const RadioStation *)
   if (buttonGroup) buttonGroup->setButton(radio->currentStation());
 }
 
-// void QuickBar::resizeEvent (QResizeEvent *e)
-// {
-//     QWidget::resizeEvent (e);
+void QuickBar::resizeEvent (QResizeEvent *e)
+{
+    QWidget::resizeEvent (e);
 
-//     IntVector   c_w;
-//     int         c = 0,
-//                  nc = Buttons.size();
+    IntVector   c_w;
+    int         c = 0,
+                 nc = Buttons.size();
 
-//     int x, y, maxy;
-//     QSize mys = size();
-// restart1:
-//     c_w.clear();
-//     c_w.insert(c_w.end(), nc, 0);
-// restart2:
-//     c = 0;
-//     x = y = maxy = 0;
-// 	for (ciButtonList i = Buttons.begin(); i != Buttons.end(); ++i) {
-//   	    QSize s = (*i)->sizeHint();  	
-//         if (x && x + s.width() > mys.width()) {
-//    	        nc = c;
-//    	        goto restart1;
-// 	    } else {
-// 	        if (c_w[c] < s.width()) {
-// 	            c_w[c] = s.width();
-// 	            goto restart2;
-// 	        }
-// 	        s.setWidth(c_w[c]);
-// 	    }
-// 	    (*i)->move(x, y);
-// 	    (*i)->resize(s.width(), s.height());
-//         maxy = s.height() > maxy ? s.height() : maxy;	
-//    	    x += s.width();
-//    	    if (++c >= nc) {
-//    	        c = 0;
-//    	        x = 0;
-//    	        y += maxy;
-//    	    }
-// 	}
-// }
+    int x, y, maxy;
+    QSize mys = size();
+restart1:
+    c_w.clear();
+    c_w.insert(c_w.end(), nc, 0);
+restart2:
+    c = 0;
+    x = y = maxy = 0;
+	for (ciButtonList i = Buttons.begin(); i != Buttons.end(); ++i) {
+  	    QSize s = (*i)->sizeHint();  	
+        if (x && x + s.width() > mys.width()) {
+   	        nc = c;
+   	        goto restart1;
+	    } else {
+	        if (c_w[c] < s.width()) {
+	            c_w[c] = s.width();
+	            goto restart2;
+	        }
+	        s.setWidth(c_w[c]);
+	    }
+	    (*i)->move(x, y);
+	    (*i)->resize(s.width(), s.height());
+        maxy = s.height() > maxy ? s.height() : maxy;	
+   	    x += s.width();
+   	    if (++c >= nc) {
+   	        c = 0;
+   	        x = 0;
+   	        y += maxy;
+   	    }
+	}
+}

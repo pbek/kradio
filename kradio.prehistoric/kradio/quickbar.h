@@ -57,7 +57,7 @@ public:
 	void    restoreState (KConfig *c);
 	void    saveState (KConfig *c) const;
 protected:
-	//    void resizeEvent(QResizeEvent *);
+	void resizeEvent(QResizeEvent *);
 
 private:
 	void rebuildGUI();
