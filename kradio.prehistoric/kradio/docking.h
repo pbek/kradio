@@ -18,6 +18,12 @@
 #ifndef _DOCKING_H_
 #define _DOCKING_H_
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include "utils.h"
+
 #include <kpopupmenu.h>
 #include <ksystemtray.h>
 #include "kradio.h"

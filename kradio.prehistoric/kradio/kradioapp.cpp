@@ -41,10 +41,10 @@ KRadioApp::KRadioApp()
   radio->readCfg (QString(getenv("HOME")) + "/.kradiorc");
 
   // the quick selection buttons
-  quickbar = new QuickBar (radio,0,"kradio");
+  quickbar = new QuickBar (radio, 0, "kradio-quickbar");
 
   // the main dialog
-  kradio = new KRadio(quickbar, radio,0,"kradio");
+  kradio = new KRadio(quickbar, radio, 0, "kradio-gui");
  
   // Tray
   tray = new RadioDocking(kradio, quickbar, radio);
@@ -52,10 +52,6 @@ KRadioApp::KRadioApp()
   // restore Configuration
   restoreState();
 
-  // now show the GUI
-  if (quickbar){
-    quickbar->show();
-  }
   if (tray){
     tray->setPixmap(BarIcon("kradio"));
     connect(tray, SIGNAL(showAbout()),   &AboutApplication, SLOT(show()));
@@ -63,7 +59,6 @@ KRadioApp::KRadioApp()
   }
   if (kradio){
     connect(kradio, SIGNAL(showAbout()), &AboutApplication, SLOT(show()));
-    kradio->show();
   }
 }
 
@@ -114,7 +109,7 @@ void KRadioApp::restoreState()
 
   // kradio: restore window size and position
   if (kradio)
-    kradio->readState(config);
+    kradio->restoreState(config);
 
   // quickbar: restore size/position
   if (quickbar)

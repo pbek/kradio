@@ -19,6 +19,7 @@
 #include <qnamespace.h>
 #include <qhbuttongroup.h>
 #include <qvbuttongroup.h>
+#include <kglobal.h>
 
 #include <kwin.h>
 #include <klocale.h>
@@ -35,8 +36,9 @@ QuickBar::QuickBar(RadioBase *_radio, QWidget * parent, const char * name)
     showShortName(true)
 {
     radio = _radio;
-    restoreState(KGlobal::config());
     rebuildGUI();
+
+    restoreState(KGlobal::config());
 
     connect (radio, SIGNAL(sigConfigChanged()), 
 	     this, SLOT(slotConfigChanged()));
@@ -52,40 +54,49 @@ QuickBar::~QuickBar()
   }
 }
 
-void QuickBar::restoreState (KConfig *c)
+void QuickBar::restoreState (KConfig *config)
 {
-    c->setGroup("QuickBar");
+    config->setGroup("QuickBar");
 
-    int x = c->readNumEntry("x", 0);
-    int y = c->readNumEntry("y", 0);
-    int w = c->readNumEntry("w", 0);
-    int h = c->readNumEntry("h", 0);
-    if (h && w)
-        resize (w, h);
-    move (x, y);
-	
-	int Desktop = c->readNumEntry("desktop", -1);
-	bool sticky = c->readBoolEntry("sticky", true);
-	KWin::setOnAllDesktops(winId(), sticky);
-	if (sticky) KWin::setOnDesktop(winId(), Desktop);
-	showShortName = c->readBoolEntry("showShortName", true);
+	saveDesktop = config->readNumEntry ("desktop", 1);
+	saveSticky  = config->readBoolEntry("sticky",  false);
+
+	saveGeometry = config->readRectEntry("Geometry");
+
+    if (config->readBoolEntry("hidden", false))
+        hide();
+    else
+        show();
+
+	showShortName = config->readBoolEntry("showShortName", true);
 }
 
-void QuickBar::saveState (KConfig *c) const
+void QuickBar::saveState (KConfig *config)
 {
-    c->setGroup("QuickBar");
-	
-	KWin::Info  i = KWin::info(winId());
-	c->writeEntry("sticky", i.onAllDesktops);
-	c->writeEntry("desktop", i.desktop);
-	
-    c->writeEntry("x", pos().x());
-    c->writeEntry("y", pos().y());
-    c->writeEntry("w", size().width());
-    c->writeEntry("h", size().height());
+	getState();
 
-    c->writeEntry("showShortName",showShortName);
+    config->setGroup("QuickBar");
+
+    config->writeEntry("hidden", isHidden());
+
+	config->writeEntry("sticky", saveSticky);
+	config->writeEntry("desktop", saveDesktop);
+	config->writeEntry("Geometry", saveGeometry);
+	
+	config->writeEntry("showShortName", showShortName);
 }
+
+
+void QuickBar::getState()
+{
+	if (!isHidden()) {
+		KWin::Info  i = KWin::info(winId());
+		saveSticky    = i.onAllDesktops;
+		saveDesktop   = i.desktop;
+		saveGeometry  = geometry();
+	}
+}
+
 
 void QuickBar::rebuildGUI()
 {
@@ -95,7 +106,7 @@ void QuickBar::rebuildGUI()
 	Buttons.clear();
 
 	if (layout) delete layout;
-	layout=new ButtonFlowLayout(this);
+	layout = new ButtonFlowLayout(this);
 
 	layout->setMargin(2);
 	layout->setSpacing(2);
@@ -146,21 +157,28 @@ void QuickBar::setOn(bool on)
 {
   if(on && !isVisible())
     show();
-  else 
-    if (!on && isVisible())
-      hide();
+  else if (!on && isVisible())
+    hide();
 }
 
 void QuickBar::show()
 {
-  emit toggled(true);
+  bool wasHidden = isHidden();
   QWidget::show();
+  emit toggled(true);
+
+  if (wasHidden) {
+	KWin::setOnAllDesktops(winId(), saveSticky);
+	KWin::setType(winId(), NET::Toolbar);
+	setGeometry(saveGeometry);
+  }
 }
 
 void QuickBar::hide()
 {
-  emit toggled(false);
+  getState();
   QWidget::hide();
+  emit toggled(false);
 }
 
 void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
@@ -172,7 +190,7 @@ void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
 void QuickBar::resizeEvent (QResizeEvent *e)
 {
   // minimumSize might change because of the flow layout
-  setMinimumSize(layout->minimumSize());
+  if (layout) setMinimumSize(layout->minimumSize());
   QWidget::resizeEvent (e);
 
 //     IntVector   c_w;

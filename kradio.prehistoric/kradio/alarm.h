@@ -18,6 +18,12 @@
 #ifndef ALARM_H
 #define ALARM_H
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include "utils.h"
+
 #include <qobject.h>
 #include <qdatetime.h>
 #include <list>

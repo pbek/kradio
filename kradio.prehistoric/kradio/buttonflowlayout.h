@@ -17,18 +17,24 @@
 #ifndef BUTTONFLOWLAYOUT_H
 #define BUTTONFLOWLAYOUT_H
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include "utils.h"
+
 #include <qlayout.h>
 #include <qlist.h>
 
 class ButtonFlowLayout : public QLayout
 {
 public:
-  ButtonFlowLayout( QWidget *parent, int margin = 0, int spacing=-1,
-		    const char *name=0 );
+    ButtonFlowLayout( QWidget *parent, int margin = 0, int spacing=-1,
+	                  const char *name=0 );
 
-  ButtonFlowLayout( QLayout* parentLayout, int spacing=-1, const char *name=0 );
+    ButtonFlowLayout( QLayout* parentLayout, int spacing=-1, const char *name=0 );
 
-  ButtonFlowLayout( int spacing=-1, const char *name=0 );
+    ButtonFlowLayout( int spacing=-1, const char *name=0 );
 
     ~ButtonFlowLayout();
 

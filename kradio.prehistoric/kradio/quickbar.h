@@ -18,6 +18,12 @@
 #ifndef QUICKBAR_H
 #define QUICKBAR_H
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include "utils.h"
+
 #include <qwidget.h>
 #include <qlayout.h>
 #include <qbuttongroup.h>
@@ -54,7 +60,9 @@ public:
 	~QuickBar();
 	
 	void    restoreState (KConfig *c);
-	void    saveState (KConfig *c) const;
+	void    saveState (KConfig *c);
+    void	getState();
+	
 protected:
 	void resizeEvent(QResizeEvent *);
 
@@ -68,7 +76,14 @@ public slots:
 	void show();
 	void hide();
 
- signals:
+signals:
 	void toggled(bool);
+
+
+private:
+
+    bool		saveSticky;
+    int		    saveDesktop;
+    QRect		saveGeometry;
 };
 #endif

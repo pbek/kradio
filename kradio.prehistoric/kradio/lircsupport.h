@@ -22,6 +22,7 @@
 #include <config.h>
 #endif
 
+#include "utils.h"
 
 #include <qobject.h>
 #include <qsocketnotifier.h>

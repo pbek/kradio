@@ -18,8 +18,11 @@
 #ifndef KRADIO_UTILS_H
 #define KRADIO_UTILS_H
 
+using namespace std;
+
 #include <qstring.h>
 #include <list>
+#include <vector>
 
 typedef list<QString>				StringList;
 typedef StringList::iterator		iStirngList;

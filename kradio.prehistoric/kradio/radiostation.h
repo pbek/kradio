@@ -18,6 +18,12 @@
 #ifndef RADIOSTATION_H
 #define RADIOSTATION_H
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include "utils.h"
+
 #include <qobject.h>
 #include <vector>
 

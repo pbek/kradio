@@ -152,7 +152,7 @@ void RadioDocking::slotUpdateToolTips ()
 void RadioDocking::slotToggleUI ()
 {
     if (radioControl->isMinimized() || radioControl->isHidden())
-        radioControl->showNormal();
+        radioControl->show();
     else
         radioControl->hide();
 }
