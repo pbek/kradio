@@ -33,6 +33,7 @@
 
 #include "utils.h"
 #include <qstring.h>
+#include <qdict.h>
 
 /**
   *@author Martin Witte, Klas Kalass
@@ -58,8 +59,12 @@
   
 */
 
+extern struct RegisterStationClass {} registerStationClass;
+
 class RadioStation
 {
+protected:
+    RadioStation (RegisterStationClass, const QString &classname);
 public:
 	RadioStation ();
 	RadioStation (const QString &name, const QString &shortName);
@@ -78,6 +83,15 @@ public:
     void  setIconName     (const QString &iconName)   { m_iconName      = iconName;      }
 	void  setInitialVolume(float initialVolume)       { m_initialVolume = initialVolume; }
 
+	// for XML-Parsing/Export
+	virtual bool setProperty(const QString &property_name, const QString &val);
+	virtual QString getProperty(const QString &property_name) const;
+	virtual QStringList getPropertyNames() const;
+	virtual QString getClassName() const = 0;
+
+	// get empty derived stations by classname from registry
+	static RadioStation const *getStationClass(const QString &classname);
+
     // = 0 : "this" is same as "s", e.g. approximately same frequency, same url, ...
     // > 0 : "this" is numerically (frequencies) or alphanumerically (urls) or ... greater than "s"
     // < 0 : "this" is numerically (frequencies) or alphanumerically (urls) or ... smaller than "s"
@@ -94,7 +108,10 @@ protected :
 	QString	 m_shortName;
 	float	 m_initialVolume;		// <0: => Don't use
 	QString	 m_iconName;
-};
+
+private:
+	static QDict<RadioStation>  *stationClassRegistry;
+};                                           
 
 
 
@@ -105,10 +122,14 @@ protected :
 class UndefinedRadioStation : public RadioStation
 {
 public:
+    UndefinedRadioStation (RegisterStationClass) : RadioStation (registerStationClass, getClassName()) {}
+
 	virtual QString       longName() const { return "unknown"; }
 	virtual bool          isValid()  const { return false; }
 	virtual RadioStation *copy()     const { return new UndefinedRadioStation(*this); }
 	virtual int           compare(const RadioStation &s) const;
+
+	virtual QString       getClassName() const { return "UndefinedRadioStation"; }
 };
 
 

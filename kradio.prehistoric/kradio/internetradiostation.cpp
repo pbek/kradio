@@ -18,6 +18,14 @@
 #include "internetradiostation.h"
 #include <typeinfo>
 
+/////////////////////////////////////////////////////////////////////////////
+
+const char *StationUrlElement = "url";
+
+static InternetRadioStation  emptyInternetRadioStation(registerStationClass);
+
+/////////////////////////////////////////////////////////////////////////////
+
 InternetRadioStation::InternetRadioStation()
     : RadioStation(),
       m_url()
@@ -41,6 +49,13 @@ InternetRadioStation::InternetRadioStation(const QString &name,
 InternetRadioStation::InternetRadioStation(const InternetRadioStation &s)
     : RadioStation(s),
       m_url(s.m_url)
+{
+}
+
+
+InternetRadioStation::InternetRadioStation(RegisterStationClass, const QString &classname)
+    : RadioStation(registerStationClass, classname.length() ? classname : getClassName()),
+      m_url()
 {
 }
 
@@ -90,4 +105,33 @@ QString InternetRadioStation::longName() const
 		longN = longN + ", ";
 
 	return longN + m_url.url();
+}
+
+
+bool InternetRadioStation::setProperty(const QString &pn, const QString &val)
+{
+	bool retval = false;
+	if (pn == StationUrlElement) {
+		m_url = val;
+		retval = true;
+	} else {
+		retval = RadioStation::setProperty(pn, val);
+	}
+	return retval;
+}
+
+QString InternetRadioStation::getProperty(const QString &pn) const
+{
+	if (pn == StationUrlElement) {
+		return m_url.url();
+	} else {
+		return RadioStation::getProperty(pn);
+	}
+}
+
+QStringList InternetRadioStation::getPropertyNames() const
+{
+	QStringList l = RadioStation::getPropertyNames();
+	l.push_back(StationUrlElement);
+	return l;
 }

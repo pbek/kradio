@@ -24,6 +24,20 @@
 // Kopenhagener Wellenplan:   9kHz
 #define STATION_FREQ_INTERVAL_AM   0.009
 
+/////////////////////////////////////////////////////////////////////////////
+
+const char *StationFrequencyElement		= "frequency";
+
+static FrequencyRadioStation emptyFrequencyRadioStation(registerStationClass);
+
+/////////////////////////////////////////////////////////////////////////////
+
+FrequencyRadioStation::FrequencyRadioStation (RegisterStationClass, const QString &classname)
+	: RadioStation(registerStationClass, classname.length() ? classname : getClassName()),
+      m_frequency(0)
+{
+}
+
 FrequencyRadioStation::FrequencyRadioStation()
     : RadioStation(),
       m_frequency(0)
@@ -109,3 +123,37 @@ bool FrequencyRadioStation::isValid() const
 {
 	return m_frequency > 0;
 }
+
+
+
+bool FrequencyRadioStation::setProperty(const QString &pn, const QString &val)
+{
+	bool retval = false;
+	if (pn == StationFrequencyElement) {
+		float f = val.toFloat(&retval);
+		if (retval)
+			m_frequency = f;
+	} else {
+		retval = RadioStation::setProperty(pn, val);
+	}
+	return retval;
+}
+
+
+QString FrequencyRadioStation::getProperty(const QString &pn) const
+{
+	if (pn == StationFrequencyElement) {
+		return QString().setNum(m_frequency);
+	} else {
+		return RadioStation::getProperty(pn);
+	}
+}
+
+
+QStringList FrequencyRadioStation::getPropertyNames() const
+{
+	QStringList l = RadioStation::getPropertyNames();
+	l.push_back(StationFrequencyElement);
+	return l;
+}
+

@@ -37,6 +37,7 @@ public:
     InternetRadioStation(KURL const &url);
     InternetRadioStation(const QString &name, const QString &shortName, KURL const &url);
     InternetRadioStation(const InternetRadioStation &);
+	InternetRadioStation(RegisterStationClass, const QString &classname = "");
     ~InternetRadioStation();
 
     const KURL & url() const             { return m_url; }
@@ -54,6 +55,12 @@ public:
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;
+
+	// for XML-Parsing/Export
+	virtual bool setProperty(const QString &property_name, const QString &val);
+	virtual QString getProperty(const QString &property_name) const;
+	virtual QStringList getPropertyNames() const;
+	virtual QString getClassName() const { return "InternetRadioStation"; }
 
 protected:
     KURL m_url;

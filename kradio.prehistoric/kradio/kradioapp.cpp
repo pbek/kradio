@@ -37,7 +37,15 @@
 QColor defaultDisplayColor    ( 77, 117,  77 );
 QColor defaultDisplayTextColor( 20, 244,  20 );
 
-
+const char *AlarmListElement            = "alarmlist";
+const char *AlarmElement                = "alarm";
+const char *AlarmDateElement            = "date";
+const char *AlarmTimeElement            = "time";
+const char *AlarmDailyElement           = "daily";
+const char *AlarmEnabledElement         = "enabled";
+const char *AlarmStationIDElement       = "stationID";
+const char *AlarmFrequencyElement       = "frequency";
+const char *AlarmVolumeElement          = "volume";
 
 
 

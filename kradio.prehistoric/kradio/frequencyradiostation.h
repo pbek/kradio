@@ -28,12 +28,16 @@
  * @author Klas Kalass, Ernst Martin Witte
  */
 
+//extern const char *StationFrequencyElement;
+
+
 class FrequencyRadioStation : public RadioStation  {
 public:
 	FrequencyRadioStation ();
     FrequencyRadioStation (float frequency);
     FrequencyRadioStation (const QString &name, const QString &shortName, float frequency);
     FrequencyRadioStation (const FrequencyRadioStation &);
+    FrequencyRadioStation (RegisterStationClass, const QString &classname = "");
     ~FrequencyRadioStation();
 
     float  frequency()  const;
@@ -52,9 +56,18 @@ public:
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;
 
+
+	// for XML-Parsing/Export
+	virtual bool setProperty(const QString &property_name, const QString &val);
+	virtual QString getProperty(const QString &property_name) const;
+	virtual QStringList getPropertyNames() const;
+	virtual QString getClassName() const { return "FrequencyRadioStation"; }
+
 protected:
 
     float m_frequency;
 };
+
+
 
 #endif

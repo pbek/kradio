@@ -17,12 +17,38 @@
 
 #include "radiostation.h"
 
+extern const char *StationNameElement;
+extern const char *StationShortNameElement;
+extern const char *StationIconStringElement;
+extern const char *StationVolumePresetElement;
+
+const char *StationNameElement			= "name";
+const char *StationShortNameElement		= "shortname";
+const char *StationIconStringElement	= "icon";
+const char *StationVolumePresetElement	= "volumepreset";
 
 /////////////////////////////////////////////////////////////////////////////
 
-const UndefinedRadioStation undefinedRadioStation;
+QDict<RadioStation> *RadioStation::stationClassRegistry = 0;
 
 /////////////////////////////////////////////////////////////////////////////
+
+RegisterStationClass registerStationClass;
+const UndefinedRadioStation undefinedRadioStation (registerStationClass);
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+RadioStation::RadioStation(RegisterStationClass, const QString &classname)
+	: m_name(""),
+      m_shortName(""),
+      m_initialVolume(-1),
+      m_iconName("")
+{
+	if (! stationClassRegistry)
+		stationClassRegistry = new QDict<RadioStation>;
+	stationClassRegistry->insert(classname, this);
+}
 
 RadioStation::RadioStation()
     : m_name(""),
@@ -55,8 +81,61 @@ RadioStation::~RadioStation()
 }
 
 
+RadioStation const *RadioStation::getStationClass(const QString &classname)
+{
+	if (stationClassRegistry)
+		return stationClassRegistry->find(classname);
+	else
+		return NULL;
+}
 
 
+bool RadioStation::setProperty(const QString &pn, const QString &val)
+{
+	bool retval = false;
+	if (pn == StationNameElement) {
+		m_name = val;
+		retval = true;
+	} else if (pn == StationShortNameElement) {
+		m_shortName = val;
+		retval = true;
+	} else if (pn == StationIconStringElement) {
+		m_iconName = val;
+		retval = true;
+	} else if (pn == StationVolumePresetElement) {
+		float x = val.toFloat(&retval);
+		if (retval)
+			m_initialVolume = x;
+	}
+	return retval;
+}
+
+
+QString RadioStation::getProperty(const QString &pn) const
+{
+	if (pn == StationNameElement) {
+		return m_name;
+	} else if (pn == StationShortNameElement) {
+		return m_shortName;
+	} else if (pn == StationIconStringElement) {
+		return m_iconName;
+	} else if (pn == StationVolumePresetElement) {
+		return QString().setNum(m_initialVolume);
+	} else {
+		return "";
+	}
+}
+
+
+QStringList RadioStation::getPropertyNames() const
+{
+	QStringList l;
+	l.push_back(StationNameElement);
+	l.push_back(StationShortNameElement);
+	l.push_back(StationIconStringElement);
+	l.push_back(StationVolumePresetElement);
+	return l;
+}
 
 /////////////////////////////////////////////////////////////////////////
 
