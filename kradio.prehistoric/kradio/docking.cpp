@@ -4,7 +4,7 @@
     begin                : Don Mär  8 21:57:17 CET 2001
     copyright            : (C) 2002 by Ernst Martin Witte
     email                : witte@kawo1.rwth-aachen.de
- ***************************************************************************/
+***************************************************************************/
 
 /***************************************************************************
  *                                                                         *
@@ -32,61 +32,62 @@
 #define STATION_0_POSITION 1
 
 RadioDocking::RadioDocking(KRadio *_widget, RadioBase *_radio, const char *name)
-	: KSystemTray (_widget, name)
+  : KSystemTray (_widget, name)
 {
-	radio = _radio;
-	widget = _widget;
+  radio = _radio;
+  widget = _widget;
 
-  	miniKRadioPixmap = UserIcon("kradio");
+  miniKRadioPixmap = UserIcon("kradio");
 
-  	// popup menu for right mouse button
-  	KPopupMenu *menu = contextMenu();
+  // popup menu for right mouse button
+  KPopupMenu *menu = contextMenu();
 
-  	currID   = menu->idAt(0);
+  currID   = menu->idAt(0);
 
-		alarmID = menu->insertTitle (i18n("Wake Up"));
-		stationSeparatorID = alarmID; // make sure the position of the corresponding item is STATION_0_POSITION !
+  alarmID = menu->insertTitle (i18n("Wake Up"));
+  stationSeparatorID = alarmID; // make sure the position of the corresponding item is STATION_0_POSITION !
 
-  	nextID = menu->insertItem(i18n("Search Next Station"), this, SLOT( slotSearchNextStation()));
-  	menu->changeItem(nextID, SmallIcon("forward"), i18n("Search Next Station"));
+  nextID = menu->insertItem(i18n("Search Next Station"), this, SLOT( slotSearchNextStation()));
+  menu->changeItem(nextID, SmallIcon("forward"), i18n("Search Next Station"));
 
-  	prevID = menu->insertItem(i18n("Search Previous Station"), this, SLOT( slotSearchPrevStation()));
-  	menu->changeItem(prevID, SmallIcon("back"), i18n("Search Previous Station"));
+  prevID = menu->insertItem(i18n("Search Previous Station"), this, SLOT( slotSearchPrevStation()));
+  menu->changeItem(prevID, SmallIcon("back"), i18n("Search Previous Station"));
 
-  	powerID = menu->insertItem(i18n("Power On"), this, SLOT( slotPowerToggle()));
+  powerID = menu->insertItem(i18n("Power On"), this, SLOT( slotPowerToggle()));
 
-  	menu->insertSeparator();
+  menu->insertSeparator();
 
-  	menu->changeItem(menu->insertItem(i18n("&About"),
-  	                                        parentWidget(),
-  	                                        SLOT( slotAbout())),
-  	                    SmallIcon("kradio"), i18n("About"));
+  menu->changeItem(menu->insertItem(i18n("&About"),
+				    parentWidget(),
+				    SLOT( slotAbout())),
+		   SmallIcon("kradio"), i18n("About"));
+
 }
 
 
 void RadioDocking::contextMenuAboutToShow( KPopupMenu* menu )
 {
-			clearStationList();
-			buildStationList();
+  clearStationList();
+  buildStationList();
 
-			menu->changeTitle (currID, i18n("KRadio: ")+ widget->getStationString(true, true, true));
-	  	menu->changeItem (powerID, radio->isPowerOn() ? i18n("Power Off") : i18n("Power On"));
+  menu->changeTitle (currID, i18n("KRadio: ")+ widget->getStationString(true, true, true));
+  menu->changeItem (powerID, radio->isPowerOn() ? i18n("Power Off") : i18n("Power On"));
 
-	  	QDateTime a = radio->nextAlarm();
+  QDateTime a = radio->nextAlarm();
 
-		if (a.isValid())
-		  	menu->changeTitle (alarmID, i18n("next alarm: ") + a.toString());
-		else
-		  	menu->changeTitle (alarmID, i18n("<no alarm pending>"));
+  if (a.isValid())
+    menu->changeTitle (alarmID, i18n("next alarm: ") + a.toString());
+  else
+    menu->changeTitle (alarmID, i18n("<no alarm pending>"));
 
-		// stolen from kmix
-    for ( unsigned n=0; n<menu->count(); n++ )
+  // stolen from kmix
+  for ( unsigned n=0; n<menu->count(); n++ )
     {
-        if ( QString( menu->text( menu->idAt(n) ) )==i18n("&Quit") )
-            menu->removeItemAt( n );
+      if ( QString( menu->text( menu->idAt(n) ) )==i18n("&Quit") )
+	menu->removeItemAt( n );
     }
 
-    menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
+  menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
 }
 
 RadioDocking::~RadioDocking()
@@ -95,30 +96,30 @@ RadioDocking::~RadioDocking()
 
 void RadioDocking::clearStationList()
 {
-			// FIXME:: THIS IS *REALLY* NOT FLEXIBLE!!!!!
-     	while (contextMenu()->idAt(STATION_0_POSITION) != stationSeparatorID)
-     		contextMenu()->removeItemAt(STATION_0_POSITION);
+  // FIXME:: THIS IS *REALLY* NOT FLEXIBLE!!!!!
+  while (contextMenu()->idAt(STATION_0_POSITION) != stationSeparatorID)
+    contextMenu()->removeItemAt(STATION_0_POSITION);
 }
 
 void RadioDocking::buildStationList()
 {
- 	  	for (int i = 0; i < radio->nStations(); ++i) {
-   			const RadioStation *stn = radio->getStation(i);
- 	  		QString StationText = stn->getLongName(i+1);
+  for (int i = 0; i < radio->nStations(); ++i) {
+    const RadioStation *stn = radio->getStation(i);
+    QString StationText = stn->getLongName(i+1);
 
-   			int id = contextMenu()->insertItem(StationText, stn, SLOT(activate()), 0, -1, i+1);
-   			contextMenu()->setItemChecked (id, radio->getCurrentStation() == stn);
- 	  	}
+    int id = contextMenu()->insertItem(StationText, stn, SLOT(activate()), 0, -1, i+1);
+    contextMenu()->setItemChecked (id, radio->getCurrentStation() == stn);
+  }
 }
 
 void RadioDocking::slotSearchNextStation()
 {
-	radio->startSeek(true);
+  radio->startSeek(true);
 }
 
 void RadioDocking::slotSearchPrevStation()
 {
-	radio->startSeek(false);
+  radio->startSeek(false);
 }
 
 void RadioDocking::slotNOP()
@@ -127,6 +128,6 @@ void RadioDocking::slotNOP()
 
 void RadioDocking::slotPowerToggle()
 {
-	widget->slotPowerClicked();
+  widget->slotPowerClicked();
 }
 
