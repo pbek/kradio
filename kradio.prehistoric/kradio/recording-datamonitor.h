@@ -60,6 +60,7 @@ protected:
 protected:
 
 	int     *m_channelsMax;  // maximum absolute value recorded on each channel
+	double  *m_channelsAvg;  // average value recorded on each channel
 	int      m_maxValue;     // maximum absolute value possible for samples
 	int      m_channels;
 

@@ -368,9 +368,14 @@ void Recording::slotSoundDataAvailable()
 	
 		int r = read(m_devfd, m_buffer, m_bufferSize);
 		bool err = r <= 0;
+		if (err)
+			kdDebug() << "error: no data to record" << endl;
 
-		if (!err && m_context.state() == RecordingContext::rsRunning)
+		if (!err && m_context.state() == RecordingContext::rsRunning) {
 			err = sf_write_raw(m_output, m_buffer, r) != r;
+			if (err)
+				kdDebug() << "error writing output" << endl;
+		}
 			
 		if (!err) {
 			m_context.addInput(m_buffer, r);

@@ -154,6 +154,7 @@ void RecordingConfiguration::slotOK()
 		default:              c.outputFormat = RecordingConfig::outputWAV;  break;
 	}
 
+	c.checkFormatSettings();
 	sendRecordingConfig(c);
 }
 
@@ -170,11 +171,11 @@ void RecordingConfiguration::slotFormatSelectionChanged()
 	int formatIDX = editFileFormat->currentItem();
 	
 	if (bitsIDX == BITS_8_IDX) {
-		if (formatIDX == FORMAT_RAW_IDX || formatIDX == FORMAT_WAV_IDX) {
+		if (formatIDX == FORMAT_RAW_IDX || formatIDX == FORMAT_AIFF_IDX) {
 			editSign->setDisabled(false);
 		} else {
 			editSign->setDisabled(true);
-			editSign->setCurrentItem(SIGN_SIGNED_IDX);
+			editSign->setCurrentItem(formatIDX == FORMAT_WAV_IDX ? SIGN_UNSIGNED_IDX : SIGN_SIGNED_IDX);
 		}		
 	} else {
 		editSign->setDisabled(true);

@@ -32,6 +32,7 @@
 RecordingDataMonitor::RecordingDataMonitor(QWidget *parent, const char *name)
 	: QFrame(parent, name),
 	  m_channelsMax(NULL),
+	  m_channelsAvg(NULL),
 	  m_maxValue(INT_MAX),
 	  m_channels(0)
 {
@@ -113,17 +114,28 @@ bool RecordingDataMonitor::noticeRecordingContextChanged(const RecordingContext 
 	      int             nSamples = ctx.samplesInBuffer();
 	const RecordingConfig &cfg     = ctx.config();
 
+	int bias = 0;
 	setChannels(cfg.channels);
 	m_maxValue = cfg.maxValue();
+	if (!cfg.sign) {
+		m_maxValue /= 2;
+		bias = -m_maxValue;
+	}
 
 	int c = 0;
 	for (int s = 0; s < nSamples; ++s, ++c) {
 		if (c >= m_channels) c -= m_channels;   // avoid slow c = s % m_channels
 
 		int &m = m_channelsMax[c];
-		int x = abs(buffer[s]);
+		int x = abs(buffer[s] + bias);
 		if (m < x) m = x;
+		m_channelsAvg[c] += x;
 	}
+	for (int i = 0; i < m_channels; ++i)
+		m_channelsAvg[i] /= nSamples;
+//	kdDebug() << "maxVal: " << m_maxValue << endl;
+//	kdDebug() << "max:    " << m_channelsMax[0] << endl;
+//	kdDebug() << "avg:    " << m_channelsAvg[0] << endl;
 
 	repaint(false);
 	return true;
@@ -136,16 +148,21 @@ void RecordingDataMonitor::setChannels(int n)
 {
 	if (n != m_channels) {
 		if (m_channelsMax) delete m_channelsMax;
+		if (m_channelsAvg) delete m_channelsAvg;
 		m_channels = n > 0 ? n : 0;
 		if (m_channels > 0) {
 			m_channelsMax = new int[m_channels];
+			m_channelsAvg = new double[m_channels];
 		} else {
 			m_channelsMax = NULL;
+			m_channelsAvg = NULL;
 		}
 	}
 
-	for (int i = 0; i < m_channels; ++i)
+	for (int i = 0; i < m_channels; ++i) {
 		m_channelsMax[i] = 0;
+		m_channelsAvg[i] = 0;
+	}
 	setMinimumSize(QSize(W_MIN, (m_channels + 1 )* CHANNEL_H_MIN));
 }
 
@@ -185,17 +202,25 @@ void RecordingDataMonitor::drawContents(QPainter *painter)
 	for (int c = 0; c < m_channels; ++c) {
 		int x = x0;
 
-		double dB = 20*log10(m_channelsMax[c] / (double)m_maxValue );
+//		double dB    = 20*log10(m_channelsAvg[c] / (double)m_maxValue );
+		double dBMax = 20*log10(m_channelsMax[c] / (double)m_maxValue );
 
-		int activeBlocks = (int)rint(nBlocks * (min_dB - dB) / min_dB);
+		int activeBlocks = (int)rint(nBlocks * (min_dB - dBMax) / min_dB);
+//		int activeBlocks = (int)rint(nBlocks * (min_dB - dB)    / min_dB);
+//		int maxBlock     = (int)rint(nBlocks * (min_dB - dBMax) / min_dB);
 		int range = 0;
 		
 		for (int b = 0; b < nBlocks; ++b) {
 		    if (b >= nBlocks * ranges[range]) ++range;
 			painter->fillRect(x+1, y+1, BLOCK_W_MIN-1, chHeight-1,
 			                  b < activeBlocks ? *brushes[range] : inactiveBrush);
-			x += BLOCK_W_MIN;
+/*			if (b == maxBlock) {
+				painter->fillRect(x + BLOCK_W_MIN - 3, y+1, 3, chHeight-1,
+			                      *brushes[range]);
+			}
+*/			x += BLOCK_W_MIN;
 		}
+
 		y += chHeight;
 	}
 

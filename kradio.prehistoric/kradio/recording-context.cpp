@@ -179,8 +179,9 @@ void RecordingConfig::getSoundFileInfo(SF_INFO &sinfo, bool input)
 
 	// U8 only supported for RAW and WAV
 	if (bits == 8) {
-		sinfo.format |= SF_FORMAT_PCM_S8;
-		if (!sign && (outputFormat == outputRAW || outputFormat != outputWAV))
+		if (sign && outputFormat != outputWAV || outputFormat == outputAU)
+			sinfo.format |= SF_FORMAT_PCM_S8;
+		else
 			sinfo.format |= SF_FORMAT_PCM_U8;
 	}
 	if (bits == 16)
@@ -212,8 +213,8 @@ void RecordingConfig::checkFormatSettings()
 
 	// correct Endianess and Signs for specific formats
 	switch (outputFormat) {
-		case outputWAV:  littleEndian = true; break;
-		case outputAIFF: littleEndian = false; sign = true; break;
+		case outputWAV:  littleEndian = true; if (bits == 8) sign = false; break;
+		case outputAIFF: littleEndian = false; break;
 		case outputAU:   littleEndian = false; sign = true; break;
 		case outputRAW:  break;
 		default:         break;
