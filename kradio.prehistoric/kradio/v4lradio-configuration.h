@@ -81,8 +81,8 @@ protected slots:
 
 	void selectMixerDevice();
 	void selectRadioDevice();
-	void slotEditRadioDeviceChanged(const QString &s);
-	void slotEditMixerDeviceChanged(const QString &s);
+	void slotEditRadioDeviceChanged();
+	void slotEditMixerDeviceChanged();
 
 	void slotOK();
 	void slotCancel();

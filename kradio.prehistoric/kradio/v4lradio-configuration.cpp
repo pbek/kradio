@@ -48,10 +48,10 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent)
 					 this, SLOT(selectRadioDevice()));
 	QObject::connect(buttonSelectMixerDevice, SIGNAL(clicked()),
 					 this, SLOT(selectMixerDevice()));
-	QObject::connect(editRadioDevice, SIGNAL(textChanged(const QString &)),
-					 this, SLOT(slotEditRadioDeviceChanged(const QString &)));
-	QObject::connect(editMixerDevice, SIGNAL(textChanged(const QString &)),
-					 this, SLOT(slotEditMixerDeviceChanged(const QString &)));
+	QObject::connect(editRadioDevice, SIGNAL(lostFocus()),
+					 this, SLOT(slotEditRadioDeviceChanged()));
+	QObject::connect(editMixerDevice, SIGNAL(lostFocus()),
+					 this, SLOT(slotEditMixerDeviceChanged()));
 	QObject::connect(editMinFrequency, SIGNAL(valueChanged(int)),
 					 this, SLOT(guiMinFrequencyChanged(int)));
 	QObject::connect(editMaxFrequency, SIGNAL(valueChanged(int)),
@@ -366,9 +366,10 @@ void V4LRadioConfiguration::selectMixerDevice()
 }
 
 
-void V4LRadioConfiguration::slotEditRadioDeviceChanged(const QString &s)
+void V4LRadioConfiguration::slotEditRadioDeviceChanged()
 {
 	if (m_ignoreGUIChanges) return;
+	const QString &s = editRadioDevice->text();
 	if (s != queryRadioDevice()) {
 		V4LCaps c = V4LRadio::readV4LCaps(s);
 		noticeDescriptionChanged(c.description);
@@ -378,9 +379,10 @@ void V4LRadioConfiguration::slotEditRadioDeviceChanged(const QString &s)
 }
 
 
-void V4LRadioConfiguration::slotEditMixerDeviceChanged(const QString &s)
+void V4LRadioConfiguration::slotEditMixerDeviceChanged()
 {
 	if (m_ignoreGUIChanges) return;
+	const QString &s = editMixerDevice->text();
 	noticeMixerDeviceChanged(s, queryMixerChannel());
 }
 

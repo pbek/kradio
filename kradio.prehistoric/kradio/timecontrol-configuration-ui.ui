@@ -380,7 +380,7 @@
                             <string>Start Playing</string>
                         </property>
                         <property name="pixmap">
-                            <pixmap>"start"</pixmap>
+                            <pixmap>"kradio_muteoff"</pixmap>
                         </property>
                     </item>
                     <item>
@@ -388,7 +388,7 @@
                             <string>Stop Playing</string>
                         </property>
                         <property name="pixmap">
-                            <pixmap>"stop"</pixmap>
+                            <pixmap>"kradio_muteon"</pixmap>
                         </property>
                     </item>
                     <item>
@@ -396,7 +396,7 @@
                             <string>Start Recording</string>
                         </property>
                         <property name="pixmap">
-                            <pixmap>"filesave"</pixmap>
+                            <pixmap>"kradio_record"</pixmap>
                         </property>
                     </item>
                     <item>

@@ -84,7 +84,7 @@ void WidgetPluginBase::toggleShown()
 
 void WidgetPluginBase::show()
 {
-	if (m_geoCacheValid) {
+	if (m_geoCacheValid && !isReallyVisible()) {
 		QWidget *w = getWidget();
 		if (!w) return;
 		WId  id = w->winId();

@@ -176,16 +176,17 @@ void TimeControlConfiguration::slotDateChanged( const QDate &d )
 
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-        QWidget *oldfocus = focusWidget();
-
 		Alarm &a = alarms[idx];
 		a.setDate(d);
 		ignoreChanges = true;
+
+		bool oldBlock = listAlarms->signalsBlocked();
+		listAlarms->blockSignals(true);
 		listAlarms->changeItem(a.nextAlarm(true).toString(), idx);
+		listAlarms->blockSignals(oldBlock);
+
 		noticeAlarmsChanged(alarms);
 		ignoreChanges = false;
-
-		oldfocus->setFocus();
     }
 }
 
@@ -196,16 +197,17 @@ void TimeControlConfiguration::slotTimeChanged(const QTime &t)
 
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-        QWidget *oldfocus = focusWidget();
-
 		Alarm &a = alarms[idx];
 		a.setTime(t);
 		ignoreChanges = true;
+
+		bool oldBlock = listAlarms->signalsBlocked();
+		listAlarms->blockSignals(true);
 		listAlarms->changeItem(a.nextAlarm(true).toString(), idx);
+		listAlarms->blockSignals(oldBlock);
+
 		noticeAlarmsChanged(alarms);
 		ignoreChanges = false;
-
-		oldfocus->setFocus();
     }
 }
 
@@ -216,19 +218,20 @@ void TimeControlConfiguration::slotDailyChanged (bool b)
 
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-        QWidget *oldfocus = focusWidget();
-
 		Alarm &a = alarms[idx];
 		a.setDaily(b);
 		ignoreChanges = true;
+
+		bool oldBlock = listAlarms->signalsBlocked();
+		listAlarms->blockSignals(true);
 		listAlarms->changeItem((a.isDaily() ? a.nextAlarm(true) : a.alarmTime()).toString(), idx);
+		listAlarms->blockSignals(oldBlock);
+
 		noticeAlarmsChanged(alarms);
 		ignoreChanges = false;
 
 		editAlarmDate ->setDisabled(a.isDaily());
 		labelAlarmDate->setDisabled(a.isDaily());
-
-		oldfocus->setFocus();
     }
 }
 

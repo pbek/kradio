@@ -944,6 +944,8 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 	if (r == 0) {
 		c.version  = 2;
 
+		logDebug(QString().sprintf("V4L2 - Version: %08X", caps2.version));
+
 		size_t l = sizeof(caps.name);
 		l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
 		memcpy(buffer, caps.name, l);
