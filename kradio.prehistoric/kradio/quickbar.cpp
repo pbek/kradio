@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-
-
 #include <qtooltip.h>
 #include <qnamespace.h>
 #include <qhbuttongroup.h>
@@ -169,6 +167,11 @@ void QuickBar::buttonClicked(int id)
 			sendActivateStation(rs);
 		}
 	}
+	// Problem: if we click a button twice, there will be no
+	// "station changed"-notification. Thus it would be possible to
+	// enable a button even if power is off or the radio does not
+	// accept the radiostation
+	activateCurrentButton();
 }
 
 
