@@ -33,6 +33,9 @@ QuickBar::QuickBar(RadioBase *_radio)
     showShortName(true)
 {
     radio = _radio;
+    restoreState(KGlobal::config());
+    rebuildGUI();
+
     connect (radio, SIGNAL(sigConfigChanged()), 
 	     this, SLOT(slotConfigChanged()));
     connect(radio, SIGNAL(sigFrequencyChanged(float, const RadioStation *)), 
@@ -81,7 +84,7 @@ void QuickBar::saveState (KConfig *c) const
     c->writeEntry("showShortName",showShortName);
 }
 
-void QuickBar::slotConfigChanged()
+void QuickBar::rebuildGUI()
 {
 	for (ciButtonList i = Buttons.begin(); i != Buttons.end(); ++i) {
 		delete *i;
@@ -130,9 +133,13 @@ void QuickBar::slotConfigChanged()
     
     // activate correct button
     buttonGroup->setButton(radio->currentStation());
+}
 
-    // make sure the dialog does not look funny ;)
-    adjustSize();
+void QuickBar::slotConfigChanged()
+{
+  rebuildGUI();
+  // make sure the dialog does not look funny ;)
+  adjustSize();
 }
 
 void QuickBar::setOn(bool on)

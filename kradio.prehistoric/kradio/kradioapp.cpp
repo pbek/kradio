@@ -51,8 +51,6 @@ KRadioApp::KRadioApp()
 
   // now show the GUI
   if (quickbar){
-    // we need to call this here to make sure we take care of configuration
-    quickbar->slotConfigChanged();
     quickbar->show();
   }
   if (tray){

@@ -59,6 +59,9 @@ public:
 protected:
 	//    void resizeEvent(QResizeEvent *);
 
+private:
+	void rebuildGUI();
+
 public slots:
         void setOn(bool on);
 	void slotConfigChanged();
