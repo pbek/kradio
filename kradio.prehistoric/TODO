@@ -1,8 +1,6 @@
-0.2.7  kde like configuration dialog // done, emw
-       precise alarms // done, emw
-       
 0.2.8  make use of properties
        dcop interface
+       ? force mono mode ?
 
 0.3    recording capabilities
        ? quick radio applet
@@ -16,6 +14,8 @@ future:
 * collect location information for cannel sets  // emw, started
 
 DONE:
+//0.2.7  kde like configuration dialog // done, emw
+//       precise alarms // done, emw
 //* make use of ~/.kde/share/apps/kradio/... concept //emw
 //* some graphical configuration dialog(s) for  //emw
 //  - station quick select

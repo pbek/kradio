@@ -1,0 +1,282 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Mathias Heier</maintainer>
+			<changed>2003-01-19T17:57:14</changed>
+			<country>Deutschland</country>
+			<city>Freiburg</city>
+			<media>Kabel</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>SWR 1 Baden-Württemberg</name>
+			<shortname>SWR 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.6875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 2 Baden-Wuerttemberg</name>
+			<shortname>SWR 2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.188</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 3</name>
+			<shortname>SWR 3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.55</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SWR 4 Breisgau</name>
+			<shortname>SWR 4</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.812</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Regenbogen Freiburg</name>
+			<shortname>Regenbogen</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Regenbogen Karlsruhe</name>
+			<shortname>Regenbogen</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.0625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Freiburg</name>
+			<shortname>FR 1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Dreyeckland</name>
+			<shortname>Dreyeckland</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SR 3 Saarlandwelle</name>
+			<shortname>SR 3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.3125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Chart Radio</name>
+			<shortname>Chart Radio</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>JAM-FM</name>
+			<shortname>JAM-FM</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.4375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>RTL RADIO - Die groessten Oldies</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>88.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>DeutschlandRadio Berlin</name>
+			<shortname>DLR</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.062</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oestereich 1</name>
+			<shortname>Oestereich 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.1875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oestereich 2 - Radio Vorarlberg</name>
+			<shortname>Oestereich 2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.8125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Oestereich 3</name>
+			<shortname>Oestereich 3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.3125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>sunshine live</name>
+			<shortname>sunshine</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassik Radio</name>
+			<shortname>Klassik Radio</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Horeb</name>
+			<shortname>Radio Horeb</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.6875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>ERF 1 Evangeliumsrundfunk Wetzlar</name>
+			<shortname>ERF 1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.0625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melodie</name>
+			<shortname>Radio Melodie</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Suisse Romande 2</name>
+			<shortname>RSR 2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Suisse Romande 3</name>
+			<shortname>RSR 3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio France Inter</name>
+			<shortname>France Inter</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.0625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>France Musique</name>
+			<shortname>France Musique</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.0625</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>France Culture</name>
+			<shortname>France Culture</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.25</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio France Alsace</name>
+			<shortname>France Alsace</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.688</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>TOP Music</name>
+			<shortname>TOP Music</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.188</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Iris</name>
+			<shortname>Radio Iris</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.375</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>

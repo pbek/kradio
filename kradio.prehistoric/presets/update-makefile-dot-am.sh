@@ -1,8 +1,14 @@
 #!/bin/sh
 
-OUT=Makefile.am
+THIS="$0"
+if [ ${THIS:0:1} != "/" ] ; then
+	if [ -e "$PWD/$THIS" ] ; then
+		THIS="$PWD/$THIS"
+	fi
+fi
+
 THISDIR=$(pwd | sed "s/^.*presets\/\?//" )
-THIS=$(basename $0)
+OUT=Makefile.am
 HERE=$(pwd)
 
 echo -n "SUBDIRS =" > $OUT
@@ -11,27 +17,34 @@ find -type d -mindepth 1 -maxdepth 1 | sed 's/^\.\///' | sed 's/\/$//' | grep -v
   while read line; do
 
     echo -n " $line" >> $OUT
-    cp "$0" "$line"
 	
     cd "$line"
-    "./$THIS"
+    "$THIS"
     cd "$HERE"
 
   done
 
+echo >> $OUT
 
-echo $THISDIR
+
 if [ -n "$THISDIR" ] ; then
 
-	echo "EXTRA_DIST =" *.krp > $OUT
+	echo -n "EXTRA_DIST =" >> $OUT
+
+
+	ls *.krp 2> /dev/null | while read line; do
+		echo -n " \"$line\"" >> $OUT
+	done
+
+	echo >> $OUT
 
 	echo -e "\ninstall-data-local:" >> $OUT
-	echo "	\$(mkinstalldirs) \$(kde_datadir)/kradio/presets/$THISDIR/" >> $OUT
+	echo "	\$(mkinstalldirs) \"\$(kde_datadir)/kradio/presets/$THISDIR/\"" >> $OUT
 	
 	find -mindepth 1 -maxdepth 1 -name "*.krp" | sed 's/^\.\///' | \
 	  while read line; do
 		
-	    echo "	\$(INSTALL_DATA) \$(srcdir)/$line \$(kde_datadir)/kradio/presets/$THISDIR/$line" >> $OUT
+	    echo "	\$(INSTALL_DATA) \"\$(srcdir)/$line\" \"\$(kde_datadir)/kradio/presets/$THISDIR/$line\"" >> $OUT
 
 	  done
 
@@ -41,7 +54,7 @@ if [ -n "$THISDIR" ] ; then
 	find -mindepth 1 -maxdepth 1 -name "*.krp" | sed 's/^\.\///' | \
 	  while read line; do
 
-		echo "	-rm -f \$(kde_datadir)/kradio/presets/$THISDIR/$line" >> $OUT	
+		echo "	-rm -f \"\$(kde_datadir)/kradio/presets/$THISDIR/$line\"" >> $OUT	
 
 	  done
 

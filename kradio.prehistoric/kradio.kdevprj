@@ -26,14 +26,14 @@ ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE)
 ldflags=\s       \s
 
 [General]
-AMChanged=false
+AMChanged=true
 author=Martin Witte
-configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
+configure_args=
 email=witte@kawo1.rwth-aachen.de
 kdevprj_version=1.3
-lfv_open_groups=Benutzerschnittstelle,GNU,Header,kradio preset files,Quellen
+lfv_open_groups=Benutzerschnittstelle,GNU,Header,Quellen
 make_options=\s-j1
-makefiles=Makefile.am,kradio/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am,presets/germany/Makefile.am,presets/Makefile.am
+makefiles=Makefile.am,kradio/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true
 project_name=KRadio
 project_type=mini_kde2
@@ -120,7 +120,7 @@ install_location=
 type=DATA
 
 [kradio/Makefile.am]
-files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/setupdialog.h,kradio/setupdialog.cpp,kradio/stationsearchdialog_uic.ui,kradio/stationsearchdialog.h,kradio/stationsearchdialog.cpp,kradio/utils.cpp,kradio/timecontrol.h,kradio/timecontrol.cpp,kradio/radiocfgxmlhandler.h,kradio/radiocfgxmlhandler.cpp,kradio/setupdialog_general_options.ui,kradio/stationsearchdialog_uic.ui.h,kradio/setupdialog_general_options.ui.h,kradio/setupdialog_alarms.ui,kradio/setupdialog_stations.ui,kradio/setupdialog_alarms.ui.h,kradio/setupdialog_stations.ui.h,kradio/bonn-antenna.krp
+files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/setupdialog.h,kradio/setupdialog.cpp,kradio/stationsearchdialog_uic.ui,kradio/stationsearchdialog.h,kradio/stationsearchdialog.cpp,kradio/utils.cpp,kradio/timecontrol.h,kradio/timecontrol.cpp,kradio/radiocfgxmlhandler.h,kradio/radiocfgxmlhandler.cpp,kradio/setupdialog_general_options.ui,kradio/stationsearchdialog_uic.ui.h,kradio/setupdialog_general_options.ui.h,kradio/setupdialog_alarms.ui,kradio/setupdialog_stations.ui,kradio/setupdialog_alarms.ui.h,kradio/setupdialog_stations.ui.h
 sub_dirs=
 type=prog_main
 
@@ -141,12 +141,6 @@ dist=true
 install=false
 install_location=
 type=HEADER
-
-[kradio/bonn-antenna.krp]
-dist=true
-install=false
-install_location=
-type=DATA
 
 [kradio/buttonflowlayout.cpp]
 dist=true
@@ -463,24 +457,3 @@ type=HEADER
 [po/Makefile.am]
 sub_dirs=
 type=po
-
-[presets/Makefile.am]
-sub_dirs=germany
-type=normal
-
-[presets/germany/Makefile.am]
-files=presets/germany/aachen-cable.krp,presets/germany/hamburg-antenna.krp
-sub_dirs=
-type=normal
-
-[presets/germany/aachen-cable.krp]
-dist=true
-install=true
-install_location=$$(kde_datadir)/kradio/presets/germany/aachen-cable.krp
-type=DATA
-
-[presets/germany/hamburg-antenna.krp]
-dist=true
-install=true
-install_location=$$(kde_datadir)/kradio/presets/germany/hamburg-antenna.krp
-type=DATA
