@@ -26,12 +26,12 @@ ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE)
 ldflags=\s  \s
 
 [General]
-AMChanged=true
+AMChanged=false
 author=Martin Witte
 configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
 email=witte@kawo1.rwth-aachen.de
 kdevprj_version=1.3
-lfv_open_groups=Benutzerschnittstelle,GNU,Header,kradio preset files,Quellen
+lfv_open_groups=Andere,Benutzerschnittstelle,GNU,Header,kradio preset files,Quellen
 make_options=\s-j1
 makefiles=Makefile.am,kradio/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am,presets/germany/Makefile.am,presets/Makefile.am
 modifyMakefiles=true
