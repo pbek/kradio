@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<maintainer>Yemu &lt;yemu@gazeta.pl&gt;</maintainer>
+			<maintainer>Cezary Biele</maintainer>
 			<changed>2003-08-22T15:27:32</changed>
 			<country>Poland</country>
 			<city>Warsaw</city>
-			<media>antenna</media>
-			<comments></comments>
+			<media>FM Antenna</media>
+			<comments>Contains merged Data</comments>
 		</info>
 		<FrequencyRadioStation>
 			<stationID>1061558692ECACB44122F72672B8E1E841F47C896FCD48392D6C3910B0C5D5F12FF6B1782B</stationID>
@@ -68,7 +67,7 @@
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>10615641762D396571B63226CC9D6F111E3910D85019108269610462773CDCF5FEBDD98E4C</stationID>
-			<name>Radio J�ef</name>
+			<name>Radio Józef</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
@@ -93,7 +92,7 @@
 		<FrequencyRadioStation>
 			<stationID>10615580715A58FBE778BC41EAA9FD101002E164402D0471161C9E7F1B89C8A5A51B2306CE</stationID>
 			<name>Poslkie Radio Trojka</name>
-			<shortname>Tr�ka</shortname>
+			<shortname>Trójka</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>98.8</frequency>
@@ -140,7 +139,7 @@
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>1061564387AD21386F6C50C04E1D6D06C31021DFBB03DA70307DB303A7B3F8937EE6541BD7</stationID>
-			<name>Radio Niepokalan�</name>
+			<name>Radio Niepokalanów</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-25 22:29+0200\n"
+"POT-Creation-Date: 2003-09-12 21:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,71 +16,79 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: docking.cpp:155
+#: docking.cpp:87 timecontrol-configuration-ui.cpp:204
+msgid "Stop Recording"
+msgstr ""
+
+#: docking.cpp:94 timecontrol-configuration-ui.cpp:203
+msgid "Start Recording"
+msgstr ""
+
+#: docking.cpp:163
 msgid "Search Next Station"
 msgstr ""
 
-#: docking.cpp:157
+#: docking.cpp:165
 msgid "Search Previous Station"
 msgstr ""
 
-#: docking.cpp:166
+#: docking.cpp:178
 msgid "&About"
 msgstr ""
 
-#: docking.cpp:184
-msgid "show "
+#: docking.cpp:196
+msgid "Hide "
 msgstr ""
 
-#: docking.cpp:184
-msgid "hide "
+#: docking.cpp:196
+msgid "Show "
 msgstr ""
 
-#: docking.cpp:191
+#: docking.cpp:203
 msgid "&Quit"
 msgstr ""
 
-#: docking.cpp:272
+#: docking.cpp:284
 msgid "next alarm: "
 msgstr ""
 
-#: docking.cpp:274
+#: docking.cpp:286
 msgid "<no alarm pending>"
 msgstr ""
 
-#: docking.cpp:282
+#: docking.cpp:294
 msgid "stop sleep (running until "
 msgstr ""
 
-#: docking.cpp:284 docking.cpp:291 docking.cpp:298
+#: docking.cpp:296 docking.cpp:303 docking.cpp:310
 msgid "start sleep countdown"
 msgstr ""
 
-#: docking.cpp:305
+#: docking.cpp:318
 msgid "Power Off"
 msgstr ""
 
-#: docking.cpp:305
+#: docking.cpp:318
 msgid "Power On"
 msgstr ""
 
-#: docking.cpp:323
+#: docking.cpp:336
 msgid "KRadio: "
 msgstr ""
 
-#: docking.cpp:384
-msgid "show"
+#: docking.cpp:398
+msgid "Show"
 msgstr ""
 
-#: docking.cpp:384
-msgid "hide"
+#: docking.cpp:398
+msgid "Hide"
 msgstr ""
 
 #: deprecated/radiobase.cpp:351
 msgid "tuned"
 msgstr ""
 
-#: deprecated/radiobase.cpp:354
+#: deprecated/radiobase.cpp:354 recording-configuration-ui.cpp:173
 msgid "Stereo"
 msgstr ""
 
@@ -90,27 +98,27 @@ msgstr ""
 
 #: deprecated/setupdialog_general_options.ui.h:43
 #: deprecated/setupdialog_general_options.ui.h:55
-#: v4lradio-configuration.cpp:301 v4lradio-configuration.cpp:313
+#: v4lradio-configuration.cpp:337 v4lradio-configuration.cpp:349
 msgid "any"
 msgstr ""
 
 #: deprecated/setupdialog_general_options.ui.h:43
-#: v4lradio-configuration.cpp:301
+#: v4lradio-configuration.cpp:337
 msgid "radio device selection"
 msgstr ""
 
 #: deprecated/setupdialog_general_options.ui.h:45
-#: v4lradio-configuration.cpp:303
+#: v4lradio-configuration.cpp:339
 msgid "select radio device"
 msgstr ""
 
 #: deprecated/setupdialog_general_options.ui.h:55
-#: v4lradio-configuration.cpp:313
+#: v4lradio-configuration.cpp:349
 msgid "mixer device selection"
 msgstr ""
 
 #: deprecated/setupdialog_general_options.ui.h:57
-#: v4lradio-configuration.cpp:315
+#: v4lradio-configuration.cpp:351
 msgid "select mixer device"
 msgstr ""
 
@@ -128,11 +136,11 @@ msgstr ""
 msgid "New Station"
 msgstr ""
 
-#: deprecated/setupdialog_stations.ui.h:173 radio-configuration.cpp:297
+#: deprecated/setupdialog_stations.ui.h:173 radio-configuration.cpp:306
 msgid "images"
 msgstr ""
 
-#: deprecated/setupdialog_stations.ui.h:173 radio-configuration.cpp:298
+#: deprecated/setupdialog_stations.ui.h:173 radio-configuration.cpp:307
 msgid "pixmap selection"
 msgstr ""
 
@@ -140,13 +148,13 @@ msgstr ""
 msgid "select station pixmap"
 msgstr ""
 
-#: deprecated/setupdialog_stations.ui.h:342 radio-configuration.cpp:386
-#: radio-configuration.cpp:405
+#: deprecated/setupdialog_stations.ui.h:342 radio-configuration.cpp:404
+#: radio-configuration.cpp:423
 msgid "kradio preset files"
 msgstr ""
 
-#: deprecated/setupdialog_stations.ui.h:342 radio-configuration.cpp:388
-#: radio-configuration.cpp:407
+#: deprecated/setupdialog_stations.ui.h:342 radio-configuration.cpp:406
+#: radio-configuration.cpp:425
 msgid "preset file selection"
 msgstr ""
 
@@ -175,7 +183,7 @@ msgid "Setup Station Presets"
 msgstr ""
 
 #: deprecated/setupdialog.cpp:93 timecontrol.cpp:239
-#: timecontrol-configuration-ui.cpp:189
+#: timecontrol-configuration-ui.cpp:190
 msgid "Alarms"
 msgstr ""
 
@@ -191,51 +199,51 @@ msgstr ""
 msgid "Setup Colors and Fonts"
 msgstr ""
 
-#: v4lradio.cpp:219
+#: v4lradio.cpp:227
 msgid "error setting volume to"
 msgstr ""
 
-#: v4lradio.cpp:330
+#: v4lradio.cpp:334
 msgid "error reading volume"
 msgstr ""
 
-#: v4lradio.cpp:500
+#: v4lradio.cpp:504
 msgid "invalid frequency"
 msgstr ""
 
-#: v4lradio.cpp:525
-msgid "error setting frequency to"
+#: v4lradio.cpp:529
+msgid "error setting frequency to "
 msgstr ""
 
-#: v4lradio.cpp:754 v4lradio.cpp:755
+#: v4lradio.cpp:780 v4lradio.cpp:781
 msgid "V4L Radio Options"
 msgstr ""
 
-#: v4lradio.cpp:783
+#: v4lradio.cpp:809
 msgid "cannot open mixer device"
 msgstr ""
 
-#: v4lradio.cpp:793
+#: v4lradio.cpp:819
 msgid "cannot open radio device"
 msgstr ""
 
-#: v4lradio.cpp:933
+#: v4lradio.cpp:1037
 msgid "cannot get tuner info"
 msgstr ""
 
-#: v4lradio.cpp:934
+#: v4lradio.cpp:1038
 msgid "error"
 msgstr ""
 
-#: v4lradio.cpp:1060
+#: v4lradio.cpp:1175
 msgid "error updating radio audio info"
 msgstr ""
 
-#: v4lradio.cpp:1061
+#: v4lradio.cpp:1176
 msgid "write"
 msgstr ""
 
-#: v4lradio.cpp:1061
+#: v4lradio.cpp:1176
 msgid "read"
 msgstr ""
 
@@ -259,62 +267,66 @@ msgstr ""
 msgid "display color"
 msgstr ""
 
-#: stationlist.cpp:237
+#: stationlist.cpp:238
 msgid "Contains merged Data"
 msgstr ""
 
-#: stationlist.cpp:307
+#: stationlist.cpp:308
 msgid "parsing failed"
 msgstr ""
 
-#: stationlist.cpp:311
+#: stationlist.cpp:312
 msgid ""
 "Parsing the station preset file failed.\n"
 "See console output for more details."
 msgstr ""
 
-#: stationlist.cpp:324
+#: stationlist.cpp:325
 msgid "error downloading preset file"
 msgstr ""
 
-#: stationlist.cpp:328
+#: stationlist.cpp:329
 msgid "Download of the station preset file at"
 msgstr ""
 
-#: stationlist.cpp:330 stationlist.cpp:348 stationlist.cpp:432
-#: stationlist.cpp:449
+#: stationlist.cpp:331 stationlist.cpp:349 stationlist.cpp:449
+#: stationlist.cpp:466
 msgid "failed"
 msgstr ""
 
-#: stationlist.cpp:342
+#: stationlist.cpp:343
 msgid "error opening preset file"
 msgstr ""
 
-#: stationlist.cpp:346
+#: stationlist.cpp:347
 msgid "Opening of the station preset file at"
 msgstr ""
 
-#: stationlist.cpp:426
+#: stationlist.cpp:443
 msgid "error writing to tempfile"
 msgstr ""
 
-#: stationlist.cpp:430
+#: stationlist.cpp:447
 msgid "Writing station preset file "
 msgstr ""
 
-#: stationlist.cpp:443
+#: stationlist.cpp:460
 msgid "error uploading preset file"
 msgstr ""
 
-#: stationlist.cpp:447
+#: stationlist.cpp:464
 msgid "Upload of station preset file to"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:367 radioview_frequencyradio.cpp:368
+#: radioview_volume.cpp:51
+msgid "Change Volume"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:388 radioview_frequencyradio.cpp:389
 msgid "AM"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:373 radioview_frequencyradio.cpp:374
+#: radioview_frequencyradio.cpp:394 radioview_frequencyradio.cpp:395
 msgid "FM"
 msgstr ""
 
@@ -350,6 +362,126 @@ msgstr ""
 msgid "characters ignored for element"
 msgstr ""
 
+#: radioview_frequencyseeker.cpp:76
+msgid "Search for previous Radio Station"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:77
+msgid "Search for next Radio Station"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:78
+msgid "Decrement Frequency"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:79
+msgid "Increment Frequency"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:80
+msgid "Change Frequency"
+msgstr ""
+
+#: recording-configuration-ui.cpp:147
+msgid "RecordingConfigurationUI"
+msgstr ""
+
+#: recording-configuration-ui.cpp:148
+msgid "Output"
+msgstr ""
+
+#: recording-configuration-ui.cpp:149
+msgid "Recording Directory"
+msgstr ""
+
+#: recording-configuration-ui.cpp:151
+msgid "Microsoft Wave (.wav)"
+msgstr ""
+
+#: recording-configuration-ui.cpp:152
+msgid "Apple/SGI (.aiff)"
+msgstr ""
+
+#: recording-configuration-ui.cpp:153
+msgid "Sun/NeXT (.au)"
+msgstr ""
+
+#: recording-configuration-ui.cpp:154
+msgid "raw pcm output (.raw)"
+msgstr ""
+
+#: recording-configuration-ui.cpp:155
+msgid "File Format"
+msgstr ""
+
+#: recording-configuration-ui.cpp:156
+msgid "Input"
+msgstr ""
+
+#: recording-configuration-ui.cpp:157
+msgid "Sample Bits"
+msgstr ""
+
+#: recording-configuration-ui.cpp:158
+msgid "Recording Device"
+msgstr ""
+
+#: recording-configuration-ui.cpp:159 recording-monitor.cpp:48
+msgid "Sample Rate"
+msgstr ""
+
+#: recording-configuration-ui.cpp:160
+msgid "Channels"
+msgstr ""
+
+#: recording-configuration-ui.cpp:162
+msgid "44100"
+msgstr ""
+
+#: recording-configuration-ui.cpp:163
+msgid "22050"
+msgstr ""
+
+#: recording-configuration-ui.cpp:164
+msgid "11025"
+msgstr ""
+
+#: recording-configuration-ui.cpp:166
+msgid "16"
+msgstr ""
+
+#: recording-configuration-ui.cpp:167
+msgid "8"
+msgstr ""
+
+#: recording-configuration-ui.cpp:168
+msgid "/dev/dsp"
+msgstr ""
+
+#: recording-configuration-ui.cpp:170
+msgid "Signed"
+msgstr ""
+
+#: recording-configuration-ui.cpp:171
+msgid "Unsigned"
+msgstr ""
+
+#: recording-configuration-ui.cpp:174
+msgid "Mono"
+msgstr ""
+
+#: recording-configuration-ui.cpp:175
+msgid "Endianess"
+msgstr ""
+
+#: recording-configuration-ui.cpp:177
+msgid "Little Endian"
+msgstr ""
+
+#: recording-configuration-ui.cpp:178
+msgid "Big Endian"
+msgstr ""
+
 #: standardscandialog-ui.cpp:85
 msgid "Stations search in progress ..."
 msgstr ""
@@ -366,85 +498,85 @@ msgstr ""
 msgid "<p align=\"right\">nothing here</p>"
 msgstr ""
 
-#: radio-configuration-ui.cpp:294
+#: radio-configuration-ui.cpp:295
 msgid "RadioConfigurationUI"
 msgstr ""
 
-#: radio-configuration-ui.cpp:295
+#: radio-configuration-ui.cpp:296
 msgid "Stations"
 msgstr ""
 
-#: radio-configuration-ui.cpp:300
+#: radio-configuration-ui.cpp:301
 msgid "&Search Stations"
 msgstr ""
 
-#: radio-configuration-ui.cpp:301
+#: radio-configuration-ui.cpp:302
 msgid "Load"
 msgstr ""
 
-#: radio-configuration-ui.cpp:302
+#: radio-configuration-ui.cpp:303
 msgid "Save As"
 msgstr ""
 
-#: radio-configuration-ui.cpp:303
+#: radio-configuration-ui.cpp:304
 msgid "Name"
 msgstr ""
 
-#: radio-configuration-ui.cpp:304
+#: radio-configuration-ui.cpp:305
 msgid "Short Name"
 msgstr ""
 
-#: radio-configuration-ui.cpp:305
+#: radio-configuration-ui.cpp:306
 msgid "Pixmap File"
 msgstr ""
 
-#: radio-configuration-ui.cpp:307 timecontrol-configuration-ui.cpp:195
+#: radio-configuration-ui.cpp:308 timecontrol-configuration-ui.cpp:196
 msgid " %"
 msgstr ""
 
-#: radio-configuration-ui.cpp:308
+#: radio-configuration-ui.cpp:309
 msgid "Volume Preset (-1 = disabled)"
 msgstr ""
 
-#: radio-configuration-ui.cpp:309
+#: radio-configuration-ui.cpp:310
 msgid "Station &Presets"
 msgstr ""
 
-#: radio-configuration-ui.cpp:310
+#: radio-configuration-ui.cpp:311
 msgid "City"
 msgstr ""
 
-#: radio-configuration-ui.cpp:311
+#: radio-configuration-ui.cpp:312
 msgid "Country"
 msgstr ""
 
-#: radio-configuration-ui.cpp:312
+#: radio-configuration-ui.cpp:313
 msgid "&Now"
 msgstr ""
 
-#: radio-configuration-ui.cpp:313
+#: radio-configuration-ui.cpp:314
 msgid "Comment"
 msgstr ""
 
-#: radio-configuration-ui.cpp:314
+#: radio-configuration-ui.cpp:315
 msgid "Media"
 msgstr ""
 
-#: radio-configuration-ui.cpp:315
+#: radio-configuration-ui.cpp:316
 msgid "Maintainer"
 msgstr ""
 
-#: radio-configuration-ui.cpp:316
+#: radio-configuration-ui.cpp:317
 msgid "Last Change"
 msgstr ""
 
-#: radio-configuration-ui.cpp:317
+#: radio-configuration-ui.cpp:318
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
 msgstr ""
 
-#: radio-configuration-ui.cpp:318
+#: radio-configuration-ui.cpp:319
 msgid "A&bout"
 msgstr ""
 
@@ -460,147 +592,236 @@ msgstr ""
 msgid "Available Stations"
 msgstr ""
 
-#: timecontrol-configuration-ui.cpp:186
-msgid "TimeControlConfigurationUI"
+#: radioview.cpp:122
+msgid "Configure KRadio"
 msgstr ""
 
-#: timecontrol-configuration-ui.cpp:187
-msgid "sleep countdown"
+#: radioview.cpp:123
+msgid "Power On/Off"
 msgstr ""
 
-#: timecontrol-configuration-ui.cpp:188
-msgid " min"
+#: radioview.cpp:124
+msgid "Quit KRadio Application"
 msgstr ""
 
-#: timecontrol-configuration-ui.cpp:192
-msgid "Date"
+#: radioview.cpp:125
+msgid "Start/Stop Recording"
 msgstr ""
 
-#: timecontrol-configuration-ui.cpp:193
-msgid "Time"
+#: radioview.cpp:126
+msgid "Select a Radio Station"
 msgstr ""
 
-#: timecontrol-configuration-ui.cpp:194
-msgid "Volume"
-msgstr ""
-
-#: timecontrol-configuration-ui.cpp:196
-msgid "daily"
-msgstr ""
-
-#: timecontrol-configuration-ui.cpp:197
-msgid "enabled"
-msgstr ""
-
-#: timecontrol-configuration-ui.cpp:198
-msgid "Radio Station"
-msgstr ""
-
-#: timecontrol-configuration-ui.cpp:200
-msgid "Start Playing"
-msgstr ""
-
-#: timecontrol-configuration-ui.cpp:201
-msgid "Stop Playing"
-msgstr ""
-
-#: timecontrol-configuration-ui.cpp:202
-msgid "Start Recording"
-msgstr ""
-
-#: timecontrol-configuration-ui.cpp:203
-msgid "Stop Recording"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:292
-msgid "SetupDialogGeneral"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:293
-msgid "V4L Device Controls"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:294
-msgid "<p align=\"center\">volume</p>"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:295
-msgid "<p align=\"center\">treble</p>"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:296
-msgid "<p align=\"center\">bass</p>"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:297
-msgid "<p align=\"center\">balance</p>"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:298
-msgid "Options"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:299
-msgid "to"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:300 v4lradio-configuration-ui.cpp:302
-#: v4lradio-configuration-ui.cpp:305
-msgid " kHz"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:304
-msgid "minimum signal quality"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:306
-msgid "station scan step"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:307
-msgid "allowed frequency range"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:308
-msgid "Devices"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:309
-msgid "unknown v4l device"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:312
-msgid "Mixer Channel"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:313
-msgid "Mixer Device"
-msgstr ""
-
-#: v4lradio-configuration-ui.cpp:314
-msgid "Radio Device"
-msgstr ""
-
-#: radioview.cpp:230
+#: radioview.cpp:247
 msgid "no preset defined"
 msgstr ""
 
-#: radio-configuration.cpp:300
+#: radioview.cpp:401
+msgid "set Toolbar-Flag for Display"
+msgstr ""
+
+#: radioview.cpp:404
+msgid "Common"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:187
+msgid "TimeControlConfigurationUI"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:188
+msgid "sleep countdown"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:189
+msgid " min"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:193
+msgid "Date"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:194
+msgid "Time"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:195
+msgid "Volume"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:197
+msgid "daily"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:198
+msgid "enabled"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:199
+msgid "Radio Station"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:201
+msgid "Start Playing"
+msgstr ""
+
+#: timecontrol-configuration-ui.cpp:202
+msgid "Stop Playing"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:293
+msgid "SetupDialogGeneral"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:294
+msgid "V4L Device Controls"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:295
+msgid "<p align=\"center\">volume</p>"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:296
+msgid "<p align=\"center\">treble</p>"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:297
+msgid "<p align=\"center\">bass</p>"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:298
+msgid "<p align=\"center\">balance</p>"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:299
+msgid "Options"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:300
+msgid "to"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:301 v4lradio-configuration-ui.cpp:303
+#: v4lradio-configuration-ui.cpp:306
+msgid " kHz"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:305
+msgid "minimum signal quality"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:307
+msgid "station scan step"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:308
+msgid "allowed frequency range"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:309
+msgid "Devices"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:310
+msgid "unknown v4l device"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:313
+msgid "Mixer Channel"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:314
+msgid "Mixer Device"
+msgstr ""
+
+#: v4lradio-configuration-ui.cpp:315
+msgid "Radio Device"
+msgstr ""
+
+#: radio-configuration.cpp:309
 msgid "Select station pixmap"
 msgstr ""
 
-#: radio-configuration.cpp:391 radio-configuration.cpp:410
+#: radio-configuration.cpp:409 radio-configuration.cpp:428
 msgid "Select preset file"
 msgstr ""
 
-#: displaycfg.cpp:32
-msgid "active text"
+#: displaycfg.cpp:33
+msgid "Display Colors"
 msgstr ""
 
-#: displaycfg.cpp:33
-msgid "background color"
+#: displaycfg.cpp:41
+msgid "Active Text"
+msgstr ""
+
+#: displaycfg.cpp:42
+msgid "Inactive Text"
+msgstr ""
+
+#: displaycfg.cpp:43
+msgid "Background Color"
 msgstr ""
 
 #: radiostation-config.cpp:41
 msgid "I don't know how to edit this station"
+msgstr ""
+
+#: recording-monitor.cpp:35
+msgid "Recording Monitor"
+msgstr ""
+
+#: recording-monitor.cpp:40
+msgid "Status"
+msgstr ""
+
+#: recording-monitor.cpp:41 recording-monitor.cpp:43 recording-monitor.cpp:45
+#: recording-monitor.cpp:47 recording-monitor.cpp:49
+msgid "<undefined>"
+msgstr ""
+
+#: recording-monitor.cpp:42
+msgid "Recording File"
+msgstr ""
+
+#: recording-monitor.cpp:44
+msgid "File Size"
+msgstr ""
+
+#: recording-monitor.cpp:46
+msgid "Recording Time"
+msgstr ""
+
+#: recording-monitor.cpp:58
+msgid "Hide/Show when recording stops/starts"
+msgstr ""
+
+#: recording-monitor.cpp:62
+msgid "Monitor Input"
+msgstr ""
+
+#: recording-monitor.cpp:143
+msgid "&Stop"
+msgstr ""
+
+#: recording-monitor.cpp:165
+msgid "&Start"
+msgstr ""
+
+#: recording-monitor.cpp:194
+msgid "not running"
+msgstr ""
+
+#: recording-monitor.cpp:200
+msgid "recording"
+msgstr ""
+
+#: recording-monitor.cpp:203
+msgid "monitoring"
+msgstr ""
+
+#: recording-monitor.cpp:209
+msgid "error occurred"
+msgstr ""
+
+#: recording-monitor.cpp:212
+msgid "finished"
 msgstr ""

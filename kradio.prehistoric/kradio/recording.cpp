@@ -18,10 +18,12 @@
 #include "recording.h"
 #include "recording-context.h"
 #include "recording-configuration.h"
+#include "radiostation.h"
 
 #include <qsocketnotifier.h>
 #include <qevent.h>
 #include <qapplication.h>
+#include <qregexp.h>
 
 #include <kconfig.h>
 
@@ -337,10 +339,15 @@ bool Recording::openOutput()
 		case RecordingConfig::outputRAW:  ext = ".raw";  break;
 		default:                          ext = ".wav";  break;
 	}
+	QString station = queryCurrentStation().name();
+	station.replace(QRegExp("[/*?]"), "_");
 	QString output = m_config.directory
-	    + "/kradio-recording"
+	    + "/kradio-recording-"
+	    + station + "-" +
 	    + QDateTime::currentDateTime().toString(Qt::ISODate)
 	    + ext;
+
+	kdDebug() << "outputFile: " << output << endl;
 
 
 	SF_INFO sinfo;
