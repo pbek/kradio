@@ -1,3 +1,12 @@
+0.2.8   (beta)
+
+        emw     - setupdialog: fix cancel button behaviour
+				- configurable scanStep for station search
+				- made frequency setting independent from device quantisation
+				- min/max Frequency config in kHz (before in MHz)
+				- display Frequency in kHz if < 10 MHz
+				- fix min/max settings in station configuration page
+
 0.2.7a  (beta)
 
         emw     - fix missing xml quotings

@@ -4,13 +4,14 @@
 Summary:   v4l-radio application for KDE3
 Name:      kradio
 Version:   0.2.8pre1
-Release:   1.mandrake
+Release:   1.suse
 Copyright: GPL
 Vendor:    Martin Witte <witte@kawo1.rwth-aachen.de>
 Url:       http://sourceforge.net/projects/kradio
 Packager:  Martin Witte <witte@kawo1.rwth-aachen.de>
 Group:     kde3
-Source:    /usr/src/kradio-cvs/kradio/kradio-0.2.8pre1.tar.gz
+Source:    /usr/src/kradio-cvs/kradio/kradio-0.2.8pre1
+Requires:  kdepim3-time-management
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -20,7 +21,7 @@ v4l-radio application for KDE3
 %setup
 CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" ./configure \
                  --build=i386-linux --host=i386-linux --target=i386-linux  \
-		 --prefix=/usr --program-prefix="" \
+		 --prefix=/opt/kde3 --program-prefix="" \
                 $LOCALFLAGS
 %build
 # Setup for parallel builds

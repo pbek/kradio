@@ -1,10 +1,13 @@
-0.2.8  make use of properties
-       dcop interface
-       ? force mono mode ?
-       give the setup-dialog cancel button the right behaviour
+0.2.8  give the setup-dialog cancel button the right behaviour // done
        distinguish ukw/fm and MW/am
-       make kradio am ready
+       make kradio AM ready
        redesign kradio interface: use symbols for stereo and signal quality, display ukw/fm and MW/am
+       gui-errormessages in xml parsing code
+       prepare for translation: check for missing i18n //done
+
+0.2.9  ? force mono mode (not been possible on my system (bttv) so far) ?
+       make use of properties
+       dcop interface
 
 0.3    recording capabilities
        ? quick radio applet
