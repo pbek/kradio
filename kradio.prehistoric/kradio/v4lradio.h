@@ -60,24 +60,21 @@ public:
     V4LRadio(Radio *mainRadio);
 	~V4LRadio();
 
-    virtual const QString &radioDevice()  const { return RadioDev; }
+    virtual const QString &radioDevice()  const { return m_RadioDev; }
     virtual void  setRadioDevice(const QString &s);
 
-    virtual const QString &mixerDevice()  const { return MixerDev; }
+    virtual const QString &mixerDevice()  const { return m_MixerDev; }
     virtual void  setMixerDevice(const QString &s, int ch);
 
     virtual void  setDevices(const QString &r, const QString &m, int ch);
 
-    virtual int mixerChannel() const { return MixerChannel; }
+    virtual int mixerChannel() const { return m_MixerChannel; }
 
     virtual float signal() const;
     virtual bool  isStereo() const;
 
 
     virtual	float deltaF () const;
-
-    virtual	float currentFrequency() const;
-    virtual void  setCurrentFrequency(float freq);
 
     virtual float volume() const;
     virtual void setVolume(float volume);
@@ -105,24 +102,24 @@ protected:
 
 protected:
 	struct TunerCache {
-		bool  valid;
-		float deltaF;
-		float minF, maxF;
+		bool  m_valid;
+		float m_deltaF;
+		float m_minF, m_maxF;
 
-		TunerCache() { valid = false; }
+		TunerCache() { m_valid = false; }
 	};
 
 
-	QString RadioDev;
-	QString MixerDev;
-	int MixerChannel;
-	int radio_fd;
-	int mixer_fd;
-	struct video_tuner *tuner;
-	struct video_audio *audio;
+	QString m_RadioDev;
+	QString m_MixerDev;
+	int m_MixerChannel;
+	int m_radio_fd;
+	int m_mixer_fd;
+	struct video_tuner *m_tuner;
+	struct video_audio *m_audio;
 
 
-	mutable TunerCache  tunercache;
+	mutable TunerCache  m_tunercache;
 //	__u16 balance;
 //	__u16 bass ;
 //	__u16 treble;
