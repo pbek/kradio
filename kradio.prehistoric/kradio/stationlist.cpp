@@ -17,6 +17,7 @@
 
 #include "stationlist.h"
 #include "radiostation.h"
+#include "stationlistxmlhandler.h"
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -156,4 +157,68 @@ RadioStation &StationList::at(int idx)
 	it += idx;
 	return it.current() ? *it.current() : (RadioStation &) undefinedRadioStation;
 }
+
+
+
+bool StationList::readXML (const QString &dat)
+{
+	// TODO: error handling
+	QXmlInputSource source;
+	source.setData(dat);
+	QXmlSimpleReader      reader;
+	StationListXmlHandler handler;
+	reader.setContentHandler (&handler);
+	if (reader.parse(source)) {
+		m_all      = handler.getStations();
+		m_metaData = handler.getMetaData();
+		return true;
+	} else {
+		kdDebug() << "StationList::readXML: parsing failed\n";
+		return false;
+	}
+}
+
+
+
+QString StationList::writeXML () const
+{
+	QString data = "";
+
+	// write station list
+
+	QString t   = "\t";
+	QString tt  = "\t\t";
+	QString ttt = "\t\t\t";
+
+	data +=       xmlOpenTag(KRadioConfigElement) +
+	        t   + xmlOpenTag(StationListElement) +
+	        tt  + xmlOpenTag(StationListInfo) +
+	        ttt + xmlTag(StationListInfoMaintainer, m_metaData.maintainer) +
+	        ttt + xmlTag(StationListInfoChanged,    m_metaData.lastChange.toString(Qt::ISODate)) +
+	        ttt + xmlTag(StationListInfoCountry,    m_metaData.country) +
+	        ttt + xmlTag(StationListInfoCity,       m_metaData.city) +
+	        ttt + xmlTag(StationListInfoMedia,      m_metaData.media) +
+	        ttt + xmlTag(StationListInfoComments,   m_metaData.comment) +
+	        tt  + xmlCloseTag (StationListInfo);
+
+	for (RawStationList::Iterator it(m_all); it.current(); ++it) {
+	    RadioStation *s = it.current();
+
+		data += tt + xmlOpenTag (s->getClassName());
+		
+	    QStringList properties = s->getPropertyNames();
+	    for (QStringList::iterator sit = properties.begin(); sit != properties.end(); ++sit) {			
+			data += ttt + xmlTag (*sit, s->getProperty(*sit));
+		}
+		data += tt + xmlCloseTag(s->getClassName());
+		
+	}
+	
+	data += t + xmlCloseTag(StationListElement) +
+			    xmlCloseTag(KRadioConfigElement);
+
+	return data;
+}
+
+
 

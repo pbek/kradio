@@ -108,10 +108,15 @@ public:
      */
     void merge(const StationList &other);
 
-
     // assignment
 
     StationList &operator = (const StationList &sl);
+
+
+    // xml in/out
+
+    bool    readXML (const QString &dat);
+    QString writeXML () const;
 
 protected:
     RawStationList        m_all;
