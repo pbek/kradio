@@ -34,15 +34,27 @@ class QWidget;
 class QFrame;
 class KConfig;
 
-/////////////////////////////////////////////////////////////////////////////
+/* PluginBase must be inherited from Interface so that a plugin can be used
+   in Interface::connect functions.
+
+   PluginBase must not be inherited from QObject, because derived classes may
+   be inherited e.g. from QWidget (multiple inheritance is not possible with
+   OBjects). But we must be able to receive destroy messages e.g. from
+   configuration pages. Thus we need the special callback member
+   m_destroyNotifier.
+
+*/
 
 
-class PluginBase : public QObject, virtual public Interface
+class PluginBase : virtual public Interface
 {
 friend class PluginManager;
 public :
 	         PluginBase(const QString &name);
 	virtual ~PluginBase();
+
+	const QString &name() const { return m_name; }
+	      QString &name()       { return m_name; }
 
 	// Only the plugin itself knows what interfaces it implements. Thus it has
 	// to call the apropriate InterfaceBase::establishConnection methods
@@ -79,8 +91,14 @@ protected slots:
 	void unregisterGuiElement (QObject *o);
 
 protected :
+	QString            m_name;
     PluginManager     *m_manager;
     QPtrList<QObject>  m_guiElements;
+
+    
+    friend class WidgetDestroyNotifier;
+    
+    WidgetDestroyNotifier *m_destroyNotifier;    
 };
 
 

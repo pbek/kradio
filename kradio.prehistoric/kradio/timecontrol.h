@@ -23,11 +23,12 @@
   
 #include "alarm.h"
 #include "timecontrol_interfaces.h"
+#include "plugins.h"
 
 // well, it has to be a QObject :(  , but only for
 // receiving QTimer - timeouts
 
-class TimeControl : public QObject, public ITimeControl
+class TimeControl : public QObject, public PluginBase, public ITimeControl
 {
 protected:
     AlarmVector       m_alarms;
@@ -42,7 +43,7 @@ protected:
     mutable QDateTime m_nextAlarm_tmp;      // used to recognize nextAlarm changes
     
 public:
-	TimeControl (QObject *parent, const QString &name);
+	TimeControl (const QString &name);
 	~TimeControl();
 
     // ITimeControl Interface methods
@@ -61,20 +62,18 @@ ANSWERS:
     QDateTime           getCountdownEnd () const;
 
 
-    // QT part for signals/slots
-    
-public slots:
-/*
-    // interface connection slot
+	// PluginBase
 
-    virtual void    connectPlugin(QObjectList &otherPlugins);
+public:
+	virtual void   saveState (KConfig *) const;
+	virtual void   restoreState (KConfig *);
 
-    // configuration slots
-    
-	virtual void    restoreState (KConfig *c);
-	virtual void    saveState    (KConfig *c);
-    virtual void    configurationChanged (const SetupData &sud);
-*/
+	virtual void   connect (PluginBase *p)    { ITimeControl::connect (p); }
+	virtual void   disconnect (PluginBase *p) { ITimeControl::disconnect (p); }
+
+protected:
+	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);
+	virtual QFrame *internal_createAboutPage(QWidget *parent);
 
 
 	// slots for receiving timeout messages of timers

@@ -317,7 +317,10 @@ bool V4LRadio::setFrequency(float freq)
   		bool oldMute = isMuted();
   		if (!oldMute) mute();
 
-		float         df = deltaF();
+
+		if (!m_tunercache.valid) readTunerInfo();
+		float         df = m_tunercache.deltaF;
+		
   		unsigned long lfreq = (unsigned long) round(freq / df);
 
 	  	if (freq > getMaxFrequency() || freq < getMinFrequency()) {
@@ -545,16 +548,6 @@ void V4LRadio::radio_done()
 }
 
 
-float V4LRadio::deltaF() const
-{
-	if (!m_tunercache.valid)
-		readTunerInfo();
-
-	return m_tunercache.deltaF;
-}
-
-
-
 
 
 
@@ -718,6 +711,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	m_muted  = (m_audio.flags & VIDEO_AUDIO_MUTE) != 0;
 
 	// prevent loops, if noticeXYZ-method is reading my state
+	bool oldBlock = m_blockReadAudio;
 	m_blockReadAudio = true;
 
 	if (oldStereo != m_stereo)
@@ -725,7 +719,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	if (oldMute != m_muted)
 		notifyMuted(m_muted);
 	
-	m_blockReadAudio = false;
+	m_blockReadAudio = oldBlock;
 
 	return (m_radio_fd > 0);
 }

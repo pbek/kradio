@@ -29,7 +29,8 @@
 #include "frequencyseekhelper.h"
 
 
-class V4LRadio : public PluginBase,
+class V4LRadio : public QObject,
+	             public PluginBase,
                  public IRadioDevice,
                  public IRadioSound,
                  public ISeekRadio,
@@ -41,6 +42,9 @@ public:
 
 	virtual bool connect (Interface *);
 	virtual bool disconnect (Interface *);
+
+	virtual const QString &name() const { return PluginBase::name(); }
+	virtual       QString &name()       { return PluginBase::name(); }
 
 	// IRadioDevice methods
 
@@ -130,7 +134,6 @@ public:
     int   getMixerChannel() const { return m_mixerChannel; }
 
 protected:
-    float deltaF () const;
 	void  radio_init();
 	void  radio_done();
 	void  poll();

@@ -19,8 +19,8 @@
 #include "timecontrol.h"
 
 
-TimeControl::TimeControl (QObject *p, const QString &n)
-	: QObject(p, n),
+TimeControl::TimeControl (const QString &n)
+	: PluginBase(n),
 	  m_waitingFor(NULL),
 	  m_countdownSeconds(0),
 	  m_alarmTimer(this),
@@ -168,22 +168,27 @@ void TimeControl::slotQTimerAlarmTimeout()
 	}
 }
 
-/*
+
 void    TimeControl::restoreState (KConfig *)
 {
+	// FIXME
 }
 
 
-void    TimeControl::saveState    (KConfig *)
+void    TimeControl::saveState    (KConfig *) const
 {
+	// FIXME
 }
 
 
-void    TimeControl::configurationChanged (const SetupData &d)
+QFrame *TimeControl::internal_createConfigurationPage(KDialogBase */*dlg*/)
 {
-	setCountdownSeconds(d.sleep);
-	setAlarms(d.alarms);
+	// FIXME
+	return NULL;
 }
 
-
-*/
+QFrame *TimeControl::internal_createAboutPage(QWidget */*parent*/)
+{
+	// FIXME
+	return NULL;
+}

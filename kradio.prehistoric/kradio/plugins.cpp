@@ -20,10 +20,23 @@
 
 #include <kdialogbase.h>
 
-PluginBase::PluginBase(const QString &name)
-	: QObject(NULL, name),
-      m_manager(NULL)
+class WidgetDestroyNotifier : public QObject
 {
+public:
+	WidgetDestroyNotifier(PluginBase *parent) { m_parent = parent; }
+	void noticeDestroy(QObject *o) { if (m_parent) m_parent->unregisterGuiElement(o); }
+
+protected:
+	PluginBase *m_parent;
+};
+
+
+
+PluginBase::PluginBase(const QString &name)
+	: m_name(name),
+	  m_manager(NULL)
+{
+	m_destroyNotifier = new WidgetDestroyNotifier(this);
 }
 
 
@@ -33,6 +46,7 @@ PluginBase::~PluginBase()
 		delete m_guiElements.first();
 	}
 	unsetManager();
+	delete m_destroyNotifier;
 }
 
 
@@ -94,7 +108,7 @@ void PluginBase::registerGuiElement(QObject *o)
 {
 	if (o) {
 		m_guiElements.append(o);
-		QObject::connect(o, SIGNAL(destroyed(QObject *)), this, SLOT(unregisterGuiElement(QObject *)));
+		QObject::connect(o, SIGNAL(destroyed(QObject *)), m_destroyNotifier, SLOT(noticeDestroy(QObject *)));
 	}
 }
 
