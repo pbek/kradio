@@ -408,9 +408,9 @@ void RadioDocking::noticePluginsChanged(const PluginList &/*l*/)
 void RadioDocking::slotRecording()
 {
 	if (queryIsRecording()) {
-		sendStartRecording();
-	} else {
 		sendStopRecording();
+	} else {
+		sendStartRecording();
 	}
 }
 
