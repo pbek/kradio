@@ -65,6 +65,7 @@ void   RadioViewFrequencyRadio::saveState (KConfig *config) const
 	config->writeEntry("frequency-view-colorActiveText",   m_colorActiveText);
 	config->writeEntry("frequency-view-colorInactiveText", m_colorInactiveText);
 	config->writeEntry("frequency-view-colorButton",       m_colorButton);
+	config->writeEntry("frequency-view-font",              m_font);
 }
 
 
