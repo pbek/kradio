@@ -1,16 +1,29 @@
+0.2.3   emw:    - added configuration dialog (part 1)
+                - added station scan
+                - improve station/alarm list handling
+
+0.2.2   emw:    - small fixes concerning window restoring
+                - gcc 3.2 ready
+                - further fixes in stereo/signal quality display
+
 0.2.1   emw:    - added alarm clock functions
                 - line in volume monitoring
                 - About-Dialog
                 - new icon
+
 0.2.0   emw:    - docking menu, correct hide/show behaviour
                 - lirc support
                 - save/restore current window state (sticky vs Desktop) && position
+
 0.1.3   emw:    - change GUI a bit
                 - add Power On/Off functions (=> kradio may still run while watching tv)
                 - simplify "class Radio"
+
 0.1.2	frank:  - fixed float/integer conversion on set frequence (stationbutton)
 			    - seek will end on all over frequence change button
 			    - balance set included in volumesetting
+
 0.1.1	frank:  - changed Frequence Range to 87.00 (min) and 109.00 (max)
                 - tray for panel added
+
 0.1     frank:  - initial Release
