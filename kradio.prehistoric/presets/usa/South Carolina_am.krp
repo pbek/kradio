@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
 			<changed>Sat Jan 18 14:31:54 2003</changed>
@@ -8,158 +10,141 @@
 			<media>antenna</media>
 			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>10633853909404B180300A10A34A304B3237F831EA69E4D1C11585AA7762F6DEBD7FA118AE</stationID>
 			<name>News/Talk @ WVOC-AM</name>
 			<shortname>49</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>0.56</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390C6BE47D75CAFB11B0D86A4AA8B23D0F9521E59F431FEF84169AD05E8E751BB32</stationID>
 			<name>Christian @ WLFJ-AM</name>
 			<shortname>50</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>0.66</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390327571161ACCE6266334D94E7D75D82011D21A4A3DDFA5C8A55F1D0C1964E1C9</stationID>
 			<name>News/Talk @ WSCC-AM</name>
 			<shortname>51</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>0.73</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853905E4C0B7C3ABBD2AB082BA1FC04B6DA8EE39D1207260733C03B6B1C640F36A847</stationID>
 			<name>Sports/News @ WSPA-AM</name>
 			<shortname>52</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>0.91</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853900979552061945933287F2B065549D2AAA4B865BA14A70257F481F7EFB512B05B</stationID>
 			<name>News/Talk @ WJMX-AM</name>
 			<shortname>53</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>0.97</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390235EA73537538E2E997A985F601233A0B888680A4C8A9824E7B9737DD1D06CA2</stationID>
 			<name>Religious @ WAZS-AM</name>
 			<shortname>54</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>0.98</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853905766CBAE3557C5D91DC8934C888EDD761406989F2F739E458E6FA989C27C1E51</stationID>
 			<name>Sports @ WCSZ-AM</name>
 			<shortname>55</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.07</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390A32924F85C505DDBDFCB5A3FC1E9344B09EE91B37715031021C1F5D744931F06</stationID>
 			<name>Religious @ WMIR-AM</name>
 			<shortname>56</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.2</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390D8A152F3C5F0B4B395FA2BA8E56FDD0B7457A2F41C92B094102340C346FB3F87</stationID>
 			<name>News/Talk @ WTMA-AM</name>
 			<shortname>57</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.25</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390009ECD83CA311760ACAD0747E6B7854A08B7D54EEF91157462E3BC8E69D62B1C</stationID>
 			<name>B/EZ @ WMUU-AM</name>
 			<shortname>58</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.26</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390906BC70341637DFC8FA4273E09C524B2EA71D00822AC1B28B82104BFC793A70B</stationID>
 			<name>Religious @ WXTC-AM</name>
 			<shortname>59</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.39</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539094A16C25AE31F17345AB6D324C229FDE1419B64B54D4664DC513509BA4CB2EBE</stationID>
 			<name>News/Talk @ WGTN-AM</name>
 			<shortname>60</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.4</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390D0E5879C4944DD5067E0E7BA6C0EC42A3BCE084182158CDE60AA5E4C05D42E7C</stationID>
 			<name>News/Talk @ WEAC-AM</name>
 			<shortname>61</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853907C2850060F8DB1DA67F28ECF0F38B35A403D5DAC2065A15183403111BEE25E1C</stationID>
 			<name>Religious @ WDRF-AM</name>
 			<shortname>62</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.51</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385390EAE3E6EF638CE76ADA33658AE788EF88072B613A0650F4E956985811F81E5230</stationID>
 			<name>Oldies @ WBSC-AM</name>
 			<shortname>63</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.55</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539009EA5D8FBE5E8B4BA5B0226003071787B8E477F59551BC2AF6310D97B9FA959B</stationID>
 			<name>Country @ WAGL-AM</name>
 			<shortname>64</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.56</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853909296CB41F95FE4E9751E8D34C838F6FF0D32411F517D14C62C3868363C289E7B</stationID>
 			<name>AC @ WDAB-AM</name>
 			<shortname>65</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.58</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>

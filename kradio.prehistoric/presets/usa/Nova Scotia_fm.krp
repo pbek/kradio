@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
 			<changed>Sat Jan 18 14:31:54 2003</changed>
@@ -8,23 +10,21 @@
 			<media>antenna</media>
 			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>10633853833F7B08CF4B773E874FD58D80B7FA0043373DB324A256C12C866E5244AD386EB0</stationID>
 			<name>Various @ CJLS-FM</name>
 			<shortname>1</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>96.3</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853833C8F899020527563BD1F5DA705ED43D2A3FA9B43391135053FBBB273A7C0B3D0</stationID>
 			<name>CHR @ CFRQ-FM</name>
 			<shortname>2</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>104.3</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>

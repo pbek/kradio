@@ -1,5 +1,5 @@
 SUBDIRS =
-EXTRA_DIST = "aachen-antenna.krp" "aachen-cable.krp" "berlin-adlershof-antenna.krp" "berlin-antenna.krp" "bielefeld-cable.krp" "bonn-antenna.krp" "braunschweig-cable.krp" "chemnitz-cable.krp" "duesseldorf.krp" "freiburg-cable.krp" "hamburg-antenna.krp" "hamburg-cable1.krp" "hamburg-cable2.krp" "hamburg-cable3.krp" "hamburg-cable4.krp" "hilden-cable.krp" "koeln-loevenich-cable.krp" "langenfeld-cable.krp" "leichlingen-cable.krp" "leverkusen-cable.krp" "monheim-cable.krp" "muenchen-cable.krp" "muenchen-forstenried-antenna.krp" "muensterland-antenna.krp" "nuernberg-cable.krp" "rheine-mesum-antenna.krp" "ulm-cable.krp" "wernigerode-antenna.krp"
+EXTRA_DIST = "aachen-antenna.krp" "aachen-cable.krp" "berlin-adlershof-antenna.krp" "berlin-antenna.krp" "bielefeld-cable.krp" "bonn-antenna.krp" "braunschweig-cable.krp" "chemnitz-cable.krp" "duesseldorf.krp" "fischbachau-cable.krp" "freiburg-cable.krp" "hamburg-antenna.krp" "hamburg-cable1.krp" "hamburg-cable2.krp" "hamburg-cable3.krp" "hamburg-cable4.krp" "hamburg-cable.alternative.krp" "hamburg-cable.krp" "hilden-cable.krp" "koeln-loevenich-cable.krp" "langenfeld-cable.krp" "leichlingen-cable.krp" "leverkusen-cable.krp" "monheim-cable.krp" "muenchen-cable.krp" "muenchen-forstenried-antenna.krp" "muensterland-antenna.krp" "nuernberg-cable.krp" "rheine-mesum-antenna.krp" "ulm-cable.2.krp" "ulm-cable.krp" "wernigerode-antenna.krp"
 
 install-data-local:
 	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/"
@@ -31,6 +31,10 @@ install-data-local:
 	$(INSTALL_DATA) "$(srcdir)/hamburg-cable2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable2.krp"
 	$(INSTALL_DATA) "$(srcdir)/aachen-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/aachen-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/koeln-loevenich-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/koeln-loevenich-cable.krp"
+	$(INSTALL_DATA) "$(srcdir)/hamburg-cable.alternative.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable.alternative.krp"
+	$(INSTALL_DATA) "$(srcdir)/hamburg-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable.krp"
+	$(INSTALL_DATA) "$(srcdir)/ulm-cable.2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/ulm-cable.2.krp"
+	$(INSTALL_DATA) "$(srcdir)/fischbachau-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/fischbachau-cable.krp"
 
 
 uninstall-local:
@@ -62,3 +66,7 @@ uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable2.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/aachen-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/koeln-loevenich-cable.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable.alternative.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/ulm-cable.2.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/fischbachau-cable.krp"

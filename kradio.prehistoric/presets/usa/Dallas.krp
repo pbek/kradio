@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Mike Mulligan, &lt;tonkajeep34@earthlink.net&gt;</maintainer>
 			<changed>2003-04-24T10:23:05</changed>
@@ -8,71 +10,61 @@
 			<media></media>
 			<comments></comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>106338540072AB030006A18D0BFE8DCE1972E46F6FCAE70DD06A99858B230417808299A911</stationID>
 			<name>The Bone</name>
 			<shortname>Bone</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>93.3</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854006048D97C319D4EDCF3E9ACBBDA018038983417FA7351FABC17B8556A0A272C59</stationID>
 			<name>The Wolf</name>
 			<shortname>KPLX</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>99.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854002C3323D8FE0121497901D806733CE03847FE43B86FD4085F464BE520F278364D</stationID>
 			<name>KSCS</name>
 			<shortname>KSCS</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>96.3</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854004F9C39AAFDFC509C324C4FB861090F7C341533BDDF618C3797FAF05998CA828C</stationID>
 			<name>The Eagle</name>
 			<shortname>KEGL</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>97.1</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385400B9FF786251C591C72660355F6EF1F82BB0373F4A66F9B15C2AB8BF54648C24E4</stationID>
 			<name>KZPS</name>
 			<shortname>KZPS</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>92.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385400A0AFF184D079762A373A5E00A1613A7A39742395FA8D5FA84CA473EA3F9E886F</stationID>
 			<name>The Edge</name>
 			<shortname>EDGE</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>102.1</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385400436E4756A859E9E712F2E11F60B1B5D361A28753536C577BFDB0CB679FC3EA24</stationID>
 			<name>Mix 102.9</name>
 			<shortname>KDMX</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>102.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
-
-

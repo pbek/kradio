@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
     <stationlist>
+		<format>kradio-1.0</format>
         <info>
             <maintainer>Rakerihoo</maintainer>
             <changed>2003-07-27T10:38:30</changed>
@@ -8,144 +10,125 @@
             <media>Air</media>
             <comments></comments>
         </info>
-        <station>
+        <FrequencyRadioStation>
+			<stationID>1063385403D98BA3B7FB3DC5CA926A04D419AB7829A75F01DEAE637DFD40A8E9A0130F1E86</stationID>
             <name>Radio 1</name>
             <shortname>1</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>91.9</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854030E0AA3576D9B5CF710A7875F2281F117EAB52EC8D8EC81F81D929DDA101B61C3</stationID>
             <name>Bonton</name>
             <shortname>2</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>99.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>106338540310540939359F150DC3FF0879C3EDDA71A996F46DAAC5B525F8B8281E03E09DCD</stationID>
             <name>Country Radio</name>
             <shortname>3</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>89.5</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403F45071B55C11FA1F7EED4CA9C6F8A8DDB4868431304902613B3CB2DF03C47334</stationID>
             <name>Regina</name>
             <shortname>4</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>92.6</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403E386A0E06667CDC7D05490717FE2AE002DC73A68C42ADCF86EE13519E9BF148D</stationID>
             <name>Expres</name>
             <shortname>5</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>90.3</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854038A9E13A968BAC1C7D8358B12C3851C435FCEC3116811C63C82F1B3155A93B0AB</stationID>
             <name>Fajn Radio</name>
             <shortname>6</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>97.2</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403C965374EACB39F50EAD49603FB741DCC76E39D2D454262C65883DCA827D2A6F1</stationID>
             <name>Kiss</name>
             <shortname>7</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>98.1</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403772724F42055820971C4E31EAE83768CF4D2D602885D2E8C05B0BD8C9EFE02C7</stationID>
             <name>Beat</name>
             <shortname>8</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>95.3</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403D99526F382C0397DAB05F5987D913A284662B2958C7DFFC335E0A82D36C08A39</stationID>
             <name>City</name>
             <shortname>9</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>93.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403FF3F733AEEEA8AF872A9B0747BD6FB87B853BD72E3E16A917FE8FDC7FF5FE2B1</stationID>
             <name>Classic FM</name>
             <shortname>10</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>98.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403374679EF3BC5603CA7E62369DD0E4C5B0FA12C40FF7ED52B845DFCA0969EC252</stationID>
             <name>France Int</name>
             <shortname>11</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>99.3</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854035B7C4E159C4FACD763B3FF39684BAADCFAC09278EDA483F411D12761268A19E2</stationID>
             <name>Hey Praha</name>
             <shortname>12</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>95.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854030676D225F3C4DB65FAF234E4EF96F1A89238B970B0BF46DE40788542FA7E9A3E</stationID>
             <name>Info</name>
             <shortname>13</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>105.9</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>106338540374CC23BA78CFF0B9E6671513F113DDEE46A55AE7D8866F374E686B9207EC84C7</stationID>
             <name>Olympic</name>
             <shortname>14</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>103.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385403E844201510D076848169DA8166983BCC4ADDB490A85E25C56029C1AC022A17BB</stationID>
             <name>Twist</name>
             <shortname>15</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>96.1</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
+        </FrequencyRadioStation>
     </stationlist>
 </kradiorc>
-
-
-
-

@@ -1,165 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Waldemar  Ciszek &lt;ciszek.moeck@t-online.de&gt;</maintainer>
 			<changed>2003-07-12T00:00:00</changed>
 			<country>Nordrhein-Westfalen</country>
-			<city>Köln-Lövenich</city>
+			<city>KÃ¶ln-LÃ¶venich</city>
 			<media></media>
-			<comments>:-) Kabelnetz Lövenich </comments>
+			<comments>:-) Kabelnetz LÃ¶venich </comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>1063385351ACFB17DA054B4BAEE62D704D08723C224F9674659FF645F30F0FA0AE546B520F</stationID>
 			<name>EINS LIVE</name>
 			<shortname>1LIVE</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>105.15</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535174B9F37C5AEF80B6DB525644FD0D52FB2086E94E03DEB22AA68465705F5EFDD9</stationID>
 			<name>WDR 2</name>
 			<shortname>W2</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>97.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535131FC62A2041BF262494BFF0ADFF45791C4BE2C397DD7E8CDE25093D53B8DC75A</stationID>
 			<name>WDR 3</name>
 			<shortname>W3</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>99.7</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385351F6981F073A2A50CCE799097651654612F7B3BD8D95EA7589C0FD9B8737E38943</stationID>
 			<name>WDR 4</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>92</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853515AF78AC1F36FA93D6D4D888ECA2BE233BB01227C6EF9E5A250A48A3421AF1913</stationID>
 			<name>WDR 5</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>91.3</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
-			<name>Radio Köln</name>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385351C6241EAFD733255EA27D4846E07F11E7998625ECFC854D429808F46A5C60CE39</stationID>
+			<name>Radio KÃ¶ln</name>
 			<shortname>K</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>107.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385351494064A19C56072E2C896786BB3199DE47BFFC412D56ACCCAC68C9A5C0B0CD1E</stationID>
 			<name>Deutschlandfunk</name>
 			<shortname>DLF</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>97.25</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853519000320D7E6A78C25643B6D85191A1B826B7A8DBB4081F88B5CA3A63CED9349B</stationID>
 			<name>Funkhaus Europa</name>
 			<shortname>Eu</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>103.15</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853511E60B487F3829A74B606CABD14C0CE08513E1D17DB033DC916DE9E9F715A0584</stationID>
 			<name>SWR 1 RP</name>
 			<shortname>S1</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>89.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385351E1B1D7D57E40F62139F58CC9BE22A4385DC4CF0B44FE51BD7C8CABAD634EBD9B</stationID>
 			<name>SWR 3</name>
 			<shortname>S3</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>95.6</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853511847926EAB2BCAB50E41396DC6964A9A439D0DCF9313882ED561DFF343408BAD</stationID>
 			<name>SWR 4 Ko</name>
 			<shortname>S4</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>93.35</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853519514FB11B06EF80EA95F10A81EA30619A7BB04F744C592C5A687E6E09E271175</stationID>
 			<name>Klassik Radio</name>
 			<shortname>Klassik</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>88.2</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385351972EE83358D9A8E19BD4B3F2FA40A36618D28A69AA618D55DA3973F7DE3ED2CD</stationID>
 			<name>Hessen 3</name>
 			<shortname>H 3</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>102.3</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535175BED4C94BEF365853DAA19E38530EB21A51EC43FB6FF5E3DFD0F771D7665343</stationID>
 			<name>RPR EINS</name>
 			<shortname>R1</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>103.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385351154AF1791E8F3D08FA7649870756AC2241AD122E67A5562581E3702BD7D2D0AA</stationID>
 			<name>RPR ZWEI</name>
 			<shortname>R2</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>101.65</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853514C609E8083A3FD998B1F16EFB7458FCB406C2FA27D524AD2307339CD33475B49</stationID>
 			<name>ERFT</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>87.8</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853511219A4AB82ADA874B5177B457976613F66DE840BE02921E51FC13EA459C978E9</stationID>
 			<name>RTL Radio</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>87.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>

@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
 			<changed>Sat Jan 18 14:31:53 2003</changed>
@@ -8,50 +10,45 @@
 			<media>antenna</media>
 			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>10633853631BD0958B2AE47C62E10C64036AE39DC5FF0684428D8EECD0B57E0B3A31374E39</stationID>
 			<name>News/Talk @ WDEL-AM</name>
 			<shortname>8</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.15</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385363425971CAB3A263E0598D67FF7A8B20F683320774FABE498949CBF512DDAB8092</stationID>
 			<name>Nostalgia @ WJBR-AM</name>
 			<shortname>9</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.29</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385363AF6563189B1F1EAF65942161B6EF188003B99247DEA7D29124F7953AA72C0ADC</stationID>
 			<name>News/Talk @ WDOV-AM</name>
 			<shortname>10</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.41</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853631D415DDD2372A76094BFE27EBC537F942BD969B18FF568833CCABDB6BD02D78A</stationID>
 			<name>News/Talk @ WILM-AM</name>
 			<shortname>11</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.45</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385363A58875C5A5AED04F53EBE75D73ADF266AE888312C9AD3FA38C17340C2EA34950</stationID>
 			<name>Religious @ WSER-AM</name>
 			<shortname>12</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>1.55</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>

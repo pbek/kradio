@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
     <stationlist>
+		<format>kradio-1.0</format>
         <info>
             <maintainer>Viktor Walz</maintainer>
             <changed>2003-07-28T14:02:35</changed>
@@ -8,251 +10,221 @@
             <media>cable</media>
             <comments>Stand Juli 2003</comments>
         </info>
-        <station>
+        <FrequencyRadioStation>
+			<stationID>106338534721F575BDC275EA04DE8EB1822573BBF78CAC79BE4F5C7C4A1E8856B51A3BEB3E</stationID>
             <name>Eins Live (WDR)</name>
             <shortname>1</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>87.6</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853479C99169491CB9E205EE37C0CEEE60CCAA4D92C95599C33620FE5FABB431DE05E</stationID>
             <name>WDR 4</name>
             <shortname>2</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>87.9</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347096E194DECF982EF0E203FCCB65A7865CA375479ED23333FE4B6355FC5314CC4</stationID>
             <name>WDR 3</name>
             <shortname>3</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>88.35</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853471B0AB0EB630C78AAFDC5D74D846015F37D2D8F5B63EB66AB1912AC45FE271C00</stationID>
             <name>WDR 2 - Bielefeld</name>
             <shortname>4</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>88.95</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>106338534745150C4C391CE8CE6752152286C465D3E6D9F8C2EDC4AC8BC51534D18B3594CE</stationID>
             <name>WDR Radio 5</name>
             <shortname>5</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>89.8</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
-            <name>NDR 1 Radio NDS - Südwest</name>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853471702D95E5DDE9D6EF080C59D2945B3E2A62DE4CDAF3AE54CD4EE3C1EA95337BD</stationID>
+            <name>NDR 1 Radio NDS - SÃ¼dwest</name>
             <shortname>6</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>90.1</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853470867E5554B4B21CCA421EB004735AB85918DE497C6E4EA20FEB5367AE2122CE9</stationID>
             <name>NDR 2</name>
             <shortname>7</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>90.8</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347E112394DCB518377C15C262FCF1A783DD3C2C5E116831FD01FE8CD8790D587BF</stationID>
             <name>Hit-Radio Antenne Sachsen-Anhalt</name>
             <shortname>8</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>92</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853475955BD46B9457E53618AFCC2987C5603E39C3146CE8932E475E8F1E3C2B2FBB3</stationID>
             <name>Radio 3</name>
             <shortname>9</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>92.6</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853476AA4E4C6E14B26EE052233CD70E4896DBE7CBB4E7721777AFE8E65097FA086F2</stationID>
             <name>Radio Melodie - Heimatfunk mit Herz</name>
             <shortname>10</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>93.4</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347D64F5115B7B0700C8FEF07E79B781B97F52CB909BF8D4C094F0B76BB0E93A725</stationID>
             <name>NordwestRadio</name>
             <shortname>11</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>94.85</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853474DEDBE2FEF0C70BB1D12824AF49C823909BFC17252C6B2D5B5637FA66CF3C100</stationID>
             <name>bremen eins</name>
             <shortname>12</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>95.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853471258DE41AF8FAD2712D058EAD645DE6EA6C2AA9EEA2530FF876B1F333E6F3B6A</stationID>
             <name>hr1</name>
             <shortname>13</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>96.3</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347E0AC142E137B3B8CAC25909C1A27C184480122831D1BC14A375ECF97B6964CAA</stationID>
             <name>hr3</name>
             <shortname>14</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>97.6</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347D147FCBA36E54B7C98C025FE3B1E58BF2CDD33434FB66733057A4E589CCF43C4</stationID>
             <name>Radio Bielefeld</name>
             <shortname>15</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>98.9</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347F0D7926F9FC1F4F12750C7E77FF57495CD7AE1602576AA490F8B0E70D519E36D</stationID>
             <name>radio ffn - Ostfriesland</name>
             <shortname>16</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>99.35</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347ACE1AA7A980A8DB8DDEBE15C8E0AE9C79476E53C5917E17CD8C0701A370F4D03</stationID>
             <name>Deutschlandfunk</name>
             <shortname>17</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>99.95</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347D8318D15D7709DF4597FC9FDDF7BDAB28DD68E71D0AEEB14F22125D82034481C</stationID>
             <name>NDR Info</name>
             <shortname>18</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>101.3</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
-            <name>Radio Gütersloh</name>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853470F784D0DF948B38E2AA957AE05534D006CA1A3DE49A4965292E5EE211671AAC2</stationID>
+            <name>Radio GÃ¼tersloh</name>
             <shortname>19</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>101.8</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347E0649FE6AA10478E0040153EFE29B7A0238D4E9384CD374A08C15C6A9127C59C</stationID>
             <name>JAM-FM</name>
             <shortname>20</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>102.55</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853475C610F3C79A8AC7AC8F4CEE5B0DB7BF935C01B747889FCB933618CD56B015ED8</stationID>
             <name>Hit-Radio Ant. Niedersachsen - OS</name>
             <shortname>21</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>103.8</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347D72F89D266D4188DE47B3C9E594C65BF8199B0A6E604799DEE83D82D0B4A6A2B</stationID>
             <name>BFBS (engl)</name>
             <shortname>22</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>104.85</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853479212494FDD15730E95D793D46EA0B53F9D57D93F9D941C95D99AC84BB851504E</stationID>
             <name>JUMP</name>
             <shortname>23</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>105.15</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347F45BD794758B5B00EA10B1325E7FFDE0094582A22736125A1B1E246D4E341C0F</stationID>
             <name>DeutschlandRadio Berlin</name>
             <shortname>24</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>105.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
-            <name>RTL RADIO - DIE GRÖSSTEN OLDIES</name>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853472217D4249CAA651B573FE3245294173962BAD1C58A2705210E74A73F2BD6DBB3</stationID>
+            <name>RTL RADIO - DIE GRÃ–SSTEN OLDIES</name>
             <shortname>25</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>106.7</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633853470254F73C29F9CC877723303C757756F68B70C65E07D61248ED4E5C46A0F223EA</stationID>
             <name>sunshine live</name>
             <shortname>26</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>107.3</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
-        <station>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385347E605782281879AF70B85A3F9AC3E0D945C2F6BE6F4D92BBC901C39E58EF772A5</stationID>
             <name>Klassik Radio</name>
             <shortname>27</shortname>
             <icon></icon>
-            <quickselect>0</quickselect>
             <frequency>107.75</frequency>
             <volumepreset>-1</volumepreset>
-            <dockingmenu>1</dockingmenu>
-        </station>
+        </FrequencyRadioStation>
     </stationlist>
 </kradiorc>
-
-
-

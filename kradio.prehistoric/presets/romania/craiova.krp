@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Darth Vader, darkstar@dainet.ro</maintainer>
 			<changed>2003-02-20T03:21:40</changed>
@@ -8,53 +10,45 @@
 			<media>Aerial</media>
 			<comments></comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>1063385401D924E884775812A9CA064CCE79C809258F649530F1E7D1FB333218295A11DD45</stationID>
 			<name>Radio Oltenia</name>
 			<shortname>1</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>92</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540129B5C73DF70AAD2AAADBCB037EBA8362C607B730DEDA4D5AD8FCF42640F1AC31</stationID>
 			<name>Radio Sud</name>
 			<shortname>2</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>97.4</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401501C28C818AA0579416F209FC13895E217634509D7489847AAC256B6B8F06B2C</stationID>
 			<name>Radio Horion</name>
 			<shortname>3</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>98</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854015BD609717FEDCFFCDC19C23C5890E51F92EC3ACF017885E65FCE77789EE3622C</stationID>
 			<name>Radio Contact</name>
 			<shortname>4</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>103.6</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401A50D191FA99BA012C1786CBB3BC8273B9A802184EDB7B7A909CF2B0A24BD043A</stationID>
 			<name>Radio Europa - FM</name>
 			<shortname>5</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>104.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
-
-

@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Radoslaw PRL Wawrzyniak &lt;prlalfa@wp.pl&gt;</maintainer>
 			<changed>2003-04-30T17:01:52</changed>
@@ -8,97 +10,85 @@
 			<media>FM Antenna</media>
 			<comments></comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>1063385404D0D44AD0A0AFD3406A14EA60B208915CA56CA5874ED466F23EA85BE7FB7F6C63</stationID>
 			<name>Radio EL</name>
 			<shortname>Radio EL</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>92.6</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540469122026E9A6183BF3574D11DC23493725C5B8AD8E8F456CA4D147AAF67D5880</stationID>
 			<name>RMF FM</name>
 			<shortname>RMF FM</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>98.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404A53C11FAD3AD1A80FB7AA1F2B4C56C92FC288779978D1665C31604BB47EBDB28</stationID>
 			<name>Trojka</name>
 			<shortname>Trojka</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>99.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854046434CC34CD1AAAA229306F5A032DB8E32F79E565D666C1C24C54D7DB8685177F</stationID>
 			<name>Polskie Radio PR1</name>
 			<shortname>Polskie Radio PR1</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>101.2</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854045EED78161897FED91CE2B28BDD01429FA5D27AE475FC6C27E969A70ADA59F880</stationID>
 			<name>Radio Plus</name>
 			<shortname>Radio Plus</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>101.7</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404B2C1BCB2936B93D2B5750A7C15E31C54E0C46F960DE3399C4844127406EDC6F1</stationID>
 			<name>Radio Bis</name>
 			<shortname>Radio Bis</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>102.7</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404B0E202326DD1CA4A67E808F0AC6DABAB225A7AC01B0B9E65BE5377022A0AD395</stationID>
 			<name>Radio Olsztyn</name>
 			<shortname>Radio Olsztyn</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>103.4</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540472D106F2D161F7FA21BB3D01BCF8EB99561592D7A0E9F1F7E3069C345B892A61</stationID>
 			<name>Radio Gdansk</name>
 			<shortname>Radio Gdansk</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>103.7</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540409DF38D056B43C2C61BBD001AE935A53DA441462DA0C0988A35F660DE749B619</stationID>
 			<name>Radio Maryja</name>
 			<shortname>Radio Maryja</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>104.2</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540424CDEB5B66BE93F088BEB5FA169E4AA3593119FCAD2812714E220830690E4E0C</stationID>
 			<name>Radio ZET</name>
 			<shortname>Radio ZET</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>105</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
-

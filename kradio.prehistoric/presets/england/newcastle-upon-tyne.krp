@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Will Stephenson 
 &lt;lists@stevello.free-online.co.uk&gt;</maintainer>
@@ -9,59 +11,53 @@
 			<media></media>
 			<comments></comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>1063385353638B6FBB64523F455121BCB27D0C342EDCEB05C4E7C1E0765F31B94B56E57119</stationID>
 			<name>BBC Radio 1</name>
 			<shortname>R1</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>98.1</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535341FFC7BCD10F2EA4335ECB1900399776B3569191D283D4A0A603D2C0A662E6C9</stationID>
 			<name>BBC Radio 2</name>
 			<shortname>R2</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>88.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353CF930D9522B10393ADDE8D100E8E034DC21EF8573ADD1757C80895BEAB0E1093</stationID>
 			<name>BBC Radio 3</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>90.7</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853537723EC241AF20B3F2AF337D83CA5259820F181C42D054095A73823447A6579DA</stationID>
 			<name>BBC Radio 4</name>
 			<shortname>R4</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>92.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535320DBDD2EA53187B7B2DAC47A86363B6E7960F15BABC212FDF4748EF9940B0905</stationID>
 			<name>Metro</name>
 			<shortname>Metro</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>97.1</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353E9C32519D211402D18AE2517A7E49A9BF88364A399DFD5AB5FD8894B83BC42E3</stationID>
 			<name>Radio Newcastle</name>
 			<shortname>Newcastle</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>95.4</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>

@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Philipp Droessler &lt;reo@gmx.at&gt;</maintainer>
 			<changed>2003-02-02T06:19:43</changed>
@@ -8,61 +10,53 @@
 			<media>Antenna</media>
 			<comments></comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>1063385406194BD1BF1700FD202C337DC3945BFD8B6D635ACE58062D8644244F18A4DFE2C1</stationID>
 			<name>88.6</name>
 			<shortname>88.6</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>88.6</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540627412A4269086777D5D106AB3C1FF627C7637EC8FAB0E0E1A1E7F8EFAA87DCF1</stationID>
 			<name>Radio Wien</name>
 			<shortname>Radio Wien</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>89.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406CF8234C4375CDD314B92205CB903708B16F7C9F4B256B6F2C86B05C9D28CE9D8</stationID>
 			<name>OE1</name>
 			<shortname>OE1</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>92</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540616DE7DA719F3192931EB55520760FC4AEC3B7DC70A7C14900F50478B5BC0A9D7</stationID>
 			<name>OE3</name>
 			<shortname>OE3</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>99.99</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406F1F3ACF2AA43E1A898DA60E656977C6077A0293D6E1FF26D1811D7D1566CE5DF</stationID>
 			<name>FM4</name>
 			<shortname>FM4</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>103.8</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540624766AAC97B10089F4A82754EFCE6F5AEA17453C62561A04BF57DB157777780A</stationID>
 			<name>Krone Hit</name>
 			<shortname>Krone</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>105.8</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>0</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
-

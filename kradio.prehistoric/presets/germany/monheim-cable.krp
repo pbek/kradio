@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Uwe Kuhlmann, Uwe.Kuhlmann@Kuhlmann-Privat.de</maintainer>
 			<changed>2003-01-26T17:19:11</changed>
@@ -9,239 +11,213 @@
 			<comments>use for Hilden / Langenfeld / Leichlingen / Monheim / Leverkusen  
 (any comment and thanx welcome!)</comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>1063385348DA4ED36D921410E06F19EED288B28B7856C465B34212D802F499BAD197536C74</stationID>
 			<name>SWR1-Rheinland-Pfalz (87,6)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>87.6</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348EBEDD372BEFB2278668199C96E31FD648D837CDD47DBBCC11A4F35A7156D33DB</stationID>
 			<name>SWR4-Rheinland (87,9)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>87.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348D065072F971EF99C62429144328F7EEA91A5E4F0A5FC5C18D3EF5A17553D5E6B</stationID>
 			<name>SWR3 (88,35)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>88.35</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348C0ED13F86C0BADEB1D025FAD24E2C953D7CEDA7BC618373E9E0CD888A0F7A7AC</stationID>
 			<name>WDR2-Wuppertal (88,95)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>88.95</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338534837139BBC057E913CFDACB735963BE8728731DCBC1FC36BA07AB2B0BF14B7DA61</stationID>
 			<name>WDR Radio 5 (89,70)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>89.7</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348BD87B93C304F30D1DF2A7C34C7A685E76D3AA4E30F7583E7433D78A40D855662</stationID>
 			<name>JAM-FM (90,05)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>90.05</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348558F3446AC9679BF1A065B80FF24785621AF82709D16DBBAB36705860D090A10</stationID>
 			<name>WDR2-Rhein-Ruhr (90,6)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>90.6</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348D92AC30A19965B71F8F25BA537495DE3FD9125FD5AEF31D3CE9E1A169B857469</stationID>
 			<name>WDR4 (92,15)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>92.15</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338534834A5F59DD788C60D74E0BCB601441C76904A01ABA4E90689F184CC3269C6ED0F</stationID>
 			<name>Radio Neandertal (92,5)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>92.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853486169EEB4E6154CD4C57EE2429839A65294D39CA4D44DE7852A360931B42C4126</stationID>
 			<name>DeutschlandRadio Berlin (93,35)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>93.35</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338534836371720831D78BA64FC1CAB15191DE81646048AFF6C385BF9D99ECAF7950DA1</stationID>
 			<name>Eins Live (WDR) (94,05)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>94.05</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853485E5B5D7617F8EE633279F396FE54DC0EE71D9A5928B7F74282F4842271274EE0</stationID>
 			<name>Deutschlandfunk (94,45)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>94.45</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
-			<name>RTL RADIO - DIE GRÖSSTEN OLDIES (95,3)</name>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338534814CA51F4094A2F6B22731E556FC0ED1751A3D500048251B02EECBC75F4A9548E</stationID>
+			<name>RTL RADIO - DIE GRÃ–SSTEN OLDIES (95,3)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>95.3</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348ACF677C6D1B6C95AC6A359B8FC047DFDCEC1E111F8D45F7A0331149E50B44A7F</stationID>
 			<name>WDR Radio 5 Funkhaus Europa (96,75)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>96.75</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348C5C0D239273C1C2C37C059B9BE9EF4DFBDA40C676034E07A19F471D2534D603F</stationID>
 			<name>Klassik Radio (97,05)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>97.05</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853486D8320A9763146DD3E13297706F566FCABA05EDE3C6531FBE3BF6F9883FBE38D</stationID>
 			<name>Radio Berg (98,80)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>98.8</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338534887D472674B7DBF050130A0A223C65B6C7DBA22E0E3486241C1C7950C0FC417AA</stationID>
 			<name>Radio 3 (niederl.) (100,9)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>100.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348E060880BDC71C49FB7B928C72DEE18A16B5B71E5EBFE2E60E4780249B8302D84</stationID>
 			<name>sunshine live (102,0)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>102</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
-			<name>Radio Melodie - Heimatfunk mit Herz München (102,5)</name>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348A7C2BD49ABAF23677CDF3AFF44D2970F28090D8FC6B96F4B0EC4937A86E2AA23</stationID>
+			<name>Radio Melodie - Heimatfunk mit Herz MÃ¼nchen (102,5)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>102.5</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853488DE0CD50D6AE48ED62D44FF43854DDAEFCCA3C87F8512EE1A53BAB9261F64B93</stationID>
 			<name>SWR2-Rheinland-Pfalz (103,05)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>103.05</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348FE268479A9C314DF783D2C79601627311578D4CB0C3350C207F937D3A7977BC7</stationID>
 			<name>Radio RPR Eins-Rheinland (103,9)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>103.9</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853487283B4FE4D4DAB6B8CA538CF3A4397D954B471B968CC61DDF0C25C8BF8E6090F</stationID>
 			<name>Radio RSG (104,25)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>104.25</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348D19FE12938B9ACF386289F313A6A278ABB4F4F8E1613AEF0F6ACD919C1445B3B</stationID>
 			<name>RPR Zwei (105,4)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>105.4</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853489ADA5428E6C302E9C80DE1B6B660733E4F16CD9CE96A96EFEF14C289B158A486</stationID>
 			<name>Radio 2 (niederl.) (106,15)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>106.15</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348109A2E1999D856F83FD2B823D8CF7874471AE8C20EB0DFC06FD74F80CB8999A4</stationID>
 			<name>Radio 4 (niederl.) (106,45)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>106.45</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385348F2524A9CEDBA08D134AD97C21B5DCAA52304AF36AFD83CDF0B72691BC5F59981</stationID>
 			<name>domradio (107,05)</name>
 			<shortname></shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>107.05</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>

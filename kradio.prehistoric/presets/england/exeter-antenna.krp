@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
+		<format>kradio-1.0</format>
 		<info>
 			<maintainer>Matthew Churcher &lt;M.Churcher@exeter.ac.uk&gt;</maintainer>
 			<changed>2003-06-08T16:55:48</changed>
@@ -9,80 +11,69 @@
 			<comments>as from Exeter University. May nead adjusting around 
 Devon.</comments>
 		</info>
-		<station>
+		<FrequencyRadioStation>
+			<stationID>106338535304D1CCEE3C42B21A1CDBEB76EFDB5A2DBCAEE0EC758C3A6259415A8F09F4C59D</stationID>
 			<name>Gemini FM (Mixed Network)</name>
 			<shortname>Gemini</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>97.027</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853530DDFFAF51B94CC78A5166188CE6E007765FDBC58E2C038210C4FBAD3CF6460FD</stationID>
 			<name>BBC Radio DEVON</name>
 			<shortname>Devon</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>95.8269</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353ECF6799F9284D28B7658830F2BD034E4479F7C9BDDCF2E9E5876ADFE735B0509</stationID>
 			<name>BBC Radio ONE</name>
 			<shortname>BBC 1</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>97.727</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535376747E6FA2361BBEF1AD30EF5B8011A93F19F144FB67E441E48D8AA38129500C</stationID>
 			<name>BBC Radio TWO</name>
 			<shortname>BBC 2</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>89.0265</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353FF81FE55DE9E8CAB5B022C277FEE3D8D7BDFE86C0E728FD1ECCC326EFC0A537C</stationID>
 			<name>BBC Radio THREE</name>
 			<shortname>BBC 3</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>90.3015</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535395FCF3BD1E55A7C7F361655B4E2F521413EC835A4886870020D9CEC70E3115FC</stationID>
 			<name>BBC Radio FOUR</name>
 			<shortname>BBC 4</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>93.4017</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353B0443D91803AE528F3B80ADABD79F3E35EC060DAC60DD480C1F9E320CB4DFA37</stationID>
 			<name>Classic FM</name>
 			<shortname>Classic</shortname>
 			<icon></icon>
-			<quickselect>1</quickselect>
 			<frequency>99.9771</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
-		<station>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853530B417707400B1AC4BE776310076934D8C1647D501027FFC8A2828DE8D8CC1DD9</stationID>
 			<name>Gemini FM (Mixed Network) [alternative Frequency)</name>
 			<shortname>Gemini[2]</shortname>
 			<icon></icon>
-			<quickselect>0</quickselect>
 			<frequency>103</frequency>
 			<volumepreset>-1</volumepreset>
-			<dockingmenu>1</dockingmenu>
-		</station>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
-
-
