@@ -364,6 +364,7 @@ bool StationList::readXML (const KURL &url, bool enableMessageBox)
 
 	// preset file written with kradio <= 0.2.x
 	if (tmp.find("<format>") < 0) {
+		kdDebug() << "Old Preset File Format detected" << endl;
 		QTextStream ins(&presetFile);
 		ins.setEncoding(QTextStream::Locale);
 		xmlData = ins.read();

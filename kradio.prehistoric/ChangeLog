@@ -24,6 +24,10 @@
                 - recording monitor
                 - recording doesn't restore monitoring state on startup,
                   kradio might be blocked if another app uses /dev/dsp
+                - convert preset file
+                - converter: add xml-encoding-line
+                - font selector for display
+                - choosable inactive text color
 
 (not working yet) - fixed segfault on app quit in InterfaceBase::disconnect
 
