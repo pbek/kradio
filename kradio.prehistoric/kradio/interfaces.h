@@ -558,13 +558,13 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 	// object. We must use it only for identifying the entry in
 	// connections list
 
-    if (i) {
+    if (i && _i) {
 		kdDebug() << "this->noticeDisconnect" << endl;
 		if (me_valid)
 			noticeDisconnect(i, _i->me_valid);
     }
 
-	if (me) {		
+	if (me && _i) {		
 		kdDebug() << "_i->noticeDisconnect" << endl;
 		if (_i->me_valid)
 			_i->noticeDisconnect(me, me_valid);
@@ -579,7 +579,7 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 		i->connections.removeRef(me);
 		
 	kdDebug() << "this->noticeDisconnected" << endl;
-	if (me_valid && i)
+	if (me_valid && i && _i)
 		noticeDisconnected(i, _i->me_valid);
 	kdDebug() << "_i->noticeDisconnected" << endl;
 	if (_i && _i->me_valid && me)
