@@ -6,207 +6,207 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kradio 0.2.8\n"
 "POT-Creation-Date: 2003-01-22 23:38+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2003-01-22 23:45+100\n"
+"Last-Translator: Ernst Martin Witte <witte@kawo1.rwth-aachen.de>\n"
+"Language-Team: -- \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=ISO8895-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: docking.cpp:84
 msgid "Search Next Station"
-msgstr ""
+msgstr "suche nächsten Sender"
 
 #: docking.cpp:87
 msgid "Search Previous Station"
-msgstr ""
+msgstr "suche vorherigen Sender"
 
 #: docking.cpp:94
 msgid "&About"
-msgstr ""
+msgstr "&Info"
 
 #: docking.cpp:102
 msgid "&Quit"
-msgstr ""
+msgstr "&Schließen"
 
 #: docking.cpp:110
 msgid "Show radio interface"
-msgstr ""
+msgstr "Radio-Fenster anzeigen"
 
 #: docking.cpp:111
 msgid "Minimize radio interface"
-msgstr ""
+msgstr "Radio-Fenster schließen"
 
 #: docking.cpp:113
 msgid "Show station quickbar"
-msgstr ""
+msgstr "Kurzwahlfenster anzeigen"
 
 #: docking.cpp:114
 msgid "Minimize station quickbar"
-msgstr ""
+msgstr "Kurzwahlfenster schließen"
 
 #: docking.cpp:159
 msgid "KRadio: "
-msgstr ""
+msgstr "KRadio: "
 
 #: docking.cpp:161
 msgid "Power Off"
-msgstr ""
+msgstr "Ausschalten"
 
 #: docking.cpp:161
 msgid "Power On"
-msgstr ""
+msgstr "Einschalten"
 
 #: docking.cpp:197
 msgid "next alarm: "
-msgstr ""
+msgstr "Nächstes Wecken: "
 
 #: docking.cpp:199
 msgid "<no alarm pending>"
-msgstr ""
+msgstr "<kein Wecker aktiv>"
 
 #: docking.cpp:235
 msgid "stop sleep (running until "
-msgstr ""
+msgstr "Schlummer-Modus abbrechen (läuft bis "
 
 #: docking.cpp:237
 msgid "start sleep countdown"
-msgstr ""
+msgstr "Schlummer-Modus einschalten"
 
 #: kradio.cpp:140
 msgid "<unknown>"
-msgstr ""
+msgstr "<unbekannt>"
 
 #: quickbar.cpp:229
 msgid "KRadio"
-msgstr ""
+msgstr "KRadio"
 
 #: radiobase.cpp:353
 msgid "tuned"
-msgstr ""
+msgstr "tuned"
 
 #: radiobase.cpp:356
 msgid "Stereo"
-msgstr ""
+msgstr "Stereo"
 
 #: v4lradio.cpp:59
 msgid "cannot open mixer"
-msgstr ""
+msgstr "Die Mixer-Gerätedatei kann nicht geöffnet werden"
 
 #: v4lradio.cpp:64
 msgid "cannot open radio device"
-msgstr ""
+msgstr "Die Radio-Gerätedatei kann nicht geöffnet werden"
 
 #: v4lradio.cpp:197
 msgid "invalid frequency"
-msgstr ""
+msgstr "ungültige Frequenz"
 
 #: v4lradio.cpp:202
 msgid "error setting frequency to"
-msgstr ""
+msgstr "Fehler beim Einstellen der Frequenz"
 
 #: v4lradio.cpp:250
 msgid "error setting volume to"
-msgstr ""
+msgstr "Fehler beim Einstellen der Lautstärke auf"
 
 #: v4lradio.cpp:263
 msgid "error reading volume"
-msgstr ""
+msgstr "Fehler beim ermitteln der Lautstärke"
 
 #: v4lradio.cpp:398
 msgid "cannot get tuner info"
-msgstr ""
+msgstr "Fehler beim Abrufen des Tuner-Status"
 
 #: v4lradio.cpp:412
 msgid "error reading radio audio info"
-msgstr ""
+msgstr "Fehler beim Abrufen der Audio-Informationen des Radios"
 
 #: v4lradio.cpp:425
 msgid "error writing radio audio info"
-msgstr ""
+msgstr "Fehler beim Setzen der Audio-Information des Radios "
 
 #: setupdialog.cpp:31
 msgid "KRadio Setup"
-msgstr ""
+msgstr "KRadio Konfiguration"
 
 #: setupdialog.cpp:56
 msgid "General Options"
-msgstr ""
+msgstr "Allgemeine Optionen"
 
 #: setupdialog.cpp:57
 msgid "Setup General Options"
-msgstr ""
+msgstr "Einstellen der Allgemeinen Optionen"
 
 #: setupdialog.cpp:73
 msgid "Stations Presets"
-msgstr ""
+msgstr "Senderinformationen"
 
 #: setupdialog.cpp:74
 msgid "Setup Station Presets"
-msgstr ""
+msgstr "Einstellen der Senderinformationen"
 
 #: setupdialog.cpp:90
 msgid "Alarms"
-msgstr ""
+msgstr "Wecker"
 
 #: setupdialog.cpp:91
 msgid "Setup Alarms"
-msgstr ""
+msgstr "Einstellen der Wecker"
 
 #: stationsearchdialog_uic.ui.h:55
 msgid "new station "
-msgstr ""
+msgstr "neuer Sender"
 
 #: stationsearchdialog_uic.ui.h:115 stationsearchdialog_uic.ui.h:119
 msgid "unknown"
-msgstr ""
+msgstr "unbekannt"
 
 #: radiocfgxmlhandler.cpp:85
 msgid "misplaced element"
-msgstr ""
+msgstr "unerwartetes Element"
 
 #: radiocfgxmlhandler.cpp:166
 msgid "broken newStation pointer"
-msgstr ""
+msgstr "kaputter newStation-Zeiger"
 
 #: radiocfgxmlhandler.cpp:173
 msgid "broken newAlarm pointer"
-msgstr ""
+msgstr "kaputter newAlarm-Zeiger"
 
 #: radiocfgxmlhandler.cpp:280
 msgid "characters ignored for element"
-msgstr ""
+msgstr "Zeichen wurden ignoriert für das Element "
 
 #: setupdialog_general_options.ui.h:43 setupdialog_general_options.ui.h:54
 msgid "any"
-msgstr ""
+msgstr "beliebig"
 
 #: setupdialog_general_options.ui.h:43
 msgid "radio device selection"
-msgstr ""
+msgstr "Auswahl der Radio-Gerätedatei"
 
 #: setupdialog_general_options.ui.h:54
 msgid "mixer device selection"
-msgstr ""
+msgstr "Auswahl der Mixer-Gerätedatei"
 
 #: setupdialog_stations.ui.h:38
 msgid "New Station"
-msgstr ""
+msgstr "neuer Sender"
 
 #: setupdialog_stations.ui.h:173
 msgid "images"
-msgstr ""
+msgstr "Symbole"
 
 #: setupdialog_stations.ui.h:173
 msgid "pixmap selection"
-msgstr ""
+msgstr "Auswahl des Symbols"
 
 #: setupdialog_stations.ui.h:341
 msgid "kradio preset files"
-msgstr ""
+msgstr "Sender-Informationsdateien"
 
 #: setupdialog_stations.ui.h:341
 msgid "preset file selection"
-msgstr ""
+msgstr "Auswahl der Senderinformationen"
