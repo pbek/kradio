@@ -4,11 +4,20 @@
   - station management
   - device settings
 * quick radio applet
+* QuickBar
 * use kde session management
 * xml based station configuration (klas)
-* replace StationButton by ordinary buttons
 * use kde menus
-* kde3 port
 * DCOP Interface
 * mediacontrol applect integration
 * collect location information for cannel sets
+
+
+short-term:
+* better Icon for QuickBar Button
+
+
+
+DONE:
+// * kde3 port //kalass
+// * replace StationButton by ordinary buttons // completely removed - kalass
