@@ -49,6 +49,9 @@ public slots:
 signals:
     void showAbout();
 
+protected:
+    void mousePressEvent( QMouseEvent *e );
+
 private:
 	void buildContextMenu();
 	void buildStationList();
@@ -66,6 +69,10 @@ private:
 	QuickBar    *quickbar;
 
     QPixmap     miniKRadioPixmap;
+
+    // configuration
+    bool leftMouseTogglesQB;
+    bool leftMouseTogglesUI;
 };
 
 #endif

@@ -30,7 +30,9 @@
 #include "kradio.h"
 
 RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, const char *name)
-  : KSystemTray (0, name)
+  : KSystemTray (0, name),
+    leftMouseTogglesQB(false),
+    leftMouseTogglesUI(true)
 {
   radio = _radio;
   radioControl = _widget;
@@ -152,7 +154,7 @@ void RadioDocking::slotToggleUI ()
     if (radioControl->isMinimized() || radioControl->isHidden())
         radioControl->showNormal();
     else
-        radioControl->showMinimized();
+        radioControl->hide();
 }
 
 
@@ -161,7 +163,7 @@ void RadioDocking::slotToggleQB ()
     if (quickbar->isMinimized() || quickbar->isHidden())
         quickbar->showNormal();
     else
-        quickbar->showMinimized();
+        quickbar->hide();
 }
 
 
@@ -185,3 +187,17 @@ void RadioDocking::showEvent (QShowEvent *)
 {
 }
 
+void RadioDocking::mousePressEvent( QMouseEvent *e )
+{
+  KSystemTray::mousePressEvent(e);
+
+  switch ( e->button() ) {
+  case LeftButton:
+    if (leftMouseTogglesQB) slotToggleQB ();
+    if (leftMouseTogglesUI) slotToggleUI ();
+    break;
+  default:
+	// nothing
+	break;
+  }
+}
