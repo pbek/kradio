@@ -75,8 +75,15 @@ QString RadioStation::getLongName() const
 	QString longName = name();
 	if (!longName.isEmpty())
         longName += ", ";
-    longName = longName +
-  	           QString().setNum(getFrequency(), 'f', 2) + " MHz";
+
+    float   cf = getFrequency();
+    QString f;
+    if (cf >= 10)
+		f = QString().setNum(cf, 'f', 2) + " MHz";
+	else
+		f = QString().setNum(cf * 1000, 'f', 0) + " kHz";
+    
+    longName = longName + f;
 	return longName;
 }
 

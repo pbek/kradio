@@ -50,6 +50,15 @@
 class V4LRadio : public RadioBase {
 
 protected:
+
+	struct TunerCache {
+		bool  valid;
+		float deltaF;
+		float minF, maxF;
+
+		TunerCache() { valid = false; }
+	};
+
 	
 	QString RadioDev;
 	QString MixerDev;
@@ -58,7 +67,9 @@ protected:
 	int mixer_fd;
 	struct video_tuner *tuner;
 	struct video_audio *audio;
-	
+
+
+	mutable TunerCache  tunercache;	
 //	__u16 balance;
 //	__u16 bass ;
 //	__u16 treble;
@@ -100,6 +111,10 @@ public slots:
 protected:
 	void radio_init();
 	void radio_done();
+
+	bool readTunerInfo() const;
+	bool readAudioInfo() const;
+	bool writeAudioInfo();
 };
 
 #endif

@@ -22,15 +22,12 @@
 
 #include "kradioapp.h"
 
-static const char *description =
-  I18N_NOOP("KRadio");
-// INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
+static const char *description = "KRadio";
 
 
 static KCmdLineOptions options[] =
 {
   { 0, 0, 0 }
-  // INSERT YOUR COMMANDLINE OPTIONS HERE
 };
 
 int main(int argc, char *argv[])

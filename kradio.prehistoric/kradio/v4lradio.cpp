@@ -50,16 +50,18 @@ V4LRadio::~V4LRadio()
 
 
 void V4LRadio::radio_init()
-{	
+{
+	tunercache.valid = false;
+
 	mixer_fd = open(MixerDev, O_RDONLY);
 	if (mixer_fd == -1) {
 		mixer_fd = 0;
-		fprintf (stderr, "cannot open mixer\n");
+		fprintf (stderr, "%s\n", (const char*)i18n("cannot open mixer"));
 		return;
 	}
 	radio_fd = open(RadioDev, O_RDONLY);
   	if (radio_fd == -1) {
-		fprintf (stderr, "cannot open radio device\n");
+		fprintf (stderr, "%s\n", (const char*)i18n("cannot open radio device"));
 		close (mixer_fd);
 		radio_fd = mixer_fd = 0;		
     	return;
@@ -76,6 +78,7 @@ void V4LRadio::radio_init()
 
 	tuner->tuner = 0;
 
+	readTunerInfo();
   	
   	// restore frequency
   	setFrequency(RadioBase::getFrequency());
@@ -91,6 +94,8 @@ void V4LRadio::radio_init()
 
 void V4LRadio::radio_done()
 {
+	tunercache.valid = false;
+
 	if (radio_fd == 0)
 		return;
 	close (radio_fd);
@@ -131,40 +136,28 @@ void V4LRadio::PowerOff () {
 
 float V4LRadio::getFrequency() const
 {
-  	if (radio_fd != 0) {
+/*  	if (radio_fd != 0) {
 		unsigned long fq;
 		if (ioctl (radio_fd, VIDIOCGFREQ, &fq)) {
-			fprintf (stderr, "V4LRadio::getFrequency: error reading frequency\n");
+			fprintf (stderr, "V4LRadio::getFrequency: %s\n", (const char*)i18n("error reading frequency"));
 			return 0;
 		}
-		if (ioctl (radio_fd, VIDIOCGTUNER, tuner)) {
-	  		fprintf (stderr, "V4LRadio::getFrequency: cannot get tuner info\n");
-	  		return 0;
-	  	}
-	
-		float div = 16;
-		if ((tuner->flags & VIDEO_TUNER_LOW) != 0)
-	    	div = 16000;
 	    	
-    	float f = float(fq) / div;
+    	float f = float(fq) * deltaF();
 	    if (f != RadioBase::getFrequency())
     		const_cast<V4LRadio*>(this)->RadioBase::_setFrequency(f);
     }
-
+*/
     return RadioBase::getFrequency();
 }
 
 
 float V4LRadio::deltaF() const
 {
-	float div = 16;
-  	if (radio_fd != 0) {  	
-	  	if (ioctl(radio_fd, VIDIOCGTUNER, tuner) != 0)
-	  		fprintf (stderr, "V4LRadio::deltaF: cannot get tuner info\n");
-	  	else if ((tuner->flags & VIDEO_TUNER_LOW) != 0)
-	    	div = 16000;
-	}
-	return 1 / div;
+	if (!tunercache.valid)
+		readTunerInfo();
+
+	return tunercache.deltaF;
 }
 
 
@@ -172,13 +165,10 @@ float V4LRadio::minFrequency() const
 {
 	if (rangeOverride)
 		return fMinOverride;
-  	if (radio_fd != 0) {  	
-	  	if (ioctl(radio_fd, VIDIOCGTUNER, tuner) != 0)
-	  		fprintf (stderr, "V4LRadio::deltaF: cannot get tuner info\n");
-	  	else
-	    	return float(tuner->rangelow) * deltaF();
-	}
-	return 87.0;
+	if (!tunercache.valid)
+		readTunerInfo();
+
+	return tunercache.minF;		
 }
 
 
@@ -186,17 +176,11 @@ float V4LRadio::maxFrequency() const
 {
 	if (rangeOverride)
 		return fMaxOverride;
-  	if (radio_fd != 0) {  	
-	  	if (ioctl(radio_fd, VIDIOCGTUNER, tuner) != 0)
-	  		fprintf (stderr, "V4LRadio::deltaF: cannot get tuner info\n");
-	  	else
-	    	return float(tuner->rangehigh) * deltaF();
-	}
-	return 108.0;
+	if (!tunercache.valid)
+		readTunerInfo();
+
+	return tunercache.maxF;
 }
-
-
-		
 
 
 void V4LRadio::_setFrequency(float freq)
@@ -204,27 +188,18 @@ void V4LRadio::_setFrequency(float freq)
   	if (radio_fd != 0) {
   		bool oldMute = isMuted();
   		if (!oldMute) mute();
-  		
-	  	if (ioctl(radio_fd, VIDIOCGTUNER, tuner) != 0) {
-	  		fprintf (stderr, "V4LRadio::setFrequency: cannot get tuner info\n");
-			return;
-		}
-		
-		float div = 16;
-	  	if ((tuner->flags & VIDEO_TUNER_LOW) != 0)
-	    	div = 16000;
-	    	
-	    freq = round(freq * div) / div;
-    	
-  		unsigned long lfreq = (unsigned long) round(freq * div);
-  	
-	  	if ((lfreq > tuner->rangehigh) || (lfreq < tuner->rangelow)) {
-	  		fprintf (stderr, "V4LRadio::setFrequency: invalid frequency %.2g\n", freq);
+
+		float         df = deltaF();		
+  		unsigned long lfreq = (unsigned long) round(freq / df);
+//		float         r_freq = lfreq * df;
+	    
+	  	if (freq > maxFrequency() || freq < minFrequency()) {
+	  		fprintf (stderr, "V4LRadio::setFrequency: %s %.2g\n", (const char*)i18n("invalid frequency"), freq);
 	    	return;
 	    }
     	
   		if (ioctl(radio_fd, VIDIOCSFREQ, &lfreq))
-  			fprintf (stderr, "V4LRadio::setFrequency: error setting frequency to %.2g\n", freq);
+  			fprintf (stderr, "V4LRadio::setFrequency: %s %.2g\n", (const char*)i18n("error setting frequency to"), freq);
   		
   		if (!oldMute) unmute();
 	}
@@ -235,27 +210,19 @@ void V4LRadio::_setFrequency(float freq)
 
 float V4LRadio::signal() const
 {
-  	if (radio_fd == 0)
-    	return 0;
-    	
-  	if (ioctl(radio_fd, VIDIOCGTUNER, tuner)) {
-		fprintf (stderr, "V4LRadio::signal: error reading signal quality\n");
+  	if (radio_fd > 0 && readTunerInfo())
+		return float(tuner->signal) / 32767.0;
+    else
 		return 0;
-  	}
-  	return float(tuner->signal) / 32767.0;
 }
 
 
 bool V4LRadio::isStereo() const
 {
-	if (radio_fd == 0)
-    	return false;
-    	
-	if (ioctl(radio_fd, VIDIOCGAUDIO, audio)) {
-		fprintf (stderr, "V4LRadio::isStereo: error reading stereo attributes\n");
+	if (radio_fd > 0 && readAudioInfo())
+		return (audio->mode & VIDEO_SOUND_STEREO);
+	else
 		return false;
-	}
-	return (audio->mode & VIDEO_SOUND_STEREO);
 }
 
 
@@ -280,7 +247,7 @@ void V4LRadio::setVolume(float vol)
 		_lrvol tmpvol;
 		tmpvol.r = tmpvol.l = (unsigned int)(round(vol * divs));
 		if (ioctl(mixer_fd, MIXER_WRITE(MixerChannel), &tmpvol)) {
-			fprintf (stderr, "V4LRadio::setVolume: error setting volume to %.2f\n", vol);
+			fprintf (stderr, "V4LRadio::setVolume: %s %.2f\n", (const char*)i18n("error setting volume to"), vol);
 			return;
 		}
 	}
@@ -293,7 +260,7 @@ float V4LRadio::getVolume() const
 	if (radio_fd != 0) {
 		_lrvol tmpvol;
 		if(ioctl(mixer_fd, MIXER_READ(MixerChannel), &tmpvol)) {
-			fprintf (stderr, "V4LRadio::getVolume: error reading volume\n");
+			fprintf (stderr, "V4LRadio::getVolume: %s\n", (const char*)i18n("error reading volume"));
 			tmpvol.l = tmpvol.r = 0;
 		}
 		float v = float(tmpvol.l) / 100.0;
@@ -308,16 +275,13 @@ float V4LRadio::getVolume() const
 void V4LRadio::mute()
 {
 	if (radio_fd != 0) {
-		// mute  	
-	  	if (ioctl(radio_fd, VIDIOCGAUDIO, audio)) {
-	  		fprintf (stderr, "V4LRadio::mute: error reading v4l audio info\n");
+		// mute
+	  	if (!readAudioInfo())
 	  		return;
-	  	}
 	  	audio->flags |= VIDEO_AUDIO_MUTE;
-	  	if (ioctl(radio_fd, VIDIOCSAUDIO, audio)) {
-	  		fprintf (stderr, "V4LRadio::mute: error muting v4l audio\n");
+
+	  	if (!writeAudioInfo())
 	  		return;
-	  	}
   	}
 }
 
@@ -326,15 +290,11 @@ void V4LRadio::unmute()
 {
 	if(radio_fd != 0) {
 	    // unmute
-		if (ioctl(radio_fd, VIDIOCGAUDIO, audio)) {
-	  		fprintf (stderr, "V4LRadio::unmute: error reading v4l audio info\n");
+	  	if (!readAudioInfo())
 	  		return;
-	  	}
 		audio->flags &= ~VIDEO_AUDIO_MUTE;
-		if (ioctl(radio_fd, VIDIOCSAUDIO, audio)) {
-	  		fprintf (stderr, "V4LRadio::unmute: error unmuting v4l audio\n");
+	  	if (!writeAudioInfo())
 	  		return;
-	  	}
 	}
 }
 
@@ -344,10 +304,8 @@ bool V4LRadio::isMuted() const
 	if (radio_fd == 0)
 		return true;
     // unmute
-	if (ioctl(radio_fd, VIDIOCGAUDIO, audio)) {
-  		fprintf (stderr, "V4LRadio::isMuted: error reading v4l audio info\n");
+  	if (!readAudioInfo())
   		return true;
-  	}
   	return (audio->flags &= VIDEO_AUDIO_MUTE) != 0;
 }
 
@@ -414,4 +372,58 @@ void  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
 		MixerChannel = ch;
 		if (p) PowerOn();
 	}
+}
+
+
+bool V4LRadio::readTunerInfo() const
+{
+	tunercache.minF   = 87;
+	tunercache.maxF   = 109;
+	tunercache.deltaF = 1.0/16.0;
+	tunercache.valid  = false;
+
+    if (radio_fd > 0) {
+		if (tuner && ioctl(radio_fd, VIDIOCGTUNER, tuner) == 0) {
+
+			if ((tuner->flags & VIDEO_TUNER_LOW) != 0)
+				tunercache.deltaF = 1.0 / 16000.0;
+
+			tunercache.minF = float(tuner->rangelow)  * tunercache.deltaF;
+			tunercache.maxF = float(tuner->rangehigh) * tunercache.deltaF;
+				
+			tunercache.valid = true;
+
+			return true;
+		} else {
+			fprintf (stderr, "V4LRadio::readTunerInfo: %s\n", (const char*)i18n("cannot get tuner info"));
+
+		}		
+	}
+	return false;
+}
+
+
+bool V4LRadio::readAudioInfo() const
+{
+	if (radio_fd > 0) {
+		if (audio && ioctl(radio_fd, VIDIOCGAUDIO, audio) == 0) {
+			return true;
+		} else {
+			fprintf (stderr, "V4LRadio::readAudioInfo: %s\n", (const char*)i18n("error reading radio audio info"));
+		}
+	}
+	return false;
+}
+
+
+bool V4LRadio::writeAudioInfo()
+{
+  	if (radio_fd > 0) {
+		if (audio && ioctl(radio_fd, VIDIOCSAUDIO, audio) == 0) {
+			return true;
+		} else {
+			fprintf (stderr, "V4LRadio::writeAudioInfo: %s\n", (const char*)i18n("error writing radio audio info"));
+		}
+    }
+	return false;
 }

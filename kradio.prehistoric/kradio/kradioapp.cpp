@@ -80,10 +80,9 @@ KRadioApp::KRadioApp()
 
   connect(radio, SIGNAL(sigPowerOn(bool)), timeControl, SLOT(stopCountdown()));
 
-  connect(&setupDialog, SIGNAL(apply()),
-		  this, SLOT(slotApplyConfig()));
-  connect(&setupDialog, SIGNAL(okClicked()),
-		  this, SLOT(slotApplyConfig()));
+  connect(&setupDialog, SIGNAL(apply()),         this, SLOT(slotApplyConfig()));
+  connect(&setupDialog, SIGNAL(okClicked()),     this, SLOT(slotApplyConfig()));
+  connect(&setupDialog, SIGNAL(cancelClicked()), this, SLOT(initSetupDialog()));
 
 }
 
@@ -133,6 +132,8 @@ void KRadioApp::readOptions()
 							    config->readDoubleNumEntry ("fMaxOverride", 108.0));
 
 		radio->setSignalMinQuality(config->readDoubleNumEntry ("signalMinQuality", 0.75));
+
+		radio->setScanStep(config->readDoubleNumEntry ("scanStep", 0.05));
 	}
 
 
@@ -203,6 +204,8 @@ void KRadioApp::saveOptions()
 		config->writeEntry("fMaxOverride",   radio->maxFrequency());
 
 		config->writeEntry("signalMinQuality", radio->getSignalMinQuality());
+
+		config->writeEntry("scanStep", radio->getScanStep());
 
     }
 
@@ -290,6 +293,7 @@ void KRadioApp::slotApplyConfig ()
 	radio->setDevices(d.radioDev, d.mixerDev, d.mixerChannel);
 	radio->setRangeOverride(d.enableRangeOverride, d.minFrequency, d.maxFrequency);
 	radio->setSignalMinQuality(d.signalMinQuality);
+	radio->setScanStep(d.scanStep);
 	timeControl->setCountdownSeconds(d.sleep * 60);
 
     // stations
@@ -360,10 +364,25 @@ void KRadioApp::readConfiguration()
     // load "normal" configuration
     readOptions();
 
+    
+    // initializeSetupDialog
+    initSetupDialog();
+}
 
+
+
+void KRadioApp::slotRunConfigure()
+{
+	setupDialog.show();
+	setupDialog.raise();
+}
+
+
+void KRadioApp::initSetupDialog()
+{
     ////////////////////////
 	// prepare setupDialog
-	
+
     SetupData  d;
 
     // General Options
@@ -377,6 +396,7 @@ void KRadioApp::readConfiguration()
 	d.maxFrequency          = radio ? radio->maxFrequency() : 109;
 	d.sleep                 = timeControl ? timeControl->getCountdownSeconds() / 60 : 30;
 	d.signalMinQuality      = radio ? radio->getSignalMinQuality() : 0.75;
+	d.scanStep              = radio ? radio->getScanStep() : 0.05;
 
 	// Station Options
 	d.stations = radio ? &radio->getStations() : NULL;
@@ -388,15 +408,6 @@ void KRadioApp::readConfiguration()
 	d.alarms   = &timeControl->getAlarms();
 
 	setupDialog.setData(d);
-
-}
-
-
-
-void KRadioApp::slotRunConfigure()
-{
-	setupDialog.show();
-	setupDialog.raise();
 }
 
 
@@ -489,7 +500,6 @@ void writeXMLCfg (const QString &FileName,
 				  const StationListMetaData &info
 				 )
 {
-	// TODO: create backup copy!
 	// TODO: error handling
 	::rename(FileName, FileName + "~");
 
@@ -499,39 +509,5 @@ void writeXMLCfg (const QString &FileName,
 
 	fprintf (f, "%s", (const char*)writeXMLCfg(sl, info));
 
-/*
-	fprintf (f, "<%s>\n", KRadioConfigElement);
-	fprintf (f, "\t<%s>\n", StationListElement);
-    fprintf (f, "\t\t<%s>\n", StationListInfo);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMaintainer, (const char*)XMLEscape(info.Maintainer),            StationListInfoMaintainer);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoChanged,    (const char*)XMLEscape(info.LastChange.toString(Qt::ISODate)), StationListInfoChanged);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCountry,    (const char*)XMLEscape(info.Country),               StationListInfoCountry);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoCity,       (const char*)XMLEscape(info.City),                  StationListInfoCity);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoMedia,      (const char*)XMLEscape(info.Media),                 StationListInfoMedia);
-    fprintf (f, "\t\t\t<%s>%s</%s>\n", StationListInfoComments,   (const char*)XMLEscape(info.Comment),               StationListInfoComments);
-    fprintf (f, "\t\t</%s>\n", StationListInfo);
-
-
-	for (ciStationVector i = sl.begin(); i != sl.end(); ++i) {
-		const RadioStation *st = *i;
-		fprintf (f, "\t\t<%s>\n", StationElement);
-		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationNameElement,         (const char*)XMLEscape(st->name()),		  StationNameElement);
-		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationShortNameElement,    (const char*)XMLEscape(st->getShortName()),  StationShortNameElement);
-		fprintf (f, "\t\t\t<%s>%s</%s>\n",   StationIconStringElement,   (const char*)XMLEscape(st->getIconString()), StationIconStringElement);
-		fprintf (f, "\t\t\t<%s>%i</%s>\n",   StationQuickSelectElement,  st->useQuickSelect(),			   StationQuickSelectElement);
-		fprintf (f, "\t\t\t<%s>%.6f</%s>\n", StationFrequencyElement,    st->getFrequency(),    		   StationFrequencyElement);
-		fprintf (f, "\t\t\t<%s>%.6f</%s>\n", StationVolumePresetElement, st->getVolumePreset(), 		   StationVolumePresetElement);
-		fprintf (f, "\t\t\t<%s>%i</%s>\n",   StationDockingMenuElement,  st->useInDockingMenu(), 		   StationDockingMenuElement);
-		fprintf (f, "\t\t</%s>\n", StationElement);
-	}
-	fprintf (f, "\t</%s>\n", StationListElement);
-
-	// write alarm list
-
-	fprintf (f, "</%s>\n", KRadioConfigElement);
-*/
-
 	fclose (f);
 }
-
-

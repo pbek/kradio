@@ -71,7 +71,7 @@ void RadioDocking::buildContextMenu()
   KPopupMenu *menu = contextMenu();
   menu->clear();
 
-  titleID = menu->insertTitle (i18n("KRadio: ")+ radio->getStationString(true, true, true));
+  titleID = menu->insertTitle ("KRadio: " + radio->getStationString(true, true, true));
 
   buildStationList();
 

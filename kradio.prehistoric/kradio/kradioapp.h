@@ -47,6 +47,7 @@ public:
 
 public slots:
 
+  virtual void initSetupDialog ();
   virtual void slotApplyConfig ();
   virtual void slotRunConfigure();
   virtual void slotAlarm(Alarm *);

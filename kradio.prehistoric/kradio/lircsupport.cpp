@@ -92,9 +92,9 @@ void LircSupport::slotLIRC(int /*socket*/ )
 				else if (strcasecmp (c, "VOL-") == 0)
 					radio->setVolume (radio->getVolume() - 1.0/32.0);
 				else if (strcasecmp (c, "CH+") == 0)
-					radio->setFrequency(radio->getFrequency() + radio->deltaF());
+					radio->setFrequency(radio->getFrequency() + radio->getScanStep());
 				else if (strcasecmp (c, "CH-") == 0)
-					radio->setFrequency(radio->getFrequency() - radio->deltaF());
+					radio->setFrequency(radio->getFrequency() - radio->getScanStep());
 				else if (strcasecmp (c, "CH+SEARCH") == 0)
 					radio->startSeekUp();
 				else if (strcasecmp (c, "CH-SEARCH") == 0)
