@@ -1,7 +1,6 @@
 0.3.0-alpha2
 
        segfault fixes with 2.95.3
-       option for display window type (entry in taskbar or toolbar window)
        about dialog
        v4l2 support (implemented, hardly tested)
        convert preset files                 // done
@@ -12,6 +11,8 @@
 
 0.3.0-alpha3
 
+       option for display window type (entry in taskbar or toolbar window)
+       mp3 encoding with liblame_enc
        background pixmap for display
        .so-library plugins
        plugin config

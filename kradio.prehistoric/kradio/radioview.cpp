@@ -349,7 +349,7 @@ ConfigPageInfo RadioView::createConfigurationPage()
 {
 	RadioViewConfiguration *c = new RadioViewConfiguration();
 
-	addCommonConfigurationTab(c);
+	//addCommonConfigurationTab(c);
 	
 	for (ElementListIterator i(elements); i.current(); ++i) {
 		addConfigurationTabFor(i.current(), c);
