@@ -130,6 +130,8 @@ void KRadioApp::readOptions()
 		radio->setRangeOverride(config->readBoolEntry ("fRangeOverride", false),
 		  					    config->readDoubleNumEntry ("fMinOverride", 87.0),
 							    config->readDoubleNumEntry ("fMaxOverride", 108.0));
+
+		radio->setSignalMinQuality(config->readDoubleNumEntry ("signalMinQuality", 0.75));
 	}
 
 
@@ -184,6 +186,8 @@ void KRadioApp::saveOptions()
 		config->writeEntry("fRangeOverride", radio->isRangeOverrideSet());
 		config->writeEntry("fMinOverride",   radio->minFrequency());
 		config->writeEntry("fMaxOverride",   radio->maxFrequency());
+
+		config->writeEntry("signalMinQuality", radio->getSignalMinQuality());
 
     }
 
@@ -269,6 +273,7 @@ void KRadioApp::slotConfigure()
 						 radio->minFrequency(),
 						 radio->maxFrequency());
 	sud.setSleep(timeControl->getCountdownSeconds() / 60);
+	sud.setSignalMinQuality(radio->getSignalMinQuality());
 
 	connect (&sud, SIGNAL(sigSaveConfig(SetupDialog &)),
 		this, SLOT(slotSaveConfig(SetupDialog &)));
@@ -294,6 +299,8 @@ void KRadioApp::slotApplyConfig (SetupDialog &sud)
 	radio->setRangeOverride(sud.isRangeOverrideSet(),
 							sud.fMinOverride(),
 							sud.fMaxOverride());
+
+	radio->setSignalMinQuality(sud.getSignalMinQuality());
 	timeControl->setCountdownSeconds(sud.getSleep()*60);
 }
 

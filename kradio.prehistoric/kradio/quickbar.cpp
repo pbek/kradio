@@ -62,6 +62,12 @@ void QuickBar::restoreState (KConfig *config)
 
 	saveGeometry = config->readRectEntry("Geometry");
 
+/*	fprintf (stderr, "%i, %i -  %i x %i\n",
+			 saveGeometry.x(),
+			 saveGeometry.y(),
+			 saveGeometry.width(),
+			 saveGeometry.height());
+*/
     if (config->readBoolEntry("hidden", false))
         hide();
     else
@@ -84,14 +90,20 @@ void QuickBar::saveState (KConfig *config)
 	config->writeEntry("sticky", saveSticky);
 	config->writeEntry("desktop", saveDesktop);
 	config->writeEntry("Geometry", saveGeometry);
-	
+
+/*	fprintf (stderr, "%i, %i -  %i x %i\n",
+			 geometry().x(),
+			 geometry().y(),
+			 geometry().width(),
+			 geometry().height());
+*/		
 	config->writeEntry("showShortName", showShortName);
 }
 
 
 void QuickBar::getState()
 {
-	if (!isHidden()) {
+	if (isVisible()) {
 		KWin::Info  i = KWin::info(winId());
 		saveSticky    = i.onAllDesktops;
 		saveDesktop   = i.desktop;
@@ -110,7 +122,7 @@ void QuickBar::rebuildGUI()
 	if (layout) delete layout;
 	layout = new ButtonFlowLayout(this);
 
-	layout->setMargin(2);
+	layout->setMargin(1);
 	layout->setSpacing(2);
 
 	if (buttonGroup) delete buttonGroup;
@@ -156,6 +168,9 @@ void QuickBar::rebuildGUI()
     if (layout) {
 		QRect r = geometry();
 		int h = layout->heightForWidth( r.width());
+
+//		fprintf (stderr, "layout says: need height = %i\n", h);
+		
 		if (h > r.height())
 			setGeometry(r.x(), r.y(), r.width(), h);
     }
@@ -180,15 +195,21 @@ void QuickBar::setOn(bool on)
 
 void QuickBar::show()
 {
-  bool wasHidden = isHidden();
-  QWidget::show();
-  emit toggled(true);
+  bool wasHidden = !isVisible();
 
   if (wasHidden) {
 	KWin::setOnAllDesktops(winId(), saveSticky);
 	KWin::setType(winId(), NET::Toolbar);
+
+/*	fprintf (stderr, "Quickbar::show(): %i, %i - %i x %i\n",
+			 saveGeometry.x(), saveGeometry.y(),
+			 saveGeometry.width(), saveGeometry.height());
+*/	
 	setGeometry(saveGeometry);
   }
+
+  QWidget::show();
+  emit toggled(true);
 }
 
 
@@ -209,9 +230,15 @@ void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
 
 void QuickBar::resizeEvent (QResizeEvent *e)
 {
-  // minimumSize might change because of the flow layout
-  if (layout) setMinimumSize(layout->minimumSize());
-  QWidget::resizeEvent (e);
+/*	fprintf (stderr, "QuickBar::resizeEvent: old = %i x %i, new = %i x %i\n",
+			 e->oldSize().width(), e->oldSize().height(),
+			 e->size().width(), e->size().height());
+*/
+	QWidget::resizeEvent (e);
+
+	// minimumSize might change because of the flow layout
+	if (layout)
+		setMinimumSize(layout->minimumSize() + QSize(layout->margin()*2, layout->margin())*2);
 }
 
 

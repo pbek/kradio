@@ -12,7 +12,7 @@
 /**
    Modified 2002 by Klas Kalass (klas.kalass@gmx.de) for kradio
  */
-#include <math.h>
+#include "utils.h"
 #include "buttonflowlayout.h"
 
 /*********************************************/
@@ -57,21 +57,18 @@ QLayoutItem *ButtonFlowLayoutIterator::takeCurrent()
 ButtonFlowLayout::ButtonFlowLayout( QWidget *parent, int margin, int spacing,
 	    const char *name )
   : QLayout( parent, margin, spacing, name ),
-  minHeight(100),
   cached_width(0)
 {
 }
 
 ButtonFlowLayout::ButtonFlowLayout( QLayout* parentLayout, int spacing, const char *name )
   : QLayout( parentLayout, spacing, name ),
-  minHeight(100),
   cached_width(0)
 {
 }
 
 ButtonFlowLayout::ButtonFlowLayout( int spacing, const char *name )
   : QLayout( spacing, name ),
-  minHeight(100),
   cached_width(0)
 {
 }
@@ -89,6 +86,7 @@ int ButtonFlowLayout::heightForWidth( int w ) const
 		ButtonFlowLayout * mthis = (ButtonFlowLayout*)this;
 		int h = mthis->doLayout( QRect(0,0,w,0), TRUE );
 		mthis->cached_hfw = h;
+		mthis->cached_width = w;
 		return h;
     }
     return cached_hfw;
@@ -127,14 +125,17 @@ void ButtonFlowLayout::setGeometry( const QRect &r )
 
 int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 {
-    int x = r.x();
+/*	fprintf (stderr, "buttonflowlayout::doLayout (%i,%i-%ix%i, %i)\n",
+		     r.x(), r.y(), r.width(), r.height(), testonly);
+*/
+    float x = r.x();
     float y = r.y();
     int h = 0;		//height of this line so far.
-    int buttonWidth = 0;
-    int buttonHeight = 0;
+    float buttonWidth = 0;
+    int   buttonHeight = 0;
     int linecount = 0;
-    int totalWidth  = r.right()  - r.left();
-    int totalHeight = r.bottom() - r.top();
+    int totalWidth  = r.width();
+    int totalHeight = r.height();
 
     QListIterator<QLayoutItem> it(list);
     QLayoutItem *o;
@@ -150,21 +151,21 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 
     // calculate the optimal width
     unsigned int columns = (totalWidth + spacing()) /
-                           (buttonWidth + spacing());
-    if (columns > it.count() ) columns=it.count();
+                           ((int)buttonWidth + spacing());
+    if (columns > it.count() ) columns = it.count();
     if (columns == 0) columns = 1; // avoid division by zero
 
     
     int rows   = (it.count() - 1) / columns + 1;
-    float deltaH = (float)(totalHeight - rows * buttonHeight - (rows - 1) * spacing()) /
-		           (float)(rows + 1) ;
+    float deltaH = (float)(totalHeight - rows * buttonHeight - (rows - 1) * spacing())
+		           / (float)(rows + 1) ;
+	if (deltaH < 0) deltaH = 0;
+	
     y += deltaH;
-    minHeight = rows * buttonHeight + (rows - 1) * spacing();
 
-    buttonWidth = (totalWidth - spacing()*(columns-1)) / columns;
+    buttonWidth = (float)(totalWidth - spacing()*(columns-1)) / (float)columns;
 
-
-/*    fprintf (stderr, "cols = %i      col-width  = %i\n"
+/*    fprintf (stderr, "cols = %i      col-width  = %f\n"
 					 "rows = %i      row-height = %i\n"
 					 "w = %i         h = %i\n",
 			 columns, buttonWidth,
@@ -178,34 +179,47 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 
 //		fprintf (stderr, "x = %i    y = %i\n", x, (int)y);
 		++it;
-        if ( x + buttonWidth > r.right() && h > 0 ) {
+		int btnRight = (int)round(x + buttonWidth) - 1,
+			btnLeft  = (int)round(x);
+			
+        if ( btnRight > r.right() && h > 0 ) {
 		    x = r.x();
+		    btnRight = (int)round(x + buttonWidth) - 1;
+			btnLeft  = (int)round(x);
+		    
     	    y += h + spacing() + deltaH;
   	        h = 0;
 	        linecount++;
     	}
         if (!testonly)
-      	    o->setGeometry( QRect( QPoint( x, (int)y ),
-			                       QSize(buttonWidth, buttonHeight) ) );
+      	    o->setGeometry( QRect( QPoint( btnLeft, (int)round(y) ),
+			                       QSize(  btnRight - btnLeft + 1,
+									       buttonHeight) )
+			              );
 
         x += buttonWidth + spacing();
         h = QMAX( h,  buttonHeight );
     }
 
-    return (int)y + h - r.y();
+    int ret = (int)round(y + h + deltaH) - r.y();
+
+//    fprintf (stderr, "ButtonFlowLayout::doLayout() = %i\n", ret);
+    return ret;
 }
 
 
 QSize ButtonFlowLayout::minimumSize() const
 {
-    QSize s(0,0);
-    QListIterator<QLayoutItem> it(list);
-    QLayoutItem *o;
-    while ( (o=it.current()) != 0 ) {
-  	  ++it;
-    	s = s.expandedTo( o->minimumSize() );
+    QSize s(0, 0);
+    
+    for (QListIterator<QLayoutItem> it(list); it.current(); ++it) {
+		QLayoutItem *o = it.current();
+    	s = s.expandedTo( o->sizeHint()); //minimumSize() );
     }
 
-    s.setHeight(minHeight);
+    s.setHeight(heightForWidth(geometry().width()));
+
+//    fprintf(stderr, "buttonflowlayout::minimumsize == %i x %i\n", s.width(), s.height());
+    
     return s;
 }

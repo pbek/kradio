@@ -47,7 +47,6 @@ public:
     QSizePolicy::ExpandData expanding() const;
 
 protected:
-    int minHeight;
     void setGeometry( const QRect& );
 
 private:
