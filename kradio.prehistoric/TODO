@@ -1,8 +1,8 @@
 short-term:
 * better Icon for QuickBar Button
 * fix sticky behavior on "window-close/restore" (both kradio & quickbar)
+	(maybe make it configurable: if (kradio->trayClose())...; and if(quickbar->trayClose())...; )
 * make use of ~/.kde/share/apps/kradio/... concept
-* beautify quickbar buttons (horrible alignments...)
 
 // * use session management for saving of options (currently options are not saved on quit, because application->quit is called instead of window->close)
 // session management only works on kde-exit, not program-exit :(
@@ -19,11 +19,12 @@ future:
 * recording capabilities
 * quick radio applet
 * DCOP Interface
-* mediacontrol applect integration
+* mediacontrol applet integration
 
 DONE:
 // * kde3 port //kalass
 // * replace StationButton by ordinary buttons // completely removed - kalass
 // * use kde menus (emw, long time ago)
 // * QuickBar (emw)
-// * xml based station configuration (klas)
+// * xml based station configuration (emw)
+// * beautify quickbar buttons (horrible alignments...)
