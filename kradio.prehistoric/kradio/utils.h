@@ -20,6 +20,8 @@
 
 using namespace std;
 
+#include <kconfig.h>
+#include <klocale.h>
 #include <qstring.h>
 #include <list>
 #include <vector>

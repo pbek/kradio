@@ -21,10 +21,9 @@
 
 #include <kiconloader.h>
 #include <kstandarddirs.h>
-#include <kconfig.h>
-#include <klocale.h>
 #include <qxml.h>
 #include <kio/netaccess.h>
+#include <linux/soundcard.h>
 
 #include "kradio.h"
 #include "kradioapp.h"
@@ -263,22 +262,34 @@ void KRadioApp::saveState()
 
 void KRadioApp::slotConfigure()
 {
-	SetupDialog	sud (0, radio ? radio->radioDevice() : QString("/dev/radio"),
-						radio ? radio->mixerDevice() : QString("/dev/mixer"),
-						radio ? radio->mixerChannel() : 0,
-						quickbar ? quickbar->getShowShortName() : false);
-	sud.setStations(radio->getStations(), radio);
-	sud.setAlarms(timeControl->getAlarms());
-	sud.setRangeOverride(radio->isRangeOverrideSet(),
-						 radio->minFrequency(),
-						 radio->maxFrequency());
-	sud.setSleep(timeControl->getCountdownSeconds() / 60);
-	sud.setSignalMinQuality(radio->getSignalMinQuality());
+	SetupDialog	sud (0);
 
-	connect (&sud, SIGNAL(sigSaveConfig(SetupDialog &)),
-		this, SLOT(slotSaveConfig(SetupDialog &)));
+    SetupData  d;
+
+    // General Options
+	d.radioDev              = radio ? radio->radioDevice() : QString("/dev/radio");
+	d.mixerDev              = radio ? radio->mixerDevice() : QString("/dev/mixer");
+	d.mixerChannel          = radio ? radio->mixerChannel() : 0;
+	
+	d.displayOnlyShortNames = quickbar ? quickbar->getShowShortName() : false;
+	d.enableRangeOverride   = radio ? radio->isRangeOverrideSet() : false;
+	d.minFrequency          = radio ? radio->minFrequency() : 87;
+	d.maxFrequency          = radio ? radio->maxFrequency() : 109;
+	d.sleep                 = timeControl ? timeControl->getCountdownSeconds() / 60 : 30;
+	d.signalMinQuality      = radio ? radio->getSignalMinQuality() : 0.75;
+
+	// Station Options
+	d.stations = radio ? &radio->getStations() : NULL;
+	d.radio    = radio;
+
+	// Alarm Options
+	d.alarms   = &timeControl->getAlarms();
+
+	// Connections
 	connect (&sud, SIGNAL(sigApplyConfig(SetupDialog &)),
 		this, SLOT(slotApplyConfig(SetupDialog &)));
+
+	sud.setData(d);
 		
 	if (sud.exec() == QDialog::Accepted) {
 		slotApplyConfig (sud);
@@ -288,20 +299,23 @@ void KRadioApp::slotConfigure()
 
 void KRadioApp::slotApplyConfig (SetupDialog &sud)
 {
-	radio->setStations(sud.getStations());
-	timeControl->setAlarms(sud.getAlarms());
-	if (quickbar)
-		quickbar->setShowShortName(sud.displayOnlyShortNames());
-	radio->setDevices(sud.getRadioDevice(),
-	                  sud.getMixerDevice(),
-	                  sud.getMixerChannel()
-					 );
-	radio->setRangeOverride(sud.isRangeOverrideSet(),
-							sud.fMinOverride(),
-							sud.fMaxOverride());
+    SetupData  d;
 
-	radio->setSignalMinQuality(sud.getSignalMinQuality());
-	timeControl->setCountdownSeconds(sud.getSleep()*60);
+	sud.getData(d);	
+
+	// general options
+	quickbar->setShowShortName(d.displayOnlyShortNames);
+
+	radio->setDevices(d.radioDev, d.mixerDev, d.mixerChannel);
+	radio->setRangeOverride(d.enableRangeOverride, d.minFrequency, d.maxFrequency);
+	radio->setSignalMinQuality(d.signalMinQuality);
+	timeControl->setCountdownSeconds(d.sleep * 60);
+
+    // stations
+	radio->setStations(*d.stations);
+
+	// alarms
+	timeControl->setAlarms(*d.alarms);
 }
 
 
