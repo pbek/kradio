@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-01-30 05:10+0100\n"
+"POT-Creation-Date: 2003-01-30 05:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -433,7 +433,7 @@ msgstr ""
 msgid "characters ignored for element"
 msgstr ""
 
-#: setupdialog_general_options.ui.h:43 setupdialog_general_options.ui.h:54
+#: setupdialog_general_options.ui.h:43 setupdialog_general_options.ui.h:55
 msgid "any"
 msgstr ""
 
@@ -441,8 +441,16 @@ msgstr ""
 msgid "radio device selection"
 msgstr ""
 
-#: setupdialog_general_options.ui.h:54
+#: setupdialog_general_options.ui.h:45
+msgid "select radio device"
+msgstr ""
+
+#: setupdialog_general_options.ui.h:55
 msgid "mixer device selection"
+msgstr ""
+
+#: setupdialog_general_options.ui.h:57
+msgid "select mixer device"
 msgstr ""
 
 #: setupdialog_stations.ui.h:38
@@ -457,12 +465,20 @@ msgstr ""
 msgid "pixmap selection"
 msgstr ""
 
-#: setupdialog_stations.ui.h:341
+#: setupdialog_stations.ui.h:175
+msgid "select station pixmap"
+msgstr ""
+
+#: setupdialog_stations.ui.h:342
 msgid "kradio preset files"
 msgstr ""
 
-#: setupdialog_stations.ui.h:341
+#: setupdialog_stations.ui.h:342
 msgid "preset file selection"
+msgstr ""
+
+#: setupdialog_stations.ui.h:344
+msgid "select preset file"
 msgstr ""
 
 #: kradiomw.cpp:360

@@ -1,8 +1,8 @@
 0.2.8  give the setup-dialog cancel button the right behaviour // done
-       distinguish ukw/fm and MW/am
-       make kradio AM ready
+       distinguish ukw/fm and MW/am // done
+       make kradio AM ready // seems to be done
        redesign kradio interface: use symbols for stereo and signal quality, display ukw/fm and MW/am
-          Hintergrund: RGB=034200  Vordergrund: RGB=14F400
+          Hintergrund: RGB=034200  Vordergrund: RGB=14F400  // done
        gui-errormessages in xml parsing code
        prepare for translation: check for missing i18n //done
 

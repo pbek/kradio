@@ -190,9 +190,18 @@ msgstr "beliebig"
 msgid "radio device selection"
 msgstr "Auswahl der Radio-Gerätedatei"
 
+#: setupdialog_general_options.ui.h:45
+msgid "select radio device"
+msgstr "Auswahl der Radio-Gerätedatei"
+
 #: setupdialog_general_options.ui.h:54 setupdialog_general_options.ui.h:54
 msgid "mixer device selection"
 msgstr "Auswahl der Mixer-Gerätedatei"
+
+#: setupdialog_general_options.ui.h:57
+msgid "select mixer device"
+msgstr "Auswahl der Mixer-Gerätedatei"
+
 
 #: setupdialog_stations.ui.h:38 setupdialog_stations.ui.h:38
 msgid "New Station"
@@ -206,6 +215,10 @@ msgstr "Symbole"
 msgid "pixmap selection"
 msgstr "Auswahl des Symbols"
 
+#: setupdialog_stations.ui.h:175
+msgid "select station pixmap"
+msgstr "Auswahl der Symboldatei"
+
 #: setupdialog_stations.ui.h:341 setupdialog_stations.ui.h:341
 msgid "kradio preset files"
 msgstr "Sender-Informationsdateien"
@@ -213,6 +226,10 @@ msgstr "Sender-Informationsdateien"
 #: setupdialog_stations.ui.h:341 setupdialog_stations.ui.h:341
 msgid "preset file selection"
 msgstr "Auswahl der Senderinformationen"
+
+#: setupdialog_stations.ui.h:344
+msgid "select preset file"
+msgstr "Auswahl der Senderinformationsdatei"
 
 #: setupdialog_stations.cpp:465 setupdialog_stations.cpp:465
 msgid "SetupDialogStations"

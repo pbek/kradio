@@ -6,6 +6,9 @@
 				- min/max Frequency config in kHz (before in MHz)
 				- display Frequency in kHz if < 10 MHz
 				- fix min/max settings in station configuration page
+				- quickbar fixes (wrong use of button IDs vs. station IDs)
+				- redesign kradio gui. new class kradiodisplay
+				- make kradio AM-ready (hopefully)
 
 0.2.7a  (beta)
 
