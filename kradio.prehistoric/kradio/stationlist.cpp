@@ -84,8 +84,9 @@ bool RawStationList::insert (uint index, const RadioStation * item )
 {
 	if (!item) return false;
 	RadioStation *rs = &stationWithID(item->stationID());
+	bool r = true;
 	if (rs != item) {
-		bool r = BaseClass::insert(index, item);
+		r = BaseClass::insert(index, item);
 		removeRef(rs);
 	}
 	return r;
