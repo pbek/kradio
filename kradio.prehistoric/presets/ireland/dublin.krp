@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Barry O'Donovan, &lt;barry@ihl.ucd.ie&gt;</maintainer>
+			<changed>2004-06-02T16:30:23</changed>
+			<country>Ireland</country>
+			<city>Dublin</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1086190998C18EECABA122B549D880E838EB5A9FAC89E62BB8A45ED76B42C8EA9CC86E0D89</stationID>
+			<name>RTE Radio 1</name>
+			<shortname>RTE1</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>89.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108619136396BCD69B00820BFB9FE6E12151D373F480A9B26BD21079708196522B544C543F</stationID>
+			<name>2FM</name>
+			<shortname>2FM</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>90.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10861914233C02503823395C8EA9E8BF60F4D767CFDC027C7A368BD0BFD3F33660369D1D70</stationID>
+			<name>Raidi�Na Gaeltachta</name>
+			<shortname>RnaG</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>92.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1086191386890DE6B180AE68F8E42D8C28C405A86E7B504B52F38B21813E6E47FC2D4024C7</stationID>
+			<name>Lyric FM</name>
+			<shortname>Lyric</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>96.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1086192203576D116A332C7B6B3BF24D135AEF11D44C32FE31528D51B2A9B02002B1915F6D</stationID>
+			<name>98FM</name>
+			<shortname>98FM</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>98</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1086190185D912EA37C7532B1D6F4DBDBC135953C37B4EDBB48349A2388FE83121E6803A1B</stationID>
+			<name>Today FM</name>
+			<shortname>Today</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1086192033BC8BB221EE7527CB5E2161AC1DEF9B593634C2440333381BF04283B4EB27C740</stationID>
+			<name>Q102</name>
+			<shortname>Q102</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>102</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1086192160E3E3777206BFC480E07714F70B85816D58B979E965F8BA646B4957898C10BADC</stationID>
+			<name>Spin 103.8 </name>
+			<shortname>Spin</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>103.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1086191552F9BAC7A9FB947393A9E0AF4066D33D387D6241A8977C2C30F54782E2289BEBE2</stationID>
+			<name>FM 104</name>
+			<shortname>FM104</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>104.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1086191643611123442F03F627D4DFE5C9A878329D50D755BD74F4843D5D3260BC0DCC1588</stationID>
+			<name>News Talk 106</name>
+			<shortname>News</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>106</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

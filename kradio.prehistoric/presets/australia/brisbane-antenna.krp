@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Ken Holt, &lt;a1comp@overflow.net.au&gt;</maintainer>
+			<changed>2004-02-25T18:50:00</changed>
+			<country>Australia</country>
+			<city>Brisbane</city>
+			<media>antenna</media>
+			<comments>Its a pleasure to contribute something back!</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10912870595DEC6F3A45CAAEAF9305492CCAF6292F621BE7DECCA9B924CC05D5A65A3CAEA4</stationID>
+			<name>B105FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>105.300000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109128705980B68B3E28FEF36DC5825936604D241A7D13FD40FE973467007D3BDBA82AE375</stationID>
+			<name>97.3MIX</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>97.300000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091287059B6CE538273EDA445AEB2257FAD7103CF24884A45DF393D56ED08E5C90A6A7FE1</stationID>
+			<name>TripleM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>104.500000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091287059395579645CD97AA07C2444CCBB3A4613A4B045F4FE0A87BB62FAE18F68E62981</stationID>
+			<name>TripleJ</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>107.700000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091287059DBD4D5E157C5AA053C7D1AA845C2844F0B3EBF253912F4BB257AD41158D9C45E</stationID>
+			<name>98.9FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>98.940000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912870598ACCB92EC3CC6241D5414A1E678966701AB07849356FA50D6B13B6304CF0E863</stationID>
+			<name>94.9FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>94.940000</frequency>
+			<volumepreset>-1.000000</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

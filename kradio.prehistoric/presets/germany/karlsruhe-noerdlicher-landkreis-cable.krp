@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Dietmar Steinbach, &lt;dstein@onlinehome.de&gt;</maintainer>
+			<changed>2004-07-02T13:11:40</changed>
+			<country>Germany</country>
+			<city>N�dlicher Landkreis KA</city>
+			<media>Kabel</media>
+			<comments>kabel-bw ehemals Ditra</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>108876541890EFA49118F36EB81214381BCB185B31C9BDE314BE96216DE92BB3E0E1744B18</stationID>
+			<name>Querfunk/Lernradio</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654180D6FF85050E56D08B35F6880C18BD8A97D035E1E5A60AAFAD0B99ECC08A3046B</stationID>
+			<name>SWR2 BW</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.0001</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654197E31934D566F8E6DF6F8A36B2AAEE20075025E193687D41C13B4C106AD957CC1</stationID>
+			<name>Antenne1 Pforzheim</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.3001</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108876541925A085890A4B57D1541790E9D8A7CC598B828BC4C4087B53A0E1D13CF54B03EB</stationID>
+			<name>SWR4 Kurpfalzradio</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.6001</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654207557F582A990939B6794E446FF89E861058D2976AD62E9FA20D642A57DFC5F8C</stationID>
+			<name>SWR4 Badenradio</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.2501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765421DB90AA1F3CE710E1071827709BA6F5C30DBB4B0E2B88D08B63B6D4E7D7EFF1D5</stationID>
+			<name>SR1 Europawelle</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.4002</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654229CDE342ACBCAB135AA20B24BAD1691E6792BA30C182D959D9A70EF79D583207F</stationID>
+			<name>SR2 Kultur</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.7002</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654220405EBCE8B77B50FE19E015DABC3D5DB0FABACC802C9A9C511BEB4FEA3531325</stationID>
+			<name>Bayern4 Klassik</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.1753</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654232D03B32C5FD10988204824BE378922E6151CC2BCA24F7319E319DF3767DE0C08</stationID>
+			<name>SWR1 BW</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.7503</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765424FF06B3D0C51D60247F54C7087FC650D7D697B033BC729DDD47E7E011FDA8A647</stationID>
+			<name>SWR3</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.0253</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108876542469E0B1921713D54688B7F949B1087F47227A11BAFDFEFA254B7D77A90847C2B0</stationID>
+			<name>hr1</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.5003</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654257BE7C9251B908275B668FF7016B5FE7BE722084DB90CACD1A9320E74F3D16E61</stationID>
+			<name>hr2</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.7754</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765425ED84931C1A8BCC265726F5E4B271E8B41128DC487A5C94F9CAAD3B21F1D28EF0</stationID>
+			<name>hr3</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.2504</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765426742548F2537718BD31C54078B5BDE43ADC7D7071614242996417CD46C3063B09</stationID>
+			<name>hr4</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.8504</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654277881784775A83DC2EBE31D0D45CBBCCA404F123B5FC2F14763C08C74C1DE286F</stationID>
+			<name>RPR1</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.5255</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765428FB5CFA117F9A090CFD7DCF5AC440D7E211E942226F3B09F95C427E48DEB7E57F</stationID>
+			<name>Radio Horeb</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.0505</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654298CE1FE881A7C20612DF75CAEDC3DAD251DBA9364F1F889063CFF00415305E27B</stationID>
+			<name>RPR2</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.6505</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765430A5EF13A0B4FBD29318263E2F155BB00A2747EFCA03B87B5F27E95859D3B84A06</stationID>
+			<name>Hit Radio RTL KA</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.6756</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765431BFEC9C7E49B451B579A3CACF5C928E0B88B87C592CD435DE82CEBA48C035252E</stationID>
+			<name>Radio Regenbogen</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.2506</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654324931182565A12D06B176A42A2BA01460A796559367C271203593C8506B8AEDC0</stationID>
+			<name>sunshine live</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.7007</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108876543327213B41AA4494FF9581DC0E641CEAACBC3FC11E45534A40D86C7970F2A7D821</stationID>
+			<name>France Inter</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.5008</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108876543444110705FB3B2AB75992AC8ABFE20A1AEEAACFE877DA3726AED38B6155FFDB97</stationID>
+			<name>France Music</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.176</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654351519762D5E36E08903B67B2457F510514957B2E818605FB9DA5ACC3D7968557E</stationID>
+			<name>big - FM</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.576</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654375848A37483E53FFA61E8C8A55AE0488FD23C1EECD844331BD463D5BD0B209BB4</stationID>
+			<name>ERF 1</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.476</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765438F9F7B5C6FE5E3B17B51B6754C96853E2C3B5AD0130A57DF3F21DBBCA880F105C</stationID>
+			<name>Deutsche Wlle</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.026</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765439894D836AB228EF83252F1D555824C65A7C282935B26BEEA56D0D932AE8E52653</stationID>
+			<name>mdr - Sputnik</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.401</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765439822A65494B9864E873F9CBBA1C058192661025F29C72622E033B5A526543F5D9</stationID>
+			<name>Jam FM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.901</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765440D0BD52470C47AC2313B450BE9A5D6F1DE2870E0CF25D35B265153DC082D4748B</stationID>
+			<name>Klassik Radio</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.351</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765440909C98860AD9E66C4BD2726C996F50B066EBA62DF89B59F5A5D4EB66AA7C3B2B</stationID>
+			<name>Eins live</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.651</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108876544244B7E7AB0F32AFB9F84F2A3A2E9F36081AA75A035CB20E4B54385610E955BA1A</stationID>
+			<name>RTL Radio</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.676</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654423668939D79FB4ED9DC86D15250A46EC497255F49ACB8AA713AF379D85D9DC9E5</stationID>
+			<name>NDR2</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.176</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654434A981681C0D8C62E6AD951B00E4384749090AB63689B2A968DD8DD652FD1FC5F</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.776</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088765443A20119809E44680140ECB1B3FB4C2612ED2BE50796B550DFA8E5C7703C03D546</stationID>
+			<name>Radio Melodie</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.051</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10887654443BE682E9E66E84E48924844F2F0413D6747E3338DEDBC28FD7BA6219DF7C4151</stationID>
+			<name>Das Ding</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.676</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108876544593C2B24BBE93886F0B77B4B85CC0BBC6B3AC27B7809DF93BF2D58DAA5F5E4C11</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.951</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+

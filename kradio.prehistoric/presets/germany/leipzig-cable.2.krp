@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Christian Weiske, &lt;cweiske@cweiske.de&gt;</maintainer>
+			<changed></changed>
+			<country>Germany</country>
+			<city>Leipzig</city>
+			<media>Cable</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1091288019F69C6153CA8EEF221E65F26AE6421F8100BEA3D767DA49AA6A6209AE20D10EB0</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>92.3125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019016B98B04DD2E66695810C484B210B3BBFFADE29CA24727AA11EC2F4386A9DD4</stationID>
+			<name>mdr info</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>92.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880199871EC871A62F788A61F05338D0884B8AA8F2DEFFC22053595729F70985C2B41</stationID>
+			<name>Deutschland Radio Berlin</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>93.1875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880191A64A3C357C3180893EB1EC077C0C410F0DDDF988E0A10CA404868F12AB6E783</stationID>
+			<name>energy</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<frequency>103.688</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019363ECF0CFF159C1EFD3F569FB835F5F4F74DF22F9A3B0D7ADA5431AAB86B0E26</stationID>
+			<name>Sputnik</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<frequency>105.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880198464EBEF35CCBD354673180295DF0B518D2C842E7016AC19F0FDF1056165AAA9</stationID>
+			<name>Leipzig 91.3</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>90.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880195FC322612588E4AC586105BD71898242290B6AD263139EBEF1D2FC519CDFA769</stationID>
+			<name>Radio PSR Leipzig</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<frequency>101.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880199076059AB3A9A141AE56B15AFF6931AAAA099EE4263EA0C00AA2A3D8160613F2</stationID>
+			<name>JAM-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>87.6875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880194A8E5DE366BD8A885052789AC5DA695B12C581C1BE15251281C05882AF9D2EE8</stationID>
+			<name>Landeswelle Thringen-Ost</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>88</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109128801944FFB1BF86FEA046B4B6E4C9B81C50BC99BC557BF4CBF0EAEA1C759F580753EE</stationID>
+			<name>Hitradio Brocken-Hallo</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>88.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019F0A445260D26CDF408F41D65A3A9BE9DB5C265D96D2E738EA218EC3228103917</stationID>
+			<name>Antenne Thringen</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>89.1875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019274D8EEC61090EE323E1299F6EA296FA9299E66FCC763557B0B7F65F41D2B23B</stationID>
+			<name>MDR Figaro</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>91.1875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019F5934332D9CEDEF288F7A98F50C0742411356AEBAFF829263E832C4EDE234B53</stationID>
+			<name>mdr1 Radio Sachsen-Anhalt</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>91.8125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880190FF5282F95BDE6604090D3C3C92E1E2FDA3AAB7E180961C33FAFA1F1F4F06762</stationID>
+			<name>RSA/Mephisto</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>93.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019A671F88F4E64BCBC59802AC36DB71EAE677A9FFB6510ECD8A94560C672E4FC7A</stationID>
+			<name>mdr1 Radio Sachsen Leipzig</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>94.3125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109128801940AFA250F67650EDD89FCB7FB8E90128A6E02DA70B2528437C3C57BEE1BC64FA</stationID>
+			<name>Radio SAQ</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>94.8125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019FD9E6EFC4CBB3F87204C38A0FE14CC91D050A1F98E90347408F5C6F14DE251FA</stationID>
+			<name>Rockland Sachsen-Anhalt</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>95.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019C7C65A48B3A639F5157B888A6BE0639D422C42CCF65BE255E301CDB676056993</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>96.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109128801919FB2E4F39E892947B23E6354F9F9288E092B9DE48080F636E223E289BACB80B</stationID>
+			<name>Radio Melodie</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>97.3125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109128801940B5533EDD91ED52F41E85E6B99544529EECD05C6EEBB137817C3EFD1F93688F</stationID>
+			<name>Klassik Radio</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>97.9375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880194ADBE8734D2E1728BDC1FF127F206CED3ED3B8E352C6769204BCF7F043BEAC5F</stationID>
+			<name>Bayern 3</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109128801957CD8392A829FEBD31E3AA067AF735014308A8E242F51FCAFB73F859E6A5798F</stationID>
+			<name>mdr1 thringen</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<frequency>100</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019837A958752FED280996E8868D04E56619B7EB1C21E5954990478D0327C9EF8D0</stationID>
+			<name>NDR2</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<frequency>103.188</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091288019F0B2EDFDD819239097EE5C81839A6A5AF244F3767AF6ACF400DB3AEA918D66DB</stationID>
+			<name>RTL Radio</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<frequency>104.562</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10912880199CFF750D5D2478FCE6E612F2E4735C92102FDE72959E213A82ED643AF828594F</stationID>
+			<name>Antenne Sachsen Leipzig</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<frequency>105.688</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
