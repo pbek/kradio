@@ -731,7 +731,7 @@ void RecordingEncoding::run()
                 if (m_encodedSizeLow < (unsigned)n)
                     ++m_encodedSizeHigh;
 
-                int r = fwrite(m_MP3Buffer, n, 1, m_MP3Output);
+                int r = fwrite(m_MP3Buffer, 1, n, m_MP3Output);
                 if (r <= 0) {
                     m_errorString = i18n("Error %1 writing output").arg(QString().setNum(r));
                     m_error = true;
@@ -784,7 +784,7 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
         if (ok) {
             lame_set_in_samplerate(m_LAMEFlags, m_config.rate);
             lame_set_num_channels(m_LAMEFlags, 2);
-            lame_set_quality(m_LAMEFlags, m_config.mp3Quality);
+            //lame_set_quality(m_LAMEFlags, m_config.mp3Quality);
 
             lame_set_mode(m_LAMEFlags, m_config.channels == 1 ? MONO : JOINT_STEREO);
 
@@ -795,25 +795,26 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
             lame_set_VBR(m_LAMEFlags, vbr_default);
             lame_set_VBR_q(m_LAMEFlags, m_config.mp3Quality);
 
-            id3tag_init(m_LAMEFlags);
-            id3tag_add_v2(m_LAMEFlags);
-            QString title  = station + QString().sprintf(" - %s", (const char*)(QDateTime::currentDateTime().toString(Qt::ISODate)));
-            QString comment = i18n("Recorded by KRadio");
-            int l = title.length() + comment.length() + 10;
-            m_ID3Tags = new char[l];
-            char *ctitle   = m_ID3Tags;
-            strcpy(ctitle, title.latin1());
-            char *ccomment = m_ID3Tags + strlen(ctitle) + 1;
-            strcpy(ccomment, comment.latin1());
-            id3tag_set_title(m_LAMEFlags, ctitle);
-            id3tag_set_comment(m_LAMEFlags, ccomment);
-
             ok &= (lame_init_params(m_LAMEFlags) != -1);
 
-            if (!ok)
+            if (!ok) {
                 m_errorString = i18n("Cannot initialize liblame").arg(output);
+            } else {
+                id3tag_init(m_LAMEFlags);
+                id3tag_add_v2(m_LAMEFlags);
+                QString title  = station + QString().sprintf(" - %s", (const char*)(QDateTime::currentDateTime().toString(Qt::ISODate)));
+                QString comment = i18n("Recorded by KRadio");
+                int l = title.length() + comment.length() + 10;
+                m_ID3Tags = new char[l];
+                char *ctitle   = m_ID3Tags;
+                strcpy(ctitle, title.latin1());
+                char *ccomment = m_ID3Tags + strlen(ctitle) + 1;
+                strcpy(ccomment, comment.latin1());
+                id3tag_set_title(m_LAMEFlags, ctitle);
+                id3tag_set_comment(m_LAMEFlags, ccomment);
+            }
 
-            m_MP3Output = fopen(output, "w");
+            m_MP3Output = fopen(output, "wb+");
             if (!m_MP3Output)
                 m_errorString = i18n("Cannot open output file %1").arg(output);
 
@@ -864,7 +865,7 @@ void RecordingEncoding::closeOutput()
                 m_error = true;
                 m_errorString = i18n("Error %1 while encoding mp3").arg(QString().setNum(n));
             } else if (n > 0) {
-                int r = fwrite(m_MP3Buffer, n, 1, m_MP3Output);
+                int r = fwrite(m_MP3Buffer, 1, n, m_MP3Output);
                 if (r <= 0) {
                     m_error = true;
                     m_errorString = i18n("Error %1 writing output").arg(QString().setNum(r));
