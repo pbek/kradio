@@ -23,7 +23,7 @@
 
 #include <klocale.h>
 #include <kiconloader.h>
-#include <ktextedit.h>
+#include <qtextedit.h>
 #include <kfiledialog.h>
 #include <kurl.h>
 #include <ktempfile.h>
@@ -59,7 +59,7 @@ ErrorLog::ErrorLog(QWidget * parent, const char * name)
     QGridLayout *linfo = new QGridLayout(info);
     linfo->setSpacing( 5 );
     linfo->setMargin ( 0 );
-    m_teInfos = new KTextEdit(info);
+    m_teInfos = new QTextEdit(info);
     linfo->addWidget(m_teInfos, 0, 0);
     m_teInfos->setReadOnly(true);
     logInfo(i18n("logging started"));
@@ -73,7 +73,7 @@ ErrorLog::ErrorLog(QWidget * parent, const char * name)
     QGridLayout *lwarn = new QGridLayout(warn);
     lwarn->setSpacing( 5 );
     lwarn->setMargin ( 0 );
-    m_teWarnings = new KTextEdit(warn);
+    m_teWarnings = new QTextEdit(warn);
     lwarn->addWidget(m_teWarnings, 0, 0);
     m_teWarnings->setReadOnly(true);
     logWarning(i18n("logging started"));
@@ -88,7 +88,7 @@ ErrorLog::ErrorLog(QWidget * parent, const char * name)
     QGridLayout *lerr = new QGridLayout(err);
     lerr->setSpacing( 5 );
     lerr->setMargin ( 0 );
-    m_teErrors = new KTextEdit(err);
+    m_teErrors = new QTextEdit(err);
     lerr->addWidget(m_teErrors, 0, 0);
     m_teErrors->setReadOnly(true);
     logError(i18n("logging started"));
@@ -102,7 +102,7 @@ ErrorLog::ErrorLog(QWidget * parent, const char * name)
     QGridLayout *ldebug = new QGridLayout(debug);
     ldebug->setSpacing( 5 );
     ldebug->setMargin ( 0 );
-    m_teDebug = new KTextEdit(debug);
+    m_teDebug = new QTextEdit(debug);
     ldebug->addWidget(m_teDebug, 0, 0);
     m_teDebug->setReadOnly(true);
     logDebug(i18n("logging started"));

@@ -47,7 +47,7 @@ RecordingDataMonitor::RecordingDataMonitor(QWidget *parent, const char *name)
 	setColors(QColor(20, 244, 20),
 			  QColor(10, 117, 10));
 
-	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+	setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 }
 
 

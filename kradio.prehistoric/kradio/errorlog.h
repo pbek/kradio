@@ -24,7 +24,7 @@
 #include "widgetplugins.h"
 
 
-class KTextEdit;
+class QTextEdit;
 class ErrorLog : public KDialogBase,
                  public WidgetPluginBase,
                  public IErrorLog
@@ -71,7 +71,7 @@ protected slots:
 
 protected:
 
-	KTextEdit  *m_teDebug,
+	QTextEdit  *m_teDebug,
 	           *m_teInfos,
 	           *m_teWarnings,
 	           *m_teErrors;
