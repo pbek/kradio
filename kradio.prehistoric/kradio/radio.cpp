@@ -46,11 +46,7 @@ bool Radio::connect    (Interface *i)
 	bool a = IRadio::connect(i);
 	bool b = IRadioDeviceClient::connect(i);
 	bool c = IRadioDevicePool::connect(i);
-/*
-    if (a) kdDebug() << "Radio: IRadio connected\n";
-    if (b) kdDebug() << "Radio: IRadioDeviceClient connected\n";
-    if (c) kdDebug() << "Radio: IRadioDevicePool connected\n";
-*/
+
 	// no "return IA::connect() | return IB::connnect to
 	// prevent "early termination" optimization in boolean expressions
 	return a || b || c;
@@ -62,11 +58,7 @@ bool Radio::disconnect (Interface *i)
 	bool a = IRadio::disconnect(i);
 	bool b = IRadioDeviceClient::disconnect(i);
 	bool c = IRadioDevicePool::disconnect(i);
-/*
-    if (a) kdDebug() << "Radio: IRadio disconnected\n";
-    if (b) kdDebug() << "Radio: IRadioDeviceClient disconnected\n";
-    if (c) kdDebug() << "Radio: IRadioDevicePool disconnected\n";
-*/
+
 	// no "return IA::connect() | return IB::connnect to
 	// prevent "early termination" optimization in boolean expressions
 	return a || b || c;

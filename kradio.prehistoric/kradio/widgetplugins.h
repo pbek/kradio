@@ -39,6 +39,7 @@ public :
 
 	virtual void     saveState    (KConfig *) const;
 	virtual void     restoreState (KConfig *);
+	virtual void     restoreState (KConfig *, bool showByDefault);
 
 	virtual       QWidget *getWidget();
 	virtual const QWidget *getWidget() const;

@@ -18,10 +18,10 @@
 #include "widgetplugins.h"
 #include "pluginmanager.h"
 
-#include <kdebug.h>
 #include <kwin.h>
 #include <qwidget.h>
 #include <kconfig.h>
+#include <klocale.h>
 
 WidgetPluginBase::WidgetPluginBase(const QString &name, const QString &description)
   : PluginBase(name, description),
@@ -144,18 +144,21 @@ void   WidgetPluginBase::saveState (KConfig *config) const
 }
 
 
-void   WidgetPluginBase::restoreState (KConfig *config)
+void   WidgetPluginBase::restoreState (KConfig *config, bool showByDefault)
 {
 	m_geoCacheValid= config->readBoolEntry("geoCacheValid", false);
 	m_saveDesktop  = config->readNumEntry ("desktop", 1);
 	m_saveSticky   = config->readBoolEntry("sticky",  false);
 	m_saveGeometry = config->readRectEntry("geometry");
 
-	bool hidden = config->readBoolEntry("hidden", false);
-	kdDebug() << name() << " restore hidden: " << hidden << endl;
+	bool hidden = config->readBoolEntry("hidden", !showByDefault);
 
     if (hidden) hide();
     else        show();
 }
 
 
+void   WidgetPluginBase::restoreState (KConfig *config)
+{
+	restoreState(config, true);
+}

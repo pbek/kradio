@@ -17,6 +17,7 @@
 
 #include "radiostation.h"
 #include "radiostation-config.h"
+#include "errorlog-interfaces.h"
 
 #include <unistd.h>
 #include <time.h>
@@ -121,8 +122,6 @@ void RadioStation::generateNewStationID()
 	for (int i = 0; i < buffersize; ++i)
 		srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
 
-    // kdDebug() << i18n("generated StationID: ") << stime << srandom << endl;
-	
 	m_stationID = stime + srandom;
 }
 

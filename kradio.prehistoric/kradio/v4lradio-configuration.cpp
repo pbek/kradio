@@ -1,9 +1,19 @@
-/****************************************************************************
-** ui.h extension file, included from the uic-generated form implementation.
-**
-** If you wish to add, delete or rename functions or slots use
-** Qt Designer which will update this file, preserving your code.
-*****************************************************************************/
+/***************************************************************************
+                          v4lradio-configuration.cpp  -  description
+                             -------------------
+    begin                : Fre Jun 20 2003
+    copyright            : (C) 2003 by Martin Witte
+    email                : witte@kawo1.rwth-aachen.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 
 #include <sys/ioctl.h>
 #include <fcntl.h>

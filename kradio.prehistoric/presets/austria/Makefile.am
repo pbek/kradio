@@ -10,7 +10,6 @@ install-data-local:
 	$(INSTALL_DATA) "$(srcdir)/mauerbach-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/mauerbach-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/purkersdorf-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/purkersdorf-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/vienna-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-antenna.krp"
-	$(INSTALL_DATA) "$(srcdir)/vienna-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/vienna-cable1.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable1.krp"
 	$(INSTALL_DATA) "$(srcdir)/vienna-cable2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable2.krp"
 
@@ -23,6 +22,5 @@ uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/mauerbach-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/purkersdorf-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-antenna.krp"
-	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable1.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable2.krp"

@@ -44,6 +44,8 @@
 #include <kaboutdata.h>
 #include "aboutwidget.h"
 
+#include "errorlog-interfaces.h"
+
 struct _lrvol { unsigned char l, r; short dummy; };
 
 
@@ -126,7 +128,6 @@ bool V4LRadio::disconnect (Interface *i)
 	bool d = IFrequencyRadio::disconnect(i);
 	bool e = IV4LCfg::disconnect(i);
 	bool f = IRecordingClient::disconnect(i);
-
 	return a || b || c || d || e || f;
 }
 
@@ -226,10 +227,12 @@ bool V4LRadio::setVolume (float vol)
 	    if(m_radio_fd >= 0) {
     		_lrvol tmpvol;
 			tmpvol.r = tmpvol.l = (unsigned int)(rint(vol * divs));
-			if (ioctl(m_mixer_fd, MIXER_WRITE(m_mixerChannel), &tmpvol) != 0) {
-				kdDebug() << "V4LRadio::setVolume: "
-				          << i18n("error setting volume to %1").arg(QString().setNum(vol))
-				          << endl;
+			int err = ioctl(m_mixer_fd, MIXER_WRITE(m_mixerChannel), &tmpvol);
+			if (err != 0) {
+				logError("V4LRadio::setVolume: " +
+				         i18n("error %1 while setting volume to %2")
+				         .arg(QString().setNum(err))
+				         .arg(QString().setNum(vol)));
 				return false;
 			}
 	    }
@@ -334,10 +337,11 @@ float   V4LRadio::getVolume() const
 {
 	if (m_radio_fd >= 0) {
 		_lrvol tmpvol;
-		if(ioctl(m_mixer_fd, MIXER_READ(m_mixerChannel), &tmpvol)) {
-			kdDebug() << "V4LRadio::getVolume: "
-			          << i18n("error reading volume")
-			          << endl;
+		int err = ioctl(m_mixer_fd, MIXER_READ(m_mixerChannel), &tmpvol);
+		if (err) {
+			logError("V4LRadio::getVolume: " +
+			         i18n("error %1 while reading volume")
+			         .arg(QString().setNum(err)));
 			tmpvol.l = tmpvol.r = 0;
 		}
 		float v = float(tmpvol.l) / 100.0;
@@ -505,9 +509,8 @@ bool V4LRadio::setFrequency(float freq)
   		unsigned long lfreq = (unsigned long) rint(freq / df);
 
 	  	if (freq > maxf || freq < minf) {
-	  		kdDebug() << "V4LRadio::setFrequency: "
-	                  << i18n("invalid frequency %1").arg(QString().setNum(freq))
-	                  << endl;
+	  		logError("V4LRadio::setFrequency: " +
+	                 i18n("invalid frequency %1").arg(QString().setNum(freq)));
             if (!oldMute) unmute();
 	    	return false;
 	    }
@@ -526,18 +529,16 @@ bool V4LRadio::setFrequency(float freq)
 		}
 #endif
 	    else {
-			kdDebug() << "V4LRadio::setFrequency: "
-				      << i18n("don't known how to handle V4L-version %1")
-				         .arg(m_caps.version)
-				      << endl;
+			logError("V4LRadio::setFrequency: " +
+				     i18n("don't known how to handle V4L-version %1")
+				     .arg(m_caps.version));
 	    }
 
   		if (r) {
-  			kdDebug() << "V4LRadio::setFrequency: "
-                      << i18n("error setting frequency to %1 (%2)")
-                         .arg(QString().setNum(freq))
-                         .arg(QString().setNum(r))
-                      << endl;
+  			logError("V4LRadio::setFrequency: " +
+                     i18n("error setting frequency to %1 (%2)")
+                     .arg(QString().setNum(freq))
+                     .arg(QString().setNum(r)));
             // unmute the old radio with the old radio station
             if (!oldMute) unmute();
             return false;
@@ -680,9 +681,9 @@ bool  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
 		m_caps = readV4LCaps(m_radioDev);
 		notifyRadioDeviceChanged(m_radioDev);
         notifyDescriptionChanged(m_caps.description);
-        notifyCapabilitiesChanged(m_caps);        
+        notifyCapabilitiesChanged(m_caps);
 		notifyMixerDeviceChanged(m_mixerDev, m_mixerChannel);
-		
+
 		setPower(p);
 	}
 	return true;
@@ -695,15 +696,21 @@ bool V4LRadio::noticeRecordingStarted()
 {
 	if (isPowerOn()) {
 		int x = 1 << m_mixerChannel;
-		if (ioctl(m_mixer_fd, SOUND_MIXER_WRITE_RECSRC, &x))
-			kdDebug() << i18n("error selecting v4l radio input as recording source") << endl;
+		int err = ioctl(m_mixer_fd, SOUND_MIXER_WRITE_RECSRC, &x);
+		if (err)
+			logError(i18n("Selecting V4L radio input as recording source failed with error code %1")
+				     .arg(QString::number(err)));
    		_lrvol tmpvol;
-		if (ioctl(m_mixer_fd, MIXER_READ(SOUND_MIXER_IGAIN), &tmpvol))
-			kdDebug() << i18n("error reading igain volume") << endl;
+		err = ioctl(m_mixer_fd, MIXER_READ(SOUND_MIXER_IGAIN), &tmpvol);
+		if (err)
+			logError(i18n("Reading igain volume failed with error code %1")
+					 .arg(QString::number(err)));
 		if (tmpvol.r == 0 && tmpvol.l == 0) {
 			tmpvol.r = tmpvol.l = 1;
-			if (ioctl(m_mixer_fd, MIXER_WRITE(SOUND_MIXER_IGAIN), &tmpvol))
-				kdDebug() << i18n("error setting igain volume") << endl;
+			err = ioctl(m_mixer_fd, MIXER_WRITE(SOUND_MIXER_IGAIN), &tmpvol);
+			if (err)
+				logError(i18n("Setting igain volume failed with error code %1")
+					     .arg(QString::number(err)));
 		}
 		return true;
 	} else {
@@ -829,14 +836,13 @@ void V4LRadio::radio_init()
 	m_caps = readV4LCaps(m_radioDev);
 	notifyCapabilitiesChanged(m_caps);
     notifyDescriptionChanged(m_caps.description);
-        
+
 	m_mixer_fd = open(m_mixerDev, O_RDONLY);
 	if (m_mixer_fd < 0) {
 		radio_done();
 
-		kdDebug() << "V4LRadio::radio_init: "
-		          << i18n("cannot open mixer device %1").arg(m_mixerDev)
-		          << endl;
+		logError("V4LRadio::radio_init: " +
+		         i18n("Cannot open mixer device %1").arg(m_mixerDev));
 		return;
 	}
 
@@ -844,9 +850,8 @@ void V4LRadio::radio_init()
   	if (m_radio_fd < 0) {
 		radio_done();
 
-		kdDebug() << "V4LRadio::radio_init: "
-		          << i18n("cannot open radio device %1").arg(m_radioDev)
-		          << endl;
+		logError("V4LRadio::radio_init: " +
+		         i18n("Cannot open radio device %1").arg(m_radioDev));
     	return;
 	}
 
@@ -891,9 +896,8 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 	fd = open(device, O_RDONLY);
 
 	if (fd < 0) {
-		kdDebug() << "V4LRadio::readV4LCaps: "
-		          << i18n("cannot open %1").arg(device)
-		          << endl;
+		logError("V4LRadio::readV4LCaps: " +
+		         i18n("cannot open %1").arg(device));
 		return c;
 	}
 
@@ -901,7 +905,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 	r = ioctl(fd, VIDIOCGCAP, &caps);
 	if (r == 0) {
 		c.version = 1;
-		
+
 		size_t l = sizeof(caps.name);
 		l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
 		memcpy(buffer, caps.name, l);
@@ -913,12 +917,11 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 		c.unsetTreble();
 		c.unsetBass();
 		c.unsetBalance();
-		
+
 		video_audio audiocaps;
 		if (0 == ioctl(fd, VIDIOCGAUDIO, &audiocaps)) {
-			kdDebug() << "V4LRadio::readV4LCaps: "
-			          << i18n("audio caps = %1").arg(QString().setNum(audiocaps.flags))
-			          << endl;
+			logDebug("V4LRadio::readV4LCaps: " +
+			         i18n("audio caps = %1").arg(QString().setNum(audiocaps.flags)));
 			if ((audiocaps.flags & VIDEO_AUDIO_MUTABLE)  != 0)
 				c.hasMute = true;
 			if ((audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0)
@@ -931,17 +934,16 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 			c.setBalance(0, 65535);
 		}
 	} else {
-		kdDebug() << "V4LRadio::readV4LCaps: "
-		          << i18n("error reading V4L1 caps")
-		          << endl;
+		logError("V4LRadio::readV4LCaps: " +
+		         i18n("error reading V4L1 caps"));
 	}
-	
+
 #ifdef HAVE_V4L2
 	v4l2_capability caps2;
 	r = ioctl(fd, VIDIOC_QUERYCAP, &caps2);
 	if (r == 0) {
 		c.version  = 2;
-		
+
 		size_t l = sizeof(caps.name);
 		l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
 		memcpy(buffer, caps.name, l);
@@ -960,54 +962,54 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl))
 			c.hasMute = !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
 		else
-			kdDebug() << "error querying V4L2_CID_AUDIO_MUTE" << endl;
-			
+			logError(i18n("V4L2: Querying mute control failed"));
+
 		ctrl.id = V4L2_CID_AUDIO_VOLUME;
 		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
 			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
 				c.setVolume(ctrl.minimum, ctrl.maximum);
 		} else {
-			kdDebug() << "error querying V4L2_CID_AUDIO_VOLUME" << endl;
+			logError(i18n("V4L2: Querying volume control failed"));
 		}
-		
+
 		ctrl.id = V4L2_CID_AUDIO_TREBLE;
 		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
 			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
 				c.setTreble(ctrl.minimum, ctrl.maximum);
 		} else {
-			kdDebug() << "error querying V4L2_CID_AUDIO_TREBLE" << endl;
+			logError(i18n("V4L2: Querying treble control failed"));
 		}
-		
+
 		ctrl.id = V4L2_CID_AUDIO_BASS;
 		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
 			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
 				c.setBass(ctrl.minimum, c.maxBass = ctrl.maximum);
 		} else {
-			kdDebug() << "error querying V4L2_CID_AUDIO_BASS" << endl;
+			logError(i18n("V4L2: Querying bass control failed"));
 		}
-		
+
 		ctrl.id = V4L2_CID_AUDIO_BALANCE;
 		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
 			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
 				c.setBalance(ctrl.minimum, ctrl.maximum);
 		} else {
-			kdDebug() << "error querying V4L2_CID_AUDIO_BALANCE" << endl;
+			logError(i18n("V4L2: Querying balance control failed"));
 		}
-		
+
 	} else {
-		kdDebug() << i18n("V4LRadio::readV4LCaps: error reading V4L2 caps") << endl;
+		logError(i18n("V4LRadio::readV4LCaps: Reading V4L2 caps failed"));
 	}
 #endif
 	if (c.version > 0) {
-		kdDebug() << i18n("V4L %1 detected").arg(c.version) << endl;
+		logInfo(i18n("V4L %1 detected").arg(c.version));
 	} else {
-		kdDebug() << i18n("V4L not detected") << endl;
+		logError(i18n("V4L not detected"));
 	}
 
-	kdDebug() << (c.hasMute   ? "Radio is mutable"         : "Radio is not mutable")        << endl;
-	kdDebug() << (c.hasVolume ? "Radio has Volume Control" : "Radio has no Volume Control") << endl;
-	kdDebug() << (c.hasBass   ? "Radio has Bass Control"   : "Radio has no Bass Control")   << endl;
-	kdDebug() << (c.hasTreble ? "Radio has Treble Control" : "Radio has no Treble Control") << endl;
+	logInfo(c.hasMute   ? i18n("Radio is mutable")         : i18n("Radio is not mutable"));
+	logInfo(c.hasVolume ? i18n("Radio has Volume Control") : i18n("Radio has no Volume Control"));
+	logInfo(c.hasBass   ? i18n("Radio has Bass Control")   : i18n("Radio has no Bass Control"));
+	logInfo(c.hasTreble ? i18n("Radio has Treble Control") : i18n("Radio has no Treble Control"));
 
 	close(fd);
 	return c;
@@ -1034,7 +1036,7 @@ bool V4LRadio::readTunerInfo() const
 
 		// v4l1
 		if (m_caps.version == 1) {
-		
+
 			r = ioctl(m_radio_fd, VIDIOCGTUNER, m_tuner);
 
 			if (r == 0) {
@@ -1042,14 +1044,14 @@ bool V4LRadio::readTunerInfo() const
 					m_tunercache.deltaF = 1.0 / 16000.0;
 				m_tunercache.minF = float(m_tuner->rangelow)  * m_tunercache.deltaF;
 				m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
-				m_tunercache.valid = true;				
+				m_tunercache.valid = true;
 				m_signalQuality = float(m_tuner->signal) / 32767.0;
 			}
 		}
 #ifdef HAVE_V4L2
 	    // v4l2
 		else if (m_caps.version == 2) {
-		
+
 			r = ioctl(m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
 
 			if (r == 0) {
@@ -1063,17 +1065,15 @@ bool V4LRadio::readTunerInfo() const
 		}
 #endif
 		else {
-			kdDebug() << "V4LRadio::readTunerInfo: "
-			          << i18n("don't known how to handle V4L-version %1")
-			             .arg(QString().setNum(m_caps.version))
-			          << endl;
+			logError("V4LRadio::readTunerInfo: " +
+				     i18n("don't known how to handle V4L-version %1")
+			         .arg(QString().setNum(m_caps.version)));
 		}
-		
+
 		if (r != 0) {
 			m_signalQuality = 0;
-			kdDebug() << "V4LRadio::readTunerInfo: "
-					  << i18n("cannot get tuner info (error %1)").arg(QString().setNum(r))
-					  << endl;
+			logError("V4LRadio::readTunerInfo: " +
+					 i18n("cannot get tuner info (error %1)").arg(QString().setNum(r)));
 		}
 	} else {
 		m_signalQuality = 0;
@@ -1108,7 +1108,7 @@ bool V4LRadio::readTunerInfo() const
 	r = ioctl (m_radio_fd, VIDIOC_S_CTRL, &ctl); \
 	x = x ? x : r; \
 	if (r) \
-		kdDebug() << i18n("error setting %1: %2").arg(#what).arg(QString().setNum(r)) << endl; \
+		logError(i18n("error setting %1: %2").arg(#what).arg(QString().setNum(r))); \
  }
 
 #define V4L2_G_CTRL(what) \
@@ -1116,7 +1116,7 @@ bool V4LRadio::readTunerInfo() const
 	r = ioctl (m_radio_fd, VIDIOC_G_CTRL, &ctl); \
 	x = x ? x : r; \
 	if (r) \
-		kdDebug() << i18n("error reading %1: %2").arg(#what).arg(QString().setNum(r)) << endl; \
+		logError(i18n("error reading %1: %2").arg(#what).arg(QString().setNum(r))); \
  }
 
 
@@ -1135,6 +1135,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	if (m_radio_fd >= 0) {
 		int r = 0;
 		if (m_caps.version == 1) {
+			m_audio->audio = 0;
 		    if (m_muted) m_audio->flags |=  VIDEO_AUDIO_MUTE;
 		    else         m_audio->flags &= ~VIDEO_AUDIO_MUTE;
 
@@ -1195,7 +1196,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 						V4L2_G_CTRL(V4L2_CID_AUDIO_BALANCE);
 					m_balance      = m_caps.hasBalance&& !r ? m_caps.floatGetBalance(ctl.value) : 0;
 				}
-                
+
                 r = ioctl (m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
                 m_stereo = (r == 0) && ((m_tuner2->rxsubchans & V4L2_TUNER_SUB_STEREO) != 0);
                 x = x ? x : r;
@@ -1204,18 +1205,16 @@ bool V4LRadio::updateAudioInfo(bool write) const
 		}
 #endif
 		else  {
-			kdDebug() << "V4LRadio::updateAudioInfo: "
-			          << i18n("don't known how to handle V4L-version %1")
-			             .arg(QString().setNum(m_caps.version))
-			          << endl;
+			logError("V4LRadio::updateAudioInfo: " +
+			         i18n("don't known how to handle V4L-version %1")
+			         .arg(QString().setNum(m_caps.version)));
 		}
-		
+
 		if (r) {
-			kdDebug() << "V4LRadio::updateAudioInfo: "
-					  << i18n("error updating radio audio info (%1): %2")
-					     .arg(write ? i18n("write") : i18n("read"))
-					     .arg(QString().setNum(r))
-					  << endl;
+			logError("V4LRadio::updateAudioInfo: " +
+				     i18n("error updating radio audio info (%1): %2")
+					 .arg(write ? i18n("write") : i18n("read"))
+					 .arg(QString().setNum(r)));
 			return false;
 		}
 	}

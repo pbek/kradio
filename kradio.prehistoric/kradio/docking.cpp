@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kdebug.h>
 #include <kiconloader.h>
 #include <qtooltip.h>
 #include <kpopupmenu.h>

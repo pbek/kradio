@@ -35,10 +35,6 @@ bool SeekHelper::connect   (Interface *i)
 {
 	bool a = IRadioDeviceClient::connect(i);
 	bool b = IRadioSoundClient::connect(i);
-/*
-    if (a) kdDebug() << "SeekHelper: IRadioDeviceClient connected\n";
-    if (b) kdDebug() << "SeekHelper: IRadioSoundClient connected\n";
-*/
 	return a || b;
 }
 
@@ -47,10 +43,6 @@ bool SeekHelper::disconnect(Interface *i)
 {
 	bool a = IRadioDeviceClient::disconnect(i);
 	bool b = IRadioSoundClient::disconnect(i);
-/*
-    if (a) kdDebug() << "SeekHelper: IRadioDeviceClient disconnected\n";
-    if (b) kdDebug() << "SeekHelper: IRadioSoundClient disconnected\n";
-*/
 	return a || b;
 }
 
@@ -75,13 +67,10 @@ void SeekHelper::start(direction_t dir)
 void SeekHelper::stop ()
 {
 	if (m_state != off) {
-//		kdDebug() << "seekhelper::stop enter\n";
 		m_state = off;
-//		kdDebug() << "seekhelper::state = off\n";
 		abort();
 		sendMute(m_oldMute);
 		m_parent.notifySeekStopped();
-//		kdDebug() << "seekhelper::stop exit\n";
 	}
 }
 
@@ -89,7 +78,6 @@ void SeekHelper::stop ()
 void SeekHelper::finish ()
 {
 	if (m_state != off) {
-//		kdDebug() << "seekhelper::finish\n";
 		applyBest();
 		const RadioStation &rs = queryCurrentStation();
 	
@@ -115,7 +103,6 @@ void SeekHelper::step ()
 				m_state = searchBest;
 
 			if (! nextSeekStep()) {
-//				kdDebug() << "searchWorse: nextStep failed\n";
 				stop();
 			}
 
@@ -132,7 +119,6 @@ void SeekHelper::step ()
 					if (isGood() && bestFound()) {
 						finish();
 					} else {
-//						kdDebug() << "searchBest: nextStep failed && no good station\n";
 						stop();
 					}
 				}

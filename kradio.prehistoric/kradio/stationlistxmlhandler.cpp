@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "stationlistxmlhandler.h"
-
+#include "errorlog-interfaces.h"
  
 const char *KRadioConfigElement         = "kradiorc";
 
@@ -58,10 +58,9 @@ bool StationListXmlHandler::startDocument ()
 
 
 
-#define START_ELEMENT_ERROR    kdDebug() << "StationListXmlHandler::startElement: " \
-                                         << i18n("misplaced element %1") \
-                                            .arg(qname) \
-                                         << endl; \
+#define START_ELEMENT_ERROR    logError("StationListXmlHandler::startElement: " + \
+                                        i18n("misplaced element %1") \
+                                        .arg(qname));\
 							   return false;
 							   
 bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &/*localname*/,
@@ -110,9 +109,8 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
 		// check done later when characters arrive
 
 	} else { // unknown
-		kdDebug() << "StationListXmlHandler::startElement: "
-		          << i18n("unknown or unexpected element") << " "
-		          << (const char*)qname << endl;
+		logError("StationListXmlHandler::startElement: " +
+		         i18n("unknown or unexpected element %1").arg(qname));
 	}
 
 	m_status.push_back(qname);
@@ -140,24 +138,21 @@ bool StationListXmlHandler::endElement (const QString &/*ns*/, const QString &/*
 		
 	} else {
 		if (m_status.size()) {
-			kdDebug() << "StationListXmlHandler::endElement: "
-				      << i18n("expected element %1, but found %2")
-						  .arg(m_status.back()).arg(qname)
-					  << endl;	  
+			logError("StationListXmlHandler::endElement: " +
+			         i18n("expected element %1, but found %2")
+			         .arg(m_status.back()).arg(qname));
 		} else {
-			kdDebug() << "StationListXmlHandler::endElement: "
-				      << i18n("unexpected element %1").arg(qname)
-			          << endl;
+			logError("StationListXmlHandler::endElement: " +
+			         i18n("unexpected element %1").arg(qname));
 		}
 	}
 	return true;
 }
 
 
-#define CHARACTERS_ERROR    kdDebug() << "StationListXmlHandler::characters: " \
-                                      << i18n("invalid data for element %1") \
-                                         .arg(stat) \
-                                      << endl; \
+#define CHARACTERS_ERROR    logError("StationListXmlHandler::characters: " + \
+                                     i18n("invalid data for element %1") \
+                                     .arg(stat)); \
 					        return false;
 					        
 bool StationListXmlHandler::characters (const QString &ch)
@@ -171,8 +166,7 @@ bool StationListXmlHandler::characters (const QString &ch)
 	if (stat == StationListFormat) {
 
 		if (str != STATION_LIST_FORMAT) {
-			kdDebug() << i18n("found a station list with unknown format %1").arg(str)
-			          << endl;
+			logError(i18n("found a station list with unknown format %1").arg(str));
 			return false;
 		}
 
@@ -207,17 +201,15 @@ bool StationListXmlHandler::characters (const QString &ch)
 	} else if (m_newStation && m_newStation->getClassName() != stat) {
 
 		if (!m_newStation->setProperty(stat, str)) {
-			kdDebug() << "StationListXmlHandler::characters: "
-			          << i18n("unknown property %1 for class %2")
-			             .arg(stat)
-			             .arg(m_newStation->getClassName())
-			          << endl;
+			logError("StationListXmlHandler::characters: " +
+			         i18n("unknown property %1 for class %2")
+			         .arg(stat)
+			         .arg(m_newStation->getClassName()));
 		}
 
 	} else if (str.length()) {
-		kdDebug() << "StationListXmlHandler::characters: "
-		          << i18n("characters ignored for element %1").arg(stat)
-		          << endl;
+		logError("StationListXmlHandler::characters: " +
+		         i18n("characters ignored for element %1").arg(stat));
 	}
 	return true;
 }

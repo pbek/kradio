@@ -137,10 +137,10 @@ public:
     // xml in/out
 
     bool    readXML (const QString &dat, bool enableMessageBox = true);
-    bool    readXML (const KURL &url, bool enableMessageBox = true);
+    bool    readXML (const KURL &url,    bool enableMessageBox = true);
     
     QString writeXML () const;
-    bool    writeXML (const KURL &url, bool enableMessageBox = true) const;
+    bool    writeXML (const KURL &url,   bool enableMessageBox = true) const;
 
 protected:
     RawStationList        m_all;

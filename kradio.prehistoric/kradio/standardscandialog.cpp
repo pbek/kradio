@@ -21,8 +21,6 @@
 #include <qlabel.h>
 #include <qpushbutton.h>
 
-#include <kdebug.h>
-
 StandardScanDialog::StandardScanDialog(QWidget *parent)
 	: StandardScanDialogUI(parent, NULL, true),
 	  m_count(0),
@@ -111,10 +109,6 @@ bool StandardScanDialog::noticeSeekFinished (const RadioStation &)
         int oldcount = m_stations.count();
 		m_stations.all().append(st);
 
-		kdDebug() << i18n("newstation %1: %2")
-		             .arg(QString().setNum(m_count))
-		             .arg(st->longName())
-		          << endl;
 		if (oldcount != m_stations.count()) {
 		} else {
 			--m_count;

@@ -55,8 +55,6 @@ bool QuickBar::connect(Interface *i)
 	bool a = IRadioClient::connect(i);
 	bool b = IStationSelection::connect(i);
 
-//	if (a) kdDebug() << "QuickBar: IRadioClient connected\n";
-	
 	return a || b;
 }
 
@@ -65,8 +63,6 @@ bool QuickBar::disconnect(Interface *i)
 {
 	bool a = IRadioClient::disconnect(i);
 	bool b = IStationSelection::disconnect(i);
-
-//	if (a) kdDebug() << "QuickBar: IRadioClient disconnected\n";
 
 	return a || b;
 }

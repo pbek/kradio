@@ -105,7 +105,7 @@ void   RecordingMonitor::restoreState (KConfig *config)
 {
 	config->setGroup(QString("recordingmonitor-") + name());
 
-	WidgetPluginBase::restoreState(config);
+	WidgetPluginBase::restoreState(config, false);
 	m_showHideOnStartStop = config->readBoolEntry("showHideOnStartStop", true);
 	m_showHide->setChecked(m_showHideOnStartStop);
 }

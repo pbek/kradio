@@ -82,12 +82,8 @@ int FrequencyRadioStation::compare(const RadioStation &_s) const
 	FrequencyRadioStation const *s = dynamic_cast<FrequencyRadioStation const*>(&_s);
 
 	if (!s) {
-//		kdDebug() << "FrequencyRadioStation::compare: incompatible station\n";
 		return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;
 	}
-
-//	kdDebug() << "comparing " << m_frequency << " (this) with "
-//	                          << s->m_frequency << "\n";
 
 	// stations with no valid frequency are never identical
 	if (m_frequency == 0)
@@ -100,12 +96,8 @@ int FrequencyRadioStation::compare(const RadioStation &_s) const
     if (   m_frequency + delta/4 > s->m_frequency
         && m_frequency - delta/4 < s->m_frequency)
     {
-//		kdDebug() << "comparing " << m_frequency << " (this) with "
-//	                              << s->m_frequency << "\n";
-//		kdDebug() << "equal\n";
 		return 0;
 	} else {
-//		kdDebug() << ((m_frequency > s->m_frequency) ? "greater\n" : "lower\n");
 		return (m_frequency > s->m_frequency) ? 1 : -1;
 	}
 }

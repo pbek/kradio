@@ -20,7 +20,6 @@
 #include <sndfile.h>
 #include <sys/soundcard.h>
 #include <kconfig.h>
-#include <kdebug.h>
 
 RecordingConfig::RecordingConfig ()
   : channels(2),

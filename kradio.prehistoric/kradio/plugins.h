@@ -78,7 +78,6 @@ struct ConfigPageInfo
 typedef ConfigPageInfo AboutPageInfo;
 
 
-
 class PluginBase : virtual public Interface
 {
 friend class PluginManager;

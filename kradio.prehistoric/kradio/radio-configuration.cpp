@@ -307,6 +307,7 @@ void RadioConfiguration::slotSelectPixmap()
 				   this, i18n("Pixmap Selection"), true);
     fd.setMode(KFile::File | KFile::ExistingOnly);
     fd.setCaption (i18n("Select Station Pixmap"));
+    fd.setOperationMode(KFileDialog::Saving);
 
     if (fd.exec() == QDialog::Accepted) {
 		QString filename = fd.selectedFile();

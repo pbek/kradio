@@ -18,8 +18,8 @@
 #include "plugins.h"
 #include "pluginmanager.h"
 #include "plugin_configuration_dialog.h"
+#include "errorlog-interfaces.h"
 
-#include <kdebug.h>
 #include <kiconloader.h>
 #include <kdialogbase.h>
 #include <klocale.h>
@@ -88,13 +88,7 @@ void PluginManager::insertPlugin(PluginBase *p)
 		// connect plugins with each other
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
 			if (it.current() != p) {
-/*				bool r = */
                 p->connect(it.current());
-/*				kdDebug() << "PluginManager::insertPlugin: "
-				          << p->name() << " <-> " << it.current()->name()
-				          << ": "
-				          << (r ? "ok" : "failed") << endl;
-*/
 			}
 		}
 
@@ -134,13 +128,8 @@ void PluginManager::removePlugin(PluginBase *p)
 
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
 			if (it.current() != p) {
-/*				bool r = */
                 p->disconnect(it.current());
-/*				kdDebug() << "PluginManager::removePlugin: "
-				          << p->name() << " <-> " << it.current()->name()
-				          << ": "
-				          << (r ? "ok" : "failed") << endl;
-*/			}
+			}
 		}
 
 		// remove config page from config dialog, only chance is to delete it

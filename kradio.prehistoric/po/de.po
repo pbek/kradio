@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-13 22:03+0200\n"
-"PO-Revision-Date: 2003-09-13 22:19+0200\n"
+"POT-Creation-Date: 2003-09-14 04:42+0200\n"
+"PO-Revision-Date: 2003-09-14 04:43+0200\n"
 "Last-Translator: Ernst Martin Witte <witte@kawo1.rwth-aachen.de>\n"
 "Language-Team: german <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,83 +16,83 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: docking.cpp:40
+#: docking.cpp:39
 msgid "Docking Plugin"
 msgstr "Plugin für die Kontrolleiste"
 
-#: docking.cpp:91 timecontrol-configuration-ui.cpp:204
+#: docking.cpp:90 timecontrol-configuration-ui.cpp:204
 msgid "Stop Recording"
 msgstr "Aufnahme beenden"
 
-#: docking.cpp:98 timecontrol-configuration-ui.cpp:203
+#: docking.cpp:97 timecontrol-configuration-ui.cpp:203
 msgid "Start Recording"
 msgstr "Aufnahme starten"
 
-#: docking.cpp:139 docking.cpp:161
+#: docking.cpp:138 docking.cpp:160
 msgid "Docking Menu"
 msgstr "Kontrolleisten-Menü"
 
-#: docking.cpp:140
+#: docking.cpp:139
 msgid "Docking Menu Configuration"
 msgstr "Konfiguration des Kontrollleisten-Menüs"
 
-#: docking.cpp:150
+#: docking.cpp:149
 msgid "Docking Menu for KRadio"
 msgstr "Kontrollleisten-Menü for KRadio"
 
-#: docking.cpp:162
+#: docking.cpp:161
 msgid "Docking Menu Plugin"
 msgstr "Kontrolleisten-Menü Plugin"
 
-#: docking.cpp:183
+#: docking.cpp:182
 msgid "Search Next Station"
 msgstr "Suche nächsten Sender"
 
-#: docking.cpp:185
+#: docking.cpp:184
 msgid "Search Previous Station"
 msgstr "Suche vorherigen Sender"
 
-#: docking.cpp:198 aboutwidget.cpp:507
+#: docking.cpp:197 aboutwidget.cpp:507
 msgid "&About"
 msgstr "&Info"
 
-#: docking.cpp:215 docking.cpp:423
+#: docking.cpp:214 docking.cpp:422
 msgid "Hide %1"
 msgstr "%1 ausblenden"
 
-#: docking.cpp:215 docking.cpp:423
+#: docking.cpp:214 docking.cpp:422
 msgid "Show %1"
 msgstr "%1 anzeigen"
 
-#: docking.cpp:225
+#: docking.cpp:224
 msgid "&Quit"
 msgstr "&Beenden"
 
-#: docking.cpp:309
+#: docking.cpp:308
 msgid "next alarm: %1"
 msgstr "Nächstes Wecken: %1"
 
-#: docking.cpp:311
+#: docking.cpp:310
 msgid "<no alarm pending>"
 msgstr "<Wecker nicht aktiv>"
 
-#: docking.cpp:319
+#: docking.cpp:318
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Schlummermodus abbrechen (liefe bis %1)"
 
-#: docking.cpp:321 docking.cpp:328 docking.cpp:335
+#: docking.cpp:320 docking.cpp:327 docking.cpp:334
 msgid "Start Sleep Countdown"
 msgstr "Schlummermodus einschalten"
 
-#: docking.cpp:343
+#: docking.cpp:342
 msgid "Power Off"
 msgstr "Ausschalten"
 
-#: docking.cpp:343
+#: docking.cpp:342
 msgid "Power On"
 msgstr "Einschalten"
 
-#: docking.cpp:356
+#: docking.cpp:355
 msgid "invalid station"
 msgstr "ungültiger Sender"
 
@@ -152,29 +152,29 @@ msgstr "Konfiguration von KRadio"
 msgid "About KRadio Components"
 msgstr "Über die Komponenten von KRadio"
 
-#: lircsupport.cpp:35 lircsupport.cpp:238
+#: lircsupport.cpp:37 lircsupport.cpp:230
 msgid "LIRC Plugin"
 msgstr "Plugin für die Fernsteuerung (LIRC)"
 
-#: lircsupport.cpp:39
+#: lircsupport.cpp:41
 msgid "initializing kradio lirc plugin"
 msgstr "initialisiere das Plugin für die Fernsteuerung (LIRC)"
 
-#: lircsupport.cpp:57
-msgid "initializing kradio lirc plugin failed"
-msgstr "Initialisierung des Plugin für die Fernsteuerung (LIRC) ist fehlgeschlagen."
-
 #: lircsupport.cpp:59
-msgid "initializing kradio lirc plugin successful"
-msgstr "Initialisierung des Plugin für die Fernsteuerung (LIRC) war erfolgreich."
+msgid "Initializing kradio lirc plugin failed"
+msgstr "Die Initialisierung des KRadio LIRC Plugins schlug fehl"
 
-#: lircsupport.cpp:227
+#: lircsupport.cpp:61
+msgid "Initializing kradio lirc plugin successful"
+msgstr "Die Initialisierung des LIRC Plugins war erfolgreich"
+
+#: lircsupport.cpp:219
 msgid "Linux Infrared Remote Control Support for KRadio"
 msgstr "Unterstützung der Linux Fernsteuerung (LIRC) für KRadio"
 
-#: lircsupport.cpp:237
+#: lircsupport.cpp:229
 msgid "LIRC Support"
-msgstr "Fernsteuerungs-Unterstützung (LIRC)"
+msgstr "Fernsteuerung"
 
 #: main.cpp:43
 msgid "KRadio"
@@ -184,63 +184,63 @@ msgstr "KRadio"
 msgid "rewrite for 0.3.0, recording, lirc support, alarms, misc"
 msgstr "Überarbeitung zu KRadio 0.3.0, Aufnahme, Fernsteuerungsunterstützung, Wecker, Verschiedenes"
 
-#: quickbar.cpp:40 quickbar.cpp:150
+#: quickbar.cpp:40 quickbar.cpp:146
 msgid "Quickbar Plugin"
 msgstr "Kurzwahlfenster-Plugin"
 
-#: quickbar.cpp:126 quickbar.cpp:149
+#: quickbar.cpp:122 quickbar.cpp:145
 msgid "Quickbar"
 msgstr "Kurzwahlfenster"
 
-#: quickbar.cpp:127
+#: quickbar.cpp:123
 msgid "Quickbar Configuration"
 msgstr "Konfiguration des Kurzwahlfensters"
 
-#: quickbar.cpp:138
+#: quickbar.cpp:134
 msgid "Quickback for KRadio"
 msgstr "Kurzwahlfenster für KRadio"
 
-#: v4lradio.cpp:53
+#: v4lradio.cpp:55
 msgid "Video For Linux Plugin"
 msgstr "Video für Linux Plugin"
 
-#: v4lradio.cpp:231
-msgid "error setting volume to %1"
-msgstr "Fehler beim Einstellen der Lautstärke auf %1"
+#: v4lradio.cpp:233
+msgid "error %1 while setting volume to %2"
+msgstr "Beim setzen der Lautstärke auf %2 trat der Fehler %1 auf"
 
-#: v4lradio.cpp:339
-msgid "error reading volume"
-msgstr "Fehle beim Lesen der Lautstärke"
+#: v4lradio.cpp:343
+msgid "error %1 while reading volume"
+msgstr "Beim Lesen der Lautstärke trat der Fehler %1 auf"
 
-#: v4lradio.cpp:509
+#: v4lradio.cpp:513
 msgid "invalid frequency %1"
 msgstr "ungültige Frequenz: %1"
 
-#: v4lradio.cpp:530 v4lradio.cpp:1067 v4lradio.cpp:1208
+#: v4lradio.cpp:533 v4lradio.cpp:1069 v4lradio.cpp:1209
 msgid "don't known how to handle V4L-version %1"
 msgstr "Keine Ahnung, wie die V4L-Version %1 behandelt werden soll"
 
-#: v4lradio.cpp:537
+#: v4lradio.cpp:539
 msgid "error setting frequency to %1 (%2)"
 msgstr "Fehler (%2) beim Einstellen der Frequenz auf %1."
 
-#: v4lradio.cpp:699
-msgid "error selecting v4l radio input as recording source"
-msgstr "Fehler bei der Auswahl der Aufnahmequelle des V4L-Radios."
-
-#: v4lradio.cpp:702
-msgid "error reading igain volume"
-msgstr "Fehler beim Lesen der Aufnahmeverstärkung (IGAIN)."
+#: v4lradio.cpp:701
+msgid "Selecting V4L radio input as recording source failed with error code %1"
+msgstr "Die Auswahl des V4L-Radios als Aufnahmequelle schlug fehl (Fehlercode %1)"
 
 #: v4lradio.cpp:706
-msgid "error setting igain volume"
-msgstr "Fehler beim Einstellen der Aufnahmeverstärkung (IGAN)"
+msgid "Reading igain volume failed with error code %1"
+msgstr "Das Lesen der Aufnahmevorverstärkung (IGAIN) schlug fehl (Fehlercode %1)"
 
-#: v4lradio.cpp:790 v4lradio.cpp:791
+#: v4lradio.cpp:712
+msgid "Setting igain volume failed with error code %1"
+msgstr "Das setzen der Aufnahmevorverstärkung schlug fehl (Fehlercode %1)"
+
+#: v4lradio.cpp:797 v4lradio.cpp:798
 msgid "V4L Radio Options"
 msgstr "Optioinen des V4L-Radios"
 
-#: v4lradio.cpp:801
+#: v4lradio.cpp:808
 msgid ""
 "V4L/V4L2 Plugin for KRadio.<P>Provides Support for V4L/V4L2 based Radio "
 "Cards<P>"
@@ -248,47 +248,99 @@ msgstr ""
 "V4L/V4L2-Plugin für KRadio.<P>Dieses Plugin bindet vom V4L/V4L2-Treiber unterstützte "
 "Radio-Karten in KRadio ein.<P>"
 
-#: v4lradio.cpp:815
+#: v4lradio.cpp:822
 msgid "V4L/V4L2"
 msgstr "V4L/V4L2"
 
-#: v4lradio.cpp:816
+#: v4lradio.cpp:823
 msgid "V4L/V4L2 Plugin"
 msgstr "V4L/V4L2-Plugin"
 
-#: v4lradio.cpp:838
-msgid "cannot open mixer device %1"
-msgstr "Die Mixer-Gerätedatei %1 kann nicht geöffnet werden"
+#: v4lradio.cpp:845
+msgid "Cannot open mixer device %1"
+msgstr "Die Mixergerätedatei %1 kann nicht geöffnet werden"
 
-#: v4lradio.cpp:848
-msgid "cannot open radio device %1"
-msgstr "Die Radio-Gerätedatei %1 kann nicht geöffnet werden"
+#: v4lradio.cpp:854
+msgid "Cannot open radio device %1"
+msgstr "Die Radiogerätedatei %1 kann nicht geöffnet werden"
 
-#: v4lradio.cpp:895
+#: v4lradio.cpp:900
 msgid "cannot open %1"
 msgstr "%1 kann nicht geöffnet werden"
 
-#: v4lradio.cpp:920
+#: v4lradio.cpp:924
 msgid "audio caps = %1"
 msgstr "Audio-Fähigkeiten: %1"
 
-#: v4lradio.cpp:935
+#: v4lradio.cpp:938
 msgid "error reading V4L1 caps"
 msgstr "Fehler beim Lesen der V4L1-Fähigkeiten"
 
-#: v4lradio.cpp:998
-msgid "V4LRadio::readV4LCaps: error reading V4L2 caps"
-msgstr "V4LRadio::readV4LCaps: Fehler beim Lesen der V4L2-Fähigkeiten"
+#: v4lradio.cpp:965
+msgid "V4L2: Querying mute control failed"
+msgstr "V4L2: Die Abfrage des Stummschaltungs-Reglers schlug fehl"
 
-#: v4lradio.cpp:1002
+#: v4lradio.cpp:972
+msgid "V4L2: Querying volume control failed"
+msgstr "V4L2: Die Abfrage des Lautstärke-Reglers schlug fehl"
+
+#: v4lradio.cpp:980
+msgid "V4L2: Querying treble control failed"
+msgstr "V4L2: Die Abfrage des Höhen-Reglers schlug fehl"
+
+#: v4lradio.cpp:988
+msgid "V4L2: Querying bass control failed"
+msgstr "V4L2: Die Abfrage des Bass-Reglers schlug fehl"
+
+#: v4lradio.cpp:996
+msgid "V4L2: Querying balance control failed"
+msgstr "V4L2: Die Abfrage des Balance-Reglers schlug fehl"
+
+#: v4lradio.cpp:1000
+msgid "V4LRadio::readV4LCaps: Reading V4L2 caps failed"
+msgstr "V4LRadio::readV4LCaps: Das Lesen der V4L2-Fähigkeiten schlug fehl"
+
+#: v4lradio.cpp:1004
 msgid "V4L %1 detected"
 msgstr "V4L %1 wurde gefunden"
 
-#: v4lradio.cpp:1004
+#: v4lradio.cpp:1006
 msgid "V4L not detected"
 msgstr "Das Radiogerät unterstützt V4L nicht"
 
-#: v4lradio.cpp:1075
+#: v4lradio.cpp:1009
+msgid "Radio is mutable"
+msgstr "Das Radio kann stummgeschaltet werden"
+
+#: v4lradio.cpp:1009
+msgid "Radio is not mutable"
+msgstr "Das Radio kann nicht stummgeschaltet werden"
+
+#: v4lradio.cpp:1010
+msgid "Radio has Volume Control"
+msgstr "Das Radio hat einen Lautstärkeregler"
+
+#: v4lradio.cpp:1010
+msgid "Radio has no Volume Control"
+msgstr "Das Radio hat keinen Lautstärkeregler"
+
+#: v4lradio.cpp:1011
+msgid "Radio has Bass Control"
+msgstr "Das Radio hat einen Bass-Regler"
+
+#: v4lradio.cpp:1011
+msgid "Radio has no Bass Control"
+msgstr "Das Radio hat keinen Bass-Regler"
+
+#: v4lradio.cpp:1012
+msgid "Radio has Treble Control"
+msgstr "Das Radio hat einen Höhen-Regler"
+
+#: v4lradio.cpp:1012
+msgid "Radio has no Treble Control"
+msgstr "Das Radio hat keinen Bass-Regler"
+
+#: v4lradio.cpp:1076
 msgid "cannot get tuner info (error %1)"
 msgstr "Tuner-Informationen können nicht gelesen werden (Fehler %1)"
 
@@ -316,35 +368,35 @@ msgstr "Lesen"
 msgid "Radio Multiplexer Plugin"
 msgstr "Plugin für den Radio-Gerätemultiplexer"
 
-#: radio.cpp:106
+#: radio.cpp:98
 msgid "Radio Stations"
 msgstr "Radiosender"
 
-#: radio.cpp:107
+#: radio.cpp:99
 msgid "Setup Radio Stations"
 msgstr "Einstellung der Radiosender"
 
-#: radio.cpp:118
+#: radio.cpp:110
 msgid "Radio Device Multiplexer and Station Management for KRadio"
 msgstr "Radio-Gerätemultiplexer und Senderverwaltung für KRadio"
 
-#: radio.cpp:129
+#: radio.cpp:121
 msgid "Device and Station Management"
 msgstr "Geräte- und Senderverwaltung"
 
-#: radio.cpp:130
+#: radio.cpp:122
 msgid "Radio Device Multiplexer and Station Management"
 msgstr "Radio-Gerätemultiplexer und Senderverwaltung"
 
-#: radio.cpp:322 standardscandialog.cpp:154 standardscandialog.cpp:157
+#: radio.cpp:314 standardscandialog.cpp:148 standardscandialog.cpp:151
 msgid "unknown"
 msgstr "unbekannt"
 
-#: stationlist.cpp:239
+#: stationlist.cpp:240
 msgid "Contains merged Data"
 msgstr "Enthält zusammengefügte Einträge"
 
-#: stationlist.cpp:299
+#: stationlist.cpp:300
 msgid ""
 "Probably an old station preset file was read.\n"
 "You have to rebuild your station selections for the quickbar and the docking "
@@ -354,11 +406,11 @@ msgstr ""
 "Sie müssen ihre Senderauswahlen für das Kurzwahlfenster "
 "und das Kontrollleistenmenü neu erstellen."
 
-#: stationlist.cpp:309
+#: stationlist.cpp:310
 msgid "parsing failed"
 msgstr "Das Parsen schlug fehl"
 
-#: stationlist.cpp:313
+#: stationlist.cpp:314
 msgid ""
 "Parsing the station preset file failed.\n"
 "See console output for more details."
@@ -366,7 +418,7 @@ msgstr ""
 "Das Parsen der Senderdatei schlug fehl.\n"
 "Mehr informationen gibts in der Ausgabe auf der Konsole."
 
-#: stationlist.cpp:326
+#: stationlist.cpp:327
 msgid "error downloading preset file %1"
 msgstr "Fehler beim Download der Senderdatei %1"
 
@@ -374,31 +426,35 @@ msgstr "Fehler beim Download der Senderdatei %1"
 msgid "Download of the station preset file at %1 failed."
 msgstr "Der Download der Senderdatei %1 schlug fehl."
 
+#: stationlist.cpp:337
+msgid "temporary file: "
+msgstr "temporäre Datei: "
+
 #: stationlist.cpp:343
 msgid "error opening preset file %1"
 msgstr "Fehler beim Öffnen der Senderdatei %1"
 
-#: stationlist.cpp:347
+#: stationlist.cpp:346
 msgid "Opening of the station preset file at %1 failed."
 msgstr "Das Öffnen der Senderdatei %1 schluf fehl."
 
-#: stationlist.cpp:366
+#: stationlist.cpp:365
 msgid "Old Preset File Format detected"
 msgstr "Altes Senderdateiformat erkannt"
 
-#: stationlist.cpp:442
+#: stationlist.cpp:441 errorlog.cpp:222
 msgid "error writing to tempfile %1"
 msgstr "Fehler beim schreiben in die temporäre Datei %1"
 
-#: stationlist.cpp:446
+#: stationlist.cpp:444
 msgid "Writing station preset file %1 failed."
 msgstr "Das Schreiben der Senderdatei %1 schlug fehl."
 
-#: stationlist.cpp:458
+#: stationlist.cpp:456 errorlog.cpp:231
 msgid "error uploading preset file %1"
 msgstr "Fehler beim Upload der Senderdatei %1"
 
-#: stationlist.cpp:462
+#: stationlist.cpp:460
 msgid "Upload of station preset file to %1 failed."
 msgstr "Der Upload der Senderdatei %1 schlug fehl."
 
@@ -443,31 +499,31 @@ msgstr "UKW"
 msgid "misplaced element %1"
 msgstr "unerwartetes Element %1"
 
-#: stationlistxmlhandler.cpp:114
-msgid "unknown or unexpected element"
-msgstr "unbekanntest oder unerwartetes Element"
+#: stationlistxmlhandler.cpp:113
+msgid "unknown or unexpected element %1"
+msgstr "unbekanntes oder unerwartetes Element %1"
 
-#: stationlistxmlhandler.cpp:144
+#: stationlistxmlhandler.cpp:142
 msgid "expected element %1, but found %2"
 msgstr "erwartetes Element: %1, gefundenes: %2"
 
-#: stationlistxmlhandler.cpp:149
+#: stationlistxmlhandler.cpp:146
 msgid "unexpected element %1"
 msgstr "unerwartetes Element %1"
 
-#: stationlistxmlhandler.cpp:158
+#: stationlistxmlhandler.cpp:154
 msgid "invalid data for element %1"
 msgstr "ingültige Daten im Element %1"
 
-#: stationlistxmlhandler.cpp:174
+#: stationlistxmlhandler.cpp:169
 msgid "found a station list with unknown format %1"
 msgstr "Die Senderdatei enthält das unbekannte Format %1"
 
-#: stationlistxmlhandler.cpp:211
+#: stationlistxmlhandler.cpp:205
 msgid "unknown property %1 for class %2"
 msgstr "Die Eigenschaft %1 ist der Klasse %2 unbekannt"
 
-#: stationlistxmlhandler.cpp:219
+#: stationlistxmlhandler.cpp:212
 msgid "characters ignored for element %1"
 msgstr "Einige Zeichen des Elements %1 wurden ignoriert"
 
@@ -491,25 +547,69 @@ msgstr "Frequenz erhöhen"
 msgid "Change Frequency"
 msgstr "Frequenz verändern"
 
-#: v4lradio-configuration.cpp:337 v4lradio-configuration.cpp:349
+#: v4lradio-configuration.cpp:347 v4lradio-configuration.cpp:359
 msgid "any ( * )"
 msgstr "alle ( * )"
 
-#: v4lradio-configuration.cpp:337
+#: v4lradio-configuration.cpp:347
 msgid "Radio Device Selection"
 msgstr "Auswahl der Radio-Gerätedatei"
 
-#: v4lradio-configuration.cpp:339
+#: v4lradio-configuration.cpp:349
 msgid "Select Radio Device"
 msgstr "Wählen Sie die Radio-Gerätedatei aus"
 
-#: v4lradio-configuration.cpp:349
+#: v4lradio-configuration.cpp:359
 msgid "Mixer Device Selection"
 msgstr "Auswahl der Mixer-Gerätedatei"
 
-#: v4lradio-configuration.cpp:351
+#: v4lradio-configuration.cpp:361
 msgid "Select Mixer Device"
 msgstr "Wählen Sie die Mixer-Gerätedatei aus"
+
+#: errorlog.cpp:39
+msgid "KRadio Logger"
+msgstr "KRadio Fehlerprotokoll"
+
+#: errorlog.cpp:46
+msgid "Save &as"
+msgstr "Sichern &unter"
+
+#: errorlog.cpp:48
+msgid "Error Logger"
+msgstr "Fehlerprotokoll"
+
+#: errorlog.cpp:53
+msgid "Information"
+msgstr "Informationen"
+
+#: errorlog.cpp:65 errorlog.cpp:79 errorlog.cpp:94 errorlog.cpp:108
+msgid "logging started"
+msgstr "Beginn der Aufzeichnung"
+
+#: errorlog.cpp:68
+msgid "Warnings"
+msgstr "Warnungen"
+
+#: errorlog.cpp:83
+msgid "Errors"
+msgstr "Fehler"
+
+#: errorlog.cpp:96
+msgid "Debugging"
+msgstr "Debugging"
+
+#: errorlog.cpp:194
+msgid "Log Files"
+msgstr "Protokoll-Dateien"
+
+#: errorlog.cpp:196
+msgid "Select Log File"
+msgstr "Auswahl der Protokolldatei"
+
+#: errorlog.cpp:200
+msgid "Save KRadio Logging Data as ..."
+msgstr "KRadio-Fehlerprotokoll sichern untern ..."
 
 #: recording-configuration-ui.cpp:147
 msgid "RecordingConfigurationUI"
@@ -914,31 +1014,27 @@ msgstr "Symbolauswahl"
 msgid "Select Station Pixmap"
 msgstr "Wählen Sie ein Sendersymbol aus"
 
-#: radio-configuration.cpp:404 radio-configuration.cpp:423
+#: radio-configuration.cpp:405 radio-configuration.cpp:424
 msgid "KRadio Preset Files"
 msgstr "Senderdateien für KRadio"
 
-#: radio-configuration.cpp:406 radio-configuration.cpp:425
+#: radio-configuration.cpp:407 radio-configuration.cpp:426
 msgid "Preset File Selection"
 msgstr "Auswahl der Senderdatei"
 
-#: radio-configuration.cpp:409
+#: radio-configuration.cpp:410
 msgid "Select Preset File"
 msgstr "Wählen Sie eine Senderdatei aus"
 
-#: radio-configuration.cpp:428
+#: radio-configuration.cpp:429
 msgid "Store Preset File"
 msgstr "Speichern der Senderdatei"
 
-#: standardscandialog.cpp:106
+#: standardscandialog.cpp:104
 msgid "new station "
 msgstr "Neuer Sender "
 
-#: standardscandialog.cpp:114
-msgid "newstation %1: %2"
-msgstr "Neuer Sender %1: %2"
-
-#: standardscandialog.cpp:134
+#: standardscandialog.cpp:128
 msgid "&Done"
 msgstr "&Fertig"
 
@@ -966,57 +1062,57 @@ msgstr "Keine Ahnung, wie dieser Sender bearbeitet werden soll"
 msgid "Frequency:"
 msgstr "Frequenz:"
 
-#: recording.cpp:45 recording.cpp:126
+#: recording.cpp:46 recording.cpp:127
 msgid "Recording Plugin"
 msgstr "Aufnahme-Plugin"
 
-#: recording.cpp:104 recording.cpp:105 recording.cpp:125
+#: recording.cpp:105 recording.cpp:106 recording.cpp:126
 msgid "Recording"
 msgstr "Aufnahme"
 
-#: recording.cpp:115
+#: recording.cpp:116
 msgid "Recording Monitor for KRadio"
 msgstr "Aufnahme-Monitor für KRadio"
 
-#: recording.cpp:144
-msgid "recording starting"
-msgstr "Aufnahme starten"
+#: recording.cpp:145
+msgid "Recording starting"
+msgstr "Die Aufnahme wird gestartet"
 
-#: recording.cpp:151
-msgid "recording stopped with error"
+#: recording.cpp:152
+msgid "Recording stopped with error"
 msgstr "Die Aufnahme wurde mit einem Fehler beendet"
 
-#: recording.cpp:168
-msgid "monitoring starting"
-msgstr "die Aufnahme wird gestartet"
+#: recording.cpp:169
+msgid "Monitoring starting"
+msgstr "Das Monitoring der Aufnahmequelle wird gestartet"
 
-#: recording.cpp:175
-msgid "monitoring stopped with error"
-msgstr "die Aufnahme wird beendet"
+#: recording.cpp:176
+msgid "Monitoring stopped with error"
+msgstr "Das Überwachung der Aufnahmequelle wurde mit einem Fehler beendet"
 
-#: recording.cpp:194
-msgid "recording stopped"
-msgstr "die Aufnahme wurde beendet"
+#: recording.cpp:195
+msgid "Recording stopped"
+msgstr "Die Aufnahme wurde beendet"
 
-#: recording.cpp:219
-msgid "monitoring stopped"
-msgstr "Der Aufnahmemonitor wurde beendet"
+#: recording.cpp:220
+msgid "Monitoring stopped"
+msgstr "Die Überwachung der Aufnahmequelle wurde beendet"
 
-#: recording.cpp:367
-msgid "outputFile: "
-msgstr "Ausgabedatei: "
+#: recording.cpp:368
+msgid "Recording::outputFile: "
+msgstr "Aufnahme::Ausgabedatei: "
 
-#: recording.cpp:396
-msgid "error: no data to record"
-msgstr "Fehler: Es gibt keine Daten zum Aufnehmen"
+#: recording.cpp:397
+msgid "No data to record"
+msgstr "Es gibt keine Daten zum Aufnehmen"
 
-#: recording.cpp:401
-msgid "error writing output"
-msgstr "Fehler beim Schreiben der Ausgabedatei"
+#: recording.cpp:402
+msgid "Error %1 writing output"
+msgstr "Fehler %1 beim Schreiben der Ausgabedatei"
 
-#: recording.cpp:408
-msgid "error while recording: "
-msgstr "Ein Fehler ist beim Aufnehmen aufgetreten: "
+#: recording.cpp:409
+msgid "Error %1 while recording"
+msgstr "Fehler %1 bei der Aufnahme"
 
 #: recording-monitor.cpp:35 recording-monitor.cpp:38 recording-monitor.cpp:148
 msgid "Recording Monitor"

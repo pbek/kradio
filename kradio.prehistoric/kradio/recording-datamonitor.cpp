@@ -135,9 +135,6 @@ bool RecordingDataMonitor::noticeRecordingContextChanged(const RecordingContext 
 	}
 	for (int i = 0; i < m_channels; ++i)
 		m_channelsAvg[i] /= nSamples;
-//	kdDebug() << "maxVal: " << m_maxValue << endl;
-//	kdDebug() << "max:    " << m_channelsMax[0] << endl;
-//	kdDebug() << "avg:    " << m_channelsAvg[0] << endl;
 
 	repaint(false);
 	return true;

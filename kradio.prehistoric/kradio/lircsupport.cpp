@@ -31,12 +31,14 @@
 #include <kaboutdata.h>
 #include "aboutwidget.h"
 
+#include "errorlog-interfaces.h"
+
 LircSupport::LircSupport(const QString &name)
 	: PluginBase(name, i18n("LIRC Plugin"))
 {
 
 #ifdef HAVE_LIRC_CLIENT
-	kdDebug() << i18n("initializing kradio lirc plugin") << endl;
+	logDebug(i18n("initializing kradio lirc plugin"));
 	char *prg = (char*)"kradio";
 	m_fd_lirc = lirc_init(prg, 1);
     m_lirc_notify = 0;
@@ -54,11 +56,11 @@ LircSupport::LircSupport(const QString &name)
 	}
 
 	if (m_fd_lirc == -1) {
-		kdDebug() << i18n("initializing kradio lirc plugin failed") << endl;
+		logWarning(i18n("Initializing kradio lirc plugin failed"));
 	} else {
-		kdDebug() << i18n("initializing kradio lirc plugin successful") << endl;
+		logDebug(i18n("Initializing kradio lirc plugin successful"));
 	}
-#endif	
+#endif
 	
 	m_kbdTimer = new QTimer (this);
 	QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
@@ -179,11 +181,6 @@ bool LircSupport::connect (Interface *i)
 	bool a = IRadioClient::connect (i);
 	bool b = ITimeControlClient::connect (i);
 	bool c = IRadioDevicePoolClient::connect (i);
-/*
-    if (a) kdDebug() << "LircSupport: IRadioClient connected\n";
-    if (b) kdDebug() << "LircSupport: ITimeControlClient connected\n";
-    if (c) kdDebug() << "LircSupport: IRadioDevicePoolClient connected\n";
-*/
 	return a || b || c;
 }
 
@@ -193,11 +190,6 @@ bool LircSupport::disconnect (Interface *i)
 	bool a = IRadioClient::disconnect (i);
 	bool b = ITimeControlClient::disconnect (i);
 	bool c = IRadioDevicePoolClient::disconnect (i);
-/*
-    if (a) kdDebug() << "LircSupport: IRadioClient disconnected\n";
-    if (b) kdDebug() << "LircSupport: ITimeControlClient disconnected\n";
-    if (c) kdDebug() << "LircSupport: IRadioDevicePoolClient disconnected\n";
-*/
 	return a || b || c;
 }
 

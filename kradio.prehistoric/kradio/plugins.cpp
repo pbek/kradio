@@ -18,7 +18,7 @@
 #include "plugins.h"
 #include "pluginmanager.h"
 
-#include <kdebug.h>
+#include "errorlog-interfaces.h"
 
 PluginBase::PluginBase(const QString &name, const QString &description)
 	: m_name(name),
@@ -30,7 +30,7 @@ PluginBase::PluginBase(const QString &name, const QString &description)
 
 PluginBase::~PluginBase()
 {
-	kdDebug() << "destructing plugin " << m_name << endl;
+	logDebug("destructing plugin " + m_name);
 	unsetManager();	
 }
 

@@ -30,7 +30,7 @@
 #include "radioview.h"
 #include "recording.h"
 #include "recording-monitor.h"
-
+#include "errorlog.h"
 
 static KCmdLineOptions options[] =
 {
@@ -68,8 +68,10 @@ int main(int argc, char *argv[])
     RadioView        *view        = new RadioView       (NULL, "radioview-1");
     Recording        *record      = new Recording       (      "recording-1");
     RecordingMonitor *monitor     = new RecordingMonitor(NULL, "recordingmonitor-1");
+    ErrorLog         *logger      = new ErrorLog        (NULL, "logger-1");
     
     a.insertPlugin(about);
+	a.insertPlugin(logger);
     a.insertPlugin(lircsupport);
     a.insertPlugin(v4lradio);
     a.insertPlugin(radio);

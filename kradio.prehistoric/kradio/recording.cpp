@@ -19,6 +19,7 @@
 #include "recording-context.h"
 #include "recording-configuration.h"
 #include "radiostation.h"
+#include "errorlog-interfaces.h"
 
 #include <qsocketnotifier.h>
 #include <qevent.h>
@@ -141,14 +142,14 @@ bool  Recording::startRecording()
 		ok &= openDevice();
 
 	ok &= openOutput();
-	kdDebug() << i18n("recording starting") << endl;
+	logInfo(i18n("Recording starting"));
 	if (ok) {
 		notifyRecordingStarted();
 		notifyRecordingContextChanged(m_context);
 		sendPowerOn();
 		return true;
 	} else {
-		kdDebug() << i18n("recording stopped with error") << endl;
+		logError(i18n("Recording stopped with error"));
 		m_context.setError();
 		stopRecording();
 		return false;
@@ -165,14 +166,14 @@ bool  Recording::startMonitoring()
 	}
 
 	ok &= openDevice();
-	kdDebug() << i18n("monitoring starting") << endl;
+	logInfo(i18n("Monitoring starting"));
 	if (ok) {
 		m_context.startMonitor(m_config);
 		notifyMonitoringStarted();
 		notifyRecordingContextChanged(m_context);
 		return true;
 	} else {
-		kdDebug() << i18n("monitoring stopped with error") << endl;
+		logError(i18n("Monitoring stopped with error"));
 		m_context.setError();
 		stopMonitoring();
 		return false;
@@ -183,7 +184,7 @@ bool  Recording::startMonitoring()
 bool Recording::stopRecording()
 {
 	RecordingContext::RecordingState oldState = m_context.oldState();
-	kdDebug() << "oldstate: " << oldState << endl;
+	logDebug("Recording::oldstate: " + QString().setNum(oldState));
 	switch (m_context.state()) {
 		case RecordingContext::rsRunning:
 		case RecordingContext::rsError:
@@ -191,7 +192,7 @@ bool Recording::stopRecording()
 			closeOutput();
 			notifyRecordingContextChanged(m_context);
 			notifyRecordingStopped();
-			kdDebug() << i18n("recording stopped") << endl;
+			logInfo(i18n("Recording stopped"));
 			if (m_context.state() != RecordingContext::rsError &&
 			    oldState == RecordingContext::rsMonitor) {
 				     startMonitoring();
@@ -216,7 +217,7 @@ bool Recording::stopMonitoring()
 			m_context.stop();
 			notifyRecordingContextChanged(m_context);
 			notifyMonitoringStopped();
-			kdDebug() << i18n("monitoring stopped") << endl;
+			logInfo(i18n("Monitoring stopped"));
 			break;
 		case RecordingContext::rsRunning:
 			stopRecording();
@@ -303,15 +304,15 @@ bool Recording::openDevice()
 
     int format = m_config.getOSSFormat();
     err |= (ioctl(m_devfd, SNDCTL_DSP_SETFMT, &format) != 0);
-    kdDebug() << "err after SETFMT: " << err << endl;
+    logDebug("err after SETFMT: " + QString().setNum(err));
 
     int channels = m_config.channels;
     err |= (ioctl(m_devfd, SNDCTL_DSP_CHANNELS, &channels) != 0);
-    kdDebug() << "err after CHANNELS: " << err << endl;
+    logDebug("err after CHANNELS: " + QString().setNum(err));
 
     int rate = m_config.rate;
     err |= (ioctl(m_devfd, SNDCTL_DSP_SPEED, &rate) != 0);
-    kdDebug() << "err after SPEED: " << err << endl;
+    logDebug("err after SPEED: " + QString().setNum(err));
 
     // setup buffer
 
@@ -364,7 +365,7 @@ bool Recording::openOutput()
 	    + QDateTime::currentDateTime().toString(Qt::ISODate)
 	    + ext;
 
-	kdDebug() << i18n("outputFile: ") << output << endl;
+	logInfo(i18n("Recording::outputFile: ") + output);
 
 
 	SF_INFO sinfo;
@@ -393,19 +394,19 @@ void Recording::slotSoundDataAvailable()
 		int r = read(m_devfd, m_buffer, m_bufferSize);
 		bool err = r <= 0;
 		if (err)
-			kdDebug() << i18n("error: no data to record") << endl;
+			logError(i18n("No data to record"));
 
 		if (!err && m_context.state() == RecordingContext::rsRunning) {
 			err = sf_write_raw(m_output, m_buffer, r) != r;
 			if (err)
-				kdDebug() << i18n("error writing output") << endl;
+				logError(i18n("Error %1 writing output").arg(QString().setNum(err)));
 		}
 			
 		if (!err) {
 			m_context.addInput(m_buffer, r);
 			notifyRecordingContextChanged(m_context);
 		} else {
-			kdDebug() << i18n("error while recording: ") << errno << endl;
+			logError(i18n("Error %1 while recording").arg(QString().setNum(errno)));
 			m_context.setError();
 			stopRecording();
 		}
