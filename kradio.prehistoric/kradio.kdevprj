@@ -23,12 +23,12 @@ cflags=
 cppflags=
 cxxflags=\s-O0 -pg -g3 -Wall
 ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE)
-ldflags=\s        \s
+ldflags=\s         \s
 
 [General]
-AMChanged=false
+AMChanged=true
 author=Martin Witte
-configure_args=--enable-debug=full
+configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux --enable-debug\s
 email=witte@kawo1.rwth-aachen.de
 kdevprj_version=1.3
 lfv_open_groups=Benutzerschnittstelle,Quellen
@@ -41,7 +41,7 @@ sgml_file=/home/schwanz/Dokumente/Programmierung/Projekte/kradio/doc/en/index.do
 short_info=
 showNonProjectFiles=true
 sub_dir=kradio/
-version=0.2.8
+version=0.3.0
 version_control=CVS
 workspace=1
 
