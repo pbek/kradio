@@ -68,7 +68,7 @@ protected:
 protected:
 	int              m_devfd;
 	int             *m_buffer;
-	SNDFILE         *m_input;
+//	SNDFILE         *m_input;
 	SNDFILE         *m_output;
 
 	QObject         *m_parent;
@@ -120,12 +120,19 @@ bool RecordingThread::openDevice()
 
     int format = m_config.getOSSFormat();
     err |= (ioctl(m_devfd, SNDCTL_DSP_SETFMT, &format) != 0);
+    kdDebug() << "err after SETFMT: " << err << endl;
 
     int channels = m_config.channels;
     err |= (ioctl(m_devfd, SNDCTL_DSP_CHANNELS, &channels) != 0);
+    kdDebug() << "err after CHANNELS: " << err << endl;
 
     int rate = m_config.rate;
     err |= (ioctl(m_devfd, SNDCTL_DSP_SPEED, &rate) != 0);
+    kdDebug() << "err after SPEED: " << err << endl;
+
+//    int frag = 0x7fff000d;
+//    err |= (ioctl(m_devfd, SNDCTL_DSP_SETFRAGMENT, &frag) != 0);
+//    kdDebug() << "err after SETFRAGMENT: " << err << endl;
 
     if (err) closeDevice();
 
@@ -133,20 +140,20 @@ bool RecordingThread::openDevice()
 
 	SF_INFO sinfo;
 	m_config.getSoundFileInfo(sinfo, true);
-    m_input = sf_open_fd(m_devfd, SFM_READ, &sinfo, false);    
+//    m_input = sf_open_fd(m_devfd, SFM_READ, &sinfo, false);    
 
     // setup buffer
         
     m_buffer = new int[BUFFER_SIZE_SAMPLES * m_config.channels];
 
-    return !err && m_buffer && m_input;
+    return !err && m_buffer; // && m_input;
 }
 
 
 void RecordingThread::closeDevice()
 {
-	if (m_input)      sf_close(m_input);
-	m_input = NULL;
+//	if (m_input)      sf_close(m_input);
+//	m_input = NULL;
 	if (m_devfd >= 0) close (m_devfd);
 	m_devfd = -1;
 	if (m_buffer) delete m_buffer;
@@ -197,16 +204,25 @@ void RecordingThread::run()
 		internalStop();
 		return;
 	}
+
+    int bufferSize = BUFFER_SIZE_SAMPLES;
+    bufferSize *= m_config.channels;
+    if (m_config.bits > 16) bufferSize *= 4;
+    else if (m_config.bits > 8) bufferSize *= 2;
+	
 	while (!m_stopFlag) {
 
-		kdDebug() << "starting sf_read" << endl;
-		int r = sf_readf_int(m_input, m_buffer, BUFFER_SIZE_SAMPLES);
-		kdDebug() << "done sf_read, samples read: " << r << endl;
+//		kdDebug() << "starting sf_read" << endl;
+		int r = read(m_devfd, m_buffer, bufferSize);
+//		kdDebug() << "read, bytes read: " << x << endl;
+//		int r = sf_readf_int(m_input, m_buffer, BUFFER_SIZE_SAMPLES);
+//		kdDebug() << "done sf_read, samples read: " << r << endl;
 		
-		if (r > 0 && sf_writef_int(m_output, m_buffer, r) == r) {
+		if (r > 0 && sf_write_raw(m_output, m_buffer, r) == r) {
 			m_context.bufferAdded(r, m_config);
 			notifyParent(PROCESS_EVENT);
 		} else {
+			kdDebug() << "error while recording: " << errno << endl;
 			m_context.setError();
 			m_stopFlag = true;
 		}
@@ -307,10 +323,18 @@ bool  Recording::startRecording()
 		return false;
 		
 	if (!m_recordingThread->running()) {
+	    QString ext = ".wav";
+	    switch (m_config.outputFormat) {
+			case RecordingConfig::outputWAV:  ext = ".wav";  break;
+			case RecordingConfig::outputAIFF: ext = ".aiff"; break;
+			case RecordingConfig::outputAU:   ext = ".au";   break;
+			case RecordingConfig::outputRAW:  ext = ".raw";  break;
+			default:                          ext = ".wav";  break;
+	    }
 		QString output = m_config.directory
 	       + "/kradio-recording"
 	       + QDateTime::currentDateTime().toString(Qt::ISODate)
-	       + ".wav";
+	       + ext;
 
 		m_recordingThread->setConfig(m_config);
 		m_recordingThread->start(output);

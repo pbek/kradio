@@ -174,6 +174,7 @@ void RecordingConfig::getSoundFileInfo(SF_INFO &sinfo, bool input)
 	sinfo.samplerate = rate;
 	sinfo.channels   = channels;
 	sinfo.format     = 0;
+	sinfo.seekable   = !input;
 
 	// U8 only supported for RAW and WAV
 	if (bits == 8) {
