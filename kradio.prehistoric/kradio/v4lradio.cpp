@@ -145,7 +145,7 @@ float V4LRadio::getFrequency() const
 
     	float f = float(fq) * deltaF();
 	    if (f != RadioBase::getFrequency())
-    		const_cast<V4LRadio*>(this)->RadioBase::_setFrequency(f);
+    		const_cast<V4LRadio*>(this)->RadioBase::setFrequencyImpl(f);
     }
 */
     return RadioBase::getFrequency();
@@ -179,7 +179,7 @@ float V4LRadio::maxPossibleFrequency() const
 }
 
 
-void V4LRadio::_setFrequency(float freq)
+void V4LRadio::setFrequencyImpl(float freq)
 {
   	if (radio_fd != 0) {
   		bool oldMute = isMuted();
@@ -200,7 +200,7 @@ void V4LRadio::_setFrequency(float freq)
   		if (!oldMute) unmute();
 	}
 
-	RadioBase::_setFrequency(freq);
+	RadioBase::setFrequencyImpl(freq);
 }
 
 
