@@ -33,10 +33,12 @@ protected :
 	bool	QuickSelect;
 
 	float	VolumePreset;		// <0: => Don't use
+	
+	QString	iconString;
 
 public:
 	RadioStation (QObject *parent);
-	RadioStation(QObject *parent, QString Name, QString ShortName,
+	RadioStation(QObject *parent, QString Name, QString ShortName, QString iconString,
 				 float Frequency, float VolumePreset = -1);
 	RadioStation(const RadioStation &);
 	virtual ~RadioStation();
@@ -44,7 +46,8 @@ public:
 	bool    isValid() const;
 	
 	QString getShortName() const     { return ShortName; }
-	QString getLongName(int i) const;
+	QString getLongName() const;
+	QString getIconString() const    { return iconString; }
 	float	getFrequency() const     { return Frequency; }
 	float	getVolumePreset() const  { return VolumePreset; }
 	bool	useQuickSelect() const   { return QuickSelect; }
@@ -52,6 +55,7 @@ public:
 	void	setQuickSelect(bool qs)  { QuickSelect = qs; }
 	void 	setFrequency(float f)    { Frequency = f; }
 	void	setShortName(QString n)  { ShortName = n; }
+	void	setIconString(QString s) { iconString = s; }
 	void	setVolumePreset(float v) { VolumePreset = v; }
 	
 public slots:

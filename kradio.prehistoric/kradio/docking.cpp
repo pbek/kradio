@@ -29,32 +29,42 @@
 #include "kradioapp.h"
 #include "kradio.h"
 
-RadioDocking::RadioDocking(KRadio *_widget, RadioBase *_radio, const char *name)
-  : KSystemTray (_widget, name)
+RadioDocking::RadioDocking(KRadio *_widget, QuickBar * qb, RadioBase *_radio, const char *name)
+  : KSystemTray (0, name)
 {
   radio = _radio;
+  radioControl = _widget;
+  quickbar = qb;
 
   miniKRadioPixmap = UserIcon("kradio");
 
   // connect radio with tray
   connect(radio, SIGNAL(sigUpdateTips()),
 	  this, SLOT(slotUpdateToolTips()));
+  connect(radio, SIGNAL(sigAlarm()),
+	  this, SLOT(slotAlarm()));
+  connect(radio, SIGNAL(sigConfigChanged()),
+  	  this, SLOT(slotConfigChanged()));
+  	
+  buildContextMenu ();
+}
+
+RadioDocking::~RadioDocking()
+{
 }
 
 
-void RadioDocking::contextMenuAboutToShow( KPopupMenu* menu )
+void RadioDocking::buildContextMenu()
 {
+  KPopupMenu *menu = contextMenu();
   menu->clear();
 
-  menu->insertTitle (i18n("KRadio: ")+ radio->getStationString(true, true, true));
+  titleID = menu->insertTitle (i18n("KRadio: ")+ radio->getStationString(true, true, true));
 
   buildStationList();
 
-  QDateTime a = radio->nextAlarm();
-  if (a.isValid())
-    menu->insertTitle (i18n("next alarm: ") + a.toString());
-  else
-    menu->insertTitle (i18n("<no alarm pending>"));
+  alarmID = menu->insertTitle ("alarm-dummy");
+  slotAlarm();
 
   menu->insertItem(SmallIcon("forward"), i18n("Search Next Station"),
 			       this, SLOT( slotSearchNextStation()));
@@ -62,7 +72,7 @@ void RadioDocking::contextMenuAboutToShow( KPopupMenu* menu )
   menu->insertItem(SmallIcon("back"), i18n("Search Previous Station"),
 	               this, SLOT( slotSearchPrevStation()));
 
-  menu->insertItem(radio->isPowerOn() ? i18n("Power Off") : i18n("Power On"), radio, SLOT( PowerToggle()));
+  powerID = menu->insertItem("power-dummy", radio, SLOT( PowerToggle()));
 
   menu->insertSeparator();
 
@@ -70,27 +80,39 @@ void RadioDocking::contextMenuAboutToShow( KPopupMenu* menu )
 
   menu->insertSeparator();
 
-  menu->insertItem( parentWidget()->isMinimized() ? i18n("Show radio interface") :
-                                                    i18n("Minimize radio interface"),
-                    this, SLOT(slotToggleUI()) );
-  menu->insertItem( i18n("Show quick buttons"), this, SLOT(slotNOP()) );
+  guiID = menu->insertItem("gui-show-dummy", this, SLOT(slotToggleUI()) );
+  qbID  = menu->insertItem("quickbar-dummy", this, SLOT(slotToggleQB()) );
+//  showAllID = menu->insertItem("showall-dummy", this, SLOT(slotToogleAll()) );
 
   menu->insertItem( SmallIcon("exit"), i18n("&Quit" ), kapp, SLOT(quit()) );
+
+  slotUpdateToolTips();
 }
 
-RadioDocking::~RadioDocking()
+void RadioDocking::contextMenuAboutToShow( KPopupMenu* menu )
 {
+    bool b = radioControl->isMinimized() || radioControl->isHidden();
+	menu->changeItem(guiID, b ? i18n("Show radio interface") :
+                                i18n("Minimize radio interface"));
+    b = quickbar->isMinimized() || quickbar->isHidden();
+    menu->changeItem(qbID,  b ? i18n("Show station quickbar") :
+                                i18n("Minimize station quickbar"));
+
 }
 
 void RadioDocking::buildStationList()
 {
-  for (int i = 0; i < radio->nStations(); ++i) {
-    const RadioStation *stn = radio->getStation(i);
-    QString StationText = stn->getLongName(i+1);
+	KPopupMenu *m = contextMenu();
+	StationIDs.clear();
+	const RadioStation *c = radio->getCurrentStation();
+  	for (int i = 0; i < radio->nStations(); ++i) {
+    	const RadioStation *stn = radio->getStation(i);
+    	QString StationText = QString().setNum(i+1) + " " + stn->getLongName();
 
-    int id = contextMenu()->insertItem(StationText, stn, SLOT(activate()));
-    contextMenu()->setItemChecked (id, radio->getCurrentStation() == stn);
-  }
+    	int id = m->insertItem(StationText, stn, SLOT(activate()));
+    	StationIDs.push_back(id);
+    	m->setItemChecked (id, c == stn);
+  	}
 }
 
 void RadioDocking::slotSearchNextStation()
@@ -109,14 +131,57 @@ void RadioDocking::slotNOP()
 
 void RadioDocking::slotUpdateToolTips ()
 {
-  QToolTip::add(this, radio->getStationString(true, true, true));
+  	QToolTip::add(this, radio->getStationString(true, true, true));
+
+  	KPopupMenu *menu = contextMenu();
+  	
+	menu->changeTitle (titleID, i18n("KRadio: ")+ radio->getStationString(true, true, true));
+  	
+  	menu->changeItem(powerID, radio->isPowerOn() ? i18n("Power Off") : i18n("Power On"));
+	
+	const RadioStation *c = radio->getCurrentStation();
+	for (uint i = 0; i < StationIDs.size(); ++i) {
+    	const RadioStation *stn = radio->getStation(i);
+    	menu->setItemChecked (StationIDs[i], c == stn);
+	}
 }
 
 
 void RadioDocking::slotToggleUI ()
 {
-    if (parentWidget()->isMinimized())
-        parentWidget()->showNormal();
+    if (radioControl->isMinimized() || radioControl->isHidden())
+        radioControl->showNormal();
     else
-        parentWidget()->showMinimized();
+        radioControl->showMinimized();
 }
+
+
+void RadioDocking::slotToggleQB ()
+{
+    if (quickbar->isMinimized() || quickbar->isHidden())
+        quickbar->showNormal();
+    else
+        quickbar->showMinimized();
+}
+
+
+void RadioDocking::slotAlarm()
+{
+  KPopupMenu *menu = contextMenu();
+  QDateTime a = radio->nextAlarm();
+  if (a.isValid())
+    menu->changeTitle (alarmID, i18n("next alarm: ") + a.toString());
+  else
+    menu->changeTitle (alarmID, i18n("<no alarm pending>"));
+}
+
+void RadioDocking::slotConfigChanged()
+{
+	buildContextMenu();
+}
+
+
+void RadioDocking::showEvent (QShowEvent *)
+{
+}
+

@@ -28,6 +28,7 @@
 #include <qstring.h>
 #include <kaboutapplication.h>
 
+#include "quickbar.h"
 #include "v4lradio.h"
 
 class RadioDocking;
@@ -49,9 +50,10 @@ class KRadioApp : public KApplication
   KRadio *kradio;
   KAboutApplication AboutApplication;
   
-  KConfig *config;
-  RadioDocking *tray;
-  V4LRadio *radio;
+  KConfig       *config;
+  RadioDocking  *tray;
+  V4LRadio      *radio;
+  QuickBar      *quickbar;
   
   QString MixerDev, RadioDev;
 

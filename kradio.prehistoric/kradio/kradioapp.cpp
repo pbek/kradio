@@ -27,7 +27,8 @@
 
 KRadioApp::KRadioApp()
   :kradio(0),
-   tray(0)
+   tray(0),
+   quickbar(0)
 {
   config = KGlobal::config(); 
   readOptions();
@@ -38,31 +39,28 @@ KRadioApp::KRadioApp()
 
   // the main dialog
   kradio = new KRadio(radio);
+
+  // the quick selection buttons
+  quickbar = new QuickBar (radio);
   
   // Tray
-  tray = new RadioDocking(kradio, radio);
+  tray = new RadioDocking(kradio, quickbar, radio);
   if (tray)
     tray->setPixmap(BarIcon("kradio"));
 
-  // restore window size and position
-  if (kradio)
-    kradio->readXOptions(config);
-
-  // restore Configuration
-  restoreState();
-
   if (kradio){
-    connect(kradio, SIGNAL(showAbout()),
-	    &AboutApplication, SLOT(show()));
+    connect(kradio, SIGNAL(showAbout()), &AboutApplication, SLOT(show()));
     kradio->show();
   }
   if (tray){
-    connect(tray, SIGNAL(showAbout()),
-	    &AboutApplication, SLOT(show()));
+    connect(tray, SIGNAL(showAbout()),   &AboutApplication, SLOT(show()));
     tray->show();
   }
 
-  kradio->show();
+  quickbar->show();
+
+  // restore Configuration
+  restoreState();
 }
 
 KRadioApp::~KRadioApp()
@@ -71,18 +69,18 @@ KRadioApp::~KRadioApp()
   saveState();
 
   if (kradio){
-    kradio->saveOptions(config);
-    delete kradio;      // not needed, 'cause it's a QObject
+    delete kradio;
   }
   if (radio)
-    delete radio;       // not needed, 'cause it's a QObject
+    delete radio;
+  if (quickbar)
+    delete quickbar,
   radio = 0;
 }
 
 void KRadioApp::readOptions()
 {
-  config->setGroup("Recent");
-  
+  config->setGroup("devices");
   RadioDev = config->readEntry ("RadioDev", "/dev/radio");
   MixerDev = config->readEntry ("MixerDev", "/dev/mixer");	
   
@@ -90,8 +88,9 @@ void KRadioApp::readOptions()
 
 void KRadioApp::saveOptions()
 {
-  config->writeEntry("MixerDev", MixerDev);
-  config->writeEntry("RadioDev", RadioDev);
+    config->setGroup("devices");
+    config->writeEntry("MixerDev", MixerDev);
+    config->writeEntry("RadioDev", RadioDev);
 }
 
 void KRadioApp::restoreState()
@@ -108,6 +107,14 @@ void KRadioApp::restoreState()
   // update kradio
   if (kradio)
     kradio->slotPowerOn (radio->isPowerOn());
+
+  // kradio: restore window size and position
+  if (kradio)
+    kradio->readState(config);
+
+  // quickbar: restore size/position
+  if (quickbar)
+      quickbar->restoreState(config);
 }
 
 void KRadioApp::saveState()
@@ -118,5 +125,13 @@ void KRadioApp::saveState()
   config->writeEntry("Volume", radio->getVolume());
   
   config->writeEntry("PowerOn", radio->isPowerOn());
+
+  // kradio: save window size and position
+  if (kradio)
+    kradio->saveState(config);
+
+  // quickbar: restore size/position
+  if (quickbar)
+      quickbar->saveState(config);
 }
 

@@ -20,24 +20,36 @@
 
 #include <qwidget.h>
 #include <kconfig.h>
+#include <kpushbutton.h>
+#include <list>
 #include "radiobase.h"
 
 /**
   *@author Martin Witte / Frank Schwanz
   */
 
+
+typedef list<KPushButton *>         ButtonList;
+typedef ButtonList::iterator        iButtonList;
+typedef ButtonList::const_iterator  ciButtonList;
+
 class QuickBar : public QWidget  {
    Q_OBJECT
 protected :
 
     RadioBase   *radio;
+    ButtonList  Buttons;
 
-public: 
-	QuickBar(QWidget *parent, RadioBase *radio, const char *name=0);	
+public:
+	QuickBar(RadioBase *radio);	
 	~QuickBar();
 	
-	void    readConfig (KConfig *c);
-	void    saveConfig (KConfig *c) const;
+	void    restoreState (KConfig *c);
+	void    saveState (KConfig *c) const;
+	
+protected:
+    void resizeEvent(QResizeEvent *);
+
 protected slots:
 
 	void slotConfigChanged();

@@ -21,32 +21,49 @@
 #include <kpopupmenu.h>
 #include <ksystemtray.h>
 #include "kradio.h"
+#include "quickbar.h"
 
 class KRadioApp;
 
 class RadioDocking : public KSystemTray {
 	Q_OBJECT
 public:
-	RadioDocking (KRadio *widget, RadioBase *radio, const char *name = 0);
+	RadioDocking (KRadio *widget, QuickBar *qb, RadioBase *radio, const char *name = 0);
 	virtual ~RadioDocking();
 
+	virtual void showEvent (QShowEvent *);
+	
 private slots:
 
 public slots:
     void slotSearchPrevStation(void);
     void slotSearchNextStation(void);
     void slotNOP();
-    void slotUpdateToolTips ();
     void slotToggleUI();
+    void slotToggleQB();
+
+    void slotUpdateToolTips ();
+    void slotAlarm ();
+    void slotConfigChanged();
 
 signals:
     void showAbout();
 
 private:
+	void buildContextMenu();
 	void buildStationList();
 	void contextMenuAboutToShow( KPopupMenu* menu );
 
+	int			titleID;	
+	int 		alarmID;
+	int			powerID;
+	int			guiID;
+	int     	qbID;
+	IntVector   StationIDs;
+
 	RadioBase 	*radio;
+	QWidget		*radioControl;
+	QuickBar    *quickbar;
 
     QPixmap     miniKRadioPixmap;
 };

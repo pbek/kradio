@@ -24,9 +24,11 @@ RadioStation::RadioStation(QObject *_parent)
 	ShortName = "";
 	VolumePreset = -1;
 	QuickSelect = false;
+	iconString = "";
 }
 
 RadioStation::RadioStation(QObject *_parent, QString _name, QString _ShortName,
+						   QString _iconString,
                            float _Frequency, float _volumePreset)
  : QObject (_parent, _name)
 {
@@ -34,6 +36,7 @@ RadioStation::RadioStation(QObject *_parent, QString _name, QString _ShortName,
 	ShortName = _ShortName;
 	VolumePreset = _volumePreset;
 	QuickSelect = false;
+	iconString = _iconString;
 }
 
 
@@ -44,6 +47,7 @@ RadioStation::RadioStation(const RadioStation &s)
 	ShortName = s.ShortName;
 	VolumePreset = s.VolumePreset;
 	QuickSelect = s.QuickSelect;
+	iconString = s.iconString;
 }
 
 
@@ -51,13 +55,13 @@ RadioStation::~RadioStation()
 {
 }
 
-QString RadioStation::getLongName(int i) const
+QString RadioStation::getLongName() const
 {
 	QString longName = name();
 	if (!longName.isEmpty())
-    longName += ", ";
-  longName = QString().setNum(i) + " " +  longName +
-  	         QString().setNum(getFrequency(), 'f', 2) + " MHz";
+        longName += ", ";
+    longName = longName +
+  	           QString().setNum(getFrequency(), 'f', 2) + " MHz";
 	return longName;
 }
 
