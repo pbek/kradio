@@ -1,0 +1,78 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Mike Mulligan, &lt;tonkajeep34@earthlink.net&gt;</maintainer>
+			<changed>2003-04-24T10:23:05</changed>
+			<country>USA</country>
+			<city>Dallas</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>The Bone</name>
+			<shortname>Bone</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>The Wolf</name>
+			<shortname>KPLX</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KSCS</name>
+			<shortname>KSCS</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>The Eagle</name>
+			<shortname>KEGL</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KZPS</name>
+			<shortname>KZPS</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>The Edge</name>
+			<shortname>EDGE</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Mix 102.9</name>
+			<shortname>KDMX</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+
