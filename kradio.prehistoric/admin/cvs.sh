@@ -512,7 +512,7 @@ for cat in $catalogs; do
   if test -s $cat.new; then
     grep -v "\"POT-Creation" $cat.new > $cat.new.2
     grep -v "\"POT-Creation" $cat >> $cat.new.1
-    if diff $cat.new.1 $cat.new.2; then
+    if diff -q $cat.new.1 $cat.new.2; then
 	rm $cat.new
     else
 	mv $cat.new $cat

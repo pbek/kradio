@@ -30,6 +30,7 @@
                 - set correct PCM_ENABLE_INPUT flag when starting recording
                 - recording: replaced QSocketNotifier by polling/nonblocking 
                   IO with QTimer. Some sound drivers do not support select()
+                - fixed nebulous recording error logging/reporting
 
 
 0.3.0 alpha 2

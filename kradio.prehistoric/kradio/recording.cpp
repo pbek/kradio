@@ -48,7 +48,7 @@ QEvent::Type EncodingStep       = (QEvent::Type)(QEvent::User+2);
 
 Recording::Recording(const QString &name)
     : QObject(NULL, QString::null),
-      PluginBase(name, i18n("Recording Plugin")),
+      PluginBase(name, i18n("KRadio Recording Plugin")),
       m_devfd(-1),
       m_buffer(NULL),
       m_bufferBlockSize(0),
@@ -498,6 +498,7 @@ bool Recording::event(QEvent *e)
     if (e->type() == EncodingStep || e->type() == EncodingTerminated) {
         if (m_encodingThread) {
             if (m_encodingThread->error()) {
+                logError(m_encodingThread->errorString());
                 m_context.setError();
                 stopRecording();
             } else {
@@ -555,11 +556,6 @@ void Recording::slotSoundDataAvailable()
 
             if (!skip && m_encodingThread)
                 m_encodingThread->unlockInputBuffer(bytesRead > 0 ? bytesRead : 0);
-        }
-
-        if (m_encodingThread && m_encodingThread->error()) {
-            logError(m_encodingThread->errorString());
-            err = true;
         }
 
         if (!err) {
@@ -633,7 +629,7 @@ RecordingEncoding::~RecordingEncoding()
 
 char *RecordingEncoding::lockInputBuffer(unsigned int &bufferSize)
 {
-    if (m_done)
+    if (m_done || m_error)
         return NULL;
 
     m_bufferInputLock.lock();
@@ -662,7 +658,7 @@ void  RecordingEncoding::unlockInputBuffer(unsigned int bufferSize)
 
     if (m_buffersInputFill[m_currentInputBuffer] + bufferSize > m_config.encodeBufferSize) {
         m_error = true;
-        m_errorString = "Buffer Overflow";
+        m_errorString += "Buffer Overflow. ";
     } else {
         m_buffersInputFill[m_currentInputBuffer] += bufferSize;
     }
@@ -700,8 +696,10 @@ void RecordingEncoding::run()
                 ++m_encodedSizeHigh;
 
             int err = sf_write_raw(m_output, m_buffersInput[0], m_buffersInputFill[0]);
-            if ((m_error = (err != (int)m_buffersInputFill[0])))
-                m_errorString = i18n("Error %1 writing output").arg(QString().setNum(err));
+            if (err != (int)m_buffersInputFill[0]) {
+                m_error = true;
+                m_errorString += i18n("Error %1 writing output. ").arg(QString().setNum(err));
+            }
 
 #ifdef HAVE_LAME_LAME_H
         } else {
@@ -710,6 +708,7 @@ void RecordingEncoding::run()
                 j_inc   = (m_config.channels == 1) ? 1 : 2,
                 dj      = (m_config.channels == 1) ? 0 : 1,
                 samples = m_buffersInputFill[0] / m_config.frameSize();
+
             for (int i = 0; i < samples; ++i, j+=j_inc) {
                 m_MP3LBuffer[i] = buffer[j];
                 m_MP3RBuffer[i] = buffer[j+dj];
@@ -725,7 +724,7 @@ void RecordingEncoding::run()
                                    m_MP3BufferSize);
             lameSerialization.unlock();
             if (n < 0) {
-                m_errorString = i18n("Error %1 while encoding mp3").arg(QString().setNum(n));
+                m_errorString += i18n("Error %1 while encoding mp3. ").arg(QString().setNum(n));
                 m_error       = true;
             } else if (n > 0) {
                 m_encodedSizeLow += n;
@@ -734,7 +733,7 @@ void RecordingEncoding::run()
 
                 int r = fwrite(m_MP3Buffer, 1, n, m_MP3Output);
                 if (r <= 0) {
-                    m_errorString = i18n("Error %1 writing output").arg(QString().setNum(r));
+                    m_errorString += i18n("Error %1 writing output. ").arg(QString().setNum(r));
                     m_error = true;
                 }
             }
@@ -756,6 +755,7 @@ void RecordingEncoding::run()
 
         QApplication::postEvent(m_parent, new QEvent(EncodingStep));
     }
+    m_done = true;
     closeOutput();
     QApplication::postEvent(m_parent, new QEvent(EncodingTerminated));
 }
@@ -772,7 +772,7 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
 
         if (!m_output) {
             m_error = true;
-            m_errorString = i18n("Cannot open output file %1").arg(output);
+            m_errorString += i18n("Cannot open output file %1. ").arg(output);
         }
 
 #ifdef HAVE_LAME_LAME_H
@@ -780,9 +780,10 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
         m_output = NULL;
         m_LAMEFlags = lame_init();
 
-        bool ok = m_LAMEFlags;
-
-        if (ok) {
+        if (!m_LAMEFlags) {
+            m_error = true;
+            m_errorString += i18n("Cannot initialize lalibmp3lame. ");
+        } else {
             lame_set_in_samplerate(m_LAMEFlags, m_config.rate);
             lame_set_num_channels(m_LAMEFlags, 2);
             //lame_set_quality(m_LAMEFlags, m_config.mp3Quality);
@@ -796,11 +797,12 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
             lame_set_VBR(m_LAMEFlags, vbr_default);
             lame_set_VBR_q(m_LAMEFlags, m_config.mp3Quality);
 
-            ok &= (lame_init_params(m_LAMEFlags) != -1);
+            if (lame_init_params(m_LAMEFlags) < 0) {
+                m_error = true;
+                m_errorString += i18n("Cannot initialize libmp3lame parameters. ").arg(output);
+            }
 
-            if (!ok) {
-                m_errorString = i18n("Cannot initialize liblame").arg(output);
-            } else {
+            if (!m_error) {
                 id3tag_init(m_LAMEFlags);
                 id3tag_add_v2(m_LAMEFlags);
                 QString title  = station + QString().sprintf(" - %s", (const char*)(QDateTime::currentDateTime().toString(Qt::ISODate)));
@@ -816,8 +818,10 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
             }
 
             m_MP3Output = fopen(output, "wb+");
-            if (!m_MP3Output)
-                m_errorString = i18n("Cannot open output file %1").arg(output);
+            if (!m_MP3Output) {
+                m_errorString += i18n("Cannot open output file %1. ").arg(output);
+                m_error = true;
+            }
 
             int nSamples = m_config.encodeBufferSize / m_config.frameSize();
             m_MP3BufferSize = nSamples + nSamples / 4 + 7200;
@@ -825,10 +829,14 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
 
             m_MP3LBuffer = new short int[nSamples];
             m_MP3RBuffer = new short int[nSamples];
+
+            if (!m_MP3Buffer || !m_MP3LBuffer || !m_MP3RBuffer) {
+                m_error = true;
+                m_errorString += i18n("Cannot allocate buffers for mp3 encoding. ");
+            }
         }
 
-        ok &= m_MP3Output && m_MP3Buffer;
-        if (!ok) {
+        if (m_error) {
             if (m_LAMEFlags) lame_close(m_LAMEFlags);
             m_LAMEFlags = NULL;
             if (m_MP3Output) fclose(m_MP3Output);
@@ -841,11 +849,8 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
             if (m_MP3LBuffer) delete[] m_MP3LBuffer;
             if (m_MP3RBuffer) delete[] m_MP3RBuffer;
             m_MP3LBuffer = m_MP3RBuffer = NULL;
-
-            m_error = true;
         }
     }
-    m_error |= !m_MP3Output;
 #endif
     return !m_error;
 }
@@ -864,12 +869,12 @@ void RecordingEncoding::closeOutput()
                                       m_MP3BufferSize);
             if (n < 0) {
                 m_error = true;
-                m_errorString = i18n("Error %1 while encoding mp3").arg(QString().setNum(n));
+                m_errorString += i18n("Error %1 while encoding mp3. ").arg(QString().setNum(n));
             } else if (n > 0) {
                 int r = fwrite(m_MP3Buffer, 1, n, m_MP3Output);
                 if (r <= 0) {
                     m_error = true;
-                    m_errorString = i18n("Error %1 writing output").arg(QString().setNum(r));
+                    m_errorString += i18n("Error %1 writing output. ").arg(QString().setNum(r));
                 } else {
                     lame_mp3_tags_fid(m_LAMEFlags, m_MP3Output);
                 }
