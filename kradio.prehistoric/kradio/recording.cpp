@@ -403,11 +403,15 @@ void Recording::customEvent(QCustomEvent *e)
 	
 	switch(e->type()) {
 		case START_EVENT :
-			notifyRecordingStarted(); break;
+			notifyRecordingStarted(); 
+		    notifyRecordingContextChanged(*c);
+		    break;
 		case PROCESS_EVENT :			
 		    notifyRecordingContextChanged(*c); break;
 		case STOP_EVENT :
-		    notifyRecordingStopped(); break;
+		    notifyRecordingContextChanged(*c);
+		    notifyRecordingStopped();
+		    break;
 		default:
 			break;
 	}

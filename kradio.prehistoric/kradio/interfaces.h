@@ -545,27 +545,43 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *__i)
 
 template <class thisIF, class cmplIF>
 bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
-{
-	cmplClass *_i  = dynamic_cast<cmplClass*>(__i);
+{   
+	kdDebug() << "InterfaceBase::disconnect(" << __i << ") ENTER" << endl;
+	cmplClass *_i = dynamic_cast<cmplClass*>(__i);
+
+	kdDebug() << "cmplClass = " << _i << endl;
 
 	// use cache to find pointer in connections list
 	cmplIF *i = _i ? _i->me : NULL;
+
+	kdDebug() << "cmplIF = " << i << endl;
 
 	// The cached me pointer might already point to an destroyed
 	// object. We must use it only for identifying the entry in
 	// connections list
 
     if (i) {
-		noticeDisconnect(i, _i->me_valid);
-		_i->noticeDisconnect(me, me_valid);
+		kdDebug() << "this->noticeDisconnect" << endl;
+		if (me_valid)
+			noticeDisconnect(i, _i->me_valid);
+		kdDebug() << "_i->noticeDisconnect" << endl;
+		if (_i->me_valid)
+			_i->noticeDisconnect(me, me_valid);
 		
+		kdDebug() << "this->remove(i)" << endl;
 		connections.remove (i);
+		kdDebug() << "i->remove(me)" << endl;
 		i->connections.remove(me);
 		
-		noticeDisconnected(i, _i->me_valid);
-		_i->noticeDisconnected(me, me_valid);
+		kdDebug() << "this->noticeDisconnected" << endl;
+		if (me_valid)
+			noticeDisconnected(i, _i->me_valid);
+		kdDebug() << "_i->noticeDisconnected" << endl;
+		if (_i->me_valid)
+			_i->noticeDisconnected(me, me_valid);
 	}
 		
+	kdDebug() << "InterfaceBase::disconnect EXIT" << endl;
 	return true;
 }
 

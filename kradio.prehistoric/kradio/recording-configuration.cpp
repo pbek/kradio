@@ -57,9 +57,9 @@ bool RecordingConfiguration::noticeRecordingConfigChanged(const RecordingConfig 
 	editDirectory->setURL(c.directory);
 
 	switch (c.bits) {
-		case 8 : editRate->setCurrentItem(BITS_8_IDX ); break;
-		case 16: editRate->setCurrentItem(BITS_16_IDX); break;
-		default: editRate->setCurrentItem(BITS_16_IDX);
+		case 8 : editBits->setCurrentItem(BITS_8_IDX ); break;
+		case 16: editBits->setCurrentItem(BITS_16_IDX); break;
+		default: editBits->setCurrentItem(BITS_16_IDX);
 	}
 	switch (c.channels) {
 		case 1 : editChannels->setCurrentItem(CHANNELS_MONO_IDX); break;
@@ -72,15 +72,15 @@ bool RecordingConfiguration::noticeRecordingConfigChanged(const RecordingConfig 
 		default: editSign->setCurrentItem(SIGN_SIGNED_IDX); break;
 	}
 	switch (c.rate) {
-		case 44100: editSign->setCurrentItem(RATE_44100_IDX); break;
-		case 22050: editSign->setCurrentItem(RATE_22050_IDX); break;
-		case 11025: editSign->setCurrentItem(RATE_11025_IDX); break;
-		default:    editSign->setCurrentItem(RATE_44100_IDX); break;
+		case 44100: editRate->setCurrentItem(RATE_44100_IDX); break;
+		case 22050: editRate->setCurrentItem(RATE_22050_IDX); break;
+		case 11025: editRate->setCurrentItem(RATE_11025_IDX); break;
+		default:    editRate->setCurrentItem(RATE_44100_IDX); break;
 	}
 	switch (c.littleEndian) {
-		case 0 : editSign->setCurrentItem(ENDIAN_BIG_IDX); break;
-		case 1 : editSign->setCurrentItem(ENDIAN_LITTLE_IDX); break;
-		default: editSign->setCurrentItem(ENDIAN_LITTLE_IDX); break;
+		case 0 : editEndianess->setCurrentItem(ENDIAN_BIG_IDX); break;
+		case 1 : editEndianess->setCurrentItem(ENDIAN_LITTLE_IDX); break;
+		default: editEndianess->setCurrentItem(ENDIAN_LITTLE_IDX); break;
 	}
 	switch (c.outputFormat) {
 		case RecordingConfig::outputWAV:  editFileFormat->setCurrentItem(FORMAT_WAV_IDX);  break;

@@ -29,6 +29,7 @@
 #include "docking.h"
 #include "radioview.h"
 #include "recording.h"
+#include "recording-monitor.h"
 
 
 static const char *description = "KRadio";
@@ -67,6 +68,7 @@ int main(int argc, char *argv[])
     docking->show();
     RadioView    *view        = new RadioView   (NULL, "radioview-1");
     Recording    *record      = new Recording   (      "recording-1");
+    RecordingMonitor *monitor = new RecordingMonitor(NULL, "recordingmonitor-1");
     
     a.insertPlugin(lircsupport);
     a.insertPlugin(v4lradio);
@@ -76,6 +78,7 @@ int main(int argc, char *argv[])
     a.insertPlugin(docking);
     a.insertPlugin(view);
 	a.insertPlugin(record);
+	a.insertPlugin(monitor);
 
     a.restoreState(KGlobal::config());
    
