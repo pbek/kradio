@@ -34,8 +34,9 @@
 
 struct video_tuner;
 struct video_audio;
+#ifdef HAVE_V4L2
 struct v4l2_tuner;
-
+#endif
 
 class V4LRadio : public QObject,
 	             public PluginBase,
