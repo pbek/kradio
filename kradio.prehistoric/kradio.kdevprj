@@ -29,7 +29,7 @@ author=Martin Witte / Frank Schwanz
 configure_args=--prefix=/usr --sysconfdir=/etc/kde2
 email=witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
 kdevprj_version=1.3
-lfv_open_groups=Header,Quellen
+lfv_open_groups=Andere,Header,Quellen
 make_options=\s-j1
 makefiles=Makefile.am,kradio/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true
@@ -166,37 +166,37 @@ type=DATA
 [kradio/hi16-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/hicolor/16x16/apps/kradio.png
+install_location=$$(kde_icondir)/hicolor/16x16/apps/kradio.png
 type=DATA
 
 [kradio/hi22-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/hicolor/22x22/apps/kradio.png
+install_location=$$(kde_icondir)/hicolor/22x22/apps/kradio.png
 type=DATA
 
 [kradio/hi24-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/hicolor/24x24/apps/kradio.png
+install_location=$$(kde_icondir)/hicolor/24x24/apps/kradio.png
 type=DATA
 
 [kradio/hi32-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/hicolor/32x32/apps/kradio.png
+install_location=$$(kde_icondir)/hicolor/32x32/apps/kradio.png
 type=DATA
 
 [kradio/hi48-app-kradio.png]
 dist=true
-install=false
-install_location=
+install=true
+install_location=$$(kde_icondir)/hicolor/48x48/apps/kradio.png
 type=DATA
 
 [kradio/hi64-app-kradio.png]
 dist=true
-install=false
-install_location=
+install=true
+install_location=$$(kde_icondir)/hicolor/64x64/apps/kradio.png
 type=DATA
 
 [kradio/kradio.cpp]
@@ -208,7 +208,7 @@ type=SOURCE
 [kradio/kradio.desktop]
 dist=true
 install=true
-install_location=$$$$(kde_appsdir)/Applications/kradio.desktop
+install_location=$$(kde_appsdir)/Applications/kradio.desktop
 type=DATA
 
 [kradio/kradio.h]
@@ -220,7 +220,7 @@ type=HEADER
 [kradio/kradiorc.example]
 dist=true
 install=false
-install_location=$$$$(kde_confdir)/kradiorc
+install_location=$$(kde_confdir)/kradiorc
 type=DATA
 
 [kradio/lircsupport.cpp]
@@ -238,37 +238,37 @@ type=HEADER
 [kradio/lo16-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/locolor/16x16/apps/kradio.png
+install_location=$$(kde_icondir)/locolor/16x16/apps/kradio.png
 type=DATA
 
 [kradio/lo22-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/locolor/22x22/apps/kradio.png
+install_location=$$(kde_icondir)/locolor/22x22/apps/kradio.png
 type=DATA
 
 [kradio/lo24-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/hicolor/24x24/apps/kradio.png
+install_location=$$(kde_icondir)/hicolor/24x24/apps/kradio.png
 type=DATA
 
 [kradio/lo32-app-kradio.png]
 dist=true
 install=true
-install_location=$$$$(kde_icondir)/locolor/32x32/apps/kradio.png
+install_location=$$(kde_icondir)/locolor/32x32/apps/kradio.png
 type=DATA
 
 [kradio/lo48-app-kradio.png]
 dist=true
-install=false
-install_location=
+install=true
+install_location=$$(kde_icondir)/locolor/48x48/apps/kradio.png
 type=DATA
 
 [kradio/lo64-app-kradio.png]
 dist=true
-install=false
-install_location=
+install=true
+install_location=$$(kde_icondir)/locolor/64x64/apps/kradio.png
 type=DATA
 
 [kradio/main.cpp]

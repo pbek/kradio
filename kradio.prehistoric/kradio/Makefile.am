@@ -7,35 +7,47 @@ kradio_LDADD   =  $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
 EXTRA_DIST = main.cpp kradio.cpp kradio.h kradio.desktop lo32-app-kradio.png lo16-app-kradio.png RadioView.ui v4lradio.cpp v4lradio.h docking.cpp docking.h lo22-app-kradio.png hi16-app-kradio.png hi22-app-kradio.png hi32-app-kradio.png dot-lircrc.example kradiorc.example hi24-app-kradio.png lo24-app-kradio.png radiostation.cpp radiostation.h radiobase.cpp radiobase.h utils.h alarm.cpp alarm.h lircsupport.cpp lircsupport.h dot-kradiorc.example hi48-app-kradio.png hi64-app-kradio.png lo48-app-kradio.png lo64-app-kradio.png 
 
 install-data-local:
-	$(mkinstalldirs) $$(kde_appsdir)/Applications/
-	$(INSTALL_DATA) $(srcdir)/kradio.desktop $$(kde_appsdir)/Applications/kradio.desktop
-	$(mkinstalldirs) $$(kde_icondir)/locolor/32x32/apps/
-	$(INSTALL_DATA) $(srcdir)/lo32-app-kradio.png $$(kde_icondir)/locolor/32x32/apps/kradio.png
-	$(mkinstalldirs) $$(kde_icondir)/locolor/16x16/apps/
-	$(INSTALL_DATA) $(srcdir)/lo16-app-kradio.png $$(kde_icondir)/locolor/16x16/apps/kradio.png
-	$(mkinstalldirs) $$(kde_icondir)/locolor/22x22/apps/
-	$(INSTALL_DATA) $(srcdir)/lo22-app-kradio.png $$(kde_icondir)/locolor/22x22/apps/kradio.png
-	$(mkinstalldirs) $$(kde_icondir)/hicolor/16x16/apps/
-	$(INSTALL_DATA) $(srcdir)/hi16-app-kradio.png $$(kde_icondir)/hicolor/16x16/apps/kradio.png
-	$(mkinstalldirs) $$(kde_icondir)/hicolor/22x22/apps/
-	$(INSTALL_DATA) $(srcdir)/hi22-app-kradio.png $$(kde_icondir)/hicolor/22x22/apps/kradio.png
-	$(mkinstalldirs) $$(kde_icondir)/hicolor/32x32/apps/
-	$(INSTALL_DATA) $(srcdir)/hi32-app-kradio.png $$(kde_icondir)/hicolor/32x32/apps/kradio.png
-	$(mkinstalldirs) $$(kde_icondir)/hicolor/24x24/apps/
-	$(INSTALL_DATA) $(srcdir)/hi24-app-kradio.png $$(kde_icondir)/hicolor/24x24/apps/kradio.png
-	$(mkinstalldirs) $$(kde_icondir)/hicolor/24x24/apps/
-	$(INSTALL_DATA) $(srcdir)/lo24-app-kradio.png $$(kde_icondir)/hicolor/24x24/apps/kradio.png
+	$(mkinstalldirs) $(kde_appsdir)/Applications/
+	$(INSTALL_DATA) $(srcdir)/kradio.desktop $(kde_appsdir)/Applications/kradio.desktop
+	$(mkinstalldirs) $(kde_icondir)/locolor/32x32/apps/
+	$(INSTALL_DATA) $(srcdir)/lo32-app-kradio.png $(kde_icondir)/locolor/32x32/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/locolor/16x16/apps/
+	$(INSTALL_DATA) $(srcdir)/lo16-app-kradio.png $(kde_icondir)/locolor/16x16/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/locolor/22x22/apps/
+	$(INSTALL_DATA) $(srcdir)/lo22-app-kradio.png $(kde_icondir)/locolor/22x22/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/16x16/apps/
+	$(INSTALL_DATA) $(srcdir)/hi16-app-kradio.png $(kde_icondir)/hicolor/16x16/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/22x22/apps/
+	$(INSTALL_DATA) $(srcdir)/hi22-app-kradio.png $(kde_icondir)/hicolor/22x22/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/32x32/apps/
+	$(INSTALL_DATA) $(srcdir)/hi32-app-kradio.png $(kde_icondir)/hicolor/32x32/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/24x24/apps/
+	$(INSTALL_DATA) $(srcdir)/hi24-app-kradio.png $(kde_icondir)/hicolor/24x24/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/24x24/apps/
+	$(INSTALL_DATA) $(srcdir)/lo24-app-kradio.png $(kde_icondir)/hicolor/24x24/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/48x48/apps/
+	$(INSTALL_DATA) $(srcdir)/hi48-app-kradio.png $(kde_icondir)/hicolor/48x48/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/64x64/apps/
+	$(INSTALL_DATA) $(srcdir)/hi64-app-kradio.png $(kde_icondir)/hicolor/64x64/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/locolor/48x48/apps/
+	$(INSTALL_DATA) $(srcdir)/lo48-app-kradio.png $(kde_icondir)/locolor/48x48/apps/kradio.png
+	$(mkinstalldirs) $(kde_icondir)/locolor/64x64/apps/
+	$(INSTALL_DATA) $(srcdir)/lo64-app-kradio.png $(kde_icondir)/locolor/64x64/apps/kradio.png
 
 uninstall-local:
-	-rm -f $$(kde_appsdir)/Applications/kradio.desktop
-	-rm -f $$(kde_icondir)/locolor/32x32/apps/kradio.png
-	-rm -f $$(kde_icondir)/locolor/16x16/apps/kradio.png
-	-rm -f $$(kde_icondir)/locolor/22x22/apps/kradio.png
-	-rm -f $$(kde_icondir)/hicolor/16x16/apps/kradio.png
-	-rm -f $$(kde_icondir)/hicolor/22x22/apps/kradio.png
-	-rm -f $$(kde_icondir)/hicolor/32x32/apps/kradio.png
-	-rm -f $$(kde_icondir)/hicolor/24x24/apps/kradio.png
-	-rm -f $$(kde_icondir)/hicolor/24x24/apps/kradio.png
+	-rm -f $(kde_appsdir)/Applications/kradio.desktop
+	-rm -f $(kde_icondir)/locolor/32x32/apps/kradio.png
+	-rm -f $(kde_icondir)/locolor/16x16/apps/kradio.png
+	-rm -f $(kde_icondir)/locolor/22x22/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/16x16/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/22x22/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/32x32/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/24x24/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/24x24/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/48x48/apps/kradio.png
+	-rm -f $(kde_icondir)/hicolor/64x64/apps/kradio.png
+	-rm -f $(kde_icondir)/locolor/48x48/apps/kradio.png
+	-rm -f $(kde_icondir)/locolor/64x64/apps/kradio.png
 
 ####### kdevelop will overwrite this part!!! (end)############
 # this 10 paths are KDE specific. Use them:
