@@ -198,8 +198,9 @@ void QuickBar::activateButton(const RadioStation &rs)
 	if (pwr && buttonID >= 0) {
 		m_buttonGroup->setButton(buttonID);
 	} else {
-		// FIXME: please test, is this here ok?
-		m_buttonGroup->setButton(-1);
+		for (QToolButton *b = m_buttons.first(); b; b = m_buttons.next()) {
+			b->setOn(false);
+		}
 	}
 
 	setCaption(pwr && rs.isValid() ? rs.name() : "KRadio");
@@ -236,6 +237,7 @@ void QuickBar::rebuildGUI()
 	// we use buttonGroup to enable automatic toggle/untoggle
 	m_buttonGroup->setExclusive(true);
 	m_buttonGroup->setFrameStyle(QFrame::NoFrame);
+	m_buttons.clear();
 
     int buttonID = 0;
     const RawStationList &stations = queryStations().all();
@@ -245,10 +247,11 @@ void QuickBar::rebuildGUI()
 		const RadioStation &rs = stations.stationWithID(*it);
 		if (! rs.isValid()) continue;
 
-        KToolBarButton *b = new KToolBarButton(QPixmap(rs.iconName()), buttonID,
-                                               this, "",
-                                               m_showShortName ? rs.shortName() : rs.name());
+        QToolButton *b = new QToolButton(this, "");
+        m_buttons.append(b);
 	    b->setToggleButton(true);
+	    b->setIconSet(QPixmap(rs.iconName()));
+	    b->setText(m_showShortName ? rs.shortName() : rs.name());
 
         b->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred));
 

@@ -332,10 +332,11 @@ bool V4LRadio::setFrequency(float freq)
 {
 	stopSeek();
 	
+	if (m_currentStation.frequency() == freq) {
+		return true;
+	}
+	
 	if (m_radio_fd > 0) {
-		if (m_currentStation.frequency() == freq) {
-			return true;
-		}
 		
   		bool oldMute = isMuted();
   		if (!oldMute) mute();
@@ -364,16 +365,13 @@ bool V4LRadio::setFrequency(float freq)
         // unmute this radio device, because we now have the current
         // radio station
 
-        m_currentStation.setFrequency(freq);
   		if (!oldMute) unmute();
-
-        notifyFrequencyChanged(freq, &m_currentStation);
-        notifyStationChanged(m_currentStation);
-    
-		return true;
-	} else {
-		return false;
-	}	
+	}
+	
+    m_currentStation.setFrequency(freq);	
+    notifyFrequencyChanged(freq, &m_currentStation);
+    notifyStationChanged(m_currentStation);
+    return true;
 }
 
 
@@ -553,7 +551,9 @@ void V4LRadio::radio_init()
 	readAudioInfo();
 
   	// restore frequency
-  	setFrequency(getFrequency());
+    float old = getFrequency();
+    m_currentStation.setFrequency(0);
+  	setFrequency(old);
 
   	// read volume level from mixer
   	setVolume (getVolume());

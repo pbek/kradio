@@ -31,6 +31,7 @@
 class ButtonFlowLayout;
 class QButtonGroup;
 class KConfig;
+class QToolButton;
 
 /**
   *@author Martin Witte / Klas Kalass
@@ -105,6 +106,8 @@ protected :
 
     ButtonFlowLayout *m_layout;
     QButtonGroup     *m_buttonGroup;
+
+    QPtrList<QToolButton> m_buttons;
 
     // config
     bool              m_showShortName;

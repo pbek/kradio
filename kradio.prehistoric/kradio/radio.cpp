@@ -303,7 +303,8 @@ bool Radio::noticePowerChanged (bool on, const IRadioDevice *sender)
 bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender)
 {
 	if (sender == m_activeDevice) {
-		notifyStationChanged(rs, getStationIdx(rs));
+		int idx = getStationIdx(rs);
+		notifyStationChanged(m_stationList.at(idx), idx);
 		return true;
 	}
 	return false;
