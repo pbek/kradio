@@ -36,16 +36,6 @@ struct video_audio;
 struct v4l2_tuner;
 
 
-struct V4LCaps
-{
-	int     version;
-	QString description;
-
-	V4LCaps(int v, const QString &d)
-		: version(v), description(d) {}
-};
-
-
 class V4LRadio : public QObject,
 	             public PluginBase,
                  public IRadioDevice,
@@ -159,6 +149,7 @@ ANSWERS:
     const QString &getMixerDevice () const { return m_mixerDev; }
     int            getMixerChannel() const { return m_mixerChannel; }
 	float          getDeviceVolume() const;
+	const V4LCaps &getCapabilities() const { return m_caps; }
 
     // anything else
 
@@ -198,7 +189,7 @@ protected:
 	FrequencySeekHelper    m_seekHelper;
 	float                  m_scanStep;
 
-	QString                m_description;
+	V4LCaps                m_caps;
 	QString                m_radioDev;
 	QString                m_mixerDev;
 	int                    m_mixerChannel;
@@ -206,7 +197,6 @@ protected:
 	int                    m_mixer_fd;
 	
 
-	int                           m_v4lVersion;
 	mutable struct video_audio   *m_audio;
 	mutable struct video_tuner   *m_tuner;
 #ifdef HAVE_V4L2

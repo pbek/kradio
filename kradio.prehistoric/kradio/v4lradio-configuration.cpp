@@ -28,7 +28,7 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent)
   : V4LRadioConfigurationUI(parent),
     m_mixerChannelMask (0),
     m_ignoreGUIChanges(false),
-    m_myChange(0),
+    m_myControlChange(0),
     m_orgTreble(-1),
     m_orgBass(-1),
     m_orgBalance(-2),
@@ -153,12 +153,34 @@ bool V4LRadioConfiguration::noticeDeviceVolumeChanged(float v)
 	v = v > 1 ? 1 : v;
 	v = v < 0 ? 0 : v;
 
-	if (!m_myChange)
+	if (!m_myControlChange)
 		m_orgDeviceVolume = v;
 
 	editDeviceVolume->setValue(v);
 	sliderDeviceVolume->setValue(65535 - (int)rint(v*65535));
 	m_ignoreGUIChanges = old;
+	return true;
+}
+
+
+bool V4LRadioConfiguration::noticeCapabilitiesChanged(const V4LCaps &c)
+{
+	labelDeviceVolume ->setEnabled(c.hasVolume);
+	editDeviceVolume  ->setEnabled(c.hasVolume);
+	sliderDeviceVolume->setEnabled(c.hasVolume);
+
+	labelTreble ->setEnabled(c.hasTreble);
+	editTreble  ->setEnabled(c.hasTreble);
+	sliderTreble->setEnabled(c.hasTreble);
+
+	labelBass ->setEnabled(c.hasBass);
+	editBass  ->setEnabled(c.hasBass);
+	sliderBass->setEnabled(c.hasBass);
+
+	labelBalance ->setEnabled(c.hasBalance);
+	editBalance  ->setEnabled(c.hasBalance);
+	sliderBalance->setEnabled(c.hasBalance);
+
 	return true;
 }
 
@@ -218,7 +240,7 @@ bool V4LRadioConfiguration::noticeTrebleChanged(float t)
 	t = t > 1 ? 1 : t;
 	t = t < 0 ? 0 : t;
 
-	if (!m_myChange)
+	if (!m_myControlChange)
 		m_orgTreble = t;
 			
 	editTreble->setValue(t);
@@ -235,7 +257,7 @@ bool V4LRadioConfiguration::noticeBassChanged(float b)
 	b = b > 1 ? 1 : b;
 	b = b < 0 ? 0 : b;
 
-	if (!m_myChange)
+	if (!m_myControlChange)
 		m_orgBass = b;
 
 	editBass->setValue(b);
@@ -252,7 +274,7 @@ bool V4LRadioConfiguration::noticeBalanceChanged(float b)
 	b = b >  1 ?  1 : b;
 	b = b < -1 ? -1 : b;
 
-	if (!m_myChange)
+	if (!m_myControlChange)
 		m_orgBalance = b;
 
 	editBalance->setValue(b);
@@ -356,6 +378,11 @@ void V4LRadioConfiguration::slotOK()
 	}
 		
 	sendMixerDevice(editMixerDevice->text(), mixerChannel);
+
+	m_orgTreble       = queryTreble();
+	m_orgBass         = queryBass();
+	m_orgBalance      = queryBalance();
+	m_orgDeviceVolume = queryDeviceVolume();
 }
 
 
@@ -366,9 +393,10 @@ void V4LRadioConfiguration::slotCancel()
 	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
 	noticeSignalMinQualityChanged(querySignalMinQuality());
 	noticeScanStepChanged(queryScanStep());
-	sendTreble(m_orgTreble);
-	sendBass(m_orgBass);
-	sendBalance(m_orgBalance);
+	
+	sendTreble      (m_orgTreble);
+	sendBass        (m_orgBass);
+	sendBalance     (m_orgBalance);
 	sendDeviceVolume(m_orgDeviceVolume);
 }
 
@@ -387,33 +415,33 @@ void V4LRadioConfiguration::guiMaxFrequencyChanged(int v)
 void V4LRadioConfiguration::slotDeviceVolumeChanged (double v) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
-	++m_myChange;
+	++m_myControlChange;
 	sendDeviceVolume(v);
-	--m_myChange;
+	--m_myControlChange;
 }
 
 void V4LRadioConfiguration::slotTrebleChanged (double t) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
-	++m_myChange;
+	++m_myControlChange;
 	sendTreble(t);
-	--m_myChange;
+	--m_myControlChange;
 }
 
 void V4LRadioConfiguration::slotBassChanged   (double b) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
-	++m_myChange;
+	++m_myControlChange;
 	sendBass(b);
-	--m_myChange;
+	--m_myControlChange;
 }
 
 void V4LRadioConfiguration::slotBalanceChanged(double b) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
-	++m_myChange;
+	++m_myControlChange;
 	sendBalance(b);
-	--m_myChange;
+	--m_myControlChange;
 }
 
 
@@ -422,9 +450,9 @@ void V4LRadioConfiguration::slotDeviceVolumeChanged (int v) // for slider, 0..65
 	if (m_ignoreGUIChanges) return;
 	v = v >  65535 ? 65535 : v;
 	v = v <      0 ?     0 : v;
-	++m_myChange;
+	++m_myControlChange;
 	sendDeviceVolume((float)(65535-v) / 65535.0);
-	--m_myChange;
+	--m_myControlChange;
 }
 
 void V4LRadioConfiguration::slotTrebleChanged (int t) // for slider, 0..65535
@@ -432,9 +460,9 @@ void V4LRadioConfiguration::slotTrebleChanged (int t) // for slider, 0..65535
 	if (m_ignoreGUIChanges) return;
 	t = t >  65535 ? 65535 : t;
 	t = t <      0 ?     0 : t;
-	++m_myChange;
+	++m_myControlChange;
 	sendTreble((float)(65535-t) / 65535.0);
-	--m_myChange;
+	--m_myControlChange;
 }
 
 void V4LRadioConfiguration::slotBassChanged   (int b) // for slider, 0..65535
@@ -442,9 +470,9 @@ void V4LRadioConfiguration::slotBassChanged   (int b) // for slider, 0..65535
 	if (m_ignoreGUIChanges) return;
 	b = b >  65535 ? 65535 : b;
 	b = b <      0 ?     0 : b;
-	++m_myChange;
+	++m_myControlChange;
 	sendBass((float)(65535-b) / 65535.0);
-	--m_myChange;
+	--m_myControlChange;
 }
 
 void V4LRadioConfiguration::slotBalanceChanged(int b) // for slider, 0..65535
@@ -452,8 +480,8 @@ void V4LRadioConfiguration::slotBalanceChanged(int b) // for slider, 0..65535
 	if (m_ignoreGUIChanges) return;
 	b = b >  65535 ? 65535 : b;
 	b = b <      0 ?     0 : b;
-	++m_myChange;
+	++m_myControlChange;
 	sendBalance((float)(b - 32768) / 32767);
-	--m_myChange;
+	--m_myControlChange;
 }
 

@@ -37,7 +37,9 @@
 #include "pluginmanager.h"
 
 struct _lrvol { unsigned char l, r; short dummy; };
-QString v4lUnknownDescr = "unknown v4l device";
+
+
+///////////////////////////////////////////////////////////////////////
 
 V4LRadio::V4LRadio(const QString &name)
   : PluginBase(name),
@@ -57,7 +59,6 @@ V4LRadio::V4LRadio(const QString &name)
 	m_seekHelper(*this),	
 	m_scanStep(0.05),
 
-	m_description(v4lUnknownDescr),
 	m_radioDev("/dev/radio0"),
 	m_mixerDev("/dev/mixer0"),
 	m_mixerChannel(0),	
@@ -78,7 +79,7 @@ V4LRadio::V4LRadio(const QString &name)
 	m_tuner2 = new v4l2_tuner;
 	m_tuner2->index = 0;
 #endif
-	m_v4lVersion = 1;
+	m_caps.version = 0;
 
 	m_seekHelper.connect(this);
 }
@@ -197,7 +198,7 @@ const RadioStation &V4LRadio::getCurrentStation() const
 
 const QString &V4LRadio::getDescription() const
 {
-	return m_description;
+	return m_caps.description;
 }
 
 
@@ -286,10 +287,6 @@ bool V4LRadio::setDeviceVolume (float v)
 
 bool V4LRadio::mute (bool mute)
 {
-	// mute
-  	if (!readAudioInfo())
-	   return false;
-
     if (m_muted != mute) {
 		m_muted = mute;
 		bool r = writeAudioInfo();
@@ -504,11 +501,11 @@ bool V4LRadio::setFrequency(float freq)
 	    }
 
 		int r = -1;
-		if (m_v4lVersion == 1) {
+		if (m_caps.version == 1) {
 			r = ioctl(m_radio_fd, VIDIOCSFREQ, &lfreq);
 		}
 #ifdef HAVE_V4L2
-		else if (m_v4lVersion == 2) {
+		else if (m_caps.version == 2) {
 			v4l2_frequency   tmp;
 			tmp.tuner = 0;
 			tmp.type = V4L2_TUNER_RADIO;
@@ -517,7 +514,7 @@ bool V4LRadio::setFrequency(float freq)
 		}
 #endif
 	    else {
-			kdDebug() << "V4LRadio::setFrequency: don't known how to handle V4L-version " << m_v4lVersion << endl;
+			kdDebug() << "V4LRadio::setFrequency: don't known how to handle V4L-version " << m_caps.version << endl;
 	    }
 
   		if (r) {
@@ -630,11 +627,10 @@ bool  V4LRadio::setRadioDevice(const QString &s)
 		powerOff();
 		m_radioDev = s;
 
-		V4LCaps c = readV4LCaps(m_radioDev);
-        m_v4lVersion  = c.version;
-        m_description = c.description;
+		m_caps = readV4LCaps(m_radioDev);
 		notifyRadioDeviceChanged(m_radioDev);
-        notifyDescriptionChanged(m_description);
+        notifyDescriptionChanged(m_caps.description);
+        notifyCapabilitiesChanged(m_caps);
 		setPower(p);
 	}
 	return true;
@@ -664,14 +660,12 @@ bool  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
 		m_mixerDev = m;
 		m_mixerChannel = ch;
 
-		V4LCaps c = readV4LCaps(m_radioDev);
-        m_v4lVersion  = c.version;
-        m_description = c.description;
-        
+		m_caps = readV4LCaps(m_radioDev);
 		notifyRadioDeviceChanged(m_radioDev);
-        notifyDescriptionChanged(m_description);
-        
+        notifyDescriptionChanged(m_caps.description);
+        notifyCapabilitiesChanged(m_caps);        
 		notifyMixerDeviceChanged(m_mixerDev, m_mixerChannel);
+		
 		setPower(p);
 	}
 	return true;
@@ -771,9 +765,9 @@ void V4LRadio::radio_init()
 	if (isSeekRunning())
 		stopSeek();
 
-	V4LCaps c = readV4LCaps(m_radioDev);
-    m_v4lVersion  = c.version;
-    m_description = c.description;
+	m_caps = readV4LCaps(m_radioDev);
+	notifyCapabilitiesChanged(m_caps);
+    notifyDescriptionChanged(m_caps.description);
         
 	m_mixer_fd = open(m_mixerDev, O_RDONLY);
 	if (m_mixer_fd < 0) {
@@ -831,7 +825,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 	int r;
 	int fd;
 
-	V4LCaps c(0, v4lUnknownDescr);
+	V4LCaps c;
 
 	fd = open(device, O_RDONLY);
 
@@ -844,11 +838,23 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 	r = ioctl(fd, VIDIOCGCAP, &caps);
 	if (r == 0) {
 		c.version = 1;
+		
 		size_t l = sizeof(caps.name);
 		l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
 		memcpy(buffer, caps.name, l);
 		buffer[l] = 0;
 		c.description = buffer;
+
+		video_audio audiocaps;
+		if (0 == ioctl(fd, VIDIOCGAUDIO, &audiocaps)) {
+			kdDebug() << "V4LRadio::readV4LCaps: audio caps = " << audiocaps.flags << endl;
+			c.hasVolume  = (audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0;
+			c.hasTreble  = (audiocaps.flags & VIDEO_AUDIO_TREBLE)  != 0;
+			c.hasBass    = (audiocaps.flags & VIDEO_AUDIO_BASS)    != 0;
+
+			// at least my driver has support for balance, but the bit is not set ...
+			c.hasBalance = true; //(audiocaps.flags & VIDEO_AUDIO_BALANCE) != 0;
+		}
 	} else {
 		kdDebug() << "V4LRadio::readV4LCaps: error reading V4L1 caps\n";
 	}
@@ -857,11 +863,23 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 	r = ioctl(fd, VIDIOC_QUERYCAP, &caps2);
 	if (r == 0) {
 		c.version  = 2;
+		
 		size_t l = sizeof(caps.name);
 		l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
 		memcpy(buffer, caps.name, l);
 		buffer[l] = 0;
 		c.description = buffer;
+
+		v4l2_queryctrl  ctrl;
+		ctrl.id = V4L2_CID_AUDIO_VOLUME;
+		c.hasVolume = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		ctrl.id = V4L2_CID_AUDIO_TREBLE;
+		c.hasTreble = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		ctrl.id = V4L2_CID_AUDIO_BASS;
+		c.hasBass   = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		ctrl.id = V4L2_CID_AUDIO_BALANCE;
+		c.hasBalance = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		
 	} else {
 		kdDebug() << "V4LRadio::readV4LCaps: error reading V4L2 caps\n";
 	}
@@ -895,7 +913,7 @@ bool V4LRadio::readTunerInfo() const
 		int r = 0;
 
 		// v4l1
-		if (m_v4lVersion == 1) {
+		if (m_caps.version == 1) {
 			r = ioctl(m_radio_fd, VIDIOCGTUNER, m_tuner);
 
 			if (r == 0) {
@@ -910,7 +928,7 @@ bool V4LRadio::readTunerInfo() const
 		}
 #ifdef HAVE_V4L2
 	    // v4l2
-		else if (m_v4lVersion == 2) {
+		else if (m_caps.version == 2) {
 			r = ioctl(m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
 
 			if (r == 0) {
@@ -925,7 +943,7 @@ bool V4LRadio::readTunerInfo() const
 		}
 #endif
 		else {
-			kdDebug() << "V4LRadio::readTunerInfo: don't known how to handle V4L-version " << m_v4lVersion << endl;
+			kdDebug() << "V4LRadio::readTunerInfo: don't known how to handle V4L-version " << m_caps.version << endl;
 		}
 		
 		if (r != 0) {
@@ -954,16 +972,16 @@ bool V4LRadio::readTunerInfo() const
 
 	// extract information on current state
 	float oldq = m_signalQuality;
-	if (m_v4lVersion == 1) {
+	if (m_caps.version == 1) {
 		m_signalQuality = float(m_tuner->signal) / 32767.0;
 	}
 #ifdef HAVE_V4L2
-    else if (m_v4lVersion == 2) {
+    else if (m_caps.version == 2) {
 		m_signalQuality = float(m_tuner2->signal) / 32767.0;
     }
 #endif
 	else {
-		kdDebug() << "V4LRadio::readTunerInfo: don't known how to handle V4L-version " << m_v4lVersion << endl;
+		kdDebug() << "V4LRadio::readTunerInfo: don't known how to handle V4L-version " << m_caps.version << endl;
 	}
 
 	if (m_signalQuality != oldq)
@@ -1003,7 +1021,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 
 	if (m_radio_fd >= 0) {
 		int r = -1;
-		if (m_v4lVersion == 1) {
+		if (m_caps.version == 1) {
 		    if (m_muted) m_audio->flags |=  VIDEO_AUDIO_MUTE;
 		    else         m_audio->flags &= ~VIDEO_AUDIO_MUTE;
 
@@ -1017,13 +1035,17 @@ bool V4LRadio::updateAudioInfo(bool write) const
 			m_stereo = (r == 0) && ((m_audio->mode  & VIDEO_SOUND_STEREO) != 0);
 			m_muted  = (r != 0) || ((m_audio->flags & VIDEO_AUDIO_MUTE) != 0);
 
-		    m_treble  = r ? 0 : (1 / 65535.0 * (float)m_audio->treble);
-		    m_bass    = r ? 0 : (1 / 65535.0 * (float)m_audio->bass);
-		    m_balance = r ? 0 : (1 / 32767.0 * (float)(m_audio->balance - 32768));
-		    m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)m_audio->volume);
+			/* Some drivers seem to set volumes to zero if they are muted.
+			   Thus we do not reload them if radio is muted */
+			if (!m_muted && !write) {
+				m_treble  = r ? 0 : (1 / 65535.0 * (float)m_audio->treble);
+				m_bass    = r ? 0 : (1 / 65535.0 * (float)m_audio->bass);
+				m_balance = r ? 0 : (1 / 32767.0 * (float)(m_audio->balance - 32768));
+				m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)m_audio->volume);
+			}
 		}
 #ifdef HAVE_V4L2
-		else if (m_v4lVersion == 2) {
+		else if (m_caps.version == 2) {
 			v4l2_control   ctl;
 			if (write) {
 				V4L2_S_CTRL(V4L2_CID_AUDIO_MUTE,    m_muted);
@@ -1035,14 +1057,20 @@ bool V4LRadio::updateAudioInfo(bool write) const
 				int x = 0;    // x stores first ioctl error
 				V4L2_G_CTRL(V4L2_CID_AUDIO_MUTE);
                 m_muted   = (r != 0) || ctl.value;
-				V4L2_G_CTRL(V4L2_CID_AUDIO_TREBLE);
-                m_treble  = r ? 0 : (1 / 65535.0 * (float)ctl.value); 
-				V4L2_G_CTRL(V4L2_CID_AUDIO_BASS);
-                m_bass    = r ? 0 : (1 / 65535.0 * (float)ctl.value); 
-				V4L2_G_CTRL(V4L2_CID_AUDIO_BALANCE);
-                m_balance = r ? 0 : (1 / 32767.0 * (float)(ctl.value - 32768));
-				V4L2_G_CTRL(V4L2_CID_AUDIO_VOLUME);
-                m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)ctl.value);
+
+				/* Some drivers seem to set volumes to zero if they are muted.
+				   Thus we do not reload them if radio is muted */
+				if (!m_muted) {
+                
+					V4L2_G_CTRL(V4L2_CID_AUDIO_TREBLE);
+					m_treble  = r ? 0 : (1 / 65535.0 * (float)ctl.value); 
+					V4L2_G_CTRL(V4L2_CID_AUDIO_BASS);
+					m_bass    = r ? 0 : (1 / 65535.0 * (float)ctl.value); 
+					V4L2_G_CTRL(V4L2_CID_AUDIO_BALANCE);
+					m_balance = r ? 0 : (1 / 32767.0 * (float)(ctl.value - 32768));
+					V4L2_G_CTRL(V4L2_CID_AUDIO_VOLUME);
+					m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)ctl.value);
+				}
                 
                 r = ioctl (m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
                 m_stereo = (r == 0) && ((m_tuner2->rxsubchans & V4L2_TUNER_SUB_STEREO) != 0);
@@ -1052,7 +1080,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 		}
 #endif
 		else  {
-			kdDebug() << "V4LRadio::updateAudioInfo: don't known how to handle V4L-version " << m_v4lVersion << endl;
+			kdDebug() << "V4LRadio::updateAudioInfo: don't known how to handle V4L-version " << m_caps.version << endl;
 		}
 		
 		if (r) {
@@ -1064,11 +1092,18 @@ bool V4LRadio::updateAudioInfo(bool write) const
 		}
 	}
 
-
 	// prevent loops, if noticeXYZ-method is reading my state
 	bool oldBlock = m_blockReadAudio;
 	m_blockReadAudio = true;
 
+	// ignore values read if a feature is not supported
+	if (!m_caps.hasVolume)   m_deviceVolume = 1.0;
+	if (!m_caps.hasTreble)   m_treble       = 1.0;
+	if (!m_caps.hasBass  )   m_bass         = 1.0;
+	if (!m_caps.hasBalance)  m_balance      = 0.0;
+
+    // send notifications
+	
 	if (oldStereo != m_stereo)
 		notifyStereoChanged(m_stereo);
 	if (oldMute != m_muted)

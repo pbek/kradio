@@ -18,6 +18,30 @@
 #include <linux/soundcard.h>
 #include "v4lcfg_interfaces.h"
  
+///////////////////////////////////////////////////////////////////////
+
+V4LCaps::V4LCaps()
+  : version(0),
+    description(QString::null),
+    hasVolume(false),
+    hasTreble(false),
+    hasBass(false),
+    hasBalance(false)
+{
+}
+
+V4LCaps::V4LCaps(int v, const QString &d,
+        bool vol,  bool treble,
+        bool bass, bool balance )
+  : version(v),
+    description(d),
+    hasVolume(vol),
+    hasTreble(treble),
+    hasBass(bass),
+    hasBalance(balance)
+{
+}
+
 // IV4LCfg
  
 IF_IMPL_SENDER  (   IV4LCfg::notifyRadioDeviceChanged(const QString &s),
@@ -29,7 +53,9 @@ IF_IMPL_SENDER  (   IV4LCfg::notifyMixerDeviceChanged(const QString &s, int Chan
 IF_IMPL_SENDER  (   IV4LCfg::notifyDeviceVolumeChanged(float v),
                     noticeDeviceVolumeChanged(v)
                 )
-
+IF_IMPL_SENDER  (   IV4LCfg::notifyCapabilitiesChanged(const V4LCaps &c),
+                    noticeCapabilitiesChanged(c)
+                )
 
 // IV4LCfgClient
 
@@ -65,12 +91,18 @@ IF_IMPL_QUERY   (   float IV4LCfgClient::queryDeviceVolume (),
 					getDeviceVolume(),
 					0.0
                 )
+V4LCaps emptyCaps;
+IF_IMPL_QUERY   (   const V4LCaps &IV4LCfgClient::queryCapabilities(),
+					getCapabilities(),
+					emptyCaps
+                )
 
 void IV4LCfgClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeRadioDeviceChanged(queryRadioDevice());
 	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
 	noticeDeviceVolumeChanged(queryDeviceVolume());
+	noticeCapabilitiesChanged(queryCapabilities());
 }
 
 
@@ -79,6 +111,7 @@ void IV4LCfgClient::noticeDisconnected (cmplInterface *, bool /*pointer_valid*/)
 	noticeRadioDeviceChanged(queryRadioDevice());
 	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
 	noticeDeviceVolumeChanged(queryDeviceVolume());
+	noticeCapabilitiesChanged(queryCapabilities());
 }
 
 

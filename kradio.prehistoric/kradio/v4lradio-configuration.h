@@ -49,6 +49,7 @@ RECEIVERS:
 	bool noticeRadioDeviceChanged(const QString &s);
 	bool noticeMixerDeviceChanged(const QString &s, int Channel);
 	bool noticeDeviceVolumeChanged(float v);
+	bool noticeCapabilitiesChanged(const V4LCaps &c);
 
 // IRadiODeviceClient
 
@@ -103,13 +104,12 @@ protected:
 
 	int  m_mixerChannelMask;
 	bool m_ignoreGUIChanges;
-	int  m_myChange;
-
+	
+	int   m_myControlChange;
 	float m_orgTreble,
 	      m_orgBass,
 	      m_orgBalance,
 	      m_orgDeviceVolume;
-
 };
 
 #endif

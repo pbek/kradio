@@ -20,6 +20,27 @@
 
 #include "interfaces.h"
 
+struct V4LCaps
+{
+	int     version;
+	QString description;
+
+	bool    hasVolume;
+	bool    hasTreble;
+	bool    hasBass;
+	bool    hasBalance;
+
+	V4LCaps();
+	V4LCaps(int v, const QString &d,
+		    bool hasVolume,
+		    bool hasTreble,
+		    bool hasBass,
+		    bool hasBalance
+		   );
+};
+
+
+
 INTERFACE(IV4LCfg, IV4LCfgClient)
 {
 public:
@@ -35,12 +56,14 @@ SENDERS:
 	IF_SENDER  (   notifyRadioDeviceChanged(const QString &s)                   )
 	IF_SENDER  (   notifyMixerDeviceChanged(const QString &s, int Channel)      )
 	IF_SENDER  (   notifyDeviceVolumeChanged(float v)                           )
+	IF_SENDER  (   notifyCapabilitiesChanged(const V4LCaps &)                   )
 
 ANSWERS:
     IF_ANSWER  (   const QString &getRadioDevice () const                       )
     IF_ANSWER  (   const QString &getMixerDevice () const                       )
     IF_ANSWER  (   int            getMixerChannel() const                       )
     IF_ANSWER  (   float          getDeviceVolume() const                       )
+    IF_ANSWER  (   const V4LCaps &getCapabilities() const                       )
 
 };
 
@@ -61,12 +84,14 @@ RECEIVERS:
 	IF_RECEIVER(   noticeRadioDeviceChanged(const QString &s)                    )
 	IF_RECEIVER(   noticeMixerDeviceChanged(const QString &s, int Channel)       )
 	IF_RECEIVER(   noticeDeviceVolumeChanged(float v)                            )
+	IF_RECEIVER(   noticeCapabilitiesChanged(const V4LCaps &)                   )
 
 QUERIES:
     IF_QUERY   (   const QString &queryRadioDevice ()                            )
     IF_QUERY   (   const QString &queryMixerDevice ()                            )
     IF_QUERY   (   int            queryMixerChannel()                            )
     IF_QUERY   (   float          queryDeviceVolume()                            )
+    IF_QUERY   (   const V4LCaps &queryCapabilities()                            )
 
 RECEIVERS:
 	virtual void noticeConnected    (cmplInterface *, bool /*pointer_valid*/);
