@@ -25,12 +25,12 @@
 
 #include "quickbar.h"
 #include "radiostation.h"
+#include "buttonflowlayout.h"
 
-QuickBar::QuickBar(RadioBase *_radio, QWidget * parent = 0, const char * name = 0)
+QuickBar::QuickBar(RadioBase *_radio, QWidget * parent, const char * name)
   : QWidget(parent,name),
     layout(0),
     buttonGroup(0),
-    layoutVertical(false),
     showShortName(true)
 {
     radio = _radio;
@@ -46,6 +46,9 @@ QuickBar::QuickBar(RadioBase *_radio, QWidget * parent = 0, const char * name = 
 
 QuickBar::~QuickBar()
 {
+  if (layout){
+    delete layout;
+  }
 }
 
 void QuickBar::restoreState (KConfig *c)
@@ -64,7 +67,6 @@ void QuickBar::restoreState (KConfig *c)
 	bool sticky = c->readBoolEntry("sticky", true);
 	KWin::setOnAllDesktops(winId(), sticky);
 	if (sticky) KWin::setOnDesktop(winId(), Desktop);
-	layoutVertical = c->readBoolEntry("layoutVertical", false);
 	showShortName = c->readBoolEntry("showShortName", true);
 }
 
@@ -81,7 +83,6 @@ void QuickBar::saveState (KConfig *c) const
     c->writeEntry("w", size().width());
     c->writeEntry("h", size().height());
 
-    c->writeEntry("layoutVertical", layoutVertical);
     c->writeEntry("showShortName",showShortName);
 }
 
@@ -93,16 +94,13 @@ void QuickBar::rebuildGUI()
 	Buttons.clear();
 
 	if (layout) delete layout;
-	layout =  layoutVertical
-	  ? new QVBoxLayout(this)
-	  : new QHBoxLayout(this);
-	layout->setMargin(1);
+	layout=new ButtonFlowLayout(this);
+
+	layout->setMargin(2);
 	layout->setSpacing(2);
 
 	if (buttonGroup) delete buttonGroup;
-	buttonGroup = layoutVertical
-	  ? new QVButtonGroup(this)
-	  : new QHButtonGroup(this);
+	buttonGroup = new QButtonGroup(this);
 	
 	// we use buttonGroup to enable automatic toggle/untoggle
 	buttonGroup->setExclusive(true);
@@ -127,7 +125,7 @@ void QuickBar::rebuildGUI()
 	    Buttons.push_back(b);
 	    connect (b, SIGNAL(clicked()), (*i), SLOT(activate()));
 	    buttonGroup->insert(b,index);
-	    //layout->addWidget(b);
+	    layout->add(b);
 	    index++;
     	}
     }
@@ -172,40 +170,42 @@ void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
 
 void QuickBar::resizeEvent (QResizeEvent *e)
 {
-    QWidget::resizeEvent (e);
+  // minimumSize might change because of the flow layout
+  setMinimumSize(layout->minimumSize());
+  QWidget::resizeEvent (e);
 
-    IntVector   c_w;
-    int         c = 0,
-                 nc = Buttons.size();
+//     IntVector   c_w;
+//     int         c = 0,
+//       nc = Buttons.size();
 
-    int x, y, maxy;
-    QSize mys = size();
-restart1:
-    c_w.clear();
-    c_w.insert(c_w.end(), nc, 0);
-restart2:
-    c = 0;
-    x = y = maxy = 0;
-	for (ciButtonList i = Buttons.begin(); i != Buttons.end(); ++i) {
-  	    QSize s = (*i)->sizeHint();  	
-        if (x && x + s.width() > mys.width()) {
-   	        nc = c;
-   	        goto restart1;
-	    } else {
-	        if (c_w[c] < s.width()) {
-	            c_w[c] = s.width();
-	            goto restart2;
-	        }
-	        s.setWidth(c_w[c]);
-	    }
-	    (*i)->move(x, y);
-	    (*i)->resize(s.width(), s.height());
-        maxy = s.height() > maxy ? s.height() : maxy;	
-   	    x += s.width();
-   	    if (++c >= nc) {
-   	        c = 0;
-   	        x = 0;
-   	        y += maxy;
-   	    }
-	}
+//     int x, y, maxy;
+//     QSize mys = size();
+//  restart1:
+//     c_w.clear();
+//     c_w.insert(c_w.end(), nc, 0);
+//  restart2:
+//     c = 0;
+//     x = y = maxy = 0;
+//     for (ciButtonList i = Buttons.begin(); i != Buttons.end(); ++i) {
+//       QSize s = (*i)->sizeHint();  	
+//       if (x && x + s.width() > mys.width()) {
+// 	nc = c;
+// 	goto restart1;
+//       } else {
+// 	if (c_w[c] < s.width()) {
+// 	  c_w[c] = s.width();
+// 	  goto restart2;
+// 	}
+// 	s.setWidth(c_w[c]);
+//       }
+//       (*i)->move(x, y);
+//       (*i)->resize(s.width(), s.height());
+//       maxy = s.height() > maxy ? s.height() : maxy;	
+//       x += s.width();
+//       if (++c >= nc) {
+// 	c = 0;
+// 	x = 0;
+// 	y += maxy;
+//       }
+//     }
 }

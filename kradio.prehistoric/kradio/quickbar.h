@@ -45,10 +45,9 @@ protected :
 
     RadioBase   *radio;
     ButtonList  Buttons;
-    QBoxLayout *layout;
+    QLayout *layout;
     QButtonGroup *buttonGroup;
     // config
-    bool layoutVertical;
     bool showShortName;
 public:
 	QuickBar(RadioBase *radio, QWidget * parent = 0, const char * name = 0);
