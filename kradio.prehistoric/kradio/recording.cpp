@@ -590,8 +590,9 @@ RecordingEncoding::RecordingEncoding(QObject *parent, unsigned int bufferBlockSi
       m_currentInputBuffer(0),
       m_encodedSizeLow(0),
       m_encodedSizeHigh(0),
-      m_output(NULL),
+      m_output(NULL)
 #ifdef HAVE_LAME_LAME_H
+      ,
       m_MP3Buffer(NULL),
       m_MP3BufferSize(0),
       m_MP3Output(NULL),
@@ -844,8 +845,8 @@ bool RecordingEncoding::openOutput(const QString &output, const QString &station
             m_error = true;
         }
     }
+    m_error |= !m_MP3Output;
 #endif
-    m_error = !m_output && !m_MP3Output;
     return !m_error;
 }
 
