@@ -582,7 +582,7 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 	if (me_valid && i)
 		noticeDisconnected(i, _i->me_valid);
 	kdDebug() << "_i->noticeDisconnected" << endl;
-	if (_i->me_valid && me)
+	if (_i && _i->me_valid && me)
 		_i->noticeDisconnected(me, me_valid);
 		
 	kdDebug() << "InterfaceBase::disconnect EXIT" << endl;
@@ -593,9 +593,9 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 template <class thisIF, class cmplIF>
 void InterfaceBase<thisIF, cmplIF>::disconnectAll()
 {
-	while (connections.count()) {
-		cmplIF *i = connections.getFirst();
-		if (i) disconnect(i);
+	IFList tmp = connections;
+	for (IFIterator it(tmp); it.current(); ++it) {
+		disconnect(it.current());
 	}
 }
 
