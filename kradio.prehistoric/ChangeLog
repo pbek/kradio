@@ -3,9 +3,10 @@
 				- make "good signal" level configurable, sometimes autoscan did not find all stations
 				- fix ugly setup dialog layout frame problem
 				- fix "alarm-enable is unset on restart" - problem
-				- kde like configuration dialog
-				- make configuration dialog non-modal
-				- "about" tab for station preset lists
+				- setupdialog: use kdialogbase to get usual kde like configuration dialog
+				- setupdialog: make it non-modal
+				- setupdialog: "about" tab for station preset lists
+				- setupdialog: fix update of station info after preset load
 
 0.2.6   emw     - activate station in setupdialog by freq, not stationId
                 - add "unknown station" to kradio->cbStations
