@@ -78,7 +78,7 @@ KRadioApp::~KRadioApp()
   if (radio)
     delete radio;
   if (quickbar)
-    delete quickbar,
+    delete quickbar;
   radio = 0;
 }
 
