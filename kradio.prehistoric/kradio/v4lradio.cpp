@@ -555,6 +555,8 @@ void   V4LRadio::restoreState (KConfig *config)
     config->setGroup(QString("v4lradio-") + name());
 
 	m_radioDev              = config->readEntry ("RadioDev", "/dev/radio");
+	notifyRadioDeviceChanged(m_radioDev);
+
 	m_mixerDev              = config->readEntry ("MixerDev", "/dev/mixer");
 
 	QString s               = config->readEntry ("MixerChannel", "line");	
@@ -567,6 +569,8 @@ void   V4LRadio::restoreState (KConfig *config)
 	if (m_mixerChannel == SOUND_MIXER_NRDEVICES)
 		m_mixerChannel = SOUND_MIXER_LINE;
 
+	notifyMixerDeviceChanged(m_mixerDev, m_mixerChannel);
+	
 	m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
 	m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
     notifyMinMaxFrequencyChanged(getMinFrequency(),getMaxFrequency());
@@ -599,6 +603,7 @@ void V4LRadio::createConfigurationPage()
     V4LRadioConfiguration *v4lconf = new V4LRadioConfiguration(f, this);
     connect(v4lconf);
     l->addWidget( v4lconf, 0, 0 );
+    m_manager->connectWithConfigDialog(v4lconf);
 }
 
 

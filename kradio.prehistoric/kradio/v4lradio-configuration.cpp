@@ -2,19 +2,36 @@
 ** ui.h extension file, included from the uic-generated form implementation.
 **
 ** If you wish to add, delete or rename functions or slots use
-** Qt Designer which will update this file, preserving your code. 
+** Qt Designer which will update this file, preserving your code.
 *****************************************************************************/
+
+#include <sys/ioctl.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <linux/soundcard.h>
 
 #include <qspinbox.h>
 #include <qlineedit.h>
+#include <qcombobox.h>
+#include <qlabel.h>
+#include <qfile.h>
+#include <qpushbutton.h>
+
+#include <kfiledialog.h>
 
 #include "v4lradio-configuration.h"
 #include "v4lradio.h"
 
 V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, V4LRadio *radio)
-  : V4LRadioConfigurationUI(parent)
+  : V4LRadioConfigurationUI(parent),
+    m_mixerChannelMask (0)
 {
 	connect (radio);
+
+	QObject::connect(buttonSelectRadioDevice, SIGNAL(clicked()),
+					 this, SLOT(selectRadioDevice()));
+	QObject::connect(buttonSelectMixerDevice, SIGNAL(clicked()),
+					 this, SLOT(selectMixerDevice()));
 }
 
 
@@ -53,7 +70,35 @@ bool V4LRadioConfiguration::noticeRadioDeviceChanged(const QString &s)
 bool V4LRadioConfiguration::noticeMixerDeviceChanged(const QString &s, int Channel)
 {
 	editMixerDevice->setText(s);
-	// FIXME: mixer channel
+
+    m_mixerChannelMask = 0;
+    bool ok = false;
+    comboMixerChannel->clear();
+    QFile f (s);
+    if (f.exists()) {
+		int mixer_fd = ::open((const char*)s, O_RDONLY);
+		if (mixer_fd > 0) {
+			if ( ioctl(mixer_fd, SOUND_MIXER_READ_DEVMASK, &m_mixerChannelMask) == 0 ) {
+				for (int i = 0; i < SOUND_MIXER_NRDEVICES; ++i) {
+					if (m_mixerChannelMask & (1 << i)) {
+						comboMixerChannel->insertItem(mixerChannelNames[i]);
+					}
+				}
+				ok = true;
+			}
+			::close(mixer_fd);
+		}
+    }
+    labelMixerChannel->setEnabled(ok);
+    comboMixerChannel->setEnabled(ok);
+
+	int idx = -1;
+	for (int i = 0; i <= Channel && i < SOUND_MIXER_NRDEVICES; ++i) {
+		if (m_mixerChannelMask & (1 << i))
+			++idx;
+	}
+    comboMixerChannel->setCurrentItem(idx);
+
 	return true;
 }
 
@@ -125,47 +170,10 @@ bool V4LRadioConfiguration::noticeMuted(bool /*m*/)
 	return false; // we don't care
 }
 
+  
 
 
-
-
-
-/*
-
-void SetupDialogGeneral::slotInit()
-{
-}
-
-void SetupDialogGeneral::slotDone()
-{
-}
-
-void SetupDialogGeneral::mixerDeviceChanged( const QString &md )
-{
-    MixerChannelMask = 0;
-    bool ok = false;
-    comboMixerChannel->clear();
-    QFile f (md);
-    if (f.exists()) {
-	int mixer_fd = ::open(md.ascii(), O_RDONLY);
-	if (mixer_fd > 0) {
-	    if ( ioctl(mixer_fd, SOUND_MIXER_READ_DEVMASK, &MixerChannelMask) == 0 ) {
-			for (int i = 0; i < SOUND_MIXER_NRDEVICES; ++i) {
-				if (MixerChannelMask & (1 << i)) {
-					comboMixerChannel->insertItem(mixerChannelNames[i]);
-				}
-			}
-			ok = true;
-	    }
-	    ::close(mixer_fd);
-	}
-    }
-    labelMixerChannel->setEnabled(ok);
-    comboMixerChannel->setEnabled(ok);
-}
-
-
-void SetupDialogGeneral::selectRadioDevice()
+void V4LRadioConfiguration::selectRadioDevice()
 {
     KFileDialog fd("/dev/", i18n("any") + " ( * )", this, i18n("radio device selection"), TRUE);
     fd.setMode(KFile::File | KFile::ExistingOnly);
@@ -177,7 +185,7 @@ void SetupDialogGeneral::selectRadioDevice()
 }
 
 
-void SetupDialogGeneral::selectMixerDevice()
+void V4LRadioConfiguration::selectMixerDevice()
 {
     KFileDialog fd("/dev/", i18n("any") + " ( * )", this, i18n("mixer device selection"), TRUE);
     fd.setMode(KFile::File | KFile::ExistingOnly);
@@ -190,6 +198,36 @@ void SetupDialogGeneral::selectMixerDevice()
 }
 
 
+void V4LRadioConfiguration::slotOk()
+{
+	sendMinFrequency(((float)editMinFrequency->value()) / 1000.0);
+	sendMaxFrequency(((float)editMaxFrequency->value()) / 1000.0);
+	sendSignalMinQuality(editSignalMinQuality->value() * 0.01);
+	sendRadioDevice(editRadioDevice->text());
+	sendScanStep(((float)editScanStep->value()) / 1000.0);
+
+	int mixerChannel          = SOUND_MIXER_LINE;
+
+	QString s = comboMixerChannel->currentText();
+	for (int i = 0; i < SOUND_MIXER_NRDEVICES; ++i) {
+		if (s == mixerChannelNames[i])
+			mixerChannel = i;
+	}
+		
+	sendMixerDevice(editMixerDevice->text(), mixerChannel);
+}
+
+
+void V4LRadioConfiguration::slotCancel()
+{
+	noticeRadioDeviceChanged(queryRadioDevice());
+	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
+	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
+	noticeSignalMinQualityChanged(querySignalMinQuality());
+	noticeScanStepChanged(queryScanStep());
+}
+
+/*
 void SetupDialogGeneral::minFrequencyChanged( int i )
 {
     editMaxFrequency->setMinValue(i+1);
@@ -241,7 +279,7 @@ void SetupDialogGeneral::getData( SetupDataGeneral &d ) const
 	d.scanStep              = ((float)editScanStep->value()) / 1000.0;
 
 	d.mixerChannel          = SOUND_MIXER_LINE;
-	
+
 	QString s = comboMixerChannel->currentText();
 	for (int i = 0; i < SOUND_MIXER_NRDEVICES; ++i) {
 		if (s == mixerChannelNames[i])

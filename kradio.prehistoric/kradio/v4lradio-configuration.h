@@ -64,6 +64,18 @@ RECEIVERS:
 	bool noticeStereoChanged(bool  s);
 	bool noticeMuted(bool m);
 
+protected slots:
+
+	void selectMixerDevice();
+	void selectRadioDevice();
+
+	void slotOk();
+	void slotCancel();
+
+protected:
+
+	int m_mixerChannelMask;
+
 };
 
 #endif

@@ -126,6 +126,16 @@ QFrame *PluginManager::addConfigurationPage (PluginBase *forWhom,
 }
 
 
+void PluginManager::connectWithConfigDialog(QObject *o)
+{
+	if (m_configDialog) {
+		QObject::connect(m_configDialog, SIGNAL(okClicked()),     o, SLOT(slotOk()));
+		QObject::connect(m_configDialog, SIGNAL(applyClicked()),  o, SLOT(slotOk()));
+		QObject::connect(m_configDialog, SIGNAL(cancelClicked()), o, SLOT(slotCancel()));
+	}
+}
+
+
 void PluginManager::createConfigDialog(const QString &title)
 {
 	PluginConfigurationDialog *cfg = new PluginConfigurationDialog(

@@ -60,6 +60,7 @@ public :
                                                const QString &itemname,
 									           const QString &header,
 									           const QPixmap &icon);
+	virtual void         connectWithConfigDialog(QObject *o);
 	
 	virtual void         noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
 	
