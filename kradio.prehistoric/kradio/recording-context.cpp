@@ -285,7 +285,7 @@ void RecordingContext::bufferAdded(unsigned int sizeDelta, const RecordingConfig
 		size_low += sizeDelta;
 		if (size_low < sizeDelta) ++size_high;
 
-		unsigned int samples = sizeDelta / sizeDelta;
+		unsigned int samples = sizeDelta / sampleSize;
 		subSecondSamples += samples;
 		seconds += subSecondSamples / c.rate;
 		subSecondSamples %= c.rate;
