@@ -32,277 +32,330 @@
 #include "docking.h"
 #include "radiocfgxmlhandler.h"
 
+
+
+QColor defaultDisplayColor    ( 77, 117,  77 );
+QColor defaultDisplayTextColor( 20, 244,  20 );
+
+
+
+
+
 KRadioApp::KRadioApp()
-  :kradio(0),
+ : kradio(0),
    tray(0),
    quickbar(0),
    timeControl(0),
    radio(0),
    setupDialog(0, false)
 {
-  // set configuration
-  config = KGlobal::config();
+    // set configuration
+    config = KGlobal::config();
+    setupStdConnections (this);
+    setupStdConnections (&setupDialog);
 
-  // the actual radio
-  radio = new V4LRadio(this, "");
+    // the actual radio
+    setupData.radio = radio = new V4LRadio(this, "");
+    setupStdConnections (radio);
 
-  // the quick selection buttons
-  quickbar = new QuickBar (radio, 0, "kradio-quickbar");
+    // the quick selection buttons
+    quickbar = new QuickBar (radio, 0, "kradio-quickbar");
+    setupStdConnections (quickbar);
 
-  // the main dialog
-  kradio = new KRadio(quickbar, radio, 0, "kradio-gui");
+    // the main dialog
+    kradio = new KRadio(quickbar, radio, 0, "kradio-gui");
+    setupStdConnections (kradio);
 
-  // timeControl
-  timeControl = new TimeControl(this, "kradio-timecontrol");
+    // timeControl
+    timeControl = new TimeControl(this, "kradio-timecontrol");
+    setupStdConnections (timeControl);
 
-  // Tray
-  tray = new RadioDocking(kradio, quickbar, radio, timeControl);
-
-  // lirc
+    // Tray
+    tray = new RadioDocking(kradio, quickbar, radio, timeControl);
+    setupStdConnections (tray);
+  
+    // lirc
 #ifdef HAVE_LIRC_CLIENT
 	lircHelper = new LircSupport (this, radio, timeControl);
+	setupStdConnections (lircHelper);
 #endif
 
-  // read configuration
-  readConfiguration();
+	// read configuration
+	readConfiguration();
 
-  // restore gui state
-  restoreState();
+	// restore gui state
+	emit sigRestoreState();
 
-  tray->setPixmap(BarIcon("kradio"));
-  connect(tray, SIGNAL(showAbout()),   &AboutApplication, SLOT(show()));
-  tray->show();
 
-  connect(kradio, SIGNAL(showAbout()), &AboutApplication, SLOT(show()));
-  connect(kradio, SIGNAL(runConfigure()), this, SLOT(slotRunConfigure()));
+	//
 
-  connect(timeControl, SIGNAL(sigAlarm(Alarm *)), this, SLOT(slotAlarm(Alarm *)));
-  connect(timeControl, SIGNAL(sigCountdownZero()), radio, SLOT(PowerOff()));
+	tray->setPixmap(BarIcon("kradio"));
+	connect(tray, SIGNAL(showAbout()),   &AboutApplication, SLOT(show()));
+	tray->show();
 
-  connect(radio, SIGNAL(sigPowerOn(bool)), timeControl, SLOT(stopCountdown()));
+	connect(kradio, SIGNAL(showAbout()), &AboutApplication, SLOT(show()));
+	connect(kradio, SIGNAL(runConfigure()), this, SLOT(slotRunConfigure()));
 
-  connect(&setupDialog, SIGNAL(apply()),         this, SLOT(slotApplyConfig()));
-  connect(&setupDialog, SIGNAL(okClicked()),     this, SLOT(slotApplyConfig()));
-  connect(&setupDialog, SIGNAL(cancelClicked()), this, SLOT(initSetupDialog()));
+	connect(timeControl, SIGNAL(sigAlarm(Alarm *)), this, SLOT(slotAlarm(Alarm *)));
+	connect(timeControl, SIGNAL(sigCountdownZero()), radio, SLOT(PowerOff()));
+
+	connect(radio, SIGNAL(sigPowerOn(bool)), timeControl, SLOT(stopCountdown()));
+
+	connect(&setupDialog, SIGNAL(apply()),         this, SLOT(slotApplyConfig()));
+	connect(&setupDialog, SIGNAL(okClicked()),     this, SLOT(slotApplyConfig()));
+	connect(&setupDialog, SIGNAL(cancelClicked()), this, SLOT(initSetupDialog()));
 
 }
 
 
 KRadioApp::~KRadioApp()
 {
-  saveConfiguration();
-  saveState();
+    saveConfiguration();
 
-  if (kradio){
-    delete kradio;
-  }
-  if (radio)
-    delete radio;
-  if (quickbar)
-    delete quickbar;
-  radio = 0;
+    emit sigSaveState();
+
+    if (kradio)
+        delete kradio;
+    if (radio)
+        delete radio;
+    if (quickbar)
+        delete quickbar;
+    radio = 0;
 
 #ifdef HAVE_LIRC_CLIENT
-  delete lircHelper;
+    delete lircHelper;
 #endif
 }
 
 
-void KRadioApp::readOptions()
+void KRadioApp::addPlugin (QObject *o)
 {
-	if (radio) {
+	if (!o)
+		return;
 
-		config->setGroup("devices");
-
-		QString rDev = config->readEntry ("RadioDev", "/dev/radio");
-		QString mDev = config->readEntry ("MixerDev", "/dev/mixer");
-		QString s = config->readEntry ("MixerChannel", "line");
-		int MixerChannel = 0;
-		for (MixerChannel = 0; MixerChannel < SOUND_MIXER_NRDEVICES; ++MixerChannel) {
-			if (s == mixerChannelLabels[MixerChannel] ||
-				s == mixerChannelNames[MixerChannel])
-				break;
-		}
-		if (MixerChannel == SOUND_MIXER_NRDEVICES)
-			MixerChannel = SOUND_MIXER_LINE;
-
-		radio->setDevices(rDev, mDev, MixerChannel);
-
-		radio->setRangeOverride(config->readBoolEntry ("fRangeOverride", false),
-		  					    config->readDoubleNumEntry ("fMinOverride", 87.0),
-							    config->readDoubleNumEntry ("fMaxOverride", 108.0));
-
-		radio->setSignalMinQuality(config->readDoubleNumEntry ("signalMinQuality", 0.75));
-
-		radio->setScanStep(config->readDoubleNumEntry ("scanStep", 0.05));
+	objects.append(o);
+	if (quietconnect (this, SIGNAL(sigConnectPlugin(QObjectList &)),
+					  o, SLOT(connectPlugin(QObjectList &)))) {
+	    emit sigConnectPlugin(objects);
+	    disconnect (this, SIGNAL(sigConnectPlugin(QObjectList &)),
+					  o, SLOT(connectPlugin(QObjectList &)));
 	}
-
-
-	if (timeControl) {
-
-		config->setGroup("alarms");
-
-		AlarmVector al;
-		int nAlarms = config->readNumEntry ("nAlarms", 0);
-		for (int idx = 1; idx <= nAlarms; ++idx) {
-			QString num = QString().setNum(idx);
-			QDateTime d = config->readDateTimeEntry(AlarmTimeElement       + num);
-			bool enable = config->readBoolEntry(AlarmEnabledElement        + num, false);
-			bool daily  = config->readBoolEntry(AlarmDailyElement          + num, false);
-			float vol   = config->readDoubleNumEntry(AlarmVolumeElement    + num, 1);
-			float freq  = config->readDoubleNumEntry(AlarmFrequencyElement + num, -1234);
-
-			// read StationID only for compatibility
-			int   stId  = config->readNumEntry(AlarmStationIDElement       + num, -1);
-
-			// for compatibility
-			if (freq != -1234) { // the freq entry already exists
-				// nothing to do
-			} else {             // the freq entry does not yet exist, use stationID if exists
-				freq = -1;
-				RadioStation *st = radio->getStation(stId);
-				if (st)
-					freq = st->getFrequency();
-			}
-
-			enable &= d.isValid();
-
-			Alarm *a = new Alarm ( this, d, daily, enable);
-			a->setVolumePreset(vol);
-			a->setFrequency(freq);
-			al.push_back(a);
-		}
-
-		if (al.size()) // only set alarms if alread written to standard kde config file (otherwise still in ~/.kradiorc)
-			timeControl->setAlarms(al);
-		for (iAlarmVector i = al.begin(); i != al.end(); ++i)
-			delete *i;
-
-
-
-		config->setGroup("sleep");
-
-		timeControl->setCountdownSeconds(config->readNumEntry("sleepMinutes", 30) * 60);
-	}
-
 }
 
 
-void KRadioApp::saveOptions()
+void KRadioApp::readConfiguration()
 {
-    if (radio) {
+	// first read XML station presets (and alarms for compatibility
 
-        config->setGroup("devices");
+    setupData.alarms.clear();
+    setupData.stations.clear();
+    
+	readXMLCfg (locateLocal("data", "kradio/stations.krp"), setupData.stations, setupData.info, setupData.alarms);
+	readXMLCfg (QString(getenv("HOME")) + "/.kradiorc",     setupData.stations, setupData.info, setupData.alarms);  // for backward compatibility
 
-		config->writeEntry("MixerDev", radio->mixerDevice());
-		config->writeEntry("RadioDev", radio->radioDevice());
-		int ch = radio->mixerChannel();
-		if(ch < 0 || ch >= SOUND_MIXER_NRDEVICES)
-			ch = SOUND_MIXER_LINE;
-		config->writeEntry("MixerChannel", mixerChannelNames[ch]);
-		config->writeEntry("fRangeOverride", radio->isRangeOverrideSet());
-		config->writeEntry("fMinOverride",   radio->minFrequency());
-		config->writeEntry("fMaxOverride",   radio->maxFrequency());
+    // now read options from kradiorc file
+	
+	config->setGroup("devices");
 
-		config->writeEntry("signalMinQuality", radio->getSignalMinQuality());
+	setupData.radioDev = config->readEntry ("RadioDev", "/dev/radio");
+	setupData.mixerDev = config->readEntry ("MixerDev", "/dev/mixer");
+	QString s          = config->readEntry ("MixerChannel", "line");
+	setupData.mixerChannel = 0;
+	for (setupData.mixerChannel = 0; setupData.mixerChannel < SOUND_MIXER_NRDEVICES; ++setupData.mixerChannel) {
+		if (s == mixerChannelLabels[MixerChannel] ||
+			s == mixerChannelNames[MixerChannel])
+			break;
+	}
+	if (setupData.mixerChannel == SOUND_MIXER_NRDEVICES)
+		setupData.mixerChannel = SOUND_MIXER_LINE;
 
-		config->writeEntry("scanStep", radio->getScanStep());
+	setupData.enableRangeOverride   = config->readBoolEntry      ("fRangeOverride", false);
+	setupData.minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
+	setupData.maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
 
-    }
+	setupData.signalMinQuality      = config->readDoubleNumEntry ("signalMinQuality", 0.75);
+	setupData.scanStep              = config->readDoubleNumEntry ("scanStep", 0.05);
+
+
+	
+	config->setGroup("alarms");
+
+	int nAlarms = config->readNumEntry ("nAlarms", 0);
+	for (int idx = 1; idx <= nAlarms; ++idx) {
+		QString num = QString().setNum(idx);
+		QDateTime d = config->readDateTimeEntry(AlarmTimeElement       + num);
+		bool enable = config->readBoolEntry(AlarmEnabledElement        + num, false);
+		bool daily  = config->readBoolEntry(AlarmDailyElement          + num, false);
+		float vol   = config->readDoubleNumEntry(AlarmVolumeElement    + num, 1);
+		float freq  = config->readDoubleNumEntry(AlarmFrequencyElement + num, -1234);
+
+		// read StationID only for compatibility
+		int   stId  = config->readNumEntry(AlarmStationIDElement       + num, -1);
+
+		// for compatibility
+		if (freq != -1234) { // the freq entry already exists
+			// nothing to do
+		} else {             // the freq entry does not yet exist, use stationID if exists
+			freq = -1;
+			if (stId >= 0 && stId < setupData.stations.size())
+				freq = setupData.stations[stId]->getFrequency();
+		}
+
+		enable &= d.isValid();
+
+		Alarm a ( this, d, daily, enable);
+		a->setVolumePreset(vol);
+		a->setFrequency(freq);
+		setupData.alarms.push_back(a);
+	}
+
+	// load colors
+
+	setupData.displayColor     = config->readColorEntry ("displayColor",     &defaultDisplayColor);
+	setupData.displayTextColor = config->readColorEntry ("displayTextColor", &defaultDisplayTextColor);
+	setupData.displayTextFont  = config->readEntry      ("displayTextFont",  "Helvetica");
+
+	// load other things
+
+	config->setGroup("sleep");
+
+	setupData.sleep  = config->readNumEntry("sleepMinutes", 30) * 60;
+
+    config->setGroup("QuickBar");
+
+	setupData->displayOnlyShortNames = config->readBoolEntry("showShortName", true);
+
+
+	// notify all other objects
+
+	emit sigConfigurationChanged(setupData);
+}
+
+
+void KRadioApp::saveConfiguration()
+{
+	writeXMLCfg(locateLocal("data", "kradio/stations.krp"),
+							setupData.stations,
+							setupData.info
+			   );
+
+	config->setGroup("devices");
+
+	config->writeEntry("MixerDev", setupData.mixerDev);
+	config->writeEntry("RadioDev", setupData.radioDev);
+	int ch = setupData.mixerChannel;
+	if(ch < 0 || ch >= SOUND_MIXER_NRDEVICES)
+		ch = SOUND_MIXER_LINE;
+	config->writeEntry("MixerChannel",   mixerChannelNames[ch]);
+	config->writeEntry("fRangeOverride", setupData.enableRangeOverride);
+	config->writeEntry("fMinOverride",   setupData.minFrequency);
+	config->writeEntry("fMaxOverride",   setupData.maxFrequency);
+
+	config->writeEntry("signalMinQuality", setupData.signalMinQuality);
+
+	config->writeEntry("scanStep", setupData.scanStep);
 
     // save alarms
 
-    if (timeControl) {
+	config->setGroup("alarms");
 
-        config->setGroup("alarms");
-
-		const AlarmVector &al = timeControl->getAlarms();
-		config->writeEntry("nAlarms", al.size());
-		int idx = 1;
-		for (ciAlarmVector i = al.begin(); i != al.end(); ++i, ++idx) {
-			const Alarm *a = *i;
-			QString num = QString().setNum(idx);
-			config->writeEntry (AlarmTimeElement      + num, a->alarmTime());
-			config->writeEntry (AlarmEnabledElement   + num, a->isEnabled());
-			config->writeEntry (AlarmDailyElement     + num, a->isDaily());
-			config->writeEntry (AlarmVolumeElement    + num, a->getVolumePreset());
-			config->writeEntry (AlarmFrequencyElement + num, a->getFrequency());
-			config->deleteEntry(AlarmStationIDElement + num);
-		}
-
-
-		config->setGroup("sleep");
-
-		config->writeEntry("sleepMinutes", (int)(timeControl->getCountdownSeconds() / 60));
+	config->writeEntry("nAlarms", setupData.alarms.size());
+	int idx = 1;
+	for (ciAlarmVector i = setupData.alarms.begin(); i != setupData.alarms.end(); ++i, ++idx) {
+		QString num = QString().setNum(idx);
+		config->writeEntry (AlarmTimeElement      + num, i->alarmTime());
+		config->writeEntry (AlarmEnabledElement   + num, i->isEnabled());
+		config->writeEntry (AlarmDailyElement     + num, i->isDaily());
+		config->writeEntry (AlarmVolumeElement    + num, i->getVolumePreset());
+		config->writeEntry (AlarmFrequencyElement + num, i->getFrequency());
+		config->deleteEntry(AlarmStationIDElement + num);
 	}
+
+	// save colors
+
+	config->writeEntry ("displayColor",     setupData.displayColor);
+	config->writeEntry ("displayTextColor", setupData.displayTextColor);
+	config->writeEntry ("displayTextFont",  setupData.displayTextFont);
+
+	// save other things
+
+	config->setGroup("sleep");
+
+	config->writeEntry("sleepMinutes",  setupData.sleep / 60);
+
+
+    config->setGroup("QuickBar");
+
+	config->writeEntry("showShortName", setupData.displayOnlyShortNames);
 }
 
 
 void KRadioApp::restoreState()
 {
-  config->setGroup("Recent");
-  float freq = config->readDoubleNumEntry("Frequency", 88);
-  radio->setFrequency(freq);
-  unsigned int vol = config->readNumEntry("Volume", 65535);
-  radio->setVolume(vol);
+    config->setGroup("Recent");
+    float freq = config->readDoubleNumEntry("Frequency", 88);
+    radio->setFrequency(freq);
+    unsigned int vol = config->readNumEntry("Volume", 65535);
+    radio->setVolume(vol);
 
-  if (config->readBoolEntry ("PowerOn"))
-    radio->PowerOn();
+    if (config->readBoolEntry ("PowerOn"))
+        radio->PowerOn();
 
-  // update kradio
-  if (kradio)
-    kradio->slotPowerOn (radio->isPowerOn());
+    // update kradio
+    if (kradio)
+        kradio->slotPowerOn (radio->isPowerOn());
 
-  // kradio: restore window size and position
-  if (kradio)
-    kradio->restoreState(config);
+//    emit sigRestoreState(config);
+/*    // kradio: restore window size and position
+    if (kradio)
+        kradio->restoreState(config);
 
-  // quickbar: restore size/position
-  if (quickbar)
-      quickbar->restoreState(config);
+    // quickbar: restore size/position
+    if (quickbar)
+        quickbar->restoreState(config);
+*/
 }
+
 
 void KRadioApp::saveState()
 {
-  config->setGroup("Recent");
-  if (radio)
-    config->writeEntry("Frequency", radio->getFrequency());
-  config->writeEntry("Volume", radio->getVolume());
+    config->setGroup("Recent");
+    if (radio)
+        config->writeEntry("Frequency", radio->getFrequency());
+    config->writeEntry("Volume", radio->getVolume());
 
-  config->writeEntry("PowerOn", radio->isPowerOn());
+    config->writeEntry("PowerOn", radio->isPowerOn());
 
-  // kradio: save window size and position
-  if (kradio)
-    kradio->saveState(config);
+//    emit sigSaveState(config);
 
-  // quickbar: restore size/position
-  if (quickbar)
-      quickbar->saveState(config);
+/*    // kradio: save window size and position
+    if (kradio)
+        kradio->saveState(config);
+
+    // quickbar: restore size/position
+    if (quickbar)
+        quickbar->saveState(config);
+*/
 }
 
+
+void KRadioApp::configurationChanged (const SetupData &sud)
+{
+}
+
+
+void KRadioApp::slotRunConfigure()
+{
+	setupDialog.show();
+	setupDialog.raise();
+}
 
 
 void KRadioApp::slotApplyConfig ()
 {
-    SetupData  d;
+	setupDialog.getData(setupData);
 
-	setupDialog.getData(d);
-
-	// general options
-	quickbar->setShowShortName(d.displayOnlyShortNames);
-
-	radio->setDevices(d.radioDev, d.mixerDev, d.mixerChannel);
-	radio->setRangeOverride(d.enableRangeOverride, d.minFrequency, d.maxFrequency);
-	radio->setSignalMinQuality(d.signalMinQuality);
-	radio->setScanStep(d.scanStep);
-	timeControl->setCountdownSeconds(d.sleep * 60);
-
-    // stations
-	radio->setStations(*d.stations);
-	radio->setStationListMetaData(d.info);
-
-	// alarms
-	timeControl->setAlarms(*d.alarms);
+	emit sigConfigurationChanged (setupData);
 }
 
 
@@ -322,93 +375,6 @@ void KRadioApp::slotAlarm (Alarm *a)
 			radio->setVolume (v);
 
 	}
-}
-
-
-void KRadioApp::saveConfiguration ()
-{
-	if (radio)
-		writeXMLCfg(locateLocal("data", "kradio/stations.krp"),
-								radio->getStations(),
-								radio->getStationListMetaData()
-							   );
-	saveOptions();
-}
-
-
-void KRadioApp::readConfiguration()
-{
-
-	// first read XML station presets (and alarms for compatibility
-
-	AlarmVector   al;
-	StationVector sl;
-	StationListMetaData info;
-
-	readXMLCfg (locateLocal("data", "kradio/stations.krp"), sl, info, al);
-	readXMLCfg (QString(getenv("HOME")) + "/.kradiorc",     sl, info, al);  // for backward compatibility
-
-	if (radio && radio->getStations().size() == 0) {
-		radio->setStations (sl);
-		radio->setStationListMetaData(info);
-	}
-
-	if (timeControl && timeControl->getAlarms().size() == 0)  // should be now in std kde config file,
-		timeControl->setAlarms (al);                          // but take care for compatibility
-
-	for (iAlarmVector i = al.begin(); i != al.end(); ++i)
-		delete *i;
-	for (iStationVector i = sl.begin(); i != sl.end(); ++i)
-		delete *i;
-
-
-    // load "normal" configuration
-    readOptions();
-
-
-    // initializeSetupDialog
-    initSetupDialog();
-}
-
-
-
-void KRadioApp::slotRunConfigure()
-{
-	setupDialog.show();
-	setupDialog.raise();
-}
-
-
-void KRadioApp::initSetupDialog()
-{
-    ////////////////////////
-	// prepare setupDialog
-
-    SetupData  d;
-
-    // General Options
-	d.radioDev              = radio ? radio->radioDevice() : QString("/dev/radio");
-	d.mixerDev              = radio ? radio->mixerDevice() : QString("/dev/mixer");
-	d.mixerChannel          = radio ? radio->mixerChannel() : 0;
-
-	d.displayOnlyShortNames = quickbar ? quickbar->getShowShortName() : false;
-	d.enableRangeOverride   = radio ? radio->isRangeOverrideSet() : false;
-	d.minFrequency          = radio ? radio->minFrequency() : 87;
-	d.maxFrequency          = radio ? radio->maxFrequency() : 109;
-	d.sleep                 = timeControl ? timeControl->getCountdownSeconds() / 60 : 30;
-	d.signalMinQuality      = radio ? radio->getSignalMinQuality() : 0.75;
-	d.scanStep              = radio ? radio->getScanStep() : 0.05;
-
-	// Station Options
-	d.stations = radio ? &radio->getStations() : NULL;
-	d.radio    = radio;
-	if (radio)
-		d.info = radio->getStationListMetaData();
-
-	// Alarm Options
-	d.alarms   = &timeControl->getAlarms();
-
-	setupDialog.setData(d);
 }
 
 
@@ -436,16 +402,12 @@ void readXMLCfg (const QString &url,
 	KIO::NetAccess::removeTempFile(tmpfile);
 
 	if (sl.size() == 0) {                                     // first non-empty configuration
-		const StationVector &_sl = handler.getStations();
-		for (ciStationVector i = _sl.begin(); i != _sl.end(); ++i)
-			sl.push_back(new RadioStation(**i));
+		sl = handler.getStations();
 		info = handler.getStationListMetaData();
 	}
 
 	if (al.size() == 0) {
-		const AlarmVector &_al = handler.getAlarms();
-		for (ciAlarmVector i = _al.begin(); i != _al.end(); ++i)
-			al.push_back(new Alarm(**i));
+		al = handler.getAlarms();
 	}
 }
 
@@ -468,24 +430,22 @@ QString writeXMLCfg (const StationVector &sl,
 	        t   + xmlOpenTag(StationListElement) +
 	        tt  + xmlOpenTag(StationListInfo) +
 	        ttt + xmlTag(StationListInfoMaintainer, info.Maintainer) +
-	        ttt + xmlTag(StationListInfoChanged, info.LastChange.toString(Qt::ISODate)) +
-	        ttt + xmlTag(StationListInfoCountry, info.Country) +
-	        ttt + xmlTag(StationListInfoCity, info.City) +
-	        ttt + xmlTag(StationListInfoMedia, info.Media) +
-	        ttt + xmlTag(StationListInfoComments, info.Comment) +
+	        ttt + xmlTag(StationListInfoChanged,    info.LastChange.toString(Qt::ISODate)) +
+	        ttt + xmlTag(StationListInfoCountry,    info.Country) +
+	        ttt + xmlTag(StationListInfoCity,       info.City) +
+	        ttt + xmlTag(StationListInfoMedia,      info.Media) +
+	        ttt + xmlTag(StationListInfoComments,   info.Comment) +
 	        tt  + xmlCloseTag (StationListInfo);
 
 	for (ciStationVector i = sl.begin(); i != sl.end(); ++i) {
-		const RadioStation *st = *i;
-
 		data += tt  + xmlOpenTag (StationElement) +
-				ttt + xmlTag (StationNameElement,         st->name()) +
-				ttt + xmlTag (StationShortNameElement,    st->getShortName()) +
-				ttt + xmlTag (StationIconStringElement,   st->getIconString()) +
-				ttt + xmlTag (StationQuickSelectElement,  st->useQuickSelect()) +
-				ttt + xmlTag (StationFrequencyElement,    st->getFrequency()) +
-				ttt + xmlTag (StationVolumePresetElement, st->getVolumePreset()) +
-				ttt + xmlTag (StationDockingMenuElement,  st->useInDockingMenu()) +
+				ttt + xmlTag (StationNameElement,         i->name()) +
+				ttt + xmlTag (StationShortNameElement,    i->getShortName()) +
+				ttt + xmlTag (StationIconStringElement,   i->getIconString()) +
+				ttt + xmlTag (StationQuickSelectElement,  i->useQuickSelect()) +
+				ttt + xmlTag (StationFrequencyElement,    i->getFrequency()) +
+				ttt + xmlTag (StationVolumePresetElement, i->getVolumePreset()) +
+				ttt + xmlTag (StationDockingMenuElement,  i->useInDockingMenu()) +
 				tt  + xmlCloseTag(StationElement);
 	}
 	data += t + xmlCloseTag(StationListElement) +

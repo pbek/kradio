@@ -17,8 +17,14 @@
 
 #include "radiostation.h"
 
-RadioStation::RadioStation(QObject *_parent)
-	: QObject (_parent)
+// Kopenhagener Wellenplan: 300kHz
+#define STATION_FREQ_INTERVAL_FM   0.3
+
+// Kopenhagener Wellenplan:   9kHz
+#define STATION_FREQ_INTERVAL_AM   0.009
+
+
+RadioStation::RadioStation()
 {
 	Frequency = 0;
 	ShortName = "";
@@ -28,10 +34,10 @@ RadioStation::RadioStation(QObject *_parent)
 	DockingMenu = true;
 }
 
-RadioStation::RadioStation(QObject *_parent, QString _name, QString _ShortName,
+RadioStation::RadioStation(QString _name, QString _ShortName,
 						   QString _iconString,
                            float _Frequency, float _volumePreset)
- : QObject (_parent, _name)
+ : QObject (NULL, _name)
 {
 	Frequency = _Frequency;
 	ShortName = _ShortName;
@@ -43,19 +49,7 @@ RadioStation::RadioStation(QObject *_parent, QString _name, QString _ShortName,
 
 
 RadioStation::RadioStation(const RadioStation &s)
-	: QObject (s.parent(), s.name())
-{
-	Frequency = s.Frequency;
-	ShortName = s.ShortName;
-	VolumePreset = s.VolumePreset;
-	QuickSelect = s.QuickSelect;
-	iconString = s.iconString;
-	DockingMenu = s.DockingMenu;
-}
-
-
-RadioStation::RadioStation(QObject *_parent, const RadioStation &s)
-	: QObject (_parent, s.name())
+	: QObject (NULL, s.name())
 {
 	Frequency = s.Frequency;
 	ShortName = s.ShortName;
@@ -69,6 +63,7 @@ RadioStation::RadioStation(QObject *_parent, const RadioStation &s)
 RadioStation::~RadioStation()
 {
 }
+
 
 QString RadioStation::getLongName() const
 {
@@ -98,4 +93,11 @@ void RadioStation::activate()
 bool RadioStation::isValid() const
 {
 	return Frequency > 0;
+}
+
+
+bool RadioStation::hasFrequency(float f) const
+{
+	float delta = f < 10 ? STATION_FREQ_INTERVAL_AM : STATION_FREQ_INTERVAL_FM;
+	return (Frequency + delta/2 > f && Frequency - delta/2 < f);
 }

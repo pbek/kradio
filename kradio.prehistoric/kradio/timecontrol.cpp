@@ -34,34 +34,23 @@ TimeControl::TimeControl (QObject *p, const QString &n)
 TimeControl::~TimeControl ()
 {
 	waitingFor = NULL;
-	for (iAlarmVector i = Alarms.begin(); i != Alarms.end(); ++i)
-		delete *i;
 }
 
 
 void TimeControl::setAlarms (const AlarmVector &al)
 {
 	waitingFor = NULL;
-	for (iAlarmVector i = Alarms.begin(); i != Alarms.end(); ++i) {
-		delete *i;
-	}
 	Alarms.clear();
-
 	addAlarms(al);
 }
 
 
 void TimeControl::addAlarms (const AlarmVector &al)
 {
-	for (ciAlarmVector i = al.begin(); i != al.end(); ++i) {
-		Alarm *a = new Alarm (this, **i);
-		Alarms.push_back(a);
-	}
+	Alarms.insert(Alarms.end(), al.begin(), al.end());
 
 	waitingFor = NULL;
 	slotAlarmTimeout();
-
-	emit sigConfigChanged();
 }
 
 
@@ -71,10 +60,10 @@ QDateTime TimeControl::nextAlarm (Alarm **save) const
 	          next;
 	if (save) *save = 0;
 	for (ciAlarmVector i = Alarms.begin(); i != Alarms.end(); ++i) {
-		QDateTime n = (*i)->nextAlarm();
+		QDateTime n = i->nextAlarm();
 		if (n.isValid() && n >= now && (!next.isValid() || n < next)) {
 			next = n;
-			if (save) *save = *i;
+			if (save) *save = &(*i);
 		}
 	}
 	return next;
@@ -84,27 +73,26 @@ QDateTime TimeControl::nextAlarm (Alarm **save) const
 void TimeControl::setCountdownSeconds(int n)
 {
 	countdownSeconds = n;
-	emit sigConfigChanged();
 }
 
 
-void TimeControl::startCountdown()
+void TimeControl::startSleepCountdown()
 {
 	countdownEnd = QDateTime::currentDateTime().addSecs(countdownSeconds);
 	countdownTimer.start(countdownSeconds * 1000, true);
-	emit sigStartCountdown();
+	emit sigSleepCountdownStarted(countdownEnd);
 }
 
 
-void TimeControl::stopCountdown()
+void TimeControl::stopSleepCountdown()
 {
 	countdownTimer.stop();
 	countdownEnd = QDateTime();
-	emit sigStopCountdown();
+	emit sigSleepCountdownStopped();
 }
 
 
-void TimeControl::startStopCountdown()
+void TimeControl::startStopSleepCountdown()
 {
     if (countdownEnd.isValid())
 		stopCountdown();
@@ -125,7 +113,7 @@ const QDateTime TimeControl::getCountdownEnd () const
 void TimeControl::slotCountdownTimeout()
 {
 	stopCountdown();
-	emit sigCountdownZero();
+	emit sigSleepCountdownZero();
 }
 
 
@@ -162,4 +150,51 @@ void TimeControl::slotAlarmTimeout()
 	}
 }
 
+
+void    TimeControl::restoreState (KConfig *)
+{
+}
+
+
+void    TimeControl::saveState    (KConfig *)
+{
+}
+
+
+void    TimeControl::configurationChanged (const SetupData &d)
+{
+	setCountdownSeconds(d.sleep);
+	setAlarms(d.alarms);
+}
+
+
+void    TimeControl::connectInterface(QObjectList &ol)
+{
+	for (QObject *i = objects.first(); i; i = objects.next()) {
+		if (this == i)
+			continue;
+
+		// configuration
+
+		quietconnect (i, SIGNAL(sigConfigurationChanged(const SetupData &)),
+					  this, SLOT(configurationChanged(const SetupData &)));
+        quietconnect (i, SIGNAL(sigSaveState(KConfig *)),
+		              this, SLOT(saveState(KConfig *)));
+    	quietconnect (i, SIGNAL(sigRestoreState(KConfig *)),
+				      this, SLOT(restoreState(KConfig *)));
+
+    	// commands
+
+		quietconnect (i, SIGNAL(sigStartSleepCountdown()),     this, SLOT(startSleepCountdown()));
+		quietconnect (i, SIGNAL(sigStopSleepCountdown()),      this, SLOT(stopSleepCountdown()));
+		quietconnect (i, SIGNAL(sigStartStopSleepCountdown()), this, SLOT(startStopSleepCountdown()));
+
+		// notifications
+
+        quietconnect (this, SIGNAL(sigAlarm(Alarm*)),                            i, SLOT(alarm(Alarm *)));
+        quietconnect (this, SIGNAL(sigSleepCountdownZero()),                     i, SLOT(sleepCountdownZero), ());
+        quietconnect (this, SIGNAL(sigSleepCountDownStarted(const QDateTime &)), i, SLOT(sleepCountdownStarted(const QDateTime &)));
+        quietconnect (this, SIGNAL(sigSleepCountDownStopped()),                  i, SLOT(sleepCountdownStopped), ());
+    }
+}
 

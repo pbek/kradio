@@ -1,16 +1,28 @@
-0.2.8  give the setup-dialog cancel button the right behaviour // done
+0.2.90 give the setup-dialog cancel button the right behaviour // done
        distinguish ukw/fm and MW/am // done
        make kradio AM ready // seems to be done
-       redesign kradio interface: use symbols for stereo and signal quality, display ukw/fm and MW/am
-          Hintergrund: RGB=034200  Vordergrund: RGB=14F400  // done
-       gui-errormessages in xml parsing code
+       redesign kradio interface: use symbols for stereo and signal quality, display ukw/fm and MW/am  // done
        prepare for translation: check for missing i18n //done
 
-0.2.9  ? force mono mode (not been possible on my system (bttv) so far) ?
-       make use of properties
+       gui-errormessages in xml parsing code
+
+       rework of internal structures based on interfaces/plugins
+       reorganize configuration pages
+       
+       setupdialog: color selection, independent device page
+       conserve old stations after station scan / clear button
+       remove unnecessary include dependencies
+       tristate buttons for station scan
+
+       use kde widgets in dialogs
+
+       tooltips complete?
+       translations?
+
+0.2.99 ? force mono mode (not been possible on my system (bttv) so far) ?
        dcop interface
 
-0.3    recording capabilities
+0.3.0  recording capabilities
        ? quick radio applet
 
 unsolved problems:

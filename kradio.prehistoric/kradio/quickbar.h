@@ -25,71 +25,78 @@
 #include "utils.h"
 
 #include <qwidget.h>
-#include <qlayout.h>
-#include <qbuttongroup.h>
-
-#include <kconfig.h>
-#include <ktoolbarbutton.h>
-
-#include <list>
-#include "radiobase.h"
-#include "buttonflowlayout.h"
 
 class RadioStation;
+class ButtonFlowLayout;
+class QButtonGroup;
+class KConfig;
 
 /**
   *@author Martin Witte / Frank Schwanz / Klas Kalass
   */
 
-
-typedef list<QToolButton *>         ButtonList;
-typedef ButtonList::iterator        iButtonList;
-typedef ButtonList::const_iterator  ciButtonList;
-
 class QuickBar : public QWidget  {
-   Q_OBJECT
+Q_OBJECT
 protected :
 
-    RadioBase        *radio;
-    ButtonList       Buttons;
     ButtonFlowLayout *layout;
     QButtonGroup     *buttonGroup;
+
     // config
-    bool          showShortName;
-public:
-	QuickBar(RadioBase *radio, QWidget * parent = 0, const char * name = 0);
-	~QuickBar();
-	
-	void    restoreState (KConfig *c);
-	void    saveState (KConfig *c);
-    void	getState();
-
-    bool	getShowShortName() const { return showShortName; }
-    void    setShowShortName(bool b);
-	
-protected:
-	void resizeEvent(QResizeEvent *);
-
-private:
-	void rebuildGUI();
-
-public slots:
-    void setOn(bool on);
-	void slotConfigChanged();
-	void slotFrequencyChanged(float, const RadioStation *);
-	void show();
-	void hide();
-	void setGeometry (const QRect &r);
-	void setGeometry (int x, int y, int w, int h);
-
-signals:
-	void toggled(bool);
-
-
-private:
+    StationVector    stations;
+    bool             showShortName;
+    float            currentFrequency;
+    
+    // temporary data
 
     bool		saveSticky;
     int		    saveDesktop;
     QRect		saveGeometry;
+    
+public:
+	QuickBar(QWidget * parent = 0, const char * name = 0);
+	~QuickBar();
+
+public slots:
+	
+    void    setOn(bool on);
+	void    show();
+	void    hide();
+	void    setGeometry (const QRect &r);
+	void    setGeometry (int x, int y, int w, int h);
+
+    // interface connection slot
+
+    virtual void    connectInterface(QObjectList &ol);
+
+	// radio interface notification slots
+	
+	virtual void    frequencyChanged(float, const RadioStation *);
+	
+    // configuration slots
+
+	virtual void    restoreState (KConfig *c);
+	virtual void    saveState    (KConfig *c);
+    virtual void    configurationChanged (const SetupData &sud);
+
+
+protected slots:
+
+	// this slot should be connected to each stations activated signal
+	void    stationActivated (const RadioStation *);
+
+protected:
+    void	getState();
+	void    rebuildGUI();
+	void    resizeEvent(QResizeEvent *);
+
+	int		getButtonID(float freq);
+
+signals:
+	void    toggled(bool);
+
+	// radio interfaces command signals
+
+	void    sigSetFrequency (float f);
 };
 #endif

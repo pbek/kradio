@@ -17,8 +17,7 @@
 #include <stdio.h>
 #include "alarm.h"
 
-Alarm::Alarm(QObject *_parent, QDateTime _time, bool _daily, bool _enabled)
-	: QObject (_parent)
+Alarm::Alarm(QDateTime _time, bool _daily, bool _enabled)
 {
 	daily = _daily;
 	enabled = _enabled;
@@ -29,8 +28,7 @@ Alarm::Alarm(QObject *_parent, QDateTime _time, bool _daily, bool _enabled)
 }
 
 
-Alarm::Alarm (QObject *_parent)
-	: QObject (_parent)
+Alarm::Alarm ()
 {
 	daily = false;
 	enabled = false;
@@ -42,24 +40,12 @@ Alarm::Alarm (QObject *_parent)
 
 
 Alarm::Alarm (const Alarm &a)
-	: QObject (a.parent(), a.name())
+	: QObject (NULL, a.name())
 {
 	daily        = a.daily;
 	enabled      = a.enabled;
 	done         = a.done;
 	time         = a.time;
-	frequency    = a.frequency;
-	volumePreset = a.volumePreset;
-}
-
-
-Alarm::Alarm (QObject *_parent, const Alarm &a)
-	: QObject (_parent, a.name())
-{
-	daily   = a.daily;
-	enabled = a.enabled;
-	done    = a.done;
-	time    = a.time;
 	frequency    = a.frequency;
 	volumePreset = a.volumePreset;
 }
@@ -88,3 +74,5 @@ void Alarm::raiseAlarm()
 	done = !daily;
 	emit alarm(this);
 }
+
+

@@ -45,25 +45,24 @@ protected:
 	float		volumePreset; // < 0: disabled
 
 public:
-	Alarm(QObject *parent, QDateTime time, bool daily, bool enabled);
-	Alarm(QObject *parent = NULL);
-	Alarm(const Alarm &);
-	Alarm(QObject *parent, const Alarm &);
-	virtual ~Alarm();
+	            Alarm();
+	            Alarm(QDateTime time, bool daily, bool enabled);
+	            Alarm(const Alarm &);
+	virtual     ~Alarm();
 	
 	bool		isEnabled() const { return enabled;}
 	bool 		isDaily() const { return daily; }
 	QDateTime   nextAlarm (bool ignoreEnable = false) const;
 	QDateTime	alarmTime () const { return time; }
 	float		getFrequency () const { return frequency; }
-	float	getVolumePreset () const { return volumePreset; }
+	float	    getVolumePreset () const { return volumePreset; }
 	
-	void	setEnabled (bool enable = true) { enabled = enable; done = false; }
-	void	setDaily (bool d = true) { daily = d; done = false; }
-	void	setDate (const QDate &d) { time.setDate(d); done = false; }
-	void	setTime (const QTime &d) { time.setTime(d); done = false; }
-    void    setFrequency(float f) { frequency = f; }
-    void    setVolumePreset(float v) { volumePreset = v; }
+	void	    setEnabled (bool enable = true) { enabled = enable; done = false; }
+	void	    setDaily (bool d = true) { daily = d; done = false; }
+	void	    setDate (const QDate &d) { time.setDate(d); done = false; }
+	void	    setTime (const QTime &d) { time.setTime(d); done = false; }
+    void        setFrequency(float f) { frequency = f; }
+    void        setVolumePreset(float v) { volumePreset = v; }
 	
 	
 public slots:
@@ -73,9 +72,10 @@ signals:
 	void alarm (Alarm *);
 };
 
-
-typedef vector<Alarm *>				AlarmVector;
+typedef vector<Alarm>		        AlarmVector;
 typedef AlarmVector::iterator		iAlarmVector;
 typedef AlarmVector::const_iterator	ciAlarmVector;
+
+
 
 #endif

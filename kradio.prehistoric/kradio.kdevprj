@@ -28,10 +28,10 @@ ldflags=\s        \s
 [General]
 AMChanged=false
 author=Martin Witte
-configure_args=
+configure_args=--enable-debug=full
 email=witte@kawo1.rwth-aachen.de
 kdevprj_version=1.3
-lfv_open_groups=Benutzerschnittstelle,GNU,Header,Quellen
+lfv_open_groups=Benutzerschnittstelle,Header,Quellen
 make_options=\s-j1
 makefiles=Makefile.am,kradio/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true
@@ -120,7 +120,7 @@ install_location=
 type=DATA
 
 [kradio/Makefile.am]
-files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradiomw.cpp,kradio/kradiomw.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/kradioview.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/setupdialog.h,kradio/setupdialog.cpp,kradio/stationsearchdialog_uic.ui,kradio/stationsearchdialog.h,kradio/stationsearchdialog.cpp,kradio/utils.cpp,kradio/timecontrol.h,kradio/timecontrol.cpp,kradio/radiocfgxmlhandler.h,kradio/radiocfgxmlhandler.cpp,kradio/setupdialog_general_options.ui,kradio/stationsearchdialog_uic.ui.h,kradio/setupdialog_general_options.ui.h,kradio/setupdialog_alarms.ui,kradio/setupdialog_stations.ui,kradio/setupdialog_alarms.ui.h,kradio/setupdialog_stations.ui.h,kradio/kradio_muteoff.png,kradio/kradio_muteon.png,kradio/kradio_muteoff_16x16.png,kradio/kradio_muteon_16x16.png,kradio/kradiodisplay.cpp,kradio/kradiodisplay.h
+files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradiomw.cpp,kradio/kradiomw.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/kradioview.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/setupdialog.h,kradio/setupdialog.cpp,kradio/stationsearchdialog_uic.ui,kradio/stationsearchdialog.h,kradio/stationsearchdialog.cpp,kradio/utils.cpp,kradio/timecontrol.h,kradio/timecontrol.cpp,kradio/radiocfgxmlhandler.h,kradio/radiocfgxmlhandler.cpp,kradio/setupdialog_general_options.ui,kradio/stationsearchdialog_uic.ui.h,kradio/setupdialog_general_options.ui.h,kradio/setupdialog_alarms.ui,kradio/setupdialog_stations.ui,kradio/setupdialog_alarms.ui.h,kradio/setupdialog_stations.ui.h,kradio/kradio_muteoff.png,kradio/kradio_muteon.png,kradio/kradio_muteoff_16x16.png,kradio/kradio_muteon_16x16.png,kradio/kradiodisplay.cpp,kradio/kradiodisplay.h,kradio/setupdialog_colors.ui,kradio/interfaces.h,kradio/radio_interfaces.h,kradio/plugins.h,kradio/plugins.cpp,kradio/timecontrol_interfaces.h,kradio/timecontrol_interfaces.cpp
 sub_dirs=
 type=prog_main
 
@@ -207,6 +207,12 @@ dist=true
 install=true
 install_location=$$(kde_icondir)/hicolor/64x64/apps/kradio.png
 type=DATA
+
+[kradio/interfaces.h]
+dist=true
+install=false
+install_location=
+type=HEADER
 
 [kradio/kradio.cpp]
 dist=true
@@ -352,6 +358,18 @@ install=false
 install_location=
 type=SOURCE
 
+[kradio/plugins.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kradio/plugins.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
 [kradio/quickbar.cpp]
 dist=true
 install=false
@@ -359,6 +377,12 @@ install_location=
 type=SOURCE
 
 [kradio/quickbar.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
+[kradio/radio_interfaces.h]
 dist=true
 install=false
 install_location=
@@ -424,6 +448,12 @@ install=false
 install_location=
 type=HEADER
 
+[kradio/setupdialog_colors.ui]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
 [kradio/setupdialog_general_options.ui]
 dist=true
 install=false
@@ -479,6 +509,18 @@ install_location=
 type=SOURCE
 
 [kradio/timecontrol.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
+[kradio/timecontrol_interfaces.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kradio/timecontrol_interfaces.h]
 dist=true
 install=false
 install_location=

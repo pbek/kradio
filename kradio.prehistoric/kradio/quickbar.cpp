@@ -14,43 +14,35 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+#include "quickbar.h"
 
 #include <qtooltip.h>
 #include <qnamespace.h>
 #include <qhbuttongroup.h>
 #include <qvbuttongroup.h>
-#include <kglobal.h>
 #include <qtoolbutton.h>
 
 #include <kwin.h>
 #include <klocale.h>
 #include <kglobal.h>
+#include <kconfig.h>
 
-#include "quickbar.h"
 #include "radiostation.h"
 #include "buttonflowlayout.h"
 
-QuickBar::QuickBar(RadioBase *_radio, QWidget * parent, const char * name)
-  : QWidget(parent,name),
-    layout(0),
-    buttonGroup(0),
-    showShortName(true)
+
+QuickBar::QuickBar(QWidget * parent, const char * name)
+  : QWidget(parent, name)
 {
-    radio = _radio;
-
-    connect (radio, SIGNAL(sigConfigChanged()), 
-	    this, SLOT(slotConfigChanged()));
-    connect(radio, SIGNAL(sigFrequencyChanged(float, const RadioStation *)), 
-	    this, SLOT(slotFrequencyChanged(float, const RadioStation *)));
-
+	layout = NULL;
+	buttonGroup = NULL;
+	showShortNames = true;
+	currentFrequency = -1;
 }
 
 
 QuickBar::~QuickBar()
 {
-  if (layout){
-    delete layout;
-  }
 }
 
 
@@ -58,23 +50,14 @@ void QuickBar::restoreState (KConfig *config)
 {
     config->setGroup("QuickBar");
 
-	saveDesktop = config->readNumEntry ("desktop", 1);
-	saveSticky  = config->readBoolEntry("sticky",  false);
-
+	saveDesktop  = config->readNumEntry ("desktop", 1);
+	saveSticky   = config->readBoolEntry("sticky",  false);
 	saveGeometry = config->readRectEntry("Geometry");
 
-/*	fprintf (stderr, "%i, %i -  %i x %i\n",
-			 saveGeometry.x(),
-			 saveGeometry.y(),
-			 saveGeometry.width(),
-			 saveGeometry.height());
-*/
     if (config->readBoolEntry("hidden", false))
         hide();
     else
         show();
-
-	showShortName = config->readBoolEntry("showShortName", true);
 
 	rebuildGUI();
 }
@@ -91,9 +74,9 @@ void QuickBar::saveState (KConfig *config)
 	config->writeEntry("sticky", saveSticky);
 	config->writeEntry("desktop", saveDesktop);
 	config->writeEntry("Geometry", saveGeometry);
-
-	config->writeEntry("showShortName", showShortName);
 }
+
+
 
 
 void QuickBar::getState()
@@ -104,24 +87,11 @@ void QuickBar::getState()
 		saveDesktop   = i.desktop;
 		saveGeometry  = geometry();
 	}
-
-/*	fprintf (stderr, "%i, %i -  %i x %i\n",
-			 geometry().x(),
-			 geometry().y(),
-			 geometry().width(),
-			 geometry().height());
-
-*/
 }
 
 
 void QuickBar::rebuildGUI()
 {
-	for (ciButtonList i = Buttons.begin(); i != Buttons.end(); ++i) {
-		delete *i;
-	}
-	Buttons.clear();
-
 	if (layout) delete layout;
 	layout = new ButtonFlowLayout(this);
 
@@ -135,17 +105,13 @@ void QuickBar::rebuildGUI()
 	buttonGroup->setExclusive(true);
 	buttonGroup->setFrameStyle(QFrame::NoFrame);
 
-    const StationVector &stations = radio->getStations();
+    int index = 0;
+    for (ciStationVector i = stations.begin(); i != stations.end(); ++i, ++index) {
 
-    int index=0;
-    for (ciStationVector i = stations.begin(); i != stations.end(); ++i) {
-		if ( !(*i)->useQuickSelect())
-			continue;
-		
-        QString iconstr = (*i)->getIconString();
+        QString iconstr = i->getIconString();
        	QToolButton *b = new QToolButton(this, "");
 
-        b->setText(showShortName ? (*i)->getShortName() : QString((*i)->name()));
+        b->setText(showShortName ? i->getShortName() : QString(i->name()));
 
 	    b->setToggleButton(true);
        	if (iconstr.length()) {
@@ -153,102 +119,116 @@ void QuickBar::rebuildGUI()
        	}
         b->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred));
 
-        QToolTip::add(b, (*i)->getLongName());
+        QToolTip::add(b, i->getLongName());
         if (isVisible()) b->show();
-        // b->resize (b->sizeHint());
 
-        Buttons.push_back(b);
-        connect (b, SIGNAL(clicked()), (*i), SLOT(activate()));
-        buttonGroup->insert(b,index);
+        connect (b, SIGNAL(clicked()), &(*i), SLOT(activate()));
+        
+        buttonGroup->insert(b, index);
         layout->add(b);
-        index++;
     }
     
     // activate correct button
-    buttonGroup->setButton(radio->currentStation());
+    buttonGroup->setButton(getButtonID(currentFrequency));
 
     // calculate geometry
     if (layout) {
 		QRect r = geometry();
 		int h = layout->heightForWidth( r.width());
 
-//		fprintf (stderr, "layout says: need height = %i\n", h);
-		
 		if (h > r.height())
 			setGeometry(r.x(), r.y(), r.width(), h);
     }
 }
 
 
-void QuickBar::slotConfigChanged()
+void QuickBar::configurationChanged(const SetupData &d)
 {
-  rebuildGUI();
-  // adjustSize();
+	showShortName = d.displayOnlyShortNames;
+	stations.clear();
+	for (ciStationVector i = d.stations.begin(); i != d.stations.end(); ++i) {
+
+		if (i->useQuickSelect()) {
+
+			stations.push_back(*i);
+			
+			connect (stations.back(), SIGNAL(activated(const RadioStation *)),
+					 this, SLOT(stationActivated(const RadioStation *)));
+		}
+	}
+    rebuildGUI();
 }
 
 
 void QuickBar::setOn(bool on)
 {
-  if(on && !isVisible())
-    show();
-  else if (!on && isVisible())
-    hide();
+	if (on && !isVisible())
+		show();
+	else if (!on && isVisible())
+		hide();
 }
 
 
 void QuickBar::show()
 {
-  bool wasHidden = !isVisible();
+	bool wasHidden = !isVisible();
 
-  QWidget::show();
+	QWidget::show();
 
-  if (wasHidden) {
-	KWin::setOnAllDesktops(winId(), saveSticky);
-	KWin::setType(winId(), NET::Toolbar);
+    if (wasHidden) {
+     	KWin::setOnAllDesktops(winId(), saveSticky);
+    	KWin::setType(winId(), NET::Toolbar);
 
-/*	fprintf (stderr, "Quickbar::show(): %i, %i - %i x %i\n",
-			 saveGeometry.x(), saveGeometry.y(),
-			 saveGeometry.width(), saveGeometry.height());
-*/	
-	setGeometry(saveGeometry);
-  }
+    	setGeometry(saveGeometry);
+    }
 
-  emit toggled(true);
+    emit toggled(true);
 }
 
 
 void QuickBar::hide()
 {
-  getState();
-  QWidget::hide();
-  emit toggled(false);
+    getState();
+    QWidget::hide();
+    emit toggled(false);
 }
 
 
-void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
+void QuickBar::frequencyChanged(float f, const RadioStation *s)
 {
-    const StationVector &stations = radio->getStations();
+	// set caption from paramter "s" if we do not have a quick select button
+	setCaption ((s ? QString(s->name()) : "KRadio"));
+	
+    currentFrequency = f;
 
-	setCaption ((s ? QString(s->name()) : i18n("KRadio")));
-	int k = -1, _k = -1;
-	for (ciStationVector i = stations.begin(); k < 0 && i != stations.end(); ++i) {
-		if ( !(*i)->useQuickSelect())
-			continue;
-		++_k;
-		if (s && (*i)->getFrequency() == s->getFrequency())
-			k = _k;
+    int stID = getButtonID(currentFrequency);
+	if (buttonGroup)
+		buttonGroup->setButton (stID);
+	if (stID >= 0 && stID < stations.size())
+		setCaption(stations[stID].name());
+}
+
+
+int QuickBar::getButtonID(float freq)
+{
+	int k = 0;
+	for (ciStationVector i = stations.begin(); i != stations.end(); ++i, ++k) {
+		if (i->hasFrequency(f))
+			return k;
 	}
-	if (buttonGroup) buttonGroup->setButton(k);
+	return -1;
+}
+
+
+void QuickBar::stationActivated(const RadioStation *st)
+{
+	if (st)
+		emit sigSetFrequency(st->getFrequency());
 }
 
 
 void QuickBar::resizeEvent (QResizeEvent *e)
 {
-/*	fprintf (stderr, "QuickBar::resizeEvent: old = %i x %i, new = %i x %i\n",
-			 e->oldSize().width(), e->oldSize().height(),
-			 e->size().width(), e->size().height());
-*/
-
 	// minimumSize might change because of the flow layout
 	if (layout) {
 		QSize marginSize(layout->margin()*2, layout->margin()*2);
@@ -259,16 +239,8 @@ void QuickBar::resizeEvent (QResizeEvent *e)
 }
 
 
-void QuickBar::setShowShortName (bool b)
-{
-	showShortName = b;
-	rebuildGUI();
-}
-
 void QuickBar::setGeometry (int x, int y, int w, int h)
 {
-//	fprintf (stderr, "Quickbar::setGeometry(): %i, %i - %i x %i\n",
-//			 x,y,w,h);
 	if (layout) {
 		QSize marginSize(layout->margin()*2, layout->margin()*2);
 		setMinimumSize(layout->minimumSize(QSize(w, h) - marginSize) + marginSize);
@@ -276,7 +248,35 @@ void QuickBar::setGeometry (int x, int y, int w, int h)
 	QWidget::setGeometry (x, y, w, h);
 }
 
+
 void QuickBar::setGeometry (const QRect &r)
 {
 	setGeometry (r.x(), r.y(), r.width(), r.height());
 }
+
+
+void    QuickBar::connectInterface(QObjectList &ol)
+{
+	for (QObject *i = objects.first(); i; i = objects.next()) {
+		if (this == i)
+			continue;
+
+		// configuration
+
+		quietconnect (i, SIGNAL(sigConfigurationChanged(const SetupData &)),
+					  this, SLOT(configurationChanged(const SetupData &)));
+        quietconnect (i, SIGNAL(sigSaveState(KConfig *)),
+		              this, SLOT(saveState(KConfig *)));
+    	quietconnect (i, SIGNAL(sigRestoreState(KConfig *)),
+				      this, SLOT(restoreState(KConfig *)));
+
+    	// commands
+
+		quietconnect (this, SIGNAL(sigSetFrequency(float)), i, SLOT(setFrequency(float)));
+
+		// notifications
+
+        quietconnect (i, SIGNAL(sigFrequencyChanged(float, const RadioStation*), this, SLOT(frequencyChanged(float, const RadioStation *)));
+    }
+}
+

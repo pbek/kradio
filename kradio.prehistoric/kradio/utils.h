@@ -52,4 +52,9 @@ QString xmlTag      (const QString &tag, float f,          bool newline = true);
 QString xmlCloseTag (const QString &tag, bool newline = true);
 
 
+bool hasSignal(const QObject *o, const char *signal);
+bool hasSlot  (const QObject *o, const char *slot);
+bool quietConnect(const QObject *sender, const char *sig, const QObject *receiver, const char *slot);
+
+
 #endif

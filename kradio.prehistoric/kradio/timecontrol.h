@@ -46,32 +46,48 @@ public:
 
     virtual void                addAlarms   (const AlarmVector &sl);
     virtual void                setAlarms   (const AlarmVector &sl);
-    virtual QDateTime           nextAlarm	(Alarm **na = NULL) const;
+    virtual QDateTime           nextAlarm	(Alarm **storeNextAlarm = NULL) const;
     virtual const AlarmVector   &getAlarms  () const { return Alarms; }
 
 
     // sleep (countdown) function
 
-    virtual void setCountdownSeconds (int n);
-    virtual int  getCountdownSeconds () const { return countdownSeconds; }
+    virtual void            setCountdownSeconds (int n);
+    virtual int             getCountdownSeconds () const { return countdownSeconds; }
     virtual const QDateTime getCountdownEnd () const;
     
 
 public slots:
-    virtual void    startCountdown();
-    virtual void    stopCountdown();
-    virtual void    startStopCountdown(); // start if not running, stop if running
+
+    // interface connection slot
+
+    virtual void    connectPlugin(QObjectList &otherPlugins);
+
+    // configuration slots
+    
+	virtual void    restoreState (KConfig *c);
+	virtual void    saveState    (KConfig *c);
+    virtual void    configurationChanged (const SetupData &sud);
+
+	// radio interface command slots
+
+    virtual void    startSleepCountdown();
+    virtual void    stopSleepCountdown();
+    virtual void    startStopSleepCountdown(); // start if not running, stop if running
+
 
 protected slots:
     virtual void    slotAlarmTimeout();
     virtual void    slotCountdownTimeout();
 
 signals:
-    void    sigConfigChanged();
-    void	sigAlarm(Alarm *);
-    void	sigCountdownZero();
-    void	sigStartCountdown();
-    void	sigStopCountdown();
+
+	// radio interface notifications
+	
+    void	sigAlarm(const Alarm *);
+    void	sigSleepCountdownZero();
+    void	sigSleepCountdownStarted(const QDateTime &end);
+    void	sigSleepCountdownStopped();
 
 };
 

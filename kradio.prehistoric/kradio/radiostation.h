@@ -32,7 +32,7 @@
   */
 
 class RadioStation : public QObject  {
-	Q_OBJECT
+Q_OBJECT
 protected :	
 	float	Frequency;
 	QString	ShortName;
@@ -44,11 +44,10 @@ protected :
 	QString	iconString;
 
 public:
-	RadioStation(QObject *parent = NULL);
-	RadioStation(QObject *parent, QString Name, QString ShortName, QString iconString,
-				 float Frequency, float VolumePreset = -1);
-	RadioStation(const RadioStation &);
-	RadioStation(QObject *_parent, const RadioStation &);
+			RadioStation();
+			RadioStation(QString Name, QString ShortName, QString iconString,
+					     float Frequency, float VolumePreset = -1);
+			RadioStation(const RadioStation &);
 	virtual ~RadioStation();
 	
 	bool    isValid() const;
@@ -57,6 +56,7 @@ public:
 	QString getLongName() const;
 	QString getIconString() const    { return iconString; }
 	float	getFrequency() const     { return Frequency; }
+	bool    hasFrequency(float f) const;
 	float	getVolumePreset() const  { return VolumePreset; }
 	bool	useQuickSelect() const   { return QuickSelect; }
 	bool    useInDockingMenu() const { return DockingMenu; }
@@ -75,12 +75,6 @@ signals:
 	void activated (const RadioStation *);
 };
 
-
-typedef vector<RadioStation*>			StationVector;
-typedef StationVector::iterator			iStationVector;
-typedef StationVector::const_iterator	ciStationVector;
-
-
 struct StationListMetaData
 {
 	QString    Maintainer;
@@ -90,6 +84,16 @@ struct StationListMetaData
 	QString    Media;
 	QString    Comment;
 };
+
+
+
+typedef vector<RadioStation>			StationVector;
+typedef StationVector::iterator			iStationVector;
+typedef StationVector::const_iterator	ciStationVector;
+
+
+
+
 
 
 #endif
