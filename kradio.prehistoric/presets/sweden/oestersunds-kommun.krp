@@ -1,0 +1,74 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>martin, maki@brunflo.info</maintainer>
+			<changed>2003-04-03T13:20:06</changed>
+			<country>sweden</country>
+			<city>oestersunds kommun</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>SR P1</name>
+			<shortname>P1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>87.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SR P2</name>
+			<shortname>P2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SR P3</name>
+			<shortname>P3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>94</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>SR P4 Radio Jamtland</name>
+			<shortname>P4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.402</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Rix FM</name>
+			<shortname>Rix FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.002</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio City</name>
+			<shortname>Radio City</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.203</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+-- 
+http://www.brunflo.info
+<><><>
+GPG-Key @ http://www.brunflo.info/person/maki/MARTIN-KEY.ASC
+<><><>
+
+
