@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-02-28 12:54+0100\n"
-"PO-Revision-Date: 2004-02-25 23:11+0000\n"
+"PO-Revision-Date: 2004-02-28 13:30+0000\n"
 "Last-Translator: Rafael Rodríguez Martín <apt-drink@telefonica.net>\n"
 "Language-Team: es_ES <kde-es@kybs.de>\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,13 @@ msgstr ""
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr ""
+msgstr "Rafael Rodríguez Martín"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr ""
+msgstr "apt-drink@telefonica.net"
 
 #: aboutwidget.cpp:450
 msgid "%1 %2 (Using KDE %3)"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: kradioapp.cpp:121 kradioapp.cpp:132
 msgid "Instance"
-msgstr ""
+msgstr "Instancia"
 
 #: kradioapp.cpp:136
 msgid "KRadio Configuration"
@@ -350,8 +350,7 @@ msgstr "Configurar emisoras de radio"
 
 #: radio.cpp:115
 msgid "Radio Device Multiplexer and Station Management for KRadio"
-msgstr ""
-"Multiplexador de dispositivos de radio y administración de emisoras de KRadio"
+msgstr "Multiplexador de dispositivos de radio y administración de emisoras de KRadio"
 
 #: radio.cpp:126
 msgid "Device and Station Management"
@@ -472,12 +471,11 @@ msgstr "Cambiar volumen"
 
 #: rc.cpp:1
 msgid "C&ustom"
-msgstr ""
+msgstr "&Personalizado"
 
 #: rc.cpp:2
-#, fuzzy
 msgid "DockingConfigurationUI"
-msgstr "Configuración del menú de icono empotrable"
+msgstr "DockingConfigurationUI"
 
 #: rc.cpp:3 rc.cpp:80
 msgid "Selected Stations"
@@ -527,12 +525,11 @@ msgstr " %"
 #: rc.cpp:22
 #, fuzzy
 msgid "Volume Preset"
-msgstr "Volumen"
+msgstr "Volumen predefinido"
 
 #: rc.cpp:23
-#, fuzzy
 msgid "Personal Preset File"
-msgstr "Seleccionar archivo de configuración"
+msgstr "Archivo de configuración personal"
 
 #: rc.cpp:25
 msgid "City"
@@ -572,7 +569,7 @@ msgstr ""
 
 #: rc.cpp:33
 msgid "RadioView_SeekInterface"
-msgstr ""
+msgstr "RadioView_SeekInterface"
 
 #: rc.cpp:35
 #, fuzzy
@@ -581,21 +578,19 @@ msgstr "Buscar anterior emisora"
 
 #: rc.cpp:37
 msgid "decrease freq. by 0.05 MHz"
-msgstr ""
+msgstr "decrementar frecuencia en 0.05 Mhz"
 
 #: rc.cpp:38
-#, fuzzy
 msgid "Frequency control"
-msgstr "Frecuencia:"
+msgstr "Control de frecuencia"
 
 #: rc.cpp:40
 msgid "increase freq. by 0.05 MHz"
-msgstr ""
+msgstr "incrementar frecuencia en 0.05 Mhz"
 
 #: rc.cpp:42
-#, fuzzy
 msgid "search next station"
-msgstr "Buscar siguiente emisora"
+msgstr "buscar siguiente emisora"
 
 #: rc.cpp:43
 #, fuzzy
@@ -604,20 +599,19 @@ msgstr "RecordingConfigurationUI"
 
 #: rc.cpp:44
 msgid "Buffer Management"
-msgstr ""
+msgstr "Administración del búfer"
 
 #: rc.cpp:45
 msgid " kB"
-msgstr ""
+msgstr " kb"
 
 #: rc.cpp:46
-#, fuzzy
 msgid "Encoding Buffer Size"
-msgstr "No se puede leer el tamaño del búfer de grabación"
+msgstr "Tamaño del búfer de codificación"
 
 #: rc.cpp:47
 msgid "Number of Buffers"
-msgstr ""
+msgstr "Número de búfers"
 
 #: rc.cpp:48
 msgid "Output"
@@ -629,7 +623,7 @@ msgstr "Directorio de grabación"
 
 #: rc.cpp:50
 msgid "MP3 Quality(0 - high, 1 - low)"
-msgstr ""
+msgstr "Calidad del MP3 (0 - alta, 1 - baja)"
 
 #: rc.cpp:51
 msgid "File Format"
@@ -653,7 +647,7 @@ msgstr "salida pcm en crudo (.raw)"
 
 #: rc.cpp:56
 msgid "MP3 Compressed (.mp3)"
-msgstr ""
+msgstr "MP3 comprimido (.mp3)"
 
 #: rc.cpp:57
 msgid "Input"
@@ -841,22 +835,20 @@ msgid "V4L Device Controls"
 msgstr "Controles del dispositivo V4L"
 
 #: rc.cpp:127
-#, fuzzy
 msgid "volume"
-msgstr "Volumen"
+msgstr "volumen"
 
 #: rc.cpp:128
-#, fuzzy
 msgid "treble"
-msgstr "activado"
+msgstr "agudos"
 
 #: rc.cpp:129
 msgid "bass"
-msgstr ""
+msgstr "bajos"
 
 #: rc.cpp:130
 msgid "balance"
-msgstr ""
+msgstr "balance"
 
 #: recording-monitor.cpp:35 recording-monitor.cpp:38 recording-monitor.cpp:153
 msgid "Recording Monitor"
@@ -924,9 +916,8 @@ msgid "finished"
 msgstr "finalizado"
 
 #: recording.cpp:51
-#, fuzzy
 msgid "KRadio Recording Plugin"
-msgstr "Plugin de grabación"
+msgstr "Plugin de grabación de KRadio"
 
 #: recording.cpp:117 recording.cpp:118 recording.cpp:138
 msgid "Recording"
@@ -982,22 +973,19 @@ msgstr "No se puede fijar la frecuencia de muestreo para la grabación"
 
 #: recording.cpp:346
 msgid "Asking for recording at %1 Hz but hardware uses %2 Hz"
-msgstr ""
+msgstr "Intentando grabar a %1 Hz pero el hardware utiliza %2 Hz"
 
 #: recording.cpp:355
-#, fuzzy
 msgid "Cannot set stereo mode for recording"
-msgstr "No se puede fijar el formato de muestreo para la grabación"
+msgstr "No se puede fijar el formato estéreo para la grabación"
 
 #: recording.cpp:360
-#, fuzzy
 msgid "Cannot set sample size for recording"
-msgstr "No se puede fijar el formato de muestreo para la grabación"
+msgstr "No se puede fijar el tamaño de muestreo para la grabación"
 
 #: recording.cpp:369
-#, fuzzy
 msgid "Cannot set recording buffers"
-msgstr "No se puede leer el tamaño del búfer de grabación"
+msgstr "No se pueden establecer los búfers de grabación"
 
 #: recording.cpp:373
 msgid "Cannot read recording buffer size"
@@ -1005,7 +993,7 @@ msgstr "No se puede leer el tamaño del búfer de grabación"
 
 #: recording.cpp:375
 msgid "Hardware uses buffer blocks of %1 bytes"
-msgstr ""
+msgstr "El hardware utiliza blóques de búfer de %1 bytes"
 
 #: recording.cpp:449
 #, fuzzy
@@ -1014,15 +1002,15 @@ msgstr "Recording::outputFile: "
 
 #: recording.cpp:472
 msgid "The encoding thread did not finish. It will be killed now."
-msgstr ""
+msgstr "El hilo de ejecución de la codificación no finalizó. Será matado ahora."
 
 #: recording.cpp:477
 msgid "Waiting for encoding thread to terminate."
-msgstr ""
+msgstr "Esperando a que el hilo de ejecución de la codificación finalice."
 
 #: recording.cpp:532
 msgid "Input buffer overflow. Skipped %1 input bytes"
-msgstr ""
+msgstr "Desbordamiento del búfer de entrada. Saltados %1 bytes de entrada"
 
 #: recording.cpp:552
 msgid "No data to record"
@@ -1033,37 +1021,32 @@ msgid "Error %1 while recording"
 msgstr "Error %1 durante la grabación"
 
 #: recording.cpp:701 recording.cpp:736 recording.cpp:877
-#, fuzzy
 msgid "Error %1 writing output. "
-msgstr "Error %1 al escribir la salida"
+msgstr "Error %1 al escribir la salida. "
 
 #: recording.cpp:727 recording.cpp:872
-#, fuzzy
 msgid "Error %1 while encoding mp3. "
-msgstr "Error %1 durante la grabación"
+msgstr "Error %1 durante la codificación del mp3"
 
 #: recording.cpp:775 recording.cpp:822
-#, fuzzy
 msgid "Cannot open output file %1. "
-msgstr "No se puede abrir el archivo de salida %1"
+msgstr "No se puede abrir el archivo de salida %1. "
 
 #: recording.cpp:785
 msgid "Cannot initialize lalibmp3lame. "
-msgstr ""
+msgstr "No se puede inicializar lalibmp3lame. "
 
 #: recording.cpp:802
 msgid "Cannot initialize libmp3lame parameters. "
-msgstr ""
+msgstr "No se pueden inicializar los parámetros de libmp3lame. "
 
 #: recording.cpp:809
-#, fuzzy
 msgid "Recorded by KRadio"
-msgstr "Monitor de grabación de KRadio"
+msgstr "Grabado por KRadio"
 
 #: recording.cpp:835
-#, fuzzy
 msgid "Cannot allocate buffers for mp3 encoding. "
-msgstr "No se puede fijar el formato de muestreo para la grabación"
+msgstr "No se pueden asignar los búfers para la codificación del mp3. "
 
 #: standardscandialog.cpp:115
 msgid "new station "
@@ -1176,8 +1159,7 @@ msgid "Setup Alarms"
 msgstr "Configurar alertas"
 
 #: timecontrol.cpp:268
-msgid ""
-"Time Control Plugin for KRadio.<P>Provides Alarms and Sleep Countdown<P>"
+msgid "Time Control Plugin for KRadio.<P>Provides Alarms and Sleep Countdown<P>"
 msgstr ""
 "Plugin de control de tiempo de KRadio.<P>Provee alertas y cuenta atrás para "
 "dormir<P>"
@@ -1372,47 +1354,3 @@ msgstr "escribir"
 msgid "read"
 msgstr "leer"
 
-#~ msgid "&About"
-#~ msgstr "&Acerca de"
-
-#~ msgid "&Quit"
-#~ msgstr "&Salir"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Miscelánea"
-
-#~ msgid "Information"
-#~ msgstr "Información"
-
-#~ msgid "&Cancel"
-#~ msgstr "&Cancelar"
-
-#~ msgid "Save As"
-#~ msgstr "Guardar como"
-
-#~ msgid "Volume Preset (-1 = disabled)"
-#~ msgstr "Volumen preestablecido (-1 = desactivado)"
-
-#~ msgid "A&bout"
-#~ msgstr "&Acerca de"
-
-#~ msgid "<p align=\"center\">volume</p>"
-#~ msgstr "<p align=\"center\">volumen</p>"
-
-#~ msgid "<p align=\"center\">treble</p>"
-#~ msgstr "<p align=\"center\">agudos</p>"
-
-#~ msgid "<p align=\"center\">bass</p>"
-#~ msgstr "<p align=\"center\">bajos</p>"
-
-#~ msgid "<p align=\"center\">balance</p>"
-#~ msgstr "<p align=\"center\">balance</p>"
-
-#~ msgid "Options"
-#~ msgstr "Opciones"
-
-#~ msgid "&Close"
-#~ msgstr "&Cerrar"
-
-#~ msgid "&Start"
-#~ msgstr "&Iniciar"
