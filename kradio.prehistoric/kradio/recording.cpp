@@ -92,6 +92,7 @@ void Recording::restoreState (KConfig *c)
 {
     c->setGroup(QString("recording-") + PluginBase::name());
 	m_config.restoreConfig(c);
+	notifyRecordingConfigChanged(m_config);
 //    if (c->readBoolEntry("monitoring", false) && m_context.state() != RecordingContext::rsRunning)
 //		startMonitoring();  
 }
@@ -144,9 +145,9 @@ bool  Recording::startRecording()
 	ok &= openOutput();
 	logInfo(i18n("Recording starting"));
 	if (ok) {
+		sendPowerOn();
 		notifyRecordingStarted();
 		notifyRecordingContextChanged(m_context);
-		sendPowerOn();
 		return true;
 	} else {
 		logError(i18n("Recording stopped with error"));
@@ -319,7 +320,21 @@ bool Recording::openDevice()
     if (err)
 		logError(i18n("Cannot set sampling rate for recording"));
 
+    int stereo = m_config.channels == 2;
+    err |= (ioctl(m_devfd, SNDCTL_DSP_STEREO, &stereo) != 0);
+    if (err)
+		logError(i18n("Cannot set stereo mode for recording"));
+
+    int sampleSize = m_config.bits;
+    err |= (ioctl(m_devfd, SNDCTL_DSP_SAMPLESIZE, &sampleSize) != 0);
+    if (err || sampleSize != m_config.bits)
+		logError(i18n("Cannot set sample size for recording"));
+
     // setup buffer
+    int mask = 0x7FFF000C; //4k fragments
+    err |= ioctl (m_devfd, SNDCTL_DSP_SETFRAGMENT, &mask);
+    if (err)
+		logError(i18n("Cannot set recording buffers"));
 
     err |= ioctl (m_devfd, SNDCTL_DSP_GETBLKSIZE, &m_bufferSize);
     if (err)

@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
 <class>RadioConfigurationUI</class>
 <widget class="QWidget">
     <property name="name">
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>660</width>
-            <height>364</height>
+            <width>580</width>
+            <height>316</height>
         </rect>
     </property>
     <property name="caption">
@@ -41,9 +41,9 @@
                         <property name="name">
                             <cstring>layout32</cstring>
                         </property>
-	                <property name="margin">
-        	            <number>6</number>
-                	</property>
+                        <property name="margin" stdset="0">
+                            <number>6</number>
+                        </property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
@@ -388,8 +388,8 @@
                                         </property>
                                         <property name="sizeHint">
                                             <size>
-                                                <width>145</width>
-                                                <height>20</height>
+                                                <width>10</width>
+                                                <height>5</height>
                                             </size>
                                         </property>
                                     </spacer>
@@ -439,7 +439,7 @@
                                             <cstring>labelVolumePreset</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>Volume Preset (-1 = disabled)</string>
+                                            <string>Volume Preset</string>
                                         </property>
                                     </widget>
                                     <spacer>
@@ -717,7 +717,4 @@
 </includes>
 <pixmapfunction>SmallIconSet</pixmapfunction>
 <layoutdefaults spacing="6" margin="0"/>
-<includehints>
-    <includehint>kurllabel.h</includehint>
-</includehints>
 </UI>

@@ -1,8 +1,12 @@
 0.3.0-alpha3
 
        segfault fixes with 2.95.3
+       fix recording problemes without alsa
        tooltips in config dialog
-       optimize recording data monitor (repaint only what is necessary)
+       optimize recording data monitor:
+         * repaint only what is necessary
+         * update text only when necessary
+       
        option for display window type (entry in taskbar or toolbar window)
        mp3 encoding with liblame_enc
        background pixmap for display
@@ -11,6 +15,7 @@
        lirc config
        internet radio streams
        translations
+       weekday selection for alarms
 
 0.3.0-beta1
   
