@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Nicolas Padula &lt;nahog@daleclick.com&gt;</maintainer>
+			<changed>2003-12-30T00:00:00</changed>
+			<country>Argentina</country>
+			<city>Buenos Aires</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>107264264035D11CB3A217C0B21A4971815FBB11576A863E1BD2C2E4417E322780F32EDD47</stationID>
+			<name>Rock&amp;Pop</name>
+			<shortname>Rock&amp;Pop</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1072642642C59405E620F0658E020C62AFE6FFAD24BE785EBE1DA6B9975615B3C8A0D6C31F</stationID>
+			<name>La Mega</name>
+			<shortname>La Mega</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1072642643C18A4BEAEA8E050F2402DBCC892CE7780E63E33FF42F16F85D8E6F845262B8BE</stationID>
+			<name>La 100</name>
+			<shortname>La 100</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.8998</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1072642644BE71110EE3AFCC6A1D1847BA64254632F21AD3DF94B3461E122B3C1B4795C0CE</stationID>
+			<name>Gen</name>
+			<shortname>Gen</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10726426458AFBA05065095E1A28DADCB0FC67D9DFE8717ED43D6148847815FF91D7F0FE23</stationID>
+			<name>Aspen</name>
+			<shortname>Aspen</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1072642647B72C0C7AB2F662475171E5EC69A27E4FFA05A98DF7B4FAA4EECCB9C1E561E0F2</stationID>
+			<name>FMHIT</name>
+			<shortname>FMHIT</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

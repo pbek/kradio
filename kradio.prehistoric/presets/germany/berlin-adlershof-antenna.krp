@@ -3,116 +3,159 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<maintainer>Sarah Bransdor, u15051@gmx.de</maintainer>
-			<changed>2003-06-10T14:05:10</changed>
+			<maintainer>Sarah Bransdor &lt;u15051@gmx.de&gt;</maintainer>
+			<changed>2004-02-22T12:10:16</changed>
 			<country>Deutschland</country>
 			<city>Berlin-Adlershof</city>
 			<media>antenne</media>
 			<comments></comments>
 		</info>
 		<FrequencyRadioStation>
-			<stationID>1063385349B2E89A194C3869E9531178AE980E92F2325E4CE87E266E08C81F25E51AB12AEB</stationID>
+			
+<stationID>1063557798DAE6355B4100C98E3D8226493DA27CA54E7CE8CF397E67A87BBAD621E8A60F8D</stationID>
 			<name>SFB Stadtradio</name>
 			<shortname>SFB Stadtradio</shortname>
 			<icon></icon>
-			<frequency>88.8</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>87.9</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1063385349500109B663095C9C81FD9B9E19C08F2462A324F57EFF089DFEC3C07F15677C52</stationID>
+			
+<stationID>1077447477E9274D35AD76166E419813E3CED22ED033D6DEC7DD93E916C0B22FC169660374</stationID>
+			<name>88,8 BerlinBrandenburg</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.8501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10635577989AB9E8821263E002021093519CAEB5456FD1F1CC979FCED83E47EF304564D482</stationID>
 			<name>Deutschland Radio Berlin</name>
 			<shortname>D Radio Berlin</shortname>
 			<icon></icon>
-			<frequency>89.625</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>89.6502</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>106338534902C553EE52365D10F1C25910829C9DECD0770CD7632E60C51EAB474C133C5FAB</stationID>
+			
+<stationID>10635577984154FE66DB687CDF76E7232F637213FD936EF3624728C983A2848C1F509F7B70</stationID>
 			<name>BBC</name>
 			<shortname>BBC</shortname>
 			<icon></icon>
-			<frequency>90.25</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>90.2252</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>10633853499DFD7248C61C6F4F795C5440DFED8C4744AD618CFA1781B66D7ED8E9DC210C77</stationID>
+			
+<stationID>10635577982482900DA1FC473800F71F04FB441DC2EBF97750217351A0E319E7D5D7BA6559</stationID>
 			<name>Berliner Rundfunk</name>
 			<shortname>Berliner Rundfunk</shortname>
 			<icon></icon>
-			<frequency>91.4375</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>91.4503</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1063385349C823A5F5E57010677432AC9E8B4333062CA7EEED70DDFEBD3618F03AE55F75DF</stationID>
+			
+<stationID>10774474861E84EBFAD4264FF559F24F51824682B94B5E52B7E6EE4FF280F637682A52CBA6</stationID>
+			<name>Radio Multikulti</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.6254</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106355779811A4311CEE6AEACB15EBF433CBE44CF568918D7CE850A9E9D91C61CCC3CFD323</stationID>
 			<name>RS 2</name>
 			<shortname>RS2</shortname>
 			<icon></icon>
-			<frequency>94.3125</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>94.3254</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1063385349041D5648D887F0125564EC2D6FDF91854072197C70FE807650B386BCF2DE0A05</stationID>
+			
+<stationID>10635577984CC412CB610F3E7979F94EFAC6F64281C344E39BD701929C64BBAEEB4834C85F</stationID>
 			<name>Radio 1</name>
 			<shortname>Radio1</shortname>
 			<icon></icon>
-			<frequency>95.875</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>95.8505</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>10633853490BA33F7F5740683BAF6DFF30E1F67A54A08B0C4CE3CECA2DB4ED5DAA36E431E4</stationID>
-			<name>RBB Radio 3</name>
-			<shortname>Radio3</shortname>
-			<icon></icon>
-			<frequency>96.3125</frequency>
-			<volumepreset>-1</volumepreset>
-		</FrequencyRadioStation>
-		<FrequencyRadioStation>
-			<stationID>1063385349D4DF6E4B5006F825A3F02F7D13EDA5BE50B8F4101E6F029829BA064FD24087F9</stationID>
+			
+<stationID>1063557798A8D42D88F5E41461BAC7F3269120AF9E1EDC8881D44ACCBAF4A06B50219CF635</stationID>
 			<name>Deutschland Funk</name>
 			<shortname>D Funk</shortname>
 			<icon></icon>
-			<frequency>97.75</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>97.7257</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>10633853493FAC5D7FC15132D2E24D74E70764FC73DAB596C44753039A13F62748518BC94E</stationID>
+			
+<stationID>10635577985C8A93D9868FC0330030D80EB25257D4149DB6353C679241AA5CD784EB97CEEB</stationID>
 			<name>Paradiso</name>
 			<shortname>Paradiso</shortname>
 			<icon></icon>
-			<frequency>98.85</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>98.2</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>10633853490F847F6119712D26A7530E7B8B35A87D4C5272C3768C8DAFA851ECBFB0783470</stationID>
+			
+<stationID>1063557798E4220758884685F650F0BD42BF116545A06AE15EDE13FBB14340240D489233B4</stationID>
+			<name>Kiss FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10635577987E569D2B6BBEC9B95B284C3DF8FF2A8025E971D580B7078AF0851686BA065977</stationID>
 			<name>Antenne Brandenburg</name>
 			<shortname>Antenne BRB</shortname>
 			<icon></icon>
-			<frequency>99.6875</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>99.626</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1063385349A62419FB7D8DA8D2452C3F7A8F23B3DAFD792B487134B59411A571BF65227BE1</stationID>
+			
+<stationID>1063557798EF6093858A2FFAC0251787CE74D762BAF2626699A5590AD8B8AB73B8EEA565DC</stationID>
 			<name>Fritz</name>
 			<shortname>Fritz</shortname>
 			<icon></icon>
-			<frequency>102.625</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>102.625</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1063385349E8469B9834E0D7C87AD69EA743CB4CBB21B71C194B2566B98E3E998AB5C7886B</stationID>
+			
+<stationID>10774474995C04179C8D165D192C855E624C5487D2FD3857480D862FC9B768CA07CB0D0187</stationID>
+			<name>100,6 Superradio</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.651</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1063557798BD32E17DDA082289D167C1288514CC6B54616F8D7FBE432ECC50DB76957A8268</stationID>
 			<name>Radio Energy</name>
 			<shortname>Radio Energy</shortname>
 			<icon></icon>
-			<frequency>103.438</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>103.451</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1063385349A509F7710E705BB097DDBF8F4E00F0AB6722CF31B53768F44A2CE0F07BB01919</stationID>
+			
+<stationID>10635577986E0C48F75AC106F09CB65814CADD4489F951B0BFB744C70E73CE0CD6C5A20AD5</stationID>
 			<name>RTL</name>
 			<shortname>RTL</shortname>
 			<icon></icon>
-			<frequency>104.625</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>104.651</frequency>
 		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
+
+
+

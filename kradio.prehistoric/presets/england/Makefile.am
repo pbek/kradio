@@ -1,10 +1,11 @@
 SUBDIRS = buckinghamshire
-EXTRA_DIST = "exeter-antenna.krp" "leeds-antenna.krp" "newcastle-upon-tyne.krp" "sheffield.krp"
+EXTRA_DIST = "exeter-antenna.krp" "leeds-antenna.krp" "london.krp" "newcastle-upon-tyne.krp" "sheffield.krp"
 
 install-data-local:
 	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/england/"
 	$(INSTALL_DATA) "$(srcdir)/leeds-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/england/leeds-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/exeter-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/england/exeter-antenna.krp"
+	$(INSTALL_DATA) "$(srcdir)/london.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/england/london.krp"
 	$(INSTALL_DATA) "$(srcdir)/sheffield.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/england/sheffield.krp"
 	$(INSTALL_DATA) "$(srcdir)/newcastle-upon-tyne.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/england/newcastle-upon-tyne.krp"
 
@@ -12,5 +13,6 @@ install-data-local:
 uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/england/leeds-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/england/exeter-antenna.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/england/london.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/england/sheffield.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/england/newcastle-upon-tyne.krp"
