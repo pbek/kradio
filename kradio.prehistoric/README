@@ -14,19 +14,6 @@ First checkout kradio from CVS and do in ./
   make
   make install
 
-
-------------------
-KDE3
-------------------
-
-To compile KRadio against KDE3 you have to perform a 
-
-  cvs update -r KDE3
-
-within your ./admin directory after cvs checkout. After that kradio
-should compile without problems for KDE3.
-
-
 ------------------
 Configuration
 ------------------
