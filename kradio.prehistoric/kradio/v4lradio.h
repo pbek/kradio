@@ -75,8 +75,6 @@ public:
 
 
     virtual	float deltaF () const;
-    virtual float minFrequency () const;
-    virtual float maxFrequency () const;
 
     virtual	float currentFrequency() const;
     virtual void  setCurrentFrequency(float freq);
@@ -101,6 +99,8 @@ protected:
 	bool readAudioInfo() const;
 	bool writeAudioInfo();
 
+    virtual float minPossibleFrequency() const;
+    virtual float maxPossibleFrequency() const;
 protected:
 	struct TunerCache {
 		bool  valid;
