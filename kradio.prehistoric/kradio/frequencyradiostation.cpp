@@ -67,7 +67,7 @@ RadioDevice *FrequencyRadioStation::radio()
 
 bool FrequencyRadioStation::frequencyMatch(float frequency)
 {
-       float delta = f < 10 ? STATION_FREQ_INTERVAL_AM : STATION_FREQ_INTERVAL_FM;
+       float delta = frequency < 10 ? STATION_FREQ_INTERVAL_AM : STATION_FREQ_INTERVAL_FM;
        return m_frequency + delta/2 > frequency
            && m_frequency - delta/2 < frequency;
 }
