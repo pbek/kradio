@@ -239,7 +239,7 @@ ConfigPageInfo TimeControl::createConfigurationPage()
 {
     TimeControlConfiguration *conf = new TimeControlConfiguration(NULL);
     connect(conf);
-    return ConfigPageInfo (conf, i18n("Alarms"), i18n("Setup Alarms"), "kalarm");
+    return ConfigPageInfo (conf, i18n("Alarms"), i18n("Setup Alarms"), "kradio_kalarm");
 }
 
 
@@ -264,6 +264,6 @@ AboutPageInfo TimeControl::createAboutPage()
 	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
 	          i18n("Alarms"),
 	          i18n("Time Control Plugin"),
-	          "kalarm"
+	          "kradio_kalarm"
 		   );
 }

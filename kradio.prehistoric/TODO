@@ -1,10 +1,11 @@
 0.3.0-alpha2
 
        translation preparation                  // done
-       german translation
+       german translation                       // done
        segfault fixes with 2.95.3
        tooltips in config dialog
-       lasterror für radiodevice und recording
+       errorlog
+       remove dependency on kalarm              // done
        v4l2 support (implemented, hardly tested) // done
        recording button: +menu for recording/monitoring // done
        symbol for station search button         // done
