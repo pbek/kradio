@@ -47,19 +47,20 @@ public:
 
 public slots:
 
-  virtual void slotConfigure();
   virtual void slotApplyConfig ();
-  virtual void slotSaveConfig  ();
+  virtual void slotRunConfigure();
   virtual void slotAlarm(Alarm *);
 
 private:
   void restoreState();
-  void readOptions();
-
   void saveState();
-  void saveOptions();
-  void readXMLConfig();
 
+  void readOptions();
+  void saveOptions();
+
+  void readConfiguration();
+  void saveConfiguration();
+  
   KAboutApplication AboutApplication;
   
   KConfig       *config;

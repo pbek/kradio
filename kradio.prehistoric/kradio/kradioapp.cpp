@@ -39,6 +39,9 @@ KRadioApp::KRadioApp()
    radio(0),
    setupDialog(0, false)
 {
+  // set configuration
+  config = KGlobal::config();
+
   // the actual radio
   radio = new V4LRadio(this, "");
 
@@ -59,14 +62,10 @@ KRadioApp::KRadioApp()
 	lircHelper = new LircSupport (this, radio, timeControl);
 #endif
   
-  // load XML station configuration (& backward compatibility: alarms)
-  readXMLConfig();
-  
-  // load "normal" configuration
-  config = KGlobal::config();
-  readOptions();
+  // read configuration
+  readConfiguration();  
 
-  // restore Configuration
+  // restore gui state
   restoreState();
 
   tray->setPixmap(BarIcon("kradio"));
@@ -74,7 +73,7 @@ KRadioApp::KRadioApp()
   tray->show();
 
   connect(kradio, SIGNAL(showAbout()), &AboutApplication, SLOT(show()));
-  connect(kradio, SIGNAL(runConfigure()), this, SLOT(slotConfigure()));
+  connect(kradio, SIGNAL(runConfigure()), this, SLOT(slotRunConfigure()));
 
   connect(timeControl, SIGNAL(sigAlarm(Alarm *)), this, SLOT(slotAlarm(Alarm *)));
   connect(timeControl, SIGNAL(sigCountdownZero()), radio, SLOT(PowerOff()));
@@ -91,11 +90,8 @@ KRadioApp::KRadioApp()
 
 KRadioApp::~KRadioApp()
 {
-  saveOptions();
+  saveConfiguration();
   saveState();
-
-  if (radio)
-	  writeXMLCfg(locateLocal("data", "kradio/stations.krp"), radio->getStations());
 
   if (kradio){
     delete kradio;
@@ -266,39 +262,6 @@ void KRadioApp::saveState()
 
 
 
-void KRadioApp::slotConfigure()
-{
-    SetupData  d;
-
-    // General Options
-	d.radioDev              = radio ? radio->radioDevice() : QString("/dev/radio");
-	d.mixerDev              = radio ? radio->mixerDevice() : QString("/dev/mixer");
-	d.mixerChannel          = radio ? radio->mixerChannel() : 0;
-	
-	d.displayOnlyShortNames = quickbar ? quickbar->getShowShortName() : false;
-	d.enableRangeOverride   = radio ? radio->isRangeOverrideSet() : false;
-	d.minFrequency          = radio ? radio->minFrequency() : 87;
-	d.maxFrequency          = radio ? radio->maxFrequency() : 109;
-	d.sleep                 = timeControl ? timeControl->getCountdownSeconds() / 60 : 30;
-	d.signalMinQuality      = radio ? radio->getSignalMinQuality() : 0.75;
-
-	// Station Options
-	d.stations = radio ? &radio->getStations() : NULL;
-	d.radio    = radio;
-
-	// Alarm Options
-	d.alarms   = &timeControl->getAlarms();
-
-	setupDialog.setData(d);
-
-
-	setupDialog.show();
-//	if (setupDialog.exec() == QDialog::Accepted) {
-//		slotApplyConfig (sud);
-//	}
-}
-
-
 void KRadioApp::slotApplyConfig ()
 {
     SetupData  d;
@@ -321,17 +284,6 @@ void KRadioApp::slotApplyConfig ()
 }
 
 
-void KRadioApp::slotSaveConfig ()
-{
-	slotApplyConfig();
-
-	if (radio)
-		writeXMLCfg(locateLocal("data", "kradio/stations.krp"), radio->getStations());
-	saveOptions();
-}
-
-
-
 void KRadioApp::slotAlarm (Alarm *a)
 {
 	if (radio && a) {
@@ -350,8 +302,19 @@ void KRadioApp::slotAlarm (Alarm *a)
 }
 
 
-void KRadioApp::readXMLConfig()
+void KRadioApp::saveConfiguration ()
 {
+	if (radio)
+		writeXMLCfg(locateLocal("data", "kradio/stations.krp"), radio->getStations());
+	saveOptions();
+}
+
+
+void KRadioApp::readConfiguration()
+{
+
+	// first read XML station presets (and alarms for compatibility
+	
 	AlarmVector   al;
 	StationVector sl;
 
@@ -368,7 +331,48 @@ void KRadioApp::readXMLConfig()
 		delete *i;
 	for (iStationVector i = sl.begin(); i != sl.end(); ++i)
 		delete *i;
+
+
+    // load "normal" configuration
+    readOptions();
+
+
+    ////////////////////////
+	// prepare setupDialog
+	
+    SetupData  d;
+
+    // General Options
+	d.radioDev              = radio ? radio->radioDevice() : QString("/dev/radio");
+	d.mixerDev              = radio ? radio->mixerDevice() : QString("/dev/mixer");
+	d.mixerChannel          = radio ? radio->mixerChannel() : 0;
+
+	d.displayOnlyShortNames = quickbar ? quickbar->getShowShortName() : false;
+	d.enableRangeOverride   = radio ? radio->isRangeOverrideSet() : false;
+	d.minFrequency          = radio ? radio->minFrequency() : 87;
+	d.maxFrequency          = radio ? radio->maxFrequency() : 109;
+	d.sleep                 = timeControl ? timeControl->getCountdownSeconds() / 60 : 30;
+	d.signalMinQuality      = radio ? radio->getSignalMinQuality() : 0.75;
+
+	// Station Options
+	d.stations = radio ? &radio->getStations() : NULL;
+	d.radio    = radio;
+
+	// Alarm Options
+	d.alarms   = &timeControl->getAlarms();
+
+	setupDialog.setData(d);
+
 }
+
+
+
+void KRadioApp::slotRunConfigure()
+{
+	setupDialog.show();
+	setupDialog.raise();
+}
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -454,3 +458,4 @@ void writeXMLCfg (const QString &FileName, const StationVector &sl /*, const Ala
 	fprintf (f, "</%s>\n", KRadioConfigElement);
 	fclose (f);
 }
+
