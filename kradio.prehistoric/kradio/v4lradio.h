@@ -36,12 +36,11 @@ class V4LRadio : public PluginBase,
                  public IFrequencyRadio
 {
 public:
-	V4LRadio ();
+	V4LRadio (const QString &name);
 	virtual ~V4LRadio ();
 
 	virtual bool connect (Interface *);
 	virtual bool disconnect (Interface *);
-
 
 	// IRadioDevice methods
 
@@ -109,6 +108,9 @@ ANSWERS:
 public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
+
+	virtual void   connect (PluginBase *p)    { connect ((Interface*)p); }
+	virtual void   disconnect (PluginBase *p) { disconnect ((Interface*)p); }
 
 protected:
 	virtual QFrame *internal_createConfigurationPage(KDialogBase *dlg);

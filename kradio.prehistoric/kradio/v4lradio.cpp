@@ -34,8 +34,9 @@ TODO:
 
 struct _lrvol { unsigned char l, r; short dummy; };
 
-V4LRadio::V4LRadio()
-  : m_volume(0),
+V4LRadio::V4LRadio(const QString &name)
+  : PluginBase(name),
+    m_volume(0),
     m_muted(true),
     m_signalQuality(0),
     m_stereo(false),
@@ -433,7 +434,73 @@ float V4LRadio::getScanStep()      const
 }
 
 
+// PluginBase methods
 
+void   V4LRadio::saveState (KConfig *config) const
+{
+    config->setGroup(QString("v4lradio-") + name());
+    
+	config->writeEntry("MixerDev",         m_mixerDev);
+	config->writeEntry("RadioDev",         m_radioDev);
+	int ch = m_mixerChannel;
+	if(ch < 0 || ch >= SOUND_MIXER_NRDEVICES)
+		ch = SOUND_MIXER_LINE;
+	config->writeEntry("MixerChannel",     mixerChannelNames[ch]);
+	config->writeEntry("fMinOverride",     m_minFrequency);
+	config->writeEntry("fMaxOverride",     m_maxFrequency);
+
+	config->writeEntry("signalMinQuality", m_minQuality);
+
+	config->writeEntry("scanStep",         m_scanStep);
+
+    config->writeEntry("Frequency",        m_currentStation.frequency());
+    config->writeEntry("Volume",           m_volume);
+
+    config->writeEntry("PowerOn",          isPowerOn());
+}
+
+
+void   V4LRadio::restoreState (KConfig *config)
+{
+    config->setGroup(QString("v4lradio-") + name());
+
+	m_radioDev              = config->readEntry ("RadioDev", "/dev/radio");
+	m_mixerDev              = config->readEntry ("MixerDev", "/dev/mixer");
+
+	QString s               = config->readEntry ("MixerChannel", "line");	
+	m_mixerChannel = 0;
+	for (m_mixerChannel = 0; m_mixerChannel < SOUND_MIXER_NRDEVICES; ++m_mixerChannel) {
+		if (s == mixerChannelLabels[m_mixerChannel] ||
+			s == mixerChannelNames[m_mixerChannel])
+			break;
+	}
+	if (m_mixerChannel == SOUND_MIXER_NRDEVICES)
+		m_mixerChannel = SOUND_MIXER_LINE;
+
+	m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
+	m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
+
+	m_minQuality            = config->readDoubleNumEntry ("signalMinQuality", 0.75);
+	m_scanStep              = config->readDoubleNumEntry ("scanStep", 0.05);
+
+    setFrequency(config->readDoubleNumEntry("Frequency", 88));
+    setVolume(config->readNumEntry         ("Volume",    65535));
+    setPower(config->readBoolEntry         ("PowerOn",   false));
+}
+
+
+QFrame *V4LRadio::internal_createConfigurationPage(KDialogBase */*dlg*/)
+{
+	// FIXME
+	return NULL;
+}
+
+QFrame *V4LRadio::internal_createAboutPage(QWidget */*parent*/)
+{
+	// FIXME
+	return NULL;
+}
+	
 ////////////////////////////////////////
 // anything else
 

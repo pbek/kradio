@@ -20,8 +20,9 @@
 
 #include <kdialogbase.h>
 
-PluginBase::PluginBase()
-	: m_manager(NULL)
+PluginBase::PluginBase(const QString &name)
+	: QObject(NULL, name),
+      m_manager(NULL)
 {
 }
 

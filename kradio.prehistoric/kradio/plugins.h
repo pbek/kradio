@@ -41,9 +41,8 @@ class PluginBase : public QObject, virtual public Interface
 {
 friend class PluginManager;
 public :
-	         PluginBase();
+	         PluginBase(const QString &name);
 	virtual ~PluginBase();
-
 
 	// Only the plugin itself knows what interfaces it implements. Thus it has
 	// to call the apropriate InterfaceBase::establishConnection methods
@@ -79,7 +78,7 @@ protected slots:
 	void registerGuiElement   (QObject *o);
 	void unregisterGuiElement (QObject *o);
 
-protected :	
+protected :
     PluginManager     *m_manager;
     QPtrList<QObject>  m_guiElements;
 };
