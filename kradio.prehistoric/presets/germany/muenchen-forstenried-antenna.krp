@@ -1,0 +1,255 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Ernst Martin Witte &lt;witte@kawo1.rwth-aachen.de&gt;</maintainer>
+			<changed>2003-04-08T23:41:56</changed>
+			<country>Germany</country>
+			<city>Muenchen</city>
+			<media>antenna</media>
+			<comments></comments>
+		</info>
+		<station>
+			<name>BR1 (Muenchen/Ismaning)</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>91.3007</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR2 (Muenchen/Ismaning)</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>88.4005</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR3 (Muenchen/Ismaning)</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>97.3011</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR4 (Muenchen/Ismaning)</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>103.201</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR5 (Muenchen/Ismaning)</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>90.0256</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandradio Berlin</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96.826</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Deutschlandradio Koeln</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.701</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Klassikradio (Muenchen/Olympiaturm)</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.202</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>BR1 (Wendelstein)</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.7258</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>BR2 (Wendelstein)</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.5256</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>BR3 (Wendelstein)</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>98.5011</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>BR4 (Wendelstein/Ochsenkopf)</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.351</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>BR4 (Hohenpeiﬂenberg)</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.401</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>BR5 (Wendelstein)</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.702</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Energy Muenchen</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.3258</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Arabella (Muenchen/Blutenburgstr.)</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.851</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Bayern (Muenchen Olympiaturm)</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.351</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Bayern (Zugspitze)</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.676</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Antenne Bayern (Hochries)</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>107.702</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>M94.5</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.5259</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Charivari</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.5259</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Gon 96.3</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.301</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Melodie (Muenchen Blutenburgstr.)</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.051</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Arabella (Muenchen/Isen)</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>105.202</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 106,4 (Fuerstenfeldbruck/Schoengeis)</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.402</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Radio 2DAY / Rundfunk Neues Europa / 89 Hit FM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.0256</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+		<station>
+			<name>Radio LORA / Radio Feierwerk / FAZ 92,4</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.4008</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>0</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
