@@ -73,6 +73,7 @@ protected slots:
 	void slotStationDown();
 	void slotActivateStation( int );
 	void slotLoadPresets();
+	void slotStorePresets();
 	void slotLastChangeNow();
 	void slotSendPresetsByMail( const QString &url );
 

@@ -409,7 +409,7 @@ QString StationList::writeXML () const
 }
 
 
-bool StationList::writeXML (const KURL &url) const
+bool StationList::writeXML (const KURL &url, bool enableMessageBox) const
 {
 	KTempFile tmpFile;
 	tmpFile.setAutoDelete(true);
@@ -425,6 +425,12 @@ bool StationList::writeXML (const KURL &url) const
 		kdDebug() << "StationList::writeXML: "
 				  << i18n("error writing to tempfile")
 				  << " " << tmpFile.name() << endl;
+		if (enableMessageBox) {
+			QMessageBox::warning(NULL, "KRadio",
+								 i18n("Writing station preset file ") +
+								 " " + tmpFile.name() + " " +
+								 i18n("failed") + ".");
+		}
         return false;
     }
 
@@ -436,6 +442,12 @@ bool StationList::writeXML (const KURL &url) const
 		kdDebug() << "StationList::writeXML: "
 		          << i18n("error uploading preset file")
 		          << " " << url.url() << endl;
+		if (enableMessageBox) {
+			QMessageBox::warning(NULL, "KRadio",
+								 i18n("Upload of station preset file to") +
+								 " " + url.url() + " " +
+								 i18n("failed") + ".");
+		}
 		return false;
     }
     

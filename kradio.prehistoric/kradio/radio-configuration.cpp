@@ -69,6 +69,8 @@ RadioConfiguration::RadioConfiguration (QWidget *parent)
 					 this, SLOT(slotActivateStation( int )));
 	QObject::connect(buttonLoadPresets, SIGNAL(clicked()),
 					 this, SLOT(slotLoadPresets()));
+	QObject::connect(buttonStorePresets, SIGNAL(clicked()),
+					 this, SLOT(slotStorePresets()));
 	QObject::connect(buttonLastChangeNow, SIGNAL(clicked()),
 					 this, SLOT(slotLastChangeNow()));
 					 
@@ -381,7 +383,7 @@ void RadioConfiguration::slotActivateStation( int )
 void RadioConfiguration::slotLoadPresets()
 {
     KFileDialog fd(locate("data", "kradio/presets/"),
-		           "( *.krp )|" + i18n("kradio preset files"),
+		           "*.krp|" + i18n("kradio preset files"),
 		           this,
 		           i18n("preset file selection"),
 		           true);
@@ -393,6 +395,22 @@ void RadioConfiguration::slotLoadPresets()
 		if (sl.readXML(fd.selectedURL())) {
 			noticeStationsChanged(sl);
 		}
+    }
+}
+
+
+void RadioConfiguration::slotStorePresets()
+{
+    KFileDialog fd("",
+		           "*.krp|" + i18n("kradio preset files"),
+		           this,
+		           i18n("preset file selection"),
+		           true);
+    fd.setMode(KFile::File);
+    fd.setCaption (i18n("Select preset file"));
+
+    if (fd.exec() == QDialog::Accepted) {
+		m_stations.writeXML(fd.selectedURL());
     }
 }
 

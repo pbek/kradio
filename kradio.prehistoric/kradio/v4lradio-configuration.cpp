@@ -366,10 +366,10 @@ void V4LRadioConfiguration::slotCancel()
 	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
 	noticeSignalMinQualityChanged(querySignalMinQuality());
 	noticeScanStepChanged(queryScanStep());
-	noticeTrebleChanged(m_orgTreble);
-	noticeBassChanged(m_orgBass);
-	noticeBalanceChanged(m_orgBalance);
-	noticeDeviceVolumeChanged(m_orgDeviceVolume);
+	sendTreble(m_orgTreble);
+	sendBass(m_orgBass);
+	sendBalance(m_orgBalance);
+	sendDeviceVolume(m_orgDeviceVolume);
 }
 
 
@@ -387,25 +387,33 @@ void V4LRadioConfiguration::guiMaxFrequencyChanged(int v)
 void V4LRadioConfiguration::slotDeviceVolumeChanged (double v) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
+	++m_myChange;
 	sendDeviceVolume(v);
+	--m_myChange;
 }
 
 void V4LRadioConfiguration::slotTrebleChanged (double t) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
+	++m_myChange;
 	sendTreble(t);
+	--m_myChange;
 }
 
 void V4LRadioConfiguration::slotBassChanged   (double b) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
+	++m_myChange;
 	sendBass(b);
+	--m_myChange;
 }
 
 void V4LRadioConfiguration::slotBalanceChanged(double b) // for KDoubleNumInput, 0.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
+	++m_myChange;
 	sendBalance(b);
+	--m_myChange;
 }
 
 

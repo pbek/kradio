@@ -235,7 +235,7 @@ bool V4LRadio::setTreble (float t)
 {
 	if (t > 1.0) t = 1.0;
 	if (t < 0)   t = 0.0;
-	if (rint(m_treble*65535) != rint(t*65535)) {
+	if ((int)rint(m_treble*65535) != (int)rint(t*65535)) {
 		m_treble = t;
 		writeAudioInfo();
 		notifyTrebleChanged(t);
@@ -248,7 +248,7 @@ bool V4LRadio::setBass (float b)
 {
 	if (b > 1.0) b = 1.0;
 	if (b < 0)   b = 0.0;
-	if (rint(m_bass*65535) != rint(b*65535)) {
+	if ((int)rint(m_bass*65535) != (int)rint(b*65535)) {
 		m_bass = b;
 		writeAudioInfo();
 		notifyBassChanged(b);
@@ -262,7 +262,7 @@ bool V4LRadio::setBalance (float b)
 {
 	if (b > +1.0) b = +1.0;
 	if (b < -1.0) b = -1.0;
-	if (rint(m_balance*32767) != rint(b*32767)) {
+	if ((int)rint(m_balance*32767) != (int)rint(b*32767)) {
 		m_balance = b;
 		writeAudioInfo();
 		notifyBalanceChanged(b);
@@ -275,7 +275,7 @@ bool V4LRadio::setDeviceVolume (float v)
 {
 	if (v > 1.0) v = 1.0;
 	if (v < 0)   v = 0;
-	if (rint(m_deviceVolume*65535) != rint(v*65535)) {
+	if ((int)rint(m_deviceVolume*65535) != (int)rint(v*65535)) {
 		m_deviceVolume = v;
 		writeAudioInfo();
 		notifyDeviceVolumeChanged(v);
@@ -771,6 +771,10 @@ void V4LRadio::radio_init()
 	if (isSeekRunning())
 		stopSeek();
 
+	V4LCaps c = readV4LCaps(m_radioDev);
+    m_v4lVersion  = c.version;
+    m_description = c.description;
+        
 	m_mixer_fd = open(m_mixerDev, O_RDONLY);
 	if (m_mixer_fd < 0) {
 		radio_done();
@@ -990,12 +994,12 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	if (m_blockReadAudio && !write)
 		return true;
 
-	bool oldStereo  = m_stereo;
-	bool oldMute    = m_muted;
-	bool oldTreble  = m_treble;
-	bool oldBass    = m_bass;
-	bool oldBalance = m_balance;
-	bool oldDeviceVolume = m_deviceVolume;
+	bool  oldStereo  = m_stereo;
+	bool  oldMute    = m_muted;
+	float oldTreble  = m_treble;
+	float oldBass    = m_bass;
+	float oldBalance = m_balance;
+	float oldDeviceVolume = m_deviceVolume;
 
 	if (m_radio_fd >= 0) {
 		int r = -1;
@@ -1038,7 +1042,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 				V4L2_G_CTRL(V4L2_CID_AUDIO_BALANCE);
                 m_balance = r ? 0 : (1 / 32767.0 * (float)(ctl.value - 32768));
 				V4L2_G_CTRL(V4L2_CID_AUDIO_VOLUME);
-                m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)ctl.value); 
+                m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)ctl.value);
                 
                 r = ioctl (m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
                 m_stereo = (r == 0) && ((m_tuner2->rxsubchans & V4L2_TUNER_SUB_STEREO) != 0);
@@ -1069,13 +1073,13 @@ bool V4LRadio::updateAudioInfo(bool write) const
 		notifyStereoChanged(m_stereo);
 	if (oldMute != m_muted)
 		notifyMuted(m_muted);
-	if (rint(65535*oldTreble)       != rint(65535*m_treble))
+	if ((int)rint(65535*oldTreble)       != (int)rint(65535*m_treble))
 		notifyTrebleChanged(m_treble);
-	if (rint(65535*oldBass)         != rint(65535*m_bass))
+	if ((int)rint(65535*oldBass)         != (int)rint(65535*m_bass))
 		notifyBassChanged(m_bass);
-	if (rint(32767*oldBalance)      != rint(32767*m_balance))
+	if ((int)rint(32767*oldBalance)      != (int)rint(32767*m_balance))
 		notifyBalanceChanged(m_balance);
-	if (rint(65535*oldDeviceVolume) != rint(65535*m_deviceVolume))
+	if ((int)rint(65535*oldDeviceVolume) != (int)rint(65535*m_deviceVolume))
 		notifyDeviceVolumeChanged(m_deviceVolume);
 	
 	m_blockReadAudio = oldBlock;
