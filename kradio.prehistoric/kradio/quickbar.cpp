@@ -22,6 +22,7 @@
 
 #include <kwin.h>
 #include <klocale.h>
+#include <kglobal.h>
 
 #include "quickbar.h"
 #include "radiostation.h"

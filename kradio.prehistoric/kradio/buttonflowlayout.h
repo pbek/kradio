@@ -18,7 +18,7 @@
 #define BUTTONFLOWLAYOUT_H
 
 #include <qlayout.h>
-#include <qptrlist.h>
+#include <qlist.h>
 
 class ButtonFlowLayout : public QLayout
 {
@@ -46,7 +46,7 @@ protected:
 
 private:
     int doLayout( const QRect&, bool testonly = FALSE );
-    QPtrList<QLayoutItem> list;
+    QList<QLayoutItem> list;
     int cached_width;
     int cached_hfw;
 };

@@ -20,7 +20,7 @@
 class ButtonFlowLayoutIterator :public QGLayoutIterator
 {
 public:
-    ButtonFlowLayoutIterator( QPtrList<QLayoutItem> *l ) :idx(0), list(l)  {}
+    ButtonFlowLayoutIterator( QList<QLayoutItem> *l ) :idx(0), list(l)  {}
     uint count() const;
     QLayoutItem *current();
     QLayoutItem *next();
@@ -28,7 +28,7 @@ public:
 
 private:
     int idx;
-    QPtrList<QLayoutItem> *list;
+    QList<QLayoutItem> *list;
 
 };
 
@@ -134,7 +134,7 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
     int buttonHeight = 0;
     int linecount = 0;
 
-    QPtrListIterator<QLayoutItem> it(list);
+    QListIterator<QLayoutItem> it(list);
     QLayoutItem *o;
 
     // get the width of the biggest Button
@@ -185,7 +185,7 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 QSize ButtonFlowLayout::minimumSize() const
 {
     QSize s(0,0);
-    QPtrListIterator<QLayoutItem> it(list);
+    QListIterator<QLayoutItem> it(list);
     QLayoutItem *o;
     while ( (o=it.current()) != 0 ) {
   	  ++it;
