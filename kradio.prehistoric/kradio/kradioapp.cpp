@@ -28,7 +28,6 @@
 #include "kradio.h"
 #include "kradioapp.h"
 #include "docking.h"
-#include "setupdialog.h"
 #include "radiocfgxmlhandler.h"
 
 
@@ -37,7 +36,8 @@ KRadioApp::KRadioApp()
    tray(0),
    quickbar(0),
    timeControl(0),
-   radio(0)
+   radio(0),
+   setupDialog(0, false)
 {
   // the actual radio
   radio = new V4LRadio(this, "");
@@ -80,6 +80,12 @@ KRadioApp::KRadioApp()
   connect(timeControl, SIGNAL(sigCountdownZero()), radio, SLOT(PowerOff()));
 
   connect(radio, SIGNAL(sigPowerOn(bool)), timeControl, SLOT(stopCountdown()));
+
+  connect(&setupDialog, SIGNAL(apply()),
+		  this, SLOT(slotApplyConfig()));
+  connect(&setupDialog, SIGNAL(okClicked()),
+		  this, SLOT(slotApplyConfig()));
+
 }
 
 
@@ -262,8 +268,6 @@ void KRadioApp::saveState()
 
 void KRadioApp::slotConfigure()
 {
-	SetupDialog	sud (0);
-
     SetupData  d;
 
     // General Options
@@ -285,23 +289,21 @@ void KRadioApp::slotConfigure()
 	// Alarm Options
 	d.alarms   = &timeControl->getAlarms();
 
-	// Connections
-	connect (&sud, SIGNAL(sigApplyConfig(SetupDialog &)),
-		this, SLOT(slotApplyConfig(SetupDialog &)));
+	setupDialog.setData(d);
 
-	sud.setData(d);
-		
-	if (sud.exec() == QDialog::Accepted) {
-		slotApplyConfig (sud);
-	}
+
+	setupDialog.show();
+//	if (setupDialog.exec() == QDialog::Accepted) {
+//		slotApplyConfig (sud);
+//	}
 }
 
 
-void KRadioApp::slotApplyConfig (SetupDialog &sud)
+void KRadioApp::slotApplyConfig ()
 {
     SetupData  d;
 
-	sud.getData(d);	
+	setupDialog.getData(d);	
 
 	// general options
 	quickbar->setShowShortName(d.displayOnlyShortNames);
@@ -319,9 +321,9 @@ void KRadioApp::slotApplyConfig (SetupDialog &sud)
 }
 
 
-void KRadioApp::slotSaveConfig (SetupDialog &sud)
+void KRadioApp::slotSaveConfig ()
 {
-	slotApplyConfig(sud);
+	slotApplyConfig();
 
 	if (radio)
 		writeXMLCfg(locateLocal("data", "kradio/stations.krp"), radio->getStations());

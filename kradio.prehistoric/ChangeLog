@@ -4,6 +4,7 @@
 				- fix ugly setup dialog layout frame problem
 				- fix "alarm-enable is unset on restart" - problem
 				- kde like configuration dialog
+				- make configuration dialog non-modal
 
 0.2.6   emw     - activate station in setupdialog by freq, not stationId
                 - add "unknown station" to kradio->cbStations

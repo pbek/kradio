@@ -32,6 +32,7 @@
 #include "v4lradio.h"
 #include "timecontrol.h"
 #include "lircsupport.h"
+#include "setupdialog.h"
 
 class RadioDocking;
 class KRadio;
@@ -47,8 +48,8 @@ public:
 public slots:
 
   virtual void slotConfigure();
-  virtual void slotApplyConfig (SetupDialog &sud);
-  virtual void slotSaveConfig  (SetupDialog &sud);
+  virtual void slotApplyConfig ();
+  virtual void slotSaveConfig  ();
   virtual void slotAlarm(Alarm *);
 
 private:
@@ -71,6 +72,8 @@ private:
 #ifdef HAVE_LIRC_CLIENT
   LircSupport     *lircHelper;
 #endif
+
+  SetupDialog   setupDialog;
 
 };
 
