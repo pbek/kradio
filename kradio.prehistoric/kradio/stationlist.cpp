@@ -19,6 +19,7 @@
 #include "radiostation.h"
 #include "stationlistxmlhandler.h"
 
+#include <qstring.h>
 #include <qfile.h>
 #include <qiodevice.h>
 #include <qmessagebox.h>
@@ -295,9 +296,9 @@ bool StationList::readXML (const QString &dat, bool enableMessageBox)
 	if (reader.parse(source)) {
 		if (handler.wasCompatMode() && enableMessageBox) {
 			QMessageBox::information(NULL, "KRadio",
-								     "Probably an old station preset file was read.\n"
+								     i18n("Probably an old station preset file was read.\n"
 								     "You have to rebuild your station selections for "
-								     "the quickbar and the docking menu."
+								     "the quickbar and the docking menu.")
 								     );
 		}
 	
@@ -322,13 +323,12 @@ bool StationList::readXML (const KURL &url, bool enableMessageBox)
 	QString tmpfile;
 	if (!KIO::NetAccess::download(url, tmpfile)) {
 		kdDebug() << "StationList::readXML: "
-		          << i18n("error downloading preset file")
-		          << " " << url.url() << endl;
+		          << i18n("error downloading preset file %1").arg(url.url())
+		          << endl;
 		if (enableMessageBox) {
 			QMessageBox::warning(NULL, "KRadio",
-								 i18n("Download of the station preset file at") +
-								 " " + url.url() + " " +
-								 i18n("failed") + ".");
+								 i18n("Download of the station preset file at %1 failed.")
+								 .arg(url.url()));
 		}
 		return false;
 	}
@@ -340,13 +340,12 @@ bool StationList::readXML (const KURL &url, bool enableMessageBox)
     
 	if (! presetFile.open(IO_ReadOnly)) {
 		kdDebug() << "StationList::readXML: "
-		          << i18n("error opening preset file")
-		          << " " << tmpfile << endl;
+		          << i18n("error opening preset file %1").arg(tmpfile)
+		          << endl;
 		if (enableMessageBox) {
 			QMessageBox::warning(NULL, "KRadio",
-								 i18n("Opening of the station preset file at") +
-								 " " + tmpfile + " " +
-								 i18n("failed") + ".");
+								 i18n("Opening of the station preset file at %1 failed.")
+								 .arg(tmpfile));
 		}
 		return false;
 	}
@@ -364,7 +363,7 @@ bool StationList::readXML (const KURL &url, bool enableMessageBox)
 
 	// preset file written with kradio <= 0.2.x
 	if (tmp.find("<format>") < 0) {
-		kdDebug() << "Old Preset File Format detected" << endl;
+		kdDebug() << i18n("Old Preset File Format detected") << endl;
 		QTextStream ins(&presetFile);
 		ins.setEncoding(QTextStream::Locale);
 		xmlData = ins.read();
@@ -440,13 +439,12 @@ bool StationList::writeXML (const KURL &url, bool enableMessageBox) const
 	outs << output;
 	if (outf->status() != IO_Ok) {
 		kdDebug() << "StationList::writeXML: "
-				  << i18n("error writing to tempfile")
-				  << " " << tmpFile.name() << endl;
+				  << i18n("error writing to tempfile %1").arg(tmpFile.name())
+				  << endl;
 		if (enableMessageBox) {
 			QMessageBox::warning(NULL, "KRadio",
-								 i18n("Writing station preset file ") +
-								 " " + tmpFile.name() + " " +
-								 i18n("failed") + ".");
+								 i18n("Writing station preset file %1 failed.")
+								 .arg(tmpFile.name()));
 		}
         return false;
     }
@@ -457,13 +455,12 @@ bool StationList::writeXML (const KURL &url, bool enableMessageBox) const
 
     if (!KIO::NetAccess::upload(tmpFile.name(), url)) {
 		kdDebug() << "StationList::writeXML: "
-		          << i18n("error uploading preset file")
-		          << " " << url.url() << endl;
+		          << i18n("error uploading preset file %1").arg(url.url())
+		          << endl;
 		if (enableMessageBox) {
 			QMessageBox::warning(NULL, "KRadio",
-								 i18n("Upload of station preset file to") +
-								 " " + url.url() + " " +
-								 i18n("failed") + ".");
+								 i18n("Upload of station preset file to %1 failed.")
+								 .arg(url.url()));
 		}
 		return false;
     }

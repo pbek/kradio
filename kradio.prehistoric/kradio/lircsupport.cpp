@@ -32,11 +32,11 @@
 #include "aboutwidget.h"
 
 LircSupport::LircSupport(const QString &name)
-	: PluginBase(name, "LIRC Plugin")
+	: PluginBase(name, i18n("LIRC Plugin"))
 {
 
 #ifdef HAVE_LIRC_CLIENT
-	kdDebug() << "initializing kradio lirc plugin\n";
+	kdDebug() << i18n("initializing kradio lirc plugin") << endl;
 	char *prg = (char*)"kradio";
 	m_fd_lirc = lirc_init(prg, 1);
     m_lirc_notify = 0;
@@ -54,9 +54,9 @@ LircSupport::LircSupport(const QString &name)
 	}
 
 	if (m_fd_lirc == -1) {
-		kdDebug() << "initializing kradio lirc plugin failed\n";
+		kdDebug() << i18n("initializing kradio lirc plugin failed") << endl;
 	} else {
-		kdDebug() << "initializing kradio lirc plugin successful\n";
+		kdDebug() << i18n("initializing kradio lirc plugin successful") << endl;
 	}
 #endif	
 	

@@ -32,7 +32,7 @@
 
 RecordingMonitor::RecordingMonitor(QWidget *parent, const QString &name)
   : QWidget(parent, (const char*)name),
-    WidgetPluginBase(name, "Recording Monitor"),
+    WidgetPluginBase(name, i18n("Recording Monitor")),
     m_showHideOnStartStop(true)
 {
 	setCaption(i18n("Recording Monitor"));
@@ -53,8 +53,8 @@ RecordingMonitor::RecordingMonitor(QWidget *parent, const QString &name)
 
 	l0->addItem(new QSpacerItem(3,1), 0, 2);
 
-	QPushButton *close     = new QPushButton("&Close", this);
-	m_btnStartStop         = new QPushButton("&Start", this);
+	QPushButton *close     = new QPushButton(i18n("&Close"), this);
+	m_btnStartStop         = new QPushButton(i18n("&Start"), this);
 	QObject::connect(close, SIGNAL(clicked()), this, SLOT(hide()));
 	QObject::connect(m_btnStartStop, SIGNAL(clicked()), this, SLOT(slotStartStopRecording()));
 

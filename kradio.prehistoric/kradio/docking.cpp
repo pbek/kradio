@@ -306,7 +306,7 @@ bool RadioDocking::noticeNextAlarmChanged(const Alarm *a)
 	if (a) d = a->nextAlarm();
 
 	if (d.isValid())
-		m_menu->changeTitle (m_alarmID, i18n("next alarm: ") + d.toString());
+		m_menu->changeTitle (m_alarmID, i18n("next alarm: %1").arg(d.toString()));
 	else
 		m_menu->changeTitle (m_alarmID, i18n("<no alarm pending>"));
 	return true;
@@ -420,7 +420,7 @@ void RadioDocking::noticeWidgetPluginShown(WidgetPluginBase *b, bool shown)
 	if (!id) return;
 	m_menu->changeItem(*id,
 		               QIconSet(SmallIconSet(!shown ? "1uparrow" : "1downarrow")),
-	                   (!shown ? i18n("Show %1 ") : i18n("Hide %1 ")).arg(b->description()));
+	                   (!shown ? i18n("Show %1") : i18n("Hide %1")).arg(b->description()));
 }
 
 

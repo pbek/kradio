@@ -17,6 +17,7 @@
 
 #include "plugin_configuration_dialog.h"
 #include <kconfig.h>
+#include <klocale.h>
 
 PluginConfigurationDialog::PluginConfigurationDialog(
     int dialogFace, const QString &caption,
@@ -25,7 +26,7 @@ PluginConfigurationDialog::PluginConfigurationDialog(
     bool modal, bool separator)
 : KDialogBase(dialogFace, caption, buttonMask, defaultButton,
               parent, name, modal, separator),
-  WidgetPluginBase (name, "Configuration Dialog")
+  WidgetPluginBase (name, i18n("Configuration Dialog"))
 {
 }
 

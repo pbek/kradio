@@ -158,7 +158,7 @@
                                             <property name="name">
                                                 <cstring>unnamed</cstring>
                                             </property>
-                                            <widget class="QToolButton">
+                                            <widget class="QPushButton">
                                                 <property name="name">
                                                     <cstring>buttonSearchStations</cstring>
                                                 </property>
@@ -174,7 +174,7 @@
                                                     <string>&amp;Search Stations</string>
                                                 </property>
                                                 <property name="iconSet">
-                                                    <iconset>"file"</iconset>
+                                                    <iconset>"find"</iconset>
                                                 </property>
                                             </widget>
                                             <widget class="QPushButton">

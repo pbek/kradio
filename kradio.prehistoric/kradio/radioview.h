@@ -105,6 +105,7 @@ protected slots:
     void slotPower (bool on);
     void slotConfigure (bool show);
     void slotRecord (bool start);
+    void slotRecordingMonitor(int i);
     void slotComboStationSelected(int);
 
     void slotConfigPageDeleted(QObject*);

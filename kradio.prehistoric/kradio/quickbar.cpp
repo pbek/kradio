@@ -37,7 +37,7 @@
 
 QuickBar::QuickBar(QWidget * parent, const char * name)
   : QWidget(parent, name),
-    WidgetPluginBase(name, "Quickbar Plugin"),
+    WidgetPluginBase(name, i18n("Quickbar Plugin")),
     m_layout(NULL),
     m_buttonGroup(NULL),
     m_showShortName(true)
@@ -123,8 +123,8 @@ ConfigPageInfo QuickBar::createConfigurationPage()
 	connect (conf);
 	return ConfigPageInfo(
 		conf,
-		"Quickbar",
-		"Quickbar Configuration",
+		i18n("Quickbar"),
+		i18n("Quickbar Configuration"),
 		"view_icon"
 	);
 }

@@ -334,9 +334,9 @@ bool V4LRadioConfiguration::noticeMuted(bool /*m*/)
 
 void V4LRadioConfiguration::selectRadioDevice()
 {
-    KFileDialog fd("/dev/", i18n("any") + " ( * )", this, i18n("radio device selection"), TRUE);
+    KFileDialog fd("/dev/", i18n("any ( * )"), this, i18n("Radio Device Selection"), TRUE);
     fd.setMode(KFile::File | KFile::ExistingOnly);
-    fd.setCaption (i18n("select radio device"));
+    fd.setCaption (i18n("Select Radio Device"));
 
     if (fd.exec() == QDialog::Accepted) {
 		editRadioDevice->setText(fd.selectedFile());
@@ -346,9 +346,9 @@ void V4LRadioConfiguration::selectRadioDevice()
 
 void V4LRadioConfiguration::selectMixerDevice()
 {
-    KFileDialog fd("/dev/", i18n("any") + " ( * )", this, i18n("mixer device selection"), TRUE);
+    KFileDialog fd("/dev/", i18n("any ( * )"), this, i18n("Mixer Device Selection"), TRUE);
     fd.setMode(KFile::File | KFile::ExistingOnly);
-    fd.setCaption (i18n("select mixer device"));
+    fd.setCaption (i18n("Select Mixer Device"));
 
     if (fd.exec() == QDialog::Accepted) {
 		editMixerDevice->setText(fd.selectedFile());

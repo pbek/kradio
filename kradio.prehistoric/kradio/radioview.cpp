@@ -22,6 +22,7 @@
 #include <qfile.h>
 #include <qtooltip.h>
 #include <qcheckbox.h>
+#include <qpopupmenu.h>
 
 #include <kcombobox.h>
 #include <kiconloader.h>
@@ -36,6 +37,7 @@
 #include "radiostation.h"
 #include "pluginmanager.h"
 #include "plugin_configuration_dialog.h"
+#include "recording-monitor.h"
 
 
 #include "radioview_frequencyradio.h"
@@ -46,6 +48,9 @@
 
 #include <kaboutdata.h>
 #include "aboutwidget.h"
+
+#define POPUP_ID_START_RECORDING  0
+#define POPUP_ID_START_MONITOR    1
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -62,7 +67,7 @@ bool RadioView::ElementCfg::operator == (const ElementCfg &x) const
 
 RadioView::RadioView(QWidget *parent, const QString &name)
   : QWidget(parent, (const char*)name),
-    WidgetPluginBase(name, "Radio Display"),
+    WidgetPluginBase(name, i18n("Radio Display")),
     enableToolbarFlag(false),
     currentDevice(NULL)
 {
@@ -97,7 +102,17 @@ RadioView::RadioView(QWidget *parent, const QString &name)
 	l04->addWidget (btnConfigure, 1, 0);
 	l04->addWidget (btnQuit,      1, 1);
 
-	btnPower->setIconSet(SmallIconSet("kradio_muteoff"));
+	QPopupMenu *m = new QPopupMenu(this);
+	m->insertItem(SmallIcon("kradio_record"),
+	              i18n("Start Recording and display Recording Monitor"),
+	              POPUP_ID_START_RECORDING);
+	m->insertItem(i18n("Start Monitoring"),
+	              POPUP_ID_START_MONITOR);
+	QObject::connect(m,    SIGNAL(activated(int)),
+					 this, SLOT(slotRecordingMonitor(int)));
+	btnRecording->setPopup(m);
+
+	btnPower->setIconSet(SmallIconSet("kradio_muteon"));
 	btnRecording->setIconSet(SmallIconSet("kradio_record"));
 	btnConfigure->setIconSet(SmallIconSet("configure"));
 	btnQuit->setIconSet(SmallIconSet("exit"));
@@ -228,7 +243,7 @@ void RadioView::selectTopWidgets()
 
 bool RadioView::noticePowerChanged(bool on)
 {
-	btnPower->setIconSet(SmallIconSet( on ? "kradio_muteon" : "kradio_muteoff"));
+	btnPower->setIconSet(SmallIconSet( on ? "kradio_muteoff" : "kradio_muteon"));
 	btnPower->setOn(on);
 	return true;
 }
@@ -364,8 +379,8 @@ ConfigPageInfo RadioView::createConfigurationPage()
 	
 	return ConfigPageInfo(
 		c,
-		"Display",
-		"Display Configuration",
+		i18n("Display"),
+		i18n("Display Configuration"),
 		"openterm"
 	);
 }
@@ -469,6 +484,30 @@ void RadioView::slotRecord(bool b)
 	else if (!b && queryIsRecording())
 		sendStopRecording();		
 }
+
+
+void RadioView::slotRecordingMonitor(int i)
+{
+	switch (i) {
+		case POPUP_ID_START_RECORDING:
+			sendStartRecording();
+			break;
+		case POPUP_ID_START_MONITOR:
+			sendStartMonitoring();
+			break;
+		default:
+			break;
+	}
+	if (m_manager) {
+		const PluginList &pl = m_manager->plugins();
+		for (PluginIterator it(pl); it.current(); ++it) {
+			RecordingMonitor *rm = dynamic_cast<RecordingMonitor*>(it.current());
+			if (rm)
+				rm->show();
+		}
+	}
+}
+
 
 void RadioView::slotComboStationSelected(int idx)
 {

@@ -42,7 +42,7 @@ AboutPageInfo  KRadioAbout::createAboutPage ()
 		"<P>"
 	);
 
-    KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
+    KAboutData aboutData("kradio", "KRadio",
                          VERSION,
                          description,
                          KAboutData::License_GPL,

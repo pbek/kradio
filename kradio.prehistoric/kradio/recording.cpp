@@ -42,7 +42,7 @@
 
 Recording::Recording(const QString &name)
 	: QObject(NULL, QString::null),
-	  PluginBase(name, "Recording Plugin"),
+	  PluginBase(name, i18n("Recording Plugin")),
 	  m_devfd(-1),
 	  m_buffer(NULL),
 	  m_bufferSize(0),
@@ -101,8 +101,8 @@ ConfigPageInfo  Recording::createConfigurationPage()
 	RecordingConfiguration *c = new RecordingConfiguration(NULL);
 	connect(c);
     return ConfigPageInfo(c,
-                          "Recording",
-                          "Recording",
+                          i18n("Recording"),
+                          i18n("Recording"),
                           "kradio_record");
 }
 
@@ -141,14 +141,14 @@ bool  Recording::startRecording()
 		ok &= openDevice();
 
 	ok &= openOutput();
-	kdDebug() << "recording starting" << endl;
+	kdDebug() << i18n("recording starting") << endl;
 	if (ok) {
 		notifyRecordingStarted();
 		notifyRecordingContextChanged(m_context);
 		sendPowerOn();
 		return true;
 	} else {
-		kdDebug() << "recording stopped with error" << endl;
+		kdDebug() << i18n("recording stopped with error") << endl;
 		m_context.setError();
 		stopRecording();
 		return false;
@@ -165,14 +165,14 @@ bool  Recording::startMonitoring()
 	}
 
 	ok &= openDevice();
-	kdDebug() << "monitoring starting" << endl;
+	kdDebug() << i18n("monitoring starting") << endl;
 	if (ok) {
 		m_context.startMonitor(m_config);
 		notifyMonitoringStarted();
 		notifyRecordingContextChanged(m_context);
 		return true;
 	} else {
-		kdDebug() << "monitoring stopped with error" << endl;
+		kdDebug() << i18n("monitoring stopped with error") << endl;
 		m_context.setError();
 		stopMonitoring();
 		return false;
@@ -191,7 +191,7 @@ bool Recording::stopRecording()
 			closeOutput();
 			notifyRecordingContextChanged(m_context);
 			notifyRecordingStopped();
-			kdDebug() << "recording stopped" << endl;
+			kdDebug() << i18n("recording stopped") << endl;
 			if (m_context.state() != RecordingContext::rsError &&
 			    oldState == RecordingContext::rsMonitor) {
 				     startMonitoring();
@@ -216,7 +216,7 @@ bool Recording::stopMonitoring()
 			m_context.stop();
 			notifyRecordingContextChanged(m_context);
 			notifyMonitoringStopped();
-			kdDebug() << "monitoring stopped" << endl;
+			kdDebug() << i18n("monitoring stopped") << endl;
 			break;
 		case RecordingContext::rsRunning:
 			stopRecording();
@@ -364,7 +364,7 @@ bool Recording::openOutput()
 	    + QDateTime::currentDateTime().toString(Qt::ISODate)
 	    + ext;
 
-	kdDebug() << "outputFile: " << output << endl;
+	kdDebug() << i18n("outputFile: ") << output << endl;
 
 
 	SF_INFO sinfo;
@@ -393,19 +393,19 @@ void Recording::slotSoundDataAvailable()
 		int r = read(m_devfd, m_buffer, m_bufferSize);
 		bool err = r <= 0;
 		if (err)
-			kdDebug() << "error: no data to record" << endl;
+			kdDebug() << i18n("error: no data to record") << endl;
 
 		if (!err && m_context.state() == RecordingContext::rsRunning) {
 			err = sf_write_raw(m_output, m_buffer, r) != r;
 			if (err)
-				kdDebug() << "error writing output" << endl;
+				kdDebug() << i18n("error writing output") << endl;
 		}
 			
 		if (!err) {
 			m_context.addInput(m_buffer, r);
 			notifyRecordingContextChanged(m_context);
 		} else {
-			kdDebug() << "error while recording: " << errno << endl;
+			kdDebug() << i18n("error while recording: ") << errno << endl;
 			m_context.setError();
 			stopRecording();
 		}

@@ -59,8 +59,9 @@ bool StationListXmlHandler::startDocument ()
 
 
 #define START_ELEMENT_ERROR    kdDebug() << "StationListXmlHandler::startElement: " \
-                                         << (const char*)i18n("misplaced element") << " " \
-                                         << (const char*)qname << endl; \
+                                         << i18n("misplaced element %1") \
+                                            .arg(qname) \
+                                         << endl; \
 							   return false;
 							   
 bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &/*localname*/,
@@ -139,11 +140,14 @@ bool StationListXmlHandler::endElement (const QString &/*ns*/, const QString &/*
 		
 	} else {
 		if (m_status.size()) {
-			kdDebug() << "StationListXmlHandler::endElement: " << i18n("expected element")
-			          << " " << m_status.back() << ", " << "found " << qname << endl;
+			kdDebug() << "StationListXmlHandler::endElement: "
+				      << i18n("expected element %1, but found %2")
+						  .arg(m_status.back()).arg(qname)
+					  << endl;	  
 		} else {
-			kdDebug() << "StationListXmlHandler::endElement: " << i18n("unexpected element")
-			          << qname << endl;
+			kdDebug() << "StationListXmlHandler::endElement: "
+				      << i18n("unexpected element %1").arg(qname)
+			          << endl;
 		}
 	}
 	return true;
@@ -151,8 +155,9 @@ bool StationListXmlHandler::endElement (const QString &/*ns*/, const QString &/*
 
 
 #define CHARACTERS_ERROR    kdDebug() << "StationListXmlHandler::characters: " \
-                                      << i18n("invalid data for element") << " " \
-                                      << (const char*)stat << endl; \
+                                      << i18n("invalid data for element %1") \
+                                         .arg(stat) \
+                                      << endl; \
 					        return false;
 					        
 bool StationListXmlHandler::characters (const QString &ch)
@@ -166,7 +171,8 @@ bool StationListXmlHandler::characters (const QString &ch)
 	if (stat == StationListFormat) {
 
 		if (str != STATION_LIST_FORMAT) {
-			kdDebug() << "found a station list with unknown format >>"+str+"<<\n";
+			kdDebug() << i18n("found a station list with unknown format %1").arg(str)
+			          << endl;
 			return false;
 		}
 
@@ -202,17 +208,16 @@ bool StationListXmlHandler::characters (const QString &ch)
 
 		if (!m_newStation->setProperty(stat, str)) {
 			kdDebug() << "StationListXmlHandler::characters: "
-			          << i18n("unknown property")
-			          << " " << stat
-			          << " " << i18n("for class") << " "
-			          << m_newStation->getClassName()
+			          << i18n("unknown property %1 for class %2")
+			             .arg(stat)
+			             .arg(m_newStation->getClassName())
 			          << endl;
 		}
 
 	} else if (str.length()) {
 		kdDebug() << "StationListXmlHandler::characters: "
-		          << i18n("characters ignored for element") << " "
-		          << (const char*)stat << endl;
+		          << i18n("characters ignored for element %1").arg(stat)
+		          << endl;
 	}
 	return true;
 }

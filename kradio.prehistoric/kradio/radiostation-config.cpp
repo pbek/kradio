@@ -63,7 +63,7 @@ FrequencyRadioStationConfig::FrequencyRadioStationConfig (QWidget *parent)
 {
 	QHBoxLayout *hl = new QHBoxLayout(this);	
 	QVBoxLayout *vl = new QVBoxLayout(hl);
-	vl->addWidget (new QLabel("Frequency:", this));
+	vl->addWidget (new QLabel(i18n("Frequency:"), this));
 	m_editFrequency = new QSpinBox(20, 150000, 10, this);
 	vl->addWidget (m_editFrequency);
 	hl->addItem(new QSpacerItem (10, 1, QSizePolicy::Expanding, QSizePolicy::Fixed));

@@ -74,8 +74,8 @@ RadioConfiguration::RadioConfiguration (QWidget *parent)
 	QObject::connect(buttonLastChangeNow, SIGNAL(clicked()),
 					 this, SLOT(slotLastChangeNow()));
 					 
-    mailLabel->setText("mailto:witte@kawo1.rwth-aachen.de");
-    mailLabel->setURL("mailto:witte@kawo1.rwth-aachen.de");
+    mailLabel->setText("mailto:witte-presets@kawo1.rwth-aachen.de");
+    mailLabel->setURL ("mailto:witte-presets@kawo1.rwth-aachen.de");
     QObject::connect(mailLabel, SIGNAL(leftClickedURL(const QString &)),
 	                 this, SLOT(slotSendPresetsByMail(const QString &)));
 
@@ -303,10 +303,10 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 void RadioConfiguration::slotSelectPixmap()
 {
     KFileDialog fd(QString::null,
-				   "*.gif *.png *.jpg *.xpm|" + i18n("images") + "(*.gif, *.png, *.jpg, *.xpm)",
-				   this, i18n("pixmap selection"), true);
+				   "*.gif *.png *.jpg *.xpm|" + i18n("Images") + "(*.gif, *.png, *.jpg, *.xpm)",
+				   this, i18n("Pixmap Selection"), true);
     fd.setMode(KFile::File | KFile::ExistingOnly);
-    fd.setCaption (i18n("Select station pixmap"));
+    fd.setCaption (i18n("Select Station Pixmap"));
 
     if (fd.exec() == QDialog::Accepted) {
 		QString filename = fd.selectedFile();
@@ -401,12 +401,12 @@ void RadioConfiguration::slotActivateStation( int )
 void RadioConfiguration::slotLoadPresets()
 {
     KFileDialog fd(locate("data", "kradio/presets/"),
-		           "*.krp|" + i18n("kradio preset files"),
+		           "*.krp|" + i18n("KRadio Preset Files"),
 		           this,
-		           i18n("preset file selection"),
+		           i18n("Preset File Selection"),
 		           true);
     fd.setMode(KFile::File | KFile::ExistingOnly);
-    fd.setCaption (i18n("Select preset file"));
+    fd.setCaption (i18n("Select Preset File"));
 
     if (fd.exec() == QDialog::Accepted) {
 		StationList sl;
@@ -420,12 +420,12 @@ void RadioConfiguration::slotLoadPresets()
 void RadioConfiguration::slotStorePresets()
 {
     KFileDialog fd("",
-		           "*.krp|" + i18n("kradio preset files"),
+		           "*.krp|" + i18n("KRadio Preset Files"),
 		           this,
-		           i18n("preset file selection"),
+		           i18n("Preset File Selection"),
 		           true);
     fd.setMode(KFile::File);
-    fd.setCaption (i18n("Select preset file"));
+    fd.setCaption (i18n("Store Preset File"));
 
     if (fd.exec() == QDialog::Accepted) {
 		m_stations.writeXML(fd.selectedURL());
@@ -439,36 +439,44 @@ void RadioConfiguration::slotLastChangeNow()
 }
 
 
+static QString &urlEscapes(QString &s)
+{
+    s.replace(QRegExp("%"),  "%25");
+    s.replace(QRegExp("\t"),  "%09");
+    s.replace(QRegExp("\n"),  "%0A");
+    s.replace(QRegExp("\n"),  "%0D");
+    s.replace(QRegExp(" "),   "%20");
+    s.replace(QRegExp("\\!"), "%21");
+    s.replace(QRegExp("\""),  "%22");
+    s.replace(QRegExp("#"),   "%23");
+    s.replace(QRegExp("\\$"), "%24");
+    s.replace(QRegExp("\\&"), "%26");
+    s.replace(QRegExp("'"),   "%27");
+    s.replace(QRegExp(","),   "%2C");
+    s.replace(QRegExp(":"),   "%3A");
+    s.replace(QRegExp(";"),   "%3B");
+    s.replace(QRegExp("="),   "%3D");
+    s.replace(QRegExp("\\?"), "%3F");
+    return s;
+}
+
 void RadioConfiguration::slotSendPresetsByMail( const QString &url )
 {
-    QString cmd = url + "?subject=station preset file&body=";
-
     QString presets = m_stations.writeXML();
 
-    presets.replace(QRegExp("%"),  "%25");
-
-    presets.replace(QRegExp("\t"),  "%09");
-    presets.replace(QRegExp("\n"),  "%0A");
-    presets.replace(QRegExp("\n"),  "%0D");
-    presets.replace(QRegExp(" "),   "%20");
-    presets.replace(QRegExp("\\!"), "%21");
-    presets.replace(QRegExp("\""),  "%22");
-    presets.replace(QRegExp("#"),   "%23");
-    presets.replace(QRegExp("\\$"), "%24");
-    presets.replace(QRegExp("\\&"), "%26");
-    presets.replace(QRegExp("'"),   "%27");
-    presets.replace(QRegExp(","),   "%2C");
-    presets.replace(QRegExp(":"),   "%3A");
-    presets.replace(QRegExp(";"),   "%3B");
-    presets.replace(QRegExp("="),   "%3D");
-    presets.replace(QRegExp("\\?"), "%3F");
-    cmd += presets;
+    urlEscapes(presets);
 
     // documentation says, krun object deletes itself,
     // so we do not need to store the pointer
 
-    // fprintf (stderr, "%s\n", (const char*)presets);
+    QString country = m_stations.metaData().country;
+    QString city    = m_stations.metaData().city;
+    QString location = city + "/" + country;
+    urlEscapes(location);
 
+    QString cmd = url + "?subject=station preset file for " + location + "&body=";
+       
+    cmd += presets;
     new KRun (cmd);
 }
 

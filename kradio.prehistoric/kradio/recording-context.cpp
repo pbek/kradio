@@ -124,10 +124,10 @@ void RecordingConfig::setOSSFormat(int f)
 
 void  RecordingConfig::restoreConfig(KConfig *c)
 {
-	bits = c->readNumEntry("bits", 16);
-	sign = c->readBoolEntry("sign", true);
-	channels = c->readNumEntry("channels", 2);
-	rate = c->readNumEntry("rate", 44100);
+	bits         = c->readNumEntry("bits", 16);
+	sign         = c->readBoolEntry("sign", true);
+	channels     = c->readNumEntry("channels", 2);
+	rate         = c->readNumEntry("rate", 44100);
 	littleEndian = c->readBoolEntry("littleEndian", true);
 	device       = c->readEntry("device", "/dev/dsp");
 	directory    = c->readEntry("directory", "/tmp");

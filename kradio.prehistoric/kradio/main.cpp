@@ -32,8 +32,6 @@
 #include "recording-monitor.h"
 
 
-static const char *description = "KRadio";
-
 static KCmdLineOptions options[] =
 {
   { 0, 0, 0 }
@@ -43,7 +41,7 @@ static KCmdLineOptions options[] =
 int main(int argc, char *argv[])
 {
     KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
-                         VERSION, description, KAboutData::License_GPL,
+                         VERSION, "KRadio", KAboutData::License_GPL,
                          "(c) 2002, 2003 Martin Witte, Klas Kalass, Frank Schwanz",
                          0,
                          "http://sourceforge.net/projects/kradio",
@@ -59,17 +57,17 @@ int main(int argc, char *argv[])
 
 	/* Until we don't have library plugins we must instantiate them hard-wired */
 
-    KRadioAbout  *about       = new KRadioAbout (          "kradio-about-1");
-    LircSupport  *lircsupport = new LircSupport (          "lirc-1");
-    V4LRadio     *v4lradio    = new V4LRadio    (          "v4lradio-1");
-    Radio        *radio       = new Radio       (          "radio-1");
-    TimeControl  *timecontrol = new TimeControl (          "timecontrol-1");
-    QuickBar     *quickbar    = new QuickBar    (NULL,     "quickbar-1");
-    RadioDocking *docking     = new RadioDocking(          "docking-1");
+    KRadioAbout      *about       = new KRadioAbout     (      "kradio-about-1");
+    LircSupport      *lircsupport = new LircSupport     (      "lirc-1");
+    V4LRadio         *v4lradio    = new V4LRadio        (      "v4lradio-1");
+    Radio            *radio       = new Radio           (      "radio-1");
+    TimeControl      *timecontrol = new TimeControl     (      "timecontrol-1");
+    QuickBar         *quickbar    = new QuickBar        (NULL, "quickbar-1");
+    RadioDocking     *docking     = new RadioDocking    (      "docking-1");
     docking->show();
-    RadioView    *view        = new RadioView   (NULL,     "radioview-1");
-    Recording    *record      = new Recording   (          "recording-1");
-    RecordingMonitor *monitor = new RecordingMonitor(NULL, "recordingmonitor-1");
+    RadioView        *view        = new RadioView       (NULL, "radioview-1");
+    Recording        *record      = new Recording       (      "recording-1");
+    RecordingMonitor *monitor     = new RecordingMonitor(NULL, "recordingmonitor-1");
     
     a.insertPlugin(about);
     a.insertPlugin(lircsupport);

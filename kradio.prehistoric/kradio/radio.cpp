@@ -28,7 +28,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 Radio::Radio(const QString &name)
-  : PluginBase(name, "Radio Multiplexer Plugin"),
+  : PluginBase(name, i18n("Radio Multiplexer Plugin")),
     IRadioDeviceClient(-1),
     m_presetFile(locateLocal("data", "kradio/stations.krp")),
     m_activeDevice (NULL)
@@ -103,8 +103,8 @@ ConfigPageInfo Radio::createConfigurationPage()
 	connect (conf);
 	return ConfigPageInfo(
 		conf,
-		"Radio Stations",
-		"Setup Radio Stations",
+		i18n("Radio Stations"),
+		i18n("Setup Radio Stations"),
 		"kradio"
 	);
 }
@@ -319,9 +319,10 @@ const RadioStation & Radio::queryCurrentStation() const
 }
 
 
-static QString qstrUnknown("unknown");
+static QString qstrUnknown(I18N_NOOP("unknown"));
 const QString &Radio::queryDescription() const
 {
+	qstrUnknown = i18n(qstrUnknown);
 	return m_activeDevice ? m_activeDevice->getDescription() : qstrUnknown;
 }
 

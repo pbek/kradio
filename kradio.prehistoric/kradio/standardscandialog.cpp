@@ -103,7 +103,7 @@ bool StandardScanDialog::noticeSeekFinished (const RadioStation &)
 
 		RadioStation *st = queryCurrentStation().copy();
 		if (st->name().isNull()) {
-			st->setName("new station " + s);
+			st->setName(i18n("new station ") + s);
 			st->setShortName(s);
 			st->generateNewStationID();
 		}
@@ -111,7 +111,10 @@ bool StandardScanDialog::noticeSeekFinished (const RadioStation &)
         int oldcount = m_stations.count();
 		m_stations.all().append(st);
 
-		kdDebug() << "newstation " << m_count << ": " << st->longName() << "\n";
+		kdDebug() << i18n("newstation %1: %2")
+		             .arg(QString().setNum(m_count))
+		             .arg(st->longName())
+		          << endl;
 		if (oldcount != m_stations.count()) {
 		} else {
 			--m_count;
@@ -128,7 +131,7 @@ bool StandardScanDialog::noticeSeekFinished (const RadioStation &)
 bool StandardScanDialog::noticeSeekStopped ()
 {
     if (rint(queryProgress() * 1000) >= 1000) {     // round to 4 digits
-		buttonCancel->setText("&Done");
+		buttonCancel->setText(i18n("&Done"));
 		stop();
 	}
     return true;
