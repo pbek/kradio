@@ -1,1 +1,1 @@
-SUBDIRS = germany england usa
+SUBDIRS = germany england usa romania switzerland
