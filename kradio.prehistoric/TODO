@@ -1,10 +1,10 @@
 0.3.0-alpha2
 
+       errorlog
+       debianize
+       packaging (deb, suse-rpm, mandrake-rpm)
        translation preparation                  // done
        german translation                       // done
-       segfault fixes with 2.95.3
-       tooltips in config dialog
-       errorlog
        thanks                                   // done
        remove dependency on kalarm              // done
        v4l2 support (implemented, hardly tested) // done
@@ -21,6 +21,8 @@
 
 0.3.0-alpha3
 
+       segfault fixes with 2.95.3
+       tooltips in config dialog
        optimize recording data monitor (repaint only what is necessary)
        option for display window type (entry in taskbar or toolbar window)
        mp3 encoding with liblame_enc
