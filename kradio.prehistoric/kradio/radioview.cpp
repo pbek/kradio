@@ -58,7 +58,7 @@ bool RadioView::ElementCfg::operator == (const ElementCfg &x) const
 
 RadioView::RadioView(QWidget *parent, const QString &name)
   : QWidget(parent, (const char*)name),
-    WidgetPluginBase(name),
+    WidgetPluginBase(name, "Radio Display"),
     currentDevice(NULL)
 {
 	for (int i = 0; i < clsClassMAX; ++i)

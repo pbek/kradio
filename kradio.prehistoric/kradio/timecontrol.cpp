@@ -32,7 +32,7 @@ const char *AlarmTypeElement            = "type";
 
 
 TimeControl::TimeControl (const QString &n)
-	: PluginBase(n),
+	: PluginBase(n, "TimeControl Plugin"),
 	  m_waitingFor(NULL),
 	  m_countdownSeconds(0),
 	  m_alarmTimer(this),

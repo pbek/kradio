@@ -17,6 +17,7 @@
 
 #include "recording-monitor.h"
 #include "recording-context.h"
+#include "recording-datamonitor.h"
 
 #include <qlabel.h>
 #include <qpushbutton.h>
@@ -28,22 +29,26 @@
 
 RecordingMonitor::RecordingMonitor(QWidget *parent, const QString &name)
   : QWidget(parent, (const char*)name),
-    WidgetPluginBase(name),
+    WidgetPluginBase(name, "Recording Monitor"),
     m_showHideOnStartStop(true)
 {
 	setCaption(i18n("Recording Monitor"));
-	QGridLayout *l = new QGridLayout(this, 7, 2, 10, 4);
 
-	l->addWidget(                  new QLabel(i18n("Status"),         this), 0, 0);
-	l->addWidget(m_labelStatus   = new QLabel(i18n("<undefined>"),    this), 0, 1);
-	l->addWidget(                  new QLabel(i18n("Recording File"), this), 1, 0);
-	l->addWidget(m_labelFileName = new QLabel(i18n("<undefined>"),    this), 1, 1);
-	l->addWidget(                  new QLabel(i18n("File Size"),      this), 2, 0);
-	l->addWidget(m_labelSize     = new QLabel(i18n("<undefined>"),    this), 2, 1);
-	l->addWidget(                  new QLabel(i18n("Recording Time"), this), 3, 0);
-	l->addWidget(m_labelTime     = new QLabel(i18n("<undefined>"),    this), 3, 1);
-	l->addWidget(                  new QLabel(i18n("Sample Rate"),    this), 4, 0);
-	l->addWidget(m_labelRate     = new QLabel(i18n("<undefined>"),    this), 4, 1);
+	QVBoxLayout *l = new QVBoxLayout(this, 10, 4);
+	QGridLayout *l0 = new QGridLayout(l, 5, 3);
+
+	l0->addWidget(                  new QLabel(i18n("Status"),         this), 0, 0);
+	l0->addWidget(m_labelStatus   = new QLabel(i18n("<undefined>"),    this), 0, 1);
+	l0->addWidget(                  new QLabel(i18n("Recording File"), this), 1, 0);
+	l0->addWidget(m_labelFileName = new QLabel(i18n("<undefined>"),    this), 1, 1);
+	l0->addWidget(                  new QLabel(i18n("File Size"),      this), 2, 0);
+	l0->addWidget(m_labelSize     = new QLabel(i18n("<undefined>"),    this), 2, 1);
+	l0->addWidget(                  new QLabel(i18n("Recording Time"), this), 3, 0);
+	l0->addWidget(m_labelTime     = new QLabel(i18n("<undefined>"),    this), 3, 1);
+	l0->addWidget(                  new QLabel(i18n("Sample Rate"),    this), 4, 0);
+	l0->addWidget(m_labelRate     = new QLabel(i18n("<undefined>"),    this), 4, 1);
+
+	l0->addItem(new QSpacerItem(3,1), 0, 2);
 
 	QPushButton *close     = new QPushButton("&Close", this);
 	m_btnStartStop         = new QPushButton("&Start", this);
@@ -54,18 +59,27 @@ RecordingMonitor::RecordingMonitor(QWidget *parent, const QString &name)
 	QObject::connect(m_showHide, SIGNAL(toggled(bool)), this, SLOT(slotHideShowToggle(bool)));
 	m_showHide->setChecked(m_showHideOnStartStop);
 
+	m_btnMonitor = new QCheckBox(i18n("Monitor Input"), this);
+	QObject::connect(m_btnMonitor, SIGNAL(toggled(bool)), this, SLOT(slotEnableMonitor(bool)));
+	m_showHide->setChecked(queryIsMonitoring());
+	m_showHide->setDisabled(queryIsRecording());
+
+	m_dataMonitor = new RecordingDataMonitor(this, NULL);
+	
+	QHBoxLayout *hl0 = new QHBoxLayout(l);	
+	hl0->addWidget(m_dataMonitor);
+
 	QHBoxLayout *hl1 = new QHBoxLayout(l);
-	l->addMultiCell(hl1, 5, 5, 0, 1);
 	hl1->addItem(new QSpacerItem(10, 1));
 	hl1->addWidget(m_showHide);
+	hl1->addWidget(m_btnMonitor);
 	hl1->addItem(new QSpacerItem(10, 1));
 
 	QHBoxLayout *hl2 = new QHBoxLayout(l);
-	l->addMultiCell(hl2, 6, 6, 0, 1);
-//	hl2->addItem(new QSpacerItem(10, 1));
+	hl2->addItem(new QSpacerItem(10, 1));
 	hl2->addWidget(close);
 	hl2->addWidget(m_btnStartStop);
-//	hl2->addItem(new QSpacerItem(10, 1));
+	hl2->addItem(new QSpacerItem(10, 1));
 }
 
 
@@ -97,13 +111,15 @@ void   RecordingMonitor::restoreState (KConfig *config)
 bool   RecordingMonitor::connect(Interface *i)
 {
 	bool a = IRecordingClient::connect(i);
-	return a;
+	bool b = m_dataMonitor->connect(i);
+	return a || b;
 }
 
 bool   RecordingMonitor::disconnect(Interface *i)
 {
 	bool a = IRecordingClient::disconnect(i);
-	return a;
+	bool b = m_dataMonitor->disconnect(i);
+	return a || b;
 }
 
 ConfigPageInfo  RecordingMonitor::createConfigurationPage()
@@ -125,6 +141,19 @@ bool RecordingMonitor::noticeRecordingStarted()
 	if (m_showHideOnStartStop)
 		show();
 	m_btnStartStop->setText(i18n("&Stop"));
+	m_btnMonitor->setDisabled(true);
+	m_btnMonitor->blockSignals(true);
+	m_btnMonitor->setChecked(false);
+	m_btnMonitor->blockSignals(false);
+	return true;
+}
+
+
+bool RecordingMonitor::noticeMonitoringStarted()
+{
+	m_btnMonitor->blockSignals(true);
+	m_btnMonitor->setChecked(true);
+	m_btnMonitor->blockSignals(false);
 	return true;
 }
 
@@ -134,6 +163,19 @@ bool RecordingMonitor::noticeRecordingStopped()
 	if (m_showHideOnStartStop)
 		hide();
 	m_btnStartStop->setText(i18n("&Start"));
+	m_btnMonitor->setDisabled(false);
+	m_btnMonitor->blockSignals(true);
+	m_btnMonitor->setChecked(false);
+	m_btnMonitor->blockSignals(false);
+	return true;
+}
+
+
+bool RecordingMonitor::noticeMonitoringStopped()
+{
+	m_btnMonitor->blockSignals(true);
+	m_btnMonitor->setChecked(false);
+	m_btnMonitor->blockSignals(false);
 	return true;
 }
 
@@ -242,4 +284,13 @@ void RecordingMonitor::slotStartStopRecording()
 void RecordingMonitor::slotHideShowToggle(bool on)
 {
 	m_showHideOnStartStop = on;
+}
+
+
+void RecordingMonitor::slotEnableMonitor(bool on)
+{
+	if (on)
+		sendStartMonitoring();
+	else
+		sendStopMonitoring();
 }

@@ -31,6 +31,7 @@
 class QLabel;
 class QPushButton;
 class QCheckBox;
+class RecordingDataMonitor;
 
 class RecordingMonitor : public QWidget,
 				         public WidgetPluginBase,
@@ -61,7 +62,9 @@ public:
 
 RECEIVERS:
 	bool noticeRecordingStarted();
+	bool noticeMonitoringStarted();
 	bool noticeRecordingStopped();
+	bool noticeMonitoringStopped();
 	bool noticeRecordingConfigChanged(const RecordingConfig &);
 	bool noticeRecordingContextChanged(const RecordingContext &);
 
@@ -73,6 +76,7 @@ public slots:
 
     void    slotStartStopRecording();
     void    slotHideShowToggle(bool on);
+    void    slotEnableMonitor(bool on);
     
 protected:
 	virtual void showEvent(QShowEvent *);
@@ -84,15 +88,17 @@ protected:
 
 protected:
 
-	bool         m_showHideOnStartStop;
+	bool                 m_showHideOnStartStop;
 
-	QLabel      *m_labelSize;
-	QLabel      *m_labelTime;
-	QLabel      *m_labelRate;
-	QLabel      *m_labelFileName;
-	QLabel      *m_labelStatus;
-	QPushButton *m_btnStartStop;
-	QCheckBox   *m_showHide;
+	QLabel               *m_labelSize;
+	QLabel               *m_labelTime;
+	QLabel               *m_labelRate;
+	QLabel               *m_labelFileName;
+	QLabel               *m_labelStatus;
+	QPushButton          *m_btnStartStop;
+	QCheckBox            *m_showHide;
+	QCheckBox            *m_btnMonitor;
+	RecordingDataMonitor *m_dataMonitor;
 };
 
 

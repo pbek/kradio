@@ -29,7 +29,7 @@
 #include "radiodevice_interfaces.h"
 
 LircSupport::LircSupport(const QString &name)
-	: PluginBase(name)
+	: PluginBase(name, "LIRC Plugin")
 {
 
 #ifdef HAVE_LIRC_CLIENT

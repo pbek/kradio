@@ -20,6 +20,7 @@
 #include <sndfile.h>
 #include <sys/soundcard.h>
 #include <kconfig.h>
+#include <kdebug.h>
 
 RecordingConfig::RecordingConfig ()
   : channels(2),
@@ -255,6 +256,7 @@ int RecordingConfig::maxValue() const
 
 RecordingContext::RecordingContext()
  : m_state(rsInvalid),
+   m_oldState(rsInvalid),
    m_config(),
    m_buffer(NULL),
    m_bufValidElements(0),
@@ -268,6 +270,7 @@ RecordingContext::RecordingContext()
 
 RecordingContext::RecordingContext(const RecordingContext &c)
  : m_state (c.m_state),
+   m_oldState (c.m_oldState),
    m_config(c.m_config),
    m_buffer(NULL),
    m_bufValidElements(0),
@@ -293,22 +296,28 @@ RecordingContext::~RecordingContext()
 
 void RecordingContext::startMonitor(const RecordingConfig &c)
 {
-	m_state            = rsMonitor;
-	m_config           = c;
+	if (m_state != rsMonitor) {
+		m_oldState         = m_state;
+		m_state            = rsMonitor;
+		m_config           = c;
 
-	m_outputFile       = QString::null;
-	m_size_low         = 0;
-    m_size_high        = 0;
+		m_outputFile       = QString::null;
+		m_size_low         = 0;
+		m_size_high        = 0;
+	}
 }
 
 
 void RecordingContext::start(const QString &o, const RecordingConfig &c)
 {
-	m_state            = rsRunning;
-	m_config           = c;
-	m_outputFile       = o;
-	m_size_low         = 0;
-    m_size_high        = 0;
+	if (m_state != rsRunning) {
+		m_oldState         = m_state;
+		m_state            = rsRunning;
+		m_config           = c;
+		m_outputFile       = o;
+		m_size_low         = 0;
+		m_size_high        = 0;
+	}
 }
 
 
@@ -316,10 +325,12 @@ void RecordingContext::stop()
 {
 	switch (m_state) {
 		case rsMonitor:
-			m_state = rsInvalid;
+			m_oldState = m_state;
+			m_state    = rsInvalid;
 			break;
 		case rsRunning:
-			m_state = rsFinished;
+			m_oldState = m_state;
+			m_state    = rsFinished;
 			break;
 		default:  break; // do not change state
 	}
@@ -329,7 +340,8 @@ void RecordingContext::stop()
 
 void RecordingContext::setError()
 {
-	m_state = rsError;
+	m_oldState = m_state;
+	m_state    = rsError;
 	resizeBuffer (0);
 }
 

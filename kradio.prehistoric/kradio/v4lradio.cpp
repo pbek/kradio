@@ -42,7 +42,7 @@ struct _lrvol { unsigned char l, r; short dummy; };
 ///////////////////////////////////////////////////////////////////////
 
 V4LRadio::V4LRadio(const QString &name)
-  : PluginBase(name),
+  : PluginBase(name, "Video For Linux Plugin"),
     m_volume(0),
     m_treble(0.5),
     m_bass(0.5),

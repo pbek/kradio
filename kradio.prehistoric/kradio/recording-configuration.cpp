@@ -45,7 +45,19 @@ bool RecordingConfiguration::noticeRecordingStarted()
 }
 
 
+bool RecordingConfiguration::noticeMonitoringStarted()
+{
+	return false;
+}
+
+
 bool RecordingConfiguration::noticeRecordingStopped()
+{
+	return false;
+}
+
+
+bool RecordingConfiguration::noticeMonitoringStopped()
 {
 	return false;
 }

@@ -20,8 +20,9 @@
 
 #include <kdebug.h>
 
-PluginBase::PluginBase(const QString &name)
+PluginBase::PluginBase(const QString &name, const QString &description)
 	: m_name(name),
+	  m_description(description),
 	  m_manager(NULL)
 {
 }
@@ -29,7 +30,8 @@ PluginBase::PluginBase(const QString &name)
 
 PluginBase::~PluginBase()
 {
-	unsetManager();
+	kdDebug() << "destructing plugin " << m_name << endl;
+	unsetManager();	
 }
 
 

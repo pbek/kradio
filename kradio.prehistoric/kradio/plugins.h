@@ -80,11 +80,13 @@ class PluginBase : virtual public Interface
 {
 friend class PluginManager;
 public :
-	         PluginBase(const QString &name);
+	         PluginBase(const QString &name, const QString &description);
 	virtual ~PluginBase();
 
 	const QString &name() const { return m_name; }
 	      QString &name()       { return m_name; }
+
+	const QString &description() const { return m_description; }
 
 	// interaction with pluginmanager
 protected:
@@ -114,6 +116,7 @@ public:
 	
 protected :
 	QString            m_name;
+	QString            m_description;
     PluginManager     *m_manager;
 };
 

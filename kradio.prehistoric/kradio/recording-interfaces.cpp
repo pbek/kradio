@@ -23,8 +23,14 @@
 IF_IMPL_SENDER  (  IRecording::notifyRecordingStarted(),
                    noticeRecordingStarted()                                )
 
+IF_IMPL_SENDER  (  IRecording::notifyMonitoringStarted(),
+                   noticeMonitoringStarted()                               )
+
 IF_IMPL_SENDER  (  IRecording::notifyRecordingStopped(),
                    noticeRecordingStopped()                                )
+
+IF_IMPL_SENDER  (  IRecording::notifyMonitoringStopped(),
+                   noticeMonitoringStopped()                               )
 
 IF_IMPL_SENDER  (  IRecording::notifyRecordingConfigChanged(const RecordingConfig &s),
                    noticeRecordingConfigChanged(s)                         )
@@ -36,14 +42,24 @@ IF_IMPL_SENDER  (  IRecording::notifyRecordingContextChanged(const RecordingCont
 IF_IMPL_SENDER  (  IRecordingClient::sendStartRecording(),
                    startRecording()                                        )
 
+IF_IMPL_SENDER  (  IRecordingClient::sendStartMonitoring(),
+                   startMonitoring()                                       )
+
 IF_IMPL_SENDER  (  IRecordingClient::sendStopRecording(),
                    stopRecording()                                         )
+
+IF_IMPL_SENDER  (  IRecordingClient::sendStopMonitoring(),
+                   stopMonitoring()                                        )
 
 IF_IMPL_SENDER  (  IRecordingClient::sendRecordingConfig(const RecordingConfig &s),
                    setRecordingConfig(s)                                   )
 
 IF_IMPL_QUERY   (  bool IRecordingClient::queryIsRecording(),
                    isRecording(),
+                   false                                                   )
+
+IF_IMPL_QUERY   (  bool IRecordingClient::queryIsMonitoring(),
+                   isMonitoring(),
                    false                                                   )
 
 static const RecordingConfig defaultConfig;
@@ -59,8 +75,10 @@ IF_IMPL_QUERY   (  const RecordingContext &IRecordingClient::queryRecordingConte
 
 void IRecordingClient::noticeConnected  (cmplInterface *, bool /*pointer_valid*/)
 {
-	if (queryIsRecording()) noticeRecordingStarted();
-	else                    noticeRecordingStopped();
+	if (queryIsRecording())  noticeRecordingStarted();
+	else                     noticeRecordingStopped();
+	if (queryIsMonitoring()) noticeMonitoringStarted();
+	else                     noticeMonitoringStopped();
 	noticeRecordingConfigChanged(queryRecordingConfig());
 	noticeRecordingContextChanged(queryRecordingContext());
 }
@@ -68,8 +86,10 @@ void IRecordingClient::noticeConnected  (cmplInterface *, bool /*pointer_valid*/
 
 void IRecordingClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
 {
-	if (queryIsRecording()) noticeRecordingStarted();
-	else                    noticeRecordingStopped();
+	if (queryIsRecording())  noticeRecordingStarted();
+	else                     noticeRecordingStopped();
+	if (queryIsMonitoring()) noticeMonitoringStarted();
+	else                     noticeMonitoringStopped();
 	noticeRecordingConfigChanged(queryRecordingConfig());
 	noticeRecordingContextChanged(queryRecordingContext());
 }

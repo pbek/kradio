@@ -66,11 +66,14 @@ public:
     
 RECEIVERS:
    	bool  startRecording();
+   	bool  startMonitoring();
 	bool  stopRecording();
+   	bool  stopMonitoring();
     bool  setRecordingConfig(const RecordingConfig &);
     
 ANSWERS:
 	bool                    isRecording() const;
+	bool                    isMonitoring() const;
 	const RecordingConfig  &getRecordingConfig() const;
 	const RecordingContext &getRecordingContext() const;
 

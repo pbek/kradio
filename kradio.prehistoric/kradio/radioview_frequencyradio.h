@@ -67,9 +67,9 @@ RECEIVERS:
 // IRadioSoundClient	
 RECEIVERS:
 	bool noticeVolumeChanged(float v);
-	bool noticeTrebleChanged(float v)    { return false; }  // ignore it
-	bool noticeBassChanged(float v)      { return false; }  // ignore it
-	bool noticeBalanceChanged(float v)   { return false; }  // ignore it
+	bool noticeTrebleChanged(float /*v*/)    { return false; }  // ignore it
+	bool noticeBassChanged(float /*v*/)      { return false; }  // ignore it
+	bool noticeBalanceChanged(float /*v*/)   { return false; }  // ignore it
 	bool noticeSignalQualityChanged(float q);
 	bool noticeSignalQualityChanged(bool good);
 	bool noticeSignalMinQualityChanged(float q);

@@ -1,7 +1,7 @@
 /***************************************************************************
-                          recording-configuration.h  -  description
+                          recording-monitor-widget.h  -  description
                              -------------------
-    begin                : So Aug 31 2003
+    begin                : So Sep 7 2003
     copyright            : (C) 2003 by Martin Witte
     email                : witte@kawo1.rwth-aachen.de
  ***************************************************************************/
@@ -15,69 +15,55 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KRADIO_RECORDING_CONFIGURATION_H
-#define KRADIO_RECORDING_CONFIGURATION_H
-
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-#include "recording-configuration-ui.h"
+#ifndef KRADIO_RECORDING_DATA_MONITOR
+#define KRADIO_RECORDING_DATA_MONITOR
+ 
+#include <qframe.h>
+#include <qcolor.h>
 #include "recording-interfaces.h"
 
-#define RATE_44100_IDX      0
-#define RATE_22050_IDX      1
-#define RATE_11025_IDX      2
-
-#define CHANNELS_STEREO_IDX 0
-#define CHANNELS_MONO_IDX   1
-
-#define SIGN_SIGNED_IDX     0
-#define SIGN_UNSIGNED_IDX   1
-
-#define BITS_16_IDX         0
-#define BITS_8_IDX          1
-
-#define ENDIAN_LITTLE_IDX   0
-#define ENDIAN_BIG_IDX      1
-
-#define FORMAT_WAV_IDX      0
-#define FORMAT_AIFF_IDX     1
-#define FORMAT_AU_IDX       2
-#define FORMAT_RAW_IDX      3
-
-class RecordingConfiguration : public RecordingConfigurationUI,
-						       public IRecordingClient
+class RecordingDataMonitor : public QFrame,
+                             public IRecordingClient
 {
 Q_OBJECT
-public :
-	RecordingConfiguration (QWidget *parent);
-	~RecordingConfiguration ();
+public:
+	RecordingDataMonitor(QWidget *parent, const char *name);
+	~RecordingDataMonitor();
 
-//	bool connect (Interface *i);
-//	bool disconnect (Interface *i);
+	bool connect(Interface *i);
+	bool disconnect(Interface *i);
 
 // IRecordingClient
 
+RECEIVERS:
 	bool noticeRecordingStarted();
 	bool noticeMonitoringStarted();
 	bool noticeRecordingStopped();
 	bool noticeMonitoringStopped();
 	bool noticeRecordingConfigChanged(const RecordingConfig &);
-	bool noticeRecordingContextChanged(const RecordingContext &c);
-	
-protected slots:
+	bool noticeRecordingContextChanged(const RecordingContext &);
 
-	void slotOK();
-	void slotCancel();
-
-	void slotFormatSelectionChanged();
+// QT/KDE ...
 
 protected:
 
+	void drawContents(QPainter *p);
+
+// own stuff ...
+
+protected:
+
+	void setChannels(int n);
+	bool setColors(const QColor &activeColor, const QColor &bkgnd);
+
+// data
+protected:
+
+	int     *m_channelsMax;  // maximum absolute value recorded on each channel
+	int      m_maxValue;     // maximum absolute value possible for samples
+	int      m_channels;
+
+	QColor   m_colorActiveText, m_colorButton;
 };
-
-
-
 
 #endif

@@ -23,8 +23,8 @@
 #include <qwidget.h>
 #include <kconfig.h>
 
-WidgetPluginBase::WidgetPluginBase(const QString &name)
-  : PluginBase(name),
+WidgetPluginBase::WidgetPluginBase(const QString &name, const QString &description)
+  : PluginBase(name, description),
     m_geoCacheValid(false)
 {
 }

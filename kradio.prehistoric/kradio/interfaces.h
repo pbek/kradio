@@ -470,6 +470,8 @@ InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
 template <class thisIF, class cmplIF>
 InterfaceBase<thisIF, cmplIF>::~InterfaceBase()
 {
+	kdDebug() << "InterfaceBase Destructor" << endl;
+
 	me_valid = false;
 	// In this state the derived interfaces may already be destroyed
 	// so that dereferencing cached upcasted me-pointers in noticeDisconnect(ed)
@@ -481,10 +483,6 @@ InterfaceBase<thisIF, cmplIF>::~InterfaceBase()
 	// more bad will happen
 
 	if (connections.count() > 0) {
-//		kdDebug() << "WARNING: The devoloper forgot to call disconnectAll in Interface Destructor!" << endl
-//		          << "I'm sorry I (InterfaceBase<?,?>) cannot tell where" << endl
-//		          << "There could arise problems if pointers are dereferenced in noticeDisconnect(ed) " << endl;
-
 		disconnectAll();
 	}
 }
@@ -568,10 +566,12 @@ bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
 		if (_i->me_valid)
 			_i->noticeDisconnect(me, me_valid);
 		
-		kdDebug() << "this->remove(i)" << endl;
-		if (i) connections.removeRef(i);
-		kdDebug() << "i->remove(me)" << endl;
-		if (me) i->connections.removeRef(me);
+		kdDebug() << "this->removeRef(i)" << endl;
+		if (i && connections.containsRef(i))
+			connections.removeRef(i);
+		kdDebug() << "i->removeRef(me)" << endl;
+		if (me && i && i->connections.containsRef(me))
+			i->connections.removeRef(me);
 		
 		kdDebug() << "this->noticeDisconnected" << endl;
 		if (me_valid)

@@ -81,7 +81,7 @@ public:
 	enum RecordingState { rsInvalid, rsRunning, rsFinished, rsError, rsMonitor };
 	
 protected:
-	RecordingState   m_state;
+	RecordingState   m_state, m_oldState;
 	RecordingConfig  m_config;
 
 	int             *m_buffer;
@@ -103,6 +103,7 @@ public:
 	void                    setError();
 	
     RecordingState          state() const           { return m_state;  }
+    RecordingState          oldState() const        { return m_oldState;  }
     const RecordingConfig & config() const          { return m_config; }
     const int             * buffer() const          { return m_buffer; }
     const int               samplesInBuffer() const { return m_bufValidElements; }

@@ -25,7 +25,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 Radio::Radio(const QString &name)
-  : PluginBase(name),
+  : PluginBase(name, "Radio Multiplexer Plugin"),
     IRadioDeviceClient(-1),
     m_presetFile(locateLocal("data", "kradio/stations.krp")),
     m_activeDevice (NULL)

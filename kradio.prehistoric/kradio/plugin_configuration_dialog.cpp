@@ -25,7 +25,7 @@ PluginConfigurationDialog::PluginConfigurationDialog(
     bool modal, bool separator)
 : KDialogBase(dialogFace, caption, buttonMask, defaultButton,
               parent, name, modal, separator),
-  WidgetPluginBase (name)
+  WidgetPluginBase (name, "Configuration Dialog")
 {
 }
 

@@ -31,13 +31,14 @@
 #include <sys/soundcard.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
+#include <errno.h>
 
 
 ///////////////////////////////////////////////////////////////////////
 
 Recording::Recording(const QString &name)
 	: QObject(NULL, QString::null),
-	  PluginBase(name),
+	  PluginBase(name, "Recording Plugin"),
 	  m_devfd(-1),
 	  m_buffer(NULL),
 	  m_bufferSize(0),
@@ -77,6 +78,7 @@ bool Recording::disconnect(Interface *i)
 void Recording::saveState (KConfig *c) const
 {
     c->setGroup(QString("recording-") + PluginBase::name());
+    c->writeEntry ("monitoring", (m_context.state() == RecordingContext::rsMonitor));
 	m_config.saveConfig(c);
 }
 
@@ -85,6 +87,8 @@ void Recording::restoreState (KConfig *c)
 {
     c->setGroup(QString("recording-") + PluginBase::name());
 	m_config.restoreConfig(c);
+    if (c->readBoolEntry("monitoring", false) && m_context.state() != RecordingContext::rsRunning)
+		startMonitoring();  
 }
 
 
@@ -110,10 +114,19 @@ QWidget        *Recording::createAboutPage()
 
 bool  Recording::startRecording()
 {
+	bool ok = true;
+	if (m_context.state() == RecordingContext::rsRunning)
+		return true;
+
+	if (m_context.state() != RecordingContext::rsMonitor)
+		ok &= openDevice();
+
+	ok &= openOutput();
 	kdDebug() << "recording starting" << endl;
-	if (openDevice() && openOutput()) {
+	if (ok) {
 		notifyRecordingStarted();
 		notifyRecordingContextChanged(m_context);
+		sendPowerOn();
 		return true;
 	} else {
 		kdDebug() << "recording stopped with error" << endl;
@@ -124,13 +137,70 @@ bool  Recording::startRecording()
 }
 
 
+bool  Recording::startMonitoring()
+{
+	bool ok = true;
+	if (m_context.state() == RecordingContext::rsRunning ||
+	    m_context.state() == RecordingContext::rsMonitor) {
+		    return true;
+	}
+
+	ok &= openDevice();
+	kdDebug() << "monitoring starting" << endl;
+	if (ok) {
+		m_context.startMonitor(m_config);
+		notifyMonitoringStarted();
+		notifyRecordingContextChanged(m_context);
+		return true;
+	} else {
+		kdDebug() << "monitoring stopped with error" << endl;
+		m_context.setError();
+		stopMonitoring();
+		return false;
+	}
+}
+
+
 bool Recording::stopRecording()
 {
-	closeDevice();
-	closeOutput();
-	notifyRecordingContextChanged(m_context);
-	notifyRecordingStopped();
-	kdDebug() << "recording stopped" << endl;
+	RecordingContext::RecordingState oldState = m_context.oldState();
+	kdDebug() << "oldstate: " << oldState << endl;
+	switch (m_context.state()) {
+		case RecordingContext::rsRunning:
+			closeDevice();
+			closeOutput();
+			notifyRecordingContextChanged(m_context);
+			notifyRecordingStopped();
+			kdDebug() << "recording stopped" << endl;
+			if (oldState == RecordingContext::rsMonitor)
+				startMonitoring();
+			break;
+		case RecordingContext::rsMonitor:
+			stopMonitoring();
+			break;
+		default:
+			break;
+	}
+	return true;
+}
+
+
+bool Recording::stopMonitoring()
+{
+	switch (m_context.state()) {
+		case RecordingContext::rsMonitor:
+			closeDevice();
+			m_context.stop();
+			notifyRecordingContextChanged(m_context);
+			notifyMonitoringStopped();
+			kdDebug() << "monitoring stopped" << endl;
+			break;
+		case RecordingContext::rsRunning:
+			stopRecording();
+			break;
+		default:
+			break;
+	}
 	return true;
 }
 
@@ -138,7 +208,13 @@ bool Recording::stopRecording()
 bool Recording::setRecordingConfig(const RecordingConfig &c)
 {
 	m_config = c;
+
 	notifyRecordingConfigChanged(m_config);
+	
+	if (m_context.state() == RecordingContext::rsMonitor) {
+		stopMonitoring();
+		startMonitoring();
+	}	
 	return true;
 }
 
@@ -146,6 +222,12 @@ bool Recording::setRecordingConfig(const RecordingConfig &c)
 bool Recording::isRecording() const
 {
 	return m_context.state() == RecordingContext::rsRunning;
+}
+
+
+bool Recording::isMonitoring() const
+{
+	return m_context.state() == RecordingContext::rsMonitor;
 }
 
 
@@ -221,9 +303,6 @@ bool Recording::openDevice()
 
     // setup the input soundfile pointer
 
-	SF_INFO sinfo;
-	m_config.getSoundFileInfo(sinfo, true);
-
     if (err) closeDevice();
 
     return !err && m_buffer;
@@ -272,7 +351,7 @@ bool Recording::openOutput()
 
 void Recording::closeOutput()
 {
-	sf_close (m_output);
+	if (m_output) sf_close (m_output);
 	m_output = NULL;
 	m_context.stop();
 }
@@ -280,15 +359,23 @@ void Recording::closeOutput()
 
 void Recording::slotSoundDataAvailable()
 {
-	int r = read(m_devfd, m_buffer, m_bufferSize);
+	if (m_context.state() == RecordingContext::rsRunning ||
+	    m_context.state() == RecordingContext::rsMonitor) {
+	
+		int r = read(m_devfd, m_buffer, m_bufferSize);
+		bool err = r <= 0;
 
-	if (r > 0 && sf_write_raw(m_output, m_buffer, r) == r) {
-		m_context.addInput(m_buffer, r);
-		notifyRecordingContextChanged(m_context);
-	} else {
-		kdDebug() << "error while recording: " << errno << endl;
-		m_context.setError();
-		stopRecording();
+		if (!err && m_context.state() == RecordingContext::rsRunning)
+			err = sf_write_raw(m_output, m_buffer, r) != r;
+			
+		if (!err) {
+			m_context.addInput(m_buffer, r);
+			notifyRecordingContextChanged(m_context);
+		} else {
+			kdDebug() << "error while recording: " << errno << endl;
+			m_context.setError();
+			stopRecording();
+		}
 	}
 }
 

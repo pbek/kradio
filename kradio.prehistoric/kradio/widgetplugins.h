@@ -29,7 +29,7 @@ class QWidget;
 class WidgetPluginBase : public PluginBase
 {
 public :
-	WidgetPluginBase(const QString &name);
+	WidgetPluginBase(const QString &name, const QString &description);
 
 	virtual void     show ();
 	virtual void     hide ();

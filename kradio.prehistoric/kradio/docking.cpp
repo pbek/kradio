@@ -33,7 +33,7 @@
 
 RadioDocking::RadioDocking(const QString &name)
   : KSystemTray (NULL, name),
-    PluginBase(name)
+    PluginBase(name, "Docking Plugin")
 {
 	setPixmap(BarIcon("kradio"));
 	m_widgetPluginIDs.setAutoDelete(true);
@@ -188,12 +188,12 @@ void RadioDocking::buildContextMenu()
             WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(it.current());
             if (!b) continue;
 			
-			const QString &name = b->name();
+			const QString &name = b->description();
 			QWidget *w = b->getWidget();
 			bool v = b->isReallyVisible();
 			
 			int id = m_menu->insertItem(QIconSet(SmallIconSet(v ? "1downarrow" : "1uparrow")),
-			                            i18n(v ? "hide " : "show ") + name,
+			                            i18n(v ? "Hide " : "Show ") + name,
 			                            w, SLOT(toggleShown()));
 			m_widgetPluginIDs.insert(b, new int(id));
 		}
@@ -395,7 +395,7 @@ void RadioDocking::noticeWidgetPluginShown(WidgetPluginBase *b, bool shown)
 	if (!id) return;
 	m_menu->changeItem(*id,
 		               QIconSet(SmallIconSet(!shown ? "1uparrow" : "1downarrow")),
-	                   i18n(!shown ? "show" : "hide") + " " + b->name());
+	                   i18n(!shown ? "Show" : "Hide") + " " + b->description());
 }
 
 

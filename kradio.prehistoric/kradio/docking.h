@@ -103,7 +103,9 @@ RECEIVERS:
 
 RECEIVERS:
 	bool noticeRecordingStarted();
+	bool noticeMonitoringStarted() { return false; }
 	bool noticeRecordingStopped();
+	bool noticeMonitoringStopped() { return false; }
 	bool noticeRecordingConfigChanged(const RecordingConfig &)   { return false; }
 	bool noticeRecordingContextChanged(const RecordingContext &) { return false; }
 

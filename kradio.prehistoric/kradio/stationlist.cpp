@@ -20,6 +20,7 @@
 #include "stationlistxmlhandler.h"
 
 #include <qfile.h>
+#include <qiodevice.h>
 #include <qmessagebox.h>
 #include <kio/netaccess.h>
 #include <ktempfile.h>
@@ -353,10 +354,24 @@ bool StationList::readXML (const KURL &url, bool enableMessageBox)
 	QString xmlData;
 	
 	// make sure that qtextstream is gone when we close presetFile
-    {
+	QString tmp;
+	{
 		QTextStream ins(&presetFile);
-		ins.setEncoding(QTextStream::UnicodeUTF8);    
+		tmp = ins.read();
+	}
+	
+	presetFile.reset();
+
+	// preset file written with kradio <= 0.2.x
+	if (tmp.find("<format>") < 0) {
+		QTextStream ins(&presetFile);
+		ins.setEncoding(QTextStream::Locale);
 		xmlData = ins.read();
+	}
+    // preset file written with kradio >= 0.3.0
+	else {
+		QXmlInputSource tmp(&presetFile);
+		xmlData = tmp.data();
 	}
 	
     presetFile.close();
@@ -417,6 +432,7 @@ bool StationList::writeXML (const KURL &url, bool enableMessageBox) const
 
     QTextStream outs(outf);
     outs.setEncoding(QTextStream::UnicodeUTF8);
+    outs << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << endl;
 
     QString output = writeXML();
 

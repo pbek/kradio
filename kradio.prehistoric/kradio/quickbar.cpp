@@ -34,8 +34,7 @@
 
 QuickBar::QuickBar(QWidget * parent, const char * name)
   : QWidget(parent, name),
-    WidgetPluginBase(name),
-
+    WidgetPluginBase(name, "Quickbar Plugin"),
     m_layout(NULL),
     m_buttonGroup(NULL),
     m_showShortName(true)

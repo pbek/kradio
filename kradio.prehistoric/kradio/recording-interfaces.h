@@ -36,17 +36,22 @@ public :
 
 RECEIVERS:
 	IF_RECEIVER(  startRecording()                                        )
+	IF_RECEIVER(  startMonitoring()                                       )
 	IF_RECEIVER(  stopRecording()                                         )
+	IF_RECEIVER(  stopMonitoring()                                        )
     IF_RECEIVER(  setRecordingConfig(const RecordingConfig &)             )
 
 SENDERS:
 	IF_SENDER  (  notifyRecordingStarted()                                )
+	IF_SENDER  (  notifyMonitoringStarted()                               )
 	IF_SENDER  (  notifyRecordingStopped()                                )
+	IF_SENDER  (  notifyMonitoringStopped()                               )
     IF_SENDER  (  notifyRecordingConfigChanged(const RecordingConfig &)   )
 	IF_SENDER  (  notifyRecordingContextChanged(const RecordingContext &c))
 
 ANSWERS:
 	IF_ANSWER  (  bool                    isRecording() const             )
+	IF_ANSWER  (  bool                    isMonitoring() const            )
 	IF_ANSWER  (  const RecordingConfig  &getRecordingConfig() const      )
 	IF_ANSWER  (  const RecordingContext &getRecordingContext() const     )
 };
@@ -61,17 +66,22 @@ public :
 
 SENDERS:
 	IF_SENDER  (  sendStartRecording()                                    )
+	IF_SENDER  (  sendStartMonitoring()                                   )
 	IF_SENDER  (  sendStopRecording()                                     )
+	IF_SENDER  (  sendStopMonitoring()                                    )
     IF_SENDER  (  sendRecordingConfig(const RecordingConfig &)            )
 
 RECEIVERS:
 	IF_RECEIVER(  noticeRecordingStarted()                                )
+	IF_RECEIVER(  noticeMonitoringStarted()                               )
 	IF_RECEIVER(  noticeRecordingStopped()                                )
+	IF_RECEIVER(  noticeMonitoringStopped()                               )
     IF_RECEIVER(  noticeRecordingConfigChanged(const RecordingConfig &)   )
 	IF_RECEIVER(  noticeRecordingContextChanged(const RecordingContext &c))
 
 QUERIES:
 	IF_QUERY   (  bool                    queryIsRecording()              )
+	IF_QUERY   (  bool                    queryIsMonitoring()             )
 	IF_QUERY   (  const RecordingConfig  &queryRecordingConfig()          )
 	IF_QUERY   (  const RecordingContext &queryRecordingContext()         )
 
