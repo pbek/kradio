@@ -1,10 +1,10 @@
 ####### kdevelop will overwrite this part!!! (begin)##########
 bin_PROGRAMS = kradio
-kradio_SOURCES = lircsupport.cpp alarm.cpp radiobase.cpp radiostation.cpp docking.cpp v4lradio.cpp  kradio.cpp main.cpp RadioView.cpp
+kradio_SOURCES = lircsupport.cpp alarm.cpp radiobase.cpp radiostation.cpp docking.cpp v4lradio.cpp  kradio.cpp main.cpp RadioView.ui
 kradio_LDADD   =  $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
 
 
-EXTRA_DIST = main.cpp kradio.cpp kradio.h kradio.desktop lo32-app-kradio.png lo16-app-kradio.png __RadioView_unused.ui RadioView.cpp RadioView.h v4lradio.cpp v4lradio.h docking.cpp docking.h lo22-app-kradio.png hi16-app-kradio.png hi22-app-kradio.png hi32-app-kradio.png dot-lircrc.example kradiorc.example hi24-app-kradio.png lo24-app-kradio.png radiostation.cpp radiostation.h radiobase.cpp radiobase.h utils.h alarm.cpp alarm.h lircsupport.cpp lircsupport.h dot-kradiorc.example hi48-app-kradio.png hi64-app-kradio.png lo48-app-kradio.png lo64-app-kradio.png 
+EXTRA_DIST = main.cpp kradio.cpp kradio.h kradio.desktop lo32-app-kradio.png lo16-app-kradio.png RadioView.ui  v4lradio.cpp v4lradio.h docking.cpp docking.h lo22-app-kradio.png hi16-app-kradio.png hi22-app-kradio.png hi32-app-kradio.png dot-lircrc.example kradiorc.example hi24-app-kradio.png lo24-app-kradio.png radiostation.cpp radiostation.h radiobase.cpp radiobase.h utils.h alarm.cpp alarm.h lircsupport.cpp lircsupport.h dot-kradiorc.example hi48-app-kradio.png hi64-app-kradio.png lo48-app-kradio.png lo64-app-kradio.png 
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/
