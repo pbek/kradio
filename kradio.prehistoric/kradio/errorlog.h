@@ -31,30 +31,33 @@ class ErrorLog : public KDialogBase,
 {
 Q_OBJECT
 public:
-	ErrorLog(QWidget * parent = 0, const char * name = 0);
-	~ErrorLog();
+    ErrorLog(QWidget * parent = 0, const char * name = 0);
+    ~ErrorLog();
+
+    virtual bool connectI (Interface *);
+    virtual bool disconnectI (Interface *);
 
 // WidgetPluginBase
 
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
+    virtual void   saveState (KConfig *) const;
+    virtual void   restoreState (KConfig *);
 
 public slots:
-	virtual void     show ();
-	virtual void     hide ();
-	virtual void     toggleShown () { WidgetPluginBase::toggleShown(); }
+    virtual void     show ();
+    virtual void     hide ();
+    virtual void     toggleShown () { WidgetPluginBase::pToggleShown(); }
 
 public:
-	virtual       QWidget *getWidget()       { return this; }
-	virtual const QWidget *getWidget() const { return this; }
+    virtual       QWidget *getWidget()       { return this; }
+    virtual const QWidget *getWidget() const { return this; }
 
 protected:
-	virtual void showEvent(QShowEvent *);
-	virtual void hideEvent(QHideEvent *);
+    virtual void showEvent(QShowEvent *);
+    virtual void hideEvent(QHideEvent *);
 
-	virtual ConfigPageInfo createConfigurationPage () { return ConfigPageInfo(); }
-	virtual AboutPageInfo  createAboutPage ()         { return AboutPageInfo(); }
-	
+    virtual ConfigPageInfo createConfigurationPage () { return ConfigPageInfo(); }
+    virtual AboutPageInfo  createAboutPage ()         { return AboutPageInfo(); }
+
 // IErrorLog
 
 RECEIVERS:
@@ -67,16 +70,16 @@ RECEIVERS:
 
 protected slots:
 
-	void slotUser1();
+    void slotUser1();
 
 protected:
 
-	QTextEdit  *m_teDebug,
-	           *m_teInfos,
-	           *m_teWarnings,
-	           *m_teErrors;
+    QTextEdit  *m_teDebug,
+               *m_teInfos,
+               *m_teWarnings,
+               *m_teErrors;
 
-	bool        init_done;
+    bool        init_done;
 };
 
 #endif

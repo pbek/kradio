@@ -48,7 +48,7 @@
 */
 
 class Radio : public PluginBase,
-	          public IRadio,
+              public IRadio,
               public IRadioDevicePool,
               public IRadioDeviceClient,
               public ITimeControlClient
@@ -58,76 +58,78 @@ public:
     ~Radio();
 
 
-	// PluginBase
+    // PluginBase
 
 public:
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
+    virtual void   saveState (KConfig *) const;
+    virtual void   restoreState (KConfig *);
 
-	virtual ConfigPageInfo  createConfigurationPage();
-	virtual AboutPageInfo   createAboutPage();
+    virtual ConfigPageInfo  createConfigurationPage();
+    virtual AboutPageInfo   createAboutPage();
 
 
     // IRadio methods
 
-RECEIVERS:    
-	bool powerOn()        { return sendPowerOn()  > 0; }
-	bool powerOff()       { return sendPowerOff() > 0; }
+RECEIVERS:
+    bool powerOn()        { return sendPowerOn()  > 0; }
+    bool powerOff()       { return sendPowerOff() > 0; }
     bool activateStation(const RadioStation &rs);
     bool activateStation(int index);
-	bool setStations(const StationList &sl);
+    bool setStations(const StationList &sl);
+    bool setPresetFile(const QString &presetFile);
 
 ANSWERS:
-	bool                   isPowerOn() const { return queryIsPowerOn(); }
-	bool                   isPowerOff() const { return queryIsPowerOff(); }
-	const RadioStation  &  getCurrentStation() const { return queryCurrentStation(); }
-	int                    getStationIdx(const RadioStation &) const;
-	int                    getCurrentStationIdx() const;
-	const StationList   &  getStations() const { return m_stationList; }
+    bool                   isPowerOn() const { return queryIsPowerOn(); }
+    bool                   isPowerOff() const { return queryIsPowerOff(); }
+    const RadioStation  &  getCurrentStation() const { return queryCurrentStation(); }
+    int                    getStationIdx(const RadioStation &) const;
+    int                    getCurrentStationIdx() const;
+    const StationList   &  getStations() const { return m_stationList; }
+    const QString       &  getPresetFile() const { return m_presetFile; }
 
 
 
 public:
-	bool connect    (Interface *i);
-	bool disconnect (Interface *i);
+    bool connectI    (Interface *i);
+    bool disconnectI (Interface *i);
 
-	void noticeConnected (IRadioDeviceClient::cmplInterface *i, bool pointer_valid);
-	void noticeDisconnect(IRadioDeviceClient::cmplInterface *i, bool pointer_valid);
+    void noticeConnectedI (IRadioDeviceClient::cmplInterface *i, bool pointer_valid);
+    void noticeDisconnectI(IRadioDeviceClient::cmplInterface *i, bool pointer_valid);
 
-	// IRadioDevicePool methods
+    // IRadioDevicePool methods
 
 RECEIVERS:
-	bool                           setActiveDevice(IRadioDevice *rd, bool keepPower = true);
+    bool                           setActiveDevice(IRadioDevice *rd, bool keepPower = true);
 
 ANSWERS:
-	IRadioDevice                 * getActiveDevice() const;
-	const QPtrList<IRadioDevice> & getDevices() const;
-	const QString                & getDeviceDescription() const;
+    IRadioDevice                 * getActiveDevice() const;
+    const QPtrList<IRadioDevice> & getDevices() const;
+    const QString                & getDeviceDescription() const;
 
 
 
-	// IRadioDeviceClient methods, even sending methods overwritten
-	// to provide "1-of-N" functionality
+    // IRadioDeviceClient methods, even sending methods overwritten
+    // to provide "1-of-N" functionality
 
 SENDERS:
-	IF_SENDER  (  sendPowerOn()                                      )
-	IF_SENDER  (  sendPowerOff()                                     )
+    IF_SENDER  (  sendPowerOn()                                      )
+    IF_SENDER  (  sendPowerOff()                                     )
     IF_SENDER  (  sendActivateStation (const RadioStation &rs)       )
 
 QUERIES:
-	IF_QUERY   (  bool                   queryIsPowerOn()            )
-	IF_QUERY   (  bool                   queryIsPowerOff()           )
-	IF_QUERY   (  const RadioStation  &  queryCurrentStation()       )
-	IF_QUERY   (  const QString       &  queryDescription()          )
+    IF_QUERY   (  bool                   queryIsPowerOn()            )
+    IF_QUERY   (  bool                   queryIsPowerOff()           )
+    IF_QUERY   (  const RadioStation  &  queryCurrentStation()       )
+    IF_QUERY   (  const QString       &  queryDescription()          )
 
 RECEIVERS:
-	virtual bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
-	virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
-	virtual bool noticeDescriptionChanged (const QString &, const IRadioDevice *sender = NULL);
+    virtual bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
+    virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
+    virtual bool noticeDescriptionChanged (const QString &, const IRadioDevice *sender = NULL);
 
 
-	// ITimeControlClient
-	
+    // ITimeControlClient
+
 RECEIVERS:
     bool noticeAlarmsChanged(const AlarmVector &)        { return false; } // ignore
     bool noticeAlarm(const Alarm &);
@@ -140,7 +142,7 @@ RECEIVERS:
 
 protected:
 
-	QString        m_presetFile;
+    QString        m_presetFile;
     StationList    m_stationList;
     IRadioDevice  *m_activeDevice;
 };

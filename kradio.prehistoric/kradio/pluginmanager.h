@@ -38,45 +38,45 @@ struct ConfigPageInfo;
 class PluginManager
 {
 public :
-	         PluginManager(const QString &configDialogTitle, const QString &aboutTitle);
-	virtual ~PluginManager();
+             PluginManager(const QString &configDialogTitle, const QString &aboutTitle);
+    virtual ~PluginManager();
 
 
-	// managing plugins
+    // managing plugins
 
-	const PluginList     &plugins() const { return m_plugins; }
+    const PluginList     &plugins() const { return m_plugins; }
 
-	// after insert, pluginManager is responsible for deletion
-	virtual void         insertPlugin(PluginBase *);
+    // after insert, pluginManager is responsible for deletion
+    void                 insertPlugin(PluginBase *);
 
-	// remove and delete plugin
-	virtual void         deletePlugin(PluginBase *);
-	
-	// remove plugin, afterwards pluginManager is no longer responsible for deletion
-	virtual void         removePlugin(PluginBase *);
+    // remove and delete plugin
+    void                 deletePlugin(PluginBase *);
 
-	// operations on all plugins
+    // remove plugin, afterwards pluginManager is no longer responsible for deletion
+    void                 removePlugin(PluginBase *);
 
-	virtual void         saveState    (KConfig *) const;
-	virtual void         restoreState (KConfig *);
+    // operations on all plugins
 
-	// configuration dialog handling
+    virtual void         saveState    (KConfig *) const;
+    virtual void         restoreState (KConfig *);
 
-	virtual PluginConfigurationDialog *getConfigDialog();
-	virtual KDialogBase               *getAboutDialog();
+    // configuration dialog handling
+
+    virtual PluginConfigurationDialog *getConfigDialog();
+    virtual KDialogBase               *getAboutDialog();
 
     virtual void         noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
-	
+
 protected :
-	virtual void         createConfigDialog(const QString &title = QString::null);
-	virtual void         createAboutDialog (const QString &title = QString::null);
+    virtual void         createConfigDialog(const QString &title = QString::null);
+    virtual void         createAboutDialog (const QString &title = QString::null);
 
     virtual void         addConfigurationPage (PluginBase *forWhom,
-											   const ConfigPageInfo	&info);
+                                               const ConfigPageInfo    &info);
     virtual void         addAboutPage         (PluginBase *forWhom,
-											   const AboutPageInfo	&info);
+                                               const AboutPageInfo    &info);
 
-	// PluginManager's data & types ;)
+    // PluginManager's data & types ;)
 protected:
     typedef QPtrDict<QFrame>               QFrameDict;
     typedef QPtrDictIterator<QFrame>       QFrameDictIterator;
@@ -84,13 +84,13 @@ protected:
     typedef QPtrDictIterator<QWidget>      QWidgetDictIterator;
 
     PluginList   m_plugins;
-    
+
     QFrameDict   m_configPageFrames;
     QWidgetDict  m_configPages;
-    
+
     QFrameDict   m_aboutPageFrames;
     QWidgetDict  m_aboutPages;
-    
+
     PluginConfigurationDialog *m_configDialog;
     KDialogBase               *m_aboutDialog;
     QString                    m_configDialogTitle;

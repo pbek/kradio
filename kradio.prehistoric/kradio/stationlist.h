@@ -23,6 +23,7 @@
 #endif
 
 #include "stationlistmetadata.h"
+#include "errorlog-interfaces.h"
 
 // qt includes
 #include <qptrlist.h>
@@ -51,43 +52,43 @@ class KURL;
    exact copies from a pointer with the type of our base class "RadioStation".
 
 */
-   
+
 
 class RawStationList : public QPtrList<RadioStation>
 {
 public:
 
-	typedef QPtrListIterator<RadioStation>  Iterator;
-	typedef QPtrList<RadioStation>          BaseClass;
+    typedef QPtrListIterator<RadioStation>  Iterator;
+    typedef QPtrList<RadioStation>          BaseClass;
 
 public:
-	RawStationList ();
-	RawStationList (const RawStationList &sl);
-	~RawStationList ();
+    RawStationList ();
+    RawStationList (const RawStationList &sl);
+    ~RawStationList ();
 
-	// overwrite all insert-methods in order to change
-	// multiple insertion of same station_id into an update
+    // overwrite all insert-methods in order to change
+    // multiple insertion of same station_id into an update
 
-	bool insert  (uint index, const RadioStation *item);
-	bool insert  (const RadioStation *item);
-	void inSort  (const RadioStation *item);
-	void prepend (const RadioStation *item);
-	void append  (const RadioStation *item);
-	bool replace (uint index, const RadioStation *item);
+    bool insert  (uint index, const RadioStation *item);
+    bool insert  (const RadioStation *item);
+    void inSort  (const RadioStation *item);
+    void prepend (const RadioStation *item);
+    void append  (const RadioStation *item);
+    bool replace (uint index, const RadioStation *item);
 
-	// simplify stationIDSearch
-	
+    // simplify stationIDSearch
+
     const RadioStation &  stationWithID(const QString &sid) const;
           RadioStation &  stationWithID(const QString &sid);
 
     int                   idxWithID(const QString &sid) const;
-          
+
 protected:
 
-	QPtrCollection::Item newItem (QPtrCollection::Item s);
-	void                 deleteItem (QPtrCollection::Item s);
+    QPtrCollection::Item newItem (QPtrCollection::Item s);
+    void                 deleteItem (QPtrCollection::Item s);
 
-	int compareItems (QPtrCollection::Item a, QPtrCollection::Item b);
+    int compareItems (QPtrCollection::Item a, QPtrCollection::Item b);
 };
 
 
@@ -136,16 +137,15 @@ public:
 
     // xml in/out
 
-    bool    readXML (const QString &dat, bool enableMessageBox = true);
-    bool    readXML (const KURL &url,    bool enableMessageBox = true);
-    
-    QString writeXML () const;
-    bool    writeXML (const KURL &url,   bool enableMessageBox = true) const;
+    bool    readXML (const QString &dat, const IErrorLogClient &logger, bool enableMessageBox = true);
+    bool    readXML (const KURL &url,    const IErrorLogClient &logger, bool enableMessageBox = true);
+
+    QString writeXML (const IErrorLogClient &logger) const;
+    bool    writeXML (const KURL &url, const IErrorLogClient &logger, bool enableMessageBox = true) const;
 
 protected:
     RawStationList        m_all;
     StationListMetaData   m_metaData;
-
 };
 
 

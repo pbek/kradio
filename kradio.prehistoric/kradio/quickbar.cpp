@@ -40,7 +40,8 @@ QuickBar::QuickBar(QWidget * parent, const char * name)
     WidgetPluginBase(name, i18n("Quickbar Plugin")),
     m_layout(NULL),
     m_buttonGroup(NULL),
-    m_showShortName(true)
+    m_showShortName(true),
+    m_ignoreNoticeActivation(false)
 {
 }
 
@@ -50,21 +51,23 @@ QuickBar::~QuickBar()
 }
 
 
-bool QuickBar::connect(Interface *i)
+bool QuickBar::connectI(Interface *i)
 {
-	bool a = IRadioClient::connect(i);
-	bool b = IStationSelection::connect(i);
+    bool a = IRadioClient::connectI(i);
+    bool b = IStationSelection::connectI(i);
+    bool c = PluginBase::connectI(i);
 
-	return a || b;
+    return a || b || c;
 }
 
 
-bool QuickBar::disconnect(Interface *i)
+bool QuickBar::disconnectI(Interface *i)
 {
-	bool a = IRadioClient::disconnect(i);
-	bool b = IStationSelection::disconnect(i);
+    bool a = IRadioClient::disconnectI(i);
+    bool b = IStationSelection::disconnectI(i);
+    bool c = PluginBase::disconnectI(i);
 
-	return a || b;
+    return a || b || c;
 }
 
 
@@ -72,10 +75,10 @@ bool QuickBar::disconnect(Interface *i)
 
 bool QuickBar::setStationSelection(const QStringList &sl)
 {
-	m_stationIDs = sl;
-	rebuildGUI();
-	notifyStationSelectionChanged(m_stationIDs);
-	return true;
+    m_stationIDs = sl;
+    rebuildGUI();
+    notifyStationSelectionChanged(m_stationIDs);
+    return true;
 }
 
 // PluginBase methods
@@ -85,17 +88,17 @@ void QuickBar::restoreState (KConfig *config)
 {
     config->setGroup(QString("quickBar-") + name());
 
-	WidgetPluginBase::restoreState(config, false);
+    WidgetPluginBase::restoreState(config, false);
 
-	int nStations = config->readNumEntry("nStations", 0);
-	for (int i = 1; i <= nStations; ++i) {
-		QString s = config->readEntry(QString("stationID-") + QString().setNum(i), QString::null);
-		if (s.length())
-			m_stationIDs += s;
-	}
+    int nStations = config->readNumEntry("nStations", 0);
+    for (int i = 1; i <= nStations; ++i) {
+        QString s = config->readEntry(QString("stationID-") + QString().setNum(i), QString::null);
+        if (s.length())
+            m_stationIDs += s;
+    }
 
-	rebuildGUI();
-	notifyStationSelectionChanged(m_stationIDs);
+    rebuildGUI();
+    notifyStationSelectionChanged(m_stationIDs);
 }
 
 
@@ -103,33 +106,33 @@ void QuickBar::saveState (KConfig *config) const
 {
     config->setGroup(QString("quickBar-") + name());
 
-	WidgetPluginBase::saveState(config);
+    WidgetPluginBase::saveState(config);
 
-	config->writeEntry("nStations", m_stationIDs.size());
-	int i = 1;
-	for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++i) {
-		config->writeEntry(QString("stationID-") + QString().setNum(i), *it);
-	}
+    config->writeEntry("nStations", m_stationIDs.size());
+    int i = 1;
+    for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++i) {
+        config->writeEntry(QString("stationID-") + QString().setNum(i), *it);
+    }
 }
 
 
 ConfigPageInfo QuickBar::createConfigurationPage()
 {
-	QuickbarConfiguration *conf = new QuickbarConfiguration(NULL);
-	connect (conf);
-	return ConfigPageInfo(
-		conf,
-		i18n("Quickbar"),
-		i18n("Quickbar Configuration"),
-		"view_icon"
-	);
+    QuickbarConfiguration *conf = new QuickbarConfiguration(NULL);
+    connectI (conf);
+    return ConfigPageInfo(
+        conf,
+        i18n("Quickbar"),
+        i18n("Quickbar Configuration"),
+        "view_icon"
+    );
 }
 
 
 AboutPageInfo QuickBar::createAboutPage()
 {
     KAboutData aboutData("kradio",
-						 NULL,
+                         NULL,
                          NULL,
                          I18N_NOOP("Quickback for KRadio"),
                          KAboutData::License_GPL,
@@ -140,12 +143,12 @@ AboutPageInfo QuickBar::createAboutPage()
     aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
     aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
 
-	return AboutPageInfo(
-	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-	          i18n("Quickbar"),
-	          i18n("Quickbar Plugin"),
-	          "view_icon"
-		   );
+    return AboutPageInfo(
+              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+              i18n("Quickbar"),
+              i18n("Quickbar Plugin"),
+              "view_icon"
+           );
 }
 
 
@@ -153,25 +156,26 @@ AboutPageInfo QuickBar::createAboutPage()
 
 bool QuickBar::noticePowerChanged(bool /*on*/)
 {
-	activateCurrentButton();
-	return true;
+    activateCurrentButton();
+    return true;
 }
 
 
 bool QuickBar::noticeStationChanged (const RadioStation &rs, int /*idx*/)
 {
-	activateButton(rs);
-	return true;
+    if (!m_ignoreNoticeActivation)
+        activateButton(rs);
+    return true;
 }
 
 
 bool QuickBar::noticeStationsChanged(const StationList &/*sl*/)
 {
-	// FIXME
-	// we can remove no longer existent stationIDs,
-	// but it doesn't matter if we don't care.
-	rebuildGUI();
-	return true;
+    // FIXME
+    // we can remove no longer existent stationIDs,
+    // but it doesn't matter if we don't care.
+    rebuildGUI();
+    return true;
 }
 
 
@@ -179,54 +183,63 @@ bool QuickBar::noticeStationsChanged(const StationList &/*sl*/)
 
 void QuickBar::buttonClicked(int id)
 {
-	// ouch, but we are still using QStringList :(
-	int k = 0;
-	for (QStringList::iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++k) {
-		if (k == id) {
-			const RawStationList &sl = queryStations().all();
-			const RadioStation &rs = sl.stationWithID(*it);
-			sendActivateStation(rs);
-		}
-	}
-	// Problem: if we click a button twice, there will be no
-	// "station changed"-notification. Thus it would be possible to
-	// enable a button even if power is off or the radio does not
-	// accept the radiostation
-	activateCurrentButton();
+    // ouch, but we are still using QStringList :(
+    if (queryIsPowerOn() && id == getButtonID(queryCurrentStation())) {
+        sendPowerOff();
+    } else {
+
+        int k = 0;
+        for (QStringList::iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++k) {
+            if (k == id) {
+                const RawStationList &sl = queryStations().all();
+                const RadioStation &rs = sl.stationWithID(*it);
+                bool old = m_ignoreNoticeActivation;
+                m_ignoreNoticeActivation = true;
+                sendActivateStation(rs);
+                m_ignoreNoticeActivation = old;
+                sendPowerOn();
+            }
+        }
+    }
+    // Problem: if we click a button twice, there will be no
+    // "station changed"-notification. Thus it would be possible to
+    // enable a button even if power is off or the radio does not
+    // accept the radiostation
+    //activateCurrentButton();
 }
 
 
 int QuickBar::getButtonID(const RadioStation &rs) const
 {
-	QString stationID = rs.stationID();
-	int k = 0;
-	for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++k) {
-		if (*it == stationID)
-			return k;
-	}
-	return -1;
+    QString stationID = rs.stationID();
+    int k = 0;
+    for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++k) {
+        if (*it == stationID)
+            return k;
+    }
+    return -1;
 }
 
 
 void QuickBar::activateCurrentButton()
 {
-	activateButton(queryCurrentStation());
+    activateButton(queryCurrentStation());
 }
 
 
 void QuickBar::activateButton(const RadioStation &rs)
 {
-	int buttonID = getButtonID(rs);
-	bool pwr = queryIsPowerOn();
-	
-	if (pwr && buttonID >= 0) {
-		m_buttonGroup->setButton(buttonID);
-	} else {
-		for (QToolButton *b = m_buttons.first(); b; b = m_buttons.next()) {
-			b->setOn(false);
-		}
-	}
-	setCaption(pwr && rs.isValid() ? rs.longName() : QString("KRadio"));
+    int buttonID = getButtonID(rs);
+    bool pwr = queryIsPowerOn();
+
+    if (pwr && buttonID >= 0) {
+        m_buttonGroup->setButton(buttonID);
+    } else {
+        for (QToolButton *b = m_buttons.first(); b; b = m_buttons.next()) {
+            b->setOn(false);
+        }
+    }
+    setCaption(pwr && rs.isValid() ? rs.longName() : QString("KRadio"));
 }
 
 
@@ -236,60 +249,60 @@ void QuickBar::activateButton(const RadioStation &rs)
 
 void QuickBar::rebuildGUI()
 {
-	if (m_layout) delete m_layout;
-	if (m_buttonGroup) delete m_buttonGroup;
+    if (m_layout) delete m_layout;
+    if (m_buttonGroup) delete m_buttonGroup;
 
-	for (QPtrListIterator<QToolButton> it(m_buttons); it.current(); ++it)
-		delete it.current();
-   	m_buttons.clear();
+    for (QPtrListIterator<QToolButton> it(m_buttons); it.current(); ++it)
+        delete it.current();
+       m_buttons.clear();
 
-	m_layout = new ButtonFlowLayout(this);
-	m_layout->setMargin(1);
-	m_layout->setSpacing(2);
-	
-	m_buttonGroup = new QButtonGroup(this);
+    m_layout = new ButtonFlowLayout(this);
+    m_layout->setMargin(1);
+    m_layout->setSpacing(2);
+
+    m_buttonGroup = new QButtonGroup(this);
     QObject::connect (m_buttonGroup, SIGNAL(clicked(int)), this, SLOT(buttonClicked(int)));
-	// we use buttonGroup to enable automatic toggle/untoggle
-	m_buttonGroup->setExclusive(true);
-	m_buttonGroup->setFrameStyle(QFrame::NoFrame);
-	m_buttonGroup->show();
+    // we use buttonGroup to enable automatic toggle/untoggle
+    m_buttonGroup->setExclusive(true);
+    m_buttonGroup->setFrameStyle(QFrame::NoFrame);
+    m_buttonGroup->show();
 
     int buttonID = 0;
     const RawStationList &stations = queryStations().all();
 
     for (QStringList::iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++buttonID) {
 
-		const RadioStation &rs = stations.stationWithID(*it);
-		if (! rs.isValid()) continue;
+        const RadioStation &rs = stations.stationWithID(*it);
+        if (! rs.isValid()) continue;
 
         QToolButton *b = new QToolButton(this, QString::null);
         m_buttons.append(b);
-	    b->setToggleButton(true);
-	    if (rs.iconName())
-			b->setIconSet(QPixmap(rs.iconName()));
-		else
-			b->setText(m_showShortName ? rs.shortName() : rs.name());
+        b->setToggleButton(true);
+        if (rs.iconName())
+            b->setIconSet(QPixmap(rs.iconName()));
+        else
+            b->setText(m_showShortName ? rs.shortName() : rs.name());
 
         b->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred));
 
         QToolTip::add(b, rs.longName());
         if (isVisible()) b->show();
 
-        
+
         m_buttonGroup->insert(b, buttonID);
         m_layout->add(b);
     }
-    
+
     // activate correct button
     activateCurrentButton();
 
     // calculate geometry
     if (m_layout) {
-		QRect r = geometry();
-		int h = m_layout->heightForWidth( r.width());
+        QRect r = geometry();
+        int h = m_layout->heightForWidth( r.width());
 
-		if (h > r.height())
-			setGeometry(r.x(), r.y(), r.width(), h);
+        if (h > r.height())
+            setGeometry(r.x(), r.y(), r.width(), h);
     }
 }
 
@@ -298,56 +311,55 @@ void QuickBar::rebuildGUI()
 
 void QuickBar::show()
 {
-  	KWin::setType(winId(), NET::Toolbar);
-    WidgetPluginBase::show();
-	QWidget::show();
-    WidgetPluginBase::show();
+//      KWin::setType(winId(), NET::Toolbar);
+    WidgetPluginBase::pShow();
+    QWidget::show();
 }
 
 void QuickBar::hide()
 {
-    WidgetPluginBase::hide();
+    WidgetPluginBase::pHide();
     QWidget::hide();
 }
 
 void    QuickBar::showEvent(QShowEvent *e)
 {
-	QWidget::showEvent(e);
-	WidgetPluginBase::showEvent(e);
+    QWidget::showEvent(e);
+    WidgetPluginBase::pShowEvent(e);
 }
 
 void    QuickBar::hideEvent(QHideEvent *e)
 {
-	QWidget::hideEvent(e);
-	WidgetPluginBase::hideEvent(e);
+    QWidget::hideEvent(e);
+    WidgetPluginBase::pHideEvent(e);
 }
 
 
 void QuickBar::setGeometry (int x, int y, int w, int h)
 {
-	if (m_layout) {
-		QSize marginSize(m_layout->margin()*2, m_layout->margin()*2);
-		setMinimumSize(m_layout->minimumSize(QSize(w, h) - marginSize) + marginSize);
-	}
-	QWidget::setGeometry (x, y, w, h);
+    if (m_layout) {
+        QSize marginSize(m_layout->margin()*2, m_layout->margin()*2);
+        setMinimumSize(m_layout->minimumSize(QSize(w, h) - marginSize) + marginSize);
+    }
+    QWidget::setGeometry (x, y, w, h);
 }
 
 
 void QuickBar::setGeometry (const QRect &r)
 {
-	setGeometry (r.x(), r.y(), r.width(), r.height());
+    setGeometry (r.x(), r.y(), r.width(), r.height());
 }
 
 
 void QuickBar::resizeEvent (QResizeEvent *e)
 {
-	// minimumSize might change because of the flow layout
-	if (m_layout) {
-		QSize marginSize(m_layout->margin()*2, m_layout->margin()*2);
-		setMinimumSize(m_layout->minimumSize(e->size() - marginSize) + marginSize);
-	}
+    // minimumSize might change because of the flow layout
+    if (m_layout) {
+        QSize marginSize(m_layout->margin()*2, m_layout->margin()*2);
+        setMinimumSize(m_layout->minimumSize(e->size() - marginSize) + marginSize);
+    }
 
-	QWidget::resizeEvent (e);
+    QWidget::resizeEvent (e);
 }
 
 

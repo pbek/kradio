@@ -73,7 +73,7 @@ IF_IMPL_QUERY   (  const RecordingContext &IRecordingClient::queryRecordingConte
                    invalidContext                                          )
 
 
-void IRecordingClient::noticeConnected  (cmplInterface *, bool /*pointer_valid*/)
+void IRecordingClient::noticeConnectedI  (cmplInterface *, bool /*pointer_valid*/)
 {
 	if (queryIsRecording())  noticeRecordingStarted();
 	else                     noticeRecordingStopped();
@@ -84,7 +84,7 @@ void IRecordingClient::noticeConnected  (cmplInterface *, bool /*pointer_valid*/
 }
 
 
-void IRecordingClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
+void IRecordingClient::noticeDisconnectedI   (cmplInterface *, bool /*pointer_valid*/)
 {
 	if (queryIsRecording())  noticeRecordingStarted();
 	else                     noticeRecordingStopped();

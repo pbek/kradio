@@ -1,25 +1,28 @@
 0.3.0-alpha3
 
-       segfault fixes with 2.95.3
-       fix recording problemes without alsa
+       segfault fixes with 2.95.3 // done
+       fix recording problemes without alsa // ?done?
        tooltips in config dialog
        optimize recording data monitor:
-         * repaint only what is necessary
+         * repaint only what is necessary // done
          * update text only when necessary
        
        option for display window type (entry in taskbar or toolbar window)
-       mp3 encoding with liblame_enc
+       mp3 encoding with liblame_enc // done
        background pixmap for display
        .so-library plugins
        plugin config
        lirc config
        internet radio streams
        translations
-       weekday selection for alarms
-
+       weekday selection for alarms // done
+       automatic station icon scaling
+       define final single/doubleclick tray icon behaviour
+       widgetplugin-show-button in radio view?
+       
 0.3.0-beta1
   
-       gui-errormessages
+       gui-errormessages // done
 
        tooltips complete?
        prepare for translation: check for missing i18n

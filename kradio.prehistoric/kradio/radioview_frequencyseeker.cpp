@@ -105,10 +105,10 @@ float RadioViewFrequencySeeker::getUsability (Interface *i) const
 
 // Interface
 
-bool RadioViewFrequencySeeker::connect   (Interface *i)
+bool RadioViewFrequencySeeker::connectI   (Interface *i)
 {
-	if (IFrequencyRadioClient::connect(i)) {
-		ISeekRadioClient::connect(i);
+	if (IFrequencyRadioClient::connectI(i)) {
+		ISeekRadioClient::connectI(i);
 		return true;
 	} else {
 		return false;
@@ -116,10 +116,10 @@ bool RadioViewFrequencySeeker::connect   (Interface *i)
 }
 
 
-bool RadioViewFrequencySeeker::disconnect(Interface *i)
+bool RadioViewFrequencySeeker::disconnectI(Interface *i)
 {
-	bool a = IFrequencyRadioClient::disconnect(i);
-	bool b = ISeekRadioClient::disconnect(i);
+	bool a = IFrequencyRadioClient::disconnectI(i);
+	bool b = ISeekRadioClient::disconnectI(i);
 	return a || b;
 }
 

@@ -14,7 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
- 
+
 #ifndef KRADIO_INTERFACES_H
 #define KRADIO_INTERFACES_H
 
@@ -52,14 +52,14 @@
    Why are we not using QT signal/slots?
 
    First the idea of using qt for connecting interfaces is very nice, as the
-   signal/slot model is well known and hopefully properly implemented. 
+   signal/slot model is well known and hopefully properly implemented.
 
    But there are some problems:
 
    - Signals/slots do not support return values, except "call by reference".
      To provide queries or a delivery feedback for messages, wrapper functions
      would have been necessary.
-     
+
    - Qt does not support multiple inheritance of QObjects. Thus even signals
      have to be declared abstract by the interface though the (later)
      implementation is already known.
@@ -67,7 +67,7 @@
      Those functions have to be declared as signals in the interface
      implementation (derived from QObject) though the implementation does not
      want to worry about these signals.
-     
+
    - Qt does connect functions (signals/slots) and not interfaces. These
      functions have to be connected separately. By that it is possible to
      forget to connect signals/slots of that interfaces.
@@ -115,12 +115,12 @@
 
        class Interface : public InterfaceBase<Interface, ComplementaryInterface>
        {
-       	...
+           ...
        };
 
        class ComplementaryInterface : public InterfaceBase<ComplementaryInterface, Interface>
        {
-       	...
+           ...
        };
 
    With macro abbreviation:
@@ -136,7 +136,7 @@
 
    In order to receive/send Messages or query/answer queries we have to declare
    special methods:
-   
+
    - sending Messages
 
      Declare a virtual constant method with return value "int" and the desired
@@ -147,7 +147,7 @@
 
      Abbreviation by macros:
 
-     	 IF_SENDER(    SendingMessages(int any_or_non_param)   )
+          IF_SENDER(    SendingMessages(int any_or_non_param)   )
 
 
    - receiving Messages
@@ -159,19 +159,19 @@
 
      Abbreviation by macros:
 
-     	 IF_RECEIVER(  ReceivingMessages(int any_or_non_param)   )
+          IF_RECEIVER(  ReceivingMessages(int any_or_non_param)   )
 
 
      The method has to be implemented by a derived class. The current item of the
      receivers conntions list is set to the sender.
-     
+
 
    - querying queries
 
      Declare a virtual constant method with the desired return value and
      parameters:
 
-     	 virtual int   QueryingQueries(int another_param) const;
+          virtual int   QueryingQueries(int another_param) const;
 
      Abbreviation by macros:
 
@@ -187,7 +187,7 @@
 
      Abbreviation by macros:
 
-     	 IF_ANSWER(    AnsweringQueries(int another_param)   )
+          IF_ANSWER(    AnsweringQueries(int another_param)   )
 
      The method has to be implemented by a derived class. The current item of the
      receivers conntions list is set to the sender.
@@ -223,7 +223,7 @@
    Even shorter:
 
    IF_IMPL_SENDER(  ComplementaryInterface::QueryingQueries(int param),
-                    AnsweringQueries(param)                    
+                    AnsweringQueries(param)
                  )
 
    IF_IMPL_QUERY(  int ComplementaryInterface::SendingMessages(int param),
@@ -255,7 +255,7 @@
      destroyed derived class. That is not possible. Dynamic casts to the
      derived class will return NULL. Do not try to call methods of this class
      by use of cached pointers.
-   
+
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -273,22 +273,22 @@
                          public IRadioFrequencyExtension,
                          public IRadioSeekExtension
    {
-   	...
+       ...
    };
 
    To guarantee, that connection management continues to work, we have to overwrite
    the connect and disconnect methods:
 
      virtual bool I_AM_FM_Radio::connect (Interface *i) {
-     	IRadioBase::connect(i);
-     	IFrequencyExtension::connect(i);
-     	ISeekExtension::connect(i);
+         IRadioBase::connect(i);
+         IFrequencyExtension::connect(i);
+         ISeekExtension::connect(i);
      }
 
      virtual bool I_AM_FM_Radio::disconnect (Interface *i) {
-     	IRadioBase::disconnect(i);
-     	IFrequencyExtension::disconnect(i);
-     	ISeekExtension::disconnect(i);
+         IRadioBase::disconnect(i);
+         IFrequencyExtension::disconnect(i);
+         ISeekExtension::disconnect(i);
      }
 
 */
@@ -304,16 +304,16 @@
 class Interface
 {
 public:
-	Interface () {}
-	virtual ~Interface() {}
+    Interface () {}
+    virtual ~Interface() {}
 
-	virtual bool     connect   (Interface *) { return false; }
-	virtual bool     disconnect(Interface *) { return false; }
+    virtual bool     connectI   (Interface *) { return false; }
+    virtual bool     disconnectI(Interface *) { return false; }
 
-	// "Interface &"-Versions for convienience, not virtual, only "Interface*"
-	// versions have to / may  be overwritten in case of multiple inheritance
-	bool     connect   (Interface &i) { return connect    (&i); }
-	bool     disconnect(Interface &i) { return disconnect (&i); }
+    // "Interface &"-Versions for convienience, not virtual, only "Interface*"
+    // versions have to / may  be overwritten in case of multiple inheritance
+    bool     connectI   (Interface &i) { return connectI    (&i); }
+    bool     disconnectI(Interface &i) { return disconnectI (&i); }
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -322,70 +322,70 @@ template <class thisIF, class cmplIF>
 class InterfaceBase : virtual public Interface
 {
 private:
-	typedef InterfaceBase<thisIF, cmplIF>  thisClass;
-	typedef InterfaceBase<cmplIF, thisIF>  cmplClass;
+    typedef InterfaceBase<thisIF, cmplIF>  thisClass;
+    typedef InterfaceBase<cmplIF, thisIF>  cmplClass;
 
     friend class cmplClass; // necessary for connects (to keep number of different connect functions low)
 
 public:
-                                               
-	typedef thisIF                    thisInterface;
-	typedef cmplIF                    cmplInterface;
 
-	typedef QPtrList<cmplIF>          IFList;
-	typedef QPtrListIterator<cmplIF>  IFIterator;
+    typedef thisIF                    thisInterface;
+    typedef cmplIF                    cmplInterface;
 
-	typedef thisClass BaseClass;
-    
+    typedef QPtrList<cmplIF>          IFList;
+    typedef QPtrListIterator<cmplIF>  IFIterator;
+
+    typedef thisClass BaseClass;
+
 public :
-	InterfaceBase (int maxConnections = -1);
-	virtual ~InterfaceBase ();
+    InterfaceBase (int maxIConnections = -1);
+    virtual ~InterfaceBase ();
 
-	// duplicate connects will add no more entries to connection list
-	virtual bool     connect(Interface *i);
-	virtual bool     disconnect(Interface *i);
+    // duplicate connects will add no more entries to connection list
+    virtual bool     connectI(Interface *i);
+    virtual bool     disconnectI(Interface *i);
 
 protected:
-	virtual void     disconnectAll();
+    virtual void     disconnectAllI();
 
-	
+
 public:
 
-   	// It might be compfortable to derived Interfaces to get an argument
-	// of the Interface class, but that part of the object might
-	// already be destroyed. Thus it is necessary to evaluate the additional
-	// pointer_valid argument. A null pointer is not transmitted, as the
-	// pointer value might be needed to clean up some references in derived
-	// classes
-	virtual void     noticeConnect     (cmplInterface *, bool /*pointer_valid*/) {}
-	virtual void     noticeConnected   (cmplInterface *, bool /*pointer_valid*/) {}
-	virtual void     noticeDisconnect  (cmplInterface *, bool /*pointer_valid*/) {}
-	virtual void     noticeDisconnected(cmplInterface *, bool /*pointer_valid*/) {}
+    // It might be compfortable to derived Interfaces to get an argument
+    // of the Interface class, but that part of the object might
+    // already be destroyed. Thus it is necessary to evaluate the additional
+    // pointer_valid argument. A null pointer is not transmitted, as the
+    // pointer value might be needed to clean up some references in derived
+    // classes
+    virtual void     noticeConnectI     (cmplInterface *, bool /*pointer_valid*/) {}
+    virtual void     noticeConnectedI   (cmplInterface *, bool /*pointer_valid*/) {}
+    virtual void     noticeDisconnectI  (cmplInterface *, bool /*pointer_valid*/) {}
+    virtual void     noticeDisconnectedI(cmplInterface *, bool /*pointer_valid*/) {}
 
-	virtual bool     isConnectionFree() const;
-	virtual unsigned connected()        const { return connections.count(); }
+    virtual bool     isIConnectionFree() const;
+    virtual unsigned connectedI()        const { return iConnections.count(); }
 
 protected :
 
-	IFList connections;	
-	int    maxConnections;
+    IFList iConnections;
+    int    maxIConnections;
 
 private:
-	thisInterface *me;
-	bool           me_valid;
+    thisInterface *me;
+    bool           me_valid;
 };
 
 
 // macros for interface declaration
 
 #define INTERFACE(IF, cmplIF) \
-	class IF; \
-	class cmplIF; \
-	class IF : public InterfaceBase<IF, cmplIF> \
+    class IF; \
+    class cmplIF; \
+    class IF : public InterfaceBase<IF, cmplIF> \
 
 #define IF_CON_DESTRUCTOR(IF, n) \
-	IF() : BaseClass((n)) {} \
-	virtual ~IF() { }
+    IF() : BaseClass((n)) {} \
+    virtual ~IF() { }
 
 // macros to make sending messages or queries easier
 
@@ -395,7 +395,7 @@ private:
     #include <iostream>
     using namespace std;
     #define IF_QUERY_DEBUG \
-        if (connections.count() > 1) { \
+        if (iConnections.count() > 1) { \
             kdDebug() << "class " << typeid(this).name() << ": using IF_QUERY with #connections > 1\n"; \
         }
 #else
@@ -410,23 +410,23 @@ private:
 #define RECEIVERS public
 
 #define IF_SENDER(decl) \
-		virtual int decl const;
+        virtual int decl const;
 
 #define IF_SEND_MESSAGE(call) \
-		int ____n = 0; \
-		for (IFIterator i(connections); i.current(); ++i) {   \
-			if (i.current()->call ) ++____n; \
-		}  \
-		return ____n;
+        int ____n = 0; \
+        for (IFIterator i(iConnections); i.current(); ++i) {   \
+            if (i.current()->call ) ++____n; \
+        }  \
+        return ____n;
 
 #define IF_IMPL_SENDER(decl, call) \
-		int decl const \
-		{ \
-			IF_SEND_MESSAGE(call) \
-		}
+        int decl const \
+        { \
+            IF_SEND_MESSAGE(call) \
+        }
 
 #define IF_RECEIVER(decl) \
-		virtual bool decl = 0;
+        virtual bool decl = 0;
 
 
 // queries
@@ -435,32 +435,32 @@ private:
 #define QUERIES protected
 
 #define IF_QUERY(decl) \
-		virtual decl const;
+        virtual decl const;
 
 #define IF_SEND_QUERY(call, default) \
-		cmplInterface *o = IFIterator(connections).current(); \
-		if (o) { \
-			IF_QUERY_DEBUG \
-			return o->call; \
-		} else { \
-			return default; \
-		} \
-		
+        cmplInterface *o = IFIterator(iConnections).current(); \
+        if (o) { \
+            IF_QUERY_DEBUG \
+            return o->call; \
+        } else { \
+            return default; \
+        } \
+
 #define IF_IMPL_QUERY(decl, call, default) \
-		decl const { \
-			IF_SEND_QUERY(call, default) \
-		}
+        decl const { \
+            IF_SEND_QUERY(call, default) \
+        }
 
 #define IF_ANSWER(decl) \
-		virtual decl = 0;
+        virtual decl = 0;
 
 
 /////////////////////////////////////////////////////////////////////////////
 
 
 template <class thisIF, class cmplIF>
-InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
-  : maxConnections(_maxConnections),
+InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxIConnections)
+  : maxIConnections(_maxIConnections),
     me(NULL),
     me_valid(false)
 {
@@ -470,133 +470,128 @@ InterfaceBase<thisIF, cmplIF>::InterfaceBase(int _maxConnections)
 template <class thisIF, class cmplIF>
 InterfaceBase<thisIF, cmplIF>::~InterfaceBase()
 {
-	kdDebug() << "InterfaceBase Destructor" << endl;
+    me_valid = false;
+    // In this state the derived interfaces may already be destroyed
+    // so that dereferencing cached upcasted me-pointers in noticeDisconnect(ed)
+    // will fail.
+    // Thus we must ensure that disconnectAll() is called in the (upper) thisIF
+    // destructor, not here (see macro IF_CON_DESTRUCTOR).
+    // If this has not taken place (i.e. the programmer forgot to do so)
+    // we can only warn, clear our list now and hope that nothing
+    // more bad will happen
 
-	me_valid = false;
-	// In this state the derived interfaces may already be destroyed
-	// so that dereferencing cached upcasted me-pointers in noticeDisconnect(ed)
-	// will fail.
-	// Thus we must ensure that disconnectAll() is called in the (upper) thisIF
-	// destructor, not here (see macro IF_CON_DESTRUCTOR).
-	// If this has not taken place (i.e. the programmer forgot to do so)
-	// we can only warn, clear our list now and hope that nothing
-	// more bad will happen
-
-	if (connections.count() > 0) {
-		disconnectAll();
-	}
+    if (iConnections.count() > 0) {
+        thisClass::disconnectAllI();
+    }
 }
 
 
 template <class thisIF, class cmplIF>
-bool InterfaceBase<thisIF, cmplIF>::isConnectionFree () const
+bool InterfaceBase<thisIF, cmplIF>::isIConnectionFree () const
 {
-	int m = maxConnections;
-	return  (m < 0) || (connections.count() < (unsigned) m);
+    int m = maxIConnections;
+    return  (m < 0) || (iConnections.count() < (unsigned) m);
 }
 
 
 template <class thisIF, class cmplIF>
-bool InterfaceBase<thisIF, cmplIF>::connect (Interface *__i)
+bool InterfaceBase<thisIF, cmplIF>::connectI (Interface *__i)
 {
-	// cache upcasted pointer, especially important for disconnects
-	// where already destructed derived parts cannot be reached with dynamic casts
-	if (!me) me = dynamic_cast<thisIF*>(this);
-	me_valid = me != NULL;
+    // cache upcasted pointer, especially important for disconnects
+    // where already destructed derived parts cannot be reached with dynamic casts
+    if (!me) me = dynamic_cast<thisIF*>(this);
+    me_valid = me != NULL;
 
-	// same with the other interface
-	cmplClass *_i = dynamic_cast<cmplClass*>(__i);
-	if (!_i) return false;
-		
-	if (!_i->me) _i->me = dynamic_cast<cmplIF*>(_i);		
-	cmplIF    *i = _i->me;
-	_i->me_valid = _i->me != NULL;
-	
-	if (i && me) {
-		bool i_connected  = connections.containsRef(i);
-		bool me_connected = i->connections.containsRef(me);
-
-		if (i_connected || me_connected) {
-			return true;
-		} else if (isConnectionFree() && i->isConnectionFree()) {
-
-			noticeConnect(i, i != NULL);
-			_i->noticeConnect(me, me != NULL);
-		
-			if (!i_connected)
-				connections.append(i);
-			if (!me_connected)
-				_i->connections.append(me);
-
-			noticeConnected(i, i != NULL);
-			_i->noticeConnected(me, me != NULL);
-			
-			return true;
-		} else {
-			return false;
-		}
-	}
-	return false;
-}
-
-
-
-template <class thisIF, class cmplIF>
-bool InterfaceBase<thisIF, cmplIF>::disconnect (Interface *__i)
-{
-	kdDebug() << "InterfaceBase::disconnect(" << __i << ") ENTER" << endl;
-	cmplClass *_i = dynamic_cast<cmplClass*>(__i);
-
-	kdDebug() << "cmplClass = " << _i << endl;
-
-	// use cache to find pointer in connections list
-	cmplIF *i = _i ? _i->me : NULL;
-
-	kdDebug() << "cmplIF = " << i << endl;
-
-	// The cached me pointer might already point to an destroyed
-	// object. We must use it only for identifying the entry in
-	// connections list
-
-    if (i && _i) {
-		kdDebug() << "this->noticeDisconnect" << endl;
-		if (me_valid)
-			noticeDisconnect(i, _i->me_valid);
+    // same with the other interface
+    cmplClass *_i = dynamic_cast<cmplClass*>(__i);
+    if (!_i) {
+        return false;
     }
 
-	if (me && _i) {		
-		kdDebug() << "_i->noticeDisconnect" << endl;
-		if (_i->me_valid)
-			_i->noticeDisconnect(me, me_valid);
-	}
-		
-	kdDebug() << "this->removeRef(i)" << endl;
-	if (i && connections.containsRef(i))
-		connections.removeRef(i);
-		
-	kdDebug() << "i->removeRef(me)" << endl;
-	if (me && i && i->connections.containsRef(me))
-		i->connections.removeRef(me);
-		
-	kdDebug() << "this->noticeDisconnected" << endl;
-	if (me_valid && i && _i)
-		noticeDisconnected(i, _i->me_valid);
-	kdDebug() << "_i->noticeDisconnected" << endl;
-	if (_i && _i->me_valid && me)
-		_i->noticeDisconnected(me, me_valid);
-		
-	kdDebug() << "InterfaceBase::disconnect EXIT" << endl;
-	return true;
+    if (!_i->me) _i->me = dynamic_cast<cmplIF*>(_i);
+    cmplIF    *i = _i->me;
+    _i->me_valid = _i->me != NULL;
+
+    if (i && me) {
+        bool i_connected  = iConnections.containsRef(i);
+        bool me_connected = i->iConnections.containsRef(me);
+
+        if (i_connected || me_connected) {
+            return true;
+        } else if (isIConnectionFree() && i->isIConnectionFree()) {
+
+            noticeConnectI(i, i != NULL);
+            _i->noticeConnectI(me, me != NULL);
+
+            if (!i_connected)
+                iConnections.append(i);
+            if (!me_connected)
+                _i->iConnections.append(me);
+
+            noticeConnectedI(i, i != NULL);
+            _i->noticeConnectedI(me, me != NULL);
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+    return false;
 }
 
 
+
 template <class thisIF, class cmplIF>
-void InterfaceBase<thisIF, cmplIF>::disconnectAll()
+bool InterfaceBase<thisIF, cmplIF>::disconnectI (Interface *__i)
 {
-	IFList tmp = connections;
-	for (IFIterator it(tmp); it.current(); ++it) {
-		disconnect(it.current());
-	}
+    cmplClass *_i = dynamic_cast<cmplClass*>(__i);
+
+    // use cache to find pointer in connections list
+    cmplIF *i = _i ? _i->me : NULL;
+
+    // The cached me pointer might already point to an destroyed
+    // object. We must use it only for identifying the entry in
+    // connections list
+
+    if (i && _i) {
+        if (me_valid)
+            noticeDisconnectI(i, _i->me_valid);
+    }
+
+    if (me && _i) {
+        if (_i->me_valid)
+            _i->noticeDisconnectI(me, me_valid);
+    }
+
+    if (i && iConnections.containsRef(i))
+        iConnections.removeRef(i);
+
+    if (me && i && i->iConnections.containsRef(me))
+        i->iConnections.removeRef(me);
+
+    if (me_valid && i && _i)
+        noticeDisconnectedI(i, _i->me_valid);
+    if (_i && _i->me_valid && me)
+        _i->noticeDisconnectedI(me, me_valid);
+
+    return true;
+}
+
+template <class thisIF, class cmplIF>
+void InterfaceBase<thisIF, cmplIF>::disconnectAllI()
+{
+    IFList tmp = iConnections;
+    for (IFIterator it(tmp); it.current(); ++it) {
+        /* Do not call virtual methods if I'm in the contstructor!
+           Actually this should be ensured by the compiler generated
+           code and virtual method tables, but unfortunately some compilers
+           seem to ignore this in some situations.
+         */
+        if (me_valid)
+            disconnectI(it.current());
+        else
+            thisClass::disconnectI(it.current());
+    }
 }
 
 #endif

@@ -34,50 +34,50 @@
 #include "errorlog-interfaces.h"
 
 LircSupport::LircSupport(const QString &name)
-	: PluginBase(name, i18n("LIRC Plugin"))
+    : PluginBase(name, i18n("LIRC Plugin"))
 {
 
 #ifdef HAVE_LIRC_CLIENT
-	logDebug(i18n("initializing kradio lirc plugin"));
-	char *prg = (char*)"kradio";
-	m_fd_lirc = lirc_init(prg, 1);
+    logDebug(i18n("initializing kradio lirc plugin"));
+    char *prg = (char*)"kradio";
+    m_fd_lirc = lirc_init(prg, 1);
     m_lirc_notify = 0;
     m_lircConfig  = 0;
 
-	if (m_fd_lirc != -1) {
-		if (lirc_readconfig (NULL, &m_lircConfig, NULL) == 0) {
-			m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this, "lirc_notifier");
-			if (m_lirc_notify)
-				QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
-		} else {
-			lirc_deinit();
-			m_fd_lirc = -1;
-		}
-	}
+    if (m_fd_lirc != -1) {
+        if (lirc_readconfig (NULL, &m_lircConfig, NULL) == 0) {
+            m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this, "lirc_notifier");
+            if (m_lirc_notify)
+                QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
+        } else {
+            lirc_deinit();
+            m_fd_lirc = -1;
+        }
+    }
 
-	if (m_fd_lirc == -1) {
-		logWarning(i18n("Initializing kradio lirc plugin failed"));
-	} else {
-		logDebug(i18n("Initializing kradio lirc plugin successful"));
-	}
+    if (m_fd_lirc == -1) {
+        logWarning(i18n("Initializing kradio lirc plugin failed"));
+    } else {
+        logDebug(i18n("Initializing kradio lirc plugin successful"));
+    }
 #endif
-	
-	m_kbdTimer = new QTimer (this);
-	QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
-	
-	m_addIndex = 0;
+
+    m_kbdTimer = new QTimer (this);
+    QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
+
+    m_addIndex = 0;
 }
 
 
 LircSupport::~LircSupport()
 {
 #ifdef HAVE_LIRC_CLIENT
-	if (m_fd_lirc != -1)
-		lirc_deinit();
-	if (m_lircConfig)
-		lirc_freeconfig(m_lircConfig);
-	m_fd_lirc = -1;
-	m_lircConfig = 0;
+    if (m_fd_lirc != -1)
+        lirc_deinit();
+    if (m_lircConfig)
+        lirc_freeconfig(m_lircConfig);
+    m_fd_lirc = -1;
+    m_lircConfig = 0;
 #endif
 }
 
@@ -85,119 +85,121 @@ LircSupport::~LircSupport()
 void LircSupport::slotLIRC(int /*socket*/ )
 {
 #ifdef HAVE_LIRC_CLIENT
-	if (!m_lircConfig || !m_lirc_notify || m_fd_lirc == -1)
-		return;
+    if (!m_lircConfig || !m_lirc_notify || m_fd_lirc == -1)
+        return;
 
-	IRadioDevice *currentDevice = queryActiveDevice();
-	ISeekRadio  *seeker = dynamic_cast<ISeekRadio*> (currentDevice);
-	IRadioSound *sound  = dynamic_cast<IRadioSound*>(currentDevice);
+    IRadioDevice *currentDevice = queryActiveDevice();
+    ISeekRadio  *seeker = dynamic_cast<ISeekRadio*> (currentDevice);
+    IRadioSound *sound  = dynamic_cast<IRadioSound*>(currentDevice);
 
-	char *code = 0, *c = 0;
-	if (lirc_nextcode(&code) == 0) {
-		while(lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL) {
-		
-			if (strcasecmp (c, "TV") == 0) {
-				sendPowerOff();				
-			} else if (strcasecmp (c, "RADIO") == 0) {
-				sendPowerOn();				
-			} else if (strcasecmp (c, "POWER") == 0) {
-				if (queryIsPowerOn()) sendPowerOff();
-				else                  sendPowerOn();
-			}
-			
-			if (queryIsPowerOn()) {
-				if (sound && strcasecmp (c, "VOL+") == 0) {
-					sound->setVolume (sound->getVolume() + 1.0/32.0);
-					
-				} else if (sound && strcasecmp (c, "VOL-") == 0) {
-					sound->setVolume (sound->getVolume() - 1.0/32.0);
-					
-				} else if (   (strcasecmp (c, "CH+") == 0)
-				           || (strcasecmp (c, "NEXT") == 0))
-				{
-					int k = queryCurrentStationIdx() + 1;
-					if (k >= queryStations().count())
-						k = 0;
-					sendActivateStation(k);
-					
-				} else if (   (strcasecmp (c, "CH-") == 0)
-				           || (strcasecmp (c, "PREV") == 0))
-				{
-					int k = queryCurrentStationIdx() - 1;
-					if (k < 0)
-						k = queryStations().count() - 1;
-					sendActivateStation(k);
-					
-				} else if (seeker && strcasecmp (c, "CH+SEARCH") == 0) {
-					seeker->startSeekUp();
-					
-				} else if (strcasecmp (c, "CH-SEARCH") == 0) {
-					seeker->startSeekDown();
-					
-				} else if (strcasecmp (c, "SLEEP") == 0) {
-					sendStartCountdown();
-					
-				} else if (strcasecmp (c, "QUIT") == 0) {
-					kapp->quit();
-				}
-			
-				int k = -1;
-				if (sscanf (c, "%i", &k) == 1 ) {
-					if (m_addIndex || k == 0) {
-					    activateStation(m_addIndex * 10 + k);
-					    m_kbdTimer->stop();
-					    m_addIndex = 0;
-					} else {
-						m_addIndex = k;
-						m_kbdTimer->start(500, true);
-					}
-				}
-			}
-		}
-	}
-	
-	if (code)
-		free (code);
+    char *code = 0, *c = 0;
+    if (lirc_nextcode(&code) == 0) {
+        while(lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL) {
+
+            if (strcasecmp (c, "TV") == 0) {
+                sendPowerOff();
+            } else if (strcasecmp (c, "RADIO") == 0) {
+                sendPowerOn();
+            } else if (strcasecmp (c, "POWER") == 0) {
+                if (queryIsPowerOn()) sendPowerOff();
+                else                  sendPowerOn();
+            }
+
+            if (queryIsPowerOn()) {
+                if (sound && strcasecmp (c, "VOL+") == 0) {
+                    sound->setVolume (sound->getVolume() + 1.0/32.0);
+
+                } else if (sound && strcasecmp (c, "VOL-") == 0) {
+                    sound->setVolume (sound->getVolume() - 1.0/32.0);
+
+                } else if (   (strcasecmp (c, "CH+") == 0)
+                           || (strcasecmp (c, "NEXT") == 0))
+                {
+                    int k = queryCurrentStationIdx() + 1;
+                    if (k >= queryStations().count())
+                        k = 0;
+                    sendActivateStation(k);
+
+                } else if (   (strcasecmp (c, "CH-") == 0)
+                           || (strcasecmp (c, "PREV") == 0))
+                {
+                    int k = queryCurrentStationIdx() - 1;
+                    if (k < 0)
+                        k = queryStations().count() - 1;
+                    sendActivateStation(k);
+
+                } else if (seeker && strcasecmp (c, "CH+SEARCH") == 0) {
+                    seeker->startSeekUp();
+
+                } else if (strcasecmp (c, "CH-SEARCH") == 0) {
+                    seeker->startSeekDown();
+
+                } else if (strcasecmp (c, "SLEEP") == 0) {
+                    sendStartCountdown();
+
+                } else if (strcasecmp (c, "QUIT") == 0) {
+                    kapp->quit();
+                }
+
+                int k = -1;
+                if (sscanf (c, "%i", &k) == 1 ) {
+                    if (m_addIndex || k == 0) {
+                        activateStation(m_addIndex * 10 + k);
+                        m_kbdTimer->stop();
+                        m_addIndex = 0;
+                    } else {
+                        m_addIndex = k;
+                        m_kbdTimer->start(500, true);
+                    }
+                }
+            }
+        }
+    }
+
+    if (code)
+        free (code);
 #endif
 }
 
 
 void LircSupport::slotKbdTimedOut()
 {
-	activateStation (m_addIndex);
-	m_addIndex = 0;
+    activateStation (m_addIndex);
+    m_addIndex = 0;
 }
 
 
 void LircSupport::activateStation (int i)
 {
-	if (! sendActivateStation(i - 1))
-		sendActivateStation( (i + 9) % 10);
+    if (! sendActivateStation(i - 1))
+        sendActivateStation( (i + 9) % 10);
 }
 
 
-bool LircSupport::connect (Interface *i)
+bool LircSupport::connectI (Interface *i)
 {
-	bool a = IRadioClient::connect (i);
-	bool b = ITimeControlClient::connect (i);
-	bool c = IRadioDevicePoolClient::connect (i);
-	return a || b || c;
+    bool a = IRadioClient::connectI (i);
+    bool b = ITimeControlClient::connectI (i);
+    bool c = IRadioDevicePoolClient::connectI (i);
+    bool d = PluginBase::connectI(i);
+    return a || b || c || d;
 }
 
 
-bool LircSupport::disconnect (Interface *i)
+bool LircSupport::disconnectI (Interface *i)
 {
-	bool a = IRadioClient::disconnect (i);
-	bool b = ITimeControlClient::disconnect (i);
-	bool c = IRadioDevicePoolClient::disconnect (i);
-	return a || b || c;
+    bool a = IRadioClient::disconnectI (i);
+    bool b = ITimeControlClient::disconnectI (i);
+    bool c = IRadioDevicePoolClient::disconnectI (i);
+    bool d = PluginBase::disconnectI(i);
+    return a || b || c || d;
 }
 
 
 
 void   LircSupport::saveState (KConfig *) const
 {
-	// FIXME
+    // FIXME
 }
 
 void   LircSupport::restoreState (KConfig *)
@@ -207,14 +209,14 @@ void   LircSupport::restoreState (KConfig *)
 
 ConfigPageInfo LircSupport::createConfigurationPage()
 {
-	// FIXME
-	return ConfigPageInfo ();
+    // FIXME
+    return ConfigPageInfo ();
 }
 
 AboutPageInfo LircSupport::createAboutPage()
 {
     KAboutData aboutData("kradio",
-						 NULL,
+                         NULL,
                          NULL,
                          I18N_NOOP("Linux Infrared Remote Control Support for KRadio"),
                          KAboutData::License_GPL,
@@ -224,10 +226,10 @@ AboutPageInfo LircSupport::createAboutPage()
                          0);
     aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
 
-	return AboutPageInfo(
-	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-	          i18n("LIRC Support"),
-	          i18n("LIRC Plugin"),
-	          "connect_creating"
-		   );
+    return AboutPageInfo(
+              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+              i18n("LIRC Support"),
+              i18n("LIRC Plugin"),
+              "connect_creating"
+           );
 }

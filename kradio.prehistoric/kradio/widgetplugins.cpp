@@ -25,7 +25,8 @@
 
 WidgetPluginBase::WidgetPluginBase(const QString &name, const QString &description)
   : PluginBase(name, description),
-    m_geoCacheValid(false)
+    m_geoCacheValid(false),
+    m_geoRestoreFlag(false)
 {
 }
 
@@ -60,7 +61,7 @@ bool WidgetPluginBase::isReallyVisible(const QWidget *_w) const
 }
 
 
-void WidgetPluginBase::show(bool on)
+void WidgetPluginBase::pShow(bool on)
 {
 	QWidget *w = getWidget();
 	if (!w) return;
@@ -71,7 +72,7 @@ void WidgetPluginBase::show(bool on)
 }
 
 
-void WidgetPluginBase::toggleShown()
+void WidgetPluginBase::pToggleShown()
 {
 	QWidget *w = getWidget();
 	if (!w) return;
@@ -82,9 +83,9 @@ void WidgetPluginBase::toggleShown()
 }
 
 
-void WidgetPluginBase::show()
+void WidgetPluginBase::pShow()
 {
-	if (m_geoCacheValid && !isReallyVisible()) {
+	if (m_geoCacheValid && (!isReallyVisible() || m_geoRestoreFlag) ) {
 		QWidget *w = getWidget();
 		if (!w) return;
 		WId  id = w->winId();
@@ -99,19 +100,19 @@ void WidgetPluginBase::show()
 }
 
 
-void WidgetPluginBase::hide()
+void WidgetPluginBase::pHide()
 {
 	getKWinState();
 }
 
 
-void WidgetPluginBase::showEvent(QShowEvent *)
+void WidgetPluginBase::pShowEvent(QShowEvent *)
 {
 	notifyManager (true);
 }
 
 
-void WidgetPluginBase::hideEvent(QHideEvent *)
+void WidgetPluginBase::pHideEvent(QHideEvent *)
 {
 	notifyManager (false);
 }
@@ -119,6 +120,8 @@ void WidgetPluginBase::hideEvent(QHideEvent *)
 
 void WidgetPluginBase::getKWinState(const QWidget *_w) const
 {
+	if (m_geoRestoreFlag) return;
+	
 	const QWidget *w = _w ? _w : getWidget();
 	if (!w) return;
 	if (w->isVisible()) {
@@ -153,8 +156,13 @@ void   WidgetPluginBase::restoreState (KConfig *config, bool showByDefault)
 
 	bool hidden = config->readBoolEntry("hidden", !showByDefault);
 
-    if (hidden) hide();
-    else        show();
+	QWidget *w = getWidget();
+	if (w) {
+		m_geoRestoreFlag = true;
+		if (hidden) w->hide();
+		else        w->show();
+		m_geoRestoreFlag = false;
+	}
 }
 
 

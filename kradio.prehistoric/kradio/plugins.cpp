@@ -21,56 +21,58 @@
 #include "errorlog-interfaces.h"
 
 PluginBase::PluginBase(const QString &name, const QString &description)
-	: m_name(name),
-	  m_description(description),
-	  m_manager(NULL)
+    : m_name(name),
+      m_description(description),
+      m_manager(NULL),
+      m_destructorCalled(false)
 {
 }
 
 
 PluginBase::~PluginBase()
 {
-	logDebug("destructing plugin " + m_name);
-	unsetManager();	
+    m_destructorCalled = true;
+    IErrorLogClient::logDebug("destructing plugin " + m_name);
+    unsetManager();
 }
 
 
 bool PluginBase::setManager (PluginManager *m)
 {
-	if (!m_manager && m) {
-		m_manager = m;
-		return true;
-	} else {
-		return false;
-	}
+    if (!m_manager && m) {
+        m_manager = m;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
 void PluginBase::unsetManager ()
 {
-	if (m_manager) {
-		PluginManager *old = m_manager;
-		m_manager = NULL;
-		old->removePlugin(this);
-	}
+    if (m_manager) {
+        PluginManager *old = m_manager;
+        m_manager = NULL;
+        old->removePlugin(this);
+    }
 }
 
 
 bool PluginBase::isManagerSet () const
 {
-	return m_manager != NULL;
+    return m_manager != NULL;
 }
 
 
 void   PluginBase::saveState (KConfig *) const
 {
-	// do nothing
+    // do nothing
 }
 
 
 void   PluginBase::restoreState (KConfig *)
 {
-	// do nothing
+    // do nothing
 }
 
 

@@ -45,33 +45,34 @@
 #define FORMAT_AIFF_IDX     1
 #define FORMAT_AU_IDX       2
 #define FORMAT_RAW_IDX      3
+#define FORMAT_MP3_IDX      4
 
 class RecordingConfiguration : public RecordingConfigurationUI,
-						       public IRecordingClient
+                               public IRecordingClient
 {
 Q_OBJECT
 public :
-	RecordingConfiguration (QWidget *parent);
-	~RecordingConfiguration ();
+    RecordingConfiguration (QWidget *parent);
+    ~RecordingConfiguration ();
 
-//	bool connect (Interface *i);
-//	bool disconnect (Interface *i);
+//    bool connectI (Interface *i);
+//    bool disconnectI (Interface *i);
 
 // IRecordingClient
 
-	bool noticeRecordingStarted();
-	bool noticeMonitoringStarted();
-	bool noticeRecordingStopped();
-	bool noticeMonitoringStopped();
-	bool noticeRecordingConfigChanged(const RecordingConfig &);
-	bool noticeRecordingContextChanged(const RecordingContext &c);
-	
+    bool noticeRecordingStarted();
+    bool noticeMonitoringStarted();
+    bool noticeRecordingStopped();
+    bool noticeMonitoringStopped();
+    bool noticeRecordingConfigChanged(const RecordingConfig &);
+    bool noticeRecordingContextChanged(const RecordingContext &c);
+
 protected slots:
 
-	void slotOK();
-	void slotCancel();
+    void slotOK();
+    void slotCancel();
 
-	void slotFormatSelectionChanged();
+    void slotFormatSelectionChanged();
 
 protected:
 

@@ -28,6 +28,8 @@ IF_IMPL_SENDER  (  IRadio::notifyStationChanged (const RadioStation &s, int idx)
                    noticeStationChanged (s, idx)                                  )
 IF_IMPL_SENDER  (  IRadio::notifyStationsChanged(const StationList &sl),
                    noticeStationsChanged(sl)                                      )
+IF_IMPL_SENDER  (  IRadio::notifyPresetFileChanged(const QString &f),
+                   noticePresetFileChanged(f)                                     )
 
 // IRadioClient
 
@@ -41,6 +43,8 @@ IF_IMPL_SENDER  (  IRadioClient::sendActivateStation(int index),
                    activateStation(index)                         )
 IF_IMPL_SENDER  (  IRadioClient::sendStations(const StationList &sl),
                    setStations(sl)                                )
+IF_IMPL_SENDER  (  IRadioClient::sendPresetFile(const QString &f),
+                   setPresetFile(f)                               )
 
 IF_IMPL_QUERY   (  bool IRadioClient::queryIsPowerOn(),
                    isPowerOn(),
@@ -65,18 +69,23 @@ IF_IMPL_QUERY   (  const StationList &  IRadioClient::queryStations(),
                    getStations(),
                    emptyStationList               )
 
+static QString emptyString;
+IF_IMPL_QUERY   (  const QString &  IRadioClient::queryPresetFile(),
+                   getPresetFile(),
+                   emptyString               )
 
-void IRadioClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+
+void IRadioClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeStationsChanged(queryStations());
-	noticeStationChanged (queryCurrentStation(), queryCurrentStationIdx());
-	noticePowerChanged   (queryIsPowerOn());
+    noticeStationsChanged(queryStations());
+    noticeStationChanged (queryCurrentStation(), queryCurrentStationIdx());
+    noticePowerChanged   (queryIsPowerOn());
 }
 
-void IRadioClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
+void IRadioClient::noticeDisconnectedI   (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeStationsChanged(queryStations());
-	noticeStationChanged(queryCurrentStation(), queryCurrentStationIdx());
-	noticePowerChanged(queryIsPowerOn());
+    noticeStationsChanged(queryStations());
+    noticeStationChanged(queryCurrentStation(), queryCurrentStationIdx());
+    noticePowerChanged(queryIsPowerOn());
 }
 

@@ -46,8 +46,8 @@ public:
 	
 // Interface
 
-	bool connect   (Interface *);
-	bool disconnect(Interface *);
+	bool connectI   (Interface *);
+	bool disconnectI(Interface *);
 
 // IDisplayCfg
 

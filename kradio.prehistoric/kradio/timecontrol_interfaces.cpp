@@ -78,7 +78,7 @@ IF_IMPL_QUERY   (  QDateTime      ITimeControlClient::queryCountdownEnd (),
                    QDateTime()                                               )
 
 
-void ITimeControlClient::noticeConnected(cmplInterface *, bool /*pointer_valid*/)
+void ITimeControlClient::noticeConnectedI(cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeAlarmsChanged(queryAlarms());
 	noticeNextAlarmChanged(queryNextAlarm());
@@ -90,7 +90,7 @@ void ITimeControlClient::noticeConnected(cmplInterface *, bool /*pointer_valid*/
 }
 
 
-void ITimeControlClient::noticeDisconnected(cmplInterface *, bool /*pointer_valid*/)
+void ITimeControlClient::noticeDisconnectedI(cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeAlarmsChanged(queryAlarms());
 	noticeNextAlarmChanged(queryNextAlarm());

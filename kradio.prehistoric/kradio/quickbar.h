@@ -45,16 +45,16 @@ class QuickBar : public QWidget,
 {
 Q_OBJECT
 public:
-	QuickBar(QWidget * parent = 0, const char * name = 0);
-	~QuickBar();
+    QuickBar(QWidget * parent = 0, const char * name = 0);
+    ~QuickBar();
 
-	const QString &name() const { return PluginBase::name(); }
-	      QString &name()       { return PluginBase::name(); }
+    const QString &name() const { return PluginBase::name(); }
+          QString &name()       { return PluginBase::name(); }
 
-	virtual bool   connect(Interface *i);
-	virtual bool   disconnect(Interface *i);
-	
-	// IStationSelection
+    virtual bool   connectI(Interface *i);
+    virtual bool   disconnectI(Interface *i);
+
+    // IStationSelection
 
 RECEIVERS:
     bool setStationSelection(const QStringList &sl);
@@ -63,24 +63,25 @@ ANSWERS:
     const QStringList & getStationSelection () const { return m_stationIDs; }
 
 
-	// PluginBase
+    // PluginBase
 
 public:
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
+    virtual void   saveState (KConfig *) const;
+    virtual void   restoreState (KConfig *);
 
-	virtual ConfigPageInfo  createConfigurationPage();
-	virtual AboutPageInfo   createAboutPage();
+    virtual ConfigPageInfo  createConfigurationPage();
+    virtual AboutPageInfo   createAboutPage();
 
-	// IRadioClient
+    // IRadioClient
 
 RECEIVERS:
-	bool noticePowerChanged(bool on);
-	bool noticeStationChanged (const RadioStation &, int idx);
-	bool noticeStationsChanged(const StationList &sl);
+    bool noticePowerChanged(bool on);
+    bool noticeStationChanged (const RadioStation &, int idx);
+    bool noticeStationsChanged(const StationList &sl);
+    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
 
 
-	// button/station Management
+    // button/station Management
 
 
 protected slots:
@@ -89,29 +90,29 @@ protected slots:
 
 protected:
 
-	int     getButtonID(const RadioStation &rs) const;
-	void    activateCurrentButton();
-	void    activateButton(const RadioStation &);
+    int     getButtonID(const RadioStation &rs) const;
+    void    activateCurrentButton();
+    void    activateButton(const RadioStation &);
 
 
-	// KDE/QT 
+    // KDE/QT
 
 public slots:
-	
-	void    toggleShown() { WidgetPluginBase::toggleShown(); }
-	void    show();
-	void    hide();
-	void    setGeometry (const QRect &r);
-	void    setGeometry (int x, int y, int w, int h);
+
+    void    toggleShown() { WidgetPluginBase::pToggleShown(); }
+    void    show();
+    void    hide();
+    void    setGeometry (const QRect &r);
+    void    setGeometry (int x, int y, int w, int h);
 
 protected:
-	void    rebuildGUI();
-	void    showEvent(QShowEvent *);
-	void    hideEvent(QHideEvent *);
-	void    resizeEvent(QResizeEvent *);
+    void    rebuildGUI();
+    void    showEvent(QShowEvent *);
+    void    hideEvent(QHideEvent *);
+    void    resizeEvent(QResizeEvent *);
 
-	const QWidget *getWidget() const { return this; }
-	      QWidget *getWidget()       { return this; }
+    const QWidget *getWidget() const { return this; }
+          QWidget *getWidget()       { return this; }
 
 protected :
 
@@ -124,6 +125,6 @@ protected :
     bool              m_showShortName;
     QStringList       m_stationIDs;
 
-    
+    bool              m_ignoreNoticeActivation;
 };
 #endif

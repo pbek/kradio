@@ -29,6 +29,7 @@
 #include "widgetplugins.h"
 #include "radioview_element.h"
 #include "recording-interfaces.h"
+#include "timecontrol_interfaces.h"
 
 class QWidgetStack;
 class QToolButton;
@@ -38,73 +39,86 @@ class QTabWidget;
 
 
 class RadioView : public QWidget,
-				  public WidgetPluginBase,
+                  public WidgetPluginBase,
                   public IRadioClient,
                   public IRadioDevicePoolClient,
-                  public IRecordingClient
+                  public IRecordingClient,
+                  public ITimeControlClient
 {
 Q_OBJECT
 public:
 
-	RadioView(QWidget *parent, const QString &name);
-	virtual ~RadioView();
+    RadioView(QWidget *parent, const QString &name);
+    virtual ~RadioView();
 
-	const QString &name() const { return PluginBase::name(); }
-	      QString &name()       { return PluginBase::name(); }
+    const QString &name() const { return PluginBase::name(); }
+          QString &name()       { return PluginBase::name(); }
 
 public slots:
-	// connects destroy-msg with remove-function
-	bool addElement    (RadioViewElement *);
-	bool removeElement (QObject *);
-	
-protected:
-	void selectTopWidgets();
+    // connects destroy-msg with remove-function
+    bool addElement    (RadioViewElement *);
+    bool removeElement (QObject *);
 
-	
+protected:
+    void selectTopWidgets();
+
+
     // IRadioClient
 
 RECEIVERS:
-	bool noticePowerChanged(bool on);
-	bool noticeStationChanged (const RadioStation &, int idx);
-	bool noticeStationsChanged(const StationList &sl);
+    bool noticePowerChanged(bool on);
+    bool noticeStationChanged (const RadioStation &, int idx);
+    bool noticeStationsChanged(const StationList &sl);
+    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
 
-	// IRadioDevicePoolClient
+    // IRadioDevicePoolClient
 
 RECEIVERS:
-	bool noticeActiveDeviceChanged(IRadioDevice *rd);
-	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
-	bool noticeDeviceDescriptionChanged(const QString &) { return false; }
+    bool noticeActiveDeviceChanged(IRadioDevice *rd);
+    bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
+    bool noticeDeviceDescriptionChanged(const QString &) { return false; }
 
-	// IRecordingClient
-	
+    // IRecordingClient
+
 RECEIVERS:
-	bool noticeRecordingStarted();
-	bool noticeMonitoringStarted() { return false; }
-	bool noticeRecordingStopped();
-	bool noticeMonitoringStopped() { return false; }
-	bool noticeRecordingConfigChanged(const RecordingConfig &)   { return false; }
-	bool noticeRecordingContextChanged(const RecordingContext &) { return false; }
+    bool noticeRecordingStarted();
+    bool noticeMonitoringStarted() { return false; }
+    bool noticeRecordingStopped();
+    bool noticeMonitoringStopped() { return false; }
+    bool noticeRecordingConfigChanged(const RecordingConfig &)   { return false; }
+    bool noticeRecordingContextChanged(const RecordingContext &) { return false; }
 
-	
-	// WidgetPluginBase
+    // ITimeControlClient
+
+RECEIVERS:
+    bool noticeAlarmsChanged(const AlarmVector &)     { return false; }
+    bool noticeAlarm(const Alarm &)                   { return false; }
+    bool noticeNextAlarmChanged(const Alarm *)        { return false; }
+    bool noticeCountdownStarted(const QDateTime &end);
+    bool noticeCountdownStopped();
+    bool noticeCountdownZero();
+    bool noticeCountdownSecondsChanged(int)           { return false; }
+
+    // WidgetPluginBase
 
 public:
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
+    virtual void   saveState (KConfig *) const;
+    virtual void   restoreState (KConfig *);
 
-	virtual bool   connect(Interface *i);
-	virtual bool   disconnect(Interface *i);
+    virtual bool   connectI(Interface *i);
+    virtual bool   disconnectI(Interface *i);
 
-	virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
-	
-	virtual ConfigPageInfo  createConfigurationPage();
-	virtual AboutPageInfo   createAboutPage();
+    virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
+
+    virtual ConfigPageInfo  createConfigurationPage();
+    virtual AboutPageInfo   createAboutPage();
 
 protected slots:
 
     void slotPower (bool on);
     void slotConfigure (bool show);
     void slotRecord (bool start);
+    void slotSnooze (bool start);
     void slotRecordingMonitor(int i);
     void slotComboStationSelected(int);
 
@@ -113,53 +127,54 @@ protected slots:
 
 public slots:
 
-	void    toggleShown() { WidgetPluginBase::toggleShown(); }
-	void    show();
-	void    hide();
+    void    toggleShown() { WidgetPluginBase::pToggleShown(); }
+    void    show();
+    void    hide();
 
 protected:
-	virtual void showEvent(QShowEvent *);
-	virtual void hideEvent(QHideEvent *);
+    virtual void showEvent(QShowEvent *);
+    virtual void hideEvent(QHideEvent *);
 
-	const QWidget *getWidget() const { return this; }
-	      QWidget *getWidget()       { return this; }
+    const QWidget *getWidget() const { return this; }
+          QWidget *getWidget()       { return this; }
 
     void    addConfigurationTabFor(RadioViewElement *, QTabWidget *);
     void    addCommonConfigurationTab(QTabWidget *);
 
-    
+
 protected:
-	bool                  enableToolbarFlag;
+    bool                  enableToolbarFlag;
 
-	QToolButton          *btnPower;
-	QToolButton          *btnConfigure;
-	QToolButton          *btnQuit;
-	QToolButton          *btnRecording;
-	KComboBox            *comboStations;
+    QToolButton          *btnPower;
+    QToolButton          *btnConfigure;
+    QToolButton          *btnQuit;
+    QToolButton          *btnRecording;
+    QToolButton          *btnSnooze;
+    KComboBox            *comboStations;
 
-	struct ElementCfg
-	{
-		RadioViewElement *element;
-		QObject          *cfg;
-		ElementCfg()                                : element(NULL), cfg(NULL) {}
-		ElementCfg(RadioViewElement *e, QObject *w) : element(e), cfg(w) {}
-		ElementCfg(RadioViewElement *e)             : element(e), cfg(NULL) {}
-		ElementCfg(QObject *w)                      : element(NULL), cfg(w) {}
-		bool operator == (const ElementCfg &x) const;
-	};
-	
-	typedef  QPtrList<RadioViewElement>         ElementList;
-	typedef  QPtrListIterator<RadioViewElement> ElementListIterator;
+    struct ElementCfg
+    {
+        RadioViewElement *element;
+        QObject          *cfg;
+        ElementCfg()                                : element(NULL), cfg(NULL) {}
+        ElementCfg(RadioViewElement *e, QObject *w) : element(e), cfg(w) {}
+        ElementCfg(RadioViewElement *e)             : element(e), cfg(NULL) {}
+        ElementCfg(QObject *w)                      : element(NULL), cfg(w) {}
+        bool operator == (const ElementCfg &x) const;
+    };
+
+    typedef  QPtrList<RadioViewElement>         ElementList;
+    typedef  QPtrListIterator<RadioViewElement> ElementListIterator;
     typedef  QValueList<ElementCfg>             ElementCfgList;
     typedef  QValueListIterator<ElementCfg>     ElementCfgListIterator;
 
-	ElementList           elements;
-	ElementCfgList        elementConfigPages;
-	QObjectList           configPages;
-	QWidgetStack *        widgetStacks[clsClassMAX];
-	float                 maxUsability[clsClassMAX];
+    ElementList           elements;
+    ElementCfgList        elementConfigPages;
+    QObjectList           configPages;
+    QWidgetStack *        widgetStacks[clsClassMAX];
+    float                 maxUsability[clsClassMAX];
 
-	IRadioDevice          *currentDevice;
+    IRadioDevice          *currentDevice;
 };
 
 

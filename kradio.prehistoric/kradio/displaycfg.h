@@ -38,8 +38,8 @@ public:
 
 // Interface
 
-    bool connect (Interface *i) { return IDisplayCfgClient::connect(i); }
-    bool disconnect (Interface *i)  { return IDisplayCfgClient::disconnect(i); }
+    bool connectI (Interface *i) { return IDisplayCfgClient::connectI(i); }
+    bool disconnectI (Interface *i)  { return IDisplayCfgClient::disconnectI(i); }
 
 // IDisplayCfgClient
     

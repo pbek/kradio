@@ -21,16 +21,6 @@
 
 #include "kradioapp.h"
 
-#include "v4lradio.h"
-#include "radio.h"
-#include "timecontrol.h"
-#include "lircsupport.h"
-#include "quickbar.h"
-#include "docking.h"
-#include "radioview.h"
-#include "recording.h"
-#include "recording-monitor.h"
-#include "errorlog.h"
 
 static KCmdLineOptions options[] =
 {
@@ -55,37 +45,10 @@ int main(int argc, char *argv[])
 
     KRadioApp a;
 
-	/* Until we don't have library plugins we must instantiate them hard-wired */
+    a.restoreState(KGlobal::config());
 
-    KRadioAbout      *about       = new KRadioAbout     (      "kradio-about-1");
-    LircSupport      *lircsupport = new LircSupport     (      "lirc-1");
-    V4LRadio         *v4lradio    = new V4LRadio        (      "v4lradio-1");
-    Radio            *radio       = new Radio           (      "radio-1");
-    TimeControl      *timecontrol = new TimeControl     (      "timecontrol-1");
-    QuickBar         *quickbar    = new QuickBar        (NULL, "quickbar-1");
-    RadioDocking     *docking     = new RadioDocking    (      "docking-1");
-    docking->show();
-    RadioView        *view        = new RadioView       (NULL, "radioview-1");
-    Recording        *record      = new Recording       (      "recording-1");
-    RecordingMonitor *monitor     = new RecordingMonitor(NULL, "recordingmonitor-1");
-    ErrorLog         *logger      = new ErrorLog        (NULL, "logger-1");
-    
-    a.insertPlugin(about);
-	a.insertPlugin(logger);
-    a.insertPlugin(lircsupport);
-    a.insertPlugin(v4lradio);
-    a.insertPlugin(radio);
-    a.insertPlugin(timecontrol);
-    a.insertPlugin(quickbar);
-    a.insertPlugin(docking);
-    a.insertPlugin(view);
-	a.insertPlugin(record);
-	a.insertPlugin(monitor);
-
-    a.restoreState(KGlobal::config());   
     int ret = a.exec();
     a.saveState(KGlobal::config());
-
     return ret;
 }
 

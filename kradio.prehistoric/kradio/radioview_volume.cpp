@@ -73,15 +73,15 @@ float RadioViewVolume::getUsability (Interface *i) const
 }
 
 
-bool RadioViewVolume::connect   (Interface *i)
+bool RadioViewVolume::connectI   (Interface *i)
 {
-	return IRadioSoundClient::connect(i);
+	return IRadioSoundClient::connectI(i);
 }
 
 
-bool RadioViewVolume::disconnect(Interface *i)
+bool RadioViewVolume::disconnectI(Interface *i)
 {
-	return IRadioSoundClient::disconnect(i);
+	return IRadioSoundClient::disconnectI(i);
 }
 
 

@@ -88,8 +88,8 @@ QUERIES:
 	IF_QUERY   (  const QString       &  queryDescription()           )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
-	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
+	virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -172,8 +172,8 @@ QUERIES:
 	IF_QUERY   (  bool    queryIsMuted()                         )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
-	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
+	virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -233,8 +233,8 @@ QUERIES:
 	IF_QUERY  (  float queryProgress ()                               )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
-	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
+	virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -294,8 +294,8 @@ QUERIES:
 	IF_QUERY   (  float queryScanStep()                                          )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
-	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
+	virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid);
 };
 
 
@@ -335,8 +335,8 @@ QUERIES:
 	IF_QUERY   (  const KURL &queryURL()                                         )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);
-	virtual void noticeDisconnected (cmplInterface *, bool pointer_valid);
+	virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);
+	virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid);
 };
 
 

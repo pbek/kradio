@@ -44,7 +44,7 @@ protected :
 	// WidgetPluginBase
 
 public slots:
-	        void toggleShown() { WidgetPluginBase::toggleShown(); }
+	        void toggleShown() { WidgetPluginBase::pToggleShown(); }
     virtual void show();
     virtual void hide();
     virtual void cancel() { slotCancel(); }

@@ -3,14 +3,14 @@
 # the error to ian geiser <geiseri@msoe.edu>
 Summary:   V4L/V4L2-Radio Application for KDE 3.x
 Name:      kradio
-Version:   0.3.0-alpha2
+Version:   0.3.0-snapshot-2004-02-22e
 Release:   1.mandrake
 Copyright: GPL
 Vendor:    Martin Witte <witte@kawo1.rwth-aachen.de>
 Url:       http://sourceforge.net/projects/kradio
 Packager:  Martin Witte <witte@kawo1.rwth-aachen.de>
 Group:     kde3
-Source:    /usr/src/kradio-cvs/kradio/kradio-0.3.0-alpha2.tar.gz
+Source:    /usr/src/kradio-cvs/kradio/kradio-0.3.0-snapshot-2004-02-22e.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -25,7 +25,7 @@ KRadio currently provides:
 * Remote Control support (LIRC)
 * Alarms, Sleep Countdown
 * Several GUI Controls (Docking Menu, Station Quickbar, Radio Display)
-* Recording Capabilities
+* Recording Capabilities (including MP3)
 * Extendable Plugin Architecture
 
 This Package also includes a growing collection of station preset
@@ -39,6 +39,7 @@ of new plugins (e.g. Internet Radio Streams, new cool GUIs) are welcome.
 CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" ./configure \
                  --build=i386-linux --host=i386-linux --target=i386-linux  \
 		 --prefix=/usr --program-prefix="" \
+		 --without-gl \
                 $LOCALFLAGS
 %build
 # Setup for parallel builds

@@ -39,18 +39,18 @@ StationSelector::~StationSelector ()
 }
 
 
-bool StationSelector::connect(Interface *i)
+bool StationSelector::connectI(Interface *i)
 {
-	bool a = IStationSelectionClient::connect(i);
-	bool b = IRadioClient::connect(i);
+	bool a = IStationSelectionClient::connectI(i);
+	bool b = IRadioClient::connectI(i);
 	return a || b;
 }
 
 
-bool StationSelector::disconnect(Interface *i)
+bool StationSelector::disconnectI(Interface *i)
 {
-	bool a = IStationSelectionClient::disconnect(i);
-	bool b = IRadioClient::disconnect(i);
+	bool a = IStationSelectionClient::disconnectI(i);
+	bool b = IRadioClient::disconnectI(i);
 	return a || b;
 }
 

@@ -52,8 +52,8 @@ public:
 	virtual void   saveState (KConfig *) const;
 	virtual void   restoreState (KConfig *);
 
-	virtual bool   connect(Interface *i);
-	virtual bool   disconnect(Interface *i);
+	virtual bool   connectI(Interface *i);
+	virtual bool   disconnectI(Interface *i);
 
 	virtual ConfigPageInfo  createConfigurationPage();
 	virtual AboutPageInfo   createAboutPage();
@@ -70,7 +70,7 @@ RECEIVERS:
 
 public slots:
 
-	void    toggleShown() { WidgetPluginBase::toggleShown(); }
+	void    toggleShown() { WidgetPluginBase::pToggleShown(); }
 	void    show();
 	void    hide();
 

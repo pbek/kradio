@@ -43,27 +43,27 @@ class RadioDocking : public KSystemTray,
 {
 Q_OBJECT
 public:
-	RadioDocking (const QString &name);
-	virtual ~RadioDocking();
+    RadioDocking (const QString &name);
+    virtual ~RadioDocking();
 
-	virtual bool connect (Interface *);
-	virtual bool disconnect (Interface *);
+    virtual bool connectI (Interface *);
+    virtual bool disconnectI (Interface *);
 
-	virtual const QString &name() const { return PluginBase::name(); }
-	virtual       QString &name()       { return PluginBase::name(); }
+    virtual const QString &name() const { return PluginBase::name(); }
+    virtual       QString &name()       { return PluginBase::name(); }
 
 
-	// PluginBase
+    // PluginBase
 
 public:
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
+    virtual void   saveState (KConfig *) const;
+    virtual void   restoreState (KConfig *);
 
-	virtual ConfigPageInfo  createConfigurationPage();
-	virtual AboutPageInfo   createAboutPage();
-    
+    virtual ConfigPageInfo  createConfigurationPage();
+    virtual AboutPageInfo   createAboutPage();
 
-	// IStationSelection
+
+    // IStationSelection
 
 RECEIVERS:
     bool setStationSelection(const QStringList &sl);
@@ -71,15 +71,15 @@ RECEIVERS:
 ANSWERS:
     const QStringList & getStationSelection () const { return m_stationIDs; }
 
-	
-	// IRadioDevicePoolClient
+
+    // IRadioDevicePoolClient
 
 RECEIVERS:
-	bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
-	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
-	bool noticeDeviceDescriptionChanged(const QString &) { return false; }
+    bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
+    bool noticeDevicesChanged(const QPtrList<IRadioDevice> &)  { return false; }
+    bool noticeDeviceDescriptionChanged(const QString &) { return false; }
 
-	// ITimeControlClient
+    // ITimeControlClient
 
 RECEIVERS:
     bool noticeAlarmsChanged(const AlarmVector &)   { return false; }
@@ -91,65 +91,65 @@ RECEIVERS:
     bool noticeCountdownSecondsChanged(int n);
 
 
-	// IRadioClient
+    // IRadioClient
 
 RECEIVERS:
     bool noticePowerChanged(bool on);
     bool noticeStationChanged (const RadioStation &, int idx);
     bool noticeStationsChanged(const StationList &sl);
+    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
 
-
-	// IRecordingClient
+    // IRecordingClient
 
 RECEIVERS:
-	bool noticeRecordingStarted();
-	bool noticeMonitoringStarted() { return false; }
-	bool noticeRecordingStopped();
-	bool noticeMonitoringStopped() { return false; }
-	bool noticeRecordingConfigChanged(const RecordingConfig &)   { return false; }
-	bool noticeRecordingContextChanged(const RecordingContext &) { return false; }
+    bool noticeRecordingStarted();
+    bool noticeMonitoringStarted() { return false; }
+    bool noticeRecordingStopped();
+    bool noticeMonitoringStopped() { return false; }
+    bool noticeRecordingConfigChanged(const RecordingConfig &)   { return false; }
+    bool noticeRecordingContextChanged(const RecordingContext &) { return false; }
 
 
 protected slots:
 
-	void slotSeekFwd();
-	void slotSeekBkwd();
+    void slotSeekFwd();
+    void slotSeekBkwd();
 
-	void slotPower();
-	void slotSleepCountdown();
-	void slotShowAbout();
+    void slotPower();
+    void slotSleepCountdown();
+    void slotShowAbout();
 
-	void slotRecording();
+    void slotRecording();
 
-	void slotMenuItemActivated(int id);
-	
+    void slotMenuItemActivated(int id);
+
 protected:
     void mousePressEvent( QMouseEvent *e );
 
-	void buildContextMenu();
-	void buildStationList();
+    void buildContextMenu();
+    void buildStationList();
 
-	void noticeWidgetPluginShown(WidgetPluginBase *, bool shown);
-	void noticePluginsChanged(const PluginList &);
+    void noticeWidgetPluginShown(WidgetPluginBase *, bool shown);
+    void noticePluginsChanged(const PluginList &);
 
-	void showEvent(QShowEvent *) {}
+    void showEvent(QShowEvent *) {}  // do nothing, original implementation adds "Quit" menu item
 
 protected:
 
-	KPopupMenu *m_menu;
-	QStringList m_stationIDs;
+    KPopupMenu *m_menu;
+    QStringList m_stationIDs;
 
-	// menu Item IDs
-	int			m_titleID;
-	int 		m_alarmID;
-	int			m_recordingID;
-	int			m_powerID;
-	int			m_sleepID;
-	int         m_seekfwID;
-	int         m_seekbwID;
-	QValueList<int> m_stationMenuIDs;
+    // menu Item IDs
+    int            m_titleID;
+    int         m_alarmID;
+    int            m_recordingID;
+    int            m_powerID;
+    int            m_sleepID;
+    int         m_seekfwID;
+    int         m_seekbwID;
+    QValueList<int> m_stationMenuIDs;
 
-	QPtrDict<int>   m_widgetPluginIDs;
+    QPtrDict<int>   m_widgetPluginIDs;
 };
 
 

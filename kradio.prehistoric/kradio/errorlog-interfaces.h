@@ -27,9 +27,7 @@
 INTERFACE(IErrorLog, IErrorLogClient)
 {
 public :
-	IF_CON_DESTRUCTOR(IErrorLog, -1)
-
-	void connect();   // connect to global logger
+    IF_CON_DESTRUCTOR(IErrorLog, -1)
 
 RECEIVERS:
     IF_RECEIVER(    logError  (const QString &)         )
@@ -42,22 +40,19 @@ RECEIVERS:
 INTERFACE(IErrorLogClient, IErrorLog)
 {
 public :
-	IF_CON_DESTRUCTOR(IErrorLogClient, -1)
+    IF_CON_DESTRUCTOR(IErrorLogClient, -1)
 
 public:
     IF_SENDER  (    sendLogError  (const QString &)     )
     IF_SENDER  (    sendLogWarning(const QString &)     )
     IF_SENDER  (    sendLogInfo   (const QString &)     )
     IF_SENDER  (    sendLogDebug  (const QString &)     )
+
+    void logError  (const QString &s) const { sendLogError(s);   }
+    void logWarning(const QString &s) const { sendLogWarning(s); }
+    void logInfo   (const QString &s) const { sendLogInfo(s);    }
+    void logDebug  (const QString &s) const { sendLogDebug(s);   }
 };
-
-
-// static and global variants
-
-void logError  (const QString &);
-void logWarning(const QString &);
-void logInfo   (const QString &);
-void logDebug  (const QString &);
 
 
 #endif

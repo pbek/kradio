@@ -34,13 +34,13 @@ IF_IMPL_QUERY   (   const QStringList & IStationSelectionClient::queryStationSel
                 )
 
                 
-void IStationSelectionClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void IStationSelectionClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeStationSelectionChanged(queryStationSelection());
 }
 
 
-void IStationSelectionClient::noticeDisconnected (cmplInterface *, bool /*pointer_valid*/)
+void IStationSelectionClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeStationSelectionChanged(queryStationSelection());
 }

@@ -49,14 +49,14 @@ IF_IMPL_QUERY   (  const QString &IRadioDevicePoolClient::queryDeviceDescription
                    unknown                            )
 
 
-void IRadioDevicePoolClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void IRadioDevicePoolClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeActiveDeviceChanged(queryActiveDevice());
 	noticeDevicesChanged(queryDevices());
 	noticeDeviceDescriptionChanged(queryDeviceDescription());
 }
 
-void IRadioDevicePoolClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
+void IRadioDevicePoolClient::noticeDisconnectedI   (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeActiveDeviceChanged(queryActiveDevice());
 	noticeDevicesChanged(queryDevices());

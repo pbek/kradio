@@ -28,58 +28,62 @@ using std::sort;
 #include <qcheckbox.h>
 #include <qpushbutton.h>
 
+#include <klistbox.h>
+
 #include "timecontrol-configuration.h"
 #include "stationlist.h"
 #include "radiostation.h"
 #include "alarm.h"
+#include "errorlog-interfaces.h"
 
 class DateTimeCmp
 {
 public:
     bool operator() (const Alarm &a, const Alarm &b) {
-		return a.nextAlarm(true) < b.nextAlarm(true);
+        return a.nextAlarm(true) < b.nextAlarm(true);
     }
 
 };
 
 TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
-	: TimeControlConfigurationUI(parent),
-	  ITimeControlClient(),
-	  IRadioClient(),
-	  ignoreChanges(false)
+    : TimeControlConfigurationUI(parent),
+      ITimeControlClient(),
+      IRadioClient(),
+      ignoreChanges(false)
 {
 
-	QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotDailyChanged(bool)));
-	QObject::connect(checkboxAlarmEnable,   SIGNAL(toggled(bool)),               this, SLOT(slotEnabledChanged(bool)));
-	QObject::connect(comboStationSelection, SIGNAL(highlighted(int)),            this, SLOT(slotStationChanged(int)));
-	QObject::connect(listAlarms,            SIGNAL(highlighted(int)),            this, SLOT(slotAlarmSelectChanged(int)));
-	QObject::connect(editAlarmDate,         SIGNAL(valueChanged(const QDate &)), this, SLOT(slotDateChanged(const QDate &)));
-	QObject::connect(editAlarmTime,         SIGNAL(valueChanged(const QTime &)), this, SLOT(slotTimeChanged(const QTime &)));
-	QObject::connect(editAlarmVolume,       SIGNAL(valueChanged(int)),           this, SLOT(slotVolumeChanged(int)));
-	
-	QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotNewAlarm()));
-	QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotDeleteAlarm()));
+    QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotDailyChanged(bool)));
+    QObject::connect(listWeekdays,          SIGNAL(highlighted(int)),            this, SLOT(slotWeekdaysChanged()));
+    QObject::connect(checkboxAlarmEnable,   SIGNAL(toggled(bool)),               this, SLOT(slotEnabledChanged(bool)));
+    QObject::connect(comboStationSelection, SIGNAL(highlighted(int)),            this, SLOT(slotStationChanged(int)));
+    QObject::connect(listAlarms,            SIGNAL(highlighted(int)),            this, SLOT(slotAlarmSelectChanged(int)));
+    QObject::connect(editAlarmDate,         SIGNAL(valueChanged(const QDate &)), this, SLOT(slotDateChanged(const QDate &)));
+    QObject::connect(editAlarmTime,         SIGNAL(valueChanged(const QTime &)), this, SLOT(slotTimeChanged(const QTime &)));
+    QObject::connect(editAlarmVolume,       SIGNAL(valueChanged(int)),           this, SLOT(slotVolumeChanged(int)));
 
-	QObject::connect(comboAlarmType,        SIGNAL(highlighted(int)),            this, SLOT(slotAlarmTypeChanged(int)));
+    QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotNewAlarm()));
+    QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotDeleteAlarm()));
+
+    QObject::connect(comboAlarmType,        SIGNAL(highlighted(int)),            this, SLOT(slotAlarmTypeChanged(int)));
 }
 
 TimeControlConfiguration::~TimeControlConfiguration ()
 {
 }
- 
-bool TimeControlConfiguration::connect (Interface *i)
+
+bool TimeControlConfiguration::connectI (Interface *i)
 {
-	bool a = ITimeControlClient::connect(i);
-	bool b = IRadioClient::connect(i);
-	return a || b;
+    bool a = ITimeControlClient::connectI(i);
+    bool b = IRadioClient::connectI(i);
+    return a || b;
 }
 
 
-bool TimeControlConfiguration::disconnect (Interface *i)
+bool TimeControlConfiguration::disconnectI (Interface *i)
 {
-	bool a = ITimeControlClient::disconnect(i);
-	bool b = IRadioClient::disconnect(i);
-	return a || b;
+    bool a = ITimeControlClient::disconnectI(i);
+    bool b = IRadioClient::disconnectI(i);
+    return a || b;
 }
 
 
@@ -88,54 +92,60 @@ bool TimeControlConfiguration::disconnect (Interface *i)
 bool TimeControlConfiguration::noticeAlarmsChanged(const AlarmVector &sl)
 {
     int idx = listAlarms->currentItem();
-    QDateTime old = (idx >= 0 && (unsigned)idx < alarms.size()) ? alarms[idx].alarmTime() : QDateTime();
+    int currentID = (idx >= 0 && (unsigned)idx < alarms.size()) ? alarms[idx].ID() : -1;
 
-	alarms = sl;
+    alarms = sl;
     sort(alarms.begin(), alarms.end(), DateTimeCmp());
+
+    bool oldBlock = listAlarms->signalsBlocked();
+    listAlarms->blockSignals(true);
 
     listAlarms->clear();
     idx = -1;
     int k = 0;
     for (ciAlarmVector i = alarms.begin(); i != alarms.end(); ++i, ++k) {
-		listAlarms->insertItem(i->nextAlarm(true).toString());
-		if (i->alarmTime() == old)
-			idx = k;
+        listAlarms->insertItem(i->nextAlarm(true).toString());
+        if (i->ID() == currentID)
+            idx = k;
     }
     listAlarms->setCurrentItem(idx);
+
+    listAlarms->blockSignals(oldBlock);
+
     slotAlarmSelectChanged(idx);
-	return true;
+    return true;
 }
 
 bool TimeControlConfiguration::noticeAlarm(const Alarm &)
 {
-	return false;
+    return false;
 }
 
 bool TimeControlConfiguration::noticeNextAlarmChanged(const Alarm *)
 {
-	noticeAlarmsChanged(alarms);
-	return true;
+    noticeAlarmsChanged(alarms);
+    return true;
 }
 
 bool TimeControlConfiguration::noticeCountdownStarted(const QDateTime &/*end*/)
 {
-	return false;
+    return false;
 }
 
 bool TimeControlConfiguration::noticeCountdownStopped()
 {
-	return false;
+    return false;
 }
 
 bool TimeControlConfiguration::noticeCountdownZero()
 {
-	return false;
+    return false;
 }
 
 bool TimeControlConfiguration::noticeCountdownSecondsChanged(int n)
 {
-	editSleep->setValue((int)rint(n / 60));
-	return false;
+    editSleep->setValue((int)rint(n / 60));
+    return false;
 }
 
 
@@ -143,27 +153,27 @@ bool TimeControlConfiguration::noticeCountdownSecondsChanged(int n)
 
 bool TimeControlConfiguration::noticePowerChanged(bool /*on*/)
 {
-	return false;
+    return false;
 }
 
 bool TimeControlConfiguration::noticeStationChanged (const RadioStation &, int /*idx*/)
 {
-	return false;
+    return false;
 }
 
 bool TimeControlConfiguration::noticeStationsChanged(const StationList &sl)
 {
-	comboStationSelection->clear();
-	stationIDs.clear();
-	comboStationSelection->insertItem(i18n("<don't change>"));
-	stationIDs.push_back(QString::null);
+    comboStationSelection->clear();
+    stationIDs.clear();
+    comboStationSelection->insertItem(i18n("<don't change>"));
+    stationIDs.push_back(QString::null);
 
-	for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {
-		comboStationSelection->insertItem(i.current()->iconName(),
-		                				  i.current()->longName());
-		stationIDs.push_back(i.current()->stationID());
-	}
-	return true;
+    for (RawStationList::Iterator i(sl.all()); i.current(); ++i) {
+        comboStationSelection->insertItem(i.current()->iconName(),
+                                          i.current()->longName());
+        stationIDs.push_back(i.current()->stationID());
+    }
+    return true;
 }
 
 
@@ -176,17 +186,15 @@ void TimeControlConfiguration::slotDateChanged( const QDate &d )
 
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-		Alarm &a = alarms[idx];
-		a.setDate(d);
-		ignoreChanges = true;
+        Alarm &a = alarms[idx];
+        a.setDate(d);
 
-		bool oldBlock = listAlarms->signalsBlocked();
-		listAlarms->blockSignals(true);
-		listAlarms->changeItem(a.nextAlarm(true).toString(), idx);
-		listAlarms->blockSignals(oldBlock);
-
-		noticeAlarmsChanged(alarms);
-		ignoreChanges = false;
+        ignoreChanges = true;
+        bool oldBlock = listAlarms->signalsBlocked();
+        listAlarms->blockSignals(true);
+        noticeAlarmsChanged(alarms);
+        listAlarms->blockSignals(oldBlock);
+        ignoreChanges = false;
     }
 }
 
@@ -197,17 +205,15 @@ void TimeControlConfiguration::slotTimeChanged(const QTime &t)
 
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-		Alarm &a = alarms[idx];
-		a.setTime(t);
-		ignoreChanges = true;
+        Alarm &a = alarms[idx];
+        a.setTime(t);
 
-		bool oldBlock = listAlarms->signalsBlocked();
-		listAlarms->blockSignals(true);
-		listAlarms->changeItem(a.nextAlarm(true).toString(), idx);
-		listAlarms->blockSignals(oldBlock);
-
-		noticeAlarmsChanged(alarms);
-		ignoreChanges = false;
+        ignoreChanges = true;
+        bool oldBlock = listAlarms->signalsBlocked();
+        listAlarms->blockSignals(true);
+        noticeAlarmsChanged(alarms);
+        listAlarms->blockSignals(oldBlock);
+        ignoreChanges = false;
     }
 }
 
@@ -218,28 +224,54 @@ void TimeControlConfiguration::slotDailyChanged (bool b)
 
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-		Alarm &a = alarms[idx];
-		a.setDaily(b);
-		ignoreChanges = true;
+        Alarm &a = alarms[idx];
+        a.setDaily(b);
 
-		bool oldBlock = listAlarms->signalsBlocked();
-		listAlarms->blockSignals(true);
-		listAlarms->changeItem((a.isDaily() ? a.nextAlarm(true) : a.alarmTime()).toString(), idx);
-		listAlarms->blockSignals(oldBlock);
+        ignoreChanges = true;
+        bool oldBlock = listAlarms->signalsBlocked();
+        listAlarms->blockSignals(true);
+        noticeAlarmsChanged(alarms);
+        listAlarms->blockSignals(oldBlock);
+        ignoreChanges = false;
 
-		noticeAlarmsChanged(alarms);
-		ignoreChanges = false;
-
-		editAlarmDate ->setDisabled(a.isDaily());
-		labelAlarmDate->setDisabled(a.isDaily());
+        editAlarmDate ->setDisabled(b);
+        labelAlarmDate->setDisabled(b);
+        listWeekdays  ->setDisabled(!b);
     }
 }
+
+
+void TimeControlConfiguration::slotWeekdaysChanged ()
+{
+    if (ignoreChanges) return;
+
+    int mask = 0;
+    for (int i = 0; i < 7; ++i) {
+        if (listWeekdays->isSelected(i)) {
+            mask |= (1 << i);
+        }
+    }
+
+    int idx = listAlarms->currentItem();
+    if (idx >= 0 && (unsigned)idx < alarms.size()) {
+        Alarm &a = alarms[idx];
+        a.setWeekdayMask(mask);
+
+        ignoreChanges = true;
+        bool oldBlock = listAlarms->signalsBlocked();
+        listAlarms->blockSignals(true);
+        noticeAlarmsChanged(alarms);
+        listAlarms->blockSignals(oldBlock);
+        ignoreChanges = false;
+    }
+}
+
 
 void TimeControlConfiguration::slotEnabledChanged( bool b)
 {
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-		alarms[idx].setEnabled(b);
+        alarms[idx].setEnabled(b);
     }
 }
 
@@ -250,7 +282,7 @@ void TimeControlConfiguration::slotStationChanged( int i )
     if (   idx >= 0 && (unsigned)idx < alarms.size()
         && i >= 0 && (unsigned)i < stationIDs.size())
     {
-		alarms[idx].setStationID( stationIDs[i] );
+        alarms[idx].setStationID( stationIDs[i] );
     }
 }
 
@@ -259,7 +291,7 @@ void TimeControlConfiguration::slotVolumeChanged( int v )
 {
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-		alarms[idx].setVolumePreset(0.01 * (float)v);
+        alarms[idx].setVolumePreset(0.01 * (float)v);
     }
 }
 
@@ -268,7 +300,7 @@ void TimeControlConfiguration::slotAlarmTypeChanged(int t)
 {
     int idx = listAlarms->currentItem();
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-		alarms[idx].setAlarmType((Alarm::AlarmType)t);
+        alarms[idx].setAlarmType((Alarm::AlarmType)t);
     }
 }
 
@@ -283,36 +315,42 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
 
-		a = alarms[idx];
-		valid = true;
+        a = alarms[idx];
+        valid = true;
 
     }
 
-	editAlarmDate        ->setDisabled(!valid || a.isDaily());
-	labelAlarmDate       ->setDisabled(!valid || a.isDaily());
-	editAlarmTime        ->setDisabled(!valid);
-	labelAlarmTime       ->setDisabled(!valid);
-	labelAlarmVolume     ->setDisabled(!valid);
-	editAlarmVolume      ->setDisabled(!valid);
-	checkboxAlarmDaily   ->setDisabled(!valid);
-	checkboxAlarmEnable  ->setDisabled(!valid);
-	comboStationSelection->setDisabled(!valid);
-	labelStationSelection->setDisabled(!valid);
-	buttonDeleteAlarm    ->setDisabled(!valid);
-	comboAlarmType       ->setDisabled(!valid);
+    editAlarmDate        ->setDisabled(!valid || a.isDaily());
+    labelAlarmDate       ->setDisabled(!valid || a.isDaily());
+    listWeekdays         ->setDisabled(!valid ||!a.isDaily());
+    editAlarmTime        ->setDisabled(!valid);
+    labelAlarmTime       ->setDisabled(!valid);
+    labelAlarmVolume     ->setDisabled(!valid);
+    editAlarmVolume      ->setDisabled(!valid);
+    checkboxAlarmDaily   ->setDisabled(!valid);
+    checkboxAlarmEnable  ->setDisabled(!valid);
+    comboStationSelection->setDisabled(!valid);
+    labelStationSelection->setDisabled(!valid);
+    buttonDeleteAlarm    ->setDisabled(!valid);
+    comboAlarmType       ->setDisabled(!valid);
 
-	editAlarmDate        ->setDate(a.alarmTime().date());
-	editAlarmTime        ->setTime(a.alarmTime().time());
-	checkboxAlarmDaily   ->setChecked(a.isDaily());
-	checkboxAlarmEnable  ->setChecked(a.isEnabled());
-	editAlarmVolume      ->setValue((int)rint(a.volumePreset() * 100));
-	comboAlarmType       ->setCurrentItem(a.alarmType());
+    editAlarmDate        ->setDate(a.alarmTime().date());
+    editAlarmTime        ->setTime(a.alarmTime().time());
+    checkboxAlarmDaily   ->setChecked(a.isDaily());
+    checkboxAlarmEnable  ->setChecked(a.isEnabled());
+    editAlarmVolume      ->setValue((int)rint(a.volumePreset() * 100));
+    comboAlarmType       ->setCurrentItem(a.alarmType());
 
-	int k = 0;
-	const QString &sID = a.stationID();
-	for (int i = 0; !k && i < (int)stationIDs.size(); ++i)
-		if (stationIDs[i] == sID) k = i;
-	comboStationSelection->setCurrentItem(k);
+    int k = 0;
+    const QString &sID = a.stationID();
+    for (int i = 0; !k && i < (int)stationIDs.size(); ++i)
+        if (stationIDs[i] == sID) k = i;
+    comboStationSelection->setCurrentItem(k);
+
+    int m = a.weekdayMask();
+    for (int i = 0; i < 7; ++i) {
+        listWeekdays->setSelected(i, m & (1 << i));
+    }
 
     ignoreChanges = false;
 }
@@ -320,12 +358,12 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 
 void TimeControlConfiguration::slotNewAlarm()
 {
-	QDateTime  dt(QDate(1800,1,1), QTime(0,0,0));
+    QDateTime  dt(QDate(1800,1,1), QTime(0,0,0));
     Alarm a(dt, false, false);
     alarms.push_back(a);
     listAlarms->insertItem(a.alarmTime().toString());
     listAlarms->setSelected(listAlarms->count() - 1, true);
-	noticeAlarmsChanged(alarms);
+    noticeAlarmsChanged(alarms);
 }
 
 
@@ -334,26 +372,26 @@ void TimeControlConfiguration::slotDeleteAlarm()
     int idx = listAlarms->currentItem();
 
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
-		// unfortunately a function vector<>::erase(idx) does not exist
-		iAlarmVector i = alarms.begin();
-		for (int k = 0; k < idx; ++k) ++i;
-		if (i != alarms.end())
-			alarms.erase(i);
-		listAlarms->removeItem(idx);
+        // unfortunately a function vector<>::erase(idx) does not exist
+        iAlarmVector i = alarms.begin();
+        for (int k = 0; k < idx; ++k) ++i;
+        if (i != alarms.end())
+            alarms.erase(i);
+        listAlarms->removeItem(idx);
     }
 }
 
 
 void TimeControlConfiguration::slotOK()
 {
-	sendAlarms(alarms);
-	sendCountdownSeconds(editSleep->value() * 60);
+    sendAlarms(alarms);
+    sendCountdownSeconds(editSleep->value() * 60);
 }
 
 void TimeControlConfiguration::slotCancel()
 {
-	noticeAlarmsChanged(queryAlarms());
-	noticeCountdownSecondsChanged(queryCountdownSeconds());
+    noticeAlarmsChanged(queryAlarms());
+    noticeCountdownSecondsChanged(queryCountdownSeconds());
 }
 
 

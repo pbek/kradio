@@ -34,51 +34,53 @@ class TimeControlConfiguration : public TimeControlConfigurationUI,
 {
 Q_OBJECT
 public :
-	TimeControlConfiguration (QWidget *parent);
-	~TimeControlConfiguration ();
+    TimeControlConfiguration (QWidget *parent);
+    ~TimeControlConfiguration ();
 
-	bool connect (Interface *i);
-	bool disconnect (Interface *i);
+    bool connectI (Interface *i);
+    bool disconnectI (Interface *i);
 
 // ITimeControlClient
-	
-	bool noticeAlarmsChanged(const AlarmVector &sl);
-	bool noticeAlarm(const Alarm &);
-	bool noticeNextAlarmChanged(const Alarm *);
-	bool noticeCountdownStarted(const QDateTime &end);
-	bool noticeCountdownStopped();
-	bool noticeCountdownZero();
+
+    bool noticeAlarmsChanged(const AlarmVector &sl);
+    bool noticeAlarm(const Alarm &);
+    bool noticeNextAlarmChanged(const Alarm *);
+    bool noticeCountdownStarted(const QDateTime &end);
+    bool noticeCountdownStopped();
+    bool noticeCountdownZero();
     bool noticeCountdownSecondsChanged(int n);
 
 // IRadioClient
 
-	bool noticePowerChanged(bool on);
-	bool noticeStationChanged (const RadioStation &, int idx);
-	bool noticeStationsChanged(const StationList &sl);
+    bool noticePowerChanged(bool on);
+    bool noticeStationChanged (const RadioStation &, int idx);
+    bool noticeStationsChanged(const StationList &sl);
+    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
 
 protected slots:
 
-	void slotDailyChanged (bool daily);
-	void slotEnabledChanged (bool enable);
-	void slotStationChanged (int idx);
-	void slotAlarmSelectChanged(int idx);
-	void slotDateChanged(const QDate &d);
-	void slotTimeChanged(const QTime &d);
-	void slotVolumeChanged(int v);
-	void slotAlarmTypeChanged(int idx);
+    void slotDailyChanged (bool daily);
+    void slotWeekdaysChanged ();
+    void slotEnabledChanged (bool enable);
+    void slotStationChanged (int idx);
+    void slotAlarmSelectChanged(int idx);
+    void slotDateChanged(const QDate &d);
+    void slotTimeChanged(const QTime &d);
+    void slotVolumeChanged(int v);
+    void slotAlarmTypeChanged(int idx);
 
-	void slotNewAlarm();
-	void slotDeleteAlarm();
+    void slotNewAlarm();
+    void slotDeleteAlarm();
 
-	void slotOK();
-	void slotCancel();
+    void slotOK();
+    void slotCancel();
 
 protected:
 
-	AlarmVector     alarms;
-	vector<QString> stationIDs;
+    AlarmVector     alarms;
+    vector<QString> stationIDs;
 
-	bool ignoreChanges;
+    bool ignoreChanges;
 };
 
 #endif

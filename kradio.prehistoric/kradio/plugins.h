@@ -25,6 +25,7 @@
 #endif
 
 #include "interfaces.h"
+#include "errorlog-interfaces.h"
 #include <qstring.h>
 #include <qobject.h>
 #include <qptrlist.h>
@@ -58,68 +59,72 @@ class WidgetPluginBase;
 
 struct ConfigPageInfo
 {
-	ConfigPageInfo () : page(NULL) {}
-	ConfigPageInfo (QWidget *p,
-	                const QString &in,
-	                const QString &ph,
-	                const QString &icon)
-	  : page (p),
-	    itemName(in),
-	    pageHeader(ph),
-	    iconName(icon)
-	{}
+    ConfigPageInfo () : page(NULL) {}
+    ConfigPageInfo (QWidget *p,
+                    const QString &in,
+                    const QString &ph,
+                    const QString &icon)
+      : page (p),
+        itemName(in),
+        pageHeader(ph),
+        iconName(icon)
+    {}
 
-	QWidget  *page;
-	QString   itemName,
-			  pageHeader,
-			  iconName;
+    QWidget  *page;
+    QString   itemName,
+              pageHeader,
+              iconName;
 };
 
 typedef ConfigPageInfo AboutPageInfo;
 
 
-class PluginBase : virtual public Interface
+class PluginBase : public IErrorLogClient
 {
 friend class PluginManager;
 public :
-	         PluginBase(const QString &name, const QString &description);
-	virtual ~PluginBase();
+             PluginBase(const QString &name, const QString &description);
+    virtual ~PluginBase();
 
-	const QString &name() const { return m_name; }
-	      QString &name()       { return m_name; }
+    const QString &name() const { return m_name; }
+          QString &name()       { return m_name; }
 
-	const QString &description() const { return m_description; }
+    const QString &description() const { return m_description; }
 
-	// interaction with pluginmanager
+    // workaround for compiler bugs
+    bool           destructorCalled() const { return m_destructorCalled; }
+
+    // interaction with pluginmanager
 protected:
-	virtual bool setManager (PluginManager *);
-	virtual void unsetManager ();
-	virtual bool isManagerSet () const;
+    bool setManager (PluginManager *);
+    void unsetManager ();
+    bool isManagerSet () const;
 
 public:
 
-	// these two methods will request a configuration page or
-	// plugin page from plugin manager
-	// they will be deleted automatically when this plugin
-	// is deleted, because we disconnect from pluginmanager
-	// and the plugin manager will delete all associated gui elements
-	virtual ConfigPageInfo createConfigurationPage () = 0;	
-	virtual AboutPageInfo  createAboutPage () = 0;
+    // these two methods will request a configuration page or
+    // plugin page from plugin manager
+    // they will be deleted automatically when this plugin
+    // is deleted, because we disconnect from pluginmanager
+    // and the plugin manager will delete all associated gui elements
+    virtual ConfigPageInfo createConfigurationPage () = 0;
+    virtual AboutPageInfo  createAboutPage () = 0;
 
-	// save/restore status, window position, etc...
+    // save/restore status, window position, etc...
 
-	virtual void   saveState (KConfig *) const = 0;
-	virtual void   restoreState (KConfig *) = 0;
+    virtual void   saveState (KConfig *) const = 0;
+    virtual void   restoreState (KConfig *) = 0;
 
-	//
-	
-	virtual void noticeWidgetPluginShown(WidgetPluginBase *, bool /*shown*/) {}
-	virtual void noticePluginsChanged(const PluginList &) {}
-	
+    //
+
+    virtual void noticeWidgetPluginShown(WidgetPluginBase *, bool /*shown*/) {}
+    virtual void noticePluginsChanged(const PluginList &) {}
+
 protected :
-	QString            m_name;
-	QString            m_description;
+    QString            m_name;
+    QString            m_description;
     PluginManager     *m_manager;
+    bool               m_destructorCalled;
 };
 
 

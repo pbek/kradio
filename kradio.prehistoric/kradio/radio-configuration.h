@@ -33,67 +33,69 @@ class QPopupMenu;
 class RadioStationConfig;
 
 class RadioConfiguration : public RadioConfigurationUI,
-						   public IRadioClient,
-						   public IRadioDevicePoolClient
+                           public IRadioClient,
+                           public IRadioDevicePoolClient
 {
 Q_OBJECT
 public :
-	RadioConfiguration (QWidget *parent);
-	~RadioConfiguration ();
+    RadioConfiguration (QWidget *parent, const IErrorLogClient &m_logger);
+    ~RadioConfiguration ();
 
-	bool connect (Interface *i);
-	bool disconnect (Interface *i);
+    bool connectI (Interface *i);
+    bool disconnectI (Interface *i);
 
-	// IRadioDevicePoolClient
+    // IRadioDevicePoolClient
 
 RECEIVERS:
-	bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
-	bool noticeDevicesChanged(const QPtrList<IRadioDevice> &);
-	bool noticeDeviceDescriptionChanged(const QString &);
+    bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
+    bool noticeDevicesChanged(const QPtrList<IRadioDevice> &);
+    bool noticeDeviceDescriptionChanged(const QString &);
 
     // IRadioClient
-    
+
 RECEIVERS:
-	bool noticePowerChanged(bool /*on*/)                          { return false; }  // don't care
-	bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }  // don't care
-	bool noticeStationsChanged(const StationList &sl);
+    bool noticePowerChanged(bool /*on*/)                          { return false; }  // don't care
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }  // don't care
+    bool noticeStationsChanged(const StationList &sl);
+    bool noticePresetFileChanged(const QString &f);
 
 protected slots:
 
-	void slotStationSelectionChanged(int idx);
-	void slotNewStation();
-	void slotDeleteStation();
-	void slotStationEditorChanged(RadioStationConfig *c);
-	void slotStationNameChanged( const QString & s);
-	void slotStationShortNameChanged( const QString & sn);
-	void slotPixmapChanged( const QString &s );
-	void slotSelectPixmap();
-	void slotVolumePresetChanged(int v);
-	void slotStationUp();
-	void slotStationDown();
-	void slotActivateStation( int );
-	void slotLoadPresets();
-	void slotStorePresets();
-	void slotLastChangeNow();
-	void slotSendPresetsByMail( const QString &url );
+    void slotStationSelectionChanged(int idx);
+    void slotNewStation();
+    void slotDeleteStation();
+    void slotStationEditorChanged(RadioStationConfig *c);
+    void slotStationNameChanged( const QString & s);
+    void slotStationShortNameChanged( const QString & sn);
+    void slotPixmapChanged( const QString &s );
+    void slotSelectPixmap();
+    void slotVolumePresetChanged(int v);
+    void slotStationUp();
+    void slotStationDown();
+    void slotActivateStation( int );
+    void slotLoadPresets();
+    void slotStorePresets();
+    void slotLastChangeNow();
+    void slotSendPresetsByMail( const QString &url );
 
-	void slotSearchStations(int i);
-	void slotSearchStations0() { slotSearchStations(0); }
+    void slotSearchStations(int i);
+    void slotSearchStations0() { slotSearchStations(0); }
 
-	void slotOK();
-	void slotCancel();
+    void slotOK();
+    void slotCancel();
 
 
 protected:
 
-	StationList                 m_stations;
+    StationList                 m_stations;
     bool                        ignoreChanges;
-    
+
     QPopupMenu                 *devicePopup;
     QPtrList<IRadioDevice>      devices;
 
     QDict<RadioStationConfig>   stationEditors;
 
+    const IErrorLogClient      &m_logger;
 };
 
 #endif

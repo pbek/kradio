@@ -483,7 +483,7 @@ struct v4l2_crop {
  *      A N A L O G   V I D E O   S T A N D A R D
  */
 
-typedef __u64 v4l2_std_id;
+typedef unsigned long long v4l2_std_id;
 
 /* one bit for each */
 #define V4L2_STD_PAL_B          ((v4l2_std_id)0x00000001)

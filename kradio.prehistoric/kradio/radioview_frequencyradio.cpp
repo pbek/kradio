@@ -93,7 +93,7 @@ void   RadioViewFrequencyRadio::restoreState (KConfig *config)
 ConfigPageInfo RadioViewFrequencyRadio::createConfigurationPage()
 {
 	DisplayConfiguration *a = new DisplayConfiguration(NULL);
-	connect(a);
+	connectI(a);
 	return ConfigPageInfo (a,
 	                       i18n("Frequency Display"),
 	                       i18n("Frequency Display"),
@@ -104,14 +104,14 @@ ConfigPageInfo RadioViewFrequencyRadio::createConfigurationPage()
 
 // Interface
 
-bool RadioViewFrequencyRadio::connect(Interface *i)
+bool RadioViewFrequencyRadio::connectI(Interface *i)
 {
-	bool o = IDisplayCfg::connect(i);
+	bool o = IDisplayCfg::connectI(i);
 	if (dynamic_cast<IFrequencyRadio *>(i)) {
 
-		bool a = IRadioDeviceClient::connect(i);
-		bool b = IRadioSoundClient::connect(i);
-		bool c = IFrequencyRadioClient::connect(i);
+		bool a = IRadioDeviceClient::connectI(i);
+		bool b = IRadioSoundClient::connectI(i);
+		bool c = IFrequencyRadioClient::connectI(i);
 		return o || a || b || c;
 		
 	} else {
@@ -120,14 +120,14 @@ bool RadioViewFrequencyRadio::connect(Interface *i)
 }
 
 
-bool RadioViewFrequencyRadio::disconnect(Interface *i)
+bool RadioViewFrequencyRadio::disconnectI(Interface *i)
 {
 	// no check for IFrequencyRadio, it's just a disconnect
 
-	bool a = IRadioDeviceClient::disconnect(i);
-	bool b = IRadioSoundClient::disconnect(i);
-	bool c = IFrequencyRadioClient::disconnect(i);
-	bool o = IDisplayCfg::disconnect(i);
+	bool a = IRadioDeviceClient::disconnectI(i);
+	bool b = IRadioSoundClient::disconnectI(i);
+	bool c = IFrequencyRadioClient::disconnectI(i);
+	bool o = IDisplayCfg::disconnectI(i);
 
 	return a || b || c || o;
 }

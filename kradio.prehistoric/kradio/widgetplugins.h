@@ -31,12 +31,6 @@ class WidgetPluginBase : public PluginBase
 public :
 	WidgetPluginBase(const QString &name, const QString &description);
 
-	virtual void     show ();
-	virtual void     hide ();
-	virtual void     toggleShown ();
-	virtual void     show (bool show);
-	virtual bool     isReallyVisible(const QWidget *w = NULL) const;
-
 	virtual void     saveState    (KConfig *) const;
 	virtual void     restoreState (KConfig *);
 	virtual void     restoreState (KConfig *, bool showByDefault);
@@ -44,9 +38,16 @@ public :
 	virtual       QWidget *getWidget();
 	virtual const QWidget *getWidget() const;
 
+	virtual bool           isReallyVisible(const QWidget *w = NULL) const;
+
 protected:
-	virtual void showEvent(QShowEvent *);
-	virtual void hideEvent(QHideEvent *);
+	virtual void pShow ();
+	virtual void pShow (bool show);
+	virtual void pHide ();
+	virtual void pToggleShown ();
+
+	virtual void pShowEvent(QShowEvent *);
+	virtual void pHideEvent(QHideEvent *);
 
 	virtual void notifyManager(bool shown);
 
@@ -59,6 +60,7 @@ protected:
     mutable int		    m_saveDesktop;
     mutable QRect		m_saveGeometry;
 
+    bool                m_geoRestoreFlag;
 };
 
 

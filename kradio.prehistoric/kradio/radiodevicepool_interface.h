@@ -67,8 +67,8 @@ QUERIES:
 	IF_QUERY   (  const QString                 &queryDeviceDescription() )
 
 RECEIVERS:
-	virtual void noticeConnected    (cmplInterface *, bool /*pointer_valid*/);
-	virtual void noticeDisconnected (cmplInterface *, bool /*pointer_valid*/);
+	virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/);
+	virtual void noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/);
 };
 
 

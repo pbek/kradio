@@ -20,7 +20,7 @@
 
 #include <qobject.h>
 #include <qtimer.h>
-  
+
 #include "alarm.h"
 #include "timecontrol_interfaces.h"
 #include "plugins.h"
@@ -38,35 +38,35 @@ protected:
     Alarm const *     m_waitingFor;         // m_alarmTimer is exactly for this date/time
 
     int               m_countdownSeconds;   // in seconds
-    QDateTime		  m_countdownEnd;
+    QDateTime          m_countdownEnd;
 
     QTimer            m_alarmTimer;
     QTimer            m_countdownTimer;
 
     mutable QDateTime m_nextAlarm_tmp;      // used to recognize nextAlarm changes
-    
-public:
-	TimeControl (const QString &name);
-	~TimeControl();
-
-	virtual const QString &name() const { return PluginBase::name(); }
-	virtual       QString &name()       { return PluginBase::name(); }
-
-	virtual bool   connect (Interface *i)    { return ITimeControl::connect(i); }
-	virtual bool   disconnect (Interface *i) { return ITimeControl::disconnect(i); }
-
-	// PluginBase
 
 public:
-	virtual void   saveState (KConfig *) const;
-	virtual void   restoreState (KConfig *);
+    TimeControl (const QString &name);
+    ~TimeControl();
 
-	virtual ConfigPageInfo  createConfigurationPage();
-	virtual AboutPageInfo   createAboutPage();
+    virtual const QString &name() const { return PluginBase::name(); }
+    virtual       QString &name()       { return PluginBase::name(); }
+
+    virtual bool   connectI (Interface *i);
+    virtual bool   disconnectI (Interface *i);
+
+    // PluginBase
+
+public:
+    virtual void   saveState (KConfig *) const;
+    virtual void   restoreState (KConfig *);
+
+    virtual ConfigPageInfo  createConfigurationPage();
+    virtual AboutPageInfo   createAboutPage();
 
 
     // ITimeControl Interface methods
-	
+
 RECEIVERS:
     bool setAlarms(const AlarmVector &sl);
     bool setCountdownSeconds(int n);
@@ -81,8 +81,8 @@ ANSWERS:
     QDateTime           getCountdownEnd () const;
 
 
-	// slots for receiving timeout messages of timers
-	
+    // slots for receiving timeout messages of timers
+
 protected slots:
     virtual void    slotQTimerAlarmTimeout();
     virtual void    slotQTimerCountdownTimeout();

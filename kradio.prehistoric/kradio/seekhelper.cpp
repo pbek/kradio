@@ -31,18 +31,18 @@ SeekHelper::~SeekHelper()
 }
 
 
-bool SeekHelper::connect   (Interface *i)
+bool SeekHelper::connectI   (Interface *i)
 {
-	bool a = IRadioDeviceClient::connect(i);
-	bool b = IRadioSoundClient::connect(i);
+	bool a = IRadioDeviceClient::connectI(i);
+	bool b = IRadioSoundClient::connectI(i);
 	return a || b;
 }
 
 
-bool SeekHelper::disconnect(Interface *i)
+bool SeekHelper::disconnectI(Interface *i)
 {
-	bool a = IRadioDeviceClient::disconnect(i);
-	bool b = IRadioSoundClient::disconnect(i);
+	bool a = IRadioDeviceClient::disconnectI(i);
+	bool b = IRadioSoundClient::disconnectI(i);
 	return a || b;
 }
 

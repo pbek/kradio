@@ -50,14 +50,14 @@ IF_IMPL_QUERY   (  QFont IDisplayCfgClient::queryDisplayFont(),
                    QFont("Helvetica")                                                )
 
 
-void IDisplayCfgClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void IDisplayCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeDisplayColorsChanged(queryDisplayActiveColor(), queryDisplayInactiveColor(), queryDisplayBkgndColor());
 	noticeDisplayFontChanged(queryDisplayFont());
 }
 
 
-void IDisplayCfgClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
+void IDisplayCfgClient::noticeDisconnectedI   (cmplInterface *, bool /*pointer_valid*/)
 {
 	noticeDisplayColorsChanged(queryDisplayActiveColor(), queryDisplayInactiveColor(), queryDisplayBkgndColor());
 	noticeDisplayFontChanged(queryDisplayFont());

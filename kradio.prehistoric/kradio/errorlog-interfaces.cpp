@@ -19,76 +19,38 @@
 #include <kdebug.h>
 #include <qdatetime.h>
 
-// global logger
-static IErrorLogClient *logger = NULL;
-
-
-void IErrorLog::connect()
-{
-	if (!logger)
-		logger = new IErrorLogClient();
-	thisClass::connect(logger);
-}
-
 int IErrorLogClient::sendLogError(const QString &s) const
 {
-	kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-	          << " Error: "
-	          << s << endl;
-	IF_SEND_MESSAGE(logError(s));
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Error: "
+              << s << endl;
+    IF_SEND_MESSAGE(logError(s));
 }
 
 
 int IErrorLogClient::sendLogWarning(const QString &s) const
 {
-	kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-	          << " Warning: "
-	          << s << endl;
-	IF_SEND_MESSAGE(logWarning(s));
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Warning: "
+              << s << endl;
+    IF_SEND_MESSAGE(logWarning(s));
 }
 
 
 int IErrorLogClient::sendLogInfo(const QString &s) const
 {
-	kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-	          << " Information: "
-	          << s << endl;
-	IF_SEND_MESSAGE(logInfo(s));
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Information: "
+              << s << endl;
+    IF_SEND_MESSAGE(logInfo(s));
 }
 
 
 int IErrorLogClient::sendLogDebug(const QString &s) const
 {
-	kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-	          << " Debug: "
-	          << s << endl;
-	IF_SEND_MESSAGE(logDebug(s));
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Debug: "
+              << s << endl;
+    IF_SEND_MESSAGE(logDebug(s));
 }
 
-// static and global variant
-
-void logError(const QString    &s)
-{
-	if (!logger) logger = new IErrorLogClient();
-	logger->sendLogError(s);
-}
-
-
-void logWarning(const QString    &s)
-{
-	if (!logger) logger = new IErrorLogClient();
-	logger->sendLogWarning(s);
-}
-
-void logInfo(const QString    &s)
-{
-	if (!logger) logger = new IErrorLogClient();
-	logger->sendLogInfo(s);
-}
-
-
-void logDebug(const QString    &s)
-{
-	if (!logger) logger = new IErrorLogClient();
-	logger->sendLogDebug(s);
-}

@@ -37,43 +37,44 @@ class StationSelector : public StationSelectorUI,
 {
 Q_OBJECT
 public :
-	StationSelector (QWidget *parent);
-	~StationSelector ();
+    StationSelector (QWidget *parent);
+    ~StationSelector ();
 
-	bool connect (Interface *i);
-	bool disconnect (Interface *i);
+    bool connectI (Interface *i);
+    bool disconnectI (Interface *i);
 
 // IStationSelectionClient
 
     bool noticeStationSelectionChanged(const QStringList &sl);
-    
+
 // IRadioClient
 
-	bool noticePowerChanged(bool on);
-	bool noticeStationChanged (const RadioStation &, int idx);
-	bool noticeStationsChanged(const StationList &sl);
+    bool noticePowerChanged(bool on);
+    bool noticeStationChanged (const RadioStation &, int idx);
+    bool noticeStationsChanged(const StationList &sl);
+    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
 
 protected slots:
 
-	void slotButtonToLeft();
-	void slotButtonToRight();
+    void slotButtonToLeft();
+    void slotButtonToRight();
 
-	void slotOK();
-	void slotCancel();
+    void slotOK();
+    void slotCancel();
 
 protected:
 
-	void moveItem (KListBox *&lbFrom, vector<QString> &vFrom,
-				   unsigned int idxFrom,
-	               KListBox *&lbTo, vector<QString> &vTo);
+    void moveItem (KListBox *&lbFrom, vector<QString> &vFrom,
+                   unsigned int idxFrom,
+                   KListBox *&lbTo, vector<QString> &vTo);
     void insertItem (KListBox *&lb, vector<QString> &v, const QString &id, const QPixmap *p, const QString &txt);
 
-	vector<QString>   stationsAvailable,
-	                  stationsSelected,
-	                  stationsNotDisplayed,
-	                  stationsAll;
+    vector<QString>   stationsAvailable,
+                      stationsSelected,
+                      stationsNotDisplayed,
+                      stationsAll;
 
-	
+
 };
 
 #endif

@@ -31,65 +31,68 @@
 #include <qdatetime.h>
 
 class StandardScanDialog : public StandardScanDialogUI,
-						   public ISeekRadioClient,
-						   public IRadioSoundClient,
-						   public IRadioClient
+                           public ISeekRadioClient,
+                           public IRadioSoundClient,
+                           public IRadioClient
 {
 Q_OBJECT
 public:
-	StandardScanDialog(QWidget *parent);
-	~StandardScanDialog();
+    StandardScanDialog(QWidget *parent);
+    ~StandardScanDialog();
 
-	bool connect (Interface *i);
-	bool disconnect (Interface *i);
+    bool connectI (Interface *i);
+    bool disconnectI (Interface *i);
 
-	void start();
-	void stop();
+    void start();
+    void stop();
 
-	const StationList &getStations() const { return m_stations; }
+    const StationList &getStations() const { return m_stations; }
 
 // ISeekRadioClient
 
 RECEIVERS:
-	bool noticeSeekStarted (bool up);
-	bool noticeSeekStopped ();
-	bool noticeSeekFinished (const RadioStation &s);
-	bool noticeProgress (float f);
+    bool noticeSeekStarted (bool up);
+    bool noticeSeekStopped ();
+    bool noticeSeekFinished (const RadioStation &s);
+    bool noticeProgress (float f);
 
 // ISoundRadioClient
 
 RECEIVERS:
-	bool noticeVolumeChanged(float /*v*/)           { return false; }
-	bool noticeTrebleChanged(float /*v*/)           { return false; }
-	bool noticeBassChanged(float /*v*/)             { return false; }
-	bool noticeBalanceChanged(float /*v*/)          { return false; }
-	bool noticeSignalQualityChanged(float /*q*/)    { return false; }
-	bool noticeSignalQualityChanged(bool /*good*/)  { return false; }
-	bool noticeSignalMinQualityChanged(float /*q*/) { return false; }
-	bool noticeStereoChanged(bool  /*s*/)           { return false; }
-	bool noticeMuted(bool /*m*/)                    { return false; }
+    bool noticeVolumeChanged(float /*v*/)           { return false; }
+    bool noticeTrebleChanged(float /*v*/)           { return false; }
+    bool noticeBassChanged(float /*v*/)             { return false; }
+    bool noticeBalanceChanged(float /*v*/)          { return false; }
+    bool noticeSignalQualityChanged(float /*q*/)    { return false; }
+    bool noticeSignalQualityChanged(bool /*good*/)  { return false; }
+    bool noticeSignalMinQualityChanged(float /*q*/) { return false; }
+    bool noticeStereoChanged(bool  /*s*/)           { return false; }
+    bool noticeMuted(bool /*m*/)                    { return false; }
 
 // IRadioClient
 
 RECEIVERS:
-	bool noticePowerChanged(bool /*on*/)                         { return false; }
-	bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
-	bool noticeStationsChanged(const StationList &/*sl*/)        { return false; }
+    bool noticePowerChanged(bool on);
+    bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
+    bool noticeStationsChanged(const StationList &/*sl*/)        { return false; }
+    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
 
 
 protected slots:
 
-	void slotCancelDone();
+    void slotCancelDone();
 
 protected:
 
-	int           m_count;
-	bool          m_running;
-	bool          m_oldPowerOn;
-	RadioStation *m_oldStation;
-	QDateTime     m_startTime;
+    int           m_count;
+    bool          m_running;
+    bool          m_oldPowerOn;
+    RadioStation *m_oldStation;
+    QDateTime     m_startTime;
 
-	StationList   m_stations;
+    StationList   m_stations;
+
+    bool          m_ignorePower;
 };
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
 <class>TimeControlConfigurationUI</class>
 <widget class="QWidget">
     <property name="name">
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>545</width>
-            <height>338</height>
+            <width>374</width>
+            <height>261</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,20 +19,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="Line" row="1" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>line1</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>HLine</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Sunken</enum>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-        </widget>
         <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout13</cstring>
@@ -87,6 +73,20 @@
                     </property>
                 </spacer>
             </hbox>
+        </widget>
+        <widget class="Line" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>line1</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>HLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
         </widget>
         <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
@@ -153,7 +153,7 @@
         </widget>
         <widget class="QLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>layout14</cstring>
+                <cstring>layout17</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -252,48 +252,13 @@
                 </widget>
                 <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>layout30</cstring>
+                        <cstring>layout16</cstring>
                     </property>
-                    <hbox>
+                    <grid>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QCheckBox">
-                            <property name="name">
-                                <cstring>checkboxAlarmDaily</cstring>
-                            </property>
-                            <property name="text">
-                                <string>daily</string>
-                            </property>
-                        </widget>
-                        <spacer>
-                            <property name="name">
-                                <cstring>spacer17_2</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Horizontal</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>Expanding</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>247</width>
-                                    <height>20</height>
-                                </size>
-                            </property>
-                        </spacer>
-                    </hbox>
-                </widget>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout31</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QCheckBox">
+                        <widget class="QCheckBox" row="0" column="0">
                             <property name="name">
                                 <cstring>checkboxAlarmEnable</cstring>
                             </property>
@@ -301,24 +266,75 @@
                                 <string>enabled</string>
                             </property>
                         </widget>
-                        <spacer>
+                        <spacer row="2" column="0">
                             <property name="name">
-                                <cstring>spacer18_2</cstring>
+                                <cstring>spacer6</cstring>
                             </property>
                             <property name="orientation">
-                                <enum>Horizontal</enum>
+                                <enum>Vertical</enum>
                             </property>
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
                             <property name="sizeHint">
                                 <size>
-                                    <width>100</width>
-                                    <height>20</height>
+                                    <width>20</width>
+                                    <height>100</height>
                                 </size>
                             </property>
                         </spacer>
-                    </hbox>
+                        <widget class="KListBox" row="0" column="1" rowspan="3" colspan="1">
+                            <item>
+                                <property name="text">
+                                    <string>Monday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Tuesday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Wednesday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Thursday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Friday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Saturday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Sunday</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>listWeekdays</cstring>
+                            </property>
+                            <property name="selectionMode">
+                                <enum>Multi</enum>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox" row="1" column="0">
+                            <property name="name">
+                                <cstring>checkboxAlarmDaily</cstring>
+                            </property>
+                            <property name="text">
+                                <string>daily</string>
+                            </property>
+                        </widget>
+                    </grid>
                 </widget>
                 <widget class="QLabel">
                     <property name="name">
@@ -411,27 +427,12 @@
                         <cstring>comboAlarmType</cstring>
                     </property>
                 </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer6</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>65</height>
-                        </size>
-                    </property>
-                </spacer>
             </vbox>
         </widget>
     </grid>
 </widget>
+<customwidgets>
+</customwidgets>
 <tabstops>
     <tabstop>listAlarms</tabstop>
     <tabstop>buttonAlarmNew</tabstop>
@@ -446,7 +447,9 @@
 <includes>
     <include location="global" impldecl="in implementation">kiconloader.h</include>
 </includes>
-<iconsetfunction>SmallIconSet</iconsetfunction>
 <pixmapfunction>SmallIcon</pixmapfunction>
 <layoutdefaults spacing="6" margin="0"/>
+<includehints>
+    <includehint>klistbox.h</includehint>
+</includehints>
 </UI>

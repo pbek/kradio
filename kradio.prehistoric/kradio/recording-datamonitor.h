@@ -17,7 +17,7 @@
 
 #ifndef KRADIO_RECORDING_DATA_MONITOR
 #define KRADIO_RECORDING_DATA_MONITOR
- 
+
 #include <qframe.h>
 #include <qcolor.h>
 #include "recording-interfaces.h"
@@ -27,44 +27,46 @@ class RecordingDataMonitor : public QFrame,
 {
 Q_OBJECT
 public:
-	RecordingDataMonitor(QWidget *parent, const char *name);
-	~RecordingDataMonitor();
+    RecordingDataMonitor(QWidget *parent, const char *name);
+    ~RecordingDataMonitor();
 
-	bool connect(Interface *i);
-	bool disconnect(Interface *i);
+    bool connectI(Interface *i);
+    bool disconnectI(Interface *i);
 
 // IRecordingClient
 
 RECEIVERS:
-	bool noticeRecordingStarted();
-	bool noticeMonitoringStarted();
-	bool noticeRecordingStopped();
-	bool noticeMonitoringStopped();
-	bool noticeRecordingConfigChanged(const RecordingConfig &);
-	bool noticeRecordingContextChanged(const RecordingContext &);
+    bool noticeRecordingStarted();
+    bool noticeMonitoringStarted();
+    bool noticeRecordingStopped();
+    bool noticeMonitoringStopped();
+    bool noticeRecordingConfigChanged(const RecordingConfig &);
+    bool noticeRecordingContextChanged(const RecordingContext &);
 
 // QT/KDE ...
 
 protected:
 
-	void drawContents(QPainter *p);
-
+    void drawContents(QPainter *p);
+    void internalDrawContents(QPainter &painter, bool repaintAll);
 // own stuff ...
 
 protected:
 
-	void setChannels(int n);
-	bool setColors(const QColor &activeColor, const QColor &bkgnd);
+    void setChannels(int n);
+    bool setColors(const QColor &activeColor, const QColor &bkgnd);
 
 // data
 protected:
 
-	int     *m_channelsMax;  // maximum absolute value recorded on each channel
-	double  *m_channelsAvg;  // average value recorded on each channel
-	int      m_maxValue;     // maximum absolute value possible for samples
-	int      m_channels;
+    int     *m_channelsMax;  // maximum absolute value recorded on each channel
+    double  *m_channelsAvg;  // average value recorded on each channel
+    int      m_maxValue;     // maximum absolute value possible for samples
+    int      m_channels;
 
-	QColor   m_colorActiveText, m_colorButton;
+    QColor   m_colorActiveText, m_colorButton;
+
+    int     *m_pActiveBlocks;
 };
 
 #endif

@@ -17,7 +17,7 @@
 
 
 #include "radiodevice_interfaces.h"
-#include "radiostation.h" 
+#include "radiostation.h"
 #include <kurl.h>
 
 // IRadioDevice
@@ -55,24 +55,24 @@ IF_IMPL_QUERY   (  const QString       &  IRadioDeviceClient::queryDescription()
                    getDescription(),
                    unknown                   )
 
-void IRadioDeviceClient::noticeConnected    (cmplInterface *c, bool /*pointer_valid*/)
+void IRadioDeviceClient::noticeConnectedI    (cmplInterface *c, bool pointer_valid)
 {
-	noticePowerChanged(queryIsPowerOn());
-	noticeStationChanged(queryCurrentStation(), c);
-	noticeDescriptionChanged(queryDescription(), c);
+    noticePowerChanged(queryIsPowerOn());
+    noticeStationChanged(queryCurrentStation(), pointer_valid ? c : NULL);
+    noticeDescriptionChanged(queryDescription(), pointer_valid ? c : NULL);
 }
 
-void IRadioDeviceClient::noticeDisconnected    (cmplInterface *c, bool /*pointer_valid*/)
+void IRadioDeviceClient::noticeDisconnectedI    (cmplInterface *c, bool pointer_valid)
 {
-	noticePowerChanged(queryIsPowerOn());
-	noticeStationChanged(queryCurrentStation(), c);
-	noticeDescriptionChanged(queryDescription(), c);
+    noticePowerChanged(queryIsPowerOn());
+    noticeStationChanged(queryCurrentStation(), pointer_valid ? c : NULL);
+    noticeDescriptionChanged(queryDescription(), pointer_valid ? c : NULL);
 }
 
 
 
 
-                   
+
 // IRadioSound
 
 IF_IMPL_SENDER  (  IRadioSound::notifyVolumeChanged(float v),
@@ -142,31 +142,31 @@ IF_IMPL_QUERY   (  bool   IRadioSoundClient::queryIsMuted(),
                    true               )
 
 
-void IRadioSoundClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void IRadioSoundClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeVolumeChanged          (queryVolume());
-	noticeTrebleChanged          (queryTreble());
-	noticeBassChanged            (queryBass());
-	noticeBalanceChanged         (queryBalance());
-	noticeSignalQualityChanged   (querySignalQuality());
-	noticeSignalQualityChanged   (queryHasGoodQuality());
-	noticeSignalMinQualityChanged(querySignalMinQuality());
-	noticeStereoChanged          (queryIsStereo());
-	noticeMuted                  (queryIsMuted());
+    noticeVolumeChanged          (queryVolume());
+    noticeTrebleChanged          (queryTreble());
+    noticeBassChanged            (queryBass());
+    noticeBalanceChanged         (queryBalance());
+    noticeSignalQualityChanged   (querySignalQuality());
+    noticeSignalQualityChanged   (queryHasGoodQuality());
+    noticeSignalMinQualityChanged(querySignalMinQuality());
+    noticeStereoChanged          (queryIsStereo());
+    noticeMuted                  (queryIsMuted());
 }
 
 
-void IRadioSoundClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
+void IRadioSoundClient::noticeDisconnectedI   (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeVolumeChanged          (queryVolume());
-	noticeTrebleChanged          (queryTreble());
-	noticeBassChanged            (queryBass());
-	noticeBalanceChanged         (queryBalance());
-	noticeSignalQualityChanged   (querySignalQuality());
-	noticeSignalQualityChanged   (queryHasGoodQuality());
-	noticeSignalMinQualityChanged(querySignalMinQuality());
-	noticeStereoChanged          (queryIsStereo());
-	noticeMuted                  (queryIsMuted());
+    noticeVolumeChanged          (queryVolume());
+    noticeTrebleChanged          (queryTreble());
+    noticeBassChanged            (queryBass());
+    noticeBalanceChanged         (queryBalance());
+    noticeSignalQualityChanged   (querySignalQuality());
+    noticeSignalQualityChanged   (queryHasGoodQuality());
+    noticeSignalMinQualityChanged(querySignalMinQuality());
+    noticeStereoChanged          (queryIsStereo());
+    noticeMuted                  (queryIsMuted());
 }
 
 
@@ -214,21 +214,21 @@ IF_IMPL_QUERY   (  float ISeekRadioClient::queryProgress(),
                    1.0                                            )
 
 
-void ISeekRadioClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void ISeekRadioClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-	if (queryIsSeekRunning()) {
-		noticeSeekStarted(queryIsSeekUpRunning());
-	} else {
-		noticeSeekStopped();
-	}
-	noticeProgress(queryProgress());
+    if (queryIsSeekRunning()) {
+        noticeSeekStarted(queryIsSeekUpRunning());
+    } else {
+        noticeSeekStopped();
+    }
+    noticeProgress(queryProgress());
 }
 
 
-void ISeekRadioClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
+void ISeekRadioClient::noticeDisconnectedI   (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeSeekStopped();
-	noticeProgress(queryProgress());
+    noticeSeekStopped();
+    noticeProgress(queryProgress());
 }
 
 
@@ -273,21 +273,21 @@ IF_IMPL_QUERY   (  float IFrequencyRadioClient::queryScanStep(),
                    getScanStep(),
                    0.05                                           )
 
-void IFrequencyRadioClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void IFrequencyRadioClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeFrequencyChanged(queryFrequency(), NULL);
-	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
-	noticeDeviceMinMaxFrequencyChanged(queryMinDeviceFrequency(), queryMaxDeviceFrequency());
-	noticeScanStepChanged(queryScanStep());
+    noticeFrequencyChanged(queryFrequency(), NULL);
+    noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
+    noticeDeviceMinMaxFrequencyChanged(queryMinDeviceFrequency(), queryMaxDeviceFrequency());
+    noticeScanStepChanged(queryScanStep());
 }
 
 
-void IFrequencyRadioClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
+void IFrequencyRadioClient::noticeDisconnectedI   (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeFrequencyChanged(queryFrequency(), NULL);
-	noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
-	noticeDeviceMinMaxFrequencyChanged(queryMinDeviceFrequency(), queryMaxDeviceFrequency());
-	noticeScanStepChanged(queryScanStep());
+    noticeFrequencyChanged(queryFrequency(), NULL);
+    noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
+    noticeDeviceMinMaxFrequencyChanged(queryMinDeviceFrequency(), queryMaxDeviceFrequency());
+    noticeScanStepChanged(queryScanStep());
 }
 
 
@@ -309,15 +309,15 @@ IF_IMPL_QUERY   (  const KURL &IInternetRadioClient::queryURL(),
                    getURL(),
                    emptyURL                                       )
 
-void IInternetRadioClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void IInternetRadioClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeURLChanged(queryURL());
+    noticeURLChanged(queryURL());
 }
 
 
-void IInternetRadioClient::noticeDisconnected (cmplInterface *, bool /*pointer_valid*/)
+void IInternetRadioClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeURLChanged(queryURL());
+    noticeURLChanged(queryURL());
 }
 
 

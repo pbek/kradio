@@ -26,16 +26,17 @@ class StationListXmlHandler : public QXmlDefaultHandler
 {
 protected:
     QStringList           m_status;
+    const IErrorLogClient&m_logger;
 
     RawStationList        m_stations;
     StationListMetaData   m_metaData;
-    
-    RadioStation	     *m_newStation;
+
+    RadioStation         *m_newStation;
 
     bool                  m_compatMode;
 
 public :
-    StationListXmlHandler ();
+    StationListXmlHandler (const IErrorLogClient &logger);
     virtual ~StationListXmlHandler ();
     bool startDocument ();
     bool startElement (const QString &ns, const QString &localname,
@@ -49,10 +50,10 @@ public :
 
 
     bool  wasCompatMode() const { return m_compatMode; }
-    
+
 protected:
 
-	void clearNewStation();
+    void clearNewStation();
 };
 
 

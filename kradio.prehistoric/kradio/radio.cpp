@@ -25,6 +25,8 @@
 #include <kaboutdata.h>
 #include "aboutwidget.h"
 
+#include "radiodevice_interfaces.h"
+
 /////////////////////////////////////////////////////////////////////////////
 
 Radio::Radio(const QString &name)
@@ -41,27 +43,29 @@ Radio::~Radio()
 }
 
 
-bool Radio::connect    (Interface *i)
+bool Radio::connectI    (Interface *i)
 {
-	bool a = IRadio::connect(i);
-	bool b = IRadioDeviceClient::connect(i);
-	bool c = IRadioDevicePool::connect(i);
+    bool a = IRadio::connectI(i);
+    bool b = IRadioDeviceClient::connectI(i);
+    bool c = IRadioDevicePool::connectI(i);
+    bool d = PluginBase::connectI(i);
 
-	// no "return IA::connect() | return IB::connnect to
-	// prevent "early termination" optimization in boolean expressions
-	return a || b || c;
+    // no "return IA::connectI() | return IB::connnectI to
+    // prevent "early termination" optimization in boolean expressions
+    return a || b || c || d;
 }
 
 
-bool Radio::disconnect (Interface *i)
+bool Radio::disconnectI (Interface *i)
 {
-	bool a = IRadio::disconnect(i);
-	bool b = IRadioDeviceClient::disconnect(i);
-	bool c = IRadioDevicePool::disconnect(i);
+    bool a = IRadio::disconnectI(i);
+    bool b = IRadioDeviceClient::disconnectI(i);
+    bool c = IRadioDevicePool::disconnectI(i);
+    bool d = PluginBase::disconnectI(i);
 
-	// no "return IA::connect() | return IB::connnect to
-	// prevent "early termination" optimization in boolean expressions
-	return a || b || c;
+    // no "return IA::disconnectI() | return IB::disconnnectI to
+    // prevent "early termination" optimization in boolean expressions
+    return a || b || c || d;
 }
 
 
@@ -71,7 +75,7 @@ void Radio::saveState (KConfig *config) const
 
     config->writeEntry("presetfile", m_presetFile);
 
-    m_stationList.writeXML(m_presetFile);
+    m_stationList.writeXML(m_presetFile, *this);
 }
 
 
@@ -82,30 +86,31 @@ void Radio::restoreState (KConfig *config)
     m_presetFile = config->readEntry("presetfile",
                                      locateLocal("data", "kradio/stations.krp"));
 
-    m_stationList.readXML(KURL(m_presetFile));
+    m_stationList.readXML(KURL(m_presetFile), *this);
 
     notifyStationsChanged(m_stationList);
+    notifyPresetFileChanged(m_presetFile);
 }
 
 
 
 ConfigPageInfo Radio::createConfigurationPage()
 {
-	RadioConfiguration *conf = new RadioConfiguration (NULL);
-	connect (conf);
-	return ConfigPageInfo(
-		conf,
-		i18n("Radio Stations"),
-		i18n("Setup Radio Stations"),
-		"kradio"
-	);
+    RadioConfiguration *conf = new RadioConfiguration (NULL, *this);
+    connectI (conf);
+    return ConfigPageInfo(
+        conf,
+        i18n("Radio Stations"),
+        i18n("Setup Radio Stations"),
+        "kradio"
+    );
 }
 
 
 AboutPageInfo Radio::createAboutPage()
 {
     KAboutData aboutData("kradio",
-						 NULL,
+                         NULL,
                          NULL,
                          I18N_NOOP("Radio Device Multiplexer and Station Management for KRadio"),
                          KAboutData::License_GPL,
@@ -116,12 +121,12 @@ AboutPageInfo Radio::createAboutPage()
     aboutData.addAuthor("Martin Witte",  "", "witte@kawo1.rwth-aachen.de");
     aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
 
-	return AboutPageInfo(
-	          new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-	          i18n("Device and Station Management"),
-	          i18n("Radio Device Multiplexer and Station Management"),
-	          "kradio"
-		   );
+    return AboutPageInfo(
+              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
+              i18n("Device and Station Management"),
+              i18n("Radio Device Multiplexer and Station Management"),
+              "kradio"
+           );
 }
 
 
@@ -139,59 +144,65 @@ AboutPageInfo Radio::createAboutPage()
 
 bool Radio::activateStation (const RadioStation &rs) {
 
-	if (sendActivateStation(rs)) {    // first try activeDevice
+    if (sendActivateStation(rs)) {    // first try activeDevice
 
-		return true;
+        return true;
 
-	} else {                          // hmm... active device did not want it. Try others...
+    } else {                          // hmm... active device did not want it. Try others...
 
-		int n = 0;
+        int n = 0;
 
-		for (IRadioDeviceClient::IFIterator it(IRadioDeviceClient::connections); it.current(); ++it) {
+        for (IRadioDeviceClient::IFIterator it(IRadioDeviceClient::iConnections); it.current(); ++it) {
 
-			if (it.current()->activateStation(rs)) {
+            if (it.current()->activateStation(rs)) {
 
-				setActiveDevice(it.current());  // select new device
-				++n;
+                setActiveDevice(it.current());  // select new device
+                ++n;
 
-			} else {
+            } else {
 
-				it.current()->powerOff();
+                it.current()->powerOff();
 
-			}
-		}
+            }
+        }
 
-		return n > 0;
-	}
+        return n > 0;
+    }
 }
 
 
 bool Radio::activateStation(int index)
 {
-	if (index < 0 || index >= m_stationList.count())
-		return false;
+    if (index < 0 || index >= m_stationList.count())
+        return false;
 
-	return activateStation(m_stationList.at(index));
+    return activateStation(m_stationList.at(index));
 }
 
 
 bool Radio::setStations(const StationList &sl)
 {
-	m_stationList = sl;
+    m_stationList = sl;
     notifyStationsChanged(m_stationList);
-	return true;
+    return true;
 }
 
+bool Radio::setPresetFile(const QString &presetFile)
+{
+    m_presetFile = presetFile;
+    notifyPresetFileChanged(m_presetFile);
+    return true;
+}
 
 int Radio::getStationIdx(const RadioStation &rs) const
 {
-	RawStationList &sl = const_cast<RawStationList&>(m_stationList.all());
-	return sl.find(&rs);
+    RawStationList &sl = const_cast<RawStationList&>(m_stationList.all());
+    return sl.find(&rs);
 }
 
 int Radio::getCurrentStationIdx() const
 {
-	return getStationIdx(getCurrentStation());
+    return getStationIdx(getCurrentStation());
 }
 
 
@@ -202,56 +213,56 @@ int Radio::getCurrentStationIdx() const
 
 bool Radio::setActiveDevice(IRadioDevice *rd, bool keepPower)
 {
-	// do nothing if old == new
-	if (m_activeDevice == rd)
-		return true;
+    // do nothing if old == new
+    if (m_activeDevice == rd)
+        return true;
 
-	// check if new station is in "connections"
-	// special case: rd == NULL: power off active device, new active device = NULL
+    // check if new station is in "connections"
+    // special case: rd == NULL: power off active device, new active device = NULL
 
-	if (!rd || IRadioDeviceClient::connections.containsRef(rd)) {     // new device is ok
+    if (!rd || IRadioDeviceClient::iConnections.containsRef(rd)) {     // new device is ok
 
-		// save old power state and power off old device
-		bool oldPowerOn = false;
-		if (m_activeDevice) {
-			oldPowerOn = m_activeDevice->isPowerOn();
-			m_activeDevice->powerOff();
-		}
+        // save old power state and power off old device
+        bool oldPowerOn = false;
+        if (m_activeDevice) {
+            oldPowerOn = m_activeDevice->isPowerOn();
+            m_activeDevice->powerOff();
+        }
 
-		// setup new active device && send notifications
-		m_activeDevice = rd;
+        // setup new active device && send notifications
+        m_activeDevice = rd;
 
-		// send notifications
-	    notifyActiveDeviceChanged(m_activeDevice);
-	    const RadioStation &rs = queryCurrentStation();
-	    notifyStationChanged(rs, getStationIdx(rs));
+        // send notifications
+        notifyActiveDeviceChanged(m_activeDevice);
+        const RadioStation &rs = queryCurrentStation();
+        notifyStationChanged(rs, getStationIdx(rs));
 
         if (keepPower)
-			oldPowerOn ? sendPowerOn() : sendPowerOff();
+            oldPowerOn ? sendPowerOn() : sendPowerOff();
 
-		return true;
+        return true;
 
-	} else {
-		return false;
-	}
+    } else {
+        return false;
+    }
 }
 
 
 IRadioDevice *Radio::getActiveDevice() const
 {
-	return m_activeDevice;
+    return m_activeDevice;
 }
 
 
 const QPtrList<IRadioDevice> &Radio::getDevices() const
 {
-	return IRadioDeviceClient::connections;
+    return IRadioDeviceClient::iConnections;
 }
 
 
 const QString &Radio::getDeviceDescription() const
 {
-	return queryDescription();
+    return queryDescription();
 }
 
 
@@ -259,145 +270,145 @@ const QString &Radio::getDeviceDescription() const
 /* IRadioDeviceClient Interface Methods
 
    Many things are overwritten, particularly all sending methods
-   
+
 */
 
 int Radio::sendPowerOn() const
 {
-	return m_activeDevice ? m_activeDevice->powerOn() : 0;
+    return m_activeDevice ? m_activeDevice->powerOn() : 0;
 }
 
 
 int Radio::sendPowerOff() const
 {
-	return m_activeDevice ? m_activeDevice->powerOff() : 0;
+    return m_activeDevice ? m_activeDevice->powerOff() : 0;
 }
 
 int Radio::sendActivateStation (const RadioStation &rs) const
 {
-	return m_activeDevice ? m_activeDevice->activateStation(rs) : 0;
+    return m_activeDevice ? m_activeDevice->activateStation(rs) : 0;
 }
 
 
-	
+
 bool Radio::queryIsPowerOn() const
 {
-	return m_activeDevice ? m_activeDevice->isPowerOn() : false;
+    return m_activeDevice ? m_activeDevice->isPowerOn() : false;
 }
 
 
 bool Radio::queryIsPowerOff() const
 {
-	return m_activeDevice ? m_activeDevice->isPowerOff() : true;
+    return m_activeDevice ? m_activeDevice->isPowerOff() : true;
 }
 
 
 const RadioStation & Radio::queryCurrentStation() const
 {
-	if (m_activeDevice) {
-		RadioStation &rs = const_cast<RadioStation&>(m_activeDevice->getCurrentStation());
-		int idx = getStationIdx(rs);
+    if (m_activeDevice) {
+        RadioStation &rs = const_cast<RadioStation&>(m_activeDevice->getCurrentStation());
+        int idx = getStationIdx(rs);
 
-		if (idx >= 0) {
-			rs.copyDescriptionFrom(m_stationList.at(idx));
-		} else {
-			rs.copyDescriptionFrom(undefinedRadioStation);
-		}
+        if (idx >= 0) {
+            rs.copyDescriptionFrom(m_stationList.at(idx));
+        } else {
+            rs.copyDescriptionFrom(undefinedRadioStation);
+        }
 
-		return rs;
-	} else {
-		return undefinedRadioStation;
-	}
+        return rs;
+    } else {
+        return undefinedRadioStation;
+    }
 }
 
 
 static QString qstrUnknown(I18N_NOOP("unknown"));
 const QString &Radio::queryDescription() const
 {
-	qstrUnknown = i18n(qstrUnknown);
-	return m_activeDevice ? m_activeDevice->getDescription() : qstrUnknown;
+    qstrUnknown = i18n(qstrUnknown);
+    return m_activeDevice ? m_activeDevice->getDescription() : qstrUnknown;
 }
 
 
 
 bool Radio::noticePowerChanged (bool on, const IRadioDevice *sender)
 {
-	if (on) {
-		setActiveDevice(const_cast<IRadioDevice*>(sender), false);
-	                    // false: do not set power state on new device
-	                    // constcast valid because power-state of sender is not changed
-		notifyPowerChanged(true);
-	    return true;
-	    
-	} else {
-		if (sender == m_activeDevice) {
-			notifyPowerChanged(false);
-			return true;
-		}
-		return false;
-	}
+    if (on) {
+        setActiveDevice(const_cast<IRadioDevice*>(sender), false);
+                        // false: do not set power state on new device
+                        // constcast valid because power-state of sender is not changed
+        notifyPowerChanged(true);
+        return true;
+
+    } else {
+        if (sender == m_activeDevice) {
+            notifyPowerChanged(false);
+            return true;
+        }
+        return false;
+    }
 }
 
 
 bool Radio::noticeStationChanged (const RadioStation &_rs, const IRadioDevice *sender)
 {
-	RadioStation &rs = const_cast<RadioStation&>(_rs);
-	int idx = getStationIdx(rs);
+    RadioStation &rs = const_cast<RadioStation&>(_rs);
+    int idx = getStationIdx(rs);
 
-	RadioStation &known = (idx >= 0) ? (RadioStation&)m_stationList.at(idx) :
-	                                   (RadioStation&)undefinedRadioStation;
-	rs.copyDescriptionFrom(known);
+    RadioStation &known = (idx >= 0) ? (RadioStation&)m_stationList.at(idx) :
+                                       (RadioStation&)undefinedRadioStation;
+    rs.copyDescriptionFrom(known);
 
-	if (sender == m_activeDevice)
-		notifyStationChanged(rs, idx);
-	return true;
+    if (sender == m_activeDevice)
+        notifyStationChanged(rs, idx);
+    return true;
 }
 
 
 bool Radio::noticeDescriptionChanged (const QString &s, const IRadioDevice *sender)
 {
-	if (sender == m_activeDevice)
-		notifyDeviceDescriptionChanged(s);
-	return true;
+    if (sender == m_activeDevice)
+        notifyDeviceDescriptionChanged(s);
+    return true;
 }
 
 
-void Radio::noticeConnected(IRadioDeviceClient::cmplInterface *dev, bool pointer_valid)
+void Radio::noticeConnectedI(IRadioDeviceClient::cmplInterface *dev, bool pointer_valid)
 {
-	IRadioDeviceClient::noticeConnected(dev, pointer_valid);
-	
-	if (! m_activeDevice && pointer_valid)
-		setActiveDevice (dev, false);
+    IRadioDeviceClient::noticeConnectedI(dev, pointer_valid);
 
-	notifyDevicesChanged(IRadioDeviceClient::connections);
+    if (! m_activeDevice && pointer_valid)
+        setActiveDevice (dev, false);
+
+    notifyDevicesChanged(IRadioDeviceClient::iConnections);
 }
 
 
-void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd, bool pointer_valid)
+void Radio::noticeDisconnectI(IRadioDeviceClient::cmplInterface *rd, bool pointer_valid)
 {
-	IRadioDeviceClient::noticeDisconnected(rd, pointer_valid);
-	
-	if (rd == m_activeDevice) {
+    IRadioDeviceClient::noticeDisconnectedI(rd, pointer_valid);
 
-	    // search a new active device
-		if (IRadioDeviceClient::connections.findRef(rd) >= 0) {
+    if (rd == m_activeDevice) {
 
-			IRadioDevice *new_rd = NULL;
+        // search a new active device
+        if (IRadioDeviceClient::iConnections.findRef(rd) >= 0) {
 
-			new_rd =  IRadioDeviceClient::connections.next();    // choose next device as active device if next exists
-			if (!new_rd) {
-				IRadioDeviceClient::connections.findRef(rd);				
-				new_rd = IRadioDeviceClient::connections.prev(); // otherwise try prev then, may be NULL (no connections)
-			}
-			setActiveDevice(new_rd);
-			
+            IRadioDevice *new_rd = NULL;
+
+            new_rd =  IRadioDeviceClient::iConnections.next();    // choose next device as active device if next exists
+            if (!new_rd) {
+                IRadioDeviceClient::iConnections.findRef(rd);
+                new_rd = IRadioDeviceClient::iConnections.prev(); // otherwise try prev then, may be NULL (no connections)
+            }
+            setActiveDevice(new_rd);
+
         } else {
-			// strange error occurred, m_activeDevice not in connections... set to first.
-			
-			setActiveDevice(IRadioDeviceClient::connections.first());
+            // strange error occurred, m_activeDevice not in connections... set to first.
+
+            setActiveDevice(IRadioDeviceClient::iConnections.first());
         }
-	}
-	notifyDevicesChanged(IRadioDeviceClient::connections);
+    }
+    notifyDevicesChanged(IRadioDeviceClient::iConnections);
 }
 
 
@@ -405,21 +416,26 @@ void Radio::noticeDisconnect(IRadioDeviceClient::cmplInterface *rd, bool pointer
 
 bool Radio::noticeAlarm(const Alarm &a)
 {
-	if (a.alarmType() == Alarm::StartPlaying ||
-	    a.alarmType() == Alarm::StartRecording) {
-		const RawStationList &sl = getStations().all();
-		const RadioStation &rs = sl.stationWithID(a.stationID());
-		activateStation(rs);
-		powerOn();
-	} else {
-		powerOff();
-	}
-	return true;
+    if (a.alarmType() == Alarm::StartPlaying ||
+        a.alarmType() == Alarm::StartRecording) {
+        const RawStationList &sl = getStations().all();
+        const RadioStation &rs = sl.stationWithID(a.stationID());
+        activateStation(rs);
+        powerOn();
+
+        // FIXME: derive Radio from IRadioSoundClient and remove dyncast
+        IRadioSound *snd = dynamic_cast<IRadioSound*>(getActiveDevice());
+        if (snd)
+            snd->setVolume(a.volumePreset());
+    } else {
+        powerOff();
+    }
+    return true;
 }
 
 
 bool Radio::noticeCountdownZero()
 {
-	powerOff();
-	return true;
+    powerOff();
+    return true;
 }

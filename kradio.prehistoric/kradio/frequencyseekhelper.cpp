@@ -32,18 +32,18 @@ FrequencySeekHelper::~FrequencySeekHelper()
 }
 
 
-bool FrequencySeekHelper::connect   (Interface *i)
+bool FrequencySeekHelper::connectI   (Interface *i)
 {
-	bool a = SeekHelper::connect(i);
-	bool b = IFrequencyRadioClient::connect(i);
+	bool a = SeekHelper::connectI(i);
+	bool b = IFrequencyRadioClient::connectI(i);
 	return a || b;
 }
 
 
-bool FrequencySeekHelper::disconnect(Interface *i)
+bool FrequencySeekHelper::disconnectI(Interface *i)
 {
-	bool a = SeekHelper::disconnect(i);
-	bool b = IFrequencyRadioClient::disconnect(i);
+	bool a = SeekHelper::disconnectI(i);
+	bool b = IFrequencyRadioClient::disconnectI(i);
 	return a || b;
 }
 

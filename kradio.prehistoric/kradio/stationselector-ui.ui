@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>StationSelectorUI</class>
 <widget class="QDialog">
     <property name="name">
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>600</width>
-            <height>480</height>
+            <width>272</width>
+            <height>112</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,6 +19,9 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
+	<property name="margin">
+	    <number>0</number>
+	</property>
         <widget class="QLabel" row="0" column="2">
             <property name="name">
                 <cstring>labelSelected</cstring>
@@ -135,6 +138,8 @@
         </spacer>
     </grid>
 </widget>
+<customwidgets>
+</customwidgets>
 <includes>
     <include location="global" impldecl="in implementation">kiconloader.h</include>
 </includes>

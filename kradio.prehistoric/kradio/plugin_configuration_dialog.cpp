@@ -62,14 +62,14 @@ AboutPageInfo  PluginConfigurationDialog::createAboutPage()
 
 void PluginConfigurationDialog::show()
 {
-	WidgetPluginBase::show();
+	WidgetPluginBase::pShow();
 	KDialogBase::show();
 }
 
 
 void PluginConfigurationDialog::hide()
 {
-	WidgetPluginBase::hide();
+	WidgetPluginBase::pHide();
 	KDialogBase::hide();
 }
 
@@ -79,13 +79,13 @@ void PluginConfigurationDialog::hide()
 void PluginConfigurationDialog::showEvent(QShowEvent *e)
 {
 	KDialogBase::showEvent(e);
-	WidgetPluginBase::showEvent(e);
+	WidgetPluginBase::pShowEvent(e);
 }
 
 
 void PluginConfigurationDialog::hideEvent(QHideEvent *e)
 {
 	KDialogBase::hideEvent(e);
-	WidgetPluginBase::hideEvent(e);
+	WidgetPluginBase::pHideEvent(e);
 }
 

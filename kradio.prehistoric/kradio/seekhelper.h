@@ -35,8 +35,8 @@ public:
     SeekHelper(ISeekRadio &parent);
     virtual ~SeekHelper();
 
-	virtual bool     connect   (Interface *i);
-	virtual bool     disconnect(Interface *i);
+	virtual bool     connectI   (Interface *i);
+	virtual bool     disconnectI(Interface *i);
 
 	virtual void start(direction_t dir);
 	virtual void step();

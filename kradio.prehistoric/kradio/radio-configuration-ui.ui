@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>580</width>
-            <height>316</height>
+            <width>490</width>
+            <height>344</height>
         </rect>
     </property>
     <property name="caption">
@@ -120,7 +120,7 @@
                                                         <property name="sizeHint">
                                                             <size>
                                                                 <width>20</width>
-                                                                <height>162</height>
+                                                                <height>10</height>
                                                             </size>
                                                         </property>
                                                     </spacer>
@@ -408,7 +408,7 @@
                                 <property name="sizeHint">
                                     <size>
                                         <width>20</width>
-                                        <height>36</height>
+                                        <height>10</height>
                                     </size>
                                 </property>
                             </spacer>
@@ -463,6 +463,29 @@
                             </widget>
                         </vbox>
                     </widget>
+                    <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout25</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>editLabelPresetFile</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Personal Preset File</string>
+                                </property>
+                            </widget>
+                            <widget class="KURLRequester">
+                                <property name="name">
+                                    <cstring>editPresetFile</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
                 </grid>
             </widget>
             <widget class="QWidget">
@@ -492,7 +515,7 @@
                         <property name="sizeHint">
                             <size>
                                 <width>21</width>
-                                <height>66</height>
+                                <height>20</height>
                             </size>
                         </property>
                     </spacer>
@@ -634,7 +657,7 @@
                         <property name="sizeHint">
                             <size>
                                 <width>20</width>
-                                <height>27</height>
+                                <height>20</height>
                             </size>
                         </property>
                     </spacer>
@@ -645,44 +668,16 @@
                         <property name="text">
                             <string>&lt;p align="center"&gt;Click on the link below to contribute this station preset file to the kradio project.&lt;/p&gt;</string>
                         </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignCenter</set>
+                        </property>
                     </widget>
-                    <spacer row="3" column="0">
-                        <property name="name">
-                            <cstring>spacer8</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>262</width>
-                                <height>20</height>
-                            </size>
-                        </property>
-                    </spacer>
-                    <spacer row="3" column="2">
-                        <property name="name">
-                            <cstring>spacer9</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>262</width>
-                                <height>21</height>
-                            </size>
-                        </property>
-                    </spacer>
                     <widget class="KURLLabel" row="4" column="1">
                         <property name="name">
                             <cstring>mailLabel</cstring>
+                        </property>
+                        <property name="alignment">
+                            <set>AlignCenter</set>
                         </property>
                     </widget>
                 </grid>
@@ -690,6 +685,8 @@
         </widget>
     </grid>
 </widget>
+<customwidgets>
+</customwidgets>
 <tabstops>
     <tabstop>tabWidget3</tabstop>
     <tabstop>listStations</tabstop>
@@ -717,4 +714,9 @@
 </includes>
 <pixmapfunction>SmallIconSet</pixmapfunction>
 <layoutdefaults spacing="6" margin="0"/>
+<includehints>
+    <includehint>kurlrequester.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+</includehints>
 </UI>

@@ -40,8 +40,8 @@ public :
 	V4LRadioConfiguration (QWidget *parent);
 	~V4LRadioConfiguration ();
 
-	bool connect (Interface *i);
-	bool disconnect (Interface *i);
+	bool connectI (Interface *i);
+	bool disconnectI (Interface *i);
 
 // IV4LCfgClient
 

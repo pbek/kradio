@@ -12,6 +12,9 @@
 /**
    Modified 2002 by Klas Kalass (klas.kalass@gmx.de) for kradio
  */
+
+#include <kdebug.h>
+
 #include "utils.h"
 #include "buttonflowlayout.h"
 
@@ -125,8 +128,9 @@ void ButtonFlowLayout::setGeometry( const QRect &r )
 
 int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 {
-/*	fprintf (stderr, "buttonflowlayout::doLayout (%i,%i-%ix%i, %i)\n",
-		     r.x(), r.y(), r.width(), r.height(), testonly);
+/*	kdDebug() << "buttonflowlayout::doLayout ("
+	          << r.x()     << "," << r.y()      << ","
+	          << r.width() << "," << r.height() << ", " << testonly << ")\n";
 */
     float x = r.x();
     float y = r.y();
@@ -203,7 +207,7 @@ int ButtonFlowLayout::doLayout( const QRect &r, bool testonly )
 
     int ret = (int)rint(y + h + deltaH) - r.y();
 
-//    fprintf (stderr, "ButtonFlowLayout::doLayout() = %i\n", ret);
+//    kdDebug() << "ButtonFlowLayout::doLayout() = " << ret << endl;
     return ret;
 }
 

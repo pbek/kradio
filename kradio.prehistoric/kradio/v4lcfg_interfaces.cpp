@@ -17,7 +17,7 @@
 
 #include <linux/soundcard.h>
 #include "v4lcfg_interfaces.h"
- 
+
 ///////////////////////////////////////////////////////////////////////
 
 V4LCaps::V4LCaps()
@@ -40,8 +40,28 @@ V4LCaps::V4LCaps()
 }
 
 
+V4LCaps::V4LCaps(const V4LCaps &c)
+  : version(c.version),
+    description(c.description),
+    hasMute(c.hasMute),
+    hasVolume(c.hasVolume),
+    minVolume(c.minVolume),
+    maxVolume(c.maxVolume),
+    hasTreble(c.hasTreble),
+    minTreble(c.minTreble),
+    maxTreble(c.maxTreble),
+    hasBass(c.hasBass),
+    minBass(c.minBass),
+    maxBass(c.maxBass),
+    hasBalance(c.hasBalance),
+    minBalance(c.minBalance),
+    maxBalance(c.maxBalance)
+{
+}
+
+
 // IV4LCfg
- 
+
 IF_IMPL_SENDER  (   IV4LCfg::notifyRadioDeviceChanged(const QString &s),
                     noticeRadioDeviceChanged(s)
                 )
@@ -64,7 +84,7 @@ IF_IMPL_SENDER  (   IV4LCfgClient::sendMixerDevice (const QString &s, int ch),
                     setMixerDevice(s, ch)
                 )
 IF_IMPL_SENDER  (   IV4LCfgClient::sendDevices     (const QString &r, const QString &m, int ch),
-					setDevices(r, m, ch)
+                    setDevices(r, m, ch)
                 )
 IF_IMPL_SENDER  (   IV4LCfgClient::sendDeviceVolume(float v),
                     setDeviceVolume(v)
@@ -74,8 +94,8 @@ static QString defaultRDev("/dev/radio");
 static QString defaultMDev("/dev/mixer");
 
 IF_IMPL_QUERY   (   const QString &IV4LCfgClient::queryRadioDevice (),
-					getRadioDevice(),
-					defaultMDev
+                    getRadioDevice(),
+                    defaultMDev
                 )
 IF_IMPL_QUERY   (   const QString &IV4LCfgClient::queryMixerDevice (),
                     getMixerDevice(),
@@ -86,30 +106,29 @@ IF_IMPL_QUERY   (   int            IV4LCfgClient::queryMixerChannel(),
                     SOUND_MIXER_LINE
                 )
 IF_IMPL_QUERY   (   float IV4LCfgClient::queryDeviceVolume (),
-					getDeviceVolume(),
-					0.0
+                    getDeviceVolume(),
+                    0.0
                 )
-V4LCaps emptyCaps;
-IF_IMPL_QUERY   (   const V4LCaps &IV4LCfgClient::queryCapabilities(),
-					getCapabilities(),
-					emptyCaps
+IF_IMPL_QUERY   (   V4LCaps IV4LCfgClient::queryCapabilities(QString dev),
+                    getCapabilities(dev),
+                    V4LCaps()
                 )
 
-void IV4LCfgClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
+void IV4LCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeRadioDeviceChanged(queryRadioDevice());
-	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
-	noticeDeviceVolumeChanged(queryDeviceVolume());
-	noticeCapabilitiesChanged(queryCapabilities());
+    noticeRadioDeviceChanged(queryRadioDevice());
+    noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
+    noticeDeviceVolumeChanged(queryDeviceVolume());
+    noticeCapabilitiesChanged(queryCapabilities());
 }
 
 
-void IV4LCfgClient::noticeDisconnected (cmplInterface *, bool /*pointer_valid*/)
+void IV4LCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeRadioDeviceChanged(queryRadioDevice());
-	noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
-	noticeDeviceVolumeChanged(queryDeviceVolume());
-	noticeCapabilitiesChanged(queryCapabilities());
+    noticeRadioDeviceChanged(queryRadioDevice());
+    noticeMixerDeviceChanged(queryMixerDevice(), queryMixerChannel());
+    noticeDeviceVolumeChanged(queryDeviceVolume());
+    noticeCapabilitiesChanged(queryCapabilities());
 }
 
 
