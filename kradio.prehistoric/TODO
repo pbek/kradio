@@ -2,13 +2,12 @@ short-term:
 * better Icon for QuickBar Button
 * fix sticky behavior on "window-close/restore" (both kradio & quickbar)
 	(maybe make it configurable: if (kradio->trayClose())...; and if(quickbar->trayClose())...; )
-* make use of ~/.kde/share/apps/kradio/... concept
 
 // * use session management for saving of options (currently options are not saved on quit, because application->quit is called instead of window->close)
 // session management only works on kde-exit, not program-exit :(
 
 next release:
-* collect location information for cannel sets
+* collect location information for cannel sets  // emw, started
 
 future:
 * recording capabilities
@@ -17,6 +16,7 @@ future:
 * mediacontrol applet integration
 
 DONE:
+//* make use of ~/.kde/share/apps/kradio/... concept //emw
 //* some graphical configuration dialog(s) for  //emw
 //  - station quick select
 //  - alarm functions

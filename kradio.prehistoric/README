@@ -14,22 +14,18 @@ First checkout kradio from CVS and do in ./
   make
   make install
 
-------------------
-Configuration
-------------------
+-------------------
+Configuration files
+-------------------
 
-At the current state, most configuration options for are only
-accessible by your kradiorc file, usually found in
-~/.kde/share/config/kradiorc or /etc/kde2/kradiorc, etc.  An example
-configuration file can be found in ./kradio/kradiorc.example.
+gui, alarms, etc.:
+  <dot-kdedir>/share/config/kradiorc
 
-CVS-NOTE: 
+stations (xml-format):
+  <dot-kdedir>/share/apps/kradio/stations.krp
 
-At the moment, there is another configuration file that contains
-station and alarm configuration in an xml format. That file should be
-~/.kradiorc . An example can be found in
-./kradio/dot-kradiorc.example. Please note, that the configuration
-file format and/or concept may change in future.
+systemwide presets (xml-format):
+  <kdedir>/share/apps/kradio/presets/<country>/<city>-<media>.krp
 
 
 ------------------
@@ -41,3 +37,19 @@ automatically by ./configure. This library is used to translate the
 remote control key names to names used by kradio, and may additionally
 be used for state management (tv, etc).  An example for an apropriate
 .lircrc file can be found in ./kradio/dot-lircrc.example.
+
+Names used by kradio:
+
+   TV         powerOff, give tv program a chance
+   0..9       numerical station selection
+   CH+        frequency increment
+   CH-        frequency decrement
+   VOL+       volume increment
+   VOL-       volume decrement
+   CH-SEARCH  beachward station search
+   CH+SEARCH  forward statino search
+   POWER      power kradio on/off
+   RADIO      power kradio on
+   SLEEP      enable sleep countdown
+   NEXT       next station in list
+   PREV       prev station in list
