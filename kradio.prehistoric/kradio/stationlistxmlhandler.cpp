@@ -30,12 +30,6 @@ const char *StationListInfoMedia        = "media";
 const char *StationListInfoComments     = "comments";
 const char *StationListInfoChanged      = "changed";
 
-//const char *StationElement			= "station";
-const char *StationQuickSelectElement	= "quickselect";
-const char *StationDockingMenuElement   = "dockingmenu";
-
-
-
 StationListXmlHandler::StationListXmlHandler ()
 {
 	m_newStation = NULL;
@@ -99,10 +93,10 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
 	} else if (m_newStation && m_status.size() && m_status.back() == m_newStation->getClassName()) {
 
 		// check done later when characters arrive
-	
+
 	} else { // unknown
 		kdDebug() << "StationListXmlHandler::startElement: "
-		          << i18n("unknown element") << " "
+		          << i18n("unknown or unexpected element") << " "
 		          << (const char*)qname << endl;
 	}
 
@@ -112,19 +106,13 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
 
 
 bool StationListXmlHandler::endElement (const QString &/*ns*/, const QString &/*localname*/,
-	                                 const QString &qname)
+	                                    const QString &qname)
 {
 	if (m_status.size() && m_status.back() == qname) {
 	
-		if (m_newStation) {
-			if (qname == m_newStation->getClassName()) {
-				m_stations.append(m_newStation);
-				clearNewStation();
-			} else {
-				kdDebug() << "StationListXmlHandler::endElement: "
-				          << i18n("broken newStation pointer (internal error)") << endl;
-				clearNewStation();
-			}
+		if (m_newStation && qname == m_newStation->getClassName()) {
+			m_stations.append(m_newStation);
+			clearNewStation();
 		}
 
 		m_status.pop_back();
@@ -183,10 +171,16 @@ bool StationListXmlHandler::characters (const QString &ch)
 
     // stations
 		
-	} else if (m_newStation) {
+	} else if (m_newStation && m_newStation->getClassName() != stat) {
 
-		if (!m_newStation->setProperty(stat, str))
-			return false;
+		if (!m_newStation->setProperty(stat, str)) {
+			kdDebug() << "StationListXmlHandler::characters: "
+			          << i18n("unknown property")
+			          << " " << stat
+			          << " " << i18n("for class") << " "
+			          << m_newStation->getClassName()
+			          << endl;
+		}
 
 	} else if (str.length()) {
 		kdDebug() << "StationListXmlHandler::characters: "

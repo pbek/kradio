@@ -19,6 +19,7 @@
 #include "pluginmanager.h"
 
 #include <kdialogbase.h>
+#include <kdebug.h>
 
 WidgetDestroyNotifier::WidgetDestroyNotifier(PluginBase *parent)
 	: m_parent(parent)

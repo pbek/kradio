@@ -183,6 +183,11 @@ bool LircSupport::disconnect (Interface *i)
 	bool a = IRadioClient::disconnect (i);
 	bool b = ITimeControlClient::disconnect (i);
 	bool c = IRadioDevicePoolClient::disconnect (i);
+
+    if (a) kdDebug() << "LircSupport: IRadioClient disconnected\n";
+    if (b) kdDebug() << "LircSupport: ITimeControlClient disconnected\n";
+    if (c) kdDebug() << "LircSupport: IRadioDevicePoolClient disconnected\n";
+
 	return a || b || c;
 }
 

@@ -121,11 +121,12 @@ RECEIVERS:
 	virtual bool noticePowerChanged   (bool on, const IRadioDevice *sender = NULL);
 	virtual bool noticeStationChanged (const RadioStation &rs, const IRadioDevice *sender = NULL);
 
-	virtual void noticeConnect(IRadioDevice *rd);
+	virtual void noticeConnected(IRadioDevice *rd);
 	virtual void noticeDisconnect(IRadioDevice *rd);
 	
 protected:
 
+	QString        m_presetFile;
     StationList    m_stationList;
     IRadioDevice  *m_activeDevice;
 };

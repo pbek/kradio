@@ -42,12 +42,22 @@ void PluginManager::insertPlugin(PluginBase *p)
 
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
 			if (it.current() != p) {
+				bool r = p->connect(it.current());
 				kdDebug() << "PluginManager::insertPlugin: "
 				          << p->name() << " <-> " << it.current()->name()
 				          << ": "
-				          << (p->connect(it.current()) ? "ok" : "failed") << endl;
+				          << (r ? "ok" : "failed") << endl;
 			}
 		}
+	}
+}
+
+
+void PluginManager::deletePlugin(PluginBase *p)
+{
+	if (p && m_plugins.contains(p)) {
+		removePlugin(p);
+		delete p;
 	}
 }
 
@@ -56,8 +66,13 @@ void PluginManager::removePlugin(PluginBase *p)
 {
 	if (p && m_plugins.contains(p)) {
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
-			if (it.current() != p)
-				p->disconnect(it.current());
+			if (it.current() != p) {
+				bool r = p->disconnect(it.current());
+				kdDebug() << "PluginManager::removePlugin: "
+				          << p->name() << " <-> " << it.current()->name()
+				          << ": "
+				          << (r ? "ok" : "failed") << endl;
+			}
 		}
 		
 		m_plugins.remove(p);

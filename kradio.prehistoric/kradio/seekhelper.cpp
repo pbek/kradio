@@ -47,6 +47,10 @@ bool SeekHelper::disconnect(Interface *i)
 {
 	bool a = IRadioDeviceClient::disconnect(i);
 	bool b = IRadioSoundClient::disconnect(i);
+
+    if (a) kdDebug() << "SeekHelper: IRadioDeviceClient disconnected\n";
+    if (b) kdDebug() << "SeekHelper: IRadioSoundClient disconnected\n";
+
 	return a || b;
 }
 

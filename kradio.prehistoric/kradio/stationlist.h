@@ -29,7 +29,7 @@
 
 // forward declarations
 class RadioStation;
-
+class KURL;
 
 /*
 
@@ -134,7 +134,10 @@ public:
     // xml in/out
 
     bool    readXML (const QString &dat);
+    bool    readXML (const KURL &url);
+    
     QString writeXML () const;
+    bool    writeXML (const KURL &url) const;
 
 protected:
     RawStationList        m_all;

@@ -19,6 +19,7 @@
 #define KRADIO_INTERFACES_H
 
 #include <qptrlist.h>
+#include <kdebug.h>
 
 /*
 /////////////////////////////////////////////////////////////////////////////
@@ -316,6 +317,7 @@ public :
 protected:
 
 	virtual void noticeConnect      (cmplIF *) {}
+	virtual void noticeConnected    (cmplIF *) {}
 	virtual void noticeDisconnect   (cmplIF *) {}
 	virtual void noticeDisconnected (cmplIF *) {}
 
@@ -343,7 +345,7 @@ protected :
     using namespace std;
     #define IF_QUERY_DEBUG \
         if (connections.count() > 1) { \
-            cerr << "class " << typeid(this).name() << ": using IF_QUERY with #connections > 1"; \
+            kdDebug() << "class " << typeid(this).name() << ": using IF_QUERY with #connections > 1\n"; \
         }
 #else
     #define IF_QUERY_DEBUG
@@ -437,11 +439,14 @@ bool InterfaceBase<thisIF, cmplIF>::connect (Interface *_i)
 	cmplIF *i  = dynamic_cast<cmplIF*>(_i);
 	if (i && isConnectionFree() && i->isConnectionFree()) {
 
+		noticeConnect(i);
+		i->noticeConnect(me);
+		
 		connections.append(i);
 		i->connections.append(me);
 
-		noticeConnect(i);
-		i->noticeConnect(me);
+		noticeConnected(i);
+		i->noticeConnected(me);
 		
 		return true;
 	}

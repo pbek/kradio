@@ -49,13 +49,13 @@ const UndefinedRadioStation undefinedRadioStation (registerStationClass);
 
 
 RadioStation::RadioStation(RegisterStationClass, const QString &classname)
-	: m_name(""),
+	: m_stationID(QString::null),  // mark this station as a prototype station
+	                               // so that we can create later a real stationID
+	  m_name(""),
       m_shortName(""),
       m_initialVolume(-1),
       m_iconName("")
 {
-	m_stationID = createStationID();
-
 	if (! stationClassRegistry)
 		stationClassRegistry = new QDict<RadioStation>;
 	stationClassRegistry->insert(classname, this);
@@ -87,6 +87,9 @@ RadioStation::RadioStation(const RadioStation &s)
       m_initialVolume(s.m_initialVolume),
       m_iconName(s.m_iconName)
 {
+	// create a real stationID if "s" is a prototype
+	if (m_stationID.isNull())
+		m_stationID = createStationID();
 }
 
 
@@ -108,6 +111,8 @@ QString RadioStation::createStationID() const
 	close(fd);
 	for (int i = 0; i < buffersize; ++i)
 		srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
+
+    kdDebug() << i18n("generated StationID: ") << stime << srandom << endl;
 	
 	return stime + srandom;
 }

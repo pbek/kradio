@@ -35,7 +35,13 @@ public :
 
 	// managing plugins
 
+	// after insert, pluginManager is responsible for deletion
 	virtual void         insertPlugin(PluginBase *);
+
+	// remove and delete plugin
+	virtual void         deletePlugin(PluginBase *);
+	
+	// remove plugin, afterwards pluginManager is no longer responsible for deletion
 	virtual void         removePlugin(PluginBase *);
 
 	// operations on all plugins

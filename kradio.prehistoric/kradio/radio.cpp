@@ -17,12 +17,15 @@
 
 #include "radio.h"
 #include "radiostation.h"
+#include <kstandarddirs.h>
+#include <kurl.h>
 
 /////////////////////////////////////////////////////////////////////////////
 
 Radio::Radio(const QString &name)
   : PluginBase(name),
     IRadioDeviceClient(-1),
+    m_presetFile(locateLocal("data", "kradio/stations-new.krp")),
     m_activeDevice (NULL)
 {
 }
@@ -48,11 +51,16 @@ bool Radio::connect    (Interface *i)
 	return a || b || c;
 }
 
+
 bool Radio::disconnect (Interface *i)
 {
 	bool a = IRadio::disconnect(i);
 	bool b = IRadioDeviceClient::disconnect(i);
 	bool c = IRadioDevicePool::disconnect(i);
+
+    if (a) kdDebug() << "Radio: IRadio disconnected\n";
+    if (b) kdDebug() << "Radio: IRadioDeviceClient disconnected\n";
+    if (c) kdDebug() << "Radio: IRadioDevicePool disconnected\n";
 
 	// no "return IA::connect() | return IB::connnect to
 	// prevent "early termination" optimization in boolean expressions
@@ -60,16 +68,26 @@ bool Radio::disconnect (Interface *i)
 }
 
 
-void Radio::saveState (KConfig *) const
+void Radio::saveState (KConfig *config) const
 {
-	// FIXME
+    config->setGroup(QString("radio-") + name());
+
+    config->writeEntry("presetfile", m_presetFile);
+
+    m_stationList.writeXML(m_presetFile);
 }
 
 
-void Radio::restoreState (KConfig *)
+void Radio::restoreState (KConfig *config)
 {
-	// FIXME
-}                       
+    config->setGroup(QString("radio-") + name());
+
+    m_presetFile = config->readEntry("presetfile",
+                                     locateLocal("data", "kradio/stations-new.krp"));
+
+    m_stationList.readXML(KURL(m_presetFile));
+}
+
 
 
 QFrame *Radio::internal_createConfigurationPage(KDialogBase */*dlg*/)
@@ -292,7 +310,7 @@ bool Radio::noticeStationChanged (const RadioStation &rs, const IRadioDevice *se
 }
 
 
-void Radio::noticeConnect(IRadioDevice *dev)
+void Radio::noticeConnected(IRadioDevice *dev)
 {
 	if (! m_activeDevice)
 		setActiveDevice (dev, false);

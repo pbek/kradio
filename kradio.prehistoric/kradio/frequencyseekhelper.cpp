@@ -51,6 +51,9 @@ bool FrequencySeekHelper::disconnect(Interface *i)
 	bool a = SeekHelper::disconnect(i);
 	bool b = IFrequencyRadioClient::disconnect(i);
 
+    if (a) kdDebug() << "FrequencySeekHelper: SeekHelper disconnected\n";
+    if (b) kdDebug() << "FrequencySeekHelper: IFrequencyRadioClient disconnected\n";
+
 	return a || b;
 }
 

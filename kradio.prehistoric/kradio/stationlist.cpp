@@ -19,6 +19,10 @@
 #include "radiostation.h"
 #include "stationlistxmlhandler.h"
 
+#include <qfile.h>
+#include <kio/netaccess.h>
+#include <ktempfile.h>
+
 //////////////////////////////////////////////////////////////////////////////
 
 const StationList emptyStationList;
@@ -255,6 +259,44 @@ bool StationList::readXML (const QString &dat)
 }
 
 
+bool StationList::readXML (const KURL &url)
+{
+	QString tmpfile;
+	if (!KIO::NetAccess::download(url, tmpfile)) {
+		kdDebug() << "StationList::readXML: "
+		          << i18n("error downloading preset file")
+		          << " " << url.url() << endl;
+		return false;
+	}
+
+	kdDebug() << "StationList::readXML: "
+	          << "tmpfile = " << tmpfile << endl;
+
+	QFile presetFile (tmpfile);
+    
+	if (! presetFile.open(IO_ReadOnly)) {
+		kdDebug() << "StationList::readXML: "
+		          << i18n("error opening preset file")
+		          << " " << tmpfile << endl;
+		return false;
+	}
+
+	QString xmlData;
+	
+	// make sure that qtextstream is gone when we close presetFile
+    {
+		QTextStream ins(&presetFile);
+		ins.setEncoding(QTextStream::UnicodeUTF8);    
+		xmlData = ins.read();
+	}
+	
+    presetFile.close();
+
+	KIO::NetAccess::removeTempFile(tmpfile);
+
+	return readXML(xmlData);
+}
+
 
 QString StationList::writeXML () const
 {
@@ -296,3 +338,36 @@ QString StationList::writeXML () const
 	return data;
 }
 
+
+bool StationList::writeXML (const KURL &url) const
+{
+	KTempFile tmpFile;
+	tmpFile.setAutoDelete(true);
+	QFile *outf = tmpFile.file();
+
+    QTextStream outs(outf);
+    outs.setEncoding(QTextStream::UnicodeUTF8);
+
+    QString output = writeXML();
+
+	outs << output;
+	if (outf->status() != IO_Ok) {
+		kdDebug() << "StationList::writeXML: "
+				  << i18n("error writing to tempfile")
+				  << " " << tmpFile.name() << endl;
+        return false;
+    }
+
+    // close hopefully flushes buffers ;)
+    outf->close();
+    
+
+    if (!KIO::NetAccess::upload(tmpFile.name(), url)) {
+		kdDebug() << "StationList::writeXML: "
+		          << i18n("error uploading preset file")
+		          << " " << url.url() << endl;
+		return false;
+    }
+    
+    return true;
+}

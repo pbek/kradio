@@ -90,6 +90,12 @@ bool V4LRadio::disconnect (Interface *i)
 	bool b = IRadioSound::disconnect(i);
 	bool c = ISeekRadio::disconnect(i);
 	bool d = IFrequencyRadio::disconnect(i);
+
+    if (a) kdDebug() << "V4LRadio: IRadioDevice disconnected\n";
+    if (b) kdDebug() << "V4LRadio: IRadioSound disconnected\n";
+    if (c) kdDebug() << "V4LRadio: ISeekRadio disconnected\n";
+    if (d) kdDebug() << "V4LRadio: IFrequency disconnected\n";
+
 	return a || b || c || d;
 }
 

@@ -60,8 +60,8 @@ public :
 	// Only the plugin itself knows what interfaces it implements. Thus it has
 	// to call the apropriate InterfaceBase::establishConnection methods
 
-	virtual bool connect    (PluginBase *p) = 0;
-	virtual bool disconnect (PluginBase *p) = 0;
+	virtual bool connect    (PluginBase */*p*/) { return false; }
+	virtual bool disconnect (PluginBase */*p*/) { return false; }
 
 	// interaction with pluginmanager
 protected:

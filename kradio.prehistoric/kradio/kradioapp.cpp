@@ -20,9 +20,7 @@
 #endif
 
 //#include <kiconloader.h>
-//#include <kstandarddirs.h>
 //#include <qxml.h>
-//#include <kio/netaccess.h>
 //#include <linux/soundcard.h>
 //#include "docking.h"
 //#include "radiocfgxmlhandler.h"

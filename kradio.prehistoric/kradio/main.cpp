@@ -25,6 +25,7 @@
 #include "radio.h"
 #include "timecontrol.h"
 #include "lircsupport.h"
+#include "quickbar.h"
 
 static const char *description = "KRadio";
 
@@ -53,22 +54,29 @@ int main(int argc, char *argv[])
 
 	/* Some Tests */
     
-    LircSupport lircsupport("lirc-1");
+    LircSupport *lircsupport = new LircSupport("lirc-1");
     V4LRadio    *v4lradio = new V4LRadio("v4lradio-1");
-    Radio       radio("radio-1");
-    TimeControl timecontrol("timecontrol-1");
+    Radio       *radio = new Radio("radio-1");
+    TimeControl *timecontrol = new TimeControl("timecontrol-1");
+    QuickBar    *quickbar = new QuickBar(NULL, "quickbar-1");
 
-    a.insertPlugin(&lircsupport);
+
+    a.insertPlugin(lircsupport);
     a.insertPlugin(v4lradio);
-    a.insertPlugin(&radio);
-    a.insertPlugin(&timecontrol);
+    a.insertPlugin(radio);
+    a.insertPlugin(timecontrol);
+    a.insertPlugin(quickbar);
 
     a.restoreState(KGlobal::config());
 
-    radio.powerOn();
-    v4lradio->setFrequency(90.85);
-    v4lradio->setVolume(1.0);
+    quickbar->show();
     
+//    radio.powerOn();
+//    radio.activateStation(4);
+//    v4lradio->setVolume(1.0);
+
+    a.setMainWidget(quickbar);
+
     return a.exec();
 }
 
