@@ -301,22 +301,29 @@ bool Recording::openDevice()
 	m_devfd = open(m_config.device, O_RDONLY);
 
     bool err = m_devfd < 0;
+    if (err)
+		logError(i18n("Cannot open DSP device %1").arg(m_config.device));
 
     int format = m_config.getOSSFormat();
     err |= (ioctl(m_devfd, SNDCTL_DSP_SETFMT, &format) != 0);
-    logDebug("err after SETFMT: " + QString().setNum(err));
+    if (err)
+		logError(i18n("Cannot set sample format for recording"));
 
     int channels = m_config.channels;
     err |= (ioctl(m_devfd, SNDCTL_DSP_CHANNELS, &channels) != 0);
-    logDebug("err after CHANNELS: " + QString().setNum(err));
+    if (err)
+		logError(i18n("Cannot set number of channels for recording"));
 
     int rate = m_config.rate;
     err |= (ioctl(m_devfd, SNDCTL_DSP_SPEED, &rate) != 0);
-    logDebug("err after SPEED: " + QString().setNum(err));
+    if (err)
+		logError(i18n("Cannot set sampling rate for recording"));
 
     // setup buffer
 
     err |= ioctl (m_devfd, SNDCTL_DSP_GETBLKSIZE, &m_bufferSize);
+    if (err)
+		logError(i18n("Cannot read recording buffer size"));
     
     m_buffer = err ? NULL : new char[m_bufferSize];
     
@@ -373,7 +380,10 @@ bool Recording::openOutput()
     m_output = sf_open(output, SFM_WRITE, &sinfo);
 
 	m_context.start(output, m_config);
-	if (!m_output) m_context.setError();
+	if (!m_output) {
+		m_context.setError();
+		logError(i18n("Cannot open output file %1").arg(output));
+	}
 	return m_output;
 }
 

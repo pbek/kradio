@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-14 04:42+0200\n"
-"PO-Revision-Date: 2003-09-14 04:43+0200\n"
+"POT-Creation-Date: 2003-09-14 06:14+0200\n"
+"PO-Revision-Date: 2003-09-14 06:18+0200\n"
 "Last-Translator: Ernst Martin Witte <witte@kawo1.rwth-aachen.de>\n"
 "Language-Team: german <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +114,7 @@ msgstr ""
 "Schicken Sie ihre Sendereinstellungen einfach an einen der Autoren. <P> "
 "Wenn Sie mit Ihren Ideen, eigenen Plugins oder Übersetzungen zum "
 "KRadio-Projekt beitragen wollen, zögern Sie nicht, sich mit einem der "
-"Autoren in Verbindung zu setzen."
+"Autoren in Verbindung zu setzen.<P>"
 
 #: kradioapp.cpp:53
 msgid ""
@@ -715,6 +715,10 @@ msgstr "Little Endian"
 msgid "Big Endian"
 msgstr "Big Endian"
 
+#: plugin_configuration_dialog.cpp:29
+msgid "Configuration Dialog"
+msgstr "Konfigurationsdialog"
+
 #: standardscandialog-ui.cpp:85
 msgid "Stations search in progress ..."
 msgstr "Sendersuche läuft ..."
@@ -730,10 +734,6 @@ msgstr "verbleibende Zeit"
 #: standardscandialog-ui.cpp:88
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">Hier ist nix</p>"
-
-#: plugin_configuration_dialog.cpp:29
-msgid "Configuration Dialog"
-msgstr "Konfigurationsdialog"
 
 #: radio-configuration-ui.cpp:295
 msgid "RadioConfigurationUI"
@@ -1098,19 +1098,43 @@ msgstr "Die Aufnahme wurde beendet"
 msgid "Monitoring stopped"
 msgstr "Die Überwachung der Aufnahmequelle wurde beendet"
 
-#: recording.cpp:368
+#: recording.cpp:305
+msgid "Cannot open DSP device %1"
+msgstr "Die Audio-Gerätedatei %1 kann nicht geöffnet werden"
+
+#: recording.cpp:310
+msgid "Cannot set sample format for recording"
+msgstr "Das Format der Abtastwerte kann nicht eingestellt werden"
+
+#: recording.cpp:315
+msgid "Cannot set number of channels for recording"
+msgstr "Die Anzahl der Kanäle für die Aufnahme kann nicht eingestellt werden"
+
+#: recording.cpp:320
+msgid "Cannot set sampling rate for recording"
+msgstr "Die Abtastrate für die Aufnahme kann nicht eingestellt werden"
+
+#: recording.cpp:326
+msgid "Cannot read recording buffer size"
+msgstr "Die Puffergröße des Audiotreibers kann nicht bestimmt werden"
+
+#: recording.cpp:375
 msgid "Recording::outputFile: "
 msgstr "Aufnahme::Ausgabedatei: "
 
-#: recording.cpp:397
+#: recording.cpp:385
+msgid "Cannot open output file %1"
+msgstr "Die Ausgabedatei %1 kann nicht geöffnet werden"
+
+#: recording.cpp:407
 msgid "No data to record"
 msgstr "Es gibt keine Daten zum Aufnehmen"
 
-#: recording.cpp:402
+#: recording.cpp:412
 msgid "Error %1 writing output"
 msgstr "Fehler %1 beim Schreiben der Ausgabedatei"
 
-#: recording.cpp:409
+#: recording.cpp:419
 msgid "Error %1 while recording"
 msgstr "Fehler %1 bei der Aufnahme"
 

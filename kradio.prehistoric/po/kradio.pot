@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-14 04:42+0200\n"
+"POT-Creation-Date: 2003-09-14 06:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -697,6 +697,10 @@ msgstr ""
 msgid "Big Endian"
 msgstr ""
 
+#: plugin_configuration_dialog.cpp:29
+msgid "Configuration Dialog"
+msgstr ""
+
 #: standardscandialog-ui.cpp:85
 msgid "Stations search in progress ..."
 msgstr ""
@@ -711,10 +715,6 @@ msgstr ""
 
 #: standardscandialog-ui.cpp:88
 msgid "<p align=\"right\">nothing here</p>"
-msgstr ""
-
-#: plugin_configuration_dialog.cpp:29
-msgid "Configuration Dialog"
 msgstr ""
 
 #: radio-configuration-ui.cpp:295
@@ -1080,19 +1080,43 @@ msgstr ""
 msgid "Monitoring stopped"
 msgstr ""
 
-#: recording.cpp:368
+#: recording.cpp:305
+msgid "Cannot open DSP device %1"
+msgstr ""
+
+#: recording.cpp:310
+msgid "Cannot set sample format for recording"
+msgstr ""
+
+#: recording.cpp:315
+msgid "Cannot set number of channels for recording"
+msgstr ""
+
+#: recording.cpp:320
+msgid "Cannot set sampling rate for recording"
+msgstr ""
+
+#: recording.cpp:326
+msgid "Cannot read recording buffer size"
+msgstr ""
+
+#: recording.cpp:375
 msgid "Recording::outputFile: "
 msgstr ""
 
-#: recording.cpp:397
+#: recording.cpp:385
+msgid "Cannot open output file %1"
+msgstr ""
+
+#: recording.cpp:407
 msgid "No data to record"
 msgstr ""
 
-#: recording.cpp:402
+#: recording.cpp:412
 msgid "Error %1 writing output"
 msgstr ""
 
-#: recording.cpp:409
+#: recording.cpp:419
 msgid "Error %1 while recording"
 msgstr ""
 
