@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Andreas Müller &lt;andreas@poipoi.de&gt;</maintainer>
+			<changed>2003-10-19T15:16:00</changed>
+			<country>Germany</country>
+			<city>Gerolsbach</city>
+			<media>wire antenna</media>
+			<comments>Bt878 Audio/Video-Capture Card </comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1068546027E72252A7A65340E0866630631E4DF72B03E6D19C6F2DD7DA5B135E547A9E341D</stationID>
+			<name>Bayern 1</name>
+			<shortname>B1</shortname>
+			<icon></icon>
+			<frequency>93.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685460273B42E0D495D6544DE3FE56501988A03341ED33E8E6A06CBEA9AC727037B06A4E</stationID>
+			<name>B4 Klassik</name>
+			<shortname>B4</shortname>
+			<icon></icon>
+			<frequency>102.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068546027D67C2B9F942D77B3F5F156D5D135BB50F92BDC649D9E79FA6E444C2F06D3E38E</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>Ant.</shortname>
+			<icon></icon>
+			<frequency>102.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106854602753B1890BBF95CD2B3A571BE498D56CB5547A7C0A79725769A587D2C4AF991161</stationID>
+			<name>Radio Inn</name>
+			<shortname>Inn</shortname>
+			<icon></icon>
+			<frequency>104.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068546027477907628FE8F21B2E06842E37952261183ECA93E4FA3A9EAA873ABF8EB60D32</stationID>
+			<name>B5 aktuell</name>
+			<shortname>B5</shortname>
+			<icon></icon>
+			<frequency>105.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068546027A65CDCD5B9572A1EED57264FEBBCA1541F860E164F7842511376F80F34FA5F5F</stationID>
+			<name>Radio 106.4</name>
+			<shortname>106.4</shortname>
+			<icon></icon>
+			<frequency>106.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068546027030663F9E80B9D521AF4CC2F2783EABAC2B6159924FF9057417B32D59A3895A8</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>Antenne</shortname>
+			<icon></icon>
+			<frequency>107.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068546027FDBDC9494CFD4E048F51A8F5193E99A7D785E63740205A669DE19F7BE121E39E</stationID>
+			<name>Bayern 3</name>
+			<shortname>B3</shortname>
+			<icon></icon>
+			<frequency>97.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068546027F7113E50F3FCCD0855F885E1110194F596F3BAE33BEF6985332BC5B8EBF8DE51</stationID>
+			<name>B4 Klassik</name>
+			<shortname>B4</shortname>
+			<icon></icon>
+			<frequency>103.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

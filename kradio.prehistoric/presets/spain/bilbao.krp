@@ -1,0 +1,24 @@
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Luis A. Fernández &lt;qapfecul@lg.ehu.es&gt;</maintainer>
+			<changed>2003-10-30T20:11:44</changed>
+			<country>Spain</country>
+			<city>Bilbao</city>
+			<media></media>
+			<comments>FM Radio Station. Assorted Pop, Rock and Local Basque Music 
+Only.</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>10663055147BB3A2F3153DD2A6ADAC3760265592D45D551C40E6DA0149E367421FC8550939</
+stationID>
+			<name>EITB Radio</name>
+			<shortname>EITB</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.1</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

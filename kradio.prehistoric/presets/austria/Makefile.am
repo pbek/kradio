@@ -1,5 +1,5 @@
 SUBDIRS =
-EXTRA_DIST = "breitenfurt-cable.krp" "gablitz-cable.krp" "kaltenleutgeben-cable.krp" "laab-wald-cable.krp" "mauerbach-cable.krp" "purkersdorf-cable.krp" "vienna-antenna.krp" "vienna-cable1.krp" "vienna-cable2.krp" "vienna-cable.krp"
+EXTRA_DIST = "breitenfurt-cable.krp" "gablitz-cable.krp" "kaltenleutgeben-cable.krp" "laab-wald-cable.krp" "mauerbach-cable.krp" "purkersdorf-cable.krp" "vienna-antenna.krp" "vienna-cable1.krp" "vienna-cable2.krp"
 
 install-data-local:
 	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/"

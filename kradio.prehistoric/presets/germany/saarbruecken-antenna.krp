@@ -1,0 +1,49 @@
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Michael Schumacher, pxros@web.de</maintainer>
+			<changed>2003-10-18T14:16:11</changed>
+			<country>Germany</country>
+			<city>Saarbrücken/Homburg</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1066479130BE619EE8EBEDE051DE6F702103850D3965D6B63C735351BBC12574D0708B39F7</stationID>
+			<name>SR1</name>
+			<shortname>SR1</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>88</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106647968324742A17B6427FB9A6F975689FFE8C2B98115BD76E02D33DC11678E75B8F5CB3</stationID>
+			<name>SWR3</name>
+			<shortname>SWR3</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>97.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1066479974189E6CCA880DC614BCBD36FC5B3215D8A7057DF3968492110C5D1224790E7653</stationID>
+			<name>SWR1</name>
+			<shortname>SWR1</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>100.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1066480043679C09BE6C6E16557829338A4CD68BEA1331F998404DE30C4B6D22A60F2468F3</stationID>
+			<name>Radio Salü</name>
+			<shortname>Radio Salü</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
