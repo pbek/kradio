@@ -120,11 +120,17 @@ install_location=
 type=DATA
 
 [kradio/Makefile.am]
-files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/setupdialog.h,kradio/setupdialog.cpp,kradio/stationsearchdialog_uic.ui,kradio/stationsearchdialog.h,kradio/stationsearchdialog.cpp,kradio/utils.cpp,kradio/timecontrol.h,kradio/timecontrol.cpp,kradio/radiocfgxmlhandler.h,kradio/radiocfgxmlhandler.cpp,kradio/setupdialog_general_options.ui,kradio/stationsearchdialog_uic.ui.h,kradio/setupdialog_general_options.ui.h,kradio/setupdialog_alarms.ui,kradio/setupdialog_stations.ui,kradio/setupdialog_alarms.ui.h,kradio/setupdialog_stations.ui.h
+files=kradio/main.cpp,kradio/kradio.cpp,kradio/kradio.h,kradio/kradiomw.cpp,kradio/kradiomw.h,kradio/kradioapp.cpp,kradio/kradioapp.h,kradio/kradio.desktop,kradio/lo32-app-kradio.png,kradio/lo16-app-kradio.png,kradio/RadioView.ui,kradio/kradioview.ui,kradio/v4lradio.cpp,kradio/v4lradio.h,kradio/docking.cpp,kradio/docking.h,kradio/lo22-app-kradio.png,kradio/hi16-app-kradio.png,kradio/hi22-app-kradio.png,kradio/hi32-app-kradio.png,kradio/dot-lircrc.example,kradio/kradiorc.example,kradio/hi24-app-kradio.png,kradio/lo24-app-kradio.png,kradio/radiostation.cpp,kradio/radiostation.h,kradio/radiobase.cpp,kradio/radiobase.h,kradio/utils.h,kradio/alarm.cpp,kradio/alarm.h,kradio/lircsupport.cpp,kradio/lircsupport.h,kradio/hi48-app-kradio.png,kradio/hi64-app-kradio.png,kradio/lo48-app-kradio.png,kradio/lo64-app-kradio.png,kradio/quickbar.cpp,kradio/quickbar.h,kradio/buttonflowlayout.cpp,kradio/buttonflowlayout.h,kradio/setupdialog.h,kradio/setupdialog.cpp,kradio/stationsearchdialog_uic.ui,kradio/stationsearchdialog.h,kradio/stationsearchdialog.cpp,kradio/utils.cpp,kradio/timecontrol.h,kradio/timecontrol.cpp,kradio/radiocfgxmlhandler.h,kradio/radiocfgxmlhandler.cpp,kradio/setupdialog_general_options.ui,kradio/stationsearchdialog_uic.ui.h,kradio/setupdialog_general_options.ui.h,kradio/setupdialog_alarms.ui,kradio/setupdialog_stations.ui,kradio/setupdialog_alarms.ui.h,kradio/setupdialog_stations.ui.h
 sub_dirs=
 type=prog_main
 
 [kradio/RadioView.ui]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kradio/kradioview.ui]
 dist=true
 install=false
 install_location=
@@ -214,6 +220,12 @@ install=false
 install_location=
 type=SOURCE
 
+[kradio/kradiomw.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
 [kradio/kradio.desktop]
 dist=true
 install=true
@@ -221,6 +233,12 @@ install_location=$$(kde_appsdir)/Applications/kradio.desktop
 type=DATA
 
 [kradio/kradio.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
+[kradio/kradiomw.h]
 dist=true
 install=false
 install_location=
