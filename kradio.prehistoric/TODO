@@ -1,18 +1,34 @@
 0.3.0-alpha3
 
        background pixmap for display
+       .so - library plugins
+       plugin config
+       lirc config
+       internet radio streams
 
 0.3.0-alpha2
 
+       v4l2 support (implemented, not tested)
+       v4l2: respect volume min max settings
+       v4l2: only write existing controls
        segfault fixes with 2.95.3
        old format detection for preset files (Locale->UTF8) // done
        sensefull names/descriptions for plugins     // done
        upper case in show/hide docking menu entries // done
-       v4l2 support (implemented, not tested)
-       recording (implemented, hardly tested)
+       recording (implemented, hardly tested) // done
        recording monitor (interface changes) // done
 
-0.3.0  gui-errormessages
+0.3.0-alpha3
+
+       background pixmap for display
+       .so-library plugins
+       plugin config
+       lirc config
+       internet radio streams
+
+0.3.0-beta1
+  
+       gui-errormessages
 
        tooltips complete?
        prepare for translation: check for missing i18n
@@ -21,5 +37,4 @@
 
 future:
 * mediacontrol applet integration
-* collect location information for cannel sets  // started
 * dcop interface

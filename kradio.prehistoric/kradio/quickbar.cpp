@@ -250,8 +250,10 @@ void QuickBar::rebuildGUI()
         QToolButton *b = new QToolButton(this, QString::null);
         m_buttons.append(b);
 	    b->setToggleButton(true);
-	    b->setIconSet(QPixmap(rs.iconName()));
-	    b->setText(m_showShortName ? rs.shortName() : rs.name());
+	    if (rs.iconName())
+			b->setIconSet(QPixmap(rs.iconName()));
+		else
+			b->setText(m_showShortName ? rs.shortName() : rs.name());
 
         b->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred));
 
