@@ -2,7 +2,7 @@
                           quickbar.h  -  description
                              -------------------
     begin                : Mon Feb 11 2002
-    copyright            : (C) 2002 by Martin Witte / Frank Schwanz
+    copyright            : (C) 2002 by Martin Witte / Frank Schwanz / Klas Kalass
     email                : witte@kawo1.rwth-aachen.de / schwanz@fh-brandenburg.de
  ***************************************************************************/
 
@@ -19,13 +19,19 @@
 #define QUICKBAR_H
 
 #include <qwidget.h>
+#include <qlayout.h>
+#include <qbuttongroup.h>
+
 #include <kconfig.h>
 #include <kpushbutton.h>
+
 #include <list>
 #include "radiobase.h"
 
+class RadioStation;
+
 /**
-  *@author Martin Witte / Frank Schwanz
+  *@author Martin Witte / Frank Schwanz / Klas Kalass
   */
 
 
@@ -39,20 +45,28 @@ protected :
 
     RadioBase   *radio;
     ButtonList  Buttons;
-
+    QBoxLayout *layout;
+    QButtonGroup *buttonGroup;
+    // config
+    bool layoutVertical;
+    bool showShortName;
 public:
 	QuickBar(RadioBase *radio);	
 	~QuickBar();
 	
 	void    restoreState (KConfig *c);
 	void    saveState (KConfig *c) const;
-	
 protected:
-    void resizeEvent(QResizeEvent *);
+	//    void resizeEvent(QResizeEvent *);
 
-protected slots:
-
+public slots:
+        void setOn(bool on);
 	void slotConfigChanged();
-};
+	void slotFrequencyChanged(float, const RadioStation *);
+	void show();
+	void hide();
 
+ signals:
+	void toggled(bool);
+};
 #endif
