@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Akos Putz, &lt;solyom2@westel900.net&gt;</maintainer>
+			<changed>2003-03-29T11:44:16</changed>
+			<country>Hungary</country>
+			<city>Budapest</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385407269894ECB144BCF442C7295F74009DDB9985160AC18BBA7C5C2D32BCD3B26B60</stationID>
+			<name>Juventus radio</name>
+			<shortname>Juventus</shortname>
+			<icon></icon>
+			<frequency>89.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385407A8C4C8219FB70FD23C959A234750ECBBD277D5770DCDD50FC109A5203CCBB5D3</stationID>
+			<name>Petofi radio</name>
+			<shortname>Pet?fi</shortname>
+			<icon></icon>
+			<frequency>94.75</frequency>
+			<volumepreset>-0.01</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540703BF992900B0E6846C1F7791D0FBA14C0A9397CE0650A11201B979453580DFA4</stationID>
+			<name>Fix radio</name>
+			<shortname>Fix</shortname>
+			<icon></icon>
+			<frequency>98</frequency>
+			<volumepreset>-0.01</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385407C56950A7BD2EDEDAC5BBB0485A14F6E0F5D74F9F3B7A00A3107521452889B2AC</stationID>
+			<name>Radio cafe</name>
+			<shortname>Cafe</shortname>
+			<icon></icon>
+			<frequency>98.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854079C69C3B041E8C77496224B0393A19668F6D126864646EC17D6D3466B5C63C2AB</stationID>
+			<name>Slager radio</name>
+			<shortname>Slager</shortname>
+			<icon></icon>
+			<frequency>100.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385407041784EAB9B1F152507715C44DE775A3A261E88D4DB2FB441054534BD55BDAD1</stationID>
+			<name>Sztar FM</name>
+			<shortname>Sztar FM</shortname>
+			<icon></icon>
+			<frequency>102.062</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854074519E00F84087CA906BB331FE7AA0ABE3A39F15BB4CA1673A2E0D6D2592DE5D6</stationID>
+			<name>Danubius radio</name>
+			<shortname>Danubius</shortname>
+			<icon></icon>
+			<frequency>103.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385407D5FD6A6DC02C2104930655DD183402460655B32621CF0DC2652F0C836E52F8D8</stationID>
+			<name>Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<icon></icon>
+			<frequency>103.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385407498255B513F023B83CE45C9FF02DF7BB15D9B596AD911331C5548A7097DFF076</stationID>
+			<name>Kossuth radio</name>
+			<shortname>Kossuth</shortname>
+			<icon></icon>
+			<frequency>105.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
