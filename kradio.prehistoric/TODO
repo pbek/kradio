@@ -8,11 +8,6 @@ short-term:
 // session management only works on kde-exit, not program-exit :(
 
 next release:
-* some graphical configuration dialog(s) for
-  - station quick select
-  - alarm functions
-  - station management
-  - device settings
 * collect location information for cannel sets
 
 future:
@@ -22,6 +17,11 @@ future:
 * mediacontrol applet integration
 
 DONE:
+//* some graphical configuration dialog(s) for  //emw
+//  - station quick select
+//  - alarm functions
+//  - station management
+//  - device settings
 // * kde3 port //kalass
 // * replace StationButton by ordinary buttons // completely removed - kalass
 // * use kde menus (emw, long time ago)

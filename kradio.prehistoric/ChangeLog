@@ -1,3 +1,6 @@
+0.2.6   emw     - activate station in setupdialog by freq, not stationId
+                - add "unknown station" to kradio->cbStations
+
 0.2.5   emw:    - configuration dialog part 3: alarms
                 - frequency range override
                 - improve alarms by station/volume preset
