@@ -37,8 +37,6 @@ class QTabWidget;
 
 
 
-
-
 class RadioView : public QWidget,
 				  public WidgetPluginBase,
                   public IRadioClient,
@@ -126,9 +124,12 @@ protected:
 	      QWidget *getWidget()       { return this; }
 
     void    addConfigurationTabFor(RadioViewElement *, QTabWidget *);
+    void    addCommonConfigurationTab(QTabWidget *);
 
     
 protected:
+	bool                  enableToolbarFlag;
+
 	QToolButton          *btnPower;
 	QToolButton          *btnConfigure;
 	QToolButton          *btnQuit;
@@ -138,7 +139,7 @@ protected:
 	struct ElementCfg
 	{
 		RadioViewElement *element;
-		QObject          *cfg;		
+		QObject          *cfg;
 		ElementCfg()                                : element(NULL), cfg(NULL) {}
 		ElementCfg(RadioViewElement *e, QObject *w) : element(e), cfg(w) {}
 		ElementCfg(RadioViewElement *e)             : element(e), cfg(NULL) {}

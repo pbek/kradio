@@ -21,6 +21,7 @@
 #include <qslider.h>
 #include <qfile.h>
 #include <qtooltip.h>
+#include <qcheckbox.h>
 
 #include <kcombobox.h>
 #include <kiconloader.h>
@@ -59,6 +60,7 @@ bool RadioView::ElementCfg::operator == (const ElementCfg &x) const
 RadioView::RadioView(QWidget *parent, const QString &name)
   : QWidget(parent, (const char*)name),
     WidgetPluginBase(name, "Radio Display"),
+    enableToolbarFlag(false),
     currentDevice(NULL)
 {
 	for (int i = 0; i < clsClassMAX; ++i)
@@ -319,6 +321,7 @@ void   RadioView::saveState (KConfig *config) const
 {
     config->setGroup(QString("radioview-") + name());
 
+    config->writeEntry("enableToobarFlag", enableToolbarFlag);
 	WidgetPluginBase::saveState(config);
 
 	for (ElementListIterator i(elements); i.current(); ++i) {
@@ -332,6 +335,7 @@ void   RadioView::restoreState (KConfig *config)
 {
 	config->setGroup(QString("radioview-") + name());
 
+	enableToolbarFlag = config->readBoolEntry("enableToolbarFlag", false);
 	WidgetPluginBase::restoreState(config);
 
 	for (ElementListIterator i(elements); i.current(); ++i) {
@@ -345,6 +349,8 @@ ConfigPageInfo RadioView::createConfigurationPage()
 {
 	RadioViewConfiguration *c = new RadioViewConfiguration();
 
+	addCommonConfigurationTab(c);
+	
 	for (ElementListIterator i(elements); i.current(); ++i) {
 		addConfigurationTabFor(i.current(), c);
 	}
@@ -381,6 +387,25 @@ void RadioView::addConfigurationTabFor(RadioViewElement *e, QTabWidget *c)
 		QObject::connect(inf.configPage, SIGNAL(destroyed(QObject *)),
 						 this, SLOT(slotElementConfigPageDeleted(QObject *)));
 	}
+}
+
+
+void RadioView::addCommonConfigurationTab(QTabWidget *c)
+{
+	if (!c)
+		return;
+
+    QFrame      *f = new QFrame(c);
+    QVBoxLayout *l = new QVBoxLayout(f, 10);
+
+    l->addWidget(new QCheckBox(i18n("set Toolbar-Flag for Display"), f));
+    l->addItem(new QSpacerItem(1, 3, QSizePolicy::Fixed, QSizePolicy::Expanding));
+
+	c->addTab(f, i18n("Common"));
+
+	elementConfigPages.push_back(ElementCfg(f));
+	QObject::connect(f,    SIGNAL(destroyed(QObject *)),
+					 this, SLOT(slotElementConfigPageDeleted(QObject *)));
 }
 
 
@@ -452,7 +477,10 @@ void RadioView::slotElementConfigPageDeleted(QObject *o)
 
 void RadioView::show()
 {
-   	KWin::setType(winId(), NET::Toolbar);
+	if (enableToolbarFlag)
+		KWin::setType(winId(), NET::Toolbar);
+	else
+		KWin::setType(winId(), NET::Normal);
 	QWidget::show();
     WidgetPluginBase::show();
 }

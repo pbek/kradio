@@ -255,7 +255,10 @@ void RadioConfiguration::slotStationEditorChanged(RadioStationConfig *c)
 		RadioStation &st = m_stations.at(idx);
 		c->storeStationData(st);
 		ignoreChanges = true;
+		bool o = listStations->signalsBlocked();
+		listStations->blockSignals(true);
 		listStations->changeItem(st.iconName(), st.longName(), idx);
+		listStations->blockSignals(o);
 		ignoreChanges = false;
 	}
 }
@@ -270,7 +273,10 @@ void RadioConfiguration::slotStationNameChanged( const QString & s)
 		RadioStation &st = m_stations.at(idx);
 		st.setName(s);
 		ignoreChanges = true;
+		bool o = listStations->signalsBlocked();
+		listStations->blockSignals(true);
 		listStations->changeItem(st.iconName(), st.longName(), idx);
+		listStations->blockSignals(o);
 		ignoreChanges = false;
     }
 }
@@ -285,7 +291,10 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 		RadioStation &st = m_stations.at(idx);
 		st.setShortName(sn);
 		ignoreChanges = true;
+		bool o = listStations->signalsBlocked();
+		listStations->blockSignals(true);
 		listStations->changeItem(st.iconName(), st.longName(), idx);
+		listStations->blockSignals(o);
 		ignoreChanges = false;
     }
 }
@@ -316,7 +325,10 @@ void RadioConfiguration::slotPixmapChanged( const QString &s )
 		st.setIconName(s);
 		ignoreChanges = true;
 		pixmapStation->setPixmap(QPixmap(s));
+		bool o = listStations->signalsBlocked();
+		listStations->blockSignals(true);
 		listStations->changeItem(st.iconName(), st.longName(), idx);
+		listStations->blockSignals(o);
 		ignoreChanges = false;
     }
 }
@@ -344,9 +356,12 @@ void RadioConfiguration::slotStationUp()
         delete st;
 		
 		ignoreChanges = true;
+		bool o = listStations->signalsBlocked();
+		listStations->blockSignals(true);
 		listStations->changeItem(sl.at(idx-1)->iconName(), sl.at(idx-1)->longName(), idx-1);
 		listStations->changeItem(sl.at(idx)  ->iconName(), sl.at(idx)  ->longName(), idx);
 		listStations->setCurrentItem(idx-1);
+		listStations->blockSignals(o);
 		ignoreChanges = false;
     }                          
 }
@@ -363,9 +378,12 @@ void RadioConfiguration::slotStationDown()
         delete st;
 
 		ignoreChanges = true;
+		bool o = listStations->signalsBlocked();
+		listStations->blockSignals(true);
 		listStations->changeItem(sl.at(idx)  ->iconName(), sl.at(idx)  ->longName(), idx);
 		listStations->changeItem(sl.at(idx+1)->iconName(), sl.at(idx+1)->longName(), idx+1);
 		listStations->setCurrentItem(idx+1);
+		listStations->blockSignals(o);
 		ignoreChanges = false;
     }
 }

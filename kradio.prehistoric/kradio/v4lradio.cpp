@@ -915,26 +915,49 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 
 		v4l2_queryctrl  ctrl;
 
+		c.hasMute = false;
 		c.unsetVolume();
 		c.unsetTreble();
 		c.unsetBass();
 		c.unsetBalance();
-		
+
 		ctrl.id = V4L2_CID_AUDIO_MUTE;
-		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-			c.hasMute = true;
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl))
+			c.hasMute = !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		else
+			kdDebug() << "error querying V4L2_CID_AUDIO_MUTE" << endl;
+			
 		ctrl.id = V4L2_CID_AUDIO_VOLUME;
-		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-			c.setVolume(ctrl.minimum, ctrl.maximum);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+				c.setVolume(ctrl.minimum, ctrl.maximum);
+		} else {
+			kdDebug() << "error querying V4L2_CID_AUDIO_VOLUME" << endl;
+		}
+		
 		ctrl.id = V4L2_CID_AUDIO_TREBLE;
-		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-			c.setTreble(ctrl.minimum, ctrl.maximum);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+				c.setTreble(ctrl.minimum, ctrl.maximum);
+		} else {
+			kdDebug() << "error querying V4L2_CID_AUDIO_TREBLE" << endl;
+		}
+		
 		ctrl.id = V4L2_CID_AUDIO_BASS;
-		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-			c.setBass(ctrl.minimum, c.maxBass = ctrl.maximum);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+				c.setBass(ctrl.minimum, c.maxBass = ctrl.maximum);
+		} else {
+			kdDebug() << "error querying V4L2_CID_AUDIO_BASS" << endl;
+		}
+		
 		ctrl.id = V4L2_CID_AUDIO_BALANCE;
-		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-			c.setBalance(ctrl.minimum, ctrl.maximum);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+			if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+				c.setBalance(ctrl.minimum, ctrl.maximum);
+		} else {
+			kdDebug() << "error querying V4L2_CID_AUDIO_BALANCE" << endl;
+		}
 		
 	} else {
 		kdDebug() << "V4LRadio::readV4LCaps: error reading V4L2 caps\n";
@@ -945,6 +968,11 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 	} else {
 		kdDebug() << "V4L not detected\n";
 	}
+
+	kdDebug() << (c.hasMute   ? "Radio is mutable"         : "Radio is not mutable")        << endl;
+	kdDebug() << (c.hasVolume ? "Radio has Volume Control" : "Radio has no Volume Control") << endl;
+	kdDebug() << (c.hasBass   ? "Radio has Bass Control"   : "Radio has no Bass Control")   << endl;
+	kdDebug() << (c.hasTreble ? "Radio has Treble Control" : "Radio has no Treble Control") << endl;
 
 	close(fd);
 	return c;
@@ -1041,12 +1069,17 @@ bool V4LRadio::readTunerInfo() const
  {  ctl.value = (val); \
 	ctl.id    = (what); \
 	r = ioctl (m_radio_fd, VIDIOC_S_CTRL, &ctl); \
+	x = x ? x : r; \
+	if (r) \
+		kdDebug() << "error setting "#what": " << r << endl; \
  }
 
 #define V4L2_G_CTRL(what) \
  {	ctl.id    = (what); \
 	r = ioctl (m_radio_fd, VIDIOC_G_CTRL, &ctl); \
 	x = x ? x : r; \
+	if (r) \
+		kdDebug() << "error reading "#what": " << r << endl; \
  }
 
 
@@ -1063,7 +1096,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	int   iOldBalance      = m_caps.intGetBalance(m_balance);
 
 	if (m_radio_fd >= 0) {
-		int r = -1;
+		int r = 0;
 		if (m_caps.version == 1) {
 		    if (m_muted) m_audio->flags |=  VIDEO_AUDIO_MUTE;
 		    else         m_audio->flags &= ~VIDEO_AUDIO_MUTE;
@@ -1092,6 +1125,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 #ifdef HAVE_V4L2
 		else if (m_caps.version == 2) {
 			v4l2_control   ctl;
+			int x = 0;    // x stores first ioctl error
 			if (write) {
 				if (m_caps.hasMute)
 					V4L2_S_CTRL(V4L2_CID_AUDIO_MUTE,    m_muted);
@@ -1104,8 +1138,6 @@ bool V4LRadio::updateAudioInfo(bool write) const
 				if (m_caps.hasVolume)
 					V4L2_S_CTRL(V4L2_CID_AUDIO_VOLUME,  m_caps.intGetVolume(m_deviceVolume));
 			} else {
-				int x = 0;    // x stores first ioctl error
-
 				if (m_caps.hasMute)
 					V4L2_G_CTRL(V4L2_CID_AUDIO_MUTE);
                 m_muted   = m_caps.hasMute && ((r != 0) || ctl.value);
@@ -1130,8 +1162,8 @@ bool V4LRadio::updateAudioInfo(bool write) const
                 r = ioctl (m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
                 m_stereo = (r == 0) && ((m_tuner2->rxsubchans & V4L2_TUNER_SUB_STEREO) != 0);
                 x = x ? x : r;
-				r = x;  // store first error back to r, used below for error message
 			}
+			r = x;  // store first error back to r, used below for error message
 		}
 #endif
 		else  {
