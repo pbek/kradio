@@ -137,7 +137,8 @@ protected:
 
 	bool  readTunerInfo() const;
 	bool  updateAudioInfo(bool write) const;
-
+	bool  readAudioInfo() const { return updateAudioInfo(false); }
+	bool  writeAudioInfo() const { return updateAudioInfo(true); }
 
 protected:
 
@@ -172,6 +173,10 @@ protected:
 		TunerCache() { valid = false; }
 	}
 	                       m_tunercache;
+
+
+	mutable bool           m_blockReadTuner,
+	                       m_blockReadAudio;
 	
 //	__u16 balance;
 //	__u16 bass ;

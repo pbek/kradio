@@ -24,14 +24,6 @@
 
 #include "v4lradio.h"
 
-/*
-
-TODO:
-
-  prevent loops (read...info -> notify -> readinfo) ??
-
-*/
-
 struct _lrvol { unsigned char l, r; short dummy; };
 
 V4LRadio::V4LRadio(const QString &name)
@@ -51,7 +43,10 @@ V4LRadio::V4LRadio(const QString &name)
 	m_mixerChannel(0),	
 	m_radio_fd(0),
 	m_mixer_fd(0),
-	m_pollTimer(this)
+	m_pollTimer(this),
+
+	m_blockReadTuner(false),
+	m_blockReadAudio(false)
 {
 	QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
 	m_pollTimer.start(333);
@@ -184,14 +179,14 @@ bool V4LRadio::setVolume (float vol)
 bool V4LRadio::mute (bool mute)
 {
 	// mute
-  	if (!updateAudioInfo(false))
+  	if (!readAudioInfo())
 	   return false;
 
     if (m_muted != mute) {
 		if (mute)		m_audio.flags |= VIDEO_AUDIO_MUTE;
 		else			m_audio.flags &= ~VIDEO_AUDIO_MUTE;
 
-		return updateAudioInfo(true);
+		return writeAudioInfo();
 	}
 	return false;
 }
@@ -252,14 +247,14 @@ bool   V4LRadio::hasGoodQuality() const
 
 bool    V4LRadio::isStereo() const
 {
-	updateAudioInfo(false);
+	readAudioInfo();
 	return m_stereo;
 }
 
 
 bool    V4LRadio::isMuted() const
 {
-  	updateAudioInfo(false);
+	readAudioInfo();
     return m_muted;
 }
 
@@ -529,7 +524,7 @@ void V4LRadio::radio_init()
 	}
 
 	readTunerInfo();
-    updateAudioInfo(false);
+	readAudioInfo();
 
   	// restore frequency
   	setFrequency(getFrequency());
@@ -639,6 +634,8 @@ void  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
 
 bool V4LRadio::readTunerInfo() const
 {
+	if (m_blockReadTuner) return true;
+
 	float oldminf = m_tunercache.minF;
 	float oldmaxf = m_tunercache.maxF;
 
@@ -670,6 +667,9 @@ bool V4LRadio::readTunerInfo() const
 		m_tuner.signal = 0;
 	}
 
+	// prevent loops, if noticeXYZ-method is reading my state
+	m_blockReadTuner = true;
+
 	if (oldminf != m_tunercache.minF || oldmaxf != m_tunercache.maxF)
 		notifyDeviceMinMaxFrequencyChanged(m_tunercache.minF, m_tunercache.maxF);
 
@@ -686,18 +686,24 @@ bool V4LRadio::readTunerInfo() const
 	if ( (m_signalQuality >= m_minQuality) != (oldq >= m_minQuality))
 		notifySignalQualityChanged(m_signalQuality > m_minQuality);		
 
+	m_blockReadTuner = false;
+	
 	return true;
 }
 
 
 bool V4LRadio::updateAudioInfo(bool write) const
 {
+	if (m_blockReadAudio && !write)
+		return true;
+
 	if (m_radio_fd > 0) {
 		if (ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, &m_audio) != 0) {
 			kdDebug() << "V4LRadio::updateAudioInfo: "
 			          << i18n("error updating radio audio info") << " ("
 			          << i18n(write ? "write" : "read") << ")"
 			          << endl;
+
 			return false;
 		}
 	} else {
@@ -711,11 +717,16 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	m_stereo = (m_audio.mode  & VIDEO_SOUND_STEREO) != 0;
 	m_muted  = (m_audio.flags & VIDEO_AUDIO_MUTE) != 0;
 
+	// prevent loops, if noticeXYZ-method is reading my state
+	m_blockReadAudio = true;
+
 	if (oldStereo != m_stereo)
 		notifyStereoChanged(m_stereo);
 	if (oldMute != m_muted)
 		notifyMuted(m_muted);
 	
+	m_blockReadAudio = false;
+
 	return (m_radio_fd > 0);
 }
 
@@ -725,7 +736,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
 void V4LRadio::poll()
 {
 	readTunerInfo();
-	updateAudioInfo(false);
+	readAudioInfo();
 	getVolume();
 }
 
