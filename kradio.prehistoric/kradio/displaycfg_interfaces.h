@@ -24,8 +24,8 @@
 
 #include "interfaces.h"
 
-class QColor;
-
+#include <qfont.h>
+#include <qcolor.h>
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -36,14 +36,18 @@ public :
 	IF_CON_DESTRUCTOR(IDisplayCfg, -1)
 
 RECEIVERS:
-	IF_RECEIVER(  setColors(const QColor &activeColor, const QColor &bkgnd) )
+	IF_RECEIVER(  setDisplayColors(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd) )
+	IF_RECEIVER(  setDisplayFont  (const QFont &f)                                                             )
 
 SENDERS:
-	IF_SENDER  (  notifyColorsChanged(const QColor &activeColor, const QColor &bkgnd) )
+	IF_SENDER  (  notifyDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd) )
+	IF_SENDER  (  notifyDisplayFontChanged(const QFont &f)                                                               )
 
 ANSWERS:
-	IF_ANSWER  (  QColor   getActiveColor() const )
-	IF_ANSWER  (  QColor   getBkgndColor() const )
+	IF_ANSWER  (  QColor   getDisplayActiveColor() const )
+	IF_ANSWER  (  QColor   getDisplayInactiveColor() const )
+	IF_ANSWER  (  QColor   getDisplayBkgndColor() const )
+	IF_ANSWER  (  QFont    getDisplayFont() const )
 
 };
 
@@ -56,14 +60,18 @@ public :
 	IF_CON_DESTRUCTOR(IDisplayCfgClient, 1)
 
 SENDERS:
-	IF_SENDER  (  sendColors(const QColor &activeColor, const QColor &bkgnd) )
+	IF_SENDER  (  sendDisplayColors(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd) )
+	IF_SENDER  (  sendDisplayFont  (const QFont &f)                                                             )
 
 RECEIVERS:
-	IF_RECEIVER(  noticeColorsChanged(const QColor &activeColor, const QColor &bkgnd) )
+	IF_RECEIVER(  noticeDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd) )
+	IF_RECEIVER(  noticeDisplayFontChanged(const QFont &f)                                                               )
 
 QUERIES:
-	IF_QUERY   (  QColor   queryActiveColor() )
-	IF_QUERY   (  QColor   queryBkgndColor()  )
+	IF_QUERY   (  QColor   queryDisplayActiveColor() )
+	IF_QUERY   (  QColor   queryDisplayInactiveColor() )
+	IF_QUERY   (  QColor   queryDisplayBkgndColor()  )
+	IF_QUERY   (  QFont    queryDisplayFont()  )
 
 RECEIVERS:
 	virtual void noticeConnected    (cmplInterface *, bool pointer_valid);

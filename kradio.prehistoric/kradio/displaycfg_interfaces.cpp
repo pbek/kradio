@@ -15,35 +15,51 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qcolor.h>
 #include "displaycfg_interfaces.h"
  
 // IDisplayCfg
 
-IF_IMPL_SENDER  (  IDisplayCfg::notifyColorsChanged(const QColor &a, const QColor &b),
-                   noticeColorsChanged(a,b)                                          )
+IF_IMPL_SENDER  (  IDisplayCfg::notifyDisplayColorsChanged(const QColor &a, const QColor &b, const QColor &c),
+                   noticeDisplayColorsChanged(a,b, c)                                          )
+
+IF_IMPL_SENDER  (  IDisplayCfg::notifyDisplayFontChanged(const QFont &f),
+                   noticeDisplayFontChanged(f)                                          )
 
 // IDisplayCfgClient
 
-IF_IMPL_SENDER  (  IDisplayCfgClient::sendColors(const QColor &a, const QColor &b),
-                   setColors(a,b)                                                    )
+IF_IMPL_SENDER  (  IDisplayCfgClient::sendDisplayColors(const QColor &a, const QColor &b, const QColor &c),
+                   setDisplayColors(a,b, c)                                                    )
 
-IF_IMPL_QUERY   (  QColor IDisplayCfgClient::queryActiveColor(),
-                   getActiveColor(),
+IF_IMPL_SENDER  (  IDisplayCfgClient::sendDisplayFont(const QFont &f),
+                   setDisplayFont(f)                                                           )
+
+IF_IMPL_QUERY   (  QColor IDisplayCfgClient::queryDisplayActiveColor(),
+                   getDisplayActiveColor(),
                    QColor(20, 244, 20)                                               )
 
-IF_IMPL_QUERY   (  QColor IDisplayCfgClient::queryBkgndColor(),
-                   getBkgndColor(),
+IF_IMPL_QUERY   (  QColor IDisplayCfgClient::queryDisplayInactiveColor(),
+                   getDisplayInactiveColor(),
+                   QColor(10, 117, 10).light(75)                                     )
+
+IF_IMPL_QUERY   (  QColor IDisplayCfgClient::queryDisplayBkgndColor(),
+                   getDisplayBkgndColor(),
                    QColor(10, 117, 10)                                               )
+
+IF_IMPL_QUERY   (  QFont IDisplayCfgClient::queryDisplayFont(),
+                   getDisplayFont(),
+                   QFont("Helvetica")                                                )
 
 
 void IDisplayCfgClient::noticeConnected    (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeColorsChanged(queryActiveColor(), queryBkgndColor());
+	noticeDisplayColorsChanged(queryDisplayActiveColor(), queryDisplayInactiveColor(), queryDisplayBkgndColor());
+	noticeDisplayFontChanged(queryDisplayFont());
 }
+
 
 void IDisplayCfgClient::noticeDisconnected   (cmplInterface *, bool /*pointer_valid*/)
 {
-	noticeColorsChanged(queryActiveColor(), queryBkgndColor());
+	noticeDisplayColorsChanged(queryDisplayActiveColor(), queryDisplayInactiveColor(), queryDisplayBkgndColor());
+	noticeDisplayFontChanged(queryDisplayFont());
 }
 

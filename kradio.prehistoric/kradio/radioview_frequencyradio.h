@@ -52,11 +52,14 @@ public:
 // IDisplayCfg
 
 RECEIVERS:
-	bool  setColors(const QColor &activeColor, const QColor &bkgnd);
+	bool  setDisplayColors(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd);
+	bool  setDisplayFont (const QFont &f);
 
 ANSWERS:
-	QColor   getActiveColor() const { return m_colorActiveText; }
-	QColor   getBkgndColor() const  { return m_colorButton; }
+	QColor   getDisplayActiveColor()   const { return m_colorActiveText; }
+	QColor   getDisplayInactiveColor() const { return m_colorInactiveText; }
+	QColor   getDisplayBkgndColor()    const { return m_colorButton; }
+	QFont    getDisplayFont()          const { return m_font; }
 
 // IRadioDeviceClient	
 RECEIVERS:
@@ -95,7 +98,8 @@ protected:
 
 protected:
 
-	QColor  m_colorActiveText, m_colorButton;
+	QColor  m_colorActiveText, m_colorInactiveText, m_colorButton;
+	QFont   m_font;
 
 	bool  m_power;
 	bool  m_valid;

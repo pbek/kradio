@@ -26,6 +26,7 @@
 #include <qwidget.h>
 
 class KColorButton;
+class KFontChooser;
 
 class DisplayConfiguration : public QWidget,
                              public IDisplayCfgClient
@@ -43,7 +44,8 @@ public:
 // IDisplayCfgClient
     
 RECEIVERS:
-	bool noticeColorsChanged(const QColor &activeColor, const QColor &bkgnd);
+	bool noticeDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd);
+	bool noticeDisplayFontChanged(const QFont &f);
 
 
 public slots:
@@ -53,7 +55,9 @@ public slots:
 
 protected:
 	KColorButton *m_btnActive;
+	KColorButton *m_btnInactive;
 	KColorButton *m_btnBkgnd;
+	KFontChooser *m_fontChooser;
 };
 
 

@@ -40,8 +40,10 @@ RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString 
 
 	// set some sensless default colors
 	// real values are read in restoreState
-	setColors(QColor(20, 244, 20),
-			  QColor(10, 117, 10));
+	setDisplayColors(QColor(20, 244, 20),
+			         QColor(10, 117, 10).light(75),
+			         QColor(10, 117, 10));
+	setDisplayFont(QFont("Helvetica"));
 }
 
 
@@ -60,21 +62,30 @@ float RadioViewFrequencyRadio::getUsability (Interface *i) const
 
 void   RadioViewFrequencyRadio::saveState (KConfig *config) const
 {
-	config->writeEntry("frequency-view-colorActiveText", m_colorActiveText);
-	config->writeEntry("frequency-view-colorButton",     m_colorButton);
+	config->writeEntry("frequency-view-colorActiveText",   m_colorActiveText);
+	config->writeEntry("frequency-view-colorInactiveText", m_colorInactiveText);
+	config->writeEntry("frequency-view-colorButton",       m_colorButton);
 }
 
 
 void   RadioViewFrequencyRadio::restoreState (KConfig *config)
 {
-	QColor defaultActive(20, 244, 20),
-	       defaultButton(10, 117, 10);
-	QColor a, b;
+	QColor defaultActive  (20, 244, 20),
+	       defaultInactive(QColor(10, 117, 10).light(75)),
+	       defaultButton  (10, 117, 10);
+	QFont  defaultFont ("Helvetica");
+	QColor a, b, c;
+	QFont  f;
 	a = config->readColorEntry ("frequency-view-colorActiveText",
 	                            &defaultActive);
-	b = config->readColorEntry ("frequency-view-colorButton",
+	b = config->readColorEntry ("frequency-view-colorInactiveText",
+	                            &defaultInactive);
+	c = config->readColorEntry ("frequency-view-colorButton",
 	                            &defaultButton);
-	setColors(a, b);
+	f = config->readFontEntry  ("frequency-view-font",
+	                            &defaultFont);
+	setDisplayColors(a, b, c);
+	setDisplayFont(f);
 }
 
 
@@ -123,13 +134,15 @@ bool RadioViewFrequencyRadio::disconnect(Interface *i)
 
 // IDisplayCfg
 
-bool RadioViewFrequencyRadio::setColors(const QColor &activeText,
-                                        const QColor &button)
+bool RadioViewFrequencyRadio::setDisplayColors(const QColor &activeText,
+                                               const QColor &inactiveText,
+                                               const QColor &button)
 {
 	bool change = (activeText != m_colorActiveText || button != m_colorButton);
 
-	m_colorActiveText = activeText;
-	m_colorButton     = button;
+	m_colorActiveText   = activeText;
+	m_colorInactiveText = inactiveText;
+	m_colorButton       = button;
 
 	QPalette pl = palette();
 	QColorGroup cg = pl.inactive();
@@ -148,7 +161,7 @@ bool RadioViewFrequencyRadio::setColors(const QColor &activeText,
 	btn.setColor(m_colorButton);
 	lgt.setColor(m_colorButton.light(180));
 	drk.setColor(m_colorButton.light( 50));
-	mid.setColor(m_colorButton.light( 75));
+	mid.setColor(m_colorInactiveText);
 	txt.setColor(m_colorActiveText);
 	btx.setColor(m_colorActiveText);
 	bas.setColor(m_colorButton);
@@ -170,10 +183,17 @@ bool RadioViewFrequencyRadio::setColors(const QColor &activeText,
 	}
 
 	if (change)
-		notifyColorsChanged(m_colorActiveText, m_colorButton);
+		notifyDisplayColorsChanged(m_colorActiveText, m_colorInactiveText, m_colorButton);
 	return true;
 }
 
+bool RadioViewFrequencyRadio::setDisplayFont (const QFont &f)
+{
+	m_font = f;
+	notifyDisplayFontChanged(m_font);
+	RadioViewElement::setFont(f);
+	return true;
+}
 
 // IRadioDeviceClient
 
@@ -360,7 +380,7 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 
 	// AM/FM display
 
-	QFont f("Helvetica");
+	QFont f = m_font;
 	paint->setPen (  (m_frequency <= 10 && m_power) ? activePen : inactivePen);
 	f.setPixelSize(xh_am);
 	paint->setFont(f);
@@ -417,5 +437,5 @@ void RadioViewFrequencyRadio::reparent (QWidget *prnt,
                                         bool showIt)
 {
 	RadioViewElement::reparent(prnt, f, p, showIt);
-	setColors(m_colorActiveText, m_colorButton);
+	setDisplayColors(m_colorActiveText, m_colorInactiveText, m_colorButton);
 }

@@ -64,40 +64,59 @@ bool convertFile(const QString &file)
         xmlData = ins.read();
     }
 	
-    presetFile.close();
+    if (xmlData.find("<format>", 0, false) >= 0) {
+		kdDebug() << "file " << file << " already in new format" << endl;
+        // but add <?xml line at beginning if missing
 
-    ////////////////////////////////////////////////////////////////////////
-    // convert file
-    ////////////////////////////////////////////////////////////////////////
+        {
+			presetFile.reset();
+			QTextStream ins(&presetFile);
+			ins.setEncoding(QTextStream::UnicodeUTF8);
+			xmlData = ins.read();
+		}
 
-    QRegExp qselect("<quickselect>.*</quickselect>");
-    QRegExp docking("<dockingmenu>.*</dockingmenu>");
-    QRegExp station("<station>(.*)</station>");
-    QRegExp stationlist("<stationlist>");
-    QRegExp emptyLines("\\n\\s*\\n");
+		if (xmlData.find("<?xml", 0, false) < 0) {
+			xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
+		}
+		
+    } else {
 
-    #define stationIDElement  "stationID"
+		////////////////////////////////////////////////////////////////////////
+		// convert file
+		////////////////////////////////////////////////////////////////////////
 
-    qselect.setMinimal(true);
-    docking.setMinimal(true);
-    station.setMinimal(true);
+		QRegExp qselect("<quickselect>.*</quickselect>");
+		QRegExp docking("<dockingmenu>.*</dockingmenu>");
+		QRegExp station("<station>(.*)</station>");
+		QRegExp stationlist("<stationlist>");
+		QRegExp emptyLines("\\n\\s*\\n");
 
-    xmlData.replace(stationlist, "<stationlist>\n\t\t<format>kradio-1.0</format>");
-    xmlData.replace(qselect, "");
-    xmlData.replace(docking, "");
-    xmlData.replace(station, "<FrequencyRadioStation>\n"
+		#define stationIDElement  "stationID"
+
+		qselect.setMinimal(true);
+		docking.setMinimal(true);
+		station.setMinimal(true);
+
+		xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
+		xmlData.replace(stationlist, "<stationlist>\n\t\t<format>kradio-1.0</format>");
+		xmlData.replace(qselect, "");
+		xmlData.replace(docking, "");
+		xmlData.replace(station, "<FrequencyRadioStation>\n"
                              "\t\t\t<" stationIDElement "></" stationIDElement ">"
                              "\\1</FrequencyRadioStation>"
 					);
 
-	int p = 0;
-	int f = 0;
-    while ( (f = xmlData.find("<" stationIDElement "></" stationIDElement ">", p) ) >= 0) {
-		xmlData.insert(f + 2 + QString(stationIDElement).length(), createStationID());
-	}
+		int p = 0;
+		int f = 0;
+		while ( (f = xmlData.find("<" stationIDElement "></" stationIDElement ">", p) ) >= 0) {
+			xmlData.insert(f + 2 + QString(stationIDElement).length(), createStationID());
+		}
 
-    xmlData.replace(emptyLines, "\n");
-            
+		xmlData.replace(emptyLines, "\n");
+    }        
+
+    presetFile.close();
+
 
     ////////////////////////////////////////////////////////////////////////
     // write output
@@ -154,6 +173,7 @@ int main(int argc, char *argv[])
     KApplication a (false, false);
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+
     for (int i = 0; i < args->count(); ++i) {
 		const char *x = args->arg(i);
         if (! convertFile(x)) {
