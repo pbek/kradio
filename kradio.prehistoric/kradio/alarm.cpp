@@ -14,7 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-
+#include <stdio.h>
 #include "alarm.h"
 
 Alarm::Alarm(QObject *_parent, QDateTime _time, bool _daily, bool _enabled)
@@ -32,6 +32,7 @@ Alarm::Alarm (QObject *_parent)
 {
 	daily = false;
 	enabled = false;
+	done = false;
 }
 
 
@@ -46,11 +47,11 @@ QDateTime Alarm::nextAlarm() const
 			  alarm = time;
 	if (daily && alarm < now) {
 		alarm.setDate (now.date());
-		if (alarm.time().addSecs(60) < now.time())
+		if (alarm.addSecs(60) < now)
 			alarm = alarm.addDays(1);
 	}
 	const_cast<Alarm*>(this)->time = alarm;
-	return enabled ? time : QDateTime();
+	return enabled && !done ? time : QDateTime();
 }
 
 
