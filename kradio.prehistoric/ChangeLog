@@ -2,10 +2,17 @@
 
         emw     - kde3.0 compatibility fixes
                 - v4l2 support
-                - v4l configuration improvements
+                - v4l configuration improvements: device volume controls
+                  in v4l configuration page
                 - replace round -> rint
                 - correct missing video_dev forward declaration
                 - store preset file button
+                - fixed device-volume-set2zero after mute/unmute
+                  with some radio cards
+                - move widget geometry saving/restoring to class
+                  WidgetPluginBase
+                - finally fixed the nasty positioning/sticky problem when 
+                  window is restored
 
         Will Stephenson
 

@@ -18,9 +18,7 @@
 #include "plugins.h"
 #include "pluginmanager.h"
 
-#include <kdialogbase.h>
 #include <kdebug.h>
-
 
 PluginBase::PluginBase(const QString &name)
 	: m_name(name),
@@ -74,16 +72,4 @@ void   PluginBase::restoreState (KConfig *)
 }
 
 
-///////////////////////////////////////////////////////////////////////////
 
-QWidget *WidgetPluginBase::getWidget()
-{
-	return dynamic_cast<QWidget*>(this);
-}
-
-
-void WidgetPluginBase::notifyManager(bool shown)
-{
-	if (m_manager)
-		m_manager->noticeWidgetPluginShown(this, shown);
-}

@@ -27,7 +27,7 @@
 #include <qwidget.h>
 #include "radio_interfaces.h"
 #include "stationselection_interfaces.h"
-#include "plugins.h"
+#include "widgetplugins.h"
 
 class ButtonFlowLayout;
 class QButtonGroup;
@@ -98,20 +98,20 @@ protected:
 
 public slots:
 	
-	void    toggleShown();
-	void    show(bool on);
+	void    toggleShown() { WidgetPluginBase::toggleShown(); }
 	void    show();
 	void    hide();
-	bool    isHidden() const { return QWidget::isHidden(); }
 	void    setGeometry (const QRect &r);
 	void    setGeometry (int x, int y, int w, int h);
 
 protected:
-    void	getKWinState() const;
 	void    rebuildGUI();
-	void    resizeEvent(QResizeEvent *);
 	void    showEvent(QShowEvent *);
 	void    hideEvent(QHideEvent *);
+	void    resizeEvent(QResizeEvent *);
+
+	const QWidget *getWidget() const { return this; }
+	      QWidget *getWidget()       { return this; }
 
 protected :
 
@@ -124,12 +124,6 @@ protected :
     bool              m_showShortName;
     QStringList       m_stationIDs;
 
-
     
-    // temporary data
-    mutable bool		m_saveSticky;
-    mutable int		    m_saveDesktop;
-    mutable QRect		m_saveGeometry;
-
 };
 #endif

@@ -287,13 +287,7 @@ void   RadioView::saveState (KConfig *config) const
 {
     config->setGroup(QString("radioview-") + name());
 
-	getKWinState();
-
-    config->writeEntry("hidden", isHidden());
-
-	config->writeEntry("sticky",   m_saveSticky);
-	config->writeEntry("desktop",  m_saveDesktop);
-	config->writeEntry("geometry", m_saveGeometry);
+	WidgetPluginBase::saveState(config);
 
 	for (ElementListIterator i(elements); i.current(); ++i) {
 		RadioViewElement *e  = i.current();
@@ -306,15 +300,7 @@ void   RadioView::restoreState (KConfig *config)
 {
 	config->setGroup(QString("radioview-") + name());
 
-	m_saveDesktop  = config->readNumEntry ("desktop", 1);
-	m_saveSticky   = config->readBoolEntry("sticky",  false);
-	m_saveGeometry = config->readRectEntry("geometry");
-
-    if (config->readBoolEntry("hidden", false))
-        hide();
-    else
-        show();
-
+	WidgetPluginBase::restoreState(config);
 
 	for (ElementListIterator i(elements); i.current(); ++i) {
 		RadioViewElement *e  = i.current();
@@ -374,8 +360,11 @@ QWidget *RadioView::createAboutPage()
 
 void RadioView::noticeWidgetPluginShown(WidgetPluginBase *p, bool shown)
 {
-	if (m_manager && (WidgetPluginBase*)m_manager->getConfigDialog() == p)
+	if (m_manager && (WidgetPluginBase*)m_manager->getConfigDialog() == p) {
+		btnConfigure->blockSignals(true);
 		btnConfigure->setOn(shown);
+		btnConfigure->blockSignals(false);
+	}
 }
 
 
@@ -421,40 +410,18 @@ void RadioView::slotElementConfigPageDeleted(QObject *o)
 	}
 }
 
-void RadioView::toggleShown()
-{
-	if (isHidden())
-		show();
-	else
-		hide();
-}
-
-void RadioView::show(bool on)
-{
-	if (on && isHidden())
-		show();
-	else if (!on && !isHidden())
-		hide();
-}
 
 void RadioView::show()
 {
-	bool wasHidden = !isVisible();
-
+   	KWin::setType(winId(), NET::Toolbar);
 	QWidget::show();
-
-    if (wasHidden) {
-     	KWin::setOnAllDesktops(winId(), m_saveSticky);
-    	KWin::setType(winId(), NET::Toolbar);
-
-    	setGeometry(m_saveGeometry);
-    }
+    WidgetPluginBase::show();
 }
 
 
 void RadioView::hide()
 {
-    getKWinState();
+    WidgetPluginBase::hide();
     QWidget::hide();
 }
 
@@ -462,25 +429,16 @@ void RadioView::hide()
 void RadioView::showEvent(QShowEvent *e)
 {
 	QWidget::showEvent(e);
-	notifyManager(true);
+	WidgetPluginBase::showEvent(e);
 }
 
 
 void RadioView::hideEvent(QHideEvent *e)
 {
 	QWidget::hideEvent(e);
-	notifyManager(false);
+	WidgetPluginBase::hideEvent(e);
 }
 
 
-void RadioView::getKWinState() const
-{
-	if (isVisible()) {
-		KWin::Info    i = KWin::info(winId());
-		m_saveSticky    = i.onAllDesktops;
-		m_saveDesktop   = i.desktop;
-		m_saveGeometry  = geometry();
-	}
-}
 
 

@@ -87,14 +87,7 @@ void QuickBar::restoreState (KConfig *config)
 {
     config->setGroup(QString("quickBar-") + name());
 
-	m_saveDesktop  = config->readNumEntry ("desktop", 1);
-	m_saveSticky   = config->readBoolEntry("sticky",  false);
-	m_saveGeometry = config->readRectEntry("Geometry");
-
-    if (config->readBoolEntry("hidden", false))
-        hide();
-    else
-        show();
+	WidgetPluginBase::restoreState(config);
 
 	int nStations = config->readNumEntry("nStations", 0);
 	for (int i = 1; i <= nStations; ++i) {
@@ -112,13 +105,7 @@ void QuickBar::saveState (KConfig *config) const
 {
     config->setGroup(QString("quickBar-") + name());
 
-	getKWinState();
-
-    config->writeEntry("hidden", isHidden());
-
-	config->writeEntry("sticky",   m_saveSticky);
-	config->writeEntry("desktop",  m_saveDesktop);
-	config->writeEntry("Geometry", m_saveGeometry);
+	WidgetPluginBase::saveState(config);
 
 	config->writeEntry("nStations", m_stationIDs.size());
 	int i = 1;
@@ -233,17 +220,6 @@ void QuickBar::activateButton(const RadioStation &rs)
 // KDE/Qt gui
 
 
-void QuickBar::getKWinState() const
-{
-	if (isVisible()) {
-		KWin::Info  i = KWin::info(winId());
-		m_saveSticky    = i.onAllDesktops;
-		m_saveDesktop   = i.desktop;
-		m_saveGeometry  = geometry();
-	}
-}
-
-
 void QuickBar::rebuildGUI()
 {
 	if (m_layout) delete m_layout;
@@ -304,69 +280,30 @@ void QuickBar::rebuildGUI()
 
 
 
-void QuickBar::toggleShown()
-{
-	if (!isVisible())
-		show();
-	else
-		hide();
-}
-
-
-void QuickBar::show(bool on)
-{
-	if (on && !isVisible())
-		show();
-	else if (!on && isVisible())
-		hide();
-}
-
-
 void QuickBar::show()
 {
-	bool wasHidden = !isVisible();
-
+  	KWin::setType(winId(), NET::Toolbar);
+    WidgetPluginBase::show();
 	QWidget::show();
-
-    if (wasHidden) {
-     	KWin::setOnAllDesktops(winId(), m_saveSticky);
-    	KWin::setType(winId(), NET::Toolbar);
-
-    	setGeometry(m_saveGeometry);
-    }
+    WidgetPluginBase::show();
 }
-
 
 void QuickBar::hide()
 {
-    getKWinState();
+    WidgetPluginBase::hide();
     QWidget::hide();
 }
-
-
-void QuickBar::resizeEvent (QResizeEvent *e)
-{
-	// minimumSize might change because of the flow layout
-	if (m_layout) {
-		QSize marginSize(m_layout->margin()*2, m_layout->margin()*2);
-		setMinimumSize(m_layout->minimumSize(e->size() - marginSize) + marginSize);
-	}
-
-	QWidget::resizeEvent (e);
-}
-
 
 void    QuickBar::showEvent(QShowEvent *e)
 {
 	QWidget::showEvent(e);
-	notifyManager(true);
+	WidgetPluginBase::showEvent(e);
 }
-
 
 void    QuickBar::hideEvent(QHideEvent *e)
 {
 	QWidget::hideEvent(e);
-	notifyManager(false);
+	WidgetPluginBase::hideEvent(e);
 }
 
 
@@ -385,5 +322,16 @@ void QuickBar::setGeometry (const QRect &r)
 	setGeometry (r.x(), r.y(), r.width(), r.height());
 }
 
+
+void QuickBar::resizeEvent (QResizeEvent *e)
+{
+	// minimumSize might change because of the flow layout
+	if (m_layout) {
+		QSize marginSize(m_layout->margin()*2, m_layout->margin()*2);
+		setMinimumSize(m_layout->minimumSize(e->size() - marginSize) + marginSize);
+	}
+
+	QWidget::resizeEvent (e);
+}
 
 

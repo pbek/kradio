@@ -29,6 +29,7 @@
 #include "radiodevice_interfaces.h"
 #include "docking-configuration.h"
 #include "pluginmanager.h"
+#include "widgetplugins.h"
 
 RadioDocking::RadioDocking(const QString &name)
   : KSystemTray (NULL, name),
@@ -178,10 +179,10 @@ void RadioDocking::buildContextMenu()
 			
 			const QString &name = b->name();
 			QWidget *w = b->getWidget();
-			bool h = w->isHidden();
+			bool v = b->isReallyVisible();
 			
-			int id = m_menu->insertItem(QIconSet(SmallIconSet(h ? "1uparrow" : "1downarrow")),
-			                            i18n(h ? "show " : "hide ") + name,
+			int id = m_menu->insertItem(QIconSet(SmallIconSet(v ? "1downarrow" : "1uparrow")),
+			                            i18n(v ? "hide " : "show ") + name,
 			                            w, SLOT(toggleShown()));
 			m_widgetPluginIDs.insert(b, new int(id));
 		}
@@ -379,6 +380,7 @@ void RadioDocking::noticeWidgetPluginShown(WidgetPluginBase *b, bool shown)
 {
 	if (!b) return;
 	int *id = m_widgetPluginIDs.find(b);
+	if (!id) return;
 	m_menu->changeItem(*id,
 		               QIconSet(SmallIconSet(!shown ? "1uparrow" : "1downarrow")),
 	                   i18n(!shown ? "show" : "hide") + " " + b->name());

@@ -87,8 +87,15 @@ void PluginManager::insertPlugin(PluginBase *p)
 				i->connect(p);
 		}
 	}
+	WidgetPluginBase *w1 = dynamic_cast<WidgetPluginBase*>(p);
 	for (PluginIterator it(m_plugins); it.current(); ++it) {
 		it.current()->noticePluginsChanged(m_plugins);
+		if (w1)
+			it.current()->noticeWidgetPluginShown(w1, w1->isReallyVisible());
+
+		WidgetPluginBase *w2 = dynamic_cast<WidgetPluginBase*>(it.current());
+		if (w2)
+			p->noticeWidgetPluginShown(w2, w2->isReallyVisible());
 	}
 }
 
@@ -105,6 +112,7 @@ void PluginManager::deletePlugin(PluginBase *p)
 void PluginManager::removePlugin(PluginBase *p)
 {
 	if (p && m_plugins.contains(p)) {
+
 		for (PluginIterator it(m_plugins); it.current(); ++it) {
 			if (it.current() != p) {
 /*				bool r = */

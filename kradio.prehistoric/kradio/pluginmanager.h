@@ -29,6 +29,7 @@ class WidgetPluginBase;
 class PluginConfigurationDialog;
 class QWidget;
 class KConfig;
+class QFrame;
 
 
 struct ConfigPageInfo;

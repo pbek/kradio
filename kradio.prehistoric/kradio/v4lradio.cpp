@@ -899,6 +899,7 @@ bool V4LRadio::readTunerInfo() const
 {
 	if (m_blockReadTuner) return true;
 
+	float oldq    = m_signalQuality;
 	float oldminf = m_tunercache.minF;
 	float oldmaxf = m_tunercache.maxF;
 
@@ -909,36 +910,36 @@ bool V4LRadio::readTunerInfo() const
 		m_tunercache.valid  = true;
 	}
 
+	int r = 0;
     if (m_radio_fd >= 0) {
-		int r = 0;
 
 		// v4l1
 		if (m_caps.version == 1) {
+		
 			r = ioctl(m_radio_fd, VIDIOCGTUNER, m_tuner);
 
 			if (r == 0) {
 				if ((m_tuner->flags & VIDEO_TUNER_LOW) != 0)
 					m_tunercache.deltaF = 1.0 / 16000.0;
-
 				m_tunercache.minF = float(m_tuner->rangelow)  * m_tunercache.deltaF;
 				m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
-
-				m_tunercache.valid = true;
+				m_tunercache.valid = true;				
+				m_signalQuality = float(m_tuner->signal) / 32767.0;
 			}
 		}
 #ifdef HAVE_V4L2
 	    // v4l2
 		else if (m_caps.version == 2) {
+		
 			r = ioctl(m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
 
 			if (r == 0) {
 				if ((m_tuner2->capability & V4L2_TUNER_CAP_LOW) != 0)
 					m_tunercache.deltaF = 1.0 / 16000.0;
-
 				m_tunercache.minF = float(m_tuner2->rangelow)  * m_tunercache.deltaF;
 				m_tunercache.maxF = float(m_tuner2->rangehigh) * m_tunercache.deltaF;
-
 				m_tunercache.valid = true;
+				m_signalQuality = float(m_tuner2->signal) / 32767.0;
 			}
 		}
 #endif
@@ -947,17 +948,14 @@ bool V4LRadio::readTunerInfo() const
 		}
 		
 		if (r != 0) {
+			m_signalQuality = 0;
 			kdDebug() << "V4LRadio::readTunerInfo: "
 					  << i18n("cannot get tuner info")
 					  << " (" << i18n("error") << " " << r << ")"
 					  << endl;
-			return false;
 		}
 	} else {
-		m_tuner->signal  = 0;
-#ifdef HAVE_V4L2
-		m_tuner2->signal = 0;
-#endif
+		m_signalQuality = 0;
 	}
 
 	// prevent loops, if noticeXYZ-method is reading my state
@@ -970,19 +968,6 @@ bool V4LRadio::readTunerInfo() const
 	   || ! m_maxFrequency && (oldmaxf != m_tunercache.maxF))
 		notifyMinMaxFrequencyChanged(getMinFrequency(), getMaxFrequency());
 
-	// extract information on current state
-	float oldq = m_signalQuality;
-	if (m_caps.version == 1) {
-		m_signalQuality = float(m_tuner->signal) / 32767.0;
-	}
-#ifdef HAVE_V4L2
-    else if (m_caps.version == 2) {
-		m_signalQuality = float(m_tuner2->signal) / 32767.0;
-    }
-#endif
-	else {
-		kdDebug() << "V4LRadio::readTunerInfo: don't known how to handle V4L-version " << m_caps.version << endl;
-	}
 
 	if (m_signalQuality != oldq)
 		notifySignalQualityChanged(m_signalQuality);

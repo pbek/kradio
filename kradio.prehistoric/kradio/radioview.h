@@ -26,7 +26,7 @@
 
 #include "radio_interfaces.h"
 #include "radiodevicepool_interface.h"
-#include "plugins.h"
+#include "widgetplugins.h"
 #include "radioview_element.h"
 
 class QWidgetStack;
@@ -100,18 +100,17 @@ protected slots:
 
 public slots:
 
-	void    toggleShown ();
+	void    toggleShown() { WidgetPluginBase::toggleShown(); }
 	void    show();
-	void    show (bool show);
 	void    hide();
 
 protected:
-	bool    isHidden () const { return QWidget::isHidden(); }
 	virtual void showEvent(QShowEvent *);
 	virtual void hideEvent(QHideEvent *);
 
+	const QWidget *getWidget() const { return this; }
+	      QWidget *getWidget()       { return this; }
 
-    void	getKWinState() const;
     void    addConfigurationTabFor(RadioViewElement *, QTabWidget *);
 
     
@@ -145,11 +144,6 @@ protected:
 	float                 maxUsability[clsClassMAX];
 
 	IRadioDevice          *currentDevice;
-
-    // temporary data
-    mutable bool		  m_saveSticky;
-    mutable int		      m_saveDesktop;
-    mutable QRect		  m_saveGeometry;
 };
 
 

@@ -18,7 +18,7 @@
 #define KRADIO_PLUGIN_CONFIGURATION_DIALOG
 
 #include <kdialogbase.h>
-#include <plugins.h>
+#include "widgetplugins.h"
 
 class PluginConfigurationDialog : public KDialogBase,
                                   public WidgetPluginBase
@@ -44,17 +44,18 @@ protected :
 	// WidgetPluginBase
 
 public slots:
-    virtual void toggleShown();
+	        void toggleShown() { WidgetPluginBase::toggleShown(); }
     virtual void show();
-    virtual void show(bool on);
     virtual void hide();
-    virtual bool isHidden() const { return KDialogBase::isHidden(); }
 
     // QWidget overrides
 
 protected:
 	virtual void showEvent(QShowEvent *);
 	virtual void hideEvent(QHideEvent *);
+
+	virtual       QWidget *getWidget()         { return this; }
+	virtual const QWidget *getWidget() const   { return this; }
 };
 
 

@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "plugin_configuration_dialog.h"
+#include <kconfig.h>
 
 PluginConfigurationDialog::PluginConfigurationDialog(
     int dialogFace, const QString &caption,
@@ -31,12 +32,16 @@ PluginConfigurationDialog::PluginConfigurationDialog(
 
 // PluginBase
 
-void   PluginConfigurationDialog::saveState (KConfig *) const
+void   PluginConfigurationDialog::saveState (KConfig *c) const
 {
+    c->setGroup(QString("config-dialog-") + WidgetPluginBase::name());
+	WidgetPluginBase::saveState(c);
 }
 
-void   PluginConfigurationDialog::restoreState (KConfig *)
+void   PluginConfigurationDialog::restoreState (KConfig *c)
 {
+    c->setGroup(QString("config-dialog-") + WidgetPluginBase::name());
+	WidgetPluginBase::restoreState(c);
 }
 
 
@@ -54,31 +59,16 @@ QWidget *PluginConfigurationDialog::createAboutPage()
 
 // WidgetPluginBase
 
-void PluginConfigurationDialog::toggleShown()
-{
-	if (isHidden())
-		show();
-	else
-		hide();
-}
-
 void PluginConfigurationDialog::show()
 {
+	WidgetPluginBase::show();
 	KDialogBase::show();
-}
-
-
-void PluginConfigurationDialog::show(bool on)
-{
-	if (on && isHidden())
-		show();
-	else if (!on && !isHidden())
-		hide();
 }
 
 
 void PluginConfigurationDialog::hide()
 {
+	WidgetPluginBase::hide();
 	KDialogBase::hide();
 }
 
@@ -88,13 +78,13 @@ void PluginConfigurationDialog::hide()
 void PluginConfigurationDialog::showEvent(QShowEvent *e)
 {
 	KDialogBase::showEvent(e);
-	notifyManager (true);
+	WidgetPluginBase::showEvent(e);
 }
 
 
 void PluginConfigurationDialog::hideEvent(QHideEvent *e)
 {
 	KDialogBase::hideEvent(e);
-	notifyManager (false);
+	WidgetPluginBase::hideEvent(e);
 }
 
