@@ -1,0 +1,123 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Richard Atcheson &lt;ratcheson@earthlink.net&gt;</maintainer>
+			<changed>2003-05-12T10:27:55</changed>
+			<country>USA</country>
+			<city>Houston, TX</city>
+			<media></media>
+			<comments>Not complete but a start.</comments>
+		</info>
+		<station>
+			<name>KRTS</name>
+			<shortname>Classical</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>93Q Country</name>
+			<shortname>Country</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>92.925</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Classic Rock</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.75</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>The Buzz</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Smooth Jazz</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>95.6875</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KMIX</name>
+			<shortname>KMIX</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KODA</name>
+			<shortname>Sunny99</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>99.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KILT</name>
+			<shortname></shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>100.312</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KLOL</name>
+			<shortname>KLOL</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>101.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Magic 102</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.125</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KmRB</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>KLDL</name>
+			<shortname>Koldies</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+
