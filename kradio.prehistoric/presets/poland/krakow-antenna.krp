@@ -1,0 +1,204 @@
+<kradiorc>
+	<stationlist>
+		<info>
+			<maintainer>Marcin Wabik, mwabik@wp.pl</maintainer>
+			<changed>2003-05-23T09:45:32</changed>
+			<country>Poland</country>
+			<city>Krakow</city>
+			<media>antenna</media>
+			<comments>from http://www.t17.ds.pwr.wroc.pl/~wojtekd/</comments>
+		</info>
+		<station>
+			<name>RMF FM</name>
+			<shortname>RMF FM</shortname>
+			<icon></icon>
+			<quickselect>1</quickselect>
+			<frequency>96</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Zet</name>
+			<shortname>Radio Zet</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Trojka</name>
+			<shortname>Trojka</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>99.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radiostacja</name>
+			<shortname>Radiostacja</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>93.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Eska Krakow</name>
+			<shortname>Eska Krakow</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Wawa</name>
+			<shortname>Wawa</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>107</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Flash Malopolska</name>
+			<shortname>Flash Malopolska</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.3</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Echo 103.8 FM</name>
+			<shortname>Echo</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Zak</name>
+			<shortname>Zak</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>100.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Krakow</name>
+			<shortname>Krakow</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Plus Krakow</name>
+			<shortname>Plus</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Wanda</name>
+			<shortname>Wanda</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Tok Fm</name>
+			<shortname>Tok Fm</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>102.9</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Region</name>
+			<shortname>Region</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>96.7</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Opera FM</name>
+			<shortname>Opera FM</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>87.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Polskie Radio Program 1</name>
+			<shortname>PR1</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>104.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Polskie Radio Program 2</name>
+			<shortname>PR2</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>89.4</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Maryja</name>
+			<shortname>Maryja</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>90.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Jazz Radio</name>
+			<shortname>Jazz Radio</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>101</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Maks Bochnia</name>
+			<shortname>Maks Bochnia</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>106.8</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+		<station>
+			<name>Radio Plus Tarnow</name>
+			<shortname>Plus Tarnow</shortname>
+			<icon></icon>
+			<quickselect>0</quickselect>
+			<frequency>103.6</frequency>
+			<volumepreset>-1</volumepreset>
+			<dockingmenu>1</dockingmenu>
+		</station>
+	</stationlist>
+</kradiorc>
+
+
+
