@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Stefan Carstens &lt;scarstens@nord-com.net&gt;</maintainer>
+			<changed>2003-11-16T11:47:16</changed>
+			<country>Germany</country>
+			<city>Bremen</city>
+			<media>Kabel</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10771449858D8FE58279E5E6D44A8CD9C5110C714898122F50F269FDCCA7388B98C85E7A0E</stationID>
+			<name>nordwestRadio</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>106.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985E13659C87ABDDCF56D95A54A65DD5B3FA372FB2225E53819E204B87A788DD5A4</stationID>
+			<name>Radio Bremen 1</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>87.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498555097D7171CCDF7812E6EFB8985C9C9AE921E9AC9CC173CB8B9898F44E40B84E</stationID>
+			<name>89.0 RTL</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>88.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449851BA8EAB6953207EC9D637C20F9D9673EED9CD62314825096E6AEEBD30825F06B</stationID>
+			<name>Funkhaus Europa</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>88.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985D623F2F44A6E27D930CBD5D5CE8C0CA13F3194287293D91BE3211A1986CB748E</stationID>
+			<name>Radio Bremen 4</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>89.65</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449858CFAC715CB96A887883A922FCB40CB11B7BB266EA349BA11D48D6B597DDBA29B</stationID>
+			<name>JAM-FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>89.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985C44470AB48472D74EC90023A83BA34BA2F419524F634546049CB6FEE4563EB51</stationID>
+			<name>NDR 1 Radio NDS - Nordwest</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>90.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985C7310454C71468BEB0224B2A7C3DE4FFB37E933CB138512B10F3045049D376D3</stationID>
+			<name>NDR 2</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>90.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498594D4D57B93014C58A448929831B1E0A2494B92463D875EF8270787122159F3B4</stationID>
+			<name>NDR Kultur</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>91.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498570DAA3ADD3858AAEE2C41827DC14B6A55CB9D7CB0605D175A1F16A1182CCF2C2</stationID>
+			<name>NDR 90,3</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>92.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449850A5C75017328E0CDBFCB116222CAC93CBCA860DBD5795C99E3E4F16AFEC2C989</stationID>
+			<name>radio ffn - Oldenburg/Bremen</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>92.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449858BAE01791DF0BCEEAEC6D7AF71071C3FFB7B662EBFA3462450229C7F54F89E59</stationID>
+			<name>Radio Bremen Parlamentswelle/NDR 4</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>92.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449855063F9516508780A9BC383C6717060EA500FE5372537C66BB5B4B5AC8C492624</stationID>
+			<name>Radio Melodie - Heimatfunk mit Herz</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>93.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498579D1F7601255AD5799C8AFB564F132F2AAAEB5054B2A44C41E291BF33A37D4FF</stationID>
+			<name>WDR 3</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>94.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449856F5337F25D69AD6736867F7D570FAB6B64713F34640938FEC397964E5F8A197A</stationID>
+			<name>Eins Live (WDR)</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>94.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449851B42B0D8D1CC18397AE2F1E6B3C0D67F8CF1E8D6098BA59930689825DB5D8966</stationID>
+			<name>WDR Radio 5</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>95.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449851A0C244D6852F486F645D5E94C7AD43AE7BCCA2DB6D6B5D1C832D6A9BFE259C3</stationID>
+			<name>Klassik Radio</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<frequency>96.15</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498518D1785DF61547515A7909F64AE54BA2A7A6F4545FD20A941E5A86E2A2822915</stationID>
+			<name>Hit-Radio Antenne Niedersachsen - Ostfriesland</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<frequency>96.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449854C405C169E03A57A34B35E97C78F19D175267967835D364F3CDBBD9DE07B9AA8</stationID>
+			<name>sunshine live</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<frequency>97.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449857BFA6A8963BCEEC0C70020318B7AA44A4F6A6B113A2AC58BD3395918C25FDB54</stationID>
+			<name>Offener Kanal Oldenburg</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<frequency>97.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449859C31BE591DA0F65B25DA68E89004F6052EF82BB60C8465FF4360BADC74730EC1</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<frequency>98.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985357308FBBD5A805D6F964F30FD6D578B834C24821B196E34E8FE2054AE1869A0</stationID>
+			<name>DeutschlandRadio Berlin</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<frequency>99.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449859DE1286421F95B8435C445BC053DCF08DA9EEDCE5F5C5B2D8B1C914404B003F7</stationID>
+			<name>JUMP</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<frequency>99.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985823939E25C1566F6BABE194899333F7E9741A99BCAC6C8C0B80928D453297B3E</stationID>
+			<name>mdr1 RADIO SACHSEN-ANHALT/Magdeburg</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<frequency>100.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985A526F47A6E16D882CA73C5572C9B56B21742E6046EBF60D681A2DD4241A5227E</stationID>
+			<name>WDR 2 - Rhein-Ruhr</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>101.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985C8A90025F545BC30312C33F2C9F11A93B2821BAACF43DCB08A99C0B8FC574C03</stationID>
+			<name>Offener Kanal Bremen</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<frequency>101.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449855DBE33E538CE16F5A5E3DF13F5BE87169DB278D5E2E05319B7E70F1833890D9A</stationID>
+			<name>NDR Info</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<frequency>102.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498572DBEF7C65458B70FBF805BB598B270AFFEAB2C2E20623FC7009844C2161F019</stationID>
+			<name>Radio Wir von hier-Unser Sender HB</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>103.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449853F19AC908867A64CD3F7A067CAF855199050E786D85C62BDD9F2EB26D62229A3</stationID>
+			<name>BFBS (engl.)</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>104.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449851CF91B98DE42AC55AD51459F7F7BBFEE91D79E13377AA4B62261235ADBB64733</stationID>
+			<name>Radio Hamburg</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>105.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985C190AD307FAC3585C17E58B0BDF40067C325A3AE148F34A03E8CDA72A54AA185</stationID>
+			<name>N-JOY</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>107.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>station preset file
+		<FrequencyRadioStation>
+			<stationID>10771449854BF4C6C3751542B93EDBA6CE12F95921F01A67EA18659652C557461E79CBB5C7</stationID>
+			<name>WDR 4</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>87.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985E0D83001D056636EEE6B2544B29236DFE3EE20F4CBC4AEA013E4259F9397F8EE</stationID>
+			<name>RTL RADIO - DIE GRÖSSTEN OLDIES</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>106.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

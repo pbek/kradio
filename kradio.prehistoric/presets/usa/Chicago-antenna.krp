@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>TakeIT2 - Paul Stewart &lt;takeit2@takeit2.com&gt;</maintainer>
+			<changed>2003-06-10T15:42:22</changed>
+			<country>USA</country>
+			<city>Chicago, IL</city>
+			<media>FM Radio</media>
+			<comments>Metropolitain Chicago Radius</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1077384173519BE3B6C829FBDF514E51F8423923A385D99B31DE996A31834C03EC2F247BBB</stationID>
+			<name>88.8 AfroPoP</name>
+			<shortname>88.8 AfroPoP</shortname>
+			<icon></icon>
+			<frequency>88.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841734578970E78B68E96695FF669BF3F41AD1382E9BFFADD135FB699775B4677811B</stationID>
+			<name>90.05 Worship</name>
+			<shortname>90.05 Worship</shortname>
+			<icon></icon>
+			<frequency>90.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077384173EA7D4A53B2AD75205DA2C3BDE7E9C553DD8F94D7A61A9FA21A32655D81F39F0B</stationID>
+			<name>WBEZ</name>
+			<shortname>WBEZ</shortname>
+			<icon></icon>
+			<frequency>91.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077384173F614DCBA655061DC6595846F8CD928ED112E2EF07D6E0D44F31CA5EA9A1CEEB8</stationID>
+			<name>WXRT</name>
+			<shortname>WXRT</shortname>
+			<icon></icon>
+			<frequency>93.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107738417321852D16A59F43373E13F313BF4F965F8315E6103829FB26987DB453CD4F1638</stationID>
+			<name>94.7 The Zone</name>
+			<shortname>94.7 The Zone</shortname>
+			<icon></icon>
+			<frequency>94.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107738417310357668D90BEFE99A0113D303B14529CFE9C86B104E46324881FF77EC32F9AE</stationID>
+			<name>WNUA</name>
+			<shortname>WNUA</shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107738417343DAA345A292CC02535B9C307842FCA1C0490B20326F50032A475BD2C7AFFF02</stationID>
+			<name>96.3</name>
+			<shortname>96.3</shortname>
+			<icon></icon>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107738417311F8E843A7C9A4793DAC872D3143276F7D5564A0A0CF2743AF3453E42A5460CB</stationID>
+			<name>WDRV 97.1</name>
+			<shortname>WDRV</shortname>
+			<icon></icon>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841730F329A5A51A2631A5AB609EDADAFDB342CA124EB3F4810F5827927840F739835</stationID>
+			<name>WLUP 97.9 The Loop</name>
+			<shortname>WLUP</shortname>
+			<icon></icon>
+			<frequency>97.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077384173C6F312F49D76F0C3DEE58E35BC059C237B2F016C7595871B209264D389314571</stationID>
+			<name>98.7 Clasical</name>
+			<shortname>Clasical</shortname>
+			<icon></icon>
+			<frequency>98.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841736A2AFB6EFBF9A10A6B506D8F3DE8868F9041D4E391FF819BFFBBC08506706B39</stationID>
+			<name>Country</name>
+			<shortname>Country</shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841738A1BC696F897D5788A16B89E33C661445E1CD1A855B25E168B48665D7220E140</stationID>
+			<name>WNND 100.3 PoP</name>
+			<shortname>WNND 80s PoP</shortname>
+			<icon></icon>
+			<frequency>100.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841738C0965926AF049E0A96E16626BC77D49C495363C5AA65A1A547EBD14ED8142F0</stationID>
+			<name>Q101</name>
+			<shortname>Q101</shortname>
+			<icon></icon>
+			<frequency>101.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841736B3A399BD3D71630E8172EB65F8477D0C45B0EC52952655CFE9EB6E7320A0D81</stationID>
+			<name>101.9 The Mix</name>
+			<shortname>101.9 The Mix</shortname>
+			<icon></icon>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077384173B498BE5B6A27649CE96BEB59FED09A25715AEA131B7DBD8937F370BD92CB2E91</stationID>
+			<name>102.7 RnB</name>
+			<shortname>102.7 RnB</shortname>
+			<icon></icon>
+			<frequency>102.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077384173C89C8538AE803E05FAD2D4B127C39025A43659FFC2107D3E0E6B81188794A3A8</stationID>
+			<name>103.5 POP</name>
+			<shortname>103.5 POP</shortname>
+			<icon></icon>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107738417349DD1071709F5A0AB39BFCBD67585A5CABED8658B79572FBF4586BEFFDBB60E5</stationID>
+			<name>104.3 Oldies</name>
+			<shortname>104.3 Oldies</shortname>
+			<icon></icon>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841730952D2EF632A3A0656DF3FC59E5E97B726611D377B0E6534B660FAFDE976E81F</stationID>
+			<name>105.1 Esp</name>
+			<shortname>105.1 Esp</shortname>
+			<icon></icon>
+			<frequency>105.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077384173F94B314C6D80C00D5AAD8606C7645BB9B3E759D6996F98459B87A1EB91E23C46</stationID>
+			<name>105.9 WCKG</name>
+			<shortname>105.9 WCKG</shortname>
+			<icon></icon>
+			<frequency>105.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10773841734D760167BE1C45DD92A5A7BB2ED458B187411CB5AF0F57F285ADE520C3472FD9</stationID>
+			<name>106.7 Worship</name>
+			<shortname>106.7 Worship</shortname>
+			<icon></icon>
+			<frequency>106.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107738417325AFBE8C4D7C1EC318BD507F60C3471D28884379643C903EF760F3EAFE4EE7A2</stationID>
+			<name>107.5 Club</name>
+			<shortname>107.5 Club</shortname>
+			<icon></icon>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077384173D80D7643A542770E7596569C0EEE2953CCCD5AB37730ECEE620681AAAA30769D</stationID>
+			<name>107.9 ESP</name>
+			<shortname>107.9 ESP</shortname>
+			<icon></icon>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

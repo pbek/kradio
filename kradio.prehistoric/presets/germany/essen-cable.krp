@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Uwe Thaler &lt;uwe@uwe-thaler.de&gt;</maintainer>
+			<changed>2003-12-23T22:02:09</changed>
+			<country>Deutschland</country>
+			<city>Essen</city>
+			<media>Kabel </media>
+			<comments>Liste Radio - Kabelcom Essen</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10771449854014A6A532F28CEFDD624BCB16BCBFBCECBD980A9B7314E075B497216BEC4C0A</stationID>
+			<name>RTL Radio</name>
+			<shortname>RTL R</shortname>
+			<icon></icon>
+			<frequency>87.65</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985DA3DDCC1AF6534976319E2317E15D836D51463F53E9370EBFA71659EE96A5E5A</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<frequency>88.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985753C2EE6FC3BEF3E8D667BED407DA93136242C867DD0A5FEAEF57CADFA632213</stationID>
+			<name>WDR 4</name>
+			<shortname>WDR 4</shortname>
+			<icon></icon>
+			<frequency>89.15</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985FF74EA2B1A440E0D74ABC5E842B864D03CDEDB1F820E57F082D78EFD42367679</stationID>
+			<name>WDR Eins Live</name>
+			<shortname>Eins Live</shortname>
+			<icon></icon>
+			<frequency>89.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498501151A1285FC924C67351A02CF5C842EBF5C208D2EC11CD8C78A3A3AC1B9F09D</stationID>
+			<name>Deutschland Radio Berlin</name>
+			<shortname>DR</shortname>
+			<icon></icon>
+			<frequency>90.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498568517FE66F90FF2E23E4F65D31927B198FC6C0A584816C5B294DE06FDB748364</stationID>
+			<name>WDR III</name>
+			<shortname>WDR III</shortname>
+			<icon></icon>
+			<frequency>90.65</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449859E41F983A19F463BF8B4BEF7479E235D7855CDF2C2EF730794D2A50FB0E9DDC4</stationID>
+			<name>Funkhaus Europa - WDR 5</name>
+			<shortname>WDR 5 FHE</shortname>
+			<icon></icon>
+			<frequency>91.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449858D8FBDB5F8FBF058BBEB5A7CEC1FCC28598516AD14F9DBE5B5E11E8F6334FD08</stationID>
+			<name>Radio Essen</name>
+			<shortname>Esssen</shortname>
+			<icon></icon>
+			<frequency>92.15</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985F1874C713B500D6FA92648848E5992E91F1F6B6C8C58F7304AD82819039EE68F</stationID>
+			<name>wdr II</name>
+			<shortname>wdr ii</shortname>
+			<icon></icon>
+			<frequency>92.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449856EC582834B17BB0F30E55F5CE8E2877D443ADB6D962503789BEFCF2BA53B219B</stationID>
+			<name>Klassik Radio</name>
+			<shortname>Klassik</shortname>
+			<icon></icon>
+			<frequency>93.65</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498578589A7310ABA5CE3F98933DE4D048A953E8269EB975E76D66DFDDF4D3549286</stationID>
+			<name>NDR 2</name>
+			<shortname>NDR 2</shortname>
+			<icon></icon>
+			<frequency>95.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498593EAC402046BA7D8C5ECEEE1DB4437706E466E349E0E219697F317C83FE0B579</stationID>
+			<name>HR 3</name>
+			<shortname>HR 3</shortname>
+			<icon></icon>
+			<frequency>95.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985F094FFE4741C9119D412354502154A0FBB0474D3FFEC9971B274D49DFDA15A9E</stationID>
+			<name>domradio</name>
+			<shortname>dom</shortname>
+			<icon></icon>
+			<frequency>96.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498503A15517E1D5AF2495A044CF0515DA245CB4C9FC6F52CDA01601EEC3400FC7A1</stationID>
+			<name>bigFM Rheinland-Pfalz</name>
+			<shortname>bigFM </shortname>
+			<icon></icon>
+			<frequency>97.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985086951361E882FFE8714092C9203610D25FA6312112D2B109AAE3B231BA82559</stationID>
+			<name>SWR 4 Rheinland</name>
+			<shortname>SWR 4</shortname>
+			<icon></icon>
+			<frequency>97.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498584D4C0C8BA371A7B3DC6224953441C47A1F4E581BF9352BE83CC29028C392D0E</stationID>
+			<name>SWR 3</name>
+			<shortname>SWR 3</shortname>
+			<icon></icon>
+			<frequency>98.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985995171B95F1D26D6E3CF21D66063412193D28CC24A311BC6E2B8321115EAF0C9</stationID>
+			<name>SWR 1 Rheinland-Pfalz</name>
+			<shortname>SWR 1</shortname>
+			<icon></icon>
+			<frequency>99.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498581B9348139B2B430ADDA51D8572C9B58B5ADF1AD3B05AC02736F5CE4E87C1645</stationID>
+			<name>radio 4 NL</name>
+			<shortname>radio 4 NL</shortname>
+			<icon></icon>
+			<frequency>100.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985CA911E764243707783B3BFB0E268B322C8C179DFA81FEB85D3B7E08A6C8D5AFC</stationID>
+			<name>FM 3 NL</name>
+			<shortname>FM 3 NL</shortname>
+			<icon></icon>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985255BAB554BF1E15DA5846EAE5EE6A678DA9D5582B637CAC9D12DD8FC1E1A3F3D</stationID>
+			<name>sunshine live </name>
+			<shortname>Sunshine</shortname>
+			<icon></icon>
+			<frequency>102.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985AE9B766538BBAEF4DF4400C5D87B11A6E1882643781F4E4D5AE1DC4CEAA84358</stationID>
+			<name>BFBS</name>
+			<shortname>BFBS</shortname>
+			<icon></icon>
+			<frequency>103.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498525234AD948F11F92670B57E17956DC0741BAA1A6CAE0803F1FAD3E462043E69B</stationID>
+			<name>WDR 5</name>
+			<shortname>WDR 5</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498528CE9DCFAEC2569B2E22312EB45B2ECA90FD38BF733E3A4557A3FA8FEB155807</stationID>
+			<name>Radio Melodie</name>
+			<shortname>Melodie</shortname>
+			<icon></icon>
+			<frequency>105.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498514E6517CD3A60BBACE8E1CBC7B9CA70D7489017F5A5DB11C7826FF467E6AE7A9</stationID>
+			<name>FAM - FM</name>
+			<shortname>JAM</shortname>
+			<icon></icon>
+			<frequency>107.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

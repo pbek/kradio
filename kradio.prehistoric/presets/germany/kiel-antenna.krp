@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Arne Henningsen &lt;ahenningsen@web.de&gt;</maintainer>
+			<changed>2004-01-03T13:55:56</changed>
+			<country>Germany</country>
+			<city>Kiel</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>107714498571B0B141358502FF6797B7AA604ABA2614CEE9D5FD7F925E56D7BE3BFC1D165D</stationID>
+			<name>NDR 1</name>
+			<shortname>NDR 1</shortname>
+			<icon></icon>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985321E9F3F8ABC56EC849DDA189544C85130383491432CDD6F2A17DA811B566C34</stationID>
+			<name>NDR 2</name>
+			<shortname>NDR 2</shortname>
+			<icon></icon>
+			<frequency>98.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498525EE8E78391B4B12E7790F6E99FE0C9C0D9D83676D6BC6B9E2E4EF1E76718C99</stationID>
+			<name>NDR 3</name>
+			<shortname>NDR 3</shortname>
+			<icon></icon>
+			<frequency>95.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985B80E21D8B9BF36218396D5E996DFCB28004A5742E85E7645AFC24301FFD8E39D</stationID>
+			<name>NDR 4</name>
+			<shortname>NDR 4</shortname>
+			<icon></icon>
+			<frequency>99.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985F7C2773FFF2068556D6ADCFEDF3269AC5E4D6BE6E62021DA608318F926B9E9F1</stationID>
+			<name>N-Joy</name>
+			<shortname>N-Joy</shortname>
+			<icon></icon>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498525712D3C175A9FB5267EB99C43759C0BC496A49B2E2FA7CC71CC9FD0128D3F06</stationID>
+			<name>RSH</name>
+			<shortname>RSH</shortname>
+			<icon></icon>
+			<frequency>102.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449851CF544AD7F1BC08E9145F83ABC85AA831D4674AFA9875F4732CC59F3E8FC03F8</stationID>
+			<name>Delta</name>
+			<shortname>Delta</shortname>
+			<icon></icon>
+			<frequency>105.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449859276EA9D85D2E9C00B74973B2E7D8037E6505F67A285D457EB8BAB37980E3B7F</stationID>
+			<name>Nora</name>
+			<shortname>Nora</shortname>
+			<icon></icon>
+			<frequency>97</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985ED66E1580FE7FD0CAF641685624EF6BD3BF6495C554E44D914810921863AFA10</stationID>
+			<name>Klassik-Radio</name>
+			<shortname>Klassik</shortname>
+			<icon></icon>
+			<frequency>97.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077144985A7D0C0FA20C1602376BA89948C47A5D420685CE5FFA4329D1062BD9D29E118AD</stationID>
+			<name>DLF</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498547DA96F8279A374BCC7D3AEE8442CA7BD3310CA5F01611C3C314692519636B2A</stationID>
+			<name>Offener Kanal Kiel</name>
+			<shortname>OK Kiel</shortname>
+			<icon></icon>
+			<frequency>101.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107714498590CC8F7CBDAB362DF314E351C9A089BC8E5C49C12947C4FB1826BC93C1B91744</stationID>
+			<name>Deutschland Radio</name>
+			<shortname>DLR</shortname>
+			<icon></icon>
+			<frequency>104.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10771449852B3B4893494B86B9DBAA29D16CBB0A5811BC3E392FD151AC9736EA15A86D9C57</stationID>
+			<name>unbekannt</name>
+			<shortname>unbekannt</shortname>
+			<icon></icon>
+			<frequency>87.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
