@@ -4,6 +4,7 @@
                 - v4l2 support
                 - v4l configuration improvements: device volume controls
                   in v4l configuration page
+                - respect device volume control min/max values
                 - replace round -> rint
                 - correct missing video_dev forward declaration
                 - store preset file button
@@ -19,6 +20,7 @@
                 - upper case in show/hide docking menu entries
                 - fix pixmap/text usage on quickbar buttons
                 - recording
+                - select recording source and igain automatically
                 - recording monitor
 
 (not working yet) - fixed segfault on app quit in InterfaceBase::disconnect

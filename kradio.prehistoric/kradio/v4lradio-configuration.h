@@ -102,14 +102,16 @@ protected slots:
 
 protected:
 
-	int  m_mixerChannelMask;
-	bool m_ignoreGUIChanges;
+	int     m_mixerChannelMask;
+	bool    m_ignoreGUIChanges;
 	
-	int   m_myControlChange;
-	float m_orgTreble,
-	      m_orgBass,
-	      m_orgBalance,
-	      m_orgDeviceVolume;
+	int     m_myControlChange;
+	float   m_orgTreble,
+	        m_orgBass,
+	        m_orgBalance,
+	        m_orgDeviceVolume;
+
+	V4LCaps m_caps;
 };
 
 #endif

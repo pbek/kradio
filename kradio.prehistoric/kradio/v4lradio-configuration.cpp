@@ -156,8 +156,8 @@ bool V4LRadioConfiguration::noticeDeviceVolumeChanged(float v)
 	if (!m_myControlChange)
 		m_orgDeviceVolume = v;
 
-	editDeviceVolume->setValue(v);
-	sliderDeviceVolume->setValue(65535 - (int)rint(v*65535));
+	editDeviceVolume  ->setValue(v);
+	sliderDeviceVolume->setValue(m_caps.maxVolume - m_caps.intGetVolume(v));
 	m_ignoreGUIChanges = old;
 	return true;
 }
@@ -167,19 +167,33 @@ bool V4LRadioConfiguration::noticeCapabilitiesChanged(const V4LCaps &c)
 {
 	labelDeviceVolume ->setEnabled(c.hasVolume);
 	editDeviceVolume  ->setEnabled(c.hasVolume);
+	editDeviceVolume  ->setRange(0, 1, c.volumeStep(), false);
+	sliderDeviceVolume->setMinValue(0);
+	sliderDeviceVolume->setMaxValue(c.maxVolume - c.minVolume);
 	sliderDeviceVolume->setEnabled(c.hasVolume);
 
 	labelTreble ->setEnabled(c.hasTreble);
 	editTreble  ->setEnabled(c.hasTreble);
+	editTreble  ->setRange(0, 1, c.trebleStep(), false);
+	sliderTreble->setMinValue(0);
+	sliderTreble->setMaxValue(c.maxTreble - c.minTreble);
 	sliderTreble->setEnabled(c.hasTreble);
 
 	labelBass ->setEnabled(c.hasBass);
 	editBass  ->setEnabled(c.hasBass);
+	editBass  ->setRange(0, 1, c.bassStep(), false);
+	sliderBass->setMinValue(0);
+	sliderBass->setMaxValue(c.maxBass - c.minBass);
 	sliderBass->setEnabled(c.hasBass);
 
 	labelBalance ->setEnabled(c.hasBalance);
 	editBalance  ->setEnabled(c.hasBalance);
+	editBalance  ->setRange(-1, 1, c.balanceStep(), false);
+	sliderBalance->setMinValue(0);
+	sliderBalance->setMaxValue(c.maxBalance - c.minBalance);
 	sliderBalance->setEnabled(c.hasBalance);
+
+	m_caps = c;
 
 	return true;
 }
@@ -243,8 +257,8 @@ bool V4LRadioConfiguration::noticeTrebleChanged(float t)
 	if (!m_myControlChange)
 		m_orgTreble = t;
 			
-	editTreble->setValue(t);
-	sliderTreble->setValue(65535 - (int)rint(t*65535));
+	editTreble  ->setValue  (t);
+	sliderTreble->setValue(m_caps.maxTreble - m_caps.intGetTreble(t));
 	m_ignoreGUIChanges = old;
 	return true;
 }
@@ -260,8 +274,8 @@ bool V4LRadioConfiguration::noticeBassChanged(float b)
 	if (!m_myControlChange)
 		m_orgBass = b;
 
-	editBass->setValue(b);
-	sliderBass->setValue(65535 - (int)rint(b*65535));
+	editBass  ->setValue(b);
+	sliderBass->setValue(m_caps.maxBass - m_caps.intGetBass(b));
 	m_ignoreGUIChanges = old;
 	return true;
 }
@@ -277,8 +291,8 @@ bool V4LRadioConfiguration::noticeBalanceChanged(float b)
 	if (!m_myControlChange)
 		m_orgBalance = b;
 
-	editBalance->setValue(b);
-	sliderBalance->setValue(32768 + (int)rint(b*32767));
+	editBalance  ->setValue(b);
+	sliderBalance->setValue(m_caps.maxBalance - m_caps.intGetBalance(b));
 	m_ignoreGUIChanges = old;
 	return true;
 }
@@ -436,7 +450,7 @@ void V4LRadioConfiguration::slotBassChanged   (double b) // for KDoubleNumInput,
 	--m_myControlChange;
 }
 
-void V4LRadioConfiguration::slotBalanceChanged(double b) // for KDoubleNumInput, 0.0..1.0
+void V4LRadioConfiguration::slotBalanceChanged(double b) // for KDoubleNumInput, -1.0..1.0
 {
 	if (m_ignoreGUIChanges) return;
 	++m_myControlChange;
@@ -445,43 +459,35 @@ void V4LRadioConfiguration::slotBalanceChanged(double b) // for KDoubleNumInput,
 }
 
 
-void V4LRadioConfiguration::slotDeviceVolumeChanged (int v) // for slider, 0..65535
+void V4LRadioConfiguration::slotDeviceVolumeChanged (int v)
 {
 	if (m_ignoreGUIChanges) return;
-	v = v >  65535 ? 65535 : v;
-	v = v <      0 ?     0 : v;
 	++m_myControlChange;
-	sendDeviceVolume((float)(65535-v) / 65535.0);
+	sendDeviceVolume(m_caps.floatGetVolume(m_caps.maxVolume - v));
 	--m_myControlChange;
 }
 
-void V4LRadioConfiguration::slotTrebleChanged (int t) // for slider, 0..65535
+void V4LRadioConfiguration::slotTrebleChanged (int t)
 {
 	if (m_ignoreGUIChanges) return;
-	t = t >  65535 ? 65535 : t;
-	t = t <      0 ?     0 : t;
 	++m_myControlChange;
-	sendTreble((float)(65535-t) / 65535.0);
+	sendTreble(m_caps.floatGetTreble(m_caps.maxTreble - t));
 	--m_myControlChange;
 }
 
-void V4LRadioConfiguration::slotBassChanged   (int b) // for slider, 0..65535
+void V4LRadioConfiguration::slotBassChanged   (int b)
 {
 	if (m_ignoreGUIChanges) return;
-	b = b >  65535 ? 65535 : b;
-	b = b <      0 ?     0 : b;
 	++m_myControlChange;
-	sendBass((float)(65535-b) / 65535.0);
+	sendBass(m_caps.floatGetBass(m_caps.maxBass - b));
 	--m_myControlChange;
 }
 
-void V4LRadioConfiguration::slotBalanceChanged(int b) // for slider, 0..65535
+void V4LRadioConfiguration::slotBalanceChanged(int b)
 {
 	if (m_ignoreGUIChanges) return;
-	b = b >  65535 ? 65535 : b;
-	b = b <      0 ?     0 : b;
 	++m_myControlChange;
-	sendBalance((float)(b - 32768) / 32767);
+	sendBalance(m_caps.floatGetBalance(m_caps.maxBalance - b));
 	--m_myControlChange;
 }
 

@@ -1,22 +1,7 @@
-0.3.0-alpha3
-
-       background pixmap for display
-       .so - library plugins
-       plugin config
-       lirc config
-       internet radio streams
-
 0.3.0-alpha2
 
-       v4l2 support (implemented, not tested)
-       v4l2: respect volume min max settings
-       v4l2: only write existing controls
        segfault fixes with 2.95.3
-       old format detection for preset files (Locale->UTF8) // done
-       sensefull names/descriptions for plugins     // done
-       upper case in show/hide docking menu entries // done
-       recording (implemented, hardly tested) // done
-       recording monitor (interface changes) // done
+       v4l2 support (implemented, hardly tested)
 
 0.3.0-alpha3
 
@@ -25,6 +10,7 @@
        plugin config
        lirc config
        internet radio streams
+       translations
 
 0.3.0-beta1
   

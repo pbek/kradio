@@ -105,8 +105,9 @@ bool V4LRadio::connect (Interface *i)
 	bool c = ISeekRadio::connect(i);
 	bool d = IFrequencyRadio::connect(i);
 	bool e = IV4LCfg::connect(i);
+	bool f = IRecordingClient::connect(i);
 
-	return a || b || c || d || e;
+	return a || b || c || d || e || f;
 }
 
 
@@ -117,8 +118,9 @@ bool V4LRadio::disconnect (Interface *i)
 	bool c = ISeekRadio::disconnect(i);
 	bool d = IFrequencyRadio::disconnect(i);
 	bool e = IV4LCfg::disconnect(i);
+	bool f = IRecordingClient::disconnect(i);
 
-	return a || b || c || d || e;
+	return a || b || c || d || e || f;
 }
 
 
@@ -673,7 +675,32 @@ bool  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
 }
 
 
+// IRecordingClient
 
+bool V4LRadio::noticeRecordingStarted()
+{
+	if (isPowerOn()) {
+		int x = 1 << m_mixerChannel;
+		if (ioctl(m_mixer_fd, SOUND_MIXER_WRITE_RECSRC, &x))
+			kdDebug() << "error selecting v4l radio input as recording source\n";
+   		_lrvol tmpvol;
+		if (ioctl(m_mixer_fd, MIXER_READ(SOUND_MIXER_IGAIN), &tmpvol))
+			kdDebug() << "error reading igain volume\n";		
+		if (tmpvol.r == 0 && tmpvol.l == 0) {
+			tmpvol.r = tmpvol.l = 1;
+			if (ioctl(m_mixer_fd, MIXER_WRITE(SOUND_MIXER_IGAIN), &tmpvol))
+				kdDebug() << "error setting igain volume\n";
+		}
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool V4LRadio::noticeMonitoringStarted()
+{
+	return noticeRecordingStarted();
+}
 
 // PluginBase methods
 
@@ -846,19 +873,30 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 		buffer[l] = 0;
 		c.description = buffer;
 
+		c.hasMute = false;
+		c.unsetVolume();
+		c.unsetTreble();
+		c.unsetBass();
+		c.unsetBalance();
+		
 		video_audio audiocaps;
 		if (0 == ioctl(fd, VIDIOCGAUDIO, &audiocaps)) {
 			kdDebug() << "V4LRadio::readV4LCaps: audio caps = " << audiocaps.flags << endl;
-			c.hasVolume  = (audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0;
-			c.hasTreble  = (audiocaps.flags & VIDEO_AUDIO_TREBLE)  != 0;
-			c.hasBass    = (audiocaps.flags & VIDEO_AUDIO_BASS)    != 0;
-
+			if ((audiocaps.flags & VIDEO_AUDIO_MUTABLE)  != 0)
+				c.hasMute = true;
+			if ((audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0)
+				c.setVolume (0, 65535);
+			if ((audiocaps.flags & VIDEO_AUDIO_TREBLE)  != 0)
+				c.setTreble (0, 65535);
+			if ((audiocaps.flags & VIDEO_AUDIO_BASS)    != 0)
+				c.setBass   (0, 65535);
 			// at least my driver has support for balance, but the bit is not set ...
-			c.hasBalance = true; //(audiocaps.flags & VIDEO_AUDIO_BALANCE) != 0;
+			c.setBalance(0, 65535);
 		}
 	} else {
 		kdDebug() << "V4LRadio::readV4LCaps: error reading V4L1 caps\n";
 	}
+	
 #ifdef HAVE_V4L2
 	v4l2_capability caps2;
 	r = ioctl(fd, VIDIOC_QUERYCAP, &caps2);
@@ -872,14 +910,27 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device)
 		c.description = buffer;
 
 		v4l2_queryctrl  ctrl;
+
+		c.unsetVolume();
+		c.unsetTreble();
+		c.unsetBass();
+		c.unsetBalance();
+		
+		ctrl.id = V4L2_CID_AUDIO_MUTE;
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+			c.hasMute = true;
 		ctrl.id = V4L2_CID_AUDIO_VOLUME;
-		c.hasVolume = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+			c.setVolume(ctrl.minimum, ctrl.maximum);
 		ctrl.id = V4L2_CID_AUDIO_TREBLE;
-		c.hasTreble = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+			c.setTreble(ctrl.minimum, ctrl.maximum);
 		ctrl.id = V4L2_CID_AUDIO_BASS;
-		c.hasBass   = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+			c.setBass(ctrl.minimum, c.maxBass = ctrl.maximum);
 		ctrl.id = V4L2_CID_AUDIO_BALANCE;
-		c.hasBalance = (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+		if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl) && !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+			c.setBalance(ctrl.minimum, ctrl.maximum);
 		
 	} else {
 		kdDebug() << "V4LRadio::readV4LCaps: error reading V4L2 caps\n";
@@ -983,14 +1034,16 @@ bool V4LRadio::readTunerInfo() const
 
 
 #define V4L2_S_CTRL(what,val) \
-	ctl.value = (val); \
+ {  ctl.value = (val); \
 	ctl.id    = (what); \
-	r = ioctl (m_radio_fd, VIDIOC_S_CTRL, &ctl);
+	r = ioctl (m_radio_fd, VIDIOC_S_CTRL, &ctl); \
+ }
 
 #define V4L2_G_CTRL(what) \
-	ctl.id    = (what); \
+ {	ctl.id    = (what); \
 	r = ioctl (m_radio_fd, VIDIOC_G_CTRL, &ctl); \
-	x = x ? x : r;
+	x = x ? x : r; \
+ }
 
 
 bool V4LRadio::updateAudioInfo(bool write) const
@@ -998,12 +1051,12 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	if (m_blockReadAudio && !write)
 		return true;
 
-	bool  oldStereo  = m_stereo;
-	bool  oldMute    = m_muted;
-	float oldTreble  = m_treble;
-	float oldBass    = m_bass;
-	float oldBalance = m_balance;
-	float oldDeviceVolume = m_deviceVolume;
+	bool  oldStereo        = m_stereo;
+	bool  oldMute          = m_muted;
+	int   iOldDeviceVolume = m_caps.intGetVolume (m_deviceVolume);
+	int   iOldTreble       = m_caps.intGetTreble (m_treble);
+	int   iOldBass         = m_caps.intGetBass   (m_bass);
+	int   iOldBalance      = m_caps.intGetBalance(m_balance);
 
 	if (m_radio_fd >= 0) {
 		int r = -1;
@@ -1011,51 +1064,63 @@ bool V4LRadio::updateAudioInfo(bool write) const
 		    if (m_muted) m_audio->flags |=  VIDEO_AUDIO_MUTE;
 		    else         m_audio->flags &= ~VIDEO_AUDIO_MUTE;
 
-		    m_audio->volume  = (int)rint(65535 * m_deviceVolume);
-		    m_audio->treble  = (int)rint(65535 * m_treble);
-		    m_audio->bass    = (int)rint(65535 * m_bass);
-		    m_audio->balance = (int)rint(32767 * m_balance + 32768);
+		    m_audio->volume  = m_caps.intGetVolume (m_deviceVolume);
+		    m_audio->treble  = m_caps.intGetTreble (m_treble);
+		    m_audio->bass    = m_caps.intGetBass   (m_bass);
+		    m_audio->balance = m_caps.intGetBalance(m_balance);
 
 			r = ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, m_audio);
 
 			m_stereo = (r == 0) && ((m_audio->mode  & VIDEO_SOUND_STEREO) != 0);
-			m_muted  = (r != 0) || ((m_audio->flags & VIDEO_AUDIO_MUTE) != 0);
+
+			m_muted  = m_caps.hasMute &&
+			           ((r != 0) || ((m_audio->flags & VIDEO_AUDIO_MUTE) != 0));
 
 			/* Some drivers seem to set volumes to zero if they are muted.
 			   Thus we do not reload them if radio is muted */
 			if (!m_muted && !write) {
-				m_treble  = r ? 0 : (1 / 65535.0 * (float)m_audio->treble);
-				m_bass    = r ? 0 : (1 / 65535.0 * (float)m_audio->bass);
-				m_balance = r ? 0 : (1 / 32767.0 * (float)(m_audio->balance - 32768));
-				m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)m_audio->volume);
+				m_deviceVolume = m_caps.hasVolume  && !r ? m_caps.floatGetVolume (m_audio->volume)  : 1;
+				m_treble       = m_caps.hasTreble  && !r ? m_caps.floatGetTreble (m_audio->treble)  : 1;
+				m_bass         = m_caps.hasBass    && !r ? m_caps.floatGetBass   (m_audio->bass)    : 1;
+				m_balance      = m_caps.hasBalance && !r ? m_caps.floatGetBalance(m_audio->balance) : 0;
 			}
 		}
 #ifdef HAVE_V4L2
 		else if (m_caps.version == 2) {
 			v4l2_control   ctl;
 			if (write) {
-				V4L2_S_CTRL(V4L2_CID_AUDIO_MUTE,    m_muted);
-				V4L2_S_CTRL(V4L2_CID_AUDIO_TREBLE,  (int)rint(65535 * m_treble));
-				V4L2_S_CTRL(V4L2_CID_AUDIO_BASS,    (int)rint(65535 * m_bass));
-				V4L2_S_CTRL(V4L2_CID_AUDIO_BALANCE, (int)rint(32767 * m_balance + 32768));
-				V4L2_S_CTRL(V4L2_CID_AUDIO_VOLUME,  (int)rint(65535 * m_deviceVolume));
+				if (m_caps.hasMute)
+					V4L2_S_CTRL(V4L2_CID_AUDIO_MUTE,    m_muted);
+				if (m_caps.hasTreble)
+					V4L2_S_CTRL(V4L2_CID_AUDIO_TREBLE,  m_caps.intGetTreble(m_treble));
+				if (m_caps.hasBass)
+					V4L2_S_CTRL(V4L2_CID_AUDIO_BASS,    m_caps.intGetBass(m_bass));
+				if (m_caps.hasBalance)
+					V4L2_S_CTRL(V4L2_CID_AUDIO_BALANCE, m_caps.intGetBalance(m_balance));
+				if (m_caps.hasVolume)
+					V4L2_S_CTRL(V4L2_CID_AUDIO_VOLUME,  m_caps.intGetVolume(m_deviceVolume));
 			} else {
 				int x = 0;    // x stores first ioctl error
-				V4L2_G_CTRL(V4L2_CID_AUDIO_MUTE);
-                m_muted   = (r != 0) || ctl.value;
+
+				if (m_caps.hasMute)
+					V4L2_G_CTRL(V4L2_CID_AUDIO_MUTE);
+                m_muted   = m_caps.hasMute && ((r != 0) || ctl.value);
 
 				/* Some drivers seem to set volumes to zero if they are muted.
 				   Thus we do not reload them if radio is muted */
 				if (!m_muted) {
-                
-					V4L2_G_CTRL(V4L2_CID_AUDIO_TREBLE);
-					m_treble  = r ? 0 : (1 / 65535.0 * (float)ctl.value); 
-					V4L2_G_CTRL(V4L2_CID_AUDIO_BASS);
-					m_bass    = r ? 0 : (1 / 65535.0 * (float)ctl.value); 
-					V4L2_G_CTRL(V4L2_CID_AUDIO_BALANCE);
-					m_balance = r ? 0 : (1 / 32767.0 * (float)(ctl.value - 32768));
-					V4L2_G_CTRL(V4L2_CID_AUDIO_VOLUME);
-					m_deviceVolume = r ? 0 : (1 / 65535.0 * (float)ctl.value);
+					if (m_caps.hasVolume)
+						V4L2_G_CTRL(V4L2_CID_AUDIO_VOLUME);
+					m_deviceVolume = m_caps.hasVolume && !r ? m_caps.floatGetVolume (ctl.value) : 1;
+                    if (m_caps.hasTreble)
+						V4L2_G_CTRL(V4L2_CID_AUDIO_TREBLE);
+					m_treble       = m_caps.hasTreble && !r ? m_caps.floatGetTreble (ctl.value) : 1;
+					if (m_caps.hasBass)
+						V4L2_G_CTRL(V4L2_CID_AUDIO_BASS);
+					m_bass         = m_caps.hasBass   && !r ? m_caps.floatGetBass   (ctl.value) : 1;
+					if (m_caps.hasBalance)
+						V4L2_G_CTRL(V4L2_CID_AUDIO_BALANCE);
+					m_balance      = m_caps.hasBalance&& !r ? m_caps.floatGetBalance(ctl.value) : 0;
 				}
                 
                 r = ioctl (m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
@@ -1082,26 +1147,20 @@ bool V4LRadio::updateAudioInfo(bool write) const
 	bool oldBlock = m_blockReadAudio;
 	m_blockReadAudio = true;
 
-	// ignore values read if a feature is not supported
-	if (!m_caps.hasVolume)   m_deviceVolume = 1.0;
-	if (!m_caps.hasTreble)   m_treble       = 1.0;
-	if (!m_caps.hasBass  )   m_bass         = 1.0;
-	if (!m_caps.hasBalance)  m_balance      = 0.0;
-
     // send notifications
 	
 	if (oldStereo != m_stereo)
 		notifyStereoChanged(m_stereo);
 	if (oldMute != m_muted)
 		notifyMuted(m_muted);
-	if ((int)rint(65535*oldTreble)       != (int)rint(65535*m_treble))
-		notifyTrebleChanged(m_treble);
-	if ((int)rint(65535*oldBass)         != (int)rint(65535*m_bass))
-		notifyBassChanged(m_bass);
-	if ((int)rint(32767*oldBalance)      != (int)rint(32767*m_balance))
-		notifyBalanceChanged(m_balance);
-	if ((int)rint(65535*oldDeviceVolume) != (int)rint(65535*m_deviceVolume))
+	if (iOldDeviceVolume != m_caps.intGetVolume(m_deviceVolume))
 		notifyDeviceVolumeChanged(m_deviceVolume);
+	if (iOldTreble       != m_caps.intGetTreble(m_treble))
+		notifyTrebleChanged(m_treble);
+	if (iOldBass         != m_caps.intGetBass(m_bass))
+		notifyBassChanged(m_bass);
+	if (iOldBalance      != m_caps.intGetBalance(m_balance))
+		notifyBalanceChanged(m_balance);
 	
 	m_blockReadAudio = oldBlock;
 

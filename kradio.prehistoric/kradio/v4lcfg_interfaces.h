@@ -25,18 +25,43 @@ struct V4LCaps
 	int     version;
 	QString description;
 
+	bool    hasMute;
+	
 	bool    hasVolume;
+	int     minVolume,  maxVolume;
 	bool    hasTreble;
+	int     minTreble,  maxTreble;
 	bool    hasBass;
+	int     minBass,    maxBass;
 	bool    hasBalance;
+	int     minBalance, maxBalance;
 
 	V4LCaps();
-	V4LCaps(int v, const QString &d,
-		    bool hasVolume,
-		    bool hasTreble,
-		    bool hasBass,
-		    bool hasBalance
-		   );
+
+	float  volumeStep()  const { return 1.0 / (float)(maxVolume  - minVolume); }
+	float  trebleStep()  const { return 1.0 / (float)(maxTreble  - minTreble); }
+	float  bassStep()    const { return 1.0 / (float)(maxBass    - minBass); }
+	float  balanceStep() const { return 1.0 / (float)(maxBalance - minBalance); }
+
+	void   setVolume (int min, int max) { hasVolume  = true; minVolume  = min; maxVolume  = max; }
+	void   setTreble (int min, int max) { hasTreble  = true; minTreble  = min; maxTreble  = max; }
+	void   setBass   (int min, int max) { hasBass    = true; minBass    = min; maxBass    = max; }
+	void   setBalance(int min, int max) { hasBalance = true; minBalance = min; maxBalance = max; }
+
+	void   unsetVolume () { hasVolume  = false; minVolume  = 0; maxVolume  = 65535; }
+	void   unsetTreble () { hasTreble  = false; minTreble  = 0; maxTreble  = 65535; }
+	void   unsetBass   () { hasBass    = false; minBass    = 0; maxBass    = 65535; }
+	void   unsetBalance() { hasBalance = false; minBalance = 0; maxBalance = 65535; }
+
+	int    intGetVolume (float f) const { return (int)rint(minVolume  + (maxVolume  - minVolume ) * f); }
+	int    intGetTreble (float f) const { return (int)rint(minTreble  + (maxTreble  - minTreble ) * f); }
+	int    intGetBass   (float f) const { return (int)rint(minBass    + (maxBass    - minBass   ) * f); }
+	int    intGetBalance(float f) const { return (int)rint(minBalance + (maxBalance - minBalance) / 2.0 * (1.0 + f)); }
+
+	float  floatGetVolume (int i) const { return (float)(i - minVolume)  * volumeStep(); }
+	float  floatGetTreble (int i) const { return (float)(i - minTreble)  * trebleStep(); }
+	float  floatGetBass   (int i) const { return (float)(i - minBass  )  * bassStep(); }
+	float  floatGetBalance(int i) const { return (float)(i - minBalance) * balanceStep() * 2.0 - 1.0; }
 };
 
 
@@ -64,7 +89,6 @@ ANSWERS:
     IF_ANSWER  (   int            getMixerChannel() const                       )
     IF_ANSWER  (   float          getDeviceVolume() const                       )
     IF_ANSWER  (   const V4LCaps &getCapabilities() const                       )
-
 };
 
 

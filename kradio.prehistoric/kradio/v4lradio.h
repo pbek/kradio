@@ -29,6 +29,7 @@
 #include "frequencyradiostation.h"
 #include "frequencyseekhelper.h"
 #include "v4lcfg_interfaces.h"
+#include "recording-interfaces.h"
 
 
 struct video_tuner;
@@ -42,7 +43,8 @@ class V4LRadio : public QObject,
                  public IRadioSound,
                  public ISeekRadio,
                  public IFrequencyRadio,
-                 public IV4LCfg
+                 public IV4LCfg,
+                 public IRecordingClient
 {
 Q_OBJECT
 public:
@@ -150,6 +152,16 @@ ANSWERS:
     int            getMixerChannel() const { return m_mixerChannel; }
 	float          getDeviceVolume() const;
 	const V4LCaps &getCapabilities() const { return m_caps; }
+
+	// IRecordingClient
+
+RECEIVERS:
+	bool noticeRecordingStarted();
+	bool noticeMonitoringStarted();
+	bool noticeRecordingStopped()                                  { return false; }
+	bool noticeMonitoringStopped()                                 { return false; }
+	bool noticeRecordingConfigChanged(const RecordingConfig &)     { return false; }
+	bool noticeRecordingContextChanged(const RecordingContext &)   { return false; }
 
     // anything else
 

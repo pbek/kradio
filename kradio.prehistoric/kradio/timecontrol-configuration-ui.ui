@@ -374,23 +374,6 @@
                         </spacer>
                     </hbox>
                 </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer6</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>65</height>
-                        </size>
-                    </property>
-                </spacer>
                 <widget class="QComboBox">
                     <item>
                         <property name="text">
@@ -428,6 +411,23 @@
                         <cstring>comboAlarmType</cstring>
                     </property>
                 </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer6</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>65</height>
+                        </size>
+                    </property>
+                </spacer>
             </vbox>
         </widget>
     </grid>

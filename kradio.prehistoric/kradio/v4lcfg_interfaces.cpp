@@ -23,24 +23,22 @@
 V4LCaps::V4LCaps()
   : version(0),
     description(QString::null),
+    hasMute(false),
     hasVolume(false),
+    minVolume(0),
+    maxVolume(65535),
     hasTreble(false),
+    minTreble(0),
+    maxTreble(65535),
     hasBass(false),
-    hasBalance(false)
+    minBass(0),
+    maxBass(65535),
+    hasBalance(false),
+    minBalance(0),
+    maxBalance(65535)
 {
 }
 
-V4LCaps::V4LCaps(int v, const QString &d,
-        bool vol,  bool treble,
-        bool bass, bool balance )
-  : version(v),
-    description(d),
-    hasVolume(vol),
-    hasTreble(treble),
-    hasBass(bass),
-    hasBalance(balance)
-{
-}
 
 // IV4LCfg
  
