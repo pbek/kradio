@@ -21,12 +21,13 @@
 #include <qvbuttongroup.h>
 
 #include <kwin.h>
+#include <klocale.h>
 
 #include "quickbar.h"
 #include "radiostation.h"
 
-QuickBar::QuickBar(RadioBase *_radio)
-  : QWidget(0),
+QuickBar::QuickBar(RadioBase *_radio, QWidget * parent = 0, const char * name = 0)
+  : QWidget(parent,name),
     layout(0),
     buttonGroup(0),
     layoutVertical(false),
@@ -163,8 +164,9 @@ void QuickBar::hide()
   QWidget::hide();
 }
 
-void QuickBar::slotFrequencyChanged(float, const RadioStation *)
+void QuickBar::slotFrequencyChanged(float, const RadioStation *s)
 {
+  setCaption ((s ? QString(s->name()) : i18n("KRadio")));
   if (buttonGroup) buttonGroup->setButton(radio->currentStation());
 }
 

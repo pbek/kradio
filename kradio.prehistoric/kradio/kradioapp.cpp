@@ -19,11 +19,14 @@
 #include <config.h>
 #endif
 
+#include <kiconloader.h>
+#include <kconfig.h>
+#include <klocale.h>
+
 #include "kradio.h"
 #include "kradioapp.h"
 #include "docking.h"
-#include <kiconloader.h>
-#include <kconfig.h>
+
 
 KRadioApp::KRadioApp()
   :kradio(0),
@@ -38,11 +41,11 @@ KRadioApp::KRadioApp()
   radio->readCfg (QString(getenv("HOME")) + "/.kradiorc");
 
   // the quick selection buttons
-  quickbar = new QuickBar (radio);
+  quickbar = new QuickBar (radio,0,"kradio");
 
   // the main dialog
-  kradio = new KRadio(quickbar, radio);
-  
+  kradio = new KRadio(quickbar, radio,0,"kradio");
+ 
   // Tray
   tray = new RadioDocking(kradio, quickbar, radio);
 
@@ -62,7 +65,6 @@ KRadioApp::KRadioApp()
     connect(kradio, SIGNAL(showAbout()), &AboutApplication, SLOT(show()));
     kradio->show();
   }
-
 }
 
 KRadioApp::~KRadioApp()

@@ -51,7 +51,7 @@ protected :
     bool layoutVertical;
     bool showShortName;
 public:
-	QuickBar(RadioBase *radio);	
+	QuickBar(RadioBase *radio, QWidget * parent = 0, const char * name = 0);
 	~QuickBar();
 	
 	void    restoreState (KConfig *c);
