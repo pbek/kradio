@@ -1,0 +1,267 @@
+0.3.0 cvs
+
+        emw     - major rework on sound backend
+                - plugins as dynamic libraries
+                - timeshifter plugin
+                - ogg/vorbis recording
+
+        marcus
+
+                - got rid auf the outdated KDevelop buildsystem
+                - got rid of the admin dir
+                - renamed kradio subdir to src
+                - renamed and moved some icons to src/icons according to the
+                  freedeskto.org (fdo) icon theme specification
+                - rewrote Makefiles.am files to take adavantage of the KDE CVS
+                  build system
+                - added proper moc #include statements to a lot of files
+
+0.3.0 alpha 3
+
+        emw     - kde 3.0 & include file fixes
+                - segfault fix that occured after station scan
+                - polish translation
+                - mp3 recording
+                - fix for recording configuration save/restore
+                - alarms configurable for weekdays
+                - no more unnecessary redraws in recording monitor
+                - improved behavior of quickbar: poweron/off
+                  automatically if necessary
+                - only redraw necessary parts in recording monitor
+                - split kapplication & pluginmanager
+                - enable multiple "instances":
+                  We have now a (very simple) method to play more
+                  than one radio source at once: Set the configuration
+                  variable in kradiorc "instances" to the required value.
+                - cleanup IErrorLog usage
+                - use threading for recording/encoding
+                - fix several annoyances in configuration dialog, such as
+                  a reasonable minimum size of that dialog
+                - recording buffer management is now configurable
+                - preset file storage location is now configurable
+                - finally managed to fix segfaults that occurred when calling
+                  virtual methods in destructors of template classes
+                  (application exit and scan-dialog closing), see
+                  http://gcc.gnu.org/bugzilla/show_bug.cgi?id=4861
+                - add button for sleep countdown to display plugin
+                - open /dev/dsp is no more blocking
+                - set correct PCM_ENABLE_INPUT flag when starting recording
+                - recording: replaced QSocketNotifier by polling/nonblocking 
+                  IO with QTimer. Some sound drivers do not support select()
+                - fixed nebulous recording error logging/reporting
+                - fix of kradio.pot generation
+                - Use KListView for radio stations instead of KListBox
+                - removed dependency to deprecated qlist.h (Thanks to G.Runf for the hint)
+
+        Rafael Rodriguez
+
+                - spanish translation
+
+0.3.0 alpha 2
+
+        emw     Compilation & Compatibility
+
+                - kde3.0 compatibility fixes
+                - replace round -> rint
+                - correct missing video_dev forward declaration
+
+                V4L/V4L2
+
+                - v4l2 support, usable for older and bleeding edge
+                  releases of V4L2
+                - v4l configuration improvements: device volume controls
+                  in v4l configuration page
+                - respect device volume control min/max values
+                - fixed device-volume-set2zero-problem after mute/unmute
+                  (radio cards do reset volume controls on mute)
+
+                Recording
+
+                - recording
+                - select recording source and igain automatically
+                - recording monitor
+                - recording doesn't restore monitoring state on startup,
+                  kradio might be blocked if another app uses /dev/dsp
+
+                GUI
+
+                - store-preset-file button in station configuration page
+                - move widget geometry saving/restoring to class
+                  WidgetPluginBase
+                - finally fixed the nasty positioning/sticky problem when
+                  window is restored
+                - fixed "changes-ignored"-problem in preset-about page
+                - sensefull names/descriptions for plugins
+                - upper case in show/hide docking menu entries
+                - fix pixmap/text usage on quickbar buttons
+                - font selector for display
+                - choosable inactive text color
+                - error loggin plugin
+                - recording button: +menu for recording/monitoring
+                - symbol for station search button
+                - about dialog
+
+                Preset File Format
+
+                - encoding detection for preset files (Locale->UTF8)
+                - convert preset files to new format
+                - converter: add xml-encoding-line
+
+                Other
+
+                - translation preparation
+                - german translation
+                - credits in about dialog
+                - remove dependency on kalarm
+                - use special mail-adress for preset files
+                - country/city in preset file mail
+                - debianization
+
+        Klas Kalass
+
+                - some more include file fixes
+
+        Will Stephenson
+
+                - radio-configuration.cpp: fix for pixmap selection dialog
+
+        Andreas Pour
+
+                - fix for math and STL issues
+
+
+0.3.0 alpha 1
+
+        Update Information:
+
+        Due to the new station list format you will have to rebuild your
+        station selections for the quickbar and the docking menu. The
+        stations should be read without problems. As soon as you quit
+        kradio and the configuration files are written, any versions 0.2.x
+        will not be able to read the station list and configuration files.
+
+        BACKUP YOUR CONFIGURATION FILES!
+
+        emw     - major rewrite (interfaces, plugins, ...)
+                - AM/FM readyness
+                - display redesign
+                - new station list format
+
+0.2.8   (beta)
+
+        emw     - setupdialog: fix cancel button behaviour
+                - configurable scanStep for station search
+                - made frequency setting independent from device quantisation
+                - min/max Frequency config in kHz (before in MHz)
+                - display Frequency in kHz if < 10 MHz
+                - fix min/max settings in station configuration page
+                - quickbar fixes (wrong use of button IDs vs. station IDs)
+                - redesign kradio gui. new class kradiodisplay
+                - make kradio AM-ready (hopefully)
+
+0.2.7a  (beta)
+
+        emw     - fix missing xml quotings
+                - fix for disabled alarm volume
+                - use frequency instead of (changable) stationID for alarms
+                - implement a "contribute preset file to kradio project" function via KDE standard mail client
+
+0.2.7   (beta)
+
+        emw     - added pseudo lirc key "QUIT"
+                - fixed some more quickbar bugs
+                - make "good signal" level configurable, sometimes autoscan did not find all stations
+                - fix ugly setup dialog layout frame problem
+                - fix "alarm-enable is unset on restart" - problem
+                - setupdialog: use kdialogbase to get usual kde like configuration dialog
+                - setupdialog: make it non-modal
+                - setupdialog: "about" tab for station preset lists
+                - setupdialog: fix update of station info after preset load
+                - setupdialog: use current volume for alarm volume of new alarm
+                - setupdialog: fix tab order
+
+        kalass  - fix min/max typo
+                - add germany/hamburg-antenna preset file
+
+
+0.2.6   (beta)
+
+        emw     - activate station in setupdialog by freq, not stationId
+                - add "unknown station" to kradio->cbStations
+                - fix alarm inconsistencies
+                - make alarm management independent from radiobase: new class TimeControl
+                - make xml-config independent from radiobase: kradioapp is now responsible for it
+                - remove alarm configuration from xml file, put to standard kde/kradio config file (downward compatibility kept)
+                - sleep countdown function, countdown stopped by poweron/off, accessible via lirc/docking menu
+                - make kradioapp responsible for lircHelper
+                - make use of <KDEDIR>/share/apps/kradio/presets possible
+                - include first station preset file in dist (germany/aachen-cable.krp, still a bit incomplete;)
+
+        kalass  - fixed config autosave bug
+
+                Release notes:
+                * ~/.kradiorc is still read for compatibility, but only if ~/<dot-kdedir>/share/data/kradio/stations.krp does not exist/contain valid data
+                * alarms are now in ~/<dot-kdedir>/share/config/kradiorc, ~/.kradiorc is read for compatibility
+
+                * I'd like to provide ready-to-use-kradio preset files within the dist.
+                  I'd be pleased if you like to contribute your personal preset file to this project.
+
+0.2.5   (alpha)
+
+        emw:    - configuration dialog part 3: alarms
+                - frequency range override
+                - improve alarms by station/volume preset
+                - only selected stations in docking menu
+                - restore power/frequency after station scan
+                - activate stations in setup by double-click/<return>
+                - fix volume preset
+
+0.2.4   (alpha)
+
+        emw:    - qt 3.0.x compatibility fixes
+                - quickbar/buttonflowlayout fixes
+                - configuration dialog (part 2)
+                - radiobase poweron/off fixes
+
+0.2.3   (alpha)
+
+        emw:    - added configuration dialog (part 1)
+                - added station scan
+                - improve station/alarm list handling
+
+0.2.2   (alpha)
+
+        emw:    - small fixes concerning window restoring
+                - gcc 3.2 ready
+                - further fixes in stereo/signal quality display
+
+        kalass  - kde3 port
+                - quickbar makes use of buttonflowlayout
+                - fixes to conform with kde styleguide
+                - make kradio/docking/quickbar independent
+                - many other improvements, see CVS
+
+        rizsanyi: - added lirc option RADIO (which turns kradio on)
+                  - further small fixes
+
+0.2.1   emw:    - added alarm clock functions
+                - line in volume monitoring
+                - About-Dialog
+                - new icon
+
+0.2.0   emw:    - docking menu, correct hide/show behaviour
+                - lirc support
+                - save/restore current window state (sticky vs Desktop) && position
+
+0.1.3   emw:    - change GUI a bit
+                - add Power On/Off functions (=> kradio may still run while watching tv)
+                - simplify "class Radio"
+
+0.1.2   frank:  - fixed float/integer conversion on set frequence (stationbutton)
+                - seek will end on all over frequence change button
+                - balance set included in volumesetting
+
+0.1.1   frank:  - changed Frequence Range to 87.00 (min) and 109.00 (max)
+                - tray for panel added
+
+0.1     frank:  - initial Release
