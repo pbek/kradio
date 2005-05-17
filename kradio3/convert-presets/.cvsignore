@@ -1,0 +1,11 @@
+.deps
+.libs
+Makefile
+Makefile.in
+
+*.moc
+*.moc.cpp
+*.moc.h
+*.tgz
+
+convert-presets

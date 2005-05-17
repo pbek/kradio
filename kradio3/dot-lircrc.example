@@ -1,0 +1,218 @@
+begin
+    flags = startup_mode
+    mode = TV-off
+end
+
+
+begin TV-off
+
+    begin
+        prog = xawtv
+        config = eventmap
+    end
+
+
+	begin
+		button = RESERVED
+		repeat = 0
+		prog = irexec
+		config = if xset q | grep "DPMS is Enabled" > /dev/null ; then xset -dpms; else xset dpms force off; fi
+	end
+
+
+	begin
+		button = TV
+		repeat = 0
+		prog = irexec
+		config = xawtv &
+	end
+
+
+ 	begin
+		prog = kradio
+		button = TV
+		repeat = 0
+		config = TV
+	end
+
+
+	begin
+		button = TV
+		mode = TV-on
+		flags = quit
+	end
+
+
+ 	begin
+		prog = kradio
+		button = 1
+		repeat = 0
+		config = 1
+	end
+
+
+ 	begin
+		prog = kradio
+		button = 2
+		repeat = 0
+		config = 2
+	end
+
+ 	begin
+		prog = kradio
+		button = 3
+		repeat = 0
+		config = 3
+	end
+
+ 	begin
+		prog = kradio
+		button = 4
+		repeat = 0
+		config = 4
+	end
+
+ 	begin
+		prog = kradio
+		button = 5
+		repeat = 0
+		config = 5
+	end
+
+ 	begin
+		prog = kradio
+		button = 6
+		repeat = 0
+		config = 6
+	end
+
+ 	begin
+		prog = kradio
+		button = 7
+		repeat = 0
+		config = 7
+	end
+
+ 	begin
+		prog = kradio
+		button = 8
+		repeat = 0
+		config = 8
+	end
+
+ 	begin
+		prog = kradio
+		button = 9
+		repeat = 0
+		config = 9
+	end
+
+ 	begin
+		prog = kradio
+		button = 0
+		repeat = 0
+		config = 0
+	end
+
+ 	begin
+		prog = kradio
+		button = CH+
+		repeat = 1
+		config = CH+
+	end
+
+
+ 	begin
+		prog = kradio
+		button = CH-
+		repeat = 1
+		config = CH-
+	end
+
+ 	begin
+		prog = kradio
+		button = VOL-
+		repeat = 1
+		config = VOL-
+	end
+
+ 	begin
+		prog = kradio
+		button = VOL+
+		repeat = 1
+		config = VOL+
+	end
+
+ 	begin
+		prog = kradio
+		button = MUTE
+		repeat = 0
+		config = CH-SEARCH
+	end
+
+ 	begin
+		prog = kradio
+		button = SOURCE
+		repeat = 0
+		config = CH+SEARCH
+	end
+
+
+ 	begin
+		prog = kradio
+		button = RADIO
+		repeat = 0
+		config = POWER
+	end
+
+ 	begin
+		prog = kradio
+		button = MINIMIZE
+		repeat = 0
+		config = SLEEP
+	end
+
+ 	begin
+		prog = kradio
+		button = FULL_SCREEN
+		repeat = 0
+		config = QUIT
+	end
+	
+
+end TV-off
+
+
+
+begin TV-on
+
+#	begin
+#		button = RESERVED
+#		repeat = 0
+#		prog = irexec
+#		config = xset dpms force off
+#	end
+
+
+    begin
+        button = RESERVED
+        mode = TV-off
+        flags = quit
+    end
+
+
+    begin
+        prog = xawtv
+        config = eventmap
+		flags = quit
+    end
+
+
+	begin
+	    button = MINIMIZE
+		mode = TV-off
+		flags = quit
+	end
+
+end TV-on
+
