@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Parker Dexter &lt;dj701@nospam.gmx.net&gt;</maintainer>
+			<changed>2004-04-12T20:05:56</changed>
+			<country>Austria</country>
+			<city>Linz</city>
+			<media>Cable</media>
+			<comments>Radio Stations Liwest Linz</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10817921254AE0A9466FECE84DFE56053F1CE55F0963CA5BBBC3BC6C939E02F4E037C5E9D9</stationID>
+			<name>Radio Melodie</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792175C5D55EED5EC5A536F6AAEAF13EEADB95321A7F56C338EFF38977E6FBB2745B2E</stationID>
+			<name>FM4</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792190767B56BC8BCAEF625747C55CBCAAD810FEC6E6ADD46D9120C8509F0737DFE694</stationID>
+			<name>Ö3</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10817922092C9AB5A0CDC5201307F08F65C59A3BAD47519F80DBE2272FAEDE1575519A387B</stationID>
+			<name>Ö2 (Niederösterreich)</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792229616AC8EB49DBC98C616DEECC686B998CFA6AAADA97958F014A2770617952CE41</stationID>
+			<name>Ö2 (Oberösterreich)</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792248EC48CDE70D4FB24AD1AC2CEE3CB1806D9266F3E0F47CF64DD75CA09163F1E9D2</stationID>
+			<name>Radio Salzburg</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792276A3EF8B264C090A335615EB24E1D0924623EF8ADB863B1A8CB6E6607B929C6DBD</stationID>
+			<name>Bayern 1</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792301C4FAE225E6333CA8DCE627F5E120556FB15FE57B01B1BDCCE69622F637AC4844</stationID>
+			<name>Radio FRO</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792313E3CE892F9CB38EC68680FBBB83E586C185D24E6B815BCC122222F6CD005C1FA4</stationID>
+			<name>Bayern 3</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792328E20365AE7A26E7383B31A2EDD3D1C780D221801DC8122458DDDAC9F9AC477517</stationID>
+			<name>Bayern 4</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10817923393A0CAC0785176BEC6883430207CF8FF2FE22CA6F397C4A247A1EF7D11BD9FE18</stationID>
+			<name>Radio Horeb</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>108179235409E2F4BDBF4E15211FFA9977C61003922D5BA00D1ECFC506C8B6EB0CF00D5116</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10817923736D7AB5F0B62610D5C7A2F7FB7F0DA2C193938014C6B91F885F987BAD796D5241</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10817923870059076808D65DEE2551ACB1F62E00F82E4EADA8D3D5CB1E90A17D9212266E80</stationID>
+			<name>RTL - Der Oldie-Sender</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>108179242026D0EE9B1A2EFA30C124A15828F1A5F620DCA24CA5456F62B201DC673205B693</stationID>
+			<name>Radio Maria</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792432DFE3D0BEB38241B212C5F1096F632F705909C73B5F6F92A3E88EEACE4F1CC791</stationID>
+			<name>BBC (engl.)</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792452648F190912A90A3FF47FD659EF3A8712F20F78E4D1BECC470E0996FFFC79B78A</stationID>
+			<name>Bayern 2</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792466D1DC135125CBB3240DE3E8A4B1F43A9556EC8D6145AF275B4E489FC1BE92395B</stationID>
+			<name>Radio Österreich International</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792493F41C72FA278C71377531ED83205FC64CE2E0B1F2D7BE06AD6676D506D4ACE54D</stationID>
+			<name>Ö1</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>108179250589696744E163D3616F3F41FD453A38A0CECAC8B4E8EF24593A26B9AAA795E2C2</stationID>
+			<name>Life Radio</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1081792523BA8C47786CA03F1756F8AB38F67EC480A362FACE14E41594D17FF89D376048E4</stationID>
+			<name>Krone Hitr@dio</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10817925432A77CE1FB86A17EDAF37F3EF513C5D91F778A474F93B5AB19C70EA813C903E26</stationID>
+			<name>Bayern 5</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.5</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

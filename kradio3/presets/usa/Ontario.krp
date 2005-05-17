@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Ontario</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633853876E98DEFC969A09D6C13E4CD7C19F81DF1E95174BB71FA595BFA91E7BE4AFEF30</stationID>
+			<name>Urban AC @ CKLN-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>88.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853878C9BF92E01972A10CE22FB12F7BAC5F40CBDE7A7F6855ADBC109FF4E662EE8A7</stationID>
+			<name>Alternative @ CKDX-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>88.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387612ACBF8CCC9F553967792F51C7544AB3DB850030A05917786D7A4A07A42AF97</stationID>
+			<name>CHR @ CIUT-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>89.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853875CABE542CBF6AA88AEF61FCA1863EE48E8FCB8B2B0993E9277BC8FF154F51E4A</stationID>
+			<name>Classical @ CJRT-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>91.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387E8B15BCDD0565BC5F357AD4FC826051D3DC2CD93853F25A9CAE1A95C329C46AF</stationID>
+			<name>CHR @ CKPC-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853874CB71B000668424DB4C117AD087DBD06DCCA25DD31AE334B14F9098269CFE919</stationID>
+			<name>CHR @ CISS-FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853873A28020387BE95260D4016A3858A071421107AE6F60AF9BCE6EEED8E9DD3166A</stationID>
+			<name>Rock @ CJRQ-FM</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>92.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387B6A7C22A5CC4619A2BCF91F1D813F4F60AFCB9D4BDDEED5A500103BF8D5E9815</stationID>
+			<name>Community @ CKCU-FM</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>93.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387E79B7801EF38DD6A0FE7758A9DCFE13F96E5A1573CC12699F6DD63A0C57E7167</stationID>
+			<name>AC @ CFRU-FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853875189655E80CC025AB1797DF35A9969AC6BF51D1B656AE48319719662E0655A14</stationID>
+			<name>Urban @ CFXL-FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>93.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387DB5EAEE982BDB34BBBDA7D40DC39B1DE7E927B7ED50AC8F08AC15B44D5C7B366</stationID>
+			<name>CHR @ CKKL-FM</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>93.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387B7D3B73330648DDC480DD5D4BB40045EBE59EF06C36D95E926059096DEE7130A</stationID>
+			<name>Rock @ CJSD-FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>94.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853878E460B2401661EA007EC2CCA2BAD6EAFED60BEB86503C6FAAF0CDA52D09D0FCC</stationID>
+			<name>Nostalgia @ CHRW-FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>94.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387763E811BE7BF239EB35E6580D3D9936E7CDEEA4B28B13B8B6F59BDAED1CC0D1E</stationID>
+			<name>Hot AC @ CKGE-FM</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>94.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387A486E26543E4F633D83587B4162E2347FF26FE1AFB99C26DF5FAACC62C14A096</stationID>
+			<name>AC @ CKSY-FM</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>95.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387F7F7BC8A4760F68353D6B1B6039F80C7AF4FBA3B68565C9FB4C825B03374167C</stationID>
+			<name>Classic Rock @ CJXY-FM</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>95.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387B6E1CDC4D0369144EFD50DD7ECCB059291B9C5A5349973E76EAFB8660D28054F</stationID>
+			<name>Rock @ CFJB-FM</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>95.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853877F705CD0E90EB7C924C230EA29DA271ECF194E6E8AF366AE10A6B8DC2F913BF5</stationID>
+			<name>Rock @ CFPL-FM</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<frequency>95.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538723656F97FF16DE7B18CD714B91CD7EB15A511821CF22B155893157BFAFEDF679</stationID>
+			<name>Country @ CHVR-FM</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<frequency>96.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387AF261A8D40335B9B4BFAA43FDA39D7A7F5A53E976E6AA80CE1E85C5A4C04EC8F</stationID>
+			<name>AC @ CJEZ-FM</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<frequency>97.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853876D561577E3DC788C19571674B29C5AD5AF5D520ECFF670E7C75BE09250012207</stationID>
+			<name>AC @ CIQM-FM</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<frequency>97.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538774FFC8229642E61F322532AF4FC6DC63ECBB4AD33DDD4D658C22E4F9CC0F0A8D</stationID>
+			<name>CHR @ CHFI-FM</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<frequency>98.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853872A10FB5967CD90064B72DE60A7A25A13FE2F8ABC3466C4E40784578BF82F4E49</stationID>
+			<name>AC @ CFLY-FM</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<frequency>98.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853879EE628DA1882AC0D30A792250251A7A742AE1DDBBA5811A59B0246388426B65B</stationID>
+			<name>Country @ CYSS-FM</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387BE5A36CABF9B65A0B70E478CA2CF20F8F546636BD882184D0FDF54B74B7094C4</stationID>
+			<name>AC @ CKMX-FM</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<frequency>99.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387F32B6EF72C8B152DAF03FED92D12EB2FFC3D12CDE01AA4FB7CF118C736D6700A</stationID>
+			<name>Ethnic @ CHIN-FM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387C4397050BB9E7BBAA1E26DCEB254B67F43984158D5F2575C1441005633392C6A</stationID>
+			<name>Alternative @ CFMO-FM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<frequency>101.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538706412BAD92E6149D2AA9DD54571AFD4E1B42384A2BAED7979FFF6C45E0BB752D</stationID>
+			<name>Rock @ CKWF-FM</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387DD4F3EBC5658F6F0A62CDD8F3C26F303F4E14AB1A19328DC4FB0D90682D998C1</stationID>
+			<name>AC @ CFRC-FM</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853873BDA2F6A481DDDC9D578BE1587FEFF50428EBC9F88C650404F2B89ACEA75AE8B</stationID>
+			<name>Alternative @ CFNY-FM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>102.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538716473ED7B07ED3D3427F033B89DA601941B27D9750CF6AB19DAE2877839827EB</stationID>
+			<name>Hot AC @ CHST-FM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>102.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387EDCCD75C62578153A960662DC007092A1AEFC29D9263CB1A0802B257D1F4DCE0</stationID>
+			<name>CHR @ CFHK-FM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>103.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387FCC1575AC7B63E73F65A4FF62360D7EF02D4E7A9108CCEEF414501862763ACA0</stationID>
+			<name>AC @ CKLP-FM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>103.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387D9A3E774AF8667AA1BFC1BA5907836D84DE0C4C002604B8E9E5F8C3766526AF4</stationID>
+			<name>CHR @ CIDC-FM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387256BC2D33EE81620BB8BE2BC2D01FCE6DED69B151C37604A399C817D01D97C57</stationID>
+			<name>Rock @ CHXL-FM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>103.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853877BA40CEA39347B184BFD4CCC74D19EA2E61950BBED79671F3ED4970E7290FB50</stationID>
+			<name>Nostalgia @ CKDK-FM</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<frequency>103.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853877817B483F401A31D7828E8206898387283FCA1540CC07958302B35D487BFDAE6</stationID>
+			<name>Country @ CICZ-FM</name>
+			<shortname>37</shortname>
+			<icon></icon>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853870538B7B1497ED02C3E1919285BCFC3E00AE8219008687ABA87CF50519DD9EC99</stationID>
+			<name>Country @ CJQM-FM</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387B642EE3194250F31ECDDC410157AF67B1CEE6692429B92F4C8C5FD87EFAF34F6</stationID>
+			<name>AC @ CHUM-FM</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<frequency>104.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853878F35BF4F80A7C66A66CB3E5D240042CF41DFD7F476614CDC8058D585A091559A</stationID>
+			<name>Country @ CKQM-FM</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<frequency>105.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387A7CDF81610B0B74DFA711AD53B1401F5BCBF2808E4EC1F541290037D908E03C7</stationID>
+			<name>Classic Rock @ CFCA-FM</name>
+			<shortname>41</shortname>
+			<icon></icon>
+			<frequency>105.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538735B590EA8B14262A3D7E5C26F381BD2B3F672388C6A3CB8189E27540CC3197C9</stationID>
+			<name>NPR @ CHRY-FM</name>
+			<shortname>42</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853876A79F38B234FEA9275F17E25A009CCCC3799FC24DA620AB235D9402C68241EA9</stationID>
+			<name>AC @ CHRE-FM</name>
+			<shortname>43</shortname>
+			<icon></icon>
+			<frequency>105.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387225BDA02BA932246643D745C36BC2939BEA4210C339B412E994B663E6235A7AB</stationID>
+			<name>Nostalgia @ CIMJ-FM</name>
+			<shortname>44</shortname>
+			<icon></icon>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387F38D87244563679468C2B4BEBE2A54E7E4FB21AC53179493CD6CBBEA483D165F</stationID>
+			<name>Rock @ CHKS-FM</name>
+			<shortname>45</shortname>
+			<icon></icon>
+			<frequency>106.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853876B6A06BA95EF9D75A3471C9D7B5CD6F3F7A9DC29F948B3109B928E7A763508B6</stationID>
+			<name>AC @ CIXK-FM</name>
+			<shortname>46</shortname>
+			<icon></icon>
+			<frequency>106.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853875D7E4E4EB1D04567335789330CDCBBDCB57C9450282F5F7D9AE8DBB02EB2AD15</stationID>
+			<name>AC @ CHCD-FM</name>
+			<shortname>47</shortname>
+			<icon></icon>
+			<frequency>106.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387F8B40F9449181478EB112D7094B5084E3F568BDCBE08A688413E354F96766BCD</stationID>
+			<name>Rock @ CKQB-FM</name>
+			<shortname>48</shortname>
+			<icon></icon>
+			<frequency>106.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387C094B26D0BDE6C803C37923CC5FB32CD1EDF8DF52A3D6CB2122284A2A6C3016B</stationID>
+			<name>Classic Rock @ CILQ-FM</name>
+			<shortname>49</shortname>
+			<icon></icon>
+			<frequency>107.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538755F98172903403007BAC06168BDCD9F06B491E6C6BA44988736EC1A94A7575A4</stationID>
+			<name>CHR @ CING-FM</name>
+			<shortname>50</shortname>
+			<icon></icon>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538726EEE0485C0FBBD70981AE736AE24CC1474499C447208C5082513B20660644B8</stationID>
+			<name>Oldies @ CFOS-AM</name>
+			<shortname>51</shortname>
+			<icon></icon>
+			<frequency>0.56</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387C07E21EECF0A25E16F6A656EE640F2FAC4E53BA47D8AE32EC9E57F78D30E12F8</stationID>
+			<name>CHR @ CKGL-AM</name>
+			<shortname>52</shortname>
+			<icon></icon>
+			<frequency>0.57</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853878E6A34F02069592943599C06BAEFC372F3FB968695248C35544F8F65EECA9771</stationID>
+			<name>News/Talk @ CKPR-AM</name>
+			<shortname>53</shortname>
+			<icon></icon>
+			<frequency>0.58</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387D0E33C0BCF07B05815CB61EB9FC244BB4C73BCBF2B736C92284EE8D2F4D19B55</stationID>
+			<name>Sports @ CJCL-AM</name>
+			<shortname>54</shortname>
+			<icon></icon>
+			<frequency>0.59</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387EE790E6B43D12C980ECF8C55D5E947CBE9CD297B731275B2230DB86F56043C28</stationID>
+			<name>Oldies @ CFCO-AM</name>
+			<shortname>55</shortname>
+			<icon></icon>
+			<frequency>0.63</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853877E9CA0E6E7161E815266E8E12837CD9D97AD81ED5EBB768D0EF51FCF5F394DCD</stationID>
+			<name>News/Talk @ CHOG-AM</name>
+			<shortname>56</shortname>
+			<icon></icon>
+			<frequency>0.64</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853879538D6491E52FAA18DB3BC50F9241867A79B00DA53907C76D9BFCF19D50145E5</stationID>
+			<name>News @ CFTR-AM</name>
+			<shortname>57</shortname>
+			<icon></icon>
+			<frequency>0.68</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387E8D4CB03138624F10498976E0EEFE9B6E8A1414BC9CF9334848C3BEB7D7CEBB4</stationID>
+			<name>Country @ CJBQ-AM</name>
+			<shortname>58</shortname>
+			<icon></icon>
+			<frequency>0.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853873B47018A34F2913969C1379711467738CC1447C6D8A96A10BC816E3D08D2DF36</stationID>
+			<name>Country @ CHAM-AM</name>
+			<shortname>59</shortname>
+			<icon></icon>
+			<frequency>0.82</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387A17C05D5E7313B59164DB319C9CB5CBBE6D3648A73118ED9F1EC9B3EEFDC03E1</stationID>
+			<name>Oldies @ CHML-AM</name>
+			<shortname>60</shortname>
+			<icon></icon>
+			<frequency>0.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538764CE1690FF419201C02E1732BA9391BF94CFFBD00B8C9C1FBEA494D3171FA0F0</stationID>
+			<name>AC @ CFPL-AM</name>
+			<shortname>61</shortname>
+			<icon></icon>
+			<frequency>0.98</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387FAA32280A36E1881D28192C0585393D38DB29182FBFF509BE97BC71318317802</stationID>
+			<name>News/Talk @ CFRB-AM</name>
+			<shortname>62</shortname>
+			<icon></icon>
+			<frequency>1.01</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853876E80525B1EE7E7496987C5644DF0920681FA7843AD4EDA1D8397D8337DFCD145</stationID>
+			<name>Oldies @ CHUM-AM</name>
+			<shortname>63</shortname>
+			<icon></icon>
+			<frequency>1.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387E28F26BA719DEC29D74AD9414D1227E22215DB299264C5424D3DBE465BD5C3A1</stationID>
+			<name>News/Talk @ CHOK-AM</name>
+			<shortname>64</shortname>
+			<icon></icon>
+			<frequency>1.07</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853872D7635F61027AEB8847B27D16C08909EFEC3ABA42FF0F3F54C3FDE4F71B0F0D5</stationID>
+			<name>Oldies @ CKKW-AM</name>
+			<shortname>65</shortname>
+			<icon></icon>
+			<frequency>1.09</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853876C9E8B06257C7A1924CFDC270AB4C4D2C10372854AA18B8DAC4A51BD5141D0BF</stationID>
+			<name>Oldies @ CKOC-AM</name>
+			<shortname>66</shortname>
+			<icon></icon>
+			<frequency>1.15</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387E05F4659A976BDD0877DBE5DF0B38C58FAE13E0BF65A5506A0F63E4586FB0923</stationID>
+			<name>CHR @ CJTT-AM</name>
+			<shortname>67</shortname>
+			<icon></icon>
+			<frequency>1.23</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853877217F9D5FF93CE68A7A42842A02D56A35ABD3745D9379126BBA635F8CA6AEA11</stationID>
+			<name>Oldies @ CJCS-AM</name>
+			<shortname>68</shortname>
+			<icon></icon>
+			<frequency>1.24</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853876111C32C65B2382E4D8D19B92D3D315BC2F78BCF3E02A1D2811153DCA52AB765</stationID>
+			<name>AC @ CJTN-AM</name>
+			<shortname>69</shortname>
+			<icon></icon>
+			<frequency>1.27</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387F790B9D10F6151C81BB1E55667CFB7375A8065F19F3A0B7585763823F73BE172</stationID>
+			<name>News/Talk @ CJBK-AM</name>
+			<shortname>70</shortname>
+			<icon></icon>
+			<frequency>1.29</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387067AB80B3AAF92C801A95FF4F71399F279E8B452D4AA089F8D75C2D061A0B09D</stationID>
+			<name>Classic Hits @ CKPC-AM</name>
+			<shortname>71</shortname>
+			<icon></icon>
+			<frequency>1.38</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387193CFE62DC76D42AD202E169C6834AC313DDE061924E1411330D09CBDDB7270D</stationID>
+			<name>Oldies @ CKSL-AM</name>
+			<shortname>72</shortname>
+			<icon></icon>
+			<frequency>1.41</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387E63DEDF4DD5851C889E843FDDFB37136B4F9650F2F4DB3F54B18B8C827FCE779</stationID>
+			<name>AC @ CKPT-AM</name>
+			<shortname>73</shortname>
+			<icon></icon>
+			<frequency>1.42</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538776DA0BA89CCAAC57A9D6082AA848EA0CE7A2D20CEC2AE4DC02880F2ADD40671B</stationID>
+			<name>Oldies @ CJOY-AM</name>
+			<shortname>74</shortname>
+			<icon></icon>
+			<frequency>1.46</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853870C27702D5C4578D660CC1600408AFE1127C1DE8958808BD7B55B66BD0D8C7F4B</stationID>
+			<name>Oldies @ CFPS-AM</name>
+			<shortname>75</shortname>
+			<icon></icon>
+			<frequency>1.49</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385387DFD4D0AA3FED72182CA5555E2FC4A576570722C696FFABFD40BED9B946F28915</stationID>
+			<name>Ethnic @ CHIN-AM</name>
+			<shortname>76</shortname>
+			<icon></icon>
+			<frequency>1.54</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

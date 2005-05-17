@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Ian Hay, &lt;ian@rotodyne.co.uk&gt;</maintainer>
+			<changed>2003-01-25T22:35:18</changed>
+			<country>England</country>
+			<city>Milton Keynes, BUCKS</city>
+			<media>Antenna</media>
+			<comments>A poorly served and weak area for reception</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385353C6B88DA43D60485F93CE285F49666657543D54E610AB347EB1D73FDA2FC7C510</stationID>
+			<name>BBC Radio 2</name>
+			<shortname>BBC Radio 2</shortname>
+			<icon></icon>
+			<frequency>88.6097</frequency>
+			<volumepreset>0.8</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853532D933FCEF3A7613BDDD56EBF088F9B6362B69E0FCABB21DFFC26D9AC81DC28BD</stationID>
+			<name>BBC Radio 3</name>
+			<shortname>BBC Radio 3</shortname>
+			<icon></icon>
+			<frequency>90.8185</frequency>
+			<volumepreset>1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353C8BE87758A09C21FC727E3B7C8DE412595703F2E19438F5B7FBCD509531751D5</stationID>
+			<name>BBC Radio 3</name>
+			<shortname>BBC Radio 3</shortname>
+			<icon></icon>
+			<frequency>90.8634</frequency>
+			<volumepreset>1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853533F24308814CEC86F7F2D451AF6CE0ADAA1EBBDED5507D7E1ED04AF7BB93C5E2C</stationID>
+			<name>BBC Radio 4</name>
+			<shortname>BBC Radio 4</shortname>
+			<icon></icon>
+			<frequency>93.0197</frequency>
+			<volumepreset>1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353606298F24CB48B4D31470EF41B4AF40F4BF19AF4CA0019E972419C5E5FDF2A7B</stationID>
+			<name>Classic FM</name>
+			<shortname>Classic FM</shortname>
+			<icon></icon>
+			<frequency>100.446</frequency>
+			<volumepreset>0.8</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353E2F2EB1467A831526FB14696A5FE35FAD1623929349D8A8C9DC7F9A3EFB87F93</stationID>
+			<name>Horizon FM</name>
+			<shortname>Horizon FM</shortname>
+			<icon></icon>
+			<frequency>103.324</frequency>
+			<volumepreset>0.8</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853535F8DF276212D9521388835FE08AFEA463B8A2AE6BDFBD3B6AC34D330F9EE2613</stationID>
+			<name>BBC 3 Counties Radio</name>
+			<shortname>BBC 3 Counties Radio</shortname>
+			<icon></icon>
+			<frequency>104.518</frequency>
+			<volumepreset>0.8</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

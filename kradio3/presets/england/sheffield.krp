@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>David Bellamy &lt;dbellamy@dbellamy.solis.co.uk&gt;</maintainer>
+			<changed>2935093-02-28T00:00:00</changed>
+			<country>UK</country>
+			<city>Sheffield</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633853535FBCB1269E0C56D20A7B6F351F9BE2A92E59F3DC4BC5016E3789542D6FE396F5</stationID>
+			<name>Radio Sheffield</name>
+			<shortname>Sheff</shortname>
+			<icon></icon>
+			<frequency>88.6014</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853537A9D116DE031FAAD32AD670BB721C064393E63E78907EDB527B43BCB6B1E50A2</stationID>
+			<name>Radio 2</name>
+			<shortname>BBC2</shortname>
+			<icon></icon>
+			<frequency>89.9265</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353277FF6606B5FD5280F68089E7F1F80361CE6124B75DA52384C498B28011E3787</stationID>
+			<name>Radio 3</name>
+			<shortname>BBC3</shortname>
+			<icon></icon>
+			<frequency>92.1267</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535370EFAB3180B2F058B51D9335A8C1D2275825CD92BE9061CCEB0FD7D0576AC2AD</stationID>
+			<name>Radio 4</name>
+			<shortname>BBC4</shortname>
+			<icon></icon>
+			<frequency>94.2768</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353353CE83E91D16A01DD34EC4F33ABB87B35E6B0722C6C1832784F83BA63056FDD</stationID>
+			<name>Classic FM</name>
+			<shortname>FM</shortname>
+			<icon></icon>
+			<frequency>101.727</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535382F316DB0B9A6EA8B6556D4DB39379301CED8A18CFD06E65E1F25219BB4A1193</stationID>
+			<name>new station 5</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>97.427</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853531FB4F53A1D94A66C9A1E934D60497D3D844C851FF527FFF7CA65B2CE73EC1D63</stationID>
+			<name>new station 6</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>97.527</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853530AAE3F2D8BA5F95883A8C61FE730B32DD1097408F6FD777FCCE25806706D61D5</stationID>
+			<name>new station 7</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>99.5271</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853536A0C1A8CB8D15EE777BABA30F611AC2EF0AFE30BCAE80825657FFA0E30310EE0</stationID>
+			<name>Galaxy</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>105.577</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385353FFB4B23D89FC8A8EB21811A36DEFE11E20EFBC4BA9712E76758489EA28E61FB9</stationID>
+			<name>Galaxy</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>105.627</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

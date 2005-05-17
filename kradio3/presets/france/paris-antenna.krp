@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Baptiste Maisonnier &lt;bmaisonnier@visitmail.com&gt;</maintainer>
+			<changed>2004-01-08T23:15:39</changed>
+			<country>France</country>
+			<city>Paris</city>
+			<media>FM</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10735984390298EA64AA86E757988DA8EBA9257838A080E8A919F9E10E107C2DA0EDD62C1F</stationID>
+			<name>France inter</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598483A5500FC3D1B2B835F3A86AE1DC2107071C804C358EF0E697376E7D41380ADF61</stationID>
+			<name>Générations</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598500F8CE6744F980CF9F041ADE7EB5DA7818031E825EA037ED0D82C2A9BF15ED5493</stationID>
+			<name>Paris jazz</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359850702809627B646891F9AB1035C53F0F46BEE51F7945104A41D67C0F45E202A2E38</stationID>
+			<name>Radio Méditerranée</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598579862878B3650FE3F6F490015E53391C9C6E9A4082D03DF14F2E004CBBBEEDBD93</stationID>
+			<name>Radio soleil</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735985852EFB1C3CA4B36D64E74572C680663BE9C759A6EE47FB4CC65A90D3CB92C33855</stationID>
+			<name>Radio France internationale</name>
+			<shortname>RFI</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598628CD1D087739AA638AD0ECD67EFCD1C6441CFF70D55E5A84571CDCD761999E451E</stationID>
+			<name>Radio libertaire</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359864292E008BC93F0494D2F39E2C5FA3F2C2025DE10BA987605AF1ABFB802842AEB4E</stationID>
+			<name>TSF</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598659DCBC89052A4CEE9622230B4253DCD0305CAA116E9F8D84EF0C86F77BB0F4FA5B</stationID>
+			<name>Nostalgie Paris</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359979096B370E537A8F00384702A765FBC662F5FCCA7BD61535F39EBBFD448A5678C79</stationID>
+			<name>Chante France</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598666AFF5843E2E79C0202F83085A9891C0CD3990ED1F082622AC66BBE2AD40973BD3</stationID>
+			<name>Chérie FM Paris</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598677573D6DE73704530ADBF558B53B317AC04EB1B5F44B73D7B64481D2DAA4C65CC2</stationID>
+			<name>France musiques</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598691B30350A7A2FF4D11DD573FE6B21178F0D6217EE55D8CACF74ADB66F836448C17</stationID>
+			<name>Le mouv&apos;</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359872467964EE760610A08656DB975AC9E35F77E26D374A0A4E3F4ACB1E458EF38E019</stationID>
+			<name>Média tropical</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359873714A276BB45C79E30CF0EBDD6F6E24CDE2CF4DFB6801A0F96171372CD56D97E8D</stationID>
+			<name>Radio pays</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598747BA0BF61F50444315D9E8B50A47753601971054B307EBF1F0A2A5DF714B65580B</stationID>
+			<name>Aligre FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598757BFFDA519742438DEA428953300F34ED1CB10616BD6EFDED24C3D11196CDF914B</stationID>
+			<name>France culture</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735987655E2D0CF46DEFD616BDCD0E8CE226C5EA6E13C418539D0E446991243F36FD4382</stationID>
+			<name>Radio Orient</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599036B46ED995D1932F7D4DB2E6BC7D023927CEE9D95A9485DF7A21744972A0F24419</stationID>
+			<name>Radio J</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598789552847275289C521595011C7777C46EAA434D4AD28B5ABCC63E7FE6A19E0DF3E</stationID>
+			<name>Judaïques FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073598850105FB6ED4762F0A7F7D740EF16D92C0C378BBF974A936D498BD9C830F487CA9C</stationID>
+			<name>Radio shalom</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359886888A3A44ED66525654C60D8571618E363E10B896A363B2CBC7D52FB9A6F613D2B</stationID>
+			<name>Radio ici et maintenant</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599068912FA056DF76C2DA8C31E2A917AC85585B3F587B9A04D5D412B6E426200ABD71</stationID>
+			<name>Radio Néo</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599087F258859DB2D1E3347400C3821666BBD5A841E88B7267279582C07B8835BBB0BC</stationID>
+			<name>Radio courtoisie</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599952F35C44A30357C7BA2C3DDE7A896D05803D667C29485939508AF4D336F81E7D4D</stationID>
+			<name>Skyrock</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10677047764A5C8F024C85061920B5BAEF8C3A8E39F4D46745BF1B25D05B9634742E5CF94E</stationID>
+			<name>BFM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735989055C3D28DCBA3F312C6DEE7C6CDE13C1BD2B720A684D1206CF4319723FE938F6DD</stationID>
+			<name>Voltage FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599209538760C1ABD4D887970D7E8455C368BA2378084EFCFAFCA4558E9A60F74E2524</stationID>
+			<name>Rire et chansons Paris</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599218F5D61AB4F5B65851B617927E9A826DAEA9AAE7351B6491B02717BA9737735E0B</stationID>
+			<name>Ado FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599231366325C16B5937D6BA549C61584AD6FD5C7ECE7197C7A34CF24BFF635DC80991</stationID>
+			<name>Radio FG</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735992422CC04EF85D7CAB0D2DED9AD0D2A68E380B65DCA2EFFCBF2EBEC688AB926F6D85</stationID>
+			<name>Radio Alfa</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735992521C135EDAB8532DF1E3E897CE40795D54E606880B83D3B74DDB62AC30E72BEFBD</stationID>
+			<name>Radio latina</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735992655C3D7CA4830E790A8B7DE4DAA88DF4B86E0BC09A7E24D19617C3F94C40E7A2CD</stationID>
+			<name>France Maghreb</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599275764212BA4692D849EBCAE352F0A3AEB0E4726DA0FB249A58A110DAF1E8D4EABC</stationID>
+			<name>AYP FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359929187976474E17F6FE4A9F5E8125B8B9065947C34D927838FB5B87E82D38F83F022</stationID>
+			<name>Sport O&apos;FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359931205616474B2F298E05DEB1E2FEA4463EE119F2ADB92EBCA666033E47812217FAD</stationID>
+			<name>NRJ</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735993442E6C7982DFE54B698C5BB4ED51952159E101E1DA03E74D9EE4C77757BDB84B08</stationID>
+			<name>Radio Notre Dame</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359935204BF0B0DF1664F3C167FDECE0C931ED2ADA2C26442D7F2604E281C9C1A8B1691</stationID>
+			<name>Fréquence protestante</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599365CF1263FFF558BB9CD777B446253389C3DD842A97EBBB142AFECBEEC463C7C20D</stationID>
+			<name>Radio classique</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599376850925D3EAF38D9F37E8E876860E59A73DC2E76527D8812C2E2A332E190EA936</stationID>
+			<name>Radio nova</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599387F8852B7DD49C0F017E7D33ACD77377DDF158810F664856FBF27A733C6FE69C87</stationID>
+			<name>Fun radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359939920E769E7C60F377741FC545D67AA884EA0B1AE6EA6930260FAFFF86A68D6994A</stationID>
+			<name>Oui FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735994075A4DB99B0E19F5B0DEDE29801C5F1C1C1F2094746124EB0592BF66C36CBBC611</stationID>
+			<name>M&apos;FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735994459D6B725C281759B8ED709C8CA3B9D0A926C4DA1A98661444A35605EB18E05724</stationID>
+			<name>RMC Info</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735994540271C35ED62F6B6B794F599895363E0844404F12C07EE5BA5861AA3D73D4107E</stationID>
+			<name>Europe 2 Paris</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599465EDD4CA45E4E3FC4C69A0DE02D9D0D394ED3C27C8E0F53519C8CC1DC39A9DD6E0</stationID>
+			<name>RFM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599475B4374B1434F2F4B00E40CBEFAD18E40AD82FE637BE1CC163B5EE553C9915D3AD</stationID>
+			<name>RTL</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599633A11AF0789E76DEFE8F1892C0C9677C1F9A23F37E55C8E308A9359D82DFED9E89</stationID>
+			<name>Europe 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359964227F2A1F09665E2F20C8CAF9E9F206871BB30BAB79B01A2A5B4621EA0ED662DB7</stationID>
+			<name>FIP Paris</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107359965712D7D9058F5897F24C5621F50761856CF7ADED4BDD1407B04A743EA9FAA35931</stationID>
+			<name>France info</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735996726DA481AAF1324FB56F54C5B6277E975C49CA1D7699B3A768CB6B896DD531AB8C</stationID>
+			<name>RTL 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735996836ADDD396D0A0EC225385A3F20341AFEA2FA97236CD15AF6BDF5BFA6F94A1FAD7</stationID>
+			<name>Fréquence Paris plurielle</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599694D2FB508DC0820A23FC128F232B4F01A133B00C17D9B1BED629ADD0316782F0C8</stationID>
+			<name>Beur FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599703ADD422390FF18E5F850856E26F10245E09B907088EA18E863662B9FE7BB74671</stationID>
+			<name>France bleu</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1073599719F08E63846D03170305890930422D97118D063C8BD79F0F64CDA640ABFDC8E3C5</stationID>
+			<name>Africa n°1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10735997434D6E5EE65B860F5B72BFB541AB96BF1B15484D0D4A82CD6AC8F00CE067E7C5D0</stationID>
+			<name>107.7 FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.7</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

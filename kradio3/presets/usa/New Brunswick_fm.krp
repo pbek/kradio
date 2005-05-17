@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>New Brunswick</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>106338537563FF343F7028276A4D0BFF553004AAF1257E6C11F66596198596FDFE45456169</stationID>
+			<name>Pop/Alt @ CKUM-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>93.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385375B1927CA7E6D2FD84C8C6FDD9B726EF1EF99751E38B86269C516642CE4B375A34</stationID>
+			<name>CHR @ CHSR-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>97.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853752D3E8314F46B5E97EA4E77C8FF16C17EDDDBF8D32F0D52DBE7B354746497682D</stationID>
+			<name>Rock @ CJMO-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>103.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385375B19B7BE82B799670C8A81C520BBFA43073BE523360FEDCD3C77EFB1A3E5DEAA3</stationID>
+			<name>Country @ CFQM-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>103.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853757DD605858EE796661C1F97538865E8065BF849CA2F8440D084118B0B434F3A1E</stationID>
+			<name>Alternative @ CHMA-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>106.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

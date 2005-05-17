@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>dp, &lt;apatsche@gmx.at&gt;</maintainer>
+			<changed>2003-05-03T19:54:30</changed>
+			<country>austria</country>
+			<city>vienna</city>
+			<media>cabel</media>
+			<comments>radio stations telekabel vienna</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385406955233D82F90299E11E3E6C4E523D861C4028A241C49DA9D1CD68D100E49535C</stationID>
+			<name>Radio Stephansdom</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>87.6875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540657AA5876E30BF1B30D88CC65D0722F8378EFEDCD078B288C06B07D41413D39EA</stationID>
+			<name>OE1</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>88.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406956C07EE456D4E66E7E8782190832F5F0C48912963344F551684767DC1C92DC8</stationID>
+			<name>Radio Wien</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>89.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854067060E1226482529E8B855968A47EE1A565FD5E6302DD09B0364C2945D5BADE22</stationID>
+			<name>Radio Niedersterreich</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>89.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540656340462EE2462606FE9295759CF34F744B31983FCC03098BC274E2C9F106812</stationID>
+			<name>Radio Burgenland</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>90.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406D338F5D57C37C8B993C6074F3132CFF02A9C14C4AC88A948246DAFD8132E705B</stationID>
+			<name>Hitradio OE3</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>90.8125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406383749C6643CE238C64DF46CDB9A3EFDC60688FCB424546EC54775590953573C</stationID>
+			<name>FM 4</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>91.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406592A3DF7620924F1BF8430B95ECE7D73BC5BB14718202FBC4971095920AC0C04</stationID>
+			<name>88,6 Der Musiksender</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>91.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854066FDB5DEEB35071B74BB5538CAA54972C95A5683F96D8B804304063154AFD08E9</stationID>
+			<name>Radio Arabella</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>92.3125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854064BCD574B6CDC4FAB98825343833FBC311285BCBF7AE1C7C028127F8CF3C55ABE</stationID>
+			<name>Orange 94,0</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>92.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406CA10E76AFC95D0214B7B0375AD498C76ADC2C9BF460C0B35D6D2A97FA2B5D6F3</stationID>
+			<name>Krone Hit Radio</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>93.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540641DCCC3A85B9E2C864780773ED3957647EB10A7359BE91458C0375C38EF4EFC0</stationID>
+			<name>HR 2</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540638715E2356A6941AB4FACFCE1A485167DFA133B3F8337DAD4300004002178B31</stationID>
+			<name>Bayern 1</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>95.0625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540609F36B86D21B3FEE5B3BC7335D591CC77DC800C76F7EF69584F8542679D9B900</stationID>
+			<name>Bayern 2 Radio</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>95.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854060C409D7584E6D347BBFE4C19EF804D10507895AD6642317B1709BE8CF45FEED6</stationID>
+			<name>Bayern 3</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>96</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406367A0E8F97CE918EFBE6C109CC4FD9D86717D046FF58C978336B21EF526D5607</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>96.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540648A8B6FD8C7D39A52C284705FA7C44127F20151EE84CA8FA2BD12FEC9A7C2F9C</stationID>
+			<name>B5 Aktuell</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>97.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854065F5207377B51424A6452BD34FC76404EDE0887D2F86019BC3B76771E55F04FA9</stationID>
+			<name>Radio Melodie</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<frequency>97.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854066D655FFF1E6F761F4A9E1AF8FE5557BFF6B26843608E5697935EA1112DCF1AC8</stationID>
+			<name>Deutsche Welle</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<frequency>98.3125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406B50F7A6BDD940B18686738EDFAC9F682483E0E1414924F8550B83C843EB084A2</stationID>
+			<name>RFI</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<frequency>98.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406721619104B6E10E505660E18FB2D658160301AD4845CA82D9E64188E4BF78329</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<frequency>99.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406033268632CC6D8CAF575F5A657E74B10543E66766DC3A29AB6C5A5AC776B299C</stationID>
+			<name>RTL Radio Oldie</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<frequency>100.438</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406464C5FFB26346008753D890DA19A51E5DC430D98ED995032E39AF17E01F319AE</stationID>
+			<name>BBC World Service</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<frequency>100.812</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540657CE8E7D24438A7C30CB0C1D2E7BB42DA2D5A503FFDFFE1F9BEEFE146CD4A9B1</stationID>
+			<name>Radio Energy</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<frequency>101.188</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406EA4A1EAB2D88C0C22D3698311F276136D7DCB1F32D584AB7FA1B75EAD9634AE2</stationID>
+			<name>Deutschland Radio Berlin</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<frequency>101.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406C1BA5117D195E190A56B51B23B75F16ABF0C942132CD6F7C4C61D54E5325396C</stationID>
+			<name>Radio Maria</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>102.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406BE48FF31D02D3955689752C61A87AD1F1D69A7CB4918621E2A4D1B4F908E3B48</stationID>
+			<name>Klassik Radio</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<frequency>103.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406EA3C487DBCD405039A92A036D993E44AF892E14A88AD26831452B44893F2580A</stationID>
+			<name>Nordwest Radio</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406F8D8DDC87E1EECB36EA43FF6BEAC41FEE5AD63014A7FBDE00AECBC67D4A13237</stationID>
+			<name>WDR 3 Koeln</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<frequency>104.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540650C1EA08B2DCB9A8AD243179F58F4DACEEC3540B01F64726B9D4A2492BE0FF40</stationID>
+			<name>SWR 2</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>105</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540697CB73899B308EB6C321E26F4E5D30F80231D7DD0C3F9C07BC401475B9522975</stationID>
+			<name>DRS2</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406F28DA55856489CC0DE1C5F04B7CB3983D15D01949D909B06817F7913E02CA758</stationID>
+			<name>Radio Österreich Intern. </name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>106.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406D04B82F105C714DE122EC739E1B28B7D0D049C9D9E3BCA4931D5BE23FE92C201</stationID>
+			<name>WRN EuroMax</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>106.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385406D0A86ED956C1E48B984012C76BCD506B480115B27D00F359AAB91C705E2BD5A5</stationID>
+			<name>RNE Radio 1</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>107.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854065488826DE3A2A68C41D4CE9B17D89DD16414BE27D9E7551FBC1278912044631D</stationID>
+			<name>NPR Worldwide </name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>107.812</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

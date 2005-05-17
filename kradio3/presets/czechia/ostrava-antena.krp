@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Petr Ruzicka, &lt;ruzickap@volny.cz&gt;</maintainer>
+			<changed>2004-02-21T12:10:43</changed>
+			<country>Czech Republic</country>
+			<city>Ostrava</city>
+			<media>Air</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1076015095DA72DF8F1909DF276A4F1DB50F2A8CF4BE695A556737DE273BB024E90BDC62EB</stationID>
+			<name>Impuls</name>
+			<shortname>Impuls</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1076012741168597074D8BE2820B403152E492D0FFFA1B50A6AB157629CA3B220058B5347F</stationID>
+			<name>Kiss</name>
+			<shortname>Kiss</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10760151406A140C2782636C2CC74D88498A2E9952D6488670EBD094C1837F62EA68C93210</stationID>
+			<name>Frekvence 1</name>
+			<shortname>Frekvence 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1076012262D83C47DD1718D420937D19D78BB6D1B9017DAC5326E892F3719C924B5A15A4B1</stationID>
+			<name>Cas</name>
+			<shortname>Cas</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10760149887B60EC1CC213067136A407BF4FA78F1FF5ED97D637BFEBA0175BF0E16B86C2C2</stationID>
+			<name>Hey</name>
+			<shortname>Hey</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077361767828E47606457176D651DBFBBA94157668620269B7E03202B47D935E8A81612DF</stationID>
+			<name>Evropa 2</name>
+			<shortname>Evropa 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077361730614082A79A138FB3BE0DA5196FC9CF51F2CE0EB2949A53188E5CEF04CA2E8ED0</stationID>
+			<name>Radiozurnal</name>
+			<shortname>Radiozurnal</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1076012491C17FC53CB28EA774CD1C1E4B8E0F563BECBB75009C5C0970599D4051CB9E111A</stationID>
+			<name>Orion</name>
+			<shortname>Orion</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1077361712FDC0BC3527086272361ADF7A79D4F40A1830C1DD9ACE95FCD976E110D700A4F8</stationID>
+			<name>Vltava</name>
+			<shortname>Vltava</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>107736168580773B62CEA410C5EEC861F04A0F05B8ADACF1D096FBE92D25A2D5A7EBEEA579</stationID>
+			<name>BBC World</name>
+			<shortname>BBC World</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.3</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

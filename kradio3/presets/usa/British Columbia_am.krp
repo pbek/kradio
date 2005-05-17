@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>British Columbia</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385359E5A2DBA3F6BFD77DD674D149FC604C4F7A0936A253710318B042B49A09995ABF</stationID>
+			<name>CHR @ CKPG-AM</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<frequency>0.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385359DEECE66A5C95CE02E6FA5674424B3AFD9E4814AB5DC04DC6EDDDAFADF5429A72</stationID>
+			<name>Country @ CJCI-AM</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<frequency>0.62</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385359427537B107932F2983F3D1D0D44CA2506DCC66A5F53C1B83DE6045B010B40B97</stationID>
+			<name>Oldies @ CISL-AM</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<frequency>0.65</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385359F44A29C1C5F4DA4F3D073EF63EF6A55861CB5EA72D75EFAD5FF2881F33636C35</stationID>
+			<name>Country @ CKQR-AM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>0.76</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338535922F1BC67CE0B8A3E32521C82ACFDEB520AE5E4218C6632F10B598F407879ADD1</stationID>
+			<name>CHR @ CKKC-AM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<frequency>0.88</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853599EFD17AD0095E71E572E37BB8B56588EBF6CAC82FA4065A5A2D29E663E9CD565</stationID>
+			<name>News/Talk @ CJVI-AM</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<frequency>0.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853596D496E7338CACD5A2A0D5823FEBC25DF8D3037DB3D5DF4D6CAC3C441322C98F4</stationID>
+			<name>News/Talk @ CKNW-AM</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<frequency>0.98</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853592EE5091A6A34B19E2C4A6EF25D0E241096F3F31DDF66F588E5033BF9D208F0D4</stationID>
+			<name>Classic Hits @ CKST-AM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>1.04</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385359AC95EB6E19BCCA350D209B8BE4B23F27B5776EC48ADBC1E9396A50D6CF916DF5</stationID>
+			<name>News/Talk @ CFAX-AM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>1.07</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385359C31F7F7ED4DE20DAB0166BA881C584F64C6E6E4330F234B5252BB1CFFED8F348</stationID>
+			<name>News/Talk @ CKWX-AM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>1.13</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385359658EB256EC4AD36DD8F6A61BD1DE02EBA0814619463FC7B6D744D4D480E63268</stationID>
+			<name>AC @ CJAV-AM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>1.24</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385359228FDE7DCE8C430CCF137F5F5AB3D1EB7AA95E1092A8EEE04F9264DB2F335185</stationID>
+			<name>News/Talk @ CHMB-AM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>1.32</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853593F73FB4F279E229596A57660ABB5C7392D69FF785C19F2B362EAB67C1CD5F4D5</stationID>
+			<name>Country @ CKGF-AM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>1.34</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Paolo Finetti, &lt;fttt@libero.it&gt;</maintainer>
+			<changed>2003-06-09T09:34:15</changed>
+			<country>Italy</country>
+			<city>Bologna</city>
+			<media>Generical commercial radio</media>
+			<comments>The first private radio for audience</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385403A13F3515CE3BC6C65244C8005B60BE1AFFD24CFAE8590048E0D61999DF201896</stationID>
+			<name>RMC</name>
+			<shortname>Radio MonteCarlo</shortname>
+			<icon></icon>
+			<frequency>91.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854033162F40A918E1DA09418384F4F922A35DA674F4D46E6EAEEFFA1EFD301771742</stationID>
+			<name>RETE 105</name>
+			<shortname>Rete 105</shortname>
+			<icon></icon>
+			<frequency>105.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385403FAEAEA5241B1A7CEB8FC4BC447498185F0EEAE510545367B6BEFE119594C6FD5</stationID>
+			<name>K-Rock</name>
+			<shortname>K-Rock Radio Station</shortname>
+			<icon></icon>
+			<frequency>104.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

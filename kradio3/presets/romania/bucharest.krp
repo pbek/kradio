@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>ThuBi, thubi@med.pub.ro</maintainer>
+			<changed>2003-01-22T21:03:39</changed>
+			<country>Romania</country>
+			<city>Bucharest</city>
+			<media></media>
+			<comments>Still incoplete, haven&apos;t listen to all.</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>106338540127B88C406D0C76D7C6B37EE10D0C571C551016CEAF820A8D294850620BECB5F7</stationID>
+			<name>Fun Radio</name>
+			<shortname>Fun Radio</shortname>
+			<icon></icon>
+			<frequency>94.8125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540109043942CD22136DF91A43CB788F84AE21701483B604A07B167893DB9C516A9D</stationID>
+			<name>Radio Contact</name>
+			<shortname>Radio Contact</shortname>
+			<icon></icon>
+			<frequency>96.0625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401461699318B927E9C691436726E3D1810D4256C25C3F2E8114D2DAC1CA061A10F</stationID>
+			<name>Radio Total</name>
+			<shortname>Radio Total</shortname>
+			<icon></icon>
+			<frequency>96.9375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401CF96AF81B3710A996C3213B04695538CBA1F8BEEA266E1E97F3BA88AAB4C79CC</stationID>
+			<name>Radio Bucuresti</name>
+			<shortname>Radio Bucuresti</shortname>
+			<icon></icon>
+			<frequency>98.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401EECD8B1D7670823E668F3BE36BB022C5AF014C1E98F58EE8DE727FBA23721B66</stationID>
+			<name>Radio Mix FM</name>
+			<shortname>Radio Mix FM</shortname>
+			<icon></icon>
+			<frequency>100.562</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401E54DF907512715F9875E499615B026F63439D19BFE5EB7E455B6425342F62D55</stationID>
+			<name>Radio Tineret</name>
+			<shortname>Radio Tineret</shortname>
+			<icon></icon>
+			<frequency>101.312</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401EA79079B8D83228B566BE1F78DA96F18AB51C83C8D467D457E5A81B700C34698</stationID>
+			<name>Radio Romantic</name>
+			<shortname>Radio Romantic</shortname>
+			<icon></icon>
+			<frequency>101.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854011C8898C6C55DD685C127CF692C4796152183898263BFA77DF434C4D676FF9A1A</stationID>
+			<name>Radio Romania Actualitati</name>
+			<shortname>Radio Romania Actualitati</shortname>
+			<icon></icon>
+			<frequency>105.375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385401C923D42DFDB88B1A9BF15F45D33896D3AACD7DC9A6D25135EE772F3CBADF0E37</stationID>
+			<name>Europa FM</name>
+			<shortname>Europa FM</shortname>
+			<icon></icon>
+			<frequency>106.688</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

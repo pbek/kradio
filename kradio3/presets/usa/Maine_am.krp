@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>Maine</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633853733F045D635A009968FA11C9BD5A00488E257A03769D142E536B8ED503DD8F48F8</stationID>
+			<name>News/Sports @ WZON-AM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>0.62</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385373E545CD14E606B940A3C2031C44E6952FFE3966D451AB75AC4C5E129F443331D6</stationID>
+			<name>Sports/Talk @ WJJB-AM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<frequency>0.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853733CB6CD24224B3277CD3C468F8324912660E0082FE879558C5A556D6B474F07B3</stationID>
+			<name>Nostalgia @ WABI-AM</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<frequency>0.91</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853735D4CB7500BE5CCF8CAE4A7AC44E454EEB039E2454082B169E6E8A1B6D8469740</stationID>
+			<name>Oldies @ WIDE-AM</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<frequency>1.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338537304B7697B6D67102684DEBC98BCA9FCCDA2D04FA1DFCCC82B91868DA11D3D9DE0</stationID>
+			<name>Sports/Talk @ WJAE-AM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>1.44</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Matthias Meinecke &lt;mm@meinecke58.de&gt;</maintainer>
+			<changed>2003-09-07T16:13:48</changed>
+			<country>Germany</country>
+			<city>Fischbachau</city>
+			<media>cable</media>
+			<comments>Landkreis Miesbach</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857F48329AABDF648B51AFFF53870D88E869E6EFA59515AD27B7F7A74E04577B48A</stationID>
+			<name>BR1 - Oberbayern</name>
+			<shortname>BR1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.2016</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857ACAF4F56EA733F200A9DA79C70F507B4C618C7AFCC4129A1B903778870D0BB67</stationID>
+			<name>BR2 - Oberbayern</name>
+			<shortname>BR2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.4517</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857737FF51B88678FEF71F78015E302C23186DFDA2A19D9B6704A7A78D701F3B097</stationID>
+			<name>Bayern 3</name>
+			<shortname>BR3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.8516</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857ABEB45089645CA1909238CD02203DED98DDF24CE575ED0FF69C2D436694B7936</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname>BR4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106294285722717846BF65E64A7AD1450528478BCFD5C71E5B8A533348C9B9382408983769</stationID>
+			<name>B5 aktuell</name>
+			<shortname>BR5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857A0A360BBB3C055B8BD1CA0221DDC6910F762C46860315C7B588967770E389881</stationID>
+			<name>Radio Alpenwelle</name>
+			<shortname>Alpenwelle</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.5264</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857AB4BD84E66BD127D6126E32B806451F5A575DAE397B54404F48E9AD162AF005B</stationID>
+			<name>Radio Arabella</name>
+			<shortname>Arabella</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.2264</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857B16903EA2DBF73409CF027028AFB0DB3520A54B0EF22AF2D950FFE89BC6AA876</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>Antenne</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.8015</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106294285766E088A059DF4DF4A8F8224AAAF9D4FBFB0DC966B960F691F571BAA35A458E36</stationID>
+			<name>Radio Charivari Mnchen</name>
+			<shortname>Charivari</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.5518</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857A61C1748F9F334F9F5F22A6EE8AD216C40BC145D02775EDC168F2A773AB3E028</stationID>
+			<name>Feierwerk/Lora/afk</name>
+			<shortname>afk</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857A0F37CEE038A9FA7D8B5A2F5A7E8B05CA23EAC10C2DC6546C866257E643C4569</stationID>
+			<name>Radio Gong Mnchen</name>
+			<shortname>Gong</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106294285770A0C120C6C7682F84489BAE62FFB9D30088836F4FEE56C6A89B86D28CCB6EC0</stationID>
+			<name>Radio Energy Mnchen</name>
+			<shortname>Energy</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.1519</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106294285751E827721F2C8FCA9633BD0A96099C336C4CCFF3DDB735242FC032CA295A67EE</stationID>
+			<name>Radio 2DAY / radio herb</name>
+			<shortname>2DAY</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.6019</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106294285715C5C8A9C8058825B99FAA42A1F11A3B6A51BE43375E9DDDA519B2811694922D</stationID>
+			<name>FM4</name>
+			<shortname>FM4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.352</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857B733F99D02B6B64C7159785E48EFB7677220AA90AC7BFF5A94F7A16E5D68022C</stationID>
+			<name>�tereich 1</name>
+			<shortname>�</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.652</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10629428572F44C92D89917AF16D5716009830906416ECBE4A91441C0E9D39B7E401546BF9</stationID>
+			<name>�tereich 3</name>
+			<shortname>�</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.65</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10629428575732B8A58AC7E73598F07AFECB367DF0C11977270001C91216275E4ADC4DC435</stationID>
+			<name>� - Radio Salzburg</name>
+			<shortname>�-S</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.0521</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857C23BC88E669D176D677D212EB84A0E7281CE58E3D84AA1ED8C710FD9F590D6C0</stationID>
+			<name>� - Radio Oberstereich</name>
+			<shortname>�-O</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.8271</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857DBD3D6C9011EC869A2A5903B401827527D6A75CDDC10E40ACA35DBACE7452C17</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10629428575BD7DB1E117A82F1EE1857DA483DA9031ECA30ABB14F5B31E223492D74156C76</stationID>
+			<name>DeutschlandRadio Berlin</name>
+			<shortname>DRB</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.05</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1062942857C4212F5A31D1F99C2862E4F22E43081D731585FEA1524EA826F941A9C3AE2BAA</stationID>
+			<name>Radio Melodie - Heimatfunk mit Herz</name>
+			<shortname>Melodie</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.502</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106294285722F7076464D498378B895A03EBD15D3E6BF92102AF3151FA13714E69BA697137</stationID>
+			<name>RTL Radio - Die Gr�ten Oldies</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.952</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10629428577924B1CC89FEFA596423D348F618A3EE3D728B6243AC83B5A68AD22AD01FFDEF</stationID>
+			<name>JAM-FM</name>
+			<shortname>JAM-FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.752</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106294285718E54AD1D6436933E7DAFE27889B1D86902E5F1E9C3BB7FDFE84F9FF5EF88EBB</stationID>
+			<name>Klassik Radio</name>
+			<shortname>Klassik Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.452</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10629428579FC4B1AEA0AE4EAF0B536BFBD3FDDD80DF2F6C5CF7BBA5D95C18F91B5CE25364</stationID>
+			<name>sunshine live</name>
+			<shortname>sunshine</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.028</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

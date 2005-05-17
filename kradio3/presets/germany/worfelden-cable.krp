@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+        <format>kradio-1.0</format>
+        <info>
+            <maintainer>Peter Buhl, &lt;pbuhl@gmx.de&gt;</maintainer>
+            <changed>2003-10-20T15:29:06</changed>
+            <country>Germany</country>
+            <city>Worfelden</city>
+            <media>cable</media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+           
+ <stationID>106656658898AC1D22D5F1DA30051782FC716CE57117787BA254725F4130B8F52A168A06B1</stationID>
+            <name>Enjoy</name>
+            <shortname>Enjoy</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>98.25</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>1066566790BBCE2671ABBBD7FCD061D67E65BD4B33789F476868540E94ECA183B8C9C6A68F</stationID>
+            <name>BigFm</name>
+            <shortname>BigFm</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>102.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>1066566824A5F406BA604C614F2B196836C238DFBE0FBF7843FC23E150BB65A8830863DD1B</stationID>
+            <name>Hessen3</name>
+            <shortname>HR3</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>94.85</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>1066566879EF1A0E09BFCE980D9AD6389F1CFDB6F77B606BB79FE992756983C8B51EDEC8DE</stationID>
+            <name>NDR</name>
+            <shortname>NDR</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>96.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>106656697907711264586F54A19BD6DD10111C1B73030D0796EE0146608ECCF72008DFBB8A</stationID>
+            <name>Radio Regenbogen</name>
+            <shortname>Radio Regenbogen</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>93.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>1066656506D835A211B870F9F299D0DBC8C992DFAE27E56A6A233DAA506DE00C533BD52F5D</stationID>
+            <name>Radio Sputnik</name>
+            <shortname>Sputnik</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>100</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>10666565395A4A743CA9645D0C8E8A25899094CC0F01BFD51623B4C2BDC237988AEB664809</stationID>
+            <name>RTL Radio</name>
+            <shortname>RTL</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>103.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>10666565807B361218313FEEC7A6EFF5587D6BA942CAFED16CEFB33E2CC5C4F15871681243</stationID>
+            <name>SKYRadio</name>
+            <shortname>SKY</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>100.45</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>10666566364105B0ED2D5B92FA58F1F6DDD539C87FBE6572BAA112DE51573706F7FCB9D91C</stationID>
+            <name>SWR1</name>
+            <shortname>SWR1</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>99.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>1066566707953EF0F4704CC06832ABE8DEDCAEC0E97495C4F2959605D8283FC9DFE44BB6DC</stationID>
+            <name>Bayern1</name>
+            <shortname>Bayern1</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>88.15</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>1066656729678A4F27128D06BE93B5EC724833D99AEFC9305A61A1C519770A84881C8E61C6</stationID>
+            <name>WDR2</name>
+            <shortname>WDR2</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>100.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>106665666327F05C4B961924CE3AFC3E4972F5DF4CC4723510E982264A93FE9EBD0F7E3978</stationID>
+            <name>SWR3</name>
+            <shortname>SWR3</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>90.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+           
+ <stationID>10666568561082AA42D9AB0657F775E9E0DA0451F75B195CC60AC1C2F6C30125D784957279</stationID>
+            <name>Radio 97.40</name>
+            <shortname>Radio 97.40</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>97.4</frequency>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>
+
+

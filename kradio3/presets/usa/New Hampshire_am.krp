@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>New Hampshire</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633853814E0C443EA89230747B2FBE60080A54F42D1294164E20D84BDF0F1187F3510AAC</stationID>
+			<name>Sports/News @ WGIR-AM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>0.61</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381F81244A604FCB1209ED17F4B0EB90488A7782F103C6636952DAE03F1CD56E7B8</stationID>
+			<name>News/Talk @ WOTW-AM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<frequency>0.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538167A28B92A2C6978D527AE03F2291D2AE5D8BD33396037F037CAFA557DD8612A0</stationID>
+			<name>Americana @ WNTK-AM</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<frequency>1.02</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381944F6449FA0CFE74391F77E57A8BF2574A33F4114154F6C4A0EB5667AA9B5A93</stationID>
+			<name>Oldies @ WKBK-AM</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<frequency>1.22</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853813BA36A7201663DEA582873AB10CDEA656DF3F99D05C0BE08472C1E93FC2922CE</stationID>
+			<name>News/Talk @ WTSN-AM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>1.27</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853819BB43F1BCB672CFDD56B3695DDCEAA5472B1E9B12FC426C485CDB8EBE0765056</stationID>
+			<name>News/Talk @ WKNE-AM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>1.29</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853810B045E150A093FDB5588CF412B2496C1E1439EA8C50740E78C9BC27FA0771D20</stationID>
+			<name>Christian @ WDER-AM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>1.32</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381FE105999868549E1B108D4A4CCCC05C0042B9C5EE84301867736AAC944237D30</stationID>
+			<name>Religious @ WWNH-AM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>1.34</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538127B7B60A907BF1E91A11D06DDD397B4A9BE3BF31829B161F2CE3947F70B1DE37</stationID>
+			<name>Sports/News @ WTSL-AM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>1.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381E74BF1D18ADB76FC83F1DBD52039EF1D97D8B8DF73EAB4AE46E4FC46A755D350</stationID>
+			<name>Sports/News @ WKXL-AM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>1.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853812A7043E8070E02EB83069943B27E8E14B46AA32F2E9F8CA519781A163547B7E7</stationID>
+			<name>News/Talk @ WSMN-AM</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<frequency>1.59</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

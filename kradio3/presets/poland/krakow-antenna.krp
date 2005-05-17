@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Marcin Wabik, mwabik@wp.pl</maintainer>
+			<changed>2003-05-23T09:45:32</changed>
+			<country>Poland</country>
+			<city>Krakow</city>
+			<media>antenna</media>
+			<comments>from http://www.t17.ds.pwr.wroc.pl/~wojtekd/</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633854049964B29CDF467D2DDCB32CBC58ABFC8002B65D27A4EBFB4AAFE211033DA27A64</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF FM</shortname>
+			<icon></icon>
+			<frequency>96</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404E140CB122EC2AD4B4C919382E257E771A874425B95584141F2706021F07085A8</stationID>
+			<name>Radio Zet</name>
+			<shortname>Radio Zet</shortname>
+			<icon></icon>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404B1269D7641D9EB032704AF8C0D4917AF16DF8912BBC9A0E973872B3977C3E59E</stationID>
+			<name>Trojka</name>
+			<shortname>Trojka</shortname>
+			<icon></icon>
+			<frequency>99.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404E4063432118C81408740392F5A9902A7E27A38EE47C39094D4045FA7E11E7EAD</stationID>
+			<name>Radiostacja</name>
+			<shortname>Radiostacja</shortname>
+			<icon></icon>
+			<frequency>93.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404C4B1D192BE465B429CFB66241ABA4B44AF50B3378722840FA27225649824070C</stationID>
+			<name>Radio Eska Krakow</name>
+			<shortname>Eska Krakow</shortname>
+			<icon></icon>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854041DDA21F805317FB852DD9C5320B69A161617A43A0C1855CD42D71EA7AE358902</stationID>
+			<name>Radio Wawa</name>
+			<shortname>Wawa</shortname>
+			<icon></icon>
+			<frequency>107</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540464CCF53BF548972B9656034841DDEDE67317DACB62AFD54A4FD13921B1E173DB</stationID>
+			<name>Radio Flash Malopolska</name>
+			<shortname>Flash Malopolska</shortname>
+			<icon></icon>
+			<frequency>101.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854044176B31171DF10B3D94335F792653014EF134C19ACFEE21CEB40A294302495BB</stationID>
+			<name>Radio Echo 103.8 FM</name>
+			<shortname>Echo</shortname>
+			<icon></icon>
+			<frequency>103.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854040B7192E5886F10FA59B7C208BF48DF42C96E78259088AF0711DF49D840ADD717</stationID>
+			<name>Radio Zak</name>
+			<shortname>Zak</shortname>
+			<icon></icon>
+			<frequency>100.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404944CEF4002A347050FCCDE46A63898A1432B6A40519851A265C9DFBB1B3E650B</stationID>
+			<name>Radio Krakow</name>
+			<shortname>Krakow</shortname>
+			<icon></icon>
+			<frequency>101.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854048859D7D569BB76585B48C52D5D6D716393699F40095B0162FCD203614DC129BB</stationID>
+			<name>Radio Plus Krakow</name>
+			<shortname>Plus</shortname>
+			<icon></icon>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404126CE112965DEBE3C29DBE2EB275A7B9B1ACBCB62B4E6A5118F15881C27723BC</stationID>
+			<name>Radio Wanda</name>
+			<shortname>Wanda</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404B6DA5327F490F61BB3FB6AE24CDFFCDEE6126F02FB396C917D3F1920CE731BF3</stationID>
+			<name>Radio Tok Fm</name>
+			<shortname>Tok Fm</shortname>
+			<icon></icon>
+			<frequency>102.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404E02C8F72B8898FA1BF4CB433C1350CE61413E3EABD67267D7EA1E81414D034A6</stationID>
+			<name>Radio Region</name>
+			<shortname>Region</shortname>
+			<icon></icon>
+			<frequency>96.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404C563CEFAACB913768F0CF7A25068A175ED56B0CA83039EE0DCCC84D92E76020F</stationID>
+			<name>Radio Opera FM</name>
+			<shortname>Opera FM</shortname>
+			<icon></icon>
+			<frequency>87.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854046515470A89C389EF0B97EE161CA3A7740585081550F86629AC69829F64F2130D</stationID>
+			<name>Polskie Radio Program 1</name>
+			<shortname>PR1</shortname>
+			<icon></icon>
+			<frequency>104.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404822F9E6A1B4B1284D81A6888371EC49BB0E090CDA134817E6E961731C4D1499C</stationID>
+			<name>Polskie Radio Program 2</name>
+			<shortname>PR2</shortname>
+			<icon></icon>
+			<frequency>89.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385404C217A251B9049DB00C6F64BFC78DB0EFD3728B76C67F4F079AB1521AC921688F</stationID>
+			<name>Radio Maryja</name>
+			<shortname>Maryja</shortname>
+			<icon></icon>
+			<frequency>90.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540437AFE58BD7560BE0A0DF49CBFE18301300314206FBD357C5F6E5FD864F6F9EE4</stationID>
+			<name>Jazz Radio</name>
+			<shortname>Jazz Radio</shortname>
+			<icon></icon>
+			<frequency>101</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540402710C2391F9BD598C008906A2FE94004FEF336365F84067E4845C76010E4797</stationID>
+			<name>Radio Maks Bochnia</name>
+			<shortname>Maks Bochnia</shortname>
+			<icon></icon>
+			<frequency>106.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540485443A9D7D143079A5A00A24E295BA4007494C6B8E850D2670C0615D354A83E6</stationID>
+			<name>Radio Plus Tarnow</name>
+			<shortname>Plus Tarnow</shortname>
+			<icon></icon>
+			<frequency>103.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

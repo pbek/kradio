@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>New York</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633853843639B87399551DA1AAACFC9C01263D6BAD63FE0339F03751A10C8E5233225137</stationID>
+			<name>News/Talk @ WLIE-AM</name>
+			<shortname>90</shortname>
+			<icon></icon>
+			<frequency>0.54</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384D60118934EDA4BBE7358AD4BB48C8BD3209F6675F07DA82EBA9648FB102F9D19</stationID>
+			<name>Sports/Talk @ WGR-AM</name>
+			<shortname>91</shortname>
+			<icon></icon>
+			<frequency>0.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853845B6CF8EB7BBBA770FF670C97DB855E1E5C6AFA97EF77D9DB3D8B94B7EBFC65C3</stationID>
+			<name>Sports/News @ WSYR-AM</name>
+			<shortname>92</shortname>
+			<icon></icon>
+			<frequency>0.57</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384C462EF23091D9E5031A0A8D8D5378EA0C08A5F864E288ECACFA12238BEBEB2DC</stationID>
+			<name>Sports/News @ WROW-AM</name>
+			<shortname>93</shortname>
+			<icon></icon>
+			<frequency>0.59</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384A538B78630DD0A7E036F3584F11AB5F59109E7C5E5AE38001AF651855A931786</stationID>
+			<name>News/Talk @ WHEN-AM</name>
+			<shortname>94</shortname>
+			<icon></icon>
+			<frequency>0.62</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538422DECDFEA9CD8EDDFCF9A3311D02BCE00A037E012B7DA9932AE7A5FB1FD20338</stationID>
+			<name>News/Talk @ WFAN-AM</name>
+			<shortname>95</shortname>
+			<icon></icon>
+			<frequency>0.66</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384C0845A4A2FD867B97E5B9505576C74E07C0FD8A02F2E0324D28464559AAEAB16</stationID>
+			<name>Country @ WINR-AM</name>
+			<shortname>96</shortname>
+			<icon></icon>
+			<frequency>0.68</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384DFEDA8AD496684BA47283A3A07C5AA6AF665A148E0ED670DD81C448890C81916</stationID>
+			<name>News/Talk @ WOR-AM</name>
+			<shortname>97</shortname>
+			<icon></icon>
+			<frequency>0.71</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853849481B82122F67E41099A10FD38D4C089C6DE51C5BE196DAF195227885D2846DD</stationID>
+			<name>News/Talk @ WABC-AM</name>
+			<shortname>98</shortname>
+			<icon></icon>
+			<frequency>0.77</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853843BC36C60020DF9DE9E84B630AA8CC5073633401BDF47EAD13C24CBDD67A6BC5D</stationID>
+			<name>Talk @ WTNY-AM</name>
+			<shortname>99</shortname>
+			<icon></icon>
+			<frequency>0.79</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384E8E617205CD5CB6A142D99D94474CC9FFAFF236053F88FE00E1E66D82A9AD4D1</stationID>
+			<name>News/Talk @ WGY-AM</name>
+			<shortname>100</shortname>
+			<icon></icon>
+			<frequency>0.81</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853843F0C392656E52943F7CD1FCC946B31502C18A87AE30542F821CD4542DAB7F0CB</stationID>
+			<name>Talk @ WNYC-AM</name>
+			<shortname>101</shortname>
+			<icon></icon>
+			<frequency>0.82</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384DC1DBBCFB7FF95E65E5579499399B2F7F58A9F09AACE05A06D13F779E3F047DA</stationID>
+			<name>Nostalgia @ WYLF-AM</name>
+			<shortname>102</shortname>
+			<icon></icon>
+			<frequency>0.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384447D428B757B418A3E6C838235F88FF98D6366AE069EDD6CB02DC8DAD2FF2D20</stationID>
+			<name>News/Talk @ WHCU-AM</name>
+			<shortname>103</shortname>
+			<icon></icon>
+			<frequency>0.87</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384BA4FC84A97428FCF5DDC6A5C3119F316BE5C99B34D839E0479C140C211A534AE</stationID>
+			<name>News @ WCBS-AM</name>
+			<shortname>104</shortname>
+			<icon></icon>
+			<frequency>0.88</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538407C97D3FDCFC667592BB15B0B210BE51E31609A33352CA69EB1BC3B6DFCB9EC8</stationID>
+			<name>Sports @ WIRD-AM</name>
+			<shortname>105</shortname>
+			<icon></icon>
+			<frequency>0.92</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538478447C5A13FCCE2A25346DD0740940AD4A7AFE4D508D3BAEB716BFEBB53319AB</stationID>
+			<name>News/Talk @ WBEN-AM</name>
+			<shortname>106</shortname>
+			<icon></icon>
+			<frequency>0.93</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853842F85981F5AB2F811D655CD80F1482B4C89C9CAE34F328125DEE51EB276B4E8B6</stationID>
+			<name>Religious @ WWDJ-AM</name>
+			<shortname>107</shortname>
+			<icon></icon>
+			<frequency>0.97</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384B9CB2292CE84D99355283E336EDA4745818623B2F21D09677565AFA7C573C56F</stationID>
+			<name>News/Talk @ WLNL-AM</name>
+			<shortname>108</shortname>
+			<icon></icon>
+			<frequency>1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853845C43F8A5CF535A089A837A64A1014C8E6AFA7F6EDD6333A240F6CB5A2E5AFD23</stationID>
+			<name>News @ WINS-AM</name>
+			<shortname>109</shortname>
+			<icon></icon>
+			<frequency>1.01</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384E5D8AD573FE285DB6679ADE496F1CD7A6758CB4128E6962E612C192B7DCEB0E6</stationID>
+			<name>News/Talk @ WYSL-AM</name>
+			<shortname>110</shortname>
+			<icon></icon>
+			<frequency>1.04</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384E8B7688D45D61D7241ED694CF74891AF29DD7E13DE0E9CAA45B22827377A310A</stationID>
+			<name>News/Talk @ WFBL-AM</name>
+			<shortname>111</shortname>
+			<icon></icon>
+			<frequency>1.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384BF57E2F572699FEC86ED691CE8F0F4DFA369877E9DD61D3E69143A1A45E3DD7D</stationID>
+			<name>Gospel @ WUFO-AM</name>
+			<shortname>112</shortname>
+			<icon></icon>
+			<frequency>1.08</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384910CCB1D4E2F2403D4FE8B2C788837849E1C7FBD8DD9E9BE618A3A3238F14E2A</stationID>
+			<name>Nostalgia @ WHLI-AM</name>
+			<shortname>113</shortname>
+			<icon></icon>
+			<frequency>1.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384D9E3CAA940AB5616DB8B453072DD55606F79A6564FC2CFA711F13E0E05C613E7</stationID>
+			<name>Oldies @ WTBQ-AM</name>
+			<shortname>114</shortname>
+			<icon></icon>
+			<frequency>1.11</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853848546E8EDCC232C4589CDB960B7DA1A0219201C9FC0A5A10B1574893928ED96FE</stationID>
+			<name>Religious @ WMNY-AM</name>
+			<shortname>115</shortname>
+			<icon></icon>
+			<frequency>1.12</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384C3BE8EF353F6AB52449CCA0F556CEF0F4AF2D12F731FB3A3FC26ABE712BD7EEA</stationID>
+			<name>News/Talk @ WBBR-AM</name>
+			<shortname>116</shortname>
+			<icon></icon>
+			<frequency>1.13</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853843FD5431B585B46EDD3CCD47C655C287D3BDCB2F692BDEA9B459CA638455E5F50</stationID>
+			<name>Country @ WCJW-AM</name>
+			<shortname>117</shortname>
+			<icon></icon>
+			<frequency>1.14</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384BD79F835B64CAD061DF1ADBEEDCBD98C8D3BC65A197782804C0EC870351B3670</stationID>
+			<name>Nostalgia @ WVNJ-AM</name>
+			<shortname>118</shortname>
+			<icon></icon>
+			<frequency>1.16</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853841DF5A4F63D3596446A8F39513281A97355AFF9F7897F60FF89147CCDB05AFF2E</stationID>
+			<name>News/Talk @ WHAM-AM</name>
+			<shortname>119</shortname>
+			<icon></icon>
+			<frequency>1.18</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538410A63BF43FC1E3AEEDD1C0B39C8EF1A156337F7278AD26D849EC1108D9CC0440</stationID>
+			<name>Sports/News @ WLIB-AM</name>
+			<shortname>120</shortname>
+			<icon></icon>
+			<frequency>1.19</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384F06478CB40C9452A0B082FA5AEF8FA94033BBA41F61B8FE15FFB5C5B990F5256</stationID>
+			<name>News/Talk @ WGNY-AM</name>
+			<shortname>121</shortname>
+			<icon></icon>
+			<frequency>1.22</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538461E58EC70ECFD879D4DBF33A9F30FD22C1D500D856B69B92437560A7145B7A9A</stationID>
+			<name>Nostalgia @ WFAS-AM</name>
+			<shortname>122</shortname>
+			<icon></icon>
+			<frequency>1.23</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384942A9EFD0982BD235777BFF7B41F0014B646721B4D99F6A7B33D90F2290142E2</stationID>
+			<name>Sports/News @ WATN-AM</name>
+			<shortname>123</shortname>
+			<icon></icon>
+			<frequency>1.24</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853842C00605140140A80BD815B5F02B7995DD09971896272C55981CC06DBFBF0DD1E</stationID>
+			<name>AAA @ WIPS-AM</name>
+			<shortname>124</shortname>
+			<icon></icon>
+			<frequency>1.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384AAE89060E625EF066C4E355FE14F5FDEEA0C52FEF83DB398F382CC41B63B10D9</stationID>
+			<name>Nostalgia @ WHLD-AM</name>
+			<shortname>125</shortname>
+			<icon></icon>
+			<frequency>1.27</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538447DC4BD1DA6656F67CFF91CD3712408E828452D9F96B5C5587E62A3D73D3F815</stationID>
+			<name>Spanish/Talk @ WADO-AM</name>
+			<shortname>126</shortname>
+			<icon></icon>
+			<frequency>1.28</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538448FBE4E1EE84BB9BB43FE411B4E488F8AE34AAA28A1D21A2477676C277B92848</stationID>
+			<name>News/Talk @ WNBF-AM</name>
+			<shortname>127</shortname>
+			<icon></icon>
+			<frequency>1.29</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853842AE2EFFC99F6784D7BE6A3496D2745E27CCFD533981D975D614E30771DE936CC</stationID>
+			<name>Nostalgia @ WZZZ-AM</name>
+			<shortname>128</shortname>
+			<icon></icon>
+			<frequency>1.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384C381758F19B688C29E3EB4445650A0057D8986494328F7700F3244D026FCE032</stationID>
+			<name>Nostalgia @ WVIP-AM</name>
+			<shortname>129</shortname>
+			<icon></icon>
+			<frequency>1.31</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384A9ACFBF80ED274B34D94FFCEF095085CE1EC4D50ECD1A345F5489C6CEE76B6BE</stationID>
+			<name>Sports/News @ WHHO-AM</name>
+			<shortname>130</shortname>
+			<icon></icon>
+			<frequency>1.32</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384FC6404A4D3B0FC9636BA98C764324BC363ACABAF85654247E673CE660490B42C</stationID>
+			<name>Christian @ WHAZ-AM</name>
+			<shortname>131</shortname>
+			<icon></icon>
+			<frequency>1.33</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384B4541D3BADEC51701ED431890DAD6BAB03713231F86B459E638909AFAEE2928B</stationID>
+			<name>Nostalgia @ WMSA-AM</name>
+			<shortname>132</shortname>
+			<icon></icon>
+			<frequency>1.34</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384F4219E0438DEA4672346C1B4D002B3F531DB17E425CE6868B1495E7C48F87522</stationID>
+			<name>Nostalgia @ WCBA-AM</name>
+			<shortname>133</shortname>
+			<icon></icon>
+			<frequency>1.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384423F140BB098D285FAF19D66031B3860BE1A9627A31A1451F4BCAC1DBBACA8E0</stationID>
+			<name>Nostalgia @ WALK-AM</name>
+			<shortname>134</shortname>
+			<icon></icon>
+			<frequency>1.37</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853846869F20C32F9132A03E376327AA918087824D2F3F454BA648EF971642A6DE261</stationID>
+			<name>Oldies @ WABH-AM</name>
+			<shortname>135</shortname>
+			<icon></icon>
+			<frequency>1.38</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853843BBC76A8D0E5A5BC2D5BBD888484C9647E229881ABF6FFEB29051A90B1BA7947</stationID>
+			<name>News/Talk @ WSLB-AM</name>
+			<shortname>136</shortname>
+			<icon></icon>
+			<frequency>1.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853845FBBFD185550F2AC5501C4CBD02555BA2A9D8847E0AE5FB76BA93BAC0969DD25</stationID>
+			<name>News/Talk @ WNER-AM</name>
+			<shortname>137</shortname>
+			<icon></icon>
+			<frequency>1.41</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384EFD41229D36DF60328F7B00DF7932209AD1A83D37743AE34E84B6509DC6665DD</stationID>
+			<name>Sports/News @ WACK-AM</name>
+			<shortname>138</shortname>
+			<icon></icon>
+			<frequency>1.42</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384E7ABDB635B2A26931140AFEC499FC800367911FA689D59F75B9DEA56F0EB6E51</stationID>
+			<name>Ethnic @ WNSW-AM</name>
+			<shortname>139</shortname>
+			<icon></icon>
+			<frequency>1.43</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384FBEDDCE906AC114F40FC44BA7EA027655C01C456957860A7ACBBCAEA1B9E1684</stationID>
+			<name>Ethnic @ WNYG-AM</name>
+			<shortname>140</shortname>
+			<icon></icon>
+			<frequency>1.44</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384BDDBFC01E41E369F77ED11B6A3ED40B1F26C3F32067C3BBEBFA8D6B2B23D8F81</stationID>
+			<name>News/Talk @ WCTC-AM</name>
+			<shortname>141</shortname>
+			<icon></icon>
+			<frequency>1.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853849E43AB50BB1A0EC2EE51C8CE677CFAB2CCB595EF7BBE8DF1D53ABB72F5D0B7C2</stationID>
+			<name>Ethnic @ WWWG-AM</name>
+			<shortname>142</shortname>
+			<icon></icon>
+			<frequency>1.46</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853840A429F8725EEC606C47AF0683D37C9E129CB5561C7B9172E66A96EF9DD1392B4</stationID>
+			<name>Oldies @ WTKO-AM</name>
+			<shortname>143</shortname>
+			<icon></icon>
+			<frequency>1.47</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384D297B503DE02C9AB1D37EDC7FC93D29406CFD45844D962A2F9C93438F874BE97</stationID>
+			<name>AC @ WLEA-AM</name>
+			<shortname>144</shortname>
+			<icon></icon>
+			<frequency>1.48</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538493046A2BECF72DF0F75F2BDFCA259D2F4AD0B569FE6C38A68A5C04B8952FF0A7</stationID>
+			<name>Childrens @ WOLF-AM</name>
+			<shortname>145</shortname>
+			<icon></icon>
+			<frequency>1.49</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853842AF960C90C92E70E05E439329D7C31BF377ECCA519A19ED31668DD4B406CD93F</stationID>
+			<name>AC @ WCGR-AM</name>
+			<shortname>146</shortname>
+			<icon></icon>
+			<frequency>1.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853845EF7CB981BA49E3864144AB90F3B508A53CD37492083076006DD6303DB68EBE9</stationID>
+			<name>Childrens @ WQEW-AM</name>
+			<shortname>147</shortname>
+			<icon></icon>
+			<frequency>1.56</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385384770B8D013550134526D266C9400E395D15D51120B38D3D7DFC9C0476B9E74FE2</stationID>
+			<name>Country @ WFLR-AM</name>
+			<shortname>148</shortname>
+			<icon></icon>
+			<frequency>1.57</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853847C47702A3067041A5DE4B442A14BD86CF50912F0AEB47B8E51EBF926158D5E74</stationID>
+			<name>Nostalgia @ WLIM-AM</name>
+			<shortname>149</shortname>
+			<icon></icon>
+			<frequency>1.58</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538443D6793C10A33706F49983DA80FC374A3EC07C51E70F38E65C74E29AABCAD9E2</stationID>
+			<name>Talk @ WWRL-AM</name>
+			<shortname>150</shortname>
+			<icon></icon>
+			<frequency>1.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

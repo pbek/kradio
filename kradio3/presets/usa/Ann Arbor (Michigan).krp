@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>The Mad Doctor Kaeding, kaeding@kaeding.homelinux.org</maintainer>
+			<changed>2003-01-01T00:00:00</changed>
+			<country>United States</country>
+			<city>Ann Arbor, Michigan</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385399005A74622415F2FDDEBA5DE614AB39E70C3A05BD488EA05FF7959CE37AFC154F</stationID>
+			<name>89X CIMX Windsor, Ontario</name>
+			<shortname>89X</shortname>
+			<icon></icon>
+			<frequency>88.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399EFD1610C7B294BE1BEEEFE57951D3007153626AC1156A1E4197F1A5D0D50D5DF</stationID>
+			<name>WCBN University of Michigan, Ann Arbor</name>
+			<shortname>WCBN</shortname>
+			<icon></icon>
+			<frequency>88.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853992E3A66486CA59773049D35D3B64F9EF810EF5B5208A4EC7060625B1047256277</stationID>
+			<name>WEMU Eastern Michigan University, Ypsilanti</name>
+			<shortname>WEMU</shortname>
+			<icon></icon>
+			<frequency>89.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399F3E0F0A82907F7E72EAB3078B284EB292D60D8D2582A674533DF7980708AB73D</stationID>
+			<name>CBE, CBC Windsor, Ontario</name>
+			<shortname>CBC</shortname>
+			<icon></icon>
+			<frequency>89.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853994F2383C315AF4888298F68E323F2DE18B8619BB306D03B64BC9B2208D46BB9A7</stationID>
+			<name>WKAR Michigan State University, East Lansing</name>
+			<shortname>WKAR</shortname>
+			<icon></icon>
+			<frequency>90.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853994B06CFBE8C11D31853B6CC1201128EA7B8144C9478C06FFAA6FC8CDB5E1481DE</stationID>
+			<name>WDTR, Detroit, Michigan</name>
+			<shortname>WDTR</shortname>
+			<icon></icon>
+			<frequency>90.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399432F3E0E7F9211239B47F893EE0E9CBDC85955CBED4F598295194E0A68D228EE</stationID>
+			<name>WUOM University of Michigan, Ann Arbor</name>
+			<shortname>WUOM</shortname>
+			<icon></icon>
+			<frequency>91.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853997474D6F94D53EA62057457A0E36DFE84D0C9C5E9BF114EB811AE9432BE2EA875</stationID>
+			<name>Mix 92.3 WMXD, Detroit, Michigan</name>
+			<shortname>Mix 92.3</shortname>
+			<icon></icon>
+			<frequency>92.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399057C15A535C89D414020872268F57B59E960BDDFBDBE793518DD0C24B8B4CDF7</stationID>
+			<name>Kiss 92.5 WVKS, Toledo, Ohio</name>
+			<shortname>Kiss 92.5</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399E972D1585FB93DCAE7FD29B04C582B66D19B0F6AC12C3B659C117B86367F10EE</stationID>
+			<name>WDRQ, Detroit, Michigan</name>
+			<shortname>WDRQ</shortname>
+			<icon></icon>
+			<frequency>93.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539945B2458C1670AEA6831E59EAD9B68A82E81AE852F965C2EF433206C7B0059A56</stationID>
+			<name>WHMI, Howell, Michigan</name>
+			<shortname>WHMI</shortname>
+			<icon></icon>
+			<frequency>93.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399992696D6CBABEA7C76E99189C579CFB48483EECDF575B9F94D850674F71B6F5B</stationID>
+			<name>CIDR Lite Rock 93.9, Windsor, Ontario</name>
+			<shortname>CIDR</shortname>
+			<icon></icon>
+			<frequency>93.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399834FBC612E7DC68F88147CF16166BBB808824FABF72CC21170027401B86A7F82</stationID>
+			<name>WXKR Toledo&apos;s Classic Rock</name>
+			<shortname>WXKR</shortname>
+			<icon></icon>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853994004E8C949BB5FB6BF2F1F59DD5962556B774CCC043BC4A1D099899AB3A07279</stationID>
+			<name>WCSX, Detroit, Michigan</name>
+			<shortname>WCSX</shortname>
+			<icon></icon>
+			<frequency>94.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399CCD155FCF6FAC3C357112F0C7CA94EDBFC17EA8BCA4D3906F99BBFD6308AEF92</stationID>
+			<name>Classic Rock 94.9, WONB, Ada/Lima, Ohio</name>
+			<shortname>WONB</shortname>
+			<icon></icon>
+			<frequency>94.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399214A4D4A06C9B654729493E14F4A55B769CDF835DE0774E46A50319F3D62D892</stationID>
+			<name>WQTE Country, Adrian, Michigan</name>
+			<shortname>WQTE</shortname>
+			<icon></icon>
+			<frequency>95.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853990C395D4C1561B8BEE4F927BC665C114B95C3BD44960066354C80A731546A5993</stationID>
+			<name>Channel 955 WKQI, Detroit, Michigan</name>
+			<shortname>Channel 955</shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539959F016DD641FC2FA5F5FA4C6537C3E067F1A4F06976B2C2277E1FB4F9CB1CA14</stationID>
+			<name>WDVD, Detroit, Michigan</name>
+			<shortname>WDVD</shortname>
+			<icon></icon>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539949A7D21CE0EE66829B1FD992DBBCC845E31DFB46CEBF68B5F0DFFDA4CB7FD6F1</stationID>
+			<name>Detroit&apos;s FM Talk, WKRK, Detroit, Michigan</name>
+			<shortname>Detroit&apos;s FM Talk</shortname>
+			<icon></icon>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399D6B8D7236D1238C4BBF5727F17551B976EF4397FC35C3BBD1AF3A0B3D5C1761A</stationID>
+			<name>WEJY, Monroe, Michigan</name>
+			<shortname>WEJY</shortname>
+			<icon></icon>
+			<frequency>97.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399300AFB781FF5C1F57CDEEE2AE71F1B9E8B4C1C0FB0113AC44D696CF01F6F9C04</stationID>
+			<name>WJLB, Detroit, Michigan</name>
+			<shortname>WJLB</shortname>
+			<icon></icon>
+			<frequency>97.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399552792808951F429B9439DD185D8C862540B24FEA2013B650191DD9109C0F661</stationID>
+			<name>V98.7 Smooth Jazz, WVMV, Detroit, Michigan</name>
+			<shortname>V98.7</shortname>
+			<icon></icon>
+			<frequency>98.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853998C67004465F088B82C6D383B38BDAF8081751A78E575F1162F975406E5849FD5</stationID>
+			<name>WYCD Detroit&apos;s Country, Detroit, Michigan</name>
+			<shortname>WYCD</shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399C8F9199AF06523CBAB5352BD5372C1F6F04C62E6D12A27920A4356055F206F59</stationID>
+			<name>WNIC, Detroit, Michigan</name>
+			<shortname>WNIC</shortname>
+			<icon></icon>
+			<frequency>100.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399B3951A2857BB08D603D8E29F565C1F71674D2F63B6D65C1AACADD7AAEF66DAFF</stationID>
+			<name>The Riff WRIF, Detroit, Michigan</name>
+			<shortname>WRIF</shortname>
+			<icon></icon>
+			<frequency>101.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399F54E78A7583AFEB46233D2234DAE1D4E8F00701F61D12E7EA4000C2E98A82B1A</stationID>
+			<name>The River WRVF, Toledo, Ohio</name>
+			<shortname>WRVF</shortname>
+			<icon></icon>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853993A8C5D2EFEDBB9EDEA7492AB07F97DCD18AC7B47A3B068E7571B6272DCAE231E</stationID>
+			<name>WDET, Detroit, Michigan</name>
+			<shortname>WDET</shortname>
+			<icon></icon>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399E0BE620D41DB088636173A5E445E9B6114C97BCEE5D3957D3A4B224349144C2A</stationID>
+			<name>WIOG, Bay City, Michigan</name>
+			<shortname>WIOG</shortname>
+			<icon></icon>
+			<frequency>102.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853996467EF21C3A454CE64F2856535198A913E332755066B427332F6EFEC2E2A3EE6</stationID>
+			<name>W4 Country, WWWW, Ann Arbor, Michigan</name>
+			<shortname>W4</shortname>
+			<icon></icon>
+			<frequency>102.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853991685E29A91616F9222AF37F79B5CC44A99AE84572EFEA4D5145491274EBD7750</stationID>
+			<name>WMUZ, Detroit, Michigan</name>
+			<shortname>WMUZ</shortname>
+			<icon></icon>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399F85C8AAC4FF9B71EF48FA3E2F4C89ECD57280ECCF7EF078364D68639357CA9CD</stationID>
+			<name>WLEN, Adrian, Michigan</name>
+			<shortname>WLEN</shortname>
+			<icon></icon>
+			<frequency>103.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853993E0370DA1113928D6DE6CDC38C104299EFD40DDDB458F9D8BE2B32EF832D5F3D</stationID>
+			<name>WOMC, Detroit, Michigan</name>
+			<shortname>WOMC</shortname>
+			<icon></icon>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399472E70E9000953B5EB27A679A01FD40D6C1EDC35089FDDFCEE8F80086A3F2DFD</stationID>
+			<name>WIOT, Toledo, Ohio</name>
+			<shortname>WIOT</shortname>
+			<icon></icon>
+			<frequency>104.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853991DBC67776DB8AD7286548A5EB881B1B27BBB1D9498B4C25F2BD5A0B4C7A46DA8</stationID>
+			<name>Magic 105.1, WMGC, Detroit, Michigan</name>
+			<shortname>Magic 105.1</shortname>
+			<icon></icon>
+			<frequency>105.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853990C1E20E6DEC883C45D1A6BC20EE929CAA19A444F9CF99285240291DB7D03A087</stationID>
+			<name>105.9 Jamz, WDTJ, Detroit, Michigan</name>
+			<shortname>105.9 Jamz</shortname>
+			<icon></icon>
+			<frequency>105.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399B99491B928D2B5A13E955B7C72D2122BC6A4CAFC325632FF97A028B766FFA6D0</stationID>
+			<name>Q106, WJXQ, Lansing, Michigan</name>
+			<shortname>Q106</shortname>
+			<icon></icon>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539977CEB45224C8DE3A8A849875530543FEA5622D0DF9D78030C0DA24730FCECDE4</stationID>
+			<name>106.7 The Drive, WDTW, Detroit, Michigan</name>
+			<shortname>The Drive</shortname>
+			<icon></icon>
+			<frequency>106.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399F49BE231FC1807651E2A349302B715D7A81E52E2650522240488F898FE49DC22</stationID>
+			<name>Kool 107, WQKL, Ann Arbor, Michigan</name>
+			<shortname>Kool 107</shortname>
+			<icon></icon>
+			<frequency>107.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385399FE25B77559FCC855CE55CA66E9EB51FFE83EE2450ED257579581410F731DF86A</stationID>
+			<name>The Rhythm, WGPR, Detroit, Michigan</name>
+			<shortname>WGPR</shortname>
+			<icon></icon>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539929DCFAA388C1F38BD8414A88FE999F0FB7FF9F2819238BD823DAB7EAFF83DA2E</stationID>
+			<name>WVAC Adrian College, Adrian, Michigan</name>
+			<shortname>WVAC</shortname>
+			<icon></icon>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

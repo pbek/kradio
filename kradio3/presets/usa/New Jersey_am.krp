@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>New Jersey</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385381FE90D676DFE56E57BB00E32FD6586831BED8EB2ED43A985362081201A65EC983</stationID>
+			<name>Sports @ WPHY-AM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>0.92</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381C54750C83340909E04D3A6F5A599483DAA0BD1B1CF548C713A1F8301B386EB5D</stationID>
+			<name>Urban @ WIMG-AM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>1.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381AA7C917ECE49C9DEB397BE8B353EF9A2B7FEB627538031375556C57F412A502A</stationID>
+			<name>Country @ WADB-AM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>1.31</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381CD109A7C5B588D6BA52ABCF3FF087EC1624979F0481F292CBFEC5D6EF5CF61A3</stationID>
+			<name>Religious @ WNJC-AM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>1.36</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381B6198A27DAB3D2496942DF72C4BF47A8C8E60E58D2F2E6FD0DC2574708F30E1A</stationID>
+			<name>News/Talk @ WOND-AM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>1.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538161FF923DFED6143A4BDF3130B0C0BC70B6ACDFCA2187F49501CBBC99B98729A0</stationID>
+			<name>Oldies @ WHTG-AM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>1.41</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538124DBA094C3A6DBD88FA62C69EAE80E374A2873B322C24D69D768563934E49D67</stationID>
+			<name>AC @ WMVB-AM</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<frequency>1.44</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538185B08878A12580A1FCBE39BC970E0015A3E3ED075BD1D650082E8B2042855510</stationID>
+			<name>News/Talk @ WKXW-AM</name>
+			<shortname>37</shortname>
+			<icon></icon>
+			<frequency>1.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853815625452EC8C2A385B269FE078B8B8D8E6205C6FB923EBC56D7C7986B48383D42</stationID>
+			<name>Oldies @ WGHT-AM</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<frequency>1.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538177366CE597827B2A53241155B5C49042601424DEF856BC5C9418A9A9F84AE651</stationID>
+			<name>Spanish @ WWRU-AM</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<frequency>1.66</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385381305A464900533732DB676AEC5F11069A2C3C246C1E2564A9412A02E4E09FF9D6</stationID>
+			<name>News/Talk @ WTTM-AM</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<frequency>1.68</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Texas</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633853934B68739A74E8EB4987928A6CAEF85638FD7ABDE1CA6830162380A25D89F3BED8</stationID>
+			<name>News/Talk @ KTSA-AM</name>
+			<shortname>90</shortname>
+			<icon></icon>
+			<frequency>0.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853931C507C8A5E8E6DFCC3268CC6191992E25D44A54EBA9E1FC05E13D766220E5F49</stationID>
+			<name>News/Talk @ KLVI-AM</name>
+			<shortname>91</shortname>
+			<icon></icon>
+			<frequency>0.56</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853932614E2A9804D5866A4FDD4F54F89ED1B4C47B94F7598519D0795746B0914A7FE</stationID>
+			<name>News/Talk @ KLIF-AM</name>
+			<shortname>92</shortname>
+			<icon></icon>
+			<frequency>0.57</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539398DCE2091D344B42E12A00E6214BD0D828B5D4F23A74E779148BA02CAF72E349</stationID>
+			<name>Nostalgia @ KRFE-AM</name>
+			<shortname>93</shortname>
+			<icon></icon>
+			<frequency>0.58</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539328540F1C5489BDB20F1270909E54FE5ACD98571F81C717D74DE27F01EE2276F2</stationID>
+			<name>News/Talk @ KLBJ-AM</name>
+			<shortname>94</shortname>
+			<icon></icon>
+			<frequency>0.59</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393DA73B7961FCEE62F6705B005718A80A6FC0EB48F11B697FB9787C0CEC217B3BC</stationID>
+			<name>Sports @ KILT-AM</name>
+			<shortname>95</shortname>
+			<icon></icon>
+			<frequency>0.61</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393E8575A86B98B8BB1DF32D22450CF3B90E088E6BE4047E8F6A771CF0EB97D4DF3</stationID>
+			<name>Childrens @ KMKI-AM</name>
+			<shortname>96</shortname>
+			<icon></icon>
+			<frequency>0.62</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853937B9B949074A75C447C878B5716731383C5C4D412EF57FAB635F52D1C47105637</stationID>
+			<name>Religious @ KSLR-AM</name>
+			<shortname>97</shortname>
+			<icon></icon>
+			<frequency>0.63</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853938FDBDAB6C7BCB2826CA169E6BBD426E7A5F9C0E06027AACE511BEE24CB71A14D</stationID>
+			<name>Business @ KIKK-AM</name>
+			<shortname>98</shortname>
+			<icon></icon>
+			<frequency>0.65</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853937326529410411F6A6F75E4DB102FC1D7A0FC0134B142B5791963127D1E3D630C</stationID>
+			<name>Religious @ KSKY-AM</name>
+			<shortname>99</shortname>
+			<icon></icon>
+			<frequency>0.66</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853930D9A8082661726C7C09877936867382C2D28A642175A61021D2DCFBB99D80B72</stationID>
+			<name>Country @ KKYX-AM</name>
+			<shortname>100</shortname>
+			<icon></icon>
+			<frequency>0.68</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393663981A145DD94EAEE6A06B3899AF030B55E399BA149622DDDD3C206DFB1B7D7</stationID>
+			<name>News/Talk @ KTSM-AM</name>
+			<shortname>101</shortname>
+			<icon></icon>
+			<frequency>0.69</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393AF701F2BA6945672948D58301F3816E6DAE0EACBE7D82F82B3D1D047199C22F9</stationID>
+			<name>Nostalgia @ KSEV-AM</name>
+			<shortname>102</shortname>
+			<icon></icon>
+			<frequency>0.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539351F882DCB5673458E5C68ED7820072762E0AF92EA499DDB54C00D36DA8EE8F75</stationID>
+			<name>News/Talk @ KURV-AM</name>
+			<shortname>103</shortname>
+			<icon></icon>
+			<frequency>0.71</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393B698C39EF53663F89D3920371E7B8F26749A577E09E10E8FDD020CC1472B6A47</stationID>
+			<name>News/Talk @ KTRH-AM</name>
+			<shortname>104</shortname>
+			<icon></icon>
+			<frequency>0.74</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539381CFDBD6C54EA868B1657D92617785F5F8A0FF6EC00F8A819DEA67266E2D2F5C</stationID>
+			<name>Spanish @ KAMA-AM</name>
+			<shortname>105</shortname>
+			<icon></icon>
+			<frequency>0.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853936F38129656C3F589EBE32A54BB2C121171DE866CAB417D650C1DECBA697B64A8</stationID>
+			<name>Sports @ KTKR-AM</name>
+			<shortname>106</shortname>
+			<icon></icon>
+			<frequency>0.76</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853939315DE48944D4BDD4832B2A506493728DCBDA31F99964D766AE0073960F5C9DE</stationID>
+			<name>News/Talk @ KFYO-AM</name>
+			<shortname>107</shortname>
+			<icon></icon>
+			<frequency>0.79</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853936516841F6902A233B7C6A9745E0B9D5A3600C1E30D523037E8F1CB9338D468AA</stationID>
+			<name>Urban AC @ KSJL-AM</name>
+			<shortname>108</shortname>
+			<icon></icon>
+			<frequency>0.81</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539359D5F596DF5647C380F45251DED1CBD223F32DE4B294D90554FC7C5E395E9F95</stationID>
+			<name>News/Talk @ WBAP-AM</name>
+			<shortname>109</shortname>
+			<icon></icon>
+			<frequency>0.82</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393528CC98C56B9ADC2158B9821ECF3DB809CDE2B3A66362F4C5591CFD63EB91CC6</stationID>
+			<name>News/Talk @ KVJY-AM</name>
+			<shortname>110</shortname>
+			<icon></icon>
+			<frequency>0.84</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393CAAC3B700E2B933691BD2C454E8C8A3D2049A3269AE0B71C298B5BA038AF655F</stationID>
+			<name>Spanish @ KEYH-AM</name>
+			<shortname>111</shortname>
+			<icon></icon>
+			<frequency>0.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393C1B51CF9F570B8D20E75E3D983784A7F9B5572ACA6E1EEC3353D7AB323419B38</stationID>
+			<name>Oldies @ KONO-AM</name>
+			<shortname>112</shortname>
+			<icon></icon>
+			<frequency>0.86</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539337B67A59F44EDA496AE51C1FA13D48462B0FFD81405073BAEC4C8A3CBD24A25E</stationID>
+			<name>Ethnic @ KREH-AM</name>
+			<shortname>113</shortname>
+			<icon></icon>
+			<frequency>0.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539328CEB6F2EC9838714950432BAEABB40B34BB775E5C14724D35BF738690F49713</stationID>
+			<name>Country @ KNAF-AM</name>
+			<shortname>114</shortname>
+			<icon></icon>
+			<frequency>0.91</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853930511C936F4A61478C90549901404AF3B16A4F59CE98C51658F56EDAE18358100</stationID>
+			<name>Nostalgia @ KLUP-AM</name>
+			<shortname>115</shortname>
+			<icon></icon>
+			<frequency>0.93</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853931E4F97F9A172E30BBA1CED5DB8DF22E2F7A22A2D121498455B63C4FBC10740EA</stationID>
+			<name>Nostalgia @ KIXZ-AM</name>
+			<shortname>116</shortname>
+			<icon></icon>
+			<frequency>0.94</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853933291B9F96E776696B611658FC43A9610F490A9557FFEDB9D5FCA5EB8C4202240</stationID>
+			<name>News/Talk @ KJTV-AM</name>
+			<shortname>117</shortname>
+			<icon></icon>
+			<frequency>0.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393C1FF6EDFA42278703FACD6BEBEF6A64965C3DFFA8DE08CB5C9E2FCB61EFABFBB</stationID>
+			<name>Religious @ KIXL-AM</name>
+			<shortname>118</shortname>
+			<icon></icon>
+			<frequency>0.97</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393CD2A9A8F02F6FFFA5DFE8A27E2BC00967F1A1FD32416018DC084DD44AF6647F7</stationID>
+			<name>Spanish NT @ KRTX-AM</name>
+			<shortname>119</shortname>
+			<icon></icon>
+			<frequency>0.98</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853938EED10C571493959B034CB10158FCCF32434A61EDFAF5C0198F561530D6B620C</stationID>
+			<name>Christian @ KWFT-AM</name>
+			<shortname>120</shortname>
+			<icon></icon>
+			<frequency>0.99</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393C2EED776CFF7DA0CAA87F7BEB3A849701BE0C5C4B21DDD074A0DD4C3A9D5EDF6</stationID>
+			<name>Spanish NT @ KLAT-AM</name>
+			<shortname>121</shortname>
+			<icon></icon>
+			<frequency>1.01</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393016B5DD46A3B8DECF045A5173CD457042F8E3A0D0FEEA06C7776E75F2BA0D29F</stationID>
+			<name>Christian @ KIJN-AM</name>
+			<shortname>122</shortname>
+			<icon></icon>
+			<frequency>1.06</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853936AD53C3DC12C1AFD27594CEC0B1367C6F504D4A3D1A128644003E8A1DE0F1BE6</stationID>
+			<name>Religious @ KKHT-AM</name>
+			<shortname>123</shortname>
+			<icon></icon>
+			<frequency>1.07</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853931094C654A7041D994A8100CBA6454100F85886340F4ED8297BBA7FD510D1F513</stationID>
+			<name>News/Talk @ KRLD-AM</name>
+			<shortname>124</shortname>
+			<icon></icon>
+			<frequency>1.08</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539356FE1373BC7F4A4EC52669F58C23F97B7E90958F61E1634216D9065DC428E2B4</stationID>
+			<name>Country @ KKYN-AM</name>
+			<shortname>125</shortname>
+			<icon></icon>
+			<frequency>1.09</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539352075E33546291507A739F05224858CD8D32B673C8B51B18B8C75D309481542D</stationID>
+			<name>Religious @ KDRY-AM</name>
+			<shortname>126</shortname>
+			<icon></icon>
+			<frequency>1.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853934AE911F5284D935A70B14D6F94EA4D2B58FD024AC62F6490A42D38CEE2908192</stationID>
+			<name>Ethnic @ KTEK-AM</name>
+			<shortname>127</shortname>
+			<icon></icon>
+			<frequency>1.11</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853937C6A20DA818B3FC7032DB5C822483EF55AF3D6497AB44458C07BF16C79C3CFA3</stationID>
+			<name>Nostalgia @ KJSA-AM</name>
+			<shortname>128</shortname>
+			<icon></icon>
+			<frequency>1.12</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393BC21163A5FE9CEF6596DAAE0ABF03AF240C77884DF17D471382EBF39C742F359</stationID>
+			<name>Sports @ KZNE-AM</name>
+			<shortname>129</shortname>
+			<icon></icon>
+			<frequency>1.15</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853932688EA7C1B3E34CC11ED5A12CC398A33D0033DCFEC066365597B209E7C85FBC8</stationID>
+			<name>News/Talk @ KENS-AM</name>
+			<shortname>130</shortname>
+			<icon></icon>
+			<frequency>1.16</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853933064486FDF0CDC7568100714F0D9EEE6CB527431C8679F4937AD6863564684C2</stationID>
+			<name>Sports/Talk @ KFXR-AM</name>
+			<shortname>131</shortname>
+			<icon></icon>
+			<frequency>1.19</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393BA40C0CD5A7DF4E5F8DBDF21867AAA5519ED1B992BAA85E3A1B93507F3F38FA6</stationID>
+			<name>News/Talk @ WOAI-AM</name>
+			<shortname>132</shortname>
+			<icon></icon>
+			<frequency>1.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539348900160E0829D51E07398E337C3ED11769C5BE5E30A007B8C1C142D45270D22</stationID>
+			<name>Asian @ KZEE-AM</name>
+			<shortname>133</shortname>
+			<icon></icon>
+			<frequency>1.22</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393949DC0ECE657CBF6A1669BB12C22B8FC4E1A059D63A52B647A1AB8CAC9ED765F</stationID>
+			<name>Childrens @ KWTX-AM</name>
+			<shortname>134</shortname>
+			<icon></icon>
+			<frequency>1.23</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393A6D996DC86912F81ADA710FCF1375CF43AB70BB8D2FA8A8D15FCE5A3D4D22623</stationID>
+			<name>News/Talk @ KSOX-AM</name>
+			<shortname>135</shortname>
+			<icon></icon>
+			<frequency>1.24</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539335683D25C312161DC6F524B1C89A8FA350263C9D1FDE422858A4FC18723344E7</stationID>
+			<name>Spanish N/T @ KZDC-AM</name>
+			<shortname>136</shortname>
+			<icon></icon>
+			<frequency>1.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393D89E81D9BDFACF35E7220363E1A1B5CDFD4D29767542B50CF87CC3C85E6BA7CC</stationID>
+			<name>Spanish @ KSML-AM</name>
+			<shortname>137</shortname>
+			<icon></icon>
+			<frequency>1.26</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853937FBAB86BEA973813D5BE60A34FC974B3CFAFCC08F9E03E4A6E09A13E5565C044</stationID>
+			<name>Mexican @ KESS-AM</name>
+			<shortname>138</shortname>
+			<icon></icon>
+			<frequency>1.27</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539396F6B93DBA78D03EA56B46C5C0DEF6FB53885D679B3FE9CA6A10154C12DBFDA9</stationID>
+			<name>Country @ KWHI-AM</name>
+			<shortname>139</shortname>
+			<icon></icon>
+			<frequency>1.28</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539354AD58580A2312B6F306D9F44F7277EF787FC567C1A700EDF53AEEFD1A9352EA</stationID>
+			<name>News/Talk @ KWFS-AM</name>
+			<shortname>140</shortname>
+			<icon></icon>
+			<frequency>1.29</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393929462378D2216481E35B62F39E262794EF2D88E85E070727E87BCF94668FEDD</stationID>
+			<name>News/Talk @ KSET-AM</name>
+			<shortname>141</shortname>
+			<icon></icon>
+			<frequency>1.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853933BC03275D280047D142E3BFD04559845284AB1F78D5E83E4883C0DA88236C4D1</stationID>
+			<name>Tejano @ KXTN-AM</name>
+			<shortname>142</shortname>
+			<icon></icon>
+			<frequency>1.31</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393933F12DD2D579816FD0BF51D13C20EAEE44EF4928DA32E4730A9987BBE0D1D78</stationID>
+			<name>Oldies @ KLBO-AM</name>
+			<shortname>143</shortname>
+			<icon></icon>
+			<frequency>1.33</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853931F1778C19D7A1BCD64079B3C2F789C3CC8B6D806BD981F3EFEEFE8B81749F27B</stationID>
+			<name>Nostalgia @ KHLB-AM</name>
+			<shortname>144</shortname>
+			<icon></icon>
+			<frequency>1.34</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393CD38E15405CEFC2507FFFB898E0F0DBE3A0DC7D3685D0210F3E89127CC5CC9A5</stationID>
+			<name>Spanish @ KCOR-AM</name>
+			<shortname>145</shortname>
+			<icon></icon>
+			<frequency>1.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393721C14A44DE2A46CC90FC534ED68DD5DB5C33E6C4679752C53AC1B00A09DB47C</stationID>
+			<name>Religious @ KWWJ-AM</name>
+			<shortname>146</shortname>
+			<icon></icon>
+			<frequency>1.36</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393974EF3931DC98C16CDEA64B1C86536ECA1053A080901A2EE8E28BFEF7137FB6C</stationID>
+			<name>News/Talk @ KFRO-AM</name>
+			<shortname>147</shortname>
+			<icon></icon>
+			<frequency>1.37</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393EB41B17B26C2528B135928D9178412A3B5574EF7759480F8F365047BA88D89FA</stationID>
+			<name>Classic Hits @ KRCM-AM</name>
+			<shortname>148</shortname>
+			<icon></icon>
+			<frequency>1.38</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393736985F4434F4585FB6097E35BB2E097CB645B793FC564969551D4F3DFE447FC</stationID>
+			<name>Country @ KBEC-AM</name>
+			<shortname>149</shortname>
+			<icon></icon>
+			<frequency>1.39</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393123A85D35E147F210DB71AB89D1DAA7D90DA266B306AF3FBD58265F6987CABE2</stationID>
+			<name>Country @ KEBE-AM</name>
+			<shortname>150</shortname>
+			<icon></icon>
+			<frequency>1.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539311055F9990A109A74ABF12B4CBC1E82251BD5596F22050D24B8A2109EA9F08C0</stationID>
+			<name>Religious @ KLVQ-AM</name>
+			<shortname>151</shortname>
+			<icon></icon>
+			<frequency>1.41</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393EEA85E781E8E3B5B23235B4DECA9DEB637948D8DB05CA0C14EF47484875639A6</stationID>
+			<name>News/Talk @ KGNB-AM</name>
+			<shortname>152</shortname>
+			<icon></icon>
+			<frequency>1.42</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393C7C17F56B7ED09B0217F741C3CB8707676CE5BA527C8148A742ABA25776E3E17</stationID>
+			<name>Spanish @ KTNO-AM</name>
+			<shortname>153</shortname>
+			<icon></icon>
+			<frequency>1.44</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393837677CB7B38671C5A56DE9F16E3A1B6CDCA9E57D712EB06C10BAE791A63BF58</stationID>
+			<name>Country @ KMBL-AM</name>
+			<shortname>154</shortname>
+			<icon></icon>
+			<frequency>1.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539342734E22B1D8D66C3E741D3974D8D4711C60EFADDC8E7B0EC7BC2CFD536500CB</stationID>
+			<name>Country @ KBRZ-AM</name>
+			<shortname>155</shortname>
+			<icon></icon>
+			<frequency>1.46</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539380397BC97DD47CF5AE7BBF2740603C0112DB438A67484F8AB59CD3D73D209AB8</stationID>
+			<name>Country @ KSLI-AM</name>
+			<shortname>156</shortname>
+			<icon></icon>
+			<frequency>1.47</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853938EA8379AD917DBE70EB85A4EA1C533C9F53A20A04447AAE860FAB50EF1DBF537</stationID>
+			<name>Gospel @ KCHL-AM</name>
+			<shortname>157</shortname>
+			<icon></icon>
+			<frequency>1.48</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393CE9F067180B999128DAB5E5ABDD17673C6F8D9D318278163EF113263E66563C9</stationID>
+			<name>MOR @ KWUD-AM</name>
+			<shortname>158</shortname>
+			<icon></icon>
+			<frequency>1.49</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393240F729DD05632C9929EA9E821229859EB4B48841AD9C1F15AA5FB79468DB3B1</stationID>
+			<name>Spanish @ KGLF-AM</name>
+			<shortname>159</shortname>
+			<icon></icon>
+			<frequency>1.51</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853936A3DAB7A02E252B64FF9DC3942ACF2E419D491B093D0462DA57158E516A4B054</stationID>
+			<name>Sports/News @ KGBT-AM</name>
+			<shortname>160</shortname>
+			<icon></icon>
+			<frequency>1.53</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393332397466DF6AFBD7C80625C0227B8285C3442472107EB5C4871CD9270973C45</stationID>
+			<name>Spanish @ KEDA-AM</name>
+			<shortname>161</shortname>
+			<icon></icon>
+			<frequency>1.54</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393FAA865A369F61214245C04FF711326379EFA59E9E1226298FAF9A1AF63C778EA</stationID>
+			<name>Country @ KAYD-AM</name>
+			<shortname>162</shortname>
+			<icon></icon>
+			<frequency>1.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393D19B3C7B37DE57714B9E74C803220D6ED55F9F4FFC02A6CBB99BD5D0962FEEDC</stationID>
+			<name>News/Talk @ KZQQ-AM</name>
+			<shortname>163</shortname>
+			<icon></icon>
+			<frequency>1.56</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853935546DC8FDF8730A5176F63FAB71F2147FBE09DC36E7DCF0ADF42F2457F00D365</stationID>
+			<name>Nostalgia @ KPYK-AM</name>
+			<shortname>164</shortname>
+			<icon></icon>
+			<frequency>1.57</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853934A53E34EE6B33A2B80B8023F39D68141AC67F931C9942724BEAEEC66C994B1DA</stationID>
+			<name>Country @ KWED-AM</name>
+			<shortname>165</shortname>
+			<icon></icon>
+			<frequency>1.58</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539314D2F797EE92CCFCCD9C17F0DE930467FFE75A3B8FA1E1561DF64E44D95DB944</stationID>
+			<name>Oldies @ KDAV-AM</name>
+			<shortname>166</shortname>
+			<icon></icon>
+			<frequency>1.59</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393F969FAEE3B92F3E4866C26C75FEE39D90574AE64596CD7903325F2AEC7AB4397</stationID>
+			<name>Country @ KOGT-AM</name>
+			<shortname>167</shortname>
+			<icon></icon>
+			<frequency>1.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393F4B5FFE81989062A90336C5B4096DAC34B46D5B83BD0E9FC8DD3E2E41EE52BF9</stationID>
+			<name>Sports/News @ WTAW-AM</name>
+			<shortname>168</shortname>
+			<icon></icon>
+			<frequency>1.62</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385393F19DDA5E2057A0A35015180A04AEC44E6E4BE17692B3289D1D82DFA90ED85711</stationID>
+			<name>Sports @ KTBK-AM</name>
+			<shortname>169</shortname>
+			<icon></icon>
+			<frequency>1.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

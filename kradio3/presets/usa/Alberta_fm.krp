@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>Alberta</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10633853778674CD580E00787E07AC1528B7CE8861157AB80B1ACBE1285D16CF68661D1EB9</stationID>
+			<name>Country @ CFWE-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>89.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853774ABE9752541CE4B9628567B81024E05450628AB02E5E25E6942B9046C41F9ACF</stationID>
+			<name>Rhythmic Oldies @ CJSW-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>90.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338537733E08552CF2DFD0C7925003F6EC2B02D2801E37F0C694335DB228F2E39CF35EE</stationID>
+			<name>Rock @ CJAY-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853776C25F86C70CCD31CEA23564BB708A57EF5F9085A7688B43DC6FD872014910FFB</stationID>
+			<name>Alternative @ CKNG-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853772A8F9E92C1CB29A7A59350909BED4BBFDF7F39660C352B878D9113D14013712D</stationID>
+			<name>Classic Hits @ CHHK-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853773611391247EE7FA954C7D9B66FF417A1608BCDB991260EC536CF043E5908BF78</stationID>
+			<name>Country @ CHLB-FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385377096D0B37514F6B02B594995C4461722DF8DEB8C60824F18245CA27A729986A3C</stationID>
+			<name>CHR @ CHFM-FM</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>95.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853775B02D76F9E43FA4A53B9795FF14D1A1D22A970EDA59D3D43C9F507E715EE112E</stationID>
+			<name>CHR @ CJTS-FM</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853770337181A7624FFA5AC1B478A0805106E22AB7FBAFB49A68C7D7AEE9534A97007</stationID>
+			<name>Classic Rock @ CIRK-FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>97.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385377A83A6C70A32728E42BE200437F2605AAFF3BFB342F0A7596AA60C88442F49700</stationID>
+			<name>Hot AC @ CFGP-FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338537734C34BAC629451F47196D3C1E703AC8E6513CDD2740FBBFFA54CD6995FC0B642</stationID>
+			<name>Classic Rock @ CFBR-FM</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>100.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853770976EAE07E91233E016FB68C6D0EC2ECAEEB6662F974C444D3CA59F2958C9118</stationID>
+			<name>New Country @ CISN-FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>103.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853773DEE94D38AB8333A773EDFB9ADE76F0F8161D381D1A7AA36906EAD1DC10D39EF</stationID>
+			<name>AC @ CFMG-FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>104.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853776C4C04904D4EBF1B4B6CF03AD5B98DF21541D8AF56F763E7D6935D45D34CDC64</stationID>
+			<name>Rock @ CKIK-FM</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>107.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

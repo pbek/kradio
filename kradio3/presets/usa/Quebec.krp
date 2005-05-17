@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Quebec</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>106338538917B618E7F0EEC470EB266AF65B527C0FC38A8E8BBBAC09E65D149B9ACC737FD4</stationID>
+			<name>Alternative @ CFAK-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>88.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385389DFF8E8EFF4060F58A180BC540D88960C7D3BAF568F774DA3DBB94AC70C1AFE1F</stationID>
+			<name>Ethnic @ CHCR-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>89.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538963B8F0086E9B6B22C97B41C51136DC2D2DB620421A9368BF07C32F1FBED1F98F</stationID>
+			<name>AC @ CFQR-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853895625E419BD1CDDBAE521E96DC15523CA7EA87DE945BC22354195F46E4E7FAB5C</stationID>
+			<name>Alternative @ CFLX-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385389D50371EF969ECC882716053C947FE4AA98147B1C354409E4FDCAA99C7765B9D0</stationID>
+			<name>Hot AC @ CJFM-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>95.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385389ABF38CC786A66D9E071AC6D4BA04CC8EE646205D74BC4CE9784A39BD07382AF3</stationID>
+			<name>CHR @ CHOM-FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853893C7A2C1B5B37A7D3DFF22237A0876D496FBFD44757541ABBD3FDBF572AF1630C</stationID>
+			<name>Alternative @ CHOI-FM</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>98.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385389468260BA2B79BAAA971EFECA5B2C8AAC389782E3B85C726356AF8AB4A431B8FC</stationID>
+			<name>Oldies @ CFOM-FM</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>102.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538903A7AB9379C1918F3F321B18682958D071C70B0BE42F443DAD8E2B79550E32DE</stationID>
+			<name>CHR @ CFJO-FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>103.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385389D76EFB944D1D56D794BAFC219FA7911878F0EDCAC12BDD561549C32F1F334EB8</stationID>
+			<name>Urban AC @ CITF-FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538925183644B8075C87D6A37CC43D6B9136D5FC77CE7F72D51CEDA492CDE6D56582</stationID>
+			<name>Talk @ CIQC-AM</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>0.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385389174B649D33F7845E1E4B9435DAEFFCF97ECABAABE3E4D191B018DEFA410D187E</stationID>
+			<name>Talk @ CHRC-AM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>0.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

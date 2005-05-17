@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Dirk Steinbrenner, &lt;dirksteinbrenner@justmail.de&gt;</maintainer>
+			<changed>2004-08-08T12:53:30</changed>
+			<country>Germany</country>
+			<city>Meerbusch-Strümp</city>
+			<media>ISH Cable Network</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>10919654329ED713AF2E30CA44EAD3865C948AF81A79B063E613122F668290687EE3C47377</stationID>
+			<name>SWR3</name>
+			<shortname>SWR3</shortname>
+			<icon></icon>
+			<frequency>89</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432B6C61777304E167043895D17D0A6492873ED0934A619C68CC520E112D94D27BC</stationID>
+			<name>Eins Live (WDR)</name>
+			<shortname>Eins Live</shortname>
+			<icon></icon>
+			<frequency>106.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654329308AC8E71B8FC4D61187AF307BE23237C1B66DFC6379A919758D604F6D060D3</stationID>
+			<name>SWR1 Rheinland Pfalz</name>
+			<shortname>SWR1</shortname>
+			<icon></icon>
+			<frequency>88.0625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432D9C65CC76A835C994AEF3700025DCCECFFB16C0FBC51BF3D816A2F526F3274BF</stationID>
+			<name>SWR4 Rheinland</name>
+			<shortname>SWR4</shortname>
+			<icon></icon>
+			<frequency>88.375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432126F3400FB276A7F0B36E59197E8A5276368F9C758D4AC8484C31DE7A449CE02</stationID>
+			<name>WDR Radio 5</name>
+			<shortname>WDR Radio 5</shortname>
+			<icon></icon>
+			<frequency>90</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432F2FA50B40160F8A54709EE8AA2E93BD696F76705180485A7DBF971BAF658A4B4</stationID>
+			<name>WDR Radio 5 Funkhaus Europa</name>
+			<shortname>WDR Radio 5 EU</shortname>
+			<icon></icon>
+			<frequency>90.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109196543225C672BAF7CB49D8A250833B339C52FCE5B9779E4D71EB9D1EDD8C87A842EAB1</stationID>
+			<name>WDR2 Rhein-Ruhr</name>
+			<shortname>WDR2</shortname>
+			<icon></icon>
+			<frequency>91.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654327D9A0A34B1A1007581827BE936C2EA4C4AC5C195199E58825010CBF10712CF2A</stationID>
+			<name>WDR3</name>
+			<shortname>WDR3</shortname>
+			<icon></icon>
+			<frequency>91.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109196543269C5FC2BD1D9D81C00169634B55A4034EE983F724DC9C1DACDA0FAA297E535D6</stationID>
+			<name>WDR4</name>
+			<shortname>WDR4</shortname>
+			<icon></icon>
+			<frequency>92.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654328BE90ABCF3F24B951592DD897876F1CE5C733DBAC9E9B64963F716FBCF8AB132</stationID>
+			<name>NE-WS 89,4</name>
+			<shortname>NE-WS 89,4</shortname>
+			<icon></icon>
+			<frequency>106.438</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109196543241344CA97749BB683F7842A4D7480351B7BDBB90B4DB11CF8FA71C541E60DE2D</stationID>
+			<name>BFBS</name>
+			<shortname>BFBS</shortname>
+			<icon></icon>
+			<frequency>92.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432756AE782BDE5B73F49E39DD7C449E82DF715D1806B58E2D4BA35D74F2FCC4B4B</stationID>
+			<name>RPR2</name>
+			<shortname>RPR2</shortname>
+			<icon></icon>
+			<frequency>93.8125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654325B7CADB6D646420CED589A47F53B4819503A59CDC594DD798BD50F22744B5959</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<frequency>94.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654329A2E259791B3167CA34C23E19A6415D2297C097828CE0AACA9DC9760B5F19FEA</stationID>
+			<name>Welle Niederrhein</name>
+			<shortname>Welle Niederrhein</shortname>
+			<icon></icon>
+			<frequency>95.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432EAE69149BC0315CB738AD49C98539849D8E3806FED22A28B77E9CC9F90913FA2</stationID>
+			<name>JAM-FM</name>
+			<shortname>JAM</shortname>
+			<icon></icon>
+			<frequency>95.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654320489E32175648F8C03C116AA6DE4876090C2248B0C2B6BF6D3BCA60B3BF52401</stationID>
+			<name>RTL-Radio - Die größten Oldies</name>
+			<shortname>RTL-Radio</shortname>
+			<icon></icon>
+			<frequency>96.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432935A7453A576B8010143E9D9A19E4E3565F49B5C48128DA21B67C0D737E1D454</stationID>
+			<name>Radio 2 Niederlande</name>
+			<shortname>Radio 2</shortname>
+			<icon></icon>
+			<frequency>96.6875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432065C4D699F53904F5DA5E583087702CE18CD4B472C5FF7536741A6DD561058C3</stationID>
+			<name>Radio 4 Niederlande</name>
+			<shortname>Radio 4</shortname>
+			<icon></icon>
+			<frequency>97.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432530AEC38FC5ED09584143F5E77BC235C30AFBE57D6E86A1E885ED5003F2D0C22</stationID>
+			<name>Radio 3 Niederlande</name>
+			<shortname>Radio 3</shortname>
+			<icon></icon>
+			<frequency>98.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432EF14E1EAB658FB3327BF14C0AF89CAD79BA8E6D76D5B84828BEE7AB89B6B5E5F</stationID>
+			<name>VRT RA1</name>
+			<shortname>VRTRA1</shortname>
+			<icon></icon>
+			<frequency>98.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432D7B5EB99247E3E8B90D387E861ECF582C46440E060CB75C2D06F229F9D52EB7E</stationID>
+			<name>VRT RA2</name>
+			<shortname>VRTRA2</shortname>
+			<icon></icon>
+			<frequency>99.375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432477804F979C6D354F860AE64A6869D40756DA613C45974328E8A0DA141831986</stationID>
+			<name>VRT RA 3</name>
+			<shortname>VRTRA 3</shortname>
+			<icon></icon>
+			<frequency>99.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109196543220A2034A7D881A1129BDE217C87717DAF3918A005A23FF109D411224999F67A9</stationID>
+			<name>Belgischer Rundfunk</name>
+			<shortname>Belg.Rndfk.</shortname>
+			<icon></icon>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654322B508F69A45E287763623251DE59B9BECFF53AFC257D02EFDDC3E91BE8AD05D6</stationID>
+			<name>Deutschlandradio Berlin</name>
+			<shortname>DLR Berlin</shortname>
+			<icon></icon>
+			<frequency>102.188</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109196543282C53B41C28FE1EEECF051A46FF9804E5320B9206D0993FF6F7A13DAECCB98F8</stationID>
+			<name>Domradio</name>
+			<shortname>Domradio</shortname>
+			<icon></icon>
+			<frequency>102.562</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1091965432D65853329016CF91629B7D85D7B29B9F586EA02D86CB1F6EA721E5D3137A3FC3</stationID>
+			<name>Klassik Radio</name>
+			<shortname>Klassik Radio</shortname>
+			<icon></icon>
+			<frequency>103.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109196543268DCF451410FA74CC30176836724456A3469449ADF05088F4AB5141811FA9C6B</stationID>
+			<name>Sunshine live</name>
+			<shortname>Sunshine</shortname>
+			<icon></icon>
+			<frequency>104.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654323E637EB45C00702C652FB2CC2751AECB5FEEFD98A050C02EDAA8288F8049A439</stationID>
+			<name>Radio Melodie - Heimatfunk mit Herz</name>
+			<shortname>Radio Melodie</shortname>
+			<icon></icon>
+			<frequency>105.312</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10919654323EF0052297367EE4C7120172CCAFE9B5DA20343BACFE0DB8E32A0DF79C443259</stationID>
+			<name>Radio Duisburg</name>
+			<shortname>Radio Duisburg</shortname>
+			<icon></icon>
+			<frequency>107.688</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

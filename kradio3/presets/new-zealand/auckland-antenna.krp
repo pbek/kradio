@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Clinton Bedogni, &lt;kiwiclint@hotmail.com&gt;</maintainer>
+			<changed>2003-09-14T17:05:00</changed>
+			<country>New Zealand</country>
+			<city>Auckland</city>
+			<media>FM Broadcast</media>
+			<comments>Commercial &amp; Free To Air FM Radio</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>106343649954E631432EB387F3ADA2846EB36ECF5E0311EA50C540376A9A454B35892AC7AE</stationID>
+			<name>Mai FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>88.6</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10634364990C63B54D0E5EC0B5472026A8D4EBF45DC7549115CE10A704CF60F40A2C3BF111</stationID>
+			<name>1ZB Talkback</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>89.4015</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063436499271F33A6589E7AF662500984004ECB62E28CD77DF9F60292F30C53D2D8F447E6</stationID>
+			<name>The Rock FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>90.2</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063436499722DA34DAFDC4BB3BBF88165C41B7FAE6FD4BCB7ADF6FF1B93BB580ACD780072</stationID>
+			<name>Gold FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>91.0016</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106343649979C36E7992D5CE5AB580127E298DF5424993C82191F83CFF7D51A11B270410D0</stationID>
+			<name>Classic Hits</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>91.8</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10634364993E9A9ED7FD85E4FA743AC93EE866AEF7DE330388F64954BF6E7974F5A5EAB45A</stationID>
+			<name>Radio NZ</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063436499E06D805CFF732F658D64FBA3F49DE9A9A45FA44D361E069CB97919A7040CE94B</stationID>
+			<name>Solid Gold</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>93.4</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063436499C81DE8C5605196E8B584A9449B270F30057687ADF11D67F3D34D960E61047A30</stationID>
+			<name>Channel Z</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>93.8</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063436499E59CD52BB38FAF54FDB1BB8677EE54E5242380D01E49A091949B0004826E92B5</stationID>
+			<name>The Edge FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>94.2</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10634364995E486FEB2236FF32D69642A49F38E75BE45AEBC7A7477AC32103D6A164F98E57</stationID>
+			<name>BFM Campus</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>95</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106343649907E9C018EEA6FD9A5EDCDC4A76AF3581FAD6DFE6F5FA5A94537FB55B245FC760</stationID>
+			<name>Classic Hits</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>97.4</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063436499DEAE046FBB2FE7D272939466EA9CFAAF2FBD6F6C3459574CAC364E6B4D15B967</stationID>
+			<name>Easy Listening iFM</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>98.202</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10634364999EE498B79DCF5133871E7C65DA15B5E423077AC09FAF72CA1687A7B131BA8B06</stationID>
+			<name>Hauraki</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>99</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10634364993432ACCE9B5F65C71153ED3622B55A85EBC9D79CC4C4CE508D87CAAD45E3DF58</stationID>
+			<name>New FM</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<frequency>103.8</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063436499902D61489BB9F407EC538067AA878CB31B2C8B8FA19DEF5BAC045EC65FCA8FB9</stationID>
+			<name>Pacifica</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<frequency>104.5</frequency>
+			<volumepreset>0.75</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

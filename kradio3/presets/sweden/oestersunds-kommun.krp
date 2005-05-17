@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>martin, maki@brunflo.info</maintainer>
+			<changed>2003-04-03T13:20:06</changed>
+			<country>sweden</country>
+			<city>oestersunds kommun</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385400C986EE2B0F480170350A31F487FD2175BA0F23FFF1D9AA230B36FFB5204EC35E</stationID>
+			<name>SR P1</name>
+			<shortname>P1</shortname>
+			<icon></icon>
+			<frequency>87.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385400A28B8174EBE324BD89FF0F441BC377AC8C2A9B27EF7C14FBE2569152AC76B16E</stationID>
+			<name>SR P2</name>
+			<shortname>P2</shortname>
+			<icon></icon>
+			<frequency>91.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854008889C305C827FDB605FB763670E0283FB00308A1319A20892159D00ADFF91E47</stationID>
+			<name>SR P3</name>
+			<shortname>P3</shortname>
+			<icon></icon>
+			<frequency>94</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540039A2D98B6B402A14A63F35F169F5C553225764CAE2E5BF232031DFE25C8EE7D7</stationID>
+			<name>SR P4 Radio Jamtland</name>
+			<shortname>P4</shortname>
+			<icon></icon>
+			<frequency>100.402</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385400A64858F15A3970F756CE774A1649DF8555C2F8D2F6F2347C6F35FF2E60CC9380</stationID>
+			<name>Rix FM</name>
+			<shortname>Rix FM</shortname>
+			<icon></icon>
+			<frequency>104.002</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854009860B1CC40146A8FDA3A18731C6397753C633B3434266948404C7E9E84314499</stationID>
+			<name>Radio City</name>
+			<shortname>Radio City</shortname>
+			<icon></icon>
+			<frequency>107.203</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+-- 
+http://www.brunflo.info
+<><><>
+GPG-Key @ http://www.brunflo.info/person/maki/MARTIN-KEY.ASC
+<><><>

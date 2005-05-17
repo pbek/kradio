@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Saverio Labella, saverio.labella@studenti.polito.it</maintainer>
+			<changed>2935093-02-28T00:00:00</changed>
+			<country></country>
+			<city></city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385403F0629DD79705EC4406F21008B6F53B6FBA7A209FDB52554BCC064D0CBE6C37A4</stationID>
+			<name>Radio 1 RAI</name>
+			<shortname>Radio1</shortname>
+			<icon></icon>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385403431CE4805065FE1FAB0FE643DE92A4209955AF525CD60C87A20A3DC6EA66FFDA</stationID>
+			<name>Radio 2 RAI</name>
+			<shortname>Radio2</shortname>
+			<icon></icon>
+			<frequency>95.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854035BD94ABA349E3C641764EA0247E983F05A4651672FD588D9F2869639C1412638</stationID>
+			<name>Radio 3 RAI</name>
+			<shortname>Radio3</shortname>
+			<icon></icon>
+			<frequency>98.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540306E17F8C4B8FB3237914BC5BBB971C0DDAD3E7B35449B158172DD358490B3053</stationID>
+			<name>Radio DeeJay</name>
+			<shortname>Deejay</shortname>
+			<icon></icon>
+			<frequency>106.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854039D76D46B3591D561517FC3EB97EA19A615398A1006E6062975199A94E8D654C6</stationID>
+			<name>Radio 105</name>
+			<shortname>105</shortname>
+			<icon></icon>
+			<frequency>99.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385403B7C8B1724F70D250AC2B613089041975BE4C851D2D1B94286FC4B54A8B31FD7A</stationID>
+			<name>Radio Italia Solo Musica Italiana</name>
+			<shortname>Radio ITALIA</shortname>
+			<icon></icon>
+			<frequency>106.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854038768CC27D64D0045455B75811BA25633E69DCCE2517BB84EEF6DDFB453A234C7</stationID>
+			<name>RTL</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<frequency>102.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854032377CE4FC1B5B7BD8EBE13EAA5AAAF4951943F4A839A5A8252D40893659976A1</stationID>
+			<name>Radio Dimensione Suono</name>
+			<shortname>RDS</shortname>
+			<icon></icon>
+			<frequency>96.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633854039DE4EA6E189ED42ABE87B2D1026353C28DC4C7C65BC154C83D821BA5890F4988</stationID>
+			<name>Radio Cuore</name>
+			<shortname>Cuore</shortname>
+			<icon></icon>
+			<frequency>95.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385403D0E6D90767E2B2294412555F4C168A3F10AF77B6D9817261E454E51E568524D2</stationID>
+			<name>Radio Lattemiele</name>
+			<shortname>Lattemiele</shortname>
+			<icon></icon>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385403D9053C35971DF533238CDF19917288BB49D546D178D1A49974F228FD8647B106</stationID>
+			<name>Radio Veronica One</name>
+			<shortname>Veronica ONE</shortname>
+			<icon></icon>
+			<frequency>93.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385403F14BFA72E32058F425BB71C100A7AE4432B7F65138E43784006001FF9667AC05</stationID>
+			<name>Radio Montecarlo</name>
+			<shortname>Montecarlo</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

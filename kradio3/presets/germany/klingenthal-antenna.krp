@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Matthias Gruber, &lt;grubermatthias@gmx.de&gt;</maintainer>
+			<changed>2004-03-12T12:48:12</changed>
+			<country>Deutschland</country>
+			<city>Klingenthal</city>
+			<media>Antenne</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1079091999ACA8097B76B18504F556E9E30B136B605A9D76DD0297EE898B658CD36D450D14</stationID>
+			<name>Bayern 1</name>
+			<shortname>B 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.7377</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>107909200279B5A3B89F1329279BDFD397A6F31D65F84D671B70753BEB6BAB7DCC0FC01E76</stationID>
+			<name>Radio PSR</name>
+			<shortname>PSR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.9878</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1079092006B9C6F15C43E326124E5BDE5E6F2CB095EEB598D9196448B7C097D8D06A166C1B</stationID>
+			<name>Radia RSA</name>
+			<shortname>RSA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.6754</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10790920126070EBD21DB86B805216F2277BE55C808407D38651D8FE8486696398CBF130FC</stationID>
+			<name>Bayern 2</name>
+			<shortname>B 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.0131</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1079092018AE935AE35997FA220C527F68B37E74F4E9A7B03EC85D2D3F401689CB7F39E138</stationID>
+			<name>MDR Frigaro</name>
+			<shortname>Figaro</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.2882</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1079092021AB864A0DADECBFA986D8CE684F89E1B806C75109D343BC6FE04EED372F1C5CDC</stationID>
+			<name>Bayern 3</name>
+			<shortname>B 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1079092023207A59AD6556BE0BB05D735792712CCA136F7C49E368FD1297628C1D089879A9</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10790920307505FA9919ED4B07A5F330455AB48F1431A9350142F8C655A866152EFE86FFD1</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>Ant Bay</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.276</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1079092036C35B0A983639F1BF38F9A34878E9F1CC749CBB04C51E6AF6B3F6364769C971E6</stationID>
+			<name>Antenne Sachsen</name>
+			<shortname>Ant Sachs</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.039</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+

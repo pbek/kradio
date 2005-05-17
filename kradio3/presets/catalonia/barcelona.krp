@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+		<format>kradio-1.0</format>
+        <info>
+            <maintainer>Eduard Pertíñez, eduardp@tango04.net</maintainer>
+            <changed>2003-02-19T12:14:44</changed>
+            <country>Catalunya</country>
+            <city>Barcelona</city>
+            <media>Catalan Radio Stations</media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+			<stationID>1063385401B5ABDDEDD972C97A6A8711EE01AB389F80111E0547B75F5A496DC714FC462D91</stationID>
+            <name>M80 Ràdio</name>
+            <shortname>3</shortname>
+            <frequency>90.5266</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401AEBC3A1C2D2C12825F9BD47297616CF1AB0971608DDAD7CFE75731CB07752AD6</stationID>
+            <name>Com Ràdio</name>
+            <shortname>4</shortname>
+            <frequency>91.0016</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401AB74BBE531649A8A3C3DCC299B9DE202C1272929D1236D42FF723CD2633426D8</stationID>
+            <name>Ràdio Barcelona 2 40 principales</name>
+            <shortname>6</shortname>
+            <frequency>93.9268</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854015A820B47A54149B706322A6363CF6765106555C6E63FF69289209FDA4A0F8082</stationID>
+            <name>Ràdio Barcelona</name>
+            <shortname>7</shortname>
+            <frequency>96.9019</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854016A34613A3660E1A2793F055B501739BF24620D0E2D3C11147A38ABCDBB07CDA3</stationID>
+            <name>Ràdio 4</name>
+            <shortname>11</shortname>
+            <frequency>100.802</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401170923D3DFDDE8182D86A372004EE5A51F85918D14F24133065BF40873559D5A</stationID>
+            <name>Ràdio DOS 84 Hostalric</name>
+            <shortname>12</shortname>
+            <frequency>105.95</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401C5AB5B0B23C4407FCA0B0A57BDA432CE32279902B9CC3E18D7E668FB406BAEDF</stationID>
+            <name>Catalunya Informació 2</name>
+            <shortname>13</shortname>
+            <frequency>106.85</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401F6C943B691E462FB190031109959116945867752F19F05289343247F30CF9BA0</stationID>
+            <name>Catalunya Ràdio</name>
+            <shortname></shortname>
+            <frequency>102.8</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401753D5016140F1C88A0C63EEC3B5253DCF3EA99BD0EFC2C497FF059CB8056528A</stationID>
+            <name>Catalunya Informació</name>
+            <shortname>2</shortname>
+            <frequency>92</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854019462AF210007A26DA71010F56D7E32556597D4926C12963623ADE027EB2B2C59</stationID>
+            <name>RAC1</name>
+            <shortname>3</shortname>
+            <frequency>87.7</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401F292813E30A009852BEB6CD4297988664D4CD59911E7E086C66F51FAEA8F0A86</stationID>
+            <name>Catalunya Cultura</name>
+            <shortname></shortname>
+            <frequency>92.5</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1063385401CA7EC18C1691E16ECB39EF223D417E60CE2174FEF312B9DBCAD387AE5FEC534C</stationID>
+            <name>Flaix FM Catalunya Central</name>
+            <shortname>10</shortname>
+            <frequency>101.7</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854017D3EF4946F4E20A530D0A8D80246226FCC38DEE76A1C8659DB4085629C6DB7AB</stationID>
+            <name>Ona Catalana Barcelona</name>
+            <shortname></shortname>
+            <frequency>103.5</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>10633854010B10BD88EB36A51862508CF008C29234933820EB04D42A280C93268A201ABC8C</stationID>
+            <name>Ona Música</name>
+            <shortname></shortname>
+            <frequency>96</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>106338540166481A8A787350C2AF619659AE2EFF9CC869A44C3BB75CCA34AD5A96971E5D6A</stationID>
+            <name>Onda Rambla</name>
+            <shortname></shortname>
+            <frequency>89.8</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>

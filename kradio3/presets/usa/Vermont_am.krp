@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Vermont</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385395EF0B2BB5DE91350E90F4A98EECE8911A29CD478E98B771D903164DBE8993B1AF</stationID>
+			<name>Nostalgia @ WDEV-AM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>0.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385395CECD4C6FA84C24396D2FE1B02E1F0B9A9EC6D660D1DA624F96B5857E6E7796B5</stationID>
+			<name>Country @ WLFE-AM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>1.07</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385395F3FD25B1CF2078EC6FED84BB28545317B64158E5A41A2F71F2945416D4450DE0</stationID>
+			<name>B/EZ @ WJOY-AM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>1.23</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385395EAD8AF7165A3B6BE6868194BA8DBA183B58B16F88599E5A6E6335892459CDC4D</stationID>
+			<name>Nostalgia @ WSKI-AM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>1.24</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853952F71262D8FE0BE15F53DB1503F51015B5ABACDA2A1F48E30E7D991CE67B6AC1B</stationID>
+			<name>Nostalgia @ WSTJ-AM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>1.34</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385395AFF476ACCF6BE7551B2316A7CB75FDDCC438265F61C19CBD6A011DDFF8A81ACE</stationID>
+			<name>Various @ WBTN-AM</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<frequency>1.37</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385395E27C423B80788440427ECFD47EF5886FEF44C70BD87D4B3A6025A10E53E42E50</stationID>
+			<name>News/Talk @ WSYB-AM</name>
+			<shortname>37</shortname>
+			<icon></icon>
+			<frequency>1.38</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853953752B4DD56390BF1DFF14970916FFDA3F6C6972F8C1068B9B1491D3E7648ADD2</stationID>
+			<name>News/Talk @ WKDR-AM</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<frequency>1.39</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385395018CFB9B9787402AAE2013FB6C93C5E4DC555A9BB10ED9540134C5070D4E5F29</stationID>
+			<name>Sports/News @ WSNO-AM</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<frequency>1.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338539511B993C6E9A82B52AE314CEE4263F166B4F5DCE7676169C15C6FA9D33AF4661D</stationID>
+			<name>Misc @ WNBX-AM</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<frequency>1.48</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385395719B8FDA98100BFA994074151422509052778258037EE6E6E254E0A4527BA92E</stationID>
+			<name>Country @ WIKE-AM</name>
+			<shortname>41</shortname>
+			<icon></icon>
+			<frequency>1.49</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

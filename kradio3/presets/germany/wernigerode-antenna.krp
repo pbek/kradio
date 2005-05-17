@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Sarah Bransdor, u15051@hs-harz.de</maintainer>
+			<changed>2003-01-17T17:08:55</changed>
+			<country>Germany</country>
+			<city>Wernigerode</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385346F1BFB9A58F3B64B997192E84C8B9019559BEE52524BDD2C12DDA8263A7414242</stationID>
+			<name>Projekt 89.0</name>
+			<shortname>PRJ89</shortname>
+			<frequency>89.0625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853469CC82007B79C7DB381087AABFB59133B3B4E0B63F33C503AD73E3E7EC306A8CA</stationID>
+			<name>Jump</name>
+			<shortname>Jump</shortname>
+			<frequency>91.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385346C97B130AF76EF1214D3A69D79CD8BAE75D1928A3568297BD637692980FDA2F9B</stationID>
+			<name>MDR 1 Radio Sachsen-Anhalt</name>
+			<shortname>MDR 1</shortname>
+			<icon></icon>
+			<frequency>94.625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853466428EF387D62E420FD0A80E74EF62471877C54D91A873519742D1C309FA430A3</stationID>
+			<name>Deutschland Radio</name>
+			<shortname>D-Radio</shortname>
+			<icon></icon>
+			<frequency>97.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338534670B3BBB51481072F20DCE3A2786AE45319CF046652587293FB1C5D4389C1A7EB</stationID>
+			<name>Radio SAW</name>
+			<shortname>SAW</shortname>
+			<frequency>101.438</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338534691A5AA798AF34BCD379D597ED1B963C8666105B1D95BE40BA69B53ABE6A67F9F</stationID>
+			<name>MDR classic</name>
+			<shortname>6</shortname>
+			<frequency>107.812</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

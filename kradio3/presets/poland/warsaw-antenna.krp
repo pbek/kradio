@@ -1,0 +1,213 @@
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Cezary Biele, &lt;yemu@gazeta.pl&gt;</maintainer>
+			<changed>2003-08-22T15:27:32</changed>
+			<country>Poland</country>
+			<city>Warsaw</city>
+			<media>FM Antenna</media>
+			<comments>Contains merged Data</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1061558692ECACB44122F72672B8E1E841F47C896FCD48392D6C3910B0C5D5F12FF6B1782B</stationID>
+			<name>Radio Maryja</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615639636CE0BF62185E7FE087A0FAE9B934381D785172F49B9EB9B10AF149CD61BD0595</stationID>
+			<name>Radio WAWa</name>
+			<shortname>WAWa</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615639842A0A27B53C8782684D11D5D1A3248FC5BFCA9D92D48C1E35C917CEF603A839A5</stationID>
+			<name>Radio RMF FM</name>
+			<shortname>RMF FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061564027B0BF878592150D8E041FCCB1532F86D2899A04A35DCF2D2630D376B7F08EFF99</stationID>
+			<name>Polskie Radio Program 1</name>
+			<shortname>Plus</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061564107FE11581AFC70243DECA7B0C1FBC43FB529E7BE5802C5882D1072338FE31C4115</stationID>
+			<name>Radio Plus Warszawa</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615641373FAB8FD7B7EE56038AE9D14CC70A0735F3294C4B8B17523D2BC284A38F5AABAC</stationID>
+			<name>Radio 94</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615641679D5D7EA892D0376FA3DF050A13174152E5794C72CF99E6CEA522376554BC9981</stationID>
+			<name>Rock Radio Mazowsze</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615641762D396571B63226CC9D6F111E3910D85019108269610462773CDCF5FEBDD98E4C</stationID>
+			<name>Radio Józef</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615642791DAF286B7AA2D22BEE081AE2ED17DAA96A1D4A3FA2972E02A26868C180EFE36A</stationID>
+			<name>Radio TOK FM</name>
+			<shortname>TOK FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106156429747D04276133508145A073B910E278A51CF7CD5CDAF2099BEF173545D0B15DA4F</stationID>
+			<name>Radio Zdrowie</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615580715A58FBE778BC41EAA9FD101002E164402D0471161C9E7F1B89C8A5A51B2306CE</stationID>
+			<name>Poslkie Radio Trojka</name>
+			<shortname>Trójka</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061564309FE76DF69D3CA50BEE40DD73866EE21B144231A17C5A16EDB437BA4370FCAC358</stationID>
+			<name>Radio Pogoda</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106156433859CEB67E7AD8AA90355E7B37691B2C44B20352ACB6485EA2BEE0DF3B4DD5E3D8</stationID>
+			<name>Radio dla Ciebie</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061558071A094F210B4A0A6108CC6E6D2BBAF4E55CA7FE4788D41A5749BBC3DA48B5BD449</stationID>
+			<name>Radiostacja</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061558237FDFCC00F17CCEF9807B53AE68FDC803D17890BA4C552721A4A2CA09CDC503C84</stationID>
+			<name>Radio PiN 102 FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061564372EBD101B788FFAEC609A73612BE70B9BFFF484DEE112AEB9BC9D20E49DBB70458</stationID>
+			<name>Polskie Radio Program 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061564387AD21386F6C50C04E1D6D06C31021DFBB03DA70307DB303A7B3F8937EE6541BD7</stationID>
+			<name>Radio Niepokalanów</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106156440327E1594F93C5E83DE0F15830B6AA6F1B3DA3D5688C91E759051007A94B8E72CB</stationID>
+			<name>Radio Kolor</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061564437375C92B783E41FC105B1CBAC7A89BD21A7FEDA10A5C8CB53C3749BF07F68B93D</stationID>
+			<name>Radio 103,7 Klasyka FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106156446285577C4B66028F056DBA4F5C396BEE164D50E809B3CE43C97EE5E4F08E96390E</stationID>
+			<name>Radio Gold FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615644769B61708FC5A8B3F9CA74874C9F36850962150995F8BC9C72C1E30BF04D811E3E</stationID>
+			<name>Poslkie Radio Bis</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615644911DCD6CD8187285F3D0620B1E95A0988233588F4E62604912316854D653DECCC5</stationID>
+			<name>Radio Eska</name>
+			<shortname>Eska</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1061564505219FE9E3719815021494F007172F3D0C174FD4777DC413F5F4242D3347B3A7DB</stationID>
+			<name>Radio Warszawa Praga</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615645229519C0BC8954687570B9A8A1F2E699EF8FF3D07F0E2F9E088FD851A6A3FE031E</stationID>
+			<name>Radio Jazz</name>
+			<shortname>Jazz</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10615645324581489CB4A7D796A58886C7B9789B2F5AD8B5D03983C32AA46B150B65AE8658</stationID>
+			<name>Radio Zet</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.5</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

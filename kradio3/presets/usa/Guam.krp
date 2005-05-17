@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:53 2003</changed>
+			<country>USA</country>
+			<city>Guam</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385364F71C16C9168566D0ADE381CF6ABF6DD98752DADB1CC1F2D33B986D3ED9A4138F</stationID>
+			<name>Christian @ KSDA-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>91.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385364651F0C0C7067990A895EBD4B5BEA2FC3A85CD60BB969238F6F4452443B18ABFE</stationID>
+			<name>CHR @ KUAM-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>93.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853649E608400193A5BC41FD90F697B25E03A5CE65F9863AF7B3E727E1A201E688F76</stationID>
+			<name>Rhythmic CHR @ KZGZ-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>97.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385364F31AB091FBE1231DC7FE9E089B12D9B946931B44541CED4ADB272BBC1E3C2910</stationID>
+			<name>CHR @ KOKU-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>100.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853640ECCF54AC9FDD29901DF548A478AB72800F8ADEF5D67AB16553DF87D3F1C66B4</stationID>
+			<name>News/Talk @ KGUM-AM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>0.567</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

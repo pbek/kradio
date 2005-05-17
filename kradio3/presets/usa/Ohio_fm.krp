@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>G. Richard Raab, rraab@plusten.com</maintainer>
+			<changed>Sat Jan 18 14:31:54 2003</changed>
+			<country>USA</country>
+			<city>Ohio</city>
+			<media>antenna</media>
+			<comments>Generated from http://links.radio-online.com/stations.htm</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1063385385E867291737226C0368715CC32658AE9F92BD7B63BBCE42B434AC32B804BD37B6</stationID>
+			<name>Urban @ WZIP-FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>88.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385893987A6868342BB2C3491DC4AE6D9E872B11736981181735C527319E992C8F8</stationID>
+			<name>Various @ WAIF-FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>88.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853852FE190D00AA7E460B0135A03AF230ED023A8FC2C9D39FAAD7D86E8D6A09EB046</stationID>
+			<name>Classical @ WYSU-FM</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>88.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385282C7DAC5F35D6540245594DB86DD1EFFACD92D51C5337D148D39A903BE2F4BD</stationID>
+			<name>Christian @ WUFM-FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>88.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385D9C681C8D0785211FE6F2582F23F2A639C20099810D810F9098AA2FBAAC81ADA</stationID>
+			<name>Alternative @ WSTB-FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>88.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385741972E0C1267E5C83C4E8972527E6E5C95C0588D7C87FDDD2DA867EA5DE1402</stationID>
+			<name>AAA @ WCSB-FM</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>89.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385FD2D1AB74724D07AAD09FF367CB127A3180A810B2774AAC88688D9FFE0174DF6</stationID>
+			<name>Alternative @ WHSS-FM</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>89.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385E124FD3C36A9705BD223F9954E535AE48CB1702A7758FF5EA79CDACD5FB0BBA7</stationID>
+			<name>NPR @ WKSU-FM</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>89.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853850F53017F88102395FB6F8296E90CCD194ADEA31A7507AE3197B392724883C84F</stationID>
+			<name>NPR @ WGUC-FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>90.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B5D684206D6D13BCEAAFC291A1823C2B1AFA48663F8C0320CAC15A8B653F89C7</stationID>
+			<name>Smooth Jazz @ WRMU-FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>91.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385BCA9230EBD2D60ABA1D63E75E0B743BF753B3066FAB6EC173948B5B8D1B0DE94</stationID>
+			<name>NPR @ WAPS-FM</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>91.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538508FE9192A35C6E13B9EE079A11196AA68DEAFC0AE039648DAF8FE2596E76B61E</stationID>
+			<name>AC @ WNRR-FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385DA572FF3B346CD214945B3B9AB99EF82B87FBBA11A24415A57DE1AEC27703EA4</stationID>
+			<name>Country @ WCOL-FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>92.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385D934F7FA15E80666F990A30684EE66DA0CFF38906236FBEEC5B76F68B5521F9D</stationID>
+			<name>CHR @ WVKS-FM</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853852246651B8B6E5F76251D902A9F2AE9FEDA464A410142AD8CD0B5156D7B90C050</stationID>
+			<name>Christian AC @ WCVZ-FM</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>92.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853853D181ECE0E950DB21173B39A8F7BEFD62E8DEAF8AEF9CE45109D20B321E81CE7</stationID>
+			<name>CHR @ WGTZ-FM</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>92.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853857EC1DE0534A2011A4C4BA7A06DD32772EA71491685B6FEF6500F08F3090A26C3</stationID>
+			<name>Urban @ WJBL-FM</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>93.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853857B894B14219C0C153C79B89BC2B5309B512732D981E157E24BF3DCB0A7FE596B</stationID>
+			<name>Rock @ WNCD-FM</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B90943FB2506DF3E6718F98440A4F0A1029AFB98258D0DC3FB0A319D55A1D6E6</stationID>
+			<name>Oldies @ WRQN-FM</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<frequency>93.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853857DE7B9E44116BBBE81C1C7D4A82F0D14E655F73ED7AFE1529FE1D13702F4F49E</stationID>
+			<name>Religious @ WFCJ-FM</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<frequency>93.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385843F79CD3531B92F4542B5FFA9E33B896C778E9B6BC8291566A227E7A57AC9B9</stationID>
+			<name>Hot AC @ WVMX-FM</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<frequency>94.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B8DB625421699109134CC36D951707F8163FEFB740CEA1DD9C82DF8E14E2724A</stationID>
+			<name>Oldies @ WDIF-FM</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<frequency>94.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853852956257CEECC87A4AA2B2BB025C6F56098EAD0AAC0EB3C42447256671046D91A</stationID>
+			<name>Classic Rock @ WXKR-FM</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385444B2E8F5A1829E931475CBDEFEB3C70F6B5616034CBFF1497D27891EEF211A5</stationID>
+			<name>AC @ WSNY-FM</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<frequency>94.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853859B432AB8DD1A8A6F0812A2815ED1EE64D3AF9AF2321AFD32B49BBBBD590CD888</stationID>
+			<name>Oldies @ WZIO-FM</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<frequency>94.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385895B00FDBE82F0CE61EDCBBA9199FC47F39C26C6A87740D42D12A118CE411844</stationID>
+			<name>Country @ WICT-FM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>95.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B1274A1964DF0B2D27235FEA6C930E1EC4DFE708F30B85B1FBEB1BA9B7F9D75F</stationID>
+			<name>Country @ WQTE-FM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<frequency>95.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853859147EA13B62A1AD32D270329696A46C5C67E3FB8266A513012B2AF28A07023FC</stationID>
+			<name>Country @ WHOK-FM</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385460289C82CD32EF3FC85CE7EA52FFBEFADACAE7196B711FEC893DFD31C0956DB</stationID>
+			<name>Urban @ WIMX-FM</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<frequency>95.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385AE31E58CED4E7C0A8AE6FF8A65C0FD34E54426A3F46687993A29A0AE4B854626</stationID>
+			<name>CHR @ WAKZ-FM</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<frequency>95.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853855136BA072675BFC9F52ADE8BCB420FE80ACD11D3E027B63D86F2231850FEF3AF</stationID>
+			<name>Rock @ WLVQ-FM</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385DFD47A9C0E588AF6519505C4C78D988EA3FFFA955305C8F215B067A4D8D43C42</stationID>
+			<name>CHR @ WAKS-FM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<frequency>96.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853855A9C3234BDF939956335E8A92A99011CE17AC81F0A7E551A0819EFB9C41A50FB</stationID>
+			<name>AC @ WCSM-FM</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<frequency>96.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853854E472BD362579D62500B0635C4BCDD3B8BAD998646DB2EEEB3EAA59B205A029E</stationID>
+			<name>Hot AC @ WBNS-FM</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853857E3545612D02D24AF4144FF82522DAC3EAE4116ACA3334A3837DE3A6E0B20CBB</stationID>
+			<name>Classic Hits @ WJZE-FM</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<frequency>97.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385BAFF656A29AEE70901F82301225A4FD144020565B4F4E8D72D8124A479BD1C30</stationID>
+			<name>Rock @ WTGR-FM</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<frequency>97.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853859AB551CC59316826485958550FE32F8A21B815257785ADD6800EA739EB563BBE</stationID>
+			<name>Country @ WAXZ-FM</name>
+			<shortname>37</shortname>
+			<icon></icon>
+			<frequency>97.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385F834DB244D340942EB12C3B811D50459632724B01007862A5D9AF94B877002F9</stationID>
+			<name>CHR @ WNCI-FM</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<frequency>97.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853855C957381706F5ADECAFDB5B1AA816E27E0F5C8DE75EE83B131C14F9AF1ED6480</stationID>
+			<name>AC @ WDFM-FM</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<frequency>98.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853851706E36B974BB04FEB53600FC25C80797673A1A6991DB5C925F5A0951220B673</stationID>
+			<name>CHR @ WTWR-FM</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<frequency>98.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385F79CCC5341D503A47DDA46AAEBD80EAD9C5DAD126A107A6BE41F0B446E937C61</stationID>
+			<name>Classic Rock @ WNCX-FM</name>
+			<shortname>41</shortname>
+			<icon></icon>
+			<frequency>98.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853858980596CCB874365236871C9C9C13E26E40846C48580809246735C121D092C50</stationID>
+			<name>AAA @ WYXZ-FM</name>
+			<shortname>42</shortname>
+			<icon></icon>
+			<frequency>98.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853854B70AB5C73BC91992A59F8994DB5E2300EEDED268458E68FDA987C7FCE21AE24</stationID>
+			<name>AC @ WMXY-FM</name>
+			<shortname>43</shortname>
+			<icon></icon>
+			<frequency>98.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385068416E0226CE66713FDD84323B79CE72B5AFDAABA2074D48DAF3F2F23D635A6</stationID>
+			<name>Country @ WHKO-FM</name>
+			<shortname>44</shortname>
+			<icon></icon>
+			<frequency>99.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385F1779E0E2C6EAAAF3C83A5C033425BDDBADCF5C20CE6E90A24096391F70162FF</stationID>
+			<name>AC @ WNXT-FM</name>
+			<shortname>45</shortname>
+			<icon></icon>
+			<frequency>99.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853852B0137FA934E72D9D0E9948B74DB3019EB055F6E108FBFBD565CD466644D24C4</stationID>
+			<name>Country @ WAOL-FM</name>
+			<shortname>46</shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853855B6E3311F661FDBE0291D528F1714E1730B29B6311B7E02601DDE747270CF095</stationID>
+			<name>AC @ WKSD-FM</name>
+			<shortname>47</shortname>
+			<icon></icon>
+			<frequency>99.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B81B40B96C69F2A251B7699D94CF2DBDBD54CB9AA35C92F668B735E8D14F03CD</stationID>
+			<name>Country @ WTUZ-FM</name>
+			<shortname>48</shortname>
+			<icon></icon>
+			<frequency>99.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385F9AA3D3621768127D677F3FFC3D2B240F0E3E8924E34335FA5A5DD1E3C12AB87</stationID>
+			<name>Oldies @ WSWR-FM</name>
+			<shortname>49</shortname>
+			<icon></icon>
+			<frequency>100.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538560D3BDE629C030EF12830EB63A446E8B688E2F43A41D29A36B5B9A5BB0702B44</stationID>
+			<name>Country @ WCLT-FM</name>
+			<shortname>50</shortname>
+			<icon></icon>
+			<frequency>100.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853854575A9C83367D006D636387FDA0A7B15A94F2547B5AA8E242FE087160D4C690F</stationID>
+			<name>Rock @ WKXA-FM</name>
+			<shortname>51</shortname>
+			<icon></icon>
+			<frequency>100.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B6CA2A3EEDF4516818DB3604C438CE2D7825C5B0795B8C399AF685E506B67AF5</stationID>
+			<name>Rock @ WMMS-FM</name>
+			<shortname>52</shortname>
+			<icon></icon>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B431E89DE4241026AAC65E34BBE364F2F7B7FCAC62EA7E174659DC612956E9D6</stationID>
+			<name>Country @ WXIZ-FM</name>
+			<shortname>53</shortname>
+			<icon></icon>
+			<frequency>100.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385E9E56FC4818AD47372A936CECD2BB15333463CC5F1C0247291AAA66E1A9DCDE1</stationID>
+			<name>CHR @ WHOT-FM</name>
+			<shortname>54</shortname>
+			<icon></icon>
+			<frequency>101.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538564FD352F426AF61532603B18FA9E513943E48CCEE5910F0236D816C9885E1654</stationID>
+			<name>AC @ WJER-FM</name>
+			<shortname>55</shortname>
+			<icon></icon>
+			<frequency>101.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853855724C4E81ACEBD0DD580D63BD790E0E0A9112D3AE6EDD4F43D8602054A95608A</stationID>
+			<name>CHR @ WKRQ-FM</name>
+			<shortname>56</shortname>
+			<icon></icon>
+			<frequency>101.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385CAD9AEA7AF658509C00775E02949E989333E042D6A7EF698B000552878C568FD</stationID>
+			<name>Country @ WIMT-FM</name>
+			<shortname>57</shortname>
+			<icon></icon>
+			<frequency>102.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385D95D0B95A38C0945B8590501091DA1973FE4B3020F7FF221CB88AB36D1CCA1BF</stationID>
+			<name>Country @ WSWO-FM</name>
+			<shortname>58</shortname>
+			<icon></icon>
+			<frequency>102.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853856947A5414AE89A62F5A82933FF5031359E134262F1A5CB874F6F6C70D7389A65</stationID>
+			<name>AC @ WZOO-FM</name>
+			<shortname>59</shortname>
+			<icon></icon>
+			<frequency>102.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853850434FAA63232A451585AA9033F92520FA60EE81734CA1F3AFD7BD68CAE42AF21</stationID>
+			<name>Oldies @ WCPZ-FM</name>
+			<shortname>60</shortname>
+			<icon></icon>
+			<frequency>102.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385020109C756DCE97FB77F1FF9B6C625938118E1C082AD7D562C364EE7DC9E7127</stationID>
+			<name>Classic Rock @ WYFM-FM</name>
+			<shortname>61</shortname>
+			<icon></icon>
+			<frequency>102.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538502396E76BB350DE5556D1A82CB1AAE0AF062C19C76F70F4DD80850D4B2B47FDD</stationID>
+			<name>AC @ WNDH-FM</name>
+			<shortname>62</shortname>
+			<icon></icon>
+			<frequency>103.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385AC250F30C8B6E1167DC4D5A1B890E87C2769F8D6432E1581B9EB1C8089CF616A</stationID>
+			<name>Hot AC @ WMLX-FM</name>
+			<shortname>63</shortname>
+			<icon></icon>
+			<frequency>103.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385C2A1F9092A686967FBA094332FAF9E2D3E482B6CFE82176B61060E9ABD7DAAFC</stationID>
+			<name>Country @ WOGH-FM</name>
+			<shortname>64</shortname>
+			<icon></icon>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385A80766FBB033E8157570E9487B749F15CB15779AF019332410C5356092CE5ED4</stationID>
+			<name>Country @ WCKY-FM</name>
+			<shortname>65</shortname>
+			<icon></icon>
+			<frequency>103.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853855B35128983D6F4AA01A381E7A37B40527236A677977856B5C93C3D9F0F7DABC9</stationID>
+			<name>Alternative @ WXEG-FM</name>
+			<shortname>66</shortname>
+			<icon></icon>
+			<frequency>103.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385EA4E7E0036F124AAF1AD554D239B829821CA8D36E90A1BFE1A5D0EE4B6929927</stationID>
+			<name>AC @ WQAL-FM</name>
+			<shortname>67</shortname>
+			<icon></icon>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853859E86349644D8C640983D7B86CFF920A22EF1B5E693E0629C7BB7A7E5DA9D78FE</stationID>
+			<name>Christian @ WNLT-FM</name>
+			<shortname>68</shortname>
+			<icon></icon>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B9E6D54F82F23147CBD2C7300BCEAD2F3B64A30DE74CCD243989DB221D2D0472</stationID>
+			<name>Rock @ WIOT-FM</name>
+			<shortname>69</shortname>
+			<icon></icon>
+			<frequency>104.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538545E959EE4D1E4D0B55640B63D83906A3B851AFA30CDDFE4CAD74370E2BA01001</stationID>
+			<name>Classic Hits @ WUZZ-FM</name>
+			<shortname>70</shortname>
+			<icon></icon>
+			<frequency>104.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385C78B407521A5CF86C4022071BB83031150CB2BF002C63F7DAC06FD5BFC1E4763</stationID>
+			<name>Country @ WQXK-FM</name>
+			<shortname>71</shortname>
+			<icon></icon>
+			<frequency>105.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385E73883EA0F1200BD333457225B44E721272794C061859D2940E4B7217B685B29</stationID>
+			<name>Hot AC @ WYHT-FM</name>
+			<shortname>72</shortname>
+			<icon></icon>
+			<frequency>105.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385232C3EBD37BADB241D0911074AB65D9E8AEB28DD56EB5EDD4059E18DF278EFF0</stationID>
+			<name>Hot AC @ WWWM-FM</name>
+			<shortname>73</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385090C89882EEA83AE9063F4079BC264B02353CB1C0125C4AC0B95B3D400931880</stationID>
+			<name>Oldies @ WZOM-FM</name>
+			<shortname>74</shortname>
+			<icon></icon>
+			<frequency>105.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385B5631838CFEAE1065BB9DFE140BEE29F5409783E857DB3098BC2AB8FAFA3B651</stationID>
+			<name>Rock @ WWJM-FM</name>
+			<shortname>75</shortname>
+			<icon></icon>
+			<frequency>105.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385A99E479118BE567FF6CEE360D0BAB8784322113561B250A10DD1A578D3B4C43A</stationID>
+			<name>Oldies @ WBBG-FM</name>
+			<shortname>76</shortname>
+			<icon></icon>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385F2FB0227884E47A41E2B1B0221514DB83BA0B71180E152FF613743A1AB8BD950</stationID>
+			<name>Classic Rock @ WQTL-FM</name>
+			<shortname>77</shortname>
+			<icon></icon>
+			<frequency>106.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853857F99EEDB46CABBCA1F690550B88297237705044DC3A8F846978F4548BF93D140</stationID>
+			<name>Alternative @ WRWK-FM</name>
+			<shortname>78</shortname>
+			<icon></icon>
+			<frequency>106.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538578E81C3A2C7A1BF6088D828AF07C6809F25E4AD1245E6121FDFFDCA736048442</stationID>
+			<name>Country @ WMRN-FM</name>
+			<shortname>79</shortname>
+			<icon></icon>
+			<frequency>106.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385E2B37D603546A40990BB9FD5174539116FDDB7CD301B3F66AFBC54CCBB47176E</stationID>
+			<name>Country @ WNUS-FM</name>
+			<shortname>80</shortname>
+			<icon></icon>
+			<frequency>107.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538577D2E51ADD1B603D04D4F4CE7C715E8760B8923E9B37525F8B05A33D93BB6502</stationID>
+			<name>Oldies @ WYBZ-FM</name>
+			<shortname>81</shortname>
+			<icon></icon>
+			<frequency>107.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10633853855ACBB5DFD3C24FDEF4A776C4B5CD7B6C6FC1EAA10A6CD2D4DA50E744B5C12CB8</stationID>
+			<name>Classic Rock @ WBUK-FM</name>
+			<shortname>82</shortname>
+			<icon></icon>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338538538F8CE1AC08359FA799BCF80786042846EC2A1EAC37563AB66B82C33B56AD254</stationID>
+			<name>Oldies @ WIMJ-FM</name>
+			<shortname>83</shortname>
+			<icon></icon>
+			<frequency>107.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385385778C43CC9355B2050ABA8A119663D3F2CF5E74C7F5907BB02DC82EF757311978</stationID>
+			<name>Oldies @ WODB-FM</name>
+			<shortname>84</shortname>
+			<icon></icon>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
