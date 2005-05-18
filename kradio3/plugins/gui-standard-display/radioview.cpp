@@ -32,12 +32,12 @@
 #include <kconfig.h>
 #include <kpopupmenu.h>
 
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/radio-stations/radiostation.h>
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/libkradio/pluginmanager.h>
-#include <kradio/libkradio/plugin_configuration_dialog.h>
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/radio-stations/radiostation.h"
+#include "../../src/libkradio/stationlist.h"
+#include "../../src/libkradio/pluginmanager.h"
+#include "../../src/libkradio/plugin_configuration_dialog.h"
+#include "../../src/libkradio-gui/aboutwidget.h"
 
 #include "radioview.h"
 #include "radioview_frequencyradio.h"
@@ -68,7 +68,7 @@ bool RadioView::ElementCfg::operator == (const ElementCfg &x) const
 ///////////////////////////////////////////////////////////////////////
 
 RadioView::RadioView(const QString &name)
-  : QWidget(NULL, (const char*)name),
+  : QWidget(NULL, name.ascii()),
     WidgetPluginBase(name, i18n("Radio Display")),
     enableToolbarFlag(false),
     btnPower(NULL),

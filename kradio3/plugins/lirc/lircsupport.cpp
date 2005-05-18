@@ -27,10 +27,10 @@
 #include <kapplication.h>
 #include <kaboutdata.h>
 
-#include <kradio/interfaces/errorlog-interfaces.h>
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/interfaces/errorlog-interfaces.h"
+#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/libkradio/stationlist.h"
+#include "../../src/libkradio-gui/aboutwidget.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions

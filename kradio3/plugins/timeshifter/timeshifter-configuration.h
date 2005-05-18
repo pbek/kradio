@@ -22,8 +22,8 @@
 #include <config.h>
 #endif
 
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
-#include <kradio/libkradio-gui/gui_list_helper.h>
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/libkradio-gui/gui_list_helper.h"
 
 #include "timeshifter-configuration-ui.h"
 

@@ -18,13 +18,14 @@
 #include "fileringbuffer.h"
 
 #include <qstring.h>
+#include <unistd.h>
 
 FileRingBuffer::FileRingBuffer(const QString &filename, Q_UINT64 max_size)
 {
     m_BaseFileName = filename;
     m_FileIdx  = 0;
     m_FileName = m_BaseFileName + "_" + QString::number(++m_FileIdx);
-    m_File     = fopen(m_FileName, "w+");
+    m_File     = fopen(m_FileName.ascii(), "w+");
     m_MaxSize  = max_size;
     m_RealSize = 0;
     m_FillSize = 0;
@@ -38,7 +39,7 @@ FileRingBuffer::~FileRingBuffer()
 {
     if (m_File) {
         fclose (m_File);
-        unlink (m_FileName);
+        unlink (m_FileName.ascii());
     }
     m_File   = NULL;
     m_FileName = QString::null;
@@ -57,11 +58,11 @@ bool FileRingBuffer::resize(const QString &filename, Q_UINT64 new_max_size)
         clear();
         if (m_File) {
             fclose (m_File);
-            unlink (m_FileName);
+            unlink (m_FileName.ascii());
         }
         m_BaseFileName = filename;
         m_FileName = m_BaseFileName + "_" + QString::number(++m_FileIdx);
-        m_File     = fopen(m_FileName, "w+");
+        m_File     = fopen(m_FileName.ascii(), "w+");
         m_error    = m_File == NULL;
         m_errorString = m_File ? QString::null : "cannot open buffer file " + filename;
     }
@@ -78,7 +79,7 @@ bool FileRingBuffer::resize(const QString &filename, Q_UINT64 new_max_size)
         char           buffer[buffer_size];
 
         QString tmp_file_name = m_BaseFileName + "_" + QString::number(++m_FileIdx);
-        FILE *tmp_file = fopen (tmp_file_name, "w+");
+        FILE *tmp_file = fopen (tmp_file_name.ascii(), "w+");
         Q_UINT64  newFill = 0;
         if (tmp_file) {
             while (!m_error && m_FillSize > 0) {

@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include <kradio/interfaces/interfaces.h>
+#include "../../src/interfaces/interfaces.h"
 
 #include <qfont.h>
 #include <qcolor.h>

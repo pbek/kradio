@@ -24,11 +24,11 @@
 
 #include <qtimer.h>
 
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/libkradio/plugins.h>
-#include <kradio/radio-stations/frequencyradiostation.h>
-#include <kradio/libkradio/frequencyseekhelper.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
+#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/libkradio/plugins.h"
+#include "../../src/radio-stations/frequencyradiostation.h"
+#include "../../src/libkradio/frequencyseekhelper.h"
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
 #include "v4lcfg_interfaces.h"
 
 

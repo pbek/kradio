@@ -24,7 +24,7 @@
 #include <klocale.h>
 
 #include "radioview_volume.h"
-#include <kradio/libkradio/plugins.h>
+#include "../../src/libkradio/plugins.h"
 
 #define SLIDER_MINVAL   0
 #define SLIDER_MAXVAL   32768

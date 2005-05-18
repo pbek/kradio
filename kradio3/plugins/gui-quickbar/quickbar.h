@@ -24,9 +24,9 @@
 
 #include <qwidget.h>
 
-#include <kradio/interfaces/radio_interfaces.h>
-#include <kradio/libkradio/widgetplugins.h>
-#include <kradio/interfaces/stationselection_interfaces.h>
+#include "../../src/interfaces/radio_interfaces.h"
+#include "../../src/libkradio/widgetplugins.h"
+#include "../../src/interfaces/stationselection_interfaces.h"
 
 class ButtonFlowLayout;
 class QButtonGroup;
@@ -44,7 +44,7 @@ class QuickBar : public QWidget,
 {
 Q_OBJECT
 public:
-    QuickBar(const char * name = 0);
+    QuickBar(const QString &name = QString::null);
     ~QuickBar();
 
     virtual QString pluginClassName() const { return "QuickBar"; }

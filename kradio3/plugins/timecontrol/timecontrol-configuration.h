@@ -21,8 +21,8 @@
 #include <config.h>
 #endif
 
-#include <kradio/interfaces/radio_interfaces.h>
-#include <kradio/interfaces/timecontrol_interfaces.h>
+#include "../../src/interfaces/radio_interfaces.h"
+#include "../../src/interfaces/timecontrol_interfaces.h"
 #include "timecontrol-configuration-ui.h"
 
 class TimeControl;

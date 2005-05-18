@@ -17,7 +17,7 @@
 
 #include "oss-sound.h"
 
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/libkradio-gui/aboutwidget.h"
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <sys/types.h>
@@ -25,6 +25,9 @@
 #include <sys/soundcard.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include <math.h>
+#include <errno.h>
 
 #include "oss-sound-configuration.h"
 
@@ -38,7 +41,7 @@ PLUGIN_LIBRARY_FUNCTIONS(OSSSoundDevice, "Open Sound System (OSS) Support");
 struct _lrvol { unsigned char l, r; short dummy; };
 
 OSSSoundDevice::OSSSoundDevice(const QString &name)
-    : QObject(NULL, QString::null),
+    : QObject(NULL, NULL),
       PluginBase(name, i18n("KRadio OSS Sound Plugin")),
       m_DSPDeviceName("/dev/dsp"),
       m_MixerDeviceName("/dev/mixer"),
@@ -250,6 +253,7 @@ bool OSSSoundDevice::startPlayback(SoundStreamID id)
 bool OSSSoundDevice::pausePlayback(SoundStreamID id)
 {
     //return stopPlayback(id);
+    return false;
 }
 
 
@@ -532,7 +536,7 @@ bool OSSSoundDevice::openDSPDevice(const SoundFormat &format, bool reopen)
     m_DSPFormat = format;
 
     // first testopen for CAPS
-    m_DSP_fd = open(m_DSPDeviceName, O_NONBLOCK | O_RDONLY);
+    m_DSP_fd = open(m_DSPDeviceName.ascii(), O_NONBLOCK | O_RDONLY);
     bool err = m_DSP_fd < 0;
     if (err) {
         logError(i18n("Cannot open DSP device %1").arg(m_DSPDeviceName));
@@ -557,7 +561,7 @@ bool OSSSoundDevice::openDSPDevice(const SoundFormat &format, bool reopen)
         mode |= O_WRONLY;
     }
 
-    m_DSP_fd = open(m_DSPDeviceName, mode);
+    m_DSP_fd = open(m_DSPDeviceName.ascii(), mode);
 
     err = m_DSP_fd < 0;
     if (err) {
@@ -663,7 +667,7 @@ bool OSSSoundDevice::openMixerDevice(bool reopen)
     }
 
     if (m_Mixer_fd < 0)
-        m_Mixer_fd = open(m_MixerDeviceName, O_RDONLY);
+        m_Mixer_fd = open(m_MixerDeviceName.ascii(), O_RDONLY);
 
     if (m_Mixer_fd < 0) {
         logError(i18n("Cannot open mixer device %1").arg(m_MixerDeviceName));
@@ -695,7 +699,7 @@ void OSSSoundDevice::getMixerChannels(int query, QMap<int, QString> &retval) con
 
     int fd = m_Mixer_fd;
     if (fd < 0)
-        fd = open(m_MixerDeviceName, O_RDONLY);
+        fd = open(m_MixerDeviceName.ascii(), O_RDONLY);
 
     if (fd < 0) {
         logError(i18n("OSSSoundDevice::getMixerChannels: Cannot open mixer device %1").arg(m_MixerDeviceName));

@@ -27,9 +27,9 @@
 #include <kconfig.h>
 #include <kaboutdata.h>
 
-#include <kradio/libkradio-gui/aboutwidget.h>
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/radio-stations/radiostation.h>
+#include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/libkradio/stationlist.h"
+#include "../../src/radio-stations/radiostation.h"
 
 #include "buttonflowlayout.h"
 #include "quickbar-configuration.h"
@@ -42,8 +42,8 @@ PLUGIN_LIBRARY_FUNCTIONS(QuickBar, "Radio Station Quick Selection Toolbar");
 
 /////////////////////////////////////////////////////////////////////////////
 
-QuickBar::QuickBar(const char * name)
-  : QWidget(NULL, name),
+QuickBar::QuickBar(const QString &name)
+  : QWidget(NULL, name.ascii()),
     WidgetPluginBase(name, i18n("Quickbar Plugin")),
     m_layout(NULL),
     m_buttonGroup(NULL),
@@ -286,10 +286,10 @@ void QuickBar::rebuildGUI()
         const RadioStation &rs = stations.stationWithID(*it);
         if (! rs.isValid()) continue;
 
-        QToolButton *b = new QToolButton(this, QString::null);
+        QToolButton *b = new QToolButton(this);
         m_buttons.append(b);
         b->setToggleButton(true);
-        if (rs.iconName())
+        if (rs.iconName().length())
             b->setIconSet(QPixmap(rs.iconName()));
         else
             b->setText(m_showShortName ? rs.shortName() : rs.name());

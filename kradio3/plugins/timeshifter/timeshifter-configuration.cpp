@@ -31,8 +31,8 @@
 #include <knuminput.h>
 #include <klocale.h>
 
-#include <kradio/libkradio/utils.h>
-#include <kradio/libkradio-gui/gui_list_helper.h>
+#include "../../src/libkradio/utils.h"
+#include "../../src/libkradio-gui/gui_list_helper.h"
 #include "timeshifter-configuration.h"
 #include "timeshifter.h"
 
@@ -121,7 +121,11 @@ bool TimeShifterConfiguration::setPlaybackMixer(const QString &_mixer_id, int Ch
 
 void TimeShifterConfiguration::selectTempFile()
 {
-    KFileDialog fd("/tmp/", i18n("any ( * )"), this, i18n("TimeShifter Temporary File Selection"), TRUE);
+    KFileDialog fd("/tmp/", 
+                   i18n("any ( * )").ascii(), 
+                   this, 
+                   i18n("TimeShifter Temporary File Selection").ascii(), 
+                   TRUE);
     fd.setMode(KFile::File);
     fd.setCaption (i18n("Select TimeShifter Temporary File"));
 

@@ -27,8 +27,8 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 
-#include "kradio/libkradio/kradioapp.h"
-#include "kradio/libkradio-gui/aboutwidget.h"
+#include "kradioapp.h"
+#include "../libkradio-gui/aboutwidget.h"
 
 // #include "v4lradio.h"
 // #include "radio.h"
@@ -95,7 +95,7 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
    init_func(NULL),
    info_func(NULL)
 {
-    library = KLibLoader::self()->library(lib_name);
+    library = KLibLoader::self()->library(lib_name.ascii());
     if (library) {
         info_func = (t_kradio_plugin_info_func)library->symbol("getAvailablePlugins");
         init_func = (t_kradio_plugin_init_func)library->symbol("createPlugin");
@@ -282,9 +282,6 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &clas
     return retval;
 }
 
-
-
-#include kradioapp.moc
 
 
 #include "kradioapp.moc"

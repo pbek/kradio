@@ -22,7 +22,7 @@
 #include <klocale.h>
 #include <linux/soundcard.h>
 
-#include <kradio/libkradio/utils.h>
+#include "../../src/libkradio/utils.h"
 #include "timeshifter.h"
 #include "timeshifter-configuration.h"
 
@@ -225,7 +225,7 @@ unsigned TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffe
         buffer += sizeof(rel);
         *(unsigned*)buffer = url_len;
         buffer += sizeof(url_len);
-        memcpy(buffer, md.url().url(), url_len);
+        memcpy(buffer, md.url().url().ascii(), url_len);
         buffer += url_len;
         return req_size;
     } else if (buffer_size >= sizeof(req_size)) {

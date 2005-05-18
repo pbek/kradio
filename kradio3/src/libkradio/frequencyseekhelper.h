@@ -23,7 +23,7 @@
 #endif
 
 #include <qobject.h>
-#include <kradio/interfaces/radiodevice_interfaces.h>
+#include "../interfaces/radiodevice_interfaces.h"
 #include "seekhelper.h"
 
 class FrequencySeekHelper : public QObject,

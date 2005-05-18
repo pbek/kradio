@@ -24,9 +24,9 @@
 
 #include <qstringlist.h>
 
-#include <kradio/interfaces/radio_interfaces.h>
-#include <kradio/interfaces/stationselection_interfaces.h>
-#include <kradio/libkradio/stationlist.h>
+#include "../interfaces/radio_interfaces.h"
+#include "../interfaces/stationselection_interfaces.h"
+#include "../libkradio/stationlist.h"
 
 #include "stationselector-ui.h"
 #include "radiostation-listview.h"

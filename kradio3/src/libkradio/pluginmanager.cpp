@@ -148,9 +148,9 @@ void PluginManager::insertPlugin(PluginBase *p)
 //         kdDebug() << "Debug: Adding Plugin: " << p->name() << "\n";
 
         if (!m_configDialog)
-            createConfigDialog(i18n(m_configDialogTitle));
+            createConfigDialog(i18n(m_configDialogTitle.ascii()));
         if (!m_aboutDialog)
-            createAboutDialog(i18n(m_aboutDialogTitle));
+            createAboutDialog(i18n(m_aboutDialogTitle.ascii()));
 
         m_plugins.append(p);
         p->setManager(this);
@@ -267,7 +267,7 @@ void PluginManager::addConfigurationPage (PluginBase *forWhom,
 QFrame *PluginManager::addConfigurationPage (const ConfigPageInfo &info)
 {
     if (!m_configDialog)
-        createConfigDialog(i18n(m_configDialogTitle));
+        createConfigDialog(i18n(m_configDialogTitle.ascii()));
 
     // create empty config frame
     QFrame *f = m_configDialog->addPage(
@@ -304,7 +304,7 @@ void PluginManager::createConfigDialog(const QString &title)
         KDialogBase::Apply|KDialogBase::Ok|KDialogBase::Cancel,
         KDialogBase::Ok,
         /*parent = */ NULL,
-        title,
+        title.ascii(),
         /*modal = */ false,
         true);
 
@@ -341,7 +341,7 @@ void PluginManager::addAboutPage (PluginBase *forWhom,
                                   const AboutPageInfo &info)
 {
     if (!m_aboutDialog)
-        createAboutDialog(i18n(m_aboutDialogTitle));
+        createAboutDialog(i18n(m_aboutDialogTitle.ascii()));
 
     if (   !forWhom || !m_plugins.containsRef(forWhom)
         || !m_aboutDialog || !info.page)
@@ -380,7 +380,7 @@ void PluginManager::createAboutDialog(const QString &title)
                                     KDialogBase::Close,
                                     KDialogBase::Close,
                                     /*parent = */ NULL,
-                                    title,
+                                    title.ascii(),
                                     /*modal = */ false,
                                     true);
 
@@ -427,12 +427,13 @@ void PluginManager::restoreState (KConfig *c)
     }
 
     if (m_Application && n == 0) {
-        m_Application->CreatePlugin(this, "ErrorLog",     "logger-1");
+        m_configDialog->show();
+/*        m_Application->CreatePlugin(this, "ErrorLog",     "logger-1");
         m_Application->CreatePlugin(this, "V4LRadio",     "v4lradio-1");
         m_Application->CreatePlugin(this, "Radio",        "radio-1");
         m_Application->CreatePlugin(this, "TimeControl",  "timecontrol-1");
         m_Application->CreatePlugin(this, "RadioDocking", "docking-1");
-        m_Application->CreatePlugin(this, "RadioView",    "radioview-1");
+        m_Application->CreatePlugin(this, "RadioView",    "radioview-1");*/
     }
 
     for (PluginIterator i(m_plugins); i.current(); ++i) {
@@ -462,9 +463,6 @@ void PluginManager::slotConfigOK()
     saveState(KGlobal::config());
 }
 
-
-
-#include pluginmanager.moc
 
 
 #include "pluginmanager.moc"

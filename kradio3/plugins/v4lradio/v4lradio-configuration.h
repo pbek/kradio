@@ -22,9 +22,9 @@
 #include <config.h>
 #endif
 
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
-#include <kradio/libkradio-gui/gui_list_helper.h>
+#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/libkradio-gui/gui_list_helper.h"
 
 #include "v4lradio-configuration-ui.h"
 #include "v4lcfg_interfaces.h"

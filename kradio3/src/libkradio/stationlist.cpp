@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kradio/radio-stations/radiostation.h>
-#include <kradio/libkradio/utils.h>
-#include <kradio/interfaces/errorlog-interfaces.h>
+#include "../radio-stations/radiostation.h"
+#include "../interfaces/errorlog-interfaces.h"
+#include "utils.h"
 #include "stationlist.h"
 #include "stationlistxmlhandler.h"
 

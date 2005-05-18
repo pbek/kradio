@@ -16,13 +16,15 @@
  ***************************************************************************/
 
 #include "standardscandialog.h"
-#include <kradio/radio-stations/radiostation.h>
+#include "../radio-stations/radiostation.h"
 
 #include <qprogressbar.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
 
 #include <klocale.h>
+
+#include <math.h>
 
 StandardScanDialog::StandardScanDialog(QWidget *parent)
     : StandardScanDialogUI(parent, NULL, true),
@@ -176,9 +178,6 @@ void StandardScanDialog::slotCancelDone()
     }
 }
 
-
-
-#include standardscandialog.moc
 
 
 #include "standardscandialog.moc"

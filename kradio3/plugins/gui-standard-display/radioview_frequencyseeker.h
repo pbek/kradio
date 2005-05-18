@@ -18,7 +18,7 @@
 #ifndef KRADIO_RADIOVIEW_FREQUENCYSEEKER_H
 #define KRADIO_RADIOVIEW_FREQUENCYSEEKER_H
 
-#include <kradio/interfaces/radiodevice_interfaces.h>
+#include "../../src/interfaces/radiodevice_interfaces.h"
 #include "radioview_element.h"
 
 class QToolButton;

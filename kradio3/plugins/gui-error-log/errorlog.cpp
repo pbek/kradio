@@ -40,13 +40,13 @@ PLUGIN_LIBRARY_FUNCTIONS(ErrorLog, "Error Logging Window for KRadio");
 
 /////////////////////////////////////////////////////////////////////////////
 
-ErrorLog::ErrorLog(const char * name)
+ErrorLog::ErrorLog(const QString &name)
     :  KDialogBase(KDialogBase::IconList,
                    i18n("KRadio Logger"),
                    KDialogBase::Close|KDialogBase::User1,
                    KDialogBase::Close,
                    NULL,
-                   name,
+                   name.ascii(),
                    false,
                    false,
                    KGuiItem(i18n("Save &as"), "filesaveas")
@@ -208,9 +208,9 @@ bool ErrorLog::logDebug   (const QString &s)
 void ErrorLog::slotUser1()
 {
     KFileDialog fd("",
-                   "*.log|" + i18n("Log Files") + "( *.log )",
+                   ("*.log|" + i18n("Log Files") + "( *.log )").ascii(),
                    this,
-                   i18n("Select Log File"),
+                   i18n("Select Log File").ascii(),
                    true);
     fd.setMode(KFile::File);
     fd.setOperationMode(KFileDialog::Saving);

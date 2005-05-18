@@ -142,8 +142,4 @@ void PluginManagerConfiguration::slotRemovePluginInstance()
 }
 
 
-
-#include pluginmanager-configuration.moc
-
-
 #include "pluginmanager-configuration.moc"

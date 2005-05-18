@@ -37,9 +37,9 @@
 #include <qtimer.h>
 #include <qmap.h>
 
-#include <kradio/libkradio/plugins.h>
-#include <kradio/interfaces/timecontrol_interfaces.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
+#include "../../src/libkradio/plugins.h"
+#include "../../src/interfaces/timecontrol_interfaces.h"
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
 
 #include "recording-config.h"
 #include "reccfg_interfaces.h"

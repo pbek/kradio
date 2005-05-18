@@ -24,11 +24,11 @@
 
 #include <qobjectlist.h>
 
-#include <kradio/interfaces/radio_interfaces.h>
-#include <kradio/interfaces/radiodevicepool_interfaces.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
-#include <kradio/interfaces/timecontrol_interfaces.h>
-#include <kradio/libkradio/widgetplugins.h>
+#include "../../src/interfaces/radio_interfaces.h"
+#include "../../src/interfaces/radiodevicepool_interfaces.h"
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/interfaces/timecontrol_interfaces.h"
+#include "../../src/libkradio/widgetplugins.h"
 #include "radioview_element.h"
 
 class QWidgetStack;

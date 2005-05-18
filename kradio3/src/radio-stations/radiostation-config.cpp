@@ -23,6 +23,8 @@
 #include <math.h>
 
 #include "radiostation-config.h"
+#include "../radio-stations/frequencyradiostation.h"
+
 
 RadioStationConfig::RadioStationConfig(QWidget *parent)
     : QWidget (parent)
@@ -57,8 +59,6 @@ void UndefinedRadioStationConfig::storeStationData (RadioStation &/*rs*/)
 
 
 ///////////////////////////////////////////////////////////////////////
-
-#include <kradio/radio-stations/frequencyradiostation.h>
 
 FrequencyRadioStationConfig::FrequencyRadioStationConfig (QWidget *parent)
     : RadioStationConfig(parent)
@@ -97,9 +97,6 @@ void FrequencyRadioStationConfig::slotValueChanged(int /*i*/)
 {
     emit changed(this);
 }
-
-
-#include radiostation-config.moc
 
 
 #include "radiostation-config.moc"

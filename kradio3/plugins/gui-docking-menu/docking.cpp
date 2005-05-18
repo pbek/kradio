@@ -24,12 +24,12 @@
 #include <kaboutdata.h>
 #include <kconfig.h>
 
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/libkradio/pluginmanager.h>
-#include <kradio/libkradio/widgetplugins.h>
-#include <kradio/radio-stations/radiostation.h>
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/libkradio/stationlist.h"
+#include "../../src/libkradio/pluginmanager.h"
+#include "../../src/libkradio/widgetplugins.h"
+#include "../../src/radio-stations/radiostation.h"
+#include "../../src/libkradio-gui/aboutwidget.h"
 
 #include "docking.h"
 #include "docking-configuration.h"
@@ -44,7 +44,7 @@ PLUGIN_LIBRARY_FUNCTIONS(RadioDocking, "Tray Menu for KRadio");
 /////////////////////////////////////////////////////////////////////////////
 
 RadioDocking::RadioDocking(const QString &name)
-  : KSystemTray (NULL, name),
+  : KSystemTray (NULL, name.ascii()),
     PluginBase(name, i18n("Docking Plugin")),
     m_pluginMenu(NULL),
     m_recordingMenu(NULL),

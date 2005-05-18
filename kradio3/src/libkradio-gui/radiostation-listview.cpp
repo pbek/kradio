@@ -16,8 +16,8 @@
  ***************************************************************************/
 
 #include "radiostation-listview.h"
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/radio-stations/radiostation.h>
+#include "../libkradio/stationlist.h"
+#include "../radio-stations/radiostation.h"
 
 #include <klocale.h>
 #include <qfile.h>
@@ -185,9 +185,6 @@ void RadioStationListView::restoreState (KConfig *cfg)
         setColumnWidth(i, cfg->readNumEntry(QString(name()) + "_radiostation_listview_col_" + QString::number(i), -1));
 }
 
-
-
-#include radiostation-listview.moc
 
 
 #include "radiostation-listview.moc"

@@ -24,8 +24,8 @@
 
 #include <qwidget.h>
 
-#include <kradio/libkradio/widgetplugins.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
+#include "../../src/libkradio/widgetplugins.h"
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
 //#include <kradio/interfaces/recording-interfaces.h>
 
 

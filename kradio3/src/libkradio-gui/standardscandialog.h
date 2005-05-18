@@ -23,9 +23,9 @@
 #endif
 
 #include "standardscandialog-ui.h"
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/interfaces/radio_interfaces.h>
-#include <kradio/libkradio/stationlist.h>
+#include "../interfaces/radiodevice_interfaces.h"
+#include "../interfaces/radio_interfaces.h"
+#include "../libkradio/stationlist.h"
 
 #include <qtimer.h>
 #include <qdatetime.h>

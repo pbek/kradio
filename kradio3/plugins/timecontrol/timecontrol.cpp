@@ -20,8 +20,8 @@
 
 #include "timecontrol.h"
 #include "timecontrol-configuration.h"
-#include <kradio/libkradio/pluginmanager.h>
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/libkradio/pluginmanager.h"
+#include "../../src/libkradio-gui/aboutwidget.h"
 
 //const char *AlarmListElement            = "alarmlist";
 //const char *AlarmElement                = "alarm";

@@ -22,8 +22,8 @@
 #include <config.h>
 #endif
 
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
+#include "../interfaces/radiodevice_interfaces.h"
+#include "../interfaces/soundstreamclient_interfaces.h"
 
 
 class SeekHelper : public IRadioDeviceClient,

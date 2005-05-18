@@ -493,7 +493,7 @@ void KRadioAboutWidget::slotMailClick( const QString &/*_name*/,
 void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
 {
 	const KAboutData *aboutData = &_aboutData;
-	if (aboutData->programName()) {
+	if (aboutData->programName().length()) {
 		setProduct( aboutData->programName(), aboutData->version(),
 					QString::null, QString::null );
 	}
@@ -545,7 +545,7 @@ void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
 		for (it = aboutData->credits().begin();
 			it != aboutData->credits().end(); ++it)
 		{
-			creditsPage->addPerson( i18n((*it).name()), (*it).emailAddress(),
+		  creditsPage->addPerson( (*it).name(), (*it).emailAddress(),
 									(*it).webAddress(), (*it).task() );
 		}
 	}
@@ -608,9 +608,6 @@ void KRadioImageTrackLabel::mouseMoveEvent ( QMouseEvent *e )
 }
 
 
-
-
-#include aboutwidget.moc
 
 
 #include "aboutwidget.moc"

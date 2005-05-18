@@ -24,7 +24,7 @@
 
 #include <qevent.h>
 
-#include <kradio/interfaces/sound_metadata.h>
+#include "../../src/libkradio/sound_metadata.h"
 
 const QEvent::Type EncodingTerminated = (QEvent::Type)(QEvent::User+1);
 const QEvent::Type EncodingStep       = (QEvent::Type)(QEvent::User+2);

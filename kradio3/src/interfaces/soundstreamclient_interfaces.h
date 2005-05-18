@@ -34,9 +34,9 @@
 #include <qmap.h>
 
 #include "interfaces.h"
-#include "soundformat.h"
-#include "soundstreamid.h"
-#include "sound_metadata.h"
+#include "../libkradio/soundformat.h"
+#include "../libkradio/soundstreamid.h"
+#include "../libkradio/sound_metadata.h"
 
 
 #define CALL_SNDSTR_SERVER(name, param, call) \

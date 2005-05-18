@@ -23,6 +23,7 @@
 #endif
 
 #include <qstring.h>
+#include <stdio.h>
 
 class FileRingBuffer
 {
@@ -44,8 +45,8 @@ public:
 
     void       clear();
 
-    bool       error()       { return m_error; }
-    bool       errorString() { return m_errorString; }
+    bool           error()       const { return m_error; }
+    const QString &errorString() const { return m_errorString; }
 
 protected:
     Q_UINT64    getFreeSpace(Q_UINT64 &size);  // returns position in file + size

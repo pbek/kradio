@@ -31,7 +31,7 @@
 #endif
 
 #include "interfaces.h"
-#include "soundstreamid.h"
+#include "../libkradio/soundstreamid.h"
 
 class RadioStation;
 class StationList;

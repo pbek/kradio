@@ -32,8 +32,8 @@
 #include <knuminput.h>
 #include <klocale.h>
 
-#include <kradio/libkradio/utils.h>
-#include <kradio/libkradio-gui/gui_list_helper.h>
+#include "../../src/libkradio/utils.h"
+#include "../../src/libkradio-gui/gui_list_helper.h"
 #include "v4lradio-configuration.h"
 #include "v4lradio.h"
 
@@ -402,7 +402,11 @@ bool V4LRadioConfiguration::noticeSoundStreamCreated(SoundStreamID id)
 
 void V4LRadioConfiguration::selectRadioDevice()
 {
-    KFileDialog fd("/dev/", i18n("any ( * )"), this, i18n("Radio Device Selection"), TRUE);
+    KFileDialog fd("/dev/", 
+                   i18n("any ( * )").ascii(), 
+                   this, 
+                   i18n("Radio Device Selection").ascii(), 
+                   TRUE);
     fd.setMode(KFile::File | KFile::ExistingOnly);
     fd.setCaption (i18n("Select Radio Device"));
 

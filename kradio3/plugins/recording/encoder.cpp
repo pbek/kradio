@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kradio/radio-stations/radiostation.h>
-#include <kradio/interfaces/errorlog-interfaces.h>
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/radio-stations/radiostation.h"
+#include "../../src/interfaces/errorlog-interfaces.h"
+#include "../../src/libkradio-gui/aboutwidget.h"
 
 #include "recording.h"
 #include "recording-configuration.h"
@@ -420,7 +420,7 @@ bool RecordingEncoding::openOutput_pcm(const QString &output)
 {
     SF_INFO sinfo;
     m_config.getSoundFileInfo(sinfo, false);
-    m_output = sf_open(output, SFM_WRITE, &sinfo);
+    m_output = sf_open(output.ascii(), SFM_WRITE, &sinfo);
 
     if (!m_output) {
         m_error = true;
@@ -461,7 +461,7 @@ bool RecordingEncoding::openOutput_mp3(const QString &output)
             if (!m_error) {
                 id3tag_init(m_LAMEFlags);
                 id3tag_add_v2(m_LAMEFlags);
-                QString title  = m_RadioStation->name() + QString().sprintf(" - %s", (const char*)(QDateTime::currentDateTime().toString(Qt::ISODate)));
+                QString title  = m_RadioStation->name() + QString().sprintf(" - %s", (QDateTime::currentDateTime().toString(Qt::ISODate)).ascii());
                 QString comment = i18n("Recorded by KRadio");
                 int l = title.length() + comment.length() + 10;
                 m_ID3Tags = new char[l];
@@ -473,7 +473,7 @@ bool RecordingEncoding::openOutput_mp3(const QString &output)
                 id3tag_set_comment(m_LAMEFlags, ccomment);
             }
 
-            m_MP3Output = fopen(output, "wb+");
+            m_MP3Output = fopen(output.ascii(), "wb+");
             if (!m_MP3Output) {
                 m_errorString += i18n("Cannot open output file %1. ").arg(output);
                 m_error = true;
@@ -514,7 +514,7 @@ bool RecordingEncoding::openOutput_mp3(const QString &output)
 
 static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, const QString &value)
 {
-    char *stag   = strdup(tag);
+    char *stag   = strdup(tag.ascii());
     char *svalue = strdup(value.utf8());
     vorbis_comment_add_tag(vc, stag, svalue);
     delete stag;
@@ -525,7 +525,7 @@ static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, c
 bool RecordingEncoding::openOutput_ogg(const QString &output)
 {
 #if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
-    m_OggOutput = fopen(output, "wb+");
+    m_OggOutput = fopen(output.ascii(), "wb+");
     if (!m_OggOutput) {
         m_errorString += i18n("Cannot open Ogg/Vorbis output file %1. ").arg(output);
         m_error = true;

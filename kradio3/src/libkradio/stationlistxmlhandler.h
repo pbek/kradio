@@ -24,7 +24,7 @@
 #include <qxml.h>
 #include <qobject.h>
 
-#include <kradio/radio-stations/radiostation.h>
+#include "../radio-stations/radiostation.h"
 #include "stationlist.h"
 
 class StationListXmlHandler : public QXmlDefaultHandler

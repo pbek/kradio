@@ -32,7 +32,7 @@
 #endif
 
 #include "interfaces.h"
-#include <kradio/libkradio/alarm.h>
+#include "../libkradio/alarm.h"
 
 INTERFACE(ITimeControl, ITimeControlClient)
 {

@@ -22,9 +22,9 @@
 #include <config.h>
 #endif
 
-#include <kradio/libkradio/plugins.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
-#include <kradio/libkradio/fileringbuffer.h>
+#include "../../src/libkradio/plugins.h"
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/libkradio/fileringbuffer.h"
 
 
 class TimeShifter : public QObject,

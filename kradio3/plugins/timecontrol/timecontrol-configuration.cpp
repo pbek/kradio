@@ -15,6 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <math.h>
 #include <algorithm>
 using std::sort;
 
@@ -31,10 +32,10 @@ using std::sort;
 #include <klistbox.h>
 #include <klocale.h>
 
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/libkradio/alarm.h>
-#include <kradio/interfaces/errorlog-interfaces.h>
-#include <kradio/radio-stations/radiostation.h>
+#include "../../src/libkradio/stationlist.h"
+#include "../../src/libkradio/alarm.h"
+#include "../../src/interfaces/errorlog-interfaces.h"
+#include "../../src/radio-stations/radiostation.h"
 
 #include "timecontrol-configuration.h"
 

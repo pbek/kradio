@@ -20,8 +20,8 @@ using namespace std;
 #include <kpushbutton.h>
 #include <algorithm>
 
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/radio-stations/radiostation.h>
+#include "../libkradio/stationlist.h"
+#include "../radio-stations/radiostation.h"
 
 #include "stationselector.h"
 #include "radiostation-listview.h"
@@ -248,9 +248,6 @@ void StationSelector::restoreState (KConfig *cfg)
     listAvailable->restoreState(cfg);
 }
 
-
-
-#include stationselector.moc
 
 
 #include "stationselector.moc"

@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kradio/radio-stations/radiostation.h>
-#include <kradio/libkradio-gui/aboutwidget.h>
-#include <kradio/interfaces/radiodevice_interfaces.h>
+#include "../../src/radio-stations/radiostation.h"
+#include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/interfaces/radiodevice_interfaces.h"
 #include "radio.h"
 #include "radio-configuration.h"
 
@@ -336,10 +336,10 @@ const RadioStation & Radio::queryCurrentStation() const
 
 
 static QString qstrUnknown(I18N_NOOP("unknown"));
+static QString i18nqstrUnknown;
 const QString &Radio::queryDescription() const
 {
-    qstrUnknown = i18n(qstrUnknown);
-    return m_activeDevice ? m_activeDevice->getDescription() : qstrUnknown;
+    return m_activeDevice ? m_activeDevice->getDescription() : (i18nqstrUnknown = i18n(qstrUnknown.ascii()));
 }
 
 

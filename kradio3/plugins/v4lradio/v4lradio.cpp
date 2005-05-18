@@ -38,8 +38,8 @@
 #include <kdialogbase.h>
 #include <kaboutdata.h>
 
-#include <kradio/libkradio-gui/aboutwidget.h>
-#include <kradio/libkradio/utils.h>
+#include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/libkradio/utils.h"
 #include "v4lradio.h"
 #include "v4lradio-configuration.h"
 
@@ -1055,7 +1055,7 @@ void V4LRadio::radio_init()
         return;
     }
 */
-    m_radio_fd = open(m_radioDev, O_RDONLY);
+    m_radio_fd = open(m_radioDev.ascii(), O_RDONLY);
       if (m_radio_fd < 0) {
         radio_done();
 
@@ -1107,7 +1107,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
     V4LCaps c;
     c.description = device;
 
-    fd = open(device, O_RDONLY);
+    fd = open(device.ascii(), O_RDONLY);
 
     if (fd < 0) {
         logError("V4LRadio::readV4LCaps: " +

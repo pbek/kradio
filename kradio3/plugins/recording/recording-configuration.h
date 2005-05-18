@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include <kradio/interfaces/soundformat.h>
+#include "../../src/libkradio/soundformat.h"
 
 #include "recording-config.h"
 #include "reccfg_interfaces.h"

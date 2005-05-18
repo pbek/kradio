@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include <kradio/libkradio-gui/stationselector.h>
+#include "../../src/libkradio-gui/stationselector.h"
 
 class QuickbarConfiguration : public StationSelector
 {

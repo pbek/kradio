@@ -17,7 +17,7 @@
 
 
 #include "radiodevice_interfaces.h"
-#include <kradio/radio-stations/radiostation.h>
+#include "../radio-stations/radiostation.h"
 
 #include <kurl.h>
 

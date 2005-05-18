@@ -20,8 +20,8 @@
 
 #include <kdialogbase.h>
 
-#include <kradio/interfaces/errorlog-interfaces.h>
-#include <kradio/libkradio/widgetplugins.h>
+#include "../../src/interfaces/errorlog-interfaces.h"
+#include "../../src/libkradio/widgetplugins.h"
 
 
 class QTextEdit;
@@ -31,7 +31,7 @@ class ErrorLog : public KDialogBase,
 {
 Q_OBJECT
 public:
-    ErrorLog(const char * name = 0);
+    ErrorLog(const QString &name = QString::null);
     ~ErrorLog();
 
     virtual QString pluginClassName() const { return "ErrorLog"; }

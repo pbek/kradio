@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kradio/radio-stations/radiostation.h>
-#include <kradio/interfaces/errorlog-interfaces.h>
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/radio-stations/radiostation.h"
+#include "../../src/interfaces/errorlog-interfaces.h"
+#include "../../src/libkradio-gui/aboutwidget.h"
 
 #include "recording.h"
 //#include "recording-context.h"
@@ -54,7 +54,7 @@ PLUGIN_LIBRARY_FUNCTIONS2(
 ///////////////////////////////////////////////////////////////////////
 
 Recording::Recording(const QString &name)
-    : QObject(NULL, QString::null),
+    : QObject(NULL, NULL),
       PluginBase(name, i18n("KRadio Recording Plugin")),
       m_config()
 {

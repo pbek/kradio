@@ -23,13 +23,13 @@
 #endif
 
 
-#include <kradio/interfaces/radio_interfaces.h>
-#include <kradio/interfaces/radiodevicepool_interfaces.h>
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/interfaces/timecontrol_interfaces.h>
-#include <kradio/interfaces/soundstreamclient_interfaces.h>
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/libkradio/plugins.h>
+#include "../../src/interfaces/radio_interfaces.h"
+#include "../../src/interfaces/radiodevicepool_interfaces.h"
+#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/interfaces/timecontrol_interfaces.h"
+#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/libkradio/stationlist.h"
+#include "../../src/libkradio/plugins.h"
 
 /**
  * The main Radio class, which is used as the interface of the radio functionality

@@ -15,15 +15,17 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kradio/radio-stations/radiostation.h>
-#include <kradio/libkradio/stationlist.h>
-#include <kradio/libkradio/plugins.h>
-#include <kradio/interfaces/radiodevice_interfaces.h>
-#include <kradio/libkradio-gui/standardscandialog.h>
-#include <kradio/libkradio-gui/radiostation-listview.h>
-#include <kradio/radio-stations/radiostation-config.h>
+#include "../../src/radio-stations/radiostation.h"
+#include "../../src/libkradio/stationlist.h"
+#include "../../src/libkradio/plugins.h"
+#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/libkradio-gui/standardscandialog.h"
+#include "../../src/libkradio-gui/radiostation-listview.h"
+#include "../../src/radio-stations/radiostation-config.h"
 
 #include "radio-configuration.h"
+
+#include <math.h>
 
 #include <qlistbox.h>
 #include <klistbox.h>
@@ -322,8 +324,8 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 void RadioConfiguration::slotSelectPixmap()
 {
     KFileDialog fd(QString::null,
-                   "*.gif *.png *.jpg *.xpm|" + i18n("Images") + "(*.gif, *.png, *.jpg, *.xpm)",
-                   this, i18n("Pixmap Selection"), true);
+                   ("*.gif *.png *.jpg *.xpm|" + i18n("Images") + "(*.gif, *.png, *.jpg, *.xpm)").ascii(),
+                   this, i18n("Pixmap Selection").ascii(), true);
     fd.setMode(KFile::File | KFile::ExistingOnly);
     fd.setCaption (i18n("Select Station Pixmap"));
     fd.setOperationMode(KFileDialog::Saving);
@@ -420,9 +422,9 @@ void RadioConfiguration::slotActivateStation(int idx)
 void RadioConfiguration::slotLoadPresets()
 {
     KFileDialog fd(locate("data", "kradio/presets/"),
-                   "*.krp|" + i18n("KRadio Preset Files"),
+                   ("*.krp|" + i18n("KRadio Preset Files")).ascii(),
                    this,
-                   i18n("Preset File Selection"),
+                   i18n("Preset File Selection").ascii(),
                    true);
     fd.setMode(KFile::File | KFile::ExistingOnly);
     fd.setCaption (i18n("Select Preset File"));
@@ -439,9 +441,9 @@ void RadioConfiguration::slotLoadPresets()
 void RadioConfiguration::slotStorePresets()
 {
     KFileDialog fd("",
-                   "*.krp|" + i18n("KRadio Preset Files"),
+                   ("*.krp|" + i18n("KRadio Preset Files")).ascii(),
                    this,
-                   i18n("Preset File Selection"),
+                   i18n("Preset File Selection").ascii(),
                    true);
     fd.setMode(KFile::File);
     fd.setCaption (i18n("Store Preset File"));

@@ -17,7 +17,7 @@
 
 #include "recording-monitor.h"
 #include "recording-datamonitor.h"
-#include <kradio/libkradio-gui/aboutwidget.h>
+#include "../../src/libkradio-gui/aboutwidget.h"
 
 #include <qlabel.h>
 #include <qpushbutton.h>
@@ -30,7 +30,7 @@
 #include <kaboutdata.h>
 
 RecordingMonitor::RecordingMonitor(const QString &name)
-  : QWidget(NULL, (const char*)name),
+  : QWidget(NULL, name.ascii()),
     WidgetPluginBase(name, i18n("Recording Monitor")),
     m_recording(false)
 {
