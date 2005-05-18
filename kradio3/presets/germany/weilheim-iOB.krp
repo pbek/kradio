@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Rainer Kulhanek, &lt;rainer@kulhanek.de&gt;</maintainer>
+			<changed>2004-08-14T22:03:29</changed>
+			<country>Germany</country>
+			<city>Weilheim i. OB</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11164554446E32E889515479A5C71CAD3E068E20B99D7E904587A1458D0376E0D4BA98B6AD</stationID>
+			<name>Bayern 1</name>
+			<shortname>B 1</shortname>
+			<icon>/homelocal/rk/radiologo/b1.gif</icon>
+			<frequency>87.95</frequency>
+			<volumepreset>-0.01</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444FCA0CECB0463E139B1AEE736B2A0CCCDB2776710D1AE2BC2BB618931BC11EDC5</stationID>
+			<name>Bayern 2</name>
+			<shortname>BR 2</shortname>
+			<icon>/homelocal/rk/radiologo/b2.gif</icon>
+			<frequency>88.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447556AC60127E1A7BED58A0E4420A99153F04B7DF73ECE941B1918BB9618B8349</stationID>
+			<name>Bayern 3</name>
+			<shortname>BR 3</shortname>
+			<icon>/homelocal/rk/radiologo/b3.gif</icon>
+			<frequency>88.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554449DA5BA9671A32889B9B85F7F540373ACADB0588A56D71ED4498502FE204604B9</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname>BR 4</shortname>
+			<icon>/homelocal/rk/radiologo/b4.gif</icon>
+			<frequency>90.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F8E42AB6EBE9DB59191082CAD22EA4EBD6FB316B9F2203E1EFB31F7216B511FC</stationID>
+			<name>Bayern 5 aktuell</name>
+			<shortname>BR 5</shortname>
+			<icon>/homelocal/rk/radiologo/b5.gif</icon>
+			<frequency>91.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544407FC71D9C1A97D4A6089625B5759DE604964AC18B133CFFA27036B4DB32D777B</stationID>
+			<name>new station 5</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>92.1512</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444798B38A1588145CDE3CBD6932909AC2D5A986DCAA86346782A11C9CC99408307</stationID>
+			<name>Oesterreich 1</name>
+			<shortname>Oe1</shortname>
+			<icon>/homelocal/rk/radiologo/oe1.gif</icon>
+			<frequency>93.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442B1F648543C98ADD5DBFCB300C740754CE2D5C865BC133A07F8A462A3F520A62</stationID>
+			<name>new station 7</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>94.6514</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445C651386E4117806A69B36C5F4BA6A4E3802B6716E19D4860E185918B39A5659</stationID>
+			<name>new station 8</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>95.5764</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544426CE32C301CF3A26F3DCD46C148114439591BA572695A9136F5AE7AEE086E5A3</stationID>
+			<name>new station 9</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>96.1515</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445ECE301833269424DB45BBC961E1618F680F52D90637990692A23F54884FB4E2</stationID>
+			<name>new station 10</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>98.0766</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444CA1B4FA51A1D007D8C24B8CBF1172947CDC6FEF15904EBFB46ABD0115BEE5B04</stationID>
+			<name>new station 11</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>100.052</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447B3D9A1133FCC2B76C8403382242D4D0579D1A7A14BB9206AE9DD9D858D21056</stationID>
+			<name>new station 12</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>100.852</frequency>
+			<volumepreset>0.08</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447A354B16A7FC58F99C28318CD14BE9DFC5D65E417D32EE5C104FAB36D6253C2E</stationID>
+			<name>new station 13</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>101.752</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444617A443CAFE2C3DD8EC145151143C59F171B88CEE8524A1C1D9B26D119BF0798</stationID>
+			<name>new station 14</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>102.402</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554441A205BF12A09EAFE423A5FC7F473BD3A0D04E0D53738979650DA72AC0715BFED</stationID>
+			<name>new station 15</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>103.377</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DA1DD79C0391B0733F4770BEE21D1B7DDBA64F7EDF64B2D0654EBF74D3BE3A2C</stationID>
+			<name>new station 16</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>104.227</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DDB7088850EB0FB4260B67249F12647ED84BFAC4FB499FDEAC69CED123BA8514</stationID>
+			<name>new station 17</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>104.802</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444936E26720CDD679B1678AF91433E2808BDCF23B34A258A64E07EDF7EE540AD54</stationID>
+			<name>new station 18</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<frequency>105.627</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BBA173D1F394CBA111AEDC6D88DB7C9D2AAC25EBBC7858833468A09922615292</stationID>
+			<name>new station 19</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<frequency>107.027</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

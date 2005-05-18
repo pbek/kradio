@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Dennis Grofsmid &lt;d.k.grofsmid@student.rug.nl&gt;</maintainer>
+			<changed>2004-10-09T14:32:50</changed>
+			<country>Netherlands</country>
+			<city>Groningen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1116455444AAC217B8081A1A4A18A334865EBB865305244B5D0E49F47CB7C863C4E817FC1E</stationID>
+			<name>Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<icon></icon>
+			<frequency>96.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447987B0265831CD72CF2E4E184CE3D99A91A29C4705200618B6711FEACA6A13DC</stationID>
+			<name>Radio 2</name>
+			<shortname>Radio 2</shortname>
+			<icon></icon>
+			<frequency>95.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544462C3960C6DB7542A2AE806B798882C3963201039DD1BE8E2E526F3ADC6BBC388</stationID>
+			<name>Radio 3 FM</name>
+			<shortname>Radio 3 FM</shortname>
+			<icon></icon>
+			<frequency>98.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554440F61400C90A732F00BDBAE91A0B2B18B4F9A604E002E0C7E7AAC3C1772E4F5BB</stationID>
+			<name>Radio 4</name>
+			<shortname>Radio 4</shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544491C4B1BC10AE92BEB9D55EDB698CA57EECF0CC53006AE6D0C16BF9772D5D6D4C</stationID>
+			<name>Noordzee 100.7 FM</name>
+			<shortname>Noordzee 100.7 FM</shortname>
+			<icon></icon>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544459E6BE695243A6FC4493EC25D8715C9E1552E5FD16C92418926BAA89D8DC7296</stationID>
+			<name>Radio 10 Gold</name>
+			<shortname>Radio 10 Gold</shortname>
+			<icon></icon>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444406BADC1ED7F69F3361E49B5BB52BBA76E4A76B21D7851144D7CD81B944B40A5</stationID>
+			<name>Radio 538</name>
+			<shortname>Radio 538</shortname>
+			<icon></icon>
+			<frequency>93.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544464A5E7A01B61C2C2AF4E155ED2914C9D5949DD125990F671B5203B257705726E</stationID>
+			<name>Sky Radio</name>
+			<shortname>Sky Radio</shortname>
+			<icon></icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D83BB5C128198AB1D0020AE88625A08F761BE5E89517D8B56FA63D2C641B78BE</stationID>
+			<name>Radio Veronica</name>
+			<shortname>Radio Veronica</shortname>
+			<icon></icon>
+			<frequency>87.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B47BE79C14B2FC795BC163D49F1087B61EDBA3C117EB87A9A11F13685D7DC433</stationID>
+			<name>Yorin FM</name>
+			<shortname>Yorin FM</shortname>
+			<icon></icon>
+			<frequency>94</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BB35A56607E28ECD64CB5AD52E09683903E41F30A911F353ECF7BA90DA85E077</stationID>
+			<name>Radio Noord</name>
+			<shortname>Radio Noord</shortname>
+			<icon></icon>
+			<frequency>90.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444AEE987116890E1CE3C83B338261904A441D2D7F81390D3EB62DF2BD67D730D1E</stationID>
+			<name>OOG Radio</name>
+			<shortname>OOG Radio</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F33572796A2E20428891C8325E4D423EF5D5E86FE93D08BB360AB846978BC554</stationID>
+			<name>RTL FM</name>
+			<shortname>RTL FM</shortname>
+			<icon></icon>
+			<frequency>103.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544411F18A7EAC619DC7CC63D1C51B9CEA84AA542B6C97747769E801FC0F4176D36E</stationID>
+			<name>ID en T Radio</name>
+			<shortname>ID en T Radio</shortname>
+			<icon></icon>
+			<frequency>91.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544456F735CC2314E98E8C7B5A4F82054EE166AB2555F6819AB9D92F7710E8950147</stationID>
+			<name>Kink FM</name>
+			<shortname>Kink FM</shortname>
+			<icon></icon>
+			<frequency>89.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BF23634B258585BCF2CDC8047F229667693AEC8265CA7CECA285C7484DF88FF2</stationID>
+			<name>Classic FM</name>
+			<shortname>Classic FM</shortname>
+			<icon></icon>
+			<frequency>88.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444E08FC2803862952A64405DF9FB4CAA755A2AF89E8150A60F19AF98B6BC3B1423</stationID>
+			<name>Colorful Radio</name>
+			<shortname>Colorful Radio</shortname>
+			<icon></icon>
+			<frequency>0</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444E7C4DBA268E0ADBFD8316BB0684820A01774BF9F814B6AC1803CF47029C76EF1</stationID>
+			<name>Arrow Rock Radio</name>
+			<shortname>Arrow Rock Radio</shortname>
+			<icon></icon>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444767369511E68ACD3121555108FD93B60382615DD66A7C733243C8C6ED4EC9977</stationID>
+			<name>Radio Continu</name>
+			<shortname>Radio Continu</shortname>
+			<icon></icon>
+			<frequency>93.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554440FBA1F15CCCAA5F780329275212614321E32087657CC3DEA925FBFFF60C1DD9E</stationID>
+			<name>Rebecca Radio</name>
+			<shortname>Rebecca Radio</shortname>
+			<icon></icon>
+			<frequency>103.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544426070095702D5A7615EC923A14B8D7E9ADB80AFA6F4A9289C12292A0DD2A8107</stationID>
+			<name>F.I.P.</name>
+			<shortname>F.I.P.</shortname>
+			<icon></icon>
+			<frequency>91.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

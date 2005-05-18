@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Alexander Jesse, &lt;falco@kfn-ag.ch&gt;</maintainer>
+			<changed>2005-01-02T12:09:00</changed>
+			<country>Schweiz</country>
+			<city>Stansstad (NW)</city>
+			<media>Cable (KFN)</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1116455444C069D69FE1555A719ADA26F948052D2035EF7C1874BF1B5120F6AFF5415B1232</stationID>
+			<name>DRS 1 (Region NW)</name>
+			<shortname>DRS 1</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<frequency>92</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544468B1DFF1F93940FE2D66ADD88D89FA5FB1A9A9E948FE319B069B2B5DFAE878C1</stationID>
+			<name>DRS 1 (CH)</name>
+			<shortname>DRS 1 (CH)</shortname>
+			<icon></icon>
+			<frequency>103.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544477A0ACD964A44DE9FE9313E61896B35FA777F1892A86B535DE8F80C62B8CF40C</stationID>
+			<name>DRS 2</name>
+			<shortname>DRS 2</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<frequency>94.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445933253E7ABC23F447F5F43E52DB694254A4A07804F423E8E0876CC858996037</stationID>
+			<name>DRS 3</name>
+			<shortname>DRS 3</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<frequency>88.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444FFAC0EF5DC5C7CC0EDCFFD7313EAC13CEF2C0D911709E734C0396D87CCD7BDFA</stationID>
+			<name>RSI 1 (Rete 1)</name>
+			<shortname>ESI 1</shortname>
+			<icon></icon>
+			<frequency>102.55</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554444CCAE5E2A9070A5BD305EF816118513B5D0D2ECEDA00B544D5379B0F4D4E6EED</stationID>
+			<name>RSR 1</name>
+			<shortname>RSR 1</shortname>
+			<icon></icon>
+			<frequency>103</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447909BEE356D1C74D78040FD56D6F1325C3925B74DDA4CA329BD8BB1665089FDE</stationID>
+			<name>Radio Rumantsch</name>
+			<shortname>DRSR</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/rtr_ch.gif</icon>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444A35D50873D48A18A1CCDB2CB1879BC7AB684FF3996906E38DBA58A0A6E191F27</stationID>
+			<name>Radio Pilatus</name>
+			<shortname>Pilatus</shortname>
+			<icon></icon>
+			<frequency>93</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544433C8ADD40403CF1D40F12A04224081AD337463D831BF3D082C8A1DE8FB8920AB</stationID>
+			<name>Radio Sunshine</name>
+			<shortname>Sunshine</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/Sunshine.gif</icon>
+			<frequency>88</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BE9FA6A1F1B6970F0E4A891B45A1E812BEF36D8A0E3C66D3E8C331009B49E9AA</stationID>
+			<name>Radio Central</name>
+			<shortname>Central</shortname>
+			<icon></icon>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BF3CA819E76A6EFD65181E3A4FA0AAD53A434DE0619BE00145BE615843192FEE</stationID>
+			<name>Österreich 1</name>
+			<shortname>OE 1</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/oe1-logo.gif</icon>
+			<frequency>101.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445DBCD84ED68FF42CBC66721028B0F0AB665EC6D0AD66BBB2F0C541B12F9890BD</stationID>
+			<name>Österreich 3</name>
+			<shortname>OE 3</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/oe3-logo.gif</icon>
+			<frequency>97</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DD913BC52D667DF1D989C00AD09CEB42E6E0D6E10F14DE19DF30FBD76DAE055F</stationID>
+			<name>SWR 1 BW</name>
+			<shortname>SWR 1</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swr1.jpg</icon>
+			<frequency>99.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444929DB8D0FF062F1F9A721073C4904E5A5D502972D62F9EA61A3423D5BFAFC17A</stationID>
+			<name>SWR 2 BW</name>
+			<shortname>SWR 2</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swr2.jpg</icon>
+			<frequency>92.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444A6BEAE869288D44C9EAF00BA1E91A834C57A3858A29C10C03187D001197F01A8</stationID>
+			<name>SWR 3</name>
+			<shortname>SWR 3</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swr3.jpg</icon>
+			<frequency>98.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F7DAE078525BA65544545684781B5D70757FFFA23A1184F5638C042C036486E7</stationID>
+			<name>SWR 4 BW</name>
+			<shortname>SWR4</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swr4.jpg</icon>
+			<frequency>100.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D9590F24293E1AC2FE1014BEB7592F1833389F79ABCE29D22A5D9ACA890CEDA2</stationID>
+			<name>SWR 4 RLP</name>
+			<shortname>SWR 4 RLP</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swr4.jpg</icon>
+			<frequency>105.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444A74DB2DF57E25C73F75E4EC51BD5E4E00D6D783EDBCB4B508D4536583E98372C</stationID>
+			<name>Bayern 1</name>
+			<shortname>B 1</shortname>
+			<icon></icon>
+			<frequency>97.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554444128949C0701D14AFFC19C72DEFCD7F0B0DCF11D1A41CEC358DF83B450B30E17</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname>B 4</shortname>
+			<icon></icon>
+			<frequency>97.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445FE8A5A5B3B37A2C37EBC240CD7EF6F80820DCCAD66D8F43B2A0AEC09668ACA3</stationID>
+			<name>RTL Radio (Oldie)</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<frequency>104.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544429427CE1A09746CAB2574DFDED5FB7EBFD1F90B4FD9D44B2F0D7BB60980BE874</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DF</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442914D5EE760662C93522728BABE9EABB1DF3285B8E738BE9915B03ED2CBBB369</stationID>
+			<name>VIRUS</name>
+			<shortname>Virus</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<frequency>107</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554446BDCC24AFDB4728E904FCA08AE235D38BB45356223E977C177687032F1055BBF</stationID>
+			<name>Musigwälle 531</name>
+			<shortname>Musigwälle</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/drs_ch_logo.gif</icon>
+			<frequency>90</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444AD3992F884DAB8DFDE0E51837E349976662D57C8232BD39701A0897D5EB20C54</stationID>
+			<name>Radio Swiss Classic</name>
+			<shortname>RSC</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swissclasic.jpg</icon>
+			<frequency>106.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554441649AC975A72B90D1F8B12B6902FADA2D3AECFD39AD3AA30EB901D06ECA094D0</stationID>
+			<name>Radio Swiss Pop</name>
+			<shortname>RSP</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swisspop.jpg</icon>
+			<frequency>106.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544408670CFB0ADAC63B71CFE99524027DE1CD30BD9BE6304E5AEF51C93353ADBD02</stationID>
+			<name>Radio Swiss Jazz</name>
+			<shortname>RSJ</shortname>
+			<icon>/home/dieter/.kde/share/apps/kradio/swissjazz.jpg</icon>
+			<frequency>106.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554443CE7F6CCA25715B7D3C0BE9191AA6B1A033A98359FC92BAA6255659721EB2524</stationID>
+			<name>France Culture</name>
+			<shortname>Fr C</shortname>
+			<icon></icon>
+			<frequency>101.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D3CAC4719FE37CB692D9FA94C34F1B67986A20D6076B9311437021EA2074DC09</stationID>
+			<name>France Inter</name>
+			<shortname>Fr I</shortname>
+			<icon></icon>
+			<frequency>102.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554446A473FF3F50F4EF394635F46823109681138E04184814B1D5BD730D2984520B9</stationID>
+			<name>France Musique</name>
+			<shortname>Fe M</shortname>
+			<icon></icon>
+			<frequency>98.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444E03607226AE799AB0E5A9D4DE06C07983EE0049A5E64C90E759077277456021B</stationID>
+			<name>Network</name>
+			<shortname>Network</shortname>
+			<icon></icon>
+			<frequency>100.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445FAC226A90E577AB5BDDF313A7F621A72A6752B012C45594F6E77F4B588D8D8F</stationID>
+			<name>3-Fach</name>
+			<shortname>3-Fach</shortname>
+			<icon></icon>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444A06ABA83B1AE142AB7D7E6BE8664181F454573E5AB4897C7C9E07AFCB5F73815</stationID>
+			<name>AFN Stuttgart</name>
+			<shortname>AFN</shortname>
+			<icon></icon>
+			<frequency>100.15</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BEF29549A1C6F1D8C3607058BE96BE2558EDC05A0CAEFA6F74A9430D354CF658</stationID>
+			<name>BBC World Service</name>
+			<shortname>BBC</shortname>
+			<icon></icon>
+			<frequency>104</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554441FE07836322741EEFE9472590ABB27C2FC1760356737352D8A5AFB42E3E356EE</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>D</shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554444DDE9B7255F6A05081905DCC5AE2FBE28D3D8DCA26155E7B5E00C91D6C96DB59</stationID>
+			<name>evviva</name>
+			<shortname>evviva</shortname>
+			<icon></icon>
+			<frequency>105.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444AF59F05B523A29C5A9B5B02D758D94A2F29EED965AE99004BF9145B55FC12166</stationID>
+			<name>Radio Horeb</name>
+			<shortname>Horeb</shortname>
+			<icon></icon>
+			<frequency>107.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554448B8E0B3E47A2232199D7EC28FFE875AFD40D2C3249AE623BBA21880FAA7BBC19</stationID>
+			<name>Radio Melodie</name>
+			<shortname>Melodie</shortname>
+			<icon></icon>
+			<frequency>104.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554441EC4F33CE3D2F634C23992A7EB5099FE461E469D7FE70ED0B921112114A76D59</stationID>
+			<name>Reserve</name>
+			<shortname>Reserve</shortname>
+			<icon></icon>
+			<frequency>104.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DC63A2D67603FF49020127D4B8DADA05FF5FB51C1951E6B8125B038382FDE667</stationID>
+			<name>Reserve</name>
+			<shortname>Reserve</shortname>
+			<icon></icon>
+			<frequency>107.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

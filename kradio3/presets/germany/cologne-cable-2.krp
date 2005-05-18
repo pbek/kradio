@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Torsten Kleinz, &lt;torsten.kleinz@web.de&gt;</maintainer>
+			<changed>Feb 25th, 2005</changed>
+			<country>Germany</country>
+			<city>Cologne</city>
+			<media>Cable</media>
+			<comments>Netcologne Multikabel</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1116455444CE9F7B81EA9432FAF8672A7AE7581F4A96B9CFD1540C34BB21937E50C24E094E</stationID>
+			<name>1Live</name>
+			<shortname>1Live</shortname>
+			<icon></icon>
+			<frequency>99.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444FB385BD69C846052D7B784AC66CC7CB5DE4A73992C923CA2FFE8FEFCE8855E0C</stationID>
+			<name>WDR2</name>
+			<shortname>WDR2</shortname>
+			<icon></icon>
+			<frequency>98.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544447A9517A85ADEA3E54BC30854754DC51B46F0B761D103849DD78C3C7CB12D75A</stationID>
+			<name>WDR3</name>
+			<shortname>WDR3</shortname>
+			<icon></icon>
+			<frequency>94.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544494A877244A82EFEE3C4815D05DE7440AC889C6C31B37E8ECA873920F96FB7F43</stationID>
+			<name>WDR4</name>
+			<shortname>WDR4</shortname>
+			<icon></icon>
+			<frequency>91.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544430055FF0D19F89075684F434E45F0B103A1F087191439F772E0C48507E83A4FF</stationID>
+			<name>WDR Radio 5</name>
+			<shortname>WDR 5</shortname>
+			<icon></icon>
+			<frequency>95.35</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B169AB25095D1C964275D5A367763454D0CF6C49621A73B9FE1CBAEC502DD721</stationID>
+			<name>WDR Funkhaus Europa</name>
+			<shortname>WDR5 - FH</shortname>
+			<icon></icon>
+			<frequency>91.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544480B51626DD3FC823C76528719E9719EF9963C935952BDC82FF9634D771D77259</stationID>
+			<name>SWR1</name>
+			<shortname>SWR1</shortname>
+			<icon></icon>
+			<frequency>87.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544439E0DA5B46DC74C1D5ACD20E4DA28DE08F16E4C8D75D5A140632D55ACD624931</stationID>
+			<name>S2 Kultur</name>
+			<shortname>S2</shortname>
+			<icon></icon>
+			<frequency>90.85</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554444BDC0951D31A0878BB10C213B1AC5449CB7E7F92D1C97DA2A047385254268496</stationID>
+			<name>SWR3</name>
+			<shortname>SWR3</shortname>
+			<icon></icon>
+			<frequency>103.95</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544429DA863632617DC15A9B6DCD977EDE585AB92574E324DED342B2A6F20DE541FD</stationID>
+			<name>SWR4</name>
+			<shortname>SWR4</shortname>
+			<icon></icon>
+			<frequency>88.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F02E89EBEA86B22579E0AD3E0CF1C49D4AC2CE310603F1F7BDCB129CA1D11630</stationID>
+			<name>RPR1</name>
+			<shortname>RPR1</shortname>
+			<icon></icon>
+			<frequency>103.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442B8B6E4815824FE01308DF45F8DD25CD022DC1191270491390C0E965A6A9B037</stationID>
+			<name>bigFM</name>
+			<shortname>bigFM</shortname>
+			<icon></icon>
+			<frequency>107.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447B34DFB2869E6E477E322A989AC099D6923E2F9821A96D2D6F52A3D7DAA62E2C</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<frequency>102.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444762EF11A39EFE2BA3F901391F5AC2F21BAC8FEBFBB3C993EFE2810E5D76A3145</stationID>
+			<name>Radio Koeln</name>
+			<shortname>Koeln</shortname>
+			<icon></icon>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447FC2B67B6287665C5D5D053FA281CEA307C932D87084494D7741681B717C21E9</stationID>
+			<name>Radio Erft</name>
+			<shortname>Erft</shortname>
+			<icon></icon>
+			<frequency>105.45</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444500E9CEDEFEE152F50E7D97354D6B1CD5AC89AFABA78416EF1F56D62EC04C0C8</stationID>
+			<name>BFBS</name>
+			<shortname>BFBS</shortname>
+			<icon></icon>
+			<frequency>103.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

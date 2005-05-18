@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+		<format>kradio-1.0</format>
+        <info>
+            <maintainer>Reiner Pröls, &lt;Reiner.Proels@laposte.net&gt;</maintainer>
+            <changed>2005-05-07T22:46:35</changed>
+            <country>Germany</country>
+            <city>Munich</city>
+            <media></media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+			<stationID>1116455444864CE630BF6D8BAC5769C243E58B67081F296EFF4EECB69B13E6338A5F29FF99</stationID>
+            <name>BR 1</name>
+            <shortname>BR1</shortname>
+            <icon></icon>
+            <frequency>92.95</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554446C6C06607774C78F2879734DD8A4B4B9E48B72B61E79F66344BF0F0795BC10B7</stationID>
+            <name>BR 2</name>
+            <shortname>BR 2</shortname>
+            <icon></icon>
+            <frequency>92.25</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1116455444D56CD42DBC7E0CEB3D901961B5023483C16763ED9D11D0B98F6F424325287DBD</stationID>
+            <name>BR 3</name>
+            <shortname>BR 3</shortname>
+            <icon></icon>
+            <frequency>92.5625</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554448F4A2C2E1247DEA4E8FEF8CC21B510A2EE249DB75DD02965584E36FE4967C075</stationID>
+            <name>BR 4</name>
+            <shortname>BR 4</shortname>
+            <icon></icon>
+            <frequency>91</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>111645544420499D528619044A5BD4F21D26FF229CECC50F5CE6B94A4BD7BEE7A64D1E7892</stationID>
+            <name>BR 5</name>
+            <shortname>BR 5</shortname>
+            <icon></icon>
+            <frequency>90.5625</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554441231405E8CB4CB3F2DD245D92A127379BCC115B281D37F16ABBB578187FD1D60</stationID>
+            <name>Arabella</name>
+            <shortname>Arabella</shortname>
+            <icon></icon>
+            <frequency>98.75</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554447CDCD88670C99D5B84723C7A01314CE3011F4D0C00A91FB5E6AADD685845E36F</stationID>
+            <name>Charivari</name>
+            <shortname>Charivari</shortname>
+            <icon></icon>
+            <frequency>97.8125</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554446B046F7255BC0ECC70BB243776140F6E3BCCB7B40C6CF3B260D3B434DF297E21</stationID>
+            <name>Energy</name>
+            <shortname>Energy</shortname>
+            <icon></icon>
+            <frequency>97.0625</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1116455444D4B7C446B6FBB67B0A427D13261792D96295B1DA8787EC366BD3B0AF2B16AFF7</stationID>
+            <name>Antenne Bayern</name>
+            <shortname>Antenne Bayern</shortname>
+            <icon></icon>
+            <frequency>99.9</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>111645544421EC88B96E9E7D19F7383244D4944A6A861FC7E1EF333EECB32D364121B23E0E</stationID>
+            <name>Gong</name>
+            <shortname>Gong</shortname>
+            <icon></icon>
+            <frequency>96.25</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554446621953767E70C63C7A03AA305A8D6E4D9AB79BEB90C42255D62F2ADF1CF2DBF</stationID>
+            <name>Radio Klassik</name>
+            <shortname>Radio Klassik</shortname>
+            <icon></icon>
+            <frequency>107.625</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>1116455444CCF78BBBB1213B03FEEF20AD8E7D3397F50E62FFD7A3B93DABB9A88FF62B272C</stationID>
+            <name>OE 1</name>
+            <shortname>OE 1</shortname>
+            <icon></icon>
+            <frequency>87.875</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554444305644E3B647A15E2CC9522FFFEC3907A357C6E9735880BE2E337AECE41124E</stationID>
+            <name>Salzburg</name>
+            <shortname>Salzburg</shortname>
+            <icon></icon>
+            <frequency>88.25</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554444632FF61769D0FA4018D65A072F3B3B3635B2A339A31AAD69BDB4C7EAFDE028A</stationID>
+            <name>OE 3</name>
+            <shortname>OE 3</shortname>
+            <icon></icon>
+            <frequency>88.75</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+			<stationID>11164554440F030BDC7C9856055A11A487292262D964A09DCAC9DE814C5204DCE20C6FF650</stationID>
+            <name>NOVA</name>
+            <shortname>NOVA</shortname>
+            <icon></icon>
+            <frequency>94.1875</frequency>
+            <volumepreset>-1</volumepreset>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>

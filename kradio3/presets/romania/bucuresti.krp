@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Mishu Mancas, &lt;mishu.mancas@home.ro&gt;</maintainer>
+			<changed>2004-11-27T16:40:29</changed>
+			<country>Romania</country>
+			<city>Bucuresti</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11164554441EAA3C6620F245F3C39F9BA4D8475F368AAC384FCA520954566D6D416080A2B3</stationID>
+			<name>National FM</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>91.6875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B7AD6B6443F8B6CC44442CC44D8E4CAD9CBAA6AFB5E415DE3548C1CEF8D1F6B0</stationID>
+			<name>Fun Radio</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>94.1875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544418D6C3F612F8FA55210D0471DEAEEC4DC479C06A7D0DE69D76D18988C1D35CC7</stationID>
+			<name>new station 4</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<frequency>94.8125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444723F70FD93F1EF11D0389AE39AD8D9B266C738704504EBCB9BD8D73DC4384B38</stationID>
+			<name>Kiss Fm</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>96.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544405A40885C1CDEC8B2B88A576581964114376B4F0E504D3CC6C56A1B60629C30E</stationID>
+			<name>Radio Total</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>96.9375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444972E44EDF8F9F1FD08BA22517FE4493373AC199DEEBF2D0CFD734479F95C5941</stationID>
+			<name>new station 6</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>98.3125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554441CDFC17D764E5239CB1055704C22F3BBBC819519E7DA254F7BCAABABAA5849E9</stationID>
+			<name>Radio Star</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>99.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554444ED5F09FE08D5522B908510F44815A3E6680768109F3B17838EDEFFBE7A79E1A</stationID>
+			<name>Radio 21</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>100.188</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544459D47B1E736C54A30356994AE5132F4CA3DED07030B8135D3FBEF0064990AD65</stationID>
+			<name>new station 9</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>101.312</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554443B1FF0E74C42C04A431B507616ACD261F03100C174ABDD563A7CEC1220A2BE1B</stationID>
+			<name>new station 10</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>101.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544463F4ED604CBB6B58B63C9A8E09CBC0B596B523960395AC94AA22BC1F0DC75C31</stationID>
+			<name>Pro Fm</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<frequency>102.812</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F287C35AF3F29767E9668B3275E12ADE1C231C1BF5F10288BD23A8F265E37AAA</stationID>
+			<name>new station 12</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>105.312</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BC65CAF011BBDEB4F038C4E2F37602BA45C1FBC520AAB70B29117151A8369A9A</stationID>
+			<name>City FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>106.188</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444FEE2685B4BC44BDD8C596569BC478E31317D790663C98CE613CB2394C763DE75</stationID>
+			<name>Europa FM</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<frequency>106.688</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Thomas Betker, &lt;thomas.betker@freenet.de&gt;</maintainer>
+			<changed>2005-02-13T17:00:00</changed>
+			<country>Germany</country>
+			<city>München</city>
+			<media>antenna</media>
+			<comments>frequencies taken from http://www.muenchen.de</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11164554443B62494408466C87E10D72AF5F168C3F1E40FDDC10289F847118CACF404FC45F</stationID>
+			<name>Bayern 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>88.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444FE41BBF52D2FCDE2B2548374C026722B3EF584F59F418022EC68F536DC90FA05</stationID>
+			<name>Radio2Day / Rundfunk Neues Europa</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>89</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442E31D7B1DC156F656DB47D3E85C3859C1391ACE7D6C94355D285E05A163A2368</stationID>
+			<name>B5 aktuell</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>90</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554440B1BAC789AEC29ED78E283924B545074BAE05FB87F1A1FAF3599FAC501FAAB27</stationID>
+			<name>Bayern 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554440B468B128F27AD63BEC5B3D0D610AB94B179A604410320B857159AE5181CB58E</stationID>
+			<name>Radio Feierwerk / LoRa</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>92.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442400BA291248EDE7F8D36599D42AE0F5B3DF1AC639FEBA24CB285FA7F79B6FB1</stationID>
+			<name>Radio Energy (NRJ)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444CF99E4B66B4E64A707AA7CFF356983D32E542F1871A5AA249516E0A1E99681FC</stationID>
+			<name>M 94,5 (Aus- und Fortbildungskanal)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>94.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554446CFDA64A956DDC6F05CC4D8FF66ABB85EE494B23637C192CEFA20D4B224D8C76</stationID>
+			<name>Radio Charivari</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BE34BA09F91ECE8885C50AD2D87EF5FBA6118BD372FE9A5410D330333247B77C</stationID>
+			<name>Radio Gong 96,3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>96.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544485103FC4378563476FA2D9301C5F4D49FDF67F89271112C87BB7B7ABA46BB871</stationID>
+			<name>Deutschlandradio Berlin</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>96.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544479450443C4150C617CDC534D27372477DED16162E53F43590203A132314AD758</stationID>
+			<name>Bayern 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>97.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444556EC0712462820CA4DE1B5E3DAE830E85566D3E44834ECA0B64C5FE796792BB</stationID>
+			<name>Radio Arabella</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>100.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D6BA0E8C6902A3C7413ACAE00CCAB7C0C0AA775121F82DC6421E8A827F5D5580</stationID>
+			<name>Antenne Bayern</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>101.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F6BE17786DDE22F46A47EBD8ED5651CEB7F6B73C24B98362EEAAA82678DD1E1C</stationID>
+			<name>Deutschlandfunk Köln</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>101.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D1BDB4D89A706161ED6D9A3C6DEB8BBEA38D66C9EA73C14DFFE65C259AA4C875</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>102.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544457B171673EBAFF9C721CA837633B07DBB465F88D03BAFF8BE1F029D298DB8986</stationID>
+			<name>Radio Melodie</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>104</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447BCAFAEA21FDE96D691FED5CE0F67ACC3D87A15D83AA31393A057C9973CA6519</stationID>
+			<name>Klassik Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>107.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

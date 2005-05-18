@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Radoslaw Wicik, &lt;roc@wicik.pl&gt;</maintainer>
+			<changed>czw gru  9 12:45:28 CET 2004</changed>
+			<country>Poland</country>
+			<city>Warsaw</city>
+			<media>AsterCity</media>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1</stationID>
+			<name>Radio Praga</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>2</stationID>
+			<name>RFI</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>3</stationID>
+			<name>Voice of America - Europe</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>4</stationID>
+			<name>PR Program 1</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>5</stationID>
+			<name>Radio Klasyka</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>6</stationID>
+			<name>Radio 94</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>7</stationID>
+			<name>Radio PIN</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>8</stationID>
+			<name>Radio Plus</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>9</stationID>
+			<name>Radio TOK FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10</stationID>
+			<name>Radio Bis</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11</stationID>
+			<name>Radio Kolor</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12</stationID>
+			<name>Radio Jazz</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13</stationID>
+			<name>Radio Polonia</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>14</stationID>
+			<name>Radio Dla Ciebie</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>15</stationID>
+			<name>Deutsche Welle</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>16</stationID>
+			<name>Radio Zet</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>17</stationID>
+			<name>Radiostacja</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>18</stationID>
+			<name>Radio Eska</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>19</stationID>
+			<name>France Inter</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>20</stationID>
+			<name>Radio Maryja</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>21</stationID>
+			<name>PR Program 3 - Trójka</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>22</stationID>
+			<name>Radio Pogoda</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>23</stationID>
+			<name>PR Program 2</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>24</stationID>
+			<name>Radio Wawa</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>25</stationID>
+			<name>Rock Radio Mazowsze</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>26</stationID>
+			<name>GOLD FM</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>27</stationID>
+			<name>RMF FM</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>28</stationID>
+			<name>RMF Classic</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.8</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

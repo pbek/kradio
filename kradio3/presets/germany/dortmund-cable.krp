@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Bernhard Schumacher &lt;berschu@sagor.prima.de&gt;</maintainer>
+			<changed>2004-10-11T13:24:56</changed>
+			<country>Germany</country>
+			<city>Dortmund</city>
+			<media>Kabel</media>
+			<comments>ish</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11164554447D3D6B8D1FA931852E642735D6B2DBFB787D517DB5251ED519BA521D07B1688A</stationID>
+			<name>Deutschland Radio</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<frequency>88</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544491D8330DD623EB1DF94047AA7825CBFD5D90DC3D60B8B610A1532DD670D1F56C</stationID>
+			<name>eldoradio</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<frequency>88.4375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444C448DF2BD54FA227CC3D909CA2F6F9F67317F7195987BCA706A5F0ECD86ED69F</stationID>
+			<name>shunshine</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<frequency>89.0625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444A7D73716E6B5EF8C3162B0B89F6C0F0B483CCE87CDC96511E155C0F3A3CDAB7C</stationID>
+			<name>klassik radio</name>
+			<shortname>klassik radio</shortname>
+			<icon></icon>
+			<frequency>89.9375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444C53727AEDC55E3FFFA352818A3F9BA2D6851C6636A71E9DAB7893BF24359E3B6</stationID>
+			<name>radio melodie</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<frequency>90.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B5DC68AFDB5FE43CBAC50FBB6057542DDA63449BFB3F1927CBE84538E875E4E3</stationID>
+			<name>radio 91,2</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<frequency>92.1875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F2C47215A4554CCF4382215FB5550B4A00D7194F6BA90860AF8E640BD3DAC682</stationID>
+			<name>deutschlandfunk</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<frequency>93.6875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554444FC972106E7CE648927C2FB5D14AD4D99963D9D4102DCFC713726C053F6D16D9</stationID>
+			<name>radio fiv</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<frequency>94</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447F86A7577DDD7A882321A3059D0056EFAF1DEB9EF2B7CAE9D6223117E18D08A6</stationID>
+			<name>wdr 5</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<frequency>94.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444C6919FEFAA0492B80A1CC556410D47ABB2BF08AA9982306EC546D38D8D629A2A</stationID>
+			<name>wdr 5 europa</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<frequency>95.3125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544485753B4FAE48B549A8650F81A07762B92B3F7F295D9223A74DEE933AF995D5B7</stationID>
+			<name>wdr 2</name>
+			<shortname>wdr 2</shortname>
+			<icon></icon>
+			<frequency>96</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445B24F4C46285E1C6CD287D852EBCA97CA3E7886FD8398778AA3C2AA16DB83F88</stationID>
+			<name>wdr 3</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<frequency>96.8125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554449845A5FB1B6C0602323B51A400C3B6F2C40996304C61E27D711582BFD456F841</stationID>
+			<name>wdr 4</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<frequency>97.1875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444666E67224C8C66647EE3F772DA9D364646643412315A838C67C696A1BA42962D</stationID>
+			<name>eins life</name>
+			<shortname>eins life</shortname>
+			<icon></icon>
+			<frequency>97.75</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544463635218CB945B9378A3993AB876722B04FBAF3BBED9B5F767CD3A0BD3208807</stationID>
+			<name>hr 1</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<frequency>98.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DB9A8504AD56D9293DC456BA430E179A92E708B75D3BC41390380F8847C30947</stationID>
+			<name>hr 2</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<frequency>98.875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442C5B21D391A76140A63D72B9953905C54F74EE5A7AC6635F4420E007C53B1964</stationID>
+			<name>hr 3</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554448760BCBD26A964D021AAE0CBDADEF0502F32569DA5781473F8FC87A3EB0EC9C1</stationID>
+			<name>jam fm</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<frequency>101.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444A4ADBC86C612DEA3BD301B8933DF841E0A437786AB7BB954E1D06050BF5652B4</stationID>
+			<name>swr 4</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<frequency>102.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444834F0425797B1318A704F496217991BA6F7DB186F168F679FF13049556591930</stationID>
+			<name>swr 3</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<frequency>103.188</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544439165598F0F86482E9C6ABD57C5DB603DD6BBEBE31A87A55B1F24D652A8A1AA7</stationID>
+			<name>ndr 1</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<frequency>103.688</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554448767BC6600F043FD04678B5388F35AF0A542E1FDF5FB8CE65F4BD6539F247293</stationID>
+			<name>ndr 2</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<frequency>104</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444590A69471C4E8888991CE905B0BF577C6992493EE297BAFE29CB2A36C30556BA</stationID>
+			<name>ndr kultur</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<frequency>105.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444881AD3A87AA68D34DA4C0FEE01D001491DB54DE978D37C8FA5FD52F08D1FCD34</stationID>
+			<name>fm3</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<frequency>106.375</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554443E5D0534682AF5DA294E980394873CC48D39B8EC74B92B48BF1C23600840D146</stationID>
+			<name>radio 2</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<frequency>107.25</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DC67C7F10026EA313B593285A4F811E56B81F7EB96936BF83667C528F09D5CDF</stationID>
+			<name>bfbs</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<frequency>107.688</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

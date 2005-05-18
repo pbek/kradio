@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Scott Gow &lt;sc0tt_g0w@hotmail.com&gt;</maintainer>
+			<changed>2004-08-21T12:16:57</changed>
+			<country>Australia</country>
+			<city>Sydney</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1093054555EC27A416037A668A8A27C5D679B6BE97DB8DA20A7728D26F969F927AD7052607</stationID>
+			<name>ABC Classic FM</name>
+			<shortname>2ABCFM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093256895C0DA908206434299C6CB61218AA6985541B49E11DA3A4F64A34C9AA9832F7B7A</stationID>
+			<name>fbi 94.5</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10930545595D4AC0788F72BFEAC7C9170407721D728384262FEF3144FB9FE94A7F6C3EDFA7</stationID>
+			<name>Nova</name>
+			<shortname>2</shortname>
+			<icon>/home/scott/Documents/96.94.gif</icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.901</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093054561E7681B0B607025F49E6FB2182ADF1D0FA5FBF716009DF92BF6CFC93325DB1ED7</stationID>
+			<name>SBS Radio 2</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>97.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093054565022FBAC6BFF8F389BEDD6CAD53D5C3EDDCB3FE2E5C2DAB8827C5650628D3BF45</stationID>
+			<name>WS FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.696</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093054567EB707C8420E0B4BDC50A757CE145DD018C98F571E4D63FFD46202ED28638AED0</stationID>
+			<name>2MBS FM</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093054567EDF468D9201DFF21BB0009E4869399699802F9DC72F4188C288E57834945D029</stationID>
+			<name>FM103.2</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.226</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093054569521EE396B76BB2E7DBD983072D3408144B2184153201F93AD6A70F3F0419B4F6</stationID>
+			<name>2 Day</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093054570E36132422E2297F4D4DF6AAADB2C99BBA4CE6355DBA377F98EC629EBADCB430B</stationID>
+			<name>Triple M</name>
+			<shortname>8</shortname>
+			<icon>/home/scott/Documents/Triple M Logo.jpg</icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>104.951</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093054571858266DF06860A250FAC50CD7B020C2167FB96D63E689FB8A5A9FDB2312A03D9</stationID>
+			<name>Triple J</name>
+			<shortname>9</shortname>
+			<icon>/home/scott/Documents/Triple J.gif</icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>105.706</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1093254455E652DCC02898AD7F1ED6C08322E9710019EFC8C629587F7EC2CFF7DB9196A41A</stationID>
+			<name>Mix</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>106.5</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

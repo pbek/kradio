@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Alexey Kouznetsov, &lt;AlexeyKouznetsov@Rambler.ru&gt;</maintainer>
+			<changed>2005-03-30T13:23:16</changed>
+			<country>Russian Federation</country>
+			<city>Saint-Petersburg</city>
+			<media>Antenna</media>
+			<comments>Помните, что в России вещание с ЧМ ведётся начиная с 66 МГц.</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11121876938BB12EE3257CD610568CA6AD973AA44F586D2ACCC0011546A7EC9C47289087AC</stationID>
+			<name>Маяк</name>
+			<shortname>Маяк</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>67.4501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110547059728DE8A3586D7DF0399E1970652D6D8690666B4DAB21EB488FB434EA9D333794B</stationID>
+			<name>Love Radio</name>
+			<shortname>Love Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>68.23</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11121702623FA8B97EFEFD489CF80A5FE5BA3BCF43587ACAEE8A67813A34156E45F9480205</stationID>
+			<name>Радио Хит</name>
+			<shortname>Радио Хит</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>68.6752</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111216980695F5B37B8C53648B2D39F64D7683282138BF15AFF803F4FCE9E4F51070330787</stationID>
+			<name>Полдень</name>
+			<shortname>Полдень</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>69.57</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1112170157846DDD0AA4F0E1EDDA3A9CBF118A0FD155DC485C0DF8DB07600FD6C36DC1DA3B</stationID>
+			<name>Радио &quot;Свобода&quot;</name>
+			<shortname>Радио &quot;Свобода&quot;</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>71.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11121701934C708371FFF9AAC99960C21EB9BDDA1836C15A72D44C359964B204FE7B95BAF7</stationID>
+			<name>Ретро FM</name>
+			<shortname>Ретро FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>71.65</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11054705973E9C1D4F7586C3F68622648E824214743ADDA1376251BC2462C534FE3D025CF6</stationID>
+			<name>Наше Радио</name>
+			<shortname>Наше Радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>72.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1112171255D3AF2E3438AF6660A835025F405903ECE89D4FA7FF99A9405E862AF21BD985C5</stationID>
+			<name>Европа +</name>
+			<shortname>Европа +</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>72.7501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597BB02CDAE9220024C5436974F1E8DE6DE146015810E61C3ACFDD9E6BA27178C53</stationID>
+			<name>Мелодия - нижний канал</name>
+			<shortname>Мелодия - нижний канал</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>73.12</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11054705977FBCDEDEA20F710A6A804F13E4862547B84F4DD3E3B1;2cEC41BA90D66C9F86811CF</stationID>
+			<name>Максимум</name>
+			<shortname>Максимум</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>73.875</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11121710793DCA5BDCB3C9882FF6DA15765425E4A3782314FF80866A1B353586ACA021B233</stationID>
+			<name>3-й ТВ канал</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>83.7622</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597C7E497AC0513B73F242F2B89910C77139825A69B61152A15FDDDA3CD96D5A48A</stationID>
+			<name>Ретро FM</name>
+			<shortname>Ретро FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>1;2c1;2c
+			<frequency>88</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597ED7402F796DD7A1438DFA2C82403320E04136E10CAEBE5AD9416DAA11F7952FE</stationID>
+			<name>АвтоРадио</name>
+			<shortname>АвтоРадио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.4375</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597A8B2E12CE04102623DA238173A6E54E12D6C3EF259565F2DDEFF9BBAB98F99A7</stationID>
+			<name>Радио Классика</name>
+			<shortname>Радио Классика</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.9375</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1112122070F54A8064A0C11E70C58A7DE5FC70A6EBA169185CEA7C7AD7460C7A72BDB88D54</stationID>
+			<name>Радио Хит</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597123AF7ACE84D96D33F38E366B198DE91D00221755749E09F164A8A094757A7BD</stationID>
+			<name>Радио Эрмитаж</name>
+			<shortname>Радио Эрмитаж</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.125</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110547059798744F66BBB508B630A55F7CB5C84AFB7A77CBAE07901955531A2ED27DF08E8B</stationID>
+			<name>Мелодия - верхний канал</name>
+			<shortname>Мелодия - верхний канал</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11054705971B2C3D2CAC635A64E6D502E3B6C916DA99CB0054A7AD34654516DEDFFAE2CA3A</stationID>
+			<name>Эхо Москвы</name>
+			<shortname>Эхо Москвы</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.5625</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110547059753F17988EAC372424115681CC5A50D225F13B826F92192D2B5FCB2B3F7153D50</stationID>
+			<name>Европа +</name>
+			<shortname>Европа +</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.562</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110547059778AED6E00EB7F86E5E5E471CD09811F1518577971ED8DEBF60289FDA9282976C</stationID>
+			<name>Русский Шансон</name>
+			<shortname>Русский Шансон</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.938</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597FDB53E7CCFE1736A7FC6DD31155BCB92E42751571A0169373EC16EC1AFC8015F</stationID>
+			<name>Эльдорадио</name>
+			<shortname>Эльдорадио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.438</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11054705978708D6CE190C42C1F232D326BED3B72B11889C8129C05AAF426739C5A97EBEED</stationID>
+			<name>Radio rocks</name>
+			<shortname>Radio rocks</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110547059710A171707221D581E7682E574FAC017D18BDB8A40B151E3C4C71A76289042B48</stationID>
+			<name>Radio studio</name>
+			<shortname>Radio studio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.438</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110547059714E6B53197BB3E1380E7E4F53DEFAC38CA4582C11B127BE258E24C1270CCA917</stationID>
+			<name>Максимум</name>
+			<shortname>Максимум</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.875</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597F9BD91D0F966FE89AF09C4806DD6497D378F19AC55123BF5C11D811B52C59204</stationID>
+			<name>Динамит FM</name>
+			<shortname>Динамит FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.438</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597139BA2B060E84C80067C0A577BA93143881A6D9ADF6E84E618E7945A9655182D</stationID>
+			<name>Наше радио</name>
+			<shortname>Наше радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.062</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11054705974E8AFE1AC53CE2B727092671FEB52D39B7059FDF8E7E736C5B7A97EC90BD9AFA</stationID>
+			<name>Радио Шансон</name>
+			<shortname>Радио Шансон</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.438</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597B48C1356BE8036F3E06F0AB71DA0AE5584EB50B25F15C0C14791E78960134051</stationID>
+			<name>Радио Балтика</name>
+			<shortname>Радио Балтика</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.812</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11054705973842507744F436921A7CAC01996EC77833FE32596AF416C610945D477F7EACDB</stationID>
+			<name>Love Radio</name>
+			<shortname>Love Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597B177A15F3D7B08D1AF6B73D96A8E5642316905C2D6F89371462BD2904D96669C</stationID>
+			<name>Радио Спутник</name>
+			<shortname>Радио Спутник</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.875</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597C2C65712FCDF46B96A55F16F6BDD3F4504793BDCF8157D6F128E5C7F14769ADE</stationID>
+			<name>Радио Рекорд</name>
+			<shortname>Радио Рекорд</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1105470597B176375C1049D536655F088F72ACF48BF71B703248F7A6F6C08D7E2C9B8BB23C</stationID>
+			<name>Маяк</name>
+			<shortname>Маяк</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1112171702E503AC6CD15EF0CDCCFB64D95CC5828159EAAB77270FEA10DB8AB015221DE758</stationID>
+			<name>Ленинград</name>
+			<shortname>Ленинград</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110547059793580BCACD5D2C429E38A4DA17C44745BE9DDE18FD37F8427C3102957DB5084A</stationID>
+			<name>Русское Радио</name>
+			<shortname>Русское Радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.812</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

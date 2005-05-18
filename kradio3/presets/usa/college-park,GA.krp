@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Rodney Ricks, &lt;rsricks@bellsouth.net&gt;</maintainer>
+			<changed>2005-03-27T12:35:32</changed>
+			<country>United States</country>
+			<city>College Park, GA</city>
+			<media></media>
+			<comments>Not all Metro Atlanta stations are included, just those that have 
+a strong signal in Zip Code 30349.</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1116455444C9422304B5360CB65429F4A002AD3C71A5EFBD5160FBFD272863FFC20BD8ADC1</stationID>
+			<name>WRAS Georgia State University - Alternative</name>
+			<shortname>WRAS</shortname>
+			<icon></icon>
+			<frequency>88.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544490F02F5DF861E909C06089BAD7E6F2403C347A584392BD4C973447754A2F0A31</stationID>
+			<name>WRFG Radio Free Georgia - Progressive</name>
+			<shortname>WRFG</shortname>
+			<icon></icon>
+			<frequency>89.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447F92BA1F34DD4A9079B9EE6E5FB56F8527ED9B0506A3DAE8ACD5CF061718B9B2</stationID>
+			<name>WABE NPR - NPR and Classical</name>
+			<shortname>WABE-NPR</shortname>
+			<icon></icon>
+			<frequency>90.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D5070A1BB1C0BA8D2EEF3F7A7100892DD81D4502B5128054A83B644ED011CF19</stationID>
+			<name>WREK Georgia Tech - Alternative</name>
+			<shortname>WREK</shortname>
+			<icon></icon>
+			<frequency>91.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D0FBE2286496B0883E89285BFAECA1EDAF017417A75C0C331D255921B2B4FF66</stationID>
+			<name>WCLK Clark Atlanta University - NPR and Jazz</name>
+			<shortname>WCLK-NPR</shortname>
+			<icon></icon>
+			<frequency>91.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B7C2CC18E97E0BC74180B041D0E0F38EDC2DEF03B7CFF5630731D2EA9939575C</stationID>
+			<name>WZGC Z93 - Classic Rock</name>
+			<shortname>Z93</shortname>
+			<icon></icon>
+			<frequency>92.934</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F30FA008CD64A5D7050598694B282601129065236FEB119FECF35AB23E99C804</stationID>
+			<name>WVFJ J93.3 - Christian Comtemporary</name>
+			<shortname>J93.3</shortname>
+			<icon></icon>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444EB5BCFF00E0407F766E04E58A7D7F74DB1406DE472A841443677F3A3BFFD9E22</stationID>
+			<name>WSTR Star 94 - Top 40</name>
+			<shortname>Star94</shortname>
+			<icon></icon>
+			<frequency>94.125</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554445A940CDE6A955EA02249F063194318BF802C79EE89549174501E996A54AE4792</stationID>
+			<name>WLTM Lite FM - Soft Adult Contemporary</name>
+			<shortname>94.9LiteFM</shortname>
+			<icon></icon>
+			<frequency>94.938</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554449A026D1A86E99D31A83215E4B0359F8C778C7AB17EE6813D4705CE2A23DC1957</stationID>
+			<name>WKLS 96 Rock - Rock</name>
+			<shortname>96Rock</shortname>
+			<icon></icon>
+			<frequency>96.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554443FD738DFE6D3B4CB7304444FCF3CF7304CC29561F2FA89BA07E69369EF0360D4</stationID>
+			<name>WBZY 96.7 the Buzz - Alternative</name>
+			<shortname>TheBuzz</shortname>
+			<icon></icon>
+			<frequency>96.6875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554444DA754235B2E9DD48042460B326741C83B71813EDDF9079323699A52B91D0C03</stationID>
+			<name>WFOX 97.1 JAMZ - R&amp;B and Hip Hop</name>
+			<shortname>97.1JAMZ</shortname>
+			<icon></icon>
+			<frequency>97.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DBA43BB3744CC94BB4EBD58CDD53EF8B4E302F27246A3EAA67FDAAA5E895057B</stationID>
+			<name>WPZE Praise 97.5 - Gospel</name>
+			<shortname>Praise97.5</shortname>
+			<icon></icon>
+			<frequency>97.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544411E223A1D7B0622D36D503C57403581B837EE7F241757B5FD48D2B64EF14602D</stationID>
+			<name>WSB B98.5 - Soft Rock</name>
+			<shortname>B98.5</shortname>
+			<icon></icon>
+			<frequency>98.5625</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554440EEFEA93386786D656ABD5F8F8FA15B29B8C4A3334E481DCC6461E03C791AF4E</stationID>
+			<name>WNNX 99X - Rock</name>
+			<shortname>99X</shortname>
+			<icon></icon>
+			<frequency>99.6875</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554446807D5450A5B1DDDFC442A948CD9E335253B10B86BAF325AF9F05550F2FBCF04</stationID>
+			<name>WWWQ Q100 - Top 40</name>
+			<shortname>Q100</shortname>
+			<icon></icon>
+			<frequency>100.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442936AD4168FB356C3622E10E4ED754C061FFEFE15C4567F59A5FAC8F2994F80A</stationID>
+			<name>WKHX Kicks - Country</name>
+			<shortname>Kicks</shortname>
+			<icon></icon>
+			<frequency>101.562</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444049CA9F8E586BD0F9D1F73CBCAB86A12782126A22CDB256F847BBBDB113C6999</stationID>
+			<name>WAMJ - Classic Soul 102.5 - R&amp;B</name>
+			<shortname>ClassicSoul</shortname>
+			<icon></icon>
+			<frequency>102.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B93D94BA4A7D0AA26FA4D746A1945CB03430905F094A4DCC31CFAA87DF7DB2DE</stationID>
+			<name>WVEE V-103 - Hip Hop</name>
+			<shortname>V-103</shortname>
+			<icon></icon>
+			<frequency>103.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444682F737C8639D6F737B32E3F42E6B9B38E0CB0727866BA26BCCA4A76F4CA90DB</stationID>
+			<name>WRBN Sky 104 - R&amp;B</name>
+			<shortname>Sky104</shortname>
+			<icon></icon>
+			<frequency>104.1</frequency>
+			<volumepreset>-0.01</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544462D47719C5D12998FD170F142F8CE4CB18981EB831A343121F4A3E3ACD0CA732</stationID>
+			<name>WFSH The Fish - Christian Comtemporary</name>
+			<shortname>Fish104.7</shortname>
+			<icon></icon>
+			<frequency>104.7</frequency>
+			<volumepreset>-0.01</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444A7A583D45F9F062A970D9C01089CC5209FE6EC81823FB65AEEA31462ED194D96</stationID>
+			<name>WMAX Viva 105.3 - Spanish</name>
+			<shortname>Viva105.3</shortname>
+			<icon></icon>
+			<frequency>105.312</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DFE822631AE345200E49FC3F44D78C0C7B40DEFF953BB231158682EF09413D22</stationID>
+			<name>WLCL Cool 105.7 - Hits of 60&apos;s and 70&apos;s</name>
+			<shortname>Cool105.7</shortname>
+			<icon></icon>
+			<frequency>105.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554442CE37FE0789E4C2372966DA11E4A6F05D674EACDD13825F5CBA4A9BBA66FD8E1</stationID>
+			<name>WJZZ Smooth Jazz - Modern Jazz and R&amp;B</name>
+			<shortname>SmoothJazz</shortname>
+			<icon></icon>
+			<frequency>107.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444E1DFE0618A96D2FD2B98BF4A75C6551AACC8196F3A507F88716DF9470E4EC71B</stationID>
+			<name>WHTA Hot 107.9 - Hip Hop</name>
+			<shortname>Hot107.9</shortname>
+			<icon></icon>
+			<frequency>107.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

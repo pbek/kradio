@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+ <stationlist>
+  <format>kradio-1.0</format>
+  <info>
+   <maintainer>dalton, &lt;dalton@utumno.pl&gt;</maintainer>
+   <changed>2005-05-02T12:01:20</changed>
+   <country>Poland</country>
+   <city>Torun</city>
+   <media>Telewizja Kablowa Torun</media>
+   <comments></comments>
+  </info>
+  <FrequencyRadioStation>
+   
+<stationID>11150352438D7A6C6EF69700B5FA32EA4C19F8F8DBCF42B23313868087222E8F1F3522A5E3</stationID>
+   <name>Radio Brawo</name>
+   <shortname>Brawo</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>88.4</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035244B5EB809499C5FDF3DB52570A29C27373E381EC3EF77A4106CF182C0B6998DCBC</stationID>
+   <name>Radio Dla Ciebie</name>
+   <shortname>Dla Ciebie</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>89.4</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035245F4DA65B67C634C3363DFD9953B7CF866B900F3B9F5D495B4A171761760838FE1</stationID>
+   <name>Radio Merkury</name>
+   <shortname>Merkury</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>90</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035246B6F2543ECAFDBF2FE35969EBA5F53BEF89DFD11A75EDE3748817BDD3A67AADA7</stationID>
+   <name>Polskie Radio I</name>
+   <shortname>Jedynka</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>90.6002</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035247ED7D29B01F7071B27F370F06F0AFCEEE413FFAD23D6EEF6314B54C5B5DA38F8A</stationID>
+   <name>Radio Maryja</name>
+   <shortname>Maryja</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>91.2003</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035248E30D4FF4830A8E5D5F7B17281CD42638216ECAF7D25C4B432B0135C77EDFF75E</stationID>
+   <name>Radio ESKA</name>
+   <shortname>Eska</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>91.8</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>111503524902AAE539391FF6234CE6FFB8E2122ADEAD4D1EEF9D597F3917160B323ECCCC0D</stationID>
+   <name>Radio Zet</name>
+   <shortname>Zet</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>92.4</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035252C0BC92D0DF03F9753754B3BFC8B62891865ADE4FDCB8C37FF7D4FAA43C3C73BF</stationID>
+   <name>Radio PiK</name>
+   <shortname>PiK</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>94.5</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035253C660930F3265DB4D08CCB2C7D9226227AACEC7AF8F6BF6B1CA3D76D520F35E2E</stationID>
+   <name>Polskie Radio III</name>
+   <shortname>Trojka</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>95.1</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>11150352567D6D4A684E266E15461E7AF50293CDBFCE55B5A0501AA03B525CDD247F9BD9A0</stationID>
+   <name>RMF FM</name>
+   <shortname>RMF</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>97.2</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>11150352582235BFE2E15B0E239B75501DFA43FC5A39D589132C7BF5E908040F13897ED99E</stationID>
+   <name>Polskie Radio II</name>
+   <shortname>Dwojka</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>98.4</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>11150352593972C4DCD04C48CE45FB5B663A6D249A1DC551122469E9B7A889DD27A20C37D3</stationID>
+   <name>Radio BIS</name>
+   <shortname>BIS</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>99</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1115035259B266CC3A0171B9C9C7660CC1EBA9E378DDEB174F0686A7B404EA476A1518846C</stationID>
+   <name>Gold FM - Radio Torun</name>
+   <shortname>GoldFM</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>99.6</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>11150352623F97E60D3155ED189AA316F5B993A3122A8878258C5E5D86AA3CB4EAA2E68CB9</stationID>
+   <name>Classik Radio</name>
+   <shortname>Classik Radio</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>101.7</frequency>
+  </FrequencyRadioStation>
+ </stationlist>
+</kradiorc>
+
+

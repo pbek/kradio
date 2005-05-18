@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+ <stationlist>
+		<format>kradio-1.0</format>
+  <info>
+   <maintainer>Andreas Schultz, &lt;andreas.schultz@t-online.de&gt;</maintainer>
+   <changed>2004-09-13T21:29:33</changed>
+   <country>Germany</country>
+   <city>Olpe</city>
+   <media>Antenna </media>
+   <comments>got data 
+fromhttp://www.wdr.de/unternehmen/frequenzen/frequergebnis.php</comments>
+  </info>
+  <FrequencyRadioStation>
+			<stationID>1116455444B639A3DF983560BEA0F00BA1F38E53C39E2426634E740F1E42414350532CD79F</stationID>
+   <name>WDR2</name>
+   <shortname></shortname>
+   <icon></icon>
+   <frequency>93.5</frequency>
+   <volumepreset>-0.01</volumepreset>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+			<stationID>1116455444E8781F0CDF8CF4E8BCD34FC4920B3136AE409679C51EFAB49D6A9E209C586970</stationID>
+   <name>WDR3</name>
+   <shortname></shortname>
+   <icon></icon>
+   <frequency>98.1</frequency>
+   <volumepreset>-1</volumepreset>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+			<stationID>1116455444DF9F372DF10503319DD05177B30D05AED88D0F1D08CBC3E747C07184EA9635A4</stationID>
+   <name>WDR4</name>
+   <shortname></shortname>
+   <icon></icon>
+   <frequency>103.8</frequency>
+   <volumepreset>-1</volumepreset>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+			<stationID>1116455444D0C04B3928B54408797C61617F7C44236AC2D916CD0E18F2186529E044084DAB</stationID>
+   <name>WDR5</name>
+   <shortname></shortname>
+   <icon></icon>
+   <frequency>90.3</frequency>
+   <volumepreset>-1</volumepreset>
+  </FrequencyRadioStation>
+ </stationlist>
+</kradiorc>
