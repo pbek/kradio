@@ -1,0 +1,455 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>TimeControlConfigurationUI</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>TimeControlConfigurationUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>374</width>
+            <height>261</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>TimeControlConfigurationUI</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout13</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>labelSleep</cstring>
+                    </property>
+                    <property name="text">
+                        <string>sleep countdown</string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox">
+                    <property name="name">
+                        <cstring>editSleep</cstring>
+                    </property>
+                    <property name="suffix">
+                        <string> min</string>
+                    </property>
+                    <property name="maxValue">
+                        <number>200</number>
+                    </property>
+                    <property name="minValue">
+                        <number>1</number>
+                    </property>
+                    <property name="lineStep">
+                        <number>5</number>
+                    </property>
+                    <property name="value">
+                        <number>30</number>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer6_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+            </hbox>
+        </widget>
+        <widget class="Line" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>line1</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>HLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout15</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout14</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelAlarmList</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>Alarms</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonAlarmNew</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="iconSet">
+                                <iconset>"filenew2"</iconset>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonDeleteAlarm</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="iconSet">
+                                <iconset>"editdelete"</iconset>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QListBox">
+                    <property name="name">
+                        <cstring>listAlarms</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="1">
+            <property name="name">
+                <cstring>layout17</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout28</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout27</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>labelAlarmDate</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Date</string>
+                                    </property>
+                                </widget>
+                                <widget class="QDateEdit">
+                                    <property name="name">
+                                        <cstring>editAlarmDate</cstring>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout28</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>labelAlarmTime</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Time</string>
+                                    </property>
+                                </widget>
+                                <widget class="QTimeEdit">
+                                    <property name="name">
+                                        <cstring>editAlarmTime</cstring>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout29</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>labelAlarmVolume</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Volume</string>
+                                    </property>
+                                </widget>
+                                <widget class="QSpinBox">
+                                    <property name="name">
+                                        <cstring>editAlarmVolume</cstring>
+                                    </property>
+                                    <property name="suffix">
+                                        <string> %</string>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>100</number>
+                                    </property>
+                                    <property name="minValue">
+                                        <number>-1</number>
+                                    </property>
+                                    <property name="value">
+                                        <number>-1</number>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout16</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QCheckBox" row="0" column="0">
+                            <property name="name">
+                                <cstring>checkboxAlarmEnable</cstring>
+                            </property>
+                            <property name="text">
+                                <string>enabled</string>
+                            </property>
+                        </widget>
+                        <spacer row="2" column="0">
+                            <property name="name">
+                                <cstring>spacer6</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>20</width>
+                                    <height>100</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="KListBox" row="0" column="1" rowspan="3" colspan="1">
+                            <item>
+                                <property name="text">
+                                    <string>Monday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Tuesday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Wednesday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Thursday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Friday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Saturday</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Sunday</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>listWeekdays</cstring>
+                            </property>
+                            <property name="selectionMode">
+                                <enum>Multi</enum>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox" row="1" column="0">
+                            <property name="name">
+                                <cstring>checkboxAlarmDaily</cstring>
+                            </property>
+                            <property name="text">
+                                <string>daily</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>labelStationSelection</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Radio Station</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox">
+                    <property name="name">
+                        <cstring>comboStationSelection</cstring>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout20</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>pixmapAlarmStation</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>20</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer8</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>150</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </hbox>
+                </widget>
+                <widget class="QComboBox">
+                    <item>
+                        <property name="text">
+                            <string>Start Playing</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>"kradio_muteoff"</pixmap>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>Stop Playing</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>"kradio_muteon"</pixmap>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>Start Recording</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>"kradio_record"</pixmap>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>Stop Recording</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>"kradio_muteon"</pixmap>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>comboAlarmType</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<customwidgets>
+</customwidgets>
+<tabstops>
+    <tabstop>listAlarms</tabstop>
+    <tabstop>buttonAlarmNew</tabstop>
+    <tabstop>buttonDeleteAlarm</tabstop>
+    <tabstop>editAlarmDate</tabstop>
+    <tabstop>editAlarmTime</tabstop>
+    <tabstop>editAlarmVolume</tabstop>
+    <tabstop>checkboxAlarmDaily</tabstop>
+    <tabstop>checkboxAlarmEnable</tabstop>
+    <tabstop>comboStationSelection</tabstop>
+</tabstops>
+<includes>
+    <include location="global" impldecl="in implementation">kiconloader.h</include>
+</includes>
+<pixmapfunction>SmallIcon</pixmapfunction>
+<layoutdefaults spacing="6" margin="0"/>
+<includehints>
+    <includehint>klistbox.h</includehint>
+</includehints>
+</UI>
