@@ -12,9 +12,6 @@
             <height>109</height>
         </rect>
     </property>
-    <property name="caption">
-        <string>StationSelectorUI</string>
-    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>

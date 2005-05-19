@@ -1,5 +1,5 @@
 libdir = $(prefix)/lib/kradio/plugins
-INCLUDES = $(all_includes)
+INCLUDES = -I$(top_builddir)/kradio3/src/libkradio-gui -I$(top_srcdir)/kradio3 $(all_includes)
 METASOURCES = AUTO
 lib_LTLIBRARIES =  libradio.la
 libradio_la_LDFLAGS = -module $(all_libraries)
