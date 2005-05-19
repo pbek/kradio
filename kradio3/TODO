@@ -1,21 +1,14 @@
-0.3.0-alpha3
+0.3.0
 
        make file operations complient with non-ascii-charsets (e.g. cyrillic)
-       title of main display with station name
-
-       qlist.h in libqt3-compat-headers (configure/dependencies)
-
        tooltips in config dialog
        option for display window type (entry in taskbar or toolbar window)
        background pixmap for display
-       .so-library plugins
-       plugin config
        lirc config
        internet radio streams
        translations
        automatic station icon scaling
        define final single/doubleclick tray icon behaviour
-       widgetplugin-show-button in radio view?
 
        remote-kradio:  run v4l plugin on remote machine, transfer data to
                        local machine
@@ -23,6 +16,11 @@
        client-server concept: run kradio in background, make client gui individual
                               application
 
+       title of main display with station name // done
+       .so-library plugins // done
+       plugin config // done
+       widgetplugin-show-button in radio view? // done
+       remove qlist.h // done
        segfault fixes with 2.95.3 // done
        fix recording problemes    // done
        weekday selection for alarms // done
