@@ -106,6 +106,8 @@ RECEIVERS:
     // ISoundStreamClient
 
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
     bool startRecordingWithFormat(SoundStreamID /*id*/,
                       const SoundFormat &/*proposed_format*/,
                       SoundFormat       &/*real_format*/);

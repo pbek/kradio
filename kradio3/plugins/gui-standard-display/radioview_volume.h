@@ -54,6 +54,7 @@ RECEIVERS:
 
 // ISoundStreamClient
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
     bool noticePlaybackVolumeChanged(SoundStreamID id, float v);
 
 // own stuff

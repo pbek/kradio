@@ -106,6 +106,8 @@ protected:
 
 // ISoundStreamClient
 
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
     bool startRecording(SoundStreamID id);
     bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format);
     bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, unsigned size, const SoundMetaData &md);

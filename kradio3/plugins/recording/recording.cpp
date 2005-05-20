@@ -75,18 +75,6 @@ bool Recording::connectI(Interface *i)
     bool a = IRecCfg::connectI(i);
     bool b = PluginBase::connectI(i);
     bool c = ISoundStreamClient::connectI(i);
-    if (c) {
-        getSoundStreamServer()->register4_sendStartRecording(this);
-        getSoundStreamServer()->register4_sendStartRecordingWithFormat(this);
-        getSoundStreamServer()->register4_notifySoundStreamData(this);
-        getSoundStreamServer()->register4_sendStopRecording(this);
-        getSoundStreamServer()->register4_queryIsRecordingRunning(this);
-        getSoundStreamServer()->register4_querySoundStreamDescription(this);
-        getSoundStreamServer()->register4_querySoundStreamRadioStation(this);
-        getSoundStreamServer()->register4_queryEnumerateSoundStreams(this);
-        getSoundStreamServer()->register4_notifySoundStreamChanged(this);
-        getSoundStreamServer()->register4_notifySoundStreamClosed(this);
-    }
     return a || b || c;
 }
 
@@ -97,6 +85,23 @@ bool Recording::disconnectI(Interface *i)
     bool b = PluginBase::disconnectI(i);
     bool c = ISoundStreamClient::disconnectI(i);
     return a || b || c;
+}
+
+
+void Recording::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_sendStartRecording(this);
+        s->register4_sendStartRecordingWithFormat(this);
+        s->register4_notifySoundStreamData(this);
+        s->register4_sendStopRecording(this);
+        s->register4_queryIsRecordingRunning(this);
+        s->register4_querySoundStreamDescription(this);
+        s->register4_querySoundStreamRadioStation(this);
+        s->register4_queryEnumerateSoundStreams(this);
+        s->register4_notifySoundStreamChanged(this);
+        s->register4_notifySoundStreamClosed(this);
+    }
 }
 
 // PluginBase

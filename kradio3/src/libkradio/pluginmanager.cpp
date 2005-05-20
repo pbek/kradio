@@ -145,7 +145,7 @@ PluginBase *PluginManager::getPluginByName(const QString &name) const
 void PluginManager::insertPlugin(PluginBase *p)
 {
     if (p) {
-//         kdDebug() << "Debug: Adding Plugin: " << p->name() << "\n";
+        kdDebug() << "Debug: Adding Plugin: " << p->name() << "\n";
 
         if (!m_configDialog)
             createConfigDialog(i18n(m_configDialogTitle.ascii()));
@@ -161,7 +161,7 @@ void PluginManager::insertPlugin(PluginBase *p)
         // connect plugins with each other
         for (PluginIterator it(m_plugins); it.current(); ++it) {
             if (it.current() != p) {
-//                 kdDebug() << "Debug: connecting with " << it.current()->name() << "\n";
+                kdDebug() << "Debug: connecting with " << it.current()->name() << "\n";
                 p->connectI(it.current());
             }
         }
@@ -460,7 +460,8 @@ KDialogBase               *PluginManager::getAboutDialog()
 void PluginManager::slotConfigOK()
 {
     emit sigConfigOK();
-    saveState(KGlobal::config());
+    if (m_Application)
+        m_Application->saveState(KGlobal::config());
 }
 
 

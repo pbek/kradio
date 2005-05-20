@@ -71,6 +71,8 @@ RECEIVERS:
 
 // ISoundStreamClient
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
     bool noticeSignalQualityChanged(SoundStreamID id, float q);
     bool noticeStereoChanged(SoundStreamID id, bool  s);
 

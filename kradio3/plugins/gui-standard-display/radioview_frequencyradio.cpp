@@ -109,10 +109,6 @@ bool RadioViewFrequencyRadio::connectI(Interface *i)
 {
     bool o = IDisplayCfg::connectI(i);
     bool c = ISoundStreamClient::connectI(i);
-    if (c) {
-        getSoundStreamServer()->register4_notifySignalQualityChanged(this);
-        getSoundStreamServer()->register4_notifyStereoChanged(this);
-    }
     if (dynamic_cast<IFrequencyRadio *>(i)) {
 
         bool a = IRadioDeviceClient::connectI(i);
@@ -137,6 +133,13 @@ bool RadioViewFrequencyRadio::disconnectI(Interface *i)
     return a || b || c || o;
 }
 
+void RadioViewFrequencyRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_notifySignalQualityChanged(this);
+        s->register4_notifyStereoChanged(this);
+    }
+}
 
 // IDisplayCfg
 

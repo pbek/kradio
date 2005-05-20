@@ -72,11 +72,6 @@ bool RadioDocking::connectI (Interface *i)
     bool c = IRadioDevicePoolClient::connectI(i);
     bool d = IStationSelection::connectI(i);
     bool e = ISoundStreamClient::connectI(i);
-    if (e) {
-        getSoundStreamServer()->register4_sendStartRecordingWithFormat(this);
-        getSoundStreamServer()->register4_sendStopRecording           (this);
-        getSoundStreamServer()->register4_notifySoundStreamChanged    (this);
-    }
     bool f = PluginBase::connectI(i);
     return a || b || c || d || e || f;
 }
@@ -92,6 +87,17 @@ bool RadioDocking::disconnectI (Interface *i)
     bool f = PluginBase::disconnectI(i);
     return a || b || c || d || e || f;
 }
+
+
+void RadioDocking::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_sendStartRecordingWithFormat(this);
+        s->register4_sendStopRecording           (this);
+        s->register4_notifySoundStreamChanged    (this);
+    }
+}
+
 
 
 bool RadioDocking::setStationSelection(const QStringList &sl)

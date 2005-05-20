@@ -60,9 +60,6 @@ TimeShifterConfiguration::~TimeShifterConfiguration ()
 bool TimeShifterConfiguration::connectI (Interface *i)
 {
     bool a = ISoundStreamClient::connectI(i);
-    if (a) {
-        getSoundStreamServer()->register4_notifyPlaybackChannelsChanged(this);
-    }
     return a;
 }
 
@@ -73,6 +70,12 @@ bool TimeShifterConfiguration::disconnectI (Interface *i)
     return a;
 }
 
+void TimeShifterConfiguration::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_notifyPlaybackChannelsChanged(this);
+    }
+}
 
 void TimeShifterConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
@@ -121,10 +124,10 @@ bool TimeShifterConfiguration::setPlaybackMixer(const QString &_mixer_id, int Ch
 
 void TimeShifterConfiguration::selectTempFile()
 {
-    KFileDialog fd("/tmp/", 
-                   i18n("any ( * )").ascii(), 
-                   this, 
-                   i18n("TimeShifter Temporary File Selection").ascii(), 
+    KFileDialog fd("/tmp/",
+                   i18n("any ( * )").ascii(),
+                   this,
+                   i18n("TimeShifter Temporary File Selection").ascii(),
                    TRUE);
     fd.setMode(KFile::File);
     fd.setCaption (i18n("Select TimeShifter Temporary File"));

@@ -127,38 +127,6 @@ bool V4LRadio::connectI (Interface *i)
     bool d = IV4LCfg::connectI(i);
     bool e = PluginBase::connectI(i);
     bool f = ISoundStreamClient::connectI(i);
-
-    if (f) {
-        m_seekHelper->connectI(i);
-
-        getSoundStreamServer()->register4_queryPlaybackVolume(this);
-        getSoundStreamServer()->register4_sendTreble(this);
-        getSoundStreamServer()->register4_sendBass(this);
-        getSoundStreamServer()->register4_sendBalance(this);
-        getSoundStreamServer()->register4_sendMute(this);
-        getSoundStreamServer()->register4_sendUnmute(this);
-        getSoundStreamServer()->register4_sendSignalMinQuality(this);
-        getSoundStreamServer()->register4_sendStereo(this);
-
-        getSoundStreamServer()->register4_queryTreble(this);
-        getSoundStreamServer()->register4_queryBass(this);
-        getSoundStreamServer()->register4_queryBalance(this);
-        getSoundStreamServer()->register4_querySignalQuality(this);
-        getSoundStreamServer()->register4_querySignalMinQuality(this);
-        getSoundStreamServer()->register4_queryHasGoodQuality(this);
-        getSoundStreamServer()->register4_queryIsStereo(this);
-        getSoundStreamServer()->register4_queryIsMuted(this);
-
-
-        getSoundStreamServer()->register4_sendPlaybackVolume(this);
-        getSoundStreamServer()->register4_sendCaptureVolume(this);
-
-        getSoundStreamServer()->register4_querySoundStreamDescription(this);
-        getSoundStreamServer()->register4_querySoundStreamRadioStation(this);
-        getSoundStreamServer()->register4_queryEnumerateSoundStreams(this);
-
-    }
-
     return a || b || c || d || e || f;
 }
 
@@ -173,6 +141,40 @@ bool V4LRadio::disconnectI (Interface *i)
     bool f = ISoundStreamClient::disconnectI(i);
     m_seekHelper->disconnectI(i);
     return a || b || c || d || e || f;
+}
+
+
+void V4LRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        m_seekHelper->connectI(s);
+
+        s->register4_queryPlaybackVolume(this);
+        s->register4_sendTreble(this);
+        s->register4_sendBass(this);
+        s->register4_sendBalance(this);
+        s->register4_sendMute(this);
+        s->register4_sendUnmute(this);
+        s->register4_sendSignalMinQuality(this);
+        s->register4_sendStereo(this);
+
+        s->register4_queryTreble(this);
+        s->register4_queryBass(this);
+        s->register4_queryBalance(this);
+        s->register4_querySignalQuality(this);
+        s->register4_querySignalMinQuality(this);
+        s->register4_queryHasGoodQuality(this);
+        s->register4_queryIsStereo(this);
+        s->register4_queryIsMuted(this);
+
+
+        s->register4_sendPlaybackVolume(this);
+        s->register4_sendCaptureVolume(this);
+
+        s->register4_querySoundStreamDescription(this);
+        s->register4_querySoundStreamRadioStation(this);
+        s->register4_queryEnumerateSoundStreams(this);
+    }
 }
 
 

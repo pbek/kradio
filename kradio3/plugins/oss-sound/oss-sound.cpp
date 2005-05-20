@@ -80,22 +80,6 @@ bool OSSSoundDevice::connectI(Interface *i)
 {
     bool a = PluginBase::connectI(i);
     bool b = ISoundStreamClient::connectI(i);
-    if (b) {
-        getSoundStreamServer()->register4_sendPlaybackVolume(this);
-        getSoundStreamServer()->register4_sendCaptureVolume(this);
-        getSoundStreamServer()->register4_queryPlaybackVolume(this);
-        getSoundStreamServer()->register4_queryCaptureVolume(this);
-        getSoundStreamServer()->register4_sendStartPlayback(this);
-        getSoundStreamServer()->register4_sendPausePlayback(this);
-        getSoundStreamServer()->register4_sendStopPlayback(this);
-        getSoundStreamServer()->register4_queryIsPlaybackRunning(this);
-        getSoundStreamServer()->register4_sendStartCaptureWithFormat(this);
-        getSoundStreamServer()->register4_sendStopCapture(this);
-        getSoundStreamServer()->register4_queryIsCaptureRunning(this);
-        getSoundStreamServer()->register4_notifySoundStreamClosed(this);
-        getSoundStreamServer()->register4_notifySoundStreamRedirected(this);
-        getSoundStreamServer()->register4_notifySoundStreamData(this);
-    }
     return a || b;
 }
 
@@ -105,6 +89,26 @@ bool OSSSoundDevice::disconnectI(Interface *i)
     bool a = PluginBase::disconnectI(i);
     bool b = ISoundStreamClient::disconnectI(i);
     return a || b;
+}
+
+void OSSSoundDevice::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_sendPlaybackVolume(this);
+        s->register4_sendCaptureVolume(this);
+        s->register4_queryPlaybackVolume(this);
+        s->register4_queryCaptureVolume(this);
+        s->register4_sendStartPlayback(this);
+        s->register4_sendPausePlayback(this);
+        s->register4_sendStopPlayback(this);
+        s->register4_queryIsPlaybackRunning(this);
+        s->register4_sendStartCaptureWithFormat(this);
+        s->register4_sendStopCapture(this);
+        s->register4_queryIsCaptureRunning(this);
+        s->register4_notifySoundStreamClosed(this);
+        s->register4_notifySoundStreamRedirected(this);
+        s->register4_notifySoundStreamData(this);
+    }
 }
 
 // PluginBase

@@ -375,17 +375,6 @@ bool RadioView::connectI(Interface *i)
     // Callbacks for ISoundStreamClient
 
     bool e = ISoundStreamClient::connectI(i);
-    if (e) {
-        getSoundStreamServer()->register4_sendStartRecordingWithFormat(this);
-        getSoundStreamServer()->register4_sendStopRecording           (this);
-        getSoundStreamServer()->register4_notifySoundStreamChanged    (this);
-
-        // special task for soundstreamclient, different from radio device pool
-        for (ElementListIterator it(elements); it.current(); ++it) {
-            RadioViewElement *e = it.current();
-            e->connectI(i);
-        }
-    }
 
     return a || b || c || d || e;
 }
@@ -406,6 +395,21 @@ bool RadioView::disconnectI(Interface *i)
         }
     }
     return a || b || c || d || e;
+}
+
+void RadioView::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_sendStartRecordingWithFormat(this);
+        s->register4_sendStopRecording           (this);
+        s->register4_notifySoundStreamChanged    (this);
+
+        // special task for soundstreamclient, different from radio device pool
+        for (ElementListIterator it(elements); it.current(); ++it) {
+            RadioViewElement *e = it.current();
+            e->connectI(s);
+        }
+    }
 }
 
 // ISoundStreamClient

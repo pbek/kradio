@@ -80,9 +80,6 @@ bool RadioViewVolume::connectI   (Interface *i)
 {
     bool a = IRadioDeviceClient::connectI(i);
     bool b = ISoundStreamClient::connectI(i);
-    if (b) {
-        getSoundStreamServer()->register4_notifyPlaybackVolumeChanged(this);
-    }
     return a || b;
 }
 
@@ -94,7 +91,12 @@ bool RadioViewVolume::disconnectI(Interface *i)
     return a || b;
 }
 
-
+void RadioViewVolume::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_notifyPlaybackVolumeChanged(this);
+    }
+}
 
 // ISoundStreamClient
 

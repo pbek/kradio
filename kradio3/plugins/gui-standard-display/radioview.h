@@ -57,6 +57,21 @@ public:
     const QString &name() const { return PluginBase::name(); }
           QString &name()       { return PluginBase::name(); }
 
+    // WidgetPluginBase
+
+public:
+    virtual void   saveState (KConfig *) const;
+    virtual void   restoreState (KConfig *);
+
+    virtual bool   connectI(Interface *i);
+    virtual bool   disconnectI(Interface *i);
+
+    virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
+    virtual void   noticePluginsChanged(const PluginList &);
+
+    virtual ConfigPageInfo  createConfigurationPage();
+    virtual AboutPageInfo   createAboutPage();
+
 public slots:
     // connects destroy-msg with remove-function
     bool addElement    (RadioViewElement *);
@@ -86,6 +101,8 @@ RECEIVERS:
     // ISoundStreamClient
 
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
     bool startRecordingWithFormat(SoundStreamID /*id*/,
                       const SoundFormat &/*proposed_format*/,
                       SoundFormat       &/*real_format*/);
@@ -103,21 +120,6 @@ RECEIVERS:
     bool noticeCountdownStopped();
     bool noticeCountdownZero();
     bool noticeCountdownSecondsChanged(int)           { return false; }
-
-    // WidgetPluginBase
-
-public:
-    virtual void   saveState (KConfig *) const;
-    virtual void   restoreState (KConfig *);
-
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
-
-    virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
-    virtual void   noticePluginsChanged(const PluginList &);
-
-    virtual ConfigPageInfo  createConfigurationPage();
-    virtual AboutPageInfo   createAboutPage();
 
 protected slots:
 

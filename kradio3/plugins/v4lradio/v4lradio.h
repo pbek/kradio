@@ -122,7 +122,11 @@ ANSWERS:
 
     // ISoundStreamClient: mixer functions
 
+
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
+
     bool setTreble  (SoundStreamID, float v);
     bool setBass    (SoundStreamID, float v);
     bool setBalance (SoundStreamID, float v);

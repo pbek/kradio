@@ -72,6 +72,8 @@ protected:
     void skipPacketInRingBuffer();
 
     // SoundStreamClient
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
     bool noticeSoundStreamClosed(SoundStreamID id);
     bool startPlayback(SoundStreamID id);
     bool stopPlayback(SoundStreamID id);

@@ -97,16 +97,6 @@ bool V4LRadioConfiguration::connectI (Interface *i)
     bool b = IFrequencyRadioClient::connectI(i);
     bool c = IRadioDeviceClient::connectI(i);
     bool d = ISoundStreamClient::connectI(i);
-    if (d) {
-        getSoundStreamServer()->register4_notifyTrebleChanged(this);
-        getSoundStreamServer()->register4_notifyBassChanged(this);
-        getSoundStreamServer()->register4_notifyBalanceChanged(this);
-        getSoundStreamServer()->register4_notifySignalMinQualityChanged(this);
-
-        getSoundStreamServer()->register4_notifyPlaybackChannelsChanged(this);
-        getSoundStreamServer()->register4_notifyCaptureChannelsChanged(this);
-        getSoundStreamServer()->register4_notifySoundStreamCreated(this);
-    }
     return a || b || c || d;
 }
 
@@ -120,6 +110,19 @@ bool V4LRadioConfiguration::disconnectI (Interface *i)
     return a || b || c || d;
 }
 
+void V4LRadioConfiguration::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_notifyTrebleChanged(this);
+        s->register4_notifyBassChanged(this);
+        s->register4_notifyBalanceChanged(this);
+        s->register4_notifySignalMinQualityChanged(this);
+
+        s->register4_notifyPlaybackChannelsChanged(this);
+        s->register4_notifyCaptureChannelsChanged(this);
+        s->register4_notifySoundStreamCreated(this);
+    }
+}
 
 void V4LRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
@@ -402,10 +405,10 @@ bool V4LRadioConfiguration::noticeSoundStreamCreated(SoundStreamID id)
 
 void V4LRadioConfiguration::selectRadioDevice()
 {
-    KFileDialog fd("/dev/", 
-                   i18n("any ( * )").ascii(), 
-                   this, 
-                   i18n("Radio Device Selection").ascii(), 
+    KFileDialog fd("/dev/",
+                   i18n("any ( * )").ascii(),
+                   this,
+                   i18n("Radio Device Selection").ascii(),
                    TRUE);
     fd.setMode(KFile::File | KFile::ExistingOnly);
     fd.setCaption (i18n("Select Radio Device"));

@@ -47,6 +47,7 @@ public :
 // ISoundStreamClient
 
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
     bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QMap<int, QString> &/*channels*/);
 
 protected:

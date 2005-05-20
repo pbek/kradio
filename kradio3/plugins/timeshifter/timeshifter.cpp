@@ -54,14 +54,6 @@ bool TimeShifter::connectI (Interface *i)
 {
     bool a = PluginBase::connectI(i);
     bool b = ISoundStreamClient::connectI(i);
-    if (b) {
-        getSoundStreamServer()->register4_notifySoundStreamClosed(this);
-        getSoundStreamServer()->register4_sendStartPlayback(this);
-        getSoundStreamServer()->register4_sendStopPlayback(this);
-        getSoundStreamServer()->register4_sendPausePlayback(this);
-        getSoundStreamServer()->register4_notifySoundStreamData(this);
-        getSoundStreamServer()->register4_notifyReadyForPlaybackData(this);
-    }
     return a || b;
 }
 
@@ -71,6 +63,19 @@ bool TimeShifter::disconnectI (Interface *i)
     bool a = PluginBase::disconnectI(i);
     bool b = ISoundStreamClient::disconnectI(i);
     return a || b;
+}
+
+
+void TimeShifter::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_notifySoundStreamClosed(this);
+        s->register4_sendStartPlayback(this);
+        s->register4_sendStopPlayback(this);
+        s->register4_sendPausePlayback(this);
+        s->register4_notifySoundStreamData(this);
+        s->register4_notifyReadyForPlaybackData(this);
+    }
 }
 
 

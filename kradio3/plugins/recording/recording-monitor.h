@@ -65,14 +65,7 @@ public:
 
     // IRecordingClient
 
-/*RECEIVERS:
-    bool noticeRecordingStarted();
-    bool noticeMonitoringStarted();
-    bool noticeRecordingStopped();
-    bool noticeMonitoringStopped();
-    bool noticeRecordingConfigChanged(const RecordingConfig &);
-    bool noticeRecordingContextChanged(const RecordingContext &);
-*/
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
 
     bool noticeSoundStreamCreated(SoundStreamID id);
     bool noticeSoundStreamClosed(SoundStreamID id);

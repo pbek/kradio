@@ -78,6 +78,8 @@ RECEIVERS:
 // ISoundStreamClient
 
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
     bool noticeTrebleChanged(SoundStreamID id, float t);
     bool noticeBassChanged(SoundStreamID id, float b);
     bool noticeBalanceChanged(SoundStreamID id, float b);

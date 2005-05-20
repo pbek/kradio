@@ -85,6 +85,7 @@ public:
     // ISoundStreamClient: direct device access
 
 RECEIVERS:
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
     bool preparePlayback(SoundStreamID id, int channel, bool active_mode);
     bool prepareCapture(SoundStreamID id, int channel);
 

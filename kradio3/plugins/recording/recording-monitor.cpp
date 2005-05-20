@@ -103,13 +103,32 @@ bool   RecordingMonitor::connectI(Interface *i)
 {
     bool a = ISoundStreamClient::connectI(i);
     bool b = WidgetPluginBase::connectI(i);
+    return a || b;
+}
+
+bool   RecordingMonitor::disconnectI(Interface *i)
+{
+    bool a = ISoundStreamClient::disconnectI(i);
+    bool b = WidgetPluginBase::disconnectI(i);
     if (a) {
-        getSoundStreamServer()->register4_notifySoundStreamCreated(this);
-        getSoundStreamServer()->register4_notifySoundStreamClosed(this);
-        getSoundStreamServer()->register4_notifySoundStreamChanged(this);
-        getSoundStreamServer()->register4_notifySoundStreamData(this);
-        getSoundStreamServer()->register4_sendStartRecordingWithFormat(this);
-        getSoundStreamServer()->register4_sendStopRecording(this);
+        m_comboSoundStreamSelector->clear();
+        m_SoundStreamID2idx.clear();
+        m_idx2SoundStreamID.clear();
+        m_comboSoundStreamSelector->insertItem(i18n("nothing"));
+    }
+    return a || b;
+}
+
+
+void RecordingMonitor::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
+{
+    if (s && pointer_valid) {
+        s->register4_notifySoundStreamCreated(this);
+        s->register4_notifySoundStreamClosed(this);
+        s->register4_notifySoundStreamChanged(this);
+        s->register4_notifySoundStreamData(this);
+        s->register4_sendStartRecordingWithFormat(this);
+        s->register4_sendStopRecording(this);
 
         QMap<QString, SoundStreamID> tmp;
         queryEnumerateSoundStreams(tmp);
@@ -125,21 +144,6 @@ bool   RecordingMonitor::connectI(Interface *i)
             m_SoundStreamID2idx[*it] = idx;
         }
     }
-    return a || b;// || c;
-}
-
-bool   RecordingMonitor::disconnectI(Interface *i)
-{
-    bool a = ISoundStreamClient::disconnectI(i);
-    bool b = WidgetPluginBase::disconnectI(i);
-    //bool c = m_dataMonitor->disconnectI(i);
-    if (a) {
-        m_comboSoundStreamSelector->clear();
-        m_SoundStreamID2idx.clear();
-        m_idx2SoundStreamID.clear();
-        m_comboSoundStreamSelector->insertItem(i18n("nothing"));
-    }
-    return a || b; //|| c;
 }
 
 ConfigPageInfo  RecordingMonitor::createConfigurationPage()
