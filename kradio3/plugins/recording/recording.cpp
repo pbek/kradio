@@ -306,6 +306,8 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
 
         RecordingEncoding *thread = m_EncodingThreads[id];
 
+        logDebug("noticeSoundStreamData thread = " + QString::number((unsigned)thread, 16));
+
         unsigned int  remSize = size;
         const char   *remData = data;
 
@@ -382,6 +384,8 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
     // store thread even if it has indicated an error
     m_EncodingThreads[ssid] = thread;
 
+    logDebug("startEncoder thread = " + QString::number((unsigned)thread, 16));
+
     notifySoundStreamCreated(encID);
     return !thread->error();
 }
@@ -439,6 +443,8 @@ bool Recording::event(QEvent *_e)
         if (m_EncodingThreads.contains(id)) {
 
             RecordingEncoding *thread = m_EncodingThreads[id];
+
+            logDebug("Recording::event: thread = " + QString::number((unsigned)thread, 16));
 
             if (thread->error()) {
                 logError(thread->errorString());
