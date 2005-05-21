@@ -20,6 +20,7 @@
                 - config->sync() call to KRadioApp::saveState
                 - removed deprecated and unused -configuration.ui files for
                   QuickBar and Docking Menu
+                - configuration page for LIRC
 
 0.3.0 cvs revive
 

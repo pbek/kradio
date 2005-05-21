@@ -4,7 +4,6 @@
        tooltips in config dialog
        option for display window type (entry in taskbar or toolbar window)
        background pixmap for display
-       lirc config
        internet radio streams
        translations
        automatic station icon scaling
@@ -16,6 +15,7 @@
        client-server concept: run kradio in background, make client gui individual
                               application
 
+       lirc config // done
        title of main display with station name // done
        .so-library plugins // done
        plugin config // done
