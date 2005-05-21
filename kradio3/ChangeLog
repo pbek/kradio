@@ -1,5 +1,9 @@
 2005-05-21
 
+	mcamen  - added XDG Categories entry to .desktop file
+
+2005-05-21
+
         emw     - fixes of wrong location for soundstreamclient interconnect
                   handling. The bug resulted in failed interconnects and segfaults
                   due to non-released interconnects
@@ -17,9 +21,7 @@
                 - timeshifter plugin
                 - ogg/vorbis recording
 
-        marcus
-
-                - got rid auf the outdated KDevelop buildsystem
+        mcamen  - got rid auf the outdated KDevelop buildsystem
                 - got rid of the admin dir
                 - renamed kradio subdir to src
                 - renamed and moved some icons to src/icons according to the
