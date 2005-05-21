@@ -394,6 +394,10 @@ void Recording::stopEncoder(SoundStreamID id)
         RecordingEncoding *thread = m_EncodingThreads[id];
 
         thread->setDone();
+
+        logDebug("stopEncoder thread = " + QString::number((unsigned)thread, 16));
+        logDebug("stopEncoder thread error = " + QString::number(thread->error(), 16));
+
 #if (KDE_VERSION_MAJOR >= 3) && (KDE_VERSION_MINOR >= 1)
         // FIXME: set a timer and do waiting "in background"
         if (!thread->wait(5000)) {
