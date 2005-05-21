@@ -99,8 +99,6 @@ V4LRadio::V4LRadio(const QString &name)
 
     m_seekHelper = new FrequencySeekHelper(*this);
     m_seekHelper->connectI(this);
-
-    notifySoundStreamCreated(m_SoundStreamID);
 }
 
 
@@ -146,6 +144,7 @@ bool V4LRadio::disconnectI (Interface *i)
 
 void V4LRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         m_seekHelper->connectI(s);
 
@@ -174,6 +173,8 @@ void V4LRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
         s->register4_querySoundStreamDescription(this);
         s->register4_querySoundStreamRadioStation(this);
         s->register4_queryEnumerateSoundStreams(this);
+
+        notifySoundStreamCreated(m_SoundStreamID);
     }
 }
 

@@ -112,6 +112,7 @@ bool V4LRadioConfiguration::disconnectI (Interface *i)
 
 void V4LRadioConfiguration::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_notifyTrebleChanged(this);
         s->register4_notifyBassChanged(this);
