@@ -93,6 +93,7 @@ bool OSSSoundDevice::disconnectI(Interface *i)
 
 void OSSSoundDevice::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_sendPlaybackVolume(this);
         s->register4_sendCaptureVolume(this);
@@ -169,7 +170,7 @@ ConfigPageInfo  OSSSoundDevice::createConfigurationPage()
 
 AboutPageInfo OSSSoundDevice::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("OSS Sound Plugin for KRadio"),
@@ -186,6 +187,8 @@ AboutPageInfo OSSSoundDevice::createAboutPage()
               i18n("OSS Sound"),
               "kradio_oss_sound"
            );
+*/
+    return AboutPageInfo();
 }
 
 
@@ -254,7 +257,7 @@ bool OSSSoundDevice::startPlayback(SoundStreamID id)
 }
 
 
-bool OSSSoundDevice::pausePlayback(SoundStreamID id)
+bool OSSSoundDevice::pausePlayback(SoundStreamID /*id*/)
 {
     //return stopPlayback(id);
     return false;

@@ -116,7 +116,7 @@ ConfigPageInfo Radio::createConfigurationPage()
 
 AboutPageInfo Radio::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Radio Device Multiplexer and Station Management for KRadio"),
@@ -134,6 +134,8 @@ AboutPageInfo Radio::createAboutPage()
               i18n("Radio Device Multiplexer and Station Management"),
               "kradio"
            );
+*/
+    return AboutPageInfo();
 }
 
 
@@ -414,7 +416,7 @@ void Radio::noticeConnectedI(IRadioDeviceClient::cmplInterface *dev, bool pointe
 
 void Radio::noticeDisconnectI(IRadioDeviceClient::cmplInterface *rd, bool pointer_valid)
 {
-    IRadioDeviceClient::noticeDisconnectedI(rd, pointer_valid);
+    IRadioDeviceClient::noticeDisconnectI(rd, pointer_valid);
 
     if (rd == m_activeDevice) {
 

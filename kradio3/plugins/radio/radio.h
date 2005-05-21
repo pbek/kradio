@@ -68,6 +68,9 @@ public:
 
     virtual QString pluginClassName() const { return "Radio"; }
 
+    virtual const QString &name() const { return PluginBase::name(); }
+    virtual       QString &name()       { return PluginBase::name(); }
+
     virtual ConfigPageInfo  createConfigurationPage();
     virtual AboutPageInfo   createAboutPage();
 

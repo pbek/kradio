@@ -135,6 +135,7 @@ bool RadioViewFrequencyRadio::disconnectI(Interface *i)
 
 void RadioViewFrequencyRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_notifySignalQualityChanged(this);
         s->register4_notifyStereoChanged(this);

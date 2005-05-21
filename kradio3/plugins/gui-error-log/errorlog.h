@@ -35,6 +35,8 @@ public:
     ~ErrorLog();
 
     virtual QString pluginClassName() const { return "ErrorLog"; }
+    virtual const QString &name() const { return PluginBase::name(); }
+    virtual       QString &name()       { return PluginBase::name(); }
 
     virtual bool connectI (Interface *);
     virtual bool disconnectI (Interface *);

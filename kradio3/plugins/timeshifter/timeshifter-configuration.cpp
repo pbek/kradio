@@ -72,6 +72,7 @@ bool TimeShifterConfiguration::disconnectI (Interface *i)
 
 void TimeShifterConfiguration::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_notifyPlaybackChannelsChanged(this);
     }

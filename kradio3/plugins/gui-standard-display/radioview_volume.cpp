@@ -93,6 +93,7 @@ bool RadioViewVolume::disconnectI(Interface *i)
 
 void RadioViewVolume::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_notifyPlaybackVolumeChanged(this);
     }

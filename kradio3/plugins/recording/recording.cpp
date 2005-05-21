@@ -90,6 +90,7 @@ bool Recording::disconnectI(Interface *i)
 
 void Recording::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_sendStartRecording(this);
         s->register4_sendStartRecordingWithFormat(this);

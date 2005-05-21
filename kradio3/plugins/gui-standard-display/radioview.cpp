@@ -399,6 +399,7 @@ bool RadioView::disconnectI(Interface *i)
 
 void RadioView::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_sendStartRecordingWithFormat(this);
         s->register4_sendStopRecording           (this);

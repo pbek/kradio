@@ -122,6 +122,7 @@ bool   RecordingMonitor::disconnectI(Interface *i)
 
 void RecordingMonitor::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_notifySoundStreamCreated(this);
         s->register4_notifySoundStreamClosed(this);
@@ -153,7 +154,7 @@ ConfigPageInfo  RecordingMonitor::createConfigurationPage()
 
 AboutPageInfo   RecordingMonitor::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Recording Monitor Plugin for KRadio"),
@@ -170,6 +171,8 @@ AboutPageInfo   RecordingMonitor::createAboutPage()
               i18n("Recording Monitor Plugin"),
               "goto"
            );
+*/
+    return AboutPageInfo();
 }
 
 

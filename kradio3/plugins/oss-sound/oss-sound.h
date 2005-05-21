@@ -66,7 +66,7 @@ Q_OBJECT
 
 public:
     OSSSoundDevice (const QString &name);
-    ~OSSSoundDevice ();
+    virtual ~OSSSoundDevice ();
 
     virtual bool   connectI(Interface *i);
     virtual bool   disconnectI(Interface *i);
@@ -78,6 +78,9 @@ public:
     virtual void   restoreState (KConfig *);
 
     virtual QString pluginClassName() const { return "OSSSoundDevice"; }
+
+    virtual const QString &name() const { return PluginBase::name(); }
+    virtual       QString &name()       { return PluginBase::name(); }
 
     virtual ConfigPageInfo  createConfigurationPage();
     virtual AboutPageInfo   createAboutPage();

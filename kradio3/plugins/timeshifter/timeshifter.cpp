@@ -68,6 +68,7 @@ bool TimeShifter::disconnectI (Interface *i)
 
 void TimeShifter::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_notifySoundStreamClosed(this);
         s->register4_sendStartPlayback(this);
@@ -270,7 +271,7 @@ unsigned TimeShifter::readMetaDataFromBuffer(SoundMetaData &md, const char *buff
 }
 
 
-bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, unsigned size, const SoundMetaData &md)
+bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &/*sf*/, const char *data, unsigned size, const SoundMetaData &md)
 {
     if (id == m_NewStreamID) {
         char buffer_meta[1024];
