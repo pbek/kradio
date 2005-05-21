@@ -29,8 +29,9 @@ void ISoundStreamServer::noticeConnectedI(cmplInterface *i, bool pointer_valid)
 {
     for (QPtrListIterator<cmplInterface> it(iConnections); it.current(); ++it) {
         it.current()->noticeConnectedSoundClient(i, pointer_valid);
-        if (pointer_valid)
-            i->noticeConnectedSoundClient(i, pointer_valid);
+        cmplInterface *x = it.current();
+        if (x != i && pointer_valid)
+            i->noticeConnectedSoundClient(x, x->isThisInterfacePointerValid());
     }
 }
 
@@ -38,8 +39,9 @@ void ISoundStreamServer::noticeDisconnectedI(cmplInterface *i, bool pointer_vali
 {
     for (QPtrListIterator<cmplInterface> it(iConnections); it.current(); ++it) {
         it.current()->noticeDisconnectedSoundClient(i, pointer_valid);
-        if (pointer_valid)
-            i->noticeDisconnectedSoundClient(i, pointer_valid);
+        cmplInterface *x = it.current();
+        if (x != i && pointer_valid)
+            i->noticeDisconnectedSoundClient(x, x->isThisInterfacePointerValid());
     }
 }
 

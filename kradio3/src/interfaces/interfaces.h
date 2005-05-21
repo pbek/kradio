@@ -364,7 +364,7 @@ public:
     // classes
     virtual void     noticeConnectI     (cmplInterface *, bool /*pointer_valid*/) {}
     virtual void     noticeConnectedI   (cmplInterface *, bool /*pointer_valid*/) {}
-    virtual void     noticeDisconnectI  (cmplInterface *, bool /*pointer_valid*/) {}
+    virtual void     noticeDisconnectI  (cmplInterface *, bool /*pointer_valid*/);
     virtual void     noticeDisconnectedI(cmplInterface *, bool /*pointer_valid*/) {}
 
     virtual bool     isIConnectionFree() const;
@@ -641,6 +641,14 @@ bool InterfaceBase<thisIF, cmplIF>::disconnectI (Interface *__i)
 
     return true;
 }
+
+
+template <class thisIF, class cmplIF>
+void InterfaceBase<thisIF, cmplIF>::noticeDisconnectI(cmplInterface *i, bool /*pointer_valid*/)
+{
+    removeListener(i);
+}
+
 
 template <class thisIF, class cmplIF>
 void InterfaceBase<thisIF, cmplIF>::disconnectAllI()
