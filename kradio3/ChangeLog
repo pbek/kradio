@@ -15,6 +15,9 @@
                   libkradio-*
                 - consistency fixes for some plugins: member function
                   name(), call of inherited notice(dis)connected
+                - config->sync() call to KRadioApp::saveState
+                - removed deprecated and unused -configuration.ui files for
+                  QuickBar and Docking Menu
 
 0.3.0 cvs revive
 
