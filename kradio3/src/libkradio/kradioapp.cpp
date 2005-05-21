@@ -155,6 +155,8 @@ void KRadioApp::saveState (KConfig *c) const
     for (QMapConstIterator<QString, PluginLibraryInfo> it = m_PluginLibraries.begin(); it != m_PluginLibraries.end(); ++it, ++idx) {
         c->writeEntry("library_" + QString::number(idx), it.key());
     }
+
+    c->sync();
 }
 
 
