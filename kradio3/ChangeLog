@@ -1,8 +1,7 @@
 2005-05-21
 
 	mcamen  - added XDG Categories entry to .desktop file
-
-2005-05-21
+	        - fix #include syntax in main.cpp (<...> vs. "...")
 
         emw     - fixes of wrong location for soundstreamclient interconnect
                   handling. The bug resulted in failed interconnects and segfaults

@@ -19,7 +19,7 @@
 #include <kaboutdata.h>
 #include <klocale.h>
 
-#include <libkradio/kradioapp.h>
+#include "libkradio/kradioapp.h"
 
 
 static KCmdLineOptions options[] =
