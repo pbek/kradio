@@ -6,6 +6,7 @@
 	        - removed deprecated MiniIcon line in .desktop file
 	        - fix #include syntax in main.cpp (<...> vs. "...")
 	        - require KDE 3.2 in configure.in.in
+	        - added preset for Tuebingen (cable)
 
         emw     - fixes of wrong location for soundstreamclient interconnect
                   handling. The bug resulted in failed interconnects and segfaults
