@@ -1,6 +1,8 @@
 2005-05-21
 
 	mcamen  - added XDG Categories entry to .desktop file
+	        - replaced deprecated Terminal line in .desktop file
+	          ("0" vs. "false")
 	        - fix #include syntax in main.cpp (<...> vs. "...")
 
         emw     - fixes of wrong location for soundstreamclient interconnect
