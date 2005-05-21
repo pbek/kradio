@@ -1,3 +1,11 @@
+kradio (0.3.0-snapshot-2005-05-20) unstable; urgency=low
+
+  * updated to recent upstream
+  * build system fixes
+  * soundstreamclient fixes (noticeConnectedI)
+
+ -- Ernst Martin Witte <emw@users.sourceforge.net>  Fri, 20 May 2005 23:52:15 +0200
+
 kradio (0.3.0-snapshot-2005-05-17) unstable; urgency=low
 
   * fundamntal changes in sound backend

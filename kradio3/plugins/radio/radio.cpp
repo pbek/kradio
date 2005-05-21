@@ -121,7 +121,7 @@ AboutPageInfo Radio::createAboutPage()
                          NULL,
                          I18N_NOOP("Radio Device Multiplexer and Station Management for KRadio"),
                          KAboutData::License_GPL,
-                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         "(c) 2002-2005 Martin Witte, Klas Kalass",
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);

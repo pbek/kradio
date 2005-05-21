@@ -19,21 +19,21 @@
 
 QString createStationID()
 {
-	const int buffersize = 32;
-	unsigned char buffer[buffersize];
+    const int buffersize = 32;
+    unsigned char buffer[buffersize];
 
-	QString stime, srandom = "";
-	stime.setNum(time(NULL));
+    QString stime, srandom = "";
+    stime.setNum(time(NULL));
 
-	int fd = open (dev_urandom, O_RDONLY);
-	read(fd, buffer, buffersize);
-	close(fd);
-	for (int i = 0; i < buffersize; ++i)
-		srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
+    int fd = open (dev_urandom, O_RDONLY);
+    read(fd, buffer, buffersize);
+    close(fd);
+    for (int i = 0; i < buffersize; ++i)
+        srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
 
 //    kdDebug() << i18n("generated StationID: ") << stime << srandom << endl;
 
-	return stime + srandom;
+    return stime + srandom;
 }
 
 
@@ -41,20 +41,20 @@ QString createStationID()
 
 bool convertFile(const QString &file)
 {
-	////////////////////////////////////////////////////////////////////////
-	// read input
-	////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
+    // read input
+    ////////////////////////////////////////////////////////////////////////
 
-	QFile presetFile (file);
-  
+    QFile presetFile (file);
+
     if (! presetFile.open(IO_ReadOnly)) {
-		kdDebug() << "convertFile: "
-	              << i18n("error opening preset file")
-          	      << " " << file << " "
+        kdDebug() << "convertFile: "
+                  << i18n("error opening preset file")
+                  << " " << file << " "
                   << i18n("for reading") << endl;
         return false;
     }
-  
+
     QString xmlData;
 
     // make sure that qtextstream is gone when we close presetFile
@@ -63,57 +63,57 @@ bool convertFile(const QString &file)
         ins.setEncoding(QTextStream::Locale);
         xmlData = ins.read();
     }
-	
+
     if (xmlData.find("<format>", 0, false) >= 0) {
-		kdDebug() << "file " << file << " already in new format" << endl;
+        kdDebug() << "file " << file << " already in new format" << endl;
         // but add <?xml line at beginning if missing
 
         {
-			presetFile.reset();
-			QTextStream ins(&presetFile);
-			ins.setEncoding(QTextStream::UnicodeUTF8);
-			xmlData = ins.read();
-		}
+            presetFile.reset();
+            QTextStream ins(&presetFile);
+            ins.setEncoding(QTextStream::UnicodeUTF8);
+            xmlData = ins.read();
+        }
 
-		if (xmlData.find("<?xml", 0, false) < 0) {
-			xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
-		}
-		
+        if (xmlData.find("<?xml", 0, false) < 0) {
+            xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
+        }
+
     } else {
 
-		////////////////////////////////////////////////////////////////////////
-		// convert file
-		////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+        // convert file
+        ////////////////////////////////////////////////////////////////////////
 
-		QRegExp qselect("<quickselect>.*</quickselect>");
-		QRegExp docking("<dockingmenu>.*</dockingmenu>");
-		QRegExp station("<station>(.*)</station>");
-		QRegExp stationlist("<stationlist>");
-		QRegExp emptyLines("\\n\\s*\\n");
+        QRegExp qselect("<quickselect>.*</quickselect>");
+        QRegExp docking("<dockingmenu>.*</dockingmenu>");
+        QRegExp station("<station>(.*)</station>");
+        QRegExp stationlist("<stationlist>");
+        QRegExp emptyLines("\\n\\s*\\n");
 
-		#define stationIDElement  "stationID"
+        #define stationIDElement  "stationID"
 
-		qselect.setMinimal(true);
-		docking.setMinimal(true);
-		station.setMinimal(true);
+        qselect.setMinimal(true);
+        docking.setMinimal(true);
+        station.setMinimal(true);
 
-		xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
-		xmlData.replace(stationlist, "<stationlist>\n\t\t<format>kradio-1.0</format>");
-		xmlData.replace(qselect, "");
-		xmlData.replace(docking, "");
-		xmlData.replace(station, "<FrequencyRadioStation>\n"
+        xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
+        xmlData.replace(stationlist, "<stationlist>\n\t\t<format>kradio-1.0</format>");
+        xmlData.replace(qselect, "");
+        xmlData.replace(docking, "");
+        xmlData.replace(station, "<FrequencyRadioStation>\n"
                              "\t\t\t<" stationIDElement "></" stationIDElement ">"
                              "\\1</FrequencyRadioStation>"
-					);
+                    );
 
-		int p = 0;
-		int f = 0;
-		while ( (f = xmlData.find("<" stationIDElement "></" stationIDElement ">", p) ) >= 0) {
-			xmlData.insert(f + 2 + QString(stationIDElement).length(), createStationID());
-		}
+        int p = 0;
+        int f = 0;
+        while ( (f = xmlData.find("<" stationIDElement "></" stationIDElement ">", p) ) >= 0) {
+            xmlData.insert(f + 2 + QString(stationIDElement).length(), createStationID());
+        }
 
-		xmlData.replace(emptyLines, "\n");
-    }        
+        xmlData.replace(emptyLines, "\n");
+    }
 
     presetFile.close();
 
@@ -124,12 +124,12 @@ bool convertFile(const QString &file)
 
     if (! presetFile.open(IO_WriteOnly)) {
         kdDebug() << "convertFile: "
-	              << i18n("error opening preset file")
-         	      << " " << file << " "
+                  << i18n("error opening preset file")
+                  << " " << file << " "
                   << i18n("for writing") << endl;
        return false;
     }
-  
+
     QTextStream outs(&presetFile);
     outs.setEncoding(QTextStream::UnicodeUTF8);
 
@@ -137,8 +137,8 @@ bool convertFile(const QString &file)
 
     if (presetFile.status() != IO_Ok) {
         kdDebug() << "StationList::writeXML: "
-	              << i18n("error writing preset file")
-        	      << " " << file
+                  << i18n("error writing preset file")
+                  << " " << file
                   << " (" << presetFile.state() << ")"
                   << endl;
         return false;
@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
 {
     KAboutData aboutData("convert-presets", I18N_NOOP("convert-presets"),
                          VERSION, description, KAboutData::License_GPL,
-                         "(c) 2003 Martin Witte",
+                         "(c) 2003-2005 Martin Witte",
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);
@@ -175,13 +175,13 @@ int main(int argc, char *argv[])
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     for (int i = 0; i < args->count(); ++i) {
-		const char *x = args->arg(i);
+        const char *x = args->arg(i);
         if (! convertFile(x)) {
-	        return -1;
-	    } else {
-			if (! args->isSet("q"))
-				kdDebug() << x << ": ok" << endl;
-	    }
+            return -1;
+        } else {
+            if (! args->isSet("q"))
+                kdDebug() << x << ": ok" << endl;
+        }
     }
     if (args->count() == 0) {
         kdDebug() << "no input" << endl;

@@ -2,7 +2,7 @@
                           v4lradio.cpp  -  description
                              -------------------
     begin                : Don Mär  8 21:57:17 CET 2001
-    copyright            : (C) 2002, 2003 by Ernst Martin Witte
+    copyright            : (C) 2002-2005 by Ernst Martin Witte
     email                : witte@kawo1.rwth-aachen.de
  ***************************************************************************/
 
@@ -1022,7 +1022,7 @@ AboutPageInfo V4LRadio::createAboutPage()
                                    "Provides Support for V4L/V4L2 based Radio Cards"
                                    "<P>"),
                          KAboutData::License_GPL,
-                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         "(c) 2002-2005 Martin Witte, Klas Kalass",
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);

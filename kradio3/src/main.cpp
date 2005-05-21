@@ -2,7 +2,7 @@
                           main.cpp  -  description
                              -------------------
     begin                : Don Mär  8 21:57:17 CET 2001
-    copyright            : (C) 2001, 2002, 2003 by Ernst Martin Witte, Frank Schwanz
+    copyright            : (C) 2001-2005 by Ernst Martin Witte, Frank Schwanz
     email                : witte@kawo1.rwth-aachen.de, schwanz@fh-brandenburg.de
  ***************************************************************************/
 
@@ -32,11 +32,12 @@ int main(int argc, char *argv[])
 {
     KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
                          VERSION, "KRadio", KAboutData::License_GPL,
-                         "(c) 2002, 2003 Martin Witte, Klas Kalass, Frank Schwanz",
+                         "(c) 2002-2005 Martin Witte, Klas Kalass, Frank Schwanz",
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);
     aboutData.addAuthor("Martin Witte",  I18N_NOOP("rewrite for 0.3.0, recording, lirc support, alarms, misc"), "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Marcus Camen",  I18N_NOOP("Buildsystem, Standards Conformance, Cleanups"), "mcamen@mcamen.de");
     aboutData.addAuthor("Klas Kalass",   I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
     aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
 

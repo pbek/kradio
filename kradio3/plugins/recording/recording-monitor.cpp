@@ -159,7 +159,7 @@ AboutPageInfo   RecordingMonitor::createAboutPage()
                          NULL,
                          I18N_NOOP("Recording Monitor Plugin for KRadio"),
                          KAboutData::License_GPL,
-                         "(c) 2002, 2003 Martin Witte",
+                         "(c) 2002-2005 Martin Witte",
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);

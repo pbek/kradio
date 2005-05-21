@@ -1,4 +1,4 @@
-0.3.0
+0.3.0 cvs
 
        make file operations complient with non-ascii-charsets (e.g. cyrillic)
        tooltips in config dialog
@@ -27,7 +27,7 @@
        optimize recording data monitor: repaint only what is necessary // done
        mp3 encoding with liblame_enc // done
 
-       time shift play (mp3, nogap, buffer=>mem or chained list of temp files)
+       time shift play (mp3, nogap, buffer=>mem or chained list of temp files) // done
 
        if first run => less error messages, ask user for configuration,
        station scan, etc...

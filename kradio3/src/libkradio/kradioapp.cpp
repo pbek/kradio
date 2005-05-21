@@ -65,11 +65,12 @@ AboutPageInfo  KRadioAbout::createAboutPage ()
                          VERSION,
                          description,
                          KAboutData::License_GPL,
-                         "(c) 2002, 2003 Martin Witte, Klas Kalass",
+                         "(c) 2002-2005 Martin Witte, Klas Kalass",
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);
     aboutData.addAuthor("Martin Witte",  I18N_NOOP("Preset Database, Remote Control Support, Alarms, Rewrite for KRadio 0.3.0, Misc"), "witte@kawo1.rwth-aachen.de");
+    aboutData.addAuthor("Marcus Camen",  I18N_NOOP("Buildsystem, Standards Conformance, Cleanups"), "mcamen@mcamen.de");
     aboutData.addAuthor("Klas Kalass",   I18N_NOOP("Miscellaneous"), "klas.kalass@gmx.de");
     aboutData.addAuthor("Frank Schwanz", I18N_NOOP("idea, first basic application"), "schwanz@fh-brandenburg.de");
 

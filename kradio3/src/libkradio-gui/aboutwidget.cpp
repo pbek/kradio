@@ -19,7 +19,7 @@
    to public programming, so we have to copy most of that code into
    an own class :(
 */
- 
+
 #include "aboutwidget.h"
 #include <qframe.h>
 #include <kaboutdialog.h>
@@ -39,7 +39,7 @@
 
 // copied (and renamed) from kaboutdialog.cpp
 // original: KAboutTabWidget
- 
+
 class KRadioAboutTabWidget : public QTabWidget
 {
 public:
@@ -52,7 +52,7 @@ public:
 
 // copied (renamed and extended) from kaboutdialog.cpp
 // original: KAboutContainerBase
- 
+
 KRadioAboutWidget::KRadioAboutWidget(const KAboutData &aboutData, int layoutType, QWidget *_parent,
                       char *_name )
   : QWidget( _parent, _name ),
@@ -179,7 +179,7 @@ KRadioAboutWidget::KRadioAboutWidget(const KAboutData &aboutData, int layoutType
   }
 
   fontChange( font() );
-  
+
   setAboutData(aboutData);
 }
 
@@ -221,7 +221,7 @@ QFrame *KRadioAboutWidget::addTextPage( const QString &title,
                       bool richText, int numLines )
 {
   QFrame *page = addEmptyPage( title );
-  if( page == 0 ) { return(0); }
+  if( page == 0 ) { return 0; }
   if( numLines <= 0 ) { numLines = 10; }
 
   QVBoxLayout *vbox = new QVBoxLayout( page, KDialog::spacingHint() );
@@ -248,14 +248,14 @@ QFrame *KRadioAboutWidget::addTextPage( const QString &title,
     vbox->addWidget( textEdit );
   }
 
-  return( page );
+  return page;
 }
 
 QFrame *KRadioAboutWidget::addLicensePage( const QString &title,
                       const QString &text, int numLines)
 {
   QFrame *page = addEmptyPage( title );
-  if( page == 0 ) { return(0); }
+  if( page == 0 ) { return 0; }
   if( numLines <= 0 ) { numLines = 10; }
 
   QVBoxLayout *vbox = new QVBoxLayout( page, KDialog::spacingHint() );
@@ -268,7 +268,7 @@ QFrame *KRadioAboutWidget::addLicensePage( const QString &title,
   textEdit->setMinimumHeight( fontMetrics().lineSpacing()*numLines );
   vbox->addWidget( textEdit );
 
-  return( page );
+  return page;
 }
 
 
@@ -279,7 +279,7 @@ KAboutContainer *KRadioAboutWidget::addContainerPage( const QString &title,
   if( mPageTab == 0 )
   {
     kdDebug(291) << "addPage: " << "Invalid layout" << endl;
-    return( 0 );
+    return 0;
   }
 
   KAboutContainer *container = new KAboutContainer( mPageTab, "container",
@@ -297,7 +297,7 @@ KAboutContainer *KRadioAboutWidget::addContainerPage( const QString &title,
   connect(container, SIGNAL(mailClick(const QString &,const QString &)),
       SLOT(slotMailClick(const QString &,const QString &)));
 
-  return( container );
+  return container;
 }
 
 
@@ -309,7 +309,7 @@ KAboutContainer *KRadioAboutWidget::addScrolledContainerPage(
   if( mPageTab == 0 )
   {
     kdDebug(291) << "addPage: " << "Invalid layout" << endl;
-    return( 0 );
+    return 0;
   }
 
   QFrame *page = addEmptyPage( title );
@@ -329,7 +329,7 @@ KAboutContainer *KRadioAboutWidget::addScrolledContainerPage(
   connect(container, SIGNAL(mailClick(const QString &,const QString &)),
       SLOT(slotMailClick(const QString &,const QString &)));
 
-  return( container );
+  return container;
 }
 
 
@@ -338,14 +338,14 @@ QFrame *KRadioAboutWidget::addEmptyPage( const QString &title )
   if( mPageTab == 0 )
   {
     kdDebug(291) << "addPage: " << "Invalid layout" << endl;
-    return( 0 );
+    return 0;
   }
 
   QFrame *page = new QFrame( mPageTab, title.latin1() );
   page->setFrameStyle( QFrame::NoFrame );
 
   mPageTab->addTab( page, title );
-  return( page );
+  return page;
 }
 
 
@@ -366,7 +366,7 @@ KAboutContainer *KRadioAboutWidget::addContainer( int childAlignment,
   connect(container, SIGNAL(mailClick(const QString &,const QString &)),
       SLOT(slotMailClick(const QString &,const QString &)));
 
-  return( container );
+  return container;
 }
 
 
@@ -474,16 +474,16 @@ void KRadioAboutWidget::slotMouseTrack( int mode, const QMouseEvent *e )
 
 void KRadioAboutWidget::slotUrlClick( const QString &url )
 {
-	if ( kapp )
-		kapp->invokeBrowser( url );
+    if ( kapp )
+        kapp->invokeBrowser( url );
 }
 
 
 void KRadioAboutWidget::slotMailClick( const QString &/*_name*/,
                      const QString &_address )
 {
-	if ( kapp )
-		kapp->invokeMailer( _address, QString::null );
+    if ( kapp )
+        kapp->invokeMailer( _address, QString::null );
 }
 
 
@@ -492,19 +492,19 @@ void KRadioAboutWidget::slotMailClick( const QString &/*_name*/,
 
 void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
 {
-	const KAboutData *aboutData = &_aboutData;
-	if (aboutData->programName().length()) {
-		setProduct( aboutData->programName(), aboutData->version(),
-					QString::null, QString::null );
-	}
+    const KAboutData *aboutData = &_aboutData;
+    if (aboutData->programName().length()) {
+        setProduct( aboutData->programName(), aboutData->version(),
+                    QString::null, QString::null );
+    }
 
     QString appPageText = aboutData->shortDescription() + "\n";
 
     if (!aboutData->otherText().isEmpty())
-		appPageText += "\n" + aboutData->otherText()+"\n";
+        appPageText += "\n" + aboutData->otherText()+"\n";
 
     if (!aboutData->copyrightStatement().isEmpty())
-		appPageText += "\n" + aboutData->copyrightStatement()+"\n";
+        appPageText += "\n" + aboutData->copyrightStatement()+"\n";
 
     KAboutContainer *appPage = addContainerPage( i18n("&About"));
 
@@ -513,52 +513,52 @@ void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
 
     if (!aboutData->homepage().isEmpty()) {
         KURLLabel *url = new KURLLabel();
-		url->setText(aboutData->homepage());
-		url->setURL(aboutData->homepage());
-		appPage->addWidget( url );
-		// FIXME
-		connect( url, SIGNAL(leftClickedURL(const QString &)),
-		         this, SLOT(slotUrlClick(const QString &)));
-	}
+        url->setText(aboutData->homepage());
+        url->setURL(aboutData->homepage());
+        appPage->addWidget( url );
+        // FIXME
+        connect( url, SIGNAL(leftClickedURL(const QString &)),
+                 this, SLOT(slotUrlClick(const QString &)));
+    }
 
-	int authorCount = aboutData->authors().count();
+    int authorCount = aboutData->authors().count();
 
-	if (authorCount) {
-		QString authorPageTitle = authorCount == 1 ?
-			i18n("A&uthor") : i18n("A&uthors");
-		KAboutContainer *authorPage = addScrolledContainerPage( authorPageTitle );
-		QValueList<KAboutPerson>::ConstIterator it;
-		for (it = aboutData->authors().begin();
-			it != aboutData->authors().end(); ++it)
-		{
-			authorPage->addPerson( (*it).name(), (*it).emailAddress(),
-				                   (*it).webAddress(), (*it).task() );
-		}
-	}
+    if (authorCount) {
+        QString authorPageTitle = authorCount == 1 ?
+            i18n("A&uthor") : i18n("A&uthors");
+        KAboutContainer *authorPage = addScrolledContainerPage( authorPageTitle );
+        QValueList<KAboutPerson>::ConstIterator it;
+        for (it = aboutData->authors().begin();
+            it != aboutData->authors().end(); ++it)
+        {
+            authorPage->addPerson( (*it).name(), (*it).emailAddress(),
+                                   (*it).webAddress(), (*it).task() );
+        }
+    }
 
-	int creditsCount = aboutData->credits().count();
+    int creditsCount = aboutData->credits().count();
 
-	if (creditsCount) {
-		KAboutContainer *creditsPage =
-			addScrolledContainerPage( i18n("&Thanks To") );
-		QValueList<KAboutPerson>::ConstIterator it;
-		for (it = aboutData->credits().begin();
-			it != aboutData->credits().end(); ++it)
-		{
-		  creditsPage->addPerson( (*it).name(), (*it).emailAddress(),
-									(*it).webAddress(), (*it).task() );
-		}
-	}
+    if (creditsCount) {
+        KAboutContainer *creditsPage =
+            addScrolledContainerPage( i18n("&Thanks To") );
+        QValueList<KAboutPerson>::ConstIterator it;
+        for (it = aboutData->credits().begin();
+            it != aboutData->credits().end(); ++it)
+        {
+          creditsPage->addPerson( (*it).name(), (*it).emailAddress(),
+                                    (*it).webAddress(), (*it).task() );
+        }
+    }
 
-	const QValueList<KAboutTranslator> translatorList = aboutData->translators();
+    const QValueList<KAboutTranslator> translatorList = aboutData->translators();
 
-	if(translatorList.count() > 0) {
-		KAboutContainer *translatorPage =
-			addScrolledContainerPage( i18n("T&ranslation") );
+    if(translatorList.count() > 0) {
+        KAboutContainer *translatorPage =
+            addScrolledContainerPage( i18n("T&ranslation") );
 
-		QValueList<KAboutTranslator>::ConstIterator it;
-		for(it = translatorList.begin(); it != translatorList.end(); ++it) {
-			translatorPage->addPerson((*it).name(), (*it).emailAddress(),
+        QValueList<KAboutTranslator>::ConstIterator it;
+        for(it = translatorList.begin(); it != translatorList.end(); ++it) {
+            translatorPage->addPerson((*it).name(), (*it).emailAddress(),
                                       0,0);
         }
 
@@ -570,8 +570,8 @@ void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
     }
 
     if (!aboutData->license().isEmpty() ) {
-		addLicensePage( i18n("&License Agreement"), aboutData->license() );
-	}
+        addLicensePage( i18n("&License Agreement"), aboutData->license() );
+    }
 }
 
 

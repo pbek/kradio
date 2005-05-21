@@ -2,7 +2,7 @@
                           v4lradio.h  -  description
                              -------------------
     begin                : Jan 2002
-    copyright            : (C) 2002, 2003 Ernst Martin Witte, Klas Kalass
+    copyright            : (C) 2002-2005 Ernst Martin Witte, Klas Kalass
     email                : witte@kawo1.rwth-aachen.de, klas@kde.org
  ***************************************************************************/
 
