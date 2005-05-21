@@ -1,4 +1,16 @@
-0.3.0 cvs
+2005-05-21
+
+        emw     - fixes of wrong location for soundstreamclient interconnect
+                  handling. The bug resulted in failed interconnects and segfaults
+                  due to non-released interconnects
+                - fixed problem with notification about soundstreamid creation (v4lradio)
+                - fixed ampersand handling of station names in gui-docking-menu
+                - renamed libraries in src, now we have a consistent prefix:
+                  libkradio-*
+                - consistency fixes for some plugins: member function
+                  name(), call of inherited notice(dis)connected
+
+0.3.0 cvs revive
 
         emw     - major rework on sound backend
                 - plugins as dynamic libraries
