@@ -91,6 +91,7 @@ bool RadioDocking::disconnectI (Interface *i)
 
 void RadioDocking::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
+    ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
         s->register4_sendStartRecordingWithFormat(this);
         s->register4_sendStopRecording           (this);
@@ -241,7 +242,11 @@ void RadioDocking::buildStationList()
 
         if (rs.isValid()) {
 
-            int id = m_menu->insertItem(QString().setNum(++k) + " " + rs.longName());
+            ++k;
+            QString shortcut = k < 10 ? "&"+QString().setNum(k) : k == 10 ? "1&0" : QString().setNum(k);
+            QString name     = rs.longName().replace("&", "&&");
+            QString item = shortcut + " " + name;
+            int id = m_menu->insertItem(item);
 
             m_stationMenuIDs.push_back(id);
             m_menu->setItemChecked (id, rs.compare(crs) == 0);
