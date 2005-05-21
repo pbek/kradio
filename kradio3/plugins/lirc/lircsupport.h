@@ -30,6 +30,33 @@
 #include "../../src/libkradio/plugins.h"
 
 
+enum LIRC_Actions {
+    LIRC_DIGIT_0,
+    LIRC_DIGIT_1,
+    LIRC_DIGIT_2,
+    LIRC_DIGIT_3,
+    LIRC_DIGIT_4,
+    LIRC_DIGIT_5,
+    LIRC_DIGIT_6,
+    LIRC_DIGIT_7,
+    LIRC_DIGIT_8,
+    LIRC_DIGIT_9,
+    LIRC_POWER_ON,
+    LIRC_POWER_OFF,
+    LIRC_PAUSE,
+    LIRC_RECORD_START,
+    LIRC_RECORD_STOP,
+    LIRC_VOLUME_INC,
+    LIRC_VOLUME_DEC,
+    LIRC_CHANNEL_NEXT,
+    LIRC_CHANNEL_PREV,
+    LIRC_SEARCH_NEXT,
+    LIRC_SEARCH_PREV,
+    LIRC_SLEEP,
+    LIRC_APPLICATION_QUIT
+};
+
+
 struct lirc_config;
 class QSocketNotifier;
 class QTimer;
@@ -53,6 +80,11 @@ public:
 
     virtual const QString &name() const { return PluginBase::name(); }
     virtual       QString &name()       { return PluginBase::name(); }
+
+
+    virtual void                               setActions(const QMap<LIRC_Actions, QString> &actions, const QMap<LIRC_Actions, QString> &alt_actions);
+    virtual const QMap<LIRC_Actions, QString> &getActions()            const { return m_Actions; }
+    virtual const QMap<LIRC_Actions, QString> &getAlternativeActions() const { return m_AlternativeActions; }
 
     // PluginBase
 
@@ -94,21 +126,29 @@ RECEIVERS:
 
 protected:
     void     activateStation(int i);
+    bool     checkActions(const QString &string, const QMap<LIRC_Actions, QString> &map);
 
 protected slots:
     void slotLIRC(int socket);
     void slotKbdTimedOut();
+
+signals:
+
+    void sigUpdateConfig();
 
 protected:
 
 #ifdef HAVE_LIRC_CLIENT
     QSocketNotifier        *m_lirc_notify;
     int                     m_fd_lirc;
-    struct lirc_config    *m_lircConfig;
+    struct lirc_config     *m_lircConfig;
 #endif
 
-    QTimer                *m_kbdTimer;
+    QTimer                 *m_kbdTimer;
     int                     m_addIndex;
+
+    QMap<LIRC_Actions, QString>  m_Actions;
+    QMap<LIRC_Actions, QString>  m_AlternativeActions;
 };
 
 
