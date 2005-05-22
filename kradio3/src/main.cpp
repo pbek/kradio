@@ -19,6 +19,7 @@
 #include <kaboutdata.h>
 #include <klocale.h>
 
+#include "kradioversion.h"
 #include "libkradio/kradioapp.h"
 
 
@@ -31,7 +32,7 @@ static KCmdLineOptions options[] =
 int main(int argc, char *argv[])
 {
     KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
-                         VERSION, "KRadio", KAboutData::License_GPL,
+                         KRADIO_VERSION, "KRadio", KAboutData::License_GPL,
                          "(c) 2002-2005 Martin Witte, Klas Kalass, Frank Schwanz",
                          0,
                          "http://sourceforge.net/projects/kradio",

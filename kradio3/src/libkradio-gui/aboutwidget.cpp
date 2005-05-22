@@ -20,6 +20,7 @@
    an own class :(
 */
 
+#include "kradioversion.h"
 #include "aboutwidget.h"
 #include <qframe.h>
 #include <kaboutdialog.h>
@@ -447,7 +448,9 @@ void KRadioAboutWidget::setProduct( const QString &appName,
   if ( kapp )
       mIconLabel->setPixmap( kapp->icon() );
 
-  QString msg1 = i18n("%1 %2 (Using KDE %3)").arg(appName).arg(version).
+  // FIXME: Version Numbers should not be part of i18n()
+  QString msg1 = i18n("%1 %2 (Using KDE %3)").arg(appName).
+    arg(QString::fromLatin1(KRADIO_VERSION)).
     arg(QString::fromLatin1(KDE_VERSION_STRING));
   QString msg2 = !year.isEmpty() ? i18n("%1 %2, %3").arg('©').arg(year).
     arg(author) : QString::fromLatin1("");
