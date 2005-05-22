@@ -669,6 +669,8 @@ void RadioView::slotRecord()
     queryIsRecordingRunning(id, r);
 
     if (!r && b /*!m_StreamID2MenuID.contains(id)*/) {
+        if (!queryIsPowerOn())
+            sendPowerOn();
         sendStartRecording(id);
     } else if (r && !b) {
         sendStopRecording(id);
@@ -682,8 +684,11 @@ void RadioView::slotRecordingMenu(int i)
         SoundStreamID id = queryCurrentSoundStreamID();
         bool          r  = false;
         queryIsRecordingRunning(id, r);
-        if (!r)
+        if (!r) {
+            if (!queryIsPowerOn())
+                sendPowerOn();
             sendStartRecording(id);
+        }
     } else if (m_MenuID2StreamID.contains(i)) {
         sendStopRecording(m_MenuID2StreamID[i]);
     }

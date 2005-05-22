@@ -126,8 +126,6 @@ protected slots:
     void slotSleepCountdown();
     void slotShowAbout();
 
-    void slotRecording();
-
     void slotMenuItemActivated(int id);
     void slotRecordingMenu(int i);
 

@@ -444,16 +444,6 @@ void RadioDocking::noticePluginsChanged(const PluginList &/*l*/)
 }
 
 
-void RadioDocking::slotRecording()
-{
-/*    if (queryIsRecording()) {
-         sendStopRecording();
-    } else {
-        sendStartRecording();
-    }*/
-}
-
-
 // ISoundStreamClient
 
 bool RadioDocking::startRecordingWithFormat(
@@ -503,8 +493,11 @@ void RadioDocking::slotRecordingMenu(int i)
         SoundStreamID id = queryCurrentSoundStreamID();
         bool          r  = false;
         queryIsRecordingRunning(id, r);
-        if (!r)
+        if (!r) {
+            if (!queryIsPowerOn())
+                sendPowerOn();
             sendStartRecording(id);
+        }
     } else if (m_MenuID2StreamID.contains(i)) {
         sendStopRecording(m_MenuID2StreamID[i]);
     }

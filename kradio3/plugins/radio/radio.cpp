@@ -461,7 +461,7 @@ bool Radio::noticeAlarm(const Alarm &a)
         bool r = false;
         queryIsRecordingRunning(id, r);
         if (a.alarmType() == Alarm::StartRecording && !r)
-            startRecording(id);
+            sendStartRecording(id);
 
     } else {
         powerOff();
