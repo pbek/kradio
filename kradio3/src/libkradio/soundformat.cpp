@@ -112,7 +112,7 @@ void SoundFormat::convertIntToSample(int src, char *dst, bool is_scaled) const
              val >>= 8;
         }
     } else {
-        dst += size - 1;
+        dst = dst - 1 + size;
         for (int i = size - 1; i >= 0; --i, --dst) {
             (unsigned char &)*dst = val & 0xFF;
              val >>= 8;
@@ -128,9 +128,9 @@ void SoundFormat::convertSamplesToInts(const char *src, int *dst, unsigned n, bo
     int signmask = do_scale ? (!m_IsSigned << ((sizeof(unsigned) << 3) - 1)) :
                               (-m_IsSigned << ((size << 3)             - 1)) ;
     if (m_Endianess == LITTLE_ENDIAN) {
-        src += (size * n) - 1;
+        src = src - 1 + (size * n);
         int *end = dst;
-        for (dst += n - 1; dst >= end; --dst) {
+        for (dst = dst - 1 + n; dst >= end; --dst) {
             unsigned val = 0;
             for (int i = size - 1; i >= 0; --i, --src) {
                 val = (val << 8) | (unsigned char)*src;
@@ -172,9 +172,9 @@ void SoundFormat::convertIntsToSamples(const int *src, char *dst, unsigned n, bo
             }
         }
     } else {
-        dst += (size * n) - 1;
+        dst = dst - 1 + (size * n);
         const int *end = src;
-        for (src += n - 1; src >= end; --src) {
+        for (src = src - 1 + n; src >= end; --src) {
             unsigned val = is_scaled ? ((unsigned)(*src ^ signmask)) >> scale : *src;
             for (int i = size - 1; i >= 0; --i, --dst) {
                 (unsigned char &)*dst = val & 0xFF;
@@ -199,13 +199,13 @@ void SoundFormat::convertSamplesToFloat(const char *_src, float **_dst, unsigned
             const char *src = src_ch0_end + sample_size * ch;
             float      *dst = _dst[ch];
             float      *end = dst;
-            for (dst += n - 1; dst >= end; --dst) {
+            for (dst = dst - 1 + n; dst >= end; --dst) {
                 unsigned val = 0;
                 for (int i = sample_size - 1; i >= 0; --i, --src) {
                     val = (val << 8) | (unsigned char)*src;
                 }
                 *dst = (float)(signed short)((val << scale) ^ signmask) / 32768.0f;
-                src -= skip;
+                src = src - skip;
             }
         }
     } else {
@@ -218,7 +218,7 @@ void SoundFormat::convertSamplesToFloat(const char *_src, float **_dst, unsigned
                     val = (val << 8) | (unsigned char)*src;
                 }
                 *dst = (float)(signed short)((val << scale) ^ signmask) / 32768.0f;
-                src += skip;
+                src = src + skip;
             }
         }
     }
@@ -244,7 +244,7 @@ void SoundFormat::convertFloatsToSamples(const float **_src, char *_dst, unsigne
                     (unsigned char &)*dst = val & 0xFF;
                     val >>= 8;
                 }
-                dst += skip;
+                dst = dst + skip;
             }
         }
     } else {
@@ -253,13 +253,13 @@ void SoundFormat::convertFloatsToSamples(const float **_src, char *_dst, unsigne
             char        *dst = dst_ch0_end + sample_size * ch;
             const float *src = _src[ch];
             const float *end = src;
-            for (src += n - 1; src >= end; --src) {
+            for (src = src - 1 + n; src >= end; --src) {
                 unsigned val = (( ((unsigned)(*src * 32768.0f)) ^ signmask)) >> scale;
                 for (int i = sample_size - 1; i >= 0; --i, --dst) {
                     (unsigned char &)*dst = val & 0xFF;
                     val >>= 8;
                 }
-                dst -= skip;
+                dst = dst - skip;
             }
         }
     }
