@@ -1,6 +1,8 @@
 0.3.0 cvs
 
-       make file operations complient with non-ascii-charsets (e.g. cyrillic)
+       use size_t instead of unsigned ints for all sizes!!! (was reason for
+            problems in pointer arithmetic on amd64)
+       make file operations compliant with non-ascii-charsets (e.g. cyrillic)
        tooltips in config dialog
        option for display window type (entry in taskbar or toolbar window)
        background pixmap for display
@@ -36,9 +38,9 @@
 
        FAQ
 
-         - devices (radio, mixer, dsp)
-         - mixer settings for recording
-         - artsd
+       - devices (radio, mixer, dsp)
+       - mixer settings for recording
+       - artsd
          
        
 0.3.0-beta1
