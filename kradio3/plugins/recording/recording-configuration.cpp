@@ -35,14 +35,14 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
                      this,           SLOT(slotFormatSelectionChanged()));
 
 #ifndef HAVE_LAME_LAME_H
-    editFileFormat->removeItem(FORMAT_MP3_IDX);
+    editFileFormat->removeItem(FORMAT_MP3_IDX_ORG);
     delete editMP3Quality;
     editMP3Quality = NULL;
     delete labelMP3Quality;
     labelMP3Quality = NULL;
 #endif
 #if !defined(HAVE_VORBIS_VORBISENC_H) || !defined(HAVE_OGG_OGG_H)
-    editFileFormat->removeItem(FORMAT_OGG_IDX);
+    editFileFormat->removeItem(FORMAT_OGG_IDX_ORG);
     delete editOggQuality;
     editOggQuality = NULL;
     delete labelOggQuality;

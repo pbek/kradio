@@ -50,6 +50,9 @@
 #define FORMAT_RAW_IDX      3
 #define NEXT_IDX1           4
 
+#define FORMAT_MP3_IDX_ORG  4
+#define FORMAT_OGG_IDX_ORG  5
+
 #ifdef HAVE_LAME_LAME_H
     #define FORMAT_MP3_IDX      NEXT_IDX1
     #define NEXT_IDX2           (NEXT_IDX1+1)
