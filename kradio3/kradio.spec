@@ -37,7 +37,6 @@ of new plugins (e.g. Internet Radio Streams, new cool GUIs) are welcome.
 
 %prep
 %setup
-unsermake -f Makefile.cvs
 export CFLAGS="$RPM_OPT_FLAGS"
 export CXXFLAGS="$RPM_OPT_FLAGS"
 ./configure \
