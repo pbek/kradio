@@ -427,13 +427,12 @@ void PluginManager::restoreState (KConfig *c)
     }
 
     if (m_Application && n == 0) {
+        const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
+        for (QMapConstIterator<QString, PluginClassInfo> it=classes.begin(); it != classes.end(); ++it) {
+            const PluginClassInfo &cls = *it;
+            m_Application->CreatePlugin(this, cls.class_name, m_Name + "-" + cls.class_name);
+        }
         m_configDialog->show();
-/*        m_Application->CreatePlugin(this, "ErrorLog",     "logger-1");
-        m_Application->CreatePlugin(this, "V4LRadio",     "v4lradio-1");
-        m_Application->CreatePlugin(this, "Radio",        "radio-1");
-        m_Application->CreatePlugin(this, "TimeControl",  "timecontrol-1");
-        m_Application->CreatePlugin(this, "RadioDocking", "docking-1");
-        m_Application->CreatePlugin(this, "RadioView",    "radioview-1");*/
     }
 
     for (PluginIterator i(m_plugins); i.current(); ++i) {
