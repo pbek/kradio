@@ -119,7 +119,8 @@ void QuickBar::saveState (KConfig *config) const
 
     config->writeEntry("nStations", m_stationIDs.size());
     int i = 1;
-    for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++i) {
+    QStringList::const_iterator end = m_stationIDs.end();
+    for (QStringList::const_iterator it = m_stationIDs.begin(); it != end; ++it, ++i) {
         config->writeEntry(QString("stationID-") + QString().setNum(i), *it);
     }
 }
@@ -200,7 +201,8 @@ void QuickBar::buttonClicked(int id)
     } else {
 
         int k = 0;
-        for (QStringList::iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++k) {
+        QStringList::iterator end = m_stationIDs.end();
+        for (QStringList::iterator it = m_stationIDs.begin(); it != end; ++it, ++k) {
             if (k == id) {
                 const RawStationList &sl = queryStations().all();
                 const RadioStation &rs = sl.stationWithID(*it);
@@ -224,7 +226,8 @@ int QuickBar::getButtonID(const RadioStation &rs) const
 {
     QString stationID = rs.stationID();
     int k = 0;
-    for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++k) {
+    QStringList::const_iterator end = m_stationIDs.end();
+    for (QStringList::const_iterator it = m_stationIDs.begin(); it != end; ++it, ++k) {
         if (*it == stationID)
             return k;
     }
@@ -281,7 +284,8 @@ void QuickBar::rebuildGUI()
     int buttonID = 0;
     const RawStationList &stations = queryStations().all();
 
-    for (QStringList::iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++buttonID) {
+    QStringList::iterator end = m_stationIDs.end();
+    for (QStringList::iterator it = m_stationIDs.begin(); it != end; ++it, ++buttonID) {
 
         const RadioStation &rs = stations.stationWithID(*it);
         if (! rs.isValid()) continue;

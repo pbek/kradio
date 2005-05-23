@@ -57,10 +57,10 @@ RECEIVERS:
     bool  setDisplayFont (const QFont &f);
 
 ANSWERS:
-    QColor   getDisplayActiveColor()   const { return m_colorActiveText; }
-    QColor   getDisplayInactiveColor() const { return m_colorInactiveText; }
-    QColor   getDisplayBkgndColor()    const { return m_colorButton; }
-    QFont    getDisplayFont()          const { return m_font; }
+    const QColor   &getDisplayActiveColor()   const { return m_colorActiveText; }
+    const QColor   &getDisplayInactiveColor() const { return m_colorInactiveText; }
+    const QColor   &getDisplayBkgndColor()    const { return m_colorButton; }
+    const QFont    &getDisplayFont()          const { return m_font; }
 
 // IRadioDeviceClient
 RECEIVERS:

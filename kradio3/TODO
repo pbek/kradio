@@ -1,5 +1,8 @@
 0.3.0 cvs
 
+
+       speed up kradio start
+       inet-stream-out plugin
        use size_t instead of unsigned ints for all sizes!!! (was reason for
             problems in pointer arithmetic on amd64)
        make file operations compliant with non-ascii-charsets (e.g. cyrillic)
@@ -35,6 +38,7 @@
        station scan, etc...
 
        alsa support
+       RDS support
 
        FAQ
 

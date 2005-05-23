@@ -411,7 +411,8 @@ QString StationList::writeXML (const IErrorLogClient &/*logger*/) const
         data += tt + xmlOpenTag (s->getClassName());
 
         QStringList properties = s->getPropertyNames();
-        for (QStringList::iterator sit = properties.begin(); sit != properties.end(); ++sit) {
+        QStringList::iterator end = properties.end();
+        for (QStringList::iterator sit = properties.begin(); sit != end; ++sit) {
             data += ttt + xmlTag (*sit, s->getProperty(*sit));
         }
         data += tt + xmlCloseTag(s->getClassName());

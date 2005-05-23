@@ -135,7 +135,8 @@ void RadioDocking::saveState (KConfig *config) const
 
     config->writeEntry("nStations", m_stationIDs.size());
     int i = 1;
-    for (QStringList::const_iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it, ++i) {
+    QStringList::const_iterator end = m_stationIDs.end();
+    for (QStringList::const_iterator it = m_stationIDs.begin(); it != end; ++it, ++i) {
         config->writeEntry(QString("stationID-") + QString().setNum(i), *it);
     }
 }
@@ -237,7 +238,8 @@ void RadioDocking::buildStationList()
     const RadioStation   &crs = queryCurrentStation();
 
     int k = 0;
-    for (QStringList::iterator it = m_stationIDs.begin(); it != m_stationIDs.end(); ++it) {
+    QStringList::iterator end = m_stationIDs.end();
+    for (QStringList::iterator it = m_stationIDs.begin(); it != end; ++it) {
         const RadioStation &rs = sl.stationWithID(*it);
 
         if (rs.isValid()) {
@@ -375,8 +377,9 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
     // FIXME: title does not change in opened popupmenu
 
     QValueList<int>::iterator iit = m_stationMenuIDs.begin();
+    QValueList<int>::iterator end = m_stationMenuIDs.end();
     QStringList::iterator     sit = m_stationIDs.begin();
-    for (; iit != m_stationMenuIDs.end(); ++iit, ++sit) {
+    for (; iit != end; ++iit, ++sit) {
         if (*iit != -1) {
             bool on = rs.stationID() == *sit;
             m_menu->setItemChecked (*iit, on);
@@ -419,8 +422,9 @@ void RadioDocking::slotMenuItemActivated(int id)
 {
     const StationList &sl = queryStations();
     QValueList<int>::iterator iit = m_stationMenuIDs.begin();
+    QValueList<int>::iterator end = m_stationMenuIDs.end();
     QStringList::iterator     sit = m_stationIDs.begin();
-    for (; iit != m_stationMenuIDs.end(); ++iit, ++sit) {
+    for (; iit != end; ++iit, ++sit) {
         if (*iit == id) {
             const RadioStation &rs = sl.stationWithID(*sit);
             if (rs.isValid())
@@ -516,7 +520,8 @@ void RadioDocking::buildRecordingMenu()
                      this, SLOT(slotRecordingMenu(int)));
     SoundStreamID currentID = queryCurrentSoundStreamID();
 
-    for (QMapIterator<QString, SoundStreamID> it = streams.begin(); it != streams.end(); ++it) {
+    QMapIterator<QString, SoundStreamID> end = streams.end();
+    for (QMapIterator<QString, SoundStreamID> it = streams.begin(); it != end; ++it) {
 
         SoundStreamID id    = *it;
         QString       descr = it.key();

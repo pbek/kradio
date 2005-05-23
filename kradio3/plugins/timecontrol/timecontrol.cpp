@@ -246,7 +246,8 @@ void    TimeControl::saveState    (KConfig *config) const
 
     config->writeEntry("nAlarms", m_alarms.size());
     int idx = 1;
-    for (ciAlarmVector i = m_alarms.begin(); i != m_alarms.end(); ++i, ++idx) {
+    ciAlarmVector end = m_alarms.end();
+    for (ciAlarmVector i = m_alarms.begin(); i != end; ++i, ++idx) {
         QString num = QString().setNum(idx);
         config->writeEntry (AlarmTimeElement      + num, i->alarmTime());
         config->writeEntry (AlarmEnabledElement   + num, i->isEnabled());

@@ -511,7 +511,9 @@ void OSSSoundDevice::slotPoll()
         checkMixerVolume(m_PlaybackStreamID);
     if (m_CaptureStreamID.isValid())
         checkMixerVolume(m_CaptureStreamID);
-    for (QValueListConstIterator<SoundStreamID> it = m_PassivePlaybackStreams.begin(); it != m_PassivePlaybackStreams.end(); ++it)
+
+    QValueListConstIterator<SoundStreamID> end = m_PassivePlaybackStreams.end();
+    for (QValueListConstIterator<SoundStreamID> it = m_PassivePlaybackStreams.begin(); it != end; ++it)
         checkMixerVolume(*it);
 
 }

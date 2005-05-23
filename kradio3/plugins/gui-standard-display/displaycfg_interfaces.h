@@ -44,10 +44,10 @@ SENDERS:
     IF_SENDER  (  notifyDisplayFontChanged(const QFont &f)                                                               )
 
 ANSWERS:
-    IF_ANSWER  (  QColor   getDisplayActiveColor() const )
-    IF_ANSWER  (  QColor   getDisplayInactiveColor() const )
-    IF_ANSWER  (  QColor   getDisplayBkgndColor() const )
-    IF_ANSWER  (  QFont    getDisplayFont() const )
+    IF_ANSWER  (  const QColor   &getDisplayActiveColor() const )
+    IF_ANSWER  (  const QColor   &getDisplayInactiveColor() const )
+    IF_ANSWER  (  const QColor   &getDisplayBkgndColor() const )
+    IF_ANSWER  (  const QFont    &getDisplayFont() const )
 
 };
 
@@ -68,10 +68,10 @@ RECEIVERS:
     IF_RECEIVER(  noticeDisplayFontChanged(const QFont &f)                                                               )
 
 QUERIES:
-    IF_QUERY   (  QColor   queryDisplayActiveColor() )
-    IF_QUERY   (  QColor   queryDisplayInactiveColor() )
-    IF_QUERY   (  QColor   queryDisplayBkgndColor()  )
-    IF_QUERY   (  QFont    queryDisplayFont()  )
+    IF_QUERY   (  const QColor   &queryDisplayActiveColor() )
+    IF_QUERY   (  const QColor   &queryDisplayInactiveColor() )
+    IF_QUERY   (  const QColor   &queryDisplayBkgndColor()  )
+    IF_QUERY   (  const QFont    &queryDisplayFont()  )
 
 RECEIVERS:
     virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);

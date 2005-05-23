@@ -64,7 +64,8 @@ Recording::Recording(const QString &name)
 Recording::~Recording()
 {
     QMapIterator<SoundStreamID, RecordingEncoding*> it = m_EncodingThreads.begin();
-    for (; it != m_EncodingThreads.end(); ++it) {
+    QMapIterator<SoundStreamID, RecordingEncoding*> end = m_EncodingThreads.end();
+    for (; it != end; ++it) {
         sendStopRecording(it.key());
     }
 }
@@ -495,7 +496,8 @@ bool Recording::getSoundStreamRadioStation(SoundStreamID id, const RadioStation 
 
 bool Recording::enumerateSoundStreams(QMap<QString, SoundStreamID> &list) const
 {
-    for (QMapConstIterator<SoundStreamID,SoundStreamID> it = m_RawStreams2EncodedStreams.begin(); it != m_RawStreams2EncodedStreams.end(); ++it) {
+    QMapConstIterator<SoundStreamID,SoundStreamID> end = m_RawStreams2EncodedStreams.end();
+    for (QMapConstIterator<SoundStreamID,SoundStreamID> it = m_RawStreams2EncodedStreams.begin(); it != end; ++it) {
         QString tmp = QString::null;
         getSoundStreamDescription(*it, tmp);
         list[tmp] = *it;

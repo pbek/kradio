@@ -138,7 +138,8 @@ void RecordingMonitor::noticeConnectedI (ISoundStreamServer *s, bool pointer_val
         m_SoundStreamID2idx.clear();
         m_idx2SoundStreamID.clear();
         m_comboSoundStreamSelector->insertItem(i18n("nothing"));
-        for (QMapConstIterator<QString, SoundStreamID> it = tmp.begin(); it != tmp.end(); ++it) {
+        QMapConstIterator<QString, SoundStreamID> end = tmp.end();
+        for (QMapConstIterator<QString, SoundStreamID> it = tmp.begin(); it != end; ++it) {
             int idx = m_comboSoundStreamSelector->count();
             m_comboSoundStreamSelector->insertItem(it.key());
             m_idx2SoundStreamID[idx] = *it;
@@ -236,7 +237,8 @@ bool RecordingMonitor::noticeSoundStreamClosed(SoundStreamID id)
         int idx = m_SoundStreamID2idx[id];
         m_idx2SoundStreamID.clear();
         m_SoundStreamID2idx.remove(id);
-        for (QMapIterator<SoundStreamID, int> it = m_SoundStreamID2idx.begin(); it != m_SoundStreamID2idx.end(); ++it) {
+        QMapIterator<SoundStreamID, int> end = m_SoundStreamID2idx.end();
+        for (QMapIterator<SoundStreamID, int> it = m_SoundStreamID2idx.begin(); it != end; ++it) {
             if (*it > idx) {
                 (*it)--;
             }

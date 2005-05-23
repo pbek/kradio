@@ -50,13 +50,15 @@ void PluginManagerConfiguration::noticePluginLibrariesChanged()
 {
     listPluginLibraries->clear();
     const QMap<QString, PluginLibraryInfo> &libs = m_Application->getPluginLibraries();
-    for (QMapConstIterator<QString,PluginLibraryInfo> it = libs.begin(); it != libs.end(); ++it) {
+    QMapConstIterator<QString,PluginLibraryInfo> end = libs.end();
+    for (QMapConstIterator<QString,PluginLibraryInfo> it = libs.begin(); it != end; ++it) {
         listPluginLibraries->insertItem(it.key());
     }
 
     listPluginClasses->clear();
     const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
-    for (QMapConstIterator<QString, PluginClassInfo> it = classes.begin(); it != classes.end(); ++it) {
+    QMapConstIterator<QString, PluginClassInfo> end_cls = classes.end();
+    for (QMapConstIterator<QString, PluginClassInfo> it = classes.begin(); it != end_cls; ++it) {
         listPluginClasses->insertItem(new KListViewItem(listPluginClasses, it.key(), (*it).description));
     }
 

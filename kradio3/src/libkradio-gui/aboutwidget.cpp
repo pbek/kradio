@@ -530,10 +530,9 @@ void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
         QString authorPageTitle = authorCount == 1 ?
             i18n("A&uthor") : i18n("A&uthors");
         KAboutContainer *authorPage = addScrolledContainerPage( authorPageTitle );
-        QValueList<KAboutPerson>::ConstIterator it;
-        for (it = aboutData->authors().begin();
-            it != aboutData->authors().end(); ++it)
-        {
+        QValueList<KAboutPerson>::ConstIterator it  = aboutData->authors().begin();
+        QValueList<KAboutPerson>::ConstIterator end = aboutData->authors().end();
+        for (; it != end; ++it) {
             authorPage->addPerson( (*it).name(), (*it).emailAddress(),
                                    (*it).webAddress(), (*it).task() );
         }
@@ -544,12 +543,11 @@ void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
     if (creditsCount) {
         KAboutContainer *creditsPage =
             addScrolledContainerPage( i18n("&Thanks To") );
-        QValueList<KAboutPerson>::ConstIterator it;
-        for (it = aboutData->credits().begin();
-            it != aboutData->credits().end(); ++it)
-        {
+        QValueList<KAboutPerson>::ConstIterator it  = aboutData->credits().begin();
+        QValueList<KAboutPerson>::ConstIterator end = aboutData->credits().end();
+        for (; it != end; ++it) {
           creditsPage->addPerson( (*it).name(), (*it).emailAddress(),
-                                    (*it).webAddress(), (*it).task() );
+                                  (*it).webAddress(), (*it).task() );
         }
     }
 
@@ -559,8 +557,9 @@ void KRadioAboutWidget::setAboutData(const KAboutData &_aboutData)
         KAboutContainer *translatorPage =
             addScrolledContainerPage( i18n("T&ranslation") );
 
-        QValueList<KAboutTranslator>::ConstIterator it;
-        for(it = translatorList.begin(); it != translatorList.end(); ++it) {
+        QValueList<KAboutTranslator>::ConstIterator it  = translatorList.begin();
+        QValueList<KAboutTranslator>::ConstIterator end = translatorList.end();
+        for(; it != end; ++it) {
             translatorPage->addPerson((*it).name(), (*it).emailAddress(),
                                       0,0);
         }

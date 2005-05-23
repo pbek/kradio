@@ -145,7 +145,8 @@ PluginBase *PluginManager::getPluginByName(const QString &name) const
 void PluginManager::insertPlugin(PluginBase *p)
 {
     if (p) {
-        kdDebug() << "Debug: Adding Plugin: " << p->name() << "\n";
+        kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+                  << " Debug: Adding Plugin: " << p->name() << "\n";
 
         if (!m_configDialog)
             createConfigDialog(i18n(m_configDialogTitle.ascii()));
@@ -161,7 +162,8 @@ void PluginManager::insertPlugin(PluginBase *p)
         // connect plugins with each other
         for (PluginIterator it(m_plugins); it.current(); ++it) {
             if (it.current() != p) {
-                kdDebug() << "Debug: connecting with " << it.current()->name() << "\n";
+                kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+                          << " Debug: connecting with " << it.current()->name() << "\n";
                 p->connectI(it.current());
             }
         }
@@ -428,7 +430,8 @@ void PluginManager::restoreState (KConfig *c)
 
     if (m_Application && n == 0) {
         const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
-        for (QMapConstIterator<QString, PluginClassInfo> it=classes.begin(); it != classes.end(); ++it) {
+        QMapConstIterator<QString, PluginClassInfo> end = classes.end();
+        for (QMapConstIterator<QString, PluginClassInfo> it=classes.begin(); it != end; ++it) {
             const PluginClassInfo &cls = *it;
             m_Application->CreatePlugin(this, cls.class_name, m_Name + "-" + cls.class_name);
         }

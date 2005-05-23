@@ -377,7 +377,8 @@ void TimeControlConfiguration::slotDeleteAlarm()
     if (idx >= 0 && (unsigned)idx < alarms.size()) {
         // unfortunately a function vector<>::erase(idx) does not exist
         iAlarmVector i = alarms.begin();
-        for (int k = 0; k < idx; ++k) ++i;
+        for (int k = 0; k < idx; ++k)
+            ++i;
         if (i != alarms.end())
             alarms.erase(i);
         listAlarms->removeItem(idx);

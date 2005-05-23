@@ -92,7 +92,8 @@ void GUIListHelper<TLIST, TID>::setData (const QMap<TID, QString> &data)
 
     m_ID2Description = data;
     QValueList<THelpData> help_list;
-    for (QMapConstIterator<TID, QString> it = data.begin(); it != data.end(); ++it) {
+    QMapConstIterator<TID, QString> end = data.end();
+    for (QMapConstIterator<TID, QString> it = data.begin(); it != end; ++it) {
         help_list.push_back(THelpData(it.key(), *it, m_skey));
     }
     qHeapSort(help_list);
@@ -101,7 +102,8 @@ void GUIListHelper<TLIST, TID>::setData (const QMap<TID, QString> &data)
     m_ID2Index.clear();
 
     int idx = 0;
-    for (QValueListIterator<THelpData> it = help_list.begin(); it != help_list.end(); ++it, ++idx) {
+    QValueListIterator<THelpData> end_hlp = help_list.end();
+    for (QValueListIterator<THelpData> it = help_list.begin(); it != end_hlp; ++it, ++idx) {
         m_Index2ID.insert(idx, (*it).id);
         m_ID2Index.insert((*it).id, idx);
         m_List->insertItem((*it).descr);

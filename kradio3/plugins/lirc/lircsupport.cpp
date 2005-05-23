@@ -297,7 +297,8 @@ bool LircSupport::checkActions(const QString &lirc_string, const QMap<LIRC_Actio
     ISeekRadio *seeker = NULL;
 
     QMapConstIterator<LIRC_Actions, QString> it = map.begin();
-    for (; it != map.end(); ++it) {
+    QMapConstIterator<LIRC_Actions, QString> end = map.end();
+    for (; it != end; ++it) {
         if ((*it).length() && lirc_string == *it) {
             LIRC_Actions action = it.key();
             int digit = -1;
