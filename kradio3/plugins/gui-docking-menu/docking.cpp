@@ -406,6 +406,11 @@ void RadioDocking::mousePressEvent( QMouseEvent *e )
 
     switch ( e->button() ) {
     case LeftButton:
+        // FIXME: [mcamen] According the KDE usability guidelines a left
+        //                 click on the systray icon should show/hide the
+        //                 application window
+        // TODO: [mcamen] Use KSystemtray::toggleActive and friends once we
+        //                depend on KDE 3.3
         if (queryIsPowerOn())
             sendPowerOff();
         else
