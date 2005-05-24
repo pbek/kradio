@@ -71,3 +71,11 @@ USABILITY, STYLE-GUIDE
   * Buildsystem: apidocs
   * KDE uses l10n instead of i18n now
   * Autohell: configure checks for dependency libs, pkg-config
+
+
+DISTRIBUTION
+============
+  * Get svn2dist (used for kdeextragear) to work with KRadio. This wil
+    give us nice kradio.src.gz tarballs.
+  * apps.kde.org ?!?!
+  * dot.kde.org ????
