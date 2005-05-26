@@ -183,6 +183,8 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
         SoundStreamID newid = createNewSoundStream(orgid, false);
         notifySoundStreamCreated(newid);
         notifySoundStreamRedirected(orgid, newid);
+        sendMute(newid);
+        sendPlaybackVolume(newid, 0);
         sendStopPlayback(newid);
         m_OrgStreamID  = orgid;
         m_NewStreamID  = newid;
