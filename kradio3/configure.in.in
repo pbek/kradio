@@ -69,6 +69,12 @@ AC_CHECK_HEADERS([ogg/ogg.h], [], AC_MSG_RESULT([libogg header not found]))
 
 
 
+dnl ---------------------------------------------------------------------
+dnl ALSA support
+
+AC_CHECK_LIB(asound, snd_card_next, [], AC_MSG_RESULT([libasound not found]))
+AC_CHECK_HEADERS([alsa/asoundlib.h], [], AC_MSG_RESULT([libasound header not found]))
+
 dnl ----------------------------------------------------------------------
 dnl apidox
 

@@ -1,9 +1,9 @@
 =========
-  * sometimes, pause doesn't mute line output
+
+  * make ALSA support conditional/configurable in configure script
   * GUI improvements for pause function
 
-  * alsa full duplex plugin
-  * warnings if permissions are nnot set correctly
+  * warnings if permissions are not set correctly
   * speed up kradio start
   * inet-stream-out plugin
   * use size_t instead of unsigned ints for all sizes!!! (was reason for
