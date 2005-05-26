@@ -4,6 +4,10 @@
 	          get rid of hardcoded list of supported image formats;
 	          enable image preview in file KFileDialog
 
+    emw     - added ALSA-Plugin
+            - removed debug logging in recorder
+            - fixed missing volume=0/mute in timeshifter
+
 2005-05-22
 
         emw     - fixed amd64 pointer arithmetic problem in
