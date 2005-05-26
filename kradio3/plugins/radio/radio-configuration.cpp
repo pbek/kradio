@@ -22,6 +22,7 @@
 #include "../../src/libkradio-gui/standardscandialog.h"
 #include "../../src/libkradio-gui/radiostation-listview.h"
 #include "../../src/radio-stations/radiostation-config.h"
+#include "../../src/interfaces/errorlog-interfaces.h"
 
 #include "radio-configuration.h"
 
@@ -323,16 +324,12 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 
 void RadioConfiguration::slotSelectPixmap()
 {
-    KFileDialog fd(QString::null,
-                   ("*.gif *.png *.jpg *.xpm|" + i18n("Images") + "(*.gif, *.png, *.jpg, *.xpm)").ascii(),
-                   this, i18n("Pixmap Selection").ascii(), true);
-    fd.setMode(KFile::File | KFile::ExistingOnly);
-    fd.setCaption (i18n("Select Station Pixmap"));
-    fd.setOperationMode(KFileDialog::Saving);
-
-    if (fd.exec() == QDialog::Accepted) {
-        QString filename = fd.selectedFile();
-        editPixmapFile->setText(filename);
+    KURL url = KFileDialog::getImageOpenURL(QString::null, this,
+					    i18n("Image Selection"));
+    if (url.isLocalFile()) {
+	editPixmapFile->setText(url.path());
+    } else {
+	m_logger.logWarning(i18n("ignoring non-local image"));
     }
 }
 

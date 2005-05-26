@@ -1,5 +1,8 @@
 2005-05-26
 	mcamen  - added apidox Makefile target
+	        - RadioConfiguration::slotSelectPixmap():
+	          get rid of hardcoded list of supported image formats;
+	          enable image preview in file KFileDialog
 
 2005-05-22
 
