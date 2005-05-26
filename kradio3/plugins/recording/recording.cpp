@@ -307,7 +307,7 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
 
         RecordingEncoding *thread = m_EncodingThreads[id];
 
-        logDebug("noticeSoundStreamData thread = " + QString::number((unsigned)thread, 16));
+        //logDebug("noticeSoundStreamData thread = " + QString::number((unsigned)thread, 16));
 
         unsigned int  remSize = size;
         const char   *remData = data;
@@ -385,7 +385,7 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
     // store thread even if it has indicated an error
     m_EncodingThreads[ssid] = thread;
 
-    logDebug("startEncoder thread = " + QString::number((unsigned)thread, 16));
+    //logDebug("startEncoder thread = " + QString::number((unsigned)thread, 16));
 
     notifySoundStreamCreated(encID);
     return !thread->error();
@@ -400,8 +400,8 @@ void Recording::stopEncoder(SoundStreamID id)
 
         thread->setDone();
 
-        logDebug("stopEncoder thread = " + QString::number((unsigned)thread, 16));
-        logDebug("stopEncoder thread error = " + QString::number(thread->error(), 16));
+        //logDebug("stopEncoder thread = " + QString::number((unsigned)thread, 16));
+        //logDebug("stopEncoder thread error = " + QString::number(thread->error(), 16));
 
 #if (KDE_VERSION_MAJOR >= 3) && (KDE_VERSION_MINOR >= 1)
         // FIXME: set a timer and do waiting "in background"
@@ -445,7 +445,7 @@ bool Recording::event(QEvent *_e)
 
             RecordingEncoding *thread = m_EncodingThreads[id];
 
-            logDebug("Recording::event: thread = " + QString::number((unsigned)thread, 16));
+            //logDebug("Recording::event: thread = " + QString::number((unsigned)thread, 16));
 
             if (thread->error()) {
                 logError(thread->errorString());
