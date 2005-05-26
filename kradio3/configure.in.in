@@ -67,3 +67,9 @@ AC_CHECK_HEADERS([vorbis/vorbisenc.h], [], AC_MSG_RESULT([libvorbisenc header no
 AC_CHECK_LIB(ogg, ogg_stream_packetin, [], AC_MSG_RESULT([libogg not found]))
 AC_CHECK_HEADERS([ogg/ogg.h], [], AC_MSG_RESULT([libogg header not found]))
 
+
+
+dnl ----------------------------------------------------------------------
+dnl apidox
+
+KDE_INIT_DOXYGEN([The KRadio API Reference], [Version $VERSION])

@@ -1,8 +1,14 @@
+2005-05-26
+	mcamen  - added apidox Makefile target
+
 2005-05-22
 
-        emw     - fixed amd64 pointer arithmetic problem in recording/encoder.cpp
-                - fixed recording configuration combox index problem if mp3 support is missing
-                - fixed typo in Radio::noticeAlarm that prevented scheduled recording
+        emw     - fixed amd64 pointer arithmetic problem in
+	          recording/encoder.cpp
+                - fixed recording configuration combox index problem if
+	          mp3 support is missing
+                - fixed typo in Radio::noticeAlarm that prevented
+	          scheduled recording
                 - auto power-on if recording starts
 
         mcamen  - centralize version definition via src/kradioversion.h
