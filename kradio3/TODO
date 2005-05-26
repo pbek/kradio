@@ -51,7 +51,7 @@ USABILITY, STYLE-GUIDE
   When implementing these keep in mind to only use KDE API <= 3.2.
   * SystemTray button should show / hide the main window on left click
   * /tmp/kradio* should use offical KDE tmpdir instead
-  * more use of KStdActions
+  * more use of KStdGuiItem
   * sort out the KDE hicolor / crystal / SVG icon mess
   * Buildsystem: manpage generation
   * Buildsystem: apidocs
@@ -61,7 +61,7 @@ USABILITY, STYLE-GUIDE
 
 DISTRIBUTION
 ============
-  * Get svn2dist (used for kdeextragear) to work with KRadio. This wil
+  * Get svn2dist (used for kdeextragear) to work with KRadio. This will
     give us nice kradio.src.gz tarballs.
   * apps.kde.org ?!?!
   * dot.kde.org ????
