@@ -103,9 +103,11 @@ void RadioDocking::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 
 bool RadioDocking::setStationSelection(const QStringList &sl)
 {
-    m_stationIDs = sl;
-    buildContextMenu();
-    notifyStationSelectionChanged(m_stationIDs);
+    if (m_stationIDs != sl) {
+        m_stationIDs = sl;
+        buildContextMenu();
+        notifyStationSelectionChanged(m_stationIDs);
+    }
     return true;
 }
 

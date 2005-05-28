@@ -158,18 +158,24 @@ AboutPageInfo Recording::createAboutPage()
 
 // IRecCfg
 
-bool   Recording::setEncoderBuffer     (int BufferSize, int BufferCount)
+bool   Recording::setEncoderBuffer     (size_t BufferSize, size_t BufferCount)
 {
-    m_config.m_EncodeBufferSize  = BufferSize;
-    m_config.m_EncodeBufferCount = BufferCount;
-    notifyEncoderBufferChanged(BufferSize, BufferCount);
+    if (m_config.m_EncodeBufferSize  != BufferSize ||
+        m_config.m_EncodeBufferCount != BufferCount)
+    {
+        m_config.m_EncodeBufferSize  = BufferSize;
+        m_config.m_EncodeBufferCount = BufferCount;
+        notifyEncoderBufferChanged(BufferSize, BufferCount);
+    }
     return true;
 }
 
 bool   Recording::setSoundFormat       (const SoundFormat &sf)
 {
-    m_config.m_SoundFormat = sf;
-    notifySoundFormatChanged(sf);
+    if (m_config.m_SoundFormat != sf) {
+        m_config.m_SoundFormat = sf;
+        notifySoundFormatChanged(sf);
+    }
     return true;
 }
 
@@ -209,7 +215,7 @@ bool   Recording::setOutputFormat (RecordingConfig::OutputFormat of)
     return true;
 }
 
-void   Recording::getEncoderBuffer(int &BufferSize, int &BufferCount) const
+void   Recording::getEncoderBuffer(size_t &BufferSize, size_t &BufferCount) const
 {
     BufferSize  = m_config.m_EncodeBufferSize;
     BufferCount = m_config.m_EncodeBufferCount;

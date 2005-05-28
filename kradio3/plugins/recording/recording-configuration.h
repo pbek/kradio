@@ -97,7 +97,7 @@ public :
 
 // IRecCfgClient
 
-    bool noticeEncoderBufferChanged     (int BufferSize, int BufferCount);
+    bool noticeEncoderBufferChanged     (size_t BufferSize, size_t BufferCount);
     bool noticeSoundFormatChanged       (const SoundFormat &sf);
     bool noticeMP3QualityChanged        (int   q);
     bool noticeOggQualityChanged        (float q);

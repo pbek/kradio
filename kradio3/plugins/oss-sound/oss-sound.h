@@ -91,6 +91,8 @@ RECEIVERS:
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
     bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode);
     bool prepareCapture(SoundStreamID id,  const QString &channel);
+    bool releasePlayback(SoundStreamID id);
+    bool releaseCapture(SoundStreamID id);
 
 ANSWERS:
     bool supportsPlayback() const;

@@ -26,6 +26,7 @@
 #include <kaboutdata.h>
 #include <kconfig.h>
 
+#include "../../src/libkradio/debug-profiler.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
@@ -191,15 +192,20 @@ bool Radio::activateStation(int index)
 
 bool Radio::setStations(const StationList &sl)
 {
-    m_stationList = sl;
-    notifyStationsChanged(m_stationList);
+    if (m_stationList != sl) {
+        BlockProfiler("Radio::setStations");
+        m_stationList = sl;
+        notifyStationsChanged(m_stationList);
+    }
     return true;
 }
 
 bool Radio::setPresetFile(const QString &presetFile)
 {
-    m_presetFile = presetFile;
-    notifyPresetFileChanged(m_presetFile);
+    if (m_presetFile != presetFile) {
+        m_presetFile = presetFile;
+        notifyPresetFileChanged(m_presetFile);
+    }
     return true;
 }
 

@@ -77,14 +77,15 @@ bool   TimeControl::disconnectI (Interface *i)
 
 bool TimeControl::setAlarms (const AlarmVector &al)
 {
-    m_waitingFor = NULL;
+    if (m_alarms != al) {
+        m_waitingFor = NULL;
 
-    m_alarms = al;
+        m_alarms = al;
 
-    slotQTimerAlarmTimeout();
+        slotQTimerAlarmTimeout();
 
-    notifyAlarmsChanged(m_alarms);
-
+        notifyAlarmsChanged(m_alarms);
+    }
     return true;
 }
 

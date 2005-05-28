@@ -117,13 +117,16 @@ public:
 
     virtual RadioStationConfig *createEditor() const = 0;
 
+    virtual bool operator == (const RadioStation &x) const;
+            bool operator != (const RadioStation &x) const { return !operator==(x); }
+
 protected :
     QString  m_stationID;
 
     QString  m_name;
-    QString     m_shortName;
-    float     m_initialVolume;        // <0: => Don't use
-    QString     m_iconName;
+    QString  m_shortName;
+    float    m_initialVolume;        // <0: => Don't use
+    QString  m_iconName;
 
 private:
     static QDict<RadioStation>  *stationClassRegistry;

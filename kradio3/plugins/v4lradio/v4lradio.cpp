@@ -43,7 +43,7 @@
 #include "v4lradio.h"
 #include "v4lradio-configuration.h"
 
-
+#include "../../src/libkradio/debug-profiler.h"
 
 struct _lrvol { unsigned char l, r; short dummy; };
 
@@ -178,6 +178,15 @@ void V4LRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
     }
 }
 
+void V4LRadio::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
+{
+    if (i && pointer_valid && i->getSoundStreamClientID() == m_PlaybackMixerID) {
+        setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel);
+    }
+    if (i && pointer_valid && i->getSoundStreamClientID() == m_CaptureMixerID) {
+        setCaptureMixer(m_CaptureMixerID, m_CaptureMixerChannel);
+    }
+}
 
 // IRadioDevice methods
 
@@ -186,18 +195,24 @@ bool V4LRadio::setPower (bool on)
     return on ? powerOn() : powerOff();
 }
 
-void V4LRadio::searchMixers(ISoundStreamClient *&playback_mixer, ISoundStreamClient *&capture_mixer)
+void V4LRadio::searchMixers(ISoundStreamClient **playback_mixer, ISoundStreamClient **capture_mixer)
 {
-    playback_mixer = getSoundStreamClientWithID(m_PlaybackMixerID);
-    capture_mixer  = getSoundStreamClientWithID(m_CaptureMixerID);
-
-    // some simple sort of autodetection if one mixer isn't present any more
-    QPtrList<ISoundStreamClient> playback_mixers = queryPlaybackMixers();
-    QPtrList<ISoundStreamClient> capture_mixers  = queryCaptureMixers();
-    if (!playback_mixer && !playback_mixers.isEmpty())
-        playback_mixer = playback_mixers.first();
-    if (!capture_mixer && !capture_mixers.isEmpty())
-        capture_mixer = capture_mixers.first();
+    if (playback_mixer) {
+        *playback_mixer = getSoundStreamClientWithID(m_PlaybackMixerID);
+        if (!*playback_mixer) {
+            QPtrList<ISoundStreamClient> playback_mixers = queryPlaybackMixers();
+            if (!playback_mixers.isEmpty())
+                *playback_mixer = playback_mixers.first();
+        }
+    }
+    if (capture_mixer) {
+        *capture_mixer  = getSoundStreamClientWithID(m_CaptureMixerID);
+        if (!*capture_mixer) {
+            QPtrList<ISoundStreamClient> capture_mixers  = queryCaptureMixers();
+            if (!capture_mixers.isEmpty())
+                *capture_mixer = capture_mixers.first();
+        }
+    }
 }
 
 
@@ -212,7 +227,7 @@ bool V4LRadio::powerOn ()
         ISoundStreamClient *playback_mixer = NULL,
                            *capture_mixer  = NULL;
 
-        searchMixers(playback_mixer, capture_mixer);
+        searchMixers(&playback_mixer, &capture_mixer);
 
         if (playback_mixer)
             playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, false);
@@ -399,6 +414,8 @@ bool V4LRadio::setSignalMinQuality (SoundStreamID id, float mq)
 {
     if (id != m_SoundStreamID)
         return false;
+    if (rint(mq*100) == rint(m_minQuality*100))
+        return true;
 
     m_minQuality = mq;
     notifySignalMinQualityChanged(id, m_minQuality);
@@ -766,25 +783,29 @@ bool  V4LRadio::setRadioDevice(const QString &s)
 
 bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch)
 {
+    bool change = m_PlaybackMixerID != soundStreamClientID || m_PlaybackMixerChannel != ch;
     m_PlaybackMixerID = soundStreamClientID;
     m_PlaybackMixerChannel = ch;
 
-    ISoundStreamClient *playback_mixer = NULL,
-                       *capture_mixer  = NULL;
-    searchMixers(playback_mixer, capture_mixer);
 
-    queryPlaybackVolume(m_SoundStreamID, m_defaultPlaybackVolume);
-    if (isPowerOn())
+    if (isPowerOn()) {
+        queryPlaybackVolume(m_SoundStreamID, m_defaultPlaybackVolume);
         sendStopPlayback(m_SoundStreamID);
+        sendReleasePlayback(m_SoundStreamID);
+    }
 
+    ISoundStreamClient *playback_mixer = NULL;
+    searchMixers(&playback_mixer, NULL);
     if (playback_mixer)
         playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, false);
 
-    if (isPowerOn())
+    if (isPowerOn()) {
         sendStartPlayback(m_SoundStreamID);
-    sendPlaybackVolume(m_SoundStreamID, m_defaultPlaybackVolume);
+        sendPlaybackVolume(m_SoundStreamID, m_defaultPlaybackVolume);
+    }
 
-    notifyPlaybackMixerChanged(soundStreamClientID, ch);
+    if (change)
+        notifyPlaybackMixerChanged(soundStreamClientID, ch);
 
     return true;
 }
@@ -792,32 +813,33 @@ bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QStri
 
 bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QString &ch)
 {
+    bool change = m_PlaybackMixerID != soundStreamClientID || m_PlaybackMixerChannel != ch;
     m_CaptureMixerID = soundStreamClientID;
     m_CaptureMixerChannel = ch;
 
-    ISoundStreamClient *playback_mixer = NULL,
-                       *capture_mixer  = NULL;
-    searchMixers(playback_mixer, capture_mixer);
+    bool r = false;
+    queryIsCaptureRunning(m_SoundStreamID, r);
 
-    // fixme: store old volume
     float v = 0;
-    queryCaptureVolume(m_SoundStreamID, v);
-
-    bool b = false;
-    queryIsCaptureRunning(m_SoundStreamID, b);
-
-    if (isPowerOn() && b)
+    if (isPowerOn() && r) {
+        queryCaptureVolume(m_SoundStreamID, v);
         sendStopCapture(m_SoundStreamID);
+        sendReleaseCapture(m_SoundStreamID);
+    }
 
+    ISoundStreamClient *capture_mixer  = NULL;
+    searchMixers(NULL, &capture_mixer);
     if (capture_mixer)
         capture_mixer->prepareCapture(m_SoundStreamID, m_CaptureMixerChannel);
 
-    if (isPowerOn() && b)
+    if (isPowerOn() && r) {
         sendStartCapture(m_SoundStreamID);
+        sendCaptureVolume(m_SoundStreamID, v);
+    }
 
-    sendCaptureVolume(m_SoundStreamID, v);
+    if (change)
+        notifyCaptureMixerChanged(soundStreamClientID, ch);
 
-    notifyCaptureMixerChanged(soundStreamClientID, ch);
     return true;
 }
 
@@ -867,32 +889,37 @@ void   V4LRadio::saveState (KConfig *config) const
 
 void   V4LRadio::restoreState (KConfig *config)
 {
+    BlockProfiler p("V4LRadio::restoreState");
+
     config->setGroup(QString("v4lradio-") + name());
 
     setRadioDevice(config->readEntry ("RadioDev", "/dev/radio"));
 
-    QString m_PlaybackMixerID      = config->readEntry ("PlaybackMixerID", QString::null);
-    QString m_PlaybackMixerChannel = config->readEntry ("PlaybackMixerChannel", "Line");
-    setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel);
+    QString PlaybackMixerID      = config->readEntry ("PlaybackMixerID", QString::null);
+    QString PlaybackMixerChannel = config->readEntry ("PlaybackMixerChannel", "Line");
 
-    QString m_CaptureMixerID       = config->readEntry ("CaptureMixerID",  QString::null);
-    QString m_CaptureMixerChannel  = config->readEntry ("CaptureMixerChannel", "Line");
-    setCaptureMixer(m_CaptureMixerID, m_CaptureMixerChannel);
+    QString CaptureMixerID       = config->readEntry ("CaptureMixerID",  QString::null);
+    QString CaptureMixerChannel  = config->readEntry ("CaptureMixerChannel", "Line");
 
-    m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
-    m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
+    float minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
+    float maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
 
+    float minQuality            = config->readDoubleNumEntry ("signalMinQuality", 0.75);
+    float scanStep              = config->readDoubleNumEntry ("scanStep", 0.05);
     m_defaultPlaybackVolume = config->readDoubleNumEntry ("defaultPlaybackVolume", 0.5);
 
-    notifyMinMaxFrequencyChanged(getMinFrequency(),getMaxFrequency());
+    setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel);
+    setCaptureMixer (CaptureMixerID, CaptureMixerChannel);
+    notifyMinMaxFrequencyChanged(minFrequency,maxFrequency);
+    notifySignalMinQualityChanged(m_SoundStreamID, minQuality);
+    notifyScanStepChanged(scanStep);
 
-    m_minQuality            = config->readDoubleNumEntry ("signalMinQuality", 0.75);
-    notifySignalMinQualityChanged(m_SoundStreamID, m_minQuality);
-    m_scanStep              = config->readDoubleNumEntry ("scanStep", 0.05);
-    notifyScanStepChanged(getScanStep());
+    BlockProfiler p2("V4LRadio::restoreState2");
 
     setFrequency(config->readDoubleNumEntry("Frequency", 88));
     setPower(config->readBoolEntry         ("PowerOn",   false));
+
+    BlockProfiler p3("V4LRadio::restoreState3");
 
     setTreble      (m_SoundStreamID, config->readDoubleNumEntry("Treble",       0.5));
     setBass        (m_SoundStreamID, config->readDoubleNumEntry("Bass",         0.5));
@@ -1381,7 +1408,6 @@ void V4LRadio::poll()
 {
     readTunerInfo();
     readAudioInfo();
-//     getVolume();
 }
 
 

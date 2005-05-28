@@ -85,6 +85,12 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyPlaybackVolumeChanged, (SoundSt
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyCaptureVolumeChanged, (SoundStreamID id, float volume),
                  noticeCaptureVolumeChanged(id, volume)                                                    );
 
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendReleasePlayback, (SoundStreamID id),
+                 releasePlayback(id)                                                                         );
+
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendReleaseCapture, (SoundStreamID id),
+                 releaseCapture(id)                                                                         );
+
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartPlayback, (SoundStreamID id),
                  startPlayback(id)                                                                         );
 

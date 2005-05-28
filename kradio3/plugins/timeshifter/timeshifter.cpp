@@ -197,6 +197,8 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
         m_StreamPaused = !m_StreamPaused;
         if (!m_StreamPaused) {
             sendStartPlayback(m_OrgStreamID);
+        } else {
+            sendStopPlayback(m_OrgStreamID);
         }
         return true;
     }
@@ -345,9 +347,11 @@ ISoundStreamClient *TimeShifter::searchPlaybackMixer()
     ISoundStreamClient *playback_mixer = getSoundStreamClientWithID(m_PlaybackMixerID);
 
     // some simple sort of autodetection if one mixer isn't present any more
-    QPtrList<ISoundStreamClient> playback_mixers = queryPlaybackMixers();
-    if (!playback_mixer && !playback_mixers.isEmpty())
-        playback_mixer = playback_mixers.first();
+    if (!playback_mixer) {
+        QPtrList<ISoundStreamClient> playback_mixers = queryPlaybackMixers();
+        if (!playback_mixers.isEmpty())
+            playback_mixer = playback_mixers.first();
+    }
     return playback_mixer;
 }
 
@@ -360,16 +364,19 @@ bool  TimeShifter::setPlaybackMixer(const QString &soundStreamClientID, const QS
     ISoundStreamClient *playback_mixer = searchPlaybackMixer();
 
     float  oldVolume;
-    if (m_OrgStreamID.isValid())
+    if (m_OrgStreamID.isValid()) {
         queryPlaybackVolume(m_OrgStreamID, oldVolume);
+        sendStopPlayback(m_OrgStreamID);
+        sendReleasePlayback(m_OrgStreamID);
+    }
 
     if (playback_mixer)
         playback_mixer->preparePlayback(m_OrgStreamID, m_PlaybackMixerChannel, true);
 
-    if (m_OrgStreamID.isValid())
+    if (m_OrgStreamID.isValid()) {
         sendStartPlayback(m_OrgStreamID);
-
-    sendPlaybackVolume(m_OrgStreamID, oldVolume);
+        sendPlaybackVolume(m_OrgStreamID, oldVolume);
+    }
 
     return true;
 }

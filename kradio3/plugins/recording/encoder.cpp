@@ -89,7 +89,7 @@ RecordingEncoding::RecordingEncoding(QObject *parent,            SoundStreamID s
     m_buffersInput = new char* [m_config.m_EncodeBufferCount];
     m_buffersInputFill = new unsigned int [m_config.m_EncodeBufferCount];
     m_buffersMetaData  = new QPtrList<BufferSoundMetaData> *[m_config.m_EncodeBufferCount];
-    for (unsigned int i = 0; i < m_config.m_EncodeBufferCount; ++i) {
+    for (size_t i = 0; i < m_config.m_EncodeBufferCount; ++i) {
         m_buffersInput    [i] = new char [m_config.m_EncodeBufferSize];
         m_buffersMetaData [i] = new QPtrList<BufferSoundMetaData>;
         m_buffersMetaData [i]->setAutoDelete(true);
@@ -115,7 +115,7 @@ RecordingEncoding::RecordingEncoding(QObject *parent,            SoundStreamID s
 
 RecordingEncoding::~RecordingEncoding()
 {
-    for (unsigned int i = 0; i < m_config.m_EncodeBufferCount; ++i) {
+    for (size_t i = 0; i < m_config.m_EncodeBufferCount; ++i) {
         delete m_buffersInput[i];
         delete m_buffersMetaData[i];
     }
@@ -129,14 +129,14 @@ RecordingEncoding::~RecordingEncoding()
 }
 
 
-char *RecordingEncoding::lockInputBuffer(unsigned int &bufferSize)
+char *RecordingEncoding::lockInputBuffer(size_t &bufferSize)
 {
     if (m_done || m_error)
         return NULL;
 
     m_bufferInputLock.lock();
 
-    unsigned int bytesAvailable = 0;
+    size_t bytesAvailable = 0;
 
     do {
         bytesAvailable = m_config.m_EncodeBufferSize - m_buffersInputFill[m_currentInputBuffer];
@@ -153,7 +153,7 @@ char *RecordingEncoding::lockInputBuffer(unsigned int &bufferSize)
 }
 
 
-void  RecordingEncoding::unlockInputBuffer(unsigned int bufferSize, const SoundMetaData &md)
+void  RecordingEncoding::unlockInputBuffer(size_t bufferSize, const SoundMetaData &md)
 {
     if (m_done)
         return;
@@ -204,7 +204,7 @@ void RecordingEncoding::run()
         }
 
         char        *export_buffer = NULL;
-        unsigned int export_buffer_size = 0;
+        size_t       export_buffer_size = 0;
 
         Q_UINT64  old_pos  = m_encodedSize;
 
@@ -234,7 +234,7 @@ void RecordingEncoding::run()
 
             char                          *tmpBuf  = m_buffersInput[0];
             QPtrList<BufferSoundMetaData> *tmpList = m_buffersMetaData[0];
-            for (unsigned int i = 0; i < m_config.m_EncodeBufferCount - 1; ++i) {
+            for (size_t i = 0; i < m_config.m_EncodeBufferCount - 1; ++i) {
                 m_buffersInput    [i] = m_buffersInput    [i+1];
                 m_buffersInputFill[i] = m_buffersInputFill[i+1];
                 m_buffersMetaData [i] = m_buffersMetaData [i+1];
@@ -261,7 +261,7 @@ void RecordingEncoding::run()
 }
 
 
-void RecordingEncoding::encode_pcm(const char *buffer, unsigned buffer_size, char *&export_buffer, unsigned &export_buffer_size)
+void RecordingEncoding::encode_pcm(const char *buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size)
 {
     if (m_error)
         return;
@@ -278,24 +278,24 @@ void RecordingEncoding::encode_pcm(const char *buffer, unsigned buffer_size, cha
 }
 
 
-void RecordingEncoding::encode_mp3(const char *_buffer, unsigned buffer_size, char *&export_buffer, unsigned &export_buffer_size)
+void RecordingEncoding::encode_mp3(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size)
 {
     if (m_error)
         return;
 
 #ifdef HAVE_LAME_LAME_H
             short int *buffer = (short int*)_buffer;
-            int j       = 0,
-                j_inc   = (m_config.m_SoundFormat.m_Channels == 1) ? 1 : 2,
-                dj      = (m_config.m_SoundFormat.m_Channels == 1) ? 0 : 1,
-                samples = buffer_size / m_config.m_SoundFormat.frameSize();
+            size_t j       = 0,
+                   j_inc   = (m_config.m_SoundFormat.m_Channels == 1) ? 1 : 2,
+                   dj      = (m_config.m_SoundFormat.m_Channels == 1) ? 0 : 1,
+                   samples = buffer_size / m_config.m_SoundFormat.frameSize();
 
-            for (int i = 0; i < samples; ++i, j+=j_inc) {
+            for (size_t i = 0; i < samples; ++i, j+=j_inc) {
                 m_MP3LBuffer[i] = buffer[j];
                 m_MP3RBuffer[i] = buffer[j+dj];
             }
 
-            int n = m_MP3BufferSize;
+            int n = 0;
             lameSerialization.lock();
             n = lame_encode_buffer(m_LAMEFlags,
                                    m_MP3LBuffer,
@@ -323,7 +323,7 @@ void RecordingEncoding::encode_mp3(const char *_buffer, unsigned buffer_size, ch
 }
 
 
-void RecordingEncoding::encode_ogg(const char *_buffer, unsigned buffer_size, char *&export_buffer, unsigned &export_buffer_size)
+void RecordingEncoding::encode_ogg(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size)
 {
     if (m_error)
         return;
@@ -333,7 +333,7 @@ void RecordingEncoding::encode_ogg(const char *_buffer, unsigned buffer_size, ch
     ogg_page     ogg_pg;
     ogg_packet   ogg_pkt;
 
-    unsigned samples = buffer_size / sf.frameSize();
+    size_t samples = buffer_size / sf.frameSize();
 
     // buffer[channel][sample], normalized to -1..0..+1
     float **buffer = vorbis_analysis_buffer(&m_VorbisDSP, (samples < 512 ? 512 : samples));
@@ -366,7 +366,7 @@ void RecordingEncoding::encode_ogg(const char *_buffer, unsigned buffer_size, ch
                 if (!result) break;
 
                 int n  = fwrite(ogg_pg.header, 1, ogg_pg.header_len, m_OggOutput);
-                n     += fwrite(ogg_pg.body,   1, ogg_pg.body_len,   m_OggOutput);
+                    n += fwrite(ogg_pg.body,   1, ogg_pg.body_len,   m_OggOutput);
 
                 m_encodedSize += n;
 
@@ -463,7 +463,7 @@ bool RecordingEncoding::openOutput_mp3(const QString &output)
                 id3tag_add_v2(m_LAMEFlags);
                 QString title  = m_RadioStation->name() + QString().sprintf(" - %s", (QDateTime::currentDateTime().toString(Qt::ISODate)).ascii());
                 QString comment = i18n("Recorded by KRadio");
-                int l = title.length() + comment.length() + 10;
+                size_t l = title.length() + comment.length() + 10;
                 m_ID3Tags = new char[l];
                 char *ctitle   = m_ID3Tags;
                 strcpy(ctitle, title.latin1());
@@ -586,8 +586,8 @@ bool RecordingEncoding::openOutput_ogg(const QString &output)
 
         if (!result) break;
 
-        int n = fwrite(ogg_page.header, 1, ogg_page.header_len, m_OggOutput);
-        n    += fwrite(ogg_page.body,   1, ogg_page.body_len,   m_OggOutput);
+        int n  = fwrite(ogg_page.header, 1, ogg_page.header_len, m_OggOutput);
+            n += fwrite(ogg_page.body,   1, ogg_page.body_len,   m_OggOutput);
 
         if(n != ogg_page.header_len + ogg_page.body_len) {
             m_error = true;

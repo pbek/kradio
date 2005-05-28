@@ -20,7 +20,7 @@
 
 // IRecCfg
 
-IF_IMPL_SENDER  (   IRecCfg::notifyEncoderBufferChanged (int BufferSize, int BufferCount),
+IF_IMPL_SENDER  (   IRecCfg::notifyEncoderBufferChanged (size_t BufferSize, size_t BufferCount),
                     noticeEncoderBufferChanged(BufferSize, BufferCount)
                 );
 IF_IMPL_SENDER  (   IRecCfg::notifySoundFormatChanged(const SoundFormat &sf),
@@ -44,7 +44,7 @@ IF_IMPL_SENDER  (   IRecCfg::notifyRecordingConfigChanged   (const RecordingConf
 
 // IRecCfgClient
 
-IF_IMPL_SENDER  (   IRecCfgClient::sendEncoderBuffer (int BufferSize, int BufferCount),
+IF_IMPL_SENDER  (   IRecCfgClient::sendEncoderBuffer (size_t BufferSize, size_t BufferCount),
                     setEncoderBuffer(BufferSize, BufferCount)
                 );
 IF_IMPL_SENDER  (   IRecCfgClient::sendSoundFormat(const SoundFormat &sf),
@@ -67,7 +67,7 @@ IF_IMPL_SENDER  (   IRecCfgClient::sendRecordingConfig(const RecordingConfig &cf
                     setRecordingConfig(cfg)
                 );
 
-IF_IMPL_QUERY   (   void IRecCfgClient::queryEncoderBuffer(int &BufferSize, int &BufferCount),
+IF_IMPL_QUERY   (   void IRecCfgClient::queryEncoderBuffer(size_t &BufferSize, size_t &BufferCount),
                     getEncoderBuffer(BufferSize, BufferCount),
 
                 );
@@ -107,7 +107,7 @@ IF_IMPL_QUERY   (   const RecordingConfig &IRecCfgClient::queryRecordingConfig()
 
 void IRecCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-    int bs = 0, bc = 0;
+    size_t bs = 0, bc = 0;
     queryEncoderBuffer(bs, bc);
     noticeEncoderBufferChanged(bs, bc);
     noticeSoundFormatChanged(querySoundFormat());
@@ -121,7 +121,7 @@ void IRecCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/
 
 void IRecCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/)
 {
-    int bs = 0, bc = 0;
+    size_t bs = 0, bc = 0;
     queryEncoderBuffer(bs, bc);
     noticeEncoderBufferChanged(bs, bc);
     noticeSoundFormatChanged(querySoundFormat());

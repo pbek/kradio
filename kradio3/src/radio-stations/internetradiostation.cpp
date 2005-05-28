@@ -154,3 +154,13 @@ RadioStationConfig *InternetRadioStation::createEditor() const
     return new UndefinedRadioStationConfig(NULL);
 }
 
+bool InternetRadioStation::operator == (const RadioStation &x) const
+{
+    if (!RadioStation::operator == (x))
+        return false;
+
+    InternetRadioStation const *fx = dynamic_cast<InternetRadioStation const*>(&x);
+    if (!fx)
+        return false;
+    return m_url == fx->m_url;
+}

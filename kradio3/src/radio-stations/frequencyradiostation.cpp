@@ -171,3 +171,18 @@ RadioStationConfig *FrequencyRadioStation::createEditor() const
     return new FrequencyRadioStationConfig(NULL);
 }
 
+bool FrequencyRadioStation::operator == (const RadioStation &x) const
+{
+    if (!RadioStation::operator == (x))
+        return false;
+
+    FrequencyRadioStation const *fx = dynamic_cast<FrequencyRadioStation const*>(&x);
+    if (!fx)
+        return false;
+
+    float delta = (m_frequency < 10) ? STATION_FREQ_INTERVAL_AM : STATION_FREQ_INTERVAL_FM;
+
+    return m_frequency + delta/4 > fx->m_frequency
+        && m_frequency - delta/4 < fx->m_frequency;
+
+}

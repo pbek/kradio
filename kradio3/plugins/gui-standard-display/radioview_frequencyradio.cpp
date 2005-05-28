@@ -148,7 +148,7 @@ bool RadioViewFrequencyRadio::setDisplayColors(const QColor &activeText,
                                                const QColor &inactiveText,
                                                const QColor &button)
 {
-    bool change = (activeText != m_colorActiveText || button != m_colorButton);
+    bool change = (activeText != m_colorActiveText || inactiveText != m_colorInactiveText || button != m_colorButton);
 
     m_colorActiveText   = activeText;
     m_colorInactiveText = inactiveText;
@@ -199,9 +199,11 @@ bool RadioViewFrequencyRadio::setDisplayColors(const QColor &activeText,
 
 bool RadioViewFrequencyRadio::setDisplayFont (const QFont &f)
 {
-    m_font = f;
-    notifyDisplayFontChanged(m_font);
-    RadioViewElement::setFont(f);
+    if (m_font != f) {
+        m_font = f;
+        notifyDisplayFontChanged(m_font);
+        RadioViewElement::setFont(f);
+    }
     return true;
 }
 

@@ -36,7 +36,7 @@ public:
     enum AlarmType { StartPlaying, StopPlaying, StartRecording, StopRecording };
 
 protected:
-    QDateTime      m_time;
+    QDateTime     m_time;
 
     bool          m_daily;
     int           m_weekdayMask;
@@ -76,6 +76,21 @@ public:
     void        setVolumePreset(float v)        { m_volumePreset = v; }
     void        setStationID(const QString &id) { m_stationID    = id;}
     void        setAlarmType(AlarmType t)       { m_type         = t; }
+
+
+    bool  operator == (const Alarm &x) const {
+        return
+            m_time         == x.m_time &&
+            m_daily        == x.m_daily &&
+            m_weekdayMask  == x.m_weekdayMask &&
+            m_enabled      == x.m_enabled &&
+            m_stationID    == x.m_stationID &&
+            m_volumePreset == x.m_volumePreset &&
+            m_type         == x.m_type &&
+            m_ID           == x.m_ID;
+    }
+    bool  operator != (const Alarm &x) const { return ! operator == (x); }
+
 };
 
 using namespace std;

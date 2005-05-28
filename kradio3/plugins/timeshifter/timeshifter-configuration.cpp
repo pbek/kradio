@@ -113,7 +113,7 @@ bool TimeShifterConfiguration::setPlaybackMixer(const QString &_mixer_id, const 
     ISoundStreamClient *mixer = getSoundStreamClientWithID(mixer_id);
     if (mixer) {
         m_PlaybackChannelHelper.setData(mixer->getPlaybackChannels());
-        m_PlaybackChannelHelper.setCurrentText(Channel);
+        m_PlaybackChannelHelper.setCurrentText(m_PlaybackChannelHelper.contains(Channel) ? Channel : m_Shifter->getPlaybackMixerChannel());
     }
     labelPlaybackMixerChannel->setEnabled(mixer != NULL);
     comboPlaybackMixerChannel->setEnabled(mixer != NULL);
@@ -172,7 +172,6 @@ void TimeShifterConfiguration::slotCancel()
 
 bool TimeShifterConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
 {
-    //m_PlaybackMixerHelper.setData(getPlaybackClientDescriptions());
     if (m_PlaybackMixerHelper.getCurrentItem() == client_id) {
         setPlaybackMixer(client_id, m_PlaybackChannelHelper.getCurrentText());
     }

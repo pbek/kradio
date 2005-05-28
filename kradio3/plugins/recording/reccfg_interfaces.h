@@ -27,7 +27,7 @@ public:
     IF_CON_DESTRUCTOR(IRecCfg, -1)
 
 RECEIVERS:
-    IF_RECEIVER(   setEncoderBuffer     (int BufferSize, int BufferCount)                        )
+    IF_RECEIVER(   setEncoderBuffer     (size_t BufferSize, size_t BufferCount)                        )
     IF_RECEIVER(   setSoundFormat       (const SoundFormat &sf)                                  )
     IF_RECEIVER(   setMP3Quality        (int q)                                                  )
     IF_RECEIVER(   setOggQuality        (float q)                                                )
@@ -36,7 +36,7 @@ RECEIVERS:
     IF_RECEIVER(   setRecordingConfig   (const RecordingConfig &cfg)                             )
 
 SENDERS:
-    IF_SENDER  (   notifyEncoderBufferChanged (int BufferSize, int BufferCount)                            )
+    IF_SENDER  (   notifyEncoderBufferChanged (size_t BufferSize, size_t BufferCount)                            )
     IF_SENDER  (   notifySoundFormatChanged   (const SoundFormat &sf)                                      )
     IF_SENDER  (   notifyMP3QualityChanged    (int q)                                                      )
     IF_SENDER  (   notifyOggQualityChanged    (float q)                                                    )
@@ -45,7 +45,7 @@ SENDERS:
     IF_SENDER  (   notifyRecordingConfigChanged   (const RecordingConfig &cfg)                             )
 
 ANSWERS:
-    IF_ANSWER  (   void                           getEncoderBuffer(int &BufferSize, int &BufferCount) const    )
+    IF_ANSWER  (   void                           getEncoderBuffer(size_t &BufferSize, size_t &BufferCount) const    )
     IF_ANSWER  (   const SoundFormat             &getSoundFormat () const                                      )
     IF_ANSWER  (   int                            getMP3Quality () const                                       )
     IF_ANSWER  (   float                          getOggQuality () const                                       )
@@ -62,7 +62,7 @@ public:
     IF_CON_DESTRUCTOR(IRecCfgClient, 1)
 
 SENDERS:
-    IF_SENDER  (   sendEncoderBuffer     (int BufferSize, int BufferCount)                        )
+    IF_SENDER  (   sendEncoderBuffer     (size_t BufferSize, size_t BufferCount)                        )
     IF_SENDER  (   sendSoundFormat       (const SoundFormat &sf)                                  )
     IF_SENDER  (   sendMP3Quality        (int q)                                                  )
     IF_SENDER  (   sendOggQuality        (float q)                                                )
@@ -71,7 +71,7 @@ SENDERS:
     IF_SENDER  (   sendRecordingConfig   (const RecordingConfig &cfg)                             )
 
 RECEIVERS:
-    IF_RECEIVER(   noticeEncoderBufferChanged     (int BufferSize, int BufferCount)                        )
+    IF_RECEIVER(   noticeEncoderBufferChanged     (size_t BufferSize, size_t BufferCount)                        )
     IF_RECEIVER(   noticeSoundFormatChanged       (const SoundFormat &sf)                                  )
     IF_RECEIVER(   noticeMP3QualityChanged        (int q)                                                  )
     IF_RECEIVER(   noticeOggQualityChanged        (float q)                                                )
@@ -80,7 +80,7 @@ RECEIVERS:
     IF_RECEIVER(   noticeRecordingConfigChanged   (const RecordingConfig &cfg)                             )
 
 QUERIES:
-    IF_QUERY   (   void                           queryEncoderBuffer(int &BufferSize, int &BufferCount)    )
+    IF_QUERY   (   void                           queryEncoderBuffer(size_t &BufferSize, size_t &BufferCount)    )
     IF_QUERY   (   const SoundFormat             &querySoundFormat ()                                      )
     IF_QUERY   (   int                            queryMP3Quality ()                                       )
     IF_QUERY   (   float                          queryOggQuality ()                                       )

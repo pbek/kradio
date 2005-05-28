@@ -83,9 +83,11 @@ bool QuickBar::disconnectI(Interface *i)
 
 bool QuickBar::setStationSelection(const QStringList &sl)
 {
-    m_stationIDs = sl;
-    rebuildGUI();
-    notifyStationSelectionChanged(m_stationIDs);
+    if (m_stationIDs != sl) {
+        m_stationIDs = sl;
+        rebuildGUI();
+        notifyStationSelectionChanged(m_stationIDs);
+    }
     return true;
 }
 

@@ -69,6 +69,9 @@ public:
     virtual QStringList getPropertyNames() const;
     virtual QString getClassName() const { return "FrequencyRadioStation"; }
 
+
+    virtual bool operator == (const RadioStation &x) const;
+
 protected:
 
     float m_frequency;

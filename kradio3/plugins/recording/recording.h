@@ -88,7 +88,7 @@ protected:
 
 // IRecCfg
 
-    bool   setEncoderBuffer     (int BufferSize, int BufferCount);
+    bool   setEncoderBuffer     (size_t BufferSize, size_t BufferCount);
     bool   setSoundFormat       (const SoundFormat &sf);
     bool   setMP3Quality        (int q);
     bool   setOggQuality        (float q);
@@ -96,7 +96,7 @@ protected:
     bool   setOutputFormat      (RecordingConfig::OutputFormat of);
     bool   setRecordingConfig   (const RecordingConfig &cfg);
 
-    void                           getEncoderBuffer(int &BufferSize, int &BufferCount) const;
+    void                           getEncoderBuffer(size_t &BufferSize, size_t &BufferCount) const;
     const SoundFormat             &getSoundFormat () const;
     int                            getMP3Quality () const;
     float                          getOggQuality () const;

@@ -33,6 +33,7 @@ public:
     void     setCurrentText(const QString &s) { m_List->setCurrentItem(m_revData.contains(s) ? m_revData[s] : 0); }
 
     int count() const { return m_revData.count(); }
+    bool contains(const QString &id) const { return m_revData.contains(id); }
 
 protected:
     TLIST              *m_List;

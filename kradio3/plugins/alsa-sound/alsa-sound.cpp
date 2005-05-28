@@ -50,10 +50,10 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &name)
       m_hCaptureMixer(NULL),
       m_PlaybackFormat(),
       m_CaptureFormat(),
-      m_PlaybackCard(0),
-      m_PlaybackDevice(0),
-      m_CaptureCard(0),
-      m_CaptureDevice(0),
+      m_PlaybackCard(-1),
+      m_PlaybackDevice(-1),
+      m_CaptureCard(-1),
+      m_CaptureDevice(-1),
       m_PlaybackLatency(0),
       m_CaptureLatency(0),
       m_PassivePlaybackStreams(),
@@ -105,6 +105,8 @@ void AlsaSoundDevice::noticeConnectedI (ISoundStreamServer *s, bool pointer_vali
 {
     ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
+        s->register4_sendReleasePlayback(this);
+        s->register4_sendReleaseCapture(this);
         s->register4_sendPlaybackVolume(this);
         s->register4_sendMute(this);
         s->register4_sendUnmute(this);
@@ -145,7 +147,6 @@ void AlsaSoundDevice::restoreState (KConfig *c)
 {
     c->setGroup(QString("alsa-sound-") + PluginBase::name());
 
-    setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
     m_EnablePlayback  = c->readBoolEntry("enable-playback",  true);
     m_EnableCapture   = c->readBoolEntry("enable-capture",   true);
     m_BufferSize      = c->readNumEntry ("buffer-size",      65536);
@@ -158,6 +159,8 @@ void AlsaSoundDevice::restoreState (KConfig *c)
 
     m_PlaybackBuffer.resize(m_BufferSize);
     m_CaptureBuffer.resize(m_BufferSize);
+
+    setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
 
     emit sigUpdateConfig();
 }
@@ -215,6 +218,30 @@ bool AlsaSoundDevice::prepareCapture(SoundStreamID id, const QString &channel)
         m_CaptureStreams.insert(id, SoundStreamConfig(channel));
         return true;
         // FIXME: what to do if stream is already playing?
+    }
+    return false;
+}
+
+bool AlsaSoundDevice::releasePlayback(SoundStreamID id)
+{
+    if (id.isValid() && m_PlaybackStreams.contains(id)) {
+        if (m_PlaybackStreamID == id || m_PassivePlaybackStreams.contains(id)) {
+            stopPlayback(id);
+        }
+        m_PlaybackStreams.remove(id);
+        return true;
+    }
+    return false;
+}
+
+bool AlsaSoundDevice::releaseCapture(SoundStreamID id)
+{
+    if (id.isValid() && m_CaptureStreams.contains(id)) {
+        if (m_CaptureStreamID == id) {
+            stopCapture(id);
+        }
+        m_CaptureStreams.remove(id);
+        return true;
     }
     return false;
 }
@@ -1194,6 +1221,9 @@ void AlsaSoundDevice::enableCapture(bool on)
 
 void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
 {
+    if (m_PlaybackCard == card && m_PlaybackDevice == dev)
+        return;
+
     m_PlaybackCard   = card;
     m_PlaybackDevice = dev;
     SoundFormat f = m_PlaybackFormat;
@@ -1207,6 +1237,9 @@ void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
 
 void AlsaSoundDevice::setCaptureDevice(int card, int dev)
 {
+    if (m_CaptureCard == card && m_CaptureDevice == dev)
+        return;
+
     m_CaptureCard   = card;
     m_CaptureDevice = dev;
     SoundFormat f = m_CaptureFormat;
@@ -1243,7 +1276,7 @@ bool AlsaSoundDevice::unmute (SoundStreamID id, bool unmute)
     if (id.isValid() && (m_PlaybackStreamID == id || m_PassivePlaybackStreams.contains(id))) {
         SoundStreamConfig &cfg = m_PlaybackStreams[id];
         bool mute = !unmute;
-        if (unmute != cfg.m_Muted) {
+        if (mute != cfg.m_Muted) {
             if (writePlaybackMixerVolume(cfg.m_Channel, cfg.m_Volume, cfg.m_Muted = mute)) {
                 notifyMuted(id, cfg.m_Muted);
             }

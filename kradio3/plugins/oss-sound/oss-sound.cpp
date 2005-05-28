@@ -95,6 +95,8 @@ void OSSSoundDevice::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid
 {
     ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
+        s->register4_sendReleasePlayback(this);
+        s->register4_sendReleaseCapture(this);
         s->register4_sendPlaybackVolume(this);
         s->register4_sendCaptureVolume(this);
         s->register4_queryPlaybackVolume(this);
@@ -131,8 +133,6 @@ void OSSSoundDevice::restoreState (KConfig *c)
 {
     c->setGroup(QString("oss-sound-") + PluginBase::name());
 
-    setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
-
     m_EnablePlayback  = c->readBoolEntry("enable-playback",  true);
     m_EnableCapture   = c->readBoolEntry("enable-capture",   true);
     m_BufferSize      = c->readNumEntry ("buffer-size",      65536);
@@ -143,19 +143,23 @@ void OSSSoundDevice::restoreState (KConfig *c)
     m_PlaybackBuffer.resize(m_BufferSize);
     m_CaptureBuffer.resize(m_BufferSize);
 
+    setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
+
     emit sigUpdateConfig();
 }
 
 
 void OSSSoundDevice::setMixerDeviceName(const QString &dev_name)
 {
-    m_MixerDeviceName  = dev_name;
-    if (m_Mixer_fd >= 0)
-        openMixerDevice(true);
-    getMixerChannels(SOUND_MIXER_DEVMASK, m_PlaybackChannels, m_revPlaybackChannels);
-    getMixerChannels(SOUND_MIXER_RECMASK, m_CaptureChannels, m_revCaptureChannels);
-    notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
-    notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
+    if (m_MixerDeviceName != dev_name) {
+        m_MixerDeviceName  = dev_name;
+        if (m_Mixer_fd >= 0)
+            openMixerDevice(true);
+        getMixerChannels(SOUND_MIXER_DEVMASK, m_PlaybackChannels, m_revPlaybackChannels);
+        getMixerChannels(SOUND_MIXER_RECMASK, m_CaptureChannels, m_revCaptureChannels);
+        notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
+        notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
+    }
 }
 
 
@@ -205,12 +209,37 @@ bool OSSSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, b
     return false;
 }
 
+
 bool OSSSoundDevice::prepareCapture(SoundStreamID id, const QString &channel)
 {
     if (id.isValid() && m_revCaptureChannels.contains(channel)) {
         m_CaptureStreams.insert(id, SoundStreamConfig(m_revCaptureChannels[channel]));
         return true;
         // FIXME: what to do if stream is already playing?
+    }
+    return false;
+}
+
+bool OSSSoundDevice::releasePlayback(SoundStreamID id)
+{
+    if (id.isValid() && m_PlaybackStreams.contains(id)) {
+        if (m_PlaybackStreamID == id || m_PassivePlaybackStreams.contains(id)) {
+            stopPlayback(id);
+        }
+        m_PlaybackStreams.remove(id);
+        return true;
+    }
+    return false;
+}
+
+bool OSSSoundDevice::releaseCapture(SoundStreamID id)
+{
+    if (id.isValid() && m_CaptureStreams.contains(id)) {
+        if (m_CaptureStreamID == id) {
+            stopCapture(id);
+        }
+        m_CaptureStreams.remove(id);
+        return true;
     }
     return false;
 }

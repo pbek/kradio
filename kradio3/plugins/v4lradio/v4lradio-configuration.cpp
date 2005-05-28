@@ -183,7 +183,7 @@ bool V4LRadioConfiguration::noticePlaybackMixerChanged(const QString &_mixer_id,
     ISoundStreamClient *mixer = getSoundStreamClientWithID(mixer_id);
     if (mixer) {
         m_PlaybackChannelHelper.setData(mixer->getPlaybackChannels());
-        m_PlaybackChannelHelper.setCurrentText(Channel);
+        m_PlaybackChannelHelper.setCurrentText(m_PlaybackChannelHelper.contains(Channel) ? Channel : queryPlaybackMixerChannel());
     }
     labelPlaybackMixerChannel->setEnabled(mixer != NULL);
     comboPlaybackMixerChannel->setEnabled(mixer != NULL);
@@ -206,7 +206,7 @@ bool V4LRadioConfiguration::noticeCaptureMixerChanged(const QString &_mixer_id, 
     ISoundStreamClient *mixer = getSoundStreamClientWithID(mixer_id);
     if (mixer) {
         m_CaptureChannelHelper.setData(mixer->getCaptureChannels());
-        m_CaptureChannelHelper.setCurrentText(Channel);
+        m_CaptureChannelHelper.setCurrentText(m_CaptureChannelHelper.contains(Channel) ? Channel : queryCaptureMixerChannel());
     }
     labelCaptureMixerChannel->setEnabled(mixer != NULL);
     comboCaptureMixerChannel->setEnabled(mixer != NULL);
@@ -601,8 +601,7 @@ bool V4LRadioConfiguration::noticePlaybackChannelsChanged(const QString & client
 
 bool V4LRadioConfiguration::noticeCaptureChannelsChanged (const QString & client_id, const QStringList &/*channels*/)
 {
-    QString tmp = m_CaptureMixerHelper.getCurrentItem();
-    if (tmp == client_id) {
+    if (m_CaptureMixerHelper.getCurrentItem() == client_id) {
         noticeCaptureMixerChanged(client_id, m_CaptureChannelHelper.getCurrentText());
     }
     return true;

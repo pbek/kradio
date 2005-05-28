@@ -125,7 +125,7 @@ ANSWERS:
 
 RECEIVERS:
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-
+    void noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid);
 
     bool setTreble  (SoundStreamID, float v);
     bool setBass    (SoundStreamID, float v);
@@ -187,7 +187,7 @@ protected:
     bool    readAudioInfo() const { return updateAudioInfo(false); }
     bool    writeAudioInfo() const { return updateAudioInfo(true); }
 
-    void    searchMixers(ISoundStreamClient *&playback_mixer, ISoundStreamClient *&capture_mixer);
+    void    searchMixers(ISoundStreamClient **playback_mixer, ISoundStreamClient **capture_mixer);
 
 protected:
 

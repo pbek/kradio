@@ -40,6 +40,16 @@ public:
     QString    city;
     QString    media;
     QString    comment;
+
+    bool operator != (const StationListMetaData &x) const { return !operator ==(x); }
+    bool operator == (const StationListMetaData &x) const {
+        return maintainer == x.maintainer &&
+               lastChange == x.lastChange &&
+               country    == x.country &&
+               city       == x.city &&
+               media      == x.media &&
+               comment    == x.comment;
+    }
 };
 
 #endif

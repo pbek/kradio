@@ -119,7 +119,7 @@ protected:
 
 #ifdef HAVE_LAME_LAME_H
     unsigned char     *m_MP3Buffer;
-    unsigned int       m_MP3BufferSize;
+    size_t            m_MP3BufferSize;
     FILE              *m_MP3Output;
     char              *m_ID3Tags;
     lame_global_flags *m_LAMEFlags;
@@ -130,7 +130,7 @@ protected:
 #if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
     FILE              *m_OggOutput;
     char              *m_OggExportBuffer;
-    unsigned           m_OggExportBufferSize;
+    size_t             m_OggExportBufferSize;
     ogg_stream_state   m_OggStream;
     vorbis_dsp_state   m_VorbisDSP;
     vorbis_block       m_VorbisBlock;

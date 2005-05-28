@@ -273,7 +273,7 @@ void RecordingConfiguration::slotFormatSelectionChanged()
 
 
 
-bool RecordingConfiguration::noticeEncoderBufferChanged (int BufferSize, int BufferCount)
+bool RecordingConfiguration::noticeEncoderBufferChanged (size_t BufferSize, size_t BufferCount)
 {
     m_RecordingConfig.m_EncodeBufferSize  = BufferSize;
     m_RecordingConfig.m_EncodeBufferCount = BufferCount;

@@ -141,6 +141,10 @@ public:
     QString writeXML (const IErrorLogClient &logger) const;
     bool    writeXML (const KURL &url, const IErrorLogClient &logger, bool enableMessageBox = true) const;
 
+
+    bool operator == (const StationList &x) const { return m_all == x.m_all && m_metaData == x.m_metaData; }
+    bool operator != (const StationList &x) const { return !operator ==(x); }
+
 protected:
     RawStationList        m_all;
     StationListMetaData   m_metaData;

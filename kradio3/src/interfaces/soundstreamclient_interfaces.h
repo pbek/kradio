@@ -105,6 +105,8 @@ SENDERS:
 
 
     // sendPreparePlayback/sendPrepareCapture don't make sense for multiple receivers
+    IF_SENDER_FINE  (  sendReleasePlayback, (SoundStreamID id)                                 )
+    IF_SENDER_FINE  (  sendReleaseCapture,  (SoundStreamID id)                                 )
 
     IF_SENDER_FINE  (  sendStartPlayback, (SoundStreamID id)                                   )
     IF_SENDER_FINE  (  sendPausePlayback, (SoundStreamID id)                                   )
@@ -168,6 +170,8 @@ public:
 RECEIVERS:
     IF_RECEIVER_EMPTY( preparePlayback(SoundStreamID /*id*/, const QString &/*channel*/, bool /*active_mode*/)   )
     IF_RECEIVER_EMPTY( prepareCapture(SoundStreamID /*id*/, const QString &/*channel*/)                      )
+    IF_RECEIVER_EMPTY( releasePlayback(SoundStreamID /*id*/)   )
+    IF_RECEIVER_EMPTY( releaseCapture(SoundStreamID /*id*/)    )
 
 ANSWERS:
     virtual bool supportsPlayback() const  { return false; }
@@ -309,13 +313,15 @@ SENDERS:
 
 
     // sendPreparePlayback/sendPrepareCapture don't make sense for multiple receivers
+    CALL_SNDSTR_SERVER  (  sendReleasePlayback, (SoundStreamID id), (id)                                    )
+    CALL_SNDSTR_SERVER  (  sendReleaseCapture,  (SoundStreamID id), (id)                                    )
 
-    CALL_SNDSTR_SERVER  (  sendStartPlayback, (SoundStreamID id), (id)                                   )
-    CALL_SNDSTR_SERVER  (  sendPausePlayback, (SoundStreamID id), (id)                                   )
-    CALL_SNDSTR_SERVER  (  sendStopPlayback, (SoundStreamID id), (id)                                    )
-    CALL_SNDSTR_SERVER  (  queryIsPlaybackRunning, (SoundStreamID id, bool &b), (id, b)                    )
+    CALL_SNDSTR_SERVER  (  sendStartPlayback, (SoundStreamID id), (id)                                      )
+    CALL_SNDSTR_SERVER  (  sendPausePlayback, (SoundStreamID id), (id)                                      )
+    CALL_SNDSTR_SERVER  (  sendStopPlayback, (SoundStreamID id), (id)                                       )
+    CALL_SNDSTR_SERVER  (  queryIsPlaybackRunning, (SoundStreamID id, bool &b), (id, b)                     )
 
-    CALL_SNDSTR_SERVER  (  sendStartCapture, (SoundStreamID id), (id)                                    )
+    CALL_SNDSTR_SERVER  (  sendStartCapture, (SoundStreamID id), (id)                                       )
     CALL_SNDSTR_SERVER  (  sendStartCaptureWithFormat, (SoundStreamID id,
                                    const SoundFormat &proposed_format,
                                    SoundFormat       &real_format,

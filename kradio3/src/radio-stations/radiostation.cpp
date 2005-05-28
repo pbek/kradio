@@ -187,6 +187,15 @@ QStringList RadioStation::getPropertyNames() const
     return l;
 }
 
+bool RadioStation::operator == (const RadioStation &x) const
+{
+    return m_stationID     == x.m_stationID &&
+           m_name          == x.m_name      &&
+           m_shortName     == x.m_shortName &&
+           m_initialVolume == x.m_initialVolume &&
+           m_iconName      == x.m_iconName;
+}
+
 /////////////////////////////////////////////////////////////////////////
 
 int UndefinedRadioStation::compare(const RadioStation &_s) const

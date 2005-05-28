@@ -65,6 +65,8 @@ public:
     virtual QStringList getPropertyNames() const;
     virtual QString getClassName() const { return "InternetRadioStation"; }
 
+    virtual bool operator == (const RadioStation &x) const;
+
 protected:
     KURL m_url;
 };

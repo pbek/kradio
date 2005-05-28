@@ -434,6 +434,8 @@ void PluginManager::saveState (KConfig *c) const
 
 void PluginManager::restoreState (KConfig *c)
 {
+    BlockProfiler profile_all("PluginManager::restoreState");
+
     KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Starting Plugins"));
     progress->setMinimumWidth(500);
     progress->setAllowCancel(false);
@@ -447,6 +449,8 @@ void PluginManager::restoreState (KConfig *c)
         c->setGroup("PluginManager-" + m_Name);
         QString class_name  = c->readEntry("plugin_class_" + QString::number(i));
         QString object_name = c->readEntry("plugin_name_"  + QString::number(i));
+
+        progress->setCaption("Creating Plugin " + class_name);
         if (class_name.length() && object_name.length())
             m_Application->CreatePlugin(this, class_name, object_name);
         progress->progressBar()->setProgress(i);
@@ -460,14 +464,19 @@ void PluginManager::restoreState (KConfig *c)
         int idx = 1;
         for (QMapConstIterator<QString, PluginClassInfo> it=classes.begin(); it != end; ++it, ++idx) {
             const PluginClassInfo &cls = *it;
+            progress->setCaption("Creating Plugin " + cls.class_name);
             m_Application->CreatePlugin(this, cls.class_name, m_Name + "-" + cls.class_name);
             progress->progressBar()->setProgress(idx);
         }
         m_configDialog->show();
     }
 
+    BlockProfiler  profile_plugins("PluginManager::restoreState -  plugins");
+
     int idx = n;
     for (PluginIterator i(m_plugins); i.current(); ++i, ++idx) {
+        BlockProfiler profile_plugin("PluginManager::restoreState - " + i.current()->pluginClassName());
+        progress->setCaption("Initializing Plugin " + i.current()->pluginClassName());
         i.current()->restoreState(c);
         progress->progressBar()->setProgress(idx+1);
     }
