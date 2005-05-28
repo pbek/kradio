@@ -199,7 +199,7 @@ AboutPageInfo AlsaSoundDevice::createAboutPage()
 
 
 
-bool AlsaSoundDevice::preparePlayback(SoundStreamID id, int channel, bool active_mode)
+bool AlsaSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode)
 {
     if (id.isValid()) {
         m_PlaybackStreams.insert(id, SoundStreamConfig(channel, active_mode));
@@ -209,7 +209,7 @@ bool AlsaSoundDevice::preparePlayback(SoundStreamID id, int channel, bool active
     return false;
 }
 
-bool AlsaSoundDevice::prepareCapture(SoundStreamID id, int channel)
+bool AlsaSoundDevice::prepareCapture(SoundStreamID id, const QString &channel)
 {
     if (id.isValid()) {
         m_CaptureStreams.insert(id, SoundStreamConfig(channel));
@@ -830,11 +830,10 @@ bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, int card, Sou
     return mixer_handle == NULL;
 }
 
-void AlsaSoundDevice::getPlaybackMixerChannels(QMap<int, QString> &retval, QMap<QString, int> &retval_rev, QMap<int, AlsaMixerElement> &int2id) const
+void AlsaSoundDevice::getPlaybackMixerChannels(QStringList &retval, QMap<QString, AlsaMixerElement> &ch2id) const
 {
     retval.clear();
-    retval_rev.clear();
-    int2id.clear();
+    ch2id.clear();
 
     snd_mixer_t *mixer_handle = m_hPlaybackMixer;
     bool         use_tmp_handle = false;
@@ -844,7 +843,6 @@ void AlsaSoundDevice::getPlaybackMixerChannels(QMap<int, QString> &retval, QMap<
         use_tmp_handle = true;
     }
 
-    int idx = 0;
     snd_mixer_elem_t *elem = NULL;
 
     for (elem = snd_mixer_first_elem(mixer_handle); elem; elem = snd_mixer_elem_next(elem)) {
@@ -854,10 +852,8 @@ void AlsaSoundDevice::getPlaybackMixerChannels(QMap<int, QString> &retval, QMap<
         if (snd_mixer_selem_has_playback_volume(elem)) {
             snd_mixer_selem_get_id(elem, sid);
             const char *name = snd_mixer_selem_id_get_name(sid);
-            int2id[idx] = sid;
-            retval[idx] = name;
-            retval_rev[name] = idx;
-            ++idx;
+            ch2id[name] = sid;
+            retval.append(name);
         }
     }
 
@@ -866,11 +862,10 @@ void AlsaSoundDevice::getPlaybackMixerChannels(QMap<int, QString> &retval, QMap<
     }
 }
 
-void AlsaSoundDevice::getCaptureMixerChannels(QMap<int, QString> &retval, QMap<QString, int> &retval_rev, QMap<int, AlsaMixerElement> &int2id) const
+void AlsaSoundDevice::getCaptureMixerChannels(QStringList &retval, QMap<QString, AlsaMixerElement> &ch2id) const
 {
     retval.clear();
-    retval_rev.clear();
-    int2id.clear();
+    ch2id.clear();
 
     snd_mixer_t *mixer_handle = m_hCaptureMixer;
     bool         use_tmp_handle = false;
@@ -880,7 +875,6 @@ void AlsaSoundDevice::getCaptureMixerChannels(QMap<int, QString> &retval, QMap<Q
         use_tmp_handle = true;
     }
 
-    int idx = 0;
     snd_mixer_elem_t *elem = NULL;
 
     for (elem = snd_mixer_first_elem(mixer_handle); elem; elem = snd_mixer_elem_next(elem)) {
@@ -890,10 +884,8 @@ void AlsaSoundDevice::getCaptureMixerChannels(QMap<int, QString> &retval, QMap<Q
         if (snd_mixer_selem_has_capture_switch(elem)) {
             snd_mixer_selem_get_id(elem, sid);
             const char *name = snd_mixer_selem_id_get_name(sid);
-            int2id[idx] = sid;
-            retval[idx] = name;
-            retval_rev[name] = idx;
-            ++idx;
+            ch2id[name] = sid;
+            retval.append(name);
         }
     }
 
@@ -902,13 +894,13 @@ void AlsaSoundDevice::getCaptureMixerChannels(QMap<int, QString> &retval, QMap<Q
     }
 }
 
-const QMap<int, QString> &AlsaSoundDevice::getPlaybackChannels() const
+const QStringList &AlsaSoundDevice::getPlaybackChannels() const
 {
     return m_PlaybackChannels;
 }
 
 
-const QMap<int, QString> &AlsaSoundDevice::getCaptureChannels() const
+const QStringList &AlsaSoundDevice::getCaptureChannels() const
 {
     return m_CaptureChannels;
 }
@@ -1000,13 +992,13 @@ void AlsaSoundDevice::checkMixerVolume(SoundStreamID id)
 }
 
 
-float AlsaSoundDevice::readPlaybackMixerVolume(int channel, bool &muted) const
+float AlsaSoundDevice::readPlaybackMixerVolume(const QString &channel, bool &muted) const
 {
     if (!m_hPlaybackMixer)
         return 0; // without error
 
-    if (m_PlaybackChannelsIdx2ID.contains(channel) && m_hPlaybackMixer) {
-        AlsaMixerElement sid = m_PlaybackChannelsIdx2ID[channel];
+    if (m_PlaybackChannels2ID.contains(channel) && m_hPlaybackMixer) {
+        AlsaMixerElement sid = m_PlaybackChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hPlaybackMixer, sid);
         if (elem) {
             long min = 0;
@@ -1034,13 +1026,13 @@ float AlsaSoundDevice::readPlaybackMixerVolume(int channel, bool &muted) const
 }
 
 
-float AlsaSoundDevice::readCaptureMixerVolume(int channel) const
+float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
 {
     if (!m_hCaptureMixer)
         return 0; // without error
 
-    if (m_CaptureChannelsIdx2ID.contains(channel) && m_hCaptureMixer) {
-        AlsaMixerElement sid = m_CaptureChannelsIdx2ID[channel];
+    if (m_CaptureChannels2ID.contains(channel) && m_hCaptureMixer) {
+        AlsaMixerElement sid = m_CaptureChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
         if (elem) {
             if (!snd_mixer_selem_has_capture_volume(elem))
@@ -1064,7 +1056,7 @@ float AlsaSoundDevice::readCaptureMixerVolume(int channel) const
 }
 
 
-bool AlsaSoundDevice::writePlaybackMixerVolume (int channel, float &vol, bool muted)
+bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &vol, bool muted)
 {
     if (vol > 1.0) vol = 1.0;
     if (vol < 0) vol = 0.0;
@@ -1072,8 +1064,8 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (int channel, float &vol, bool mu
     if (!m_hPlaybackMixer)
         return vol;
 
-    if (m_PlaybackChannelsIdx2ID.contains(channel) && m_hPlaybackMixer) {
-        AlsaMixerElement sid = m_PlaybackChannelsIdx2ID[channel];
+    if (m_PlaybackChannels2ID.contains(channel) && m_hPlaybackMixer) {
+        AlsaMixerElement sid = m_PlaybackChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hPlaybackMixer, sid);
         if (elem) {
             long min = 0;
@@ -1098,7 +1090,7 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (int channel, float &vol, bool mu
 }
 
 
-bool AlsaSoundDevice::writeCaptureMixerVolume (int channel, float &vol)
+bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vol)
 {
     if (vol > 1.0) vol = 1.0;
     if (vol < 0) vol = 0.0;
@@ -1106,8 +1098,8 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (int channel, float &vol)
     if (!m_hCaptureMixer)
         return vol;
 
-    if (m_CaptureChannelsIdx2ID.contains(channel) && m_hCaptureMixer) {
-        AlsaMixerElement sid = m_CaptureChannelsIdx2ID[channel];
+    if (m_CaptureChannels2ID.contains(channel) && m_hCaptureMixer) {
+        AlsaMixerElement sid = m_CaptureChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
         if (elem) {
             long min = 0;
@@ -1133,11 +1125,11 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (int channel, float &vol)
 }
 
 
-void AlsaSoundDevice::selectCaptureChannel (int channel)
+void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
 {
     bool ok = false;
-    if (m_CaptureChannelsIdx2ID.contains(channel) && m_hCaptureMixer) {
-        AlsaMixerElement sid = m_CaptureChannelsIdx2ID[channel];
+    if (m_CaptureChannels2ID.contains(channel) && m_hCaptureMixer) {
+        AlsaMixerElement sid = m_CaptureChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
         if (elem) {
             if (snd_mixer_selem_set_capture_switch_all(elem, 1) == 0) {
@@ -1152,24 +1144,22 @@ void AlsaSoundDevice::selectCaptureChannel (int channel)
                  .arg(m_CaptureDevice));
     }
 
-    if (m_revCaptureChannels.contains("ADC")) {
-        int ADC_idx = m_revCaptureChannels["ADC"];
-        float v = readCaptureMixerVolume(ADC_idx);
+    const QString ADC = "ADC";
+    if (m_CaptureChannels2ID.contains(ADC)) {
+        float v = readCaptureMixerVolume(ADC);
         if (rint(v*100 + 0.5) == 0) {
             float tmp_vol = 1.0;
-            writeCaptureMixerVolume(ADC_idx, tmp_vol);
+            writeCaptureMixerVolume(ADC, tmp_vol);
         }
     }
-    if (m_revCaptureChannels.contains("Capture")) {
+    const QString Capture = "Capture";
+    if (m_CaptureChannels2ID.contains(Capture) && m_hCaptureMixer) {
         ok = false;
-        int capture_idx = m_revCaptureChannels["Capture"];
-        if (m_CaptureChannelsIdx2ID.contains(capture_idx) && m_hCaptureMixer) {
-            AlsaMixerElement sid = m_CaptureChannelsIdx2ID[capture_idx];
-            snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
-            if (elem) {
-                if (snd_mixer_selem_set_capture_switch_all(elem, 1) == 0) {
-                    ok = true;
-                }
+        AlsaMixerElement sid = m_CaptureChannels2ID[Capture];
+        snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
+        if (elem) {
+            if (snd_mixer_selem_set_capture_switch_all(elem, 1) == 0) {
+                ok = true;
             }
         }
         if (!ok) {
@@ -1210,7 +1200,7 @@ void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
     if (m_hPlayback)
         openPlaybackDevice(f, /* reopen = */ true);
 
-    getPlaybackMixerChannels(m_PlaybackChannels, m_revPlaybackChannels, m_PlaybackChannelsIdx2ID);
+    getPlaybackMixerChannels(m_PlaybackChannels, m_PlaybackChannels2ID);
     notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
 }
 
@@ -1223,7 +1213,7 @@ void AlsaSoundDevice::setCaptureDevice(int card, int dev)
     if (m_hCapture)
         openCaptureDevice(f, /* reopen = */ true);
 
-    getCaptureMixerChannels(m_CaptureChannels, m_revCaptureChannels, m_CaptureChannelsIdx2ID);
+    getCaptureMixerChannels(m_CaptureChannels, m_CaptureChannels2ID);
     notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
 }
 

@@ -19,51 +19,51 @@
 #include "utils.h"
 #include <linux/soundcard.h>
 
-const char *mixerChannelLabels[] = SOUND_DEVICE_LABELS;
-const char *mixerChannelNames[]  = SOUND_DEVICE_NAMES;
+//const char *mixerChannelLabels[] = SOUND_DEVICE_LABELS;
+//const char *mixerChannelNames[]  = SOUND_DEVICE_NAMES;
 
 
 QString XMLEscape (const QString &s)
 {
-	QString c = s;
-	c.replace(QRegExp("&"),  "&amp;");
-	c.replace(QRegExp("<"),  "&lt;");
-	c.replace(QRegExp(">"),  "&gt;");
-	c.replace(QRegExp("\""), "&quot;");
-	c.replace(QRegExp("'"),  "&apos;");
-	return c;
+    QString c = s;
+    c.replace(QRegExp("&"),  "&amp;");
+    c.replace(QRegExp("<"),  "&lt;");
+    c.replace(QRegExp(">"),  "&gt;");
+    c.replace(QRegExp("\""), "&quot;");
+    c.replace(QRegExp("'"),  "&apos;");
+    return c;
 }
 
 
 QString xmlOpenTag (const QString &tag, bool nl)
 {
-	return "<" + tag + ">" + (nl ? QString("\n") : QString::null);
+    return "<" + tag + ">" + (nl ? QString("\n") : QString::null);
 }
 
 
 QString xmlCloseTag (const QString &tag, bool nl)
 {
-	return "</" + tag + ">" + (nl ? QString("\n") : QString::null);
+    return "</" + tag + ">" + (nl ? QString("\n") : QString::null);
 }
 
 
 QString xmlTag (const QString &tag, int v, bool nl)
 {
-	return xmlTag (tag, QString().setNum(v), nl);
+    return xmlTag (tag, QString().setNum(v), nl);
 }
 
 
 QString xmlTag (const QString &tag, float f, bool nl)
 {
-	return xmlTag(tag, QString().setNum(f), nl);
+    return xmlTag(tag, QString().setNum(f), nl);
 }
 
 
 QString xmlTag (const QString &tag, const QString &data, bool nl)
 {
-	return   xmlOpenTag(tag, false)
-	       + XMLEscape(data)
-	       + xmlCloseTag(tag, false)
-	       + (nl ? QString("\n") : QString::null);
+    return   xmlOpenTag(tag, false)
+           + XMLEscape(data)
+           + xmlCloseTag(tag, false)
+           + (nl ? QString("\n") : QString::null);
 }
 

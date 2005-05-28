@@ -75,14 +75,14 @@ public:
 
 RECEIVERS:
     IF_RECEIVER(   setRadioDevice  (const QString &s)                            )
-    IF_RECEIVER(   setPlaybackMixer(const QString &soundStreamClientID, int ch)  )
-    IF_RECEIVER(   setCaptureMixer (const QString &soundStreamClientID, int ch)  )
+    IF_RECEIVER(   setPlaybackMixer(const QString &soundStreamClientID, const QString &ch)  )
+    IF_RECEIVER(   setCaptureMixer (const QString &soundStreamClientID, const QString &ch)  )
     IF_RECEIVER(   setDeviceVolume(float v)                                      )
 
 SENDERS:
     IF_SENDER  (   notifyRadioDeviceChanged  (const QString &s)                   )
-    IF_SENDER  (   notifyPlaybackMixerChanged(const QString &soundStreamClientID, int Channel)      )
-    IF_SENDER  (   notifyCaptureMixerChanged (const QString &soundStreamClientID, int Channel)      )
+    IF_SENDER  (   notifyPlaybackMixerChanged(const QString &soundStreamClientID, const QString &Channel)      )
+    IF_SENDER  (   notifyCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel)      )
     IF_SENDER  (   notifyDeviceVolumeChanged (float v)                           )
     IF_SENDER  (   notifyCapabilitiesChanged (const V4LCaps &)                   )
 
@@ -90,8 +90,8 @@ ANSWERS:
     IF_ANSWER  (   const QString &getRadioDevice () const                       )
     IF_ANSWER  (   const QString &getPlaybackMixerID () const                   )
     IF_ANSWER  (   const QString &getCaptureMixerID () const                    )
-    IF_ANSWER  (   int            getPlaybackMixerChannel() const               )
-    IF_ANSWER  (   int            getCaptureMixerChannel() const                )
+    IF_ANSWER  (   const QString &getPlaybackMixerChannel() const               )
+    IF_ANSWER  (   const QString &getCaptureMixerChannel() const                )
     IF_ANSWER  (   float          getDeviceVolume() const                       )
     IF_ANSWER  (   V4LCaps        getCapabilities(QString dev = QString::null) const )
 };
@@ -105,14 +105,14 @@ public:
 
 SENDERS:
     IF_SENDER  (   sendRadioDevice (const QString &s)                            )
-    IF_SENDER  (   sendPlaybackMixer(const QString &soundStreamClientID, int ch) )
-    IF_SENDER  (   sendCaptureMixer (const QString &soundStreamClientID, int ch) )
+    IF_SENDER  (   sendPlaybackMixer(const QString &soundStreamClientID, const QString &ch) )
+    IF_SENDER  (   sendCaptureMixer (const QString &soundStreamClientID, const QString &ch) )
     IF_SENDER  (   sendDeviceVolume(float v)                                     )
 
 RECEIVERS:
     IF_RECEIVER(   noticeRadioDeviceChanged(const QString &s)                    )
-    IF_RECEIVER(   noticePlaybackMixerChanged(const QString &soundStreamClientID, int Channel)       )
-    IF_RECEIVER(   noticeCaptureMixerChanged (const QString &soundStreamClientID, int Channel)       )
+    IF_RECEIVER(   noticePlaybackMixerChanged(const QString &soundStreamClientID, const QString &Channel)       )
+    IF_RECEIVER(   noticeCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel)       )
     IF_RECEIVER(   noticeDeviceVolumeChanged(float v)                            )
     IF_RECEIVER(   noticeCapabilitiesChanged(const V4LCaps &)                    )
 
@@ -120,8 +120,8 @@ QUERIES:
     IF_QUERY   (   const QString &queryRadioDevice ()                            )
     IF_QUERY   (   const QString &queryPlaybackMixerID ()                        )
     IF_QUERY   (   const QString &queryCaptureMixerID ()                         )
-    IF_QUERY   (   int            queryPlaybackMixerChannel()                    )
-    IF_QUERY   (   int            queryCaptureMixerChannel()                     )
+    IF_QUERY   (   const QString &queryPlaybackMixerChannel()                    )
+    IF_QUERY   (   const QString &queryCaptureMixerChannel()                     )
     IF_QUERY   (   float          queryDeviceVolume()                            )
     IF_QUERY   (   V4LCaps        queryCapabilities(QString dev = QString::null) )
 

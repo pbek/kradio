@@ -67,8 +67,8 @@ ANSWERS:
 
 
 SENDERS:
-    IF_SENDER_FINE  (  notifyPlaybackChannelsChanged, (const QString &/*client_id*/, const QMap<int, QString>&)                     )
-    IF_SENDER_FINE  (  notifyCaptureChannelsChanged, (const QString &/*client_id*/, const QMap<int, QString>&)                     )
+    IF_SENDER_FINE  (  notifyPlaybackChannelsChanged, (const QString &/*client_id*/, const QStringList &)                     )
+    IF_SENDER_FINE  (  notifyCaptureChannelsChanged, (const QString &/*client_id*/, const QStringList &)                      )
 
     IF_SENDER_FINE  (  sendPlaybackVolume, (SoundStreamID /*id*/,  float /*volume*/)                  )
     IF_SENDER_FINE  (  sendCaptureVolume, (SoundStreamID /*id*/,   float /*volume*/)                  )
@@ -166,8 +166,8 @@ public:
 // direct playback / capture device functions
 
 RECEIVERS:
-    IF_RECEIVER_EMPTY( preparePlayback(SoundStreamID /*id*/, int /*channel*/, bool /*active_mode*/)   )
-    IF_RECEIVER_EMPTY( prepareCapture(SoundStreamID /*id*/, int /*channel*/)                      )
+    IF_RECEIVER_EMPTY( preparePlayback(SoundStreamID /*id*/, const QString &/*channel*/, bool /*active_mode*/)   )
+    IF_RECEIVER_EMPTY( prepareCapture(SoundStreamID /*id*/, const QString &/*channel*/)                      )
 
 ANSWERS:
     virtual bool supportsPlayback() const  { return false; }
@@ -190,12 +190,12 @@ QUERIES:
 
 
 ANSWERS:
-    virtual const QMap<int, QString> &getPlaybackChannels() const;
-    virtual const QMap<int, QString> &getCaptureChannels()  const;
+    virtual const QStringList &getPlaybackChannels() const;
+    virtual const QStringList &getCaptureChannels()  const;
 
 RECEIVERS:
-    IF_RECEIVER_EMPTY(  noticePlaybackChannelsChanged(const QString & /*client_id*/, const QMap<int, QString> &/*channels*/) );
-    IF_RECEIVER_EMPTY(  noticeCaptureChannelsChanged (const QString & /*client_id*/, const QMap<int, QString> &/*channels*/) );
+    IF_RECEIVER_EMPTY(  noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/) );
+    IF_RECEIVER_EMPTY(  noticeCaptureChannelsChanged (const QString & /*client_id*/, const QStringList &/*channels*/) );
 
 
 RECEIVERS:
@@ -271,8 +271,8 @@ RECEIVERS:
     IF_RECEIVER_EMPTY(  noticeReadyForPlaybackData(SoundStreamID /*id*/, unsigned /*size*/)           )
 
 SENDERS:
-    CALL_SNDSTR_SERVER  (  notifyPlaybackChannelsChanged, (const QString &client_id, const QMap<int, QString>&map), (client_id, map)                     )
-    CALL_SNDSTR_SERVER  (  notifyCaptureChannelsChanged,  (const QString &client_id, const QMap<int, QString>&map), (client_id, map)                     )
+    CALL_SNDSTR_SERVER  (  notifyPlaybackChannelsChanged, (const QString &client_id, const QStringList &map), (client_id, map)                     )
+    CALL_SNDSTR_SERVER  (  notifyCaptureChannelsChanged,  (const QString &client_id, const QStringList &map), (client_id, map)                     )
 
     CALL_SNDSTR_SERVER  (  sendPlaybackVolume, (SoundStreamID id,  float volume), (id, volume)                  )
     CALL_SNDSTR_SERVER  (  sendCaptureVolume, (SoundStreamID id,   float volume), (id, volume)                  )

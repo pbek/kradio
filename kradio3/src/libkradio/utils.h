@@ -31,8 +31,8 @@ using namespace std;
 #define __USE_ISOC99 1
 #include <math.h>
 
-extern const char *mixerChannelLabels[];
-extern const char *mixerChannelNames[];
+//extern const char *mixerChannelLabels[];
+//extern const char *mixerChannelNames[];
 
 extern QString XMLEscape (const QString &s);
 QString xmlOpenTag  (const QString &tag, bool newline = true);

@@ -25,10 +25,13 @@
 #include <kdialogbase.h>
 #include <klocale.h>
 #include <kconfig.h>
+#include <kprogress.h>
 
 #include <qlayout.h>
 #include <qframe.h>
 #include <qmenudata.h>
+
+#include "debug-profiler.h"
 
 PluginManager::PluginManager(
     const QString &name,
@@ -144,9 +147,13 @@ PluginBase *PluginManager::getPluginByName(const QString &name) const
 
 void PluginManager::insertPlugin(PluginBase *p)
 {
+    BlockProfiler profiler("PluginManager::insertPlugin");
+
     if (p) {
-        kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-                  << " Debug: Adding Plugin: " << p->name() << "\n";
+        BlockProfiler profiler_cfg("PluginManager::insertPlugin - about/config");
+
+        /*kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+                  << " Debug: Adding Plugin: " << p->name() << "\n";*/
 
         if (!m_configDialog)
             createConfigDialog(i18n(m_configDialogTitle.ascii()));
@@ -159,11 +166,14 @@ void PluginManager::insertPlugin(PluginBase *p)
         addConfigurationPage (p, p->createConfigurationPage());
         addAboutPage         (p, p->createAboutPage());
 
+        profiler_cfg.stop();
+        BlockProfiler profiler_connect("PluginManager::insertPlugin - connect");
+
         // connect plugins with each other
         for (PluginIterator it(m_plugins); it.current(); ++it) {
             if (it.current() != p) {
-                kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-                          << " Debug: connecting with " << it.current()->name() << "\n";
+                /*kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+                          << " Debug: connecting with " << it.current()->name() << "\n";*/
                 p->connectI(it.current());
             }
         }
@@ -175,20 +185,26 @@ void PluginManager::insertPlugin(PluginBase *p)
             if (i)
                 i->connectI(p);
         }
-    }
-    WidgetPluginBase *w1 = dynamic_cast<WidgetPluginBase*>(p);
-    for (PluginIterator it(m_plugins); it.current(); ++it) {
-        it.current()->noticePluginsChanged(m_plugins);
-        if (w1)
-            it.current()->noticeWidgetPluginShown(w1, w1->isReallyVisible());
 
-        WidgetPluginBase *w2 = dynamic_cast<WidgetPluginBase*>(it.current());
-        if (w2)
-            p->noticeWidgetPluginShown(w2, w2->isReallyVisible());
-    }
+        profiler_connect.stop();
+        BlockProfiler profiler_widget("PluginManager::insertPlugin - notifywidgets");
 
-    if (m_pluginManagerConfiguration)
-        m_pluginManagerConfiguration->noticePluginsChanged();
+        WidgetPluginBase *w1 = dynamic_cast<WidgetPluginBase*>(p);
+        for (PluginIterator it(m_plugins); it.current(); ++it) {
+            it.current()->noticePluginsChanged(m_plugins);
+            if (w1)
+                it.current()->noticeWidgetPluginShown(w1, w1->isReallyVisible());
+
+            WidgetPluginBase *w2 = dynamic_cast<WidgetPluginBase*>(it.current());
+            if (w2)
+                p->noticeWidgetPluginShown(w2, w2->isReallyVisible());
+        }
+
+        if (m_pluginManagerConfiguration)
+            m_pluginManagerConfiguration->noticePluginsChanged();
+
+        profiler_widget.stop();
+    }
 }
 
 
@@ -418,29 +434,44 @@ void PluginManager::saveState (KConfig *c) const
 
 void PluginManager::restoreState (KConfig *c)
 {
+    KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Starting Plugins"));
+    progress->setMinimumWidth(500);
+    progress->setAllowCancel(false);
+    progress->show();
+
     c->setGroup("PluginManager-" + m_Name);
     int n = c->readNumEntry("plugins", 0);
+
+    progress->progressBar()->setTotalSteps(2*n);
     for (int i = 1; i <= n; ++i) {
         c->setGroup("PluginManager-" + m_Name);
         QString class_name  = c->readEntry("plugin_class_" + QString::number(i));
         QString object_name = c->readEntry("plugin_name_"  + QString::number(i));
         if (class_name.length() && object_name.length())
             m_Application->CreatePlugin(this, class_name, object_name);
+        progress->progressBar()->setProgress(i);
     }
 
     if (m_Application && n == 0) {
         const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
         QMapConstIterator<QString, PluginClassInfo> end = classes.end();
-        for (QMapConstIterator<QString, PluginClassInfo> it=classes.begin(); it != end; ++it) {
+        n = classes.count();
+        progress->progressBar()->setTotalSteps(2*n);
+        int idx = 1;
+        for (QMapConstIterator<QString, PluginClassInfo> it=classes.begin(); it != end; ++it, ++idx) {
             const PluginClassInfo &cls = *it;
             m_Application->CreatePlugin(this, cls.class_name, m_Name + "-" + cls.class_name);
+            progress->progressBar()->setProgress(idx);
         }
         m_configDialog->show();
     }
 
-    for (PluginIterator i(m_plugins); i.current(); ++i) {
+    int idx = n;
+    for (PluginIterator i(m_plugins); i.current(); ++i, ++idx) {
         i.current()->restoreState(c);
+        progress->progressBar()->setProgress(idx+1);
     }
+    delete progress;
 }
 
 PluginConfigurationDialog *PluginManager::getConfigDialog()

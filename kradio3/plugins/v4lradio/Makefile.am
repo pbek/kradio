@@ -4,5 +4,5 @@ METASOURCES = AUTO
 lib_LTLIBRARIES =  libv4lradio.la
 libv4lradio_la_LDFLAGS = -module $(all_libraries)
 libv4lradio_la_SOURCES =  v4lcfg_interfaces.cpp v4lradio-configuration.cpp v4lradio-configuration-ui.ui v4lradio.cpp
-noinst_HEADERS =  v4lcfg_interfaces.h v4lradio-configuration.h v4lradio.h
+noinst_HEADERS = v4lcfg_interfaces.h v4lradio-configuration.h v4lradio.h
 

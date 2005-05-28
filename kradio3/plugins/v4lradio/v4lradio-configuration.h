@@ -53,8 +53,8 @@ public :
 
 RECEIVERS:
     bool noticeRadioDeviceChanged(const QString &s);
-    bool noticePlaybackMixerChanged(const QString &soundStreamClientID, int Channel);
-    bool noticeCaptureMixerChanged (const QString &soundStreamClientID, int Channel);
+    bool noticePlaybackMixerChanged(const QString &soundStreamClientID, const QString &Channel);
+    bool noticeCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel);
     bool noticeDeviceVolumeChanged(float v);
     bool noticeCapabilitiesChanged(const V4LCaps &c);
 
@@ -85,8 +85,8 @@ RECEIVERS:
     bool noticeBalanceChanged(SoundStreamID id, float b);
     bool noticeSignalMinQualityChanged(SoundStreamID id, float q);
 
-    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QMap<int, QString> &/*channels*/);
-    bool noticeCaptureChannelsChanged (const QString & /*client_id*/, const QMap<int, QString> &/*channels*/);
+    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
+    bool noticeCaptureChannelsChanged (const QString & /*client_id*/, const QStringList &/*channels*/);
     bool noticeSoundStreamCreated(SoundStreamID /*id*/);
 
 
@@ -122,8 +122,6 @@ protected:
 
     SoundStreamID m_SoundStreamID;
 
-/*    int     m_PlaybackMixerChannelMask,
-            m_CaptureMixerChannelMask;*/
     bool    m_ignoreGUIChanges;
 
     int     m_myControlChange;
@@ -134,12 +132,12 @@ protected:
 
     V4LCaps m_caps;
 
-    typedef GUIListHelper<QComboBox, QString> StringListHelper;
-    typedef GUIListHelper<QComboBox, int>     IntListHelper;
+    typedef GUIListHelper<QComboBox, QString>       StringListHelper;
+    typedef GUISimpleListHelper<QComboBox>          ChannelListHelper;
 
     StringListHelper  m_PlaybackMixerHelper,
                       m_CaptureMixerHelper;
-    IntListHelper     m_PlaybackChannelHelper,
+    ChannelListHelper m_PlaybackChannelHelper,
                       m_CaptureChannelHelper;
 };
 

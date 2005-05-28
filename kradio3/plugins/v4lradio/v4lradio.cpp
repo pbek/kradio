@@ -81,8 +81,8 @@ V4LRadio::V4LRadio(const QString &name)
     m_SoundStreamID(createNewSoundStream(false)),
     m_PlaybackMixerID(QString::null),
     m_CaptureMixerID(QString::null),
-    m_PlaybackMixerChannel(0),
-    m_CaptureMixerChannel(0)
+    m_PlaybackMixerChannel(QString::null),
+    m_CaptureMixerChannel(QString::null)
 {
     QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
     m_pollTimer.start(333);
@@ -310,35 +310,6 @@ SoundStreamID V4LRadio::getCurrentSoundStreamID() const
 }
 
 
-// // IRadioSound methods
-//
-// bool V4LRadio::setVolume (float vol)
-// {
-//     if (vol > 1.0) vol = 1.0;
-//     if (vol < 0) vol = 0.0;
-//
-//     const int divs = 100;
-//     vol = rint(vol * divs) / float(divs);
-//
-//       if (m_volume != vol) {
-//         if (isPowerOn()) {
-//             _lrvol tmpvol;
-//             tmpvol.r = tmpvol.l = (unsigned int)(rint(vol * divs));
-//             int err = ioctl(m_mixer_fd, MIXER_WRITE(m_mixerChannel), &tmpvol);
-//             if (err != 0) {
-//                 logError("V4LRadio::setVolume: " +
-//                          i18n("error %1 while setting volume to %2")
-//                          .arg(QString().setNum(err))
-//                          .arg(QString().setNum(vol)));
-//                 return false;
-//             }
-//         }
-//         m_volume = vol;
-//         notifyVolumeChanged(m_volume);
-//     }
-//
-//     return true;
-// }
 
 
 bool V4LRadio::setTreble (SoundStreamID id, float t)
@@ -442,26 +413,6 @@ bool    V4LRadio::setStereo(SoundStreamID /*id*/, bool /*b*/)
 }
 
 
-// float   V4LRadio::getVolume() const
-// {
-//     if (isPowerOn()) {
-//         _lrvol tmpvol;
-//         int err = ioctl(m_mixer_fd, MIXER_READ(m_mixerChannel), &tmpvol);
-//         if (err) {
-//             logError("V4LRadio::getVolume: " +
-//                      i18n("error %1 while reading volume")
-//                      .arg(QString().setNum(err)));
-//             tmpvol.l = tmpvol.r = 0;
-//         }
-//         float v = float(tmpvol.l) / 100.0;
-//
-//         if (rint(100*m_volume) != rint(100*v)) {
-//             m_volume = v;
-//             notifyVolumeChanged(m_volume);
-//         }
-//     }
-//     return m_volume;
-// }
 
 
 bool V4LRadio::getTreble (SoundStreamID id, float &t) const
@@ -813,7 +764,7 @@ bool  V4LRadio::setRadioDevice(const QString &s)
 }
 
 
-bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, int ch)
+bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch)
 {
     m_PlaybackMixerID = soundStreamClientID;
     m_PlaybackMixerChannel = ch;
@@ -839,7 +790,7 @@ bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, int ch)
 }
 
 
-bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, int ch)
+bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QString &ch)
 {
     m_CaptureMixerID = soundStreamClientID;
     m_CaptureMixerChannel = ch;
@@ -871,26 +822,6 @@ bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, int ch)
 }
 
 
-// bool  V4LRadio::setDevices(const QString &r, const QString &m, int ch)
-// {
-//     if (m_radioDev != r || m_mixerDev != m || m_mixerChannel != ch) {
-//         bool p = isPowerOn();
-//         powerOff();
-//         m_radioDev = r;
-//         m_mixerDev = m;
-//         m_mixerChannel = ch;
-//
-//         m_caps = readV4LCaps(m_radioDev);
-//         notifyRadioDeviceChanged(m_radioDev);
-//         notifyDescriptionChanged(m_caps.description);
-//         notifyCapabilitiesChanged(m_caps);
-//         notifyMixerDeviceChanged(m_mixerDev, m_mixerChannel);
-//
-//         setPower(p);
-//     }
-//     return true;
-// }
-//
 
 V4LCaps V4LRadio::getCapabilities(QString dev) const
 {
@@ -909,17 +840,10 @@ void   V4LRadio::saveState (KConfig *config) const
 
     config->writeEntry("RadioDev",         m_radioDev);
 
-    int ch = m_PlaybackMixerChannel;
-    if(ch < 0 || ch >= SOUND_MIXER_NRDEVICES)
-        ch = SOUND_MIXER_LINE;
     config->writeEntry("PlaybackMixerID",      m_PlaybackMixerID);
-    config->writeEntry("PlaybackMixerChannel", mixerChannelNames[ch]);
-
-    ch = m_CaptureMixerChannel;
-    if(ch < 0 || ch >= SOUND_MIXER_NRDEVICES)
-        ch = SOUND_MIXER_LINE;
-    config->writeEntry("CaptureMixerID",      m_CaptureMixerID);
-    config->writeEntry("CaptureMixerChannel", mixerChannelNames[ch]);
+    config->writeEntry("PlaybackMixerChannel", m_PlaybackMixerChannel);
+    config->writeEntry("CaptureMixerID",       m_CaptureMixerID);
+    config->writeEntry("CaptureMixerChannel",  m_CaptureMixerChannel);
 
     config->writeEntry("fMinOverride",     m_minFrequency);
     config->writeEntry("fMaxOverride",     m_maxFrequency);
@@ -931,7 +855,6 @@ void   V4LRadio::saveState (KConfig *config) const
     config->writeEntry("scanStep",         m_scanStep);
 
     config->writeEntry("Frequency",        m_currentStation.frequency());
-//     config->writeEntry("Volume",           m_volume);
     config->writeEntry("Treble",           m_treble);
     config->writeEntry("Bass",             m_bass);
     config->writeEntry("Balance",          m_balance);
@@ -948,30 +871,13 @@ void   V4LRadio::restoreState (KConfig *config)
 
     setRadioDevice(config->readEntry ("RadioDev", "/dev/radio"));
 
-    QString mixerID = config->readEntry ("PlaybackMixerID", QString::null);
-    QString s       = config->readEntry ("PlaybackMixerChannel", "line");
-    int c = 0;
-    for (c = 0; c < SOUND_MIXER_NRDEVICES; ++c) {
-        if (s == mixerChannelLabels[c] ||
-            s == mixerChannelNames[c])
-            break;
-    }
-    if (c == SOUND_MIXER_NRDEVICES)
-        c = SOUND_MIXER_LINE;
-    setPlaybackMixer(mixerID, c);
+    QString m_PlaybackMixerID      = config->readEntry ("PlaybackMixerID", QString::null);
+    QString m_PlaybackMixerChannel = config->readEntry ("PlaybackMixerChannel", "Line");
+    setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel);
 
-
-    mixerID = config->readEntry ("CaptureMixerID", QString::null);
-    s       = config->readEntry ("CaptureMixerChannel", "line");
-    c = 0;
-    for (c = 0; c < SOUND_MIXER_NRDEVICES; ++c) {
-        if (s == mixerChannelLabels[c] ||
-            s == mixerChannelNames[c])
-            break;
-    }
-    if (c == SOUND_MIXER_NRDEVICES)
-        c = SOUND_MIXER_LINE;
-    setCaptureMixer(mixerID, c);
+    QString m_CaptureMixerID       = config->readEntry ("CaptureMixerID",  QString::null);
+    QString m_CaptureMixerChannel  = config->readEntry ("CaptureMixerChannel", "Line");
+    setCaptureMixer(m_CaptureMixerID, m_CaptureMixerChannel);
 
     m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
     m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
@@ -986,7 +892,6 @@ void   V4LRadio::restoreState (KConfig *config)
     notifyScanStepChanged(getScanStep());
 
     setFrequency(config->readDoubleNumEntry("Frequency", 88));
-/*    setVolume(config->readDoubleNumEntry   ("Volume",    0.5));*/
     setPower(config->readBoolEntry         ("PowerOn",   false));
 
     setTreble      (m_SoundStreamID, config->readDoubleNumEntry("Treble",       0.5));

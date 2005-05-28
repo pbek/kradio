@@ -47,12 +47,12 @@ public:
     // config
 
     const QString &getPlaybackMixer()        const { return m_PlaybackMixerID; }
-    int            getPlaybackMixerChannel() const { return m_PlaybackMixerChannel; }
+    const QString &getPlaybackMixerChannel() const { return m_PlaybackMixerChannel; }
     const QString &getTempFileName()         const { return m_TempFileName; }
     Q_UINT64       getTempFileMaxSize()      const { return m_TempFileMaxSize; }
 
     void setTempFile(const QString &filename, Q_UINT64 s);
-    bool setPlaybackMixer(const QString &soundStreamClientID, int ch);
+    bool setPlaybackMixer(const QString &soundStreamClientID, const QString &ch);
 
     // PluginBase
 
@@ -97,7 +97,7 @@ protected:
     SoundFormat         m_realSoundFormat;
 
     QString             m_PlaybackMixerID;
-    int                 m_PlaybackMixerChannel;
+    QString             m_PlaybackMixerChannel;
 
     QString             m_StreamFile;
     bool                m_StreamPaused;

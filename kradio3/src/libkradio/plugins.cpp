@@ -30,7 +30,7 @@ PluginBase::PluginBase(const QString &name, const QString &description)
 PluginBase::~PluginBase()
 {
     m_destructorCalled = true;
-    IErrorLogClient::logDebug("destructing plugin " + m_name);
+    //IErrorLogClient::logDebug("destructing plugin " + m_name);
     unsetManager();
 }
 

@@ -132,9 +132,11 @@ void OSSSoundDevice::restoreState (KConfig *c)
     c->setGroup(QString("oss-sound-") + PluginBase::name());
 
     setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
+
     m_EnablePlayback  = c->readBoolEntry("enable-playback",  true);
     m_EnableCapture   = c->readBoolEntry("enable-capture",   true);
     m_BufferSize      = c->readNumEntry ("buffer-size",      65536);
+
     setDSPDeviceName   (c->readEntry    ("dsp-device",       "/dev/dsp"));
     setMixerDeviceName (c->readEntry    ("mixer-device",     "/dev/mixer"));
 
@@ -150,8 +152,8 @@ void OSSSoundDevice::setMixerDeviceName(const QString &dev_name)
     m_MixerDeviceName  = dev_name;
     if (m_Mixer_fd >= 0)
         openMixerDevice(true);
-    getMixerChannels(SOUND_MIXER_DEVMASK, m_PlaybackChannels);
-    getMixerChannels(SOUND_MIXER_RECMASK, m_CaptureChannels);
+    getMixerChannels(SOUND_MIXER_DEVMASK, m_PlaybackChannels, m_revPlaybackChannels);
+    getMixerChannels(SOUND_MIXER_RECMASK, m_CaptureChannels, m_revCaptureChannels);
     notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
     notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
 }
@@ -193,20 +195,20 @@ AboutPageInfo OSSSoundDevice::createAboutPage()
 
 
 
-bool OSSSoundDevice::preparePlayback(SoundStreamID id, int channel, bool active_mode)
+bool OSSSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode)
 {
-    if (id.isValid()) {
-        m_PlaybackStreams.insert(id, SoundStreamConfig(channel, active_mode));
+    if (id.isValid() && m_revPlaybackChannels.contains(channel)) {
+        m_PlaybackStreams.insert(id, SoundStreamConfig(m_revPlaybackChannels[channel], active_mode));
         return true;
         // FIXME: what to do if stream is already playing?
     }
     return false;
 }
 
-bool OSSSoundDevice::prepareCapture(SoundStreamID id, int channel)
+bool OSSSoundDevice::prepareCapture(SoundStreamID id, const QString &channel)
 {
-    if (id.isValid()) {
-        m_CaptureStreams.insert(id, SoundStreamConfig(channel));
+    if (id.isValid() && m_revCaptureChannels.contains(channel)) {
+        m_CaptureStreams.insert(id, SoundStreamConfig(m_revCaptureChannels[channel]));
         return true;
         // FIXME: what to do if stream is already playing?
     }
@@ -702,9 +704,10 @@ bool OSSSoundDevice::closeMixerDevice(bool force)
 }
 
 
-void OSSSoundDevice::getMixerChannels(int query, QMap<int, QString> &retval) const
+void OSSSoundDevice::getMixerChannels(int query, QStringList &retval, QMap<QString, int> &revmap) const
 {
     retval.clear();
+    revmap.clear();
 
     int fd = m_Mixer_fd;
     if (fd < 0)
@@ -720,7 +723,8 @@ void OSSSoundDevice::getMixerChannels(int query, QMap<int, QString> &retval) con
             for (int i = 0; i < SOUND_MIXER_NRDEVICES; ++i) {
                 if (mask & (1 << i)) {
                     static const char *labels[] = SOUND_DEVICE_LABELS;
-                    retval.insert(i, i18n(labels[i]));
+                    retval.append(i18n(labels[i]));
+                    revmap.insert(i18n(labels[i]), i);
                 }
             }
         } else {
@@ -732,13 +736,13 @@ void OSSSoundDevice::getMixerChannels(int query, QMap<int, QString> &retval) con
 }
 
 
-const QMap<int, QString> &OSSSoundDevice::getPlaybackChannels() const
+const QStringList &OSSSoundDevice::getPlaybackChannels() const
 {
     return m_PlaybackChannels;
 }
 
 
-const QMap<int, QString> &OSSSoundDevice::getCaptureChannels() const
+const QStringList &OSSSoundDevice::getCaptureChannels() const
 {
     return m_CaptureChannels;
 }

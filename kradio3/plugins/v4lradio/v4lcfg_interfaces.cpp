@@ -65,10 +65,10 @@ V4LCaps::V4LCaps(const V4LCaps &c)
 IF_IMPL_SENDER  (   IV4LCfg::notifyRadioDeviceChanged(const QString &s),
                     noticeRadioDeviceChanged(s)
                 )
-IF_IMPL_SENDER  (   IV4LCfg::notifyPlaybackMixerChanged(const QString &s, int Channel),
+IF_IMPL_SENDER  (   IV4LCfg::notifyPlaybackMixerChanged(const QString &s, const QString &Channel),
                     noticePlaybackMixerChanged(s, Channel)
                 )
-IF_IMPL_SENDER  (   IV4LCfg::notifyCaptureMixerChanged(const QString &s, int Channel),
+IF_IMPL_SENDER  (   IV4LCfg::notifyCaptureMixerChanged(const QString &s, const QString &Channel),
                     noticeCaptureMixerChanged(s, Channel)
                 )
 IF_IMPL_SENDER  (   IV4LCfg::notifyDeviceVolumeChanged(float v),
@@ -83,10 +83,10 @@ IF_IMPL_SENDER  (   IV4LCfg::notifyCapabilitiesChanged(const V4LCaps &c),
 IF_IMPL_SENDER  (   IV4LCfgClient::sendRadioDevice (const QString &s),
                     setRadioDevice(s)
                 )
-IF_IMPL_SENDER  (   IV4LCfgClient::sendPlaybackMixer(const QString &s, int ch),
+IF_IMPL_SENDER  (   IV4LCfgClient::sendPlaybackMixer(const QString &s, const QString &ch),
                     setPlaybackMixer(s, ch)
                 )
-IF_IMPL_SENDER  (   IV4LCfgClient::sendCaptureMixer(const QString &s, int ch),
+IF_IMPL_SENDER  (   IV4LCfgClient::sendCaptureMixer(const QString &s, const QString &ch),
                     setCaptureMixer(s, ch)
                 )
 IF_IMPL_SENDER  (   IV4LCfgClient::sendDeviceVolume(float v),
@@ -108,13 +108,15 @@ IF_IMPL_QUERY   (   const QString &IV4LCfgClient::queryCaptureMixerID (),
                     getCaptureMixerID(),
                     QString::null
                 )
-IF_IMPL_QUERY   (   int            IV4LCfgClient::queryPlaybackMixerChannel(),
+
+static const QString channel_line("Line");
+IF_IMPL_QUERY   (   const QString &IV4LCfgClient::queryPlaybackMixerChannel(),
                     getPlaybackMixerChannel(),
-                    SOUND_MIXER_LINE
+                    channel_line
                 )
-IF_IMPL_QUERY   (   int            IV4LCfgClient::queryCaptureMixerChannel(),
+IF_IMPL_QUERY   (   const QString &IV4LCfgClient::queryCaptureMixerChannel(),
                     getCaptureMixerChannel(),
-                    SOUND_MIXER_LINE
+                    channel_line
                 )
 IF_IMPL_QUERY   (   float IV4LCfgClient::queryDeviceVolume (),
                     getDeviceVolume(),

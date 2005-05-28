@@ -22,6 +22,46 @@
 #include <qvaluelist.h>
 
 
+template <class TLIST> class GUISimpleListHelper
+{
+public:
+    GUISimpleListHelper(TLIST *list) : m_List(list) {}
+    ~GUISimpleListHelper() {}
+
+    void     setData(const QValueList<QString> &data);
+    QString  getCurrentText() const           { return m_List->currentText(); }
+    void     setCurrentText(const QString &s) { m_List->setCurrentItem(m_revData.contains(s) ? m_revData[s] : 0); }
+
+    int count() const { return m_revData.count(); }
+
+protected:
+    TLIST              *m_List;
+    QMap<QString, int>  m_revData;
+};
+
+
+template <class TLIST>
+void GUISimpleListHelper<TLIST>::setData(const QValueList<QString> &data)
+{
+    m_List->clear();
+    m_revData.clear();
+
+    QValueListConstIterator<QString> it  = data.begin();
+    QValueListConstIterator<QString> end = data.end();
+    for (int i = 0; it != end; ++it, ++i) {
+        m_revData[*it] = i;
+        m_List->insertItem(*it);
+    }
+}
+
+
+
+
+
+
+
+
+
 template <class TLIST, class TID> class GUIListHelper
 {
 public:
@@ -33,10 +73,12 @@ public:
 
     void setData(const QMap<TID, QString> &data);
 
-    void setCurrentItem(TID) const;
-    TID  getCurrentItem()    const;
+    void       setCurrentItem(const TID &) const;
+    const TID &getCurrentItem()    const;
 
     int count() const { return m_Index2ID.count(); }
+
+    bool contains(const TID &id) const { return m_ID2Index.contains(id); }
 
 protected:
     SORT_KEY           m_skey;
@@ -60,6 +102,7 @@ protected:
         bool operator < (const THelpData &d) { return (skey == SORT_BY_ID) ? id < d.id : descr < d.descr; }
     };
 };
+
 
 
 template <class TLIST, class TID>
@@ -112,7 +155,7 @@ void GUIListHelper<TLIST, TID>::setData (const QMap<TID, QString> &data)
 
 
 template <class TLIST, class TID>
-void GUIListHelper<TLIST, TID>::setCurrentItem(TID id) const
+void GUIListHelper<TLIST, TID>::setCurrentItem(const TID &id) const
 {
     if (m_ID2Index.contains(id))
         m_List->setCurrentItem(m_ID2Index[id]);
@@ -121,7 +164,7 @@ void GUIListHelper<TLIST, TID>::setCurrentItem(TID id) const
 }
 
 template <class TLIST, class TID>
-TID GUIListHelper<TLIST, TID>::getCurrentItem() const
+const TID &GUIListHelper<TLIST, TID>::getCurrentItem() const
 {
     int idx = m_List->currentItem();
     return m_Index2ID[idx];

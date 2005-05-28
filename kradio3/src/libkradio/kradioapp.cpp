@@ -27,19 +27,12 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 
+#include <kprogress.h>
+
 #include "kradioapp.h"
 #include "../libkradio-gui/aboutwidget.h"
 
-// #include "v4lradio.h"
-// #include "radio.h"
-// #include "timecontrol.h"
-// #include "lircsupport.h"
-// #include "quickbar.h"
-// #include "docking.h"
-// #include "radioview.h"
-// #include "recording.h"
-// #include "recording-monitor.h"
-// #include "errorlog.h"
+#include "debug-profiler.h"
 
 /////////////////////////////////////////////////////////////////////////////
 //// KRadioAbout
@@ -164,24 +157,44 @@ void KRadioApp::saveState (KConfig *c) const
 
 void KRadioApp::restoreState (KConfig *c)
 {
+    BlockProfiler profiler("KRadioApp::restoreState - loadLibraries");
+
     c->setGroup("Plugin Libraries");
     int n_libs = c->readNumEntry("count", 0);
+
+    KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Loading Plugins Libraries"));
+    progress->setMinimumWidth(500);
+    progress->setAllowCancel(false);
+    progress->show();
+
+    progress->progressBar()->setTotalSteps(n_libs);
     for (int idx = 0; idx < n_libs; ++idx) {
         QString lib = c->readEntry("library_" + QString::number(idx), QString::null);
         if (lib.length()) {
             LoadLibrary(lib);
+            progress->progressBar()->setProgress(idx+1);
         }
     }
 
     if (n_libs == 0) {
         QStringList libs
-            = KGlobal::dirs()->findAllResources("lib", "kradio/plugins/*.la");
+            = KGlobal::dirs()->findAllResources("lib", "kradio/plugins/*.so");
         QValueListIterator<QString> end = libs.end();
-        for (QValueListIterator<QString> it = libs.begin(); it != end; ++it)
+        int idx = 0;
+        progress->progressBar()->setTotalSteps(libs.count());
+        for (QValueListIterator<QString> it = libs.begin(); it != end; ++it, ++idx) {
             LoadLibrary(*it);
+            progress->progressBar()->setProgress(idx+1);
+        }
     }
 
+    delete progress;
+
+    profiler.stop();
+
     c->setGroup("Global");
+
+    BlockProfiler rest_profiler("KRadioApp::restoreState - restore");
 
     int n = c->readNumEntry("instances", 1);
 
@@ -196,6 +209,8 @@ void KRadioApp::restoreState (KConfig *c)
 
 PluginManager *KRadioApp::createNewInstance(const QString &_name)
 {
+    BlockProfiler profiler("KRadioApp::createNewInstance");
+
     QString instance_name = _name;
     QString id = QString::number(m_Instances.count()+1);
     if (instance_name.length() == 0) {
@@ -219,6 +234,9 @@ PluginManager *KRadioApp::createNewInstance(const QString &_name)
 
 KLibrary *KRadioApp::LoadLibrary (const QString &library)
 {
+    BlockProfiler profiler("KRadioApp::LoadLibrary");
+    BlockProfiler libprofiler("KRadioApp::LoadLibrary - " + library);
+
     PluginLibraryInfo libinfo(library);
     if (libinfo.valid()) {
         m_PluginLibraries.insert(library, libinfo);
@@ -267,6 +285,11 @@ void KRadioApp::UnloadLibrary (const QString &library)
 
 PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &class_name, const QString &object_name)
 {
+    BlockProfiler all_profiler  ("KRadioApp::CreatePlugin");
+    BlockProfiler class_profiler("KRadioApp::CreatePlugin - " + class_name);
+
+    BlockProfiler create_profiler("KRadioApp::CreatePlugin - create");
+
     PluginBase *retval = NULL;
     if (m_PluginInfos.contains(class_name)) {
         retval = m_PluginInfos[class_name].CreateInstance(object_name);
@@ -282,10 +305,19 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &clas
                   << i18n("Error: Cannot create instance \"%1\" of unknown class %2.").arg(object_name).arg(class_name)
                   << endl;
     }
+
+    create_profiler.stop();
+
     if (retval) {
+
+        BlockProfiler insert_profiler("KRadioApp::CreatePlugin - insert");
         manager->insertPlugin(retval);
-        retval->restoreState(KGlobal::config());
+        insert_profiler.stop();
+
+        //BlockProfiler restore_profiler("KRadioApp::CreatePlugin - restore");
+        //retval->restoreState(KGlobal::config());
     }
+
     return retval;
 }
 

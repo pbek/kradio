@@ -190,9 +190,9 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsMuted, (SoundStreamID id, bool
                  isMuted(id, m)                                                                            );
 
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyPlaybackChannelsChanged, (const QString &client_id, const QMap<int, QString> &map),
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyPlaybackChannelsChanged, (const QString &client_id, const QStringList &map),
                  noticePlaybackChannelsChanged(client_id, map)                   );
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyCaptureChannelsChanged,  (const QString &client_id, const QMap<int, QString> &map),
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyCaptureChannelsChanged,  (const QString &client_id, const QStringList &map),
                  noticeCaptureChannelsChanged (client_id, map)                   );
 
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, querySoundStreamDescription, (SoundStreamID id, QString &descr),
@@ -243,7 +243,12 @@ QString ISoundStreamClient::createNewSoundStreamClientID()
 
 void ISoundStreamClient::setSoundStreamClientID(const QString &s)
 {
+    ISoundStreamServer *server = getSoundStreamServer();
+    if (server)
+        server->noticeDisconnectedI(this, true);
     m_SoundStreamClientID = s;
+    if (server)
+        server->noticeConnectedI(this, true);
 }
 
 
@@ -293,17 +298,17 @@ void  ISoundStreamClient::closeSoundStream(SoundStreamID id, bool notify)
 }
 
 
-static const QMap<int, QString> emptyMap;
+static const QStringList emptyList;
 
-const QMap<int, QString> &ISoundStreamClient::getPlaybackChannels() const
+const QStringList &ISoundStreamClient::getPlaybackChannels() const
 {
-    return emptyMap;
+    return emptyList;
 }
 
 
-const QMap<int, QString> &ISoundStreamClient::getCaptureChannels()  const
+const QStringList &ISoundStreamClient::getCaptureChannels()  const
 {
-    return emptyMap;
+    return emptyList;
 }
 
 

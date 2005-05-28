@@ -22,15 +22,17 @@
 #include "kradioversion.h"
 #include "libkradio/kradioapp.h"
 
+#include "libkradio/debug-profiler.h"
 
 static KCmdLineOptions options[] =
 {
   { 0, 0, 0 }
 };
 
-
 int main(int argc, char *argv[])
 {
+    BlockProfiler  profiler_about("main::aboutdata");
+
     KAboutData aboutData("kradio", I18N_NOOP("KRadio"),
                          KRADIO_VERSION, "KRadio", KAboutData::License_GPL,
                          "(c) 2002-2005 Martin Witte, Klas Kalass, Frank Schwanz",
@@ -45,12 +47,24 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init( argc, argv, &aboutData );
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
+    profiler_about.stop();
+
+    BlockProfiler  profiler_kradioapp("main::KRadioApp");
+
     KRadioApp a;
+
+    profiler_kradioapp.stop();
+    BlockProfiler  profiler_restore("main::restore");
 
     a.restoreState(KGlobal::config());
 
+    profiler_restore.stop();
+
     int ret = a.exec();
     a.saveState(KGlobal::config());
+
+    global_profiler.printData();
+
     return ret;
 }
 

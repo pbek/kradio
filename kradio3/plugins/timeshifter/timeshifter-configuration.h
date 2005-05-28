@@ -48,11 +48,11 @@ public :
 
 RECEIVERS:
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QMap<int, QString> &/*channels*/);
+    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
 
 protected:
 
-    bool setPlaybackMixer(const QString &_mixer_id, int Channel);
+    bool setPlaybackMixer(const QString &_mixer_id, const QString &Channel);
 
 
 protected slots:
@@ -69,10 +69,10 @@ protected:
     int     m_myControlChange;
 
     typedef GUIListHelper<QComboBox, QString> StringListHelper;
-    typedef GUIListHelper<QComboBox, int>     IntListHelper;
+    typedef GUISimpleListHelper<QComboBox>    ChannelListHelper;
 
     StringListHelper  m_PlaybackMixerHelper;
-    IntListHelper     m_PlaybackChannelHelper;
+    ChannelListHelper m_PlaybackChannelHelper;
 
     TimeShifter *m_Shifter;
 };

@@ -155,8 +155,8 @@ RECEIVERS:
     // IV4LCfg
 RECEIVERS:
     bool  setRadioDevice  (const QString &s);
-    bool  setPlaybackMixer(const QString &soundStreamClientID, int ch);
-    bool  setCaptureMixer (const QString &soundStreamClientID, int ch);
+    bool  setPlaybackMixer(const QString &soundStreamClientID, const QString &ch);
+    bool  setCaptureMixer (const QString &soundStreamClientID, const QString &ch);
     bool  setDeviceVolume (float v);
 
     // if the radio is powered off, we will handle the volume by changing m_defaultPlaybackVolume
@@ -167,8 +167,8 @@ ANSWERS:
     const QString &getRadioDevice         () const { return m_radioDev; }
     const QString &getPlaybackMixerID     () const { return m_PlaybackMixerID; }
     const QString &getCaptureMixerID      () const { return m_CaptureMixerID; }
-    int            getPlaybackMixerChannel() const { return m_PlaybackMixerChannel; }
-    int            getCaptureMixerChannel () const { return m_CaptureMixerChannel; }
+    const QString &getPlaybackMixerChannel() const { return m_PlaybackMixerChannel; }
+    const QString &getCaptureMixerChannel () const { return m_CaptureMixerChannel; }
     float          getDeviceVolume        () const;
     V4LCaps        getCapabilities(QString dev = QString::null) const;
 
@@ -237,10 +237,10 @@ protected:
                                   m_blockReadAudio;
 
     SoundStreamID                 m_SoundStreamID;
-    QString                       m_PlaybackMixerID,
-                                  m_CaptureMixerID;
-    int                           m_PlaybackMixerChannel,
-                                  m_CaptureMixerChannel;
+    QString                       m_PlaybackMixerID;
+    QString                       m_CaptureMixerID;
+    QString                       m_PlaybackMixerChannel;
+    QString                       m_CaptureMixerChannel;
 };
 
 #endif

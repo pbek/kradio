@@ -37,7 +37,7 @@ TimeShifter::TimeShifter (const QString &name)
       m_TempFileName("/tmp/kradio-timeshifter-tempfile"),
       m_TempFileMaxSize(256*1024*1024),
       m_PlaybackMixerID(QString::null),
-      m_PlaybackMixerChannel(0),
+      m_PlaybackMixerChannel("pcm"),
       m_PlaybackMetaData(0,0,0),
       m_PlaybackDataLeftInBuffer(0),
       m_RingBuffer(m_TempFileName, m_TempFileMaxSize)
@@ -87,11 +87,8 @@ void   TimeShifter::saveState    (KConfig *config) const
     config->writeEntry("temp-file-name",         m_TempFileName);
     config->writeEntry("max-file-size",          m_TempFileMaxSize / 1024 / 1024);
 
-    int ch = m_PlaybackMixerChannel;
-    if(ch < 0 || ch >= SOUND_MIXER_NRDEVICES)
-        ch = SOUND_MIXER_PCM;
     config->writeEntry("PlaybackMixerID",      m_PlaybackMixerID);
-    config->writeEntry("PlaybackMixerChannel", mixerChannelNames[ch]);
+    config->writeEntry("PlaybackMixerChannel", m_PlaybackMixerChannel);
 }
 
 
@@ -103,17 +100,9 @@ void   TimeShifter::restoreState (KConfig *config)
     Q_UINT64 fsize = 1024 * 1024 * config->readNumEntry("max-file-size",  256);
 
     QString mixerID = config->readEntry ("PlaybackMixerID", QString::null);
-    QString s       = config->readEntry ("PlaybackMixerChannel", "line");
-    int c = 0;
-    for (c = 0; c < SOUND_MIXER_NRDEVICES; ++c) {
-        if (s == mixerChannelLabels[c] ||
-            s == mixerChannelNames[c])
-            break;
-    }
-    if (c == SOUND_MIXER_NRDEVICES)
-        c = SOUND_MIXER_LINE;
+    QString channel = config->readEntry ("PlaybackMixerChannel", "Line");
 
-    setPlaybackMixer(mixerID, c);
+    setPlaybackMixer(mixerID, channel);
     setTempFile(fname, fsize);
 
     emit sigUpdateConfig();
@@ -363,7 +352,7 @@ ISoundStreamClient *TimeShifter::searchPlaybackMixer()
 }
 
 
-bool  TimeShifter::setPlaybackMixer(const QString &soundStreamClientID, int ch)
+bool  TimeShifter::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch)
 {
     m_PlaybackMixerID = soundStreamClientID;
     m_PlaybackMixerChannel = ch;

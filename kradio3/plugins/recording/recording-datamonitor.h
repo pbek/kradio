@@ -33,19 +33,6 @@ public:
     RecordingDataMonitor(QWidget *parent, const char *name);
     ~RecordingDataMonitor();
 
-//    bool connectI(Interface *i);
-//    bool disconnectI(Interface *i);
-
-// IRecordingClient
-
-/*RECEIVERS:
-    bool noticeRecordingStarted();
-    bool noticeMonitoringStarted();
-    bool noticeRecordingStopped();
-    bool noticeMonitoringStopped();
-    bool noticeRecordingConfigChanged(const RecordingConfig &);
-    bool noticeRecordingContextChanged(const RecordingContext &);
-*/
     bool noticeSoundStreamData(SoundStreamID id,
                                const SoundFormat &sf, const char *data, unsigned size,
                                const SoundMetaData &md);

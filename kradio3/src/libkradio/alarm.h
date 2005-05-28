@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef ALARM_H
-#define ALARM_H
+#ifndef KRADIO_ALARM_H
+#define KRADIO_ALARM_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>

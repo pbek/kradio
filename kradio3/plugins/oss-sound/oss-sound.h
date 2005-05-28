@@ -89,8 +89,8 @@ public:
 
 RECEIVERS:
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-    bool preparePlayback(SoundStreamID id, int channel, bool active_mode);
-    bool prepareCapture(SoundStreamID id, int channel);
+    bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode);
+    bool prepareCapture(SoundStreamID id,  const QString &channel);
 
 ANSWERS:
     bool supportsPlayback() const;
@@ -101,11 +101,11 @@ ANSWERS:
     // ISoundStreamClient: mixer access
 
 protected:
-    void getMixerChannels(int query_playback_or_rec_mask, QMap<int, QString> &retval) const;
+    void getMixerChannels(int query_playback_or_rec_mask, QStringList &retval, QMap<QString, int> &revmap) const;
 
 ANSWERS:
-    const QMap<int, QString> &getPlaybackChannels() const;
-    const QMap<int, QString> &getCaptureChannels() const;
+    const QStringList &getPlaybackChannels() const;
+    const QStringList &getCaptureChannels() const;
 
 RECEIVERS:
     bool setPlaybackVolume(SoundStreamID id, float volume);
@@ -185,8 +185,10 @@ protected:
     DUPLEX_MODE     m_DuplexMode;
     SoundFormat     m_DSPFormat;
 
-    QMap<int, QString>   m_PlaybackChannels,
+    QStringList          m_PlaybackChannels,
                          m_CaptureChannels;
+    QMap<QString, int>   m_revPlaybackChannels,
+                         m_revCaptureChannels;
 
     QMap<SoundStreamID, SoundStreamConfig>
                     m_PlaybackStreams,

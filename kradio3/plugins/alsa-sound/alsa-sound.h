@@ -37,12 +37,12 @@ struct SoundStreamConfig
 {
     SoundStreamConfig()
         : m_ActiveMode(false),
-          m_Channel(-1),
+          m_Channel(QString::null),
           m_Volume(-1),
           m_Muted(false)
        {}
 
-    SoundStreamConfig(int _channel, bool active_mode = true)
+    SoundStreamConfig(const QString &_channel, bool active_mode = true)
         : m_ActiveMode(active_mode),
           m_Channel(_channel),
           m_Volume(-1),
@@ -57,7 +57,7 @@ struct SoundStreamConfig
        {}
 
     bool           m_ActiveMode;
-    int            m_Channel;
+    QString        m_Channel;
     float          m_Volume;
     bool           m_Muted;
 };
@@ -111,8 +111,8 @@ public:
 
 RECEIVERS:
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-    bool preparePlayback(SoundStreamID id, int channel, bool active_mode);
-    bool prepareCapture(SoundStreamID id, int channel);
+    bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode);
+    bool prepareCapture(SoundStreamID id, const QString &channel);
 
 ANSWERS:
     bool supportsPlayback() const;
@@ -123,12 +123,12 @@ ANSWERS:
     // ISoundStreamClient: mixer access
 
 protected:
-    void getPlaybackMixerChannels(QMap<int, QString> &retval, QMap<QString, int> &retval_rev, QMap<int, AlsaMixerElement> &int2id) const;
-    void getCaptureMixerChannels (QMap<int, QString> &retval, QMap<QString, int> &retval_rev, QMap<int, AlsaMixerElement> &int2id) const;
+    void getPlaybackMixerChannels(QStringList &retval, QMap<QString, AlsaMixerElement> &int2id) const;
+    void getCaptureMixerChannels (QStringList &retval, QMap<QString, AlsaMixerElement> &int2id) const;
 
 ANSWERS:
-    const QMap<int, QString> &getPlaybackChannels() const;
-    const QMap<int, QString> &getCaptureChannels() const;
+    const QStringList &getPlaybackChannels() const;
+    const QStringList &getCaptureChannels() const;
 
 RECEIVERS:
     bool setPlaybackVolume(SoundStreamID id, float volume);
@@ -207,12 +207,12 @@ protected:
     bool   closeMixerDevice(snd_mixer_t *&mixer_handle, int card, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer) const;
 
     void   checkMixerVolume(SoundStreamID id);
-    float  readPlaybackMixerVolume(int channel, bool &muted) const;
-    float  readCaptureMixerVolume(int channel) const;
-    bool   writePlaybackMixerVolume(int channel, float &vol, bool muted);
-    bool   writeCaptureMixerVolume(int channel, float &vol);
+    float  readPlaybackMixerVolume(const QString &channel, bool &muted) const;
+    float  readCaptureMixerVolume(const QString &channel) const;
+    bool   writePlaybackMixerVolume(const QString &channel, float &vol, bool muted);
+    bool   writeCaptureMixerVolume(const QString &channel, float &vol);
 
-    void   selectCaptureChannel (int channel);
+    void   selectCaptureChannel (const QString &channel);
 
     /* ALSA HANDLES */
     snd_pcm_t      *m_hPlayback;
@@ -230,13 +230,11 @@ protected:
     unsigned        m_PlaybackLatency;
     unsigned        m_CaptureLatency;
 
-    QMap<int, QString>   m_PlaybackChannels,
-                         m_CaptureChannels;
-    QMap<QString, int>   m_revPlaybackChannels,
-                         m_revCaptureChannels;
+    QStringList     m_PlaybackChannels,
+                    m_CaptureChannels;
 
-    QMap<int, AlsaMixerElement> m_PlaybackChannelsIdx2ID,
-                                m_CaptureChannelsIdx2ID;
+    QMap<QString, AlsaMixerElement> m_PlaybackChannels2ID,
+                                    m_CaptureChannels2ID;
 
     QMap<SoundStreamID, SoundStreamConfig>
                     m_PlaybackStreams,
