@@ -87,7 +87,8 @@ RadioView::RadioView(const QString &name)
         maxUsability[i] = 0;
 
     QBoxLayout *l01 = new QBoxLayout(this, QBoxLayout::LeftToRight, /*spacing=*/3);
-    l01->setMargin(2);
+    l01->setMargin(1);
+    l01->setSpacing(2);
     widgetStacks[clsRadioSound] = new QWidgetStack (this);
     l01->addWidget(widgetStacks[clsRadioSound]);
 
@@ -125,7 +126,7 @@ RadioView::RadioView(const QString &name)
     m_pauseMenu->insertItem(SmallIcon("player_pause"),
                             i18n("Pause KRadio"),
                             this, SLOT(slotPause()));
-    btnPower->setPopupDelay(250);
+    btnPower->setPopupDelay(125);
 
     m_RecordingMenu = new KPopupMenu(btnRecording);
     m_RecordingMenu->insertItem(SmallIcon("kradio_record"),
