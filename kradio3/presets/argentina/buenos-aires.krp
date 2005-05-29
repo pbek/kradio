@@ -1,68 +1,159 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
-	<stationlist>
-		<format>kradio-1.0</format>
-		<info>
-			<maintainer>Nicolas Padula &lt;nahog@daleclick.com&gt;</maintainer>
-			<changed>2003-12-30T00:00:00</changed>
-			<country>Argentina</country>
-			<city>Buenos Aires</city>
-			<media></media>
-			<comments></comments>
-		</info>
-		<FrequencyRadioStation>
-			
-<stationID>107264264035D11CB3A217C0B21A4971815FBB11576A863E1BD2C2E4417E322780F32EDD47</stationID>
-			<name>Rock&amp;Pop</name>
-			<shortname>Rock&amp;Pop</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<frequency>95.9</frequency>
-		</FrequencyRadioStation>
-		<FrequencyRadioStation>
-			
-<stationID>1072642642C59405E620F0658E020C62AFE6FFAD24BE785EBE1DA6B9975615B3C8A0D6C31F</stationID>
-			<name>La Mega</name>
-			<shortname>La Mega</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<frequency>98.3</frequency>
-		</FrequencyRadioStation>
-		<FrequencyRadioStation>
-			
-<stationID>1072642643C18A4BEAEA8E050F2402DBCC892CE7780E63E33FF42F16F85D8E6F845262B8BE</stationID>
-			<name>La 100</name>
-			<shortname>La 100</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<frequency>99.8998</frequency>
-		</FrequencyRadioStation>
-		<FrequencyRadioStation>
-			
-<stationID>1072642644BE71110EE3AFCC6A1D1847BA64254632F21AD3DF94B3461E122B3C1B4795C0CE</stationID>
-			<name>Gen</name>
-			<shortname>Gen</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<frequency>101.5</frequency>
-		</FrequencyRadioStation>
-		<FrequencyRadioStation>
-			
+ <stationlist>
+  <format>kradio-1.0</format>
+  <info>
+   <maintainer>Nicolas Padula &lt;nicolaspadula@gmail.com&gt;</maintainer>
+   <changed>2005-05-29T15:00:59</changed>
+   <country>Argentina</country>
+   <city>Buenos Aires</city>
+   <media></media>
+   <comments></comments>
+  </info>
+  <FrequencyRadioStation>
+   
+<stationID>111739182322DBBEA782352786F1B4CB28FB65883ABF5C8DB9F395EBA9012FD056C64D9E72</stationID>
+   <name>La Isla</name>
+   <shortname>Isla</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>89.9</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1117391862ABDAE08413E8B30835F4598C4DF85C07CBE793796C33DD6B25D76033909CD5AE</stationID>
+   <name>La 2X4 Tango</name>
+   <shortname>2X4</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>92.7</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1117392020A78BC30856F1FFD832B9999B2C6E785E476B49927C0347BBD680AFE7ED59B6FB</stationID>
+   <name>Disney</name>
+   <shortname>Disney</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>94.3</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
 <stationID>10726426458AFBA05065095E1A28DADCB0FC67D9DFE8717ED43D6148847815FF91D7F0FE23</stationID>
-			<name>Aspen</name>
-			<shortname>Aspen</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<frequency>102.3</frequency>
-		</FrequencyRadioStation>
-		<FrequencyRadioStation>
-			
+   <name>Metro</name>
+   <shortname>Metro</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>95.1</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>107264264035D11CB3A217C0B21A4971815FBB11576A863E1BD2C2E4417E322780F32EDD47</stationID>
+   <name>Rock&amp;Pop</name>
+   <shortname>R&amp;P</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>95.9</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1072642642C59405E620F0658E020C62AFE6FFAD24BE785EBE1DA6B9975615B3C8A0D6C31F</stationID>
+   <name>La Mega</name>
+   <shortname>Mega</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>98.3</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1072642643C18A4BEAEA8E050F2402DBCC892CE7780E63E33FF42F16F85D8E6F845262B8BE</stationID>
+   <name>La 100</name>
+   <shortname>100</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>99.8998</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>11173920578678EBEFC5BBC9BA65ECD982959221177136DD7CA54B81A896EAFC3FF32EE1E1</stationID>
+   <name>Blue</name>
+   <shortname>Blue</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>100.7</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1117392147093955F2E6734FE8BB31535D7408EB8F8370B4CC0FE603ABEFF476AB526F662D</stationID>
+   <name>La Ciento Uno</name>
+   <shortname>101</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>101.1</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1072642644BE71110EE3AFCC6A1D1847BA64254632F21AD3DF94B3461E122B3C1B4795C0CE</stationID>
+   <name>Pop</name>
+   <shortname>Pop</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>101.5</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>11173921845CA9FE43920A479406825B3F885FDDD1F9464E6ECE1A4CC85C17BF1ACA5499BE</stationID>
+   <name>KSK</name>
+   <shortname>KSK</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>101.9</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>111739222183D7A0324A3DFA726E6333741BC90F22B52C3C772B7DFCE0B29B88A4DFB83D80</stationID>
+   <name>Spica</name>
+   <shortname>Spica</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>103.1</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
 <stationID>1072642647B72C0C7AB2F662475171E5EC69A27E4FFA05A98DF7B4FAA4EECCB9C1E561E0F2</stationID>
-			<name>FMHIT</name>
-			<shortname>FMHIT</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<frequency>105.5</frequency>
-		</FrequencyRadioStation>
-	</stationlist>
+   <name>FMHIT</name>
+   <shortname>Hit</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>105.5</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>111739057013F0871FDAC869CA323139EFC262901E904F7F7071B031F26810F1DC8790B73C</stationID>
+   <name>X4</name>
+   <shortname>X4</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>106.7</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>111739226098E83E57AC600AF00DE834A869258A1835D86B53F337DA926047B66E623C753D</stationID>
+   <name>Milenium</name>
+   <shortname>Milenium</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>107.3</frequency>
+  </FrequencyRadioStation>
+  <FrequencyRadioStation>
+   
+<stationID>1117390468D0377FD229413FD0F4147AB82C376822C86F78A1B39B1C4B45ABB914E9333FC6</stationID>
+   <name>Kabul</name>
+   <shortname>Kabul</shortname>
+   <icon></icon>
+   <volumepreset>-1</volumepreset>
+   <frequency>107.9</frequency>
+  </FrequencyRadioStation>
+ </stationlist>
 </kradiorc>
+
+

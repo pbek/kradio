@@ -37,7 +37,7 @@ TimeShifter::TimeShifter (const QString &name)
       m_TempFileName("/tmp/kradio-timeshifter-tempfile"),
       m_TempFileMaxSize(256*1024*1024),
       m_PlaybackMixerID(QString::null),
-      m_PlaybackMixerChannel("pcm"),
+      m_PlaybackMixerChannel("PCM"),
       m_PlaybackMetaData(0,0,0),
       m_PlaybackDataLeftInBuffer(0),
       m_RingBuffer(m_TempFileName, m_TempFileMaxSize)
@@ -100,7 +100,7 @@ void   TimeShifter::restoreState (KConfig *config)
     Q_UINT64 fsize = 1024 * 1024 * config->readNumEntry("max-file-size",  256);
 
     QString mixerID = config->readEntry ("PlaybackMixerID", QString::null);
-    QString channel = config->readEntry ("PlaybackMixerChannel", "Line");
+    QString channel = config->readEntry ("PlaybackMixerChannel", "PCM");
 
     setPlaybackMixer(mixerID, channel);
     setTempFile(fname, fsize);

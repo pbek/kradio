@@ -778,6 +778,7 @@ bool AlsaSoundDevice::openPlaybackMixerDevice(bool reopen)
 
 bool AlsaSoundDevice::openCaptureMixerDevice(bool reopen)
 {
+    logDebug("AlsaSoundDevice::openCaptureMixerDevice: card == " + QString::number(m_CaptureCard));
     return openMixerDevice(m_hCaptureMixer, m_CaptureCard, reopen, &m_CapturePollingTimer, m_CaptureLatency);
 }
 
@@ -912,6 +913,7 @@ void AlsaSoundDevice::getCaptureMixerChannels(
     bool         use_tmp_handle = false;
 
     if (!mixer_handle) {
+        logDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + QString::number(m_CaptureCard));
         openMixerDevice(mixer_handle, m_CaptureCard, false, NULL, 0);
         use_tmp_handle = true;
     }
@@ -1270,8 +1272,10 @@ void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
 
 void AlsaSoundDevice::setCaptureDevice(int card, int dev)
 {
+    logDebug("AlsaSoundDevice::setCaptureDevice-1: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
     if (m_CaptureCard == card && m_CaptureDevice == dev)
         return;
+    logDebug("AlsaSoundDevice::setCaptureDevice-2: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
 
     m_CaptureCard   = card;
     m_CaptureDevice = dev;
