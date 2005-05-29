@@ -204,7 +204,7 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
 }
 
 
-unsigned TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffer, size_t buffer_size)
+size_t TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffer, size_t buffer_size)
 {
     Q_UINT64 pos     = md.position();
     time_t   abs     = md.absoluteTimestamp();
