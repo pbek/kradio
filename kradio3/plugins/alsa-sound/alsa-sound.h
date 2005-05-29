@@ -126,7 +126,8 @@ ANSWERS:
 
 protected:
     void getPlaybackMixerChannels(QStringList &retval, QMap<QString, AlsaMixerElement> &int2id) const;
-    void getCaptureMixerChannels (QStringList &retval, QMap<QString, AlsaMixerElement> &int2id) const;
+    void getCaptureMixerChannels(QStringList &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
+                                 QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id) const;
 
 ANSWERS:
     const QStringList &getPlaybackChannels() const;
@@ -213,6 +214,7 @@ protected:
     float  readCaptureMixerVolume(const QString &channel) const;
     bool   writePlaybackMixerVolume(const QString &channel, float &vol, bool muted);
     bool   writeCaptureMixerVolume(const QString &channel, float &vol);
+    bool   writeCaptureMixerSwitch(const QString &channel, bool capture);
 
     void   selectCaptureChannel (const QString &channel);
 
@@ -233,10 +235,12 @@ protected:
     unsigned        m_CaptureLatency;
 
     QStringList     m_PlaybackChannels,
-                    m_CaptureChannels;
+                    m_CaptureChannels,
+                    m_CaptureChannelsSwitch;
 
     QMap<QString, AlsaMixerElement> m_PlaybackChannels2ID,
-                                    m_CaptureChannels2ID;
+                                    m_CaptureChannels2ID,
+                                    m_CaptureChannelsSwitch2ID;
 
     QMap<SoundStreamID, SoundStreamConfig>
                     m_PlaybackStreams,
