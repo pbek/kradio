@@ -1,3 +1,12 @@
+2005-05-28  - profiling support - we need to improve startup time
+              needs to be commented out for release
+            - big mixer channel handling fix
+            - inconsistencies in restoreState process fixed
+            - added releasePlayback/Capture as complementary function to
+              preparePlayback/Capture
+            - alsa event handler fix
+            - gui margin/spacing reduced
+
 2005-05-26
 	mcamen  - added apidox Makefile target
 	        - RadioConfiguration::slotSelectPixmap():
