@@ -908,7 +908,7 @@ void AlsaSoundDevice::getCaptureMixerChannels(QStringList &retval, QMap<QString,
         AlsaMixerElement sid;
         if (!snd_mixer_selem_is_active(elem))
             continue;
-        if (snd_mixer_selem_has_capture_switch(elem)) {
+        if (snd_mixer_selem_has_capture_switch(elem) || snd_mixer_selem_has_capture_volume(elem)) {
             snd_mixer_selem_get_id(elem, sid);
             const char *name = snd_mixer_selem_id_get_name(sid);
             ch2id[name] = sid;
@@ -1135,7 +1135,7 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
             if (min != max) {
                 long val = (int)rint(min + (max - min) * vol + 0.5);
                 vol = (float)(val - min) / (float)(max - min);
-                if (snd_mixer_selem_set_capture_volume_all(elem, val) == 0 &&
+                if (snd_mixer_selem_set_capture_volume_all(elem, val) == 0 ||
                     snd_mixer_selem_set_capture_switch_all(elem, 1)   == 0
                 ) {
                     return true;
@@ -1178,6 +1178,11 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
             float tmp_vol = 1.0;
             writeCaptureMixerVolume(ADC, tmp_vol);
         }
+    }
+    const QString WAVE = "Wave";
+    if (m_CaptureChannels2ID.contains(WAVE)) {
+        float x = 0;
+        writeCaptureMixerVolume(WAVE, x);
     }
     const QString Capture = "Capture";
     if (m_CaptureChannels2ID.contains(Capture) && m_hCaptureMixer) {

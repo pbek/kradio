@@ -197,8 +197,6 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
         m_StreamPaused = !m_StreamPaused;
         if (!m_StreamPaused) {
             sendStartPlayback(m_OrgStreamID);
-        } else {
-            sendStopPlayback(m_OrgStreamID);
         }
         return true;
     }

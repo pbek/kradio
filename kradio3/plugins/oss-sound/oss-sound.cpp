@@ -43,8 +43,8 @@ struct _lrvol { unsigned char l, r; short dummy; };
 OSSSoundDevice::OSSSoundDevice(const QString &name)
     : QObject(NULL, NULL),
       PluginBase(name, i18n("KRadio OSS Sound Plugin")),
-      m_DSPDeviceName("/dev/dsp"),
-      m_MixerDeviceName("/dev/mixer"),
+      m_DSPDeviceName(""),
+      m_MixerDeviceName(""),
       m_DSP_fd(-1),
       m_Mixer_fd(-1),
       m_DuplexMode(DUPLEX_UNKNOWN),
