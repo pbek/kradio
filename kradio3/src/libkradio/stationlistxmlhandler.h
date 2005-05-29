@@ -73,6 +73,7 @@ extern const char *StationListInfoCity;
 extern const char *StationListInfoMedia;
 extern const char *StationListInfoComments;
 extern const char *StationListInfoChanged;
+extern const char *StationListInfoCreator;
 
 extern const char *StationQuickSelectElement;
 extern const char *StationDockingMenuElement;

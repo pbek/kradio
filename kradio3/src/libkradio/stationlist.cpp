@@ -20,6 +20,7 @@
 #include "utils.h"
 #include "stationlist.h"
 #include "stationlistxmlhandler.h"
+#include "../kradioversion.h"
 
 #include <qstring.h>
 #include <qfile.h>
@@ -397,6 +398,7 @@ QString StationList::writeXML (const IErrorLogClient &/*logger*/) const
             t   + xmlOpenTag(StationListElement) +
             tt  + xmlTag(StationListFormat, STATION_LIST_FORMAT) +
             tt  + xmlOpenTag(StationListInfo) +
+            ttt + xmlTag(StationListInfoCreator,    "kradio-" KRADIO_VERSION) +
             ttt + xmlTag(StationListInfoMaintainer, m_metaData.maintainer) +
             ttt + xmlTag(StationListInfoChanged,    m_metaData.lastChange.toString(Qt::ISODate)) +
             ttt + xmlTag(StationListInfoCountry,    m_metaData.country) +

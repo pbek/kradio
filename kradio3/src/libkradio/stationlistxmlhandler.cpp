@@ -20,7 +20,7 @@
 
 const char *KRadioConfigElement         = "kradiorc";
 
-const char *StationListElement            = "stationlist";
+const char *StationListElement          = "stationlist";
 const char *compatStationElement        = "station";
 
 const char *StationListInfo             = "info";
@@ -30,6 +30,7 @@ const char *StationListInfoCity         = "city";
 const char *StationListInfoMedia        = "media";
 const char *StationListInfoComments     = "comments";
 const char *StationListInfoChanged      = "changed";
+const char *StationListInfoCreator      = "creator";
 
 const char *StationListFormat           = "format";
 
@@ -88,7 +89,8 @@ bool StationListXmlHandler::startElement (const QString &/*ns*/, const QString &
                qname == StationListInfoCity ||
                qname == StationListInfoMedia ||
                qname == StationListInfoComments ||
-               qname == StationListInfoChanged
+               qname == StationListInfoChanged ||
+               qname == StationListInfoCreator
                )
     {
         if (!m_status.size() || m_status.back() != StationListInfo) { START_ELEMENT_ERROR }
@@ -196,6 +198,10 @@ bool StationListXmlHandler::characters (const QString &ch)
     } else if (stat == StationListInfoChanged) {
 
         m_metaData.lastChange = QDateTime::fromString(str, Qt::ISODate);
+
+    } else if (stat == StationListInfoCreator) {
+
+        // do nothing
 
     // stations
 

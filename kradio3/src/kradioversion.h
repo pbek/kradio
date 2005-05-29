@@ -18,6 +18,6 @@
 #ifndef KRADIO_VERSION_H
 #define KRADIO_VERSION_H
 
-#define KRADIO_VERSION "1.0beta1"
+#define KRADIO_VERSION "1.0beta2"
 
 #endif
