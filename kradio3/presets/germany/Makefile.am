@@ -92,7 +92,6 @@ install-data-local:
 	$(INSTALL_DATA) "$(srcdir)/wernigerode-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/wernigerode-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/worfelden-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/worfelden-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/stuttgart-cable-2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/stuttgart-cable-2.krp"
-	$(INSTALL_DATA) "$(srcdir)/tuebingen-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/tuebingen-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/muenchen-cable-2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-cable-2.krp"
 	$(INSTALL_DATA) "$(srcdir)/hamburg-cable-2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable-2.krp"
 	$(INSTALL_DATA) "$(srcdir)/hamburg-cable-3.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable-3.krp"
@@ -109,6 +108,7 @@ install-data-local:
 	$(INSTALL_DATA) "$(srcdir)/cologne-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/cologne-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/cologne.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/cologne.krp"
 	$(INSTALL_DATA) "$(srcdir)/aachen-cable-2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/aachen-cable-2.krp"
+	$(INSTALL_DATA) "$(srcdir)/tuebingen-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/tuebingen-cable.krp"
 
 
 uninstall-local:
@@ -201,7 +201,6 @@ uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/wernigerode-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/worfelden-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/stuttgart-cable-2.krp"
-	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/tuebingen-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/muenchen-cable-2.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable-2.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/hamburg-cable-3.krp"
@@ -218,3 +217,4 @@ uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/cologne-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/cologne.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/aachen-cable-2.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/germany/tuebingen-cable.krp"
