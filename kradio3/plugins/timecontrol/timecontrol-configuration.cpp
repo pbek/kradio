@@ -22,7 +22,6 @@ using std::sort;
 #include <qdatetime.h>
 #include <qlistbox.h>
 #include <qcombobox.h>
-#include <qdatetime.h>
 #include <qdatetimeedit.h>
 #include <qlabel.h>
 #include <qspinbox.h>
