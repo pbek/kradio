@@ -204,15 +204,15 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
 }
 
 
-unsigned TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffer, unsigned buffer_size)
+unsigned TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffer, size_t buffer_size)
 {
     Q_UINT64 pos     = md.position();
     time_t   abs     = md.absoluteTimestamp();
     time_t   rel     = md.relativeTimestamp();
-    unsigned url_len = md.url().url().length() + 1;
-    unsigned req_size = sizeof(req_size) + sizeof(pos) + sizeof(abs) + sizeof(rel) + sizeof(url_len) + url_len;
+    size_t   url_len = md.url().url().length() + 1;
+    size_t   req_size = sizeof(req_size) + sizeof(pos) + sizeof(abs) + sizeof(rel) + sizeof(url_len) + url_len;
     if (req_size <= buffer_size) {
-        *(unsigned*)buffer = req_size;
+        *(size_t*)buffer = req_size;
         buffer += sizeof(req_size);
         *(Q_UINT64*)buffer = pos;
         buffer += sizeof(pos);
@@ -220,29 +220,29 @@ unsigned TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffe
         buffer += sizeof(abs);
         *(time_t*)buffer = rel;
         buffer += sizeof(rel);
-        *(unsigned*)buffer = url_len;
+        *(size_t*)buffer = url_len;
         buffer += sizeof(url_len);
         memcpy(buffer, md.url().url().ascii(), url_len);
         buffer += url_len;
         return req_size;
     } else if (buffer_size >= sizeof(req_size)) {
-        *(unsigned*)buffer = sizeof(req_size);
+        *(size_t*)buffer = sizeof(req_size);
         return sizeof(req_size);
     } else {
         return 0;
     }
 }
 
-unsigned TimeShifter::readMetaDataFromBuffer(SoundMetaData &md, const char *buffer, unsigned buffer_size)
+size_t TimeShifter::readMetaDataFromBuffer(SoundMetaData &md, const char *buffer, size_t buffer_size)
 {
-    unsigned req_size = 0;
+    size_t   req_size = 0;
     Q_UINT64 pos = 0;
     time_t   abs = 0;
     time_t   rel = 0;
-    unsigned url_len = 0;
+    size_t   url_len = 0;
     KURL     url;
     if (buffer_size >= sizeof(req_size)) {
-        req_size = *(unsigned*)buffer;
+        req_size = *(size_t*)buffer;
         buffer += sizeof(req_size);
         if (req_size > sizeof(req_size)) {
             pos = *(Q_UINT64*)buffer;
@@ -251,7 +251,7 @@ unsigned TimeShifter::readMetaDataFromBuffer(SoundMetaData &md, const char *buff
             buffer += sizeof(abs);
             rel = *(time_t*)buffer;
             buffer += sizeof(rel);
-            url_len = *(unsigned*)buffer;
+            url_len = *(size_t*)buffer;
             buffer += sizeof(url_len);
             url = buffer;
             buffer += url_len;
@@ -262,12 +262,12 @@ unsigned TimeShifter::readMetaDataFromBuffer(SoundMetaData &md, const char *buff
 }
 
 
-bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &/*sf*/, const char *data, unsigned size, const SoundMetaData &md)
+bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &/*sf*/, const char *data, size_t size, const SoundMetaData &md)
 {
     if (id == m_NewStreamID) {
         char buffer_meta[1024];
-        unsigned meta_buffer_size = writeMetaDataToBuffer(md, buffer_meta, 1024);
-        unsigned packet_size = meta_buffer_size + sizeof(size) + size;
+        size_t meta_buffer_size = writeMetaDataToBuffer(md, buffer_meta, 1024);
+        size_t packet_size = meta_buffer_size + sizeof(size) + size;
         if (packet_size > m_RingBuffer.getMaxSize())
             return false;
         Q_INT64 diff = m_RingBuffer.getFreeSize() - packet_size;
@@ -289,24 +289,24 @@ void TimeShifter::skipPacketInRingBuffer()
     if (m_PlaybackDataLeftInBuffer > 0) {
         m_RingBuffer.removeData(m_PlaybackDataLeftInBuffer);
     } else {
-        int meta_size = 0;
+        size_t meta_size = 0;
         m_RingBuffer.takeData((char*)&meta_size, sizeof(meta_size));
         m_RingBuffer.removeData(meta_size - sizeof(meta_size));
-        int packet_size = 0;
+        size_t packet_size = 0;
         m_RingBuffer.takeData((char*)&packet_size, sizeof(packet_size));
         m_RingBuffer.removeData(packet_size - sizeof(packet_size));
     }
 }
 
 
-bool TimeShifter::noticeReadyForPlaybackData(SoundStreamID id, unsigned free_size)
+bool TimeShifter::noticeReadyForPlaybackData(SoundStreamID id, size_t free_size)
 {
     if (id == m_OrgStreamID && !m_StreamPaused) {
 
         while (!m_RingBuffer.error() && m_RingBuffer.getFillSize() > 0 && free_size > 0) {
             if (m_PlaybackDataLeftInBuffer == 0) {
                 char meta_buffer[1024];
-                unsigned &meta_size = *(unsigned*)meta_buffer;
+                size_t &meta_size = *(size_t*)meta_buffer;
                 meta_size = 0;
                 m_RingBuffer.takeData(meta_buffer, sizeof(meta_size));
                 if (meta_size && meta_size <= 1024) {
@@ -320,11 +320,11 @@ bool TimeShifter::noticeReadyForPlaybackData(SoundStreamID id, unsigned free_siz
                 m_RingBuffer.takeData((char*)&m_PlaybackDataLeftInBuffer, sizeof(m_PlaybackDataLeftInBuffer));
             }
 
-            const unsigned buffer_size = 65536;
+            const size_t buffer_size = 65536;
             char buffer[buffer_size];
 
             while (!m_RingBuffer.error() && m_PlaybackDataLeftInBuffer > 0 && free_size > 0) {
-                unsigned s = m_PlaybackDataLeftInBuffer < free_size ? m_PlaybackDataLeftInBuffer : free_size;
+                size_t s = m_PlaybackDataLeftInBuffer < free_size ? m_PlaybackDataLeftInBuffer : free_size;
                 if (s > buffer_size)
                     s = buffer_size;
                 s = m_RingBuffer.takeData(buffer, s);

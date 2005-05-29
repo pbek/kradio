@@ -75,7 +75,7 @@ bool FileRingBuffer::resize(const QString &filename, Q_UINT64 new_max_size)
         m_MaxSize = new_max_size;
     }
     else if (new_max_size >= m_FillSize) {
-        const unsigned buffer_size = 65536;
+        const size_t buffer_size = 65536;
         char           buffer[buffer_size];
 
         QString tmp_file_name = m_BaseFileName + "_" + QString::number(++m_FileIdx);
@@ -113,9 +113,9 @@ bool FileRingBuffer::resize(const QString &filename, Q_UINT64 new_max_size)
 }
 
 
-unsigned FileRingBuffer::addData (const char *src, unsigned size)
+size_t FileRingBuffer::addData (const char *src, size_t size)
 {
-    unsigned written = 0;
+    size_t written = 0;
     if (m_Start + m_FillSize <= m_RealSize) {
         Q_UINT64 rest = m_MaxSize - (m_Start + m_FillSize);
         if (rest > size)
@@ -134,7 +134,7 @@ unsigned FileRingBuffer::addData (const char *src, unsigned size)
         }
     }
     if (size > 0 && m_FillSize < m_RealSize) {
-        unsigned rest = size;
+        size_t rest = size;
         if (rest > m_RealSize - m_FillSize)
             rest = m_RealSize - m_FillSize;
 
@@ -151,11 +151,11 @@ unsigned FileRingBuffer::addData (const char *src, unsigned size)
 }
 
 
-unsigned FileRingBuffer::takeData(char *dst, unsigned size)
+size_t FileRingBuffer::takeData(char *dst, size_t size)
 {
-    unsigned read = 0;
+    size_t read = 0;
     while (!m_error && m_FillSize > 0 && size > 0) {
-        unsigned n = size;
+        size_t n = size;
         if (n > m_FillSize)
             n = m_FillSize;
         if (n > m_RealSize - m_Start)

@@ -54,8 +54,8 @@ public:
     void     checkFormatSettings();
 
 public:
-    unsigned int m_EncodeBufferSize;
-    unsigned int m_EncodeBufferCount;
+    size_t       m_EncodeBufferSize;
+    size_t       m_EncodeBufferCount;
 
     SoundFormat  m_SoundFormat;
     int          m_mp3Quality;

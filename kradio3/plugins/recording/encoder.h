@@ -44,15 +44,15 @@ class BufferSoundMetaData : public SoundMetaData
 public:
     BufferSoundMetaData()
         : SoundMetaData(0, 0, 0, KURL()), m_BufferPosition(0) {}
-    BufferSoundMetaData(const SoundMetaData &md, unsigned bufferpos)
+    BufferSoundMetaData(const SoundMetaData &md, size_t bufferpos)
         : SoundMetaData(md), m_BufferPosition(bufferpos) {}
-    BufferSoundMetaData(Q_INT64 pos, time_t rel, time_t abs, const KURL &url, unsigned bufferpos)
+    BufferSoundMetaData(Q_INT64 pos, time_t rel, time_t abs, const KURL &url, size_t bufferpos)
         : SoundMetaData(pos, rel, abs, url), m_BufferPosition(bufferpos) {}
 
-    unsigned bufferPosition() const { return m_BufferPosition; }
+    size_t bufferPosition() const { return m_BufferPosition; }
 
 protected:
-    unsigned m_BufferPosition;
+    size_t m_BufferPosition;
 };
 
 
@@ -64,8 +64,8 @@ public:
 
     void run();
 
-    char              *lockInputBuffer(unsigned int &bufferSize);    // bytes we whish to write, returns number of bytes available
-    void               unlockInputBuffer(unsigned int bufferSize, const SoundMetaData &md);   // bytes we actually wrote
+    char              *lockInputBuffer(size_t &bufferSize);    // bytes we whish to write, returns number of bytes available
+    void               unlockInputBuffer(size_t bufferSize, const SoundMetaData &md);   // bytes we actually wrote
 
     bool               error() const { return m_error; }
     const QString     &errorString() const { return m_errorString; }
@@ -81,9 +81,9 @@ public:
     const RecordingConfig &config() const { return m_config; }
 
 protected:
-    void               encode_pcm(const char *_buffer, unsigned buffer_size, char *&export_buffer, unsigned &export_buffer_size);
-    void               encode_mp3(const char *_buffer, unsigned buffer_size, char *&export_buffer, unsigned &export_buffer_size);
-    void               encode_ogg(const char *_buffer, unsigned buffer_size, char *&export_buffer, unsigned &export_buffer_size);
+    void               encode_pcm(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
+    void               encode_mp3(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
+    void               encode_ogg(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
 
     bool               openOutput_pcm(const QString &outputFile);
     bool               openOutput_mp3(const QString &outputFile);
@@ -105,7 +105,7 @@ protected:
     bool               m_done;
 
     char             **m_buffersInput;
-    unsigned int      *m_buffersInputFill,
+    size_t            *m_buffersInputFill,
                        m_currentInputBuffer;
     QPtrList<BufferSoundMetaData>
                      **m_buffersMetaData;

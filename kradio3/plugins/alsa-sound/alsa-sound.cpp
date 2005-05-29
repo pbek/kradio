@@ -449,7 +449,7 @@ bool AlsaSoundDevice::noticeSoundStreamRedirected(SoundStreamID oldID, SoundStre
 
 bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
                                            const SoundFormat &format,
-                                           const char *data, unsigned size,
+                                           const char *data, size_t size,
                                            const SoundMetaData &/*md*/
                                           )
 {
@@ -460,7 +460,7 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
         openPlaybackDevice(format);
     } else if (format != m_PlaybackFormat) {
         // flush playback buffer
-        unsigned buffersize = 0;
+        size_t buffersize = 0;
         char *buffer = m_PlaybackBuffer.getData(buffersize);
 
         snd_pcm_writei(m_hPlayback, buffer, buffersize / m_PlaybackFormat.sampleSize());
@@ -472,7 +472,7 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
         // error handling ?
     }
 
-    unsigned n = m_PlaybackBuffer.addData(data, size);
+    size_t n = m_PlaybackBuffer.addData(data, size);
     if (n < size) {
         m_PlaybackSkipCount += size - n;
     } else if (m_PlaybackSkipCount > 0) {
@@ -490,7 +490,7 @@ void AlsaSoundDevice::slotPollPlayback()
 
         if (m_PlaybackBuffer.getFillSize() > 0 && m_hPlayback) {
 
-            unsigned buffersize    = 0;
+            size_t   buffersize    = 0;
             int      frameSize     = m_CaptureFormat.frameSize();
             char     *buffer       = m_PlaybackBuffer.getData(buffersize);
             int      framesWritten = snd_pcm_writei(m_hPlayback, buffer, buffersize / frameSize);
@@ -525,14 +525,14 @@ void AlsaSoundDevice::slotPollCapture()
 {
     if (m_CaptureStreamID.isValid() && m_hCapture) {
 
-        unsigned bufferSize = 0;
-        char *buffer = m_CaptureBuffer.getFreeSpace(bufferSize);
+        size_t bufferSize = 0;
+        char  *buffer = m_CaptureBuffer.getFreeSpace(bufferSize);
 
         if (bufferSize) {
 
-            int frameSize  = m_CaptureFormat.frameSize();
-            int framesRead = snd_pcm_readi(m_hCapture, buffer, bufferSize / frameSize);
-            int bytesRead  = framesRead * frameSize;
+            size_t frameSize  = m_CaptureFormat.frameSize();
+            int    framesRead = snd_pcm_readi(m_hCapture, buffer, bufferSize / frameSize);
+            size_t bytesRead  = framesRead * frameSize;
 
             if (framesRead > 0) {
                 m_CaptureBuffer.removeFreeSpace(bytesRead);
@@ -548,7 +548,7 @@ void AlsaSoundDevice::slotPollCapture()
 
             QString dev = QString("alsa://plughw:%1,%2").arg(m_CaptureCard).arg(m_CaptureDevice);
             while (m_CaptureBuffer.getFillSize() > m_CaptureBuffer.getSize() / 3) {
-                unsigned size = 0;
+                size_t size = 0;
                 buffer = m_CaptureBuffer.getData(size);
                 time_t cur_time = time(NULL);
                 notifySoundStreamData(m_CaptureStreamID, m_CaptureFormat, buffer, size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, dev));
@@ -689,8 +689,8 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    int buffersize_frames = m_BufferSize / format.frameSize();
-    int periods           = 4;
+    size_t buffersize_frames = m_BufferSize / format.frameSize();
+    int    periods           = 4;
     //int period_size       = m_BufferSize / periods;
 
     /* fragments */
@@ -707,10 +707,10 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    unsigned exact_buffersize = exact_buffersize_frames * format.frameSize();
+    size_t exact_buffersize = exact_buffersize_frames * format.frameSize();
     if (!error && m_BufferSize != exact_buffersize) {
         logWarning(i18n("ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer size of %3 instead.").arg(pcm_name).arg(m_BufferSize).arg(exact_buffersize));
-        unsigned tmp = (((m_BufferSize - 1) / exact_buffersize) + 1) * exact_buffersize;
+        size_t  tmp = (((m_BufferSize - 1) / exact_buffersize) + 1) * exact_buffersize;
         setBufferSize(tmp);
         logInfo(i18n("ALSA Plugin: adjusted buffer size for %1 to %2 bytes").arg(pcm_name).arg(QString::number(tmp)));
     }

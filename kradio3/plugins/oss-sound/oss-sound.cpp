@@ -442,7 +442,7 @@ bool OSSSoundDevice::noticeSoundStreamRedirected(SoundStreamID oldID, SoundStrea
 
 bool OSSSoundDevice::noticeSoundStreamData(SoundStreamID id,
                                            const SoundFormat &format,
-                                           const char *data, unsigned size,
+                                           const char *data, size_t size,
                                            const SoundMetaData &/*md*/
                                           )
 {
@@ -456,7 +456,7 @@ bool OSSSoundDevice::noticeSoundStreamData(SoundStreamID id,
             return false;
 
         // flush playback buffer
-        unsigned buffersize = 0;
+        size_t buffersize = 0;
         char *buffer = m_PlaybackBuffer.getData(buffersize);
         write(m_DSP_fd, buffer, buffersize);
 
@@ -468,7 +468,7 @@ bool OSSSoundDevice::noticeSoundStreamData(SoundStreamID id,
         // error handling ?
     }
 
-    unsigned n = m_PlaybackBuffer.addData(data, size);
+    size_t n = m_PlaybackBuffer.addData(data, size);
     if (n < size) {
         m_PlaybackSkipCount += size - n;
     } else if (m_PlaybackSkipCount > 0) {
@@ -487,7 +487,7 @@ void OSSSoundDevice::slotPoll()
 
     if (m_CaptureStreamID.isValid() && m_DSP_fd >= 0) {
 
-        unsigned bufferSize = 0;
+        size_t bufferSize = 0;
         char *buffer = m_CaptureBuffer.getFreeSpace(bufferSize);
 
         int bytesRead = read(m_DSP_fd, buffer, bufferSize);
@@ -504,7 +504,7 @@ void OSSSoundDevice::slotPoll()
         }
 
         while (m_CaptureBuffer.getFillSize() > m_CaptureBuffer.getSize() / 3) {
-            unsigned size = 0;
+            size_t size = 0;
             buffer = m_CaptureBuffer.getData(size);
             time_t cur_time = time(NULL);
             notifySoundStreamData(m_CaptureStreamID, m_DSPFormat, buffer, size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, m_DSPDeviceName));
@@ -517,7 +517,7 @@ void OSSSoundDevice::slotPoll()
 
         if (m_PlaybackBuffer.getFillSize() > 0 && m_DSP_fd >= 0) {
 
-            unsigned buffersize = 0;
+            size_t buffersize = 0;
             char *buffer = m_PlaybackBuffer.getData(buffersize);
             int bytesWritten  = write(m_DSP_fd, buffer, buffersize);
 
@@ -656,7 +656,7 @@ bool OSSSoundDevice::openDSPDevice(const SoundFormat &format, bool reopen)
         logError(i18n("Cannot read buffer size for %1").arg(m_DSPDeviceName));
     } else {
         logInfo(i18n("%1 uses buffer blocks of %2 bytes").arg(m_DSPDeviceName).arg(QString::number(bufferBlockSize)));
-        unsigned tmp = (((m_BufferSize - 1) / bufferBlockSize) + 1) * bufferBlockSize;
+        size_t  tmp = (((m_BufferSize - 1) / bufferBlockSize) + 1) * bufferBlockSize;
         setBufferSize(tmp);
         logInfo(i18n("adjusted own buffer size to %1 bytes").arg(QString::number(tmp)));
     }

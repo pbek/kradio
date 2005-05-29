@@ -18,7 +18,7 @@
 #include "ringbuffer.h"
 #include <string.h>
 
-RingBuffer::RingBuffer(unsigned size)
+RingBuffer::RingBuffer(size_t size)
 {
     m_Buffer   = new char [size];
     m_Size     = size;
@@ -35,11 +35,11 @@ RingBuffer::~RingBuffer()
 }
 
 
-bool RingBuffer::resize(unsigned new_size)
+bool RingBuffer::resize(size_t new_size)
 {
     if (new_size >= m_FillSize && new_size > 0) {
         char      *newBuffer = new char[new_size];
-        unsigned   newFill = 0;
+        size_t   newFill = 0;
         while (m_FillSize > 0)
             newFill += takeData(newBuffer + newFill, m_FillSize);
 
@@ -55,11 +55,11 @@ bool RingBuffer::resize(unsigned new_size)
 }
 
 
-unsigned RingBuffer::addData (const char *src, unsigned size)
+size_t RingBuffer::addData (const char *src, size_t size)
 {
-    unsigned written = 0;
+    size_t written = 0;
     if (m_Start + m_FillSize < m_Size) {
-        unsigned rest = m_Size - m_Start - m_FillSize;
+        size_t rest = m_Size - m_Start - m_FillSize;
         if (rest > size)
             rest = size;
         memmove (m_Buffer + m_Start + m_FillSize, src, rest);
@@ -69,7 +69,7 @@ unsigned RingBuffer::addData (const char *src, unsigned size)
         src        += rest;
     }
     if (size > 0 && m_FillSize < m_Size) {
-        unsigned rest = size;
+        size_t rest = size;
         if (rest > m_Size - m_FillSize)
             rest = m_Size - m_FillSize;
         memmove(m_Buffer + m_Start + m_FillSize - m_Size, src, rest);
@@ -80,11 +80,11 @@ unsigned RingBuffer::addData (const char *src, unsigned size)
 }
 
 
-unsigned RingBuffer::takeData(char *dst, unsigned size)
+size_t RingBuffer::takeData(char *dst, size_t size)
 {
-    unsigned read = 0;
+    size_t read = 0;
     while (m_FillSize > 0 && size > 0) {
-        unsigned n = size;
+        size_t n = size;
         if (n > m_FillSize)
             n = m_FillSize;
         if (n > m_Size - m_Start)
@@ -102,7 +102,7 @@ unsigned RingBuffer::takeData(char *dst, unsigned size)
 }
 
 
-char      *RingBuffer::getFreeSpace(unsigned &size)
+char      *RingBuffer::getFreeSpace(size_t &size)
 {
     if (m_FillSize == m_Size) {
         size = 0;
@@ -119,7 +119,7 @@ char      *RingBuffer::getFreeSpace(unsigned &size)
 }
 
 
-unsigned   RingBuffer::removeFreeSpace(unsigned size)
+size_t   RingBuffer::removeFreeSpace(size_t size)
 {
     if (m_FillSize == m_Size)
         return 0;
@@ -138,7 +138,7 @@ unsigned   RingBuffer::removeFreeSpace(unsigned size)
 }
 
 
-char      *RingBuffer::getData(unsigned &size)
+char      *RingBuffer::getData(size_t &size)
 {
     if (m_Start + m_FillSize >= m_Size) {
         size = m_Size - m_Start;
@@ -149,9 +149,9 @@ char      *RingBuffer::getData(unsigned &size)
 }
 
 
-unsigned   RingBuffer::removeData(unsigned size)
+size_t   RingBuffer::removeData(size_t size)
 {
-    unsigned n = 0;
+    size_t n = 0;
     if (size > m_FillSize)
         size = m_FillSize;
     if (m_Start + size >= m_Size) {

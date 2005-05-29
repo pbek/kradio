@@ -82,19 +82,6 @@ public :
     RecordingConfiguration (QWidget *parent);
     ~RecordingConfiguration ();
 
-//    bool connectI (Interface *i);
-//    bool disconnectI (Interface *i);
-
-// IRecordingClient
-
-/*    bool noticeRecordingStarted();
-    bool noticeMonitoringStarted();
-    bool noticeRecordingStopped();
-    bool noticeMonitoringStopped();
-    bool noticeRecordingConfigChanged(const RecordingConfig &);
-    bool noticeRecordingContextChanged(const RecordingContext &c);
-*/
-
 // IRecCfgClient
 
     bool noticeEncoderBufferChanged     (size_t BufferSize, size_t BufferCount);

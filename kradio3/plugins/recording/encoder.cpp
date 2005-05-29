@@ -87,7 +87,7 @@ RecordingEncoding::RecordingEncoding(QObject *parent,            SoundStreamID s
         m_config.m_EncodeBufferSize = 4096;
 
     m_buffersInput = new char* [m_config.m_EncodeBufferCount];
-    m_buffersInputFill = new unsigned int [m_config.m_EncodeBufferCount];
+    m_buffersInputFill = new size_t [m_config.m_EncodeBufferCount];
     m_buffersMetaData  = new QPtrList<BufferSoundMetaData> *[m_config.m_EncodeBufferCount];
     for (size_t i = 0; i < m_config.m_EncodeBufferCount; ++i) {
         m_buffersInput    [i] = new char [m_config.m_EncodeBufferSize];
@@ -479,7 +479,7 @@ bool RecordingEncoding::openOutput_mp3(const QString &output)
                 m_error = true;
             }
 
-            int nSamples = m_config.m_EncodeBufferSize / m_config.m_SoundFormat.frameSize();
+            size_t nSamples = m_config.m_EncodeBufferSize / m_config.m_SoundFormat.frameSize();
             m_MP3BufferSize = nSamples + nSamples / 4 + 7200;
             m_MP3Buffer  = new unsigned char[m_MP3BufferSize];
 
@@ -683,7 +683,7 @@ void RecordingEncoding::closeOutput_ogg()
     if (m_OggOutput) {
 
         char     *tmp_buf  = NULL;
-        unsigned  tmp_size = 0;
+        size_t    tmp_size = 0;
         // flush buffer
         encode_ogg(tmp_buf, tmp_size, tmp_buf, tmp_size);
 

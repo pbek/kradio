@@ -22,34 +22,36 @@
 #include <config.h>
 #endif
 
+#include <sys/types.h>
+
 class RingBuffer
 {
 public:
-    RingBuffer(unsigned size);
+    RingBuffer(size_t size);
     ~RingBuffer();
 
-    bool       resize(unsigned new_size);
+    bool       resize(size_t new_size);
 
-    unsigned   addData (const char *src, unsigned size);
-    unsigned   takeData(char *dst, unsigned size);
+    size_t   addData (const char *src, size_t size);
+    size_t   takeData(char *dst, size_t size);
 
-    char      *getFreeSpace(unsigned &size);
-    unsigned   removeFreeSpace(unsigned size);
+    char      *getFreeSpace(size_t &size);
+    size_t     removeFreeSpace(size_t size);
 
-    char      *getData(unsigned &size);
-    unsigned   removeData(unsigned size);
+    char      *getData(size_t &size);
+    size_t     removeData(size_t size);
 
-    unsigned   getSize()     const { return m_Size; }
-    unsigned   getFillSize() const { return m_FillSize; }
-    unsigned   getFreeSize() const { return m_Size - m_FillSize; }
+    size_t    getSize()     const { return m_Size; }
+    size_t    getFillSize() const { return m_FillSize; }
+    size_t    getFreeSize() const { return m_Size - m_FillSize; }
 
     void       clear();
 
 protected:
 
     char     *m_Buffer;
-    unsigned  m_Start;
-    unsigned  m_Size,
+    size_t    m_Start;
+    size_t    m_Size,
               m_FillSize;
 };
 

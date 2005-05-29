@@ -33,8 +33,8 @@ public:
 
     bool       resize(const QString &filename, Q_UINT64 new_max_size);
 
-    unsigned   addData (const char *src, unsigned size);
-    unsigned   takeData(char *dst, unsigned size);
+    size_t     addData (const char *src, size_t size);
+    size_t     takeData(char *dst, size_t size);
     Q_UINT64   removeData(Q_UINT64 size);
 
     const QString &getFileName () const { return m_FileName; }

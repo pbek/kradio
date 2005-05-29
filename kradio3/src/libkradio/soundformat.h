@@ -65,10 +65,10 @@ struct SoundFormat {
 
     int      convertSampleToInt(const char *sample, bool do_scale) const;
     void     convertIntToSample(int src, char *dst, bool is_scaled) const;
-    void     convertSamplesToInts(const char *src, int  *dst, unsigned n, bool do_scale) const;
-    void     convertIntsToSamples(const int  *src, char *dst, unsigned n, bool is_scaled) const;
-    void     convertSamplesToFloat (const char   *src, float **dst, unsigned n) const;
-    void     convertFloatsToSamples(const float **src,   char *dst, unsigned n) const;
+    void     convertSamplesToInts(const char *src, int  *dst, size_t n, bool do_scale) const;
+    void     convertIntsToSamples(const int  *src, char *dst, size_t n, bool is_scaled) const;
+    void     convertSamplesToFloat (const char   *src, float **dst, size_t n) const;
+    void     convertFloatsToSamples(const float **src,   char *dst, size_t n) const;
 };
 
 

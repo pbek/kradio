@@ -67,8 +67,8 @@ protected:
 
     ISoundStreamClient *searchPlaybackMixer();
 
-    unsigned writeMetaDataToBuffer(const SoundMetaData &md, char *buffer,  unsigned buffer_size);
-    unsigned readMetaDataFromBuffer(SoundMetaData &md, const char *buffer, unsigned buffer_size);
+    size_t writeMetaDataToBuffer(const SoundMetaData &md, char *buffer,  size_t buffer_size);
+    size_t readMetaDataFromBuffer(SoundMetaData &md, const char *buffer, size_t buffer_size);
     void skipPacketInRingBuffer();
 
     // SoundStreamClient
@@ -78,8 +78,8 @@ protected:
     bool startPlayback(SoundStreamID id);
     bool stopPlayback(SoundStreamID id);
     bool pausePlayback(SoundStreamID id);
-    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, unsigned size, const SoundMetaData &md);
-    bool noticeReadyForPlaybackData(SoundStreamID id, unsigned size);
+    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, const SoundMetaData &md);
+    bool noticeReadyForPlaybackData(SoundStreamID id, size_t size);
 
     // FIXME: volume übersetzen
     // FIXME: react on capture request
@@ -92,7 +92,7 @@ signals:
 protected:
 
     QString             m_TempFileName;
-    unsigned            m_TempFileMaxSize;
+    size_t              m_TempFileMaxSize;
     SoundFormat         m_SoundFormat;
     SoundFormat         m_realSoundFormat;
 
@@ -106,7 +106,7 @@ protected:
     SoundFormat         m_RealSoundFormat;
 
     SoundMetaData       m_PlaybackMetaData;
-    unsigned            m_PlaybackDataLeftInBuffer;
+    size_t              m_PlaybackDataLeftInBuffer;
 
     FileRingBuffer      m_RingBuffer;
 };

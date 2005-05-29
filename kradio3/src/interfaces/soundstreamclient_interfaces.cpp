@@ -139,10 +139,10 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifySoundStreamRedirected, (SoundSt
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifySoundStreamChanged, (SoundStreamID id),
                  noticeSoundStreamChanged(id)                                                    );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifySoundStreamData, (SoundStreamID id, const SoundFormat &format, const char *data, unsigned size, const SoundMetaData &md),
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifySoundStreamData, (SoundStreamID id, const SoundFormat &format, const char *data, size_t size, const SoundMetaData &md),
                  noticeSoundStreamData(id, format, data, size, md)                                             );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyReadyForPlaybackData, (SoundStreamID id, unsigned size),
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifyReadyForPlaybackData, (SoundStreamID id, size_t size),
                  noticeReadyForPlaybackData(id, size)                                                      );
 
 

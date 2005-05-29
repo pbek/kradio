@@ -303,7 +303,7 @@ bool Recording::stopRecording(SoundStreamID id)
 
 
 bool Recording::noticeSoundStreamData(SoundStreamID id,
-    const SoundFormat &/*sf*/, const char *data, unsigned size,
+    const SoundFormat &/*sf*/, const char *data, size_t size,
     const SoundMetaData &md
 )
 {
@@ -313,13 +313,13 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
 
         RecordingEncoding *thread = m_EncodingThreads[id];
 
-        //logDebug("noticeSoundStreamData thread = " + QString::number((unsigned)thread, 16));
+        //logDebug("noticeSoundStreamData thread = " + QString::number((long long)thread, 16));
 
-        unsigned int  remSize = size;
+        size_t        remSize = size;
         const char   *remData = data;
 
         while (remSize > 0) {
-            unsigned int bufferSize = remSize;
+            size_t  bufferSize = remSize;
             char *buf = thread->lockInputBuffer(bufferSize);
             if (!buf) {
                 logError(i18n("Encoder input buffer overflow (buffer configuration problem?). Skipped %1 input bytes").arg(QString::number(remSize)));
@@ -391,7 +391,7 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
     // store thread even if it has indicated an error
     m_EncodingThreads[ssid] = thread;
 
-    //logDebug("startEncoder thread = " + QString::number((unsigned)thread, 16));
+    //logDebug("startEncoder thread = " + QString::number((long long)thread, 16));
 
     notifySoundStreamCreated(encID);
     return !thread->error();
@@ -406,7 +406,7 @@ void Recording::stopEncoder(SoundStreamID id)
 
         thread->setDone();
 
-        //logDebug("stopEncoder thread = " + QString::number((unsigned)thread, 16));
+        //logDebug("stopEncoder thread = " + QString::number((long long)thread, 16));
         //logDebug("stopEncoder thread error = " + QString::number(thread->error(), 16));
 
 #if (KDE_VERSION_MAJOR >= 3) && (KDE_VERSION_MINOR >= 1)
@@ -451,7 +451,7 @@ bool Recording::event(QEvent *_e)
 
             RecordingEncoding *thread = m_EncodingThreads[id];
 
-            //logDebug("Recording::event: thread = " + QString::number((unsigned)thread, 16));
+            //logDebug("Recording::event: thread = " + QString::number((long long)thread, 16));
 
             if (thread->error()) {
                 logError(thread->errorString());

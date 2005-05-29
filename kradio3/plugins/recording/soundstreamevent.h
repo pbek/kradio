@@ -60,7 +60,7 @@ public:
 class SoundStreamEncodingStepEvent : public SoundStreamEvent
 {
 public:
-    SoundStreamEncodingStepEvent(SoundStreamID id, const char *data, unsigned int size, const SoundMetaData &md)
+    SoundStreamEncodingStepEvent(SoundStreamID id, const char *data, size_t size, const SoundMetaData &md)
          : SoundStreamEvent(EncodingStep, id),
            m_Size(size),
            m_MetaData(md)
@@ -73,14 +73,14 @@ public:
     void freeData() { if (m_Data) delete m_Data; m_Data = NULL; m_Size = 0; }  // _MUST_ be called by event receiver
 
     const char  *data() const { return m_Data; }
-    unsigned int size() const { return m_Size; }
+    size_t       size() const { return m_Size; }
     const SoundMetaData &metaData()  const { return m_MetaData; }
 
     static bool isSoundStreamEncodingStep (const QEvent *e) { return e && (e->type() == EncodingStep); }
 
 protected:
     char         *m_Data;
-    unsigned int  m_Size;
+    size_t        m_Size;
     SoundMetaData m_MetaData;
 };
 

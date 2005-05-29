@@ -121,9 +121,9 @@ void SoundFormat::convertIntToSample(int src, char *dst, bool is_scaled) const
 }
 
 
-void SoundFormat::convertSamplesToInts(const char *src, int *dst, unsigned n, bool do_scale) const
+void SoundFormat::convertSamplesToInts(const char *src, int *dst, size_t n, bool do_scale) const
 {
-    int size     = sampleSize();
+    int size  = sampleSize();
     int scale    = (sizeof(unsigned) * 8) - m_SampleBits;
     int signmask = do_scale ? (!m_IsSigned << ((sizeof(unsigned) << 3) - 1)) :
                               (-m_IsSigned << ((size << 3)             - 1)) ;
@@ -157,7 +157,7 @@ void SoundFormat::convertSamplesToInts(const char *src, int *dst, unsigned n, bo
 }
 
 
-void SoundFormat::convertIntsToSamples(const int *src, char *dst, unsigned n, bool is_scaled) const
+void SoundFormat::convertIntsToSamples(const int *src, char *dst, size_t n, bool is_scaled) const
 {
     int size     = sampleSize();
     int scale    = (sizeof(unsigned) * 8) - m_SampleBits;
@@ -185,7 +185,7 @@ void SoundFormat::convertIntsToSamples(const int *src, char *dst, unsigned n, bo
 }
 
 
-void SoundFormat::convertSamplesToFloat(const char *_src, float **_dst, unsigned n) const
+void SoundFormat::convertSamplesToFloat(const char *_src, float **_dst, size_t n) const
 {
     int sample_size = sampleSize();
     int frame_size  = frameSize();
@@ -226,7 +226,7 @@ void SoundFormat::convertSamplesToFloat(const char *_src, float **_dst, unsigned
 
 
 
-void SoundFormat::convertFloatsToSamples(const float **_src, char *_dst, unsigned n) const
+void SoundFormat::convertFloatsToSamples(const float **_src, char *_dst, size_t n) const
 {
     int sample_size = sampleSize();
     int frame_size  = frameSize();
