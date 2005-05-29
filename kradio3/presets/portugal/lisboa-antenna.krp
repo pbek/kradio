@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Vasco Nunes &lt;vasco.m.nunes@gmail.com&gt;</maintainer>
+			<changed>2005-05-28T16:24:38</changed>
+			<country>Portugal</country>
+			<city>Lisboa</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1116455444509F0036299C12C83B7ABEA8000845DC5D38E34AAEA04346433F6ACC64860751</stationID>
+			<name>Rádio Ocidente</name>
+			<shortname>OCIDENTE</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544434E00A4B79D5AF6F50BCA073B4F0075DB98363F2965208360ADB384FC9C9261F</stationID>
+			<name>Rádio Lezíria</name>
+			<shortname>RL-FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F91ED21F1D7BA697D3CCCA4F80412D98E84AC5EEE8E9FD8802E8239245117BE5</stationID>
+			<name>Rádio Seixal</name>
+			<shortname>SEIXALFM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444524D3835E4E98FA48D0822236F7A2C4881D4D3314D9740CDE086B1DCF400850C</stationID>
+			<name>TSF</name>
+			<shortname>TSF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554449DE41CDB4FBD7A49098CC696567AD524945B94899CC3498B6C5752A8B04D06B8</stationID>
+			<name>Rádio Paris Lisboa</name>
+			<shortname>RPL 90.4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DCD642C7A6C7E5EB8768969BA1504A0B12AF82D9B3B42EF1A943AD01C56B1878</stationID>
+			<name>Popular FM</name>
+			<shortname>POPULAR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B1908B398F3631F05BC9C278AEBB28FF62A4F80F1229325FCB28053F1A18E769</stationID>
+			<name>Rádio Clube de Sintra</name>
+			<shortname>RCSINTRA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F73F7EE8BC8A4CE1D1346B3FC88CAA486037A418C8D4240466D4B5FD79180A4C</stationID>
+			<name>Rádio Irís</name>
+			<shortname>IRIS FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444E3C16AFC5033065A79EA2ACB983CD130F211DD90B5191135A7A0406A415E9E32</stationID>
+			<name>Rádio Nova Antena</name>
+			<shortname>RNA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>9.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444F58348060F6B3951D032CE2AE3962570045A854578FE3718D634442C77547493</stationID>
+			<name>Mega FM</name>
+			<shortname>MEGA FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B175F5D0C84BB46125CDF438EE738D965DA372EC2B47F1765B8E01445B2B24E7</stationID>
+			<name>Horizonte FM</name>
+			<shortname>HORIZ</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444315226815C91B60AB92CC728E7D3A78EACC3CF480C7499646DEB09C3C4E701F5</stationID>
+			<name>RFM</name>
+			<shortname>RFM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544469DB377E2239117F981CCE57F05666F7D20638D4B79949FCF6B9046A5504FBF8</stationID>
+			<name>Rádio Mais</name>
+			<shortname>R.MAIS</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554446AE11BB965010BF139913929098FAA0F41AE47EB6784D34D93B0320AEAB842E7</stationID>
+			<name>Antena 2</name>
+			<shortname>ANTENA2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444C8F7100921C174D17234BB109181FB1D1891D59C31A09771D0400BA46015D36F</stationID>
+			<name>Miramar</name>
+			<shortname>MIRAMAR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544429637D10C2EF20EA8028E4F63F0E18551AF7F3F3EB63723F7A0A598014F163AE</stationID>
+			<name>Tropical FM</name>
+			<shortname>TROPICAL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447A9C68C227A551F40419A4A90C43709DE94082A0EE08024CCC55365C051D497B</stationID>
+			<name>Antena 1</name>
+			<shortname>ANTENA1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544408756913B54145F4206592843D1B7713D79E7D3E19FE3EDC09099D8872622295</stationID>
+			<name>Best Rock FM</name>
+			<shortname>BEST FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444797A1EF6E36714BCC7372407359141A28A1B404AE7A0336223D3CA5E0553D22D</stationID>
+			<name>Rádio Comercial</name>
+			<shortname>COMERCIAL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444BAA54F1BE40423135971B9D3FAAAF2A9AF37C7C60D6DC69B489440E7FCBB2775</stationID>
+			<name>Radar</name>
+			<shortname>RADAR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444D3C676B1AF717DEB3C5EFBE3200561C782D3720ED99002A1872DDB6CFE93EEB5</stationID>
+			<name>Rádio Marginal</name>
+			<shortname>MARGINAL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444150CB66C475C9CB684A9CCAB396CEB9A29EEE7E5536B3E7E272032275E24187A</stationID>
+			<name>Rádio Baía</name>
+			<shortname>BAIA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544474EEB2586897AB0653884F6B08561739292C80D3C1B9D482D959B0796D0C6976</stationID>
+			<name>Antena 3</name>
+			<shortname>ANTENA3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554448D704DD3768004C70419465A9332F9DB82103BAF567FA0B0565227E4F7F6942D</stationID>
+			<name>Romântica FM</name>
+			<shortname>ROMANTICA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444B026DA3E2E3A1FDB4D27D1A72D2AAD602153D44634970FC74A115214FB54F22C</stationID>
+			<name>RDP África</name>
+			<shortname>AFRICA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554446AE9C5D7D77EE7088F4E454D99C008B14817ABB037EC19A50787F0648006B8BB</stationID>
+			<name>Estação Orbital</name>
+			<shortname>ORBITAL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544499E19CD0D994F74E7AECDDC84B411A98E35626C4F35E0C835C7C08B56C8BAA8C</stationID>
+			<name>Rádio PAL</name>
+			<shortname>PAL FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554446CAC6C1662A7B7CED73A73B393EDB080B0BDF83DB7FF69DADA2B1CE6EEB5227C</stationID>
+			<name>Oxigénio</name>
+			<shortname>OXIGENIO</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554447631EEEBC13A34581784E07C09FFBEF3A18715C056573CFE48BC7DD5400DA330</stationID>
+			<name>Mix FM</name>
+			<shortname>MIX</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>10.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1117293542960DB483028B13E41DDB31677C5A3644C8D154ED17AF7909C976CDF7F776A5D1</stationID>
+			<name>Rádio Renascença</name>
+			<shortname>RR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1117293569673E983E2058428A4C5D64B0574369E696A77DBF6C32FF4A2B84FE5E3ABF6B51</stationID>
+			<name>Sesimbra FM</name>
+			<shortname>SESIMBRA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111729358227D08B8D95DB0E9188A999DAD3FCDCDE45166A01ADFDBD5E8C769C74C8381B62</stationID>
+			<name>Rádio Clube Português</name>
+			<shortname>RCP</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1117293596BF7173A84CE12BCD30F73A2422395BF7C4403DFA9BD89783C1FC94F39FA45833</stationID>
+			<name>Rádio Eco</name>
+			<shortname>ECO</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1117293609C88B61D901ED2C3E568DC2E86D755B63AD8C120063D30AF646868B66F6C35E1D</stationID>
+			<name>CBS Rádio</name>
+			<shortname>CBS</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111729362190D5EF271699EF166345864F990809A7174E72154AB5991B202D12F02D5C6C9E</stationID>
+			<name>Rádio Cidade</name>
+			<shortname>CIDADE</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444787E3904290A56E16C4808EE0C7117893EE19A27D621326FA4FEA44334A6AAB4</stationID>
+			<name>Rádio Capital</name>
+			<shortname>Capital</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11172936389B2769CBDCDC246EE4A75B8E6727EE985F3A839B55A40DBA9B558400165B803F</stationID>
+			<name>Rádio Nossa</name>
+			<shortname>NOSSA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.7</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
