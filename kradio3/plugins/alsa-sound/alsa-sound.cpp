@@ -564,6 +564,9 @@ void AlsaSoundDevice::slotPollCapture()
 
 bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 {
+    if (m_PlaybackCard < 0 || m_PlaybackDevice < 0)
+        return false;
+
     if (m_hPlayback) {
 
         if (reopen) {
@@ -601,6 +604,9 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
 bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 {
+    if (m_PlaybackCard < 0 || m_PlaybackDevice < 0)
+        return false;
+
     if (m_hCapture) {
 
         if (reopen) {
@@ -703,8 +709,11 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
 
     snd_pcm_uframes_t exact_buffersize_frames = buffersize_frames;
     if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
-        logError(i18n("ALSA Plugin: Error setting buffersize for %1").arg(pcm_name));
-        error = true;
+        exact_buffersize_frames = 4096;
+        if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
+            logError(i18n("ALSA Plugin: Error setting buffersize for %1").arg(pcm_name));
+            error = true;
+        }
     }
 
     size_t exact_buffersize = exact_buffersize_frames * format.frameSize();
