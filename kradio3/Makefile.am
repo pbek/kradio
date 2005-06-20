@@ -4,4 +4,5 @@ EXTRA_DIST = kradio.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO kradio
 
 
 # apidox
+DOXYGEN_SET_RECURSIVE = YES
 include ../admin/Doxyfile.am
