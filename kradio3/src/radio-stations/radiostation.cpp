@@ -34,7 +34,7 @@ const char *StationIconStringElement    = "icon";
 const char *StationVolumePresetElement  = "volumepreset";
 const char *StationIDElement            = "stationID";
 
-const char *dev_urandom = "/dev/urandom";
+const char *dev_urandom_radiostations = "/dev/urandom";
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -115,7 +115,7 @@ void RadioStation::generateNewStationID()
     QString stime, srandom = QString::null;
     stime.setNum(time(NULL));
 
-    int fd = open (dev_urandom, O_RDONLY);
+    int fd = open (dev_urandom_radiostations, O_RDONLY);
     read(fd, buffer, buffersize);
     close(fd);
     for (int i = 0; i < buffersize; ++i)
