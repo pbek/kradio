@@ -2,6 +2,7 @@
 
 	mcamen  - resorted src/Makefile.am to make the linker happy
 	        - use unversioned libs for the plugins
+	        - link all plugins with libkradio.la
 
 2005-05-28
 	emv     - profiling support - we need to improve startup time
