@@ -2,6 +2,7 @@ INCLUDES = $(all_includes)
 METASOURCES = AUTO
 lib_LTLIBRARIES =  libkradio.la
 libkradio_la_LDFLAGS = $(all_libraries)
+libkradio_la_LIBADD = ../interfaces/libkradio-interfaces.la
 libkradio_la_SOURCES = plugin_configuration_dialog.cpp pluginmanager.cpp \
 			plugins.cpp seekhelper.cpp stationlistxmlhandler.cpp utils.cpp widgetplugins.cpp \
 			kradioapp.cpp frequencyseekhelper.cpp alarm.cpp stationlist.cpp ringbuffer.cpp \

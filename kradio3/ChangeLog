@@ -1,3 +1,8 @@
+2005-07-29
+
+	mcamen  - do not install libkradio-interfaces; use a convinience
+	          lib instead
+
 2005-07-28
 
 	mcamen  - resorted src/Makefile.am to make the linker happy

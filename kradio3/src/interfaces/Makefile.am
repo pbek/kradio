@@ -1,6 +1,6 @@
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
-lib_LTLIBRARIES =  libkradio-interfaces.la
+noinst_LTLIBRARIES =  libkradio-interfaces.la
 libkradio_interfaces_la_LDFLAGS = $(all_libraries)
 libkradio_interfaces_la_SOURCES = errorlog-interfaces.cpp radiodevice_interfaces.cpp \
 	radiodevicepool_interfaces.cpp radio_interfaces.cpp stationselection_interfaces.cpp \
