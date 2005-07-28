@@ -1,21 +1,27 @@
-2005-05-28  - profiling support - we need to improve startup time
-              needs to be commented out for release
-            - big mixer channel handling fix
-            - inconsistencies in restoreState process fixed
-            - added releasePlayback/Capture as complementary function to
-              preparePlayback/Capture
-            - alsa event handler fix
-            - gui margin/spacing reduced
+2005-07-28
+
+	mcamen  - resorted src/Makefile.am to make the linker happy
+
+2005-05-28
+	emv     - profiling support - we need to improve startup time
+                  needs to be commented out for release
+                - big mixer channel handling fix
+                - inconsistencies in restoreState process fixed
+                - added releasePlayback/Capture as complementary function to
+                  preparePlayback/Capture
+                - alsa event handler fix
+                - gui margin/spacing reduced
 
 2005-05-26
+
 	mcamen  - added apidox Makefile target
 	        - RadioConfiguration::slotSelectPixmap():
 	          get rid of hardcoded list of supported image formats;
 	          enable image preview in file KFileDialog
 
-    emw     - added ALSA-Plugin
-            - removed debug logging in recorder
-            - fixed missing volume=0/mute in timeshifter
+        emw     - added ALSA-Plugin
+                - removed debug logging in recorder
+                - fixed missing volume=0/mute in timeshifter
 
 2005-05-22
 

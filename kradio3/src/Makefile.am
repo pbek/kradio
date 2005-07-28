@@ -8,9 +8,11 @@ bin_PROGRAMS = kradio
 
 kradio_SOURCES = main.cpp
 kradio_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIRC)
-kradio_LDADD = $(top_builddir)/kradio3/src/radio-stations/libkradio-stations.la \
-	$(top_builddir)/kradio3/src/libkradio-gui/libkradio-gui.la $(top_builddir)/kradio3/src/libkradio/libkradio.la \
-	$(top_builddir)/kradio3/src/interfaces/libkradio-interfaces.la $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
+kradio_LDADD = $(top_builddir)/kradio3/src/libkradio-gui/libkradio-gui.la \
+	$(top_builddir)/kradio3/src/interfaces/libkradio-interfaces.la \
+	$(top_builddir)/kradio3/src/radio-stations/libkradio-stations.la \
+	$(top_builddir)/kradio3/src/libkradio/libkradio.la \
+	$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
 
 xdg_apps_DATA = kradio.desktop
 
