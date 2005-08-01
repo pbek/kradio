@@ -1,7 +1,7 @@
 SUBDIRS = . 
 # libkradio interfaces libkradio-gui radio-stations
 METASOURCES = AUTO
-INCLUDES = $(all_includes) -Iinterfaces -Ilibkradio -Ilibkradio-gui -Iradio-stations
+INCLUDES = $(all_includes) -I$(top_srcdir)/kradio3/src/interfaces -I$(top_srcdir)/kradio3/src/libkradio -I$(top_srcdir)/kradio3/src/libkradio-gui -I$(top_srcdir)/kradio3/src/radio-stations
 KDE_CXXFLAGS="-UQT_NO_ASCII_CAST"
 KDE_ICON = AUTO
 
