@@ -6,6 +6,6 @@ lib_LTLIBRARIES =  libtimecontrol.la
 libtimecontrol_la_SOURCES = timecontrol-configuration.cpp \
                             timecontrol-configuration-ui.ui timecontrol.cpp
 libtimecontrol_la_LDFLAGS = -module -avoid-version $(all_libraries)
-libtimecontrol_la_LIBADD = ../../src/libkradio/libkradio.la
+#libtimecontrol_la_LIBADD = ../../src/libkradio/libkradio.la
 
 noinst_HEADERS =  timecontrol-configuration.h timecontrol.h

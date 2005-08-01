@@ -1,6 +1,6 @@
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
-lib_LTLIBRARIES =  libkradio-stations.la
-libkradio_stations_la_LDFLAGS = $(all_libraries)
+noinst_LTLIBRARIES =  libkradio-stations.la
+libkradio_stations_la_LDFLAGS = $(all_libraries) --export-dynamic --export-all-symbols
 noinst_HEADERS = frequencyradiostation.h internetradiostation.h radiostation.h radiostation-config.h
 libkradio_stations_la_SOURCES = frequencyradiostation.cpp internetradiostation.cpp radiostation.cpp radiostation-config.cpp

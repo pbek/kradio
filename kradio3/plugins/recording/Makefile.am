@@ -9,7 +9,7 @@ librecording_la_SOURCES = recording-configuration.cpp \
                           encoder.cpp recording-datamonitor.cpp \
                           recording-monitor.cpp
 librecording_la_LDFLAGS = -module -avoid-version $(all_libraries)
-librecording_la_LIBADD = ../../src/libkradio/libkradio.la
+#librecording_la_LIBADD = ../../src/libkradio/libkradio.la
 
 noinst_HEADERS = recording-configuration.h recording.h recording-config.h \
 	reccfg_interfaces.h encoder.h soundstreamevent.h recording-datamonitor.h \

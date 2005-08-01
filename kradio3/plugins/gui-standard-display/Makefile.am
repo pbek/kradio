@@ -10,7 +10,7 @@ libstandard_display_la_SOURCES = displaycfg.cpp displaycfg_interfaces.cpp \
                                  radioview_frequencyseeker.cpp \
                                  radioview_volume.cpp
 libstandard_display_la_LDFLAGS = -module -avoid-version $(all_libraries)
-libstandard_display_la_LIBADD = ../../src/libkradio/libkradio.la
+#libstandard_display_la_LIBADD = ../../src/libkradio/libkradio.la
 
 noinst_HEADERS =  displaycfg.h displaycfg_interfaces.h radioview-configuration.h radioview_element.h radioview_frequencyradio.h radioview_frequencyseeker.h radioview.h radioview_volume.h
 

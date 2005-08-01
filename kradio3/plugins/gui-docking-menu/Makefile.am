@@ -5,7 +5,7 @@ METASOURCES = AUTO
 lib_LTLIBRARIES =  libdocking-menu.la
 libdocking_menu_la_SOURCES = docking-configuration.cpp docking.cpp
 libdocking_menu_la_LDFLAGS = -module -avoid-version $(all_libraries)
-libdocking_menu_la_LIBADD = ../../src/libkradio/libkradio.la
+#libdocking_menu_la_LIBADD = ../../src/libkradio/libkradio.la
 
 noinst_HEADERS = docking-configuration.h docking.h
 
