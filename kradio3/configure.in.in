@@ -75,7 +75,11 @@ dnl ALSA support
 AC_CHECK_LIB(asound, snd_card_next, [], AC_MSG_RESULT([libasound not found]))
 AC_CHECK_HEADERS([alsa/asoundlib.h], [], AC_MSG_RESULT([libasound header not found]))
 
+
+
+AC_SUBST(libkradiodir, '$(prefix)/lib/kradio/plugins')
+
+
 dnl ----------------------------------------------------------------------
 dnl apidox
-
 KDE_INIT_DOXYGEN([The KRadio API Reference], [Version $VERSION])
