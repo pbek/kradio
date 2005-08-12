@@ -1,166 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
-    <stationlist>
+	<stationlist>
 		<format>kradio-1.0</format>
-        <info>
-            <maintainer>Gerard Blank &lt;blank878@planet.nl&gt;</maintainer>
-            <changed>2004-02-03T23:28:11</changed>
-            <country>Netherlands</country>
-            <city>The Hague</city>
-            <media>Antenne</media>
-            <comments></comments>
-        </info>
-        <FrequencyRadioStation>
-			<stationID>107714498595FF2A0F92ABCBADA25E3278CFC23019C2F7DDB178AAB28DBCB57790FF1861EB</stationID>
-            <name>Radio 1</name>
-            <shortname>Radio 1</shortname>
-            <icon></icon>
-            <frequency>98.6</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>1077144985075CEC252AD972C5BBB40D06FF287AD0763E4B304EE741BDE8B94BFEFFBC5D61</stationID>
-            <name>Radio 2</name>
-            <shortname>Radio 2</shortname>
-            <icon></icon>
-            <frequency>92.9</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>1077144985195B262291176E2D078E7279F4F285561F1E17D6B857DE035BA9E8580871BBF9</stationID>
-            <name>Radio 3</name>
-            <shortname>Radio 3</shortname>
-            <icon></icon>
-            <frequency>96.8</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>107714498542BB277F5239C38A31D93EB6D05A3AFF5AE1C40027D86DE7B7C9F3149BA72CD9</stationID>
-            <name>Radio 4</name>
-            <shortname>Radio 4</shortname>
-            <icon></icon>
-            <frequency>94.7</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>10771449855012F392BC95297204476CC224C39215EA5C96B13E33F6572A3063755C947506</stationID>
-            <name>Hofstad Radio</name>
-            <shortname>Hofstad Radio</shortname>
-            <icon></icon>
-            <frequency>99.4</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>1077144985CE51D68B5F5524665BC1268C113EE8B6D2CE76A09DA06C6BE0609C7D0638E6D0</stationID>
-            <name>Radio Rijnmond</name>
-            <shortname>Radio Rijnmond</shortname>
-            <icon></icon>
-            <frequency>93.3</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>10771449854E79949EE787C8EE2B0F6192A86480DFC51303B8D64627C5F91D3266EC50737D</stationID>
-            <name>Radio West</name>
-            <shortname>Radio West</shortname>
-            <icon></icon>
-            <frequency>89.4</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>10771449859385D63D47A623A47F7BFC1375933D6FACEA7840D4DA58E85DAE23E8DECE5B89</stationID>
-            <name>Sky Radio</name>
-            <shortname>Sky Radio</shortname>
-            <icon></icon>
-            <frequency>101.5</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>10771449857B4F212EB6962C283EDD0E57D88225756E9A67B024CB3120033DDD4C49C7FDF0</stationID>
-            <name>Noordzee FM</name>
-            <shortname>Noordzee FM</shortname>
-            <icon></icon>
-            <frequency>100.4</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>1077144985C06680AE77595BB7D941E6FA057750DF281045613C6934442479BEBF1C3D0544</stationID>
-            <name>Yorin FM</name>
-            <shortname>Yorin FM</shortname>
-            <icon></icon>
-            <frequency>103.8</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>107714498545B00D640FCA07A6594B51D005D80A0E60A000479E30D1D487CD8BC5AA72E0C0</stationID>
-            <name>Radio Amor</name>
-            <shortname>Radio Amor</shortname>
-            <icon></icon>
-            <frequency>89.8</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>10771449857E6C5BB9E935A9E02C4EBE7F54CB42859AF136907DDF6F9D7EE00603AA324E91</stationID>
-            <name>Lokaal</name>
-            <shortname>Lokaal</shortname>
-            <icon></icon>
-            <frequency>104.6</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>107714498563207CC648ACC86375882EF22CE76B5FF384C333ED51625FE8BE04D3DA79D111</stationID>
-            <name>Radio 538</name>
-            <shortname>Radio 538</shortname>
-            <icon></icon>
-            <frequency>102.7</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>1077144985B4DAAA17B51F8231704AAF52689C9C83DFD9741BC17E701BD38A9A298B420852</stationID>
-            <name>ID&amp;T</name>
-            <shortname>ID&amp;T</shortname>
-            <icon></icon>
-            <frequency>88.6</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>1077144985A997C4CB14E888B706385A8D4BC05CCE30860C77990C35EA7A3C200B73A9633C</stationID>
-            <name>Arrow Classic Jazz FM</name>
-            <shortname>Arrow Classic Jazz FM</shortname>
-            <icon></icon>
-            <frequency>90.4</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>10771449855E554349565C55879C321DC6D10BFFFB4A40AD839C0E330B7B566320ED4D308B</stationID>
-            <name>Fresh Radio</name>
-            <shortname>Fresh Radio</shortname>
-            <icon></icon>
-            <frequency>95.5</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>1077144985C093A99053D9A7C68FA4E007474F9A37E664D2824BCBB52F1CCD62854F9910DF</stationID>
-            <name>Business Nieuws Radio</name>
-            <shortname>Business Nieuws Radio</shortname>
-            <icon></icon>
-            <frequency>91.3</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>107714498570B2FE650DA5101A84B1D04E65A216B9FA7B66DF6C3F781BC7F399D9E6FD6BDC</stationID>
-            <name>ID and T Radio</name>
-            <shortname>ID and T Radio</shortname>
-            <icon></icon>
-            <frequency>99.1</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-        <FrequencyRadioStation>
-			<stationID>10771449858F7E3C1A4B4604C1D661713CB9A8E9B05D98901898723326A77B5090228E8FBE</stationID>
-            <name>2e Kamerlijn</name>
-            <shortname>2e Kamerlijn</shortname>
-            <icon></icon>
-            <frequency>87.5</frequency>
-            <volumepreset>-1</volumepreset>
-        </FrequencyRadioStation>
-    </stationlist>
+		<info>
+			<maintainer>Gerard Blank, &lt;blank878@planet.nl&gt;</maintainer>
+			<changed>2005-05-31T03:42:44</changed>
+			<country>Netherlands</country>
+			<city>The Hague</city>
+			<media>Antenne</media>
+			<comments>updated radio list</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>112388344789B7581A6E02F7E4D2EC928557F314B41EB1323542D43773B9F8EE12D67771B4</stationID>
+			<name>Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<icon></icon>
+			<frequency>98.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447BDBD796D664809A36B20762E1C5561C2598FE6A5EE174A14CA0E580185A51792</stationID>
+			<name>Radio 2</name>
+			<shortname>Radio 2</shortname>
+			<icon></icon>
+			<frequency>92.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447DC79673CE2535F5067B60F85DD5FE5F3BEB487B9C432CF287AA93345B77BDFA8</stationID>
+			<name>Radio 3</name>
+			<shortname>Radio 3</shortname>
+			<icon></icon>
+			<frequency>96.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>112388344741C0AD0AEFC7F77C0711CD8DDC8CDFEF105CBBE7F207FBF40BB279E2CF6CD4B4</stationID>
+			<name>Radio 4</name>
+			<shortname>Radio 4</shortname>
+			<icon></icon>
+			<frequency>94.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447213C07846A0763F4398C68EE8C6C1478ECF508E3F36C9B1CD52F3DAA08CBC07E</stationID>
+			<name>Hofstad Radio</name>
+			<shortname>Hofstad Radio</shortname>
+			<icon></icon>
+			<frequency>99.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>112388344757B812ED68B78E7A2B0DDF0F23E8FF9A159DB414BDEBA99355FC378929453A1B</stationID>
+			<name>Radio Rijnmond</name>
+			<shortname>Radio Rijnmond</shortname>
+			<icon></icon>
+			<frequency>93.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447DAC19D3A5D70235ED161E835EE87C65DA010F8ECAC4777CF5AE40CB94463082E</stationID>
+			<name>Radio West</name>
+			<shortname>Radio West</shortname>
+			<icon></icon>
+			<frequency>89.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11238834471EA69026515173C71176353A7C0A6372B462FD1760A1BAB7474C0F593F6C44C2</stationID>
+			<name>Sky Radio</name>
+			<shortname>Sky Radio</shortname>
+			<icon></icon>
+			<frequency>101.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11238834476A0FED9C034F8548007594932B9D8DBD08ADE9FEEDF16702DDE9BA9CC6783FAF</stationID>
+			<name>Noordzee FM</name>
+			<shortname>Noordzee FM</shortname>
+			<icon></icon>
+			<frequency>100.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11238834478E0CA8AD9CCD77D3F4B753DE934DDFD3DFF5B617A8D580E5CA06027F00B99022</stationID>
+			<name>Yorin FM</name>
+			<shortname>Yorin FM</shortname>
+			<icon></icon>
+			<frequency>103.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>112388344741440E0162120BBB5C72D8D8FC816B4FD06B2C46B1358DFFE74C907D0D6829F4</stationID>
+			<name>Radio Amor</name>
+			<shortname>Radio Amor</shortname>
+			<icon></icon>
+			<frequency>89.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447BFB6CACEE92E4F08933F4A60F37EC4CEA772CECF47CF00BF05DF4B504608BB64</stationID>
+			<name>RTL FM</name>
+			<shortname>RTL FM</shortname>
+			<icon></icon>
+			<frequency>104.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447191FA269FA92DA0140C730D2E492036F20380DC24BF6EBCC8CDB4108DF9BF784</stationID>
+			<name>Radio 538</name>
+			<shortname>Radio 538</shortname>
+			<icon></icon>
+			<frequency>102.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11238834474EBF4E60203A49716810A6518F939209F4B3067AD557FC9EB04CD229E3CE99C3</stationID>
+			<name>SLAM!FM</name>
+			<shortname>SLAM!FM</shortname>
+			<icon></icon>
+			<frequency>88.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11238834472755761D89ADEB83541BF08F542077E5BF8DFA1A3FB40B2AF434B1465BB44C9F</stationID>
+			<name>Arrow Classic Jazz FM</name>
+			<shortname>Arrow Classic Jazz FM</shortname>
+			<icon></icon>
+			<frequency>90.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447BFAB0267D755AC23DC2FBE281B85C7042F01A559BB6A9143A63D478B7BDA5340</stationID>
+			<name>Fresh Radio</name>
+			<shortname>Fresh Radio</shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447DAB65F1F32E75F0CFCB35FD5C7FCDC69F978DDB4604E7A4C80FEAB8521114A56</stationID>
+			<name>Business Radio</name>
+			<shortname>Business Radio</shortname>
+			<icon></icon>
+			<frequency>91.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11238834474E13E739D08391B3F6404757EF865A1C35141297E5AF852DB3F3F9480DA52E3C</stationID>
+			<name>2e Kamerlijn</name>
+			<shortname>2e Kamerlijn</shortname>
+			<icon></icon>
+			<frequency>87.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11238834476661E04AC01553336A8541D6DC80A547078A6D2525D44E959B9C946F781ECB59</stationID>
+			<name>Radio Veronica</name>
+			<shortname>Radio Veronica</shortname>
+			<icon></icon>
+			<frequency>103.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1123883447070EC7620EFE171012139389B93E07C2EEDAFCA17D5B276243E6B3D92EFABD07</stationID>
+			<name>City FM</name>
+			<shortname>City FM</shortname>
+			<icon></icon>
+			<frequency>97.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
 </kradiorc>

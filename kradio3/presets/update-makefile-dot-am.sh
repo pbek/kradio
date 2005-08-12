@@ -15,7 +15,7 @@ echo -n "SUBDIRS =" > $OUT
 echo -e "Makefile\nMakefile.in\n" > .cvsignore
 
 
-find -type d -mindepth 1 -maxdepth 1 | sed 's/^\.\///' | sed 's/\/$//' | grep -v CVS | \
+find -mindepth 1 -maxdepth 1 -type d | sed 's/^\.\///' | sed 's/\/$//' | grep -v CVS | \
   while read line; do
 
     echo -n " $line" >> $OUT
