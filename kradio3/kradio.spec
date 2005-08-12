@@ -1,22 +1,24 @@
-# This spec file was generated using Kpp
-# If you find any problems with this spec file please report
-# the error to ian geiser <geiseri@msoe.edu>
-Summary:   V4L/V4L2-Radio Application for KDE >= 3.2
+#
+# spec file for package kradio
+#
+
 Name:      kradio
+Copyright: GPL
+License:   GPL
+Summary:   V4L/V4L2-Radio Application for KDE
 Version:   <place version here>
 Release:   <place release here, e.g. suse/mandrake>
-Copyright: GPL
 Vendor:    Martin Witte <witte@kawo1.rwth-aachen.de>
-Url:       http://sourceforge.net/projects/kradio
 Packager:  Martin Witte <witte@kawo1.rwth-aachen.de>
+Url:       http://sourceforge.net/projects/kradio
 Group:     kde3
-Source:    <place source filename here>
+Source:    kradio-%version.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
-Comfortable Radio Application for KDE >= 3.2
+Comfortable V4L/V4L2-Radio Application for KDE.
 
-KRadio is a comfortable radio application for KDE >= 3.2 with support for 
+KRadio is a comfortable radio application for KDE with support for 
 V4L and V4L2 radio cards drivers.
 
 KRadio currently provides:
@@ -35,36 +37,33 @@ files for many cities around the world contributed by KRadio Users.
 As KRadio is based on an extendable plugin architecture, contributions
 of new plugins (e.g. Internet Radio Streams, new cool GUIs) are welcome.
 
-%prep
-%setup
-export CFLAGS="$RPM_OPT_FLAGS"
-export CXXFLAGS="$RPM_OPT_FLAGS"
-./configure \
-   --build=i386-linux --host=i386-linux --target=i386-linux  \
-   --prefix=/opt/kde3 --program-prefix="" \
-   --without-gl \
-   $LOCALFLAGS
-%build
-# Setup for parallel builds
-numprocs=`egrep -c ^cpu[0-9]+ /proc/stat || :`
-if [ "$numprocs" = "0" ]; then
-  numprocs=1
-fi
+Authors:
+--------
+    Ernst Martin Witte <witte@kawo1.rwth-aachen.de>
+    Marcus Camen <mcamen@mcamen.de>
+    Klas Kalass <klas.kalass@gmx.de>
+    Frank Schwanz <schwanz@fh-brandenburg.de>
 
-unsermake -j$numprocs
+%prep
+%setup -q
+. /etc/opt/kde3/common_options
+update_admin --no-final
+
+%build
+. /etc/opt/kde3/common_options
+./configure $configkde --without-gl
+  
+make
 
 %install
-unsermake install DESTDIR=$RPM_BUILD_ROOT
+. /etc/opt/kde3/common_options
+make DESTDIR=$RPM_BUILD_ROOT $INSTALL_TARGET
+%find_lang %name-%version
 
-cd $RPM_BUILD_ROOT
-find . -type d | sed '1,2d;s,^\.\(.*\)$,\%attr(-\,root\,root) \%dir "\1",' > $RPM_BUILD_DIR/file.list.kradio
-find . -type f | sed 's,^\.\(.*\)$,\%attr(-\,root\,root) "\1",' >> $RPM_BUILD_DIR/file.list.kradio
-find . -type l | sed 's,^\.\(.*\)$,\%attr(-\,root\,root) "\1",' >> $RPM_BUILD_DIR/file.list.kradio
-
-%clean
-rm -rf $RPM_BUILD_ROOT/*
-rm -rf $RPM_BUILD_DIR/kradio
-rm -rf ../file.list.kradio
-
-
-%files -f ../file.list.kradio
+%files -f %name-%version.lang
+%defattr(-,root,root)
+/opt/kde3/bin/*
+/opt/kde3/share/appl*/*/*.desktop
+/opt/kde3/share/icons/*
+/opt/kde3/lib/kradio
+/opt/kde3/share/apps/kradio

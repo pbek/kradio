@@ -128,6 +128,7 @@ protected slots:
     void slotConfigure (bool show);
     void slotRecord ();
     void slotSnooze (bool start);
+    void slotSnooze (int time);
     void slotRecordingMenu(int i);
     void slotBtnPluginsClicked();
     void slotComboStationSelected(int);
@@ -190,6 +191,7 @@ protected:
 
     KPopupMenu                    *m_RecordingMenu;
     KPopupMenu                    *m_pauseMenu;
+    KPopupMenu                    *m_SnoozeMenu;
     int                            m_NextRecordingMenuID;
     QMap<int, SoundStreamID>       m_MenuID2StreamID;
     QMap<SoundStreamID, int>       m_StreamID2MenuID;

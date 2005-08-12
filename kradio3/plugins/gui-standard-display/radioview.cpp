@@ -126,7 +126,7 @@ RadioView::RadioView(const QString &name)
     m_pauseMenu->insertItem(SmallIcon("player_pause"),
                             i18n("Pause KRadio"),
                             this, SLOT(slotPause()));
-    btnPower->setPopupDelay(125);
+    btnPower->setPopupDelay(200);
 
     m_RecordingMenu = new KPopupMenu(btnRecording);
     m_RecordingMenu->insertItem(SmallIcon("kradio_record"),
@@ -135,6 +135,16 @@ RadioView::RadioView(const QString &name)
     QObject::connect(m_RecordingMenu, SIGNAL(activated(int)),
                      this,            SLOT(slotRecordingMenu(int)));
     btnRecording->setPopup(m_RecordingMenu);
+
+
+    m_SnoozeMenu   = new KPopupMenu(btnSnooze);
+    m_SnoozeMenu->insertItem(i18n("5 min"),  this, SLOT(slotSnooze(int)), 0,  5);
+    m_SnoozeMenu->insertItem(i18n("10 min"), this, SLOT(slotSnooze(int)), 0, 10);
+    m_SnoozeMenu->insertItem(i18n("15 min"), this, SLOT(slotSnooze(int)), 0, 15);
+    m_SnoozeMenu->insertItem(i18n("30 min"), this, SLOT(slotSnooze(int)), 0, 30);
+    m_SnoozeMenu->insertItem(i18n("60 min"), this, SLOT(slotSnooze(int)), 0, 60);
+    btnSnooze->setPopup(m_SnoozeMenu);
+    btnSnooze->setPopupDelay(200);
 
     // Plugin-Button/Menu
 
@@ -703,6 +713,14 @@ void RadioView::slotSnooze(bool on)
     else
         sendStopCountdown();
 }
+
+
+void RadioView::slotSnooze(int n)
+{
+    sendCountdownSeconds(n*60);
+    sendStartCountdown();
+}
+
 
 void RadioView::slotComboStationSelected(int idx)
 {
