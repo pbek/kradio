@@ -15,7 +15,7 @@ Source:    kradio-%version.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
-Comfortable V4L/V4L2-Radio Application for KDE.
+Comfortable V4L/V4L2-Radio Application for KDE
 
 KRadio is a comfortable radio application for KDE with support for 
 V4L and V4L2 radio cards drivers.
