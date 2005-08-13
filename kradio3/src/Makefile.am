@@ -1,4 +1,4 @@
-SUBDIRS = libkradio interfaces libkradio-gui radio-stations .
+SUBDIRS = .
 
 INCLUDES = -I$(top_srcdir)/kradio3/src/interfaces \
            -I$(top_srcdir)/kradio3/src/libkradio \
@@ -18,43 +18,44 @@ KDE_ICON = AUTO
 
 bin_PROGRAMS = kradio
 
-kradio_SOURCES = main.cpp
-kradio_LDADD = interfaces/errorlog-interfaces.lo \
-               interfaces/radiodevice_interfaces.lo \
-               interfaces/radiodevicepool_interfaces.lo \
-               interfaces/radio_interfaces.lo \
-               interfaces/soundstreamclient_interfaces.lo \
-               interfaces/stationselection_interfaces.lo \
-               interfaces/timecontrol_interfaces.lo \
-               libkradio/alarm.lo \
-               libkradio/debug-profiler.lo \
-               libkradio/fileringbuffer.lo \
-               libkradio/frequencyseekhelper.lo \
-               libkradio/kradioapp.lo \
-               libkradio/plugin_configuration_dialog.lo \
-               libkradio/pluginmanager-configuration.lo \
-               libkradio/pluginmanager-configuration-ui.lo \
-               libkradio/pluginmanager.lo \
-               libkradio/plugins.lo \
-               libkradio/ringbuffer.lo \
-               libkradio/seekhelper.lo \
-               libkradio/soundformat.lo \
-               libkradio/soundstreamid.lo \
-               libkradio/stationlist.lo \
-               libkradio/stationlistxmlhandler.lo \
-               libkradio/utils.lo \
-               libkradio/widgetplugins.lo \
-               radio-stations/frequencyradiostation.lo \
-               radio-stations/internetradiostation.lo \
-               radio-stations/radiostation-config.lo \
-               radio-stations/radiostation.lo \
-               libkradio-gui/aboutwidget.lo \
-               libkradio-gui/radiostation-listview.lo \
-               libkradio-gui/standardscandialog.lo \
-               libkradio-gui/standardscandialog-ui.lo \
-               libkradio-gui/stationselector.lo \
-               libkradio-gui/stationselector-ui.lo \
-               $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
+kradio_SOURCES = main.cpp \
+               interfaces/errorlog-interfaces.cpp \
+               interfaces/radiodevice_interfaces.cpp \
+               interfaces/radiodevicepool_interfaces.cpp \
+               interfaces/radio_interfaces.cpp \
+               interfaces/soundstreamclient_interfaces.cpp \
+               interfaces/stationselection_interfaces.cpp \
+               interfaces/timecontrol_interfaces.cpp \
+               libkradio/alarm.cpp \
+               libkradio/debug-profiler.cpp \
+               libkradio/fileringbuffer.cpp \
+               libkradio/frequencyseekhelper.cpp \
+               libkradio/kradioapp.cpp \
+               libkradio/plugin_configuration_dialog.cpp \
+               libkradio/pluginmanager-configuration.cpp \
+               libkradio/pluginmanager-configuration-ui.cpp \
+               libkradio/pluginmanager.cpp \
+               libkradio/plugins.cpp \
+               libkradio/ringbuffer.cpp \
+               libkradio/seekhelper.cpp \
+               libkradio/soundformat.cpp \
+               libkradio/soundstreamid.cpp \
+               libkradio/stationlist.cpp \
+               libkradio/stationlistxmlhandler.cpp \
+               libkradio/utils.cpp \
+               libkradio/widgetplugins.cpp \
+               radio-stations/frequencyradiostation.cpp \
+               radio-stations/internetradiostation.cpp \
+               radio-stations/radiostation-config.cpp \
+               radio-stations/radiostation.cpp \
+               libkradio-gui/aboutwidget.cpp \
+               libkradio-gui/radiostation-listview.cpp \
+               libkradio-gui/standardscandialog.cpp \
+               libkradio-gui/standardscandialog-ui.cpp \
+               libkradio-gui/stationselector.cpp \
+               libkradio-gui/stationselector-ui.cpp
+               
+kradio_LDADD = $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBSOCKET)
 
 kradio_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIRC) -Wl,--export-dynamic
 
