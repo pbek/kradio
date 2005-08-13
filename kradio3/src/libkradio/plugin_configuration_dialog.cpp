@@ -91,4 +91,4 @@ void PluginConfigurationDialog::hideEvent(QHideEvent *e)
 
 
 
-#include "plugin_configuration_dialog.moc"
+#include <plugin_configuration_dialog.moc>

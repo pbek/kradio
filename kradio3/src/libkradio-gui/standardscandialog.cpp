@@ -180,4 +180,4 @@ void StandardScanDialog::slotCancelDone()
 
 
 
-#include "standardscandialog.moc"
+#include <standardscandialog.moc>

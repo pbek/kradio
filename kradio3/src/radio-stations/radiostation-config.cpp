@@ -99,4 +99,4 @@ void FrequencyRadioStationConfig::slotValueChanged(int /*i*/)
 }
 
 
-#include "radiostation-config.moc"
+#include <radiostation-config.moc>

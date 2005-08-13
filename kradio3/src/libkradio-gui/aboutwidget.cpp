@@ -612,4 +612,4 @@ void KRadioImageTrackLabel::mouseMoveEvent ( QMouseEvent *e )
 
 
 
-#include "aboutwidget.moc"
+#include <aboutwidget.moc>

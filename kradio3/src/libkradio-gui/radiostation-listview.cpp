@@ -187,4 +187,4 @@ void RadioStationListView::restoreState (KConfig *cfg)
 
 
 
-#include "radiostation-listview.moc"
+#include <radiostation-listview.moc>

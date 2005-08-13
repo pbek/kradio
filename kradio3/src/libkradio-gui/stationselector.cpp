@@ -250,4 +250,4 @@ void StationSelector::restoreState (KConfig *cfg)
 
 
 
-#include "stationselector.moc"
+#include <stationselector.moc>
