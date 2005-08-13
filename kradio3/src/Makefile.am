@@ -1,4 +1,4 @@
-SUBDIRS = .
+SUBDIRS = interfaces radio-stations libkradio libkradio-gui .
 
 INCLUDES = -I$(top_srcdir)/kradio3/src/interfaces \
            -I$(top_srcdir)/kradio3/src/libkradio \
