@@ -323,4 +323,4 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &clas
 
 
 
-#include <kradioapp.moc>
+#include "kradioapp.moc"

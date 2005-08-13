@@ -139,4 +139,4 @@ void FrequencySeekHelper::applyBest()
 
 
 
-#include <frequencyseekhelper.moc>
+#include "frequencyseekhelper.moc"

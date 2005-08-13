@@ -508,4 +508,4 @@ void PluginManager::slotConfigOK()
 
 
 
-#include <pluginmanager.moc>
+#include "pluginmanager.moc"
