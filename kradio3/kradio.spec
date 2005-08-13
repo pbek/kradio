@@ -3,7 +3,6 @@
 #
 
 Name:      kradio
-Copyright: GPL
 License:   GPL
 Summary:   V4L/V4L2-Radio Application for KDE
 Version:   <place version here>
