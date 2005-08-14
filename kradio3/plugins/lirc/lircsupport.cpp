@@ -80,7 +80,6 @@ LircSupport::LircSupport(const QString &name)
                 QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
 
             // check config
-            lirc_config_entry *e = m_lircConfig->first;
             lirc_config_entry *found = NULL;
             for (lirc_config_entry *e = m_lircConfig->first; e; e = e->next) {
                 if (QString(e->prog) == prg)
