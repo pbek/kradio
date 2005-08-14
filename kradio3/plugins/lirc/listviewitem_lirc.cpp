@@ -1,7 +1,7 @@
 /***************************************************************************
-                       lirc-configuration.h  -  description
+                       listviewitem_lirc.cpp  -  description
                              -------------------
-    begin                : Sat May 21 2005
+    begin                : Sun Aug 14 2005
     copyright            : (C) 2005 by Martin Witte
     email                : witte@kawo1.rwth-aachen.de
  ***************************************************************************/
@@ -15,42 +15,35 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KRADIO_LIRC_CONFIGURATION_H
-#define KRADIO_LIRC_CONFIGURATION_H
-
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-#include "lirc-configuration-ui.h"
-#include "lircsupport.h"
 #include "listviewitem_lirc.h"
 
-class LIRCConfiguration : public LIRCConfigurationUI
+ListViewItemLirc::ListViewItemLirc(QListView *parent, QListViewItem *after)
+    : KListViewItem(parent, after),
+      m_renamingInProcess(-1)
 {
-Q_OBJECT
-public :
-    LIRCConfiguration (QWidget *parent, LircSupport *);
-    ~LIRCConfiguration ();
+}
 
-protected slots:
+ListViewItemLirc::~ListViewItemLirc()
+{
+}
 
-    void slotOK();
-    void slotCancel();
+void ListViewItemLirc::startRename(int col)
+{
+    KListViewItem::startRename(col);
+    m_renamingInProcess = col;
+    emit sigRenamingStarted(this, col);
+}
 
-    void slotUpdateConfig();
-    void slotRawLIRCSignal(const QString &val, bool &consumed);
+void ListViewItemLirc::okRename(int col)
+{
+    KListViewItem::okRename(col);
+    m_renamingInProcess = -1;
+    emit sigRenamingStopped(this, col);
+}
 
-    void slotRenamingStarted(ListViewItemLirc *, int);
-    void slotRenamingStopped(ListViewItemLirc *, int);
-
-protected:
-    void addKey(const QString &descr, const QString &key, const QString &alt_key);
-
-    LircSupport *m_LIRC;
-
-    QMap<int, LIRC_Actions>     m_order;
-    QMap<LIRC_Actions, QString> m_descriptions;
-};
-
-#endif
+void ListViewItemLirc::cancelRename(int col)
+{
+    KListViewItem::cancelRename(col);
+    m_renamingInProcess = -1;
+    emit sigRenamingStopped(this, col);
+}

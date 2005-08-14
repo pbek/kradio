@@ -19,9 +19,11 @@
 #include <klocale.h>
 
 #include <qlistview.h>
+#include <qlabel.h>
 
 #include "lirc-configuration.h"
 #include "lircsupport.h"
+#include "listviewitem_lirc.h"
 
 LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
  : LIRCConfigurationUI(parent),
@@ -120,13 +122,19 @@ void LIRCConfiguration::slotCancel()
             addKey(m_descriptions[action], actions[action], alt_actions[action]);
         }
     }
+
+    slotRenamingStopped(NULL, -1);
 }
 
 
 void LIRCConfiguration::addKey(const QString &descr, const QString &key, const QString &alt_key)
 {
-    QListViewItem *item = new QListViewItem(m_ActionList, m_ActionList->lastChild());
+    ListViewItemLirc *item = new ListViewItemLirc(m_ActionList, m_ActionList->lastChild());
     if (item) {
+        QObject::connect(item, SIGNAL(sigRenamingStarted (ListViewItemLirc *, int)),
+                         this, SLOT  (slotRenamingStarted(ListViewItemLirc *, int)));
+        QObject::connect(item, SIGNAL(sigRenamingStopped (ListViewItemLirc *, int)),
+                         this, SLOT  (slotRenamingStopped(ListViewItemLirc *, int)));
         item->setText(0, descr);
         item->setText(1, key);
         item->setText(2, alt_key);
@@ -140,6 +148,27 @@ void LIRCConfiguration::slotUpdateConfig()
     slotCancel();
 }
 
+void LIRCConfiguration::slotRawLIRCSignal(const QString &val, bool &consumed)
+{
+    QListViewItem *_it = m_ActionList->currentItem();
+    ListViewItemLirc *it = static_cast<ListViewItemLirc*>(_it);
+    if (it->isRenamingInProcess()) {
+        int col = it->getRenamingColumn();
+        it->cancelRename(col);
+        it->setText(col, val);
+        consumed = true;
+    }
+}
+
+void LIRCConfiguration::slotRenamingStarted(ListViewItemLirc */*sender*/, int /*col*/)
+{
+    m_LabelHints->setText(i18n("Enter the key string of your remote or just press the button on your remote control"));
+}
+
+void LIRCConfiguration::slotRenamingStopped(ListViewItemLirc */*sender*/, int /*col*/)
+{
+    m_LabelHints->setText(i18n("Double Click on the entries to change the assignments"));
+}
 
 
 #include "lirc-configuration.moc"

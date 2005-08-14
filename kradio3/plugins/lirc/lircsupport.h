@@ -136,9 +136,11 @@ signals:
 
     void sigUpdateConfig();
 
+    void sigRawLIRCSignal(const QString &what, bool &consumed);
+
 protected:
 
-#ifdef HAVE_LIRC_CLIENT
+#ifdef HAVE_LIRC
     QSocketNotifier        *m_lirc_notify;
     int                     m_fd_lirc;
     struct lirc_config     *m_lircConfig;

@@ -1,7 +1,7 @@
 /***************************************************************************
-                       lirc-configuration.h  -  description
+                       listviewitem_lirc.cpp  -  description
                              -------------------
-    begin                : Sat May 21 2005
+    begin                : Sun Aug 14 2005
     copyright            : (C) 2005 by Martin Witte
     email                : witte@kawo1.rwth-aachen.de
  ***************************************************************************/
@@ -15,42 +15,37 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KRADIO_LIRC_CONFIGURATION_H
-#define KRADIO_LIRC_CONFIGURATION_H
+#ifndef LISTVIEWITEM_LIRC_H
+#define LISTVIEWITEM_LIRC_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
-#include "lirc-configuration-ui.h"
-#include "lircsupport.h"
-#include "listviewitem_lirc.h"
+#include <klistview.h>
 
-class LIRCConfiguration : public LIRCConfigurationUI
+class ListViewItemLirc : public QObject, public KListViewItem
 {
 Q_OBJECT
-public :
-    LIRCConfiguration (QWidget *parent, LircSupport *);
-    ~LIRCConfiguration ();
+public:
+    ListViewItemLirc(QListView *parent, QListViewItem *after);
+    ~ListViewItemLirc();
 
-protected slots:
+    bool isRenamingInProcess() const { return m_renamingInProcess >= 0; }
+    int  getRenamingColumn()   const { return m_renamingInProcess; }
 
-    void slotOK();
-    void slotCancel();
+    virtual void startRename(int col);
+    virtual void okRename(int col);
+    virtual void cancelRename(int col);
 
-    void slotUpdateConfig();
-    void slotRawLIRCSignal(const QString &val, bool &consumed);
+signals:
 
-    void slotRenamingStarted(ListViewItemLirc *, int);
-    void slotRenamingStopped(ListViewItemLirc *, int);
+    void sigRenamingStarted(ListViewItemLirc *sender, int column);
+    void sigRenamingStopped(ListViewItemLirc *sender, int column);
 
 protected:
-    void addKey(const QString &descr, const QString &key, const QString &alt_key);
 
-    LircSupport *m_LIRC;
-
-    QMap<int, LIRC_Actions>     m_order;
-    QMap<LIRC_Actions, QString> m_descriptions;
+    int m_renamingInProcess;
 };
 
 #endif

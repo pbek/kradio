@@ -17,7 +17,7 @@
 
 #include "lircsupport.h"
 
-#ifdef HAVE_LIRC_CLIENT
+#ifdef HAVE_LIRC
 #include <lirc/lirc_client.h>
 #endif
 
@@ -37,7 +37,9 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
+#ifdef HAVE_LIRC
 PLUGIN_LIBRARY_FUNCTIONS(LircSupport, "Linux Infrared Control (LIRC) Support");
+#endif
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -45,7 +47,7 @@ LircSupport::LircSupport(const QString &name)
     : PluginBase(name, i18n("LIRC Plugin"))
 {
 
-#ifdef HAVE_LIRC_CLIENT
+#ifdef HAVE_LIRC
     logDebug(i18n("initializing kradio lirc plugin"));
     char *prg = (char*)"kradio";
     m_fd_lirc = lirc_init(prg, 1);
@@ -79,7 +81,7 @@ LircSupport::LircSupport(const QString &name)
 
 LircSupport::~LircSupport()
 {
-#ifdef HAVE_LIRC_CLIENT
+#ifdef HAVE_LIRC
     if (m_fd_lirc != -1)
         lirc_deinit();
     if (m_lircConfig)
@@ -92,7 +94,7 @@ LircSupport::~LircSupport()
 
 void LircSupport::slotLIRC(int /*socket*/ )
 {
-#ifdef HAVE_LIRC_CLIENT
+#ifdef HAVE_LIRC
     if (!m_lircConfig || !m_lirc_notify || m_fd_lirc == -1)
         return;
 
@@ -100,8 +102,15 @@ void LircSupport::slotLIRC(int /*socket*/ )
     if (lirc_nextcode(&code) == 0) {
         while(lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL) {
 
-            if (!checkActions(c, m_Actions))
-                checkActions(c, m_AlternativeActions);
+            bool consumed = false;
+            logDebug(QString("LIRC: ") + c);
+
+            emit sigRawLIRCSignal(c, consumed);
+
+            if (!consumed) {
+                if (!checkActions(c, m_Actions))
+                    checkActions(c, m_AlternativeActions);
+            }
         }
     }
 
@@ -259,6 +268,8 @@ ConfigPageInfo LircSupport::createConfigurationPage()
 {
     LIRCConfiguration *conf = new LIRCConfiguration(NULL, this);
     QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
+    QObject::connect(this, SIGNAL(sigRawLIRCSignal(const QString &, bool &)),
+                     conf, SLOT  (slotRawLIRCSignal(const QString &, bool &)));
     return ConfigPageInfo (conf,
                            i18n("LIRC Support"),
                            i18n("LIRC Plugin"),
@@ -298,7 +309,7 @@ bool LircSupport::checkActions(const QString &lirc_string, const QMap<LIRC_Actio
 
     QMapConstIterator<LIRC_Actions, QString> it = map.begin();
     QMapConstIterator<LIRC_Actions, QString> end = map.end();
-    for (; it != end; ++it) {
+    for (; !retval && it != end; ++it) {
         if ((*it).length() && lirc_string == *it) {
             LIRC_Actions action = it.key();
             int digit = -1;

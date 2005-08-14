@@ -1,3 +1,15 @@
+2005-08-14
+
+       emw  - big lirc fix, lirc was not for some time due to makefile
+              changes
+            - lirc configuration improvements
+
+2005-08-12
+
+       emw  - fix for --enable-final
+            - partial fix for renamed icon kradio-zzz.png to kradio_zzz.png
+            - small GUI improvements for pause and sleep buttons
+
 2005-08-09
 
 	mcamen  - fix srcdir != builddir
@@ -17,7 +29,7 @@
 	          (namespace pollution, --enable-final fix)
 
 2005-05-28
-	emv     - profiling support - we need to improve startup time
+	emw     - profiling support - we need to improve startup time
                   needs to be commented out for release
                 - big mixer channel handling fix
                 - inconsistencies in restoreState process fixed
