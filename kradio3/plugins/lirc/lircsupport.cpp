@@ -140,7 +140,7 @@ void LircSupport::slotLIRC(int /*socket*/ )
             if (QString(c) == "eventmap") {
                 QStringList l = QStringList::split(" ", code);
                 if (l.count() >=4) {
-                    x = l[2] + " " + l[3];
+                    x = l[2];
                 }
             }
 
@@ -263,19 +263,19 @@ void   LircSupport::restoreState (KConfig *c)
     m_Actions[LIRC_DIGIT_7]          = c->readEntry("LIRC_DIGIT_7", "7");
     m_Actions[LIRC_DIGIT_8]          = c->readEntry("LIRC_DIGIT_8", "8");
     m_Actions[LIRC_DIGIT_9]          = c->readEntry("LIRC_DIGIT_9", "9");
-    m_Actions[LIRC_POWER_ON]         = c->readEntry("LIRC_POWER_ON",         "POWER");
-    m_Actions[LIRC_POWER_OFF]        = c->readEntry("LIRC_POWER_OFF",        "POWER");
-    m_Actions[LIRC_PAUSE]            = c->readEntry("LIRC_PAUSE",            "");
+    m_Actions[LIRC_POWER_ON]         = c->readEntry("LIRC_POWER_ON",         "RADIO");
+    m_Actions[LIRC_POWER_OFF]        = c->readEntry("LIRC_POWER_OFF",        "RADIO");
+    m_Actions[LIRC_PAUSE]            = c->readEntry("LIRC_PAUSE",            "MINIMIZE");
     m_Actions[LIRC_RECORD_START]     = c->readEntry("LIRC_RECORD_START",     "");
     m_Actions[LIRC_RECORD_STOP]      = c->readEntry("LIRC_RECORD_STOP",      "");
     m_Actions[LIRC_VOLUME_INC]       = c->readEntry("LIRC_VOLUME_INC",       "VOL+");
     m_Actions[LIRC_VOLUME_DEC]       = c->readEntry("LIRC_VOLUME_DEC",       "VOL-");
     m_Actions[LIRC_CHANNEL_NEXT]     = c->readEntry("LIRC_CHANNEL_NEXT",     "CH+");
     m_Actions[LIRC_CHANNEL_PREV]     = c->readEntry("LIRC_CHANNEL_PREV",     "CH-");
-    m_Actions[LIRC_SEARCH_NEXT]      = c->readEntry("LIRC_SEARCH_NEXT",      "CH+SEARCH");
-    m_Actions[LIRC_SEARCH_PREV]      = c->readEntry("LIRC_SEARCH_PREV",      "CH-SEARCH");
-    m_Actions[LIRC_SLEEP]            = c->readEntry("LIRC_SLEEP",            "SLEEP");
-    m_Actions[LIRC_APPLICATION_QUIT] = c->readEntry("LIRC_APPLICATION_QUIT", "QUIT");
+    m_Actions[LIRC_SEARCH_NEXT]      = c->readEntry("LIRC_SEARCH_NEXT",      "SOURCE");
+    m_Actions[LIRC_SEARCH_PREV]      = c->readEntry("LIRC_SEARCH_PREV",      "MUTE");
+    m_Actions[LIRC_SLEEP]            = c->readEntry("LIRC_SLEEP",            "");
+    m_Actions[LIRC_APPLICATION_QUIT] = c->readEntry("LIRC_APPLICATION_QUIT", "");
 
 
     m_AlternativeActions[LIRC_DIGIT_0]          = c->readEntry("ALT_LIRC_DIGIT_0", "");
@@ -288,15 +288,15 @@ void   LircSupport::restoreState (KConfig *c)
     m_AlternativeActions[LIRC_DIGIT_7]          = c->readEntry("ALT_LIRC_DIGIT_7", "");
     m_AlternativeActions[LIRC_DIGIT_8]          = c->readEntry("ALT_LIRC_DIGIT_8", "");
     m_AlternativeActions[LIRC_DIGIT_9]          = c->readEntry("ALT_LIRC_DIGIT_9", "");
-    m_AlternativeActions[LIRC_POWER_ON]         = c->readEntry("ALT_LIRC_POWER_ON",         "RADIO");
+    m_AlternativeActions[LIRC_POWER_ON]         = c->readEntry("ALT_LIRC_POWER_ON",         "");
     m_AlternativeActions[LIRC_POWER_OFF]        = c->readEntry("ALT_LIRC_POWER_OFF",        "TV");
     m_AlternativeActions[LIRC_PAUSE]            = c->readEntry("ALT_LIRC_PAUSE",            "");
     m_AlternativeActions[LIRC_RECORD_START]     = c->readEntry("ALT_LIRC_RECORD_START",     "");
     m_AlternativeActions[LIRC_RECORD_STOP]      = c->readEntry("ALT_LIRC_RECORD_STOP",      "");
     m_AlternativeActions[LIRC_VOLUME_INC]       = c->readEntry("ALT_LIRC_VOLUME_INC",       "");
     m_AlternativeActions[LIRC_VOLUME_DEC]       = c->readEntry("ALT_LIRC_VOLUME_DEC",       "");
-    m_AlternativeActions[LIRC_CHANNEL_NEXT]     = c->readEntry("ALT_LIRC_CHANNEL_NEXT",     "NEXT");
-    m_AlternativeActions[LIRC_CHANNEL_PREV]     = c->readEntry("ALT_LIRC_CHANNEL_PREV",     "PREV");
+    m_AlternativeActions[LIRC_CHANNEL_NEXT]     = c->readEntry("ALT_LIRC_CHANNEL_NEXT",     "");
+    m_AlternativeActions[LIRC_CHANNEL_PREV]     = c->readEntry("ALT_LIRC_CHANNEL_PREV",     "");
     m_AlternativeActions[LIRC_SEARCH_NEXT]      = c->readEntry("ALT_LIRC_SEARCH_NEXT",      "");
     m_AlternativeActions[LIRC_SEARCH_PREV]      = c->readEntry("ALT_LIRC_SEARCH_PREV",      "");
     m_AlternativeActions[LIRC_SLEEP]            = c->readEntry("ALT_LIRC_SLEEP",            "");

@@ -368,6 +368,7 @@ bool Radio::noticePowerChanged (bool on, const IRadioDevice *sender)
 
     } else {
         if (sender == m_activeDevice) {
+            sendStopCountdown();
             notifyPowerChanged(false);
             return true;
         }
