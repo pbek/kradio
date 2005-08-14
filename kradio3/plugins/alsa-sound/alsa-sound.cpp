@@ -646,7 +646,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
 {
     bool error = false;
 
-    snd_pcm_hw_params_t *hwparams;
+    snd_pcm_hw_params_t *hwparams = NULL;
 
     snd_pcm_hw_params_alloca(&hwparams);
 
