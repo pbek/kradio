@@ -59,7 +59,7 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &name)
       m_PassivePlaybackStreams(),
       m_PlaybackStreamID(),
       m_CaptureStreamID(),
-      m_BufferSize(65536),
+      m_BufferSize(16384),
       m_PlaybackBuffer(m_BufferSize),
       m_CaptureBuffer(m_BufferSize),
       m_CaptureRequestCounter(0),
@@ -149,7 +149,7 @@ void AlsaSoundDevice::restoreState (KConfig *c)
 
     m_EnablePlayback  = c->readBoolEntry("enable-playback",  true);
     m_EnableCapture   = c->readBoolEntry("enable-capture",   true);
-    m_BufferSize      = c->readNumEntry ("buffer-size",      65536);
+    m_BufferSize      = c->readNumEntry ("buffer-size",      16384);
     int card = c->readNumEntry  ("playback-card",   0);
     int dev  = c->readNumEntry  ("playback-device", 0);
     setPlaybackDevice(card, dev);

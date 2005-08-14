@@ -6,6 +6,7 @@
             - little bit lirc auto setup (default-dot-lirc)
             - little bit v4l device autodetection
             - no message box if stations.krp is not readable on first start
+            - reduced default alsa buffer size. Resulted in internal alsa assertion failures
 
 2005-08-12
 
