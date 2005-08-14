@@ -23,9 +23,11 @@
 
 #include <qsocketnotifier.h>
 #include <qtimer.h>
+#include <qfile.h>
 
 #include <kapplication.h>
 #include <kaboutdata.h>
+#include <kstandarddirs.h>
 
 #include "../../src/interfaces/errorlog-interfaces.h"
 #include "../../src/interfaces/radiodevice_interfaces.h"
@@ -33,6 +35,8 @@
 #include "../../src/libkradio-gui/aboutwidget.h"
 
 #include "lirc-configuration.h"
+
+#define LIRCRC  "~/.lircrc"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
@@ -50,6 +54,21 @@ LircSupport::LircSupport(const QString &name)
 #ifdef HAVE_LIRC
     logDebug(i18n("initializing kradio lirc plugin"));
     char *prg = (char*)"kradio";
+
+    QFile  lircrc(LIRCRC);
+    if (!lircrc.exists()) {
+        logWarning(i18n(LIRCRC " does not exist. File was created with KRadio's default .lircrc proposal\n"));
+        QFile default_lircrc(locate("data", "kradio/default-dot-lircrc"));
+        lircrc.open(IO_WriteOnly);
+        default_lircrc.open(IO_ReadOnly);
+        char *buf = new char [default_lircrc.size() + 1];
+        default_lircrc.readBlock(buf, default_lircrc.size());
+        lircrc.writeBlock(buf, default_lircrc.size());
+        lircrc.close();
+        default_lircrc.close();
+        delete buf;
+    }
+
     m_fd_lirc = lirc_init(prg, 1);
     m_lirc_notify = 0;
     m_lircConfig  = 0;
@@ -102,14 +121,16 @@ void LircSupport::slotLIRC(int /*socket*/ )
     if (lirc_nextcode(&code) == 0) {
         while(lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL) {
 
-            bool consumed = false;
-            logDebug(QString("LIRC: ") + c);
+            QString x = QString(c) == "eventmap" ? code : c;
 
-            emit sigRawLIRCSignal(c, consumed);
+            bool consumed = false;
+            logDebug(QString("LIRC: ") + x);
+
+            emit sigRawLIRCSignal(x, consumed);
 
             if (!consumed) {
-                if (!checkActions(c, m_Actions))
-                    checkActions(c, m_AlternativeActions);
+                if (!checkActions(x, m_Actions))
+                    checkActions(x, m_AlternativeActions);
             }
         }
     }
