@@ -36,7 +36,7 @@
 
 #include "lirc-configuration.h"
 
-#define LIRCRC  "~/.lircrc"
+#define LIRCRC  ".lircrc"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
@@ -55,9 +55,12 @@ LircSupport::LircSupport(const QString &name)
     logDebug(i18n("initializing kradio lirc plugin"));
     char *prg = (char*)"kradio";
 
-    QFile  lircrc(LIRCRC);
+    QString slircrc = getenv("HOME");
+    slircrc += "/" LIRCRC;
+
+    QFile  lircrc(slircrc);
     if (!lircrc.exists()) {
-        logWarning(i18n(LIRCRC " does not exist. File was created with KRadio's default .lircrc proposal\n"));
+        logWarning(i18n(LIRCRC " does not exist. File was created with KRadio's default .lircrc proposal"));
         QFile default_lircrc(locate("data", "kradio/default-dot-lircrc"));
         lircrc.open(IO_WriteOnly);
         default_lircrc.open(IO_ReadOnly);
@@ -133,7 +136,13 @@ void LircSupport::slotLIRC(int /*socket*/ )
     if (lirc_nextcode(&code) == 0) {
         while(lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL) {
 
-            QString x = QString(c) == "eventmap" ? code : c;
+            QString x = c;
+            if (QString(c) == "eventmap") {
+                QStringList l = QStringList::split(" ", code);
+                if (l.count() >=4) {
+                    x = l[2] + " " + l[3];
+                }
+            }
 
             bool consumed = false;
             logDebug(QString("LIRC: ") + x);
