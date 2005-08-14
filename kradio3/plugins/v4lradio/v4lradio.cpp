@@ -32,6 +32,9 @@
 #include <string.h> // memcpy needed
 
 #include <qlayout.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qvaluelist.h>
 
 #include <kconfig.h>
 #include <kiconloader.h>
@@ -893,7 +896,35 @@ void   V4LRadio::restoreState (KConfig *config)
 
     config->setGroup(QString("v4lradio-") + name());
 
-    setRadioDevice(config->readEntry ("RadioDev", "/dev/radio"));
+    QString base_devname = "/dev/radio";
+
+    QStringList testlist (base_devname );
+    for (int i = 0; i < 9; ++i)
+        testlist.append(base_devname + QString::number(i));
+
+    QString found_devname(QString::null);
+    for (QValueListConstIterator<QString> it = testlist.begin(); it != testlist.end(); ++it) {
+        QFile f(*it);
+        if (f.exists()) {
+            QFileInfo info(f);
+            if (info.isReadable() && info.isWritable()) {
+                found_devname = *it;
+                break;
+            }
+            else {
+                logWarning(i18n("Device %1 does exist but is not readable/writable. Please check device permissions.").arg(*it));
+            }
+        }
+    }
+
+    QString default_devname = found_devname.isNull() ? base_devname : found_devname;
+    QString devname = config->readEntry ("RadioDev", default_devname);
+
+    if (found_devname.isNull() && devname == default_devname) {
+        logError("Could not find an accessible v4l(2) radio device.");
+    }
+
+    setRadioDevice(devname);
 
     QString PlaybackMixerID      = config->readEntry ("PlaybackMixerID", QString::null);
     QString PlaybackMixerChannel = config->readEntry ("PlaybackMixerChannel", "Line");
