@@ -6,12 +6,6 @@ end
 
 begin TV-off
 
-    begin
-        prog = xawtv
-        config = eventmap
-    end
-
-
 	begin
 		button = RESERVED
 		repeat = 0
@@ -19,22 +13,17 @@ begin TV-off
 		config = if xset q | grep "DPMS is Enabled" > /dev/null ; then xset -dpms; else xset dpms force off; fi
 	end
 
+ 	begin
+		prog = kradio
+		config = eventmap
+	end
 
 	begin
 		button = TV
 		repeat = 0
 		prog = irexec
-		config = xawtv &
+		config = xset -dpms && sleep 1 && tvtime &
 	end
-
-
- 	begin
-		prog = kradio
-		button = TV
-		repeat = 0
-		config = TV
-	end
-
 
 	begin
 		button = TV
@@ -42,157 +31,164 @@ begin TV-off
 		flags = quit
 	end
 
-
- 	begin
-		prog = kradio
-		button = 1
-		repeat = 0
-		config = 1
-	end
-
-
- 	begin
-		prog = kradio
-		button = 2
-		repeat = 0
-		config = 2
-	end
-
- 	begin
-		prog = kradio
-		button = 3
-		repeat = 0
-		config = 3
-	end
-
- 	begin
-		prog = kradio
-		button = 4
-		repeat = 0
-		config = 4
-	end
-
- 	begin
-		prog = kradio
-		button = 5
-		repeat = 0
-		config = 5
-	end
-
- 	begin
-		prog = kradio
-		button = 6
-		repeat = 0
-		config = 6
-	end
-
- 	begin
-		prog = kradio
-		button = 7
-		repeat = 0
-		config = 7
-	end
-
- 	begin
-		prog = kradio
-		button = 8
-		repeat = 0
-		config = 8
-	end
-
- 	begin
-		prog = kradio
-		button = 9
-		repeat = 0
-		config = 9
-	end
-
- 	begin
-		prog = kradio
-		button = 0
-		repeat = 0
-		config = 0
-	end
-
- 	begin
-		prog = kradio
-		button = CH+
-		repeat = 1
-		config = CH+
-	end
-
-
- 	begin
-		prog = kradio
-		button = CH-
-		repeat = 1
-		config = CH-
-	end
-
- 	begin
-		prog = kradio
-		button = VOL-
-		repeat = 1
-		config = VOL-
-	end
-
- 	begin
-		prog = kradio
-		button = VOL+
-		repeat = 1
-		config = VOL+
-	end
-
- 	begin
-		prog = kradio
-		button = MUTE
-		repeat = 0
-		config = CH-SEARCH
-	end
-
- 	begin
-		prog = kradio
-		button = SOURCE
-		repeat = 0
-		config = CH+SEARCH
-	end
-
-
- 	begin
-		prog = kradio
-		button = RADIO
-		repeat = 0
-		config = POWER
-	end
-
- 	begin
-		prog = kradio
-		button = MINIMIZE
-		repeat = 0
-		config = SLEEP
-	end
-
- 	begin
-		prog = kradio
-		button = FULL_SCREEN
-		repeat = 0
-		config = QUIT
-	end
-	
-
 end TV-off
 
 
 
 begin TV-on
 
-#	begin
-#		button = RESERVED
-#		repeat = 0
-#		prog = irexec
-#		config = xset dpms force off
-#	end
 
+# The following defines most of the common buttons found on a remote and
+# what commads they would map to inside tvtime.
+
+begin
+    prog = irexec
+    button = SOURCE
+    config = tvtime-command TOGGLE_INPUT
+end
+
+#begin
+#    prog = irexec
+#    button = DISPLAY
+#    config = tvtime-command DISPLAY_INFO
+#    repeat = 1
+#end
+
+begin
+    prog = irexec
+    button = FULL_SCREEN
+    config = tvtime-command TOGGLE_FULLSCREEN
+end
+
+#begin
+#    prog = irexec
+#    button = CC
+#    config = tvtime-command TOGGLE_CC
+#end
+
+begin
+    prog = irexec
+    button = MUTE
+    config = tvtime-command TOGGLE_MUTE
+end
+
+# Menu navigation.
+begin
+    prog = irexec
+    button = CH+
+    config = tvtime-command UP
+    repeat = 0
+end
+begin
+    prog = irexec
+    button = CH-
+    config = tvtime-command DOWN
+    repeat = 0
+end
+begin
+    prog = irexec
+    button = VOL+
+    config = tvtime-command RIGHT
+    config = tvtime-command RIGHT
+    repeat = 1
+end
+
+begin
+    prog = irexec
+    button = VOL-
+    config = tvtime-command LEFT
+    config = tvtime-command LEFT
+    repeat = 1
+end
+
+#begin
+#    prog = irexec
+#    button = RECALL
+#    config = tvtime-command CHANNEL_JUMP
+#    repeat = 1
+#end
+
+begin
+    prog   = irexec
+    button = 1
+    config = tvtime-command CHANNEL_1
+end
+begin
+    prog   = irexec
+    button = 2
+    config = tvtime-command CHANNEL_2
+end
+begin
+    prog   = irexec
+    button = 3
+    config = tvtime-command CHANNEL_3
+end
+begin
+    prog   = irexec
+    button = 4
+    config = tvtime-command CHANNEL_4
+end
+begin
+    prog   = irexec
+    button = 5
+    config = tvtime-command CHANNEL_5
+end
+begin
+    prog   = irexec
+    button = 6
+    config = tvtime-command CHANNEL_6
+end
+begin
+    prog   = irexec
+    button = 7
+    config = tvtime-command CHANNEL_7
+end
+begin
+    prog   = irexec
+    button = 8
+    config = tvtime-command CHANNEL_8
+end
+begin
+    prog   = irexec
+    button = 9
+    config = tvtime-command CHANNEL_9
+end
+begin
+    prog   = irexec
+    button = 0
+    config = tvtime-command CHANNEL_0
+end
+
+#begin
+#    prog = irexec
+#    button = ENTER
+#    config = tvtime-command ENTER
+#end
+
+
+    begin
+    	prog   = irexec
+    	button = RESERVED
+    	config = tvtime-command QUIT
+    end
+
+    begin
+    	prog   = irexec
+    	button = MINIMIZE
+    	config = tvtime-command QUIT
+    end
+
+    begin
+    	prog   = irexec
+    	button = RADIO
+    	config = tvtime-command QUIT
+    end
+
+    begin
+    	prog   = irexec
+    	button = TV
+    	config = tvtime-command QUIT
+    end
 
     begin
         button = RESERVED
@@ -200,19 +196,26 @@ begin TV-on
         flags = quit
     end
 
-
     begin
-        prog = xawtv
-        config = eventmap
-		flags = quit
+        button = TV
+        mode = TV-off
+        flags = quit
     end
 
 
-	begin
-	    button = MINIMIZE
-		mode = TV-off
-		flags = quit
-	end
+    begin
+	button = MINIMIZE
+	mode = TV-off
+	flags = quit
+    end
+
+
+    begin
+        button = RADIO
+        mode = TV-off
+        flags = quit
+    end
+
 
 end TV-on
 
