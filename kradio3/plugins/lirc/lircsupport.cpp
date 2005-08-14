@@ -78,6 +78,19 @@ LircSupport::LircSupport(const QString &name)
             m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this, "lirc_notifier");
             if (m_lirc_notify)
                 QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
+
+            // check config
+            lirc_config_entry *e = m_lircConfig->first;
+            lirc_config_entry *found = NULL;
+            for (lirc_config_entry *e = m_lircConfig->first; e; e = e->next) {
+                if (QString(e->prog) == prg)
+                    found = e;
+            }
+            if (!found) {
+                logWarning("There is no entry for kradio in any of your .lircrc files.");
+                logWarning("Please setup your .lircrc files correctly.");
+            }
+
         } else {
             lirc_deinit();
             m_fd_lirc = -1;

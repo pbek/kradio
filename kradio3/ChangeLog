@@ -3,6 +3,7 @@
        emw  - big lirc fix, lirc was not for some time due to makefile
               changes
             - lirc configuration improvements
+            - little bit lirc auto setup (default-dot-lirc)
 
 2005-08-12
 
