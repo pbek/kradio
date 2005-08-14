@@ -193,7 +193,7 @@ void RadioDocking::buildContextMenu()
     m_alarmID  = m_menu->insertTitle ("alarm-dummy");
     noticeNextAlarmChanged(queryNextAlarm());
 
-    m_sleepID  = m_menu->insertItem(SmallIcon("kradio-zzz"), "sleep-dummy",
+    m_sleepID  = m_menu->insertItem(SmallIcon("kradio_zzz"), "sleep-dummy",
                                     this, SLOT(slotSleepCountdown()));
     noticeCountdownStarted(queryCountdownEnd());
 
@@ -332,23 +332,23 @@ bool RadioDocking::noticeNextAlarmChanged(const Alarm *a)
 bool RadioDocking::noticeCountdownStarted(const QDateTime &end)
 {
     if (end.isValid())
-        m_menu->changeItem (m_sleepID, SmallIcon("kradio-zzz"), i18n("Stop Sleep Countdown (running until %1)").arg(end.toString()));
+        m_menu->changeItem (m_sleepID, SmallIcon("kradio_zzz"), i18n("Stop Sleep Countdown (running until %1)").arg(end.toString()));
     else
-        m_menu->changeItem (m_sleepID, SmallIcon("kradio-zzz"), i18n("Start Sleep Countdown"));
+        m_menu->changeItem (m_sleepID, SmallIcon("kradio_zzz"), i18n("Start Sleep Countdown"));
     return true;
 }
 
 
 bool RadioDocking::noticeCountdownStopped()
 {
-    m_menu->changeItem (m_sleepID, SmallIcon("kradio-zzz"), i18n("Start Sleep Countdown"));
+    m_menu->changeItem (m_sleepID, SmallIcon("kradio_zzz"), i18n("Start Sleep Countdown"));
     return true;
 }
 
 
 bool RadioDocking::noticeCountdownZero()
 {
-    m_menu->changeItem (m_sleepID, SmallIcon("kradio-zzz"), i18n("Start Sleep Countdown"));
+    m_menu->changeItem (m_sleepID, SmallIcon("kradio_zzz"), i18n("Start Sleep Countdown"));
     return true;
 }
 
