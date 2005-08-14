@@ -5,6 +5,7 @@
             - lirc configuration improvements
             - little bit lirc auto setup (default-dot-lirc)
             - little bit v4l device autodetection
+            - no message box if stations.krp is not readable on first start
 
 2005-08-12
 

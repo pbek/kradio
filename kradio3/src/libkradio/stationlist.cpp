@@ -326,12 +326,15 @@ bool StationList::readXML (const KURL &url, const IErrorLogClient &logger, bool 
 {
     QString tmpfile;
     if (!KIO::NetAccess::download(url, tmpfile, NULL)) {
-        logger.logError("StationList::readXML: " +
-                 i18n("error downloading preset file %1").arg(url.url()));
         if (enableMessageBox) {
+            logger.logError("StationList::readXML: " +
+                            i18n("error downloading preset file %1").arg(url.url()));
             QMessageBox::warning(NULL, "KRadio",
                                  i18n("Download of the station preset file at %1 failed.")
                                  .arg(url.url()));
+        } else {
+            logger.logWarning("StationList::readXML: " +
+                              i18n("error downloading preset file %1").arg(url.url()));
         }
         return false;
     }

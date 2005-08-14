@@ -92,9 +92,14 @@ void Radio::restoreState (KConfig *config)
     config->setGroup(QString("radio-") + name());
 
     m_presetFile = config->readEntry("presetfile",
-                                     locateLocal("data", "kradio/stations.krp"));
+                                     QString::null);
+    bool first_restore = false;
+    if (m_presetFile.isNull() || m_presetFile.length() == 0) {
+        m_presetFile = locateLocal("data", "kradio/stations.krp");
+        first_restore = true;
+    }
 
-    m_stationList.readXML(KURL(m_presetFile), *this);
+    m_stationList.readXML(KURL(m_presetFile), *this, /*enable-messagebox*/ !first_restore);
 
     notifyStationsChanged(m_stationList);
     notifyPresetFileChanged(m_presetFile);
