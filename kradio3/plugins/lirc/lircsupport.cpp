@@ -265,7 +265,7 @@ void   LircSupport::restoreState (KConfig *c)
     m_Actions[LIRC_DIGIT_9]          = c->readEntry("LIRC_DIGIT_9", "9");
     m_Actions[LIRC_POWER_ON]         = c->readEntry("LIRC_POWER_ON",         "RADIO");
     m_Actions[LIRC_POWER_OFF]        = c->readEntry("LIRC_POWER_OFF",        "RADIO");
-    m_Actions[LIRC_PAUSE]            = c->readEntry("LIRC_PAUSE",            "MINIMIZE");
+    m_Actions[LIRC_PAUSE]            = c->readEntry("LIRC_PAUSE",            "FULL_SCREEN");
     m_Actions[LIRC_RECORD_START]     = c->readEntry("LIRC_RECORD_START",     "");
     m_Actions[LIRC_RECORD_STOP]      = c->readEntry("LIRC_RECORD_STOP",      "");
     m_Actions[LIRC_VOLUME_INC]       = c->readEntry("LIRC_VOLUME_INC",       "VOL+");
@@ -274,7 +274,7 @@ void   LircSupport::restoreState (KConfig *c)
     m_Actions[LIRC_CHANNEL_PREV]     = c->readEntry("LIRC_CHANNEL_PREV",     "CH-");
     m_Actions[LIRC_SEARCH_NEXT]      = c->readEntry("LIRC_SEARCH_NEXT",      "SOURCE");
     m_Actions[LIRC_SEARCH_PREV]      = c->readEntry("LIRC_SEARCH_PREV",      "MUTE");
-    m_Actions[LIRC_SLEEP]            = c->readEntry("LIRC_SLEEP",            "");
+    m_Actions[LIRC_SLEEP]            = c->readEntry("LIRC_SLEEP",            "MINIMIZE");
     m_Actions[LIRC_APPLICATION_QUIT] = c->readEntry("LIRC_APPLICATION_QUIT", "");
 
 
