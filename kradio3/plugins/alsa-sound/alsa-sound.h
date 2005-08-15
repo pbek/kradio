@@ -26,6 +26,8 @@
 #include "../../src/libkradio/plugins.h"
 #include "../../src/interfaces/soundstreamclient_interfaces.h"
 
+#include "alsa-config-mixer-setting.h"
+
 #include <qobject.h>
 #include <qtimer.h>
 #include <alsa/asoundlib.h>
@@ -124,10 +126,15 @@ ANSWERS:
 
     // ISoundStreamClient: mixer access
 
-protected:
-    void getPlaybackMixerChannels(QStringList &retval, QMap<QString, AlsaMixerElement> &int2id) const;
-    void getCaptureMixerChannels(QStringList &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
-                                 QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id) const;
+public:
+    static
+    void getPlaybackMixerChannels(int card, snd_mixer_t *mixer_handle,
+                                  QStringList &retval, QMap<QString, AlsaMixerElement> &int2id);
+    static
+    void getCaptureMixerChannels (int card, snd_mixer_t *mixer_handle,
+                                  QStringList &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
+                                  QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
+                                  QStringList *all_list = NULL);
 
 ANSWERS:
     const QStringList &getPlaybackChannels() const;
@@ -178,12 +185,15 @@ RECEIVERS:
     int            getPlaybackDevice()  const { return m_PlaybackDevice; }
     int            getCaptureCard()     const { return m_CaptureCard; }
     int            getCaptureDevice()   const { return m_CaptureDevice; }
+    const QMap<QString, AlsaConfigMixerSetting> &
+                   getCaptureMixerSettings() const { return m_CaptureMixerSettings; }
 
     void           setBufferSize(int s);
     void           enablePlayback(bool on);
     void           enableCapture(bool on);
     void           setPlaybackDevice(int card, int device);
     void           setCaptureDevice(int card, int device);
+    void           setCaptureMixerSettings(const QMap<QString, AlsaConfigMixerSetting> &map);
 
 protected slots:
 
@@ -204,10 +214,10 @@ protected:
 
     bool   openPlaybackMixerDevice (bool reopen = false);
     bool   openCaptureMixerDevice  (bool reopen = false);
-    bool   openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool reopen, QTimer *timer, int timer_latency) const;
+    static bool   openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool reopen, QTimer *timer, int timer_latency);
     bool   closeCaptureMixerDevice (bool force = false);
     bool   closePlaybackMixerDevice(bool force = false);
-    bool   closeMixerDevice(snd_mixer_t *&mixer_handle, int card, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer) const;
+    static bool   closeMixerDevice(snd_mixer_t *&mixer_handle, int card, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer);
 
     void   checkMixerVolume(SoundStreamID id);
     float  readPlaybackMixerVolume(const QString &channel, bool &muted) const;
@@ -267,6 +277,9 @@ protected:
 
     QTimer          m_PlaybackPollingTimer;
     QTimer          m_CapturePollingTimer;
+
+    QMap<QString, AlsaConfigMixerSetting> m_CaptureMixerSettings;
+
 };
 
 

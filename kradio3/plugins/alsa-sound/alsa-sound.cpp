@@ -140,6 +140,15 @@ void AlsaSoundDevice::saveState (KConfig *c) const
     c->writeEntry("enable-capture",  m_EnableCapture);
     c->writeEntry("buffer-size",     m_BufferSize);
     c->writeEntry("soundstreamclient-id", m_SoundStreamClientID);
+
+    c->writeEntry("mixer-settings",  m_CaptureMixerSettings.count());
+    int i = 0;
+    for (QMapConstIterator<QString, AlsaConfigMixerSetting> it = m_CaptureMixerSettings.begin(); it != m_CaptureMixerSettings.end(); ++it, ++i) {
+
+        QString prefix = QString("mixer-setting-%1-").arg(i);
+        (*it).saveState(c, prefix);
+    }
+
 }
 
 
@@ -161,6 +170,13 @@ void AlsaSoundDevice::restoreState (KConfig *c)
     m_CaptureBuffer.resize(m_BufferSize);
 
     setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
+
+    int n = c->readNumEntry("mixer-settings",  0);
+    for (int i = 0; i < n; ++i) {
+        QString prefix = QString("mixer-setting-%1-").arg(i);
+        AlsaConfigMixerSetting  s(c, prefix);
+        m_CaptureMixerSettings.insert(s.getIDString(), s);
+    }
 
     emit sigUpdateConfig();
 }
@@ -808,7 +824,7 @@ static int mixer_dummy_callback(snd_mixer_t *, unsigned int /*mask*/, snd_mixer_
     return 0;
 }
 
-bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool reopen, QTimer *timer, int timer_latency)  const
+bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool reopen, QTimer *timer, int timer_latency)
 {
     if (reopen) {
         if (mixer_handle >= 0)
@@ -820,23 +836,23 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
     if (!mixer_handle) {
         bool error = false;
         if (snd_mixer_open (&mixer_handle, 0) < 0) {
-            logError("ALSA Plugin: Error opening mixer");
+            staticLogError("ALSA Plugin: Error opening mixer");
             error = true;
         }
         QString cardid = "hw:" + QString::number(card);
         bool attached = false;
         if (!error && snd_mixer_attach (mixer_handle, cardid.ascii()) < 0) {
-            logError(i18n("ALSA Plugin: ERROR: snd_mixer_attach for card %1").arg(card));
+            staticLogError(i18n("ALSA Plugin: ERROR: snd_mixer_attach for card %1").arg(card));
             error = true;
         } else {
             attached = true;
         }
         if (!error && snd_mixer_selem_register(mixer_handle, NULL, NULL) < 0) {
-            logError(i18n("ALSA Plugin: Error: snd_mixer_selem_register for card %1").arg(card));
+            staticLogError(i18n("ALSA Plugin: Error: snd_mixer_selem_register for card %1").arg(card));
             error = true;
         }
         if (!error && snd_mixer_load (mixer_handle) < 0) {
-            logError(i18n("ALSA Plugin: Error: snd_mixer_load for card %1").arg(card));
+            staticLogError(i18n("ALSA Plugin: Error: snd_mixer_load for card %1").arg(card));
             error = true;
         }
         snd_mixer_set_callback (mixer_handle, mixer_dummy_callback);
@@ -857,7 +873,7 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
 }
 
 
-bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, int card, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer) const
+bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, int card, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer)
 {
     if (!id.isValid() || force) {
 
@@ -875,16 +891,19 @@ bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, int card, Sou
     return mixer_handle == NULL;
 }
 
-void AlsaSoundDevice::getPlaybackMixerChannels(QStringList &retval, QMap<QString, AlsaMixerElement> &ch2id) const
+void AlsaSoundDevice::getPlaybackMixerChannels(
+    int card,
+    snd_mixer_t *__mixer_handle,
+    QStringList &retval, QMap<QString, AlsaMixerElement> &ch2id)
 {
     retval.clear();
     ch2id.clear();
 
-    snd_mixer_t *mixer_handle = m_hPlaybackMixer;
+    snd_mixer_t *mixer_handle = __mixer_handle/*m_hPlaybackMixer*/;
     bool         use_tmp_handle = false;
 
     if (!mixer_handle) {
-        openMixerDevice(mixer_handle, m_PlaybackCard, false, NULL, 0);
+        openMixerDevice(mixer_handle, card/*m_PlaybackCard*/, false, NULL, 0);
         use_tmp_handle = true;
     }
 
@@ -906,24 +925,27 @@ void AlsaSoundDevice::getPlaybackMixerChannels(QStringList &retval, QMap<QString
     }
 
     if (use_tmp_handle) {
-        closeMixerDevice(mixer_handle, m_PlaybackCard, SoundStreamID::InvalidID, NULL, true, NULL);
+        closeMixerDevice(mixer_handle, card /*m_PlaybackCard*/, SoundStreamID::InvalidID, NULL, true, NULL);
     }
 }
 
 void AlsaSoundDevice::getCaptureMixerChannels(
+    int card,
+    snd_mixer_t *__mixer_handle,
     QStringList &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
-    QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id
-) const
+    QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
+    QStringList *all_list
+)
 {
     vol_list.clear();
     vol_ch2id.clear();
 
-    snd_mixer_t *mixer_handle = m_hCaptureMixer;
+    snd_mixer_t *mixer_handle = __mixer_handle /*m_hCaptureMixer*/;
     bool         use_tmp_handle = false;
 
     if (!mixer_handle) {
-        logDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + QString::number(m_CaptureCard));
-        openMixerDevice(mixer_handle, m_CaptureCard, false, NULL, 0);
+        staticLogDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + QString::number(card/*m_CaptureCard*/));
+        openMixerDevice(mixer_handle, card /*m_CaptureCard*/, false, NULL, 0);
         use_tmp_handle = true;
     }
 
@@ -939,18 +961,24 @@ void AlsaSoundDevice::getCaptureMixerChannels(
         if (idx)
             name += " " + QString::number(idx);
 
+        bool add2all = false;
         if (snd_mixer_selem_has_capture_switch(elem)) {
             sw_ch2id[name] = sid;
             sw_list.append(name);
+            add2all = true;
         }
         if (snd_mixer_selem_has_capture_volume(elem)) {
             vol_ch2id[name] = sid;
             vol_list.append(name);
+            add2all = true;
+        }
+        if (add2all && all_list) {
+            all_list->append(name);
         }
     }
 
     if (use_tmp_handle) {
-        closeMixerDevice(mixer_handle, m_CaptureCard, SoundStreamID::InvalidID, NULL, true, NULL);
+        closeMixerDevice(mixer_handle, card /*m_CaptureCard*/, SoundStreamID::InvalidID, NULL, true, NULL);
     }
 }
 
@@ -1240,6 +1268,17 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
     if (m_CaptureChannelsSwitch2ID.contains(Capture)) {
         writeCaptureMixerSwitch(Capture, true);
     }
+
+    for (QMapConstIterator<QString, AlsaConfigMixerSetting> it = m_CaptureMixerSettings.begin(); it != m_CaptureMixerSettings.end(); ++it) {
+        const AlsaConfigMixerSetting &s = *it;
+        if (s.m_card == m_CaptureCard && s.m_use) {
+            float vol = s.m_volume;
+            if (m_CaptureChannels2ID.contains(s.m_name))
+                writeCaptureMixerVolume(s.m_name, vol);
+            if (m_CaptureChannelsSwitch2ID.contains(s.m_name))
+                writeCaptureMixerSwitch(s.m_name, s.m_active);
+        }
+    }
 }
 
 
@@ -1274,7 +1313,9 @@ void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
     if (m_hPlayback)
         openPlaybackDevice(f, /* reopen = */ true);
 
-    getPlaybackMixerChannels(m_PlaybackChannels, m_PlaybackChannels2ID);
+    getPlaybackMixerChannels(m_PlaybackCard,
+                             m_hPlaybackMixer,
+                             m_PlaybackChannels, m_PlaybackChannels2ID);
     notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
 }
 
@@ -1292,7 +1333,9 @@ void AlsaSoundDevice::setCaptureDevice(int card, int dev)
     if (m_hCapture)
         openCaptureDevice(f, /* reopen = */ true);
 
-    getCaptureMixerChannels(m_CaptureChannels, m_CaptureChannels2ID, m_CaptureChannelsSwitch, m_CaptureChannelsSwitch2ID);
+    getCaptureMixerChannels(m_CaptureCard,
+                            m_hCaptureMixer,
+                            m_CaptureChannels, m_CaptureChannels2ID, m_CaptureChannelsSwitch, m_CaptureChannelsSwitch2ID);
     notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
 }
 
@@ -1343,5 +1386,9 @@ bool AlsaSoundDevice::isMuted(SoundStreamID id, bool &m) const
 }
 
 
+void AlsaSoundDevice::setCaptureMixerSettings(const QMap<QString, AlsaConfigMixerSetting> &map)
+{
+    m_CaptureMixerSettings = map;
+}
 
 #include "alsa-sound.moc"
