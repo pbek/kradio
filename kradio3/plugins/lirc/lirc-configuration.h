@@ -39,7 +39,7 @@ protected slots:
     void slotCancel();
 
     void slotUpdateConfig();
-    void slotRawLIRCSignal(const QString &val, bool &consumed);
+    void slotRawLIRCSignal(const QString &val, int repeat_counter, bool &consumed);
 
     void slotRenamingStarted(ListViewItemLirc *, int);
     void slotRenamingStopped(ListViewItemLirc *, int);

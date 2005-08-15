@@ -912,12 +912,15 @@ void   V4LRadio::restoreState (KConfig *config)
                 break;
             }
             else {
+                if (found_devname.isNull())
+                    found_devname = *it;
                 logWarning(i18n("Device %1 does exist but is not readable/writable. Please check device permissions.").arg(*it));
             }
         }
     }
 
     QString default_devname = found_devname.isNull() ? base_devname : found_devname;
+
     QString devname = config->readEntry ("RadioDev", default_devname);
 
     if (found_devname.isNull() && devname == default_devname) {

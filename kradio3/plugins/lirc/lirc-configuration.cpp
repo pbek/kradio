@@ -148,7 +148,7 @@ void LIRCConfiguration::slotUpdateConfig()
     slotCancel();
 }
 
-void LIRCConfiguration::slotRawLIRCSignal(const QString &val, bool &consumed)
+void LIRCConfiguration::slotRawLIRCSignal(const QString &val, int /*repeat_counter*/, bool &consumed)
 {
     QListViewItem *_it = m_ActionList->currentItem();
     ListViewItemLirc *it = static_cast<ListViewItemLirc*>(_it);

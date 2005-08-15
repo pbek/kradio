@@ -126,7 +126,7 @@ RECEIVERS:
 
 protected:
     void     activateStation(int i);
-    bool     checkActions(const QString &string, const QMap<LIRC_Actions, QString> &map);
+    bool     checkActions(const QString &string, int repeat_counter, const QMap<LIRC_Actions, QString> &map);
 
 protected slots:
     void slotLIRC(int socket);
@@ -136,7 +136,7 @@ signals:
 
     void sigUpdateConfig();
 
-    void sigRawLIRCSignal(const QString &what, bool &consumed);
+    void sigRawLIRCSignal(const QString &what, int repeat_counter, bool &consumed);
 
 protected:
 
@@ -148,6 +148,7 @@ protected:
 
     QTimer                 *m_kbdTimer;
     int                     m_addIndex;
+    bool                    m_TakeRawLIRC;
 
     QMap<LIRC_Actions, QString>  m_Actions;
     QMap<LIRC_Actions, QString>  m_AlternativeActions;

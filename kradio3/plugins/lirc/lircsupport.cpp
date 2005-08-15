@@ -48,7 +48,8 @@ PLUGIN_LIBRARY_FUNCTIONS(LircSupport, "Linux Infrared Control (LIRC) Support");
 /////////////////////////////////////////////////////////////////////////////
 
 LircSupport::LircSupport(const QString &name)
-    : PluginBase(name, i18n("LIRC Plugin"))
+    : PluginBase(name, i18n("LIRC Plugin")),
+      m_TakeRawLIRC(false)
 {
 
 #ifdef HAVE_LIRC
@@ -91,6 +92,7 @@ LircSupport::LircSupport(const QString &name)
             if (!found) {
                 logWarning("There is no entry for kradio in any of your .lircrc files.");
                 logWarning("Please setup your .lircrc files correctly.");
+                m_TakeRawLIRC = true;
             }
 
         } else {
@@ -134,24 +136,26 @@ void LircSupport::slotLIRC(int /*socket*/ )
 
     char *code = 0, *c = 0;
     if (lirc_nextcode(&code) == 0) {
-        while(lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL) {
+        while(m_TakeRawLIRC || (lirc_code2char (m_lircConfig, code, &c) == 0 && c != NULL)) {
 
             QString x = c;
-            if (QString(c) == "eventmap") {
+            int     repeat_counter = 1;
+            if (m_TakeRawLIRC || (QString(c) == "eventmap")) {
                 QStringList l = QStringList::split(" ", code);
                 if (l.count() >=4) {
                     x = l[2];
+                    repeat_counter = l[1].toInt(NULL, 16);
                 }
             }
 
             bool consumed = false;
             logDebug(QString("LIRC: ") + x);
 
-            emit sigRawLIRCSignal(x, consumed);
+            emit sigRawLIRCSignal(x, repeat_counter, consumed);
 
             if (!consumed) {
-                if (!checkActions(x, m_Actions))
-                    checkActions(x, m_AlternativeActions);
+                if (!checkActions(x, repeat_counter, m_Actions))
+                    checkActions(x, repeat_counter, m_AlternativeActions);
             }
         }
     }
@@ -310,8 +314,8 @@ ConfigPageInfo LircSupport::createConfigurationPage()
 {
     LIRCConfiguration *conf = new LIRCConfiguration(NULL, this);
     QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
-    QObject::connect(this, SIGNAL(sigRawLIRCSignal(const QString &, bool &)),
-                     conf, SLOT  (slotRawLIRCSignal(const QString &, bool &)));
+    QObject::connect(this, SIGNAL(sigRawLIRCSignal(const QString &, int, bool &)),
+                     conf, SLOT  (slotRawLIRCSignal(const QString &, int, bool &)));
     return ConfigPageInfo (conf,
                            i18n("LIRC Support"),
                            i18n("LIRC Plugin"),
@@ -341,7 +345,7 @@ AboutPageInfo LircSupport::createAboutPage()
 }
 
 
-bool LircSupport::checkActions(const QString &lirc_string, const QMap<LIRC_Actions, QString> &map)
+bool LircSupport::checkActions(const QString &lirc_string, int repeat_counter, const QMap<LIRC_Actions, QString> &map)
 {
     SoundStreamID streamID = queryCurrentSoundStreamID();
 
@@ -357,73 +361,93 @@ bool LircSupport::checkActions(const QString &lirc_string, const QMap<LIRC_Actio
             int digit = -1;
             switch (action) {
                 case LIRC_DIGIT_0 :
-                    digit = 0;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 0;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_1 :
-                    digit = 1;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 1;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_2 :
-                    digit = 2;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 2;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_3 :
-                    digit = 3;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 3;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_4 :
-                    digit = 4;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 4;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_5 :
-                    digit = 5;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 5;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_6 :
-                    digit = 6;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 6;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_7 :
-                    digit = 7;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 7;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_8 :
-                    digit = 8;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 8;
+                        retval = true;
+                    }
                     break;
                 case LIRC_DIGIT_9 :
-                    digit = 9;
-                    retval = true;
+                    if (repeat_counter == 0) {
+                        digit = 9;
+                        retval = true;
+                    }
                     break;
                 case LIRC_POWER_ON :
-                    if (!queryIsPowerOn()) {
+                    if (repeat_counter == 0 && !queryIsPowerOn()) {
                         retval = true;
                         sendPowerOn();
                     }
                     break;
                 case LIRC_POWER_OFF :
-                    if (queryIsPowerOn()) {
+                    if (repeat_counter == 0 && queryIsPowerOn()) {
                         retval = true;
                         sendPowerOff();
                     }
                     break;
                 case LIRC_PAUSE :
-                    if (queryIsPowerOn()) {
+                    if (repeat_counter == 0 && queryIsPowerOn()) {
                         retval = true;
                         sendPausePlayback(streamID);
                     }
                     break;
                 case LIRC_RECORD_START :
                     queryIsRecordingRunning(streamID, q = false);
-                    if (!q) {
+                    if (repeat_counter == 0 && !q) {
                         retval = true;
                         sendStartRecording(streamID);
                     }
                     break;
                 case LIRC_RECORD_STOP :
                     queryIsRecordingRunning(streamID, q = false);
-                    if (q) {
+                    if (repeat_counter == 0 && q) {
                         retval = true;
                         sendStopRecording(streamID);
                     }
@@ -445,7 +469,7 @@ bool LircSupport::checkActions(const QString &lirc_string, const QMap<LIRC_Actio
                     }
                     break;
                 case LIRC_CHANNEL_NEXT :
-                    if (queryIsPowerOn()) {
+                    if (repeat_counter == 0 && queryIsPowerOn()) {
                         retval = true;
                         int k = queryCurrentStationIdx() + 1;
                         if (k >= queryStations().count())
@@ -454,7 +478,7 @@ bool LircSupport::checkActions(const QString &lirc_string, const QMap<LIRC_Actio
                     }
                     break;
                 case LIRC_CHANNEL_PREV :
-                    if (queryIsPowerOn()) {
+                    if (repeat_counter == 0 && queryIsPowerOn()) {
                         retval = true;
                         int k = queryCurrentStationIdx() - 1;
                         if (k < 0)
@@ -463,21 +487,21 @@ bool LircSupport::checkActions(const QString &lirc_string, const QMap<LIRC_Actio
                     }
                     break;
                 case LIRC_SEARCH_NEXT :
-                    if (queryIsPowerOn()) {
+                    if (repeat_counter == 0 && queryIsPowerOn()) {
                         retval = true;
                         seeker = dynamic_cast<ISeekRadio*> (queryActiveDevice());
                         seeker->startSeekUp();
                     }
                     break;
                 case LIRC_SEARCH_PREV :
-                    if (queryIsPowerOn()) {
+                    if (repeat_counter == 0 && queryIsPowerOn()) {
                         retval = true;
                         seeker = dynamic_cast<ISeekRadio*> (queryActiveDevice());
                         seeker->startSeekDown();
                     }
                     break;
                 case LIRC_SLEEP :
-                    if (queryIsPowerOn()) {
+                    if (repeat_counter == 0 && queryIsPowerOn()) {
                         retval = true;
                         sendStartCountdown();
                     }
