@@ -27,7 +27,8 @@
 INTERFACE(IErrorLog, IErrorLogClient)
 {
 public :
-    IF_CON_DESTRUCTOR(IErrorLog, -1)
+    IErrorLog();
+    virtual ~IErrorLog() {}
 
 RECEIVERS:
     IF_RECEIVER(    logError  (const QString &)         )
@@ -52,6 +53,11 @@ public:
     void logWarning(const QString &s) const { sendLogWarning(s); }
     void logInfo   (const QString &s) const { sendLogInfo(s);    }
     void logDebug  (const QString &s) const { sendLogDebug(s);   }
+
+    static void staticLogError  (const QString &s);
+    static void staticLogWarning(const QString &s);
+    static void staticLogInfo   (const QString &s);
+    static void staticLogDebug  (const QString &s);
 };
 
 

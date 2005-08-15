@@ -20,6 +20,16 @@
 #include <kdebug.h>
 #include <qdatetime.h>
 
+IErrorLog *staticLogger = NULL;
+
+IErrorLog::IErrorLog()
+ : BaseClass(-1)
+{
+    if (!staticLogger)
+        staticLogger = this;
+}
+
+
 int IErrorLogClient::sendLogError(const QString &s) const
 {
     kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
@@ -53,5 +63,41 @@ int IErrorLogClient::sendLogDebug(const QString &s) const
               << " Debug: "
               << s << endl;
     IF_SEND_MESSAGE(logDebug(s));
+}
+
+void IErrorLogClient::staticLogError  (const QString &s)
+{
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Error: "
+              << s << endl;
+    if (staticLogger)
+        staticLogger->logError(s);
+}
+
+void IErrorLogClient::staticLogWarning(const QString &s)
+{
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Warning: "
+              << s << endl;
+    if (staticLogger)
+        staticLogger->logWarning(s);
+}
+
+void IErrorLogClient::staticLogInfo   (const QString &s)
+{
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Information: "
+              << s << endl;
+    if (staticLogger)
+        staticLogger->logInfo(s);
+}
+
+void IErrorLogClient::staticLogDebug  (const QString &s)
+{
+    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+              << " Debug: "
+              << s << endl;
+    if (staticLogger)
+        staticLogger->logDebug(s);
 }
 

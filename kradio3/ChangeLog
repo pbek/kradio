@@ -1,6 +1,13 @@
+2005-08-15
+
+       emw  - enhanced ALSA configuration dialog by individually selectable 
+              capture mixer presets
+            - consider lirc repeat counts
+            - provide logging outside of classes
+
 2005-08-14
 
-       emw  - big lirc fix, lirc was not for some time due to makefile
+       emw  - big lirc fix, lirc was not working for some time due to makefile
               changes
             - lirc configuration improvements
             - little bit lirc auto setup (default-dot-lirc)
