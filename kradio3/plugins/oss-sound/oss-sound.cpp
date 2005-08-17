@@ -384,10 +384,11 @@ bool OSSSoundDevice::stopCapture(SoundStreamID id)
 }
 
 
-bool OSSSoundDevice::isCaptureRunning(SoundStreamID id, bool &b) const
+bool OSSSoundDevice::isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const
 {
     if (id.isValid() && m_CaptureStreamID == id) {
-        b = true;
+        b  = true;
+        sf = m_DSPFormat;
         return true;
     } else {
         return false;

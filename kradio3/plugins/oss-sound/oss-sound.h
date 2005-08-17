@@ -128,7 +128,7 @@ RECEIVERS:
                       SoundFormat       &real_format,
                       bool               force_format);
     bool stopCapture(SoundStreamID id);
-    bool isCaptureRunning(SoundStreamID id, bool &b) const;
+    bool isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
 
     bool noticeSoundStreamClosed(SoundStreamID id);
     bool noticeSoundStreamRedirected(SoundStreamID oldID, SoundStreamID newID);
