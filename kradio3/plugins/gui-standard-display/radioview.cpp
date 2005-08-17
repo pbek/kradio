@@ -317,7 +317,8 @@ bool RadioView::noticeStationChanged (const RadioStation &, int idx)
     comboStations->setCurrentItem(idx + 1);
     autoSetCaption();
     bool r = false;
-    queryIsRecordingRunning(queryCurrentSoundStreamID(), r);
+    SoundFormat   sf;
+    queryIsRecordingRunning(queryCurrentSoundStreamID(), r, sf);
     m_RecordingMenu->setItemEnabled(POPUP_ID_START_RECORDING_DEFAULT, !r);
     return true;
 }
@@ -677,7 +678,8 @@ void RadioView::slotRecord()
     bool b = btnRecording->isOn();
 
     bool r = false;
-    queryIsRecordingRunning(id, r);
+    SoundFormat   sf;
+    queryIsRecordingRunning(id, r, sf);
 
     if (!r && b /*!m_StreamID2MenuID.contains(id)*/) {
         if (!queryIsPowerOn())
@@ -694,7 +696,8 @@ void RadioView::slotRecordingMenu(int i)
     if (i == POPUP_ID_START_RECORDING_DEFAULT) {
         SoundStreamID id = queryCurrentSoundStreamID();
         bool          r  = false;
-        queryIsRecordingRunning(id, r);
+        SoundFormat   sf;
+        queryIsRecordingRunning(id, r, sf);
         if (!r) {
             if (!queryIsPowerOn())
                 sendPowerOn();

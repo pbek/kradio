@@ -522,10 +522,11 @@ bool Recording::noticeSoundStreamChanged(SoundStreamID id)
 }
 
 
-bool Recording::isRecordingRunning(SoundStreamID id, bool &b) const
+bool Recording::isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) const
 {
     if (m_EncodingThreads.contains(id)) {
-        b = m_EncodingThreads[id]->running();
+        b  = m_EncodingThreads[id]->running();
+        sf = getSoundFormat();
         return true;
     }
     return false;

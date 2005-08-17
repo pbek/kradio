@@ -389,7 +389,8 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
     }
 
     bool r = false;
-    queryIsRecordingRunning(queryCurrentSoundStreamID(), r);
+    SoundFormat sf;
+    queryIsRecordingRunning(queryCurrentSoundStreamID(), r, sf);
     m_recordingMenu->setItemEnabled(m_recordingID, !r);
     return true;
 }
@@ -503,7 +504,8 @@ void RadioDocking::slotRecordingMenu(int i)
     if (i == POPUP_ID_START_RECORDING_DEFAULT) {
         SoundStreamID id = queryCurrentSoundStreamID();
         bool          r  = false;
-        queryIsRecordingRunning(id, r);
+        SoundFormat   sf;
+        queryIsRecordingRunning(id, r, sf);
         if (!r) {
             if (!queryIsPowerOn())
                 sendPowerOn();
@@ -533,7 +535,8 @@ void RadioDocking::buildRecordingMenu()
         SoundStreamID id    = *it;
         QString       descr = it.key();
         bool r = false;
-        queryIsRecordingRunning(id, r);
+        SoundFormat   sf;
+        queryIsRecordingRunning(id, r, sf);
         if (r) {
             int menu_id = m_NextRecordingMenuID++;
             m->insertItem(SmallIcon("kradio_record"),

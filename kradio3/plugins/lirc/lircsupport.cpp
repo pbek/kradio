@@ -351,6 +351,7 @@ bool LircSupport::checkActions(const QString &lirc_string, int repeat_counter, c
 
     bool        retval = false;
     bool        q      = false;
+    SoundFormat sf;
     ISeekRadio *seeker = NULL;
 
     QMapConstIterator<LIRC_Actions, QString> it = map.begin();
@@ -439,14 +440,14 @@ bool LircSupport::checkActions(const QString &lirc_string, int repeat_counter, c
                     }
                     break;
                 case LIRC_RECORD_START :
-                    queryIsRecordingRunning(streamID, q = false);
+                    queryIsRecordingRunning(streamID, q = false, sf);
                     if (repeat_counter == 0 && !q) {
                         retval = true;
                         sendStartRecording(streamID);
                     }
                     break;
                 case LIRC_RECORD_STOP :
-                    queryIsRecordingRunning(streamID, q = false);
+                    queryIsRecordingRunning(streamID, q = false, sf);
                     if (repeat_counter == 0 && q) {
                         retval = true;
                         sendStopRecording(streamID);

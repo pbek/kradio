@@ -112,7 +112,7 @@ protected:
     bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format);
     bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, const SoundMetaData &md);
     bool stopRecording(SoundStreamID id);
-    bool isRecordingRunning(SoundStreamID id, bool &b) const;
+    bool isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
 
     bool getSoundStreamDescription(SoundStreamID id, QString &descr)           const;
     bool getSoundStreamRadioStation(SoundStreamID id, const RadioStation *&rs) const;

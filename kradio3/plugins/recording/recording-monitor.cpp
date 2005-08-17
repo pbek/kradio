@@ -360,7 +360,8 @@ void RecordingMonitor::slotStreamSelected(int idx)
     }
     m_currentStream = id;
     m_recording = false;
-    queryIsRecordingRunning(m_currentStream, m_recording);
+    SoundFormat sf;
+    queryIsRecordingRunning(m_currentStream, m_recording, sf);
     updateRecordingButton();
 }
 

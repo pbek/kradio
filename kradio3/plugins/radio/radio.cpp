@@ -471,7 +471,8 @@ bool Radio::noticeAlarm(const Alarm &a)
 
         SoundStreamID id = getCurrentSoundStreamID();
         bool r = false;
-        queryIsRecordingRunning(id, r);
+        SoundFormat sf;
+        queryIsRecordingRunning(id, r, sf);
         if (a.alarmType() == Alarm::StartRecording && !r)
             sendStartRecording(id);
 
