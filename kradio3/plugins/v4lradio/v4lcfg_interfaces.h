@@ -78,6 +78,7 @@ RECEIVERS:
     IF_RECEIVER(   setPlaybackMixer(const QString &soundStreamClientID, const QString &ch)  )
     IF_RECEIVER(   setCaptureMixer (const QString &soundStreamClientID, const QString &ch)  )
     IF_RECEIVER(   setDeviceVolume(float v)                                      )
+    IF_RECEIVER(   setActivePlayback(bool a)                                     )
 
 SENDERS:
     IF_SENDER  (   notifyRadioDeviceChanged  (const QString &s)                   )
@@ -85,6 +86,7 @@ SENDERS:
     IF_SENDER  (   notifyCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel)      )
     IF_SENDER  (   notifyDeviceVolumeChanged (float v)                           )
     IF_SENDER  (   notifyCapabilitiesChanged (const V4LCaps &)                   )
+    IF_SENDER  (   notifyActivePlaybackChanged (bool a)                          )
 
 ANSWERS:
     IF_ANSWER  (   const QString &getRadioDevice () const                       )
@@ -94,6 +96,7 @@ ANSWERS:
     IF_ANSWER  (   const QString &getCaptureMixerChannel() const                )
     IF_ANSWER  (   float          getDeviceVolume() const                       )
     IF_ANSWER  (   V4LCaps        getCapabilities(QString dev = QString::null) const )
+    IF_ANSWER  (   bool           getActivePlayback() const                     )
 };
 
 
@@ -108,6 +111,7 @@ SENDERS:
     IF_SENDER  (   sendPlaybackMixer(const QString &soundStreamClientID, const QString &ch) )
     IF_SENDER  (   sendCaptureMixer (const QString &soundStreamClientID, const QString &ch) )
     IF_SENDER  (   sendDeviceVolume(float v)                                     )
+    IF_SENDER  (   sendActivePlayback(bool a)                                    )
 
 RECEIVERS:
     IF_RECEIVER(   noticeRadioDeviceChanged(const QString &s)                    )
@@ -115,6 +119,7 @@ RECEIVERS:
     IF_RECEIVER(   noticeCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel)       )
     IF_RECEIVER(   noticeDeviceVolumeChanged(float v)                            )
     IF_RECEIVER(   noticeCapabilitiesChanged(const V4LCaps &)                    )
+    IF_RECEIVER(   noticeActivePlaybackChanged(bool a)                           )
 
 QUERIES:
     IF_QUERY   (   const QString &queryRadioDevice ()                            )
@@ -124,6 +129,7 @@ QUERIES:
     IF_QUERY   (   const QString &queryCaptureMixerChannel()                     )
     IF_QUERY   (   float          queryDeviceVolume()                            )
     IF_QUERY   (   V4LCaps        queryCapabilities(QString dev = QString::null) )
+    IF_QUERY   (   bool           queryActivePlayback()                          )
 
 RECEIVERS:
     virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/);

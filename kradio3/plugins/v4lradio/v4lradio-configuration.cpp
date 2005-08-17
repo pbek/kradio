@@ -27,6 +27,7 @@
 #include <qfile.h>
 #include <qpushbutton.h>
 #include <qslider.h>
+#include <qcheckbox.h>
 
 #include <kfiledialog.h>
 #include <knuminput.h>
@@ -284,6 +285,14 @@ bool V4LRadioConfiguration::noticeCapabilitiesChanged(const V4LCaps &c)
     return true;
 }
 
+bool V4LRadioConfiguration::noticeActivePlaybackChanged(bool a)
+{
+    bool old = m_ignoreGUIChanges;
+    m_ignoreGUIChanges = true;
+    m_checkboxActivePlayback->setChecked(a);
+    m_ignoreGUIChanges = old;
+    return true;
+}
 
 // IRadioDeviceClient
 
@@ -479,6 +488,8 @@ void V4LRadioConfiguration::slotOK()
     sendCaptureMixer (m_CaptureMixerHelper.getCurrentItem(),
                       m_CaptureChannelHelper.getCurrentText());
 
+    sendActivePlayback(m_checkboxActivePlayback->isChecked());
+
     queryTreble (m_SoundStreamID, m_orgTreble);
     queryBass   (m_SoundStreamID, m_orgBass);
     queryBalance(m_SoundStreamID, m_orgBalance);
@@ -492,6 +503,8 @@ void V4LRadioConfiguration::slotCancel()
     noticePlaybackMixerChanged(queryPlaybackMixerID(), queryPlaybackMixerChannel());
     noticeCaptureMixerChanged (queryCaptureMixerID(),  queryCaptureMixerChannel());
     noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
+    noticeActivePlaybackChanged(queryActivePlayback());
+
     float q = 0;
     querySignalMinQuality(m_SoundStreamID, q);
     noticeSignalMinQualityChanged(m_SoundStreamID, q);

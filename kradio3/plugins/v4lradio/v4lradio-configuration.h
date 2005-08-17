@@ -57,6 +57,7 @@ RECEIVERS:
     bool noticeCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel);
     bool noticeDeviceVolumeChanged(float v);
     bool noticeCapabilitiesChanged(const V4LCaps &c);
+    bool noticeActivePlaybackChanged(bool a);
 
 // IRadioDeviceClient
 

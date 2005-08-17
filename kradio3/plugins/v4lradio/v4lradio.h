@@ -158,6 +158,7 @@ RECEIVERS:
     bool  setPlaybackMixer(const QString &soundStreamClientID, const QString &ch);
     bool  setCaptureMixer (const QString &soundStreamClientID, const QString &ch);
     bool  setDeviceVolume (float v);
+    bool  setActivePlayback(bool a);
 
     // if the radio is powered off, we will handle the volume by changing m_defaultPlaybackVolume
     bool setPlaybackVolume(SoundStreamID id, float volume);
@@ -171,6 +172,7 @@ ANSWERS:
     const QString &getCaptureMixerChannel () const { return m_CaptureMixerChannel; }
     float          getDeviceVolume        () const;
     V4LCaps        getCapabilities(QString dev = QString::null) const;
+    bool           getActivePlayback() const;
 
     // anything else
 
@@ -241,6 +243,8 @@ protected:
     QString                       m_CaptureMixerID;
     QString                       m_PlaybackMixerChannel;
     QString                       m_CaptureMixerChannel;
+
+    bool                          m_ActivePlayback;
 };
 
 #endif

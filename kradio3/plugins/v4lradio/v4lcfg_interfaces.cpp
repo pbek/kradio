@@ -78,6 +78,10 @@ IF_IMPL_SENDER  (   IV4LCfg::notifyCapabilitiesChanged(const V4LCaps &c),
                     noticeCapabilitiesChanged(c)
                 )
 
+IF_IMPL_SENDER  (   IV4LCfg::notifyActivePlaybackChanged(bool a),
+                    noticeActivePlaybackChanged(a)
+                )
+
 // IV4LCfgClient
 
 IF_IMPL_SENDER  (   IV4LCfgClient::sendRadioDevice (const QString &s),
@@ -91,6 +95,10 @@ IF_IMPL_SENDER  (   IV4LCfgClient::sendCaptureMixer(const QString &s, const QStr
                 )
 IF_IMPL_SENDER  (   IV4LCfgClient::sendDeviceVolume(float v),
                     setDeviceVolume(v)
+                )
+
+IF_IMPL_SENDER  (   IV4LCfgClient::sendActivePlayback(bool a),
+                    setActivePlayback(a)
                 )
 
 static QString defaultRDev("/dev/radio");
@@ -127,6 +135,11 @@ IF_IMPL_QUERY   (   V4LCaps IV4LCfgClient::queryCapabilities(QString dev),
                     V4LCaps()
                 )
 
+IF_IMPL_QUERY   (   bool IV4LCfgClient::queryActivePlayback(),
+                    getActivePlayback(),
+                    false
+                )
+
 void IV4LCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
     noticeRadioDeviceChanged(queryRadioDevice());
@@ -134,6 +147,7 @@ void IV4LCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/
     noticeCaptureMixerChanged (queryCaptureMixerID(),  queryCaptureMixerChannel());
     noticeDeviceVolumeChanged(queryDeviceVolume());
     noticeCapabilitiesChanged(queryCapabilities());
+    noticeActivePlaybackChanged(queryActivePlayback());
 }
 
 
@@ -144,6 +158,7 @@ void IV4LCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/
     noticeCaptureMixerChanged (queryCaptureMixerID(),  queryCaptureMixerChannel());
     noticeDeviceVolumeChanged(queryDeviceVolume());
     noticeCapabilitiesChanged(queryCapabilities());
+    noticeActivePlaybackChanged(queryActivePlayback());
 }
 
 
