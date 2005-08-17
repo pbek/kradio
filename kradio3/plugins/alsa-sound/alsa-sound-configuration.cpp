@@ -237,6 +237,7 @@ int AlsaSoundConfiguration::listSoundDevices(KComboBox *combobox, QMap<QString, 
 void AlsaSoundConfiguration::slotOK()
 {
     if (m_SoundDevice) {
+        m_SoundDevice->setHWBufferSize      ( editHWBufferSize  ->value() * 1024);
         m_SoundDevice->setBufferSize        ( editBufferSize    ->value() * 1024);
         m_SoundDevice->enablePlayback       (!chkDisablePlayback->isChecked());
         m_SoundDevice->enableCapture        (!chkDisableCapture ->isChecked());
@@ -270,6 +271,7 @@ void AlsaSoundConfiguration::slotCancel()
 
     //IErrorLogClient::staticLogDebug(QString("capture: card = %1(%2), dev = %3").arg(card).arg(m_captureCard2idx[card]).arg(dev));
 
+    editHWBufferSize  ->setValue  (m_SoundDevice ?  m_SoundDevice->getHWBufferSize()/1024 : 4);
     editBufferSize    ->setValue  (m_SoundDevice ?  m_SoundDevice->getBufferSize()/1024 : 4);
     chkDisablePlayback->setChecked(m_SoundDevice ? !m_SoundDevice->isPlaybackEnabled()  : false);
     chkDisableCapture ->setChecked(m_SoundDevice ? !m_SoundDevice->isCaptureEnabled()   : false);

@@ -59,7 +59,8 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &name)
       m_PassivePlaybackStreams(),
       m_PlaybackStreamID(),
       m_CaptureStreamID(),
-      m_BufferSize(16384),
+      m_HWBufferSize(16384),
+      m_BufferSize(65536),
       m_PlaybackBuffer(m_BufferSize),
       m_CaptureBuffer(m_BufferSize),
       m_CaptureRequestCounter(0),
@@ -138,6 +139,7 @@ void AlsaSoundDevice::saveState (KConfig *c) const
     c->writeEntry("capture-device",  m_CaptureDevice);
     c->writeEntry("enable-playback", m_EnablePlayback);
     c->writeEntry("enable-capture",  m_EnableCapture);
+    c->writeEntry("hwbuffer-size",   m_HWBufferSize);
     c->writeEntry("buffer-size",     m_BufferSize);
     c->writeEntry("soundstreamclient-id", m_SoundStreamClientID);
 
@@ -158,7 +160,8 @@ void AlsaSoundDevice::restoreState (KConfig *c)
 
     m_EnablePlayback  = c->readBoolEntry("enable-playback",  true);
     m_EnableCapture   = c->readBoolEntry("enable-capture",   true);
-    m_BufferSize      = c->readNumEntry ("buffer-size",      16384);
+    m_HWBufferSize    = c->readNumEntry ("hwbuffer-size",    16384);
+    m_BufferSize      = c->readNumEntry ("buffer-size",      65536);
     int card = c->readNumEntry  ("playback-card",   0);
     int dev  = c->readNumEntry  ("playback-device", 0);
     setPlaybackDevice(card, dev);
@@ -298,7 +301,7 @@ bool AlsaSoundDevice::startPlayback(SoundStreamID id)
                 notifyPlaybackVolumeChanged(id, cfg.m_Volume);
                 notifyMuted(id, cfg.m_Volume);
             }
-            m_PlaybackPollingTimer.start(100);
+            m_PlaybackPollingTimer.start(m_PlaybackLatency);
         }
 
         // error handling?
@@ -407,10 +410,11 @@ bool AlsaSoundDevice::stopCapture(SoundStreamID id)
 }
 
 
-bool AlsaSoundDevice::isCaptureRunning(SoundStreamID id, bool &b) const
+bool AlsaSoundDevice::isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const
 {
     if (id.isValid() && m_CaptureStreamID == id) {
-        b = true;
+        b  = true;
+        sf = m_CaptureFormat;
         return true;
     } else {
         return false;
@@ -711,7 +715,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    size_t buffersize_frames = m_BufferSize / format.frameSize();
+    size_t buffersize_frames = m_HWBufferSize / format.frameSize();
     int    periods           = 4;
     //int period_size       = m_BufferSize / periods;
 
@@ -733,10 +737,10 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
     }
 
     size_t exact_buffersize = exact_buffersize_frames * format.frameSize();
-    if (!error && m_BufferSize != exact_buffersize) {
-        logWarning(i18n("ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer size of %3 instead.").arg(pcm_name).arg(m_BufferSize).arg(exact_buffersize));
-        size_t  tmp = (((m_BufferSize - 1) / exact_buffersize) + 1) * exact_buffersize;
-        setBufferSize(tmp);
+    if (!error && m_HWBufferSize != exact_buffersize) {
+        logWarning(i18n("ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer size of %3 instead.").arg(pcm_name).arg(m_HWBufferSize).arg(exact_buffersize));
+        size_t  tmp = (((m_HWBufferSize - 1) / exact_buffersize) + 1) * exact_buffersize;
+        setHWBufferSize(tmp);
         logInfo(i18n("ALSA Plugin: adjusted buffer size for %1 to %2 bytes").arg(pcm_name).arg(QString::number(tmp)));
     }
 
@@ -747,7 +751,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    latency = (exact_buffersize_frames * 1000) / format.m_SampleRate / periods; /* in milli seconds */
+    latency = (exact_buffersize_frames * 1000) / format.m_SampleRate / periods / 2; /* in milli seconds */
 
     return !error;
 }
@@ -1279,6 +1283,12 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
                 writeCaptureMixerSwitch(s.m_name, s.m_active);
         }
     }
+}
+
+
+void AlsaSoundDevice::setHWBufferSize(int s)
+{
+    m_HWBufferSize = s;
 }
 
 

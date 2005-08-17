@@ -164,7 +164,7 @@ RECEIVERS:
                       SoundFormat       &real_format,
                       bool               force_format);
     bool stopCapture(SoundStreamID id);
-    bool isCaptureRunning(SoundStreamID id, bool &b) const;
+    bool isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
 
     bool noticeSoundStreamClosed(SoundStreamID id);
     bool noticeSoundStreamRedirected(SoundStreamID oldID, SoundStreamID newID);
@@ -178,6 +178,7 @@ RECEIVERS:
 
     // Config Access
 
+    int            getHWBufferSize()    const { return m_HWBufferSize; }
     int            getBufferSize()      const { return m_BufferSize; }
     bool           isPlaybackEnabled()  const { return m_EnablePlayback; }
     bool           isCaptureEnabled()   const { return m_EnableCapture;  }
@@ -188,6 +189,7 @@ RECEIVERS:
     const QMap<QString, AlsaConfigMixerSetting> &
                    getCaptureMixerSettings() const { return m_CaptureMixerSettings; }
 
+    void           setHWBufferSize(int s);
     void           setBufferSize(int s);
     void           enablePlayback(bool on);
     void           enableCapture(bool on);
@@ -261,6 +263,7 @@ protected:
     SoundStreamID   m_PlaybackStreamID,
                     m_CaptureStreamID;
 
+    size_t          m_HWBufferSize;
     size_t          m_BufferSize;
     RingBuffer      m_PlaybackBuffer,
                     m_CaptureBuffer;
