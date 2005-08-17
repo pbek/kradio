@@ -1,3 +1,11 @@
+2005-08-17
+
+       emw  - adjustest SoundStreamClient interface for SoundFormat queries
+            - v4lradio is ready for active playback (capturing from some
+              device, playback on pcm)
+            - improved ALSA buffer handling (separate HW and SW buffer
+              settings)
+
 2005-08-15
 
        emw  - enhanced ALSA configuration dialog by individually selectable 
