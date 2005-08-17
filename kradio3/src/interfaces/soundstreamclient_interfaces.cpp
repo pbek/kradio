@@ -103,8 +103,8 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStopPlayback, (SoundStreamID id),
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsPlaybackRunning, (SoundStreamID id, bool &b),
                  isPlaybackRunning(id, b)                                                                 );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartCapture, (SoundStreamID id),
-                 startCapture(id)                                                                          );
+//IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartCapture, (SoundStreamID id),
+//                 startCapture(id)                                                                          );
 
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartCaptureWithFormat, (SoundStreamID id, const SoundFormat &proposed_format, SoundFormat &real_format, bool force_format),
                  startCaptureWithFormat(id, proposed_format, real_format, force_format)                                            );
@@ -112,8 +112,8 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartCaptureWithFormat, (SoundStr
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStopCapture, (SoundStreamID id),
                  stopCapture(id)                                                                           );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsCaptureRunning, (SoundStreamID id, bool &b),
-                 isCaptureRunning(id, b)                                                                  );
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsCaptureRunning, (SoundStreamID id, bool &b, SoundFormat &sf),
+                 isCaptureRunning(id, b, sf)                                                                  );
 
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecording, (SoundStreamID id),
                  startRecording(id)                                                                          );
@@ -124,8 +124,8 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecordingWithFormat, (SoundS
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStopRecording, (SoundStreamID id),
                  stopRecording(id)                                                                           );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsRecordingRunning, (SoundStreamID id, bool &b),
-                 isRecordingRunning(id, b)                                                                  );
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsRecordingRunning, (SoundStreamID id, bool &b, SoundFormat &sf),
+                 isRecordingRunning(id, b, sf)                                                                  );
 
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, notifySoundStreamCreated, (SoundStreamID id),
                  noticeSoundStreamCreated(id)                                                              );
