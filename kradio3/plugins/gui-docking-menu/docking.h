@@ -33,6 +33,8 @@
 #include "../../src/libkradio/plugins.h"
 #include "../../src/interfaces/soundstreamclient_interfaces.h"
 
+enum LeftClickAction { lcaShowHide = 0, lcaPowerOnOff = 1 };
+
 class RadioDocking : public KSystemTray,
                      public PluginBase,
                      public IRadioClient,
@@ -141,6 +143,16 @@ protected:
 
     void showEvent(QShowEvent *) {}  // do nothing, original implementation adds "Quit" menu item
 
+    void ShowHideWidgetPlugins();
+
+public:
+
+    LeftClickAction getLeftClickAction() const { return m_leftClickAction; }
+    void            setLeftClickAction(LeftClickAction action);
+
+signals:
+    void sigLeftClickActionChanged(LeftClickAction action);
+
 protected:
 
     KPopupMenu  *m_menu;
@@ -164,6 +176,10 @@ protected:
     int                            m_NextRecordingMenuID;
     QMap<int, SoundStreamID>       m_MenuID2StreamID;
     QMap<SoundStreamID, int>       m_StreamID2MenuID;
+
+    LeftClickAction                m_leftClickAction;
+
+    QMap<QString, bool>            m_widgetsShownCache;
 };
 
 

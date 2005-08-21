@@ -1019,7 +1019,7 @@ void AlsaSoundDevice::getCaptureMixerChannels(
 
     if (!mixer_handle) {
 //         staticLogDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + QString::number(card/*m_CaptureCard*/));
-        openMixerDevice(mixer_handle, card /*m_CaptureCard*/, false, NULL, 0);
+            openMixerDevice(mixer_handle, card /*m_CaptureCard*/, false, NULL, 0);
         use_tmp_handle = true;
     }
 
@@ -1306,7 +1306,8 @@ bool AlsaSoundDevice::writeCaptureMixerSwitch (const QString &channel, bool capt
         }
     }
     logError("AlsaSound::writeCaptureMixerSwitch: " +
-             i18n("error while setting capture switch for hwplug:%1,%2")
+             i18n("error while setting capture switch %1 for hwplug:%2,%3")
+             .arg(channel)
              .arg(m_CaptureCard)
              .arg(m_CaptureDevice));
     return false;
@@ -1392,6 +1393,8 @@ void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
     SoundFormat f = m_PlaybackFormat;
     if (m_hPlayback)
         openPlaybackDevice(f, /* reopen = */ true);
+    if (m_hPlaybackMixer)
+        openPlaybackMixerDevice(/* reopen = */ true);
 
     getPlaybackMixerChannels(m_PlaybackCard,
                              m_hPlaybackMixer,
@@ -1412,6 +1415,8 @@ void AlsaSoundDevice::setCaptureDevice(int card, int dev)
     SoundFormat f = m_CaptureFormat;
     if (m_hCapture)
         openCaptureDevice(f, /* reopen = */ true);
+    if (m_hCaptureMixer)
+        openCaptureMixerDevice(/* reopen = */ true);
 
     getCaptureMixerChannels(m_CaptureCard,
                             m_hCaptureMixer,

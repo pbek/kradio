@@ -483,10 +483,10 @@ void V4LRadioConfiguration::slotOK()
     sendRadioDevice(editRadioDevice->text());
     sendScanStep(((float)editScanStep->value()) / 1000.0);
 
-    sendPlaybackMixer(m_PlaybackMixerHelper.getCurrentItem(),
-                      m_PlaybackChannelHelper.getCurrentText());
     sendCaptureMixer (m_CaptureMixerHelper.getCurrentItem(),
                       m_CaptureChannelHelper.getCurrentText());
+    sendPlaybackMixer(m_PlaybackMixerHelper.getCurrentItem(),
+                      m_PlaybackChannelHelper.getCurrentText());
 
     sendActivePlayback(m_checkboxActivePlayback->isChecked());
 

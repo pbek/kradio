@@ -23,14 +23,31 @@
 #endif
 
 #include "../../src/libkradio-gui/stationselector.h"
+#include "docking.h"
+
+class QComboBox;
+class QLabel;
 
 class DockingConfiguration : public StationSelector
 {
 Q_OBJECT
 public :
-    DockingConfiguration (QWidget *parent);
+    DockingConfiguration (RadioDocking *docking, QWidget *parent);
     ~DockingConfiguration ();
 
+protected slots:
+
+    void slotOK();
+    void slotCancel();
+
+    void slotLeftClickActionChanged(LeftClickAction action);
+    void languageChange();
+
+protected:
+    RadioDocking *m_docking;
+    QComboBox    *m_comboClickMode;
+    QLabel       *m_labelClickMode;
+    bool          m_disableGUIUpdates;
 };
 
 #endif

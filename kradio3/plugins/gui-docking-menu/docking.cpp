@@ -48,7 +48,8 @@ RadioDocking::RadioDocking(const QString &name)
     PluginBase(name, i18n("Docking Plugin")),
     m_pluginMenu(NULL),
     m_recordingMenu(NULL),
-    m_NextRecordingMenuID(POPUP_ID_STOP_RECORDING_BASE)
+    m_NextRecordingMenuID(POPUP_ID_STOP_RECORDING_BASE),
+    m_leftClickAction(lcaShowHide)
 {
     setPixmap(BarIcon("kradio"));
 
@@ -126,8 +127,19 @@ void   RadioDocking::restoreState (KConfig *config)
             m_stationIDs += s;
     }
 
+    m_leftClickAction = (LeftClickAction)config->readNumEntry("left_click_action", lcaShowHide);
+
     buildContextMenu();
     notifyStationSelectionChanged(m_stationIDs);
+
+    int n = config->readNumEntry("show_hide_cache_entries", 0);
+    for (int i = 1; i <= n; ++i) {
+        QString s = config->readEntry(QString("show_hide_cache_id_%1").arg(i), QString::null);
+        bool    b = config->readBoolEntry(QString("show_hide_cache_value_%1").arg(i), false);
+        if (!s.isNull()) {
+            m_widgetsShownCache.insert(s,b);
+        }
+    }
 }
 
 
@@ -141,13 +153,25 @@ void RadioDocking::saveState (KConfig *config) const
     for (QStringList::const_iterator it = m_stationIDs.begin(); it != end; ++it, ++i) {
         config->writeEntry(QString("stationID-") + QString().setNum(i), *it);
     }
+    config->writeEntry("left_click_action", (int)m_leftClickAction);
+
+    config->writeEntry("show_hide_cache_entries", m_widgetsShownCache.count());
+    i = 1;
+    for (QMapConstIterator<QString, bool> it = m_widgetsShownCache.begin(); it != m_widgetsShownCache.end(); ++it, ++i) {
+        config->writeEntry(QString("show_hide_cache_id_%1").arg(i), it.key());
+        config->writeEntry(QString("show_hide_cache_value_%1").arg(i), *it);
+    }
 }
 
 
 ConfigPageInfo RadioDocking::createConfigurationPage()
 {
-    DockingConfiguration *conf = new DockingConfiguration(NULL);
+    DockingConfiguration *conf = new DockingConfiguration(this, NULL);
     connectI (conf);
+
+    QObject::connect(this, SIGNAL(sigLeftClickActionChanged(LeftClickAction)),
+                     conf, SLOT(slotLeftClickActionChanged(LeftClickAction)));
+
     return ConfigPageInfo(
         conf,
         i18n("Docking Menu"),
@@ -409,15 +433,24 @@ void RadioDocking::mousePressEvent( QMouseEvent *e )
 
     switch ( e->button() ) {
     case LeftButton:
+        switch (m_leftClickAction) {
+            case lcaShowHide :
+                ShowHideWidgetPlugins();
         // FIXME: [mcamen] According the KDE usability guidelines a left
         //                 click on the systray icon should show/hide the
         //                 application window
         // TODO: [mcamen] Use KSystemtray::toggleActive and friends once we
         //                depend on KDE 3.3
-        if (queryIsPowerOn())
-            sendPowerOff();
-        else
-            sendPowerOn();
+                break;
+            case lcaPowerOnOff :
+                if (queryIsPowerOn())
+                    sendPowerOff();
+                else
+                    sendPowerOn();
+                break;
+            default:
+                break;
+        }
         break;
     default:
         // nothing
@@ -425,6 +458,32 @@ void RadioDocking::mousePressEvent( QMouseEvent *e )
     }
 }
 
+void RadioDocking::ShowHideWidgetPlugins()
+{
+    // nothing in cache => hide everything
+    if (!m_widgetsShownCache.count()) {
+        for (QMapIterator<WidgetPluginBase*, int> it = m_widgetPluginIDs.begin(); it != m_widgetPluginIDs.end(); ++it) {
+            WidgetPluginBase *p = it.key();
+            if (p) {
+                bool visible = p->isReallyVisible();
+                QString name = p->name();
+                m_widgetsShownCache.insert(name, visible);
+                p->getWidget()->hide();
+            }
+        }
+    }
+    else {
+        QMap<QString, bool> tmpCache = m_widgetsShownCache;
+        for (QMapIterator<WidgetPluginBase*, int> it = m_widgetPluginIDs.begin(); it != m_widgetPluginIDs.end(); ++it) {
+            WidgetPluginBase *p = it.key();
+            QString name = p ? p->name() : QString::null;
+            if (p && tmpCache.contains(name) && tmpCache[name]) {
+                p->getWidget()->show();
+            }
+        }
+        m_widgetsShownCache.clear();
+    }
+}
 
 void RadioDocking::slotMenuItemActivated(int id)
 {
@@ -447,6 +506,9 @@ void RadioDocking::noticeWidgetPluginShown(WidgetPluginBase *b, bool shown)
     if (!m_manager || !b || !m_widgetPluginIDs.contains(b))
         return;
     m_manager->updateWidgetPluginMenuItem(b, m_pluginMenu, m_widgetPluginIDs, shown);
+
+    if (shown)
+        m_widgetsShownCache.clear();
 }
 
 
@@ -566,5 +628,13 @@ bool RadioDocking::noticeSoundStreamChanged(SoundStreamID id)
     return false;
 }
 
+
+void RadioDocking::setLeftClickAction(LeftClickAction action)
+{
+    if (m_leftClickAction != action) {
+        m_leftClickAction = action;
+        emit sigLeftClickActionChanged(m_leftClickAction);
+    }
+}
 
 #include "docking.moc"

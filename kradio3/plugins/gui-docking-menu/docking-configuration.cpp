@@ -17,11 +17,41 @@
 
 #include "docking-configuration.h"
 
+#include <qcombobox.h>
+#include <qlabel.h>
+#include <qlayout.h>
+#include <qframe.h>
+
+#include <klocale.h>
+
 using namespace std;
 
-DockingConfiguration::DockingConfiguration (QWidget *parent)
-	: StationSelector(parent)
+DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *parent)
+    : StationSelector(parent),
+      m_docking(docking),
+      m_disableGUIUpdates(false)
 {
+    QHBoxLayout *layout = new QHBoxLayout();
+
+    m_labelClickMode = new QLabel(this);
+    layout->addWidget(m_labelClickMode);
+
+    m_comboClickMode = new QComboBox(this);
+    layout->addWidget(m_comboClickMode);
+
+    QSpacerItem *spacer = new QSpacerItem( 20, 2, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    layout->addItem(spacer);
+
+    QFrame *line = new QFrame(this);
+    line->setFrameShape ( QFrame::HLine );
+    line->setFrameShadow( QFrame::Sunken );
+
+    StationSelectorUILayout->expand(2,0);
+    StationSelectorUILayout->addMultiCellWidget(line, 2, 2, 0, 2);
+    StationSelectorUILayout->addMultiCellLayout(layout, 3, 3, 0, 2);
+
+    languageChange();
+    slotCancel();
 }
 
 
@@ -30,6 +60,39 @@ DockingConfiguration::~DockingConfiguration ()
 }
 
 
+void DockingConfiguration::languageChange()
+{
+    StationSelector::languageChange();
+    m_labelClickMode->setText( i18n( "Left Mouse Click on Tray" ) );
 
+    m_comboClickMode->clear();
+    m_comboClickMode->insertItem(i18n("Show/Hide all GUI Elements"));
+    m_comboClickMode->insertItem(i18n("Power On/Off"));
+}
+
+void DockingConfiguration::slotOK()
+{
+    StationSelector::slotOK();
+    bool old = m_disableGUIUpdates;
+    m_disableGUIUpdates = true;
+    if (m_docking)
+        m_docking->setLeftClickAction((LeftClickAction)m_comboClickMode->currentItem());
+    m_disableGUIUpdates = old;
+}
+
+void DockingConfiguration::slotCancel()
+{
+    StationSelector::slotCancel();
+    if (m_docking)
+        m_comboClickMode->setCurrentItem(m_docking->getLeftClickAction());
+}
+
+void DockingConfiguration::slotLeftClickActionChanged(LeftClickAction action)
+{
+    if (!m_disableGUIUpdates) {
+        if (m_docking)
+            m_comboClickMode->setCurrentItem(action);
+    }
+}
 
 #include "docking-configuration.moc"

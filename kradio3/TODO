@@ -11,7 +11,6 @@
   * internet radio streams
   * translations
   * automatic station icon scaling
-  * define final single/doubleclick tray icon behaviour
   * remote-kradio: run v4l plugin on remote machine, transfer data to
                    local machine
   * client-server concept: run kradio in background, make client gui individual
@@ -27,6 +26,7 @@
   * prepare for translation: check for missing i18n translations?
 
 
+  * define final single/doubleclick tray icon behaviour // DONE (configurable now)
   * warnings if permissions are not set correctly // DONE
   * GUI improvements for pause function // DONE
   * use size_t instead of unsigned ints for all sizes!!! (was reason for
@@ -51,8 +51,8 @@ FUTURE
 USABILITY, STYLE-GUIDE
 ======================
   When implementing these keep in mind to only use KDE API <= 3.2.
-  * SystemTray button should show / hide the main window on left click
-  * /tmp/kradio* should use offical KDE tmpdir instead
+  * SystemTray button should show / hide the main window on left click // DONE (configurable)
+  * /tmp/kradio* should use offical KDE tmpdir instead // really necessary? it is configurable
   * more use of KStdGuiItem
   * sort out the KDE hicolor / crystal / SVG icon mess
   * Buildsystem: manpage generation
