@@ -235,7 +235,7 @@ bool V4LRadio::powerOn ()
         searchMixers(&playback_mixer, &capture_mixer);
 
         if (playback_mixer)
-            playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, m_ActivePlayback);
+            playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, m_ActivePlayback, false);
         if (capture_mixer)
             capture_mixer->prepareCapture(m_SoundStreamID, m_CaptureMixerChannel);
 
@@ -267,6 +267,8 @@ bool V4LRadio::powerOff ()
     mute(m_SoundStreamID);
     radio_done();
 
+    sendStopPlayback(m_SoundStreamID);
+    sendStopCapture(m_SoundStreamID);
     closeSoundStream(m_SoundStreamID);
     m_SoundStreamID = createNewSoundStream(m_SoundStreamID, false);
     notifySoundStreamCreated(m_SoundStreamID);
@@ -807,7 +809,7 @@ bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QStri
     ISoundStreamClient *playback_mixer = NULL;
     searchMixers(&playback_mixer, NULL);
     if (playback_mixer)
-        playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, m_ActivePlayback);
+        playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, m_ActivePlayback, false);
 
     if (isPowerOn()) {
         sendStartPlayback(m_SoundStreamID);
@@ -889,7 +891,7 @@ bool V4LRadio::setActivePlayback(bool a)
     ISoundStreamClient *playback_mixer = NULL;
     searchMixers(&playback_mixer, NULL);
     if (playback_mixer)
-        playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, m_ActivePlayback);
+        playback_mixer->preparePlayback(m_SoundStreamID, m_PlaybackMixerChannel, m_ActivePlayback, false);
 
     if (isPowerOn()) {
         sendStartPlayback(m_SoundStreamID);

@@ -223,10 +223,12 @@ AboutPageInfo AlsaSoundDevice::createAboutPage()
 
 
 
-bool AlsaSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode)
+bool AlsaSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately)
 {
     if (id.isValid()) {
         m_PlaybackStreams.insert(id, SoundStreamConfig(channel, active_mode));
+        if (start_immediately)
+            startPlayback(id);
         return true;
         // FIXME: what to do if stream is already playing?
     }
@@ -348,7 +350,7 @@ bool AlsaSoundDevice::stopPlayback(SoundStreamID id)
 
 bool AlsaSoundDevice::isPlaybackRunning(SoundStreamID id, bool &b) const
 {
-    if (id.isValid() && m_PlaybackStreams.contains(id)) {
+    if (id.isValid() && m_PlaybackStreamID == id || m_PassivePlaybackStreams.contains(id)) {
         b = true;
         return true;
     } else {

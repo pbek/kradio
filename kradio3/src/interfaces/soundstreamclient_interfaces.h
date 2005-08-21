@@ -168,8 +168,8 @@ public:
 // direct playback / capture device functions
 
 RECEIVERS:
-    IF_RECEIVER_EMPTY( preparePlayback(SoundStreamID /*id*/, const QString &/*channel*/, bool /*active_mode*/)   )
-    IF_RECEIVER_EMPTY( prepareCapture(SoundStreamID /*id*/, const QString &/*channel*/)                      )
+    IF_RECEIVER_EMPTY( preparePlayback(SoundStreamID /*id*/, const QString &/*channel*/, bool /*active_mode*/, bool /*start_immediately = false*/)   )
+    IF_RECEIVER_EMPTY( prepareCapture(SoundStreamID /*id*/, const QString &/*channel*/)                                                          )
     IF_RECEIVER_EMPTY( releasePlayback(SoundStreamID /*id*/)   )
     IF_RECEIVER_EMPTY( releaseCapture(SoundStreamID /*id*/)    )
 

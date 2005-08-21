@@ -88,8 +88,6 @@ protected:
 
     bool getSoundStreamDescription(SoundStreamID id, QString &descr) const;
 
-    // FIXME: volume übersetzen
-    // FIXME: react on capture request
     // FIXME: react on redirect request
 
 signals:

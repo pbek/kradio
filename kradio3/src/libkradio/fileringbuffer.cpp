@@ -139,13 +139,13 @@ size_t FileRingBuffer::addData (const char *src, size_t size)
             rest = m_RealSize - m_FillSize;
 
         fseek(m_File, m_Start + m_FillSize - m_RealSize, SEEK_SET);
-        if (fwrite(src+written, rest, 1, m_File) <= 0) {
+        if (fwrite(src, rest, 1, m_File) <= 0) {
             m_error = true;
             m_errorString += "FileRingBuffer::addData: failed writing data to file " + m_FileName  + ". ";
         } else {
             m_FillSize += rest;
             written    += rest;
-            fflush(m_File); // debug only
+            //fflush(m_File); // debug only
         }
     }
     return written;

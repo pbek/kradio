@@ -199,10 +199,12 @@ AboutPageInfo OSSSoundDevice::createAboutPage()
 
 
 
-bool OSSSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode)
+bool OSSSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately)
 {
     if (id.isValid() && m_revPlaybackChannels.contains(channel)) {
         m_PlaybackStreams.insert(id, SoundStreamConfig(m_revPlaybackChannels[channel], active_mode));
+        if (start_immediately)
+            startPlayback(id);
         return true;
         // FIXME: what to do if stream is already playing?
     }

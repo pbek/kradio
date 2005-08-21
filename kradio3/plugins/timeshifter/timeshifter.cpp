@@ -157,7 +157,7 @@ bool TimeShifter::stopPlayback(SoundStreamID id)
         m_OrgStreamID.invalidate();
         m_NewStreamID.invalidate();
 
-        stopCapture(tmp_newID);
+        sendStopCapture(tmp_newID);
         closeSoundStream(tmp_newID);
         stopPlayback(tmp_newID);
         m_RingBuffer.clear();
@@ -196,7 +196,7 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
 
         ISoundStreamClient *playback_mixer = searchPlaybackMixer();
         if (playback_mixer) {
-            playback_mixer->preparePlayback(m_OrgStreamID, m_PlaybackMixerChannel, true);
+            playback_mixer->preparePlayback(m_OrgStreamID, m_PlaybackMixerChannel, /*active*/true, /*startimmediately*/ true);
             m_PlaybackMixerID = playback_mixer->getSoundStreamClientID();
         }
 
@@ -205,7 +205,7 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
     } else if (id == m_OrgStreamID) {
         m_StreamPaused = !m_StreamPaused;
         if (!m_StreamPaused) {
-            sendStartPlayback(m_OrgStreamID);
+//            sendStartPlayback(m_OrgStreamID);
             sendUnmute(m_OrgStreamID);
             sendPlaybackVolume(m_OrgStreamID, m_orgVolume);
         } else {
@@ -382,7 +382,7 @@ bool  TimeShifter::setPlaybackMixer(const QString &soundStreamClientID, const QS
     }
 
     if (playback_mixer)
-        playback_mixer->preparePlayback(m_OrgStreamID, m_PlaybackMixerChannel, true);
+        playback_mixer->preparePlayback(m_OrgStreamID, m_PlaybackMixerChannel, /*active*/true, /*start_imm*/false);
 
     if (m_OrgStreamID.isValid()) {
         sendStartPlayback(m_OrgStreamID);

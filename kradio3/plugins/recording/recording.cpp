@@ -225,7 +225,7 @@ bool   Recording::setPreRecording (bool enable, int seconds)
                 if (*it != NULL) {
                     delete *it;
                 }
-                *it = new FileRingBuffer("/tmp/kradio-prerecord-"+QString::number(it.key().getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
+                *it = new FileRingBuffer(m_config.m_Directory + "/kradio-prerecord-"+QString::number(it.key().getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
                 SoundFormat sf = m_config.m_SoundFormat;
                 sendStartCaptureWithFormat(it.key(), sf, sf, false);
             }
@@ -308,9 +308,11 @@ bool Recording::setRecordingConfig(const RecordingConfig &c)
 // ISoundStreamClient
 bool Recording::startPlayback(SoundStreamID id)
 {
+    if (m_PreRecordingBuffers.contains(id))
+        delete m_PreRecordingBuffers[id];
     m_PreRecordingBuffers[id] = NULL;
     if (m_config.m_PreRecordingEnable) {
-        m_PreRecordingBuffers[id] = new FileRingBuffer("/tmp/kradio-prerecord-"+QString::number(id.getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
+        m_PreRecordingBuffers[id] = new FileRingBuffer(m_config.m_Directory + "/kradio-prerecord-"+QString::number(id.getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
         SoundFormat sf = m_config.m_SoundFormat;
         sendStartCaptureWithFormat(id, sf, sf, false);
     }
@@ -380,7 +382,13 @@ bool Recording::stopRecording(SoundStreamID id)
                 if (m_PreRecordingBuffers[id] != NULL) {
                     delete m_PreRecordingBuffers[id];
                 }
-                m_PreRecordingBuffers[id] = new FileRingBuffer("/tmp/kradio-prerecord-"+QString::number(id.getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
+                bool b = false;
+                queryIsPlaybackRunning(id, b);
+                if (b) {
+                    m_PreRecordingBuffers[id] = new FileRingBuffer(m_config.m_Directory + "/kradio-prerecord-"+QString::number(id.getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
+                } else {
+                    m_PreRecordingBuffers[id] = NULL;
+                }
             }
         }
         stopEncoder(id);
@@ -594,6 +602,7 @@ void Recording::stopEncoder(SoundStreamID id)
         SoundStreamID encID = m_RawStreams2EncodedStreams[id];
         m_EncodedStreams2RawStreams.remove(encID);
         m_RawStreams2EncodedStreams.remove(id);
+        sendStopPlayback(encID);
         closeSoundStream(encID);
         logInfo(i18n("Recording stopped"));
     }
