@@ -1,13 +1,9 @@
 =========
 
   * make ALSA support conditional/configurable in configure script
-  * GUI improvements for pause function
 
-  * warnings if permissions are not set correctly
   * speed up kradio start
   * inet-stream-out plugin
-  * use size_t instead of unsigned ints for all sizes!!! (was reason for
-    problems in pointer arithmetic on amd64)
   * make file operations compliant with non-ascii-charsets (e.g. cyrillic)
   * tooltips in config dialog
   * option for display window type (entry in taskbar or toolbar window)
@@ -21,18 +17,24 @@
   * client-server concept: run kradio in background, make client gui individual
                            application
 
-  * if first run => less error messages, ask user for configuration,
-    station scan, etc...
-  * alsa support
   * RDS support
   * FAQ
       - devices (radio, mixer, dsp)
       - mixer settings for recording
       - artsd
          
-  * gui-errormessages // done
   * tooltips complete?
   * prepare for translation: check for missing i18n translations?
+
+
+  * warnings if permissions are not set correctly // DONE
+  * GUI improvements for pause function // DONE
+  * use size_t instead of unsigned ints for all sizes!!! (was reason for
+    problems in pointer arithmetic on amd64) // DONE
+  * gui-errormessages // DONE
+  * if first run => less error messages, ask user for configuration,
+    station scan, etc...  // DONE
+  * alsa support // DONE
        
 
 
