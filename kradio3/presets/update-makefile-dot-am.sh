@@ -12,7 +12,7 @@ OUT=Makefile.am
 HERE=$(pwd)
 
 echo -n "SUBDIRS =" > $OUT
-echo -e "Makefile\nMakefile.in\n" > .cvsignore
+echo -e "Makefile\nMakefile.in\nmaintainers.txt\nmakemaintainers" > .cvsignore
 
 
 find -mindepth 1 -maxdepth 1 -type d | sed 's/^\.\///' | sed 's/\/$//' | grep -v CVS | \
