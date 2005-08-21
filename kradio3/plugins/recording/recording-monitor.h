@@ -114,6 +114,7 @@ protected:
     RecordingDataMonitor    *m_dataMonitor;
 
     bool                     m_recording;
+    QString                  m_defaultStreamDescription;
 };
 
 

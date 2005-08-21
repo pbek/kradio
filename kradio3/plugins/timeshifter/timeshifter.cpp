@@ -38,6 +38,7 @@ TimeShifter::TimeShifter (const QString &name)
       m_TempFileMaxSize(256*1024*1024),
       m_PlaybackMixerID(QString::null),
       m_PlaybackMixerChannel("PCM"),
+      m_orgVolume(0.0),
       m_PlaybackMetaData(0,0,0),
       m_PlaybackDataLeftInBuffer(0),
       m_RingBuffer(m_TempFileName, m_TempFileMaxSize)
@@ -76,6 +77,7 @@ void TimeShifter::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
         s->register4_sendPausePlayback(this);
         s->register4_notifySoundStreamData(this);
         s->register4_notifyReadyForPlaybackData(this);
+        s->register4_querySoundStreamDescription(this);
     }
 }
 
@@ -170,13 +172,18 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
     if (!m_OrgStreamID.isValid()) {
         SoundStreamID orgid = id;
         SoundStreamID newid = createNewSoundStream(orgid, false);
-        notifySoundStreamCreated(newid);
-        notifySoundStreamRedirected(orgid, newid);
-        sendMute(newid);
-        sendPlaybackVolume(newid, 0);
-        sendStopPlayback(newid);
         m_OrgStreamID  = orgid;
         m_NewStreamID  = newid;
+        notifySoundStreamCreated(newid);
+        notifySoundStreamRedirected(orgid, newid);
+        queryPlaybackVolume(newid, m_orgVolume);
+        sendMute(newid);
+        sendPlaybackVolume(newid, 0);
+
+        m_NewStreamID.invalidate();
+        sendStopPlayback(newid);
+        m_NewStreamID = newid;
+
         m_StreamPaused = true;
 
         m_RingBuffer.clear();
@@ -197,6 +204,10 @@ bool TimeShifter::pausePlayback(SoundStreamID id)
         m_StreamPaused = !m_StreamPaused;
         if (!m_StreamPaused) {
             sendStartPlayback(m_OrgStreamID);
+            sendUnmute(m_OrgStreamID);
+            sendPlaybackVolume(m_OrgStreamID, m_orgVolume);
+        } else {
+            queryPlaybackVolume(m_OrgStreamID, m_orgVolume);
         }
         return true;
     }
@@ -388,6 +399,16 @@ void TimeShifter::setTempFile(const QString &filename, Q_UINT64 s)
     m_PlaybackDataLeftInBuffer = 0;
 }
 
+bool TimeShifter::getSoundStreamDescription(SoundStreamID id, QString &descr) const
+{
+    if (id == m_NewStreamID) {
+        descr = name();
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 
 #include "timeshifter.moc"

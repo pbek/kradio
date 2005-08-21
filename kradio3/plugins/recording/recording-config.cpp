@@ -25,7 +25,9 @@ RecordingConfig::RecordingConfig ()
     m_mp3Quality(7),
     m_oggQuality(1.0),
     m_Directory("/tmp"),
-    m_OutputFormat(outputWAV)
+    m_OutputFormat(outputWAV),
+    m_PreRecordingEnable (false),
+    m_PreRecordingSeconds(10)
 {
     checkFormatSettings();
 }
@@ -39,7 +41,9 @@ RecordingConfig::RecordingConfig (const QString &directory,
     m_mp3Quality(mp3_q),
     m_oggQuality(ogg_q),
     m_Directory(directory),
-    m_OutputFormat(of)
+    m_OutputFormat(of),
+    m_PreRecordingEnable (false),
+    m_PreRecordingSeconds(10)
 {
     checkFormatSettings();
 }
@@ -53,7 +57,9 @@ RecordingConfig::RecordingConfig (const RecordingConfig &c)
     m_mp3Quality(c.m_mp3Quality),
     m_oggQuality(c.m_oggQuality),
     m_Directory(c.m_Directory),
-    m_OutputFormat(c.m_OutputFormat)
+    m_OutputFormat(c.m_OutputFormat),
+    m_PreRecordingEnable (false),
+    m_PreRecordingSeconds(10)
 {
     checkFormatSettings();
 }
@@ -91,6 +97,9 @@ void  RecordingConfig::restoreConfig(KConfig *c)
     else
         m_OutputFormat = outputWAV;
 
+    m_PreRecordingEnable  = c->readBoolEntry("prerecording-enable", false);
+    m_PreRecordingSeconds = c->readNumEntry("prerecording-seconds", 10);
+
     checkFormatSettings();
 }
 
@@ -113,6 +122,9 @@ void  RecordingConfig::saveConfig(KConfig *c) const
         case outputRAW:  c->writeEntry("outputFormat", ".raw");  break;
         default:         c->writeEntry("outputFormat", ".wav");  break;
     }
+
+    c->writeEntry("prerecording-enable", m_PreRecordingEnable);
+    c->writeEntry("prerecording-seconds", m_PreRecordingSeconds);
 }
 
 

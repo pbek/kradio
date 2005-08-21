@@ -321,6 +321,13 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &clas
     return retval;
 }
 
+void  KRadioApp::startPlugins()
+{
+    QDictIterator<PluginManager> it(m_Instances);
+    for (; it.current(); ++it) {
+        it.current()->startPlugins();
+    }
+}
 
 
 #include "kradioapp.moc"

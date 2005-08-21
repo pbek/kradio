@@ -29,38 +29,40 @@ class QWidget;
 class WidgetPluginBase : public PluginBase
 {
 public :
-	WidgetPluginBase(const QString &name, const QString &description);
+    WidgetPluginBase(const QString &name, const QString &description);
 
-	virtual void     saveState    (KConfig *) const;
-	virtual void     restoreState (KConfig *);
-	virtual void     restoreState (KConfig *, bool showByDefault);
+    virtual void     saveState    (KConfig *) const;
+    virtual void     restoreState (KConfig *);
+    virtual void     restoreState (KConfig *, bool showByDefault);
+    virtual void     startPlugin();
 
-	virtual       QWidget *getWidget();
-	virtual const QWidget *getWidget() const;
+    virtual       QWidget *getWidget();
+    virtual const QWidget *getWidget() const;
 
-	virtual bool           isReallyVisible(const QWidget *w = NULL) const;
+    virtual bool           isReallyVisible(const QWidget *w = NULL) const;
 
 protected:
-	virtual void pShow ();
-	virtual void pShow (bool show);
-	virtual void pHide ();
-	virtual void pToggleShown ();
+    virtual void pShow ();
+    virtual void pShow (bool show);
+    virtual void pHide ();
+    virtual void pToggleShown ();
 
-	virtual void pShowEvent(QShowEvent *);
-	virtual void pHideEvent(QHideEvent *);
+    virtual void pShowEvent(QShowEvent *);
+    virtual void pHideEvent(QHideEvent *);
 
-	virtual void notifyManager(bool shown);
+    virtual void notifyManager(bool shown);
 
-	virtual void getKWinState(const QWidget *w = NULL) const;
+    virtual void getKWinState(const QWidget *w = NULL) const;
 
 protected:
     // temporary data
     mutable bool        m_geoCacheValid;
-    mutable bool		m_saveSticky;
-    mutable int		    m_saveDesktop;
-    mutable QRect		m_saveGeometry;
+    mutable bool        m_saveSticky;
+    mutable int         m_saveDesktop;
+    mutable QRect       m_saveGeometry;
 
     bool                m_geoRestoreFlag;
+    bool                m_restoreShow;
 };
 
 

@@ -23,18 +23,8 @@
 #endif
 
 
-#include <sndfile.h>
-/*#ifdef HAVE_LAME_LAME_H
-    #include <lame/lame.h>
-#endif
-*/
-
 #include <qobject.h>
 #include <qstring.h>
-#include <qmutex.h>
-#include <qsemaphore.h>
-#include <qthread.h>
-#include <qtimer.h>
 #include <qmap.h>
 
 #include "../../src/libkradio/plugins.h"
@@ -44,14 +34,12 @@
 #include "recording-config.h"
 #include "reccfg_interfaces.h"
 #include "encoder.h"
-//#include <kradio/interfaces/radio_interfaces.h>
-
-//#include "recording-context.h"
 
 class RadioStation;
 class StationList;
 class QSocketNotifier;
 class RecordingEncoding;
+class FileRingBuffer;
 
 class Recording : public QObject,
                   public PluginBase,
@@ -94,6 +82,7 @@ protected:
     bool   setOggQuality        (float q);
     bool   setRecordingDirectory(const QString &dir);
     bool   setOutputFormat      (RecordingConfig::OutputFormat of);
+    bool   setPreRecording      (bool enable, int seconds);
     bool   setRecordingConfig   (const RecordingConfig &cfg);
 
     void                           getEncoderBuffer(size_t &BufferSize, size_t &BufferCount) const;
@@ -102,11 +91,15 @@ protected:
     float                          getOggQuality () const;
     const QString                 &getRecordingDirectory() const;
     RecordingConfig::OutputFormat  getOutputFormat() const;
+    bool                           getPreRecording(int &seconds) const;
     const RecordingConfig         &getRecordingConfig() const;
 
 // ISoundStreamClient
 
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+
+    bool startPlayback(SoundStreamID id);
+    bool stopPlayback(SoundStreamID id);
 
     bool startRecording(SoundStreamID id);
     bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format);
@@ -134,11 +127,22 @@ protected:
 protected:
 
     RecordingConfig     m_config;
+    QMap<SoundStreamID, FileRingBuffer*>     m_PreRecordingBuffers;
 
     QMap<SoundStreamID, RecordingEncoding*>  m_EncodingThreads;
     QMap<SoundStreamID, SoundStreamID>       m_RawStreams2EncodedStreams;
     QMap<SoundStreamID, SoundStreamID>       m_EncodedStreams2RawStreams;
 };
 
+/* PreRecording Notes:  listen for startplayback, stopplayback, closestream
+   manage map streamid => buffer
+   set each started stream into capture mode
+   put data into ringbuffers
+   on capture start, feed everything into the encoder buffer,
+      if encoderbuffer < prerecbuffer =>
+          put as much as possible into encoder
+          put new audio data into ring buffer
+
+*/
 
 #endif

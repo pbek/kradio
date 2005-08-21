@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
     BlockProfiler  profiler_restore("main::restore");
 
     a.restoreState(KGlobal::config());
+    a.startPlugins();
 
     profiler_restore.stop();
 

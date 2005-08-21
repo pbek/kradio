@@ -81,6 +81,8 @@ protected:
     bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, const SoundMetaData &md);
     bool noticeReadyForPlaybackData(SoundStreamID id, size_t size);
 
+    bool getSoundStreamDescription(SoundStreamID id, QString &descr) const;
+
     // FIXME: volume übersetzen
     // FIXME: react on capture request
     // FIXME: react on redirect request
@@ -104,6 +106,7 @@ protected:
     SoundStreamID       m_OrgStreamID;
     SoundStreamID       m_NewStreamID;
     SoundFormat         m_RealSoundFormat;
+    float               m_orgVolume;
 
     SoundMetaData       m_PlaybackMetaData;
     size_t              m_PlaybackDataLeftInBuffer;

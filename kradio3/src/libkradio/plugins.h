@@ -115,6 +115,7 @@ public:
 
     virtual void   saveState (KConfig *) const = 0;
     virtual void   restoreState (KConfig *) = 0;
+    virtual void   startPlugin();
 
     //
 

@@ -121,7 +121,7 @@ size_t FileRingBuffer::addData (const char *src, size_t size)
         if (rest > size)
             rest = size;
         fseek(m_File, m_Start + m_FillSize, SEEK_SET);
-        if (fwrite(src, rest, 1, m_File) <= 0) {
+        if (rest > 0 && fwrite(src, rest, 1, m_File) <= 0) {
             m_error = true;
             m_errorString += "FileRingBuffer::addData: failed writing data to file " + m_FileName + ". ";
         } else {
@@ -133,18 +133,19 @@ size_t FileRingBuffer::addData (const char *src, size_t size)
             src        += rest;
         }
     }
-    if (size > 0 && m_FillSize < m_RealSize) {
+    if (!m_error && size > 0 && m_FillSize < m_RealSize) {
         size_t rest = size;
         if (rest > m_RealSize - m_FillSize)
             rest = m_RealSize - m_FillSize;
 
         fseek(m_File, m_Start + m_FillSize - m_RealSize, SEEK_SET);
-        if (fwrite(src, rest, 1, m_File) <= 0) {
+        if (fwrite(src+written, rest, 1, m_File) <= 0) {
             m_error = true;
             m_errorString += "FileRingBuffer::addData: failed writing data to file " + m_FileName  + ". ";
         } else {
             m_FillSize += rest;
             written    += rest;
+            fflush(m_File); // debug only
         }
     }
     return written;
@@ -161,7 +162,7 @@ size_t FileRingBuffer::takeData(char *dst, size_t size)
         if (n > m_RealSize - m_Start)
             n = m_RealSize - m_Start;
         fseek(m_File, m_Start, SEEK_SET);
-        if (fread(dst, n, 1, m_File) <= 0) {
+        if (fread(dst+read, n, 1, m_File) <= 0) {
             m_error = true;
             m_errorString += "FileRingBuffer::takeData: failed reading data to file " + m_FileName + ". ";
         } else {
@@ -227,18 +228,15 @@ Q_UINT64 FileRingBuffer::getData(Q_UINT64 &size)
 
 Q_UINT64 FileRingBuffer::removeData(Q_UINT64 size)
 {
-    Q_UINT64 n = 0;
     if (size > m_FillSize)
         size = m_FillSize;
     if (m_Start + size >= m_RealSize) {
-        n = m_RealSize - m_Start;
-        m_Start = 0;
+        m_Start = m_Start + size - m_RealSize;
     } else {
         m_Start += size;
-        n = size;
     }
-    m_FillSize -= n;
-    return n;
+    m_FillSize -= size;
+    return size;
 }
 
 

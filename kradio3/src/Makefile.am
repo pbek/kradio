@@ -31,6 +31,7 @@ kradio_SOURCES = main.cpp \
                libkradio/fileringbuffer.cpp \
                libkradio/frequencyseekhelper.cpp \
                libkradio/kradioapp.cpp \
+               libkradio/multibuffer.cpp \
                libkradio/plugin_configuration_dialog.cpp \
                libkradio/pluginmanager-configuration.cpp \
                libkradio/pluginmanager-configuration-ui.ui \

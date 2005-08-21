@@ -30,6 +30,7 @@
 
 #include "alsa-sound.h"
 #include "alsa-sound-configuration.h"
+// #include "capture-thread.h"
 #include "../../src/libkradio-gui/aboutwidget.h"
 
 ///////////////////////////////////////////////////////////////////////
@@ -54,13 +55,13 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &name)
       m_PlaybackDevice(-1),
       m_CaptureCard(-1),
       m_CaptureDevice(-1),
-      m_PlaybackLatency(0),
-      m_CaptureLatency(0),
+      m_PlaybackLatency(50),
+      m_CaptureLatency(50),
       m_PassivePlaybackStreams(),
       m_PlaybackStreamID(),
       m_CaptureStreamID(),
-      m_HWBufferSize(16384),
-      m_BufferSize(65536),
+      m_HWBufferSize(2048),
+      m_BufferSize(16384),
       m_PlaybackBuffer(m_BufferSize),
       m_CaptureBuffer(m_BufferSize),
       m_CaptureRequestCounter(0),
@@ -69,7 +70,8 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &name)
       m_PlaybackSkipCount(0),
       m_CaptureSkipCount(0),
       m_EnablePlayback(true),
-      m_EnableCapture(true)
+      m_EnableCapture(true)//,
+//       m_captureThread(NULL)
 {
     QObject::connect(&m_PlaybackPollingTimer, SIGNAL(timeout()), this, SLOT(slotPollPlayback()));
     QObject::connect(&m_CapturePollingTimer,  SIGNAL(timeout()), this, SLOT(slotPollCapture()));
@@ -160,8 +162,8 @@ void AlsaSoundDevice::restoreState (KConfig *c)
 
     m_EnablePlayback  = c->readBoolEntry("enable-playback",  true);
     m_EnableCapture   = c->readBoolEntry("enable-capture",   true);
-    m_HWBufferSize    = c->readNumEntry ("hwbuffer-size",    16384);
-    m_BufferSize      = c->readNumEntry ("buffer-size",      65536);
+    m_HWBufferSize    = c->readNumEntry ("hwbuffer-size",    2048);
+    m_BufferSize      = c->readNumEntry ("buffer-size",      16384);
     int card = c->readNumEntry  ("playback-card",   0);
     int dev  = c->readNumEntry  ("playback-device", 0);
     setPlaybackDevice(card, dev);
@@ -366,7 +368,7 @@ bool AlsaSoundDevice::startCaptureWithFormat(SoundStreamID      id,
             m_CaptureStartTime = time(NULL);
         }
 
-        if (m_CaptureStreamID != id || force_format) {
+        if (m_CaptureStreamID != id || (force_format && proposed_format != m_CaptureFormat)) {
 
             m_CaptureStreamID = id;
             SoundStreamConfig &cfg = m_CaptureStreams[id];
@@ -385,6 +387,11 @@ bool AlsaSoundDevice::startCaptureWithFormat(SoundStreamID      id,
         real_format = m_CaptureFormat;
         m_CaptureRequestCounter++;
 
+//         m_captureThread = new AlsaCaptureThread(this, m_hCapture, m_CaptureFormat, 5, m_BufferSize);
+//         m_captureThread->start();
+
+        slotPollCapture();
+
         return true;
     } else {
         return false;
@@ -397,6 +404,25 @@ bool AlsaSoundDevice::stopCapture(SoundStreamID id)
     if (id.isValid() && m_CaptureStreamID == id) {
 
         if (--m_CaptureRequestCounter == 0) {
+
+//             m_captureThread->setDone();
+//             if (!m_captureThread->wait(4000)) { //wait at maximum 4 seconds
+//                 logError("AlsaPlugin: capture thread did not terminate. Killing it.");
+//                 m_captureThread->terminate();
+//                 m_captureThread->wait();
+//             }
+
+            slotPollCapture();
+
+//             if (m_captureThread->error()) {
+//                 logError(i18n("ALSA Plugin, device plughw:%1,%2: %3").arg(m_CaptureCard)
+//                                                                      .arg(m_CaptureDevice)
+//                                                                      .arg(i18n("unknown error")));
+//             }
+//
+//             delete m_captureThread;
+//             m_captureThread = NULL;
+
             m_CaptureStreamID = SoundStreamID::InvalidID;
             m_CaptureBuffer.clear();
 
@@ -545,6 +571,15 @@ void AlsaSoundDevice::slotPollCapture()
 {
     if (m_CaptureStreamID.isValid() && m_hCapture) {
 
+//         while (m_captureThread && m_captureThread->getAvailableReadBuffers()) {
+//             QString dev = QString("alsa://plughw:%1,%2").arg(m_CaptureCard).arg(m_CaptureDevice);
+//             size_t  size     = 0;
+//             char   *buffer   = m_captureThread->getReadBuffer(size);
+//             time_t  cur_time = time(NULL);
+//             notifySoundStreamData(m_CaptureStreamID, m_CaptureFormat, buffer, size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, dev));
+//             m_CapturePos += size;
+//         }
+
         size_t bufferSize = 0;
         char  *buffer = m_CaptureBuffer.getFreeSpace(bufferSize);
 
@@ -552,7 +587,17 @@ void AlsaSoundDevice::slotPollCapture()
 
             size_t frameSize  = m_CaptureFormat.frameSize();
             int    framesRead = snd_pcm_readi(m_hCapture, buffer, bufferSize / frameSize);
-            size_t bytesRead  = framesRead * frameSize;
+            size_t bytesRead  = framesRead > 0 ? framesRead * frameSize : 0;
+
+//             //BEGIN DEBUG
+//             static unsigned int debug_val = 0;
+//             short *debug_buf = (short*)buffer;
+//             for (int i = 0; i < bytesRead / 2 / sizeof(short); ++i) {
+//                 debug_buf[2*i]   = debug_val >> 10;
+//                 debug_buf[2*i+1] = debug_val >> 10;
+//                 ++debug_val;
+//             }
+//             //END DEBUG
 
             if (framesRead > 0) {
                 m_CaptureBuffer.removeFreeSpace(bytesRead);
@@ -563,7 +608,7 @@ void AlsaSoundDevice::slotPollCapture()
                     // do nothing
             } else {
                 snd_pcm_prepare(m_hCapture);
-                logWarning(i18n("ALSA Plugin: buffer overrun for device plughw:%1,%2").arg(m_CaptureCard).arg(m_CaptureDevice));
+                logWarning(i18n("ALSA Plugin: buffer overrun for device plughw:%1,%2 (buffersize=%3, buffer=%4)").arg(m_CaptureCard).arg(m_CaptureDevice).arg(bufferSize).arg((long long unsigned)buffer));
             }
 
             QString dev = QString("alsa://plughw:%1,%2").arg(m_CaptureCard).arg(m_CaptureDevice);
@@ -608,7 +653,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
     m_PlaybackFormat = format;
 
     QString dev = QString("plughw:%1,%2").arg(m_PlaybackCard).arg(m_PlaybackDevice);
-    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, dev.ascii(), SND_PCM_STREAM_PLAYBACK, m_PlaybackLatency);
+    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, dev.ascii(), SND_PCM_STREAM_PLAYBACK, SND_PCM_NONBLOCK, m_PlaybackLatency);
 
     if (!error) {
         m_PlaybackPollingTimer.start(m_PlaybackLatency);
@@ -648,7 +693,8 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
     m_CaptureFormat = format;
 
     QString dev = QString("plughw:%1,%2").arg(m_CaptureCard).arg(m_CaptureDevice);
-    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, dev.ascii(), SND_PCM_STREAM_CAPTURE, m_CaptureLatency);
+//     bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, dev.ascii(), SND_PCM_STREAM_CAPTURE, /*flags = block*/0, m_CaptureLatency);
+    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, dev.ascii(), SND_PCM_STREAM_CAPTURE, SND_PCM_NONBLOCK, m_CaptureLatency);
 
     if (!error) {
         m_CapturePollingTimer.start(m_CaptureLatency);
@@ -662,17 +708,19 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 }
 
 
-bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, unsigned &latency)
+bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency)
 {
     bool error = false;
+    int dir = 0;
 
     snd_pcm_hw_params_t *hwparams = NULL;
 
     snd_pcm_hw_params_alloca(&hwparams);
 
+
     /* OPEN */
 
-    if (!error && snd_pcm_open(&alsa_handle, pcm_name, stream, SND_PCM_NONBLOCK) < 0) {
+    if (!error && snd_pcm_open(&alsa_handle, pcm_name, stream, flags) < 0) {
         logError(i18n("ALSA Plugin: Error opening PCM device %1").arg(pcm_name));
         error = true;
     }
@@ -699,9 +747,15 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
+    /* channels */
+    if (!error && snd_pcm_hw_params_set_channels(alsa_handle, hwparams, format.m_Channels) < 0) {
+        logError(i18n("ALSA Plugin: Error setting channels for %1").arg(pcm_name));
+        error = true;
+    }
+
     /* sample rate */
     int rate = format.m_SampleRate;
-    if (!error && snd_pcm_hw_params_set_rate_near(alsa_handle, hwparams, &format.m_SampleRate, 0) < 0) {
+    if (!error && snd_pcm_hw_params_set_rate_near(alsa_handle, hwparams, &format.m_SampleRate, &dir) < 0) {
         logError(i18n("ALSA Plugin: Error setting rate for %1").arg(pcm_name));
         error = true;
     }
@@ -709,40 +763,41 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         logWarning(i18n("ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 Hz instead").arg(rate).arg(pcm_name).arg(format.m_SampleRate));
     }
 
-    /* channels */
-    if (!error && snd_pcm_hw_params_set_channels(alsa_handle, hwparams, format.m_Channels) < 0) {
-        logError(i18n("ALSA Plugin: Error setting channels for %1").arg(pcm_name));
+
+    size_t period_size = m_HWBufferSize / format.frameSize();
+    if (!error && snd_pcm_hw_params_set_period_size_near(alsa_handle, hwparams, &period_size, &dir) < 0) {
+        logError(i18n("ALSA Plugin: Error setting period size for %1").arg(pcm_name));
         error = true;
     }
 
-    size_t buffersize_frames = m_HWBufferSize / format.frameSize();
-    int    periods           = 4;
-    //int period_size       = m_BufferSize / periods;
+//     size_t buffersize_frames = m_HWBufferSize / format.frameSize();
+//     int    periods           = 4;
+//     //int period_size       = m_BufferSize / periods;
+//
+//     /* fragments */
+//     if (!error && snd_pcm_hw_params_set_periods(alsa_handle, hwparams, periods, 0) < 0) {
+//         logError(i18n("ALSA Plugin: Error setting periods for %1").arg(pcm_name));
+//         error = true;
+//     }
 
-    /* fragments */
-    if (!error && snd_pcm_hw_params_set_periods(alsa_handle, hwparams, periods, 0) < 0) {
-        logError(i18n("ALSA Plugin: Error setting periods for %1").arg(pcm_name));
-        error = true;
-    }
+//     /* Set buffer size (in frames). */
+//
+//     snd_pcm_uframes_t exact_buffersize_frames = buffersize_frames;
+//     if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
+//         exact_buffersize_frames = 4096;
+//         if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
+//             logError(i18n("ALSA Plugin: Error setting buffersize for %1").arg(pcm_name));
+//             error = true;
+//         }
+//     }
 
-    /* Set buffer size (in frames). */
-
-    snd_pcm_uframes_t exact_buffersize_frames = buffersize_frames;
-    if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
-        exact_buffersize_frames = 4096;
-        if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
-            logError(i18n("ALSA Plugin: Error setting buffersize for %1").arg(pcm_name));
-            error = true;
-        }
-    }
-
-    size_t exact_buffersize = exact_buffersize_frames * format.frameSize();
-    if (!error && m_HWBufferSize != exact_buffersize) {
-        logWarning(i18n("ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer size of %3 instead.").arg(pcm_name).arg(m_HWBufferSize).arg(exact_buffersize));
-        size_t  tmp = (((m_HWBufferSize - 1) / exact_buffersize) + 1) * exact_buffersize;
-        setHWBufferSize(tmp);
-        logInfo(i18n("ALSA Plugin: adjusted buffer size for %1 to %2 bytes").arg(pcm_name).arg(QString::number(tmp)));
-    }
+//     size_t exact_buffersize = exact_buffersize_frames * format.frameSize();
+//     if (!error && m_HWBufferSize != exact_buffersize) {
+//         logWarning(i18n("ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer size of %3 instead.").arg(pcm_name).arg(m_HWBufferSize).arg(exact_buffersize));
+//         size_t  tmp = (((m_HWBufferSize - 1) / exact_buffersize) + 1) * exact_buffersize;
+//         setHWBufferSize(tmp);
+//         logInfo(i18n("ALSA Plugin: adjusted buffer size for %1 to %2 bytes").arg(pcm_name).arg(QString::number(tmp)));
+//     }
 
     /* set all params */
 
@@ -751,7 +806,17 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    latency = (exact_buffersize_frames * 1000) / format.m_SampleRate / periods / 2; /* in milli seconds */
+    if (!error && snd_pcm_hw_params_get_period_size(hwparams, &period_size, &dir) < 0) {
+        logError(i18n("ALSA Plugin: Error getting period size for %1").arg(pcm_name));
+        error = true;
+    }
+
+//     latency = (exact_buffersize_frames * 1000) / format.m_SampleRate / periods; /* in milli seconds */
+    latency = (period_size * format.frameSize() * 1000) / format.m_SampleRate; /* in milli seconds */
+
+    if (!error) {
+        snd_pcm_prepare(alsa_handle);
+    }
 
     return !error;
 }
@@ -807,7 +872,7 @@ bool AlsaSoundDevice::openPlaybackMixerDevice(bool reopen)
 
 bool AlsaSoundDevice::openCaptureMixerDevice(bool reopen)
 {
-    logDebug("AlsaSoundDevice::openCaptureMixerDevice: card == " + QString::number(m_CaptureCard));
+//     logDebug("AlsaSoundDevice::openCaptureMixerDevice: card == " + QString::number(m_CaptureCard));
     return openMixerDevice(m_hCaptureMixer, m_CaptureCard, reopen, &m_CapturePollingTimer, m_CaptureLatency);
 }
 
@@ -942,13 +1007,16 @@ void AlsaSoundDevice::getCaptureMixerChannels(
 )
 {
     vol_list.clear();
+    sw_list.clear();
+    if (all_list) all_list->clear();
     vol_ch2id.clear();
+    sw_ch2id.clear();
 
     snd_mixer_t *mixer_handle = __mixer_handle /*m_hCaptureMixer*/;
     bool         use_tmp_handle = false;
 
     if (!mixer_handle) {
-        staticLogDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + QString::number(card/*m_CaptureCard*/));
+//         staticLogDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + QString::number(card/*m_CaptureCard*/));
         openMixerDevice(mixer_handle, card /*m_CaptureCard*/, false, NULL, 0);
         use_tmp_handle = true;
     }
@@ -1332,10 +1400,10 @@ void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
 
 void AlsaSoundDevice::setCaptureDevice(int card, int dev)
 {
-    logDebug("AlsaSoundDevice::setCaptureDevice-1: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
+//     logDebug("AlsaSoundDevice::setCaptureDevice-1: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
     if (m_CaptureCard == card && m_CaptureDevice == dev)
         return;
-    logDebug("AlsaSoundDevice::setCaptureDevice-2: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
+//     logDebug("AlsaSoundDevice::setCaptureDevice-2: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
 
     m_CaptureCard   = card;
     m_CaptureDevice = dev;
@@ -1400,5 +1468,70 @@ void AlsaSoundDevice::setCaptureMixerSettings(const QMap<QString, AlsaConfigMixe
 {
     m_CaptureMixerSettings = map;
 }
+
+
+
+// bool AlsaSoundDevice::event(QEvent *_e)
+// {
+//     bool retval = false;
+//
+//     switch (_e->type()) {
+//
+//         case CaptureTerminated :
+//             retval = true;
+//             break;
+//
+//         case CaptureStep :
+//
+//             slotPollCapture();
+//
+//             retval = true;
+//             break;
+//
+//         case CaptureError :
+//         case CaptureWarning :
+//         case CaptureInfo :
+//         case CaptureDebug :
+//             if (m_captureThread) {
+//                 AlsaCaptureEvent *e = static_cast<AlsaCaptureEvent*>(_e);
+//                 QString msg = i18n("ALSA Plugin, device plughw:%1,%2: %3")
+//                                 .arg(m_CaptureCard)
+//                                 .arg(m_CaptureDevice)
+//                                 .arg(e->message());
+//                 switch (_e->type()) {
+//                     case CaptureError :
+//                         logError(msg);
+//                         m_captureThread->resetError();
+//                         break;
+//                     case CaptureWarning :
+//                         logWarning(msg);
+//                         break;
+//                     case CaptureInfo :
+//                         logInfo(msg);
+//                         break;
+//                     case CaptureDebug :
+//                         logDebug(msg);
+//                         break;
+//                     default:
+//                         break;
+//                 }
+//             }
+//             retval = true;
+//             break;
+//
+//         default:
+//             retval = QObject::event(_e);
+//             break;
+//     }
+//
+//     return retval;
+// }
+
+
+
+
+
+
+
 
 #include "alsa-sound.moc"

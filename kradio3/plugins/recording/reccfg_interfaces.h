@@ -33,6 +33,7 @@ RECEIVERS:
     IF_RECEIVER(   setOggQuality        (float q)                                                )
     IF_RECEIVER(   setRecordingDirectory(const QString &dir)                                     )
     IF_RECEIVER(   setOutputFormat      (RecordingConfig::OutputFormat of)                       )
+    IF_RECEIVER(   setPreRecording      (bool enable, int seconds)                               )
     IF_RECEIVER(   setRecordingConfig   (const RecordingConfig &cfg)                             )
 
 SENDERS:
@@ -42,6 +43,7 @@ SENDERS:
     IF_SENDER  (   notifyOggQualityChanged    (float q)                                                    )
     IF_SENDER  (   notifyRecordingDirectoryChanged(const QString &dir)                                     )
     IF_SENDER  (   notifyOutputFormatChanged      (RecordingConfig::OutputFormat of)                       )
+    IF_SENDER  (   notifyPreRecordingChanged      (bool enable, int seconds)                               )
     IF_SENDER  (   notifyRecordingConfigChanged   (const RecordingConfig &cfg)                             )
 
 ANSWERS:
@@ -51,6 +53,7 @@ ANSWERS:
     IF_ANSWER  (   float                          getOggQuality () const                                       )
     IF_ANSWER  (   const QString                 &getRecordingDirectory() const                                )
     IF_ANSWER  (   RecordingConfig::OutputFormat  getOutputFormat() const                                      )
+    IF_ANSWER  (   bool                           getPreRecording(int &seconds) const                          )
     IF_ANSWER  (   const RecordingConfig         &getRecordingConfig() const                                   )
 };
 
@@ -68,6 +71,7 @@ SENDERS:
     IF_SENDER  (   sendOggQuality        (float q)                                                )
     IF_SENDER  (   sendRecordingDirectory(const QString &dir)                                     )
     IF_SENDER  (   sendOutputFormat      (RecordingConfig::OutputFormat of)                       )
+    IF_SENDER  (   sendPreRecording      (bool enable, int seconds)                               )
     IF_SENDER  (   sendRecordingConfig   (const RecordingConfig &cfg)                             )
 
 RECEIVERS:
@@ -77,6 +81,7 @@ RECEIVERS:
     IF_RECEIVER(   noticeOggQualityChanged        (float q)                                                )
     IF_RECEIVER(   noticeRecordingDirectoryChanged(const QString &dir)                                     )
     IF_RECEIVER(   noticeOutputFormatChanged      (RecordingConfig::OutputFormat of)                       )
+    IF_RECEIVER(   noticePreRecordingChanged      (bool enable, int seconds)                               )
     IF_RECEIVER(   noticeRecordingConfigChanged   (const RecordingConfig &cfg)                             )
 
 QUERIES:
@@ -86,6 +91,7 @@ QUERIES:
     IF_QUERY   (   float                          queryOggQuality ()                                       )
     IF_QUERY   (   const QString                 &queryRecordingDirectory()                                )
     IF_QUERY   (   RecordingConfig::OutputFormat  queryOutputFormat()                                      )
+    IF_QUERY   (   bool                           queryPreRecording(int &seconds)                          )
     IF_QUERY   (   const RecordingConfig         &queryRecordingConfig()                                   )
 
 RECEIVERS:

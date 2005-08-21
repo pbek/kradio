@@ -86,7 +86,8 @@ V4LRadio::V4LRadio(const QString &name)
     m_CaptureMixerID(QString::null),
     m_PlaybackMixerChannel(QString::null),
     m_CaptureMixerChannel(QString::null),
-    m_ActivePlayback(false)
+    m_ActivePlayback(false),
+    m_restorePowerOn(false)
 {
     QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
     m_pollTimer.start(333);
@@ -1009,7 +1010,7 @@ void   V4LRadio::restoreState (KConfig *config)
     BlockProfiler p2("V4LRadio::restoreState2");
 
     setFrequency(config->readDoubleNumEntry("Frequency", 88));
-    setPower(config->readBoolEntry         ("PowerOn",   false));
+    m_restorePowerOn = config->readBoolEntry ("PowerOn",   false);
 
     BlockProfiler p3("V4LRadio::restoreState3");
 
@@ -1024,6 +1025,11 @@ void   V4LRadio::restoreState (KConfig *config)
         notifyPlaybackVolumeChanged(m_SoundStreamID, m_defaultPlaybackVolume);
 }
 
+void V4LRadio::startPlugin()
+{
+    PluginBase::startPlugin();
+    setPower(m_restorePowerOn);
+}
 
 ConfigPageInfo V4LRadio::createConfigurationPage()
 {

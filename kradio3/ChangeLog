@@ -1,6 +1,26 @@
+2005-08-20
+
+       emw  - quite a bunch of serious buffer handling fixes that lead to
+              unusable recordings/delayed playback/etc.
+            - added multibuffer class (was originally part of encoder thread
+              internal buffer handling)
+            - initialization order fixes
+            - recording encoder split into class tree (before, pcm,ogg,mp3
+              was mixed within a single class)
+            - ALSA initialization fixes
+            - mixer channel handling fix in ALSA plugin
+            - more intuitive recording monitor default stream selection
+            - static logging functions
+
+            - pre-recording - Never be upset anymore about pressing the
+              recording button too late!
+
+            - active playback implementation (capture from radio pcm device,
+              playback on your soundcard)
+
 2005-08-17
 
-       emw  - adjustest SoundStreamClient interface for SoundFormat queries
+       emw  - adjusted SoundStreamClient interface for SoundFormat queries
             - v4lradio is ready for active playback (capturing from some
               device, playback on pcm)
             - improved ALSA buffer handling (separate HW and SW buffer
@@ -23,7 +43,7 @@
             - no message box if stations.krp is not readable on first start
             - reduced default alsa buffer size. Resulted in internal alsa assertion failures
 
-2005-08-12
+2005-08-12 (1.0beta2)
 
        emw  - fix for --enable-final
             - partial fix for renamed icon kradio-zzz.png to kradio_zzz.png
@@ -68,7 +88,7 @@
                 - removed debug logging in recorder
                 - fixed missing volume=0/mute in timeshifter
 
-2005-05-22
+2005-05-22 (1.0beta1)
 
         emw     - fixed amd64 pointer arithmetic problem in
 	          recording/encoder.cpp

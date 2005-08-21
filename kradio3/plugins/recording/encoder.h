@@ -23,21 +23,15 @@
 #endif
 
 
-#include <sndfile.h>
-#ifdef HAVE_LAME_LAME_H
-    #include <lame/lame.h>
-#endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
-    #include <vorbis/vorbisenc.h>
-#endif
-
 #include <qobject.h>
 #include <qstring.h>
-#include <qmutex.h>
-#include <qsemaphore.h>
 #include <qthread.h>
-#include <qtimer.h>
 
+#include "../../src/radio-stations/radiostation.h"
+#include "../../src/libkradio/multibuffer.h"
+#include "../../src/libkradio/sound_metadata.h"
+#include "../../src/libkradio/soundstreamid.h"
+#include "recording-config.h"
 
 class BufferSoundMetaData : public SoundMetaData
 {
@@ -60,7 +54,7 @@ class RecordingEncoding : public QThread
 {
 public:
     RecordingEncoding(QObject *parent, SoundStreamID id, const RecordingConfig &cfg, const RadioStation *rs, const QString &filename);
-    RecordingEncoding::~RecordingEncoding();
+    virtual ~RecordingEncoding();
 
     void run();
 
@@ -73,40 +67,26 @@ public:
     void               setDone();
     bool               IsDone() { return m_done; }
 
-    bool               openOutput(const QString &outputFile);
-    void               closeOutput();
+    virtual bool       openOutput(const QString &outputFile) = 0;
+    virtual void       closeOutput() = 0;
 
     Q_UINT64           encodedSize() const { return m_encodedSize; }
 
     const RecordingConfig &config() const { return m_config; }
 
 protected:
-    void               encode_pcm(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
-    void               encode_mp3(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
-    void               encode_ogg(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
-
-    bool               openOutput_pcm(const QString &outputFile);
-    bool               openOutput_mp3(const QString &outputFile);
-    bool               openOutput_ogg(const QString &outputFile);
-
-    void               closeOutput_pcm();
-    void               closeOutput_mp3();
-    void               closeOutput_ogg();
+    virtual void       encode(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size) = 0;
 
     QObject           *m_parent;
     RecordingConfig    m_config;
     RadioStation      *m_RadioStation;
     SoundStreamID      m_SoundStreamID;
 
-    QMutex             m_bufferInputLock;
-    QSemaphore         m_inputAvailableLock;
     bool               m_error;
     QString            m_errorString;
     bool               m_done;
 
-    char             **m_buffersInput;
-    size_t            *m_buffersInputFill,
-                       m_currentInputBuffer;
+    MultiBuffer        m_InputBuffers;
     QPtrList<BufferSoundMetaData>
                      **m_buffersMetaData;
     Q_UINT64           m_encodedSize;
@@ -115,27 +95,6 @@ protected:
     Q_UINT64           m_InputStartPosition;
 
     KURL               m_outputURL;
-    SNDFILE           *m_output;
-
-#ifdef HAVE_LAME_LAME_H
-    unsigned char     *m_MP3Buffer;
-    size_t            m_MP3BufferSize;
-    FILE              *m_MP3Output;
-    char              *m_ID3Tags;
-    lame_global_flags *m_LAMEFlags;
-    short int         *m_MP3LBuffer,
-                      *m_MP3RBuffer;
-#endif
-
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
-    FILE              *m_OggOutput;
-    char              *m_OggExportBuffer;
-    size_t             m_OggExportBufferSize;
-    ogg_stream_state   m_OggStream;
-    vorbis_dsp_state   m_VorbisDSP;
-    vorbis_block       m_VorbisBlock;
-    vorbis_info        m_VorbisInfo;
-#endif
 };
 
 

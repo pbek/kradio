@@ -28,7 +28,7 @@ INTERFACE(IErrorLog, IErrorLogClient)
 {
 public :
     IErrorLog();
-    virtual ~IErrorLog() {}
+    virtual ~IErrorLog();
 
 RECEIVERS:
     IF_RECEIVER(    logError  (const QString &)         )

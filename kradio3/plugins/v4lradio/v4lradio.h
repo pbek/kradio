@@ -65,6 +65,7 @@ public:
 public:
     virtual void   saveState (KConfig *) const;
     virtual void   restoreState (KConfig *);
+    virtual void   startPlugin();
 
     virtual ConfigPageInfo  createConfigurationPage();
     virtual AboutPageInfo   createAboutPage();
@@ -245,6 +246,8 @@ protected:
     QString                       m_CaptureMixerChannel;
 
     bool                          m_ActivePlayback;
+
+    bool                          m_restorePowerOn;
 };
 
 #endif

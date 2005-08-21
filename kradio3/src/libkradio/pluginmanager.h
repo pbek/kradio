@@ -80,6 +80,7 @@ public :
 
     virtual void         saveState    (KConfig *) const;
     virtual void         restoreState (KConfig *);
+    virtual void         startPlugins();
 
     // configuration dialog handling
 

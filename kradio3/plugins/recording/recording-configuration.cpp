@@ -22,6 +22,7 @@
 #include <kcombobox.h>
 #include <qspinbox.h>
 #include <qlabel.h>
+#include <qcheckbox.h>
 
 
 RecordingConfiguration::RecordingConfiguration (QWidget *parent)
@@ -125,6 +126,13 @@ void RecordingConfiguration::setGUIEncoderQuality(const RecordingConfig &c)
 }
 
 
+void RecordingConfiguration::setGUIPreRecording(const RecordingConfig &c)
+{
+    m_spinboxPreRecordingSeconds->setValue(c.m_PreRecordingSeconds);
+    m_checkboxPreRecordingEnable->setChecked(c.m_PreRecordingEnable);
+}
+
+
 void RecordingConfiguration::slotOK()
 {
     storeConfig();
@@ -186,6 +194,9 @@ void RecordingConfiguration::storeConfig()
 #if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
     c.m_oggQuality = ((float)editOggQuality->value()) / 9.0f;
 #endif
+
+    c.m_PreRecordingEnable  = m_checkboxPreRecordingEnable->isChecked();
+    c.m_PreRecordingSeconds = m_spinboxPreRecordingSeconds->value();
 
     c.checkFormatSettings();
 }
@@ -324,6 +335,14 @@ bool RecordingConfiguration::noticeOutputFormatChanged      (RecordingConfig::Ou
     return true;
 }
 
+bool RecordingConfiguration::noticePreRecordingChanged (bool enable, int seconds)
+{
+    m_RecordingConfig.m_PreRecordingEnable = enable;
+    m_RecordingConfig.m_PreRecordingSeconds = seconds;
+    setGUIPreRecording(m_RecordingConfig);
+    return true;
+}
+
 bool RecordingConfiguration::noticeRecordingConfigChanged(const RecordingConfig &c)
 {
     m_RecordingConfig = c;
@@ -332,6 +351,7 @@ bool RecordingConfiguration::noticeRecordingConfigChanged(const RecordingConfig 
     setGUISoundFormat(c);
     setGUIOutputFormat(c);
     setGUIEncoderQuality(c);
+    setGUIPreRecording(c);
     slotFormatSelectionChanged();
     return true;
 }

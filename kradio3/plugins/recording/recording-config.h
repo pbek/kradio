@@ -62,6 +62,9 @@ public:
     float        m_oggQuality;
     QString      m_Directory;
     OutputFormat m_OutputFormat;
+
+    bool         m_PreRecordingEnable;
+    int          m_PreRecordingSeconds;
 };
 
 

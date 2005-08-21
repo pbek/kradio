@@ -96,6 +96,8 @@ public:
     virtual const QMap<QString, PluginLibraryInfo> &getPluginLibraries() const { return m_PluginLibraries; }
     virtual const QMap<QString, PluginClassInfo>   &getPluginClasses()   const { return m_PluginInfos; }
 
+    virtual void  startPlugins();
+
 protected:
 
     QDict<PluginManager>        m_Instances;

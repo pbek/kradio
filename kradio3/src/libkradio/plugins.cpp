@@ -74,4 +74,8 @@ void   PluginBase::restoreState (KConfig *)
 }
 
 
+void   PluginBase::startPlugin()
+{
+    // do nothing
+}
 

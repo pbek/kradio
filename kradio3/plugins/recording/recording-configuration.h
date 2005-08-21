@@ -90,6 +90,7 @@ public :
     bool noticeOggQualityChanged        (float q);
     bool noticeRecordingDirectoryChanged(const QString &dir);
     bool noticeOutputFormatChanged      (RecordingConfig::OutputFormat of);
+    bool noticePreRecordingChanged      (bool enable, int seconds);
     bool noticeRecordingConfigChanged   (const RecordingConfig &cfg);
 
 protected slots:
@@ -107,6 +108,7 @@ protected:
     void setGUIDirectories(const RecordingConfig &c);
     void setGUISoundFormat(const RecordingConfig &c);
     void setGUIOutputFormat(const RecordingConfig &c);
+    void setGUIPreRecording(const RecordingConfig &c);
     void setGUIEncoderQuality(const RecordingConfig &c);
 
     RecordingConfig m_RecordingConfig;

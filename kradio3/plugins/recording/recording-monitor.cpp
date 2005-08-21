@@ -32,7 +32,8 @@
 RecordingMonitor::RecordingMonitor(const QString &name)
   : QWidget(NULL, name.ascii()),
     WidgetPluginBase(name, i18n("Recording Monitor")),
-    m_recording(false)
+    m_recording(false),
+    m_defaultStreamDescription(QString::null)
 {
     setCaption(i18n("Recording Monitor"));
 
@@ -195,6 +196,8 @@ void RecordingMonitor::showEvent(QShowEvent *e)
 {
     QWidget::showEvent(e);
     WidgetPluginBase::pShowEvent(e);
+    m_comboSoundStreamSelector->setCurrentItem(1);
+    slotStreamSelected(1);
 }
 
 
@@ -202,6 +205,8 @@ void RecordingMonitor::hideEvent(QHideEvent *e)
 {
     QWidget::hideEvent(e);
     WidgetPluginBase::pHideEvent(e);
+    m_comboSoundStreamSelector->setCurrentItem(0);
+    slotStreamSelected(0);
 }
 
 
@@ -227,6 +232,11 @@ bool RecordingMonitor::noticeSoundStreamCreated(SoundStreamID id)
     m_comboSoundStreamSelector->insertItem(tmp);
     m_idx2SoundStreamID[idx] = id;
     m_SoundStreamID2idx[id]  = idx;
+
+    if (tmp == m_defaultStreamDescription) {
+        m_comboSoundStreamSelector->setCurrentItem(idx);
+        slotStreamSelected(idx);
+    }
     return true;
 }
 
@@ -259,6 +269,9 @@ bool RecordingMonitor::noticeSoundStreamChanged(SoundStreamID id)
         QString tmp = QString::null;
         querySoundStreamDescription(id, tmp);
         m_comboSoundStreamSelector->changeItem(tmp, idx);
+        if (idx == m_comboSoundStreamSelector->currentItem()) {
+            m_defaultStreamDescription = tmp;
+        }
         return true;
     }
     return false;
@@ -339,6 +352,8 @@ void RecordingMonitor::slotStreamSelected(int idx)
 
     SoundStreamID id = m_idx2SoundStreamID.contains(idx) ? m_idx2SoundStreamID[idx] : SoundStreamID::InvalidID;
     if (id.isValid()) {
+
+        m_defaultStreamDescription = m_comboSoundStreamSelector->text(idx);
 
         SoundFormat sf;
         sendStartCaptureWithFormat(id, sf, sf);

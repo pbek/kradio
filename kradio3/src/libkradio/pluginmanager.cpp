@@ -507,5 +507,12 @@ void PluginManager::slotConfigOK()
 }
 
 
+void  PluginManager::startPlugins()
+{
+    for (PluginIterator i(m_plugins); i.current(); ++i) {
+        i.current()->startPlugin();
+    }
+}
+
 
 #include "pluginmanager.moc"

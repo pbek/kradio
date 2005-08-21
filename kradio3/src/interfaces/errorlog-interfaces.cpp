@@ -30,6 +30,13 @@ IErrorLog::IErrorLog()
 }
 
 
+IErrorLog::~IErrorLog()
+{
+    if (staticLogger == this)
+        staticLogger = NULL;
+}
+
+
 int IErrorLogClient::sendLogError(const QString &s) const
 {
     kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)

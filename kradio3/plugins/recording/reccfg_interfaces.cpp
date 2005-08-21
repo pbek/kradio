@@ -38,6 +38,9 @@ IF_IMPL_SENDER  (   IRecCfg::notifyRecordingDirectoryChanged(const QString &dir)
 IF_IMPL_SENDER  (   IRecCfg::notifyOutputFormatChanged(RecordingConfig::OutputFormat of),
                     noticeOutputFormatChanged(of)
                 );
+IF_IMPL_SENDER  (   IRecCfg::notifyPreRecordingChanged(bool enable, int seconds),
+                    noticePreRecordingChanged(enable, seconds)
+                );
 IF_IMPL_SENDER  (   IRecCfg::notifyRecordingConfigChanged   (const RecordingConfig &cfg),
                     noticeRecordingConfigChanged(cfg)
                 );
@@ -59,9 +62,11 @@ IF_IMPL_SENDER  (   IRecCfgClient::sendOggQuality(float q),
 IF_IMPL_SENDER  (   IRecCfgClient::sendRecordingDirectory(const QString &dir),
                     setRecordingDirectory(dir)
                 );
-
 IF_IMPL_SENDER  (   IRecCfgClient::sendOutputFormat(RecordingConfig::OutputFormat of),
                     setOutputFormat(of)
+                );
+IF_IMPL_SENDER  (   IRecCfgClient::sendPreRecording(bool enable, int seconds),
+                    setPreRecording(enable, seconds)
                 );
 IF_IMPL_SENDER  (   IRecCfgClient::sendRecordingConfig(const RecordingConfig &cfg),
                     setRecordingConfig(cfg)
@@ -99,6 +104,11 @@ IF_IMPL_QUERY   (   RecordingConfig::OutputFormat  IRecCfgClient::queryOutputFor
                     RecordingConfig::outputWAV
                 );
 
+IF_IMPL_QUERY   (   bool IRecCfgClient::queryPreRecording(int &seconds),
+                    getPreRecording(seconds),
+                    false
+                );
+
 static RecordingConfig defaultRecConfig;
 IF_IMPL_QUERY   (   const RecordingConfig &IRecCfgClient::queryRecordingConfig(),
                     getRecordingConfig(),
@@ -115,6 +125,9 @@ void IRecCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/
     noticeOggQualityChanged (queryOggQuality());
     noticeRecordingDirectoryChanged(queryRecordingDirectory());
     noticeOutputFormatChanged(queryOutputFormat());
+    int  s = 0;
+    bool e = queryPreRecording(s);
+    noticePreRecordingChanged(e, s);
     noticeRecordingConfigChanged(queryRecordingConfig());
 }
 
@@ -129,6 +142,9 @@ void IRecCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/
     noticeOggQualityChanged (queryOggQuality());
     noticeRecordingDirectoryChanged(queryRecordingDirectory());
     noticeOutputFormatChanged(queryOutputFormat());
+    int  s = 0;
+    bool e = queryPreRecording(s);
+    noticePreRecordingChanged(e, s);
     noticeRecordingConfigChanged(queryRecordingConfig());
 }
 

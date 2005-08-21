@@ -30,7 +30,8 @@
 WidgetPluginBase::WidgetPluginBase(const QString &name, const QString &description)
   : PluginBase(name, description),
     m_geoCacheValid(false),
-    m_geoRestoreFlag(false)
+    m_geoRestoreFlag(false),
+    m_restoreShow(false)
 {
 }
 
@@ -158,15 +159,7 @@ void   WidgetPluginBase::restoreState (KConfig *config, bool showByDefault)
     m_saveSticky   = config->readBoolEntry("sticky",  false);
     m_saveGeometry = config->readRectEntry("geometry");
 
-    bool hidden = config->readBoolEntry("hidden", !showByDefault);
-
-    QWidget *w = getWidget();
-    if (w) {
-        m_geoRestoreFlag = true;
-        if (hidden) w->hide();
-        else        w->show();
-        m_geoRestoreFlag = false;
-    }
+    m_restoreShow  = !config->readBoolEntry("hidden", !showByDefault);
 }
 
 
@@ -174,3 +167,18 @@ void   WidgetPluginBase::restoreState (KConfig *config)
 {
     restoreState(config, true);
 }
+
+
+void   WidgetPluginBase::startPlugin()
+{
+    PluginBase::startPlugin();
+
+    QWidget *w = getWidget();
+    if (w) {
+        m_geoRestoreFlag = true;
+        if (!m_restoreShow) w->hide();
+        else                w->show();
+        m_geoRestoreFlag = false;
+    }
+}
+

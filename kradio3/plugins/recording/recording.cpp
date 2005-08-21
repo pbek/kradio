@@ -18,12 +18,15 @@
 #include "../../src/radio-stations/radiostation.h"
 #include "../../src/interfaces/errorlog-interfaces.h"
 #include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/libkradio/fileringbuffer.h"
 
 #include "recording.h"
-//#include "recording-context.h"
 #include "recording-configuration.h"
 #include "soundstreamevent.h"
 #include "recording-monitor.h"
+#include "encoder_mp3.h"
+#include "encoder_ogg.h"
+#include "encoder_pcm.h"
 
 #include <qevent.h>
 #include <qapplication.h>
@@ -31,14 +34,6 @@
 
 #include <kconfig.h>
 #include <kdeversion.h>
-
-#include <sndfile.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/soundcard.h>
-#include <sys/ioctl.h>
-#include <fcntl.h>
-#include <errno.h>
 
 #include <kaboutdata.h>
 
@@ -93,6 +88,8 @@ void Recording::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
     ISoundStreamClient::noticeConnectedI(s, pointer_valid);
     if (s && pointer_valid) {
+        s->register4_sendStartPlayback(this);
+        s->register4_sendStopPlayback(this);
         s->register4_sendStartRecording(this);
         s->register4_sendStartRecordingWithFormat(this);
         s->register4_notifySoundStreamData(this);
@@ -118,8 +115,10 @@ void Recording::saveState (KConfig *c) const
 void Recording::restoreState (KConfig *c)
 {
     c->setGroup(QString("recording-") + PluginBase::name());
-    m_config.restoreConfig(c);
-    notifyRecordingConfigChanged(m_config);
+    RecordingConfig cfg;
+    cfg.restoreConfig(c);
+    setRecordingConfig(cfg);
+    //notifyRecordingConfigChanged(m_config);
 }
 
 
@@ -215,6 +214,37 @@ bool   Recording::setOutputFormat (RecordingConfig::OutputFormat of)
     return true;
 }
 
+bool   Recording::setPreRecording (bool enable, int seconds)
+{
+    if (m_config.m_PreRecordingEnable != enable || m_config.m_PreRecordingSeconds != seconds) {
+        m_config.m_PreRecordingEnable = enable;
+        m_config.m_PreRecordingSeconds = seconds;
+
+        if (enable) {
+            for (QMapIterator<SoundStreamID,FileRingBuffer*> it = m_PreRecordingBuffers.begin(); it != m_PreRecordingBuffers.end(); ++it) {
+                if (*it != NULL) {
+                    delete *it;
+                }
+                *it = new FileRingBuffer("/tmp/kradio-prerecord-"+QString::number(it.key().getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
+                SoundFormat sf = m_config.m_SoundFormat;
+                sendStartCaptureWithFormat(it.key(), sf, sf, false);
+            }
+        }
+        else {
+            for (QMapIterator<SoundStreamID,FileRingBuffer*> it = m_PreRecordingBuffers.begin(); it != m_PreRecordingBuffers.end(); ++it) {
+                if (*it != NULL) {
+                    sendStopCapture(it.key());
+                    delete *it;
+                }
+            }
+            m_PreRecordingBuffers.clear();
+        }
+
+        notifyPreRecordingChanged(enable, seconds);
+    }
+    return true;
+}
+
 void   Recording::getEncoderBuffer(size_t &BufferSize, size_t &BufferCount) const
 {
     BufferSize  = m_config.m_EncodeBufferSize;
@@ -246,6 +276,12 @@ RecordingConfig::OutputFormat Recording::getOutputFormat() const
     return m_config.m_OutputFormat;
 }
 
+bool Recording::getPreRecording(int &seconds) const
+{
+    seconds = m_config.m_PreRecordingSeconds;
+    return m_config.m_PreRecordingEnable;
+}
+
 const RecordingConfig &Recording::getRecordingConfig() const
 {
     return m_config;
@@ -253,6 +289,14 @@ const RecordingConfig &Recording::getRecordingConfig() const
 
 bool Recording::setRecordingConfig(const RecordingConfig &c)
 {
+    setEncoderBuffer     (c.m_EncodeBufferSize, c.m_EncodeBufferCount);
+    setSoundFormat       (c.m_SoundFormat);
+    setMP3Quality        (c.m_mp3Quality);
+    setOggQuality        (c.m_oggQuality);
+    setRecordingDirectory(c.m_Directory);
+    setOutputFormat      (c.m_OutputFormat);
+    setPreRecording      (c.m_PreRecordingEnable, c.m_PreRecordingSeconds);
+
     m_config = c;
 
     notifyRecordingConfigChanged(m_config);
@@ -262,9 +306,46 @@ bool Recording::setRecordingConfig(const RecordingConfig &c)
 
 
 // ISoundStreamClient
+bool Recording::startPlayback(SoundStreamID id)
+{
+    m_PreRecordingBuffers[id] = NULL;
+    if (m_config.m_PreRecordingEnable) {
+        m_PreRecordingBuffers[id] = new FileRingBuffer("/tmp/kradio-prerecord-"+QString::number(id.getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
+        SoundFormat sf = m_config.m_SoundFormat;
+        sendStartCaptureWithFormat(id, sf, sf, false);
+    }
+    return false;
+}
+
+bool Recording::stopPlayback(SoundStreamID id)
+{
+    if (m_PreRecordingBuffers.contains(id)) {
+        if (m_PreRecordingBuffers[id])
+            delete m_PreRecordingBuffers[id];
+        m_PreRecordingBuffers.remove(id);
+        sendStopCapture(id);
+    }
+    return false;
+}
 
 bool Recording::startRecording(SoundStreamID id)
 {
+
+/*    FileRingBuffer *test = new FileRingBuffer("/tmp/ringbuffertest", 2048);
+    char buffer1[1024];
+    char buffer2[1024];
+    char buffer3[1024];
+    for (int i = 0; i < 1024; ++i) {
+        buffer1[i] = 'a';
+        buffer2[i] = 'b';
+        buffer3[i] = 'c';
+    }
+    test->addData(buffer1, 1024);
+    test->addData(buffer2, 1024);
+    test->removeData(1024);
+    test->addData(buffer3, 1024);
+*/
+
     SoundFormat realFormat = m_config.m_SoundFormat;
     return sendStartRecordingWithFormat(id, realFormat, realFormat);
 }
@@ -294,6 +375,14 @@ bool Recording::stopRecording(SoundStreamID id)
 {
     if (m_EncodingThreads.contains(id)) {
         sendStopCapture(id);
+        if (m_config.m_PreRecordingEnable) {
+            if (!m_PreRecordingBuffers.contains(id)) {
+                if (m_PreRecordingBuffers[id] != NULL) {
+                    delete m_PreRecordingBuffers[id];
+                }
+                m_PreRecordingBuffers[id] = new FileRingBuffer("/tmp/kradio-prerecord-"+QString::number(id.getID()), m_config.m_PreRecordingSeconds * m_config.m_SoundFormat.m_SampleRate * m_config.m_SoundFormat.frameSize());
+            }
+        }
         stopEncoder(id);
         return true;
     }
@@ -307,7 +396,63 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
     const SoundMetaData &md
 )
 {
-    if (m_EncodingThreads.contains(id)) {
+    if (m_PreRecordingBuffers.contains(id) && m_PreRecordingBuffers[id] != NULL) {
+
+        FileRingBuffer &fbuf = *m_PreRecordingBuffers[id];
+        if (fbuf.getFreeSize() < size) {
+            fbuf.removeData(size - fbuf.getFreeSize());
+        }
+        if (fbuf.addData(data, size) != size) {
+            logDebug("recording packet: was not written completely to tmp buf");
+        }
+
+//         //BEGIN DEBUG
+//         char tmp[4096];
+//         for (unsigned int i = 0; i < sizeof(tmp); ++i) { tmp[i] = 0; }
+//         if (fbuf.getFreeSize() < sizeof(tmp)) {
+//             fbuf.removeData(sizeof(tmp) - fbuf.getFreeSize());
+//         }
+//         fbuf.addData((char*)tmp, sizeof(tmp));
+//         //END DEBUG
+
+        if (m_EncodingThreads.contains(id)) {
+
+            //logDebug("recording packet: " + QString::number(size));
+
+            RecordingEncoding *thread = m_EncodingThreads[id];
+
+            //logDebug("noticeSoundStreamData thread = " + QString::number((long long)thread, 16));
+
+            size_t        remSize = fbuf.getFillSize();
+
+            while (remSize > 0) {
+                size_t  bufferSize = remSize;
+                char *buf = thread->lockInputBuffer(bufferSize);
+                if (!buf) {
+                    // Encoder buffer is full and bigger than remaining data
+                    break;
+                }
+                if (bufferSize > remSize) {
+                    bufferSize = remSize;
+                }
+                if (fbuf.takeData(buf, bufferSize) != bufferSize) {
+                    logError("could not read suffient data");
+                }
+
+                thread->unlockInputBuffer(bufferSize, md);
+                remSize -= bufferSize;
+            }
+
+            if (remSize == 0) {
+                delete m_PreRecordingBuffers[id];
+                m_PreRecordingBuffers.remove(id);
+            }
+        }
+
+        return true;
+    }
+
+    else if (m_EncodingThreads.contains(id)) {
 
         //logDebug("recording packet: " + QString::number(size));
 
@@ -378,7 +523,21 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
 
     logInfo(i18n("Recording::outputFile: ") + output);
 
-    RecordingEncoding *thread = new RecordingEncoding(this, ssid, cfg, rs, output);
+    RecordingEncoding *thread = NULL;
+    switch (m_config.m_OutputFormat) {
+#ifdef HAVE_LAME_LAME_H
+        case RecordingConfig::outputMP3:
+            thread = new RecordingEncodingMP3(this, ssid, cfg, rs, output);
+            break;
+#endif
+#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+        case RecordingConfig::outputOGG:
+            thread = new RecordingEncodingOgg(this, ssid, cfg, rs, output);
+            break;
+#endif
+        default:
+            thread = new RecordingEncodingPCM(this, ssid, cfg, rs, output);
+    }
 
     //m_encodingThread->openOutput(output, rs);
 
@@ -535,6 +694,12 @@ bool Recording::isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) c
 
 bool Recording::noticeSoundStreamClosed(SoundStreamID id)
 {
+    if (m_PreRecordingBuffers.contains(id)) {
+        if (m_PreRecordingBuffers[id])
+            delete m_PreRecordingBuffers[id];
+        m_PreRecordingBuffers.remove(id);
+    }
+
     if (m_EncodingThreads.contains(id)) {
         sendStopRecording(id);
         return true;

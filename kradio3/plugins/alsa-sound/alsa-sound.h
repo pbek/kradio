@@ -65,6 +65,8 @@ struct SoundStreamConfig
 };
 
 
+class AlsaCaptureThread;
+
 class AlsaMixerElement
 {
 public:
@@ -207,7 +209,9 @@ signals:
     void   sigUpdateConfig();
 
 protected:
-    bool   openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, unsigned &latency);
+//     bool   event(QEvent *_e);
+
+    bool   openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency);
 
     bool   openPlaybackDevice (const SoundFormat &format, bool reopen = false);
     bool   openCaptureDevice  (const SoundFormat &format, bool reopen = false);
@@ -280,6 +284,8 @@ protected:
 
     QTimer          m_PlaybackPollingTimer;
     QTimer          m_CapturePollingTimer;
+
+//     AlsaCaptureThread  *m_captureThread;
 
     QMap<QString, AlsaConfigMixerSetting> m_CaptureMixerSettings;
 
