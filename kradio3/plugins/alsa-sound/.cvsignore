@@ -24,3 +24,6 @@ Makefile.in
 *.urold
 
 *.all_cpp.cpp
+
+capture-thread.cpp
+capture-thread.h
