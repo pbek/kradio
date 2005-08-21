@@ -1,3 +1,11 @@
+2005-08-21 (1.0beta3)
+
+       emw  - little SuSE 9.2 compilation fix
+            - one more buffer handling fix that resulted in clicks during
+              recording
+            - pre-recording & recording now works completely also for
+              timeshifted signals
+
 2005-08-20
 
        emw  - quite a bunch of serious buffer handling fixes that lead to

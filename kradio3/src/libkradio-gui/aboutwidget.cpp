@@ -435,7 +435,7 @@ void KRadioAboutWidget::setImageFrame( bool state )
 
 
 void KRadioAboutWidget::setProduct( const QString &appName,
-                      const QString &version,
+                      const QString &/*version*/,
                       const QString &author,
                       const QString &year )
 {
