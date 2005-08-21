@@ -78,6 +78,8 @@ void TimeShifter::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
         s->register4_notifySoundStreamData(this);
         s->register4_notifyReadyForPlaybackData(this);
         s->register4_querySoundStreamDescription(this);
+        s->register4_sendStartCaptureWithFormat(this);
+        s->register4_sendStopCapture(this);
     }
 }
 
@@ -410,5 +412,32 @@ bool TimeShifter::getSoundStreamDescription(SoundStreamID id, QString &descr) co
     }
 }
 
+bool TimeShifter::startCaptureWithFormat(
+    SoundStreamID      id,
+    const SoundFormat &proposed_format,
+    SoundFormat       &real_format,
+    bool               force_format
+)
+{
+    if (id == m_OrgStreamID) {
+        if (force_format && m_realSoundFormat != proposed_format) {
+            sendStopCapture(m_NewStreamID);
+            sendStartCaptureWithFormat(m_NewStreamID, proposed_format, m_realSoundFormat);
+        }
+        real_format = m_realSoundFormat;
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool TimeShifter::stopCapture(SoundStreamID id)
+{
+    if (id == m_OrgStreamID) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 #include "timeshifter.moc"

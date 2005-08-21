@@ -74,6 +74,11 @@ protected:
     // SoundStreamClient
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
 
+    bool startCaptureWithFormat(SoundStreamID      id,
+                      const SoundFormat &proposed_format,
+                      SoundFormat       &real_format,
+                      bool               force_format);
+    bool stopCapture(SoundStreamID id);
     bool noticeSoundStreamClosed(SoundStreamID id);
     bool startPlayback(SoundStreamID id);
     bool stopPlayback(SoundStreamID id);
