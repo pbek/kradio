@@ -766,7 +766,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
     }
 
 
-    size_t period_size = m_HWBufferSize / format.frameSize();
+    snd_pcm_uframes_t period_size = m_HWBufferSize / format.frameSize();
     if (!error && snd_pcm_hw_params_set_period_size_near(alsa_handle, hwparams, &period_size, &dir) < 0) {
         logError(i18n("ALSA Plugin: Error setting period size for %1").arg(pcm_name));
         error = true;
