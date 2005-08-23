@@ -192,7 +192,7 @@ ConfigPageInfo  AlsaSoundDevice::createConfigurationPage()
     AlsaSoundConfiguration *conf = new AlsaSoundConfiguration(NULL, this);
     QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
     return ConfigPageInfo (conf,
-                           i18n("ALSA Sound Device Options"),
+                           i18n("ALSA Sound"),
                            i18n("ALSA Sound Device Options"),
                            "kradio_alsa2");
 }

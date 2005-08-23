@@ -5,6 +5,8 @@
             - FIX: saveState was not called if kradio was closed by kde 
               session exit
             - FIX: use current time for new alarms
+            - FIX: reduced caption length for config dialog, error log
+            - FIX: reduced icon-item names in config dialog
 
 2005-08-21 (1.0beta3)
 

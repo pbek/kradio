@@ -168,7 +168,7 @@ ConfigPageInfo  OSSSoundDevice::createConfigurationPage()
     OSSSoundConfiguration *conf = new OSSSoundConfiguration(NULL, this);
     QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
     return ConfigPageInfo (conf,
-                           i18n("OSS Sound Device Options"),
+                           i18n("OSS Sound"),
                            i18n("OSS Sound Device Options"),
                            "kmix");
 }

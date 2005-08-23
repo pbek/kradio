@@ -98,8 +98,6 @@ public:
 
     virtual void  startPlugins();
 
-    virtual void  saveState ( QSessionManager &);
-
 protected slots:
 
     virtual void  saveState();
@@ -111,6 +109,8 @@ protected:
 
     QMap<QString, PluginLibraryInfo>  m_PluginLibraries;
     QMap<QString, PluginClassInfo>    m_PluginInfos;
+
+    bool                              m_quitting;
 };
 
 

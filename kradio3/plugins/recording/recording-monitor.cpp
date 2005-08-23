@@ -35,7 +35,7 @@ RecordingMonitor::RecordingMonitor(const QString &name)
     m_recording(false),
     m_defaultStreamDescription(QString::null)
 {
-    setCaption(i18n("Recording Monitor"));
+    setCaption(i18n("KRadio Recording Monitor"));
 
     QVBoxLayout *l = new QVBoxLayout(this, 10, 4);
     QGridLayout *l0 = new QGridLayout(l, 6, 2);

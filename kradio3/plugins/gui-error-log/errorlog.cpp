@@ -42,7 +42,7 @@ PLUGIN_LIBRARY_FUNCTIONS(ErrorLog, "Error Logging Window for KRadio");
 
 ErrorLog::ErrorLog(const QString &name)
     :  KDialogBase(KDialogBase::IconList,
-                   i18n("KRadio Logger"),
+                   "",
                    KDialogBase::Close|KDialogBase::User1,
                    KDialogBase::Close,
                    NULL,
@@ -54,6 +54,7 @@ ErrorLog::ErrorLog(const QString &name)
        WidgetPluginBase(name, i18n("Error Logger")),
        init_done(false)
 {
+    QWidget::setCaption(i18n("KRadio Logger"));
     QFrame *info = addPage(i18n("Information"), i18n("Information"),
                            KGlobal::instance()->iconLoader()->loadIcon(
                               "messagebox_info", KIcon::NoGroup, KIcon::SizeMedium

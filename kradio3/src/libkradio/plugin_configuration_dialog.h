@@ -63,6 +63,8 @@ protected:
 
     virtual       QWidget *getWidget()         { return this; }
     virtual const QWidget *getWidget() const   { return this; }
+
+    QString m_Caption;
 };
 
 

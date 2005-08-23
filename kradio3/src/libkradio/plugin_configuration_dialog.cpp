@@ -26,7 +26,8 @@ PluginConfigurationDialog::PluginConfigurationDialog(
     bool modal, bool separator)
 : KDialogBase(dialogFace, caption, buttonMask, defaultButton,
               parent, name, modal, separator),
-  WidgetPluginBase (name, i18n("Configuration Dialog"))
+  WidgetPluginBase (name, i18n("Configuration Dialog")),
+  m_Caption(caption)
 {
 }
 
@@ -36,25 +37,25 @@ PluginConfigurationDialog::PluginConfigurationDialog(
 void   PluginConfigurationDialog::saveState (KConfig *c) const
 {
     c->setGroup(QString("config-dialog-") + WidgetPluginBase::name());
-	WidgetPluginBase::saveState(c);
+    WidgetPluginBase::saveState(c);
 }
 
 void   PluginConfigurationDialog::restoreState (KConfig *c)
 {
     c->setGroup(QString("config-dialog-") + WidgetPluginBase::name());
-	WidgetPluginBase::restoreState(c, true);
+    WidgetPluginBase::restoreState(c, true);
 }
 
 
 ConfigPageInfo PluginConfigurationDialog::createConfigurationPage()
 {
-	return ConfigPageInfo();
+    return ConfigPageInfo();
 }
 
 
 AboutPageInfo  PluginConfigurationDialog::createAboutPage()
 {
-	return AboutPageInfo();
+    return AboutPageInfo();
 }
 
 
@@ -62,15 +63,15 @@ AboutPageInfo  PluginConfigurationDialog::createAboutPage()
 
 void PluginConfigurationDialog::show()
 {
-	WidgetPluginBase::pShow();
-	KDialogBase::show();
+    WidgetPluginBase::pShow();
+    KDialogBase::show();
 }
 
 
 void PluginConfigurationDialog::hide()
 {
-	WidgetPluginBase::pHide();
-	KDialogBase::hide();
+    WidgetPluginBase::pHide();
+    KDialogBase::hide();
 }
 
 
@@ -78,15 +79,16 @@ void PluginConfigurationDialog::hide()
 
 void PluginConfigurationDialog::showEvent(QShowEvent *e)
 {
-	KDialogBase::showEvent(e);
-	WidgetPluginBase::pShowEvent(e);
+    KDialogBase::showEvent(e);
+    QWidget::setCaption(m_Caption);
+    WidgetPluginBase::pShowEvent(e);
 }
 
 
 void PluginConfigurationDialog::hideEvent(QHideEvent *e)
 {
-	KDialogBase::hideEvent(e);
-	WidgetPluginBase::pHideEvent(e);
+    KDialogBase::hideEvent(e);
+    WidgetPluginBase::pHideEvent(e);
 }
 
 

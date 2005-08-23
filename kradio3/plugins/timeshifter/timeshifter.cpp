@@ -118,7 +118,7 @@ ConfigPageInfo  TimeShifter::createConfigurationPage()
     TimeShifterConfiguration *conf = new TimeShifterConfiguration(NULL, this);
     QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotCancel()));
     return ConfigPageInfo (conf,
-                           i18n("Timeshifter Options"),
+                           i18n("Timeshifter"),
                            i18n("Timeshifter Options"),
                            "player_pause");
 }

@@ -1038,7 +1038,7 @@ ConfigPageInfo V4LRadio::createConfigurationPage()
     V4LRadioConfiguration *v4lconf = new V4LRadioConfiguration(NULL, m_SoundStreamID);
     connectI(v4lconf);
     return ConfigPageInfo (v4lconf,
-                           i18n("V4L Radio Options"),
+                           i18n("V4L Radio"),
                            i18n("V4L Radio Options"),
                            "package_utilities");
 }

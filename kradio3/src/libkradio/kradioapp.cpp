@@ -119,20 +119,15 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
 //// KRadioApp
 
 KRadioApp::KRadioApp()
-  : KApplication()
+  : KApplication(),
+    m_quitting(false)
 {
     m_Instances.setAutoDelete(true);
-    connect(this, SIGNAL(saveYourself()), this, SLOT(saveState()));
 }
 
 
 KRadioApp::~KRadioApp()
 {
-}
-
-void  KRadioApp::saveState(QSessionManager &)
-{
-    saveState();
 }
 
 void KRadioApp::saveState()
@@ -172,9 +167,10 @@ void KRadioApp::restoreState (KConfig *c)
     c->setGroup("Plugin Libraries");
     int n_libs = c->readNumEntry("count", 0);
 
-    KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Loading Plugins Libraries"));
-    progress->setMinimumWidth(500);
+    KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Loading Plugin Libraries"));
+    progress->setMinimumWidth(400);
     progress->setAllowCancel(false);
+    progress->QWidget::setCaption(i18n("KRadio - Loading Plugin Libraries"));
     progress->show();
 
     progress->progressBar()->setTotalSteps(n_libs);
@@ -222,14 +218,18 @@ PluginManager *KRadioApp::createNewInstance(const QString &_name)
     BlockProfiler profiler("KRadioApp::createNewInstance");
 
     QString instance_name = _name;
+    QString title_ext = "";
     QString id = QString::number(m_Instances.count()+1);
     if (instance_name.length() == 0) {
         instance_name = "Instance " + id;
     }
+    if (_name.length() && m_Instances.count() > 0) {
+        title_ext = " " + instance_name;
+    }
     PluginManager *pm = new PluginManager ( instance_name,
                                             this,
-                                            i18n("KRadio Configuration")    + (_name.length() ? instance_name : ""),
-                                            i18n("About KRadio Components") + (_name.length() ? instance_name : "")
+                                            i18n("KRadio Configuration")    + title_ext,
+                                            i18n("About KRadio Components") + title_ext
                                           );
 
     connect(this, SIGNAL(aboutToQuit()), this, SLOT(slotAboutToQuit()));
@@ -342,11 +342,15 @@ void  KRadioApp::startPlugins()
 
 void  KRadioApp::slotAboutToQuit()
 {
-    QDictIterator<PluginManager> it(m_Instances);
-    for (; it.current(); ++it) {
-        it.current()->aboutToQuit();
+    if (!m_quitting) {
+        m_quitting = true;
+        saveState();
+        QDictIterator<PluginManager> it(m_Instances);
+        for (; it.current(); ++it) {
+            it.current()->aboutToQuit();
+        }
+        m_quitting = false;
     }
-    saveState();
 }
 
 #include "kradioapp.moc"
