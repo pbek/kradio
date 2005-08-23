@@ -117,6 +117,8 @@ public:
     virtual void   restoreState (KConfig *) = 0;
     virtual void   startPlugin();
 
+    virtual void   aboutToQuit();
+
     //
 
     virtual void noticeWidgetPluginShown(WidgetPluginBase *, bool /*shown*/) {}

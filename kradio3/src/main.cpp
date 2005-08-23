@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
     profiler_restore.stop();
 
     int ret = a.exec();
-    a.saveState(KGlobal::config());
 
     global_profiler.printData();
 

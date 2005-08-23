@@ -118,7 +118,7 @@ public:
     virtual RadioStationConfig *createEditor() const = 0;
 
     virtual bool operator == (const RadioStation &x) const;
-            bool operator != (const RadioStation &x) const { return !operator==(x); }
+    virtual bool operator != (const RadioStation &x) const { return !operator==(x); }
 
 protected :
     QString  m_stationID;

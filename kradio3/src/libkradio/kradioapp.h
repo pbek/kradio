@@ -84,7 +84,7 @@ public:
     KRadioApp();
     virtual ~KRadioApp();
 
-    virtual void             saveState    (KConfig *c) const;
+    virtual void             saveState    (KConfig *c);
     virtual void             restoreState (KConfig *c);
 
     virtual PluginManager   *createNewInstance(const QString &name);
@@ -97,6 +97,13 @@ public:
     virtual const QMap<QString, PluginClassInfo>   &getPluginClasses()   const { return m_PluginInfos; }
 
     virtual void  startPlugins();
+
+    virtual void  saveState ( QSessionManager &);
+
+protected slots:
+
+    virtual void  saveState();
+    virtual void  slotAboutToQuit();
 
 protected:
 

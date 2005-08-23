@@ -79,3 +79,6 @@ void   PluginBase::startPlugin()
     // do nothing
 }
 
+void   PluginBase::aboutToQuit()
+{
+}

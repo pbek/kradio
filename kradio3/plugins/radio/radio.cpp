@@ -197,7 +197,7 @@ bool Radio::activateStation(int index)
 
 bool Radio::setStations(const StationList &sl)
 {
-    if (m_stationList != sl) {
+    if (true/*m_stationList != sl*/) {
         BlockProfiler("Radio::setStations");
         m_stationList = sl;
         notifyStationsChanged(m_stationList);
@@ -487,5 +487,11 @@ bool Radio::noticeCountdownZero()
 {
     powerOff();
     return true;
+}
+
+
+void Radio::aboutToQuit()
+{
+    sendPowerOff();
 }
 

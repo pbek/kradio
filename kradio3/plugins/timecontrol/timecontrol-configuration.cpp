@@ -360,7 +360,7 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 
 void TimeControlConfiguration::slotNewAlarm()
 {
-    QDateTime  dt(QDate(1800,1,1), QTime(0,0,0));
+    QDateTime  dt(QDateTime::currentDateTime());
     Alarm a(dt, false, false);
     alarms.push_back(a);
     listAlarms->insertItem(a.alarmTime().toString());

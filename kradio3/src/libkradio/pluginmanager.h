@@ -102,6 +102,9 @@ protected slots:
 
     virtual void         slotConfigOK();
 
+public slots:
+    virtual void         aboutToQuit();
+
 signals:
 
     virtual void         sigConfigOK();

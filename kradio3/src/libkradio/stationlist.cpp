@@ -192,6 +192,18 @@ int RawStationList::idxWithID(const QString &sid) const
 }
 
 
+bool RawStationList::operator == (const RawStationList &l) const
+{
+    QPtrListIterator<RadioStation> it1(*this);
+    QPtrListIterator<RadioStation> it2(l);
+    if (count() != l.count())
+        return false;
+    for (; it1.current() && it2.current(); ++it1, ++it2) {
+        if (**it1 != **it2)
+            return false;
+    }
+    return true;
+}
 
 
 //////////////////////////////////////////////////////////////////////////////

@@ -1,3 +1,10 @@
+2005-08-23 
+
+       emw  - FIX: modifications of stations failed. Was a faulty != / ==
+              operator in StationList class.
+            - FIX: saveState was not called if kradio was closed by kde 
+              session exit
+
 2005-08-21 (1.0beta3)
 
        emw  - little SuSE 9.2 compilation fix

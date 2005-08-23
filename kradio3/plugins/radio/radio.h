@@ -74,6 +74,7 @@ public:
     virtual ConfigPageInfo  createConfigurationPage();
     virtual AboutPageInfo   createAboutPage();
 
+    virtual void aboutToQuit();
 
     // IRadio methods
 

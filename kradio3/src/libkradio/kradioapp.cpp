@@ -122,6 +122,7 @@ KRadioApp::KRadioApp()
   : KApplication()
 {
     m_Instances.setAutoDelete(true);
+    connect(this, SIGNAL(saveYourself()), this, SLOT(saveState()));
 }
 
 
@@ -129,8 +130,17 @@ KRadioApp::~KRadioApp()
 {
 }
 
+void  KRadioApp::saveState(QSessionManager &)
+{
+    saveState();
+}
 
-void KRadioApp::saveState (KConfig *c) const
+void KRadioApp::saveState()
+{
+    saveState(KGlobal::config());
+}
+
+void KRadioApp::saveState (KConfig *c)
 {
     c->setGroup("Global");
     c->writeEntry("instances", m_Instances.count());
@@ -222,6 +232,7 @@ PluginManager *KRadioApp::createNewInstance(const QString &_name)
                                             i18n("About KRadio Components") + (_name.length() ? instance_name : "")
                                           );
 
+    connect(this, SIGNAL(aboutToQuit()), this, SLOT(slotAboutToQuit()));
     m_Instances.insert(instance_name, pm);
 
     /* Until we don't have library plugins we must instantiate them hard-wired */
@@ -329,5 +340,13 @@ void  KRadioApp::startPlugins()
     }
 }
 
+void  KRadioApp::slotAboutToQuit()
+{
+    QDictIterator<PluginManager> it(m_Instances);
+    for (; it.current(); ++it) {
+        it.current()->aboutToQuit();
+    }
+    saveState();
+}
 
 #include "kradioapp.moc"

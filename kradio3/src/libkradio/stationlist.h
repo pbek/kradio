@@ -81,6 +81,9 @@ public:
 
     int                   idxWithID(const QString &sid) const;
 
+    bool                  operator == (const RawStationList &l) const;
+    bool                  operator != (const RawStationList &l) const { return !operator==(l); }
+
 protected:
 
     QPtrCollection::Item newItem (QPtrCollection::Item s);

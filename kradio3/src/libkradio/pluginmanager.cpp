@@ -514,5 +514,12 @@ void  PluginManager::startPlugins()
     }
 }
 
+void  PluginManager::aboutToQuit()
+{
+    for (PluginIterator i(m_plugins); i.current(); ++i) {
+        i.current()->aboutToQuit();
+    }
+}
+
 
 #include "pluginmanager.moc"
