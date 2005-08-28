@@ -58,6 +58,8 @@ RECEIVERS:
     bool noticeDeviceVolumeChanged(float v);
     bool noticeCapabilitiesChanged(const V4LCaps &c);
     bool noticeActivePlaybackChanged(bool a);
+    bool noticeMuteOnPowerOffChanged(bool a);
+    bool noticeVolumeZeroOnPowerOffChanged(bool a);
 
 // IRadioDeviceClient
 

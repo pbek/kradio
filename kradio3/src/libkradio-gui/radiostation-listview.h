@@ -43,6 +43,8 @@ public:
     void setStations(const StationList &);
 
     void removeStation(int idx);
+    void takeItem(QListViewItem *item, int idx);
+    void insertItem(QListViewItem *item, const QString &stationid, int idx);
 
     void setCurrentStation(int idx);
     int  currentStationIndex() const;
@@ -52,6 +54,16 @@ public:
     void   saveState    (KConfig *) const;
     void   restoreState (KConfig *);
 
+
+protected:
+
+    QDragObject *dragObject();
+    void         dragEnterEvent(QDragEnterEvent* event);
+    void         dropEvent(QDropEvent* event);
+    void         contentsDragEnterEvent(QDragEnterEvent* event);
+    void         contentsDragMoveEvent(QDragMoveEvent* event);
+    void         contentsDropEvent(QDropEvent* event);
+
 protected slots:
 
     void slotStationActivation(QListViewItem *);
@@ -60,6 +72,11 @@ protected slots:
 signals:
     void sigStationActivated(int idx);
     void sigCurrentStationChanged(int idx);
+    void sigStationsReceived(const QStringList &stationIDs);
+
+protected:
+
+    QStringList  m_StationIDs;
 
 };
 

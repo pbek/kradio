@@ -145,6 +145,9 @@ protected:
 
     void ShowHideWidgetPlugins();
 
+    void dragEnterEvent(QDragEnterEvent* event);
+    void dropEvent(QDropEvent* event);
+
 public:
 
     LeftClickAction getLeftClickAction() const { return m_leftClickAction; }

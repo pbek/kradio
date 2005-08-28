@@ -82,6 +82,13 @@ IF_IMPL_SENDER  (   IV4LCfg::notifyActivePlaybackChanged(bool a),
                     noticeActivePlaybackChanged(a)
                 )
 
+IF_IMPL_SENDER  (   IV4LCfg::notifyMuteOnPowerOffChanged(bool a),
+                    noticeMuteOnPowerOffChanged(a)
+                )
+
+IF_IMPL_SENDER  (   IV4LCfg::notifyVolumeZeroOnPowerOffChanged(bool a),
+                    noticeVolumeZeroOnPowerOffChanged(a)
+                )
 // IV4LCfgClient
 
 IF_IMPL_SENDER  (   IV4LCfgClient::sendRadioDevice (const QString &s),
@@ -99,6 +106,14 @@ IF_IMPL_SENDER  (   IV4LCfgClient::sendDeviceVolume(float v),
 
 IF_IMPL_SENDER  (   IV4LCfgClient::sendActivePlayback(bool a),
                     setActivePlayback(a)
+                )
+
+IF_IMPL_SENDER  (   IV4LCfgClient::sendMuteOnPowerOff(bool a),
+                    setMuteOnPowerOff(a)
+                )
+
+IF_IMPL_SENDER  (   IV4LCfgClient::sendVolumeZeroOnPowerOff(bool a),
+                    setVolumeZeroOnPowerOff(a)
                 )
 
 static QString defaultRDev("/dev/radio");
@@ -140,6 +155,16 @@ IF_IMPL_QUERY   (   bool IV4LCfgClient::queryActivePlayback(),
                     false
                 )
 
+IF_IMPL_QUERY   (   bool IV4LCfgClient::queryMuteOnPowerOff(),
+                    getMuteOnPowerOff(),
+                    false
+                )
+
+IF_IMPL_QUERY   (   bool IV4LCfgClient::queryVolumeZeroOnPowerOff(),
+                    getVolumeZeroOnPowerOff(),
+                    false
+                )
+
 void IV4LCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
     noticeRadioDeviceChanged(queryRadioDevice());
@@ -148,6 +173,8 @@ void IV4LCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/
     noticeDeviceVolumeChanged(queryDeviceVolume());
     noticeCapabilitiesChanged(queryCapabilities());
     noticeActivePlaybackChanged(queryActivePlayback());
+    noticeMuteOnPowerOffChanged(queryMuteOnPowerOff());
+    noticeVolumeZeroOnPowerOffChanged(queryVolumeZeroOnPowerOff());
 }
 
 
@@ -159,6 +186,8 @@ void IV4LCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/
     noticeDeviceVolumeChanged(queryDeviceVolume());
     noticeCapabilitiesChanged(queryCapabilities());
     noticeActivePlaybackChanged(queryActivePlayback());
+    noticeMuteOnPowerOffChanged(queryMuteOnPowerOff());
+    noticeVolumeZeroOnPowerOffChanged(queryVolumeZeroOnPowerOff());
 }
 
 

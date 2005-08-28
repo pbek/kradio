@@ -31,6 +31,8 @@ StationSelector::StationSelector (QWidget *parent)
 {
     QObject::connect(buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
     QObject::connect(buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
+    QObject::connect(listAvailable, SIGNAL(sigStationsReceived(const QStringList&)), this, SLOT(slotMoveToLeft(const QStringList&)));
+    QObject::connect(listSelected,  SIGNAL(sigStationsReceived(const QStringList&)), this, SLOT(slotMoveToRight(const QStringList&)));
 
     listSelected->setSelectionMode(QListView::Extended);
     listAvailable->setSelectionMode(QListView::Extended);
@@ -112,6 +114,7 @@ bool StationSelector::noticeStationsChanged(const StationList &sl)
 
 void StationSelector::slotButtonToLeft()
 {
+    listAvailable->clearSelection();
     QListViewItem *item = listSelected->firstChild();
     int idx_from = 0;
     while (item) {
@@ -133,6 +136,7 @@ void StationSelector::slotButtonToLeft()
 
 void StationSelector::slotButtonToRight()
 {
+    listSelected->clearSelection();
     QListViewItem *item = listAvailable->firstChild();
     int idx_from = 0;
     while (item) {
@@ -152,6 +156,50 @@ void StationSelector::slotButtonToRight()
 }
 
 
+void StationSelector::slotMoveToRight(const QStringList &list)
+{
+    listSelected->clearSelection();
+    QListViewItem *item = listAvailable->firstChild();
+    int idx_from = 0;
+    while (item) {
+        QListViewItem *next_item = item->nextSibling();
+
+        if (list.contains(m_stationIDsAvailable[idx_from])) {
+
+            moveItem (listAvailable, m_stationIDsAvailable,
+                      item,          idx_from,
+                      listSelected,  m_stationIDsSelected);
+
+            --idx_from;
+        }
+        item = next_item;
+        ++idx_from;
+    }
+}
+
+
+void StationSelector::slotMoveToLeft(const QStringList &list)
+{
+    listAvailable->clearSelection();
+    QListViewItem *item = listSelected->firstChild();
+    int idx_from = 0;
+    while (item) {
+        QListViewItem *next_item = item->nextSibling();
+
+        if (list.contains(m_stationIDsSelected[idx_from])) {
+
+            moveItem (listSelected,  m_stationIDsSelected,
+                      item,          idx_from,
+                      listAvailable, m_stationIDsAvailable);
+
+            --idx_from;
+        }
+        item = next_item;
+        ++idx_from;
+    }
+}
+
+
 void StationSelector::moveItem(
   RadioStationListView *fromListView,
   QStringList          &fromIDList,
@@ -161,7 +209,7 @@ void StationSelector::moveItem(
   QStringList          &toIDList
 )
 {
-    fromListView->takeItem(item);
+    fromListView->takeItem(item, idx_from);
 
     QString id = fromIDList[idx_from];
     fromIDList.remove(fromIDList.at(idx_from));
@@ -192,7 +240,7 @@ void StationSelector::moveItem(
     }
 
     toIDList.insert(toIDList.at(idx_to), id);
-    toListView->insertItem(item);
+    toListView->insertItem(item, id, idx_to);
     if (prev_item_to) {
         item->moveItem(prev_item_to);
     } else {

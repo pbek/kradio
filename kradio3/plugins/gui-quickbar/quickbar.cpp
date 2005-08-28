@@ -28,6 +28,7 @@
 #include <kaboutdata.h>
 
 #include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/libkradio-gui/station-drag-object.h"
 #include "../../src/libkradio/stationlist.h"
 #include "../../src/radio-stations/radiostation.h"
 
@@ -51,6 +52,7 @@ QuickBar::QuickBar(const QString &name)
     m_ignoreNoticeActivation(false)
 {
     autoSetCaption();
+    setAcceptDrops(true);
 }
 
 
@@ -384,6 +386,29 @@ void QuickBar::autoSetCaption()
 {
     const RadioStation &rs = queryCurrentStation();
     setCaption((queryIsPowerOn() && rs.isValid()) ? rs.longName() : QString("KRadio"));
+}
+
+void QuickBar::dragEnterEvent(QDragEnterEvent* event)
+{
+    bool a = StationDragObject::canDecode(event);
+    if (a)
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
+    else
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent rejected");
+    event->accept(a);
+}
+
+void QuickBar::dropEvent(QDropEvent* event)
+{
+    QStringList list;
+
+    if ( StationDragObject::decode(event, list) ) {
+        QStringList l = getStationSelection();
+        for (QValueListConstIterator<QString> it = list.begin(); it != list.end(); ++it)
+            if (!l.contains(*it))
+                l.append(*it);
+        setStationSelection(l);
+    }
 }
 
 

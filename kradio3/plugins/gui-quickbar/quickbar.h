@@ -99,6 +99,9 @@ protected:
     void    autoSetCaption();
 
 
+    void    dragEnterEvent(QDragEnterEvent* event);
+    void    dropEvent(QDropEvent* event);
+
     // KDE/QT
 
 public slots:

@@ -331,8 +331,8 @@ bool AlsaSoundDevice::stopPlayback(SoundStreamID id)
 
         if (!cfg.m_ActiveMode) {
             if  (m_PassivePlaybackStreams.contains(id)) {
-                float tmp = 0;
-                writePlaybackMixerVolume(cfg.m_Channel, tmp, true);
+/*                float tmp = 0;
+                writePlaybackMixerVolume(cfg.m_Channel, tmp, true);*/
                 m_PassivePlaybackStreams.remove(id);
             }
         } else if (m_PlaybackStreamID == id) {

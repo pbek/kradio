@@ -1,3 +1,13 @@
+2005-08-28
+
+       emw  - more saveState fixes
+            - split config pages of alsa,recording, v4l into several tab
+              pages
+            - initial drag&drop support in station selectors, quickbar,
+              docking
+            - v4l power off behavior (mute, volume=0) is now configurable,
+              some cards need mute/volume, some others don't
+
 2005-08-23 
 
        emw  - FIX: modifications of stations failed. Was a faulty != / ==

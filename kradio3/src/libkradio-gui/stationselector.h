@@ -66,6 +66,8 @@ protected slots:
 
     void slotButtonToLeft();
     void slotButtonToRight();
+    void slotMoveToRight(const QStringList &list);
+    void slotMoveToLeft(const QStringList &list);
 
     void slotOK();
     void slotCancel();

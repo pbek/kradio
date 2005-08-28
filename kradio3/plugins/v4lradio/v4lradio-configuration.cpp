@@ -32,6 +32,7 @@
 #include <kfiledialog.h>
 #include <knuminput.h>
 #include <klocale.h>
+#include <ktabwidget.h>
 
 #include "../../src/libkradio/utils.h"
 #include "../../src/libkradio-gui/gui_list_helper.h"
@@ -294,6 +295,24 @@ bool V4LRadioConfiguration::noticeActivePlaybackChanged(bool a)
     return true;
 }
 
+bool V4LRadioConfiguration::noticeMuteOnPowerOffChanged(bool a)
+{
+    bool old = m_ignoreGUIChanges;
+    m_ignoreGUIChanges = true;
+    m_checkboxMuteOnPowerOff->setChecked(a);
+    m_ignoreGUIChanges = old;
+    return true;
+}
+
+bool V4LRadioConfiguration::noticeVolumeZeroOnPowerOffChanged(bool a)
+{
+    bool old = m_ignoreGUIChanges;
+    m_ignoreGUIChanges = true;
+    m_checkboxVolumeZeroOnPowerOff->setChecked(a);
+    m_ignoreGUIChanges = old;
+    return true;
+}
+
 // IRadioDeviceClient
 
 bool V4LRadioConfiguration::noticeDescriptionChanged (const QString &s, const IRadioDevice */*sender*/)
@@ -489,6 +508,8 @@ void V4LRadioConfiguration::slotOK()
                       m_PlaybackChannelHelper.getCurrentText());
 
     sendActivePlayback(m_checkboxActivePlayback->isChecked());
+    sendMuteOnPowerOff(m_checkboxMuteOnPowerOff->isChecked());
+    sendVolumeZeroOnPowerOff(m_checkboxVolumeZeroOnPowerOff->isChecked());
 
     queryTreble (m_SoundStreamID, m_orgTreble);
     queryBass   (m_SoundStreamID, m_orgBass);
@@ -504,6 +525,8 @@ void V4LRadioConfiguration::slotCancel()
     noticeCaptureMixerChanged (queryCaptureMixerID(),  queryCaptureMixerChannel());
     noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
     noticeActivePlaybackChanged(queryActivePlayback());
+    noticeMuteOnPowerOffChanged(queryMuteOnPowerOff());
+    noticeVolumeZeroOnPowerOffChanged(queryVolumeZeroOnPowerOff());
 
     float q = 0;
     querySignalMinQuality(m_SoundStreamID, q);

@@ -305,7 +305,7 @@ bool OSSSoundDevice::stopPlayback(SoundStreamID id)
 
         if (!cfg.m_ActiveMode) {
             if  (m_PassivePlaybackStreams.contains(id)) {
-                writeMixerVolume(cfg.m_Channel, 0);
+//                 writeMixerVolume(cfg.m_Channel, 0);
                 m_PassivePlaybackStreams.remove(id);
             }
         } else if (m_PlaybackStreamID == id) {

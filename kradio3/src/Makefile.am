@@ -53,6 +53,7 @@ kradio_SOURCES = main.cpp \
                libkradio-gui/radiostation-listview.cpp \
                libkradio-gui/standardscandialog.cpp \
                libkradio-gui/standardscandialog-ui.ui \
+               libkradio-gui/station-drag-object.cpp \
                libkradio-gui/stationselector.cpp \
                libkradio-gui/stationselector-ui.ui
                

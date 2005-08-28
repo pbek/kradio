@@ -30,6 +30,7 @@
 #include "../../src/libkradio/widgetplugins.h"
 #include "../../src/radio-stations/radiostation.h"
 #include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/libkradio-gui/station-drag-object.h"
 
 #include "docking.h"
 #include "docking-configuration.h"
@@ -59,6 +60,7 @@ RadioDocking::RadioDocking(const QString &name)
 
     buildContextMenu ();
     show();
+    setAcceptDrops(true);
 }
 
 RadioDocking::~RadioDocking()
@@ -634,6 +636,29 @@ void RadioDocking::setLeftClickAction(LeftClickAction action)
     if (m_leftClickAction != action) {
         m_leftClickAction = action;
         emit sigLeftClickActionChanged(m_leftClickAction);
+    }
+}
+
+void RadioDocking::dragEnterEvent(QDragEnterEvent* event)
+{
+    bool a = StationDragObject::canDecode(event);
+    if (a)
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
+    else
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent rejected");
+    event->accept(a);
+}
+
+void RadioDocking::dropEvent(QDropEvent* event)
+{
+    QStringList list;
+
+    if ( StationDragObject::decode(event, list) ) {
+        QStringList l = getStationSelection();
+        for (QValueListConstIterator<QString> it = list.begin(); it != list.end(); ++it)
+            if (!l.contains(*it))
+                l.append(*it);
+        setStationSelection(l);
     }
 }
 

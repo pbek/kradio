@@ -87,6 +87,8 @@ V4LRadio::V4LRadio(const QString &name)
     m_PlaybackMixerChannel(QString::null),
     m_CaptureMixerChannel(QString::null),
     m_ActivePlayback(false),
+    m_MuteOnPowerOff(false),
+    m_VolumeZeroOnPowerOff(false),
     m_restorePowerOn(false)
 {
     QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
@@ -264,6 +266,10 @@ bool V4LRadio::powerOff ()
         return true;
 
     queryPlaybackVolume(m_SoundStreamID, m_defaultPlaybackVolume);
+    if (m_MuteOnPowerOff)
+        sendMute(m_SoundStreamID, true);
+    if (m_VolumeZeroOnPowerOff)
+        sendPlaybackVolume(m_SoundStreamID, 0.0);
     mute(m_SoundStreamID);
     radio_done();
 
@@ -409,7 +415,8 @@ bool V4LRadio::mute (SoundStreamID id, bool mute)
     if (m_muted != mute) {
         m_muted = mute;
         bool r = writeAudioInfo();
-        notifyMuted(id, m_muted);
+        if (r)
+            notifyMuted(id, m_muted);
         return r;
     }
     return false;
@@ -908,9 +915,22 @@ bool V4LRadio::setActivePlayback(bool a)
     return true;
 }
 
-bool V4LRadio::getActivePlayback() const
+bool V4LRadio::setMuteOnPowerOff(bool a)
 {
-    return m_ActivePlayback;
+    if (a != m_MuteOnPowerOff) {
+        m_MuteOnPowerOff = a;
+        notifyMuteOnPowerOffChanged(m_MuteOnPowerOff);
+    }
+    return true;
+}
+
+bool V4LRadio::setVolumeZeroOnPowerOff(bool a)
+{
+    if (a != m_VolumeZeroOnPowerOff) {
+        m_VolumeZeroOnPowerOff = a;
+        notifyVolumeZeroOnPowerOffChanged(m_VolumeZeroOnPowerOff);
+    }
+    return true;
 }
 
 // PluginBase methods
@@ -944,7 +964,9 @@ void   V4LRadio::saveState (KConfig *config) const
     config->writeEntry("PowerOn",          isPowerOn());
     config->writeEntry("UseOldV4L2Calls",  m_useOldV4L2Calls);
 
-    config->writeEntry("ActivePlayback",   m_ActivePlayback);
+    config->writeEntry("ActivePlayback",       m_ActivePlayback);
+    config->writeEntry("MuteOnPowerOff",       m_MuteOnPowerOff);
+    config->writeEntry("VolumeZeroOnPowerOff", m_VolumeZeroOnPowerOff);
 }
 
 
@@ -993,7 +1015,9 @@ void   V4LRadio::restoreState (KConfig *config)
     QString CaptureMixerID       = config->readEntry ("CaptureMixerID",  QString::null);
     QString CaptureMixerChannel  = config->readEntry ("CaptureMixerChannel", "Line");
 
-    m_ActivePlayback       = config->readBoolEntry("ActivePlayback", false);
+    m_ActivePlayback        = config->readBoolEntry("ActivePlayback", false);
+    m_MuteOnPowerOff        = config->readBoolEntry("MuteOnPowerOff", false);
+    m_VolumeZeroOnPowerOff  = config->readBoolEntry("VolumeZeroOnPowerOff", false);
 
     m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
     m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
@@ -1008,6 +1032,8 @@ void   V4LRadio::restoreState (KConfig *config)
     notifySignalMinQualityChanged(m_SoundStreamID, m_minQuality);
     notifyScanStepChanged(m_scanStep);
     notifyActivePlaybackChanged(m_ActivePlayback);
+    notifyMuteOnPowerOffChanged(m_MuteOnPowerOff);
+    notifyVolumeZeroOnPowerOffChanged(m_VolumeZeroOnPowerOff);
 
     BlockProfiler p2("V4LRadio::restoreState2");
 

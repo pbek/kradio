@@ -24,6 +24,8 @@
 #include <qlabel.h>
 #include <qcheckbox.h>
 
+#include <ktabwidget.h>
+
 
 RecordingConfiguration::RecordingConfiguration (QWidget *parent)
     : RecordingConfigurationUI(parent)

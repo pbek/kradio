@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>332</width>
-            <height>370</height>
+            <width>475</width>
+            <height>260</height>
         </rect>
     </property>
     <property name="caption">
@@ -22,179 +22,290 @@
         <property name="margin">
             <number>0</number>
         </property>
-        <widget class="QGroupBox" row="2" column="0">
+        <widget class="QTabWidget" row="0" column="0">
             <property name="name">
-                <cstring>m_groupMixer</cstring>
+                <cstring>kTabWidget8</cstring>
             </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>5</hsizetype>
-                    <vsizetype>7</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                </sizepolicy>
-            </property>
-            <property name="title">
-                <string>Capture Mixer Settings</string>
-            </property>
-        </widget>
-        <widget class="QGroupBox" row="1" column="0">
-            <property name="name">
-                <cstring>groupBox21</cstring>
-            </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>5</hsizetype>
-                    <vsizetype>1</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                </sizepolicy>
-            </property>
-            <property name="title">
-                <string>Extended Options</string>
-            </property>
-            <grid>
+            <widget class="QWidget">
                 <property name="name">
-                    <cstring>unnamed</cstring>
+                    <cstring>TabPage</cstring>
                 </property>
-                <property name="margin">
-                    <number>11</number>
-                </property>
-                <widget class="QCheckBox" row="0" column="1">
+                <attribute name="title">
+                    <string>Devices</string>
+                </attribute>
+                <grid>
                     <property name="name">
-                        <cstring>chkDisableCapture</cstring>
+                        <cstring>unnamed</cstring>
                     </property>
-                    <property name="text">
-                        <string>Disa&amp;ble Capture</string>
+                    <property name="margin">
+                        <number>11</number>
                     </property>
-                    <property name="accel">
-                        <string>Alt+B</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox" row="0" column="0">
-                    <property name="name">
-                        <cstring>chkDisablePlayback</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Disable Pla&amp;yback</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+Y</string>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
-        <widget class="QGroupBox" row="0" column="0">
-            <property name="name">
-                <cstring>groupBox20</cstring>
-            </property>
-            <property name="title">
-                <string>Devices</string>
-            </property>
-            <grid>
+                    <spacer row="1" column="0">
+                        <property name="name">
+                            <cstring>spacer114</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>5</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QLayoutWidget" row="0" column="0">
+                        <property name="name">
+                            <cstring>layout58</cstring>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel" row="2" column="0">
+                                <property name="name">
+                                    <cstring>textLabel2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>PCM Capture Card</string>
+                                </property>
+                            </widget>
+                            <widget class="KComboBox" row="2" column="1">
+                                <property name="name">
+                                    <cstring>m_comboCaptureCard</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="4" column="0">
+                                <property name="name">
+                                    <cstring>textLabel2_2_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Hardware Buffer Size</string>
+                                </property>
+                            </widget>
+                            <widget class="KComboBox" row="3" column="1">
+                                <property name="name">
+                                    <cstring>m_comboCaptureDevice</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                            </widget>
+                            <widget class="KIntSpinBox" row="5" column="1">
+                                <property name="name">
+                                    <cstring>editBufferSize</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="suffix">
+                                    <string> kB</string>
+                                </property>
+                                <property name="maxValue">
+                                    <number>1024</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>1</number>
+                                </property>
+                            </widget>
+                            <widget class="KIntSpinBox" row="4" column="1">
+                                <property name="name">
+                                    <cstring>editHWBufferSize</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="suffix">
+                                    <string> kB</string>
+                                </property>
+                                <property name="maxValue">
+                                    <number>1024</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>1</number>
+                                </property>
+                            </widget>
+                            <widget class="KComboBox" row="0" column="1">
+                                <property name="name">
+                                    <cstring>m_comboPlaybackCard</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="5" column="0">
+                                <property name="name">
+                                    <cstring>textLabel2_2_2_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Buffer Size</string>
+                                </property>
+                            </widget>
+                            <widget class="KComboBox" row="1" column="1">
+                                <property name="name">
+                                    <cstring>m_comboPlaybackDevice</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>textLabel2_3</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>PCM Playback Device</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="3" column="0">
+                                <property name="name">
+                                    <cstring>textLabel2_4</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>PCM Capture Device</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="0" column="0">
+                                <property name="name">
+                                    <cstring>textLabel2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>PCM Playback Card</string>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
                 <property name="name">
-                    <cstring>unnamed</cstring>
+                    <cstring>TabPage</cstring>
                 </property>
-                <property name="margin">
-                    <number>11</number>
+                <attribute name="title">
+                    <string>E&amp;xtended Options</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
+                    <widget class="QCheckBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>chkDisablePlayback</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Disable Pla&amp;yback</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+Y</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="1" column="0">
+                        <property name="name">
+                            <cstring>chkDisableCapture</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Disa&amp;ble Capture</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+B</string>
+                        </property>
+                    </widget>
+                    <spacer row="2" column="0">
+                        <property name="name">
+                            <cstring>spacer113</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>40</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
                 </property>
-                <widget class="QLabel" row="0" column="0">
+                <attribute name="title">
+                    <string>Capture Mixer Settings</string>
+                </attribute>
+                <grid>
                     <property name="name">
-                        <cstring>textLabel2</cstring>
+                        <cstring>unnamed</cstring>
                     </property>
-                    <property name="text">
-                        <string>PCM Playback Card</string>
+                    <property name="margin">
+                        <number>11</number>
                     </property>
-                </widget>
-                <widget class="KComboBox" row="0" column="1">
-                    <property name="name">
-                        <cstring>m_comboPlaybackCard</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="1" column="0">
-                    <property name="name">
-                        <cstring>textLabel2_3</cstring>
-                    </property>
-                    <property name="text">
-                        <string>PCM Playback Device</string>
-                    </property>
-                </widget>
-                <widget class="KComboBox" row="1" column="1">
-                    <property name="name">
-                        <cstring>m_comboPlaybackDevice</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="0">
-                    <property name="name">
-                        <cstring>textLabel2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>PCM Capture Card</string>
-                    </property>
-                </widget>
-                <widget class="KComboBox" row="2" column="1">
-                    <property name="name">
-                        <cstring>m_comboCaptureCard</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="3" column="0">
-                    <property name="name">
-                        <cstring>textLabel2_4</cstring>
-                    </property>
-                    <property name="text">
-                        <string>PCM Capture Device</string>
-                    </property>
-                </widget>
-                <widget class="KComboBox" row="3" column="1">
-                    <property name="name">
-                        <cstring>m_comboCaptureDevice</cstring>
-                    </property>
-                </widget>
-                <widget class="KIntSpinBox" row="5" column="1">
-                    <property name="name">
-                        <cstring>editBufferSize</cstring>
-                    </property>
-                    <property name="suffix">
-                        <string> kB</string>
-                    </property>
-                    <property name="maxValue">
-                        <number>1024</number>
-                    </property>
-                    <property name="minValue">
-                        <number>1</number>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="5" column="0">
-                    <property name="name">
-                        <cstring>textLabel2_2_2_2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Buffer Size</string>
-                    </property>
-                </widget>
-                <widget class="KIntSpinBox" row="4" column="1">
-                    <property name="name">
-                        <cstring>editHWBufferSize</cstring>
-                    </property>
-                    <property name="suffix">
-                        <string> kB</string>
-                    </property>
-                    <property name="maxValue">
-                        <number>1024</number>
-                    </property>
-                    <property name="minValue">
-                        <number>1</number>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="4" column="0">
-                    <property name="name">
-                        <cstring>textLabel2_2_2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hardware Buffer Size</string>
-                    </property>
-                </widget>
-            </grid>
+                    <widget class="QGroupBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>m_groupMixer</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>7</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="lineWidth">
+                            <number>0</number>
+                        </property>
+                        <property name="title">
+                            <string></string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
         </widget>
     </grid>
 </widget>
@@ -204,9 +315,9 @@
 <includehints>
     <includehint>kcombobox.h</includehint>
     <includehint>kcombobox.h</includehint>
-    <includehint>kcombobox.h</includehint>
-    <includehint>kcombobox.h</includehint>
     <includehint>knuminput.h</includehint>
     <includehint>knuminput.h</includehint>
+    <includehint>kcombobox.h</includehint>
+    <includehint>kcombobox.h</includehint>
 </includehints>
 </UI>

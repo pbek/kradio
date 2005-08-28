@@ -65,6 +65,8 @@ int main(int argc, char *argv[])
 
     global_profiler.printData();
 
+    IErrorLogClient::staticLogDebug("normal shutdown");
+
     return ret;
 }
 

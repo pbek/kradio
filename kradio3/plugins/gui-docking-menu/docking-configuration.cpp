@@ -31,7 +31,8 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
       m_docking(docking),
       m_disableGUIUpdates(false)
 {
-    QHBoxLayout *layout = new QHBoxLayout();
+    QHBoxLayout *layout  = new QHBoxLayout();
+    QHBoxLayout *layout2 = new QHBoxLayout();
 
     m_labelClickMode = new QLabel(this);
     layout->addWidget(m_labelClickMode);
@@ -45,10 +46,11 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     QFrame *line = new QFrame(this);
     line->setFrameShape ( QFrame::HLine );
     line->setFrameShadow( QFrame::Sunken );
+    layout2->addWidget(line);
 
     StationSelectorUILayout->expand(2,0);
-    StationSelectorUILayout->addMultiCellWidget(line, 2, 2, 0, 2);
-    StationSelectorUILayout->addMultiCellLayout(layout, 3, 3, 0, 2);
+    StationSelectorUILayout->addMultiCellLayout(layout2, 2, 2, 0, 2);
+    StationSelectorUILayout->addMultiCellLayout(layout,  3, 3, 0, 2);
 
     languageChange();
     slotCancel();

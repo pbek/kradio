@@ -18,6 +18,7 @@
 #include "radiostation-listview.h"
 #include "../libkradio/stationlist.h"
 #include "../radio-stations/radiostation.h"
+#include "station-drag-object.h"
 
 #include <klocale.h>
 #include <qfile.h>
@@ -44,6 +45,8 @@ RadioStationListView::RadioStationListView(QWidget *parent, const char *name)
                      this, SLOT(slotStationActivation(QListViewItem *)));
     QObject::connect(this, SIGNAL(currentChanged(QListViewItem*)),
                      this, SLOT(slotCurrentStationChanged(QListViewItem *)));
+
+    setAcceptDrops(true);
 }
 
 
@@ -94,15 +97,23 @@ void RadioStationListView::setStation(int idx, const RadioStation &s, int nr)
     if (idx < 0) {
         item = new QListViewItem(this, firstChild());
         firstChild()->moveItem(item);
+        m_StationIDs.prepend(s.stationID());
+        idx = 0;
     } else if (idx >= childCount()) {
         item = new QListViewItem(this, lastChild());
+        m_StationIDs.append(s.stationID());
+        idx = childCount() - 1;
     }
 
     if (item) {
+        item->setDragEnabled(true);
+        item->setDropEnabled(true);
 
         item->setText(0, QString::number(nr > 0 ? nr : idx+1));
         item->setText(2, s.name());
         item->setText(3, s.description());
+
+        m_StationIDs[idx] = s.stationID();
 
         QImage  img(s.iconName());
         if (!img.isNull()) {
@@ -134,10 +145,23 @@ void RadioStationListView::setStations(const StationList &stations)
 void RadioStationListView::removeStation(int idx)
 {
     QListViewItem *item = getItemForIndex(idx);
-    if (item)
+    if (item) {
         delete item;
+        m_StationIDs.remove(m_StationIDs.at(idx));
+    }
 }
 
+void RadioStationListView::takeItem(QListViewItem *item, int idx)
+{
+    QListView::takeItem(item);
+    m_StationIDs.remove(m_StationIDs.at(idx));
+}
+
+void RadioStationListView::insertItem(QListViewItem *item, const QString &stationid, int idx_to)
+{
+    QListView::insertItem(item);
+    m_StationIDs.insert(m_StationIDs.at(idx_to), stationid);
+}
 
 void RadioStationListView::setCurrentStation(int idx)
 {
@@ -186,5 +210,50 @@ void RadioStationListView::restoreState (KConfig *cfg)
 }
 
 
+QDragObject *RadioStationListView::dragObject()
+{
+    QStringList list;
+    QListViewItem *item = firstChild();
+    for (int idx = 0; item; ++idx, item = item->nextSibling()) {
+        if (item->isSelected()) {
+            list.append(m_StationIDs[idx]);
+        }
+    }
+    return new StationDragObject(list, this);
+}
+
+void RadioStationListView::dragEnterEvent(QDragEnterEvent* event)
+{
+    event->accept(StationDragObject::canDecode(event));
+}
+
+void RadioStationListView::contentsDragEnterEvent(QDragEnterEvent* event)
+{
+    bool a = StationDragObject::canDecode(event);
+    if (a)
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
+    else
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent rejected");
+    event->accept(a);
+}
+
+void RadioStationListView::dropEvent(QDropEvent* event)
+{
+    QStringList list;
+
+    if ( StationDragObject::decode(event, list) ) {
+        emit sigStationsReceived(list);
+    }
+}
+
+void RadioStationListView::contentsDropEvent(QDropEvent* event)
+{
+    dropEvent(event);
+}
+
+void RadioStationListView::contentsDragMoveEvent(QDragMoveEvent* event)
+{
+    event->accept();
+}
 
 #include "radiostation-listview.moc"

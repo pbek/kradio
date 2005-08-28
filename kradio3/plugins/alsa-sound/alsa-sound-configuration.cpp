@@ -23,6 +23,7 @@
 #include <knuminput.h>
 #include <klineedit.h>
 #include <kcombobox.h>
+#include <ktabwidget.h>
 
 #include "alsa-mixer-element.h"
 #include "alsa-sound-configuration.h"

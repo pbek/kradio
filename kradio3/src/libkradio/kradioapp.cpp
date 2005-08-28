@@ -31,6 +31,7 @@
 
 #include "kradioapp.h"
 #include "../libkradio-gui/aboutwidget.h"
+#include "../interfaces/errorlog-interfaces.h"
 
 #include "debug-profiler.h"
 
@@ -123,15 +124,18 @@ KRadioApp::KRadioApp()
     m_quitting(false)
 {
     m_Instances.setAutoDelete(true);
+    connect(this, SIGNAL(aboutToQuit()), this, SLOT(slotAboutToQuit()));
 }
 
 
 KRadioApp::~KRadioApp()
 {
+    IErrorLogClient::staticLogDebug("KRadioApp::~KRadioApp()");
 }
 
 void KRadioApp::saveState()
 {
+    IErrorLogClient::staticLogDebug("saveState");
     saveState(KGlobal::config());
 }
 
@@ -232,7 +236,6 @@ PluginManager *KRadioApp::createNewInstance(const QString &_name)
                                             i18n("About KRadio Components") + title_ext
                                           );
 
-    connect(this, SIGNAL(aboutToQuit()), this, SLOT(slotAboutToQuit()));
     m_Instances.insert(instance_name, pm);
 
     /* Until we don't have library plugins we must instantiate them hard-wired */
@@ -342,7 +345,9 @@ void  KRadioApp::startPlugins()
 
 void  KRadioApp::slotAboutToQuit()
 {
+    IErrorLogClient::staticLogDebug("slotAboutToQuit");
     if (!m_quitting) {
+        IErrorLogClient::staticLogDebug("slotAboutToQuit, m_quitting = false");
         m_quitting = true;
         saveState();
         QDictIterator<PluginManager> it(m_Instances);
