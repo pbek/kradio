@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta2</creator>
+			<maintainer>Arūnas Uroška &lt;arunui@dtiltas.lt&gt;</maintainer>
+			<changed>2005-10-30T15:19:40</changed>
+			<country>Lithuania</country>
+			<city>Kaunas</city>
+			<media>Antenna</media>
+			
+<comments>http://www.rtk.lt/lt/catalog_item.php?strid=27057&amp;id=13701</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1130671823F98F9B6F2BD94927338E5514E85B2F6C8415011B4EEC238D3C7764EDC00DCE2F</stationID>
+			<name>Pūkas - 2</name>
+			<shortname>Pūkas - 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>113067268964C831466D6D774220D9F79CEE4FE498DCCED8A21482E6FF1906524C6C61C529</stationID>
+			<name>Marijos radijas</name>
+			<shortname>Marijos radijas</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11306715775A6BEF723008AE3333609E389BE4D1A08703E09C7883E1C90445F039EB795018</stationID>
+			<name>LRT, Klasika</name>
+			<shortname>LRT, Klasika</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11306727124A5BF4DCBE08372CB7577968AF1A487DEFDF3D995AA7A4D5BC7ED7375207B998</stationID>
+			<name>Extra FM</name>
+			<shortname>Extra FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130671451F9C53EC9907B42AE780FF93EFA92B0E98A26FC1D2E88BB066FD63F1701B58916</stationID>
+			<name>M-1 plius</name>
+			<shortname>M-1 plius</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11306776439729ECE9302BB2CAE1CFB510913744CBD71C4EA6C4852D5D247FA1913A35068B</stationID>
+			<name>Relax FM</name>
+			<shortname>Relax FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11306776030057774127959251E7CEDD0D1901F8044C3C7F8995263D763778FCA194B80E75</stationID>
+			<name>Parabolė FM</name>
+			<shortname>Parabolė FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130671638754E13DFE3379BAAF13CC0F09E555CAF8568D6FF9071AD5034C92DADAD7F73CD</stationID>
+			<name>Russkoje Radio Baltija</name>
+			<shortname>Russkoje Radio Baltija</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130671665B30F4C7679DBCD7D6892847766FE5F8DCB0E4F65C62054E94879B47ED9ABA14C</stationID>
+			<name>LRT, LR 1</name>
+			<shortname>LRT, LR 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130672789174AB6F49B14E6F3D23066EE3C8425A85935EAB20234F8B3DF6C9EDE666A7556</stationID>
+			<name>Power Hit Radio </name>
+			<shortname>Power Hit Radio </shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11306719832EB9233411DBF209FB19EBC82EDF263FF8A29281F25ABCE75E9D8D0C5C98307A</stationID>
+			<name>TAU</name>
+			<shortname>TAU</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11306724191493C76EE9955D08FDFE1C937D7BF57F7E550489561C9C04732FE24FD6EB3642</stationID>
+			<name>Lietus</name>
+			<shortname>Lietus</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130671692147E8C5F0F55AEB1EF82CC31DAFEBAB5BD48404B0BE25323D138A64E59E4CDDA</stationID>
+			<name>ZIP FM</name>
+			<shortname>ZIP FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130672823ACEBF62EE1D06CBA7427200DD8A44D205E4FD50C9B5563F38DAD11D28C6CCB4F</stationID>
+			<name>Europos Hitų Radijas</name>
+			<shortname>Europos Hitų Radijas</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130672021016EFCA2B70A9141F5AEA369E666A77E39587242E8429F53639E3F862E6784B5</stationID>
+			<name>Žinių radijas</name>
+			<shortname>Žinių radijas</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130671715AE39FE028BF94F174A74B06DC1939066F360F66A73F14D704A57545BAF3802B0</stationID>
+			<name>KF 105,4</name>
+			<shortname>KF 105,4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130671723916876F3293ADDA615178A0064283870B9709D017B72EC28AAD017CD7B6F46B7</stationID>
+			<name>Kelyje</name>
+			<shortname>Kelyje</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130672037D3487098D44C639E5B2462D236119EA2055E28714EC5EFC4356AC605869CAA07</stationID>
+			<name>M-1</name>
+			<shortname>M-1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130672867C3FE175DD89485471B994A478580FF5EEA161C300654F1866F8B7DEFF3217F97</stationID>
+			<name>Radiocentras</name>
+			<shortname>Radiocentras</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1130671748A1531957A57B748BF8DEAE455811B89600E1357E155BA99D32B5CA4F98702A17</stationID>
+			<name>Pūkas</name>
+			<shortname>Pūkas</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.6</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

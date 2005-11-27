@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Peyruchaud Matthieu, &lt;matthieu_peyruchaud@yahoo.fr&gt;</maintainer>
+			<changed></changed>
+			<country>France</country>
+			<city>Angers</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1128332075F10E7CF3438649BA98C99849CD77196C7E0B7F85B481874D1E7A5CF9F61C65EA</stationID>
+			<name>France Inter</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1128333310CBAE15A34209FACDC27F0B9DAD1789FEAD82F83F0CCAA03944BB9D9D653FBEBF</stationID>
+			<name>France Musique</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>112836676273AFAA1AECB383D7A35CA86B298D639AE63774BAE75687433B7CC13EEC6CDD70</stationID>
+			<name>France Culture</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11283333917E9F58183720D1BAC7BA7CBFD6E1C0EDFE436F4F0B16ACC1871C4E28F40680D9</stationID>
+			<name>France Info</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11285080897F57570AB5F91EC9C881A9E4DCD64E85767C5BFBC778A6CABA93F479AA6AC918</stationID>
+			<name>Radio Nova</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11283333452B4C09B20859676BB42871661BDC9F2722866A827264CC05F86ECE14E1BDAA54</stationID>
+			<name>Chérie FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

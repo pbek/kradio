@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Carlos Alberto, &lt;carlos_alberto@supercable.es&gt;</maintainer>
+			<changed>2005-10-11T15:56:43</changed>
+			<country>Spain</country>
+			<city>Seville</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1129038970C0E3FA3376656AB620019FC836EEC7DFE04E1294CBF9F1BFD2336466BC262DF7</stationID>
+			<name>Radio Marca</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.8501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038970DA8CE8969CA50C014E77DFEC90A29AEF6B89D7DDE52FC469B76790D9CCA85B4B</stationID>
+			<name>Onda Melodía</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.2501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038971BE9847C483B877AAF71D16FF819827A6765D96CD442CA5EEF3441B0274A5868F</stationID>
+			<name>Radio 5</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.0252</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038972AC0F1CDB47104C2B4BE7ADA06DCD94AB7F0EE0D2161FD4D8FDC9A0057A2EE3CA</stationID>
+			<name>Andalucía Información</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.8502</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038973A956D35299F5B95BEBEBE659881E25C453B9B76D3E736F8A9B6A9D135E188133</stationID>
+			<name>Radio 1</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.2003</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11290389766CE266E48BF7714DCA3149550533DAD4AB0C8DBE7996C7F82D20C276E793C565</stationID>
+			<name>Radio Clásica</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.7254</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038978F13DA40431431FAC01615772A50E465E9E4828F23C56F3450D47125751CE1FD4</stationID>
+			<name>M-80</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.8505</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038979C938884510DE95D3B3526779D898C06D094E043DD6C5CC685B84140789F2BF69</stationID>
+			<name>Onda Cero</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9255</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038980767DD79181FC9EBE1CB90250F783B11301737F791C9460D709BF82FFA707B141</stationID>
+			<name>Máxima FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.5506</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11290389817F0691AD1ECDE07D0FA8B6BDA1BCC3C340F3333E2652E3B2D19410C30EAF511E</stationID>
+			<name>Los 40</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.1506</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038983042FC729F4DF9893938EFAA58FF11D2F5E3977C2ABC61799A239AEA502B3E66F</stationID>
+			<name>Radio 3</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.8757</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038985F3EC42A078A347BDEDBDCC79B3992F9A5C50D6E5B3B9CB32390B1376DD9A098D</stationID>
+			<name>Kiss FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.326</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038986960E8B2FDF30BA54F5623014D3D99E31BA432D27E23ABDA10E98DC55ECFC4E70</stationID>
+			<name>Radiolé</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>112903898735D648D255CF35C3248306D69D30D910A809AAAA6EAA9EA0AAC392D91416A934</stationID>
+			<name>Cadena Cien</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038987003D8E1091F0874B386D3C5A5B99D2D436DA6EB53A1792AA29E3A8EC70977A1D</stationID>
+			<name>Dial</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038988E79077DA2B9A365429AEBF336813A69004FB99AD225C0F3467415E8D5F2E8F11</stationID>
+			<name>Sevilla FM</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11290389889DE7ACA627FC04762FF35D306402D33B8F0680A86D723CAAEFFFE5C711C613E1</stationID>
+			<name>Radio Sevilla</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.251</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1129038989BF9731332707B791A6CFA031CE273384703B321464745F3976581A1DBDA67E13</stationID>
+			<name>Canal Fiesta Radio</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.951</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11290389917AF43226EAA3EC99C61F84B8E191B30D4452C38DA87096A34AF39BDA4EDBDEC7</stationID>
+			<name>Canal Sur Radio</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>112903899263A78983867AC791F3BD81C9F7D2252BB928BA515AB08375ACEE92F457C4722D</stationID>
+			<name>Rock&apos;an Gol</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.726</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -3,11 +3,12 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
+			<creator>kradio-1.0beta2</creator>
 			<maintainer>Andrzej Kozowski, &lt;andrzejk@astercity.net&gt;</maintainer>
-			<changed>2004-06-26T10:00:33</changed>
+			<changed>2005-09-26T10:00:33</changed>
 			<country>Poland</country>
 			<city>Warsaw</city>
-			<media>cable</media>
+			<media>acn-cable</media>
 			<comments></comments>
 		</info>
 		<FrequencyRadioStation>
@@ -264,6 +265,3 @@
 		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
-
-

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Bernard Heinen, &lt;heinen.b@belgacom.net&gt;</maintainer>
+			<changed>2005-10-14T20:43:01</changed>
+			<country>Belgium</country>
+			<city>Büllingen</city>
+			<media>Radio FM</media>
+			<comments>Empfang über Antenne und Pinneacle PC TV-Karte</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>113310325643C34509CA1FD657E1FDCB90EAF79DE61AEB7B6B4E1D964C54311509007C0DFA</stationID>
+			<name>SWR 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>98.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032568BC93945F269AD16E4E33911B6E824A759947C5B03298968E96C2A1F7F041A7B</stationID>
+			<name>WDR 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>101</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256F448221774C59F152227AAB1EC76089012D0F79148B9C13EECB8D896BD82D41C</stationID>
+			<name>BRF</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>94.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325640A881FE826055F2513D0F2E355E71670F342B540A2B8A0AD907CB0CD879DBA8</stationID>
+			<name>SWR 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>91.05</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032562D580494D651E35C2AD603182AD9482A5E768A18D5D36A7D7765286B7497A3F0</stationID>
+			<name>1 life</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>105.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032563B6EC378F7568BFD70531D80BEF8D973FD14F19859E00A6004691FEA0A6006BD</stationID>
+			<name>RTL Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>97</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325612BFB253A8F305EC708EBE00C60A33D1F1F5FCA4893BB6D00B5EFCDCF8AF3E50</stationID>
+			<name>BRF 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>104.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032567E58C7358EA3B7B515B7A996EFD6F29612CBCD9CFDA78A6C8E413F9B243DD066</stationID>
+			<name>Radio 21</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>95.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256AB3544FA4CD5F1D558EFB734D796DBC0B34AC2C5811D6ED310AF035176401463</stationID>
+			<name>RPR 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>102.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256CEC65DA39CA2DF8A4DB92904FF2AE24C828D6AC1FE1E82C7F10D93BD0FEEC353</stationID>
+			<name>Sud Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>105.15</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256CB82EEE9609B7999198C44FFB5A008E9C7E6CEB7DA42C5A2A5C3E3A38AFFADC5</stationID>
+			<name>Big FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>106.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256968CCD9229F8251BB79B49CD9D633408F5B94D21509019B0F0E8520B487A443B</stationID>
+			<name>SWR 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>93.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256885577DFA955D380E8272BE6478685EF32234FED880E1819281941026079C8BE</stationID>
+			<name>SWR 4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>93.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325630E0BCDE59874ABBB39F591C970D56F3D40B1E432D26B1BB2E743A89EF857845</stationID>
+			<name>Bleu FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>106.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325673DC8919F70B82199FAF1D3318698040D5DFF747D6CA7CBBF0F8ED540B0E33EE</stationID>
+			<name>Vivacite</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>91.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256D2F79F5782AE09DD57272E8C15BB138774BADBDF55FED59D0153E9BD36C7A640</stationID>
+			<name>RTB</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>87.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032560F07E68E30EF97289F8FA84B930D6F759585937D71DE7046AF3AE4E3CA8E1777</stationID>
+			<name>RTB Classic</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>99.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032564B30973094C57301BBD66C72B761F547A4293AE8C364D8422EA132E211C2B4E2</stationID>
+			<name>Luxbg Platt</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256DD3C678D7F221E6871219CE6D555073EB031AB6571D77A8AF4DD4A9D30DA1C83</stationID>
+			<name>Radio Kontakt</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>98</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325664170E546DC680B87DC6C7220A263C67D807DB4D8E32D1199C4EA8E0E3E04963</stationID>
+			<name>New Station</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>0</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032567813D970DFCF66427F04227BE0394E23DE59E66E60E7AE6E07544410E9E5BA8A</stationID>
+			<name>radio contact fr.</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>106.9</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325668993EDBA0BE30B887155B1D95AAE4438C487EFEBA9195E3ABA693B22271B929</stationID>
+			<name>RTB 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>94.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

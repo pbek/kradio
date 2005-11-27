@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Øystein Olsen, &lt;oystein.olsen@astro.uio.no&gt;</maintainer>
+			<changed>2005-09-10T23:26:52</changed>
+			<country>Norway</country>
+			<city>Oslo</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11263882806FE61FCAAAC676BFBFADD92A0FAFDE367BBD5C1FCF8F4FC3AD3899563123DD61</stationID>
+			<name>Kanal 24</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1126387786BD34FB0315FA660490BBA054800EE7EF75ECF8D614CF3B51C33A39BC78920C63</stationID>
+			<name>NRK Alltid Klassisk</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1126388696A11A3A23636447C1D3FEB6BCED06680D4660385639292AE570D956CB818F4750</stationID>
+			<name>NRK Alltid Nyheter</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1126387683CA7CD5321FADFAA9DF15783AAFAF4BE9FCD76B73F8058E4A8915355A1AE359DF</stationID>
+			<name>NRK P1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11263875448204D09F931CF9D810D389B0A91AEDFC5968340A1318672685F3BC5CD1EDA593</stationID>
+			<name>NRK P2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1126387737E0F238457B1DE894015CD64CE30DCF9F65CBC212B9C9C3EFEA2AD6004B0BF391</stationID>
+			<name>NRK Petre</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1126387980FB46F261EC2CA71D30B27B50BE525B2391E178597434F973D345EB770AF1CD06</stationID>
+			<name>Radio 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11263883699140BF31AB1844766E77B41980E4142EA66B1B4D78C37A251BAE92678DD8C4E8</stationID>
+			<name>Radio Nova</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>112638790592E25C07BAFF8136003EE14115F225132626D808DE90DC4E0858CC46501C2609</stationID>
+			<name>Radio Oslo</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11263896676CDC3766731C7D48891822F3F21CBDCBA64735F88F1BBBAA0F0C55581FD6F86E</stationID>
+			<name>Radio Tango</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1126388162F867124396C7D5BF4F4FE93EACDA2D298EFB600B0E87E58D43CEFDF5A806F309</stationID>
+			<name>P4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

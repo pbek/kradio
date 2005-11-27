@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Martin Fimberger, &lt;martin.fimberger@gmx.at&gt;</maintainer>
+			<changed>2005-09-29T23:28:34</changed>
+			<country>Austria</country>
+			<city>Graz</city>
+			<media>UPC Kabel</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1128023310C98D42FC0BC57A1C1EB15AEDB9CDC43D5DC865E8F56F70DA22CB2F14669E5675</stationID>
+			<name>Radio Maria</name>
+			<shortname>RM</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128023792B91EE6C6976B5E62A8A6B541DA5DD6F43F5D4B4B9F150EABCC7983DA10CBA215</stationID>
+			<name>Radio Slovenija 1</name>
+			<shortname>SI1</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280251343D36391968BFFB9F3A19621DF99241CAE0EB259ADDBC8D2CBA3B03E60545BED7</stationID>
+			<name>Graz Soundportal 97,9 FM</name>
+			<shortname>97,9 FM</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128025238E0E890555124B4223B05C1C68E76F747C871739E5FF0AE508E6BAEFCD5EDDF8F</stationID>
+			<name>Klassik Radio</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128023982B3B91831529E0D5BB900C8A0636978671723542F68CA7CB120271D4C47A9F21B</stationID>
+			<name>RTL Radio Oldie</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280253806956384A00E591B9D7310D4E4C1308FF3E2F6372F3FC94C43C27C112FBF5BB3C</stationID>
+			<name>MDR Sputnik</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280257535BAE2E580EDB9B69C21919C9192025EB529F484B211729EC1700549DFA0C8020</stationID>
+			<name>NDR 2</name>
+			<shortname>NDR2</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>92</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280258133FE5356B1639CB06B4C0533214B0E483509EBF029CAE8FFB483B44B4FB007C12</stationID>
+			<name>ORF �</name>
+			<shortname>�</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280258655F5AD9A96AB49634EEEB99F6F4620E36B3875111354447109DD715B66D9E0732</stationID>
+			<name>NDR Info</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>112802596066FC2DA6EEAB71EF2427BCA2D88DE376A2FFC23AFA54D20E18116B6401F52772</stationID>
+			<name>Antenne Steiermark</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128026015D6F3837F53F8E065157129BEEB705A761DC80B8391C97968CE96583F48E04B57</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname>B4</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128026054ECCCBDCAAF1B682777C388DFA0DBF0380AF3F83DBD49551F942837B65CC4CB99</stationID>
+			<name>Radio Exterior Espana</name>
+			<shortname>REE</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128023308E530966B76C8E3E382EE0301E2A4095B4D6A8F57EAE4094A303C22C25BDAE3B6</stationID>
+			<name>ORF FM4</name>
+			<shortname>FM4</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128026348B4668E5F7CA5A25782088462D1C1123B59F96A69C5A1F117C7546E2CFFA99A6F</stationID>
+			<name>Jazz Radio Berlin</name>
+			<shortname>Jazz</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280264407094B6C7AAA21B1527C91E2B5C005089DA56E4A931E9F039E19F1BA257E1A746</stationID>
+			<name>ORF � Steiermark</name>
+			<shortname>�</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128026517CACD3039B525109C761186CD2C287E599DABB05761476ADD072FE22B66EABED7</stationID>
+			<name>RAI Radio Uno</name>
+			<shortname>RAI1</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>112802669010A1619AE6A83734D6CAAD80A4FEDE8772AF3589948A9D55C305A6426682371B</stationID>
+			<name>Radio �terreich International</name>
+			<shortname>ROI</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280267624F087682BB72CE76269734C7B3176645B5A7A64140FAD589372629D8252F5BD2</stationID>
+			<name>ORF � Burgenland</name>
+			<shortname>� Bgld</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>112802682669CFB6ABBEDFF25C26B8882CE053981108F504FF248922B58E564A8539883248</stationID>
+			<name>Bayern 1</name>
+			<shortname>B1</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128026905279D7EA93B7821E071F62A84BB128E2121A7936CEAE7BAA138E6D60F56DE5CFF</stationID>
+			<name>Bayern 2</name>
+			<shortname>B2</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.05</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128027027662C9D0CC713E51160666A7114E896A53F4A8F37B58BCF3C3748C3B213EB4230</stationID>
+			<name>Radio France Internationale</name>
+			<shortname>RFI</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>112802720583057191F0600E4DAF449AFB1AA457982C4252ACC8A4DD4C34F05FB632A1F6F4</stationID>
+			<name>Bayern 3</name>
+			<shortname>B3</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280272550E13BB993B514F3B28404EC78B66B4883F5426F8C44E7BA803A995B4E2F0DBD7</stationID>
+			<name>KroneHit</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>112802731601F0E4831F74F43294E52E5C056A78A3C4D05E97C147B8DE336A57148660B22E</stationID>
+			<name>Radio SI</name>
+			<shortname>SI</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>104</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128027373E9CEA2C77F84C323E33F91B6B8DC2A200C61E436D51BD2F7C6905E5A1708DBCA</stationID>
+			<name>BBC Wordl Radio</name>
+			<shortname>BBC</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280274723302FB496354714151AADD6E110A114CFCAF501F85945386A76F76205A631C68</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128027592C2933F456209C4636672FE7DEFEA9854A08CD99A19AE066CA9C2E7965CBF187D</stationID>
+			<name>Radio Melodie</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>106</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128027690BBA367D4F3DA860A06F1BB5737A8732CF2E11BF2F13FF00FC07B5C2B13C7A5E3</stationID>
+			<name>WRN 3</name>
+			<shortname>WRN3</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1128027796814ED4C064999420F10BDADC568148E9DC7B1FF3C96EF5EA8F87ED1377063B08</stationID>
+			<name>� K�nten</name>
+			<shortname>� Ktn</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>112802617339B29728348FB8D172218EFDE8CD6BE4BE9060A9B438F2EE8CB982C25A0DD50B</stationID>
+			<name>ORF �</name>
+			<shortname>�</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11280279826ACC29E39BE245FD870D0C8E205054781F6B9EB278A3E86B72EC0BC497597E4A</stationID>
+			<name>DRS 1</name>
+			<shortname>DRS1</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.9</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

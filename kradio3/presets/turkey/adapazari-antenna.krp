@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Nezih Kartal, &lt;nezihkartal@yahoo.com&gt;</maintainer>
+			<changed>22/09/2005</changed>
+			<country>Turkiye</country>
+			<city>Adapazari</city>
+			<media>antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11331032563063855FA8319AA8C9683B9329810FCD7AFC25153815CFF082FB5235EA02B146</stationID>
+			<name>Show Radyo</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>88</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032569AB34686F421BBDAB1A1454DC85734BAD813C940057A7C029EF5BBBE13AC5EC3</stationID>
+			<name>Radyonet</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>89.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032566368D622A547FC60E9C008F34F789AE44DB9BD5B657BD95AA88080F3141F0DF7</stationID>
+			<name>Ada FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>90</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256F976C1C9EE76F2A0358FF48D0C8CA359A63AB04AE6170E6E6DD15E535DEDCE6F</stationID>
+			<name>TRT FM 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>90.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032560F7121DBCB34D537AD1A03F44CA586717903F6A5A280127C508F5CBFCD924991</stationID>
+			<name>Metro FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>91.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032560BC71AF1443D07D68F7AA660D6ED3CB72F51561D0868328E48112C379A2ECEFF</stationID>
+			<name>Hur FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>92.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032560DAF105BA4EF17AEB45103D9129DFEA293409989B56A7C8952D1818DBB25042C</stationID>
+			<name>Radyo Ses</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>92.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256DA5A6933830D45EE5115C15AEBC121DA36ADCD16308642B9FE159234C4FDA992</stationID>
+			<name>TGRT FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>93.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032564A1086A845369C8F051B1FBC9F021A505A4BD4A812D2A5049418CB3EE677E07E</stationID>
+			<name>TRT FM 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>93.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032564E7A550EEE6211419FBC18C3E9B0AB9BC2A5E73A99F889A811893A0BCE956F81</stationID>
+			<name>Radyo Aktif</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>94</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325667257411AA7CDAA02CF2BF8682CFAE0730F602AE53D1E377B6AAEA8D73644F41</stationID>
+			<name>Radyo Life</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>95.5</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032563CCD20721596677CE8F9F5590205147CA1F6D2E9F2F0C638C3C2A9138AB733B4</stationID>
+			<name>TRT FM 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>96</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256027AE7ACDDA8B25B6DD21B02DA5E86924D65EAC985866CA95C42D97D285CA211</stationID>
+			<name>Radyo Taka</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>97</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325617FF29CDA8F9D0FA2C43EA73C6F2731F567865A6DA43816A8838FCFB5981669D</stationID>
+			<name>Super FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>97.8</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256557AE0ADE93517AA8FCB64ECCD75652F9008E93790175915C8987E14D602EDE0</stationID>
+			<name>Radyo Eylul</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>99.1</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256993932C327E1E6728B2991C26A117AA31507B69F280FC07885EDD4B6C94444F9</stationID>
+			<name>TRT FM 4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>99.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032566E340315A3C3FFD132FE6A71D036623CD6A6D3437FF98BD12681CA47B71A784C</stationID>
+			<name>Radyo 7</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>100.4</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032560A559D71BE292F346B96164129EB47905681168232A8129E3FFDCD626BB1F9B3</stationID>
+			<name>Power FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>100.7</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032568361DC126F4320BB3A88CB142BAA17B6381608ED1FE62C0C23E09BC8385E7A40</stationID>
+			<name>Radyo Relax</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>101</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256B7EB1EBEEFA0A2990C6F6E6CA8BBF4EDB07B47E815062EBD5D39B497610F843B</stationID>
+			<name>Kral FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>101.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256AAC27E61C4EBB1104FBA47A7912A2D1FE2741E5C2A770041D85BE6EDC05B1BDA</stationID>
+			<name>Burc FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>101.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032563B5E68A8A7C5554707F352C57558953910CB785F4179D06BA58D201CFFC66233</stationID>
+			<name>Radyo Mega</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>102.2</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032564133D26A4C9D715126DA6A05821C2C8547ADB0B6E292ED2AC5D886CD695A9AA3</stationID>
+			<name>Hilal FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>104</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1133103256F9BF82DF0814AD9897CB0CEDFBEBA9911945B367CA3271986F54C6F7A31D9A07</stationID>
+			<name>Radyo Tatlises</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>104.3</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11331032569F8CE7D28C4F3138F9F9ACF2749676CC067BF21EB826430BFEE560C5B321171B</stationID>
+			<name>Moral FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>105.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113310325652A761312F07237C7671866B97CBE6B48547F34456FCEE48957F9607C6569023</stationID>
+			<name>Akra FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<frequency>107.6</frequency>
+			<volumepreset>-1</volumepreset>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
