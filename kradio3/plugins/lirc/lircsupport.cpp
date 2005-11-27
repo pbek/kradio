@@ -325,7 +325,7 @@ ConfigPageInfo LircSupport::createConfigurationPage()
 
 AboutPageInfo LircSupport::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Linux Infrared Remote Control Support for KRadio"),
@@ -341,7 +341,8 @@ AboutPageInfo LircSupport::createAboutPage()
               i18n("LIRC Support"),
               i18n("LIRC Plugin"),
               "connect_creating"
-           );
+           );*/
+    return AboutPageInfo();
 }
 
 

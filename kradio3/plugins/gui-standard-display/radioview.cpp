@@ -600,7 +600,7 @@ void RadioView::addCommonConfigurationTab(QTabWidget *c)
 
 AboutPageInfo RadioView::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Standard Radio Display for KRadio"),
@@ -617,7 +617,8 @@ AboutPageInfo RadioView::createAboutPage()
               i18n("Display"),
               i18n("Standard Radio Display for KRadio"),
               "openterm"
-           );
+           );*/
+    return AboutPageInfo();
 }
 
 

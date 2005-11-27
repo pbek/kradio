@@ -1079,7 +1079,8 @@ AboutPageInfo V4LRadio::createAboutPage()
                                    "<P>"
                                    "Provides Support for V4L/V4L2 based Radio Cards"
                                    "<P>"),
-                         KAboutData::License_GPL,
+                         0,
+                         //KAboutData::License_GPL,
                          "(c) 2002-2005 Martin Witte, Klas Kalass",
                          0,
                          "http://sourceforge.net/projects/kradio",
@@ -1117,7 +1118,7 @@ void V4LRadio::radio_init()
     }
 */
     m_radio_fd = open(m_radioDev.ascii(), O_RDONLY);
-      if (m_radio_fd < 0) {
+    if (m_radio_fd < 0) {
         radio_done();
 
         logError("V4LRadio::radio_init: " +
@@ -1323,6 +1324,7 @@ bool V4LRadio::readTunerInfo() const
                 m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
                 m_tunercache.valid = true;
                 m_signalQuality = float(m_tuner->signal) / 32767.0;
+
             }
         }
 #ifdef HAVE_V4L2

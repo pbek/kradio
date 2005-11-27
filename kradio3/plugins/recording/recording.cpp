@@ -135,7 +135,7 @@ ConfigPageInfo  Recording::createConfigurationPage()
 
 AboutPageInfo Recording::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Recording Monitor for KRadio"),
@@ -151,7 +151,8 @@ AboutPageInfo Recording::createAboutPage()
               i18n("Recording"),
               i18n("Recording Plugin"),
               "kradio_record"
-           );
+           );*/
+    return AboutPageInfo();
 }
 
 

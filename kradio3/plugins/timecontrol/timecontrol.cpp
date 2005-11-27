@@ -273,7 +273,7 @@ ConfigPageInfo TimeControl::createConfigurationPage()
 
 AboutPageInfo TimeControl::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Time Control Plugin for KRadio."
@@ -293,7 +293,8 @@ AboutPageInfo TimeControl::createAboutPage()
               i18n("Alarms"),
               i18n("Time Control Plugin"),
               "kradio_kalarm"
-           );
+           );*/
+    return AboutPageInfo();
 }
 
 

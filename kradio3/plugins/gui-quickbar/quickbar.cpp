@@ -145,7 +145,7 @@ ConfigPageInfo QuickBar::createConfigurationPage()
 
 AboutPageInfo QuickBar::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Quickback for KRadio"),
@@ -162,7 +162,8 @@ AboutPageInfo QuickBar::createAboutPage()
               i18n("Quickbar"),
               i18n("Quickbar Plugin"),
               "view_icon"
-           );
+           );*/
+    return AboutPageInfo();
 }
 
 

@@ -184,7 +184,7 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
 
 AboutPageInfo RadioDocking::createAboutPage()
 {
-    KAboutData aboutData("kradio",
+/*    KAboutData aboutData("kradio",
                          NULL,
                          NULL,
                          I18N_NOOP("Docking Menu for KRadio"),
@@ -201,7 +201,8 @@ AboutPageInfo RadioDocking::createAboutPage()
               i18n("Docking Menu"),
               i18n("Docking Menu Plugin"),
               "kmenuedit"
-           );
+           );*/
+    return AboutPageInfo();
 }
 
 
