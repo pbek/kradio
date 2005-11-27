@@ -27,8 +27,10 @@
 #include "alsa-config-mixer-setting.h"
 
 class QHBoxLayout;
+class QGridLayout;
 class QAlsaMixerElement;
-
+class QScrollView;
+class QFrame;
 
 class AlsaSoundConfiguration : public AlsaSoundConfigurationUI
 {
@@ -65,7 +67,9 @@ protected:
                        m_captureDevice2idx,
                        m_playbackCard2idx,
                        m_playbackDevice2idx;
-    QHBoxLayout                       *m_groupMixerLayout;
+    QGridLayout                       *m_groupMixerLayout;
+    QScrollView                       *m_groupMixerScrollView;
+    QFrame                            *m_groupMixerSubFrame;
     QMap<QString, QAlsaMixerElement*>  m_MixerElements;
 
     QMap<QString, AlsaConfigMixerSetting> m_MixerSettings;

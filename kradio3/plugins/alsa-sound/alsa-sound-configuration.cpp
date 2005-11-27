@@ -18,6 +18,7 @@
 #include <qcheckbox.h>
 #include <qgroupbox.h>
 #include <qlayout.h>
+#include <qscrollview.h>
 
 #include <kurlrequester.h>
 #include <knuminput.h>
@@ -33,7 +34,9 @@
 AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice *dev)
  : AlsaSoundConfigurationUI(parent),
    m_SoundDevice (dev),
-   m_groupMixerLayout(NULL)
+   m_groupMixerLayout(NULL),
+   m_groupMixerScrollView(NULL),
+   m_groupMixerSubFrame(NULL)
 {
     QObject::connect(m_comboPlaybackCard, SIGNAL(activated(const QString &)),
                      this, SLOT(slotPlaybackCardSelected(const QString &)));
@@ -41,6 +44,20 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
                      this, SLOT(slotCaptureCardSelected(const QString &)));
 
     m_groupMixer->setColumnLayout(0, Qt::Horizontal );
+
+    m_groupMixer->setColumnLayout(0, Qt::Horizontal );
+
+    QHBoxLayout *tmp_layout = new QHBoxLayout( m_groupMixer->layout() );
+
+    m_groupMixerScrollView = new QScrollView (m_groupMixer);
+    m_groupMixerScrollView->setFrameShape(QFrame::NoFrame);
+    m_groupMixerScrollView->setFrameShadow(QFrame::Plain);
+    m_groupMixerScrollView->enableClipper(true);
+    m_groupMixerScrollView->setResizePolicy(QScrollView::AutoOneFit);
+    //m_groupMixerScrollView->setHScrollBarMode(QScrollView::AlwaysOn);
+
+    tmp_layout->addWidget(m_groupMixerScrollView);
+
 
     int card = -1;
     int ret  = 0;
@@ -106,16 +123,23 @@ void AlsaSoundConfiguration::slotCaptureCardSelected(const QString &cardname)
     }
     m_MixerElements.clear();
 
-    if (m_groupMixerLayout)
-        delete m_groupMixerLayout;
+    if (m_groupMixerSubFrame)
+        delete m_groupMixerSubFrame;
 
-    m_groupMixerLayout = new QHBoxLayout( m_groupMixer->layout() );
+    m_groupMixerSubFrame = new QFrame(m_groupMixerScrollView->viewport());
+    m_groupMixerSubFrame->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+    m_groupMixerScrollView->addChild(m_groupMixerSubFrame);
+
+    int rows = 1;
+    int cols = (all_list.count()+rows-1)/rows;
+    m_groupMixerLayout = new QGridLayout( m_groupMixerSubFrame, rows, cols, 0, 0 );
     m_groupMixerLayout->setAlignment( Qt::AlignBottom );
 
-    for (QValueListConstIterator<QString> it = all_list.begin(); it != all_list.end(); ++it) {
-        QAlsaMixerElement *e = new QAlsaMixerElement(m_groupMixer, *it,
+    int idx = 0;
+    for (QValueListConstIterator<QString> it = all_list.begin(); it != all_list.end(); ++it, ++idx) {
+        QAlsaMixerElement *e = new QAlsaMixerElement(m_groupMixerSubFrame, *it,
                                                      sw_list.contains(*it), vol_list.contains(*it));
-        m_groupMixerLayout->addWidget(e);
+        m_groupMixerLayout->addWidget(e, idx > cols, idx % cols);
         e->show();
         m_MixerElements.insert(*it, e);
     }

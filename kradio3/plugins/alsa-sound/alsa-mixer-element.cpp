@@ -50,7 +50,9 @@ QAlsaMixerElement::QAlsaMixerElement(QWidget *parent, const QString &label, bool
         QObject::connect(m_checkboxOverride, SIGNAL(toggled(bool)),
                          m_checkboxActive,   SLOT  (setEnabled(bool)));
     } else {
-        m_checkboxActive->hide();
+        //m_checkboxActive->hide();
+        m_checkboxActive->setEnabled(false);
+        m_checkboxActive->setChecked(true);
     }
 }
 
