@@ -63,7 +63,8 @@ int main(int argc, char *argv[])
 
     int ret = a.exec();
 
-    global_profiler.printData();
+    global_time_profiler.printData();
+    global_mem_profiler.printData();
 
     IErrorLogClient::staticLogDebug("normal shutdown");
 

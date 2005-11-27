@@ -19,18 +19,31 @@
 
 #include <qstringlist.h>
 
-Profiler global_profiler;
+#include <sys/resource.h>
+
+TimeProfiler global_time_profiler;
+MemProfiler  global_mem_profiler;
 
 Profiler::Profiler()
 {
-    startInternalCounter();
 }
 
 
 Profiler::~Profiler()
 {
+    m_tmpStartVal = 0;
 }
 
+void Profiler::stopInternalCounter()
+{
+    long long counter = getCounter();
+    long long diff = counter - m_tmpStartVal;
+    m_internalCounter += diff;
+}
+
+void Profiler::startInternalCounter() {
+    m_tmpStartVal = getCounter();
+}
 
 void  Profiler::startProfile(const QString &descr)
 {
@@ -89,5 +102,37 @@ void Profiler::printData ()
     }
 
     startInternalCounter();
+}
+
+
+long long MemProfiler::getCounter() const
+{
+    struct rusage usg;
+    if (getrusage(RUSAGE_SELF, &usg) == 0) {
+        return usg.ru_idrss + usg.ru_isrss;
+    } else {
+        return 0;
+    }
+}
+
+
+BlockProfiler::BlockProfiler(const QString &descr)
+    : m_Description(descr)
+{
+    global_mem_profiler.startProfile(m_Description);
+    global_time_profiler.startProfile(m_Description);
+}
+
+BlockProfiler::~BlockProfiler()
+{
+    global_time_profiler.stopProfile(m_Description);
+    global_mem_profiler.stopProfile(m_Description);
+}
+
+void BlockProfiler::stop()
+{
+    global_time_profiler.stopProfile(m_Description);
+    global_mem_profiler.stopProfile(m_Description);
+    m_Description = QString::null;
 }
 

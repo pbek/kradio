@@ -25,18 +25,25 @@
 #include <qstring.h>
 #include <qmap.h>
 
+#if (defined __i386__) || (defined __x86_64__)
 static __inline__ unsigned long long int rdtsc()
 {
-    unsigned long long int x;
-    __asm__ volatile (".byte 0x0f, 0x31" : "=A"(x));
-    return x;
+    unsigned int a, d;
+    asm volatile("rdtsc" : "=a" (a), "=d" (d));
+    return ((unsigned long long)a) | (((unsigned long long)d) << 32);
 }
+#else
+static __inline__ unsigned long long int rdtsc()
+{
+    return 0UL;
+}
+#endif
 
 class Profiler
 {
 public:
     Profiler();
-    ~Profiler();
+    virtual ~Profiler();
 
     void startProfile(const QString &descr);
     void stopProfile (const QString &descr);
@@ -45,8 +52,10 @@ public:
 
 protected:
 
-    inline void stopInternalCounter()  { m_internalCounter += rdtsc() - m_tmpStartVal; }
-    inline void startInternalCounter() { m_tmpStartVal = rdtsc(); }
+    virtual long long getCounter() const = 0;
+
+    void stopInternalCounter();
+    void startInternalCounter();
 
     long long m_internalCounter;
     long long m_tmpStartVal;
@@ -67,19 +76,32 @@ protected:
 };
 
 
-extern Profiler global_profiler;
+class TimeProfiler : public Profiler
+{
+protected:
+    long long getCounter() const { return rdtsc(); }
+};
+
+
+class MemProfiler : public Profiler
+{
+protected:
+    long long getCounter() const;
+};
+
+
+extern TimeProfiler global_time_profiler;
+extern MemProfiler  global_mem_profiler;
 
 
 
 class BlockProfiler
 {
 public:
-    BlockProfiler(const QString &descr)
-        : m_Description(descr) { global_profiler.startProfile(m_Description); }
-    ~BlockProfiler()
-        { global_profiler.stopProfile(m_Description); }
+    BlockProfiler(const QString &descr);
+    ~BlockProfiler();
 
-    void stop() { global_profiler.stopProfile(m_Description); m_Description = QString::null; }
+    void stop();
 
 protected:
     QString m_Description;
