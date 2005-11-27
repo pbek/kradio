@@ -1,1 +1,1 @@
-SUBDIRS = czechia australia belgium austria catalonia uruguay luxemburg argentina new-zealand switzerland poland portugal slovakia russia spain england brazil italy ireland france bulgaria romania usa germany netherlands iceland finland hungary sweden south-africa
+SUBDIRS = czechia australia norway belgium austria catalonia uruguay luxemburg argentina new-zealand switzerland poland portugal slovakia russia spain england brazil italy ireland france bulgaria romania usa lithuania germany netherlands iceland finland hungary turkey sweden south-africa

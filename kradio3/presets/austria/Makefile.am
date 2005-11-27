@@ -1,5 +1,5 @@
 SUBDIRS =
-EXTRA_DIST = "breitenfurt-cable.krp" "gablitz-cable.krp" "kaltenleutgeben-cable.krp" "laab-wald-cable.krp" "linz-cable.krp" "mauerbach-cable.krp" "purkersdorf-cable.krp" "vienna-antenna.krp" "vienna-cable1.krp" "vienna-cable2.krp"
+EXTRA_DIST = "breitenfurt-cable.krp" "gablitz-cable.krp" "graz-cable.krp" "kaltenleutgeben-cable.krp" "laab-wald-cable.krp" "linz-cable.krp" "mauerbach-cable.krp" "purkersdorf-cable.krp" "vienna-antenna.krp" "vienna-cable1.krp" "vienna-cable2.krp"
 
 install-data-local:
 	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/"
@@ -7,6 +7,7 @@ install-data-local:
 	$(INSTALL_DATA) "$(srcdir)/kaltenleutgeben-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/kaltenleutgeben-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/gablitz-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/gablitz-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/mauerbach-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/mauerbach-cable.krp"
+	$(INSTALL_DATA) "$(srcdir)/graz-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/graz-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/vienna-antenna.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-antenna.krp"
 	$(INSTALL_DATA) "$(srcdir)/linz-cable.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/linz-cable.krp"
 	$(INSTALL_DATA) "$(srcdir)/vienna-cable1.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable1.krp"
@@ -20,6 +21,7 @@ uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/kaltenleutgeben-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/gablitz-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/mauerbach-cable.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/graz-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-antenna.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/linz-cable.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/austria/vienna-cable1.krp"

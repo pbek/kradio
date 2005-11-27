@@ -1,8 +1,10 @@
 SUBDIRS =
-EXTRA_DIST = "barcelona2.krp" "barcelona.krp" "bilbao.krp" "lugo.krp" "madrid-2.krp" "madrid.krp" "mieres-del-camino.krp"
+EXTRA_DIST = "barcelona2.krp" "barcelona.krp" "bilbao.krp" "lugo.krp" "madrid-2.krp" "madrid.krp" "malaga.krp" "mieres-del-camino.krp" "sevilla.krp"
 
 install-data-local:
 	$(mkinstalldirs) "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/"
+	$(INSTALL_DATA) "$(srcdir)/sevilla.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/sevilla.krp"
+	$(INSTALL_DATA) "$(srcdir)/malaga.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/malaga.krp"
 	$(INSTALL_DATA) "$(srcdir)/bilbao.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/bilbao.krp"
 	$(INSTALL_DATA) "$(srcdir)/barcelona2.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/barcelona2.krp"
 	$(INSTALL_DATA) "$(srcdir)/lugo.krp" "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/lugo.krp"
@@ -13,6 +15,8 @@ install-data-local:
 
 
 uninstall-local:
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/sevilla.krp"
+	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/malaga.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/bilbao.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/barcelona2.krp"
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/presets/spain/lugo.krp"
