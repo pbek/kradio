@@ -1,3 +1,10 @@
+2005-11-27
+      
+       emw  - fixed alsa-config-dialog-toooooo-big problem with QScrollView
+            - added memory profiling feature to profiler
+            - reduced memory consumption by removing lots of about config
+              pages (GPL Tab requires about 1MB per instance!)
+
 2005-08-28 (1.0beta3b)
 
        emw  - more saveState fixes
