@@ -766,7 +766,7 @@
 <pixmapfunction>SmallIconSet</pixmapfunction>
 <layoutdefaults spacing="6" margin="0"/>
 <includehints>
-    <includehint>src/libkradio-gui/radiostationlistview.h</includehint>
+    <includehint>src/libkradio-gui/radiostation-listview.h</includehint>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>kpushbutton.h</includehint>
