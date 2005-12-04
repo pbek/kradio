@@ -1,3 +1,8 @@
+2005-12-02
+
+       emw  - fixed typo in configure.in.in that resulted in wrong
+              installation directory for plugins
+
 2005-11-28
 
        emw  - fixed typo in include hint in kradio3/src/libkradio-gui/stationselector-ui.ui

@@ -72,7 +72,7 @@ AC_CHECK_HEADERS([alsa/asoundlib.h], [], AC_MSG_RESULT([libasound header not fou
 
 
 
-AC_SUBST(libkradiodir, '$(prefix)/lib$kdelibsuff/kradio/plugins')
+AC_SUBST(libkradiodir, '$(prefix)/lib$(kdelibsuff)/kradio/plugins')
 
 
 dnl ----------------------------------------------------------------------
