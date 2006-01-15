@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Thomas Reich, &lt;lvol@gmx.de&gt;</maintainer>
+			<changed>2006-01-14T22:00:40</changed>
+			<country>Schweiz Suisse Switzerland</country>
+			<city>Diepoldsau</city>
+			<media>cable</media>
+			<comments>http://www.diepoldsau.ch/dl.php/de/20050308090414/Programm-+und+Frequenzliste.pdf</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1132489058C9309FF4601A441216F100AE43B463091B97B0B399292080CC3BC9EF0C30C3C9</stationID>
+			<name>Radio Swiss Classic</name>
+			<shortname>CH Class</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137271716815A76FD73FF4E0ED1C5D275A96F46E0B120CEA0BB541285775F16342B4E414C</stationID>
+			<name>Radio Swiss Jazz</name>
+			<shortname>CH Jazz</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727198457880BE185E03625A53D5E82DF783F0C9D92D051DD705CB3518A94273EEA0660</stationID>
+			<name>Radio Swiss Pop</name>
+			<shortname>CH Pop</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137271842132D9459B73944B32A571446F1E771B67C3BABADA807DC4404C7DD7AB6176CE1</stationID>
+			<name>Klassik Radio</name>
+			<shortname>Klassik</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.05</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727199097589B544670E6EF4196870109A7E11980C36D922ED1E58BA1F7E640E71957E8</stationID>
+			<name>Swiss Music Radio</name>
+			<shortname>CH music</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137268639EA10106B1671B91388175A1DB681AB261453C29F5EC5EA936E7EA7FF4912BF26</stationID>
+			<name>Bayern 1</name>
+			<shortname>BR 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137268704E527735017525CD0266F8A234F5F710DB4162A6A99A4FAA189B12BCD26B45BF6</stationID>
+			<name>Bayern 2</name>
+			<shortname>BR 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11324889370621F53C1166AB7B26BE88E31143B027CBE36E14A75256794EFEBCAF0AA101E2</stationID>
+			<name>Bayern 3</name>
+			<shortname>BR 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11318213127EEEFD340C4C410CE2DF1A9A03C45F9890F934DA7E7FA8E64B28C088E0978A68</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname>BR 4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137271491BAB360EBDDE8B7E2BB5B1FE5228489CE1ABA7B2B2BF4760C84E25F713799E8E2</stationID>
+			<name>Radio �terreich 1</name>
+			<shortname>�</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727150907D42164116FF3722571FAC4C46F96E5155CB5542EBE56313480E3E86B6A09D6</stationID>
+			<name>Radio �terreich 2, Vorarlberg</name>
+			<shortname>Radio V</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11324888428D48C321DDB108D3261F086670066FE147F61C9314E1146EC61A97ED441AD4DE</stationID>
+			<name>Radio �terreich 3, Hitradio</name>
+			<shortname>� Hitradio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1131821237026C36D4F8AD3D56AB13959EC4722B19E424C6395243C145A468DB7A8458459E</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137271600FC15F7BE653ACA78FA498901EC1AA49F5F5D9656521EAA7599E8DA93386A548C</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>Ant. BR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372716216292BE57CF82E1F81A0B030E9D43FF889EF3D20E752945941AF9F513FF943EE1</stationID>
+			<name>Sdwestrundfunk 1 BW</name>
+			<shortname>SWR 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727164392D9D791F7E29025FCE3883CB5EEC727E68DDC917792C78225FAA8257BCDDB4A</stationID>
+			<name>Sdwestrundfunk 2</name>
+			<shortname>SWR 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1132488544D77FCB9465E7EA3138F24B88CFDE3C12F105B1BE47A040CD0A4E4DE6C18B7B75</stationID>
+			<name>Sdwestrundfunk 3</name>
+			<shortname>SWR 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137272008E6D34F0BB3E733BA0474862A8971E4046E027D11E64327D51A9326844DF719B4</stationID>
+			<name>Sdwestrundfunk 4 BW</name>
+			<shortname>SWR 4 BW</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372716977723C06E5EB3226A573B4FB08ECE302CFF50B8B7B6C7F6A7E121082FA1043075</stationID>
+			<name>Deutsche und r�orom. Schweiz 1</name>
+			<shortname>DRS 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727173679728CA7C73020BCF3B910D030DD14B228BE84C450F084F11C6BFF98A5CE8E27</stationID>
+			<name>Deutsche und r�orom. Schweiz 2</name>
+			<shortname>DRS 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.65</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137271753433CE2266FA7CE924E3C39D6C1980A8AE3705F185AAC15126F63AF34DCFFB480</stationID>
+			<name>Deutsche und r�orom. Schweiz 3</name>
+			<shortname>DRS 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1132488990D44035C12EC7299C4E6CE05F74AC6DD06D4DE1EAA3B9B239543EE1C1D92D5CF4</stationID>
+			<name>BBC World Service Europe</name>
+			<shortname>BBC W</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727190514CAC8725769DF2E5CB783D1CE9278E8B58A2E64FFCBA45E80E171742BC55B44</stationID>
+			<name>Voice of America</name>
+			<shortname>VOA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137271799AF2B7C305597EF8201ACAB4CB183DEC218247EBDF0E52859F74813FE44DAB935</stationID>
+			<name>Radio Ri</name>
+			<shortname>Radio Ri</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372722787507B897D2222853FACD11B9FC250FD294091CAAB21087EECB8F19B069B7A379</stationID>
+			<name>Radio Grischa</name>
+			<shortname>Grischa</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137272175CA278A9531E9740388CB57BA64648C8E02B6EC22C700E03CCFE991C2781832F5</stationID>
+			<name>Radio Liechtenstein</name>
+			<shortname>Radio L</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372719297E4FDF332619DB5241B76C072F6291112B2C9C9BFC339822BB0760C354EA8847</stationID>
+			<name>Radio svizzera di lingua italiana</name>
+			<shortname>Rete uno</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.05</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372719456D252143F55F018F20DC9FAD5183B72A5FDC97624C06B1524E674C46431E4071</stationID>
+			<name>Radio Suisse Romande la premi�e</name>
+			<shortname>RSR 1�e</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727225090566035704F5955FCA47A009CE56FD0F74C5E3EAB6DA202C7C1AB431F55DC6C</stationID>
+			<name>Radio Rumantsch</name>
+			<shortname>RR SRG</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1132489037BE6EEB344BA62244371EDFF5CD783B55780408FF59E2E92ADDE1E383FB8B1875</stationID>
+			<name>Radio FM 4</name>
+			<shortname>FM 4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137271859CAB7E0EEEA9F7FA7C9E6C1ADD8807A8E5B016BA74B8E714AC048FB37ED7A4D80</stationID>
+			<name>Jugendradio Virus</name>
+			<shortname>Virus</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>113727188340D14FAE4CD61ADC0D541B7986670D00FEC8C32FC91CA7658361B6C3948AD8DE</stationID>
+			<name>RTL Radio</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137272135D3EFBC4E525B49CE3169159951D841BB79EABB8E7571A23BB182657C6C7A6C07</stationID>
+			<name>Musigw�le 531</name>
+			<shortname>MW 531</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137272162A425F662E6696B679EBB533F7BD9235C330C17572B6AD3633824D32B4B489E4E</stationID>
+			<name>Radio Melodie</name>
+			<shortname>Melodie</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372722010E8F2623A1F6389274F5AD817B64998254C9A72700C7F179B7D8C9AA59A263B9</stationID>
+			<name>Radio RSA, der Allg�sender</name>
+			<shortname>RSA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372722112D39A2FBCF68278B64651F4E9B15108FD1164FD7220946FB9C5E3F06D6E98014</stationID>
+			<name>Radio Aktuell</name>
+			<shortname>Aktuell</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11372722335F88BB8E66D424FCE7686B241097321AAE363A84A5FAFFB607D02F6A1D938CD7</stationID>
+			<name>Radio 105 Network</name>
+			<shortname>Radio 105</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1137272263E6E6A509A60730169FFBEAB51EAB493CB1BC9C8C289CD2D84F8E40C82F643634</stationID>
+			<name>Radio Eviva</name>
+			<shortname>Eviva</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.8</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
