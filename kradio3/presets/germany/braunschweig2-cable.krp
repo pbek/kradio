@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Axel Zechner</maintainer>
+			<changed>2006-06-01T00:00:00</changed>
+			<country>Germany</country>
+			<city>Braunschweig</city>
+			<media>Kabelcom</media>
+			<comments>current settings; differ minimally from krp preset</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>11568437377AFE6DF94E5F38851554AF6FC99D375FE8C766C1B6030685A8B6B69E9BDEE7D0</stationID>
+			<name>WDR Radio 5</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843738E5E4BC76AACF2E15431673580487666667892FED5BA39AD6B86C761AD38C5E3F</stationID>
+			<name>Deutschland Radio Kultur</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.9751</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843740BF845D7E45677E9B8AEFC271ECFA13E31AE0C9CE7373195E3D953D6DF13046C8</stationID>
+			<name>mdr Radio Sachsen-Anhalt Magdeburg</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.7501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437415415D9981A315CD63A84A17F7270DEE444B82B0011CF80163F8B6DC317A794DA</stationID>
+			<name>NDR2</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.2251</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437444D544E1DDF75F427C722C32AF75EF40890748AFCE111894D7FC1D68D762A54A1</stationID>
+			<name>89.0 RTL</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.1002</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437466C520C9E83E80DE2A96B25C79E3EDCE9C35DFC5B73ECC1DAF1DFECF930CB6E55</stationID>
+			<name>Radio Melodie - Heimatkotz</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.8252</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843747F2498A4FD9C7F7C8178FEF9707E6620052978F973CA44A7F44E898B2CC81771D</stationID>
+			<name>mdr FIGARO</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.3003</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843748E4FF9B038672582837037A9D7C83381918F3603E40B7897F152AC218729E8814</stationID>
+			<name>N-JOY</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.8003</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437500156365F849B634C2EAE8774E7AC8938682DA5EA5A317FDE9742F7F740730B09</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4753</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843753539AB14F59A2315FE17F8FAABAA52F90F595F17AD7789E65E20577E77C9CC198</stationID>
+			<name>Radio 21</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.6504</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843754585C44A1727EDBA7F848990E146D1BB578AC665F630362B030B34E431667CA93</stationID>
+			<name>WDR 2 Bielefeld</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.1754</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>115684375678347F601D52154003832A2E7B65C72A45056A6D13DDC37715ABA51D03B842AB</stationID>
+			<name>Hit Radio FFH</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.8255</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843757C199BF3AEA2EACFCE962694AA26764C47C667B6A2E91AE43CE04A5ECEB0E38E1</stationID>
+			<name>radio ffn</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.2755</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>115684375855EEA7EE0F1730C451430CD944DF99D0899DAED58224A16312162CEC1A21F641</stationID>
+			<name>NDR 4 Spezial</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.6005</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843760E0589FACCAFA6BEAF13883DDCABE740387980AE93DC4903062BC7AF8D1C5BC33</stationID>
+			<name>hr2</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.1006</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843761F8FD6EA87EECC7EF93BB668660D1DB56C07086A143D6F0B9B7E1C84A68ADD89B</stationID>
+			<name>JAM-FM</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.7756</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843763CBE1B66699A458BB8A9E8882EE8AD95D57A75F2680EDC1105903195D4CC04482</stationID>
+			<name>JUMP</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.6006</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437652552F8396BE3860174949D91E3301C0FE9B750452F32C96126F30EEEDA4FBB4A</stationID>
+			<name>Klassik Radio</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.4507</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843767590854DB334B46FC6168C1B3B05D45CCDEF5A444D0D2C9DD8228CD639DC3C750</stationID>
+			<name>NDR 1</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.8757</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>115684376844BCB6546D10A9D3C8F62EBBC53977879930D889D943C3372267D7FCA9F1B339</stationID>
+			<name>WDR 3</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.6508</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843770E0B5E58DD229188754012AF89EEAEDFFBEDCFF825152E35514558623EC519F29</stationID>
+			<name>NDR Kultur</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.101</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>115684651035148582470BD3561A0B8EAD3A50E1C82E9C7663182708C7876577182B94B872</stationID>
+			<name>BFBS</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156846641F8937A3D3BA59994C8ABF4D89DB02751DD2F22E2E96D7B65F1450A544C4B75C3</stationID>
+			<name>NDR Info</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437743DCDDFD4F420BBD4312B84F97675ADC6BFDCC6624D64FA807AF3E048E79B4BB1</stationID>
+			<name>Radio Okerwelle</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.676</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>115684669799BAFD55186D5B325A3BBFF11FAA1C77936AF55DC4C106E8AEEA37C42C7C453E</stationID>
+			<name>Radio SAW</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843777C09B2173D168B1A2930E5A6A46BF0364FCA4826A9E608F54CFDFF8E51527A474</stationID>
+			<name>hr3</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.776</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437802035E2AC7670848C443D060C0751447C9CEE16CD065FAD3BF292CC800913371C</stationID>
+			<name>WDR 4</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.201</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437827399F4202566CAEAB9877B94B330C87B057E0AD21CAAB3ABEF6C1618ABFDD6D4</stationID>
+			<name>Eins Live</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.026</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843784DA047DB41CEA557F6024873289ED1B11F281C90DB887A155130631F731789FCE</stationID>
+			<name>hr1</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.726</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1156843786E9EFF08AFC46C27588803B3D9999E78278C2BB1C225A7C65B11AD1262EA4961D</stationID>
+			<name>RTL RADIO</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.551</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>115684378814578FEF5D5C1A423541866A2B0578C4342B91B1B33D5AD4134C10DFC53D2919</stationID>
+			<name>sunshine live</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.176</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11568437898AFC35C90CAF6A0597D4F5CCFF714041FD8CD6FF4717210066EA8EAF85472BDE</stationID>
+			<name>Hit-Radio-Antenne Nds</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.651</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<maintainer>Babara</maintainer>
+			<changed>2006-06-06T21:23:42</changed>
+			<country>Deutschland</country>
+			<city>Dresden</city>
+			<media>cable</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1149620985EBEB2E99ACB5933B19641C66145933E7ABAB0CC0F0CAD9CB784C7E8FB5968536</stationID>
+			<name>MDR 1 - Radio Sachsen</name>
+			<shortname>MDR 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11496210482BD823A661455FD5BC72CA45DEE1AB4453E3C4E94D97B4A2197E012F58A1E07D</stationID>
+			<name>MDR Jump</name>
+			<shortname> Jump</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1102367919AE48FF7100123FA7E76FCA850BDC3CE7CFC2B49645579927B8131B42FC6394AA</stationID>
+			<name>DLR Berlin</name>
+			<shortname>DLR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.3751</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11023679194A872BE24791C3E7EF70258B89ECDE72EE080C061D88DDF1751A4C170B851334</stationID>
+			<name>MDR Figaro</name>
+			<shortname>Figaro</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.9751</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11023679206A7A024D0076B105CE6674065814E119F71695B77251FA467C222E97D2A21A72</stationID>
+			<name>Radio 3</name>
+			<shortname>Radio 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.7002</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1149621154A7C58A84EEBB9CC1751745BC5469217B1A512F0C08027AAD0112AD2F613DFCEA</stationID>
+			<name>PSR</name>
+			<shortname>PSR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1102367922147548C3672A359431B0725E89198C41206B02DF88C3EF330D294AD61F954B34</stationID>
+			<name>Dresden 103,5</name>
+			<shortname>Dresden</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.1753</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110236792491672D14BCD05B2B6B860E2037DFDA6185E819B92B42DB8A320E1482BAD295C9</stationID>
+			<name>RS 2</name>
+			<shortname>RS 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4253</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11023679254F81FFBCC9E41B82955112C301E71C7D097B0CA1871D2AC1978AAA128CEB54BE</stationID>
+			<name>Inforadio Berlin</name>
+			<shortname>Info Berlin</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.7754</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1102367926B268428A36544EA8D51A33F9495CDBFCCFB86758578E9A628821B47DE9DFB7F7</stationID>
+			<name>Antennne Brandenburg</name>
+			<shortname>Ant. Brb</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.8004</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1149621208196132008507B9DD2B30001D30F48EDDD5D259EFDE93E7199870258A0DC745C0</stationID>
+			<name>Radio Eins</name>
+			<shortname>Radio Eins</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11496212803D7A5AB99D8A8C5E3C1662C971CA23CB83BCB40DEEBF7990F7A600F317E246C7</stationID>
+			<name>MDR Info</name>
+			<shortname>MDR Info</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.85</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1149621490FF71E791C45E571183D7AF96DF9E1DA0B6ACED8DF9AB4B326226E7D1D8A09E7A</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11023679305D2B65EE86094237DC231B31320BD85AD95373D42C0CD5371A2AD91D2D8043B9</stationID>
+			<name>Energy Dresden</name>
+			<shortname>NRG Dresden</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.3006</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110236793173C154818B63992B1C88BB2981027CBBCC9A61AAFA9DD4DDF1815A229053FF5E</stationID>
+			<name>Berliner Rundfunk</name>
+			<shortname>B Rundfunk</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.1006</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110236793338A64BDC65364C866F4F30EF909885B7359656FD5510D94335A5FE6979547753</stationID>
+			<name>Fritz</name>
+			<shortname>Fritz</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.8507</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11023679346DEA29F1DC8A9646C4F8D8B7A7897227824B2601A5A391B09EA80312C91CBBAF</stationID>
+			<name>Antenne Sachsen</name>
+			<shortname>Ant. Sachs</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.3758</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1102367936C33366A05EEEE13A3B4D0CE6B32B17038988E70D93575D627CB3A47F90F25739</stationID>
+			<name>BB Radio</name>
+			<shortname>BB Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.601</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110236793741AA420F94D0620A9928B39401164E2529375238533DABA3C31BE44E38AACCBE</stationID>
+			<name>Radio Melodie</name>
+			<shortname>Melodie</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.476</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114962154897439D778A0A405E651765F400ACA2D41EC1BC8191809E44425BD3C3BC927D65</stationID>
+			<name>Oldie FM</name>
+			<shortname>Oldie FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1102367941F08FB3F322DA2645A9022F1441672132BFBC06B9B29C4ED91AFBD304126DC0C6</stationID>
+			<name>Project 89.0 digital</name>
+			<shortname>89.0 dig</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.301</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110236794240E495D21836A9F79DD48D3BA29B14D2FEE01F550ACC96DDB79A95D52C44C827</stationID>
+			<name>Jam FM</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.751</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1102367943BD68DC565F9F451F9932EA8810C58E28B52F76FF865CA6CF26D5ED0FDFB30A49</stationID>
+			<name>RTL Radio</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.726</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11023679446BC72A64CBE91EACCCD2680263531F0F9343306758A3CC2E7B19D414118C146B</stationID>
+			<name>Klassik Radio</name>
+			<shortname>Klassik</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.301</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>110236794552EAB6EF82F811DF41A913D721F989ECB5E14D6764F5F278679736284767899A</stationID>
+			<name>MDR Sputnik</name>
+			<shortname>Sputnik</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.176</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1102367946E30C9A75D1C03B16299490921303704DD662D5FA00D143BB3306B663314E568D</stationID>
+			<name>Sunshine</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.501</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+
+

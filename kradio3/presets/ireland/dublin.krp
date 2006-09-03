@@ -3,7 +3,8 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<maintainer>Barry O'Donovan, &lt;barry@ihl.ucd.ie&gt;</maintainer>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Barry O&apos;Donovan, &lt;barry@ihl.ucd.ie&gt;</maintainer>
 			<changed>2004-06-02T16:30:23</changed>
 			<country>Ireland</country>
 			<city>Dublin</city>
@@ -17,7 +18,7 @@
 			<shortname>RTE1</shortname>
 			<icon></icon>
 			<volumepreset>0.8</volumepreset>
-			<frequency>89.4</frequency>
+			<frequency>88.5</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
@@ -27,6 +28,15 @@
 			<icon></icon>
 			<volumepreset>0.8</volumepreset>
 			<frequency>90.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1148726760840DA9CAF9F47125D0681DA6DD69D0EF1793510E3A7B0BFEABD861C218F3D6ED</stationID>
+			<name>Premier FM</name>
+			<shortname>Premier</shortname>
+			<icon></icon>
+			<volumepreset>0.8</volumepreset>
+			<frequency>92.15</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
@@ -53,7 +63,7 @@
 			<shortname>98FM</shortname>
 			<icon></icon>
 			<volumepreset>0.8</volumepreset>
-			<frequency>98</frequency>
+			<frequency>98.1</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
@@ -71,12 +81,12 @@
 			<shortname>Q102</shortname>
 			<icon></icon>
 			<volumepreset>0.8</volumepreset>
-			<frequency>102</frequency>
+			<frequency>102.2</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
 <stationID>1086192160E3E3777206BFC480E07714F70B85816D58B979E965F8BA646B4957898C10BADC</stationID>
-			<name>Spin 103.8 </name>
+			<name>Spin 103.8</name>
 			<shortname>Spin</shortname>
 			<icon></icon>
 			<volumepreset>0.8</volumepreset>
@@ -100,5 +110,18 @@
 			<volumepreset>0.8</volumepreset>
 			<frequency>106</frequency>
 		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11482096371AF38F0B3732821D9F0E66A200FDD497D3476E535152593B14F8ED3C13DD50B3</stationID>
+			<name>Dublin&apos;s Country Mix</name>
+			<shortname>Country</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>106.8</frequency>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
+
+
+
+

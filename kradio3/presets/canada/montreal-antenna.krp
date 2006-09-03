@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Benoit Frigon &lt;benoitfrigon@videotron.ca&gt;</maintainer>
+			<changed>2006-05-13T15:13:34</changed>
+			<country>Canada</country>
+			<city>Montreal</city>
+			<media>antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1147546096DB3139EB544A96C3933C10E422D2E2CA68D5AD777F3E855986B8FB1F05E423EF</stationID>
+			<name>CBC Radio One</name>
+			<shortname>CBMF</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>88.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546327FB30D8C000B434EDF0B41A44D96A517CE6AF929255DABFDB61BBFD71AF9DA0A0</stationID>
+			<name>CISM</name>
+			<shortname>CISM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546346915F407CB00740E5C7F955525F0EE1C0FBC51277930694ADBEC2A3C0DE74E3F2</stationID>
+			<name>CKUT</name>
+			<shortname>CKUT</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475463624E7E94ABA9E3B94B641EF0A5EADD44C36B33E4244B48F4018B3E5B257EE1B45D</stationID>
+			<name>Radio Ville-Marie</name>
+			<shortname>CIRA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546393F6C31C2E1B8AE8B2B1901DCD1DEE71E4F06F80D4A8209DACEAD89086DA77428E</stationID>
+			<name>Couleur Jazz</name>
+			<shortname>CKLX</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475464316160C8342536A8B265EBC37ED3EF5158BCB938E6852387460A9759BBE495113C</stationID>
+			<name>Q92</name>
+			<shortname>CFQR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475464784A0411CCBEAFF2C1082BDA169C207E00EA50FB6F95DD6421D9B62E5180766BCA</stationID>
+			<name>CBC Radio Two</name>
+			<shortname>CBM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475465065A9B9E821E82C9722520671A2F5B0FC0361A67BF39EE2F539A3EBF4A98D30569</stationID>
+			<name>Radio-Energie</name>
+			<shortname>CKMF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546632D7301D95C61FDB9407BBF266F094B271C5F4492D2DC4F802807D46C7E3DDB44C</stationID>
+			<name>Radio-Canada, Premiere Chaine</name>
+			<shortname>CBF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546665262AE5C04AA3DF16E4C50A2BDB4E9847B21219C8CA4DB2942552C32890EED466</stationID>
+			<name>Mix 96</name>
+			<shortname>CJFM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546693CC52802241DAA193B589AE4A5137A34052964533407B72B077BBA9CE0AEDDD05</stationID>
+			<name>CKOI FM</name>
+			<shortname>CKOI</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546711A53AE33373572A4486AA793438EA0145959E259CB7A91CB6DF1C394EC8137BC3</stationID>
+			<name>CHOM FM</name>
+			<shortname>CHOM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475467276BB2692ED4F09C4FB99B8B2F6CE91C2153FFF9DE4A8A5F36A4E7BEE615ADE23C</stationID>
+			<name>98,5 FM</name>
+			<shortname>CHMP</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475467449A57F1812DBED9F7D6497C06607945E649CBFD47A70CD1C7C71CF965020E62E9</stationID>
+			<name>Radio Classique</name>
+			<shortname>CJPX</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546769F59818FCA77780D281D709063DA16E607AA764AC1551F7A422A7B6CB563D3A31</stationID>
+			<name>Radio-Canada, Espace Musique</name>
+			<shortname>CBF-FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1147546797650286559C51B3C062DC239C72B687927F4B5754EC9B6EDEA598096A534613C6</stationID>
+			<name>La Radio Libre</name>
+			<shortname>CIBL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475468231D4C387889B09C1BB1071A55EB1483C8D53087BF24116867A78ADFA41B6399FF</stationID>
+			<name>Radio Centre-Ville</name>
+			<shortname>CINQ</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475468877EFBE6187CDC5178B6561D4D8A08A16D84C24CF5B1A889ED1B9BE6811797DF7D</stationID>
+			<name>Rythme FM</name>
+			<shortname>CKDG</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11475469131E5057A646848E9A86B56F13FAA6B42FE158E0B0BACFA95A9B9253E760AC1DE7</stationID>
+			<name>Cite Rock Detente</name>
+			<shortname>CITE</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.3</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

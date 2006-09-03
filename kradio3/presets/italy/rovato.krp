@@ -3,7 +3,7 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<maintainer>Falko &lt;sentenc3d@gmail.com&gt;</maintainer>
+			<maintainer>Falko</maintainer>
 			<changed>2005-06-06T17:20:10</changed>
 			<country>Italia</country>
 			<city>Rovato</city>
@@ -33,8 +33,9 @@
 			
 <stationID>11180257661506A0E22AD0A91C73D5AA3423D1C1C0C0EF77BA7B1B1A65F09ECFF62CFD91FD</stationID>
 			<name>Radio In Blu</name>
-			<shortname>Radio In Blu</shortname>			
-            <icon></icon>
+			<shortname>Radio In Blu</shortname>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>88.3</frequency>
 		</FrequencyRadioStation>
@@ -355,10 +356,3 @@
 		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
--- 
-"il sapere universale lo si ottiene solo con la ricerca della 
-conoscenza" (Falko)
-
-
-

@@ -3,6 +3,7 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
+			<creator>kradio-1.0beta3b</creator>
 			<maintainer>Michael Anthon, &lt;michael@anthon.net&gt;</maintainer>
 			<changed>2005-03-14T09:18:12</changed>
 			<country>Australia</country>
@@ -11,44 +12,50 @@
 			<comments></comments>
 		</info>
 		<FrequencyRadioStation>
-			<stationID>1116455444D17CEB0B1C5871CDB168E79C1A2EBB52EF75B0F2F9320CE77C7491A332613C95</stationID>
+			
+<stationID>1116455444D17CEB0B1C5871CDB168E79C1A2EBB52EF75B0F2F9320CE77C7491A332613C95</stationID>
 			<name>ABC FM</name>
 			<shortname>ABC</shortname>
 			<icon></icon>
-			<frequency>106.1</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>106.1</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>11164554447F2A606CE2B35B3A92D7376766F98DD464F9FD97A3C4324A5EF21B90681C8121</stationID>
+			
+<stationID>11164554447F2A606CE2B35B3A92D7376766F98DD464F9FD97A3C4324A5EF21B90681C8121</stationID>
 			<name>4MBS</name>
 			<shortname>4MBS</shortname>
 			<icon></icon>
-			<frequency>103.7</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>103.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1116455444ACA486C37FBC53EE01B24A2D44A29A38320D99896AF84A3187049DD64176B12B</stationID>
+			
+<stationID>1116455444ACA486C37FBC53EE01B24A2D44A29A38320D99896AF84A3187049DD64176B12B</stationID>
 			<name>97.3</name>
 			<shortname>97.3</shortname>
 			<icon></icon>
-			<frequency>97.3</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>97.3</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>111645544466E1BFA8403ABC2F9371F23379E139156D70187BBFBEACC459EB3963E4E540E7</stationID>
+			
+<stationID>111645544466E1BFA8403ABC2F9371F23379E139156D70187BBFBEACC459EB3963E4E540E7</stationID>
 			<name>B105</name>
 			<shortname>B105</shortname>
 			<icon></icon>
-			<frequency>105.3</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>105.3</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1116455444D65016C9C7CF5B3E866BCF0EDB63437C3351A4025D1ACE7D199E0EEAA3E2F0EB</stationID>
+			
+<stationID>1116455444D65016C9C7CF5B3E866BCF0EDB63437C3351A4025D1ACE7D199E0EEAA3E2F0EB</stationID>
 			<name>4MMM</name>
 			<shortname>4MMM</shortname>
 			<icon></icon>
-			<frequency>104.5</frequency>
 			<volumepreset>-1</volumepreset>
+			<frequency>104.5</frequency>
 		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
+

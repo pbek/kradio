@@ -3,14 +3,14 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<maintainer>tests@tiscali.es</maintainer>
-			<changed>2005-01-18T20:36:13</changed>
+			<maintainer>Toni Vall</maintainer>
+			<changed>2005-12-27T20:24:10</changed>
 			<country>Catalonia</country>
 			<city>Sabadell</city>
 			<media>Antenna</media>
 			<comments>Emissores ordenades per tem�ica (catal� castell� msica 
-cl�sica i msica en general). Localitzaci� Sabadell, Vall� 
-Occidental</comments>
+cl�sica i msica en general). Localitzaci� Sabadell, Vall� Occidental, 
+Barcelona</comments>
 		</info>
 		<FrequencyRadioStation>
 			
@@ -19,7 +19,7 @@ Occidental</comments>
 			<shortname>*****</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>102.8</frequency>
+			<frequency>102.82</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
@@ -43,8 +43,9 @@ Occidental</comments>
 			
 <stationID>11063371988EADBFCB922B4322B47980BF683605B1D6B7235AE90ED489CF5175E54AF3CC1C</stationID>
 			<name>Catalunya Informaci�/name>
-			<shortname>CAT INF</shortname>
-			<icon></icon>
+			<shortname>CATINFO</shortname>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>92</frequency>
 		</FrequencyRadioStation>
@@ -52,7 +53,7 @@ Occidental</comments>
 			
 <stationID>110633721824872DABFD66C8552A56AD3BB19B1DBC3EFA72B2196E3CA1728FB12956427B8A</stationID>
 			<name>Catalunya Cultura</name>
-			<shortname>CAT CUL</shortname>
+			<shortname>CATCUL</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>92.5</frequency>
@@ -62,15 +63,16 @@ Occidental</comments>
 <stationID>1106337310663A4885298C38D1F99B42085BC2D0C9AE9053C6F8CD8811ACC038B8C6FC44E2</stationID>
 			<name>R�io Sabadell</name>
 			<shortname>SBD</shortname>
-			<icon></icon>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>94.6</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
 <stationID>1106337651949BDD6A1AA2BD4DC2F098B9A075DB38F6B037544C8F4E789082A56B587973C1</stationID>
-			<name>RNE - R�io 4</name>
-			<shortname>RNE 4</shortname>
+			<name>RNE4 - R�io 4</name>
+			<shortname>RNE4</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>100.8</frequency>
@@ -79,8 +81,9 @@ Occidental</comments>
 			
 <stationID>1106337738AC382CCD4545E85BD002004265E5784982DF52BF725B3917876AB90C5C000CD4</stationID>
 			<name>Catalunya R�io</name>
-			<shortname>CAT RAD</shortname>
-			<icon></icon>
+			<shortname>CATRADIO</shortname>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>102.8</frequency>
 		</FrequencyRadioStation>
@@ -100,13 +103,13 @@ Occidental</comments>
 			<shortname>*****</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>96.9</frequency>
+			<frequency>96.92</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
 <stationID>11063369944A2806AF488A167F48BA4DAC1696A28F2A60B380E2368340F354504E164C86AC</stationID>
-			<name>RNE - Radio 1</name>
-			<shortname>RNE 1</shortname>
+			<name>RNE1 - Radio 1</name>
+			<shortname>RNE1</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>88.3</frequency>
@@ -141,7 +144,7 @@ Occidental</comments>
 		<FrequencyRadioStation>
 			
 <stationID>1106337717F30645D5939770F716C61186C83FDE0757A6EBE50B494F62C03D6383D57F97D1</stationID>
-			<name>COPE</name>
+			<name>Cadena COPE</name>
 			<shortname>COPE</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
@@ -154,13 +157,13 @@ Occidental</comments>
 			<shortname>*****</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>101.5</frequency>
+			<frequency>101.52</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
 <stationID>1106337233D690111E21A6F20E4D48D88F4D1F8BD36318A57B504C357FFCD92F7019B9CEB7</stationID>
-			<name>RNE - Radio Clasica</name>
-			<shortname>RNE 2</shortname>
+			<name>RNE2 - Radio Cl�ica</name>
+			<shortname>RNE2</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>93</frequency>
@@ -169,7 +172,7 @@ Occidental</comments>
 			
 <stationID>110633769043CF963F995A46DE3D7C13457F81D58CB03642988E0279FCB748D822CDA0AFBA</stationID>
 			<name>Catalunya Msica</name>
-			<shortname>CAT MUS</shortname>
+			<shortname>CATMUS</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>101.5</frequency>
@@ -181,7 +184,7 @@ Occidental</comments>
 			<shortname>*****</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>95.5</frequency>
+			<frequency>95.52</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
@@ -196,7 +199,7 @@ Occidental</comments>
 			
 <stationID>1106337135CC04B8482ED9709ED6E1F7DD6AC78A83CD5C6AE3883162D85CA7914AFD101BCA</stationID>
 			<name>M-80</name>
-			<shortname>M-80</shortname>
+			<shortname>M80</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>90.5</frequency>
@@ -206,7 +209,8 @@ Occidental</comments>
 <stationID>1106337169A43D8558D9BAC401774418660307A242189343A790AD926074CDAC25B0EC7D55</stationID>
 			<name>R�io Sant Cugat</name>
 			<shortname>CUGAT</shortname>
-			<icon></icon>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>91.5</frequency>
 		</FrequencyRadioStation>
@@ -214,7 +218,7 @@ Occidental</comments>
 			
 <stationID>1106337259172602FA960DCDC4844067662583F09CEA4D635C7C566188EF79B953CDC0849D</stationID>
 			<name>Intereconomia</name>
-			<shortname>INTER</shortname>
+			<shortname>IE</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>93.5</frequency>
@@ -223,16 +227,17 @@ Occidental</comments>
 			
 <stationID>1106337286F45FED1A3352255BD25D56EEBDA1C2194586537B204DA08E053C93AB4E798249</stationID>
 			<name>40 Principales</name>
-			<shortname>40</shortname>
-			<icon></icon>
+			<shortname>Los 40</shortname>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>93.9</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			
 <stationID>1106337336F097C6CD0171FCC19C27404C0966FC2F6216E178D8A5ED9CE3874D3C850898BE</stationID>
-			<name>Hit R�io</name>
-			<shortname>HIT</shortname>
+			<name>Europa FM</name>
+			<shortname>EUROPA</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>94.9</frequency>
@@ -241,7 +246,7 @@ Occidental</comments>
 			
 <stationID>1106337373A1D0CE216497DDA13E0F054B901A381732D970307C4FF53CCC94C351DBBEAA25</stationID>
 			<name>R�io Club 25</name>
-			<shortname>CLUB 25</shortname>
+			<shortname>CLUB25</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>95.5</frequency>
@@ -249,8 +254,8 @@ Occidental</comments>
 		<FrequencyRadioStation>
 			
 <stationID>1106337394C861F94A9361B622EFD99942B20D844F6AFAA1345CEE72BDF4729EC593568EC0</stationID>
-			<name>Ona Msica</name>
-			<shortname>ONA MUS</shortname>
+			<name>Radio Ol�/name>
+			<shortname>OLE</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>96</frequency>
@@ -267,8 +272,8 @@ Occidental</comments>
 		<FrequencyRadioStation>
 			
 <stationID>110633750874BD2F8CC80AAF769F4DCAE9DA25CBF8DA46053ED5EFB9B857EBAB53DD6E7FE0</stationID>
-			<name>RNE - Radio 3</name>
-			<shortname>RNE 3</shortname>
+			<name>RNE3 - Radio 3</name>
+			<shortname>RNE3</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>98.7</frequency>
@@ -278,7 +283,8 @@ Occidental</comments>
 <stationID>110633758124D5AAF18CE18388D1B784AE70509F54211E2D5EE988B8128C79ACEAF975D87D</stationID>
 			<name>Cadena Dial</name>
 			<shortname>DIAL</shortname>
-			<icon></icon>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>99.4</frequency>
 		</FrequencyRadioStation>
@@ -286,7 +292,7 @@ Occidental</comments>
 			
 <stationID>1106337619D5E4C399E9263694DB0C59C2BAE4DB58699BC6EE55F0B59321F90ABE2D87139C</stationID>
 			<name>Cadena 100 - COPE</name>
-			<shortname>C 100</shortname>
+			<shortname>100</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>100</frequency>
@@ -295,8 +301,9 @@ Occidental</comments>
 			
 <stationID>110633778640539149B13AB01A29EEE1BA93240278A9B33224EB1D453522D02C588BC77F9B</stationID>
 			<name>M�ima FM</name>
-			<shortname>MAXIMA</shortname>
-			<icon></icon>
+			<shortname>M�IMA</shortname>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>104.2</frequency>
 		</FrequencyRadioStation>
@@ -304,7 +311,7 @@ Occidental</comments>
 			
 <stationID>11063378177E2834D73C5E6A965EC1F7B0DBCCC11E3D26F7AC22D9D7C1CB4CA863B9D75B7D</stationID>
 			<name>RAC 105</name>
-			<shortname>RAC 105</shortname>
+			<shortname>RAC105</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>105</frequency>
@@ -314,7 +321,8 @@ Occidental</comments>
 <stationID>11063378432A2238BFF56DD6D611272D123A66468C09CE310DD62503DCA98E1C1B47CB17A3</stationID>
 			<name>Flaix FM</name>
 			<shortname>FLAIX</shortname>
-			<icon></icon>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>105.7</frequency>
 		</FrequencyRadioStation>
@@ -323,7 +331,8 @@ Occidental</comments>
 <stationID>11063378593C0DE6605A20A190309692910C313C493D1EAD952824C6DCC6A0E84FFAD7916B</stationID>
 			<name>Flaixbac</name>
 			<shortname>FLAIXBAC</shortname>
-			<icon></icon>
+			
+<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<frequency>106.1</frequency>
 		</FrequencyRadioStation>
@@ -347,5 +356,10 @@ Occidental</comments>
 		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
+
+-- 
+Toni
+unelement@gmail.com
+
 
 
