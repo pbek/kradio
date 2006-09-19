@@ -28,7 +28,9 @@
 
 
 RecordingConfiguration::RecordingConfiguration (QWidget *parent)
-    : RecordingConfigurationUI(parent)
+    : RecordingConfigurationUI(parent),
+      m_dirty(true),
+      m_ignore_gui_updates(false)
 {
     editDirectory->setMode(KFile::Directory | KFile::ExistingOnly);
 
@@ -36,6 +38,20 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
                      this,           SLOT(slotFormatSelectionChanged()));
     QObject::connect(editBits,       SIGNAL(activated(int)),
                      this,           SLOT(slotFormatSelectionChanged()));
+
+    connect(editRate,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
+    connect(editBits,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
+    connect(editSign,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
+    connect(editEndianess,                SIGNAL(activated(int)),               SLOT(slotSetDirty()));
+    connect(editChannels,                 SIGNAL(activated(int)),               SLOT(slotSetDirty()));
+    connect(editFileFormat,               SIGNAL(activated(int)),               SLOT(slotSetDirty()));
+    connect(editMP3Quality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
+    connect(editOggQuality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
+    connect(editDirectory,                SIGNAL(textChanged(const QString &)), SLOT(slotSetDirty()));
+    connect(editBufferSize,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
+    connect(editBufferCount,              SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
+    connect(m_spinboxPreRecordingSeconds, SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
+    connect(m_checkboxPreRecordingEnable, SIGNAL(toggled(bool)),                SLOT(slotSetDirty()));
 
 #ifndef HAVE_LAME_LAME_H
     editFileFormat->removeItem(FORMAT_MP3_IDX_ORG);
@@ -137,8 +153,11 @@ void RecordingConfiguration::setGUIPreRecording(const RecordingConfig &c)
 
 void RecordingConfiguration::slotOK()
 {
-    storeConfig();
-    sendRecordingConfig(m_RecordingConfig);
+    if (m_dirty) {
+        storeConfig();
+        sendRecordingConfig(m_RecordingConfig);
+        m_dirty = false;
+    }
 }
 
 
@@ -206,7 +225,10 @@ void RecordingConfiguration::storeConfig()
 
 void RecordingConfiguration::slotCancel()
 {
-    noticeRecordingConfigChanged(m_RecordingConfig);
+    if (m_dirty) {
+        noticeRecordingConfigChanged(m_RecordingConfig);
+        m_dirty = false;
+    }
 }
 
 
@@ -288,65 +310,80 @@ void RecordingConfiguration::slotFormatSelectionChanged()
 
 bool RecordingConfiguration::noticeEncoderBufferChanged (size_t BufferSize, size_t BufferCount)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig.m_EncodeBufferSize  = BufferSize;
     m_RecordingConfig.m_EncodeBufferCount = BufferCount;
     setGUIBuffers(m_RecordingConfig);
     slotFormatSelectionChanged();
+    m_ignore_gui_updates = false;
     return true;
 }
 
 
 bool RecordingConfiguration::noticeSoundFormatChanged (const SoundFormat &sf)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig.m_SoundFormat = sf;
     setGUISoundFormat(m_RecordingConfig);
     slotFormatSelectionChanged();
+    m_ignore_gui_updates = false;
     return true;
 }
 
 
 bool RecordingConfiguration::noticeMP3QualityChanged (int q)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig.m_mp3Quality = q;
     setGUIEncoderQuality(m_RecordingConfig);
     slotFormatSelectionChanged();
+    m_ignore_gui_updates = false;
     return true;
 }
 
 bool RecordingConfiguration::noticeOggQualityChanged (float q)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig.m_oggQuality = q;
     setGUIEncoderQuality(m_RecordingConfig);
     slotFormatSelectionChanged();
+    m_ignore_gui_updates = false;
     return true;
 }
 
 bool RecordingConfiguration::noticeRecordingDirectoryChanged(const QString &dir)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig.m_Directory = dir;
     setGUIDirectories(m_RecordingConfig);
     slotFormatSelectionChanged();
+    m_ignore_gui_updates = false;
     return true;
 }
 
 bool RecordingConfiguration::noticeOutputFormatChanged      (RecordingConfig::OutputFormat of)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig.m_OutputFormat = of;
     setGUIOutputFormat(m_RecordingConfig);
     slotFormatSelectionChanged();
+    m_ignore_gui_updates = false;
     return true;
 }
 
 bool RecordingConfiguration::noticePreRecordingChanged (bool enable, int seconds)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig.m_PreRecordingEnable = enable;
     m_RecordingConfig.m_PreRecordingSeconds = seconds;
     setGUIPreRecording(m_RecordingConfig);
+    m_ignore_gui_updates = false;
     return true;
 }
 
 bool RecordingConfiguration::noticeRecordingConfigChanged(const RecordingConfig &c)
 {
+    m_ignore_gui_updates = true;
     m_RecordingConfig = c;
     setGUIBuffers(c);
     setGUIDirectories(c);
@@ -355,10 +392,16 @@ bool RecordingConfiguration::noticeRecordingConfigChanged(const RecordingConfig 
     setGUIEncoderQuality(c);
     setGUIPreRecording(c);
     slotFormatSelectionChanged();
+    m_ignore_gui_updates = false;
     return true;
 }
 
-
+void RecordingConfiguration::slotSetDirty()
+{
+    if (!m_ignore_gui_updates) {
+        m_dirty = true;
+    }
+}
 
 
 #include "recording-configuration.moc"

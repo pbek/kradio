@@ -74,7 +74,7 @@ public:
     bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format);
     bool stopRecording(SoundStreamID id);
 
-    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, const SoundMetaData &md);
+    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
 
 public slots:
 

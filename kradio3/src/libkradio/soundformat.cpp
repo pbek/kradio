@@ -55,6 +55,7 @@ void  SoundFormat::restoreConfig(const QString &prefix, KConfig *c)
     m_SampleRate      = c->readNumEntry (prefix + "samplerate", 44100);
     bool littleEndian = c->readBoolEntry(prefix + "littleEndian", true);
     m_Endianess = littleEndian ? LITTLE_ENDIAN : BIG_ENDIAN;
+    m_Encoding        = c->readEntry(prefix + "encoding", "raw");
 }
 
 
@@ -65,6 +66,7 @@ void  SoundFormat::saveConfig(const QString &prefix, KConfig *c) const
     c->writeEntry(prefix + "channels",     m_Channels);
     c->writeEntry(prefix + "samplerate",   m_SampleRate);
     c->writeEntry(prefix + "littleEndian", m_Endianess == LITTLE_ENDIAN);
+    c->writeEntry(prefix + "encoding",     m_Encoding);
 }
 
 

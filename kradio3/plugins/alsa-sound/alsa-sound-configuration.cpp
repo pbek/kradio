@@ -36,14 +36,23 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
    m_SoundDevice (dev),
    m_groupMixerLayout(NULL),
    m_groupMixerScrollView(NULL),
-   m_groupMixerSubFrame(NULL)
+   m_groupMixerSubFrame(NULL),
+   m_dirty(true),
+   m_ignore_updates(false)
 {
+    QObject::connect(m_comboPlaybackCard,   SIGNAL(activated(int)),    this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboCaptureCard,    SIGNAL(activated(int)),    this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboPlaybackDevice, SIGNAL(activated(int)),    this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboCaptureDevice,  SIGNAL(activated(int)),    this, SLOT(slotSetDirty()));
+    QObject::connect(editHWBufferSize,      SIGNAL(valueChanged(int)), this, SLOT(slotSetDirty()));
+    QObject::connect(editBufferSize,        SIGNAL(valueChanged(int)), this, SLOT(slotSetDirty()));
+    QObject::connect(chkDisablePlayback,    SIGNAL(toggled(bool)),     this, SLOT(slotSetDirty()));
+    QObject::connect(chkDisableCapture,     SIGNAL(toggled(bool)),     this, SLOT(slotSetDirty()));
+
     QObject::connect(m_comboPlaybackCard, SIGNAL(activated(const QString &)),
                      this, SLOT(slotPlaybackCardSelected(const QString &)));
     QObject::connect(m_comboCaptureCard, SIGNAL(activated(const QString &)),
                      this, SLOT(slotCaptureCardSelected(const QString &)));
-
-    m_groupMixer->setColumnLayout(0, Qt::Horizontal );
 
     m_groupMixer->setColumnLayout(0, Qt::Horizontal );
 
@@ -84,8 +93,6 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
     }
 
     slotCancel();
-    slotPlaybackCardSelected (m_comboPlaybackCard->currentText());
-    slotCaptureCardSelected  (m_comboCaptureCard->currentText());
 }
 
 
@@ -139,11 +146,13 @@ void AlsaSoundConfiguration::slotCaptureCardSelected(const QString &cardname)
     for (QValueListConstIterator<QString> it = all_list.begin(); it != all_list.end(); ++it, ++idx) {
         QAlsaMixerElement *e = new QAlsaMixerElement(m_groupMixerSubFrame, *it,
                                                      sw_list.contains(*it), vol_list.contains(*it));
+        QObject::connect(e, SIGNAL(sigDirty()), this, SLOT(slotSetDirty()));
         m_groupMixerLayout->addWidget(e, idx > cols, idx % cols);
         e->show();
         m_MixerElements.insert(*it, e);
     }
     restoreCaptureMixerSettings();
+    m_groupMixerSubFrame->show();
 }
 
 void AlsaSoundConfiguration::saveCaptureMixerSettings()
@@ -156,6 +165,7 @@ void AlsaSoundConfiguration::saveCaptureMixerSettings()
         float              vol    = e->getVolume();
         bool               use    = e->getOverride();
         bool               active = e->getActive();
+        e->slotResetDirty();
         m_MixerSettings[id] = AlsaConfigMixerSetting(card,name,use,active,vol);
     }
 }
@@ -173,6 +183,7 @@ void AlsaSoundConfiguration::restoreCaptureMixerSettings()
             e->setVolume(s.m_volume);
             e->setOverride(s.m_use);
             e->setActive(s.m_active);
+            e->slotResetDirty();
         } else {
             if (name == "ADC") {
                 e->setOverride(true);
@@ -194,6 +205,7 @@ void AlsaSoundConfiguration::restoreCaptureMixerSettings()
                 e->setActive(true);
                 e->setVolume(0.01);
             }
+            e->slotSetDirty();
         }
     }
 }
@@ -261,6 +273,9 @@ int AlsaSoundConfiguration::listSoundDevices(KComboBox *combobox, QMap<QString, 
 
 void AlsaSoundConfiguration::slotOK()
 {
+    if (!m_dirty)
+        return;
+
     if (m_SoundDevice) {
         m_SoundDevice->setHWBufferSize      ( editHWBufferSize  ->value() * 1024);
         m_SoundDevice->setBufferSize        ( editBufferSize    ->value() * 1024);
@@ -277,21 +292,26 @@ void AlsaSoundConfiguration::slotOK()
         saveCaptureMixerSettings();
         m_SoundDevice->setCaptureMixerSettings(m_MixerSettings);
     }
+    m_dirty = false;
 }
 
 
 void AlsaSoundConfiguration::slotCancel()
 {
+    if (!m_dirty)
+        return;
+    m_ignore_updates = true;
+
     int card = m_SoundDevice ?  m_SoundDevice->getPlaybackCard()   : 0;
     int dev  = m_SoundDevice ?  m_SoundDevice->getPlaybackDevice() : 0;
     m_comboPlaybackCard  ->setCurrentItem(m_playbackCard2idx[card]);
+    slotPlaybackCardSelected(m_comboPlaybackCard->currentText());
     m_comboPlaybackDevice->setCurrentItem(m_playbackDevice2idx[dev]);
+
     card = m_SoundDevice ?  m_SoundDevice->getCaptureCard()   : 0;
     dev  = m_SoundDevice ?  m_SoundDevice->getCaptureDevice() : 0;
-
     m_comboCaptureCard  ->setCurrentItem(m_captureCard2idx[card]);
     slotCaptureCardSelected(m_comboCaptureCard->currentText());
-
     m_comboCaptureDevice->setCurrentItem(m_captureDevice2idx[dev]);
 
     //IErrorLogClient::staticLogDebug(QString("capture: card = %1(%2), dev = %3").arg(card).arg(m_captureCard2idx[card]).arg(dev));
@@ -309,14 +329,24 @@ void AlsaSoundConfiguration::slotCancel()
     else
         m_MixerSettings.clear();
     restoreCaptureMixerSettings();
+
+    m_ignore_updates = false;
+    m_dirty = false;
 }
 
 
 void AlsaSoundConfiguration::slotUpdateConfig()
 {
+    slotSetDirty();
     slotCancel();
 }
 
-
+void AlsaSoundConfiguration::slotSetDirty()
+{
+    if (!m_dirty && !m_ignore_updates) {
+        m_dirty = true;
+        //emit sigDirty();
+    }
+}
 
 #include "alsa-sound-configuration.moc"

@@ -43,6 +43,8 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    
+    void slotSetDirty();
 
     void slotUpdateConfig();
 
@@ -73,6 +75,9 @@ protected:
     QMap<QString, QAlsaMixerElement*>  m_MixerElements;
 
     QMap<QString, AlsaConfigMixerSetting> m_MixerSettings;
+    
+    bool              m_dirty;
+    bool              m_ignore_updates;
 };
 
 #endif

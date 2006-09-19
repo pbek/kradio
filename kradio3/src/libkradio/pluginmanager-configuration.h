@@ -47,11 +47,13 @@ protected slots:
     void slotRemoveLibrary();
     void slotNewPluginInstance();
     void slotRemovePluginInstance();
+    void slotSetDirty();
 
 protected:
 
     KRadioApp     *m_Application;
     PluginManager *m_PluginManager;
+    bool           m_dirty;
 
 };
 

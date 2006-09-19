@@ -18,7 +18,8 @@
 #include "radioview-configuration.h"
  
 RadioViewConfiguration::RadioViewConfiguration(QWidget *parent)
-	: QTabWidget (parent)
+	: QTabWidget (parent),
+      m_dirty(true)
 {
 }
 
@@ -30,69 +31,86 @@ RadioViewConfiguration::~RadioViewConfiguration()
 void RadioViewConfiguration::addTab    (QWidget *child, const QString &label)
 {
 	QTabWidget::addTab(child, label);
-	QObject::connect(this, SIGNAL(sigOK()),     child, SLOT(slotOK()));
-	QObject::connect(this, SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+	QObject::connect(this,  SIGNAL(sigOK()),     child, SLOT(slotOK()));
+	QObject::connect(this,  SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+    QObject::connect(child, SIGNAL(sigDirty()),  this,  SLOT(slotSetDirty()));
 }
 
 
 void RadioViewConfiguration::addTab    (QWidget *child, const QIconSet &iconset, const QString &label)
 {
 	QTabWidget::addTab(child, iconset, label);
-	QObject::connect(this, SIGNAL(sigOK()),     child, SLOT(slotOK()));
-	QObject::connect(this, SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+	QObject::connect(this,  SIGNAL(sigOK()),     child, SLOT(slotOK()));
+	QObject::connect(this,  SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+    QObject::connect(child, SIGNAL(sigDirty()),  this,  SLOT(slotSetDirty()));
 }
 
 
 void RadioViewConfiguration::addTab    (QWidget *child, QTab *tab)
 {
 	QTabWidget::addTab(child, tab);
-	QObject::connect(this, SIGNAL(sigOK()),     child, SLOT(slotOK()));
-	QObject::connect(this, SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+	QObject::connect(this,  SIGNAL(sigOK()),     child, SLOT(slotOK()));
+	QObject::connect(this,  SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+    QObject::connect(child, SIGNAL(sigDirty()),  this,  SLOT(slotSetDirty()));
 }
 
 
 void RadioViewConfiguration::insertTab (QWidget *child, const QString &label, int index)
 {
 	QTabWidget::insertTab(child, label, index);
-	QObject::connect(this, SIGNAL(sigOK()),     child, SLOT(slotOK()));
-	QObject::connect(this, SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+	QObject::connect(this,  SIGNAL(sigOK()),     child, SLOT(slotOK()));
+	QObject::connect(this,  SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+    QObject::connect(child, SIGNAL(sigDirty()),  this,  SLOT(slotSetDirty()));
 }
 
 
 void RadioViewConfiguration::insertTab (QWidget *child, const QIconSet &iconset, const QString &label, int index)
 {
 	QTabWidget::insertTab(child, iconset, label, index);
-	QObject::connect(this, SIGNAL(sigOK()),     child, SLOT(slotOK()));
-	QObject::connect(this, SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+	QObject::connect(this,  SIGNAL(sigOK()),     child, SLOT(slotOK()));
+	QObject::connect(this,  SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+    QObject::connect(child, SIGNAL(sigDirty()),  this,  SLOT(slotSetDirty()));
 }
 
 
 void RadioViewConfiguration::insertTab (QWidget *child, QTab *tab, int index)
 {
 	QTabWidget::insertTab(child, tab, index);
-	QObject::connect(this, SIGNAL(sigOK()),     child, SLOT(slotOK()));
-	QObject::connect(this, SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+	QObject::connect(this,  SIGNAL(sigOK()),     child, SLOT(slotOK()));
+	QObject::connect(this,  SIGNAL(sigCancel()), child, SLOT(slotCancel()));
+    QObject::connect(child, SIGNAL(sigDirty()),  this,  SLOT(slotSetDirty()));
 }
 
 
 void RadioViewConfiguration::removePage(QWidget *w)
 {
-	QObject::disconnect(this, SIGNAL(sigOK()),     w, SLOT(slotOK()));
-	QObject::disconnect(this, SIGNAL(sigCancel()), w, SLOT(slotCancel()));
+	QObject::disconnect(this,  SIGNAL(sigOK()),     w,    SLOT(slotOK()));
+	QObject::disconnect(this,  SIGNAL(sigCancel()), w,    SLOT(slotCancel()));
+    QObject::disconnect(w,     SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
 	QTabWidget::removePage(w);
 }
 
 
 void RadioViewConfiguration::slotOK()
 {
-	emit sigOK();
+    if (m_dirty) {
+        emit sigOK();
+        m_dirty = false;
+    }
 }
 
 void RadioViewConfiguration::slotCancel()
 {
-	emit sigCancel();
+    if (m_dirty) {
+        emit sigCancel();
+        m_dirty = false;
+    }
 }
 
+void RadioViewConfiguration::slotSetDirty()
+{
+    m_dirty = true;
+}
 
 
 #include "radioview-configuration.moc"

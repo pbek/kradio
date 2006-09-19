@@ -29,7 +29,8 @@
 PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioApp *app, PluginManager *pm)
   : PluginManagerConfigurationUI(parent),
     m_Application(app),
-    m_PluginManager(pm)
+    m_PluginManager(pm),
+    m_dirty(true)
 {
     noticePluginLibrariesChanged();
     noticePluginsChanged();
@@ -89,13 +90,16 @@ void PluginManagerConfiguration::slotOK()
 
 void PluginManagerConfiguration::slotCancel()
 {
-    noticePluginLibrariesChanged();
-    noticePluginsChanged();
+    if (m_dirty) {
+        noticePluginLibrariesChanged();
+        noticePluginsChanged();
+    }
 }
 
 
 void PluginManagerConfiguration::slotAddLibrary()
 {
+    slotSetDirty();
     QString url = editPluginLibrary->url();
     if (m_Application && url.length())
         m_Application->LoadLibrary(url);
@@ -104,6 +108,7 @@ void PluginManagerConfiguration::slotAddLibrary()
 
 void PluginManagerConfiguration::slotRemoveLibrary()
 {
+    slotSetDirty();
     if (m_Application) {
         QString lib = listPluginLibraries->currentText();
         if (lib.length()) {
@@ -115,6 +120,7 @@ void PluginManagerConfiguration::slotRemoveLibrary()
 
 void PluginManagerConfiguration::slotNewPluginInstance()
 {
+    slotSetDirty();
     if (m_Application && m_PluginManager) {
         QListViewItem *item = listPluginClasses->currentItem();
         QString class_name = item ? item->text(0) : QString::null;
@@ -135,12 +141,19 @@ void PluginManagerConfiguration::slotNewPluginInstance()
 
 void PluginManagerConfiguration::slotRemovePluginInstance()
 {
+    slotSetDirty();
     if (m_Application && m_PluginManager) {
         QListViewItem *item = listPluginInstances->currentItem();
         QString object_name = item ? item->text(1) : QString::null;
         if (object_name.length())
             m_PluginManager->deletePluginByName(object_name);
     }
+}
+
+
+void PluginManagerConfiguration::slotSetDirty()
+{
+    m_dirty = true;
 }
 
 

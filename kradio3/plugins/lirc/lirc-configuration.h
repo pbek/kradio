@@ -37,6 +37,7 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
 
     void slotUpdateConfig();
     void slotRawLIRCSignal(const QString &val, int repeat_counter, bool &consumed);
@@ -51,6 +52,9 @@ protected:
 
     QMap<int, LIRC_Actions>     m_order;
     QMap<LIRC_Actions, QString> m_descriptions;
+    
+    bool  m_dirty;
+    bool  m_ignore_gui_updates;
 };
 
 #endif

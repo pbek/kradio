@@ -33,8 +33,8 @@ class DisplayConfiguration : public QWidget,
 {
 Q_OBJECT
 public:
-	DisplayConfiguration(QWidget *parent);
-	~DisplayConfiguration();
+    DisplayConfiguration(QWidget *parent);
+    ~DisplayConfiguration();
 
 // Interface
 
@@ -42,22 +42,30 @@ public:
     bool disconnectI (Interface *i)  { return IDisplayCfgClient::disconnectI(i); }
 
 // IDisplayCfgClient
-    
+
 RECEIVERS:
-	bool noticeDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd);
-	bool noticeDisplayFontChanged(const QFont &f);
+    bool noticeDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd);
+    bool noticeDisplayFontChanged(const QFont &f);
 
 
 public slots:
 
-	void slotOK();
-	void slotCancel();
+    void slotOK();
+    void slotCancel();
+    void slotSetDirty();
+
+signals:
+
+    void sigDirty();
 
 protected:
-	KColorButton *m_btnActive;
-	KColorButton *m_btnInactive;
-	KColorButton *m_btnBkgnd;
-	KFontChooser *m_fontChooser;
+    KColorButton *m_btnActive;
+    KColorButton *m_btnInactive;
+    KColorButton *m_btnBkgnd;
+    KFontChooser *m_fontChooser;
+
+    bool          m_dirty;
+    bool          m_ignore_gui_updates;
 };
 
 

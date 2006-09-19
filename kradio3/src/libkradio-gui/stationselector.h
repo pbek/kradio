@@ -61,6 +61,8 @@ public :
 
     void   saveState    (KConfig *) const;
     void   restoreState (KConfig *);
+    
+    bool   isDirty () const { return m_dirty; }
 
 protected slots:
 
@@ -71,6 +73,11 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
+
+signals:
+
+    void sigDirty();
 
 protected:
 
@@ -85,6 +92,8 @@ protected:
                   m_stationIDsSelected,
                   m_stationIDsNotDisplayed,
                   m_stationIDsAll;
+
+    bool          m_dirty;
 };
 
 #endif

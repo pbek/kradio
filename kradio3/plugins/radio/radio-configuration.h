@@ -85,6 +85,7 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
 
 
 protected:
@@ -98,6 +99,7 @@ protected:
     QDict<RadioStationConfig>   stationEditors;
 
     const IErrorLogClient      &m_logger;
+    bool                        m_dirty;
 };
 
 #endif

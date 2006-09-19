@@ -31,6 +31,8 @@ public:
     float getVolume() const;
     bool  getActive() const;
     bool  getOverride() const;
+    
+    bool  isDirty() const { return m_dirty; }
 
 public slots:
 
@@ -38,15 +40,23 @@ public slots:
     void setOverride(bool ov);
     void setActive(bool active);
     void setVolume(float vol);
+    void slotResetDirty();
+    void slotSetDirty();
 
 protected slots:
     void slotSpinboxValueChanged(int v);
     void slotSliderValueChanged(int v);
 
+signals:
+
+    void sigDirty();
+
 protected:
 
     bool m_HasVolume;
     bool m_HasSwitch;
+    bool m_dirty;
+    bool m_ignore_updates;
 };
 
 #endif

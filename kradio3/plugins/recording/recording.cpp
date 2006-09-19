@@ -19,6 +19,7 @@
 #include "../../src/interfaces/errorlog-interfaces.h"
 #include "../../src/libkradio-gui/aboutwidget.h"
 #include "../../src/libkradio/fileringbuffer.h"
+#include "../../src/libkradio/utils.h"
 
 #include "recording.h"
 #include "recording-configuration.h"
@@ -401,7 +402,7 @@ bool Recording::stopRecording(SoundStreamID id)
 
 
 bool Recording::noticeSoundStreamData(SoundStreamID id,
-    const SoundFormat &/*sf*/, const char *data, size_t size,
+    const SoundFormat &/*sf*/, const char *data, size_t size, size_t &consumed_size,
     const SoundMetaData &md
 )
 {
@@ -411,9 +412,11 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
         if (fbuf.getFreeSize() < size) {
             fbuf.removeData(size - fbuf.getFreeSize());
         }
-        if (fbuf.addData(data, size) != size) {
-            logDebug("recording packet: was not written completely to tmp buf");
-        }
+        size_t n = fbuf.addData(data, size);
+        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? n : min(consumed_size, n);
+//         if (n != size) {
+//             logDebug("recording packet: was not written completely to tmp buf");
+//         }
 
 //         //BEGIN DEBUG
 //         char tmp[4096];
@@ -445,7 +448,7 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
                     bufferSize = remSize;
                 }
                 if (fbuf.takeData(buf, bufferSize) != bufferSize) {
-                    logError("could not read suffient data");
+                    logError(i18n("could not read suffient data"));
                 }
 
                 thread->unlockInputBuffer(bufferSize, md);
@@ -476,7 +479,7 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
             size_t  bufferSize = remSize;
             char *buf = thread->lockInputBuffer(bufferSize);
             if (!buf) {
-                logError(i18n("Encoder input buffer overflow (buffer configuration problem?). Skipped %1 input bytes").arg(QString::number(remSize)));
+                logWarning(i18n("Encoder input buffer overflow (buffer configuration problem?). Skipped %1 input bytes").arg(QString::number(remSize)));
                 break;
             }
             if (bufferSize > remSize) {
@@ -488,6 +491,7 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
             remSize -= bufferSize;
             remData += bufferSize;
         }
+        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? size - remSize : min(consumed_size, size - remSize);
 
         return true;
     }
@@ -524,10 +528,17 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
     querySoundStreamRadioStation(ssid, rs);
     QString station = rs  ? rs->name() + "-" : "";
     station.replace(QRegExp("[/*?]"), "_");
+
+    QDate date = QDate::currentDate();
+    QTime time = QTime::currentTime();
+    QString sdate;
+
+    sdate.sprintf("%d.%d.%d.%d.%d",date.year(),date.month(),date.day(),time.hour(),time.minute());
+
     QString output = m_config.m_Directory
         + "/kradio-recording-"
         + station
-        + QDateTime::currentDateTime().toString(Qt::ISODate)
+        + sdate
         + ext;
 
     logInfo(i18n("Recording::outputFile: ") + output);
@@ -634,8 +645,12 @@ bool Recording::event(QEvent *_e)
                     stopEncoder(id);
                 } else if (e->type() == EncodingStep) {
                     SoundStreamEncodingStepEvent *step = static_cast<SoundStreamEncodingStepEvent*>(e);
+                    size_t consumed_size = SIZE_T_DONT_CARE;
                     notifySoundStreamData(m_RawStreams2EncodedStreams[id], thread->config().m_SoundFormat,
-                                          step->data(), step->size(), step->metaData());
+                                          step->data(), step->size(), consumed_size, step->metaData());
+                    if (consumed_size != SIZE_T_DONT_CARE && consumed_size < step->size()) {
+                        logError(i18n("Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes").arg(step->size() - consumed_size));
+                    }
                 }
             }
         }

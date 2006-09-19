@@ -1,4 +1,4 @@
-INCLUDES = $(all_includes)
+INCLUDES = -I$(top_srcdir)/kradio3/src $(all_includes)
 METASOURCES = AUTO
 noinst_LTLIBRARIES = libkradio.la
 libkradio_la_LDFLAGS = $(all_libraries)

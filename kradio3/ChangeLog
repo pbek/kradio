@@ -1,3 +1,33 @@
+2006-09-19
+
+       emw  - fixed initialization problem of playback device combobox in
+              alsa configuration dialog
+            - fixed disappearance of alsa capture mixer settings after
+              change
+            - introduced dirty-flag in configuration dialogs in order to
+              reduce unnecessary delays on click of cancel/ok
+            - fixed wrong warning if station icon load was canceled in
+              configuration dialog
+            - fixed excessive station icon growth in configuration dialog
+              e.g. when station name was typed
+            - fixed enabling/disabling of up/down buttons in station list
+              configuration dialog
+
+2006-09-18
+
+       emw  - streaming device configuration dialog
+            - additions to noti(ce|fy)SoundStreamData interface: 
+              size_t &consumed_size added for feedback
+
+2006-09-17
+
+       emw  - added new plugin: basic streaming device, e.g. for /dev/video24
+
+2006-09-03
+
+       emw  - fixed ":" problem in recording file names e.g. on fat file
+              systems. Thanks to Ignacio Feijoo for the Patch.
+
 2005-12-02
 
        emw  - fixed typo in configure.in.in that resulted in wrong

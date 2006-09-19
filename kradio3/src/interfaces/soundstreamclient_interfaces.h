@@ -44,6 +44,9 @@
         return  iConnections.count() ? iConnections.getFirst()->name call : 0; \
     }
 
+
+#define SIZE_T_DONT_CARE ((size_t)(-1))
+
 class RadioStation;
 
 INTERFACE(ISoundStreamServer, ISoundStreamClient)
@@ -141,7 +144,7 @@ SENDERS:
     // e.g description or whatever changed
     IF_SENDER_FINE  (  notifySoundStreamChanged, (SoundStreamID id)                            )
 
-    IF_SENDER_FINE  (  notifySoundStreamData, (SoundStreamID /*id*/, const SoundFormat &, const char */*data*/, size_t /*size*/, const SoundMetaData &/*md*/) )
+    IF_SENDER_FINE  (  notifySoundStreamData, (SoundStreamID /*id*/, const SoundFormat &, const char */*data*/, size_t /*size*/, size_t &/*consumed_size*/, const SoundMetaData &/*md*/) )
     IF_SENDER_FINE  (  notifyReadyForPlaybackData, (SoundStreamID /*id*/, size_t /*size*/)           )
 };
 
@@ -271,7 +274,7 @@ RECEIVERS:
     // e.g description or whatever changed
     IF_RECEIVER_EMPTY(  noticeSoundStreamChanged(SoundStreamID /*id*/)                                    )
 
-    IF_RECEIVER_EMPTY(  noticeSoundStreamData(SoundStreamID /*id*/, const SoundFormat &, const char */*data*/, size_t /*size*/, const SoundMetaData &/*md*/))
+    IF_RECEIVER_EMPTY(  noticeSoundStreamData(SoundStreamID /*id*/, const SoundFormat &, const char */*data*/, size_t /*size*/, size_t &/*consumed_size*/, const SoundMetaData &/*md*/))
     IF_RECEIVER_EMPTY(  noticeReadyForPlaybackData(SoundStreamID /*id*/, size_t /*size*/)           )
 
 SENDERS:
@@ -348,7 +351,7 @@ SENDERS:
     // e.g description or whatever changed
     CALL_SNDSTR_SERVER  (  notifySoundStreamChanged, (SoundStreamID id), (id)                             )
 
-    CALL_SNDSTR_SERVER  (  notifySoundStreamData, (SoundStreamID id, const SoundFormat &f, const char *data, size_t size, const SoundMetaData &md), (id, f, data, size, md) )
+    CALL_SNDSTR_SERVER  (  notifySoundStreamData, (SoundStreamID id, const SoundFormat &f, const char *data, size_t size, size_t consumed_size, const SoundMetaData &md), (id, f, data, size, consumed_size, md) )
     CALL_SNDSTR_SERVER  (  notifyReadyForPlaybackData, (SoundStreamID id, size_t size), (id, size)           )
 
 protected:

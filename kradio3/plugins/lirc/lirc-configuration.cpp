@@ -27,7 +27,9 @@
 
 LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
  : LIRCConfigurationUI(parent),
-   m_LIRC (dev)
+   m_LIRC (dev),
+   m_dirty(true),
+   m_ignore_gui_updates(false)
 {
     m_descriptions[LIRC_DIGIT_0] = i18n("digit 0");
     m_descriptions[LIRC_DIGIT_1] = i18n("digit 1");
@@ -83,6 +85,7 @@ LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
     m_ActionList->setColumnWidthMode(1, QListView::Maximum);
     m_ActionList->setColumnWidthMode(2, QListView::Maximum);
 
+    connect(m_ActionList, SIGNAL(itemRenamed(QListViewItem*, int)), this, SLOT(slotSetDirty()));
     slotCancel();
 }
 
@@ -94,7 +97,7 @@ LIRCConfiguration::~LIRCConfiguration ()
 
 void LIRCConfiguration::slotOK()
 {
-    if (m_LIRC) {
+    if (m_dirty && m_LIRC) {
         QListViewItem *item = m_ActionList->firstChild();
 
         QMap<LIRC_Actions, QString> actions;
@@ -107,23 +110,29 @@ void LIRCConfiguration::slotOK()
         }
         m_LIRC->setActions(actions, alt_actions);
     }
+    m_dirty = false;
 }
 
 
 void LIRCConfiguration::slotCancel()
 {
-    m_ActionList->clear();
-    if (m_LIRC) {
-        const QMap<LIRC_Actions, QString> &actions     = m_LIRC->getActions();
-        const QMap<LIRC_Actions, QString> &alt_actions = m_LIRC->getAlternativeActions();
+    if (m_dirty) {
+        m_ignore_gui_updates = true;
+        m_ActionList->clear();
+        if (m_LIRC) {
+            const QMap<LIRC_Actions, QString> &actions     = m_LIRC->getActions();
+            const QMap<LIRC_Actions, QString> &alt_actions = m_LIRC->getAlternativeActions();
 
-        for (unsigned i = 0; m_order.contains(i) && i < m_order.count(); ++i) {
-            LIRC_Actions action = m_order[i];
-            addKey(m_descriptions[action], actions[action], alt_actions[action]);
+            for (unsigned i = 0; m_order.contains(i) && i < m_order.count(); ++i) {
+                LIRC_Actions action = m_order[i];
+                addKey(m_descriptions[action], actions[action], alt_actions[action]);
+            }
         }
-    }
 
-    slotRenamingStopped(NULL, -1);
+        slotRenamingStopped(NULL, -1);
+        m_ignore_gui_updates = false;
+    }
+    m_dirty = false;
 }
 
 
@@ -145,6 +154,7 @@ void LIRCConfiguration::addKey(const QString &descr, const QString &key, const Q
 
 void LIRCConfiguration::slotUpdateConfig()
 {
+    slotSetDirty();
     slotCancel();
 }
 
@@ -157,6 +167,7 @@ void LIRCConfiguration::slotRawLIRCSignal(const QString &val, int /*repeat_count
         it->cancelRename(col);
         it->setText(col, val);
         consumed = true;
+        m_dirty = true;
     }
 }
 
@@ -165,10 +176,18 @@ void LIRCConfiguration::slotRenamingStarted(ListViewItemLirc */*sender*/, int /*
     m_LabelHints->setText(i18n("Enter the key string of your remote or just press the button on your remote control"));
 }
 
+
 void LIRCConfiguration::slotRenamingStopped(ListViewItemLirc */*sender*/, int /*col*/)
 {
     m_LabelHints->setText(i18n("Double Click on the entries to change the assignments"));
 }
 
+
+void LIRCConfiguration::slotSetDirty()
+{
+    if (!m_ignore_gui_updates) {
+        m_dirty = true;
+    }
+}
 
 #include "lirc-configuration.moc"

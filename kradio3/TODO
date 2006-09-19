@@ -2,6 +2,13 @@
 
   * make ALSA support conditional/configurable in configure script
 
+  * double click options for tray icon: select window to open
+  * fix station editor dialog
+  * remove time/size from recording monitor when recording is not running
+  * fix status display for recording monitor
+
+  * fix hang/high cpu load when licq is restarted (broken pipe?)
+
   * speed up kradio start
   * inet-stream-out plugin
   * make file operations compliant with non-ascii-charsets (e.g. cyrillic)
@@ -17,6 +24,7 @@
                            application
 
   * RDS support
+  * Hotkey support
   * FAQ
       - devices (radio, mixer, dsp)
       - mixer settings for recording

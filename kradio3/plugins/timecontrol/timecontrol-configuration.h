@@ -76,6 +76,7 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
 
 protected:
 
@@ -83,6 +84,7 @@ protected:
     vector<QString> stationIDs;
 
     bool ignoreChanges;
+    bool m_dirty;
 };
 
 #endif

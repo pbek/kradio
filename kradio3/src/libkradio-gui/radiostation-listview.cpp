@@ -118,7 +118,7 @@ void RadioStationListView::setStation(int idx, const RadioStation &s, int nr)
         QImage  img(s.iconName());
         if (!img.isNull()) {
             int   h = img.height();
-            float f = (float)(item->height()) / (h ? (float)h : 1.0);
+            float f = 0.9 * (float)(item->height()) / (h ? (float)h : 1.0);
             item->setPixmap(1, img.smoothScale((int)(img.width()*f), (int)(h * f)));
         } else {
             item->setPixmap(1, QPixmap());

@@ -42,12 +42,18 @@ TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter
     m_myControlChange(0),
     m_PlaybackMixerHelper(comboPlaybackMixerDevice, StringListHelper::SORT_BY_DESCR),
     m_PlaybackChannelHelper(comboPlaybackMixerChannel),
-    m_Shifter(shifter)
+    m_Shifter(shifter),
+    m_dirty(true)
 {
     QObject::connect(buttonSelectTempFile, SIGNAL(clicked()),
                      this, SLOT(selectTempFile()));
     QObject::connect(comboPlaybackMixerDevice, SIGNAL(activated(int)),
                      this, SLOT(slotComboPlaybackMixerSelected(int)));
+
+    connect(editTempFile,              SIGNAL(textChanged(const QString&)), this, SLOT(slotSetDirty()));
+    connect(editTempFileSize,          SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
+    connect(comboPlaybackMixerChannel, SIGNAL(activated( int )),            this, SLOT(slotSetDirty()));
+    connect(comboPlaybackMixerDevice,  SIGNAL(activated( int )),            this, SLOT(slotSetDirty()));
     slotCancel();
 }
 
@@ -151,21 +157,23 @@ void TimeShifterConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 
 void TimeShifterConfiguration::slotOK()
 {
-    if (m_Shifter) {
+    if (m_Shifter && m_dirty) {
         m_Shifter->setTempFile(editTempFile->text(), editTempFileSize->value() * (Q_UINT64)(1024 * 1024));
         m_Shifter->setPlaybackMixer(m_PlaybackMixerHelper.getCurrentItem(),
                                     m_PlaybackChannelHelper.getCurrentText());
+        m_dirty = false;
     }
 }
 
 
 void TimeShifterConfiguration::slotCancel()
 {
-    if (m_Shifter) {
+    if (m_Shifter && m_dirty) {
         editTempFile->setText(m_Shifter->getTempFileName());
         editTempFileSize->setValue(m_Shifter->getTempFileMaxSize() / 1024 / 1024);
 
         setPlaybackMixer(m_Shifter->getPlaybackMixer(), m_Shifter->getPlaybackMixerChannel());
+        m_dirty = false;
     }
 }
 
@@ -179,5 +187,17 @@ bool TimeShifterConfiguration::noticePlaybackChannelsChanged(const QString & cli
 }
 
 
+void TimeShifterConfiguration::slotSetDirty()
+{
+    if (!m_ignoreGUIChanges) {
+        m_dirty = true;
+    }
+}
+
+void TimeShifterConfiguration::slotUpdateConfig()
+{
+    slotSetDirty();
+    slotCancel();
+}
 
 #include "timeshifter-configuration.moc"

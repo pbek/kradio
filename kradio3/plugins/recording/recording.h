@@ -103,7 +103,7 @@ protected:
 
     bool startRecording(SoundStreamID id);
     bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format);
-    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, const SoundMetaData &md);
+    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
     bool stopRecording(SoundStreamID id);
     bool isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
 

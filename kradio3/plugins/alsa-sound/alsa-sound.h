@@ -173,7 +173,7 @@ RECEIVERS:
 
     bool noticeSoundStreamData(SoundStreamID id,
                                const SoundFormat &,
-                               const char *data, size_t size,
+                               const char *data, size_t size, size_t &consumed_size,
                                const SoundMetaData &md
                               );
 
@@ -276,7 +276,7 @@ protected:
     Q_UINT64        m_CapturePos;
     time_t          m_CaptureStartTime;
 
-    size_t          m_PlaybackSkipCount,
+    size_t          //m_PlaybackSkipCount,
                     m_CaptureSkipCount;
 
     bool            m_EnablePlayback,

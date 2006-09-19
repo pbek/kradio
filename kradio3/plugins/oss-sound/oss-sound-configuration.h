@@ -36,6 +36,7 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
 
     void slotUpdateConfig();
 
@@ -43,6 +44,8 @@ protected:
 
     OSSSoundDevice *m_SoundDevice;
 
+    bool m_dirty;
+    bool m_ignore_gui_updates;
 };
 
 #endif

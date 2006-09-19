@@ -39,6 +39,7 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
 
     void slotLeftClickActionChanged(LeftClickAction action);
     void languageChange();

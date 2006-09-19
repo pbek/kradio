@@ -236,7 +236,7 @@ void RadioDocking::buildContextMenu()
 
     m_powerID = m_menu->insertItem(SmallIcon("kradio_muteoff"), "power-dummy",
                                    this, SLOT(slotPower()));
-    m_pauseID = m_menu->insertItem(SmallIcon("player_pause"), "Pause Radio",
+    m_pauseID = m_menu->insertItem(SmallIcon("kradio_pause"), "Pause Radio",
                                    this, SLOT(slotPause()));
     noticePowerChanged(queryIsPowerOn());
 
@@ -256,6 +256,7 @@ void RadioDocking::buildContextMenu()
 
 
     noticeStationChanged(queryCurrentStation(), -1);
+
 }
 
 
@@ -543,6 +544,7 @@ bool RadioDocking::startRecordingWithFormat(
     if (id == queryCurrentSoundStreamID())
         m_recordingMenu->setItemEnabled(m_recordingID, false);
 
+    setPixmap(BarIcon("kradio_plus_rec"));
     return false; // this is only a "hook" that does not initiate the recording so don't say that we handled the event
 }
 
@@ -559,6 +561,8 @@ bool RadioDocking::stopRecording (SoundStreamID id)
 
     if (id == queryCurrentSoundStreamID())
         m_recordingMenu->setItemEnabled(m_recordingID, true);
+
+    setPixmap(BarIcon("kradio"));
 
     return false;
 }

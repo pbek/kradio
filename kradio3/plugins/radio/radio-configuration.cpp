@@ -52,7 +52,8 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     : RadioConfigurationUI(parent),
       ignoreChanges(false),
       devicePopup(NULL),
-      m_logger(logger)
+      m_logger(logger),
+      m_dirty(true)
 {
     QObject::connect(listStations, SIGNAL(sigCurrentStationChanged(int)),
                      this, SLOT(slotStationSelectionChanged(int)));
@@ -82,6 +83,14 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
                      this, SLOT(slotStorePresets()));
     QObject::connect(buttonLastChangeNow, SIGNAL(clicked()),
                      this, SLOT(slotLastChangeNow()));
+
+    connect(editMaintainer, SIGNAL(textChanged(const QString &)),    SLOT(slotSetDirty()));
+    connect(editLastChange, SIGNAL(valueChanged(const QDateTime &)), SLOT(slotSetDirty()));
+    connect(editCountry,    SIGNAL(textChanged(const QString &)),    SLOT(slotSetDirty()));
+    connect(editCity,       SIGNAL(textChanged(const QString &)),    SLOT(slotSetDirty()));
+    connect(editMedia,      SIGNAL(textChanged(const QString &)),    SLOT(slotSetDirty()));
+    connect(editComment,    SIGNAL(textChanged(const QString &)),    SLOT(slotSetDirty()));
+    connect(editPresetFile, SIGNAL(textChanged(const QString &)),    SLOT(slotSetDirty()));
 
     mailLabel->setText("mailto:witte-presets@kawo1.rwth-aachen.de");
     mailLabel->setURL ("mailto:witte-presets@kawo1.rwth-aachen.de");
@@ -149,6 +158,8 @@ bool RadioConfiguration::noticeDeviceDescriptionChanged(const QString &)
 
 bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 {
+    ignoreChanges = true;
+
     m_stations = sl;
 
     listStations->setStations(sl);
@@ -162,6 +173,8 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
     editMedia->setText(info.media);
     editComment->setText(info.comment);
 
+    ignoreChanges = false;
+
     slotStationSelectionChanged(listStations->currentStationIndex());
 
     return true;
@@ -170,7 +183,9 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 
 bool RadioConfiguration::noticePresetFileChanged(const QString &f)
 {
+    ignoreChanges = true;
     editPresetFile->setURL(f);
+    ignoreChanges = false;
     return true;
 }
 
@@ -207,9 +222,9 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
 
     QPixmap pixmap(s ? s->iconName() : QString::null);
     if (!pixmap.isNull()) {
-           pixmapStation     ->setPixmap(pixmap);
+        pixmapStation->setPixmap(pixmap);
     } else {
-        pixmapStation     ->setText("");
+        pixmapStation->setText("");
     }
 
 
@@ -238,6 +253,7 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
 
 void RadioConfiguration::slotNewStation()
 {
+    slotSetDirty();
     const RadioStation *st = &queryCurrentStation();
     int n = m_stations.count();
     m_stations.all().append(st);
@@ -257,6 +273,7 @@ void RadioConfiguration::slotDeleteStation()
     int idx = listStations->currentStationIndex();
 
     if (idx >= 0 && idx < m_stations.count()) {
+        slotSetDirty();
         m_stations.all().remove(idx);
         listStations->removeStation(idx);
     }
@@ -271,6 +288,7 @@ void RadioConfiguration::slotStationEditorChanged(RadioStationConfig *c)
 
     int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
+        slotSetDirty();
         RadioStation &st = m_stations.at(idx);
 
         ignoreChanges = true;
@@ -292,6 +310,7 @@ void RadioConfiguration::slotStationNameChanged( const QString & s)
 
     int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
+        slotSetDirty();
         RadioStation &st = m_stations.at(idx);
         st.setName(s);
         ignoreChanges = true;
@@ -310,6 +329,7 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 
     int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
+        slotSetDirty();
         RadioStation &st = m_stations.at(idx);
         st.setShortName(sn);
         ignoreChanges = true;
@@ -325,11 +345,13 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
 void RadioConfiguration::slotSelectPixmap()
 {
     KURL url = KFileDialog::getImageOpenURL(QString::null, this,
-					    i18n("Image Selection"));
-    if (url.isLocalFile()) {
-	editPixmapFile->setText(url.path());
-    } else {
-	m_logger.logWarning(i18n("ignoring non-local image"));
+                                            i18n("Image Selection"));
+    if (!url.isEmpty()) {
+        if (url.isLocalFile()) {
+            editPixmapFile->setText(url.path());
+        } else {
+            m_logger.logWarning(i18n("ignoring non-local image"));
+        }
     }
 }
 
@@ -340,6 +362,7 @@ void RadioConfiguration::slotPixmapChanged( const QString &s )
 
     int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
+        slotSetDirty();
         RadioStation &st = m_stations.at(idx);
         st.setIconName(s);
         ignoreChanges = true;
@@ -357,6 +380,7 @@ void RadioConfiguration::slotVolumePresetChanged(int v)
 {
     int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count()) {
+        slotSetDirty();
         RadioStation &s = m_stations.at(idx);
         s.setInitialVolume(0.01 * (double)v);
     }
@@ -368,6 +392,7 @@ void RadioConfiguration::slotStationUp()
 {
     int idx = listStations->currentStationIndex();
     if (idx > 0 && idx < m_stations.count()) {
+        slotSetDirty();
         RawStationList &sl = m_stations.all();
 
         RadioStation *st = sl.take(idx-1);
@@ -375,12 +400,12 @@ void RadioConfiguration::slotStationUp()
         delete st;
 
         ignoreChanges = true;
-        bool o = listStations->signalsBlocked();
-        listStations->blockSignals(true);
+//         bool o = listStations->signalsBlocked();
+//         listStations->blockSignals(true);
         listStations->setStation(idx-1, *sl.at(idx-1));
         listStations->setStation(idx,   *sl.at(idx));
         listStations->setCurrentStation(idx-1);
-        listStations->blockSignals(o);
+//         listStations->blockSignals(o);
         ignoreChanges = false;
     }
 }
@@ -390,6 +415,7 @@ void RadioConfiguration::slotStationDown()
 {
     int idx = listStations->currentStationIndex();
     if (idx >= 0 && idx < m_stations.count() - 1) {
+        slotSetDirty();
         RawStationList &sl = m_stations.all();
 
         RadioStation *st = sl.take(idx);
@@ -397,12 +423,12 @@ void RadioConfiguration::slotStationDown()
         delete st;
 
         ignoreChanges = true;
-        bool o = listStations->signalsBlocked();
-        listStations->blockSignals(true);
+//         bool o = listStations->signalsBlocked();
+//         listStations->blockSignals(true);
         listStations->setStation(idx,   *sl.at(idx));
         listStations->setStation(idx+1, *sl.at(idx+1));
         listStations->setCurrentStation(idx+1);
-        listStations->blockSignals(o);
+//         listStations->blockSignals(o);
         ignoreChanges = false;
     }
 }
@@ -427,6 +453,7 @@ void RadioConfiguration::slotLoadPresets()
     fd.setCaption (i18n("Select Preset File"));
 
     if (fd.exec() == QDialog::Accepted) {
+        slotSetDirty();
         StationList sl;
         if (sl.readXML(fd.selectedURL(), m_logger)) {
             noticeStationsChanged(sl);
@@ -454,6 +481,7 @@ void RadioConfiguration::slotStorePresets()
 
 void RadioConfiguration::slotLastChangeNow()
 {
+    slotSetDirty();
     editLastChange->setDateTime(QDateTime::currentDateTime());
 }
 
@@ -512,6 +540,7 @@ void RadioConfiguration::slotSearchStations(int idev)
         x->show();
         x->start();
         if (x->exec() == QDialog::Accepted) {
+            slotSetDirty();
             m_stations.merge(x->getStations());
             noticeStationsChanged(m_stations);
         }
@@ -524,25 +553,38 @@ void RadioConfiguration::slotSearchStations(int idev)
 
 void RadioConfiguration::slotOK()
 {
-    StationListMetaData &i = m_stations.metaData();
+    if (m_dirty) {
+        StationListMetaData &i = m_stations.metaData();
 
-    i.maintainer = editMaintainer->text();
-    i.lastChange = editLastChange->dateTime();
-    i.country    = editCountry->text();
-    i.city       = editCity->text();
-    i.media      = editMedia->text();
-    i.comment    = editComment->text();
-
-    sendStations(m_stations);
-    sendPresetFile(editPresetFile->url());
+        i.maintainer = editMaintainer->text();
+        i.lastChange = editLastChange->dateTime();
+        i.country    = editCountry->text();
+        i.city       = editCity->text();
+        i.media      = editMedia->text();
+        i.comment    = editComment->text();
+    
+        sendStations(m_stations);
+        sendPresetFile(editPresetFile->url());
+        m_dirty = false;
+    }
 }
 
 void RadioConfiguration::slotCancel()
 {
-    noticeStationsChanged(queryStations());
-    noticePresetFileChanged(queryPresetFile());
+    if (m_dirty) {
+        noticeStationsChanged(queryStations());
+        noticePresetFileChanged(queryPresetFile());
+        m_dirty = false;
+    }
 }
 
+
+void RadioConfiguration::slotSetDirty()
+{
+    if (!ignoreChanges) {
+        m_dirty = true;
+    }
+}
 
 
 #include "radio-configuration.moc"

@@ -26,7 +26,9 @@
 #include <qbuttongroup.h>
 
 DisplayConfiguration::DisplayConfiguration(QWidget *parent)
-    : QWidget (parent)
+    : QWidget (parent),
+      m_dirty(true),
+      m_ignore_gui_updates(false)
 {
     QGroupBox *bg = new QGroupBox(i18n("Display Colors"), this);
     bg->setColumnLayout(0, Qt::Vertical );
@@ -37,6 +39,10 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     m_btnActive   = new KColorButton(queryDisplayActiveColor(), bg);
     m_btnInactive = new KColorButton(queryDisplayInactiveColor(), bg);
     m_btnBkgnd    = new KColorButton(queryDisplayBkgndColor(), bg);
+
+    connect(m_btnActive,   SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
+    connect(m_btnInactive, SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
+    connect(m_btnBkgnd,    SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
 
     QLabel *l1  = new QLabel(i18n("Active Text"), bg);
     QLabel *l2  = new QLabel(i18n("Inactive Text"), bg);
@@ -71,6 +77,12 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     QVBoxLayout  *l = new QVBoxLayout(this, 10);
     l->addWidget(bg);
     l->addWidget(m_fontChooser);
+
+    connect(m_btnActive,   SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
+    connect(m_btnInactive, SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
+    connect(m_btnBkgnd,    SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
+    connect(m_fontChooser, SIGNAL(fontSelected(const QFont &)), this, SLOT(slotSetDirty()));
+
 }
 
 
@@ -81,32 +93,52 @@ DisplayConfiguration::~DisplayConfiguration()
 
 bool DisplayConfiguration::noticeDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd)
 {
+    m_ignore_gui_updates = true;
     m_btnActive->setColor(activeColor);
     m_btnInactive->setColor(inactiveColor);
     m_btnBkgnd->setColor(bkgnd);
+    m_ignore_gui_updates = false;
     return true;
 }
 
 
 bool DisplayConfiguration::noticeDisplayFontChanged(const QFont &f)
 {
+    m_ignore_gui_updates = true;
     m_fontChooser->setFont(f);
+    m_ignore_gui_updates = false;
     return true;
 }
 
 
 void DisplayConfiguration::slotOK()
 {
-    sendDisplayColors(m_btnActive->color(), m_btnInactive->color(), m_btnBkgnd->color());
-    sendDisplayFont(m_fontChooser->font());
+    if (m_dirty) {
+        sendDisplayColors(m_btnActive->color(), m_btnInactive->color(), m_btnBkgnd->color());
+        sendDisplayFont(m_fontChooser->font());
+        m_dirty = false;
+    }
 }
 
 void DisplayConfiguration::slotCancel()
 {
-    m_btnActive  ->setColor(queryDisplayActiveColor());
-    m_btnInactive->setColor(queryDisplayInactiveColor());
-    m_btnBkgnd   ->setColor(queryDisplayBkgndColor());
-    m_fontChooser->setFont(queryDisplayFont());
+    if (m_dirty) {
+        m_ignore_gui_updates = true;
+        m_btnActive  ->setColor(queryDisplayActiveColor());
+        m_btnInactive->setColor(queryDisplayInactiveColor());
+        m_btnBkgnd   ->setColor(queryDisplayBkgndColor());
+        m_fontChooser->setFont(queryDisplayFont());
+        m_dirty = false;
+        m_ignore_gui_updates = false;
+    }
+}
+
+void DisplayConfiguration::slotSetDirty()
+{
+    if (!m_dirty && !m_ignore_gui_updates) {
+        m_dirty = true;
+        emit sigDirty();
+    }
 }
 
 

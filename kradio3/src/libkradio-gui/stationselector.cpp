@@ -27,7 +27,8 @@ using namespace std;
 #include "radiostation-listview.h"
 
 StationSelector::StationSelector (QWidget *parent)
-    : StationSelectorUI(parent)
+    : StationSelectorUI(parent),
+      m_dirty(true)
 {
     QObject::connect(buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
     QObject::connect(buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
@@ -78,12 +79,15 @@ bool StationSelector::noticeStationSelectionChanged(const QStringList &sl)
             m_stationIDsNotDisplayed.append(sl[i]);
     }
     updateListViews();
+    m_dirty = false;
     return true;
 }
 
 
 bool StationSelector::noticeStationsChanged(const StationList &sl)
 {
+    slotSetDirty();
+
     listAvailable->clear();
     listSelected->clear();
 
@@ -114,6 +118,7 @@ bool StationSelector::noticeStationsChanged(const StationList &sl)
 
 void StationSelector::slotButtonToLeft()
 {
+    slotSetDirty();
     listAvailable->clearSelection();
     QListViewItem *item = listSelected->firstChild();
     int idx_from = 0;
@@ -136,6 +141,7 @@ void StationSelector::slotButtonToLeft()
 
 void StationSelector::slotButtonToRight()
 {
+    slotSetDirty();
     listSelected->clearSelection();
     QListViewItem *item = listAvailable->firstChild();
     int idx_from = 0;
@@ -158,6 +164,7 @@ void StationSelector::slotButtonToRight()
 
 void StationSelector::slotMoveToRight(const QStringList &list)
 {
+    slotSetDirty();
     listSelected->clearSelection();
     QListViewItem *item = listAvailable->firstChild();
     int idx_from = 0;
@@ -180,6 +187,7 @@ void StationSelector::slotMoveToRight(const QStringList &list)
 
 void StationSelector::slotMoveToLeft(const QStringList &list)
 {
+    slotSetDirty();
     listAvailable->clearSelection();
     QListViewItem *item = listSelected->firstChild();
     int idx_from = 0;
@@ -270,16 +278,22 @@ void StationSelector::updateListViews()
 
 void StationSelector::slotOK()
 {
-    QStringList l = m_stationIDsSelected;
-    for (unsigned int i = 0; i < m_stationIDsNotDisplayed.count(); ++i)
-        l.append(m_stationIDsNotDisplayed[i]);
-    sendStationSelection(l);
+    if (m_dirty) {
+        QStringList l = m_stationIDsSelected;
+        for (unsigned int i = 0; i < m_stationIDsNotDisplayed.count(); ++i)
+            l.append(m_stationIDsNotDisplayed[i]);
+        sendStationSelection(l);
+    }
+    m_dirty = false;
 }
 
 
 void StationSelector::slotCancel()
 {
-    noticeStationSelectionChanged(queryStationSelection());
+    if (m_dirty) {
+        noticeStationSelectionChanged(queryStationSelection());
+    }
+    m_dirty = false;
 }
 
 
@@ -296,6 +310,12 @@ void StationSelector::restoreState (KConfig *cfg)
     listAvailable->restoreState(cfg);
 }
 
-
+void StationSelector::slotSetDirty()
+{
+    if (!m_dirty) {
+        m_dirty = true;
+        emit sigDirty();
+    }
+}
 
 #include "stationselector.moc"

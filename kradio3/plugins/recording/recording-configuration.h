@@ -97,6 +97,7 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
 
     void slotFormatSelectionChanged();
 
@@ -112,6 +113,9 @@ protected:
     void setGUIEncoderQuality(const RecordingConfig &c);
 
     RecordingConfig m_RecordingConfig;
+
+    bool  m_dirty;
+    bool  m_ignore_gui_updates;
 };
 
 

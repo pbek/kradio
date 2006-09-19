@@ -83,7 +83,7 @@ protected:
     bool startPlayback(SoundStreamID id);
     bool stopPlayback(SoundStreamID id);
     bool pausePlayback(SoundStreamID id);
-    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, const SoundMetaData &md);
+    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
     bool noticeReadyForPlaybackData(SoundStreamID id, size_t size);
 
     bool getSoundStreamDescription(SoundStreamID id, QString &descr) const;

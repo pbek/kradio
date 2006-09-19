@@ -296,7 +296,7 @@ bool RecordingMonitor::stopRecording(SoundStreamID id)
 }
 
 bool RecordingMonitor::noticeSoundStreamData(SoundStreamID id,
-    const SoundFormat &sf, const char *data, size_t size,
+    const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size,
     const SoundMetaData &md
 )
 {
@@ -321,7 +321,7 @@ bool RecordingMonitor::noticeSoundStreamData(SoundStreamID id,
 
         if (sf.m_Encoding == "raw") {
             m_dataMonitor->setEnabled(true);
-            m_dataMonitor->noticeSoundStreamData(id, sf, data, size, md);
+            m_dataMonitor->noticeSoundStreamData(id, sf, data, size, consumed_size, md);
         } else {
             m_dataMonitor->setEnabled(false);
         }

@@ -30,6 +30,7 @@
 #include <errno.h>
 
 #include "oss-sound-configuration.h"
+#include "../../src/libkradio/utils.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
@@ -58,7 +59,7 @@ OSSSoundDevice::OSSSoundDevice(const QString &name)
       m_CaptureRequestCounter(0),
       m_CapturePos(0),
       m_CaptureStartTime(0),
-      m_PlaybackSkipCount(0),
+      //m_PlaybackSkipCount(0),
       m_CaptureSkipCount(0),
       m_EnablePlayback(true),
       m_EnableCapture(true)
@@ -445,7 +446,7 @@ bool OSSSoundDevice::noticeSoundStreamRedirected(SoundStreamID oldID, SoundStrea
 
 bool OSSSoundDevice::noticeSoundStreamData(SoundStreamID id,
                                            const SoundFormat &format,
-                                           const char *data, size_t size,
+                                           const char *data, size_t size, size_t &consumed_size,
                                            const SoundMetaData &/*md*/
                                           )
 {
@@ -472,14 +473,16 @@ bool OSSSoundDevice::noticeSoundStreamData(SoundStreamID id,
     }
 
     size_t n = m_PlaybackBuffer.addData(data, size);
-    if (n < size) {
-        m_PlaybackSkipCount += size - n;
-    } else if (m_PlaybackSkipCount > 0) {
-        logWarning(i18n("%1: Playback buffer overflow. Skipped %1 bytes").arg(m_DSPDeviceName).arg(QString::number(m_PlaybackSkipCount)));
-        m_PlaybackSkipCount = 0;
-    }
+    consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? n : min(consumed_size, n);
 
-    return m_PlaybackSkipCount == 0;
+//     if (n < size) {
+//         m_PlaybackSkipCount += size - n;
+//     } else if (m_PlaybackSkipCount > 0) {
+//         logWarning(i18n("%1: Playback buffer overflow. Skipped %1 bytes").arg(m_DSPDeviceName).arg(QString::number(m_PlaybackSkipCount)));
+//         m_PlaybackSkipCount = 0;
+//     }
+
+    return true; //m_PlaybackSkipCount == 0;
 }
 
 
@@ -510,9 +513,14 @@ void OSSSoundDevice::slotPoll()
             size_t size = 0;
             buffer = m_CaptureBuffer.getData(size);
             time_t cur_time = time(NULL);
-            notifySoundStreamData(m_CaptureStreamID, m_DSPFormat, buffer, size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, m_DSPDeviceName));
-            m_CaptureBuffer.removeData(size);
-            m_CapturePos += size;
+            size_t consumed_size = SIZE_T_DONT_CARE;
+            notifySoundStreamData(m_CaptureStreamID, m_DSPFormat, buffer, size, consumed_size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, m_DSPDeviceName));
+            if (consumed_size == SIZE_T_DONT_CARE)
+                consumed_size = size;
+            m_CaptureBuffer.removeData(consumed_size);
+            m_CapturePos += consumed_size;
+            if (consumed_size < size)
+                break;
         }
     }
 
@@ -676,7 +684,7 @@ bool OSSSoundDevice::openDSPDevice(const SoundFormat &format, bool reopen)
     }
 
     m_CaptureSkipCount  = 0;
-    m_PlaybackSkipCount = 0;
+    //m_PlaybackSkipCount = 0;
 
     return !err;
 }

@@ -123,7 +123,7 @@ RadioView::RadioView(const QString &name)
     l04->addWidget (btnPlugins,   2, 1);
 
     m_pauseMenu     = new KPopupMenu(btnPower);
-    m_pauseMenu->insertItem(SmallIcon("player_pause"),
+    m_pauseMenu->insertItem(SmallIcon("kradio_pause"),
                             i18n("Pause KRadio"),
                             this, SLOT(slotPause()));
     btnPower->setPopupDelay(200);

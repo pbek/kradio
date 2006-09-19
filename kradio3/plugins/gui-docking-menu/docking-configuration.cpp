@@ -52,6 +52,8 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     StationSelectorUILayout->addMultiCellLayout(layout2, 2, 2, 0, 2);
     StationSelectorUILayout->addMultiCellLayout(layout,  3, 3, 0, 2);
 
+    connect(m_comboClickMode, SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
+
     languageChange();
     slotCancel();
 }
@@ -74,19 +76,25 @@ void DockingConfiguration::languageChange()
 
 void DockingConfiguration::slotOK()
 {
-    StationSelector::slotOK();
-    bool old = m_disableGUIUpdates;
-    m_disableGUIUpdates = true;
-    if (m_docking)
-        m_docking->setLeftClickAction((LeftClickAction)m_comboClickMode->currentItem());
-    m_disableGUIUpdates = old;
+    if (m_dirty) {
+        StationSelector::slotOK();
+        bool old = m_disableGUIUpdates;
+        m_disableGUIUpdates = true;
+        if (m_docking)
+            m_docking->setLeftClickAction((LeftClickAction)m_comboClickMode->currentItem());
+        m_disableGUIUpdates = old;
+        m_dirty = false;
+    }
 }
 
 void DockingConfiguration::slotCancel()
 {
-    StationSelector::slotCancel();
-    if (m_docking)
-        m_comboClickMode->setCurrentItem(m_docking->getLeftClickAction());
+    if (m_dirty) {
+        StationSelector::slotCancel();
+        if (m_docking)
+            m_comboClickMode->setCurrentItem(m_docking->getLeftClickAction());
+        m_dirty = false;
+    }
 }
 
 void DockingConfiguration::slotLeftClickActionChanged(LeftClickAction action)
@@ -96,5 +104,11 @@ void DockingConfiguration::slotLeftClickActionChanged(LeftClickAction action)
             m_comboClickMode->setCurrentItem(action);
     }
 }
+
+void DockingConfiguration::slotSetDirty()
+{
+    m_dirty = true;
+}
+
 
 #include "docking-configuration.moc"

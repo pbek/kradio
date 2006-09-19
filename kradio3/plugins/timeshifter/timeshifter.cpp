@@ -116,11 +116,11 @@ void   TimeShifter::restoreState (KConfig *config)
 ConfigPageInfo  TimeShifter::createConfigurationPage()
 {
     TimeShifterConfiguration *conf = new TimeShifterConfiguration(NULL, this);
-    QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotCancel()));
+    QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
     return ConfigPageInfo (conf,
                            i18n("Timeshifter"),
                            i18n("Timeshifter Options"),
-                           "player_pause");
+                           "kradio_pause");
 }
 
 AboutPageInfo   TimeShifter::createAboutPage()
@@ -275,7 +275,7 @@ size_t TimeShifter::readMetaDataFromBuffer(SoundMetaData &md, const char *buffer
 }
 
 
-bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &/*sf*/, const char *data, size_t size, const SoundMetaData &md)
+bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &/*sf*/, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md)
 {
     if (id == m_NewStreamID) {
         char buffer_meta[1024];
@@ -291,6 +291,7 @@ bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &/*s
         m_RingBuffer.addData(buffer_meta, meta_buffer_size);
         m_RingBuffer.addData((const char*)&size, sizeof(size));
         m_RingBuffer.addData(data, size);
+        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? size : min(consumed_size, size);
         return true;
     }
     return false;
@@ -338,12 +339,23 @@ bool TimeShifter::noticeReadyForPlaybackData(SoundStreamID id, size_t free_size)
 
             while (!m_RingBuffer.error() && m_PlaybackDataLeftInBuffer > 0 && free_size > 0) {
                 size_t s = m_PlaybackDataLeftInBuffer < free_size ? m_PlaybackDataLeftInBuffer : free_size;
+
                 if (s > buffer_size)
                     s = buffer_size;
                 s = m_RingBuffer.takeData(buffer, s);
-                free_size -= s;
-                m_PlaybackDataLeftInBuffer -= s;
-                notifySoundStreamData(m_OrgStreamID, m_realSoundFormat, buffer, s, m_PlaybackMetaData);
+
+                size_t consumed_size = SIZE_T_DONT_CARE;
+                notifySoundStreamData(m_OrgStreamID, m_realSoundFormat, buffer, s, consumed_size, m_PlaybackMetaData);
+                if (consumed_size == SIZE_T_DONT_CARE)
+                    consumed_size = s;
+
+                free_size                  -= consumed_size;
+                m_PlaybackDataLeftInBuffer -= consumed_size;
+                if (consumed_size < s) {
+                    logError(i18n("TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost").arg(s - consumed_size));
+                    free_size = 0; // break condition for outer loop
+                    break;
+                }
             }
         }
         return true;

@@ -34,7 +34,7 @@ public:
     ~RecordingDataMonitor();
 
     bool noticeSoundStreamData(SoundStreamID id,
-                               const SoundFormat &sf, const char *data, size_t size,
+                               const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size,
                                const SoundMetaData &md);
 
 // QT/KDE ...

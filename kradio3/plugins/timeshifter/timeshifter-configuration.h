@@ -62,6 +62,8 @@ protected slots:
 
     void slotOK();
     void slotCancel();
+    void slotSetDirty();
+    void slotUpdateConfig();
 
 protected:
 
@@ -75,6 +77,7 @@ protected:
     ChannelListHelper m_PlaybackChannelHelper;
 
     TimeShifter *m_Shifter;
+    bool         m_dirty;
 };
 
 #endif

@@ -32,6 +32,7 @@
 #include "alsa-sound-configuration.h"
 // #include "capture-thread.h"
 #include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/libkradio/utils.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
@@ -67,7 +68,7 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &name)
       m_CaptureRequestCounter(0),
       m_CapturePos(0),
       m_CaptureStartTime(0),
-      m_PlaybackSkipCount(0),
+//       m_PlaybackSkipCount(0),
       m_CaptureSkipCount(0),
       m_EnablePlayback(true),
       m_EnableCapture(true)//,
@@ -497,7 +498,7 @@ bool AlsaSoundDevice::noticeSoundStreamRedirected(SoundStreamID oldID, SoundStre
 
 bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
                                            const SoundFormat &format,
-                                           const char *data, size_t size,
+                                           const char *data, size_t size, size_t &consumed_size,
                                            const SoundMetaData &/*md*/
                                           )
 {
@@ -521,13 +522,15 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
     }
 
     size_t n = m_PlaybackBuffer.addData(data, size);
-    if (n < size) {
+    consumed_size  = (consumed_size == SIZE_T_DONT_CARE) ? n : min (consumed_size, n);
+/*    if (n < size) {
         m_PlaybackSkipCount += size - n;
     } else if (m_PlaybackSkipCount > 0) {
         logWarning(i18n("plughw:%1,%2: Playback buffer overflow. Skipped %3 bytes").arg(m_PlaybackCard).arg(m_PlaybackDevice).arg(QString::number(m_PlaybackSkipCount)));
         m_PlaybackSkipCount = 0;
     }
-    return m_PlaybackSkipCount == 0;
+    return m_PlaybackSkipCount == 0;*/
+    return true;
 }
 
 
@@ -618,9 +621,16 @@ void AlsaSoundDevice::slotPollCapture()
                 size_t size = 0;
                 buffer = m_CaptureBuffer.getData(size);
                 time_t cur_time = time(NULL);
-                notifySoundStreamData(m_CaptureStreamID, m_CaptureFormat, buffer, size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, dev));
-                m_CaptureBuffer.removeData(size);
-                m_CapturePos += size;
+                size_t consumed_size = SIZE_T_DONT_CARE;
+
+                notifySoundStreamData(m_CaptureStreamID, m_CaptureFormat, buffer, size, consumed_size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, dev));
+
+                if (consumed_size == SIZE_T_DONT_CARE)
+                    consumed_size = size;
+                m_CaptureBuffer.removeData(consumed_size);
+                m_CapturePos += consumed_size;
+                if (consumed_size < size)
+                    break;
             }
         }
     }
@@ -663,7 +673,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
         closePlaybackDevice();
     }
 
-    m_PlaybackSkipCount = 0;
+//     m_PlaybackSkipCount = 0;
 
     return !error;
 }

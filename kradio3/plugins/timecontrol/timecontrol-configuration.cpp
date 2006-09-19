@@ -51,7 +51,8 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     : TimeControlConfigurationUI(parent),
       ITimeControlClient(),
       IRadioClient(),
-      ignoreChanges(false)
+      ignoreChanges(false),
+      m_dirty(false)
 {
 
     QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotDailyChanged(bool)));
@@ -62,11 +63,21 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     QObject::connect(editAlarmDate,         SIGNAL(valueChanged(const QDate &)), this, SLOT(slotDateChanged(const QDate &)));
     QObject::connect(editAlarmTime,         SIGNAL(valueChanged(const QTime &)), this, SLOT(slotTimeChanged(const QTime &)));
     QObject::connect(editAlarmVolume,       SIGNAL(valueChanged(int)),           this, SLOT(slotVolumeChanged(int)));
-
     QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotNewAlarm()));
     QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotDeleteAlarm()));
-
     QObject::connect(comboAlarmType,        SIGNAL(highlighted(int)),            this, SLOT(slotAlarmTypeChanged(int)));
+
+    QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
+    QObject::connect(listWeekdays,          SIGNAL(selectionChanged()),          this, SLOT(slotSetDirty()));
+    QObject::connect(checkboxAlarmEnable,   SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
+    QObject::connect(comboStationSelection, SIGNAL(activated(int)),              this, SLOT(slotSetDirty()));
+    QObject::connect(editAlarmDate,         SIGNAL(valueChanged(const QDate &)), this, SLOT(slotSetDirty()));
+    QObject::connect(editAlarmTime,         SIGNAL(valueChanged(const QTime &)), this, SLOT(slotSetDirty()));
+    QObject::connect(editAlarmVolume,       SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
+    QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotSetDirty()));
+    QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotSetDirty()));
+    QObject::connect(comboAlarmType,        SIGNAL(activated(int)),              this, SLOT(slotSetDirty()));
+    QObject::connect(editSleep,             SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
 }
 
 TimeControlConfiguration::~TimeControlConfiguration ()
@@ -387,17 +398,28 @@ void TimeControlConfiguration::slotDeleteAlarm()
 
 void TimeControlConfiguration::slotOK()
 {
-    sendAlarms(alarms);
-    sendCountdownSeconds(editSleep->value() * 60);
+    if (m_dirty) {
+        sendAlarms(alarms);
+        sendCountdownSeconds(editSleep->value() * 60);
+        m_dirty = false;
+    }
 }
 
 void TimeControlConfiguration::slotCancel()
 {
-    noticeAlarmsChanged(queryAlarms());
-    noticeCountdownSecondsChanged(queryCountdownSeconds());
+    if (m_dirty) {
+        noticeAlarmsChanged(queryAlarms());
+        noticeCountdownSecondsChanged(queryCountdownSeconds());
+        m_dirty = false;
+    }
 }
 
-
+void TimeControlConfiguration::slotSetDirty()
+{
+    if (!ignoreChanges) {
+        m_dirty = true;
+    }
+}
 
 
 #include "timecontrol-configuration.moc"

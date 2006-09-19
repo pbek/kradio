@@ -233,7 +233,7 @@ bool RecordingDataMonitor::setColors(const QColor &activeText,
 
 
 bool RecordingDataMonitor::noticeSoundStreamData(SoundStreamID /*id*/,
-    const SoundFormat &sf, const char *data, size_t size,
+    const SoundFormat &sf, const char *data, size_t size, size_t &/*consumed_size*/,
     const SoundMetaData &/*md*/
 )
 {

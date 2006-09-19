@@ -30,26 +30,30 @@ class RadioViewConfiguration : public QTabWidget
 {
 Q_OBJECT
 public :
-	RadioViewConfiguration(QWidget *parent = NULL);
-	~RadioViewConfiguration();
+    RadioViewConfiguration(QWidget *parent = NULL);
+    ~RadioViewConfiguration();
 
-	void addTab    (QWidget *child, const QString &label);
-	void addTab    (QWidget *child, const QIconSet &iconset, const QString &label);
-	void addTab    (QWidget *child, QTab *tab);
-	void insertTab (QWidget *child, const QString &label, int index = -1);
-	void insertTab (QWidget *child, const QIconSet &iconset, const QString &label, int index = -1);
-	void insertTab (QWidget *child, QTab *tab, int index = -1);
-	void removePage(QWidget *w);
-	
+    void addTab    (QWidget *child, const QString &label);
+    void addTab    (QWidget *child, const QIconSet &iconset, const QString &label);
+    void addTab    (QWidget *child, QTab *tab);
+    void insertTab (QWidget *child, const QString &label, int index = -1);
+    void insertTab (QWidget *child, const QIconSet &iconset, const QString &label, int index = -1);
+    void insertTab (QWidget *child, QTab *tab, int index = -1);
+    void removePage(QWidget *w);
+
 public slots:
 
-	void slotOK();
-	void slotCancel();
+    void slotOK();
+    void slotCancel();
+    void slotSetDirty(); 
 
 signals:
 
-	void sigOK();
-	void sigCancel();
+    void sigOK();
+    void sigCancel();
+
+protected:
+    bool m_dirty;
 };
 
 
