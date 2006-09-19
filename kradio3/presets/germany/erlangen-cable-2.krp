@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Christian Koot &lt;christian.koot@tiscali.de&gt;</maintainer>
+			<changed>2006-04-30T11:03:30</changed>
+			<country>Germany</country>
+			<city>Erlangen</city>
+			<media>Kabel Deutschland (Stadtzentrum)</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11463855175392B78E1C2C4CF86B42FB342F792B7ED4FCEB59DFEA45480FFD216AFDE33DD6</stationID>
+			<name>Radio Galaxy</name>
+			<shortname>Galaxy</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463855245A813B0185C6337FF8B4A54216B5ACFEBD165CC89091245F0ED891CD19A9BE98</stationID>
+			<name>Vil Radio</name>
+			<shortname>Vil</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463856238F4B2EF2F05EA4A427DB1327BA010868FFC71C561B93E0260C65716CC84DE2FA</stationID>
+			<name>BR1 - Niederbayern/Oberpfalz</name>
+			<shortname>BR1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638565835DEB04E77897CFD26B5A4D751DFAF0EEF79DE114B486D30A7C2D57718496BF3</stationID>
+			<name>SWR1 - Baden-Württemberg</name>
+			<shortname>SWR1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638572667143AF9638D3D20F522CA7094CC393FEBBDCAEFCE826A038E8BA54FE2CCC88E</stationID>
+			<name>SWR2 - Baden-Württemberg</name>
+			<shortname>SWR2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146385764346647C3961BAD90641F7B2F83A64C6CF503F4DBA56B072667991878D08049EA</stationID>
+			<name>SWR3</name>
+			<shortname>SWR3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.85</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146385878F30114AA2DF9A0F4D86A8A78B7F2D00ADC6CFF51FA33AA6CE4A1FCD358CB2802</stationID>
+			<name>MDR Figaro</name>
+			<shortname>MDR Figaro</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463859033E2A41D0021E0A9124FAF760A64CF8814BC2EAB02BD297262BB64B1A45010CE6</stationID>
+			<name>MDR1 Radio Thüringen (Suhl)</name>
+			<shortname>MDR1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.65</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146385942043AC9CFBB3D34609E117D0C8DB7D02DF6FA3E1A608D04808D0387EC1398D743</stationID>
+			<name>MDR JUMP</name>
+			<shortname>JUMP</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146385960BB062D63666B7D7AB592D46763A6DE6DE4DF963943A1182F15BC145376E6A70C</stationID>
+			<name>BR2 - Niederbayern/Oberpfalz</name>
+			<shortname>BR2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146386373E902F0F98DE3AE90A51EA542C523341F09E4060645A2161572986F2E8C1B93C8</stationID>
+			<name>Bayern 4 Klassik</name>
+			<shortname>BR4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146386413F4B9FF07A8B22454195D871F06FA8E93A179543BD9F868EA89031BF11FBC6E61</stationID>
+			<name>B5 Aktuell</name>
+			<shortname>B5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.05</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146386494F264D29C36E6C99FEC6D984DBEE213A2C4E26DD16492DCDD52E2BA6813A92887</stationID>
+			<name>BR1 - Oberfranken/Mittelfranken</name>
+			<shortname>BR1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146386546C91BDFC65BFC94C59B25BE9C67345E5F1D01E2918BDB0D8051387511E933DF27</stationID>
+			<name>BR2 - Oberfranken/Mittelfranken</name>
+			<shortname>BR2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463866094A6E2A59FEE9295B36A64F829817A34F06C8998D18C837B962EF32E251B9E08F</stationID>
+			<name>Pirate Radio</name>
+			<shortname>Pirate</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146386629BEFEB680FD8BAE89959B3BEFD9954AC57107DCBEE97CA2AB49F093120B594301</stationID>
+			<name>Bayern 3</name>
+			<shortname>BR3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638666786C5202E497B14DABC9A93AF96E96063CEB922FD8DC4109A861333DD412502DC</stationID>
+			<name>Truck Radio</name>
+			<shortname>Truck</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638668565B2BF74EC08F793E0A84CE64CE15C536996E96350A8FB8D9A188F3FF108C7E3</stationID>
+			<name>Deutschlandradio Kultur</name>
+			<shortname>Dradio Kultur</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146386808559CE6C707E236691BCFB23B463D9054EF43538A2E668D44173FECB2EDD782CC</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname>DLF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463868617E6F406CC6949E1D3B17C6D0BE7034DC86D40EEBE329A1D23E16AD5D42DFE6C5</stationID>
+			<name>STAR FM</name>
+			<shortname>STAR FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146386885653D251E38CEC58872E9060335CF290BC7B78228AEE78AAEB30FBF118F2EDE4C</stationID>
+			<name>Antenne Bayern</name>
+			<shortname>Antenne</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463869423E9FF9A90FF35D13A8959F6595F4584700EB77B2D9D2AAAF06DD52FBBFF5EFC3</stationID>
+			<name>Radio F / Jazztime Nürnberg</name>
+			<shortname>F / Jazztime</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463869747BFD11DDE1E2A510BEDAFFB06975B93197BEC7E1B195F7EFB7820276182B3AF7</stationID>
+			<name>Radio Charivari Neumarkt</name>
+			<shortname>Charivari NM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463870257241C0E05C66BC5422BBE7ED3B290A8A7ABED3494E64955417EF589A52C33DCB</stationID>
+			<name>Hit Radio N1</name>
+			<shortname>N1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.65</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146387079995DB205B3437FEA543A6787B5519284302D6A57EE78CB77FB00EB028EAE171A</stationID>
+			<name>Radio Z</name>
+			<shortname>Radio Z</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638709723F211857FB4AF743AA6258EE941E2CD7435179EFB2535F730BFB8C19488C894</stationID>
+			<name>Radio Gong Nürnberg</name>
+			<shortname>Gong</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638719276CA366403BD8079B8B5D94AC0E8C7EA97D9BD3F22D9EF83382F2B87AD04E3AB</stationID>
+			<name>Radio Charivari Nürnberg</name>
+			<shortname>Charivari N</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.65</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146387227F20F626E7D2E119FF2AA436EFFACBD0B653FAC9F8EE3037DFB90BF70ED1847B4</stationID>
+			<name>Radio 8</name>
+			<shortname>Radio 8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638724283A7F73DE853E3B32899A99C989EF01BA476BCC724E22B4287A584BE9C02A107</stationID>
+			<name>Klassik Radio</name>
+			<shortname>Klassik</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146387277C1A29480D7CFC644343CC59B1EC4973E9C270569969C4021F01E630F645EDFAF</stationID>
+			<name>max 91,0</name>
+			<shortname>max 91,0</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146387306E3C59F37B7C7A2D634C586ACF753B5A0661EA21CF1A5AAB7B7394B8722CACFF1</stationID>
+			<name>JAM FM</name>
+			<shortname>JAM FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146387332493468E0C41C955204B6F9CA2266C574A76EB08F54DB9A080FE30D58AD5E737D</stationID>
+			<name>Radio Horeb</name>
+			<shortname>Radio Horeb</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463873527224DB476A717C6AC86C368CE9CB1E2A97632865B7189B9165C48E037E654089</stationID>
+			<name>Radio Energy Nürnberg</name>
+			<shortname>Energy</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146387498C14477EE0238C59C06C9008E54987586BE2EC7A60CCBB96955740FB8729A4CD3</stationID>
+			<name>RTL Radio</name>
+			<shortname>RTL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>114638756924D60E1B5C6F3773E6E4F2E39C431B390ED00A52621DDD856A7730A4055EA641</stationID>
+			<name>Fantasy Bayern</name>
+			<shortname>Fantasy</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1146387586CBE53074AE5119D11A283011E1221F7BBD5BF9D9A1DBDF76E57085F3CDF2B424</stationID>
+			<name>Rock Antenne</name>
+			<shortname>Rock Antenne</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11463876116B0DC413D5F0C6AE4163050F32D6F58165CF109FD11AA769E4494294AAFAFE72</stationID>
+			<name>Radio Melodie</name>
+			<shortname>Melodie</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.6</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
