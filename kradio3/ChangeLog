@@ -14,6 +14,7 @@
             - fixed totally mad behavior of station setup dialog
             - 48kHz support
             - fixed handling in recording in case mp3/ogg is not available
+            - fixed notifyPlayback/CaptureChannelsChanged in streaming.cpp
 
 2006-09-19
 

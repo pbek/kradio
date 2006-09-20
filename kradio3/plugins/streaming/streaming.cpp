@@ -127,6 +127,9 @@ void StreamingDevice::restoreState (KConfig *c)
 {
     c->setGroup(QString("streaming-") + PluginBase::name());
     setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
+    
+    resetPlaybackStreams(false);
+    resetCaptureStreams(false);
 
     int n = c->readNumEntry("playback-channels", 0);
     for (int i = 0; i < n; ++i) {
@@ -136,7 +139,7 @@ void StreamingDevice::restoreState (KConfig *c)
         size_t  buffer_size = c->readNum64Entry("playback-channel-" + QString::number(i) + "-buffer-size", 32*1024);
 
         if (!url.isNull()) {
-            addPlaybackStream(url, sf, buffer_size);
+            addPlaybackStream(url, sf, buffer_size, i == n-1);
         }
     }
 
@@ -148,7 +151,7 @@ void StreamingDevice::restoreState (KConfig *c)
         size_t  buffer_size = c->readNum64Entry("capture-channel-" + QString::number(i) + "-buffer-size", 32*1024);
 
         if (!url.isNull()) {
-            addCaptureStream(url, sf, buffer_size);
+            addCaptureStream(url, sf, buffer_size, i == n-1);
         }
     }
 
@@ -459,33 +462,39 @@ bool StreamingDevice::getCaptureStreamOptions(const QString &channel, QString &u
     return false;
 }
 
-void StreamingDevice::resetPlaybackStreams()
+void StreamingDevice::resetPlaybackStreams(bool notification_enabled)
 {
     while (m_EnabledPlaybackStreams.begin() != m_EnabledPlaybackStreams.end()) {
         sendStopPlayback(m_EnabledPlaybackStreams.begin().key());
     }
-    while (m_EnabledCaptureStreams.begin() != m_EnabledCaptureStreams.end()) {
-        sendStopCapture(m_EnabledCaptureStreams.begin().key());
+    while (m_AllPlaybackStreams.begin() != m_AllPlaybackStreams.end()) {
+        releasePlayback(m_AllPlaybackStreams.begin().key());
     }
     m_PlaybackChannelList.clear();
     m_PlaybackChannels.clear();
+    if (notification_enabled) {
+        notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannelList);
+    }
 }
 
 
-void StreamingDevice::resetCaptureStreams()
+void StreamingDevice::resetCaptureStreams(bool notification_enabled)
 {
-    while (m_AllPlaybackStreams.begin() != m_AllPlaybackStreams.end()) {
-        sendReleasePlayback(m_AllPlaybackStreams.begin().key());
+    while (m_EnabledCaptureStreams.begin() != m_EnabledCaptureStreams.end()) {
+        sendStopCapture(m_EnabledCaptureStreams.begin().key());
     }
     while (m_AllCaptureStreams.begin() != m_AllCaptureStreams.end()) {
-        sendReleaseCapture(m_AllCaptureStreams.begin().key());
+        releaseCapture(m_AllCaptureStreams.begin().key());
     }
     m_CaptureChannelList.clear();
     m_CaptureChannels.clear();
+    if (notification_enabled) {
+        notifyCaptureChannelsChanged(m_SoundStreamClientID, m_CaptureChannelList);
+    }
 }
 
 
-void StreamingDevice::addPlaybackStream(const QString &url, const SoundFormat &sf, size_t buffer_size)
+void StreamingDevice::addPlaybackStream(const QString &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
 {
     StreamingJob *x = new StreamingJob(url, sf, buffer_size);
     connect(x,    SIGNAL(logStreamError(const KURL &, const QString &)),
@@ -493,10 +502,13 @@ void StreamingDevice::addPlaybackStream(const QString &url, const SoundFormat &s
 
     m_PlaybackChannelList.append(url);
     m_PlaybackChannels.insert(url, x);
+    if (notification_enabled) {
+        notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannelList);
+    }
 }
 
 
-void StreamingDevice::addCaptureStream (const QString &url, const SoundFormat &sf, size_t buffer_size)
+void StreamingDevice::addCaptureStream (const QString &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
 {
     StreamingJob *x = new StreamingJob(url, sf, buffer_size);
     connect(x,    SIGNAL(logStreamError(const KURL &, const QString &)),
@@ -504,6 +516,9 @@ void StreamingDevice::addCaptureStream (const QString &url, const SoundFormat &s
 
     m_CaptureChannelList.append(url);
     m_CaptureChannels.insert(url, x);
+    if (notification_enabled) {
+        notifyCaptureChannelsChanged(m_SoundStreamClientID, m_CaptureChannelList);
+    }
 }
 
 

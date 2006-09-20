@@ -47,10 +47,10 @@ public:
     bool getPlaybackStreamOptions(const QString &channel, QString &url, SoundFormat &sf, size_t &buffer_size) const;
     bool getCaptureStreamOptions (const QString &channel, QString &url, SoundFormat &sf, size_t &buffer_size) const;
 
-    void resetPlaybackStreams();
-    void resetCaptureStreams();
-    void addPlaybackStream(const QString &url, const SoundFormat &sf, size_t buffer_size);
-    void addCaptureStream (const QString &url, const SoundFormat &sf, size_t buffer_size);
+    void resetPlaybackStreams(bool notification_enabled = true);
+    void resetCaptureStreams(bool notification_enabled = true);
+    void addPlaybackStream(const QString &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled = true);
+    void addCaptureStream (const QString &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled = true);
 
     // PluginBase
 

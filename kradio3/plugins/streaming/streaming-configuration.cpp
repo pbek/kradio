@@ -73,17 +73,17 @@ void StreamingConfiguration::slotOK()
     if (!m_dirty)
         return;
 
-    m_StreamingDevice->resetPlaybackStreams();
-    m_StreamingDevice->resetCaptureStreams();
+    m_StreamingDevice->resetPlaybackStreams(false);
+    m_StreamingDevice->resetCaptureStreams(false);
 
     QListViewItem *item = m_ListPlaybackURLs->firstChild();
     for (int i = 0; item; ++i, item = item->nextSibling()) {
-        m_StreamingDevice->addPlaybackStream(item->text(1), m_PlaybackSoundFormats[i], m_PlaybackBufferSizes[i]);
+        m_StreamingDevice->addPlaybackStream(item->text(1), m_PlaybackSoundFormats[i], m_PlaybackBufferSizes[i], !item->nextSibling());
     }
 
     item = m_ListCaptureURLs->firstChild();
     for (int i = 0; item; ++i, item = item->nextSibling()) {
-        m_StreamingDevice->addCaptureStream(item->text(1), m_CaptureSoundFormats[i], m_CaptureBufferSizes[i]);
+        m_StreamingDevice->addCaptureStream(item->text(1), m_CaptureSoundFormats[i], m_CaptureBufferSizes[i], !item->nextSibling());
     }
 
     m_dirty = false;
@@ -155,7 +155,7 @@ void StreamingConfiguration::slotNewPlaybackChannel()
     item->startRename(1);
 
     m_PlaybackSoundFormats.append(SoundFormat());
-    m_PlaybackBufferSizes.append(16*1024);
+    m_PlaybackBufferSizes.append(64*1024);
     int n = m_PlaybackSoundFormats.size();
     setStreamOptions(m_PlaybackSoundFormats[n-1], m_PlaybackBufferSizes[n-1]);
 }
@@ -259,7 +259,7 @@ void StreamingConfiguration::slotNewCaptureChannel()
     item->startRename(1);
 
     m_CaptureSoundFormats.append(SoundFormat());
-    m_CaptureBufferSizes.append(16*1024);
+    m_CaptureBufferSizes.append(64*1024);
     int n = m_CaptureSoundFormats.size();
     setStreamOptions(m_CaptureSoundFormats[n-1], m_CaptureBufferSizes[n-1]);
 }
