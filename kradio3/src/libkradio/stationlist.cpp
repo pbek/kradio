@@ -118,8 +118,8 @@ void RawStationList::inSort ( const RadioStation * item )
     RadioStation *rs = &stationWithID(item->stationID());
     if (rs != item) {
         removeRef(rs);
-        BaseClass::inSort(item);
     }
+    BaseClass::inSort(item);
 }
 
 
@@ -129,8 +129,8 @@ void RawStationList::prepend ( const RadioStation * item )
     RadioStation *rs = &stationWithID(item->stationID());
     if (rs != item) {
         removeRef(rs);
-        BaseClass::prepend(item);
     }
+    BaseClass::prepend(item);
 }
 
 
@@ -140,8 +140,8 @@ void RawStationList::append ( const RadioStation * item )
     RadioStation *rs = &stationWithID(item->stationID());
     if (rs != item) {
         removeRef(rs);
-        BaseClass::append(item);
     }
+    BaseClass::append(item);
 }
 
 
@@ -149,9 +149,9 @@ bool RawStationList::replace ( uint index, const RadioStation * item )
 {
     bool r = true;
     RadioStation *rs = &stationWithID(item->stationID());
+    r = BaseClass::replace(index, item);
     if (rs != item) {
         BaseClass::removeRef(rs);
-        r = BaseClass::insert(index, item);
     }
     return r;
 }
