@@ -159,6 +159,12 @@ void LircSupport::slotLIRC(int /*socket*/ )
             }
         }
     }
+    else {
+        // some error has occurred on the socket => close lirc plugin
+        logWarning(i18n("Reading from LIRC socket failed. Disabling LIRC Functions till next start of kradio"));
+        delete m_lirc_notify;
+        m_lirc_notify = NULL;
+    }
 
     if (code)
         free (code);
