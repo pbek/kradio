@@ -258,12 +258,14 @@ void RadioConfiguration::slotNewStation()
     int n = m_stations.count();
     m_stations.all().append(st);
     if (m_stations.count() == n) {
-        st = st->getStationClass();
+        st = st->copyNewID();
         m_stations.all().append(st);
     }
     if (m_stations.count() > n) {
         listStations->appendStation(*st);
         listStations->setCurrentStation (listStations->count()-1);
+        slotStationSelectionChanged(listStations->count()-1);
+        listStations->ensureItemVisible(listStations->selectedItem());
     }
 }
 

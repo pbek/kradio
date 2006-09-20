@@ -112,6 +112,8 @@ public:
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const = 0;
+    /** returns an exact copy of this station, BUT with a new station ID */
+    virtual RadioStation *copyNewID() const = 0;
 
     void generateNewStationID();
 
@@ -143,10 +145,11 @@ class UndefinedRadioStation : public RadioStation
 public:
     UndefinedRadioStation (RegisterStationClass) : RadioStation (registerStationClass, getClassName()) {}
 
-    virtual QString       longName() const { return "unknown"; }
+    virtual QString       longName()    const { return "unknown"; }
     virtual QString       description() const { return "unknown"; }
-    virtual bool          isValid()  const { return false; }
-    virtual RadioStation *copy()     const { return new UndefinedRadioStation(*this); }
+    virtual bool          isValid()     const { return false; }
+    virtual RadioStation *copy()        const { return new UndefinedRadioStation(*this); }
+    virtual RadioStation *copyNewID()   const { RadioStation *x = new UndefinedRadioStation(*this); x->generateNewStationID(); return x;  }
     virtual int           compare(const RadioStation &s) const;
 
     virtual QString       getClassName() const { return "UndefinedRadioStation"; }

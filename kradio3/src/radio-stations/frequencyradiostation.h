@@ -60,6 +60,7 @@ public:
 
     /** returns an exact copy of this station */
     virtual RadioStation *copy() const;
+    virtual RadioStation *copyNewID() const;
 
     virtual RadioStationConfig *createEditor() const;
 

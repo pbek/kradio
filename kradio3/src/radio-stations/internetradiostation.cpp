@@ -67,6 +67,13 @@ RadioStation *InternetRadioStation::copy() const
     return new InternetRadioStation(*this);
 }
 
+RadioStation *InternetRadioStation::copyNewID() const
+{
+    RadioStation *x = new InternetRadioStation(*this);
+    x->generateNewStationID();
+    return x;
+}
+
 InternetRadioStation::~InternetRadioStation()
 {
 }

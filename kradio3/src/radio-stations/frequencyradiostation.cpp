@@ -66,6 +66,14 @@ RadioStation *FrequencyRadioStation::copy() const
     return new FrequencyRadioStation(*this);
 }
 
+RadioStation *FrequencyRadioStation::copyNewID() const
+{
+    RadioStation *x = new FrequencyRadioStation(*this);
+    x->generateNewStationID();
+    return x;
+}
+
+
 
 FrequencyRadioStation::~FrequencyRadioStation()
 {
