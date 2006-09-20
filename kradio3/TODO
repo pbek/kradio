@@ -1,13 +1,12 @@
 =========
 
+  * 48kHz-Support
   * make ALSA support conditional/configurable in configure script
 
   * double click options for tray icon: select window to open
-  * fix station editor dialog
   * remove time/size from recording monitor when recording is not running
   * fix status display for recording monitor
 
-  * fix hang/high cpu load when licq is restarted (broken pipe?)
 
   * speed up kradio start
   * inet-stream-out plugin
@@ -33,7 +32,12 @@
   * tooltips complete?
   * prepare for translation: check for missing i18n translations?
 
-
+  * 48kHz support // DONE
+  * support for PVR radio cards, (/dev/video24...) // DONE
+  * streaming basic plugin, lateron extendable for internet radio // DONE
+  * indicators in docking icon for recording // DONE
+  * fix station editor dialog // DONE
+  * fix hang/high cpu load when licq is restarted (broken pipe?) // DONE
   * define final single/doubleclick tray icon behaviour // DONE (configurable now)
   * warnings if permissions are not set correctly // DONE
   * GUI improvements for pause function // DONE

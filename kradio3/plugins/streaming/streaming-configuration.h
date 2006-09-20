@@ -27,9 +27,10 @@
 
 
 
-#define RATE_44100_IDX      0
-#define RATE_22050_IDX      1
-#define RATE_11025_IDX      2
+#define RATE_48000_IDX      0
+#define RATE_44100_IDX      1
+#define RATE_22050_IDX      2
+#define RATE_11025_IDX      3
 
 #define CHANNELS_STEREO_IDX 0
 #define CHANNELS_MONO_IDX   1

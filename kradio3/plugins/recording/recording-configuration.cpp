@@ -53,19 +53,20 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
     connect(m_spinboxPreRecordingSeconds, SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(m_checkboxPreRecordingEnable, SIGNAL(toggled(bool)),                SLOT(slotSetDirty()));
 
-#ifndef HAVE_LAME_LAME_H
-    editFileFormat->removeItem(FORMAT_MP3_IDX_ORG);
-    delete editMP3Quality;
-    editMP3Quality = NULL;
-    delete labelMP3Quality;
-    labelMP3Quality = NULL;
-#endif
+// attention: remove items with higher index first ;-) otherwise indexes are not valid
 #if !defined(HAVE_VORBIS_VORBISENC_H) || !defined(HAVE_OGG_OGG_H)
     editFileFormat->removeItem(FORMAT_OGG_IDX_ORG);
     delete editOggQuality;
     editOggQuality = NULL;
     delete labelOggQuality;
     labelOggQuality = NULL;
+#endif
+#ifndef HAVE_LAME_LAME_H
+    editFileFormat->removeItem(FORMAT_MP3_IDX_ORG);
+    delete editMP3Quality;
+    editMP3Quality = NULL;
+    delete labelMP3Quality;
+    labelMP3Quality = NULL;
 #endif
 }
 
@@ -104,6 +105,7 @@ void RecordingConfiguration::setGUISoundFormat(const RecordingConfig &c)
         default: editSign->setCurrentItem(SIGN_SIGNED_IDX); break;
     }
     switch (c.m_SoundFormat.m_SampleRate) {
+        case 48000: editRate->setCurrentItem(RATE_48000_IDX); break;
         case 44100: editRate->setCurrentItem(RATE_44100_IDX); break;
         case 22050: editRate->setCurrentItem(RATE_22050_IDX); break;
         case 11025: editRate->setCurrentItem(RATE_11025_IDX); break;
@@ -171,6 +173,7 @@ void RecordingConfiguration::storeConfig()
     c.m_Directory = editDirectory->url();
 
     switch(editRate->currentItem()) {
+        case RATE_48000_IDX: c.m_SoundFormat.m_SampleRate = 48000; break;
         case RATE_44100_IDX: c.m_SoundFormat.m_SampleRate = 44100; break;
         case RATE_22050_IDX: c.m_SoundFormat.m_SampleRate = 22050; break;
         case RATE_11025_IDX: c.m_SoundFormat.m_SampleRate = 11025; break;

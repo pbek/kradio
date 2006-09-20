@@ -153,7 +153,7 @@ void StreamingDevice::restoreState (KConfig *c)
     }
 
     if (!m_CaptureChannelList.size()) {
-        addCaptureStream("/dev/video24", SoundFormat(44100, 2, 16, true, BYTE_ORDER, "raw"), 65536);
+        addCaptureStream("/dev/video24", SoundFormat(48000, 2, 16, true, BYTE_ORDER, "raw"), 65536);
     }
 
     emit sigUpdateConfig();

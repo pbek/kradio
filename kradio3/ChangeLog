@@ -1,3 +1,20 @@
+
+2006-09-20
+
+       emw  - fixed lirc bug: broken pipes caused 100% CPU load
+            - made plugin-loading-progress-bar configurable in plugin config
+              page
+            - if #instances was stored with an invalid value (< 1 | > 10)
+              this value will now automatically fixed
+            - check #libraries for good range (>= 6) otherwise load all
+              available libraries
+            - fixed bullshit in RawStationList that prevented correct
+              functioning of insert/append/replace/... no idea why anything 
+              ever worked
+            - fixed totally mad behavior of station setup dialog
+            - 48kHz support
+            - fixed handling in recording in case mp3/ogg is not available
+
 2006-09-19
 
        emw  - fixed initialization problem of playback device combobox in
@@ -29,6 +46,8 @@
 
        emw  - fixed ":" problem in recording file names e.g. on fat file
               systems. Thanks to Ignacio Feijoo for the Patch.
+            - fixed v4l config balance problem ?? at least not reproducible
+              any more
 
 2005-12-02
 

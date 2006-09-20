@@ -28,9 +28,10 @@
 #include "reccfg_interfaces.h"
 #include "recording-configuration-ui.h"
 
-#define RATE_44100_IDX      0
-#define RATE_22050_IDX      1
-#define RATE_11025_IDX      2
+#define RATE_48000_IDX      0
+#define RATE_44100_IDX      1
+#define RATE_22050_IDX      2
+#define RATE_11025_IDX      3
 
 #define CHANNELS_STEREO_IDX 0
 #define CHANNELS_MONO_IDX   1
@@ -44,14 +45,15 @@
 #define ENDIAN_LITTLE_IDX   0
 #define ENDIAN_BIG_IDX      1
 
-#define FORMAT_WAV_IDX      0
-#define FORMAT_AIFF_IDX     1
-#define FORMAT_AU_IDX       2
-#define FORMAT_RAW_IDX      3
+#define FORMAT_RAW_IDX      0
+#define FORMAT_WAV_IDX      1
+#define FORMAT_AIFF_IDX     2
+#define FORMAT_AU_IDX       3
 #define NEXT_IDX1           4
 
 #define FORMAT_MP3_IDX_ORG  4
 #define FORMAT_OGG_IDX_ORG  5
+
 
 #ifdef HAVE_LAME_LAME_H
     #define FORMAT_MP3_IDX      NEXT_IDX1

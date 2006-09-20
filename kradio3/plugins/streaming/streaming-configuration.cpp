@@ -473,6 +473,7 @@ void StreamingConfiguration::setStreamOptions(const SoundFormat &sf, int BufferS
     }
 
     switch(sf.m_SampleRate) {
+        case 48000 : idx_Rate = RATE_48000_IDX; break;
         case 44100 : idx_Rate = RATE_44100_IDX; break;
         case 22050 : idx_Rate = RATE_22050_IDX; break;
         case 11025 : idx_Rate = RATE_11025_IDX; break;
@@ -529,6 +530,7 @@ void StreamingConfiguration::getStreamOptions(SoundFormat &sf, int &BufferSize) 
     }
 
     switch(idx_Rate) {
+        case RATE_48000_IDX : sf.m_SampleRate = 48000; break;
         case RATE_44100_IDX : sf.m_SampleRate = 44100; break;
         case RATE_22050_IDX : sf.m_SampleRate = 22050; break;
         case RATE_11025_IDX : sf.m_SampleRate = 11025; break;
