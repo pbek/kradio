@@ -26,6 +26,8 @@
 #include <kurlrequester.h>
 #include <kinputdialog.h>
 
+#include <qcheckbox.h>
+
 PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioApp *app, PluginManager *pm)
   : PluginManagerConfigurationUI(parent),
     m_Application(app),
@@ -35,10 +37,13 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
     noticePluginLibrariesChanged();
     noticePluginsChanged();
 
-    QObject::connect(btnAddLibrary,           SIGNAL(clicked()), this, SLOT(slotAddLibrary()));
-    QObject::connect(btnRemoveLibrary,        SIGNAL(clicked()), this, SLOT(slotRemoveLibrary()));
-    QObject::connect(btnNewPluginInstance,    SIGNAL(clicked()), this, SLOT(slotNewPluginInstance()));
-    QObject::connect(btnRemovePluginInstance, SIGNAL(clicked()), this, SLOT(slotRemovePluginInstance()));
+    QObject::connect(btnAddLibrary,           SIGNAL(clicked()),     this, SLOT(slotAddLibrary()));
+    QObject::connect(btnRemoveLibrary,        SIGNAL(clicked()),     this, SLOT(slotRemoveLibrary()));
+    QObject::connect(btnNewPluginInstance,    SIGNAL(clicked()),     this, SLOT(slotNewPluginInstance()));
+    QObject::connect(btnRemovePluginInstance, SIGNAL(clicked()),     this, SLOT(slotRemovePluginInstance()));
+    QObject::connect(cbShowProgressBar,       SIGNAL(toggled(bool)), this, SLOT(slotSetDirty()));
+
+    slotCancel();
 }
 
 
@@ -85,14 +90,20 @@ void PluginManagerConfiguration::noticePluginsChanged()
 
 void PluginManagerConfiguration::slotOK()
 {
+    if (m_dirty) {
+        m_PluginManager->showProgressBar(cbShowProgressBar->isChecked());
+        m_dirty = false;
+    }
 }
 
 
 void PluginManagerConfiguration::slotCancel()
 {
     if (m_dirty) {
+        cbShowProgressBar->setChecked(m_PluginManager->showsProgressBar());
         noticePluginLibrariesChanged();
         noticePluginsChanged();
+        m_dirty = false;
     }
 }
 

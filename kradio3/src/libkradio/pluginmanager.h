@@ -86,6 +86,8 @@ public :
 
     virtual PluginConfigurationDialog *getConfigDialog();
     virtual KDialogBase               *getAboutDialog();
+    virtual bool                       showsProgressBar() const { return m_showProgressBar; }
+    virtual void                       showProgressBar(bool b) { m_showProgressBar = b; }
 
     virtual void         noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
 
@@ -124,6 +126,7 @@ protected:
     KRadioApp   *m_Application;
 
     PluginList   m_plugins;
+    bool         m_showProgressBar;
 
     QFrameDict   m_configPageFrames;
     QWidgetDict  m_configPages;

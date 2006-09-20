@@ -27,7 +27,7 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 
-#include <kprogress.h>
+// #include <kprogress.h>
 
 #include "kradioapp.h"
 #include "../libkradio-gui/aboutwidget.h"
@@ -171,34 +171,34 @@ void KRadioApp::restoreState (KConfig *c)
     c->setGroup("Plugin Libraries");
     int n_libs = c->readNumEntry("count", 0);
 
-    KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Loading Plugin Libraries"));
-    progress->setMinimumWidth(400);
-    progress->setAllowCancel(false);
-    progress->QWidget::setCaption(i18n("KRadio - Loading Plugin Libraries"));
-    progress->show();
+//     KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Loading Plugin Libraries"));
+//     progress->setMinimumWidth(400);
+//     progress->setAllowCancel(false);
+//     progress->QWidget::setCaption(i18n("KRadio - Loading Plugin Libraries"));
+//     progress->show();
 
-    progress->progressBar()->setTotalSteps(n_libs);
+/*    progress->progressBar()->setTotalSteps(n_libs);*/
     for (int idx = 0; idx < n_libs; ++idx) {
         QString lib = c->readEntry("library_" + QString::number(idx), QString::null);
         if (lib.length()) {
             LoadLibrary(lib);
-            progress->progressBar()->setProgress(idx+1);
+//             progress->progressBar()->setProgress(idx+1);
         }
     }
 
-    if (n_libs == 0) {
+    if (n_libs < 6) {    // this seems to be a meaningful minimum value for a working kradio setup
         QStringList libs
             = KGlobal::dirs()->findAllResources("lib", "kradio/plugins/*.so");
         QValueListIterator<QString> end = libs.end();
         int idx = 0;
-        progress->progressBar()->setTotalSteps(libs.count());
+//         progress->progressBar()->setTotalSteps(libs.count());
         for (QValueListIterator<QString> it = libs.begin(); it != end; ++it, ++idx) {
             LoadLibrary(*it);
-            progress->progressBar()->setProgress(idx+1);
+//             progress->progressBar()->setProgress(idx+1);
         }
     }
 
-    delete progress;
+//     delete progress;
 
     profiler.stop();
 
@@ -207,6 +207,8 @@ void KRadioApp::restoreState (KConfig *c)
     BlockProfiler rest_profiler("KRadioApp::restoreState - restore");
 
     int n = c->readNumEntry("instances", 1);
+    if (n < 1 || n > 10)
+        n = 1;
 
     for (int i = 0; i < n; ++i) {
         c->setGroup("Global");

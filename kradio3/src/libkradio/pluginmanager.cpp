@@ -40,6 +40,7 @@ PluginManager::PluginManager(
     const QString &aboutDialogTitle)
  : m_Name(name),
    m_Application(app),
+   m_showProgressBar(true),
    m_configDialog (NULL),
    m_pluginManagerConfiguration(NULL),
    m_aboutDialog(NULL),
@@ -412,6 +413,7 @@ void PluginManager::createAboutDialog(const QString &title)
 void PluginManager::saveState (KConfig *c) const
 {
     c->setGroup("PluginManager-" + m_Name);
+    c->writeEntry("show-progress-bar", m_showProgressBar);
     int n = 0;
     for (PluginIterator it(m_plugins); it.current(); ++it) {
         QString class_name  = it.current()->pluginClassName();
@@ -435,38 +437,46 @@ void PluginManager::saveState (KConfig *c) const
 void PluginManager::restoreState (KConfig *c)
 {
     BlockProfiler profile_all("PluginManager::restoreState");
-
-    KProgressDialog  *progress = new KProgressDialog(NULL, NULL, i18n("Starting Plugins"));
-    progress->setMinimumWidth(400);
-    progress->setAllowCancel(false);
-    progress->show();
-
     c->setGroup("PluginManager-" + m_Name);
+    m_showProgressBar = c->readBoolEntry("show-progress-bar", true);
     int n = c->readNumEntry("plugins", 0);
 
-    progress->progressBar()->setTotalSteps(2*n);
+    KProgressDialog  *progress = NULL;
+    if (m_showProgressBar) {
+        progress = new KProgressDialog(NULL, NULL, i18n("Starting Plugins"));
+        progress->setMinimumWidth(400);
+        progress->setAllowCancel(false);
+        progress->show();
+        progress->progressBar()->setTotalSteps(2*n);
+    }
+
     for (int i = 1; i <= n; ++i) {
         c->setGroup("PluginManager-" + m_Name);
         QString class_name  = c->readEntry("plugin_class_" + QString::number(i));
         QString object_name = c->readEntry("plugin_name_"  + QString::number(i));
 
-        progress->QWidget::setCaption(i18n("Creating Plugin ") + class_name);
+        if (m_showProgressBar)
+            progress->QWidget::setCaption(i18n("Creating Plugin ") + class_name);
         if (class_name.length() && object_name.length())
             m_Application->CreatePlugin(this, class_name, object_name);
-        progress->progressBar()->setProgress(i);
+        if (m_showProgressBar)
+            progress->progressBar()->setProgress(i);
     }
 
     if (m_Application && n == 0) {
         const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
         QMapConstIterator<QString, PluginClassInfo> end = classes.end();
         n = classes.count();
-        progress->progressBar()->setTotalSteps(2*n);
+        if (m_showProgressBar)
+            progress->progressBar()->setTotalSteps(2*n);
         int idx = 1;
         for (QMapConstIterator<QString, PluginClassInfo> it=classes.begin(); it != end; ++it, ++idx) {
             const PluginClassInfo &cls = *it;
-            progress->QWidget::setCaption(i18n("Creating Plugin ") + cls.class_name);
+            if (m_showProgressBar)
+                progress->QWidget::setCaption(i18n("Creating Plugin ") + cls.class_name);
             m_Application->CreatePlugin(this, cls.class_name, m_Name + "-" + cls.class_name);
-            progress->progressBar()->setProgress(idx);
+            if (m_showProgressBar)
+                progress->progressBar()->setProgress(idx);
         }
         m_configDialog->show();
     }
@@ -476,11 +486,14 @@ void PluginManager::restoreState (KConfig *c)
     int idx = n;
     for (PluginIterator i(m_plugins); i.current(); ++i, ++idx) {
         BlockProfiler profile_plugin("PluginManager::restoreState - " + i.current()->pluginClassName());
-        progress->QWidget::setCaption("Initializing Plugin " + i.current()->pluginClassName());
+        if (m_showProgressBar)
+            progress->QWidget::setCaption("Initializing Plugin " + i.current()->pluginClassName());
         i.current()->restoreState(c);
-        progress->progressBar()->setProgress(idx+1);
+        if (m_showProgressBar)
+            progress->progressBar()->setProgress(idx+1);
     }
-    delete progress;
+    if (m_showProgressBar)
+        delete progress;
 }
 
 PluginConfigurationDialog *PluginManager::getConfigDialog()
