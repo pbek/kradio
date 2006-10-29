@@ -922,11 +922,13 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
         }
         QString cardid = "hw:" + QString::number(card);
         bool attached = false;
-        if (!error && snd_mixer_attach (mixer_handle, cardid.ascii()) < 0) {
-            staticLogError(i18n("ALSA Plugin: ERROR: snd_mixer_attach for card %1").arg(card));
-            error = true;
-        } else {
-            attached = true;
+        if (!error) {
+            if (snd_mixer_attach (mixer_handle, cardid.ascii()) < 0) {
+                staticLogError(i18n("ALSA Plugin: ERROR: snd_mixer_attach for card %1").arg(card));
+                error = true;
+            } else {
+                attached = true;
+            }
         }
         if (!error && snd_mixer_selem_register(mixer_handle, NULL, NULL) < 0) {
             staticLogError(i18n("ALSA Plugin: Error: snd_mixer_selem_register for card %1").arg(card));
@@ -936,7 +938,9 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
             staticLogError(i18n("ALSA Plugin: Error: snd_mixer_load for card %1").arg(card));
             error = true;
         }
-        snd_mixer_set_callback (mixer_handle, mixer_dummy_callback);
+        if (mixer_handle) {
+            snd_mixer_set_callback (mixer_handle, mixer_dummy_callback);
+        }
 
         if (error) {
             if (attached) {
@@ -988,24 +992,26 @@ void AlsaSoundDevice::getPlaybackMixerChannels(
         use_tmp_handle = true;
     }
 
-    snd_mixer_elem_t *elem = NULL;
+    if (mixer_handle) {
+        snd_mixer_elem_t *elem = NULL;
 
-    for (elem = snd_mixer_first_elem(mixer_handle); elem; elem = snd_mixer_elem_next(elem)) {
-        AlsaMixerElement sid;
-        if (!snd_mixer_selem_is_active(elem))
-            continue;
-        snd_mixer_selem_get_id(elem, sid);
-        QString name = snd_mixer_selem_id_get_name(sid);
-        int idx = snd_mixer_selem_id_get_index(sid);
-        if (idx)
-            name += " " + QString::number(idx);
-        if (snd_mixer_selem_has_playback_volume(elem)) {
-            ch2id[name] = sid;
-            retval.append(name);
+        for (elem = snd_mixer_first_elem(mixer_handle); elem; elem = snd_mixer_elem_next(elem)) {
+            AlsaMixerElement sid;
+            if (!snd_mixer_selem_is_active(elem))
+                continue;
+            snd_mixer_selem_get_id(elem, sid);
+            QString name = snd_mixer_selem_id_get_name(sid);
+            int idx = snd_mixer_selem_id_get_index(sid);
+            if (idx)
+                name += " " + QString::number(idx);
+            if (snd_mixer_selem_has_playback_volume(elem)) {
+                ch2id[name] = sid;
+                retval.append(name);
+            }
         }
     }
 
-    if (use_tmp_handle) {
+    if (use_tmp_handle && mixer_handle) {
         closeMixerDevice(mixer_handle, card /*m_PlaybackCard*/, SoundStreamID::InvalidID, NULL, true, NULL);
     }
 }
@@ -1033,35 +1039,37 @@ void AlsaSoundDevice::getCaptureMixerChannels(
         use_tmp_handle = true;
     }
 
-    snd_mixer_elem_t *elem = NULL;
-
-    for (elem = snd_mixer_first_elem(mixer_handle); elem; elem = snd_mixer_elem_next(elem)) {
-        AlsaMixerElement sid;
-        if (!snd_mixer_selem_is_active(elem))
-            continue;
-        snd_mixer_selem_get_id(elem, sid);
-        QString name = snd_mixer_selem_id_get_name(sid);
-        int idx = snd_mixer_selem_id_get_index(sid);
-        if (idx)
-            name += " " + QString::number(idx);
-
-        bool add2all = false;
-        if (snd_mixer_selem_has_capture_switch(elem)) {
-            sw_ch2id[name] = sid;
-            sw_list.append(name);
-            add2all = true;
-        }
-        if (snd_mixer_selem_has_capture_volume(elem)) {
-            vol_ch2id[name] = sid;
-            vol_list.append(name);
-            add2all = true;
-        }
-        if (add2all && all_list) {
-            all_list->append(name);
+    if (mixer_handle) {
+        snd_mixer_elem_t *elem = NULL;
+    
+        for (elem = snd_mixer_first_elem(mixer_handle); elem; elem = snd_mixer_elem_next(elem)) {
+            AlsaMixerElement sid;
+            if (!snd_mixer_selem_is_active(elem))
+                continue;
+            snd_mixer_selem_get_id(elem, sid);
+            QString name = snd_mixer_selem_id_get_name(sid);
+            int idx = snd_mixer_selem_id_get_index(sid);
+            if (idx)
+                name += " " + QString::number(idx);
+    
+            bool add2all = false;
+            if (snd_mixer_selem_has_capture_switch(elem)) {
+                sw_ch2id[name] = sid;
+                sw_list.append(name);
+                add2all = true;
+            }
+            if (snd_mixer_selem_has_capture_volume(elem)) {
+                vol_ch2id[name] = sid;
+                vol_list.append(name);
+                add2all = true;
+            }
+            if (add2all && all_list) {
+                all_list->append(name);
+            }
         }
     }
 
-    if (use_tmp_handle) {
+    if (use_tmp_handle && mixer_handle) {
         closeMixerDevice(mixer_handle, card /*m_CaptureCard*/, SoundStreamID::InvalidID, NULL, true, NULL);
     }
 }

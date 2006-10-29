@@ -50,7 +50,7 @@ update_admin --no-final
 
 %build
 . /etc/opt/kde3/common_options
-./configure $configkde --without-gl
+./configure $configkde --without-gl --libdir=$kde_libdir
   
 make
 
@@ -61,8 +61,7 @@ make DESTDIR=$RPM_BUILD_ROOT $INSTALL_TARGET
 
 %files -f %name-%version.lang
 %defattr(-,root,root)
-/opt/kde3/bin/*
+/opt/kde3/bin
 /opt/kde3/share/appl*/*/*.desktop
-/opt/kde3/share/icons/*
-/opt/kde3/lib/kradio
+/opt/kde3/lib*/kradio
 /opt/kde3/share/apps/kradio

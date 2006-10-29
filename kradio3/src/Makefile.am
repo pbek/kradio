@@ -59,7 +59,7 @@ kradio_SOURCES = main.cpp
                
 kradio_LDADD = $(top_builddir)/kradio3/src/libkradio/libkradio.la \
 	$(top_builddir)/kradio3/src/libkradio-gui/libkradio-gui.la $(top_builddir)/kradio3/src/interfaces/libkradio-interfaces.la \
-	$(top_builddir)/kradio3/src/radio-stations/libkradio-stations.la
+	$(top_builddir)/kradio3/src/radio-stations/libkradio-stations.la -lkio -lkdecore -lkdeui
 	
 #	$(top_builddir)/kradio3/src/interfaces/errorlog-interfaces.lo \
 #	$(top_builddir)/kradio3/src/interfaces/radiodevice_interfaces.lo $(top_builddir)/kradio3/src/interfaces/radiodevicepool_interfaces.lo \
@@ -81,8 +81,7 @@ kradio_LDADD = $(top_builddir)/kradio3/src/libkradio/libkradio.la \
 #	$(top_builddir)/kradio3/src/libkradio-gui/standardscandialog-ui.lo $(top_builddir)/kradio3/src/libkradio-gui/station-drag-object.lo \
 #	$(top_builddir)/kradio3/src/libkradio-gui/stationselector.lo $(top_builddir)/kradio3/src/libkradio-gui/stationselector-ui.lo\
 
-kradio_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIRC) -lqt-mt -lkdeui \
-	-lkdecore -lkio -Wl,--export-dynamic
+kradio_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIRC) -Wl,--export-dynamic
 
 xdg_apps_DATA = kradio.desktop
 

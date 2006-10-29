@@ -349,7 +349,7 @@ ConfigPageInfo PluginManager::createOwnConfigurationPage()
     return ConfigPageInfo (m_pluginManagerConfiguration,
                            i18n("Plugins"),
                            i18n("Plugin Library Configuration"),
-                           "kdf");
+                           "kradio_plugins");
 }
 
 

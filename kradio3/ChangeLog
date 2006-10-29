@@ -1,7 +1,9 @@
 2006-10-29
 
        emw  - fixed build system for src directory and inside libs
-
+            - fixed plugin loading error message if lirc is not available
+            - fixed $libdir issues for SuSE 10.1/x86_64
+            - fixed alsa segfault if no mixer is present
 
 2006-09-20
 

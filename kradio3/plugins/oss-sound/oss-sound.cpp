@@ -171,7 +171,7 @@ ConfigPageInfo  OSSSoundDevice::createConfigurationPage()
     return ConfigPageInfo (conf,
                            i18n("OSS Sound"),
                            i18n("OSS Sound Device Options"),
-                           "kmix");
+                           "kradio_oss");
 }
 
 
