@@ -176,6 +176,8 @@ void V4LRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 
         s->register4_sendPlaybackVolume(this);
         s->register4_sendCaptureVolume(this);
+        
+        s->register4_sendStopCapture(this);
 
         s->register4_querySoundStreamDescription(this);
         s->register4_querySoundStreamRadioStation(this);
@@ -1597,5 +1599,13 @@ bool V4LRadio::enumerateSoundStreams(QMap<QString, SoundStreamID> &list) const
 }
 
 
+// bool V4LRadio::stopCapture(SoundStreamID id)
+// {
+//     if (id.isValid() && id == m_SoundStreamID && m_ActivePlayback) {
+//         sendStopPlayback(id);
+//         return true;
+//     }
+//     return false;
+// }
 
 #include "v4lradio.moc"

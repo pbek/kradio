@@ -153,6 +153,9 @@ RECEIVERS:
     bool getSoundStreamRadioStation(SoundStreamID id, const RadioStation *&rs) const;
     bool enumerateSoundStreams(QMap<QString, SoundStreamID> &list) const;
 
+//     bool stopCapture(SoundStreamID id); // if active playback also call stopPlayback
+
+
     // IV4LCfg
 RECEIVERS:
     bool  setRadioDevice  (const QString &s);

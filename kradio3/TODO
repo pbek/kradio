@@ -1,6 +1,7 @@
 =========
 
-  * 48kHz-Support
+  * check for libflac in configure
+  * --done-- 48kHz-Support
   * make ALSA support conditional/configurable in configure script
 
   * double click options for tray icon: select window to open

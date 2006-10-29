@@ -55,18 +55,18 @@ friend class ISoundStreamClient;
 public:
     IF_CON_DESTRUCTOR(ISoundStreamServer, -1)
 
-    void noticeConnectedI(cmplInterface *i, bool valid);
-    void noticeDisconnectedI(cmplInterface *i, bool valid);
+    virtual void noticeConnectedI(cmplInterface *i, bool valid);
+    virtual void noticeDisconnectedI(cmplInterface *i, bool valid);
 
-    QMap<QString, ISoundStreamClient *> getPlaybackClients() const;
-    QMap<QString, QString>              getPlaybackClientDescriptions() const;
-    QMap<QString, ISoundStreamClient *> getCaptureClients() const;
-    QMap<QString, QString>              getCaptureClientDescriptions() const;
-    ISoundStreamClient                 *getSoundStreamClientWithID(const QString &id) const;
+    virtual QMap<QString, ISoundStreamClient *> getPlaybackClients() const;
+    virtual QMap<QString, QString>              getPlaybackClientDescriptions() const;
+    virtual QMap<QString, ISoundStreamClient *> getCaptureClients() const;
+    virtual QMap<QString, QString>              getCaptureClientDescriptions() const;
+    virtual ISoundStreamClient                 *getSoundStreamClientWithID(const QString &id) const;
 
 ANSWERS:
-    QPtrList<ISoundStreamClient>   getPlaybackMixers() const;
-    QPtrList<ISoundStreamClient>   getCaptureMixers() const;
+    virtual QPtrList<ISoundStreamClient>   getPlaybackMixers() const;
+    virtual QPtrList<ISoundStreamClient>   getCaptureMixers() const;
 
 
 SENDERS:
@@ -160,11 +160,11 @@ public:
     cmplInterface *getSoundStreamServer() const { return m_Server; }
 
 
-    virtual void noticeConnectedSoundClient(thisInterface *i, bool valid);
-    virtual void noticeDisconnectedSoundClient(thisInterface *i, bool valid);
+     virtual void noticeConnectedSoundClient(thisInterface *i, bool valid);
+     virtual void noticeDisconnectedSoundClient(thisInterface *i, bool valid);
 
-    void noticeConnectedI(cmplInterface *i, bool valid);
-    void noticeDisconnectedI(cmplInterface *i, bool valid);
+     virtual void noticeConnectedI(cmplInterface *i, bool valid);
+     virtual void noticeDisconnectedI(cmplInterface *i, bool valid);
 
 // some rarely implemented functions are not pure virtual for convenience
 
@@ -183,11 +183,11 @@ ANSWERS:
     virtual const QString &getSoundStreamClientID() const;
     virtual       QString  getSoundStreamClientDescription() const { return QString::null; }
 
-    QMap<QString, ISoundStreamClient *> getPlaybackClients() const;
-    QMap<QString, QString>              getPlaybackClientDescriptions() const;
-    QMap<QString, ISoundStreamClient *> getCaptureClients() const;
-    QMap<QString, QString>              getCaptureClientDescriptions() const;
-    ISoundStreamClient                 *getSoundStreamClientWithID(const QString &id) const;
+    virtual QMap<QString, ISoundStreamClient *> getPlaybackClients() const;
+    virtual QMap<QString, QString>              getPlaybackClientDescriptions() const;
+    virtual QMap<QString, ISoundStreamClient *> getCaptureClients() const;
+    virtual QMap<QString, QString>              getCaptureClientDescriptions() const;
+    virtual ISoundStreamClient                 *getSoundStreamClientWithID(const QString &id) const;
 
 // device mixer functions
 

@@ -1,7 +1,7 @@
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
 noinst_LTLIBRARIES = libkradio-interfaces.la
-libkradio_interfaces_la_LDFLAGS = $(all_libraries)
+libkradio_interfaces_la_LDFLAGS = $(all_libraries) -Wl,--export-dynamic
 libkradio_interfaces_la_SOURCES = errorlog-interfaces.cpp \
                                   radiodevice_interfaces.cpp \
                                   radiodevicepool_interfaces.cpp \

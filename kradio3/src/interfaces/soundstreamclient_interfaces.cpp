@@ -336,10 +336,10 @@ QMap<QString, ISoundStreamClient *> ISoundStreamServer::getPlaybackClients() con
 
 
 
-static const QMap<QString, QString> emptyClienDescrMap;
+static const QMap<QString, QString> emptyClientDescrMap;
 QMap<QString, QString> ISoundStreamClient::getPlaybackClientDescriptions() const
 {
-    return iConnections.count() ? iConnections.getFirst()->getPlaybackClientDescriptions() : emptyClienDescrMap;
+    return iConnections.count() ? iConnections.getFirst()->getPlaybackClientDescriptions() : emptyClientDescrMap;
 }
 
 QMap<QString, QString> ISoundStreamServer::getPlaybackClientDescriptions() const
@@ -376,7 +376,7 @@ QMap<QString, ISoundStreamClient *> ISoundStreamServer::getCaptureClients() cons
 
 QMap<QString, QString> ISoundStreamClient::getCaptureClientDescriptions() const
 {
-    return iConnections.count() ? iConnections.getFirst()->getCaptureClientDescriptions() : emptyClienDescrMap;
+    return iConnections.count() ? iConnections.getFirst()->getCaptureClientDescriptions() : emptyClientDescrMap;
 }
 
 QMap<QString, QString> ISoundStreamServer::getCaptureClientDescriptions() const
