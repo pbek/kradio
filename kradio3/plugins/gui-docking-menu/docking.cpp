@@ -403,7 +403,7 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
         s = rs.longName();
 
       QToolTip::add(this, s);
-    m_menu->changeTitle (m_titleID, i18n("KRadio: %s").arg(s));
+    m_menu->changeTitle (m_titleID, i18n("KRadio: %1").arg(s));
     // FIXME: title does not change in opened popupmenu
 
     QValueList<int>::iterator iit = m_stationMenuIDs.begin();
