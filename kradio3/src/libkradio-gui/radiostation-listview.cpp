@@ -231,9 +231,9 @@ void RadioStationListView::contentsDragEnterEvent(QDragEnterEvent* event)
 {
     bool a = StationDragObject::canDecode(event);
     if (a)
-        IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
+        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent accepted"));
     else
-        IErrorLogClient::staticLogDebug("contentsDragEnterEvent rejected");
+        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent rejected"));
     event->accept(a);
 }
 

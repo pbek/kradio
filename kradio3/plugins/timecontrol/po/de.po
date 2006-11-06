@@ -1,0 +1,129 @@
+# translation of de.po to
+# translation of kradio-timecontrol.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-06 01:20+0100\n"
+"PO-Revision-Date: 2006-11-06 01:16+0100\n"
+"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
+"Language-Team:  <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. i18n: file timecontrol-configuration-ui.ui line 32
+#: rc.cpp:3 rc.cpp:68 timecontrol-configuration-ui.cpp:189
+#, no-c-format
+msgid "sleep countdown"
+msgstr "Schlummermodus"
+
+#. i18n: file timecontrol-configuration-ui.ui line 40
+#: rc.cpp:6 rc.cpp:71 timecontrol-configuration-ui.cpp:190
+#, no-c-format
+msgid " min"
+msgstr " min"
+
+#. i18n: file timecontrol-configuration-ui.ui line 117
+#: rc.cpp:9 rc.cpp:74 timecontrol-configuration-ui.cpp:191 timecontrol.cpp:270
+#, no-c-format
+msgid "Alarms"
+msgstr "Wecker"
+
+#. i18n: file timecontrol-configuration-ui.ui line 180
+#: rc.cpp:14 rc.cpp:79 timecontrol-configuration-ui.cpp:194
+#, no-c-format
+msgid "Date"
+msgstr "Datum"
+
+#. i18n: file timecontrol-configuration-ui.ui line 203
+#: rc.cpp:17 rc.cpp:82 timecontrol-configuration-ui.cpp:195
+#, no-c-format
+msgid "Time"
+msgstr "Uhrzeit"
+
+#. i18n: file timecontrol-configuration-ui.ui line 226
+#: rc.cpp:20 rc.cpp:85 timecontrol-configuration-ui.cpp:196
+#, no-c-format
+msgid "Volume"
+msgstr "Lautstärke"
+
+#. i18n: file timecontrol-configuration-ui.ui line 234
+#: rc.cpp:23 rc.cpp:88 timecontrol-configuration-ui.cpp:197
+#, no-c-format
+msgid " %"
+msgstr " %"
+
+#. i18n: file timecontrol-configuration-ui.ui line 263
+#: rc.cpp:26 rc.cpp:91 timecontrol-configuration-ui.cpp:198
+#, no-c-format
+msgid "enabled"
+msgstr "aktiv"
+
+#. i18n: file timecontrol-configuration-ui.ui line 331
+#: rc.cpp:50 rc.cpp:115 timecontrol-configuration-ui.cpp:207
+#, no-c-format
+msgid "daily"
+msgstr "täglich"
+
+#. i18n: file timecontrol-configuration-ui.ui line 341
+#: rc.cpp:53 rc.cpp:118 timecontrol-configuration-ui.cpp:208
+#, no-c-format
+msgid "Radio Station"
+msgstr "Sender"
+
+#. i18n: file timecontrol-configuration-ui.ui line 393
+#: rc.cpp:56 rc.cpp:121 timecontrol-configuration-ui.cpp:210
+#, no-c-format
+msgid "Start Playing"
+msgstr "Radio einschalten"
+
+#. i18n: file timecontrol-configuration-ui.ui line 401
+#: rc.cpp:59 rc.cpp:124 timecontrol-configuration-ui.cpp:211
+#, no-c-format
+msgid "Stop Playing"
+msgstr "Radio ausschalten"
+
+#. i18n: file timecontrol-configuration-ui.ui line 409
+#: rc.cpp:62 rc.cpp:127 timecontrol-configuration-ui.cpp:212
+#, no-c-format
+msgid "Start Recording"
+msgstr "Aufnahme starten"
+
+#. i18n: file timecontrol-configuration-ui.ui line 417
+#: rc.cpp:65 rc.cpp:130 timecontrol-configuration-ui.cpp:213
+#, no-c-format
+msgid "Stop Recording"
+msgstr "Aufnahme beenden"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ernst Martin Witte"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "emw@nocabal.de"
+
+#: timecontrol-configuration.cpp:181
+msgid "<don't change>"
+msgstr "<nicht verändern>"
+
+#: timecontrol.cpp:42
+msgid "Time Control and Alarm Functions"
+msgstr "Zeitsteurungs- und Weckfunktionen"
+
+#: timecontrol.cpp:48
+msgid "TimeControl Plugin"
+msgstr "Zeitsteuerungs-Plugin"
+
+#: timecontrol.cpp:270
+msgid "Setup Alarms"
+msgstr "Wecker einrichten"

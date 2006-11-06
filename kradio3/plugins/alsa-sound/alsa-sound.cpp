@@ -37,7 +37,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(AlsaSoundDevice, "Advanced Linux Sound Architecture (ALSA) Support");
+PLUGIN_LIBRARY_FUNCTIONS(AlsaSoundDevice, "kradio-alsa-sound", i18n("Advanced Linux Sound Architecture (ALSA) Support"));
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -917,7 +917,7 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
     if (!mixer_handle) {
         bool error = false;
         if (snd_mixer_open (&mixer_handle, 0) < 0) {
-            staticLogError("ALSA Plugin: Error opening mixer");
+            staticLogError(i18n("ALSA Plugin: Error opening mixer"));
             error = true;
         }
         QString cardid = "hw:" + QString::number(card);
@@ -1003,7 +1003,7 @@ void AlsaSoundDevice::getPlaybackMixerChannels(
             QString name = snd_mixer_selem_id_get_name(sid);
             int idx = snd_mixer_selem_id_get_index(sid);
             if (idx)
-                name += " " + QString::number(idx);
+                name = i18n("context-mixername-number", "%1 %2").arg(name).arg(idx);
             if (snd_mixer_selem_has_playback_volume(elem)) {
                 ch2id[name] = sid;
                 retval.append(name);
@@ -1050,7 +1050,7 @@ void AlsaSoundDevice::getCaptureMixerChannels(
             QString name = snd_mixer_selem_id_get_name(sid);
             int idx = snd_mixer_selem_id_get_index(sid);
             if (idx)
-                name += " " + QString::number(idx);
+                name = i18n("context-mixerelement-name-number", "%1 %2").arg(name).arg(idx);
     
             bool add2all = false;
             if (snd_mixer_selem_has_capture_switch(elem)) {

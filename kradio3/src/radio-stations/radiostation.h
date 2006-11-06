@@ -27,6 +27,8 @@
 #include <qstringlist.h>
 #include <qdict.h>
 
+#include <klocale.h>
+
 /**
   *@author Martin Witte, Klas Kalass
   */
@@ -145,8 +147,8 @@ class UndefinedRadioStation : public RadioStation
 public:
     UndefinedRadioStation (RegisterStationClass) : RadioStation (registerStationClass, getClassName()) {}
 
-    virtual QString       longName()    const { return "unknown"; }
-    virtual QString       description() const { return "unknown"; }
+    virtual QString       longName()    const { return i18n("unknown"); }
+    virtual QString       description() const { return i18n("unknown"); }
     virtual bool          isValid()     const { return false; }
     virtual RadioStation *copy()        const { return new UndefinedRadioStation(*this); }
     virtual RadioStation *copyNewID()   const { RadioStation *x = new UndefinedRadioStation(*this); x->generateNewStationID(); return x;  }

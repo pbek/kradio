@@ -1,3 +1,6 @@
+
+SUBDIRS = po .
+
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
 
@@ -16,3 +19,10 @@ install-data-local:
 
 uninstall-local:
 	-rm -f "$(DESTDIR)$(kde_datadir)/kradio/default-dot-lircrc"
+
+#messages: rc.cpp
+#	$(XGETTEXT) *.cpp *.h -o po/kradio-lirc.pot
+
+messages: rc.cpp
+	$(EXTRACTRC) *.rc *.ui >> rc.cpp
+	$(XGETTEXT) rc.cpp *.h *.cpp -o po/kradio-lirc.pot

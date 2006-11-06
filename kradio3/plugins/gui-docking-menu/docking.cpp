@@ -40,7 +40,7 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(RadioDocking, "Tray Menu for KRadio");
+PLUGIN_LIBRARY_FUNCTIONS(RadioDocking, "kradio-gui-docking-menu", i18n("Tray Menu for KRadio"));
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -236,7 +236,7 @@ void RadioDocking::buildContextMenu()
 
     m_powerID = m_menu->insertItem(SmallIcon("kradio_muteoff"), "power-dummy",
                                    this, SLOT(slotPower()));
-    m_pauseID = m_menu->insertItem(SmallIcon("kradio_pause"), "Pause Radio",
+    m_pauseID = m_menu->insertItem(SmallIcon("kradio_pause"), i18n("Pause Radio"),
                                    this, SLOT(slotPause()));
     noticePowerChanged(queryIsPowerOn());
 
@@ -403,7 +403,7 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
         s = rs.longName();
 
       QToolTip::add(this, s);
-    m_menu->changeTitle (m_titleID, "KRadio: " + s);
+    m_menu->changeTitle (m_titleID, i18n("KRadio: %s").arg(s));
     // FIXME: title does not change in opened popupmenu
 
     QValueList<int>::iterator iit = m_stationMenuIDs.begin();

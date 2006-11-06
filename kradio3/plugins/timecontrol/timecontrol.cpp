@@ -39,7 +39,7 @@ const char *AlarmTypeElement            = "type";
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(TimeControl, "Time Control and Alarm Functions");
+PLUGIN_LIBRARY_FUNCTIONS(TimeControl, "kradio-timecontrol", i18n("Time Control and Alarm Functions"));
 
 ///////////////////////////////////////////////////////////////////////
 

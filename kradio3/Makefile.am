@@ -1,4 +1,4 @@
-SUBDIRS = src plugins po presets convert-presets icons
+SUBDIRS = src plugins presets convert-presets icons
 
 EXTRA_DIST = kradio.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO kradio.lsm kradio.spec 
 

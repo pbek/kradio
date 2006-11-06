@@ -1,3 +1,5 @@
+SUBDIRS = po .
+
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
 
@@ -8,3 +10,9 @@ libv4lradio_la_LDFLAGS = -module -avoid-version $(KDE_RPATH) $(all_libraries)
 
 noinst_HEADERS = v4lcfg_interfaces.h v4lradio-configuration.h v4lradio.h
 
+#messages: rc.cpp
+#	$(XGETTEXT) *.cpp *.h -o po/kradio-v4lradio.pot
+
+messages: rc.cpp
+	$(EXTRACTRC) *.rc *.ui >> rc.cpp
+	$(XGETTEXT) rc.cpp *.h *.cpp -o po/kradio-v4lradio.pot

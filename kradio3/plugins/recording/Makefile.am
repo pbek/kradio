@@ -1,3 +1,5 @@
+SUBDIRS = po icons .
+
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
 
@@ -10,3 +12,10 @@ librecording_la_LDFLAGS = -module -avoid-version $(KDE_RPATH) $(all_libraries)
 noinst_HEADERS = recording-configuration.h recording.h recording-config.h \
 		reccfg_interfaces.h encoder.h soundstreamevent.h recording-datamonitor.h \
 		recording-monitor.h encoder_mp3.h encoder_ogg.h encoder_pcm.h
+
+#messages: rc.cpp
+#	$(XGETTEXT) *.cpp *.h -o po/kradio-recording.pot
+
+messages: rc.cpp
+	$(EXTRACTRC) *.rc *.ui >> rc.cpp
+	$(XGETTEXT) rc.cpp *.h *.cpp -o po/kradio-recording.pot

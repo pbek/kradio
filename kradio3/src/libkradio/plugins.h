@@ -24,6 +24,8 @@
 #include <config.h>
 #endif
 
+#include <kglobal.h>
+
 #include "../interfaces/errorlog-interfaces.h"
 #include <qstring.h>
 #include <qobject.h>
@@ -132,13 +134,23 @@ protected :
 };
 
 
-#define PLUGIN_LIBRARY_FUNCTIONS(class_name, description) \
-extern "C" void getAvailablePlugins(QMap<QString, QString> &info) \
+#define PLUGIN_LIBRARY_FUNCTIONS(class_name, i18nName, description) \
+extern "C" void KRadioPlugin_LoadLibrary() \
 {                                                                 \
-    info.insert(#class_name, i18n((description)));                \
+    KGlobal::locale()->insertCatalogue(i18nName);                 \
 }                                                                 \
                                                                   \
-extern "C" PluginBase *createPlugin(const QString &type, const QString &object_name) \
+extern "C" void KRadioPlugin_UnloadLibrary() \
+{                                                                 \
+    KGlobal::locale()->removeCatalogue(i18nName);                 \
+}                                                                 \
+                                                                  \
+extern "C" void KRadioPlugin_GetAvailablePlugins(QMap<QString, QString> &info) \
+{                                                                 \
+    info.insert(#class_name, (description));                      \
+}                                                                 \
+                                                                  \
+extern "C" PluginBase *KRadioPlugin_CreatePlugin(const QString &type, const QString &object_name) \
 {                                                                                    \
     if (type == #class_name) {                                                       \
         return new class_name(object_name);                                          \
@@ -148,22 +160,32 @@ extern "C" PluginBase *createPlugin(const QString &type, const QString &object_n
 }
 
 
-#define PLUGIN_LIBRARY_FUNCTIONS2(class_name1, description1, class_name2, description2) \
-extern "C" void getAvailablePlugins(QMap<QString, QString> &info) \
+#define PLUGIN_LIBRARY_FUNCTIONS2(class_name1, i18nName, description1, class_name2, description2) \
+extern "C" void KRadioPlugin_LoadLibrary() \
 {                                                                 \
-    info.insert(#class_name1, i18n((description1)));                \
-    info.insert(#class_name2, i18n((description2)));                \
+    KGlobal::locale()->insertCatalogue(i18nName);                 \
 }                                                                 \
                                                                   \
-extern "C" PluginBase *createPlugin(const QString &type, const QString &object_name) \
-{                                                                                    \
-    if (type == #class_name1) {                                                       \
-        return new class_name1(object_name);                                    \
-    } else if (type == #class_name2) {                                                       \
-        return new class_name2(object_name);                                    \
-    } else {                                                                         \
-        return NULL;                                                                 \
-    }                                                                                \
+extern "C" void KRadioPlugin_UnloadLibrary() \
+{                                                                 \
+    KGlobal::locale()->removeCatalogue(i18nName);                 \
+}                                                                 \
+                                                                  \
+extern "C" void KRadioPlugin_GetAvailablePlugins(QMap<QString, QString> &info) \
+{                                                                 \
+    info.insert(#class_name1, (description1));                    \
+    info.insert(#class_name2, (description2));                    \
+}                                                                 \
+                                                                  \
+extern "C" PluginBase *KRadioPlugin_CreatePlugin(const QString &type, const QString &object_name) \
+{                                                                                       \
+    if (type == #class_name1) {                                                         \
+        return new class_name1(object_name);                                            \
+    } else if (type == #class_name2) {                                                  \
+        return new class_name2(object_name);                                            \
+    } else {                                                                            \
+        return NULL;                                                                    \
+    }                                                                                   \
 }
 
 

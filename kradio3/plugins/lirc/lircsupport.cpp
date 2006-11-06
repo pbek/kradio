@@ -42,7 +42,7 @@
 //// plugin library functions
 
 //#ifdef HAVE_LIRC
-PLUGIN_LIBRARY_FUNCTIONS(LircSupport, "Linux Infrared Control (LIRC) Support");
+PLUGIN_LIBRARY_FUNCTIONS(LircSupport, "kradio-lirc", i18n("Linux Infrared Control (LIRC) Support"));
 //#endif
 
 /////////////////////////////////////////////////////////////////////////////
@@ -61,7 +61,7 @@ LircSupport::LircSupport(const QString &name)
 
     QFile  lircrc(slircrc);
     if (!lircrc.exists()) {
-        logWarning(i18n(LIRCRC " does not exist. File was created with KRadio's default .lircrc proposal"));
+        logWarning(i18n("%1 does not exist. File was created with KRadio's default .lircrc proposal").arg(LIRCRC));
         QFile default_lircrc(locate("data", "kradio/default-dot-lircrc"));
         lircrc.open(IO_WriteOnly);
         default_lircrc.open(IO_ReadOnly);
@@ -90,8 +90,8 @@ LircSupport::LircSupport(const QString &name)
                     found = e;
             }
             if (!found) {
-                logWarning("There is no entry for kradio in any of your .lircrc files.");
-                logWarning("Please setup your .lircrc files correctly.");
+                logWarning(i18n("There is no entry for kradio in any of your .lircrc files."));
+                logWarning(i18n("Please setup your .lircrc files correctly."));
                 m_TakeRawLIRC = true;
             }
 

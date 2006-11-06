@@ -145,7 +145,7 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
     SoundFormat &sf = m_config.m_SoundFormat;
     if (vorbis_encode_setup_vbr(&m_VorbisInfo, sf.m_Channels, sf.m_SampleRate, m_config.m_oggQuality)) {
         m_error = true;
-        m_errorString = "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n";
+        m_errorString = i18n("Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n");
         vorbis_info_clear(&m_VorbisInfo);
         return false;
     }

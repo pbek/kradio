@@ -114,10 +114,12 @@ int FrequencyRadioStation::compare(const RadioStation &_s) const
 QString FrequencyRadioStation::longName() const
 {
     QString longN = name();
-    if (!longN.isEmpty())
-        longN += ", ";
+    if (!longN.isEmpty()) {
+        longN = i18n("%1, %2").arg(longN).arg(description());
+    } else {
+        longN = description();
+    }
 
-    longN = longN + description();
     return longN;
 }
 
@@ -127,9 +129,9 @@ QString FrequencyRadioStation::description() const
     float   cf = frequency();
     QString f;
     if (cf >= 10)
-        f = QString().setNum(cf, 'f', 2) + " MHz";
+        f = i18n("%1 MHz").arg(QString().setNum(cf, 'f', 2));
     else
-        f = QString().setNum(cf * 1000, 'f', 0) + " kHz";
+        f = i18n("%1 kHz").arg(QString().setNum(cf * 1000, 'f', 0));
 
     return f;
 }

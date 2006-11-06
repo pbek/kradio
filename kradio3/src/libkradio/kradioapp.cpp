@@ -59,7 +59,7 @@ AboutPageInfo  KRadioAbout::createAboutPage ()
                          VERSION,
                          description,
                          KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte, Klas Kalass",
+                         "(c) 2002-2006 Martin Witte, Klas Kalass",
                          0,
                          "http://sourceforge.net/projects/kradio",
                          0);
@@ -88,19 +88,24 @@ AboutPageInfo  KRadioAbout::createAboutPage ()
 PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
  : library (NULL),
    init_func(NULL),
-   info_func(NULL)
+   info_func(NULL),
+   libload_func(NULL),
+   libunload_func(NULL)
 {
     library = KLibLoader::self()->library(lib_name.ascii());
     if (library) {
-        info_func = (t_kradio_plugin_info_func)library->symbol("getAvailablePlugins");
-        init_func = (t_kradio_plugin_init_func)library->symbol("createPlugin");
-        if (info_func && init_func) {
+        info_func      = (t_kradio_plugin_info_func)     library->symbol("KRadioPlugin_GetAvailablePlugins");
+        init_func      = (t_kradio_plugin_init_func)     library->symbol("KRadioPlugin_CreatePlugin");
+        libload_func   = (t_kradio_plugin_libload_func)  library->symbol("KRadioPlugin_LoadLibrary");
+        libunload_func = (t_kradio_plugin_libunload_func)library->symbol("KRadioPlugin_UnloadLibrary");
+        if (info_func && init_func && libload_func && libunload_func) {
+            libload_func();
             info_func(plugins);
         } else {
             KMessageBox::error(NULL,
                                i18n("Library %1: Plugin Entry Point is missing\n")
                                 .arg(lib_name),
-                               "Plugin Library Load Error");
+                               i18n("Plugin Library Load Error"));
             library->unload();
             info_func = NULL;
             init_func = NULL;
@@ -111,7 +116,7 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
                                i18n("Library %1: \n%2")
                                 .arg(lib_name)
                                 .arg(KLibLoader::self()->lastErrorMessage()),
-                               "Plugin Library Load Error");
+                               i18n("Plugin Library Load Error"));
     }
 }
 
@@ -135,7 +140,7 @@ KRadioApp::~KRadioApp()
 
 void KRadioApp::saveState()
 {
-    IErrorLogClient::staticLogDebug("saveState");
+    IErrorLogClient::staticLogDebug(i18n("saveState"));
     saveState(KGlobal::config());
 }
 
@@ -291,6 +296,8 @@ void KRadioApp::UnloadLibrary (const QString &library)
         m_PluginInfos.remove(it_classes.key());
     }
     m_PluginLibraries.remove(library);
+
+    info.libunload_func();
     info.library->unload();
 
     for (QDictIterator<PluginManager> it_managers(m_Instances); it_managers.current(); ++it_managers) {

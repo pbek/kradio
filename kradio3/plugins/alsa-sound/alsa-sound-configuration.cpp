@@ -254,7 +254,7 @@ int AlsaSoundConfiguration::listSoundDevices(KComboBox *combobox, QMap<QString, 
                     continue;
                 }
                 const char *dev_name = snd_pcm_info_get_name(pcminfo);
-                QString devname = QString(dev_name) + " device " + QString::number(dev);
+                QString devname = i18n("context-card-plus-device-number", "%1 device %2").arg(dev_name).arg(dev);
                 if (combobox)
                     combobox->insertItem(devname);
                 if (devname2dev)

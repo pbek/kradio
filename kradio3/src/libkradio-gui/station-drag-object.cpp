@@ -66,7 +66,7 @@ bool StationDragObject::canDecode (const QMimeSource *e)
     IErrorLogClient::staticLogDebug(e->format(0));
     bool retval = (e && e->format(0) == QString(STATION_LIST_MIME_TYPE));
     if (retval)
-        IErrorLogClient::staticLogDebug("canDecode = true");
+        IErrorLogClient::staticLogDebug(i18n("canDecode = true"));
     return retval;
 }
 

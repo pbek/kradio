@@ -403,11 +403,9 @@ void RadioViewFrequencyRadio::drawContents(QPainter *paint)
 
     QString s;
     if (m_frequency < 10) {
-        s = QString().setNum((int)(m_frequency * 1000)) + " kHz";
+        s = i18n("%1 kHz").arg(KGlobal::locale()->formatNumber((int)(m_frequency * 1000), 0));
     } else {
-        s = QString().setNum((int)m_frequency) + ".";
-        int r = (int)rint((m_frequency-(int)m_frequency) * 100);
-        s = s + (r < 10 ? QString("0") : QString::null) + QString().setNum(r) + " MHz";
+        s = i18n("%1 MHz").arg(KGlobal::locale()->formatNumber(m_frequency, 2));
     }
 
     float pxs = xh_f;

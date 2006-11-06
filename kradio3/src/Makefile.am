@@ -1,4 +1,4 @@
-SUBDIRS = interfaces radio-stations libkradio libkradio-gui .
+SUBDIRS = interfaces radio-stations libkradio libkradio-gui po .
 
 INCLUDES = -I$(top_srcdir)/kradio3/src/interfaces \
            -I$(top_srcdir)/kradio3/src/libkradio \
@@ -80,10 +80,18 @@ kradio_LDADD = $(top_builddir)/kradio3/src/libkradio/libkradio.la \
 #	$(top_builddir)/kradio3/src/libkradio-gui/radiostation-listview.lo $(top_builddir)/kradio3/src/libkradio-gui/standardscandialog.lo \
 #	$(top_builddir)/kradio3/src/libkradio-gui/standardscandialog-ui.lo $(top_builddir)/kradio3/src/libkradio-gui/station-drag-object.lo \
 #	$(top_builddir)/kradio3/src/libkradio-gui/stationselector.lo $(top_builddir)/kradio3/src/libkradio-gui/stationselector-ui.lo\
+#
+
 
 kradio_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIRC) -Wl,--export-dynamic
 
 xdg_apps_DATA = kradio.desktop
 
+#messages: rc.cpp
+#	$(XGETTEXT) *.cpp *.h interfaces/*.h interfaces/*.cpp libkradio/*.h libkradio/*.cpp libkradio-gui/*.h libkradio-gui/*.cpp radio-stations/*.h radio-stations/*.cpp  -o po/kradio.pot
+#messages:
+#	$(XGETTEXT) *.cpp *.h -o $(podir)/kradio.pot
+
 messages: rc.cpp
-	$(XGETTEXT) *.cpp *.h -o $(podir)/kradio.pot
+	$(EXTRACTRC)       interfaces/*.ui  interfaces/*.rc libkradio/*.ui  libkradio/*.rc libkradio-gui/*.ui  libkradio-gui/*.rc radio-stations/*.ui  radio-stations/*.rc  >> rc.cpp
+	$(XGETTEXT) rc.cpp interfaces/*.cpp interfaces/*.h  libkradio/*.cpp libkradio/*.h  libkradio-gui/*.cpp libkradio-gui/*.h  radio-stations/*.cpp radio-stations/*.h  *.cpp *.h -o po/kradio.pot

@@ -29,7 +29,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(StreamingDevice, "Streaming Support");
+PLUGIN_LIBRARY_FUNCTIONS(StreamingDevice, "kradio-streaming", i18n("Streaming Support"));
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -127,7 +127,7 @@ void StreamingDevice::restoreState (KConfig *c)
 {
     c->setGroup(QString("streaming-") + PluginBase::name());
     setSoundStreamClientID(c->readEntry("soundstreamclient-id", getSoundStreamClientID()));
-    
+
     resetPlaybackStreams(false);
     resetCaptureStreams(false);
 

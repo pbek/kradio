@@ -18,6 +18,7 @@
 #include "errorlog-interfaces.h"
 
 #include <kdebug.h>
+#include <klocale.h>
 #include <qdatetime.h>
 
 IErrorLog *staticLogger = NULL;
@@ -39,71 +40,71 @@ IErrorLog::~IErrorLog()
 
 int IErrorLogClient::sendLogError(const QString &s) const
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Error: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Error: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     IF_SEND_MESSAGE(logError(s));
 }
 
 
 int IErrorLogClient::sendLogWarning(const QString &s) const
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Warning: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Warning: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     IF_SEND_MESSAGE(logWarning(s));
 }
 
 
 int IErrorLogClient::sendLogInfo(const QString &s) const
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Information: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Information: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     IF_SEND_MESSAGE(logInfo(s));
 }
 
 
 int IErrorLogClient::sendLogDebug(const QString &s) const
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Debug: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Debug: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     IF_SEND_MESSAGE(logDebug(s));
 }
 
 void IErrorLogClient::staticLogError  (const QString &s)
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Error: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Error: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     if (staticLogger)
         staticLogger->logError(s);
 }
 
 void IErrorLogClient::staticLogWarning(const QString &s)
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Warning: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Warning: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     if (staticLogger)
         staticLogger->logWarning(s);
 }
 
 void IErrorLogClient::staticLogInfo   (const QString &s)
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Information: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Information: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     if (staticLogger)
         staticLogger->logInfo(s);
 }
 
 void IErrorLogClient::staticLogDebug  (const QString &s)
 {
-    kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-              << " Debug: "
-              << s << endl;
+    kdDebug() << QString(i18n("%1 Debug: %2\n"))
+                 .arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+                 .arg(s);
     if (staticLogger)
         staticLogger->logDebug(s);
 }

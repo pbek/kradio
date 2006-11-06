@@ -150,7 +150,7 @@ void StreamingConfiguration::slotNewPlaybackChannel()
     slotSetDirty();
     QListViewItem *item = new QListViewItem(m_ListPlaybackURLs, m_ListPlaybackURLs->lastChild());
     item->setText(0, QString::number(m_ListPlaybackURLs->childCount()));
-    item->setText(1, "new channel");
+    item->setText(1, i18n("new channel"));
     item->setRenameEnabled(1,true);
     item->startRename(1);
 
@@ -254,7 +254,7 @@ void StreamingConfiguration::slotNewCaptureChannel()
     slotSetDirty();
     QListViewItem *item = new QListViewItem(m_ListCaptureURLs, m_ListCaptureURLs->lastChild());
     item->setText(0, QString::number(m_ListCaptureURLs->childCount()));
-    item->setText(1, "new channel");
+    item->setText(1, i18n("new channel"));
     item->setRenameEnabled(1,true);
     item->startRename(1);
 

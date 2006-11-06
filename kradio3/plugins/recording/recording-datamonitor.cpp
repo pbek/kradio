@@ -169,12 +169,12 @@ void RecordingDataMonitor::internalDrawContents(QPainter &painter, bool repaintA
         f.setPixelSize(CHANNEL_H_MIN);
         painter.setFont(f);
 
-        int maxW = QFontMetrics(f).width(QString().setNum((int)min_dB) + " dB");
+        int maxW = QFontMetrics(f).width(i18n("%1 dB").arg((int)min_dB));
         int delta_dB  = 5;
         while (abs((long)min_dB) / delta_dB * maxW * 2 > r.width()) delta_dB *= 2;
 
         for (int dB = 0; dB >= min_dB; dB -= delta_dB) {
-            QString txt = QString().setNum(dB) + " dB";
+            QString txt = i18n("%1 dB").arg(dB);
             int w = QFontMetrics(f).width(txt);
             int x = x0 + (int)(nBlocks * BLOCK_W_MIN * (min_dB - dB) / min_dB) - w;
             if (x < x0) continue;

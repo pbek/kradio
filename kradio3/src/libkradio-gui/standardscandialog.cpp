@@ -157,7 +157,7 @@ bool StandardScanDialog::noticeProgress (float f)
         int ms = (int)rint((1 - f) * (float) secs / f * 1000.0);
 
         if (ms > 0 && ms < 86400000)   // max one day
-            labelTime->setText("<p align=\"right\">" + QTime(0,0).addMSecs(ms).toString() + "</p>");
+            labelTime->setText(i18n("<p align=\"right\">%1</p>").arg(QTime(0,0).addMSecs(ms).toString()));
         else
             labelTime->setText(i18n("unknown"));
 

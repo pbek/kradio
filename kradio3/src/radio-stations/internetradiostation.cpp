@@ -113,11 +113,14 @@ bool InternetRadioStation::isValid() const
 
 QString InternetRadioStation::longName() const
 {
-    QString longN = m_name;
-    if ( ! longN.isEmpty() )
-        longN = longN + ", ";
+    QString longN = name();
+    if (!longN.isEmpty()) {
+        longN = i18n("%1, %2").arg(longN).arg(description());
+    } else {
+        longN = description();
+    }
 
-    return longN + description();
+    return longN;
 }
 
 

@@ -31,7 +31,7 @@ FileRingBuffer::FileRingBuffer(const QString &filename, Q_UINT64 max_size)
     m_FillSize = 0;
     m_Start    = 0;
     m_error    = m_File == NULL;
-    m_errorString = m_File ? QString::null : "cannot open buffer file " + filename;
+    m_errorString = m_File ? QString::null : i18n("cannot open buffer file %1").arg(filename);
 }
 
 
@@ -64,7 +64,7 @@ bool FileRingBuffer::resize(const QString &filename, Q_UINT64 new_max_size)
         m_FileName = m_BaseFileName + "_" + QString::number(++m_FileIdx);
         m_File     = fopen(m_FileName.ascii(), "w+");
         m_error    = m_File == NULL;
-        m_errorString = m_File ? QString::null : "cannot open buffer file " + filename;
+        m_errorString = m_File ? QString::null : i18n("cannot open buffer file %1").arg(filename);
     }
 
     if (new_max_size >= m_RealSize) {
@@ -89,13 +89,13 @@ bool FileRingBuffer::resize(const QString &filename, Q_UINT64 new_max_size)
                         newFill += tmp_size;
                     } else {
                         m_error = true;
-                        m_errorString += "FileRingbuffer::resize: Writing to tmpfile failed. ";
+                        m_errorString += i18n("FileRingbuffer::resize: Writing to tmpfile %1 failed. ").arg(tmp_file_name);
                     }
                 }
             }
         } else {
             m_error = true;
-            m_errorString += "FileRingbuffer::resize: Opening tmpfile failed. ";
+            m_errorString += i18n("FileRingbuffer::resize: Opening tmpfile %1 failed. ").arg(tmp_file_name);
         }
 
         if (!m_error) {
@@ -123,7 +123,7 @@ size_t FileRingBuffer::addData (const char *src, size_t size)
         fseek(m_File, m_Start + m_FillSize, SEEK_SET);
         if (rest > 0 && fwrite(src, rest, 1, m_File) <= 0) {
             m_error = true;
-            m_errorString += "FileRingBuffer::addData: failed writing data to file " + m_FileName + ". ";
+            m_errorString += i18n("FileRingBuffer::addData: failed writing data to file %1.").arg(m_FileName);
         } else {
             m_FillSize += rest;
             if (m_Start + m_FillSize > m_RealSize)
@@ -141,7 +141,7 @@ size_t FileRingBuffer::addData (const char *src, size_t size)
         fseek(m_File, m_Start + m_FillSize - m_RealSize, SEEK_SET);
         if (fwrite(src, rest, 1, m_File) <= 0) {
             m_error = true;
-            m_errorString += "FileRingBuffer::addData: failed writing data to file " + m_FileName  + ". ";
+            m_errorString += i18n("FileRingBuffer::addData: failed writing data to file %1.").arg(m_FileName);
         } else {
             m_FillSize += rest;
             written    += rest;
@@ -164,7 +164,7 @@ size_t FileRingBuffer::takeData(char *dst, size_t size)
         fseek(m_File, m_Start, SEEK_SET);
         if (fread(dst+read, n, 1, m_File) <= 0) {
             m_error = true;
-            m_errorString += "FileRingBuffer::takeData: failed reading data to file " + m_FileName + ". ";
+            m_errorString += i18n("FileRingBuffer::takeData: failed reading data to file %1.").arg(m_FileName);
         } else {
             m_FillSize -= n;
             m_Start    += n;

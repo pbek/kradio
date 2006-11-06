@@ -35,7 +35,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(OSSSoundDevice, "Open Sound System (OSS) Support");
+PLUGIN_LIBRARY_FUNCTIONS(OSSSoundDevice, "kradio-oss-sound", i18n("Open Sound System (OSS) Support"));
 
 /////////////////////////////////////////////////////////////////////////////
 

@@ -1,0 +1,221 @@
+# translation of kradio-streaming.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kradio-streaming\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-06 01:20+0100\n"
+"PO-Revision-Date: 2006-11-06 00:44+0100\n"
+"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
+"Language-Team:  <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. i18n: file streaming-configuration-ui.ui line 16
+#: rc.cpp:3 rc.cpp:95 streaming-configuration-ui.cpp:253
+#, no-c-format
+msgid "StreamingConfigurationUI"
+msgstr "StreamingConfigurationUI"
+
+#. i18n: file streaming-configuration-ui.ui line 33
+#. i18n: file streaming-configuration-ui.ui line 74
+#. i18n: file streaming-configuration-ui.ui line 33
+#. i18n: file streaming-configuration-ui.ui line 74
+#: rc.cpp:6 rc.cpp:12 rc.cpp:98 rc.cpp:104 streaming-configuration-ui.cpp:43
+#: streaming-configuration-ui.cpp:52 streaming-configuration-ui.cpp:254
+#: streaming-configuration-ui.cpp:256
+#, no-c-format
+msgid "No."
+msgstr "Nr."
+
+#. i18n: file streaming-configuration-ui.ui line 44
+#. i18n: file streaming-configuration-ui.ui line 85
+#. i18n: file streaming-configuration-ui.ui line 44
+#. i18n: file streaming-configuration-ui.ui line 85
+#: rc.cpp:9 rc.cpp:15 rc.cpp:101 rc.cpp:107 streaming-configuration-ui.cpp:44
+#: streaming-configuration-ui.cpp:53 streaming-configuration-ui.cpp:255
+#: streaming-configuration-ui.cpp:257
+#, no-c-format
+msgid "URL"
+msgstr "URL"
+
+#. i18n: file streaming-configuration-ui.ui line 114
+#: rc.cpp:18 rc.cpp:110 streaming-configuration-ui.cpp:258
+#, no-c-format
+msgid "Capture URLs"
+msgstr "Aufnahme-URL"
+
+#. i18n: file streaming-configuration-ui.ui line 122
+#: rc.cpp:21 rc.cpp:113 streaming-configuration-ui.cpp:259
+#, no-c-format
+msgid "Playback URLs"
+msgstr "Wiedergabe-URL"
+
+#. i18n: file streaming-configuration-ui.ui line 434
+#: rc.cpp:32 rc.cpp:124 streaming-configuration-ui.cpp:268
+#, no-c-format
+msgid "URL Properties"
+msgstr "URL-Eigenschaften"
+
+#. i18n: file streaming-configuration-ui.ui line 446
+#: rc.cpp:35 rc.cpp:127 streaming-configuration-ui.cpp:270
+#, no-c-format
+msgid "Stereo"
+msgstr "Stereo"
+
+#. i18n: file streaming-configuration-ui.ui line 451
+#: rc.cpp:38 rc.cpp:130 streaming-configuration-ui.cpp:271
+#, no-c-format
+msgid "Mono"
+msgstr "Mono"
+
+#. i18n: file streaming-configuration-ui.ui line 471
+#: rc.cpp:41 rc.cpp:133 streaming-configuration-ui.cpp:272
+#, no-c-format
+msgid "Sample Bits"
+msgstr "Quantisierungs-Bits"
+
+#. i18n: file streaming-configuration-ui.ui line 479
+#: rc.cpp:44 rc.cpp:136 streaming-configuration-ui.cpp:273
+#, no-c-format
+msgid "Channels"
+msgstr "Kanäle"
+
+#. i18n: file streaming-configuration-ui.ui line 487
+#: rc.cpp:47 rc.cpp:139 streaming-configuration-ui.cpp:274
+#, no-c-format
+msgid "Endianess"
+msgstr "Byte-Reihenfolge"
+
+#. i18n: file streaming-configuration-ui.ui line 493
+#: rc.cpp:50 rc.cpp:142 streaming-configuration-ui.cpp:276
+#, no-c-format
+msgid "Little Endian"
+msgstr "Little Endian"
+
+#. i18n: file streaming-configuration-ui.ui line 498
+#: rc.cpp:53 rc.cpp:145 streaming-configuration-ui.cpp:277
+#, no-c-format
+msgid "Big Endian"
+msgstr "Big Endian"
+
+#. i18n: file streaming-configuration-ui.ui line 516
+#: rc.cpp:56 rc.cpp:148 streaming-configuration-ui.cpp:279
+#, no-c-format
+msgid "48000"
+msgstr "48000"
+
+#. i18n: file streaming-configuration-ui.ui line 521
+#: rc.cpp:59 rc.cpp:151 streaming-configuration-ui.cpp:280
+#, no-c-format
+msgid "44100"
+msgstr "44100"
+
+#. i18n: file streaming-configuration-ui.ui line 526
+#: rc.cpp:62 rc.cpp:154 streaming-configuration-ui.cpp:281
+#, no-c-format
+msgid "22050"
+msgstr "22050"
+
+#. i18n: file streaming-configuration-ui.ui line 531
+#: rc.cpp:65 rc.cpp:157 streaming-configuration-ui.cpp:282
+#, no-c-format
+msgid "11025"
+msgstr "11025"
+
+#. i18n: file streaming-configuration-ui.ui line 549
+#: rc.cpp:68 rc.cpp:160 streaming-configuration-ui.cpp:284
+#, no-c-format
+msgid "16"
+msgstr "16"
+
+#. i18n: file streaming-configuration-ui.ui line 554
+#: rc.cpp:71 rc.cpp:163 streaming-configuration-ui.cpp:285
+#, no-c-format
+msgid "8"
+msgstr "8"
+
+#. i18n: file streaming-configuration-ui.ui line 572
+#: rc.cpp:74 rc.cpp:166 streaming-configuration-ui.cpp:287
+#, no-c-format
+msgid "Raw"
+msgstr "Rohdaten"
+
+#. i18n: file streaming-configuration-ui.ui line 592
+#: rc.cpp:77 rc.cpp:169 streaming-configuration-ui.cpp:288
+#, no-c-format
+msgid "kB"
+msgstr "kB"
+
+#. i18n: file streaming-configuration-ui.ui line 609
+#: rc.cpp:80 rc.cpp:172 streaming-configuration-ui.cpp:289
+#, no-c-format
+msgid "Buffer Size"
+msgstr "Puffergröße"
+
+#. i18n: file streaming-configuration-ui.ui line 617
+#: rc.cpp:83 rc.cpp:175 streaming-configuration-ui.cpp:290
+#, no-c-format
+msgid "Format"
+msgstr "Format"
+
+#. i18n: file streaming-configuration-ui.ui line 625
+#: rc.cpp:86 rc.cpp:178 streaming-configuration-ui.cpp:291
+#, no-c-format
+msgid "Sample Rate"
+msgstr "Abtastrate"
+
+#. i18n: file streaming-configuration-ui.ui line 631
+#: rc.cpp:89 rc.cpp:181 streaming-configuration-ui.cpp:293
+#, no-c-format
+msgid "Signed"
+msgstr "Vorzeichenbehaftet"
+
+#. i18n: file streaming-configuration-ui.ui line 636
+#: rc.cpp:92 rc.cpp:184 streaming-configuration-ui.cpp:294
+#, no-c-format
+msgid "Unsigned"
+msgstr "Vorzeichenlos"
+
+#: streaming-configuration.cpp:153 streaming-configuration.cpp:257
+msgid "new channel"
+msgstr "Neuer Kanal"
+
+#: streaming-job.cpp:204
+msgid "skipped %1 bytes"
+msgstr "%1 bytes wurden übersprungen"
+
+#: streaming.cpp:32
+msgid "Streaming Support"
+msgstr "Unterstützung für das Streaming"
+
+#: streaming.cpp:41
+msgid "KRadio Streaming Plugin"
+msgstr "KRadio Streaming-Plugin"
+
+#: streaming.cpp:171
+msgid "Streaming"
+msgstr "Streaming"
+
+#: streaming.cpp:172
+msgid "Streaming Device Options"
+msgstr "Geräteoptionen für das Streaming"
+
+#: streaming.cpp:402
+msgid ""
+"StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
+msgstr ""
+"Streaminggerät %1::notifySoundStreamData: Die Wiedergabe-Module haben %2 "
+"bytes übersprungen."
+
+#: streaming.cpp:425
+msgid "Streaming Device %1"
+msgstr "Streaming-Gerät %1"
+
+#: streaming.cpp:431 streaming.cpp:436
+msgid "Streaming Device %1, %2: %3"
+msgstr "Streaming-Gerät %1, %2: %3"

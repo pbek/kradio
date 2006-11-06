@@ -39,7 +39,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(QuickBar, "Radio Station Quick Selection Toolbar");
+PLUGIN_LIBRARY_FUNCTIONS(QuickBar, "kradio-gui-quickbar", i18n("Radio Station Quick Selection Toolbar"));
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -393,9 +393,9 @@ void QuickBar::dragEnterEvent(QDragEnterEvent* event)
 {
     bool a = StationDragObject::canDecode(event);
     if (a)
-        IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
+        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent accepted"));
     else
-        IErrorLogClient::staticLogDebug("contentsDragEnterEvent rejected");
+        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent rejected"));
     event->accept(a);
 }
 

@@ -40,6 +40,7 @@
 #include <kiconloader.h>
 #include <kdialogbase.h>
 #include <kaboutdata.h>
+#include <klocale.h>
 
 #include "../../src/libkradio-gui/aboutwidget.h"
 #include "../../src/libkradio/utils.h"
@@ -52,7 +53,7 @@ struct _lrvol { unsigned char l, r; short dummy; };
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(V4LRadio, "Support for V4L(2) Radio Devices");
+PLUGIN_LIBRARY_FUNCTIONS(V4LRadio, "kradio-v4lradio", i18n("Support for V4L(2) Radio Devices"));
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -1006,7 +1007,7 @@ void   V4LRadio::restoreState (KConfig *config)
     QString devname = config->readEntry ("RadioDev", default_devname);
 
     if (found_devname.isNull() && devname == default_devname) {
-        logError("Could not find an accessible v4l(2) radio device.");
+        logError(i18n("Could not find an accessible v4l(2) radio device."));
     }
 
     setRadioDevice(devname);
@@ -1222,7 +1223,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
     if (r == 0) {
         c.version  = 2;
 
-        logDebug(QString().sprintf("V4L2 - Version: %08X", caps2.version));
+        logDebug(i18n("V4L2 - Version: %1").arg(QString().sprintf("%08X", caps2.version)));
 
         size_t l = sizeof(caps.name);
         l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;

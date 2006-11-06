@@ -50,18 +50,21 @@ public:
 
 typedef  PluginBase     *(*t_kradio_plugin_init_func)(const QString & cls, const QString &obj);
 typedef  void            (*t_kradio_plugin_info_func)(QMap<QString, QString> &);
-
+typedef  void            (*t_kradio_plugin_libload_func)();
+typedef  void            (*t_kradio_plugin_libunload_func)();
 
 
 struct PluginLibraryInfo {
-    KLibrary                  *library;
-    QMap<QString,QString>      plugins;
-    t_kradio_plugin_init_func  init_func;
-    t_kradio_plugin_info_func  info_func;
+    KLibrary                      *library;
+    QMap<QString,QString>          plugins;
+    t_kradio_plugin_init_func      init_func;
+    t_kradio_plugin_info_func      info_func;
+    t_kradio_plugin_libload_func   libload_func;
+    t_kradio_plugin_libunload_func libunload_func;
 
-    PluginLibraryInfo() : library(NULL), init_func(NULL), info_func(NULL) {}
+    PluginLibraryInfo() : library(NULL), init_func(NULL), info_func(NULL), libload_func(NULL), libunload_func(NULL) {}
     PluginLibraryInfo(const QString &libname);
-    bool valid() { return init_func && info_func && library; }
+    bool valid() { return init_func && info_func && library && libload_func && libunload_func; }
 };
 
 

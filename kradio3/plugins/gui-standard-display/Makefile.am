@@ -1,3 +1,5 @@
+SUBDIRS = po .
+
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
 
@@ -12,3 +14,9 @@ libstandard_display_la_LDFLAGS = -module -avoid-version $(KDE_RPATH) $(all_libra
 
 noinst_HEADERS = displaycfg.h displaycfg_interfaces.h radioview-configuration.h radioview_element.h radioview_frequencyradio.h radioview_frequencyseeker.h radioview.h radioview_volume.h
 
+#messages: rc.cpp
+#	$(XGETTEXT) *.cpp *.h -o po/kradio-gui-standard-display.pot
+
+messages: rc.cpp
+	$(EXTRACTRC) *.rc *.ui >> rc.cpp
+	$(XGETTEXT) rc.cpp *.h *.cpp -o po/kradio-gui-standard-display.pot
