@@ -129,9 +129,9 @@ QString FrequencyRadioStation::description() const
     float   cf = frequency();
     QString f;
     if (cf >= 10)
-        f = i18n("%1 MHz").arg(QString().setNum(cf, 'f', 2));
+        f = i18n("%1 MHz").arg(KGlobal::locale()->formatNumber(cf, 2));
     else
-        f = i18n("%1 kHz").arg(QString().setNum(cf * 1000, 'f', 0));
+        f = i18n("%1 kHz").arg(KGlobal::locale()->formatNumber(cf * 1000, 0));
 
     return f;
 }
