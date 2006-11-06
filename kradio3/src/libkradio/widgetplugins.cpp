@@ -111,6 +111,7 @@ void WidgetPluginBase::showOnOrgDesktop()
 
         w->resize(m_saveGeometry.size());
         w->move(m_saveGeometry.topLeft());
+        w->show();
     }
 }
 
