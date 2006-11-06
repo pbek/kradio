@@ -27,7 +27,9 @@
 class PluginConfigurationDialog : public KDialogBase,
                                   public WidgetPluginBase
 {
+
 Q_OBJECT
+
 public:
     PluginConfigurationDialog(
                  int dialogFace, const QString &caption,

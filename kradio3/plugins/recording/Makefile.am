@@ -8,6 +8,7 @@ librecording_la_SOURCES = recording-configuration.cpp \
 	recording-configuration-ui.ui recording.cpp recording-config.cpp reccfg_interfaces.cpp encoder.cpp \
 	recording-datamonitor.cpp recording-monitor.cpp encoder_mp3.cpp encoder_ogg.cpp encoder_pcm.cpp
 librecording_la_LDFLAGS = -module -avoid-version $(KDE_RPATH) $(all_libraries)
+librecording_la_LIBADD = $(LIB_OGG) $(LIB_LAME)
 
 noinst_HEADERS = recording-configuration.h recording.h recording-config.h \
 		reccfg_interfaces.h encoder.h soundstreamevent.h recording-datamonitor.h \

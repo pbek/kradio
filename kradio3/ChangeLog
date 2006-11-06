@@ -1,3 +1,17 @@
+2006-11-06
+
+	emw - fixed a lot in configure.in.in: Made alsa, oss, mp3lame,
+              ogg/vorbis and lirc configurable
+	    - translation number fixes
+	    - fixed hideall/showall bug
+
+2006-11-05
+
+       emw  - adjusted translation structures for to be ready for plugin
+              structure
+            - adjusted icons files and dir structure for plugin structure
+            - updated german translation
+
 2006-10-29
 
        emw  - fixed build system for src directory and inside libs

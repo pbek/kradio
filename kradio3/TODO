@@ -1,9 +1,5 @@
 =========
 
-  * check for libflac in configure
-  * --done-- 48kHz-Support
-  * make ALSA support conditional/configurable in configure script
-
   * double click options for tray icon: select window to open
   * remove time/size from recording monitor when recording is not running
   * fix status display for recording monitor
@@ -16,7 +12,6 @@
   * option for display window type (entry in taskbar or toolbar window)
   * background pixmap for display
   * internet radio streams
-  * translations
   * automatic station icon scaling
   * remote-kradio: run v4l plugin on remote machine, transfer data to
                    local machine
@@ -31,8 +26,13 @@
       - artsd
          
   * tooltips complete?
-  * prepare for translation: check for missing i18n translations?
 
+  * --done-- Bugfix: Window on other desktops remain hidden when hideall is selected
+  * --done-- make ALSA support conditional/configurable in configure script
+  * --dropped-not-used-by-kradio-- check for libflac in configure
+  * --done-- 48kHz-Support
+  * --done-- translations
+  * --done-- prepare for translation: check for missing i18n translations?
   * 48kHz support // DONE
   * support for PVR radio cards, (/dev/video24...) // DONE
   * streaming basic plugin, lateron extendable for internet radio // DONE

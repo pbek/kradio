@@ -469,7 +469,7 @@ void RadioDocking::ShowHideWidgetPlugins()
         for (QMapIterator<WidgetPluginBase*, int> it = m_widgetPluginIDs.begin(); it != m_widgetPluginIDs.end(); ++it) {
             WidgetPluginBase *p = it.key();
             if (p) {
-                bool visible = p->isReallyVisible();
+                bool visible = p->isAnywhereVisible();
                 QString name = p->name();
                 m_widgetsShownCache.insert(name, visible);
                 p->getWidget()->hide();
@@ -482,7 +482,7 @@ void RadioDocking::ShowHideWidgetPlugins()
             WidgetPluginBase *p = it.key();
             QString name = p ? p->name() : QString::null;
             if (p && tmpCache.contains(name) && tmpCache[name]) {
-                p->getWidget()->show();
+                p->showOnOrgDesktop();
             }
         }
         m_widgetsShownCache.clear();

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 02:00+0100\n"
+"POT-Creation-Date: 2006-11-07 00:32+0100\n"
 "PO-Revision-Date: 2004-02-28 22:45+0000\n"
 "Last-Translator: Rafael Rodríguez Martín <apt-drink@telefonica.net>\n"
 "Language-Team: es_ES <kde-es@kybs.de>\n"
@@ -503,18 +503,18 @@ msgstr "desconocido"
 msgid "canDecode = true"
 msgstr ""
 
-#: radio-stations/frequencyradiostation.cpp:118
+#: radio-stations/frequencyradiostation.cpp:120
 #: radio-stations/internetradiostation.cpp:118
 #, fuzzy
 msgid "%1, %2"
 msgstr "%1 %2, %3"
 
-#: radio-stations/frequencyradiostation.cpp:132
+#: radio-stations/frequencyradiostation.cpp:134
 #, fuzzy
 msgid "%1 MHz"
 msgstr " kHz"
 
-#: radio-stations/frequencyradiostation.cpp:134
+#: radio-stations/frequencyradiostation.cpp:136
 #, fuzzy
 msgid "%1 kHz"
 msgstr " kHz"

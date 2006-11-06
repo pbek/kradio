@@ -54,14 +54,14 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
     connect(m_checkboxPreRecordingEnable, SIGNAL(toggled(bool)),                SLOT(slotSetDirty()));
 
 // attention: remove items with higher index first ;-) otherwise indexes are not valid
-#if !defined(HAVE_VORBIS_VORBISENC_H) || !defined(HAVE_OGG_OGG_H)
+#ifndef HAVE_OGG
     editFileFormat->removeItem(FORMAT_OGG_IDX_ORG);
     delete editOggQuality;
     editOggQuality = NULL;
     delete labelOggQuality;
     labelOggQuality = NULL;
 #endif
-#ifndef HAVE_LAME_LAME_H
+#ifndef HAVE_LAME
     editFileFormat->removeItem(FORMAT_MP3_IDX_ORG);
     delete editMP3Quality;
     editMP3Quality = NULL;
@@ -125,10 +125,10 @@ void RecordingConfiguration::setGUIOutputFormat(const RecordingConfig &c)
         case RecordingConfig::outputAIFF: editFileFormat->setCurrentItem(FORMAT_AIFF_IDX); break;
         case RecordingConfig::outputAU:   editFileFormat->setCurrentItem(FORMAT_AU_IDX);   break;
         case RecordingConfig::outputRAW:  editFileFormat->setCurrentItem(FORMAT_RAW_IDX);  break;
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
         case RecordingConfig::outputMP3:  editFileFormat->setCurrentItem(FORMAT_MP3_IDX);  break;
 #endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
         case RecordingConfig::outputOGG:  editFileFormat->setCurrentItem(FORMAT_OGG_IDX);  break;
 #endif
         default:                          editFileFormat->setCurrentItem(FORMAT_WAV_IDX);  break;
@@ -137,10 +137,10 @@ void RecordingConfiguration::setGUIOutputFormat(const RecordingConfig &c)
 
 void RecordingConfiguration::setGUIEncoderQuality(const RecordingConfig &c)
 {
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     editMP3Quality->setValue(c.m_mp3Quality);
 #endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     editOggQuality->setValue((int)(c.m_oggQuality * 9));
 #endif
 }
@@ -204,18 +204,18 @@ void RecordingConfiguration::storeConfig()
         case FORMAT_AIFF_IDX: c.m_OutputFormat = RecordingConfig::outputAIFF; break;
         case FORMAT_AU_IDX:   c.m_OutputFormat = RecordingConfig::outputAU;   break;
         case FORMAT_RAW_IDX:  c.m_OutputFormat = RecordingConfig::outputRAW;  break;
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
         case FORMAT_MP3_IDX:  c.m_OutputFormat = RecordingConfig::outputMP3;  break;
 #endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
         case FORMAT_OGG_IDX:  c.m_OutputFormat = RecordingConfig::outputOGG;  break;
 #endif
         default:              c.m_OutputFormat = RecordingConfig::outputWAV;  break;
     }
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     c.m_mp3Quality = editMP3Quality->value();
 #endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     c.m_oggQuality = ((float)editOggQuality->value()) / 9.0f;
 #endif
 
@@ -243,11 +243,11 @@ void RecordingConfiguration::slotFormatSelectionChanged()
     int endianTest = 0x04030201;
     bool littleEndian = ((char*)&endianTest)[0] == 0x01;
 
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     editMP3Quality ->setEnabled(false);
     labelMP3Quality->setEnabled(false);
 #endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     editOggQuality ->setEnabled(false);
     labelOggQuality->setEnabled(false);
 #endif
@@ -259,7 +259,7 @@ void RecordingConfiguration::slotFormatSelectionChanged()
         editBits->setCurrentItem(BITS_16_IDX);
         editSign->setDisabled(true);
         editSign->setCurrentItem(SIGN_SIGNED_IDX);
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
         editMP3Quality ->setEnabled(true);
         labelMP3Quality->setEnabled(true);
 #endif
@@ -268,7 +268,7 @@ void RecordingConfiguration::slotFormatSelectionChanged()
         editBits->setCurrentItem(BITS_16_IDX);
         editSign->setDisabled(true);
         editSign->setCurrentItem(SIGN_SIGNED_IDX);
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
         editOggQuality ->setEnabled(true);
         labelOggQuality->setEnabled(true);
 #endif
@@ -290,14 +290,18 @@ void RecordingConfiguration::slotFormatSelectionChanged()
         case FORMAT_RAW_IDX :
             editEndianess->setDisabled(false);
             break;
+#ifdef HAVE_LAME
         case FORMAT_MP3_IDX :
             editEndianess->setCurrentItem(littleEndian ? ENDIAN_LITTLE_IDX : ENDIAN_BIG_IDX);
             editEndianess->setDisabled(true);
             break;
+#endif
+#ifdef HAVE_OGG
         case FORMAT_OGG_IDX :
             editEndianess->setCurrentItem(littleEndian ? ENDIAN_LITTLE_IDX : ENDIAN_BIG_IDX);
             editEndianess->setDisabled(true);
             break;
+#endif
         default:
             editEndianess->setDisabled(true);
             if (formatIDX == FORMAT_AIFF_IDX || formatIDX == FORMAT_AU_IDX) {

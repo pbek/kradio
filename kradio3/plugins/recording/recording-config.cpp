@@ -82,11 +82,11 @@ void  RecordingConfig::restoreConfig(KConfig *c)
         m_OutputFormat = outputAIFF;
     else if (of == ".au")
         m_OutputFormat = outputAU;
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     else if (of == ".mp3")
         m_OutputFormat = outputMP3;
 #endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     else if (of == ".ogg")
         m_OutputFormat = outputOGG;
 #endif

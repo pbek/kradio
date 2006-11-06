@@ -66,6 +66,16 @@ bool WidgetPluginBase::isReallyVisible(const QWidget *_w) const
 }
 
 
+bool WidgetPluginBase::isAnywhereVisible(const QWidget *_w) const
+{
+    const QWidget *w = _w ? _w : getWidget();
+    if (!w) return false;
+    KWin::WindowInfo i = KWin::WindowInfo(w->winId(), 0, 0);
+    return (i.mappingState() == NET::Visible)
+            && w->isVisible();
+}
+
+
 void WidgetPluginBase::pShow(bool on)
 {
     QWidget *w = getWidget();
@@ -87,6 +97,22 @@ void WidgetPluginBase::pToggleShown()
         w->hide();
 }
 
+
+void WidgetPluginBase::showOnOrgDesktop()
+{
+    if (m_geoCacheValid && (!isReallyVisible() || m_geoRestoreFlag) ) {
+        QWidget *w = getWidget();
+        if (!w) return;
+        WId  id = w->winId();
+
+        KWin::setOnAllDesktops(id, m_saveSticky);
+        if (!m_saveSticky)
+            KWin::setOnDesktop(id, m_saveDesktop);
+
+        w->resize(m_saveGeometry.size());
+        w->move(m_saveGeometry.topLeft());
+    }
+}
 
 void WidgetPluginBase::pShow()
 {

@@ -24,7 +24,7 @@
 
 #include "encoder.h"
 
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     #include <vorbis/vorbisenc.h>
 #endif
 
@@ -40,7 +40,7 @@ public:
 protected:
     void               encode(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
 
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     FILE              *m_OggOutput;
     char              *m_OggExportBuffer;
     size_t             m_OggExportBufferSize;

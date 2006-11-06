@@ -24,7 +24,7 @@ RecordingEncodingOgg::RecordingEncodingOgg(QObject *parent,            SoundStre
                                            const RecordingConfig &cfg, const RadioStation *rs,
                                            const QString &filename)
     : RecordingEncoding(parent, ssid, cfg, rs, filename)
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
       ,
       m_OggOutput(NULL),
       m_OggExportBuffer(NULL),
@@ -47,7 +47,7 @@ void RecordingEncodingOgg::encode(const char *_buffer, size_t buffer_size, char 
     if (m_error)
         return;
 
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     SoundFormat &sf = m_config.m_SoundFormat;
     ogg_page     ogg_pg;
     ogg_packet   ogg_pkt;
@@ -117,6 +117,7 @@ void RecordingEncodingOgg::encode(const char *_buffer, size_t buffer_size, char 
 }
 
 
+#ifdef HAVE_OGG
 static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, const QString &value)
 {
     char *stag   = strdup(tag.ascii());
@@ -125,11 +126,11 @@ static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, c
     delete stag;
     delete svalue;
 }
-
+#endif
 
 bool RecordingEncodingOgg::openOutput(const QString &output)
 {
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     m_OggOutput = fopen(output.ascii(), "wb+");
     if (!m_OggOutput) {
         m_errorString += i18n("Cannot open Ogg/Vorbis output file %1. ").arg(output);
@@ -223,7 +224,7 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
 
 void RecordingEncodingOgg::closeOutput()
 {
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     if (m_OggOutput) {
 
         char     *tmp_buf  = NULL;

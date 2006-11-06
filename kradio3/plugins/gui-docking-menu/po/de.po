@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 01:20+0100\n"
+"POT-Creation-Date: 2006-11-06 23:20+0100\n"
 "PO-Revision-Date: 2006-11-06 00:36+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -105,7 +105,6 @@ msgid "invalid station"
 msgstr "ungültiger Sender"
 
 #: docking.cpp:406
-#, c-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 

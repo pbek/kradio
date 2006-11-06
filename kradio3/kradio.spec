@@ -11,7 +11,7 @@ Vendor:    Martin Witte <witte@kawo1.rwth-aachen.de>
 Packager:  Martin Witte <witte@kawo1.rwth-aachen.de>
 Url:       http://sourceforge.net/projects/kradio
 Group:     kde3
-Source:    kradio-%version.tar.bz2
+Source:    kradio-%version.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description

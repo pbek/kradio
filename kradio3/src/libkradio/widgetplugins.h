@@ -40,6 +40,8 @@ public :
     virtual const QWidget *getWidget() const;
 
     virtual bool           isReallyVisible(const QWidget *w = NULL) const;
+    virtual bool           isAnywhereVisible(const QWidget *w = NULL) const;
+    virtual void           showOnOrgDesktop ();
 
 protected:
     virtual void pShow ();

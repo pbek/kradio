@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 00:27+0100\n"
+"POT-Creation-Date: 2006-11-07 00:32+0100\n"
 "PO-Revision-Date: 2006-11-05 23:47+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -495,16 +495,16 @@ msgstr "unbekannt"
 msgid "canDecode = true"
 msgstr "canDecode = true"
 
-#: radio-stations/frequencyradiostation.cpp:118
+#: radio-stations/frequencyradiostation.cpp:120
 #: radio-stations/internetradiostation.cpp:118
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: radio-stations/frequencyradiostation.cpp:132
+#: radio-stations/frequencyradiostation.cpp:134
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: radio-stations/frequencyradiostation.cpp:134
+#: radio-stations/frequencyradiostation.cpp:136
 msgid "%1 kHz"
 msgstr "%1 kHz"
 

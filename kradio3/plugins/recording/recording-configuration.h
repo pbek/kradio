@@ -55,7 +55,7 @@
 #define FORMAT_OGG_IDX_ORG  5
 
 
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     #define FORMAT_MP3_IDX      NEXT_IDX1
     #define NEXT_IDX2           (NEXT_IDX1+1)
 #else
@@ -63,7 +63,7 @@
     #define NEXT_IDX2           NEXT_IDX1
 #endif
 
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
     #define FORMAT_OGG_IDX      NEXT_IDX2
     #define NEXT_IDX3           (NEXT_IDX2+1)
 #else

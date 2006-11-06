@@ -24,7 +24,7 @@
 
 #include "encoder.h"
 
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     #include <lame/lame.h>
 #endif
 
@@ -40,7 +40,7 @@ public:
 protected:
     void               encode(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
 
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     unsigned char     *m_MP3Buffer;
     size_t            m_MP3BufferSize;
     FILE              *m_MP3Output;

@@ -24,7 +24,7 @@ RecordingEncodingMP3::RecordingEncodingMP3(QObject *parent,            SoundStre
                                            const RecordingConfig &cfg, const RadioStation *rs,
                                            const QString &filename)
     : RecordingEncoding(parent, ssid, cfg, rs, filename)
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
       ,
       m_MP3Buffer(NULL),
       m_MP3BufferSize(0),
@@ -54,7 +54,7 @@ void RecordingEncodingMP3::encode(const char *_buffer, size_t buffer_size, char 
     if (m_error)
         return;
 
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
             short int *buffer = (short int*)_buffer;
             size_t j       = 0,
                    j_inc   = (m_config.m_SoundFormat.m_Channels == 1) ? 1 : 2,
@@ -97,7 +97,7 @@ void RecordingEncodingMP3::encode(const char *_buffer, size_t buffer_size, char 
 
 bool RecordingEncodingMP3::openOutput(const QString &output)
 {
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
 //         m_output = NULL;
         m_LAMEFlags = lame_init();
 
@@ -178,7 +178,7 @@ bool RecordingEncodingMP3::openOutput(const QString &output)
 
 void RecordingEncodingMP3::closeOutput()
 {
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
     if (m_LAMEFlags) {
         if (m_config.m_OutputFormat == RecordingConfig::outputMP3) {
             int n = lame_encode_flush(m_LAMEFlags,

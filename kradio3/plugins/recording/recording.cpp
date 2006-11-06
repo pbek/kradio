@@ -515,10 +515,10 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
         case RecordingConfig::outputWAV:  ext = ".wav";  break;
         case RecordingConfig::outputAIFF: ext = ".aiff"; break;
         case RecordingConfig::outputAU:   ext = ".au";   break;
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
         case RecordingConfig::outputMP3:  ext = ".mp3";  break;
 #endif
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
         case RecordingConfig::outputOGG:  ext = ".ogg";  break;
 #endif
         case RecordingConfig::outputRAW:  ext = ".raw";  break;
@@ -545,12 +545,12 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
 
     RecordingEncoding *thread = NULL;
     switch (m_config.m_OutputFormat) {
-#ifdef HAVE_LAME_LAME_H
+#ifdef HAVE_LAME
         case RecordingConfig::outputMP3:
             thread = new RecordingEncodingMP3(this, ssid, cfg, rs, output);
             break;
 #endif
-#if defined(HAVE_VORBIS_VORBISENC_H) && defined(HAVE_OGG_OGG_H)
+#ifdef HAVE_OGG
         case RecordingConfig::outputOGG:
             thread = new RecordingEncodingOgg(this, ssid, cfg, rs, output);
             break;

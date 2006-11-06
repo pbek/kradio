@@ -10,7 +10,7 @@ noinst_HEADERS = alsa-sound.h alsa-sound-configuration.h alsa-mixer-element.h \
 libalsa_sound_la_SOURCES = alsa-sound.cpp alsa-sound-configuration-ui.ui \
 				alsa-sound-configuration.cpp alsa-mixer-element-ui.ui alsa-mixer-element.cpp \
 		alsa-config-mixer-setting.cpp
-libalsa_sound_la_LIBADD = -lasound
+libalsa_sound_la_LIBADD = $(LIB_ALSA)
 
 #messages: rc.cpp
 #	$(XGETTEXT) *.cpp *.h -o po/kradio-alsa-sound.pot

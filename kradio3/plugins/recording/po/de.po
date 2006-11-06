@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 01:20+0100\n"
+"POT-Creation-Date: 2006-11-07 00:32+0100\n"
 "PO-Revision-Date: 2006-11-06 00:57+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -292,17 +292,17 @@ msgstr ""
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Das schreiben der Ogg/Vorbis-Daten schlug fehl. "
 
-#: encoder_ogg.cpp:135
+#: encoder_ogg.cpp:136
 msgid "Cannot open Ogg/Vorbis output file %1. "
 msgstr "Die Ogg/Vorbis-Ausgabedatei %1 konnte nicht geöffnet werden. "
 
-#: encoder_ogg.cpp:148
+#: encoder_ogg.cpp:149
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
 msgstr ""
 "Die Initialisierung des Ogg/Vorbis-Modes schlug fehl: Ungültiger Qualitäts-"
 "Parameter\n"
 
-#: encoder_ogg.cpp:199
+#: encoder_ogg.cpp:200
 msgid "Failed writing Ogg/Vorbis header to output stream\n"
 msgstr "Das Schreiben der Ogg/Vorbis-Kopfdaten der Ausgabedatei schlug fehl\n"
 
