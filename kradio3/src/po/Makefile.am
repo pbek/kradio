@@ -1,1 +1,2 @@
 POFILES = AUTO
+PACKAGE = kradio
