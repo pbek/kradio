@@ -1,9 +1,10 @@
-2006-11-06
+2006-11-07
 
 	emw - fixed a lot in configure.in.in: Made alsa, oss, mp3lame,
               ogg/vorbis and lirc configurable
 	    - translation number fixes
-	    - fixed hideall/showall bug
+        - i18n fixes
+	    - fixed quite a lot hideall/showall bugs
 
 2006-11-05
 
