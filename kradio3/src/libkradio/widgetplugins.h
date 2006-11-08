@@ -36,14 +36,15 @@ public :
     virtual void     restoreState (KConfig *, bool showByDefault);
     virtual void     startPlugin();
 
-    virtual       QWidget *getWidget();
-    virtual const QWidget *getWidget() const;
+    virtual       QWidget *getWidget() = 0;
+    virtual const QWidget *getWidget() const = 0;
 
     virtual bool           isReallyVisible(const QWidget *w = NULL) const;
     virtual bool           isAnywhereVisible(const QWidget *w = NULL) const;
-    virtual void           showOnOrgDesktop ();
+    virtual void           showOnOrgDesktop () = 0;
 
 protected:
+    virtual void pShowOnOrgDesktop ();
     virtual void pShow ();
     virtual void pShow (bool show);
     virtual void pHide ();

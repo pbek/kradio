@@ -185,6 +185,12 @@ void RecordingMonitor::show()
 }
 
 
+void RecordingMonitor::showOnOrgDesktop()
+{
+    WidgetPluginBase::pShowOnOrgDesktop();
+    QWidget::show();
+}
+
 void RecordingMonitor::hide()
 {
     WidgetPluginBase::pHide();
@@ -196,8 +202,8 @@ void RecordingMonitor::showEvent(QShowEvent *e)
 {
     QWidget::showEvent(e);
     WidgetPluginBase::pShowEvent(e);
-    m_comboSoundStreamSelector->setCurrentItem(1);
-    slotStreamSelected(1);
+    //m_comboSoundStreamSelector->setCurrentItem(1);
+    //slotStreamSelected(1);
 }
 
 

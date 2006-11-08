@@ -22,6 +22,7 @@
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <kurl.h>
+#include <klocale.h>
 
 #include "streaming-job.h"
 #include "streaming-configuration.h"

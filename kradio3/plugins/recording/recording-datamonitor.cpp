@@ -27,6 +27,8 @@
 #include <limits.h>
 #include <stdlib.h>
 
+#include <klocale.h>
+
 #define CHANNEL_H_MIN   20
 #define BLOCK_W_MIN     10
 #define W_MIN           (20 * (BLOCK_W_MIN))

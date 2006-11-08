@@ -336,6 +336,14 @@ void QuickBar::show()
     QWidget::show();
 }
 
+
+void QuickBar::showOnOrgDesktop()
+{
+    WidgetPluginBase::pShowOnOrgDesktop();
+    QWidget::show();
+}
+
+
 void QuickBar::hide()
 {
     WidgetPluginBase::pHide();

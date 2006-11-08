@@ -47,15 +47,15 @@ public:
     virtual void   restoreState (KConfig *);
 
 public slots:
-    virtual void     show ();
-    virtual void     hide ();
+    virtual void     showOnOrgDesktop();
+    virtual void     show();
+    virtual void     hide();
     virtual void     toggleShown () { WidgetPluginBase::pToggleShown(); }
 
-public:
-    virtual       QWidget *getWidget()       { return this; }
-    virtual const QWidget *getWidget() const { return this; }
-
 protected:
+                  QWidget *getWidget()       { return this; }
+            const QWidget *getWidget() const { return this; }
+
     virtual void showEvent(QShowEvent *);
     virtual void hideEvent(QHideEvent *);
 

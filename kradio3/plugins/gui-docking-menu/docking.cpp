@@ -23,6 +23,7 @@
 #include <kdialogbase.h>
 #include <kaboutdata.h>
 #include <kconfig.h>
+#include <kwin.h>
 
 #include "../../src/interfaces/radiodevice_interfaces.h"
 #include "../../src/libkradio/stationlist.h"
@@ -471,6 +472,7 @@ void RadioDocking::ShowHideWidgetPlugins()
             if (p) {
                 bool visible = p->isAnywhereVisible();
                 QString name = p->name();
+                logDebug(QString("visibility of %1: %2").arg(name).arg(visible));
                 m_widgetsShownCache.insert(name, visible);
                 p->getWidget()->hide();
             }
@@ -478,6 +480,7 @@ void RadioDocking::ShowHideWidgetPlugins()
     }
     else {
         QMap<QString, bool> tmpCache = m_widgetsShownCache;
+        int d = KWin::currentDesktop();
         for (QMapIterator<WidgetPluginBase*, int> it = m_widgetPluginIDs.begin(); it != m_widgetPluginIDs.end(); ++it) {
             WidgetPluginBase *p = it.key();
             QString name = p ? p->name() : QString::null;
@@ -486,6 +489,7 @@ void RadioDocking::ShowHideWidgetPlugins()
             }
         }
         m_widgetsShownCache.clear();
+        KWin::setCurrentDesktop(d);
     }
 }
 

@@ -79,6 +79,7 @@ public:
 public slots:
 
     void    toggleShown() { WidgetPluginBase::pToggleShown(); }
+    void    showOnOrgDesktop();
     void    show();
     void    hide();
 

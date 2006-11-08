@@ -68,6 +68,13 @@ void PluginConfigurationDialog::show()
 }
 
 
+void PluginConfigurationDialog::showOnOrgDesktop()
+{
+    WidgetPluginBase::pShowOnOrgDesktop();
+    KDialogBase::show();
+}
+
+
 void PluginConfigurationDialog::hide()
 {
     WidgetPluginBase::pHide();

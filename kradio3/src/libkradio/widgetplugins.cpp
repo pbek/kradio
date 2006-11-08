@@ -35,7 +35,7 @@ WidgetPluginBase::WidgetPluginBase(const QString &name, const QString &descripti
 {
 }
 
-
+/*
 QWidget *WidgetPluginBase::getWidget()
 {
     return dynamic_cast<QWidget*>(this);
@@ -46,7 +46,7 @@ const QWidget *WidgetPluginBase::getWidget() const
 {
     return dynamic_cast<const QWidget*>(this);
 }
-
+*/
 
 void WidgetPluginBase::notifyManager(bool shown)
 {
@@ -70,9 +70,7 @@ bool WidgetPluginBase::isAnywhereVisible(const QWidget *_w) const
 {
     const QWidget *w = _w ? _w : getWidget();
     if (!w) return false;
-    KWin::WindowInfo i = KWin::WindowInfo(w->winId(), 0, 0);
-    return (i.mappingState() == NET::Visible)
-            && w->isVisible();
+    return w->isVisible();
 }
 
 
@@ -98,25 +96,32 @@ void WidgetPluginBase::pToggleShown()
 }
 
 
-void WidgetPluginBase::showOnOrgDesktop()
+void WidgetPluginBase::pShowOnOrgDesktop()
 {
+    logDebug(QString("%1::pShowOnOrgDesktop: all: %2, desktop: %3, visible:%4, anywherevisible:%5, cachevalid: %6").arg(name()).arg(m_saveSticky).arg(m_saveDesktop).arg(isReallyVisible()).arg(isAnywhereVisible()).arg(m_geoCacheValid));
     if (m_geoCacheValid && (!isReallyVisible() || m_geoRestoreFlag) ) {
         QWidget *w = getWidget();
         if (!w) return;
         WId  id = w->winId();
 
         KWin::setOnAllDesktops(id, m_saveSticky);
-        if (!m_saveSticky)
+        if (!m_saveSticky) {
             KWin::setOnDesktop(id, m_saveDesktop);
+        }
 
         w->resize(m_saveGeometry.size());
         w->move(m_saveGeometry.topLeft());
-        w->show();
+
+        KWin::deIconifyWindow(id);
+
+        KWin::setMainWindow(getWidget(), 0);
+        //w->show();
     }
 }
 
 void WidgetPluginBase::pShow()
 {
+    logDebug(QString("%1::pShow: all: %2, desktop: %3, visible:%4, anywherevisible:%5, cachevalid: %6").arg(name()).arg(m_saveSticky).arg(m_saveDesktop).arg(isReallyVisible()).arg(isAnywhereVisible()).arg(m_geoCacheValid));
     if (m_geoCacheValid && (!isReallyVisible() || m_geoRestoreFlag) ) {
         QWidget *w = getWidget();
         if (!w) return;
@@ -128,13 +133,16 @@ void WidgetPluginBase::pShow()
 
         w->resize(m_saveGeometry.size());
         w->move(m_saveGeometry.topLeft());
+        KWin::setMainWindow(getWidget(), 0);
     }
 }
 
 
 void WidgetPluginBase::pHide()
 {
+    logDebug(QString("%1::pHide1: all: %2, desktop: %3, visible:%4, anywherevisible:%5, cachevalid: %6").arg(name()).arg(m_saveSticky).arg(m_saveDesktop).arg(isReallyVisible()).arg(isAnywhereVisible()).arg(m_geoCacheValid));
     getKWinState();
+    logDebug(QString("%1::pHide2: all: %2, desktop: %3, visible:%4, anywherevisible:%5, cachevalid: %6").arg(name()).arg(m_saveSticky).arg(m_saveDesktop).arg(isReallyVisible()).arg(isAnywhereVisible()).arg(m_geoCacheValid));
 }
 
 

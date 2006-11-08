@@ -766,6 +766,14 @@ void RadioView::show()
 }
 
 
+void RadioView::showOnOrgDesktop()
+{
+    WidgetPluginBase::pShowOnOrgDesktop();
+    QWidget::show();
+}
+
+
+
 void RadioView::hide()
 {
     WidgetPluginBase::pHide();

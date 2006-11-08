@@ -109,6 +109,7 @@ public slots:
     void    toggleShown() { WidgetPluginBase::pToggleShown(); }
     void    show();
     void    hide();
+    void    showOnOrgDesktop();
     void    setGeometry (const QRect &r);
     void    setGeometry (int x, int y, int w, int h);
 

@@ -19,6 +19,7 @@
 
 #include <qstring.h>
 #include <unistd.h>
+#include <klocale.h>
 
 FileRingBuffer::FileRingBuffer(const QString &filename, Q_UINT64 max_size)
 {

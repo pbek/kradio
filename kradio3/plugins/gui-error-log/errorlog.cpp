@@ -154,8 +154,15 @@ void ErrorLog::show()
     KDialogBase::show();
 }
 
+void ErrorLog::showOnOrgDesktop()
+{
+    WidgetPluginBase::pShowOnOrgDesktop();
+    KDialogBase::show();
+}
+
 void ErrorLog::hide()
 {
+    logDebug(QString("%1, ErrorLog::hide: all: %2, desktop: %3, visible:%4, anywherevisible:%5, cachevalid: %6").arg(name()).arg(m_saveSticky).arg(m_saveDesktop).arg(isReallyVisible()).arg(isAnywhereVisible()).arg(m_geoCacheValid));
     WidgetPluginBase::pHide();
     KDialogBase::hide();
 }

@@ -53,6 +53,7 @@ protected :
 
 public slots:
             void toggleShown() { WidgetPluginBase::pToggleShown(); }
+    virtual void showOnOrgDesktop();
     virtual void show();
     virtual void hide();
     virtual void cancel() { slotCancel(); }
