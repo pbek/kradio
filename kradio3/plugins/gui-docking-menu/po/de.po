@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 23:20+0100\n"
+"POT-Creation-Date: 2006-11-10 23:20+0100\n"
 "PO-Revision-Date: 2006-11-06 00:36+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -40,78 +40,78 @@ msgstr "Alle Fenster anzeigen/verstecken"
 msgid "Power On/Off"
 msgstr "Ein/Ausschalten"
 
-#: docking.cpp:43
+#: docking.cpp:44
 msgid "Tray Menu for KRadio"
 msgstr "Kontrollleistenmenü für KRadio"
 
-#: docking.cpp:49
+#: docking.cpp:50
 msgid "Docking Plugin"
 msgstr "Plugin für die Kontrolleiste"
 
-#: docking.cpp:179
+#: docking.cpp:180
 msgid "Docking Menu"
 msgstr "Kontrolleisten-Menü"
 
-#: docking.cpp:180
+#: docking.cpp:181
 msgid "Docking Menu Configuration"
 msgstr "Konfiguration des Kontrollleisten-Menüs"
 
-#: docking.cpp:227
+#: docking.cpp:228
 msgid "Search Next Station"
 msgstr "Suche nächsten Sender"
 
-#: docking.cpp:229
+#: docking.cpp:230
 msgid "Search Previous Station"
 msgstr "Suche vorherigen Sender"
 
-#: docking.cpp:234
+#: docking.cpp:235
 msgid "Recording"
 msgstr "Aufnahme"
 
-#: docking.cpp:239
+#: docking.cpp:240
 msgid "Pause Radio"
 msgstr "Radiowiedergabe pausieren"
 
-#: docking.cpp:251
+#: docking.cpp:252
 msgid "Show/Hide Plugins"
 msgstr "Plugins anzeigen/verstecken"
 
-#: docking.cpp:353
+#: docking.cpp:354
 msgid "next alarm: %1"
 msgstr "Nächstes Wecken: %1"
 
-#: docking.cpp:355
+#: docking.cpp:356
 msgid "<no alarm pending>"
 msgstr "<Wecker nicht aktiv>"
 
-#: docking.cpp:363
+#: docking.cpp:364
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Schlummermodus abbrechen (liefe bis %1)"
 
-#: docking.cpp:365 docking.cpp:372 docking.cpp:379
+#: docking.cpp:366 docking.cpp:373 docking.cpp:380
 msgid "Start Sleep Countdown"
 msgstr "Schlummermodus einschalten"
 
-#: docking.cpp:387
+#: docking.cpp:388
 msgid "Power Off"
 msgstr "Ausschalten"
 
-#: docking.cpp:387
+#: docking.cpp:388
 msgid "Power On"
 msgstr "Einschalten"
 
-#: docking.cpp:401
+#: docking.cpp:402
 msgid "invalid station"
 msgstr "ungültiger Sender"
 
-#: docking.cpp:406
+#: docking.cpp:407
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:539 docking.cpp:612 docking.cpp:632
+#: docking.cpp:543 docking.cpp:616 docking.cpp:636
 msgid "Stop Recording of %1"
 msgstr "Aufnahme %1 abbrechen"
 
-#: docking.cpp:595
+#: docking.cpp:599
 msgid "Start Recording"
 msgstr "Aufnahme starten"

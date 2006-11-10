@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-07 00:32+0100\n"
+"POT-Creation-Date: 2006-11-10 23:20+0100\n"
 "PO-Revision-Date: 2006-11-05 23:47+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -164,25 +164,25 @@ msgstr "%1 Information: %2\n"
 msgid "%1 Debug: %2\n"
 msgstr "%1 Debug: %2\n"
 
-#: libkradio/fileringbuffer.cpp:34 libkradio/fileringbuffer.cpp:67
+#: libkradio/fileringbuffer.cpp:35 libkradio/fileringbuffer.cpp:68
 msgid "cannot open buffer file %1"
 msgstr "kann die Puffer-Datei %1 nicht öffnen"
 
-#: libkradio/fileringbuffer.cpp:92
+#: libkradio/fileringbuffer.cpp:93
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
 msgstr ""
 "FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
 
-#: libkradio/fileringbuffer.cpp:98
+#: libkradio/fileringbuffer.cpp:99
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
 msgstr ""
 "FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
 
-#: libkradio/fileringbuffer.cpp:126 libkradio/fileringbuffer.cpp:144
+#: libkradio/fileringbuffer.cpp:127 libkradio/fileringbuffer.cpp:145
 msgid "FileRingBuffer::addData: failed writing data to file %1."
 msgstr "FileRingBuffer::addData: Das Schreiben in die Datei %1 schlug fehl."
 
-#: libkradio/fileringbuffer.cpp:167
+#: libkradio/fileringbuffer.cpp:168
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: Das Lesen aus der Datei %1 schlug fehl."
 
@@ -491,7 +491,7 @@ msgstr "<p align=\"right\">%1</p>"
 msgid "unknown"
 msgstr "unbekannt"
 
-#: libkradio-gui/station-drag-object.cpp:69
+#: libkradio-gui/station-drag-object.cpp:70
 msgid "canDecode = true"
 msgstr "canDecode = true"
 

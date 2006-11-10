@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 01:20+0100\n"
+"POT-Creation-Date: 2006-11-10 23:20+0100\n"
 "PO-Revision-Date: 2006-11-06 01:15+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -48,22 +48,22 @@ msgstr "Fehler"
 msgid "Debugging"
 msgstr "Debugging"
 
-#: errorlog.cpp:212
+#: errorlog.cpp:219
 msgid "Log Files"
 msgstr "Protokoll-Dateien"
 
-#: errorlog.cpp:214
+#: errorlog.cpp:221
 msgid "Select Log File"
 msgstr "Auswahl der Protokolldatei"
 
-#: errorlog.cpp:218
+#: errorlog.cpp:225
 msgid "Save KRadio Logging Data as ..."
 msgstr "KRadio-Fehlerprotokoll sichern untern ..."
 
-#: errorlog.cpp:240
+#: errorlog.cpp:247
 msgid "error writing to tempfile %1"
 msgstr "Fehler beim schreiben in die temporäre Datei %1"
 
-#: errorlog.cpp:249
+#: errorlog.cpp:256
 msgid "error uploading preset file %1"
 msgstr "Fehler beim Upload der Senderdatei %1"

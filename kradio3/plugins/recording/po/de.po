@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-07 00:32+0100\n"
+"POT-Creation-Date: 2006-11-10 23:20+0100\n"
 "PO-Revision-Date: 2006-11-06 00:57+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -306,7 +306,7 @@ msgstr ""
 msgid "Failed writing Ogg/Vorbis header to output stream\n"
 msgstr "Das Schreiben der Ogg/Vorbis-Kopfdaten der Ausgabedatei schlug fehl\n"
 
-#: recording-datamonitor.cpp:172 recording-datamonitor.cpp:177
+#: recording-datamonitor.cpp:174 recording-datamonitor.cpp:179
 msgid "%1 dB"
 msgstr "%1 dB"
 
@@ -343,8 +343,8 @@ msgstr "Dateigröße"
 msgid "Recording Time"
 msgstr "Aufnahmezeit"
 
-#: recording-monitor.cpp:57 recording-monitor.cpp:387
-#: recording-monitor.cpp:390
+#: recording-monitor.cpp:57 recording-monitor.cpp:393
+#: recording-monitor.cpp:396
 msgid "&Record"
 msgstr "&Aufnehmen"
 
@@ -353,27 +353,27 @@ msgstr "&Aufnehmen"
 msgid "nothing"
 msgstr "nichts"
 
-#: recording-monitor.cpp:333
+#: recording-monitor.cpp:339
 msgid "%1 Byte"
 msgstr "%1 Byte"
 
-#: recording-monitor.cpp:334
+#: recording-monitor.cpp:340
 msgid "%1 kB"
 msgstr "%1 kB"
 
-#: recording-monitor.cpp:335
+#: recording-monitor.cpp:341
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: recording-monitor.cpp:336
+#: recording-monitor.cpp:342
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: recording-monitor.cpp:339
+#: recording-monitor.cpp:345
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
-#: recording-monitor.cpp:387
+#: recording-monitor.cpp:393
 msgid "&Stop Recording"
 msgstr "Aufnahme anhalten"
 

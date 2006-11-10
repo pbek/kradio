@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-07 00:32+0100\n"
+"POT-Creation-Date: 2006-11-10 23:20+0100\n"
 "PO-Revision-Date: 2004-02-28 22:45+0000\n"
 "Last-Translator: Rafael Rodríguez Martín <apt-drink@telefonica.net>\n"
 "Language-Team: es_ES <kde-es@kybs.de>\n"
@@ -167,24 +167,24 @@ msgstr ""
 msgid "%1 Debug: %2\n"
 msgstr ""
 
-#: libkradio/fileringbuffer.cpp:34 libkradio/fileringbuffer.cpp:67
+#: libkradio/fileringbuffer.cpp:35 libkradio/fileringbuffer.cpp:68
 #, fuzzy
 msgid "cannot open buffer file %1"
 msgstr "No se puede abrir el archivo de salida %1. "
 
-#: libkradio/fileringbuffer.cpp:92
+#: libkradio/fileringbuffer.cpp:93
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
 msgstr ""
 
-#: libkradio/fileringbuffer.cpp:98
+#: libkradio/fileringbuffer.cpp:99
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
 msgstr ""
 
-#: libkradio/fileringbuffer.cpp:126 libkradio/fileringbuffer.cpp:144
+#: libkradio/fileringbuffer.cpp:127 libkradio/fileringbuffer.cpp:145
 msgid "FileRingBuffer::addData: failed writing data to file %1."
 msgstr ""
 
-#: libkradio/fileringbuffer.cpp:167
+#: libkradio/fileringbuffer.cpp:168
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr ""
 
@@ -499,7 +499,7 @@ msgstr "<p align=\"right\">nada aquí</p>"
 msgid "unknown"
 msgstr "desconocido"
 
-#: libkradio-gui/station-drag-object.cpp:69
+#: libkradio-gui/station-drag-object.cpp:70
 msgid "canDecode = true"
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio-streaming\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 01:20+0100\n"
+"POT-Creation-Date: 2006-11-10 23:30+0100\n"
 "PO-Revision-Date: 2006-11-06 00:44+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -181,7 +181,7 @@ msgstr "Vorzeichenbehaftet"
 msgid "Unsigned"
 msgstr "Vorzeichenlos"
 
-#: streaming-configuration.cpp:153 streaming-configuration.cpp:257
+#: streaming-configuration.cpp:155 streaming-configuration.cpp:259
 msgid "new channel"
 msgstr "Neuer Kanal"
 
@@ -189,33 +189,33 @@ msgstr "Neuer Kanal"
 msgid "skipped %1 bytes"
 msgstr "%1 bytes wurden übersprungen"
 
-#: streaming.cpp:32
+#: streaming.cpp:33
 msgid "Streaming Support"
 msgstr "Unterstützung für das Streaming"
 
-#: streaming.cpp:41
+#: streaming.cpp:42
 msgid "KRadio Streaming Plugin"
 msgstr "KRadio Streaming-Plugin"
 
-#: streaming.cpp:171
+#: streaming.cpp:172
 msgid "Streaming"
 msgstr "Streaming"
 
-#: streaming.cpp:172
+#: streaming.cpp:173
 msgid "Streaming Device Options"
 msgstr "Geräteoptionen für das Streaming"
 
-#: streaming.cpp:402
+#: streaming.cpp:403
 msgid ""
 "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
 msgstr ""
 "Streaminggerät %1::notifySoundStreamData: Die Wiedergabe-Module haben %2 "
 "bytes übersprungen."
 
-#: streaming.cpp:425
+#: streaming.cpp:426
 msgid "Streaming Device %1"
 msgstr "Streaming-Gerät %1"
 
-#: streaming.cpp:431 streaming.cpp:436
+#: streaming.cpp:432 streaming.cpp:437
 msgid "Streaming Device %1, %2: %3"
 msgstr "Streaming-Gerät %1, %2: %3"
