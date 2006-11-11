@@ -249,7 +249,7 @@ void RadioDocking::buildContextMenu()
     m_pluginMenu = new KPopupMenu(m_menu);
     if (m_manager) {
         m_manager->addWidgetPluginMenuItems(m_pluginMenu, m_widgetPluginIDs);
-        m_menu->insertItem(SmallIcon("kdf"), i18n("Show/Hide Plugins"), m_pluginMenu);
+        m_menu->insertItem(SmallIcon("kradio_plugins"), i18n("Show/Hide Plugins"), m_pluginMenu);
     }
 
     m_menu->insertSeparator();

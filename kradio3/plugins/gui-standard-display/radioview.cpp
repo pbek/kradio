@@ -160,7 +160,7 @@ RadioView::RadioView(const QString &name)
     btnConfigure->setIconSet(SmallIconSet("configure"));
     btnQuit->setIconSet(SmallIconSet("exit"));
     btnSnooze->setIconSet(SmallIconSet("kradio_zzz"));
-    btnPlugins->setIconSet(SmallIconSet("kdf"));
+    btnPlugins->setIconSet(SmallIconSet("kradio_plugins"));
 
     widgetStacks[clsRadioSound]  ->setSizePolicy(QSizePolicy(QSizePolicy::Minimum,   QSizePolicy::Preferred));
     widgetStacks[clsRadioDisplay]->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred));
