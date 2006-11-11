@@ -20,8 +20,8 @@
    an own class :(
 */
 
-#include "kradioversion.h"
-#include "aboutwidget.h"
+#include "include/kradioversion.h"
+#include "include/aboutwidget.h"
 #include <qframe.h>
 #include <kaboutdialog.h>
 #include <qtabwidget.h>

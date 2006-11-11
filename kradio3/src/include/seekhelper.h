@@ -22,8 +22,8 @@
 #include <config.h>
 #endif
 
-#include "../interfaces/radiodevice_interfaces.h"
-#include "../interfaces/soundstreamclient_interfaces.h"
+#include "radiodevice_interfaces.h"
+#include "soundstreamclient_interfaces.h"
 
 
 class SeekHelper : public IRadioDeviceClient,

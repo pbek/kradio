@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "station-drag-object.h"
-#include "../interfaces/errorlog-interfaces.h"
+#include "include/station-drag-object.h"
+#include "include/errorlog-interfaces.h"
 #include <klocale.h>
 
 #define STATION_LIST_MIME_TYPE "multimedia/kradio-stationids"

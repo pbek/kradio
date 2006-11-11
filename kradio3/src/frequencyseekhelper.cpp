@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "frequencyseekhelper.h"
+#include "include/frequencyseekhelper.h"
 #include <qtimer.h>
 
 FrequencySeekHelper::FrequencySeekHelper(ISeekRadio &parent)

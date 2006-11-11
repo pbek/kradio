@@ -14,7 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include "alarm.h"
+#include "include/alarm.h"
 
 int Alarm::m_LastID = 0;
 

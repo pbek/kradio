@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "soundformat.h"
+#include "include/soundformat.h"
 
 int SoundFormat::sampleSize() const
 {

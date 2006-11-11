@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 #include "pluginmanager-configuration-ui.h"
-#include "pluginmanager-configuration.h"
-#include "kradioapp.h"
-#include "pluginmanager.h"
+#include "include/pluginmanager-configuration.h"
+#include "include/kradioapp.h"
+#include "include/pluginmanager.h"
 
 #include <klistbox.h>
 #include <klistview.h>

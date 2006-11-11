@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "frequencyradiostation.h"
+#include "include/frequencyradiostation.h"
 #include <typeinfo>
-#include "radiostation-config.h"
+#include "include/radiostation-config.h"
 #include <klocale.h>
 #include <kglobal.h>
 

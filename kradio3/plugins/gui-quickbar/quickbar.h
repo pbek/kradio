@@ -24,9 +24,9 @@
 
 #include <qwidget.h>
 
-#include "../../src/interfaces/radio_interfaces.h"
-#include "../../src/libkradio/widgetplugins.h"
-#include "../../src/interfaces/stationselection_interfaces.h"
+#include "../../src/include/radio_interfaces.h"
+#include "../../src/include/widgetplugins.h"
+#include "../../src/include/stationselection_interfaces.h"
 
 class ButtonFlowLayout;
 class QButtonGroup;

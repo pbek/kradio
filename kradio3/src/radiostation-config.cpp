@@ -22,8 +22,8 @@
 
 #include <math.h>
 
-#include "radiostation-config.h"
-#include "../radio-stations/frequencyradiostation.h"
+#include "include/radiostation-config.h"
+#include "include/frequencyradiostation.h"
 
 
 RadioStationConfig::RadioStationConfig(QWidget *parent)

@@ -17,7 +17,7 @@
 
 #include "recording-monitor.h"
 #include "recording-datamonitor.h"
-#include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/include/aboutwidget.h"
 
 #include <qlabel.h>
 #include <qpushbutton.h>

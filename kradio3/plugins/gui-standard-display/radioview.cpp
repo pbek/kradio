@@ -32,12 +32,12 @@
 #include <kconfig.h>
 #include <kpopupmenu.h>
 
-#include "../../src/interfaces/radiodevice_interfaces.h"
-#include "../../src/radio-stations/radiostation.h"
-#include "../../src/libkradio/stationlist.h"
-#include "../../src/libkradio/pluginmanager.h"
-#include "../../src/libkradio/plugin_configuration_dialog.h"
-#include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/include/radiodevice_interfaces.h"
+#include "../../src/include/radiostation.h"
+#include "../../src/include/stationlist.h"
+#include "../../src/include/pluginmanager.h"
+#include "../../src/include/plugin_configuration_dialog.h"
+#include "../../src/include/aboutwidget.h"
 
 #include "radioview.h"
 #include "radioview_frequencyradio.h"

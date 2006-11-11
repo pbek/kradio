@@ -1,6 +1,8 @@
 SUBDIRS = po .
 
-INCLUDES = $(all_includes)
+INCLUDES =	-I$(top_srcdir)/kradio3/src/include \
+		-I$(top_builddir)/kradio3/src/include \
+		$(all_includes)
 
 METASOURCES = AUTO
 
@@ -38,10 +40,10 @@ kradio_SOURCES = \
                stationlistxmlhandler.cpp 		\
                utils.cpp 				\
                widgetplugins.cpp 			\
-               radio-stations/frequencyradiostation.cpp	\
-               radio-stations/internetradiostation.cpp 	\
-               radio-stations/radiostation-config.cpp 	\
-               radio-stations/radiostation.cpp 		\
+               frequencyradiostation.cpp	\
+               internetradiostation.cpp 	\
+               radiostation-config.cpp 	\
+               radiostation.cpp 		\
                aboutwidget.cpp 				\
                radiostation-listview.cpp 		\
                standardscandialog.cpp 			\
@@ -51,47 +53,47 @@ kradio_SOURCES = \
                stationselector-ui.ui
 
 noinst_HEADERS = \
-		aboutwidget.h			\
-		alarm.h				\
-		debug-profiler.h		\
-		errorlog-interfaces.h		\
-		fileringbuffer.h		\
-		frequencyradiostation.h		\
-		frequencyseekhelper.h		\
-		gui_list_helper.h		\
-		interfaces.h			\
-		internetradiostation.h		\
-		kradioapp.h			\
-		kradioversion.h			\
-		multibuffer.h			\
-		plugin_configuration_dialog.h	\
-		pluginmanager-configuration.h	\
-		pluginmanager.h			\
-		plugins.h			\
-		radiodevice_interfaces.h	\
-		radiodevicepool_interfaces.h	\
-		radio_interfaces.h		\
-		radiostation-config.h		\
-		radiostation.h			\
-		radiostation-listview.h		\
-		ringbuffer.h			\
-		seekhelper.h			\
-		soundformat.h			\
-		sound_metadata.h		\
-		soundstreamclient_interfaces.h	\
-		soundstreamid.h			\
-		standardscandialog.h		\
-		station-drag-object.h		\
-		stationlist.h			\
-		stationlistmetadata.h		\
-		stationlistxmlhandler.h		\
-		stationselection_interfaces.h	\
-		stationselector.h		\
-		timecontrol_interfaces.h	\
-		utils.h				\
-		widgetplugins.h
+		include/aboutwidget.h			\
+		include/alarm.h				\
+		include/debug-profiler.h		\
+		include/errorlog-interfaces.h		\
+		include/fileringbuffer.h		\
+		include/frequencyradiostation.h		\
+		include/frequencyseekhelper.h		\
+		include/gui_list_helper.h		\
+		include/interfaces.h			\
+		include/internetradiostation.h		\
+		include/kradioapp.h			\
+		include/kradioversion.h			\
+		include/multibuffer.h			\
+		include/plugin_configuration_dialog.h	\
+		include/pluginmanager-configuration.h	\
+		include/pluginmanager.h			\
+		include/plugins.h			\
+		include/radiodevice_interfaces.h	\
+		include/radiodevicepool_interfaces.h	\
+		include/radio_interfaces.h		\
+		include/radiostation-config.h		\
+		include/radiostation.h			\
+		include/radiostation-listview.h		\
+		include/ringbuffer.h			\
+		include/seekhelper.h			\
+		include/soundformat.h			\
+		include/sound_metadata.h		\
+		include/soundstreamclient_interfaces.h	\
+		include/soundstreamid.h			\
+		include/standardscandialog.h		\
+		include/station-drag-object.h		\
+		include/stationlist.h			\
+		include/stationlistmetadata.h		\
+		include/stationlistxmlhandler.h		\
+		include/stationselection_interfaces.h	\
+		include/stationselector.h		\
+		include/timecontrol_interfaces.h	\
+		include/utils.h				\
+		include/widgetplugins.h
 
-kradio_LDADD = -lkio -lkdecore -lkdeui
+kradio_LDADD =  $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KIO)
 
 kradio_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIRC) -Wl,--export-dynamic
 

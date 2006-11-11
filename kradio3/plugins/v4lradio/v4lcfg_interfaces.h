@@ -18,7 +18,7 @@
 #ifndef KRADIO_V4LCFG_INTERFACES_H
 #define KRADIO_V4LCFG_INTERFACES_H
 
-#include "../../src/interfaces/interfaces.h"
+#include "../../src/include/interfaces.h"
 #include "math.h"
 
 struct V4LCaps

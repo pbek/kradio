@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "soundstreamclient_interfaces.h"
+#include "include/soundstreamclient_interfaces.h"
 
 #include <unistd.h>
 #include <time.h>

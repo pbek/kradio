@@ -16,8 +16,8 @@
  ***************************************************************************/
 
 
-#include "radiodevicepool_interfaces.h"
-#include "radiodevice_interfaces.h"
+#include "include/radiodevicepool_interfaces.h"
+#include "include/radiodevice_interfaces.h"
 
 // IRadioDevicePool
 

@@ -21,9 +21,9 @@
 #include <qobject.h>
 #include <qtimer.h>
 
-#include "../../src/libkradio/alarm.h"
-#include "../../src/libkradio/plugins.h"
-#include "../../src/interfaces/timecontrol_interfaces.h"
+#include "../../src/include/alarm.h"
+#include "../../src/include/plugins.h"
+#include "../../src/include/timecontrol_interfaces.h"
 
 // well, it has to be a QObject :(  , but only for
 // receiving QTimer - timeouts

@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "internetradiostation.h"
+#include "include/internetradiostation.h"
 #include <typeinfo>
-#include "radiostation-config.h"
+#include "include/radiostation-config.h"
 
 /////////////////////////////////////////////////////////////////////////////
 

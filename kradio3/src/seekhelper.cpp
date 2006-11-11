@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "seekhelper.h"
+#include "include/seekhelper.h"
 
 #include <kdebug.h>
 

@@ -20,8 +20,8 @@
 
 #include <kdialogbase.h>
 
-#include "../../src/interfaces/errorlog-interfaces.h"
-#include "../../src/libkradio/widgetplugins.h"
+#include "../../src/include/errorlog-interfaces.h"
+#include "../../src/include/widgetplugins.h"
 
 
 class QTextEdit;

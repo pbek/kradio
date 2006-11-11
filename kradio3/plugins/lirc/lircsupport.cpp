@@ -29,10 +29,10 @@
 #include <kaboutdata.h>
 #include <kstandarddirs.h>
 
-#include "../../src/interfaces/errorlog-interfaces.h"
-#include "../../src/interfaces/radiodevice_interfaces.h"
-#include "../../src/libkradio/stationlist.h"
-#include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/include/errorlog-interfaces.h"
+#include "../../src/include/radiodevice_interfaces.h"
+#include "../../src/include/stationlist.h"
+#include "../../src/include/aboutwidget.h"
 
 #include "lirc-configuration.h"
 

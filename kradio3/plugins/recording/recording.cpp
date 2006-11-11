@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "../../src/radio-stations/radiostation.h"
-#include "../../src/interfaces/errorlog-interfaces.h"
-#include "../../src/libkradio-gui/aboutwidget.h"
-#include "../../src/libkradio/fileringbuffer.h"
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/radiostation.h"
+#include "../../src/include/errorlog-interfaces.h"
+#include "../../src/include/aboutwidget.h"
+#include "../../src/include/fileringbuffer.h"
+#include "../../src/include/utils.h"
 
 #include "recording.h"
 #include "recording-configuration.h"

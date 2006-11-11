@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "plugin_configuration_dialog.h"
+#include "include/plugin_configuration_dialog.h"
 #include <kconfig.h>
 #include <klocale.h>
 

@@ -16,8 +16,8 @@
  ***************************************************************************/
 
 
-#include "radiodevice_interfaces.h"
-#include "../radio-stations/radiostation.h"
+#include "include/radiodevice_interfaces.h"
+#include "include/radiostation.h"
 
 #include <kurl.h>
 

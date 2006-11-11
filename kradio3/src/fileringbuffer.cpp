@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "fileringbuffer.h"
+#include "include/fileringbuffer.h"
 
 #include <qstring.h>
 #include <unistd.h>

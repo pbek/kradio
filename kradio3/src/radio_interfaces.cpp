@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "radio_interfaces.h"
-#include "../libkradio/stationlist.h"
-#include "../radio-stations/radiostation.h"
+#include "include/radio_interfaces.h"
+#include "include/stationlist.h"
+#include "include/radiostation.h"
 
 // IRadio
 

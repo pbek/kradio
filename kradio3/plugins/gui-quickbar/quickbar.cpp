@@ -27,10 +27,10 @@
 #include <kconfig.h>
 #include <kaboutdata.h>
 
-#include "../../src/libkradio-gui/aboutwidget.h"
-#include "../../src/libkradio-gui/station-drag-object.h"
-#include "../../src/libkradio/stationlist.h"
-#include "../../src/radio-stations/radiostation.h"
+#include "../../src/include/aboutwidget.h"
+#include "../../src/include/station-drag-object.h"
+#include "../../src/include/stationlist.h"
+#include "../../src/include/radiostation.h"
 
 #include "buttonflowlayout.h"
 #include "quickbar-configuration.h"

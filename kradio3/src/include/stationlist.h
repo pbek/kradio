@@ -23,7 +23,7 @@
 #endif
 
 #include "stationlistmetadata.h"
-#include "../interfaces/errorlog-interfaces.h"
+#include "errorlog-interfaces.h"
 
 #include <qptrlist.h>
 

@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include "../../src/interfaces/interfaces.h"
+#include "../../src/include/interfaces.h"
 
 #include <qfont.h>
 #include <qcolor.h>

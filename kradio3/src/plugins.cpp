@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "plugins.h"
-#include "pluginmanager.h"
+#include "include/plugins.h"
+#include "include/pluginmanager.h"
 
 PluginBase::PluginBase(const QString &name, const QString &description)
     : m_name(name),

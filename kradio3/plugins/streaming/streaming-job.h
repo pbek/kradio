@@ -22,9 +22,9 @@
 #include <config.h>
 #endif
 
-#include "../../src/libkradio/ringbuffer.h"
-#include "../../src/libkradio/soundformat.h"
-#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/include/ringbuffer.h"
+#include "../../src/include/soundformat.h"
+#include "../../src/include/soundstreamclient_interfaces.h"
 
 #include <qobject.h>
 

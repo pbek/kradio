@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "plugins.h"
-#include "pluginmanager.h"
-#include "pluginmanager-configuration.h"
-#include "plugin_configuration_dialog.h"
-#include "kradioapp.h"
+#include "include/plugins.h"
+#include "include/pluginmanager.h"
+#include "include/pluginmanager-configuration.h"
+#include "include/plugin_configuration_dialog.h"
+#include "include/kradioapp.h"
 
 #include <kiconloader.h>
 #include <kdialogbase.h>
@@ -31,7 +31,7 @@
 #include <qframe.h>
 #include <qmenudata.h>
 
-#include "debug-profiler.h"
+#include "include/debug-profiler.h"
 
 PluginManager::PluginManager(
     const QString &name,

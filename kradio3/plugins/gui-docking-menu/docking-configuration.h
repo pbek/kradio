@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include "../../src/libkradio-gui/stationselector.h"
+#include "../../src/include/stationselector.h"
 #include "docking.h"
 
 class QComboBox;

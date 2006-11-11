@@ -23,8 +23,8 @@
 #endif
 
 #include <qframe.h>
-#include "../../src/interfaces/interfaces.h"
-#include "../../src/libkradio/plugins.h"
+#include "../../src/include/interfaces.h"
+#include "../../src/include/plugins.h"
 
 enum RadioViewClass { clsRadioSound   = 0,
                       clsRadioSeek,

@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stationlistxmlhandler.h"
+#include "include/stationlistxmlhandler.h"
 #include <klocale.h>
 
 const char *KRadioConfigElement         = "kradiorc";

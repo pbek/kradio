@@ -25,13 +25,13 @@
 #include <kconfig.h>
 #include <kwin.h>
 
-#include "../../src/interfaces/radiodevice_interfaces.h"
-#include "../../src/libkradio/stationlist.h"
-#include "../../src/libkradio/pluginmanager.h"
-#include "../../src/libkradio/widgetplugins.h"
-#include "../../src/radio-stations/radiostation.h"
-#include "../../src/libkradio-gui/aboutwidget.h"
-#include "../../src/libkradio-gui/station-drag-object.h"
+#include "../../src/include/radiodevice_interfaces.h"
+#include "../../src/include/stationlist.h"
+#include "../../src/include/pluginmanager.h"
+#include "../../src/include/widgetplugins.h"
+#include "../../src/include/radiostation.h"
+#include "../../src/include/aboutwidget.h"
+#include "../../src/include/station-drag-object.h"
 
 #include "docking.h"
 #include "docking-configuration.h"

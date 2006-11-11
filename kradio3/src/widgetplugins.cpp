@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "widgetplugins.h"
-#include "pluginmanager.h"
+#include "include/widgetplugins.h"
+#include "include/pluginmanager.h"
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>

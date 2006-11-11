@@ -23,11 +23,11 @@
 #endif
 
 #include <qobject.h>
-#include "../../src/interfaces/timecontrol_interfaces.h"
-#include "../../src/interfaces/radio_interfaces.h"
-#include "../../src/interfaces/radiodevicepool_interfaces.h"
-#include "../../src/interfaces/soundstreamclient_interfaces.h"
-#include "../../src/libkradio/plugins.h"
+#include "../../src/include/timecontrol_interfaces.h"
+#include "../../src/include/radio_interfaces.h"
+#include "../../src/include/radiodevicepool_interfaces.h"
+#include "../../src/include/soundstreamclient_interfaces.h"
+#include "../../src/include/plugins.h"
 
 
 enum LIRC_Actions {

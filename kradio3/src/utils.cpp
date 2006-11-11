@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include <qregexp.h>
-#include "utils.h"
+#include "include/utils.h"
 #include <linux/soundcard.h>
 
 //const char *mixerChannelLabels[] = SOUND_DEVICE_LABELS;

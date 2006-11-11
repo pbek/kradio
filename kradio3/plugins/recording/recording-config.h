@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include "../../src/libkradio/soundformat.h"
+#include "../../src/include/soundformat.h"
 
 class KConfig;
 struct SF_INFO;

@@ -17,8 +17,8 @@
 
 #include "streaming.h"
 
-#include "../../src/libkradio-gui/aboutwidget.h"
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/aboutwidget.h"
+#include "../../src/include/utils.h"
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <kurl.h>

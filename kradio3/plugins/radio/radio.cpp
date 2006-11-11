@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "../../src/radio-stations/radiostation.h"
-#include "../../src/libkradio-gui/aboutwidget.h"
-#include "../../src/interfaces/radiodevice_interfaces.h"
+#include "../../src/include/radiostation.h"
+#include "../../src/include/aboutwidget.h"
+#include "../../src/include/radiodevice_interfaces.h"
 #include "radio.h"
 #include "radio-configuration.h"
 
@@ -26,7 +26,7 @@
 #include <kaboutdata.h>
 #include <kconfig.h>
 
-#include "../../src/libkradio/debug-profiler.h"
+#include "../../src/include/debug-profiler.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions

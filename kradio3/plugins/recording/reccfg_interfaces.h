@@ -18,7 +18,7 @@
 #ifndef KRADIO_RECCFG_INTERFACES_H
 #define KRADIO_RECCFG_INTERFACES_H
 
-#include "../../src/interfaces/interfaces.h"
+#include "../../src/include/interfaces.h"
 #include "recording-config.h"
 
 INTERFACE(IRecCfg, IRecCfgClient)

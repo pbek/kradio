@@ -31,10 +31,10 @@ using std::sort;
 #include <klistbox.h>
 #include <klocale.h>
 
-#include "../../src/libkradio/stationlist.h"
-#include "../../src/libkradio/alarm.h"
-#include "../../src/interfaces/errorlog-interfaces.h"
-#include "../../src/radio-stations/radiostation.h"
+#include "../../src/include/stationlist.h"
+#include "../../src/include/alarm.h"
+#include "../../src/include/errorlog-interfaces.h"
+#include "../../src/include/radiostation.h"
 
 #include "timecontrol-configuration.h"
 

@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "soundstreamid.h"
+#include "include/soundstreamid.h"
 
 unsigned SoundStreamID::nextID = 1;
 unsigned SoundStreamID::nextPhysicalID = 1;

@@ -20,11 +20,11 @@ using namespace std;
 #include <kpushbutton.h>
 #include <algorithm>
 
-#include "../libkradio/stationlist.h"
-#include "../radio-stations/radiostation.h"
+#include "include/stationlist.h"
+#include "include/radiostation.h"
 
-#include "stationselector.h"
-#include "radiostation-listview.h"
+#include "include/stationselector.h"
+#include "include/radiostation-listview.h"
 
 StationSelector::StationSelector (QWidget *parent)
     : StationSelectorUI(parent),

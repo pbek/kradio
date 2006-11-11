@@ -22,7 +22,7 @@
 #include <qcolor.h>
 
 //#include <kradio/interfaces/recording-interfaces.h>
-#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/include/soundstreamclient_interfaces.h"
 
 class RecordingDataMonitor : public QFrame//,
                              //public ISoundStreamClient

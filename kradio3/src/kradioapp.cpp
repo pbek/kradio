@@ -29,11 +29,11 @@
 
 // #include <kprogress.h>
 
-#include "kradioapp.h"
-#include "../libkradio-gui/aboutwidget.h"
-#include "../interfaces/errorlog-interfaces.h"
+#include "include/kradioapp.h"
+#include "include/aboutwidget.h"
+#include "include/errorlog-interfaces.h"
 
-#include "debug-profiler.h"
+#include "include/debug-profiler.h"
 
 /////////////////////////////////////////////////////////////////////////////
 //// KRadioAbout

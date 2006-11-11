@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "ringbuffer.h"
+#include "include/ringbuffer.h"
 #include <string.h>
 
 RingBuffer::RingBuffer(size_t size)

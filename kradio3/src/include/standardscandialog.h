@@ -22,10 +22,10 @@
 #include <config.h>
 #endif
 
-#include "standardscandialog-ui.h"
-#include "../interfaces/radiodevice_interfaces.h"
-#include "../interfaces/radio_interfaces.h"
-#include "../libkradio/stationlist.h"
+#include "../standardscandialog-ui.h"
+#include "radiodevice_interfaces.h"
+#include "radio_interfaces.h"
+#include "stationlist.h"
 
 #include <qtimer.h>
 #include <qdatetime.h>

@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/utils.h"
 
 #include <qpainter.h>
 #include <qimage.h>

@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "radiostation-listview.h"
-#include "../libkradio/stationlist.h"
-#include "../radio-stations/radiostation.h"
-#include "station-drag-object.h"
+#include "include/radiostation-listview.h"
+#include "include/stationlist.h"
+#include "include/radiostation.h"
+#include "include/station-drag-object.h"
 
 #include <klocale.h>
 #include <qfile.h>

@@ -27,13 +27,5 @@ METASOURCES = AUTO
 # the library search path. 
 convert_presets_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-# messages: rc.cpp
 messages: rc.cpp
 	$(XGETTEXT) *.cpp -o po/kradio-convert-presets.pot
-
-#messages:
-#	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
-#	if test -n "$$LIST"; then \
-#	  $(XGETTEXT) -C -ki18n -ktr2i18n $$LIST -o $(top_srcdir)/po/kradio.pot ; \
-#	fi
-

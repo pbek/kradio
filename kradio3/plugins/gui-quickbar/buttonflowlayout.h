@@ -21,7 +21,7 @@
 #include <config.h>
 #endif
 
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/utils.h"
 
 #include <qlayout.h>
 #include <qptrlist.h>

@@ -1,6 +1,6 @@
 SUBDIRS = po .
 
-INCLUDES = -I$(top_builddir)/kradio3/src/libkradio-gui $(all_includes)
+INCLUDES = -I$(top_builddir)/kradio3/src/include $(all_includes)
 METASOURCES = AUTO
 
 libkradio_LTLIBRARIES = libquickbar.la

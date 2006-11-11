@@ -24,9 +24,9 @@
 
 #include <qdict.h>
 
-#include "../../src/interfaces/radio_interfaces.h"
-#include "../../src/libkradio/stationlist.h"
-#include "../../src/interfaces/radiodevicepool_interfaces.h"
+#include "../../src/include/radio_interfaces.h"
+#include "../../src/include/stationlist.h"
+#include "../../src/include/radiodevicepool_interfaces.h"
 #include "radio-configuration-ui.h"
 
 class QPopupMenu;

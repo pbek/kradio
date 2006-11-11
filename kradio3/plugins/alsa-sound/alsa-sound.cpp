@@ -31,8 +31,8 @@
 #include "alsa-sound.h"
 #include "alsa-sound-configuration.h"
 // #include "capture-thread.h"
-#include "../../src/libkradio-gui/aboutwidget.h"
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/aboutwidget.h"
+#include "../../src/include/utils.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions

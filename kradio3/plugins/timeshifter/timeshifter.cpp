@@ -22,7 +22,7 @@
 #include <klocale.h>
 #include <linux/soundcard.h>
 
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/utils.h"
 #include "timeshifter.h"
 #include "timeshifter-configuration.h"
 

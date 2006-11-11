@@ -15,12 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "../radio-stations/radiostation.h"
-#include "../interfaces/errorlog-interfaces.h"
-#include "utils.h"
-#include "stationlist.h"
-#include "stationlistxmlhandler.h"
-#include "../kradioversion.h"
+#include "include/radiostation.h"
+#include "include/errorlog-interfaces.h"
+#include "include/utils.h"
+#include "include/stationlist.h"
+#include "include/stationlistxmlhandler.h"
+#include "include/kradioversion.h"
 
 #include <qstring.h>
 #include <qfile.h>

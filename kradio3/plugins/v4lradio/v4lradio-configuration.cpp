@@ -34,8 +34,8 @@
 #include <klocale.h>
 #include <ktabwidget.h>
 
-#include "../../src/libkradio/utils.h"
-#include "../../src/libkradio-gui/gui_list_helper.h"
+#include "../../src/include/utils.h"
+#include "../../src/include/gui_list_helper.h"
 #include "v4lradio-configuration.h"
 #include "v4lradio.h"
 

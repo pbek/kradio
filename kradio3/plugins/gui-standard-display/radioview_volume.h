@@ -18,8 +18,8 @@
 #ifndef KRADIO_RADIOVIEW_VOLUME_H
 #define KRADIO_RADIOVIEW_VOLUME_H
 
-#include "../../src/interfaces/radiodevice_interfaces.h"
-#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/include/radiodevice_interfaces.h"
+#include "../../src/include/soundstreamclient_interfaces.h"
 #include "radioview_element.h"
 
 /**

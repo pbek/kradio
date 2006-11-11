@@ -17,7 +17,7 @@
 
 #include <klocale.h>
 
-#include "multibuffer.h"
+#include "include/multibuffer.h"
 
 MultiBuffer::MultiBuffer(size_t n_buffers, size_t buffersize)
     : m_nBuffers(n_buffers),

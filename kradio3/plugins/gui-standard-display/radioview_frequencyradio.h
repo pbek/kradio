@@ -18,8 +18,8 @@
 #ifndef KRADIO_RADIOVIEW_FREQUENCYRADIO_H
 #define KRADIO_RADIOVIEW_FREQUENCYRADIO_H
 
-#include "../../src/interfaces/radiodevice_interfaces.h"
-#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/include/radiodevice_interfaces.h"
+#include "../../src/include/soundstreamclient_interfaces.h"
 #include "radioview_element.h"
 #include "displaycfg_interfaces.h"
 

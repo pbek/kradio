@@ -19,10 +19,10 @@
 #include <kaboutdata.h>
 #include <klocale.h>
 
-#include "kradioversion.h"
-#include "libkradio/kradioapp.h"
+#include "include/kradioversion.h"
+#include "include/kradioapp.h"
 
-#include "libkradio/debug-profiler.h"
+#include "include/debug-profiler.h"
 
 static KCmdLineOptions options[] =
 {

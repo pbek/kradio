@@ -24,11 +24,11 @@
 
 #include <qstringlist.h>
 
-#include "../interfaces/radio_interfaces.h"
-#include "../interfaces/stationselection_interfaces.h"
-#include "../libkradio/stationlist.h"
+#include "radio_interfaces.h"
+#include "stationselection_interfaces.h"
+#include "stationlist.h"
 
-#include "stationselector-ui.h"
+#include "../stationselector-ui.h"
 #include "radiostation-listview.h"
 
 

@@ -26,7 +26,7 @@
 
 #include <kglobal.h>
 
-#include "../interfaces/errorlog-interfaces.h"
+#include "errorlog-interfaces.h"
 #include <qstring.h>
 #include <qobject.h>
 #include <qptrlist.h>

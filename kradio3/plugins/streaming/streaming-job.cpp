@@ -17,7 +17,7 @@
 
 #include "streaming-job.h"
 
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/utils.h"
 #include <kurl.h>
 
 #include <kio/job.h>

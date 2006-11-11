@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "timecontrol_interfaces.h"
+#include "include/timecontrol_interfaces.h"
 
 static AlarmVector emptyAlarms;
 

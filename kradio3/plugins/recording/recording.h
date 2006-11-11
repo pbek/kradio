@@ -27,9 +27,9 @@
 #include <qstring.h>
 #include <qmap.h>
 
-#include "../../src/libkradio/plugins.h"
-#include "../../src/interfaces/timecontrol_interfaces.h"
-#include "../../src/interfaces/soundstreamclient_interfaces.h"
+#include "../../src/include/plugins.h"
+#include "../../src/include/timecontrol_interfaces.h"
+#include "../../src/include/soundstreamclient_interfaces.h"
 
 #include "recording-config.h"
 #include "reccfg_interfaces.h"

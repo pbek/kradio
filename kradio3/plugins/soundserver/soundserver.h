@@ -22,8 +22,8 @@
 #include <config.h>
 #endif
 
-#include "../../src/interfaces/soundstreamclient_interfaces.h"
-#include "../../src/libkradio/plugins.h"
+#include "../../src/include/soundstreamclient_interfaces.h"
+#include "../../src/include/plugins.h"
 
 
 class SoundServer : public PluginBase,

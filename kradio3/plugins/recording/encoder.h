@@ -27,10 +27,10 @@
 #include <qstring.h>
 #include <qthread.h>
 
-#include "../../src/radio-stations/radiostation.h"
-#include "../../src/libkradio/multibuffer.h"
-#include "../../src/libkradio/sound_metadata.h"
-#include "../../src/libkradio/soundstreamid.h"
+#include "../../src/include/radiostation.h"
+#include "../../src/include/multibuffer.h"
+#include "../../src/include/sound_metadata.h"
+#include "../../src/include/soundstreamid.h"
 #include "recording-config.h"
 
 class BufferSoundMetaData : public SoundMetaData

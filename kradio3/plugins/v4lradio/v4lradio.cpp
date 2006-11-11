@@ -42,12 +42,12 @@
 #include <kaboutdata.h>
 #include <klocale.h>
 
-#include "../../src/libkradio-gui/aboutwidget.h"
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/aboutwidget.h"
+#include "../../src/include/utils.h"
 #include "v4lradio.h"
 #include "v4lradio-configuration.h"
 
-#include "../../src/libkradio/debug-profiler.h"
+#include "../../src/include/debug-profiler.h"
 
 struct _lrvol { unsigned char l, r; short dummy; };
 

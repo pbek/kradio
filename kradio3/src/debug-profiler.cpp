@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "debug-profiler.h"
+#include "include/debug-profiler.h"
 
 #include <qstringlist.h>
 

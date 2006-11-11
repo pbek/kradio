@@ -15,14 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "../../src/radio-stations/radiostation.h"
-#include "../../src/libkradio/stationlist.h"
-#include "../../src/libkradio/plugins.h"
-#include "../../src/interfaces/radiodevice_interfaces.h"
-#include "../../src/libkradio-gui/standardscandialog.h"
-#include "../../src/libkradio-gui/radiostation-listview.h"
-#include "../../src/radio-stations/radiostation-config.h"
-#include "../../src/interfaces/errorlog-interfaces.h"
+#include "../../src/include/radiostation.h"
+#include "../../src/include/stationlist.h"
+#include "../../src/include/plugins.h"
+#include "../../src/include/radiodevice_interfaces.h"
+#include "../../src/include/standardscandialog.h"
+#include "../../src/include/radiostation-listview.h"
+#include "../../src/include/radiostation-config.h"
+#include "../../src/include/errorlog-interfaces.h"
 
 #include "radio-configuration.h"
 

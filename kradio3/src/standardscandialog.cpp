@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "standardscandialog.h"
-#include "../radio-stations/radiostation.h"
+#include "include/standardscandialog.h"
+#include "include/radiostation.h"
 
 #include <qprogressbar.h>
 #include <qlabel.h>

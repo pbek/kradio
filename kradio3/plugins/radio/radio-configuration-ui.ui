@@ -717,7 +717,7 @@
 <customwidgets>
     <customwidget>
         <class>RadioStationListView</class>
-        <header location="local">src/libkradio-gui/radiostation-listview.h</header>
+        <header location="local">src/include/radiostation-listview.h</header>
         <sizehint>
             <width>-1</width>
             <height>-1</height>
@@ -761,12 +761,12 @@
 <includes>
     <include location="global" impldecl="in implementation">kiconloader.h</include>
     <include location="global" impldecl="in implementation">qwidgetstack.h</include>
-    <include location="global" impldecl="in implementation">src/libkradio-gui/radiostation-listview.h</include>
+    <include location="global" impldecl="in implementation">src/include/radiostation-listview.h</include>
 </includes>
 <pixmapfunction>SmallIconSet</pixmapfunction>
 <layoutdefaults spacing="6" margin="0"/>
 <includehints>
-    <includehint>src/libkradio-gui/radiostation-listview.h</includehint>
+    <includehint>src/include/radiostation-listview.h</includehint>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>kpushbutton.h</includehint>

@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "radiostation.h"
-#include "radiostation-config.h"
+#include "include/radiostation.h"
+#include "include/radiostation-config.h"
 
 #include <unistd.h>
 #include <time.h>

@@ -31,8 +31,8 @@
 #include <knuminput.h>
 #include <klocale.h>
 
-#include "../../src/libkradio/utils.h"
-#include "../../src/libkradio-gui/gui_list_helper.h"
+#include "../../src/include/utils.h"
+#include "../../src/include/gui_list_helper.h"
 #include "timeshifter-configuration.h"
 #include "timeshifter.h"
 

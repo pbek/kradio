@@ -17,7 +17,7 @@
 
 #include "oss-sound.h"
 
-#include "../../src/libkradio-gui/aboutwidget.h"
+#include "../../src/include/aboutwidget.h"
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <sys/types.h>
@@ -30,7 +30,7 @@
 #include <errno.h>
 
 #include "oss-sound-configuration.h"
-#include "../../src/libkradio/utils.h"
+#include "../../src/include/utils.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
