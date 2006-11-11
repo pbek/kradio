@@ -57,11 +57,11 @@ make
 %install
 . /etc/opt/kde3/common_options
 make DESTDIR=$RPM_BUILD_ROOT $INSTALL_TARGET
-%find_lang %name-%version
 
-%files -f %name-%version.lang
+%files
 %defattr(-,root,root)
 /opt/kde3/bin
 /opt/kde3/share/appl*/*/*.desktop
 /opt/kde3/lib*/kradio
 /opt/kde3/share/apps/kradio
+/opt/kde3/share/locale
