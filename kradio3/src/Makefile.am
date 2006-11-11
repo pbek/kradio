@@ -100,5 +100,5 @@ kradio_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIRC) -Wl,--export-dynamic
 xdg_apps_DATA = kradio.desktop
 
 messages: rc.cpp
-	$(EXTRACTRC)       *.ui  *.rc >> rc.cpp
-	$(XGETTEXT) rc.cpp *.cpp *.h include/*.h -o po/kradio.pot
+	$(EXTRACTRC)       *.ui  >> rc.cpp
+	$(XGETTEXT) rc.cpp *.cpp include/*.h -o po/kradio.pot
