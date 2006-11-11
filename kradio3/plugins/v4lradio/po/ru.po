@@ -1,20 +1,20 @@
-# translation of de.po to
+# translation of ru.po to
 # translation of kradio-v4lradio.po to
 # This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
 #
-# Ernst Martin Witte <emw@nocabal.de>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: de\n"
+"Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 00:31+0100\n"
-"PO-Revision-Date: 2006-11-06 00:24+0100\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team:  <de@li.org>\n"
+"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"PO-Revision-Date: 2006-11-08 11:59+0300\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: KBabel 1.10\n"
 
 #. i18n: file v4lradio-configuration-ui.ui line 16
 #: rc.cpp:3 rc.cpp:90
@@ -26,55 +26,55 @@ msgstr "SetupDialogGeneral"
 #: rc.cpp:6 rc.cpp:93
 #, no-c-format
 msgid "Devices"
-msgstr "Geräte"
+msgstr "Устройства"
 
 #. i18n: file v4lradio-configuration-ui.ui line 68
 #: rc.cpp:9 rc.cpp:96
 #, no-c-format
 msgid "Playback Mixer Device"
-msgstr "Wiedergabe Mixer"
+msgstr "Устройство воспроизведения"
 
 #. i18n: file v4lradio-configuration-ui.ui line 76
 #: rc.cpp:12 rc.cpp:99
 #, no-c-format
 msgid "Playback Mixer Channel"
-msgstr "Wiedergabe Mixerkanal"
+msgstr "Канал воспроизведения"
 
 #. i18n: file v4lradio-configuration-ui.ui line 169
 #: rc.cpp:15 rc.cpp:102
 #, no-c-format
 msgid "Radio Device"
-msgstr "Radio Gerät"
+msgstr "Устройство радио"
 
 #. i18n: file v4lradio-configuration-ui.ui line 196
 #: rc.cpp:19 rc.cpp:106
 #, no-c-format
 msgid "Capture Mixer Device"
-msgstr "Aufnahme Mixer"
+msgstr "Устройство записи"
 
 #. i18n: file v4lradio-configuration-ui.ui line 217
 #: rc.cpp:22 rc.cpp:109
 #, no-c-format
 msgid "Capture Mixer Channel"
-msgstr "Aufnahme Mixerkanal"
+msgstr "Канал записи"
 
 #. i18n: file v4lradio-configuration-ui.ui line 249
 #: rc.cpp:25 rc.cpp:112
 #, no-c-format
 msgid "test"
-msgstr "test"
+msgstr "проверка"
 
 #. i18n: file v4lradio-configuration-ui.ui line 269
 #: rc.cpp:28 rc.cpp:115
 #, no-c-format
 msgid "unknown v4l device"
-msgstr "Unbekanntes V4L-Gerät"
+msgstr "неизвестно"
 
 #. i18n: file v4lradio-configuration-ui.ui line 315
 #: rc.cpp:31 rc.cpp:118
 #, no-c-format
 msgid "Use active pla&yback by capturing"
-msgstr "Aktive &Wiedergabe verwenden (Aufgenommenes abspielen)"
+msgstr "Захватывать звук и затем проигрывать его"
 
 #. i18n: file v4lradio-configuration-ui.ui line 318
 #: rc.cpp:34 rc.cpp:121
@@ -86,7 +86,7 @@ msgstr "Alt+Y"
 #: rc.cpp:37 rc.cpp:124
 #, no-c-format
 msgid "Mute Play&back Channel on Power Off"
-msgstr "Wiedergabekanal beim Abschalten des Radios stummschalten"
+msgstr "Выключать звук на канале воспроизведения при выходе"
 
 #. i18n: file v4lradio-configuration-ui.ui line 337
 #: rc.cpp:40 rc.cpp:127
@@ -98,7 +98,7 @@ msgstr "Alt+B"
 #: rc.cpp:43 rc.cpp:130
 #, no-c-format
 msgid "Set Playback Channel Volume to &Zero on Power Off"
-msgstr "Wiedergabelautstärke beim Abschalten des Radios auf 0 setzen"
+msgstr "Устанавливать &нулевую громкость воспроизведения при выходе"
 
 #. i18n: file v4lradio-configuration-ui.ui line 356
 #: rc.cpp:46 rc.cpp:133
@@ -110,7 +110,7 @@ msgstr "Alt+Z"
 #: rc.cpp:52 rc.cpp:139
 #, no-c-format
 msgid "to"
-msgstr "bis"
+msgstr "до"
 
 #. i18n: file v4lradio-configuration-ui.ui line 413
 #. i18n: file v4lradio-configuration-ui.ui line 443
@@ -121,240 +121,237 @@ msgstr "bis"
 #: rc.cpp:55 rc.cpp:58 rc.cpp:64 rc.cpp:142 rc.cpp:145 rc.cpp:151
 #, no-c-format
 msgid " kHz"
-msgstr " kHz"
+msgstr " кГц"
 
 #. i18n: file v4lradio-configuration-ui.ui line 460
 #: rc.cpp:61 rc.cpp:148
 #, no-c-format
 msgid "minimum signal quality"
-msgstr "Mindest-Signalpegel"
+msgstr "Минимальный уровень сигнала"
 
 #. i18n: file v4lradio-configuration-ui.ui line 499
 #: rc.cpp:67 rc.cpp:154
 #, no-c-format
 msgid "station scan step"
-msgstr "Sendersuchschrittweite"
+msgstr "Шаг изменения частоты при поиске"
 
 #. i18n: file v4lradio-configuration-ui.ui line 507
 #: rc.cpp:70 rc.cpp:157
 #, no-c-format
 msgid "allowed frequency range"
-msgstr "erlaubter Frequenzbereich"
+msgstr "Допустимый частотный диапазон:\tот"
 
 #. i18n: file v4lradio-configuration-ui.ui line 566
 #: rc.cpp:75 rc.cpp:162
 #, no-c-format
 msgid "V4L Mixer Controls"
-msgstr "V4L Mixersteuerung"
+msgstr "Аппаратные регуляторы V4l"
 
 #. i18n: file v4lradio-configuration-ui.ui line 594
 #: rc.cpp:78 rc.cpp:165
 #, no-c-format
 msgid "volume"
-msgstr "Lautstärke"
+msgstr "Громкость"
 
 #. i18n: file v4lradio-configuration-ui.ui line 684
 #: rc.cpp:81 rc.cpp:168
 #, no-c-format
 msgid "treble"
-msgstr "Höhen"
+msgstr "ВЧ"
 
 #. i18n: file v4lradio-configuration-ui.ui line 774
 #: rc.cpp:84 rc.cpp:171
 #, no-c-format
 msgid "bass"
-msgstr "Tiefen"
+msgstr "НЧ"
 
 #. i18n: file v4lradio-configuration-ui.ui line 861
 #: rc.cpp:87 rc.cpp:174
 #, no-c-format
 msgid "balance"
-msgstr "Balance"
+msgstr "Стереобаланс"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Ernst Martin Witte"
+msgstr "Алексей Кузнецов"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr "emw@nocabal.de"
+msgstr "Alexey.Kouznetsov@GMail.com"
 
 #: v4lradio-configuration.cpp:443
 msgid "any ( * )"
-msgstr "Alle ( * )"
+msgstr "Все ( * )"
 
 #: v4lradio-configuration.cpp:445
 msgid "Radio Device Selection"
-msgstr "Auswahl der Radio-Gerätedatei"
+msgstr "Выбор устройства радио"
 
 #: v4lradio-configuration.cpp:448
 msgid "Select Radio Device"
-msgstr "Wählen Sie die Radio-Gerätedatei aus"
+msgstr "Выберите устройство радиоприёмника"
 
 #: v4lradio.cpp:56
 msgid "Support for V4L(2) Radio Devices"
-msgstr "Unterstützung für V4L(2)-Radiogeräte"
+msgstr "Поддержка устройств V4l(2)"
 
 #: v4lradio.cpp:61
 msgid "Video For Linux Plugin"
-msgstr "Video für Linux (V4L) Plugin"
+msgstr "Модуль \"Видео для linux\""
 
 #: v4lradio.cpp:657
 msgid "invalid frequency %1"
-msgstr "ungültige Frequenz: %1"
+msgstr "Неправильная частота %1"
 
 #: v4lradio.cpp:678 v4lradio.cpp:1351 v4lradio.cpp:1498
 msgid "don't known how to handle V4L-version %1"
-msgstr "Keine Ahnung, wie die V4L-Version %1 behandelt werden soll"
+msgstr "Не знаю что делать с версией V4l \"%1\""
 
 #: v4lradio.cpp:684
 msgid "error setting frequency to %1 (%2)"
-msgstr "Fehler (%2) beim Einstellen der Frequenz auf %1."
+msgstr "Ошибка установки частоты %1 (%2)"
 
 #: v4lradio.cpp:1000
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
 "permissions."
-msgstr ""
-"Das Gerät %1 existiert, ist aber nicht lesbar/schreibbar. Bitte überprüfen "
-"Sie die Einstellung der Zugriffsrechte für das Gerät."
+msgstr "Устройство %1 недоступно для чтения/записи. Проверьте права на устройство, а также не использует ли его другая программа."
 
 #: v4lradio.cpp:1010
 msgid "Could not find an accessible v4l(2) radio device."
-msgstr "Kann kein verwendbares V4L(2)-Radiogerät finden."
+msgstr "Не найти доступное устройство V4l(2)."
 
 #: v4lradio.cpp:1070
 msgid "V4L Radio"
-msgstr "V4L Radio"
+msgstr "Радио V4l"
 
 #: v4lradio.cpp:1071
 msgid "V4L Radio Options"
-msgstr "Optionen des V4L-Radios"
+msgstr "Параметры устройства V4l"
 
 #: v4lradio.cpp:1081
 msgid ""
 "V4L/V4L2 Plugin for KRadio.<P>Provides Support for V4L/V4L2 based Radio "
 "Cards<P>"
-msgstr ""
-"V4L/V4L2-Plugin für KRadio.<P>Dieses Plugin bindet vom V4L/V4L2-Treiber "
-"unterstützte Radio-Karten in KRadio ein.<P>"
+msgstr "Модуль V4l/V4l2 для KRadio. <P> Предоставляет поддержку плат радио, совместимых с V4l/V4l2<P>"
 
 #: v4lradio.cpp:1096
 msgid "V4L/V4L2"
-msgstr "V4L/V4L2"
+msgstr "V4L/V4LV2"
 
 #: v4lradio.cpp:1097
 msgid "V4L/V4L2 Plugin"
-msgstr "V4L/V4L2-Plugin"
+msgstr "Модуль V4L/V4L2"
 
 #: v4lradio.cpp:1128
 msgid "Cannot open radio device %1"
-msgstr "Die Radiogerätedatei %1 kann nicht geöffnet werden"
+msgstr "Не могу открыть устройство радио: %1"
 
 #: v4lradio.cpp:1179
 msgid "cannot open %1"
-msgstr "%1 kann nicht geöffnet werden"
+msgstr "Не могу открыть %1"
 
 #: v4lradio.cpp:1203
 msgid "audio caps = %1"
-msgstr "Audio-Fähigkeiten: %1"
+msgstr "возможности звука = %1"
 
 #: v4lradio.cpp:1217
 msgid "error reading V4L1 caps"
-msgstr "Fehler beim Lesen der V4L1-Fähigkeiten"
+msgstr "Ошибка чтения возможностей V4l1"
 
 #: v4lradio.cpp:1226
 msgid "V4L2 - Version: %1"
-msgstr "V4L2 - Version: %1"
+msgstr "Версия V4l2: %1"
 
 #: v4lradio.cpp:1246
 msgid "V4L2: Querying mute control failed"
-msgstr "V4L2: Die Abfrage des Stummschaltungs-Reglers schlug fehl"
+msgstr "V4L2: Не могу обратиться к выключателю звука платы"
 
 #: v4lradio.cpp:1253
 msgid "V4L2: Querying volume control failed"
-msgstr "V4L2: Die Abfrage des Lautstärke-Reglers schlug fehl"
+msgstr "V4L2: Не могу обратиться к регулятору громкости"
 
 #: v4lradio.cpp:1261
 msgid "V4L2: Querying treble control failed"
-msgstr "V4L2: Die Abfrage des Höhen-Reglers schlug fehl"
+msgstr "V4L2: Не могу обратиться к регулятору верхних частот"
 
 #: v4lradio.cpp:1269
 msgid "V4L2: Querying bass control failed"
-msgstr "V4L2: Die Abfrage des Bass-Reglers schlug fehl"
+msgstr "V4L2: Не могу обратиться к регулятору нижних частот"
 
 #: v4lradio.cpp:1277
 msgid "V4L2: Querying balance control failed"
-msgstr "V4L2: Die Abfrage des Balance-Reglers schlug fehl"
+msgstr "V4L2: Не могу обратиться к регулятору стереобаланса"
 
 #: v4lradio.cpp:1281
 msgid "V4LRadio::readV4LCaps: Reading V4L2 caps failed"
-msgstr "V4LRadio::readV4LCaps: Das Lesen der V4L2-Fähigkeiten schlug fehl"
+msgstr "V4LRadio::readV4LCaps:Не могу узнать возможности устройства"
 
 #: v4lradio.cpp:1285
 msgid "V4L %1 detected"
-msgstr "V4L %1 wurde gefunden"
+msgstr "Найдено устройство V4L: %1"
 
 #: v4lradio.cpp:1287
 msgid "V4L not detected"
-msgstr "Das Radiogerät unterstützt V4L nicht"
+msgstr "Устройств V4L не обнаружено"
 
 #: v4lradio.cpp:1290
 msgid "Radio is mutable"
-msgstr "Das Radio kann stummgeschaltet werden"
+msgstr "Радио не поддерживает выключения звука"
 
 #: v4lradio.cpp:1290
 msgid "Radio is not mutable"
-msgstr "Das Radio kann nicht stummgeschaltet werden"
+msgstr "Радио поддерживает выключение звука"
 
 #: v4lradio.cpp:1291
 msgid "Radio has Volume Control"
-msgstr "Das Radio hat einen Lautstärkeregler"
+msgstr "Есть регулировка громкости"
 
 #: v4lradio.cpp:1291
 msgid "Radio has no Volume Control"
-msgstr "Das Radio hat keinen Lautstärkeregler"
+msgstr "Регулировки громкости нет"
 
 #: v4lradio.cpp:1292
 msgid "Radio has Bass Control"
-msgstr "Das Radio hat einen Bass-Regler"
+msgstr "Есть регулировка НЧ"
 
 #: v4lradio.cpp:1292
 msgid "Radio has no Bass Control"
-msgstr "Das Radio hat keinen Bass-Regler"
+msgstr "Регулировки НЧ нет"
 
 #: v4lradio.cpp:1293
 msgid "Radio has Treble Control"
-msgstr "Das Radio hat einen Höhen-Regler"
+msgstr "Есть регулировка ВЧ"
 
 #: v4lradio.cpp:1293
 msgid "Radio has no Treble Control"
-msgstr "Das Radio hat keinen Bass-Regler"
+msgstr "Регулировки ВЧ нет"
 
 #: v4lradio.cpp:1358
 msgid "cannot get tuner info (error %1)"
-msgstr "Tuner-Informationen können nicht gelesen werden (Fehler %1)"
+msgstr "Не могу получить информацию о тюнере (код ошибки %1)"
 
 #: v4lradio.cpp:1400
 msgid "error setting %1: %2"
-msgstr "Fehler %2 beim Setzen von %1"
+msgstr "Ошибка установки %1: %2"
 
 #: v4lradio.cpp:1408
 msgid "error reading %1: %2"
-msgstr "Fehler %2 beim Lesen von %1"
+msgstr "Ошибка чтения %1: %2"
 
 #: v4lradio.cpp:1504
 msgid "error updating radio audio info (%1): %2"
-msgstr "Fehler %2 beim Updaten der Audio-Informationen (%1)"
+msgstr "Ошибка %1: %2"
 
 #: v4lradio.cpp:1505
 msgid "write"
-msgstr "Schreiben"
+msgstr "запись"
 
 #: v4lradio.cpp:1505
 msgid "read"
-msgstr "Lesen"
+msgstr "чтение"
+

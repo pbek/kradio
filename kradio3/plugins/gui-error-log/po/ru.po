@@ -1,0 +1,72 @@
+# translation of ru.po to
+# translation of kradio-gui-error-log.po to
+# This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ru\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"PO-Revision-Date: 2006-11-08 12:56+0300\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team:  <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: errorlog.cpp:39
+msgid "Error Logging Window for KRadio"
+msgstr "Окно ведения журнала ошибок KRadio"
+
+#: errorlog.cpp:52
+msgid "Save &as"
+msgstr "Сохранить &как"
+
+#: errorlog.cpp:54
+msgid "Error Logger"
+msgstr "Журнал ошибок"
+
+#: errorlog.cpp:57
+msgid "KRadio Logger"
+msgstr "Журнал KRadio"
+
+#: errorlog.cpp:70 errorlog.cpp:84 errorlog.cpp:99 errorlog.cpp:113
+msgid "logging started"
+msgstr "Журналирование включено"
+
+#: errorlog.cpp:73
+msgid "Warnings"
+msgstr "Предупреждения"
+
+#: errorlog.cpp:88
+msgid "Errors"
+msgstr "Ошибки"
+
+#: errorlog.cpp:101
+msgid "Debugging"
+msgstr ""
+"Отладочные\n"
+"сообщения"
+
+#: errorlog.cpp:219
+msgid "Log Files"
+msgstr "Файлы журнала"
+
+#: errorlog.cpp:221
+msgid "Select Log File"
+msgstr "Выберите файлы журнала"
+
+#: errorlog.cpp:225
+msgid "Save KRadio Logging Data as ..."
+msgstr "Сохранить данные журнала KRadio как..."
+
+#: errorlog.cpp:247
+msgid "error writing to tempfile %1"
+msgstr "Ошибка записи во временный файл %1"
+
+#: errorlog.cpp:256
+msgid "error uploading preset file %1"
+msgstr "Ошибка выгрузки файла настроек %1"
+

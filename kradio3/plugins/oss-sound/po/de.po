@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 01:20+0100\n"
+"POT-Creation-Date: 2006-11-11 00:31+0100\n"
 "PO-Revision-Date: 2006-11-06 01:06+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -17,49 +17,49 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #. i18n: file oss-sound-configuration-ui.ui line 27
-#: rc.cpp:3 rc.cpp:27 oss-sound-configuration-ui.cpp:106
+#: rc.cpp:3 rc.cpp:27
 #, no-c-format
 msgid "Devices"
 msgstr "Geräte"
 
 #. i18n: file oss-sound-configuration-ui.ui line 51
-#: rc.cpp:6 rc.cpp:30 oss-sound-configuration-ui.cpp:107
+#: rc.cpp:6 rc.cpp:30
 #, no-c-format
 msgid "PCM Device"
 msgstr "Gerät"
 
 #. i18n: file oss-sound-configuration-ui.ui line 59
-#: rc.cpp:9 rc.cpp:33 oss-sound-configuration-ui.cpp:108
+#: rc.cpp:9 rc.cpp:33
 #, no-c-format
 msgid "Mixer Device"
 msgstr "Mixer Gerätedatei"
 
 #. i18n: file oss-sound-configuration-ui.ui line 67
-#: rc.cpp:12 rc.cpp:36 oss-sound-configuration-ui.cpp:109
+#: rc.cpp:12 rc.cpp:36
 #, no-c-format
 msgid "Buffer Size"
 msgstr "Puffergröße"
 
 #. i18n: file oss-sound-configuration-ui.ui line 75
-#: rc.cpp:15 rc.cpp:39 oss-sound-configuration-ui.cpp:110
+#: rc.cpp:15 rc.cpp:39
 #, no-c-format
 msgid " kB"
 msgstr " kB"
 
 #. i18n: file oss-sound-configuration-ui.ui line 91
-#: rc.cpp:18 rc.cpp:42 oss-sound-configuration-ui.cpp:111
+#: rc.cpp:18 rc.cpp:42
 #, no-c-format
 msgid "Extended Options"
 msgstr "Erweiterte Optionen"
 
 #. i18n: file oss-sound-configuration-ui.ui line 105
-#: rc.cpp:21 rc.cpp:45 oss-sound-configuration-ui.cpp:112
+#: rc.cpp:21 rc.cpp:45
 #, no-c-format
 msgid "Disable Playback"
 msgstr "Wiedergabe abschalten"
 
 #. i18n: file oss-sound-configuration-ui.ui line 113
-#: rc.cpp:24 rc.cpp:48 oss-sound-configuration-ui.cpp:113
+#: rc.cpp:24 rc.cpp:48
 #, no-c-format
 msgid "Disable Capture"
 msgstr "Aufnahme abschalten"

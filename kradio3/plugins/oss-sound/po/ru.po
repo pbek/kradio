@@ -1,0 +1,186 @@
+# translation of ru.po to
+# translation of kradio-oss-sound.po to
+# This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ru\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"PO-Revision-Date: 2006-11-08 12:45+0300\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team:  <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#. i18n: file oss-sound-configuration-ui.ui line 27
+#: rc.cpp:3 rc.cpp:27
+#, no-c-format
+msgid "Devices"
+msgstr "Устройства"
+
+#. i18n: file oss-sound-configuration-ui.ui line 51
+#: rc.cpp:6 rc.cpp:30
+#, no-c-format
+msgid "PCM Device"
+msgstr "Устройство PCM"
+
+#. i18n: file oss-sound-configuration-ui.ui line 59
+#: rc.cpp:9 rc.cpp:33
+#, no-c-format
+msgid "Mixer Device"
+msgstr "Устройство микшера"
+
+#. i18n: file oss-sound-configuration-ui.ui line 67
+#: rc.cpp:12 rc.cpp:36
+#, no-c-format
+msgid "Buffer Size"
+msgstr "Размер буфера"
+
+#. i18n: file oss-sound-configuration-ui.ui line 75
+#: rc.cpp:15 rc.cpp:39
+#, no-c-format
+msgid " kB"
+msgstr " кБ"
+
+#. i18n: file oss-sound-configuration-ui.ui line 91
+#: rc.cpp:18 rc.cpp:42
+#, no-c-format
+msgid "Extended Options"
+msgstr "Дополнительные параметры"
+
+#. i18n: file oss-sound-configuration-ui.ui line 105
+#: rc.cpp:21 rc.cpp:45
+#, no-c-format
+msgid "Disable Playback"
+msgstr "Запретить &воспроизведение"
+
+#. i18n: file oss-sound-configuration-ui.ui line 113
+#: rc.cpp:24 rc.cpp:48
+#, no-c-format
+msgid "Disable Capture"
+msgstr "Запретить &запись"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Алексей Кузнецов"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "Alexey.Kouznetsov@GMail.com"
+
+#: oss-sound.cpp:38
+msgid "Open Sound System (OSS) Support"
+msgstr "Поддержка Открытой звуковой системы (OSS)"
+
+#: oss-sound.cpp:46
+msgid "KRadio OSS Sound Plugin"
+msgstr "Модуль OSS для KRadio"
+
+#: oss-sound.cpp:172
+msgid "OSS Sound"
+msgstr "OSS"
+
+#: oss-sound.cpp:173
+msgid "OSS Sound Device Options"
+msgstr "Параметры звука для драйвера OSS"
+
+#: oss-sound.cpp:507
+msgid "OSS device %1: No data to record"
+msgstr "Устройство OSS %1: для записи нет данных"
+
+#: oss-sound.cpp:549
+msgid "Error %1 while handling OSS device %2"
+msgstr "Ошибка %1 при работе с устройством OSS %2."
+
+#: oss-sound.cpp:593 oss-sound.cpp:619
+msgid "Cannot open DSP device %1"
+msgstr "Не могу открыть устройство звуковой платы  %1"
+
+#: oss-sound.cpp:599
+msgid "Cannot read DSP capabilities for %1"
+msgstr "Не могу узнать возможности звуковой платы %1"
+
+#: oss-sound.cpp:626
+msgid "Cannot set DSP sample format for %1"
+msgstr "Не могу установить формат данных для звуковой платы %1"
+
+#: oss-sound.cpp:631
+msgid "Cannot set number of channels for %1"
+msgstr "Не могу установить число каналов для звуковой платы %1"
+
+#: oss-sound.cpp:636
+msgid "Cannot set sampling rate for %1"
+msgstr "Не могу установить частоту дискретизации для звуковой платы %1"
+
+#: oss-sound.cpp:638
+msgid "Asking for %1 Hz but %2 uses %3 Hz"
+msgstr "Был дан запрос на %1 Гц, однако %2 использует %3 Гц."
+
+#: oss-sound.cpp:648
+msgid "Cannot set stereo mode for %1"
+msgstr "Не могу установить стерео режим для звуковой платы %1"
+
+#: oss-sound.cpp:653
+msgid "Cannot set sample size for %1"
+msgstr "Не могу установить размер элемента выборки для звуковой платы %1"
+
+#: oss-sound.cpp:662
+msgid "Cannot set buffers for %1"
+msgstr "Не могу установить буферы для звуковой платы %1"
+
+#: oss-sound.cpp:667
+msgid "Cannot read buffer size for %1"
+msgstr "Не могу узнать размер буфера звуковой платы %1"
+
+#: oss-sound.cpp:669
+msgid "%1 uses buffer blocks of %2 bytes"
+msgstr "%1 использует блоки буфера по %2 байт"
+
+#: oss-sound.cpp:672
+msgid "adjusted own buffer size to %1 bytes"
+msgstr "Размер собственного буфера установлен  %1 байт."
+
+#: oss-sound.cpp:724
+msgid "Cannot open mixer device %1"
+msgstr "Не могу открыть устройство микшера %1"
+
+#: oss-sound.cpp:757
+msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
+msgstr "OSSSoundDevice::getMixerChannels: Не могу открыть устройство микшера %1"
+
+#: oss-sound.cpp:771
+msgid "OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
+msgstr "OSSSoundDevice::getMixerChannels: не могу прочесть маску устройства микшера для устройства %1"
+
+#: oss-sound.cpp:876
+msgid "error %1 while reading volume from %2"
+msgstr "Ошибка %1 при считывании громкости с %2."
+
+#: oss-sound.cpp:899
+msgid "error %1 while setting volume to %2 on device %3"
+msgstr "Ошибка %1 при установке громкости %2 на устройстве %3."
+
+#: oss-sound.cpp:915
+msgid "Selecting recording source on device %1 failed with error code %2"
+msgstr "Выбор источника записи на устройстве %1 не удался (код ошибки %2)"
+
+#: oss-sound.cpp:921
+msgid "Reading igain volume on device %1 failed with error code %2"
+msgstr "Считывание громкости записи с устройства %1 не удалось (код ошибки %2)"
+
+#: oss-sound.cpp:928
+msgid "Setting igain volume on device %1 failed with error code %2"
+msgstr "Установка громкости записи на устройстве %1 не удалась (код ошибки %2)"
+
+#: oss-sound.cpp:986
+msgid "OSS Sound Device %1"
+msgstr "Устройство OSS: %1"
+

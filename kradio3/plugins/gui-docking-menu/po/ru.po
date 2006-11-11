@@ -1,0 +1,118 @@
+# translation of ru.po to
+# translation of kradio-gui-docking-menu.po to
+# This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ru\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"PO-Revision-Date: 2006-11-08 12:16+0300\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team:  <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Алексей Кузнецов"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "Alexey.Kouznetsov@GMail.com"
+
+#: docking-configuration.cpp:70
+msgid "Left Mouse Click on Tray"
+msgstr "По щелчку левой кнопкой мыши"
+
+#: docking-configuration.cpp:73
+msgid "Show/Hide all GUI Elements"
+msgstr "Показать/скрыть все окна"
+
+#: docking-configuration.cpp:74
+msgid "Power On/Off"
+msgstr "Включить/выключить"
+
+#: docking.cpp:44
+msgid "Tray Menu for KRadio"
+msgstr "Меню лотка для KRadio"
+
+#: docking.cpp:50
+msgid "Docking Plugin"
+msgstr "Модуль системного лотка"
+
+#: docking.cpp:180
+msgid "Docking Menu"
+msgstr "Меню лотка"
+
+#: docking.cpp:181
+msgid "Docking Menu Configuration"
+msgstr "Конфигурация меню лотка"
+
+#: docking.cpp:228
+msgid "Search Next Station"
+msgstr "Искать следующую станцию"
+
+#: docking.cpp:230
+msgid "Search Previous Station"
+msgstr "Искать предыдущую станцию"
+
+#: docking.cpp:235
+msgid "Recording"
+msgstr "Запись"
+
+#: docking.cpp:240
+msgid "Pause Radio"
+msgstr "Приостановить"
+
+#: docking.cpp:252
+msgid "Show/Hide Plugins"
+msgstr "Показать/скрыть"
+
+#: docking.cpp:354
+msgid "next alarm: %1"
+msgstr "След. действие: %1"
+
+#: docking.cpp:356
+msgid "<no alarm pending>"
+msgstr "<Расписание пусто>"
+
+#: docking.cpp:364
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Остановить таймер отключения (установлено на %1)"
+
+#: docking.cpp:366 docking.cpp:373 docking.cpp:380
+msgid "Start Sleep Countdown"
+msgstr "Запустить таймер отключения"
+
+#: docking.cpp:388
+msgid "Power Off"
+msgstr "Выключить"
+
+#: docking.cpp:388
+msgid "Power On"
+msgstr "Включить"
+
+#: docking.cpp:402
+msgid "invalid station"
+msgstr "Неверная станция"
+
+#: docking.cpp:407
+msgid "KRadio: %1"
+msgstr "Радиоприёмник KDE"
+
+#: docking.cpp:543 docking.cpp:616 docking.cpp:636
+msgid "Stop Recording of %1"
+msgstr "Остановить запись %1"
+
+#: docking.cpp:599
+msgid "Start Recording"
+msgstr "Начать запись"
+

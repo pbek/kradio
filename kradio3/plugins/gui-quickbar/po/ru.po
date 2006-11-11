@@ -1,0 +1,56 @@
+# translation of ru.po to
+# translation of kradio-gui-quickbar.po to
+# This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ru\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"PO-Revision-Date: 2006-11-08 12:00+0300\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team:  <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Алексей Кузнецов"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "Alexey.Kouznetsov@GMail.com"
+
+#: quickbar.cpp:42
+msgid "Radio Station Quick Selection Toolbar"
+msgstr "Панель быстрого выбора радиостанций"
+
+#: quickbar.cpp:48
+msgid "Quickbar Plugin"
+msgstr "Панель быстрого доступа"
+
+#: quickbar.cpp:139
+msgid "Quickbar"
+msgstr ""
+"Панель\n "
+"радиостанций"
+
+#: quickbar.cpp:140
+msgid "Quickbar Configuration"
+msgstr "Настройка панели быстрого доступа"
+
+#: quickbar.cpp:404
+msgid "contentsDragEnterEvent accepted"
+msgstr "contentsDragEnterEvent accepted"
+
+#: quickbar.cpp:406
+msgid "contentsDragEnterEvent rejected"
+msgstr "contentsDragEnterEvent rejected"
+

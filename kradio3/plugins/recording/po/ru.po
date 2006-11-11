@@ -1,20 +1,20 @@
-# translation of de.po to
+# translation of ru.po to
 # translation of kradio-recording.po to
 # This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
 #
-# Ernst Martin Witte <emw@nocabal.de>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: de\n"
+"Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 00:31+0100\n"
-"PO-Revision-Date: 2006-11-06 00:57+0100\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team:  <de@li.org>\n"
+"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"PO-Revision-Date: 2006-11-08 12:35+0300\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: KBabel 1.10\n"
 
 #. i18n: file recording-configuration-ui.ui line 16
 #: rc.cpp:3 rc.cpp:117
@@ -26,19 +26,19 @@ msgstr "RecordingConfigurationUI"
 #: rc.cpp:6 rc.cpp:120
 #, no-c-format
 msgid "Output"
-msgstr "Ausgabe"
+msgstr "Выход"
 
 #. i18n: file recording-configuration-ui.ui line 138
 #: rc.cpp:9 rc.cpp:123
 #, no-c-format
 msgid "MP3 Quality(0 - high, 9 - low)"
-msgstr "MP3 Qualität(0 - hoch, 9 - niedrig)"
+msgstr "Качество MP3 (0 — высокое, 9 — низкое)"
 
 #. i18n: file recording-configuration-ui.ui line 149
 #: rc.cpp:12 rc.cpp:126
 #, no-c-format
 msgid "raw pcm output (.raw)"
-msgstr "reine PCM-Ausgabe (.raw)"
+msgstr "Неформатированный вывод (.raw)"
 
 #. i18n: file recording-configuration-ui.ui line 154
 #: rc.cpp:15 rc.cpp:129
@@ -62,37 +62,37 @@ msgstr "Sun/NeXT (.au)"
 #: rc.cpp:24 rc.cpp:138
 #, no-c-format
 msgid "MP3 Compressed (.mp3)"
-msgstr "MP3 komprimiert (.mp3)"
+msgstr "Сжатый MP3 (.mp3)"
 
 #. i18n: file recording-configuration-ui.ui line 174
 #: rc.cpp:27 rc.cpp:141
 #, no-c-format
 msgid "Ogg/Vorbis Compressed (.ogg)"
-msgstr "Ogg/Vorbis komprimiert (.ogg)"
+msgstr "Сжатый Ogg Vorbis (.ogg)"
 
 #. i18n: file recording-configuration-ui.ui line 194
 #: rc.cpp:30 rc.cpp:144
 #, no-c-format
 msgid "Recording Directory"
-msgstr "Aufnahme-Verzeichnis"
+msgstr "Каталог для сохранения"
 
 #. i18n: file recording-configuration-ui.ui line 202
 #: rc.cpp:33 rc.cpp:147
 #, no-c-format
 msgid "File Format"
-msgstr "Dateiformat"
+msgstr "Формат файла"
 
 #. i18n: file recording-configuration-ui.ui line 210
 #: rc.cpp:36 rc.cpp:150
 #, no-c-format
 msgid "Ogg Quality(0 - low, 9 - high)"
-msgstr "Ogg Qualität(0 - niedrig, 9 - hoch)"
+msgstr "Качество Ogg (0 — ниже, 9 — выше)"
 
 #. i18n: file recording-configuration-ui.ui line 239
 #: rc.cpp:39 rc.cpp:153
 #, no-c-format
 msgid "I&nput"
-msgstr "Quelle"
+msgstr "В&вод"
 
 #. i18n: file recording-configuration-ui.ui line 276
 #: rc.cpp:42 rc.cpp:156
@@ -122,25 +122,25 @@ msgstr "11025"
 #: rc.cpp:54 rc.cpp:168
 #, no-c-format
 msgid "Endianess"
-msgstr "Byte-Reihenfolge"
+msgstr "Порядок байтов"
 
 #. i18n: file recording-configuration-ui.ui line 334
 #: rc.cpp:57 rc.cpp:171
 #, no-c-format
 msgid "Stereo"
-msgstr "Stereo"
+msgstr "2 (Стерео)"
 
 #. i18n: file recording-configuration-ui.ui line 339
 #: rc.cpp:60 rc.cpp:174
 #, no-c-format
 msgid "Mono"
-msgstr "Mono"
+msgstr "1 (Моно)"
 
 #. i18n: file recording-configuration-ui.ui line 359
 #: rc.cpp:63 rc.cpp:177 recording-monitor.cpp:53
 #, no-c-format
 msgid "Sample Rate"
-msgstr "Abtastrate"
+msgstr "Частота дискретизации"
 
 #. i18n: file recording-configuration-ui.ui line 365
 #: rc.cpp:66 rc.cpp:180
@@ -151,6 +151,7 @@ msgstr "Little Endian"
 #. i18n: file recording-configuration-ui.ui line 370
 #: rc.cpp:69 rc.cpp:183
 #, no-c-format
+#, fuzzy
 msgid "Big Endian"
 msgstr "Big Endian"
 
@@ -170,61 +171,61 @@ msgstr "8"
 #: rc.cpp:78 rc.cpp:192
 #, no-c-format
 msgid "Channels"
-msgstr "Kanäle"
+msgstr "Число каналов"
 
 #. i18n: file recording-configuration-ui.ui line 421
 #: rc.cpp:81 rc.cpp:195
 #, no-c-format
 msgid "Sample Bits"
-msgstr "Quantisierungs-Bits"
+msgstr "Бит на элемент выборки"
 
 #. i18n: file recording-configuration-ui.ui line 427
 #: rc.cpp:84 rc.cpp:198
 #, no-c-format
 msgid "Signed"
-msgstr "Vorzeichenbehaftet"
+msgstr "Со знаком"
 
 #. i18n: file recording-configuration-ui.ui line 432
 #: rc.cpp:87 rc.cpp:201
 #, no-c-format
 msgid "Unsigned"
-msgstr "Vorzeichenlos"
+msgstr "Без знака"
 
 #. i18n: file recording-configuration-ui.ui line 490
 #: rc.cpp:90 rc.cpp:204
 #, no-c-format
 msgid "&Buffers"
-msgstr "&Puffer"
+msgstr "&Буферы"
 
 #. i18n: file recording-configuration-ui.ui line 512
 #: rc.cpp:93 rc.cpp:207
 #, no-c-format
 msgid " kB"
-msgstr " kB"
+msgstr " кБ"
 
 #. i18n: file recording-configuration-ui.ui line 532
 #: rc.cpp:96 rc.cpp:210
 #, no-c-format
 msgid "Encoding Buffer Size"
-msgstr "Codierungs-Puffergröße"
+msgstr "Размер буфера для записи"
 
 #. i18n: file recording-configuration-ui.ui line 551
 #: rc.cpp:99 rc.cpp:213
 #, no-c-format
 msgid "Number of Buffers"
-msgstr "Anzahl der Puffer"
+msgstr "Количество буферов"
 
 #. i18n: file recording-configuration-ui.ui line 580
 #: rc.cpp:102 rc.cpp:216
 #, no-c-format
 msgid "Pre-Recordin&g"
-msgstr "Aufnahme&vorlaufs"
+msgstr "&Упреждающая запись"
 
 #. i18n: file recording-configuration-ui.ui line 610
 #: rc.cpp:105 rc.cpp:219
 #, no-c-format
 msgid "E&nable"
-msgstr "&Einschalten"
+msgstr "Включить"
 
 #. i18n: file recording-configuration-ui.ui line 613
 #: rc.cpp:108 rc.cpp:222
@@ -236,199 +237,189 @@ msgstr "Alt+N"
 #: rc.cpp:111 rc.cpp:225
 #, no-c-format
 msgid "PreRecording Time"
-msgstr "Dauer des Aufnahmevorlaufs"
+msgstr "Упреждение"
 
 #. i18n: file recording-configuration-ui.ui line 662
 #: rc.cpp:114 rc.cpp:228
 #, no-c-format
 msgid " s"
-msgstr " s"
+msgstr " с"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Ernst Martin Witte"
+msgstr "Алексей Кузнецов"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr "emw@nocabal.de"
+msgstr "Alexey.Kouznetsov@GMail.com"
 
 #: encoder_mp3.cpp:79 encoder_mp3.cpp:189
 msgid "Error %1 while encoding mp3. "
-msgstr "Fehler %1 beim Codieren des MP3-Streams. "
+msgstr "При кодировании MP3 произошла ошибка: %1. "
 
 #: encoder_mp3.cpp:89 encoder_mp3.cpp:194 encoder_pcm.cpp:53
 msgid "Error %1 writing output. "
-msgstr "Fehler %1 beim Schreiben der Ausgabedatei. "
+msgstr "Во время записи произошла ошибка: %1"
 
 #: encoder_mp3.cpp:106
 msgid "Cannot initialize lalibmp3lame. "
-msgstr "Die Funktionsbibliothek libmp3lame kann nicht initialisiert werden. "
+msgstr "Не могу инициализировать lalibmp3lame — необходимо для кодирования в MP3."
 
 #: encoder_mp3.cpp:123
 msgid "Cannot initialize libmp3lame parameters. "
-msgstr ""
-"Die Parameter der Funktionsbibliothek libmp3lame konnten nicht initialisiert "
-"werden."
+msgstr "Не могу инициализировать параметры libmp3lame — необходимо для кодирования в MP3."
 
 #: encoder_mp3.cpp:130
 msgid "Recorded by KRadio"
-msgstr "Aufzeichnung durch KRadio"
+msgstr "Запись KRadio"
 
 #: encoder_mp3.cpp:143 encoder_pcm.cpp:66
 msgid "Cannot open output file %1. "
-msgstr "Die Ausgabedatei %1 kann nicht geöffnet werden. "
+msgstr "Не могу открыть выходной файл %1. "
 
 #: encoder_mp3.cpp:156
 msgid "Cannot allocate buffers for mp3 encoding. "
-msgstr ""
-"Die Puffer für das Codieren des MP3-Streams konnten nicht angelegt werden. "
+msgstr "Не могу разместить в памяти буферы для кодирования MP3."
 
 #: encoder_ogg.cpp:94
 msgid "Failed writing data to ogg/vorbis output stream. "
-msgstr "Das schreiben der Ogg/Vorbis-Daten schlug fehl. "
+msgstr "Ошибка записи данных в выходной поток ogg/vorbis. "
 
 #: encoder_ogg.cpp:136
 msgid "Cannot open Ogg/Vorbis output file %1. "
-msgstr "Die Ogg/Vorbis-Ausgabedatei %1 konnte nicht geöffnet werden. "
+msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\". "
 
 #: encoder_ogg.cpp:149
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
-msgstr ""
-"Die Initialisierung des Ogg/Vorbis-Modes schlug fehl: Ungültiger Qualitäts-"
-"Parameter\n"
+msgstr "Инициализация режима Ogg/Vorbis не удалась: качество записи указано неверно\n"
 
 #: encoder_ogg.cpp:200
 msgid "Failed writing Ogg/Vorbis header to output stream\n"
-msgstr "Das Schreiben der Ogg/Vorbis-Kopfdaten der Ausgabedatei schlug fehl\n"
+msgstr "Ошибка записи заголовка Ogg/Vorbis в выходной поток\n"
 
 #: recording-datamonitor.cpp:174 recording-datamonitor.cpp:179
 msgid "%1 dB"
-msgstr "%1 dB"
+msgstr "%1 дБ"
 
 #: recording-monitor.cpp:34
 msgid "Recording Monitor"
-msgstr "Aufnahme-Überwachung"
+msgstr "Монитор записи"
 
 #: recording-monitor.cpp:38 recording.cpp:47
 msgid "KRadio Recording Monitor"
-msgstr "KRadio Aufnahme-Überwachung"
+msgstr "Монитор записи для KRadio"
 
 #: recording-monitor.cpp:43
 msgid "SoundStream"
-msgstr "Aufnahmedatenstrom"
+msgstr "Источник"
 
 #: recording-monitor.cpp:45
 msgid "Status"
-msgstr "Status"
+msgstr "Состояние"
 
 #: recording-monitor.cpp:46 recording-monitor.cpp:48 recording-monitor.cpp:50
 #: recording-monitor.cpp:52 recording-monitor.cpp:54
 msgid "<undefined>"
-msgstr "<undefiniert>"
+msgstr "<не определено>"
 
 #: recording-monitor.cpp:47
 msgid "Recording File"
-msgstr "Aufnahmedatei"
+msgstr "Файл"
 
 #: recording-monitor.cpp:49
 msgid "File Size"
-msgstr "Dateigröße"
+msgstr "Размер файла"
 
 #: recording-monitor.cpp:51
 msgid "Recording Time"
-msgstr "Aufnahmezeit"
+msgstr "Длительность записи"
 
 #: recording-monitor.cpp:57 recording-monitor.cpp:393
 #: recording-monitor.cpp:396
 msgid "&Record"
-msgstr "&Aufnehmen"
+msgstr "&Начать запись"
 
 #: recording-monitor.cpp:74 recording-monitor.cpp:118
 #: recording-monitor.cpp:141
 msgid "nothing"
-msgstr "nichts"
+msgstr "(нет)"
 
 #: recording-monitor.cpp:339
 msgid "%1 Byte"
-msgstr "%1 Byte"
+msgstr "%1 байт"
 
 #: recording-monitor.cpp:340
 msgid "%1 kB"
-msgstr "%1 kB"
+msgstr "%1 кБ"
 
 #: recording-monitor.cpp:341
 msgid "%1 MB"
-msgstr "%1 MB"
+msgstr "%1 МБ"
 
 #: recording-monitor.cpp:342
 msgid "%1 GB"
-msgstr "%1 GB"
+msgstr "%1 ГБ"
 
 #: recording-monitor.cpp:345
 msgid "%1 Hz"
-msgstr "%1 Hz"
+msgstr "%1 Гц"
 
 #: recording-monitor.cpp:393
 msgid "&Stop Recording"
-msgstr "Aufnahme anhalten"
+msgstr "&Остановить запись"
 
 #: recording.cpp:46 recording.cpp:54
 msgid "KRadio Recording Plugin"
-msgstr "KRadio Aufnahme-Plugin"
+msgstr "Модуль записи звука для KRadio"
 
 #: recording.cpp:131 recording.cpp:132
 msgid "Recording"
-msgstr "Aufnahme"
+msgstr "Запись"
 
 #: recording.cpp:360
 msgid "start capture not handled"
-msgstr "Der Aufnahmestart wurde ignoriert"
+msgstr ""
 
 #: recording.cpp:367
 msgid "Recording starting"
-msgstr "Die Aufnahme wird gestartet"
+msgstr "Запись запущена"
 
 #: recording.cpp:369
 msgid "starting encoding thread failed"
-msgstr "Das Starten des Aufnahme-Threads schlug fehl"
+msgstr "Не смог запустить процесс кодирования"
 
 #: recording.cpp:451
 msgid "could not read suffient data"
-msgstr "es konnten nicht ausreichend Daten gelesen werden"
+msgstr "Не смог прочесть достаточно данных"
 
 #: recording.cpp:482
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
 "input bytes"
-msgstr ""
-"Pufferüberlauf des Aufnahmepuffers des Kodierers/Komprimierers (Fehlerhafte "
-"Konfiguration der Puffer?). Es wurden %1 Bytes ignoriert."
+msgstr "Переполнение на входе кодировщика (вероятно, неправильно настроен буфер). Пропускаю %1 байт на входе."
 
 #: recording.cpp:544
 msgid "Recording::outputFile: "
-msgstr "Aufnahme::Ausgabedatei: "
+msgstr "Recording::outputFile (выходной файл записи):"
 
 #: recording.cpp:595
 msgid "The encoding thread did not finish. It will be killed now."
-msgstr ""
-"Der Codierungs-Thread beendete sich nicht selber. Er wird jetzt mit roher "
-"Gewalt beendet."
+msgstr "Нить кодировщика не завершилась. Процесс будет уничтожен."
 
 #: recording.cpp:600
 msgid "Waiting for encoding thread to terminate."
-msgstr "Warte auf die Beendigung des Codierungs-Threads."
+msgstr "Жду завершения нити кодировщика"
 
 #: recording.cpp:619
+#, fuzzy
 msgid "Recording stopped"
-msgstr "Die Aufnahme wurde beendet"
+msgstr "Запись заершена"
 
 #: recording.cpp:652
-msgid ""
-"Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
-msgstr ""
-"Recording::notifySoundStreamData(Kodierte Daten): Die Empfängermodule "
-"übersprangen %1 Bytess"
+msgid "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
+msgstr "Recording::notifySoundStreamData(encoded data): Приёмник пропустил %1 байт"
+

@@ -1,19 +1,20 @@
+# translation of ru.po to
 # translation of kradio-streaming.po to
 # This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
 #
-# Ernst Martin Witte <emw@nocabal.de>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: kradio-streaming\n"
+"Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 00:31+0100\n"
-"PO-Revision-Date: 2006-11-06 00:44+0100\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team:  <de@li.org>\n"
+"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"PO-Revision-Date: 2006-11-08 12:25+0300\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: KBabel 1.10\n"
 
 #. i18n: file streaming-configuration-ui.ui line 16
 #: rc.cpp:3 rc.cpp:95
@@ -28,7 +29,7 @@ msgstr "StreamingConfigurationUI"
 #: rc.cpp:6 rc.cpp:12 rc.cpp:98 rc.cpp:104
 #, no-c-format
 msgid "No."
-msgstr "Nr."
+msgstr "No "
 
 #. i18n: file streaming-configuration-ui.ui line 44
 #. i18n: file streaming-configuration-ui.ui line 85
@@ -37,55 +38,55 @@ msgstr "Nr."
 #: rc.cpp:9 rc.cpp:15 rc.cpp:101 rc.cpp:107
 #, no-c-format
 msgid "URL"
-msgstr "URL"
+msgstr "Адрес"
 
 #. i18n: file streaming-configuration-ui.ui line 114
 #: rc.cpp:18 rc.cpp:110
 #, no-c-format
 msgid "Capture URLs"
-msgstr "Aufnahme-URL"
+msgstr "Адреса для записи"
 
 #. i18n: file streaming-configuration-ui.ui line 122
 #: rc.cpp:21 rc.cpp:113
 #, no-c-format
 msgid "Playback URLs"
-msgstr "Wiedergabe-URL"
+msgstr "Адреса для воспроизведения"
 
 #. i18n: file streaming-configuration-ui.ui line 434
 #: rc.cpp:32 rc.cpp:124
 #, no-c-format
 msgid "URL Properties"
-msgstr "URL-Eigenschaften"
+msgstr "Параметры для URL"
 
 #. i18n: file streaming-configuration-ui.ui line 446
 #: rc.cpp:35 rc.cpp:127
 #, no-c-format
 msgid "Stereo"
-msgstr "Stereo"
+msgstr "2 (Стерео)"
 
 #. i18n: file streaming-configuration-ui.ui line 451
 #: rc.cpp:38 rc.cpp:130
 #, no-c-format
 msgid "Mono"
-msgstr "Mono"
+msgstr "1 (Моно)"
 
 #. i18n: file streaming-configuration-ui.ui line 471
 #: rc.cpp:41 rc.cpp:133
 #, no-c-format
 msgid "Sample Bits"
-msgstr "Quantisierungs-Bits"
+msgstr "Бит на элемент выборки"
 
 #. i18n: file streaming-configuration-ui.ui line 479
 #: rc.cpp:44 rc.cpp:136
 #, no-c-format
 msgid "Channels"
-msgstr "Kanäle"
+msgstr "Число каналов"
 
 #. i18n: file streaming-configuration-ui.ui line 487
 #: rc.cpp:47 rc.cpp:139
 #, no-c-format
 msgid "Endianess"
-msgstr "Byte-Reihenfolge"
+msgstr "Порядок байтов"
 
 #. i18n: file streaming-configuration-ui.ui line 493
 #: rc.cpp:50 rc.cpp:142
@@ -139,7 +140,7 @@ msgstr "8"
 #: rc.cpp:74 rc.cpp:166
 #, no-c-format
 msgid "Raw"
-msgstr "Rohdaten"
+msgstr "Raw"
 
 #. i18n: file streaming-configuration-ui.ui line 592
 #: rc.cpp:77 rc.cpp:169
@@ -151,67 +152,65 @@ msgstr "kB"
 #: rc.cpp:80 rc.cpp:172
 #, no-c-format
 msgid "Buffer Size"
-msgstr "Puffergröße"
+msgstr "Размер буфера"
 
 #. i18n: file streaming-configuration-ui.ui line 617
 #: rc.cpp:83 rc.cpp:175
 #, no-c-format
 msgid "Format"
-msgstr "Format"
+msgstr "Формат"
 
 #. i18n: file streaming-configuration-ui.ui line 625
 #: rc.cpp:86 rc.cpp:178
 #, no-c-format
 msgid "Sample Rate"
-msgstr "Abtastrate"
+msgstr "Частота дискретизации"
 
 #. i18n: file streaming-configuration-ui.ui line 631
 #: rc.cpp:89 rc.cpp:181
 #, no-c-format
 msgid "Signed"
-msgstr "Vorzeichenbehaftet"
+msgstr "Со знаком"
 
 #. i18n: file streaming-configuration-ui.ui line 636
 #: rc.cpp:92 rc.cpp:184
 #, no-c-format
 msgid "Unsigned"
-msgstr "Vorzeichenlos"
+msgstr "Без знака"
 
-#: streaming-configuration.cpp:155 streaming-configuration.cpp:259
+#: streaming-configuration.cpp:153 streaming-configuration.cpp:257
 msgid "new channel"
-msgstr "Neuer Kanal"
+msgstr "новый канал"
 
 #: streaming-job.cpp:204
 msgid "skipped %1 bytes"
-msgstr "%1 bytes wurden übersprungen"
+msgstr "Пропущено %1 байт"
 
 #: streaming.cpp:33
 msgid "Streaming Support"
-msgstr "Unterstützung für das Streaming"
+msgstr "Сетевое\nвещание"
 
 #: streaming.cpp:42
 msgid "KRadio Streaming Plugin"
-msgstr "KRadio Streaming-Plugin"
+msgstr "Модуль сетевого вещания для KRadio"
 
 #: streaming.cpp:172
 msgid "Streaming"
-msgstr "Streaming"
+msgstr "Сетевое\nвещание"
 
 #: streaming.cpp:173
 msgid "Streaming Device Options"
-msgstr "Geräteoptionen für das Streaming"
+msgstr "Параметры сетевого вещания"
 
 #: streaming.cpp:403
-msgid ""
-"StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
-msgstr ""
-"Streaminggerät %1::notifySoundStreamData: Die Wiedergabe-Module haben %2 "
-"bytes übersprungen."
+msgid "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
+msgstr "StreamingDevice %1::notifySoundStreamData: Клиенты пропустили %2 байт"
 
 #: streaming.cpp:426
 msgid "Streaming Device %1"
-msgstr "Streaming-Gerät %1"
+msgstr "Устройство вещания %1"
 
 #: streaming.cpp:432 streaming.cpp:437
 msgid "Streaming Device %1, %2: %3"
-msgstr "Streaming-Gerät %1, %2: %3"
+msgstr "Устройство вещания %1, %2: %3"
+
