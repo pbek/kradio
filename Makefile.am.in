@@ -19,4 +19,3 @@ install-data-local:
 include admin/deps.am
 
 
-SUBDIRS=$(TOPSUBDIRS)
