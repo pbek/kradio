@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:51+0100\n"
 "PO-Revision-Date: 2006-11-08 12:35+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -150,8 +150,7 @@ msgstr "Little Endian"
 
 #. i18n: file recording-configuration-ui.ui line 370
 #: rc.cpp:69 rc.cpp:183
-#, no-c-format
-#, fuzzy
+#, fuzzy, no-c-format
 msgid "Big Endian"
 msgstr "Big Endian"
 
@@ -267,11 +266,14 @@ msgstr "Во время записи произошла ошибка: %1"
 
 #: encoder_mp3.cpp:106
 msgid "Cannot initialize lalibmp3lame. "
-msgstr "Не могу инициализировать lalibmp3lame — необходимо для кодирования в MP3."
+msgstr ""
+"Не могу инициализировать lalibmp3lame — необходимо для кодирования в MP3."
 
 #: encoder_mp3.cpp:123
 msgid "Cannot initialize libmp3lame parameters. "
-msgstr "Не могу инициализировать параметры libmp3lame — необходимо для кодирования в MP3."
+msgstr ""
+"Не могу инициализировать параметры libmp3lame — необходимо для кодирования в "
+"MP3."
 
 #: encoder_mp3.cpp:130
 msgid "Recorded by KRadio"
@@ -295,7 +297,8 @@ msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\"
 
 #: encoder_ogg.cpp:149
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
-msgstr "Инициализация режима Ogg/Vorbis не удалась: качество записи указано неверно\n"
+msgstr ""
+"Инициализация режима Ogg/Vorbis не удалась: качество записи указано неверно\n"
 
 #: encoder_ogg.cpp:200
 msgid "Failed writing Ogg/Vorbis header to output stream\n"
@@ -400,7 +403,9 @@ msgstr "Не смог прочесть достаточно данных"
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
 "input bytes"
-msgstr "Переполнение на входе кодировщика (вероятно, неправильно настроен буфер). Пропускаю %1 байт на входе."
+msgstr ""
+"Переполнение на входе кодировщика (вероятно, неправильно настроен буфер). "
+"Пропускаю %1 байт на входе."
 
 #: recording.cpp:544
 msgid "Recording::outputFile: "
@@ -420,6 +425,7 @@ msgid "Recording stopped"
 msgstr "Запись заершена"
 
 #: recording.cpp:652
-msgid "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
-msgstr "Recording::notifySoundStreamData(encoded data): Приёмник пропустил %1 байт"
-
+msgid ""
+"Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
+msgstr ""
+"Recording::notifySoundStreamData(encoded data): Приёмник пропустил %1 байт"

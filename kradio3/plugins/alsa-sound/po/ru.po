@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:51+0100\n"
 "PO-Revision-Date: 2006-11-08 12:15+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -193,7 +193,9 @@ msgstr "Модуль ALSA: не могу прочесть данные с уст
 msgid ""
 "ALSA Plugin: buffer overrun for device plughw:%1,%2 (buffersize=%3, buffer=%"
 "4)"
-msgstr "Модуль ALSA: переполнение буфера устройства plughw:%1,%2 (размер буфера=%3, буфер=%4)"
+msgstr ""
+"Модуль ALSA: переполнение буфера устройства plughw:%1,%2 (размер буфера=%3, "
+"буфер=%4)"
 
 #: alsa-sound.cpp:736
 msgid "ALSA Plugin: Error opening PCM device %1"
@@ -223,7 +225,9 @@ msgstr "Модуль ALSA: ошибка при установке частоты
 msgid ""
 "ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 "
 "Hz instead"
-msgstr "Модуль ALSA:  частота дискретизации %1 Гц не поддерживается Вашим оборудованием %2. Вместо неё использую %3 Гц."
+msgstr ""
+"Модуль ALSA:  частота дискретизации %1 Гц не поддерживается Вашим "
+"оборудованием %2. Вместо неё использую %3 Гц."
 
 #: alsa-sound.cpp:781
 msgid "ALSA Plugin: Error setting period size for %1"
@@ -247,7 +251,8 @@ msgstr "Модуль ALSA: ошибка при вызове функции snd_m
 
 #: alsa-sound.cpp:934
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
-msgstr "Модуль ALSA: ошибка при вызове функции snd_mixer_selem_register для платы %1"
+msgstr ""
+"Модуль ALSA: ошибка при вызове функции snd_mixer_selem_register для платы %1"
 
 #: alsa-sound.cpp:938
 msgid "ALSA Plugin: Error: snd_mixer_load for card %1"
@@ -276,4 +281,3 @@ msgstr "Ошибка при установке флажка записи %1 дл
 #: alsa-sound.cpp:1448
 msgid "ALSA Sound Device %1"
 msgstr "Устройство ALSA: %1"
-

@@ -274,3 +274,6 @@ void   StreamingJob::slotIOJobResult (KIO::Job *job)
         emit logStreamError(m_URL, job->errorString());
     }
 }
+
+#include "streaming-job.moc"
+

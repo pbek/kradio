@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 00:31+0100\n"
+"POT-Creation-Date: 2006-11-11 02:51+0100\n"
 "PO-Revision-Date: 2006-11-06 00:24+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -203,19 +203,19 @@ msgstr "Unterstützung für V4L(2)-Radiogeräte"
 msgid "Video For Linux Plugin"
 msgstr "Video für Linux (V4L) Plugin"
 
-#: v4lradio.cpp:657
+#: v4lradio.cpp:659
 msgid "invalid frequency %1"
 msgstr "ungültige Frequenz: %1"
 
-#: v4lradio.cpp:678 v4lradio.cpp:1351 v4lradio.cpp:1498
+#: v4lradio.cpp:680 v4lradio.cpp:1358 v4lradio.cpp:1507
 msgid "don't known how to handle V4L-version %1"
 msgstr "Keine Ahnung, wie die V4L-Version %1 behandelt werden soll"
 
-#: v4lradio.cpp:684
+#: v4lradio.cpp:686
 msgid "error setting frequency to %1 (%2)"
 msgstr "Fehler (%2) beim Einstellen der Frequenz auf %1."
 
-#: v4lradio.cpp:1000
+#: v4lradio.cpp:1004
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
 "permissions."
@@ -223,19 +223,19 @@ msgstr ""
 "Das Gerät %1 existiert, ist aber nicht lesbar/schreibbar. Bitte überprüfen "
 "Sie die Einstellung der Zugriffsrechte für das Gerät."
 
-#: v4lradio.cpp:1010
+#: v4lradio.cpp:1014
 msgid "Could not find an accessible v4l(2) radio device."
 msgstr "Kann kein verwendbares V4L(2)-Radiogerät finden."
 
-#: v4lradio.cpp:1070
+#: v4lradio.cpp:1077
 msgid "V4L Radio"
 msgstr "V4L Radio"
 
-#: v4lradio.cpp:1071
+#: v4lradio.cpp:1078
 msgid "V4L Radio Options"
 msgstr "Optionen des V4L-Radios"
 
-#: v4lradio.cpp:1081
+#: v4lradio.cpp:1088
 msgid ""
 "V4L/V4L2 Plugin for KRadio.<P>Provides Support for V4L/V4L2 based Radio "
 "Cards<P>"
@@ -243,118 +243,118 @@ msgstr ""
 "V4L/V4L2-Plugin für KRadio.<P>Dieses Plugin bindet vom V4L/V4L2-Treiber "
 "unterstützte Radio-Karten in KRadio ein.<P>"
 
-#: v4lradio.cpp:1096
+#: v4lradio.cpp:1103
 msgid "V4L/V4L2"
 msgstr "V4L/V4L2"
 
-#: v4lradio.cpp:1097
+#: v4lradio.cpp:1104
 msgid "V4L/V4L2 Plugin"
 msgstr "V4L/V4L2-Plugin"
 
-#: v4lradio.cpp:1128
+#: v4lradio.cpp:1135
 msgid "Cannot open radio device %1"
 msgstr "Die Radiogerätedatei %1 kann nicht geöffnet werden"
 
-#: v4lradio.cpp:1179
+#: v4lradio.cpp:1186
 msgid "cannot open %1"
 msgstr "%1 kann nicht geöffnet werden"
 
-#: v4lradio.cpp:1203
+#: v4lradio.cpp:1210
 msgid "audio caps = %1"
 msgstr "Audio-Fähigkeiten: %1"
 
-#: v4lradio.cpp:1217
+#: v4lradio.cpp:1224
 msgid "error reading V4L1 caps"
 msgstr "Fehler beim Lesen der V4L1-Fähigkeiten"
 
-#: v4lradio.cpp:1226
+#: v4lradio.cpp:1233
 msgid "V4L2 - Version: %1"
 msgstr "V4L2 - Version: %1"
 
-#: v4lradio.cpp:1246
+#: v4lradio.cpp:1253
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Die Abfrage des Stummschaltungs-Reglers schlug fehl"
 
-#: v4lradio.cpp:1253
+#: v4lradio.cpp:1260
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Die Abfrage des Lautstärke-Reglers schlug fehl"
 
-#: v4lradio.cpp:1261
+#: v4lradio.cpp:1268
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Die Abfrage des Höhen-Reglers schlug fehl"
 
-#: v4lradio.cpp:1269
+#: v4lradio.cpp:1276
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Die Abfrage des Bass-Reglers schlug fehl"
 
-#: v4lradio.cpp:1277
+#: v4lradio.cpp:1284
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Die Abfrage des Balance-Reglers schlug fehl"
 
-#: v4lradio.cpp:1281
+#: v4lradio.cpp:1288
 msgid "V4LRadio::readV4LCaps: Reading V4L2 caps failed"
 msgstr "V4LRadio::readV4LCaps: Das Lesen der V4L2-Fähigkeiten schlug fehl"
 
-#: v4lradio.cpp:1285
+#: v4lradio.cpp:1292
 msgid "V4L %1 detected"
 msgstr "V4L %1 wurde gefunden"
 
-#: v4lradio.cpp:1287
+#: v4lradio.cpp:1294
 msgid "V4L not detected"
 msgstr "Das Radiogerät unterstützt V4L nicht"
 
-#: v4lradio.cpp:1290
+#: v4lradio.cpp:1297
 msgid "Radio is mutable"
 msgstr "Das Radio kann stummgeschaltet werden"
 
-#: v4lradio.cpp:1290
+#: v4lradio.cpp:1297
 msgid "Radio is not mutable"
 msgstr "Das Radio kann nicht stummgeschaltet werden"
 
-#: v4lradio.cpp:1291
+#: v4lradio.cpp:1298
 msgid "Radio has Volume Control"
 msgstr "Das Radio hat einen Lautstärkeregler"
 
-#: v4lradio.cpp:1291
+#: v4lradio.cpp:1298
 msgid "Radio has no Volume Control"
 msgstr "Das Radio hat keinen Lautstärkeregler"
 
-#: v4lradio.cpp:1292
+#: v4lradio.cpp:1299
 msgid "Radio has Bass Control"
 msgstr "Das Radio hat einen Bass-Regler"
 
-#: v4lradio.cpp:1292
+#: v4lradio.cpp:1299
 msgid "Radio has no Bass Control"
 msgstr "Das Radio hat keinen Bass-Regler"
 
-#: v4lradio.cpp:1293
+#: v4lradio.cpp:1300
 msgid "Radio has Treble Control"
 msgstr "Das Radio hat einen Höhen-Regler"
 
-#: v4lradio.cpp:1293
+#: v4lradio.cpp:1300
 msgid "Radio has no Treble Control"
 msgstr "Das Radio hat keinen Bass-Regler"
 
-#: v4lradio.cpp:1358
+#: v4lradio.cpp:1365
 msgid "cannot get tuner info (error %1)"
 msgstr "Tuner-Informationen können nicht gelesen werden (Fehler %1)"
 
-#: v4lradio.cpp:1400
+#: v4lradio.cpp:1409
 msgid "error setting %1: %2"
 msgstr "Fehler %2 beim Setzen von %1"
 
-#: v4lradio.cpp:1408
+#: v4lradio.cpp:1417
 msgid "error reading %1: %2"
 msgstr "Fehler %2 beim Lesen von %1"
 
-#: v4lradio.cpp:1504
+#: v4lradio.cpp:1513
 msgid "error updating radio audio info (%1): %2"
 msgstr "Fehler %2 beim Updaten der Audio-Informationen (%1)"
 
-#: v4lradio.cpp:1505
+#: v4lradio.cpp:1514
 msgid "write"
 msgstr "Schreiben"
 
-#: v4lradio.cpp:1505
+#: v4lradio.cpp:1514
 msgid "read"
 msgstr "Lesen"

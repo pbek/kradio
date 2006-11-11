@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:51+0100\n"
 "PO-Revision-Date: 2006-11-08 12:25+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -178,7 +178,7 @@ msgstr "Со знаком"
 msgid "Unsigned"
 msgstr "Без знака"
 
-#: streaming-configuration.cpp:153 streaming-configuration.cpp:257
+#: streaming-configuration.cpp:155 streaming-configuration.cpp:259
 msgid "new channel"
 msgstr "новый канал"
 
@@ -188,7 +188,9 @@ msgstr "Пропущено %1 байт"
 
 #: streaming.cpp:33
 msgid "Streaming Support"
-msgstr "Сетевое\nвещание"
+msgstr ""
+"Сетевое\n"
+"вещание"
 
 #: streaming.cpp:42
 msgid "KRadio Streaming Plugin"
@@ -196,14 +198,17 @@ msgstr "Модуль сетевого вещания для KRadio"
 
 #: streaming.cpp:172
 msgid "Streaming"
-msgstr "Сетевое\nвещание"
+msgstr ""
+"Сетевое\n"
+"вещание"
 
 #: streaming.cpp:173
 msgid "Streaming Device Options"
 msgstr "Параметры сетевого вещания"
 
 #: streaming.cpp:403
-msgid "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
+msgid ""
+"StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
 msgstr "StreamingDevice %1::notifySoundStreamData: Клиенты пропустили %2 байт"
 
 #: streaming.cpp:426
@@ -213,4 +218,3 @@ msgstr "Устройство вещания %1"
 #: streaming.cpp:432 streaming.cpp:437
 msgid "Streaming Device %1, %2: %3"
 msgstr "Устройство вещания %1, %2: %3"
-

@@ -47,3 +47,5 @@ void ListViewItemLirc::cancelRename(int col)
     m_renamingInProcess = -1;
     emit sigRenamingStopped(this, col);
 }
+
+#include "listviewitem_lirc.moc"

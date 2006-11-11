@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:11+0100\n"
 "PO-Revision-Date: 2006-11-08 12:00+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -39,8 +39,8 @@ msgstr "Панель быстрого доступа"
 #: quickbar.cpp:139
 msgid "Quickbar"
 msgstr ""
-"Панель\n "
-"радиостанций"
+"Панель\n"
+" радиостанций"
 
 #: quickbar.cpp:140
 msgid "Quickbar Configuration"
@@ -53,4 +53,3 @@ msgstr "contentsDragEnterEvent accepted"
 #: quickbar.cpp:406
 msgid "contentsDragEnterEvent rejected"
 msgstr "contentsDragEnterEvent rejected"
-

@@ -135,3 +135,5 @@ void QAlsaMixerElement::slotResetDirty()
 {
     m_dirty = false;
 }
+
+#include "alsa-mixer-element.moc"

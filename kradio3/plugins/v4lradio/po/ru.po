@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:51+0100\n"
 "PO-Revision-Date: 2006-11-08 11:59+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -203,155 +203,158 @@ msgstr "Поддержка устройств V4l(2)"
 msgid "Video For Linux Plugin"
 msgstr "Модуль \"Видео для linux\""
 
-#: v4lradio.cpp:657
+#: v4lradio.cpp:659
 msgid "invalid frequency %1"
 msgstr "Неправильная частота %1"
 
-#: v4lradio.cpp:678 v4lradio.cpp:1351 v4lradio.cpp:1498
+#: v4lradio.cpp:680 v4lradio.cpp:1358 v4lradio.cpp:1507
 msgid "don't known how to handle V4L-version %1"
 msgstr "Не знаю что делать с версией V4l \"%1\""
 
-#: v4lradio.cpp:684
+#: v4lradio.cpp:686
 msgid "error setting frequency to %1 (%2)"
 msgstr "Ошибка установки частоты %1 (%2)"
 
-#: v4lradio.cpp:1000
+#: v4lradio.cpp:1004
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
 "permissions."
-msgstr "Устройство %1 недоступно для чтения/записи. Проверьте права на устройство, а также не использует ли его другая программа."
+msgstr ""
+"Устройство %1 недоступно для чтения/записи. Проверьте права на устройство, а "
+"также не использует ли его другая программа."
 
-#: v4lradio.cpp:1010
+#: v4lradio.cpp:1014
 msgid "Could not find an accessible v4l(2) radio device."
 msgstr "Не найти доступное устройство V4l(2)."
 
-#: v4lradio.cpp:1070
+#: v4lradio.cpp:1077
 msgid "V4L Radio"
 msgstr "Радио V4l"
 
-#: v4lradio.cpp:1071
+#: v4lradio.cpp:1078
 msgid "V4L Radio Options"
 msgstr "Параметры устройства V4l"
 
-#: v4lradio.cpp:1081
+#: v4lradio.cpp:1088
 msgid ""
 "V4L/V4L2 Plugin for KRadio.<P>Provides Support for V4L/V4L2 based Radio "
 "Cards<P>"
-msgstr "Модуль V4l/V4l2 для KRadio. <P> Предоставляет поддержку плат радио, совместимых с V4l/V4l2<P>"
+msgstr ""
+"Модуль V4l/V4l2 для KRadio. <P> Предоставляет поддержку плат радио, "
+"совместимых с V4l/V4l2<P>"
 
-#: v4lradio.cpp:1096
+#: v4lradio.cpp:1103
 msgid "V4L/V4L2"
 msgstr "V4L/V4LV2"
 
-#: v4lradio.cpp:1097
+#: v4lradio.cpp:1104
 msgid "V4L/V4L2 Plugin"
 msgstr "Модуль V4L/V4L2"
 
-#: v4lradio.cpp:1128
+#: v4lradio.cpp:1135
 msgid "Cannot open radio device %1"
 msgstr "Не могу открыть устройство радио: %1"
 
-#: v4lradio.cpp:1179
+#: v4lradio.cpp:1186
 msgid "cannot open %1"
 msgstr "Не могу открыть %1"
 
-#: v4lradio.cpp:1203
+#: v4lradio.cpp:1210
 msgid "audio caps = %1"
 msgstr "возможности звука = %1"
 
-#: v4lradio.cpp:1217
+#: v4lradio.cpp:1224
 msgid "error reading V4L1 caps"
 msgstr "Ошибка чтения возможностей V4l1"
 
-#: v4lradio.cpp:1226
+#: v4lradio.cpp:1233
 msgid "V4L2 - Version: %1"
 msgstr "Версия V4l2: %1"
 
-#: v4lradio.cpp:1246
+#: v4lradio.cpp:1253
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Не могу обратиться к выключателю звука платы"
 
-#: v4lradio.cpp:1253
+#: v4lradio.cpp:1260
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Не могу обратиться к регулятору громкости"
 
-#: v4lradio.cpp:1261
+#: v4lradio.cpp:1268
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Не могу обратиться к регулятору верхних частот"
 
-#: v4lradio.cpp:1269
+#: v4lradio.cpp:1276
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Не могу обратиться к регулятору нижних частот"
 
-#: v4lradio.cpp:1277
+#: v4lradio.cpp:1284
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Не могу обратиться к регулятору стереобаланса"
 
-#: v4lradio.cpp:1281
+#: v4lradio.cpp:1288
 msgid "V4LRadio::readV4LCaps: Reading V4L2 caps failed"
 msgstr "V4LRadio::readV4LCaps:Не могу узнать возможности устройства"
 
-#: v4lradio.cpp:1285
+#: v4lradio.cpp:1292
 msgid "V4L %1 detected"
 msgstr "Найдено устройство V4L: %1"
 
-#: v4lradio.cpp:1287
+#: v4lradio.cpp:1294
 msgid "V4L not detected"
 msgstr "Устройств V4L не обнаружено"
 
-#: v4lradio.cpp:1290
+#: v4lradio.cpp:1297
 msgid "Radio is mutable"
 msgstr "Радио не поддерживает выключения звука"
 
-#: v4lradio.cpp:1290
+#: v4lradio.cpp:1297
 msgid "Radio is not mutable"
 msgstr "Радио поддерживает выключение звука"
 
-#: v4lradio.cpp:1291
+#: v4lradio.cpp:1298
 msgid "Radio has Volume Control"
 msgstr "Есть регулировка громкости"
 
-#: v4lradio.cpp:1291
+#: v4lradio.cpp:1298
 msgid "Radio has no Volume Control"
 msgstr "Регулировки громкости нет"
 
-#: v4lradio.cpp:1292
+#: v4lradio.cpp:1299
 msgid "Radio has Bass Control"
 msgstr "Есть регулировка НЧ"
 
-#: v4lradio.cpp:1292
+#: v4lradio.cpp:1299
 msgid "Radio has no Bass Control"
 msgstr "Регулировки НЧ нет"
 
-#: v4lradio.cpp:1293
+#: v4lradio.cpp:1300
 msgid "Radio has Treble Control"
 msgstr "Есть регулировка ВЧ"
 
-#: v4lradio.cpp:1293
+#: v4lradio.cpp:1300
 msgid "Radio has no Treble Control"
 msgstr "Регулировки ВЧ нет"
 
-#: v4lradio.cpp:1358
+#: v4lradio.cpp:1365
 msgid "cannot get tuner info (error %1)"
 msgstr "Не могу получить информацию о тюнере (код ошибки %1)"
 
-#: v4lradio.cpp:1400
+#: v4lradio.cpp:1409
 msgid "error setting %1: %2"
 msgstr "Ошибка установки %1: %2"
 
-#: v4lradio.cpp:1408
+#: v4lradio.cpp:1417
 msgid "error reading %1: %2"
 msgstr "Ошибка чтения %1: %2"
 
-#: v4lradio.cpp:1504
+#: v4lradio.cpp:1513
 msgid "error updating radio audio info (%1): %2"
 msgstr "Ошибка %1: %2"
 
-#: v4lradio.cpp:1505
+#: v4lradio.cpp:1514
 msgid "write"
 msgstr "запись"
 
-#: v4lradio.cpp:1505
+#: v4lradio.cpp:1514
 msgid "read"
 msgstr "чтение"
-

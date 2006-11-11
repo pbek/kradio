@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:51+0100\n"
 "PO-Revision-Date: 2006-11-08 12:45+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -154,11 +154,15 @@ msgstr "Не могу открыть устройство микшера %1"
 
 #: oss-sound.cpp:757
 msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
-msgstr "OSSSoundDevice::getMixerChannels: Не могу открыть устройство микшера %1"
+msgstr ""
+"OSSSoundDevice::getMixerChannels: Не могу открыть устройство микшера %1"
 
 #: oss-sound.cpp:771
-msgid "OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
-msgstr "OSSSoundDevice::getMixerChannels: не могу прочесть маску устройства микшера для устройства %1"
+msgid ""
+"OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
+msgstr ""
+"OSSSoundDevice::getMixerChannels: не могу прочесть маску устройства микшера "
+"для устройства %1"
 
 #: oss-sound.cpp:876
 msgid "error %1 while reading volume from %2"
@@ -183,4 +187,3 @@ msgstr "Установка громкости записи на устройст
 #: oss-sound.cpp:986
 msgid "OSS Sound Device %1"
 msgstr "Устройство OSS: %1"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:51+0100\n"
 "PO-Revision-Date: 2006-11-08 13:00+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -114,8 +114,7 @@ msgstr "Автор"
 
 #. i18n: file radio-configuration-ui.ui line 661
 #: rc.cpp:62 rc.cpp:127
-#, no-c-format
-#, fuzzy
+#, fuzzy, no-c-format
 msgid "Last Change"
 msgstr "Последнее изменение"
 
@@ -125,7 +124,9 @@ msgstr "Последнее изменение"
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
-msgstr "<p align=\"center\"> Чтобы добавить этот файл в проект KRadio, щёлкните по ссылке ниже</p>"
+msgstr ""
+"<p align=\"center\"> Чтобы добавить этот файл в проект KRadio, щёлкните по "
+"ссылке ниже</p>"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -182,4 +183,3 @@ msgstr "Настройка радиостанции"
 #: radio.cpp:351
 msgid "unknown"
 msgstr "низвестно"
-

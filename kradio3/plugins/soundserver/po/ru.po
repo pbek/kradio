@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:11+0100\n"
 "PO-Revision-Date: 2006-11-08 12:46+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -27,4 +27,3 @@ msgstr "Модуль звукового сервера"
 #: soundserver.cpp:34
 msgid "initializing kradio soundserver"
 msgstr "Включение звукового сервера KRadio"
-

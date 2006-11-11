@@ -523,3 +523,4 @@ void StreamingDevice::addCaptureStream (const QString &url, const SoundFormat &s
 }
 
 
+#include "streaming.moc"

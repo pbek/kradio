@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-08 01:18+0100\n"
+"POT-Creation-Date: 2006-11-11 02:11+0100\n"
 "PO-Revision-Date: 2006-11-08 12:56+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -69,4 +69,3 @@ msgstr "Ошибка записи во временный файл %1"
 #: errorlog.cpp:256
 msgid "error uploading preset file %1"
 msgstr "Ошибка выгрузки файла настроек %1"
-
