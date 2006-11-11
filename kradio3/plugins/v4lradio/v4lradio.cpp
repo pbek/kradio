@@ -67,8 +67,10 @@ V4LRadio::V4LRadio(const QString &name)
     m_signalQuality(0),
     m_stereo(false),
     m_minQuality(0.75),
-    m_minFrequency(0),
-    m_maxFrequency(0),
+    m_minFrequency(87.0),
+    m_maxFrequency(108.0),
+    m_lastMinDevFrequency(87.0),
+    m_lastMaxDevFrequency(108.0),
 
     m_defaultPlaybackVolume(0.5),
 
@@ -951,6 +953,8 @@ void   V4LRadio::saveState (KConfig *config) const
 
     config->writeEntry("fMinOverride",     m_minFrequency);
     config->writeEntry("fMaxOverride",     m_maxFrequency);
+    config->writeEntry("fLastDevMin",      m_lastMinDevFrequency);
+    config->writeEntry("fLastDevMax",      m_lastMaxDevFrequency);
 
     config->writeEntry("defaultPlaybackVolume",  m_defaultPlaybackVolume);
 
@@ -1022,8 +1026,10 @@ void   V4LRadio::restoreState (KConfig *config)
     m_MuteOnPowerOff        = config->readBoolEntry("MuteOnPowerOff", false);
     m_VolumeZeroOnPowerOff  = config->readBoolEntry("VolumeZeroOnPowerOff", false);
 
-    m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", 87.0);
-    m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", 108.0);
+    m_lastMinDevFrequency   = config->readDoubleNumEntry ("fLastDevMin", 65.0);
+    m_lastMaxDevFrequency   = config->readDoubleNumEntry ("fLastDevMax", 108.0);
+    m_minFrequency          = config->readDoubleNumEntry ("fMinOverride", m_lastMinDevFrequency);
+    m_maxFrequency          = config->readDoubleNumEntry ("fMaxOverride", m_lastMaxDevFrequency);
 
     m_minQuality            = config->readDoubleNumEntry ("signalMinQuality", 0.75);
     m_scanStep              = config->readDoubleNumEntry ("scanStep", 0.05);
@@ -1031,6 +1037,7 @@ void   V4LRadio::restoreState (KConfig *config)
 
     setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel);
     setCaptureMixer (CaptureMixerID, CaptureMixerChannel);
+    notifyDeviceMinMaxFrequencyChanged(m_lastMinDevFrequency, m_lastMaxDevFrequency);
     notifyMinMaxFrequencyChanged(m_minFrequency, m_maxFrequency);
     notifySignalMinQualityChanged(m_SoundStreamID, m_minQuality);
     notifyScanStepChanged(m_scanStep);
@@ -1306,8 +1313,8 @@ bool V4LRadio::readTunerInfo() const
     float oldmaxf = m_tunercache.maxF;
 
     if (!m_tunercache.valid) {
-        m_tunercache.minF   = 87;
-        m_tunercache.maxF   = 109;
+        m_tunercache.minF   = m_lastMinDevFrequency;
+        m_tunercache.maxF   = m_lastMaxDevFrequency;
         m_tunercache.deltaF = 1.0/16.0;
         m_tunercache.valid  = true;
     }
@@ -1366,6 +1373,8 @@ bool V4LRadio::readTunerInfo() const
 
     if (oldminf != m_tunercache.minF || oldmaxf != m_tunercache.maxF)
         notifyDeviceMinMaxFrequencyChanged(m_tunercache.minF, m_tunercache.maxF);
+    m_lastMinDevFrequency = m_tunercache.minF;
+    m_lastMaxDevFrequency = m_tunercache.maxF;
 
     if (  ! m_minFrequency && (oldminf != m_tunercache.minF)
        || ! m_maxFrequency && (oldmaxf != m_tunercache.maxF))

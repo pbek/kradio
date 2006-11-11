@@ -214,6 +214,8 @@ protected:
     float                  m_minQuality;
     float                  m_minFrequency;
     float                  m_maxFrequency;
+    mutable float          m_lastMinDevFrequency;
+    mutable float          m_lastMaxDevFrequency;
 
     float                  m_defaultPlaybackVolume;
 
