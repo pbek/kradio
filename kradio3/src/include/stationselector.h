@@ -28,7 +28,7 @@
 #include "stationselection_interfaces.h"
 #include "stationlist.h"
 
-#include "../stationselector-ui.h"
+#include <stationselector-ui.h>
 #include "radiostation-listview.h"
 
 

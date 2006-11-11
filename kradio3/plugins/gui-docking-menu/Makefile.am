@@ -1,6 +1,6 @@
 SUBDIRS = po .
 
-INCLUDES = -I$(top_builddir)/kradio3/src/include $(all_includes)
+INCLUDES = -I$(top_builddir)/kradio3/src $(all_includes)
 METASOURCES = AUTO
 
 libkradio_LTLIBRARIES =  libdocking-menu.la

@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include "../standardscandialog-ui.h"
+#include <standardscandialog-ui.h>
 #include "radiodevice_interfaces.h"
 #include "radio_interfaces.h"
 #include "stationlist.h"

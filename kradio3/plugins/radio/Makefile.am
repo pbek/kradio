@@ -1,6 +1,6 @@
 SUBDIRS = po .
 
-INCLUDES = -I$(top_builddir)/kradio3/src/include -I$(top_srcdir)/kradio3 $(all_includes)
+INCLUDES = -I$(top_builddir)/kradio3/src -I$(top_srcdir)/kradio3 $(all_includes)
 METASOURCES = AUTO
 
 libkradio_LTLIBRARIES = libradio.la

@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include "../pluginmanager-configuration-ui.h"
+#include <pluginmanager-configuration-ui.h>
 
 class QWidget;
 class KRadioApp;
