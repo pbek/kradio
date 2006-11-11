@@ -4,6 +4,8 @@ INCLUDES = $(all_includes)
 
 METASOURCES = AUTO
 
+META_INCLUDES = $(srcdir)/include
+
 KDE_CXXFLAGS="-UQT_NO_ASCII_CAST"
 
 bin_PROGRAMS = kradio
@@ -97,4 +99,4 @@ xdg_apps_DATA = kradio.desktop
 
 messages: rc.cpp
 	$(EXTRACTRC)       *.ui  *.rc >> rc.cpp
-	$(XGETTEXT) rc.cpp *.cpp *.h  -o po/kradio.pot
+	$(XGETTEXT) rc.cpp *.cpp *.h include/*.h -o po/kradio.pot
