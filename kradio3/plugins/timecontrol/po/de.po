@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-06 01:16+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -17,85 +17,85 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #. i18n: file timecontrol-configuration-ui.ui line 32
-#: rc.cpp:3 rc.cpp:68
+#: rc.cpp:3 rc.cpp:68 timecontrol-configuration-ui.cpp:189
 #, no-c-format
 msgid "sleep countdown"
 msgstr "Schlummermodus"
 
 #. i18n: file timecontrol-configuration-ui.ui line 40
-#: rc.cpp:6 rc.cpp:71
+#: rc.cpp:6 rc.cpp:71 timecontrol-configuration-ui.cpp:190
 #, no-c-format
 msgid " min"
 msgstr " min"
 
 #. i18n: file timecontrol-configuration-ui.ui line 117
-#: rc.cpp:9 rc.cpp:74 timecontrol.cpp:270
+#: rc.cpp:9 rc.cpp:74 timecontrol-configuration-ui.cpp:191 timecontrol.cpp:270
 #, no-c-format
 msgid "Alarms"
 msgstr "Wecker"
 
 #. i18n: file timecontrol-configuration-ui.ui line 180
-#: rc.cpp:14 rc.cpp:79
+#: rc.cpp:14 rc.cpp:79 timecontrol-configuration-ui.cpp:194
 #, no-c-format
 msgid "Date"
 msgstr "Datum"
 
 #. i18n: file timecontrol-configuration-ui.ui line 203
-#: rc.cpp:17 rc.cpp:82
+#: rc.cpp:17 rc.cpp:82 timecontrol-configuration-ui.cpp:195
 #, no-c-format
 msgid "Time"
 msgstr "Uhrzeit"
 
 #. i18n: file timecontrol-configuration-ui.ui line 226
-#: rc.cpp:20 rc.cpp:85
+#: rc.cpp:20 rc.cpp:85 timecontrol-configuration-ui.cpp:196
 #, no-c-format
 msgid "Volume"
 msgstr "Lautstärke"
 
 #. i18n: file timecontrol-configuration-ui.ui line 234
-#: rc.cpp:23 rc.cpp:88
+#: rc.cpp:23 rc.cpp:88 timecontrol-configuration-ui.cpp:197
 #, no-c-format
 msgid " %"
 msgstr " %"
 
 #. i18n: file timecontrol-configuration-ui.ui line 263
-#: rc.cpp:26 rc.cpp:91
+#: rc.cpp:26 rc.cpp:91 timecontrol-configuration-ui.cpp:198
 #, no-c-format
 msgid "enabled"
 msgstr "aktiv"
 
 #. i18n: file timecontrol-configuration-ui.ui line 331
-#: rc.cpp:50 rc.cpp:115
+#: rc.cpp:50 rc.cpp:115 timecontrol-configuration-ui.cpp:207
 #, no-c-format
 msgid "daily"
 msgstr "täglich"
 
 #. i18n: file timecontrol-configuration-ui.ui line 341
-#: rc.cpp:53 rc.cpp:118
+#: rc.cpp:53 rc.cpp:118 timecontrol-configuration-ui.cpp:208
 #, no-c-format
 msgid "Radio Station"
 msgstr "Sender"
 
 #. i18n: file timecontrol-configuration-ui.ui line 393
-#: rc.cpp:56 rc.cpp:121
+#: rc.cpp:56 rc.cpp:121 timecontrol-configuration-ui.cpp:210
 #, no-c-format
 msgid "Start Playing"
 msgstr "Radio einschalten"
 
 #. i18n: file timecontrol-configuration-ui.ui line 401
-#: rc.cpp:59 rc.cpp:124
+#: rc.cpp:59 rc.cpp:124 timecontrol-configuration-ui.cpp:211
 #, no-c-format
 msgid "Stop Playing"
 msgstr "Radio ausschalten"
 
 #. i18n: file timecontrol-configuration-ui.ui line 409
-#: rc.cpp:62 rc.cpp:127
+#: rc.cpp:62 rc.cpp:127 timecontrol-configuration-ui.cpp:212
 #, no-c-format
 msgid "Start Recording"
 msgstr "Aufnahme starten"
 
 #. i18n: file timecontrol-configuration-ui.ui line 417
-#: rc.cpp:65 rc.cpp:130
+#: rc.cpp:65 rc.cpp:130 timecontrol-configuration-ui.cpp:213
 #, no-c-format
 msgid "Stop Recording"
 msgstr "Aufnahme beenden"

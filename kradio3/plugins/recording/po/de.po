@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-06 00:57+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -17,229 +17,230 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #. i18n: file recording-configuration-ui.ui line 16
-#: rc.cpp:3 rc.cpp:117
+#: rc.cpp:3 rc.cpp:117 recording-configuration-ui.cpp:244
 #, no-c-format
 msgid "RecordingConfigurationUI"
 msgstr "RecordingConfigurationUI"
 
 #. i18n: file recording-configuration-ui.ui line 34
-#: rc.cpp:6 rc.cpp:120
+#: rc.cpp:6 rc.cpp:120 recording-configuration-ui.cpp:256
 #, no-c-format
 msgid "Output"
 msgstr "Ausgabe"
 
 #. i18n: file recording-configuration-ui.ui line 138
-#: rc.cpp:9 rc.cpp:123
+#: rc.cpp:9 rc.cpp:123 recording-configuration-ui.cpp:245
 #, no-c-format
 msgid "MP3 Quality(0 - high, 9 - low)"
 msgstr "MP3 Qualität(0 - hoch, 9 - niedrig)"
 
 #. i18n: file recording-configuration-ui.ui line 149
-#: rc.cpp:12 rc.cpp:126
+#: rc.cpp:12 rc.cpp:126 recording-configuration-ui.cpp:247
 #, no-c-format
 msgid "raw pcm output (.raw)"
 msgstr "reine PCM-Ausgabe (.raw)"
 
 #. i18n: file recording-configuration-ui.ui line 154
-#: rc.cpp:15 rc.cpp:129
+#: rc.cpp:15 rc.cpp:129 recording-configuration-ui.cpp:248
 #, no-c-format
 msgid "Microsoft Wave (.wav)"
 msgstr "Microsoft Wave (.wav)"
 
 #. i18n: file recording-configuration-ui.ui line 159
-#: rc.cpp:18 rc.cpp:132
+#: rc.cpp:18 rc.cpp:132 recording-configuration-ui.cpp:249
 #, no-c-format
 msgid "Apple/SGI (.aiff)"
 msgstr "Apple/SGI (.aiff)"
 
 #. i18n: file recording-configuration-ui.ui line 164
-#: rc.cpp:21 rc.cpp:135
+#: rc.cpp:21 rc.cpp:135 recording-configuration-ui.cpp:250
 #, no-c-format
 msgid "Sun/NeXT (.au)"
 msgstr "Sun/NeXT (.au)"
 
 #. i18n: file recording-configuration-ui.ui line 169
-#: rc.cpp:24 rc.cpp:138
+#: rc.cpp:24 rc.cpp:138 recording-configuration-ui.cpp:251
 #, no-c-format
 msgid "MP3 Compressed (.mp3)"
 msgstr "MP3 komprimiert (.mp3)"
 
 #. i18n: file recording-configuration-ui.ui line 174
-#: rc.cpp:27 rc.cpp:141
+#: rc.cpp:27 rc.cpp:141 recording-configuration-ui.cpp:252
 #, no-c-format
 msgid "Ogg/Vorbis Compressed (.ogg)"
 msgstr "Ogg/Vorbis komprimiert (.ogg)"
 
 #. i18n: file recording-configuration-ui.ui line 194
-#: rc.cpp:30 rc.cpp:144
+#: rc.cpp:30 rc.cpp:144 recording-configuration-ui.cpp:253
 #, no-c-format
 msgid "Recording Directory"
 msgstr "Aufnahme-Verzeichnis"
 
 #. i18n: file recording-configuration-ui.ui line 202
-#: rc.cpp:33 rc.cpp:147
+#: rc.cpp:33 rc.cpp:147 recording-configuration-ui.cpp:254
 #, no-c-format
 msgid "File Format"
 msgstr "Dateiformat"
 
 #. i18n: file recording-configuration-ui.ui line 210
-#: rc.cpp:36 rc.cpp:150
+#: rc.cpp:36 rc.cpp:150 recording-configuration-ui.cpp:255
 #, no-c-format
 msgid "Ogg Quality(0 - low, 9 - high)"
 msgstr "Ogg Qualität(0 - niedrig, 9 - hoch)"
 
 #. i18n: file recording-configuration-ui.ui line 239
-#: rc.cpp:39 rc.cpp:153
+#: rc.cpp:39 rc.cpp:153 recording-configuration-ui.cpp:278
 #, no-c-format
 msgid "I&nput"
 msgstr "Quelle"
 
 #. i18n: file recording-configuration-ui.ui line 276
-#: rc.cpp:42 rc.cpp:156
+#: rc.cpp:42 rc.cpp:156 recording-configuration-ui.cpp:258
 #, no-c-format
 msgid "48000"
 msgstr "48000"
 
 #. i18n: file recording-configuration-ui.ui line 281
-#: rc.cpp:45 rc.cpp:159
+#: rc.cpp:45 rc.cpp:159 recording-configuration-ui.cpp:259
 #, no-c-format
 msgid "44100"
 msgstr "44100"
 
 #. i18n: file recording-configuration-ui.ui line 286
-#: rc.cpp:48 rc.cpp:162
+#: rc.cpp:48 rc.cpp:162 recording-configuration-ui.cpp:260
 #, no-c-format
 msgid "22050"
 msgstr "22050"
 
 #. i18n: file recording-configuration-ui.ui line 291
-#: rc.cpp:51 rc.cpp:165
+#: rc.cpp:51 rc.cpp:165 recording-configuration-ui.cpp:261
 #, no-c-format
 msgid "11025"
 msgstr "11025"
 
 #. i18n: file recording-configuration-ui.ui line 311
-#: rc.cpp:54 rc.cpp:168
+#: rc.cpp:54 rc.cpp:168 recording-configuration-ui.cpp:262
 #, no-c-format
 msgid "Endianess"
 msgstr "Byte-Reihenfolge"
 
 #. i18n: file recording-configuration-ui.ui line 334
-#: rc.cpp:57 rc.cpp:171
+#: rc.cpp:57 rc.cpp:171 recording-configuration-ui.cpp:264
 #, no-c-format
 msgid "Stereo"
 msgstr "Stereo"
 
 #. i18n: file recording-configuration-ui.ui line 339
-#: rc.cpp:60 rc.cpp:174
+#: rc.cpp:60 rc.cpp:174 recording-configuration-ui.cpp:265
 #, no-c-format
 msgid "Mono"
 msgstr "Mono"
 
 #. i18n: file recording-configuration-ui.ui line 359
-#: rc.cpp:63 rc.cpp:177 recording-monitor.cpp:53
+#: rc.cpp:63 rc.cpp:177 recording-configuration-ui.cpp:266
+#: recording-monitor.cpp:53
 #, no-c-format
 msgid "Sample Rate"
 msgstr "Abtastrate"
 
 #. i18n: file recording-configuration-ui.ui line 365
-#: rc.cpp:66 rc.cpp:180
+#: rc.cpp:66 rc.cpp:180 recording-configuration-ui.cpp:268
 #, no-c-format
 msgid "Little Endian"
 msgstr "Little Endian"
 
 #. i18n: file recording-configuration-ui.ui line 370
-#: rc.cpp:69 rc.cpp:183
+#: rc.cpp:69 rc.cpp:183 recording-configuration-ui.cpp:269
 #, no-c-format
 msgid "Big Endian"
 msgstr "Big Endian"
 
 #. i18n: file recording-configuration-ui.ui line 388
-#: rc.cpp:72 rc.cpp:186
+#: rc.cpp:72 rc.cpp:186 recording-configuration-ui.cpp:271
 #, no-c-format
 msgid "16"
 msgstr "16"
 
 #. i18n: file recording-configuration-ui.ui line 393
-#: rc.cpp:75 rc.cpp:189
+#: rc.cpp:75 rc.cpp:189 recording-configuration-ui.cpp:272
 #, no-c-format
 msgid "8"
 msgstr "8"
 
 #. i18n: file recording-configuration-ui.ui line 413
-#: rc.cpp:78 rc.cpp:192
+#: rc.cpp:78 rc.cpp:192 recording-configuration-ui.cpp:273
 #, no-c-format
 msgid "Channels"
 msgstr "Kanäle"
 
 #. i18n: file recording-configuration-ui.ui line 421
-#: rc.cpp:81 rc.cpp:195
+#: rc.cpp:81 rc.cpp:195 recording-configuration-ui.cpp:274
 #, no-c-format
 msgid "Sample Bits"
 msgstr "Quantisierungs-Bits"
 
 #. i18n: file recording-configuration-ui.ui line 427
-#: rc.cpp:84 rc.cpp:198
+#: rc.cpp:84 rc.cpp:198 recording-configuration-ui.cpp:276
 #, no-c-format
 msgid "Signed"
 msgstr "Vorzeichenbehaftet"
 
 #. i18n: file recording-configuration-ui.ui line 432
-#: rc.cpp:87 rc.cpp:201
+#: rc.cpp:87 rc.cpp:201 recording-configuration-ui.cpp:277
 #, no-c-format
 msgid "Unsigned"
 msgstr "Vorzeichenlos"
 
 #. i18n: file recording-configuration-ui.ui line 490
-#: rc.cpp:90 rc.cpp:204
+#: rc.cpp:90 rc.cpp:204 recording-configuration-ui.cpp:282
 #, no-c-format
 msgid "&Buffers"
 msgstr "&Puffer"
 
 #. i18n: file recording-configuration-ui.ui line 512
-#: rc.cpp:93 rc.cpp:207
+#: rc.cpp:93 rc.cpp:207 recording-configuration-ui.cpp:279
 #, no-c-format
 msgid " kB"
 msgstr " kB"
 
 #. i18n: file recording-configuration-ui.ui line 532
-#: rc.cpp:96 rc.cpp:210
+#: rc.cpp:96 rc.cpp:210 recording-configuration-ui.cpp:280
 #, no-c-format
 msgid "Encoding Buffer Size"
 msgstr "Codierungs-Puffergröße"
 
 #. i18n: file recording-configuration-ui.ui line 551
-#: rc.cpp:99 rc.cpp:213
+#: rc.cpp:99 rc.cpp:213 recording-configuration-ui.cpp:281
 #, no-c-format
 msgid "Number of Buffers"
 msgstr "Anzahl der Puffer"
 
 #. i18n: file recording-configuration-ui.ui line 580
-#: rc.cpp:102 rc.cpp:216
+#: rc.cpp:102 rc.cpp:216 recording-configuration-ui.cpp:287
 #, no-c-format
 msgid "Pre-Recordin&g"
 msgstr "Aufnahme&vorlaufs"
 
 #. i18n: file recording-configuration-ui.ui line 610
-#: rc.cpp:105 rc.cpp:219
+#: rc.cpp:105 rc.cpp:219 recording-configuration-ui.cpp:283
 #, no-c-format
 msgid "E&nable"
 msgstr "&Einschalten"
 
 #. i18n: file recording-configuration-ui.ui line 613
-#: rc.cpp:108 rc.cpp:222
+#: rc.cpp:108 rc.cpp:222 recording-configuration-ui.cpp:284
 #, no-c-format
 msgid "Alt+N"
 msgstr "Alt+N"
 
 #. i18n: file recording-configuration-ui.ui line 651
-#: rc.cpp:111 rc.cpp:225
+#: rc.cpp:111 rc.cpp:225 recording-configuration-ui.cpp:285
 #, no-c-format
 msgid "PreRecording Time"
 msgstr "Dauer des Aufnahmevorlaufs"
 
 #. i18n: file recording-configuration-ui.ui line 662
-#: rc.cpp:114 rc.cpp:228
+#: rc.cpp:114 rc.cpp:228 recording-configuration-ui.cpp:286
 #, no-c-format
 msgid " s"
 msgstr " s"

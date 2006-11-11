@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-06 00:24+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -17,97 +17,97 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #. i18n: file v4lradio-configuration-ui.ui line 16
-#: rc.cpp:3 rc.cpp:90
+#: rc.cpp:3 rc.cpp:90 v4lradio-configuration-ui.cpp:328
 #, no-c-format
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file v4lradio-configuration-ui.ui line 37
-#: rc.cpp:6 rc.cpp:93
+#: rc.cpp:6 rc.cpp:93 v4lradio-configuration-ui.cpp:344
 #, no-c-format
 msgid "Devices"
 msgstr "Geräte"
 
 #. i18n: file v4lradio-configuration-ui.ui line 68
-#: rc.cpp:9 rc.cpp:96
+#: rc.cpp:9 rc.cpp:96 v4lradio-configuration-ui.cpp:329
 #, no-c-format
 msgid "Playback Mixer Device"
 msgstr "Wiedergabe Mixer"
 
 #. i18n: file v4lradio-configuration-ui.ui line 76
-#: rc.cpp:12 rc.cpp:99
+#: rc.cpp:12 rc.cpp:99 v4lradio-configuration-ui.cpp:330
 #, no-c-format
 msgid "Playback Mixer Channel"
 msgstr "Wiedergabe Mixerkanal"
 
 #. i18n: file v4lradio-configuration-ui.ui line 169
-#: rc.cpp:15 rc.cpp:102
+#: rc.cpp:15 rc.cpp:102 v4lradio-configuration-ui.cpp:331
 #, no-c-format
 msgid "Radio Device"
 msgstr "Radio Gerät"
 
 #. i18n: file v4lradio-configuration-ui.ui line 196
-#: rc.cpp:19 rc.cpp:106
+#: rc.cpp:19 rc.cpp:106 v4lradio-configuration-ui.cpp:333
 #, no-c-format
 msgid "Capture Mixer Device"
 msgstr "Aufnahme Mixer"
 
 #. i18n: file v4lradio-configuration-ui.ui line 217
-#: rc.cpp:22 rc.cpp:109
+#: rc.cpp:22 rc.cpp:109 v4lradio-configuration-ui.cpp:334
 #, no-c-format
 msgid "Capture Mixer Channel"
 msgstr "Aufnahme Mixerkanal"
 
 #. i18n: file v4lradio-configuration-ui.ui line 249
-#: rc.cpp:25 rc.cpp:112
+#: rc.cpp:25 rc.cpp:112 v4lradio-configuration-ui.cpp:336
 #, no-c-format
 msgid "test"
 msgstr "test"
 
 #. i18n: file v4lradio-configuration-ui.ui line 269
-#: rc.cpp:28 rc.cpp:115
+#: rc.cpp:28 rc.cpp:115 v4lradio-configuration-ui.cpp:337
 #, no-c-format
 msgid "unknown v4l device"
 msgstr "Unbekanntes V4L-Gerät"
 
 #. i18n: file v4lradio-configuration-ui.ui line 315
-#: rc.cpp:31 rc.cpp:118
+#: rc.cpp:31 rc.cpp:118 v4lradio-configuration-ui.cpp:338
 #, no-c-format
 msgid "Use active pla&yback by capturing"
 msgstr "Aktive &Wiedergabe verwenden (Aufgenommenes abspielen)"
 
 #. i18n: file v4lradio-configuration-ui.ui line 318
-#: rc.cpp:34 rc.cpp:121
+#: rc.cpp:34 rc.cpp:121 v4lradio-configuration-ui.cpp:339
 #, no-c-format
 msgid "Alt+Y"
 msgstr "Alt+Y"
 
 #. i18n: file v4lradio-configuration-ui.ui line 334
-#: rc.cpp:37 rc.cpp:124
+#: rc.cpp:37 rc.cpp:124 v4lradio-configuration-ui.cpp:340
 #, no-c-format
 msgid "Mute Play&back Channel on Power Off"
 msgstr "Wiedergabekanal beim Abschalten des Radios stummschalten"
 
 #. i18n: file v4lradio-configuration-ui.ui line 337
-#: rc.cpp:40 rc.cpp:127
+#: rc.cpp:40 rc.cpp:127 v4lradio-configuration-ui.cpp:341
 #, no-c-format
 msgid "Alt+B"
 msgstr "Alt+B"
 
 #. i18n: file v4lradio-configuration-ui.ui line 353
-#: rc.cpp:43 rc.cpp:130
+#: rc.cpp:43 rc.cpp:130 v4lradio-configuration-ui.cpp:342
 #, no-c-format
 msgid "Set Playback Channel Volume to &Zero on Power Off"
 msgstr "Wiedergabelautstärke beim Abschalten des Radios auf 0 setzen"
 
 #. i18n: file v4lradio-configuration-ui.ui line 356
-#: rc.cpp:46 rc.cpp:133
+#: rc.cpp:46 rc.cpp:133 v4lradio-configuration-ui.cpp:343
 #, no-c-format
 msgid "Alt+Z"
 msgstr "Alt+Z"
 
 #. i18n: file v4lradio-configuration-ui.ui line 394
-#: rc.cpp:52 rc.cpp:139
+#: rc.cpp:52 rc.cpp:139 v4lradio-configuration-ui.cpp:345
 #, no-c-format
 msgid "to"
 msgstr "bis"
@@ -119,54 +119,56 @@ msgstr "bis"
 #. i18n: file v4lradio-configuration-ui.ui line 443
 #. i18n: file v4lradio-configuration-ui.ui line 479
 #: rc.cpp:55 rc.cpp:58 rc.cpp:64 rc.cpp:142 rc.cpp:145 rc.cpp:151
+#: v4lradio-configuration-ui.cpp:346 v4lradio-configuration-ui.cpp:347
+#: v4lradio-configuration-ui.cpp:349
 #, no-c-format
 msgid " kHz"
 msgstr " kHz"
 
 #. i18n: file v4lradio-configuration-ui.ui line 460
-#: rc.cpp:61 rc.cpp:148
+#: rc.cpp:61 rc.cpp:148 v4lradio-configuration-ui.cpp:348
 #, no-c-format
 msgid "minimum signal quality"
 msgstr "Mindest-Signalpegel"
 
 #. i18n: file v4lradio-configuration-ui.ui line 499
-#: rc.cpp:67 rc.cpp:154
+#: rc.cpp:67 rc.cpp:154 v4lradio-configuration-ui.cpp:350
 #, no-c-format
 msgid "station scan step"
 msgstr "Sendersuchschrittweite"
 
 #. i18n: file v4lradio-configuration-ui.ui line 507
-#: rc.cpp:70 rc.cpp:157
+#: rc.cpp:70 rc.cpp:157 v4lradio-configuration-ui.cpp:351
 #, no-c-format
 msgid "allowed frequency range"
 msgstr "erlaubter Frequenzbereich"
 
 #. i18n: file v4lradio-configuration-ui.ui line 566
-#: rc.cpp:75 rc.cpp:162
+#: rc.cpp:75 rc.cpp:162 v4lradio-configuration-ui.cpp:359
 #, no-c-format
 msgid "V4L Mixer Controls"
 msgstr "V4L Mixersteuerung"
 
 #. i18n: file v4lradio-configuration-ui.ui line 594
-#: rc.cpp:78 rc.cpp:165
+#: rc.cpp:78 rc.cpp:165 v4lradio-configuration-ui.cpp:355
 #, no-c-format
 msgid "volume"
 msgstr "Lautstärke"
 
 #. i18n: file v4lradio-configuration-ui.ui line 684
-#: rc.cpp:81 rc.cpp:168
+#: rc.cpp:81 rc.cpp:168 v4lradio-configuration-ui.cpp:356
 #, no-c-format
 msgid "treble"
 msgstr "Höhen"
 
 #. i18n: file v4lradio-configuration-ui.ui line 774
-#: rc.cpp:84 rc.cpp:171
+#: rc.cpp:84 rc.cpp:171 v4lradio-configuration-ui.cpp:357
 #, no-c-format
 msgid "bass"
 msgstr "Tiefen"
 
 #. i18n: file v4lradio-configuration-ui.ui line 861
-#: rc.cpp:87 rc.cpp:174
+#: rc.cpp:87 rc.cpp:174 v4lradio-configuration-ui.cpp:358
 #, no-c-format
 msgid "balance"
 msgstr "Balance"

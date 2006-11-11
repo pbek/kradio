@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-08 12:15+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -17,61 +17,61 @@ msgstr ""
 "X-Generator: KBabel 1.10\n"
 
 #. i18n: file alsa-mixer-element-ui.ui line 16
-#: rc.cpp:3 rc.cpp:70
+#: rc.cpp:3 rc.cpp:70 alsa-mixer-element-ui.cpp:104
 #, no-c-format
 msgid "Form1"
 msgstr "Form1"
 
 #. i18n: file alsa-mixer-element-ui.ui line 210
-#: rc.cpp:6 rc.cpp:73
+#: rc.cpp:6 rc.cpp:73 alsa-mixer-element-ui.cpp:105
 #, no-c-format
 msgid "O&n"
 msgstr "&Вкл."
 
 #. i18n: file alsa-mixer-element-ui.ui line 213
-#: rc.cpp:9 rc.cpp:76
+#: rc.cpp:9 rc.cpp:76 alsa-mixer-element-ui.cpp:106
 #, no-c-format
 msgid "Alt+N"
 msgstr "Alt+N"
 
 #. i18n: file alsa-mixer-element-ui.ui line 221
-#: rc.cpp:12 rc.cpp:79
+#: rc.cpp:12 rc.cpp:79 alsa-mixer-element-ui.cpp:107
 #, no-c-format
 msgid "&Use"
 msgstr "&Исп."
 
 #. i18n: file alsa-mixer-element-ui.ui line 224
-#: rc.cpp:15 rc.cpp:82
+#: rc.cpp:15 rc.cpp:82 alsa-mixer-element-ui.cpp:108
 #, no-c-format
 msgid "Alt+U"
 msgstr "Alt+U"
 
 #. i18n: file alsa-mixer-element-ui.ui line 256
-#: rc.cpp:18 rc.cpp:85
+#: rc.cpp:18 rc.cpp:85 alsa-mixer-element-ui.cpp:109
 #, no-c-format
 msgid "MixerName"
 msgstr ""
 
 #. i18n: file alsa-sound-configuration-ui.ui line 16
-#: rc.cpp:21 rc.cpp:88
+#: rc.cpp:21 rc.cpp:88 alsa-sound-configuration-ui.cpp:152
 #, no-c-format
 msgid "AlsaSoundConfigurationUI"
 msgstr "AlsaSoundConfigurationUI"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 34
-#: rc.cpp:24 rc.cpp:91
+#: rc.cpp:24 rc.cpp:91 alsa-sound-configuration-ui.cpp:161
 #, no-c-format
 msgid "Devices"
 msgstr "Устройства"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 73
-#: rc.cpp:27 rc.cpp:94
+#: rc.cpp:27 rc.cpp:94 alsa-sound-configuration-ui.cpp:153
 #, no-c-format
 msgid "PCM Capture Card"
 msgstr "Плата для захвата"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 94
-#: rc.cpp:30 rc.cpp:97
+#: rc.cpp:30 rc.cpp:97 alsa-sound-configuration-ui.cpp:154
 #, no-c-format
 msgid "Hardware Buffer Size"
 msgstr "Аппаратный размер буфера"
@@ -81,66 +81,67 @@ msgstr "Аппаратный размер буфера"
 #. i18n: file alsa-sound-configuration-ui.ui line 123
 #. i18n: file alsa-sound-configuration-ui.ui line 145
 #: rc.cpp:33 rc.cpp:36 rc.cpp:100 rc.cpp:103
+#: alsa-sound-configuration-ui.cpp:155 alsa-sound-configuration-ui.cpp:156
 #, no-c-format
 msgid " kB"
 msgstr " кБ"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 172
-#: rc.cpp:39 rc.cpp:106
+#: rc.cpp:39 rc.cpp:106 alsa-sound-configuration-ui.cpp:157
 #, no-c-format
 msgid "Buffer Size"
 msgstr "Размер буфера"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 193
-#: rc.cpp:42 rc.cpp:109
+#: rc.cpp:42 rc.cpp:109 alsa-sound-configuration-ui.cpp:158
 #, no-c-format
 msgid "PCM Playback Device"
 msgstr "Устройство воспроизведения"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 201
-#: rc.cpp:45 rc.cpp:112
+#: rc.cpp:45 rc.cpp:112 alsa-sound-configuration-ui.cpp:159
 #, no-c-format
 msgid "PCM Capture Device"
 msgstr "Устройство записи"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 209
-#: rc.cpp:48 rc.cpp:115
+#: rc.cpp:48 rc.cpp:115 alsa-sound-configuration-ui.cpp:160
 #, no-c-format
 msgid "PCM Playback Card"
 msgstr "Плата для проигрывания"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 221
-#: rc.cpp:51 rc.cpp:118
+#: rc.cpp:51 rc.cpp:118 alsa-sound-configuration-ui.cpp:166
 #, no-c-format
 msgid "E&xtended Options"
 msgstr "&Дополнительные параметры"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 235
-#: rc.cpp:54 rc.cpp:121
+#: rc.cpp:54 rc.cpp:121 alsa-sound-configuration-ui.cpp:162
 #, no-c-format
 msgid "Disable Pla&yback"
 msgstr "Запретить &воспроизведение"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 238
-#: rc.cpp:57 rc.cpp:124
+#: rc.cpp:57 rc.cpp:124 alsa-sound-configuration-ui.cpp:163
 #, no-c-format
 msgid "Alt+Y"
 msgstr "Alt+Y"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 246
-#: rc.cpp:60 rc.cpp:127
+#: rc.cpp:60 rc.cpp:127 alsa-sound-configuration-ui.cpp:164
 #, no-c-format
 msgid "Disa&ble Capture"
 msgstr "Запретить &запись"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 249
-#: rc.cpp:63 rc.cpp:130
+#: rc.cpp:63 rc.cpp:130 alsa-sound-configuration-ui.cpp:165
 #, no-c-format
 msgid "Alt+B"
 msgstr "Alt+B"
 
 #. i18n: file alsa-sound-configuration-ui.ui line 276
-#: rc.cpp:66 rc.cpp:133
+#: rc.cpp:66 rc.cpp:133 alsa-sound-configuration-ui.cpp:168
 #, no-c-format
 msgid "Capture Mixer Settings"
 msgstr "&Параметры микшера для записи"

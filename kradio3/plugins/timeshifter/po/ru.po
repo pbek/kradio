@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-08 12:19+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "X-Generator: KBabel 1.10\n"
 
 #. i18n: file timeshifter-configuration-ui.ui line 16
-#: rc.cpp:3 rc.cpp:22
+#: rc.cpp:3 rc.cpp:22 timeshifter-configuration-ui.cpp:118
 #, no-c-format
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file timeshifter-configuration-ui.ui line 72
-#: rc.cpp:6 rc.cpp:25
+#: rc.cpp:6 rc.cpp:25 timeshifter-configuration-ui.cpp:119
 #, no-c-format
 msgid " MB"
 msgstr " Мб"
 
 #. i18n: file timeshifter-configuration-ui.ui line 92
-#: rc.cpp:9 rc.cpp:28
+#: rc.cpp:9 rc.cpp:28 timeshifter-configuration-ui.cpp:120
 #, no-c-format
 msgid "Maximum File Size"
 msgstr "Размер файла, не более"
 
 #. i18n: file timeshifter-configuration-ui.ui line 100
-#: rc.cpp:12 rc.cpp:31
+#: rc.cpp:12 rc.cpp:31 timeshifter-configuration-ui.cpp:121
 #, no-c-format
 msgid "Playback Mixer Device"
 msgstr "Устройство воспроизведения"
 
 #. i18n: file timeshifter-configuration-ui.ui line 108
-#: rc.cpp:15 rc.cpp:34
+#: rc.cpp:15 rc.cpp:34 timeshifter-configuration-ui.cpp:122
 #, no-c-format
 msgid "Temporary File"
 msgstr "Временный файл"
 
 #. i18n: file timeshifter-configuration-ui.ui line 121
-#: rc.cpp:18 rc.cpp:37
+#: rc.cpp:18 rc.cpp:37 timeshifter-configuration-ui.cpp:123
 #, no-c-format
 msgid "Playback Mixer Channel"
 msgstr "Канал воспроизведения"

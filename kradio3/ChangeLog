@@ -1,9 +1,20 @@
+2006-11-11
+
+	emw - switched kradio repository to SVN
+	    - changed directory structure for kradio3/src
+
+2006-11-10
+
+	emw - fixed further hideall/showall bugs
+	    - added russian translation, thanks to Alexey.Kouznetsov
+	    - fixed problems with min frequency < 87 MHz
+
 2006-11-07
 
 	emw - fixed a lot in configure.in.in: Made alsa, oss, mp3lame,
               ogg/vorbis and lirc configurable
 	    - translation number fixes
-        - i18n fixes
+	    - i18n fixes
 	    - fixed quite a lot hideall/showall bugs
 
 2006-11-05

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-08 12:45+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -17,49 +17,49 @@ msgstr ""
 "X-Generator: KBabel 1.10\n"
 
 #. i18n: file oss-sound-configuration-ui.ui line 27
-#: rc.cpp:3 rc.cpp:27
+#: rc.cpp:3 rc.cpp:27 oss-sound-configuration-ui.cpp:106
 #, no-c-format
 msgid "Devices"
 msgstr "Устройства"
 
 #. i18n: file oss-sound-configuration-ui.ui line 51
-#: rc.cpp:6 rc.cpp:30
+#: rc.cpp:6 rc.cpp:30 oss-sound-configuration-ui.cpp:107
 #, no-c-format
 msgid "PCM Device"
 msgstr "Устройство PCM"
 
 #. i18n: file oss-sound-configuration-ui.ui line 59
-#: rc.cpp:9 rc.cpp:33
+#: rc.cpp:9 rc.cpp:33 oss-sound-configuration-ui.cpp:108
 #, no-c-format
 msgid "Mixer Device"
 msgstr "Устройство микшера"
 
 #. i18n: file oss-sound-configuration-ui.ui line 67
-#: rc.cpp:12 rc.cpp:36
+#: rc.cpp:12 rc.cpp:36 oss-sound-configuration-ui.cpp:109
 #, no-c-format
 msgid "Buffer Size"
 msgstr "Размер буфера"
 
 #. i18n: file oss-sound-configuration-ui.ui line 75
-#: rc.cpp:15 rc.cpp:39
+#: rc.cpp:15 rc.cpp:39 oss-sound-configuration-ui.cpp:110
 #, no-c-format
 msgid " kB"
 msgstr " кБ"
 
 #. i18n: file oss-sound-configuration-ui.ui line 91
-#: rc.cpp:18 rc.cpp:42
+#: rc.cpp:18 rc.cpp:42 oss-sound-configuration-ui.cpp:111
 #, no-c-format
 msgid "Extended Options"
 msgstr "Дополнительные параметры"
 
 #. i18n: file oss-sound-configuration-ui.ui line 105
-#: rc.cpp:21 rc.cpp:45
+#: rc.cpp:21 rc.cpp:45 oss-sound-configuration-ui.cpp:112
 #, no-c-format
 msgid "Disable Playback"
 msgstr "Запретить &воспроизведение"
 
 #. i18n: file oss-sound-configuration-ui.ui line 113
-#: rc.cpp:24 rc.cpp:48
+#: rc.cpp:24 rc.cpp:48 oss-sound-configuration-ui.cpp:113
 #, no-c-format
 msgid "Disable Capture"
 msgstr "Запретить &запись"

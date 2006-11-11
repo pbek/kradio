@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-08 12:54+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -17,31 +17,34 @@ msgstr ""
 "X-Generator: KBabel 1.10\n"
 
 #. i18n: file lirc-configuration-ui.ui line 17
-#: rc.cpp:3 rc.cpp:18
+#: rc.cpp:3 rc.cpp:18 lirc-configuration-ui.cpp:75
 #, no-c-format
 msgid "LIRCConfigurationUI"
 msgstr "LIRCConfigurationUI"
 
 #. i18n: file lirc-configuration-ui.ui line 26
-#: rc.cpp:6 rc.cpp:21
+#: rc.cpp:6 rc.cpp:21 lirc-configuration-ui.cpp:34
+#: lirc-configuration-ui.cpp:76
 #, no-c-format
 msgid "Action"
 msgstr "Действие"
 
 #. i18n: file lirc-configuration-ui.ui line 37
-#: rc.cpp:9 rc.cpp:24
+#: rc.cpp:9 rc.cpp:24 lirc-configuration-ui.cpp:35
+#: lirc-configuration-ui.cpp:77
 #, no-c-format
 msgid "LIRC String"
 msgstr "Строка LIRC"
 
 #. i18n: file lirc-configuration-ui.ui line 48
-#: rc.cpp:12 rc.cpp:27
+#: rc.cpp:12 rc.cpp:27 lirc-configuration-ui.cpp:36
+#: lirc-configuration-ui.cpp:78
 #, no-c-format
 msgid "Alternative LIRC String"
 msgstr "Альтернативная строка LIRC"
 
 #. i18n: file lirc-configuration-ui.ui line 98
-#: rc.cpp:15 rc.cpp:30
+#: rc.cpp:15 rc.cpp:30 lirc-configuration-ui.cpp:79
 #, no-c-format
 msgid "textLabel1"
 msgstr "textLabel1"

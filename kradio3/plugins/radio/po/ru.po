@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 02:51+0100\n"
+"POT-Creation-Date: 2006-11-11 18:43+0100\n"
 "PO-Revision-Date: 2006-11-08 13:00+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -17,109 +17,109 @@ msgstr ""
 "X-Generator: KBabel 1.10\n"
 
 #. i18n: file radio-configuration-ui.ui line 28
-#: rc.cpp:3 rc.cpp:68
+#: rc.cpp:3 rc.cpp:68 radio-configuration-ui.cpp:325
 #, no-c-format
 msgid "Station &Presets"
 msgstr "Параметры &радиостанций"
 
 #. i18n: file radio-configuration-ui.ui line 53
-#: rc.cpp:6 rc.cpp:71
+#: rc.cpp:6 rc.cpp:71 radio-configuration-ui.cpp:310
 #, no-c-format
 msgid "Stations"
 msgstr "Список"
 
 #. i18n: file radio-configuration-ui.ui line 179
-#: rc.cpp:13 rc.cpp:78
+#: rc.cpp:13 rc.cpp:78 radio-configuration-ui.cpp:315
 #, no-c-format
 msgid "&Search Stations"
 msgstr "&Поиск"
 
 #. i18n: file radio-configuration-ui.ui line 198
-#: rc.cpp:16 rc.cpp:81
+#: rc.cpp:16 rc.cpp:81 radio-configuration-ui.cpp:316
 #, no-c-format
 msgid "Load"
 msgstr "Из файла"
 
 #. i18n: file radio-configuration-ui.ui line 263
-#: rc.cpp:22 rc.cpp:87
+#: rc.cpp:22 rc.cpp:87 radio-configuration-ui.cpp:318
 #, no-c-format
 msgid "Name"
 msgstr "Название"
 
 #. i18n: file radio-configuration-ui.ui line 294
-#: rc.cpp:25 rc.cpp:90
+#: rc.cpp:25 rc.cpp:90 radio-configuration-ui.cpp:319
 #, no-c-format
 msgid "Short Name"
 msgstr "Сокращённое название"
 
 #. i18n: file radio-configuration-ui.ui line 325
-#: rc.cpp:28 rc.cpp:93
+#: rc.cpp:28 rc.cpp:93 radio-configuration-ui.cpp:320
 #, no-c-format
 msgid "Pixmap File"
 msgstr "Пиктограмма"
 
 #. i18n: file radio-configuration-ui.ui line 457
-#: rc.cpp:32 rc.cpp:97
+#: rc.cpp:32 rc.cpp:97 radio-configuration-ui.cpp:322
 #, no-c-format
 msgid " %"
 msgstr " %"
 
 #. i18n: file radio-configuration-ui.ui line 471
-#: rc.cpp:35 rc.cpp:100
+#: rc.cpp:35 rc.cpp:100 radio-configuration-ui.cpp:323
 #, no-c-format
 msgid "Volume Preset"
 msgstr "Установить громкость (-1=не менять)"
 
 #. i18n: file radio-configuration-ui.ui line 508
-#: rc.cpp:38 rc.cpp:103
+#: rc.cpp:38 rc.cpp:103 radio-configuration-ui.cpp:324
 #, no-c-format
 msgid "Personal Preset File"
 msgstr "Пользовательский файл настроек"
 
 #. i18n: file radio-configuration-ui.ui line 564
-#: rc.cpp:44 rc.cpp:109
+#: rc.cpp:44 rc.cpp:109 radio-configuration-ui.cpp:326
 #, no-c-format
 msgid "City"
 msgstr "Город"
 
 #. i18n: file radio-configuration-ui.ui line 577
-#: rc.cpp:47 rc.cpp:112
+#: rc.cpp:47 rc.cpp:112 radio-configuration-ui.cpp:327
 #, no-c-format
 msgid "Country"
 msgstr "Страна"
 
 #. i18n: file radio-configuration-ui.ui line 617
-#: rc.cpp:50 rc.cpp:115
+#: rc.cpp:50 rc.cpp:115 radio-configuration-ui.cpp:328
 #, no-c-format
 msgid "&Now"
 msgstr "&Текущее время"
 
 #. i18n: file radio-configuration-ui.ui line 627
-#: rc.cpp:53 rc.cpp:118
+#: rc.cpp:53 rc.cpp:118 radio-configuration-ui.cpp:329
 #, no-c-format
 msgid "Comment"
 msgstr "Описание"
 
 #. i18n: file radio-configuration-ui.ui line 640
-#: rc.cpp:56 rc.cpp:121
+#: rc.cpp:56 rc.cpp:121 radio-configuration-ui.cpp:330
 #, no-c-format
 msgid "Media"
 msgstr "Носитель"
 
 #. i18n: file radio-configuration-ui.ui line 648
-#: rc.cpp:59 rc.cpp:124
+#: rc.cpp:59 rc.cpp:124 radio-configuration-ui.cpp:331
 #, no-c-format
 msgid "Maintainer"
 msgstr "Автор"
 
 #. i18n: file radio-configuration-ui.ui line 661
-#: rc.cpp:62 rc.cpp:127
+#: rc.cpp:62 rc.cpp:127 radio-configuration-ui.cpp:332
 #, fuzzy, no-c-format
 msgid "Last Change"
 msgstr "Последнее изменение"
 
 #. i18n: file radio-configuration-ui.ui line 698
-#: rc.cpp:65 rc.cpp:130
+#: rc.cpp:65 rc.cpp:130 radio-configuration-ui.cpp:333
 #, no-c-format
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
