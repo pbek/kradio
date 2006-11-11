@@ -340,7 +340,7 @@ void QuickBar::show()
 void QuickBar::showOnOrgDesktop()
 {
     WidgetPluginBase::pShowOnOrgDesktop();
-    QWidget::show();
+    //QWidget::show();
 }
 
 

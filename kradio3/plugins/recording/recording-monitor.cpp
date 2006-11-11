@@ -188,7 +188,7 @@ void RecordingMonitor::show()
 void RecordingMonitor::showOnOrgDesktop()
 {
     WidgetPluginBase::pShowOnOrgDesktop();
-    QWidget::show();
+    //QWidget::show();
 }
 
 void RecordingMonitor::hide()

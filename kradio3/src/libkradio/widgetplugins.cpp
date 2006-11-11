@@ -98,6 +98,8 @@ void WidgetPluginBase::pToggleShown()
 
 void WidgetPluginBase::pShowOnOrgDesktop()
 {
+    KWin::setMainWindow(getWidget(), 0);
+
     logDebug(QString("%1::pShowOnOrgDesktop: all: %2, desktop: %3, visible:%4, anywherevisible:%5, cachevalid: %6").arg(name()).arg(m_saveSticky).arg(m_saveDesktop).arg(isReallyVisible()).arg(isAnywhereVisible()).arg(m_geoCacheValid));
     if (m_geoCacheValid && (!isReallyVisible() || m_geoRestoreFlag) ) {
         QWidget *w = getWidget();
@@ -112,15 +114,23 @@ void WidgetPluginBase::pShowOnOrgDesktop()
         w->resize(m_saveGeometry.size());
         w->move(m_saveGeometry.topLeft());
 
-        KWin::deIconifyWindow(id);
+        if (m_saveMinimized) {
+            w->showMinimized();
+            KWin::iconifyWindow(id);
+        } else if (m_saveMaximized) {
+            w->showMaximized();
+        } else {
+            w->showNormal();
+            KWin::deIconifyWindow(id);
+        }
 
-        KWin::setMainWindow(getWidget(), 0);
-        //w->show();
     }
 }
 
 void WidgetPluginBase::pShow()
 {
+    KWin::setMainWindow(getWidget(), 0);
+
     logDebug(QString("%1::pShow: all: %2, desktop: %3, visible:%4, anywherevisible:%5, cachevalid: %6").arg(name()).arg(m_saveSticky).arg(m_saveDesktop).arg(isReallyVisible()).arg(isAnywhereVisible()).arg(m_geoCacheValid));
     if (m_geoCacheValid && (!isReallyVisible() || m_geoRestoreFlag) ) {
         QWidget *w = getWidget();
@@ -133,7 +143,7 @@ void WidgetPluginBase::pShow()
 
         w->resize(m_saveGeometry.size());
         w->move(m_saveGeometry.topLeft());
-        KWin::setMainWindow(getWidget(), 0);
+        KWin::deIconifyWindow(id);
     }
 }
 
@@ -166,6 +176,8 @@ void WidgetPluginBase::getKWinState(const QWidget *_w) const
     if (!w) return;
     if (w->isVisible()) {
         KWin::WindowInfo i = KWin::WindowInfo(w->winId(), 0, 0);
+        m_saveMinimized    = i.isMinimized();
+        m_saveMaximized    = w->isMaximized();
         m_saveSticky       = i.onAllDesktops();
         m_saveDesktop      = i.desktop();
         m_saveGeometry     = QRect(w->pos(), w->size());
@@ -180,19 +192,23 @@ void   WidgetPluginBase::saveState (KConfig *config) const
     getKWinState(w);
 
     config->writeEntry("hidden",   w ? w->isHidden() : false);
-    config->writeEntry("sticky",   m_saveSticky);
-    config->writeEntry("desktop",  m_saveDesktop);
-    config->writeEntry("geometry", m_saveGeometry);
+    config->writeEntry("minimized",  m_saveMinimized);
+    config->writeEntry("maximized",  m_saveMaximized);
+    config->writeEntry("sticky",     m_saveSticky);
+    config->writeEntry("desktop",    m_saveDesktop);
+    config->writeEntry("geometry",   m_saveGeometry);
     config->writeEntry("geoCacheValid", m_geoCacheValid);
 }
 
 
 void   WidgetPluginBase::restoreState (KConfig *config, bool showByDefault)
 {
-    m_geoCacheValid= config->readBoolEntry("geoCacheValid", false);
-    m_saveDesktop  = config->readNumEntry ("desktop", 1);
-    m_saveSticky   = config->readBoolEntry("sticky",  false);
-    m_saveGeometry = config->readRectEntry("geometry");
+    m_geoCacheValid = config->readBoolEntry("geoCacheValid", false);
+    m_saveDesktop   = config->readNumEntry ("desktop",        1);
+    m_saveSticky    = config->readBoolEntry("sticky",     false);
+    m_saveMaximized = config->readBoolEntry("maximized",  false);
+    m_saveMinimized = config->readBoolEntry("minimized",  false);
+    m_saveGeometry  = config->readRectEntry("geometry");
 
     m_restoreShow  = !config->readBoolEntry("hidden", !showByDefault);
 }

@@ -157,7 +157,7 @@ void ErrorLog::show()
 void ErrorLog::showOnOrgDesktop()
 {
     WidgetPluginBase::pShowOnOrgDesktop();
-    KDialogBase::show();
+    //KDialogBase::show();
 }
 
 void ErrorLog::hide()

@@ -60,6 +60,8 @@ protected:
 protected:
     // temporary data
     mutable bool        m_geoCacheValid;
+    mutable bool        m_saveMinimized;
+    mutable bool        m_saveMaximized;
     mutable bool        m_saveSticky;
     mutable int         m_saveDesktop;
     mutable QRect       m_saveGeometry;
