@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-12 18:20+0100\n"
+"POT-Creation-Date: 2006-11-12 18:41+0100\n"
 "PO-Revision-Date: 2006-11-12 18:23+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -194,7 +194,8 @@ msgstr "ALSA Plugin: Das Lesen vom Gerät plughw:%1,%2 schlug fehl"
 msgid ""
 "ALSA Plugin: buffer overrun for device plughw:%1,%2 (buffersize=%3, buffer=%"
 "4)"
-msgstr "ALSA Plugin: Pufferüberlauf im Gerät plughw:%1,%2 (Puffergröße=%3, buffer=%4)"
+msgstr ""
+"ALSA Plugin: Pufferüberlauf im Gerät plughw:%1,%2 (Puffergröße=%3, buffer=%4)"
 
 #: alsa-sound.cpp:626
 msgid "internal stream, not stored (%1)"
@@ -234,7 +235,8 @@ msgstr ""
 
 #: alsa-sound.cpp:781
 msgid "ALSA Plugin: Error setting period size for %1"
-msgstr "ALSA Plugin: Fehler beim Einstellen der Puffer-Periodengröße für Gerät %1"
+msgstr ""
+"ALSA Plugin: Fehler beim Einstellen der Puffer-Periodengröße für Gerät %1"
 
 #: alsa-sound.cpp:817
 msgid "ALSA Plugin: Error setting HW params"
@@ -254,7 +256,8 @@ msgstr "ALSA Plugin: Fehler in Funktion snd_mixer_attach bei Soundkarte %1"
 
 #: alsa-sound.cpp:934
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
-msgstr "ALSA Plugin: Fehler in Funktion snd_mixer_selem_register bei Soundkarte %1"
+msgstr ""
+"ALSA Plugin: Fehler in Funktion snd_mixer_selem_register bei Soundkarte %1"
 
 #: alsa-sound.cpp:938
 msgid "ALSA Plugin: Error: snd_mixer_load for card %1"
@@ -278,9 +281,9 @@ msgstr "Fehler beim Setzen der Lautstärke von Gerät hwplug:%1,%2"
 
 #: alsa-sound.cpp:1327
 msgid "error while setting capture switch %1 for hwplug:%2,%3"
-msgstr "Fehler beim Einstellen des Aufnahmeauswahlschalters %1 für Gerät hwplug:%2,%3"
+msgstr ""
+"Fehler beim Einstellen des Aufnahmeauswahlschalters %1 für Gerät hwplug:%2,%3"
 
 #: alsa-sound.cpp:1448
 msgid "ALSA Sound Device %1"
 msgstr "ALSA Soundkarte %1"
-

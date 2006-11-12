@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-12 18:20+0100\n"
+"POT-Creation-Date: 2006-11-12 18:41+0100\n"
 "PO-Revision-Date: 2006-11-12 18:24+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -211,7 +211,8 @@ msgid "internal stream, not stored (%1)"
 msgstr "interner, nicht aufgezeichneter Datenstrom (%1)"
 
 #: streaming.cpp:403
-msgid "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
+msgid ""
+"StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
 msgstr ""
 "Streaminggerät %1::notifySoundStreamData: Die Wiedergabe-Module haben %2 "
 "bytes übersprungen."
@@ -223,4 +224,3 @@ msgstr "Streaming-Gerät %1"
 #: streaming.cpp:432 streaming.cpp:437
 msgid "Streaming Device %1, %2: %3"
 msgstr "Streaming-Gerät %1, %2: %3"
-

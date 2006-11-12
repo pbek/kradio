@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-12 18:20+0100\n"
+"POT-Creation-Date: 2006-11-12 18:41+0100\n"
 "PO-Revision-Date: 2006-11-12 18:27+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -221,11 +221,13 @@ msgstr "kann die Puffer-Datei %1 nicht öffnen"
 
 #: fileringbuffer.cpp:93
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
+msgstr ""
+"FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
 
 #: fileringbuffer.cpp:99
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
+msgstr ""
+"FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
 
 #: fileringbuffer.cpp:127 fileringbuffer.cpp:145
 msgid "FileRingBuffer::addData: failed writing data to file %1."
@@ -337,7 +339,8 @@ msgstr "Fehler: Das erzeugen der Instanz \"%1\" der Klasse %2 schlug fehl."
 
 #: kradioapp.cpp:328
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr "Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
+msgstr ""
+"Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
 
 #: main.cpp:36
 msgid "KRadio"
@@ -504,7 +507,9 @@ msgstr "Speichern der Senderliste in Datei %1: "
 msgid ""
 "something strange happend, station list has only %1 entries. Writing station "
 "preset file skipped"
-msgstr "Etwas seltsames ist passiert: Die Senderliste hat nur %1 Einträge. Das Speichern der Senderliste wurde übersprungen."
+msgstr ""
+"Etwas seltsames ist passiert: Die Senderliste hat nur %1 Einträge. Das "
+"Speichern der Senderliste wurde übersprungen."
 
 #: stationlist.cpp:482
 msgid "error uploading preset file %1"
@@ -545,4 +550,3 @@ msgstr "Die Eigenschaft %1 ist der Klasse %2 unbekannt"
 #: stationlistxmlhandler.cpp:219
 msgid "characters ignored for element %1"
 msgstr "Einige Zeichen des Elements %1 wurden ignoriert"
-
