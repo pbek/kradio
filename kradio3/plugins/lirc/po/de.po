@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2006-11-06 01:32+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -169,38 +169,38 @@ msgstr "Doppelklicken Sie auf die Einträge um die Zuordnung zu ändern"
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Unterstützung für die Fernsteuerung (LIRC)"
 
-#: lircsupport.cpp:51 lircsupport.cpp:327
+#: lircsupport.cpp:51 lircsupport.cpp:330
 msgid "LIRC Plugin"
 msgstr "Plugin für die Fernsteuerung (LIRC)"
 
-#: lircsupport.cpp:56
+#: lircsupport.cpp:56 lircsupport.cpp:57
 msgid "initializing kradio lirc plugin"
 msgstr "initialisiere das Plugin für die Fernsteuerung (LIRC)"
 
-#: lircsupport.cpp:64
+#: lircsupport.cpp:65
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
 "Die Datei %1 existiert nicht. Die Datei wurde mit den Defaulteinstellungen "
 "für KRadio erzeugt."
 
-#: lircsupport.cpp:93
+#: lircsupport.cpp:94
 msgid "There is no entry for kradio in any of your .lircrc files."
 msgstr "Es gibt keinen Eintrag für KRadio in jeglichen .lirc-Dateien"
 
-#: lircsupport.cpp:94
+#: lircsupport.cpp:95
 msgid "Please setup your .lircrc files correctly."
 msgstr "Bitte konfigurieren Sie Ihre .lirc-Dateien richtig."
 
-#: lircsupport.cpp:105
+#: lircsupport.cpp:106 lircsupport.cpp:107
 msgid "Initializing kradio lirc plugin failed"
 msgstr "Die Initialisierung des KRadio LIRC Plugins schlug fehl"
 
-#: lircsupport.cpp:107
+#: lircsupport.cpp:109 lircsupport.cpp:110
 msgid "Initializing kradio lirc plugin successful"
 msgstr "Die Initialisierung des LIRC Plugins war erfolgreich"
 
-#: lircsupport.cpp:164
+#: lircsupport.cpp:167
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
@@ -208,6 +208,6 @@ msgstr ""
 "Das Lesen vom LIRC-Socket ist fehlgeschlagen. Die LIRC-Funktion wird bis zum "
 "nächsten Start von KRadio temporär abgeschaltet."
 
-#: lircsupport.cpp:326
+#: lircsupport.cpp:329
 msgid "LIRC Support"
 msgstr "Fernsteuerung"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2006-11-08 12:45+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -95,6 +95,10 @@ msgstr "Параметры звука для драйвера OSS"
 #: oss-sound.cpp:507
 msgid "OSS device %1: No data to record"
 msgstr "Устройство OSS %1: для записи нет данных"
+
+#: oss-sound.cpp:517
+msgid "internal stream, not stored (%1)"
+msgstr ""
 
 #: oss-sound.cpp:549
 msgid "Error %1 while handling OSS device %2"

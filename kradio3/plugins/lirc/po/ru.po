@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2006-11-08 12:54+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -167,36 +167,36 @@ msgstr "Для изменения привязки дважды щёлкните
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Поддержка ПДУ в Linux (LIRC)"
 
-#: lircsupport.cpp:51 lircsupport.cpp:327
+#: lircsupport.cpp:51 lircsupport.cpp:330
 msgid "LIRC Plugin"
 msgstr "Модуль ДУ (LIRC)"
 
-#: lircsupport.cpp:56
+#: lircsupport.cpp:56 lircsupport.cpp:57
 msgid "initializing kradio lirc plugin"
 msgstr "Инициализация модуля LIRC"
 
-#: lircsupport.cpp:64
+#: lircsupport.cpp:65
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr "%1 не существует. Был создан файл .lircrc для KRadio по умолчанию"
 
-#: lircsupport.cpp:93
+#: lircsupport.cpp:94
 msgid "There is no entry for kradio in any of your .lircrc files."
 msgstr "Ни в одном из ваших файлов .lircrc нет упоминания о KRadio."
 
-#: lircsupport.cpp:94
+#: lircsupport.cpp:95
 msgid "Please setup your .lircrc files correctly."
 msgstr "Настройте файлы .lircrc"
 
-#: lircsupport.cpp:105
+#: lircsupport.cpp:106 lircsupport.cpp:107
 msgid "Initializing kradio lirc plugin failed"
 msgstr "Инициализация модуля LIRC не удалась"
 
-#: lircsupport.cpp:107
+#: lircsupport.cpp:109 lircsupport.cpp:110
 msgid "Initializing kradio lirc plugin successful"
 msgstr "Модуль LIRC инициализирован"
 
-#: lircsupport.cpp:164
+#: lircsupport.cpp:167
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
@@ -204,6 +204,6 @@ msgstr ""
 "Чтение из сокета LIRC не удалось. Отключаю функции LIRC до следующего "
 "запуска KRadio."
 
-#: lircsupport.cpp:326
+#: lircsupport.cpp:329
 msgid "LIRC Support"
 msgstr "Поддержка LIRC"

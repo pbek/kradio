@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2006-11-08 11:44+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -495,11 +495,22 @@ msgstr "Ошибка записи во временный файл %1"
 msgid "Writing station preset file %1 failed."
 msgstr "Не могу записать файл радиостанций %1."
 
-#: stationlist.cpp:476
+#: stationlist.cpp:475
+#, fuzzy
+msgid "uploading preset file %1: "
+msgstr "Ошибка выгрузки файла настроек %1"
+
+#: stationlist.cpp:477
+msgid ""
+"something strange happend, station list has only %1 entries. Writing station "
+"preset file skipped"
+msgstr ""
+
+#: stationlist.cpp:482
 msgid "error uploading preset file %1"
 msgstr "Ошибка выгрузки файла настроек %1"
 
-#: stationlist.cpp:480
+#: stationlist.cpp:486
 msgid "Upload of station preset file to %1 failed."
 msgstr "Выгрузка файла радиостанций %1 завершилась неудачей."
 

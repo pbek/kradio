@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2006-11-06 00:10+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -196,6 +196,10 @@ msgid ""
 "4)"
 msgstr ""
 "ALSA Plugin: Pufferüberlauf im Gerät plughw:%1,%2 (Puffergröße=%3, buffer=%4)"
+
+#: alsa-sound.cpp:626
+msgid "internal stream, not stored (%1)"
+msgstr ""
 
 #: alsa-sound.cpp:736
 msgid "ALSA Plugin: Error opening PCM device %1"

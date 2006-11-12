@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2004-02-28 22:45+0000\n"
 "Last-Translator: Rafael Rodríguez Martín <apt-drink@telefonica.net>\n"
 "Language-Team: es_ES <kde-es@kybs.de>\n"
@@ -508,11 +508,22 @@ msgstr "error al escribir al archivo temporal %1"
 msgid "Writing station preset file %1 failed."
 msgstr "Falló la escritura del archivo de configuración de emisoras %1."
 
-#: stationlist.cpp:476
+#: stationlist.cpp:475
+#, fuzzy
+msgid "uploading preset file %1: "
+msgstr "Error al subir el archivo de configuración %1"
+
+#: stationlist.cpp:477
+msgid ""
+"something strange happend, station list has only %1 entries. Writing station "
+"preset file skipped"
+msgstr ""
+
+#: stationlist.cpp:482
 msgid "error uploading preset file %1"
 msgstr "Error al subir el archivo de configuración %1"
 
-#: stationlist.cpp:480
+#: stationlist.cpp:486
 msgid "Upload of station preset file to %1 failed."
 msgstr "Falló la subida del archivo de configuración de emisoras a %1."
 

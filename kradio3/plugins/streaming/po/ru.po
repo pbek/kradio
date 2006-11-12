@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2006-11-08 12:25+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -209,6 +209,10 @@ msgstr ""
 #: streaming.cpp:173
 msgid "Streaming Device Options"
 msgstr "Параметры сетевого вещания"
+
+#: streaming.cpp:393
+msgid "internal stream, not stored (%1)"
+msgstr ""
 
 #: streaming.cpp:403
 msgid ""

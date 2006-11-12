@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-11 18:43+0100\n"
+"POT-Creation-Date: 2006-11-12 18:20+0100\n"
 "PO-Revision-Date: 2006-11-08 12:15+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -197,6 +197,10 @@ msgid ""
 msgstr ""
 "Модуль ALSA: переполнение буфера устройства plughw:%1,%2 (размер буфера=%3, "
 "буфер=%4)"
+
+#: alsa-sound.cpp:626
+msgid "internal stream, not stored (%1)"
+msgstr ""
 
 #: alsa-sound.cpp:736
 msgid "ALSA Plugin: Error opening PCM device %1"
