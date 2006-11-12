@@ -1,13 +1,14 @@
+# translation of de.po to
 # translation of kradio-streaming.po to
 # This file is put in the public domain.
 #
 # Ernst Martin Witte <emw@nocabal.de>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: kradio-streaming\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-12 18:20+0100\n"
-"PO-Revision-Date: 2006-11-06 00:44+0100\n"
+"PO-Revision-Date: 2006-11-12 18:24+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -207,11 +208,10 @@ msgstr "Geräteoptionen für das Streaming"
 
 #: streaming.cpp:393
 msgid "internal stream, not stored (%1)"
-msgstr ""
+msgstr "interner, nicht aufgezeichneter Datenstrom (%1)"
 
 #: streaming.cpp:403
-msgid ""
-"StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
+msgid "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
 msgstr ""
 "Streaminggerät %1::notifySoundStreamData: Die Wiedergabe-Module haben %2 "
 "bytes übersprungen."
@@ -223,3 +223,4 @@ msgstr "Streaming-Gerät %1"
 #: streaming.cpp:432 streaming.cpp:437
 msgid "Streaming Device %1, %2: %3"
 msgstr "Streaming-Gerät %1, %2: %3"
+

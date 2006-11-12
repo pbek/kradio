@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-12 18:20+0100\n"
-"PO-Revision-Date: 2006-11-06 01:06+0100\n"
+"PO-Revision-Date: 2006-11-12 18:24+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgstr "OSS Gerät %1: Keine Daten zum Aufnehmen"
 
 #: oss-sound.cpp:517
 msgid "internal stream, not stored (%1)"
-msgstr ""
+msgstr "interner, nicht aufgezeichneter Datenstrom (%1)"
 
 #: oss-sound.cpp:549
 msgid "Error %1 while handling OSS device %2"
@@ -163,8 +163,7 @@ msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
 msgstr "OSSSoundDevice::getMixerChannels: Kann den Mixer %1 nicht öffnen"
 
 #: oss-sound.cpp:771
-msgid ""
-"OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
+msgid "OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
 msgstr ""
 "OSSSoundDevice::getMixerChannels: Kann die Gerätemaske des Mixers %1 nicht "
 "lesen"
@@ -198,3 +197,4 @@ msgstr ""
 #: oss-sound.cpp:986
 msgid "OSS Sound Device %1"
 msgstr "OSS Sound Gerät %1"
+

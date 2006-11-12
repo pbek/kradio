@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-12 18:20+0100\n"
-"PO-Revision-Date: 2006-11-06 00:39+0100\n"
+"PO-Revision-Date: 2006-11-12 18:24+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,4 +88,5 @@ msgstr ""
 
 #: timeshifter.cpp:412
 msgid "internal stream, not stored"
-msgstr ""
+msgstr "interner, nicht aufgezeichneter Datenstrom"
+
