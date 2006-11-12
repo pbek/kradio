@@ -126,7 +126,7 @@ if test -z "$enable_ogg" -o "$enable_ogg" = "yes"; then
 
 	if test "$have_ogg" = "yes"; then
 		AC_DEFINE(HAVE_OGG, 1, [Define this if OGG/Vorbis encoder library is available and should be used])
-		LIB_OGG="-logg -lvorbis"
+		LIB_OGG="-logg -lvorbisenc"
 		AC_MSG_RESULT([enabled])
 	else
 		AC_MSG_RESULT([disabled])

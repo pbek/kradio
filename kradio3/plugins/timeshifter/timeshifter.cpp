@@ -409,7 +409,7 @@ void TimeShifter::setTempFile(const QString &filename, Q_UINT64 s)
 {
     m_RingBuffer.clear();
     m_RingBuffer.resize(m_TempFileName = filename, m_TempFileMaxSize = s);
-    m_PlaybackMetaData = SoundMetaData(0,0,0);
+    m_PlaybackMetaData = SoundMetaData(0,0,0, i18n("internal stream, not stored"));
     m_PlaybackDataLeftInBuffer = 0;
 }
 

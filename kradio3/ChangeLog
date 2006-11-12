@@ -1,3 +1,16 @@
+2006-11-12
+
+    emw - lirc output to stderr in case kde redirects other logs not to
+          console but to some log file. users had been irritated before.
+        - don't write preset file if <= 1 presets in list and issue warning.
+          very rare non-reproducible corruption of preset files has been 
+          reported.
+        - insert information in sound stream file name attribute if no real
+          file is behind that stream (i.e. everything except real recording)
+        - fixed libvorbisenc typo in configure.in.in
+        
+        
+
 2006-11-11
 
 	emw - switched kradio repository to SVN

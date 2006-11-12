@@ -390,7 +390,7 @@ bool StreamingDevice::noticeReadyForPlaybackData(SoundStreamID id, size_t free_s
         const char   *buffer        = NULL;
         size_t        size          = SIZE_T_DONT_CARE;
         size_t        consumed_size = SIZE_T_DONT_CARE;
-        SoundMetaData meta_data(0,0,0, QString::null);
+        SoundMetaData meta_data(0,0,0, i18n("internal stream, not stored (%1)").arg(m_AllCaptureStreams[id]));
         x.lockData(buffer, size, meta_data); // get pointer to data and meta-data content
         if (size > free_size)
             size = free_size;

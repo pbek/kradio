@@ -514,7 +514,7 @@ void OSSSoundDevice::slotPoll()
             buffer = m_CaptureBuffer.getData(size);
             time_t cur_time = time(NULL);
             size_t consumed_size = SIZE_T_DONT_CARE;
-            notifySoundStreamData(m_CaptureStreamID, m_DSPFormat, buffer, size, consumed_size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, m_DSPDeviceName));
+            notifySoundStreamData(m_CaptureStreamID, m_DSPFormat, buffer, size, consumed_size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, i18n("internal stream, not stored (%1)").arg(m_DSPDeviceName)));
             if (consumed_size == SIZE_T_DONT_CARE)
                 consumed_size = size;
             m_CaptureBuffer.removeData(consumed_size);
