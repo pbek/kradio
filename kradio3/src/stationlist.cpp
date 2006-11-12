@@ -470,17 +470,24 @@ bool StationList::writeXML (const KURL &url, const IErrorLogClient &logger, bool
     // close hopefully flushes buffers ;)
     outf->close();
 
+    if (count() <= 1) {
+        logger.logWarning("StationList::writeXML: " +
+                 i18n("uploading preset file %1: ").arg(url.url()));
+        logger.logWarning("StationList::writeXML: " +
+                 i18n("something strange happend, station list has only %1 entries. Writing station preset file skipped").arg(count()));
+    } else {
 
-    if (!KIO::NetAccess::upload(tmpFile.name(), url, NULL)) {
-        logger.logError("StationList::writeXML: " +
-                 i18n("error uploading preset file %1").arg(url.url()));
+        if (!KIO::NetAccess::upload(tmpFile.name(), url, NULL)) {
+            logger.logError("StationList::writeXML: " +
+                    i18n("error uploading preset file %1").arg(url.url()));
 
-        if (enableMessageBox) {
-            QMessageBox::warning(NULL, "KRadio",
-                                 i18n("Upload of station preset file to %1 failed.")
-                                 .arg(url.url()));
+            if (enableMessageBox) {
+                QMessageBox::warning(NULL, "KRadio",
+                                    i18n("Upload of station preset file to %1 failed.")
+                                    .arg(url.url()));
+            }
+            return false;
         }
-        return false;
     }
 
     return true;

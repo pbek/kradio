@@ -54,6 +54,7 @@ LircSupport::LircSupport(const QString &name)
 
 #ifdef HAVE_LIRC
     logDebug(i18n("initializing kradio lirc plugin"));
+    fprintf (stderr, "%s\n", (const char*)i18n("initializing kradio lirc plugin").utf8());
     char *prg = (char*)"kradio";
 
     QString slircrc = getenv("HOME");
@@ -103,8 +104,10 @@ LircSupport::LircSupport(const QString &name)
 
     if (m_fd_lirc == -1) {
         logWarning(i18n("Initializing kradio lirc plugin failed"));
+        fprintf (stderr, "%s\n", (const char*)i18n("Initializing kradio lirc plugin failed").utf8());
     } else {
         logDebug(i18n("Initializing kradio lirc plugin successful"));
+        fprintf (stderr, "%s\n", (const char*)i18n("Initializing kradio lirc plugin successful").utf8());
     }
 #endif
 
