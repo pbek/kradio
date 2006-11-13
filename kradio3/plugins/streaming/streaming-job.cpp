@@ -70,6 +70,8 @@ StreamingJob::StreamingJob(const StreamingJob &c)
 
 StreamingJob::~StreamingJob()
 {
+    if (m_KIO_Job)
+        m_KIO_Job->kill();
 }
 
 
@@ -109,8 +111,8 @@ bool StreamingJob::startPutJob()
     if (!m_KIO_Job)
         return false;
     m_KIO_Job->setAsyncDataEnabled(true);
-    connect (m_KIO_Job, SIGNAL(dataReq(KIO::Job *job, QByteArray &data)),
-        this, SLOT(slotWriteData  (KIO::Job *job, QByteArray &data)));
+    connect (m_KIO_Job, SIGNAL(dataReq(KIO::Job *, QByteArray &)),
+        this, SLOT(slotWriteData  (KIO::Job *, QByteArray &)));
     connect (m_KIO_Job, SIGNAL(result(KIO::Job *)),
         this, SLOT(slotIOJobResult(KIO::Job *)));
     return true;
@@ -140,7 +142,7 @@ bool StreamingJob::stopPlayback()
 {
     if (m_OpenCounter) {
         if (!--m_OpenCounter) {
-            delete m_KIO_Job;
+            m_KIO_Job->kill();
             m_KIO_Job = NULL;
         }
     }
@@ -188,7 +190,7 @@ bool StreamingJob::stopCapture()
 {
     if (m_OpenCounter) {
         if (!--m_OpenCounter) {
-            delete m_KIO_Job;
+            m_KIO_Job->kill();
             m_KIO_Job = NULL;
         }
     }
