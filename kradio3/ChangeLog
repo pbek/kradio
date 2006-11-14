@@ -1,3 +1,10 @@
+2006-11-13
+
+    emw - Fixed signal naming bug in streaming plugin
+        - converted errors to warnings during v4l2 detection of
+          treble/bass/balance/mute/volume
+        - Fixed deletion of KIO::TransferJob in streaming plugin
+
 2006-11-12
 
     emw - lirc output to stderr in case kde redirects other logs not to
