@@ -79,7 +79,8 @@ void StreamingJob::setURL(const QString &url)
 {
     if (m_URL != url) {
         m_URL = url;
-        delete m_KIO_Job;
+        if (m_KIO_Job)
+            m_KIO_Job->kill();
         m_KIO_Job = NULL;
         if (!m_capturing) {
             startPutJob();
@@ -130,8 +131,12 @@ bool StreamingJob::startPlayback()
         m_StreamPos = 0;
         if (m_KIO_Job->error()) {
             emit logStreamError(m_URL, m_KIO_Job->errorString());
+            m_KIO_Job->kill();
+            m_KIO_Job = NULL;
+            m_OpenCounter = 0;
+            return false;
         }
-        return m_KIO_Job->error() == 0;
+        return true;
     }
     else {
         return true;
@@ -142,7 +147,8 @@ bool StreamingJob::stopPlayback()
 {
     if (m_OpenCounter) {
         if (!--m_OpenCounter) {
-            m_KIO_Job->kill();
+            if (m_KIO_Job)
+                m_KIO_Job->kill();
             m_KIO_Job = NULL;
         }
     }
@@ -177,8 +183,12 @@ bool StreamingJob::startCapture(const SoundFormat &/*proposed_format*/,
         m_StreamPos = 0;
         if (m_KIO_Job->error()) {
             emit logStreamError(m_URL, m_KIO_Job->errorString());
+            m_KIO_Job->kill();
+            m_KIO_Job = NULL;
+            m_OpenCounter = 0;
+            return false;
         }
-        return m_KIO_Job->error() == 0;
+        return true;
     }
     ++m_OpenCounter;
     real_format = m_SoundFormat;
@@ -190,7 +200,8 @@ bool StreamingJob::stopCapture()
 {
     if (m_OpenCounter) {
         if (!--m_OpenCounter) {
-            m_KIO_Job->kill();
+            if (m_KIO_Job)
+                m_KIO_Job->kill();
             m_KIO_Job = NULL;
         }
     }
@@ -213,7 +224,8 @@ void   StreamingJob::slotReadData  (KIO::Job */*job*/, const QByteArray &data)
     m_StreamPos += free;
 
     if (m_Buffer.getFreeSize() < data.size()) {
-        m_KIO_Job->suspend();
+        if (m_KIO_Job)
+            m_KIO_Job->suspend();
     }
 }
 
@@ -226,7 +238,8 @@ void   StreamingJob::slotWriteData (KIO::Job */*job*/, QByteArray &)
         size = m_Buffer.takeData(buf, size);
         QByteArray data;
         data.assign(buf, size);
-        m_KIO_Job->sendAsyncData(data);
+        if (m_KIO_Job)
+            m_KIO_Job->sendAsyncData(data);
         m_StreamPos += size;
     }
     else {
@@ -266,7 +279,8 @@ void StreamingJob::removeData(size_t size)
 {
     m_Buffer.removeData(size);
     if (m_Buffer.getFreeSize() > m_Buffer.getSize() / 2) {
-        m_KIO_Job->resume();
+        if (m_KIO_Job)
+            m_KIO_Job->resume();
     }
 }
 
