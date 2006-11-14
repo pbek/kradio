@@ -1250,14 +1250,14 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl))
             c.hasMute = !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
         else
-            logError(i18n("V4L2: Querying mute control failed"));
+            logWarning(i18n("V4L2: Querying mute control failed"));
 
         ctrl.id = V4L2_CID_AUDIO_VOLUME;
         if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
             if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
                 c.setVolume(ctrl.minimum, ctrl.maximum);
         } else {
-            logError(i18n("V4L2: Querying volume control failed"));
+            logWarning(i18n("V4L2: Querying volume control failed"));
         }
 
         ctrl.id = V4L2_CID_AUDIO_TREBLE;
@@ -1265,7 +1265,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
             if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
                 c.setTreble(ctrl.minimum, ctrl.maximum);
         } else {
-            logError(i18n("V4L2: Querying treble control failed"));
+            logWarning(i18n("V4L2: Querying treble control failed"));
         }
 
         ctrl.id = V4L2_CID_AUDIO_BASS;
@@ -1273,7 +1273,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
             if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
                 c.setBass(ctrl.minimum, c.maxBass = ctrl.maximum);
         } else {
-            logError(i18n("V4L2: Querying bass control failed"));
+            logWarning(i18n("V4L2: Querying bass control failed"));
         }
 
         ctrl.id = V4L2_CID_AUDIO_BALANCE;
@@ -1281,7 +1281,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
             if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
                 c.setBalance(ctrl.minimum, ctrl.maximum);
         } else {
-            logError(i18n("V4L2: Querying balance control failed"));
+            logWarning(i18n("V4L2: Querying balance control failed"));
         }
 
     } else {
