@@ -1,0 +1,56 @@
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-18 21:18+0000\n"
+"PO-Revision-Date: 2006-11-19 16:12+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Hélio \"RoadRunner\" Guilherme"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "helio.guilherme@bluebottle.com"
+
+#: quickbar.cpp:42
+msgid "Radio Station Quick Selection Toolbar"
+msgstr "Barra de Acesso Rápido das Estações de Rádio"
+
+#: quickbar.cpp:48
+msgid "Quickbar Plugin"
+msgstr "Plugin de Barra de Acesso Rápido"
+
+#: quickbar.cpp:139
+msgid "Quickbar"
+msgstr "Barra de Acesso Rápido"
+
+#: quickbar.cpp:140
+msgid "Quickbar Configuration"
+msgstr "Configuração da Barra de Acesso Rápido"
+
+#: quickbar.cpp:404
+msgid "contentsDragEnterEvent accepted"
+msgstr "contentsDragEnterEvent aceite"
+
+#: quickbar.cpp:406
+msgid "contentsDragEnterEvent rejected"
+msgstr "contentsDragEnterEvent rejeitado"
+

@@ -1,20 +1,22 @@
-# translation of ru.po to
-# translation of kradio-timeshifter.po to
-# This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ru\n"
+"Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-18 21:18+0000\n"
-"PO-Revision-Date: 2006-11-08 12:19+0300\n"
-"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"PO-Revision-Date: 2006-11-19 18:23+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: KBabel 1.10.2\n"
 
 #. i18n: file timeshifter-configuration-ui.ui line 16
 #: rc.cpp:3 rc.cpp:22 timeshifter-configuration-ui.cpp:118
@@ -26,78 +28,77 @@ msgstr "SetupDialogGeneral"
 #: rc.cpp:6 rc.cpp:25 timeshifter-configuration-ui.cpp:119
 #, no-c-format
 msgid " MB"
-msgstr " Мб"
+msgstr " MB"
 
 #. i18n: file timeshifter-configuration-ui.ui line 92
 #: rc.cpp:9 rc.cpp:28 timeshifter-configuration-ui.cpp:120
 #, no-c-format
 msgid "Maximum File Size"
-msgstr "Размер файла, не более"
+msgstr "Tamanho Máximo do Ficheiro"
 
 #. i18n: file timeshifter-configuration-ui.ui line 100
 #: rc.cpp:12 rc.cpp:31 timeshifter-configuration-ui.cpp:121
 #, no-c-format
 msgid "Playback Mixer Device"
-msgstr "Устройство воспроизведения"
+msgstr "Dispositivo Misturador de Reprodução"
 
 #. i18n: file timeshifter-configuration-ui.ui line 108
 #: rc.cpp:15 rc.cpp:34 timeshifter-configuration-ui.cpp:122
 #, no-c-format
 msgid "Temporary File"
-msgstr "Временный файл"
+msgstr "Ficheiro Temporário"
 
 #. i18n: file timeshifter-configuration-ui.ui line 121
 #: rc.cpp:18 rc.cpp:37 timeshifter-configuration-ui.cpp:123
 #, no-c-format
 msgid "Playback Mixer Channel"
-msgstr "Канал воспроизведения"
+msgstr "Canal do Misturador de Reprodução"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr ""
+msgstr "Hélio \"RoadRunner\" Guilherme"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr ""
+msgstr "helio.guilherme@bluebottle.com"
 
 #: timeshifter-configuration.cpp:138
 msgid "any ( * )"
-msgstr "Все ( * )"
+msgstr "todos ( * )"
 
 #: timeshifter-configuration.cpp:140
 msgid "TimeShifter Temporary File Selection"
-msgstr "Выбор временного файла для реализации приостановки вещания"
+msgstr "Selecção do Ficheiro Temporário da Suspensão de Tempo"
 
 #: timeshifter-configuration.cpp:143
 msgid "Select TimeShifter Temporary File"
-msgstr "Выберите временный файл"
+msgstr "Seleccione o Ficheiro Temporário da Suspensão de Tempo"
 
 #: timeshifter.cpp:31
 msgid "TimeShift Support"
-msgstr "Поддержка приостановки вещания"
+msgstr "Suporte a Suspensão de Tempo (\"TimeShift\")"
 
 #: timeshifter.cpp:36
 msgid "TimeShifter Plugin"
-msgstr "Модуль приостановки вещания"
+msgstr "Estensão Suspensor de Tempo (\"TimeShifter\")"
 
 #: timeshifter.cpp:121
 msgid "Timeshifter"
-msgstr "Приостановка"
+msgstr "Suspensor de Tempo (\"TimeShifter\")"
 
 #: timeshifter.cpp:122
 msgid "Timeshifter Options"
-msgstr "Параметры приостановки вещания"
+msgstr "Opções do Suspensor de Tempo (\"TimeShifter\")"
 
 #: timeshifter.cpp:355
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
-msgstr ""
-"TimeShifter::notifySoundStreamData: клиенты пропустили %1 байт. Данные "
-"утеряны."
+msgstr "TimeShifter::notifySoundStreamData: Clientes saltados %1 bytes. Perda de Dados"
 
 #: timeshifter.cpp:412
 msgid "internal stream, not stored"
-msgstr ""
+msgstr "fluxo interno, não guardado"
+

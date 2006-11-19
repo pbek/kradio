@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-12 18:41+0100\n"
+"POT-Creation-Date: 2006-11-18 21:18+0000\n"
 "PO-Revision-Date: 2006-11-12 18:24+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team:  <de@li.org>\n"
@@ -51,6 +51,18 @@ msgstr "Temporäre Datei"
 #, no-c-format
 msgid "Playback Mixer Channel"
 msgstr "Wiedergabemixerkanal"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
 
 #: timeshifter-configuration.cpp:138
 msgid "any ( * )"

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta2</creator>
+			<maintainer>Hélio Guilherme &lt;helio.guilherme@bluebottle.com&gt;</maintainer>
+			<changed>2006-11-18T22:54:01</changed>
+			<country>Portugal</country>
+			<city>Aveiro</city>
+			<media></media>
+			<comments>Sintonizados a 10km a Sul da cidade.</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1116455444F91ED21F1D7BA697D3CCCA4F80412D98E84AC5EEE8E9FD8802E8239245117BE5</stationID>
+			<name>Antena 2</name>
+			<shortname>ANTENA2</shortname>
+			<icon></icon>
+			<volumepreset>0.5</volumepreset>
+			<frequency>87.34</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11164554449DE41CDB4FBD7A49098CC696567AD524945B94899CC3498B6C5752A8B04D06B8</stationID>
+			<name>Rádio Renascença</name>
+			<shortname>RR</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>88.17</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444DCD642C7A6C7E5EB8768969BA1504A0B12AF82D9B3B42EF1A943AD01C56B1878</stationID>
+			<name>Aveiro FM</name>
+			<shortname>AvFM</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>88.57</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>111645544469DB377E2239117F981CCE57F05666F7D20638D4B79949FCF6B9046A5504FBF8</stationID>
+			<name>Antena3</name>
+			<shortname>ANT3NA</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>93.06</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1116455444150CB66C475C9CB684A9CCAB396CEB9A29EEE7E5536B3E7E272032275E24187A</stationID>
+			<name>AveiroFM</name>
+			<shortname>AvFM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.81</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11172936389B2769CBDCDC246EE4A75B8E6727EE985F3A839B55A40DBA9B558400165B803F</stationID>
+			<name>Rádio Clube de Aveiro</name>
+			<shortname>RCA/RCP</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>107</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115075507171272DFC8631DB6A60AE46717B8FF41F7927414A02E38E3E9A0B1C732A6B584C</stationID>
+			<name>Antena 2</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>101.245</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,20 +1,22 @@
-# translation of ru.po to
-# translation of kradio-streaming.po to
-# This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ru\n"
+"Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-18 21:18+0000\n"
-"PO-Revision-Date: 2006-11-08 12:25+0300\n"
-"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"PO-Revision-Date: 2006-11-19 18:16+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: KBabel 1.10.2\n"
 
 #. i18n: file streaming-configuration-ui.ui line 16
 #: rc.cpp:3 rc.cpp:95 streaming-configuration-ui.cpp:253
@@ -31,7 +33,7 @@ msgstr "StreamingConfigurationUI"
 #: streaming-configuration-ui.cpp:256
 #, no-c-format
 msgid "No."
-msgstr "No "
+msgstr "Nº."
 
 #. i18n: file streaming-configuration-ui.ui line 44
 #. i18n: file streaming-configuration-ui.ui line 85
@@ -42,67 +44,67 @@ msgstr "No "
 #: streaming-configuration-ui.cpp:257
 #, no-c-format
 msgid "URL"
-msgstr "Адрес"
+msgstr "URL"
 
 #. i18n: file streaming-configuration-ui.ui line 114
 #: rc.cpp:18 rc.cpp:110 streaming-configuration-ui.cpp:258
 #, no-c-format
 msgid "Capture URLs"
-msgstr "Адреса для записи"
+msgstr "URLs de Captura"
 
 #. i18n: file streaming-configuration-ui.ui line 122
 #: rc.cpp:21 rc.cpp:113 streaming-configuration-ui.cpp:259
 #, no-c-format
 msgid "Playback URLs"
-msgstr "Адреса для воспроизведения"
+msgstr "URLs de Reprodução"
 
 #. i18n: file streaming-configuration-ui.ui line 434
 #: rc.cpp:32 rc.cpp:124 streaming-configuration-ui.cpp:268
 #, no-c-format
 msgid "URL Properties"
-msgstr "Параметры для URL"
+msgstr "Propriedades do URL"
 
 #. i18n: file streaming-configuration-ui.ui line 446
 #: rc.cpp:35 rc.cpp:127 streaming-configuration-ui.cpp:270
 #, no-c-format
 msgid "Stereo"
-msgstr "2 (Стерео)"
+msgstr "Estéreo"
 
 #. i18n: file streaming-configuration-ui.ui line 451
 #: rc.cpp:38 rc.cpp:130 streaming-configuration-ui.cpp:271
 #, no-c-format
 msgid "Mono"
-msgstr "1 (Моно)"
+msgstr "Mono"
 
 #. i18n: file streaming-configuration-ui.ui line 471
 #: rc.cpp:41 rc.cpp:133 streaming-configuration-ui.cpp:272
 #, no-c-format
 msgid "Sample Bits"
-msgstr "Бит на элемент выборки"
+msgstr "Bits de Amostragem"
 
 #. i18n: file streaming-configuration-ui.ui line 479
 #: rc.cpp:44 rc.cpp:136 streaming-configuration-ui.cpp:273
 #, no-c-format
 msgid "Channels"
-msgstr "Число каналов"
+msgstr "Canais"
 
 #. i18n: file streaming-configuration-ui.ui line 487
 #: rc.cpp:47 rc.cpp:139 streaming-configuration-ui.cpp:274
 #, no-c-format
 msgid "Endianess"
-msgstr "Порядок байтов"
+msgstr "Posição do byte mais significativo"
 
 #. i18n: file streaming-configuration-ui.ui line 493
 #: rc.cpp:50 rc.cpp:142 streaming-configuration-ui.cpp:276
 #, no-c-format
 msgid "Little Endian"
-msgstr "Little Endian"
+msgstr "Little endian ( byte menos significativo primeiro)"
 
 #. i18n: file streaming-configuration-ui.ui line 498
 #: rc.cpp:53 rc.cpp:145 streaming-configuration-ui.cpp:277
 #, no-c-format
 msgid "Big Endian"
-msgstr "Big Endian"
+msgstr "Big endian (byte mais significativo primeiro)"
 
 #. i18n: file streaming-configuration-ui.ui line 516
 #: rc.cpp:56 rc.cpp:148 streaming-configuration-ui.cpp:279
@@ -144,7 +146,7 @@ msgstr "8"
 #: rc.cpp:74 rc.cpp:166 streaming-configuration-ui.cpp:287
 #, no-c-format
 msgid "Raw"
-msgstr "Raw"
+msgstr "em Bruto"
 
 #. i18n: file streaming-configuration-ui.ui line 592
 #: rc.cpp:77 rc.cpp:169 streaming-configuration-ui.cpp:288
@@ -156,85 +158,81 @@ msgstr "kB"
 #: rc.cpp:80 rc.cpp:172 streaming-configuration-ui.cpp:289
 #, no-c-format
 msgid "Buffer Size"
-msgstr "Размер буфера"
+msgstr "Tamanho do Tampão"
 
 #. i18n: file streaming-configuration-ui.ui line 617
 #: rc.cpp:83 rc.cpp:175 streaming-configuration-ui.cpp:290
 #, no-c-format
 msgid "Format"
-msgstr "Формат"
+msgstr "Formato"
 
 #. i18n: file streaming-configuration-ui.ui line 625
 #: rc.cpp:86 rc.cpp:178 streaming-configuration-ui.cpp:291
 #, no-c-format
 msgid "Sample Rate"
-msgstr "Частота дискретизации"
+msgstr "Taxa de Amostragem"
 
 #. i18n: file streaming-configuration-ui.ui line 631
 #: rc.cpp:89 rc.cpp:181 streaming-configuration-ui.cpp:293
 #, no-c-format
 msgid "Signed"
-msgstr "Со знаком"
+msgstr "Com Sinal"
 
 #. i18n: file streaming-configuration-ui.ui line 636
 #: rc.cpp:92 rc.cpp:184 streaming-configuration-ui.cpp:294
 #, no-c-format
 msgid "Unsigned"
-msgstr "Без знака"
+msgstr "Sem Sinal"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr ""
+msgstr "Hélio \"RoadRunner\" Guilherme"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr ""
+msgstr "helio.guilherme@bluebottle.com"
 
 #: streaming-configuration.cpp:155 streaming-configuration.cpp:259
 msgid "new channel"
-msgstr "новый канал"
+msgstr "novo canal"
 
 #: streaming-job.cpp:217
 msgid "skipped %1 bytes"
-msgstr "Пропущено %1 байт"
+msgstr "saltaram-se %1 bytes"
 
 #: streaming.cpp:33
 msgid "Streaming Support"
-msgstr ""
-"Сетевое\n"
-"вещание"
+msgstr "Suporte a Fluxo de Dados (\"Streaming\")"
 
 #: streaming.cpp:42
 msgid "KRadio Streaming Plugin"
-msgstr "Модуль сетевого вещания для KRadio"
+msgstr "Extensão de Fluxo de Dados (\"Streaming\")"
 
 #: streaming.cpp:172
 msgid "Streaming"
-msgstr ""
-"Сетевое\n"
-"вещание"
+msgstr "Fluxo de Dados (\"Streaming\")"
 
 #: streaming.cpp:173
 msgid "Streaming Device Options"
-msgstr "Параметры сетевого вещания"
+msgstr "Opções do Dispositivo de Fluxo de Dados (\"Streaming\")"
 
 #: streaming.cpp:393
 msgid "internal stream, not stored (%1)"
-msgstr ""
+msgstr "fluxo interno, não guardado (%1)"
 
 #: streaming.cpp:403
-msgid ""
-"StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
-msgstr "StreamingDevice %1::notifySoundStreamData: Клиенты пропустили %2 байт"
+msgid "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
+msgstr "StreamingDevice %1::notifySoundStreamData: Clientes de Reprodução saltados %2 bytes"
 
 #: streaming.cpp:426
 msgid "Streaming Device %1"
-msgstr "Устройство вещания %1"
+msgstr "Dispositivo de Fluxo de Dados (\"Streaming\") %1"
 
 #: streaming.cpp:432 streaming.cpp:437
 msgid "Streaming Device %1, %2: %3"
-msgstr "Устройство вещания %1, %2: %3"
+msgstr "Dispositivo de Fluxo de Dados (\"Streaming\") %1, %2: %3"
+
