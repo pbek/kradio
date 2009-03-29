@@ -581,7 +581,7 @@ void RadioConfiguration::slotLastChangeNow()
 
 static QString &urlEscapes(QString &s)
 {
-    s.replace(QRegExp("%"),  "%25");
+    s.replace(QRegExp("%"),   "%25");
     s.replace(QRegExp("\t"),  "%09");
     s.replace(QRegExp("\n"),  "%0A");
     s.replace(QRegExp("\n"),  "%0D");
@@ -590,7 +590,7 @@ static QString &urlEscapes(QString &s)
     s.replace(QRegExp("\""),  "%22");
     s.replace(QRegExp("#"),   "%23");
     s.replace(QRegExp("\\$"), "%24");
-    s.replace(QRegExp("\\&"), "%26");
+    s.replace(QRegExp("&"),   "%26");
     s.replace(QRegExp("'"),   "%27");
     s.replace(QRegExp(","),   "%2C");
     s.replace(QRegExp(":"),   "%3A");
@@ -602,9 +602,13 @@ static QString &urlEscapes(QString &s)
 
 void RadioConfiguration::slotSendPresetsByMail( const QString &url )
 {
-    QString presets = m_stations.writeXML(m_logger);
+    QString preset_file = queryPresetFile();
+    urlEscapes(preset_file);
+//     QString presets = m_stations.writeXML(m_logger);
 
-    urlEscapes(presets);
+//     urlEscapes(presets);
+
+//     m_logger.logDebug(presets);
 
     // documentation says, krun object deletes itself,
     // so we do not need to store the pointer
@@ -614,9 +618,9 @@ void RadioConfiguration::slotSendPresetsByMail( const QString &url )
     QString location = city + "/" + country;
     urlEscapes(location);
 
-    QString cmd = url + "?subject=station preset file for " + location + "&body=";
+//     QString cmd = url + "?subject=station preset file for " + location + "&body=" + presets;
+    QString cmd = url + "?subject=station preset file for " + location + "&attachment=" + preset_file;
 
-    cmd += presets;
     new KRun (cmd, this);
 }
 

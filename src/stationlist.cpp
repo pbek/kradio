@@ -261,7 +261,7 @@ bool StationList::readXML (const KUrl &url, const IErrorLogClient &logger, bool 
 
 QString StationList::writeXML (const IErrorLogClient &/*logger*/) const
 {
-    QString data = QString::null;
+    QString data = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
     // write station list
 
@@ -313,7 +313,6 @@ bool StationList::writeXML (const KUrl &url, const IErrorLogClient &logger, bool
 
         QTextStream outs(&tmpFile);
         outs.setCodec(QTextCodec::QTextCodec::codecForName("UTF-8"));
-        outs << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << endl;
 
         QString output = writeXML(logger);
 

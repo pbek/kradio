@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"POT-Creation-Date: 2009-03-29 14:15+0200\n"
 "PO-Revision-Date: 2006-11-08 13:00+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -16,25 +16,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10\n"
 
-#. i18n: file: radio-configuration-ui.ui:349
+#. i18n: file: radio-configuration-ui.ui:352
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
 #: radio-configuration.cpp:73 rc.cpp:46 rc.cpp:134
 msgid "unchanged"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:322
+#. i18n: file: radio-configuration-ui.ui:325
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:76 rc.cpp:34 rc.cpp:122
 msgid "<don't care>"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:327
+#. i18n: file: radio-configuration-ui.ui:330
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:77 rc.cpp:37 rc.cpp:125
 msgid "Mono"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:332
+#. i18n: file: radio-configuration-ui.ui:335
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:78 rc.cpp:40 rc.cpp:128
 msgid "Stereo"
@@ -68,12 +68,12 @@ msgstr "Выбор файла радиостанций"
 msgid "Store Preset File"
 msgstr "Сохранить файл радиостанций"
 
-#: radio-configuration.cpp:639
+#: radio-configuration.cpp:643
 #, kde-format
 msgid "found %1 new stations"
 msgstr ""
 
-#: radio-configuration.cpp:641
+#: radio-configuration.cpp:645
 #, kde-format
 msgid "have now %1 stations"
 msgstr ""
@@ -98,55 +98,55 @@ msgstr "Настройка радиостанции"
 msgid "unknown"
 msgstr "низвестно"
 
-#. i18n: file: radio-configuration-ui.ui:18
+#. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
 #: rc.cpp:3 rc.cpp:91
 msgid "Station &Presets"
 msgstr "Параметры &радиостанций"
 
-#. i18n: file: radio-configuration-ui.ui:32
+#. i18n: file: radio-configuration-ui.ui:35
 #. i18n: ectx: property (text), widget (QLabel, labelStationList)
 #: rc.cpp:6 rc.cpp:94
 msgid "Stations"
 msgstr "Список"
 
-#. i18n: file: radio-configuration-ui.ui:114
+#. i18n: file: radio-configuration-ui.ui:117
 #. i18n: ectx: property (text), widget (KPushButton, buttonSearchStations)
 #: rc.cpp:9 rc.cpp:97
 msgid "&Search Stations"
 msgstr "&Поиск"
 
-#. i18n: file: radio-configuration-ui.ui:127
+#. i18n: file: radio-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (KPushButton, buttonLoadPresets)
 #: rc.cpp:12 rc.cpp:100
 msgid "Load"
 msgstr "Из файла"
 
-#. i18n: file: radio-configuration-ui.ui:140
+#. i18n: file: radio-configuration-ui.ui:143
 #. i18n: ectx: property (text), widget (KPushButton, buttonStorePresets)
 #: rc.cpp:15 rc.cpp:103
 msgid "Save As"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:171
+#. i18n: file: radio-configuration-ui.ui:174
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
 #: rc.cpp:18 rc.cpp:106
 msgid "Name"
 msgstr "Название"
 
-#. i18n: file: radio-configuration-ui.ui:195
+#. i18n: file: radio-configuration-ui.ui:198
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
 #: rc.cpp:21 rc.cpp:109
 msgid "Short Name"
 msgstr "Сокращённое название"
 
-#. i18n: file: radio-configuration-ui.ui:219
+#. i18n: file: radio-configuration-ui.ui:222
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
 #: rc.cpp:24 rc.cpp:112
 msgid "Pixmap File"
 msgstr "Пиктограмма"
 
-#. i18n: file: radio-configuration-ui.ui:318
+#. i18n: file: radio-configuration-ui.ui:321
 #. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
 #: rc.cpp:27 rc.cpp:115
 msgid ""
@@ -164,87 +164,87 @@ msgid ""
 "they will ignore it.</span></p></body></html>"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:346
+#. i18n: file: radio-configuration-ui.ui:349
 #. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:43 rc.cpp:131
 msgid "The volume that is used when the station is tuned"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:352
+#. i18n: file: radio-configuration-ui.ui:355
 #. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:50 rc.cpp:138
 #, no-c-format
 msgid " %"
 msgstr " %"
 
-#. i18n: file: radio-configuration-ui.ui:365
+#. i18n: file: radio-configuration-ui.ui:368
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
 #: rc.cpp:53 rc.cpp:141
 msgid "Stereo Mode"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:375
+#. i18n: file: radio-configuration-ui.ui:378
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
 #: rc.cpp:56 rc.cpp:144
 msgid "Volume Preset"
 msgstr "Установить громкость (-1=не менять)"
 
-#. i18n: file: radio-configuration-ui.ui:407
+#. i18n: file: radio-configuration-ui.ui:410
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
 #: rc.cpp:59 rc.cpp:147
 msgid "Personal Preset File"
 msgstr "Пользовательский файл настроек"
 
-#. i18n: file: radio-configuration-ui.ui:439
+#. i18n: file: radio-configuration-ui.ui:442
 #. i18n: ectx: attribute (title), widget (QWidget, About)
 #: rc.cpp:62 rc.cpp:150
-msgid "A&bout"
+msgid "Additional &Information"
 msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:466
+#. i18n: file: radio-configuration-ui.ui:469
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
 #: rc.cpp:65 rc.cpp:153
 msgid "City"
 msgstr "Город"
 
-#. i18n: file: radio-configuration-ui.ui:479
+#. i18n: file: radio-configuration-ui.ui:482
 #. i18n: ectx: property (text), widget (QLabel, labelCountry)
 #: rc.cpp:68 rc.cpp:156
 msgid "Country"
 msgstr "Страна"
 
-#. i18n: file: radio-configuration-ui.ui:510
+#. i18n: file: radio-configuration-ui.ui:513
 #. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
 #: rc.cpp:71 rc.cpp:159
 msgid "&Now"
 msgstr "&Текущее время"
 
-#. i18n: file: radio-configuration-ui.ui:519
+#. i18n: file: radio-configuration-ui.ui:522
 #. i18n: ectx: property (text), widget (QLabel, labelComment)
 #: rc.cpp:74 rc.cpp:162
 msgid "Comment"
 msgstr "Описание"
 
-#. i18n: file: radio-configuration-ui.ui:532
+#. i18n: file: radio-configuration-ui.ui:535
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
 #: rc.cpp:77 rc.cpp:165
 msgid "Media"
 msgstr "Носитель"
 
-#. i18n: file: radio-configuration-ui.ui:542
+#. i18n: file: radio-configuration-ui.ui:545
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
 #: rc.cpp:80 rc.cpp:168
 msgid "Maintainer"
 msgstr "Автор"
 
-#. i18n: file: radio-configuration-ui.ui:555
+#. i18n: file: radio-configuration-ui.ui:558
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
 #: rc.cpp:83 rc.cpp:171
 #, fuzzy
 msgid "Last Change"
 msgstr "Последнее изменение"
 
-#. i18n: file: radio-configuration-ui.ui:589
+#. i18n: file: radio-configuration-ui.ui:592
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:86 rc.cpp:174
 msgid ""

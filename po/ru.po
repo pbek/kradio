@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"POT-Creation-Date: 2009-03-29 14:15+0200\n"
 "PO-Revision-Date: 2006-11-08 11:44+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -510,39 +510,39 @@ msgstr "Не могу открыть файл радиостанций %1."
 msgid "Old Preset File Format detected"
 msgstr "Старый формат файла радиостанций"
 
-#: src/stationlist.cpp:323
+#: src/stationlist.cpp:322
 #, kde-format
 msgid "error writing to tempfile %1"
 msgstr "Ошибка записи во временный файл %1"
 
-#: src/stationlist.cpp:326
+#: src/stationlist.cpp:325
 #, kde-format
 msgid "Writing station preset file %1 failed."
 msgstr "Не могу записать файл радиостанций %1."
 
-#: src/stationlist.cpp:336
+#: src/stationlist.cpp:335
 #, fuzzy, kde-format
 msgid "uploading preset file %1: "
 msgstr "Ошибка выгрузки файла настроек %1"
 
-#: src/stationlist.cpp:338
+#: src/stationlist.cpp:337
 #, kde-format
 msgid ""
 "something strange happend, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
 
-#: src/stationlist.cpp:343
+#: src/stationlist.cpp:342
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "Ошибка выгрузки файла настроек %1"
 
-#: src/stationlist.cpp:347
+#: src/stationlist.cpp:346
 #, kde-format
 msgid "Upload of station preset file to %1 failed."
 msgstr "Выгрузка файла радиостанций %1 завершилась неудачей."
 
-#: src/stationlist.cpp:354 src/stationlist.cpp:355
+#: src/stationlist.cpp:353 src/stationlist.cpp:354
 #, fuzzy
 msgid "error creating temp file"
 msgstr "Ошибка записи во временный файл %1"

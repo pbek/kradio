@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"POT-Creation-Date: 2009-03-29 14:15+0200\n"
 "PO-Revision-Date: 2007-01-30 21:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -112,28 +112,28 @@ msgstr ""
 msgid "Select a Radio Station"
 msgstr "Вибір радіостанції"
 
-#: radioview.cpp:396
+#: radioview.cpp:407
 msgid "no preset defined"
 msgstr "не визначено список"
 
-#: radioview.cpp:543 radioview.cpp:613
+#: radioview.cpp:554 radioview.cpp:624
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Зупинка запису %1"
 
-#: radioview.cpp:596
+#: radioview.cpp:607
 msgid "Resume playback"
 msgstr ""
 
-#: radioview.cpp:600
+#: radioview.cpp:611
 msgid "Pause playback"
 msgstr ""
 
-#: radioview.cpp:693
+#: radioview.cpp:704
 msgid "Display"
 msgstr "Вигляд"
 
-#: radioview.cpp:694
+#: radioview.cpp:705
 msgid "Display Configuration"
 msgstr "Налаштування зовнішнього вигляду"
 

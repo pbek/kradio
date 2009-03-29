@@ -13,6 +13,9 @@
   <layout class="QGridLayout">
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget3">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="QWidget" name="stations">
       <attribute name="title">
        <string>Station &amp;Presets</string>
@@ -436,7 +439,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="About">
       <attribute name="title">
-       <string>A&amp;bout</string>
+       <string>Additional &amp;Information</string>
       </attribute>
       <layout class="QGridLayout">
        <property name="margin">

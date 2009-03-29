@@ -7,6 +7,8 @@
         - fix: enable/disable usefull/useless gui elements in standard display
         - fix: typos in country names
         - svn branches/kde4 is now svn trunk
+        - fix: better naming of meta data tab of stations config page
+        - fix: use attachments instead of body for sending .krp station files by email
 
 2009-03-22
     emw - fix: added workaround for RDS radio text (group 2a/b) not
