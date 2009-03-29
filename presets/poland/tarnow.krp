@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta3b</creator>
+			<maintainer>Jacek Drobiecki, j.drobiecki@mwi.pl</maintainer>
+			<changed>2006-08-13T13:05:16</changed>
+			<country>Poland</country>
+			<city>Tarnow</city>
+			<media>antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11554744911E6260E25520A4AF03462D1BF650D3A46C33D2DF18E13B711A0B093BD9B0C97D</stationID>
+			<name>Polskie Radio Program 2</name>
+			<shortname>PR 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474531FC82F3BA0DEC16DE3BD16B08971EDE5158F6ADE06830918279C8ECB6418ADEA9</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115547460387D53144D776A4650C37E47E15D549DB99E130D7FF101CEABAE3B24887F22DE3</stationID>
+			<name>Polskie Radio Program 2</name>
+			<shortname>PR 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474640001219B3008B89483DB18A6FF42AAD83D6707D0C985063B4E848D5731369B58F</stationID>
+			<name>Polskie Radio Program 2 (Bochnia)</name>
+			<shortname>PR 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115547434749EC4CD78DAF20EF8E4B6E5333C45F003ACFBD12AE2C32298739B8B7DE02AF6F</stationID>
+			<name>Radio Krakow</name>
+			<shortname>Krakow</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474669C49CEC64EE4291EA8A8CEE82E09F00DEE28C746C3D111AABDF776A0168D0F773</stationID>
+			<name>Polskie Radio BIS</name>
+			<shortname>PR BIS</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474725CCD85AFA6208AD4153E9335229304383B405A12BE66C7898150B48B976FC2EDC</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11554747499B0D4864A56811C0894BD0900CCAA7FD2505CEA0C5110492C072EE7A93A4947D</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474784D6818BED1604A6E700CF77A5403ADE565C559553F56FFAE046586F7BEF76B2D8</stationID>
+			<name>Radio MAKS</name>
+			<shortname>MAKS</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115547481284433E6F0785342958176E418F731D56E1BDB9A28A6CBFAE1278B26BAA3BBC8B</stationID>
+			<name>Polskie Radio Program 3</name>
+			<shortname>PR 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474827CDDBE861AEF4E59966935D8DE6DD1534825BF9877CFF5467F78F2A2161669997</stationID>
+			<name>Polskie Radio Program 1</name>
+			<shortname>PR 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115547485978A3B6D7231EB91CB3E4FBD591C21233389FD21B0F23CD69DDD81063B7FA920F</stationID>
+			<name>Radio Krakow</name>
+			<shortname>Krakow</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474884CD983E4A9E47EA99CD475E1287382B5B43A8B9971F26AA5725D15601D075ABF9</stationID>
+			<name>RDN Malopolska (Nowy Sacz)</name>
+			<shortname>RDN</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115547489596B110A4C03019FF4EE2856C2E1110DDD10E37BFEBD32D8AB2F2EBE2472E76D1</stationID>
+			<name>Radio Krakow</name>
+			<shortname>Krakow</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11554749149AE9DBE9A8C74D5237F782051EEDB4417F3D784F19323506F3DDCF2FB48609DD</stationID>
+			<name>Radio Maryja</name>
+			<shortname>Maryja</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474928C7C7EE5700DCEC117911DD5E0424E053B50A99FDD440B9825AE78B530A824B07</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474940ED3934C9676750AB9D3BA445FDF5E129BA3663825AA3C85476F8C9878ABBAB9D</stationID>
+			<name>RDN Malopolska</name>
+			<shortname>RDN</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155474965831D096128378DE1965F5323CF342B7058B96847CA59CF9905AD7760B68CAD35</stationID>
+			<name>Radio ZET (Krakow)</name>
+			<shortname>ZET</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1155475014BBDCB24424B44D1097D4B2D69580AAD5AE0A045EFC0FD28813BCF95113EAD5CE</stationID>
+			<name>Radio ZET</name>
+			<shortname>ZET</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.8</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

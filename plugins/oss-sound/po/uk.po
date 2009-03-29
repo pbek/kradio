@@ -1,0 +1,228 @@
+# translation of uk.po to Ukrainian
+# translation of ru.po to
+# translation of kradio-oss-sound.po to
+# This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: uk\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2007-01-30 21:57+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: oss-sound.cpp:38
+msgid "Open Sound System (OSS) Support"
+msgstr "Підтримка Відкритої звукової системи (OSS)"
+
+#: oss-sound.cpp:46
+msgid "KRadio OSS Sound Plugin"
+msgstr "Модуль OSS для KRadio"
+
+#: oss-sound.cpp:180
+msgid "OSS Sound"
+msgstr "Звук OSS"
+
+#: oss-sound.cpp:181
+msgid "OSS Sound Device Options"
+msgstr "Параметри звуку для драйвера OSS"
+
+#: oss-sound.cpp:521
+#, kde-format
+msgid "OSS device %1: No data to record"
+msgstr "Пристрій OSS %1: Відсутні дані для запису"
+
+#: oss-sound.cpp:531
+#, kde-format
+msgid "internal stream, not stored (%1)"
+msgstr "внутрішній потік, не збережено (%1)"
+
+#: oss-sound.cpp:563
+#, kde-format
+msgid "Error %1 while handling OSS device %2"
+msgstr "Помилка %1 під час роботи з пристроєм OSS %2."
+
+#: oss-sound.cpp:607 oss-sound.cpp:633
+#, kde-format
+msgid "Cannot open DSP device %1"
+msgstr "Неможливо відкрити пристрій DSP %1"
+
+#: oss-sound.cpp:613
+#, kde-format
+msgid "Cannot read DSP capabilities for %1"
+msgstr "Неможливо прочитати можливості DSP для %1"
+
+#: oss-sound.cpp:640
+#, kde-format
+msgid "Cannot set DSP sample format for %1"
+msgstr "Неможливо встановити формат зразку для %1"
+
+#: oss-sound.cpp:645
+#, kde-format
+msgid "Cannot set number of channels for %1"
+msgstr "Неможливо встановити число каналів для звукової карти %1"
+
+#: oss-sound.cpp:650
+#, kde-format
+msgid "Cannot set sampling rate for %1"
+msgstr "Неможливо встановити частоту дискретизації для звукової карти %1"
+
+#: oss-sound.cpp:652
+#, kde-format
+msgid "Asking for %1 Hz but %2 uses %3 Hz"
+msgstr "Було подано запит на %1 Гц, однак %2 використовує %3 Гц."
+
+#: oss-sound.cpp:662
+#, kde-format
+msgid "Cannot set stereo mode for %1"
+msgstr "Неможливо встановити стерео режим для звукової карти %1"
+
+#: oss-sound.cpp:667
+#, kde-format
+msgid "Cannot set sample size for %1"
+msgstr "Неможливо встановити розмір елементу вибірки для звукової карти %1"
+
+#: oss-sound.cpp:676
+#, kde-format
+msgid "Cannot set buffers for %1"
+msgstr "Неможливо встановити буфери для звукової карти %1"
+
+#: oss-sound.cpp:681
+#, kde-format
+msgid "Cannot read buffer size for %1"
+msgstr "Неможливо прочитати розмір буфера звукової карти %1"
+
+#: oss-sound.cpp:683
+#, kde-format
+msgid "%1 uses buffer blocks of %2 bytes"
+msgstr "%1 використовує блоки буфера по %2 байт"
+
+#: oss-sound.cpp:686
+#, kde-format
+msgid "adjusted own buffer size to %1 bytes"
+msgstr "Розмір власного буферу встановлено у  %1 байт."
+
+#: oss-sound.cpp:738
+#, kde-format
+msgid "Cannot open mixer device %1"
+msgstr "Неможливо відкрити пристрій мікшера %1"
+
+#: oss-sound.cpp:771
+#, kde-format
+msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
+msgstr ""
+"OSSSoundDevice::getMixerChannels: Неможливо відкрити пристрій мікшера %1"
+
+#: oss-sound.cpp:785
+#, kde-format
+msgid ""
+"OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
+msgstr ""
+"OSSSoundDevice::getMixerChannels: Неможливо прочитати маску пристрою мікшера "
+"для пристрою %1"
+
+#: oss-sound.cpp:890
+#, kde-format
+msgid "error %1 while reading volume from %2"
+msgstr "Помилка %1 при читанні гучності з %2."
+
+#: oss-sound.cpp:913
+#, kde-format
+msgid "error %1 while setting volume to %2 on device %3"
+msgstr "Помилка %1 при встановленні гучності %2 на пристрої %3."
+
+#: oss-sound.cpp:929
+#, kde-format
+msgid "Selecting recording source on device %1 failed with error code %2"
+msgstr "Вибір джерела запису на пристрій %1 зазнав невдачі (код помилки %2)"
+
+#: oss-sound.cpp:935
+#, kde-format
+msgid "Reading igain volume on device %1 failed with error code %2"
+msgstr "Читання гучності запису з пристрою %1 зазнало невдачі (код помилки %2)"
+
+#: oss-sound.cpp:942
+#, kde-format
+msgid "Setting igain volume on device %1 failed with error code %2"
+msgstr ""
+"Встановлення гучності запису на пристрій %1 зазнало невдачі (код помилки %2)"
+
+#: oss-sound.cpp:1000
+#, kde-format
+msgid "OSS Sound Device %1"
+msgstr "Пристрій OSS: %1"
+
+#. i18n: file: oss-sound-configuration-ui.ui:27
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:3 rc.cpp:29
+msgid "Devices"
+msgstr "Пристрої"
+
+#. i18n: file: oss-sound-configuration-ui.ui:51
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:6 rc.cpp:32
+msgid "PCM Device"
+msgstr "Пристрій PCM"
+
+#. i18n: file: oss-sound-configuration-ui.ui:59
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:9 rc.cpp:35
+msgid "Mixer Device"
+msgstr "Пристрій мікшера"
+
+#. i18n: file: oss-sound-configuration-ui.ui:67
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:12 rc.cpp:38
+msgid "Buffer Size"
+msgstr "Розмір буферу"
+
+#. i18n: file: oss-sound-configuration-ui.ui:75
+#. i18n: ectx: property (suffix), widget (KIntSpinBox)
+#: rc.cpp:15 rc.cpp:41
+msgid " kB"
+msgstr " кБ"
+
+#. i18n: file: oss-sound-configuration-ui.ui:91
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:18 rc.cpp:44
+msgid "Extended Options"
+msgstr "Додаткові параметри"
+
+#. i18n: file: oss-sound-configuration-ui.ui:105
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:21 rc.cpp:47
+msgid "Disable Playback"
+msgstr "Заборонити &відтворення"
+
+#. i18n: file: oss-sound-configuration-ui.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:24 rc.cpp:50
+msgid "Disable Capture"
+msgstr "Заборонити &запис"
+
+#: rc.cpp:25
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:26
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Юрій Чорноіван"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "yurchor@ukr.net"

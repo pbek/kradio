@@ -1,0 +1,101 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="net.sourceforge.kradio">
+    <signal name="powerChanged">
+      <arg name="on" type="b" direction="out"/>
+    </signal>
+    <signal name="currentStationChanged">
+      <arg name="idx" type="i" direction="out"/>
+    </signal>
+    <signal name="RDSStateChanged">
+      <arg name="enabled" type="b" direction="out"/>
+    </signal>
+    <signal name="RDSRadioTextChanged">
+      <arg name="s" type="s" direction="out"/>
+    </signal>
+    <signal name="RDSStationNameChanged">
+      <arg name="s" type="s" direction="out"/>
+    </signal>
+    <signal name="sleepCountdownStopped">
+    </signal>
+    <signal name="sleepCountdownZeroReached">
+    </signal>
+    <method name="powerOn">
+    </method>
+    <method name="powerOff">
+    </method>
+    <method name="recordingStart">
+    </method>
+    <method name="recordingStop">
+    </method>
+    <method name="playbackPause">
+    </method>
+    <method name="playbackResume">
+    </method>
+    <method name="increaseVolume">
+    </method>
+    <method name="decreaseVolume">
+    </method>
+    <method name="nextStation">
+    </method>
+    <method name="prevStation">
+    </method>
+    <method name="setStation">
+      <arg name="idx" type="i" direction="in"/>
+    </method>
+    <method name="setStation">
+      <arg name="stationid" type="s" direction="in"/>
+    </method>
+    <method name="searchNextStation">
+    </method>
+    <method name="searchPrevStation">
+    </method>
+    <method name="startSleepCountdown">
+      <arg name="seconds" type="i" direction="in"/>
+    </method>
+    <method name="stopSleepCountdown">
+    </method>
+    <method name="showAllWidgets">
+    </method>
+    <method name="hideAllWidgets">
+    </method>
+    <method name="restoreAllWidgets">
+    </method>
+    <method name="quitKRadio">
+    </method>
+    <method name="isPowerOn">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="isPaused">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="isRecording">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="isSleepCountdownRunning">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="getStationsCount">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="getCurrentStationIndex">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="getStationName">
+      <arg type="s" direction="out"/>
+      <arg name="idx" type="i" direction="in"/>
+    </method>
+    <method name="getStationShortName">
+      <arg type="s" direction="out"/>
+      <arg name="idx" type="i" direction="in"/>
+    </method>
+    <method name="getStationLongName">
+      <arg type="s" direction="out"/>
+      <arg name="idx" type="i" direction="in"/>
+    </method>
+    <method name="getStationDescription">
+      <arg type="s" direction="out"/>
+      <arg name="idx" type="i" direction="in"/>
+    </method>
+  </interface>
+</node>

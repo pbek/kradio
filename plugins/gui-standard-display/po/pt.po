@@ -1,0 +1,256 @@
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pt\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2006-11-19 16:15+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: displaycfg.cpp:35
+msgid "Display Colors"
+msgstr "Cores do écran"
+
+#: displaycfg.cpp:48
+msgid "Active Text"
+msgstr "Texto activo"
+
+#: displaycfg.cpp:49
+msgid "Inactive Text"
+msgstr "Texto inactivo"
+
+#: displaycfg.cpp:50
+msgid "Background Color"
+msgstr "Cor do fundo"
+
+#: radioview.cpp:54
+msgid "Standard Display for KRadio"
+msgstr "Écran Normal do KRadio"
+
+#: radioview.cpp:60
+msgid "Radio Display"
+msgstr "Écran do Rádio"
+
+#: radioview.cpp:145
+msgid "Pause KRadio"
+msgstr "Pausar KRadio"
+
+#: radioview.cpp:150
+msgid "Start Recording"
+msgstr "Iniciar Gravação"
+
+#: radioview.cpp:158
+msgid "5 min"
+msgstr "5 min"
+
+#: radioview.cpp:162
+msgid "10 min"
+msgstr "10 min"
+
+#: radioview.cpp:166
+msgid "15 min"
+msgstr "15 min"
+
+#: radioview.cpp:170
+msgid "30 min"
+msgstr "30 min"
+
+#: radioview.cpp:174
+msgid "60 min"
+msgstr "60 min"
+
+#: radioview.cpp:178
+#, fuzzy
+msgid "90 min"
+msgstr "10 min"
+
+#: radioview.cpp:182
+#, fuzzy
+msgid "120 min"
+msgstr "10 min"
+
+#: radioview.cpp:227
+msgid "Configure KRadio"
+msgstr "Configurar KRadio"
+
+#: radioview.cpp:228
+msgid "Power On/Off"
+msgstr "Ligar/Desligar"
+
+#: radioview.cpp:229
+msgid "Quit KRadio Application"
+msgstr "Sair do KRadio"
+
+#: radioview.cpp:230
+msgid "Start/Stop Recording"
+msgstr "Iniciar/Parar Gravação"
+
+#: radioview.cpp:231
+msgid "Start/Stop Sleep Countdown"
+msgstr "Iniciar/Parar Contagem Decrescente para Dormir"
+
+#: radioview.cpp:232
+msgid "Show/Hide Plugins"
+msgstr "Mostrar/Esconder Extensões"
+
+#: radioview.cpp:233
+msgid "Help about KRadio and KDE"
+msgstr ""
+
+#: radioview.cpp:234
+msgid "Select a Radio Station"
+msgstr "Seleccionar uma Estação de Rádio"
+
+#: radioview.cpp:396
+msgid "no preset defined"
+msgstr "nenhuma prédefinição activa"
+
+#: radioview.cpp:543 radioview.cpp:613
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr "Parar a Gravação de %1"
+
+#: radioview.cpp:596
+msgid "Resume playback"
+msgstr ""
+
+#: radioview.cpp:600
+msgid "Pause playback"
+msgstr ""
+
+#: radioview.cpp:693
+msgid "Display"
+msgstr "Écran"
+
+#: radioview.cpp:694
+msgid "Display Configuration"
+msgstr "Configuração do Écran"
+
+#: radioview_frequencyradio.cpp:118 radioview_frequencyradio.cpp:119
+msgid "Frequency Display"
+msgstr "Écran das Frequências"
+
+#: radioview_frequencyradio.cpp:394
+msgid "AM"
+msgstr "AM"
+
+#: radioview_frequencyradio.cpp:395
+msgid "FM"
+msgstr "FM"
+
+#: radioview_frequencyradio.cpp:396
+msgid "RDS"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:397
+msgid "NET"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:538
+#, kde-format
+msgid "%1 kHz"
+msgstr "%1 kHz"
+
+#: radioview_frequencyradio.cpp:540
+#, kde-format
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: radioview_frequencyseeker.cpp:79
+msgid "Search for previous Radio Station"
+msgstr "Procurar Estação de Rádio Anterior"
+
+#: radioview_frequencyseeker.cpp:80
+msgid "Search for next Radio Station"
+msgstr "Procurar Estação de Rádio Seguinte"
+
+#: radioview_frequencyseeker.cpp:81
+msgid "Decrement Frequency"
+msgstr "Decrementar Frequência "
+
+#: radioview_frequencyseeker.cpp:82
+msgid "Increment Frequency"
+msgstr "Incrementar Frequência"
+
+#: radioview_frequencyseeker.cpp:83
+msgid "Change Frequency"
+msgstr "Alterar Frequência"
+
+#: radioview_volume.cpp:59
+msgid "Change Volume"
+msgstr "Alterar Volume"
+
+#. i18n: file: radioview_seekinterface.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
+#: rc.cpp:3 rc.cpp:23
+msgid "RadioView_SeekInterface"
+msgstr "RadioView_SeekInterface"
+
+#. i18n: file: radioview_seekinterface.ui:30
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
+#: rc.cpp:6 rc.cpp:26
+msgid "search previous station"
+msgstr "procurar estação anterior"
+
+#. i18n: file: radioview_seekinterface.ui:53
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
+#: rc.cpp:9 rc.cpp:29
+msgid "decrease freq. by 0.05 MHz"
+msgstr "decrementar frequência em 0.05 MHz"
+
+#. i18n: file: radioview_seekinterface.ui:70
+#. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
+#: rc.cpp:12 rc.cpp:32
+#, fuzzy
+msgctxt "Frequency"
+msgid "Frequency control"
+msgstr "Controlo de Frequência"
+
+#. i18n: file: radioview_seekinterface.ui:107
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
+#: rc.cpp:15 rc.cpp:35
+msgid "increase freq. by 0.05 MHz"
+msgstr "incrementar frequência em 0.05 MHz"
+
+#. i18n: file: radioview_seekinterface.ui:127
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
+#: rc.cpp:18 rc.cpp:38
+msgid "search next station"
+msgstr "procurar estação seguinte"
+
+#: rc.cpp:19
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:20
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Hélio \"RoadRunner\" Guilherme"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "helio.guilherme@bluebottle.com"
+
+#~ msgid "set Toolbar-Flag for Display"
+#~ msgstr "activar o indicador de barra de ferramentas para o Écran"
+
+#~ msgid "Common"
+#~ msgstr "Comum"

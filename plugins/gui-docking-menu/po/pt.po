@@ -1,0 +1,153 @@
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pt\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2006-11-19 16:07+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: docking-configuration.cpp:69
+msgid "Left Mouse Click on Tray"
+msgstr "Clique Botão Esquerdo do Rato no Painel"
+
+#: docking-configuration.cpp:72
+msgid "Show/Hide all GUI Elements"
+msgstr "Mostrar/Esconder todos os Elementos do Interface Gráfico"
+
+#: docking-configuration.cpp:73
+msgid "Power On/Off"
+msgstr "Ligar/Desligar"
+
+#: docking.cpp:45
+#, fuzzy
+msgid "System Tray Icon/Menu for KRadio"
+msgstr "Menu do Painel do KRadio"
+
+#: docking.cpp:53
+msgid "System Tray Plugin"
+msgstr ""
+
+#: docking.cpp:201
+msgid "System Tray Icon"
+msgstr ""
+
+#: docking.cpp:202
+msgid "System Tray Icon Configuration"
+msgstr ""
+
+#: docking.cpp:254
+msgid "Search Next Station"
+msgstr "Procurar Estação Seguinte"
+
+#: docking.cpp:255
+msgid "Search Previous Station"
+msgstr "Procurar Estação Anterior"
+
+#: docking.cpp:264
+msgid "Recording"
+msgstr "Gravação"
+
+#: docking.cpp:269
+msgid "Pause Radio"
+msgstr "Pausar o Rádio"
+
+#: docking.cpp:280
+msgid "Show/Hide Plugins"
+msgstr "Mostrar/Esconder Extensões"
+
+#: docking.cpp:288
+msgid "&Quit"
+msgstr ""
+
+#: docking.cpp:402
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Parar Contagem Decrescente para Dormir (contando até %1)"
+
+#: docking.cpp:405 docking.cpp:414 docking.cpp:422
+msgid "Start Sleep Countdown"
+msgstr "Iniciar Contagem Decrescente para Dormir"
+
+#: docking.cpp:430
+msgid "Power Off"
+msgstr "Desligar"
+
+#: docking.cpp:430
+msgid "Power On"
+msgstr "Ligar"
+
+#: docking.cpp:445 docking.cpp:466
+msgid "invalid station"
+msgstr "estação inválida"
+
+#: docking.cpp:448
+#, kde-format
+msgid "KRadio: %1"
+msgstr "KRadio: %1"
+
+#: docking.cpp:458
+#, kde-format
+msgid "next alarm: %1"
+msgstr "alarme seguinte: %1"
+
+#: docking.cpp:460
+msgid "<no alarm pending>"
+msgstr "<nenhum alarme previsto>"
+
+#: docking.cpp:578 docking.cpp:680 docking.cpp:738
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr "Parar a Gravação de %1"
+
+#: docking.cpp:666
+msgid "Start Recording"
+msgstr "Iniciar Gravação"
+
+#: docking.cpp:720
+msgid "Resume playback"
+msgstr ""
+
+#: docking.cpp:724
+msgid "Pause playback"
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Hélio \"RoadRunner\" Guilherme"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "helio.guilherme@bluebottle.com"
+
+#~ msgid "Docking Plugin"
+#~ msgstr "Plugin Acoplável"
+
+#~ msgid "Docking Menu"
+#~ msgstr "Menu Acoplável"
+
+#~ msgid "Docking Menu Configuration"
+#~ msgstr "Configuração do Menu Acoplável"

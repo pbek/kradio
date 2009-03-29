@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-09-20</creator>
+			<maintainer>Michael Skutek &lt;grf-chz@gmx.de&gt;</maintainer>
+			<changed>2007-12-18T15:31:54</changed>
+			<country>Germany</country>
+			<city>Erwitte/Lippstadt/Soest/Paderborn/Warstein</city>
+			<media>cable</media>
+			<comments>Stand November 2007</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>114450340207C9EC019103333DD933DB3D41B013A5DBCD356C7C0156EC2621FFE73E2E1422</stationID>
+			<name>hr1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11979868315767ED87ABDCA3F73B04322F6206B14F773ED7E81FC949B7B917B81EF87984D1</stationID>
+			<name>hr2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197986852E0BA8D97BC6BF8B6F04716CCB00AFD5BA6CA8D995F250ADFC88B43614B7E5AE0</stationID>
+			<name>hr3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197986866BE1DADCE0F0E42B595DD4288C996D964AD374F437A3906B45D94BDCCD1BE6608</stationID>
+			<name>hr4-Rhein-Main-Journal</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197986909AD581EDE997059F3C6CC8819EBBD6B105A638890EDF6EEC1367989592610E114</stationID>
+			<name>1LIVE (WDR)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197986931F17E9C615493539955C1EC0EF343650D8F7DA4B9C6041CD0D69C902133DB213A</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987067CC1D11E88CEB439A2971E3EA37CD91D2198D195200E23B1E513595216718AF49</stationID>
+			<name>Deutschlandradio Kultur</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987131A4D57985DAB88CE5F5FD087D7AE116E6282CDD7364EC96923A31B27460A17F08</stationID>
+			<name>WDR2 - Siegen</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11979871554A28B730087295ECEDC97D5CC4C045AECF4659EC7707BAFE11A300C6898D3A62</stationID>
+			<name>NDR1 Radio NDS - Südwest</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987252499B438A8E799C135278EBD9586CA2CEAF206718CE511DC2E92AACB959B36D61</stationID>
+			<name>NDR2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119798730883FC7BC6FC9B8C1B86BB0882EFE3755A9DBBCEAF589591E471394AEB409EB2D3</stationID>
+			<name>WDR3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11979873449E7C8E68A6635830D8AC751D3BD858FBC3960043A771F89A667A91BA65BC508F</stationID>
+			<name>NDR Kultur</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119798736890B370856BE148CE631DDCAB6CFA0D79E81E4D9E60F21097B6D38C4FCA789C07</stationID>
+			<name>JUMP</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987485166889A954363A8DE0C754A46B40020324C1C968A5FF0C883CDF0E78443C5D0F</stationID>
+			<name>WDR4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987437D8721C8F480ADB9F3869D60A9840E4488D4391C88874539493913EB5190941CF</stationID>
+			<name>Klassik Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11979875453FC43ED757D67156ACD3DD7793BD277832FBB9377325918D1566A316D47EC4A9</stationID>
+			<name>BR1 - Main/Franken</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987582D0E56E3C8B78E7BD25A9319022AA135BDBE0B49CEDCBB2E8F001B29E094C3884</stationID>
+			<name>WDR Radio 5</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987606F3D8F880795A58EC4F1124EEEAE76850E0B2A059ED2A70683DC701F3D2BF245D</stationID>
+			<name>domradio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987621D6E3651BC1BF906B63FF8EB270BB6F90D6DB2C02B038DEA665756653B334F897</stationID>
+			<name>ERF (Evangeliums Rundfunk)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119798765736AEA129913DE99B3426AF4ADC7E340B5A7B7AED1CCDDE8EC76296B09C423D01</stationID>
+			<name>Funkhaus Europa (WDR)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119798769112502D98951FF11CADB1DC9EB105B9964B1B3A17BDE9C6C7C818698387B43419</stationID>
+			<name>SWR1 -Rheinland Pfalz</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987723C79B778DCF02D944361683F670B920D8E7C39BF70929C4EE32FFD87D8440486C</stationID>
+			<name>SWR2 -Rheinland Pfalz</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11979877587B06BE4AF2EAB1091AB646BED3259CDFB0C134AC2C81293DDC0DEAC6A4E3308B</stationID>
+			<name>SWR3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119798780166E3714E22772C455A033A1CFA28C3E77878DCEC6A3B4175B5E61E06CC52410A</stationID>
+			<name>BFBS (engl.)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987827AB34BCC724E18AC2C71802F3179B5B6DEE7F336095613F5482AC66678228EFCB</stationID>
+			<name>DEFJAY</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987878A21E2BB0E25A28C9D6ACA5F558598FFAF9B94C76E39BD0657E48379AD383AD54</stationID>
+			<name>radio ffn - Osnabrück</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987901E20AFE673939F11F6DBFBF836B60E4FB392C2FF2671F08EBF3E0EEA6D4C980FF</stationID>
+			<name>JAM FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197987940743D0846684D5CB76EEADFD2B4340D4020DDB0567C980A8727A0879350934F2E</stationID>
+			<name>Radio Melodie</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11979879652E1C41E69B8ECD89F4B7157AB885D7D3EE1C95B1F5966A1B9AF973A0B9C2C744</stationID>
+			<name>Radio 4 (niederl.)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197988046251E2597C50D120FB5C8260CE5538E38C4FC76F72ECEEDACFB254764D8228F83</stationID>
+			<name>RTL Radio - Die besten Hits aller Zeiten</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197988078C3FADE7BAA4134CFB83477C4574EF0CBFB1EA0DFBA8166EA7530D7B1FD88964D</stationID>
+			<name>sunshine live</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197988103EF8487A6F7FACD54ADC588E328E8680AC5BD818C581406794A8C006BF43B8AD5</stationID>
+			<name>WDR2 Bielefeld/HIT RADIO FFH</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197988199F92A5C939879A113E897288CFB17C499006FDD73D8871A5D44E4D79A39CC9DF7</stationID>
+			<name>2255LIVE Ihr Gewinnradio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1197988237FD341AEE5D2CFC37F068E04935358106E861610FC905AD565B5D58165536BA59</stationID>
+			<name>Radio Hochstift/AFN - Frankfurt</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.85</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119798827641AF6BCA28302B2C75D9368C54466A7E0B3C66FD24F76E6BF899C5E33E8A5265</stationID>
+			<name>Radio Siegen/Hellweg Radio/Radio Sauerland</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.4</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

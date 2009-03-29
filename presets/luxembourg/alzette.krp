@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot_2005_11_27</creator>
+			<maintainer>Loes Alex &gt;alex@linux.lu&gt;</maintainer>
+			<changed>2006-11-12T12:25:01</changed>
+			<country>Luxembourg</country>
+			<city>Esch/Alzette</city>
+			<media></media>
+			<comments>Contains merged Data</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1163326933EB744DBB9C1EDD1D8E16F31C269ADD45F914715B65BABABC04EDAD9B1333F0C0</stationID>
+			<name>S�dwestrundfunk 1</name>
+			<shortname>SWR1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329364799814657B8D3E7D22528643D3E4BAB028C46DE92DC3F89F7C0F1B119B985359</stationID>
+			<name>S�dwestrundfunk 1</name>
+			<shortname>SWR1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329214DB6B30879AB4302A94C98A2ACFB6B2149FC6510CB58E6AA1F7B4EF51843D2262</stationID>
+			<name>S�dwestrundfunk 2</name>
+			<shortname>SWR2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163328832D863DD1C695DA1403F48C349657FDF2677DF343F3F0882DF390BE7212716720E</stationID>
+			<name>S�dwestrundfunk 3</name>
+			<shortname>SWR3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163325201376872BE5AB201ACBE6B7916BC9FEAE1F778FAE36EDF09D1D8576C2FABE8B808</stationID>
+			<name>S�dwestrundfunk 3</name>
+			<shortname>SWR3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163330034075C9ECB9718957096823D12613AD16CB915A26D10BE65CF5407CCD56A43DF08</stationID>
+			<name>Classic21</name>
+			<shortname>Classic21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106338540798C0D12726F1661419AB34C2642A94AC5C6E261E91C693826FE8AAB710612343</stationID>
+			<name>Premiere</name>
+			<shortname>Premiere</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11633290654CF0230A48506DC3DD90CD2D762F486571C0F789F7EBB5AC0C21A9FA780427D7</stationID>
+			<name>Vivacit�</name>
+			<shortname>Vivacit�</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1063385407AFBFB6A017C8C7A5F8F16BC30B85D0C0E87B84799C65FCE80394C9D2202CE4B6</stationID>
+			<name>RTL L�tzebuerg</name>
+			<shortname>RTL L�tzebuerg</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.9001</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11633291411FAD229D1CAAADED0CE059FE98C637C0D4990AE9576CB360DB47DB434B1E7E42</stationID>
+			<name>RTL L�tzebuerg</name>
+			<shortname>RTL L�tzebuerg</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116332520866D4C8867B32DE1801A83417CAD34D4D385052BA2C9A2CF6300AFD972A5FF38E</stationID>
+			<name>RTL Radio</name>
+			<shortname>RTL Oldie</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1063385407EA222E19244D3040A4F1B8AC8AF03F4EB304ED09F9D0C946A9B557590C5D2B71</stationID>
+			<name>RTL Radio</name>
+			<shortname>RTL Oldie</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116332892335934EA1B377096CBBCD683C87556466B34F9A3720458EE6BC15AECCF3F0D07F</stationID>
+			<name>BEL RTL</name>
+			<shortname>Bel RTL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116332520577808CE062019CAEA5A0EA201C8F5FB635FCAD2B27184857ADA60F1546BCD77B</stationID>
+			<name>Musique </name>
+			<shortname>Musique</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10633854070D0624F5D0DE76E44CBFCA7425618F58AB75BEF835973FBF447FDA5B50117B85</stationID>
+			<name>Musique 3</name>
+			<shortname>Musique 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10633854076161020BD41D27F67E226E563E890312F73FB3301F832FD42F97F2C7FC6764C6</stationID>
+			<name>DNR</name>
+			<shortname>DNR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11633252222E92DD5C3EC58F99CD07722FDA5639008D903059DFFC75EDCFF658B4D6D89C36</stationID>
+			<name>DNR</name>
+			<shortname>DNR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1063385407C0E4A025D422F911694EA657E38FD8B85C87FD88DD984A01C9E0CB5F3DAC0561</stationID>
+			<name>100komma7</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.701</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10633854079297D695D8BC75127B779ACDACAB080F4F03335C9B916941C159377D64678AF0</stationID>
+			<name>Radioara</name>
+			<shortname>ARA</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1063385407BB520D98D14CECDCD0AAD64B8FF750BA848C03845757BDFB9F0B955D39843639</stationID>
+			<name>Eldoradio</name>
+			<shortname>ELDO</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.002</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329418E8576AD40D75C543EE9A093DCE03B4051FAECBDF73D37CC48B96F40BEC79E22C</stationID>
+			<name>City  FM Esch</name>
+			<shortname>City FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1063385407917331FDBE436B09CF00637FC7F12D4E277AF861322A256EC884DD7E86CEF606</stationID>
+			<name>Inter</name>
+			<shortname>Inter</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11633252192E0BA2ED6CD18FDFE748A79C5125781907807F97341E8822B1B404B5FACD486F</stationID>
+			<name>Radio Festival</name>
+			<shortname>Festival</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116332522516BC3F1CF778CF47ABBFE182FD7AFA0865B7F87E9089E5FBC8A4D1BAA32DABA9</stationID>
+			<name>new station 9</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116332954945F54F898EC8F2BB6AA85DDC110F72F64AB4D8E3451E55345F4E1FEDF5634E45</stationID>
+			<name>Radio Latina</name>
+			<shortname>Latina</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329706DED977EB4B2A58B696F64B718E96BC68CAD6DB1DA034BE75BDC5320FECEBF85A</stationID>
+			<name>Lokalradio Betebuerg</name>
+			<shortname>LRB</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11633297674FEF7DD1C2FBF43ACA3CA7EB2C936F59620DD5374ACB0609F9B1CF4FABA7849D</stationID>
+			<name>Radio Contact 2</name>
+			<shortname>Contact 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329812F12CE288BAF733BD9199B53EDA01804DE48CC577A08FBBFAD6C4F7ACA1848C39</stationID>
+			<name>RGL</name>
+			<shortname>RGL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329847C0213ACA35041D97ADD05C5DB1B7C1CCD2F6E8C5BFED71C2E19FDDC24B93254E</stationID>
+			<name>Radio Belle Vallee</name>
+			<shortname>Belle vallee</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329897A1FDDD433DD21199DED68FF9F0E540F1E4CD6C55B33BBAF99241B902091C2AAF</stationID>
+			<name>Radio Contact</name>
+			<shortname>Contact</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163329591D429F2459980ACBC417A2048FADD9D273F527EE86515629C14E91F417FE039FA</stationID>
+			<name>Radio Challenger</name>
+			<shortname>Challenger</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163330188CC0367F029D5A66062615F6BCE2FAF0728695533704EF79C712BF0B06BA56890</stationID>
+			<name>95,5 FM</name>
+			<shortname>95,5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1163330246FF5200963B1566F233EE7AB74AE953AD9E77ABBBD4EE5251EC63DA2647CCCCF6</stationID>
+			<name>95,9 FM</name>
+			<shortname>95,9 FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11633303204AFAE7D4A526CF4AE040C00CB72415289FB237237EF96227CBC73E1939F3B9E7</stationID>
+			<name>106,5 FM</name>
+			<shortname>106,5 FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.5</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

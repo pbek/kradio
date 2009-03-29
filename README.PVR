@@ -1,0 +1,34 @@
+Just a very short notice for PVR users and all other users which
+need to use something like
+
+   /dev/video24
+   /dev/video32
+
+... etc.
+
+Currently there not yet any auto-configuration (I'd need 
+your help/feedback/input/PVR-sponsorship in order to determine a 
+proper way, unfortunately, I don't have such a card).
+However, you can easily manage to set up kradio to use
+your card properly:
+
+  1) Configure the Streaming Plugin:
+     - add your device to the capture URLs
+       (/dev/video24, /dev/video32 and /dev/urandom 
+        should already be there)
+     - configure the right sound sample format/rate/... for
+       your radio card
+  2) Configure the V4L2 Plugin:
+     - Select your favourite PCM Sound Card as playback device
+     - Select your favourite PCM Mixer Channel as playback channel
+     - Select the Streaming Plugin as Capture Device
+     - Select the radio/video device (e.g. /dev/video24) as
+       capture mixer channel
+     - enable the active playback checkbox. KRadio will now
+       record from the capture channel internally (not to a file)
+       and send the data to the playback PC channel.
+
+Done. Your kradio should be now usable for PVR cards.
+If not, please provide me details on your setup or perhaps 
+even a card to test it.
+

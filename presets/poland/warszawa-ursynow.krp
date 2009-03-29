@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>Andrzej Koz�owski, &lt;andrzejk@astercity.net&gt;</maintainer>
+			<changed>2007-10-10T18:21:22</changed>
+			<country>Poland</country>
+			<city>Warszawa-Ursynow</city>
+			<media>astercity cable</media>
+			<comments>pakiet basic</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>10882367971EBA4B1B9F1F17EEFC1C249AF259256AC8CE59D9F47558CAD65E64E3FD3B070E</stationID>
+			<name>PR Program 1</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108823682322199A3A26A0CC4935DF81456C046D5473FA11B89A799AB92536C1524B7FE4D9</stationID>
+			<name>PR Program 2</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088236820C1AB035EEB576C5E772194080D9EC1936C2A7CDE21E088FF0AEC7812D3FCE244</stationID>
+			<name>PR Program 3</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>108823682553AF90DFFFF097021348B489A54CDB9D1F7BB805D3AD198548C191CAA2887471</stationID>
+			<name>Radio Wawa</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088236812CCED5AB431EBC6CB0950BB44398F71408BA41B76161F5224F462F85FBB3EBC11</stationID>
+			<name>Radio Dla Ciebie</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088236805DD37389D670DADEFFB7240BC4A69F7C84A6C2588580B6E3AB31FF649E769A667</stationID>
+			<name>Radio Bis</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088236814091D61464F50B5EBB55C6E93212666024A0108312DECFA0523C7503752293BB8</stationID>
+			<name>Radio Zet</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1088236818F98AEF0C8A67C0A142086FAE09B7ADFEEA10DEA2F70BF9BD85C281DFDF43A65F</stationID>
+			<name>Radio Maryja</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+

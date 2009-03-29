@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot_2005_11_27</creator>
+			<maintainer></maintainer>
+			<changed>2007-01-03T17:10:50</changed>
+			<country></country>
+			<city></city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1167837266A46C6BD80A9B05DB8191BBA2DF07FBD9C06260FFCD10A5C14F99B37A4A1264E1</stationID>
+			<name>Radio FM</name>
+			<shortname>radiofm</shortname>
+			<icon></icon>
+			<volumepreset>0</volumepreset>
+			<frequency>89.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1167837523A6FCDE20D4D66BFB2D2DEC1BE1027C01007A26E6BBB1E674B7E9B1B5F2B69282</stationID>
+			<name>Radio Wien</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>89.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1167906947508A1DFDFB2DCC3217FE7DE77F0896F34EFCE5C1F01A3481D8B13DEA5AAE0D03</stationID>
+			<name>BBC World</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11678375991034A86E0C2F24E0262CECC9917EEADEAAAC6738B5CE2DB74B4210B84E60E6DC</stationID>
+			<name>Fun Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1167837739B15816FFEC00FA6F46359F18C7E4B88DEDD1D1EDF4E2E25A5DA0117CB3CF1E73</stationID>
+			<name>SR1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>96.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1167840523320901F854CBA0C6099B0F680738AB4EF8B7375882DD6C1C9BC639C14A0075DB</stationID>
+			<name>Radio FM4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11679064372E55132CD63194C6DF57BED568063822F8DB897F58D7F1F2AEAE396B1E0BF242</stationID>
+			<name>Radio Okey</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1167906269AA3003C8F5BAE787A4B93AC008C8DF8FCE0F184E50FBA8C7EAB68F194DD47442</stationID>
+			<name>Krone Hit</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11679069873DD5DB69565B0F08A2A6C7D0922333B8E956C9B23DC2066513ED88F091BDF922</stationID>
+			<name>Jemné Melódie</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1167906370C374296A0729322F2FE591A959E9927D815F5AC53FEC71DF3EEF3A2B6868B6E1</stationID>
+			<name>Radio Expres</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.6</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

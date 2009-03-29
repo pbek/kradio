@@ -1,0 +1,27 @@
+--- /home/kde-devel/kde/src/l10n-kde4/scripts/extract-messages.sh	2009-03-28 16:46:09.000000000 +0100
++++ extract-messages.sh	2009-03-28 17:07:56.000000000 +0100
+@@ -1,6 +1,5 @@
+ #! /bin/bash
+ 
+-podir=${podir:-$PWD/po}
+ files=`find . -name Messages.sh`
+ dirs=`for i in $files; do echo \`dirname $i\`; done | sort -u`
+ tmpname="$PWD/messages.log"
+@@ -11,11 +10,16 @@
+ export EXTRACTRC EXTRACTATTR PREPARETIPS REPACKPOT
+ 
+ for subdir in $dirs; do
++  echo "extracting messages in $subdir"
++
+   # skip Messages.sh files of KDevelop's app templates
+   grep '{APPNAMELC}[^ ]*.pot' $subdir/Messages.sh 1>/dev/null && continue
+ 
+   test -z "$VERBOSE" || echo "Making messages in $subdir"
+-  (cd $subdir
++  (
++   cd $subdir
++   podir="./po"
++
+    ls -1 *.rc *.ui *.ui3 *.ui4 *.kcfg 2> /dev/null | xargs --no-run-if-empty $EXTRACTRC > rc.cpp
+    if find . -name \*.c\* -o -name \*.h\* | fgrep -v ".svn" | xargs fgrep -s -q KAboutData ; then
+ 	echo 'i18nc("NAME OF TRANSLATORS","Your names");' >> rc.cpp

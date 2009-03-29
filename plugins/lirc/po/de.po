@@ -1,0 +1,231 @@
+# translation of de.po to
+# translation of kradio-lirc.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2009-03-28 22:39+0100\n"
+"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: lirc-configuration.cpp:44 lirc-configuration.cpp:45
+msgid "<don't care>"
+msgstr "<unverändert>"
+
+#: lirc-configuration.cpp:63
+msgid "digit 0"
+msgstr "Ziffer 0"
+
+#: lirc-configuration.cpp:64
+msgid "digit 1"
+msgstr "Ziffer 1"
+
+#: lirc-configuration.cpp:65
+msgid "digit 2"
+msgstr "Ziffer 2"
+
+#: lirc-configuration.cpp:66
+msgid "digit 3"
+msgstr "Ziffer 3"
+
+#: lirc-configuration.cpp:67
+msgid "digit 4"
+msgstr "Ziffer 4"
+
+#: lirc-configuration.cpp:68
+msgid "digit 5"
+msgstr "Ziffer 5"
+
+#: lirc-configuration.cpp:69
+msgid "digit 6"
+msgstr "Ziffer 6"
+
+#: lirc-configuration.cpp:70
+msgid "digit 7"
+msgstr "Ziffer 7"
+
+#: lirc-configuration.cpp:71
+msgid "digit 8"
+msgstr "Ziffer 8"
+
+#: lirc-configuration.cpp:72
+msgid "digit 9"
+msgstr "Ziffer 9"
+
+#: lirc-configuration.cpp:73
+msgid "Power On"
+msgstr "Einschalten"
+
+#: lirc-configuration.cpp:74
+msgid "Power Off"
+msgstr "Ausschalten"
+
+#: lirc-configuration.cpp:75
+msgid "Pause"
+msgstr "Pause"
+
+#: lirc-configuration.cpp:76
+msgid "Start Recording"
+msgstr "Aufnahme starten"
+
+#: lirc-configuration.cpp:77
+msgid "Stop Recording"
+msgstr "Aufnahme beenden"
+
+#: lirc-configuration.cpp:78
+msgid "Increase Volume"
+msgstr "Lautstärke erhöhen"
+
+#: lirc-configuration.cpp:79
+msgid "Decrease Volume"
+msgstr "Lautstärke senken"
+
+#: lirc-configuration.cpp:80
+msgid "Next Channel"
+msgstr "Nächster Sender"
+
+#: lirc-configuration.cpp:81
+msgid "Previous Channel"
+msgstr "Vorheriger Sender"
+
+#: lirc-configuration.cpp:82
+msgid "Search Next Channel"
+msgstr "Suche nächsten Sender"
+
+#: lirc-configuration.cpp:83
+msgid "Search Previous Channel"
+msgstr "Suche vorherigen Sender"
+
+#: lirc-configuration.cpp:84
+msgid "Enable Sleep Countdown"
+msgstr "Schlummer-Countdown aktivieren"
+
+#: lirc-configuration.cpp:85
+msgid "Quit KRadio"
+msgstr "KRadio Beenden"
+
+#: lirc-configuration.cpp:215
+msgid ""
+"Enter the key string of your remote or just press the button on your remote "
+"control"
+msgstr ""
+"Geben Sie die Zeichenkette Ihrer Fernsteuerung ein oder drücken Sie die "
+"Taste auf Ihrer Fernsteuerung"
+
+#: lirc-configuration.cpp:221
+msgid "Double Click on the entries to change the assignments"
+msgstr "Doppelklicken Sie auf die Einträge um die Zuordnung zu ändern"
+
+#: lircsupport.cpp:48
+msgid "Linux Infrared Control (LIRC) Support"
+msgstr "Unterstützung für die Fernsteuerung (LIRC)"
+
+#: lircsupport.cpp:54 lircsupport.cpp:371
+msgid "LIRC Plugin"
+msgstr "Plugin für die Fernsteuerung (LIRC)"
+
+#: lircsupport.cpp:57 lircsupport.cpp:58
+msgid "initializing kradio lirc plugin"
+msgstr "initialisiere das Plugin für die Fernsteuerung (LIRC)"
+
+#: lircsupport.cpp:66
+#, kde-format
+msgid ""
+"%1 does not exist. File was created with KRadio's default .lircrc proposal"
+msgstr ""
+"Die Datei %1 existiert nicht. Die Datei wurde mit den Defaulteinstellungen "
+"für KRadio erzeugt."
+
+#: lircsupport.cpp:79
+#, kde-format
+msgid "failed to read file %1"
+msgstr "Die Datei %1 konnte nicht gelesen werden."
+
+#: lircsupport.cpp:104
+msgid "There is no entry for kradio in any of your .lircrc files."
+msgstr "Es gibt keinen Eintrag für KRadio in jeglichen .lirc-Dateien"
+
+#: lircsupport.cpp:105
+msgid "Please setup your .lircrc files correctly."
+msgstr "Bitte konfigurieren Sie Ihre .lirc-Dateien richtig."
+
+#: lircsupport.cpp:115 lircsupport.cpp:116
+msgid "Initializing kradio lirc plugin failed"
+msgstr "Die Initialisierung des KRadio LIRC Plugins schlug fehl"
+
+#: lircsupport.cpp:118 lircsupport.cpp:119
+msgid "Initializing kradio lirc plugin successful"
+msgstr "Die Initialisierung des LIRC Plugins war erfolgreich"
+
+#: lircsupport.cpp:170
+msgid ""
+"Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
+"kradio"
+msgstr ""
+"Das Lesen vom LIRC-Socket ist fehlgeschlagen. Die LIRC-Funktion wird bis zum "
+"nächsten Start von KRadio temporär abgeschaltet."
+
+#: lircsupport.cpp:370
+msgid "LIRC Support"
+msgstr "Fernsteuerung"
+
+#. i18n: file: lirc-configuration-ui.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, LIRCConfigurationUI)
+#: rc.cpp:3 rc.cpp:26
+msgid "LIRCConfigurationUI"
+msgstr "LIRCConfigurationUI"
+
+#. i18n: file: lirc-configuration-ui.ui:40
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:6 rc.cpp:29
+msgid "Action"
+msgstr "Aktion"
+
+#. i18n: file: lirc-configuration-ui.ui:51
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:9 rc.cpp:32
+msgid "LIRC String"
+msgstr "LIRC-Zeichenkette"
+
+#. i18n: file: lirc-configuration-ui.ui:62
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:12 rc.cpp:35
+msgid "Alternative LIRC String"
+msgstr "Alternative LIRC-Zeichenkette"
+
+#. i18n: file: lirc-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
+#: rc.cpp:15 rc.cpp:38
+msgid "textLabel1"
+msgstr "textLabel1"
+
+#. i18n: file: lirc-configuration-ui.ui:106
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:18 rc.cpp:41
+msgid "Startup Mode override for Power Off"
+msgstr "Start-Modus-Vorgabe im ausgeschalteten Zustand"
+
+#. i18n: file: lirc-configuration-ui.ui:113
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:21 rc.cpp:44
+msgid "Startup Mode override for Power On"
+msgstr "Start-Modus-Vorgabe im eingeschalteten Zustand"
+
+#: rc.cpp:22
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ernst Martin Witte"
+
+#: rc.cpp:23
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "emw@nocabal.de"

@@ -1,0 +1,36 @@
+Source: kradio4
+Section: sound
+Priority: optional
+Maintainer: Ernst Martin Witte <emw@users.sourceforge.net>
+Build-Depends: debhelper (>> 7.0.0), qt4-dev-tools (>= 4.4.0), libqt4-dev (>= 4.4), 
+ kdelibs5-dev (>= 4.2.0), liblircclient-dev (>> 0.8.0), libsndfile1-dev(>= 1.0.4),
+ libasound2-dev, libavformat-dev, libavcodec-dev, libmms-dev (>= 0.4), cdbs (>= 0.4.51),
+ cmake (>= 2.6.2), liblame0-dev (>= 3.96.0), libogg-dev (>= 1.1.0), libvorbis-dev (>= 1.1.0),
+ automoc, libdbus-1-dev, pkg-kde-tools (>= 0.4)
+Standards-Version: 3.5.9
+
+Package: kradio4
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Comfortable Radio Application for KDE 4.x
+ KRadio is a comfortable AM/FM/Internet radio application for KDE 4.x with support 
+ for V4L and V4L2 radio cards drivers.
+ .
+ KRadio currently provides
+ .
+   * V4L/V4L2 Radio support
+   * Internet Radio Streams
+   * RDS support
+   * PVR support
+   * Remote Control support (LIRC)
+   * Alarms, Sleep Countdown
+   * Several GUI Controls (Docking Menu, Station Quickbar, Radio Display, Shortcuts/Hotkeys)
+   * Recording Capabilities, including MP3 and Ogg/Vorbis encoding
+   * Timeshifter functionality
+   * Extendable Plugin Architecture
+ .
+ This Package also includes a growing collection of station preset
+ files for many cities around the world contributed by KRadio Users.
+ .
+ As KRadio is based on an extendable plugin architecture, contributions
+ of new plugins (e.g. Internet Radio Streams, new cool GUIs) are welcome.

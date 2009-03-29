@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>rado-1.0beta3b</creator>
+			<maintainer>Mario, &lt;mariuszwr@o2.pl&gt;</maintainer>
+			<changed>2008-03-30T14:19:27</changed>
+			<country>poland</country>
+			<city>czestochowa</city>
+			<media></media>
+			<comments>antenna</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>109569822506C857816E13E27DEC856024B05151EB43DE1B656728CCA49EB2B9427D135846</stationID>
+			<name>Polskie Radio Bis</name>
+			<shortname>Bis</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1094719793C323351FB798EF728B232148DC066B49C9E7C8CF11D7F9AC32CBFF70F79F25B0</stationID>
+			<name>Trójka</name>
+			<shortname>Trójka</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1095697872BBA803C49A13E8248BEA59AEE7B241A7AC35BDAC2A07159E8935A7768571ED15</stationID>
+			<name>Radio C</name>
+			<shortname>C</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>96.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1095697962016FBF883B757A23FDD3AD28778C46353A6FF8D656EA6AE8A7377F44AF09B63D</stationID>
+			<name>Radio Katowice</name>
+			<shortname>Katowice</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10956981207850CC6E93BB5799DE6342A15BCBBC2F6EA512A458D1624CFF503292FB19F94A</stationID>
+			<name>Jedynka</name>
+			<shortname>Jedynka</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109569817873B0C0A37E18F984E4D9CF9E9A9F2C7B3A48D230ADDEABD4DF0CFB7D4F220B79</stationID>
+			<name>RMFMAXX</name>
+			<shortname>RMFMAXX</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1095697990DB89F838E5B480B6023336F88A88670804126D366D2D42B241FB499AE0EDC18F</stationID>
+			<name>Radio Zet</name>
+			<shortname>Zet</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1094719872EA2412A37C582F0EE766611FB36914F824B944B872DDD8D42DF884F1682F485B</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF FM</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>105.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1094720563210A2A1BCA82A429BECEC40E1CC444660EE2B573EA7E032282B2B66E89A8B8A5</stationID>
+			<name>Dwójka</name>
+			<shortname>Dwójka</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>109569825516562B261D7E9C26E0DCA51E196A1F79A8B0AA5978B7D2AD4003D354DA8FB186</stationID>
+			<name>Radio Fiat</name>
+			<shortname>Fiat</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1095698040CF98DFCCAFF2E5690ED9E44F33E5F9DA2A96FF5FE1D6B81D5BFAA6A578E3791B</stationID>
+			<name>Radio Jasna Góra</name>
+			<shortname>Jasna Góra</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.55</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+

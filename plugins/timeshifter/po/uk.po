@@ -1,0 +1,98 @@
+# translation of uk.po to Ukrainian
+# translation of ru.po to
+# translation of kradio-timeshifter.po to
+# This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: uk\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2007-01-30 22:47+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#. i18n: file: timeshifter-configuration-ui.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
+#: rc.cpp:3 rc.cpp:21
+msgid "SetupDialogGeneral"
+msgstr "SetupDialogGeneral"
+
+#. i18n: file: timeshifter-configuration-ui.ui:56
+#. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
+#: rc.cpp:6 rc.cpp:24
+msgid " MB"
+msgstr " Мб"
+
+#. i18n: file: timeshifter-configuration-ui.ui:75
+#. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
+#: rc.cpp:9 rc.cpp:27
+msgid "Maximum File Size"
+msgstr "Розмір файла, не більше"
+
+#. i18n: file: timeshifter-configuration-ui.ui:85
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:30
+msgid "Playback Mixer Device"
+msgstr "Пристрій мікшера"
+
+#. i18n: file: timeshifter-configuration-ui.ui:95
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:15 rc.cpp:33
+msgid "Temporary File"
+msgstr "Тимчасовий файл"
+
+#. i18n: file: timeshifter-configuration-ui.ui:108
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:18 rc.cpp:36
+msgid "Playback Mixer Channel"
+msgstr "Канал мікшера"
+
+#: timeshifter-configuration.cpp:144
+msgid "any ( * )"
+msgstr "Всі ( * )"
+
+#: timeshifter-configuration.cpp:148
+msgid "Select TimeShifter Temporary File"
+msgstr "Оберіть тимчасовий файл для призупинки мовлення"
+
+#: timeshifter.cpp:32
+msgid "TimeShift Support"
+msgstr "Підтримка призупинки мовлення"
+
+#: timeshifter.cpp:37
+msgid "TimeShifter Plugin"
+msgstr "Модуль призупинки мовлення"
+
+#: timeshifter.cpp:131
+msgid "Timeshifter"
+msgstr "Призупинка"
+
+#: timeshifter.cpp:132
+msgid "Timeshifter Options"
+msgstr "Параметри призупинки мовлення"
+
+#: timeshifter.cpp:194
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr ""
+
+#: timeshifter.cpp:534
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr ""
+"TimeShifter::notifySoundStreamData: клієнти пропустили %1 байтів. Дані "
+"втрачено."
+
+#: timeshifter.cpp:593
+msgid "internal stream, not stored"
+msgstr "внутрішній потік, не збережено"
+
+#~ msgid "TimeShifter Temporary File Selection"
+#~ msgstr "Вибір тимчасового файла для реалізації призупинки мовлення"

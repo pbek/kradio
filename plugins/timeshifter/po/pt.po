@@ -1,0 +1,108 @@
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pt\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2006-11-19 18:23+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#. i18n: file: timeshifter-configuration-ui.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
+#: rc.cpp:3 rc.cpp:21
+msgid "SetupDialogGeneral"
+msgstr "SetupDialogGeneral"
+
+#. i18n: file: timeshifter-configuration-ui.ui:56
+#. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
+#: rc.cpp:6 rc.cpp:24
+msgid " MB"
+msgstr " MB"
+
+#. i18n: file: timeshifter-configuration-ui.ui:75
+#. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
+#: rc.cpp:9 rc.cpp:27
+msgid "Maximum File Size"
+msgstr "Tamanho Máximo do Ficheiro"
+
+#. i18n: file: timeshifter-configuration-ui.ui:85
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:30
+msgid "Playback Mixer Device"
+msgstr "Dispositivo Misturador de Reprodução"
+
+#. i18n: file: timeshifter-configuration-ui.ui:95
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:15 rc.cpp:33
+msgid "Temporary File"
+msgstr "Ficheiro Temporário"
+
+#. i18n: file: timeshifter-configuration-ui.ui:108
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:18 rc.cpp:36
+msgid "Playback Mixer Channel"
+msgstr "Canal do Misturador de Reprodução"
+
+#: timeshifter-configuration.cpp:144
+msgid "any ( * )"
+msgstr "todos ( * )"
+
+#: timeshifter-configuration.cpp:148
+msgid "Select TimeShifter Temporary File"
+msgstr "Seleccione o Ficheiro Temporário da Suspensão de Tempo"
+
+#: timeshifter.cpp:32
+msgid "TimeShift Support"
+msgstr "Suporte a Suspensão de Tempo (\"TimeShift\")"
+
+#: timeshifter.cpp:37
+msgid "TimeShifter Plugin"
+msgstr "Estensão Suspensor de Tempo (\"TimeShifter\")"
+
+#: timeshifter.cpp:131
+msgid "Timeshifter"
+msgstr "Suspensor de Tempo (\"TimeShifter\")"
+
+#: timeshifter.cpp:132
+msgid "Timeshifter Options"
+msgstr "Opções do Suspensor de Tempo (\"TimeShifter\")"
+
+#: timeshifter.cpp:194
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr ""
+
+#: timeshifter.cpp:534
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr ""
+"TimeShifter::notifySoundStreamData: Clientes saltados %1 bytes. Perda de "
+"Dados"
+
+#: timeshifter.cpp:593
+msgid "internal stream, not stored"
+msgstr "fluxo interno, não guardado"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Hélio \"RoadRunner\" Guilherme"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "helio.guilherme@bluebottle.com"
+
+#~ msgid "TimeShifter Temporary File Selection"
+#~ msgstr "Selecção do Ficheiro Temporário da Suspensão de Tempo"

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>Marcin Dabek</maintainer>
+			<changed>2005-05-02T12:01:20</changed>
+			<country>Poland</country>
+			<city>Gdansk</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>12215568287C61A88AEC8635FC5CCFF7171F303401B1DCFD2CA5CE3D81AA7F3224E90BC742</stationID>
+			<name>RMF Classic</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>122155684736B50D0EAE6D579A11236D29B3B4469F8F9C1CDBEA36913DBD03F5FFFE7B1204</stationID>
+			<name>Radio Maryja</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12215568727DFE9D88CDC83160CCC15526A6CF26D8701917D5244503A3B7E285F14E141377</stationID>
+			<name>Polskie Radio Program 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1229710262F4878A7B00BE2D7F76D54B3BA03B9A47463EC5FD828B08F5D0BFA7EE0B966028</stationID>
+			<name>Chilli ZET</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221556917BE7AC365D5DDF2C108946E1D0152AD5A703D3C68DA2DDBB40B911CBB6A6E693B</stationID>
+			<name>Radio Kaszebe</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221556932BF6B314ECB047845EF8614D8B46B954ECD37DD45B8DF865F9743E15AF2D64CA8</stationID>
+			<name>Polskie Radio Euro</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12215569572CE92640C495542FFB927F221407B75D9BF2555272C335DBA68110863E696996</stationID>
+			<name>Radio Eska Trójmiasto</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221556988D9342A99AFC0B1A9E59692FC1FB6E06F164791963D1F5D88F9065195F35C37C6</stationID>
+			<name>Polskie Radio Program 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221557013882E0532BD346FFFD9A5EA1CD212D9C8E152E98DAB619AC6E927E7DDD1233BAB</stationID>
+			<name>RMF Maxxx Trójmiasto</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221557038E31C4C464C57757EB85F937BA47741C3B136900BD84054C1CE3452114747163A</stationID>
+			<name>Radio TOK FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1219857722931B3EEF9145FBCFF13C6034AB67BA25D1207ADCA53F82364AA593224F7109CF</stationID>
+			<name>RMF FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221557083CE00FD4802E76A9C8E7FBF6379D9AC6BC454404BDCDD1E517F5BA60209B1D3DD</stationID>
+			<name>Polskie Radio Program 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221557119075B6D8D3C90DFC53DBEE7AD2FDA2B6B9D025437E41D40C49DB45EDE918430DC</stationID>
+			<name>Radio Plus Gdańsk</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221557141040C86265FA2B11B772DB78368F5D3FFCD9A20DAEB3BA239B0D04864925CAACB</stationID>
+			<name>Radio Złote Przeboje</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1221557171CAB3A2B6E4E3CAD3F6E293D318C15489374FF7EE504CB68DFAA2E08B704C14B7</stationID>
+			<name>Polskie Radio Gdańsk</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>122155719504D8B63D209DF87C9FAB419641D87FFED865596883C203FDDE6E86F663BEDC81</stationID>
+			<name>Radio Eska Rock</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1219857671CD41C2FF7BAB36A8B4E4FCD5B5675ABC24E423D3DFE2705995D5719CFDDC022D</stationID>
+			<name>Radio Zet</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

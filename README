@@ -1,0 +1,87 @@
+This is a comfortable radio application for KDE >= 4.2. 
+You can get the latest version from
+
+   http://sourceforge.net/projects/kradio/
+
+------------------
+Mailing Lists
+------------------
+
+  http://lists.sourceforge.net/lists/listinfo/kradio-user
+  http://lists.sourceforge.net/lists/listinfo/kradio-devel
+  http://lists.sourceforge.net/lists/listinfo/kradio-announce
+
+------------------
+ Upgrade to KDE4
+------------------
+
+1) Make a backup of your kradiorc file
+2) Please be aware that you might need to configure your kradio
+   from scratch. Fix might come later.
+
+------------------
+ Checkout SVN
+------------------
+
+If you want to test the most recent kradio from SVN,
+you can try:
+
+  mkdir kradio-svn
+  cd kradio-svn
+  svn co https://kradio.svn.sourceforge.net/svnroot/kradio/branches/kde4
+
+-------------------
+ Compile & Install
+-------------------
+
+  mkdir kradio-build
+  cd kradio-build
+
+  # replace <buildtype> by your choice: common build types are:  DEBUG  DEBUGFULL  RELEASE
+  # <kradio-sources> are e.g. ../kradio-svn/kde4 in case you are using svn
+  cmake -DCMAKE_BUILD_TYPE=<buildtype> -DCMAKE_INSTALL_PREFIX=$KDEDIR <kradio-sources>
+
+  make 
+  make install
+
+-------------------
+Configuration files
+-------------------
+
+gui, alarms, etc.:
+  <dot-kdedir>/share/config/kradiorc
+
+stations (xml-format):
+  <dot-kdedir>/share/apps/kradio/stations.krp
+
+systemwide presets (xml-format):
+  <kdedir>/share/apps/kradio/presets/<country>/<city>-<media>.krp
+
+
+------------------
+lirc support
+------------------
+
+lirc support is realized by the lirc_client lib. It should be detected
+automatically by ./configure. This library is used to translate the
+remote control key names to names used by kradio, and may additionally
+be used for state management (tv, etc).  An example for an apropriate
+.lircrc file can be found in ./kradio/dot-lircrc.example.
+
+Names used by kradio:
+
+   TV         powerOff, give tv program a chance
+   0..9       numerical station selection
+   CH+        frequency increment
+   CH-        frequency decrement
+   VOL+       volume increment
+   VOL-       volume decrement
+   CH-SEARCH  beachward station search
+   CH+SEARCH  forward statino search
+   POWER      power kradio on/off
+   RADIO      power kradio on
+   SLEEP      enable sleep countdown
+   NEXT       next station in list
+   PREV       prev station in list
+   QUIT       quit kradio application
+

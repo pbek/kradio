@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>Petr Urban &lt;urbanp1@seznam.cz&gt;</maintainer>
+			<changed>2008-04-08T17:03:40</changed>
+			<country>Czech republic</country>
+			<city>Ceske Budejovice</city>
+			<media>Air</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1207666974509EE882BDBA2D87DC38D38A0BCEF0D51C991F4DBB617CD0208EDA11DAD9CAA9</stationID>
+			<name>ČRo1 - Radiožurnál</name>
+			<shortname>ČRo1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>120766698430190D64A0BA139E954D1E43B89612D5502C1F86C80C1642E1DD430B845549A5</stationID>
+			<name>ČRo2 - Praha</name>
+			<shortname>ČRo2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207667006DBB1303ED14BC81ADF7DF384A388B2943FB58EC931A293F9112CBB4D761B0871</stationID>
+			<name>ČRo3 - Vltava</name>
+			<shortname>ČRo3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207667008A26C97E5F7612C0820EE87362AB88E2EA0DBC8B74339996B5D14DFA56E79E3C3</stationID>
+			<name>ČRo5 - České Budějovice</name>
+			<shortname>ČRo5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>120766702720B7E904410567F2DFB9CBEBEBD8BE64101515C6C1F9D6187482402554A9D1D7</stationID>
+			<name>Kiss Jižní Čechy</name>
+			<shortname>Kiss</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207667739D293C26B631ACC80488CCCFE98D8A3CC0A7C56AFA7B7981B91AEB345E6E07054</stationID>
+			<name>Rádio Blaník JČ</name>
+			<shortname>Blaník</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207668015852339FEC6B77D79165DE45D45965DAA1E179ECC574D4A3CA3B2F10077FB99B8</stationID>
+			<name>Frekvence 1</name>
+			<shortname>F1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207668044C717459C7325BF313BF5FC6BE2ECA70D06BDDFEEB4E66AEA7AB5B8460F85DB99</stationID>
+			<name>Radio Impuls</name>
+			<shortname>Impuls</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12076680971544CB58DA52B02BDB7A3E8D1D02AFEF2F7B2E31DDBC891EE5FE6F5E814081DB</stationID>
+			<name>Hitrádio Faktor</name>
+			<shortname>Faktor</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12076681867F98C7B592723F35E8EF67EC33A823C164F88A740681041EDE7FBFEDA1DC6AD4</stationID>
+			<name>Evropa 2</name>
+			<shortname>Evropa 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>120766823348F4850F00D515F62DA7FBFF0A75C47701649A96D6F2EBC8F7FC6F2A0333FC4E</stationID>
+			<name>Radio Proglas</name>
+			<shortname>Proglas</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207668324BA0EAC424584D6FA18AEE86392411AEB1B1625B2B8019CBC58FF6A01BC9E9C35</stationID>
+			<name>Radio Faktor Gold</name>
+			<shortname>Gold</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12076670307AE2B3DF6C6D8F3223287781D174FA9B1C92B75F4239837EBCD5DA4C40C9FCDC</stationID>
+			<name>Rádio Beat</name>
+			<shortname>Beat</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207668385CFDDA6ED02FA809768C7939C1A2CCBFD9C6D688BE6C2A654A58024802A9A4C26</stationID>
+			<name>BBC/ČRo - Rádio Česko</name>
+			<shortname>BBC</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12076705683C91C317574ADC848753E468585597BF46A7348C65F6F01083B97486AA04908B</stationID>
+			<name>Radio Šumava</name>
+			<shortname>Šumava</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12076727277A7919C9F95D6C9B86F7D8EAB2CC76B3D139085C6125F0CBA4561344CBE73AD1</stationID>
+			<name>Life Radio Ober Oesterreich</name>
+			<shortname>Life</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.5</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

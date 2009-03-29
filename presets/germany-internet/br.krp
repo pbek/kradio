@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r752</creator>
+			<maintainer>Ernst Martin Witte, emw@nocabal.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>12371550114F5535C0418A4B82AEB82B4A7ABB8B4697B3F8DAA833FB74300AEE654A0B</stationID>
+			<name>Bayern 1 (Net)</name>
+			<shortname>BR1</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/bayern1_2.asx</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>123715689509D9B9EEC5519A3FB01A21BEAAFC90493B5E650692C7F043A6C252C9AA10</stationID>
+			<name>Bayern 2 (Net)</name>
+			<shortname>BR2</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/bayern2_2.asx</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>123715692763D992F4BC44AD8CF86780916243296C2A6B5B1B99AB85976A17CF0A0BF8</stationID>
+			<name>Bayern 3 (Net)</name>
+			<shortname>BR3</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/bayern3_2.asx</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12371567901550516BD66D7E68FDBD536E4C9AC0E88B484619E23544F188A760F0EB10</stationID>
+			<name>Bayern 4 (Net)</name>
+			<shortname>BR4</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/bayern4klassik_2.asx</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12371569432EA7BB653CDEBDF790495758E339248420D0AC6FF0DB74CE883544103852</stationID>
+			<name>B5 Aktuell (Net)</name>
+			<shortname>B5</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/b5aktuell_2.asx</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

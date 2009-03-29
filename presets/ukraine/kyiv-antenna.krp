@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+        <stationlist>
+                <format>kradio-1.0</format>
+                <info>
+                        <creator>kradio-1.0beta3b</creator>
+                        <maintainer>Igor Shavrin shih@i.ua</maintainer>
+                        <changed>2007-09-24T01:34:37</changed>
+                        <country>Ukraine</country>
+                        <city>Kyiv</city>
+                        <media>antenna</media>
+                        <comments>Generated from http://www.proradio.org.ua</comments>
+                </info>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568285E2B7D4E87359DE08E1C16FF2A41E2CC4B4079B9D587F66F9DAE1943C32413C48</stationID>
+                        <name>1+1 TV</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>91.75</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568345ADD24685A544861E9BB16C04C9E3D475CC7A53B57AB349052F68D130F313C4B1</stationID>
+                        <name>Retro FM</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>92.4</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190585238FF5CDED1F6E49D979E1C6E8586464ABC5963D3821EE8A2700E280242DBEAD939</stationID>
+                        <name>Europa Plus Ukraina</name>
+                        <shortname>Europa+</shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>92.8</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568386558A019551B727BAA9B7E6597371BE9B786A7FA4D579B90CE762BB193AA7B441</stationID>
+                        <name>Radio Kontinent</name>
+                        <shortname>Kontinent</shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>94.2</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905684061104A7FFAF246E4D84AA2387207120AA39C33D45E589BB89055F4F7FDEFB82DD</stationID>
+                        <name>Love Radio</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>95.2</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905684242BF5811F0423AFCB4073E9C8A3CFFBF24665B4F909CA9A4F99CBD5BBC036BE3B</stationID>
+                        <name>Jam FM</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>95.6</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>119056843858C509C9C78DF4C47EA8A8DAC2C52B0A337905BA53708A22DD133B01C0B1B824</stationID>
+                        <name>ERA FM</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>96</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568357D10207D487D67CF384A86594ECAFE68E392EFCA113BFF7E46CEB0D8B931DAFB8</stationID>
+                        <name>HIT FM Ukraina</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>96.4</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>119056848271CC0E7F7A1FBFBCF9199138ED8A9A0C523EA5108ABA25E1307C126E7BD74401</stationID>
+                        <name>Renesans</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>96.8</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905684983370750F90BD5C902D66EBDFE5296BD5651766EFD709E4704B22548DBDAF7308</stationID>
+                        <name>Radio Kyiv</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>98</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568511F84481912290B9578CF4B8E7919E6638815FCD4570430CD1B0DEB4C711F64BF0</stationID>
+                        <name>Russkoe Radio </name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>98.5</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190585757834E40A75A390555FDAF2FD8F879BE84C1A4200B48576DE998BCEA2FC5E62DF8</stationID>
+                        <name>Nostalgie</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>99</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568560F0EE4F93BBB53A68B0281C926A5BD23C335B5D1D329947E2C0A52DAE396749C7</stationID>
+                        <name>Radio One</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>99.4</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905679324E90F6002986D3368F12F1CFEE67E990F11A9C6DEE84CB5AF68299405FD665D2</stationID>
+                        <name>Gala Radio</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>100</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568578411C4F3F6FA8981F3F2BFD5CCA61C19A25F35BEE712D3C71E030FACD22E99B0B</stationID>
+                        <name>Narodne Radio</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>100.5</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905686031692090120A5CCB19D0C832CE9CBAF0F82401488F5D50998B59251BE3ABED287</stationID>
+                        <name>Melodiya</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>101.1</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>119056861728940CAC20705F67C7F2C856BBA6848E21899374B76A38EBDB313B8591A9686B</stationID>
+                        <name>Music Radio</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>101.5</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>119056862470D26DB3B12FED7B8ED2DC4508E163BD9BAABA42D048F56B213F13C597D69025</stationID>
+                        <name>Garne Radio &quot;Shanson&quot;</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>101.9</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905686391B87595BB9BEC38746C9C3E947AA6D55A0A4C552772A10E0F80CE500953927FC</stationID>
+                        <name>Prosto Radi.O</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>102.5</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568655B5EB86D24DD802856EC39BBEBC51BF22050169329E05C2F860A484FBD6313DFB</stationID>
+                        <name>Lux FM</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>103.1</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905686799F70922A7C9F9FD1EB52C97F2151C5AB4821C2C3BAEAB8A665CC01994442666C</stationID>
+                        <name>Radio Rox</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>103.6</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568692FD2A3434E88AE180B7DDD0B4F56A5E5AE51759D6F3F56DF9CC27718AFA269676</stationID>
+                        <name>Radio Sharmanka</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>104</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568717454DE097A03235C880EACCC7C40BDDBFC2EB270C88B8734B91595DF4BA8D5249</stationID>
+                        <name>NRJ Hit Music Only</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>104.6</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>119056872687EECA44E2309197D198412A1887DE7F0B2449EF314EA607FF35B5F170FC7A37</stationID>
+                        <name>Ukrainske Radio 1, Promin 2, Kultura 3</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>105</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568745E5015664A7B31B09C9613B79F8EC8962BF2CB26175427DAF927F844A0287C479</stationID>
+                        <name>Perets FM</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>105.5</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>119056875609A0A52CFBE42B09E02389F481B47B3A0F4788D7FA244C0348D39A55E58022B0</stationID>
+                        <name>Dorosle Radio</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>106</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>119056876964244E846B8E8C747093DD99C135F11B0CD12BCD83B3425453F00E76FE83686E</stationID>
+                        <name>Dance radio &quot;Kiss FM&quot;</name>
+                        <shortname>Kiss FM</shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>106.5</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568784E96F88515B6C5A632D94FD3DDA890DF833807614BA2B3B48B73E6FA2A47D2CA1</stationID>
+                        <name>Europa FM Kiev</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-0.01</volumepreset>
+                        <frequency>107</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>11905687949FDD940404BDB04A08D1D424537F3BA1B276ADDC688AC7B08BA7F8509C9DF904</stationID>
+                        <name>Auto-Radio Ukraina</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>107.4</frequency>
+                </FrequencyRadioStation>
+                <FrequencyRadioStation>
+                        
+<stationID>1190568804C04E9CCFBED42FE3B715B52A019A58DDA156C4E489D2F782F2E63C96D1DEF49C</stationID>
+                        <name>Nashe radio</name>
+                        <shortname></shortname>
+                        <icon></icon>
+                        <volumepreset>-1</volumepreset>
+                        <frequency>107.9</frequency>
+                </FrequencyRadioStation>
+        </stationlist>
+</kradiorc>

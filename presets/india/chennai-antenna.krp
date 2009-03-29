@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot_2005_11_27</creator>
+			<maintainer>R Deepak</maintainer>
+			<changed>2007-03-31T18:43:18</changed>
+			<country>India</country>
+			<city>Chennai</city>
+			<media>FM Channels</media>
+			<comments>All the FM channels in Chennai.</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>11753445936E9E0E3CB2F8B796DA65739E538B78054D02FC4FF552D5AD5322BF9096662427</stationID>
+			<name>Suryan FM! 93.5</name>
+			<shortname>Suryan</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>117534478397469F0EE509B25EC447D0FB792BAD25C215AC5030FCE0A5526753581D51EE8A</stationID>
+			<name>AIR Chennai! 106.4</name>
+			<shortname>AIR</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11753448532F6C07DB566ADC38950FBEFE3BA1B7A17C67588FCFE42ECF91EBC93060C5484E</stationID>
+			<name>Radio Mirchi! 98.3</name>
+			<shortname>Mirchi!</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1175344609AEBF26E4585D6BB9451B35A6B79D28D60BB45191557CEABE2B70DE9B73286723</stationID>
+			<name>Hello FM! 106.4</name>
+			<shortname>Hello</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1175345266393FFD660E04396BD99D66EF2B285E20CFEE6F34EC7C1D76D6CE7CD5678A5A99</stationID>
+			<name>Radio City! 91.1</name>
+			<shortname>City!</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11753453722D6047CF4D052685FF27306A5E4EB1D199E8F73B96D8F6FF98D2ECD83377B214</stationID>
+			<name>Aha! 91.9</name>
+			<shortname>Aha!</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1175345415AB9DF01C90B137E3F59A6D461167A3DCA48358E634B8018ACB4302D67004B137</stationID>
+			<name>92.7</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1175345458D724DBB612353F3FEE62EF46FDF1262938FB884B7DB68746D40ADB11E4B44824</stationID>
+			<name>Radio One! 94.3</name>
+			<shortname>One!</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1175345587560034B04EDFB7D495329917971B0D575ABA42943DE907244C2712EAFDC58C7D</stationID>
+			<name>All India Radio 105</name>
+			<shortname>AIR 105</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

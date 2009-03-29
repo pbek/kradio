@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot_2005_11_27</creator>
+			<maintainer>Wilfred van den Assem</maintainer>
+			<changed>2004-08-14T13:45:29</changed>
+			<country>Netherlands</country>
+			<city>Ede</city>
+			<media>cable</media>
+			<comments>got data from http://www.upc.nl/</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916D6D60211155A9867579BD00D8BAAB1B161379528845A471C2473820166ACE223</stationID>
+			<name>Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916674F270FB0E48154D32C1348A18098757C8FBB5B2E6DD4DBE531C44F80E55850</stationID>
+			<name>Radio 2</name>
+			<shortname>Radio 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916521DF9F0D8CC313B63094A26C58A3EF43281F65F7405DC7ED9F250F50877E6A8</stationID>
+			<name>Radio 3</name>
+			<shortname>Radio 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916875497BD80A8B3EB56FDD97D8BCD15143EF3A7FB072C8B3AF77BFC9B8B077F41</stationID>
+			<name>Radio 4</name>
+			<shortname>Radio 4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106176891671E2CAEA45B3503F03EC1C51826002CBD7B24604CA6379650E39A727905D27A9</stationID>
+			<name>Radio 747 AM</name>
+			<shortname>Radio 747 AM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106176891660FD79DFF18BF25EE5732FDAE5A7F4DE53C34511719A9D9A192A52FCDAB424FB</stationID>
+			<name>VRT Radio 1</name>
+			<shortname>VRT Radio 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161153582384EAC06B0BE166AB53A183932FF5B20B5E78210FDACD304E3E73F651DCD3C03</stationID>
+			<name>VRT Radio 2</name>
+			<shortname>VRT Radio 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10617689169CF30DDBE712348BEF827B9C3992B2E4761C7BE090E611BA3F3639F4C1B9ED68</stationID>
+			<name>VRT Radio Klara</name>
+			<shortname>VRT Radio Klara</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116115361665D32BD758259F77358067404F00097689E170441AE61F4A31352285D328250E</stationID>
+			<name>Radio Oost</name>
+			<shortname>Radio Oost</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161153652CCFDA5E3632D597D89537123A32442359230A708945E6893FC34A713DAF3CFB7</stationID>
+			<name>Omroep Fryslan</name>
+			<shortname>Omroep Fryslan</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916CCBEFA171CFA37C0C9504D15C9E5D25D4307FAB210169CE31D93B3EC2639EFC1</stationID>
+			<name>Omroep Gelderland</name>
+			<shortname>Omroep Gelderland</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916DAD184A2F4074D993CBB883601E987A73B79E77DF27EC7B59BBE06D9E3F1C25A</stationID>
+			<name>Lokale Omroep</name>
+			<shortname>Lokale Omroep</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10617689169DB2EDD8EC100A91AEE995A3803046E75F4C2E9FD96C4A9F4F4E572ACFD76E60</stationID>
+			<name>BBC Radio 3</name>
+			<shortname>BBC Radio 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161153719E945B75BBAE2BE88E1D6708CA899C38812377F524084DC17799B28EF95A7449F</stationID>
+			<name>WDR 1</name>
+			<shortname>WDR 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11611537345314B57844DCB83ED1854B2DD0AF2C0F35DE85056B2C31076E0C233C546ED8FA</stationID>
+			<name>WDR 2</name>
+			<shortname>WDR 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161153750FEF87459094374CCA4D2C2D3184881B0E0490493088F22BF3F9EBA30857E4256</stationID>
+			<name>WDR 3</name>
+			<shortname>WDR 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116115377178116A777931577FF53165625081CB5D288FD6584D5FDA80359B75305E9CE512</stationID>
+			<name>WDR 4</name>
+			<shortname>WDR 4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916B8192E1A210DEA36E235662832013CA5A99264A14A07BA0933F5079FA526A1CE</stationID>
+			<name>Arrow Rock Radio</name>
+			<shortname>Arrow Classic Rock Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116115335888BB7FB1792AB5778FA5020D15B6D27B83D36DA1707E3135AED4395FA4DC6DEA</stationID>
+			<name>Arrow 90,7 FM</name>
+			<shortname>Arrow 90,7 FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11611538298006F042F5BA4800CCB6E984D134258D0ED47B33E519D2D3E29AA1D3A138D734</stationID>
+			<name>Het Gelders Geluid</name>
+			<shortname>Het Gelders Geluid</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11611538849F64970DCE09509546044C9CA3819FF67DD1EC1EF0ECCE744D74D2E4F1C64E6E</stationID>
+			<name>BBC World Service</name>
+			<shortname>BBC World Service</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161153903EFD4B3ED578A480A62461EEBA0EABBE5603346C9DF183154881E81A7080A6F83</stationID>
+			<name>BNR Nieuwsradio</name>
+			<shortname>BNR Nieuwsradio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10617689169DB024ABAAA652F2C5476890B717855DBD52903DA0E0F5255A8E98AC2BB3E732</stationID>
+			<name>Classic FM</name>
+			<shortname>Classic FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10617689164394C7A3D38B4FEDE5625C2E7534ED6AD44B8EE956712A802388A26DB075E098</stationID>
+			<name>Concertzender</name>
+			<shortname>Concertzender</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916FC58F6080AA9D2E99E4EF096A27242230717633F27CEAD62834C228FEE869BCC</stationID>
+			<name>RTL FM</name>
+			<shortname>RTL FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11611539802AD1AF72DE7F31516F32690C20DF5CDFCBD9FFF73B11B5B7066A3F17EDEF95F6</stationID>
+			<name>Hot Radio</name>
+			<shortname>Hot Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161154009DFC37030D6C2614E5E925F3B92CA4F8987B0C6079BF0A79CA6C69D0810CE5DCA</stationID>
+			<name>Slam FM</name>
+			<shortname>Slam FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116115403704F8DC30EF1E672D16616263E4423BECE77A6247368F1003E605F23E3CADAB70</stationID>
+			<name>Keizerstad FM</name>
+			<shortname>Keizerstad FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>106176891684678CE4B308A8A6F724F5C73506E16E27268EB819FC720AE7AD5B483473E4B6</stationID>
+			<name>Kink FM</name>
+			<shortname>Kink FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916248E70F2866B0754758FA4F16D395369F9B3550559E24A77C1B48B5C1EEB0684</stationID>
+			<name>Q-Music</name>
+			<shortname>Q-Music</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10617689161657EC736540B26C223EC40019E316770DD54F30EDD58351F305A7CCF58CF42E</stationID>
+			<name>Radio 10 Gold</name>
+			<shortname>Radio 10 Gold</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916495B2FFD8C70DEA15BCE8BCD882F1ECB21F05F8713D6610A04BE9690F59CD956</stationID>
+			<name>Radio 538</name>
+			<shortname>Radio 538</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161154174EE98D5510463A0C07109A56AD2303F0B1E6EC5A22EF3B9918775924D8921C7B5</stationID>
+			<name>Radio Donna</name>
+			<shortname>Radio Donna</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1061768916C3BBEBD88D7BE50E0D66854AAFC41402F07BCC2B609B8D70D7B1BE9E0551D162</stationID>
+			<name>Radio Veronica</name>
+			<shortname>Radio Veronica</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161154202F08ECD8CB447AAD23BB63C38C144E82BCC2C6258E4E774BEB0AC1E958B9945BF</stationID>
+			<name>Rebecca</name>
+			<shortname>Rebecca</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10617689165763D6C843F7F6EC887BCB341263385A26A6AF2E11CB926DE91932882C30DCF7</stationID>
+			<name>Sky Radio</name>
+			<shortname>Sky Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>10617689166BA97C6B690CD30B8E86DA28E1B815A478FD6B58504AF435C114B2CFD4177318</stationID>
+			<name>Yorin FM</name>
+			<shortname>Yorin FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11611542299B25F62676B0D3F897FE54E785DFE3A527F5EBD866C1F49207CADEBF1A1EDB6A</stationID>
+			<name>2e Kamerlijn</name>
+			<shortname>2e Kamerlijn</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.6</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+
+

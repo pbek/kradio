@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r752</creator>
+			<maintainer>Ernst Martin Witte, emw@nocabal.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>1235914507013CED4BFB030CFA7CB0F1BD4FB0523DB966BD816A23C3C6A172FC194C12C3CD</stationID>
+			<name>Klassikradio</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://players.creacast.com/creacast/klassik/playlist.pls</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

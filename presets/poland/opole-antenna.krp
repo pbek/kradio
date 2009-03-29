@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+        <format>kradio-1.0</format>
+        <info>
+            <creator>kradio-snapshot_2005_11_27</creator>
+            <maintainer>Krzysztof Kusiak, 
+&lt;szyszart@poczta.onet.pl&gt;</maintainer>
+            <changed>2007-01-24T16:57:09</changed>
+            <country>Poland</country>
+            <city>Opole</city>
+            <media>Antenna</media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+            <stationID>1</stationID>
+            <name>Polskie Radio Program 2</name>
+            <shortname>1</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>88.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>2</stationID>
+            <name>Tr�jka</name>
+            <shortname>2</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>90.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>3</stationID>
+            <name>Radio Eska</name>
+            <shortname>3</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>90.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>4</stationID>
+            <name>Radio Zet</name>
+            <shortname>4</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>92.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>5</stationID>
+            <name>Radio Z�ote Przeboje</name>
+            <shortname>5</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>92.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>6</stationID>
+            <name>RMF FM</name>
+            <shortname>6</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>95.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>7</stationID>
+            <name>Radio Maryja</name>
+            <shortname>7</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>98.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>8</stationID>
+            <name>Radio Opole</name>
+            <shortname>8</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>101.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>9</stationID>
+            <name>Radio Planeta</name>
+            <shortname>9</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>106.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>10</stationID>
+            <name>Radio Plus Opole</name>
+            <shortname>10</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>107.9</frequency>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>
+
+
+
+

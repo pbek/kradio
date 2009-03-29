@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r752</creator>
+			<maintainer>Ernst Martin Witte, emw@nocabal.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>1237240843C62106FC81654A0459F16EA93E01B0DDE6F7FB3EF13E60112CB49EDDCD6D</stationID>
+			<name>SWR1 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=ms&amp;stream=swr1bwlive/livestream.wma</url>
+			<decoderclass>asf_stream</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12372431983EDE86B073825000118F110FC79EA8F0BA391E32FADE9DEBCCEFC734DBD6</stationID>
+			<name>SWR2 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=ms&amp;stream=swr2live/livestream.wma</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1237243574D7495B8238B697237B9D79021AFC8F04FA3D0D27EEB428753DB04E202940</stationID>
+			<name>SWR3 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.swr3.de/wraps/musik/webradio/audioplayer/stream_extern.php?format=mp3e&amp;channel=0</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>m3u</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1237243647C7623CCA866D914183A545764BFD20C8DEF44FBA118CAC52361CF23A6C9B</stationID>
+			<name>SWR4 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=ms&amp;stream=swr4rplive/livestream.wma</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

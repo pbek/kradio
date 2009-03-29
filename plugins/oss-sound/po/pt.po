@@ -1,0 +1,232 @@
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pt\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2006-11-19 16:58+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: oss-sound.cpp:38
+msgid "Open Sound System (OSS) Support"
+msgstr "Suporte \"Open Sound System\" (OSS)"
+
+#: oss-sound.cpp:46
+msgid "KRadio OSS Sound Plugin"
+msgstr "Extensão de Som OSS do KRadio"
+
+#: oss-sound.cpp:180
+msgid "OSS Sound"
+msgstr "Som OSS"
+
+#: oss-sound.cpp:181
+msgid "OSS Sound Device Options"
+msgstr "Opções do Dispositivo de Som OSS"
+
+#: oss-sound.cpp:521
+#, kde-format
+msgid "OSS device %1: No data to record"
+msgstr "Dispositivo OSS %1: Nenhuns dados para gravar"
+
+#: oss-sound.cpp:531
+#, kde-format
+msgid "internal stream, not stored (%1)"
+msgstr "fluxo interno, não guardado (%1)"
+
+#: oss-sound.cpp:563
+#, kde-format
+msgid "Error %1 while handling OSS device %2"
+msgstr "Erro %1 enquanto geria o dispositivo OSS %2"
+
+#: oss-sound.cpp:607 oss-sound.cpp:633
+#, kde-format
+msgid "Cannot open DSP device %1"
+msgstr "Não se pode abrir o dispositivo DSP %1"
+
+#: oss-sound.cpp:613
+#, kde-format
+msgid "Cannot read DSP capabilities for %1"
+msgstr "Não se consegue ler as capacidades DSP para %1"
+
+#: oss-sound.cpp:640
+#, kde-format
+msgid "Cannot set DSP sample format for %1"
+msgstr "Não se consegue definir o formato de amostragem DSP para %1"
+
+#: oss-sound.cpp:645
+#, kde-format
+msgid "Cannot set number of channels for %1"
+msgstr "Não se consegue definir o número de canais para %1"
+
+#: oss-sound.cpp:650
+#, kde-format
+msgid "Cannot set sampling rate for %1"
+msgstr "Não se consegue definir a taxa de amostragem para %1"
+
+#: oss-sound.cpp:652
+#, kde-format
+msgid "Asking for %1 Hz but %2 uses %3 Hz"
+msgstr "Pedindo %1 Hz mas %2 usa %3 Hz"
+
+#: oss-sound.cpp:662
+#, kde-format
+msgid "Cannot set stereo mode for %1"
+msgstr "Não se consegue definir modo estéreo para %1"
+
+#: oss-sound.cpp:667
+#, kde-format
+msgid "Cannot set sample size for %1"
+msgstr "Não se consegue definir tamanho de amostragem para %1"
+
+#: oss-sound.cpp:676
+#, kde-format
+msgid "Cannot set buffers for %1"
+msgstr "Não se conseguem definir os tampões para %1"
+
+#: oss-sound.cpp:681
+#, kde-format
+msgid "Cannot read buffer size for %1"
+msgstr "Não se consegue ler o tamanho do tampão para %1"
+
+#: oss-sound.cpp:683
+#, kde-format
+msgid "%1 uses buffer blocks of %2 bytes"
+msgstr "%1 usa um bloco de tampões de %2 bytes"
+
+#: oss-sound.cpp:686
+#, kde-format
+msgid "adjusted own buffer size to %1 bytes"
+msgstr "ajustou-se o tamanho do tampão interno para %1 bytes"
+
+#: oss-sound.cpp:738
+#, kde-format
+msgid "Cannot open mixer device %1"
+msgstr "Não se pode abrir o dispositivo misturador %1"
+
+#: oss-sound.cpp:771
+#, kde-format
+msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
+msgstr ""
+"OSSSoundDevice::getMixerChannels: Não se consegue abrir o dispositivo "
+"misturador %1"
+
+#: oss-sound.cpp:785
+#, kde-format
+msgid ""
+"OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
+msgstr ""
+"OSSSoundDevice::getMixerChannels: Não se consegue ler a máscara do "
+"misturador no dispositivo %1"
+
+#: oss-sound.cpp:890
+#, kde-format
+msgid "error %1 while reading volume from %2"
+msgstr "erro %1 enquanto lia o volume de %2"
+
+#: oss-sound.cpp:913
+#, kde-format
+msgid "error %1 while setting volume to %2 on device %3"
+msgstr "erro %1 enquanto definia o volume para %2 no dispositivo %3"
+
+#: oss-sound.cpp:929
+#, kde-format
+msgid "Selecting recording source on device %1 failed with error code %2"
+msgstr ""
+"A selecção da fonte de gravação no dispositvo %1 falhou com o código de erro "
+"%2"
+
+#: oss-sound.cpp:935
+#, kde-format
+msgid "Reading igain volume on device %1 failed with error code %2"
+msgstr ""
+"A leitura do volume igain no dispositvo %1 falhou com o código de erro %2"
+
+#: oss-sound.cpp:942
+#, kde-format
+msgid "Setting igain volume on device %1 failed with error code %2"
+msgstr ""
+"A definição do volume igain no dispositvo %1 falhou com o código de erro %2"
+
+#: oss-sound.cpp:1000
+#, kde-format
+msgid "OSS Sound Device %1"
+msgstr "Dispositivo de Som OSS %1"
+
+#. i18n: file: oss-sound-configuration-ui.ui:27
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:3 rc.cpp:29
+msgid "Devices"
+msgstr "Dispositivos"
+
+#. i18n: file: oss-sound-configuration-ui.ui:51
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:6 rc.cpp:32
+msgid "PCM Device"
+msgstr "Dispositivo PCM"
+
+#. i18n: file: oss-sound-configuration-ui.ui:59
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:9 rc.cpp:35
+msgid "Mixer Device"
+msgstr "Dispositivo Misturador"
+
+#. i18n: file: oss-sound-configuration-ui.ui:67
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:12 rc.cpp:38
+msgid "Buffer Size"
+msgstr "Tamanho do Tampão"
+
+#. i18n: file: oss-sound-configuration-ui.ui:75
+#. i18n: ectx: property (suffix), widget (KIntSpinBox)
+#: rc.cpp:15 rc.cpp:41
+msgid " kB"
+msgstr " kB"
+
+#. i18n: file: oss-sound-configuration-ui.ui:91
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:18 rc.cpp:44
+msgid "Extended Options"
+msgstr "Opções Extendidas"
+
+#. i18n: file: oss-sound-configuration-ui.ui:105
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:21 rc.cpp:47
+msgid "Disable Playback"
+msgstr "Desactivar Reprodução"
+
+#. i18n: file: oss-sound-configuration-ui.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:24 rc.cpp:50
+msgid "Disable Capture"
+msgstr "Desactivar Captura"
+
+#: rc.cpp:25
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:26
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Hélio \"RoadRunner\" Guilherme"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "helio.guilherme@bluebottle.com"

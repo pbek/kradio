@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot_2005_11_27</creator>
+			<maintainer>Magnus Holmgren &lt;magnus@kibibyte.se&gt;</maintainer>
+			<changed>2006-10-19T16:57:24</changed>
+			<country>Sweden</country>
+			<city>Link�ping</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>11612679722C3AE9D70B2B3DD46C4065608BA1CAACE6896B3D6F823A492BBC2530D8F59698</stationID>
+			<name>Sveriges Radio P1</name>
+			<shortname>P1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161268014C8DA05F96C556DF58C27DCA0B7EB4D76C21088188AB8FD914878185BD0F9D949</stationID>
+			<name>Sveriges Radio P2</name>
+			<shortname>P2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161267649469715870FF0D03695CA6A24454360C86BFBE9C63852DBE7C345B2F78588CDCA</stationID>
+			<name>Sveriges Radio P3</name>
+			<shortname>P3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161266725517FE1ECC390A4AD8164724F361C1BBC9663B69AE58DA4D18E922C95E7B94877</stationID>
+			<name>Sveriges Radio P4 �sterg�tland</name>
+			<shortname>P4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1161267804D5E933F12EFCD66F8EEF4B28C4345A2D2986DE5A121E68825E481A4197D46171</stationID>
+			<name>Link�pings n�rradio</name>
+			<shortname>N�r</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11612659565F0D48B7FB6AE89FFFA0F61FFC2C342AFF99E6AFC86F0E8FFAE65DE6AEAE3BCA</stationID>
+			<name>Rix FM</name>
+			<shortname>Rix</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.376</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>11612667154BB764EE3775FEA4FC6159E50300742ADD5E58B519E357ACAE84BA532BCDD8E8</stationID>
+			<name>Lugna favoriter</name>
+			<shortname>LF</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>116126856640E5698A4438B690C4BFE5601F11D852BAC3164C921A42AAB231681183E40603</stationID>
+			<name>East FM</name>
+			<shortname>East</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.2</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

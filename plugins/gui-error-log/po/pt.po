@@ -1,0 +1,87 @@
+# translation of pt.po to Português
+# translation of kradio.po to pt.po
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+# Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pt\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2006-11-19 16:08+0000\n"
+"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
+"Language-Team: Português <pt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: errorlog.cpp:35
+msgid "Error Logging Window for KRadio"
+msgstr "Janela de Registo de Erros do KRadio"
+
+#: errorlog.cpp:41
+msgid "Error Logger"
+msgstr "Registo de erros"
+
+#: errorlog.cpp:49 errorlog.cpp:58
+msgid "KRadio Logger"
+msgstr "Registo do KRadio"
+
+#: errorlog.cpp:55
+msgid "Save &as"
+msgstr "Gu&ardar como"
+
+#: errorlog.cpp:60
+msgid "Information"
+msgstr ""
+
+#: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
+#, fuzzy, kde-format
+msgid "KRadio4 Version %1 logging started"
+msgstr "registo iniciado"
+
+#: errorlog.cpp:63
+msgid "Warnings"
+msgstr "Avisos"
+
+#: errorlog.cpp:66
+msgid "Errors"
+msgstr "Erros"
+
+#: errorlog.cpp:69
+msgid "Debugging"
+msgstr "Depuração"
+
+#: errorlog.cpp:182
+msgid "Log Files"
+msgstr "Ficheiros de registo"
+
+#: errorlog.cpp:187
+msgid "Save KRadio Logging Data as ..."
+msgstr "Guardar dados do registo do KRadio como ..."
+
+#: errorlog.cpp:212
+#, kde-format
+msgid "error writing to tempfile %1"
+msgstr "erro ao escrever no ficheiro temporário %1"
+
+#: errorlog.cpp:221
+#, kde-format
+msgid "error uploading preset file %1"
+msgstr "Erro ao enviar o ficheiro de Estações de Rádio %1"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Hélio \"RoadRunner\" Guilherme"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "helio.guilherme@bluebottle.com"
+
+#~ msgid "Select Log File"
+#~ msgstr "Seleccionar ficheiro de registo"

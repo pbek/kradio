@@ -1,0 +1,13 @@
+
+Just some very short notes/steps how to create
+a KRadio4 translation:
+
+ 1) cd to kradio4 base directory
+ 2) run ./extract-messages.sh
+ 3) run ./merge-messages.sh
+ 4) use the created .pot files for translation
+    (they are located in the po/ directories, one for each plugin)
+ 5) Please send me the <lang>.po files while 
+    keeping the structure of plugin-wise .po/.pot files/directories
+
+Thanks for your translation!

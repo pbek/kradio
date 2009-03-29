@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r752</creator>
+			<maintainer>Ernst Martin Witte, emw@nocabal.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>123723783364C949978ED144A4E5569C56C2FCA88DF48AFA809C5D449B302C9A5273F3</stationID>
+			<name>Deutschlandfunk (Net)</name>
+			<shortname>DLF</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.dradio.de/streaming/dlf_hq_ogg.m3u</url>
+			<decoderclass>ogg</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12372378711F0C14BAFCD52CFA08D0F27D2BCE5C6DF69DDEAB93A15C916299F712736C</stationID>
+			<name>Deutschlandradio Kultur (Net)</name>
+			<shortname>DLR-K</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.dradio.de/streaming/dkultur_hq_ogg.m3u</url>
+			<decoderclass>ogg</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

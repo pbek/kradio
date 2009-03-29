@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r752</creator>
+			<maintainer>Ernst Martin Witte, emw@nocabal.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>1237142252D4B580AB620F4C41A0D5B0F92AC192E61FDE90FA15C502D8890783DE38ED</stationID>
+			<name>1Live (Net)</name>
+			<shortname>11</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.wdr.de/wdrlive/media/einslive.m3u</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>123714230553EA6A71F0FDA7C1F432C42B5301B85109884BEDF22F31441CC31D1F0C46</stationID>
+			<name>WDR2 (Net)</name>
+			<shortname>12</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.wdr.de/wdrlive/media/wdr2.m3u</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12371423584455BB25A3829E56DB7447374206E9BD2256B19666B1B5D877A847C06B70</stationID>
+			<name>WDR3 (Net)</name>
+			<shortname>13</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.wdr.de/wdrlive/media/wdr3.m3u</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1237142391C5A3DD0CDCB83D513BF86A572D4D511CABC23ED279EC8C1122582850FAA1</stationID>
+			<name>WDR4 (Net)</name>
+			<shortname>14</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.wdr.de/wdrlive/media/wdr4.m3u</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1235914433606741557349ED501B7B206A30E64AFEFBA6030A91EA9D79E3E1BD6CFC36B0A2</stationID>
+			<name>WDR5 (Net)</name>
+			<shortname>15</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.wdr.de/wdrlive/media/wdr5.m3u</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

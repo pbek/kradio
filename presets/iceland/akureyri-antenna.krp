@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-09-20</creator>
+			<maintainer>Sveinn í Felli,
+&lt;sveinki@nett.is&gt;</maintainer>
+			<changed>2007-09-19T16:06:04</changed>
+			<country>Iceland</country>
+			<city>Akureyri</city>
+			<media>Antenna</media>
+			<comments>Skýrustu stöðvarnar í Þorpinu, beint á móti
+Hallandssendunum og í sjónlínu við
+Vaðlaheiðarmöstrin.</comments>
+		</info>
+		<FrequencyRadioStation>
+		
+<stationID>1116455444C0A53C88CF0B0CDA23B95FF522492EDC8D85A8A49E1FFDEC642F996299EBB966</stationID>
+			<name>12spor AEY</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		
+<stationID>111645544483CB529B5F78FB43D62D676F8E160605DDB4EF2740153A1C170D9E77B153CEB7</stationID>
+			<name>Talstöðin AEY</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		
+<stationID>1116455444EF6B983A00E17071CFDECD828F1BDC0B8D79AAEA6B7070982F29B978DAAAA2E0</stationID>
+			<name>Gamla Gufan</name>
+			<shortname>RUV</shortname>
+			<icon>/home/sveinki/Documents/mnt/myndir/Skype
+Pictures/ruv0.jpg</icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		
+<stationID>1190205101A69868A03E013E9129D67A1A2C905B0269D0F028844017DE11058713DB990936</stationID>
+			<name>Bylgjan AEY</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.7504</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		
+<stationID>11902051081962E6F35CE1BCF2BC88F69F37181A8D9D354ACC18945492247F99F3C75D886B</stationID>
+			<name>Raus 2 AEY</name>
+			<shortname>R2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.5256</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+
+

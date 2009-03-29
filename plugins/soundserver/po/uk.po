@@ -1,0 +1,35 @@
+# translation of uk.po to Ukrainian
+# translation of ru.po to
+# translation of kradio-soundserver.po to
+# This file is put in the public domain.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: uk\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2007-01-30 22:22+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: soundserver.cpp:27
+#, fuzzy
+msgid "KRadio internal sound server"
+msgstr "запуск звукового сервера KRadio"
+
+#: soundserver.cpp:32
+msgid "SoundServer Plugin"
+msgstr "Модуль звукового сервера"
+
+#: soundserver.cpp:34
+msgid "initializing kradio soundserver"
+msgstr "запуск звукового сервера KRadio"
+
+#~ msgid "SoundServer"
+#~ msgstr "Звуковий сервер"

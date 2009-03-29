@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer></maintainer>
+			<changed></changed>
+			<country></country>
+			<city></city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>119273391379030B77DD389261E2FBA0A991B6701AF3A5862288308F40C544DA814C20062B</stationID>
+			<name>Перший Національний</name>
+			<shortname>ТБ1</shortname>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>65.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193316494B73351D34EF40803093A58359F67A37F7E8ED38E149F13D094A7905E06E42474</stationID>
+			<name>Українське Радіо 1</name>
+			<shortname>Радіо1</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>68.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933165321752787BF1002D79ACE570EE9B87CCBBCF246E72E419A7BE774439E089F5D44A</stationID>
+			<name>GALA Радіо</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>69</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193316570E34F57BD024F9CB7EF6C51C4F87FBF1411D36A02B804C5087321F7D3DD0ECA90</stationID>
+			<name>Радіо &quot;Промінь&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>71.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933167682F7B1489DDF8BA166B64AEAC020BD9AB32BC286C12CCABDBEA80A35B5E43BD6E</stationID>
+			<name>Студія Майдан</name>
+			<shortname></shortname>
+			<volumepreset>1</volumepreset>
+			<frequency>72.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11934927917C3A29AD199B030CBC096B56CF0305BA7D65E112F492AB599F562F27493D6107</stationID>
+			<name>Радіо &quot;Культура&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>72.86</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11934928943D70A4E7FE3DAF3F5BF2705C3969F3B99BB6C0553CA824E1F68E5EA9F1A8C884</stationID>
+			<name>Радіо &quot;Ренесанс&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>73.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193316628EC33AA5B9929BF4C2631419F0D92BD2F7383D5D729D88DBAC41A26E508A85A7A</stationID>
+			<name>1+1</name>
+			<shortname>ТБ2</shortname>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>91.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193316720AA067FCA76F0C1D40116F62296E77CA12F35FD747922056E9A187C9EB78BB8B4</stationID>
+			<name>Радіо 5 - Ретро FM</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193316785C490D8F8B28F9162A65D003FFEF4671633A4A077142D6B289FB47C3FE3EC79CA</stationID>
+			<name>Радіо &quot;Europa Plus Україна&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119331681445D8A1D12737761FAC73F3EBEDE3D113C96F8D7A3072F6BA50107BEC2E20C561</stationID>
+			<name>Радіо &quot;Континент&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193316826104C89BB1C8D151978F203860D8365D823887E838A590C5647A7888B4EA98EC9</stationID>
+			<name>Love Radio</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933168995119FD101E5D954F34B599ABB081A108B810AF992A1373662764B3D225A1BCB6</stationID>
+			<name>Радіо &quot;Джем FM&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11927339390C925CC6F4D2FFC1A39CB31E29BD522BCE8D9ABA40F583629678876816CE2A98</stationID>
+			<name>Радіо &quot;ЕРА FM&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933169254CD9D9791B9F273C4813420DC8FC90514E836161B3CDC2F991AC54E6BC3A28A5</stationID>
+			<name>ХIT FM Україна</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933169780A493D079BFF56533C5053CEA8FE02353BD90310F14495816E68CF86A74DF015</stationID>
+			<name>Радіо &quot;Ренесанс&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119331699790CF2CEFAC144AC8DE31A870920A047FC7C6032AA36CE108C2F8650447949673</stationID>
+			<name>Радіо Київ</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>98</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317011853A0311E4EC1F465CECA08BAB32174E31A836E55DF7CBA4888BC6F5F5A0C127</stationID>
+			<name>Русское радио Україна</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317033B598FBEDC8EABE2B9D942948474DE8A883AA4C7F8A67D09A3E95A76EE9173005</stationID>
+			<name>Радіо &quot;Nostalgie&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>99</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317086C9C8D6C58704A210A165F228AEC16247F8B762407EA5310529D31452E916770D</stationID>
+			<name>Radio One</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317113A97FA7ECBFA63810E2A2057D466C163AFA77A84ED004D6B68D24C64D5B58F260</stationID>
+			<name>GALA Радіо</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>100</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933171496457288D14D60DC35B0881F57DDF96C69A4A11E1DB04F13586FAF5E6D864C2DE</stationID>
+			<name>Народне радіо</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317177C554C7CF311160E3FD986FC8CAA7BDA7710B3CB1558E3BF482BCBBABE7F5653C</stationID>
+			<name>Радіо Мелодія</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>119331719696B32B0FC85E58AA2DBE73FABAE6E48F944E6DDF47149319834D58BF72709178</stationID>
+			<name>MusicРадіо 101.5FM</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11934929310E6587D3850F1271122E6F0EDB876906C8322E0AC9D7420EBFE33412288DB24B</stationID>
+			<name>Гарне радіо &quot;Шансон&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317221249DCB1C7B41AD3B55410BE79B37A6A0255EFE17FCD590BF2555F1EBBA79696B</stationID>
+			<name>Просто Раді.О</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317243B36E1F3F4F27D1638AD01331ABB4A2CF35E3614E64E54BB245A8BF4646FD9098</stationID>
+			<name>Люкс FM</name>
+			<shortname>Люкс FM</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317469ABB39852E8DC69F360F2D9D920193307D7333BE3DC2B6A661F796B316709FEA1</stationID>
+			<name>Радіо РОКС Україна</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317255835DCE993DBAD5D6179A124D84301373F933B474A95849C1B29CA26B416D6271</stationID>
+			<name>Радіо Шарманка</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>104</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933172801EACE4A7FE3F78FCAE40F4C93C5C3C4E44F57967CD206D7567429A11898B05F7</stationID>
+			<name>NRJ Hit Music Only</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933172951418D970E5224A322D5D3CDE884E17FF9A77AFEE45038A700C283BCDF4546971</stationID>
+			<name>Промінь</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>105</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193493005253C16A430195E9F18969767B0A2C3F2ED37DF1A2C9307977481F7848345F23B</stationID>
+			<name>Радіо &quot;Перець FM&quot;</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933173102BF63585CC18E76ECAE440C6EF690DDD1F564FC7F98B900A640DA0F9FAA97FEB</stationID>
+			<name>Доросле радіо</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>106</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933173320EB03AC65D7E9302C66AC44B173E19A37F5075E812B5C13413B3E38E6AED2244</stationID>
+			<name>Dance radio &quot;Kiss FM&quot;</name>
+			<shortname>Kiss FM</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193317353991E196D4840CAA699A52C9560081AC37D77CC34073594673069F8B347017151</stationID>
+			<name>Радіо &quot;Europa FM&quot;</name>
+			<shortname>Europa FM</shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>107</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11933173660CA24F98EDC6DE77443FE71898A479B6BACAC5FE7B85C6A08CC96714689CE881</stationID>
+			<name>Авторадіо-Україна</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1193462232F3BBCE734B7DE4DE9B2158DC76B0AB5A88910A99720CFEC43C02F16E87E22E23</stationID>
+			<name>Наше Радіо</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.9</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

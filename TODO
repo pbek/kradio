@@ -1,0 +1,211 @@
+=========
+
+For Beta3:
+
+
+Later:
+  * netradio: make buffer sizes for internet radio configurable
+  * netradio: better realization of display
+  * ?fix: config dialog: force "apply" when changing pages  (requires dirty flag/function in all pages!)
+  * feature: flac rec support
+  * feature: record to new file, but do not stop recording!
+  * fix: get rid of QString::toLocal8Bit()
+
+  * --done-- fix: prepare translations
+  * --done-- fix: german translation
+  * --done-- fix: stddisplay: rds info update on station change
+  * --done-- fix debian packaging
+  * --done-- add preset files queued in mail inbox
+  * --done-- fix: smoother radio text scrolling in std view
+  * --done-- support for asx xml files
+  * --done-- netradio: support for playlist urls
+  * --done-- feature: what should be displayed in the config dialog below the icons in case there are multiple instances?
+  * --done-- fix: default names for plugins should not contain "instance1" should be added by pluginmanger for config only
+  * --done-- fix: Give Sound Devices/Plugins in Combo-Boxes of V4L Cfg etc. better names than just AlsaSound..blah1
+  * --done-- feature: add support for renaming plugins
+  * --done-- fix: crash if recording is released from rec menu (delete of action that called the slot)
+  * --done-- fix: changing alsa override sampling setup while playing: playback device initialized badly...
+  * --done-- fix: try to reproduce: active playback: sound completely stops when config display is put to other desktop
+  * --done-- fix: active playback: alsa buffer underrun once after few seconds
+  * --done-- fix: soft volume broken again
+  * --done-- fix: again: internet radio does not display station name when switched from fm radio
+  * --done-- help: some docu in the alsa config when the capture format override is required
+  * --done-- if active playback: should we mute the playback for the capture input? option, on by default?
+  * --done-- fix: soft volume: correct mute implementation (vol = 0 is ambigious)
+  * --done-- fix: alsa/conf should periodically look for changed cards
+  * --notfixable-- fix: moving windows on hide/show : kradio is conforming to Qt documentation (http://doc.trolltech.com/main-snapshot/geometry.html) issue is known as window manager bug
+  * --done-- fix: alsa: softvolume
+  * --done-- fix: switch from fm to net: display does not show station name
+  * --done-- fix: default capture format for alsa devices
+  * --done-- fix: Plugin Libs Dialog: KUrlRequester should have better def
+         directory, e.g. $KDEDIR/libs/kradio/plugins
+  * --done-- fix: use presets standard dir for load preset button in config dialog
+  * --done-- fix: replace url by name for inet stations
+  * --done-- fix: install dir for libs, presets, etc. should be kradio4 instead of kradio
+  * --done-- fix: switch search paths to kradio4: lirc, libs, presets
+  * --done-- fix: allow adding stations from preset file
+  * --done-- fix: potential segfault on first startup if no plugins are found
+  * --done-- fix: stddisplay has broken entry in widgets hide/show menu on first startup
+  * --done-- autocheck for new plugins
+  * --not fixable-- reason: timeshifter mixer output is not mutable: ymfpci/wave:  * -- fix: pause: if active playback with mutable output (e.g. ymfpci/pcm) unmute does not work
+  * --done-- fix: Bug 2638525
+  * --done-- fix: Icon for InternetRadio
+  * --done-- dbus plugin
+  * --done-- netradio: support for decoding types (mp3/ogg/auto)
+  * --done-- fix: pause does not work with internet radio stations
+  * --done-- fix: recording does not work 100% with internet radio stations
+  * --done-- fix: enable initial lirc_client state/mode selection
+  * --done-- pause also does not work for active playback
+  * --done-- activatstation in power-onstate fails if old station is v4l, new station is net
+  * --done-- initial version of internet stations
+  * --done-- include recently emailed translations
+  * --done-- !fix: find a way to get the window restore stuff consistent, e.g. distinguish restore all (org desktops)
+             and restore one (current desktop)
+  * --done-- FAQ: write something where RDS support can be seen.
+  * --done-- lirc: without event map: hang/loop/freeze
+  * --done-- FAQ: how to setup lirc, use event map!! (?)
+  * --done-- exit button in stdview not there
+  * --done-- FAQ item: how to compile
+  * --done-- station-wise mono switch
+  * --done-- fix: make pausing function explicit in GUI and internally
+  * --done-- fix: mute playback channel on power off worked, but unmute at power on afterwards failed:)
+  * --done-- fix: get rid of unnecessary warnings on Iconnect stuff during compile
+  * --done-- fix: canceling kradios config dialog unnecessarily opens sound device, even if nothing changed
+  * --done-- feature: improve device information on radio device in v4l config dialog (hints for permissions, etc)
+  * --done-- polish: give description for "active capture" in config dialog... perhaps use tooltips?
+  * --done-- provide some PVR-help as tooltips and normal labels in v4l config and streaming config
+  * --done-- fix: default tab for alsa config is mixer level settings, should be device selection
+  * --done-- fix: default tab for v4l is options, not devices
+  * --done-- fix: kglobalaccel crashes again on kradio start
+  * --done-- fix: PVR mode: when recording is switched on without switching on power before, kradio consumes 100% cpu time (50% system)
+  * --done-- beautify cmake output of supported features
+  * --done-- write README.PVR
+  * --done-- test streaming plugin (with /dev/urandom as quasi emulation)
+  * --done-- fix: many crashes in stream config possible
+  * --done-- fix: consistent use of KUrl in Streaming Plugin
+  * --done-- fix: icon for widgets in taskbar broken
+  * --done-- fix: short cuts are not yet well in place
+  * --done-- fix: quickbar / float does not restore size properly (size policy has been missing in quickbar)
+  * --done-- fix: icons for v4l, quickbar
+  * --done-- fix: rename kradio icon to kradio4 like the application name or let kradio still be named kradio not kradio4
+  * --done-- fix: docking menu titles
+  * --done-- fix: quickbar behaves strange after config update, works again after moving mouse over quickbar window
+  * --done-- fix: pause button crashes if temp file is not writable
+  * --done-- fix: add makers for dB numbers
+  * --done-- fix: enable seconds in alarm config page
+  * --done-- fix: set alsa buffer size to 64 kb by default
+  * --done-- fix: time annotation for recorded data does not work properly
+                  (was: buffer management of meta data in encoder.cpp was broken)
+  * --done-- fix: button "recording" in monitor fails if power is off
+  * --done-- fix: recording monitor does not notice file name when recording, does
+                  not notice power state changes, etc...
+  * --done-- fix: applying config changes stops recording monitor updates
+  * --done-- fix: recording causes buffer overflows (was caused by broken recording directory extration in config dialog)
+  * --done-- fix: some states are not stored in kradiorc, e.g. current station
+  * --done-- fix: standard view does not correlate frequency with stations correctly
+  * --done-- fix: Config Dialog seems to be parent for many other widgets / main window (something to do with "group leader window" ? see KWindowInfo)
+  * --done-- fix: detect strange frequency range settings and reset to default.
+                  might be caused by misbehaving radio card
+  * --done-- fix: storing of window positions seems not to work (hide/show stuff)
+  * --done-- fix: why is v4l2 not detected if available?
+  * --done-- fix: v4l2 support always enabled, selectable explicitly by GUI radio buttons
+
+  * --done-- add: RDS support  http://www.linuxtv.org/downloads/video4linux/API/V4L1_API.html
+                           http://www.linuxtv.org/downloads/video4linux/API/V4L2_API/spec-single/v4l2.html#RDS
+                           ftp://ftp.rds.org.uk/pub/acrobat/rbds1998.pdf
+
+  * --done-- add: RDS support to docking menu (tool tips)
+  * --done-- add restore button for config dialog
+  * --done-- remove time/size from recording monitor when recording is not running
+  * --done-- fix status display for recording monitor
+  * --done-- option for display window type (entry in taskbar or toolbar window)
+  * --done-- 32kHz support
+
+  * --done-- prepare KRadio4-beta1 announcement:
+
+     - Mention amount of changes! LOC is hard since complete structure
+       changed. Perhaps number of SVN commits and entries in the change log?
+       But that does not cover the porting itself...
+     - Call for Contributions
+     - Mention FAQ
+     - Mention new features (RDS integration, shortcuts)
+
+
+  * replace all open(char*) by QFile stuff
+
+  * --done-- WWW: add FAQ! (PVR, ...)
+  * --done-- check: PVR mode
+  * add PVR auto-setup/detection
+  * --done-- answer PVR requests
+
+  * --done-- support for 65MHz
+
+  * double click options for tray icon: select window to open
+
+
+  * speed up kradio start
+  * done? inet-stream-out plugin
+  * make file operations compliant with non-ascii-charsets (e.g. cyrillic)
+  * tooltips in config dialog
+  * background pixmap for display
+  * --done-- internet radio streams
+  * automatic station icon scaling
+  * remote-kradio: run v4l plugin on remote machine, transfer data to
+                   local machine
+  * client-server concept: run kradio in background, make client gui individual
+                           application
+
+  * --done-- RDS support
+  * --done-- Hotkey support
+  * FAQ
+      - devices (radio, mixer, dsp)
+      - mixer settings for recording
+      - artsd
+
+  * tooltips complete?
+
+  * --done-- Bugfix: Window on other desktops remain hidden when hideall is selected
+  * --done-- make ALSA support conditional/configurable in configure script
+  * --dropped-not-used-by-kradio-- check for libflac in configure
+  * --done-- 48kHz-Support
+  * --done-- translations
+  * --done-- prepare for translation: check for missing i18n translations?
+  * --done-- 48kHz support // DONE
+  * --done-- support for PVR radio cards, (/dev/video24...) // DONE
+  * --done-- streaming basic plugin, lateron extendable for internet radio // DONE
+  * --done-- indicators in docking icon for recording // DONE
+  * --done-- fix station editor dialog // DONE
+  * --done-- fix hang/high cpu load when licq is restarted (broken pipe?) // DONE
+  * --done-- define final single/doubleclick tray icon behaviour // DONE (configurable now)
+  * --done-- warnings if permissions are not set correctly // DONE
+  * --done-- GUI improvements for pause function // DONE
+  * --done-- use size_t instead of unsigned ints for all sizes!!! (was reason for
+             problems in pointer arithmetic on amd64) // DONE
+  * --done-- gui-errormessages // DONE
+  * --done-- if first run => less error messages, ask user for configuration,
+             station scan, etc...  // DONE
+  * --done-- alsa support // DONE
+
+
+
+FUTURE
+======
+  * just grep for FIXME and TODO...
+
+
+USABILITY, STYLE-GUIDE
+======================
+  * /tmp/kradio* should use offical KDE tmpdir instead // really necessary? it is configurable
+  * still applicable for kde4? more use of KStdGuiItem
+  * sort out the KDE hicolor / crystal / SVG icon mess
+  * Buildsystem: manpage generation
+  * Buildsystem: apidocs
+  * KDE uses l10n instead of i18n now
+  * Autohell: configure checks for dependency libs, pkg-config
+
+DISTRIBUTION
+============
+  * Get svn2dist (used for kdeextragear) to work with KRadio. This will
+    give us nice kradio.src.gz tarballs.
+  * apps.kde.org ?!?!
+  * dot.kde.org ????

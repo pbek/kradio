@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-1.0beta2</creator>
+			<maintainer>Marcin&quot;WASYL&quot;Basiaga, 
+WasylNS@interia.pl</maintainer>
+			<changed>2005-11-30T14:36:51</changed>
+			<country>Poland</country>
+			<city>Nowy Sącz</city>
+			<media>antenna</media>
+			<comments>Contains merged Data</comments>
+		</info>
+		<FrequencyRadioStation>
+		 
+<stationID>1104422521ECAFDA4C92BFABDCA1C6CE092CD4E64C696A81194D6FE9F26DEF7D9999466F8E</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF FM</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>103.196</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		 
+<stationID>1104426638C6D4851AD1CE10470FBE94C2FFF50A6011843F618E3E5453686AFA1C1EB1AE23</stationID>
+			<name>Radio Zet</name>
+			<shortname>Zetka</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>97.796</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		 
+<stationID>1104429437CB3574C52E0E9C7C5D92D4C557A2B457B005AE4DF83176CC2CD5F9E9DE65FD04</stationID>
+			<name>Polskie Radio PR 3</name>
+			<shortname>Trójka</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.796</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		 
+<stationID>1104429442C8D842CAF84FE1C33EA30EC6CA2E7653E11E1C384D4EF4946409D66EB2334273</stationID>
+			<name>Polskie Radio PR 1</name>
+			<shortname>Jedynka</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>99.2007</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		 
+<stationID>110449736641CF389791C851CE7ACA60328CECD88E3722CC969EB7C3DF4ABA7DDEF7D86FA3</stationID>
+			<name>Złote Przeboje ECHO</name>
+			<shortname>ECHO</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.7999</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+		 
+<stationID>1104849921CBBF6A08B9FF1C1FAE90125D357C387AB173C28038A02076EF970BB49C181077</stationID>
+			<name>Radio Kraków</name>
+			<shortname>Radio Kraków</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>90.05</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

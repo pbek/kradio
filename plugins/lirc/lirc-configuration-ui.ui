@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Ernst Martin Witte</author>
+ <class>LIRCConfigurationUI</class>
+ <widget class="QWidget" name="LIRCConfigurationUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>585</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LIRCConfigurationUI</string>
+  </property>
+  <layout class="QGridLayout">
+   <item row="2" column="0" colspan="3">
+    <widget class="K3ListView" name="m_ActionList">
+     <property name="allColumnsShowFocus">
+      <bool>true</bool>
+     </property>
+     <property name="itemMargin">
+      <number>2</number>
+     </property>
+     <property name="rootIsDecorated">
+      <bool>false</bool>
+     </property>
+     <property name="resizeMode">
+      <enum>Q3ListView::AllColumns</enum>
+     </property>
+     <property name="defaultRenameAction">
+      <enum>Q3ListView::Accept</enum>
+     </property>
+     <property name="fullWidth">
+      <bool>true</bool>
+     </property>
+     <column>
+      <property name="text">
+       <string>Action</string>
+      </property>
+      <property name="clickable">
+       <bool>true</bool>
+      </property>
+      <property name="resizable">
+       <bool>true</bool>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>LIRC String</string>
+      </property>
+      <property name="clickable">
+       <bool>true</bool>
+      </property>
+      <property name="resizable">
+       <bool>true</bool>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Alternative LIRC String</string>
+      </property>
+      <property name="clickable">
+       <bool>true</bool>
+      </property>
+      <property name="resizable">
+       <bool>true</bool>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="Line" name="line1">
+     <property name="frameShape">
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="QLabel" name="m_LabelHints">
+     <property name="text">
+      <string>textLabel1</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="KComboBox" name="comboStartupPowerOffMode">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Startup Mode override for Power Off</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Startup Mode override for Power On</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="KComboBox" name="comboStartupPowerOnMode">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="0"/>
+ <pixmapfunction>SmallIconSet</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>K3ListView</class>
+   <extends>Q3ListView</extends>
+   <header>k3listview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <includes>
+  <include location="local">k3listview.h</include>
+ </includes>
+ <resources/>
+ <connections/>
+</ui>

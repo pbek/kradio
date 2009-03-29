@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>Igor Lobov &lt;ivl@front.ru&gt;</maintainer>
+			<changed>2009-03-09T15:03:15</changed>
+			<country>Ukraine</country>
+			<city>Lugansk</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1064330466317A41A714F7A3C70B22A8F4F88EFF1AD5870570230FAC49A74C6528C435FC32</stationID>
+			<name>Люкс FM</name>
+			<shortname>Люкс FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236531204D675F1E3913FCD945685B736986EB65B4576DBEF430FA337D3355E6655114EC7</stationID>
+			<name>Шансон</name>
+			<shortname>Шансон</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236532766B6BB266A8C8AF15F1FA2F7A1F4461D5DE0E36260BD220F78729380ACA3406C9B</stationID>
+			<name>Ретро FM</name>
+			<shortname>Ретро FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123652999119E06577B29B9481F49463944679117D38DE47AB2BEE399E28B27C513527092D</stationID>
+			<name>Шарманка</name>
+			<shortname>Шарманка</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123653079854CDC1FA489FD9BC0C9018688138439EF1748E7BAE978D1CF37CEE1DC221B809</stationID>
+			<name>Мелодия</name>
+			<shortname>Мелодия</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236530818BA5A7BD0D0F5C8054A78EE43566C46EAABF99A316503E0B994C39788CCE173DC</stationID>
+			<name>Авторадио</name>
+			<shortname>Авторадио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236532798123231CCB6DC001884D40CE507985DC23093DE1B72397A6D81CD9D2DC6BA286E</stationID>
+			<name>М-FM</name>
+			<shortname>М-FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236532812AB511522487A6B437E83DB867BD18E756C18FE228864BCE14210651F5FAC9F80</stationID>
+			<name>Русское радио</name>
+			<shortname>Русское радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236530838F517539CE7C5DFC59F97A7B561EA5F01A545D5142C6F3D85CBA980B86B55AE19</stationID>
+			<name>Пульс</name>
+			<shortname>Пульс</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123653086143C3C71D4F8FCF61645F0655E43058A049124EB95D09189797463C0A6DA402F1</stationID>
+			<name>Хит FM</name>
+			<shortname>Хит FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236530899DE7E038C4D62B940D7BEF4D05B90384E131BE490EEA2AEEF870D8160EDCB96B1</stationID>
+			<name>Европа +</name>
+			<shortname>Европа +</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123653093974B772F5351BF4CE172C68E24EF386EB62BEDE1A1180BB09765AB49F261B2A1C</stationID>
+			<name>Эхо</name>
+			<shortname>Эхо</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123653099504B71EFC17B5F7F3EBDE2EA0617249C65BB59B7741BF1F3D849E26650E9F2C3C</stationID>
+			<name>Наше радио</name>
+			<shortname>Наше радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1236531097D21AAB0774E01FCA1CFF26D1EF66074A64E316210A998AD806A60DBB741F0E18</stationID>
+			<name>Гала радио</name>
+			<shortname>Гала радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123653114112A4E959FB3005DF5381500039A1F9FC4AC640902606A73982B3F0532CDBEFB8</stationID>
+			<name>Скайвэй (KISS FM)</name>
+			<shortname>Скайвэй (KISS FM)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123653282541358FF62E3196D45E6B221CB959E72B914B0D929AA066ADC7D49F90F6B1F7F6</stationID>
+			<name>Радио ЭРА</name>
+			<shortname>Радио ЭРА</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.3</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

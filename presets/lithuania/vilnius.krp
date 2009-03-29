@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>Andrzej Valchik</maintainer>
+			<changed>2008-08-27T23:00:25</changed>
+			<country>Lithuania</country>
+			<city>Vilnius</city>
+			<media></media>
+			<comments>Contains merged Data</comments>
+		</info>
+		<FrequencyRadioStation>
+			
+<stationID>12198672179D04D8F6F96417B40484863BE066FC65D89EB7336B216618B7319056873D6999</stationID>
+			<name>Zip FM</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1219867219728EC984D598E6FC962752395F584B659E6D7C2DCF837FCE3C20951C5DD66969</stationID>
+			<name>Russian Radio</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1219867220014EF13080BDD4E133C40C717013A6D0E184DED3CE7D49C820379D0F4ED69288</stationID>
+			<name>Radiocentras</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1219867222255675B2B22E8A9936E9BCE61691DD75DCE674AE5CD3A0D1B83C717CB64D7FCA</stationID>
+			<name>M1</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.801</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>121986753461099673260F43AC1048500BA8CD6A48CE88E7C3655AC55029A0533699DEEE5C</stationID>
+			<name>Power Hit Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>121986760885465B9D5A74B4022D81F51C0478BAA1BF2E57D4C4A983FFB26616F66E28491A</stationID>
+			<name>European Hit Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12198670760B330000E51F0F3617E1C73F67120DF45ACE16AB33D101129A0F65BEF43D2847</stationID>
+			<name>Opus 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12198677026740FED9FAD2BC544E5FFDF0F11F5B9FCF3C84AE76210C237B238794FE3E35B0</stationID>
+			<name>M1+</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.2</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot_2005_11_27</creator>
+			<maintainer>Gabriele Armao - &lt;armao@cs.unibo.it&gt;</maintainer>
+			<changed>2006-10-04T19:27:15</changed>
+			<country>Italy</country>
+			<city>Bologna</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1159867796E4871EB13C28A4A30D192702AE16A05157116050944CD6793E90BF9431658294</stationID>
+			<name>Puntoradio</name>
+			<shortname>Puntoradio</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>88</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867800ACD74C759A92F0A0145B76486A9BA709640E3C8F5E09F4AA2349729389715EEB</stationID>
+			<name>Radio 1</name>
+			<shortname>Radio 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5252</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11598678056B10C8341D5C385A6E8083B51B686CF65A96E423BB96146AB0EBB15F12EBAEAA</stationID>
+			<name>Radio 2</name>
+			<shortname>Radio 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.6753</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867815F32674A7E6FCF9D777C56835DE55FD2EF382991E57FA34D17B6084D8AE6A96DA</stationID>
+			<name>Radio Gamma</name>
+			<shortname>Radio Gamma</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.05</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115986781556CB6407ED08D4399F2B64B0D712DF67904FE87E846290502F5E7D29F74273D7</stationID>
+			<name>Radio Company</name>
+			<shortname>Radio Company</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.3755</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115998100090243491D552054F89D8AE7CC4C1BBB8E5A75979E8623EDCE4B4FA88E66F5259</stationID>
+			<name>Radio Città del Capo</name>
+			<shortname>Radio Città del Capo</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867821D06CE1DEFACAE89FA611D6C23F51494EF2AA0E9644A204A103574E4246A500F4</stationID>
+			<name>Radio Nettuno</name>
+			<shortname>Radio Nettuno</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867823CDAAED89B09854AE271D642C9CA742EEAD75D17800B0139C21BA29E8C3A48F45</stationID>
+			<name>Radio International</name>
+			<shortname>Radio International</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.5756</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867824DFE7DA44AA821CEF20013FB9698274C644DA33DCFCDB594271F69B9B7B21782A</stationID>
+			<name>Paneburro</name>
+			<shortname>Paneburro</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11598678290325C9320F5DE2D693129FAD419939421E812A1C96B5A41EF5DCFC3951EC0B15</stationID>
+			<name>Playstudio</name>
+			<shortname>Playstudio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159981753D8BD52A46D7EAFD830788FE999D83B1A3CBF25070AED7694DA606FFFC5359D60</stationID>
+			<name>Radio Deejay</name>
+			<shortname>Radio Deejay</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159981844BCA202D2B3664A3DF04F9A5B0CC018D76C0BF6D378608CD6A7CD5198C44896DA</stationID>
+			<name>Radio Fashion</name>
+			<shortname>Radio Fashion</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867834C67A4C4EFF36BBBA44B89F4EEFA5A0FDA68318BE7C332940741BE05CC9FC4E02</stationID>
+			<name>Radio Maria</name>
+			<shortname>Radio Maria</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867835AA567DCB00F1CDA9CEC1D422F70EBDA6D4F7DA7013A2BCC645F4B8AEEEC9BFAE</stationID>
+			<name>Radio Monte Carlo 2</name>
+			<shortname>RMC2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115998202597FB17CD324D30D4365EBFAAB74C28DB868BB8D425D1D730113AB84587524351</stationID>
+			<name>RTL 102.5</name>
+			<shortname>RTL 102.5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159982065046E122F7603346855EF8A55392F69BAFD8A73FA43B2C1A7CD10325A2E7F75DF</stationID>
+			<name>Kiss Kiss</name>
+			<shortname>Kiss Kiss</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115986783739E74C73DCAE72789AB048FB7551DCB819C63A7F1870A746B08AB62F3BE80B2C</stationID>
+			<name>Radio Anni 60</name>
+			<shortname>Radio Anni 60</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.351</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115986783967AD82D48D91060A6D094CC266C7B84667EE0219D268835AD5B65A9E7B835DC0</stationID>
+			<name>Radio Bruno</name>
+			<shortname>Radio Bruno</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11599822368F30FEE3569AD480E8E9EDDC59E3ADB3F077542FD82BED3B147C62ACF47268AF</stationID>
+			<name>Radio Città Fujiko</name>
+			<shortname>Radio Città Fujiko</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.05</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867840EC49187AF76B4CC4862BD711948CF56DB9FBCDB0040409329E5918F1C4FB9E8C</stationID>
+			<name>Radio 103.3</name>
+			<shortname>Radio 103.3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.251</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11599823610B03AD0A2BA306E94007E0E548C1FDF3F7A2960FA9E2F745A08C80CF286FEF31</stationID>
+			<name>Radio105</name>
+			<shortname>Radio105</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867842CC2EB15567BD3B2BB8167B7D0A467877326888C087BE7FE78FE8826CDB70FBB7</stationID>
+			<name>Radio Sabbia</name>
+			<shortname>Radio Sabbia</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.976</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11598678446057BC4116C3FD33AF7BAF73951B6DAEE334DC8A35311D6952232AC131AB86D2</stationID>
+			<name>Radio DImensione Suono</name>
+			<shortname>RDS</shortname>
+			<icon></icon>
+			<volumepreset>0</volumepreset>
+			<frequency>104.501</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>115986784537E07F9C327005C0DB00C6D1BB6749175482EB87FE5C7DEE67AEDEC6EAB06921</stationID>
+			<name>Lattemiele</name>
+			<shortname>Lattemiele</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.026</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>11598678482059D4D5764000004CF5FD49E8796D8E1E1B5DA24CBAFB3670FCBC1F9D644FFF</stationID>
+			<name>Playradio</name>
+			<shortname>Playradio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.076</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867850B8776E8E5D779CC8EC9CD4FBEF53C3A6CBDBAB1049FBC64455B0BA3222B9B964</stationID>
+			<name>Radio 24</name>
+			<shortname>Radio 24</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.001</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867852D619DE2433296B2FD51950E7A1F34D750801F1D90BBEEC2750851A9166F65C0C</stationID>
+			<name>Lattemiele</name>
+			<shortname>Lattemiele</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.526</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1159867853CCFF791DEAD366D390AB80F332149BE5523826D5927A027319AABD4A118FFCF2</stationID>
+			<name>Radio 101</name>
+			<shortname>Radio 101</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.951</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

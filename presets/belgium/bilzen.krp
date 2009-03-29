@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>Roeland Moors</maintainer>
+			<changed>2008-07-05T14:57:10</changed>
+			<country>Belgie</country>
+			<city>Bilzen</city>
+			<media></media>
+			<comments> Contains merged Data</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1082619533D0EF312578B2C12F4D76EE3E45054110BED5B081ABF144AEAE7E0E23E51FCEB6</stationID>
+			<name>Radio1 (VRT)</name>
+			<shortname>Radio1 (VRT)</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<frequency>94.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>121526266366A4F91967AAFD7340DFA2354AB1E0B0953070B481BD60DE45EB158429D9CE11</stationID>
+			<name>Radio2 (VRT)</name>
+			<shortname>Radio2 (VRT)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215262732B6CFFDFD9EE3DDA03BC69D81B3607BEE359C5782A6C5CF2600670A3476067C19</stationID>
+			<name>Donna (VRT)</name>
+			<shortname>Donna (VRT)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215262778F380B95C0963A856E4BCA4758D380E971B58C807E61054FED586B5697679FC06</stationID>
+			<name>Studio Brussel (VRT)</name>
+			<shortname>Stubru (VRT)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152628270707ED8F73E3365F315BF3F0197030E52CAE0AA84042712972E9FA0CC9C77D0A</stationID>
+			<name>Radio Vlaanderen Internationaal (VRT)</name>
+			<shortname>RVI (VRT)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215262923ED9EC63654C6B06E16F90402F226CF58E3DCD28F8955F98C8379907DA2BD3547</stationID>
+			<name>Klara (VRT)</name>
+			<shortname>Klara (VRT)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>121526295602E09EEAB3D203004C4EFF337334F8F2CD1F5EB215BD3B9CE0C2D15CB1380E0A</stationID>
+			<name>Radio1 (NL)</name>
+			<shortname>Radio1 (NL)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152630627C3408C0B9033C392BDBCDDCF6DDD41503B56474238AD1B7888BF535D0D327F0</stationID>
+			<name>Radio2 (NL)</name>
+			<shortname>Radio2 (NL)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152635620BF54DC6411AD7AC204ECF8D99A6C6539146C49BFDF75E9363996EC938AB9302</stationID>
+			<name>Radio3 (NL)</name>
+			<shortname>Radio3 (NL)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215263237792D55D9D3007EC6934A83E8A91906B3A011C9E11CD71882074A1F2CBF4F07EE</stationID>
+			<name>Radio4 (NL)</name>
+			<shortname>Radio4 (NL)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152633215918E45416B70B36915C5447EF08FC2D698B1ADBB26FFDBE0E8B8C4BA60617C9</stationID>
+			<name>4FM</name>
+			<shortname>4FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152633665237A15C2EDF4B82DCAD1414FB185F88EE629C94CB4201F4482B25DC9E55F893</stationID>
+			<name>Q-music</name>
+			<shortname>Q-music</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215263397F320B0728B535D76E996EE0D6F5C0F9540BEBF2B8FAED6E9CF66AEDF356E1CD8</stationID>
+			<name>BBC World</name>
+			<shortname>BBC World</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215263435410BB4AA6ABE12E2C3C9DB5D0DB850F7D3C415A3289A2D2B29509C1B6491A181</stationID>
+			<name>BBC 2</name>
+			<shortname>BBC 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152634678854A21F1A0C01FFA3A5E6E235B37C0C306FAF5617F305D5F924E739B15D430C</stationID>
+			<name>BBC3</name>
+			<shortname>BBC3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152632098F327814F8708422B8670F872234946D641AAFFA5A67C46947398C3CA7910071</stationID>
+			<name>Classic 21 (RTBF)</name>
+			<shortname>Classic 21 (RTBF)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152638141A9295AB35F2F119D0F5CB6EC63BA523A8256BB0A1E41432016D03B4BFB61BD7</stationID>
+			<name>Musique 3 (RTBF)</name>
+			<shortname>Musique 3 (RTBF)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152638542B98B42A3DD4AF0FB042498092849D753A1A6A9C28E098C5A4A498AD7AB94A46</stationID>
+			<name>Viva Cite (RTBF)
+</name>
+			<shortname>Viva Cite (RTBF)
+</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215263895E17E4FC1BB559557C961B24DD5F77A1BA5CDB57891797D2B0D5E27E91C36ABC3</stationID>
+			<name>Viva Cite</name>
+			<shortname>Viva Cite</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12152640255FAE61BC958F1D9B0B77400462FB6309D5AC1BE3DB309A956FD09B034B9DA6E6</stationID>
+			<name>BRF
+</name>
+			<shortname>BRF
+</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1215264045475CC0A5EB09DBC99EFF53CE27532E793FF6A9EFF69CB86BCBC4A99A5BC6E78F</stationID>
+			<name>Deutsche Welle
+</name>
+			<shortname>Deutsche Welle
+</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>121526350496BB70933EDA4409C2127EB51B05C994C2D679D5A87C0B0DB93066F0B8ECFA2A</stationID>
+			<name>La premiere (RTBF)</name>
+			<shortname>La premiere (RTBF)</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>121526407469366F46B22C57462B698052BE78CB8947776AEBA38AA7CB78857EEC834466B3</stationID>
+			<name>Sporza</name>
+			<shortname>Sporza</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

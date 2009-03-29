@@ -1,0 +1,171 @@
+# translation of de.po to
+# translation of kradio-timecontrol.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 12:11+0200\n"
+"PO-Revision-Date: 2009-03-29 12:03+0200\n"
+"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#. i18n: file: timecontrol-configuration-ui.ui:19
+#. i18n: ectx: property (text), widget (QLabel, labelSleep)
+#: rc.cpp:3 rc.cpp:45
+msgid "sleep countdown"
+msgstr "Schlummermodus"
+
+#. i18n: file: timecontrol-configuration-ui.ui:29
+#. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
+#: rc.cpp:6 rc.cpp:48
+msgid " min"
+msgstr " min"
+
+#. i18n: file: timecontrol-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
+#: rc.cpp:9 rc.cpp:51 timecontrol.cpp:278
+msgid "Alarms"
+msgstr "Wecker"
+
+#. i18n: file: timecontrol-configuration-ui.ui:123
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
+#: rc.cpp:12 rc.cpp:54
+msgid "Date"
+msgstr "Datum"
+
+#. i18n: file: timecontrol-configuration-ui.ui:139
+#. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
+#: rc.cpp:15 rc.cpp:57
+msgid "dd.MM.yyyy"
+msgstr "dd.MM.yyyy"
+
+#. i18n: file: timecontrol-configuration-ui.ui:150
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
+#: rc.cpp:18 rc.cpp:60
+msgid "Time"
+msgstr "Uhrzeit"
+
+#. i18n: file: timecontrol-configuration-ui.ui:166
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
+#: rc.cpp:21 rc.cpp:63
+msgid "HH:mm:ss"
+msgstr "HH:mm:ss"
+
+#. i18n: file: timecontrol-configuration-ui.ui:177
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
+#: rc.cpp:24 rc.cpp:66
+msgid "Volume"
+msgstr "Lautstärke"
+
+#. i18n: file: timecontrol-configuration-ui.ui:193
+#. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
+#: rc.cpp:28 rc.cpp:70
+#, no-c-format
+msgid " %"
+msgstr " %"
+
+#. i18n: file: timecontrol-configuration-ui.ui:234
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
+#: rc.cpp:31 rc.cpp:73
+msgid "daily/weekly"
+msgstr "täglich/wöchentlich"
+
+#. i18n: file: timecontrol-configuration-ui.ui:241
+#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
+#: rc.cpp:34 rc.cpp:76
+msgid "Active weekdays:"
+msgstr "Aktive Wochentage:"
+
+#. i18n: file: timecontrol-configuration-ui.ui:248
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
+#: rc.cpp:37 rc.cpp:79
+msgid "enabled"
+msgstr "aktiv"
+
+#. i18n: file: timecontrol-configuration-ui.ui:257
+#. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
+#: rc.cpp:40 rc.cpp:82
+msgid "Radio Station"
+msgstr "Sender"
+
+#: rc.cpp:41
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ernst Martin Witte"
+
+#: rc.cpp:42
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "emw@nocabal.de"
+
+#: timecontrol-configuration.cpp:60
+msgid "Start Playing"
+msgstr "Radio einschalten"
+
+#: timecontrol-configuration.cpp:61
+msgid "Stop Playing"
+msgstr "Radio ausschalten"
+
+#: timecontrol-configuration.cpp:62
+msgid "Start Recording"
+msgstr "Aufnahme starten"
+
+#: timecontrol-configuration.cpp:63
+msgid "Stop Recording"
+msgstr "Aufnahme beenden"
+
+#: timecontrol-configuration.cpp:66
+msgid "unchanged"
+msgstr "nicht verändern"
+
+#: timecontrol-configuration.cpp:68
+msgid "Monday"
+msgstr "Montag"
+
+#: timecontrol-configuration.cpp:69
+msgid "Tuesday"
+msgstr "Dienstag"
+
+#: timecontrol-configuration.cpp:70
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+#: timecontrol-configuration.cpp:71
+msgid "Thursday"
+msgstr "Donnerstag"
+
+#: timecontrol-configuration.cpp:72
+msgid "Friday"
+msgstr "Freitag"
+
+#: timecontrol-configuration.cpp:73
+msgid "Saturday"
+msgstr "Samstag"
+
+#: timecontrol-configuration.cpp:74
+msgid "Sunday"
+msgstr "Sonntag"
+
+#: timecontrol-configuration.cpp:200
+msgid "<don't change>"
+msgstr "<nicht verändern>"
+
+#: timecontrol.cpp:43
+msgid "Time Control and Alarm Functions"
+msgstr "Zeitsteurungs- und Weckfunktionen"
+
+#: timecontrol.cpp:49
+msgid "TimeControl Plugin"
+msgstr "Zeitsteuerungs-Plugin"
+
+#: timecontrol.cpp:279
+msgid "Setup Alarms"
+msgstr "Wecker einrichten"
