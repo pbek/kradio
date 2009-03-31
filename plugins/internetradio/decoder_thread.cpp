@@ -19,6 +19,8 @@
 #include <config.h>
 #endif
 
+#include <math.h>
+
 #include <QtGui/QApplication>
 #include <QtCore/QXmlStreamReader>
 
