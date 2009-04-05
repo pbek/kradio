@@ -1,0 +1,171 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Pavel Fric <pavelfric@seznam.cz>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kradio4_plugin_timecontrol\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"PO-Revision-Date: 2009-04-04 09:00+0200\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. i18n: file: timecontrol-configuration-ui.ui:19
+#. i18n: ectx: property (text), widget (QLabel, labelSleep)
+#: rc.cpp:3 rc.cpp:45
+msgid "sleep countdown"
+msgstr "Režim spánku"
+
+#. i18n: file: timecontrol-configuration-ui.ui:29
+#. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
+#: rc.cpp:6 rc.cpp:48
+msgid " min"
+msgstr " min"
+
+#. i18n: file: timecontrol-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
+#: rc.cpp:9 rc.cpp:51 timecontrol.cpp:278
+msgid "Alarms"
+msgstr "Budík"
+
+#. i18n: file: timecontrol-configuration-ui.ui:123
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
+#: rc.cpp:12 rc.cpp:54
+msgid "Date"
+msgstr "Datum"
+
+#. i18n: file: timecontrol-configuration-ui.ui:139
+#. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
+#: rc.cpp:15 rc.cpp:57
+msgid "dd.MM.yyyy"
+msgstr "dd.mm.rr"
+
+#. i18n: file: timecontrol-configuration-ui.ui:150
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
+#: rc.cpp:18 rc.cpp:60
+msgid "Time"
+msgstr "Čas"
+
+#. i18n: file: timecontrol-configuration-ui.ui:166
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
+#: rc.cpp:21 rc.cpp:63
+msgid "HH:mm:ss"
+msgstr "hh:mm:ss"
+
+#. i18n: file: timecontrol-configuration-ui.ui:177
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
+#: rc.cpp:24 rc.cpp:66
+msgid "Volume"
+msgstr "Hlasitost"
+
+#. i18n: file: timecontrol-configuration-ui.ui:193
+#. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
+#: rc.cpp:28 rc.cpp:70
+#, no-c-format
+msgid " %"
+msgstr " %"
+
+#. i18n: file: timecontrol-configuration-ui.ui:234
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
+#: rc.cpp:31 rc.cpp:73
+msgid "daily/weekly"
+msgstr "každý den/týdenní"
+
+#. i18n: file: timecontrol-configuration-ui.ui:241
+#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
+#: rc.cpp:34 rc.cpp:76
+msgid "Active weekdays:"
+msgstr "Činné dny v týdnu:"
+
+#. i18n: file: timecontrol-configuration-ui.ui:248
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
+#: rc.cpp:37 rc.cpp:79
+msgid "enabled"
+msgstr "povoleno"
+
+#. i18n: file: timecontrol-configuration-ui.ui:257
+#. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
+#: rc.cpp:40 rc.cpp:82
+msgid "Radio Station"
+msgstr "Rozhlasová vysílací stanice"
+
+#: rc.cpp:41
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Pavel Fric"
+
+#: rc.cpp:42
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "pavelfric@seznam.cz"
+
+#: timecontrol-configuration.cpp:60
+msgid "Start Playing"
+msgstr "Zapnout rozhlas"
+
+#: timecontrol-configuration.cpp:61
+msgid "Stop Playing"
+msgstr "Vypnout rozhlas"
+
+#: timecontrol-configuration.cpp:62
+msgid "Start Recording"
+msgstr "Začít s nahráváním"
+
+#: timecontrol-configuration.cpp:63
+msgid "Stop Recording"
+msgstr "Zastavit nahrávání"
+
+#: timecontrol-configuration.cpp:66
+msgid "unchanged"
+msgstr "nezměněno"
+
+#: timecontrol-configuration.cpp:68
+msgid "Monday"
+msgstr "Montag"
+
+#: timecontrol-configuration.cpp:69
+msgid "Tuesday"
+msgstr "Úterý"
+
+#: timecontrol-configuration.cpp:70
+msgid "Wednesday"
+msgstr "Středa"
+
+#: timecontrol-configuration.cpp:71
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+#: timecontrol-configuration.cpp:72
+msgid "Friday"
+msgstr "Pátek"
+
+#: timecontrol-configuration.cpp:73
+msgid "Saturday"
+msgstr "Sobota"
+
+#: timecontrol-configuration.cpp:74
+msgid "Sunday"
+msgstr "Neděle"
+
+#: timecontrol-configuration.cpp:200
+msgid "<don't change>"
+msgstr "<neměň>"
+
+#: timecontrol.cpp:43
+msgid "Time Control and Alarm Functions"
+msgstr "Činnosti řízení času a budíku"
+
+#: timecontrol.cpp:49
+msgid "TimeControl Plugin"
+msgstr "Přídavný modul řízení času"
+
+#: timecontrol.cpp:279
+msgid "Setup Alarms"
+msgstr "Nastavit budíky"
+

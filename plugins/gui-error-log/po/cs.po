@@ -1,0 +1,73 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Pavel Fric <pavelfric@seznam.cz>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kradio4_plugin_gui_error_log\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"PO-Revision-Date: 2009-04-02 21:26+0200\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: errorlog.cpp:35
+msgid "Error Logging Window for KRadio"
+msgstr "Okno zápisu chyb pro aplikaci KRadio"
+
+#: errorlog.cpp:41
+msgid "Error Logger"
+msgstr "Zápis chyb"
+
+#: errorlog.cpp:49 errorlog.cpp:58
+msgid "KRadio Logger"
+msgstr "Zápis chyb aplikace KRadio"
+
+#: errorlog.cpp:55
+msgid "Save &as"
+msgstr "Uložit &jako"
+
+#: errorlog.cpp:60
+msgid "Information"
+msgstr "Informace"
+
+#: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
+#, kde-format
+msgid "KRadio4 Version %1 logging started"
+msgstr "KRadio4, Verze %1: začátek zápisu"
+
+#: errorlog.cpp:63
+msgid "Warnings"
+msgstr "Varování"
+
+#: errorlog.cpp:66
+msgid "Errors"
+msgstr "Chyby"
+
+#: errorlog.cpp:69
+msgid "Debugging"
+msgstr "Vyhledávání a odstraňování chyb"
+
+#: errorlog.cpp:182
+msgid "Log Files"
+msgstr "Soubory zápisu"
+
+#: errorlog.cpp:187
+msgid "Save KRadio Logging Data as ..."
+msgstr "Uložit zápis chyb aplikace KRadio jako..."
+
+#: errorlog.cpp:212
+#, kde-format
+msgid "error writing to tempfile %1"
+msgstr "Chyba při zapisování do dočasného souboru %1"
+
+#: errorlog.cpp:221
+#, kde-format
+msgid "error uploading preset file %1"
+msgstr "Chyba při nahrávání souboru s předvolbou %1"
+

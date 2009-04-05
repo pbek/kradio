@@ -1,0 +1,94 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Pavel Fric <pavelfric@seznam.cz>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kradio4_plugin_timeshifter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"PO-Revision-Date: 2009-04-04 09:41+0200\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. i18n: file: timeshifter-configuration-ui.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
+#: rc.cpp:3 rc.cpp:21
+msgid "SetupDialogGeneral"
+msgstr "SetupDialogGeneral"
+
+#. i18n: file: timeshifter-configuration-ui.ui:56
+#. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
+#: rc.cpp:6 rc.cpp:24
+msgid " MB"
+msgstr " MB"
+
+#. i18n: file: timeshifter-configuration-ui.ui:75
+#. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
+#: rc.cpp:9 rc.cpp:27
+msgid "Maximum File Size"
+msgstr "Největší možná velikost souboru"
+
+#. i18n: file: timeshifter-configuration-ui.ui:85
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:30
+msgid "Playback Mixer Device"
+msgstr "Mixážní zařízení pro přehrávání"
+
+#. i18n: file: timeshifter-configuration-ui.ui:95
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:15 rc.cpp:33
+msgid "Temporary File"
+msgstr "Dočasný soubor"
+
+#. i18n: file: timeshifter-configuration-ui.ui:108
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:18 rc.cpp:36
+msgid "Playback Mixer Channel"
+msgstr "Mixážní kanál pro přehrávání"
+
+#: timeshifter-configuration.cpp:144
+msgid "any ( * )"
+msgstr "jakékoli ( * )"
+
+#: timeshifter-configuration.cpp:148
+msgid "Select TimeShifter Temporary File"
+msgstr "Vybrat dočasný soubor pro časově posunuté přehrávání"
+
+#: timeshifter.cpp:32
+msgid "TimeShift Support"
+msgstr "Podpora pro časově posunuté přehrávání"
+
+#: timeshifter.cpp:37
+msgid "TimeShifter Plugin"
+msgstr "Přídavný modul pro časově posunuté přehrávání"
+
+#: timeshifter.cpp:131
+msgid "Timeshifter"
+msgstr "Časově posunuté přehrávání"
+
+#: timeshifter.cpp:132
+msgid "Timeshifter Options"
+msgstr "Volby pro časově posunuté přehrávání"
+
+#: timeshifter.cpp:194
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr "Časově posunuté přehrávání %1 (%2)"
+
+#: timeshifter.cpp:534
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr ""
+"TimeShifter::notifySoundStreamData: %1 bytů zvukových dat bylo přeskočeno "
+"a je ztraceno"
+
+#: timeshifter.cpp:593
+msgid "internal stream, not stored"
+msgstr "Vnitřní zvukový datový proud, nebude uložen"
+
