@@ -1639,11 +1639,19 @@ bool AlsaSoundDevice::muteSourcePlayback (SoundStreamID id, bool mute)
 {
     if (id.isValid() && m_CaptureStreams.contains(id)) {
         SoundStreamConfig &cfg = m_CaptureStreams[id];
-        bool  m = false;
-        float v = readPlaybackMixerVolume(cfg.m_Channel, m);
-        if (mute != m) {
-            if (writePlaybackMixerVolume(cfg.m_Channel, v, mute)) {
-                notifySourcePlaybackMuted(id, cfg.m_Muted);
+
+        // only do something if the source channel is also available for playback
+        if (m_PlaybackChannels2ID.contains(cfg.m_Channel)) {
+
+            bool  m = false;
+            float v = readPlaybackMixerVolume(cfg.m_Channel, m);
+            if (mute != m) {
+                if (writePlaybackMixerVolume(cfg.m_Channel, v, mute)) {
+                    notifySourcePlaybackMuted(id, cfg.m_Muted);
+                }
+                else {
+                    return false;
+                }
             }
         }
         return true;
