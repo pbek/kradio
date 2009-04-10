@@ -305,20 +305,22 @@ bool V4LRadio::powerOn ()
         sendStartPlayback(m_SoundStreamSinkID);
         float tmp_vol = 0;
         queryPlaybackVolume(m_SoundStreamSinkID, tmp_vol);
-        if (tmp_vol < 0.005)
+        if (tmp_vol < 0.005) {
             sendPlaybackVolume(m_SoundStreamSinkID, m_defaultPlaybackVolume);
+        }
 
         if (m_ActivePlayback) {
             SoundFormat sf;
             sendStartCaptureWithFormat(m_SoundStreamSourceID, sf, sf);
         }
 
-        unmuteSource  (m_SoundStreamSourceID);
-        sendUnmuteSink(m_SoundStreamSinkID);
         if (m_ActivePlayback && m_ActivePlaybackMuteCaptureChannelPlayback) {
             sendMuteSourcePlayback(m_SoundStreamSourceID);
         }
+        sendUnmuteSource(m_SoundStreamSourceID);
+        sendUnmuteSink  (m_SoundStreamSinkID);
         notifyPowerChanged(true);
+        notifySoundStreamChanged(m_SoundStreamSourceID);
     }
 
     return true;
@@ -761,10 +763,10 @@ bool V4LRadio::setFrequency(float freq, const FrequencyRadioStation *rs)
 
         bool oldSourceMute = false;
         bool oldSinkMute   = false;
-        isSourceMuted(m_SoundStreamSourceID, oldSourceMute);
-        isSinkMuted  (m_SoundStreamSourceID, oldSinkMute);
+        queryIsSourceMuted(m_SoundStreamSourceID, oldSourceMute);
+        queryIsSinkMuted  (m_SoundStreamSourceID, oldSinkMute);
         if (!oldSourceMute && !m_ActivePlayback)
-            muteSource(m_SoundStreamSourceID);
+            sendMuteSource(m_SoundStreamSourceID);
         if (!oldSinkMute)
             sendMuteSink(m_SoundStreamSourceID);
 
@@ -805,12 +807,12 @@ bool V4LRadio::setFrequency(float freq, const FrequencyRadioStation *rs)
             }
         }
 
-          if (r) {
-              logError("V4LRadio::setFrequency: " +
+        if (r) {
+            logError("V4LRadio::setFrequency: " +
                      i18n("error setting frequency to %1 (%2)", QString().setNum(freq), QString().setNum(r)));
             // unmute the old radio with the old radio station
             if (!oldSourceMute && !m_ActivePlayback)
-                unmuteSource(m_SoundStreamSourceID);
+                sendUnmuteSource(m_SoundStreamSourceID);
             if (!oldSinkMute)
                 sendUnmuteSink(m_SoundStreamSourceID);
             return false;
@@ -819,9 +821,9 @@ bool V4LRadio::setFrequency(float freq, const FrequencyRadioStation *rs)
         // unmute this radio device, because we now have the current
         // radio station
         if (!oldSourceMute && !m_ActivePlayback)
-            unmuteSource(m_SoundStreamSourceID);
+            sendUnmuteSource(m_SoundStreamSourceID);
         if (!oldSinkMute)
-            sendUnmuteSink(m_SoundStreamSourceID);
+            sendUnmuteSink  (m_SoundStreamSourceID);
     }
 
 //     m_currentStation.setFrequency(freq);
