@@ -88,23 +88,25 @@ void  RecordingEncoding::unlockInputBuffer(size_t bufferSize, const SoundMetaDat
 {
     if (m_done)
         return;
+
     size_t bufidx  = m_InputBuffers.getCurrentWriteBufferIdx();
     size_t buffill = m_InputBuffers.getWriteBufferFill();
+
+    if (!m_InputStartTime) {
+        m_InputStartTime     = md.absoluteTimestamp();
+        m_InputStartPosition = md.position();
+    }
+    BufferSoundMetaData bmd(md.position()          - m_InputStartPosition,
+                            md.absoluteTimestamp() - m_InputStartTime,
+                            md.absoluteTimestamp(),
+                            md.url(),
+                            buffill
+                            );
+    m_buffersMetaData[bufidx].append(bmd);
+
     m_InputBuffers.unlockWriteBuffer(bufferSize);
 
-    if (!m_InputBuffers.hasError()) {
-        if (!m_InputStartTime) {
-            m_InputStartTime     = md.absoluteTimestamp();
-            m_InputStartPosition = md.position();
-        }
-        BufferSoundMetaData bmd(md.position()          - m_InputStartPosition,
-                                md.absoluteTimestamp() - m_InputStartTime,
-                                md.absoluteTimestamp(),
-                                md.url(),
-                                buffill
-                               );
-        m_buffersMetaData[bufidx].append(bmd);
-    } else {
+    if (m_InputBuffers.hasError()) {
         m_error = true;
         m_errorString += m_InputBuffers.getErrorString();
         m_InputBuffers.resetError();
@@ -126,7 +128,7 @@ void RecordingEncoding::run()
     while (!m_error) {
         char   *buffer       =  NULL;
         size_t  buffer_fill  =  0;
-        int     read_buf_idx = -1; 
+        int     read_buf_idx = -1;
         if (!m_done) {
             buffer = m_InputBuffers.wait4ReadBuffer(buffer_fill);
             read_buf_idx = m_InputBuffers.getCurrentReadBufferIdx();
