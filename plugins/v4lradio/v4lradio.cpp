@@ -1028,7 +1028,7 @@ V4LCaps V4LRadio::getCapabilities(QString dev) const
 
 bool V4LRadio::setActivePlayback(bool a, bool mute_capture_channel_playback)
 {
-    if (a == m_ActivePlayback)
+    if ((a == m_ActivePlayback) && (mute_capture_channel_playback == m_ActivePlaybackMuteCaptureChannelPlayback))
         return true;
 
 
