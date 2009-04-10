@@ -40,7 +40,7 @@ void RDS_Type2AB_Decoder::addGroup(const RDSGroup &g)
     unsigned short C = g.getBlock(RDS_BLK_C);
     unsigned short D = g.getBlock(RDS_BLK_D);
 
-    bool         ab_flag  = (g.getBlock(RDS_2AB_AB_FLAG_BLOCK) & RDS_2AB_AB_FLAG_MASK) != 0;
+//     bool         ab_flag  = (g.getBlock(RDS_2AB_AB_FLAG_BLOCK) & RDS_2AB_AB_FLAG_MASK) != 0;
     unsigned int position = (m_type_A_not_B ? 4 : 2) * ((g.getBlock(RDS_2AB_POS_BLOCK) & RDS_2AB_POS_MASK) >> RDS_2AB_POS_SHIFT);
 
     if (position == 0) {
