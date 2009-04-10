@@ -39,6 +39,9 @@ you can try:
 
   # replace <buildtype> by your choice: common build types are:  DEBUG  DEBUGFULL  RELEASE
   # <kradio-sources> are e.g. ../kradio-svn/kde4 in case you are using svn
+  # Please ensure that $KDEDIR is pointing to your kde installation directory!
+  # If you want to install kradio somewhere else than $KDEDIR, please append
+  # the installtion path to $KDEDIRS (plural!) and $PATH
   cmake -DCMAKE_BUILD_TYPE=<buildtype> -DCMAKE_INSTALL_PREFIX=$KDEDIR <kradio-sources>
 
   make 
