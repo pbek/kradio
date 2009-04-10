@@ -746,7 +746,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
 
         DataBuffer         &buf           = m_decoderThread->getFirstBuffer();
         const char         *data          = buf.currentPointer();
-        size_t              size          = buf.remainingSize();
+        size_t              size          = min(buf.remainingSize(), free_size);
                             consumed_size = SIZE_T_DONT_CARE;
         const SoundMetaData &md           = buf.metaData();
         const SoundFormat   &sf           = buf.soundFormat();
