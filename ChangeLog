@@ -5,6 +5,7 @@
         - fix: compilation errors in Czech translation
         - fix: Noise in recording of net radio caused by unintended repetition of sound data
         - fix: added detection for old/new libffmeg/libavformat headers (ffmpeg/avformt.h vs libavformat/avformat.h)
+        - fix: added missing include of math.h
 
 2009-04-05
 
