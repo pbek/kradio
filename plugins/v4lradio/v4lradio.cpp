@@ -1352,11 +1352,6 @@ void V4LRadio::radio_init()
     m_currentStation.setFrequency(0); // ensure that setting will be forced
     setFrequency(cur.frequency(), &cur);
 
-    // read volume level from mixer
-    // FIXME: do we still need this
-/*  float v = 0;
-    getVolume(m_SoundStreamID, v)
-    setVolume (m_SoundStreamID, v);*/
 }
 
 
@@ -1730,20 +1725,28 @@ bool V4LRadio::updateAudioInfo(bool write) const
             }
 
             r = ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, m_audio);
+            if (r < 0) {
+                if (write) {
+                    logWarning(i18n("writing v4l1 audio setup failed with return value %1", r));
+                } else {
+                    logWarning(i18n("reading v4l1 audio setup failed with return value %1", r));
+                }
+            }
 
             m_stereo = (r == 0) && ((m_audio->mode  & VIDEO_SOUND_STEREO) != 0);
 
             m_muted  = m_caps.hasMute &&
                        ((r != 0) || ((m_audio->flags & VIDEO_AUDIO_MUTE) != 0));
 
-            /* Some drivers seem to set volumes to zero if they are muted.
-               Thus we do not reload them if radio is muted */
-            if (!m_muted && !write) {
-                m_deviceVolume = m_caps.hasVolume  && !r ? m_caps.floatGetVolume (m_audio->volume)  : 1;
-                m_treble       = m_caps.hasTreble  && !r ? m_caps.floatGetTreble (m_audio->treble)  : 1;
-                m_bass         = m_caps.hasBass    && !r ? m_caps.floatGetBass   (m_audio->bass)    : 1;
-                m_balance      = m_caps.hasBalance && !r ? m_caps.floatGetBalance(m_audio->balance) : 0;
-            }
+// recent v4l drivers seem to return always 0 ... grrr
+//            /* Some drivers seem to set volumes to zero if they are muted.
+//               Thus we do not reload them if radio is muted */
+//            if (!m_muted && !write) {
+//                m_deviceVolume = m_caps.hasVolume  && !r ? m_caps.floatGetVolume (m_audio->volume)  : 1;
+//                m_treble       = m_caps.hasTreble  && !r ? m_caps.floatGetTreble (m_audio->treble)  : 1;
+//                m_bass         = m_caps.hasBass    && !r ? m_caps.floatGetBass   (m_audio->bass)    : 1;
+//                m_balance      = m_caps.hasBalance && !r ? m_caps.floatGetBalance(m_audio->balance) : 0;
+//            }
         }
 #ifdef HAVE_V4L2
         else if (m_V4L_version_override == V4L_Version2 && m_caps.v4l_version_support[V4L_Version2]) {
