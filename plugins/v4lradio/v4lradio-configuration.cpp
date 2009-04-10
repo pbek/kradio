@@ -19,6 +19,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <linux/soundcard.h>
+#include <math.h>
 
 #include <QtGui/QSpinBox>
 #include <QtGui/QLineEdit>

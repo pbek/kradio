@@ -22,6 +22,7 @@
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <math.h>
 
 #ifdef HAVE_V4L2
 #include "linux/videodev2.h"
