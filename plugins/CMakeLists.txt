@@ -66,27 +66,34 @@ ENDIF(WITH_LIRC)
 
 
 
-option(WITH_FFMPEG "Compile with Internet Radio Stations support (libffmpeg, libmms)" ON)
+option(WITH_FFMPEG "Compile with Internet Radio Stations support (libavformat/libffmpeg, libmms)" ON)
 
 IF(WITH_FFMPEG)
+    CHECK_INCLUDE_FILE_CXX(ffmpeg/avformat.h HAVE_AVFORMAT_OLD_INC)
     CHECK_INCLUDE_FILE_CXX(libavformat/avformat.h HAVE_AVFORMAT_INC)
     CHECK_LIBRARY_EXISTS(avformat av_open_input_file "" HAVE_AVFORMAT_LIB)
     CHECK_INCLUDE_FILE("libmms/mmsx.h" HAVE_MMSX_INC)
     CHECK_LIBRARY_EXISTS(mms mmsx_connect "" HAVE_MMSX_LIB)
-    IF(NOT HAVE_AVFORMAT_INC OR NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB)
+    IF(NOT (HAVE_AVFORMAT_INC OR HAVE_AVFORMAT_OLD_INC) OR NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB)
 
         SET(WITH_FFMPEG OFF
             CACHE BOOL "libffmpeg and/or libmms files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: libffmpeg and/or libmms files could not be found on this system. Compiling without Internet Radio Stations support")
 
-    ENDIF(NOT HAVE_AVFORMAT_INC OR NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB)
+    ENDIF(NOT (HAVE_AVFORMAT_INC OR HAVE_AVFORMAT_OLD_INC) OR NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB)
 ENDIF(WITH_FFMPEG)
 
 
 IF (WITH_FFMPEG)
-    message(STATUS "   Compiling with Internet Radio Stations (libffmpeg, libmms) support")
-    add_definitions( -DHAVE_FFMPEG )
+    message(STATUS "   Compiling with Internet Radio Stations (libavformat/libffmpeg, libmms) support")
+
+    IF(HAVE_AVFORMAT_OLD_INC)
+        add_definitions( -DHAVE_FFMPEG_OLD )
+    ELSE(HAVE_AVFORMAT_OLD_INC)
+        add_definitions( -DHAVE_FFMPEG )
+    ENDIF(HAVE_AVFORMAT_OLD_INC)
+
     add_definitions( -DHAVE_MMS )
 ELSE(WITH_FFMPEG)
     message(STATUS "   Compiling without Internet Radio Stations (libffmpeg, libmms) support")

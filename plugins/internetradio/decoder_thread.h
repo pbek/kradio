@@ -37,7 +37,12 @@
 #include "databuffer.h"
 
 extern "C" {
+#ifdef HAVE_FFMPEG
     #include <libavformat/avformat.h>
+#endif
+#ifdef HAVE_FFMPEG_OLD
+    #include <ffmpeg/avformat.h>
+#endif
 }
 
 extern "C" {
