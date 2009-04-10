@@ -58,12 +58,16 @@ int main(int argc, char *argv[])
     BlockProfiler  profiler_restore("main::restore");
 
     a.restoreState(KGlobal::config().data());
-    a.startPlugins();
 
+    if (!a.quitting()) {
+        a.startPlugins();
+    }
     profiler_restore.stop();
 
-    int ret = a.exec();
-
+    int ret = -1;
+    if (!a.quitting()) {
+        ret = a.exec();
+    }
     global_time_profiler.printData();
     global_mem_profiler.printData();
 

@@ -109,6 +109,8 @@ public:
 
     virtual void  startPlugins();
 
+    virtual bool  quitting() const { return m_quitting; }
+
 protected slots:
 
 #warning: FIXME: implement qsessionmanagement stuff

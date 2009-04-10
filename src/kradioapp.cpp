@@ -228,6 +228,19 @@ void KRadioApp::restoreState (KConfig *c)
         }
     }
 
+    // minimum number of plugin libs is around 5: radio mux, snd srv, snd card, radio dev, stations
+    if (m_PluginLibraries.size() < 5) {
+        KMessageBox::error(NULL,
+                           i18n("Found only %1 libraries. Expected a minimum of 5. Please check "
+                                "the KRadio4 installation directory and the environment variables "
+                                "KDEDIR, KDEDIRS and KDEHOME.\n",
+                                m_PluginLibraries.size()
+                                ),
+                           i18n("KRadio4 Installation Error"));
+        m_quitting = true;
+        return;
+    }
+
 //     if (n_libs < 6) {    // this seems to be a meaningful minimum value for a working kradio setup
 //         QList<QString>::iterator end = libs.end();
 //         int idx = 0;

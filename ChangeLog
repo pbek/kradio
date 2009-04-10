@@ -2,6 +2,7 @@
 
     emw - fix: added missing include for ogg encoder
         - cleanup: some cleanup of mute stuff in v4l
+        - fix: added detection of wrong installtion and missing libs
 
 
 2009-04-10 (4.0.0-rc2)
