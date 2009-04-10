@@ -1,4 +1,4 @@
-2009-04-10
+2009-04-10 (4.0.0-rc2)
 
     emw - fix: .pls Playlist reading is now case-insensitive
         - fix: crash in recording plugin caused by improper thread-locking
@@ -8,13 +8,14 @@
         - fix: added missing include of math.h
         - fix: no error message any more when trying to mute a non-playback channel caused by active playback
         - fix: german translation reported a non existant error in debug info
+        - fix: cmake 2.6.2 compat fix for libffmpeg detection
 
 2009-04-05
 
   Pavel Fric - Czech translation
 
 
-2009-03-28 (rc1)
+2009-03-28 (4.0.0-rc1)
     emw - fix: included preset files that have been queued for a quite long time
         - fix: debian build system
         - fix: stddisplay: rds info update on station change

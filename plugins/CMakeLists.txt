@@ -74,14 +74,17 @@ IF(WITH_FFMPEG)
     CHECK_LIBRARY_EXISTS(avformat av_open_input_file "" HAVE_AVFORMAT_LIB)
     CHECK_INCLUDE_FILE("libmms/mmsx.h" HAVE_MMSX_INC)
     CHECK_LIBRARY_EXISTS(mms mmsx_connect "" HAVE_MMSX_LIB)
-    IF(NOT (HAVE_AVFORMAT_INC OR HAVE_AVFORMAT_OLD_INC) OR NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB)
 
-        SET(WITH_FFMPEG OFF
-            CACHE BOOL "libffmpeg and/or libmms files could not be found on this system. Forcing this option to OFF"
-            FORCE)
-        MESSAGE("WARNING: libffmpeg and/or libmms files could not be found on this system. Compiling without Internet Radio Stations support")
+    IF ( NOT HAVE_AVFORMAT_INC AND NOT HAVE_AVFORMAT_OLD_INC )
+        IF ( NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB )
 
-    ENDIF(NOT (HAVE_AVFORMAT_INC OR HAVE_AVFORMAT_OLD_INC) OR NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB)
+            SET(WITH_FFMPEG OFF
+                CACHE BOOL "libffmpeg and/or libmms files could not be found on this system. Forcing this option to OFF"
+                FORCE)
+            MESSAGE("WARNING: libffmpeg and/or libmms files could not be found on this system. Compiling without Internet Radio Stations support")
+        ENDIF( NOT HAVE_AVFORMAT_LIB OR NOT HAVE_MMSX_INC OR NOT HAVE_MMSX_LIB )
+    ENDIF( NOT HAVE_AVFORMAT_INC AND NOT HAVE_AVFORMAT_OLD_INC )
+
 ENDIF(WITH_FFMPEG)
 
 
