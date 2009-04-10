@@ -140,12 +140,29 @@ void DecoderThread::loadPlaylistPLS(bool errorIfEmpty)
     QString tmpFile;
     if( KIO::NetAccess::download(m_inputURL, tmpFile, NULL) ) {
         KConfig      cfg(tmpFile);
-        KConfigGroup cfggrp = cfg.group("playlist");
 
-        unsigned int entries = cfggrp.readEntry("NumberOfEntries", 0);
+        // mapping group names to lower case in order to be case insensitive
+        QStringList            groups = cfg.groupList();
+        QMap<QString, QString> group_lc_map;
+        QString                grp;
+        foreach(grp, groups) {
+            group_lc_map.insert(grp.toLower(), grp);
+        }
+
+        KConfigGroup cfggrp = cfg.group(group_lc_map["playlist"]);
+
+        // mapping entry keys to lower case in order to be case insensitive
+        QStringList keys = cfggrp.keyList();
+        QMap<QString, QString> key_lc_map;
+        QString key;
+        foreach(key, keys) {
+            key_lc_map.insert(key.toLower(), key);
+        }
+
+        unsigned int entries = cfggrp.readEntry(key_lc_map["numberofentries"], 0);
         if (entries) {
             for (unsigned int i = 0; i < entries; ++i) {
-                QString url = cfggrp.readEntry(QString("File%1").arg(i), QString());
+                QString url = cfggrp.readEntry(key_lc_map[QString("file%1").arg(i)], QString());
                 if (url.length()) {
                     m_playListURLs.append(url);
                 }
