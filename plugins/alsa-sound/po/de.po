@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-03-29 14:15+0200\n"
-"PO-Revision-Date: 2009-03-28 22:25+0100\n"
+"PO-Revision-Date: 2009-04-10 16:10+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -59,8 +59,7 @@ msgstr "ALSA Plugin: Das Lesen vom Gerät plughw:%1,%2 schlug fehl"
 msgid ""
 "ALSA Plugin: buffer overrun for device plughw:%1,%2 (buffersize=%3, buffer=%"
 "4)"
-msgstr ""
-"ALSA Plugin: Pufferüberlauf im Gerät plughw:%1,%2 (Puffergröße=%3, buffer=%4)"
+msgstr "ALSA Plugin: Pufferüberlauf im Gerät plughw:%1,%2 (Puffergröße=%3, buffer=%4)"
 
 #: alsa-sound.cpp:682
 #, kde-format
@@ -168,8 +167,7 @@ msgstr ""
 #: alsa-sound.cpp:906
 #, kde-format
 msgid "ALSA Plugin: adjusted buffer size for %1 to %2 bytes"
-msgstr ""
-"ALSA Plugin: Die Puffergröße für das Gerät %1 wurde auf %2 bytes angepasst."
+msgstr "ALSA Plugin: Die Puffergröße für das Gerät %1 wurde auf %2 bytes angepasst."
 
 #: alsa-sound.cpp:912
 msgid "ALSA Plugin: Error setting HW params"
@@ -183,8 +181,7 @@ msgstr "ALSA Plugin: Fehler beim Lesen der Puffer-Periodengröße von Gerät %1"
 #: alsa-sound.cpp:923
 #, kde-format
 msgid "ALSA Plugin: Setting timer latency to %1 for %2"
-msgstr ""
-"ALSA Plugin: Fehler beim Einstellen der Timer-Latenz auf %1 für Gerät %2"
+msgstr "ALSA Plugin: Timer-Latenz für Gerät %2 wurde auf %1 gesetzt."
 
 #: alsa-sound.cpp:945
 #, kde-format
@@ -216,8 +213,7 @@ msgstr "ALSA Plugin: Fehler in Funktion snd_mixer_attach bei Soundkarte %1"
 #: alsa-sound.cpp:1053
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
-msgstr ""
-"ALSA Plugin: Fehler in Funktion snd_mixer_selem_register bei Soundkarte %1"
+msgstr "ALSA Plugin: Fehler in Funktion snd_mixer_selem_register bei Soundkarte %1"
 
 #: alsa-sound.cpp:1057
 #, kde-format
@@ -249,8 +245,7 @@ msgstr "Fehler beim Setzen der Lautstärke %1 auf Gerät hwplug:%2,%3"
 #: alsa-sound.cpp:1457
 #, kde-format
 msgid "error while setting capture switch %1 for hwplug:%2,%3"
-msgstr ""
-"Fehler beim Einstellen des Aufnahmeauswahlschalters %1 für Gerät hwplug:%2,%3"
+msgstr "Fehler beim Einstellen des Aufnahmeauswahlschalters %1 für Gerät hwplug:%2,%3"
 
 #: alsa-sound.cpp:1604
 #, kde-format
@@ -598,3 +593,4 @@ msgstr "Ernst Martin Witte"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
+
