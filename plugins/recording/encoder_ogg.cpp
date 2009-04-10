@@ -21,6 +21,7 @@
 
 #include <klocale.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 RecordingEncodingOgg::RecordingEncodingOgg(QObject *parent,            SoundStreamID ssid,
                                            const RecordingConfig &cfg, const RadioStation *rs,
