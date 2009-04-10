@@ -1,6 +1,7 @@
 =========
 
-For Beta3:
+For rc2:
+
 
 
 Later:
@@ -11,6 +12,8 @@ Later:
   * feature: record to new file, but do not stop recording!
   * fix: get rid of QString::toLocal8Bit()
 
+  * --done-- fix: ffmpeg include fix for old ffmeg installations/includes
+  * --done-- fix: net recording quality
   * --done-- fix: prepare translations
   * --done-- fix: german translation
   * --done-- fix: stddisplay: rds info update on station change

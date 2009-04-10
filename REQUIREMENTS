@@ -6,4 +6,4 @@
 * libmp3lame (for mp3 encoding)
 * libogg, libvorbisenc (for ogg/vorbis encoding)
 * either ... a radio card, which is supported by your v4l/v4l2 kernel ;)
-* ... or an internet connection and libffmpeg+libmms for internet radio streams
+* ... or an internet connection and libffmpeg/libavformat+libmms for internet radio streams

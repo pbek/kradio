@@ -1,4 +1,17 @@
-2009-03-28
+2009-04-10
+
+    emw - fix: .pls Playlist reading is now case-insensitive
+        - fix: crash in recording plugin caused by improper thread-locking
+        - fix: compilation errors in Czech translation
+        - fix: Noise in recording of net radio caused by unintended repetition of sound data
+        - fix: added detection for old/new libffmeg/libavformat headers (ffmpeg/avformt.h vs libavformat/avformat.h)
+
+2009-04-05
+
+  Pavel Fric - Czech translation
+
+
+2009-03-28 (rc1)
     emw - fix: included preset files that have been queued for a quite long time
         - fix: debian build system
         - fix: stddisplay: rds info update on station change
