@@ -68,8 +68,8 @@ int main(int argc, char *argv[])
     if (!a.quitting()) {
         ret = a.exec();
     }
-    global_time_profiler.printData();
-    global_mem_profiler.printData();
+//     global_time_profiler.printData();
+//     global_mem_profiler.printData();
 
     IErrorLogClient::staticLogDebug("normal shutdown");
 
