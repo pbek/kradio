@@ -317,8 +317,17 @@ bool V4LRadio::powerOn ()
         if (m_ActivePlayback && m_ActivePlaybackMuteCaptureChannelPlayback) {
             sendMuteSourcePlayback(m_SoundStreamSourceID);
         }
+
+        // Fix for drivers that are not reporting the mute state correctly:
+        // force internal copy of mute state to be synced correctly by first
+        // muting and unmuting again. At least the second call will have an effect.
+        sendMuteSource  (m_SoundStreamSourceID);
         sendUnmuteSource(m_SoundStreamSourceID);
+
+        // ... same fix again ...
+        sendMuteSink    (m_SoundStreamSinkID);
         sendUnmuteSink  (m_SoundStreamSinkID);
+
         notifyPowerChanged(true);
         notifySoundStreamChanged(m_SoundStreamSourceID);
     }
@@ -502,6 +511,8 @@ bool V4LRadio::muteSource(SoundStreamID id, bool mute)
 {
     if (id != m_SoundStreamSourceID)
         return false;
+
+//     logDebug(i18n("(un)muting v4l: old=%1, new=%2", m_muted, mute));
 
     if (m_muted != mute) {
         m_muted = mute;
@@ -1421,8 +1432,8 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
 
         video_audio audiocaps;
         if (0 == ioctl(fd, VIDIOCGAUDIO, &audiocaps)) {
-//             logDebug("V4LRadio::readV4LCaps: " +
-//                      i18n("audio caps = %1", QString().setNum(audiocaps.flags)));
+            logDebug("V4LRadio::readV4LCaps: " +
+                     i18n("audio caps = %1", QString().sprintf("0x%08X", audiocaps.flags)));
             if ((audiocaps.flags & VIDEO_AUDIO_MUTABLE)  != 0)
                 v4l_caps[V4L_Version1].hasMute = true;
             if ((audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0)
@@ -1431,8 +1442,8 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
                 v4l_caps[V4L_Version1].setTreble (0, 65535);
             if ((audiocaps.flags & VIDEO_AUDIO_BASS)    != 0)
                 v4l_caps[V4L_Version1].setBass   (0, 65535);
-            // at least my driver has support for balance, but the bit is not set ...
-            v4l_caps[V4L_Version1].setBalance(0, 65535);
+            if ((audiocaps.flags & VIDEO_AUDIO_BALANCE) != 0)
+                v4l_caps[V4L_Version1].setBalance(0, 65535);
         }
     } else {
 //         logError("V4LRadio::readV4LCaps: " +
@@ -1446,7 +1457,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         v4l_caps[V4L_Version2].v4l_version_support[V4L_Version2] = true;
         logInfo(i18n("detected %1", V4LVersionStrings[V4L_Version2]));
 
-        logDebug(i18n("V4L2 - Version: %1, caps=%2", QString().sprintf("%08X", caps2.version), QString().sprintf("%08X", caps2.capabilities)));
+        logDebug(i18n("V4L2 - Version: %1, caps=%2", QString().sprintf("0x%08X", caps2.version), QString().sprintf("0x%08X", caps2.capabilities)));
 
         v4l_caps[V4L_Version2].hasRDS = m_RDSForceEnabled || (((~caps2.capabilities) & (V4L2_CAP_RDS_CAPTURE | V4L2_CAP_READWRITE)) == 0);
 
@@ -1725,13 +1736,6 @@ bool V4LRadio::updateAudioInfo(bool write) const
             }
 
             r = ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, m_audio);
-            if (r < 0) {
-                if (write) {
-                    logWarning(i18n("writing v4l1 audio setup failed with return value %1", r));
-                } else {
-                    logWarning(i18n("reading v4l1 audio setup failed with return value %1", r));
-                }
-            }
 
             m_stereo = (r == 0) && ((m_audio->mode  & VIDEO_SOUND_STEREO) != 0);
 

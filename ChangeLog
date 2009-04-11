@@ -4,6 +4,8 @@
         - cleanup: some cleanup of mute stuff in v4l
         - fix: added detection of wrong installtion and missing libs
         - cleanup: removed profiling output at application quit
+        - fix: workaround for problem with drivers not reporting mute state correctly
+        - debug: re-enabled caps debug logging again for v4l1
 
 
 2009-04-10 (4.0.0-rc2)
