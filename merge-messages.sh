@@ -1,19 +1,19 @@
 #!/bin/bash
 
-MIN_LANGS="cs de es pl pt ru uk"
+ALL_LANGS=$(find -iname "*.po" | while read line ; do basename $line .po ; done | sort -u)
 
 echo "Merging translations"
 #catalogs=`find . -name '*.po'`
-catalogs=`find -iname "de.po" -o -name "*.po" | while read line ; do echo $line ; for LANG in $MIN_LANGS ; do echo $line | sed "s:de\.po:$LANG.po:" ; done ; done | sort | uniq`
+catalogs=`find -iname "*.pot" | while read pot ; do dir=$(dirname $pot); for LANG in $ALL_LANGS ; do echo $dir/$LANG.po ; done ; done`
 
-for cat in $catalogs; do
-    test -e $cat || touch $cat
+for cat in $catalogs; do    
     echo $cat
     catdir=$(dirname "$cat")
     pots=`find "$catdir" -maxdepth 1 -a -name "*.pot"`
     for pot in $pots ; do
         echo "merging $pot into $cat"
-        msgmerge -o $cat.new $cat $pot
+        test -e $cat || cat $pot | sed 's/charset=CHARSET/charset=UTF-8/; s/^#, fuzzy/#/' > $cat
+        msgmerge -q -o $cat.new $cat $pot
         mv $cat.new $cat
     done
 done
