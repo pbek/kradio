@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_v4lradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2009-04-04 14:20+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -112,23 +112,18 @@ msgstr ""
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600;\">Aktivní přehrávání</span> je vyžadováno, když "
-"vaše "
-"radiokarta není spojena s vaší zvukovou kartou přes kabel k \"line in\" "
+"vaše radiokarta není spojena s vaší zvukovou kartou přes kabel k \"line in\" "
 "vstupu. V tomto případě musí KRadio PCM data z nahrávacího zvukového "
-"zařízení "
-"(předstírané zvukové zařízení nebo zvukové zařízení) zaznamenat a PCM data "
-"poslat "
-"do přehrávacího zvukového zařízení. "
-"Proto musí být, když je zapnuto <span style=\" font-weight:600;\">Aktivní "
-"přehrávání</"
-"span>, vybráno správné nahrávací mixážní zařízení/kanál a správné "
-"PCM přehrávací mixér/kanál. Toto je obzvláště důležité pro <span style="
-"\" font-weight:600;\">karty PVR</span> které obyčejně potřebují zvuk  "
-"nahrávat z <span style=\" font-style:italic;\">/dev/video24</span> (nebo "
-"tak podobně). Pro <span style=\" font-weight:600;\">karty PVR</span>, "
-"musíte napřed správně nastavit i <span style=\" font-weight:600;\">Přídavný "
-"modul "
-"pro datové proudy.</p></body></html>"
+"zařízení (předstírané zvukové zařízení nebo zvukové zařízení) zaznamenat a "
+"PCM data poslat do přehrávacího zvukového zařízení. Proto musí být, když je "
+"zapnuto <span style=\" font-weight:600;\">Aktivní přehrávání</span>, vybráno "
+"správné nahrávací mixážní zařízení/kanál a správné PCM přehrávací mixér/"
+"kanál. Toto je obzvláště důležité pro <span style=\" font-weight:600;"
+"\">karty PVR</span> které obyčejně potřebují zvuk  nahrávat z <span style=\" "
+"font-style:italic;\">/dev/video24</span> (nebo tak podobně). Pro <span style="
+"\" font-weight:600;\">karty PVR</span>, musíte napřed správně nastavit i "
+"<span style=\" font-weight:600;\">Přídavný modul pro datové proudy.</p></"
+"body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:171
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
@@ -231,45 +226,35 @@ msgstr ""
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600;\">Aktivní přehrávání</span> je vyžadováno, když "
-"vaše "
-"radiokarta není spojena s vaší zvukovou kartou přes kabel k \"line in\" "
+"vaše radiokarta není spojena s vaší zvukovou kartou přes kabel k \"line in\" "
 "vstupu. V tomto případě musí KRadio PCM data z nahrávacího zvukového "
-"zařízení "
-"(předstírané zvukové zařízení nebo zvukové zařízení) zaznamenat a PCM data "
-"poslat "
-"do přehrávacího zvukového zařízení."
-"Proto musí být, když je zapnuto <span style=\" font-weight:600;\">Aktivní "
-"přehrávání</"
-"span>, vybráno správné nahrávací mixážní zařízení/kanál a správné "
-"PCM přehrávací mixér/kanál. Toto je obzvláště důležité pro <span style="
-"\" font-weight:600;\">karty PVR</span> které obyčejně potřebují zvuk  "
-"nahrávat z <span style=\" font-style:italic;\">/dev/video24</span> (nebo "
-"tak podobně). Pro <span style=\" font-weight:600;\">karty PVR</span>, "
-"musíte napřed správně nastavit i <span style=\" font-weight:600;\">Přídavný "
-"modul "
-"pro datové proudy.</span></p>\n"
+"zařízení (předstírané zvukové zařízení nebo zvukové zařízení) zaznamenat a "
+"PCM data poslat do přehrávacího zvukového zařízení.Proto musí být, když je "
+"zapnuto <span style=\" font-weight:600;\">Aktivní přehrávání</span>, vybráno "
+"správné nahrávací mixážní zařízení/kanál a správné PCM přehrávací mixér/"
+"kanál. Toto je obzvláště důležité pro <span style=\" font-weight:600;"
+"\">karty PVR</span> které obyčejně potřebují zvuk  nahrávat z <span style=\" "
+"font-style:italic;\">/dev/video24</span> (nebo tak podobně). Pro <span style="
+"\" font-weight:600;\">karty PVR</span>, musíte napřed správně nastavit i "
+"<span style=\" font-weight:600;\">Přídavný modul pro datové proudy.</span></"
+"p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Upozornění pro podporu RDS:</span></p>"
-"\n"
+"style=\" text-decoration: underline;\">Upozornění pro podporu RDS:</span></"
+"p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Pokud "
-"vaše "
-"karta podporuje RDS a RDS nepracuje, zkontrolujte, prosím, zda <span "
-"style=\" "
-"font-weight:600;\">kernel-modul saa6588.ko</span> je nahrán. Když karta "
-"obsahuje "
-" saa6588 chip, není tento modul <span style=\" font-style:italic;"
-"\">obvykle</span> nahrán automaticky. Zda váš V4L/V4L2 kernel podporuje "
-"RDS by mělo být vidět při standardním rozhlasovém zobrazení, kdy je RDS "
-"ukazatel zdůrazněn/zesvětlá (podobně, jako je tomu u ukazatelů sterea a "
-"AM/FM). "
-"RDS rozhlasový text by měl být viditelný při standardním rozhlasovém "
-"zobrazení "
-"jako běžící text a v nástrojových tipech ikony v systémové části panelu. RDS "
-"názvy "
-"vysílacích stanic se používají v dialogu vyhledávání vysílacích stanic jako "
-"výchozí názvy nově nalezených vysílacích stanic.</p></body></html>"
+"vaše karta podporuje RDS a RDS nepracuje, zkontrolujte, prosím, zda <span "
+"style=\" font-weight:600;\">kernel-modul saa6588.ko</span> je nahrán. Když "
+"karta obsahuje  saa6588 chip, není tento modul <span style=\" font-style:"
+"italic;\">obvykle</span> nahrán automaticky. Zda váš V4L/V4L2 kernel "
+"podporuje RDS by mělo být vidět při standardním rozhlasovém zobrazení, kdy "
+"je RDS ukazatel zdůrazněn/zesvětlá (podobně, jako je tomu u ukazatelů sterea "
+"a AM/FM). RDS rozhlasový text by měl být viditelný při standardním "
+"rozhlasovém zobrazení jako běžící text a v nástrojových tipech ikony v "
+"systémové části panelu. RDS názvy vysílacích stanic se používají v dialogu "
+"vyhledávání vysílacích stanic jako výchozí názvy nově nalezených vysílacích "
+"stanic.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
@@ -411,166 +396,168 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pavelfric@seznam.cz"
 
-#: v4lradio-configuration.cpp:365
+#: v4lradio-configuration.cpp:366
 msgid "Could not get device description."
 msgstr "Nelze vypátrat popis zařízení."
 
-#: v4lradio-configuration.cpp:370
+#: v4lradio-configuration.cpp:371
 msgid "Device file does not exist or top level directories are not accessible."
 msgstr ""
 "Soubor se zařízením neexistuje, nebo není povolen přístup k nadřazeným "
 "adresářům."
 
-#: v4lradio-configuration.cpp:373
+#: v4lradio-configuration.cpp:374
 msgid "You do not have read+write permissions for the device."
 msgstr "Přístup ke čtení/zápisu do zařízení není povolen."
 
-#: v4lradio-configuration.cpp:376
+#: v4lradio-configuration.cpp:377
 msgid "You do not have read permissions for the device."
 msgstr "Přístup ke čtení ze zařízení není povolen."
 
-#: v4lradio-configuration.cpp:379
+#: v4lradio-configuration.cpp:380
 msgid "You do not have write permissions for the device."
 msgstr "Přístup k zápisu do zařízení není povolen."
 
-#: v4lradio-configuration.cpp:409 v4lradio-configuration.cpp:410
+#: v4lradio-configuration.cpp:410 v4lradio-configuration.cpp:411
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: v4lradio-configuration.cpp:509
+#: v4lradio-configuration.cpp:510
 msgid "any ( * )"
 msgstr "jakékoli ( * )"
 
-#: v4lradio-configuration.cpp:513
+#: v4lradio-configuration.cpp:514
 msgid "Select Radio Device"
 msgstr "Vybrat rozhlasové zařízení"
 
-#: v4lradio.cpp:60
+#: v4lradio.cpp:61
 msgid "Support for V4L(2) Radio Devices"
 msgstr "Podpora pro rozhlasové zařízení V4L(2)"
 
-#: v4lradio.cpp:69
+#: v4lradio.cpp:70
 msgid "Video For Linux Plugin"
 msgstr "Přídavný modul Video pro Linux (Video For Linux, V4L)"
 
-#: v4lradio.cpp:778
+#: v4lradio.cpp:792
 #, kde-format
 msgid "invalid frequency %1"
 msgstr "neplatný kmitočet %1"
 
-#: v4lradio.cpp:801 v4lradio.cpp:1617 v4lradio.cpp:1810
+#: v4lradio.cpp:815 v4lradio.cpp:1626 v4lradio.cpp:1820
 #, kde-format
 msgid "don't known how to handle V4L-version %1"
 msgstr "Neví se, jak zacházet s verzí V4L %1"
 
-#: v4lradio.cpp:803 v4lradio.cpp:1619 v4lradio.cpp:1812
+#: v4lradio.cpp:817 v4lradio.cpp:1628 v4lradio.cpp:1822
 #, kde-format
 msgid "%1 Support: %2"
 msgstr "%1 Podpora: %2"
 
-#: v4lradio.cpp:809
+#: v4lradio.cpp:823
 #, kde-format
 msgid "error setting frequency to %1 (%2)"
 msgstr "Chyba (%2) při nastavení kmitočtu na %1"
 
-#: v4lradio.cpp:1186
+#: v4lradio.cpp:1200
 #, kde-format
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
 "permissions."
 msgstr ""
 "Zařízení %1 existuje, není však čitelné/zapisovatelné. Přezkoušejte, prosím, "
-"nastavení "
-"přístupových práv k zařízení."
+"nastavení přístupových práv k zařízení."
 
-#: v4lradio.cpp:1196
+#: v4lradio.cpp:1210
 msgid "Could not find an accessible v4l(2) radio device."
 msgstr "Nelze najít žádné použitelné rozhlasové zařízení v4l(2)."
 
-#: v4lradio.cpp:1272
+#: v4lradio.cpp:1286
 msgid "V4L Radio"
 msgstr "Rozhlas V4L"
 
-#: v4lradio.cpp:1273
+#: v4lradio.cpp:1287
 msgid "V4L Radio Options"
 msgstr "Volby pro rozhlas V4L"
 
-#: v4lradio.cpp:1332
+#: v4lradio.cpp:1346
 #, kde-format
 msgid "Cannot open radio device %1"
 msgstr "Nelze otevřít soubor rozhlasového zařízení %1"
 
-#: v4lradio.cpp:1400
+#: v4lradio.cpp:1409
 #, kde-format
 msgid "cannot open %1"
 msgstr "Nelze otevřít %1"
 
-#: v4lradio.cpp:1408 v4lradio.cpp:1449
+#: v4lradio.cpp:1417 v4lradio.cpp:1458
 #, kde-format
 msgid "detected %1"
 msgstr "Byl nalezen %1"
 
-#: v4lradio.cpp:1451
+#: v4lradio.cpp:1436
+#, kde-format
+msgid "audio caps = %1"
+msgstr ""
+
+#: v4lradio.cpp:1460
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
 msgstr "V4L2 - Verze: %1, caps=%2"
 
-#: v4lradio.cpp:1473
+#: v4lradio.cpp:1482
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Vyhledávání ovládání přepinání ztlumení selhalo"
 
-#: v4lradio.cpp:1480
+#: v4lradio.cpp:1489
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Vyhledávání ovládání hlasitosti (síly zvuku) selhalo"
 
-#: v4lradio.cpp:1488
+#: v4lradio.cpp:1497
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Vyhledávání ovládání výšek selhalo"
 
-#: v4lradio.cpp:1496
+#: v4lradio.cpp:1505
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Vyhledávání ovládání hloubek selhalo"
 
-#: v4lradio.cpp:1504
+#: v4lradio.cpp:1513
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Vyhledávání ovládání rovnováhy selhalo"
 
-#: v4lradio.cpp:1519
+#: v4lradio.cpp:1528
 msgid "V4L not detected"
 msgstr "Rozhlasové zařízení V4L nepodporuje"
 
-#: v4lradio.cpp:1627
+#: v4lradio.cpp:1636
 #, kde-format
 msgid "cannot get tuner info (error %1)"
 msgstr "Informace o tuneru nelze přečíst (chyba %1)"
 
-#: v4lradio.cpp:1819
+#: v4lradio.cpp:1829
 msgid "write"
 msgstr "Zapsat"
 
-#: v4lradio.cpp:1819
+#: v4lradio.cpp:1829
 msgid "read"
 msgstr "Číst"
 
-#: v4lradio.cpp:1818
+#: v4lradio.cpp:1828
 #, kde-format
 msgid "error updating radio audio info (%1): %2"
 msgstr "Chyba %2 při aktualizaci informací o rozhlasovém zvuku (%1"
 
-#: v4lradio.cpp:1999
+#: v4lradio.cpp:2009
 msgid "error reading RDS data\n"
 msgstr "Chyba při čtení RDS dat\n"
 
-#: v4lradio.cpp:2015
+#: v4lradio.cpp:2025
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: Míra chybovosti bloků: %1 %"
 
-#: v4lradio.cpp:2018
+#: v4lradio.cpp:2028
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr ""
 "V4LRadio::processRDSData: Míra chybovosti skupiny (skupina ~4 Blocks): %1 %"
-
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:15+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2006-11-08 12:15+0300\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -242,12 +242,12 @@ msgstr "Ошибка при установке флажка записи %1 дл
 msgid "ALSA Sound Device %1"
 msgstr "Устройство ALSA: %1"
 
-#: alsa-sound.cpp:1757 alsa-sound.cpp:1761
+#: alsa-sound.cpp:1765 alsa-sound.cpp:1769
 #, fuzzy, kde-format
 msgid "AlsaPlugin(capture thread on plughw:%1,%2): %3"
 msgstr "Модуль ALSA: не могу записать данные в устройство plughw:%1,%2"
 
-#: alsa-sound.cpp:1767 alsa-sound.cpp:1771
+#: alsa-sound.cpp:1775 alsa-sound.cpp:1779
 #, kde-format
 msgid "AlsaPlugin(playback thread on plughw:%1,%2): %3"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2009-04-04 17:21+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -47,7 +47,8 @@ msgstr "%1, %2"
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: radiostations/frequencyradiostation.cpp:136, kde-format
+#: radiostations/frequencyradiostation.cpp:136
+#, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
@@ -203,11 +204,11 @@ msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
 "html>"
 msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>Verze %2</b><br />Používá se KDE "
-"%3</"
-"html>"
+"<html><font size=\"5\">%1</font><br /><b>Verze %2</b><br />Používá se KDE %"
+"3</html>"
 
-#: src/kradioaboutwidget.cpp:125, kde-format
+#: src/kradioaboutwidget.cpp:125
+#, kde-format
 msgid "License: %1"
 msgstr "Licence: %1"
 
@@ -280,29 +281,41 @@ msgstr ""
 msgid "New Plugin Libraries found"
 msgstr "Byly nalezeny nové přídavné knihovny."
 
-#: src/kradioapp.cpp:251
+#: src/kradioapp.cpp:234
+#, kde-format
+msgid ""
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"installation directory and the environment variables KDEDIR, KDEDIRS and "
+"KDEHOME.\n"
+msgstr ""
+
+#: src/kradioapp.cpp:239
+msgid "KRadio4 Installation Error"
+msgstr ""
+
+#: src/kradioapp.cpp:264
 msgid "Instance"
 msgstr "Instance"
 
-#: src/kradioapp.cpp:272
+#: src/kradioapp.cpp:285
 msgid "KRadio Configuration"
 msgstr "Nastavení programu KRadio"
 
-#: src/kradioapp.cpp:273
+#: src/kradioapp.cpp:286
 msgid "About KRadio Components"
 msgstr "O součástech programu KRadio"
 
-#: src/kradioapp.cpp:301
+#: src/kradioapp.cpp:314
 #, kde-format
 msgid "Error: Loading Library %1 failed: %2"
 msgstr "Chyba: Nahrání knihovny %1 selhalo: %2"
 
-#: src/kradioapp.cpp:351
+#: src/kradioapp.cpp:364
 #, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 falied."
 msgstr "Chyba: Vytvoření instance \"%1\" skupiny %2 selhalo."
 
-#: src/kradioapp.cpp:357
+#: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
 msgstr "Chyba: Nelze vytvořit instanci \"%1\" neznámé skupiny %2."
@@ -404,8 +417,7 @@ msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
 "Byly nalezeny nové přídavné moduly. Chcete, aby byly nyní automaticky "
-"vytvořeny "
-"instance?"
+"vytvořeny instance?"
 
 #: src/pluginmanager.cpp:605
 msgid "New Plugins found"
@@ -587,11 +599,13 @@ msgstr "Vlastnost %1 je skupině %2 neznámá"
 msgid "characters ignored for element %1"
 msgstr "Některé znaky prvku %1 byly ponechány nepovšimnuty"
 
-#: src/widgetpluginbase.cpp:293, kde-format
+#: src/widgetpluginbase.cpp:293
+#, kde-format
 msgid "Show %1"
 msgstr "Ukázat %1"
 
-#: src/widgetpluginbase.cpp:297, kde-format
+#: src/widgetpluginbase.cpp:297
+#, kde-format
 msgid "Hide %1"
 msgstr "Skrýt %1"
 
@@ -759,15 +773,10 @@ msgstr ""
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Můžete "
 "<span style=\" font-weight:600;\">přejmenovat</span> instanci přídavného "
 "modulu tím, že dvakrát poklepete na název instance. Tento název se objeví "
-"dole "
-"pod ikonou stránky s nastavením, v záhlaví stránky s nastavením a např. v "
-"názvu "
-"vašeho zvukového zařízení. Úpravy názvů přídavných modulů se doporučují "
-"kvůli  "
-"vašemu pohodlí; např. jestliže máte více zvukových karet a/nebo více "
-"instancí "
-" přídavných modulů ALSA.</p></body></"
-"html>"
+"dole pod ikonou stránky s nastavením, v záhlaví stránky s nastavením a např. "
+"v názvu vašeho zvukového zařízení. Úpravy názvů přídavných modulů se "
+"doporučují kvůli  vašemu pohodlí; např. jestliže máte více zvukových karet a/"
+"nebo více instancí  přídavných modulů ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
@@ -816,5 +825,3 @@ msgstr "Zvolené stanice"
 #: rc.cpp:105
 msgid "Available Stations"
 msgstr "Dostupné stanice"
-
-

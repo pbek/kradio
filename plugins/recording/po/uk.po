@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:15+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2007-01-30 22:19+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -37,7 +37,7 @@ msgid "Cannot initialize libmp3lame parameters. "
 msgstr ""
 "Неможливо задати параметри libmp3lame — це необхідно для кодування у MP3."
 
-#: encoder_mp3.cpp:130 encoder_ogg.cpp:180
+#: encoder_mp3.cpp:130 encoder_ogg.cpp:181
 msgid "unknown station"
 msgstr ""
 
@@ -54,21 +54,21 @@ msgstr "Неможливо відкрити файл виведення %1. "
 msgid "Cannot allocate buffers for mp3 encoding. "
 msgstr "Неможливо розмістити у пам'яті буфери для кодування MP3."
 
-#: encoder_ogg.cpp:96
+#: encoder_ogg.cpp:97
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Помилка запису даних у потік виведення ogg/vorbis. "
 
-#: encoder_ogg.cpp:138
+#: encoder_ogg.cpp:139
 #, kde-format
 msgid "Cannot open Ogg/Vorbis output file %1. "
 msgstr "Неможливо відкрити файл виведення Ogg/Vorbis \"%1\". "
 
-#: encoder_ogg.cpp:151
+#: encoder_ogg.cpp:152
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
 msgstr ""
 "Запуск режиму Ogg/Vorbis зазнав невдачі: якість запису вказано помилково\n"
 
-#: encoder_ogg.cpp:202
+#: encoder_ogg.cpp:203
 msgid "Failed writing Ogg/Vorbis header to output stream\n"
 msgstr "Помилка запису заголовку Ogg/Vorbis у потік виведенняі\n"
 

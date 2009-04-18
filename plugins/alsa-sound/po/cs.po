@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2009-04-04 14:34+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -61,8 +61,7 @@ msgid ""
 "4)"
 msgstr ""
 "Přídavný modul ALSA: Přetečení vyrovnávací paměti v zařízení plughw:%1,%2 "
-"(Velikost "
-"vyrovnávací paměti=%3, buffer=%4)"
+"(Velikost vyrovnávací paměti=%3, buffer=%4)"
 
 #: alsa-sound.cpp:682
 #, kde-format
@@ -75,8 +74,7 @@ msgid ""
 "one\n"
 msgstr ""
 "Přídavný modul ALSA: vnitřní chyba. Vlákno přehrávání ještě existovalo - v "
-"rozporu s "
-"očekáváním\n"
+"rozporu s očekáváním\n"
 
 #: alsa-sound.cpp:790
 msgid ""
@@ -84,8 +82,7 @@ msgid ""
 "one\n"
 msgstr ""
 "Přídavný modul ALSA: vnitřní chyba. Vlákno zachytávání ještě existovalo - v "
-"rozporu s "
-"očekáváním\n"
+"rozporu s očekáváním\n"
 
 #: alsa-sound.cpp:825
 #, kde-format
@@ -170,8 +167,7 @@ msgid ""
 "size of %3 instead."
 msgstr ""
 "Přídavný modul ALSA: Zvuková karta %1  nepodporuje velikost vyrovnávací "
-"paměti %2. "
-"Místo toho se používá velikost vyrovnávací paměti %3."
+"paměti %2. Místo toho se používá velikost vyrovnávací paměti %3."
 
 #: alsa-sound.cpp:906
 #, kde-format
@@ -196,8 +192,7 @@ msgstr ""
 msgid "ALSA Plugin: Setting timer latency to %1 for %2"
 msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení latence časovače (zdroje hodinových "
-"impulzů) "
-"na %1 pro zařízení %2"
+"impulzů) na %1 pro zařízení %2"
 
 #: alsa-sound.cpp:945
 #, kde-format
@@ -206,8 +201,7 @@ msgid ""
 "did not stop as desired"
 msgstr ""
 "Přídavný modul ALSA (zařízení plughw:%1,%2): Jémine, vlákno přehrávání "
-"muselo být zabito, "
-"protože se samo neukončilo."
+"muselo být zabito, protože se samo neukončilo."
 
 #: alsa-sound.cpp:977
 #, kde-format
@@ -216,8 +210,7 @@ msgid ""
 "did not stop as desired"
 msgstr ""
 "Přídavný modul ALSA (zařízení plughw:%1,%2): Jémine, vlákno zachytávání "
-"muselo být zabito, "
-"protože se samo neukončilo."
+"muselo být zabito, protože se samo neukončilo."
 
 #: alsa-sound.cpp:1039
 msgid "ALSA Plugin: Error opening mixer"
@@ -275,12 +268,12 @@ msgstr ""
 msgid "ALSA Sound Device %1"
 msgstr "Zvukové zařízení ALSA %1"
 
-#: alsa-sound.cpp:1757 alsa-sound.cpp:1761
+#: alsa-sound.cpp:1765 alsa-sound.cpp:1769
 #, kde-format
 msgid "AlsaPlugin(capture thread on plughw:%1,%2): %3"
 msgstr "Přídavný modul ALSA (vlákno zachytávání na plughw:%1,%2): %3"
 
-#: alsa-sound.cpp:1767 alsa-sound.cpp:1771
+#: alsa-sound.cpp:1775 alsa-sound.cpp:1779
 #, kde-format
 msgid "AlsaPlugin(playback thread on plughw:%1,%2): %3"
 msgstr "Přídavný modul ALSA (vlákno přehrávání na plughw:%1,%2): %3"
@@ -517,18 +510,13 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tato "
-"volba musí"
-"být povolena, když zvukové (předstírané) zařízení ALSA má ovladač, který "
-"neposkytuje správné informace, např. o kmitočtu, aby KRadio přesto mohlo "
-"správně "
-"zpracovávat zvuková data (se správnou informací o formátu/ vzorkovacím "
-"kmitočtu). Toto je, "
-"jak se zdá, případ některých ovladačů tv/radio karet Avermedia, které "
-"vytvářejí předstírané "
-"zvukové zařízení ALSA, jejichž ovladače dodávají PCM zvuková data (vzorky) "
-"získané "
-"přes sběrnici PCI.</p></body></"
-"html>"
+"volba musíbýt povolena, když zvukové (předstírané) zařízení ALSA má ovladač, "
+"který neposkytuje správné informace, např. o kmitočtu, aby KRadio přesto "
+"mohlo správně zpracovávat zvuková data (se správnou informací o formátu/ "
+"vzorkovacím kmitočtu). Toto je, jak se zdá, případ některých ovladačů tv/"
+"radio karet Avermedia, které vytvářejí předstírané zvukové zařízení ALSA, "
+"jejichž ovladače dodávají PCM zvuková data (vzorky) získané přes sběrnici "
+"PCI.</p></body></html>"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:380
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCaptureFormatOverride)
@@ -623,5 +611,3 @@ msgstr "Pavel Fric"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pavelfric@seznam.cz"
-
-

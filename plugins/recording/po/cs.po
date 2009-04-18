@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2009-04-02 18:55+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -34,7 +34,7 @@ msgstr "Nelze inicializovat knihovnu funkcí libmp3lame."
 msgid "Cannot initialize libmp3lame parameters. "
 msgstr "Nelze inicializovat pomocné proměnné knihovny funkcí libmp3lame."
 
-#: encoder_mp3.cpp:130 encoder_ogg.cpp:180
+#: encoder_mp3.cpp:130 encoder_ogg.cpp:181
 msgid "unknown station"
 msgstr "Neznámá stanice"
 
@@ -51,22 +51,22 @@ msgstr "Nelze otevřít výstupní soubor %1. "
 msgid "Cannot allocate buffers for mp3 encoding. "
 msgstr "Vyrovnávací paměť pro kódování mp3 nelze přidělit."
 
-#: encoder_ogg.cpp:96
+#: encoder_ogg.cpp:97
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Zápis dat do výstupního proudu ogg/vorbis selhal."
 
-#: encoder_ogg.cpp:138
+#: encoder_ogg.cpp:139
 #, kde-format
 msgid "Cannot open Ogg/Vorbis output file %1. "
 msgstr "Nelze otevřít výstupní soubor Ogg/Vorbis %1."
 
-#: encoder_ogg.cpp:151
+#: encoder_ogg.cpp:152
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
 msgstr ""
 "Inicializace režimu Ogg/Vorbis selhala: neplatné pomocné proměnné pro "
 "kvalitu\n"
 
-#: encoder_ogg.cpp:202
+#: encoder_ogg.cpp:203
 msgid "Failed writing Ogg/Vorbis header to output stream\n"
 msgstr "Zápis hlavičky Ogg/Vorbis do výstupního datového proudu selhal\n"
 
@@ -343,8 +343,7 @@ msgid ""
 "input bytes"
 msgstr ""
 "Přetečení vstupní vyrovnávací paměti kodéru (problém s nastavením "
-"vyrovnávací "
-"paměti?) Bylo přeskočeno %1 bytů"
+"vyrovnávací paměti?) Bylo přeskočeno %1 bytů"
 
 #: recording.cpp:557
 msgid "Recording::outputFile: "
@@ -363,10 +362,10 @@ msgstr "Nahrávání bylo zastaveno"
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
 msgstr ""
-"Recording::notifySoundStreamData(kódovaná data): Přijímač"
-"přeskočil %1 Bytů"
+"Recording::notifySoundStreamData(kódovaná data): Přijímačpřeskočil %1 Bytů"
 
-#: recording-datamonitor.cpp:205 recording-datamonitor.cpp:211, kde-format
+#: recording-datamonitor.cpp:205 recording-datamonitor.cpp:211
+#, kde-format
 msgid "%1 dB"
 msgstr "%1 dB"
 
@@ -417,11 +416,13 @@ msgstr "Nic"
 msgid "%1 Byte"
 msgstr "%1 Byte"
 
-#: recording-monitor.cpp:342, kde-format
+#: recording-monitor.cpp:342
+#, kde-format
 msgid "%1 kB"
 msgstr "%1 kB"
 
-#: recording-monitor.cpp:343, kde-format
+#: recording-monitor.cpp:343
+#, kde-format
 msgid "%1 MB"
 msgstr "%1 MB"
 
@@ -430,7 +431,8 @@ msgstr "%1 MB"
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: recording-monitor.cpp:347, kde-format
+#: recording-monitor.cpp:347
+#, kde-format
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
@@ -445,5 +447,3 @@ msgstr "00:00:00.00"
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
 msgstr "&Zastavit nahrávání"
-
-

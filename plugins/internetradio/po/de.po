@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:15+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2009-03-28 22:37+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: \n"
@@ -17,79 +17,79 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: decoder_thread.cpp:108 decoder_thread.cpp:134
+#: decoder_thread.cpp:110 decoder_thread.cpp:136
 #, kde-format
 msgid "downloading playlist %1"
 msgstr "Lade Wiedergabeliste %1"
 
-#: decoder_thread.cpp:124 decoder_thread.cpp:154 decoder_thread.cpp:205
+#: decoder_thread.cpp:126 decoder_thread.cpp:173 decoder_thread.cpp:224
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 enthält keinen brauchbaren Radio-Datenstrom"
 
-#: decoder_thread.cpp:127 decoder_thread.cpp:158 decoder_thread.cpp:209
+#: decoder_thread.cpp:129 decoder_thread.cpp:177 decoder_thread.cpp:228
 #, kde-format
 msgid "failed to download %1"
 msgstr "Das Laden von %1 schlug fehl."
 
-#: decoder_thread.cpp:201
+#: decoder_thread.cpp:220
 msgid "error while reading asx file"
 msgstr "Das Laden der ASX-Datei schlug fehl."
 
-#: decoder_thread.cpp:222
+#: decoder_thread.cpp:241
 #, kde-format
 msgid "opening stream %1"
 msgstr "Öffne den Radio-Datenstrom %1."
 
-#: decoder_thread.cpp:226
+#: decoder_thread.cpp:245
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr ""
 "Das Öffnen von %1 schlug fehl. Versuche, den nächsten Radio-Datenstrom aus "
 "der Wiedergabeliste zu öffnen."
 
-#: decoder_thread.cpp:230
+#: decoder_thread.cpp:249
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Konnte keinen Radio-Datenstrom aus der Wiedergabeliste %1 öffnen."
 
-#: decoder_thread.cpp:254
+#: decoder_thread.cpp:273
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet\n"
 msgstr "%1: Fehler beim Dekodieren des Paketes. Paket wird verworfen\n"
 
-#: decoder_thread.cpp:259
+#: decoder_thread.cpp:278
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Interner-Audio-Datenstrom, wird nicht gespeichert (%1)"
 
-#: decoder_thread.cpp:437 decoder_thread.cpp:439
+#: decoder_thread.cpp:456 decoder_thread.cpp:458
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "der MMS-Datenstrom %1 kann nicht geöffnet werden"
 
-#: decoder_thread.cpp:460 decoder_thread.cpp:462 decoder_thread.cpp:472
-#: decoder_thread.cpp:474
+#: decoder_thread.cpp:479 decoder_thread.cpp:481 decoder_thread.cpp:491
+#: decoder_thread.cpp:493
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr "Der Audio-Datenstrom %1 kann nicht geöffnet werden"
 
-#: decoder_thread.cpp:484 decoder_thread.cpp:486
+#: decoder_thread.cpp:503 decoder_thread.cpp:505
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Kann die Meta-Informationen im Audio-Datenstrom %1 nicht finden."
 
-#: decoder_thread.cpp:503 decoder_thread.cpp:505
+#: decoder_thread.cpp:522 decoder_thread.cpp:524
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Kann keinen Audio-Datenstrom in der URL %1 finden."
 
-#: decoder_thread.cpp:521 decoder_thread.cpp:523
+#: decoder_thread.cpp:540 decoder_thread.cpp:542
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Kann keinen Decoder für %1 finden."
 
-#: decoder_thread.cpp:531 decoder_thread.cpp:533
+#: decoder_thread.cpp:550 decoder_thread.cpp:552
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Das Öffnen des Decoders für %1 schlug fehl."

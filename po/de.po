@@ -1,3 +1,4 @@
+# translation of kradio4-svn.po.de.po to German
 # translation of de.po to
 # This file is put in the public domain.
 #
@@ -5,12 +6,12 @@
 # Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: de\n"
+"Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:15+0200\n"
-"PO-Revision-Date: 2009-03-29 12:07+0200\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
+"PO-Revision-Date: 2009-04-18 12:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: German <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -174,14 +175,12 @@ msgstr "kann die Puffer-Datei %1 nicht öffnen"
 #: src/fileringbuffer.cpp:93
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
-msgstr ""
-"FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
+msgstr "FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
 
 #: src/fileringbuffer.cpp:99
 #, kde-format
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
-msgstr ""
-"FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
+msgstr "FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
 
 #: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
 #, kde-format
@@ -285,40 +284,50 @@ msgstr ""
 msgid "New Plugin Libraries found"
 msgstr "Neue Plugin-Bibliotheken wurden gefunden"
 
-#: src/kradioapp.cpp:251
+#: src/kradioapp.cpp:234
+#, kde-format
+msgid ""
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"installation directory and the environment variables KDEDIR, KDEDIRS and "
+"KDEHOME.\n"
+msgstr "KRadio4 hat nur %1 Plugin-Bibliotheken gefunden. Erwartet wurden aber mindestens 5. Bitte überprüfen Sie, ob das Installationsverzeichnis von KRadio4 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und KDEHOME.\n"
+
+#: src/kradioapp.cpp:239
+msgid "KRadio4 Installation Error"
+msgstr "Fehler in der KRadio4-Installation"
+
+#: src/kradioapp.cpp:264
 msgid "Instance"
 msgstr "Instanz"
 
-#: src/kradioapp.cpp:272
+#: src/kradioapp.cpp:285
 msgid "KRadio Configuration"
 msgstr "KRadio-Konfiguration "
 
-#: src/kradioapp.cpp:273
+#: src/kradioapp.cpp:286
 msgid "About KRadio Components"
 msgstr "Über die KRadio-Komponenten "
 
-#: src/kradioapp.cpp:301
+#: src/kradioapp.cpp:314
 #, kde-format
 msgid "Error: Loading Library %1 failed: %2"
 msgstr "Fehler: Das Laden der Bibliothek %1 schlug fehl: %2"
 
-#: src/kradioapp.cpp:351
+#: src/kradioapp.cpp:364
 #, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 falied."
 msgstr "Fehler: Das erzeugen der Instanz \"%1\" der Klasse %2 schlug fehl."
 
-#: src/kradioapp.cpp:357
+#: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr ""
-"Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
+msgstr "Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
 
 #: src/main.cpp:34
 msgid "KRadio4"
 msgstr "KRadio4"
 
 #: src/main.cpp:36
-#, fuzzy
 msgid "A versatile KDE AM/FM/Internet radio application"
 msgstr "Eine vielseitige KDE-Anwendung für MW/UKW/Internet-Radio-Sender"
 
@@ -408,8 +417,7 @@ msgid "Creating Plugin %1"
 msgstr "Erzeuge Plugin %1"
 
 #: src/pluginmanager.cpp:603
-msgid ""
-"New plugins found. Do you want me to automatically create instances now?"
+msgid "New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
 "Neue Plugins wurden gefunden: Sollen Instanzen dieser Plugins jetzt "
 "automatisch erzeugt werden?"
@@ -437,8 +445,7 @@ msgstr "Alle wiederherstellen"
 
 #: src/pluginmanager.cpp:761
 msgid "restore state before laste hide-all activation"
-msgstr ""
-"Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
+msgstr "Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
@@ -821,3 +828,4 @@ msgstr "Ausgewählte Sender"
 #: rc.cpp:105
 msgid "Available Stations"
 msgstr "Verfügbare Sender"
+

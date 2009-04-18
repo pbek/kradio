@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:15+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2004-02-28 22:45+0000\n"
 "Last-Translator: Rafael Rodríguez Martín <apt-drink@telefonica.net>\n"
 "Language-Team: es_ES <kde-es@kybs.de>\n"
@@ -279,29 +279,42 @@ msgstr ""
 msgid "New Plugin Libraries found"
 msgstr "Configuración de barra de acceso rápido"
 
-#: src/kradioapp.cpp:251
+#: src/kradioapp.cpp:234
+#, kde-format
+msgid ""
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"installation directory and the environment variables KDEDIR, KDEDIRS and "
+"KDEHOME.\n"
+msgstr ""
+
+#: src/kradioapp.cpp:239
+#, fuzzy
+msgid "KRadio4 Installation Error"
+msgstr "Emisoras de radio"
+
+#: src/kradioapp.cpp:264
 msgid "Instance"
 msgstr "Instancia"
 
-#: src/kradioapp.cpp:272
+#: src/kradioapp.cpp:285
 msgid "KRadio Configuration"
 msgstr "Configuración de KRadio"
 
-#: src/kradioapp.cpp:273
+#: src/kradioapp.cpp:286
 msgid "About KRadio Components"
 msgstr "Acerca de los componentes de KRadio"
 
-#: src/kradioapp.cpp:301
+#: src/kradioapp.cpp:314
 #, fuzzy, kde-format
 msgid "Error: Loading Library %1 failed: %2"
 msgstr "error al leer %1: %2"
 
-#: src/kradioapp.cpp:351
+#: src/kradioapp.cpp:364
 #, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 falied."
 msgstr ""
 
-#: src/kradioapp.cpp:357
+#: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
 msgstr ""
@@ -993,9 +1006,6 @@ msgstr "Emisoras disponibles"
 
 #~ msgid "Radio Multiplexer Plugin"
 #~ msgstr "Plugin de multiplexado de radio"
-
-#~ msgid "Radio Stations"
-#~ msgstr "Emisoras de radio"
 
 #~ msgid "Setup Radio Stations"
 #~ msgstr "Configurar emisoras de radio"

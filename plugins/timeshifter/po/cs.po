@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_timeshifter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-29 14:32+0200\n"
+"POT-Creation-Date: 2009-04-18 11:57+0200\n"
 "PO-Revision-Date: 2009-04-04 09:41+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -85,10 +85,9 @@ msgstr "Časově posunuté přehrávání %1 (%2)"
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
-"TimeShifter::notifySoundStreamData: %1 bytů zvukových dat bylo přeskočeno "
-"a je ztraceno"
+"TimeShifter::notifySoundStreamData: %1 bytů zvukových dat bylo přeskočeno a "
+"je ztraceno"
 
 #: timeshifter.cpp:593
 msgid "internal stream, not stored"
 msgstr "Vnitřní zvukový datový proud, nebude uložen"
-
