@@ -175,12 +175,14 @@ msgstr "kann die Puffer-Datei %1 nicht öffnen"
 #: src/fileringbuffer.cpp:93
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
+msgstr ""
+"FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
 
 #: src/fileringbuffer.cpp:99
 #, kde-format
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
+msgstr ""
+"FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
 
 #: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
 #, kde-format
@@ -290,7 +292,12 @@ msgid ""
 "Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
-msgstr "KRadio4 hat nur %1 Plugin-Bibliotheken gefunden. Erwartet wurden aber mindestens 5. Bitte überprüfen Sie, ob das Installationsverzeichnis von KRadio4 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und KDEHOME.\n"
+msgstr ""
+"KRadio4 hat nur %1 Plugin-Bibliotheken gefunden. Erwartet wurden aber "
+"mindestens 5. Bitte überprüfen Sie, ob das Installationsverzeichnis von "
+"KRadio4 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie "
+"bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und "
+"KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
@@ -321,7 +328,8 @@ msgstr "Fehler: Das erzeugen der Instanz \"%1\" der Klasse %2 schlug fehl."
 #: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr "Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
+msgstr ""
+"Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
 
 #: src/main.cpp:34
 msgid "KRadio4"
@@ -417,7 +425,8 @@ msgid "Creating Plugin %1"
 msgstr "Erzeuge Plugin %1"
 
 #: src/pluginmanager.cpp:603
-msgid "New plugins found. Do you want me to automatically create instances now?"
+msgid ""
+"New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
 "Neue Plugins wurden gefunden: Sollen Instanzen dieser Plugins jetzt "
 "automatisch erzeugt werden?"
@@ -445,7 +454,8 @@ msgstr "Alle wiederherstellen"
 
 #: src/pluginmanager.cpp:761
 msgid "restore state before laste hide-all activation"
-msgstr "Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
+msgstr ""
+"Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
@@ -828,4 +838,3 @@ msgstr "Ausgewählte Sender"
 #: rc.cpp:105
 msgid "Available Stations"
 msgstr "Verfügbare Sender"
-

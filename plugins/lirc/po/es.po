@@ -1,0 +1,206 @@
+#: lirc-configuration.cpp:44 lirc-configuration.cpp:45
+msgid "<don't care>"
+msgstr ""
+
+#: lirc-configuration.cpp:63
+msgid "digit 0"
+msgstr ""
+
+#: lirc-configuration.cpp:64
+msgid "digit 1"
+msgstr ""
+
+#: lirc-configuration.cpp:65
+msgid "digit 2"
+msgstr ""
+
+#: lirc-configuration.cpp:66
+msgid "digit 3"
+msgstr ""
+
+#: lirc-configuration.cpp:67
+msgid "digit 4"
+msgstr ""
+
+#: lirc-configuration.cpp:68
+msgid "digit 5"
+msgstr ""
+
+#: lirc-configuration.cpp:69
+msgid "digit 6"
+msgstr ""
+
+#: lirc-configuration.cpp:70
+msgid "digit 7"
+msgstr ""
+
+#: lirc-configuration.cpp:71
+msgid "digit 8"
+msgstr ""
+
+#: lirc-configuration.cpp:72
+msgid "digit 9"
+msgstr ""
+
+#: lirc-configuration.cpp:73
+msgid "Power On"
+msgstr ""
+
+#: lirc-configuration.cpp:74
+msgid "Power Off"
+msgstr ""
+
+#: lirc-configuration.cpp:75
+msgid "Pause"
+msgstr ""
+
+#: lirc-configuration.cpp:76
+msgid "Start Recording"
+msgstr ""
+
+#: lirc-configuration.cpp:77
+msgid "Stop Recording"
+msgstr ""
+
+#: lirc-configuration.cpp:78
+msgid "Increase Volume"
+msgstr ""
+
+#: lirc-configuration.cpp:79
+msgid "Decrease Volume"
+msgstr ""
+
+#: lirc-configuration.cpp:80
+msgid "Next Channel"
+msgstr ""
+
+#: lirc-configuration.cpp:81
+msgid "Previous Channel"
+msgstr ""
+
+#: lirc-configuration.cpp:82
+msgid "Search Next Channel"
+msgstr ""
+
+#: lirc-configuration.cpp:83
+msgid "Search Previous Channel"
+msgstr ""
+
+#: lirc-configuration.cpp:84
+msgid "Enable Sleep Countdown"
+msgstr ""
+
+#: lirc-configuration.cpp:85
+msgid "Quit KRadio"
+msgstr ""
+
+#: lirc-configuration.cpp:215
+msgid ""
+"Enter the key string of your remote or just press the button on your remote "
+"control"
+msgstr ""
+
+#: lirc-configuration.cpp:221
+msgid "Double Click on the entries to change the assignments"
+msgstr ""
+
+#: lircsupport.cpp:48
+msgid "Linux Infrared Control (LIRC) Support"
+msgstr ""
+
+#: lircsupport.cpp:54 lircsupport.cpp:371
+msgid "LIRC Plugin"
+msgstr ""
+
+#: lircsupport.cpp:57 lircsupport.cpp:58
+msgid "initializing kradio lirc plugin"
+msgstr ""
+
+#: lircsupport.cpp:66
+#, kde-format
+msgid ""
+"%1 does not exist. File was created with KRadio's default .lircrc proposal"
+msgstr ""
+
+#: lircsupport.cpp:79
+#, kde-format
+msgid "failed to read file %1"
+msgstr ""
+
+#: lircsupport.cpp:104
+msgid "There is no entry for kradio in any of your .lircrc files."
+msgstr ""
+
+#: lircsupport.cpp:105
+msgid "Please setup your .lircrc files correctly."
+msgstr ""
+
+#: lircsupport.cpp:115 lircsupport.cpp:116
+msgid "Initializing kradio lirc plugin failed"
+msgstr ""
+
+#: lircsupport.cpp:118 lircsupport.cpp:119
+msgid "Initializing kradio lirc plugin successful"
+msgstr ""
+
+#: lircsupport.cpp:170
+msgid ""
+"Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
+"kradio"
+msgstr ""
+
+#: lircsupport.cpp:370
+msgid "LIRC Support"
+msgstr ""
+
+#. i18n: file: lirc-configuration-ui.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, LIRCConfigurationUI)
+#: rc.cpp:3 rc.cpp:26
+msgid "LIRCConfigurationUI"
+msgstr ""
+
+#. i18n: file: lirc-configuration-ui.ui:40
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:6 rc.cpp:29
+msgid "Action"
+msgstr ""
+
+#. i18n: file: lirc-configuration-ui.ui:51
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:9 rc.cpp:32
+msgid "LIRC String"
+msgstr ""
+
+#. i18n: file: lirc-configuration-ui.ui:62
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:12 rc.cpp:35
+msgid "Alternative LIRC String"
+msgstr ""
+
+#. i18n: file: lirc-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
+#: rc.cpp:15 rc.cpp:38
+msgid "textLabel1"
+msgstr ""
+
+#. i18n: file: lirc-configuration-ui.ui:106
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:18 rc.cpp:41
+msgid "Startup Mode override for Power Off"
+msgstr ""
+
+#. i18n: file: lirc-configuration-ui.ui:113
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:21 rc.cpp:44
+msgid "Startup Mode override for Power On"
+msgstr ""
+
+#: rc.cpp:22
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:23
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

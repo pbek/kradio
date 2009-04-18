@@ -1,0 +1,54 @@
+#: errorlog.cpp:35
+msgid "Error Logging Window for KRadio"
+msgstr ""
+
+#: errorlog.cpp:41
+msgid "Error Logger"
+msgstr ""
+
+#: errorlog.cpp:49 errorlog.cpp:58
+msgid "KRadio Logger"
+msgstr ""
+
+#: errorlog.cpp:55
+msgid "Save &as"
+msgstr ""
+
+#: errorlog.cpp:60
+msgid "Information"
+msgstr ""
+
+#: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
+#, kde-format
+msgid "KRadio4 Version %1 logging started"
+msgstr ""
+
+#: errorlog.cpp:63
+msgid "Warnings"
+msgstr ""
+
+#: errorlog.cpp:66
+msgid "Errors"
+msgstr ""
+
+#: errorlog.cpp:69
+msgid "Debugging"
+msgstr ""
+
+#: errorlog.cpp:182
+msgid "Log Files"
+msgstr ""
+
+#: errorlog.cpp:187
+msgid "Save KRadio Logging Data as ..."
+msgstr ""
+
+#: errorlog.cpp:212
+#, kde-format
+msgid "error writing to tempfile %1"
+msgstr ""
+
+#: errorlog.cpp:221
+#, kde-format
+msgid "error uploading preset file %1"
+msgstr ""

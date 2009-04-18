@@ -1,0 +1,217 @@
+#: displaycfg.cpp:35
+msgid "Display Colors"
+msgstr ""
+
+#: displaycfg.cpp:48
+msgid "Active Text"
+msgstr ""
+
+#: displaycfg.cpp:49
+msgid "Inactive Text"
+msgstr ""
+
+#: displaycfg.cpp:50
+msgid "Background Color"
+msgstr ""
+
+#: radioview.cpp:54
+msgid "Standard Display for KRadio"
+msgstr ""
+
+#: radioview.cpp:60
+msgid "Radio Display"
+msgstr ""
+
+#: radioview.cpp:145
+msgid "Pause KRadio"
+msgstr ""
+
+#: radioview.cpp:150
+msgid "Start Recording"
+msgstr ""
+
+#: radioview.cpp:158
+msgid "5 min"
+msgstr ""
+
+#: radioview.cpp:162
+msgid "10 min"
+msgstr ""
+
+#: radioview.cpp:166
+msgid "15 min"
+msgstr ""
+
+#: radioview.cpp:170
+msgid "30 min"
+msgstr ""
+
+#: radioview.cpp:174
+msgid "60 min"
+msgstr ""
+
+#: radioview.cpp:178
+msgid "90 min"
+msgstr ""
+
+#: radioview.cpp:182
+msgid "120 min"
+msgstr ""
+
+#: radioview.cpp:227
+msgid "Configure KRadio"
+msgstr ""
+
+#: radioview.cpp:228
+msgid "Power On/Off"
+msgstr ""
+
+#: radioview.cpp:229
+msgid "Quit KRadio Application"
+msgstr ""
+
+#: radioview.cpp:230
+msgid "Start/Stop Recording"
+msgstr ""
+
+#: radioview.cpp:231
+msgid "Start/Stop Sleep Countdown"
+msgstr ""
+
+#: radioview.cpp:232
+msgid "Show/Hide Plugins"
+msgstr ""
+
+#: radioview.cpp:233
+msgid "Help about KRadio and KDE"
+msgstr ""
+
+#: radioview.cpp:234
+msgid "Select a Radio Station"
+msgstr ""
+
+#: radioview.cpp:407
+msgid "no preset defined"
+msgstr ""
+
+#: radioview.cpp:554 radioview.cpp:624
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr ""
+
+#: radioview.cpp:607
+msgid "Resume playback"
+msgstr ""
+
+#: radioview.cpp:611
+msgid "Pause playback"
+msgstr ""
+
+#: radioview.cpp:704
+msgid "Display"
+msgstr ""
+
+#: radioview.cpp:705
+msgid "Display Configuration"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:118 radioview_frequencyradio.cpp:119
+msgid "Frequency Display"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:394
+msgid "AM"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:395
+msgid "FM"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:396
+msgid "RDS"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:397
+msgid "NET"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:538
+#, kde-format
+msgid "%1 kHz"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:540
+#, kde-format
+msgid "%1 MHz"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:79
+msgid "Search for previous Radio Station"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:80
+msgid "Search for next Radio Station"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:81
+msgid "Decrement Frequency"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:82
+msgid "Increment Frequency"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:83
+msgid "Change Frequency"
+msgstr ""
+
+#: radioview_volume.cpp:59
+msgid "Change Volume"
+msgstr ""
+
+#. i18n: file: radioview_seekinterface.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
+#: rc.cpp:3 rc.cpp:23
+msgid "RadioView_SeekInterface"
+msgstr ""
+
+#. i18n: file: radioview_seekinterface.ui:30
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
+#: rc.cpp:6 rc.cpp:26
+msgid "search previous station"
+msgstr ""
+
+#. i18n: file: radioview_seekinterface.ui:53
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
+#: rc.cpp:9 rc.cpp:29
+msgid "decrease freq. by 0.05 MHz"
+msgstr ""
+
+#. i18n: file: radioview_seekinterface.ui:70
+#. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
+#: rc.cpp:12 rc.cpp:32
+msgctxt "Frequency"
+msgid "Frequency control"
+msgstr ""
+
+#. i18n: file: radioview_seekinterface.ui:107
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
+#: rc.cpp:15 rc.cpp:35
+msgid "increase freq. by 0.05 MHz"
+msgstr ""
+
+#. i18n: file: radioview_seekinterface.ui:127
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
+#: rc.cpp:18 rc.cpp:38
+msgid "search next station"
+msgstr ""
+
+#: rc.cpp:19
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:20
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

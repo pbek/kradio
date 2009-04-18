@@ -1,0 +1,113 @@
+#: docking-configuration.cpp:69
+msgid "Left Mouse Click on Tray"
+msgstr ""
+
+#: docking-configuration.cpp:72
+msgid "Show/Hide all GUI Elements"
+msgstr ""
+
+#: docking-configuration.cpp:73
+msgid "Power On/Off"
+msgstr ""
+
+#: docking.cpp:45
+msgid "System Tray Icon/Menu for KRadio"
+msgstr ""
+
+#: docking.cpp:53
+msgid "System Tray Plugin"
+msgstr ""
+
+#: docking.cpp:201
+msgid "System Tray Icon"
+msgstr ""
+
+#: docking.cpp:202
+msgid "System Tray Icon Configuration"
+msgstr ""
+
+#: docking.cpp:254
+msgid "Search Next Station"
+msgstr ""
+
+#: docking.cpp:255
+msgid "Search Previous Station"
+msgstr ""
+
+#: docking.cpp:264
+msgid "Recording"
+msgstr ""
+
+#: docking.cpp:269
+msgid "Pause Radio"
+msgstr ""
+
+#: docking.cpp:280
+msgid "Show/Hide Plugins"
+msgstr ""
+
+#: docking.cpp:288
+msgid "&Quit"
+msgstr ""
+
+#: docking.cpp:402
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr ""
+
+#: docking.cpp:405 docking.cpp:414 docking.cpp:422
+msgid "Start Sleep Countdown"
+msgstr ""
+
+#: docking.cpp:430
+msgid "Power Off"
+msgstr ""
+
+#: docking.cpp:430
+msgid "Power On"
+msgstr ""
+
+#: docking.cpp:445 docking.cpp:466
+msgid "invalid station"
+msgstr ""
+
+#: docking.cpp:448
+#, kde-format
+msgid "KRadio: %1"
+msgstr ""
+
+#: docking.cpp:458
+#, kde-format
+msgid "next alarm: %1"
+msgstr ""
+
+#: docking.cpp:460
+msgid "<no alarm pending>"
+msgstr ""
+
+#: docking.cpp:578 docking.cpp:680 docking.cpp:738
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr ""
+
+#: docking.cpp:666
+msgid "Start Recording"
+msgstr ""
+
+#: docking.cpp:720
+msgid "Resume playback"
+msgstr ""
+
+#: docking.cpp:724
+msgid "Pause playback"
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

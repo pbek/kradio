@@ -1,0 +1,124 @@
+#: decoder_thread.cpp:110 decoder_thread.cpp:136
+#, kde-format
+msgid "downloading playlist %1"
+msgstr ""
+
+#: decoder_thread.cpp:126 decoder_thread.cpp:173 decoder_thread.cpp:224
+#, kde-format
+msgid "%1 does not contain any usable radio stream"
+msgstr ""
+
+#: decoder_thread.cpp:129 decoder_thread.cpp:177 decoder_thread.cpp:228
+#, kde-format
+msgid "failed to download %1"
+msgstr ""
+
+#: decoder_thread.cpp:220
+msgid "error while reading asx file"
+msgstr ""
+
+#: decoder_thread.cpp:241
+#, kde-format
+msgid "opening stream %1"
+msgstr ""
+
+#: decoder_thread.cpp:245
+#, kde-format
+msgid "failed to open %1. Trying next stream in play list."
+msgstr ""
+
+#: decoder_thread.cpp:249
+#, kde-format
+msgid "Could not open any input stream of %1."
+msgstr ""
+
+#: decoder_thread.cpp:273
+#, kde-format
+msgid "%1: error decoding packet. Discarding packet\n"
+msgstr ""
+
+#: decoder_thread.cpp:278
+#, kde-format
+msgid "internal stream, not stored (%1)"
+msgstr ""
+
+#: decoder_thread.cpp:456 decoder_thread.cpp:458
+#, kde-format
+msgid "cannot open MMS stream %1"
+msgstr ""
+
+#: decoder_thread.cpp:479 decoder_thread.cpp:481 decoder_thread.cpp:491
+#: decoder_thread.cpp:493
+#, kde-format
+msgid "Could not open Stream %1"
+msgstr ""
+
+#: decoder_thread.cpp:503 decoder_thread.cpp:505
+#, kde-format
+msgid "Could not find stream information in %1"
+msgstr ""
+
+#: decoder_thread.cpp:522 decoder_thread.cpp:524
+#, kde-format
+msgid "Could not find an audio stream in %1"
+msgstr ""
+
+#: decoder_thread.cpp:540 decoder_thread.cpp:542
+#, kde-format
+msgid "Could not find a codec for %1"
+msgstr ""
+
+#: decoder_thread.cpp:550 decoder_thread.cpp:552
+#, kde-format
+msgid "Opening codec for %1 failed"
+msgstr ""
+
+#: internetradio.cpp:46
+msgid "Pseudo radio device for internet radio stream support"
+msgstr ""
+
+#: internetradio.cpp:53
+msgid "Internet Radio Plugin"
+msgstr ""
+
+#: internetradio.cpp:348
+msgid "Internet radio station decoder / pseudo device"
+msgstr ""
+
+#: internetradio.cpp:542
+msgid "Internet Radio"
+msgstr ""
+
+#: internetradio.cpp:543
+msgid "Internet Radio Options"
+msgstr ""
+
+#: internetradio.cpp:615
+msgid ""
+"I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
+"idea to restart KRadio"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
+#: rc.cpp:3 rc.cpp:15
+msgid "SetupDialogGeneral"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:34
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:6 rc.cpp:18
+msgid "Playback Mixer Device"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:51
+#. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
+#: rc.cpp:9 rc.cpp:21
+msgid "test"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:65
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:12 rc.cpp:24
+msgid "Playback Mixer Channel"
+msgstr ""
