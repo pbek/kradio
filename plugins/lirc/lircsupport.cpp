@@ -116,14 +116,14 @@ void LircSupport::LIRC_init_config()
                     const lirc_code *code = e->code;
                     if (!code) {
                         logWarning(i18n("LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does not have a button/remote associated.\n"
-                                        "This will most probably lead to problems. Please use \"button=*\" and \"remote=*\" as wildcard for all buttons/remotes"));
+                                        "This will most probably lead to problems. Please use \"button=*\" and \"remote=*\" as wildcard for all buttons/remotes", m_lirc_config_file));
                     }
                     while (code) {
                         const char *btn = code->button;
                         const char *rem = code->remote;
                         if (!btn || ((btn != (char*)-1ll) && strlen(btn) == 0) || !rem || ((rem != (char*)-1ll) && strlen(rem) == 0)) {
                             logWarning(i18n("LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an incomplete button/remote associated.\n"
-                                            "This will most probably lead to problems. Please use \"button=*\" and \"remote=*\" as wildcard for all buttons/remotes"));
+                                            "This will most probably lead to problems. Please use \"button=*\" and \"remote=*\" as wildcard for all buttons/remotes", m_lirc_config_file));
                         }
                         code = code->next;
                     }
