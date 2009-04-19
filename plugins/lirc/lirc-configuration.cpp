@@ -21,6 +21,7 @@ class QColorGroup;
 
 #include <klistwidget.h>
 #include <klocale.h>
+#include <kurlrequester.h>
 
 #include <lirc/lirc_client.h>
 
@@ -38,27 +39,7 @@ LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
 {
 
     setupUi(this);
-
-    comboStartupPowerOffMode->clear();
-    comboStartupPowerOnMode ->clear();
-    comboStartupPowerOffMode->addItem(i18n("<don't care>"), QVariant(""));
-    comboStartupPowerOnMode ->addItem(i18n("<don't care>"), QVariant(""));
-
-    QStringList modes;
-    const struct lirc_config *cfg = dev->getLIRCConfig();
-    for (lirc_config_entry *e = cfg ? cfg->first : NULL; e; e = e->next) {
-        QString mode = e->mode;
-        if (mode.length() && modes.indexOf(mode) < 0) {
-            modes.append(mode);
-        }
-    }
-    modes.sort();
-
-    QString mode;
-    foreach (mode, modes) {
-        comboStartupPowerOffMode->addItem(mode, QVariant(mode));
-        comboStartupPowerOnMode ->addItem(mode, QVariant(mode));
-    }
+    edLIRCConfigurationFile->setMode(KFile::LocalOnly | KFile::File);
 
     m_descriptions[LIRC_DIGIT_0] = i18n("digit 0");
     m_descriptions[LIRC_DIGIT_1] = i18n("digit 1");
@@ -114,9 +95,14 @@ LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
     m_ActionList->setColumnWidthMode(1, Q3ListView::Maximum);
     m_ActionList->setColumnWidthMode(2, Q3ListView::Maximum);
 
-    connect(m_ActionList,             SIGNAL(itemRenamed(Q3ListViewItem*, int)), this, SLOT(slotSetDirty()));
-    connect(comboStartupPowerOffMode, SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
-    connect(comboStartupPowerOnMode,  SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
+    connect(m_ActionList,      SIGNAL(itemRenamed(Q3ListViewItem*, int)), this, SLOT(slotSetDirty()));
+    connect(comboPowerOffMode, SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
+    connect(comboPowerOnMode,  SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
+    connect(cbSyncAtRuntime,   SIGNAL(toggled(bool)),                     this, SLOT(slotSetDirty()));
+    connect(cbSyncAtStartup,   SIGNAL(toggled(bool)),                     this, SLOT(slotSetDirty()));
+
+    connect(edLIRCConfigurationFile, SIGNAL(textChanged(const QString &)), this, SLOT(readLIRCConfigurationFile()));
+    connect(edLIRCConfigurationFile, SIGNAL(textChanged(const QString &)), this, SLOT(slotSetDirty()));
     slotCancel();
 }
 
@@ -125,11 +111,44 @@ LIRCConfiguration::~LIRCConfiguration ()
 {
 }
 
+void LIRCConfiguration::readLIRCConfigurationFile()
+{
+    comboPowerOffMode->clear();
+    comboPowerOnMode ->clear();
+    comboPowerOffMode->addItem(i18n("<don't care>"), QVariant(""));
+    comboPowerOnMode ->addItem(i18n("<don't care>"), QVariant(""));
+
+    QStringList modes;
+
+    QString lirc_config_file = edLIRCConfigurationFile->url().path();
+
+    struct lirc_config *cfg = NULL;
+    if (lirc_readconfig (lirc_config_file.toUtf8().data(), &cfg, NULL) == 0) {
+
+        for (lirc_config_entry *e = cfg ? cfg->first : NULL; e; e = e->next) {
+            QString mode = e->mode;
+            if (mode.length() && modes.indexOf(mode) < 0) {
+                modes.append(mode);
+            }
+        }
+        modes.sort();
+
+        QString mode;
+        foreach (mode, modes) {
+            comboPowerOffMode->addItem(mode, QVariant(mode));
+            comboPowerOnMode ->addItem(mode, QVariant(mode));
+        }
+    }
+
+}
+
 
 void LIRCConfiguration::slotOK()
 {
     if (m_dirty && m_LIRC) {
         Q3ListViewItem *item = m_ActionList->firstChild();
+
+        m_LIRC->setLIRCConfigurationFile(edLIRCConfigurationFile->url().path());
 
         QMap<LIRC_Actions, QString> actions;
         QMap<LIRC_Actions, QString> alt_actions;
@@ -141,8 +160,9 @@ void LIRCConfiguration::slotOK()
         }
         m_LIRC->setActions(actions, alt_actions);
 
-        m_LIRC->setStartupPowerOnMode (comboStartupPowerOnMode ->itemData(comboStartupPowerOnMode ->currentIndex()).value<QString>());
-        m_LIRC->setStartupPowerOffMode(comboStartupPowerOffMode->itemData(comboStartupPowerOffMode->currentIndex()).value<QString>());
+        m_LIRC->setLIRCModeSync(cbSyncAtStartup->isChecked(), cbSyncAtRuntime->isChecked());
+        m_LIRC->setPowerOnMode (comboPowerOnMode ->itemData(comboPowerOnMode ->currentIndex()).value<QString>());
+        m_LIRC->setPowerOffMode(comboPowerOffMode->itemData(comboPowerOffMode->currentIndex()).value<QString>());
     }
     m_dirty = false;
 }
@@ -153,7 +173,17 @@ void LIRCConfiguration::slotCancel()
     if (m_dirty) {
         m_ignore_gui_updates = true;
         m_ActionList->clear();
+
+        int idx_power_on  = -1;
+        int idx_power_off = -1;
+        bool at_startup = false;
+        bool at_runtime = false;
+
         if (m_LIRC) {
+
+            edLIRCConfigurationFile->setPath(m_LIRC->getLIRCConfigurationFile());
+            readLIRCConfigurationFile();
+
             const QMap<LIRC_Actions, QString> &actions     = m_LIRC->getActions();
             const QMap<LIRC_Actions, QString> &alt_actions = m_LIRC->getAlternativeActions();
 
@@ -161,13 +191,18 @@ void LIRCConfiguration::slotCancel()
                 LIRC_Actions action = m_order[i];
                 addKey(m_descriptions[action], actions[action], alt_actions[action]);
             }
+
+            idx_power_on  = comboPowerOnMode ->findData(m_LIRC->getPowerOnMode());
+            idx_power_off = comboPowerOffMode->findData(m_LIRC->getPowerOffMode());
+            m_LIRC->getLIRCModeSync(at_startup, at_runtime);
         }
         slotRenamingStopped(NULL, -1);
 
-        int idx = comboStartupPowerOnMode->findData(m_LIRC->getStartupPowerOnMode());
-        comboStartupPowerOnMode->setCurrentIndex(idx < 0 ? 0 : idx);
-        idx = comboStartupPowerOffMode->findData(m_LIRC->getStartupPowerOffMode());
-        comboStartupPowerOffMode->setCurrentIndex(idx < 0 ? 0 : idx);
+        comboPowerOnMode ->setCurrentIndex(idx_power_on  < 0 ? 0 : idx_power_on);
+        comboPowerOffMode->setCurrentIndex(idx_power_off < 0 ? 0 : idx_power_off);
+
+        cbSyncAtStartup->setChecked(at_startup);
+        cbSyncAtRuntime->setChecked(at_runtime);
 
         m_ignore_gui_updates = false;
     }

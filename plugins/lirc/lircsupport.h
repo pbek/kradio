@@ -73,8 +73,10 @@ public:
     LircSupport(const QString &instanceID, const QString &name);
     ~LircSupport();
 
-    virtual bool connectI (Interface *);
-    virtual bool disconnectI (Interface *);
+    virtual bool    connectI    (Interface *);
+    virtual bool    disconnectI (Interface *);
+
+    virtual void    startPlugin();
 
     virtual QString pluginClassName() const { return "LircSupport"; }
 
@@ -86,11 +88,15 @@ public:
     virtual const QMap<LIRC_Actions, QString> &getActions()            const { return m_Actions; }
     virtual const QMap<LIRC_Actions, QString> &getAlternativeActions() const { return m_AlternativeActions; }
 
-    const struct lirc_config                  *getLIRCConfig()          const { return m_lircConfig;              }
-    const QString                             &getStartupPowerOnMode () const { return m_LIRCStartupPowerOnMode;  }
-    const QString                             &getStartupPowerOffMode() const { return m_LIRCStartupPowerOffMode; }
-    void                                       setStartupPowerOnMode (const QString &m);
-    void                                       setStartupPowerOffMode(const QString &m);
+    const QString                             &getLIRCConfigurationFile() const { return m_lirc_config_file; }
+    void                                       setLIRCConfigurationFile(const QString &f);
+
+    const QString                             &getPowerOnMode () const { return m_LIRCPowerOnMode;  }
+    const QString                             &getPowerOffMode() const { return m_LIRCPowerOffMode; }
+    void                                       getLIRCModeSync(bool &at_startup, bool &at_runtime) { at_startup = m_LIRCModeSyncAtStartup; at_runtime = m_LIRCModeSyncAtRuntime; }
+    void                                       setPowerOnMode (const QString &m);
+    void                                       setPowerOffMode(const QString &m);
+    void                                       setLIRCModeSync(bool at_startup, bool at_runtime);
 
     // PluginBase
 
@@ -106,7 +112,7 @@ public:
     // IRadioClient methods
 
 RECEIVERS:
-    bool noticePowerChanged(bool /*on*/)                          { return false; }
+    bool noticePowerChanged(bool on);
     bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }
     bool noticeStationsChanged(const StationList &/*sl*/)         { return false; }
     bool noticePresetFileChanged(const QString &/*f*/)            { return false; }
@@ -142,6 +148,16 @@ protected:
     bool     checkActions(const QString &string, int repeat_counter, const QMap<LIRC_Actions, QString> &map);
     void     processLIRCCode(const QString &c, bool event_map, bool is_raw);
 
+    void     setLIRCMode(const QString &m);
+    bool     doLIRCModeSync() const;
+
+    void     checkLIRCConfigurationFile(const QString &fname);
+
+    void     LIRC_init_fd();
+    void     LIRC_init_config();
+    void     LIRC_close_fd();
+    void     LIRC_close_config();
+
 protected slots:
     void slotLIRC(int socket);
     void slotKbdTimedOut();
@@ -154,11 +170,15 @@ signals:
 
 protected:
 
+    QString                 m_lirc_config_file;
+
     QSocketNotifier        *m_lirc_notify;
     int                     m_fd_lirc;
     struct lirc_config     *m_lircConfig;
-    QString                 m_LIRCStartupPowerOnMode;
-    QString                 m_LIRCStartupPowerOffMode;
+    QString                 m_LIRCPowerOnMode;
+    QString                 m_LIRCPowerOffMode;
+    bool                    m_LIRCModeSyncAtStartup;
+    bool                    m_LIRCModeSyncAtRuntime;
 
     QString                 m_lircrc_startup_mode;
 
@@ -168,6 +188,9 @@ protected:
 
     QMap<LIRC_Actions, QString>  m_Actions;
     QMap<LIRC_Actions, QString>  m_AlternativeActions;
+
+    bool                         m_inStartupPhase;
+    bool                         m_ignorePowerOnOff;
 
 };
 

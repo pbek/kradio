@@ -46,7 +46,11 @@ protected slots:
     void slotRenamingStarted(ListViewItemLirc *, int);
     void slotRenamingStopped(ListViewItemLirc *, int);
 
+    void readLIRCConfigurationFile();
+
 protected:
+
+
     void addKey(const QString &descr, const QString &key, const QString &alt_key);
 
     LircSupport                 *m_LIRC;

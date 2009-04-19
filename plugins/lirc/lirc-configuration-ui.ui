@@ -15,7 +15,7 @@
    <string>LIRCConfigurationUI</string>
   </property>
   <layout class="QGridLayout">
-   <item row="2" column="0" colspan="3">
+   <item row="5" column="0" colspan="3">
     <widget class="K3ListView" name="m_ActionList">
      <property name="allColumnsShowFocus">
       <bool>true</bool>
@@ -70,7 +70,7 @@
      </column>
     </widget>
    </item>
-   <item row="3" column="0" colspan="3">
+   <item row="6" column="0" colspan="3">
     <widget class="Line" name="line1">
      <property name="frameShape">
       <enum>QFrame::HLine</enum>
@@ -80,7 +80,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="3">
+   <item row="7" column="0" colspan="3">
     <widget class="QLabel" name="m_LabelHints">
      <property name="text">
       <string>textLabel1</string>
@@ -90,32 +90,32 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="2">
-    <widget class="KComboBox" name="comboStartupPowerOffMode">
+   <item row="1" column="2">
+    <widget class="KComboBox" name="comboPowerOffMode">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Startup Mode override for Power Off</string>
      </property>
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Startup Mode override for Power On</string>
+      <string>Power off .lircrc mode</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="2">
-    <widget class="KComboBox" name="comboStartupPowerOnMode">
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Power on .lircrc mode</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="KComboBox" name="comboPowerOnMode">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -123,6 +123,50 @@
       </sizepolicy>
      </property>
     </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Synchronize .lircrc modes at runtime</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Synchronize .lircrc modes at startup</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QCheckBox" name="cbSyncAtStartup">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QCheckBox" name="cbSyncAtRuntime">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>LIRC Configuration File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="KUrlRequester" name="edLIRCConfigurationFile"/>
    </item>
   </layout>
  </widget>
@@ -135,11 +179,24 @@
    <header>k3listview.h</header>
   </customwidget>
   <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>edLIRCConfigurationFile</tabstop>
+  <tabstop>comboPowerOffMode</tabstop>
+  <tabstop>comboPowerOnMode</tabstop>
+  <tabstop>cbSyncAtStartup</tabstop>
+  <tabstop>cbSyncAtRuntime</tabstop>
+  <tabstop>m_ActionList</tabstop>
+ </tabstops>
  <includes>
   <include location="local">k3listview.h</include>
  </includes>

@@ -39,7 +39,8 @@
 
 #include "lirc-configuration.h"
 
-#define LIRCRC  ".lircrc"
+#define LIRCRC     ".lircrc"
+#define LIRCPROG   ((char*)"kradio")
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
@@ -51,19 +52,131 @@ PLUGIN_LIBRARY_FUNCTIONS(LircSupport, PROJECT_NAME, i18n("Linux Infrared Control
 /////////////////////////////////////////////////////////////////////////////
 
 LircSupport::LircSupport(const QString &instanceID, const QString &name)
-    : PluginBase(instanceID, name, i18n("LIRC Plugin"))
+    : PluginBase(instanceID, name, i18n("LIRC Plugin")),
+      m_lirc_config_file(QString(getenv("HOME")) + "/" + LIRCRC),
+      m_lirc_notify(NULL),
+      m_fd_lirc(-1),
+      m_lircConfig(NULL),
+      m_LIRCModeSyncAtStartup(true),
+      m_LIRCModeSyncAtRuntime(true),
+      m_inStartupPhase(true),
+      m_ignorePowerOnOff(false)
 {
+    m_kbdTimer = new QTimer (this);
+    QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
 
+    m_addIndex = 0;
+
+    LIRC_init_fd();
+}
+
+
+LircSupport::~LircSupport()
+{
+    LIRC_close_config();
+    LIRC_close_fd();
+}
+
+
+void LircSupport::LIRC_init_fd()
+{
     logDebug(i18n("initializing kradio lirc plugin"));
     fprintf (stderr, "%s\n", (const char*)i18n("initializing kradio lirc plugin").toUtf8());
-    char *prg = (char*)"kradio";
 
-    QString slircrc = getenv("HOME");
-    slircrc += "/" LIRCRC;
+    m_fd_lirc     = lirc_init(LIRCPROG, 1);
+    m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this);
+    if (m_lirc_notify)
+        QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
 
-    QFile  lircrc(slircrc);
+    if (m_fd_lirc == -1) {
+        logWarning      (i18n("Initializing kradio lirc plugin failed"));
+        staticLogWarning(i18n("Initializing kradio lirc plugin failed"));
+    } else {
+        logDebug      (i18n("Initializing kradio lirc plugin successful"));
+        staticLogDebug(i18n("Initializing kradio lirc plugin successful"));
+    }
+}
+
+void LircSupport::LIRC_init_config()
+{
+    checkLIRCConfigurationFile(m_lirc_config_file);
+
+    m_lircConfig  = 0;
+
+    if (m_fd_lirc != -1) {
+        if (lirc_readconfig (m_lirc_config_file.toUtf8().data(), &m_lircConfig, NULL) == 0) {
+
+            // check config
+            lirc_config_entry *found = NULL;
+            for (lirc_config_entry *e = m_lircConfig ? m_lircConfig->first : NULL; e; e = e->next) {
+                if (QString(e->prog) == LIRCPROG) {
+                    found = e;
+
+                    // syntax check
+                    const lirc_code *code = e->code;
+                    if (!code) {
+                        logWarning(i18n("LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does not have a button/remote associated.\n"
+                                        "This will most probably lead to problems. Please use \"button=*\" and \"remote=*\" as wildcard for all buttons/remotes"));
+                    }
+                    while (code) {
+                        const char *btn = code->button;
+                        const char *rem = code->remote;
+                        if (!btn || ((btn != (char*)-1ll) && strlen(btn) == 0) || !rem || ((rem != (char*)-1ll) && strlen(rem) == 0)) {
+                            logWarning(i18n("LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an incomplete button/remote associated.\n"
+                                            "This will most probably lead to problems. Please use \"button=*\" and \"remote=*\" as wildcard for all buttons/remotes"));
+                        }
+                        code = code->next;
+                    }
+                }
+                if ((e->flags & startup_mode) == startup_mode) {
+                    m_lircrc_startup_mode = e->change_mode;
+                }
+            }
+            if (!found) {
+                logWarning(i18n("There is no entry for kradio in your .lircrc files %1.", m_lirc_config_file));
+                logWarning(i18n("Please setup your .lircrc file %1 correctly.",           m_lirc_config_file));
+            }
+
+        } else {
+            logWarning      (i18n("Initializing kradio lirc plugin failed. Could not read config file %1", m_lirc_config_file));
+            staticLogWarning(i18n("Initializing kradio lirc plugin failed. Could not read config file %1", m_lirc_config_file));
+        }
+    }
+}
+
+
+void LircSupport::LIRC_close_fd()
+{
+    if (m_fd_lirc != -1)
+        lirc_deinit();
+    m_fd_lirc = -1;
+
+    if (m_lirc_notify)
+        delete m_lirc_notify;
+    m_lirc_notify = NULL;
+}
+
+void LircSupport::LIRC_close_config()
+{
+    if (m_lircConfig)
+        lirc_freeconfig(m_lircConfig);
+    m_lircConfig = 0;
+}
+
+
+void LircSupport::setLIRCConfigurationFile(const QString &fname)
+{
+    LIRC_close_config();
+    m_lirc_config_file = fname;
+    LIRC_init_config();
+}
+
+
+void LircSupport::checkLIRCConfigurationFile(const QString &fname)
+{
+    QFile  lircrc(fname);
     if (!lircrc.exists()) {
-        logWarning(i18n("%1 does not exist. File was created with KRadio's default .lircrc proposal", QString(LIRCRC)));
+        logWarning(i18n("%1 does not exist. File was created with KRadio's default .lircrc proposal", fname));
         QString default_lircrc_filename = KStandardDirs::locate("data", "kradio4/default-dot-lircrc");
         QFile   default_lircrc(default_lircrc_filename);
         default_lircrc.open(QIODevice::ReadOnly);
@@ -79,66 +192,28 @@ LircSupport::LircSupport(const QString &instanceID, const QString &name)
             logError(i18n("failed to read file %1", default_lircrc_filename));
         }
     }
-
-    m_fd_lirc = lirc_init(prg, 1);
-    m_lirc_notify = 0;
-    m_lircConfig  = 0;
-
-    if (m_fd_lirc != -1) {
-        if (lirc_readconfig (NULL, &m_lircConfig, NULL) == 0) {
-            m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this);
-            if (m_lirc_notify)
-                QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
-
-            // check config
-            lirc_config_entry *found = NULL;
-            for (lirc_config_entry *e = m_lircConfig ? m_lircConfig->first : NULL; e; e = e->next) {
-                if (QString(e->prog) == prg) {
-                    found = e;
-                }
-                if ((e->flags & startup_mode) == startup_mode) {
-                    m_lircrc_startup_mode = e->change_mode;
-                }
-            }
-            if (!found) {
-                logWarning(i18n("There is no entry for kradio in any of your .lircrc files."));
-                logWarning(i18n("Please setup your .lircrc files correctly."));
-            }
-
-        } else {
-            lirc_deinit();
-            m_fd_lirc = -1;
-        }
-    }
-
-    if (m_fd_lirc == -1) {
-        logWarning      (i18n("Initializing kradio lirc plugin failed"));
-        staticLogWarning(i18n("Initializing kradio lirc plugin failed"));
-    } else {
-        logDebug      (i18n("Initializing kradio lirc plugin successful"));
-        staticLogDebug(i18n("Initializing kradio lirc plugin successful"));
-    }
-
-    m_kbdTimer = new QTimer (this);
-    QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
-
-    m_addIndex = 0;
 }
 
 
-LircSupport::~LircSupport()
+struct tmp_code_struct
 {
-    if (m_fd_lirc != -1)
-        lirc_deinit();
-    if (m_lircConfig)
-        lirc_freeconfig(m_lircConfig);
-    m_fd_lirc = -1;
-    m_lircConfig = 0;
-}
-
+    QString  code;
+    bool     is_event_map;
+    bool     is_raw;
+    tmp_code_struct() : code(), is_event_map(false), is_raw(false) {}
+    tmp_code_struct(const QString &c, bool m, bool r) : code(c), is_event_map(m), is_raw(r) {}
+};
 
 void LircSupport::slotLIRC(int /*socket*/ )
 {
+    // we need this list to catch all commands as quickly as possible
+    // in order to free all lirc stuff *before* we start running our own
+    // code. Makes for some unknown reason a major difference e.g. for internet
+    // radio: it happend, that repeat codes haven't been decoded properly
+    // plus getting the whole lirc stuff out of sync. basically only observed
+    // together with lircrcd
+    QList<tmp_code_struct> list;
+
     if (!m_lircConfig || !m_lirc_notify || m_fd_lirc == -1)
         return;
 
@@ -158,11 +233,10 @@ void LircSupport::slotLIRC(int /*socket*/ )
                 is_eventmap = true;
                 x           = code;
             }
-            processLIRCCode(x, is_eventmap, /*is_raw = */ false);
+            list.append(tmp_code_struct(x, is_eventmap, false));
         }
         if (char_count == 0) {
-            logDebug("LIRC: decoding raw, lirc_code2char gave no answer");
-            processLIRCCode(code, /*is_eventmap = */ false, /*is_raw = */ true);
+            list.append(tmp_code_struct(code, false, true));
         }
     }
     else {
@@ -174,13 +248,24 @@ void LircSupport::slotLIRC(int /*socket*/ )
 
     if (code)
         free (code);
+
+    // only process commands after finishing the lirc api processing
+
+    tmp_code_struct tmp_code;
+    foreach(tmp_code, list) {
+        if (tmp_code.is_raw)
+            logDebug(QString("LIRC(mode=%1): decoding raw, lirc_code2char gave no answer").arg(lirc_getmode(m_lircConfig)));
+        processLIRCCode(tmp_code.code, tmp_code.is_event_map, tmp_code.is_raw);
+    }
 }
 
 
 void LircSupport::processLIRCCode(const QString &c, bool is_eventmap, bool is_raw)
 {
+    m_ignorePowerOnOff = true;
+
     QString x = c;
-    int     repeat_counter = 1;
+    int     repeat_counter = 0;
 
     if (is_eventmap || is_raw) {
         QStringList l = QString(c).split(" ");
@@ -193,7 +278,7 @@ void LircSupport::processLIRCCode(const QString &c, bool is_eventmap, bool is_ra
         x = "raw::" + x;
 
     bool consumed = false;
-    logDebug(QString("LIRC: ") + x);
+    logDebug(QString("LIRC(mode=%1): %2 (rep = %3)").arg(lirc_getmode(m_lircConfig)).arg(x).arg(repeat_counter));
 
     emit sigRawLIRCSignal(x, repeat_counter, consumed);
 
@@ -201,6 +286,8 @@ void LircSupport::processLIRCCode(const QString &c, bool is_eventmap, bool is_ra
         if (!checkActions(x, repeat_counter, m_Actions))
             checkActions(x, repeat_counter, m_AlternativeActions);
     }
+
+    m_ignorePowerOnOff = false;
 }
 
 
@@ -244,6 +331,8 @@ bool LircSupport::disconnectI (Interface *i)
 void   LircSupport::saveState (KConfigGroup &c) const
 {
     PluginBase::saveState(c);
+
+    c.writeEntry("lirc-configuration-file", m_lirc_config_file);
 
     c.writeEntry("LIRC_DIGIT_0",          m_Actions[LIRC_DIGIT_0]);
     c.writeEntry("LIRC_DIGIT_1",          m_Actions[LIRC_DIGIT_1]);
@@ -294,13 +383,25 @@ void   LircSupport::saveState (KConfigGroup &c) const
     c.writeEntry("ALT_LIRC_SLEEP",            m_AlternativeActions[LIRC_SLEEP]);
     c.writeEntry("ALT_LIRC_APPLICATION_QUIT", m_AlternativeActions[LIRC_APPLICATION_QUIT]);
 
-    c.writeEntry("StartupPowerOffMode",       m_LIRCStartupPowerOffMode);
-    c.writeEntry("StartupPowerOnMode",        m_LIRCStartupPowerOnMode);
+    c.writeEntry("PowerOffMode",              m_LIRCPowerOffMode);
+    c.writeEntry("PowerOnMode",               m_LIRCPowerOnMode);
+    // delete old entries restored for compatibility
+    c.deleteEntry("StartupPowerOffMode");
+    c.deleteEntry("StartupPowerOnMode" );
+
+    c.writeEntry("LIRCModeSyncAtStartup",     m_LIRCModeSyncAtStartup);
+    c.writeEntry("LIRCModeSyncAtRuntime",     m_LIRCModeSyncAtRuntime);
+
 }
 
 void   LircSupport::restoreState (const KConfigGroup &c)
 {
     PluginBase::restoreState(c);
+
+
+    QString lirc_config_file_default = QString(getenv("HOME")) + "/" LIRCRC;
+
+    m_lirc_config_file               = c.readEntry("lirc-configuration-file", lirc_config_file_default);
 
     m_Actions[LIRC_DIGIT_0]          = c.readEntry("LIRC_DIGIT_0", "0");
     m_Actions[LIRC_DIGIT_1]          = c.readEntry("LIRC_DIGIT_1", "1");
@@ -351,10 +452,21 @@ void   LircSupport::restoreState (const KConfigGroup &c)
     m_AlternativeActions[LIRC_SLEEP]            = c.readEntry("ALT_LIRC_SLEEP",            "");
     m_AlternativeActions[LIRC_APPLICATION_QUIT] = c.readEntry("ALT_LIRC_APPLICATION_QUIT", "");
 
-    QString offmode = c.readEntry("StartupPowerOffMode", QString());
-    QString onmode  = c.readEntry("StartupPowerOnMode",  QString());
-    setStartupPowerOnMode (onmode);
-    setStartupPowerOffMode(offmode);
+    QString offmode;
+    QString onmode;
+    if (c.hasKey("PowerOffMode")) {
+        offmode = c.readEntry("PowerOffMode", QString());
+        onmode  = c.readEntry("PowerOnMode",  QString());
+    } else {
+        offmode = c.readEntry("StartupPowerOffMode", QString());
+        onmode  = c.readEntry("StartupPowerOnMode",  QString());
+    }
+    bool at_startup = c.readEntry("LIRCModeSyncAtStartup", true);
+    bool at_runtime = c.readEntry("LIRCModeSyncAtRuntime", true);
+
+    setLIRCModeSync(at_startup, at_runtime);
+    setPowerOnMode (onmode);
+    setPowerOffMode(offmode);
 
     emit sigUpdateConfig();
 }
@@ -601,30 +713,64 @@ void LircSupport::setActions(const QMap<LIRC_Actions, QString> &actions, const Q
 
 
 
-void LircSupport::setStartupPowerOnMode(const QString &m)
+void LircSupport::setPowerOnMode(const QString &m)
 {
-    logDebug(QString("LircSupport::setStartupPowerOnMode(%1)").arg(m));
-    if (m_LIRCStartupPowerOnMode != m) {
-        m_LIRCStartupPowerOnMode = m;
+    logDebug(QString("LircSupport::setPowerOnMode(%1)").arg(m));
+    if (m_LIRCPowerOnMode != m) {
+        m_LIRCPowerOnMode = m;
         if (queryIsPowerOn()) {
-            QString x = m.length() ? m : m_lircrc_startup_mode;
-            logDebug(QString("setting lirc startup mode (power on) to %1").arg(x));
-            lirc_setmode(m_lircConfig, x.toLocal8Bit());
+            setLIRCMode(m);
         }
     }
 }
 
-void LircSupport::setStartupPowerOffMode(const QString &m)
+void LircSupport::setPowerOffMode(const QString &m)
 {
-    logDebug(QString("LircSupport::setStartupPowerOffMode(%1)").arg(m));
-    if (m_LIRCStartupPowerOffMode != m) {
-        m_LIRCStartupPowerOffMode = m;
+    logDebug(QString("LircSupport::setPowerOffMode(%1)").arg(m));
+    if (m_LIRCPowerOffMode != m) {
+        m_LIRCPowerOffMode = m;
         if (!queryIsPowerOn()) {
-            QString x = m.length() ? m : m_lircrc_startup_mode;
-            logDebug(QString("setting lirc startup mode (power off) to %1").arg(x));
-            lirc_setmode(m_lircConfig, x.toLocal8Bit());
+            setLIRCMode(m);
         }
     }
+}
+
+void LircSupport::setLIRCMode(const QString &m)
+{
+    if (m_lircConfig && doLIRCModeSync() && m.length()) {
+        logDebug(QString("setting lirc mode to %1").arg(m));
+        lirc_setmode(m_lircConfig, m.toLocal8Bit());
+    } else {
+//         logDebug(QString("ignored request for setting lirc mode to %1").arg(m));
+    }
+}
+
+void LircSupport::setLIRCModeSync(bool at_startup, bool at_runtime)
+{
+    m_LIRCModeSyncAtStartup = at_startup;
+    m_LIRCModeSyncAtRuntime = at_runtime;
+}
+
+void LircSupport::startPlugin()
+{
+    LIRC_init_config();
+    noticePowerChanged(queryIsPowerOn());
+    m_inStartupPhase = false;
+}
+
+bool LircSupport::doLIRCModeSync() const
+{
+    return (m_inStartupPhase && m_LIRCModeSyncAtStartup) || (!m_inStartupPhase && m_LIRCModeSyncAtRuntime);
+}
+
+
+bool LircSupport::noticePowerChanged(bool on)
+{
+    logDebug(QString("LircSupport::noticePowerChanged(%1)").arg(on));
+    if (!m_ignorePowerOnOff) {
+        setLIRCMode(on ? m_LIRCPowerOnMode : m_LIRCPowerOffMode);
+    }
+    return true;
 }
 
 

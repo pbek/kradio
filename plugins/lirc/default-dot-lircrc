@@ -1,6 +1,8 @@
+#! lircrcd
 
 begin
-	prog   = kradio
-	config = eventmap
+    button = *
+    prog   = kradio
+    config = eventmap
     repeat = 1
 end
