@@ -715,7 +715,7 @@ void LircSupport::setActions(const QMap<LIRC_Actions, QString> &actions, const Q
 
 void LircSupport::setPowerOnMode(const QString &m)
 {
-    logDebug(QString("LircSupport::setPowerOnMode(%1)").arg(m));
+//     logDebug(QString("LircSupport::setPowerOnMode(%1)").arg(m));
     if (m_LIRCPowerOnMode != m) {
         m_LIRCPowerOnMode = m;
         if (queryIsPowerOn()) {
@@ -726,7 +726,7 @@ void LircSupport::setPowerOnMode(const QString &m)
 
 void LircSupport::setPowerOffMode(const QString &m)
 {
-    logDebug(QString("LircSupport::setPowerOffMode(%1)").arg(m));
+//     logDebug(QString("LircSupport::setPowerOffMode(%1)").arg(m));
     if (m_LIRCPowerOffMode != m) {
         m_LIRCPowerOffMode = m;
         if (!queryIsPowerOn()) {
@@ -766,7 +766,6 @@ bool LircSupport::doLIRCModeSync() const
 
 bool LircSupport::noticePowerChanged(bool on)
 {
-    logDebug(QString("LircSupport::noticePowerChanged(%1)").arg(on));
     if (!m_ignorePowerOnOff) {
         setLIRCMode(on ? m_LIRCPowerOnMode : m_LIRCPowerOffMode);
     }
