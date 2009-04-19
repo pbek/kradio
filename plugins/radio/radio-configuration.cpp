@@ -540,18 +540,24 @@ void RadioConfiguration::loadPresets(bool add)
                    "*.krp|" + i18n("KRadio Preset Files"),
                    this);
     fd.setModal(true);
-    fd.setMode(KFile::File | KFile::ExistingOnly);
+    fd.setMode(KFile::Files | KFile::ExistingOnly);
     fd.setCaption (i18n("Select Preset File"));
 
     if (fd.exec() == QDialog::Accepted) {
         slotSetDirty();
-        StationList sl;
-        if (sl.readXML(fd.selectedUrl(), m_logger)) {
-            if (add) {
-                sl.addStations(m_stations);
-            }
-            noticeStationsChanged(sl);
+        StationList sl_all;
+        if (add) {
+            sl_all = m_stations;
         }
+        KUrl::List urls = fd.selectedUrls();
+        KUrl url;
+        foreach (url, urls) {
+            StationList sl;
+            if (sl.readXML(url, m_logger)) {
+                sl_all.addStations(sl);
+            }
+        }
+        noticeStationsChanged(sl_all);
     }
 }
 
