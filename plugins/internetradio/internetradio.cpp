@@ -510,7 +510,7 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
 
     restoreRadioDeviceID(config);
     QString PlaybackMixerID      = config.readEntry ("PlaybackMixerID", QString());
-    QString PlaybackMixerChannel = config.readEntry ("PlaybackMixerChannel", "Line");
+    QString PlaybackMixerChannel = config.readEntry ("PlaybackMixerChannel", "PCM");
     m_defaultPlaybackVolume      = config.readEntry ("defaultPlaybackVolume", 0.5);
 
     setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel, /* force = */ true);

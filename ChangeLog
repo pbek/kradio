@@ -2,6 +2,7 @@
 
     emw - fix: tabulator order in config tabs
         - fix: better lirc synchronization mechanism + consistency checks
+        - fix: default playback channel for internet radio has been line. Is now PCM
 
 2009-04-18
 
