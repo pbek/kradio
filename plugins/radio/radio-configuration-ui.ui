@@ -643,19 +643,23 @@ p, li { white-space: pre-wrap; }
  </customwidgets>
  <tabstops>
   <tabstop>tabWidget3</tabstop>
-  <tabstop>listStations</tabstop>
   <tabstop>buttonNewStation</tabstop>
   <tabstop>buttonDeleteStation</tabstop>
   <tabstop>buttonStationUp</tabstop>
   <tabstop>buttonStationDown</tabstop>
   <tabstop>buttonSearchStations</tabstop>
   <tabstop>buttonLoadPresets</tabstop>
+  <tabstop>buttonStorePresets</tabstop>
   <tabstop>editStationName</tabstop>
   <tabstop>editStationShortName</tabstop>
   <tabstop>editPixmapFile</tabstop>
   <tabstop>buttonSelectPixmapFile</tabstop>
+  <tabstop>comboStereoMode</tabstop>
+  <tabstop>editVolumePreset</tabstop>
+  <tabstop>editPresetFile</tabstop>
   <tabstop>editMaintainer</tabstop>
   <tabstop>editLastChange</tabstop>
+  <tabstop>buttonLastChangeNow</tabstop>
   <tabstop>editCountry</tabstop>
   <tabstop>editCity</tabstop>
   <tabstop>editMedia</tabstop>

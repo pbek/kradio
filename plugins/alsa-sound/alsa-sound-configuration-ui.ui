@@ -568,6 +568,25 @@ p, li { white-space: pre-wrap; }
    <header>kseparator.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>kTabWidget8</tabstop>
+  <tabstop>m_comboPlaybackCard</tabstop>
+  <tabstop>m_comboPlaybackDevice</tabstop>
+  <tabstop>cbEnableSoftVolume</tabstop>
+  <tabstop>sbSoftVolumeCorrection</tabstop>
+  <tabstop>m_comboCaptureCard</tabstop>
+  <tabstop>m_comboCaptureDevice</tabstop>
+  <tabstop>cbEnableCaptureFormatOverride</tabstop>
+  <tabstop>m_cbRate</tabstop>
+  <tabstop>m_cbBits</tabstop>
+  <tabstop>m_cbSign</tabstop>
+  <tabstop>m_cbEndianess</tabstop>
+  <tabstop>m_cbChannels</tabstop>
+  <tabstop>editHWBufferSize</tabstop>
+  <tabstop>editBufferSize</tabstop>
+  <tabstop>chkDisablePlayback</tabstop>
+  <tabstop>chkDisableCapture</tabstop>
+ </tabstops>
  <includes>
   <include location="local">kcombobox.h</include>
   <include location="local">knuminput.h</include>

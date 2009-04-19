@@ -100,6 +100,10 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="0"/>
+ <tabstops>
+  <tabstop>comboPlaybackMixerDevice</tabstop>
+  <tabstop>comboPlaybackMixerChannel</tabstop>
+ </tabstops>
  <includes>
   <include location="local">ktabwidget.h</include>
   <include location="local">knuminput.h</include>

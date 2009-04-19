@@ -881,12 +881,28 @@ p, li { white-space: pre-wrap; }
   </customwidget>
  </customwidgets>
  <tabstops>
+  <tabstop>kTabWidget1</tabstop>
   <tabstop>editRadioDevice</tabstop>
   <tabstop>buttonSelectRadioDevice</tabstop>
+  <tabstop>comboPlaybackMixerDevice</tabstop>
   <tabstop>comboPlaybackMixerChannel</tabstop>
+  <tabstop>comboCaptureMixerDevice</tabstop>
+  <tabstop>comboCaptureMixerChannel</tabstop>
+  <tabstop>m_checkboxActivePlayback</tabstop>
+  <tabstop>m_checkboxActivePlaybackMuteCaptureChannelPlayback</tabstop>
+  <tabstop>m_checkboxMuteOnPowerOff</tabstop>
+  <tabstop>m_checkboxVolumeZeroOnPowerOff</tabstop>
   <tabstop>editMinFrequency</tabstop>
   <tabstop>editMaxFrequency</tabstop>
+  <tabstop>editScanStep</tabstop>
   <tabstop>editSignalMinQuality</tabstop>
+  <tabstop>rbV4L1Version</tabstop>
+  <tabstop>rbV4L2Version</tabstop>
+  <tabstop>m_checkboxForceRDSEnabled</tabstop>
+  <tabstop>sliderDeviceVolume</tabstop>
+  <tabstop>sliderTreble</tabstop>
+  <tabstop>sliderBass</tabstop>
+  <tabstop>sliderBalance</tabstop>
  </tabstops>
  <includes>
   <include location="local">ktabwidget.h</include>
