@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-18 14:45+0200\n"
+"POT-Creation-Date: 2009-04-19 15:46+0200\n"
 "PO-Revision-Date: 2007-01-30 22:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#. i18n: file: timeshifter-configuration-ui.ui:13
+#. i18n: file: timeshifter-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
 #: rc.cpp:3 rc.cpp:21
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
-#. i18n: file: timeshifter-configuration-ui.ui:56
+#. i18n: file: timeshifter-configuration-ui.ui:57
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
 #: rc.cpp:6 rc.cpp:24
 msgid " MB"
 msgstr " Мб"
 
-#. i18n: file: timeshifter-configuration-ui.ui:75
+#. i18n: file: timeshifter-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:9 rc.cpp:27
 msgid "Maximum File Size"
 msgstr "Розмір файла, не більше"
 
-#. i18n: file: timeshifter-configuration-ui.ui:85
+#. i18n: file: timeshifter-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:12 rc.cpp:30
 msgid "Playback Mixer Device"
 msgstr "Пристрій мікшера"
 
-#. i18n: file: timeshifter-configuration-ui.ui:95
+#. i18n: file: timeshifter-configuration-ui.ui:96
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
 #: rc.cpp:15 rc.cpp:33
 msgid "Temporary File"
 msgstr "Тимчасовий файл"
 
-#. i18n: file: timeshifter-configuration-ui.ui:108
+#. i18n: file: timeshifter-configuration-ui.ui:109
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:18 rc.cpp:36
 msgid "Playback Mixer Channel"

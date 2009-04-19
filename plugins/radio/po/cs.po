@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-18 14:45+0200\n"
+"POT-Creation-Date: 2009-04-19 15:46+0200\n"
 "PO-Revision-Date: 2009-04-04 14:30+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -56,7 +56,7 @@ msgstr "Výběr symbolu"
 msgid "ignoring non-local image"
 msgstr "Ignorovat symboly, které nejsou místní"
 
-#: radio-configuration.cpp:540 radio-configuration.cpp:562
+#: radio-configuration.cpp:540 radio-configuration.cpp:568
 msgid "KRadio Preset Files"
 msgstr "Soubory s předvolbami vysílacích stanic pro KRadio"
 
@@ -64,16 +64,16 @@ msgstr "Soubory s předvolbami vysílacích stanic pro KRadio"
 msgid "Select Preset File"
 msgstr "Vybrat soubor s předvolbami vysílacích stanic"
 
-#: radio-configuration.cpp:566
+#: radio-configuration.cpp:572
 msgid "Store Preset File"
 msgstr "Uložit soubor s předvolbami vysílacích stanic"
 
-#: radio-configuration.cpp:643
+#: radio-configuration.cpp:649
 #, kde-format
 msgid "found %1 new stations"
 msgstr "Bylo nalezeno %1 nových vysílacích stanic"
 
-#: radio-configuration.cpp:645
+#: radio-configuration.cpp:651
 #, kde-format
 msgid "have now %1 stations"
 msgstr "Po ruce je %1 nových vysílacích stanic"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-18 14:45+0200\n"
+"POT-Creation-Date: 2009-04-19 15:46+0200\n"
 "PO-Revision-Date: 2007-01-28 21:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "Вибір картинки"
 msgid "ignoring non-local image"
 msgstr "Пропускати не локальні файли"
 
-#: radio-configuration.cpp:540 radio-configuration.cpp:562
+#: radio-configuration.cpp:540 radio-configuration.cpp:568
 msgid "KRadio Preset Files"
 msgstr "Файли KRadio"
 
@@ -66,16 +66,16 @@ msgstr "Файли KRadio"
 msgid "Select Preset File"
 msgstr "Оберіть файл радіостанцій"
 
-#: radio-configuration.cpp:566
+#: radio-configuration.cpp:572
 msgid "Store Preset File"
 msgstr "Зберегти файл радіостанцій"
 
-#: radio-configuration.cpp:643
+#: radio-configuration.cpp:649
 #, kde-format
 msgid "found %1 new stations"
 msgstr ""
 
-#: radio-configuration.cpp:645
+#: radio-configuration.cpp:651
 #, kde-format
 msgid "have now %1 stations"
 msgstr ""
