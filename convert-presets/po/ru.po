@@ -1,0 +1,537 @@
+# translation of de.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw-kradio@nocabal.de>, 2006.
+# Ernst Martin Witte <emw@nocabal.de>, 2006.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-06 00:27+0100\n"
+"PO-Revision-Date: 2009-04-20 20:42+0400\n"
+"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 16
+#: rc.cpp:3 libkradio/pluginmanager-configuration-ui.cpp:170
+#, no-c-format
+msgid "PluginManagerConfigurationUI"
+msgstr "PluginManagerConfigurationUI"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 30
+#: rc.cpp:6 libkradio/pluginmanager-configuration-ui.cpp:171
+#, no-c-format
+msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
+msgstr "Иллюстрировать подключение модулей во время загрузки"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 33
+#: rc.cpp:9 libkradio/pluginmanager-configuration-ui.cpp:172
+#, no-c-format
+msgid "Alt+Z"
+msgstr "Alt+Z"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 78
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 229
+#: rc.cpp:13 rc.cpp:34 libkradio/pluginmanager-configuration-ui.cpp:63
+#: libkradio/pluginmanager-configuration-ui.cpp:104
+#: libkradio/pluginmanager-configuration-ui.cpp:174
+#: libkradio/pluginmanager-configuration-ui.cpp:183
+#, no-c-format
+msgid "Plugin Class"
+msgstr "Тип модуля"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 89
+#: rc.cpp:16 libkradio/pluginmanager-configuration-ui.cpp:64
+#: libkradio/pluginmanager-configuration-ui.cpp:175
+#: libkradio/pluginmanager-configuration.cpp:144
+#, no-c-format
+msgid "Instance Name"
+msgstr "Название экземпляра"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 100
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 240
+#: rc.cpp:19 rc.cpp:37 libkradio/pluginmanager-configuration-ui.cpp:65
+#: libkradio/pluginmanager-configuration-ui.cpp:105
+#: libkradio/pluginmanager-configuration-ui.cpp:176
+#: libkradio/pluginmanager-configuration-ui.cpp:184
+#: libkradio-gui/radiostation-listview.cpp:36
+#, no-c-format
+msgid "Description"
+msgstr "Описание"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 116
+#: rc.cpp:22 libkradio/pluginmanager-configuration-ui.cpp:177
+#, no-c-format
+msgid "list of running plugins"
+msgstr "Список загруженных модулей"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 153
+#: rc.cpp:26 libkradio/pluginmanager-configuration-ui.cpp:179
+#, no-c-format
+msgid "remove/stop a selected plugin instance"
+msgstr "Удалить/остановить выбранный экземпляр модуля"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 223
+#: rc.cpp:31 libkradio/pluginmanager-configuration-ui.cpp:182
+#, no-c-format
+msgid "create a new instance of selected plugin class"
+msgstr "Создать новый экземпляр выбранного модуля"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 256
+#: rc.cpp:40 libkradio/pluginmanager-configuration-ui.cpp:185
+#, no-c-format
+msgid "list of available plugin classes"
+msgstr "Список доступных типов модулей"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 297
+#: rc.cpp:44 libkradio/pluginmanager-configuration-ui.cpp:187
+#, no-c-format
+msgid "select a plugin library"
+msgstr "Выбрать библиотеку модуля"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 317
+#: rc.cpp:48 libkradio/pluginmanager-configuration-ui.cpp:189
+#, no-c-format
+msgid "unload a plugin library"
+msgstr "Выгрузить из памяти библиотеку модуля"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 337
+#: rc.cpp:52 libkradio/pluginmanager-configuration-ui.cpp:191
+#, no-c-format
+msgid "load a selected plugin library"
+msgstr "Загрузить выбранную библиотеку модуля"
+
+#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 353
+#: rc.cpp:55 libkradio/pluginmanager-configuration-ui.cpp:192
+#, no-c-format
+msgid "list of loaded plugin libraries"
+msgstr "Список загруженных библиотек модулей"
+
+#. i18n: file libkradio-gui/standardscandialog-ui.ui line 16
+#: rc.cpp:58 libkradio-gui/standardscandialog-ui.cpp:86
+#, no-c-format
+msgid "Stations search in progress ..."
+msgstr "Идёт поиск радиостанций..."
+
+#. i18n: file libkradio-gui/standardscandialog-ui.ui line 104
+#: rc.cpp:64 libkradio-gui/standardscandialog-ui.cpp:88
+#, no-c-format
+msgid "remaining time"
+msgstr "осталось времени"
+
+#. i18n: file libkradio-gui/standardscandialog-ui.ui line 120
+#: rc.cpp:67 libkradio-gui/standardscandialog-ui.cpp:89
+#, no-c-format
+msgid "<p align=\"right\">nothing here</p>"
+msgstr "<p align=\"right\">здесь ничего нет</p>"
+
+#. i18n: file libkradio-gui/stationselector-ui.ui line 16
+#: rc.cpp:70 libkradio-gui/stationselector-ui.cpp:90
+#, no-c-format
+msgid "StationSelectorUI"
+msgstr "StationSelectorUI"
+
+#. i18n: file libkradio-gui/stationselector-ui.ui line 30
+#: rc.cpp:73 libkradio-gui/stationselector-ui.cpp:91
+#, no-c-format
+msgid "Selected Stations"
+msgstr "Выбранные станции"
+
+#. i18n: file libkradio-gui/stationselector-ui.ui line 119
+#: rc.cpp:78 libkradio-gui/stationselector-ui.cpp:94
+#, no-c-format
+msgid "Available Stations"
+msgstr "Доступные станции"
+
+#: interfaces/errorlog-interfaces.cpp:43 interfaces/errorlog-interfaces.cpp:78
+msgid "%1 Error: %2\n"
+msgstr "Ошибка %1:%2\n"
+
+#: interfaces/errorlog-interfaces.cpp:52 interfaces/errorlog-interfaces.cpp:87
+msgid "%1 Warning: %2\n"
+msgstr "Предупреждение %1: %2\n"
+
+#: interfaces/errorlog-interfaces.cpp:61 interfaces/errorlog-interfaces.cpp:96
+msgid "%1 Information: %2\n"
+msgstr "Сообщение от %1: %2\n"
+
+#: interfaces/errorlog-interfaces.cpp:70
+#: interfaces/errorlog-interfaces.cpp:105
+msgid "%1 Debug: %2\n"
+msgstr "Отладочное сообщение %1: %2\n"
+
+#: libkradio/fileringbuffer.cpp:34 libkradio/fileringbuffer.cpp:67
+msgid "cannot open buffer file %1"
+msgstr "не удалось открыть файл буфера %1"
+
+#: libkradio/fileringbuffer.cpp:92
+msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
+msgstr "FileRingbuffer::resize: запись во временый файл %1 не удалась"
+
+#: libkradio/fileringbuffer.cpp:98
+msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
+msgstr "FileRingbuffer::resize: не удалось открыть временный файл %1"
+
+#: libkradio/fileringbuffer.cpp:126 libkradio/fileringbuffer.cpp:144
+msgid "FileRingBuffer::addData: failed writing data to file %1."
+msgstr "FileRingBuffer::addData: запись в файл %1 не удалась"
+
+#: libkradio/fileringbuffer.cpp:167
+msgid "FileRingBuffer::takeData: failed reading data to file %1."
+msgstr "FileRingBuffer::takeData: не могу прочитать данные в файл %1."
+
+#: libkradio/kradioapp.cpp:44
+msgid ""
+"KRadio - The Radio Application for KDE<P>With KRadio you can listen to radio "
+"broadcasts with the help of your V4L/V4L2 compatible radio card.<P>The "
+"KRadio Project contains a station preset data database. To complete this "
+"database you are encouraged to contribute your station preset file to the "
+"project. Just send it to one of the authors. <P>If you like to contribute "
+"your ideas, your own plugins or translations, don't hesitate to contact one "
+"of the authors.<P>"
+msgstr ""
+"KRadio - это программа-радиоприёмник для KDE.<P>Она позволяет слушать "
+"широковещательные радиостанции с помощью устройств, совместимых с V4L или "
+"V4L2.<P>Проект KRadio - это не только сама программа, но и база данных "
+"радиостнций всего мира, для пополнения которой Вам достаточно отправить файл "
+"с настройками KRadio для вашей местности кому-нибудь из авторов KRadio.<P>"
+"Если у Вас есть любые идеи, модули для программы или переводы -  пишите "
+"нам!<P>"
+
+#: libkradio/kradioapp.cpp:66
+msgid ""
+"Preset Database, Remote Control Support, Alarms, Rewrite for KRadio 0.3.0, "
+"Misc"
+msgstr "БД настроек, поддержка ДУ, работа по расписанию, версия 0.3.0, прочее"
+
+#: libkradio/kradioapp.cpp:67 main.cpp:43
+msgid "Buildsystem, Standards Conformance, Cleanups"
+msgstr "Система сборки, соответствие стандартам, чистка кода"
+
+#: libkradio/kradioapp.cpp:69 main.cpp:45
+msgid "idea, first basic application"
+msgstr "идея, первая версия"
+
+#: libkradio/kradioapp.cpp:71
+msgid "Many People around the World ... "
+msgstr "...и все-все-все..."
+
+#: libkradio/kradioapp.cpp:72
+msgid ""
+"... which contributed station preset files \n"
+"and tested early and unstable snapshots of KRadio \n"
+"with much patience"
+msgstr ""
+"...кто присылал нам файлы настроек\n"
+"и с огромным терпением\n"
+"тестировал нестабильные версии KRadio"
+
+#: libkradio/kradioapp.cpp:106
+msgid "Library %1: Plugin Entry Point is missing\n"
+msgstr "Бибилиотека %1: нет точки подключения модуля \n"
+
+#: libkradio/kradioapp.cpp:108 libkradio/kradioapp.cpp:119
+msgid "Plugin Library Load Error"
+msgstr "Ошибка при загрузке библиотеки модуля"
+
+#: libkradio/kradioapp.cpp:116
+msgid ""
+"Library %1: \n"
+"%2"
+msgstr ""
+"Библиотека %1: \n"
+"%2"
+
+#: libkradio/kradioapp.cpp:143
+msgid "saveState"
+msgstr "saveState"
+
+#: libkradio/kradioapp.cpp:221
+msgid "Instance"
+msgstr "Экземпляр"
+
+#: libkradio/kradioapp.cpp:242
+msgid "KRadio Configuration"
+msgstr "Настройка KRadio"
+
+#: libkradio/kradioapp.cpp:243
+msgid "About KRadio Components"
+msgstr "О компонентах KRadio"
+
+#: libkradio/kradioapp.cpp:271
+msgid "Error: Loading Library %1 failed: %2"
+msgstr "Ошибка: не удалось загрузить библиотеку %1: %2"
+
+#: libkradio/kradioapp.cpp:322
+msgid "Error: Creation of instance \"%1\" of class %2 falied."
+msgstr "Ошибка: не удалось создать экземпляр \"%1\" типа %2."
+
+#: libkradio/kradioapp.cpp:328
+msgid "Error: Cannot create instance \"%1\" of unknown class %2."
+msgstr "Ошибка: не могу создать экземпляр \"%1\"  неизвестного типа (%2)."
+
+#: libkradio/multibuffer.cpp:89
+msgid "Buffer Overflow. "
+msgstr "Переполнение буфера."
+
+#: libkradio/plugin_configuration_dialog.cpp:29
+msgid "Configuration Dialog"
+msgstr "Диалог настройки"
+
+#: libkradio/pluginmanager-configuration.cpp:143
+msgid "Enter Plugin Instance Name"
+msgstr "Введите название для экземпляра модуля"
+
+#: libkradio/pluginmanager.cpp:123
+msgid "Hide %1"
+msgstr "Скрыть %1"
+
+#: libkradio/pluginmanager.cpp:123
+msgid "Show %1"
+msgstr "Показать %1"
+
+#: libkradio/pluginmanager.cpp:350
+msgid "Plugins"
+msgstr "Модули"
+
+#: libkradio/pluginmanager.cpp:351
+msgid "Plugin Library Configuration"
+msgstr "Настройка модульных библиотек"
+
+#: libkradio/pluginmanager.cpp:446
+msgid "Starting Plugins"
+msgstr "Запуск модулей"
+
+#: libkradio/pluginmanager.cpp:459 libkradio/pluginmanager.cpp:476
+msgid "Creating Plugin %1"
+msgstr "Создание модуля %1"
+
+#: libkradio/pluginmanager.cpp:490
+msgid "Initializing Plugin %1"
+msgstr "Запуск модуля %1"
+
+#: libkradio/stationlist.cpp:255
+msgid "Contains merged Data"
+msgstr "Содержит объединённые данные"
+
+#: libkradio/stationlist.cpp:315
+msgid ""
+"Probably an old station preset file was read.\n"
+"You have to rebuild your station selections for the quickbar and the docking "
+"menu."
+msgstr ""
+"Вероятно, был прочитан очень старый файл настроек."
+"Вам придётся заново указать радиостанции для панели радиостанций и меню "
+"системного лотка."
+
+#: libkradio/stationlist.cpp:325
+msgid "parsing failed"
+msgstr "не разобрать"
+
+#: libkradio/stationlist.cpp:329
+msgid ""
+"Parsing the station preset file failed.\n"
+"See console output for more details."
+msgstr ""
+"Не удалось разобрать файл настроек.\n"
+"См. текстовый вывод в терминале."
+
+#: libkradio/stationlist.cpp:343 libkradio/stationlist.cpp:349
+msgid "error downloading preset file %1"
+msgstr "ошибка при скачивании файла настроек %1"
+
+#: libkradio/stationlist.cpp:345
+msgid "Download of the station preset file at %1 failed."
+msgstr "Не удалось скачать файл настроек %1"
+
+#: libkradio/stationlist.cpp:355
+msgid "temporary file: "
+msgstr "временный файл:"
+
+#: libkradio/stationlist.cpp:361
+msgid "error opening preset file %1"
+msgstr "ошибка при открытии  файла настроек %1"
+
+#: libkradio/stationlist.cpp:364
+msgid "Opening of the station preset file at %1 failed."
+msgstr "Не удалось открыть файл настроек %1"
+
+#: libkradio/stationlist.cpp:383
+msgid "Old Preset File Format detected"
+msgstr "Устаревший формат файла настроек"
+
+#: libkradio/stationlist.cpp:461
+msgid "error writing to tempfile %1"
+msgstr "ошибка при записи во временный файл %1"
+
+#: libkradio/stationlist.cpp:464
+msgid "Writing station preset file %1 failed."
+msgstr "При записи файла настроек %1 возникла ошибка."
+
+#: libkradio/stationlist.cpp:476
+msgid "error uploading preset file %1"
+msgstr "ошибка при выгрузке файла настроек %1"
+
+#: libkradio/stationlist.cpp:480
+msgid "Upload of station preset file to %1 failed."
+msgstr "При выгрузке файла настроек %1 возникла ошибка."
+
+#: libkradio/stationlistxmlhandler.cpp:64
+msgid "misplaced element %1"
+msgstr "неверно расположенный элемент %1"
+
+#: libkradio/stationlistxmlhandler.cpp:116
+msgid "unknown or unexpected element %1"
+msgstr "неизвестный/не ожидавшийся элемент %1"
+
+#: libkradio/stationlistxmlhandler.cpp:145
+msgid "expected element %1, but found %2"
+msgstr "ожидался элемент %1, однако встретился %2"
+
+#: libkradio/stationlistxmlhandler.cpp:149
+msgid "unexpected element %1"
+msgstr "не ожидавшийся элемент %1"
+
+#: libkradio/stationlistxmlhandler.cpp:157
+msgid "invalid data for element %1"
+msgstr "неверные данные для элемента %1"
+
+#: libkradio/stationlistxmlhandler.cpp:172
+msgid "found a station list with unknown format %1"
+msgstr "обнаружен список станций с неверным форматом %1"
+
+#: libkradio/stationlistxmlhandler.cpp:212
+msgid "unknown property %1 for class %2"
+msgstr "неизвестное свойтсво %1 класса %2"
+
+#: libkradio/stationlistxmlhandler.cpp:219
+msgid "characters ignored for element %1"
+msgstr "символы для элемента %1 проигнорированы"
+
+#: libkradio-gui/aboutwidget.cpp:282
+msgid "Invalid layout"
+msgstr "Неверная раскладка"
+
+#: libkradio-gui/aboutwidget.cpp:451
+msgid "%1 %2 (Using KDE %3)"
+msgstr "%1 %2 (Используется KDE %3)"
+
+#: libkradio-gui/aboutwidget.cpp:454
+msgid "%1 %2, %3"
+msgstr "%1 %2, %3"
+
+#: libkradio-gui/aboutwidget.cpp:527
+msgid "A&uthor"
+msgstr "&Автор"
+
+#: libkradio-gui/aboutwidget.cpp:527
+msgid "A&uthors"
+msgstr "&Авторы"
+
+#: libkradio-gui/aboutwidget.cpp:541
+msgid "&Thanks To"
+msgstr "&Благодарности"
+
+#: libkradio-gui/aboutwidget.cpp:554
+msgid "T&ranslation"
+msgstr "&Перевод"
+
+#: libkradio-gui/aboutwidget.cpp:571
+msgid "&License Agreement"
+msgstr "&Лицензионное соглашение"
+
+#: libkradio-gui/aboutwidget.cpp:585
+msgid "Image missing"
+msgstr "Нет изображения"
+
+#: libkradio-gui/radiostation-listview.cpp:33
+msgid "No."
+msgstr "№"
+
+#: libkradio-gui/radiostation-listview.cpp:34
+msgid "Icon"
+msgstr "Пиктограмма"
+
+#: libkradio-gui/radiostation-listview.cpp:35
+msgid "Station"
+msgstr "Станция"
+
+#: libkradio-gui/radiostation-listview.cpp:234
+msgid "contentsDragEnterEvent accepted"
+msgstr "contentsDragEnterEvent accepted"
+
+#: libkradio-gui/radiostation-listview.cpp:236
+msgid "contentsDragEnterEvent rejected"
+msgstr "contentsDragEnterEvent rejected"
+
+#: libkradio-gui/standardscandialog.cpp:118
+msgid "new station "
+msgstr "новая станция"
+
+#: libkradio-gui/standardscandialog.cpp:142
+msgid "&Done"
+msgstr "&Готово"
+
+#: libkradio-gui/standardscandialog.cpp:160
+msgid "<p align=\"right\">%1</p>"
+msgstr "<p align=\"right\">%1</p>"
+
+#: libkradio-gui/standardscandialog.cpp:162
+#: libkradio-gui/standardscandialog.cpp:165 radio-stations/radiostation.h:150
+#: radio-stations/radiostation.h:151
+msgid "unknown"
+msgstr "неизвестно"
+
+#: libkradio-gui/station-drag-object.cpp:69
+msgid "canDecode = true"
+msgstr "canDecode = true"
+
+#: radio-stations/frequencyradiostation.cpp:118
+#: radio-stations/internetradiostation.cpp:118
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: radio-stations/frequencyradiostation.cpp:132
+msgid "%1 MHz"
+msgstr "%1 МГц"
+
+#: radio-stations/frequencyradiostation.cpp:134
+msgid "%1 kHz"
+msgstr "%1 кГц"
+
+#: radio-stations/radiostation-config.cpp:45
+msgid "I don't know how to edit this station"
+msgstr "Не знаю, как изменить эту станцию"
+
+#: radio-stations/radiostation-config.cpp:68
+msgid "Frequency:"
+msgstr "Частота:"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Алексей Кузнецов"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "Alexey.Kouznetsov@gmail.com"
+
+#: main.cpp:36
+msgid "KRadio"
+msgstr "Радиоприёмник KDE"
+
+#: main.cpp:42
+msgid "rewrite for 0.3.0, recording, lirc support, alarms, misc"
+msgstr ""
+"Версия 0.3.0, запись, поддержка ДУ (lirc), работа по расписанию, прочее"
+

@@ -153,7 +153,12 @@ msgid ""
 "not have a button/remote associated.\n"
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
-msgstr "LircSupport::LIRC_init_config: Ein LIRC-Konfigurationseintrag in der Datei %1 hat keine Tasten/Fernsteuerungszuordnung (button/remote-Zeile).\nDadurch wird es wahrscheinlich in aktuellen LIRC-Versionen zu Problemen kommen. Bitte tragen Sie die Zeilen \"button=*\" und ggf. \"remote=*\" als Platzhalter für alle Tasten bzw. Fernsteuerungen ein."
+msgstr ""
+"LircSupport::LIRC_init_config: Ein LIRC-Konfigurationseintrag in der Datei %"
+"1 hat keine Tasten/Fernsteuerungszuordnung (button/remote-Zeile).\n"
+"Dadurch wird es wahrscheinlich in aktuellen LIRC-Versionen zu Problemen "
+"kommen. Bitte tragen Sie die Zeilen \"button=*\" und ggf. \"remote=*\" als "
+"Platzhalter für alle Tasten bzw. Fernsteuerungen ein."
 
 #: lircsupport.cpp:125
 #, kde-format
@@ -162,7 +167,12 @@ msgid ""
 "incomplete button/remote associated.\n"
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
-msgstr "LircSupport::LIRC_init_config: Ein LIRC-Konfigurationseintrag in der Datei %1 hat keine Tasten/Fernsteuerungszuordnung (button/remote-Zeile).\nDadurch wird es wahrscheinlich in aktuellen LIRC-Versionen zu Problemen kommen. Bitte tragen Sie die Zeilen \"button=*\" und ggf. \"remote=*\" als Platzhalter für alle Tasten bzw. Fernsteuerungen ein."
+msgstr ""
+"LircSupport::LIRC_init_config: Ein LIRC-Konfigurationseintrag in der Datei %"
+"1 hat keine Tasten/Fernsteuerungszuordnung (button/remote-Zeile).\n"
+"Dadurch wird es wahrscheinlich in aktuellen LIRC-Versionen zu Problemen "
+"kommen. Bitte tragen Sie die Zeilen \"button=*\" und ggf. \"remote=*\" als "
+"Platzhalter für alle Tasten bzw. Fernsteuerungen ein."
 
 #: lircsupport.cpp:136
 #, kde-format
@@ -177,11 +187,14 @@ msgstr "Bitte konfigurieren Sie Ihre .lircrc-Datei  %1 richtig."
 #: lircsupport.cpp:141 lircsupport.cpp:142
 #, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
-msgstr "Die Initialisierung des KRadio LIRC Plugins schlug fehl. Die .lircrc-Datei %1 konnte nicht gelesen werden."
+msgstr ""
+"Die Initialisierung des KRadio LIRC Plugins schlug fehl. Die .lircrc-Datei %"
+"1 konnte nicht gelesen werden."
 
 #: lircsupport.cpp:179
 #, kde-format
-msgid "%1 does not exist. File was created with KRadio's default .lircrc proposal"
+msgid ""
+"%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
 "Die Datei %1 existiert nicht. Die Datei wurde mit den Defaulteinstellungen "
 "für KRadio erzeugt."
@@ -272,4 +285,3 @@ msgstr "Ernst Martin Witte"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
-

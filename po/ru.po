@@ -1,37 +1,39 @@
 # translation of kradio.po to
 # This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
 #
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-19 15:46+0200\n"
-"PO-Revision-Date: 2006-11-08 11:44+0300\n"
+"PO-Revision-Date: 2009-04-20 20:51+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 Error: %2"
 msgstr "Ошибка %1: %2\n"
 
 #: interfaces/errorlog_interfaces.cpp:50 interfaces/errorlog_interfaces.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 Warning: %2"
 msgstr "Предупреждение %1: %2\n"
 
 #: interfaces/errorlog_interfaces.cpp:57 interfaces/errorlog_interfaces.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 Information: %2"
 msgstr "Сообщение от %1: %2\n"
 
 #: interfaces/errorlog_interfaces.cpp:64 interfaces/errorlog_interfaces.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 Debug: %2"
 msgstr "Отладочное сообщение %1: %2\n"
 
@@ -61,64 +63,63 @@ msgstr "Частота, кГц:"
 
 #: radiostations/radiostation-config.cpp:127
 msgid "URL:"
-msgstr ""
+msgstr "Адрес:"
 
 #: radiostations/radiostation-config.cpp:131
 msgid "Decoder Class:"
-msgstr ""
+msgstr "Класс декодера:"
 
 #: radiostations/radiostation-config.cpp:135
-#, fuzzy
 msgid "Playlist Class:"
-msgstr "Модуль"
+msgstr "Класс списка воспроизведения:"
 
 #: radiostations/radiostation-config.cpp:140
 msgid "<autodetect (very slow!)>"
-msgstr ""
+msgstr "<автоопределение (очень медленно!)>"
 
 #: radiostations/radiostation-config.cpp:141
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: radiostations/radiostation-config.cpp:142
 msgid "ACC/ACCP"
-msgstr ""
+msgstr "ACC/ACCP"
 
 #: radiostations/radiostation-config.cpp:143
 msgid "ASF"
-msgstr ""
+msgstr "ASF"
 
 #: radiostations/radiostation-config.cpp:145
 msgid "OGG/Vorbis"
-msgstr ""
+msgstr "OGG/Vorbis"
 
 #: radiostations/radiostation-config.cpp:148
 msgid "<autodetect>"
-msgstr ""
+msgstr "<автоопределение>"
 
 #: radiostations/radiostation-config.cpp:149
 msgid "<none>"
-msgstr ""
+msgstr "<нет>"
 
 #: radiostations/radiostation-config.cpp:150
 msgid "ASX"
-msgstr ""
+msgstr "ASX"
 
 #: radiostations/radiostation-config.cpp:151
 msgid "LSC"
-msgstr ""
+msgstr "LSC"
 
 #: radiostations/radiostation-config.cpp:152
 msgid "M3U"
-msgstr ""
+msgstr "M3U"
 
 #: radiostations/radiostation-config.cpp:153
 msgid "PLS"
-msgstr ""
+msgstr "PLS"
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
-msgstr "No "
+msgstr "№ "
 
 #: radiostations/radiostation-listview.cpp:36
 msgid "Icon"
@@ -137,14 +138,12 @@ msgid "Description"
 msgstr "Описание"
 
 #: radiostations/radiostation-listview.cpp:228
-#, fuzzy
 msgid "dragEnterEvent accepted"
-msgstr "contentsDragEnterEvent "
+msgstr "dragEnterEvent принято"
 
 #: radiostations/radiostation-listview.cpp:232
-#, fuzzy
 msgid "dragEnterEvent rejected"
-msgstr "contentsDragEnterEvent rejected"
+msgstr "dragEnterEvent отклонено"
 
 #: radiostations/radiostation-listview.cpp:241
 msgid "contentsDragEnterEvent accepted"
@@ -156,12 +155,11 @@ msgstr "contentsDragEnterEvent rejected"
 
 #: radiostations/frequencyradiostation.h:72
 msgid "AM/FM Radio Station"
-msgstr ""
+msgstr "Эфирная радиостанция"
 
 #: radiostations/internetradiostation.h:73
-#, fuzzy
 msgid "Internet Radio Station"
-msgstr "Выбранные"
+msgstr "Сетевая радиостанция"
 
 #: radiostations/radiostation.h:161 radiostations/radiostation.h:162
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
@@ -191,13 +189,13 @@ msgstr "FileRingBuffer::addData: Не могу записать данные в 
 #: src/fileringbuffer.cpp:168
 #, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
-msgstr ""
+msgstr "FileRingBuffer::takeData: не могу прочитать данные в файл %1."
 
 #: src/kradioaboutwidget.cpp:65
 msgid ""
 "<qt>No information available.<br />The supplied KAboutData object does not "
 "exist.</qt>"
-msgstr ""
+msgstr "<qt>Информация недоступна.<br />Объект KAboutData не существует.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
@@ -205,15 +203,17 @@ msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
 "html>"
 msgstr ""
+"<html><font size=\"5\">%1</font><br /><b>Версия %2</b><br />Использует KDE %"
+"3</html>"
 
 #: src/kradioaboutwidget.cpp:125
 #, kde-format
 msgid "License: %1"
-msgstr ""
+msgstr "Лицензия: %1"
 
 #: src/kradioaboutwidget.cpp:138
 msgid "&About"
-msgstr ""
+msgstr "О программе"
 
 #: src/kradioaboutwidget.cpp:147
 msgid "A&uthor"
@@ -228,11 +228,15 @@ msgid ""
 "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
 "bugs.\n"
 msgstr ""
+"Для сообщений об ошибках и пожеланиях используйте<a href=\"http://bugs.kde."
+"org\">http://bugs.kde.org</a>.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
 msgstr ""
+"Сообщения об ошибках можно направлять по адресу <a href=\"mailto:%1\">%2</"
+"a>.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
@@ -243,9 +247,8 @@ msgid "T&ranslation"
 msgstr "&Перевод"
 
 #: src/kradioaboutwidget.cpp:255
-#, fuzzy
 msgid "License Agreement"
-msgstr "&Лицензионное соглашение"
+msgstr "Лицензионное соглашение"
 
 #: src/kradioapp.cpp:132
 #, kde-format
@@ -272,12 +275,11 @@ msgstr "saveState"
 
 #: src/kradioapp.cpp:216
 msgid "New plugin libraries found. Should the libraries be loaded now?"
-msgstr ""
+msgstr "Найдены новые библиотеки модулей. Загрузить их сейчас?"
 
 #: src/kradioapp.cpp:218
-#, fuzzy
 msgid "New Plugin Libraries found"
-msgstr "Настройка библиотечных модулей"
+msgstr "Найдены новые библиотеки модулей"
 
 #: src/kradioapp.cpp:234
 #, kde-format
@@ -286,10 +288,12 @@ msgid ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr ""
+"Найдено лишь %1 библиотек, ожидалось не менее пяти. Проверьте каталог "
+"установки KRadio4 и переменные окружения  KDEDIR, KDEDIRS и KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
-msgstr ""
+msgstr "Ошибка установки KRadio4"
 
 #: src/kradioapp.cpp:264
 msgid "Instance"
@@ -319,32 +323,33 @@ msgid "Error: Cannot create instance \"%1\" of unknown class %2."
 msgstr "Ошибка: не могу создать экземпляр \"%1\" неизвестного класса %2."
 
 #: src/main.cpp:34
-#, fuzzy
 msgid "KRadio4"
 msgstr "Радиоприёмник KDE"
 
 #: src/main.cpp:36
 msgid "A versatile KDE AM/FM/Internet radio application"
 msgstr ""
+"Многофункциональное приложение для прослушивания раиоканалов (АМ/ЧМ/интернет)"
 
 #: src/main.cpp:38
 msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
-msgstr ""
+msgstr "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
 
 #: src/main.cpp:43
 msgid "Ernst Martin Witte"
-msgstr ""
+msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
-#, fuzzy
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, lirc support, alarms, misc"
-msgstr "Написание версии 0.3.0, запись, поддержка LIRC, расписание, разное"
+msgstr ""
+"Написание версии для KDE4, поддержка RDS, комбинации клавиш, запись, "
+"поддержка PVR, дистанционное управление, работа по расписанию и проч."
 
 #: src/main.cpp:44
 msgid "Marcus Camen"
-msgstr ""
+msgstr "Marcus Camen"
 
 #: src/main.cpp:44
 msgid "Buildsystem, Standards Conformance, Cleanups"
@@ -352,20 +357,19 @@ msgstr "Система сборки, стандартизация, чистка 
 
 #: src/main.cpp:45
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: src/main.cpp:45
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Разное"
 
 #: src/main.cpp:46
 msgid "Frank Schwanz"
-msgstr ""
+msgstr "Frank Schwanz"
 
 #: src/main.cpp:46
-#, fuzzy
 msgid "initial idea, first basic KDE 2 application"
-msgstr "Идея, первый вариант программы"
+msgstr "Идея, первый вариант программы для KDE2"
 
 #: src/multibuffer.cpp:89
 msgid "Buffer Overflow. "
@@ -380,7 +384,7 @@ msgstr "Окно параметров"
 msgid ""
 "Library %1: \n"
 "Cannot load non-local library"
-msgstr ""
+msgstr "Библиотека %1: Не могу загрузить не локальную библиотеку"
 
 #: src/pluginmanager-configuration.cpp:219
 msgid "Enter Plugin Instance Name"
@@ -414,11 +418,11 @@ msgstr "Создаю модуль %1"
 #: src/pluginmanager.cpp:603
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
-msgstr ""
+msgstr "Найдены новые модули. Создать их экземпляры?"
 
 #: src/pluginmanager.cpp:605
 msgid "New Plugins found"
-msgstr ""
+msgstr "Найдены новые модули"
 
 #: src/pluginmanager.cpp:640
 #, kde-format
@@ -426,33 +430,30 @@ msgid "Initializing Plugin %1"
 msgstr "Включаю модуль %1"
 
 #: src/pluginmanager.cpp:758
-#, fuzzy
 msgid "Show all"
-msgstr "Показать \"%1\""
+msgstr "Показать всё"
 
 #: src/pluginmanager.cpp:759
-#, fuzzy
 msgid "Hide all"
-msgstr "Скрыть \"%1\""
+msgstr "Скрыть всё"
 
 #: src/pluginmanager.cpp:760
 msgid "Restore all"
-msgstr ""
+msgstr "Восстановить всё"
 
 #: src/pluginmanager.cpp:761
 msgid "restore state before laste hide-all activation"
-msgstr ""
+msgstr "Восстанавливает все окна, скрытые действием \"Скрыть всё\""
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
-#, fuzzy
 msgid "&Start"
-msgstr "Название"
+msgstr "&Начать"
 
 #. i18n: file: src/standardscandialog-ui.ui:58
 #. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
 #: src/standardscandialog.cpp:92 rc.cpp:87
 msgid "&Stop"
-msgstr ""
+msgstr "&Остановить"
 
 #: src/standardscandialog.cpp:163
 #, kde-format
@@ -495,9 +496,9 @@ msgstr ""
 "вывод в консоли."
 
 #: src/stationlist.cpp:203 src/stationlist.cpp:208
-#, fuzzy, kde-format
+#, kde-format
 msgid "error downloading preset file %1"
-msgstr "ошибка при скачивании файла настроек"
+msgstr "ошибка при скачивании файла настроек %1"
 
 #: src/stationlist.cpp:205
 #, kde-format
@@ -533,9 +534,9 @@ msgid "Writing station preset file %1 failed."
 msgstr "Не могу записать файл радиостанций %1."
 
 #: src/stationlist.cpp:335
-#, fuzzy, kde-format
+#, kde-format
 msgid "uploading preset file %1: "
-msgstr "Ошибка выгрузки файла настроек %1"
+msgstr "выгрузка файла настроек %1"
 
 #: src/stationlist.cpp:337
 #, kde-format
@@ -543,6 +544,8 @@ msgid ""
 "something strange happend, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
+"произошло нечто странное, в списке станций только %1 пунктов. Запись файла "
+"настроек не будет произведена"
 
 #: src/stationlist.cpp:342
 #, kde-format
@@ -555,9 +558,8 @@ msgid "Upload of station preset file to %1 failed."
 msgstr "Выгрузка файла радиостанций %1 завершилась неудачей."
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
-#, fuzzy
 msgid "error creating temp file"
-msgstr "Ошибка записи во временный файл %1"
+msgstr "Ошибка записи во временный файл"
 
 #: src/stationlistxmlhandler.cpp:64
 #, kde-format
@@ -612,12 +614,12 @@ msgstr "Скрыть \"%1\""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Алексей Кузнецов"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Alexey.Kouznetsov@gmail.com"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, PluginManagerConfigurationUI)
@@ -640,15 +642,14 @@ msgstr "Alt+Z"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:49
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
 #: rc.cpp:14
-#, fuzzy
 msgid "Created Plugin Instances"
-msgstr "Введите название для этого экземпляра"
+msgstr "Созданные экземпляры модулей"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
 #: rc.cpp:17
 msgid "List of the plugin instances currently running"
-msgstr ""
+msgstr "Список запущенных экземпляров модулей"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:77
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
@@ -662,41 +663,37 @@ msgstr "Модуль"
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:29
 msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr ""
+msgstr "Удаляет/останавливает экземпляр модуля, выбранный в списке слева"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:158
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: rc.cpp:32
-#, fuzzy
 msgid "Available Plugin Classes"
 msgstr "Список доступных типов модулей"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:192
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
 #: rc.cpp:35
-#, fuzzy
 msgid "Create a new instance of plugin class selected in the list on the left"
 msgstr "Создать новый экземпляр выбранного модуля"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:208
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
 #: rc.cpp:38
-#, fuzzy
 msgid "List of available plugin classes found in the plugin libraries"
 msgstr "Список доступных типов модулей"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:253
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: rc.cpp:47
-#, fuzzy
 msgid "Plugin Libraries"
-msgstr "Модуль"
+msgstr "Бибилиотеки модуля"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:271
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
 #: rc.cpp:50
 msgid "Unload the plugin library selected in the list on the left side"
-msgstr ""
+msgstr "Выгрузить из памяти библиотеку, выбранную в списке слева"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:287
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
@@ -711,36 +708,38 @@ msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
+"Выберите библиотеку модуля; она будет добавлена в список библиотек когда вы "
+"нажмёте кнопку \"Загрузить\"."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:323
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
 #: rc.cpp:59
 msgid "Loads the library specified in the box left to this button."
-msgstr ""
+msgstr "Загружает библиотеку, указанную в поле слева."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:345
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:62
 msgid "Automatic detection and load of new plugins"
-msgstr ""
+msgstr "Автоматический поиск и загрузка новых модулей"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:366
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
 #: rc.cpp:65
 msgid "Do not check/load!"
-msgstr ""
+msgstr "Не проверять/загружать!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:379
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
 #: rc.cpp:68
 msgid "Automatically check/load!"
-msgstr ""
+msgstr "Автоопределение/загрузка!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:392
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:71
 msgid "Please Ask!"
-msgstr ""
+msgstr "Уточнить!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:422
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -762,6 +761,21 @@ msgid ""
 "have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
 "html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Вы можете "
+"<span style=\" font-weight:600;\">переименовать</span> экземпляр модуля с "
+"помощью двойного щелчка мышью по его названию. Название появится под "
+"пиктограммой страницы настроек, в заголовке страницы настроек и, например, в "
+"названии звукового устройства. Изменение имени экземпляра модуля удобно, "
+"исли у вас есть несколько звуковых плат и/или несколько экземпляров модуля "
+"ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
@@ -773,13 +787,13 @@ msgstr "Идёт поиск станций..."
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
 #: rc.cpp:84
 msgid "&Ok"
-msgstr ""
+msgstr "&Подтверждаю"
 
 #. i18n: file: src/standardscandialog-ui.ui:65
 #. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
 #: rc.cpp:90
 msgid "&Discard"
-msgstr ""
+msgstr "&Отменить"
 
 #. i18n: file: src/standardscandialog-ui.ui:92
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)

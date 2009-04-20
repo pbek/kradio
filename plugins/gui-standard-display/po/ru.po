@@ -1,20 +1,22 @@
 # translation of ru.po to
 # translation of kradio-gui-standard-display.po to
 # This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
 #
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-19 15:46+0200\n"
-"PO-Revision-Date: 2006-11-08 13:06+0300\n"
+"PO-Revision-Date: 2009-04-20 20:47+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: displaycfg.cpp:35
 msgid "Display Colors"
@@ -69,14 +71,12 @@ msgid "60 min"
 msgstr "час"
 
 #: radioview.cpp:178
-#, fuzzy
 msgid "90 min"
-msgstr "10 минут"
+msgstr "полтора часа"
 
 #: radioview.cpp:182
-#, fuzzy
 msgid "120 min"
-msgstr "10 минут"
+msgstr "2 часа"
 
 #: radioview.cpp:227
 msgid "Configure KRadio"
@@ -104,7 +104,7 @@ msgstr "Показать/скрыть"
 
 #: radioview.cpp:233
 msgid "Help about KRadio and KDE"
-msgstr ""
+msgstr "Справка по KRadi и KDE"
 
 #: radioview.cpp:234
 msgid "Select a Radio Station"
@@ -121,11 +121,11 @@ msgstr "Остановить запись %1"
 
 #: radioview.cpp:607
 msgid "Resume playback"
-msgstr ""
+msgstr "Возобновить воспроизведение"
 
 #: radioview.cpp:611
 msgid "Pause playback"
-msgstr ""
+msgstr "Приостановить воспроизведение"
 
 #: radioview.cpp:704
 msgid "Display"
@@ -149,11 +149,11 @@ msgstr "УКВ"
 
 #: radioview_frequencyradio.cpp:396
 msgid "RDS"
-msgstr ""
+msgstr "RDS"
 
 #: radioview_frequencyradio.cpp:397
 msgid "NET"
-msgstr ""
+msgstr "СЕТЬ"
 
 #: radioview_frequencyradio.cpp:538
 #, kde-format
@@ -210,10 +210,9 @@ msgstr "Уменьшать частоту по 0,05 МГц"
 #. i18n: file: radioview_seekinterface.ui:70
 #. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
 #: rc.cpp:12 rc.cpp:32
-#, fuzzy
 msgctxt "Frequency"
 msgid "Frequency control"
-msgstr "Управление частотой"
+msgstr "Настройка частоты"
 
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
@@ -230,12 +229,12 @@ msgstr "Поиск следующей станции"
 #: rc.cpp:19
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Алексей Кузнецов"
 
 #: rc.cpp:20
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Alexey.Kouznetsov@GMail.com"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"

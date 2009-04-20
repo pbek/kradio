@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-19 15:46+0200\n"
-"PO-Revision-Date: 2009-04-04 17:21+0200\n"
+"PO-Revision-Date: 2009-04-19 16:45+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -288,10 +288,13 @@ msgid ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr ""
+"Bylo nalezeno pouze %1 knihoven. Očekávané minimum je 5. Zkontrolujte, "
+"prosím, adresář s instalací KRadio4 a proměnné prostředí KDEDIR, KDEDIRS a "
+"KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
-msgstr ""
+msgstr "Chyba při instalaci KRadio4"
 
 #: src/kradioapp.cpp:264
 msgid "Instance"

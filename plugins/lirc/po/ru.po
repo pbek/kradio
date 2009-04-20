@@ -1,20 +1,22 @@
 # translation of ru.po to
 # translation of kradio-lirc.po to
 # This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
 #
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-19 15:46+0200\n"
-"PO-Revision-Date: 2006-11-08 12:54+0300\n"
+"PO-Revision-Date: 2009-04-18 20:22+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lirc-configuration.cpp:44
 msgid "digit 0"
@@ -110,7 +112,7 @@ msgstr "Закрыть KRadio"
 
 #: lirc-configuration.cpp:118 lirc-configuration.cpp:119
 msgid "<don't care>"
-msgstr ""
+msgstr "<не важно>"
 
 #: lirc-configuration.cpp:250
 msgid ""
@@ -184,7 +186,7 @@ msgstr "%1 не существует. Был создан файл .lircrc дл�
 #: lircsupport.cpp:192
 #, kde-format
 msgid "failed to read file %1"
-msgstr ""
+msgstr "не могу прочитать файл %1"
 
 #: lircsupport.cpp:244
 msgid ""
@@ -262,12 +264,12 @@ msgstr "LIRCConfigurationUI"
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Алексей Кузнецов"
 
 #: rc.cpp:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Alexey.Kouznetsov@gmail.com"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"
