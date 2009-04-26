@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-19 15:46+0200\n"
+"POT-Creation-Date: 2009-04-26 14:32+0200\n"
 "PO-Revision-Date: 2009-04-21 17:38+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lirc-configuration.cpp:44
 msgid "digit 0"
@@ -170,15 +170,18 @@ msgstr ""
 "Это, вероятнее всего, приведёт к проблемам в дальнейшем. Используйте в как "
 "шаблон для всех кнопок/пультов \"button=*\" и \"remote=*\" соответственно."
 
-#: lircsupport.cpp:136, kde-format
+#: lircsupport.cpp:136
+#, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
 msgstr "Ни в одном из ваших файлов .lircrc %1 нет упоминания о KRadio."
 
-#: lircsupport.cpp:137, kde-format
+#: lircsupport.cpp:137
+#, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Настройте файлы .lircrc %1."
 
-#: lircsupport.cpp:141 lircsupport.cpp:142, kde-format
+#: lircsupport.cpp:141 lircsupport.cpp:142
+#, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
 msgstr ""
 "Инициализация модуля LIRC не удалась. Не могу прочитать файл ностроек %1."
