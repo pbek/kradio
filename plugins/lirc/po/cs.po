@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kradio4_plugin_lirc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-19 15:46+0200\n"
-"PO-Revision-Date: 2009-04-03 23:17+0200\n"
+"PO-Revision-Date: 2009-04-21 21:09+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -152,6 +152,10 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: V %1 LIRC konfigurační záznam pro KRadio nemá "
+"asociováno tlačítko/dálkového ovládání.\n"
+"Toto povede velice pravděpodobně k potížím. Použijte, prosím, \"button=*\" a "
+"\"remote=*\" jako divokou kartu pro všechna tlačítka/dálkového ovládání"
 
 #: lircsupport.cpp:125
 #, kde-format
@@ -161,22 +165,24 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: V %1 LIRC konfigurační záznam pro KRadio má "
+"asociováno neúplné tlačítko/dálkového ovládání.\n"
+"Toto povede velice pravděpodobně k potížím. Použijte, prosím, \"button=*\" a "
+"\"remote=*\" jako divokou kartu pro všechna tlačítka/dálkového ovládání"
 
-#: lircsupport.cpp:136
-#, fuzzy, kde-format
+#: lircsupport.cpp:136, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
-msgstr ""
-"Neexistuje žádný záznam pro KRadio v kterémkoli z vašich .lircrc souborů."
+msgstr "Neexistuje žádný záznam pro KRadio ve vašich .lircrc souborech %1."
 
-#: lircsupport.cpp:137
-#, fuzzy, kde-format
+#: lircsupport.cpp:137, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
-msgstr "Nastavte, prosím, správně svoje .lircrc soubory."
+msgstr "Nastavte, prosím, správně svůj .lircrc soubor %1."
 
-#: lircsupport.cpp:141 lircsupport.cpp:142
-#, fuzzy, kde-format
+#: lircsupport.cpp:141 lircsupport.cpp:142, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
-msgstr "Inicializace přídavného modulu LIRC programu KRadio selhala"
+msgstr ""
+"Inicializace přídavného modulu LIRC pro KRadio selhala. Nelze číst z "
+"konfiguračního souboru %1"
 
 #: lircsupport.cpp:179
 #, kde-format
@@ -237,32 +243,31 @@ msgstr "Textový štítek 1"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:18 rc.cpp:50
 msgid "Power off .lircrc mode"
-msgstr ""
+msgstr "Vypnout režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:21 rc.cpp:53
 msgid "Power on .lircrc mode"
-msgstr ""
+msgstr "Zapnout režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:24 rc.cpp:56
 msgid "Synchronize .lircrc modes at runtime"
-msgstr ""
+msgstr "Seřídit režimy .lircrc za běhu"
 
 #. i18n: file: lirc-configuration-ui.ui:137
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:59
 msgid "Synchronize .lircrc modes at startup"
-msgstr ""
+msgstr "Seřídit režimy .lircrc při spuštění"
 
 #. i18n: file: lirc-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:30 rc.cpp:62
-#, fuzzy
 msgid "LIRC Configuration File"
-msgstr "LIRCConfigurationUI"
+msgstr "Konfigurační soubor LIRC"
 
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"

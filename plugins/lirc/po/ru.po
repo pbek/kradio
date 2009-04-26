@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-19 15:46+0200\n"
-"PO-Revision-Date: 2009-04-18 20:22+0400\n"
+"PO-Revision-Date: 2009-04-21 17:38+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lirc-configuration.cpp:44
 msgid "digit 0"
@@ -118,11 +118,11 @@ msgstr "<не важно>"
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
-msgstr "Введите ключевую строку вашего ПДУ либо просто нажмите кнопку на нём"
+msgstr "Введите ключевую строку вашего ПДУ либо просто нажмите кнопку на нём."
 
 #: lirc-configuration.cpp:256
 msgid "Double Click on the entries to change the assignments"
-msgstr "Для изменения привязки дважды щёлкните по ней мышью"
+msgstr "Для изменения привязки дважды щёлкните по ней мышью."
 
 #: lircsupport.cpp:49
 msgid "Linux Infrared Control (LIRC) Support"
@@ -152,6 +152,10 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: В %1 пункт настройки LIRC для KRadio не "
+"содержит связанной с действием кнопки либо ПДУ.\n"
+"Это, вероятнее всего, приведёт к проблемам в дальнейшем. Используйте в как "
+"шаблон для всех кнопок/пультов \"button=*\" и \"remote=*\" соответственно."
 
 #: lircsupport.cpp:125
 #, kde-format
@@ -161,21 +165,23 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: В %1 пункт настройки LIRC для KRadio содержит "
+"незавершённую запись для кнопки или ПДУ.\n"
+"Это, вероятнее всего, приведёт к проблемам в дальнейшем. Используйте в как "
+"шаблон для всех кнопок/пультов \"button=*\" и \"remote=*\" соответственно."
 
-#: lircsupport.cpp:136
-#, fuzzy, kde-format
+#: lircsupport.cpp:136, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
-msgstr "Ни в одном из ваших файлов .lircrc нет упоминания о KRadio."
+msgstr "Ни в одном из ваших файлов .lircrc %1 нет упоминания о KRadio."
 
-#: lircsupport.cpp:137
-#, fuzzy, kde-format
+#: lircsupport.cpp:137, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
-msgstr "Настройте файлы .lircrc"
+msgstr "Настройте файлы .lircrc %1."
 
-#: lircsupport.cpp:141 lircsupport.cpp:142
-#, fuzzy, kde-format
+#: lircsupport.cpp:141 lircsupport.cpp:142, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
-msgstr "Инициализация модуля LIRC не удалась"
+msgstr ""
+"Инициализация модуля LIRC не удалась. Не могу прочитать файл ностроек %1."
 
 #: lircsupport.cpp:179
 #, kde-format
@@ -234,32 +240,31 @@ msgstr "textLabel1"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:18 rc.cpp:50
 msgid "Power off .lircrc mode"
-msgstr ""
+msgstr "Выключить режим .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:21 rc.cpp:53
 msgid "Power on .lircrc mode"
-msgstr ""
+msgstr "Включить режим .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:24 rc.cpp:56
 msgid "Synchronize .lircrc modes at runtime"
-msgstr ""
+msgstr "Синхронизировать режимы .lircrc во время работы"
 
 #. i18n: file: lirc-configuration-ui.ui:137
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:59
 msgid "Synchronize .lircrc modes at startup"
-msgstr ""
+msgstr "Синхронизировать режимы .lircrc при запуске"
 
 #. i18n: file: lirc-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:30 rc.cpp:62
-#, fuzzy
 msgid "LIRC Configuration File"
-msgstr "LIRCConfigurationUI"
+msgstr "файл настроек LIRC"
 
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
