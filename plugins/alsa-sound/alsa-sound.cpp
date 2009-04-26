@@ -64,7 +64,7 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_PlaybackStreamID(),
       m_CaptureStreamID(),
       m_HWBufferSize(2048),
-      m_BufferSize(65536),
+      m_BufferSize(92*1024),
       m_PlaybackBuffer(m_BufferSize, /*synchronized =*/ true),
       m_CaptureBuffer(m_BufferSize, /*synchronized =*/ true),
       m_PlaybackBufferWaitForMinFill(66 /*percent*/),
@@ -191,7 +191,7 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
     m_EnablePlayback  = c.readEntry("enable-playback",  true);
     m_EnableCapture   = c.readEntry("enable-capture",   true);
     m_HWBufferSize    = c.readEntry("hwbuffer-size",    2048);
-    m_BufferSize      = c.readEntry("buffer-size",     65536);
+    m_BufferSize      = c.readEntry("buffer-size",     96*1024);
     int card          = c.readEntry("playback-card",   0);
     int dev           = c.readEntry("playback-device", 0);
     setPlaybackDevice(card, dev);
