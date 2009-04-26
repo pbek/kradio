@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.0-rc1</creator>
+			<maintainer>Ivica Božulić &lt;ibozulic@gmail.com&gt;</maintainer>
+			<changed>2008-04-05T16:59:08</changed>
+			<country>Croatia</country>
+			<city>Split</city>
+			<media>Cable</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>120740751328238D2159D5831AD30B26BA2A5A66CD1984B82075078737563C2FD2EA5E1557</stationID>
+			<name>RADIO SPLIT</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>97.4006</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407508E3A4EBB3E570DD94433A956AB7448DB5968860538E1D6A359FD70C0938F32171</stationID>
+			<name>OTVORENI</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95.8505</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>120740751775D937D8C6A07B0E5A3FF7A690E85481ED81940F462705AD3A45FACE5161BFB5</stationID>
+			<name>DALMACIJA</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>99.0257</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407510D1E25B12ACC9660E602B300E6CF8E54E477F3C115442852B575AB2CDF5F27679</stationID>
+			<name>KL EURODOM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>96.6256</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407504EB158B4F1CF4176B28BF214BD88BA8A96C7FB26B6B17EA660FEFEC8092D303DF</stationID>
+			<name>RIVA</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>94.6504</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407500E9B6C096D64A894A068FABE75A019716C3B748D916EA2E354D69D7BAB862E5C4</stationID>
+			<name>RADIO SALONA</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.7253</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>122097750466D2BAFC3BC580FF5394F5F374F90D3DBB4AAC5A5155453A54F2E57A163BBE5E</stationID>
+			<name>DIN-DON</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1220977448C1DF1B92704B74A403BBFA80772DC0AAE78099963484B94A4FCAD98D69E3EC2F</stationID>
+			<name>RADIO TROGIR</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407498389C4F99C767482BD69BF12E465DB9E0E5909D7655D16EB4A11E06DB9696C81C</stationID>
+			<name>RADIO KAŠTELA</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407516A0B01C6CA2CB9A40C6EC11394D665983073B0D42444011652721645FEA061C30</stationID>
+			<name>HR 1</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>98.6507</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12074075150544492C037A467AC5F2A3B7FBC286954BF27034A44EEC379C1FC5CB1FDE64EC</stationID>
+			<name>HR 2</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>98.2007</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1220977646E1B29A182D5572F2B7CBCF7F2814D50923CB1CA312E83C75CE29E5E6D638678B</stationID>
+			<name>HR 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407511DBF4FAC44CA53796F2D74A357697A1E212F00C53838EFFD7AA648B2E147EC50E</stationID>
+			<name>NARODNI</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>97.0506</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12074075011E1E049ACABAB05DB23C164C4FD4102C4CD48A1C66CE8F9C12A6427A8B0EDBF2</stationID>
+			<name>RADIO BRAČ</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>93.3504</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>120740749651539469F93B7B572ACF9BA16639803013B692A1925A4CA5336FB9BCA7708A47</stationID>
+			<name>MEGA MIX HVAR</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.5252</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>120740750359F725F0F47690F7ED5EB1771CAE0D65DD4A7B6A1C8D51B26E69F0802E5A3A60</stationID>
+			<name>NAUTIC</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>93.9254</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407507B8D6C9AE7C806221B94CB81132248F208BE1546980C50BAC1B99DD42A3056760</stationID>
+			<name>KATOLIČKI RADIO</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95.4255</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12074075240C0FA4E55B55464681E3185E457C820E0E3791E4AEA8E3C7A26A1698DBB83A65</stationID>
+			<name>1 LIVE (ẆDR)</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.626</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>120740752872ED80D1CA5FAB754D53BFE3FB2AC696485DF2D97C7D2A95C2F001196206CF9E</stationID>
+			<name>SUNSHINE RADIO (Pro Sieben)</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.251</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12074075337B5A5DCC896803FEF4ED2896F3E9C95A7A4C1644C0CF9D421AB1C63855FE5BCE</stationID>
+			<name>KLASIK RADIO (Vox)</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.126</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407535BDE94774C396714FA26A50F5CFCA6513E8CCAFF38F1C27A21D4050165345ED78</stationID>
+			<name>RTL RADIO(Vox)</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.951</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12074075381C8E6295357ED296DADEF6A7D2E294F8C14A621F0326E02C50F5B8EBD46809CC</stationID>
+			<name>ROCK ANTENNE (Kabel 1)</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.101</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207407539569A37859951819D18B33C11C57D6FFB95D75DA69461023B1157880CB90BDEAB</stationID>
+			<name>ANTENNE BAYERN (Kabel 1)</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.651</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12209778051F47033DD3C846295AFC5E1DE6F5AEB5C075DBB37FFE4ECE772BBC8EC12E4F16</stationID>
+			<name>JAM FM (RTL2)</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>99.4</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
