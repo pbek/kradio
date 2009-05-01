@@ -124,6 +124,8 @@ void InternetRadioConfiguration::slotNoticePlaybackMixerChanged(const QString &_
     labelPlaybackMixerChannel->setEnabled(mixer != NULL);
     comboPlaybackMixerChannel->setEnabled(mixer != NULL);
 
+    cbMutePlaybackMixerOnPowerOff->setChecked(muteOnPowerOff);
+
     m_orgMixerID        = _mixer_id;
     m_orgChannelID      = Channel;
     m_orgMuteOnPowerOff = muteOnPowerOff;
