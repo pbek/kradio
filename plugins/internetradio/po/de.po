@@ -1,3 +1,4 @@
+# translation of kradio4-svn.plugins.internetradio.po.de.po to German
 # translation of de.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
@@ -5,12 +6,12 @@
 # Ernst Martin Witte <emw@nocabal.de>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: de\n"
+"Project-Id-Version: kradio4-svn.plugins.internetradio.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
-"PO-Revision-Date: 2009-03-28 22:37+0100\n"
+"POT-Creation-Date: 2009-05-01 14:15+0200\n"
+"PO-Revision-Date: 2009-05-01 14:24+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: \n"
+"Language-Team: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -102,19 +103,19 @@ msgstr "Pseudo-Radio-Gerät für Internet-Radio"
 msgid "Internet Radio Plugin"
 msgstr "Internet-Radio Plugin"
 
-#: internetradio.cpp:348
+#: internetradio.cpp:351
 msgid "Internet radio station decoder / pseudo device"
 msgstr "Decoder/Pseudo-Gerät für Internet-Radiosender"
 
-#: internetradio.cpp:542
+#: internetradio.cpp:548
 msgid "Internet Radio"
 msgstr "Internet-Radio"
 
-#: internetradio.cpp:543
+#: internetradio.cpp:549
 msgid "Internet Radio Options"
 msgstr "Option für Internet-Radio"
 
-#: internetradio.cpp:615
+#: internetradio.cpp:621
 msgid ""
 "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
 "idea to restart KRadio"
@@ -124,24 +125,31 @@ msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:15
+#: rc.cpp:3 rc.cpp:18
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:6 rc.cpp:18
+#: rc.cpp:6 rc.cpp:21
 msgid "Playback Mixer Device"
 msgstr "Wiedergabe-Mixer"
 
 #. i18n: file: internetradio-configuration-ui.ui:51
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:9 rc.cpp:21
+#: rc.cpp:9 rc.cpp:24
 msgid "test"
 msgstr "test"
 
 #. i18n: file: internetradio-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:12 rc.cpp:24
+#: rc.cpp:12 rc.cpp:27
 msgid "Playback Mixer Channel"
 msgstr "Wiedergabe-Mixerkanal"
+
+#. i18n: file: internetradio-configuration-ui.ui:107
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:15 rc.cpp:30
+msgid "Mute Playback Channel on Power Off"
+msgstr "Wiedergabekanal beim Abschalten des Radios stummschalten"
+

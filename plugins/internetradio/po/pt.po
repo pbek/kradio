@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-05-01 14:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,19 +99,19 @@ msgstr ""
 msgid "Internet Radio Plugin"
 msgstr ""
 
-#: internetradio.cpp:348
+#: internetradio.cpp:351
 msgid "Internet radio station decoder / pseudo device"
 msgstr ""
 
-#: internetradio.cpp:542
+#: internetradio.cpp:548
 msgid "Internet Radio"
 msgstr ""
 
-#: internetradio.cpp:543
+#: internetradio.cpp:549
 msgid "Internet Radio Options"
 msgstr ""
 
-#: internetradio.cpp:615
+#: internetradio.cpp:621
 msgid ""
 "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
 "idea to restart KRadio"
@@ -119,24 +119,30 @@ msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:15
+#: rc.cpp:3 rc.cpp:18
 msgid "SetupDialogGeneral"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:6 rc.cpp:18
+#: rc.cpp:6 rc.cpp:21
 msgid "Playback Mixer Device"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:51
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:9 rc.cpp:21
+#: rc.cpp:9 rc.cpp:24
 msgid "test"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:12 rc.cpp:24
+#: rc.cpp:12 rc.cpp:27
 msgid "Playback Mixer Channel"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:107
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:15 rc.cpp:30
+msgid "Mute Playback Channel on Power Off"
 msgstr ""
