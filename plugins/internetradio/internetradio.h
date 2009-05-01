@@ -151,17 +151,17 @@ RECEIVERS:
     // anything else
 public:
 
-    bool  setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool force = false);
+    bool  setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force);
 
 protected slots:
 
     bool event(QEvent *e);
-    void slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool force = false);
+    void slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
 //     void slotMimetypeResult(KIO::Job *job, const QString &type);
 
 signals:
 
-    void sigNotifyPlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool force = false);
+    void sigNotifyPlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
 
 
 protected:
@@ -198,6 +198,7 @@ protected:
     SoundStreamID                 m_SoundStreamSinkID;
     QString                       m_PlaybackMixerID;
     QString                       m_PlaybackMixerChannel;
+    bool                          m_PlaybackMixerMuteOnPowerOff;
 
     bool                          m_restorePowerOn;
 

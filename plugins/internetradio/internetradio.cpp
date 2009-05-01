@@ -58,6 +58,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_defaultPlaybackVolume(0.5),
     m_PlaybackMixerID(QString()),
     m_PlaybackMixerChannel(QString()),
+    m_PlaybackMixerMuteOnPowerOff(false),
     m_restorePowerOn(false),
     m_RDS_visible(false),
     m_RDS_StationName(QString()),
@@ -137,7 +138,7 @@ void InternetRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 void InternetRadio::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->getSoundStreamClientID() == m_PlaybackMixerID) {
-        setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel, /* force = */ true);
+        setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel, m_PlaybackMixerMuteOnPowerOff, /* force = */ true);
     }
 }
 
@@ -145,7 +146,7 @@ void InternetRadio::noticeConnectedSoundClient(ISoundStreamClient::thisInterface
 bool InternetRadio::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
 {
     if (client_id == m_PlaybackMixerID) {
-        setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel, /* force = */ true);
+        setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel, m_PlaybackMixerMuteOnPowerOff, /* force = */ true);
     }
     return true;
 }
@@ -257,7 +258,9 @@ bool InternetRadio::powerOff ()
         return true;
 
     queryPlaybackVolume(m_SoundStreamSinkID, m_defaultPlaybackVolume);
-    sendMuteSink(m_SoundStreamSourceID);
+    if (m_PlaybackMixerMuteOnPowerOff) {
+      sendMuteSink(m_SoundStreamSourceID);
+    }
     muteSource  (m_SoundStreamSourceID);
     radio_done();
 
@@ -446,11 +449,12 @@ bool    InternetRadio::isSourceMuted(SoundStreamID id, bool &m) const
 // IInternetRadioCfg methods
 
 
-bool  InternetRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool force)
+bool  InternetRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force)
 {
-    bool change = m_PlaybackMixerID != soundStreamClientID || m_PlaybackMixerChannel != ch;
-    m_PlaybackMixerID      = soundStreamClientID;
-    m_PlaybackMixerChannel = ch;
+    bool change = m_PlaybackMixerID != soundStreamClientID || m_PlaybackMixerChannel != ch || muteOnPowerOff != m_PlaybackMixerMuteOnPowerOff;
+    m_PlaybackMixerID             = soundStreamClientID;
+    m_PlaybackMixerChannel        = ch;
+    m_PlaybackMixerMuteOnPowerOff = muteOnPowerOff;
 
     if (change || force) {
         if (isPowerOn()) {
@@ -476,15 +480,15 @@ bool  InternetRadio::setPlaybackMixer(const QString &soundStreamClientID, const 
         }
 
         if (change)
-            emit sigNotifyPlaybackMixerChanged(soundStreamClientID, ch);
+            emit sigNotifyPlaybackMixerChanged(soundStreamClientID, ch, m_PlaybackMixerMuteOnPowerOff, /* force = */ false);
     }
     return true;
 }
 
 
-void InternetRadio::slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool force)
+void InternetRadio::slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force)
 {
-    setPlaybackMixer(mixerID, channelID, force);
+    setPlaybackMixer(mixerID, channelID, muteOnPowerOff, force);
 }
 
 
@@ -494,11 +498,12 @@ void   InternetRadio::saveState (KConfigGroup &config) const
 {
     PluginBase::saveState(config);
 
-    config.writeEntry("PlaybackMixerID",        m_PlaybackMixerID);
-    config.writeEntry("PlaybackMixerChannel",   m_PlaybackMixerChannel);
-    config.writeEntry("defaultPlaybackVolume",  m_defaultPlaybackVolume);
-    config.writeEntry("URL",                    m_currentStation.url());
-    config.writeEntry("PowerOn",                isPowerOn());
+    config.writeEntry("PlaybackMixerID",             m_PlaybackMixerID);
+    config.writeEntry("PlaybackMixerChannel",        m_PlaybackMixerChannel);
+    config.writeEntry("PlaybackMixerMuteOnPowerOff", m_PlaybackMixerMuteOnPowerOff);
+    config.writeEntry("defaultPlaybackVolume",       m_defaultPlaybackVolume);
+    config.writeEntry("URL",                         m_currentStation.url());
+    config.writeEntry("PowerOn",                     isPowerOn());
 
     saveRadioDeviceID(config);
 }
@@ -509,11 +514,12 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     PluginBase::restoreState(config);
 
     restoreRadioDeviceID(config);
-    QString PlaybackMixerID      = config.readEntry ("PlaybackMixerID", QString());
-    QString PlaybackMixerChannel = config.readEntry ("PlaybackMixerChannel", "PCM");
-    m_defaultPlaybackVolume      = config.readEntry ("defaultPlaybackVolume", 0.5);
+    QString PlaybackMixerID       = config.readEntry ("PlaybackMixerID",             QString());
+    QString PlaybackMixerChannel  = config.readEntry ("PlaybackMixerChannel",        "PCM");
+    bool    muteOnPowerOff        = config.readEntry ("PlaybackMixerMuteOnPowerOff", false);
+    m_defaultPlaybackVolume       = config.readEntry ("defaultPlaybackVolume",       0.5);
 
-    setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel, /* force = */ true);
+    setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel, muteOnPowerOff, /* force = */ true);
 
     setURL(config.readEntry("URL", KUrl()), NULL);
     m_restorePowerOn = config.readEntry ("PowerOn", false);
@@ -532,11 +538,11 @@ ConfigPageInfo InternetRadio::createConfigurationPage()
 {
     InternetRadioConfiguration *conf = new InternetRadioConfiguration(NULL, m_SoundStreamSourceID);
 
-    QObject::connect(this, SIGNAL(sigNotifyPlaybackMixerChanged (const QString &, const QString &, bool)),
-                     conf, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool)));
+    QObject::connect(this, SIGNAL(sigNotifyPlaybackMixerChanged (const QString &, const QString &, bool, bool)),
+                     conf, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool, bool)));
 
-    QObject::connect(conf, SIGNAL(sigPlaybackMixerChanged (const QString &, const QString &, bool)),
-                     this, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool)));
+    QObject::connect(conf, SIGNAL(sigPlaybackMixerChanged       (const QString &, const QString &, bool, bool)),
+                     this, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool, bool)));
 
     return ConfigPageInfo (conf,
                            i18n("Internet Radio"),

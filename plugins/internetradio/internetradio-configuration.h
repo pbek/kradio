@@ -59,14 +59,14 @@ protected slots:
 
     void slotComboPlaybackMixerSelected(int idx);
 
-    void slotNoticePlaybackMixerChanged(const QString &_mixer_id, const QString &Channel, bool force = false);
+    void slotNoticePlaybackMixerChanged(const QString &_mixer_id, const QString &Channel, bool muteOnPowerOff, bool force);
 
     void slotOK();
     void slotCancel();
 
 signals:
 
-    void sigPlaybackMixerChanged(const QString &soundStreamClientID, const QString &ch, bool force = false);
+    void sigPlaybackMixerChanged(const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force);
 
 
 protected:
@@ -85,6 +85,7 @@ protected:
 
     QString           m_orgMixerID;
     QString           m_orgChannelID;
+    bool              m_orgMuteOnPowerOff;
 };
 
 #endif
