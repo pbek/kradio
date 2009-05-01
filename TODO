@@ -1,7 +1,12 @@
 =========
 
-For rc2:
+For 4.0.1
 
+  * do sound pcm data transport completely in own thread
+  * add auto-setup for all available sound cards + proper plugin instance naming
+  * add auto-setup for all available radio cards + proper plugin instance naming
+
+For 4.0.0
 
 
 Later:
@@ -11,6 +16,8 @@ Later:
   * feature: flac rec support
   * feature: record to new file, but do not stop recording!
   * fix: get rid of QString::toLocal8Bit()
+  * add PVR auto-setup/detection
+
 
   * --done-- fix: ffmpeg include fix for old ffmeg installations/includes
   * --done-- fix: net recording quality
@@ -138,7 +145,6 @@ Later:
 
   * --done-- WWW: add FAQ! (PVR, ...)
   * --done-- check: PVR mode
-  * add PVR auto-setup/detection
   * --done-- answer PVR requests
 
   * --done-- support for 65MHz
