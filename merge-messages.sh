@@ -13,8 +13,12 @@ for cat in $catalogs; do
     for pot in $pots ; do
         echo "merging $pot into $cat"
         test -e $cat || cat $pot | sed 's/charset=CHARSET/charset=UTF-8/; s/^#, fuzzy/#/' > $cat
-        msgmerge -q -o $cat.new $cat $pot
-        mv $cat.new $cat
+        if test -e $cat ; then 
+            msgmerge --update -q $cat $pot
+        else
+            msgmerge --update -q -o $cat.new $cat $pot
+            mv $cat.new $cat
+        fi
     done
 done
 echo "Done merging translations"
