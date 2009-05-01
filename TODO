@@ -2,6 +2,10 @@
 
 For 4.0.1
 
+  * add support for pulse audio and other virtual alsa devices not enumeratable
+
+For 4.1.0
+
   * do sound pcm data transport completely in own thread
   * add auto-setup for all available sound cards + proper plugin instance naming
   * add auto-setup for all available radio cards + proper plugin instance naming
