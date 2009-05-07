@@ -123,11 +123,20 @@ void LIRCConfiguration::readLIRCConfigurationFile()
 
     QStringList modes;
 
-    QString   lirc_config_file = edLIRCConfigurationFile->url().path();
-    QFileInfo lirc_config_file_info(lirc_config_file);
+    QString     lirc_config_file    = edLIRCConfigurationFile->url().path();
+    char       *lirc_cfg_filename_c = lirc_config_file.toUtf8().data();
+    if (lirc_cfg_filename_c) {
+        lirc_cfg_filename_c = strdup(lirc_cfg_filename_c);
+    }
+
+    QFileInfo   lirc_config_file_info(lirc_config_file);
 
     struct lirc_config *cfg = NULL;
-    if (lirc_config_file_info.isFile() && lirc_readconfig (lirc_config_file.toUtf8().data(), &cfg, NULL) == 0) {
+
+    IErrorLogClient::staticLogDebug(QString("LIRCConfiguration::readLIRCConfigurationFile: lirc config file = >%1<").arg(lirc_config_file));
+    IErrorLogClient::staticLogDebug(QString("LIRCConfiguration::readLIRCConfigurationFile: lirc config file(C-String) = >%1<").arg(lirc_cfg_filename_c));
+
+    if (lirc_config_file_info.isFile() && lirc_config_file_info.exists() && lirc_readconfig (lirc_cfg_filename_c, &cfg, NULL) == 0) {
 
         for (lirc_config_entry *e = cfg ? cfg->first : NULL; e; e = e->next) {
             QString mode = e->mode;
@@ -142,6 +151,11 @@ void LIRCConfiguration::readLIRCConfigurationFile()
             comboPowerOffMode->addItem(mode, QVariant(mode));
             comboPowerOnMode ->addItem(mode, QVariant(mode));
         }
+    }
+
+    if (lirc_cfg_filename_c) {
+        delete lirc_cfg_filename_c;
+        lirc_cfg_filename_c = NULL;
     }
 
 }

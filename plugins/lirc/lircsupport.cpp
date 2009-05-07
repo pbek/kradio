@@ -104,7 +104,11 @@ void LircSupport::LIRC_init_config()
     m_lircConfig  = 0;
 
     if (m_fd_lirc != -1) {
-        if (lirc_readconfig (m_lirc_config_file.toUtf8().data(), &m_lircConfig, NULL) == 0) {
+        char *lirc_cfg_filename_c = m_lirc_config_file.toUtf8().data();
+        if (lirc_cfg_filename_c) {
+            lirc_cfg_filename_c = strdup(lirc_cfg_filename_c);
+        }
+        if (lirc_readconfig (lirc_cfg_filename_c, &m_lircConfig, NULL) == 0) {
 
             // check config
             lirc_config_entry *found = NULL;
@@ -140,6 +144,10 @@ void LircSupport::LIRC_init_config()
         } else {
             logWarning      (i18n("Initializing kradio lirc plugin failed. Could not read config file %1", m_lirc_config_file));
             staticLogWarning(i18n("Initializing kradio lirc plugin failed. Could not read config file %1", m_lirc_config_file));
+        }
+        if (lirc_cfg_filename_c) {
+            delete lirc_cfg_filename_c;
+            lirc_cfg_filename_c = NULL;
         }
     }
 }
