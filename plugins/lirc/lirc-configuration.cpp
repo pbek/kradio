@@ -18,6 +18,9 @@
 class QColorGroup;
 #include <Qt3Support/Q3ListView>
 #include <QtGui/QLabel>
+#include <QtCore/QString>
+#include <QtCore/QFileInfo>
+#include <QtGui/QWidget>
 
 #include <klistwidget.h>
 #include <klocale.h>
@@ -120,10 +123,11 @@ void LIRCConfiguration::readLIRCConfigurationFile()
 
     QStringList modes;
 
-    QString lirc_config_file = edLIRCConfigurationFile->url().path();
+    QString   lirc_config_file = edLIRCConfigurationFile->url().path();
+    QFileInfo lirc_config_file_info(lirc_config_file);
 
     struct lirc_config *cfg = NULL;
-    if (lirc_readconfig (lirc_config_file.toUtf8().data(), &cfg, NULL) == 0) {
+    if (lirc_config_file_info.isFile() && lirc_readconfig (lirc_config_file.toUtf8().data(), &cfg, NULL) == 0) {
 
         for (lirc_config_entry *e = cfg ? cfg->first : NULL; e; e = e->next) {
             QString mode = e->mode;

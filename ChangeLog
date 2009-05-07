@@ -1,3 +1,8 @@
+2009-05-07
+
+    emw - one more consistency check for lirc config reading. Might have
+          caused occasional crashes depending on lirc version
+
 2009-05-01
 
     emw - added configuration option for "Mute-On-Power-Off" in internet
