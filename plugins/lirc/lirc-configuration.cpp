@@ -121,43 +121,45 @@ void LIRCConfiguration::readLIRCConfigurationFile()
     comboPowerOffMode->addItem(i18n("<don't care>"), QVariant(""));
     comboPowerOnMode ->addItem(i18n("<don't care>"), QVariant(""));
 
-    QStringList modes;
+    if (m_LIRC && m_LIRC->getLIRC_fd() >= 0) {
 
-    QString     lirc_config_file    = edLIRCConfigurationFile->url().path();
-    char       *lirc_cfg_filename_c = lirc_config_file.toUtf8().data();
-    if (lirc_cfg_filename_c) {
-        lirc_cfg_filename_c = strdup(lirc_cfg_filename_c);
-    }
+        QStringList modes;
 
-    QFileInfo   lirc_config_file_info(lirc_config_file);
+        QString     lirc_config_file    = edLIRCConfigurationFile->url().path();
+        char       *lirc_cfg_filename_c = lirc_config_file.toUtf8().data();
+        if (lirc_cfg_filename_c) {
+            lirc_cfg_filename_c = strdup(lirc_cfg_filename_c);
+        }
 
-    struct lirc_config *cfg = NULL;
+        QFileInfo   lirc_config_file_info(lirc_config_file);
 
-    IErrorLogClient::staticLogDebug(QString("LIRCConfiguration::readLIRCConfigurationFile: lirc config file = >%1<").arg(lirc_config_file));
-    IErrorLogClient::staticLogDebug(QString("LIRCConfiguration::readLIRCConfigurationFile: lirc config file(C-String) = >%1<").arg(lirc_cfg_filename_c));
+        struct lirc_config *cfg = NULL;
 
-    if (lirc_config_file_info.isFile() && lirc_config_file_info.exists() && lirc_readconfig (lirc_cfg_filename_c, &cfg, NULL) == 0) {
+    //     IErrorLogClient::staticLogDebug(QString("LIRCConfiguration::readLIRCConfigurationFile: lirc config file = >%1<").arg(lirc_config_file));
+    //     IErrorLogClient::staticLogDebug(QString("LIRCConfiguration::readLIRCConfigurationFile: lirc config file(C-String) = >%1<").arg(lirc_cfg_filename_c));
 
-        for (lirc_config_entry *e = cfg ? cfg->first : NULL; e; e = e->next) {
-            QString mode = e->mode;
-            if (mode.length() && modes.indexOf(mode) < 0) {
-                modes.append(mode);
+        if (lirc_config_file_info.isFile() && lirc_config_file_info.exists() && lirc_readconfig (lirc_cfg_filename_c, &cfg, NULL) == 0) {
+
+            for (lirc_config_entry *e = cfg ? cfg->first : NULL; e; e = e->next) {
+                QString mode = e->mode;
+                if (mode.length() && modes.indexOf(mode) < 0) {
+                    modes.append(mode);
+                }
+            }
+            modes.sort();
+
+            QString mode;
+            foreach (mode, modes) {
+                comboPowerOffMode->addItem(mode, QVariant(mode));
+                comboPowerOnMode ->addItem(mode, QVariant(mode));
             }
         }
-        modes.sort();
 
-        QString mode;
-        foreach (mode, modes) {
-            comboPowerOffMode->addItem(mode, QVariant(mode));
-            comboPowerOnMode ->addItem(mode, QVariant(mode));
+        if (lirc_cfg_filename_c) {
+            delete lirc_cfg_filename_c;
+            lirc_cfg_filename_c = NULL;
         }
     }
-
-    if (lirc_cfg_filename_c) {
-        delete lirc_cfg_filename_c;
-        lirc_cfg_filename_c = NULL;
-    }
-
 }
 
 

@@ -90,6 +90,7 @@ public:
 
     const QString                             &getLIRCConfigurationFile() const { return m_lirc_config_file; }
     void                                       setLIRCConfigurationFile(const QString &f);
+    int                                        getLIRC_fd() const { return m_fd_lirc; }
 
     const QString                             &getPowerOnMode () const { return m_LIRCPowerOnMode;  }
     const QString                             &getPowerOffMode() const { return m_LIRCPowerOffMode; }
