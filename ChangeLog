@@ -1,7 +1,13 @@
+2009-05-10
+
+    emw - using now pkg_check_modules for libavformat/libmms... will be used
+          for other libs in future, too
+
 2009-05-07
 
     emw - one more consistency check for lirc config reading. Might have
-          caused occasional crashes depending on lirc version
+          caused occasional crashes depending on lirc version. Thanks a lot to
+          Paulo Cavalcanti for providing lot of testing and debug information!
 
 2009-05-01
 

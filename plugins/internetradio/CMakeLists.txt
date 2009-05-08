@@ -43,14 +43,14 @@ SET_TARGET_PROPERTIES(kradio4_plugin_internetradio
 
 )
 
+SET(CMAKE_C_FLAGS           "${CMAKE_C_FLAGS}           ${FFMPEG_CFLAGS}")
+
 TARGET_LINK_LIBRARIES(kradio4_plugin_internetradio
   ${KDE4_KDEUI_LIBS}
   ${KDE4_KPARTS_LIBS}
   ${QT_QT3SUPPORT_LIBRARY}
   ${KDE4_KDE3SUPPORT_LIBRARY}
-  -lavutil
-  -lavformat
-  -lmms
+  ${FFMPEG_LDFLAGS}
 )
 
 INSTALL(TARGETS kradio4_plugin_internetradio ${INSTALL_TARGETS_DEFAULT_ARGS})
