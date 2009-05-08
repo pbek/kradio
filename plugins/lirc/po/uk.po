@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-05-08 23:28+0200\n"
 "PO-Revision-Date: 2007-01-28 19:30+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -18,109 +18,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: lirc-configuration.cpp:44
+#: lirc-configuration.cpp:47
 msgid "digit 0"
 msgstr "нуль"
 
-#: lirc-configuration.cpp:45
+#: lirc-configuration.cpp:48
 msgid "digit 1"
 msgstr "один"
 
-#: lirc-configuration.cpp:46
+#: lirc-configuration.cpp:49
 msgid "digit 2"
 msgstr "два"
 
-#: lirc-configuration.cpp:47
+#: lirc-configuration.cpp:50
 msgid "digit 3"
 msgstr "три"
 
-#: lirc-configuration.cpp:48
+#: lirc-configuration.cpp:51
 msgid "digit 4"
 msgstr "чотири"
 
-#: lirc-configuration.cpp:49
+#: lirc-configuration.cpp:52
 msgid "digit 5"
 msgstr "п'ять"
 
-#: lirc-configuration.cpp:50
+#: lirc-configuration.cpp:53
 msgid "digit 6"
 msgstr "шість"
 
-#: lirc-configuration.cpp:51
+#: lirc-configuration.cpp:54
 msgid "digit 7"
 msgstr "сім"
 
-#: lirc-configuration.cpp:52
+#: lirc-configuration.cpp:55
 msgid "digit 8"
 msgstr "вісім"
 
-#: lirc-configuration.cpp:53
+#: lirc-configuration.cpp:56
 msgid "digit 9"
 msgstr "дев'ять"
 
-#: lirc-configuration.cpp:54
+#: lirc-configuration.cpp:57
 msgid "Power On"
 msgstr "Увімкнути"
 
-#: lirc-configuration.cpp:55
+#: lirc-configuration.cpp:58
 msgid "Power Off"
 msgstr "Вимкнути"
 
-#: lirc-configuration.cpp:56
+#: lirc-configuration.cpp:59
 msgid "Pause"
 msgstr "Призупинити"
 
-#: lirc-configuration.cpp:57
+#: lirc-configuration.cpp:60
 msgid "Start Recording"
 msgstr "Почати запис"
 
-#: lirc-configuration.cpp:58
+#: lirc-configuration.cpp:61
 msgid "Stop Recording"
 msgstr "Зупинити запис"
 
-#: lirc-configuration.cpp:59
+#: lirc-configuration.cpp:62
 msgid "Increase Volume"
 msgstr "Збільшити гучність"
 
-#: lirc-configuration.cpp:60
+#: lirc-configuration.cpp:63
 msgid "Decrease Volume"
 msgstr "Зменшити гучність"
 
-#: lirc-configuration.cpp:61
+#: lirc-configuration.cpp:64
 msgid "Next Channel"
 msgstr "Наступна станція"
 
-#: lirc-configuration.cpp:62
+#: lirc-configuration.cpp:65
 msgid "Previous Channel"
 msgstr "Попередня станція"
 
-#: lirc-configuration.cpp:63
+#: lirc-configuration.cpp:66
 msgid "Search Next Channel"
 msgstr "Пошук наступної станції"
 
-#: lirc-configuration.cpp:64
+#: lirc-configuration.cpp:67
 msgid "Search Previous Channel"
 msgstr "Пошук попередньої станції"
 
-#: lirc-configuration.cpp:65
+#: lirc-configuration.cpp:68
 msgid "Enable Sleep Countdown"
 msgstr "Увімкнути таймер вимкнення"
 
-#: lirc-configuration.cpp:66
+#: lirc-configuration.cpp:69
 msgid "Quit KRadio"
 msgstr "Вийти з KRadio"
 
-#: lirc-configuration.cpp:118 lirc-configuration.cpp:119
+#: lirc-configuration.cpp:121 lirc-configuration.cpp:122
 msgid "<don't care>"
 msgstr ""
 
-#: lirc-configuration.cpp:250
+#: lirc-configuration.cpp:270
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
 msgstr "Введіть ключовий рядок Вашого ПДК або просто натисніть кнопку на ньому"
 
-#: lirc-configuration.cpp:256
+#: lirc-configuration.cpp:276
 msgid "Double Click on the entries to change the assignments"
 msgstr "Для зміни прив'язки двічі клацніть по пункту мишею"
 
@@ -128,7 +128,7 @@ msgstr "Для зміни прив'язки двічі клацніть по п�
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Підтримка ПДК у Linux (LIRC)"
 
-#: lircsupport.cpp:55 lircsupport.cpp:483
+#: lircsupport.cpp:55 lircsupport.cpp:491
 msgid "LIRC Plugin"
 msgstr "Модуль ДК (LIRC)"
 
@@ -144,7 +144,7 @@ msgstr "Запуск модуля LIRC не був вдалим"
 msgid "Initializing kradio lirc plugin successful"
 msgstr "Модуль LIRC вдало запущено"
 
-#: lircsupport.cpp:118
+#: lircsupport.cpp:122
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -153,7 +153,7 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:125
+#: lircsupport.cpp:129
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -162,33 +162,33 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:136
+#: lircsupport.cpp:140
 #, fuzzy, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
 msgstr "У жодному з Ваших файлів .lircrc немає згадки про KRadio."
 
-#: lircsupport.cpp:137
+#: lircsupport.cpp:141
 #, fuzzy, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Будь ласка коректно налаштуйте Ваші файли .lircrc"
 
-#: lircsupport.cpp:141 lircsupport.cpp:142
+#: lircsupport.cpp:145 lircsupport.cpp:146
 #, fuzzy, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
 msgstr "Запуск модуля LIRC не був вдалим"
 
-#: lircsupport.cpp:179
+#: lircsupport.cpp:187
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr "%1 не існує. Було створено типовий файл .lircrc для KRadio"
 
-#: lircsupport.cpp:192
+#: lircsupport.cpp:200
 #, kde-format
 msgid "failed to read file %1"
 msgstr ""
 
-#: lircsupport.cpp:244
+#: lircsupport.cpp:252
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
@@ -196,7 +196,7 @@ msgstr ""
 "Читання з сокету LIRC не вдалося. Вимкнено функції LIRC до наступного "
 "запуску KRadio."
 
-#: lircsupport.cpp:482
+#: lircsupport.cpp:490
 msgid "LIRC Support"
 msgstr "Підтримка LIRC"
 
