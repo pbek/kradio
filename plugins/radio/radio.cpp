@@ -200,6 +200,9 @@ bool Radio::activateStation (const RadioStation &rs)
             }
         }
 
+        if (n <= 0) {
+            logError(i18n("Could not find a plugin for radio station %1", rs.longName()));
+        }
         return n > 0;
     }
 }
