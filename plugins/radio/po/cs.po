@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-05-08 23:28+0200\n"
 "PO-Revision-Date: 2009-04-04 14:30+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -94,7 +94,12 @@ msgstr "Rozhlasové vysílací stanice"
 msgid "Setup Radio Stations"
 msgstr "Nastavit rozhlasové vysílací stanice"
 
-#: radio.cpp:396
+#: radio.cpp:204
+#, kde-format
+msgid "Could not find a plugin for radio station %1"
+msgstr ""
+
+#: radio.cpp:399
 msgid "unknown"
 msgstr "neznámé"
 
