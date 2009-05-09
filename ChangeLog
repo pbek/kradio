@@ -1,8 +1,9 @@
-2009-05-10
+2009-05-09
 
     emw - using now pkg_check_modules for libavformat/libmms... will be used
           for other libs in future, too
-    emw - recording config page: fixed accidentally wrong default tab
+        - recording config page: fixed accidentally wrong default tab
+        - added more caps logging for v4l2
 
  Yuri Chornoivan
         - completed Ukrainian translation. Thanks a lot to Yuri! 

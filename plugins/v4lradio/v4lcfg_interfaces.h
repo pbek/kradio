@@ -21,6 +21,9 @@
 #include "interfaces.h"
 #include "math.h"
 
+#include <QtCore/QString>
+#include <QtCore/QStringList>
+
 enum V4LVersion {V4L_VersionUnkown = 0,
                  V4L_Version1      = 1,
                  V4L_Version2      = 2,
@@ -74,6 +77,19 @@ struct V4LCaps
     float  floatGetTreble (int i) const { return (float)(i - minTreble)  * trebleStep(); }
     float  floatGetBass   (int i) const { return (float)(i - minBass  )  * bassStep(); }
     float  floatGetBalance(int i) const { return (float)(i - minBalance) * balanceStep() * 2.0 - 1.0; }
+
+    QString getDebugDescription() {
+        QStringList dbgVersions;
+        for (int i = 0; i < V4L_Version_COUNT; ++i) { if (v4l_version_support[i]) dbgVersions.append(QString::number(i)); }
+        QStringList dbgFeatures;
+        if (hasMute)    dbgFeatures.append("mute");
+        if (hasVolume)  dbgFeatures.append("volume");
+        if (hasBass)    dbgFeatures.append("treble");
+        if (hasTreble)  dbgFeatures.append("treble");
+        if (hasBalance) dbgFeatures.append("balance");
+        if (hasRDS)     dbgFeatures.append("rds");
+        return "V4LVersions: " + dbgVersions.join(", ") + "; Features: " + dbgFeatures.join(", ");
+    }
 };
 
 

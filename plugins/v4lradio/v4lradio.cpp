@@ -512,7 +512,7 @@ bool V4LRadio::muteSource(SoundStreamID id, bool mute)
     if (id != m_SoundStreamSourceID)
         return false;
 
-//     logDebug(i18n("(un)muting v4l: old=%1, new=%2", m_muted, mute));
+    logDebug(QString("(un)muting v4l: old=%1, new=%2").arg(m_muted ? "muted" : "unmuted").arg(mute ? "muted" : "unmuted"));
 
     if (m_muted != mute) {
         m_muted = mute;
@@ -1457,8 +1457,6 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         v4l_caps[V4L_Version2].v4l_version_support[V4L_Version2] = true;
         logInfo(i18n("detected %1", V4LVersionStrings[V4L_Version2]));
 
-        logDebug(i18n("V4L2 - Version: %1, caps=%2", QString().sprintf("0x%08X", caps2.version), QString().sprintf("0x%08X", caps2.capabilities)));
-
         v4l_caps[V4L_Version2].hasRDS = m_RDSForceEnabled || (((~caps2.capabilities) & (V4L2_CAP_RDS_CAPTURE | V4L2_CAP_READWRITE)) == 0);
 
         size_t l = sizeof(caps.name);
@@ -1513,6 +1511,13 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
             logWarning(i18n("V4L2: Querying balance control failed"));
         }
 
+        logDebug(i18n("V4L2 - Version: %1, caps=%2",
+                      QString().sprintf("0x%08X", caps2.version),
+                      QString().sprintf("0x%08X", caps2.capabilities))
+                );
+
+        logDebug("V4L2 full caps: " + v4l_caps[V4L_Version2].getDebugDescription());
+
     } else {
 //         logWarning(i18n("V4LRadio::readV4LCaps: Reading V4L2 caps failed"));
     }
@@ -1552,6 +1557,9 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
     for (int i = 0; i < V4L_Version_COUNT; ++i) {
         c.v4l_version_support[i] = v4l_caps[i].v4l_version_support[i];
     }
+
+    logDebug("V4L final caps: " + c.getDebugDescription());
+
 //     logDebug(c.hasMute   ? i18n("Radio is mutable")         : i18n("Radio is not mutable"));
 //     logDebug(c.hasVolume ? i18n("Radio has Volume Control") : i18n("Radio has no Volume Control"));
 //     logDebug(c.hasBass   ? i18n("Radio has Bass Control")   : i18n("Radio has no Bass Control"));
