@@ -3,6 +3,8 @@
 For 4.0.1
 
   * add support for pulse audio and other virtual alsa devices not enumeratable
+  * use pkgconfig stuff where possible
+  * add some indicator that init of lirc failed in config dialog
 
 For 4.1.0
 
