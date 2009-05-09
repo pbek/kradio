@@ -4,6 +4,8 @@
           for other libs in future, too
         - recording config page: fixed accidentally wrong default tab
         - added more caps logging for v4l2
+        - removed checks for redundant mute calls - we (un)mute always since
+          some drivers do not report mute state properly  
 
  Yuri Chornoivan
         - completed Ukrainian translation. Thanks a lot to Yuri! 
