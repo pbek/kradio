@@ -2,21 +2,22 @@
 # translation of ru.po to
 # translation of kradio-gui-error-log.po to
 # This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
-# Yuri Chornoivan <yurchor@ukr.net>, 2007.
 #
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-26 14:32+0200\n"
-"PO-Revision-Date: 2007-01-30 21:19+0200\n"
+"PO-Revision-Date: 2009-05-09 10:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: errorlog.cpp:35
 msgid "Error Logging Window for KRadio"
@@ -36,12 +37,12 @@ msgstr "Зберегти &як"
 
 #: errorlog.cpp:60
 msgid "Information"
-msgstr ""
+msgstr "Відомості"
 
 #: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgid "KRadio4 Version %1 logging started"
-msgstr "запис увімкнено"
+msgstr "Запис журналу KRadio4 версії %1 розпочато"
 
 #: errorlog.cpp:63
 msgid "Warnings"
@@ -73,5 +74,3 @@ msgstr "Помилка запису у тимчасовий файл %1"
 msgid "error uploading preset file %1"
 msgstr "помилка під час завантаження файла налаштувань %1"
 
-#~ msgid "Select Log File"
-#~ msgstr "Оберіть файл журналу"

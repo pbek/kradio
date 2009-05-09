@@ -1,148 +1,151 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of uk.po to Ukrainian
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #
+# Yuri Chornoivan <yurchor@ukr.net>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-05-01 14:15+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2009-05-09 11:01+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: decoder_thread.cpp:110 decoder_thread.cpp:136
 #, kde-format
 msgid "downloading playlist %1"
-msgstr ""
+msgstr "звантаження списку відтворення %1"
 
 #: decoder_thread.cpp:126 decoder_thread.cpp:173 decoder_thread.cpp:224
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
-msgstr ""
+msgstr "%1 не містить жодного придатного потоку радіо"
 
 #: decoder_thread.cpp:129 decoder_thread.cpp:177 decoder_thread.cpp:228
 #, kde-format
 msgid "failed to download %1"
-msgstr ""
+msgstr "не вдалося звантажити %1"
 
 #: decoder_thread.cpp:220
 msgid "error while reading asx file"
-msgstr ""
+msgstr "помилка під час спроби читання файла asx"
 
 #: decoder_thread.cpp:241
 #, kde-format
 msgid "opening stream %1"
-msgstr ""
+msgstr "відкриття потоку %1"
 
 #: decoder_thread.cpp:245
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
-msgstr ""
+msgstr "не вдалося відкрити %1. Спроба використання наступного потоку у списку."
 
 #: decoder_thread.cpp:249
 #, kde-format
 msgid "Could not open any input stream of %1."
-msgstr ""
+msgstr "Не вдалося відкрити жодного вхідного потоку %1."
 
 #: decoder_thread.cpp:273
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet\n"
-msgstr ""
+msgstr "%1: помилка під час спроби декодування пакета. Пакет відкинуто\n"
 
 #: decoder_thread.cpp:278
 #, kde-format
 msgid "internal stream, not stored (%1)"
-msgstr ""
+msgstr "внутрішній потік, не збережено (%1)"
 
 #: decoder_thread.cpp:456 decoder_thread.cpp:458
 #, kde-format
 msgid "cannot open MMS stream %1"
-msgstr ""
+msgstr "не вдалося відкрити потік MMS %1"
 
 #: decoder_thread.cpp:479 decoder_thread.cpp:481 decoder_thread.cpp:491
 #: decoder_thread.cpp:493
 #, kde-format
 msgid "Could not open Stream %1"
-msgstr ""
+msgstr "Не вдалося відкрити потік %1"
 
 #: decoder_thread.cpp:503 decoder_thread.cpp:505
 #, kde-format
 msgid "Could not find stream information in %1"
-msgstr ""
+msgstr "Не вдалося знайти відомості про потік у %1"
 
 #: decoder_thread.cpp:522 decoder_thread.cpp:524
 #, kde-format
 msgid "Could not find an audio stream in %1"
-msgstr ""
+msgstr "Не вдалося знайти звуковий потік у %1"
 
 #: decoder_thread.cpp:540 decoder_thread.cpp:542
 #, kde-format
 msgid "Could not find a codec for %1"
-msgstr ""
+msgstr "Не вдалося знайти кодек для %1"
 
 #: decoder_thread.cpp:550 decoder_thread.cpp:552
 #, kde-format
 msgid "Opening codec for %1 failed"
-msgstr ""
+msgstr "Спроба відкриття кодека для %1 зазнала невдачі"
 
 #: internetradio.cpp:46
 msgid "Pseudo radio device for internet radio stream support"
-msgstr ""
+msgstr "Псевдопристрій радіо для підтримки потоків інтернет-радіо"
 
 #: internetradio.cpp:53
 msgid "Internet Radio Plugin"
-msgstr ""
+msgstr "Модуль інтернет-радіо"
 
 #: internetradio.cpp:351
 msgid "Internet radio station decoder / pseudo device"
-msgstr ""
+msgstr "Псевдопристрій/Декодер інтернет радіостанцій"
 
 #: internetradio.cpp:548
 msgid "Internet Radio"
-msgstr ""
+msgstr "Інтернет-радіо"
 
 #: internetradio.cpp:549
 msgid "Internet Radio Options"
-msgstr ""
+msgstr "Параметри інтернет-радіо"
 
 #: internetradio.cpp:621
 msgid ""
 "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
 "idea to restart KRadio"
-msgstr ""
+msgstr "Вибачте, але доведеться перервати виконання нитки декодера ffmpeg. Вам варто перезапустити KRadio"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:18
 msgid "SetupDialogGeneral"
-msgstr ""
+msgstr "SetupDialogGeneral"
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:6 rc.cpp:21
 msgid "Playback Mixer Device"
-msgstr ""
+msgstr "Пристрій мікшування відтворення"
 
 #. i18n: file: internetradio-configuration-ui.ui:51
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:9 rc.cpp:24
 msgid "test"
-msgstr ""
+msgstr "перевірка"
 
 #. i18n: file: internetradio-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:12 rc.cpp:27
 msgid "Playback Mixer Channel"
-msgstr ""
+msgstr "Канал мікшера відтворення"
 
 #. i18n: file: internetradio-configuration-ui.ui:107
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:30
 msgid "Mute Playback Channel on Power Off"
-msgstr ""
+msgstr "Вимкнути канал відтворення під час завершення роботи"
+

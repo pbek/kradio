@@ -2,21 +2,22 @@
 # translation of ru.po to
 # translation of kradio-lirc.po to
 # This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
-# Yuri Chornoivan <yurchor@ukr.net>, 2007.
 #
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-05-08 23:28+0200\n"
-"PO-Revision-Date: 2007-01-28 19:30+0200\n"
+"PO-Revision-Date: 2009-05-09 10:21+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lirc-configuration.cpp:47
 msgid "digit 0"
@@ -112,13 +113,13 @@ msgstr "Вийти з KRadio"
 
 #: lirc-configuration.cpp:121 lirc-configuration.cpp:122
 msgid "<don't care>"
-msgstr ""
+msgstr "<байдуже>"
 
 #: lirc-configuration.cpp:270
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
-msgstr "Введіть ключовий рядок Вашого ПДК або просто натисніть кнопку на ньому"
+msgstr "Введіть ключовий рядок вашого ПДК або просто натисніть кнопку на ньому"
 
 #: lirc-configuration.cpp:276
 msgid "Double Click on the entries to change the assignments"
@@ -152,6 +153,9 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio немає прив’язки до кнопок/пристрою дистанційного керування.\n"
+"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду \"button=*\" і "
+"\"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
 #: lircsupport.cpp:129
 #, kde-format
@@ -161,32 +165,34 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio має недостатню прив’язку до кнопок/пристрою дистанційного керування.\n"
+"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду \"button=*\" і "
+"\"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
 #: lircsupport.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
-msgstr "У жодному з Ваших файлів .lircrc немає згадки про KRadio."
+msgstr "У жодному з ваших файлів .lircrc %1 немає згадки про KRadio."
 
 #: lircsupport.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
-msgstr "Будь ласка коректно налаштуйте Ваші файли .lircrc"
+msgstr "Будь ласка коректно налаштуйте ваш файл .lircrc %1."
 
 #: lircsupport.cpp:145 lircsupport.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
-msgstr "Запуск модуля LIRC не був вдалим"
+msgstr "Спроба запуску модуля LIRC kradio завершилася невдало. Не вдалося прочитати файл налаштувань %1"
 
 #: lircsupport.cpp:187
 #, kde-format
-msgid ""
-"%1 does not exist. File was created with KRadio's default .lircrc proposal"
+msgid "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr "%1 не існує. Було створено типовий файл .lircrc для KRadio"
 
 #: lircsupport.cpp:200
 #, kde-format
 msgid "failed to read file %1"
-msgstr ""
+msgstr "не вдалося прочитати файл %1"
 
 #: lircsupport.cpp:252
 msgid ""
@@ -234,49 +240,39 @@ msgstr "textLabel1"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:18 rc.cpp:50
 msgid "Power off .lircrc mode"
-msgstr ""
+msgstr "Режим вимикання .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:21 rc.cpp:53
 msgid "Power on .lircrc mode"
-msgstr ""
+msgstr "Режим вмикання .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:24 rc.cpp:56
 msgid "Synchronize .lircrc modes at runtime"
-msgstr ""
+msgstr "Синхронізувати режими .lircrc під час виконання"
 
 #. i18n: file: lirc-configuration-ui.ui:137
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:59
 msgid "Synchronize .lircrc modes at startup"
-msgstr ""
+msgstr "Синхронізувати режими .lircrc під час запуску"
 
 #. i18n: file: lirc-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:30 rc.cpp:62
-#, fuzzy
 msgid "LIRC Configuration File"
-msgstr "LIRCConfigurationUI"
+msgstr "Файл налаштування LIRC"
 
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Юрій Чорноіван"
 
 #: rc.cpp:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "yurchor@ukr.net"
 
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Юрій Чорноіван"
-
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr "yurchor@ukr.net"

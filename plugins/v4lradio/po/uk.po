@@ -2,21 +2,22 @@
 # translation of ru.po to
 # translation of kradio-v4lradio.po to
 # This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
-# Yuri Chornoivan <yurchor@ukr.net>, 2007.
 #
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-26 14:32+0200\n"
-"PO-Revision-Date: 2007-02-18 20:05+0200\n"
+"PO-Revision-Date: 2009-05-09 10:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
@@ -104,13 +105,23 @@ msgid ""
 "therefore have to setup the <span style=\" font-weight:600;\">Streaming "
 "Plugin</span> properly, too.</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">Активне відтворення</span> слід використовувати, якщо вашу радіокартску не з’єднано з вхідним каналом вашої звукової картки кабелем. У такому випадку, KRadio доведеться захоплювати дані PCM з пристрою захоплення звуку для того, щоб надіслати дані PCM на пристній відтворення звуку. Тому, якщо ви увімкнете <span style=\" font-weight:600;\">Активне відтворення</span>, вам доведеться обрати належний канал/пристрій мікшера і належний канал/мікшер відтворення PCM. Це зокрема важливо для <span style="
+"\" font-weight:600;\">карток PVR</span>, які, зазвичай, потребують захоплення звуку з пристрою <span style=\" font-style:italic;\">/dev/video24</span> (або подібного пристрою). Тому для <span style=\" font-weight:600;\">карток PVR</span> вам слід також належно налаштувати <span style=\" font-weight:600;\">Модуль трансляції</span>.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:171
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
 #: rc.cpp:44 rc.cpp:184
-#, fuzzy
 msgid "Use active pla&yback by capturing (use for PVR cards!)"
-msgstr "Захопити звук та потім програвати його"
+msgstr "Використовувати активне ві&дтворення з захопленням (для карток PVR!)"
 
 #. i18n: file: v4lradio-configuration-ui.ui:174
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlayback)
@@ -127,9 +138,8 @@ msgstr "Alt+Y"
 #. i18n: file: v4lradio-configuration-ui.ui:187
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
 #: rc.cpp:50 rc.cpp:190
-#, fuzzy
 msgid "Mute play&back channel at power off"
-msgstr "Вимкнути звук на каналі відтворення після виходу"
+msgstr "Ви&мкнути звук на каналі відтворення після виходу"
 
 #. i18n: file: v4lradio-configuration-ui.ui:190
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxMuteOnPowerOff)
@@ -140,7 +150,6 @@ msgstr "Alt+B"
 #. i18n: file: v4lradio-configuration-ui.ui:203
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
 #: rc.cpp:56 rc.cpp:196
-#, fuzzy
 msgid "Set playback channel volume to &zero at power off"
 msgstr "Встановити &нульову гучність відтворення після виходу"
 
@@ -193,18 +202,38 @@ msgid ""
 "systray icon. RDS station names are used in the station scan dialog as "
 "default names for newly found stations.</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" text-decoration: underline;\">Зауваження для власників PVR:</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">Активне відтворення</span> слід використовувати, якщо вашу радіокартску не з’єднано з вхідним каналом вашої звукової картки кабелем. У такому випадку, KRadio доведеться захоплювати дані PCM з пристрою захоплення звуку для того, щоб надіслати дані PCM на пристній відтворення звуку. Тому, якщо ви увімкнете <span style=\" font-weight:600;\">Активне відтворення</span>, вам доведеться обрати належний канал/пристрій мікшера і належний канал/мікшер відтворення PCM. Це зокрема важливо для <span style="
+"\" font-weight:600;\">карток PVR</span>, які, зазвичай, потребують захоплення звуку з пристрою <span style=\" font-style:italic;\">/dev/video24</span> (або подібного пристрою). Тому для <span style=\" font-weight:600;\">карток PVR</span> вам слід також належно налаштувати <span style=\" font-weight:600;\">Модуль трансляції</span>.</p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" text-decoration: underline;\">Зауваження щодо підтримки RDS:</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Якщо ваша картка підтримує RDS, а RDS не працює, будь ласка, перевірте, чи завантажено <span style=\" "
+"font-weight:600;\">модуль ядра saa6588.ko</span>. Для карток на основі мікросхеми saa6588, цей модуль типово <span style=\" font-style:italic;\">не</span> завантажується у автоматичному режимі. Те, чи підтримує ваш модуль ядра V4L/V4L2 RDS, можна побачити у стандартній області радіо: індикатор RDS стає яскравим (подібно до індикаторів стерео і AM/FM). Текст RDS можна буде бачити у області радіо та підказках піктограми лотка. Назви станцій RDS буде використано у діалоговому вікні пошуку станцій як типові назви щойно знайдених станцій.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
 #: rc.cpp:72 rc.cpp:212
 msgid "Mute playback of capture channel when active playback is running"
-msgstr ""
+msgstr "Вимкнути відтворення каналу захоплення після запуску активного відтворення"
 
 #. i18n: file: v4lradio-configuration-ui.ui:291
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
 #: rc.cpp:78 rc.cpp:218
 msgid "Options"
-msgstr ""
+msgstr "Параметри"
 
 #. i18n: file: v4lradio-configuration-ui.ui:308
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange)
@@ -249,53 +278,50 @@ msgstr "Припустимий частотний діапазон:\tвід"
 #. i18n: file: v4lradio-configuration-ui.ui:477
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
 #: rc.cpp:102 rc.cpp:242
-#, fuzzy
 msgid "65 MHz"
-msgstr " кГц"
+msgstr "65 МГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:487
 #. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
 #: rc.cpp:105 rc.cpp:245
 msgid "108 MHz"
-msgstr ""
+msgstr "108 МГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:497
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
 #: rc.cpp:108 rc.cpp:248
-#, fuzzy
 msgid "device frequency range"
-msgstr "Припустимий частотний діапазон:\tвід"
+msgstr "діапазон частот пристрою"
 
 #. i18n: file: v4lradio-configuration-ui.ui:507
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:111 rc.cpp:251
-#, fuzzy
 msgid "V4L Version to use"
-msgstr "Версія V4l2: %1"
+msgstr "Версія V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:514
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
 #: rc.cpp:114 rc.cpp:254
 msgid "V4L-1 API"
-msgstr ""
+msgstr "V4L-1 API"
 
 #. i18n: file: v4lradio-configuration-ui.ui:521
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
 #: rc.cpp:117 rc.cpp:257
 msgid "V4L-2 API"
-msgstr ""
+msgstr "V4L-2 API"
 
 #. i18n: file: v4lradio-configuration-ui.ui:534
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
 #: rc.cpp:120 rc.cpp:260
 msgid "Force Enabled"
-msgstr ""
+msgstr "Примусове вмикання"
 
 #. i18n: file: v4lradio-configuration-ui.ui:541
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:123 rc.cpp:263
 msgid "RDS"
-msgstr ""
+msgstr "RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:549
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -330,37 +356,37 @@ msgstr "Стереобаланс"
 #: rc.cpp:139
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Юрій Чорноіван"
 
 #: rc.cpp:140
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "yurchor@ukr.net"
 
 #: v4lradio-configuration.cpp:366
 msgid "Could not get device description."
-msgstr ""
+msgstr "Не вдалося отримати опис пристрою."
 
 #: v4lradio-configuration.cpp:371
 msgid "Device file does not exist or top level directories are not accessible."
-msgstr ""
+msgstr "Файл пристрою не існує або програма не може отримати доступ до каталогів найвищого рівня."
 
 #: v4lradio-configuration.cpp:374
 msgid "You do not have read+write permissions for the device."
-msgstr ""
+msgstr "Ви не маєте прав доступ на читання і запис до пристрою."
 
 #: v4lradio-configuration.cpp:377
 msgid "You do not have read permissions for the device."
-msgstr ""
+msgstr "Ви не маєте прав доступ на читання з пристрою."
 
 #: v4lradio-configuration.cpp:380
 msgid "You do not have write permissions for the device."
-msgstr ""
+msgstr "Ви не маєте прав доступ на запис до пристрою."
 
 #: v4lradio-configuration.cpp:410 v4lradio-configuration.cpp:411
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 kHz"
-msgstr " кГц"
+msgstr "%1 кГц"
 
 #: v4lradio-configuration.cpp:510
 msgid "any ( * )"
@@ -391,7 +417,7 @@ msgstr "невідомо що робити з версією V4l \"%1\""
 #: v4lradio.cpp:817 v4lradio.cpp:1628 v4lradio.cpp:1822
 #, kde-format
 msgid "%1 Support: %2"
-msgstr ""
+msgstr "Підтримка %1: %2"
 
 #: v4lradio.cpp:823
 #, kde-format
@@ -430,9 +456,9 @@ msgid "cannot open %1"
 msgstr "неможливо відкрити %1"
 
 #: v4lradio.cpp:1417 v4lradio.cpp:1458
-#, fuzzy, kde-format
+#, kde-format
 msgid "detected %1"
-msgstr "Знайдено пристрій V4L: %1"
+msgstr "виявлено %1"
 
 #: v4lradio.cpp:1436
 #, kde-format
@@ -440,9 +466,9 @@ msgid "audio caps = %1"
 msgstr "можливості звуку = %1"
 
 #: v4lradio.cpp:1460
-#, fuzzy, kde-format
+#, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
-msgstr "Версія V4l2: %1"
+msgstr "V4L2 — Версія: %1, caps=%2"
 
 #: v4lradio.cpp:1482
 msgid "V4L2: Querying mute control failed"
@@ -487,75 +513,16 @@ msgid "error updating radio audio info (%1): %2"
 msgstr "помилка оновлення інформації про аудіо радіо (%1): %2"
 
 #: v4lradio.cpp:2009
-#, fuzzy
 msgid "error reading RDS data\n"
-msgstr "Помилка читання %1: %2"
+msgstr "помилка читання даних RDS\n"
 
 #: v4lradio.cpp:2025
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
-msgstr ""
+msgstr "V4LRadio::processRDSData: Помилка швидкості блоків: %1 %"
 
 #: v4lradio.cpp:2028
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
-msgstr ""
+msgstr "V4LRadio::processRDSData: Помилка швидкості групи (~4 блоків): %1 %"
 
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Юрій Чорноіаан"
-
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr "yurchor@ukr.net"
-
-#~ msgid "Radio Device Selection"
-#~ msgstr "Вибір пристрою радіо"
-
-#~ msgid ""
-#~ "V4L/V4L2 Plugin for KRadio.<P>Provides Support for V4L/V4L2 based Radio "
-#~ "Cards<P>"
-#~ msgstr ""
-#~ "Модуль V4l/V4l2 для KRadio. <P> Надає підтримку карт радіо, сумісних з "
-#~ "V4l/V4l2<P>"
-
-#~ msgid "V4L/V4L2"
-#~ msgstr "V4L/V4LV2"
-
-#~ msgid "V4L/V4L2 Plugin"
-#~ msgstr "Модуль V4L/V4L2"
-
-#~ msgid "error reading V4L1 caps"
-#~ msgstr "помилка під час читання можливостей V4l1"
-
-#~ msgid "V4LRadio::readV4LCaps: Reading V4L2 caps failed"
-#~ msgstr "V4LRadio::readV4LCaps: Помилка читання властивостей V4L2"
-
-#~ msgid "Radio is mutable"
-#~ msgstr "Радіо підтримує вимикання звуку"
-
-#~ msgid "Radio is not mutable"
-#~ msgstr "Радіо не підтримує вимикання звуку"
-
-#~ msgid "Radio has Volume Control"
-#~ msgstr "Радіо має регулятор гучності"
-
-#~ msgid "Radio has no Volume Control"
-#~ msgstr "Радіо не має регулятора гучності"
-
-#~ msgid "Radio has Bass Control"
-#~ msgstr "Радіо має регулятор НЧ"
-
-#~ msgid "Radio has no Bass Control"
-#~ msgstr "Радіо не має регулятора НЧ"
-
-#~ msgid "Radio has Treble Control"
-#~ msgstr "Радіо має регулятор ВЧ"
-
-#~ msgid "Radio has no Treble Control"
-#~ msgstr "Радіо не має регулятора ВЧ"
-
-#~ msgid "error setting %1: %2"
-#~ msgstr "Помилка встановлення %1: %2"

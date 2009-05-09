@@ -2,21 +2,22 @@
 # translation of ru.po to
 # translation of kradio-timecontrol.po to
 # This file is put in the public domain.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
-# Yuri Chornoivan <yurchor@ukr.net>, 2007.
 #
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-26 14:32+0200\n"
-"PO-Revision-Date: 2007-01-30 22:41+0200\n"
+"PO-Revision-Date: 2009-05-09 10:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: timecontrol-configuration-ui.ui:19
 #. i18n: ectx: property (text), widget (QLabel, labelSleep)
@@ -46,7 +47,7 @@ msgstr "Дата"
 #. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
 #: rc.cpp:15 rc.cpp:57
 msgid "dd.MM.yyyy"
-msgstr ""
+msgstr "дд.ММ.рррр"
 
 #. i18n: file: timecontrol-configuration-ui.ui:150
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
@@ -58,7 +59,7 @@ msgstr "Час"
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
 #: rc.cpp:21 rc.cpp:63
 msgid "HH:mm:ss"
-msgstr ""
+msgstr "ГГ:ХХ:СС"
 
 #. i18n: file: timecontrol-configuration-ui.ui:177
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
@@ -77,13 +78,13 @@ msgstr " %"
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
 #: rc.cpp:31 rc.cpp:73
 msgid "daily/weekly"
-msgstr ""
+msgstr "щоденно/щотижнево"
 
 #. i18n: file: timecontrol-configuration-ui.ui:241
 #. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
 #: rc.cpp:34 rc.cpp:76
 msgid "Active weekdays:"
-msgstr ""
+msgstr "Активні дні тижня:"
 
 #. i18n: file: timecontrol-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
@@ -100,12 +101,12 @@ msgstr "Радіостанція"
 #: rc.cpp:41
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Юрій Чорноіван"
 
 #: rc.cpp:42
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "yurchor@ukr.net"
 
 #: timecontrol-configuration.cpp:60
 msgid "Start Playing"
@@ -124,37 +125,36 @@ msgid "Stop Recording"
 msgstr "Зупинити запис"
 
 #: timecontrol-configuration.cpp:66
-#, fuzzy
 msgid "unchanged"
-msgstr "<не змінювати>"
+msgstr "без змін"
 
 #: timecontrol-configuration.cpp:68
 msgid "Monday"
-msgstr ""
+msgstr "понеділок"
 
 #: timecontrol-configuration.cpp:69
 msgid "Tuesday"
-msgstr ""
+msgstr "вівторок"
 
 #: timecontrol-configuration.cpp:70
 msgid "Wednesday"
-msgstr ""
+msgstr "середа"
 
 #: timecontrol-configuration.cpp:71
 msgid "Thursday"
-msgstr ""
+msgstr "четвер"
 
 #: timecontrol-configuration.cpp:72
 msgid "Friday"
-msgstr ""
+msgstr "п'ятниця"
 
 #: timecontrol-configuration.cpp:73
 msgid "Saturday"
-msgstr ""
+msgstr "субота"
 
 #: timecontrol-configuration.cpp:74
 msgid "Sunday"
-msgstr ""
+msgstr "неділя"
 
 #: timecontrol-configuration.cpp:200
 msgid "<don't change>"
@@ -172,15 +172,3 @@ msgstr "Модуль керування часом"
 msgid "Setup Alarms"
 msgstr "Розклад повідомлень"
 
-#~ msgid "daily"
-#~ msgstr "щоденно"
-
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Юрій Чорноіван"
-
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr "yurchor@ukr.net"
