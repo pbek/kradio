@@ -1432,9 +1432,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
 
         video_audio audiocaps;
         if (0 == ioctl(fd, VIDIOCGAUDIO, &audiocaps)) {
-            logDebug("V4LRadio::readV4LCaps: " +
-                     i18n("audio caps = %1", QString().sprintf("0x%08X", audiocaps.flags)));
-            if ((audiocaps.flags & VIDEO_AUDIO_MUTABLE)  != 0)
+            if ((audiocaps.flags & VIDEO_AUDIO_MUTABLE) != 0)
                 v4l_caps[V4L_Version1].hasMute = true;
             if ((audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0)
                 v4l_caps[V4L_Version1].setVolume (0, 65535);
@@ -1444,6 +1442,10 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
                 v4l_caps[V4L_Version1].setBass   (0, 65535);
             if ((audiocaps.flags & VIDEO_AUDIO_BALANCE) != 0)
                 v4l_caps[V4L_Version1].setBalance(0, 65535);
+
+            logDebug("V4LRadio::readV4LCaps: " +
+                     i18n("audio caps = %1", QString().sprintf("0x%08X", audiocaps.flags)));
+            logDebug("V4L1 full caps: " + v4l_caps[V4L_Version1].getDebugDescription());
         }
     } else {
 //         logError("V4LRadio::readV4LCaps: " +
