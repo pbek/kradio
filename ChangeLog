@@ -5,10 +5,10 @@
         - recording config page: fixed accidentally wrong default tab
         - added more caps logging for v4l2
         - removed checks for redundant mute calls - we (un)mute always since
-          some drivers do not report mute state properly  
+          some drivers do not report mute state properly
 
  Yuri Chornoivan
-        - completed Ukrainian translation. Thanks a lot to Yuri! 
+        - completed Ukrainian translation. Thanks a lot to Yuri!
 
 2009-05-07
 
@@ -21,7 +21,7 @@
     emw - added configuration option for "Mute-On-Power-Off" in internet
           radio plugin + translation updates for cs, de, ru
 
-2009-04-26
+2009-04-26 (4.0.0-rc4)
 
     emw - preset: Added preset file for Croatia/Split. Thanks to Ivica Bozulic.
         - fix: Default value for Alsa buffer size consistent with comments/help in GUI
