@@ -55,8 +55,9 @@ typedef  PluginBase     *(*t_kradio_plugin_init_func)(const QString & cls, const
 typedef  void            (*t_kradio_plugin_info_func)(QMap<QString, QString> &);
 typedef  void            (*t_kradio_plugin_libload_func)();
 typedef  void            (*t_kradio_plugin_libunload_func)();
-
-#warning "FIXME: switch to KPluginFactory stuff"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "FIXME: switch to KPluginFactory stuff"
+#endif
 struct PluginLibraryInfo {
     KLibrary                       library;
     QMap<QString,QString>          plugins;
@@ -113,7 +114,9 @@ public:
 
 protected slots:
 
-#warning: FIXME: implement qsessionmanagement stuff
+    #ifdef KRADIO_ENABLE_FIXMES
+        #warning: FIXME: implement qsessionmanagement stuff
+    #endif
     virtual void  saveState( QSessionManager& sm ) { KApplication::saveState(sm); }
     virtual void  saveState();
     virtual void  slotAboutToQuit();

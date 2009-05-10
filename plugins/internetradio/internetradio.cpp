@@ -37,7 +37,9 @@
 #include "internetradio-configuration.h"
 
 
-#warning "FIXME: make buffer size configurable"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "FIXME: make buffer size configurable"
+#endif
 #define MAX_BUFFERS           20
 #define MIN_BUFFERS4PLAYBACK  10
 

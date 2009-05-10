@@ -6,6 +6,8 @@
         - added more caps logging for v4l2
         - removed checks for redundant mute calls - we (un)mute always since
           some drivers do not report mute state properly
+        - made development warnings/FIXMES configurable by cmake parameters.
+          Default is OFF
 
  Yuri Chornoivan
         - completed Ukrainian translation. Thanks a lot to Yuri!

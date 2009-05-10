@@ -32,7 +32,9 @@ class QColorGroup;
 #include "lircsupport.h"
 #include "listviewitem_lirc.h"
 
-#warning "FIXME: port K3ListView to KListWidget"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "FIXME: port K3ListView to KListWidget"
+#endif
 
 LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
  : QWidget(parent),

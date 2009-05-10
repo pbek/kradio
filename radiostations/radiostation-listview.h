@@ -23,7 +23,9 @@
 #ifndef _KRADIO_RADIOSTATION_LISTVIEW_H_
 #define _KRADIO_RADIOSTATION_LISTVIEW_H_
 
-#warning "FIXME: konvert from k3listview to KListWidget"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "FIXME: konvert from k3listview to KListWidget"
+#endif
 #include <k3listview.h>
 
 class RadioStation;

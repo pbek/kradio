@@ -337,7 +337,9 @@ void PluginManager::notifyPluginsChanged()
 }
 
 
-#warning "FIXME: what happens if a KPageWidgetItem is deleted? Will it automatically be removed from the KPageDialog?"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "FIXME: what happens if a KPageWidgetItem is deleted? Will it automatically be removed from the KPageDialog?"
+#endif
 KPageWidgetItem *PluginManager::addConfigurationPage (PluginBase *forWhom,
                                                       const ConfigPageInfo &info)
 {

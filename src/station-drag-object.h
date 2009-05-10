@@ -18,7 +18,9 @@
 #ifndef KRADIO_STATION_DRAG_OBJECT_H
 #define KRADIO_STATION_DRAG_OBJECT_H
 
-#warning "Port drag&drop to QT4"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "Port drag&drop to QT4"
+#endif
 #include <Qt3Support/Q3DragObject>
 
 #include <kdemacros.h>

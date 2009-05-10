@@ -327,7 +327,9 @@ bool RecordingDataMonitor::setColors(const QColor &activeText,
     pl.setColorGroup(QPalette::Disabled, d_fg, d_btn, d_lgt, d_drk, d_mid, d_txt, d_btx, d_bas, d_bg);
     setPalette(pl);
 
-    #warning "FIXME: port shading of background pixmap"
+    #ifdef KRADIO_ENABLE_FIXMES
+        #warning "FIXME: port shading of background pixmap"
+    #endif
 /*    if (parentWidget() && parentWidget()->backgroundPixmap() ){
         KPixmapIO io;
         QImage  i = io.convertToImage(*parentWidget()->backgroundPixmap());

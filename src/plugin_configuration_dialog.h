@@ -25,7 +25,9 @@
 #include "widgetpluginbase.h"
 
 
-#warning "FIXME: should we switch to KConfigDialog????"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "FIXME: should we switch to KConfigDialog????"
+#endif
 class PluginConfigurationDialog : public KPageDialog,
                                   public WidgetPluginBase
 {

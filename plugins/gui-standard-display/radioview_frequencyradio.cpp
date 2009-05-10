@@ -23,7 +23,9 @@
 
 #include <kconfiggroup.h>
 
-#warning "FIXME: port kimageeffect stuff"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "FIXME: port kimageeffect stuff"
+#endif
 //#include <kimageeffect.h>  // fading, blending, ...
 //#include <kpixmapio.h>     // fast conversion between QPixmap/QImage
 #include "radioview_frequencyradio.h"
@@ -205,7 +207,9 @@ bool RadioViewFrequencyRadio::setDisplayColors(const QColor &activeText,
     pl.setColorGroup(QPalette::Inactive, fg, btn, lgt, drk, mid, txt, btx, bas, bg);
     setPalette(pl);
 
-    #warning "FIXME: port KImageEffect stuff"
+    #ifdef KRADIO_ENABLE_FIXMES
+        #warning "FIXME: port KImageEffect stuff"
+    #endif
 /*    if (parentWidget() && parentWidget()->backgroundPixmap() ){
         KPixmapIO io;
         QImage  i = io.convertToImage(*parentWidget()->backgroundPixmap());

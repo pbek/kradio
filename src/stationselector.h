@@ -31,7 +31,9 @@
 
 #include "radiostation-listview.h"
 
-#warning "konvert from k3listview to KListWidget"
+#ifdef KRADIO_ENABLE_FIXMES
+    #warning "konvert from k3listview to KListWidget"
+#endif
 //#include <k3listview.h>
 
 class RadioStationListView;

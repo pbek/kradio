@@ -164,7 +164,9 @@ protected:
 
     void    ShowHideWidgetPlugins();
 
-#warning "FIXME: port to QT4 drag and drop"
+    #ifdef KRADIO_ENABLE_FIXMES
+        #warning "FIXME: port to QT4 drag and drop"
+    #endif
     void    dragEnterEvent(QDragEnterEvent* event);
     void    dropEvent(QDropEvent* event);
 

@@ -85,7 +85,9 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
 
     buildContextMenu ();
 
-    #warning "FIXME: enable drops again for systray icon"
+    #ifdef KRADIO_ENABLE_FIXMES
+        #warning "FIXME: enable drops again for systray icon"
+    #endif
     //setAcceptDrops(true);
 
     m_WorkaroundRecordingMenuUpdate.setInterval(100);
