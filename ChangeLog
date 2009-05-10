@@ -8,6 +8,7 @@
           some drivers do not report mute state properly
         - made development warnings/FIXMES configurable by cmake parameters.
           Default is OFF
+        - increased update period of standard display to reduce CPU load
 
  Yuri Chornoivan
         - completed Ukrainian translation. Thanks a lot to Yuri!

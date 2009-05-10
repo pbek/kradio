@@ -61,7 +61,7 @@ RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString 
 
     setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
-    m_RadioTextTimer.setInterval(50);
+    m_RadioTextTimer.setInterval(100);
     m_RadioTextTimer.setSingleShot(false);
     QObject::connect(&m_RadioTextTimer, SIGNAL(timeout()), this, SLOT(slotRadioTextTimer()));
 }
@@ -586,7 +586,7 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
         }
         updateRadioTextRing();
 
-        m_RadioTextDX            = fm.width(QString(" ")) / 4;
+        m_RadioTextDX            = fm.width(QString(" ")) / 2;
 
         qreal max_width = (xw_rt - m_RadioTextX0) + fm.maxWidth();
         int   n_chars   = (int)(max_width / fm.averageCharWidth() * 1.2);
@@ -614,14 +614,16 @@ void RadioViewFrequencyRadio::resizeEvent(QResizeEvent *e)
 
 void RadioViewFrequencyRadio::updateRadioTextRing()
 {
-    QString spaces = "     ";
     if (m_RDSRadioText.length()) {
+        QString spaces  = "     ";
         if (!m_RadioTextRing.length()) {
             m_RadioTextRing = "          ";
         }
         while (m_RadioTextRing.length() < 160) { // 2 * max_msg_len (==2*64) + some spaces
             m_RadioTextRing += spaces + m_RDSRadioText;
         }
+    } else {
+        m_RadioTextRing = "";
     }
 }
 
