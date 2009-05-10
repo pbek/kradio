@@ -35,6 +35,8 @@
 #include "internetradiostation.h"
 #include "frequencyradiostation.h"
 
+#include "debug-profiler.h"
+
 RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString &name )
     : RadioViewElement(parent, name, clsRadioDisplay),
       m_power(false),
@@ -379,6 +381,8 @@ bool RadioViewFrequencyRadio::noticeScanStepChanged(float /*s*/)
 
 void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
 {
+    BlockProfiler p("RadioViewFrequencyRadio::paintEvent");
+
     // guarantee that the painter is destroyed before we call the QFrame::paintEvent
     {
 
@@ -641,9 +645,14 @@ void RadioViewFrequencyRadio::setParent(QWidget * parent, Qt::WindowFlags f)
 
 void RadioViewFrequencyRadio::slotRadioTextTimer()
 {
+    //IErrorLogClient::staticLogDebug("RadioViewFrequencyRadio::slotRadioTextTimer()");
+    BlockProfiler p("RadioViewFrequencyRadio::slotRadioTextTimer");
+
     m_RadioTextX0      -= m_RadioTextDX;
     m_RadioTextRepaint =  true;
-    update();
+    if (m_RDSRadioText.length()) {
+        update();
+    }
 }
 
 

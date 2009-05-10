@@ -35,6 +35,7 @@
 // #warning "FIXME: port about widgets"
 //#include "aboutwidget.h"
 #include "utils.h"
+#include "debug-profiler.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
@@ -585,6 +586,9 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
 
 void AlsaSoundDevice::slotPollPlayback()
 {
+    //     logDebug("AlsaSoundDevice::slotPollPlayback()");
+    BlockProfiler p("AlsaSoundDevice::slotPollPlayback()");
+
     if (m_PlaybackStreamID.isValid()) {
 
 //         logDebug(i18n("AlsaSoundDevice::slotPollPlayback: buffer fill = %1%% (%2 bytes, w=%3)", 100*m_PlaybackBuffer.getFillSize() / m_PlaybackBuffer.getSize(), m_PlaybackBuffer.getFillSize(), m_PlaybackBufferWaitForMinFill));
@@ -636,6 +640,9 @@ void AlsaSoundDevice::slotPollPlayback()
 
 void AlsaSoundDevice::slotPollCapture()
 {
+    //     logDebug("AlsaSoundDevice::slotPollCapture()");
+    BlockProfiler p("AlsaSoundDevice::slotPollCapture()");
+
     if (m_CaptureStreamID.isValid() && m_hCapture) {
 
         size_t bufferSize = 0;

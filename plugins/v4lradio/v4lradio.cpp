@@ -119,11 +119,11 @@ V4LRadio::V4LRadio(const QString &instanceID, const QString &name)
     m_RDS_emulate_timer.setInterval(21); // 26 bits/block / 1187.5 bits/s = 21.89 ms / block
     m_RDS_emulate_timer.setSingleShot(false);
     QObject::connect (&m_RDS_emulate_timer, SIGNAL(timeout()), this, SLOT(slotEmulateRDS()));
-    m_RDS_emulate_timer.start();
 #endif
 
     QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
-    m_pollTimer.start(333);
+    m_pollTimer.setSingleShot(false);
+    m_pollTimer.setInterval(333);
 
     m_audio = new video_audio;
     bzero(m_audio, sizeof(video_audio));
@@ -292,6 +292,11 @@ bool V4LRadio::powerOn ()
     radio_init();
 
     if (isPowerOn()) {
+#ifdef RDS_DEBUG_EMULATE
+        m_RDS_emulate_timer.start();
+#endif
+        m_pollTimer.start();
+
         ISoundStreamClient *playback_mixer = NULL,
                            *capture_mixer  = NULL;
 
@@ -340,6 +345,11 @@ bool V4LRadio::powerOff ()
 {
     if (! isPowerOn())
         return true;
+
+    #ifdef RDS_DEBUG_EMULATE
+    m_RDS_emulate_timer.stop();
+    #endif
+    m_pollTimer.stop();
 
     queryPlaybackVolume(m_SoundStreamSinkID, m_defaultPlaybackVolume);
     if (m_MuteOnPowerOff) {
@@ -1880,6 +1890,8 @@ bool V4LRadio::updateAudioInfo(bool write) const
 
 void V4LRadio::poll()
 {
+    // logDebug("V4LRadio::poll");
+    BlockProfiler p("V4LRadio::poll");
     readTunerInfo();
     readAudioInfo();
 }
@@ -2171,6 +2183,9 @@ static unsigned char RDS_test_data[] = {
 
 void V4LRadio::slotEmulateRDS()
 {
+    // logDebug("V4LRadio::slotEmulateRDS");
+    BlockProfiler p("V4LRadio::slotEmulateRDS");
+
     if (isPowerOn()) {
         unsigned char buf[3];
         buf[0] = RDS_test_data[m_RDS_emulate_pos++];
