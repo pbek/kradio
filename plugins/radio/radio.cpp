@@ -556,8 +556,11 @@ bool Radio::noticeAlarm(const Alarm &a)
     if (a.alarmType() == Alarm::StartPlaying ||
         a.alarmType() == Alarm::StartRecording)
     {
-        const RadioStation &rs = getStations().stationWithID(a.stationID());
-        activateStation(rs);
+        QString rsID = a.stationID();
+        if (rsID.length()) {
+            const RadioStation &rs = getStations().stationWithID(rsID);
+            activateStation(rs);
+        }
         powerOn();
 
         SoundStreamID dst_id = getCurrentSoundStreamSinkID();

@@ -11,6 +11,8 @@
         - fixed possible segfault caused by docking/systray menu rebuild
         - fixed failing wait for poweron if internet radio stations are
           recorded starting in power-off mode
+        - fixed false error message about an unknown station in case an 
+          alarm does not change the station
 
 2009-05-09
 
