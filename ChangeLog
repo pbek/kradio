@@ -8,6 +8,7 @@
         - fixed problems with incorrect usage of pkgconfig results for
           libavformat and libmms
         - alarms are enabled by default now
+        - fixed possible segfault caused by docking/systray menu rebuild
 
 2009-05-09
 

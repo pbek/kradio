@@ -233,6 +233,8 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
 
 void RadioDocking::buildContextMenu()
 {
+    m_WorkaroundRecordingMenuActionsToBeDeleted.clear();
+
     if (m_inMenuAction) {
         m_scheduleMenuRebuild = true;
         return;
