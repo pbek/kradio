@@ -392,7 +392,7 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 void TimeControlConfiguration::slotNewAlarm()
 {
     QDateTime  dt(QDateTime::currentDateTime());
-    Alarm a(dt, false, false);
+    Alarm a(dt, false, true);
     alarms.push_back(a);
     listAlarms->addItem(a.alarmTime().toString());
     listAlarms->setCurrentRow(listAlarms->count() - 1, QItemSelectionModel::Select);
