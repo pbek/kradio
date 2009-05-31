@@ -1,8 +1,12 @@
 2009-05-31
 
-    emw/Paulo Cavalcanti
+    Paulo Cavalcanti
         - Added kradio4.desktop file. Thanks to Paulo!
+
+    emw 
         - completed Russian translation. Thanks to Alexey Kouznetso
+        - fixed problems with incorrect usage of pkgconfig results for
+          libavformat and libmms
 
 2009-05-09
 

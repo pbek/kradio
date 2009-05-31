@@ -6,9 +6,16 @@ include (KDE4Defaults)
 include (MacroLibrary)
 
 
-
 #ADD_SUBDIRECTORY(icons)
 ADD_SUBDIRECTORY(po)
+
+LINK_DIRECTORIES(
+    ${FFMPEG_LIBRARY_DIRS}
+)
+
+INCLUDE_DIRECTORIES(
+    ${FFMPEG_INCLUDE_DIRS}
+)
 
 FILE(GLOB kradio_plugin_internetradio_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
@@ -40,17 +47,14 @@ SET_TARGET_PROPERTIES(kradio4_plugin_internetradio
     PROPERTIES
     VERSION       4.0.0
     SOVERSION     4
-
 )
-
-SET(CMAKE_C_FLAGS           "${CMAKE_C_FLAGS}           ${FFMPEG_CFLAGS}")
 
 TARGET_LINK_LIBRARIES(kradio4_plugin_internetradio
   ${KDE4_KDEUI_LIBS}
   ${KDE4_KPARTS_LIBS}
   ${QT_QT3SUPPORT_LIBRARY}
   ${KDE4_KDE3SUPPORT_LIBRARY}
-  ${FFMPEG_LDFLAGS}
+  ${FFMPEG_LIBRARIES}
 )
 
 INSTALL(TARGETS kradio4_plugin_internetradio ${INSTALL_TARGETS_DEFAULT_ARGS})
