@@ -130,6 +130,9 @@ INSTALL(
     DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/kradio4/
 )
 
-
+INSTALL(
+    FILES       kradio4.desktop
+    DESTINATION ${XDG_APPS_INSTALL_DIR}
+)
 
 
