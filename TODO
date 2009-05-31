@@ -2,10 +2,7 @@
 
 For 4.0.0
 
-  * Aufnahmestart wird bei power-off für net-stations ignoriert
-  * libffmpeg detection fix
-
-For 4.0.1
+For 4.0.x
 
   * add support for pulse audio and other virtual alsa devices not enumeratable
   * use pkgconfig stuff where possible
@@ -19,7 +16,7 @@ For 4.1.0
   * add auto-setup for all available radio cards + proper plugin instance naming
   * support for ADIF format (feature request 2798906)
   * support for external radios (hamradio, feature request 1672069)
-  * signal detector (idea came up in discussing "bug" report 2790231)
+  * signal detector as optional replacement for RSSI (idea came up in discussing "bug" report 2790231)
 
 Later:
   * netradio: make buffer sizes for internet radio configurable
@@ -31,6 +28,12 @@ Later:
   * add PVR auto-setup/detection
 
 
+
+
+
+
+  * --done-- fix: alarm based recording start ignored for internet radio if in power-off state
+  * --done-- fix: libffmpeg detection broken with pkgconfig
   * --done-- fix: ffmpeg include fix for old ffmeg installations/includes
   * --done-- fix: net recording quality
   * --done-- fix: prepare translations
