@@ -891,10 +891,10 @@ bool InternetRadio::startCaptureWithFormat(SoundStreamID      id,
 
     if (!isPowerOn()) {
         powerOn();
-        for (int i = 0; i < 20 && m_decoderThread && !m_decoderThread->initDone(); ++i) {
-            sleep (200);
-        } // wait max 4 secs
     }
+    for (int i = 0; i < 20 && m_decoderThread && !m_decoderThread->initDone(); ++i) {
+        usleep (200000);
+    } // wait max 4 secs
     if (m_decoderThread && m_decoderThread->initDone()) {
         real_format = m_decoderThread->soundFormat();
         return true;
