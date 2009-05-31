@@ -574,7 +574,12 @@ bool Radio::noticeAlarm(const Alarm &a)
         if (a.alarmType() == Alarm::StartRecording && !r)
             sendStartRecording(dst_id);
 
-    } else {
+    }
+    else if (a.alarmType() == Alarm::StopRecording) {
+        SoundStreamID dst_id = getCurrentSoundStreamSinkID();
+        sendStopRecording(dst_id);
+    }
+    else if (a.alarmType() == Alarm::StopPlaying) {
         powerOff();
     }
     return true;

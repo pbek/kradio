@@ -13,6 +13,7 @@
           recorded starting in power-off mode
         - fixed false error message about an unknown station in case an 
           alarm does not change the station
+        - alarm type >stop recording< now really only stops recording, not playback
 
 2009-05-09
 
