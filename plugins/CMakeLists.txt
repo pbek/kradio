@@ -9,8 +9,6 @@ include (MacroLibrary)
 include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
 
-CHECK_INCLUDE_FILE(blah.h HAVE_BLAH_H)
-
 ###############################################################################
 
 option(WITH_ALSA "Compile with alsa support" ON)
