@@ -58,6 +58,7 @@ Authors:
 %_kde_prefix/share/icons/*
 %_kde_prefix/share/locale/*
 %_kde_prefix/share/doc/*
+%_kde_prefix/share/applications/kde4/*
 
 %prep
 %setup -q 

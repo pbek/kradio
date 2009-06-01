@@ -16,6 +16,7 @@
         - alarm type >stop recording< now really only stops recording, not playback
         - updated dev dependencies in debian control file for compatibility
           with debian-multimedia repository (http://debian-multimedia.org/)
+        - fixed opensuse spec file for .desktop entry
 
 2009-05-09
 
