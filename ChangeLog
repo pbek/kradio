@@ -14,7 +14,8 @@
         - fixed false error message about an unknown station in case an 
           alarm does not change the station
         - alarm type >stop recording< now really only stops recording, not playback
-        - updated dev dependencies in debian control file
+        - updated dev dependencies in debian control file for compatibility
+          with debian-multimedia repository (http://debian-multimedia.org/)
 
 2009-05-09
 
