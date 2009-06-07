@@ -64,7 +64,6 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_PassivePlaybackStreams(),
       m_PlaybackStreamID(),
       m_CaptureStreamID(),
-      m_HWBufferSize(2048),
       m_BufferSize(92*1024),
       m_PlaybackBuffer(m_BufferSize, /*synchronized =*/ true),
       m_CaptureBuffer(m_BufferSize, /*synchronized =*/ true),
@@ -161,7 +160,6 @@ void AlsaSoundDevice::saveState (KConfigGroup &c) const
     c.writeEntry("capture-device",  m_CaptureDevice);
     c.writeEntry("enable-playback", m_EnablePlayback);
     c.writeEntry("enable-capture",  m_EnableCapture);
-    c.writeEntry("hwbuffer-size",   (unsigned int) m_HWBufferSize);
     c.writeEntry("buffer-size",     (unsigned int) m_BufferSize);
     c.writeEntry("soundstreamclient-id", m_SoundStreamClientID);
 
@@ -191,7 +189,6 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
 
     m_EnablePlayback  = c.readEntry("enable-playback",  true);
     m_EnableCapture   = c.readEntry("enable-capture",   true);
-    m_HWBufferSize    = c.readEntry("hwbuffer-size",    2048);
     m_BufferSize      = c.readEntry("buffer-size",     96*1024);
     int card          = c.readEntry("playback-card",   0);
     int dev           = c.readEntry("playback-device", 0);
@@ -871,47 +868,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         logWarning(i18n("ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 Hz instead", orgrate, pcm_name, format.m_SampleRate));
     }
 
-    // for compatibility reasons with existing kradio configs, mHWBufferSize is the period size!
-    snd_pcm_uframes_t period_size       = m_HWBufferSize / format.frameSize();
-    unsigned int      periods           = 16;
-
-    size_t            buffersize_frames = period_size * periods;
-
-    if (periods < 4) {
-        periods = 4;
-        period_size = buffersize_frames / periods;
-    }
-
-    buffersize_frames = periods * period_size;
-
-    if (!error && snd_pcm_hw_params_set_period_size_near(alsa_handle, hwparams, &period_size, &dir) < 0) {
-        logError(i18n("ALSA Plugin: Error setting period size to %1 for %2", period_size, pcm_name));
-        error = true;
-    }
-    logDebug(i18n("ALSA Plugin: period size: %1 frames", period_size));
-
-    if (!error && snd_pcm_hw_params_set_periods_near(alsa_handle, hwparams, &periods, 0) < 0) {
-        logError(i18n("ALSA Plugin: Error setting periods to %1 for %2", periods, pcm_name));
-        error = true;
-    }
-    logDebug(i18n("ALSA Plugin: periods: %1", periods));
-
-    snd_pcm_uframes_t exact_buffersize_frames = buffersize_frames;
-    if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
-        exact_buffersize_frames = 4096;
-        if (!error && snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &exact_buffersize_frames) < 0) {
-            logError(i18n("ALSA Plugin: Error setting buffersize for %1", pcm_name));
-            error = true;
-        }
-    }
-    logDebug(i18n("ALSA Plugin: buffersize: %1 frames", exact_buffersize_frames));
-
-    size_t period_size_bytes = period_size * format.frameSize();
-    if (!error && m_HWBufferSize != period_size_bytes) {
-        logWarning(i18n("ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer size of %3 instead.", pcm_name, m_HWBufferSize, period_size_bytes));
-        setHWBufferSize(period_size_bytes);
-        logInfo(i18n("ALSA Plugin: adjusted buffer size for %1 to %2 bytes", pcm_name, period_size_bytes));
-    }
+    // no period/hwbuffersize any more. It is not necessary. And has a high risc for incompatibilites
 
     /* set all params */
 
@@ -920,11 +877,11 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
+    snd_pcm_uframes_t period_size = 0;
     if (!error && snd_pcm_hw_params_get_period_size(hwparams, &period_size, &dir) < 0) {
         logError(i18n("ALSA Plugin: Error getting period size for %1", pcm_name));
         error = true;
     }
-
 
     latency = (1000 * period_size) / format.m_SampleRate / 2; //oversampling factor 2 to be sure
     logDebug(i18n("ALSA Plugin: Setting timer latency to %1 for %2", latency, pcm_name));
@@ -1506,12 +1463,6 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
                 writeCaptureMixerSwitch(s.m_name, s.m_active);
         }
     }
-}
-
-
-void AlsaSoundDevice::setHWBufferSize(int s)
-{
-    m_HWBufferSize = s;
 }
 
 
