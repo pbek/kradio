@@ -66,7 +66,7 @@ DockingConfiguration::~DockingConfiguration ()
 void DockingConfiguration::languageChange()
 {
     StationSelector::languageChange();
-    m_labelClickMode->setText( i18n( "Left Mouse Click on Tray" ) );
+    m_labelClickMode->setText(i18n( "Left Mouse Click on Tray" ) );
 
     m_comboClickMode->clear();
     m_comboClickMode->addItem(i18n("Show/Hide all GUI Elements"));
