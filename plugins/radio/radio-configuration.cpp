@@ -48,6 +48,8 @@
 #include <kurlrequester.h>
 #include <klocale.h>
 #include <kmenu.h>
+#include <kdemacros.h>
+#include <kdeversion.h>
 
 RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &logger)
     : QWidget(parent),
@@ -59,7 +61,13 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
 {
     setupUi(this);
 
-    editPresetFile->setPath(KGlobal::dirs()->saveLocation("data", "kradio4"));
+    QString defaultPresetDir = KGlobal::dirs()->saveLocation("data", "kradio4");
+
+    #if KDE_IS_VERSION(4, 2, 80)
+        editPresetFile->setStartDir(defaultPresetDir);
+    #else
+        editPresetFile->setPath    (defaultPresetDir);
+    #endif
 
     // icon settings does not work any more in .ui files in KDE4, don't know why/how
     buttonNewStation      ->setIcon(KIcon("document-new"));

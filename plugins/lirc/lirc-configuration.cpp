@@ -25,6 +25,8 @@ class QColorGroup;
 #include <klistwidget.h>
 #include <klocale.h>
 #include <kurlrequester.h>
+#include <kdemacros.h>
+#include <kdeversion.h>
 
 #include <lirc/lirc_client.h>
 
@@ -203,7 +205,11 @@ void LIRCConfiguration::slotCancel()
 
         if (m_LIRC) {
 
-            edLIRCConfigurationFile->setPath(m_LIRC->getLIRCConfigurationFile());
+            #if KDE_IS_VERSION(4, 2, 80)
+                edLIRCConfigurationFile->setStartDir(m_LIRC->getLIRCConfigurationFile());
+            #else
+                edLIRCConfigurationFile->setPath    (m_LIRC->getLIRCConfigurationFile());
+            #endif
             readLIRCConfigurationFile();
 
             const QMap<LIRC_Actions, QString> &actions     = m_LIRC->getActions();
