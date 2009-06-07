@@ -419,7 +419,7 @@ bool StreamingDevice::noticeReadyForPlaybackData(SoundStreamID id, size_t free_s
         x->removeData(consumed_size);
         free_size -= consumed_size;
         if (consumed_size < size) {
-            logWarning(i18n("StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes", name(), size-consumed_size));
+            logWarning(i18n("StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes", PluginBase::name(), size-consumed_size));
             break;
         }
     }
@@ -448,22 +448,22 @@ QString StreamingDevice::getSoundStreamClientDescription() const
 
 void   StreamingDevice::logStreamError(const KUrl &url, const QString &s)
 {
-    logError(i18n("Streaming Device %1, %2: %3", name(), url.pathOrUrl(), s));
+    logError(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
 }
 
 void   StreamingDevice::logStreamWarning(const KUrl &url, const QString &s)
 {
-    logWarning(i18n("Streaming Device %1, %2: %3", name(), url.pathOrUrl(), s));
+    logWarning(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
 }
 
 void   StreamingDevice::logStreamInfo(const KUrl &url, const QString &s)
 {
-    logInfo(i18n("Streaming Device %1, %2: %3", name(), url.pathOrUrl(), s));
+    logInfo(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
 }
 
 void   StreamingDevice::logStreamDebug(const KUrl &url, const QString &s)
 {
-    logDebug(i18n("Streaming Device %1, %2: %3", name(), url.pathOrUrl(), s));
+    logDebug(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
 }
 
 
