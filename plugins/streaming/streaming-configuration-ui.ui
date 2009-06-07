@@ -6,353 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>442</width>
-    <height>470</height>
+    <width>503</width>
+    <height>275</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>StreamingConfigurationUI</string>
   </property>
   <layout class="QGridLayout">
-   <item row="1" column="0">
-    <layout class="QGridLayout">
-     <item row="1" column="0">
-      <widget class="K3ListView" name="m_ListPlaybackURLs">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="selectionMode">
-        <enum>Q3ListView::Single</enum>
-       </property>
-       <property name="defaultRenameAction">
-        <enum>Q3ListView::Accept</enum>
-       </property>
-       <column>
-        <property name="text">
-         <string>No.</string>
-        </property>
-        <property name="clickable">
-         <bool>true</bool>
-        </property>
-        <property name="resizable">
-         <bool>true</bool>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>URL</string>
-        </property>
-        <property name="clickable">
-         <bool>true</bool>
-        </property>
-        <property name="resizable">
-         <bool>true</bool>
-        </property>
-       </column>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="K3ListView" name="m_ListCaptureURLs">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="defaultRenameAction">
-        <enum>Q3ListView::Accept</enum>
-       </property>
-       <column>
-        <property name="text">
-         <string>No.</string>
-        </property>
-        <property name="clickable">
-         <bool>true</bool>
-        </property>
-        <property name="resizable">
-         <bool>true</bool>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>URL</string>
-        </property>
-        <property name="clickable">
-         <bool>true</bool>
-        </property>
-        <property name="resizable">
-         <bool>true</bool>
-        </property>
-       </column>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QLabel" name="textLabel1_2">
-       <property name="text">
-        <string>Capture URLs</string>
-       </property>
-       <property name="wordWrap">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="textLabel1">
-       <property name="text">
-        <string>Playback URLs</string>
-       </property>
-       <property name="wordWrap">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3">
-      <layout class="QVBoxLayout">
-       <item>
-        <widget class="QPushButton" name="m_pbNewCaptureURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="m_pbDeleteCaptureURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="spacer46_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>10</width>
-           <height>10</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="m_pbUpCaptureURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="m_pbDownCaptureURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="1" column="1">
-      <layout class="QVBoxLayout">
-       <item>
-        <widget class="QPushButton" name="m_pbNewPlaybackURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="m_pbDeletePlaybackURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="spacer46">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>10</width>
-           <height>10</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="m_pbUpPlaybackURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="m_pbDownPlaybackURL">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="0">
+   <property name="margin">
+    <number>8</number>
+   </property>
+   <item row="1" column="1">
     <widget class="QGroupBox" name="groupBox3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>URL Properties</string>
      </property>
@@ -363,7 +35,7 @@
       <item row="5" column="1">
        <widget class="KComboBox" name="m_cbChannels">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -392,6 +64,12 @@
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="lableChannels">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>Channels</string>
         </property>
@@ -413,7 +91,7 @@
       <item row="4" column="1">
        <widget class="KComboBox" name="m_cbEndianess">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -433,7 +111,7 @@
       <item row="2" column="1">
        <widget class="KComboBox" name="m_cbRate">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -468,7 +146,7 @@
       <item row="3" column="1">
        <widget class="KComboBox" name="m_cbBits">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -488,7 +166,7 @@
       <item row="1" column="1">
        <widget class="KComboBox" name="m_cbFormat">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -502,8 +180,23 @@
       </item>
       <item row="0" column="1">
        <widget class="KIntSpinBox" name="m_sbBufferSize">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="suffix">
          <string>kB</string>
+        </property>
+        <property name="minimum">
+         <number>4</number>
+        </property>
+        <property name="maximum">
+         <number>1024</number>
+        </property>
+        <property name="singleStep">
+         <number>4</number>
         </property>
         <property name="maxValue" stdset="0">
          <number>1024</number>
@@ -518,6 +211,12 @@
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="labelRate_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>Buffer Size</string>
         </property>
@@ -528,6 +227,12 @@
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="labelRate_2_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>Format</string>
         </property>
@@ -538,6 +243,12 @@
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="labelRate">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>Sample Rate</string>
         </property>
@@ -549,7 +260,7 @@
       <item row="3" column="2">
        <widget class="KComboBox" name="m_cbSign">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -576,8 +287,8 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>140</width>
-          <height>20</height>
+          <width>1</width>
+          <height>1</height>
          </size>
         </property>
        </spacer>
@@ -592,8 +303,8 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>140</width>
-          <height>20</height>
+          <width>1</width>
+          <height>1</height>
          </size>
         </property>
        </spacer>
@@ -608,8 +319,8 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>140</width>
-          <height>20</height>
+          <width>1</width>
+          <height>1</height>
          </size>
         </property>
        </spacer>
@@ -624,8 +335,8 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>140</width>
-          <height>20</height>
+          <width>1</width>
+          <height>1</height>
          </size>
         </property>
        </spacer>
@@ -640,8 +351,8 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>140</width>
-          <height>20</height>
+          <width>1</width>
+          <height>1</height>
          </size>
         </property>
        </spacer>
@@ -649,8 +360,14 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="0">
+   <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -658,18 +375,385 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The streaming plugin will present itself to the rest of KRadio as a &lt;span style=&quot; font-weight:600;&quot;&gt;Sound Device&lt;/span&gt;, thus you will be able to select the URLs entered below as &lt;span style=&quot; font-weight:600;&quot;&gt;Mixer Channels&lt;/span&gt; e.g. in the V4L2 plugin. This allows the use of pipes and devices as sound input for KRadio, e.g. &lt;span style=&quot; font-style:italic;&quot;&gt;/dev/video24&lt;/span&gt;. This is particularly useful if you have a &lt;span style=&quot; font-weight:600;&quot;&gt;PVR radio card&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
      </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="KTabWidget" name="ktabwidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::West</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="CaptureURLs">
+      <attribute name="title">
+       <string>Capture URLs</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>8</number>
+       </property>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="m_pbUpCaptureURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="m_pbDeleteCaptureURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="5">
+        <widget class="K3ListView" name="m_ListCaptureURLs">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="defaultRenameAction">
+          <enum>Q3ListView::Accept</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>No.</string>
+          </property>
+          <property name="clickable">
+           <bool>true</bool>
+          </property>
+          <property name="resizable">
+           <bool>true</bool>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>URL</string>
+          </property>
+          <property name="clickable">
+           <bool>true</bool>
+          </property>
+          <property name="resizable">
+           <bool>true</bool>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="m_pbNewCaptureURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <spacer name="spacer46_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="m_pbDownCaptureURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+      <zorder>m_pbDownPlaybackURL</zorder>
+      <zorder>m_pbNewPlaybackURL</zorder>
+      <zorder>m_pbDeletePlaybackURL</zorder>
+      <zorder>spacer46</zorder>
+      <zorder>m_pbUpPlaybackURL</zorder>
+      <zorder>m_ListPlaybackURLs</zorder>
+      <zorder>m_pbDownCaptureURL</zorder>
+      <zorder>spacer46_2</zorder>
+      <zorder>m_pbNewCaptureURL</zorder>
+      <zorder>m_ListCaptureURLs</zorder>
+      <zorder>m_pbDeleteCaptureURL</zorder>
+      <zorder>m_pbUpCaptureURL</zorder>
+     </widget>
+     <widget class="QWidget" name="PlaybackURLs">
+      <attribute name="title">
+       <string>Playback URLs</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="margin">
+        <number>8</number>
+       </property>
+       <item row="0" column="0" rowspan="5">
+        <widget class="K3ListView" name="m_ListPlaybackURLs">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="selectionMode">
+          <enum>Q3ListView::Single</enum>
+         </property>
+         <property name="defaultRenameAction">
+          <enum>Q3ListView::Accept</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>No.</string>
+          </property>
+          <property name="clickable">
+           <bool>true</bool>
+          </property>
+          <property name="resizable">
+           <bool>true</bool>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>URL</string>
+          </property>
+          <property name="clickable">
+           <bool>true</bool>
+          </property>
+          <property name="resizable">
+           <bool>true</bool>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="m_pbUpPlaybackURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <spacer name="spacer46">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="m_pbDeletePlaybackURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="m_pbNewPlaybackURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="m_pbDownPlaybackURL">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
+  <customwidget>
+   <class>Q3Frame</class>
+   <extends>QFrame</extends>
+   <header>Qt3Support/Q3Frame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Q3ListView</class>
+   <extends>Q3Frame</extends>
+   <header>q3listview.h</header>
+  </customwidget>
   <customwidget>
    <class>K3ListView</class>
    <extends>Q3ListView</extends>
@@ -685,18 +769,14 @@ p, li { white-space: pre-wrap; }
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
   </customwidget>
+  <customwidget>
+   <class>KTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>ktabwidget.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>m_ListPlaybackURLs</tabstop>
-  <tabstop>m_pbNewPlaybackURL</tabstop>
-  <tabstop>m_pbDeletePlaybackURL</tabstop>
-  <tabstop>m_pbUpPlaybackURL</tabstop>
-  <tabstop>m_pbDownPlaybackURL</tabstop>
-  <tabstop>m_ListCaptureURLs</tabstop>
-  <tabstop>m_pbNewCaptureURL</tabstop>
-  <tabstop>m_pbDeleteCaptureURL</tabstop>
-  <tabstop>m_pbUpCaptureURL</tabstop>
-  <tabstop>m_pbDownCaptureURL</tabstop>
   <tabstop>m_sbBufferSize</tabstop>
   <tabstop>m_cbFormat</tabstop>
   <tabstop>m_cbRate</tabstop>

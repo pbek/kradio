@@ -23,6 +23,7 @@
 #include <klocale.h>
 
 #include <QtGui/QLayout>
+#include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QGroupBox>
@@ -32,22 +33,21 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
       m_dirty(true),
       m_ignore_gui_updates(false)
 {
-    QGroupBox   *gb = new QGroupBox(i18n("Display Colors"), this);
-    QGridLayout *gl = new QGridLayout (gb);
-    gl->setSpacing( 8 );
-    gl->setMargin ( 12 );
+    QGridLayout *gl = new QGridLayout (this);
+    gl->setSpacing( 5 );
+    gl->setMargin ( 11 );
 
-    m_btnActive   = new KColorButton(queryDisplayActiveColor(),   gb);
-    m_btnInactive = new KColorButton(queryDisplayInactiveColor(), gb);
-    m_btnBkgnd    = new KColorButton(queryDisplayBkgndColor(),    gb);
+    m_btnActive   = new KColorButton(queryDisplayActiveColor(),   this);
+    m_btnInactive = new KColorButton(queryDisplayInactiveColor(), this);
+    m_btnBkgnd    = new KColorButton(queryDisplayBkgndColor(),    this);
 
     connect(m_btnActive,   SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
     connect(m_btnInactive, SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
     connect(m_btnBkgnd,    SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
 
-    QLabel *l1  = new QLabel(i18n("Active Text"),      gb);
-    QLabel *l2  = new QLabel(i18n("Inactive Text"),    gb);
-    QLabel *l3  = new QLabel(i18n("Background Color"), gb);
+    QLabel *l1  = new QLabel(i18n("Active Text"),      this);
+    QLabel *l2  = new QLabel(i18n("Inactive Text"),    this);
+    QLabel *l3  = new QLabel(i18n("Background Color"), this);
 
     l1->setAlignment(Qt::AlignHCenter);
     l2->setAlignment(Qt::AlignHCenter);
@@ -60,9 +60,14 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     m_btnInactive->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
     m_btnBkgnd   ->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
-    m_btnActive  ->setMinimumSize(QSize(40, 40));
-    m_btnInactive->setMinimumSize(QSize(40, 40));
-    m_btnBkgnd   ->setMinimumSize(QSize(40, 40));
+    m_btnActive  ->setMinimumSize(QSize(20, 20));
+    m_btnInactive->setMinimumSize(QSize(20, 20));
+    m_btnBkgnd   ->setMinimumSize(QSize(20, 20));
+
+    m_fontChooser = new KFontChooser(this, KFontChooser::DisplayFrame, QStringList(), 4);
+    m_fontChooser->enableColumn(KFontChooser::SizeList, false);
+    m_fontChooser->setFont(queryDisplayFont());
+    m_fontChooser->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
     gl->addWidget (l1,                   0, 0, Qt::AlignCenter);
     gl->addWidget (l2,                   0, 1, Qt::AlignCenter);
@@ -70,15 +75,7 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     gl->addWidget (m_btnActive,          1, 0);
     gl->addWidget (m_btnInactive,        1, 1);
     gl->addWidget (m_btnBkgnd,           1, 2);
-
-    m_fontChooser = new KFontChooser(this, KFontChooser::DisplayFrame, QStringList(), 4);
-    m_fontChooser->setFont(queryDisplayFont());
-    m_fontChooser->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-    QVBoxLayout  *l = new QVBoxLayout(this);
-    l->setSpacing(10);
-    l->addWidget(gb);
-    l->addWidget(m_fontChooser);
+    gl->addWidget (m_fontChooser,        2, 0, /*rowspan*/1, /*colspan*/ 3);
 
     connect(m_btnActive,   SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
     connect(m_btnInactive, SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));

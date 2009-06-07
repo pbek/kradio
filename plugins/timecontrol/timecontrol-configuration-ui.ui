@@ -107,7 +107,14 @@
       </layout>
      </item>
      <item>
-      <widget class="KListWidget" name="listAlarms"/>
+      <widget class="KListWidget" name="listAlarms">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

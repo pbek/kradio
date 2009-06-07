@@ -278,14 +278,6 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
     int stModeIdx         = comboStereoMode->findData(s ? (int)s->stereoMode() : (int)STATION_STEREO_DONTCARE);
     comboStereoMode       ->setCurrentIndex(stModeIdx >= 0 ? stModeIdx : comboStereoMode->findData((int)STATION_STEREO_DONTCARE));
 
-    QPixmap pixmap(s ? s->iconName() : QString());
-    if (!pixmap.isNull()) {
-        pixmapStation->setPixmap(pixmap);
-    } else {
-        pixmapStation->setPixmap(QPixmap());
-    }
-
-
     stackStationEdit->setDisabled(!s);
     if (s) {
         QMap<QString, RadioStationConfig*>::const_iterator it_c = m_stationEditors.find(s->getClassName());
@@ -445,7 +437,6 @@ void RadioConfiguration::slotPixmapChanged( const QString &s )
         RadioStation &st = m_stations.at(idx);
         st.setIconName(s);
         m_ignoreChanges = true;
-        pixmapStation->setPixmap(QPixmap(s));
         bool o = listStations->signalsBlocked();
         listStations->blockSignals(true);
         listStations->setStation(idx, st);

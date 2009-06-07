@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>646</width>
-    <height>676</height>
+    <width>469</width>
+    <height>297</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,31 +22,78 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="TabPage">
+     <widget class="QWidget" name="V4LDevice">
       <attribute name="title">
-       <string>Devices</string>
+       <string>V4L Device</string>
       </attribute>
-      <layout class="QGridLayout">
+      <layout class="QGridLayout" name="gridLayout_2">
        <property name="margin">
         <number>11</number>
        </property>
-       <item row="3" column="0">
-        <widget class="QLabel" name="labelPlaybackMixerDevice">
+       <item row="0" column="1" colspan="2">
+        <widget class="QLineEdit" name="editRadioDevice">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>5</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="labelScanStep">
          <property name="text">
-          <string>Playback Mixer Device</string>
+          <string>Station scan step</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="labelPlaybackMixerChannel">
+       <item row="8" column="3">
+        <widget class="QLabel" name="textLabel1_3">
          <property name="text">
-          <string>Playback Mixer Channel</string>
+          <string/>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="labelSignalMinQuality">
+         <property name="text">
+          <string>Minimum signal quality</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="3">
+        <widget class="QLabel" name="textLabel1_4_2">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="3">
+        <widget class="QLabel" name="labelDescription">
+         <property name="text">
+          <string>unknown v4l device</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>V4L Version to use</string>
          </property>
         </widget>
        </item>
@@ -60,57 +107,312 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="labelCaptureMixerDevice">
+       <item row="8" column="1">
+        <widget class="QSpinBox" name="editScanStep">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="suffix">
+          <string> kHz</string>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+         <property name="value">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QSpinBox" name="editSignalMinQuality">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="value">
+          <number>75</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QRadioButton" name="rbV4L1Version">
+           <property name="text">
+            <string>V4L-1 API</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbV4L2Version">
+           <property name="text">
+            <string>V4L-2 API</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="buttonSelectRadioDevice">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
          <property name="text">
-          <string>Capture Mixer Device</string>
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="4">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelMinMaxFrequency">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Allowed frequency range</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
-        <widget class="QComboBox" name="comboCaptureMixerChannel">
+       <item row="3" column="1" rowspan="2" colspan="3">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="editMinFrequency">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="suffix">
+            <string> kHz</string>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>2999999</number>
+           </property>
+           <property name="singleStep">
+            <number>1000</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="labelFrequencyRange_3">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>to</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="labelDevMinFrequency">
+           <property name="text">
+            <string>65 MHz</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QSpinBox" name="editMaxFrequency">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="suffix">
+            <string> kHz</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>300000</number>
+           </property>
+           <property name="singleStep">
+            <number>1000</number>
+           </property>
+           <property name="value">
+            <number>300000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="labelFrequencyRange_4">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>to</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="labelDevMaxFrequency">
+           <property name="text">
+            <string>108 MHz</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelDevMinMaxFrequency">
+         <property name="text">
+          <string>Device frequency range</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="RDSOptions">
+      <attribute name="title">
+       <string>RDS</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>11</number>
+       </property>
+       <item row="0" column="0" colspan="2">
+        <widget class="QCheckBox" name="m_checkboxForceRDSEnabled">
+         <property name="text">
+          <string>Force RDS Enabled</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QLabel" name="label_2">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="labelCaptureMixerChannel">
          <property name="text">
-          <string>Capture Mixer Channel</string>
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Note for RDS Support:&lt;/span&gt; If your card supports RDS and RDS is not working, please check if the &lt;span style=&quot; font-weight:600;&quot;&gt;kernel module saa6588.ko&lt;/span&gt; is loaded. For cards with an saa6588 chip, this module is typically &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; loaded automatically. Whether your V4L/V4L2 kernel supports RDS should become visible in the standard radio display when the RDS indicator becomes bright (like the stereo and AM/FM indicators). RDS Radio Text should be visible in the standard radio display and the tooltips of the systray icon. RDS station names are used in the station scan dialog as default names for newly found stations.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
          <property name="wordWrap">
-          <bool>false</bool>
+          <bool>true</bool>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QComboBox" name="comboCaptureMixerDevice">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+       <item row="1" column="0" colspan="2">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QComboBox" name="comboPlaybackMixerChannel">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
+      </layout>
+     </widget>
+     <widget class="QWidget" name="SoundDevices">
+      <attribute name="title">
+       <string>Sound Devices</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0">
+       <property name="margin">
+        <number>11</number>
+       </property>
+       <item row="0" column="2">
         <widget class="QComboBox" name="comboPlaybackMixerDevice">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -125,10 +427,99 @@
          </item>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="labelDescription">
+       <item row="1" column="1">
+        <widget class="QLabel" name="labelPlaybackMixerChannel">
          <property name="text">
-          <string>unknown v4l device</string>
+          <string>Playback Mixer Channel</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QComboBox" name="comboPlaybackMixerChannel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="labelCaptureMixerDevice">
+         <property name="text">
+          <string>Capture Mixer Device</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QComboBox" name="comboCaptureMixerDevice">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QComboBox" name="comboCaptureMixerChannel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" rowspan="3" colspan="2">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1" colspan="2">
+        <widget class="QCheckBox" name="m_checkboxVolumeZeroOnPowerOff">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Set playback channel volume to &amp;zero at power off</string>
+         </property>
+         <property name="shortcut">
+          <string>Alt+Z</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+        <widget class="QCheckBox" name="m_checkboxMuteOnPowerOff">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Mute play&amp;back channel at power off</string>
+         </property>
+         <property name="shortcut">
+          <string>Alt+B</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="labelCaptureMixerChannel">
+         <property name="text">
+          <string>Capture Mixer Channel</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -136,16 +527,39 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="editRadioDevice">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <widget class="QLabel" name="labelPlaybackMixerDevice">
+         <property name="text">
+          <string>Playback Mixer Device</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="7" column="0" colspan="3">
+       <item row="10" column="1" colspan="2">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ActivePlayback">
+      <attribute name="title">
+       <string>PVR &amp;&amp; Co</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="margin">
+        <number>11</number>
+       </property>
+       <item row="0" column="0">
         <widget class="QCheckBox" name="m_checkboxActivePlayback">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -175,65 +589,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="9" column="0" colspan="3">
-        <widget class="QCheckBox" name="m_checkboxMuteOnPowerOff">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Mute play&amp;back channel at power off</string>
-         </property>
-         <property name="shortcut">
-          <string>Alt+B</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0" colspan="3">
-        <widget class="QCheckBox" name="m_checkboxVolumeZeroOnPowerOff">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Set playback channel volume to &amp;zero at power off</string>
-         </property>
-         <property name="shortcut">
-          <string>Alt+Z</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0" colspan="3">
-        <widget class="KSeparator" name="kseparator"/>
-       </item>
-       <item row="15" column="0" colspan="3">
-        <widget class="QLabel" name="label_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Note for PVR owners:&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt; is required when your radio card is not connected to your sound card via a cable to the line in jack. In this case, KRadio needs to capture the PCM data from a capture sound device in order to send the PCM data to the playback sound device. Therefore, if you enable &lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt;, you have to select a proper capture mixer device/channel and a proper PCM playback mixer/channel. This is particularly important for &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt; which usually need to capture the sound from &lt;span style=&quot; font-style:italic;&quot;&gt;/dev/video24&lt;/span&gt; (or similar). For &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt;, you therefore have to setup the &lt;span style=&quot; font-weight:600;&quot;&gt;Streaming Plugin&lt;/span&gt; properly, too.&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Note for RDS Support:&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If your card supports RDS and RDS is not working, please check if the &lt;span style=&quot; font-weight:600;&quot;&gt;kernel module saa6588.ko&lt;/span&gt; is loaded. For cards with an saa6588 chip, this module is typically &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; loaded automatically. Whether your V4L/V4L2 kernel supports RDS should become visible in the standard radio display when the RDS indicator becomes bright (like the stereo and AM/FM indicators). RDS Radio Text should be visible in the standard radio display and the tooltips of the systray icon. RDS station names are used in the station scan dialog as default names for newly found stations.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0" colspan="3">
+       <item row="1" column="0">
         <widget class="QCheckBox" name="m_checkboxActivePlaybackMuteCaptureChannelPlayback">
          <property name="enabled">
           <bool>false</bool>
@@ -255,296 +611,58 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="16" column="1">
-        <spacer name="spacer15">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::MinimumExpanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>5</width>
-           <height>0</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="buttonSelectRadioDevice">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="TabPage">
-      <attribute name="title">
-       <string>Options</string>
-      </attribute>
-      <layout class="QGridLayout">
-       <property name="margin">
-        <number>11</number>
-       </property>
-       <item row="0" column="2">
-        <layout class="QHBoxLayout">
-         <property name="margin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="labelFrequencyRange">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="text">
-            <string>to</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="editMaxFrequency">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="suffix">
-            <string> kHz</string>
-           </property>
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>300000</number>
-           </property>
-           <property name="singleStep">
-            <number>1000</number>
-           </property>
-           <property name="value">
-            <number>300000</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="1">
-        <widget class="QSpinBox" name="editScanStep">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="suffix">
-          <string> kHz</string>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>500</number>
-         </property>
-         <property name="value">
-          <number>50</number>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="labelSignalMinQuality">
-         <property name="text">
-          <string>minimum signal quality</string>
+        <widget class="QLabel" name="label_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <property name="wordWrap">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Note for PVR owners:&lt;/span&gt; &lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt; is required when your radio card is not connected to your sound card via a cable to the line in jack. In this case, KRadio needs to capture the PCM data from a capture sound device in order to send the PCM data to the playback sound device. Therefore, if you enable &lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt;, you have to select a proper capture mixer device/channel and a proper PCM playback mixer/channel. This is particularly important for &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt; which usually need to capture the sound from &lt;span style=&quot; font-style:italic;&quot;&gt;/dev/video24&lt;/span&gt; (or similar). For &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt;, you therefore have to setup the &lt;span style=&quot; font-weight:600;&quot;&gt;Streaming Plugin&lt;/span&gt; properly, too.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="scaledContents">
           <bool>false</bool>
          </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QSpinBox" name="editMinFrequency">
-         <property name="enabled">
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
           <bool>true</bool>
          </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+         <property name="textInteractionFlags">
+          <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
          </property>
-         <property name="suffix">
-          <string> kHz</string>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>2999999</number>
-         </property>
-         <property name="singleStep">
-          <number>1000</number>
-         </property>
-         <property name="value">
-          <number>0</number>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="labelScanStep">
-         <property name="text">
-          <string>station scan step</string>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="labelMinMaxFrequency">
-         <property name="text">
-          <string>allowed frequency range</string>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="textLabel1_3">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QSpinBox" name="editSignalMinQuality">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="value">
-          <number>75</number>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLabel" name="textLabel1_4_2">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <spacer name="spacer16">
+        <spacer name="verticalSpacer_4">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>5</height>
+           <height>40</height>
           </size>
          </property>
         </spacer>
        </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="labelDevMinFrequency">
-         <property name="text">
-          <string>65 MHz</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="labelDevMaxFrequency">
-         <property name="text">
-          <string>108 MHz</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="labelDevMinMaxFrequency">
-         <property name="text">
-          <string>device frequency range</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="3">
-        <widget class="KSeparator" name="kseparator_2"/>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>V4L Version to use</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QRadioButton" name="rbV4L1Version">
-         <property name="text">
-          <string>V4L-1 API</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QRadioButton" name="rbV4L2Version">
-         <property name="text">
-          <string>V4L-2 API</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0" colspan="3">
-        <widget class="KSeparator" name="kseparator_3"/>
-       </item>
-       <item row="3" column="0" colspan="3">
-        <widget class="KSeparator" name="kseparator_7"/>
-       </item>
-       <item row="8" column="1" colspan="2">
-        <widget class="QCheckBox" name="m_checkboxForceRDSEnabled">
-         <property name="text">
-          <string>Force Enabled</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>RDS</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="TabPage">
+     <widget class="QWidget" name="V4LMixerControls">
       <attribute name="title">
        <string>V4L Mixer Controls</string>
       </attribute>
@@ -585,8 +703,8 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>20</width>
-               <height>20</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
             </spacer>
@@ -611,8 +729,8 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>16</width>
-               <height>20</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
             </spacer>
@@ -661,8 +779,8 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>20</width>
-               <height>20</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
             </spacer>
@@ -687,8 +805,8 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>16</width>
-               <height>20</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
             </spacer>
@@ -737,8 +855,8 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>20</width>
-               <height>20</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
             </spacer>
@@ -763,8 +881,8 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>16</width>
-               <height>20</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
             </spacer>
@@ -874,31 +992,9 @@ p, li { white-space: pre-wrap; }
    <extends>QWidget</extends>
    <header>knuminput.h</header>
   </customwidget>
-  <customwidget>
-   <class>KSeparator</class>
-   <extends>QFrame</extends>
-   <header>kseparator.h</header>
-  </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>kTabWidget1</tabstop>
   <tabstop>editRadioDevice</tabstop>
-  <tabstop>buttonSelectRadioDevice</tabstop>
-  <tabstop>comboPlaybackMixerDevice</tabstop>
-  <tabstop>comboPlaybackMixerChannel</tabstop>
-  <tabstop>comboCaptureMixerDevice</tabstop>
-  <tabstop>comboCaptureMixerChannel</tabstop>
-  <tabstop>m_checkboxActivePlayback</tabstop>
-  <tabstop>m_checkboxActivePlaybackMuteCaptureChannelPlayback</tabstop>
-  <tabstop>m_checkboxMuteOnPowerOff</tabstop>
-  <tabstop>m_checkboxVolumeZeroOnPowerOff</tabstop>
-  <tabstop>editMinFrequency</tabstop>
-  <tabstop>editMaxFrequency</tabstop>
-  <tabstop>editScanStep</tabstop>
-  <tabstop>editSignalMinQuality</tabstop>
-  <tabstop>rbV4L1Version</tabstop>
-  <tabstop>rbV4L2Version</tabstop>
-  <tabstop>m_checkboxForceRDSEnabled</tabstop>
   <tabstop>sliderDeviceVolume</tabstop>
   <tabstop>sliderTreble</tabstop>
   <tabstop>sliderBass</tabstop>
@@ -916,22 +1012,5 @@ p, li { white-space: pre-wrap; }
   <include location="local">knuminput.h</include>
  </includes>
  <resources/>
- <connections>
-  <connection>
-   <sender>m_checkboxActivePlayback</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>m_checkboxActivePlaybackMuteCaptureChannelPlayback</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>157</x>
-     <y>248</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

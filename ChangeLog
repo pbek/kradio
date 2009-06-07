@@ -8,6 +8,7 @@
           support if one lib was missing
         - Fix of Qt3Support Handling for Streaming Plugin
         - Fix of top level CMakeLists.txt for proper KDE4 defines
+        - Big Configuration Dialog Size Fix: The size should fit now on netbooks
 
 2009-05-31
 
