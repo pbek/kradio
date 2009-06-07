@@ -1419,7 +1419,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
 
     V4LCaps v4l_caps[V4L_Version_COUNT];
     for (int i = 0; i < V4L_Version_COUNT; ++i) {
-        v4l_caps[i].description = device;
+        v4l_caps[i].description = i18n("V4L Plugin (V4L%1 mode, invalid device): %2", i, device);
     }
 
     fd = open(device.toLocal8Bit(), O_RDONLY);
@@ -1427,7 +1427,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
     if (fd < 0) {
         logWarning("V4LRadio::readV4LCaps: " +
                    i18n("cannot open %1", device));
-        return V4LCaps();
+        return v4l_caps[m_V4L_version_override];
     }
 
     video_capability caps;
@@ -1442,7 +1442,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
         memcpy(buffer, caps.name, l);
         buffer[l] = 0;
-        v4l_caps[V4L_Version1].description = buffer;
+        v4l_caps[V4L_Version1].description = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version1, buffer);
 
         v4l_caps[V4L_Version1].hasMute = false;
         v4l_caps[V4L_Version1].unsetVolume();
@@ -1485,7 +1485,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
         memcpy(buffer, caps.name, l);
         buffer[l] = 0;
-        // v4l_caps[V4L_Version2].description = buffer;
+        v4l_caps[V4L_Version2].description = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version2, buffer);
 
         v4l2_queryctrl  ctrl;
 

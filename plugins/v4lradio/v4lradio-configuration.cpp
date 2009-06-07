@@ -568,7 +568,17 @@ void V4LRadioConfiguration::slotOK()
     sendMinFrequency(((float)editMinFrequency->value()) / 1000.0);
     sendMaxFrequency(((float)editMaxFrequency->value()) / 1000.0);
     sendSignalMinQuality(m_SoundStreamID, editSignalMinQuality->value() * 0.01);
+
+    V4LVersion tmp_vo = V4L_VersionUnkown;
+    if (rbV4L1Version->isChecked()) {
+        tmp_vo = V4L_Version1;
+    }
+    else if (rbV4L2Version->isChecked()) {
+        tmp_vo = V4L_Version2;
+    }
+    sendV4LVersionOverride(tmp_vo);
     sendRadioDevice(editRadioDevice->text());
+
     sendScanStep(((float)editScanStep->value()) / 1000.0);
 
     QString mixer_id;
@@ -594,14 +604,6 @@ void V4LRadioConfiguration::slotOK()
     sendMuteOnPowerOff (m_checkboxMuteOnPowerOff->isChecked());
     sendForceRDSEnabled(m_checkboxForceRDSEnabled->isChecked());
     sendVolumeZeroOnPowerOff(m_checkboxVolumeZeroOnPowerOff->isChecked());
-    V4LVersion tmp_vo = V4L_VersionUnkown;
-    if (rbV4L1Version->isChecked()) {
-        tmp_vo = V4L_Version1;
-    }
-    else if (rbV4L2Version->isChecked()) {
-        tmp_vo = V4L_Version2;
-    }
-    sendV4LVersionOverride(tmp_vo);
 
     queryTreble (m_SoundStreamID, m_orgTreble);
     queryBass   (m_SoundStreamID, m_orgBass);

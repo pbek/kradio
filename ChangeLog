@@ -12,6 +12,7 @@
         - Fixed segfault if shortcuts plugin is unloaded
         - Fixed crash when v4l plugin is removed and station scan is run afterwards
         - Fixed version for lame package in debian control file for ubuntu compatibility
+        - Better description strings for V4L Devices
 
 2009-05-31
 
