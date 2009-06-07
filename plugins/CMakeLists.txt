@@ -111,12 +111,12 @@ IF(WITH_FFMPEG)
         ENDIF(HAVE_MMSX_INC AND HAVE_MMSX_LIB)
     ENDIF(LIBMMS_FOUND)
 
-    IF ( NOT LIBMMS_FOUND AND NOT LIBAVFORMAT_FOUND )
+    IF ( NOT LIBMMS_FOUND OR NOT LIBAVFORMAT_FOUND )
         SET(WITH_FFMPEG OFF
             CACHE BOOL "libffmpeg and/or libmms files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: libffmpeg and/or libmms files could not be found on this system. Compiling without Internet Radio Stations support")
-    ENDIF( NOT LIBMMS_FOUND AND NOT LIBAVFORMAT_FOUND )
+    ENDIF( NOT LIBMMS_FOUND OR NOT LIBAVFORMAT_FOUND )
 
 ENDIF(WITH_FFMPEG)
 
