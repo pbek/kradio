@@ -21,7 +21,6 @@
 
 #include <klocale.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 RecordingEncodingOgg::RecordingEncodingOgg(QObject *parent,            SoundStreamID ssid,
                                            const RecordingConfig &cfg, const RadioStation *rs,
@@ -87,8 +86,8 @@ void RecordingEncodingOgg::encode(const char *_buffer, size_t buffer_size, char 
                 int result = ogg_stream_pageout(&m_OggStream, &ogg_pg);
                 if (!result) break;
 
-                int n  = fwrite(ogg_pg.header, 1, ogg_pg.header_len, m_OggOutput);
-                    n += fwrite(ogg_pg.body,   1, ogg_pg.body_len,   m_OggOutput);
+                int n  = m_OggOutput->write((const char*)ogg_pg.header, ogg_pg.header_len);
+                    n += m_OggOutput->write((const char*)ogg_pg.body,   ogg_pg.body_len);
 
                 m_encodedSize += n;
 
@@ -134,9 +133,10 @@ static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, c
 bool RecordingEncodingOgg::openOutput(const QString &output)
 {
 #ifdef HAVE_OGG
-    m_OggOutput = fopen(output.toLocal8Bit(), "wb+");
-    if (!m_OggOutput) {
-        m_errorString += i18n("Cannot open Ogg/Vorbis output file %1. ", output);
+    m_OggOutput = new QFile(output);
+    m_OggOutput->open(QIODevice::WriteOnly);
+    if (m_OggOutput->error()) {
+        m_errorString += i18n("Cannot open Ogg/Vorbis output file %1: %2", output, m_OggOutput->errorString());
         m_error = true;
     }
 
@@ -195,8 +195,8 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
 
         if (!result) break;
 
-        int n  = fwrite(ogg_page.header, 1, ogg_page.header_len, m_OggOutput);
-            n += fwrite(ogg_page.body,   1, ogg_page.body_len,   m_OggOutput);
+        int n  = m_OggOutput->write((const char*)ogg_page.header, ogg_page.header_len);
+            n += m_OggOutput->write((const char*)ogg_page.body,   ogg_page.body_len);
 
         if(n != ogg_page.header_len + ogg_page.body_len) {
             m_error = true;
@@ -208,8 +208,13 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
     vorbis_comment_clear (&vc);
 
     if (m_error) {
-        if (m_OggOutput)  fclose (m_OggOutput);
-        m_OggOutput = NULL;
+        if (m_OggOutput) {
+            if (m_OggOutput->isOpen()) {
+                m_OggOutput->close();
+            }
+            delete m_OggOutput;
+            m_OggOutput = NULL;
+        }
         free(m_OggExportBuffer);
         m_OggExportBuffer     = NULL;
         m_OggExportBufferSize = 0;
@@ -235,7 +240,10 @@ void RecordingEncodingOgg::closeOutput()
         // flush buffer
         encode(tmp_buf, tmp_size, tmp_buf, tmp_size);
 
-        fclose(m_OggOutput);
+        if (m_OggOutput->isOpen()) {
+            m_OggOutput->close();
+        }
+        delete m_OggOutput;
         m_OggOutput = NULL;
 
         free(m_OggExportBuffer);

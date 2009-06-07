@@ -28,6 +28,8 @@
     #include <vorbis/vorbisenc.h>
 #endif
 
+#include <QtCore/QFile>
+
 class RecordingEncodingOgg : public RecordingEncoding
 {
 public:
@@ -41,7 +43,7 @@ protected:
     void               encode(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
 
 #ifdef HAVE_OGG
-    FILE              *m_OggOutput;
+    QFile             *m_OggOutput;
     char              *m_OggExportBuffer;
     size_t             m_OggExportBufferSize;
     ogg_stream_state   m_OggStream;
