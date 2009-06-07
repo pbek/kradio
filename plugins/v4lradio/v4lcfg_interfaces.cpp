@@ -172,7 +172,7 @@ IF_IMPL_QUERY   (   float IV4LCfgClient::queryDeviceVolume (),
                     getDeviceVolume(),
                     0.0
                 )
-IF_IMPL_QUERY   (   V4LCaps IV4LCfgClient::queryCapabilities(QString dev),
+IF_IMPL_QUERY   (   V4LCaps IV4LCfgClient::queryCapabilities(const QString &dev),
                     getCapabilities(dev),
                     V4LCaps()
                 )

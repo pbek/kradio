@@ -108,8 +108,9 @@ public:
     bool connectI    (Interface *i);
     bool disconnectI (Interface *i);
 
-    virtual void noticeConnectedI (IRadioDevice *i, bool pointer_valid);
-    virtual void noticeDisconnectI(IRadioDevice *i, bool pointer_valid);
+    virtual void noticeConnectedI   (IRadioDevice *i, bool pointer_valid);
+    virtual void noticeDisconnectI  (IRadioDevice *i, bool pointer_valid);
+    virtual void noticeDisconnectedI(IRadioDevice *i, bool pointer_valid);
 
     INLINE_IMPL_DEF_noticeConnectedI(IRadio);
     INLINE_IMPL_DEF_noticeConnectedI(IRadioDevicePool);
@@ -122,6 +123,12 @@ public:
     INLINE_IMPL_DEF_noticeDisconnectI(ITimeControlClient);
     INLINE_IMPL_DEF_noticeDisconnectI(ISoundStreamClient);
     INLINE_IMPL_DEF_noticeDisconnectI(IErrorLogClient);
+
+    INLINE_IMPL_DEF_noticeDisconnectedI(IRadio);
+    INLINE_IMPL_DEF_noticeDisconnectedI(IRadioDevicePool);
+    INLINE_IMPL_DEF_noticeDisconnectedI(ITimeControlClient);
+    INLINE_IMPL_DEF_noticeDisconnectedI(ISoundStreamClient);
+    INLINE_IMPL_DEF_noticeDisconnectedI(IErrorLogClient);
 
     // IRadioDevicePool methods
 

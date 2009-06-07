@@ -463,8 +463,12 @@ bool Radio::noticeStationChanged (const RadioStation &_rs, const IRadioDevice *s
 
 bool Radio::noticeDescriptionChanged (const QString &s, const IRadioDevice *sender)
 {
-    if (sender == m_activeDevice)
+    if (sender == m_activeDevice) {
         notifyDeviceDescriptionChanged(s);
+    }
+    if (IRadioDeviceClient::iConnections.contains(const_cast<IRadioDevice*>(sender))) {
+        notifyDevicesChanged(IRadioDeviceClient::iConnections);
+    }
     return true;
 }
 
@@ -545,9 +549,14 @@ void Radio::noticeDisconnectI(IRadioDeviceClient::cmplInterface *rd, bool pointe
             setActiveDevice(IRadioDeviceClient::iConnections.first());
         }
     }
-    notifyDevicesChanged(IRadioDeviceClient::iConnections);
 }
 
+
+void Radio::noticeDisconnectedI(IRadioDeviceClient::cmplInterface *rd, bool pointer_valid)
+{
+    IRadioDeviceClient::noticeDisconnectedI(rd, pointer_valid);
+    notifyDevicesChanged(IRadioDeviceClient::iConnections);
+}
 
 // ITimeControlClient
 

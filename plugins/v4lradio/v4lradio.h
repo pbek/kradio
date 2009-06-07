@@ -207,7 +207,7 @@ ANSWERS:
     const QString &getPlaybackMixerChannel() const { return m_PlaybackMixerChannel; }
     const QString &getCaptureMixerChannel () const { return m_CaptureMixerChannel; }
     float          getDeviceVolume        () const;
-    V4LCaps        getCapabilities(QString dev = QString::null) const;
+    V4LCaps        getCapabilities(const QString &dev = QString::null) const;
 
     bool           getActivePlayback(bool & muteCaptureChannelPlayback) const { muteCaptureChannelPlayback = m_ActivePlaybackMuteCaptureChannelPlayback; return m_ActivePlayback; }
     bool           getMuteOnPowerOff()                                  const { return m_MuteOnPowerOff; }

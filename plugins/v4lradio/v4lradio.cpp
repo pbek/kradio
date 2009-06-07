@@ -1048,7 +1048,7 @@ bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QStrin
 }
 
 
-V4LCaps V4LRadio::getCapabilities(QString dev) const
+V4LCaps V4LRadio::getCapabilities(const QString &dev) const
 {
     if (dev.isNull()) {
         return m_caps;
@@ -1138,6 +1138,7 @@ bool V4LRadio::setV4LVersionOverride(V4LVersion vo)
         notifyV4LVersionOverrideChanged(m_V4L_version_override);
         m_caps = readV4LCaps(m_radioDev);
         notifyCapabilitiesChanged(m_caps);
+        notifyDescriptionChanged(m_caps.description);
     }
     return true;
 }
