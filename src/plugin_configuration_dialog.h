@@ -55,6 +55,11 @@ public:
     virtual void   restoreState (const KConfigGroup &);
     virtual void   restoreState (const KConfigGroup &c, bool b) { WidgetPluginBase::restoreState(c,b); }
 
+
+
+    virtual void noticePluginsChanged(const PluginList &);
+    virtual void noticePluginRenamed(PluginBase */*p*/, const QString &/*name*/);
+
 protected :
 
     virtual ConfigPageInfo  createConfigurationPage();
