@@ -28,6 +28,8 @@
 #include <kio/jobclasses.h>
 #include <kio/job.h>
 
+#include <unistd.h>
+
 #include "stationlist.h"
 #include "utils.h"
 #include "internetradio.h"
