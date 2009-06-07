@@ -54,8 +54,7 @@ Shortcuts::Shortcuts(const QString &instanceID, const QString &name)
       m_stdCollection    (NULL),
       m_stationCollection(NULL),
       m_stdActions       (NULL),
-      m_stationActions   (NULL),
-      m_ShortcutsEditor  (NULL)
+      m_stationActions   (NULL)
 {
     m_stdCollection     = new KActionCollection(this);
     m_stationCollection = new KActionCollection(this);
@@ -101,9 +100,8 @@ Shortcuts::Shortcuts(const QString &instanceID, const QString &name)
 
 Shortcuts::~Shortcuts()
 {
-    if (m_ShortcutsEditor) {
-        delete m_ShortcutsEditor;
-        m_ShortcutsEditor = NULL;
+    while (m_ShortcutsEditors.size()) {
+        delete m_ShortcutsEditors.first(); // will be automatically removed from list by destroyed signal
     }
     if (m_stationActions) {
         delete m_stationActions;
@@ -191,23 +189,45 @@ void   Shortcuts::restoreState (const KConfigGroup &c)
 
 ConfigPageInfo Shortcuts::createConfigurationPage()
 {
-    if (!m_ShortcutsEditor) {
-        m_ShortcutsEditor = new ShortcutsConfiguration();
-        updateShortcutsEditor();
-    }
+    ShortcutsConfiguration *tmp = new ShortcutsConfiguration();
+    QObject::connect(tmp, SIGNAL(destroyed(QObject *)), this, SLOT(slotConfigPageDestroyed(QObject *)));
+    m_ShortcutsEditors.append(tmp);
+    updateShortcutsEditor(tmp);
 
-    return ConfigPageInfo (m_ShortcutsEditor,
+    return ConfigPageInfo (tmp,
                            i18n("Shortcuts"),
                            i18n("Shortcuts Plugin"),
                            "preferences-desktop-keyboard"
                           );
 }
 
-void Shortcuts::updateShortcutsEditor()
+void Shortcuts::slotConfigPageDestroyed(QObject *o)
 {
-    m_ShortcutsEditor->clearCollections();
-    m_ShortcutsEditor->addCollection(m_stdActions    ->collection(), "KRadio4");
-    m_ShortcutsEditor->addCollection(m_stationActions->collection(), "KRadio4");
+    // IMPORTANT: if this slot is called, the descructor of
+    // ShortcutsConfiguration is already finished! Thus the object
+    // is officially no ShortcutsConfiguration any more, dynamic_cast would fail.
+    // But we need only the pointer here. That's ok.
+    ShortcutsConfiguration *scc = static_cast<ShortcutsConfiguration*>(o);
+    if (o && m_ShortcutsEditors.contains(scc)) {
+        m_ShortcutsEditors.removeAll(scc);
+    }
+}
+
+void Shortcuts::updateShortcutsEditor(ShortcutsConfiguration *c)
+{
+    if (c) {
+        c->clearCollections();
+        c->addCollection(m_stdActions    ->collection(), "KRadio4");
+        c->addCollection(m_stationActions->collection(), "KRadio4");
+    }
+}
+
+void Shortcuts::updateShortcutsEditors()
+{
+    ShortcutsConfiguration *sce = NULL;
+    foreach(sce, m_ShortcutsEditors) {
+        updateShortcutsEditor(sce);
+    }
 }
 
 /*AboutPageInfo Shortcuts::createAboutPage()
@@ -481,7 +501,7 @@ bool Shortcuts::noticeStationsChanged(const StationList &sl)
     foreach(a, oldActions.values()) {
         delete a;
     }
-    updateShortcutsEditor();
+    updateShortcutsEditors();
 
     return true;
 }

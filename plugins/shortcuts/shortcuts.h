@@ -141,11 +141,13 @@ protected slots:
     void slotKbdTimedOut();
     void slotActionTriggered(QAction *a);
     void slotStationTriggered(QAction *a);
+    void slotConfigPageDestroyed(QObject *);
 
 protected:
     void addAction(const QString &name, ShortcutID id, int key);
     void activateStation (int i);
-    void updateShortcutsEditor();
+    void updateShortcutsEditors();
+    void updateShortcutsEditor(ShortcutsConfiguration *c);
     void noticePluginsChanged(const PluginList &);
 
 
@@ -156,7 +158,8 @@ protected:
     KActionCollection      *m_stationCollection;
     KActionCategory        *m_stdActions;
     KActionCategory        *m_stationActions;
-    ShortcutsConfiguration *m_ShortcutsEditor;
+
+    QList<ShortcutsConfiguration*>   m_ShortcutsEditors;
 
 
 };
