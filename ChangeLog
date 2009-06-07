@@ -4,6 +4,8 @@
         - plugin config is read if the plugin is manually added in config dialog
         - removed deprecated usage of stdio / FILE* stuff from ogg/vorbis encoding
         - Added better handling for KUrlRequester if KDE >= 4.3
+        - Fixed typo in plugins/CMakeLists.txt that even build ffmpeg
+          support if one lib was missing
 
 2009-05-31
 
