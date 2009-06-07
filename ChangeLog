@@ -7,6 +7,7 @@
         - Fixed typo in plugins/CMakeLists.txt that even build ffmpeg
           support if one lib was missing
         - Fix of Qt3Support Handling for Streaming Plugin
+        - Fix of top level CMakeLists.txt for proper KDE4 defines
 
 2009-05-31
 

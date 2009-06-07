@@ -25,14 +25,16 @@ IF(Subversion_FOUND)
 ENDIF(Subversion_FOUND)
 
 MESSAGE(STATUS "Compiling KRadio4-${KRADIO_VERSION}")
-ADD_DEFINITIONS( -DKRADIO_VERSION="\\"${KRADIO_VERSION}\\"" )
 
+ADD_DEFINITIONS (
+    -DKRADIO_VERSION="\\"${KRADIO_VERSION}\\""
+    ${KDE4_DEFINITIONS}
+)
 
 option(WITH_KRADIO_FIXMES "Enable FIXME warnings" OFF)
 IF(WITH_KRADIO_FIXMES)
     ADD_DEFINITIONS( -DKRADIO_ENABLE_FIXMES )
 ENDIF(WITH_KRADIO_FIXMES)
-
 
 INCLUDE_DIRECTORIES(
     ${KDE4_INCLUDE_DIR}
@@ -49,6 +51,10 @@ SET(INSTALL_TARGETS_DEFAULT_ARGS RUNTIME DESTINATION "${BIN_INSTALL_DIR}"
 
 KDE4_INSTALL_ICONS( ${ICON_INSTALL_DIR}  )
 
+
+
+
+
 ADD_SUBDIRECTORY(icons)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
@@ -56,16 +62,15 @@ ADD_SUBDIRECTORY(presets)
 ADD_SUBDIRECTORY(po)
 
 
+########################################################################
+#     The lines below only affect the executable, no plugins!          #
+########################################################################
 
-
-
-add_definitions(
-    ${KDE4_DEFINITIONS}
+ADD_DEFINITIONS(
     -DQT3_SUPPORT
     -DKDE3_SUPPORT
     -DQT3_SUPPORT_WARNINGS
 )
-
 
 
 file(GLOB kradio_radiostation_sources
