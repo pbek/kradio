@@ -14,7 +14,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget3">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="stations">
       <attribute name="title">
@@ -393,6 +393,9 @@ p, li { white-space: pre-wrap; }
        <string>Preset &amp;File</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>11</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="editLabelPresetFile">
          <property name="text">
