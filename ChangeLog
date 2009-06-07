@@ -11,6 +11,7 @@
         - Big Configuration Dialog Size Fix: The size should fit now on netbooks
         - Fixed segfault if shortcuts plugin is unloaded
         - Fixed crash when v4l plugin is removed and station scan is run afterwards
+        - Fixed version for lame package in debian control file for ubuntu compatibility
 
 2009-05-31
 
