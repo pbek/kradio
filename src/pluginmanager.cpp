@@ -640,62 +640,69 @@ void PluginManager::restoreState (KConfig *c)
         BlockProfiler profile_plugin("PluginManager::restoreState - " + (*it)->pluginClassName());
         if (m_showProgressBar)
             progress->QWidget::setWindowTitle(i18n("Initializing Plugin %1", (*it)->pluginClassName()));
-        int d = KWindowSystem::currentDesktop();
 
+        restorePluginInstanceState (*it, c);
 
-        PluginBase *p                 = *it;
-        QString     orgName           = p->name();
-        QString     oldPrefix         = m_Name + "-";
-        bool        compatRestore     = false;
-        QString     restoreConfigName;
-
-        // we still have an old name with (generated) prefix
-        if (oldPrefix.length() && orgName.startsWith(oldPrefix) && c->hasGroup(orgName)) {
-
-            QString newName = orgName.right(orgName.length() - oldPrefix.length()).trimmed();
-
-            p->setName(newName);
-
-            restoreConfigName = orgName;
-            compatRestore     = true;
-
-        }
-
-        // must be here because p->name might be changed above.
-        QString storeConfigName = m_Name + "-" + p->pluginClassName() + "-" + p->name() + "-" + p->instanceID();
-
-        if (!compatRestore) {
-            // we have no generated prefix. might be a plugin generated with a new version of KRadio or named by the user
-
-            // is the config still stored with the old naming scheme (user named the plugin instance)
-            if (!c->hasGroup(storeConfigName)) {
-                restoreConfigName = orgName;
-                compatRestore     = true;
-            }
-        }
-
-        if (!compatRestore) {
-            restoreConfigName = storeConfigName;
-        }
-
-
-        p->restoreState(c->group(restoreConfigName));
-        if (restoreConfigName != storeConfigName) {
-            KConfigGroup   config = c->group(storeConfigName);
-            p->saveState   (config);
-            c->deleteGroup (restoreConfigName);
-        }
-
-
-
-
-        KWindowSystem::setCurrentDesktop(d);
         if (m_showProgressBar)
             progress->progressBar()->setValue(idx+1);
     }
     if (m_showProgressBar)
         delete progress;
 }
+
+
+
+
+void PluginManager::restorePluginInstanceState (PluginBase *p, KConfig *c) const
+{
+    int d = KWindowSystem::currentDesktop();
+
+    QString     orgName           = p->name();
+    QString     oldPrefix         = m_Name + "-";
+    bool        compatRestore     = false;
+    QString     restoreConfigName;
+
+    // we still have an old name with (generated) prefix
+    if (oldPrefix.length() && orgName.startsWith(oldPrefix) && c->hasGroup(orgName)) {
+
+        QString newName = orgName.right(orgName.length() - oldPrefix.length()).trimmed();
+
+        p->setName(newName);
+
+        restoreConfigName = orgName;
+        compatRestore     = true;
+
+    }
+
+    // must be here because p->name might be changed above.
+    QString storeConfigName = m_Name + "-" + p->pluginClassName() + "-" + p->name() + "-" + p->instanceID();
+
+    if (!compatRestore) {
+        // we have no generated prefix. might be a plugin generated with a new version of KRadio or named by the user
+
+        // is the config still stored with the old naming scheme (user named the plugin instance)
+        if (!c->hasGroup(storeConfigName)) {
+            restoreConfigName = orgName;
+            compatRestore     = true;
+        }
+    }
+
+    if (!compatRestore) {
+        restoreConfigName = storeConfigName;
+    }
+
+
+    p->restoreState(c->group(restoreConfigName));
+    if (restoreConfigName != storeConfigName) {
+        KConfigGroup   config = c->group(storeConfigName);
+        p->saveState   (config);
+        c->deleteGroup (restoreConfigName);
+    }
+
+    KWindowSystem::setCurrentDesktop(d);
+}
+
+
 
 PluginConfigurationDialog *PluginManager::getConfigDialog()
 {

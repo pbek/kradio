@@ -82,8 +82,10 @@ public :
 
     // operations on all plugins
 
-    virtual void         saveState    (KConfig *) const;
-    virtual void         restoreState (KConfig *);
+    virtual void         saveState                  (KConfig *) const;
+    virtual void         restoreState               (KConfig *);
+    virtual void         restorePluginInstanceState (PluginBase *p, KConfig *c) const;
+
     virtual void         startPlugins();
 
     // configuration dialog handling

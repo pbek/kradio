@@ -222,6 +222,9 @@ void PluginManagerConfiguration::slotNewPluginInstance()
                                                     &ok);
         if (ok && class_name.length() && object_name.length()) {
             PluginBase *p = m_Application->CreatePlugin(m_PluginManager, generateRandomID(70), class_name, object_name);
+
+            KConfig *cfg = m_Application->sessionConfig();
+            m_PluginManager->restorePluginInstanceState (p, cfg);
             p->startPlugin();
         }
     }
