@@ -94,7 +94,6 @@ protected slots:
     void slotSendPresetsByMail( const QString &url );
 
     void slotSearchStations(QAction *a);
-    void slotSearchStations0() { slotSearchStations(0); }
 
     void slotOK();
     void slotCancel();

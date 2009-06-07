@@ -13,6 +13,8 @@
         - Fixed crash when v4l plugin is removed and station scan is run afterwards
         - Fixed version for lame package in debian control file for ubuntu compatibility
         - Better description strings for V4L Devices
+        - First step towards simplified alsa interface
+        - Fixed double open & segfaults if keyboard is used for preset opening and station search
 
 2009-05-31
 

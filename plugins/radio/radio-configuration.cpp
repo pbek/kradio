@@ -114,8 +114,6 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
                      this, SLOT(slotStationDown()));
     QObject::connect(listStations, SIGNAL(sigStationActivated(int)),
                      this, SLOT(slotActivateStation( int )));
-    QObject::connect(buttonLoadPresets, SIGNAL(clicked()),
-                     this, SLOT(slotLoadPresets()));
     QObject::connect(buttonStorePresets, SIGNAL(clicked()),
                      this, SLOT(slotStorePresets()));
     QObject::connect(buttonLastChangeNow, SIGNAL(clicked()),
@@ -133,9 +131,6 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     mailLabel->setUrl ("mailto:emw-kradio-presets@nocabal.de");
     QObject::connect(mailLabel, SIGNAL(leftClickedUrl(const QString &)),
                      this, SLOT(slotSendPresetsByMail(const QString &)));
-
-    QObject::connect(buttonSearchStations, SIGNAL(clicked()),
-                     this, SLOT(slotSearchStations0()));
 
     m_devicePopup = new QMenu(buttonSearchStations);
     buttonSearchStations->setMenu(m_devicePopup);
@@ -632,7 +627,7 @@ void RadioConfiguration::slotSendPresetsByMail( const QString &url )
 
 void RadioConfiguration::slotSearchStations(QAction *a)
 {
-    int idev = a->data().toInt();
+    int idev = a ? a->data().toInt() : -1;
     if (idev >= 0 && idev < m_devices.count()) {
         IRadioDevice *dev = m_devices.at(idev);
 
