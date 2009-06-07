@@ -6,6 +6,7 @@
         - Added better handling for KUrlRequester if KDE >= 4.3
         - Fixed typo in plugins/CMakeLists.txt that even build ffmpeg
           support if one lib was missing
+        - Fix of Qt3Support Handling for Streaming Plugin
 
 2009-05-31
 
