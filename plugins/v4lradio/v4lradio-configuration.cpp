@@ -93,6 +93,9 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
     QObject::connect(comboCaptureMixerDevice, SIGNAL(activated(int)),
                      this, SLOT(slotComboCaptureMixerSelected(int)));
 
+    QObject::connect(editRadioDevice, SIGNAL(editingFinished()),
+                     this, SLOT(slotEditRadioDeviceChanged()));
+
     sliderBalance->installEventFilter(this);
 }
 
@@ -539,10 +542,10 @@ void V4LRadioConfiguration::slotEditRadioDeviceChanged()
     if (s != queryRadioDevice()) { // || !queryIsPowerOn()) {
         V4LCaps c = queryCapabilities(s);
         noticeDescriptionChanged(c.description);
-        //noticeCapabilitiesChanged(c);
+        noticeCapabilitiesChanged(c);
     } else {
         noticeDescriptionChanged(queryDescription());
-        //noticeCapabilitiesChanged(queryCapabilities());
+        noticeCapabilitiesChanged(queryCapabilities());
     }
 }
 
