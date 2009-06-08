@@ -873,6 +873,9 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
     }
 
     latency = (1000 * period_size) / format.m_SampleRate / 2; //oversampling factor 2 to be sure
+    if (latency < 20) {
+        latency = 20;
+    }
     logDebug(i18n("ALSA Plugin: Setting timer latency to %1 for %2", latency, pcm_name));
 
     if (!error) {

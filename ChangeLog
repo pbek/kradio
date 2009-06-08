@@ -5,6 +5,7 @@
           => workaround that disables all but the first read of the sound device list
         - Internet radio plugin: switched from deprecated avcodec_decode_audio2 to avcodec_decode_audio3
           which hopefully fixes crashes in libavformat under eeebuntu
+        - Limited QTimer based polling to 50 Hz in alsa module
 
 2009-06-07
     emw
