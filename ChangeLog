@@ -1,7 +1,10 @@
 2009-06-08
-    emw - Unfortunately, we cannot get around ALSA Bug 3461
+    emw
+        - Unfortunately, we cannot get around ALSA Bug 3461
           (https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3461)
           => workaround that disables all but the first read of the sound device list
+        - Internet radio plugin: switched from deprecated avcodec_decode_audio2 to avcodec_decode_audio3
+          which hopefully fixes crashes in libavformat under eeebuntu
 
 2009-06-07
     emw

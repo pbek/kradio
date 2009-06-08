@@ -257,17 +257,17 @@ void DecoderThread::run()
 
         if (!m_done && pkt.stream_index == m_av_audioStream) {
 
-            uint8_t *audio_pkt_data = pkt.data;
             int      audio_pkt_size = pkt.size;
 
             while (!m_error && !m_done && m_decoderOpened && (audio_pkt_size > 0)) {
                 char output_buf[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
                 int  generated_output_bytes = sizeof(output_buf);
-                int  processed_input_bytes  = avcodec_decode_audio2(m_av_aCodecCtx,
-                                                                    (int16_t *)output_buf,
-                                                                    &generated_output_bytes,
-                                                                    audio_pkt_data,
-                                                                    audio_pkt_size);
+
+                int  processed_input_bytes = avcodec_decode_audio3(m_av_aCodecCtx,
+                                                                   (int16_t *)output_buf,
+                                                                   &generated_output_bytes,
+                                                                   &pkt);
+
                 if (processed_input_bytes < 0) {
                     /* if error, skip frame */
                     addWarningString(i18n("%1: error decoding packet. Discarding packet\n").arg(m_playURL.pathOrUrl()));
@@ -293,7 +293,6 @@ void DecoderThread::run()
                     m_decodedSize += generated_output_bytes;
                 }
 
-                audio_pkt_data += processed_input_bytes;
                 audio_pkt_size -= processed_input_bytes;
 
             }
