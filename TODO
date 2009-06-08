@@ -4,10 +4,15 @@ For 4.0.0
 
 For 4.0.x
 
+  * --done-- use ALSA api with device strings, not card/subdev numbers
   * add support for pulse audio and other virtual alsa devices not enumeratable
   * use pkgconfig stuff where possible
   * add some indicator that init of lirc failed in config dialog
   * make recording name configurable
+  * --done-- fix segfault when closing/discarding empty scan result (particulary if no v4l is present)
+  * --done-- smaller config dialog (for netbooks)
+  * configurable clicks for systray: left/right/mid X power/hideshow/menu
+  * --done-- alsa config fixes
 
 For 4.1.0
 
