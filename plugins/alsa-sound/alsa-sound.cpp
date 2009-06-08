@@ -1748,10 +1748,23 @@ QList<MetaSoundDevice> AlsaSoundDevice::getPCMPlaybackDeviceDescriptions()
 }
 
 
+#define ALSA_BUG_WORKAROUND
+// see https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3461
+// snd_device_name_hint will only return correct list at first call.
+
 QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &filter)
 {
     void                    **hints = NULL;
+#ifdef ALSA_BUG_WORKAROUND
+    static
+#endif
     QList<MetaSoundDevice>    descriptions;  // key = DeviceName,
+
+#ifdef ALSA_BUG_WORKAROUND
+    if (descriptions.size()) {
+        return descriptions;
+    }
+#endif
 
     descriptions.append(MetaSoundDevice("default", "Default ALSA Device"));
 
@@ -1776,7 +1789,9 @@ QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &
         }
     }
     snd_device_name_free_hint(hints);
-    snd_config_update_free_global();
+
+    // the following line is prohibitiv - having pcm devices opend will crash kradio
+    //snd_config_update_free_global();
 
     /* debugging code only
     QString devString;
