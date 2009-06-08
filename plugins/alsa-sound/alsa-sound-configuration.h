@@ -72,42 +72,31 @@ protected slots:
 
     void slotUpdateConfig();
 
-    void slotPlaybackCardSelected(const QString &cardname);
-    void slotCaptureCardSelected(const QString &cardname);
-    void slotCheckSoundCards();
+    void slotPlaybackDeviceSelected(int comboIdx);
+    void slotCaptureDeviceSelected (int comboIdx);
+    void slotCheckSoundDevices();
 
 protected:
-    int listSoundDevices(KComboBox *combobox, QMap<QString, int> *devname2dev, QMap<int, QString> *dev2devname, QMap<int, int> *dev2idx, int card, snd_pcm_stream_t stream);
-    void saveCaptureMixerSettings();
-    void restoreCaptureMixerSettings();
+    QString condenseALSADeviceDescription(const QString &s);
+    void    saveCaptureMixerSettings();
+    void    restoreCaptureMixerSettings();
 
-    void getCaptureSoundFormat(SoundFormat &sf) const;
-    void setCaptureSoundFormat(const SoundFormat &sf);
+    void    getCaptureSoundFormat(SoundFormat &sf) const;
+    void    setCaptureSoundFormat(const SoundFormat &sf);
 
-    AlsaSoundDevice   *m_SoundDevice;
-    int                m_currentCaptureCard;
-    QMap<QString, int> m_name2card,
-                       m_name2capturedevice,
-                       m_playbackDeviceName2dev,
-                       m_captureDeviceName2dev;
-    QMap<int, QString> m_card2name,
-                       m_dev2playbackDeviceName,
-                       m_dev2captureDeviceName;
-    QMap<int, int>     m_captureCard2idx,
-                       m_captureDevice2idx,
-                       m_playbackCard2idx,
-                       m_playbackDevice2idx;
-    QFrame                            *m_groupMixerFrame;
-    QGridLayout                       *m_groupMixerFrameLayout;
-    QScrollArea                       *m_groupMixerScrollView;
-    QMap<QString, QAlsaMixerElement*>  m_MixerElements;
+    AlsaSoundDevice                       *m_SoundDevice;
+    QString                                m_currentCaptureDevice;
+    QFrame                                *m_groupMixerFrame;
+    QGridLayout                           *m_groupMixerFrameLayout;
+    QScrollArea                           *m_groupMixerScrollView;
+    QMap<QString, QAlsaMixerElement*>      m_MixerElements;
 
-    QMap<QString, AlsaConfigMixerSetting> m_MixerSettings;
+    QMap<QString, AlsaConfigMixerSetting>  m_MixerSettings;
 
-    bool              m_dirty;
-    bool              m_ignore_updates;
+    bool                                   m_dirty;
+    bool                                   m_ignore_updates;
 
-    QTimer            m_soundCardsCheckTimer;
+    QTimer                                 m_soundDevicesCheckTimer;
 };
 
 #endif

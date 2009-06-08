@@ -55,10 +55,6 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_hCaptureMixer(NULL),
       m_PlaybackFormat(),
       m_CaptureFormat(),
-      m_PlaybackCard(-1),
-      m_PlaybackDevice(-1),
-      m_CaptureCard(-1),
-      m_CaptureDevice(-1),
       m_PlaybackLatency(30),
       m_CaptureLatency(30),
       m_PassivePlaybackStreams(),
@@ -154,13 +150,11 @@ void AlsaSoundDevice::saveState (KConfigGroup &c) const
 
     c.writeEntry("use-threads",     m_use_threads);
 
-    c.writeEntry("playback-card",   m_PlaybackCard);
-    c.writeEntry("playback-device", m_PlaybackDevice);
-    c.writeEntry("capture-card",    m_CaptureCard);
-    c.writeEntry("capture-device",  m_CaptureDevice);
-    c.writeEntry("enable-playback", m_EnablePlayback);
-    c.writeEntry("enable-capture",  m_EnableCapture);
-    c.writeEntry("buffer-size",     (unsigned int) m_BufferSize);
+    c.writeEntry("playback-device-name", m_PlaybackDeviceName);
+    c.writeEntry("capture-device-name",  m_CaptureDeviceName);
+    c.writeEntry("enable-playback",      m_EnablePlayback);
+    c.writeEntry("enable-capture",       m_EnableCapture);
+    c.writeEntry("buffer-size",          (unsigned int) m_BufferSize);
     c.writeEntry("soundstreamclient-id", m_SoundStreamClientID);
 
     c.writeEntry("mixer-settings",  m_CaptureMixerSettings.count());
@@ -185,17 +179,15 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
 {
     PluginBase::restoreState(c);
 
-    m_use_threads     = c.readEntry("use-threads",      true);
+    m_use_threads     = c.readEntry("use-threads",          true);
 
-    m_EnablePlayback  = c.readEntry("enable-playback",  true);
-    m_EnableCapture   = c.readEntry("enable-capture",   true);
-    m_BufferSize      = c.readEntry("buffer-size",     96*1024);
-    int card          = c.readEntry("playback-card",   0);
-    int dev           = c.readEntry("playback-device", 0);
-    setPlaybackDevice(card, dev);
-    card              = c.readEntry("capture-card",   0);
-    dev               = c.readEntry("capture-device", 0);
-    setCaptureDevice(card, dev);
+    m_EnablePlayback  = c.readEntry("enable-playback",      true);
+    m_EnableCapture   = c.readEntry("enable-capture",       true);
+    m_BufferSize      = c.readEntry("buffer-size",          96*1024);
+    QString dev       = c.readEntry("playback-device-name", "default");
+    setPlaybackDevice(dev);
+    dev               = c.readEntry("capture-device-name",  "default");
+    setCaptureDevice(dev);
 
     setBufferSize(m_BufferSize);
 
@@ -608,14 +600,14 @@ void AlsaSoundDevice::slotPollPlayback()
                     if (framesWritten > 0) {
                         m_PlaybackBuffer.removeData(bytesWritten);
                     } else if (framesWritten == 0) {
-                        logError(i18n("ALSA Plugin: cannot write data for device plughw:%1,%2", m_PlaybackCard, m_PlaybackDevice));
+                        logError(i18n("ALSA Plugin: cannot write data for device %1", m_PlaybackDeviceName));
                         break;
                     } else if (framesWritten == -EAGAIN) {
                         // do nothing
                         break;
                     } else {
                         snd_pcm_prepare(m_hPlayback);
-                        logWarning(i18n("ALSA Plugin: buffer underrun for device plughw:%1,%2", m_PlaybackCard, m_PlaybackDevice));
+                        logWarning(i18n("ALSA Plugin: buffer underrun for device %1", m_PlaybackDeviceName));
                     }
                 }
             }
@@ -655,14 +647,14 @@ void AlsaSoundDevice::slotPollCapture()
                 m_CaptureBuffer.removeFreeSpace(bytesRead);
             } else if (framesRead == 0) {
                 snd_pcm_prepare(m_hCapture);
-                logError(i18n("ALSA Plugin: cannot read data from device plughw:%1,%2", m_CaptureCard, m_CaptureDevice));
+                logError(i18n("ALSA Plugin: cannot read data from device %1", m_CaptureDeviceName));
                 break;
             } else if (framesRead == -EAGAIN) {
                 // do nothing
                 break;
             } else {
                 snd_pcm_prepare(m_hCapture);
-                logWarning(i18n("ALSA Plugin: buffer overrun for device plughw:%1,%2 (buffersize=%3, buffer=%4)", m_CaptureCard, m_CaptureDevice, bufferSize, (long long unsigned)buffer));
+                logWarning(i18n("ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)", m_CaptureDeviceName, bufferSize, (long long unsigned)buffer));
             }
             // prepare for next read try
             buffer = m_CaptureBuffer.getFreeSpace(bufferSize);
@@ -676,7 +668,7 @@ void AlsaSoundDevice::slotPollCapture()
 
         checkThreadErrorsAndWarning();
 
-        QString dev = QString("alsa://plughw:%1,%2").arg(m_CaptureCard).arg(m_CaptureDevice);
+        QString dev = QString("alsa://%1").arg(m_CaptureDeviceName);
         while (m_CaptureBuffer.getFillSize() >= m_CaptureBuffer.getSize() / 8) {
             size_t size = 0;
             buffer = m_CaptureBuffer.getData(size);
@@ -700,7 +692,7 @@ void AlsaSoundDevice::slotPollCapture()
 
 bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 {
-    if (m_PlaybackCard < 0 || m_PlaybackDevice < 0)
+    if (!m_PlaybackDeviceName.length())
         return false;
 
     if (m_hPlayback) {
@@ -725,8 +717,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
     setWaitForMinPlaybackBufferFill(66/*percent*/);
 
-    QString dev = QString("plughw:%1,%2").arg(m_PlaybackCard).arg(m_PlaybackDevice);
-    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, dev.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, SND_PCM_NONBLOCK, m_PlaybackLatency);
+    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, m_PlaybackDeviceName.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, SND_PCM_NONBLOCK, m_PlaybackLatency);
 
     if (!error) {
 
@@ -756,7 +747,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
 bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 {
-    if (m_PlaybackCard < 0 || m_PlaybackDevice < 0)
+    if (!m_CaptureDeviceName.length())
         return false;
 
     if (m_hCapture) {
@@ -779,13 +770,11 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 
     m_CaptureFormat = format;
 
-    QString dev = QString("plughw:%1,%2").arg(m_CaptureCard).arg(m_CaptureDevice);
-
     if (m_CaptureFormatOverrideEnable) {
         m_CaptureFormat = m_CaptureFormatOverride;
     }
 
-    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, dev.toLocal8Bit(), SND_PCM_STREAM_CAPTURE, SND_PCM_NONBLOCK, m_CaptureLatency);
+    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, m_CaptureDeviceName.toLocal8Bit(), SND_PCM_STREAM_CAPTURE, SND_PCM_NONBLOCK, m_CaptureLatency);
 
     if (!error) {
 
@@ -906,7 +895,7 @@ bool AlsaSoundDevice::closePlaybackDevice(bool force)
             m_playbackThread->setDone();
             if(!m_playbackThread->wait(1000)) {
                 m_playbackThread->terminate();
-                logWarning(i18n("Alsa Plugin (device plughw:%1,%2): oops, had to kill the playback thread. It did not stop as desired", m_PlaybackCard, m_PlaybackDevice));
+                logWarning(i18n("Alsa Plugin (device %1): oops, had to kill the playback thread. It did not stop as desired", m_PlaybackDeviceName));
             }
             delete m_playbackThread;
             m_playbackThread = NULL;
@@ -938,7 +927,7 @@ bool AlsaSoundDevice::closeCaptureDevice(bool force)
             m_captureThread->setDone();
             if(!m_captureThread->wait(1000)) {
                 m_captureThread->terminate();
-                logWarning(i18n("Alsa Plugin (device plughw:%1,%2): oops, had to kill the capture thread. It did not stop as desired", m_CaptureCard, m_CaptureDevice));
+                logWarning(i18n("Alsa Plugin (device %1): oops, had to kill the capture thread. It did not stop as desired", m_PlaybackDeviceName));
             }
             delete m_captureThread;
             m_captureThread = NULL;
@@ -961,25 +950,25 @@ bool AlsaSoundDevice::closeCaptureDevice(bool force)
 
 bool AlsaSoundDevice::openPlaybackMixerDevice(bool reopen)
 {
-    return openMixerDevice(m_hPlaybackMixer, m_PlaybackCard, reopen, &m_PlaybackPollingTimer, m_PlaybackLatency);
+    return openMixerDevice(m_hPlaybackMixer, extractMixerName(m_PlaybackDeviceName), reopen, &m_PlaybackPollingTimer, m_PlaybackLatency);
 }
 
 
 bool AlsaSoundDevice::openCaptureMixerDevice(bool reopen)
 {
-//     logDebug("AlsaSoundDevice::openCaptureMixerDevice: card == " + QString::number(m_CaptureCard));
-    return openMixerDevice(m_hCaptureMixer, m_CaptureCard, reopen, &m_CapturePollingTimer, m_CaptureLatency);
+    //     logDebug("AlsaSoundDevice::openCaptureMixerDevice: card == " + m_CaptureDeviceName);
+    return openMixerDevice(m_hCaptureMixer, extractMixerName(m_CaptureDeviceName), reopen, &m_CapturePollingTimer, m_CaptureLatency);
 }
 
 
 bool AlsaSoundDevice::closePlaybackMixerDevice(bool force)
 {
-    return closeMixerDevice(m_hPlaybackMixer, m_PlaybackCard, m_PlaybackStreamID, m_hPlayback, force, &m_PlaybackPollingTimer);
+    return closeMixerDevice(m_hPlaybackMixer, extractMixerName(m_PlaybackDeviceName), m_PlaybackStreamID, m_hPlayback, force, &m_PlaybackPollingTimer);
 }
 
 bool AlsaSoundDevice::closeCaptureMixerDevice(bool force)
 {
-    return closeMixerDevice(m_hCaptureMixer, m_CaptureCard, m_CaptureStreamID, m_hCapture, force, &m_CapturePollingTimer);
+    return closeMixerDevice(m_hCaptureMixer, extractMixerName(m_CaptureDeviceName), m_CaptureStreamID, m_hCapture, force, &m_CapturePollingTimer);
 }
 
 
@@ -988,11 +977,11 @@ static int mixer_dummy_callback(snd_mixer_t *, unsigned int /*mask*/, snd_mixer_
     return 0;
 }
 
-bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool reopen, QTimer *timer, int timer_latency)
+bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, const QString &mixerName, bool reopen, QTimer *timer, int timer_latency)
 {
     if (reopen) {
         if (mixer_handle >= 0)
-            closeMixerDevice(mixer_handle, card, SoundStreamID::InvalidID, NULL, /* force = */ true, timer);
+            closeMixerDevice(mixer_handle, mixerName, SoundStreamID::InvalidID, NULL, /* force = */ true, timer);
         else
             return true;
     }
@@ -1003,22 +992,21 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
             staticLogError(i18n("ALSA Plugin: Error opening mixer"));
             error = true;
         }
-        QString cardid = "hw:" + QString::number(card);
         bool attached = false;
         if (!error) {
-            if (snd_mixer_attach (mixer_handle, cardid.toLocal8Bit()) < 0) {
-                staticLogError(i18n("ALSA Plugin: ERROR: snd_mixer_attach for card %1", card));
+            if (snd_mixer_attach (mixer_handle, mixerName.toLocal8Bit()) < 0) {
+                staticLogError(i18n("ALSA Plugin: ERROR: snd_mixer_attach for card %1", mixerName));
                 error = true;
             } else {
                 attached = true;
             }
         }
         if (!error && snd_mixer_selem_register(mixer_handle, NULL, NULL) < 0) {
-            staticLogError(i18n("ALSA Plugin: Error: snd_mixer_selem_register for card %1", card));
+            staticLogError(i18n("ALSA Plugin: Error: snd_mixer_selem_register for card %1", mixerName));
             error = true;
         }
         if (!error && snd_mixer_load (mixer_handle) < 0) {
-            staticLogError(i18n("ALSA Plugin: Error: snd_mixer_load for card %1", card));
+            staticLogError(i18n("ALSA Plugin: Error: snd_mixer_load for card %1", mixerName));
             error = true;
         }
         if (mixer_handle) {
@@ -1027,7 +1015,7 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
 
         if (error) {
             if (attached) {
-                snd_mixer_detach(mixer_handle, cardid.toLocal8Bit());
+                snd_mixer_detach(mixer_handle, mixerName.toLocal8Bit());
             }
             snd_mixer_close(mixer_handle);
             mixer_handle = NULL;
@@ -1041,7 +1029,7 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool
 }
 
 
-bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, int card, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer)
+bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, const QString &mixerName, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer)
 {
     if (!id.isValid() || force) {
 
@@ -1049,9 +1037,8 @@ bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, int card, Sou
             timer->stop();
 
         if (mixer_handle) {
-            QString cardid = "hw:" + QString::number(card);
             snd_mixer_free(mixer_handle);
-            snd_mixer_detach(mixer_handle, cardid.toLocal8Bit());
+            snd_mixer_detach(mixer_handle, mixerName.toLocal8Bit());
             snd_mixer_close (mixer_handle);
         }
         mixer_handle = NULL;
@@ -1060,9 +1047,9 @@ bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, int card, Sou
 }
 
 void AlsaSoundDevice::getPlaybackMixerChannels(
-    int card,
-    snd_mixer_t *__mixer_handle,
-    QStringList &retval, QMap<QString, AlsaMixerElement> &ch2id)
+    const QString &mixerName,
+    snd_mixer_t   *__mixer_handle,
+    QStringList   &retval, QMap<QString, AlsaMixerElement> &ch2id)
 {
     retval.clear();
     ch2id.clear();
@@ -1071,7 +1058,7 @@ void AlsaSoundDevice::getPlaybackMixerChannels(
     bool         use_tmp_handle = false;
 
     if (!mixer_handle) {
-        openMixerDevice(mixer_handle, card/*m_PlaybackCard*/, false, NULL, 0);
+        openMixerDevice(mixer_handle, mixerName, false, NULL, 0);
         use_tmp_handle = true;
     }
 
@@ -1095,16 +1082,16 @@ void AlsaSoundDevice::getPlaybackMixerChannels(
     }
 
     if (use_tmp_handle && mixer_handle) {
-        closeMixerDevice(mixer_handle, card /*m_PlaybackCard*/, SoundStreamID::InvalidID, NULL, true, NULL);
+        closeMixerDevice(mixer_handle, mixerName, SoundStreamID::InvalidID, NULL, true, NULL);
     }
 }
 
 void AlsaSoundDevice::getCaptureMixerChannels(
-    int card,
-    snd_mixer_t *__mixer_handle,
-    QStringList &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
-    QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
-    QStringList *all_list
+    const QString &mixerName,
+    snd_mixer_t   *__mixer_handle,
+    QStringList   &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
+    QStringList   &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
+    QStringList   *all_list
 )
 {
     vol_list.clear();
@@ -1117,8 +1104,8 @@ void AlsaSoundDevice::getCaptureMixerChannels(
     bool         use_tmp_handle = false;
 
     if (!mixer_handle) {
-//         staticLogDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + QString::number(card/*m_CaptureCard*/));
-            openMixerDevice(mixer_handle, card /*m_CaptureCard*/, false, NULL, 0);
+        //         staticLogDebug("AlsaSoundDevice::getCaptureMixerChannels: card == " + mixerName);
+        openMixerDevice(mixer_handle, mixerName, false, NULL, 0);
         use_tmp_handle = true;
     }
 
@@ -1153,7 +1140,7 @@ void AlsaSoundDevice::getCaptureMixerChannels(
     }
 
     if (use_tmp_handle && mixer_handle) {
-        closeMixerDevice(mixer_handle, card /*m_CaptureCard*/, SoundStreamID::InvalidID, NULL, true, NULL);
+        closeMixerDevice(mixer_handle, mixerName, SoundStreamID::InvalidID, NULL, true, NULL);
     }
 }
 
@@ -1296,7 +1283,7 @@ float AlsaSoundDevice::readPlaybackMixerVolume(const QString &channel, bool &mut
         }
     }
     logError("AlsaSound::readPlaybackMixerVolume: " +
-             i18n("error while reading volume from hwplug:%1,%2", m_PlaybackCard, m_PlaybackDevice));
+             i18n("error while reading volume from %1", extractMixerName(m_PlaybackDeviceName)));
     return 0;
 }
 
@@ -1324,7 +1311,7 @@ float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
         }
     }
     logError("AlsaSound::readCaptureMixerVolume: " +
-             i18n("error while reading volume from hwplug:%1,%2", m_CaptureCard, m_CaptureDevice));
+             i18n("error while reading volume from %1", extractMixerName(m_CaptureDeviceName)));
     return 0;
 }
 
@@ -1366,7 +1353,7 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &v
         }
     }
     logError("AlsaSound::writePlaybackMixerVolume: " +
-             i18n("error while writing volume %1 to hwplug:%2,%3", vol, m_PlaybackCard, m_PlaybackDevice));
+    i18n("error while writing volume %1 to %2", vol, extractMixerName(m_PlaybackDeviceName)));
     return false;
 }
 
@@ -1398,7 +1385,7 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
         }
     }
     logError("AlsaSound::writeCaptureMixerVolume: " +
-             i18n("error while writing volume %1 to hwplug:%2,%3", vol, m_CaptureCard, m_CaptureDevice));
+             i18n("error while writing volume %1 to %2", vol, extractMixerName(m_CaptureDeviceName)));
     return false;
 }
 
@@ -1418,7 +1405,7 @@ bool AlsaSoundDevice::writeCaptureMixerSwitch (const QString &channel, bool capt
         }
     }
     logError("AlsaSound::writeCaptureMixerSwitch: " +
-             i18n("error while setting capture switch %1 for hwplug:%2,%3", channel, m_CaptureCard, m_CaptureDevice));
+             i18n("error while setting capture switch %1 for %2", channel, extractMixerName(m_CaptureDeviceName)));
     return false;
 }
 
@@ -1455,7 +1442,7 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
 
     for (QMap<QString, AlsaConfigMixerSetting>::const_iterator it = m_CaptureMixerSettings.begin(); it != m_CaptureMixerSettings.end(); ++it) {
         const AlsaConfigMixerSetting &s = *it;
-        if (s.m_card == m_CaptureCard && s.m_use) {
+        if (s.m_mixerName == extractMixerName(m_CaptureDeviceName) && s.m_use) {
             float vol = s.m_volume;
             if (m_CaptureChannels2ID.contains(s.m_name))
                 writeCaptureMixerVolume(s.m_name, vol);
@@ -1512,20 +1499,19 @@ void AlsaSoundDevice::setCaptureFormatOverride(bool override_enabled, const Soun
     m_CaptureFormatOverrideEnable = override_enabled;
 }
 
-void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
+void AlsaSoundDevice::setPlaybackDevice(const QString &deviceName)
 {
-    if (m_PlaybackCard == card && m_PlaybackDevice == dev)
+    if (m_PlaybackDeviceName == deviceName)
         return;
 
-    m_PlaybackCard   = card;
-    m_PlaybackDevice = dev;
-    SoundFormat f = m_PlaybackFormat;
+    m_PlaybackDeviceName = deviceName;
+    SoundFormat f        = m_PlaybackFormat;
     if (m_hPlayback)
         openPlaybackDevice(f, /* reopen = */ true);
     if (m_hPlaybackMixer)
         openPlaybackMixerDevice(/* reopen = */ true);
 
-    getPlaybackMixerChannels(m_PlaybackCard,
+    getPlaybackMixerChannels(extractMixerName(m_PlaybackDeviceName),
                              m_hPlaybackMixer,
                              m_PlaybackChannels, m_PlaybackChannels2ID);
     notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
@@ -1535,22 +1521,19 @@ void AlsaSoundDevice::setPlaybackDevice(int card, int dev)
 
 
 
-void AlsaSoundDevice::setCaptureDevice(int card, int dev)
+void AlsaSoundDevice::setCaptureDevice(const QString &deviceName)
 {
-//     logDebug("AlsaSoundDevice::setCaptureDevice-1: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
-    if (m_CaptureCard == card && m_CaptureDevice == dev)
+    if (m_CaptureDeviceName == deviceName)
         return;
-//     logDebug("AlsaSoundDevice::setCaptureDevice-2: m_CaptureCard == " + QString::number(m_CaptureCard) + ", card == " + QString::number(card));
 
-    m_CaptureCard   = card;
-    m_CaptureDevice = dev;
-    SoundFormat f   = m_CaptureFormat;
+    m_CaptureDeviceName = deviceName;
+    SoundFormat f       = m_CaptureFormat;
     if (m_hCapture)
         openCaptureDevice(f, /* reopen = */ true);
     if (m_hCaptureMixer)
         openCaptureMixerDevice(/* reopen = */ true);
 
-    getCaptureMixerChannels(m_CaptureCard,
+    getCaptureMixerChannels(extractMixerName(m_CaptureDeviceName),
                             m_hCaptureMixer,
                             m_CaptureChannels, m_CaptureChannels2ID, m_CaptureChannelsSwitch, m_CaptureChannelsSwitch2ID);
     notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
@@ -1722,21 +1705,21 @@ void  AlsaSoundDevice::checkThreadErrorsAndWarning()
 {
     if (m_captureThread) {
         if (m_captureThread->error()) {
-            logError(i18n("AlsaPlugin(capture thread on plughw:%1,%2): %3", m_CaptureCard, m_CaptureDevice, m_captureThread->errorString()));
+            logError  (i18n("AlsaPlugin(capture thread on %1): %2", m_CaptureDeviceName, m_captureThread->errorString()));
             m_captureThread->resetError();
         }
         if (m_captureThread->warning()) {
-            logWarning(i18n("AlsaPlugin(capture thread on plughw:%1,%2): %3", m_CaptureCard, m_CaptureDevice, m_captureThread->warningString()));
+            logWarning(i18n("AlsaPlugin(capture thread on %1): %2", m_CaptureDeviceName, m_captureThread->warningString()));
             m_captureThread->resetWarning();
         }
     }
     if (m_playbackThread) {
         if (m_playbackThread->error()) {
-            logError(i18n("AlsaPlugin(playback thread on plughw:%1,%2): %3", m_PlaybackCard, m_PlaybackDevice, m_playbackThread->errorString()));
+            logError  (i18n("AlsaPlugin(playback thread on %1): %2", m_CaptureDeviceName, m_playbackThread->errorString()));
             m_playbackThread->resetError();
         }
         if (m_playbackThread->warning()) {
-            logWarning(i18n("AlsaPlugin(playback thread on plughw:%1,%2): %3", m_PlaybackCard, m_PlaybackDevice, m_playbackThread->warningString()));
+            logWarning(i18n("AlsaPlugin(playback thread on %1): %2", m_CaptureDeviceName, m_playbackThread->warningString()));
             m_playbackThread->resetWarning();
         }
     }
@@ -1749,5 +1732,102 @@ void AlsaSoundDevice::setName(const QString &n)
     notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
     notifyCaptureChannelsChanged (m_SoundStreamClientID, m_CaptureChannels);
 }
+
+
+
+
+
+QList<MetaSoundDevice> AlsaSoundDevice::getPCMCaptureDeviceDescriptions()
+{
+    return getPCMDeviceDescriptions("Input");
+}
+
+QList<MetaSoundDevice> AlsaSoundDevice::getPCMPlaybackDeviceDescriptions()
+{
+    return getPCMDeviceDescriptions("Output");
+}
+
+
+QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &filter)
+{
+    void                    **hints = NULL;
+    QList<MetaSoundDevice>    descriptions;  // key = DeviceName,
+
+    descriptions.append(MetaSoundDevice("default", "Default ALSA Device"));
+
+    if (snd_device_name_hint(-1, "pcm", &hints) < 0)
+        return descriptions;
+
+    for (void **current_hint = hints; *current_hint; ++current_hint) {
+        char *name  = snd_device_name_get_hint(*current_hint, "NAME");
+        char *descr = snd_device_name_get_hint(*current_hint, "DESC");
+        char *dir   = snd_device_name_get_hint(*current_hint, "IOID");
+        if (!dir || filter == dir) {
+            descriptions.append(MetaSoundDevice(name, descr));
+        }
+        if (name != NULL) {
+            free(name);
+        }
+        if (descr != NULL) {
+            free(descr);
+        }
+        if (dir != NULL) {
+            free(dir);
+        }
+    }
+    snd_device_name_free_hint(hints);
+    snd_config_update_free_global();
+
+    /* debugging code only
+    QString devString;
+    snd_mixer_t         *mixer     = NULL;
+    int err = snd_mixer_open (&mixer, 0);
+    if (!err) {
+        foreach(devString, deviceStrings) {
+            err = snd_mixer_attach (mixer, extractMixerName(devString).toLocal8Bit());
+            if (!err) {
+            }
+            else {
+                printf("%s\n", snd_strerror(err));
+            }
+            snd_mixer_detach(mixer, devString.toLocal8Bit());
+        }
+        snd_mixer_close(mixer);
+    } else {
+        printf("%s\n", snd_strerror(err));
+    }
+    */
+
+    return descriptions;
+}
+
+
+QString AlsaSoundDevice::extractMixerName(const QString &devString)
+{
+    QString mixerString = devString;
+
+    int idx_colon = mixerString.indexOf(":");
+    if (idx_colon >= 0) {
+        mixerString = mixerString.mid(idx_colon + 1);
+    }
+    QString card_prefix = "CARD=";
+    if (mixerString.startsWith(card_prefix)) {
+        mixerString = mixerString.mid(card_prefix.length());
+    }
+    int idx_comma = mixerString.indexOf(",");
+    if (idx_comma >= 0) {
+        mixerString = mixerString.left(idx_comma);
+    }
+
+    if (mixerString != "default") {
+        mixerString = "hw:" + mixerString;
+    }
+    return mixerString;
+}
+
+
+
+
+
 
 #include "alsa-sound.moc"

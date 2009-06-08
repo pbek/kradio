@@ -15,6 +15,7 @@
         - Better description strings for V4L Devices
         - First step towards simplified alsa interface
         - Fixed double open & segfaults if keyboard is used for preset opening and station search
+        - Big ALSA fix: Using no more card/dev numbers but device strings got by _hint functions
 
 2009-05-31
 

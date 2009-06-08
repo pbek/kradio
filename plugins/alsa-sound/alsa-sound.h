@@ -40,6 +40,15 @@
 
 enum DUPLEX_MODE { DUPLEX_UNKNOWN, DUPLEX_FULL, DUPLEX_HALF };
 
+struct MetaSoundDevice
+{
+    MetaSoundDevice(const QString &name, const QString &description)
+    : m_name(name), m_description(description) {}
+    MetaSoundDevice() {}
+
+    QString  m_name;
+    QString  m_description;
+};
 
 struct SoundStreamConfig
 {
@@ -103,6 +112,14 @@ public:
     virtual bool   connectI(Interface *i);
     virtual bool   disconnectI(Interface *i);
 
+
+public:
+
+    static QList<MetaSoundDevice> getPCMCaptureDeviceDescriptions();
+    static QList<MetaSoundDevice> getPCMPlaybackDeviceDescriptions();
+    static QList<MetaSoundDevice> getPCMDeviceDescriptions(const QString &filter);
+    static QString                extractMixerName(const QString &devString);
+
     // PluginBase
 
 public:
@@ -137,10 +154,12 @@ ANSWERS:
 
 public:
     static
-    void getPlaybackMixerChannels(int card, snd_mixer_t *mixer_handle,
+    void getPlaybackMixerChannels(const QString &mixerName,
+                                  snd_mixer_t *mixer_handle,
                                   QStringList &retval, QMap<QString, AlsaMixerElement> &int2id);
     static
-    void getCaptureMixerChannels (int card, snd_mixer_t *mixer_handle,
+    void getCaptureMixerChannels (const QString &mixerName,
+                                  snd_mixer_t *mixer_handle,
                                   QStringList &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
                                   QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
                                   QStringList *all_list = NULL);
@@ -192,13 +211,11 @@ RECEIVERS:
 
     // Config Access
 
-    int            getBufferSize()      const { return m_BufferSize; }
-    bool           isPlaybackEnabled()  const { return m_EnablePlayback; }
-    bool           isCaptureEnabled()   const { return m_EnableCapture;  }
-    int            getPlaybackCard()    const { return m_PlaybackCard; }
-    int            getPlaybackDevice()  const { return m_PlaybackDevice; }
-    int            getCaptureCard()     const { return m_CaptureCard; }
-    int            getCaptureDevice()   const { return m_CaptureDevice; }
+    int            getBufferSize()          const { return m_BufferSize; }
+    bool           isPlaybackEnabled()      const { return m_EnablePlayback; }
+    bool           isCaptureEnabled()       const { return m_EnableCapture;  }
+    const QString &getPlaybackDeviceName()  const { return m_PlaybackDeviceName; }
+    const QString &getCaptureDeviceName()   const { return m_CaptureDeviceName; }
     const QMap<QString, AlsaConfigMixerSetting> &
                    getCaptureMixerSettings() const { return m_CaptureMixerSettings; }
     bool           getSoftPlaybackVolume(double &correction_factor) const { correction_factor = m_SoftPlaybackVolumeCorrectionFactor; return m_SoftPlaybackVolumeEnabled; }
@@ -207,8 +224,8 @@ RECEIVERS:
     void           setBufferSize(int s);
     void           enablePlayback(bool on);
     void           enableCapture(bool on);
-    void           setPlaybackDevice(int card, int device);
-    void           setCaptureDevice(int card, int device);
+    void           setPlaybackDevice(const QString &deviceName);
+    void           setCaptureDevice(const QString &deviceName);
     void           setCaptureMixerSettings(const QMap<QString, AlsaConfigMixerSetting> &map);
     void           setSoftPlaybackVolume(bool enable, double correction_factor);
     void           setCaptureFormatOverride(bool override_enabled, const SoundFormat &sf);
@@ -232,12 +249,12 @@ protected:
     bool   closePlaybackDevice(bool force = false);
     bool   closeCaptureDevice (bool force = false);
 
-    bool   openPlaybackMixerDevice (bool reopen = false);
-    bool   openCaptureMixerDevice  (bool reopen = false);
-    static bool   openMixerDevice(snd_mixer_t *&mixer_handle, int card, bool reopen, QTimer *timer, int timer_latency);
-    bool   closeCaptureMixerDevice (bool force = false);
-    bool   closePlaybackMixerDevice(bool force = false);
-    static bool   closeMixerDevice(snd_mixer_t *&mixer_handle, int card, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer);
+           bool   openPlaybackMixerDevice (bool reopen = false);
+           bool   openCaptureMixerDevice  (bool reopen = false);
+    static bool   openMixerDevice(snd_mixer_t *&mixer_handle, const QString &mixerName, bool reopen, QTimer *timer, int timer_latency);
+           bool   closeCaptureMixerDevice (bool force = false);
+           bool   closePlaybackMixerDevice(bool force = false);
+    static bool   closeMixerDevice(snd_mixer_t *&mixer_handle, const QString &mixerName, SoundStreamID id, snd_pcm_t *pcm_handle, bool force, QTimer *timer);
 
     void   checkMixerVolume(SoundStreamID id);
     float  readPlaybackMixerVolume(const QString &channel, bool &muted) const;
@@ -256,10 +273,8 @@ protected:
 
     SoundFormat     m_PlaybackFormat;
     SoundFormat     m_CaptureFormat;
-    int             m_PlaybackCard;
-    int             m_PlaybackDevice;
-    int             m_CaptureCard;
-    int             m_CaptureDevice;
+    QString         m_PlaybackDeviceName;
+    QString         m_CaptureDeviceName;
 
     unsigned        m_PlaybackLatency;
     unsigned        m_CaptureLatency;

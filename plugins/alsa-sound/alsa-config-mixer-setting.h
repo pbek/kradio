@@ -27,15 +27,15 @@ class AlsaConfigMixerSetting
 public:
     AlsaConfigMixerSetting();
     AlsaConfigMixerSetting(const KConfigGroup &c, const QString &prefix);
-    AlsaConfigMixerSetting(int card, const QString &name, bool use, bool active, float volume);
+    AlsaConfigMixerSetting(const QString &mixerName, const QString &name, bool use, bool active, float volume);
     ~AlsaConfigMixerSetting();
 
-    QString getIDString() const { return getIDString(m_card, m_name); }
-    static QString getIDString(int card, const QString &m_name);
+    QString getIDString() const { return getIDString(m_mixerName, m_name); }
+    static QString getIDString(const QString &mixerName, const QString &m_name);
 
     void saveState(KConfigGroup &c, const QString &prefix) const;
 
-    int     m_card;
+    QString m_mixerName;
     QString m_name;
     bool    m_use;
     bool    m_active;

@@ -20,7 +20,7 @@
 #include <kconfiggroup.h>
 
 AlsaConfigMixerSetting::AlsaConfigMixerSetting()
- : m_card(-1),
+ : m_mixerName(QString::null),
    m_name(QString::null),
    m_use(false),
    m_active(false),
@@ -30,15 +30,15 @@ AlsaConfigMixerSetting::AlsaConfigMixerSetting()
 
 AlsaConfigMixerSetting::AlsaConfigMixerSetting(const KConfigGroup &c, const QString &prefix)
 {
-    m_card   = c.readEntry(prefix+"card",   -1);
-    m_name   = c.readEntry(prefix+"name",   QString());
-    m_use    = c.readEntry(prefix+"use",    false);
-    m_active = c.readEntry(prefix+"active", false);
-    m_volume = c.readEntry(prefix+"volume", 0.0);
+    m_mixerName = c.readEntry(prefix + "mixerName",   "default");
+    m_name      = c.readEntry(prefix + "name",        QString());
+    m_use       = c.readEntry(prefix + "use",         false);
+    m_active    = c.readEntry(prefix + "active",      false);
+    m_volume    = c.readEntry(prefix + "volume",      0.0);
 }
 
-AlsaConfigMixerSetting::AlsaConfigMixerSetting(int card, const QString &name, bool use, bool active, float volume)
- : m_card(card),
+AlsaConfigMixerSetting::AlsaConfigMixerSetting(const QString &mixerName, const QString &name, bool use, bool active, float volume)
+ : m_mixerName(mixerName),
    m_name(name),
    m_use(use),
    m_active(active),
@@ -50,18 +50,18 @@ AlsaConfigMixerSetting::~AlsaConfigMixerSetting()
 {
 }
 
-QString AlsaConfigMixerSetting::getIDString(int card, const QString &name)
+QString AlsaConfigMixerSetting::getIDString(const QString &mixerName, const QString &name)
 {
-    return QString::number(card) + "-" + name;
+    return mixerName + "-" + name;
 }
 
 void AlsaConfigMixerSetting::saveState(KConfigGroup &c, const QString &prefix) const
 {
-    c.writeEntry(prefix+"card",   m_card);
-    c.writeEntry(prefix+"name",   m_name);
-    c.writeEntry(prefix+"use",    m_use);
-    c.writeEntry(prefix+"active", m_active);
-    c.writeEntry(prefix+"volume", m_volume);
+    c.writeEntry(prefix + "mixerName",   m_mixerName);
+    c.writeEntry(prefix + "name",        m_name);
+    c.writeEntry(prefix + "use",         m_use);
+    c.writeEntry(prefix + "active",      m_active);
+    c.writeEntry(prefix + "volume",      m_volume);
 }
 
 
