@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>361</width>
-    <height>321</height>
+    <width>675</width>
+    <height>528</height>
    </rect>
   </property>
   <layout class="QGridLayout">
@@ -615,12 +615,16 @@ p, li { white-space: pre-wrap; }
   <tabstop>buttonDeleteStation</tabstop>
   <tabstop>buttonStationUp</tabstop>
   <tabstop>buttonStationDown</tabstop>
+  <tabstop>buttonSearchStations</tabstop>
+  <tabstop>buttonLoadPresets</tabstop>
+  <tabstop>buttonStorePresets</tabstop>
   <tabstop>editStationName</tabstop>
   <tabstop>editStationShortName</tabstop>
   <tabstop>editPixmapFile</tabstop>
   <tabstop>buttonSelectPixmapFile</tabstop>
   <tabstop>comboStereoMode</tabstop>
   <tabstop>editVolumePreset</tabstop>
+  <tabstop>editPresetFile</tabstop>
   <tabstop>editMaintainer</tabstop>
   <tabstop>editLastChange</tabstop>
   <tabstop>buttonLastChangeNow</tabstop>
