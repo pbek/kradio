@@ -814,19 +814,20 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
 
     /* OPEN */
 
-    if (!error && snd_pcm_open(&alsa_handle, pcm_name, stream, flags) < 0) {
-        logError(i18n("ALSA Plugin: Error opening PCM device %1", pcm_name));
+    int err = 0;
+    if (!error && (err = snd_pcm_open(&alsa_handle, pcm_name, stream, flags)) < 0) {
+        logError(i18n("ALSA Plugin: Error opening PCM device %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
-    if (!error && snd_pcm_hw_params_any(alsa_handle, hwparams) < 0) {
-        logError(i18n("ALSA Plugin: Can not configure PCM device %1", pcm_name));
+    if (!error && (err = snd_pcm_hw_params_any(alsa_handle, hwparams)) < 0) {
+        logError(i18n("ALSA Plugin: Can not configure PCM device %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
     /* interleaved access type */
 
-    if (!error && snd_pcm_hw_params_set_access(alsa_handle, hwparams, SND_PCM_ACCESS_RW_INTERLEAVED) < 0) {
+    if (!error && (err = snd_pcm_hw_params_set_access(alsa_handle, hwparams, SND_PCM_ACCESS_RW_INTERLEAVED)) < 0) {
         logError(i18n("ALSA Plugin: Error setting access for %1", pcm_name));
         error = true;
     }
@@ -836,21 +837,21 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
                                                                  format.m_SampleBits,
                                                                  !format.m_IsSigned,
                                                                  format.m_Endianess == BIG_ENDIAN);
-    if (!error && snd_pcm_hw_params_set_format(alsa_handle, hwparams, sample_format) < 0) {
-        logError(i18n("ALSA Plugin: Error setting sample format for %1", pcm_name));
+    if (!error && (err = snd_pcm_hw_params_set_format(alsa_handle, hwparams, sample_format)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting sample format for %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
     /* channels */
-    if (!error && snd_pcm_hw_params_set_channels(alsa_handle, hwparams, format.m_Channels) < 0) {
-        logError(i18n("ALSA Plugin: Error setting channels for %1", pcm_name));
+    if (!error && (err = snd_pcm_hw_params_set_channels(alsa_handle, hwparams, format.m_Channels)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting channels for %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
     /* sample rate */
     unsigned orgrate = format.m_SampleRate;
-    if (!error && snd_pcm_hw_params_set_rate_near(alsa_handle, hwparams, &format.m_SampleRate, &dir) < 0) {
-        logError(i18n("ALSA Plugin: Error setting rate for %1", pcm_name));
+    if (!error && (err = snd_pcm_hw_params_set_rate_near(alsa_handle, hwparams, &format.m_SampleRate, &dir)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting rate for %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
     if (!error && orgrate != format.m_SampleRate) {
@@ -861,14 +862,14 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
 
     /* set all params */
 
-    if (!error && snd_pcm_hw_params(alsa_handle, hwparams) < 0) {
-        logError(i18n("ALSA Plugin: Error setting HW params"));
+    if (!error && (err = snd_pcm_hw_params(alsa_handle, hwparams)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting HW params: %1", QString(snd_strerror(err))));
         error = true;
     }
 
     snd_pcm_uframes_t period_size = 0;
-    if (!error && snd_pcm_hw_params_get_period_size(hwparams, &period_size, &dir) < 0) {
-        logError(i18n("ALSA Plugin: Error getting period size for %1", pcm_name));
+    if (!error && (err = snd_pcm_hw_params_get_period_size(hwparams, &period_size, &dir)) < 0) {
+        logError(i18n("ALSA Plugin: Error getting period size for %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
@@ -1751,25 +1752,31 @@ QList<MetaSoundDevice> AlsaSoundDevice::getPCMPlaybackDeviceDescriptions()
 }
 
 
-#define ALSA_BUG_WORKAROUND
+#define ALSA_BUG_3461_WORKAROUND
 // see https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3461
 // snd_device_name_hint will only return correct list at first call.
 
 QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &filter)
 {
     void                    **hints = NULL;
-#ifdef ALSA_BUG_WORKAROUND
+#ifdef ALSA_BUG_3461_WORKAROUND
     static
 #endif
     QList<MetaSoundDevice>    descriptions;  // key = DeviceName,
 
-#ifdef ALSA_BUG_WORKAROUND
+#ifdef ALSA_BUG_3461_WORKAROUND
     if (descriptions.size()) {
         return descriptions;
     }
 #endif
 
     descriptions.append(MetaSoundDevice("default", "Default ALSA Device"));
+
+    // let's do the clean up once globally as long as we need the workaround
+    // otherwise we might miss some devices
+#ifdef ALSA_BUG_3461_WORKAROUND
+    snd_config_update_free_global();
+#endif
 
     if (snd_device_name_hint(-1, "pcm", &hints) < 0)
         return descriptions;
@@ -1794,7 +1801,13 @@ QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &
     snd_device_name_free_hint(hints);
 
     // the following line is prohibitiv - having pcm devices opend will crash kradio
-    //snd_config_update_free_global();
+
+    // one day of debugging later: BUT: if we don't do it after the first and only call,
+    // the blah..._hint stuff will have deleted some entries from the config and thus
+    // selecting some devices listed above will fail, e.g. for snd_pcm_open
+#ifdef ALSA_BUG_3461_WORKAROUND
+    snd_config_update_free_global();
+#endif
 
     /* debugging code only
     QString devString;
