@@ -995,10 +995,27 @@ p, li { white-space: pre-wrap; }
  </customwidgets>
  <tabstops>
   <tabstop>editRadioDevice</tabstop>
+  <tabstop>buttonSelectRadioDevice</tabstop>
+  <tabstop>rbV4L1Version</tabstop>
+  <tabstop>rbV4L2Version</tabstop>
+  <tabstop>editMinFrequency</tabstop>
+  <tabstop>editMaxFrequency</tabstop>
+  <tabstop>editScanStep</tabstop>
+  <tabstop>editSignalMinQuality</tabstop>
+  <tabstop>m_checkboxForceRDSEnabled</tabstop>
+  <tabstop>comboPlaybackMixerDevice</tabstop>
+  <tabstop>comboPlaybackMixerChannel</tabstop>
+  <tabstop>comboCaptureMixerDevice</tabstop>
+  <tabstop>comboCaptureMixerChannel</tabstop>
+  <tabstop>m_checkboxMuteOnPowerOff</tabstop>
+  <tabstop>m_checkboxVolumeZeroOnPowerOff</tabstop>
+  <tabstop>m_checkboxActivePlayback</tabstop>
+  <tabstop>m_checkboxActivePlaybackMuteCaptureChannelPlayback</tabstop>
   <tabstop>sliderDeviceVolume</tabstop>
   <tabstop>sliderTreble</tabstop>
   <tabstop>sliderBass</tabstop>
   <tabstop>sliderBalance</tabstop>
+  <tabstop>kTabWidget1</tabstop>
  </tabstops>
  <includes>
   <include location="local">ktabwidget.h</include>
@@ -1012,5 +1029,22 @@ p, li { white-space: pre-wrap; }
   <include location="local">knuminput.h</include>
  </includes>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>m_checkboxActivePlayback</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_checkboxActivePlaybackMuteCaptureChannelPlayback</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>161</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
