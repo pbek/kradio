@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-05-09 11:09+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,102 +17,99 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: alsa-sound-configuration.cpp:320
-#, kde-format
-msgctxt "context-card-plus-device-number"
-msgid "%1 device %2"
-msgstr "%1 пристрій %2"
-
-#: alsa-sound.cpp:42
+#: alsa-sound.cpp:43
 msgid "Advanced Linux Sound Architecture (ALSA) Support"
 msgstr "Підтримка Розширеної звукової архітектури Linux (ALSA)"
 
-#: alsa-sound.cpp:50
+#: alsa-sound.cpp:51
 msgid "KRadio ALSA Sound Plugin"
 msgstr "Модуль ALSA для KRadio"
 
-#: alsa-sound.cpp:231
+#: alsa-sound.cpp:221
 msgid "ALSA Sound"
 msgstr "Звук ALSA"
 
-#: alsa-sound.cpp:232
+#: alsa-sound.cpp:222
 msgid "ALSA Sound Device Options"
 msgstr "Параметри звуку для драйвера ALSA"
 
-#: alsa-sound.cpp:610
-#, kde-format
-msgid "ALSA Plugin: cannot write data for device plughw:%1,%2"
+#: alsa-sound.cpp:603
+#, fuzzy, kde-format
+msgid "ALSA Plugin: cannot write data for device %1"
 msgstr "Модуль ALSA: не можу записати дані до пристрою plughw:%1,%2"
 
-#: alsa-sound.cpp:617
-#, kde-format
-msgid "ALSA Plugin: buffer underrun for device plughw:%1,%2"
+#: alsa-sound.cpp:610
+#, fuzzy, kde-format
+msgid "ALSA Plugin: buffer underrun for device %1"
 msgstr "Модуль ALSA: недостача даних у буфері пристрою plughw:%1,%2"
 
-#: alsa-sound.cpp:654
-#, kde-format
-msgid "ALSA Plugin: cannot read data from device plughw:%1,%2"
+#: alsa-sound.cpp:650
+#, fuzzy, kde-format
+msgid "ALSA Plugin: cannot read data from device %1"
 msgstr "Модуль ALSA: не можу прочитати дані з пристрою plughw:%1,%2"
 
-#: alsa-sound.cpp:661
-#, kde-format
-msgid ""
-"ALSA Plugin: buffer overrun for device plughw:%1,%2 (buffersize=%3, buffer=%"
-"4)"
+#: alsa-sound.cpp:657
+#, fuzzy, kde-format
+msgid "ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)"
 msgstr ""
 "Модуль ALSA: переповнення буферу пристрою plughw:%1,%2 (розмір буферу=%3, "
 "буфер=%4)"
 
-#: alsa-sound.cpp:682
+#: alsa-sound.cpp:678
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "внутрішній потік, не збережено (%1)"
 
-#: alsa-sound.cpp:731
+#: alsa-sound.cpp:726
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing playback thread, but found "
 "one\n"
-msgstr "AlsaPlugin: внутрішня помилка. Програма очікувала на відсутність нитки відтворення, але було виявлено, що така нитка існує\n"
+msgstr ""
+"AlsaPlugin: внутрішня помилка. Програма очікувала на відсутність нитки "
+"відтворення, але було виявлено, що така нитка існує\n"
 
-#: alsa-sound.cpp:790
+#: alsa-sound.cpp:783
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing capture thread, but found "
 "one\n"
-msgstr "Модуль Alsa: внутрішня помилка. Програма очікувала на відсутність нитки захоплення, але було виявлено таку нитку\n"
+msgstr ""
+"Модуль Alsa: внутрішня помилка. Програма очікувала на відсутність нитки "
+"захоплення, але було виявлено таку нитку\n"
 
-#: alsa-sound.cpp:825
-#, kde-format
-msgid "ALSA Plugin: Error opening PCM device %1"
+#: alsa-sound.cpp:819
+#, fuzzy, kde-format
+msgid "ALSA Plugin: Error opening PCM device %1: %2"
 msgstr "Модуль ALSA: Помилка під час відкриття пристрою PCM: %1"
 
-#: alsa-sound.cpp:830
-#, kde-format
-msgid "ALSA Plugin: Can not configure PCM device %1"
+#: alsa-sound.cpp:824
+#, fuzzy, kde-format
+msgid "ALSA Plugin: Can not configure PCM device %1: %2"
 msgstr "Модуль ALSA: не можу налаштувати пристрій PCM %1"
 
-#: alsa-sound.cpp:837
+#: alsa-sound.cpp:831
 #, kde-format
 msgid "ALSA Plugin: Error setting access for %1"
 msgstr "Модуль ALSA: Помилка спроби доступу для %1"
 
-#: alsa-sound.cpp:847
-#, kde-format
-msgid "ALSA Plugin: Error setting sample format for %1"
+#: alsa-sound.cpp:841
+#, fuzzy, kde-format
+msgid "ALSA Plugin: Error setting sample format for %1: %2"
 msgstr "Модуль ALSA: Помилка під час встановлення формату даних для %1"
 
-#: alsa-sound.cpp:853
-#, kde-format
-msgid "ALSA Plugin: Error setting channels for %1"
+#: alsa-sound.cpp:847
+#, fuzzy, kde-format
+msgid "ALSA Plugin: Error setting channels for %1: %2"
 msgstr "Модуль ALSA: Помилка під час встановлення числа каналів для %1"
 
-#: alsa-sound.cpp:860
-#, kde-format
-msgid "ALSA Plugin: Error setting rate for %1"
+#: alsa-sound.cpp:854
+#, fuzzy, kde-format
+msgid "ALSA Plugin: Error setting rate for %1: %2"
 msgstr "Модуль ALSA: Помилка під час встановлення частоти дискретизації для %1"
 
-#: alsa-sound.cpp:864
+#: alsa-sound.cpp:858
 #, kde-format
 msgid ""
 "ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 "
@@ -121,137 +118,103 @@ msgstr ""
 "Модуль ALSA: частота дискретизації %1 Гц не підтримується Вашим обладнанням %"
 "2. Замість неї використано частоту %3 Гц."
 
-#: alsa-sound.cpp:881
-#, kde-format
-msgid "ALSA Plugin: Error setting period size to %1 for %2"
-msgstr "Модуль ALSA: Помилка встановлення розміру періоду у значення %1 для %2"
-
-#: alsa-sound.cpp:884
-#, kde-format
-msgid "ALSA Plugin: period size: %1 frames"
-msgstr "Модуль ALSA: розмір періоду: %1 блоків"
-
-#: alsa-sound.cpp:887
-#, kde-format
-msgid "ALSA Plugin: Error setting periods to %1 for %2"
-msgstr "Модуль ALSA: Помилка встановлення періодів у значення %1 для %2"
-
-#: alsa-sound.cpp:890
-#, kde-format
-msgid "ALSA Plugin: periods: %1"
-msgstr "Модуль ALSA: періоди: %1"
-
-#: alsa-sound.cpp:896
-#, kde-format
-msgid "ALSA Plugin: Error setting buffersize for %1"
-msgstr "Модуль ALSA: Помилка встановлення розміру буфера для %1"
-
-#: alsa-sound.cpp:900
-#, kde-format
-msgid "ALSA Plugin: buffersize: %1 frames"
-msgstr "Модуль ALSA: розмір буфера: %1 блоків"
-
-#: alsa-sound.cpp:904
-#, kde-format
-msgid ""
-"ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer "
-"size of %3 instead."
-msgstr "Модуль ALSA: обладнання %1 не підтримує розмір буфера %2. Скористайтеся розміром буфера %3."
-
-#: alsa-sound.cpp:906
-#, kde-format
-msgid "ALSA Plugin: adjusted buffer size for %1 to %2 bytes"
-msgstr "Модуль ALSA: корекція розміру буфера для %1 на %2 байтів"
-
-#: alsa-sound.cpp:912
-msgid "ALSA Plugin: Error setting HW params"
+#: alsa-sound.cpp:866
+#, fuzzy, kde-format
+msgid "ALSA Plugin: Error setting HW params: %1"
 msgstr "Модуль ALSA: Помилка під час встановлення параметрів обладнання"
 
-#: alsa-sound.cpp:917
-#, kde-format
-msgid "ALSA Plugin: Error getting period size for %1"
+#: alsa-sound.cpp:872
+#, fuzzy, kde-format
+msgid "ALSA Plugin: Error getting period size for %1: %2"
 msgstr "Модуль ALSA: Помилка отримання розміру періоду для %1"
 
-#: alsa-sound.cpp:923
+#: alsa-sound.cpp:880
 #, kde-format
 msgid "ALSA Plugin: Setting timer latency to %1 for %2"
 msgstr "Модуль ALSA: Встановлення латентності таймера %1 для %2"
 
-#: alsa-sound.cpp:945
-#, kde-format
+#: alsa-sound.cpp:902
+#, fuzzy, kde-format
 msgid ""
-"Alsa Plugin (device plughw:%1,%2): oops, had to kill the playback thread. It "
-"did not stop as desired"
-msgstr "Модуль Alsa (пристрій plughw:%1,%2): ой, доведеться примусово перервати виконання нитки відтворення. Нитку не вдалося завершити у звичайний спосіб"
+"Alsa Plugin (device %1): oops, had to kill the playback thread. It did not "
+"stop as desired"
+msgstr ""
+"Модуль Alsa (пристрій plughw:%1,%2): ой, доведеться примусово перервати "
+"виконання нитки відтворення. Нитку не вдалося завершити у звичайний спосіб"
 
-#: alsa-sound.cpp:977
-#, kde-format
+#: alsa-sound.cpp:934
+#, fuzzy, kde-format
 msgid ""
-"Alsa Plugin (device plughw:%1,%2): oops, had to kill the capture thread. It "
-"did not stop as desired"
-msgstr "Модуль Alsa (пристрій plughw:%1,%2): ой, доведеться примусово завершити нитку захоплення. Завершити нитку у бажаний спосіб не вдалося"
+"Alsa Plugin (device %1): oops, had to kill the capture thread. It did not "
+"stop as desired"
+msgstr ""
+"Модуль Alsa (пристрій plughw:%1,%2): ой, доведеться примусово завершити "
+"нитку захоплення. Завершити нитку у бажаний спосіб не вдалося"
 
-#: alsa-sound.cpp:1039
+#: alsa-sound.cpp:996
 msgid "ALSA Plugin: Error opening mixer"
 msgstr "Модуль ALSA: Помилка під час відкриття мікшера"
 
-#: alsa-sound.cpp:1046
+#: alsa-sound.cpp:1002
 #, kde-format
 msgid "ALSA Plugin: ERROR: snd_mixer_attach for card %1"
-msgstr "Модуль ALSA: Помилка під час виклику функції snd_mixer_attach для карти %1"
+msgstr ""
+"Модуль ALSA: Помилка під час виклику функції snd_mixer_attach для карти %1"
 
-#: alsa-sound.cpp:1053
+#: alsa-sound.cpp:1009
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
 msgstr ""
 "Модуль ALSA: Поммилка під час виклику функції snd_mixer_selem_register для "
 "карти %1"
 
-#: alsa-sound.cpp:1057
+#: alsa-sound.cpp:1013
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_load for card %1"
-msgstr "Модуль ALSA: Помилка під час виклику функції snd_mixer_load для карти %1"
+msgstr ""
+"Модуль ALSA: Помилка під час виклику функції snd_mixer_load для карти %1"
 
-#: alsa-sound.cpp:1125
+#: alsa-sound.cpp:1080
 #, kde-format
 msgctxt "context-mixername-number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: alsa-sound.cpp:1172
+#: alsa-sound.cpp:1127
 #, kde-format
 msgctxt "context-mixerelement-name-number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: alsa-sound.cpp:1335 alsa-sound.cpp:1363
-#, kde-format
-msgid "error while reading volume from hwplug:%1,%2"
+#: alsa-sound.cpp:1290 alsa-sound.cpp:1318
+#, fuzzy, kde-format
+msgid "error while reading volume from %1"
 msgstr "Помилка зчитування гучності пристрою hwplug:%1,%2"
 
-#: alsa-sound.cpp:1405 alsa-sound.cpp:1437
-#, kde-format
-msgid "error while writing volume %1 to hwplug:%2,%3"
+#: alsa-sound.cpp:1360 alsa-sound.cpp:1392
+#, fuzzy, kde-format
+msgid "error while writing volume %1 to %2"
 msgstr "Помилка під час запису гучності %1 до пристрою hwplug:%2,%3"
 
-#: alsa-sound.cpp:1457
-#, kde-format
-msgid "error while setting capture switch %1 for hwplug:%2,%3"
-msgstr "Помилка під час встановлення атрибуту запису %1 для пристрою hwplug:%2,%3"
+#: alsa-sound.cpp:1412
+#, fuzzy, kde-format
+msgid "error while setting capture switch %1 for %2"
+msgstr ""
+"Помилка під час встановлення атрибуту запису %1 для пристрою hwplug:%2,%3"
 
-#: alsa-sound.cpp:1604
+#: alsa-sound.cpp:1549
 #, kde-format
 msgid "ALSA Sound Device %1"
 msgstr "Пристрій ALSA: %1"
 
-#: alsa-sound.cpp:1765 alsa-sound.cpp:1769
-#, kde-format
-msgid "AlsaPlugin(capture thread on plughw:%1,%2): %3"
+#: alsa-sound.cpp:1712 alsa-sound.cpp:1716
+#, fuzzy, kde-format
+msgid "AlsaPlugin(capture thread on %1): %2"
 msgstr "AlsaPlugin(нитка захоплення на plughw:%1,%2): %3"
 
-#: alsa-sound.cpp:1775 alsa-sound.cpp:1779
-#, kde-format
-msgid "AlsaPlugin(playback thread on plughw:%1,%2): %3"
+#: alsa-sound.cpp:1722 alsa-sound.cpp:1726
+#, fuzzy, kde-format
+msgid "AlsaPlugin(playback thread on %1): %2"
 msgstr "AlsaPlugin(нитка відтворення на plughw:%1,%2): %3"
 
 #: alsa-thread.cpp:91
@@ -272,193 +235,209 @@ msgstr "AlsaThread: вичерпано буфер"
 
 #. i18n: file: alsa-mixer-element-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, AlsaMixerElementUI)
-#: rc.cpp:3 rc.cpp:151
+#: rc.cpp:3 rc.cpp:139
 msgid "Form1"
 msgstr "Form1"
 
 #. i18n: file: alsa-mixer-element-ui.ui:176
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActive)
-#: rc.cpp:6 rc.cpp:154
+#: rc.cpp:6 rc.cpp:142
 msgid "Capture O&n"
 msgstr "За&хопити"
 
 #. i18n: file: alsa-mixer-element-ui.ui:179
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActive)
-#: rc.cpp:9 rc.cpp:157
+#: rc.cpp:9 rc.cpp:145
 msgid "Alt+N"
 msgstr "Alt+N"
 
 #. i18n: file: alsa-mixer-element-ui.ui:186
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxOverride)
-#: rc.cpp:12 rc.cpp:160
+#: rc.cpp:12 rc.cpp:148
 msgid "&Override"
 msgstr "П&еревизначити"
 
 #. i18n: file: alsa-mixer-element-ui.ui:189
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxOverride)
-#: rc.cpp:15 rc.cpp:163
+#: rc.cpp:15 rc.cpp:151
 msgid "Alt+U"
 msgstr "Alt+U"
 
 #. i18n: file: alsa-mixer-element-ui.ui:219
 #. i18n: ectx: property (text), widget (QLabel, m_labelMixerElementName)
-#: rc.cpp:18 rc.cpp:166
+#: rc.cpp:18 rc.cpp:154
 msgid "MixerName"
 msgstr "НазваМікшера"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, AlsaSoundConfigurationUI)
-#: rc.cpp:21 rc.cpp:169
+#: rc.cpp:21 rc.cpp:157
 msgid "AlsaSoundConfigurationUI"
 msgstr "ІККонфігураціїAlsaSound"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
-#: rc.cpp:24 rc.cpp:172
-msgid "Devices"
-msgstr "Пристрої"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:54
-#. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:27 rc.cpp:175
-msgid "PCM Capture Card"
-msgstr "Карта захоплення PCM"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:74
-#. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2)
-#: rc.cpp:30 rc.cpp:178
-msgid "Hardware Buffer Size"
-msgstr "Розмір апаратного буфера"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:100
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, editBufferSize)
-#. i18n: file: alsa-sound-configuration-ui.ui:125
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, editHWBufferSize)
-#. i18n: file: alsa-sound-configuration-ui.ui:100
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, editBufferSize)
-#. i18n: file: alsa-sound-configuration-ui.ui:125
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, editHWBufferSize)
-#: rc.cpp:33 rc.cpp:36 rc.cpp:181 rc.cpp:184
-msgid " kB"
-msgstr " кБ"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:154
-#. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_2)
-#: rc.cpp:39 rc.cpp:187
-msgid "Buffer Size"
-msgstr "Розмір буфера"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:174
-#. i18n: ectx: property (text), widget (QLabel, textLabel2_3)
-#: rc.cpp:42 rc.cpp:190
-msgid "PCM Playback Device"
-msgstr "Пристрій відтворення PCM"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:184
-#. i18n: ectx: property (text), widget (QLabel, textLabel2_4)
-#: rc.cpp:45 rc.cpp:193
-msgid "PCM Capture Device"
-msgstr "Пристрій захоплення PCM"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:194
-#. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:48 rc.cpp:196
-msgid "PCM Playback Card"
+#: rc.cpp:24 rc.cpp:160
+#, fuzzy
+msgid "Playback"
 msgstr "Карта програвання PCM"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:204
+#. i18n: file: alsa-sound-configuration-ui.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
+#: rc.cpp:27 rc.cpp:163
+msgid "Disable Pla&yback"
+msgstr "Заборонити &відтворення"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:36
+#. i18n: ectx: property (shortcut), widget (QCheckBox, chkDisablePlayback)
+#: rc.cpp:30 rc.cpp:166
+msgid "Alt+Y"
+msgstr "Alt+Y"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:78
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableSoftVolume)
-#: rc.cpp:51 rc.cpp:199
+#: rc.cpp:33 rc.cpp:169
 msgid "Soft Playback Volume"
 msgstr "Програмна гучність відтворення"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:220
+#. i18n: file: alsa-sound-configuration-ui.ui:91
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_3)
+#: rc.cpp:36 rc.cpp:172
+msgid "PCM Playback Device"
+msgstr "Пристрій відтворення PCM"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:104
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:54 rc.cpp:202
+#: rc.cpp:39 rc.cpp:175
 msgid "Soft Volume Correction Factor"
 msgstr "Програмний коефіцієнт виправлення гучності"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:246
-#. i18n: ectx: property (text), widget (QLabel, lableChannels)
-#: rc.cpp:57 rc.cpp:205
-msgid "Channels"
-msgstr "Канали"
+#. i18n: file: alsa-sound-configuration-ui.ui:111
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_2)
+#: rc.cpp:42 rc.cpp:178
+msgid "Buffer Size"
+msgstr "Розмір буфера"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:266
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:60 rc.cpp:208
-msgid "48000"
-msgstr "48000"
+#. i18n: file: alsa-sound-configuration-ui.ui:137
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, editBufferSize)
+#: rc.cpp:45 rc.cpp:181
+msgid " kB"
+msgstr " кБ"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:271
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:63 rc.cpp:211
-msgid "44100"
-msgstr "44100"
+#. i18n: file: alsa-sound-configuration-ui.ui:156
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
+#: rc.cpp:48 rc.cpp:184
+#, fuzzy
+msgid "96 kB"
+msgstr " кБ"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:276
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:66 rc.cpp:214
-msgid "32000"
-msgstr "32000"
+#. i18n: file: alsa-sound-configuration-ui.ui:169
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2_6)
+#: rc.cpp:51 rc.cpp:187
+#, fuzzy
+msgid "recommended:"
+msgstr "рекомендовано: 2 кБ"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:281
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:69 rc.cpp:217
-msgid "22050"
-msgstr "22050"
+#. i18n: file: alsa-sound-configuration-ui.ui:196
+#. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)
+#: rc.cpp:54 rc.cpp:190
+#, fuzzy
+msgid "Capture"
+msgstr "За&хопити"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:286
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:72 rc.cpp:220
-msgid "11025"
-msgstr "11025"
+#. i18n: file: alsa-sound-configuration-ui.ui:202
+#. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
+#: rc.cpp:57 rc.cpp:193
+msgid "Disa&ble Capture"
+msgstr "Заборонити &запис"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:304
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
-#: rc.cpp:75 rc.cpp:223
-msgid "Little Endian"
-msgstr "Прямий порядок"
+#. i18n: file: alsa-sound-configuration-ui.ui:205
+#. i18n: ectx: property (shortcut), widget (QCheckBox, chkDisableCapture)
+#: rc.cpp:60 rc.cpp:196
+msgid "Alt+B"
+msgstr "Alt+B"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:309
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
-#: rc.cpp:78 rc.cpp:226
-msgid "Big Endian"
-msgstr "Зворотний порядок"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:320
-#. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:81 rc.cpp:229
-msgid "Sample Rate"
-msgstr "Частота вибірки"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:333
-#. i18n: ectx: property (text), widget (QLabel, lableEndianess)
-#: rc.cpp:84 rc.cpp:232
-msgid "Endianess"
-msgstr "Endianess"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:353
+#. i18n: file: alsa-sound-configuration-ui.ui:241
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:87 rc.cpp:235
+#: rc.cpp:63 rc.cpp:199
 msgid "Stereo"
 msgstr "Стерео"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:358
+#. i18n: file: alsa-sound-configuration-ui.ui:246
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:90 rc.cpp:238
+#: rc.cpp:66 rc.cpp:202
 msgid "Mono"
 msgstr "Моно"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:370
+#. i18n: file: alsa-sound-configuration-ui.ui:267
+#. i18n: ectx: property (text), widget (QLabel, lableBits)
+#: rc.cpp:69 rc.cpp:205
+msgid "Sample Bits"
+msgstr "Бітова дискретизація"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:287
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
+#: rc.cpp:72 rc.cpp:208
+msgid "Signed"
+msgstr "Signed"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:292
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
+#: rc.cpp:75 rc.cpp:211
+msgid "Unsigned"
+msgstr "Unsigned"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:310
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:78 rc.cpp:214
+msgid "48000"
+msgstr "48000"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:315
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:81 rc.cpp:217
+msgid "44100"
+msgstr "44100"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:320
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:84 rc.cpp:220
+msgid "32000"
+msgstr "32000"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:325
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:87 rc.cpp:223
+msgid "22050"
+msgstr "22050"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:330
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:90 rc.cpp:226
+msgid "11025"
+msgstr "11025"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:348
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
+#: rc.cpp:93 rc.cpp:229
+msgid "Little Endian"
+msgstr "Прямий порядок"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:353
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
+#: rc.cpp:96 rc.cpp:232
+msgid "Big Endian"
+msgstr "Зворотний порядок"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:365
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbEnableCaptureFormatOverride)
-#. i18n: file: alsa-sound-configuration-ui.ui:377
+#. i18n: file: alsa-sound-configuration-ui.ui:372
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCaptureFormatOverride)
-#. i18n: file: alsa-sound-configuration-ui.ui:370
+#. i18n: file: alsa-sound-configuration-ui.ui:365
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbEnableCaptureFormatOverride)
-#. i18n: file: alsa-sound-configuration-ui.ui:377
+#. i18n: file: alsa-sound-configuration-ui.ui:372
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCaptureFormatOverride)
-#: rc.cpp:93 rc.cpp:100 rc.cpp:241 rc.cpp:248
+#: rc.cpp:99 rc.cpp:106 rc.cpp:235 rc.cpp:242
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -485,99 +464,119 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Вам слід позначити цей пункт з метою надати KRadio можливість внутрішньої обробки звукових даних з правильними даними щодо формату/частотних характеристик, якщо ваш справжній (або псевдо) звуковий пристрій ALSA працює за допомогою драйвера, який не здатен повідомляти про правильні дані щодо частотних характеристик за допомогою інтерфейсу ALSA. Така поведінка характерна принаймні для деяких пристроїв карток ТБ/радіо Avermedia. Ці картки створюють звуковий псевдопристрій ALSA для передавання звуку за допомогою шини PCI.</p></body></html>"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Вам слід "
+"позначити цей пункт з метою надати KRadio можливість внутрішньої обробки "
+"звукових даних з правильними даними щодо формату/частотних характеристик, "
+"якщо ваш справжній (або псевдо) звуковий пристрій ALSA працює за допомогою "
+"драйвера, який не здатен повідомляти про правильні дані щодо частотних "
+"характеристик за допомогою інтерфейсу ALSA. Така поведінка характерна "
+"принаймні для деяких пристроїв карток ТБ/радіо Avermedia. Ці картки "
+"створюють звуковий псевдопристрій ALSA для передавання звуку за допомогою "
+"шини PCI.</p></body></html>"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:380
+#. i18n: file: alsa-sound-configuration-ui.ui:375
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCaptureFormatOverride)
-#: rc.cpp:107 rc.cpp:255
+#: rc.cpp:113 rc.cpp:249
 msgid "Override Capture Format"
 msgstr "Перевизначити формат захоплення"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:393
-#. i18n: ectx: property (text), widget (QLabel, lableBits)
-#: rc.cpp:110 rc.cpp:258
-msgid "Sample Bits"
-msgstr "Бітова дискретизація"
+#. i18n: file: alsa-sound-configuration-ui.ui:385
+#. i18n: ectx: property (text), widget (QLabel, lableChannels)
+#: rc.cpp:116 rc.cpp:252
+msgid "Channels"
+msgstr "Канали"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:413
+#. i18n: file: alsa-sound-configuration-ui.ui:398
+#. i18n: ectx: property (text), widget (QLabel, lableEndianess)
+#: rc.cpp:119 rc.cpp:255
+msgid "Endianess"
+msgstr "Endianess"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:408
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_4)
+#: rc.cpp:122 rc.cpp:258
+msgid "PCM Capture Device"
+msgstr "Пристрій захоплення PCM"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:421
+#. i18n: ectx: property (text), widget (QLabel, labelRate)
+#: rc.cpp:125 rc.cpp:261
+msgid "Sample Rate"
+msgstr "Частота вибірки"
+
+#. i18n: file: alsa-sound-configuration-ui.ui:441
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:113 rc.cpp:261
+#: rc.cpp:128 rc.cpp:264
 msgid "16"
 msgstr "16"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:418
+#. i18n: file: alsa-sound-configuration-ui.ui:446
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:116 rc.cpp:264
+#: rc.cpp:131 rc.cpp:267
 msgid "8"
 msgstr "8"
 
-#. i18n: file: alsa-sound-configuration-ui.ui:436
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:119 rc.cpp:267
-msgid "Signed"
-msgstr "Signed"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:441
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:122 rc.cpp:270
-msgid "Unsigned"
-msgstr "Unsigned"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:449
-#. i18n: ectx: property (text), widget (QLabel, textLabel2_2_3)
-#: rc.cpp:125 rc.cpp:273
-msgid "recommended: 2kB"
-msgstr "рекомендовано: 2 кБ"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:459
-#. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
-#: rc.cpp:128 rc.cpp:276
-msgid "recommended: 96 kB"
-msgstr "рекомендовано: 96 кБ"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:472
+#. i18n: file: alsa-sound-configuration-ui.ui:471
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
-#: rc.cpp:131 rc.cpp:279
-msgid "E&xtended Options"
-msgstr "&Додаткові параметри"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:481
-#. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
-#: rc.cpp:134 rc.cpp:282
-msgid "Disable Pla&yback"
-msgstr "Заборонити &відтворення"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:484
-#. i18n: ectx: property (shortcut), widget (QCheckBox, chkDisablePlayback)
-#: rc.cpp:137 rc.cpp:285
-msgid "Alt+Y"
-msgstr "Alt+Y"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:491
-#. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
-#: rc.cpp:140 rc.cpp:288
-msgid "Disa&ble Capture"
-msgstr "Заборонити &запис"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:494
-#. i18n: ectx: property (shortcut), widget (QCheckBox, chkDisableCapture)
-#: rc.cpp:143 rc.cpp:291
-msgid "Alt+B"
-msgstr "Alt+B"
-
-#. i18n: file: alsa-sound-configuration-ui.ui:518
-#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
-#: rc.cpp:146 rc.cpp:294
-msgid "Capture Mixer Settings"
+#: rc.cpp:134 rc.cpp:270
+#, fuzzy
+msgid "Capture Mixers"
 msgstr "&Параметри мікшера для запису"
 
-#: rc.cpp:147
+#: rc.cpp:135
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: rc.cpp:148
+#: rc.cpp:136
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
+#~ msgctxt "context-card-plus-device-number"
+#~ msgid "%1 device %2"
+#~ msgstr "%1 пристрій %2"
+
+#~ msgid "ALSA Plugin: Error setting period size to %1 for %2"
+#~ msgstr ""
+#~ "Модуль ALSA: Помилка встановлення розміру періоду у значення %1 для %2"
+
+#~ msgid "ALSA Plugin: period size: %1 frames"
+#~ msgstr "Модуль ALSA: розмір періоду: %1 блоків"
+
+#~ msgid "ALSA Plugin: Error setting periods to %1 for %2"
+#~ msgstr "Модуль ALSA: Помилка встановлення періодів у значення %1 для %2"
+
+#~ msgid "ALSA Plugin: periods: %1"
+#~ msgstr "Модуль ALSA: періоди: %1"
+
+#~ msgid "ALSA Plugin: Error setting buffersize for %1"
+#~ msgstr "Модуль ALSA: Помилка встановлення розміру буфера для %1"
+
+#~ msgid "ALSA Plugin: buffersize: %1 frames"
+#~ msgstr "Модуль ALSA: розмір буфера: %1 блоків"
+
+#~ msgid ""
+#~ "ALSA Plugin: Hardware %1 does not support buffer size of %2. Using buffer "
+#~ "size of %3 instead."
+#~ msgstr ""
+#~ "Модуль ALSA: обладнання %1 не підтримує розмір буфера %2. Скористайтеся "
+#~ "розміром буфера %3."
+
+#~ msgid "ALSA Plugin: adjusted buffer size for %1 to %2 bytes"
+#~ msgstr "Модуль ALSA: корекція розміру буфера для %1 на %2 байтів"
+
+#~ msgid "Devices"
+#~ msgstr "Пристрої"
+
+#~ msgid "PCM Capture Card"
+#~ msgstr "Карта захоплення PCM"
+
+#~ msgid "Hardware Buffer Size"
+#~ msgstr "Розмір апаратного буфера"
+
+#~ msgid "recommended: 96 kB"
+#~ msgstr "рекомендовано: 96 кБ"
+
+#~ msgid "E&xtended Options"
+#~ msgstr "&Додаткові параметри"

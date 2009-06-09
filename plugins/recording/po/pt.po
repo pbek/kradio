@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2006-11-19 17:20+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -53,13 +53,13 @@ msgstr "Não se consegue abrir o ficheiro de saída %1. "
 msgid "Cannot allocate buffers for mp3 encoding. "
 msgstr "Não se consegue alocar os tampões para a codificação mp3. "
 
-#: encoder_ogg.cpp:97
+#: encoder_ogg.cpp:96
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Falha na escrita de dados para o fluxo saída ogg/vorbis. "
 
 #: encoder_ogg.cpp:139
-#, kde-format
-msgid "Cannot open Ogg/Vorbis output file %1. "
+#, fuzzy, kde-format
+msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Não se conseguiu abrir o ficheiro de saída Ogg/Vorbis %1. "
 
 #: encoder_ogg.cpp:152

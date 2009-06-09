@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-20 20:49+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -56,13 +56,13 @@ msgstr "Не могу открыть выходной файл %1. "
 msgid "Cannot allocate buffers for mp3 encoding. "
 msgstr "Не могу разместить в памяти буферы для кодирования MP3."
 
-#: encoder_ogg.cpp:97
+#: encoder_ogg.cpp:96
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Ошибка записи данных в выходной поток ogg/vorbis. "
 
 #: encoder_ogg.cpp:139
-#, kde-format
-msgid "Cannot open Ogg/Vorbis output file %1. "
+#, fuzzy, kde-format
+msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\". "
 
 #: encoder_ogg.cpp:152

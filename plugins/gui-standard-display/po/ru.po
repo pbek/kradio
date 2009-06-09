@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-20 20:47+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -17,10 +17,6 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-#: displaycfg.cpp:35
-msgid "Display Colors"
-msgstr "Цвета"
 
 #: displaycfg.cpp:48
 msgid "Active Text"
@@ -135,32 +131,32 @@ msgstr "Вид"
 msgid "Display Configuration"
 msgstr "Настройка внешнего вида"
 
-#: radioview_frequencyradio.cpp:118 radioview_frequencyradio.cpp:119
+#: radioview_frequencyradio.cpp:122 radioview_frequencyradio.cpp:123
 msgid "Frequency Display"
 msgstr "Отображение частоты"
 
-#: radioview_frequencyradio.cpp:394
+#: radioview_frequencyradio.cpp:402
 msgid "AM"
 msgstr "ДВ/СВ/КВ"
 
-#: radioview_frequencyradio.cpp:395
+#: radioview_frequencyradio.cpp:403
 msgid "FM"
 msgstr "УКВ"
 
-#: radioview_frequencyradio.cpp:396
+#: radioview_frequencyradio.cpp:404
 msgid "RDS"
 msgstr "RDS"
 
-#: radioview_frequencyradio.cpp:397
+#: radioview_frequencyradio.cpp:405
 msgid "NET"
 msgstr "СЕТЬ"
 
-#: radioview_frequencyradio.cpp:538
+#: radioview_frequencyradio.cpp:546
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 кГц"
 
-#: radioview_frequencyradio.cpp:540
+#: radioview_frequencyradio.cpp:548
 #, kde-format
 msgid "%1 MHz"
 msgstr "%1 МГц"
@@ -235,6 +231,9 @@ msgstr "Алексей Кузнецов"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@GMail.com"
+
+#~ msgid "Display Colors"
+#~ msgstr "Цвета"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"

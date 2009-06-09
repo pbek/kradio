@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,87 +36,87 @@ msgstr ""
 msgid "System Tray Plugin"
 msgstr ""
 
-#: docking.cpp:201
+#: docking.cpp:203
 msgid "System Tray Icon"
 msgstr ""
 
-#: docking.cpp:202
+#: docking.cpp:204
 msgid "System Tray Icon Configuration"
 msgstr ""
 
-#: docking.cpp:254
+#: docking.cpp:258
 msgid "Search Next Station"
 msgstr ""
 
-#: docking.cpp:255
+#: docking.cpp:259
 msgid "Search Previous Station"
 msgstr ""
 
-#: docking.cpp:264
+#: docking.cpp:268
 msgid "Recording"
 msgstr ""
 
-#: docking.cpp:269
+#: docking.cpp:273
 msgid "Pause Radio"
 msgstr ""
 
-#: docking.cpp:280
+#: docking.cpp:284
 msgid "Show/Hide Plugins"
 msgstr ""
 
-#: docking.cpp:288
+#: docking.cpp:292
 msgid "&Quit"
 msgstr ""
 
-#: docking.cpp:402
+#: docking.cpp:406
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr ""
 
-#: docking.cpp:405 docking.cpp:414 docking.cpp:422
+#: docking.cpp:409 docking.cpp:418 docking.cpp:426
 msgid "Start Sleep Countdown"
 msgstr ""
 
-#: docking.cpp:430
+#: docking.cpp:434
 msgid "Power Off"
 msgstr ""
 
-#: docking.cpp:430
+#: docking.cpp:434
 msgid "Power On"
 msgstr ""
 
-#: docking.cpp:445 docking.cpp:466
+#: docking.cpp:449 docking.cpp:470
 msgid "invalid station"
 msgstr ""
 
-#: docking.cpp:448
+#: docking.cpp:452
 #, kde-format
 msgid "KRadio: %1"
 msgstr ""
 
-#: docking.cpp:458
+#: docking.cpp:462
 #, kde-format
 msgid "next alarm: %1"
 msgstr ""
 
-#: docking.cpp:460
+#: docking.cpp:464
 msgid "<no alarm pending>"
 msgstr ""
 
-#: docking.cpp:578 docking.cpp:680 docking.cpp:738
+#: docking.cpp:582 docking.cpp:684 docking.cpp:742
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr ""
 
-#: docking.cpp:666
+#: docking.cpp:670
 msgid "Start Recording"
 msgstr ""
 
-#: docking.cpp:720
+#: docking.cpp:724
 msgid "Resume playback"
 msgstr ""
 
-#: docking.cpp:724
+#: docking.cpp:728
 msgid "Pause playback"
 msgstr ""
 

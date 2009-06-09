@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_lirc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-08 23:28+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-21 21:09+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -16,103 +16,103 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: lirc-configuration.cpp:47
+#: lirc-configuration.cpp:51
 msgid "digit 0"
 msgstr "Číslice 0"
 
-#: lirc-configuration.cpp:48
+#: lirc-configuration.cpp:52
 msgid "digit 1"
 msgstr "Číslice 1"
 
-#: lirc-configuration.cpp:49
+#: lirc-configuration.cpp:53
 msgid "digit 2"
 msgstr "Číslice 2"
 
-#: lirc-configuration.cpp:50
+#: lirc-configuration.cpp:54
 msgid "digit 3"
 msgstr "Číslice 3"
 
-#: lirc-configuration.cpp:51
+#: lirc-configuration.cpp:55
 msgid "digit 4"
 msgstr "Číslice 4"
 
-#: lirc-configuration.cpp:52
+#: lirc-configuration.cpp:56
 msgid "digit 5"
 msgstr "Číslice 5"
 
-#: lirc-configuration.cpp:53
+#: lirc-configuration.cpp:57
 msgid "digit 6"
 msgstr "Číslice 6"
 
-#: lirc-configuration.cpp:54
+#: lirc-configuration.cpp:58
 msgid "digit 7"
 msgstr "Číslice 7"
 
-#: lirc-configuration.cpp:55
+#: lirc-configuration.cpp:59
 msgid "digit 8"
 msgstr "Číslice 8"
 
-#: lirc-configuration.cpp:56
+#: lirc-configuration.cpp:60
 msgid "digit 9"
 msgstr "Číslice 9"
 
-#: lirc-configuration.cpp:57
+#: lirc-configuration.cpp:61
 msgid "Power On"
 msgstr "Zapnout"
 
-#: lirc-configuration.cpp:58
+#: lirc-configuration.cpp:62
 msgid "Power Off"
 msgstr "Vypnout"
 
-#: lirc-configuration.cpp:59
+#: lirc-configuration.cpp:63
 msgid "Pause"
 msgstr "Pozastavit"
 
-#: lirc-configuration.cpp:60
+#: lirc-configuration.cpp:64
 msgid "Start Recording"
 msgstr "Začít s nahráváním"
 
-#: lirc-configuration.cpp:61
+#: lirc-configuration.cpp:65
 msgid "Stop Recording"
 msgstr "Zastavit nahrávání"
 
-#: lirc-configuration.cpp:62
+#: lirc-configuration.cpp:66
 msgid "Increase Volume"
 msgstr "Zvýšit hlasitost"
 
-#: lirc-configuration.cpp:63
+#: lirc-configuration.cpp:67
 msgid "Decrease Volume"
 msgstr "Snížit hlasitost"
 
-#: lirc-configuration.cpp:64
+#: lirc-configuration.cpp:68
 msgid "Next Channel"
 msgstr "Následující kanál"
 
-#: lirc-configuration.cpp:65
+#: lirc-configuration.cpp:69
 msgid "Previous Channel"
 msgstr "Předchozí kanál"
 
-#: lirc-configuration.cpp:66
+#: lirc-configuration.cpp:70
 msgid "Search Next Channel"
 msgstr "Hledat následující kanál"
 
-#: lirc-configuration.cpp:67
+#: lirc-configuration.cpp:71
 msgid "Search Previous Channel"
 msgstr "Hledat předchozí kanál"
 
-#: lirc-configuration.cpp:68
+#: lirc-configuration.cpp:72
 msgid "Enable Sleep Countdown"
 msgstr "Povolit režim spánku"
 
-#: lirc-configuration.cpp:69
+#: lirc-configuration.cpp:73
 msgid "Quit KRadio"
 msgstr "Ukončit KRadio"
 
-#: lirc-configuration.cpp:121 lirc-configuration.cpp:122
+#: lirc-configuration.cpp:125 lirc-configuration.cpp:126
 msgid "<don't care>"
 msgstr "<neměj péči>"
 
-#: lirc-configuration.cpp:270
+#: lirc-configuration.cpp:278
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -120,7 +120,7 @@ msgstr ""
 "Zadejte řetězec znaků svého dálkového řízení, nebo pouze stiskněte tlačítko "
 "na svém dálkovém ovládání"
 
-#: lirc-configuration.cpp:276
+#: lirc-configuration.cpp:284
 msgid "Double Click on the entries to change the assignments"
 msgstr "Dvojité klepnutí na záznamy kvůli změně přiřazení"
 

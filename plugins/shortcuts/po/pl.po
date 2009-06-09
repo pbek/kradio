@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,118 +30,118 @@ msgstr ""
 msgid "Shortcuts Support"
 msgstr ""
 
-#: shortcuts.cpp:53 shortcuts.cpp:201
+#: shortcuts.cpp:53 shortcuts.cpp:199
 msgid "Shortcuts Plugin"
 msgstr ""
 
-#: shortcuts.cpp:62
+#: shortcuts.cpp:61
 msgid "Standard Actions"
 msgstr ""
 
-#: shortcuts.cpp:63
+#: shortcuts.cpp:62
 msgid "Station Actions"
 msgstr ""
 
-#: shortcuts.cpp:65
+#: shortcuts.cpp:64
 msgid "Digit 0"
 msgstr ""
 
-#: shortcuts.cpp:66
+#: shortcuts.cpp:65
 msgid "Digit 1"
 msgstr ""
 
-#: shortcuts.cpp:67
+#: shortcuts.cpp:66
 msgid "Digit 2"
 msgstr ""
 
-#: shortcuts.cpp:68
+#: shortcuts.cpp:67
 msgid "Digit 3"
 msgstr ""
 
-#: shortcuts.cpp:69
+#: shortcuts.cpp:68
 msgid "Digit 4"
 msgstr ""
 
-#: shortcuts.cpp:70
+#: shortcuts.cpp:69
 msgid "Digit 5"
 msgstr ""
 
-#: shortcuts.cpp:71
+#: shortcuts.cpp:70
 msgid "Digit 6"
 msgstr ""
 
-#: shortcuts.cpp:72
+#: shortcuts.cpp:71
 msgid "Digit 7"
 msgstr ""
 
-#: shortcuts.cpp:73
+#: shortcuts.cpp:72
 msgid "Digit 8"
 msgstr ""
 
-#: shortcuts.cpp:74
+#: shortcuts.cpp:73
 msgid "Digit 9"
 msgstr ""
 
-#: shortcuts.cpp:75
+#: shortcuts.cpp:74
 msgid "Power on"
 msgstr ""
 
-#: shortcuts.cpp:76
+#: shortcuts.cpp:75
 msgid "Power off"
 msgstr ""
 
-#: shortcuts.cpp:77
+#: shortcuts.cpp:76
 msgid "Pause"
 msgstr ""
 
-#: shortcuts.cpp:78
+#: shortcuts.cpp:77
 msgid "Start recording"
 msgstr ""
 
-#: shortcuts.cpp:79
+#: shortcuts.cpp:78
 msgid "Stop recording"
 msgstr ""
 
-#: shortcuts.cpp:80
+#: shortcuts.cpp:79
 msgid "Increase volume"
 msgstr ""
 
-#: shortcuts.cpp:81
+#: shortcuts.cpp:80
 msgid "Decrease volume"
 msgstr ""
 
-#: shortcuts.cpp:82
+#: shortcuts.cpp:81
 msgid "Increase Frequency"
 msgstr ""
 
-#: shortcuts.cpp:83
+#: shortcuts.cpp:82
 msgid "Decrease Frequency"
 msgstr ""
 
-#: shortcuts.cpp:84
+#: shortcuts.cpp:83
 msgid "Next station"
 msgstr ""
 
-#: shortcuts.cpp:85
+#: shortcuts.cpp:84
 msgid "Previous station"
 msgstr ""
 
-#: shortcuts.cpp:86
+#: shortcuts.cpp:85
 msgid "Search next station"
 msgstr ""
 
-#: shortcuts.cpp:87
+#: shortcuts.cpp:86
 msgid "Search previous station"
 msgstr ""
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:87
 msgid "Sleep"
 msgstr ""
 
-#: shortcuts.cpp:89
+#: shortcuts.cpp:88
 msgid "Quit KRadio"
 msgstr ""
 
-#: shortcuts.cpp:200
+#: shortcuts.cpp:198
 msgid "Shortcuts"
 msgstr ""

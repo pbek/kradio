@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-08 23:28+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-04 14:30+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -16,64 +16,64 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#. i18n: file: radio-configuration-ui.ui:352
+#. i18n: file: radio-configuration-ui.ui:320
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: radio-configuration.cpp:73 rc.cpp:46 rc.cpp:134
+#: radio-configuration.cpp:81 rc.cpp:52 rc.cpp:146
 msgid "unchanged"
 msgstr "nezměněno"
 
-#. i18n: file: radio-configuration-ui.ui:325
+#. i18n: file: radio-configuration-ui.ui:293
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
-#: radio-configuration.cpp:76 rc.cpp:34 rc.cpp:122
+#: radio-configuration.cpp:84 rc.cpp:40 rc.cpp:134
 msgid "<don't care>"
 msgstr "<neměj péči>"
 
-#. i18n: file: radio-configuration-ui.ui:330
+#. i18n: file: radio-configuration-ui.ui:298
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
-#: radio-configuration.cpp:77 rc.cpp:37 rc.cpp:125
+#: radio-configuration.cpp:85 rc.cpp:43 rc.cpp:137
 msgid "Mono"
 msgstr "Mono"
 
-#. i18n: file: radio-configuration-ui.ui:335
+#. i18n: file: radio-configuration-ui.ui:303
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
-#: radio-configuration.cpp:78 rc.cpp:40 rc.cpp:128
+#: radio-configuration.cpp:86 rc.cpp:46 rc.cpp:140
 msgid "Stereo"
 msgstr "Stereo"
 
-#: radio-configuration.cpp:81
+#: radio-configuration.cpp:89
 msgid "load + replace presets"
 msgstr "Nahrát a nahradit předvolby"
 
-#: radio-configuration.cpp:82
+#: radio-configuration.cpp:90
 msgid "load + add presets"
 msgstr "Nahrát a přidat předvolby"
 
-#: radio-configuration.cpp:419
+#: radio-configuration.cpp:414
 msgid "Image Selection"
 msgstr "Výběr symbolu"
 
-#: radio-configuration.cpp:424
+#: radio-configuration.cpp:419
 msgid "ignoring non-local image"
 msgstr "Ignorovat symboly, které nejsou místní"
 
-#: radio-configuration.cpp:540 radio-configuration.cpp:568
+#: radio-configuration.cpp:534 radio-configuration.cpp:562
 msgid "KRadio Preset Files"
 msgstr "Soubory s předvolbami vysílacích stanic pro KRadio"
 
-#: radio-configuration.cpp:544
+#: radio-configuration.cpp:538
 msgid "Select Preset File"
 msgstr "Vybrat soubor s předvolbami vysílacích stanic"
 
-#: radio-configuration.cpp:572
+#: radio-configuration.cpp:566
 msgid "Store Preset File"
 msgstr "Uložit soubor s předvolbami vysílacích stanic"
 
-#: radio-configuration.cpp:649
+#: radio-configuration.cpp:643
 #, kde-format
 msgid "found %1 new stations"
 msgstr "Bylo nalezeno %1 nových vysílacích stanic"
 
-#: radio-configuration.cpp:651
+#: radio-configuration.cpp:645
 #, kde-format
 msgid "have now %1 stations"
 msgstr "Po ruce je %1 nových vysílacích stanic"
@@ -105,55 +105,69 @@ msgstr "neznámé"
 
 #. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
-#: rc.cpp:3 rc.cpp:91
+#: rc.cpp:3 rc.cpp:97
 msgid "Station &Presets"
 msgstr "Předvolby pro &vysílací stanice"
 
-#. i18n: file: radio-configuration-ui.ui:35
-#. i18n: ectx: property (text), widget (QLabel, labelStationList)
-#: rc.cpp:6 rc.cpp:94
-msgid "Stations"
-msgstr "Vysílací stanice"
-
-#. i18n: file: radio-configuration-ui.ui:117
-#. i18n: ectx: property (text), widget (KPushButton, buttonSearchStations)
-#: rc.cpp:9 rc.cpp:97
-msgid "&Search Stations"
+#. i18n: file: radio-configuration-ui.ui:104
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:107
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:104
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:107
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#: rc.cpp:6 rc.cpp:9 rc.cpp:100 rc.cpp:103
+#, fuzzy
+msgid "Search Stations"
 msgstr "&Hledat vysílací stanice"
 
-#. i18n: file: radio-configuration-ui.ui:130
-#. i18n: ectx: property (text), widget (KPushButton, buttonLoadPresets)
-#: rc.cpp:12 rc.cpp:100
-msgid "Load"
-msgstr "Nahrát"
+#. i18n: file: radio-configuration-ui.ui:123
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:126
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:123
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:126
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#: rc.cpp:12 rc.cpp:15 rc.cpp:106 rc.cpp:109
+#, fuzzy
+msgid "Load Presets"
+msgstr "Nahrát a přidat předvolby"
 
-#. i18n: file: radio-configuration-ui.ui:143
-#. i18n: ectx: property (text), widget (KPushButton, buttonStorePresets)
-#: rc.cpp:15 rc.cpp:103
-msgid "Save As"
-msgstr "Uložit jako"
+#. i18n: file: radio-configuration-ui.ui:142
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:145
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:142
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:145
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#: rc.cpp:18 rc.cpp:21 rc.cpp:112 rc.cpp:115
+msgid "Save Presets as ..."
+msgstr ""
 
-#. i18n: file: radio-configuration-ui.ui:174
+#. i18n: file: radio-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
-#: rc.cpp:18 rc.cpp:106
+#: rc.cpp:24 rc.cpp:118
 msgid "Name"
 msgstr "Název"
 
-#. i18n: file: radio-configuration-ui.ui:198
+#. i18n: file: radio-configuration-ui.ui:208
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
-#: rc.cpp:21 rc.cpp:109
+#: rc.cpp:27 rc.cpp:121
 msgid "Short Name"
 msgstr "Zkrácený název"
 
-#. i18n: file: radio-configuration-ui.ui:222
+#. i18n: file: radio-configuration-ui.ui:232
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
-#: rc.cpp:24 rc.cpp:112
+#: rc.cpp:30 rc.cpp:124
 msgid "Pixmap File"
 msgstr "Soubor s obrázkem"
 
-#. i18n: file: radio-configuration-ui.ui:321
+#. i18n: file: radio-configuration-ui.ui:289
 #. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
-#: rc.cpp:27 rc.cpp:115
+#: rc.cpp:33 rc.cpp:127
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -181,88 +195,89 @@ msgstr ""
 "style:italic;\">Může se ale stát, že některé ovladače budou toto nastavení "
 "pomíjet, aniž by vás o tom uvědomily.</span></p></body></html>"
 
-#. i18n: file: radio-configuration-ui.ui:349
+#. i18n: file: radio-configuration-ui.ui:317
 #. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:43 rc.cpp:131
+#: rc.cpp:49 rc.cpp:143
 msgid "The volume that is used when the station is tuned"
 msgstr "Hlasitost používaná při ladění vysílací stanice"
 
-#. i18n: file: radio-configuration-ui.ui:355
+#. i18n: file: radio-configuration-ui.ui:323
 #. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:50 rc.cpp:138
+#: rc.cpp:56 rc.cpp:150
 #, no-c-format
 msgid " %"
 msgstr " %"
 
-#. i18n: file: radio-configuration-ui.ui:368
+#. i18n: file: radio-configuration-ui.ui:336
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
-#: rc.cpp:53 rc.cpp:141
+#: rc.cpp:59 rc.cpp:153
 msgid "Stereo Mode"
 msgstr "Režim sterea"
 
-#. i18n: file: radio-configuration-ui.ui:378
+#. i18n: file: radio-configuration-ui.ui:346
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
-#: rc.cpp:56 rc.cpp:144
+#: rc.cpp:62 rc.cpp:156
 msgid "Volume Preset"
 msgstr "Přednastavení hlasitosti"
 
-#. i18n: file: radio-configuration-ui.ui:410
+#. i18n: file: radio-configuration-ui.ui:393
+#. i18n: ectx: attribute (title), widget (QWidget, About)
+#: rc.cpp:65 rc.cpp:159
+#, fuzzy
+msgid "Preset &File"
+msgstr "Uložit soubor s předvolbami vysílacích stanic"
+
+#. i18n: file: radio-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
-#: rc.cpp:59 rc.cpp:147
+#: rc.cpp:68 rc.cpp:162
 msgid "Personal Preset File"
 msgstr "Osobní soubor s předvolbami vysílacích stanic"
 
-#. i18n: file: radio-configuration-ui.ui:442
-#. i18n: ectx: attribute (title), widget (QWidget, About)
-#: rc.cpp:62 rc.cpp:150
-msgid "Additional &Information"
-msgstr "Doplňkové &informace"
-
-#. i18n: file: radio-configuration-ui.ui:469
+#. i18n: file: radio-configuration-ui.ui:417
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
-#: rc.cpp:65 rc.cpp:153
+#: rc.cpp:71 rc.cpp:165
 msgid "City"
 msgstr "Město"
 
-#. i18n: file: radio-configuration-ui.ui:482
+#. i18n: file: radio-configuration-ui.ui:430
 #. i18n: ectx: property (text), widget (QLabel, labelCountry)
-#: rc.cpp:68 rc.cpp:156
+#: rc.cpp:74 rc.cpp:168
 msgid "Country"
 msgstr "Země"
 
-#. i18n: file: radio-configuration-ui.ui:513
+#. i18n: file: radio-configuration-ui.ui:461
 #. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
-#: rc.cpp:71 rc.cpp:159
+#: rc.cpp:77 rc.cpp:171
 msgid "&Now"
 msgstr "&Nyní"
 
-#. i18n: file: radio-configuration-ui.ui:522
+#. i18n: file: radio-configuration-ui.ui:470
 #. i18n: ectx: property (text), widget (QLabel, labelComment)
-#: rc.cpp:74 rc.cpp:162
+#: rc.cpp:80 rc.cpp:174
 msgid "Comment"
 msgstr "Poznámka"
 
-#. i18n: file: radio-configuration-ui.ui:535
+#. i18n: file: radio-configuration-ui.ui:483
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
-#: rc.cpp:77 rc.cpp:165
+#: rc.cpp:83 rc.cpp:177
 msgid "Media"
 msgstr "Média"
 
-#. i18n: file: radio-configuration-ui.ui:545
+#. i18n: file: radio-configuration-ui.ui:493
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
-#: rc.cpp:80 rc.cpp:168
+#: rc.cpp:86 rc.cpp:180
 msgid "Maintainer"
 msgstr "Údržbář"
 
-#. i18n: file: radio-configuration-ui.ui:558
+#. i18n: file: radio-configuration-ui.ui:506
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
-#: rc.cpp:83 rc.cpp:171
+#: rc.cpp:89 rc.cpp:183
 msgid "Last Change"
 msgstr "Poslední změna"
 
-#. i18n: file: radio-configuration-ui.ui:592
+#. i18n: file: radio-configuration-ui.ui:540
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:86 rc.cpp:174
+#: rc.cpp:92 rc.cpp:186
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
@@ -270,12 +285,24 @@ msgstr ""
 "<p align=\"center\">Klepněte na následující odkaz , abyste touto předvolbou "
 "s vysílací stanicí přispěli projektu KRradio.</p>"
 
-#: rc.cpp:87
+#: rc.cpp:93
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Pavel Fric"
 
-#: rc.cpp:88
+#: rc.cpp:94
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pavelfric@seznam.cz"
+
+#~ msgid "Stations"
+#~ msgstr "Vysílací stanice"
+
+#~ msgid "Load"
+#~ msgstr "Nahrát"
+
+#~ msgid "Save As"
+#~ msgstr "Uložit jako"
+
+#~ msgid "Additional &Information"
+#~ msgstr "Doplňkové &informace"

@@ -1,3 +1,4 @@
+# translation of kradio4-svn.plugins.recording.po.de.po to German
 # translation of de.po to
 # translation of kradio-recording.po to
 # This file is put in the public domain.
@@ -5,12 +6,12 @@
 # Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: de\n"
+"Project-Id-Version: kradio4-svn.plugins.recording.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
-"PO-Revision-Date: 2009-03-29 12:04+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"PO-Revision-Date: 2009-06-10 00:25+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: \n"
+"Language-Team: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,17 +53,16 @@ msgstr "Die Ausgabedatei %1 kann nicht geöffnet werden. "
 
 #: encoder_mp3.cpp:158
 msgid "Cannot allocate buffers for mp3 encoding. "
-msgstr ""
-"Die Puffer für das Codieren des MP3-Streams konnten nicht angelegt werden. "
+msgstr "Die Puffer für das Codieren des MP3-Streams konnten nicht angelegt werden. "
 
-#: encoder_ogg.cpp:97
+#: encoder_ogg.cpp:96
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Das schreiben der Ogg/Vorbis-Daten schlug fehl. "
 
 #: encoder_ogg.cpp:139
 #, kde-format
-msgid "Cannot open Ogg/Vorbis output file %1. "
-msgstr "Die Ogg/Vorbis-Ausgabedatei %1 konnte nicht geöffnet werden. "
+msgid "Cannot open Ogg/Vorbis output file %1: %2"
+msgstr "Die Ogg/Vorbis-Ausgabedatei %1 konnte nicht geöffnet werden: %2"
 
 #: encoder_ogg.cpp:152
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
@@ -365,8 +365,7 @@ msgstr "Die Aufnahme wurde beendet"
 
 #: recording.cpp:660
 #, kde-format
-msgid ""
-"Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
+msgid "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
 msgstr ""
 "Recording::notifySoundStreamData(Kodierte Daten): Die Empfängermodule "
 "übersprangen %1 Bytess"
@@ -454,3 +453,4 @@ msgstr "00:00:00.00"
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
 msgstr "Aufnahme anhalten"
+

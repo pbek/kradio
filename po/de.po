@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
-"PO-Revision-Date: 2009-04-18 12:10+0200\n"
-"Last-Translator: \n"
-"Language-Team: German <en@li.org>\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"PO-Revision-Date: 2009-06-10 00:32+0200\n"
+"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
+"Language-Team: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,11 +130,11 @@ msgstr "Symbol "
 msgid "Station"
 msgstr "Sender"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:99
-#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:226
+#. i18n: file: src/pluginmanager-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#: radiostations/radiostation-listview.cpp:38 rc.cpp:26 rc.cpp:44
+#. i18n: file: src/pluginmanager-configuration-ui.ui:325
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: radiostations/radiostation-listview.cpp:38 rc.cpp:50 rc.cpp:68
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -175,14 +175,12 @@ msgstr "kann die Puffer-Datei %1 nicht öffnen"
 #: src/fileringbuffer.cpp:93
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
-msgstr ""
-"FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
+msgstr "FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
 
 #: src/fileringbuffer.cpp:99
 #, kde-format
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
-msgstr ""
-"FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
+msgstr "FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
 
 #: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
 #, kde-format
@@ -259,7 +257,7 @@ msgid "Library %1: Plugin Entry Point is missing\n"
 msgstr "Bibliothek %1: Eintrittspunkt wurde nicht gefunden\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
-#: src/pluginmanager-configuration.cpp:190
+#: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
 msgstr "Das Laden der Bibliothek schlug fehl"
 
@@ -328,8 +326,7 @@ msgstr "Fehler: Das erzeugen der Instanz \"%1\" der Klasse %2 schlug fehl."
 #: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr ""
-"Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
+msgstr "Fehler: Kann die Instanz \"%1\" der unbekannten Klasse %2 nicht erzeugen."
 
 #: src/main.cpp:34
 msgid "KRadio4"
@@ -384,11 +381,11 @@ msgstr "Initiale Idee, allererste KDE 2 Anwendung"
 msgid "Buffer Overflow. "
 msgstr "Puffer Überlauf."
 
-#: src/plugin_configuration_dialog.cpp:34
+#: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
 msgstr "Konfigurationsdialog"
 
-#: src/pluginmanager-configuration.cpp:189
+#: src/pluginmanager-configuration.cpp:196
 #, kde-format
 msgid ""
 "Library %1: \n"
@@ -397,65 +394,63 @@ msgstr ""
 "Bibliothek %1: \n"
 "Kann keine nicht-lokalen Bibliotheken laden"
 
-#: src/pluginmanager-configuration.cpp:219
+#: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
 msgstr "Name der Plugin-Instanz eingeben"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:88
+#. i18n: file: src/pluginmanager-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: src/pluginmanager-configuration.cpp:220 rc.cpp:23
+#: src/pluginmanager-configuration.cpp:227 rc.cpp:65
 msgid "Instance Name"
 msgstr "Name der Instanz"
 
-#: src/pluginmanager.cpp:434
+#: src/pluginmanager.cpp:436
 msgid "Plugins"
 msgstr "Plugins"
 
-#: src/pluginmanager.cpp:435
+#: src/pluginmanager.cpp:437
 msgid "Plugin Library Configuration"
 msgstr "Konfiguration der Plugin-Bibliotheken"
 
-#: src/pluginmanager.cpp:568
+#: src/pluginmanager.cpp:570
 msgid "Starting Plugins"
 msgstr "Starten der Plugins"
 
-#: src/pluginmanager.cpp:585 src/pluginmanager.cpp:619
+#: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Erzeuge Plugin %1"
 
-#: src/pluginmanager.cpp:603
-msgid ""
-"New plugins found. Do you want me to automatically create instances now?"
+#: src/pluginmanager.cpp:605
+msgid "New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
 "Neue Plugins wurden gefunden: Sollen Instanzen dieser Plugins jetzt "
 "automatisch erzeugt werden?"
 
-#: src/pluginmanager.cpp:605
+#: src/pluginmanager.cpp:607
 msgid "New Plugins found"
 msgstr "Neue Plugins wurden gefunden"
 
-#: src/pluginmanager.cpp:640
+#: src/pluginmanager.cpp:642
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Starten des Plugins %1"
 
-#: src/pluginmanager.cpp:758
+#: src/pluginmanager.cpp:767
 msgid "Show all"
 msgstr "Alle anzeigen"
 
-#: src/pluginmanager.cpp:759
+#: src/pluginmanager.cpp:768
 msgid "Hide all"
 msgstr "Alle verstecken"
 
-#: src/pluginmanager.cpp:760
+#: src/pluginmanager.cpp:769
 msgid "Restore all"
 msgstr "Alle wiederherstellen"
 
-#: src/pluginmanager.cpp:761
+#: src/pluginmanager.cpp:770
 msgid "restore state before laste hide-all activation"
-msgstr ""
-"Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
+msgstr "Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
@@ -638,85 +633,51 @@ msgstr "emw@nocabal.de"
 msgid "PluginManagerConfigurationUI"
 msgstr "PluginManagerConfigurationUI"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:23
-#. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
+#. i18n: file: src/pluginmanager-configuration-ui.ui:39
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:8
+msgid "Automatic detection and load of new plugins"
+msgstr "Automatische Erkennung/Laden von neuen Plugins"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:60
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
+#: rc.cpp:11
+msgid "Do not check/load!"
+msgstr "Nicht überprüfen/laden!"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:73
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
+#: rc.cpp:14
+msgid "Automatically check/load!"
+msgstr "Automatisch überprüfen/laden!"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
+#: rc.cpp:17
+msgid "Please Ask!"
+msgstr "Bitte nachfragen!"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
+#: rc.cpp:20
 msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
 msgstr "Fortschrittsbalken bei der Initialisierung der Plugins anzeigen"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:26
+#. i18n: file: src/pluginmanager-configuration-ui.ui:109
 #. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
-#: rc.cpp:11
+#: rc.cpp:23
 msgid "Alt+Z"
 msgstr "Alt+Z"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:49
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
-#: rc.cpp:14
-msgid "Created Plugin Instances"
-msgstr "Erzeugte Plugin-Instanz"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:70
-#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
-#: rc.cpp:17
-msgid "List of the plugin instances currently running"
-msgstr "Liste der gegenwärtig laufenden Plugin-Instanzen"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:77
-#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:215
-#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#: rc.cpp:20 rc.cpp:41
-msgid "Plugin Class"
-msgstr "Plugin Klasse"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:135
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
-#: rc.cpp:29
-msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr "Entfernt/beendet die auf der linken Seite ausgewählte Plugin-Instanz"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:158
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: rc.cpp:32
-msgid "Available Plugin Classes"
-msgstr "Liste der verfügbaren Plugin-Klassen"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:192
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
-#: rc.cpp:35
-msgid "Create a new instance of plugin class selected in the list on the left"
-msgstr ""
-"Erzeugen einer neuen Instanz der in der linken Liste ausgewählten "
-"Pluginklasse"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:208
-#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
-#: rc.cpp:38
-msgid "List of available plugin classes found in the plugin libraries"
-msgstr "Liste in den Plugin-Bibliotheken gefundenen verfügbaren Plugin-Klassen"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:253
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: rc.cpp:47
+#. i18n: file: src/pluginmanager-configuration-ui.ui:120
+#. i18n: ectx: attribute (title), widget (QWidget, Seite)
+#: rc.cpp:26
 msgid "Plugin Libraries"
 msgstr "Plugin-Bibliothek"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:271
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
-#: rc.cpp:50
-msgid "Unload the plugin library selected in the list on the left side"
-msgstr "Entläd die auf der linken Seite ausgewählte Plugin-Bibliothek"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:287
-#. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
-#: rc.cpp:53
-msgid "list of loaded plugin libraries"
-msgstr "Liste der geladenen Plugin-Bibliotheken"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:310
+#. i18n: file: src/pluginmanager-configuration-ui.ui:129
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
-#: rc.cpp:56
+#: rc.cpp:29
 msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
@@ -724,37 +685,71 @@ msgstr ""
 "Auswahl einer Plugin-Bibliothek in einem Datei-Dialog. Die Bibliothek wird "
 "geladen, sobald der \"Bibliothek Laden\"-Knopf gedrückt wird."
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:323
+#. i18n: file: src/pluginmanager-configuration-ui.ui:142
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
-#: rc.cpp:59
+#: rc.cpp:32
 msgid "Loads the library specified in the box left to this button."
 msgstr "Läd die links angegebene Bibliothek."
 
+#. i18n: file: src/pluginmanager-configuration-ui.ui:161
+#. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
+#: rc.cpp:35
+msgid "list of loaded plugin libraries"
+msgstr "Liste der geladenen Plugin-Bibliotheken"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:174
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
+#: rc.cpp:38
+msgid "Unload the plugin library selected in the list on the left side"
+msgstr "Entläd die auf der linken Seite ausgewählte Plugin-Bibliothek"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:201
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
+#: rc.cpp:41
+msgid "Plugin Classes"
+msgstr "Plugin-Klassen"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:216
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
+#: rc.cpp:44
+msgid "List of available plugin classes found in the plugin libraries"
+msgstr "Liste in den Plugin-Bibliotheken gefundenen verfügbaren Plugin-Klassen"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:223
+#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
+#. i18n: file: src/pluginmanager-configuration-ui.ui:303
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: rc.cpp:47 rc.cpp:62
+msgid "Plugin Class"
+msgstr "Plugin Klasse"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:254
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
+#: rc.cpp:53
+msgid "Create a new instance of plugin class selected in the list on the left"
+msgstr ""
+"Erzeugen einer neuen Instanz der in der linken Liste ausgewählten "
+"Pluginklasse"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:281
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
+#: rc.cpp:56
+msgid "Plugin Instances"
+msgstr "Plugin-Instanzen"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:296
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
+#: rc.cpp:59
+msgid "List of the plugin instances currently running"
+msgstr "Liste der gegenwärtig laufenden Plugin-Instanzen"
+
 #. i18n: file: src/pluginmanager-configuration-ui.ui:345
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
-#: rc.cpp:62
-msgid "Automatic detection and load of new plugins"
-msgstr "Automatische Erkennung/Laden von neuen Plugins"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:366
-#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
-#: rc.cpp:65
-msgid "Do not check/load!"
-msgstr "Nicht überprüfen/laden!"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:379
-#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
-#: rc.cpp:68
-msgid "Automatically check/load!"
-msgstr "Automatisch überprüfen/laden!"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:392
-#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:71
-msgid "Please Ask!"
-msgstr "Bitte nachfragen!"
+msgid "Removes/stops the plugin instance selected in the list on the left"
+msgstr "Entfernt/beendet die auf der linken Seite ausgewählte Plugin-Instanz"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:422
+#. i18n: file: src/pluginmanager-configuration-ui.ui:381
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:74
 msgid ""
@@ -821,20 +816,21 @@ msgstr "verbleibende Zeit"
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">hier ist nix</p>"
 
-#. i18n: file: src/stationselector-ui.ui:13
+#. i18n: file: src/stationselector-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, StationSelectorUI)
 #: rc.cpp:99
 msgid "StationSelectorUI"
 msgstr "StationSelectorUI"
 
-#. i18n: file: src/stationselector-ui.ui:22
+#. i18n: file: src/stationselector-ui.ui:23
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:102
 msgid "Selected Stations"
 msgstr "Ausgewählte Sender"
 
-#. i18n: file: src/stationselector-ui.ui:92
+#. i18n: file: src/stationselector-ui.ui:105
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:105
 msgid "Available Stations"
 msgstr "Verfügbare Sender"
+

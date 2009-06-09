@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2006-11-19 16:15+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -17,10 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
-
-#: displaycfg.cpp:35
-msgid "Display Colors"
-msgstr "Cores do écran"
 
 #: displaycfg.cpp:48
 msgid "Active Text"
@@ -137,32 +133,32 @@ msgstr "Écran"
 msgid "Display Configuration"
 msgstr "Configuração do Écran"
 
-#: radioview_frequencyradio.cpp:118 radioview_frequencyradio.cpp:119
+#: radioview_frequencyradio.cpp:122 radioview_frequencyradio.cpp:123
 msgid "Frequency Display"
 msgstr "Écran das Frequências"
 
-#: radioview_frequencyradio.cpp:394
+#: radioview_frequencyradio.cpp:402
 msgid "AM"
 msgstr "AM"
 
-#: radioview_frequencyradio.cpp:395
+#: radioview_frequencyradio.cpp:403
 msgid "FM"
 msgstr "FM"
 
-#: radioview_frequencyradio.cpp:396
+#: radioview_frequencyradio.cpp:404
 msgid "RDS"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:397
+#: radioview_frequencyradio.cpp:405
 msgid "NET"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:538
+#: radioview_frequencyradio.cpp:546
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: radioview_frequencyradio.cpp:540
+#: radioview_frequencyradio.cpp:548
 #, kde-format
 msgid "%1 MHz"
 msgstr "%1 MHz"
@@ -238,6 +234,9 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "Display Colors"
+#~ msgstr "Cores do écran"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"

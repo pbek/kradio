@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-05-09 11:32+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
 #, kde-format
@@ -130,11 +131,11 @@ msgstr "Логотип"
 msgid "Station"
 msgstr "Назва"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:99
-#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:226
+#. i18n: file: src/pluginmanager-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#: radiostations/radiostation-listview.cpp:38 rc.cpp:26 rc.cpp:44
+#. i18n: file: src/pluginmanager-configuration-ui.ui:325
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: radiostations/radiostation-listview.cpp:38 rc.cpp:50 rc.cpp:68
 msgid "Description"
 msgstr "Опис"
 
@@ -203,7 +204,9 @@ msgstr "<qt>Інформація відсутня.<br />Наданий об'єк
 msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
 "html>"
-msgstr "<html><font size=\"5\">%1</font><br /><b>Версія %2</b><br />Використовується KDE %3</html>"
+msgstr ""
+"<html><font size=\"5\">%1</font><br /><b>Версія %2</b><br />Використовується "
+"KDE %3</html>"
 
 #: src/kradioaboutwidget.cpp:125
 #, kde-format
@@ -233,7 +236,9 @@ msgstr ""
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Будь ласка, надсилайте повідомлення про помилки до <a href=\"mailto:%1\">%2</a>.\n"
+msgstr ""
+"Будь ласка, надсилайте повідомлення про помилки до <a href=\"mailto:%1\">%2</"
+"a>.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
@@ -253,7 +258,7 @@ msgid "Library %1: Plugin Entry Point is missing\n"
 msgstr "Бібліотеку %1: не знайдено точку входження модуля\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
-#: src/pluginmanager-configuration.cpp:190
+#: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
 msgstr "Помилка завантаження бібліотечного модулю"
 
@@ -284,7 +289,10 @@ msgid ""
 "Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
-msgstr "Знайдено лише бібліотеки %1. Очікувалося, що їх кількість не менша за 5. Будь ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
+msgstr ""
+"Знайдено лише бібліотеки %1. Очікувалося, що їх кількість не менша за 5. "
+"Будь ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення "
+"мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
@@ -338,8 +346,8 @@ msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, lirc support, alarms, misc"
 msgstr ""
-"Портування на KDE4, підтримка RDS, скорочення, підтримка PVR, переписування для 1.0/0.3.0, "
-"запис, підтримка lirc, нагадування тощо"
+"Портування на KDE4, підтримка RDS, скорочення, підтримка PVR, переписування "
+"для 1.0/0.3.0, запис, підтримка lirc, нагадування тощо"
 
 #: src/main.cpp:44
 msgid "Marcus Camen"
@@ -369,11 +377,11 @@ msgstr "Ідея, перший варіант програми для KDE 2"
 msgid "Buffer Overflow. "
 msgstr "Переповнення буфера. "
 
-#: src/plugin_configuration_dialog.cpp:34
+#: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
 msgstr "Вікно параметрів"
 
-#: src/pluginmanager-configuration.cpp:189
+#: src/pluginmanager-configuration.cpp:196
 #, kde-format
 msgid ""
 "Library %1: \n"
@@ -382,61 +390,63 @@ msgstr ""
 "Бібліотека %1: \n"
 "Не вдалося завантажити нелокальну бібліотеку"
 
-#: src/pluginmanager-configuration.cpp:219
+#: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
 msgstr "Зазначте назву для цього екземпляра"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:88
+#. i18n: file: src/pluginmanager-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: src/pluginmanager-configuration.cpp:220 rc.cpp:23
+#: src/pluginmanager-configuration.cpp:227 rc.cpp:65
 msgid "Instance Name"
 msgstr "Назва копії"
 
-#: src/pluginmanager.cpp:434
+#: src/pluginmanager.cpp:436
 msgid "Plugins"
 msgstr ""
 "Модулі\n"
 "програми"
 
-#: src/pluginmanager.cpp:435
+#: src/pluginmanager.cpp:437
 msgid "Plugin Library Configuration"
 msgstr "Налаштування бібліотечних модулів"
 
-#: src/pluginmanager.cpp:568
+#: src/pluginmanager.cpp:570
 msgid "Starting Plugins"
 msgstr "Запуск модулів"
 
-#: src/pluginmanager.cpp:585 src/pluginmanager.cpp:619
+#: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Створюю модуль %1"
 
-#: src/pluginmanager.cpp:603
-msgid "New plugins found. Do you want me to automatically create instances now?"
-msgstr "Знайдено нові модулі. Бажаєте створити екземплярів цих модулів негайно?"
-
 #: src/pluginmanager.cpp:605
+msgid ""
+"New plugins found. Do you want me to automatically create instances now?"
+msgstr ""
+"Знайдено нові модулі. Бажаєте створити екземплярів цих модулів негайно?"
+
+#: src/pluginmanager.cpp:607
 msgid "New Plugins found"
 msgstr "Знайдено нові модулі"
 
-#: src/pluginmanager.cpp:640
+#: src/pluginmanager.cpp:642
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Вмикаю модуль %1"
 
-#: src/pluginmanager.cpp:758
+#: src/pluginmanager.cpp:767
 msgid "Show all"
 msgstr "Показати всі"
 
-#: src/pluginmanager.cpp:759
+#: src/pluginmanager.cpp:768
 msgid "Hide all"
 msgstr "Сховати всі"
 
-#: src/pluginmanager.cpp:760
+#: src/pluginmanager.cpp:769
 msgid "Restore all"
 msgstr "Відновити всі"
 
-#: src/pluginmanager.cpp:761
+#: src/pluginmanager.cpp:770
 msgid "restore state before laste hide-all activation"
 msgstr "відновити стан на час останньої активації дії «Сховати всі»"
 
@@ -622,119 +632,125 @@ msgstr "yurchor@ukr.net"
 msgid "PluginManagerConfigurationUI"
 msgstr "PluginManagerConfigurationUI"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:23
-#. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
-#: rc.cpp:8
-msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
-msgstr "&Демонструвати завантаження модулів під час запуску програми"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:26
-#. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
-#: rc.cpp:11
-msgid "Alt+Z"
-msgstr "Alt+Z"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:49
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
-#: rc.cpp:14
-msgid "Created Plugin Instances"
-msgstr "Створені екземпляри модулів"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:70
-#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
-#: rc.cpp:17
-msgid "List of the plugin instances currently running"
-msgstr "Список екземплярів запущених модулів"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:77
-#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:215
-#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#: rc.cpp:20 rc.cpp:41
-msgid "Plugin Class"
-msgstr "Модуль"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:135
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
-#: rc.cpp:29
-msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr "Вилучає/Зупиняє вибраний екземпляр модуля зі списку ліворуч"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:158
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: rc.cpp:32
-msgid "Available Plugin Classes"
-msgstr "Доступні класи модулів"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:192
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
-#: rc.cpp:35
-msgid "Create a new instance of plugin class selected in the list on the left"
-msgstr "Створити новий екземпляр модуля, обраного у списку ліворуч"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:208
-#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
-#: rc.cpp:38
-msgid "List of available plugin classes found in the plugin libraries"
-msgstr "Список доступних класів модулів, знайдених у бібліотеках модулів"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:253
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: rc.cpp:47
-msgid "Plugin Libraries"
-msgstr "Бібліотеки модулів"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:271
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
-#: rc.cpp:50
-msgid "Unload the plugin library selected in the list on the left side"
-msgstr "Вивантажити бібліотеку вибраного модуля у списку ліворуч"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:287
-#. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
-#: rc.cpp:53
-msgid "list of loaded plugin libraries"
-msgstr "список завантажених бібліотек модулів"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:310
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
-#: rc.cpp:56
-msgid ""
-"Select a plugin library from a file dialog. It will added to the library "
-"list if you press the \"Load Library\" button."
-msgstr "Оберіть бібліотеку модуля за допомогою діалогового вікна вибору файлів. Цю бібліотеку буде додано до списку бібліотек після натискання кнопки «Завантажити бібліотеку»."
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:323
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
-#: rc.cpp:59
-msgid "Loads the library specified in the box left to this button."
-msgstr "Завантажує бібліотеку, вказану у полі, розташованому ліворуч від кнопки."
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:345
+#. i18n: file: src/pluginmanager-configuration-ui.ui:39
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
-#: rc.cpp:62
+#: rc.cpp:8
 msgid "Automatic detection and load of new plugins"
 msgstr "Автоматичне виявлення і завантаження нових модулів"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:366
+#. i18n: file: src/pluginmanager-configuration-ui.ui:60
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
-#: rc.cpp:65
+#: rc.cpp:11
 msgid "Do not check/load!"
 msgstr "Не перевіряти/Не завантажувати!"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:379
+#. i18n: file: src/pluginmanager-configuration-ui.ui:73
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
-#: rc.cpp:68
+#: rc.cpp:14
 msgid "Automatically check/load!"
 msgstr "Автоматично перевіряти/завантажувати!"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:392
+#. i18n: file: src/pluginmanager-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
-#: rc.cpp:71
+#: rc.cpp:17
 msgid "Please Ask!"
 msgstr "Запитувати!"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:422
+#. i18n: file: src/pluginmanager-configuration-ui.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
+#: rc.cpp:20
+msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
+msgstr "&Демонструвати завантаження модулів під час запуску програми"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:109
+#. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
+#: rc.cpp:23
+msgid "Alt+Z"
+msgstr "Alt+Z"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:120
+#. i18n: ectx: attribute (title), widget (QWidget, Seite)
+#: rc.cpp:26
+msgid "Plugin Libraries"
+msgstr "Бібліотеки модулів"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:129
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
+#: rc.cpp:29
+msgid ""
+"Select a plugin library from a file dialog. It will added to the library "
+"list if you press the \"Load Library\" button."
+msgstr ""
+"Оберіть бібліотеку модуля за допомогою діалогового вікна вибору файлів. Цю "
+"бібліотеку буде додано до списку бібліотек після натискання кнопки "
+"«Завантажити бібліотеку»."
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:142
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
+#: rc.cpp:32
+msgid "Loads the library specified in the box left to this button."
+msgstr ""
+"Завантажує бібліотеку, вказану у полі, розташованому ліворуч від кнопки."
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:161
+#. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
+#: rc.cpp:35
+msgid "list of loaded plugin libraries"
+msgstr "список завантажених бібліотек модулів"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:174
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
+#: rc.cpp:38
+msgid "Unload the plugin library selected in the list on the left side"
+msgstr "Вивантажити бібліотеку вибраного модуля у списку ліворуч"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:201
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
+#: rc.cpp:41
+#, fuzzy
+msgid "Plugin Classes"
+msgstr "Модуль"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:216
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
+#: rc.cpp:44
+msgid "List of available plugin classes found in the plugin libraries"
+msgstr "Список доступних класів модулів, знайдених у бібліотеках модулів"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:223
+#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
+#. i18n: file: src/pluginmanager-configuration-ui.ui:303
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: rc.cpp:47 rc.cpp:62
+msgid "Plugin Class"
+msgstr "Модуль"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:254
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
+#: rc.cpp:53
+msgid "Create a new instance of plugin class selected in the list on the left"
+msgstr "Створити новий екземпляр модуля, обраного у списку ліворуч"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:281
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
+#: rc.cpp:56
+#, fuzzy
+msgid "Plugin Instances"
+msgstr "Створені екземпляри модулів"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:296
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
+#: rc.cpp:59
+msgid "List of the plugin instances currently running"
+msgstr "Список екземплярів запущених модулів"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:345
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
+#: rc.cpp:71
+msgid "Removes/stops the plugin instance selected in the list on the left"
+msgstr "Вилучає/Зупиняє вибраний екземпляр модуля зі списку ліворуч"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:381
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:74
 msgid ""
@@ -762,8 +778,14 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Для того, щоб "
-"<span style=\" font-weight:600;\">перейменувати</span> екземпляр модуля, наведіть вказівник на його позначку і двічі клацніть лівою кнопкою миші. Цю назву буде показано під піктограмою сторінки налаштування, у заголовку сторінки налаштування і, наприклад, у назві вашого звукового пристрою. Можливість редагування назв модулів призначено для зручності у випадках, коли у вас є декілька звукових карток і/або декілька екземплярів додатків ALSA.</p></body></html>"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Для того, "
+"щоб <span style=\" font-weight:600;\">перейменувати</span> екземпляр модуля, "
+"наведіть вказівник на його позначку і двічі клацніть лівою кнопкою миші. Цю "
+"назву буде показано під піктограмою сторінки налаштування, у заголовку "
+"сторінки налаштування і, наприклад, у назві вашого звукового пристрою. "
+"Можливість редагування назв модулів призначено для зручності у випадках, "
+"коли у вас є декілька звукових карток і/або декілька екземплярів додатків "
+"ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
@@ -795,21 +817,23 @@ msgstr "Час, що залишився"
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">тут нічого</p>"
 
-#. i18n: file: src/stationselector-ui.ui:13
+#. i18n: file: src/stationselector-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, StationSelectorUI)
 #: rc.cpp:99
 msgid "StationSelectorUI"
 msgstr "ІКВибірСтанції"
 
-#. i18n: file: src/stationselector-ui.ui:22
+#. i18n: file: src/stationselector-ui.ui:23
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:102
 msgid "Selected Stations"
 msgstr "Обрані"
 
-#. i18n: file: src/stationselector-ui.ui:92
+#. i18n: file: src/stationselector-ui.ui:105
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:105
 msgid "Available Stations"
 msgstr "Доступні"
 
+#~ msgid "Available Plugin Classes"
+#~ msgstr "Доступні класи модулів"

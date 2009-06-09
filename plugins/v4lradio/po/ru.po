@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-21 17:18+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -20,155 +20,132 @@ msgstr ""
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:143
+#: rc.cpp:3 rc.cpp:153
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: v4lradio-configuration-ui.ui:27
-#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
-#: rc.cpp:6 rc.cpp:146
-msgid "Devices"
+#. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
+#: rc.cpp:6 rc.cpp:156
+#, fuzzy
+msgid "V4L Device"
 msgstr "Устройства"
 
-#. i18n: file: v4lradio-configuration-ui.ui:36
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:9 rc.cpp:149
-msgid "Playback Mixer Device"
-msgstr "Устройство воспроизведения"
-
 #. i18n: file: v4lradio-configuration-ui.ui:46
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:12 rc.cpp:152
-msgid "Playback Mixer Channel"
-msgstr "Канал воспроизведения"
-
-#. i18n: file: v4lradio-configuration-ui.ui:56
-#. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
-#: rc.cpp:15 rc.cpp:155
-msgid "Radio Device"
-msgstr "Устройство радио"
+#. i18n: ectx: property (text), widget (QLabel, labelScanStep)
+#: rc.cpp:9 rc.cpp:159
+#, fuzzy
+msgid "Station scan step"
+msgstr "Шаг изменения частоты при поиске"
 
 #. i18n: file: v4lradio-configuration-ui.ui:66
-#. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
-#: rc.cpp:18 rc.cpp:158
-msgid "Capture Mixer Device"
-msgstr "Устройство записи"
+#. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
+#: rc.cpp:12 rc.cpp:162
+#, fuzzy
+msgid "Minimum signal quality"
+msgstr "Минимальный уровень сигнала"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
-#. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
-#: rc.cpp:21 rc.cpp:161
-msgid "Capture Mixer Channel"
-msgstr "Канал записи"
-
-#. i18n: file: v4lradio-configuration-ui.ui:123
-#. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:24 rc.cpp:164
-msgid "test"
-msgstr "проверка"
-
-#. i18n: file: v4lradio-configuration-ui.ui:131
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
-#: rc.cpp:27 rc.cpp:167
+#: rc.cpp:15 rc.cpp:165
 msgid "unknown v4l device"
 msgstr "неизвестно"
 
-#. i18n: file: v4lradio-configuration-ui.ui:161
-#. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:168
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:161
-#. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:168
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:30 rc.cpp:37 rc.cpp:170 rc.cpp:177
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Active Playback</span> is required when your "
-"radio card is not connected to your sound card via a cable to the line in "
-"jack. In this case, KRadio needs to capture the PCM data from a capture "
-"sound device in order to send the PCM data to the playback sound device. "
-"Therefore, if you enable <span style=\" font-weight:600;\">Active Playback</"
-"span>, you have to select a proper capture mixer device/channel and a proper "
-"PCM playback mixer/channel. This is particularly important for <span style="
-"\" font-weight:600;\">PVR cards</span> which usually need to capture the "
-"sound from <span style=\" font-style:italic;\">/dev/video24</span> (or "
-"similar). For <span style=\" font-weight:600;\">PVR cards</span>, you "
-"therefore have to setup the <span style=\" font-weight:600;\">Streaming "
-"Plugin</span> properly, too.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Активное воспроизведение</span> нужно, если "
-"плата радио не подсоединена непосредственно к звковой плате. Тогда KRadio "
-"захватывает аудиоданные с устройства захвата и пересылает их на устройство "
-"воспроизведения. Если Вы включили <span style=\" font-weight:600;\">Активное "
-"воспроизведение</span>, то необходимо выбрать верные устройство и канал для "
-"захвата и воспроизведения. Это особенно важно для  <span style=\" font-"
-"weight:600;\">карт PVR</span>, которые передают звук через устройство <span "
-"style=\" font-style:italic;\">/dev/video24</span> (или что-то в этом роде). "
-"Для таких карт нужно настроить и  <span style=\" font-weight:600;\">Модуль "
-"потового вещания</span>.</p></body></html>"
+#. i18n: file: v4lradio-configuration-ui.ui:96
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:18 rc.cpp:168
+msgid "V4L Version to use"
+msgstr "Версия драйвера"
 
-#. i18n: file: v4lradio-configuration-ui.ui:171
-#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:44 rc.cpp:184
-msgid "Use active pla&yback by capturing (use for PVR cards!)"
-msgstr "Захватывать звук и затем проигрывать его (используйте для плат PVR!)"
+#. i18n: file: v4lradio-configuration-ui.ui:103
+#. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
+#: rc.cpp:21 rc.cpp:171
+msgid "Radio Device"
+msgstr "Устройство радио"
 
-#. i18n: file: v4lradio-configuration-ui.ui:174
-#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:251
-#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:174
-#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:251
-#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
-#: rc.cpp:47 rc.cpp:75 rc.cpp:187 rc.cpp:215
-msgid "Alt+Y"
-msgstr "Alt+Y"
+#. i18n: file: v4lradio-configuration-ui.ui:119
+#. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
+#. i18n: file: v4lradio-configuration-ui.ui:234
+#. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
+#. i18n: file: v4lradio-configuration-ui.ui:291
+#. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
+#. i18n: file: v4lradio-configuration-ui.ui:119
+#. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
+#. i18n: file: v4lradio-configuration-ui.ui:234
+#. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
+#. i18n: file: v4lradio-configuration-ui.ui:291
+#. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
+#: rc.cpp:24 rc.cpp:36 rc.cpp:45 rc.cpp:174 rc.cpp:186 rc.cpp:195
+msgid " kHz"
+msgstr " кГц"
 
-#. i18n: file: v4lradio-configuration-ui.ui:187
-#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
-#: rc.cpp:50 rc.cpp:190
-msgid "Mute play&back channel at power off"
-msgstr "Выключать звук на канале воспроизведения при выходе"
+#. i18n: file: v4lradio-configuration-ui.ui:150
+#. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
+#: rc.cpp:27 rc.cpp:177
+msgid "V4L-1 API"
+msgstr "V4L-1"
 
-#. i18n: file: v4lradio-configuration-ui.ui:190
-#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxMuteOnPowerOff)
-#: rc.cpp:53 rc.cpp:193
-msgid "Alt+B"
-msgstr "Alt+B"
+#. i18n: file: v4lradio-configuration-ui.ui:157
+#. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
+#: rc.cpp:30 rc.cpp:180
+msgid "V4L-2 API"
+msgstr "V4L-2"
 
-#. i18n: file: v4lradio-configuration-ui.ui:203
-#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
-#: rc.cpp:56 rc.cpp:196
-msgid "Set playback channel volume to &zero at power off"
-msgstr "Устанавливать &нулевую громкость воспроизведения при выходе"
+#. i18n: file: v4lradio-configuration-ui.ui:210
+#. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
+#: rc.cpp:33 rc.cpp:183
+#, fuzzy
+msgid "Allowed frequency range"
+msgstr "Допустимый частотный диапазон:\tот"
 
-#. i18n: file: v4lradio-configuration-ui.ui:206
-#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
-#: rc.cpp:59 rc.cpp:199
-msgid "Alt+Z"
-msgstr "Alt+Z"
+#. i18n: file: v4lradio-configuration-ui.ui:256
+#. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
+#. i18n: file: v4lradio-configuration-ui.ui:313
+#. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
+#. i18n: file: v4lradio-configuration-ui.ui:256
+#. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
+#. i18n: file: v4lradio-configuration-ui.ui:313
+#. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
+#: rc.cpp:39 rc.cpp:48 rc.cpp:189 rc.cpp:198
+msgid "to"
+msgstr "до"
 
-#. i18n: file: v4lradio-configuration-ui.ui:229
+#. i18n: file: v4lradio-configuration-ui.ui:269
+#. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
+#: rc.cpp:42 rc.cpp:192
+msgid "65 MHz"
+msgstr "65 МГц"
+
+#. i18n: file: v4lradio-configuration-ui.ui:326
+#. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
+#: rc.cpp:51 rc.cpp:201
+msgid "108 MHz"
+msgstr "108 МГц"
+
+#. i18n: file: v4lradio-configuration-ui.ui:338
+#. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
+#: rc.cpp:54 rc.cpp:204
+#, fuzzy
+msgid "Device frequency range"
+msgstr "Частотный диапазон устройства"
+
+#. i18n: file: v4lradio-configuration-ui.ui:346
+#. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
+#: rc.cpp:57 rc.cpp:207
+msgid "RDS"
+msgstr "RDS"
+
+#. i18n: file: v4lradio-configuration-ui.ui:355
+#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
+#: rc.cpp:60 rc.cpp:210
+#, fuzzy
+msgid "Force RDS Enabled"
+msgstr "Принудительно"
+
+#. i18n: file: v4lradio-configuration-ui.ui:372
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:62 rc.cpp:202
+#: rc.cpp:63 rc.cpp:213
+#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -179,26 +156,7 @@ msgid ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Note for PVR owners:</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Active Playback</span> is required when your "
-"radio card is not connected to your sound card via a cable to the line in "
-"jack. In this case, KRadio needs to capture the PCM data from a capture "
-"sound device in order to send the PCM data to the playback sound device. "
-"Therefore, if you enable <span style=\" font-weight:600;\">Active Playback</"
-"span>, you have to select a proper capture mixer device/channel and a proper "
-"PCM playback mixer/channel. This is particularly important for <span style="
-"\" font-weight:600;\">PVR cards</span> which usually need to capture the "
-"sound from <span style=\" font-style:italic;\">/dev/video24</span> (or "
-"similar). For <span style=\" font-weight:600;\">PVR cards</span>, you "
-"therefore have to setup the <span style=\" font-weight:600;\">Streaming "
-"Plugin</span> properly, too.</p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Note for RDS Support:</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">If your "
+"style=\" text-decoration: underline;\">Note for RDS Support:</span> If your "
 "card supports RDS and RDS is not working, please check if the <span style=\" "
 "font-weight:600;\">kernel module saa6588.ko</span> is loaded. For cards with "
 "an saa6588 chip, this module is typically <span style=\" font-style:italic;"
@@ -247,177 +205,268 @@ msgstr ""
 "из RDS будут использованы в диалоге сканирования каналов для вновь найденных "
 "станций.</p></body></html>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:248
+#. i18n: file: v4lradio-configuration-ui.ui:409
+#. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
+#: rc.cpp:70 rc.cpp:220
+#, fuzzy
+msgid "Sound Devices"
+msgstr "Устройства"
+
+#. i18n: file: v4lradio-configuration-ui.ui:425
+#. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
+#: rc.cpp:73 rc.cpp:223
+msgid "test"
+msgstr "проверка"
+
+#. i18n: file: v4lradio-configuration-ui.ui:433
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:76 rc.cpp:226
+msgid "Playback Mixer Channel"
+msgstr "Канал воспроизведения"
+
+#. i18n: file: v4lradio-configuration-ui.ui:453
+#. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
+#: rc.cpp:79 rc.cpp:229
+msgid "Capture Mixer Device"
+msgstr "Устройство записи"
+
+#. i18n: file: v4lradio-configuration-ui.ui:496
+#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
+#: rc.cpp:82 rc.cpp:232
+msgid "Set playback channel volume to &zero at power off"
+msgstr "Устанавливать &нулевую громкость воспроизведения при выходе"
+
+#. i18n: file: v4lradio-configuration-ui.ui:499
+#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
+#: rc.cpp:85 rc.cpp:235
+msgid "Alt+Z"
+msgstr "Alt+Z"
+
+#. i18n: file: v4lradio-configuration-ui.ui:512
+#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
+#: rc.cpp:88 rc.cpp:238
+msgid "Mute play&back channel at power off"
+msgstr "Выключать звук на канале воспроизведения при выходе"
+
+#. i18n: file: v4lradio-configuration-ui.ui:515
+#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxMuteOnPowerOff)
+#: rc.cpp:91 rc.cpp:241
+msgid "Alt+B"
+msgstr "Alt+B"
+
+#. i18n: file: v4lradio-configuration-ui.ui:522
+#. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
+#: rc.cpp:94 rc.cpp:244
+msgid "Capture Mixer Channel"
+msgstr "Канал записи"
+
+#. i18n: file: v4lradio-configuration-ui.ui:532
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:97 rc.cpp:247
+msgid "Playback Mixer Device"
+msgstr "Устройство воспроизведения"
+
+#. i18n: file: v4lradio-configuration-ui.ui:556
+#. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
+#: rc.cpp:100 rc.cpp:250
+msgid "PVR && Co"
+msgstr ""
+
+#. i18n: file: v4lradio-configuration-ui.ui:575
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
+#. i18n: file: v4lradio-configuration-ui.ui:582
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
+#. i18n: file: v4lradio-configuration-ui.ui:575
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
+#. i18n: file: v4lradio-configuration-ui.ui:582
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
+#: rc.cpp:103 rc.cpp:110 rc.cpp:253 rc.cpp:260
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">Active Playback</span> is required when your "
+"radio card is not connected to your sound card via a cable to the line in "
+"jack. In this case, KRadio needs to capture the PCM data from a capture "
+"sound device in order to send the PCM data to the playback sound device. "
+"Therefore, if you enable <span style=\" font-weight:600;\">Active Playback</"
+"span>, you have to select a proper capture mixer device/channel and a proper "
+"PCM playback mixer/channel. This is particularly important for <span style="
+"\" font-weight:600;\">PVR cards</span> which usually need to capture the "
+"sound from <span style=\" font-style:italic;\">/dev/video24</span> (or "
+"similar). For <span style=\" font-weight:600;\">PVR cards</span>, you "
+"therefore have to setup the <span style=\" font-weight:600;\">Streaming "
+"Plugin</span> properly, too.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">Активное воспроизведение</span> нужно, если "
+"плата радио не подсоединена непосредственно к звковой плате. Тогда KRadio "
+"захватывает аудиоданные с устройства захвата и пересылает их на устройство "
+"воспроизведения. Если Вы включили <span style=\" font-weight:600;\">Активное "
+"воспроизведение</span>, то необходимо выбрать верные устройство и канал для "
+"захвата и воспроизведения. Это особенно важно для  <span style=\" font-"
+"weight:600;\">карт PVR</span>, которые передают звук через устройство <span "
+"style=\" font-style:italic;\">/dev/video24</span> (или что-то в этом роде). "
+"Для таких карт нужно настроить и  <span style=\" font-weight:600;\">Модуль "
+"потового вещания</span>.</p></body></html>"
+
+#. i18n: file: v4lradio-configuration-ui.ui:585
+#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
+#: rc.cpp:117 rc.cpp:267
+msgid "Use active pla&yback by capturing (use for PVR cards!)"
+msgstr "Захватывать звук и затем проигрывать его (используйте для плат PVR!)"
+
+#. i18n: file: v4lradio-configuration-ui.ui:588
+#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlayback)
+#. i18n: file: v4lradio-configuration-ui.ui:607
+#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
+#. i18n: file: v4lradio-configuration-ui.ui:588
+#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlayback)
+#. i18n: file: v4lradio-configuration-ui.ui:607
+#. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
+#: rc.cpp:120 rc.cpp:126 rc.cpp:270 rc.cpp:276
+msgid "Alt+Y"
+msgstr "Alt+Y"
+
+#. i18n: file: v4lradio-configuration-ui.ui:604
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
-#: rc.cpp:72 rc.cpp:212
+#: rc.cpp:123 rc.cpp:273
 msgid "Mute playback of capture channel when active playback is running"
 msgstr "Заглушить канал записи при включённом активном воспроизведении"
 
-#. i18n: file: v4lradio-configuration-ui.ui:291
-#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
-#: rc.cpp:78 rc.cpp:218
-msgid "Options"
-msgstr "Параметры"
+#. i18n: file: v4lradio-configuration-ui.ui:627
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:129 rc.cpp:279
+#, fuzzy
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" text-decoration: underline;\">Note for PVR owners:</span> <span "
+"style=\" font-weight:600;\">Active Playback</span> is required when your "
+"radio card is not connected to your sound card via a cable to the line in "
+"jack. In this case, KRadio needs to capture the PCM data from a capture "
+"sound device in order to send the PCM data to the playback sound device. "
+"Therefore, if you enable <span style=\" font-weight:600;\">Active Playback</"
+"span>, you have to select a proper capture mixer device/channel and a proper "
+"PCM playback mixer/channel. This is particularly important for <span style="
+"\" font-weight:600;\">PVR cards</span> which usually need to capture the "
+"sound from <span style=\" font-style:italic;\">/dev/video24</span> (or "
+"similar). For <span style=\" font-weight:600;\">PVR cards</span>, you "
+"therefore have to setup the <span style=\" font-weight:600;\">Streaming "
+"Plugin</span> properly, too.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">Активное воспроизведение</span> нужно, если "
+"плата радио не подсоединена непосредственно к звковой плате. Тогда KRadio "
+"захватывает аудиоданные с устройства захвата и пересылает их на устройство "
+"воспроизведения. Если Вы включили <span style=\" font-weight:600;\">Активное "
+"воспроизведение</span>, то необходимо выбрать верные устройство и канал для "
+"захвата и воспроизведения. Это особенно важно для  <span style=\" font-"
+"weight:600;\">карт PVR</span>, которые передают звук через устройство <span "
+"style=\" font-style:italic;\">/dev/video24</span> (или что-то в этом роде). "
+"Для таких карт нужно настроить и  <span style=\" font-weight:600;\">Модуль "
+"потового вещания</span>.</p></body></html>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:308
-#. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange)
-#: rc.cpp:81 rc.cpp:221
-msgid "to"
-msgstr "до"
-
-#. i18n: file: v4lradio-configuration-ui.ui:327
-#. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
-#. i18n: file: v4lradio-configuration-ui.ui:354
-#. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
-#. i18n: file: v4lradio-configuration-ui.ui:389
-#. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
-#. i18n: file: v4lradio-configuration-ui.ui:327
-#. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
-#. i18n: file: v4lradio-configuration-ui.ui:354
-#. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
-#. i18n: file: v4lradio-configuration-ui.ui:389
-#. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
-#: rc.cpp:84 rc.cpp:87 rc.cpp:93 rc.cpp:224 rc.cpp:227 rc.cpp:233
-msgid " kHz"
-msgstr " кГц"
-
-#. i18n: file: v4lradio-configuration-ui.ui:370
-#. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
-#: rc.cpp:90 rc.cpp:230
-msgid "minimum signal quality"
-msgstr "Минимальный уровень сигнала"
-
-#. i18n: file: v4lradio-configuration-ui.ui:408
-#. i18n: ectx: property (text), widget (QLabel, labelScanStep)
-#: rc.cpp:96 rc.cpp:236
-msgid "station scan step"
-msgstr "Шаг изменения частоты при поиске"
-
-#. i18n: file: v4lradio-configuration-ui.ui:418
-#. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
-#: rc.cpp:99 rc.cpp:239
-msgid "allowed frequency range"
-msgstr "Допустимый частотный диапазон:\tот"
-
-#. i18n: file: v4lradio-configuration-ui.ui:477
-#. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
-#: rc.cpp:102 rc.cpp:242
-msgid "65 MHz"
-msgstr "65 МГц"
-
-#. i18n: file: v4lradio-configuration-ui.ui:487
-#. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
-#: rc.cpp:105 rc.cpp:245
-msgid "108 MHz"
-msgstr "108 МГц"
-
-#. i18n: file: v4lradio-configuration-ui.ui:497
-#. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
-#: rc.cpp:108 rc.cpp:248
-msgid "device frequency range"
-msgstr "Частотный диапазон устройства"
-
-#. i18n: file: v4lradio-configuration-ui.ui:507
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:111 rc.cpp:251
-msgid "V4L Version to use"
-msgstr "Версия драйвера"
-
-#. i18n: file: v4lradio-configuration-ui.ui:514
-#. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
-#: rc.cpp:114 rc.cpp:254
-msgid "V4L-1 API"
-msgstr "V4L-1"
-
-#. i18n: file: v4lradio-configuration-ui.ui:521
-#. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
-#: rc.cpp:117 rc.cpp:257
-msgid "V4L-2 API"
-msgstr "V4L-2"
-
-#. i18n: file: v4lradio-configuration-ui.ui:534
-#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
-#: rc.cpp:120 rc.cpp:260
-msgid "Force Enabled"
-msgstr "Принудительно"
-
-#. i18n: file: v4lradio-configuration-ui.ui:541
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:123 rc.cpp:263
-msgid "RDS"
-msgstr "RDS"
-
-#. i18n: file: v4lradio-configuration-ui.ui:549
-#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
-#: rc.cpp:126 rc.cpp:266
+#. i18n: file: v4lradio-configuration-ui.ui:667
+#. i18n: ectx: attribute (title), widget (QWidget, V4LMixerControls)
+#: rc.cpp:136 rc.cpp:286
 msgid "V4L Mixer Controls"
 msgstr "Аппаратные регуляторы V4l"
 
-#. i18n: file: v4lradio-configuration-ui.ui:566
+#. i18n: file: v4lradio-configuration-ui.ui:684
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
-#: rc.cpp:129 rc.cpp:269
+#: rc.cpp:139 rc.cpp:289
 msgid "volume"
 msgstr "Громкость"
 
-#. i18n: file: v4lradio-configuration-ui.ui:642
+#. i18n: file: v4lradio-configuration-ui.ui:760
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
-#: rc.cpp:132 rc.cpp:272
+#: rc.cpp:142 rc.cpp:292
 msgid "treble"
 msgstr "ВЧ"
 
-#. i18n: file: v4lradio-configuration-ui.ui:718
+#. i18n: file: v4lradio-configuration-ui.ui:836
 #. i18n: ectx: property (text), widget (QLabel, labelBass)
-#: rc.cpp:135 rc.cpp:275
+#: rc.cpp:145 rc.cpp:295
 msgid "bass"
 msgstr "НЧ"
 
-#. i18n: file: v4lradio-configuration-ui.ui:791
+#. i18n: file: v4lradio-configuration-ui.ui:909
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
-#: rc.cpp:138 rc.cpp:278
+#: rc.cpp:148 rc.cpp:298
 msgid "balance"
 msgstr "Стереобаланс"
 
-#: rc.cpp:139
+#: rc.cpp:149
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: rc.cpp:140
+#: rc.cpp:150
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
 
-#: v4lradio-configuration.cpp:366
+#: v4lradio-configuration.cpp:369
 msgid "Could not get device description."
 msgstr "Не могу получить описание устройства."
 
-#: v4lradio-configuration.cpp:371
+#: v4lradio-configuration.cpp:374
 msgid "Device file does not exist or top level directories are not accessible."
 msgstr ""
 "Файл устройства не существует либо недоступен каталог, где он расположен"
 
-#: v4lradio-configuration.cpp:374
+#: v4lradio-configuration.cpp:377
 msgid "You do not have read+write permissions for the device."
 msgstr "У вас нет прав на чтение и запись в устройство."
 
-#: v4lradio-configuration.cpp:377
+#: v4lradio-configuration.cpp:380
 msgid "You do not have read permissions for the device."
 msgstr "У вас нет прав на чтение из устройства."
 
-#: v4lradio-configuration.cpp:380
+#: v4lradio-configuration.cpp:383
 msgid "You do not have write permissions for the device."
 msgstr "У вас нет прав на запись в устройство."
 
-#: v4lradio-configuration.cpp:410 v4lradio-configuration.cpp:411
+#: v4lradio-configuration.cpp:413 v4lradio-configuration.cpp:414
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 кГц"
 
-#: v4lradio-configuration.cpp:510
+#: v4lradio-configuration.cpp:513
 msgid "any ( * )"
 msgstr "Все ( * )"
 
-#: v4lradio-configuration.cpp:514
+#: v4lradio-configuration.cpp:517
 msgid "Select Radio Device"
 msgstr "Выберите устройство радиоприёмника"
 
@@ -429,27 +478,27 @@ msgstr "Поддержка устройств V4l(2)"
 msgid "Video For Linux Plugin"
 msgstr "Модуль \"Видео для linux\""
 
-#: v4lradio.cpp:792
+#: v4lradio.cpp:806
 #, kde-format
 msgid "invalid frequency %1"
 msgstr "Неправильная частота %1"
 
-#: v4lradio.cpp:815 v4lradio.cpp:1626 v4lradio.cpp:1820
+#: v4lradio.cpp:831 v4lradio.cpp:1656 v4lradio.cpp:1850
 #, kde-format
 msgid "don't known how to handle V4L-version %1"
 msgstr "Не знаю что делать с версией V4l \"%1\""
 
-#: v4lradio.cpp:817 v4lradio.cpp:1628 v4lradio.cpp:1822
+#: v4lradio.cpp:833 v4lradio.cpp:1658 v4lradio.cpp:1852
 #, kde-format
 msgid "%1 Support: %2"
 msgstr "Поддержка %1: %2"
 
-#: v4lradio.cpp:823
+#: v4lradio.cpp:839
 #, kde-format
 msgid "error setting frequency to %1 (%2)"
 msgstr "Ошибка установки частоты %1 (%2)"
 
-#: v4lradio.cpp:1200
+#: v4lradio.cpp:1220
 #, kde-format
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
@@ -458,98 +507,111 @@ msgstr ""
 "Устройство %1 недоступно для чтения/записи. Проверьте права на устройство, а "
 "также не использует ли его другая программа."
 
-#: v4lradio.cpp:1210
+#: v4lradio.cpp:1230
 msgid "Could not find an accessible v4l(2) radio device."
 msgstr "Не найти доступное устройство V4l(2)."
 
-#: v4lradio.cpp:1286
+#: v4lradio.cpp:1306
 msgid "V4L Radio"
 msgstr "Радио V4l"
 
-#: v4lradio.cpp:1287
+#: v4lradio.cpp:1307
 msgid "V4L Radio Options"
 msgstr "Параметры устройства V4l"
 
-#: v4lradio.cpp:1346
+#: v4lradio.cpp:1366
 #, kde-format
 msgid "Cannot open radio device %1"
 msgstr "Не могу открыть устройство радио: %1"
 
-#: v4lradio.cpp:1409
+#: v4lradio.cpp:1422
+#, kde-format
+msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
+msgstr ""
+
+#: v4lradio.cpp:1429
 #, kde-format
 msgid "cannot open %1"
 msgstr "Не могу открыть %1"
 
-#: v4lradio.cpp:1417 v4lradio.cpp:1458
+#: v4lradio.cpp:1437 v4lradio.cpp:1480
 #, kde-format
 msgid "detected %1"
 msgstr "обнаружено %1"
 
-#: v4lradio.cpp:1436
+#: v4lradio.cpp:1445 v4lradio.cpp:1488
+#, kde-format
+msgid "V4L Plugin (V4L%1 mode): %2"
+msgstr ""
+
+#: v4lradio.cpp:1467
 #, kde-format
 msgid "audio caps = %1"
 msgstr "возможности звука = %1"
 
-#: v4lradio.cpp:1460
+#: v4lradio.cpp:1502
+msgid "V4L2: Querying mute control failed"
+msgstr "V4L2: Не могу обратиться к выключателю звука платы"
+
+#: v4lradio.cpp:1509
+msgid "V4L2: Querying volume control failed"
+msgstr "V4L2: Не могу обратиться к регулятору громкости"
+
+#: v4lradio.cpp:1517
+msgid "V4L2: Querying treble control failed"
+msgstr "V4L2: Не могу обратиться к регулятору верхних частот"
+
+#: v4lradio.cpp:1525
+msgid "V4L2: Querying bass control failed"
+msgstr "V4L2: Не могу обратиться к регулятору нижних частот"
+
+#: v4lradio.cpp:1533
+msgid "V4L2: Querying balance control failed"
+msgstr "V4L2: Не могу обратиться к регулятору стереобаланса"
+
+#: v4lradio.cpp:1536
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
 msgstr "V4l2: версия %1, возможности: %2"
 
-#: v4lradio.cpp:1482
-msgid "V4L2: Querying mute control failed"
-msgstr "V4L2: Не могу обратиться к выключателю звука платы"
-
-#: v4lradio.cpp:1489
-msgid "V4L2: Querying volume control failed"
-msgstr "V4L2: Не могу обратиться к регулятору громкости"
-
-#: v4lradio.cpp:1497
-msgid "V4L2: Querying treble control failed"
-msgstr "V4L2: Не могу обратиться к регулятору верхних частот"
-
-#: v4lradio.cpp:1505
-msgid "V4L2: Querying bass control failed"
-msgstr "V4L2: Не могу обратиться к регулятору нижних частот"
-
-#: v4lradio.cpp:1513
-msgid "V4L2: Querying balance control failed"
-msgstr "V4L2: Не могу обратиться к регулятору стереобаланса"
-
-#: v4lradio.cpp:1528
+#: v4lradio.cpp:1555
 msgid "V4L not detected"
 msgstr "Устройств V4L не обнаружено"
 
-#: v4lradio.cpp:1636
+#: v4lradio.cpp:1666
 #, kde-format
 msgid "cannot get tuner info (error %1)"
 msgstr "Не могу получить информацию о тюнере (код ошибки %1)"
 
-#: v4lradio.cpp:1829
+#: v4lradio.cpp:1859
 msgid "write"
 msgstr "запись"
 
-#: v4lradio.cpp:1829
+#: v4lradio.cpp:1859
 msgid "read"
 msgstr "чтение"
 
-#: v4lradio.cpp:1828
+#: v4lradio.cpp:1858
 #, kde-format
 msgid "error updating radio audio info (%1): %2"
 msgstr "Ошибка %1: %2"
 
-#: v4lradio.cpp:2009
+#: v4lradio.cpp:2041
 msgid "error reading RDS data\n"
 msgstr "не могу прочитать данные RDS\n"
 
-#: v4lradio.cpp:2025
+#: v4lradio.cpp:2057
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: ошибка скорости блока: %1 %"
 
-#: v4lradio.cpp:2028
+#: v4lradio.cpp:2060
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: групповая (~4 блока) ошибка скорости: %1 %"
+
+#~ msgid "Options"
+#~ msgstr "Параметры"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"

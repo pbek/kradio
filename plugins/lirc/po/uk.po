@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-08 23:28+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-05-09 10:21+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,111 +17,112 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: lirc-configuration.cpp:47
+#: lirc-configuration.cpp:51
 msgid "digit 0"
 msgstr "нуль"
 
-#: lirc-configuration.cpp:48
+#: lirc-configuration.cpp:52
 msgid "digit 1"
 msgstr "один"
 
-#: lirc-configuration.cpp:49
+#: lirc-configuration.cpp:53
 msgid "digit 2"
 msgstr "два"
 
-#: lirc-configuration.cpp:50
+#: lirc-configuration.cpp:54
 msgid "digit 3"
 msgstr "три"
 
-#: lirc-configuration.cpp:51
+#: lirc-configuration.cpp:55
 msgid "digit 4"
 msgstr "чотири"
 
-#: lirc-configuration.cpp:52
+#: lirc-configuration.cpp:56
 msgid "digit 5"
 msgstr "п'ять"
 
-#: lirc-configuration.cpp:53
+#: lirc-configuration.cpp:57
 msgid "digit 6"
 msgstr "шість"
 
-#: lirc-configuration.cpp:54
+#: lirc-configuration.cpp:58
 msgid "digit 7"
 msgstr "сім"
 
-#: lirc-configuration.cpp:55
+#: lirc-configuration.cpp:59
 msgid "digit 8"
 msgstr "вісім"
 
-#: lirc-configuration.cpp:56
+#: lirc-configuration.cpp:60
 msgid "digit 9"
 msgstr "дев'ять"
 
-#: lirc-configuration.cpp:57
+#: lirc-configuration.cpp:61
 msgid "Power On"
 msgstr "Увімкнути"
 
-#: lirc-configuration.cpp:58
+#: lirc-configuration.cpp:62
 msgid "Power Off"
 msgstr "Вимкнути"
 
-#: lirc-configuration.cpp:59
+#: lirc-configuration.cpp:63
 msgid "Pause"
 msgstr "Призупинити"
 
-#: lirc-configuration.cpp:60
+#: lirc-configuration.cpp:64
 msgid "Start Recording"
 msgstr "Почати запис"
 
-#: lirc-configuration.cpp:61
+#: lirc-configuration.cpp:65
 msgid "Stop Recording"
 msgstr "Зупинити запис"
 
-#: lirc-configuration.cpp:62
+#: lirc-configuration.cpp:66
 msgid "Increase Volume"
 msgstr "Збільшити гучність"
 
-#: lirc-configuration.cpp:63
+#: lirc-configuration.cpp:67
 msgid "Decrease Volume"
 msgstr "Зменшити гучність"
 
-#: lirc-configuration.cpp:64
+#: lirc-configuration.cpp:68
 msgid "Next Channel"
 msgstr "Наступна станція"
 
-#: lirc-configuration.cpp:65
+#: lirc-configuration.cpp:69
 msgid "Previous Channel"
 msgstr "Попередня станція"
 
-#: lirc-configuration.cpp:66
+#: lirc-configuration.cpp:70
 msgid "Search Next Channel"
 msgstr "Пошук наступної станції"
 
-#: lirc-configuration.cpp:67
+#: lirc-configuration.cpp:71
 msgid "Search Previous Channel"
 msgstr "Пошук попередньої станції"
 
-#: lirc-configuration.cpp:68
+#: lirc-configuration.cpp:72
 msgid "Enable Sleep Countdown"
 msgstr "Увімкнути таймер вимкнення"
 
-#: lirc-configuration.cpp:69
+#: lirc-configuration.cpp:73
 msgid "Quit KRadio"
 msgstr "Вийти з KRadio"
 
-#: lirc-configuration.cpp:121 lirc-configuration.cpp:122
+#: lirc-configuration.cpp:125 lirc-configuration.cpp:126
 msgid "<don't care>"
 msgstr "<байдуже>"
 
-#: lirc-configuration.cpp:270
+#: lirc-configuration.cpp:278
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
 msgstr "Введіть ключовий рядок вашого ПДК або просто натисніть кнопку на ньому"
 
-#: lirc-configuration.cpp:276
+#: lirc-configuration.cpp:284
 msgid "Double Click on the entries to change the assignments"
 msgstr "Для зміни прив'язки двічі клацніть по пункту мишею"
 
@@ -153,9 +154,10 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
-"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio немає прив’язки до кнопок/пристрою дистанційного керування.\n"
-"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду \"button=*\" і "
-"\"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
+"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio немає "
+"прив’язки до кнопок/пристрою дистанційного керування.\n"
+"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
+"\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
 #: lircsupport.cpp:129
 #, kde-format
@@ -165,9 +167,10 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
-"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio має недостатню прив’язку до кнопок/пристрою дистанційного керування.\n"
-"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду \"button=*\" і "
-"\"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
+"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio має "
+"недостатню прив’язку до кнопок/пристрою дистанційного керування.\n"
+"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
+"\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
 #: lircsupport.cpp:140
 #, kde-format
@@ -182,11 +185,14 @@ msgstr "Будь ласка коректно налаштуйте ваш фай�
 #: lircsupport.cpp:145 lircsupport.cpp:146
 #, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
-msgstr "Спроба запуску модуля LIRC kradio завершилася невдало. Не вдалося прочитати файл налаштувань %1"
+msgstr ""
+"Спроба запуску модуля LIRC kradio завершилася невдало. Не вдалося прочитати "
+"файл налаштувань %1"
 
 #: lircsupport.cpp:187
 #, kde-format
-msgid "%1 does not exist. File was created with KRadio's default .lircrc proposal"
+msgid ""
+"%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr "%1 не існує. Було створено типовий файл .lircrc для KRadio"
 
 #: lircsupport.cpp:200
@@ -275,4 +281,3 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
-

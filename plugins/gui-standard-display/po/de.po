@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-03-28 22:31+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: \n"
@@ -16,10 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-
-#: displaycfg.cpp:35
-msgid "Display Colors"
-msgstr "Farben für die Radioanzeige"
 
 #: displaycfg.cpp:48
 msgid "Active Text"
@@ -134,32 +130,32 @@ msgstr "Anzeige"
 msgid "Display Configuration"
 msgstr "Konfiguration der Radio-Anzeige"
 
-#: radioview_frequencyradio.cpp:118 radioview_frequencyradio.cpp:119
+#: radioview_frequencyradio.cpp:122 radioview_frequencyradio.cpp:123
 msgid "Frequency Display"
 msgstr "Frequenzanzeige"
 
-#: radioview_frequencyradio.cpp:394
+#: radioview_frequencyradio.cpp:402
 msgid "AM"
 msgstr "MW"
 
-#: radioview_frequencyradio.cpp:395
+#: radioview_frequencyradio.cpp:403
 msgid "FM"
 msgstr "UKW"
 
-#: radioview_frequencyradio.cpp:396
+#: radioview_frequencyradio.cpp:404
 msgid "RDS"
 msgstr "RDS"
 
-#: radioview_frequencyradio.cpp:397
+#: radioview_frequencyradio.cpp:405
 msgid "NET"
 msgstr "NET"
 
-#: radioview_frequencyradio.cpp:538
+#: radioview_frequencyradio.cpp:546
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: radioview_frequencyradio.cpp:540
+#: radioview_frequencyradio.cpp:548
 #, kde-format
 msgid "%1 MHz"
 msgstr "%1 MHz"
@@ -234,3 +230,6 @@ msgstr "Ernst Martin Witte"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
+
+#~ msgid "Display Colors"
+#~ msgstr "Farben für die Radioanzeige"

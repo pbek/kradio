@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-04 14:25+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -36,87 +36,87 @@ msgstr "Ikona/Nabídka v systémové části panelu pro aplikaci KRadio"
 msgid "System Tray Plugin"
 msgstr "Přídavný modul pro systémovou část panelu"
 
-#: docking.cpp:201
+#: docking.cpp:203
 msgid "System Tray Icon"
 msgstr "Ikona pro systémovou část panelu"
 
-#: docking.cpp:202
+#: docking.cpp:204
 msgid "System Tray Icon Configuration"
 msgstr "Nastavení ikony pro systémovou část panelu"
 
-#: docking.cpp:254
+#: docking.cpp:258
 msgid "Search Next Station"
 msgstr "Hledej následující stanici"
 
-#: docking.cpp:255
+#: docking.cpp:259
 msgid "Search Previous Station"
 msgstr "Hledej předchozí stanici"
 
-#: docking.cpp:264
+#: docking.cpp:268
 msgid "Recording"
 msgstr "Nahrávání"
 
-#: docking.cpp:269
+#: docking.cpp:273
 msgid "Pause Radio"
 msgstr "Pozastavit přehrávání rozhlasu"
 
-#: docking.cpp:280
+#: docking.cpp:284
 msgid "Show/Hide Plugins"
 msgstr "Ukázat/Skrýt přídavné moduly"
 
-#: docking.cpp:288
+#: docking.cpp:292
 msgid "&Quit"
 msgstr "&Ukončit"
 
-#: docking.cpp:402
+#: docking.cpp:406
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Ukončit režim spánku (nechat běžet až po %1)"
 
-#: docking.cpp:405 docking.cpp:414 docking.cpp:422
+#: docking.cpp:409 docking.cpp:418 docking.cpp:426
 msgid "Start Sleep Countdown"
 msgstr "Zahájit režim spánku"
 
-#: docking.cpp:430
+#: docking.cpp:434
 msgid "Power Off"
 msgstr "Vypnout"
 
-#: docking.cpp:430
+#: docking.cpp:434
 msgid "Power On"
 msgstr "Zapnout"
 
-#: docking.cpp:445 docking.cpp:466
+#: docking.cpp:449 docking.cpp:470
 msgid "invalid station"
 msgstr "neplatná vysílací stanice"
 
-#: docking.cpp:448
+#: docking.cpp:452
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:458
+#: docking.cpp:462
 #, kde-format
 msgid "next alarm: %1"
 msgstr "Další probuzení: %1"
 
-#: docking.cpp:460
+#: docking.cpp:464
 msgid "<no alarm pending>"
 msgstr "<žádné nadcházející probuzení>"
 
-#: docking.cpp:578 docking.cpp:680 docking.cpp:738
+#: docking.cpp:582 docking.cpp:684 docking.cpp:742
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Zastavit nahrávání %1"
 
-#: docking.cpp:666
+#: docking.cpp:670
 msgid "Start Recording"
 msgstr "Začít s nahráváním"
 
-#: docking.cpp:720
+#: docking.cpp:724
 msgid "Resume playback"
 msgstr "Pokračovat v přehrávání"
 
-#: docking.cpp:724
+#: docking.cpp:728
 msgid "Pause playback"
 msgstr "Pozastavit přehrávání"
 

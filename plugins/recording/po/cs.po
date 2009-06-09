@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-02 18:55+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -51,13 +51,13 @@ msgstr "Nelze otevřít výstupní soubor %1. "
 msgid "Cannot allocate buffers for mp3 encoding. "
 msgstr "Vyrovnávací paměť pro kódování mp3 nelze přidělit."
 
-#: encoder_ogg.cpp:97
+#: encoder_ogg.cpp:96
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Zápis dat do výstupního proudu ogg/vorbis selhal."
 
 #: encoder_ogg.cpp:139
-#, kde-format
-msgid "Cannot open Ogg/Vorbis output file %1. "
+#, fuzzy, kde-format
+msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Nelze otevřít výstupní soubor Ogg/Vorbis %1."
 
 #: encoder_ogg.cpp:152

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_shortcuts\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-02 19:05+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -30,118 +30,118 @@ msgstr "pavelfric@seznam.cz"
 msgid "Shortcuts Support"
 msgstr "Podpora zkratek"
 
-#: shortcuts.cpp:53 shortcuts.cpp:201
+#: shortcuts.cpp:53 shortcuts.cpp:199
 msgid "Shortcuts Plugin"
 msgstr "Přídavný modul pro zkratky"
 
-#: shortcuts.cpp:62
+#: shortcuts.cpp:61
 msgid "Standard Actions"
 msgstr "Standardní akce"
 
-#: shortcuts.cpp:63
+#: shortcuts.cpp:62
 msgid "Station Actions"
 msgstr "Akce týkající se stanice"
 
-#: shortcuts.cpp:65
+#: shortcuts.cpp:64
 msgid "Digit 0"
 msgstr "Číslice 0"
 
-#: shortcuts.cpp:66
+#: shortcuts.cpp:65
 msgid "Digit 1"
 msgstr "Číslice 1"
 
-#: shortcuts.cpp:67
+#: shortcuts.cpp:66
 msgid "Digit 2"
 msgstr "Číslice 2"
 
-#: shortcuts.cpp:68
+#: shortcuts.cpp:67
 msgid "Digit 3"
 msgstr "Číslice 3"
 
-#: shortcuts.cpp:69
+#: shortcuts.cpp:68
 msgid "Digit 4"
 msgstr "Číslice 4"
 
-#: shortcuts.cpp:70
+#: shortcuts.cpp:69
 msgid "Digit 5"
 msgstr "Číslice 5"
 
-#: shortcuts.cpp:71
+#: shortcuts.cpp:70
 msgid "Digit 6"
 msgstr "Číslice 6"
 
-#: shortcuts.cpp:72
+#: shortcuts.cpp:71
 msgid "Digit 7"
 msgstr "Číslice 7"
 
-#: shortcuts.cpp:73
+#: shortcuts.cpp:72
 msgid "Digit 8"
 msgstr "Číslice 8"
 
-#: shortcuts.cpp:74
+#: shortcuts.cpp:73
 msgid "Digit 9"
 msgstr "Číslice 9"
 
-#: shortcuts.cpp:75
+#: shortcuts.cpp:74
 msgid "Power on"
 msgstr "Zapnout"
 
-#: shortcuts.cpp:76
+#: shortcuts.cpp:75
 msgid "Power off"
 msgstr "Vypnout"
 
-#: shortcuts.cpp:77
+#: shortcuts.cpp:76
 msgid "Pause"
 msgstr "Pozastavit"
 
-#: shortcuts.cpp:78
+#: shortcuts.cpp:77
 msgid "Start recording"
 msgstr "Začít s nahráváním"
 
-#: shortcuts.cpp:79
+#: shortcuts.cpp:78
 msgid "Stop recording"
 msgstr "Zastavit nahrávání"
 
-#: shortcuts.cpp:80
+#: shortcuts.cpp:79
 msgid "Increase volume"
 msgstr "Zvýšit hlasitost"
 
-#: shortcuts.cpp:81
+#: shortcuts.cpp:80
 msgid "Decrease volume"
 msgstr "Snížit hlasitost"
 
-#: shortcuts.cpp:82
+#: shortcuts.cpp:81
 msgid "Increase Frequency"
 msgstr "Zvýšit kmitočet"
 
-#: shortcuts.cpp:83
+#: shortcuts.cpp:82
 msgid "Decrease Frequency"
 msgstr "Snížit kmitočet"
 
-#: shortcuts.cpp:84
+#: shortcuts.cpp:83
 msgid "Next station"
 msgstr "Následující stanice"
 
-#: shortcuts.cpp:85
+#: shortcuts.cpp:84
 msgid "Previous station"
 msgstr "Předchozí stanice"
 
-#: shortcuts.cpp:86
+#: shortcuts.cpp:85
 msgid "Search next station"
 msgstr "Hledej následující stanici"
 
-#: shortcuts.cpp:87
+#: shortcuts.cpp:86
 msgid "Search previous station"
 msgstr "Hledej předchozí stanici"
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:87
 msgid "Sleep"
 msgstr "Zapnout režim spánku"
 
-#: shortcuts.cpp:89
+#: shortcuts.cpp:88
 msgid "Quit KRadio"
 msgstr "Ukončit KRadio"
 
-#: shortcuts.cpp:200
+#: shortcuts.cpp:198
 msgid "Shortcuts"
 msgstr "Klávesové zkratky"

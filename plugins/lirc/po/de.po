@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.lirc.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-08 23:28+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-04-19 15:53+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -18,103 +18,103 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: lirc-configuration.cpp:47
+#: lirc-configuration.cpp:51
 msgid "digit 0"
 msgstr "Ziffer 0"
 
-#: lirc-configuration.cpp:48
+#: lirc-configuration.cpp:52
 msgid "digit 1"
 msgstr "Ziffer 1"
 
-#: lirc-configuration.cpp:49
+#: lirc-configuration.cpp:53
 msgid "digit 2"
 msgstr "Ziffer 2"
 
-#: lirc-configuration.cpp:50
+#: lirc-configuration.cpp:54
 msgid "digit 3"
 msgstr "Ziffer 3"
 
-#: lirc-configuration.cpp:51
+#: lirc-configuration.cpp:55
 msgid "digit 4"
 msgstr "Ziffer 4"
 
-#: lirc-configuration.cpp:52
+#: lirc-configuration.cpp:56
 msgid "digit 5"
 msgstr "Ziffer 5"
 
-#: lirc-configuration.cpp:53
+#: lirc-configuration.cpp:57
 msgid "digit 6"
 msgstr "Ziffer 6"
 
-#: lirc-configuration.cpp:54
+#: lirc-configuration.cpp:58
 msgid "digit 7"
 msgstr "Ziffer 7"
 
-#: lirc-configuration.cpp:55
+#: lirc-configuration.cpp:59
 msgid "digit 8"
 msgstr "Ziffer 8"
 
-#: lirc-configuration.cpp:56
+#: lirc-configuration.cpp:60
 msgid "digit 9"
 msgstr "Ziffer 9"
 
-#: lirc-configuration.cpp:57
+#: lirc-configuration.cpp:61
 msgid "Power On"
 msgstr "Einschalten"
 
-#: lirc-configuration.cpp:58
+#: lirc-configuration.cpp:62
 msgid "Power Off"
 msgstr "Ausschalten"
 
-#: lirc-configuration.cpp:59
+#: lirc-configuration.cpp:63
 msgid "Pause"
 msgstr "Pause"
 
-#: lirc-configuration.cpp:60
+#: lirc-configuration.cpp:64
 msgid "Start Recording"
 msgstr "Aufnahme starten"
 
-#: lirc-configuration.cpp:61
+#: lirc-configuration.cpp:65
 msgid "Stop Recording"
 msgstr "Aufnahme beenden"
 
-#: lirc-configuration.cpp:62
+#: lirc-configuration.cpp:66
 msgid "Increase Volume"
 msgstr "Lautstärke erhöhen"
 
-#: lirc-configuration.cpp:63
+#: lirc-configuration.cpp:67
 msgid "Decrease Volume"
 msgstr "Lautstärke senken"
 
-#: lirc-configuration.cpp:64
+#: lirc-configuration.cpp:68
 msgid "Next Channel"
 msgstr "Nächster Sender"
 
-#: lirc-configuration.cpp:65
+#: lirc-configuration.cpp:69
 msgid "Previous Channel"
 msgstr "Vorheriger Sender"
 
-#: lirc-configuration.cpp:66
+#: lirc-configuration.cpp:70
 msgid "Search Next Channel"
 msgstr "Suche nächsten Sender"
 
-#: lirc-configuration.cpp:67
+#: lirc-configuration.cpp:71
 msgid "Search Previous Channel"
 msgstr "Suche vorherigen Sender"
 
-#: lirc-configuration.cpp:68
+#: lirc-configuration.cpp:72
 msgid "Enable Sleep Countdown"
 msgstr "Schlummer-Countdown aktivieren"
 
-#: lirc-configuration.cpp:69
+#: lirc-configuration.cpp:73
 msgid "Quit KRadio"
 msgstr "KRadio Beenden"
 
-#: lirc-configuration.cpp:121 lirc-configuration.cpp:122
+#: lirc-configuration.cpp:125 lirc-configuration.cpp:126
 msgid "<don't care>"
 msgstr "<unverändert>"
 
-#: lirc-configuration.cpp:270
+#: lirc-configuration.cpp:278
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -122,7 +122,7 @@ msgstr ""
 "Geben Sie die Zeichenkette Ihrer Fernsteuerung ein oder drücken Sie die "
 "Taste auf Ihrer Fernsteuerung"
 
-#: lirc-configuration.cpp:276
+#: lirc-configuration.cpp:284
 msgid "Double Click on the entries to change the assignments"
 msgstr "Doppelklicken Sie auf die Einträge um die Zuordnung zu ändern"
 

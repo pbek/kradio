@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2009-06-10 00:20+0200\n"
 "PO-Revision-Date: 2009-05-09 11:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: docking-configuration.cpp:69
 msgid "Left Mouse Click on Tray"
@@ -39,87 +40,87 @@ msgstr "Піктограма/Меню лотка для KRadio"
 msgid "System Tray Plugin"
 msgstr "Модуль системного лотка"
 
-#: docking.cpp:201
+#: docking.cpp:203
 msgid "System Tray Icon"
 msgstr "Піктограма системного лотка"
 
-#: docking.cpp:202
+#: docking.cpp:204
 msgid "System Tray Icon Configuration"
 msgstr "Налаштування поведінки піктограми лотка"
 
-#: docking.cpp:254
+#: docking.cpp:258
 msgid "Search Next Station"
 msgstr "Шукати наступну станцію"
 
-#: docking.cpp:255
+#: docking.cpp:259
 msgid "Search Previous Station"
 msgstr "Шукати попередню станцію"
 
-#: docking.cpp:264
+#: docking.cpp:268
 msgid "Recording"
 msgstr "Запис"
 
-#: docking.cpp:269
+#: docking.cpp:273
 msgid "Pause Radio"
 msgstr "Призупинити"
 
-#: docking.cpp:280
+#: docking.cpp:284
 msgid "Show/Hide Plugins"
 msgstr "Показати/сховати"
 
-#: docking.cpp:288
+#: docking.cpp:292
 msgid "&Quit"
 msgstr "Ви&йти"
 
-#: docking.cpp:402
+#: docking.cpp:406
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Зупинити таймер вимкнення (працювати до %1)"
 
-#: docking.cpp:405 docking.cpp:414 docking.cpp:422
+#: docking.cpp:409 docking.cpp:418 docking.cpp:426
 msgid "Start Sleep Countdown"
 msgstr "Запустити таймер вимкнення"
 
-#: docking.cpp:430
+#: docking.cpp:434
 msgid "Power Off"
 msgstr "Вимкнути"
 
-#: docking.cpp:430
+#: docking.cpp:434
 msgid "Power On"
 msgstr "Увімкнути"
 
-#: docking.cpp:445 docking.cpp:466
+#: docking.cpp:449 docking.cpp:470
 msgid "invalid station"
 msgstr "Некоректна станція"
 
-#: docking.cpp:448
+#: docking.cpp:452
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:458
+#: docking.cpp:462
 #, kde-format
 msgid "next alarm: %1"
 msgstr "наступна дія: %1"
 
-#: docking.cpp:460
+#: docking.cpp:464
 msgid "<no alarm pending>"
 msgstr "<Розклад порожній>"
 
-#: docking.cpp:578 docking.cpp:680 docking.cpp:738
+#: docking.cpp:582 docking.cpp:684 docking.cpp:742
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Зупинити запис %1"
 
-#: docking.cpp:666
+#: docking.cpp:670
 msgid "Start Recording"
 msgstr "Почати запис"
 
-#: docking.cpp:720
+#: docking.cpp:724
 msgid "Resume playback"
 msgstr "Відновити відтворення"
 
-#: docking.cpp:724
+#: docking.cpp:728
 msgid "Pause playback"
 msgstr "Призупинити відтворення"
 
@@ -132,4 +133,3 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
-
