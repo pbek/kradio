@@ -966,12 +966,28 @@ bool  V4LRadio::setRadioDevice(const QString &s)
     return true;
 }
 
+static inline void assignChannelIfValid(QString &dest_channel, const QString &test_channel, const QStringList &valid_channels)
+{
+    if (valid_channels.contains(test_channel) || !valid_channels.size()) {
+        dest_channel = test_channel;
+    }
+}
 
 bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool force)
 {
-    bool change            = m_PlaybackMixerID != soundStreamClientID || m_PlaybackMixerChannel != ch;
-    m_PlaybackMixerID      = soundStreamClientID;
-    m_PlaybackMixerChannel = ch;
+    QString old_channel          = m_PlaybackMixerChannel;
+    m_PlaybackMixerID            = soundStreamClientID;
+    ISoundStreamClient *mixer    = getSoundStreamClientWithID(m_PlaybackMixerID);
+    QStringList         channels = mixer ? mixer->getPlaybackChannels() : QStringList();
+
+    assignChannelIfValid(m_PlaybackMixerChannel, channels[0], channels);  // lowest priority
+    assignChannelIfValid(m_PlaybackMixerChannel, "PCM",       channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, "Wave",      channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, "Line",      channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, "Master",    channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, ch,          channels);  // highest priority
+
+    bool change = (m_PlaybackMixerID != soundStreamClientID) || (m_PlaybackMixerChannel != old_channel);
 
     if (change || force) {
         if (isPowerOn()) {
@@ -1011,9 +1027,20 @@ bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QStri
 
 bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QString &ch, bool force)
 {
-    bool change = m_PlaybackMixerID != soundStreamClientID || m_PlaybackMixerChannel != ch;
-    m_CaptureMixerID      = soundStreamClientID;
-    m_CaptureMixerChannel = ch;
+    QString old_channel          = m_CaptureMixerChannel;
+    m_CaptureMixerID             = soundStreamClientID;
+    ISoundStreamClient *mixer    = getSoundStreamClientWithID(m_CaptureMixerID);
+    QStringList         channels = mixer ? mixer->getPlaybackChannels() : QStringList();
+
+    assignChannelIfValid(m_CaptureMixerChannel, channels[0], channels);  // lowest priority
+    assignChannelIfValid(m_CaptureMixerChannel, "PCM",       channels);
+    assignChannelIfValid(m_CaptureMixerChannel, "Wave",      channels);
+    assignChannelIfValid(m_CaptureMixerChannel, "Line",      channels);
+    assignChannelIfValid(m_CaptureMixerChannel, "Master",    channels);
+    assignChannelIfValid(m_CaptureMixerChannel, "Capture",   channels);
+    assignChannelIfValid(m_CaptureMixerChannel, ch,          channels);  // highest priority
+
+    bool change = (m_CaptureMixerID != soundStreamClientID) || (m_CaptureMixerChannel != old_channel);
 
     if (change || force) {
 

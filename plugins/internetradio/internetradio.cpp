@@ -452,13 +452,29 @@ bool    InternetRadio::isSourceMuted(SoundStreamID id, bool &m) const
 
 // IInternetRadioCfg methods
 
+static inline void assignChannelIfValid(QString &dest_channel, const QString &test_channel, const QStringList &valid_channels)
+{
+    if (valid_channels.contains(test_channel) || !valid_channels.size()) {
+        dest_channel = test_channel;
+    }
+}
+
 
 bool  InternetRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force)
 {
-    bool change = m_PlaybackMixerID != soundStreamClientID || m_PlaybackMixerChannel != ch || muteOnPowerOff != m_PlaybackMixerMuteOnPowerOff;
+    QString old_channel           = m_PlaybackMixerChannel;
     m_PlaybackMixerID             = soundStreamClientID;
-    m_PlaybackMixerChannel        = ch;
     m_PlaybackMixerMuteOnPowerOff = muteOnPowerOff;
+    ISoundStreamClient *mixer    = getSoundStreamClientWithID(m_PlaybackMixerID);
+    QStringList         channels = mixer ? mixer->getPlaybackChannels() : QStringList();
+
+    assignChannelIfValid(m_PlaybackMixerChannel, channels[0], channels);  // lowest priority
+    assignChannelIfValid(m_PlaybackMixerChannel, "PCM",       channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, "Wave",      channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, "Master",    channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, ch,          channels);  // highest priority
+
+    bool change = (m_PlaybackMixerID != soundStreamClientID) || (old_channel != m_PlaybackMixerChannel) || (muteOnPowerOff != m_PlaybackMixerMuteOnPowerOff);
 
     if (change || force) {
         if (isPowerOn()) {
