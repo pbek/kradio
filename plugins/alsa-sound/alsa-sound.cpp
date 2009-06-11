@@ -184,6 +184,7 @@ void AlsaSoundDevice::saveState (KConfigGroup &c) const
 void AlsaSoundDevice::restoreState (const KConfigGroup &c)
 {
     PluginBase::restoreState(c);
+    setSoundStreamClientID(c.readEntry("soundstreamclient-id", getSoundStreamClientID()));
 
     m_use_threads     = c.readEntry("use-threads",          true);
 
@@ -201,7 +202,6 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
 
     setBufferSize(m_BufferSize);
 
-    setSoundStreamClientID(c.readEntry("soundstreamclient-id", getSoundStreamClientID()));
 
     int n = c.readEntry("mixer-settings",  0);
     for (int i = 0; i < n; ++i) {
