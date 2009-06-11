@@ -14,20 +14,44 @@ include(CheckIncludeFileCXX)
 option(WITH_ALSA "Compile with alsa support" ON)
 
 IF(WITH_ALSA)
-    CHECK_INCLUDE_FILE_CXX(alsa/asoundlib.h HAVE_ALSA_INC)
-    CHECK_LIBRARY_EXISTS(asound snd_card_next "" HAVE_ALSA_LIB)
-    IF(NOT HAVE_ALSA_INC OR NOT HAVE_ALSA_LIB)
+    SET (ALSA_LIBRARY_DIRS  "")
+    SET (ALSA_INCLUDE_DIRS  "")
+    SET (ALSA_LIBRARIES     "")
+
+    pkg_check_modules(LIBASOUND alsa)
+    IF(LIBASOUND_FOUND)
+        SET(HAVE_AVFORMAT_INC ON)
+        SET(HAVE_AVFORMAT_LIB ON)
+
+        SET(ALSA_LIBRARY_DIRS ${ALSA_LIBRARY_DIRS} ${LIBASOUND_LIBRARY_DIRS})
+        SET(ALSA_LIBRARIES    ${ALSA_LIBRARIES}    ${LIBASOUND_LIBRARIES}   )
+        SET(ALSA_INCLUDE_DIRS ${ALSA_INCLUDE_DIRS} ${LIBASOUND_INCLUDE_DIRS})
+
+    ELSE(LIBASOUND_FOUND)
+        CHECK_INCLUDE_FILE_CXX(alsa/asoundlib.h      HAVE_ALSA_INC)
+        CHECK_LIBRARY_EXISTS(asound snd_card_next "" HAVE_ALSA_LIB)
+        IF (HAVE_ALSA_INC AND HAVE_ALSA_LIB)
+            SET(LIBASOUND_FOUND ON)
+            SET(ALSA_LIBRARIES    "asound" ${ALSA_LIBRARIES})
+        ENDIF(HAVE_ALSA_INC and HAVE_ALSA_LIB)
+    ENDIF(LIBASOUND_FOUND)
+
+    IF(NOT LIBASOUND_FOUND)
 
         SET(WITH_ALSA OFF
             CACHE BOOL "alsa files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: alsa files could not be found on this system. Compiling without alsa support")
 
-    ENDIF(NOT HAVE_ALSA_INC OR NOT HAVE_ALSA_LIB)
+    ENDIF(NOT LIBASOUND_FOUND)
 ENDIF(WITH_ALSA)
 
 
 IF (WITH_ALSA)
+    message(STATUS "   Compiling with ALSA support")
+    message(STATUS "       ALSA_INCLUDE_DIRS = ${ALSA_INCLUDE_DIRS}")
+    message(STATUS "       ALSA_LIBRARY_DIRS = ${ALSA_LIBRARY_DIRS}")
+    message(STATUS "       ALSA_LIBRARIES    = ${ALSA_LIBRARIES}")
     message(STATUS "   Compiling with alsa support")
     add_definitions( -DHAVE_ALSA )
 ELSE(WITH_ALSA)
