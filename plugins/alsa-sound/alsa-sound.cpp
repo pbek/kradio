@@ -56,9 +56,9 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_PlaybackFormat(),
       m_CaptureFormat(),
       m_PlaybackDeviceName("default"),
-      m_PlaybackMixerName ("hw:default"),
+      m_PlaybackMixerName ("default"),
       m_CaptureDeviceName ("default"),
-      m_CaptureMixerName  ("hw:default"),
+      m_CaptureMixerName  ("default"),
       m_PlaybackLatency(30),
       m_CaptureLatency(30),
       m_PassivePlaybackStreams(),
@@ -193,11 +193,11 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
     m_BufferSize      = c.readEntry("buffer-size",          96*1024);
     QString dev       = c.readEntry("playback-device-name", "default");
     setPlaybackDevice(dev, true);
-    dev               = c.readEntry("playback-mixer-name",  "hw:default");
+    dev               = c.readEntry("playback-mixer-name",  "default");
     setPlaybackMixer(dev,  true);
     dev               = c.readEntry("capture-device-name",  "default");
     setCaptureDevice(dev,  true);
-    dev               = c.readEntry("capture-mixer-name",   "hw:default");
+    dev               = c.readEntry("capture-mixer-name",   "default");
     setCaptureMixer(dev,   true);
 
     setBufferSize(m_BufferSize);
