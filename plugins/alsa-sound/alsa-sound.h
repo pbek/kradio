@@ -224,10 +224,10 @@ RECEIVERS:
     void           setBufferSize(int s);
     void           enablePlayback(bool on);
     void           enableCapture(bool on);
-    void           setPlaybackDevice(const QString &deviceName);
-    void           setPlaybackMixer (const QString &mixerName);
-    void           setCaptureDevice (const QString &deviceName);
-    void           setCaptureMixer  (const QString &mixerName);
+    void           setPlaybackDevice(const QString &deviceName, bool force = false);
+    void           setPlaybackMixer (const QString &mixerName,  bool force = false);
+    void           setCaptureDevice (const QString &deviceName, bool force = false);
+    void           setCaptureMixer  (const QString &mixerName,  bool force = false);
     void           setCaptureMixerSettings(const QMap<QString, AlsaConfigMixerSetting> &map);
     void           setSoftPlaybackVolume(bool enable, double correction_factor);
     void           setCaptureFormatOverride(bool override_enabled, const SoundFormat &sf);

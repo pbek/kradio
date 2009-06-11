@@ -1521,9 +1521,9 @@ void AlsaSoundDevice::setCaptureFormatOverride(bool override_enabled, const Soun
     m_CaptureFormatOverrideEnable = override_enabled;
 }
 
-void AlsaSoundDevice::setPlaybackDevice(const QString &deviceName)
+void AlsaSoundDevice::setPlaybackDevice(const QString &deviceName, bool force)
 {
-    if (m_PlaybackDeviceName == deviceName)
+    if ((m_PlaybackDeviceName == deviceName) && !force)
         return;
 
     m_PlaybackDeviceName = deviceName;
@@ -1533,9 +1533,9 @@ void AlsaSoundDevice::setPlaybackDevice(const QString &deviceName)
 }
 
 
-void AlsaSoundDevice::setPlaybackMixer(const QString &mixerName)
+void AlsaSoundDevice::setPlaybackMixer(const QString &mixerName, bool force)
 {
-    if (m_PlaybackMixerName == mixerName)
+    if ((m_PlaybackMixerName == mixerName) && !force)
         return;
 
     m_PlaybackMixerName = mixerName;
@@ -1554,9 +1554,9 @@ void AlsaSoundDevice::setPlaybackMixer(const QString &mixerName)
 
 
 
-void AlsaSoundDevice::setCaptureDevice(const QString &deviceName)
+void AlsaSoundDevice::setCaptureDevice(const QString &deviceName, bool force)
 {
-    if (m_CaptureDeviceName == deviceName)
+    if ((m_CaptureDeviceName == deviceName) && !force)
         return;
 
     m_CaptureDeviceName = deviceName;
@@ -1566,9 +1566,9 @@ void AlsaSoundDevice::setCaptureDevice(const QString &deviceName)
 }
 
 
-void AlsaSoundDevice::setCaptureMixer(const QString &mixerName)
+void AlsaSoundDevice::setCaptureMixer(const QString &mixerName, bool force)
 {
-    if (m_CaptureMixerName == mixerName)
+    if ((m_CaptureMixerName == mixerName) && !force)
         return;
 
     m_CaptureMixerName = mixerName;
