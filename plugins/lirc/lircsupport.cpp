@@ -84,14 +84,16 @@ void LircSupport::LIRC_init_fd()
     fprintf (stderr, "%s\n", (const char*)i18n("initializing kradio lirc plugin").toUtf8());
 
     m_fd_lirc     = lirc_init(LIRCPROG, 1);
-    m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this);
-    if (m_lirc_notify)
-        QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
 
     if (m_fd_lirc == -1) {
+        m_lirc_notify = NULL;
         logWarning      (i18n("Initializing kradio lirc plugin failed"));
         staticLogWarning(i18n("Initializing kradio lirc plugin failed"));
     } else {
+        m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this);
+        if (m_lirc_notify)
+            QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
+
         logDebug      (i18n("Initializing kradio lirc plugin successful"));
         staticLogDebug(i18n("Initializing kradio lirc plugin successful"));
     }
