@@ -13,7 +13,13 @@ For 4.0.x
   * --done-- smaller config dialog (for netbooks)
   * configurable clicks for systray: left/right/mid X power/hideshow/menu
   * --done-- alsa config fixes
+  * alsa config, pvr page, mute playback channel of recording if active playback always disabled
+  * plugin libs version check
+  * consistent dirty bits for config pages
+  * v4l: disable all if radio dev not valid
+  * check box for v4l config to disable caps check at startup to minimize interference
   * fix: disable nerving dialog boxes popping up during downloads
+  * FIXME: import old mixer settings from previous alsa naming scheme!
 
 For 4.1.0
 
