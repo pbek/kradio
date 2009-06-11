@@ -191,13 +191,13 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
     m_EnableCapture   = c.readEntry("enable-capture",       true);
     m_BufferSize      = c.readEntry("buffer-size",          96*1024);
     QString dev       = c.readEntry("playback-device-name", "default");
-    setPlaybackDevice(dev);
+    setPlaybackDevice(dev, true);
     dev               = c.readEntry("playback-mixer-name",  "hw:default");
-    setPlaybackMixer(dev);
+    setPlaybackMixer(dev,  true);
     dev               = c.readEntry("capture-device-name",  "default");
-    setCaptureDevice(dev);
+    setCaptureDevice(dev,  true);
     dev               = c.readEntry("capture-mixer-name",   "hw:default");
-    setCaptureMixer(dev);
+    setCaptureMixer(dev,   true);
 
     setBufferSize(m_BufferSize);
 
