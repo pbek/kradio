@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>503</width>
+    <width>511</width>
     <height>275</height>
    </rect>
   </property>
@@ -382,7 +382,7 @@ p, li { white-space: pre-wrap; }
       <bool>true</bool>
      </property>
      <property name="margin">
-      <number>0</number>
+      <number>5</number>
      </property>
     </widget>
    </item>
@@ -408,8 +408,8 @@ p, li { white-space: pre-wrap; }
        <property name="margin">
         <number>8</number>
        </property>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="m_pbUpCaptureURL">
+       <item row="4" column="1">
+        <widget class="QPushButton" name="m_pbDownCaptureURL">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -433,8 +433,24 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="m_pbDeleteCaptureURL">
+       <item row="2" column="1">
+        <spacer name="spacer46_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="m_pbNewCaptureURL">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -493,8 +509,8 @@ p, li { white-space: pre-wrap; }
          </column>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="m_pbNewCaptureURL">
+       <item row="1" column="1">
+        <widget class="QPushButton" name="m_pbDeleteCaptureURL">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -518,24 +534,8 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <spacer name="spacer46_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Preferred</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>10</width>
-           <height>10</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="4" column="1">
-        <widget class="QPushButton" name="m_pbDownCaptureURL">
+       <item row="3" column="1">
+        <widget class="QPushButton" name="m_pbUpCaptureURL">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -560,12 +560,6 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
       </layout>
-      <zorder>m_pbDownPlaybackURL</zorder>
-      <zorder>m_pbNewPlaybackURL</zorder>
-      <zorder>m_pbDeletePlaybackURL</zorder>
-      <zorder>spacer46</zorder>
-      <zorder>m_pbUpPlaybackURL</zorder>
-      <zorder>m_ListPlaybackURLs</zorder>
       <zorder>m_pbDownCaptureURL</zorder>
       <zorder>spacer46_2</zorder>
       <zorder>m_pbNewCaptureURL</zorder>
