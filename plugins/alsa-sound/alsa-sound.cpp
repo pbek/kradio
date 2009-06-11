@@ -55,6 +55,10 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_hCaptureMixer(NULL),
       m_PlaybackFormat(),
       m_CaptureFormat(),
+      m_PlaybackDeviceName("default"),
+      m_PlaybackMixerName ("hw:default"),
+      m_CaptureDeviceName ("default"),
+      m_CaptureMixerName  ("hw:default"),
       m_PlaybackLatency(30),
       m_CaptureLatency(30),
       m_PassivePlaybackStreams(),
@@ -151,13 +155,15 @@ void AlsaSoundDevice::saveState (KConfigGroup &c) const
     c.writeEntry("use-threads",     m_use_threads);
 
     c.writeEntry("playback-device-name", m_PlaybackDeviceName);
+    c.writeEntry("playback-mixer-name",  m_PlaybackMixerName);
     c.writeEntry("capture-device-name",  m_CaptureDeviceName);
+    c.writeEntry("capture-mixer-name",   m_CaptureMixerName);
     c.writeEntry("enable-playback",      m_EnablePlayback);
     c.writeEntry("enable-capture",       m_EnableCapture);
     c.writeEntry("buffer-size",          (unsigned int) m_BufferSize);
     c.writeEntry("soundstreamclient-id", m_SoundStreamClientID);
 
-    c.writeEntry("mixer-settings",  m_CaptureMixerSettings.count());
+    c.writeEntry("mixer-settings",       m_CaptureMixerSettings.count());
     int i = 0;
     for (QMap<QString, AlsaConfigMixerSetting>::const_iterator it = m_CaptureMixerSettings.begin(); it != m_CaptureMixerSettings.end(); ++it, ++i) {
 
@@ -186,8 +192,12 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
     m_BufferSize      = c.readEntry("buffer-size",          96*1024);
     QString dev       = c.readEntry("playback-device-name", "default");
     setPlaybackDevice(dev);
+    dev               = c.readEntry("playback-mixer-name",  "hw:default");
+    setPlaybackMixer(dev);
     dev               = c.readEntry("capture-device-name",  "default");
     setCaptureDevice(dev);
+    dev               = c.readEntry("capture-mixer-name",   "hw:default");
+    setCaptureMixer(dev);
 
     setBufferSize(m_BufferSize);
 
@@ -699,6 +709,8 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
         if (reopen) {
 
+            logDebug(QString("AlsaSoundDevice::openPlaybackDevice: re-opening playback device %1").arg(m_PlaybackDeviceName));
+
             closePlaybackDevice ( /* force = */ true);
 
         } else {
@@ -709,6 +721,8 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
             return true;
         }
     } else {
+        logDebug(QString("AlsaSoundDevice::openPlaybackDevice: opening playback device %1").arg(m_PlaybackDeviceName));
+
         if (reopen)         // FIXME: emw: please check if this makes sense !?!?
             return true;
     }
@@ -754,6 +768,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 
         if (reopen) {
 
+            logDebug(QString("AlsaSoundDevice::openCaptureDevice: re-opening capture device %1").arg(m_CaptureDeviceName));
             closeCaptureDevice ( /* force = */ true);
 
         } else {
@@ -764,6 +779,9 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
             return true;
         }
     } else {
+
+        logDebug(QString("AlsaSoundDevice::openCaptureDevice: opening capture device %1").arg(m_CaptureDeviceName));
+
         if (reopen)         // FIXME: emw: please check if this makes sense !?!?
             return true;
     }
@@ -874,10 +892,10 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
     }
 
     latency = (1000 * period_size) / format.m_SampleRate / 2; //oversampling factor 2 to be sure
-    if (latency < 20) {
-        latency = 20;
+    if (latency < 30) {
+        latency = 30;
     }
-    logDebug(i18n("ALSA Plugin: Setting timer latency to %1 for %2", latency, pcm_name));
+//     logDebug(i18n("ALSA Plugin: Setting timer latency to %1 for %2", latency, pcm_name));
 
     if (!error) {
         snd_pcm_prepare(alsa_handle);
@@ -954,25 +972,25 @@ bool AlsaSoundDevice::closeCaptureDevice(bool force)
 
 bool AlsaSoundDevice::openPlaybackMixerDevice(bool reopen)
 {
-    return openMixerDevice(m_hPlaybackMixer, extractMixerName(m_PlaybackDeviceName), reopen, &m_PlaybackPollingTimer, m_PlaybackLatency);
+    return openMixerDevice(m_hPlaybackMixer, m_PlaybackMixerName, reopen, &m_PlaybackPollingTimer, m_PlaybackLatency);
 }
 
 
 bool AlsaSoundDevice::openCaptureMixerDevice(bool reopen)
 {
     //     logDebug("AlsaSoundDevice::openCaptureMixerDevice: card == " + m_CaptureDeviceName);
-    return openMixerDevice(m_hCaptureMixer, extractMixerName(m_CaptureDeviceName), reopen, &m_CapturePollingTimer, m_CaptureLatency);
+    return openMixerDevice(m_hCaptureMixer, m_CaptureMixerName, reopen, &m_CapturePollingTimer, m_CaptureLatency);
 }
 
 
 bool AlsaSoundDevice::closePlaybackMixerDevice(bool force)
 {
-    return closeMixerDevice(m_hPlaybackMixer, extractMixerName(m_PlaybackDeviceName), m_PlaybackStreamID, m_hPlayback, force, &m_PlaybackPollingTimer);
+    return closeMixerDevice(m_hPlaybackMixer, m_PlaybackMixerName, m_PlaybackStreamID, m_hPlayback, force, &m_PlaybackPollingTimer);
 }
 
 bool AlsaSoundDevice::closeCaptureMixerDevice(bool force)
 {
-    return closeMixerDevice(m_hCaptureMixer, extractMixerName(m_CaptureDeviceName), m_CaptureStreamID, m_hCapture, force, &m_CapturePollingTimer);
+    return closeMixerDevice(m_hCaptureMixer, m_CaptureMixerName, m_CaptureStreamID, m_hCapture, force, &m_CapturePollingTimer);
 }
 
 
@@ -1287,7 +1305,7 @@ float AlsaSoundDevice::readPlaybackMixerVolume(const QString &channel, bool &mut
         }
     }
     logError("AlsaSound::readPlaybackMixerVolume: " +
-             i18n("error while reading volume from %1", extractMixerName(m_PlaybackDeviceName)));
+             i18n("error while reading volume from %1", m_PlaybackMixerName));
     return 0;
 }
 
@@ -1315,7 +1333,7 @@ float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
         }
     }
     logError("AlsaSound::readCaptureMixerVolume: " +
-             i18n("error while reading volume from %1", extractMixerName(m_CaptureDeviceName)));
+             i18n("error while reading volume from %1", m_CaptureMixerName));
     return 0;
 }
 
@@ -1357,7 +1375,7 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &v
         }
     }
     logError("AlsaSound::writePlaybackMixerVolume: " +
-    i18n("error while writing volume %1 to %2", vol, extractMixerName(m_PlaybackDeviceName)));
+    i18n("error while writing volume %1 to %2", vol, m_PlaybackMixerName));
     return false;
 }
 
@@ -1389,7 +1407,7 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
         }
     }
     logError("AlsaSound::writeCaptureMixerVolume: " +
-             i18n("error while writing volume %1 to %2", vol, extractMixerName(m_CaptureDeviceName)));
+             i18n("error while writing volume %1 to %2", vol, m_CaptureMixerName));
     return false;
 }
 
@@ -1409,7 +1427,7 @@ bool AlsaSoundDevice::writeCaptureMixerSwitch (const QString &channel, bool capt
         }
     }
     logError("AlsaSound::writeCaptureMixerSwitch: " +
-             i18n("error while setting capture switch %1 for %2", channel, extractMixerName(m_CaptureDeviceName)));
+             i18n("error while setting capture switch %1 for %2", channel, m_CaptureMixerName));
     return false;
 }
 
@@ -1446,12 +1464,12 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
 
     for (QMap<QString, AlsaConfigMixerSetting>::const_iterator it = m_CaptureMixerSettings.begin(); it != m_CaptureMixerSettings.end(); ++it) {
         const AlsaConfigMixerSetting &s = *it;
-        if (s.m_mixerName == extractMixerName(m_CaptureDeviceName) && s.m_use) {
-            float vol = s.m_volume;
-            if (m_CaptureChannels2ID.contains(s.m_name))
-                writeCaptureMixerVolume(s.m_name, vol);
-            if (m_CaptureChannelsSwitch2ID.contains(s.m_name))
-                writeCaptureMixerSwitch(s.m_name, s.m_active);
+        if (s.mixerName() == m_CaptureMixerName && s.use()) {
+            float vol = s.volume();
+            if (m_CaptureChannels2ID.contains(s.name()))
+                writeCaptureMixerVolume(s.name(), vol);
+            if (m_CaptureChannelsSwitch2ID.contains(s.name()))
+                writeCaptureMixerSwitch(s.name(), s.active());
         }
     }
 }
@@ -1512,12 +1530,23 @@ void AlsaSoundDevice::setPlaybackDevice(const QString &deviceName)
     SoundFormat f        = m_PlaybackFormat;
     if (m_hPlayback)
         openPlaybackDevice(f, /* reopen = */ true);
+}
+
+
+void AlsaSoundDevice::setPlaybackMixer(const QString &mixerName)
+{
+    if (m_PlaybackMixerName == mixerName)
+        return;
+
+    m_PlaybackMixerName = mixerName;
     if (m_hPlaybackMixer)
         openPlaybackMixerDevice(/* reopen = */ true);
 
-    getPlaybackMixerChannels(extractMixerName(m_PlaybackDeviceName),
+    getPlaybackMixerChannels(m_PlaybackMixerName,
                              m_hPlaybackMixer,
-                             m_PlaybackChannels, m_PlaybackChannels2ID);
+                             m_PlaybackChannels,
+                             m_PlaybackChannels2ID
+                            );
     notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
 }
 
@@ -1534,12 +1563,25 @@ void AlsaSoundDevice::setCaptureDevice(const QString &deviceName)
     SoundFormat f       = m_CaptureFormat;
     if (m_hCapture)
         openCaptureDevice(f, /* reopen = */ true);
+}
+
+
+void AlsaSoundDevice::setCaptureMixer(const QString &mixerName)
+{
+    if (m_CaptureMixerName == mixerName)
+        return;
+
+    m_CaptureMixerName = mixerName;
     if (m_hCaptureMixer)
         openCaptureMixerDevice(/* reopen = */ true);
 
-    getCaptureMixerChannels(extractMixerName(m_CaptureDeviceName),
+    getCaptureMixerChannels(m_CaptureMixerName,
                             m_hCaptureMixer,
-                            m_CaptureChannels, m_CaptureChannels2ID, m_CaptureChannelsSwitch, m_CaptureChannelsSwitch2ID);
+                            m_CaptureChannels,
+                            m_CaptureChannels2ID,
+                            m_CaptureChannelsSwitch,
+                            m_CaptureChannelsSwitch2ID
+                           );
     notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
 }
 
@@ -1741,12 +1783,12 @@ void AlsaSoundDevice::setName(const QString &n)
 
 
 
-QList<MetaSoundDevice> AlsaSoundDevice::getPCMCaptureDeviceDescriptions()
+QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMCaptureDeviceDescriptions()
 {
     return getPCMDeviceDescriptions("Input");
 }
 
-QList<MetaSoundDevice> AlsaSoundDevice::getPCMPlaybackDeviceDescriptions()
+QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMPlaybackDeviceDescriptions()
 {
     return getPCMDeviceDescriptions("Output");
 }
@@ -1756,21 +1798,21 @@ QList<MetaSoundDevice> AlsaSoundDevice::getPCMPlaybackDeviceDescriptions()
 // see https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3461
 // snd_device_name_hint will only return correct list at first call.
 
-QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &filter)
+QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &filter)
 {
     void                    **hints = NULL;
 #ifdef ALSA_BUG_3461_WORKAROUND
     static
 #endif
-    QList<MetaSoundDevice>    descriptions;  // key = DeviceName,
+    QMap<QString, QList<AlsaSoundDeviceMetaData> >    descriptions;  // key = DeviceName,
 
 #ifdef ALSA_BUG_3461_WORKAROUND
-    if (descriptions.size()) {
-        return descriptions;
+    if (descriptions[filter].size()) {
+        return descriptions[filter];
     }
 #endif
 
-    descriptions.append(MetaSoundDevice("default", "Default ALSA Device"));
+    descriptions[filter].append(AlsaSoundDeviceMetaData("default", "Default ALSA Device"));
 
     // let's do the clean up once globally as long as we need the workaround
     // otherwise we might miss some devices
@@ -1779,14 +1821,14 @@ QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &
 #endif
 
     if (snd_device_name_hint(-1, "pcm", &hints) < 0)
-        return descriptions;
+        return descriptions[filter];
 
     for (void **current_hint = hints; *current_hint; ++current_hint) {
         char *name  = snd_device_name_get_hint(*current_hint, "NAME");
         char *descr = snd_device_name_get_hint(*current_hint, "DESC");
         char *dir   = snd_device_name_get_hint(*current_hint, "IOID");
         if (!dir || filter == dir) {
-            descriptions.append(MetaSoundDevice(name, descr));
+            descriptions[filter].append(AlsaSoundDeviceMetaData(name, descr));
         }
         if (name != NULL) {
             free(name);
@@ -1829,11 +1871,39 @@ QList<MetaSoundDevice> AlsaSoundDevice::getPCMDeviceDescriptions(const QString &
     }
     */
 
-    return descriptions;
+    return descriptions[filter];
 }
 
 
-QString AlsaSoundDevice::extractMixerName(const QString &devString)
+
+QList<AlsaMixerMetaData> AlsaSoundDevice::getCaptureMixerDescriptions()
+{
+    return getMixerDeviceDescriptions("Input");
+}
+
+QList<AlsaMixerMetaData> AlsaSoundDevice::getPlaybackMixerDescriptions()
+{
+    return getMixerDeviceDescriptions("Output");
+}
+
+QList<AlsaMixerMetaData> AlsaSoundDevice::getMixerDeviceDescriptions(const QString &filter)
+{
+    QList<AlsaSoundDeviceMetaData> pcms = getPCMDeviceDescriptions(filter);
+
+    QList<AlsaMixerMetaData> ret;
+    QMap<QString, bool> already_handled;
+
+    AlsaSoundDeviceMetaData m;
+    foreach (m, pcms) {
+        if (!already_handled.contains(m.mixerCardName())) {
+            ret.append(AlsaMixerMetaData(m));
+            already_handled.insert(m.mixerCardName(), true);
+        }
+    }
+    return ret;
+}
+
+QString AlsaSoundDevice::extractMixerNameFromPCMDevice(const QString &devString)
 {
     QString mixerString = devString;
 

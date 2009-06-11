@@ -30,11 +30,18 @@ public:
     AlsaConfigMixerSetting(const QString &mixerName, const QString &name, bool use, bool active, float volume);
     ~AlsaConfigMixerSetting();
 
-    QString getIDString() const { return getIDString(m_mixerName, m_name); }
+           QString getIDString() const { return getIDString(m_mixerName, m_name); }
     static QString getIDString(const QString &mixerName, const QString &m_name);
 
     void saveState(KConfigGroup &c, const QString &prefix) const;
 
+    const QString &mixerName() const { return m_mixerName; }
+    const QString &name()      const { return m_name;      }
+          bool     use()       const { return m_use;       }
+          bool     active()    const { return m_active;    }
+          float    volume()    const { return m_volume;    }
+
+protected:
     QString m_mixerName;
     QString m_name;
     bool    m_use;

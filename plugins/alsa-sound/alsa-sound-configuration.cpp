@@ -43,13 +43,15 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
 {
     setupUi(this);
 
-    QObject::connect(m_comboPlaybackDevice,  SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
-    QObject::connect(m_comboCaptureDevice,   SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
-    QObject::connect(editBufferSize,         SIGNAL(valueChanged(int)),    this, SLOT(slotSetDirty()));
-    QObject::connect(chkDisablePlayback,     SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
-    QObject::connect(chkDisableCapture,      SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
-    QObject::connect(cbEnableSoftVolume,     SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
-    QObject::connect(sbSoftVolumeCorrection, SIGNAL(valueChanged(double)), this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboPlaybackDevice,    SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboPlaybackMixerCard, SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboCaptureDevice,     SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboCaptureMixerCard,  SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
+    QObject::connect(editBufferSize,           SIGNAL(valueChanged(int)),    this, SLOT(slotSetDirty()));
+    QObject::connect(chkDisablePlayback,       SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
+    QObject::connect(chkDisableCapture,        SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
+    QObject::connect(cbEnableSoftVolume,       SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
+    QObject::connect(sbSoftVolumeCorrection,   SIGNAL(valueChanged(double)), this, SLOT(slotSetDirty()));
 
     QObject::connect(cbEnableCaptureFormatOverride, SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
     QObject::connect(m_cbRate,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
@@ -60,10 +62,14 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
 
 
 
-    QObject::connect(m_comboPlaybackDevice, SIGNAL(activated(int)),
-                     this,                  SLOT  (slotPlaybackDeviceSelected(int)));
-    QObject::connect(m_comboCaptureDevice,  SIGNAL(activated(int)),
-                     this,                  SLOT  (slotCaptureDeviceSelected (int)));
+    QObject::connect(m_comboPlaybackDevice,    SIGNAL(activated(int)),
+                     this,                     SLOT  (slotPlaybackDeviceSelected(int)));
+    QObject::connect(m_comboPlaybackMixerCard, SIGNAL(activated(int)),
+                     this,                     SLOT  (slotPlaybackMixerSelected(int)));
+    QObject::connect(m_comboCaptureDevice,     SIGNAL(activated(int)),
+                     this,                     SLOT  (slotCaptureDeviceSelected (int)));
+    QObject::connect(m_comboCaptureMixerCard,  SIGNAL(activated(int)),
+                     this,                     SLOT  (slotCaptureMixerSelected (int)));
 
     if (!m_groupMixer->layout())
         new QGridLayout(m_groupMixer);
@@ -98,21 +104,34 @@ AlsaSoundConfiguration::~AlsaSoundConfiguration ()
 
 void AlsaSoundConfiguration::slotCheckSoundDevices()
 {
-    QString old_pb_device = m_comboPlaybackDevice->itemData(m_comboPlaybackDevice->currentIndex()).toString();
-    QString old_ca_device = m_comboCaptureDevice ->itemData(m_comboCaptureDevice ->currentIndex()).toString();
+    QString old_pb_device = m_comboPlaybackDevice   ->itemData(m_comboPlaybackDevice   ->currentIndex()).toString();
+    QString old_pb_mixer  = m_comboPlaybackMixerCard->itemData(m_comboPlaybackMixerCard->currentIndex()).toString();
+    QString old_ca_device = m_comboCaptureDevice    ->itemData(m_comboCaptureDevice    ->currentIndex()).toString();
+    QString old_ca_mixer  = m_comboCaptureMixerCard ->itemData(m_comboCaptureMixerCard ->currentIndex()).toString();
 
-    m_comboPlaybackDevice->clear();
-    m_comboCaptureDevice ->clear();
+    m_comboPlaybackDevice   ->clear();
+    m_comboPlaybackMixerCard->clear();
+    m_comboCaptureDevice    ->clear();
+    m_comboCaptureMixerCard ->clear();
 
-    QList<MetaSoundDevice> pbDevices = AlsaSoundDevice::getPCMPlaybackDeviceDescriptions();
-    QList<MetaSoundDevice> caDevices = AlsaSoundDevice::getPCMCaptureDeviceDescriptions();
+    QList<AlsaSoundDeviceMetaData> pbDevices = AlsaSoundDevice::getPCMPlaybackDeviceDescriptions();
+    QList<AlsaMixerMetaData>       pbMixers  = AlsaSoundDevice::getPlaybackMixerDescriptions();
+    QList<AlsaSoundDeviceMetaData> caDevices = AlsaSoundDevice::getPCMCaptureDeviceDescriptions();
+    QList<AlsaMixerMetaData>       caMixers  = AlsaSoundDevice::getCaptureMixerDescriptions();
 
-    MetaSoundDevice it;
+    AlsaSoundDeviceMetaData it;
+    AlsaMixerMetaData       itm;
     foreach(it, pbDevices) {
-        m_comboPlaybackDevice->addItem(condenseALSADeviceDescription(it.m_description), it.m_name);
+        m_comboPlaybackDevice    ->addItem(condenseALSADeviceDescription(it), it.pcmDeviceName());
+    }
+    foreach(itm, pbMixers) {
+        m_comboPlaybackMixerCard ->addItem(itm.cardDescription(), itm.mixerCardName());
     }
     foreach(it, caDevices) {
-        m_comboCaptureDevice->addItem(condenseALSADeviceDescription(it.m_description), it.m_name);
+        m_comboCaptureDevice     ->addItem(condenseALSADeviceDescription(it), it.pcmDeviceName());
+    }
+    foreach(itm, caMixers) {
+        m_comboCaptureMixerCard  ->addItem(itm.cardDescription(), itm.mixerCardName());
     }
 
     int new_pb_idx = m_comboPlaybackDevice->findData(old_pb_device);
@@ -122,11 +141,28 @@ void AlsaSoundConfiguration::slotCheckSoundDevices()
         slotPlaybackDeviceSelected(m_comboPlaybackDevice->currentIndex());
         slotSetDirty();
     }
+
+    int new_pbm_idx = m_comboPlaybackMixerCard->findData(old_pb_mixer);
+    if (new_pbm_idx >= 0) {
+        m_comboPlaybackMixerCard->setCurrentIndex(new_pbm_idx);
+    } else if (new_pbm_idx < 0) {
+        slotPlaybackMixerSelected(m_comboPlaybackMixerCard->currentIndex());
+        slotSetDirty();
+    }
+
     int new_ca_idx = m_comboCaptureDevice->findData(old_ca_device);
     if (new_ca_idx >= 0) {
         m_comboCaptureDevice->setCurrentIndex(new_ca_idx);
     } else if (new_ca_idx < 0) {
         slotCaptureDeviceSelected(m_comboCaptureDevice->currentIndex());
+        slotSetDirty();
+    }
+
+    int new_cam_idx = m_comboCaptureMixerCard->findData(old_ca_mixer);
+    if (new_cam_idx >= 0) {
+        m_comboCaptureMixerCard->setCurrentIndex(new_cam_idx);
+    } else if (new_cam_idx < 0) {
+        slotCaptureMixerSelected(m_comboCaptureMixerCard->currentIndex());
         slotSetDirty();
     }
 }
@@ -137,16 +173,27 @@ void AlsaSoundConfiguration::slotPlaybackDeviceSelected(int /*comboIdx*/)
 }
 
 
-void AlsaSoundConfiguration::slotCaptureDeviceSelected(int comboIdx)
+void AlsaSoundConfiguration::slotPlaybackMixerSelected(int /*comboIdx*/)
+{
+    // nothing todo
+}
+
+
+void AlsaSoundConfiguration::slotCaptureDeviceSelected(int /*comboIdx*/)
+{
+}
+
+
+void AlsaSoundConfiguration::slotCaptureMixerSelected (int comboIdx)
 {
     saveCaptureMixerSettings();
 
-    m_currentCaptureDevice = m_comboCaptureDevice->itemData(comboIdx).toString();
+    m_currentCaptureMixer = m_comboCaptureMixerCard->itemData(comboIdx).toString();
 
     // get new mixer elements
     QStringList                     vol_list,  sw_list, all_list;
     QMap<QString, AlsaMixerElement> vol_ch2id, sw_ch2id;
-    AlsaSoundDevice::getCaptureMixerChannels(AlsaSoundDevice::extractMixerName(m_currentCaptureDevice), NULL, vol_list, vol_ch2id, sw_list, sw_ch2id, &all_list);
+    AlsaSoundDevice::getCaptureMixerChannels(m_currentCaptureMixer, NULL, vol_list, vol_ch2id, sw_list, sw_ch2id, &all_list);
 
     // free old mixer gui stuff
     for (QMap<QString, QAlsaMixerElement*>::iterator it = m_MixerElements.begin(); it != m_MixerElements.end(); ++it) {
@@ -191,11 +238,13 @@ void AlsaSoundConfiguration::slotCaptureDeviceSelected(int comboIdx)
     m_groupMixerFrame->adjustSize();
 }
 
+
+
 void AlsaSoundConfiguration::saveCaptureMixerSettings()
 {
     for (QMap<QString, QAlsaMixerElement*>::iterator it = m_MixerElements.begin(); it != m_MixerElements.end(); ++it) {
         const QString     &name      = it.key();
-        QString            mixerName = AlsaSoundDevice::extractMixerName(m_currentCaptureDevice);
+        QString            mixerName = m_currentCaptureMixer;
         QString            id        = AlsaConfigMixerSetting::getIDString(mixerName, name);
         QAlsaMixerElement *e         = *it;
         float              vol       = e->getVolume();
@@ -210,15 +259,15 @@ void AlsaSoundConfiguration::restoreCaptureMixerSettings()
 {
     for (QMap<QString, QAlsaMixerElement*>::iterator it = m_MixerElements.begin(); it != m_MixerElements.end(); ++it) {
         const QString     &name      = it.key();
-        QString            mixerName = AlsaSoundDevice::extractMixerName(m_currentCaptureDevice);
+        QString            mixerName = m_currentCaptureMixer;
         QString            id        = AlsaConfigMixerSetting::getIDString(mixerName, name);
         QAlsaMixerElement *e         = *it;
 
         if (m_MixerSettings.contains(id)) {
             const AlsaConfigMixerSetting &s = m_MixerSettings[id];
-            e->setVolume(s.m_volume);
-            e->setOverride(s.m_use);
-            e->setActive(s.m_active);
+            e->setVolume(s.volume());
+            e->setOverride(s.use());
+            e->setActive(s.active());
             e->slotResetDirty();
         } else {
             if (name == "ADC") {
@@ -264,8 +313,14 @@ void AlsaSoundConfiguration::slotOK()
         QString deviceName = m_comboPlaybackDevice->itemData(m_comboPlaybackDevice->currentIndex()).toString();
         m_SoundDevice->setPlaybackDevice(deviceName);
 
+        QString mixerName = m_comboPlaybackMixerCard->itemData(m_comboPlaybackMixerCard->currentIndex()).toString();
+        m_SoundDevice->setPlaybackMixer(mixerName);
+
         deviceName = m_comboCaptureDevice->itemData(m_comboCaptureDevice->currentIndex()).toString();
         m_SoundDevice->setCaptureDevice (deviceName);
+
+        mixerName  = m_comboCaptureMixerCard->itemData(m_comboCaptureMixerCard->currentIndex()).toString();
+        m_SoundDevice->setCaptureMixer (mixerName);
 
         saveCaptureMixerSettings();
         m_SoundDevice->setCaptureMixerSettings(m_MixerSettings);
@@ -291,10 +346,22 @@ void AlsaSoundConfiguration::slotCancel()
         m_comboPlaybackDevice->setCurrentIndex(idx);
     }
 
+    QString mixerName = m_SoundDevice ?  m_SoundDevice->getPlaybackMixerName() : "default";
+    idx               = m_comboPlaybackMixerCard->findData(mixerName);
+    if (idx >= 0) {
+        m_comboPlaybackMixerCard->setCurrentIndex(idx);
+    }
+
     devName         = m_SoundDevice ?  m_SoundDevice->getCaptureDeviceName() : "default";
     idx             = m_comboCaptureDevice->findData(devName);
     if (idx >= 0) {
         m_comboCaptureDevice->setCurrentIndex(idx);
+    }
+
+    mixerName       = m_SoundDevice ?  m_SoundDevice->getCaptureMixerName() : "default";
+    idx             = m_comboCaptureMixerCard->findData(mixerName);
+    if (idx >= 0) {
+        m_comboCaptureMixerCard->setCurrentIndex(idx);
     }
 
     editBufferSize    ->setValue  (m_SoundDevice ?  m_SoundDevice->getBufferSize()/1024 : 4);
@@ -436,20 +503,12 @@ void AlsaSoundConfiguration::getCaptureSoundFormat(SoundFormat &sf) const
     }
 }
 
-QString AlsaSoundConfiguration::condenseALSADeviceDescription(const QString &s)
+
+QString AlsaSoundConfiguration::condenseALSADeviceDescription(const AlsaSoundDeviceMetaData &md)
 {
-    QString res = s.trimmed();
-    int idx_nl = s.indexOf("\n");
-    if (idx_nl >= 0) {
-        QString fst    = s.left(idx_nl);
-        QString snd    = s.mid(idx_nl+1);
-        QString prefix = fst;
-        int idx_comma  = fst.indexOf(",");
-        if (idx_comma >= 0) {
-            prefix = fst.left(idx_comma);
-        }
-        res = prefix.trimmed() + ", " + snd.trimmed();
-    }
+    QString res = md.cardDescription();
+    if (res.length()) res += ", ";
+    res += md.deviceVerboseDescription();
     return res;
 }
 

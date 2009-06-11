@@ -36,19 +36,9 @@
 
 
 #include "alsa-thread.h"
-
+#include "alsa-sounddevice-metadata.h"
 
 enum DUPLEX_MODE { DUPLEX_UNKNOWN, DUPLEX_FULL, DUPLEX_HALF };
-
-struct MetaSoundDevice
-{
-    MetaSoundDevice(const QString &name, const QString &description)
-    : m_name(name), m_description(description) {}
-    MetaSoundDevice() {}
-
-    QString  m_name;
-    QString  m_description;
-};
 
 struct SoundStreamConfig
 {
@@ -99,6 +89,11 @@ protected:
 };
 
 
+
+
+
+
+
 class AlsaSoundDevice : public QObject,
                         public PluginBase,
                         public ISoundStreamClient
@@ -115,10 +110,13 @@ public:
 
 public:
 
-    static QList<MetaSoundDevice> getPCMCaptureDeviceDescriptions();
-    static QList<MetaSoundDevice> getPCMPlaybackDeviceDescriptions();
-    static QList<MetaSoundDevice> getPCMDeviceDescriptions(const QString &filter);
-    static QString                extractMixerName(const QString &devString);
+    static QList<AlsaSoundDeviceMetaData> getPCMCaptureDeviceDescriptions();
+    static QList<AlsaSoundDeviceMetaData> getPCMPlaybackDeviceDescriptions();
+    static QList<AlsaSoundDeviceMetaData> getPCMDeviceDescriptions(const QString &filter);
+    static QList<AlsaMixerMetaData>       getCaptureMixerDescriptions();
+    static QList<AlsaMixerMetaData>       getPlaybackMixerDescriptions();
+    static QList<AlsaMixerMetaData>       getMixerDeviceDescriptions(const QString &filter);
+    static QString                        extractMixerNameFromPCMDevice(const QString &devString);
 
     // PluginBase
 
@@ -215,7 +213,9 @@ RECEIVERS:
     bool           isPlaybackEnabled()      const { return m_EnablePlayback; }
     bool           isCaptureEnabled()       const { return m_EnableCapture;  }
     const QString &getPlaybackDeviceName()  const { return m_PlaybackDeviceName; }
+    const QString &getPlaybackMixerName()   const { return m_PlaybackMixerName; }
     const QString &getCaptureDeviceName()   const { return m_CaptureDeviceName; }
+    const QString &getCaptureMixerName()    const { return m_CaptureMixerName; }
     const QMap<QString, AlsaConfigMixerSetting> &
                    getCaptureMixerSettings() const { return m_CaptureMixerSettings; }
     bool           getSoftPlaybackVolume(double &correction_factor) const { correction_factor = m_SoftPlaybackVolumeCorrectionFactor; return m_SoftPlaybackVolumeEnabled; }
@@ -225,7 +225,9 @@ RECEIVERS:
     void           enablePlayback(bool on);
     void           enableCapture(bool on);
     void           setPlaybackDevice(const QString &deviceName);
-    void           setCaptureDevice(const QString &deviceName);
+    void           setPlaybackMixer (const QString &mixerName);
+    void           setCaptureDevice (const QString &deviceName);
+    void           setCaptureMixer  (const QString &mixerName);
     void           setCaptureMixerSettings(const QMap<QString, AlsaConfigMixerSetting> &map);
     void           setSoftPlaybackVolume(bool enable, double correction_factor);
     void           setCaptureFormatOverride(bool override_enabled, const SoundFormat &sf);
@@ -274,7 +276,9 @@ protected:
     SoundFormat     m_PlaybackFormat;
     SoundFormat     m_CaptureFormat;
     QString         m_PlaybackDeviceName;
+    QString         m_PlaybackMixerName;
     QString         m_CaptureDeviceName;
+    QString         m_CaptureMixerName;
 
     unsigned        m_PlaybackLatency;
     unsigned        m_CaptureLatency;

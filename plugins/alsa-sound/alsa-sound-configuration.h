@@ -73,11 +73,13 @@ protected slots:
     void slotUpdateConfig();
 
     void slotPlaybackDeviceSelected(int comboIdx);
+    void slotPlaybackMixerSelected (int comboIdx);
     void slotCaptureDeviceSelected (int comboIdx);
+    void slotCaptureMixerSelected  (int comboIdx);
     void slotCheckSoundDevices();
 
 protected:
-    QString condenseALSADeviceDescription(const QString &s);
+    QString condenseALSADeviceDescription(const AlsaSoundDeviceMetaData &md);
     void    saveCaptureMixerSettings();
     void    restoreCaptureMixerSettings();
 
@@ -85,7 +87,7 @@ protected:
     void    setCaptureSoundFormat(const SoundFormat &sf);
 
     AlsaSoundDevice                       *m_SoundDevice;
-    QString                                m_currentCaptureDevice;
+    QString                                m_currentCaptureMixer;
     QFrame                                *m_groupMixerFrame;
     QGridLayout                           *m_groupMixerFrameLayout;
     QScrollArea                           *m_groupMixerScrollView;
