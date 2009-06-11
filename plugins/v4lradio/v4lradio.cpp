@@ -980,7 +980,9 @@ bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QStri
     ISoundStreamClient *mixer    = getSoundStreamClientWithID(m_PlaybackMixerID);
     QStringList         channels = mixer ? mixer->getPlaybackChannels() : QStringList();
 
-    assignChannelIfValid(m_PlaybackMixerChannel, channels[0], channels);  // lowest priority
+    if (channels.size()) {
+        assignChannelIfValid(m_PlaybackMixerChannel, channels[0], channels);  // lowest priority
+    }
     assignChannelIfValid(m_PlaybackMixerChannel, "PCM",       channels);
     assignChannelIfValid(m_PlaybackMixerChannel, "Wave",      channels);
     assignChannelIfValid(m_PlaybackMixerChannel, "Line",      channels);
@@ -1032,7 +1034,9 @@ bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QStrin
     ISoundStreamClient *mixer    = getSoundStreamClientWithID(m_CaptureMixerID);
     QStringList         channels = mixer ? mixer->getPlaybackChannels() : QStringList();
 
-    assignChannelIfValid(m_CaptureMixerChannel, channels[0], channels);  // lowest priority
+    if (channels.size()) {
+        assignChannelIfValid(m_CaptureMixerChannel, channels[0], channels);  // lowest priority
+    }
     assignChannelIfValid(m_CaptureMixerChannel, "PCM",       channels);
     assignChannelIfValid(m_CaptureMixerChannel, "Wave",      channels);
     assignChannelIfValid(m_CaptureMixerChannel, "Line",      channels);

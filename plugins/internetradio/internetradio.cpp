@@ -468,7 +468,9 @@ bool  InternetRadio::setPlaybackMixer(const QString &soundStreamClientID, const 
     ISoundStreamClient *mixer    = getSoundStreamClientWithID(m_PlaybackMixerID);
     QStringList         channels = mixer ? mixer->getPlaybackChannels() : QStringList();
 
-    assignChannelIfValid(m_PlaybackMixerChannel, channels[0], channels);  // lowest priority
+    if (channels.size()) {
+        assignChannelIfValid(m_PlaybackMixerChannel, channels[0], channels);  // lowest priority
+    }
     assignChannelIfValid(m_PlaybackMixerChannel, "PCM",       channels);
     assignChannelIfValid(m_PlaybackMixerChannel, "Wave",      channels);
     assignChannelIfValid(m_PlaybackMixerChannel, "Master",    channels);
