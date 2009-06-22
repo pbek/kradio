@@ -125,8 +125,8 @@ static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, c
     char *stag   = strdup(tag.toLocal8Bit());
     char *svalue = strdup(value.toUtf8());
     vorbis_comment_add_tag(vc, stag, svalue);
-    delete stag;
-    delete svalue;
+    free(stag);
+    free(svalue);
 }
 #endif
 
