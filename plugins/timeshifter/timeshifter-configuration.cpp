@@ -95,9 +95,9 @@ void TimeShifterConfiguration::noticeConnectedSoundClient(ISoundStreamClient::th
     if (i && pointer_valid && i->supportsPlayback() && m_Shifter) {
         const QString &org_mid     = m_Shifter->getPlaybackMixer();
         bool           org_present = m_PlaybackMixerHelper.contains(org_mid);
-        const QString &mid         = org_present ? m_PlaybackMixerHelper.getCurrentItem() : org_mid;
+        const QString &mid         = !org_present ? m_PlaybackMixerHelper.getCurrentItem() : org_mid;
         const QString &org_ch      = m_Shifter->getPlaybackMixerChannel();
-        const QString &ch          = org_present ? m_PlaybackChannelHelper.getCurrentText() : org_ch;
+        const QString &ch          = !org_present ? m_PlaybackChannelHelper.getCurrentText() : org_ch;
         setPlaybackMixer(mid, ch);
     }
 }
@@ -126,6 +126,12 @@ bool TimeShifterConfiguration::setPlaybackMixer(const QString &_mixer_id, const 
     if (mixer) {
         m_PlaybackChannelHelper.setData(mixer->getPlaybackChannels());
         m_PlaybackChannelHelper.setCurrentText(m_PlaybackChannelHelper.contains(Channel) ? Channel : m_Shifter->getPlaybackMixerChannel());
+        if (m_Shifter->getPlaybackMixerChannel() != m_PlaybackChannelHelper.getCurrentText() ||
+            m_Shifter->getPlaybackMixer()        != m_PlaybackMixerHelper  .getCurrentItem())
+        {
+            #warning "FIXME: should we issue some warning here?"
+            slotSetDirty();
+        }
     }
     labelPlaybackMixerChannel->setEnabled(mixer != NULL);
     comboPlaybackMixerChannel->setEnabled(mixer != NULL);

@@ -28,19 +28,19 @@ public:
     GUISimpleListHelper(TLIST *list) : m_List(list) {}
     ~GUISimpleListHelper() {}
 
-    void setList(TLIST *list);
+    void     setList(TLIST *list);
 
     void     setData(const QList<QString> &data);
     QString  getCurrentText() const           { return m_List->currentText(); }
-    void     setCurrentText(const QString &s) { m_List->setCurrentIndex(m_revData.contains(s) ? m_revData[s] : 0); }
+    void     setCurrentText(const QString &s) {        m_List->setCurrentIndex(m_List->findText(s)); }
 
-    int count() const { return m_revData.count(); }
-    bool contains(const QString &id) const { return m_revData.contains(id); }
+    int      count()                     const { return m_List->count(); }
+    bool     contains(const QString &id) const { return m_List->findText(id); }
 
 protected:
     TLIST              *m_List;
-    QMap<QString, int>  m_revData;
 };
+
 
 template <class TLIST>
 void GUISimpleListHelper<TLIST>::setList(TLIST *list)
@@ -52,12 +52,10 @@ template <class TLIST>
 void GUISimpleListHelper<TLIST>::setData(const QList<QString> &data)
 {
     m_List->clear();
-    m_revData.clear();
 
     QList<QString>::const_iterator it  = data.begin();
     QList<QString>::const_iterator end = data.end();
     for (int i = 0; it != end; ++it, ++i) {
-        m_revData[*it] = i;
         m_List->insertItem(i, *it);
     }
 }
