@@ -20,6 +20,9 @@ For 4.0.x
   * check box for v4l config to disable caps check at startup to minimize interference
   * fix: disable nerving dialog boxes popping up during downloads
   * FIXME: import old mixer settings from previous alsa naming scheme!
+  * fix: better handling of combo box stuff in gui_list_helper.h
+  * fix: consistent handling/warning in cfg dialogs in case mixer channels are not available any more
+    (let helper be qobjects which maintain/signal their own dirty state?)
 
 For 4.1.0
 
