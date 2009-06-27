@@ -1305,7 +1305,7 @@ float AlsaSoundDevice::readPlaybackMixerVolume(const QString &channel, bool &mut
         }
     }
     logError("AlsaSound::readPlaybackMixerVolume: " +
-             i18n("error while reading volume from %1", m_PlaybackMixerName));
+             i18n("error while reading volume from %1, channel %2", m_PlaybackMixerName, channel));
     return 0;
 }
 
@@ -1333,7 +1333,7 @@ float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
         }
     }
     logError("AlsaSound::readCaptureMixerVolume: " +
-             i18n("error while reading volume from %1", m_CaptureMixerName));
+             i18n("error while reading volume from %1, channel %2", m_CaptureMixerName, channel));
     return 0;
 }
 
@@ -1375,7 +1375,7 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &v
         }
     }
     logError("AlsaSound::writePlaybackMixerVolume: " +
-    i18n("error while writing volume %1 to %2", vol, m_PlaybackMixerName));
+    i18n("error while writing volume %1 to %2, channel %3", vol, m_PlaybackMixerName, channel));
     return false;
 }
 
@@ -1407,7 +1407,7 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
         }
     }
     logError("AlsaSound::writeCaptureMixerVolume: " +
-             i18n("error while writing volume %1 to %2", vol, m_CaptureMixerName));
+             i18n("error while writing volume %1 to %2, channel %3", vol, m_CaptureMixerName, channel));
     return false;
 }
 
