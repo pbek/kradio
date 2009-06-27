@@ -78,10 +78,9 @@ protected:
     int     m_myControlChange;
 
     typedef GUIListHelper<QComboBox, QString>       StringListHelper;
-    typedef GUISimpleListHelper<QComboBox>          ChannelListHelper;
 
     StringListHelper  m_PlaybackMixerHelper;
-    ChannelListHelper m_PlaybackChannelHelper;
+    StringListHelper  m_PlaybackChannelHelper;
 
     QString           m_orgMixerID;
     QString           m_orgChannelID;

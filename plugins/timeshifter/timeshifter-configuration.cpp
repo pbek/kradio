@@ -40,8 +40,8 @@ TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter
   : QWidget(parent),
     m_ignoreGUIChanges(false),
     m_myControlChange(0),
-    m_PlaybackMixerHelper(NULL, StringListHelper::SORT_BY_DESCR),
-    m_PlaybackChannelHelper(NULL),
+    m_PlaybackMixerHelper  (NULL, StringListHelper::SORT_BY_DESCR),
+    m_PlaybackChannelHelper(NULL, StringListHelper::SORT_NONE),
     m_Shifter(shifter),
     m_dirty(true)
 {
@@ -95,9 +95,9 @@ void TimeShifterConfiguration::noticeConnectedSoundClient(ISoundStreamClient::th
     if (i && pointer_valid && i->supportsPlayback() && m_Shifter) {
         const QString &org_mid     = m_Shifter->getPlaybackMixer();
         bool           org_present = m_PlaybackMixerHelper.contains(org_mid);
-        const QString &mid         = !org_present ? m_PlaybackMixerHelper.getCurrentItem() : org_mid;
+        const QString &mid         = !org_present ? m_PlaybackMixerHelper.getCurrentItemID() : org_mid;
         const QString &org_ch      = m_Shifter->getPlaybackMixerChannel();
-        const QString &ch          = !org_present ? m_PlaybackChannelHelper.getCurrentText() : org_ch;
+        const QString &ch          = !org_present ? m_PlaybackChannelHelper.getCurrentItemID() : org_ch;
         setPlaybackMixer(mid, ch);
     }
 }
@@ -119,15 +119,15 @@ bool TimeShifterConfiguration::setPlaybackMixer(const QString &_mixer_id, const 
     m_ignoreGUIChanges = true;
 
     m_PlaybackMixerHelper.setData(getPlaybackClientDescriptions());
-    m_PlaybackMixerHelper.setCurrentItem(mixer_id);
-    mixer_id = m_PlaybackMixerHelper.getCurrentItem();
+    m_PlaybackMixerHelper.setCurrentItemID(mixer_id);
+    mixer_id = m_PlaybackMixerHelper.getCurrentItemID();
 
     ISoundStreamClient *mixer = getSoundStreamClientWithID(mixer_id);
     if (mixer) {
         m_PlaybackChannelHelper.setData(mixer->getPlaybackChannels());
-        m_PlaybackChannelHelper.setCurrentText(m_PlaybackChannelHelper.contains(Channel) ? Channel : m_Shifter->getPlaybackMixerChannel());
-        if (m_Shifter->getPlaybackMixerChannel() != m_PlaybackChannelHelper.getCurrentText() ||
-            m_Shifter->getPlaybackMixer()        != m_PlaybackMixerHelper  .getCurrentItem())
+        m_PlaybackChannelHelper.setCurrentItemID(m_PlaybackChannelHelper.contains(Channel) ? Channel : m_Shifter->getPlaybackMixerChannel());
+        if (m_Shifter->getPlaybackMixerChannel() != m_PlaybackChannelHelper.getCurrentItemID() ||
+            m_Shifter->getPlaybackMixer()        != m_PlaybackMixerHelper  .getCurrentItemID())
         {
             #warning "FIXME: should we issue some warning here?"
             slotSetDirty();
@@ -162,7 +162,7 @@ void TimeShifterConfiguration::selectTempFile()
 void TimeShifterConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
-    setPlaybackMixer(m_PlaybackMixerHelper.getCurrentItem(), m_PlaybackChannelHelper.getCurrentText());
+    setPlaybackMixer(m_PlaybackMixerHelper.getCurrentItemID(), m_PlaybackChannelHelper.getCurrentItemID());
 }
 
 
@@ -170,8 +170,8 @@ void TimeShifterConfiguration::slotOK()
 {
     if (m_Shifter && m_dirty) {
         m_Shifter->setTempFile(editTempFile->text(), editTempFileSize->value() * (quint64)(1024 * 1024));
-        m_Shifter->setPlaybackMixer(m_PlaybackMixerHelper.getCurrentItem(),
-                                    m_PlaybackChannelHelper.getCurrentText());
+        m_Shifter->setPlaybackMixer(m_PlaybackMixerHelper.getCurrentItemID(),
+                                    m_PlaybackChannelHelper.getCurrentItemID());
         m_dirty = false;
     }
 }
@@ -191,8 +191,8 @@ void TimeShifterConfiguration::slotCancel()
 
 bool TimeShifterConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
 {
-    if (m_PlaybackMixerHelper.getCurrentItem() == client_id) {
-        setPlaybackMixer(client_id, m_PlaybackChannelHelper.getCurrentText());
+    if (m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
+        setPlaybackMixer(client_id, m_PlaybackChannelHelper.getCurrentItemID());
     }
     return true;
 }

@@ -74,10 +74,9 @@ protected:
     int     m_myControlChange;
 
     typedef GUIListHelper<QComboBox, QString> StringListHelper;
-    typedef GUISimpleListHelper<QComboBox>    ChannelListHelper;
 
     StringListHelper  m_PlaybackMixerHelper;
-    ChannelListHelper m_PlaybackChannelHelper;
+    StringListHelper  m_PlaybackChannelHelper;
 
     TimeShifter *m_Shifter;
     bool         m_dirty;

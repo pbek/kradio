@@ -151,11 +151,10 @@ protected:
     V4LCaps m_caps;
 
     typedef GUIListHelper<QComboBox, QString>       StringListHelper;
-    typedef GUISimpleListHelper<QComboBox>          ChannelListHelper;
 
     StringListHelper  m_PlaybackMixerHelper,
                       m_CaptureMixerHelper;
-    ChannelListHelper m_PlaybackChannelHelper,
+    StringListHelper  m_PlaybackChannelHelper,
                       m_CaptureChannelHelper;
 };
 

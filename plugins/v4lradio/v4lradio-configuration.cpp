@@ -50,8 +50,8 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
     m_orgDeviceVolume(-1),
     m_PlaybackMixerHelper  (NULL, StringListHelper::SORT_BY_DESCR),
     m_CaptureMixerHelper   (NULL, StringListHelper::SORT_BY_DESCR),
-    m_PlaybackChannelHelper(NULL),
-    m_CaptureChannelHelper (NULL)
+    m_PlaybackChannelHelper(NULL, StringListHelper::SORT_NONE),
+    m_CaptureChannelHelper (NULL, StringListHelper::SORT_NONE)
 {
 
     setupUi(this);
@@ -144,17 +144,17 @@ void V4LRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisI
     if (i && pointer_valid && i->supportsPlayback()) {
         const QString &org_mid     = queryPlaybackMixerID();
         bool           org_present = m_PlaybackMixerHelper.contains(org_mid);
-        const QString &mid         = org_present ? m_PlaybackMixerHelper.getCurrentItem() : org_mid;
+        const QString &mid         = org_present ? m_PlaybackMixerHelper.getCurrentItemID() : org_mid;
         const QString &org_ch      = queryPlaybackMixerChannel();
-        const QString &ch          = org_present ? m_PlaybackChannelHelper.getCurrentText() : org_ch;
+        const QString &ch          = org_present ? m_PlaybackChannelHelper.getCurrentItemText() : org_ch;
         noticePlaybackMixerChanged(mid, ch);
     }
     if (i && pointer_valid && i->supportsCapture()) {
         const QString &org_mid     = queryCaptureMixerID();
         bool           org_present = m_CaptureMixerHelper.contains(org_mid);
-        const QString &mid         = org_present ? m_CaptureMixerHelper.getCurrentItem() : org_mid;
+        const QString &mid         = org_present ? m_CaptureMixerHelper.getCurrentItemID() : org_mid;
         const QString &org_ch      = queryCaptureMixerChannel();
-        const QString &ch          = org_present ? m_CaptureChannelHelper.getCurrentText() : org_ch;
+        const QString &ch          = org_present ? m_CaptureChannelHelper.getCurrentItemText() : org_ch;
         noticeCaptureMixerChanged(mid, ch);
     }
 }
@@ -191,14 +191,14 @@ bool V4LRadioConfiguration::noticePlaybackMixerChanged(const QString &_mixer_id,
     m_ignoreGUIChanges = true;
 
     m_PlaybackMixerHelper.setData(getPlaybackClientDescriptions());
-    m_PlaybackMixerHelper.setCurrentItem(mixer_id);
+    m_PlaybackMixerHelper.setCurrentItemID(mixer_id);
     ISoundStreamClient *mixer = NULL;
     if (m_PlaybackMixerHelper.count()) {
-        mixer_id = m_PlaybackMixerHelper.getCurrentItem();
+        mixer_id = m_PlaybackMixerHelper.getCurrentItemID();
         mixer = getSoundStreamClientWithID(mixer_id);
         if (mixer) {
             m_PlaybackChannelHelper.setData(mixer->getPlaybackChannels());
-            m_PlaybackChannelHelper.setCurrentText(m_PlaybackChannelHelper.contains(Channel) ? Channel : queryPlaybackMixerChannel());
+            m_PlaybackChannelHelper.setCurrentItemID(m_PlaybackChannelHelper.contains(Channel) ? Channel : queryPlaybackMixerChannel());
         }
     }
     labelPlaybackMixerChannel->setEnabled(mixer != NULL);
@@ -216,15 +216,15 @@ bool V4LRadioConfiguration::noticeCaptureMixerChanged(const QString &_mixer_id, 
     m_ignoreGUIChanges = true;
 
     m_CaptureMixerHelper.setData(getCaptureClientDescriptions());
-    m_CaptureMixerHelper.setCurrentItem(mixer_id);
+    m_CaptureMixerHelper.setCurrentItemID(mixer_id);
 
     ISoundStreamClient *mixer = NULL;
     if (m_CaptureMixerHelper.count()) {
-        mixer_id = m_CaptureMixerHelper.getCurrentItem();
+        mixer_id = m_CaptureMixerHelper.getCurrentItemID();
         mixer = getSoundStreamClientWithID(mixer_id);
         if (mixer) {
             m_CaptureChannelHelper.setData(mixer->getCaptureChannels());
-            m_CaptureChannelHelper.setCurrentText(m_CaptureChannelHelper.contains(Channel) ? Channel : queryCaptureMixerChannel());
+            m_CaptureChannelHelper.setCurrentItemID(m_CaptureChannelHelper.contains(Channel) ? Channel : queryCaptureMixerChannel());
         }
     }
     labelCaptureMixerChannel->setEnabled(mixer != NULL);
@@ -553,7 +553,7 @@ void V4LRadioConfiguration::slotEditRadioDeviceChanged()
 void V4LRadioConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
-    QString id = m_PlaybackMixerHelper.getCurrentItem();
+    QString id = m_PlaybackMixerHelper.getCurrentItemID();
     noticePlaybackMixerChanged(id, queryPlaybackMixerChannel());
 }
 
@@ -561,7 +561,7 @@ void V4LRadioConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 void V4LRadioConfiguration::slotComboCaptureMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
-    QString id = m_CaptureMixerHelper.getCurrentItem();
+    QString id = m_CaptureMixerHelper.getCurrentItemID();
     noticeCaptureMixerChanged(id, queryCaptureMixerChannel());
 }
 
@@ -587,19 +587,19 @@ void V4LRadioConfiguration::slotOK()
     QString mixer_id;
     QString channel_id;
     if (m_CaptureMixerHelper.count()) {
-        mixer_id = m_CaptureMixerHelper.getCurrentItem();
+        mixer_id = m_CaptureMixerHelper.getCurrentItemID();
     }
     if (m_CaptureChannelHelper.count()) {
-        channel_id = m_CaptureChannelHelper.getCurrentText();
+        channel_id = m_CaptureChannelHelper.getCurrentItemID();
     }
     sendCaptureMixer (mixer_id, channel_id, false);
 
 
     if (m_PlaybackMixerHelper.count()) {
-        mixer_id = m_PlaybackMixerHelper.getCurrentItem();
+        mixer_id = m_PlaybackMixerHelper.getCurrentItemID();
     }
     if (m_PlaybackChannelHelper.count()) {
-        channel_id = m_PlaybackChannelHelper.getCurrentText();
+        channel_id = m_PlaybackChannelHelper.getCurrentItemID();
     }
     sendPlaybackMixer (mixer_id, channel_id, false);
 
@@ -729,8 +729,8 @@ void V4LRadioConfiguration::slotBalanceCenter()
 
 bool V4LRadioConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
 {
-    if (m_PlaybackMixerHelper.count() && m_PlaybackMixerHelper.getCurrentItem() == client_id) {
-        noticePlaybackMixerChanged(client_id, m_PlaybackChannelHelper.getCurrentText());
+    if (m_PlaybackMixerHelper.count() && m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
+        noticePlaybackMixerChanged(client_id, m_PlaybackChannelHelper.getCurrentItemID());
     }
     return true;
 }
@@ -738,8 +738,8 @@ bool V4LRadioConfiguration::noticePlaybackChannelsChanged(const QString & client
 
 bool V4LRadioConfiguration::noticeCaptureChannelsChanged (const QString & client_id, const QStringList &/*channels*/)
 {
-    if (m_CaptureMixerHelper.count() && m_CaptureMixerHelper.getCurrentItem() == client_id) {
-        noticeCaptureMixerChanged(client_id, m_CaptureChannelHelper.getCurrentText());
+    if (m_CaptureMixerHelper.count() && m_CaptureMixerHelper.getCurrentItemID() == client_id) {
+        noticeCaptureMixerChanged(client_id, m_CaptureChannelHelper.getCurrentItemID());
     }
     return true;
 }

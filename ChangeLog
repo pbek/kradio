@@ -1,3 +1,13 @@
+2009-06-27
+
+    emw - rework of GUIListHelper template
+
+2009-06-11
+
+    emw - avoid unnecessary error message by lirc plugin/QSocketNotifier
+        - further fixes for handling of invalid mixer channels in cfg
+          dialogs and cfg restore phase
+
 2009-06-08
     emw
         - Unfortunately, we cannot get around ALSA Bug 3461
