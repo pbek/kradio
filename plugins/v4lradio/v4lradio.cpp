@@ -1,7 +1,7 @@
 /***************************************************************************
                           v4lradio.cpp  -  description
                              -------------------
-    begin                : Don Mär  8 21:57:17 CET 2001
+    begin                : Don Mï¿½r  8 21:57:17 CET 2001
     copyright            : (C) 2002-2005 by Ernst Martin Witte
     email                : emw-kradio@nocabal.de
  ***************************************************************************/
@@ -23,6 +23,9 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <math.h>
+#include <sys/utsname.h>
+
+
 
 #ifdef HAVE_V4L2
 #include "linux/videodev2.h"
@@ -103,7 +106,8 @@ V4LRadio::V4LRadio(const QString &instanceID, const QString &name)
     m_MuteOnPowerOff(false),
     m_VolumeZeroOnPowerOff(false),
     m_restorePowerOn(false),
-    m_V4L_version_override(V4L_Version1),
+    m_V4L_version_override(V4L_Version2),
+    m_V4L_version_override_by_kernel_once(false),
     m_RDS_notify(NULL),
     m_RDS_visible(false),
     m_RDS_decoder(new RDSGroupV4L()),
@@ -1213,8 +1217,8 @@ void   V4LRadio::saveState (KConfigGroup &config) const
     config.writeEntry("RDSForceEnabled",                          m_RDSForceEnabled);
     config.writeEntry("VolumeZeroOnPowerOff",                     m_VolumeZeroOnPowerOff);
 
-    config.writeEntry("V4LVersionOverride",   (int)m_V4L_version_override);
-
+    config.writeEntry("V4LVersionOverride",                       (int)m_V4L_version_override);
+    config.writeEntry("V4LVersionOverrideByKernelOnce",           (int)m_V4L_version_override_by_kernel_once);
     saveRadioDeviceID(config);
 
 }
@@ -1228,7 +1232,24 @@ void   V4LRadio::restoreState (const KConfigGroup &config)
 
     restoreRadioDeviceID(config);
 
-    m_V4L_version_override = (V4LVersion)config.readEntry("V4LVersionOverride", (int)V4L_Version1);
+    m_V4L_version_override                = (V4LVersion)config.readEntry("V4LVersionOverride", (int)V4L_Version1);
+    m_V4L_version_override_by_kernel_once = config.readEntry("V4LVersionOverrideByKernelOnce", false);
+    struct utsname uname_data;
+    if (uname (&uname_data) == 0) {
+        int major = 0;
+        int minor = 0;
+        int step  = 0;
+        if (sscanf(uname_data.release, "%d.%d.%d", &major, &minor, &step) == 3) {
+            if (major > 2 || (major == 2 && (minor > 6 || (minor == 6 && step >= 31)))) {
+                if (m_V4L_version_override == 1 && !m_V4L_version_override_by_kernel_once) {
+                    m_V4L_version_override_by_kernel_once = true;
+                    m_V4L_version_override                = V4L_Version2;
+                    logWarning(i18n("You have selected V4L API Version 1. Starting with kernel 2.6.31, the support for V4L1 seems to be not working properly any more. I'm now once switching to V4L Version 2. You may override it later."));
+                }
+            }
+        }
+    }
+
 
     QString base_devname = "/dev/radio";
 

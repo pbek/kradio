@@ -316,6 +316,7 @@ protected:
     bool                          m_restorePowerOn;
 
     V4LVersion                    m_V4L_version_override;
+    bool                          m_V4L_version_override_by_kernel_once;
 
     QSocketNotifier              *m_RDS_notify;
     mutable bool                  m_RDS_visible;
