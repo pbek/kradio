@@ -65,6 +65,8 @@ ELSE(WITH_V4L2)
     message(STATUS "   Compiling without V4L2 support")
 ENDIF(WITH_V4L2)
 
+MACRO_LOG_FEATURE(WITH_V4L2 "V4L2 Support"  "Support for V4L2 support. Recommended and necessary for recent kernels > 2.6.30" "http://www.linuxtv.org/wiki/index.php/Main_Page")
+
 ###############################################################################
 
 
@@ -76,6 +78,8 @@ IF (WITH_RDS_DEBUG_EMULATE)
 ELSE(WITH_RDS_DEBUG_EMULATE)
     message(STATUS "   Compiling without RDS-Debug-Emulation")
 ENDIF(WITH_RDS_DEBUG_EMULATE)
+
+MACRO_LOG_FEATURE(WITH_V4L2 "RDS Debug Emulation"  "Emulate some dummy RDS message for testing RDS functionality without having an RDS renabled radio card" "http://www.linuxtv.org/wiki/index.php/Radio_Data_System_%28RDS%29")
 
 ###############################################################################
 

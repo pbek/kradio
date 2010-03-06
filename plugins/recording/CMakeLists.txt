@@ -40,6 +40,8 @@ ELSE(WITH_OGG_VORBIS)
     set(LIB_OGG "")
 ENDIF(WITH_OGG_VORBIS)
 
+MACRO_LOG_FEATURE(WITH_OGG_VORBIS "ogg/vorbis support"  "Support for audio compression format ogg/vorbis" "http://www.vorbis.com") 
+
 ###############################################################################
 
 
@@ -66,16 +68,22 @@ ELSE(WITH_LAME)
     set(LIB_LAME "")
 ENDIF(WITH_LAME)
 
+MACRO_LOG_FEATURE(WITH_LAME "mp3/lame support"  "Support for audio compression format .mp3 via lame" "http://lame.sourceforge.net") 
+
 ###############################################################################
 
+SET(WITH_LIBSNDFILE ON)
 
 CHECK_INCLUDE_FILE(sndfile.h HAVE_SNDFILE_INC)
 CHECK_LIBRARY_EXISTS(sndfile sf_open "" HAVE_SNDFILE_LIB)
 IF(NOT HAVE_SNDFILE_INC OR NOT HAVE_SNDFILE_LIB)
 
+    SET(WITH_LIBSNDFILE OFF)
     MESSAGE(SEND_ERROR "libsndfile files could not be found on this system.")
 
 ENDIF(NOT HAVE_SNDFILE_INC OR NOT HAVE_SNDFILE_LIB)
+
+MACRO_LOG_FEATURE(WITH_LIBSNDFILE "libsndfile generic sound file support"  "Support for some standard audio formats (e.g. .wav)" "http://www.mega-nerd.com/libsndfile" TRUE)
 
 ###############################################################################
 
