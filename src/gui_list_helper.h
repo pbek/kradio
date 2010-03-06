@@ -21,91 +21,87 @@
 #include <QtCore/QMap>
 #include <QtCore/QList>
 #include <QtCore/QString>
+#include <QtCore/QObject>
+#include <QtCore/QVariant>
 
-template <class TLIST> class KDE_EXPORT GUISimpleListHelper
+
+
+template <class TLIST, class TID> class KDE_EXPORT GUIListHelper : public QObject
 {
 public:
-    GUISimpleListHelper(TLIST *list) : m_List(list) {}
-    ~GUISimpleListHelper() {}
+    enum SORT_KEY { SORT_BY_ID, SORT_BY_DESCR, SORT_NONE };
 
-    void     setList(TLIST *list);
+    GUIListHelper (TLIST *list, SORT_KEY skey);
+    GUIListHelper (TLIST *list, const QMap<TID, QString> &data, SORT_KEY skey);
+    GUIListHelper (TLIST *list, const QList<QString> &data, SORT_KEY skey);
+    ~GUIListHelper() {}
 
-    void     setData(const QList<QString> &data);
-    QString  getCurrentText() const           { return m_List->currentText(); }
-    void     setCurrentText(const QString &s) {        m_List->setCurrentIndex(m_List->findText(s)); }
+    void          setList(TLIST *list)                { m_List = list; }
 
-    int      count()                     const { return m_List->count(); }
-    bool     contains(const QString &id) const { return m_List->findText(id); }
+    void          setCurrentItemID(const TID &id);
+    void          setOrgItemID    (const TID &id);
+
+    const TID     getCurrentItemID() const;
+
+    int           count() const                       { return m_List->count(); }
+
+public slots:
+
+    void          slotOk();
+    void          slotCancel();
+    template<class TData>
+    void          slotAlternativesChanged(const TData &data);
+
+protected slots:
+    void          slotUserSelection();
+
+
 
 protected:
-    TLIST              *m_List;
-};
+    void          setData(const QMap<TID, QString> &data);  // only updates list elements, no setting/update of current element
+    void          setData(const QList<QString>     &data);  // only updates list elements, no setting/update of current element
+    bool          containsItemID(const TID &id) const { return m_List->findData(id) >= 0; }
 
+    void          setUserDirty()                  { setDirty(true,  m_alternativeDirty); }
+    void          setUserDirty(bool dirty)        { setDirty(dirty, m_alternativeDirty); }
+    void          setAlternativeDirty()           { setDirty(m_userDirty, true);  }
+    void          setAlternativeDirty(bool dirty) { setDirty(m_userDirty, dirty); }
+    void          setDirty(bool userDirty, bool alternativesDirty)
+                                                  { m_userDirty        = userDirty;
+                                                    m_alternativeDirty = alternativesDirty;
+                                                    emit sigDirtyChanged(m_userDirty || m_alternativeDirty); }
 
-template <class TLIST>
-void GUISimpleListHelper<TLIST>::setList(TLIST *list)
-{
-    m_List = list;
-}
-
-template <class TLIST>
-void GUISimpleListHelper<TLIST>::setData(const QList<QString> &data)
-{
-    m_List->clear();
-
-    QList<QString>::const_iterator it  = data.begin();
-    QList<QString>::const_iterator end = data.end();
-    for (int i = 0; it != end; ++it, ++i) {
-        m_List->insertItem(i, *it);
-    }
-}
-
-
-
-
-
-
-
-
-
-template <class TLIST, class TID> class GUIListHelper
-{
-public:
-    enum SORT_KEY { SORT_BY_ID, SORT_BY_DESCR };
-
-    GUIListHelper(TLIST *list, SORT_KEY skey);
-    GUIListHelper(TLIST *list, const QMap<TID, QString> &data, SORT_KEY skey);
-    ~GUIListHelper();
-
-    void setList(TLIST *list);
-
-    void setData(const QMap<TID, QString> &data);
-
-    void       setCurrentItem(const TID &) const;
-    const TID  getCurrentItem()    const;
-
-    int count() const { return m_Index2ID.count(); }
-
-    bool contains(const TID &id) const { return m_ID2Index.contains(id); }
+signals:
+    void          sigDirtyChanged (bool dirty);
 
 protected:
-    SORT_KEY           m_skey;
-    TLIST             *m_List;
-    QMap<int, TID>     m_Index2ID;
-    QMap<TID, int>     m_ID2Index;
-    QMap<TID, QString> m_ID2Description;
+    SORT_KEY      m_skey;
+    TLIST        *m_List;
+    bool          m_userDirty;
+    bool          m_alternativeDirty;
+
+    TID           m_orgID;
+    TID           m_userSelID;
+
+    bool          m_ignoreGUIChange;
 
     struct THelpData {
-        TID      id;
-        QString  descr;
-        SORT_KEY skey;
+        TID         id;
+        QString     descr;
+        SORT_KEY    skey;
 
-        THelpData() : id(), descr(), skey(SORT_BY_ID) {}
+        THelpData()
+            : id(),
+              descr(),
+              skey(SORT_BY_ID)
+          {}
+
         THelpData(TID _id, const QString &_descr, SORT_KEY _skey)
             : id(_id),
               descr(_descr),
               skey(_skey)
           {}
+
         bool operator > (const THelpData &d) const { return (skey == SORT_BY_ID) ? id > d.id : descr > d.descr; }
         bool operator < (const THelpData &d) const { return (skey == SORT_BY_ID) ? id < d.id : descr < d.descr; }
     };
@@ -115,76 +111,159 @@ protected:
 
 template <class TLIST, class TID>
 GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, SORT_KEY skey)
-    : m_skey(skey),
-      m_List(list)
+  : m_skey(skey),
+    m_List(list),
+    m_userDirty(false),
+    m_alternativeDirty(false),
+    m_ignoreGUIChange(false)
 {
+    QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
 }
 
 
 template <class TLIST, class TID>
 GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, const QMap<TID, QString> &data, SORT_KEY skey)
-    : m_skey(skey),
-      m_List(list)
+  : m_skey(skey),
+    m_List(list),
+    m_userDirty(false),
+    m_alternativeDirty(false),
+    m_ignoreGUIChange(false)
 {
+    QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
     setData(data);
 }
 
 template <class TLIST, class TID>
-void GUIListHelper<TLIST, TID>::setList(TLIST *list)
+GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, const QList<QString> &data, SORT_KEY skey)
+  : m_skey(skey),
+    m_List(list),
+    m_userDirty(false),
+    m_alternativeDirty(false),
+    m_ignoreGUIChange(false)
 {
-    m_List = list;
+    QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
+    setData(data);
 }
 
 
+
+
 template <class TLIST, class TID>
-GUIListHelper<TLIST, TID>::~GUIListHelper()
+void GUIListHelper<TLIST, TID>::slotOk()
 {
+    setDirty(false, false);
+    setOrgItemID(getCurrentItemID());
 }
 
 template <class TLIST, class TID>
-void GUIListHelper<TLIST, TID>::setData (const QMap<TID, QString> &data)
+void GUIListHelper<TLIST, TID>::slotCancel()
 {
+    setDirty(false, false);
+    setCurrentItemID(m_orgID);  // will set alternativeDirty if org is not available
+}
 
+template <class TLIST, class TID>
+void GUIListHelper<TLIST, TID>::slotUserSelection()
+{
+    if (m_ignoreGUIChange)
+        return;
+    m_userSelID = getCurrentItemID();
+    setDirty(true, false);
+}
+
+template <class TLIST, class TID>
+template <class TData>
+void GUIListHelper<TLIST, TID>::slotAlternativesChanged(const TData &data)
+{
+    setData(data);
+
+    // m_userDirty is not touched
+    setAlternativeDirty(false); // will be set if no alternative is available
+
+    if (!m_userDirty) {
+        // try to set original, alternativeDirty will be set if not possible
+        setCurrentItemID(m_orgID);
+    } else {
+        // try to keep user selection. alternativeDirty will be set if not possible
+        setCurrentItemID(m_userSelID);
+    }
+}
+
+
+
+template <class TLIST, class TID>
+void GUIListHelper<TLIST, TID>::setData(const QMap<TID, QString> &data) {
     m_List->clear();
 
-    m_ID2Description = data;
-    QList<THelpData>          help_list;
-    QMapIterator<TID, QString> it(data);
-    while(it.hasNext()) {
-        it.next();
+    QList<THelpData> help_list;
+    for (typename QMap<TID, QString>::const_iterator it = data.begin(); it != data.end(); ++it) {
         help_list.push_back(THelpData(it.key(), it.value(), m_skey));
     }
-    qSort(help_list);
+    if (m_skey != SORT_NONE) {
+        qSort(help_list);
+    }
 
-    m_Index2ID.clear();
-    m_ID2Index.clear();
-
-    int idx = 0;
-    QListIterator<THelpData> it2(help_list);
-    while(it2.hasNext()) {
-        const THelpData &hd = it2.next();
-        m_Index2ID.insert(idx, hd.id);
-        m_ID2Index.insert(hd.id, idx);
-        m_List->insertItem(idx, hd.descr);
-        ++idx;
+    THelpData  item;
+    foreach (item, help_list) {
+        m_List->addItem(item.descr, item.id);
     }
 }
 
 
 template <class TLIST, class TID>
-void GUIListHelper<TLIST, TID>::setCurrentItem(const TID &id) const
+void GUIListHelper<TLIST, TID>::setData (const QList<QString> &_data)
 {
-    if (m_ID2Index.contains(id))
-        m_List->setCurrentIndex(m_ID2Index[id]);
-    else
+    m_List->clear();
+    QList<QString> data = _data;
+    if (m_skey != SORT_NONE) {
+        qSort(data);
+    }
+
+    QString item;
+    foreach (item, data) {
+        m_List->addItem(item, item);
+    }
+}
+
+
+template <class TLIST, class TID>
+void GUIListHelper<TLIST, TID>::setCurrentItemID(const TID &id)
+{
+    bool oldIgnoreGUIChange = m_ignoreGUIChange;
+    m_ignoreGUIChange = true;
+
+    int idx = m_List->findData(id);
+    if (idx >= 0) {
+        m_List->setCurrentIndex(idx);
+    } else {
         m_List->setCurrentIndex(0);
+        setAlternativeDirty();
+    }
+
+    m_ignoreGUIChange = oldIgnoreGUIChange;
 }
 
 template <class TLIST, class TID>
-const TID GUIListHelper<TLIST, TID>::getCurrentItem() const
+void GUIListHelper<TLIST, TID>::setOrgItemID(const TID &id)
+{
+    m_orgID = id;
+    if (!m_userDirty) {
+        setCurrentItemID(m_orgID);
+    }
+}
+
+template <class TLIST, class TID>
+const TID GUIListHelper<TLIST, TID>::getCurrentItemID() const
 {
     int idx = m_List->currentIndex();
-    return (idx >= 0) ? (m_Index2ID.begin() + idx).value() : TID();
+    if (idx >= 0) {
+        const QVariant &data = m_List->itemData(idx);
+        return data.value<TID>();
+    } else {
+        return TID();
+    }
 }
+
+
 
 #endif

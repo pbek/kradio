@@ -46,7 +46,7 @@ TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter
     m_dirty(true)
 {
     setupUi(this);
-    m_PlaybackMixerHelper.setList  (comboPlaybackMixerDevice);
+    m_PlaybackMixerHelper  .setList(comboPlaybackMixerDevice );
     m_PlaybackChannelHelper.setList(comboPlaybackMixerChannel);
 
     buttonSelectTempFile->setIcon(KIcon("document-open"));
@@ -58,8 +58,8 @@ TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter
 
     connect(editTempFile,              SIGNAL(textChanged(const QString&)), this, SLOT(slotSetDirty()));
     connect(editTempFileSize,          SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
-    connect(comboPlaybackMixerChannel, SIGNAL(activated( int )),            this, SLOT(slotSetDirty()));
-    connect(comboPlaybackMixerDevice,  SIGNAL(activated( int )),            this, SLOT(slotSetDirty()));
+    connect(&m_PlaybackMixerHelper,    SIGNAL(sigDirtyChanged(bool)),       this, SLOT(slotSetDirty()));
+    connect(&m_PlaybackChannelHelper,  SIGNAL(sigDirtyChanged(bool)),       this, SLOT(slotSetDirty()));
     slotCancel();
 }
 
