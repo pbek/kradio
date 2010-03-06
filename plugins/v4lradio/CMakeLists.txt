@@ -79,7 +79,7 @@ ELSE(WITH_RDS_DEBUG_EMULATE)
     message(STATUS "   Compiling without RDS-Debug-Emulation")
 ENDIF(WITH_RDS_DEBUG_EMULATE)
 
-MACRO_LOG_FEATURE(WITH_V4L2 "RDS Debug Emulation"  "Emulate some dummy RDS message for testing RDS functionality without having an RDS renabled radio card" "http://www.linuxtv.org/wiki/index.php/Radio_Data_System_%28RDS%29")
+#MACRO_LOG_FEATURE(WITH_RDS_DEBUG_EMULATE "RDS Debug Emulation"  "Emulate some dummy RDS message for testing RDS functionality without having an RDS renabled radio card" "http://www.linuxtv.org/wiki/index.php/Radio_Data_System_%28RDS%29")
 
 ###############################################################################
 
