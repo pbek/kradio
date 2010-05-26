@@ -5,6 +5,7 @@ For 4.0.0
 For 4.0.x
 
   * --done-- use ALSA api with device strings, not card/subdev numbers
+  * fix reconnect for streams that stop after some time (e.g. 5 hours for WDR5 literaturmarathon)
   * add support for pulse audio and other virtual alsa devices not enumeratable
   * use pkgconfig stuff where possible
   * add some indicator that init of lirc failed in config dialog
