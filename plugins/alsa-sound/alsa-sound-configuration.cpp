@@ -193,7 +193,7 @@ void AlsaSoundConfiguration::slotCaptureMixerSelected (int comboIdx)
     // get new mixer elements
     QStringList                     vol_list,  sw_list, all_list;
     QMap<QString, AlsaMixerElement> vol_ch2id, sw_ch2id;
-    AlsaSoundDevice::getCaptureMixerChannels(m_currentCaptureMixer, NULL, vol_list, vol_ch2id, sw_list, sw_ch2id, &all_list);
+    AlsaSoundDevice::getCaptureMixerChannels(m_currentCaptureMixer, NULL, vol_list, vol_ch2id, sw_list, sw_ch2id, &all_list, !chkDisablePlayback->isChecked());
 
     // free old mixer gui stuff
     for (QMap<QString, QAlsaMixerElement*>::iterator it = m_MixerElements.begin(); it != m_MixerElements.end(); ++it) {

@@ -153,14 +153,16 @@ ANSWERS:
 public:
     static
     void getPlaybackMixerChannels(const QString &mixerName,
-                                  snd_mixer_t *mixer_handle,
-                                  QStringList &retval, QMap<QString, AlsaMixerElement> &int2id);
+                                  snd_mixer_t   *mixer_handle,
+                                  QStringList   &retval, QMap<QString, AlsaMixerElement> &int2id,
+                                  bool           playback_enabled);
     static
     void getCaptureMixerChannels (const QString &mixerName,
-                                  snd_mixer_t *mixer_handle,
-                                  QStringList &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
-                                  QStringList &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
-                                  QStringList *all_list = NULL);
+                                  snd_mixer_t   *mixer_handle,
+                                  QStringList   &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
+                                  QStringList   &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
+                                  QStringList   *all_list,
+                                  bool           capture_enabled);
 
 ANSWERS:
     const QStringList &getPlaybackChannels() const;

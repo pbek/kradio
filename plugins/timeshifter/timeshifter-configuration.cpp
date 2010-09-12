@@ -92,7 +92,6 @@ void TimeShifterConfiguration::noticeConnectedI (ISoundStreamServer *s, bool poi
 void TimeShifterConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback() && m_Shifter) {
-        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
         updatePlaybackMixerChannelAlternatives();
     }
 }
@@ -100,7 +99,6 @@ void TimeShifterConfiguration::noticeConnectedSoundClient(ISoundStreamClient::th
 void TimeShifterConfiguration::noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
         updatePlaybackMixerChannelAlternatives();
     }
 }
@@ -108,6 +106,7 @@ void TimeShifterConfiguration::noticeDisconnectedSoundClient(ISoundStreamClient:
 
 void TimeShifterConfiguration::updatePlaybackMixerChannelAlternatives()
 {
+    m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
     ISoundStreamClient *mixer = getSoundStreamClientWithID(m_PlaybackMixerHelper.getCurrentItemID());
     if (mixer) {
         m_PlaybackChannelHelper.alternativesChanged(mixer->getPlaybackChannels());
@@ -118,11 +117,9 @@ void TimeShifterConfiguration::updatePlaybackMixerChannelAlternatives()
 
 
 
-bool TimeShifterConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
+bool TimeShifterConfiguration::noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/)
 {
-    if (m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
-        updatePlaybackMixerChannelAlternatives();
-    }
+    updatePlaybackMixerChannelAlternatives();
     return true;
 }
 
@@ -161,6 +158,8 @@ void TimeShifterConfiguration::selectTempFile()
 void TimeShifterConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
+    // since we do not know in which order signals are delivered, ensure that the helper already nows about the selection change
+    m_PlaybackMixerHelper.slotUserSelection();
     updatePlaybackMixerChannelAlternatives();
 }
 

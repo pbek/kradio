@@ -87,7 +87,6 @@ void InternetRadioConfiguration::noticeConnectedI (ISoundStreamServer *s, bool p
 void InternetRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
         updatePlaybackMixerChannelAlternatives();
     }
 }
@@ -96,22 +95,20 @@ void InternetRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::
 void InternetRadioConfiguration::noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
         updatePlaybackMixerChannelAlternatives();
     }
 }
 
 
-bool InternetRadioConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
+bool InternetRadioConfiguration::noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/)
 {
-    if (m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
-        updatePlaybackMixerChannelAlternatives();
-    }
+    updatePlaybackMixerChannelAlternatives();
     return true;
 }
 
 void InternetRadioConfiguration::updatePlaybackMixerChannelAlternatives()
 {
+    m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
     ISoundStreamClient *mixer = getSoundStreamClientWithID(m_PlaybackMixerHelper.getCurrentItemID());
     if (mixer) {
         m_PlaybackChannelHelper.alternativesChanged(mixer->getPlaybackChannels());
@@ -147,6 +144,8 @@ void InternetRadioConfiguration::slotNoticePlaybackMixerChanged(const QString &m
 void InternetRadioConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
+    // since we do not know in which order signals are delivered, ensure that the helper already nows about the selection change
+    m_PlaybackMixerHelper.slotUserSelection();
     updatePlaybackMixerChannelAlternatives();
 }
 

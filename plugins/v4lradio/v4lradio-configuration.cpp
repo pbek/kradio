@@ -142,11 +142,9 @@ void V4LRadioConfiguration::noticeConnectedI (ISoundStreamServer *s, bool pointe
 void V4LRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
         updatePlaybackMixerChannelAlternatives();
     }
     if (i && pointer_valid && i->supportsCapture()) {
-        m_CaptureMixerHelper.alternativesChanged(getCaptureClientDescriptions());
         updateCaptureMixerChannelAlternatives();
     }
 }
@@ -155,29 +153,23 @@ void V4LRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisI
 void V4LRadioConfiguration::noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
         updatePlaybackMixerChannelAlternatives();
     }
     if (i && pointer_valid && i->supportsCapture()) {
-        m_CaptureMixerHelper.alternativesChanged(getCaptureClientDescriptions());
         updateCaptureMixerChannelAlternatives();
     }
 }
 
-bool V4LRadioConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
+bool V4LRadioConfiguration::noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/)
 {
-    if (m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
-        updatePlaybackMixerChannelAlternatives();
-    }
+    updatePlaybackMixerChannelAlternatives();
     return true;
 }
 
 
-bool V4LRadioConfiguration::noticeCaptureChannelsChanged (const QString & client_id, const QStringList &/*channels*/)
+bool V4LRadioConfiguration::noticeCaptureChannelsChanged (const QString & /*client_id*/, const QStringList &/*channels*/)
 {
-    if (m_CaptureMixerHelper.getCurrentItemID() == client_id) {
-        updateCaptureMixerChannelAlternatives();
-    }
+    updateCaptureMixerChannelAlternatives();
     return true;
 }
 
@@ -229,6 +221,7 @@ bool V4LRadioConfiguration::noticeCaptureMixerChanged(const QString &mixer_id, c
 
 void V4LRadioConfiguration::updatePlaybackMixerChannelAlternatives()
 {
+    m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
     ISoundStreamClient *mixer = getSoundStreamClientWithID(m_PlaybackMixerHelper.getCurrentItemID());
     if (mixer) {
         m_PlaybackChannelHelper.alternativesChanged(mixer->getPlaybackChannels());
@@ -240,6 +233,7 @@ void V4LRadioConfiguration::updatePlaybackMixerChannelAlternatives()
 
 void V4LRadioConfiguration::updateCaptureMixerChannelAlternatives()
 {
+    m_CaptureMixerHelper.alternativesChanged(getCaptureClientDescriptions());
     ISoundStreamClient *mixer = getSoundStreamClientWithID(m_CaptureMixerHelper.getCurrentItemID());
     if (mixer) {
         m_CaptureChannelHelper.alternativesChanged(mixer->getCaptureChannels());
@@ -567,6 +561,8 @@ void V4LRadioConfiguration::slotEditRadioDeviceChanged()
 void V4LRadioConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
+    // since we do not know in which order signals are delivered, ensure that the helper already nows about the selection change
+    m_PlaybackMixerHelper.slotUserSelection();
     updatePlaybackMixerChannelAlternatives();
 }
 
@@ -574,6 +570,8 @@ void V4LRadioConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 void V4LRadioConfiguration::slotComboCaptureMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
+    // since we do not know in which order signals are delivered, ensure that the helper already nows about the selection change
+    m_CaptureMixerHelper.slotUserSelection();
     updateCaptureMixerChannelAlternatives();
 }
 

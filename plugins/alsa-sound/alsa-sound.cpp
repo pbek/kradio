@@ -1071,10 +1071,15 @@ bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, const QString
 void AlsaSoundDevice::getPlaybackMixerChannels(
     const QString &mixerName,
     snd_mixer_t   *__mixer_handle,
-    QStringList   &retval, QMap<QString, AlsaMixerElement> &ch2id)
+    QStringList   &retval, QMap<QString, AlsaMixerElement> &ch2id,
+    bool           playback_enabled)
 {
     retval.clear();
     ch2id.clear();
+
+    if (!playback_enabled) {
+        return;
+    }
 
     snd_mixer_t *mixer_handle = __mixer_handle/*m_hPlaybackMixer*/;
     bool         use_tmp_handle = false;
@@ -1113,7 +1118,8 @@ void AlsaSoundDevice::getCaptureMixerChannels(
     snd_mixer_t   *__mixer_handle,
     QStringList   &vol_list, QMap<QString, AlsaMixerElement> &vol_ch2id,
     QStringList   &sw_list,  QMap<QString, AlsaMixerElement> &sw_ch2id,
-    QStringList   *all_list
+    QStringList   *all_list,
+    bool           capture_enabled
 )
 {
     vol_list.clear();
@@ -1121,6 +1127,11 @@ void AlsaSoundDevice::getCaptureMixerChannels(
     if (all_list) all_list->clear();
     vol_ch2id.clear();
     sw_ch2id.clear();
+
+    if (!capture_enabled) {
+        return;
+    }
+
 
     snd_mixer_t *mixer_handle = __mixer_handle /*m_hCaptureMixer*/;
     bool         use_tmp_handle = false;
@@ -1491,13 +1502,34 @@ void AlsaSoundDevice::setBufferSize(int s)
 
 void AlsaSoundDevice::enablePlayback(bool on)
 {
-    m_EnablePlayback = on;
+    if (m_EnablePlayback != on) {
+        m_EnablePlayback = on;
+        getPlaybackMixerChannels(m_PlaybackMixerName,
+                                 m_hPlaybackMixer,
+                                 m_PlaybackChannels,
+                                 m_PlaybackChannels2ID,
+                                 isPlaybackEnabled()
+                                );
+        notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
+    }
 }
 
 
 void AlsaSoundDevice::enableCapture(bool on)
 {
-    m_EnableCapture = on;
+    if (m_EnableCapture != on) {
+        m_EnableCapture = on;
+        getCaptureMixerChannels(m_CaptureMixerName,
+                                m_hCaptureMixer,
+                                m_CaptureChannels,
+                                m_CaptureChannels2ID,
+                                m_CaptureChannelsSwitch,
+                                m_CaptureChannelsSwitch2ID,
+                                NULL,
+                                isCaptureEnabled()
+                               );
+        notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
+    }
 }
 
 
@@ -1545,7 +1577,8 @@ void AlsaSoundDevice::setPlaybackMixer(const QString &mixerName, bool force)
     getPlaybackMixerChannels(m_PlaybackMixerName,
                              m_hPlaybackMixer,
                              m_PlaybackChannels,
-                             m_PlaybackChannels2ID
+                             m_PlaybackChannels2ID,
+                             isPlaybackEnabled()
                             );
     notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannels);
 }
@@ -1580,7 +1613,9 @@ void AlsaSoundDevice::setCaptureMixer(const QString &mixerName, bool force)
                             m_CaptureChannels,
                             m_CaptureChannels2ID,
                             m_CaptureChannelsSwitch,
-                            m_CaptureChannelsSwitch2ID
+                            m_CaptureChannelsSwitch2ID,
+                            NULL,
+                            isCaptureEnabled()
                            );
     notifyCaptureChannelsChanged(m_SoundStreamClientID,  m_CaptureChannels);
 }
