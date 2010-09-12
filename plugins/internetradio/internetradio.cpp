@@ -637,7 +637,7 @@ void InternetRadio::radio_done()
     }
     freeAllBuffers();
     if (m_decoderThread) {
-        if (!m_decoderThread->wait(2000)) { // wait at max 2000 ms, otherwise we'll kill you ;-)
+        if (!m_decoderThread->wait(500)) { // wait at max 500 ms, otherwise we'll kill you ;-)
             m_decoderThread->terminate();
             m_decoderThread->wait();
             logWarning(i18n("I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good idea to restart KRadio"));
