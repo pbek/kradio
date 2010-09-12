@@ -1,7 +1,7 @@
 /***************************************************************************
                           main.cpp  -  description
                              -------------------
-    begin                : Don Mär  8 21:57:17 CET 2001
+    begin                : Don Mar  8 21:57:17 CET 2001
     copyright            : (C) 2001-2005 by Ernst Martin Witte, Frank Schwanz
     email                : emw-kradio@nocabal.de, schwanz@fh-brandenburg.de
  ***************************************************************************/
