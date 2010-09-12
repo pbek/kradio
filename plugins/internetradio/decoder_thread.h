@@ -54,6 +54,7 @@ extern "C" {
 
 class DecoderThread : public QThread
 {
+Q_OBJECT
 public:
     DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers);
 
@@ -85,10 +86,12 @@ protected:
     void                  pushBuffer(const DataBuffer &);
 
 
-protected:
+protected slots:
 
     void                  loadPlaylist();
 
+
+protected:
     void                  addErrorString  (const QString &s);
     void                  addWarningString(const QString &s);
     void                  addDebugString  (const QString &s);

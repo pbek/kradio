@@ -23,6 +23,7 @@
 
 #include <QtGui/QApplication>
 #include <QtCore/QXmlStreamReader>
+#include <QtCore/QTimer>
 
 #include <kio/jobclasses.h>
 #include <kio/netaccess.h>
@@ -100,6 +101,8 @@ void DecoderThread::loadPlaylist()
     } else {
         m_playListURLs.append(m_inputURL);
     }
+    // exit event loop, but continue with decoding
+    quit();
 }
 
 
@@ -238,9 +241,11 @@ void DecoderThread::loadPlaylistASX(bool errorIfEmpty)
 
 void DecoderThread::run()
 {
-    loadPlaylist();
+    // load play list requires event loop
+    QTimer::singleShot(1, this, SLOT(loadPlaylist()));
+    exec();
 
-    
+
     int retries = 2;
     unsigned int start_play_idx = (unsigned int) rint((m_playListURLs.size()-1) * (float)rand() / (float)RAND_MAX);
     int n = m_playListURLs.size();
