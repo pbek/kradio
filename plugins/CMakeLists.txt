@@ -159,7 +159,7 @@ IF (WITH_FFMPEG)
     IF(HAVE_AVFORMAT_OLD_INC)
         add_definitions( -DHAVE_FFMPEG_OLD )
     ELSE(HAVE_AVFORMAT_OLD_INC)
-        add_definitions( -DHAVE_FFMPEG )
+        add_definitions( -DHAVE_FFMPEG -D__STDC_CONSTANT_MACROS )
     ENDIF(HAVE_AVFORMAT_OLD_INC)
 
     add_definitions( -DHAVE_MMS )
