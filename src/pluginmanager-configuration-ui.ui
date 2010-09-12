@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>PluginManagerConfigurationUI</string>
   </property>
-  <layout class="QGridLayout">
+  <layout class="QGridLayout" name="gridLayout_gen1">
    <property name="margin">
     <number>11</number>
    </property>
