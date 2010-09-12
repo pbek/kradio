@@ -62,6 +62,17 @@ DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, in
     m_bufferAccessLock(1),
     m_bufferCountSemaphore(max_buffers)
 {
+}
+
+DecoderThread::~DecoderThread()
+{
+    flushBuffers();
+    closeAVStream();
+}
+
+
+void DecoderThread::loadPlaylist()
+{
     QString plscls = m_RadioStation.playlistClass();
     if (plscls == "auto") {
         if (m_inputURL.path().endsWith(".lsc")) {
@@ -91,11 +102,6 @@ DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, in
     }
 }
 
-DecoderThread::~DecoderThread()
-{
-    flushBuffers();
-    closeAVStream();
-}
 
 void DecoderThread::loadPlaylistLSC(bool errorIfEmpty)
 {
@@ -232,6 +238,9 @@ void DecoderThread::loadPlaylistASX(bool errorIfEmpty)
 
 void DecoderThread::run()
 {
+    loadPlaylist();
+
+    
     int retries = 2;
     unsigned int start_play_idx = (unsigned int) rint((m_playListURLs.size()-1) * (float)rand() / (float)RAND_MAX);
     int n = m_playListURLs.size();
