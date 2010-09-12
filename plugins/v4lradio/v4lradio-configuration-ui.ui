@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>SetupDialogGeneral</string>
   </property>
-  <layout class="QGridLayout">
+  <layout class="QGridLayout" name="gridLayout_gen1">
    <property name="margin">
     <number>0</number>
    </property>
@@ -666,7 +666,7 @@ p, li { white-space: pre-wrap; }
       <attribute name="title">
        <string>V4L Mixer Controls</string>
       </attribute>
-      <layout class="QGridLayout">
+      <layout class="QGridLayout" name="gridLayout_gen2">
        <property name="margin">
         <number>11</number>
        </property>

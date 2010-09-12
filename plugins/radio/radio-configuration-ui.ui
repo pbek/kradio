@@ -10,7 +10,7 @@
     <height>528</height>
    </rect>
   </property>
-  <layout class="QGridLayout">
+  <layout class="QGridLayout" name="gridLayout_gen1">
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget3">
      <property name="currentIndex">
@@ -20,7 +20,7 @@
       <attribute name="title">
        <string>Station &amp;Presets</string>
       </attribute>
-      <layout class="QGridLayout">
+      <layout class="QGridLayout" name="gridLayout_gen2">
        <property name="margin">
         <number>11</number>
        </property>
@@ -410,7 +410,7 @@ p, li { white-space: pre-wrap; }
         <widget class="KUrlRequester" name="editPresetFile"/>
        </item>
        <item row="1" column="0" colspan="2">
-        <layout class="QGridLayout">
+        <layout class="QGridLayout" name="gridLayout_gen3">
          <item row="3" column="0">
           <widget class="QLabel" name="labelCity">
            <property name="text">
