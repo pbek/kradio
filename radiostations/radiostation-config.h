@@ -37,7 +37,7 @@ public:
     virtual void storeStationData (RadioStation &rs) = 0;
 
 signals:
-	virtual void changed(RadioStationConfig *);
+            void changed(RadioStationConfig *);
 };
 
 

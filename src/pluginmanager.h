@@ -131,7 +131,7 @@ public slots:
 
 signals:
 
-    virtual void         sigConfigOK();
+            void         sigConfigOK();
 
 private:
     virtual KPageWidgetItem      *addConfigurationPage (const ConfigPageInfo    &info);
