@@ -48,7 +48,7 @@ kde4_add_plugin(kradio4_plugin_alsa_sound
 
 SET_TARGET_PROPERTIES(kradio4_plugin_alsa_sound
     PROPERTIES
-    VERSION       4.0.0
+    VERSION       4.0.1
     SOVERSION     4
 )
 

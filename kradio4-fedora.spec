@@ -7,7 +7,7 @@
 Name:      kradio4
 License:   GPLv2
 Summary:   V4L/V4L2-Radio Application for KDE4
-Version:   4.0.0
+Version:   4.0.1
 Release:   0.7.%{rel2}%{?dist}
 Url:       http://kradio.sourceforge.net/
 Group:     Applications/Multimedia
