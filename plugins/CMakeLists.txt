@@ -33,7 +33,7 @@ IF(WITH_ALSA)
         IF (HAVE_ALSA_INC AND HAVE_ALSA_LIB)
             SET(LIBASOUND_FOUND ON)
             SET(ALSA_LIBRARIES    "asound" ${ALSA_LIBRARIES})
-        ENDIF(HAVE_ALSA_INC and HAVE_ALSA_LIB)
+        ENDIF(HAVE_ALSA_INC AND HAVE_ALSA_LIB)
     ENDIF(LIBASOUND_FOUND)
 
     IF(NOT LIBASOUND_FOUND)
@@ -59,7 +59,7 @@ ELSE(WITH_ALSA)
 ENDIF(WITH_ALSA)
 
 
-MACRO_LOG_FEATURE(WITH_ALSA "ALSA support" "Support for ALSA Sound Devices" "http://www.alsa-project.org") 
+MACRO_LOG_FEATURE(WITH_ALSA "ALSA support" "Support for ALSA Sound Devices" "http://www.alsa-project.org")
 
 ###############################################################################
 
@@ -87,7 +87,7 @@ ELSE(WITH_LIRC)
     message(STATUS "   Compiling without LIRC support")
 ENDIF(WITH_LIRC)
 
-MACRO_LOG_FEATURE(WITH_LIRC "LIRC support" "Support for remote controls via LIRC interfaces" "http://www.lirc.org") 
+MACRO_LOG_FEATURE(WITH_LIRC "LIRC support" "Support for remote controls via LIRC interfaces" "http://www.lirc.org")
 
 ###############################################################################
 
@@ -167,9 +167,9 @@ ELSE(WITH_FFMPEG)
     message(STATUS "   Compiling without Internet Radio Stations (libffmpeg, libmms) support")
 ENDIF(WITH_FFMPEG)
 
-MACRO_LOG_FEATURE(LIBAVFORMAT_FOUND "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org") 
-MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms://"  "https://launchpad.net/libmms") 
-MACRO_LOG_FEATURE(WITH_FFMPEG       "Internet radio support"  "Internet radio requires both libffmpeg and libmms" "") 
+MACRO_LOG_FEATURE(LIBAVFORMAT_FOUND "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org")
+MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms://"  "https://launchpad.net/libmms")
+MACRO_LOG_FEATURE(WITH_FFMPEG       "Internet radio support"  "Internet radio requires both libffmpeg and libmms" "")
 
 ###############################################################################
 
