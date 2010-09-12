@@ -93,50 +93,50 @@ void TimeShifterConfiguration::noticeConnectedI (ISoundStreamServer *s, bool poi
 void TimeShifterConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback() && m_Shifter) {
-        const QString &org_mid     = m_Shifter->getPlaybackMixer();
-        bool           org_present = m_PlaybackMixerHelper.contains(org_mid);
-        const QString &mid         = !org_present ? m_PlaybackMixerHelper.getCurrentItemID() : org_mid;
-        const QString &org_ch      = m_Shifter->getPlaybackMixerChannel();
-        const QString &ch          = !org_present ? m_PlaybackChannelHelper.getCurrentItemID() : org_ch;
-        setPlaybackMixer(mid, ch);
+        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
+        updatePlaybackMixerChannelAlternatives();
     }
 }
-
 
 void TimeShifterConfiguration::noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        setPlaybackMixer(m_Shifter->getPlaybackMixer(), m_Shifter->getPlaybackMixerChannel());
+        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
+        updatePlaybackMixerChannelAlternatives();
     }
 }
 
 
-
-bool TimeShifterConfiguration::setPlaybackMixer(const QString &_mixer_id, const QString &Channel)
+void TimeShifterConfiguration::updatePlaybackMixerChannelAlternatives()
 {
-    QString mixer_id = _mixer_id;
-    bool old = m_ignoreGUIChanges;
-    m_ignoreGUIChanges = true;
-
-    m_PlaybackMixerHelper.setData(getPlaybackClientDescriptions());
-    m_PlaybackMixerHelper.setCurrentItemID(mixer_id);
-    mixer_id = m_PlaybackMixerHelper.getCurrentItemID();
-
-    ISoundStreamClient *mixer = getSoundStreamClientWithID(mixer_id);
+    ISoundStreamClient *mixer = getSoundStreamClientWithID(m_PlaybackMixerHelper.getCurrentItemID());
     if (mixer) {
-        m_PlaybackChannelHelper.setData(mixer->getPlaybackChannels());
-        m_PlaybackChannelHelper.setCurrentItemID(m_PlaybackChannelHelper.contains(Channel) ? Channel : m_Shifter->getPlaybackMixerChannel());
-        if (m_Shifter->getPlaybackMixerChannel() != m_PlaybackChannelHelper.getCurrentItemID() ||
-            m_Shifter->getPlaybackMixer()        != m_PlaybackMixerHelper  .getCurrentItemID())
-        {
-            #warning "FIXME: should we issue some warning here?"
-            slotSetDirty();
-        }
+        m_PlaybackChannelHelper.alternativesChanged(mixer->getPlaybackChannels());
     }
     labelPlaybackMixerChannel->setEnabled(mixer != NULL);
     comboPlaybackMixerChannel->setEnabled(mixer != NULL);
+}
 
-    m_ignoreGUIChanges = old;
+
+
+bool TimeShifterConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
+{
+    if (m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
+        updatePlaybackMixerChannelAlternatives();
+    }
+    return true;
+}
+
+
+bool TimeShifterConfiguration::setPlaybackMixer(const QString &mixer_id, const QString &Channel)
+{
+//     bool old = m_ignoreGUIChanges;
+//     m_ignoreGUIChanges = true;
+
+    m_PlaybackMixerHelper  .setOrgItemID(mixer_id);
+    m_PlaybackChannelHelper.setOrgItemID(Channel);
+
+//     m_ignoreGUIChanges = old;
     return true;
 }
 
@@ -162,15 +162,17 @@ void TimeShifterConfiguration::selectTempFile()
 void TimeShifterConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
-    setPlaybackMixer(m_PlaybackMixerHelper.getCurrentItemID(), m_PlaybackChannelHelper.getCurrentItemID());
+    updatePlaybackMixerChannelAlternatives();
 }
 
 
 void TimeShifterConfiguration::slotOK()
 {
     if (m_Shifter && m_dirty) {
+        m_PlaybackMixerHelper  .slotOK();
+        m_PlaybackChannelHelper.slotOK();
         m_Shifter->setTempFile(editTempFile->text(), editTempFileSize->value() * (quint64)(1024 * 1024));
-        m_Shifter->setPlaybackMixer(m_PlaybackMixerHelper.getCurrentItemID(),
+        m_Shifter->setPlaybackMixer(m_PlaybackMixerHelper  .getCurrentItemID(),
                                     m_PlaybackChannelHelper.getCurrentItemID());
         m_dirty = false;
     }
@@ -180,29 +182,22 @@ void TimeShifterConfiguration::slotOK()
 void TimeShifterConfiguration::slotCancel()
 {
     if (m_Shifter && m_dirty) {
-        editTempFile->setText(m_Shifter->getTempFileName());
+        setPlaybackMixer(m_Shifter->getPlaybackMixer(), m_Shifter->getPlaybackMixerChannel());
+
+        m_PlaybackMixerHelper  .slotCancel();
+        m_PlaybackChannelHelper.slotCancel();
+
+        editTempFile    ->setText(m_Shifter->getTempFileName());
         editTempFileSize->setValue(m_Shifter->getTempFileMaxSize() / 1024 / 1024);
 
-        setPlaybackMixer(m_Shifter->getPlaybackMixer(), m_Shifter->getPlaybackMixerChannel());
         m_dirty = false;
     }
 }
 
 
-bool TimeShifterConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
-{
-    if (m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
-        setPlaybackMixer(client_id, m_PlaybackChannelHelper.getCurrentItemID());
-    }
-    return true;
-}
-
-
 void TimeShifterConfiguration::slotSetDirty()
 {
-    if (!m_ignoreGUIChanges) {
-        m_dirty = true;
-    }
+    m_dirty = true;
 }
 
 void TimeShifterConfiguration::slotUpdateConfig()

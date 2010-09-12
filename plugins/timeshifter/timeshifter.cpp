@@ -488,8 +488,8 @@ bool TimeShifter::noticeReadyForPlaybackData(SoundStreamID id, size_t free_size)
                 if (m_PlaybackDataLeftInBuffer == 0) {
                     char meta_buffer[1024];
                     char prop_buffer[ 128];
-                    size_t &meta_size = *(size_t*)meta_buffer;
-                    size_t &prop_size = *(size_t*)prop_buffer;
+                    size_t &meta_size = *(size_t*)(void*)meta_buffer;
+                    size_t &prop_size = *(size_t*)(void*)prop_buffer;
                     meta_size = 0;
                     prop_size = 0;
 

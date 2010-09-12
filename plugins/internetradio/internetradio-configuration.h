@@ -40,7 +40,7 @@ public :
     InternetRadioConfiguration (QWidget *parent, SoundStreamID id);
     ~InternetRadioConfiguration ();
 
-    bool connectI (Interface *i);
+    bool connectI    (Interface *i);
     bool disconnectI (Interface *i);
 
     void noticeConnectedSoundClient   (ISoundStreamClient::thisInterface *i, bool pointer_valid);
@@ -49,17 +49,20 @@ public :
 // ISoundStreamClient
 
 RECEIVERS:
+
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
 
     bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
     bool noticeSoundStreamCreated(SoundStreamID /*id*/);
 
 
+public slots:
+    void slotNoticePlaybackMixerChanged(const QString &_mixer_id, const QString &Channel, bool muteOnPowerOff, bool force);
+
 protected slots:
 
     void slotComboPlaybackMixerSelected(int idx);
-
-    void slotNoticePlaybackMixerChanged(const QString &_mixer_id, const QString &Channel, bool muteOnPowerOff, bool force);
+    void updatePlaybackMixerChannelAlternatives();
 
     void slotOK();
     void slotCancel();
@@ -82,8 +85,6 @@ protected:
     StringListHelper  m_PlaybackMixerHelper;
     StringListHelper  m_PlaybackChannelHelper;
 
-    QString           m_orgMixerID;
-    QString           m_orgChannelID;
     bool              m_orgMuteOnPowerOff;
 };
 

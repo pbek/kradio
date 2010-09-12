@@ -57,8 +57,10 @@ public :
 
 RECEIVERS:
     bool noticeRadioDeviceChanged(const QString &s);
+
     bool noticePlaybackMixerChanged(const QString &soundStreamClientID, const QString &Channel);
     bool noticeCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel);
+
     bool noticeDeviceVolumeChanged(float v);
     bool noticeCapabilitiesChanged(const V4LCaps &c);
     bool noticeActivePlaybackChanged(bool a, bool muteCaptureChannelPlayback);
@@ -118,6 +120,9 @@ protected slots:
     void slotEditRadioDeviceChanged();
     void slotComboPlaybackMixerSelected(int idx);
     void slotComboCaptureMixerSelected(int idx);
+
+    void updatePlaybackMixerChannelAlternatives();
+    void updateCaptureMixerChannelAlternatives();
 
     void slotOK();
     void slotCancel();

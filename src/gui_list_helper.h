@@ -18,15 +18,44 @@
 #ifndef _KRADIO_LIBKRADIO_GUI_GUI_LIST_HELPER_H_
 #define _KRADIO_LIBKRADIO_GUI_GUI_LIST_HELPER_H_
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <kdemacros.h>
+
 #include <QtCore/QMap>
 #include <QtCore/QList>
 #include <QtCore/QString>
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
+#include <QtCore/QObject>
+
+class KDE_EXPORT GUIListHelperQObjectBase : public QObject
+{
+Q_OBJECT
+
+public:
+    GUIListHelperQObjectBase         ();
+    virtual ~GUIListHelperQObjectBase();
+
+public slots:
+
+    virtual void    slotOK()            = 0;
+    virtual void    slotCancel()        = 0;
+
+protected slots:
+    virtual void    slotUserSelection() = 0;
+
+protected:
+    void            emitSigDirtyChanged(bool d);
+
+signals:
+    void            sigDirtyChanged (bool dirty);
+};
 
 
-
-template <class TLIST, class TID> class KDE_EXPORT GUIListHelper : public QObject
+template <class TLIST, class TID> class KDE_EXPORT GUIListHelper : public GUIListHelperQObjectBase
 {
 public:
     enum SORT_KEY { SORT_BY_ID, SORT_BY_DESCR, SORT_NONE };
@@ -41,26 +70,23 @@ public:
     void          setCurrentItemID(const TID &id);
     void          setOrgItemID    (const TID &id);
 
+    template<class TData>
+    void          alternativesChanged(const TData &data);
+
     const TID     getCurrentItemID() const;
 
-    int           count() const                       { return m_List->count(); }
+    int           count() const                       { return m_List ? m_List->count() : 0; }
 
-public slots:
+public:
 
-    void          slotOk();
-    void          slotCancel();
-    template<class TData>
-    void          slotAlternativesChanged(const TData &data);
-
-protected slots:
-    void          slotUserSelection();
-
-
+    virtual void  slotOK();
+    virtual void  slotCancel();
+    virtual void  slotUserSelection();
 
 protected:
     void          setData(const QMap<TID, QString> &data);  // only updates list elements, no setting/update of current element
     void          setData(const QList<QString>     &data);  // only updates list elements, no setting/update of current element
-    bool          containsItemID(const TID &id) const { return m_List->findData(id) >= 0; }
+    bool          containsItemID(const TID &id) const { return m_List && m_List->findData(id) >= 0; }
 
     void          setUserDirty()                  { setDirty(true,  m_alternativeDirty); }
     void          setUserDirty(bool dirty)        { setDirty(dirty, m_alternativeDirty); }
@@ -69,10 +95,7 @@ protected:
     void          setDirty(bool userDirty, bool alternativesDirty)
                                                   { m_userDirty        = userDirty;
                                                     m_alternativeDirty = alternativesDirty;
-                                                    emit sigDirtyChanged(m_userDirty || m_alternativeDirty); }
-
-signals:
-    void          sigDirtyChanged (bool dirty);
+                                                    emitSigDirtyChanged(m_userDirty || m_alternativeDirty); }
 
 protected:
     SORT_KEY      m_skey;
@@ -117,7 +140,8 @@ GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, SORT_KEY skey)
     m_alternativeDirty(false),
     m_ignoreGUIChange(false)
 {
-    QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
+    if (list)
+        QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
 }
 
 
@@ -129,7 +153,8 @@ GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, const QMap<TID, QString> &
     m_alternativeDirty(false),
     m_ignoreGUIChange(false)
 {
-    QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
+    if (list)
+        QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
     setData(data);
 }
 
@@ -141,7 +166,8 @@ GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, const QList<QString> &data
     m_alternativeDirty(false),
     m_ignoreGUIChange(false)
 {
-    QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
+    if (list)
+        QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
     setData(data);
 }
 
@@ -149,10 +175,12 @@ GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, const QList<QString> &data
 
 
 template <class TLIST, class TID>
-void GUIListHelper<TLIST, TID>::slotOk()
+void GUIListHelper<TLIST, TID>::slotOK()
 {
-    setDirty(false, false);
-    setOrgItemID(getCurrentItemID());
+    if (m_userDirty) {
+        setOrgItemID(getCurrentItemID());
+    }
+    setDirty(false, !m_userDirty && m_alternativeDirty);
 }
 
 template <class TLIST, class TID>
@@ -173,7 +201,7 @@ void GUIListHelper<TLIST, TID>::slotUserSelection()
 
 template <class TLIST, class TID>
 template <class TData>
-void GUIListHelper<TLIST, TID>::slotAlternativesChanged(const TData &data)
+void GUIListHelper<TLIST, TID>::alternativesChanged(const TData &data)
 {
     setData(data);
 

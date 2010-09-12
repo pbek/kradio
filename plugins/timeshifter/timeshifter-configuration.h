@@ -62,7 +62,8 @@ protected slots:
 
     void selectTempFile();
     void slotComboPlaybackMixerSelected(int idx);
-
+    void updatePlaybackMixerChannelAlternatives();
+    
     void slotOK();
     void slotCancel();
     void slotSetDirty();

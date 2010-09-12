@@ -37,6 +37,8 @@
 #include "gui_list_helper.h"
 #include "internetradio-configuration.h"
 
+#include "errorlog_interfaces.h"
+
 InternetRadioConfiguration::InternetRadioConfiguration (QWidget *parent, SoundStreamID ssid)
   : QWidget(parent),
     m_SoundStreamID(ssid),
@@ -86,12 +88,8 @@ void InternetRadioConfiguration::noticeConnectedI (ISoundStreamServer *s, bool p
 void InternetRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        const QString &org_mid     = m_orgMixerID;
-        bool           org_present = m_PlaybackMixerHelper.contains(org_mid);
-        const QString &mid         = org_present ? m_PlaybackMixerHelper.getCurrentItemID() : org_mid;
-        const QString &org_ch      = m_orgChannelID;
-        const QString &ch          = org_present ? m_PlaybackChannelHelper.getCurrentItemID() : org_ch;
-        slotNoticePlaybackMixerChanged(mid, ch, m_orgMuteOnPowerOff, /* force = */ false);
+        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
+        updatePlaybackMixerChannelAlternatives();
     }
 }
 
@@ -99,38 +97,28 @@ void InternetRadioConfiguration::noticeConnectedSoundClient(ISoundStreamClient::
 void InternetRadioConfiguration::noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
 {
     if (i && pointer_valid && i->supportsPlayback()) {
-        slotNoticePlaybackMixerChanged(m_orgMixerID, m_orgChannelID, m_orgMuteOnPowerOff, /* force = */ false);
+        m_PlaybackMixerHelper.alternativesChanged(getPlaybackClientDescriptions());
+        updatePlaybackMixerChannelAlternatives();
     }
 }
 
 
-void InternetRadioConfiguration::slotNoticePlaybackMixerChanged(const QString &_mixer_id, const QString &Channel, bool muteOnPowerOff, bool /*force*/)
+bool InternetRadioConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
 {
-    QString mixer_id = _mixer_id;
-    bool old = m_ignoreGUIChanges;
-    m_ignoreGUIChanges = true;
+    if (m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
+        updatePlaybackMixerChannelAlternatives();
+    }
+    return true;
+}
 
-    m_PlaybackMixerHelper.setData(getPlaybackClientDescriptions());
-    m_PlaybackMixerHelper.setCurrentItemID(mixer_id);
-    ISoundStreamClient *mixer = NULL;
-    if (m_PlaybackMixerHelper.count()) {
-        mixer_id = m_PlaybackMixerHelper.getCurrentItemID();
-        mixer = getSoundStreamClientWithID(mixer_id);
-        if (mixer) {
-            m_PlaybackChannelHelper.setData(mixer->getPlaybackChannels());
-            m_PlaybackChannelHelper.setCurrentItemID(m_PlaybackChannelHelper.contains(Channel) ? Channel : m_orgChannelID);
-        }
+void InternetRadioConfiguration::updatePlaybackMixerChannelAlternatives()
+{
+    ISoundStreamClient *mixer = getSoundStreamClientWithID(m_PlaybackMixerHelper.getCurrentItemID());
+    if (mixer) {
+        m_PlaybackChannelHelper.alternativesChanged(mixer->getPlaybackChannels());
     }
     labelPlaybackMixerChannel->setEnabled(mixer != NULL);
     comboPlaybackMixerChannel->setEnabled(mixer != NULL);
-
-    cbMutePlaybackMixerOnPowerOff->setChecked(muteOnPowerOff);
-
-    m_orgMixerID        = _mixer_id;
-    m_orgChannelID      = Channel;
-    m_orgMuteOnPowerOff = muteOnPowerOff;
-
-    m_ignoreGUIChanges = old;
 }
 
 
@@ -143,46 +131,47 @@ bool InternetRadioConfiguration::noticeSoundStreamCreated(SoundStreamID id)
 }
 
 
+// from InternetRadio instance
+
+void InternetRadioConfiguration::slotNoticePlaybackMixerChanged(const QString &mixer_id, const QString &Channel, bool muteOnPowerOff, bool /*force*/)
+{
+    IErrorLogClient::staticLogDebug(QString("mixer: %1, channel: %2").arg(mixer_id).arg(Channel));
+    m_PlaybackMixerHelper  .setOrgItemID(mixer_id);
+    m_PlaybackChannelHelper.setOrgItemID(Channel);
+    cbMutePlaybackMixerOnPowerOff->setChecked(m_orgMuteOnPowerOff = muteOnPowerOff);
+}
+
+
 // GUI Slots
 
 
 void InternetRadioConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
 {
     if (m_ignoreGUIChanges) return;
-    QString id = m_PlaybackMixerHelper.getCurrentItemID();
-    slotNoticePlaybackMixerChanged(id, m_orgChannelID, m_orgMuteOnPowerOff, /* force = */ false);
+    updatePlaybackMixerChannelAlternatives();
 }
 
 
 void InternetRadioConfiguration::slotOK()
 {
-    QString mixer_id;
-    QString channel_id;
-    if (m_PlaybackMixerHelper.count()) {
-        mixer_id = m_PlaybackMixerHelper.getCurrentItemID();
-    }
-    if (m_PlaybackChannelHelper.count()) {
-        channel_id = m_PlaybackChannelHelper.getCurrentItemID();
-    }
-    bool muteOnPowerOff = cbMutePlaybackMixerOnPowerOff->isChecked();
-    emit sigPlaybackMixerChanged (mixer_id, channel_id, muteOnPowerOff, /* force = */ false);
+    m_PlaybackMixerHelper  .slotOK();
+    m_PlaybackChannelHelper.slotOK();
+
+    QString mixer_id       = m_PlaybackMixerHelper  .getCurrentItemID();
+    QString channel_id     = m_PlaybackChannelHelper.getCurrentItemID();
+    m_orgMuteOnPowerOff    = cbMutePlaybackMixerOnPowerOff->isChecked();
+    emit sigPlaybackMixerChanged (mixer_id, channel_id, m_orgMuteOnPowerOff, /* force = */ false);
 }
 
 
 
 void InternetRadioConfiguration::slotCancel()
 {
-    slotNoticePlaybackMixerChanged(m_orgMixerID, m_orgChannelID, m_orgMuteOnPowerOff, /* force = */ false);
+    m_PlaybackMixerHelper  .slotCancel();
+    m_PlaybackChannelHelper.slotCancel();
+    cbMutePlaybackMixerOnPowerOff->setChecked(m_orgMuteOnPowerOff);
 }
 
-
-bool InternetRadioConfiguration::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
-{
-    if (m_PlaybackMixerHelper.count() && m_PlaybackMixerHelper.getCurrentItemID() == client_id) {
-        slotNoticePlaybackMixerChanged(client_id, m_PlaybackChannelHelper.getCurrentItemID(), m_orgMuteOnPowerOff, /* force = */ false);
-    }
-    return true;
-}
 
 
 
