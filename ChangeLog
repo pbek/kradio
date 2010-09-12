@@ -8,6 +8,11 @@
         - automatically use V4L2 for kernels >= 2.6.31 (v4l1 support seems to be broken/dropped)
         - improved CMakeList.txt files to report summary of findings of required libs/features
 
+2010-06-08
+
+    pinotree
+        - fix for non-linux systems from pinotree, sf patch entry:  Porting to non-Linux OSes - ID: 3013105
+
 2009-06-27
 
     emw - rework of GUIListHelper template
