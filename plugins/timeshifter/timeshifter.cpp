@@ -21,7 +21,6 @@
 
 #include <klocale.h>
 #include <kuser.h>
-#include <linux/soundcard.h>
 
 #include "utils.h"
 #include "timeshifter.h"

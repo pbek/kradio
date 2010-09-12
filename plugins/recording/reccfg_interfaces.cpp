@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <linux/soundcard.h>
 #include "reccfg_interfaces.h"
 
 // IRecCfg

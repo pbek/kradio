@@ -30,6 +30,10 @@
 #include <fcntl.h>
 #include <errno.h>
 
+#ifndef O_DIRECT
+#define O_DIRECT 0
+#endif
+
 StreamingJob::StreamingJob()
   : QObject(),
     m_SoundFormat(),

@@ -17,7 +17,6 @@
 
 #include <QtCore/QRegExp>
 #include "utils.h"
-#include <linux/soundcard.h>
 
 //const char *mixerChannelLabels[] = SOUND_DEVICE_LABELS;
 //const char *mixerChannelNames[]  = SOUND_DEVICE_NAMES;
