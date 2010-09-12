@@ -86,6 +86,9 @@ protected:
 
 
 protected:
+
+    void                  loadPlaylist();
+
     void                  addErrorString  (const QString &s);
     void                  addWarningString(const QString &s);
     void                  addDebugString  (const QString &s);
