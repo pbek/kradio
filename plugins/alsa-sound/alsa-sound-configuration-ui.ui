@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>AlsaSoundConfigurationUI</string>
   </property>
-  <layout class="QGridLayout">
+  <layout class="QGridLayout" name="gridLayout_gen1">
    <property name="margin">
     <number>0</number>
    </property>
@@ -22,7 +22,7 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="TabPage">
+     <widget class="QWidget" name="TabPage2">
       <attribute name="title">
        <string>Playback</string>
       </attribute>
@@ -529,11 +529,11 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="TabPage">
+     <widget class="QWidget" name="TabPage1">
       <attribute name="title">
        <string>Capture Mixers</string>
       </attribute>
-      <layout class="QGridLayout">
+      <layout class="QGridLayout" name="gridLayout_gen2">
        <property name="margin">
         <number>11</number>
        </property>
