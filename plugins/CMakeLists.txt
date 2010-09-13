@@ -124,13 +124,18 @@ IF(WITH_FFMPEG)
 
     pkg_check_modules(LIBMMS libmms)
     IF(LIBMMS_FOUND)
-        SET(HAVE_MMSX_INC ON)
-        SET(HAVE_MMSX_LIB ON)
+        SET(LIBMMS_MIN_VERSION 0.5)
+        IF(NOT LIBMMS_VERSION LESS LIBMMS_MIN_VERSION)
+            SET(HAVE_MMSX_INC ON)
+            SET(HAVE_MMSX_LIB ON)
 
-        SET(FFMPEG_LIBRARY_DIRS ${FFMPEG_LIBRARY_DIRS} ${LIBMMS_LIBRARY_DIRS})
-        SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBMMS_LIBRARIES}   )
-        SET(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} ${LIBMMS_INCLUDE_DIRS})
-
+            SET(FFMPEG_LIBRARY_DIRS ${FFMPEG_LIBRARY_DIRS} ${LIBMMS_LIBRARY_DIRS})
+            SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBMMS_LIBRARIES}   )
+            SET(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} ${LIBMMS_INCLUDE_DIRS})
+        ELSE(NOT LIBMMS_VERSION LESS LIBMMS_MIN_VERSION)
+            MESSAGE("WARNING: found libmms " ${LIBMMS_VERSION} ", however, version >= " LIBMMS_MIN_VERSION " required")
+            SET(LIBMMS_FOUND false)
+        ENDIF(NOT LIBMMS_VERSION LESS LIBMMS_MIN_VERSION)
     ELSE(LIBMMS_FOUND)
         CHECK_INCLUDE_FILE("libmms/mmsx.h"       HAVE_MMSX_INC)
         CHECK_LIBRARY_EXISTS(mms mmsx_connect "" HAVE_MMSX_LIB)
@@ -168,7 +173,7 @@ ELSE(WITH_FFMPEG)
 ENDIF(WITH_FFMPEG)
 
 MACRO_LOG_FEATURE(LIBAVFORMAT_FOUND "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org")
-MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms://"  "https://launchpad.net/libmms")
+MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms:// by libmms >= ${LIBMMS_MIN_VERSION}"  "https://launchpad.net/libmms")
 MACRO_LOG_FEATURE(WITH_FFMPEG       "Internet radio support"  "Internet radio requires both libffmpeg and libmms" "")
 
 ###############################################################################
