@@ -54,6 +54,7 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     connect(m_comboClickMode, SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
 
     languageChange();
+    m_dirty=true;
     slotCancel();
 }
 
