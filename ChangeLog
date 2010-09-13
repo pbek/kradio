@@ -1,3 +1,8 @@
+2010-09-14
+
+    emw - fixed initialization of config dialog for systray
+        - disabled nerving systray notifications on playlist URL loads
+
 2010-09-13
 
     emw - improved handling of capability changes of mixers in config dialog
@@ -59,6 +64,11 @@
         - First step towards simplified alsa interface
         - Fixed double open & segfaults if keyboard is used for preset opening and station search
         - Big ALSA fix: Using no more card/dev numbers but device strings got by _hint functions
+
+
+2009-06-01
+
+    emw - tagging release 4.0.0
 
 2009-05-31
 
