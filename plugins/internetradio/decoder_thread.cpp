@@ -119,7 +119,7 @@ void DecoderThread::loadPlaylistM3U(bool errorIfEmpty)
 {
     IErrorLogClient::staticLogDebug(i18n("downloading playlist %1", m_inputURL.pathOrUrl()));
     QByteArray        playlistData;
-    KIO::TransferJob *job = KIO::get(m_inputURL);
+    KIO::TransferJob *job = KIO::get(m_inputURL, KIO::NoReload, KIO::HideProgressInfo);
 
     m_playListURLs.clear();
 
@@ -192,7 +192,7 @@ void DecoderThread::loadPlaylistPLS(bool errorIfEmpty)
 void DecoderThread::loadPlaylistASX(bool errorIfEmpty)
 {
     QByteArray        xmlData;
-    KIO::TransferJob *job = KIO::get(m_inputURL);
+    KIO::TransferJob *job = KIO::get(m_inputURL, KIO::NoReload, KIO::HideProgressInfo);
 
     m_playListURLs.clear();
 
