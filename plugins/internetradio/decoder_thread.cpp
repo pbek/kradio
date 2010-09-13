@@ -63,6 +63,7 @@ DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, in
     m_bufferAccessLock(1),
     m_bufferCountSemaphore(max_buffers)
 {
+    setTerminationEnabled(true);
 }
 
 DecoderThread::~DecoderThread()
@@ -241,8 +242,10 @@ void DecoderThread::loadPlaylistASX(bool errorIfEmpty)
 
 void DecoderThread::run()
 {
+    setTerminationEnabled(true);
+
     // load play list requires event loop
-    QTimer::singleShot(1, this, SLOT(loadPlaylist()));
+    QTimer::singleShot(100, this, SLOT(loadPlaylist()));
     exec();
 
 
