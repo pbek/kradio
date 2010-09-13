@@ -171,7 +171,7 @@ void   RadioDocking::restoreState (const KConfigGroup &config)
 
     buildContextMenu();
     notifyStationSelectionChanged(m_stationIDs);
-
+    emit sigLeftClickActionChanged(m_leftClickAction);
 }
 
 
