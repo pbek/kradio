@@ -1,0 +1,92 @@
+# translation of kradio4_plugin_timeshifter.po to Icelandic
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sveinn ?? Felli <sveinki@nett.is>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kradio4_plugin_timeshifter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-06-01 23:03+0200\n"
+"PO-Revision-Date: 2010-01-08 10:17+0000\n"
+"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Language-Team: Icelandic <kde-isl@molar.is>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. i18n: file: timeshifter-configuration-ui.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
+#: rc.cpp:3 rc.cpp:21
+msgid "SetupDialogGeneral"
+msgstr "SetupDialogGeneral"
+
+#. i18n: file: timeshifter-configuration-ui.ui:57
+#. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
+#: rc.cpp:6 rc.cpp:24
+msgid " MB"
+msgstr " MB"
+
+#. i18n: file: timeshifter-configuration-ui.ui:76
+#. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
+#: rc.cpp:9 rc.cpp:27
+msgid "Maximum File Size"
+msgstr "H??marks skr??ast??r??"
+
+#. i18n: file: timeshifter-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:30
+msgid "Playback Mixer Device"
+msgstr "Hlj????bl??ndunart??ki fyrir afspilun"
+
+#. i18n: file: timeshifter-configuration-ui.ui:96
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:15 rc.cpp:33
+msgid "Temporary File"
+msgstr "Br????abirg??askr??"
+
+#. i18n: file: timeshifter-configuration-ui.ui:109
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:18 rc.cpp:36
+msgid "Playback Mixer Channel"
+msgstr "Hlj????bl??ndunarr??s fyrir afspilun"
+
+#: timeshifter-configuration.cpp:144
+msgid "any ( * )"
+msgstr "eitthva?? ( * )"
+
+#: timeshifter-configuration.cpp:148
+msgid "Select TimeShifter Temporary File"
+msgstr "Veldu br????abirg??askr?? fyrir t??mahli??run"
+
+#: timeshifter.cpp:32
+msgid "TimeShift Support"
+msgstr "Stu??ningur vi?? t??mahli??run"
+
+#: timeshifter.cpp:37
+msgid "TimeShifter Plugin"
+msgstr "T??mahli??runar-??forrit"
+
+#: timeshifter.cpp:131
+msgid "Timeshifter"
+msgstr "T??mahli??run"
+
+#: timeshifter.cpp:132
+msgid "Timeshifter Options"
+msgstr "Valm??guleikar t??mahli??runar"
+
+#: timeshifter.cpp:194
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr "T??mahli??run ?? %1 (%2)"
+
+#: timeshifter.cpp:534
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr "TimeShifter::notifySoundStreamData: forrit steppti %1 b??tum. G??gn t??pu??ust"
+
+#: timeshifter.cpp:593
+msgid "internal stream, not stored"
+msgstr "innri straumur, ekki geymdur"
+

@@ -1,0 +1,134 @@
+# translation of de.po to
+# translation of kradio-gui-docking-menu.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+# Márcio Moraes <marciopanto@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-06-01 23:03+0200\n"
+"PO-Revision-Date: 2009-11-07 23:36-0300\n"
+"Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Language: pt_BR\n"
+
+#: docking-configuration.cpp:69
+msgid "Left Mouse Click on Tray"
+msgstr "Clique com o botão esquerdo do mouse na bandeja"
+
+#: docking-configuration.cpp:72
+msgid "Show/Hide all GUI Elements"
+msgstr "Mostrar/Ocultar todos os elementos gráficos"
+
+#: docking-configuration.cpp:73
+msgid "Power On/Off"
+msgstr "Ligar/Desligar"
+
+#: docking.cpp:45
+msgid "System Tray Icon/Menu for KRadio"
+msgstr "Menu/Ícone da bandeja do sistema para o KRadio"
+
+#: docking.cpp:53
+msgid "System Tray Plugin"
+msgstr "Plug-in da bandeja do sistema"
+
+#: docking.cpp:203
+msgid "System Tray Icon"
+msgstr "Ícone da bandeja do sistema"
+
+#: docking.cpp:204
+msgid "System Tray Icon Configuration"
+msgstr "Configuração do ícone da bandeja do sistema"
+
+#: docking.cpp:258
+msgid "Search Next Station"
+msgstr "Pesquisar próxima estação"
+
+#: docking.cpp:259
+msgid "Search Previous Station"
+msgstr "Pesquisar estação anterior"
+
+#: docking.cpp:268
+msgid "Recording"
+msgstr "Gravando"
+
+#: docking.cpp:273
+msgid "Pause Radio"
+msgstr "Pausar rádio"
+
+#: docking.cpp:284
+msgid "Show/Hide Plugins"
+msgstr "Mostrar/Ocultar plug-ins"
+
+#: docking.cpp:292
+msgid "&Quit"
+msgstr "&Sair"
+
+#: docking.cpp:406
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Parar contagem regressiva (executar até %1)"
+
+#: docking.cpp:409 docking.cpp:418 docking.cpp:426
+msgid "Start Sleep Countdown"
+msgstr "Iniciar contagem regressiva"
+
+#: docking.cpp:434
+msgid "Power Off"
+msgstr "Desligar"
+
+#: docking.cpp:434
+msgid "Power On"
+msgstr "Ligar"
+
+#: docking.cpp:449 docking.cpp:470
+msgid "invalid station"
+msgstr "Estação inválida"
+
+#: docking.cpp:452
+#, kde-format
+msgid "KRadio: %1"
+msgstr "KRadio: %1"
+
+#: docking.cpp:462
+#, kde-format
+msgid "next alarm: %1"
+msgstr "Próximo alarme: %1"
+
+#: docking.cpp:464
+msgid "<no alarm pending>"
+msgstr "<nenhum alarme pendente>"
+
+#: docking.cpp:582 docking.cpp:684 docking.cpp:742
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr "Parar a gravação de %1"
+
+#: docking.cpp:670
+msgid "Start Recording"
+msgstr "Iniciar a gravação"
+
+#: docking.cpp:724
+msgid "Resume playback"
+msgstr "Continuar reprodução"
+
+#: docking.cpp:728
+msgid "Pause playback"
+msgstr "Pausar reprodução"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Márcio Moraes"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "marciopanto@gmail.com"

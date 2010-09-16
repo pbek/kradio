@@ -1,0 +1,29 @@
+# translation of de.po to
+# translation of kradio4_plugin_dbus.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2009.
+# Márcio Moraes <marciopanto@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"PO-Revision-Date: 2009-11-07 23:30-0300\n"
+"Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Language: pt_BR\n"
+
+#: dbussupport.cpp:35 dbussupport.cpp:102
+msgid "DBus Support"
+msgstr "Suporte DBus"
+
+#: dbussupport.cpp:41 dbussupport.cpp:103
+msgid "DBus Plugin"
+msgstr "Plug-in DBus"

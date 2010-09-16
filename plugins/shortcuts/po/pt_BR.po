@@ -1,0 +1,151 @@
+# translation of de.po to
+# translation of kradio4_plugin_shortcuts.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2009.
+# Márcio Moraes <marciopanto@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"PO-Revision-Date: 2009-11-11 10:15-0300\n"
+"Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Language: pt_BR\n"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Márcio Moraes"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "marciopanto@gmail.com"
+
+#: shortcuts.cpp:47
+msgid "Shortcuts Support"
+msgstr "Suporte a teclas de atalho"
+
+#: shortcuts.cpp:53 shortcuts.cpp:201
+msgid "Shortcuts Plugin"
+msgstr "Plug-in de teclas de atalho"
+
+#: shortcuts.cpp:62
+msgid "Standard Actions"
+msgstr "Ações padrão"
+
+#: shortcuts.cpp:63
+msgid "Station Actions"
+msgstr "Ação da estação"
+
+#: shortcuts.cpp:65
+msgid "Digit 0"
+msgstr "Digito 0"
+
+#: shortcuts.cpp:66
+msgid "Digit 1"
+msgstr "Digito 1"
+
+#: shortcuts.cpp:67
+msgid "Digit 2"
+msgstr "Digito 2"
+
+#: shortcuts.cpp:68
+msgid "Digit 3"
+msgstr "Digito 3"
+
+#: shortcuts.cpp:69
+msgid "Digit 4"
+msgstr "Digito 4"
+
+#: shortcuts.cpp:70
+msgid "Digit 5"
+msgstr "Digito 5"
+
+#: shortcuts.cpp:71
+msgid "Digit 6"
+msgstr "Digito 6"
+
+#: shortcuts.cpp:72
+msgid "Digit 7"
+msgstr "Digito 7"
+
+#: shortcuts.cpp:73
+msgid "Digit 8"
+msgstr "Digito 8"
+
+#: shortcuts.cpp:74
+msgid "Digit 9"
+msgstr "Digito 9"
+
+#: shortcuts.cpp:75
+msgid "Power on"
+msgstr "Ligar"
+
+#: shortcuts.cpp:76
+msgid "Power off"
+msgstr "Desligar"
+
+#: shortcuts.cpp:77
+msgid "Pause"
+msgstr "Pausar"
+
+#: shortcuts.cpp:78
+msgid "Start recording"
+msgstr "Iniciar a gravação"
+
+#: shortcuts.cpp:79
+msgid "Stop recording"
+msgstr "Parar a gravação"
+
+#: shortcuts.cpp:80
+msgid "Increase volume"
+msgstr "Aumentar volume"
+
+#: shortcuts.cpp:81
+msgid "Decrease volume"
+msgstr "Diminuir volume"
+
+#: shortcuts.cpp:82
+msgid "Increase Frequency"
+msgstr "Aumentar frequência"
+
+#: shortcuts.cpp:83
+msgid "Decrease Frequency"
+msgstr "Diminuir frequência"
+
+#: shortcuts.cpp:84
+msgid "Next station"
+msgstr "Próxima estação"
+
+#: shortcuts.cpp:85
+msgid "Previous station"
+msgstr "Estação anterior"
+
+#: shortcuts.cpp:86
+msgid "Search next station"
+msgstr "Pesquisar próxima estação"
+
+#: shortcuts.cpp:87
+msgid "Search previous station"
+msgstr "Pesquisar estação anterior"
+
+#: shortcuts.cpp:88
+msgid "Sleep"
+msgstr "Modo hibernação"
+
+#: shortcuts.cpp:89
+msgid "Quit KRadio"
+msgstr "Sair"
+
+#: shortcuts.cpp:200
+msgid "Shortcuts"
+msgstr "Teclas de atalho"

@@ -1,0 +1,75 @@
+# translation of de.po to
+# translation of kradio-gui-error-log.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+# Márcio Moraes <marciopanto@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"PO-Revision-Date: 2009-11-07 23:50-0300\n"
+"Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Language: pt_BR\n"
+
+#: errorlog.cpp:35
+msgid "Error Logging Window for KRadio"
+msgstr "Janela de registro de erro para o KRadio"
+
+#: errorlog.cpp:41
+msgid "Error Logger"
+msgstr "Registro de erro"
+
+#: errorlog.cpp:49 errorlog.cpp:58
+msgid "KRadio Logger"
+msgstr "KRadio registro de erro"
+
+#: errorlog.cpp:55
+msgid "Save &as"
+msgstr "S&alvar como"
+
+#: errorlog.cpp:60
+msgid "Information"
+msgstr "Informação"
+
+#: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
+#, kde-format
+msgid "KRadio4 Version %1 logging started"
+msgstr "KRadio4, Versão %1: Iniciado registro"
+
+#: errorlog.cpp:63
+msgid "Warnings"
+msgstr "Avisos"
+
+#: errorlog.cpp:66
+msgid "Errors"
+msgstr "Erros"
+
+#: errorlog.cpp:69
+msgid "Debugging"
+msgstr "Depurando"
+
+#: errorlog.cpp:182
+msgid "Log Files"
+msgstr "Arquivos de registro"
+
+#: errorlog.cpp:187
+msgid "Save KRadio Logging Data as ..."
+msgstr "Salvar registro de dados do KRadio como ..."
+
+#: errorlog.cpp:212
+#, kde-format
+msgid "error writing to tempfile %1"
+msgstr "Erro ao escrever para o arquivo temporário %1"
+
+#: errorlog.cpp:221
+#, kde-format
+msgid "error uploading preset file %1"
+msgstr "Erro ao enviar arquivo predefinido %1"

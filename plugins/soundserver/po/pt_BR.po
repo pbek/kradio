@@ -1,0 +1,32 @@
+# translation of de.po to
+# translation of kradio-sound-server.po to
+# This file is put in the public domain.
+#
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+# Márcio Moraes <marciopanto@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"PO-Revision-Date: 2009-11-11 10:24-0300\n"
+"Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Language: pt_BR\n"
+
+#: soundserver.cpp:27
+msgid "KRadio internal sound server"
+msgstr "Servidor de som interno KRadio"
+
+#: soundserver.cpp:32
+msgid "SoundServer Plugin"
+msgstr "Plug-in do servidor de som"
+
+#: soundserver.cpp:34
+msgid "initializing kradio soundserver"
+msgstr "Iniciando o servidor de som do KRadio"
