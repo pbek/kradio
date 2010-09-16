@@ -4,6 +4,9 @@ For 4.0.0
 
 For 4.0.1
 
+  * update translations
+  * update preset files
+  * lirc 0.8.5 compatibility fixes
   * --done-- fix: config storing of left mouse button action on tray icon
   * --done-- fix: disable nerving dialog boxes popping up during downloads
   * --done-- fix: better handling of combo box stuff in gui_list_helper.h
