@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-06-10 00:20+0200\n"
-"PO-Revision-Date: 2009-04-04 14:34+0200\n"
+"PO-Revision-Date: 2009-06-12 19:12+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,28 +32,23 @@ msgstr "ALSA Sound"
 msgid "ALSA Sound Device Options"
 msgstr "Volby zvukového zařízení ALSA"
 
-#: alsa-sound.cpp:603
-#, fuzzy, kde-format
+#: alsa-sound.cpp:603, kde-format
 msgid "ALSA Plugin: cannot write data for device %1"
-msgstr "Přídavný modul ALSA: Zápis dat zařízení plughw:%1,%2 selhal"
+msgstr "Přídavný modul ALSA: nelze zapisovat data u zařízení %1"
 
-#: alsa-sound.cpp:610
-#, fuzzy, kde-format
+#: alsa-sound.cpp:610, kde-format
 msgid "ALSA Plugin: buffer underrun for device %1"
-msgstr ""
-"Přídavný modul ALSA: Podtečení vyrovnávací paměti zařízení plughw:%1,%2"
+msgstr "Přídavný modul ALSA: Podtečení vyrovnávací paměti u zařízení %1"
 
-#: alsa-sound.cpp:650
-#, fuzzy, kde-format
+#: alsa-sound.cpp:650, kde-format
 msgid "ALSA Plugin: cannot read data from device %1"
-msgstr "Přídavný modul ALSA: Čtení dat ze zařízení plughw:%1,%2 selhalo"
+msgstr "Přídavný modul ALSA: nelze zapisovat data ze zařízení %1"
 
-#: alsa-sound.cpp:657
-#, fuzzy, kde-format
+#: alsa-sound.cpp:657, kde-format
 msgid "ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)"
 msgstr ""
-"Přídavný modul ALSA: Přetečení vyrovnávací paměti v zařízení plughw:%1,%2 "
-"(Velikost vyrovnávací paměti=%3, buffer=%4)"
+"Přídavný modul ALSA: Přetečení vyrovnávací paměti u zařízení %1 "
+"(Velikost vyrovnávací paměti=%2, vyrovnávací paměť=%3)"
 
 #: alsa-sound.cpp:678
 #, kde-format
@@ -76,15 +71,13 @@ msgstr ""
 "Přídavný modul ALSA: vnitřní chyba. Vlákno zachytávání ještě existovalo - v "
 "rozporu s očekáváním\n"
 
-#: alsa-sound.cpp:819
-#, fuzzy, kde-format
+#: alsa-sound.cpp:819, kde-format
 msgid "ALSA Plugin: Error opening PCM device %1: %2"
-msgstr "Přídavný modul ALSA: Chyba při otevírání PCM zařízení %1"
+msgstr "Přídavný modul ALSA: Chyba při otevírání PCM zařízení %1: %2"
 
-#: alsa-sound.cpp:824
-#, fuzzy, kde-format
+#: alsa-sound.cpp:824, kde-format
 msgid "ALSA Plugin: Can not configure PCM device %1: %2"
-msgstr "Přídavný modul ALSA: Nastavení PCM zařízení %1 selhalo"
+msgstr "Přídavný modul ALSA: Nelze nastavit PCM zařízení %1: %2"
 
 #: alsa-sound.cpp:831
 #, kde-format
@@ -92,21 +85,18 @@ msgid "ALSA Plugin: Error setting access for %1"
 msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení režimu přístupu pro zařízení %1"
 
-#: alsa-sound.cpp:841
-#, fuzzy, kde-format
+#: alsa-sound.cpp:841, kde-format
 msgid "ALSA Plugin: Error setting sample format for %1: %2"
 msgstr ""
-"Přídavný modul ALSA: Chyba při nastavení vzorkovacího formátu pro zařízení %1"
+"Přídavný modul ALSA: Chyba při nastavení vzorkovacího formátu pro %1: %2"
 
-#: alsa-sound.cpp:847
-#, fuzzy, kde-format
+#: alsa-sound.cpp:847, kde-format
 msgid "ALSA Plugin: Error setting channels for %1: %2"
-msgstr "Přídavný modul ALSA: Chyba při nastavení kanálů pro zařízení %1"
+msgstr "Přídavný modul ALSA: Chyba při nastavení kanálů pro %1: %2"
 
-#: alsa-sound.cpp:854
-#, fuzzy, kde-format
+#: alsa-sound.cpp:854, kde-format
 msgid "ALSA Plugin: Error setting rate for %1: %2"
-msgstr "Přídavný modul ALSA: Chyba při nastavení kmitočtu pro zařízení %1"
+msgstr "Přídavný modul ALSA: Chyba při nastavení kmitočtu pro %1: %2"
 
 #: alsa-sound.cpp:858
 #, kde-format
@@ -117,17 +107,15 @@ msgstr ""
 "Přídavný modul ALSA: Kmitočet %1 Hz není podporován vaší zvukovou kartou %2. "
 "Místo toho se bude používat %3 Hz"
 
-#: alsa-sound.cpp:866
-#, fuzzy, kde-format
+#: alsa-sound.cpp:866, kde-format
 msgid "ALSA Plugin: Error setting HW params: %1"
-msgstr "Přídavný modul ALSA: Chyba při nastavení pomocných proměnných hardware"
-
-#: alsa-sound.cpp:872
-#, fuzzy, kde-format
-msgid "ALSA Plugin: Error getting period size for %1: %2"
 msgstr ""
-"Přídavný modul ALSA: Chyba při čtení velikosti periody vyrovnávací paměti "
-"zařízení %1"
+"Přídavný modul ALSA: Chyba při nastavení pomocných proměnných technického "
+"vybavení: %1"
+
+#: alsa-sound.cpp:872, kde-format
+msgid "ALSA Plugin: Error getting period size for %1: %2"
+msgstr "Přídavný modul ALSA: Chyba při získávání velikosti periody u %1: %2"
 
 #: alsa-sound.cpp:880
 #, kde-format
@@ -136,23 +124,21 @@ msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení latence časovače (zdroje hodinových "
 "impulzů) na %1 pro zařízení %2"
 
-#: alsa-sound.cpp:902
-#, fuzzy, kde-format
+#: alsa-sound.cpp:902, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the playback thread. It did not "
 "stop as desired"
 msgstr ""
-"Přídavný modul ALSA (zařízení plughw:%1,%2): Jémine, vlákno přehrávání "
-"muselo být zabito, protože se samo neukončilo."
+"Přídavný modul ALSA (zařízení %1): Jémine, vlákno přehrávání "
+"muselo být zabito, protože se samo neukončilo, jak se toužebně očekávalo."
 
-#: alsa-sound.cpp:934
-#, fuzzy, kde-format
+#: alsa-sound.cpp:934, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the capture thread. It did not "
 "stop as desired"
 msgstr ""
-"Přídavný modul ALSA (zařízení plughw:%1,%2): Jémine, vlákno zachytávání "
-"muselo být zabito, protože se samo neukončilo."
+"Přídavný modul ALSA (zařízení %1): Jémine, vlákno zachytávání "
+"muselo být zabito, protože se samo neukončilo, jak se toužebně očekávalo."
 
 #: alsa-sound.cpp:996
 msgid "ALSA Plugin: Error opening mixer"
@@ -189,36 +175,30 @@ msgctxt "context-mixerelement-name-number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: alsa-sound.cpp:1290 alsa-sound.cpp:1318
-#, fuzzy, kde-format
+#: alsa-sound.cpp:1290 alsa-sound.cpp:1318, kde-format
 msgid "error while reading volume from %1"
-msgstr "Chyba při čtení hlasitosti ze zařízení hwplug:%1,%2"
+msgstr "Chyba při čtení hlasitosti z %1"
 
-#: alsa-sound.cpp:1360 alsa-sound.cpp:1392
-#, fuzzy, kde-format
+#: alsa-sound.cpp:1360 alsa-sound.cpp:1392, kde-format
 msgid "error while writing volume %1 to %2"
-msgstr "Chyba při zápisu hlasitosti %1 do zařízení hwplug:%2,%3"
+msgstr "Chyba při zápisu hlasitosti %1 do %2"
 
-#: alsa-sound.cpp:1412
-#, fuzzy, kde-format
+#: alsa-sound.cpp:1412, kde-format
 msgid "error while setting capture switch %1 for %2"
-msgstr ""
-"Chyba při nastavování přepínače zachytávání %1 pro zařízení hwplug:%2,%3"
+msgstr "Chyba při nastavování přepínače zachytávání %1 pro %2"
 
 #: alsa-sound.cpp:1549
 #, kde-format
 msgid "ALSA Sound Device %1"
 msgstr "Zvukové zařízení ALSA %1"
 
-#: alsa-sound.cpp:1712 alsa-sound.cpp:1716
-#, fuzzy, kde-format
+#: alsa-sound.cpp:1712 alsa-sound.cpp:1716, kde-format
 msgid "AlsaPlugin(capture thread on %1): %2"
-msgstr "Přídavný modul ALSA (vlákno zachytávání na plughw:%1,%2): %3"
+msgstr "Přídavný modul ALSA (vlákno zachytávání na %1): %2"
 
-#: alsa-sound.cpp:1722 alsa-sound.cpp:1726
-#, fuzzy, kde-format
+#: alsa-sound.cpp:1722 alsa-sound.cpp:1726, kde-format
 msgid "AlsaPlugin(playback thread on %1): %2"
-msgstr "Přídavný modul ALSA (vlákno přehrávání na plughw:%1,%2): %3"
+msgstr "Přídavný modul ALSA (vlákno přehrávání na %1): %2"
 
 #: alsa-thread.cpp:91
 msgid "ALSA Thread: cannot write data"
@@ -281,9 +261,8 @@ msgstr "AlsaSoundConfigurationUI"
 #. i18n: file: alsa-sound-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
 #: rc.cpp:24 rc.cpp:160
-#, fuzzy
 msgid "Playback"
-msgstr "Zvuková karta PCM pro přehrávání"
+msgstr "Přehrávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:33
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
@@ -330,23 +309,20 @@ msgstr " kB"
 #. i18n: file: alsa-sound-configuration-ui.ui:156
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
 #: rc.cpp:48 rc.cpp:184
-#, fuzzy
 msgid "96 kB"
-msgstr " kB"
+msgstr "96 kB"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:169
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_6)
 #: rc.cpp:51 rc.cpp:187
-#, fuzzy
 msgid "recommended:"
-msgstr "doporučováno: 2 kB"
+msgstr "doporučováno:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:196
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)
 #: rc.cpp:54 rc.cpp:190
-#, fuzzy
 msgid "Capture"
-msgstr "Zachytávání zapnuto"
+msgstr "Zachytávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:202
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
@@ -521,9 +497,8 @@ msgstr "8"
 #. i18n: file: alsa-sound-configuration-ui.ui:471
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
 #: rc.cpp:134 rc.cpp:270
-#, fuzzy
 msgid "Capture Mixers"
-msgstr "Nastavení mixážního zařízení pro zachytávání"
+msgstr "Mixážní zařízení pro zachytávání"
 
 #: rc.cpp:135
 msgctxt "NAME OF TRANSLATORS"
