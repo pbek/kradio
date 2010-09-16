@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-06-10 00:20+0200\n"
-"PO-Revision-Date: 2009-04-20 20:49+0400\n"
+"PO-Revision-Date: 2009-06-11 22:18+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: encoder_mp3.cpp:80 encoder_mp3.cpp:191
 #, kde-format
@@ -60,10 +60,9 @@ msgstr "Не могу разместить в памяти буферы для �
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Ошибка записи данных в выходной поток ogg/vorbis. "
 
-#: encoder_ogg.cpp:139
-#, fuzzy, kde-format
+#: encoder_ogg.cpp:139, kde-format
 msgid "Cannot open Ogg/Vorbis output file %1: %2"
-msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\". "
+msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\": %2"
 
 #: encoder_ogg.cpp:152
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
