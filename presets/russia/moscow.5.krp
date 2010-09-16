@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>Дмитрий Смелков &lt;das@sidero.ru&gt;</maintainer>
+			<changed>2009-09-29T12:52:24</changed>
+			<country>Russia</country>
+			<city>Moscow</city>
+			<media>FM tuner</media>
+			<comments>from http://www.radivo.ru/</comments>
+		</info>
+		<FrequencyRadioStation>			
+<stationID>1254113419B3C18A92D0E731CE42E8D1B5422801904B133FA665DD97FAE73E96A00FBE8DB2</stationID>
+			<name>87.5 Business FM</name>
+			<shortname>business</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254113603879D10C2B96E3183D52959B8856D666C01DD7A0D3E2241083206A2DB0960B2D3</stationID>
+			<name>87.9 City FM</name>
+			<shortname>city</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254115232366C9DEA47B3A7116316F1EBE11D09C33A82D9CE30A7476990E14F8C8757ED0E</stationID>
+			<name>88.2 Retro FM</name>
+			<shortname>retro</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12541150826343FCCBF4C9FE2C48DC3AFF72223EC870B294904B965C7786164418D1ECEB61</stationID>
+			<name>89.1 Radio Hour</name>
+			<shortname>radiohour</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254115595A961F47B9FA95B97E461DB06938647202A847D49C0C24C59CFDBDEDEFE840190</stationID>
+			<name>89.5 Megapolis FM</name>
+			<shortname>megapolis</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254115803EE8AEC14BE9ED5C558908548FF16F6218299D22BBCC1EA13F357B4B2CB8C3D55</stationID>
+			<name>89.8 Kex FM</name>
+			<shortname>kex</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125411663098D26141ECE7630E94EC91620E2B11B29F55D97E66353E635912278CD06408EC</stationID>
+			<name>90.3 Auto Radio</name>
+			<shortname>auto</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12541167464545487460A4DFFC5CE6F8B50604319D36561246F36B8339961D7A05BFC02642</stationID>
+			<name>90.8 Relax FM</name>
+			<shortname>relax</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254116837998FD1B2F1CB9E369CC14D023BFD0E3F28C30E5670D2B3F90F3ADC7A329895B9</stationID>
+			<name>91.2 Echo Moscow</name>
+			<shortname>echo</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125411883682FF181084BEB9506C2BD92D573167086EA5E6A970BA7BF89C2F31C10F141BE7</stationID>
+			<name>91.6 Cultura Radio</name>
+			<shortname>cult</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254118931AEDBCC2332E787FB1BD109EF5339D3ADD39EC0D9BEF4D1647FC2E424B4D3DA80</stationID>
+			<name>92.0 Speak Moscow</name>
+			<shortname>speakmoscow</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125411900574B23E44E4A814887A6254349FF7EA6A63CF785968BDC2D4EB96235EC27FC613</stationID>
+			<name>92.4 Radio Dacha</name>
+			<shortname>dacha</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254119087D1C80EEDD9D50AE4C7EF5CE7AC1AC1924A2A151B0D06EABFACF49505FD189A22</stationID>
+			<name>92.8 Karnaval</name>
+			<shortname>karnaval</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254208038DC6388DAD27AEEC081627D18A85ECD56B732DFEDEFBD0EDFD3269B423E1FB0E1</stationID>
+			<name>93.2 Radio Sport</name>
+			<shortname>sport</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542080899D30F2FBBC0E46D5E7C438DB8250612B1BB1B295383A2B1F02B67523F2B26E0C</stationID>
+			<name>93.6 NewTONE FM</name>
+			<shortname>newtone</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254209832885D8EACB4781D6A59A016B0342F474B31C89E12FF6CD69C257924A82C368E8D</stationID>
+			<name>94.0 Youth FM</name>
+			<shortname>youth</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542099761A361B34C331CA5822DBF2A247297A1D420D89742BF3107DBA8E8C10AEEB7B81</stationID>
+			<name>94.4 Lornet</name>
+			<shortname>lornet</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254210228ED1569120CACBF54781E22BA8E1F327B44FE51705A8E9ACDECB3E416B1C97439</stationID>
+			<name>94.8 My family</name>
+			<shortname>family</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542103277D90DA1B11C2382160EF2748D4CCFFFAC5C27EF5231C933C41132EE1A00B3132</stationID>
+			<name>92.5 FM</name>
+			<shortname>92_5_fm</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125421040801C66994144AE1BF4130B6E61B509D327F18D375A7DB7E0295834139FB18F2FB</stationID>
+			<name>95.6 Star FM</name>
+			<shortname>star</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254210555DC625D856752C6B8F5AD7E20419BB318E01A1895DBC9FA38BA755A9433240257</stationID>
+			<name>96.0 Tour</name>
+			<shortname>tour</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254210690E4B1BBA290BBC0633D3C5428B80A238A1EE76F8A8B78DE207ABE627BFA4EAE47</stationID>
+			<name>96.4 X FM</name>
+			<shortname>x</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542107788E5E6BBB75B20D94E632DEC2F2271010DCEDEB30464F9A9A9E6C1D1989B49D6C</stationID>
+			<name>96.8 Kids FM</name>
+			<shortname>kids</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542109468DF4D861CC4352DD73492D57049D752D0B7699AC2A8E21FFBD9AAA3E0ECA2BBD</stationID>
+			<name>97.2 Kommi FM</name>
+			<shortname>kommy</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254211077FFBB611A4952B42E012F454F9A6856ACDD141621E0B1FD46EE1063A64B7732EC</stationID>
+			<name>97.6 Vesty FM</name>
+			<shortname>vesty</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542111368120FA07696D76E9051198BF7DD2A2203D1207D98DF67B154C158D950006022E</stationID>
+			<name>98.0 98-Hits FM</name>
+			<shortname>hits</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542111955D1C8602DD46E46EB51F985EB9B7D18B321EAE5AA52A367CC0DCD615F4E70DAE</stationID>
+			<name>98.4 Fresh FM</name>
+			<shortname>fresh</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542112900E007DE37B5945C000F14A7BDF6FE9353595FFDD5B7F10F70777B4A70769D98C</stationID>
+			<name>98.8 Alla</name>
+			<shortname>alla</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125421137786885E1A519D06FC665D843621D57F354569E748BAED5BCC4ED24A45AA3BACDF</stationID>
+			<name>99.2 Orpheus</name>
+			<shortname>orpheus</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254211405D36EF5FFB3C3F976726AC733CF85E6C8D6010FDA058D7D4853FE4EA22DEB7AAA</stationID>
+			<name>99.6 FinAm FM</name>
+			<shortname>finam</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254211511B2F2B33598DF20767D683FEDBF14BCF48B8E421FB06B5CA7DC7FA48225B347F2</stationID>
+			<name>100.1 Silver Rain</name>
+			<shortname>rain</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254211695A7414A14CD8B6C8AEEA25BE7255BF911A2F49A43015857C206A89AD8A8F23FD3</stationID>
+			<name>100.5 Best FM</name>
+			<shortname>best</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542118336B9184DC2526A04E26068352F769930C2C179E0A0C1B4C97F13479AD80F92AE2</stationID>
+			<name>100.9 Radio Classic</name>
+			<shortname>classic</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254211957B53A0D5717BBFE765D179B97462295F20170616066BE0EBEFE3AB432F207ECA1</stationID>
+			<name>101.2 D-FM</name>
+			<shortname>dfm</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254212095CABACDDF1849CDE516C3721C546F839B688C25583C6B76BDE71F5A37365CDD4F</stationID>
+			<name>101.7 Our Radio</name>
+			<shortname>our</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125421218101C4242DE07C4952D972476E047C29905300CD40E2C956ABAAB93F1343FF0703</stationID>
+			<name>102.1 Monte Carlo</name>
+			<shortname>montecarlo</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542122574A490326E90BA2143ED3CBA9ECE84D51ACE9888179A851E019D49C1BFD902E9E</stationID>
+			<name>102.5 POP-SA</name>
+			<shortname>popsa</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254212409B14B1DDD97729A43EFF2196C938431A6DFFFDDDEB708F71BFE3BA5FCD9481CD0</stationID>
+			<name>103.0 Shanson</name>
+			<shortname>shanson</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254212449AF5CCA7CCD0A0A429F6A0B1A280D071FF498AFFA110761B26A01FFBD3AE9AB54</stationID>
+			<name>103.4 Lighthouse</name>
+			<shortname>lighthouse</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125421248712D3B6413968F909481424D8D32E99BDF14FD58DA9DA2FA8B624DCB6007035E4</stationID>
+			<name>103.7 Maximum</name>
+			<shortname>maximum</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542127050D97BAA80BDCE7504703E2A9C6F161999453E46AD3CC6D99F6767C6CF76C3743</stationID>
+			<name>104.2 Energy</name>
+			<shortname>energy</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125421278240CFAB908AE144C301C4A01EB0C7D48A5CECE281E1B8C6E815B17B6496499C3A</stationID>
+			<name>104.7 Radio 7</name>
+			<shortname>radio7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254213566627DCF077D632A14DD76250EC1060682EE482A4AAC10315DA36711C347E50874</stationID>
+			<name>105.2 Next</name>
+			<shortname>next</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>125421372931ED002928F13BD48B38C77F57176B136C93C8A595624BEC8BD6A6B707AE695F</stationID>
+			<name>105.7 Russian Radio</name>
+			<shortname>russian</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254213794A88ECDB89C81F42B2CDDA09B66B4FCA62E33624331AA1BDE4031DB6169377C36</stationID>
+			<name>106.2 Europe+</name>
+			<shortname>europe</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254213892F9F02154427DE2C906EC61A784CF7ED2438EE6559BDE0A88AC1E42BE44A39AAE</stationID>
+			<name>106.6 Love Radio</name>
+			<shortname>love</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>12542141315B35477A88C0C075181F1C74FFE56A2FA2087A6D8D06EB8BD7DA827B8EAB252C</stationID>
+			<name>107.0 RSN</name>
+			<shortname>rsn</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254214188565B3064EC814AA6F693342B771BF65AE9F77CAF3656E059FAECAEE6980134F9</stationID>
+			<name>107.4 Hits FM</name>
+			<shortname>hitsfm</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			
+<stationID>1254214270622D673398308291D95016FA8228F590BC02522A14F14D3018F9303B44B72CC8</stationID>
+			<name>107.8 Police wave</name>
+			<shortname>police</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.8</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
+

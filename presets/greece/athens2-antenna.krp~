@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<maintainer>George Alexandropoulos</maintainer>
+			<changed>2008-12-26T18:43:34</changed>
+			<country>Greece</country>
+			<city>Athens</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1230309911B23A391B5B6404E3091E9D9ECF9BE8DE4A6FBC37628F936966CA145F15FEED0F</stationID>
+			<name>Κρήτη FM (RDS)</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230310041C53AF537096A464EA9D7393DB1ED3791370F5775E49BC8858BA82280458F5DAC</stationID>
+			<name>Εν Λευκό (RDS)</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>87.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303101575D33579382D14ECCC22E92B1414305016182FB7BA9EFE6CA50A604D850A57CBC</stationID>
+			<name>Oasis FM (RDS)</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230310220B5C206BC9810A35D1EFC93D70746E857B846B8E310CAA13D3602035490A9913E</stationID>
+			<name>V FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303102476E86C70BF2EA5C48D3F805B504267254CE29524B0C63D596BD22B6BCEF20E221</stationID>
+			<name>John Greek</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230310272DFE71B1E1BF4CB2EE6E6DA9E2F7AF5B19072431F604C8BE6B18D2EAF368FC67A</stationID>
+			<name>Angel (RDS)</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>88.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303103371BC455280287C472750952A9492A173E7279696BE7277A3DB9C66CD53149B85A</stationID>
+			<name>Arren-a Radio (RDS)</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303104015CF4557D8ACE18694D6EE8154D07ECA17672AF11C6F5FF0F723EA05D0145705D</stationID>
+			<name>ΡΣ Εκκλησίαςτης Ελλάδος (RDS)</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303104471B8BBD04DF9F47C0EDB773F06B4BACAE82699ACD1A45F0BB75F8D25B3882794E</stationID>
+			<name>Δρόμος FM (RDS)</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>89.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303104933673A9EFFDAB1E1AD16F03D4FFE37C1F5CED43B5C75620A80BC2E9C404F67699</stationID>
+			<name>902, Αριστερά στα FM</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303105374AE158E5AB0ED3A18C78292DD00315902384EA6109A0AA1172552C1C080BAE77</stationID>
+			<name>Κανάλι 1 Πειραία</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230310714AE2CA9D371FBCA12154CF555677EF21621890B461BA8FA41F9D9D764DCCDB484</stationID>
+			<name>Γλυφάδα FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031075982EB93F0EF674D9AA441B245BD7FC8D1FEFAA870F9109E184E6DBE4596FDD410</stationID>
+			<name>Ράδιο Άστυ</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031080527F7E8134485FDE8926E30146332E82E336178DBF4ABD96487E9D52D5AE22C20</stationID>
+			<name>Ε.ΡΑ. Τρίτο</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303109063B0E3AD5E48ED3A8CF88FE8CC51A90CEF91CA05453F7B360BD86723BB051B413</stationID>
+			<name>Πειραεϊκή Εκκλησία (RDS)</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303109560CCDEF1DFE6DD06D30184BD88334C27D249404F7C06141D1E15DEED2769A26C3</stationID>
+			<name>Κρητική Ραδιοφωνία (RDS)</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031099637DA95EC174BC5C9C0C30E5793D31DEC5D1F80C23C56F9791CE86F6ADA4794A1</stationID>
+			<name>ΝΕΤ (RDS)</name>
+			<shortname>17</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>91.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303110246F1535C1B2CC59A3667E77E510E27CC6D0CE1BC195B16C8C1F2E07E98D5EF0C1</stationID>
+			<name>Galaxy 92 (RDS)</name>
+			<shortname>18</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230311024FC7B25A31EC1F8FB66C8575BBBC79BB71852C7FFFDBB4C9FD2640605C24E4A0F</stationID>
+			<name>Λάμψη FM (RDS)</name>
+			<shortname>19</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031116244E7BDC268D4A421650CBA260D84346E9DFCA6D2BA54B0DF53EE49CCBF29E034</stationID>
+			<name>Best Radio (RDS)</name>
+			<shortname>20</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303111928090247F007166010E5D852822A29E1FDAACEDB887EA1261923F19A599386CB3</stationID>
+			<name>Kiss Radio (RDS)</name>
+			<shortname>21</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>92.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230311213A944DC146D6BFAA016A9F26EAD33E758890572A9BCA0E1319327B250F2C5AFEE</stationID>
+			<name>Orange (RDS)</name>
+			<shortname>22</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230311245C89045C8E4A643D71D1924EEAD1B28C67AE522A65071531C2353C8FB57EF22A9</stationID>
+			<name>Energy Radio TEI FM</name>
+			<shortname>23</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303115166EC20D8697A6C3050C3AA563EFBE770A99C1B0798F2A7A606478B34E367B694E</stationID>
+			<name>Kosmos (RDS)</name>
+			<shortname>24</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230311550F6F0482ED41A99B83F9BB388EF16F0036BEC8D74B18472D3BC37DBB6D93AADD7</stationID>
+			<name>Ράδιο Μεσώγεια</name>
+			<shortname>25</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>93.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303115893C0F6BB62B993A0F13809EB983624554E39A1BA8ACA0A12ED49C38D39D9B3CD5</stationID>
+			<name>Επικοινωνία</name>
+			<shortname>26</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230311623B8101A41BD370C4EF460EC27324FF1F5B7DC74C2F24DEF1040131D54EC8FE6CB</stationID>
+			<name>Ξένιος (RDS)</name>
+			<shortname>27</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303116644824056613E423391508C9C281DEE90D20CE8ACA0314F50F466D75BF2AC16DF8</stationID>
+			<name>Nova Sport FM (RDS)</name>
+			<shortname>28</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230311710D727DBE7F8CA17F95D03CFA6D30792C80E0E040DA8420015272305DBD56EE553</stationID>
+			<name>Ρυθμός (RDS)</name>
+			<shortname>29</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>94.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303117775436213D83FC8FFC561FF16EC0237120E5A5F2BA7B9AB3B50A49C4787E75AC65</stationID>
+			<name>Athens Deejay (RDS)</name>
+			<shortname>30</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031182099429EF22F12F22F67E2687DE8E7E1135CF17C4A97338CA0D823A7CD06AF585F</stationID>
+			<name>Ε.ΡΑ. Τρίτο</name>
+			<shortname>31</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230311851996923E9C3FE3723FDF97B589375FC6407F26EA25208B8834A403B4711B8D9A7</stationID>
+			<name>Φλόγα FM</name>
+			<shortname>32</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031189004AE833A162F5018E0CE681665DEE99206E26CD3C7E9936D1591F7719F4C9658</stationID>
+			<name>Disco Radio</name>
+			<shortname>33</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>95.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303120414A9CD78220A67C5AD36C260CE2DF6116A7B81B7D178AF5A8EF31C992EEB232BB</stationID>
+			<name>Flash (RDS)</name>
+			<shortname>34</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303120671B21410896F7FDC86B9A94492DFBEA717FA148DBB2E42E2B8DD867B678E39528</stationID>
+			<name>Red FM (RDS)</name>
+			<shortname>35</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312096E38A0CACC50521610911604EB55EEC77B4A747F608831BF9083EE5512311D3A3</stationID>
+			<name>Hijack 96.6 (RDS)</name>
+			<shortname>36</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303121260761F5F5BAAB82465FB3A2C3ECBAEE61CAE3A792C46D9548DE5F649648A73270</stationID>
+			<name>Rock FM</name>
+			<shortname>37</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>96.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312166804069BA50E9D7111832D0EA4852161E89B5731255BF0CAE2CCE50550093AE9B</stationID>
+			<name>Ant1 (RDS)</name>
+			<shortname>38</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303121992EB1FA8C469E8BB788AB71BCC3AAB8F9742987112AFC1F6CE45F2166E9A91FA4</stationID>
+			<name>Love Radio (RDS)</name>
+			<shortname>39</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312232366483921B506A2979478D06B02158103F0EB385DBB7B2B856C52168FC595967</stationID>
+			<name>Real FM (RDS)</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>97.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312306F95ED4F74CEFDE73EF011BA8CF8778AFAA3467DB5FB30144450D3245A192515B</stationID>
+			<name>98 FM</name>
+			<shortname>41</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312327A2288437FE737C29476DC47CB0508582ADF7E9DBADDB8774C04577B33FBEBC19</stationID>
+			<name>Αθήνα 9.84 </name>
+			<shortname>42</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312364E2AA2C6881FEE40B2D884943C3E8B64481D60ACCBE9A2432EDE514FE51753308</stationID>
+			<name>Derti</name>
+			<shortname>43</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303124142D87A4C355F98DDE7CB724DAEE89545FF34A606A36F76ABD84B7B5E4E8CD40D6</stationID>
+			<name>Alpha Radio (RDS)</name>
+			<shortname>44</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>98.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031244511426477E7E610045A66A6D0648BD107284348B0468CDEE0BAAC91FA0DA08C5D</stationID>
+			<name>Μελωδία</name>
+			<shortname>45</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312493A31F04C250C1D43FD9C594F763BFC1B87A1010A03899E9291D1EA2E79698D695</stationID>
+			<name>City 99.5 (RDS)</name>
+			<shortname>46</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>99.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312525A4CAAE7137B93A8D20DFFAB81BEA4204385EA6C189A30DE176BB82CB3D4A148B</stationID>
+			<name>Σκαϊ 100.3 (RDS)</name>
+			<shortname>47</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312591B671B9655862ABA64375F40E746FA963F2A4505F0EDEA78AD33E03A339BBA3AF</stationID>
+			<name>Ε.ΡΑ. Σπορ (RDS)</name>
+			<shortname>48</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>100.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303126302C4C368C2349DAD777E3D6F4AD90894D48C29579859906DE59FF20C54BD187D7</stationID>
+			<name>Δίεση (RDS)</name>
+			<shortname>49</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312665CBE843B50F7F4895C9461709F956CEFD6ACC0AA75BD380E0D0241AB88670114A</stationID>
+			<name>FM1</name>
+			<shortname>50</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031268612ED29D140FC9FD11967DCF92C0DC33C82861B4F5089A394BA80AEF15D33ABF0</stationID>
+			<name>Ράδιο Κουρσάρος</name>
+			<shortname>51</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031274240D069495348EA1D28B8BD54A4A017B286E8444F2CBBEF72582F5438F6C4BEBD</stationID>
+			<name>Ε.ΡΑ Σπορ (RDS)</name>
+			<shortname>52</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>101.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303127692012CEFDB538BB251256AAFD024C4DB8BAC224CD6C9B7920211B6850C34A359F</stationID>
+			<name>Sfera (RDS)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312809CCCC7D548CEB4151F8190472A6E0459B728B5E74930805AB103319560297EAED</stationID>
+			<name>Nitro Radio (RDS)</name>
+			<shortname>54</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312850905EE182DBAD8E79EE4386C24413E2154A31CDCEAD3AA12B457A9E2568122523</stationID>
+			<name>Ε.ΡΑ Δεύτερο (RDS)</name>
+			<shortname>55</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>102.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230312886817169D7A15A93410BFE95957996DC91D991585BEC1E45DAF693E26D317804F5</stationID>
+			<name>Ράδιο Αναγέννηση (BlackMan) (RDS)</name>
+			<shortname>56</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303130012B5ABE270738A8EC062B1E27F5154F2BF3F3672E6352C5DB44C6DE6AE22C5017</stationID>
+			<name>Sentra FM (RDS)</name>
+			<shortname>57</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031309044B0C6B4FC9EC701C76FF0E7A6768D86DBD12AE00ED80896B645BFBF87461CFE</stationID>
+			<name>Dream FM</name>
+			<shortname>58</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303130998219B153DCF3C8F424A9AA19CEFFE7655171852B4C342C55E8F22078BB431339</stationID>
+			<name>Ε.ΡΑ. Δεύτερο (RDS)</name>
+			<shortname>59</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031320703190AF84743CFFA4197D7281A023936BFFAA8F9B2C483D77FBE0BF4B608F9DD</stationID>
+			<name>Παρέα FM (RDS)</name>
+			<shortname>60</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230313237B50AF8C2E59E8BBAB86DC11C0383988DF52F9CCC5925CE44E2A74C5EA3888D86</stationID>
+			<name>Athens International Radio</name>
+			<shortname>61</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230313281C3A6919D43EB36613751890BA2A52B1A6B2A8468F7A2B234F6BB9256E77EE2BE</stationID>
+			<name>Athens Shock Radio</name>
+			<shortname>62</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303133198504BD0FD62C0E5041BB115CC1500975A0CD88AC5FE350A8BE98382B21CA5148</stationID>
+			<name>Radio Paradise (RDS)</name>
+			<shortname>63</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031336668A73E93D3A4F9DA8E629E9683521DE0914CD7E344AFC223ECC2A40732CE7427</stationID>
+			<name>Στυλ FM (RDS)</name>
+			<shortname>64</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>104.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031341161834E2B7904C834F82709132303CB4A198EF37D476079A8CD32AC5B283056C2</stationID>
+			<name>Ε.ΡΑ Σπορ (RDS)</name>
+			<shortname>65</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230313446E73E13D8B03DAD2777B665D5BE7BA7D81E17FEC6F7E9003F27058BD6B1B59D32</stationID>
+			<name>Atlantis </name>
+			<shortname>66</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031358462B35AC7AE0E6C9192F6D5D3CAAF62F9239903610EFDAB3DC718B0A68168A021</stationID>
+			<name>Παλμός</name>
+			<shortname>67</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230313617CC4B3C32327F712A220D7221443447E80E5D99A3C71E80E5A7878C78B5EE04C6</stationID>
+			<name>Στο Κόκκινο (RDS)</name>
+			<shortname>68</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230313664E878568C085647D08491F498CBAA9369F76F2DCA407587E7C21BDA41BCF55738</stationID>
+			<name>ΝΕΤ (RDS)</name>
+			<shortname>69</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>105.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031368917BFC8A91497C0194CFE9D2D8CB058EE98222B86EF99944E17585F802C19373E</stationID>
+			<name>Mad Radio (RDS)</name>
+			<shortname>70</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303138141D53424848F1188AC3BC6E8F99E7A8437CD2316CCC05803F035198B3CE573573</stationID>
+			<name>Ράδιο Αργοσαρωνικός</name>
+			<shortname>71</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303138654AE79C55DE444E7393577333E613CBED20C0CA7699F84F99FBF3B36647789BA4</stationID>
+			<name>Digital FM</name>
+			<shortname>72</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>106.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031390634A5D157059B3EC7240BB2FC9E3CB2362A6276261AE13A6BCF96CC52B8B3F8DC</stationID>
+			<name>Kosmos (RDS)</name>
+			<shortname>73</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230313941D75FBD7052D139CDB27CC53A4284924C335A8604275D3E9F30BFE92CE32CEEF4</stationID>
+			<name>Blue Space</name>
+			<shortname>74</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303139928D015AE8A07354DD78F3E4696EE19A4C7A28355A6CFAB152F27A74F7B7E63205</stationID>
+			<name>Star Radio</name>
+			<shortname>75</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123031402535BB69B460FE9C4D04663F7E6B8979490B5C134369E42D10967DBA94DF832936</stationID>
+			<name>Ακτίνα</name>
+			<shortname>76</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1230314060D147B66919B197790141847E85744766CE02ABE25521EDBF9ADB038B1D549B5C</stationID>
+			<name>Super FM</name>
+			<shortname>77</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>107.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12303141163EA61198376BD854C55C07DB1AC4154AEF2F18FD38AD4D3A2882D45BA6BB4711</stationID>
+			<name>Ηχόραμα</name>
+			<shortname>78</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>108</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,7 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <kradiorc>
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
+			<creator>kradio-snapshot-2006-11-12-r497</creator>
 			<maintainer>Cezary Biele, &lt;yemu@gazeta.pl&gt;</maintainer>
 			<changed>2003-08-22T15:27:32</changed>
 			<country>Poland</country>
@@ -201,5 +203,22 @@
 			<volumepreset>-1</volumepreset>
 			<frequency>92.5</frequency>
 		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>125619058141CFEC9D687C543615831D54F4F37CA6E6D1C0D0EF379AD9A3417B292E107EA9</stationID>
+			<name></name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>0.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1256190593F102EF99913860AA3F1F00A33C9FB2FF514FC23E720B44C74AAA42EAD9D2C22F</stationID>
+			<name></name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<frequency>0</frequency>
+		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
+

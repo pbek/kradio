@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+        <format>kradio-1.0</format>
+        <info>
+            <creator>kradio-unknown</creator>
+            <maintainer>Ren Riassetto &lt;rene.riassetto@fcvnet.net&gt;</maintainer>
+            <changed>2010-07-22T20:37:19</changed>
+            <country>France</country>
+            <city>thionville</city>
+            <media>antenna</media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+            <stationID>1284670092B6F6DC3DB805642C794D30675BD3F7BBB2B568458B4E640F0F8DC278951BBCC8</stationID>
+            <name>France Culture</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>94.5</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700924930B52A844DAF1F8B3D70B171143D4848AA2EB1E22BAC78016919ACCF1E34F5</stationID>
+            <name>France Info</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>106.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092B308F6A499A6CDE3B8A1DC841B12B211E2879945EA920FE31B21D90E755B39D0</stationID>
+            <name>France Inter</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>99.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092A66DC5CB34CFD20DE722EC83BD5D73B65EF98AFD5C4DE633BC07AFC2AF3B4BB4</stationID>
+            <name>RTL2</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>96.7</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092B715B5EAEAEC0E37343B21D3D2FA59614E630A255D9589196CBC97282EBB0027</stationID>
+            <name>NRJ</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>90.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092AE16D76A22DB50E7D816F2CCA6A5FA30F830A55BAFD174FE70CFB8CCA290E7FB</stationID>
+            <name>Skyrock</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>95.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009234F204DB71A42CF68454454369DCDA9104674FBE22456DB4BB1678D0B566E77C</stationID>
+            <name>France Musique</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>89.7</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700928D34A3FE9629FEC8AAB358615C846D492D094222270127FA1647632DF7588C9F</stationID>
+            <name>Europe 1</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>102.4</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700926944E469E73757903A6CBE0A72B9FB05CA95E18ED5C195176959D034DF93B889</stationID>
+            <name>Fun Radio</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>95.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009244FEB99A0C2D7D723F3A7DF3751067708051BBA745E4331BC03FEC8B5D6A64ED</stationID>
+            <name>Jérico</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>103.4</frequency>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>

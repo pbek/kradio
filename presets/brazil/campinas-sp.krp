@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.0-rc2</creator>
+			<maintainer>Hélio Polessi &lt;hcpcamp@gmail.com&gt;</maintainer>
+			<changed>2010-02-14T23:00:00</changed>
+			<country>Brazil</country>
+			<city>Campinas-SP</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>126618494637241F4F8061AEF9182D981F7B7468052284DFB1E6618F268A85B9341A9E</stationID>
+			<name>Notícia FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>88.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126618501643BEDF9B833C1844F4BF68530E3D71D64610CEDCE25933824EF0941AA8B0</stationID>
+			<name>Vox FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12372390231F7155089C8FC8A96366D96D657AA4EAF8023A2F46C14594141F50B5C9E6</stationID>
+			<name>Educadora</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123723906031FBA978DAFC484F7EAEB3333FDD4CFFB2DDC7C832F26D2E60EB8510D26D</stationID>
+			<name>Cidade</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1237239087A51A3D3B08532CFEDEE91EFCA74C037C11F14827452DB492C680B081C40C</stationID>
+			<name>Laser</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>93.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12661850370C13437F6FF803AFE53C2E06EE0DA14DE34FAA8CFE0AD0EA744556CC3B92</stationID>
+			<name>Oi FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>94.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12661850830E51099D751D008F7F1AAFBBF4D5066EE30E30A7A174895460903AFDFBC5</stationID>
+			<name>Mundial FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>123723911232AFC94ED9C86FE77C42754DEFF95019FF96C018B6F9E266ADF4CC311141</stationID>
+			<name>CBN</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>99.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12661851107493B0A58FD97F214400B5FCF30959E762E4FEB5A55FEC934F7EE1D78389</stationID>
+			<name>Educativa</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1237239133465FE65E06B9C09990FF2CF85417CDB3FD0442A38B6C0D761828F7F35AE0</stationID>
+			<name>Nova FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1237239162D54181C9DF565AEB384BEE8AB15519B0A0F537442B7B4FF6FC829DEAFDAB</stationID>
+			<name>Dumon FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1237239193D67830A2911A6C35CA0949D66AFA4DBDF491A365682C4614B789A1C6D9C3</stationID>
+			<name>105 FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12372392300091B35163BBF9C7C389AE885EA8131E1D519647A0A17E1FD0C580E4FA3B</stationID>
+			<name>Onda Livre</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12661851466F2B4913E272B35C34ADF28EB2287050FF7A47A68A31CD45C82BCA63629D</stationID>
+			<name>Band News FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12372392551C50902A4785BC42C95B2C4903991FFDBC61D0D328E517864920C8DF3003</stationID>
+			<name>Antena 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1237239273DF9EC3314BAA3D7EF50884AB0B3BC0F7D929B9DCA4BD3A750A9663650B21</stationID>
+			<name>Kiss FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.9</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

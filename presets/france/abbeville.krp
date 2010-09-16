@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+        <format>kradio-1.0</format>
+        <info>
+            <creator>kradio-unknown</creator>
+            <maintainer>Ren Riassetto &lt;rene.riassetto@fcvnet.net&gt;</maintainer>
+            <changed>2010-07-22T20:37:19</changed>
+            <country>France</country>
+            <city>abbeville</city>
+            <media>antenna</media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+            <stationID>1284670092CBB4B2223036021E901E948C5C89F0B128B7A4FE4844AA89DB5E2B9A9608A5A3</stationID>
+            <name>Europe 1</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>104.9</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092648660A98566A70CACE41486F03F4399DB65FB3ABACD5C055203FB39AE440499</stationID>
+            <name>Fun Radio</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>102.0</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092B3619B5DE060324713328B8FAA5A7693FE9DA955C0889589E7E77119581F401C</stationID>
+            <name>France Musique</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>89.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700922805BF9C1B19351F89DEA4E887493DF8F908A77B809BF5264FF30920CED7D361</stationID>
+            <name>Radio Soleil</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>107.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092CCD737EC9A595C0FA42A693AE4B9BD9BDEE561D29B035D9A3E934FBB538861E0</stationID>
+            <name>Contact</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>91.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092AF1640DAE80035EBA6DFDB4900619CA63A09B5BE7E696D9E588444209E814B74</stationID>
+            <name>RTL</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>104.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700923B52A20FAE2A9AD685AED4BCFDFA22D434AAD14CE9FE60EA08EE5144532BA8C8</stationID>
+            <name>Skyrock</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>96.7</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092AE5A89FF1501F8389594E2F77D608534EBA38EF82983388C01851326D10A90F2</stationID>
+            <name>France Inter</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>93.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700924E2152476AFE9B26576E130FE4A3537120E816F60944D84557FB4D04058A18DF</stationID>
+            <name>France Bleu - Picardie</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>100.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009240334916A605A6359ABA11A3201B2DBF572D26EA1A453835C7718FD16E810DF1</stationID>
+            <name>Chérie FM</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>99.2</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700925022C005489EB6C1C182D5E3A7DE856419EFF889EC7E79F4C928A913871F465D</stationID>
+            <name>NRJ</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>102.7</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092160F1146D4E5A9B6FFA578AF3EF1E9E4B9B6DEB84ED95244934E3AEADF7CACFA</stationID>
+            <name>France Culture</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>97.4</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092E69028D981D566C9E356F1C57F4D731C82424DDD41F57280CF409001BBC12F1A</stationID>
+            <name>Europe 2 - Fréquence Picardie</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>99.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092A04C60A71A8CED83F526DAFC306DBF70B846B68D5D86BAC9223AAD392C852AF7</stationID>
+            <name>France Info</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>105.8</frequency>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>

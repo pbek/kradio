@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.0</creator>
+			<maintainer>Vadim Bu &lt;panoptus@gmail.com&gt;</maintainer>
+			<changed>2000-01-01T00:00:00</changed>
+			<country>Ukraine</country>
+			<city>Nikolayev</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1281291324881640300A9656B36F2C8FB7C0CBF62F9876BF91EF206ADCD406E3854756</stationID>
+			<name>ТВ</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>65.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>128129138506DF5A35A7530F941618DD6AFE504718D2EC8394947C3E26F33BCAD769D4</stationID>
+			<name>Первый канал укр. радио</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>69.85</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12812013750E66C763E47D9FD3AA8F5A5C0833B02B80757ABC86852CFB2538D8EE1769</stationID>
+			<name>ХитФМ</name>
+			<shortname>ХитФМ</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1281201553DF8B2D6C7D312C77A4B85AC6D831ACA3FD386E2ACE23ECD292C52CAD4BF8</stationID>
+			<name>Радио Алла</name>
+			<shortname>Радио Алла</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>100.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1281201897F0FEDF0D65FA7843847268C92807EC96BDFE3A601F49B2C40CC3D8256369</stationID>
+			<name>ОкФМ</name>
+			<shortname>ОкФМ</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>100.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12812014665AC9DD7F71ABF382654AA324D618DD173C0CD43166B35167FFA6D5977CEE</stationID>
+			<name>Русское радио</name>
+			<shortname>Русское радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12812015256E6C171F895496A945901A91FF91C92E2F37800C256AB29AB1C5AAE8D9BF</stationID>
+			<name>Кисс ФМ</name>
+			<shortname>Кисс ФМ</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12812015381A12F5CEB14337821BD569BFB00F016CF21617F60B718F9C8E70E9563AAC</stationID>
+			<name>Наше радио</name>
+			<shortname>Наше радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12812909149BEFA3A4DD95C41B19CE8110C3BE638D33F712C45D21272C119512A1D552</stationID>
+			<name>Авторадио</name>
+			<shortname>Авторадио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12812898487D26BFE955AF336F67A743540DBB78557C3DC79C18FB7281BE35CB6ED8A2</stationID>
+			<name>Взрослое</name>
+			<shortname>Взрослое</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>128120125873F1C0A0B9F8F7844149BB02E340FB8B117B27EB34E755BF77D67BAD5A08</stationID>
+			<name>Просто</name>
+			<shortname>Просто</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>128120159508376D674AB7C609B1B38CFE0592A3F53AA7C2F2E5D369514888DF9BC255</stationID>
+			<name>Мелодия</name>
+			<shortname>Мелодия</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>128120161385DDA12FD03D03056C8707135DDC5D04AF9D8E0B91E5E1AE68BC8F8A0163</stationID>
+			<name>Ретро</name>
+			<shortname>Ретро</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1281201626F402B08396B731E230EA16EFE90C3889ACF99F4E2E4DC4AB445D980141FD</stationID>
+			<name>Люкс ФМ</name>
+			<shortname>Люкс ФМ</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1281201639D78071860C8AB2ED93CB078E4EEDDD2B02620617AE124B5F9AB0F0D66A7E</stationID>
+			<name>Эра</name>
+			<shortname>Эра</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.7</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+        <format>kradio-1.0</format>
+        <info>
+            <creator>kradio-unknown</creator>
+            <maintainer>Ren Riassetto &lt;rene.riassetto@fcvnet.net&gt;</maintainer>
+            <changed>2010-07-22T20:37:19</changed>
+            <country>France</country>
+            <city>verdun</city>
+            <media>antenna</media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+            <stationID>128467009278010A2D5434A6F6F22E5A66CE7708D2CA6DBD3C316A474FE9854D82B9FD736F</stationID>
+            <name>Nostalgie</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>100.0</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700922278AD8A45B5150E6E2D361484A17DBA8CAD7D3A22A60177D20BC4CE8F8C9863</stationID>
+            <name>Meuse FM</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>95.0</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009262F715217EDC9DE27775EC7EC16290810351190A7E478E603A4B7B29DDC5466D</stationID>
+            <name>France Musique</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>97.4</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092D93351740E07CF987C5221762D5D2207BAD1BF579913FF192622F84C211D1D83</stationID>
+            <name>Fun Radio</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>93.9</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009268CA66D4B2BA14EE0CED2D0C2C92D1F8EFAEBAF010136F72A52D21E43D165CAA</stationID>
+            <name>Europe 2</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>87.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009252BF0EE1D79A69F3B35D35D917B006FB1AEA51528D5B864BFA1FF39B98B252FD</stationID>
+            <name>France Info</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>106.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092BCCF1C1AF114AD7CC0A33CAED6391C0BB37556BDD28F5ABBE3E33384CA789323</stationID>
+            <name>France Culture</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>99.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092B5A21674EB0CB60DFAD1EE5289C13B2E5E4024EFFB9282A45D087EC9F3E539D4</stationID>
+            <name>France Inter</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>92.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700922BD31A6A4F8FE9EE920303802128940DDAA4F90C5B1884666F646153DE0A98CA</stationID>
+            <name>NRJ</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>93.0</frequency>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>

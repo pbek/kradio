@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+        <format>kradio-1.0</format>
+        <info>
+            <creator>kradio-unknown</creator>
+            <maintainer>Ren Riassetto &lt;rene.riassetto@fcvnet.net&gt;</maintainer>
+            <changed>2010-07-22T20:37:19</changed>
+            <country>France</country>
+            <city>forbach</city>
+            <media>antenna</media>
+            <comments></comments>
+        </info>
+        <FrequencyRadioStation>
+            <stationID>1284670092F6AED1720BC4C25CC80DF8508E978A4C880F08C85AB37E648BA42865BC9172A5</stationID>
+            <name>France Musique</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>93.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092ED7DF6074EA2290C8D25113C4A6C6430D19F356D0FE9D36943D3D95853CA6A48</stationID>
+            <name>FIP</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>98.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009246F3514DE657AF735CC78E204020871D0E51B79A67AC20E125976A57C2F8019B</stationID>
+            <name>France Culture</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>90.7</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009227EE0EA3F0AC5FD8060857AC31F5DA1A87AA5E0D17B717ABAC47D09945E7FC20</stationID>
+            <name>Europe 2 - Rockin'Chair</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>102.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009277F842697A2C414EA61BB59D140D42C729CAA955E82F9B61E4B8D962C0EF2D3C</stationID>
+            <name>France Info</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>106.4</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700927706F0C7EF1D2345D8EF050CB3BB6E2DD967BE4125561BCC7360C5C7A14A9B2B</stationID>
+            <name>RTL2</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>94.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>128467009277DF30BEB0273483BDF86A77D935CAB6055D923829B5DABC4F8EA519325FF5C9</stationID>
+            <name>France Inter</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>96.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12846700920A3536E83EE0521FD84D6BA42D1295870629514B2E789BAA18A6F7516D652CD5</stationID>
+            <name>Jerico</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>101.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1284670092427AAC75D4854737F1B0AC010DE15B74539F00FBF85AEE5B695E69330C622DA0</stationID>
+            <name>Europe 1</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <frequency>104.5</frequency>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>

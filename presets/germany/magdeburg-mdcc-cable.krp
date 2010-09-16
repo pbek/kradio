@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.0</creator>
+			<maintainer>H.-J.v.Angern" &lt;h.j.v.angern@mdcc-fun.de&gt;</maintainer>
+			<changed>2010-01-17T18:05:53</changed>
+			<country>Germany</country>
+			<city>Magdeburg</city>
+			<media>Cable</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1263742682EFA8D7372495F12DC5035422BAD8D3846427919A16F52EF7FF445AFA377B</stationID>
+			<name>Hitradio Brocken</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>87.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12637427327527D1C44D176E9453D15642882AA0A707E44309221E46E7F2880685268B</stationID>
+			<name>Jump MDR</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>87.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742775EB08A061881C66DCB3F6458E4A460DA7AD2C5DCB1535E063FAE23F188826</stationID>
+			<name>MDR 1 Sachsen Anhalt</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>88.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742825D0BB7B10DA6EB23C2FAC12F3C684F04B4E90797356E2BCF667C133218BF6</stationID>
+			<name>Sky Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>88.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742827A3842FCF15F38EFD4AE035EBD778E446BE23071188606E1A4D6974361B7F</stationID>
+			<name>Deutschland Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>89.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374282814ADFADBE2EF1CE3D8D76C481B621D30EE27BBCFF14A52676918965C4945</stationID>
+			<name>MDR Info</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>89.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374282923CF6A6384B154BD196B26FAEC0F46E5D2F75992F1A4CB1E3922E945756F</stationID>
+			<name>SAW</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742830B389853BBD307C73B674DD3080C10A8D7CB8838BDD6057B175CA920FD3AA</stationID>
+			<name>Oldi Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742831CC06B9C80311B37D6466924D9AB2D3ADA554FF9DED60340AC9A039E9B3C8</stationID>
+			<name>Rock Antenne</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12637428322B4118EB5A3211F093974CCCC9927F9558491D774C8AA7E0A33F07700346</stationID>
+			<name>Eins Live</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.65</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742833D9A214651D3D206F59094AABE5E3353C48F4020AA8C27C76F836275592E0</stationID>
+			<name>NDR 1 Radio Niederschsen</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374283318A69C075A277B3AE8BBC79F4E1E1CFF4D823EABB3E27F2EFC9AA217DDCC</stationID>
+			<name>NDR 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.55</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374283421160FBC90ECB09B18979625B7F274B18546F9C5C97A246495B9AAE1A5E9</stationID>
+			<name>FFH</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374283589E02D1E4A540935B08F8687AB04E172BB80B27849A0CDDFFF03174B4C17</stationID>
+			<name>NDR Kultur</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>93.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374283631ED9E0026122FD10F2825536EC8979B1F01BEB7AD59A182A60DA6AB6337</stationID>
+			<name>NDR Info</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>93.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742837C5F29068AF8F6315053367092213F5A91FECB77C79B25DC7123F0F97CE96</stationID>
+			<name>Deutsche Welle</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>94.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374283890A8F7FA29894A666714B8C172C8AC2B4AB800CFCE4CFAECCE5B89E97343</stationID>
+			<name>Klassik Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>94.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374283997A76504466255252E1563C2AB7F4C94AF7CB603B93CBF0F04A192200307</stationID>
+			<name>HR 3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>94.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742840F23D0ECD733FDD8E3731B6056CEB2E209AB55CDF408DC3D77D63C4213280</stationID>
+			<name>WDR 2</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374284156512415BAD6D5DDC43C6D31836973C0907AB8D029DFF6B517E53C2FDDF6</stationID>
+			<name>Radio Multikulti</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742841551253EE75D6424548E0CC1889E159736C4D2ADD3549A113C07F1F061CE2</stationID>
+			<name>FFN</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>96</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374284252DC31E7051B8F2C4984B09241B8BB7819148D202E8E524B02774BD15A8A</stationID>
+			<name>Deutschlandfunk</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>96.75</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12637428435D4645161BCED1C50EF09BF6CE85BEA46C166A1E2D64B19B1822D6700EAD</stationID>
+			<name>Antenne Niedersachsen</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>97.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374284413BE6B50358FE9B9ADF0A6EA2D9EDF035B91B1321D75EDF33D749E1CFA20</stationID>
+			<name>HR 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>97.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374284593B682D61F333A3D754C703C82F42B741DDE18D0C8A2CF8524399A3798F9</stationID>
+			<name>JAM-FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>98.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374284646159C57300999149BF9E29B870F326D53B7AD3585AA98358AE57FB57D76</stationID>
+			<name>Radio Kultur</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>98.85</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263742847858C45BB6735345C399F738AFF6F55013D910568D69A6A9A85C313021A5F</stationID>
+			<name>HR 4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>99.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12637428482EBB68304452FDD74383FB9A44ED38027A32F0806F305E13C5368B14F616</stationID>
+			<name>Bayern 4</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>99.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263743544D78D9BED87ED0DF1E8519FB2AF5D2C111B20A29EFF9C93A1DFB9F96254C5</stationID>
+			<name>MDR Sputnik</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>100.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374354537444BA44CBE30C1D397DA0991B3F9BF542115EEF022AFBC5E5FF290C7A5</stationID>
+			<name>MDR Figaro</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374354645C945AE5A4783113FEEB24D935493E61DCD872EE2A134A465E863CD3876</stationID>
+			<name>Fritz !</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12637435473D9A588A8A12B43BF3596ED13EFB1180A2A05719E7A8FB40D30A250A0056</stationID>
+			<name>BFBS</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263743548B8232CCE6182B4CF3816782E0844B502DDF91E2C28351A0B5877367DE0D3</stationID>
+			<name>SR 1 Europawelle</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263743549B9F2A5257233788E6F04310A8F1DD491442CA56AD73B0E5798C729B99EDC</stationID>
+			<name>YOU FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263743550BFDFB8BCD636A097518718168B3D5D61ECD57E40BCC0F277542874A1BA7C</stationID>
+			<name>Bayern 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263743551B0AEC06DC0F6E54AEE4040B5C41574A6875E90B9911063287E2D6D26F294</stationID>
+			<name>RBB 88.8</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374355201213C9812FD21730D85E96DE0D3A52EF78B5E02A2715518232B56C8A7BD</stationID>
+			<name>Rockland Sachsen  Anhalt</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.85</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12637435532085DA6DFCF8ACF5D9110E3D8906C6787F5C5959EA24F6556F8B352E32CC</stationID>
+			<name>Radio Eins</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12637435547572CEF30E8B572F74EFE1BD51A7857523DA4C6C72CE5231468DC024D09C</stationID>
+			<name>Sunshine Live</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263743941C06A86CC4F04B028AA968B5A1D0C649853283C5CC797B064E9291C30B25F</stationID>
+			<name>ORF 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1263743942BC75454A3292124CDCE7FCE62C833AA3C823D7B730489D91694921C82BBE</stationID>
+			<name>89.0 RTL</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374394362921148E9ECCE4D0A53BAA6752E8C954750B5716E2DA94072190FB92E46</stationID>
+			<name>Antenne Bayern</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.85</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>126374394436B325F6FA9AF7DA917B9D0F9651623DD1D358F20DDBFCAF846F16F20BDC</stationID>
+			<name>Antenne Brandenburg</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.6</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
