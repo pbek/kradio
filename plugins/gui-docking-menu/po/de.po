@@ -7,25 +7,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-03-28 22:28+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: docking-configuration.cpp:69
+#: docking-configuration.cpp:70
 msgid "Left Mouse Click on Tray"
 msgstr "Linker Mausklick auf Kontrolleistensymbol"
 
-#: docking-configuration.cpp:72
+#: docking-configuration.cpp:73
 msgid "Show/Hide all GUI Elements"
 msgstr "Alle Fenster anzeigen/verstecken"
 
-#: docking-configuration.cpp:73
+#: docking-configuration.cpp:74
 msgid "Power On/Off"
 msgstr "Ein/Ausschalten"
 

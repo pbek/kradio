@@ -1,4 +1,4 @@
-2010-09-16
+2010-09-16 (4.0.1-rc1)
 
     Alexey Kouznetsov
         - updated Russian translation (from 2009-06-11)
@@ -81,7 +81,7 @@
         - Big ALSA fix: Using no more card/dev numbers but device strings got by _hint functions
 
 
-2009-06-01
+2009-06-01 (4.0.0)
 
     emw - tagging release 4.0.0
 

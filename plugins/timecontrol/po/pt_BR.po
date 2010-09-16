@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-11-11 22:16-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,62 +38,62 @@ msgstr " min"
 msgid "Alarms"
 msgstr "Alarmes"
 
-#. i18n: file: timecontrol-configuration-ui.ui:123
+#. i18n: file: timecontrol-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
 #: rc.cpp:12 rc.cpp:54
 msgid "Date"
 msgstr "Data"
 
-#. i18n: file: timecontrol-configuration-ui.ui:139
+#. i18n: file: timecontrol-configuration-ui.ui:146
 #. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
 #: rc.cpp:15 rc.cpp:57
 msgid "dd.MM.yyyy"
 msgstr "dd.MM.yyyy"
 
-#. i18n: file: timecontrol-configuration-ui.ui:150
+#. i18n: file: timecontrol-configuration-ui.ui:157
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
 #: rc.cpp:18 rc.cpp:60
 msgid "Time"
 msgstr "Hora"
 
-#. i18n: file: timecontrol-configuration-ui.ui:166
+#. i18n: file: timecontrol-configuration-ui.ui:173
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
 #: rc.cpp:21 rc.cpp:63
 msgid "HH:mm:ss"
 msgstr "HH:mm:ss"
 
-#. i18n: file: timecontrol-configuration-ui.ui:177
+#. i18n: file: timecontrol-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
 #: rc.cpp:24 rc.cpp:66
 msgid "Volume"
 msgstr "Volume"
 
-#. i18n: file: timecontrol-configuration-ui.ui:193
+#. i18n: file: timecontrol-configuration-ui.ui:200
 #. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
 #: rc.cpp:28 rc.cpp:70
 #, no-c-format
 msgid " %"
 msgstr " %"
 
-#. i18n: file: timecontrol-configuration-ui.ui:234
+#. i18n: file: timecontrol-configuration-ui.ui:241
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
 #: rc.cpp:31 rc.cpp:73
 msgid "daily/weekly"
 msgstr "Diariamente/semanalmente"
 
-#. i18n: file: timecontrol-configuration-ui.ui:241
+#. i18n: file: timecontrol-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
 #: rc.cpp:34 rc.cpp:76
 msgid "Active weekdays:"
 msgstr "Ativar dias da semana:"
 
-#. i18n: file: timecontrol-configuration-ui.ui:248
+#. i18n: file: timecontrol-configuration-ui.ui:255
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
 #: rc.cpp:37 rc.cpp:79
 msgid "enabled"
 msgstr "Habilitar"
 
-#. i18n: file: timecontrol-configuration-ui.ui:257
+#. i18n: file: timecontrol-configuration-ui.ui:264
 #. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
 #: rc.cpp:40 rc.cpp:82
 msgid "Radio Station"

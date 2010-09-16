@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-11-10 21:39-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,13 +55,13 @@ msgstr "Não foi possível abrir arquivo de saída %1. "
 msgid "Cannot allocate buffers for mp3 encoding. "
 msgstr "Não foi possível alocar buffers para a codificação da mp3. "
 
-#: encoder_ogg.cpp:97
+#: encoder_ogg.cpp:96
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Falha ao escrever dados para o stream de saída Ogg/Vorbis. "
 
 #: encoder_ogg.cpp:139
-#, kde-format
-msgid "Cannot open Ogg/Vorbis output file %1. "
+#, fuzzy, kde-format
+msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Não foi possível abrir o arquivo de saída Ogg/Vorbis %1. "
 
 #: encoder_ogg.cpp:152
@@ -386,9 +387,10 @@ msgid "Recording File"
 msgstr "Arquivo de gravação"
 
 #: recording-monitor.cpp:49 recording-monitor.cpp:51 recording-monitor.cpp:53
-#: recording-monitor.cpp:55 recording-monitor.cpp:385 recording-monitor.cpp:386
-#: recording-monitor.cpp:391 recording-monitor.cpp:392
-#: recording-monitor.cpp:393 recording-monitor.cpp:394
+#: recording-monitor.cpp:55 recording-monitor.cpp:385
+#: recording-monitor.cpp:386 recording-monitor.cpp:391
+#: recording-monitor.cpp:392 recording-monitor.cpp:393
+#: recording-monitor.cpp:394
 msgid "<undefined>"
 msgstr "<indefinido>"
 
@@ -404,11 +406,13 @@ msgstr "Duração da gravação"
 msgid "&Close"
 msgstr "Fe&char"
 
-#: recording-monitor.cpp:65 recording-monitor.cpp:417 recording-monitor.cpp:420
+#: recording-monitor.cpp:65 recording-monitor.cpp:417
+#: recording-monitor.cpp:420
 msgid "&Record"
 msgstr "G&ravar"
 
-#: recording-monitor.cpp:84 recording-monitor.cpp:127 recording-monitor.cpp:151
+#: recording-monitor.cpp:84 recording-monitor.cpp:127
+#: recording-monitor.cpp:151
 msgid "nothing"
 msgstr "nada"
 

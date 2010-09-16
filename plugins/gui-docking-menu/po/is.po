@@ -7,24 +7,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-01 23:03+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2010-01-08 07:49+0000\n"
 "Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: docking-configuration.cpp:69
+#: docking-configuration.cpp:70
 msgid "Left Mouse Click on Tray"
 msgstr "Smella me?? vinstri m??sarhnapp ?? kerfisbakka"
 
-#: docking-configuration.cpp:72
+#: docking-configuration.cpp:73
 msgid "Show/Hide all GUI Elements"
 msgstr "S??na/fela allar myndr??nar vi??m??tseiningar"
 
-#: docking-configuration.cpp:73
+#: docking-configuration.cpp:74
 msgid "Power On/Off"
 msgstr "Af/??"
 
@@ -129,4 +130,3 @@ msgstr "Sveinn ?? Felli"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sveinki@nett.is"
-

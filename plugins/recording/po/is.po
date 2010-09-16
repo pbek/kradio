@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-01 23:03+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-06-27 16:26+0000\n"
 "Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,13 +52,13 @@ msgstr ""
 msgid "Cannot allocate buffers for mp3 encoding. "
 msgstr ""
 
-#: encoder_ogg.cpp:97
+#: encoder_ogg.cpp:96
 msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr ""
 
 #: encoder_ogg.cpp:139
 #, kde-format
-msgid "Cannot open Ogg/Vorbis output file %1. "
+msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr ""
 
 #: encoder_ogg.cpp:152
@@ -368,7 +369,8 @@ msgstr ""
 
 #: recording.cpp:660
 #, kde-format
-msgid "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
+msgid ""
+"Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
 msgstr ""
 
 #: recording-datamonitor.cpp:205 recording-datamonitor.cpp:211
@@ -429,26 +431,22 @@ msgid "%1 Byte"
 msgstr ""
 
 #: recording-monitor.cpp:342
-#, kde-format
-#, fuzzy
+#, fuzzy, kde-format
 msgid "%1 kB"
 msgstr "%1 kb"
 
 #: recording-monitor.cpp:343
-#, kde-format
-#, fuzzy
+#, fuzzy, kde-format
 msgid "%1 MB"
 msgstr "%1 Mb"
 
 #: recording-monitor.cpp:344
-#, kde-format
-#, fuzzy
+#, fuzzy, kde-format
 msgid "%1 GB"
 msgstr "%1 Gb"
 
 #: recording-monitor.cpp:347
-#, kde-format
-#, fuzzy
+#, fuzzy, kde-format
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
@@ -463,4 +461,3 @@ msgstr ""
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
 msgstr ""
-

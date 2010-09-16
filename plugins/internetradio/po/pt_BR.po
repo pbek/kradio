@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-01 23:03+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-11-08 00:20-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,102 +21,102 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Language: pt_BR\n"
 
-#: decoder_thread.cpp:110 decoder_thread.cpp:136
+#: decoder_thread.cpp:120 decoder_thread.cpp:146
 #, kde-format
 msgid "downloading playlist %1"
 msgstr "Obtendo playlist %1"
 
-#: decoder_thread.cpp:126 decoder_thread.cpp:173 decoder_thread.cpp:224
+#: decoder_thread.cpp:136 decoder_thread.cpp:183 decoder_thread.cpp:234
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 não contém qualquer stream de rádio utilizável"
 
-#: decoder_thread.cpp:129 decoder_thread.cpp:177 decoder_thread.cpp:228
+#: decoder_thread.cpp:139 decoder_thread.cpp:187 decoder_thread.cpp:238
 #, kde-format
 msgid "failed to download %1"
 msgstr "Falha ao obter %1"
 
-#: decoder_thread.cpp:220
+#: decoder_thread.cpp:230
 msgid "error while reading asx file"
 msgstr "Erro ao ler arquivo ASX"
 
-#: decoder_thread.cpp:241
+#: decoder_thread.cpp:258
 #, kde-format
 msgid "opening stream %1"
 msgstr "Abrindo stream %1"
 
-#: decoder_thread.cpp:245
+#: decoder_thread.cpp:262
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr "Falha ao abrir %1. Tentando próximo stream da playlist."
 
-#: decoder_thread.cpp:249
+#: decoder_thread.cpp:266
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Não foi possível abrir qualquer stream de %1."
 
-#: decoder_thread.cpp:273
+#: decoder_thread.cpp:298
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet\n"
 msgstr "%1: erro ao codificar pacote. Descartar pacote\n"
 
-#: decoder_thread.cpp:278
+#: decoder_thread.cpp:303
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Stream interno, não armazenado (%1)"
 
-#: decoder_thread.cpp:456 decoder_thread.cpp:458
+#: decoder_thread.cpp:481 decoder_thread.cpp:483
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "Não foi possível abrir stream MMS %1"
 
-#: decoder_thread.cpp:479 decoder_thread.cpp:481 decoder_thread.cpp:491
-#: decoder_thread.cpp:493
+#: decoder_thread.cpp:504 decoder_thread.cpp:506 decoder_thread.cpp:516
+#: decoder_thread.cpp:518
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr "Não foi possível abrir Stream %1"
 
-#: decoder_thread.cpp:503 decoder_thread.cpp:505
+#: decoder_thread.cpp:528 decoder_thread.cpp:530
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Não foi possível localizar informação do stream em %1"
 
-#: decoder_thread.cpp:522 decoder_thread.cpp:524
+#: decoder_thread.cpp:547 decoder_thread.cpp:549
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Não foi possível localizar um stream de áudio em %1"
 
-#: decoder_thread.cpp:540 decoder_thread.cpp:542
+#: decoder_thread.cpp:565 decoder_thread.cpp:567
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Não foi possível localizar um codec para %1"
 
-#: decoder_thread.cpp:550 decoder_thread.cpp:552
+#: decoder_thread.cpp:575 decoder_thread.cpp:577
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Falha ao abrir codec para %1"
 
-#: internetradio.cpp:48
+#: internetradio.cpp:50
 msgid "Pseudo radio device for internet radio stream support"
 msgstr "Pseudo dispositivo de rário para o stream da rádio internet"
 
-#: internetradio.cpp:55
+#: internetradio.cpp:57
 msgid "Internet Radio Plugin"
 msgstr "Plug-in da rádio internet"
 
-#: internetradio.cpp:353
+#: internetradio.cpp:355
 msgid "Internet radio station decoder / pseudo device"
 msgstr "Decodificar pseudo dispositivo da estação de rádio internet"
 
-#: internetradio.cpp:550
+#: internetradio.cpp:570
 msgid "Internet Radio"
 msgstr "Rádio internet"
 
-#: internetradio.cpp:551
+#: internetradio.cpp:571
 msgid "Internet Radio Options"
 msgstr "Opções da rádio internet"
 
-#: internetradio.cpp:623
+#: internetradio.cpp:644
 msgid ""
 "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
 "idea to restart KRadio"

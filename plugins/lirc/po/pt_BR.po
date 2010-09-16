@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.lirc.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-01 23:03+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-11-08 23:04-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,103 +21,103 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Language: pt_BR\n"
 
-#: lirc-configuration.cpp:49
+#: lirc-configuration.cpp:51
 msgid "digit 0"
 msgstr "Digito 0"
 
-#: lirc-configuration.cpp:50
+#: lirc-configuration.cpp:52
 msgid "digit 1"
 msgstr "Digito 1"
 
-#: lirc-configuration.cpp:51
+#: lirc-configuration.cpp:53
 msgid "digit 2"
 msgstr "Digito 2"
 
-#: lirc-configuration.cpp:52
+#: lirc-configuration.cpp:54
 msgid "digit 3"
 msgstr "Digito 3"
 
-#: lirc-configuration.cpp:53
+#: lirc-configuration.cpp:55
 msgid "digit 4"
 msgstr "Digito 4"
 
-#: lirc-configuration.cpp:54
+#: lirc-configuration.cpp:56
 msgid "digit 5"
 msgstr "Digito 5"
 
-#: lirc-configuration.cpp:55
+#: lirc-configuration.cpp:57
 msgid "digit 6"
 msgstr "Ziffer 6"
 
-#: lirc-configuration.cpp:56
+#: lirc-configuration.cpp:58
 msgid "digit 7"
 msgstr "Digito 7"
 
-#: lirc-configuration.cpp:57
+#: lirc-configuration.cpp:59
 msgid "digit 8"
 msgstr "Digito 8"
 
-#: lirc-configuration.cpp:58
+#: lirc-configuration.cpp:60
 msgid "digit 9"
 msgstr "Digito 9"
 
-#: lirc-configuration.cpp:59
+#: lirc-configuration.cpp:61
 msgid "Power On"
 msgstr "Ligar"
 
-#: lirc-configuration.cpp:60
+#: lirc-configuration.cpp:62
 msgid "Power Off"
 msgstr "Desligar"
 
-#: lirc-configuration.cpp:61
+#: lirc-configuration.cpp:63
 msgid "Pause"
 msgstr "Pausar"
 
-#: lirc-configuration.cpp:62
+#: lirc-configuration.cpp:64
 msgid "Start Recording"
 msgstr "Iniciar a gravação"
 
-#: lirc-configuration.cpp:63
+#: lirc-configuration.cpp:65
 msgid "Stop Recording"
 msgstr "Parar a gravação"
 
-#: lirc-configuration.cpp:64
+#: lirc-configuration.cpp:66
 msgid "Increase Volume"
 msgstr "Aumentar volume"
 
-#: lirc-configuration.cpp:65
+#: lirc-configuration.cpp:67
 msgid "Decrease Volume"
 msgstr "Diminuir volume"
 
-#: lirc-configuration.cpp:66
+#: lirc-configuration.cpp:68
 msgid "Next Channel"
 msgstr "Próximo canal"
 
-#: lirc-configuration.cpp:67
+#: lirc-configuration.cpp:69
 msgid "Previous Channel"
 msgstr "Canal anterior"
 
-#: lirc-configuration.cpp:68
+#: lirc-configuration.cpp:70
 msgid "Search Next Channel"
 msgstr "Pesquisar próximo canal"
 
-#: lirc-configuration.cpp:69
+#: lirc-configuration.cpp:71
 msgid "Search Previous Channel"
 msgstr "Pesquisar canal anterior"
 
-#: lirc-configuration.cpp:70
+#: lirc-configuration.cpp:72
 msgid "Enable Sleep Countdown"
 msgstr "Habilitar tempo regressivo"
 
-#: lirc-configuration.cpp:71
+#: lirc-configuration.cpp:73
 msgid "Quit KRadio"
 msgstr "Sair do KRadio"
 
-#: lirc-configuration.cpp:123 lirc-configuration.cpp:124
+#: lirc-configuration.cpp:125 lirc-configuration.cpp:126
 msgid "<don't care>"
 msgstr "<inalterado>"
 
-#: lirc-configuration.cpp:272
+#: lirc-configuration.cpp:278
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -124,7 +125,7 @@ msgstr ""
 "Digite a sequência de seu controle remoto ou pressione o botão do controle "
 "remoto"
 
-#: lirc-configuration.cpp:278
+#: lirc-configuration.cpp:284
 msgid "Double Click on the entries to change the assignments"
 msgstr "Dê um duplo clique sobre as entradas para alterar as atribuições"
 
@@ -132,7 +133,7 @@ msgstr "Dê um duplo clique sobre as entradas para alterar as atribuições"
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Suporte a Controle Remoto (LIRC)"
 
-#: lircsupport.cpp:55 lircsupport.cpp:491
+#: lircsupport.cpp:55 lircsupport.cpp:493
 msgid "LIRC Plugin"
 msgstr "Plugin para controle remoto (LIRC)"
 
@@ -140,15 +141,15 @@ msgstr "Plugin para controle remoto (LIRC)"
 msgid "initializing kradio lirc plugin"
 msgstr "Iniciando plug-in para controle remoto (LIRC)"
 
-#: lircsupport.cpp:92 lircsupport.cpp:93
+#: lircsupport.cpp:90 lircsupport.cpp:91
 msgid "Initializing kradio lirc plugin failed"
 msgstr "Falha ao iniciar plug-in LIRC"
 
-#: lircsupport.cpp:95 lircsupport.cpp:96
+#: lircsupport.cpp:97 lircsupport.cpp:98
 msgid "Initializing kradio lirc plugin successful"
 msgstr "A inicialização do plug-in LIRC foi executado com êxito"
 
-#: lircsupport.cpp:122
+#: lircsupport.cpp:124
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -162,7 +163,7 @@ msgstr ""
 "\"button=*\" e \"remote =*\" como complemento para todos os botões/comando "
 "remotos"
 
-#: lircsupport.cpp:129
+#: lircsupport.cpp:131
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -176,24 +177,24 @@ msgstr ""
 "\"button=*\" e \"remote =*\" como complemento para todos os botões/comando "
 "remotos"
 
-#: lircsupport.cpp:140
+#: lircsupport.cpp:142
 #, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
 msgstr "Não há nenhuma entrada %1 para o KRadio em seus arquivo .lircrc."
 
-#: lircsupport.cpp:141
+#: lircsupport.cpp:143
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Por favor, configure seu arquivo .lirc %1 corretamente."
 
-#: lircsupport.cpp:145 lircsupport.cpp:146
+#: lircsupport.cpp:147 lircsupport.cpp:148
 #, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
 msgstr ""
 "Falha ao iniciar plug-in LIRC. Não foi possível ler o arquivo de "
 "configuração %1"
 
-#: lircsupport.cpp:187
+#: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
@@ -201,12 +202,12 @@ msgstr ""
 "O arquivo %1 não existe. O arquivo foi criado com o padrão proposto pelo "
 "KRadio"
 
-#: lircsupport.cpp:200
+#: lircsupport.cpp:202
 #, kde-format
 msgid "failed to read file %1"
 msgstr "Falha ao ler arquivo %1"
 
-#: lircsupport.cpp:252
+#: lircsupport.cpp:254
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
@@ -214,7 +215,7 @@ msgstr ""
 "Falha na leitura do socket LIRC. Desabilitando funções LIRC até o próximo "
 "início de KRadio"
 
-#: lircsupport.cpp:490
+#: lircsupport.cpp:492
 msgid "LIRC Support"
 msgstr "Suporte a LIRC"
 

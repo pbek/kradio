@@ -6,25 +6,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-04-04 14:25+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: docking-configuration.cpp:69
+#: docking-configuration.cpp:70
 msgid "Left Mouse Click on Tray"
 msgstr "Klepnutí levým tlačítkem myši na ovládací prováděcí symbol"
 
-#: docking-configuration.cpp:72
+#: docking-configuration.cpp:73
 msgid "Show/Hide all GUI Elements"
 msgstr "Ukázat/Skrýt všechny prvky uživatelského rozhraní"
 
-#: docking-configuration.cpp:73
+#: docking-configuration.cpp:74
 msgid "Power On/Off"
 msgstr "Zapnout/Vypnout"
 

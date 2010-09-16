@@ -9,24 +9,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2006-11-19 16:07+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: docking-configuration.cpp:69
+#: docking-configuration.cpp:70
 msgid "Left Mouse Click on Tray"
 msgstr "Clique Botão Esquerdo do Rato no Painel"
 
-#: docking-configuration.cpp:72
+#: docking-configuration.cpp:73
 msgid "Show/Hide all GUI Elements"
 msgstr "Mostrar/Esconder todos os Elementos do Interface Gráfico"
 
-#: docking-configuration.cpp:73
+#: docking-configuration.cpp:74
 msgid "Power On/Off"
 msgstr "Ligar/Desligar"
 

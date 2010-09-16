@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-01 23:03+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-11-08 00:31-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +21,8 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Language: pt_BR\n"
 
-#: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:0
+#: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
+#, kde-format
 msgid "%1 Error: %2"
 msgstr "%1 Erro: %2"
 
@@ -131,11 +133,11 @@ msgstr "Ícone"
 msgid "Station"
 msgstr "Estação"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:99
-#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:226
+#. i18n: file: src/pluginmanager-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#: radiostations/radiostation-listview.cpp:38 rc.cpp:26 rc.cpp:44
+#. i18n: file: src/pluginmanager-configuration-ui.ui:325
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: radiostations/radiostation-listview.cpp:38 rc.cpp:50 rc.cpp:68
 msgid "Description"
 msgstr "Descrição"
 
@@ -205,11 +207,11 @@ msgstr ""
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
 msgid ""
-"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE "
-"%3</html>"
+"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
+"html>"
 msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>Versão %2</b><br />Usando KDE "
-"%3</html>"
+"<html><font size=\"5\">%1</font><br /><b>Versão %2</b><br />Usando KDE %3</"
+"html>"
 
 #: src/kradioaboutwidget.cpp:125
 #, kde-format
@@ -259,7 +261,7 @@ msgid "Library %1: Plugin Entry Point is missing\n"
 msgstr "Biblioteca %1: Plug-in 'Entry Point' está faltando\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
-#: src/pluginmanager-configuration.cpp:190
+#: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
 msgstr "Erro ao carregar plug-in da biblioteca"
 
@@ -381,11 +383,11 @@ msgstr "Ideia inicial, primeira aplicação para o KDE 2"
 msgid "Buffer Overflow. "
 msgstr "Estouro de buffer."
 
-#: src/plugin_configuration_dialog.cpp:34
+#: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
 msgstr "Diálogo de configuração"
 
-#: src/pluginmanager-configuration.cpp:189
+#: src/pluginmanager-configuration.cpp:196
 #, kde-format
 msgid ""
 "Library %1: \n"
@@ -394,13 +396,13 @@ msgstr ""
 "Biblioteca %1: \n"
 "Não foi possível carregar nenhuma biblioteca local"
 
-#: src/pluginmanager-configuration.cpp:219
+#: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
 msgstr "Digite o nome da instância do plug-in"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:88
+#. i18n: file: src/pluginmanager-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: src/pluginmanager-configuration.cpp:220 rc.cpp:23
+#: src/pluginmanager-configuration.cpp:227 rc.cpp:65
 msgid "Instance Name"
 msgstr "Nome da instância"
 
@@ -437,19 +439,19 @@ msgstr "Novos plug-ins encontrados"
 msgid "Initializing Plugin %1"
 msgstr "Inicializando plug-ins %1"
 
-#: src/pluginmanager.cpp:760
+#: src/pluginmanager.cpp:767
 msgid "Show all"
 msgstr "Mostrar todos"
 
-#: src/pluginmanager.cpp:761
+#: src/pluginmanager.cpp:768
 msgid "Hide all"
 msgstr "Ocultar todos"
 
-#: src/pluginmanager.cpp:762
+#: src/pluginmanager.cpp:769
 msgid "Restore all"
 msgstr "Restaurar todos"
 
-#: src/pluginmanager.cpp:763
+#: src/pluginmanager.cpp:770
 msgid "restore state before laste hide-all activation"
 msgstr "Restaurar estado antes da última ativação 'Esconder todos'"
 
@@ -634,89 +636,52 @@ msgstr "marciopanto@gmail.com"
 msgid "PluginManagerConfigurationUI"
 msgstr "PluginManagerConfigurationUI"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:23
-#. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
+#. i18n: file: src/pluginmanager-configuration-ui.ui:39
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:8
+msgid "Automatic detection and load of new plugins"
+msgstr "Detecção e carregamento automático de novos plug-ins"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:60
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
+#: rc.cpp:11
+msgid "Do not check/load!"
+msgstr "Não verifcar/carregar!"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:73
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
+#: rc.cpp:14
+msgid "Automatically check/load!"
+msgstr "Automaticamente verificar/carregar!"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
+#: rc.cpp:17
+msgid "Please Ask!"
+msgstr "Por favor, pergunte!"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
+#: rc.cpp:20
 msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
 msgstr ""
 "Mostrar barra de progresso durante o início para o plug-in Iniciali&zação"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:26
+#. i18n: file: src/pluginmanager-configuration-ui.ui:109
 #. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
-#: rc.cpp:11
+#: rc.cpp:23
 msgid "Alt+Z"
 msgstr "Alt+Z"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:49
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
-#: rc.cpp:14
-msgid "Created Plugin Instances"
-msgstr "Instâncias de plug-ins criadas"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:70
-#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
-#: rc.cpp:17
-msgid "List of the plugin instances currently running"
-msgstr "Lista de instâncias de plug-ins atualmente em execução"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:77
-#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:215
-#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#: rc.cpp:20 rc.cpp:41
-msgid "Plugin Class"
-msgstr "Classe de plug-ins"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:135
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
-#: rc.cpp:29
-msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr "Remove/Para a instância do plug-in selecionado na lista a esquerda"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:158
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: rc.cpp:32
-msgid "Available Plugin Classes"
-msgstr "Classes de plug-ins disponíveis"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:192
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
-#: rc.cpp:35
-msgid "Create a new instance of plugin class selected in the list on the left"
-msgstr ""
-"Criar um nova instância de classes selecionadas de plug-ins na lista a "
-"esquerda"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:208
-#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
-#: rc.cpp:38
-msgid "List of available plugin classes found in the plugin libraries"
-msgstr ""
-"Lista de classes de plug-ins disponíveis encontrados nas bibliotecas de "
-"plug-in"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:253
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: rc.cpp:47
+#. i18n: file: src/pluginmanager-configuration-ui.ui:120
+#. i18n: ectx: attribute (title), widget (QWidget, Seite)
+#: rc.cpp:26
 msgid "Plugin Libraries"
 msgstr "Plug-ins das bibliotecas"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:271
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
-#: rc.cpp:50
-msgid "Unload the plugin library selected in the list on the left side"
-msgstr ""
-"Descarregar o plug-in selecionado da biblioteca na lista no lado esquerdo"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:287
-#. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
-#: rc.cpp:53
-msgid "list of loaded plugin libraries"
-msgstr "Lista de plug-ins carregados da biblioteca"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:310
+#. i18n: file: src/pluginmanager-configuration-ui.ui:129
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
-#: rc.cpp:56
+#: rc.cpp:29
 msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
@@ -725,72 +690,110 @@ msgstr ""
 "adicionado à lista da biblioteca se você pressionar o botão \"Carregar "
 "biblioteca\"."
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:323
+#. i18n: file: src/pluginmanager-configuration-ui.ui:142
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
-#: rc.cpp:59
+#: rc.cpp:32
 msgid "Loads the library specified in the box left to this button."
 msgstr "Carrega a biblioteca especificada na caixa esquerda a este botão."
 
+#. i18n: file: src/pluginmanager-configuration-ui.ui:161
+#. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
+#: rc.cpp:35
+msgid "list of loaded plugin libraries"
+msgstr "Lista de plug-ins carregados da biblioteca"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:174
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
+#: rc.cpp:38
+msgid "Unload the plugin library selected in the list on the left side"
+msgstr ""
+"Descarregar o plug-in selecionado da biblioteca na lista no lado esquerdo"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:201
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
+#: rc.cpp:41
+#, fuzzy
+msgid "Plugin Classes"
+msgstr "Classe de plug-ins"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:216
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
+#: rc.cpp:44
+msgid "List of available plugin classes found in the plugin libraries"
+msgstr ""
+"Lista de classes de plug-ins disponíveis encontrados nas bibliotecas de plug-"
+"in"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:223
+#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
+#. i18n: file: src/pluginmanager-configuration-ui.ui:303
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: rc.cpp:47 rc.cpp:62
+msgid "Plugin Class"
+msgstr "Classe de plug-ins"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:254
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
+#: rc.cpp:53
+msgid "Create a new instance of plugin class selected in the list on the left"
+msgstr ""
+"Criar um nova instância de classes selecionadas de plug-ins na lista a "
+"esquerda"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:281
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
+#: rc.cpp:56
+#, fuzzy
+msgid "Plugin Instances"
+msgstr "Instâncias de plug-ins criadas"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:296
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
+#: rc.cpp:59
+msgid "List of the plugin instances currently running"
+msgstr "Lista de instâncias de plug-ins atualmente em execução"
+
 #. i18n: file: src/pluginmanager-configuration-ui.ui:345
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
-#: rc.cpp:62
-msgid "Automatic detection and load of new plugins"
-msgstr "Detecção e carregamento automático de novos plug-ins"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:366
-#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
-#: rc.cpp:65
-msgid "Do not check/load!"
-msgstr "Não verifcar/carregar!"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:379
-#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
-#: rc.cpp:68
-msgid "Automatically check/load!"
-msgstr "Automaticamente verificar/carregar!"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:392
-#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:71
-msgid "Please Ask!"
-msgstr "Por favor, pergunte!"
+msgid "Removes/stops the plugin instance selected in the list on the left"
+msgstr "Remove/Para a instância do plug-in selecionado na lista a esquerda"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:422
+#. i18n: file: src/pluginmanager-configuration-ui.ui:381
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:74
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\">You can <span style=\" font-weight:600;\">rename</span> a "
-"plugin instance by double clicking on the instance name. This name will "
-"appear below the configuration page icon, in the config page header and e.g. "
-"in the name of your sound device. Editing plugin names is recommended for "
-"your convenience e.g. if you have multiple sound cards and/or multiple ALSA "
-"plugin instances.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">You can "
+"<span style=\" font-weight:600;\">rename</span> a plugin instance by double "
+"clicking on the instance name. This name will appear below the configuration "
+"page icon, in the config page header and e.g. in the name of your sound "
+"device. Editing plugin names is recommended for your convenience e.g. if you "
+"have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
+"html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\">Você pode <span style=\" "
-"font-weight:600;\">renomear</span> uma instânia do plug-in por um duplo "
-"clique no nome da instância. Este nome irá aparecer abaixo do ícone da "
-"página de configuração, no cabeçalho da página de configuração e, por "
-"exemplo, no nome do seu dispositivo de som. A edição de nomes dos plug-in é "
-"recomendada para a sua conveniência, por exemplo,se você tiver várias placas "
-"de som e/ou várias instâncias de plug-ins ALSA.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Você pode "
+"<span style=\" font-weight:600;\">renomear</span> uma instânia do plug-in "
+"por um duplo clique no nome da instância. Este nome irá aparecer abaixo do "
+"ícone da página de configuração, no cabeçalho da página de configuração e, "
+"por exemplo, no nome do seu dispositivo de som. A edição de nomes dos plug-"
+"in é recomendada para a sua conveniência, por exemplo,se você tiver várias "
+"placas de som e/ou várias instâncias de plug-ins ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
@@ -822,20 +825,23 @@ msgstr "Tempo restante"
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">nada aqui</p>"
 
-#. i18n: file: src/stationselector-ui.ui:13
+#. i18n: file: src/stationselector-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, StationSelectorUI)
 #: rc.cpp:99
 msgid "StationSelectorUI"
 msgstr "StationSelectorUI"
 
-#. i18n: file: src/stationselector-ui.ui:22
+#. i18n: file: src/stationselector-ui.ui:23
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:102
 msgid "Selected Stations"
 msgstr "Estações selecionadas"
 
-#. i18n: file: src/stationselector-ui.ui:92
+#. i18n: file: src/stationselector-ui.ui:105
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:105
 msgid "Available Stations"
 msgstr "Estações disponíveis"
+
+#~ msgid "Available Plugin Classes"
+#~ msgstr "Classes de plug-ins disponíveis"

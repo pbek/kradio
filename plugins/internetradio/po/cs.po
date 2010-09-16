@@ -8,89 +8,90 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.cs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-05-01 14:24+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: German\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: decoder_thread.cpp:110 decoder_thread.cpp:136
+#: decoder_thread.cpp:120 decoder_thread.cpp:146
 #, kde-format
 msgid "downloading playlist %1"
 msgstr "Stahuje se seznam skladeb %1"
 
-#: decoder_thread.cpp:126 decoder_thread.cpp:173 decoder_thread.cpp:224
+#: decoder_thread.cpp:136 decoder_thread.cpp:183 decoder_thread.cpp:234
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 neobsahuje žádný použitelný rozhlasový datový proud"
 
-#: decoder_thread.cpp:129 decoder_thread.cpp:177 decoder_thread.cpp:228
+#: decoder_thread.cpp:139 decoder_thread.cpp:187 decoder_thread.cpp:238
 #, kde-format
 msgid "failed to download %1"
 msgstr "Stažení %1 selhalo."
 
-#: decoder_thread.cpp:220
+#: decoder_thread.cpp:230
 msgid "error while reading asx file"
 msgstr "Nahrání souboru asx selhalo"
 
-#: decoder_thread.cpp:241
+#: decoder_thread.cpp:258
 #, kde-format
 msgid "opening stream %1"
 msgstr "Otevírá se datový proud %1."
 
-#: decoder_thread.cpp:245
+#: decoder_thread.cpp:262
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr ""
 "Otevření %1 selhalo. Pokuste se otevřít následující rozhlasový datový proud "
 "v seznamu."
 
-#: decoder_thread.cpp:249
+#: decoder_thread.cpp:266
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Nelze otevřít žádný rozhlasový datový proud ze seznamu %1."
 
-#: decoder_thread.cpp:281
+#: decoder_thread.cpp:298
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet\n"
 msgstr "%1: Chyba při dekódování paketu. Paket byl odmítnut\n"
 
-#: decoder_thread.cpp:286
+#: decoder_thread.cpp:303
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Vnitřní zvukový datový proud, nebude uložen (%1)"
 
-#: decoder_thread.cpp:464 decoder_thread.cpp:466
+#: decoder_thread.cpp:481 decoder_thread.cpp:483
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "Nelze otevřít MMS datový proud %1"
 
-#: decoder_thread.cpp:487 decoder_thread.cpp:489 decoder_thread.cpp:499
-#: decoder_thread.cpp:501
+#: decoder_thread.cpp:504 decoder_thread.cpp:506 decoder_thread.cpp:516
+#: decoder_thread.cpp:518
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr "Nelze otevřít zvukový datový proud %1"
 
-#: decoder_thread.cpp:511 decoder_thread.cpp:513
+#: decoder_thread.cpp:528 decoder_thread.cpp:530
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Nelze najít metainformace v zvukovém datovém proudu %1"
 
-#: decoder_thread.cpp:530 decoder_thread.cpp:532
+#: decoder_thread.cpp:547 decoder_thread.cpp:549
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Nelze najít žádný zvukový datový proud na adrese %1."
 
-#: decoder_thread.cpp:548 decoder_thread.cpp:550
+#: decoder_thread.cpp:565 decoder_thread.cpp:567
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Nelze najít žádný dekodér pro %1."
 
-#: decoder_thread.cpp:558 decoder_thread.cpp:560
+#: decoder_thread.cpp:575 decoder_thread.cpp:577
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Otevření dekodéru pro %1 selhalo."
@@ -110,15 +111,15 @@ msgid "Internet radio station decoder / pseudo device"
 msgstr ""
 "Dekodér/Předstírané zařízení pro internetové rozhlasové vysílací stanice"
 
-#: internetradio.cpp:552
+#: internetradio.cpp:570
 msgid "Internet Radio"
 msgstr "Rozhlas na internetu"
 
-#: internetradio.cpp:553
+#: internetradio.cpp:571
 msgid "Internet Radio Options"
 msgstr "Volby pro rozhlas na internetu"
 
-#: internetradio.cpp:625
+#: internetradio.cpp:644
 msgid ""
 "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
 "idea to restart KRadio"

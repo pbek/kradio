@@ -7,16 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-06-11 22:24+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
@@ -360,18 +361,17 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Заметка владельцам PVR-карт:</span> <"
-"span "
-"style=\" font-weight:600;\">Активное воспроизведение</span> нужно, если "
-"плата радио не подсоединена непосредственно к звковой плате. Тогда KRadio "
-"захватывает аудиоданные с устройства захвата и пересылает их на устройство "
-"воспроизведения. Если Вы включили <span style=\" font-weight:600;\">Активное "
-"воспроизведение</span>, то необходимо выбрать верные устройство и канал для "
-"захвата и воспроизведения. Это особенно важно для  <span style=\" font-"
-"weight:600;\">карт PVR</span>, которые передают звук через устройство <span "
-"style=\" font-style:italic;\">/dev/video24</span> (или что-то в этом роде). "
-"Для таких карт нужно настроить и  <span style=\" font-weight:600;\">Модуль "
-"потового вещания</span>.</p></body></html>"
+"style=\" text-decoration: underline;\">Заметка владельцам PVR-карт:</span> "
+"<span style=\" font-weight:600;\">Активное воспроизведение</span> нужно, "
+"если плата радио не подсоединена непосредственно к звковой плате. Тогда "
+"KRadio захватывает аудиоданные с устройства захвата и пересылает их на "
+"устройство воспроизведения. Если Вы включили <span style=\" font-weight:600;"
+"\">Активное воспроизведение</span>, то необходимо выбрать верные устройство "
+"и канал для захвата и воспроизведения. Это особенно важно для  <span style="
+"\" font-weight:600;\">карт PVR</span>, которые передают звук через "
+"устройство <span style=\" font-style:italic;\">/dev/video24</span> (или что-"
+"то в этом роде). Для таких карт нужно настроить и  <span style=\" font-"
+"weight:600;\">Модуль потового вещания</span>.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:667
 #. i18n: ectx: attribute (title), widget (QWidget, V4LMixerControls)
@@ -413,69 +413,76 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
 
-#: v4lradio-configuration.cpp:369
+#: v4lradio-configuration.cpp:377
 msgid "Could not get device description."
 msgstr "Не могу получить описание устройства."
 
-#: v4lradio-configuration.cpp:374
+#: v4lradio-configuration.cpp:382
 msgid "Device file does not exist or top level directories are not accessible."
 msgstr ""
 "Файл устройства не существует либо недоступен каталог, где он расположен"
 
-#: v4lradio-configuration.cpp:377
+#: v4lradio-configuration.cpp:385
 msgid "You do not have read+write permissions for the device."
 msgstr "У вас нет прав на чтение и запись в устройство."
 
-#: v4lradio-configuration.cpp:380
+#: v4lradio-configuration.cpp:388
 msgid "You do not have read permissions for the device."
 msgstr "У вас нет прав на чтение из устройства."
 
-#: v4lradio-configuration.cpp:383
+#: v4lradio-configuration.cpp:391
 msgid "You do not have write permissions for the device."
 msgstr "У вас нет прав на запись в устройство."
 
-#: v4lradio-configuration.cpp:413 v4lradio-configuration.cpp:414
+#: v4lradio-configuration.cpp:421 v4lradio-configuration.cpp:422
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 кГц"
 
-#: v4lradio-configuration.cpp:513
+#: v4lradio-configuration.cpp:521
 msgid "any ( * )"
 msgstr "Все ( * )"
 
-#: v4lradio-configuration.cpp:517
+#: v4lradio-configuration.cpp:525
 msgid "Select Radio Device"
 msgstr "Выберите устройство радиоприёмника"
 
-#: v4lradio.cpp:61
+#: v4lradio.cpp:64
 msgid "Support for V4L(2) Radio Devices"
 msgstr "Поддержка устройств V4l(2)"
 
-#: v4lradio.cpp:70
+#: v4lradio.cpp:73
 msgid "Video For Linux Plugin"
 msgstr "Модуль \"Видео для linux\""
 
-#: v4lradio.cpp:806
+#: v4lradio.cpp:810
 #, kde-format
 msgid "invalid frequency %1"
 msgstr "Неправильная частота %1"
 
-#: v4lradio.cpp:831 v4lradio.cpp:1656 v4lradio.cpp:1850
+#: v4lradio.cpp:835 v4lradio.cpp:1708 v4lradio.cpp:1902
 #, kde-format
 msgid "don't known how to handle V4L-version %1"
 msgstr "Не знаю что делать с версией V4l \"%1\""
 
-#: v4lradio.cpp:833 v4lradio.cpp:1658 v4lradio.cpp:1852
+#: v4lradio.cpp:837 v4lradio.cpp:1710 v4lradio.cpp:1904
 #, kde-format
 msgid "%1 Support: %2"
 msgstr "Поддержка %1: %2"
 
-#: v4lradio.cpp:839
+#: v4lradio.cpp:843
 #, kde-format
 msgid "error setting frequency to %1 (%2)"
 msgstr "Ошибка установки частоты %1 (%2)"
 
-#: v4lradio.cpp:1220
+#: v4lradio.cpp:1247
+msgid ""
+"You have selected V4L API Version 1. Starting with kernel 2.6.31, the "
+"support for V4L1 seems to be not working properly any more. I'm now once "
+"switching to V4L Version 2. You may override it later."
+msgstr ""
+
+#: v4lradio.cpp:1272
 #, kde-format
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
@@ -484,105 +491,105 @@ msgstr ""
 "Устройство %1 недоступно для чтения/записи. Проверьте права на устройство, а "
 "также не использует ли его другая программа."
 
-#: v4lradio.cpp:1230
+#: v4lradio.cpp:1282
 msgid "Could not find an accessible v4l(2) radio device."
 msgstr "Не найти доступное устройство V4l(2)."
 
-#: v4lradio.cpp:1306
+#: v4lradio.cpp:1358
 msgid "V4L Radio"
 msgstr "Радио V4l"
 
-#: v4lradio.cpp:1307
+#: v4lradio.cpp:1359
 msgid "V4L Radio Options"
 msgstr "Параметры устройства V4l"
 
-#: v4lradio.cpp:1366
+#: v4lradio.cpp:1418
 #, kde-format
 msgid "Cannot open radio device %1"
 msgstr "Не могу открыть устройство радио: %1"
 
-#: v4lradio.cpp:1422
+#: v4lradio.cpp:1474
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
 msgstr "Модуль V4L (режим V4L%1, неверное устройство): %2"
 
-#: v4lradio.cpp:1429
+#: v4lradio.cpp:1481
 #, kde-format
 msgid "cannot open %1"
 msgstr "Не могу открыть %1"
 
-#: v4lradio.cpp:1437 v4lradio.cpp:1480
+#: v4lradio.cpp:1489 v4lradio.cpp:1532
 #, kde-format
 msgid "detected %1"
 msgstr "обнаружено %1"
 
-#: v4lradio.cpp:1445 v4lradio.cpp:1488
+#: v4lradio.cpp:1497 v4lradio.cpp:1540
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
 msgstr "Модуль V4L (режим V4L%1): %2"
 
-#: v4lradio.cpp:1467
+#: v4lradio.cpp:1519
 #, kde-format
 msgid "audio caps = %1"
 msgstr "возможности звука = %1"
 
-#: v4lradio.cpp:1502
+#: v4lradio.cpp:1554
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Не могу обратиться к выключателю звука платы"
 
-#: v4lradio.cpp:1509
+#: v4lradio.cpp:1561
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Не могу обратиться к регулятору громкости"
 
-#: v4lradio.cpp:1517
+#: v4lradio.cpp:1569
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Не могу обратиться к регулятору верхних частот"
 
-#: v4lradio.cpp:1525
+#: v4lradio.cpp:1577
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Не могу обратиться к регулятору нижних частот"
 
-#: v4lradio.cpp:1533
+#: v4lradio.cpp:1585
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Не могу обратиться к регулятору стереобаланса"
 
-#: v4lradio.cpp:1536
+#: v4lradio.cpp:1588
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
 msgstr "V4l2: версия %1, возможности: %2"
 
-#: v4lradio.cpp:1555
+#: v4lradio.cpp:1607
 msgid "V4L not detected"
 msgstr "Устройств V4L не обнаружено"
 
-#: v4lradio.cpp:1666
+#: v4lradio.cpp:1718
 #, kde-format
 msgid "cannot get tuner info (error %1)"
 msgstr "Не могу получить информацию о тюнере (код ошибки %1)"
 
-#: v4lradio.cpp:1859
+#: v4lradio.cpp:1911
 msgid "write"
 msgstr "запись"
 
-#: v4lradio.cpp:1859
+#: v4lradio.cpp:1911
 msgid "read"
 msgstr "чтение"
 
-#: v4lradio.cpp:1858
+#: v4lradio.cpp:1910
 #, kde-format
 msgid "error updating radio audio info (%1): %2"
 msgstr "Ошибка %1: %2"
 
-#: v4lradio.cpp:2041
+#: v4lradio.cpp:2093
 msgid "error reading RDS data\n"
 msgstr "не могу прочитать данные RDS\n"
 
-#: v4lradio.cpp:2057
+#: v4lradio.cpp:2109
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: ошибка скорости блока: %1 %"
 
-#: v4lradio.cpp:2060
+#: v4lradio.cpp:2112
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: групповая (~4 блока) ошибка скорости: %1 %"

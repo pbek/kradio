@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-26 14:32+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-03-28 22:58+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,42 +54,42 @@ msgstr "Temporäre Datei"
 msgid "Playback Mixer Channel"
 msgstr "Wiedergabemixerkanal"
 
-#: timeshifter-configuration.cpp:144
+#: timeshifter-configuration.cpp:146
 msgid "any ( * )"
 msgstr "alle ( * )"
 
-#: timeshifter-configuration.cpp:148
+#: timeshifter-configuration.cpp:150
 msgid "Select TimeShifter Temporary File"
 msgstr "Auswahl der temporären Datei für die zeitversetzte Wiedergabe"
 
-#: timeshifter.cpp:32
+#: timeshifter.cpp:31
 msgid "TimeShift Support"
 msgstr "Unterstützung für die Zeitversetzte Wiedergabe"
 
-#: timeshifter.cpp:37
+#: timeshifter.cpp:36
 msgid "TimeShifter Plugin"
 msgstr "Plugin für die zeitversetzte Wiedergabe"
 
-#: timeshifter.cpp:131
+#: timeshifter.cpp:130
 msgid "Timeshifter"
 msgstr "Zeitversetzte Wiedergabe"
 
-#: timeshifter.cpp:132
+#: timeshifter.cpp:131
 msgid "Timeshifter Options"
 msgstr "Optionen für die zeitversetzte Wiedergabe"
 
-#: timeshifter.cpp:194
+#: timeshifter.cpp:193
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr "Zeitversetzte Version von %1 (%2)"
 
-#: timeshifter.cpp:534
+#: timeshifter.cpp:533
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: %1 bytes der Sounddaten wurden ignoriert "
 "und sind verloren"
 
-#: timeshifter.cpp:593
+#: timeshifter.cpp:592
 msgid "internal stream, not stored"
 msgstr "interner, nicht aufgezeichneter Datenstrom"

@@ -9,16 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-10 00:20+0200\n"
+"POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2009-05-09 10:21+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lirc-configuration.cpp:51
 msgid "digit 0"
@@ -130,7 +131,7 @@ msgstr "Для зміни прив'язки двічі клацніть по п�
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Підтримка ПДК у Linux (LIRC)"
 
-#: lircsupport.cpp:55 lircsupport.cpp:491
+#: lircsupport.cpp:55 lircsupport.cpp:493
 msgid "LIRC Plugin"
 msgstr "Модуль ДК (LIRC)"
 
@@ -138,15 +139,15 @@ msgstr "Модуль ДК (LIRC)"
 msgid "initializing kradio lirc plugin"
 msgstr "Ініціалізація модуля LIRC"
 
-#: lircsupport.cpp:92 lircsupport.cpp:93
+#: lircsupport.cpp:90 lircsupport.cpp:91
 msgid "Initializing kradio lirc plugin failed"
 msgstr "Запуск модуля LIRC не був вдалим"
 
-#: lircsupport.cpp:95 lircsupport.cpp:96
+#: lircsupport.cpp:97 lircsupport.cpp:98
 msgid "Initializing kradio lirc plugin successful"
 msgstr "Модуль LIRC вдало запущено"
 
-#: lircsupport.cpp:122
+#: lircsupport.cpp:124
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -159,7 +160,7 @@ msgstr ""
 "Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
 "\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
-#: lircsupport.cpp:129
+#: lircsupport.cpp:131
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -172,35 +173,35 @@ msgstr ""
 "Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
 "\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
-#: lircsupport.cpp:140
+#: lircsupport.cpp:142
 #, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
 msgstr "У жодному з ваших файлів .lircrc %1 немає згадки про KRadio."
 
-#: lircsupport.cpp:141
+#: lircsupport.cpp:143
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Будь ласка коректно налаштуйте ваш файл .lircrc %1."
 
-#: lircsupport.cpp:145 lircsupport.cpp:146
+#: lircsupport.cpp:147 lircsupport.cpp:148
 #, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
 msgstr ""
 "Спроба запуску модуля LIRC kradio завершилася невдало. Не вдалося прочитати "
 "файл налаштувань %1"
 
-#: lircsupport.cpp:187
+#: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr "%1 не існує. Було створено типовий файл .lircrc для KRadio"
 
-#: lircsupport.cpp:200
+#: lircsupport.cpp:202
 #, kde-format
 msgid "failed to read file %1"
 msgstr "не вдалося прочитати файл %1"
 
-#: lircsupport.cpp:252
+#: lircsupport.cpp:254
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
@@ -208,7 +209,7 @@ msgstr ""
 "Читання з сокету LIRC не вдалося. Вимкнено функції LIRC до наступного "
 "запуску KRadio."
 
-#: lircsupport.cpp:490
+#: lircsupport.cpp:492
 msgid "LIRC Support"
 msgstr "Підтримка LIRC"
 
