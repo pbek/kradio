@@ -3,14 +3,14 @@
 #endif
 
 #include <kapplication.h>
-#include <qstring.h>
-#include <qtextstream.h>
-#include <qfile.h>
+#include <QtCore/QString>
+#include <QtCore/QTextStream>
+#include <QtCore/QFile>
 #include <klocale.h>
 #include <kdebug.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
-#include <qregexp.h>
+#include <QtCore/QRegExp>
 #include <time.h>
 #include <sys/fcntl.h>
 #include <unistd.h>
@@ -31,7 +31,7 @@ QString createStationID()
     for (int i = 0; i < buffersize; ++i)
         srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
 
-//    kdDebug() << i18n("generated StationID: ") << stime << srandom << endl;
+//    kDebug() << i18n("generated StationID: ") << stime << srandom << endl;
 
     return stime + srandom;
 }
@@ -48,10 +48,10 @@ bool convertFile(const QString &file)
     QFile presetFile (file);
 
     if (! presetFile.open(IO_ReadOnly)) {
-        kdDebug() << "convertFile: "
-                  << i18n("error opening preset file")
-                  << " " << file << " "
-                  << i18n("for reading") << endl;
+        kDebug() << "convertFile: "
+                 << i18n("error opening preset file")
+                 << " " << file << " "
+                 << i18n("for reading") << endl;
         return false;
     }
 
@@ -60,22 +60,23 @@ bool convertFile(const QString &file)
     // make sure that qtextstream is gone when we close presetFile
     {
         QTextStream ins(&presetFile);
-        ins.setEncoding(QTextStream::Locale);
-        xmlData = ins.read();
+//         ins.setEncoding(QTextStream::Locale);
+        xmlData = ins.readAll();
     }
 
-    if (xmlData.find("<format>", 0, false) >= 0) {
-        kdDebug() << "file " << file << " already in new format" << endl;
+    if (xmlData.indexOf("<format>", 0, Qt::CaseInsensitive) >= 0) {
+        kDebug() << "file " << file << " already in new format" << endl;
         // but add <?xml line at beginning if missing
 
         {
             presetFile.reset();
             QTextStream ins(&presetFile);
-            ins.setEncoding(QTextStream::UnicodeUTF8);
-            xmlData = ins.read();
+            ins.setCodec("UTF-8");
+//             ins.setEncoding(QTextStream::UnicodeUTF8);
+            xmlData = ins.readAll();
         }
 
-        if (xmlData.find("<?xml", 0, false) < 0) {
+        if (xmlData.indexOf("<?xml", 0, Qt::CaseInsensitive) < 0) {
             xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
         }
 
@@ -108,7 +109,7 @@ bool convertFile(const QString &file)
 
         int p = 0;
         int f = 0;
-        while ( (f = xmlData.find("<" stationIDElement "></" stationIDElement ">", p) ) >= 0) {
+        while ( (f = xmlData.indexOf("<" stationIDElement "></" stationIDElement ">", p, Qt::CaseInsensitive) ) >= 0) {
             xmlData.insert(f + 2 + QString(stationIDElement).length(), createStationID());
         }
 
@@ -123,24 +124,25 @@ bool convertFile(const QString &file)
     ////////////////////////////////////////////////////////////////////////
 
     if (! presetFile.open(IO_WriteOnly)) {
-        kdDebug() << "convertFile: "
-                  << i18n("error opening preset file")
-                  << " " << file << " "
-                  << i18n("for writing") << endl;
+        kDebug() << "convertFile: "
+                 << i18n("error opening preset file")
+                 << " " << file << " "
+                 << i18n("for writing") << endl;
        return false;
     }
 
     QTextStream outs(&presetFile);
-    outs.setEncoding(QTextStream::UnicodeUTF8);
+    outs.setCodec("UTF-8");
+//     outs.setEncoding(QTextStream::UnicodeUTF8);
 
     outs << xmlData;
 
-    if (presetFile.status() != IO_Ok) {
-        kdDebug() << "StationList::writeXML: "
-                  << i18n("error writing preset file")
-                  << " " << file
-                  << " (" << presetFile.state() << ")"
-                  << endl;
+    if (presetFile.error() != QFile::NoError) {
+        kDebug() << "StationList::writeXML: "
+                 << i18n("error writing preset file")
+                 << " " << file
+                 << " (" << presetFile.error() << ")"
+                 << endl;
         return false;
     }
 
@@ -150,41 +152,37 @@ bool convertFile(const QString &file)
 
 static const char *description = "convert-presets";
 
-static KCmdLineOptions options[] =
-{
-  { "q", I18N_NOOP("be quiet"), 0},
-  { "+[preset files]", I18N_NOOP("preset file to convert"), 0 },
-  KCmdLineLastOption
-};
-
 int main(int argc, char *argv[])
 {
-    KAboutData aboutData("convert-presets", I18N_NOOP("convert-presets"),
-                         VERSION, description, KAboutData::License_GPL,
-                         "(c) 2003-2005 Martin Witte",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
+    KAboutData aboutData("kradio4-convert-presets", "kradio4-convert-presets", ki18n("kradio4-convert-presets"),
+                         KRADIO_VERSION, ki18n(description), KAboutData::License_GPL,
+                         ki18n("(c) 2003-2010 Martin Witte"),
+                         KLocalizedString(),
+                         "http://sourceforge.net/projects/kradio");
+    aboutData.addAuthor(ki18n("Martin Witte"),  KLocalizedString(), "emw-kradio@nocabal.de");
 
     KCmdLineArgs::init( argc, argv, &aboutData );
-    KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-    KApplication a (false, false);
+    KCmdLineOptions options;
+    options.add("q", ki18n("be quiet"), 0);
+    options.add("+[preset files]", ki18n("preset files to convert"));
+    KCmdLineArgs::addCmdLineOptions( options );
+
+    KApplication a (false);
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     for (int i = 0; i < args->count(); ++i) {
-        const char *x = args->arg(i);
+        const QString x = args->arg(i);
         if (! convertFile(x)) {
             return -1;
         } else {
             if (! args->isSet("q"))
-                kdDebug() << x << ": ok" << endl;
+                kDebug() << x << ": ok" << endl;
         }
     }
     if (args->count() == 0) {
-        kdDebug() << "no input" << endl;
+        kDebug() << "no input" << endl;
         return -1;
     }
 

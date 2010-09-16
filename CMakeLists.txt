@@ -60,7 +60,7 @@ ADD_SUBDIRECTORY(icons)
 ADD_SUBDIRECTORY(plugins)
 ADD_SUBDIRECTORY(presets)
 ADD_SUBDIRECTORY(po)
-
+ADD_SUBDIRECTORY(convert-presets)
 
 ########################################################################
 #     The lines below only affect the executable, no plugins!          #
