@@ -4,9 +4,8 @@ For 4.0.0
 
 For 4.0.1
 
-  * update translations
-  * update preset files
-  * lirc 0.8.5 compatibility fixes
+  * --done-- update translations
+  * --done-- update preset files
   * --done-- fix: config storing of left mouse button action on tray icon
   * --done-- fix: disable nerving dialog boxes popping up during downloads
   * --done-- fix: better handling of combo box stuff in gui_list_helper.h
@@ -22,6 +21,7 @@ For 4.0.1
 
 For 4.0.2
 
+  * lirc 0.8.5 compatibility fixes
   * configurable clicks for systray: left/right/mid X power/hideshow/menu
   * check box for v4l config to disable caps check at startup to minimize interference
   * make recording name configurable
