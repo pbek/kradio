@@ -37,6 +37,7 @@ QString createStationID()
 }
 
 
+        #define stationIDElement  "stationID"
 
 
 bool convertFile(const QString &file)
@@ -80,6 +81,12 @@ bool convertFile(const QString &file)
             xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlData;
         }
 
+        int p = 0;
+        int f = 0;
+        while ( (f = xmlData.indexOf("<" stationIDElement "></" stationIDElement ">", p, Qt::CaseInsensitive) ) >= 0) {
+            xmlData.insert(f + 2 + QString(stationIDElement).length(), createStationID());
+        }
+        
     } else {
 
         ////////////////////////////////////////////////////////////////////////
@@ -92,7 +99,6 @@ bool convertFile(const QString &file)
         QRegExp stationlist("<stationlist>");
         QRegExp emptyLines("\\n\\s*\\n");
 
-        #define stationIDElement  "stationID"
 
         qselect.setMinimal(true);
         docking.setMinimal(true);
