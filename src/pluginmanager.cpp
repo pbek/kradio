@@ -176,7 +176,7 @@ void PluginManager::setConfigPageNameEtc(PluginBase *p)
         ConfigPageInfo   info        = m_configPageInfos [p];
 
         if (config_page) {
-            QString itemName     = info.itemName + "\n" + p->name();
+            QString itemName     = info.itemName + " (" + p->name() + ")";
             QString pageHeader   = info.pageHeader + " (" + p->name() + ")";
             QString tmp_class    = p->pluginClassName().toUpper();
             QString tmp_name     = p->name().toUpper();
