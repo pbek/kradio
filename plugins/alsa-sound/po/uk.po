@@ -1,25 +1,22 @@
 # translation of uk.po to Ukrainian
-# translation of ru.po to
-# translation of kradio-alsa-sound.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-05-09 11:09+0300\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"PO-Revision-Date: 2010-09-17 18:18+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: alsa-sound.cpp:43
 msgid "Advanced Linux Sound Architecture (ALSA) Support"
@@ -38,26 +35,25 @@ msgid "ALSA Sound Device Options"
 msgstr "Параметри звуку для драйвера ALSA"
 
 #: alsa-sound.cpp:613
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: cannot write data for device %1"
-msgstr "Модуль ALSA: не можу записати дані до пристрою plughw:%1,%2"
+msgstr "Модуль ALSA: не вдалося записати дані на пристрій %1"
 
 #: alsa-sound.cpp:620
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: buffer underrun for device %1"
-msgstr "Модуль ALSA: недостача даних у буфері пристрою plughw:%1,%2"
+msgstr "Модуль ALSA: вичерпання даних у буфері пристрою %1"
 
 #: alsa-sound.cpp:660
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: cannot read data from device %1"
-msgstr "Модуль ALSA: не можу прочитати дані з пристрою plughw:%1,%2"
+msgstr "Модуль ALSA: не вдалося прочитати дані з пристрою %1"
 
 #: alsa-sound.cpp:667
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)"
 msgstr ""
-"Модуль ALSA: переповнення буферу пристрою plughw:%1,%2 (розмір буферу=%3, "
-"буфер=%4)"
+"Модуль ALSA: переповнення буферу пристрою %1 (розмір буферу=%2, буфер=%3)"
 
 #: alsa-sound.cpp:688
 #, kde-format
@@ -81,14 +77,14 @@ msgstr ""
 "захоплення, але було виявлено таку нитку\n"
 
 #: alsa-sound.cpp:837
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error opening PCM device %1: %2"
-msgstr "Модуль ALSA: Помилка під час відкриття пристрою PCM: %1"
+msgstr "Модуль ALSA: помилка під час відкриття пристрою PCM %1: %2"
 
 #: alsa-sound.cpp:842
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Can not configure PCM device %1: %2"
-msgstr "Модуль ALSA: не можу налаштувати пристрій PCM %1"
+msgstr "Модуль ALSA: не вдалося налаштувати пристрій PCM %1: %2"
 
 #: alsa-sound.cpp:849
 #, kde-format
@@ -96,19 +92,20 @@ msgid "ALSA Plugin: Error setting access for %1"
 msgstr "Модуль ALSA: Помилка спроби доступу для %1"
 
 #: alsa-sound.cpp:859
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error setting sample format for %1: %2"
-msgstr "Модуль ALSA: Помилка під час встановлення формату даних для %1"
+msgstr "Модуль ALSA: помилка під час встановлення формату даних для %1: %2"
 
 #: alsa-sound.cpp:865
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error setting channels for %1: %2"
-msgstr "Модуль ALSA: Помилка під час встановлення числа каналів для %1"
+msgstr "Модуль ALSA: помилка під час встановлення числа каналів для %1: %2"
 
 #: alsa-sound.cpp:872
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error setting rate for %1: %2"
-msgstr "Модуль ALSA: Помилка під час встановлення частоти дискретизації для %1"
+msgstr ""
+"Модуль ALSA: помилка під час встановлення частоти дискретизації для %1: %2"
 
 #: alsa-sound.cpp:876
 #, kde-format
@@ -120,32 +117,32 @@ msgstr ""
 "%2. Замість неї використано частоту %3 Гц."
 
 #: alsa-sound.cpp:884
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error setting HW params: %1"
-msgstr "Модуль ALSA: Помилка під час встановлення параметрів обладнання"
+msgstr "Модуль ALSA: помилка під час встановлення параметрів обладнання: %1"
 
 #: alsa-sound.cpp:890
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error getting period size for %1: %2"
-msgstr "Модуль ALSA: Помилка отримання розміру періоду для %1"
+msgstr "Модуль ALSA: помилка отримання розміру періоду для %1: %2"
 
 #: alsa-sound.cpp:920
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the playback thread. It did not "
 "stop as desired"
 msgstr ""
-"Модуль Alsa (пристрій plughw:%1,%2): ой, доведеться примусово перервати "
-"виконання нитки відтворення. Нитку не вдалося завершити у звичайний спосіб"
+"Модуль Alsa (пристрій %1): ой, доведеться примусово перервати виконання "
+"нитки відтворення. Нитку не вдалося завершити у звичайний спосіб."
 
 #: alsa-sound.cpp:952
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the capture thread. It did not "
 "stop as desired"
 msgstr ""
-"Модуль Alsa (пристрій plughw:%1,%2): ой, доведеться примусово завершити "
-"нитку захоплення. Завершити нитку у бажаний спосіб не вдалося"
+"Модуль Alsa (пристрій %1): ой, доведеться примусово завершити нитку "
+"захоплення. Завершити нитку у бажаний спосіб не вдалося."
 
 #: alsa-sound.cpp:1014
 msgid "ALSA Plugin: Error opening mixer"
@@ -183,20 +180,19 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: alsa-sound.cpp:1319 alsa-sound.cpp:1347
-#, fuzzy, kde-format
+#, kde-format
 msgid "error while reading volume from %1, channel %2"
-msgstr "Помилка зчитування гучності пристрою hwplug:%1,%2"
+msgstr "помилка під час зчитування гучності пристрою %1, канал %2"
 
 #: alsa-sound.cpp:1389 alsa-sound.cpp:1421
-#, fuzzy, kde-format
+#, kde-format
 msgid "error while writing volume %1 to %2, channel %3"
-msgstr "Помилка під час запису гучності %1 до пристрою hwplug:%2,%3"
+msgstr "помилка під час запису гучності %1 до пристрою %2, канал %3"
 
 #: alsa-sound.cpp:1441
-#, fuzzy, kde-format
+#, kde-format
 msgid "error while setting capture switch %1 for %2"
-msgstr ""
-"Помилка під час встановлення атрибуту запису %1 для пристрою hwplug:%2,%3"
+msgstr "помилка під час встановлення атрибуту захоплення даних %1 для %2"
 
 #: alsa-sound.cpp:1626
 #, kde-format
@@ -204,14 +200,14 @@ msgid "ALSA Sound Device %1"
 msgstr "Пристрій ALSA: %1"
 
 #: alsa-sound.cpp:1789 alsa-sound.cpp:1793
-#, fuzzy, kde-format
+#, kde-format
 msgid "AlsaPlugin(capture thread on %1): %2"
-msgstr "AlsaPlugin(нитка захоплення на plughw:%1,%2): %3"
+msgstr "AlsaPlugin(нитка захоплення на %1): %2"
 
 #: alsa-sound.cpp:1799 alsa-sound.cpp:1803
-#, fuzzy, kde-format
+#, kde-format
 msgid "AlsaPlugin(playback thread on %1): %2"
-msgstr "AlsaPlugin(нитка відтворення на plughw:%1,%2): %3"
+msgstr "AlsaPlugin(нитка відтворення на %1): %2"
 
 #: alsa-thread.cpp:91
 msgid "ALSA Thread: cannot write data"
@@ -274,9 +270,8 @@ msgstr "ІККонфігураціїAlsaSound"
 #. i18n: file: alsa-sound-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
 #: rc.cpp:24 rc.cpp:166
-#, fuzzy
 msgid "Playback"
-msgstr "Карта програвання PCM"
+msgstr "Відтворення"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:33
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
@@ -311,9 +306,8 @@ msgstr " кБ"
 #. i18n: file: alsa-sound-configuration-ui.ui:139
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_6)
 #: rc.cpp:42 rc.cpp:184
-#, fuzzy
 msgid "recommended:"
-msgstr "рекомендовано: 2 кБ"
+msgstr "рекомендовано:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -324,9 +318,8 @@ msgstr "Програмний коефіцієнт виправлення гуч�
 #. i18n: file: alsa-sound-configuration-ui.ui:159
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
 #: rc.cpp:48 rc.cpp:190
-#, fuzzy
 msgid "96 kB"
-msgstr " кБ"
+msgstr "96 кБ"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:172
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableSoftVolume)
@@ -338,14 +331,13 @@ msgstr "Програмна гучність відтворення"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_5)
 #: rc.cpp:54 rc.cpp:196
 msgid "Playback Mixer Card"
-msgstr ""
+msgstr "Картка мікшера відтворення"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:239
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)
 #: rc.cpp:57 rc.cpp:199
-#, fuzzy
 msgid "Capture"
-msgstr "За&хопити"
+msgstr "Захоплення"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
@@ -521,16 +513,14 @@ msgstr "8"
 #. i18n: file: alsa-sound-configuration-ui.ui:497
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_6)
 #: rc.cpp:137 rc.cpp:279
-#, fuzzy
 msgid "Capture Mixer Card"
-msgstr "&Параметри мікшера для запису"
+msgstr "Картка мікшера захоплення"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:534
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage1)
 #: rc.cpp:140 rc.cpp:282
-#, fuzzy
 msgid "Capture Mixers"
-msgstr "&Параметри мікшера для запису"
+msgstr "Мікшери захоплення"
 
 #: rc.cpp:141
 msgctxt "NAME OF TRANSLATORS"

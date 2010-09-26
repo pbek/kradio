@@ -29,7 +29,16 @@ foreach my $lang(sort keys %langs) {
 }
 
 
-#print Dumper(\%langs);
+# my %de = keys %{$langs{de}};
+# my %es = keys %{$langs{es}};
+#
+# print map "es: $_\n", sort keys %es;
+# print map "de: $_\n", sort keys %de;
+#
+# my @diffs = grep { !exists $es{$_} } sort keys %de;
+# print map "diff: $_\n", @diffs;
+#
+# print Dumper(\%langs);
 
 
 
@@ -46,7 +55,7 @@ sub analyze_po
 
     @lines = merge_multi_lines(@lines);
 
-    my %translations = get_translations(@lines);
+    my %translations = get_translations($po, @lines);
 }
 
 
@@ -54,17 +63,25 @@ sub analyze_po
 
 sub get_translations
 {
-    my @lines  = @_;
-    my %res    = ();
+    my $filename = shift;
+    my @lines    = @_;
+    my $dirname  = $filename;
+    $dirname     =~ s:/[^/]+$::;
+    my %res      = ();
 
-    my $record = {};
+    my $record   = {};
+
+#    if ($filename =~ m:convert-presets/po/es.po$: ) {
+#        print map ("debug: $filename: $_\n", @lines);
+#    }
 
     while (@lines) {
         my $line = shift @lines;
 
         # file name and line number
         if ($line =~ /^\#:\s+/) {
-            $$record{location} = $';
+            $$record{location} = "$'";
+            $$record{key}      = "$dirname -- $$record{location}";
         }
         # file name and line number
         elsif ($line =~ /^\#\.\si18n:\s+file:\s+/) {
@@ -80,7 +97,7 @@ sub get_translations
             $$record{msgstr} = $1;
         }
         elsif ($line =~ /^\s*$/ && exists $$record{msgid}) {
-            $res{$$record{location}} = $record;
+            $res{$$record{key}} = $record;
             $record = {};
         }
         else {
@@ -88,9 +105,12 @@ sub get_translations
         }
     }
     if (exists $$record{msgid}) {
-        $res{$$record{location}} = $record;
+        $res{$$record{key}} = $record;
         $record = {};
     }
+#    if ($filename =~ m:convert-presets/po/es.po$: ) {
+#        print Dumper(\%res);
+#    }
     return %res;
 }
 

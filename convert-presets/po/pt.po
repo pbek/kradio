@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 15:18+0200\n"
+"POT-Creation-Date: 2010-09-26 15:41+0200\n"
 "PO-Revision-Date: 2006-02-07 13:13+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -49,8 +49,8 @@ msgid "Martin Witte"
 msgstr ""
 
 #: convert-presets.cpp:173
-msgid "be quiet"
-msgstr "está quieto"
+msgid "quiet mode - no informational output"
+msgstr ""
 
 #: convert-presets.cpp:174
 #, fuzzy
@@ -66,6 +66,9 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "be quiet"
+#~ msgstr "está quieto"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"

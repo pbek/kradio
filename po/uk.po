@@ -1,24 +1,22 @@
-# translation of uk.po to Ukrainian
-# translation of kradio.po to
+# translation of kradio.po to Ukrainian
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-05-09 11:32+0300\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"PO-Revision-Date: 2010-09-17 18:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
 #, kde-format
@@ -708,9 +706,8 @@ msgstr "Вивантажити бібліотеку вибраного моду�
 #. i18n: file: src/pluginmanager-configuration-ui.ui:201
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
 #: rc.cpp:41
-#, fuzzy
 msgid "Plugin Classes"
-msgstr "Модуль"
+msgstr "Класи модулів"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:216
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
@@ -735,9 +732,8 @@ msgstr "Створити новий екземпляр модуля, обран�
 #. i18n: file: src/pluginmanager-configuration-ui.ui:281
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
 #: rc.cpp:56
-#, fuzzy
 msgid "Plugin Instances"
-msgstr "Створені екземпляри модулів"
+msgstr "Екземпляри модулів"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:296
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
@@ -828,7 +824,7 @@ msgstr "ІКВибірСтанції"
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:102
 msgid "Selected Stations"
-msgstr "Обрані"
+msgstr "Вибрані"
 
 #. i18n: file: src/stationselector-ui.ui:105
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)

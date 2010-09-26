@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init( argc, argv, &aboutData );
 
     KCmdLineOptions options;
-    options.add("q", ki18n("be quiet"), 0);
+    options.add("q", ki18n("quiet mode - no informational output"), 0);
     options.add("+[preset files]", ki18n("preset files to convert"));
     KCmdLineArgs::addCmdLineOptions( options );
 

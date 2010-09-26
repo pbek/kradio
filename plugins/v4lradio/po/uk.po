@@ -1,25 +1,22 @@
 # translation of uk.po to Ukrainian
-# translation of ru.po to
-# translation of kradio-v4lradio.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006.
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-05-09 10:59+0300\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"PO-Revision-Date: 2010-09-17 18:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
@@ -30,23 +27,20 @@ msgstr "SetupDialogGeneral"
 #. i18n: file: v4lradio-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
 #: rc.cpp:6 rc.cpp:156
-#, fuzzy
 msgid "V4L Device"
-msgstr "Пристрої"
+msgstr "Пристрій V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:46
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
 #: rc.cpp:9 rc.cpp:159
-#, fuzzy
 msgid "Station scan step"
-msgstr "Крок зміни частоти під час пошуку"
+msgstr "Крок сканування"
 
 #. i18n: file: v4lradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
 #: rc.cpp:12 rc.cpp:162
-#, fuzzy
 msgid "Minimum signal quality"
-msgstr "Мінімальний рівень сигналу"
+msgstr "Мінімальна якість сигналу"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
@@ -97,9 +91,8 @@ msgstr "V4L-2 API"
 #. i18n: file: v4lradio-configuration-ui.ui:210
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
 #: rc.cpp:33 rc.cpp:183
-#, fuzzy
 msgid "Allowed frequency range"
-msgstr "Припустимий частотний діапазон:\tвід"
+msgstr "Припустимий частотний діапазон"
 
 #. i18n: file: v4lradio-configuration-ui.ui:256
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
@@ -128,9 +121,8 @@ msgstr "108 МГц"
 #. i18n: file: v4lradio-configuration-ui.ui:338
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
 #: rc.cpp:54 rc.cpp:204
-#, fuzzy
 msgid "Device frequency range"
-msgstr "діапазон частот пристрою"
+msgstr "Діапазон частот пристрою"
 
 #. i18n: file: v4lradio-configuration-ui.ui:346
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
@@ -141,14 +133,12 @@ msgstr "RDS"
 #. i18n: file: v4lradio-configuration-ui.ui:355
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
 #: rc.cpp:60 rc.cpp:210
-#, fuzzy
 msgid "Force RDS Enabled"
-msgstr "Примусове вмикання"
+msgstr "Примусове вмикання RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:372
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:63 rc.cpp:213
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -179,44 +169,24 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Зауваження для власників PVR:</span></"
-"p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Активне відтворення</span> слід використовувати, "
-"якщо вашу радіокартску не з’єднано з вхідним каналом вашої звукової картки "
-"кабелем. У такому випадку, KRadio доведеться захоплювати дані PCM з пристрою "
-"захоплення звуку для того, щоб надіслати дані PCM на пристній відтворення "
-"звуку. Тому, якщо ви увімкнете <span style=\" font-weight:600;\">Активне "
-"відтворення</span>, вам доведеться обрати належний канал/пристрій мікшера і "
-"належний канал/мікшер відтворення PCM. Це зокрема важливо для <span style=\" "
-"font-weight:600;\">карток PVR</span>, які, зазвичай, потребують захоплення "
-"звуку з пристрою <span style=\" font-style:italic;\">/dev/video24</span> "
-"(або подібного пристрою). Тому для <span style=\" font-weight:600;\">карток "
-"PVR</span> вам слід також належно налаштувати <span style=\" font-weight:600;"
-"\">Модуль трансляції</span>.</p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Зауваження щодо підтримки RDS:</"
-"span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Якщо ваша "
-"картка підтримує RDS, а RDS не працює, будь ласка, перевірте, чи завантажено "
-"<span style=\" font-weight:600;\">модуль ядра saa6588.ko</span>. Для карток "
-"на основі мікросхеми saa6588, цей модуль типово <span style=\" font-style:"
-"italic;\">не</span> завантажується у автоматичному режимі. Те, чи підтримує "
-"ваш модуль ядра V4L/V4L2 RDS, можна побачити у стандартній області радіо: "
-"індикатор RDS стає яскравим (подібно до індикаторів стерео і AM/FM). Текст "
-"RDS можна буде бачити у області радіо та підказках піктограми лотка. Назви "
-"станцій RDS буде використано у діалоговому вікні пошуку станцій як типові "
-"назви щойно знайдених станцій.</p></body></html>"
+"style=\" text-decoration: underline;\">Зауваження щодо підтримки RDS:</span> "
+"Якщо у вашій картці передбачено підтримку RDS, RDS не працює, будь ласка, "
+"перевірте, чи завантажено модуль ядра <span style=\" "
+"font-weight:600;\">kernel module saa6588.ko</span>. Якщо картку побудовано "
+"на основі мікросхеми saa6588, цей модуль типово <span style=\" "
+"font-style:italic;\">не</span> завантажується автоматично. Визначити, чи "
+"підтримується RDS модулем V4L/V4L2 вашого ядра, можна за стандартною панеллю "
+"радіо: індикатор RDS має бути підсвічено (подібно до індикаторів стерео і "
+"AM/FM). Текст RDS має з’явитися на стандартній панелі радіо, а підказки — "
+"над піктограмою лотка. Назви станцій RDS буде використано у діалоговому "
+"вікні сканування як типові назви для створених записів станцій.</p></body><"
+"/html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:409
 #. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
 #: rc.cpp:70 rc.cpp:220
-#, fuzzy
 msgid "Sound Devices"
-msgstr "Пристрої"
+msgstr "Звукові пристрої"
 
 #. i18n: file: v4lradio-configuration-ui.ui:425
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
@@ -276,7 +246,7 @@ msgstr "Пристрій відтворення"
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
 #: rc.cpp:100 rc.cpp:250
 msgid "PVR && Co"
-msgstr ""
+msgstr "PVR"
 
 #. i18n: file: v4lradio-configuration-ui.ui:575
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
@@ -360,7 +330,6 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:627
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:129 rc.cpp:279
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -394,10 +363,12 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" text-decoration: underline;\">Зауваження для власників PVR:</span> "
+"<span "
 "style=\" font-weight:600;\">Активне відтворення</span> слід використовувати, "
-"якщо вашу радіокартску не з’єднано з вхідним каналом вашої звукової картки "
+"якщо вашу радіокартку не з’єднано з вхідним каналом вашої звукової картки "
 "кабелем. У такому випадку, KRadio доведеться захоплювати дані PCM з пристрою "
-"захоплення звуку для того, щоб надіслати дані PCM на пристній відтворення "
+"захоплення звуку для того, щоб надіслати дані PCM на пристрій відтворення "
 "звуку. Тому, якщо ви увімкнете <span style=\" font-weight:600;\">Активне "
 "відтворення</span>, вам доведеться обрати належний канал/пристрій мікшера і "
 "належний канал/мікшер відтворення PCM. Це зокрема важливо для <span style=\" "
@@ -516,6 +487,9 @@ msgid ""
 "support for V4L1 seems to be not working properly any more. I'm now once "
 "switching to V4L Version 2. You may override it later."
 msgstr ""
+"Вами було вибрано версію програмного інтерфейсу V4L 1. Починаючи з ядра 2.6."
+"31, підтримка V4L1 вже не працює належним чином. Перемикаємося на версію V4L "
+"2. Ви можете змінити відповідні налаштування пізніше."
 
 #: v4lradio.cpp:1272
 #, kde-format
@@ -546,7 +520,7 @@ msgstr "Не можу відкрити пристрій радіо %1"
 #: v4lradio.cpp:1474
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
-msgstr ""
+msgstr "Модуль V4L (режим V4L%1, некоректний пристрій): %2"
 
 #: v4lradio.cpp:1481
 #, kde-format
@@ -561,7 +535,7 @@ msgstr "виявлено %1"
 #: v4lradio.cpp:1497 v4lradio.cpp:1540
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
-msgstr ""
+msgstr "Модуль V4L (режим V4L%1): %2"
 
 #: v4lradio.cpp:1519
 #, kde-format
