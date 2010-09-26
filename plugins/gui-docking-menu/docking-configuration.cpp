@@ -31,27 +31,82 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
       m_docking(docking),
       m_disableGUIUpdates(false)
 {
-    QHBoxLayout *layout  = new QHBoxLayout();
+    QGridLayout *layoutClicks  = new QGridLayout();
+    QHBoxLayout *layoutWheel   = new QHBoxLayout();
+
+    m_labelClickModeCaption                 = new QLabel(this);
+    m_labelClickMode      [Qt::LeftButton]  = new QLabel(this);
+    m_labelClickMode      [Qt::RightButton] = new QLabel(this);
+    m_labelClickMode      [Qt::MidButton]   = new QLabel(this);
+    m_labelClickMode      [Qt::XButton1]    = new QLabel(this);
+    m_labelClickMode      [Qt::XButton2]    = new QLabel(this);
+    m_labelDoubleClickModeCaption           = new QLabel(this);
+    m_labelDoubleClickMode[Qt::LeftButton]  = new QLabel(this);
+    m_labelDoubleClickMode[Qt::RightButton] = new QLabel(this);
+    m_labelDoubleClickMode[Qt::MidButton]   = new QLabel(this);
+    m_labelDoubleClickMode[Qt::XButton1]    = new QLabel(this);
+    m_labelDoubleClickMode[Qt::XButton2]    = new QLabel(this);
+    m_labelWheelMode                        = new QLabel(this);
+
+    m_comboClickMode      [Qt::LeftButton]  = new QComboBox(this);
+    m_comboClickMode      [Qt::RightButton] = new QComboBox(this);
+    m_comboClickMode      [Qt::MidButton]   = new QComboBox(this);
+    m_comboClickMode      [Qt::XButton1]    = new QComboBox(this);
+    m_comboClickMode      [Qt::XButton2]    = new QComboBox(this);
+    m_comboDoubleClickMode[Qt::LeftButton]  = new QComboBox(this);
+    m_comboDoubleClickMode[Qt::RightButton] = new QComboBox(this);
+    m_comboDoubleClickMode[Qt::MidButton]   = new QComboBox(this);
+    m_comboDoubleClickMode[Qt::XButton1]    = new QComboBox(this);
+    m_comboDoubleClickMode[Qt::XButton2]    = new QComboBox(this);
+    m_comboWheelMode                        = new QComboBox(this);
+
+
+    layoutClicks->addWidget(m_labelClickModeCaption,                 /*row*/ 0, /*col*/ 0, /*rowspan*/ 1, /*colspan*/ 6);
+    layoutClicks->addWidget(m_labelClickMode      [Qt::LeftButton],  /*row*/ 1, /*col*/ 0);
+    layoutClicks->addWidget(m_comboClickMode      [Qt::LeftButton],  /*row*/ 1, /*col*/ 1);
+    layoutClicks->addWidget(m_labelClickMode      [Qt::MidButton],   /*row*/ 1, /*col*/ 2);
+    layoutClicks->addWidget(m_comboClickMode      [Qt::MidButton],   /*row*/ 1, /*col*/ 3);
+    layoutClicks->addWidget(m_labelClickMode      [Qt::RightButton], /*row*/ 1, /*col*/ 4);
+    layoutClicks->addWidget(m_comboClickMode      [Qt::RightButton], /*row*/ 1, /*col*/ 5);
+    layoutClicks->addWidget(m_labelClickMode      [Qt::XButton1],    /*row*/ 2, /*col*/ 0);
+    layoutClicks->addWidget(m_comboClickMode      [Qt::XButton1],    /*row*/ 2, /*col*/ 1);
+    layoutClicks->addWidget(m_labelClickMode      [Qt::XButton2],    /*row*/ 2, /*col*/ 2);
+    layoutClicks->addWidget(m_comboClickMode      [Qt::XButton2],    /*row*/ 2, /*col*/ 3);
+
+    layoutClicks->addWidget(m_labelDoubleClickModeCaption,           /*row*/ 3, /*col*/ 0, /*rowspan*/ 1, /*colspan*/ 6);
+    layoutClicks->addWidget(m_labelDoubleClickMode[Qt::LeftButton],  /*row*/ 4, /*col*/ 0);
+    layoutClicks->addWidget(m_comboDoubleClickMode[Qt::LeftButton],  /*row*/ 4, /*col*/ 1);
+    layoutClicks->addWidget(m_labelDoubleClickMode[Qt::MidButton],   /*row*/ 4, /*col*/ 2);
+    layoutClicks->addWidget(m_comboDoubleClickMode[Qt::MidButton],   /*row*/ 4, /*col*/ 3);
+    layoutClicks->addWidget(m_labelDoubleClickMode[Qt::RightButton], /*row*/ 4, /*col*/ 4);
+    layoutClicks->addWidget(m_comboDoubleClickMode[Qt::RightButton], /*row*/ 4, /*col*/ 5);
+    layoutClicks->addWidget(m_labelDoubleClickMode[Qt::XButton1],    /*row*/ 5, /*col*/ 0);
+    layoutClicks->addWidget(m_comboDoubleClickMode[Qt::XButton1],    /*row*/ 5, /*col*/ 1);
+    layoutClicks->addWidget(m_labelDoubleClickMode[Qt::XButton2],    /*row*/ 5, /*col*/ 2);
+    layoutClicks->addWidget(m_comboDoubleClickMode[Qt::XButton2],    /*row*/ 5, /*col*/ 3);
+
+    layoutWheel->addWidget(m_labelWheelMode);
+    layoutWheel->addWidget(m_comboWheelMode);
+    layoutWheel->addItem  (new QSpacerItem( 20, 2, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
+
     QHBoxLayout *layout2 = new QHBoxLayout();
-
-    m_labelClickMode = new QLabel(this);
-    layout->addWidget(m_labelClickMode);
-
-    m_comboClickMode = new QComboBox(this);
-    layout->addWidget(m_comboClickMode);
-
-    QSpacerItem *spacer = new QSpacerItem( 20, 2, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    layout->addItem(spacer);
-
-    QFrame *line = new QFrame(this);
+    QFrame     *line     = new QFrame(this);
     line->setFrameShape ( QFrame::HLine );
     line->setFrameShadow( QFrame::Sunken );
     layout2->addWidget(line);
 
-    getGridLayout()->addLayout(layout2, /*row*/2, /*col*/0, /*rowspan*/1, /*colspan*/3);
-    getGridLayout()->addLayout(layout,  /*row*/3, /*col*/0, /*rowspan*/1, /*colspan*/3);
+    getGridLayout()->addLayout(layout2,                 /*row*/2, /*col*/0, /*rowspan*/1, /*colspan*/3);
+    getGridLayout()->addLayout(layoutClicks,            /*row*/3, /*col*/0, /*rowspan*/1, /*colspan*/3);
+    getGridLayout()->addLayout(layoutWheel,             /*row*/4, /*col*/0, /*rowspan*/1, /*colspan*/3);
 
-    connect(m_comboClickMode, SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
+    foreach (QComboBox *combo, m_comboClickMode) {
+        connect(combo,  SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
+    }
+    foreach (QComboBox *combo, m_comboDoubleClickMode) {
+        connect(combo,  SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
+    }
+    connect(m_comboWheelMode,                        SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
 
     languageChange();
     m_dirty=true;
@@ -67,12 +122,60 @@ DockingConfiguration::~DockingConfiguration ()
 void DockingConfiguration::languageChange()
 {
     StationSelector::languageChange();
-    m_labelClickMode->setText(i18n( "Left Mouse Click on Tray" ) );
 
-    m_comboClickMode->clear();
-    m_comboClickMode->addItem(i18n("Show/Hide all GUI Elements"));
-    m_comboClickMode->addItem(i18n("Power On/Off"));
+    m_labelClickModeCaption                 -> setText(i18n( "Mouse Click on Tray Icon"        ) );
+    m_labelClickMode      [Qt::LeftButton]  -> setText(i18n( "Left"     ) );
+    m_labelClickMode      [Qt::RightButton] -> setText(i18n( "Right"    ) );
+    m_labelClickMode      [Qt::MidButton]   -> setText(i18n( "Middle"   ) );
+    m_labelClickMode      [Qt::XButton1]    -> setText(i18n( "XButton1" ) );
+    m_labelClickMode      [Qt::XButton2]    -> setText(i18n( "XButton2" ) );
+
+    m_labelDoubleClickModeCaption           -> setText(i18n( "Mouse Double-Click on Tray Icon" ) );
+    m_labelDoubleClickMode[Qt::LeftButton]  -> setText(i18n( "Left"     ) );
+    m_labelDoubleClickMode[Qt::RightButton] -> setText(i18n( "Right"    ) );
+    m_labelDoubleClickMode[Qt::MidButton]   -> setText(i18n( "Middle"   ) );
+    m_labelDoubleClickMode[Qt::XButton1]    -> setText(i18n( "XButton1" ) );
+    m_labelDoubleClickMode[Qt::XButton2]    -> setText(i18n( "XButton2" ) );
+
+    m_labelWheelMode                        -> setText(i18n( "Mouse Wheel Action on Tray Icon" ) );
+
+    QList<QComboBox*>  allCombos = m_comboClickMode.values();
+    allCombos.append(m_comboDoubleClickMode.values());
+    foreach (QComboBox *combo, allCombos) {
+        combo->clear();
+        combo->addItem(i18n("No Action"),               (int)staNone);
+        combo->addItem(i18n("Show/Hide Windows"),       (int)staShowHide);
+        combo->addItem(i18n("Power On/Off"),            (int)staPowerOnOff);
+        combo->addItem(i18n("Pause/Play"),              (int)staPause);
+        combo->addItem(i18n("Recording"),               (int)staRecord);
+        combo->addItem(i18n("System Tray Menu"),        (int)staSystrayMenu);
+        combo->addItem(i18n("GUI-Plugin Menu"),         (int)staGuiPluginsMenu);
+        combo->addItem(i18n("Configuration"),           (int)staConfigDialog);
+    }
+
+    m_comboWheelMode->addItem(i18n("No Action"),        (int)swaNone);
+    m_comboWheelMode->addItem(i18n("Change Station"),   (int)swaChangeStation);
+    m_comboWheelMode->addItem(i18n("Change Volume"),    (int)swaChangeVolume);
+    m_comboWheelMode->addItem(i18n("Change Frequency"), (int)swaChangeFrequency);
+
+
+    // features currently not supported by SystemTrayIcon/StatusNotifier mechanisms
+    m_labelClickMode      [Qt::XButton1]    ->setEnabled(false);
+    m_labelClickMode      [Qt::XButton2]    ->setEnabled(false);
+    m_labelDoubleClickMode[Qt::RightButton] ->setEnabled(false);
+    m_labelDoubleClickMode[Qt::MidButton]   ->setEnabled(false);
+    m_labelDoubleClickMode[Qt::XButton1]    ->setEnabled(false);
+    m_labelDoubleClickMode[Qt::XButton2]    ->setEnabled(false);
+
+    m_comboClickMode      [Qt::XButton1]    ->setEnabled(false);
+    m_comboClickMode      [Qt::XButton2]    ->setEnabled(false);
+    m_comboDoubleClickMode[Qt::RightButton] ->setEnabled(false);
+    m_comboDoubleClickMode[Qt::MidButton]   ->setEnabled(false);
+    m_comboDoubleClickMode[Qt::XButton1]    ->setEnabled(false);
+    m_comboDoubleClickMode[Qt::XButton2]    ->setEnabled(false);
+
 }
+
 
 void DockingConfiguration::slotOK()
 {
@@ -80,28 +183,63 @@ void DockingConfiguration::slotOK()
         StationSelector::slotOK();
         bool old = m_disableGUIUpdates;
         m_disableGUIUpdates = true;
-        if (m_docking)
-            m_docking->setLeftClickAction((LeftClickAction)m_comboClickMode->currentIndex());
+        if (m_docking) {
+            foreach (Qt::MouseButton btn, m_comboClickMode.keys()) {
+                m_docking->setClickAction      (btn, (SystrayClickAction)m_comboClickMode      [btn]->itemData(m_comboClickMode      [btn]->currentIndex()).value<int>());
+            }
+            foreach (Qt::MouseButton btn, m_comboDoubleClickMode.keys()) {
+                m_docking->setDoubleClickAction(btn, (SystrayClickAction)m_comboDoubleClickMode[btn]->itemData(m_comboDoubleClickMode[btn]->currentIndex()).value<int>());
+            }
+            m_docking->setWheelAction((SystrayWheelAction)m_comboWheelMode->itemData(m_comboWheelMode->currentIndex()).value<int>());
+        }
         m_disableGUIUpdates = old;
         m_dirty = false;
     }
 }
 
+
 void DockingConfiguration::slotCancel()
 {
     if (m_dirty) {
         StationSelector::slotCancel();
-        if (m_docking)
-            m_comboClickMode->setCurrentIndex(m_docking->getLeftClickAction());
+        if (m_docking) {
+            foreach (Qt::MouseButton btn, m_comboClickMode.keys()) {
+                m_comboClickMode[btn]      ->setCurrentIndex(m_comboClickMode      [btn]->findData(QVariant((int)m_docking->getClickAction      (btn))));
+            }
+            foreach (Qt::MouseButton btn, m_comboDoubleClickMode.keys()) {
+                m_comboDoubleClickMode[btn]->setCurrentIndex(m_comboDoubleClickMode[btn]->findData(QVariant((int)m_docking->getDoubleClickAction(btn))));
+            }
+            m_comboWheelMode->setCurrentIndex(m_comboWheelMode->findData(QVariant((int)m_docking->getWheelAction())));
+        }
         m_dirty = false;
     }
 }
 
-void DockingConfiguration::slotLeftClickActionChanged(LeftClickAction action)
+
+void DockingConfiguration::slotClickActionChanged(Qt::MouseButton btn, SystrayClickAction action)
 {
     if (!m_disableGUIUpdates) {
-        if (m_docking)
-            m_comboClickMode->setCurrentIndex(action);
+        if (m_docking) {
+            m_comboClickMode[btn]->setCurrentIndex(m_comboClickMode[btn]->findData(QVariant((int)action)));
+        }
+    }
+}
+
+void DockingConfiguration::slotDoubleClickActionChanged(Qt::MouseButton btn, SystrayClickAction action)
+{
+    if (!m_disableGUIUpdates) {
+        if (m_docking) {
+            m_comboDoubleClickMode[btn]->setCurrentIndex(m_comboDoubleClickMode[btn]->findData(QVariant((int)action)));
+        }
+    }
+}
+
+void DockingConfiguration::slotWheelActionChanged(SystrayWheelAction action)
+{
+    if (!m_disableGUIUpdates) {
+        if (m_docking) {
+            m_comboWheelMode->setCurrentIndex(m_comboWheelMode->findData(QVariant((int)action)));
+        }
     }
 }
 

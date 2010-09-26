@@ -36,7 +36,8 @@
 #include <Qt3Support/Q3DragObject>
 #include <QtCore/QTimer>
 
-enum LeftClickAction { lcaShowHide = 0, lcaPowerOnOff = 1 };
+enum SystrayClickAction { staShowHide = 0, staPowerOnOff = 1, staPause, staRecord, staSystrayMenu, staGuiPluginsMenu, staConfigDialog, staNone };
+enum SystrayWheelAction { swaChangeStation = 0, swaChangeVolume, swaChangeFrequency, swaNone };
 
 class RadioDocking : public KSystemTrayIcon,
                      public PluginBase,
@@ -155,6 +156,10 @@ protected slots:
     void    slotUpdateRecordingMenu();
 
 protected:
+    bool    event(QEvent *e);
+    bool    handleClickAction(SystrayClickAction clickAction);
+    bool    handleWheelAction(SystrayWheelAction wheelAction, int wheelDir);
+
     void    updateTrayIcon(bool run_query_rec, bool run_query_pause, bool known_rec_state, bool known_pause_state);
     void    updatePauseMenuItem(bool run_query, bool known_pause_state);
     void    buildRecordingMenu();
@@ -172,48 +177,57 @@ protected:
 
 public:
 
-    LeftClickAction getLeftClickAction() const { return m_leftClickAction; }
-    void            setLeftClickAction(LeftClickAction action);
+    SystrayClickAction   getClickAction      (Qt::MouseButton btn)  const { return m_ClickActions[btn];       }
+    SystrayClickAction   getDoubleClickAction(Qt::MouseButton btn)  const { return m_DoubleClickActions[btn]; }
+    SystrayWheelAction   getWheelAction      ()                     const { return m_WheelAction;            }
+    void                 setClickAction      (Qt::MouseButton btn, SystrayClickAction action);
+    void                 setDoubleClickAction(Qt::MouseButton btn, SystrayClickAction action);
+    void                 setWheelAction      (SystrayWheelAction action);
 
 signals:
-    void sigLeftClickActionChanged(LeftClickAction action);
+    void sigClickActionChanged      (Qt::MouseButton btn, SystrayClickAction action);
+    void sigDoubleClickActionChanged(Qt::MouseButton btn, SystrayClickAction action);
+    void sigWheelActionChanged      (SystrayWheelAction action);
 
 protected:
 
-    KMenu       *m_menu;
-    KMenu       *m_recordingMenu;
-    KHelpMenu    m_helpMenu;
-    QStringList  m_stationIDs;
+    KMenu                                     *m_menu;
+    KMenu                                     *m_recordingMenu;
+    KHelpMenu                                  m_helpMenu;
+    QStringList                                m_stationIDs;
 
     // menu Item IDs
-    QAction         *m_quitID;
-    QAction         *m_titleID;
-    QAction         *m_alarmID;
-    QAction         *m_recordingID;
-    QAction         *m_recordingMenuAction;
-    QAction         *m_powerID;
-    QAction         *m_pauseID;
-    QAction         *m_sleepID;
-    QAction         *m_seekfwID;
-    QAction         *m_seekbwID;
-    QMap<QString, QAction*> m_stationMenuIDs;
-    QActionGroup    *m_stationsActionGroup;
+    QAction                                   *m_quitID;
+    QAction                                   *m_titleID;
+    QAction                                   *m_alarmID;
+    QAction                                   *m_recordingID;
+    QAction                                   *m_recordingMenuAction;
+    QAction                                   *m_powerID;
+    QAction                                   *m_pauseID;
+    QAction                                   *m_sleepID;
+    QAction                                   *m_seekfwID;
+    QAction                                   *m_seekbwID;
+    QMap<QString, QAction*>                    m_stationMenuIDs;
+    QActionGroup                              *m_stationsActionGroup;
 
-    QMap<SoundStreamID, QAction*>  m_StreamID2MenuID;
+    QMap<SoundStreamID, QAction*>              m_StreamID2MenuID;
 
-    LeftClickAction                m_leftClickAction;
-
-    QTimer                         m_menuRebuildWorkaroundTimer;
-    bool                           m_inMenuAction;
-    bool                           m_scheduleMenuRebuild;
+    QMap<Qt::MouseButton, SystrayClickAction>  m_ClickActions;
+    QMap<Qt::MouseButton, SystrayClickAction>  m_DoubleClickActions;
+    SystrayWheelAction                         m_WheelAction;
 
 
-    bool    m_paused;
-    bool    m_recording;
-    bool    m_playing;
+    QTimer                                     m_menuRebuildWorkaroundTimer;
+    bool                                       m_inMenuAction;
+    bool                                       m_scheduleMenuRebuild;
 
-    QList<QAction*>                m_WorkaroundRecordingMenuActionsToBeDeleted;
-    QTimer                         m_WorkaroundRecordingMenuUpdate;
+
+    bool                                       m_paused;
+    bool                                       m_recording;
+    bool                                       m_playing;
+
+    QList<QAction*>                            m_WorkaroundRecordingMenuActionsToBeDeleted;
+    QTimer                                     m_WorkaroundRecordingMenuUpdate;
 };
 
 

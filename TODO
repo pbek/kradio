@@ -18,11 +18,11 @@ For 4.0.1
   * --done-- alsa config fixes
   * --done-- automatically switch to V4L2 for kernels 2.6.31.x (and give warning, but
     allow manually override)
+  * --done-- configurable clicks for systray: left/right/mid X power/hideshow/menu
 
 For 4.0.2
 
   * lirc 0.8.5 compatibility fixes
-  * configurable clicks for systray: left/right/mid X power/hideshow/menu
   * check box for v4l config to disable caps check at startup to minimize interference
   * make recording name configurable
 

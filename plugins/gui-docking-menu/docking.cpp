@@ -1,7 +1,7 @@
 /***************************************************************************
                           docking.cpp  -  description
                              -------------------
-    begin                : Don Mär  8 21:57:17 CET 2001
+    begin                : Don Mar  8 21:57:17 CET 2001
     copyright            : (C) 2002 by Ernst Martin Witte
     email                : emw-kradio@nocabal.de
 ***************************************************************************/
@@ -32,6 +32,7 @@
 #include "seekradio_interfaces.h"
 #include "stationlist.h"
 #include "pluginmanager.h"
+#include "plugin_configuration_dialog.h"
 #include "widgetpluginbase.h"
 #include "radiostation.h"
 //#include "aboutwidget.h"
@@ -65,10 +66,22 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
     m_seekfwID(NULL),
     m_seekbwID(NULL),
     m_stationsActionGroup(NULL),
-    m_leftClickAction(lcaShowHide),
     m_inMenuAction(false),
     m_scheduleMenuRebuild(false)
 {
+    // default click actions
+    m_ClickActions[Qt::LeftButton]        = staShowHide;
+    m_ClickActions[Qt::RightButton]       = staSystrayMenu;
+    m_ClickActions[Qt::MidButton]         = staGuiPluginsMenu;
+    m_ClickActions[Qt::XButton1]          = staNone;
+    m_ClickActions[Qt::XButton2]          = staNone;
+    m_DoubleClickActions[Qt::LeftButton]  = staPowerOnOff;
+    m_DoubleClickActions[Qt::RightButton] = staRecord;
+    m_DoubleClickActions[Qt::MidButton]   = staNone;
+    m_DoubleClickActions[Qt::XButton1]    = staNone;
+    m_DoubleClickActions[Qt::XButton2]    = staNone;
+    m_WheelAction                         = swaChangeStation;
+
     m_menuRebuildWorkaroundTimer.setInterval(100);
     m_menuRebuildWorkaroundTimer.setSingleShot(true);
     QObject::connect(&m_menuRebuildWorkaroundTimer, SIGNAL(timeout()), this, SLOT(buildContextMenu()));
@@ -78,7 +91,7 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
 
 
     m_menu = new KMenu();
-    setContextMenu(m_menu);
+    setContextMenu(NULL);
 
     QObject::connect(m_menu, SIGNAL(triggered(QAction *)),
                      this,   SLOT(slotMenuItemActivated(QAction *)));
@@ -167,11 +180,32 @@ void   RadioDocking::restoreState (const KConfigGroup &config)
             m_stationIDs += s;
     }
 
-    m_leftClickAction = (LeftClickAction)config.readEntry("left_click_action", (int)lcaShowHide);
+    m_ClickActions[Qt::LeftButton]        = (SystrayClickAction)config.readEntry("left_click_action",           (int)m_ClickActions[Qt::LeftButton]);
+    m_ClickActions[Qt::RightButton]       = (SystrayClickAction)config.readEntry("right_click_action",          (int)m_ClickActions[Qt::RightButton]);
+    m_ClickActions[Qt::MidButton]         = (SystrayClickAction)config.readEntry("mid_click_action",            (int)m_ClickActions[Qt::MidButton]);
+    m_ClickActions[Qt::XButton1]          = (SystrayClickAction)config.readEntry("xbutton1_click_action",       (int)m_ClickActions[Qt::XButton1]);
+    m_ClickActions[Qt::XButton2]          = (SystrayClickAction)config.readEntry("xbutton2_click_action",       (int)m_ClickActions[Qt::XButton2]);
+    m_DoubleClickActions[Qt::LeftButton]  = (SystrayClickAction)config.readEntry("left_doubleclick_action",     (int)m_DoubleClickActions[Qt::LeftButton]);
+    m_DoubleClickActions[Qt::RightButton] = (SystrayClickAction)config.readEntry("right_doubleclick_action",    (int)m_DoubleClickActions[Qt::RightButton]);
+    m_DoubleClickActions[Qt::MidButton]   = (SystrayClickAction)config.readEntry("mid_doubleclick_action",      (int)m_DoubleClickActions[Qt::MidButton]);
+    m_DoubleClickActions[Qt::XButton1]    = (SystrayClickAction)config.readEntry("xbutton1_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton1]);
+    m_DoubleClickActions[Qt::XButton2]    = (SystrayClickAction)config.readEntry("xbutton2_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton2]);
+    m_WheelAction                         = (SystrayWheelAction)config.readEntry("wheel_action",                (int)m_WheelAction);
 
     buildContextMenu();
     notifyStationSelectionChanged(m_stationIDs);
-    emit sigLeftClickActionChanged(m_leftClickAction);
+
+    emit sigClickActionChanged      (Qt::LeftButton,  m_ClickActions      [Qt::LeftButton] );
+    emit sigClickActionChanged      (Qt::RightButton, m_ClickActions      [Qt::RightButton]);
+    emit sigClickActionChanged      (Qt::MidButton,   m_ClickActions      [Qt::MidButton]  );
+    emit sigClickActionChanged      (Qt::XButton1,    m_ClickActions      [Qt::XButton1]   );
+    emit sigClickActionChanged      (Qt::XButton2,    m_ClickActions      [Qt::XButton2]   );
+    emit sigDoubleClickActionChanged(Qt::LeftButton,  m_DoubleClickActions[Qt::LeftButton] );
+    emit sigDoubleClickActionChanged(Qt::RightButton, m_DoubleClickActions[Qt::RightButton]);
+    emit sigDoubleClickActionChanged(Qt::MidButton,   m_DoubleClickActions[Qt::MidButton]  );
+    emit sigDoubleClickActionChanged(Qt::XButton1,    m_DoubleClickActions[Qt::XButton1]   );
+    emit sigDoubleClickActionChanged(Qt::XButton2,    m_DoubleClickActions[Qt::XButton2]   );
+    emit sigWheelActionChanged      (m_WheelAction);
 }
 
 
@@ -185,8 +219,18 @@ void RadioDocking::saveState (KConfigGroup &config) const
     for (QStringList::const_iterator it = m_stationIDs.begin(); it != end; ++it, ++i) {
         config.writeEntry(QString("stationID-") + QString().setNum(i), *it);
     }
-    config.writeEntry("left_click_action", (int)m_leftClickAction);
 
+    config.writeEntry("left_click_action",           (int)m_ClickActions[Qt::LeftButton]);
+    config.writeEntry("right_click_action",          (int)m_ClickActions[Qt::RightButton]);
+    config.writeEntry("mid_click_action",            (int)m_ClickActions[Qt::MidButton]);
+    config.writeEntry("xbutton1_click_action",       (int)m_ClickActions[Qt::XButton1]);
+    config.writeEntry("xbutton2_click_action",       (int)m_ClickActions[Qt::XButton2]);
+    config.writeEntry("left_doubleclick_action",     (int)m_DoubleClickActions[Qt::LeftButton]);
+    config.writeEntry("right_doubleclick_action",    (int)m_DoubleClickActions[Qt::RightButton]);
+    config.writeEntry("mid_doubleclick_action",      (int)m_DoubleClickActions[Qt::MidButton]);
+    config.writeEntry("xbutton1_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton1]);
+    config.writeEntry("xbutton2_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton2]);
+    config.writeEntry("wheel_action",                (int)m_WheelAction);
 }
 
 
@@ -195,8 +239,12 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
     DockingConfiguration *conf = new DockingConfiguration(this, NULL);
     connectI (conf);
 
-    QObject::connect(this, SIGNAL(sigLeftClickActionChanged(LeftClickAction)),
-                     conf, SLOT(slotLeftClickActionChanged(LeftClickAction)));
+    QObject::connect(this, SIGNAL(sigClickActionChanged      (Qt::MouseButton, SystrayClickAction)),
+                     conf, SLOT(slotClickActionChanged       (Qt::MouseButton, SystrayClickAction)));
+    QObject::connect(this, SIGNAL(sigDoubleClickActionChanged(Qt::MouseButton, SystrayClickAction)),
+                     conf, SLOT(slotDoubleClickActionChanged (Qt::MouseButton, SystrayClickAction)));
+    QObject::connect(this, SIGNAL(sigWheelActionChanged      (SystrayWheelAction)),
+                     conf, SLOT(slotWheelActionChanged       (SystrayWheelAction)));
 
     return ConfigPageInfo(
         conf,
@@ -491,32 +539,168 @@ bool RadioDocking::noticeStationsChanged(const StationList &/*sl*/)
 }
 
 
-void RadioDocking::slotActivated ( QSystemTrayIcon::ActivationReason reason )
+bool RadioDocking::event(QEvent *e)
 {
-    switch (reason) {
-        case QSystemTrayIcon::Trigger :
-            switch (m_leftClickAction) {
-                case lcaShowHide :
-                    ShowHideWidgetPlugins();
-                    // FIXME: [mcamen] According the KDE usability guidelines a left
-                    //                 click on the systray icon should show/hide the
-                    //                 application window
-                    // TODO: [mcamen] Use KSystemtray::toggleActive and friends once we
-                    //                depend on KDE 3.3
-                    break;
-                case lcaPowerOnOff :
-                    if (queryIsPowerOn())
-                        sendPowerOff();
-                    else
-                        sendPowerOn();
-                    break;
-                default:
-                    break;
+    bool                res         = false;
+
+    QMouseEvent        *me          = NULL;
+    QWheelEvent        *we          = NULL;
+    SystrayClickAction  clickAction = staNone;
+    SystrayWheelAction  wheelAction = swaNone;
+    int                 wheelDir    = 0;
+
+    switch(e->type()) {
+        case QEvent::MouseButtonPress:
+            me = (QMouseEvent*)e;
+            if (m_ClickActions.contains(me->button())) {
+                clickAction = m_ClickActions[me->button()];
             }
+            break;
+        case QEvent::MouseButtonDblClick:
+            me = (QMouseEvent*)e;
+            if (m_DoubleClickActions.contains(me->button())) {
+                clickAction = m_DoubleClickActions[me->button()];
+            }
+            break;
+        case QEvent::Wheel:
+            we          = (QWheelEvent*)e;
+            wheelDir    = (we->delta() > 0) ? 1 : ((we->delta() < 0) ? -1 : 0);
+            wheelAction = m_WheelAction;
             break;
         default:
             break;
     }
+
+    bool clickHandled = handleClickAction(clickAction);
+    bool wheelHandled = handleWheelAction(wheelAction, wheelDir);
+
+    if (wheelHandled || clickHandled) {
+        e->accept();
+        res = true;
+    }
+
+
+    if (!res) {
+        res = KSystemTrayIcon::event(e);
+    }
+
+    return res;
+}
+
+
+bool RadioDocking::handleWheelAction(SystrayWheelAction wheelAction, int wheelDir)
+{
+    bool wheelHandled = true;
+
+    switch (wheelAction) {
+        case swaNone:
+            wheelHandled = false;
+            break;
+        case swaChangeStation: {
+                int k = queryCurrentStationIdx() - wheelDir;
+                if (k >= queryStations().count())
+                    k = 0;
+                else if (k < 0)
+                    k = queryStations().count() - 1;
+                sendActivateStation(k);
+            }
+            break;
+        case swaChangeVolume: {
+                float vol = 0;
+                SoundStreamID ssid = queryCurrentSoundStreamSinkID();
+                queryPlaybackVolume(ssid, vol);
+                sendPlaybackVolume (ssid, vol + wheelDir * 1.0/32.0);
+            }
+            break;
+        case swaChangeFrequency:
+            if (wheelDir > 0) {
+                slotSeekFwd();
+            } else if (wheelDir < 0) {
+                slotSeekBkwd();
+            }
+            break;
+        default:
+            wheelHandled = false;
+            break;
+    }
+    return wheelHandled;
+}
+
+
+bool RadioDocking::handleClickAction(SystrayClickAction clickAction)
+{
+    bool clickHandled = true;
+
+    switch (clickAction) {
+        case staNone:
+            clickHandled = false;
+            break;
+        case staShowHide:
+            ShowHideWidgetPlugins();
+            break;
+        case staPowerOnOff:
+            slotPower();
+            break;
+        case staPause:
+            slotPause();
+            break;
+        case staRecord: {
+                SoundStreamID ssid = queryCurrentSoundStreamSinkID();
+                bool          q    = false;
+                SoundFormat   sf;
+                queryIsRecordingRunning(ssid, q = false, sf);
+                if (!q) {
+                    sendStartRecording(ssid);
+                } else {
+                    sendStopRecording(ssid);
+                }
+            }
+            break;
+        case staSystrayMenu:
+            m_menu->popup(QCursor::pos());
+            break;
+        case staGuiPluginsMenu:
+            m_manager->getPluginHideShowMenu()->popup(QCursor::pos());
+            break;
+        case staConfigDialog: {
+                WidgetPluginBase *w = m_manager ? m_manager->getConfigDialog() : NULL;
+                if (w) w->isReallyVisible() ? w->getWidget()->hide() : w->getWidget()->show();
+            }
+            break;
+        default:
+            clickHandled = false;
+            break;
+    }
+
+
+    return clickHandled;
+}
+
+
+void RadioDocking::slotActivated ( QSystemTrayIcon::ActivationReason reason )
+{
+    SystrayClickAction  clickAction = staNone;
+
+    switch (reason) {
+        case QSystemTrayIcon::Context:
+            clickAction = m_ClickActions[Qt::RightButton];
+            break;
+
+        case QSystemTrayIcon::DoubleClick:
+            clickAction = m_DoubleClickActions[Qt::LeftButton];
+            break;
+
+        case QSystemTrayIcon::MiddleClick:
+            clickAction = m_ClickActions[Qt::MidButton];
+            break;
+
+        case QSystemTrayIcon::Trigger :
+            clickAction = m_ClickActions[Qt::LeftButton];
+            break;
+        default:
+            break;
+    }
+    handleClickAction(clickAction);
 }
 
 
@@ -746,13 +930,33 @@ bool RadioDocking::noticeSoundStreamChanged(SoundStreamID id)
 }
 
 
-void RadioDocking::setLeftClickAction(LeftClickAction action)
+void RadioDocking::setClickAction(Qt::MouseButton btn, SystrayClickAction action)
 {
-    if (m_leftClickAction != action) {
-        m_leftClickAction = action;
-        emit sigLeftClickActionChanged(m_leftClickAction);
+//     IErrorLogClient::staticLogDebug(QString("RadioDocking::setClickAction(%1, %2)").arg(btn).arg(action));
+    if (m_ClickActions[btn] != action) {
+        m_ClickActions[btn] = action;
+        emit sigClickActionChanged(btn, action);
     }
 }
+
+void RadioDocking::setDoubleClickAction(Qt::MouseButton btn, SystrayClickAction action)
+{
+//     IErrorLogClient::staticLogDebug(QString("RadioDocking::setDoubleClickAction(%1, %2)").arg(btn).arg(action));
+    if (m_DoubleClickActions[btn] != action) {
+        m_DoubleClickActions[btn] = action;
+        emit sigDoubleClickActionChanged(btn, action);
+    }
+}
+
+void RadioDocking::setWheelAction(SystrayWheelAction action)
+{
+//     IErrorLogClient::staticLogDebug(QString("RadioDocking::setWheelAction(%1)").arg(action));
+    if (m_WheelAction != action) {
+        m_WheelAction = action;
+        emit sigWheelActionChanged(action);
+    }
+}
+
 
 void RadioDocking::dragEnterEvent(QDragEnterEvent* event)
 {

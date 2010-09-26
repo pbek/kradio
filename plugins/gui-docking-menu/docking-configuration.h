@@ -22,6 +22,8 @@
 #include <config.h>
 #endif
 
+#include <QtCore/QMap>
+
 #include "stationselector.h"
 #include "docking.h"
 
@@ -41,14 +43,26 @@ protected slots:
     void slotCancel();
     void slotSetDirty();
 
-    void slotLeftClickActionChanged(LeftClickAction action);
+    void slotClickActionChanged      (Qt::MouseButton btn, SystrayClickAction action);
+    void slotDoubleClickActionChanged(Qt::MouseButton btn, SystrayClickAction action);
+    void slotWheelActionChanged      (SystrayWheelAction action);
     void languageChange();
 
 protected:
-    RadioDocking *m_docking;
-    QComboBox    *m_comboClickMode;
-    QLabel       *m_labelClickMode;
-    bool          m_disableGUIUpdates;
+    RadioDocking                       *m_docking;
+
+    QMap<Qt::MouseButton, QComboBox*>   m_comboClickMode;
+    QMap<Qt::MouseButton, QComboBox*>   m_comboDoubleClickMode;
+    QComboBox                          *m_comboWheelMode;
+
+    QLabel                             *m_labelClickModeCaption;
+    QLabel                             *m_labelDoubleClickModeCaption;
+    QMap<Qt::MouseButton, QLabel*>      m_labelClickMode;
+    QMap<Qt::MouseButton, QLabel*>      m_labelDoubleClickMode;
+    QLabel                             *m_labelWheelMode;
+
+    bool                                m_disableGUIUpdates;
+
 };
 
 #endif
