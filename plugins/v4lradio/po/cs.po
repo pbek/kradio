@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_v4lradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-04-19 16:42+0200\n"
-"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"PO-Revision-Date: 2010-09-17 08:38+0200\n"
+"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
@@ -26,21 +27,18 @@ msgstr "SetupDialogGeneral"
 #. i18n: file: v4lradio-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
 #: rc.cpp:6 rc.cpp:156
-#, fuzzy
 msgid "V4L Device"
-msgstr "Zařízení"
+msgstr "Zařízení V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:46
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
 #: rc.cpp:9 rc.cpp:159
-#, fuzzy
 msgid "Station scan step"
-msgstr "Délka kroku při vyhledávání vysílací stanice"
+msgstr "Krok vyhledávání vysílací stanice"
 
 #. i18n: file: v4lradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
 #: rc.cpp:12 rc.cpp:162
-#, fuzzy
 msgid "Minimum signal quality"
 msgstr "Nejmenší kvalita signálu"
 
@@ -93,7 +91,6 @@ msgstr "V4L-2 API"
 #. i18n: file: v4lradio-configuration-ui.ui:210
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
 #: rc.cpp:33 rc.cpp:183
-#, fuzzy
 msgid "Allowed frequency range"
 msgstr "Povolený kmitočtový rozsah"
 
@@ -124,9 +121,8 @@ msgstr "108 MHz"
 #. i18n: file: v4lradio-configuration-ui.ui:338
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
 #: rc.cpp:54 rc.cpp:204
-#, fuzzy
 msgid "Device frequency range"
-msgstr "Povolený kmitočtový rozsah zařízení V4L"
+msgstr "Kmitočtový rozsah zařízení"
 
 #. i18n: file: v4lradio-configuration-ui.ui:346
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
@@ -137,14 +133,12 @@ msgstr "RDS"
 #. i18n: file: v4lradio-configuration-ui.ui:355
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
 #: rc.cpp:60 rc.cpp:210
-#, fuzzy
 msgid "Force RDS Enabled"
-msgstr "Povoleno vynucené použití"
+msgstr "Povoleno vynucené použití RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:372
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:63 rc.cpp:213
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -175,25 +169,6 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Upozornění pro uživatele karet PVR "
-"owners:</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Aktivní přehrávání</span> je vyžadováno, když "
-"vaše radiokarta není spojena s vaší zvukovou kartou přes kabel k \"line in\" "
-"vstupu. V tomto případě musí KRadio PCM data z nahrávacího zvukového "
-"zařízení (předstírané zvukové zařízení nebo zvukové zařízení) zaznamenat a "
-"PCM data poslat do přehrávacího zvukového zařízení.Proto musí být, když je "
-"zapnuto <span style=\" font-weight:600;\">Aktivní přehrávání</span>, vybráno "
-"správné nahrávací mixážní zařízení/kanál a správné PCM přehrávací mixér/"
-"kanál. Toto je obzvláště důležité pro <span style=\" font-weight:600;"
-"\">karty PVR</span> které obyčejně potřebují zvuk  nahrávat z <span style=\" "
-"font-style:italic;\">/dev/video24</span> (nebo tak podobně). Pro <span style="
-"\" font-weight:600;\">karty PVR</span>, musíte napřed správně nastavit i "
-"<span style=\" font-weight:600;\">Přídavný modul pro datové proudy.</span></"
-"p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" text-decoration: underline;\">Upozornění pro podporu RDS:</span></"
 "p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
@@ -213,9 +188,8 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:409
 #. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
 #: rc.cpp:70 rc.cpp:220
-#, fuzzy
 msgid "Sound Devices"
-msgstr "Zařízení"
+msgstr "Zařízení zvuku"
 
 #. i18n: file: v4lradio-configuration-ui.ui:425
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
@@ -275,7 +249,7 @@ msgstr "Mixážní zařízení pro přehrávání"
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
 #: rc.cpp:100 rc.cpp:250
 msgid "PVR && Co"
-msgstr ""
+msgstr "PVR && Co"
 
 #. i18n: file: v4lradio-configuration-ui.ui:575
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
@@ -361,7 +335,6 @@ msgstr "Ztlumit přehrávání nahrávaného kanálu při činném přehráván�
 #. i18n: file: v4lradio-configuration-ui.ui:627
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:129 rc.cpp:279
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -395,6 +368,8 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" text-decoration: underline;\">Upozornění pro majitele PVR:</span> <"
+"span "
 "style=\" font-weight:600;\">Aktivní přehrávání</span> je vyžadováno, když "
 "vaše radiokarta není spojena s vaší zvukovou kartou přes kabel k \"line in\" "
 "vstupu. V tomto případě musí KRadio PCM data z nahrávacího zvukového "
@@ -403,7 +378,7 @@ msgstr ""
 "zapnuto <span style=\" font-weight:600;\">Aktivní přehrávání</span>, vybráno "
 "správné nahrávací mixážní zařízení/kanál a správné PCM přehrávací mixér/"
 "kanál. Toto je obzvláště důležité pro <span style=\" font-weight:600;"
-"\">karty PVR</span> které obyčejně potřebují zvuk  nahrávat z <span style=\" "
+"\">karty PVR</span> které obyčejně potřebují zvuk nahrávat z <span style=\" "
 "font-style:italic;\">/dev/video24</span> (nebo tak podobně). Pro <span style="
 "\" font-weight:600;\">karty PVR</span>, musíte napřed správně nastavit i "
 "<span style=\" font-weight:600;\">Přídavný modul pro datové proudy.</p></"
@@ -447,7 +422,7 @@ msgstr "Pavel Fric"
 #: rc.cpp:150
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pavelfric@seznam.cz"
+msgstr "fripohled.blogspot.com"
 
 #: v4lradio-configuration.cpp:377
 msgid "Could not get device description."
@@ -518,6 +493,10 @@ msgid ""
 "support for V4L1 seems to be not working properly any more. I'm now once "
 "switching to V4L Version 2. You may override it later."
 msgstr ""
+"Vybral jste V4L API verze 1. Počínaje jádrem 2.6.31 se zdá, že podpora pro "
+"V4L1 "
+"už více nepracuje správně. Nyní přepínám na V4L verze 2. Později to můžete "
+"zrušit."
 
 #: v4lradio.cpp:1272
 #, kde-format
@@ -548,7 +527,7 @@ msgstr "Nelze otevřít soubor rozhlasového zařízení %1"
 #: v4lradio.cpp:1474
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
-msgstr ""
+msgstr "Přídavný modulV4L (režim V4L%1, neplatné zařízení): %2"
 
 #: v4lradio.cpp:1481
 #, kde-format
@@ -563,7 +542,7 @@ msgstr "Byl nalezen %1"
 #: v4lradio.cpp:1497 v4lradio.cpp:1540
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
-msgstr ""
+msgstr "Přídavný modulV4L (režim V4L%1): %2"
 
 #: v4lradio.cpp:1519
 #, kde-format

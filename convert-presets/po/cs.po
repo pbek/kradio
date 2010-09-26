@@ -7,541 +7,420 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 00:27+0100\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-09-26 15:18+0200\n"
 "PO-Revision-Date: 2009-04-04 17:19+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 16
-#: rc.cpp:3 libkradio/pluginmanager-configuration-ui.cpp:170
-#, no-c-format
-msgid "PluginManagerConfigurationUI"
-msgstr "PluginManagerConfigurationUI"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 30
-#: rc.cpp:6 libkradio/pluginmanager-configuration-ui.cpp:171
-#, no-c-format
-msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
-msgstr "Ukázat proužek s průběhem při spuštění přidavného modulu"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 33
-#: rc.cpp:9 libkradio/pluginmanager-configuration-ui.cpp:172
-#, no-c-format
-msgid "Alt+Z"
-msgstr "Alt+Z"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 78
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 229
-#: rc.cpp:13 rc.cpp:34 libkradio/pluginmanager-configuration-ui.cpp:63
-#: libkradio/pluginmanager-configuration-ui.cpp:104
-#: libkradio/pluginmanager-configuration-ui.cpp:174
-#: libkradio/pluginmanager-configuration-ui.cpp:183
-#, no-c-format
-msgid "Plugin Class"
-msgstr "Skupina přídavných modulů"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 89
-#: rc.cpp:16 libkradio/pluginmanager-configuration-ui.cpp:64
-#: libkradio/pluginmanager-configuration-ui.cpp:175
-#: libkradio/pluginmanager-configuration.cpp:144
-#, no-c-format
-msgid "Instance Name"
-msgstr "Název instance"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 100
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 240
-#: rc.cpp:19 rc.cpp:37 libkradio/pluginmanager-configuration-ui.cpp:65
-#: libkradio/pluginmanager-configuration-ui.cpp:105
-#: libkradio/pluginmanager-configuration-ui.cpp:176
-#: libkradio/pluginmanager-configuration-ui.cpp:184
-#: libkradio-gui/radiostation-listview.cpp:36
-#, no-c-format
-msgid "Description"
-msgstr "Popis"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 116
-#: rc.cpp:22 libkradio/pluginmanager-configuration-ui.cpp:177
-#, no-c-format
-msgid "list of running plugins"
-msgstr "Seznam spuštěných přídavných modulů"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 153
-#: rc.cpp:26 libkradio/pluginmanager-configuration-ui.cpp:179
-#, no-c-format
-msgid "remove/stop a selected plugin instance"
-msgstr "Odstranit/Zastavit vybranou instanci přídavného modulu"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 223
-#: rc.cpp:31 libkradio/pluginmanager-configuration-ui.cpp:182
-#, no-c-format
-msgid "create a new instance of selected plugin class"
-msgstr "Vytvořit novou instanci vybrané skupiny přídavných modulů"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 256
-#: rc.cpp:40 libkradio/pluginmanager-configuration-ui.cpp:185
-#, no-c-format
-msgid "list of available plugin classes"
-msgstr "Seznam dostupných skupin přídavných modulů"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 297
-#: rc.cpp:44 libkradio/pluginmanager-configuration-ui.cpp:187
-#, no-c-format
-msgid "select a plugin library"
-msgstr "Výběr knihovny přídavných modulů"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 317
-#: rc.cpp:48 libkradio/pluginmanager-configuration-ui.cpp:189
-#, no-c-format
-msgid "unload a plugin library"
-msgstr "Odstranění knihovny přídavných modulů"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 337
-#: rc.cpp:52 libkradio/pluginmanager-configuration-ui.cpp:191
-#, no-c-format
-msgid "load a selected plugin library"
-msgstr "Nahrání vybrané knihovny přídavných modulů"
-
-#. i18n: file libkradio/pluginmanager-configuration-ui.ui line 353
-#: rc.cpp:55 libkradio/pluginmanager-configuration-ui.cpp:192
-#, no-c-format
-msgid "list of loaded plugin libraries"
-msgstr "Seznam nahraných knihoven přídavných modulů"
-
-#. i18n: file libkradio-gui/standardscandialog-ui.ui line 16
-#: rc.cpp:58 libkradio-gui/standardscandialog-ui.cpp:86
-#, no-c-format
-msgid "Stations search in progress ..."
-msgstr "Probíhá vyhledávání vysílacích stanic..."
-
-#. i18n: file libkradio-gui/standardscandialog-ui.ui line 104
-#: rc.cpp:64 libkradio-gui/standardscandialog-ui.cpp:88
-#, no-c-format
-msgid "remaining time"
-msgstr "zbývající čas"
-
-#. i18n: file libkradio-gui/standardscandialog-ui.ui line 120
-#: rc.cpp:67 libkradio-gui/standardscandialog-ui.cpp:89
-#, no-c-format
-msgid "<p align=\"right\">nothing here</p>"
-msgstr "<p align=\"right\">zde nic není</p>"
-
-#. i18n: file libkradio-gui/stationselector-ui.ui line 16
-#: rc.cpp:70 libkradio-gui/stationselector-ui.cpp:90
-#, no-c-format
-msgid "StationSelectorUI"
-msgstr "StationSelectorUI"
-
-#. i18n: file libkradio-gui/stationselector-ui.ui line 30
-#: rc.cpp:73 libkradio-gui/stationselector-ui.cpp:91
-#, no-c-format
-msgid "Selected Stations"
-msgstr "Zvolené stanice"
-
-#. i18n: file libkradio-gui/stationselector-ui.ui line 119
-#: rc.cpp:78 libkradio-gui/stationselector-ui.cpp:94
-#, no-c-format
-msgid "Available Stations"
-msgstr "Dostupné stanice"
-
-#: interfaces/errorlog-interfaces.cpp:43 interfaces/errorlog-interfaces.cpp:78
-msgid "%1 Error: %2\n"
-msgstr "%1 Chyba: %2\n"
-
-#: interfaces/errorlog-interfaces.cpp:52 interfaces/errorlog-interfaces.cpp:87
-msgid "%1 Warning: %2\n"
-msgstr "%1 Varování: %2\n"
-
-#: interfaces/errorlog-interfaces.cpp:61 interfaces/errorlog-interfaces.cpp:96
-msgid "%1 Information: %2\n"
-msgstr "%1 Informace: %2\n"
-
-#: interfaces/errorlog-interfaces.cpp:70
-#: interfaces/errorlog-interfaces.cpp:105
-msgid "%1 Debug: %2\n"
-msgstr "%1 Vyhledávání a odstraňování chyb: %2\n"
-
-#: libkradio/fileringbuffer.cpp:34 libkradio/fileringbuffer.cpp:67
-msgid "cannot open buffer file %1"
-msgstr "Nelze otevřít soubor vyrovnávací paměti %1"
-
-#: libkradio/fileringbuffer.cpp:92
-msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Zápis do dočasného souboru %1 selhal."
-
-#: libkradio/fileringbuffer.cpp:98
-msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Otevření dočasného souboru %1 selhalo."
-
-#: libkradio/fileringbuffer.cpp:126 libkradio/fileringbuffer.cpp:144
-msgid "FileRingBuffer::addData: failed writing data to file %1."
-msgstr "FileRingBuffer::addData: Zápis dat do souboru %1 selhal."
-
-#: libkradio/fileringbuffer.cpp:167
-msgid "FileRingBuffer::takeData: failed reading data to file %1."
-msgstr "FileRingBuffer::takeData: Čtení dat ze souboru %1 selhalo."
-
-#: libkradio/kradioapp.cpp:44
-msgid ""
-"KRadio - The Radio Application for KDE<P>With KRadio you can listen to radio "
-"broadcasts with the help of your V4L/V4L2 compatible radio card.<P>The "
-"KRadio Project contains a station preset data database. To complete this "
-"database you are encouraged to contribute your station preset file to the "
-"project. Just send it to one of the authors. <P>If you like to contribute "
-"your ideas, your own plugins or translations, don't hesitate to contact one "
-"of the authors.<P>"
-msgstr ""
-"KRadio - Rozhlasový program pro prostředí KDE<P>S KRadio a radiokartou, "
-"která "
-"je podporována ovladačem Videa pro Linux (Video for Linux, V4L) linuxového "
-"jádra, "
-"můžete na svém počítači poslouchat rozhlasové vysílání.<P> Projekt KRadio "
-"obsahuje celosvětovou databázi předvoleb vysílacích stanic. Tímto vás "
-"povzbuzujeme "
-"k tomu, abyste do projektu KRadio přispěli svými vlastními předvolbami "
-"vysílacích "
-"stanic. Pošlete jednoduše svoje předvolby vysílacích stanic jednomu z autorů "
-"KRadia. "
-"<P> Pokud byste projektu KRadio chtěli přispět svými myšlenkami, vlastními "
-"přídavnými moduli nebopřekladem uživatelského rozhraní, neváhejte se spojit "
-"s jedním z autorů.<P>"
-
-#: libkradio/kradioapp.cpp:66
-msgid ""
-"Preset Database, Remote Control Support, Alarms, Rewrite for KRadio 0.3.0, "
-"Misc"
-msgstr ""
-"Databáze předvoleb vysílacích stanic, podpora pro dálkové ovládání, budík, "
-"přepracování na KRadio 0.3.0, různé"
-
-#: libkradio/kradioapp.cpp:67 main.cpp:43
-msgid "Buildsystem, Standards Conformance, Cleanups"
-msgstr "Vytvořený systém, shoda se standardy, úklidové práce"
-
-#: libkradio/kradioapp.cpp:69 main.cpp:45
-msgid "idea, first basic application"
-msgstr "Myšlenka, první aplikace"
-
-#: libkradio/kradioapp.cpp:71
-msgid "Many People around the World ... "
-msgstr "Mnozí lidé na celém světě..."
-
-#: libkradio/kradioapp.cpp:72
-msgid ""
-"... which contributed station preset files \n"
-"and tested early and unstable snapshots of KRadio \n"
-"with much patience"
-msgstr ""
-"... kteří přispěli soubory s předvolbami vysílacích stanic\n"
-" a zkoušeli rané a nestabilní obrazy programu KRadio\n"
-"s velikou trpělivostí. "
-
-#: libkradio/kradioapp.cpp:106
-msgid "Library %1: Plugin Entry Point is missing\n"
-msgstr "Knihovna %1: Vstupní bod nebyl nalezen\n"
-
-#: libkradio/kradioapp.cpp:108 libkradio/kradioapp.cpp:119
-msgid "Plugin Library Load Error"
-msgstr "Nahrání knihovny přídavných modulů selhalo"
-
-#: libkradio/kradioapp.cpp:116
-msgid ""
-"Library %1: \n"
-"%2"
-msgstr ""
-"Knihovna %1: \n"
-"%2"
-
-#: libkradio/kradioapp.cpp:143
-msgid "saveState"
-msgstr "saveState"
-
-#: libkradio/kradioapp.cpp:221
-msgid "Instance"
-msgstr "Instance"
-
-#: libkradio/kradioapp.cpp:242
-msgid "KRadio Configuration"
-msgstr "Nastavení programu KRadio"
-
-#: libkradio/kradioapp.cpp:243
-msgid "About KRadio Components"
-msgstr "O součástech programu KRadio"
-
-#: libkradio/kradioapp.cpp:271
-msgid "Error: Loading Library %1 failed: %2"
-msgstr "Chyba: Nahrání knihovny %1 selhalo: %2"
-
-#: libkradio/kradioapp.cpp:322
-msgid "Error: Creation of instance \"%1\" of class %2 falied."
-msgstr "Chyba: Vytvoření instance \"%1\" skupiny %2 selhalo."
-
-#: libkradio/kradioapp.cpp:328
-msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr "Chyba: Nelze vytvořit instanci \"%1\" neznámé skupiny %2."
-
-#: libkradio/multibuffer.cpp:89
-msgid "Buffer Overflow. "
-msgstr "Přetečení vyrovnávací paměti."
-
-#: libkradio/plugin_configuration_dialog.cpp:29
-msgid "Configuration Dialog"
-msgstr "Dialog nastavení"
-
-#: libkradio/pluginmanager-configuration.cpp:143
-msgid "Enter Plugin Instance Name"
-msgstr "Zadat název přídavné instance"
-
-#: libkradio/pluginmanager.cpp:123
-msgid "Hide %1"
-msgstr "Skrýt %1"
-
-#: libkradio/pluginmanager.cpp:123
-msgid "Show %1"
-msgstr "Ukázat %1"
-
-#: libkradio/pluginmanager.cpp:350
-msgid "Plugins"
-msgstr "Přídavné moduly"
-
-#: libkradio/pluginmanager.cpp:351
-msgid "Plugin Library Configuration"
-msgstr "Nastavení knihovny přídavných modulů"
-
-#: libkradio/pluginmanager.cpp:446
-msgid "Starting Plugins"
-msgstr "Spuštění přídavných modulů"
-
-#: libkradio/pluginmanager.cpp:459 libkradio/pluginmanager.cpp:476
-msgid "Creating Plugin %1"
-msgstr "Vytváří se přídavný modul %1"
-
-#: libkradio/pluginmanager.cpp:490
-msgid "Initializing Plugin %1"
-msgstr "Spouští se přídavný modul %1"
-
-#: libkradio/stationlist.cpp:255
-msgid "Contains merged Data"
-msgstr "Obsahuje spojené záznamy"
-
-#: libkradio/stationlist.cpp:315
-msgid ""
-"Probably an old station preset file was read.\n"
-"You have to rebuild your station selections for the quickbar and the docking "
-"menu."
-msgstr ""
-"Pravděpodobně byl načten soubor se starou předvolbou.\n"
-"Musíte znovu zřídit svůj výběr stanic pro okno s rychlou volbou a ovládací "
-"nabídku na panelu."
-
-#: libkradio/stationlist.cpp:325
-msgid "parsing failed"
-msgstr "Rozbor selhal"
-
-#: libkradio/stationlist.cpp:329
-msgid ""
-"Parsing the station preset file failed.\n"
-"See console output for more details."
-msgstr ""
-"Rozbor souboru s předvolbou stanice selhal.\n"
-"Více podrobných informací se dozvíte z výstupu na konzoli."
-
-#: libkradio/stationlist.cpp:343 libkradio/stationlist.cpp:349
-msgid "error downloading preset file %1"
-msgstr "Chyba při stahování souboru s předvolbou %1"
-
-#: libkradio/stationlist.cpp:345
-msgid "Download of the station preset file at %1 failed."
-msgstr "Stahování souboru s předvolbou stanice %1 selhalo."
-
-#: libkradio/stationlist.cpp:355
-msgid "temporary file: "
-msgstr "Dočasný soubor:"
-
-#: libkradio/stationlist.cpp:361
-msgid "error opening preset file %1"
+#: convert-presets.cpp:53 convert-presets.cpp:134
+#, fuzzy
+msgid "error opening preset file"
 msgstr "Chyba při otevírání souboru s předvolbou %1"
 
-#: libkradio/stationlist.cpp:364
-msgid "Opening of the station preset file at %1 failed."
-msgstr "Otevírání souboru s předvolbou vysílací stanice %1 selhalo."
-
-#: libkradio/stationlist.cpp:383
-msgid "Old Preset File Format detected"
-msgstr "Rozpoznán starý formát souboru s předvolbou"
-
-#: libkradio/stationlist.cpp:461
-msgid "error writing to tempfile %1"
-msgstr "Chyba při zapisování do dočasného souboru %1"
-
-#: libkradio/stationlist.cpp:464
-msgid "Writing station preset file %1 failed."
-msgstr "Zápis souboru s předvolbou vysílací stanice %1 selhal."
-
-#: libkradio/stationlist.cpp:476
-msgid "error uploading preset file %1"
-msgstr "Chyba při nahrávání souboru s předvolbou %1"
-
-#: libkradio/stationlist.cpp:480
-msgid "Upload of station preset file to %1 failed."
-msgstr "Nahrávání souboru s předvolbou vysílací stanice %1 selhalo."
-
-#: libkradio/stationlistxmlhandler.cpp:64
-msgid "misplaced element %1"
-msgstr "Nesprávně umístěný prvek %1"
-
-#: libkradio/stationlistxmlhandler.cpp:116
-msgid "unknown or unexpected element %1"
-msgstr "Neznámý nebo neočekávaný prvek %1"
-
-#: libkradio/stationlistxmlhandler.cpp:145
-msgid "expected element %1, but found %2"
-msgstr "Byl očekáván prvek: %1, ale nalezen byl: %2"
-
-#: libkradio/stationlistxmlhandler.cpp:149
-msgid "unexpected element %1"
-msgstr "Neočekávaný prvek %1"
-
-#: libkradio/stationlistxmlhandler.cpp:157
-msgid "invalid data for element %1"
-msgstr "Neplatná data pro prvek %1"
-
-#: libkradio/stationlistxmlhandler.cpp:172
-msgid "found a station list with unknown format %1"
-msgstr "Byl nalezen seznam vysílacích stanic neznámého formátu %1"
-
-#: libkradio/stationlistxmlhandler.cpp:212
-msgid "unknown property %1 for class %2"
-msgstr "Vlastnost %1 je skupině %2 neznámá"
-
-#: libkradio/stationlistxmlhandler.cpp:219
-msgid "characters ignored for element %1"
-msgstr "Některé znaky prvku %1 byly ponechány nepovšimnuty"
-
-#: libkradio-gui/aboutwidget.cpp:282
-msgid "Invalid layout"
-msgstr "Neplatné rozvržení"
-
-#: libkradio-gui/aboutwidget.cpp:451
-msgid "%1 %2 (Using KDE %3)"
-msgstr "%1 %2 (používá se KDE %3)"
-
-#: libkradio-gui/aboutwidget.cpp:454
-msgid "%1 %2, %3"
-msgstr "%1 %2, %3"
-
-#: libkradio-gui/aboutwidget.cpp:527
-msgid "A&uthor"
-msgstr "A&utor"
-
-#: libkradio-gui/aboutwidget.cpp:527
-msgid "A&uthors"
-msgstr "A&utoři"
-
-#: libkradio-gui/aboutwidget.cpp:541
-msgid "&Thanks To"
-msgstr "&Poděkování"
-
-#: libkradio-gui/aboutwidget.cpp:554
-msgid "T&ranslation"
-msgstr "Pře&klady"
-
-#: libkradio-gui/aboutwidget.cpp:571
-msgid "&License Agreement"
-msgstr "&Licenční ujednání"
-
-#: libkradio-gui/aboutwidget.cpp:585
-msgid "Image missing"
-msgstr "Chybí soubor s obrázkem"
-
-#: libkradio-gui/radiostation-listview.cpp:33
-msgid "No."
-msgstr "Číslo"
-
-#: libkradio-gui/radiostation-listview.cpp:34
-msgid "Icon"
-msgstr "Ikona"
-
-#: libkradio-gui/radiostation-listview.cpp:35
-msgid "Station"
-msgstr "Vysílací stanice"
-
-#: libkradio-gui/radiostation-listview.cpp:234
-msgid "contentsDragEnterEvent accepted"
-msgstr "contentsDragEnterEvent přijat"
-
-#: libkradio-gui/radiostation-listview.cpp:236
-msgid "contentsDragEnterEvent rejected"
-msgstr "contentsDragEnterEvent odmítnut"
-
-#: libkradio-gui/standardscandialog.cpp:118
-msgid "new station "
-msgstr "Nová vysílací stanice"
-
-#: libkradio-gui/standardscandialog.cpp:142
-msgid "&Done"
-msgstr "&Hotovo"
-
-#: libkradio-gui/standardscandialog.cpp:160
-msgid "<p align=\"right\">%1</p>"
-msgstr "<p align=\"right\">%1</p>"
-
-#: libkradio-gui/standardscandialog.cpp:162
-#: libkradio-gui/standardscandialog.cpp:165 radio-stations/radiostation.h:150
-#: radio-stations/radiostation.h:151
-msgid "unknown"
-msgstr "neznámé"
-
-#: libkradio-gui/station-drag-object.cpp:69
-msgid "canDecode = true"
-msgstr "canDecode = ano"
-
-#: radio-stations/frequencyradiostation.cpp:118
-#: radio-stations/internetradiostation.cpp:118
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: radio-stations/frequencyradiostation.cpp:132
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: radio-stations/frequencyradiostation.cpp:134
-msgid "%1 kHz"
-msgstr "%1 kHz"
-
-#: radio-stations/radiostation-config.cpp:45
-msgid "I don't know how to edit this station"
-msgstr "Nevím, jak upravit tuto stanici."
-
-#: radio-stations/radiostation-config.cpp:68
-msgid "Frequency:"
-msgstr "Kmitočet:"
-
-#: _translatorinfo.cpp:1
-msgid ""
-"_: NAME OF TRANSLATORS\n"
-"Your names"
-msgstr "Pavel Fric"
-
-#: _translatorinfo.cpp:3
-msgid ""
-"_: EMAIL OF TRANSLATORS\n"
-"Your emails"
-msgstr "pavelfric@seznam.cz"
-
-#: main.cpp:36
-msgid "KRadio"
-msgstr "KRadio"
-
-#: main.cpp:42
-msgid "rewrite for 0.3.0, recording, lirc support, alarms, misc"
+#: convert-presets.cpp:55
+msgid "for reading"
 msgstr ""
-"Přepracování na 0.3.0, Nahrávací činnost, Podpora pro LIRC, budík, "
-"různé"
 
+#: convert-presets.cpp:136
+msgid "for writing"
+msgstr ""
 
+#: convert-presets.cpp:148
+#, fuzzy
+msgid "error writing preset file"
+msgstr "Chyba při otevírání souboru s předvolbou %1"
+
+#: convert-presets.cpp:163
+msgid "kradio4-convert-presets"
+msgstr ""
+
+#: convert-presets.cpp:165
+msgid "(c) 2003-2010 Martin Witte"
+msgstr ""
+
+#: convert-presets.cpp:168
+msgid "Martin Witte"
+msgstr ""
+
+#: convert-presets.cpp:173
+msgid "be quiet"
+msgstr ""
+
+#: convert-presets.cpp:174
+msgid "preset files to convert"
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid "PluginManagerConfigurationUI"
+#~ msgstr "PluginManagerConfigurationUI"
+
+#~ msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
+#~ msgstr "Ukázat proužek s průběhem při spuštění přidavného modulu"
+
+#~ msgid "Alt+Z"
+#~ msgstr "Alt+Z"
+
+#~ msgid "Plugin Class"
+#~ msgstr "Skupina přídavných modulů"
+
+#~ msgid "Instance Name"
+#~ msgstr "Název instance"
+
+#~ msgid "Description"
+#~ msgstr "Popis"
+
+#~ msgid "list of running plugins"
+#~ msgstr "Seznam spuštěných přídavných modulů"
+
+#~ msgid "remove/stop a selected plugin instance"
+#~ msgstr "Odstranit/Zastavit vybranou instanci přídavného modulu"
+
+#~ msgid "create a new instance of selected plugin class"
+#~ msgstr "Vytvořit novou instanci vybrané skupiny přídavných modulů"
+
+#~ msgid "list of available plugin classes"
+#~ msgstr "Seznam dostupných skupin přídavných modulů"
+
+#~ msgid "select a plugin library"
+#~ msgstr "Výběr knihovny přídavných modulů"
+
+#~ msgid "unload a plugin library"
+#~ msgstr "Odstranění knihovny přídavných modulů"
+
+#~ msgid "load a selected plugin library"
+#~ msgstr "Nahrání vybrané knihovny přídavných modulů"
+
+#~ msgid "list of loaded plugin libraries"
+#~ msgstr "Seznam nahraných knihoven přídavných modulů"
+
+#~ msgid "Stations search in progress ..."
+#~ msgstr "Probíhá vyhledávání vysílacích stanic..."
+
+#~ msgid "remaining time"
+#~ msgstr "zbývající čas"
+
+#~ msgid "<p align=\"right\">nothing here</p>"
+#~ msgstr "<p align=\"right\">zde nic není</p>"
+
+#~ msgid "StationSelectorUI"
+#~ msgstr "StationSelectorUI"
+
+#~ msgid "Selected Stations"
+#~ msgstr "Zvolené stanice"
+
+#~ msgid "Available Stations"
+#~ msgstr "Dostupné stanice"
+
+#~ msgid "%1 Error: %2\n"
+#~ msgstr "%1 Chyba: %2\n"
+
+#~ msgid "%1 Warning: %2\n"
+#~ msgstr "%1 Varování: %2\n"
+
+#~ msgid "%1 Information: %2\n"
+#~ msgstr "%1 Informace: %2\n"
+
+#~ msgid "%1 Debug: %2\n"
+#~ msgstr "%1 Vyhledávání a odstraňování chyb: %2\n"
+
+#~ msgid "cannot open buffer file %1"
+#~ msgstr "Nelze otevřít soubor vyrovnávací paměti %1"
+
+#~ msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
+#~ msgstr "FileRingbuffer::resize: Zápis do dočasného souboru %1 selhal."
+
+#~ msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
+#~ msgstr "FileRingbuffer::resize: Otevření dočasného souboru %1 selhalo."
+
+#~ msgid "FileRingBuffer::addData: failed writing data to file %1."
+#~ msgstr "FileRingBuffer::addData: Zápis dat do souboru %1 selhal."
+
+#~ msgid "FileRingBuffer::takeData: failed reading data to file %1."
+#~ msgstr "FileRingBuffer::takeData: Čtení dat ze souboru %1 selhalo."
+
+#~ msgid ""
+#~ "KRadio - The Radio Application for KDE<P>With KRadio you can listen to "
+#~ "radio broadcasts with the help of your V4L/V4L2 compatible radio card."
+#~ "<P>The KRadio Project contains a station preset data database. To "
+#~ "complete this database you are encouraged to contribute your station "
+#~ "preset file to the project. Just send it to one of the authors. <P>If you "
+#~ "like to contribute your ideas, your own plugins or translations, don't "
+#~ "hesitate to contact one of the authors.<P>"
+#~ msgstr ""
+#~ "KRadio - Rozhlasový program pro prostředí KDE<P>S KRadio a radiokartou, "
+#~ "která je podporována ovladačem Videa pro Linux (Video for Linux, V4L) "
+#~ "linuxového jádra, můžete na svém počítači poslouchat rozhlasové vysílání."
+#~ "<P> Projekt KRadio obsahuje celosvětovou databázi předvoleb vysílacích "
+#~ "stanic. Tímto vás povzbuzujeme k tomu, abyste do projektu KRadio přispěli "
+#~ "svými vlastními předvolbami vysílacích stanic. Pošlete jednoduše svoje "
+#~ "předvolby vysílacích stanic jednomu z autorů KRadia. <P> Pokud byste "
+#~ "projektu KRadio chtěli přispět svými myšlenkami, vlastními přídavnými "
+#~ "moduli nebopřekladem uživatelského rozhraní, neváhejte se spojit s jedním "
+#~ "z autorů.<P>"
+
+#~ msgid ""
+#~ "Preset Database, Remote Control Support, Alarms, Rewrite for KRadio "
+#~ "0.3.0, Misc"
+#~ msgstr ""
+#~ "Databáze předvoleb vysílacích stanic, podpora pro dálkové ovládání, "
+#~ "budík, přepracování na KRadio 0.3.0, různé"
+
+#~ msgid "Buildsystem, Standards Conformance, Cleanups"
+#~ msgstr "Vytvořený systém, shoda se standardy, úklidové práce"
+
+#~ msgid "idea, first basic application"
+#~ msgstr "Myšlenka, první aplikace"
+
+#~ msgid "Many People around the World ... "
+#~ msgstr "Mnozí lidé na celém světě..."
+
+#~ msgid ""
+#~ "... which contributed station preset files \n"
+#~ "and tested early and unstable snapshots of KRadio \n"
+#~ "with much patience"
+#~ msgstr ""
+#~ "... kteří přispěli soubory s předvolbami vysílacích stanic\n"
+#~ " a zkoušeli rané a nestabilní obrazy programu KRadio\n"
+#~ "s velikou trpělivostí. "
+
+#~ msgid "Library %1: Plugin Entry Point is missing\n"
+#~ msgstr "Knihovna %1: Vstupní bod nebyl nalezen\n"
+
+#~ msgid "Plugin Library Load Error"
+#~ msgstr "Nahrání knihovny přídavných modulů selhalo"
+
+#~ msgid ""
+#~ "Library %1: \n"
+#~ "%2"
+#~ msgstr ""
+#~ "Knihovna %1: \n"
+#~ "%2"
+
+#~ msgid "saveState"
+#~ msgstr "saveState"
+
+#~ msgid "Instance"
+#~ msgstr "Instance"
+
+#~ msgid "KRadio Configuration"
+#~ msgstr "Nastavení programu KRadio"
+
+#~ msgid "About KRadio Components"
+#~ msgstr "O součástech programu KRadio"
+
+#~ msgid "Error: Loading Library %1 failed: %2"
+#~ msgstr "Chyba: Nahrání knihovny %1 selhalo: %2"
+
+#~ msgid "Error: Creation of instance \"%1\" of class %2 falied."
+#~ msgstr "Chyba: Vytvoření instance \"%1\" skupiny %2 selhalo."
+
+#~ msgid "Error: Cannot create instance \"%1\" of unknown class %2."
+#~ msgstr "Chyba: Nelze vytvořit instanci \"%1\" neznámé skupiny %2."
+
+#~ msgid "Buffer Overflow. "
+#~ msgstr "Přetečení vyrovnávací paměti."
+
+#~ msgid "Configuration Dialog"
+#~ msgstr "Dialog nastavení"
+
+#~ msgid "Enter Plugin Instance Name"
+#~ msgstr "Zadat název přídavné instance"
+
+#~ msgid "Hide %1"
+#~ msgstr "Skrýt %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Ukázat %1"
+
+#~ msgid "Plugins"
+#~ msgstr "Přídavné moduly"
+
+#~ msgid "Plugin Library Configuration"
+#~ msgstr "Nastavení knihovny přídavných modulů"
+
+#~ msgid "Starting Plugins"
+#~ msgstr "Spuštění přídavných modulů"
+
+#~ msgid "Creating Plugin %1"
+#~ msgstr "Vytváří se přídavný modul %1"
+
+#~ msgid "Initializing Plugin %1"
+#~ msgstr "Spouští se přídavný modul %1"
+
+#~ msgid "Contains merged Data"
+#~ msgstr "Obsahuje spojené záznamy"
+
+#~ msgid ""
+#~ "Probably an old station preset file was read.\n"
+#~ "You have to rebuild your station selections for the quickbar and the "
+#~ "docking menu."
+#~ msgstr ""
+#~ "Pravděpodobně byl načten soubor se starou předvolbou.\n"
+#~ "Musíte znovu zřídit svůj výběr stanic pro okno s rychlou volbou a "
+#~ "ovládací nabídku na panelu."
+
+#~ msgid "parsing failed"
+#~ msgstr "Rozbor selhal"
+
+#~ msgid ""
+#~ "Parsing the station preset file failed.\n"
+#~ "See console output for more details."
+#~ msgstr ""
+#~ "Rozbor souboru s předvolbou stanice selhal.\n"
+#~ "Více podrobných informací se dozvíte z výstupu na konzoli."
+
+#~ msgid "error downloading preset file %1"
+#~ msgstr "Chyba při stahování souboru s předvolbou %1"
+
+#~ msgid "Download of the station preset file at %1 failed."
+#~ msgstr "Stahování souboru s předvolbou stanice %1 selhalo."
+
+#~ msgid "temporary file: "
+#~ msgstr "Dočasný soubor:"
+
+#~ msgid "Opening of the station preset file at %1 failed."
+#~ msgstr "Otevírání souboru s předvolbou vysílací stanice %1 selhalo."
+
+#~ msgid "Old Preset File Format detected"
+#~ msgstr "Rozpoznán starý formát souboru s předvolbou"
+
+#~ msgid "error writing to tempfile %1"
+#~ msgstr "Chyba při zapisování do dočasného souboru %1"
+
+#~ msgid "Writing station preset file %1 failed."
+#~ msgstr "Zápis souboru s předvolbou vysílací stanice %1 selhal."
+
+#~ msgid "error uploading preset file %1"
+#~ msgstr "Chyba při nahrávání souboru s předvolbou %1"
+
+#~ msgid "Upload of station preset file to %1 failed."
+#~ msgstr "Nahrávání souboru s předvolbou vysílací stanice %1 selhalo."
+
+#~ msgid "misplaced element %1"
+#~ msgstr "Nesprávně umístěný prvek %1"
+
+#~ msgid "unknown or unexpected element %1"
+#~ msgstr "Neznámý nebo neočekávaný prvek %1"
+
+#~ msgid "expected element %1, but found %2"
+#~ msgstr "Byl očekáván prvek: %1, ale nalezen byl: %2"
+
+#~ msgid "unexpected element %1"
+#~ msgstr "Neočekávaný prvek %1"
+
+#~ msgid "invalid data for element %1"
+#~ msgstr "Neplatná data pro prvek %1"
+
+#~ msgid "found a station list with unknown format %1"
+#~ msgstr "Byl nalezen seznam vysílacích stanic neznámého formátu %1"
+
+#~ msgid "unknown property %1 for class %2"
+#~ msgstr "Vlastnost %1 je skupině %2 neznámá"
+
+#~ msgid "characters ignored for element %1"
+#~ msgstr "Některé znaky prvku %1 byly ponechány nepovšimnuty"
+
+#~ msgid "Invalid layout"
+#~ msgstr "Neplatné rozvržení"
+
+#~ msgid "%1 %2 (Using KDE %3)"
+#~ msgstr "%1 %2 (používá se KDE %3)"
+
+#~ msgid "%1 %2, %3"
+#~ msgstr "%1 %2, %3"
+
+#~ msgid "A&uthor"
+#~ msgstr "A&utor"
+
+#~ msgid "A&uthors"
+#~ msgstr "A&utoři"
+
+#~ msgid "&Thanks To"
+#~ msgstr "&Poděkování"
+
+#~ msgid "T&ranslation"
+#~ msgstr "Pře&klady"
+
+#~ msgid "&License Agreement"
+#~ msgstr "&Licenční ujednání"
+
+#~ msgid "Image missing"
+#~ msgstr "Chybí soubor s obrázkem"
+
+#~ msgid "No."
+#~ msgstr "Číslo"
+
+#~ msgid "Icon"
+#~ msgstr "Ikona"
+
+#~ msgid "Station"
+#~ msgstr "Vysílací stanice"
+
+#~ msgid "contentsDragEnterEvent accepted"
+#~ msgstr "contentsDragEnterEvent přijat"
+
+#~ msgid "contentsDragEnterEvent rejected"
+#~ msgstr "contentsDragEnterEvent odmítnut"
+
+#~ msgid "new station "
+#~ msgstr "Nová vysílací stanice"
+
+#~ msgid "&Done"
+#~ msgstr "&Hotovo"
+
+#~ msgid "<p align=\"right\">%1</p>"
+#~ msgstr "<p align=\"right\">%1</p>"
+
+#~ msgid "unknown"
+#~ msgstr "neznámé"
+
+#~ msgid "canDecode = true"
+#~ msgstr "canDecode = ano"
+
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgid "%1 MHz"
+#~ msgstr "%1 MHz"
+
+#~ msgid "%1 kHz"
+#~ msgstr "%1 kHz"
+
+#~ msgid "I don't know how to edit this station"
+#~ msgstr "Nevím, jak upravit tuto stanici."
+
+#~ msgid "Frequency:"
+#~ msgstr "Kmitočet:"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Pavel Fric"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "pavelfric@seznam.cz"
+
+#~ msgid "KRadio"
+#~ msgstr "KRadio"
+
+#~ msgid "rewrite for 0.3.0, recording, lirc support, alarms, misc"
+#~ msgstr ""
+#~ "Přepracování na 0.3.0, Nahrávací činnost, Podpora pro LIRC, budík, různé"

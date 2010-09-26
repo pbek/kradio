@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-04-04 14:30+0200\n"
-"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"PO-Revision-Date: 2010-09-17 08:21+0200\n"
+"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. i18n: file: radio-configuration-ui.ui:320
@@ -98,7 +99,7 @@ msgstr "Nastavit rozhlasové vysílací stanice"
 #: radio.cpp:204
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
-msgstr ""
+msgstr "Nepodařilo se najít přídavný modul pro rozhlasovou stanici %1"
 
 #: radio.cpp:399
 msgid "unknown"
@@ -119,9 +120,8 @@ msgstr "Předvolby pro &vysílací stanice"
 #. i18n: file: radio-configuration-ui.ui:107
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
 #: rc.cpp:6 rc.cpp:9 rc.cpp:100 rc.cpp:103
-#, fuzzy
 msgid "Search Stations"
-msgstr "&Hledat vysílací stanice"
+msgstr "Hledat vysílací stanice"
 
 #. i18n: file: radio-configuration-ui.ui:123
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
@@ -132,9 +132,8 @@ msgstr "&Hledat vysílací stanice"
 #. i18n: file: radio-configuration-ui.ui:126
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
 #: rc.cpp:12 rc.cpp:15 rc.cpp:106 rc.cpp:109
-#, fuzzy
 msgid "Load Presets"
-msgstr "Nahrát a přidat předvolby"
+msgstr "Nahrát předvolby"
 
 #. i18n: file: radio-configuration-ui.ui:142
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
@@ -146,7 +145,7 @@ msgstr "Nahrát a přidat předvolby"
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
 #: rc.cpp:18 rc.cpp:21 rc.cpp:112 rc.cpp:115
 msgid "Save Presets as ..."
-msgstr ""
+msgstr "Uložit předvolby jako..."
 
 #. i18n: file: radio-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
@@ -224,9 +223,8 @@ msgstr "Přednastavení hlasitosti"
 #. i18n: file: radio-configuration-ui.ui:393
 #. i18n: ectx: attribute (title), widget (QWidget, About)
 #: rc.cpp:65 rc.cpp:159
-#, fuzzy
 msgid "Preset &File"
-msgstr "Uložit soubor s předvolbami vysílacích stanic"
+msgstr "&Soubor s předvolbou"
 
 #. i18n: file: radio-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
@@ -294,7 +292,7 @@ msgstr "Pavel Fric"
 #: rc.cpp:94
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pavelfric@seznam.cz"
+msgstr "fripohled.blogspot.com"
 
 #~ msgid "Stations"
 #~ msgstr "Vysílací stanice"

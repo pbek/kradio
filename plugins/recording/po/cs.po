@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-04-02 18:55+0200\n"
-"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"PO-Revision-Date: 2010-09-17 08:24+0200\n"
+"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: encoder_mp3.cpp:80 encoder_mp3.cpp:191
@@ -57,9 +58,9 @@ msgid "Failed writing data to ogg/vorbis output stream. "
 msgstr "Zápis dat do výstupního proudu ogg/vorbis selhal."
 
 #: encoder_ogg.cpp:139
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot open Ogg/Vorbis output file %1: %2"
-msgstr "Nelze otevřít výstupní soubor Ogg/Vorbis %1."
+msgstr "Nelze otevřít výstupní soubor Ogg/Vorbis %1: %2"
 
 #: encoder_ogg.cpp:152
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
@@ -273,7 +274,7 @@ msgstr "Počet vyrovnávacích pamětí"
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
 #: rc.cpp:102 rc.cpp:218
 msgid "Pre-Recordin&g"
-msgstr "Nahrávání pře&dem"
+msgstr "Nahrávání pře&d"
 
 #. i18n: file: recording-configuration-ui.ui:526
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxPreRecordingEnable)
@@ -291,7 +292,7 @@ msgstr "Alt+N"
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
 #: rc.cpp:111 rc.cpp:227
 msgid "PreRecording Time"
-msgstr "Čas náhrávání předem"
+msgstr "Čas náhrávání před"
 
 #. i18n: file: recording-configuration-ui.ui:572
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
@@ -307,7 +308,7 @@ msgstr "Pavel Fric"
 #: rc.cpp:116
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pavelfric@seznam.cz"
+msgstr "fripohled.blogspot.com"
 
 #: recording.cpp:46 recording.cpp:53
 msgid "KRadio Recording Plugin"
@@ -448,3 +449,4 @@ msgstr "00:00:00.00"
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
 msgstr "&Zastavit nahrávání"
+

@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-06-12 19:12+0200\n"
-"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"PO-Revision-Date: 2010-09-17 08:09+0200\n"
+"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: alsa-sound.cpp:43
@@ -183,14 +184,14 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: alsa-sound.cpp:1319 alsa-sound.cpp:1347
-#, fuzzy, kde-format
+#, kde-format
 msgid "error while reading volume from %1, channel %2"
-msgstr "Chyba při čtení hlasitosti z %1"
+msgstr "Chyba při čtení hlasitosti z %1, kanál %2"
 
 #: alsa-sound.cpp:1389 alsa-sound.cpp:1421
-#, fuzzy, kde-format
+#, kde-format
 msgid "error while writing volume %1 to %2, channel %3"
-msgstr "Chyba při zápisu hlasitosti %1 do %2"
+msgstr "Chyba při zápisu hlasitosti %1 do %2, kanál %3"
 
 #: alsa-sound.cpp:1441
 #, kde-format
@@ -334,7 +335,7 @@ msgstr "Programově řízená hlasitost přehrávání"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_5)
 #: rc.cpp:54 rc.cpp:196
 msgid "Playback Mixer Card"
-msgstr ""
+msgstr "Karta mixéru pro přehrávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:239
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)
@@ -515,9 +516,8 @@ msgstr "8"
 #. i18n: file: alsa-sound-configuration-ui.ui:497
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_6)
 #: rc.cpp:137 rc.cpp:279
-#, fuzzy
 msgid "Capture Mixer Card"
-msgstr "Mixážní zařízení pro zachytávání"
+msgstr "Karta mixéru pro zachytávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:534
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage1)
