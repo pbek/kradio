@@ -774,7 +774,7 @@ void RadioView::noticeWidgetPluginShown(WidgetPluginBase *p, bool shown)
 {
     if (!m_manager || !p)
         return;
-    if ((WidgetPluginBase*)m_manager->getConfigDialog() == p) {
+    if (static_cast<WidgetPluginBase*>(m_manager->getConfigDialog()) == p) {
         btnConfigure->blockSignals(true);
         btnConfigure->setChecked(shown);
         btnConfigure->blockSignals(false);
