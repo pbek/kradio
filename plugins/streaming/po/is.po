@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009, 2010.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_streaming\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2010-01-08 08:15+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -27,37 +27,37 @@ msgstr "StreamingConfigurationUI"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: rc.cpp:6 rc.cpp:100
 msgid "URL Properties"
-msgstr "Eiginleikar sl????ar (URL)"
+msgstr "Eiginleikar slóðar (URL)"
 
 #. i18n: file: streaming-configuration-ui.ui:45
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:9 rc.cpp:103
 msgid "Stereo"
-msgstr "V??????ma"
+msgstr "Víðóma"
 
 #. i18n: file: streaming-configuration-ui.ui:50
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:12 rc.cpp:106
 msgid "Mono"
-msgstr "Ein??ma"
+msgstr "Einóma"
 
 #. i18n: file: streaming-configuration-ui.ui:58
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:15 rc.cpp:109
 msgid "Sample Bits"
-msgstr "S??fnunarbitar"
+msgstr "Söfnunarbitar"
 
 #. i18n: file: streaming-configuration-ui.ui:74
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:18 rc.cpp:112
 msgid "Channels"
-msgstr "R??sir"
+msgstr "Rásir"
 
 #. i18n: file: streaming-configuration-ui.ui:84
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:21 rc.cpp:115
 msgid "Endianess"
-msgstr "Endian-b??tar????"
+msgstr "Endian-bætaröð"
 
 #. i18n: file: streaming-configuration-ui.ui:101
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
@@ -117,7 +117,7 @@ msgstr "8"
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbFormat)
 #: rc.cpp:51 rc.cpp:145
 msgid "Raw"
-msgstr "Hr??tt"
+msgstr "Hrátt"
 
 #. i18n: file: streaming-configuration-ui.ui:190
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, m_sbBufferSize)
@@ -129,31 +129,31 @@ msgstr "kB"
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
 #: rc.cpp:57 rc.cpp:151
 msgid "Buffer Size"
-msgstr "St??r?? bi??minnis"
+msgstr "Stærð biðminnis"
 
 #. i18n: file: streaming-configuration-ui.ui:237
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
 #: rc.cpp:60 rc.cpp:154
 msgid "Format"
-msgstr "Sni??"
+msgstr "Snið"
 
 #. i18n: file: streaming-configuration-ui.ui:253
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:63 rc.cpp:157
 msgid "Sample Rate"
-msgstr "S??fnunart????ni"
+msgstr "Söfnunartíðni"
 
 #. i18n: file: streaming-configuration-ui.ui:270
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:66 rc.cpp:160
 msgid "Signed"
-msgstr "Undirrita??"
+msgstr "Undirritað"
 
 #. i18n: file: streaming-configuration-ui.ui:275
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:69 rc.cpp:163
 msgid "Unsigned"
-msgstr "??undirrita??"
+msgstr "Óundirritað"
 
 #. i18n: file: streaming-configuration-ui.ui:376
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -185,20 +185,19 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-"\">Streymingar??forriti?? er tilt??kt fyrir a??ra hluta KRadio sem <span "
-"style=\" font-weight:600;\">hlj????t??ki</span>, ??annig a?? ???? getir "
-"vali?? sl????ir sem settar eru inn h??r a?? ne??an sem <span style=\" font-"
-"weight:600;\">r??sir ?? hlj????blandara</span> t.d. ?? V4L2 ??forritinu. ??"
-"etta gerir kleift a?? nota p??pur og t??ki sem hlj????inntak fyrir KRadio, t."
-"d. <span style=\" font-style:italic;\">/dev/video24</span>. ??etta er s??"
-"rstaklega nytsamlegt ef ???? ert me?? <span style=\"font-weight:600;\">PVR ??"
-"tvarpskort</span>.</p></body></html>"
+"\">Streymingaríforritið er tiltækt fyrir aðra hluta KRadio sem <span style="
+"\" font-weight:600;\">hljóðtæki</span>, þannig að þú getir valið slóðir sem "
+"settar eru inn hér að neðan sem <span style=\" font-weight:600;\">rásir í "
+"hljóðblandara</span> t.d. í V4L2 íforritinu. Þetta gerir kleift að nota "
+"pípur og tæki sem hljóðinntak fyrir KRadio, t.d. <span style=\" font-style:"
+"italic;\">/dev/video24</span>. Þetta er sérstaklega nytsamlegt ef þú ert með "
+"<span style=\"font-weight:600;\">PVR útvarpskort</span>.</p></body></html>"
 
 #. i18n: file: streaming-configuration-ui.ui:405
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureURLs)
 #: rc.cpp:79 rc.cpp:173
 msgid "Capture URLs"
-msgstr "Uppt??kusl????ir (URL)"
+msgstr "Upptökuslóðir (URL)"
 
 #. i18n: file: streaming-configuration-ui.ui:490
 #. i18n: ectx: property (text), widget (K3ListView, m_ListCaptureURLs)
@@ -222,25 +221,25 @@ msgstr "Nr."
 #. i18n: ectx: property (text), widget (K3ListView, m_ListPlaybackURLs)
 #: rc.cpp:85 rc.cpp:94 rc.cpp:179 rc.cpp:188
 msgid "URL"
-msgstr "Sl???? (URL)"
+msgstr "Slóð (URL)"
 
 #. i18n: file: streaming-configuration-ui.ui:571
 #. i18n: ectx: attribute (title), widget (QWidget, PlaybackURLs)
 #: rc.cpp:88 rc.cpp:182
 msgid "Playback URLs"
-msgstr "Spilunarsl????ir (URL)"
+msgstr "Spilunarslóðir (URL)"
 
 #: streaming-configuration.cpp:172 streaming-configuration.cpp:280
 msgid "new channel"
-msgstr "n?? r??s"
+msgstr "ný rás"
 
 #: streaming.cpp:33
 msgid "Streaming Support"
-msgstr "Stu??ningur vi?? streymi"
+msgstr "Stuðningur við streymi"
 
 #: streaming.cpp:41
 msgid "KRadio Streaming Plugin"
-msgstr "KRadio streymingar??forrit"
+msgstr "KRadio streymingaríforrit"
 
 #: streaming.cpp:175
 msgid "Streaming"
@@ -248,7 +247,7 @@ msgstr "Streymi"
 
 #: streaming.cpp:176
 msgid "Streaming Device Options"
-msgstr "Stillingar streymingart??kis"
+msgstr "Stillingar streymingartækis"
 
 #: streaming.cpp:412
 #, kde-format
@@ -260,17 +259,17 @@ msgstr "innri straumur, ekki geymdur (%1)"
 msgid ""
 "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
 msgstr ""
-"StreamingDevice %1::notifySoundStreamData: Spilunarforrit slepptu %2 b??tum"
+"StreamingDevice %1::notifySoundStreamData: Spilunarforrit slepptu %2 bætum"
 
 #: streaming.cpp:445
 #, kde-format
 msgid "Streaming Device %1"
-msgstr "Streymingart??ki %1"
+msgstr "Streymingartæki %1"
 
 #: streaming.cpp:451 streaming.cpp:456 streaming.cpp:461 streaming.cpp:466
 #, kde-format
 msgid "Streaming Device %1, %2: %3"
-msgstr "Streymingart??ki %1, %2: %3"
+msgstr "Streymingartæki %1, %2: %3"
 
 #: streaming-job.cpp:146 streaming-job.cpp:225
 #, kde-format
@@ -285,7 +284,7 @@ msgstr "%1 (%2)"
 #: streaming-job.cpp:303
 #, kde-format
 msgid "skipped %1 bytes"
-msgstr "sleppti %1 b??tum"
+msgstr "sleppti %1 bætum"
 
 #: streaming-job.cpp:347 streaming-job.cpp:398
 #, kde-format

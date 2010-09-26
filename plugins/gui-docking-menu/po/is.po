@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009, 2010.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2010-01-08 07:49+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -19,39 +19,39 @@ msgstr ""
 
 #: docking-configuration.cpp:70
 msgid "Left Mouse Click on Tray"
-msgstr "Smella me?? vinstri m??sarhnapp ?? kerfisbakka"
+msgstr "Smella með vinstri músarhnapp á kerfisbakka"
 
 #: docking-configuration.cpp:73
 msgid "Show/Hide all GUI Elements"
-msgstr "S??na/fela allar myndr??nar vi??m??tseiningar"
+msgstr "Sýna/fela allar myndrænar viðmótseiningar"
 
 #: docking-configuration.cpp:74
 msgid "Power On/Off"
-msgstr "Af/??"
+msgstr "Af/Á"
 
 #: docking.cpp:45
 msgid "System Tray Icon/Menu for KRadio"
-msgstr "KRadio t??kn/valmynd ?? kerfisbakka"
+msgstr "KRadio tákn/valmynd í kerfisbakka"
 
 #: docking.cpp:53
 msgid "System Tray Plugin"
-msgstr "??forrit ?? kerfisbakka"
+msgstr "Íforrit í kerfisbakka"
 
 #: docking.cpp:203
 msgid "System Tray Icon"
-msgstr "T??knmynd ?? kerfisbakka"
+msgstr "Táknmynd í kerfisbakka"
 
 #: docking.cpp:204
 msgid "System Tray Icon Configuration"
-msgstr "Stillingar fyrir t??knmynd ?? kerfisbakka"
+msgstr "Stillingar fyrir táknmynd í kerfisbakka"
 
 #: docking.cpp:258
 msgid "Search Next Station"
-msgstr "Finna n??stu ??tvarpsst????"
+msgstr "Finna næstu útvarpsstöð"
 
 #: docking.cpp:259
 msgid "Search Previous Station"
-msgstr "Finna fyrri ??tvarpsst????"
+msgstr "Finna fyrri útvarpsstöð"
 
 #: docking.cpp:268
 msgid "Recording"
@@ -59,28 +59,28 @@ msgstr "Upptaka"
 
 #: docking.cpp:273
 msgid "Pause Radio"
-msgstr "Gera hl?? ?? ??tvarpi"
+msgstr "Gera hlé á útvarpi"
 
 #: docking.cpp:284
 msgid "Show/Hide Plugins"
-msgstr "S??na/fela ??forrit"
+msgstr "Sýna/fela íforrit"
 
 #: docking.cpp:292
 msgid "&Quit"
-msgstr "&H??tta"
+msgstr "&Hætta"
 
 #: docking.cpp:406
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
-msgstr "St????va ni??urtalningu ?? sv??fingu (keyrir til %1)"
+msgstr "Stöðva niðurtalningu í svæfingu (keyrir til %1)"
 
 #: docking.cpp:409 docking.cpp:418 docking.cpp:426
 msgid "Start Sleep Countdown"
-msgstr "Virkja ni??urtalningu ?? sv??fingu"
+msgstr "Virkja niðurtalningu í svæfingu"
 
 #: docking.cpp:434
 msgid "Power Off"
-msgstr "Sl??kkva"
+msgstr "Slökkva"
 
 #: docking.cpp:434
 msgid "Power On"
@@ -88,7 +88,7 @@ msgstr "Kveikja"
 
 #: docking.cpp:449 docking.cpp:470
 msgid "invalid station"
-msgstr "??gild st????"
+msgstr "Ógild stöð"
 
 #: docking.cpp:452
 #, kde-format
@@ -98,33 +98,33 @@ msgstr "KRadio: %1"
 #: docking.cpp:462
 #, kde-format
 msgid "next alarm: %1"
-msgstr "n??sta kva??ning: %1"
+msgstr "næsta kvaðning: %1"
 
 #: docking.cpp:464
 msgid "<no alarm pending>"
-msgstr "<engin kva??ning ?? gangi>"
+msgstr "<engin kvaðning í gangi>"
 
 #: docking.cpp:582 docking.cpp:684 docking.cpp:742
 #, kde-format
 msgid "Stop Recording of %1"
-msgstr "H??tta uppt??ku ?? %1"
+msgstr "Hætta upptöku á %1"
 
 #: docking.cpp:670
 msgid "Start Recording"
-msgstr "Byrja uppt??ku"
+msgstr "Byrja upptöku"
 
 #: docking.cpp:724
 msgid "Resume playback"
-msgstr "Halda ??fram me?? spilun"
+msgstr "Halda áfram með spilun"
 
 #: docking.cpp:728
 msgid "Pause playback"
-msgstr "Gera hl?? ?? afspilun"
+msgstr "Gera hlé á afspilun"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"

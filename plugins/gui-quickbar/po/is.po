@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_quickbar\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-27 13:34+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: quickbar.cpp:48
 msgid "Radio Station Quick Selection Toolbar"
-msgstr "Skyndivallisti ??tvarpsst????va"
+msgstr "Skyndivallisti útvarpsstöðva"
 
 #: quickbar.cpp:54
 msgid "Quickbar Plugin"
-msgstr "??forrit skyndivallista"
+msgstr "Íforrit skyndivallista"
 
 #: quickbar.cpp:143
 msgid "Quickbar"
@@ -35,16 +35,16 @@ msgstr "Stillingar skyndivallista"
 
 #: quickbar.cpp:377
 msgid "contentsDragEnterEvent accepted"
-msgstr "contentsDragEnterEvent sam??ykkt"
+msgstr "contentsDragEnterEvent samþykkt"
 
 #: quickbar.cpp:379
 msgid "contentsDragEnterEvent rejected"
-msgstr "contentsDragEnterEvent hafna??"
+msgstr "contentsDragEnterEvent hafnað"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"

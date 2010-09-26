@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-27 16:26+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr ""
 #: rc.cpp:6 rc.cpp:122
 #, fuzzy
 msgid "Output"
-msgstr "??ttak"
+msgstr "Úttak"
 
 #. i18n: file: recording-configuration-ui.ui:104
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
@@ -135,13 +135,13 @@ msgstr ""
 #: rc.cpp:33 rc.cpp:149
 #, fuzzy
 msgid "File Format"
-msgstr "Skr??arsni??"
+msgstr "Skráarsnið"
 
 #. i18n: file: recording-configuration-ui.ui:177
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:36 rc.cpp:152
 msgid "Ogg Quality(0 - low, 9 - high)"
-msgstr "G????i Ogg (0 - l??g, 9 - h??)"
+msgstr "Gæði Ogg (0 - lág, 9 - há)"
 
 #. i18n: file: recording-configuration-ui.ui:206
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -184,21 +184,21 @@ msgstr ""
 #: rc.cpp:57 rc.cpp:173
 #, fuzzy
 msgid "Stereo"
-msgstr "Stere??"
+msgstr "Stereó"
 
 #. i18n: file: recording-configuration-ui.ui:301
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
 #: rc.cpp:60 rc.cpp:176
 #, fuzzy
 msgid "Mono"
-msgstr "M??n??"
+msgstr "Mónó"
 
 #. i18n: file: recording-configuration-ui.ui:309
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:63 rc.cpp:179 recording-monitor.cpp:54
 #, fuzzy
 msgid "Sample Rate"
-msgstr "S??fnunart????ni"
+msgstr "Söfnunartíðni"
 
 #. i18n: file: recording-configuration-ui.ui:326
 #. i18n: ectx: property (text), item, widget (KComboBox, editEndianess)
@@ -231,7 +231,7 @@ msgstr "8"
 #: rc.cpp:78 rc.cpp:194
 #, fuzzy
 msgid "Channels"
-msgstr "R??sir"
+msgstr "Rásir"
 
 #. i18n: file: recording-configuration-ui.ui:369
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
@@ -312,7 +312,7 @@ msgstr ""
 #, fuzzy
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:116
 #, fuzzy
@@ -397,12 +397,12 @@ msgstr ""
 #: recording-monitor.cpp:394
 #, fuzzy
 msgid "<undefined>"
-msgstr "<??skilgreint>"
+msgstr "<óskilgreint>"
 
 #: recording-monitor.cpp:50
 #, fuzzy
 msgid "File Size"
-msgstr "Skr??arst??r??"
+msgstr "Skráarstærð"
 
 #: recording-monitor.cpp:52
 msgid "Recording Time"

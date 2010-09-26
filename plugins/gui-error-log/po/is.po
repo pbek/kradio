@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_error_log\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-15 14:01+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -19,15 +19,15 @@ msgstr ""
 
 #: errorlog.cpp:35
 msgid "Error Logging Window for KRadio"
-msgstr "Villuskr??ningargluggi fyrir KRadio"
+msgstr "Villuskráningargluggi fyrir KRadio"
 
 #: errorlog.cpp:41
 msgid "Error Logger"
-msgstr "Villuskr??ning"
+msgstr "Villuskráning"
 
 #: errorlog.cpp:49 errorlog.cpp:58
 msgid "KRadio Logger"
-msgstr "Ann??lsskr??ning fyrir KRadio"
+msgstr "Annálsskráning fyrir KRadio"
 
 #: errorlog.cpp:55
 msgid "Save &as"
@@ -35,16 +35,16 @@ msgstr "Vist&a sem"
 
 #: errorlog.cpp:60
 msgid "Information"
-msgstr "Uppl??singar"
+msgstr "Upplýsingar"
 
 #: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
 #, kde-format
 msgid "KRadio4 Version %1 logging started"
-msgstr "Skr??ning ann??ls fyrir KRadio4 ??tg??fu %1 er hafin"
+msgstr "Skráning annáls fyrir KRadio4 útgáfu %1 er hafin"
 
 #: errorlog.cpp:63
 msgid "Warnings"
-msgstr "A??varanir"
+msgstr "Aðvaranir"
 
 #: errorlog.cpp:66
 msgid "Errors"
@@ -52,22 +52,22 @@ msgstr "Villur"
 
 #: errorlog.cpp:69
 msgid "Debugging"
-msgstr "Afl??sun"
+msgstr "Aflúsun"
 
 #: errorlog.cpp:182
 msgid "Log Files"
-msgstr "Ann??laskr??r"
+msgstr "Annálaskrár"
 
 #: errorlog.cpp:187
 msgid "Save KRadio Logging Data as ..."
-msgstr "Vista ann??lsg??gn KRadio sem..."
+msgstr "Vista annálsgögn KRadio sem..."
 
 #: errorlog.cpp:212
 #, kde-format
 msgid "error writing to tempfile %1"
-msgstr "villa vi?? a?? skrifa ?? br????abirg??askr??na %1"
+msgstr "villa við að skrifa í bráðabirgðaskrána %1"
 
 #: errorlog.cpp:221
 #, kde-format
 msgid "error uploading preset file %1"
-msgstr "villa vi?? upphle??slu forstillingaskr??r %1"
+msgstr "villa við upphleðslu forstillingaskrár %1"

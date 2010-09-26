@@ -2,15 +2,15 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-15 21:43+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -27,17 +27,17 @@ msgstr "%1 Villa: %2"
 #: interfaces/errorlog_interfaces.cpp:50 interfaces/errorlog_interfaces.cpp:77
 #, kde-format
 msgid "%1 Warning: %2"
-msgstr "%1 A??v??run: %2"
+msgstr "%1 Aðvörun: %2"
 
 #: interfaces/errorlog_interfaces.cpp:57 interfaces/errorlog_interfaces.cpp:84
 #, kde-format
 msgid "%1 Information: %2"
-msgstr "%1 Uppl??singar: %2"
+msgstr "%1 Upplýsingar: %2"
 
 #: interfaces/errorlog_interfaces.cpp:64 interfaces/errorlog_interfaces.cpp:91
 #, kde-format
 msgid "%1 Debug: %2"
-msgstr "%1 Afl??sun: %2"
+msgstr "%1 Aflúsun: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
 #: radiostations/internetradiostation.cpp:143
@@ -57,19 +57,19 @@ msgstr "%1 kHz"
 
 #: radiostations/radiostation-config.cpp:48
 msgid "I don't know how to edit this station"
-msgstr "??g kann ekki a?? breyta ??essari st????"
+msgstr "Ég kann ekki að breyta þessari stöð"
 
 #: radiostations/radiostation-config.cpp:74
 msgid "Frequency:"
-msgstr "T????ni:"
+msgstr "Tíðni:"
 
 #: radiostations/radiostation-config.cpp:127
 msgid "URL:"
-msgstr "Sl????:"
+msgstr "Slóð:"
 
 #: radiostations/radiostation-config.cpp:131
 msgid "Decoder Class:"
-msgstr "Flokkur afk????ara:"
+msgstr "Flokkur afkóðara:"
 
 #: radiostations/radiostation-config.cpp:135
 msgid "Playlist Class:"
@@ -77,7 +77,7 @@ msgstr "Flokkur spilunarlista:"
 
 #: radiostations/radiostation-config.cpp:140
 msgid "<autodetect (very slow!)>"
-msgstr "<finna sj??lfvirkt (mj??g t??mafrekt!)>"
+msgstr "<finna sjálfvirkt (mjög tímafrekt!)>"
 
 #: radiostations/radiostation-config.cpp:141
 msgid "MP3"
@@ -125,11 +125,11 @@ msgstr "Nei."
 
 #: radiostations/radiostation-listview.cpp:36
 msgid "Icon"
-msgstr "T??knmynd"
+msgstr "Táknmynd"
 
 #: radiostations/radiostation-listview.cpp:37
 msgid "Station"
-msgstr "??tvarpsst????"
+msgstr "Útvarpsstöð"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -137,69 +137,69 @@ msgstr "??tvarpsst????"
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: radiostations/radiostation-listview.cpp:38 rc.cpp:50 rc.cpp:68
 msgid "Description"
-msgstr "L??sing"
+msgstr "Lýsing"
 
 #: radiostations/radiostation-listview.cpp:228
 msgid "dragEnterEvent accepted"
-msgstr "dragEnterEvent sam??ykkt"
+msgstr "dragEnterEvent samþykkt"
 
 #: radiostations/radiostation-listview.cpp:232
 msgid "dragEnterEvent rejected"
-msgstr "dragEnterEvent hafna??"
+msgstr "dragEnterEvent hafnað"
 
 #: radiostations/radiostation-listview.cpp:241
 msgid "contentsDragEnterEvent accepted"
-msgstr "contentsDragEnterEvent sam??ykkt"
+msgstr "contentsDragEnterEvent samþykkt"
 
 #: radiostations/radiostation-listview.cpp:245
 msgid "contentsDragEnterEvent rejected"
-msgstr "contentsDragEnterEvent hafna??"
+msgstr "contentsDragEnterEvent hafnað"
 
 #: radiostations/frequencyradiostation.h:72
 msgid "AM/FM Radio Station"
-msgstr "AM/FM ??tvarpsst????"
+msgstr "AM/FM útvarpsstöð"
 
 #: radiostations/internetradiostation.h:73
 msgid "Internet Radio Station"
-msgstr "Internet??tvarpsst????"
+msgstr "Internetútvarpsstöð"
 
 #: radiostations/radiostation.h:161 radiostations/radiostation.h:162
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
 msgid "unknown"
-msgstr "????ekkt"
+msgstr "óþekkt"
 
 #: src/fileringbuffer.cpp:35 src/fileringbuffer.cpp:68
 #, kde-format
 msgid "cannot open buffer file %1"
-msgstr "get ekki opna?? bi??minnisskr?? %1"
+msgstr "get ekki opnað biðminnisskrá %1"
 
 #: src/fileringbuffer.cpp:93
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Skrifun ?? br????abirg??askr?? %1 mist??kst. "
+msgstr "FileRingbuffer::resize: Skrifun í bráðabirgðaskrá %1 mistókst. "
 
 #: src/fileringbuffer.cpp:99
 #, kde-format
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
-msgstr "FileRingbuffer::resize: Opnun br????abirg??askr??r %1 mist??kst. "
+msgstr "FileRingbuffer::resize: Opnun bráðabirgðaskrár %1 mistókst. "
 
 #: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
 #, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
-msgstr "FileRingBuffer::addData: mist??kst a?? skrifa g??gn ?? skr?? %1."
+msgstr "FileRingBuffer::addData: mistókst að skrifa gögn í skrá %1."
 
 #: src/fileringbuffer.cpp:168
 #, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
-msgstr "FileRingBuffer::takeData: mist??kst a?? lesa g??gn yfir ?? skr?? %1."
+msgstr "FileRingBuffer::takeData: mistókst að lesa gögn yfir í skrá %1."
 
 #: src/kradioaboutwidget.cpp:65
 msgid ""
 "<qt>No information available.<br />The supplied KAboutData object does not "
 "exist.</qt>"
 msgstr ""
-"<qt>??v?? mi??ur eru engar uppl??singar tilt??kar.<br />??essi KAboutData "
-"hlutur er ekki til.</qt>"
+"<qt>Því miður eru engar upplýsingar tiltækar.<br />Þessi KAboutData hlutur "
+"er ekki til.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
@@ -207,7 +207,7 @@ msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
 "html>"
 msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>??tg??fa %2</b><br />Notar KDE %3</"
+"<html><font size=\"5\">%1</font><br /><b>Útgáfa %2</b><br />Notar KDE %3</"
 "html>"
 
 #: src/kradioaboutwidget.cpp:125
@@ -221,32 +221,32 @@ msgstr "&Um"
 
 #: src/kradioaboutwidget.cpp:147
 msgid "A&uthor"
-msgstr "H??f&undur"
+msgstr "Höf&undur"
 
 #: src/kradioaboutwidget.cpp:147
 msgid "A&uthors"
-msgstr "H??f&undar"
+msgstr "Höf&undar"
 
 #: src/kradioaboutwidget.cpp:152
 msgid ""
 "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
 "bugs.\n"
 msgstr ""
-"Vinsamlega nota??u <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> "
-"til a?? senda inn villusk??rslur.\n"
+"Vinsamlega notaðu <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> "
+"til að senda inn villuskýrslur.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Vinsamlega sendu villusk??rslur til <a href=\"mailto:%1\">%2</a>.\n"
+msgstr "Vinsamlega sendu villuskýrslur til <a href=\"mailto:%1\">%2</a>.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
-msgstr "??akkir &f??"
+msgstr "Þakkir &fá"
 
 #: src/kradioaboutwidget.cpp:232
 msgid "T&ranslation"
-msgstr "??????&ing"
+msgstr "Þýð&ing"
 
 #: src/kradioaboutwidget.cpp:255
 msgid "License Agreement"
@@ -255,12 +255,12 @@ msgstr "Notandaleyfi"
 #: src/kradioapp.cpp:132
 #, kde-format
 msgid "Library %1: Plugin Entry Point is missing\n"
-msgstr "Skr??asafn %1: Upphafspunkt ??forritsins vantar\n"
+msgstr "Skráasafn %1: Upphafspunkt íforritsins vantar\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
-msgstr "Hle??sluvilla skr??asafns ??forrits"
+msgstr "Hleðsluvilla skráasafns íforrits"
 
 #: src/kradioapp.cpp:140
 #, kde-format
@@ -268,7 +268,7 @@ msgid ""
 "Library %1: \n"
 "%2"
 msgstr ""
-"Skr??asafn %1: \n"
+"Skráasafn %1: \n"
 "%2"
 
 #: src/kradioapp.cpp:166
@@ -277,11 +277,11 @@ msgstr "saveState"
 
 #: src/kradioapp.cpp:216
 msgid "New plugin libraries found. Should the libraries be loaded now?"
-msgstr "N?? skr??as??fn ??forrita fundust. Viltu l??ta hla??a ??eim inn n??na?"
+msgstr "Ný skráasöfn íforrita fundust. Viltu láta hlaða þeim inn núna?"
 
 #: src/kradioapp.cpp:218
 msgid "New Plugin Libraries found"
-msgstr "N?? skr??as??fn ??forrita fundust"
+msgstr "Ný skráasöfn íforrita fundust"
 
 #: src/kradioapp.cpp:234
 #, kde-format
@@ -290,13 +290,13 @@ msgid ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr ""
-"Fann einungis %1 skr??as??fn (libraries). V??nti minnst 5. Endilega athuga??"
-"u me?? uppsetningarm??ppu KRadio4 og umhverfisbreyturnar KDEDIR, KDEDIRS og "
+"Fann einungis %1 skráasöfn (libraries). Vænti minnst 5. Endilega athugaðu "
+"með uppsetningarmöppu KRadio4 og umhverfisbreyturnar KDEDIR, KDEDIRS og "
 "KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
-msgstr "Villa vi?? uppsetningu KRadio4"
+msgstr "Villa við uppsetningu KRadio4"
 
 #: src/kradioapp.cpp:264
 msgid "Instance"
@@ -313,17 +313,17 @@ msgstr "Um einingar KRadio"
 #: src/kradioapp.cpp:314
 #, kde-format
 msgid "Error: Loading Library %1 failed: %2"
-msgstr "Villa: Hle??sla skr??asafnsins %1 mist??kst: %2"
+msgstr "Villa: Hleðsla skráasafnsins %1 mistókst: %2"
 
 #: src/kradioapp.cpp:364
 #, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 falied."
-msgstr "Villa: Ger?? tilviksins \"%1\" ??r flokknum %2 mist??kst."
+msgstr "Villa: Gerð tilviksins \"%1\" úr flokknum %2 mistókst."
 
 #: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr "Villa: Get ekki b??i?? til tilviki?? \"%1\" ??r ????ekkta flokknum %2."
+msgstr "Villa: Get ekki búið til tilvikið \"%1\" úr óþekkta flokknum %2."
 
 #: src/main.cpp:34
 msgid "KRadio4"
@@ -331,7 +331,7 @@ msgstr "KRadio4"
 
 #: src/main.cpp:36
 msgid "A versatile KDE AM/FM/Internet radio application"
-msgstr "Fj??lh??ft KDE AM/FM/Internet ??tvarpsforrit"
+msgstr "Fjölhæft KDE AM/FM/Internet útvarpsforrit"
 
 #: src/main.cpp:38
 msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
@@ -346,8 +346,8 @@ msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, lirc support, alarms, misc"
 msgstr ""
-"KDE4 a??l??gun, RDS stu??ningur, fl??tilyklar, PVR stu??ningur, endurskrifun "
-"fyrir 1.0/0.3.0, upptaka, lirc stu??ningur, vi??varanir, ??mislegt"
+"KDE4 aðlögun, RDS stuðningur, flýtilyklar, PVR stuðningur, endurskrifun "
+"fyrir 1.0/0.3.0, upptaka, lirc stuðningur, viðvaranir, ýmislegt"
 
 #: src/main.cpp:44
 msgid "Marcus Camen"
@@ -355,7 +355,7 @@ msgstr "Marcus Camen"
 
 #: src/main.cpp:44
 msgid "Buildsystem, Standards Conformance, Cleanups"
-msgstr "Kerfisbygging (Buildsystem), fylgni vi?? sta??la, tiltekt"
+msgstr "Kerfisbygging (Buildsystem), fylgni við staðla, tiltekt"
 
 #: src/main.cpp:45
 msgid "Klas Kalass"
@@ -363,7 +363,7 @@ msgstr "Klas Kalass"
 
 #: src/main.cpp:45
 msgid "Miscellaneous"
-msgstr "??mislegt"
+msgstr "Ýmislegt"
 
 #: src/main.cpp:46
 msgid "Frank Schwanz"
@@ -371,11 +371,11 @@ msgstr "Frank Schwanz"
 
 #: src/main.cpp:46
 msgid "initial idea, first basic KDE 2 application"
-msgstr "Upphafleg hugmynd, fyrsta KDE 2 grunnforriti??"
+msgstr "Upphafleg hugmynd, fyrsta KDE 2 grunnforritið"
 
 #: src/multibuffer.cpp:89
 msgid "Buffer Overflow. "
-msgstr "Bi??minni yfirfullt"
+msgstr "Biðminni yfirfullt"
 
 #: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
@@ -387,12 +387,12 @@ msgid ""
 "Library %1: \n"
 "Cannot load non-local library"
 msgstr ""
-"Skr??asafn %1: \n"
-"Get ekki hla??i?? inn skr??as??fnum af ????fum v??lum"
+"Skráasafn %1: \n"
+"Get ekki hlaðið inn skráasöfnum af öðfum vélum"
 
 #: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
-msgstr "Settu inn nafn ?? tilviki ??forrits"
+msgstr "Settu inn nafn á tilviki íforrits"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
@@ -402,39 +402,38 @@ msgstr "Heiti tilviks"
 
 #: src/pluginmanager.cpp:436
 msgid "Plugins"
-msgstr "??forrit"
+msgstr "Íforrit"
 
 #: src/pluginmanager.cpp:437
 msgid "Plugin Library Configuration"
-msgstr "Stilling ?? skr??asafni ??forrits"
+msgstr "Stilling á skráasafni íforrits"
 
 #: src/pluginmanager.cpp:570
 msgid "Starting Plugins"
-msgstr "R??si ??forrit"
+msgstr "Ræsi íforrit"
 
 #: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, kde-format
 msgid "Creating Plugin %1"
-msgstr "B?? til ??forrit %1"
+msgstr "Bý til íforrit %1"
 
 #: src/pluginmanager.cpp:605
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
-msgstr ""
-"N?? ??forrit fundust. Viltu l??ta b??a til sj??lfvirkt aukatilvik n??na?"
+msgstr "Ný íforrit fundust. Viltu láta búa til sjálfvirkt aukatilvik núna?"
 
 #: src/pluginmanager.cpp:607
 msgid "New Plugins found"
-msgstr "N?? ??forrit fundust"
+msgstr "Ný íforrit fundust"
 
 #: src/pluginmanager.cpp:642
 #, kde-format
 msgid "Initializing Plugin %1"
-msgstr "R??si ??forriti?? %1"
+msgstr "Ræsi íforritið %1"
 
 #: src/pluginmanager.cpp:767
 msgid "Show all"
-msgstr "S??na allt"
+msgstr "Sýna allt"
 
 #: src/pluginmanager.cpp:768
 msgid "Hide all"
@@ -446,7 +445,7 @@ msgstr "Endurheimta allt"
 
 #: src/pluginmanager.cpp:770
 msgid "restore state before laste hide-all activation"
-msgstr "endurheimta st????u fr?? ??v?? ????ur en 'fela allt' var virkja??"
+msgstr "endurheimta stöðu frá því áður en 'fela allt' var virkjað"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
@@ -456,7 +455,7 @@ msgstr "&Byrja"
 #. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
 #: src/standardscandialog.cpp:92 rc.cpp:87
 msgid "&Stop"
-msgstr "&St????va"
+msgstr "&Stöðva"
 
 #: src/standardscandialog.cpp:163
 #, kde-format
@@ -465,7 +464,7 @@ msgstr "<p align=\"right\">%1</p>"
 
 #: src/standardscandialog.cpp:226
 msgid "new station "
-msgstr "n?? st????"
+msgstr "ný stöð"
 
 #: src/station-drag-object.cpp:70
 msgid "canDecode = true"
@@ -473,7 +472,7 @@ msgstr "canDecode = true"
 
 #: src/stationlist.cpp:135
 msgid "Contains merged Data"
-msgstr "Inniheldur samsett g??gn"
+msgstr "Inniheldur samsett gögn"
 
 #: src/stationlist.cpp:176
 msgid ""
@@ -481,64 +480,64 @@ msgid ""
 "You have to rebuild your station selections for the quickbar and the docking "
 "menu."
 msgstr ""
-"L??klega var veri?? a?? lesa gamla forstillingaskr??.\n"
-"???? ver??ur a?? endurbyggja val ?? ??tvarpsst????vum fyrir fl??tispjaldi?? "
-"og tengivalmyndina."
+"Líklega var verið að lesa gamla forstillingaskrá.\n"
+"Þú verður að endurbyggja val á útvarpsstöðvum fyrir flýtispjaldið og "
+"tengivalmyndina."
 
 #: src/stationlist.cpp:185
 msgid "parsing failed"
-msgstr "????ttun mist??kst"
+msgstr "þáttun mistókst"
 
 #: src/stationlist.cpp:189
 msgid ""
 "Parsing the station preset file failed.\n"
 "See console output for more details."
 msgstr ""
-"Mist??kst a?? ????tta forstillingaskr??.\n"
-"Sj????u ??ttak ??r skj??hermi fyrir n??nari uppl??singar."
+"Mistókst að þátta forstillingaskrá.\n"
+"Sjáðu úttak úr skjáhermi fyrir nánari upplýsingar."
 
 #: src/stationlist.cpp:203 src/stationlist.cpp:208
 #, kde-format
 msgid "error downloading preset file %1"
-msgstr "villa vi?? ni??urhal forstillingaskr??rinnar %1"
+msgstr "villa við niðurhal forstillingaskrárinnar %1"
 
 #: src/stationlist.cpp:205
 #, kde-format
 msgid "Download of the station preset file at %1 failed."
-msgstr "Ni??urhal forstillingaskr??rinnar fr?? %1 mist??kst."
+msgstr "Niðurhal forstillingaskrárinnar frá %1 mistókst."
 
 #: src/stationlist.cpp:214
 msgid "temporary file: "
-msgstr "br????abirg??askr??: "
+msgstr "bráðabirgðaskrá: "
 
 #: src/stationlist.cpp:220
 #, kde-format
 msgid "error opening preset file %1"
-msgstr "villa vi?? opnun forstillingaskr??rinnar %1"
+msgstr "villa við opnun forstillingaskrárinnar %1"
 
 #: src/stationlist.cpp:223
 #, kde-format
 msgid "Opening of the station preset file at %1 failed."
-msgstr "Opnun forstillingaskr??rinnar %1 mist??kst."
+msgstr "Opnun forstillingaskrárinnar %1 mistókst."
 
 #: src/stationlist.cpp:243
 msgid "Old Preset File Format detected"
-msgstr "Gamalt sni?? forstillingaskr??r fannst"
+msgstr "Gamalt snið forstillingaskrár fannst"
 
 #: src/stationlist.cpp:322
 #, kde-format
 msgid "error writing to tempfile %1"
-msgstr "villa vi?? a?? skrifa ?? br????abirg??askr??na %1"
+msgstr "villa við að skrifa í bráðabirgðaskrána %1"
 
 #: src/stationlist.cpp:325
 #, kde-format
 msgid "Writing station preset file %1 failed."
-msgstr "Skrifun forstillingaskr??rinnar %1 mist??kst."
+msgstr "Skrifun forstillingaskrárinnar %1 mistókst."
 
 #: src/stationlist.cpp:335
 #, kde-format
 msgid "uploading preset file %1: "
-msgstr "hle?? upp forstillingaskr??nni %1: "
+msgstr "hleð upp forstillingaskránni %1: "
 
 #: src/stationlist.cpp:337
 #, kde-format
@@ -546,67 +545,67 @@ msgid ""
 "something strange happend, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
-"eitthva?? skr??ti?? ger??ist, st????valistinn er einungis me?? %1 f??rslum. "
-"Sleppti ??v?? a?? skrifa forstillingaskr?? furir ??tvarpsst????ina"
+"eitthvað skrýtið gerðist, stöðvalistinn er einungis með %1 færslum. Sleppti "
+"því að skrifa forstillingaskrá furir útvarpsstöðina"
 
 #: src/stationlist.cpp:342
 #, kde-format
 msgid "error uploading preset file %1"
-msgstr "villa vi?? upphle??slu forstillingaskr??rinnar %1"
+msgstr "villa við upphleðslu forstillingaskrárinnar %1"
 
 #: src/stationlist.cpp:346
 #, kde-format
 msgid "Upload of station preset file to %1 failed."
-msgstr "Upphle??sla forstillingaskr??rinnar til %1 mist??kst"
+msgstr "Upphleðsla forstillingaskrárinnar til %1 mistókst"
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
 msgid "error creating temp file"
-msgstr "villa vi?? a?? b??a til br????abirg??askr??"
+msgstr "villa við að búa til bráðabirgðaskrá"
 
 #: src/stationlistxmlhandler.cpp:64
 #, kde-format
 msgid "misplaced element %1"
-msgstr "einingin %1 rangt sta??sett"
+msgstr "einingin %1 rangt staðsett"
 
 #: src/stationlistxmlhandler.cpp:115
 #, kde-format
 msgid "unknown or unexpected element %1"
-msgstr "????ekkt e??a ??v??nt eining %1"
+msgstr "óþekkt eða óvænt eining %1"
 
 #: src/stationlistxmlhandler.cpp:144
 #, kde-format
 msgid "expected element %1, but found %2"
-msgstr "??tti von ?? einingunni %1, en fann %2"
+msgstr "átti von á einingunni %1, en fann %2"
 
 #: src/stationlistxmlhandler.cpp:147
 #, kde-format
 msgid "unexpected element %1"
-msgstr "??v??nt eining %1"
+msgstr "óvænt eining %1"
 
 #: src/stationlistxmlhandler.cpp:155
 #, kde-format
 msgid "invalid data for element %1"
-msgstr "??gild g??gn fyrir eininguna %1"
+msgstr "ógild gögn fyrir eininguna %1"
 
 #: src/stationlistxmlhandler.cpp:169
 #, kde-format
 msgid "found a station list with unknown format %1"
-msgstr "fann st????valista me?? ????ekktu sni??i %1"
+msgstr "fann stöðvalista með óþekktu sniði %1"
 
 #: src/stationlistxmlhandler.cpp:209
 #, kde-format
 msgid "unknown property %1 for class %2"
-msgstr "????ekktur eiginleiki %1 fyrir klasann %2"
+msgstr "óþekktur eiginleiki %1 fyrir klasann %2"
 
 #: src/stationlistxmlhandler.cpp:214
 #, kde-format
 msgid "characters ignored for element %1"
-msgstr "stafir hunsa??ir ?? einingunni %1"
+msgstr "stafir hunsaðir í einingunni %1"
 
 #: src/widgetpluginbase.cpp:293
 #, kde-format
 msgid "Show %1"
-msgstr "S??na %1"
+msgstr "Sýna %1"
 
 #: src/widgetpluginbase.cpp:297
 #, kde-format
@@ -616,7 +615,7 @@ msgstr "Fela %1"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
@@ -633,19 +632,19 @@ msgstr "PluginManagerConfigurationUI"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:8
 msgid "Automatic detection and load of new plugins"
-msgstr "Sj??fvirk skynjun og hle??sla n??rra ??forrita"
+msgstr "Sjáfvirk skynjun og hleðsla nýrra íforrita"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:60
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
 #: rc.cpp:11
 msgid "Do not check/load!"
-msgstr "Ekki yfirfara/hla??a!"
+msgstr "Ekki yfirfara/hlaða!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:73
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
 #: rc.cpp:14
 msgid "Automatically check/load!"
-msgstr "Yfirfara/hla??a sj??lfvirkt!"
+msgstr "Yfirfara/hlaða sjálfvirkt!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
@@ -657,7 +656,7 @@ msgstr "Spyrja!"
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:20
 msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
-msgstr "S??na framvinduv??si vi?? r&??singu ??forrita"
+msgstr "Sýna framvinduvísi við r&æsingu íforrita"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:109
 #. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
@@ -669,7 +668,7 @@ msgstr "Alt+Z"
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
 #: rc.cpp:26
 msgid "Plugin Libraries"
-msgstr "Skr??as??fn ??forrita"
+msgstr "Skráasöfn íforrita"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:129
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
@@ -678,44 +677,42 @@ msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
-"Veldu ??forritaskr??asafn ??r skr??avalmynd. ??v?? ver??ur b??tt vi?? skr??"
-"asafnalistann ef ???? ??tir ?? \"Hla??a inn skr??asafni\" hnappinn."
+"Veldu íforritaskráasafn úr skráavalmynd. Því verður bætt við "
+"skráasafnalistann ef þú ýtir á \"Hlaða inn skráasafni\" hnappinn."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:142
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
 #: rc.cpp:32
 msgid "Loads the library specified in the box left to this button."
 msgstr ""
-"Hle??ur inn skr??asafninu sem tilteki?? er ?? reitnum vinstra megin vi?? ??"
-"ennan hnapp."
+"Hleður inn skráasafninu sem tiltekið er í reitnum vinstra megin við þennan "
+"hnapp."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:161
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
 #: rc.cpp:35
 msgid "list of loaded plugin libraries"
-msgstr "Listi yfir innhla??in ??forritaskr??as??fn"
+msgstr "Listi yfir innhlaðin íforritaskráasöfn"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:174
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
 #: rc.cpp:38
 msgid "Unload the plugin library selected in the list on the left side"
 msgstr ""
-"Afhle??ur ??forritaskr??asafni?? sem tilteki?? er ?? listanum h??r vinstra "
-"megin"
+"Afhleður íforritaskráasafnið sem tiltekið er í listanum hér vinstra megin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:201
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
 #: rc.cpp:41
 #, fuzzy
 msgid "Plugin Classes"
-msgstr "Flokkur ??forrits"
+msgstr "Flokkur íforrits"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:216
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
 #: rc.cpp:44
 msgid "List of available plugin classes found in the plugin libraries"
-msgstr ""
-"Listi me?? tilt??kum flokkum ??forrita sem fundust ?? skr??s??fnum ??forrita"
+msgstr "Listi með tiltækum flokkum íforrita sem fundust í skrásöfnum íforrita"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:223
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -723,36 +720,35 @@ msgstr ""
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: rc.cpp:47 rc.cpp:62
 msgid "Plugin Class"
-msgstr "Flokkur ??forrits"
+msgstr "Flokkur íforrits"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:254
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
 #: rc.cpp:53
 msgid "Create a new instance of plugin class selected in the list on the left"
 msgstr ""
-"B??a til n??tt aukatilvik af flokki ??forrits sem valinn er ??r listanum h??"
-"r til vinstri"
+"Búa til nýtt aukatilvik af flokki íforrits sem valinn er úr listanum hér til "
+"vinstri"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:281
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
 #: rc.cpp:56
 #, fuzzy
 msgid "Plugin Instances"
-msgstr "Bj?? til aukatilvik ??forrita"
+msgstr "Bjó til aukatilvik íforrita"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:296
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
 #: rc.cpp:59
 msgid "List of the plugin instances currently running"
-msgstr "Listi yfir aukatilvik ??forrita sem ?? gangi eru"
+msgstr "Listi yfir aukatilvik íforrita sem í gangi eru"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:345
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:71
 msgid "Removes/stops the plugin instance selected in the list on the left"
 msgstr ""
-"Fjarl??gir/st????var ??au aukatilvik ??forrita sem eru ?? listanum h??r til "
-"vinstri"
+"Fjarlægir/stöðvar þau aukatilvik íforrita sem eru í listanum hér til vinstri"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:381
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -782,25 +778,24 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">???? "
-"getur <span style=\" font-weight:600;\">endurnefnt</span> tilvik ??forrits "
-"me?? ??v?? a?? tv??smella ?? heiti ??ess. ??etta nafn mun birtast fyrir ne??"
-"an t??knmynd stillingas????u, ?? haus stillingas????unnar og  t.d. ?? heiti "
-"hlj????t??kisins ????ns. A?? breyta heitum ??forritatilvikanna getur "
-"veri?? ????gilegt ef ???? ert  t.d. me?? m??rg hlj????kort og/e??a m??rg "
-"eint??k ALSA ??forritatilvik.</p></body></html>"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Þú getur "
+"<span style=\" font-weight:600;\">endurnefnt</span> tilvik íforrits með því "
+"að tvísmella á heiti þess. Þetta nafn mun birtast fyrir neðan táknmynd "
+"stillingasíðu, í haus stillingasíðunnar og  t.d. í heiti hljóðtækisins þíns. "
+"Að breyta heitum íforritatilvikanna getur verið þægilegt ef þú ert  t.d. með "
+"mörg hljóðkort og/eða mörg eintök ALSA íforritatilvik.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
 #: rc.cpp:81
 msgid "Stations search in progress ..."
-msgstr "Leita a?? ??tvarpsst????vum..."
+msgstr "Leita að útvarpsstöðvum..."
 
 #. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
 #: rc.cpp:84
 msgid "&Ok"
-msgstr "?? &lagi"
+msgstr "Í &lagi"
 
 #. i18n: file: src/standardscandialog-ui.ui:65
 #. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
@@ -812,31 +807,31 @@ msgstr "&Henda"
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
 #: rc.cpp:93
 msgid "remaining time"
-msgstr "t??mi eftir"
+msgstr "tími eftir"
 
 #. i18n: file: src/standardscandialog-ui.ui:108
 #. i18n: ectx: property (text), widget (QLabel, labelTime)
 #: rc.cpp:96
 msgid "<p align=\"right\">nothing here</p>"
-msgstr "<p align=\"right\">ekkert h??r</p>"
+msgstr "<p align=\"right\">ekkert hér</p>"
 
 #. i18n: file: src/stationselector-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, StationSelectorUI)
 #: rc.cpp:99
 msgid "StationSelectorUI"
-msgstr "St????vaValsUI"
+msgstr "StöðvaValsUI"
 
 #. i18n: file: src/stationselector-ui.ui:23
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:102
 msgid "Selected Stations"
-msgstr "Valdar st????var"
+msgstr "Valdar stöðvar"
 
 #. i18n: file: src/stationselector-ui.ui:105
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:105
 msgid "Available Stations"
-msgstr "Tilt??kar st????var"
+msgstr "Tiltækar stöðvar"
 
 #~ msgid "Available Plugin Classes"
-#~ msgstr "Tilt??kir flokkar ??forrita"
+#~ msgstr "Tiltækir flokkar íforrita"

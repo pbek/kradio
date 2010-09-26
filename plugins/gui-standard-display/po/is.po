@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_standard_display\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-15 21:58+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "Virkur texti"
 
 #: displaycfg.cpp:49
 msgid "Inactive Text"
-msgstr "??virkur texti"
+msgstr "Óvirkur texti"
 
 #: displaycfg.cpp:50
 msgid "Background Color"
@@ -32,47 +32,47 @@ msgstr "Bakgrunnslitur"
 
 #: radioview.cpp:54
 msgid "Standard Display for KRadio"
-msgstr "Sta??la?? vi??m??t KRadio"
+msgstr "Staðlað viðmót KRadio"
 
 #: radioview.cpp:60
 msgid "Radio Display"
-msgstr "??tvarpsvi??m??t"
+msgstr "Útvarpsviðmót"
 
 #: radioview.cpp:145
 msgid "Pause KRadio"
-msgstr "Setja KRadio ?? bi??"
+msgstr "Setja KRadio í bið"
 
 #: radioview.cpp:150
 msgid "Start Recording"
-msgstr "Hefja uppt??ku"
+msgstr "Hefja upptöku"
 
 #: radioview.cpp:158
 msgid "5 min"
-msgstr "5 m??n"
+msgstr "5 mín"
 
 #: radioview.cpp:162
 msgid "10 min"
-msgstr "10 m??n"
+msgstr "10 mín"
 
 #: radioview.cpp:166
 msgid "15 min"
-msgstr "15 m??n"
+msgstr "15 mín"
 
 #: radioview.cpp:170
 msgid "30 min"
-msgstr "30 m??n"
+msgstr "30 mín"
 
 #: radioview.cpp:174
 msgid "60 min"
-msgstr "60 m??n"
+msgstr "60 mín"
 
 #: radioview.cpp:178
 msgid "90 min"
-msgstr "90 m??n"
+msgstr "90 mín"
 
 #: radioview.cpp:182
 msgid "120 min"
-msgstr "120 m??n"
+msgstr "120 mín"
 
 #: radioview.cpp:227
 msgid "Configure KRadio"
@@ -80,31 +80,31 @@ msgstr "Stilla KRadio"
 
 #: radioview.cpp:228
 msgid "Power On/Off"
-msgstr "AF/??"
+msgstr "AF/Á"
 
 #: radioview.cpp:229
 msgid "Quit KRadio Application"
-msgstr "H??tta ?? KRadio forritinu"
+msgstr "Hætta í KRadio forritinu"
 
 #: radioview.cpp:230
 msgid "Start/Stop Recording"
-msgstr "Hefja/h??tta uppt??ku"
+msgstr "Hefja/hætta upptöku"
 
 #: radioview.cpp:231
 msgid "Start/Stop Sleep Countdown"
-msgstr "Hefja/h??tta ni??urtalningu ?? sv??fingu"
+msgstr "Hefja/hætta niðurtalningu í svæfingu"
 
 #: radioview.cpp:232
 msgid "Show/Hide Plugins"
-msgstr "S??na/fela ??forrit"
+msgstr "Sýna/fela íforrit"
 
 #: radioview.cpp:233
 msgid "Help about KRadio and KDE"
-msgstr "Hj??lp um KRadio og KDE"
+msgstr "Hjálp um KRadio og KDE"
 
 #: radioview.cpp:234
 msgid "Select a Radio Station"
-msgstr "Veldu ??tvarpsst????"
+msgstr "Veldu útvarpsstöð"
 
 #: radioview.cpp:407
 msgid "no preset defined"
@@ -113,27 +113,27 @@ msgstr "engar forstillingar tilgreindar"
 #: radioview.cpp:554 radioview.cpp:624
 #, kde-format
 msgid "Stop Recording of %1"
-msgstr "H??tta uppt??ku ?? %1"
+msgstr "Hætta upptöku á %1"
 
 #: radioview.cpp:607
 msgid "Resume playback"
-msgstr "Halda ??fram me?? spilun"
+msgstr "Halda áfram með spilun"
 
 #: radioview.cpp:611
 msgid "Pause playback"
-msgstr "Gera hl?? ?? afspilun"
+msgstr "Gera hlé á afspilun"
 
 #: radioview.cpp:704
 msgid "Display"
-msgstr "Skj??r"
+msgstr "Skjár"
 
 #: radioview.cpp:705
 msgid "Display Configuration"
-msgstr "Stillingar skj??s"
+msgstr "Stillingar skjás"
 
 #: radioview_frequencyradio.cpp:122 radioview_frequencyradio.cpp:123
 msgid "Frequency Display"
-msgstr "T????niskj??r"
+msgstr "Tíðniskjár"
 
 #: radioview_frequencyradio.cpp:402
 msgid "AM"
@@ -163,27 +163,27 @@ msgstr "%1 MHz"
 
 #: radioview_frequencyseeker.cpp:79
 msgid "Search for previous Radio Station"
-msgstr "Leita a?? fyrri ??tvarpsst????"
+msgstr "Leita að fyrri útvarpsstöð"
 
 #: radioview_frequencyseeker.cpp:80
 msgid "Search for next Radio Station"
-msgstr "Leita a?? n??stu ??tvarpsst????"
+msgstr "Leita að næstu útvarpsstöð"
 
 #: radioview_frequencyseeker.cpp:81
 msgid "Decrement Frequency"
-msgstr "L??kka t????ni"
+msgstr "Lækka tíðni"
 
 #: radioview_frequencyseeker.cpp:82
 msgid "Increment Frequency"
-msgstr "H??kka t????ni"
+msgstr "Hækka tíðni"
 
 #: radioview_frequencyseeker.cpp:83
 msgid "Change Frequency"
-msgstr "Breyta t????ni"
+msgstr "Breyta tíðni"
 
 #: radioview_volume.cpp:59
 msgid "Change Volume"
-msgstr "Breyta hlj????styrk"
+msgstr "Breyta hljóðstyrk"
 
 #. i18n: file: radioview_seekinterface.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
@@ -195,37 +195,37 @@ msgstr "RadioView_SeekInterface"
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
 msgid "search previous station"
-msgstr "leita a?? fyrri ??tvarpsst????"
+msgstr "leita að fyrri útvarpsstöð"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
 msgid "decrease freq. by 0.05 MHz"
-msgstr "l??kka t????ni ?? 0.05 MHz ??repum"
+msgstr "lækka tíðni í 0.05 MHz þrepum"
 
 #. i18n: file: radioview_seekinterface.ui:70
 #. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
 #: rc.cpp:12 rc.cpp:32
 msgctxt "Frequency"
 msgid "Frequency control"
-msgstr "T????nist??ring"
+msgstr "Tíðnistýring"
 
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
 msgid "increase freq. by 0.05 MHz"
-msgstr "h??kka t????ni ?? 0.05 MHz ??repum"
+msgstr "hækka tíðni í 0.05 MHz þrepum"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
 msgid "search next station"
-msgstr "leita a?? n??stu ??tvarpsst????"
+msgstr "leita að næstu útvarpsstöð"
 
 #: rc.cpp:19
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:20
 msgctxt "EMAIL OF TRANSLATORS"
@@ -233,4 +233,4 @@ msgid "Your emails"
 msgstr "sveinki@nett.is"
 
 #~ msgid "Display Colors"
-#~ msgstr "S??na liti"
+#~ msgstr "Sýna liti"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-16 23:14+0200\n"
 "PO-Revision-Date: 2009-11-08 00:31-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -71,11 +71,11 @@ msgstr "URL:"
 
 #: radiostations/radiostation-config.cpp:131
 msgid "Decoder Class:"
-msgstr "Classe do decoficador:"
+msgstr "Classe Do Decoficador:"
 
 #: radiostations/radiostation-config.cpp:135
 msgid "Playlist Class:"
-msgstr "Classe da playlist:"
+msgstr "Classe Da Playlist:"
 
 #: radiostations/radiostation-config.cpp:140
 msgid "<autodetect (very slow!)>"
@@ -207,11 +207,11 @@ msgstr ""
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
 msgid ""
-"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
-"html>"
+"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE "
+"%3</html>"
 msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>Versão %2</b><br />Usando KDE %3</"
-"html>"
+"<html><font size=\"5\">%1</font><br /><b>Versão %2</b><br />Usando KDE "
+"%3</html>"
 
 #: src/kradioaboutwidget.cpp:125
 #, kde-format
@@ -286,7 +286,7 @@ msgstr ""
 
 #: src/kradioapp.cpp:218
 msgid "New Plugin Libraries found"
-msgstr "Novo plug-in de bibliotecas encontrado"
+msgstr "Novas Bibliotecas de Plug-in encontradas"
 
 #: src/kradioapp.cpp:234
 #, kde-format
@@ -295,13 +295,13 @@ msgid ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr ""
-"KRadio4 encontrou apenas %1 plug-ins de bibliotecas. Esperado um mínimo de "
-"5., Por favor, verifique o diretório de instalação do KRadio4 e se as "
+"KRadio4 encontrou apenas %1 bibliotecas de plug-ins. Esperado um mínimo de "
+"5. Por favor, verifique o diretório de instalação do KRadio4 e se as "
 "variáveis de ambiente KDEDIR, KDEDIRS e KDEHOME tem valores adequados.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
-msgstr "Erro na instalação do KRadio4"
+msgstr "Erro Na Instalação dD KRadio4"
 
 #: src/kradioapp.cpp:264
 msgid "Instance"
@@ -309,16 +309,16 @@ msgstr "Instância"
 
 #: src/kradioapp.cpp:285
 msgid "KRadio Configuration"
-msgstr "Configuração do KRadio"
+msgstr "Configuração Do KRadio"
 
 #: src/kradioapp.cpp:286
 msgid "About KRadio Components"
-msgstr "Sobre os componentes do KRadio"
+msgstr "Sobre Os Componentes Do KRadio"
 
 #: src/kradioapp.cpp:314
 #, kde-format
 msgid "Error: Loading Library %1 failed: %2"
-msgstr "Erro: Falha ao carregar biblioteca %1: %2"
+msgstr "Erro: Falha Ao Carregar Biblioteca %1: %2"
 
 #: src/kradioapp.cpp:364
 #, kde-format
@@ -353,7 +353,7 @@ msgid ""
 "recording, lirc support, alarms, misc"
 msgstr ""
 "Porte para KDE4, suporte RDS, atalhos, suporte a PVR, reescrito para "
-"1.0/0.3.0, função de gravação, suporte lirc, alarme, vários"
+"1.0/0.3.0, função de gravação, suporte lirc, alarme, entre outros"
 
 #: src/main.cpp:44
 msgid "Marcus Camen"
@@ -361,7 +361,7 @@ msgstr "Marcus Camen"
 
 #: src/main.cpp:44
 msgid "Buildsystem, Standards Conformance, Cleanups"
-msgstr "Sistema de construção, Padrões de conformidade, Limpeza"
+msgstr "Sistema De Construção, Padrões De Conformidade, Limpeza"
 
 #: src/main.cpp:45
 msgid "Klas Kalass"
@@ -381,11 +381,11 @@ msgstr "Ideia inicial, primeira aplicação para o KDE 2"
 
 #: src/multibuffer.cpp:89
 msgid "Buffer Overflow. "
-msgstr "Estouro de buffer."
+msgstr "Estouro De Buffer."
 
 #: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
-msgstr "Diálogo de configuração"
+msgstr "Diálogo De Configuração"
 
 #: src/pluginmanager-configuration.cpp:196
 #, kde-format
@@ -398,13 +398,13 @@ msgstr ""
 
 #: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
-msgstr "Digite o nome da instância do plug-in"
+msgstr "Digite O Nome Da Instância Do Plug-in"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: src/pluginmanager-configuration.cpp:227 rc.cpp:65
 msgid "Instance Name"
-msgstr "Nome da instância"
+msgstr "Nome Da Instância"
 
 #: src/pluginmanager.cpp:436
 msgid "Plugins"
@@ -412,32 +412,32 @@ msgstr "Plug-ins"
 
 #: src/pluginmanager.cpp:437
 msgid "Plugin Library Configuration"
-msgstr "Configuração do plug-in da biblioteca"
+msgstr "Configuração Do Plug-in Da Biblioteca"
 
 #: src/pluginmanager.cpp:570
 msgid "Starting Plugins"
-msgstr "Iniciando plug-ins"
+msgstr "Iniciando Plug-ins"
 
 #: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, kde-format
 msgid "Creating Plugin %1"
-msgstr "Criando plug-in %1"
+msgstr "Criando Plug-in %1"
 
 #: src/pluginmanager.cpp:605
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
-"Novos plug-ins encontrados. Você deseja criar automaticamente instâncias "
+"Novos plug-ins encontrados. Você deseja criar automaticamente as instâncias "
 "agora?"
 
 #: src/pluginmanager.cpp:607
 msgid "New Plugins found"
-msgstr "Novos plug-ins encontrados"
+msgstr "Novos Plug-ins encontrados"
 
 #: src/pluginmanager.cpp:642
 #, kde-format
 msgid "Initializing Plugin %1"
-msgstr "Inicializando plug-ins %1"
+msgstr "Inicializando Plug-ins %1"
 
 #: src/pluginmanager.cpp:767
 msgid "Show all"
@@ -480,7 +480,7 @@ msgstr "canDecode = true"
 
 #: src/stationlist.cpp:135
 msgid "Contains merged Data"
-msgstr "Contém dados mesclados"
+msgstr "Contém Dados mesclados"
 
 #: src/stationlist.cpp:176
 msgid ""
@@ -530,7 +530,7 @@ msgstr "Falha ao abrir arquivo predefinido de estações de %1."
 
 #: src/stationlist.cpp:243
 msgid "Old Preset File Format detected"
-msgstr "Detectado formato antigo do arquivo predefinido"
+msgstr "Detectado Formato Antigo Do Arquivo Predefinido"
 
 #: src/stationlist.cpp:322
 #, kde-format
@@ -553,7 +553,7 @@ msgid ""
 "something strange happend, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
-"Algo de estranho aconteceu: a lista de estações tem apenas %1 entradas. "
+"Algo de estranho aconteceu, a lista de estações tem apenas %1 entradas. "
 "Ignorada a escrita do arquivo predefinido de estações"
 
 #: src/stationlist.cpp:342
@@ -665,7 +665,7 @@ msgstr "Por favor, pergunte!"
 #: rc.cpp:20
 msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
 msgstr ""
-"Mostrar barra de progresso durante o início para o plug-in Iniciali&zação"
+"Mostrar A Barra De Progresso Durante O Início Para O Plug-in 'Iniciali&zação'"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:109
 #. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
@@ -677,7 +677,7 @@ msgstr "Alt+Z"
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
 #: rc.cpp:26
 msgid "Plugin Libraries"
-msgstr "Plug-ins das bibliotecas"
+msgstr "Bibliotecas De Plug-ins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:129
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
@@ -686,7 +686,7 @@ msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
-"Selecionar um plug-in da biblioteca a partir do diálogo arquivo. Será "
+"Selecionar uma biblioteca de plug-in a partir do diálogo arquivo. Será "
 "adicionado à lista da biblioteca se você pressionar o botão \"Carregar "
 "biblioteca\"."
 
@@ -700,29 +700,28 @@ msgstr "Carrega a biblioteca especificada na caixa esquerda a este botão."
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
 #: rc.cpp:35
 msgid "list of loaded plugin libraries"
-msgstr "Lista de plug-ins carregados da biblioteca"
+msgstr "Lista de bibliotecas de plug-ins carregadas"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:174
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
 #: rc.cpp:38
 msgid "Unload the plugin library selected in the list on the left side"
 msgstr ""
-"Descarregar o plug-in selecionado da biblioteca na lista no lado esquerdo"
+"Descarregar a biblioteca de plug-in selecionada na lista no lado esquerdo"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:201
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
 #: rc.cpp:41
-#, fuzzy
 msgid "Plugin Classes"
-msgstr "Classe de plug-ins"
+msgstr "Classes Do Plug-ins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:216
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
 #: rc.cpp:44
 msgid "List of available plugin classes found in the plugin libraries"
 msgstr ""
-"Lista de classes de plug-ins disponíveis encontrados nas bibliotecas de plug-"
-"in"
+"Lista de classes de plug-ins disponíveis encontrada nas bibliotecas de "
+"plug-in"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:223
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -730,22 +729,21 @@ msgstr ""
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: rc.cpp:47 rc.cpp:62
 msgid "Plugin Class"
-msgstr "Classe de plug-ins"
+msgstr "Classe De Plug-ins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:254
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
 #: rc.cpp:53
 msgid "Create a new instance of plugin class selected in the list on the left"
 msgstr ""
-"Criar um nova instância de classes selecionadas de plug-ins na lista a "
+"Criar um nova instância de classes de plug-ins selecionadas na lista a "
 "esquerda"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:281
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
 #: rc.cpp:56
-#, fuzzy
 msgid "Plugin Instances"
-msgstr "Instâncias de plug-ins criadas"
+msgstr "Instâncias De Plug-ins Criadas"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:296
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
@@ -763,37 +761,38 @@ msgstr "Remove/Para a instância do plug-in selecionado na lista a esquerda"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:74
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">You can "
-"<span style=\" font-weight:600;\">rename</span> a plugin instance by double "
-"clicking on the instance name. This name will appear below the configuration "
-"page icon, in the config page header and e.g. in the name of your sound "
-"device. Editing plugin names is recommended for your convenience e.g. if you "
-"have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
-"html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">You can <span style=\" font-weight:600;\">rename</span> a "
+"plugin instance by double clicking on the instance name. This name will "
+"appear below the configuration page icon, in the config page header and e.g. "
+"in the name of your sound device. Editing plugin names is recommended for "
+"your convenience e.g. if you have multiple sound cards and/or multiple ALSA "
+"plugin instances.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Você pode "
-"<span style=\" font-weight:600;\">renomear</span> uma instânia do plug-in "
-"por um duplo clique no nome da instância. Este nome irá aparecer abaixo do "
-"ícone da página de configuração, no cabeçalho da página de configuração e, "
-"por exemplo, no nome do seu dispositivo de som. A edição de nomes dos plug-"
-"in é recomendada para a sua conveniência, por exemplo,se você tiver várias "
-"placas de som e/ou várias instâncias de plug-ins ALSA.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">Você pode <span style=\" "
+"font-weight:600;\">renomear</span> uma instânia do plug-in por um duplo "
+"clique no nome da instância. Este nome irá aparecer abaixo do ícone da "
+"página de configuração, no cabeçalho da página de configuração e, por "
+"exemplo, no nome do seu dispositivo de som. A edição de nomes dos plug-in é "
+"recomendada para a sua conveniência, por exemplo,se você tiver várias placas "
+"de som e/ou várias instâncias de plug-ins ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
@@ -835,13 +834,13 @@ msgstr "StationSelectorUI"
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:102
 msgid "Selected Stations"
-msgstr "Estações selecionadas"
+msgstr "Estações Selecionadas"
 
 #. i18n: file: src/stationselector-ui.ui:105
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:105
 msgid "Available Stations"
-msgstr "Estações disponíveis"
+msgstr "Estações Disponíveis"
 
 #~ msgid "Available Plugin Classes"
 #~ msgstr "Classes de plug-ins disponíveis"

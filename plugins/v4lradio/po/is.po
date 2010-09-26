@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009, 2010.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_v4lradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2010-09-15 09:17+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -28,39 +28,39 @@ msgstr "SetupDialogGeneral"
 #: rc.cpp:6 rc.cpp:156
 #, fuzzy
 msgid "V4L Device"
-msgstr "T??ki"
+msgstr "Tæki"
 
 #. i18n: file: v4lradio-configuration-ui.ui:46
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
 #: rc.cpp:9 rc.cpp:159
 #, fuzzy
 msgid "Station scan step"
-msgstr "??rep st????valeitar"
+msgstr "þrep stöðvaleitar"
 
 #. i18n: file: v4lradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
 #: rc.cpp:12 rc.cpp:162
 #, fuzzy
 msgid "Minimum signal quality"
-msgstr "l??gmarksg????i ??tsendingamerkis"
+msgstr "lágmarksgæði útsendingamerkis"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
 #: rc.cpp:15 rc.cpp:165
 msgid "unknown v4l device"
-msgstr "????ekkt v4l t??ki"
+msgstr "óþekkt v4l tæki"
 
 #. i18n: file: v4lradio-configuration-ui.ui:96
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:18 rc.cpp:168
 msgid "V4L Version to use"
-msgstr "??tg??fa V4L sem nota ??"
+msgstr "Útgáfa V4L sem nota á"
 
 #. i18n: file: v4lradio-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
 #: rc.cpp:21 rc.cpp:171
 msgid "Radio Device"
-msgstr "??tvarpst??ki"
+msgstr "Útvarpstæki"
 
 #. i18n: file: v4lradio-configuration-ui.ui:119
 #. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
@@ -95,7 +95,7 @@ msgstr "V4L-2 API"
 #: rc.cpp:33 rc.cpp:183
 #, fuzzy
 msgid "Allowed frequency range"
-msgstr "leyft t????nisvi??"
+msgstr "leyft tíðnisvið"
 
 #. i18n: file: v4lradio-configuration-ui.ui:256
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
@@ -126,7 +126,7 @@ msgstr "108 MHz"
 #: rc.cpp:54 rc.cpp:204
 #, fuzzy
 msgid "Device frequency range"
-msgstr "t????nisvi?? t??kis"
+msgstr "tíðnisvið tækis"
 
 #. i18n: file: v4lradio-configuration-ui.ui:346
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
@@ -139,7 +139,7 @@ msgstr "RDS"
 #: rc.cpp:60 rc.cpp:210
 #, fuzzy
 msgid "Force RDS Enabled"
-msgstr "??vinga virkt"
+msgstr "Þvinga virkt"
 
 #. i18n: file: v4lradio-configuration-ui.ui:372
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -171,25 +171,25 @@ msgstr ""
 #: rc.cpp:70 rc.cpp:220
 #, fuzzy
 msgid "Sound Devices"
-msgstr "T??ki"
+msgstr "Tæki"
 
 #. i18n: file: v4lradio-configuration-ui.ui:425
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:73 rc.cpp:223
 msgid "test"
-msgstr "pr??fa"
+msgstr "prófa"
 
 #. i18n: file: v4lradio-configuration-ui.ui:433
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:76 rc.cpp:226
 msgid "Playback Mixer Channel"
-msgstr "Hlj????bl??ndunarr??s fyrir afspilun"
+msgstr "Hljóðblöndunarrás fyrir afspilun"
 
 #. i18n: file: v4lradio-configuration-ui.ui:453
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
 #: rc.cpp:79 rc.cpp:229
 msgid "Capture Mixer Device"
-msgstr "Hlj????bl??ndunart??ki fyrir uppt??ku"
+msgstr "Hljóðblöndunartæki fyrir upptöku"
 
 #. i18n: file: v4lradio-configuration-ui.ui:496
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
@@ -219,13 +219,13 @@ msgstr "Alt+B"
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
 #: rc.cpp:94 rc.cpp:244
 msgid "Capture Mixer Channel"
-msgstr "Hlj????bl??ndunarr??s fyrir uppt??ku"
+msgstr "Hljóðblöndunarrás fyrir upptöku"
 
 #. i18n: file: v4lradio-configuration-ui.ui:532
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:97 rc.cpp:247
 msgid "Playback Mixer Device"
-msgstr "Hlj????bl??ndunart??ki fyrir afspilun"
+msgstr "Hljóðblöndunartæki fyrir afspilun"
 
 #. i18n: file: v4lradio-configuration-ui.ui:556
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
@@ -322,13 +322,13 @@ msgstr ""
 #. i18n: ectx: attribute (title), widget (QWidget, V4LMixerControls)
 #: rc.cpp:136 rc.cpp:286
 msgid "V4L Mixer Controls"
-msgstr "V4L t??njafnarast??ring"
+msgstr "V4L tónjafnarastýring"
 
 #. i18n: file: v4lradio-configuration-ui.ui:684
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
 #: rc.cpp:139 rc.cpp:289
 msgid "volume"
-msgstr "hlj????styrkur"
+msgstr "hljóðstyrkur"
 
 #. i18n: file: v4lradio-configuration-ui.ui:760
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
@@ -346,12 +346,12 @@ msgstr "bassi"
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
 #: rc.cpp:148 rc.cpp:298
 msgid "balance"
-msgstr "jafnv??gi"
+msgstr "jafnvægi"
 
 #: rc.cpp:149
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:150
 msgctxt "EMAIL OF TRANSLATORS"
@@ -360,7 +360,7 @@ msgstr "sveinki@nett.is"
 
 #: v4lradio-configuration.cpp:377
 msgid "Could not get device description."
-msgstr "Get ekki n???? ?? l??singu t??kis."
+msgstr "Get ekki náð í lýsingu tækis."
 
 #: v4lradio-configuration.cpp:382
 msgid "Device file does not exist or top level directories are not accessible."
@@ -385,34 +385,34 @@ msgstr "%1 kHz"
 
 #: v4lradio-configuration.cpp:521
 msgid "any ( * )"
-msgstr "eitthva?? ( * )"
+msgstr "eitthvað ( * )"
 
 #: v4lradio-configuration.cpp:525
 msgid "Select Radio Device"
-msgstr "Veldu ??tvarpst??ki"
+msgstr "Veldu útvarpstæki"
 
 #: v4lradio.cpp:64
 msgid "Support for V4L(2) Radio Devices"
-msgstr "Stu??ningur vi?? V4L(2) ??tvarpst??ki"
+msgstr "Stuðningur við V4L(2) útvarpstæki"
 
 #: v4lradio.cpp:73
 msgid "Video For Linux Plugin"
-msgstr "V??de?? Fyrir Linux ??forrit"
+msgstr "Vídeó Fyrir Linux íforrit"
 
 #: v4lradio.cpp:810
 #, kde-format
 msgid "invalid frequency %1"
-msgstr "??gild t????ni %1"
+msgstr "ógild tíðni %1"
 
 #: v4lradio.cpp:835 v4lradio.cpp:1708 v4lradio.cpp:1902
 #, kde-format
 msgid "don't known how to handle V4L-version %1"
-msgstr "veit ekki hvernig ?? a?? me??h??ndla V4L-??tg??fu %1"
+msgstr "veit ekki hvernig á að meðhöndla V4L-útgáfu %1"
 
 #: v4lradio.cpp:837 v4lradio.cpp:1710 v4lradio.cpp:1904
 #, kde-format
 msgid "%1 Support: %2"
-msgstr "%1 stu??ningur vi??: %2"
+msgstr "%1 stuðningur við: %2"
 
 #: v4lradio.cpp:843
 #, kde-format
@@ -439,16 +439,16 @@ msgstr ""
 
 #: v4lradio.cpp:1358
 msgid "V4L Radio"
-msgstr "V4L ??tvarp"
+msgstr "V4L útvarp"
 
 #: v4lradio.cpp:1359
 msgid "V4L Radio Options"
-msgstr "Stillingar V4L ??tvarps"
+msgstr "Stillingar V4L útvarps"
 
 #: v4lradio.cpp:1418
 #, kde-format
 msgid "Cannot open radio device %1"
-msgstr "Get ekki opna?? ??tvarpst??ki %1."
+msgstr "Get ekki opnað útvarpstæki %1."
 
 #: v4lradio.cpp:1474
 #, kde-format
@@ -458,7 +458,7 @@ msgstr ""
 #: v4lradio.cpp:1481
 #, kde-format
 msgid "cannot open %1"
-msgstr "get ekki opna?? %1"
+msgstr "get ekki opnað %1"
 
 #: v4lradio.cpp:1489 v4lradio.cpp:1532
 #, kde-format
@@ -524,7 +524,7 @@ msgstr ""
 
 #: v4lradio.cpp:2093
 msgid "error reading RDS data\n"
-msgstr "villa vi?? lestur RDS gagna\n"
+msgstr "villa við lestur RDS gagna\n"
 
 #: v4lradio.cpp:2109
 #, kde-format

@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-27 13:53+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -21,94 +21,94 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
 #: radio-configuration.cpp:81 rc.cpp:52 rc.cpp:146
 msgid "unchanged"
-msgstr "??breytt"
+msgstr "óbreytt"
 
 #. i18n: file: radio-configuration-ui.ui:293
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:84 rc.cpp:40 rc.cpp:134
 msgid "<don't care>"
-msgstr "<skiptir ekki m??li>"
+msgstr "<skiptir ekki máli>"
 
 #. i18n: file: radio-configuration-ui.ui:298
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:85 rc.cpp:43 rc.cpp:137
 msgid "Mono"
-msgstr "M??n??"
+msgstr "Mónó"
 
 #. i18n: file: radio-configuration-ui.ui:303
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:86 rc.cpp:46 rc.cpp:140
 msgid "Stereo"
-msgstr "Ster????"
+msgstr "Steríó"
 
 #: radio-configuration.cpp:89
 msgid "load + replace presets"
-msgstr "hla??a inn + skipta ??t forstillingum"
+msgstr "hlaða inn + skipta út forstillingum"
 
 #: radio-configuration.cpp:90
 msgid "load + add presets"
-msgstr "hla??a inn + b??ta vi?? forstillingum"
+msgstr "hlaða inn + bæta við forstillingum"
 
 #: radio-configuration.cpp:414
 msgid "Image Selection"
-msgstr "Val ?? mynd"
+msgstr "Val á mynd"
 
 #: radio-configuration.cpp:419
 msgid "ignoring non-local image"
-msgstr "hunsa myndir sem ekki eru ?? ??essari t??lvu"
+msgstr "hunsa myndir sem ekki eru á þessari tölvu"
 
 #: radio-configuration.cpp:534 radio-configuration.cpp:562
 msgid "KRadio Preset Files"
-msgstr "KRadio forstillingaskr??r"
+msgstr "KRadio forstillingaskrár"
 
 #: radio-configuration.cpp:538
 msgid "Select Preset File"
-msgstr "Velja forstillingaskr??"
+msgstr "Velja forstillingaskrá"
 
 #: radio-configuration.cpp:566
 msgid "Store Preset File"
-msgstr "Geyma forstillingaskr??"
+msgstr "Geyma forstillingaskrá"
 
 #: radio-configuration.cpp:643
 #, kde-format
 msgid "found %1 new stations"
-msgstr "fann %1 n??jar st????var"
+msgstr "fann %1 nýjar stöðvar"
 
 #: radio-configuration.cpp:645
 #, kde-format
 msgid "have now %1 stations"
-msgstr "hef n??na %1 st????var"
+msgstr "hef núna %1 stöðvar"
 
 #: radio.cpp:35
 msgid "Central Radio Device Multiplexer"
-msgstr "Mi??l??gur af????ttari (multiplexer) fyrir ??tvarpst??ki"
+msgstr "Miðlægur afþáttari (multiplexer) fyrir útvarpstæki"
 
 #: radio.cpp:40
 msgid "Radio Multiplexer Plugin"
-msgstr "Af????ttara??forrit (multiplexer plugin) fyrir ??tvarp"
+msgstr "Afþáttaraíforrit (multiplexer plugin) fyrir útvarp"
 
 #: radio.cpp:133
 msgid "Radio Stations"
-msgstr "??tvarpsst????var"
+msgstr "Útvarpsstöðvar"
 
 #: radio.cpp:134
 msgid "Setup Radio Stations"
-msgstr "Setja upp ??tvarpsst????var"
+msgstr "Setja upp útvarpsstöðvar"
 
 #: radio.cpp:204
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
-msgstr "Fann ekkert ??forrit fyrir ??tvarpsst????ina %1"
+msgstr "Fann ekkert íforrit fyrir útvarpsstöðina %1"
 
 #: radio.cpp:399
 msgid "unknown"
-msgstr "????ekkt"
+msgstr "óþekkt"
 
 #. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
 #: rc.cpp:3 rc.cpp:97
 msgid "Station &Presets"
-msgstr "Forstillingar ??tvar&psst????va"
+msgstr "Forstillingar útvar&psstöðva"
 
 #. i18n: file: radio-configuration-ui.ui:104
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
@@ -121,7 +121,7 @@ msgstr "Forstillingar ??tvar&psst????va"
 #: rc.cpp:6 rc.cpp:9 rc.cpp:100 rc.cpp:103
 #, fuzzy
 msgid "Search Stations"
-msgstr "Leita a?? ??tvarps&st????vum"
+msgstr "Leita að útvarps&stöðvum"
 
 #. i18n: file: radio-configuration-ui.ui:123
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
@@ -134,7 +134,7 @@ msgstr "Leita a?? ??tvarps&st????vum"
 #: rc.cpp:12 rc.cpp:15 rc.cpp:106 rc.cpp:109
 #, fuzzy
 msgid "Load Presets"
-msgstr "hla??a inn + b??ta vi?? forstillingum"
+msgstr "hlaða inn + bæta við forstillingum"
 
 #. i18n: file: radio-configuration-ui.ui:142
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
@@ -164,7 +164,7 @@ msgstr "Stutt nafn"
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
 #: rc.cpp:30 rc.cpp:124
 msgid "Pixmap File"
-msgstr "Pixmap myndskr??"
+msgstr "Pixmap myndskrá"
 
 #. i18n: file: radio-configuration-ui.ui:289
 #. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
@@ -191,16 +191,16 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Veldu ??etta ef ???? "
-"vilt ??vinga vi??t??ki?? ?? ster????/m??n?? ham. <span style=\" font-style:"
-"italic;\">Athuga??u a?? sumir kortareklar g??tu hunsa?? ??etta flagg - ??n ??"
-"ess a?? tilkynna um a?? ??eir sleppi ??v??.</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Veldu þetta ef þú vilt "
+"þvinga viðtækið í steríó/mónó ham. <span style=\" font-style:italic;"
+"\">Athugaðu að sumir kortareklar gætu hunsað þetta flagg - án þess að "
+"tilkynna um að þeir sleppi því.</span></p></body></html>"
 
 #. i18n: file: radio-configuration-ui.ui:317
 #. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:49 rc.cpp:143
 msgid "The volume that is used when the station is tuned"
-msgstr "Hlj????styrkur sem nota??ur er ?? me??an st????var eru stilltar"
+msgstr "Hljóðstyrkur sem notaður er á meðan stöðvar eru stilltar"
 
 #. i18n: file: radio-configuration-ui.ui:323
 #. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
@@ -213,26 +213,26 @@ msgstr " %"
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
 #: rc.cpp:59 rc.cpp:153
 msgid "Stereo Mode"
-msgstr "Ster???? hamur"
+msgstr "Steríó hamur"
 
 #. i18n: file: radio-configuration-ui.ui:346
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
 #: rc.cpp:62 rc.cpp:156
 msgid "Volume Preset"
-msgstr "Forstillingar ?? hlj????i"
+msgstr "Forstillingar á hljóði"
 
 #. i18n: file: radio-configuration-ui.ui:393
 #. i18n: ectx: attribute (title), widget (QWidget, About)
 #: rc.cpp:65 rc.cpp:159
 #, fuzzy
 msgid "Preset &File"
-msgstr "Geyma forstillingaskr??"
+msgstr "Geyma forstillingaskrá"
 
 #. i18n: file: radio-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
 #: rc.cpp:68 rc.cpp:162
 msgid "Personal Preset File"
-msgstr "Pers??nuleg forstillingaskr??"
+msgstr "Persónuleg forstillingaskrá"
 
 #. i18n: file: radio-configuration-ui.ui:417
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
@@ -262,19 +262,19 @@ msgstr "Athugasemd"
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
 #: rc.cpp:83 rc.cpp:177
 msgid "Media"
-msgstr "Mi??ill"
+msgstr "Miðill"
 
 #. i18n: file: radio-configuration-ui.ui:493
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
 #: rc.cpp:86 rc.cpp:180
 msgid "Maintainer"
-msgstr "Umsj??narma??ur"
+msgstr "Umsjónarmaður"
 
 #. i18n: file: radio-configuration-ui.ui:506
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
 #: rc.cpp:89 rc.cpp:183
 msgid "Last Change"
-msgstr "S????asta breyting"
+msgstr "Síðasta breyting"
 
 #. i18n: file: radio-configuration-ui.ui:540
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -283,14 +283,14 @@ msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
 msgstr ""
-"<p align=\"center\">Smelltu ?? tengilinn h??r a?? ne??an til a?? leggja "
-"stillingaskr?? ??essarar ??tvarpsst????var inn sem framlag til KRadio "
+"<p align=\"center\">Smelltu á tengilinn hér að neðan til að leggja "
+"stillingaskrá þessarar útvarpsstöðvar inn sem framlag til KRadio "
 "verkefnisins.</p>"
 
 #: rc.cpp:93
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:94
 msgctxt "EMAIL OF TRANSLATORS"
@@ -298,13 +298,13 @@ msgid "Your emails"
 msgstr "sveinki@nett.is"
 
 #~ msgid "Stations"
-#~ msgstr "St????var"
+#~ msgstr "Stöðvar"
 
 #~ msgid "Load"
-#~ msgstr "Hla??a inn"
+#~ msgstr "Hlaða inn"
 
 #~ msgid "Save As"
 #~ msgstr "Vista sem"
 
 #~ msgid "Additional &Information"
-#~ msgstr "V&i??b??taruppl??singar"
+#~ msgstr "V&iðbótarupplýsingar"

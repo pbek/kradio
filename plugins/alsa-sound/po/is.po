@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009, 2010.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2010-09-15 09:20+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -23,15 +23,15 @@ msgstr ""
 
 #: alsa-sound.cpp:51
 msgid "KRadio ALSA Sound Plugin"
-msgstr "KRadio ALSA hlj????-??forrit"
+msgstr "KRadio ALSA hljóð-íforrit"
 
 #: alsa-sound.cpp:231
 msgid "ALSA Sound"
-msgstr "ALSA hlj????"
+msgstr "ALSA hljóð"
 
 #: alsa-sound.cpp:232
 msgid "ALSA Sound Device Options"
-msgstr "Valkostir ALSA t??kis"
+msgstr "Valkostir ALSA tækis"
 
 #: alsa-sound.cpp:613
 #, kde-format
@@ -180,7 +180,7 @@ msgstr ""
 #: alsa-sound.cpp:1626
 #, kde-format
 msgid "ALSA Sound Device %1"
-msgstr "ALSA hlj????t??ki %1"
+msgstr "ALSA hljóðtæki %1"
 
 #: alsa-sound.cpp:1789 alsa-sound.cpp:1793
 #, kde-format
@@ -218,7 +218,7 @@ msgstr "Form1"
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActive)
 #: rc.cpp:6 rc.cpp:148
 msgid "Capture O&n"
-msgstr "U&pptaka ??"
+msgstr "U&pptaka á"
 
 #. i18n: file: alsa-mixer-element-ui.ui:179
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxActive)
@@ -230,7 +230,7 @@ msgstr "Alt+N"
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxOverride)
 #: rc.cpp:12 rc.cpp:154
 msgid "&Override"
-msgstr "R??tt&h??rri"
+msgstr "Rétt&hærri"
 
 #. i18n: file: alsa-mixer-element-ui.ui:189
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxOverride)
@@ -242,7 +242,7 @@ msgstr "Alt+U"
 #. i18n: ectx: property (text), widget (QLabel, m_labelMixerElementName)
 #: rc.cpp:18 rc.cpp:160
 msgid "MixerName"
-msgstr "HeitiHlj????blandara"
+msgstr "HeitiHljóðblandara"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, AlsaSoundConfigurationUI)
@@ -261,7 +261,7 @@ msgstr "PCM afspilunarkort"
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
 #: rc.cpp:27 rc.cpp:169
 msgid "Disable Pla&yback"
-msgstr "Gera afs&pilun ??virka"
+msgstr "Gera afs&pilun óvirka"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:36
 #. i18n: ectx: property (shortcut), widget (QCheckBox, chkDisablePlayback)
@@ -273,13 +273,13 @@ msgstr "Alt+Y"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_3)
 #: rc.cpp:33 rc.cpp:175
 msgid "PCM Playback Device"
-msgstr "PCM afspilunart??ki"
+msgstr "PCM afspilunartæki"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:104
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_2)
 #: rc.cpp:36 rc.cpp:178
 msgid "Buffer Size"
-msgstr "St??r?? bi??minnis"
+msgstr "Stærð biðminnis"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:120
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editBufferSize)
@@ -292,7 +292,7 @@ msgstr " kB"
 #: rc.cpp:42 rc.cpp:184
 #, fuzzy
 msgid "recommended:"
-msgstr "m??lt er me??: 2kB"
+msgstr "mælt er með: 2kB"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -324,13 +324,13 @@ msgstr "PCM afspilunarkort"
 #: rc.cpp:57 rc.cpp:199
 #, fuzzy
 msgid "Capture"
-msgstr "U&pptaka ??"
+msgstr "U&pptaka á"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
 #: rc.cpp:60 rc.cpp:202
 msgid "Disa&ble Capture"
-msgstr "&Gera uppt??ku ??virka"
+msgstr "&Gera upptöku óvirka"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:248
 #. i18n: ectx: property (shortcut), widget (QCheckBox, chkDisableCapture)
@@ -342,31 +342,31 @@ msgstr "Alt+B"
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:66 rc.cpp:208
 msgid "Stereo"
-msgstr "V??????ma"
+msgstr "Víðóma"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:289
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:69 rc.cpp:211
 msgid "Mono"
-msgstr "Ein??ma"
+msgstr "Einóma"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:310
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:72 rc.cpp:214
 msgid "Sample Bits"
-msgstr "S??fnunarbitar"
+msgstr "Söfnunarbitar"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:330
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:75 rc.cpp:217
 msgid "Signed"
-msgstr "Undirrita??"
+msgstr "Undirritað"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:335
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:78 rc.cpp:220
 msgid "Unsigned"
-msgstr "??undirrita??"
+msgstr "Óundirritað"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:353
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
@@ -442,31 +442,31 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCaptureFormatOverride)
 #: rc.cpp:116 rc.cpp:258
 msgid "Override Capture Format"
-msgstr "Nota anna?? uppt??kusni??"
+msgstr "Nota annað upptökusnið"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:428
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:119 rc.cpp:261
 msgid "Channels"
-msgstr "R??sir"
+msgstr "Rásir"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:441
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:122 rc.cpp:264
 msgid "Endianess"
-msgstr "Endian-b??tar????"
+msgstr "Endian-bætaröð"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:451
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_4)
 #: rc.cpp:125 rc.cpp:267
 msgid "PCM Capture Device"
-msgstr "PCM uppt??kut??ki"
+msgstr "PCM upptökutæki"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:464
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:128 rc.cpp:270
 msgid "Sample Rate"
-msgstr "S??fnunart????ni"
+msgstr "Söfnunartíðni"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:484
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
@@ -485,19 +485,19 @@ msgstr "8"
 #: rc.cpp:137 rc.cpp:279
 #, fuzzy
 msgid "Capture Mixer Card"
-msgstr "PCM uppt??kukort"
+msgstr "PCM upptökukort"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:534
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage1)
 #: rc.cpp:140 rc.cpp:282
 #, fuzzy
 msgid "Capture Mixers"
-msgstr "Stillingar uppt??kuhlj????blandara"
+msgstr "Stillingar upptökuhljóðblandara"
 
 #: rc.cpp:141
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:142
 msgctxt "EMAIL OF TRANSLATORS"
@@ -506,16 +506,16 @@ msgstr "sveinki@nett.is"
 
 #~ msgctxt "context-card-plus-device-number"
 #~ msgid "%1 device %2"
-#~ msgstr "%1 t??ki %2"
+#~ msgstr "%1 tæki %2"
 
 #~ msgid "Devices"
-#~ msgstr "T??ki"
+#~ msgstr "Tæki"
 
 #~ msgid "Hardware Buffer Size"
-#~ msgstr "St??r?? innbygg??s bi??minnis"
+#~ msgstr "Stærð innbyggðs biðminnis"
 
 #~ msgid "recommended: 96 kB"
-#~ msgstr "m??lt er me??: 96kB"
+#~ msgstr "mælt er með: 96kB"
 
 #~ msgid "E&xtended Options"
-#~ msgstr "??tarlegir &valkostir"
+#~ msgstr "Ítarlegir &valkostir"

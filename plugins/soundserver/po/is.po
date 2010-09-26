@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_soundserver\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-27 14:57+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -19,12 +19,12 @@ msgstr ""
 
 #: soundserver.cpp:27
 msgid "KRadio internal sound server"
-msgstr "Innbygg??ur KRadio hlj????mi??lari"
+msgstr "Innbyggður KRadio hljóðmiðlari"
 
 #: soundserver.cpp:32
 msgid "SoundServer Plugin"
-msgstr "Hlj????mi??lara-??forrit"
+msgstr "Hljóðmiðlara-íforrit"
 
 #: soundserver.cpp:34
 msgid "initializing kradio soundserver"
-msgstr "r??si KRadio hlj????mi??lara"
+msgstr "ræsi KRadio hljóðmiðlara"

@@ -2,14 +2,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_timecontrol\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2009-06-27 14:51+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelSleep)
 #: rc.cpp:3 rc.cpp:45
 msgid "sleep countdown"
-msgstr "ni??urtalning ?? sv??fingu"
+msgstr "niðurtalning í svæfingu"
 
 #. i18n: file: timecontrol-configuration-ui.ui:29
 #. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
 #: rc.cpp:6 rc.cpp:48
 msgid " min"
-msgstr " m??n"
+msgstr " mín"
 
 #. i18n: file: timecontrol-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
@@ -51,7 +51,7 @@ msgstr "dd.MM.yyyy"
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
 #: rc.cpp:18 rc.cpp:60
 msgid "Time"
-msgstr "T??mi"
+msgstr "Tími"
 
 #. i18n: file: timecontrol-configuration-ui.ui:173
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
@@ -63,7 +63,7 @@ msgstr "hh:mm:ss"
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
 #: rc.cpp:24 rc.cpp:66
 msgid "Volume"
-msgstr "Hlj????styrkur"
+msgstr "Hljóðstyrkur"
 
 #. i18n: file: timecontrol-configuration-ui.ui:200
 #. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
@@ -94,12 +94,12 @@ msgstr "virkt"
 #. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
 #: rc.cpp:40 rc.cpp:82
 msgid "Radio Station"
-msgstr "??tvarpsst????"
+msgstr "Útvarpsstöð"
 
 #: rc.cpp:41
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:42
 msgctxt "EMAIL OF TRANSLATORS"
@@ -112,31 +112,31 @@ msgstr "Hefja spilun"
 
 #: timecontrol-configuration.cpp:61
 msgid "Stop Playing"
-msgstr "St????va spilun"
+msgstr "Stöðva spilun"
 
 #: timecontrol-configuration.cpp:62
 msgid "Start Recording"
-msgstr "Hefja uppt??ku"
+msgstr "Hefja upptöku"
 
 #: timecontrol-configuration.cpp:63
 msgid "Stop Recording"
-msgstr "St????va uppt??ku"
+msgstr "Stöðva upptöku"
 
 #: timecontrol-configuration.cpp:66
 msgid "unchanged"
-msgstr "??breytt"
+msgstr "óbreytt"
 
 #: timecontrol-configuration.cpp:68
 msgid "Monday"
-msgstr "M??nudagur"
+msgstr "Mánudagur"
 
 #: timecontrol-configuration.cpp:69
 msgid "Tuesday"
-msgstr "??ri??judagur"
+msgstr "Þriðjudagur"
 
 #: timecontrol-configuration.cpp:70
 msgid "Wednesday"
-msgstr "Mi??vikudagur"
+msgstr "Miðvikudagur"
 
 #: timecontrol-configuration.cpp:71
 msgid "Thursday"
@@ -144,7 +144,7 @@ msgstr "Fimmtudagur"
 
 #: timecontrol-configuration.cpp:72
 msgid "Friday"
-msgstr "F??studagur"
+msgstr "Föstudagur"
 
 #: timecontrol-configuration.cpp:73
 msgid "Saturday"
@@ -160,11 +160,11 @@ msgstr "<ekki breyta>"
 
 #: timecontrol.cpp:43
 msgid "Time Control and Alarm Functions"
-msgstr "T??mastillingar og eiginleikar vekjara"
+msgstr "Tímastillingar og eiginleikar vekjara"
 
 #: timecontrol.cpp:49
 msgid "TimeControl Plugin"
-msgstr "T??mastilli-??forrit"
+msgstr "Tímastilli-íforrit"
 
 #: timecontrol.cpp:279
 msgid "Setup Alarms"

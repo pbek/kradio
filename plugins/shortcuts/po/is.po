@@ -2,14 +2,14 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn ?? Felli <sveinki@nett.is>, 2009, 2010.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_shortcuts\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-26 16:19+0200\n"
 "PO-Revision-Date: 2010-01-08 07:55+0000\n"
-"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn ?? Felli"
+msgstr "Sveinn í Felli"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
@@ -29,19 +29,19 @@ msgstr "sveinki@nett.is"
 
 #: shortcuts.cpp:47
 msgid "Shortcuts Support"
-msgstr "Stu??ningur vi?? fl??tilykla"
+msgstr "Stuðningur við flýtilykla"
 
 #: shortcuts.cpp:53 shortcuts.cpp:199
 msgid "Shortcuts Plugin"
-msgstr "Fl??tilykla-??forrit"
+msgstr "Flýtilykla-íforrit"
 
 #: shortcuts.cpp:61
 msgid "Standard Actions"
-msgstr "Sta??la??ar a??ger??ir"
+msgstr "Staðlaðar aðgerðir"
 
 #: shortcuts.cpp:62
 msgid "Station Actions"
-msgstr "St????vaa??ger??ir"
+msgstr "Stöðvaaðgerðir"
 
 #: shortcuts.cpp:64
 msgid "Digit 0"
@@ -85,64 +85,64 @@ msgstr "Hnappur 9"
 
 #: shortcuts.cpp:74
 msgid "Power on"
-msgstr "Kveikja ??"
+msgstr "Kveikja á"
 
 #: shortcuts.cpp:75
 msgid "Power off"
-msgstr "Sl??kkva ??"
+msgstr "Slökkva á"
 
 #: shortcuts.cpp:76
 msgid "Pause"
-msgstr "B????a"
+msgstr "Bíða"
 
 #: shortcuts.cpp:77
 msgid "Start recording"
-msgstr "Hefja uppt??ku"
+msgstr "Hefja upptöku"
 
 #: shortcuts.cpp:78
 msgid "Stop recording"
-msgstr "St????va uppt??ku"
+msgstr "Stöðva upptöku"
 
 #: shortcuts.cpp:79
 msgid "Increase volume"
-msgstr "H??kka hlj????styrk"
+msgstr "Hækka hljóðstyrk"
 
 #: shortcuts.cpp:80
 msgid "Decrease volume"
-msgstr "Minnka hlj????styrk"
+msgstr "Minnka hljóðstyrk"
 
 #: shortcuts.cpp:81
 msgid "Increase Frequency"
-msgstr "H??kka t????ni"
+msgstr "Hækka tíðni"
 
 #: shortcuts.cpp:82
 msgid "Decrease Frequency"
-msgstr "L??kka t????ni"
+msgstr "Lækka tíðni"
 
 #: shortcuts.cpp:83
 msgid "Next station"
-msgstr "N??sta st????"
+msgstr "Næsta stöð"
 
 #: shortcuts.cpp:84
 msgid "Previous station"
-msgstr "Fyrri st????"
+msgstr "Fyrri stöð"
 
 #: shortcuts.cpp:85
 msgid "Search next station"
-msgstr "leita a?? n??stu ??tvarpsst????"
+msgstr "leita að næstu útvarpsstöð"
 
 #: shortcuts.cpp:86
 msgid "Search previous station"
-msgstr "leita a?? fyrri ??tvarpsst????"
+msgstr "leita að fyrri útvarpsstöð"
 
 #: shortcuts.cpp:87
 msgid "Sleep"
-msgstr "Sv??fa"
+msgstr "Svæfa"
 
 #: shortcuts.cpp:88
 msgid "Quit KRadio"
-msgstr "H??tta ?? KRadio"
+msgstr "Hætta í KRadio"
 
 #: shortcuts.cpp:198
 msgid "Shortcuts"
-msgstr "Fl??tilyklar"
+msgstr "Flýtilyklar"
