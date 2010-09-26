@@ -3,239 +3,256 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<creator>kradio-snapshot-2006-11-12-r497</creator>
+			<creator>kradio-4.0.1-rc1</creator>
 			<maintainer>Blaze</maintainer>
-			<changed>2008-12-22T20:20:00</changed>
+			<changed>2010-08-08T09:00:13</changed>
 			<country>Belarus</country>
 			<city>Brest</city>
 			<media></media>
 			<comments></comments>
 		</info>
 		<FrequencyRadioStation>
-			
-<stationID>12077294984C448D1D756B4422108C36E16C7249BF7B2ABEFA33119A5CB5BAEE6C417DAB58</stationID>
-			<name>radio brest</name>
+			<stationID>1207729347B95CF236E42587F6871F53D00304A13643B98948622764D589238FDFE6F550A1</stationID>
+			<name>Першы нацыянальны</name>
 			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
-			<frequency>69.65</frequency>
-		</FrequencyRadioStation>
-		<FrequencyRadioStation>
-			
-<stationID>1207729347B95CF236E42587F6871F53D00304A13643B98948622764D589238FDFE6F550A1</stationID>
-			<name>piershy nacijanalny kanal belaruskaga radio</name>
-			<shortname>radio 1 by</shortname>
-			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>70.9</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>120772620854C001667C47982987BFB58FF2B485A2C828F99A875C28AD6C2A5FC61D587D2B</stationID>
-			<name>kultura</name>
+			<stationID>120772620854C001667C47982987BFB58FF2B485A2C828F99A875C28AD6C2A5FC61D587D2B</stationID>
+			<name>Культура</name>
 			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>71.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1207726041C55D9585D3A616D7E90CDB8AB1B343638DA19EFFB7DC7557602C2D76F312A07F</stationID>
-			<name>radio stalica</name>
+			<stationID>1207726041C55D9585D3A616D7E90CDB8AB1B343638DA19EFFB7DC7557602C2D76F312A07F</stationID>
+			<name>радыё Сталiца</name>
 			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>72.5</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1207725781B1CE695E03A103A33EA30C2AEE33B4FDB5757DAF907F0964F5A1EA23C553A8AD</stationID>
-			<name>radio 1 polska</name>
+			<stationID>1207725781B1CE695E03A103A33EA30C2AEE33B4FDB5757DAF907F0964F5A1EA23C553A8AD</stationID>
+			<name>radio 1 Polska</name>
 			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>88.25</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1195418551882952DFC8A3913F8D3C68504C0E93BF72377B5CD67E045D20F27280F00F25E1</stationID>
-			<name>kultura</name>
+			<stationID>1195418551882952DFC8A3913F8D3C68504C0E93BF72377B5CD67E045D20F27280F00F25E1</stationID>
+			<name>Культура</name>
 			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>88.4</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>11954185650FE254953641925E551685E06E70EAD8660CF8C010FF4B5446BAFB8FB597D918</stationID>
-			<name>radio 3 polska</name>
+			<stationID>11954185650FE254953641925E551685E06E70EAD8660CF8C010FF4B5446BAFB8FB597D918</stationID>
+			<name>radio 3 Polska</name>
 			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>90.5</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1194713996F0E7E992470C24D4CE8060E398D7B24CF79C675808B56A957BA315E32BA9D3A2</stationID>
-			<name>rmf fm</name>
-			<shortname>001</shortname>
+			<stationID>1194713996F0E7E992470C24D4CE8060E398D7B24CF79C675808B56A957BA315E32BA9D3A2</stationID>
+			<name>RMF FM</name>
+			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>91.9</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1194713863838DF5C3D87638EA1BC0C2F69C8A18EBEC793462C87EB1097DDDB0DC02663030</stationID>
-			<name>novoe radio</name>
+			<stationID>1194713863838DF5C3D87638EA1BC0C2F69C8A18EBEC793462C87EB1097DDDB0DC02663030</stationID>
+			<name>Новое радио</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>92.8004</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1194713867D9F544C68EE0C5E183652BAB20149AB9DD906EE04173894C48A482E29C744AB5</stationID>
-			<name>belarus</name>
+			<stationID>1194713867D9F544C68EE0C5E183652BAB20149AB9DD906EE04173894C48A482E29C744AB5</stationID>
+			<name>radio Belarus</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>96.4</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1207687158AC1EFA6C9DD0FFFCEB20D5C4A1422DB3DB9EAA460E874326A65D4A9D1CC34C3E</stationID>
-			<name>piershy nacijanalny kanal belaruskaga radio</name>
-			<shortname>radio 1 by</shortname>
+			<stationID>12077294984C448D1D756B4422108C36E16C7249BF7B2ABEFA33119A5CB5BAEE6C417DAB58</stationID>
+			<name>радыё Рацыя</name>
+			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>99.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1207687158AC1EFA6C9DD0FFFCEB20D5C4A1422DB3DB9EAA460E874326A65D4A9D1CC34C3E</stationID>
+			<name>Першы нацыянальны</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>99.9998</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1227190558E55550FD0D68E6DDC089D3DFF7FB85A40F0D37900E0680BF1A78667166E99C21</stationID>
-			<name>alpha radio</name>
+			<stationID>128051385121F1B431D096F125FCAF235ECCA45C414ABE8DC64C8F2E3D0A41A4C9A843</stationID>
+			<name>радио Минск</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>100.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1227190558E55550FD0D68E6DDC089D3DFF7FB85A40F0D37900E0680BF1A78667166E99C21</stationID>
+			<name>Альфа радио</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>100.8</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1202244062D3B1BD6E67E93C3D3186F73B8AE89D4FCCD9E3ECDD51E328F65036A365381747</stationID>
-			<name>radio roks</name>
+			<stationID>1202244062D3B1BD6E67E93C3D3186F73B8AE89D4FCCD9E3ECDD51E328F65036A365381747</stationID>
+			<name>радио Рокс</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>101.201</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1207729844804970DB985A067502CCD04CDB8CF67CDE973A3AC5C311998F80CA6212141C2D</stationID>
-			<name>radio podlaśia</name>
+			<stationID>1207729844804970DB985A067502CCD04CDB8CF67CDE973A3AC5C311998F80CA6212141C2D</stationID>
+			<name>radio Podlaśia</name>
 			<shortname></shortname>
 			<icon></icon>
-			<volumepreset>0.32</volumepreset>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>101.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1202244168B63FB1467284BF12B788C73B54412EA827276731841EA311E5DB412E3D67CA73</stationID>
-			<name>unistar</name>
+			<stationID>1202244168B63FB1467284BF12B788C73B54412EA827276731841EA311E5DB412E3D67CA73</stationID>
+			<name>Unistar</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>102.3</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>12171720541E9003C323E0451C23BA71BA9F04DA8800CD68AFCD2F7ECCD5D5D1DA9609C3D2</stationID>
-			<name>-- pl</name>
+			<stationID>12171720541E9003C323E0451C23BA71BA9F04DA8800CD68AFCD2F7ECCD5D5D1DA9609C3D2</stationID>
+			<name>radio 2 Polska</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
-			<frequency>102.5</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.55</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1202245059AE9EBED37F3B7BA219E0733F6FEA9A2D2E4CE4A9D006BFC4723557997AF0D836</stationID>
-			<name>pilot fm</name>
+			<stationID>1202245059AE9EBED37F3B7BA219E0733F6FEA9A2D2E4CE4A9D006BFC4723557997AF0D836</stationID>
+			<name>Pilot fm</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>102.9</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1202292997527C0FCFE4DA7276A2330178ECA3662FAF3EA3011796C416CABF38144D1033D2</stationID>
-			<name>radio dla ćiebię</name>
+			<stationID>1202292997527C0FCFE4DA7276A2330178ECA3662FAF3EA3011796C416CABF38144D1033D2</stationID>
+			<name>Radio dla ćiebię</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>103.4</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>120224528899157BF6DA7064D0D1325986522D67E3DB3D58B772CA8BF58F0EA566FE32BD74</stationID>
-			<name>radius fm</name>
+			<stationID>120224528899157BF6DA7064D0D1325986522D67E3DB3D58B772CA8BF58F0EA566FE32BD74</stationID>
+			<name>Радиус fm</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>103.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1217172241D354DFEB01909925C0A8B485DBB22A3CC748619A388FF492F225D71D178C9C51</stationID>
-			<name>-- pl</name>
+			<stationID>1217172241D354DFEB01909925C0A8B485DBB22A3CC748619A388FF492F225D71D178C9C51</stationID>
+			<name>radio 3 Polska</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>104.2</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>12171722879ACB44A1C2A18FFC543900D4F9C57067C662618247DD7BB7EE8FBC35FFAB0BB9</stationID>
-			<name>radio maria</name>
+			<stationID>12171722879ACB44A1C2A18FFC543900D4F9C57067C662618247DD7BB7EE8FBC35FFAB0BB9</stationID>
+			<name>radio Maria</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>104.45</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1202245826D98B15CBF4743EBD4AC7C3244B952B551AB6CBBE876309603D97FFED2F1D5F05</stationID>
-			<name>radio brest</name>
+			<stationID>1202245826D98B15CBF4743EBD4AC7C3244B952B551AB6CBBE876309603D97FFED2F1D5F05</stationID>
+			<name>радио Брест</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>104.8</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1194714022A97BEC079991179A7F6AB786705AB0DF6B834ED0C23B271D19E19CD7D702EF35</stationID>
-			<name>radio zet</name>
-			<shortname>2</shortname>
+			<stationID>1194714022A97BEC079991179A7F6AB786705AB0DF6B834ED0C23B271D19E19CD7D702EF35</stationID>
+			<name>radio Zet</name>
+			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>105.4</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>1194714205A5F11E788B848B143CFA9E2350F74BD56902514359C51CD39AC07D1FC0FD786A</stationID>
-			<name>radio ba</name>
+			<stationID>1194714205A5F11E788B848B143CFA9E2350F74BD56902514359C51CD39AC07D1FC0FD786A</stationID>
+			<name>радио &quot;ba&quot;</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>106.2</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			
-<stationID>121717241561F47D14C239BC8C669D47D567F9F82EF98251001C54207E8DD9AB2177D5D58E</stationID>
-			<name>radio maria</name>
+			<stationID>1281248050E5DD39785E5EFE11D82C9436E6AA3A48E0F6D1B19CF029CF43EAA6922846</stationID>
+			<name>радио Мир</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>121717241561F47D14C239BC8C669D47D567F9F82EF98251001C54207E8DD9AB2177D5D58E</stationID>
+			<name>radio Maria</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>107.7</frequency>
 		</FrequencyRadioStation>
 	</stationlist>
 </kradiorc>
-
