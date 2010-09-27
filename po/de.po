@@ -3,20 +3,20 @@
 # This file is put in the public domain.
 #
 # Ernst Martin Witte <emw-kradio@nocabal.de>, 2006.
-# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-06-10 00:32+0200\n"
+"PO-Revision-Date: 2010-09-27 19:14+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: German\n"
+"Language-Team: trunk <kde-i18n-de@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
@@ -219,7 +219,7 @@ msgstr "Lizenz: %1"
 
 #: src/kradioaboutwidget.cpp:138
 msgid "&About"
-msgstr "Ü%ber"
+msgstr "Ü&ber"
 
 #: src/kradioaboutwidget.cpp:147
 msgid "A&uthor"
@@ -839,3 +839,4 @@ msgstr "Ausgewählte Sender"
 #: rc.cpp:105
 msgid "Available Stations"
 msgstr "Verfügbare Sender"
+
