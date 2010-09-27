@@ -117,7 +117,8 @@ RECEIVERS:
 
     bool startRecordingWithFormat(SoundStreamID /*id*/,
                       const SoundFormat &/*proposed_format*/,
-                      SoundFormat       &/*real_format*/);
+                      SoundFormat       &/*real_format*/,
+                      const QString     &/*filenameTemplate*/);
     bool stopRecording(SoundStreamID /*id*/);
     bool pausePlayback(SoundStreamID /*id*/);
     bool resumePlayback(SoundStreamID /*id*/);

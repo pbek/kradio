@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-27 01:56+0200\n"
 "PO-Revision-Date: 2009-11-08 00:04-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -112,24 +112,24 @@ msgstr "Selecionar uma estação de rádio"
 msgid "no preset defined"
 msgstr "Nenhuma estação definida"
 
-#: radioview.cpp:554 radioview.cpp:624
+#: radioview.cpp:555 radioview.cpp:625
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Parar a gravação de %1"
 
-#: radioview.cpp:607
+#: radioview.cpp:608
 msgid "Resume playback"
 msgstr "Continuar reprodução"
 
-#: radioview.cpp:611
+#: radioview.cpp:612
 msgid "Pause playback"
 msgstr "Pausar reprodução"
 
-#: radioview.cpp:704
+#: radioview.cpp:705
 msgid "Display"
 msgstr "Exibir"
 
-#: radioview.cpp:705
+#: radioview.cpp:706
 msgid "Display Configuration"
 msgstr "Configuração da exibição"
 

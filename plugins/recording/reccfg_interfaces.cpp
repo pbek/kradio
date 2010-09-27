@@ -31,8 +31,8 @@ IF_IMPL_SENDER  (   IRecCfg::notifyMP3QualityChanged(int q),
 IF_IMPL_SENDER  (   IRecCfg::notifyOggQualityChanged(float q),
                     noticeOggQualityChanged(q)
                 );
-IF_IMPL_SENDER  (   IRecCfg::notifyRecordingDirectoryChanged(const QString &dir),
-                    noticeRecordingDirectoryChanged(dir)
+IF_IMPL_SENDER  (   IRecCfg::notifyRecordingDirectoryChanged(const QString &dir, const QString &templ),
+                    noticeRecordingDirectoryChanged(dir, templ)
                 );
 IF_IMPL_SENDER  (   IRecCfg::notifyOutputFormatChanged(RecordingConfig::OutputFormat of),
                     noticeOutputFormatChanged(of)
@@ -58,8 +58,8 @@ IF_IMPL_SENDER  (   IRecCfgClient::sendMP3Quality(int q),
 IF_IMPL_SENDER  (   IRecCfgClient::sendOggQuality(float q),
                     setOggQuality(q)
                 );
-IF_IMPL_SENDER  (   IRecCfgClient::sendRecordingDirectory(const QString &dir),
-                    setRecordingDirectory(dir)
+IF_IMPL_SENDER  (   IRecCfgClient::sendRecordingDirectory(const QString &dir, const QString &templ),
+                    setRecordingDirectory(dir, templ)
                 );
 IF_IMPL_SENDER  (   IRecCfgClient::sendOutputFormat(RecordingConfig::OutputFormat of),
                     setOutputFormat(of)
@@ -93,9 +93,9 @@ IF_IMPL_QUERY   (   float IRecCfgClient::queryOggQuality (),
                 );
 
 static QString defaultRecDir("/tmp");
-IF_IMPL_QUERY   (   const QString &IRecCfgClient::queryRecordingDirectory(),
-                    getRecordingDirectory(),
-                    defaultRecDir
+IF_IMPL_QUERY   (   void IRecCfgClient::queryRecordingDirectory(QString &dir, QString &templ),
+                    getRecordingDirectory(dir, templ),
+
                 );
 
 IF_IMPL_QUERY   (   RecordingConfig::OutputFormat  IRecCfgClient::queryOutputFormat(),
@@ -122,7 +122,11 @@ void IRecCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/
     noticeSoundFormatChanged(querySoundFormat());
     noticeMP3QualityChanged (queryMP3Quality());
     noticeOggQualityChanged (queryOggQuality());
-    noticeRecordingDirectoryChanged(queryRecordingDirectory());
+
+    QString dir, templ;
+    queryRecordingDirectory(dir, templ);
+    noticeRecordingDirectoryChanged(dir, templ);
+
     noticeOutputFormatChanged(queryOutputFormat());
     int  s = 0;
     bool e = queryPreRecording(s);
@@ -139,7 +143,11 @@ void IRecCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/
     noticeSoundFormatChanged(querySoundFormat());
     noticeMP3QualityChanged (queryMP3Quality());
     noticeOggQualityChanged (queryOggQuality());
-    noticeRecordingDirectoryChanged(queryRecordingDirectory());
+
+    QString dir, templ;
+    queryRecordingDirectory(dir, templ);
+    noticeRecordingDirectoryChanged(dir, templ);
+
     noticeOutputFormatChanged(queryOutputFormat());
     int  s = 0;
     bool e = queryPreRecording(s);

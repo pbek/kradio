@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-27 01:57+0200\n"
 "PO-Revision-Date: 2009-11-10 21:39-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -76,238 +76,280 @@ msgstr "Falha ao escrever cabeçalho Ogg/Vorbis para stream de saída\n"
 
 #. i18n: file: recording-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, RecordingConfigurationUI)
-#: rc.cpp:3 rc.cpp:119
+#: rc.cpp:3 rc.cpp:130
 msgid "RecordingConfigurationUI"
 msgstr "RecordingConfigurationUI"
 
 #. i18n: file: recording-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
-#: rc.cpp:6 rc.cpp:122
+#: rc.cpp:6 rc.cpp:133
 msgid "Output"
 msgstr "Saída"
 
 #. i18n: file: recording-configuration-ui.ui:104
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
-#: rc.cpp:9 rc.cpp:125
+#: rc.cpp:9 rc.cpp:136
 msgid "MP3 Quality(0 - high, 9 - low)"
 msgstr "Qualidade da MP3 (0 - alta, 9 - baixa)"
 
 #. i18n: file: recording-configuration-ui.ui:124
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:12 rc.cpp:128
+#: rc.cpp:12 rc.cpp:139
 msgid "raw pcm output (.raw)"
 msgstr "Saída PCM raw (.raw)"
 
 #. i18n: file: recording-configuration-ui.ui:129
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:15 rc.cpp:131
+#: rc.cpp:15 rc.cpp:142
 msgid "Microsoft Wave (.wav)"
 msgstr "Microsoft Wave (.wav)"
 
 #. i18n: file: recording-configuration-ui.ui:134
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:18 rc.cpp:134
+#: rc.cpp:18 rc.cpp:145
 msgid "Apple/SGI (.aiff)"
 msgstr "Apple/SGI (.aiff)"
 
 #. i18n: file: recording-configuration-ui.ui:139
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:21 rc.cpp:137
+#: rc.cpp:21 rc.cpp:148
 msgid "Sun/NeXT (.au)"
 msgstr "Sun/NeXT (.au)"
 
 #. i18n: file: recording-configuration-ui.ui:144
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:24 rc.cpp:140
+#: rc.cpp:24 rc.cpp:151
 msgid "MP3 Compressed (.mp3)"
 msgstr "MP3 Comprimida (.mp3)"
 
 #. i18n: file: recording-configuration-ui.ui:149
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:27 rc.cpp:143
+#: rc.cpp:27 rc.cpp:154
 msgid "Ogg/Vorbis Compressed (.ogg)"
 msgstr "Ogg/Vorbis Comprimido (.ogg)"
 
 #. i18n: file: recording-configuration-ui.ui:157
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
-#: rc.cpp:30 rc.cpp:146
+#: rc.cpp:30 rc.cpp:157
 msgid "Recording Directory"
 msgstr "Diretório de gravação"
 
 #. i18n: file: recording-configuration-ui.ui:167
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
-#: rc.cpp:33 rc.cpp:149
+#: rc.cpp:33 rc.cpp:160
 msgid "File Format"
 msgstr "Formato do arquivo"
 
 #. i18n: file: recording-configuration-ui.ui:177
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
-#: rc.cpp:36 rc.cpp:152
+#: rc.cpp:36 rc.cpp:163
 msgid "Ogg Quality(0 - low, 9 - high)"
 msgstr "Qualidade do Ogg (0 - baixa, 9 - alta)"
 
-#. i18n: file: recording-configuration-ui.ui:206
+#. i18n: file: recording-configuration-ui.ui:196
+#. i18n: ectx: property (text), widget (QLabel, lableDirectory_2)
+#: rc.cpp:39 rc.cpp:166
+#, fuzzy
+msgid "Recording Filename Template"
+msgstr "Arquivo de gravação"
+
+#. i18n: file: recording-configuration-ui.ui:216
+#. i18n: ectx: property (text), widget (QLabel, lableDirectory_3)
+#: rc.cpp:43 rc.cpp:170
+#, no-c-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
+"italic;\">(</span><span style=\" font-weight:600; font-style:italic;\">%s</"
+"span><span style=\" font-style:italic;\">: station name, </span><span style="
+"\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
+"italic;\">: station index, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%Y</span><span style=\" font-style:italic;\">: 4-digit year, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%m</span><span "
+"style=\" font-style:italic;\">: 2-digit month, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%d</span><span style=\" font-style:italic;"
+"\">: 2-digit day, </span><span style=\" font-weight:600; font-style:italic;"
+"\">%B</span><span style=\" font-style:italic;\">: month name, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%A</span><span style=\" font-"
+"style:italic;\"> day name, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%H</span><span style=\" font-style:italic;\">: 2-digit hour, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%M</span><span "
+"style=\" font-style:italic;\">: 2-digit minute, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%S</span><span style=\" font-style:italic;"
+"\"> 2-digit second,</span><span style=\" font-weight:600; font-style:italic;"
+"\"> %%</span><span style=\" font-style:italic;\">: literal %)</span></p></"
+"body></html>"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
-#: rc.cpp:39 rc.cpp:155
+#: rc.cpp:50 rc.cpp:177
 msgid "I&nput"
 msgstr "E&ntrada"
 
-#. i18n: file: recording-configuration-ui.ui:240
+#. i18n: file: recording-configuration-ui.ui:279
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:42 rc.cpp:158
+#: rc.cpp:53 rc.cpp:180
 msgid "48000"
 msgstr "48000"
 
-#. i18n: file: recording-configuration-ui.ui:245
+#. i18n: file: recording-configuration-ui.ui:284
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:45 rc.cpp:161
+#: rc.cpp:56 rc.cpp:183
 msgid "44100"
 msgstr "44100"
 
-#. i18n: file: recording-configuration-ui.ui:250
+#. i18n: file: recording-configuration-ui.ui:289
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:48 rc.cpp:164
+#: rc.cpp:59 rc.cpp:186
 msgid "22050"
 msgstr "22050"
 
-#. i18n: file: recording-configuration-ui.ui:255
+#. i18n: file: recording-configuration-ui.ui:294
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:51 rc.cpp:167
+#: rc.cpp:62 rc.cpp:189
 msgid "11025"
 msgstr "11025"
 
-#. i18n: file: recording-configuration-ui.ui:263
+#. i18n: file: recording-configuration-ui.ui:302
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
-#: rc.cpp:54 rc.cpp:170
+#: rc.cpp:65 rc.cpp:192
 msgid "Endianess"
 msgstr "Endianess"
 
-#. i18n: file: recording-configuration-ui.ui:296
+#. i18n: file: recording-configuration-ui.ui:335
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
-#: rc.cpp:57 rc.cpp:173
+#: rc.cpp:68 rc.cpp:195
 msgid "Stereo"
 msgstr "Estéreo"
 
-#. i18n: file: recording-configuration-ui.ui:301
+#. i18n: file: recording-configuration-ui.ui:340
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
-#: rc.cpp:60 rc.cpp:176
+#: rc.cpp:71 rc.cpp:198
 msgid "Mono"
 msgstr "Mono"
 
-#. i18n: file: recording-configuration-ui.ui:309
+#. i18n: file: recording-configuration-ui.ui:348
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:63 rc.cpp:179 recording-monitor.cpp:54
+#: rc.cpp:74 rc.cpp:201 recording-monitor.cpp:54
 msgid "Sample Rate"
 msgstr "Taxa de amostragem"
 
-#. i18n: file: recording-configuration-ui.ui:326
+#. i18n: file: recording-configuration-ui.ui:365
 #. i18n: ectx: property (text), item, widget (KComboBox, editEndianess)
-#: rc.cpp:66 rc.cpp:182
+#: rc.cpp:77 rc.cpp:204
 msgid "Little Endian"
 msgstr "Little endian"
 
-#. i18n: file: recording-configuration-ui.ui:331
+#. i18n: file: recording-configuration-ui.ui:370
 #. i18n: ectx: property (text), item, widget (KComboBox, editEndianess)
-#: rc.cpp:69 rc.cpp:185
+#: rc.cpp:80 rc.cpp:207
 msgid "Big Endian"
 msgstr "Big endian"
 
-#. i18n: file: recording-configuration-ui.ui:346
+#. i18n: file: recording-configuration-ui.ui:385
 #. i18n: ectx: property (text), item, widget (KComboBox, editBits)
-#: rc.cpp:72 rc.cpp:188
+#: rc.cpp:83 rc.cpp:210
 msgid "16"
 msgstr "16"
 
-#. i18n: file: recording-configuration-ui.ui:351
+#. i18n: file: recording-configuration-ui.ui:390
 #. i18n: ectx: property (text), item, widget (KComboBox, editBits)
-#: rc.cpp:75 rc.cpp:191
+#: rc.cpp:86 rc.cpp:213
 msgid "8"
 msgstr "8"
 
-#. i18n: file: recording-configuration-ui.ui:359
+#. i18n: file: recording-configuration-ui.ui:398
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
-#: rc.cpp:78 rc.cpp:194
+#: rc.cpp:89 rc.cpp:216
 msgid "Channels"
 msgstr "Canais"
 
-#. i18n: file: recording-configuration-ui.ui:369
+#. i18n: file: recording-configuration-ui.ui:408
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
-#: rc.cpp:81 rc.cpp:197
+#: rc.cpp:92 rc.cpp:219
 msgid "Sample Bits"
 msgstr "Bits de amostragem"
 
-#. i18n: file: recording-configuration-ui.ui:386
+#. i18n: file: recording-configuration-ui.ui:425
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
-#: rc.cpp:84 rc.cpp:200
+#: rc.cpp:95 rc.cpp:222
 msgid "Signed"
 msgstr "Assinado"
 
-#. i18n: file: recording-configuration-ui.ui:391
+#. i18n: file: recording-configuration-ui.ui:430
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
-#: rc.cpp:87 rc.cpp:203
+#: rc.cpp:98 rc.cpp:225
 msgid "Unsigned"
 msgstr "Não assinado"
 
-#. i18n: file: recording-configuration-ui.ui:434
+#. i18n: file: recording-configuration-ui.ui:473
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_3)
-#: rc.cpp:90 rc.cpp:206
+#: rc.cpp:101 rc.cpp:228
 msgid "&Buffers"
 msgstr "&Buffers"
 
-#. i18n: file: recording-configuration-ui.ui:445
+#. i18n: file: recording-configuration-ui.ui:484
 #. i18n: ectx: property (suffix), widget (QSpinBox, editBufferSize)
-#: rc.cpp:93 rc.cpp:209
+#: rc.cpp:104 rc.cpp:231
 msgid " kB"
 msgstr " kB"
 
-#. i18n: file: recording-configuration-ui.ui:464
+#. i18n: file: recording-configuration-ui.ui:503
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
-#: rc.cpp:96 rc.cpp:212
+#: rc.cpp:107 rc.cpp:234
 msgid "Encoding Buffer Size"
 msgstr "Tamanho do buffer de codificação"
 
-#. i18n: file: recording-configuration-ui.ui:484
+#. i18n: file: recording-configuration-ui.ui:523
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
-#: rc.cpp:99 rc.cpp:215
+#: rc.cpp:110 rc.cpp:237
 msgid "Number of Buffers"
 msgstr "Número de buffers"
 
-#. i18n: file: recording-configuration-ui.ui:513
+#. i18n: file: recording-configuration-ui.ui:552
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
-#: rc.cpp:102 rc.cpp:218
+#: rc.cpp:113 rc.cpp:240
 msgid "Pre-Recordin&g"
 msgstr "Pre&gravação"
 
-#. i18n: file: recording-configuration-ui.ui:526
+#. i18n: file: recording-configuration-ui.ui:565
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxPreRecordingEnable)
-#: rc.cpp:105 rc.cpp:221
+#: rc.cpp:116 rc.cpp:243
 msgid "E&nable"
 msgstr "Ha&bilitar"
 
-#. i18n: file: recording-configuration-ui.ui:529
+#. i18n: file: recording-configuration-ui.ui:568
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxPreRecordingEnable)
-#: rc.cpp:108 rc.cpp:224
+#: rc.cpp:119 rc.cpp:246
 msgid "Alt+N"
 msgstr "Alt+N"
 
-#. i18n: file: recording-configuration-ui.ui:559
+#. i18n: file: recording-configuration-ui.ui:598
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
-#: rc.cpp:111 rc.cpp:227
+#: rc.cpp:122 rc.cpp:249
 msgid "PreRecording Time"
 msgstr "Duração da pregravação"
 
-#. i18n: file: recording-configuration-ui.ui:572
+#. i18n: file: recording-configuration-ui.ui:611
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
-#: rc.cpp:114 rc.cpp:230
+#: rc.cpp:125 rc.cpp:252
 msgid " s"
 msgstr " s"
 
-#: rc.cpp:115
+#: rc.cpp:126
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Márcio Moraes"
 
-#: rc.cpp:116
+#: rc.cpp:127
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "marciopanto@gmail.com"
@@ -320,27 +362,27 @@ msgstr "Plug-in de gravação KRadio"
 msgid "KRadio Recording Monitor"
 msgstr "Acompanhar gravação do KRadio"
 
-#: recording.cpp:132 recording.cpp:133
+#: recording.cpp:135 recording.cpp:136
 msgid "Recording"
 msgstr "Granvando"
 
-#: recording.cpp:373
+#: recording.cpp:378
 msgid "start capture not handled"
 msgstr "O início da gravação foi ignorada"
 
-#: recording.cpp:380
+#: recording.cpp:388
 msgid "Recording starting"
 msgstr "Iniciando gravação"
 
-#: recording.cpp:382
+#: recording.cpp:390
 msgid "starting encoding thread failed"
 msgstr "Falha ao iniciar processo de codificação"
 
-#: recording.cpp:464
+#: recording.cpp:472
 msgid "could not read suffient data"
 msgstr "Não foi possível ler os dados corretamente"
 
-#: recording.cpp:495
+#: recording.cpp:503
 #, kde-format
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
@@ -349,19 +391,19 @@ msgstr ""
 "Codificar estouro de buffer de entrada (problema de configuração de "
 "buffer?). Ignorado %1 bytes de entrada"
 
-#: recording.cpp:557
+#: recording.cpp:583
 msgid "Recording::outputFile: "
 msgstr "Gravação::arquivo de saída: "
 
-#: recording.cpp:607
+#: recording.cpp:633
 msgid "The encoding thread did not finish. It will be killed now."
 msgstr "O processo de codificação não terminou. Ele será finalizado agora."
 
-#: recording.cpp:627
+#: recording.cpp:653
 msgid "Recording stopped"
 msgstr "Gravação parada"
 
-#: recording.cpp:660
+#: recording.cpp:686
 #, kde-format
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"

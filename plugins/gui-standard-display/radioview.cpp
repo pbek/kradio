@@ -544,7 +544,8 @@ void RadioView::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 bool RadioView::startRecordingWithFormat(
     SoundStreamID      id,
     const SoundFormat &/*proposed_format*/,
-    SoundFormat       &/*real_format*/)
+    SoundFormat       &/*real_format*/,
+    const QString     &/*filenameTemplate*/)
 {
     if (!id.isValid() || id != queryCurrentSoundStreamSinkID() || m_StreamID2MenuID.contains(id))
         return false;

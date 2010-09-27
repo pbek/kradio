@@ -42,6 +42,7 @@ public:
 public:
     RecordingConfig ();
     RecordingConfig (const QString &directory,
+                     const QString &filenameTemplate,
                      OutputFormat of,
                      const SoundFormat &, int mp3_q, float ogg_q);
     RecordingConfig (const RecordingConfig &c);
@@ -61,6 +62,7 @@ public:
     int          m_mp3Quality;
     float        m_oggQuality;
     QString      m_Directory;
+    QString      m_FilenameTemplate;
     OutputFormat m_OutputFormat;
 
     bool         m_PreRecordingEnable;

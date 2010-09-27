@@ -24,17 +24,18 @@
 // #warning "FIXME: port about stuff"
 //#include "aboutwidget.h"
 
-//const char *AlarmListElement            = "alarmlist";
-//const char *AlarmElement                = "alarm";
-const char *AlarmDateElement            = "date";
-const char *AlarmTimeElement            = "time";
-const char *AlarmDailyElement           = "daily";
-const char *AlarmWeekdayMaskElement     = "weekdayMask";
-const char *AlarmEnabledElement         = "enabled";
-const char *AlarmStationIDElement       = "stationID";
-//const char *AlarmFrequencyElement       = "frequency";
-const char *AlarmVolumeElement          = "volume";
-const char *AlarmTypeElement            = "type";
+//const char *AlarmListElement              = "alarmlist";
+//const char *AlarmElement                  = "alarm";
+const char *AlarmDateElement              = "date";
+const char *AlarmTimeElement              = "time";
+const char *AlarmDailyElement             = "daily";
+const char *AlarmWeekdayMaskElement       = "weekdayMask";
+const char *AlarmEnabledElement           = "enabled";
+const char *AlarmStationIDElement         = "stationID";
+//const char *AlarmFrequencyElement         = "frequency";
+const char *AlarmVolumeElement            = "volume";
+const char *AlarmTypeElement              = "type";
+const char *AlarmRecordingTemplateElement = "recordingTemplate";
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -224,14 +225,15 @@ void    TimeControl::restoreState (const KConfigGroup &config)
     int nAlarms = config.readEntry ("nAlarms", 0);
     for (int idx = 1; idx <= nAlarms; ++idx) {
 
-        QString num     = QString().setNum(idx);
-        QDateTime d     = config.readEntry(AlarmTimeElement           + num, QDateTime());
-        bool enable     = config.readEntry(AlarmEnabledElement        + num, false);
-        bool daily      = config.readEntry(AlarmDailyElement          + num, false);
-        int weekdayMask = config.readEntry(AlarmWeekdayMaskElement    + num, 0x7F);
-        float vol       = config.readEntry(AlarmVolumeElement         + num, 1.0);
-        QString sid     = config.readEntry(AlarmStationIDElement      + num, QString());
-        int type        = config.readEntry(AlarmTypeElement           + num, (int)Alarm::StartPlaying);
+        QString   num               = QString().setNum(idx);
+        QDateTime d                 = config.readEntry(AlarmTimeElement              + num, QDateTime());
+        bool      enable            = config.readEntry(AlarmEnabledElement           + num, false);
+        bool      daily             = config.readEntry(AlarmDailyElement             + num, false);
+        int       weekdayMask       = config.readEntry(AlarmWeekdayMaskElement       + num, 0x7F);
+        float     vol               = config.readEntry(AlarmVolumeElement            + num, 1.0);
+        QString   sid               = config.readEntry(AlarmStationIDElement         + num, QString());
+        int       type              = config.readEntry(AlarmTypeElement              + num, (int)Alarm::StartPlaying);
+        QString   recordingTemplate = config.readEntry(AlarmRecordingTemplateElement + num, "kradio-recording-%s-%Y.%m.%d-%H.%M.%S");
 
         enable &= d.isValid();
 
@@ -240,6 +242,7 @@ void    TimeControl::restoreState (const KConfigGroup &config)
         a.setWeekdayMask(weekdayMask);
         a.setStationID(sid);
         a.setAlarmType((Alarm::AlarmType)type);
+        a.setRecordingTemplate(recordingTemplate);
         al.push_back(a);
     }
 
@@ -257,13 +260,14 @@ void    TimeControl::saveState    (KConfigGroup &config) const
     ciAlarmVector end = m_alarms.end();
     for (ciAlarmVector i = m_alarms.begin(); i != end; ++i, ++idx) {
         QString num = QString().setNum(idx);
-        config.writeEntry (AlarmTimeElement        + num, i->alarmTime());
-        config.writeEntry (AlarmEnabledElement     + num, i->isEnabled());
-        config.writeEntry (AlarmDailyElement       + num, i->isDaily());
-        config.writeEntry (AlarmWeekdayMaskElement + num, i->weekdayMask());
-        config.writeEntry (AlarmVolumeElement      + num, i->volumePreset());
-        config.writeEntry (AlarmStationIDElement   + num, i->stationID());
-        config.writeEntry (AlarmTypeElement        + num, (int)i->alarmType());
+        config.writeEntry (AlarmTimeElement              + num, i->alarmTime());
+        config.writeEntry (AlarmEnabledElement           + num, i->isEnabled());
+        config.writeEntry (AlarmDailyElement             + num, i->isDaily());
+        config.writeEntry (AlarmWeekdayMaskElement       + num, i->weekdayMask());
+        config.writeEntry (AlarmVolumeElement            + num, i->volumePreset());
+        config.writeEntry (AlarmStationIDElement         + num, i->stationID());
+        config.writeEntry (AlarmTypeElement              + num, (int)i->alarmType());
+        config.writeEntry (AlarmRecordingTemplateElement + num, i->recordingTemplate());
     }
 
     config.writeEntry("countdownSeconds",  m_countdownSeconds);

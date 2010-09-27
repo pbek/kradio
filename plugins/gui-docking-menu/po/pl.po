@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-27 01:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,107 +17,167 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: docking-configuration.cpp:70
-msgid "Left Mouse Click on Tray"
+#: docking-configuration.cpp:126
+msgid "Mouse Click on Tray Icon"
 msgstr ""
 
-#: docking-configuration.cpp:73
-msgid "Show/Hide all GUI Elements"
+#: docking-configuration.cpp:127 docking-configuration.cpp:134
+msgid "Left"
 msgstr ""
 
-#: docking-configuration.cpp:74
+#: docking-configuration.cpp:128 docking-configuration.cpp:135
+msgid "Right"
+msgstr ""
+
+#: docking-configuration.cpp:129 docking-configuration.cpp:136
+msgid "Middle"
+msgstr ""
+
+#: docking-configuration.cpp:130 docking-configuration.cpp:137
+msgid "XButton1"
+msgstr ""
+
+#: docking-configuration.cpp:131 docking-configuration.cpp:138
+msgid "XButton2"
+msgstr ""
+
+#: docking-configuration.cpp:133
+msgid "Mouse Double-Click on Tray Icon"
+msgstr ""
+
+#: docking-configuration.cpp:140
+msgid "Mouse Wheel Action on Tray Icon"
+msgstr ""
+
+#: docking-configuration.cpp:146 docking-configuration.cpp:156
+msgid "No Action"
+msgstr ""
+
+#: docking-configuration.cpp:147
+msgid "Show/Hide Windows"
+msgstr ""
+
+#: docking-configuration.cpp:148
 msgid "Power On/Off"
 msgstr ""
 
-#: docking.cpp:45
-msgid "System Tray Icon/Menu for KRadio"
+#: docking-configuration.cpp:149
+msgid "Pause/Play"
 msgstr ""
 
-#: docking.cpp:53
-msgid "System Tray Plugin"
-msgstr ""
-
-#: docking.cpp:203
-msgid "System Tray Icon"
-msgstr ""
-
-#: docking.cpp:204
-msgid "System Tray Icon Configuration"
-msgstr ""
-
-#: docking.cpp:258
-msgid "Search Next Station"
-msgstr ""
-
-#: docking.cpp:259
-msgid "Search Previous Station"
-msgstr ""
-
-#: docking.cpp:268
+#: docking-configuration.cpp:150 docking.cpp:316
 msgid "Recording"
 msgstr ""
 
-#: docking.cpp:273
+#: docking-configuration.cpp:151
+msgid "System Tray Menu"
+msgstr ""
+
+#: docking-configuration.cpp:152
+msgid "GUI-Plugin Menu"
+msgstr ""
+
+#: docking-configuration.cpp:153
+msgid "Configuration"
+msgstr ""
+
+#: docking-configuration.cpp:157
+msgid "Change Station"
+msgstr ""
+
+#: docking-configuration.cpp:158
+msgid "Change Volume"
+msgstr ""
+
+#: docking-configuration.cpp:159
+msgid "Change Frequency"
+msgstr ""
+
+#: docking.cpp:46
+msgid "System Tray Icon/Menu for KRadio"
+msgstr ""
+
+#: docking.cpp:54
+msgid "System Tray Plugin"
+msgstr ""
+
+#: docking.cpp:251
+msgid "System Tray Icon"
+msgstr ""
+
+#: docking.cpp:252
+msgid "System Tray Icon Configuration"
+msgstr ""
+
+#: docking.cpp:306
+msgid "Search Next Station"
+msgstr ""
+
+#: docking.cpp:307
+msgid "Search Previous Station"
+msgstr ""
+
+#: docking.cpp:321
 msgid "Pause Radio"
 msgstr ""
 
-#: docking.cpp:284
+#: docking.cpp:332
 msgid "Show/Hide Plugins"
 msgstr ""
 
-#: docking.cpp:292
+#: docking.cpp:340
 msgid "&Quit"
 msgstr ""
 
-#: docking.cpp:406
+#: docking.cpp:454
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr ""
 
-#: docking.cpp:409 docking.cpp:418 docking.cpp:426
+#: docking.cpp:457 docking.cpp:466 docking.cpp:474
 msgid "Start Sleep Countdown"
 msgstr ""
 
-#: docking.cpp:434
+#: docking.cpp:482
 msgid "Power Off"
 msgstr ""
 
-#: docking.cpp:434
+#: docking.cpp:482
 msgid "Power On"
 msgstr ""
 
-#: docking.cpp:449 docking.cpp:470
+#: docking.cpp:497 docking.cpp:518
 msgid "invalid station"
 msgstr ""
 
-#: docking.cpp:452
+#: docking.cpp:500
 #, kde-format
 msgid "KRadio: %1"
 msgstr ""
 
-#: docking.cpp:462
+#: docking.cpp:510
 #, kde-format
 msgid "next alarm: %1"
 msgstr ""
 
-#: docking.cpp:464
+#: docking.cpp:512
 msgid "<no alarm pending>"
 msgstr ""
 
-#: docking.cpp:582 docking.cpp:684 docking.cpp:742
+#: docking.cpp:767 docking.cpp:869 docking.cpp:927
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr ""
 
-#: docking.cpp:670
+#: docking.cpp:855
 msgid "Start Recording"
 msgstr ""
 
-#: docking.cpp:724
+#: docking.cpp:909
 msgid "Resume playback"
 msgstr ""
 
-#: docking.cpp:728
+#: docking.cpp:913
 msgid "Pause playback"
 msgstr ""
 

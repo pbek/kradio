@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2010-09-27 01:56+0200\n"
 "PO-Revision-Date: 2006-11-19 16:07+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -19,108 +19,174 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: docking-configuration.cpp:70
-msgid "Left Mouse Click on Tray"
+#: docking-configuration.cpp:126
+#, fuzzy
+msgid "Mouse Click on Tray Icon"
 msgstr "Clique Botão Esquerdo do Rato no Painel"
 
-#: docking-configuration.cpp:73
-msgid "Show/Hide all GUI Elements"
-msgstr "Mostrar/Esconder todos os Elementos do Interface Gráfico"
+#: docking-configuration.cpp:127 docking-configuration.cpp:134
+msgid "Left"
+msgstr ""
 
-#: docking-configuration.cpp:74
+#: docking-configuration.cpp:128 docking-configuration.cpp:135
+msgid "Right"
+msgstr ""
+
+#: docking-configuration.cpp:129 docking-configuration.cpp:136
+msgid "Middle"
+msgstr ""
+
+#: docking-configuration.cpp:130 docking-configuration.cpp:137
+msgid "XButton1"
+msgstr ""
+
+#: docking-configuration.cpp:131 docking-configuration.cpp:138
+msgid "XButton2"
+msgstr ""
+
+#: docking-configuration.cpp:133
+#, fuzzy
+msgid "Mouse Double-Click on Tray Icon"
+msgstr "Clique Botão Esquerdo do Rato no Painel"
+
+#: docking-configuration.cpp:140
+msgid "Mouse Wheel Action on Tray Icon"
+msgstr ""
+
+#: docking-configuration.cpp:146 docking-configuration.cpp:156
+msgid "No Action"
+msgstr ""
+
+#: docking-configuration.cpp:147
+#, fuzzy
+msgid "Show/Hide Windows"
+msgstr "Mostrar/Esconder Extensões"
+
+#: docking-configuration.cpp:148
 msgid "Power On/Off"
 msgstr "Ligar/Desligar"
 
-#: docking.cpp:45
+#: docking-configuration.cpp:149
+msgid "Pause/Play"
+msgstr ""
+
+#: docking-configuration.cpp:150 docking.cpp:316
+msgid "Recording"
+msgstr "Gravação"
+
+#: docking-configuration.cpp:151
+#, fuzzy
+msgid "System Tray Menu"
+msgstr "Menu do Painel do KRadio"
+
+#: docking-configuration.cpp:152
+msgid "GUI-Plugin Menu"
+msgstr ""
+
+#: docking-configuration.cpp:153
+#, fuzzy
+msgid "Configuration"
+msgstr "Configuração do Menu Acoplável"
+
+#: docking-configuration.cpp:157
+#, fuzzy
+msgid "Change Station"
+msgstr "Procurar Estação Seguinte"
+
+#: docking-configuration.cpp:158
+msgid "Change Volume"
+msgstr ""
+
+#: docking-configuration.cpp:159
+msgid "Change Frequency"
+msgstr ""
+
+#: docking.cpp:46
 #, fuzzy
 msgid "System Tray Icon/Menu for KRadio"
 msgstr "Menu do Painel do KRadio"
 
-#: docking.cpp:53
+#: docking.cpp:54
 msgid "System Tray Plugin"
 msgstr ""
 
-#: docking.cpp:203
+#: docking.cpp:251
 msgid "System Tray Icon"
 msgstr ""
 
-#: docking.cpp:204
+#: docking.cpp:252
 msgid "System Tray Icon Configuration"
 msgstr ""
 
-#: docking.cpp:258
+#: docking.cpp:306
 msgid "Search Next Station"
 msgstr "Procurar Estação Seguinte"
 
-#: docking.cpp:259
+#: docking.cpp:307
 msgid "Search Previous Station"
 msgstr "Procurar Estação Anterior"
 
-#: docking.cpp:268
-msgid "Recording"
-msgstr "Gravação"
-
-#: docking.cpp:273
+#: docking.cpp:321
 msgid "Pause Radio"
 msgstr "Pausar o Rádio"
 
-#: docking.cpp:284
+#: docking.cpp:332
 msgid "Show/Hide Plugins"
 msgstr "Mostrar/Esconder Extensões"
 
-#: docking.cpp:292
+#: docking.cpp:340
 msgid "&Quit"
 msgstr ""
 
-#: docking.cpp:406
+#: docking.cpp:454
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Parar Contagem Decrescente para Dormir (contando até %1)"
 
-#: docking.cpp:409 docking.cpp:418 docking.cpp:426
+#: docking.cpp:457 docking.cpp:466 docking.cpp:474
 msgid "Start Sleep Countdown"
 msgstr "Iniciar Contagem Decrescente para Dormir"
 
-#: docking.cpp:434
+#: docking.cpp:482
 msgid "Power Off"
 msgstr "Desligar"
 
-#: docking.cpp:434
+#: docking.cpp:482
 msgid "Power On"
 msgstr "Ligar"
 
-#: docking.cpp:449 docking.cpp:470
+#: docking.cpp:497 docking.cpp:518
 msgid "invalid station"
 msgstr "estação inválida"
 
-#: docking.cpp:452
+#: docking.cpp:500
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:462
+#: docking.cpp:510
 #, kde-format
 msgid "next alarm: %1"
 msgstr "alarme seguinte: %1"
 
-#: docking.cpp:464
+#: docking.cpp:512
 msgid "<no alarm pending>"
 msgstr "<nenhum alarme previsto>"
 
-#: docking.cpp:582 docking.cpp:684 docking.cpp:742
+#: docking.cpp:767 docking.cpp:869 docking.cpp:927
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Parar a Gravação de %1"
 
-#: docking.cpp:670
+#: docking.cpp:855
 msgid "Start Recording"
 msgstr "Iniciar Gravação"
 
-#: docking.cpp:724
+#: docking.cpp:909
 msgid "Resume playback"
 msgstr ""
 
-#: docking.cpp:728
+#: docking.cpp:913
 msgid "Pause playback"
 msgstr ""
 
@@ -133,6 +199,9 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "Show/Hide all GUI Elements"
+#~ msgstr "Mostrar/Esconder todos os Elementos do Interface Gráfico"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"
@@ -149,6 +218,3 @@ msgstr ""
 
 #~ msgid "Docking Menu"
 #~ msgstr "Menu Acoplável"
-
-#~ msgid "Docking Menu Configuration"
-#~ msgstr "Configuração do Menu Acoplável"

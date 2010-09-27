@@ -1,7 +1,7 @@
 /***************************************************************************
                      sounddevice_interfaces.cpp  -  description
                              -------------------
-    begin                : Mon Mär 21 2004
+    begin                : Mon Mar 21 2004
     copyright            : (C) 2004 by Martin Witte
     email                : emw-kradio@nocabal.de
  ***************************************************************************/
@@ -119,11 +119,11 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStopCapture, (SoundStreamID id),
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsCaptureRunning, (SoundStreamID id, bool &b, SoundFormat &sf),
                  isCaptureRunning(id, b, sf)                                                                  );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecording, (SoundStreamID id),
-                 startRecording(id)                                                                          );
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecording, (SoundStreamID id, const QString &templ),
+                 startRecording(id, templ)                                                                    );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecordingWithFormat, (SoundStreamID id, const SoundFormat &proposed_format, SoundFormat &real_format),
-                 startRecordingWithFormat(id, proposed_format, real_format)                                            );
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecordingWithFormat, (SoundStreamID id, const SoundFormat &proposed_format, SoundFormat &real_format, const QString &templ),
+                 startRecordingWithFormat(id, proposed_format, real_format, templ)                            );
 
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStopRecording, (SoundStreamID id),
                  stopRecording(id)                                                                           );

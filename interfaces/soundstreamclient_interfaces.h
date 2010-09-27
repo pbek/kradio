@@ -136,10 +136,12 @@ SENDERS:
 
     // we need extra recording, in order to distinguish between plain capturing
     // (making sound data available to kradio) and writing a stream to disk  or sth similar
-    IF_SENDER_FINE  (  sendStartRecording, (SoundStreamID id)                                  )
+    IF_SENDER_FINE  (  sendStartRecording, (SoundStreamID id,
+                                            const QString &filenameTemplate = QString())          )
     IF_SENDER_FINE  (  sendStartRecordingWithFormat, (SoundStreamID id,
                                    const SoundFormat &proposed_format,
-                                   SoundFormat       &real_format)                                )
+                                   SoundFormat       &real_format,
+                                   const QString &filenameTemplate = QString())                   )
     IF_SENDER_FINE  (  sendStopRecording, (SoundStreamID id)                                      )
     IF_SENDER_FINE  (  queryIsRecordingRunning, (SoundStreamID id, bool &running, SoundFormat &sf))
 
@@ -276,10 +278,12 @@ RECEIVERS:
     IF_RECEIVER_EMPTY(  stopCapture(SoundStreamID /*id*/)                                                       )
     IF_RECEIVER_EMPTY(  isCaptureRunning(SoundStreamID /*id*/, bool &/*running*/, SoundFormat &/*sf*/) const    )
 
-    IF_RECEIVER_EMPTY(  startRecording(SoundStreamID /*id*/)                                                    )
+    IF_RECEIVER_EMPTY(  startRecording(SoundStreamID /*id*/, const QString &/*filenameTemplate*/)               )
     IF_RECEIVER_EMPTY(  startRecordingWithFormat(SoundStreamID /*id*/,
                                      const SoundFormat &/*proposed_format*/,
-                                     SoundFormat       &/*real_format*/)                                        )
+                                     SoundFormat       &/*real_format*/,
+                                     const QString     &/*filenameTemplate*/
+                                     )                                                                          )
     IF_RECEIVER_EMPTY(  stopRecording(SoundStreamID /*id*/)                                                     )
     IF_RECEIVER_EMPTY(  isRecordingRunning(SoundStreamID /*id*/, bool &/*running*/, SoundFormat &/*sf*/) const  )
 
@@ -364,10 +368,13 @@ SENDERS:
     CALL_SNDSTR_SERVER  (  sendStopCapture, (SoundStreamID id), (id)                                                            )
     CALL_SNDSTR_SERVER  (  queryIsCaptureRunning, (SoundStreamID id, bool &b, SoundFormat &sf), (id, b, sf)                     )
 
-    CALL_SNDSTR_SERVER  (  sendStartRecording, (SoundStreamID id), (id)                                                         )
-    CALL_SNDSTR_SERVER  (  sendStartRecordingWithFormat, (SoundStreamID id,
+    CALL_SNDSTR_SERVER  (  sendStartRecording, (SoundStreamID id, const QString &filenameTemplate = QString()), (id, filenameTemplate)      )
+    CALL_SNDSTR_SERVER  (  sendStartRecordingWithFormat,
+                                  (SoundStreamID id,
                                    const SoundFormat &proposed_format,
-                                   SoundFormat       &real_format), (id, proposed_format, real_format)           )
+                                   SoundFormat       &real_format,
+                                   const QString &filenameTemplate = QString()),
+                                  (id, proposed_format, real_format, filenameTemplate)                           )
     CALL_SNDSTR_SERVER  (  sendStopRecording, (SoundStreamID id), (id)                                           )
     CALL_SNDSTR_SERVER  (  queryIsRecordingRunning, (SoundStreamID id, bool &b, SoundFormat &sf), (id, b, sf)    )
 

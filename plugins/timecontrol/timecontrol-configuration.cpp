@@ -59,7 +59,7 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
 
     comboAlarmType->insertItem(Alarm::StartPlaying,   KIcon("kradio_muteoff"), i18n("Start Playing"));
     comboAlarmType->insertItem(Alarm::StopPlaying,    KIcon("kradio_muteon"),  i18n("Stop Playing"));
-    comboAlarmType->insertItem(Alarm::StartRecording, KIcon("media-record"),  i18n("Start Recording"));
+    comboAlarmType->insertItem(Alarm::StartRecording, KIcon("media-record"),   i18n("Start Recording"));
     comboAlarmType->insertItem(Alarm::StopRecording,  KIcon("kradio_muteon"),  i18n("Stop Recording"));
 
     editAlarmDate->setCalendarPopup(true);
@@ -85,6 +85,8 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotNewAlarm()));
     QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotDeleteAlarm()));
     QObject::connect(comboAlarmType,        SIGNAL(highlighted(int)),            this, SLOT(slotAlarmTypeChanged(int)));
+    QObject::connect(editRecordingTemplate, SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateChanged(const QString &)));
+
 
     QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
     QObject::connect(listWeekdays,          SIGNAL(itemSelectionChanged()),      this, SLOT(slotSetDirty()));
@@ -97,6 +99,7 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotSetDirty()));
     QObject::connect(comboAlarmType,        SIGNAL(activated(int)),              this, SLOT(slotSetDirty()));
     QObject::connect(editSleep,             SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
+    QObject::connect(editRecordingTemplate, SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
 }
 
 TimeControlConfiguration::~TimeControlConfiguration ()
@@ -333,6 +336,17 @@ void TimeControlConfiguration::slotAlarmTypeChanged(int t)
     int idx = listAlarms->currentRow();
     if (idx >= 0 && idx < alarms.size()) {
         alarms[idx].setAlarmType((Alarm::AlarmType)t);
+        editRecordingTemplate ->setDisabled(t != Alarm::StartRecording);
+        labelRecordingTemplate->setDisabled(t != Alarm::StartRecording);
+    }
+}
+
+
+void TimeControlConfiguration::slotRecordingTemplateChanged(const QString &t)
+{
+    int idx = listAlarms->currentRow();
+    if (idx >= 0 && idx < alarms.size()) {
+        alarms[idx].setRecordingTemplate(t);
     }
 }
 
@@ -352,27 +366,30 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
 
     }
 
-    editAlarmDate        ->setDisabled(!valid || a.isDaily());
-    labelAlarmDate       ->setDisabled(!valid || a.isDaily());
-    listWeekdays         ->setDisabled(!valid ||!a.isDaily());
-    labelActiveWeekdays  ->setDisabled(!valid ||!a.isDaily());
-    editAlarmTime        ->setDisabled(!valid);
-    labelAlarmTime       ->setDisabled(!valid);
-    labelAlarmVolume     ->setDisabled(!valid);
-    editAlarmVolume      ->setDisabled(!valid);
-    checkboxAlarmDaily   ->setDisabled(!valid);
-    checkboxAlarmEnable  ->setDisabled(!valid);
-    comboStationSelection->setDisabled(!valid);
-    labelStationSelection->setDisabled(!valid);
-    buttonDeleteAlarm    ->setDisabled(!valid);
-    comboAlarmType       ->setDisabled(!valid);
+    editAlarmDate         ->setDisabled(!valid || a.isDaily());
+    labelAlarmDate        ->setDisabled(!valid || a.isDaily());
+    listWeekdays          ->setDisabled(!valid ||!a.isDaily());
+    labelActiveWeekdays   ->setDisabled(!valid ||!a.isDaily());
+    editAlarmTime         ->setDisabled(!valid);
+    labelAlarmTime        ->setDisabled(!valid);
+    labelAlarmVolume      ->setDisabled(!valid);
+    editAlarmVolume       ->setDisabled(!valid);
+    checkboxAlarmDaily    ->setDisabled(!valid);
+    checkboxAlarmEnable   ->setDisabled(!valid);
+    comboStationSelection ->setDisabled(!valid);
+    labelStationSelection ->setDisabled(!valid);
+    buttonDeleteAlarm     ->setDisabled(!valid);
+    comboAlarmType        ->setDisabled(!valid);
+    editRecordingTemplate ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    labelRecordingTemplate->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
 
-    editAlarmDate        ->setDate(a.alarmTime().date());
-    editAlarmTime        ->setTime(a.alarmTime().time());
-    checkboxAlarmDaily   ->setChecked(a.isDaily());
-    checkboxAlarmEnable  ->setChecked(a.isEnabled());
-    editAlarmVolume      ->setValue((int)rint(a.volumePreset() * 100));
-    comboAlarmType       ->setCurrentIndex(a.alarmType());
+    editAlarmDate         ->setDate(a.alarmTime().date());
+    editAlarmTime         ->setTime(a.alarmTime().time());
+    checkboxAlarmDaily    ->setChecked(a.isDaily());
+    checkboxAlarmEnable   ->setChecked(a.isEnabled());
+    editAlarmVolume       ->setValue((int)rint(a.volumePreset() * 100));
+    comboAlarmType        ->setCurrentIndex(a.alarmType());
+    editRecordingTemplate ->setText(a.recordingTemplate());
 
     int k = 0;
     const QString &sID = a.stationID();

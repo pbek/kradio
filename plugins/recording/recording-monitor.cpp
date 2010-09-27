@@ -282,7 +282,7 @@ bool RecordingMonitor::noticeSoundStreamChanged(SoundStreamID id)
     return false;
 }
 
-bool RecordingMonitor::startRecordingWithFormat(SoundStreamID id, const SoundFormat &/*sf*/, SoundFormat &/*real_format*/)
+bool RecordingMonitor::startRecordingWithFormat(SoundStreamID id, const SoundFormat &/*sf*/, SoundFormat &/*real_format*/, const QString &/*filenameTemplate*/)
 {
     if (id == m_currentStream) {
         m_recording = true;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_standard_display\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 16:19+0200\n"
+"POT-Creation-Date: 2010-09-27 01:56+0200\n"
 "PO-Revision-Date: 2009-06-15 21:58+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -110,24 +110,24 @@ msgstr "Veldu útvarpsstöð"
 msgid "no preset defined"
 msgstr "engar forstillingar tilgreindar"
 
-#: radioview.cpp:554 radioview.cpp:624
+#: radioview.cpp:555 radioview.cpp:625
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Hætta upptöku á %1"
 
-#: radioview.cpp:607
+#: radioview.cpp:608
 msgid "Resume playback"
 msgstr "Halda áfram með spilun"
 
-#: radioview.cpp:611
+#: radioview.cpp:612
 msgid "Pause playback"
 msgstr "Gera hlé á afspilun"
 
-#: radioview.cpp:704
+#: radioview.cpp:705
 msgid "Display"
 msgstr "Skjár"
 
-#: radioview.cpp:705
+#: radioview.cpp:706
 msgid "Display Configuration"
 msgstr "Stillingar skjás"
 

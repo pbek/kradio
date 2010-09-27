@@ -30,6 +30,7 @@
 #include "pluginbase.h"
 #include "timecontrol_interfaces.h"
 #include "soundstreamclient_interfaces.h"
+#include "radio_interfaces.h"
 
 #include "recording-config.h"
 #include "reccfg_interfaces.h"
@@ -43,6 +44,7 @@ class FileRingBuffer;
 
 class Recording : public QObject,
                   public PluginBase,
+                  public IRadioClient,
                   public ISoundStreamClient,
                   public IRecCfg
 {
@@ -72,6 +74,21 @@ public:
     virtual ConfigPageInfo  createConfigurationPage();
 //     virtual AboutPageInfo   createAboutPage();
 
+
+
+// IRadioClient
+RECEIVERS:
+    bool noticePowerChanged(bool /*on*/)                               { return false; }
+    bool noticeStationChanged (const RadioStation &, int /*idx*/)      { return false; }
+    bool noticeStationsChanged(const StationList &/*sl*/)              { return false; }
+    bool noticePresetFileChanged(const QString &/*f*/)                 { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)                { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)             { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)             { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) { return false; }
+
+
 protected:
 
 // IRecCfg
@@ -80,7 +97,7 @@ protected:
     bool   setSoundFormat       (const SoundFormat &sf);
     bool   setMP3Quality        (int q);
     bool   setOggQuality        (float q);
-    bool   setRecordingDirectory(const QString &dir);
+    bool   setRecordingDirectory(const QString &dir, const QString &templ);
     bool   setOutputFormat      (RecordingConfig::OutputFormat of);
     bool   setPreRecording      (bool enable, int seconds);
     bool   setRecordingConfig   (const RecordingConfig &cfg);
@@ -89,7 +106,7 @@ protected:
     const SoundFormat             &getSoundFormat () const;
     int                            getMP3Quality () const;
     float                          getOggQuality () const;
-    const QString                 &getRecordingDirectory() const;
+    void                           getRecordingDirectory(QString &dir, QString &templ) const;
     RecordingConfig::OutputFormat  getOutputFormat() const;
     bool                           getPreRecording(int &seconds) const;
     const RecordingConfig         &getRecordingConfig() const;
@@ -101,8 +118,8 @@ protected:
     bool startPlayback(SoundStreamID id);
     bool stopPlayback(SoundStreamID id);
 
-    bool startRecording(SoundStreamID id);
-    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format);
+    bool startRecording(SoundStreamID id, const QString &filenameTemplate);
+    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const QString &filenameTemplate);
     bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
     bool stopRecording(SoundStreamID id);
     bool isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
@@ -117,6 +134,7 @@ protected:
 
 protected:
 
+    INLINE_IMPL_DEF_noticeConnectedI(IRadioClient);
     INLINE_IMPL_DEF_noticeConnectedI(IErrorLogClient);
     INLINE_IMPL_DEF_noticeConnectedI(IRecCfg);
 

@@ -19,40 +19,43 @@
 int Alarm::m_LastID = 0;
 
 Alarm::Alarm(const QDateTime &time, bool daily, bool enabled)
-    : m_time         (time),
-      m_daily        (daily),
-      m_weekdayMask  (0x7F),
-      m_enabled      (enabled),
-      m_stationID    (QString::null),
-      m_volumePreset (-1),
-      m_type         (StartPlaying),
-      m_ID           (++m_LastID)
+    : m_time              (time),
+      m_daily             (daily),
+      m_weekdayMask       (0x7F),
+      m_enabled           (enabled),
+      m_stationID         (QString::null),
+      m_volumePreset      (-1),
+      m_type              (StartPlaying),
+      m_recordingTemplate ("kradio-recording-%s-%Y.%m.%d-%H.%M.%S"),
+      m_ID                (++m_LastID)
 {
 }
 
 
 Alarm::Alarm ()
-    : m_time        (QDateTime (QDate(1800, 1,1), QTime(0,0,0))),
-      m_daily       (false),
-      m_weekdayMask (0x7F),
-      m_enabled     (false),
-      m_stationID   (QString::null),
-      m_volumePreset(-1),
-      m_type        (StartPlaying),
-      m_ID          (++m_LastID)
+    : m_time              (QDateTime (QDate(1800, 1,1), QTime(0,0,0))),
+      m_daily             (false),
+      m_weekdayMask       (0x7F),
+      m_enabled           (false),
+      m_stationID         (QString::null),
+      m_volumePreset      (-1),
+      m_type              (StartPlaying),
+      m_recordingTemplate ("kradio-recording-%s-%Y.%m.%d-%H.%M.%S"),
+      m_ID                (++m_LastID)
 {
 }
 
 
 Alarm::Alarm (const Alarm &a)
-   : m_time        (a.m_time),
-     m_daily       (a.m_daily),
-     m_weekdayMask (a.m_weekdayMask),
-     m_enabled     (a.m_enabled),
-     m_stationID   (a.m_stationID),
-     m_volumePreset(a.m_volumePreset),
-     m_type        (a.m_type),
-     m_ID          (a.m_ID)
+   : m_time              (a.m_time),
+     m_daily             (a.m_daily),
+     m_weekdayMask       (a.m_weekdayMask),
+     m_enabled           (a.m_enabled),
+     m_stationID         (a.m_stationID),
+     m_volumePreset      (a.m_volumePreset),
+     m_type              (a.m_type),
+     m_recordingTemplate (a.m_recordingTemplate),
+     m_ID                (a.m_ID)
 {
 }
 

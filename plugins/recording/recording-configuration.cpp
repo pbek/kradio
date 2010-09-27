@@ -49,11 +49,12 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
     connect(editFileFormat,               SIGNAL(activated(int)),               SLOT(slotSetDirty()));
     connect(editMP3Quality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(editOggQuality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
-    connect(editDirectory,                SIGNAL(textChanged(const QString &)), SLOT(slotSetDirty()));
+    connect(editDirectory,                SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
     connect(editBufferSize,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(editBufferCount,              SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(m_spinboxPreRecordingSeconds, SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(m_checkboxPreRecordingEnable, SIGNAL(toggled(bool)),                SLOT(slotSetDirty()));
+    connect(editFilenameTemplate,         SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
 
 // attention: remove items with higher index first ;-) otherwise indexes are not valid
 #ifndef HAVE_OGG
@@ -86,7 +87,8 @@ void RecordingConfiguration::setGUIBuffers(const RecordingConfig &c)
 
 void RecordingConfiguration::setGUIDirectories(const RecordingConfig &c)
 {
-    editDirectory->setUrl(c.m_Directory);
+    editDirectory       ->setUrl(c.m_Directory);
+    editFilenameTemplate->setText(c.m_FilenameTemplate);
 }
 
 void RecordingConfiguration::setGUISoundFormat(const RecordingConfig &c)
@@ -173,7 +175,8 @@ void RecordingConfiguration::storeConfig()
     c.m_EncodeBufferSize  = editBufferSize->value() * 1024;
     c.m_EncodeBufferCount = editBufferCount->value();
 
-    c.m_Directory = editDirectory->url().pathOrUrl();
+    c.m_Directory         = editDirectory->url().pathOrUrl();
+    c.m_FilenameTemplate  = editFilenameTemplate->text();
 
     switch(editRate->currentIndex()) {
         case RATE_48000_IDX: c.m_SoundFormat.m_SampleRate = 48000; break;
@@ -362,10 +365,11 @@ bool RecordingConfiguration::noticeOggQualityChanged (float q)
     return true;
 }
 
-bool RecordingConfiguration::noticeRecordingDirectoryChanged(const QString &dir)
+bool RecordingConfiguration::noticeRecordingDirectoryChanged(const QString &dir, const QString &templ)
 {
-    m_ignore_gui_updates = true;
-    m_RecordingConfig.m_Directory = dir;
+    m_ignore_gui_updates                 = true;
+    m_RecordingConfig.m_Directory        = dir;
+    m_RecordingConfig.m_FilenameTemplate = templ;
     setGUIDirectories(m_RecordingConfig);
     slotFormatSelectionChanged();
     m_ignore_gui_updates = false;

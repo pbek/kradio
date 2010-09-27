@@ -26,6 +26,7 @@ RecordingConfig::RecordingConfig ()
     m_mp3Quality(7),
     m_oggQuality(1.0),
     m_Directory("/tmp"),
+    m_FilenameTemplate("kradio-recording-%s-%Y.%m.%d-%H.%M.%S"),
     m_OutputFormat(outputWAV),
     m_PreRecordingEnable (false),
     m_PreRecordingSeconds(10)
@@ -34,6 +35,7 @@ RecordingConfig::RecordingConfig ()
 }
 
 RecordingConfig::RecordingConfig (const QString &directory,
+                                  const QString &filenameTemplate,
                                   OutputFormat of,
                                   const SoundFormat &sf, int mp3_q, float ogg_q)
 :   m_EncodeBufferSize(256*1024),
@@ -42,6 +44,7 @@ RecordingConfig::RecordingConfig (const QString &directory,
     m_mp3Quality(mp3_q),
     m_oggQuality(ogg_q),
     m_Directory(directory),
+    m_FilenameTemplate(filenameTemplate),
     m_OutputFormat(of),
     m_PreRecordingEnable (false),
     m_PreRecordingSeconds(10)
@@ -58,6 +61,7 @@ RecordingConfig::RecordingConfig (const RecordingConfig &c)
     m_mp3Quality(c.m_mp3Quality),
     m_oggQuality(c.m_oggQuality),
     m_Directory(c.m_Directory),
+    m_FilenameTemplate(c.m_FilenameTemplate),
     m_OutputFormat(c.m_OutputFormat),
     m_PreRecordingEnable (false),
     m_PreRecordingSeconds(10)
@@ -72,10 +76,11 @@ void  RecordingConfig::restoreConfig(const KConfigGroup &c)
     m_EncodeBufferCount = c.readEntry("encodeBufferCount", 3);
 
     m_SoundFormat.restoreConfig("", c);
-    m_Directory    = c.readEntry("directory", "/tmp");
-    m_mp3Quality   = c.readEntry("mp3quality", 7);
-    m_oggQuality   = c.readEntry("oggquality", 1.0);
-    QString of     = c.readEntry("outputFormat", ".wav");
+    m_Directory        = c.readEntry("directory", "/tmp");
+    m_FilenameTemplate = c.readEntry("filenameTemplate", "kradio-recording-%s-%Y.%m.%d-%H.%M.%S");
+    m_mp3Quality       = c.readEntry("mp3quality", 7);
+    m_oggQuality       = c.readEntry("oggquality", 1.0);
+    QString of         = c.readEntry("outputFormat", ".wav");
 
     if (of == ".wav")
         m_OutputFormat = outputWAV;
@@ -109,10 +114,11 @@ void  RecordingConfig::saveConfig(KConfigGroup &c) const
 {
     c.writeEntry("encodeBufferSize",  (quint64)m_EncodeBufferSize);
     c.writeEntry("encodeBufferCount", (quint64)m_EncodeBufferCount);
-    m_SoundFormat.saveConfig("", c);
-    c.writeEntry("directory",    m_Directory);
-    c.writeEntry("mp3quality",   m_mp3Quality);
-    c.writeEntry("oggquality",   m_oggQuality);
+    m_SoundFormat.saveConfig("",     c);
+    c.writeEntry("directory",        m_Directory);
+    c.writeEntry("filenameTemplate", m_FilenameTemplate);
+    c.writeEntry("mp3quality",       m_mp3Quality);
+    c.writeEntry("oggquality",       m_oggQuality);
 
     switch(m_OutputFormat) {
         case outputWAV:  c.writeEntry("outputFormat", ".wav");  break;

@@ -581,7 +581,7 @@ bool Radio::noticeAlarm(const Alarm &a)
         // we are using sink for recording, in order to get also effect plugins outputs
         queryIsRecordingRunning(dst_id, r, sf);
         if (a.alarmType() == Alarm::StartRecording && !r)
-            sendStartRecording(dst_id);
+            sendStartRecording(dst_id, a.recordingTemplate());
 
     }
     else if (a.alarmType() == Alarm::StopRecording) {
