@@ -219,7 +219,7 @@ void LircSupport::slotLIRC(int /*socket*/ )
     // we need this list to catch all commands as quickly as possible
     // in order to free all lirc stuff *before* we start running our own
     // code. Makes for some unknown reason a major difference e.g. for internet
-    // radio: it happend, that repeat codes haven't been decoded properly
+    // radio: it happened, that repeat codes haven't been decoded properly
     // plus getting the whole lirc stuff out of sync. basically only observed
     // together with lircrcd
     QList<tmp_code_struct> list;

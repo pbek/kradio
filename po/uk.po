@@ -316,7 +316,7 @@ msgstr "Помилка завантаження бібліотеки %1: %2"
 
 #: src/kradioapp.cpp:364
 #, kde-format
-msgid "Error: Creation of instance \"%1\" of class %2 falied."
+msgid "Error: Creation of instance \"%1\" of class %2 failed."
 msgstr "Помилка під час створення екземпляру \"%1\" класу %2."
 
 #: src/kradioapp.cpp:370
@@ -446,7 +446,7 @@ msgid "Restore all"
 msgstr "Відновити всі"
 
 #: src/pluginmanager.cpp:770
-msgid "restore state before laste hide-all activation"
+msgid "restore state before last hide-all activation"
 msgstr "відновити стан на час останньої активації дії «Сховати всі»"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
@@ -545,7 +545,7 @@ msgstr "завантажується файл списку радіостанц�
 #: src/stationlist.cpp:337
 #, kde-format
 msgid ""
-"something strange happend, station list has only %1 entries. Writing station "
+"something strange happened, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
 "сталося щось незрозуміле, список радіостанцій містить лише %1 пунктів. Запис "

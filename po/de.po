@@ -323,7 +323,7 @@ msgstr "Fehler: Das Laden der Bibliothek %1 schlug fehl: %2"
 
 #: src/kradioapp.cpp:364
 #, kde-format
-msgid "Error: Creation of instance \"%1\" of class %2 falied."
+msgid "Error: Creation of instance \"%1\" of class %2 failed."
 msgstr "Fehler: Das erzeugen der Instanz \"%1\" der Klasse %2 schlug fehl."
 
 #: src/kradioapp.cpp:370
@@ -454,7 +454,7 @@ msgid "Restore all"
 msgstr "Alle wiederherstellen"
 
 #: src/pluginmanager.cpp:770
-msgid "restore state before laste hide-all activation"
+msgid "restore state before last hide-all activation"
 msgstr ""
 "Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
 
@@ -553,7 +553,7 @@ msgstr "Speichern der Senderliste in Datei %1: "
 #: src/stationlist.cpp:337
 #, kde-format
 msgid ""
-"something strange happend, station list has only %1 entries. Writing station "
+"something strange happened, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
 "Etwas seltsames ist passiert: Die Senderliste hat nur %1 Einträge. Das "

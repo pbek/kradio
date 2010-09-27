@@ -767,7 +767,7 @@ void PluginManager::updatePluginHideShowMenu()
     a = m_widgetPluginHideShowMenu->addAction(i18n("Show all"),    this, SLOT(slotShowAllWidgetPlugins()));
     a = m_widgetPluginHideShowMenu->addAction(i18n("Hide all"),    this, SLOT(slotHideAllWidgetPlugins()));
     a = m_widgetPluginHideShowMenu->addAction(i18n("Restore all"), this, SLOT(slotRestoreAllWidgetPlugins()));
-    a->setToolTip(i18n("restore state before laste hide-all activation"));
+    a->setToolTip(i18n("restore state before last hide-all activation"));
     m_widgetPluginHideShowMenu->addSeparator();
     addWidgetPluginMenuItems(m_widgetPluginHideShowMenu);
 }

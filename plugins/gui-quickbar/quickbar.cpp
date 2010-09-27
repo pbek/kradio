@@ -234,7 +234,7 @@ void QuickBar::buttonToggled(const QString &stationID)
             }
         }
     } else {
-        // something strange happend
+        // something strange happened
     }
 }
 

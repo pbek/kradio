@@ -361,7 +361,7 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &inst
         if (!retval) {
             kDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
                      << " "
-                     << i18n("Error: Creation of instance \"%1\" of class %2 falied.", object_name, class_name)
+                     << i18n("Error: Creation of instance \"%1\" of class %2 failed.", object_name, class_name)
                      << endl;
         }
     } else {

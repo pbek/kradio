@@ -469,7 +469,7 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
                     bufferSize = remSize;
                 }
                 if (fbuf.takeData(buf, bufferSize) != bufferSize) {
-                    logError(i18n("could not read suffient data"));
+                    logError(i18n("could not read sufficient data"));
                 }
 
                 thread->unlockInputBuffer(bufferSize, md);

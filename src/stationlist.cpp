@@ -334,7 +334,7 @@ bool StationList::writeXML (const KUrl &url, const IErrorLogClient &logger, bool
             logger.logWarning("StationList::writeXML: " +
                               i18n("uploading preset file %1: ", url.pathOrUrl()));
             logger.logWarning("StationList::writeXML: " +
-                              i18n("something strange happend, station list has only %1 entries. Writing station preset file skipped", count()));
+                              i18n("something strange happened, station list has only %1 entries. Writing station preset file skipped", count()));
         } else {
 
             if (!KIO::NetAccess::upload(tmpFileName, url, NULL)) {

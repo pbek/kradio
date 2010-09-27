@@ -317,7 +317,7 @@ msgstr "Chyba: Nahrání knihovny %1 selhalo: %2"
 
 #: src/kradioapp.cpp:364
 #, kde-format
-msgid "Error: Creation of instance \"%1\" of class %2 falied."
+msgid "Error: Creation of instance \"%1\" of class %2 failed."
 msgstr "Chyba: Vytvoření instance \"%1\" skupiny %2 selhalo."
 
 #: src/kradioapp.cpp:370
@@ -446,7 +446,7 @@ msgid "Restore all"
 msgstr "Obnovit vše"
 
 #: src/pluginmanager.cpp:770
-msgid "restore state before laste hide-all activation"
+msgid "restore state before last hide-all activation"
 msgstr "Obnovit stav před posledním krokem \"Skrýt vše\""
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
@@ -544,7 +544,7 @@ msgstr "Nahrávání souboru s předvolbou %1: "
 #: src/stationlist.cpp:337
 #, kde-format
 msgid ""
-"something strange happend, station list has only %1 entries. Writing station "
+"something strange happened, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
 "Stalo se něco neobvyklého: Seznam stanic má pouze %1 záznamů. Zápis souboru "
