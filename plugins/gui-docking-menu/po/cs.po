@@ -2,103 +2,98 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-27 01:56+0200\n"
-"PO-Revision-Date: 2009-04-04 14:25+0200\n"
-"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"PO-Revision-Date: 2010-09-27 09:00+0200\n"
+"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: docking-configuration.cpp:126
-#, fuzzy
 msgid "Mouse Click on Tray Icon"
-msgstr "Klepnutí levým tlačítkem myši na ovládací prováděcí symbol"
+msgstr "Klepnutí tlačítkem myši na ikonu v oznamovací oblasti panelu"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
 msgid "Left"
-msgstr ""
+msgstr "Levé"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
 msgid "Right"
-msgstr ""
+msgstr "Pravé"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
 msgid "Middle"
-msgstr ""
+msgstr "Prostřední"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
 msgid "XButton1"
-msgstr ""
+msgstr "XButton1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
 msgid "XButton2"
-msgstr ""
+msgstr "XButton2"
 
 #: docking-configuration.cpp:133
-#, fuzzy
 msgid "Mouse Double-Click on Tray Icon"
-msgstr "Klepnutí levým tlačítkem myši na ovládací prováděcí symbol"
+msgstr ""
+"Dvojité klepnutí tlačítkem myši na ikonu v oznamovací oblasti panelu"
 
 #: docking-configuration.cpp:140
 msgid "Mouse Wheel Action on Tray Icon"
-msgstr ""
+msgstr "Činnost kolečkem myši na ikonu v oznamovací oblasti panelu"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
-msgstr ""
+msgstr "Žádná činnost"
 
 #: docking-configuration.cpp:147
-#, fuzzy
 msgid "Show/Hide Windows"
-msgstr "Ukázat/Skrýt přídavné moduly"
+msgstr "Ukázat/Skrýt okna"
 
 #: docking-configuration.cpp:148
 msgid "Power On/Off"
 msgstr "Zapnout/Vypnout"
 
 #: docking-configuration.cpp:149
-#, fuzzy
 msgid "Pause/Play"
-msgstr "Pozastavit přehrávání"
+msgstr "Pozastavit/Přehrát"
 
 #: docking-configuration.cpp:150 docking.cpp:316
 msgid "Recording"
 msgstr "Nahrávání"
 
 #: docking-configuration.cpp:151
-#, fuzzy
 msgid "System Tray Menu"
-msgstr "Ikona pro systémovou část panelu"
+msgstr "Nabídka v oznamovací oblasti panelu"
 
 #: docking-configuration.cpp:152
 msgid "GUI-Plugin Menu"
-msgstr ""
+msgstr "Nabídka přídavného modulu rozhraní"
 
 #: docking-configuration.cpp:153
-#, fuzzy
 msgid "Configuration"
-msgstr "Nastavení ikony pro systémovou část panelu"
+msgstr "Nastavení"
 
 #: docking-configuration.cpp:157
-#, fuzzy
 msgid "Change Station"
-msgstr "Hledej následující stanici"
+msgstr "Změnit stanici"
 
 #: docking-configuration.cpp:158
 msgid "Change Volume"
-msgstr ""
+msgstr "Změnit hlasitost"
 
 #: docking-configuration.cpp:159
 msgid "Change Frequency"
-msgstr ""
+msgstr "Změnit kmitočet"
 
 #: docking.cpp:46
 msgid "System Tray Icon/Menu for KRadio"

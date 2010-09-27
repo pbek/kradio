@@ -4,68 +4,67 @@
 # Ernst Martin Witte <emw-kradio@nocabal.de>, 2006.
 # Ernst Martin Witte <emw@nocabal.de>, 2006.
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-26 15:41+0200\n"
-"PO-Revision-Date: 2009-04-04 17:19+0200\n"
-"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"PO-Revision-Date: 2010-09-27 09:04+0200\n"
+"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: convert-presets.cpp:53 convert-presets.cpp:134
-#, fuzzy
 msgid "error opening preset file"
-msgstr "Chyba při otevírání souboru s předvolbou %1"
+msgstr "Chyba při otevírání souboru s přednastavením"
 
 #: convert-presets.cpp:55
 msgid "for reading"
-msgstr ""
+msgstr "pro čtení"
 
 #: convert-presets.cpp:136
 msgid "for writing"
-msgstr ""
+msgstr "pro zápis"
 
 #: convert-presets.cpp:148
-#, fuzzy
 msgid "error writing preset file"
-msgstr "Chyba při otevírání souboru s předvolbou %1"
+msgstr "Chyba při zápisu souboru s přednastavením"
 
 #: convert-presets.cpp:163
 msgid "kradio4-convert-presets"
-msgstr ""
+msgstr "kradio4-převod-přednastavení"
 
 #: convert-presets.cpp:165
 msgid "(c) 2003-2010 Martin Witte"
-msgstr ""
+msgstr "(c) 2003-2010 Martin Witte"
 
 #: convert-presets.cpp:168
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: convert-presets.cpp:173
 msgid "quiet mode - no informational output"
-msgstr ""
+msgstr "Tichý režim - žádný nepotřebný dodatečný informační výstup"
 
 #: convert-presets.cpp:174
 msgid "preset files to convert"
-msgstr ""
+msgstr "Soubory s přednastavením pro převod"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Pavel Fric"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "fripohled.blogspot.com"
 
 #~ msgid "PluginManagerConfigurationUI"
 #~ msgstr "PluginManagerConfigurationUI"
