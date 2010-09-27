@@ -1,14 +1,12 @@
 %bcond_without ffmpeg
 
-%define    rel snapshot-2009-04-11-r829
-%define    rel2 r829.20090411
-#define    rel %{version}-rc2
-#define    rel2 rc2
+Version:   4.0.1
+%define    rel2 rc2
+%define    rel %{version}-%{rel2}
 Name:      kradio4
 License:   GPLv2
 Summary:   V4L/V4L2-Radio Application for KDE4
-Version:   4.0.1
-Release:   0.7.%{rel2}%{?dist}
+Release:   %{rel}%{?dist}
 Url:       http://kradio.sourceforge.net/
 Group:     Applications/Multimedia
 Source0:   http://downloads.sourceforge.net/%{name}/%{name}-%{rel}.tar.bz2
