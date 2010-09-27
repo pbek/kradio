@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-16 23:14+0200\n"
-"PO-Revision-Date: 2010-09-17 18:18+0300\n"
+"PO-Revision-Date: 2010-09-27 12:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
@@ -53,7 +53,7 @@ msgstr "Модуль ALSA: не вдалося прочитати дані з п
 #, kde-format
 msgid "ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)"
 msgstr ""
-"Модуль ALSA: переповнення буферу пристрою %1 (розмір буферу=%2, буфер=%3)"
+"Модуль ALSA: переповнення буфера пристрою %1 (розмір буфера=%2, буфер=%3)"
 
 #: alsa-sound.cpp:688
 #, kde-format
@@ -89,7 +89,7 @@ msgstr "Модуль ALSA: не вдалося налаштувати прист
 #: alsa-sound.cpp:849
 #, kde-format
 msgid "ALSA Plugin: Error setting access for %1"
-msgstr "Модуль ALSA: Помилка спроби доступу для %1"
+msgstr "Модуль ALSA: помилка спроби доступу для %1"
 
 #: alsa-sound.cpp:859
 #, kde-format
@@ -146,26 +146,26 @@ msgstr ""
 
 #: alsa-sound.cpp:1014
 msgid "ALSA Plugin: Error opening mixer"
-msgstr "Модуль ALSA: Помилка під час відкриття мікшера"
+msgstr "Модуль ALSA: помилка під час відкриття мікшера"
 
 #: alsa-sound.cpp:1020
 #, kde-format
 msgid "ALSA Plugin: ERROR: snd_mixer_attach for card %1"
 msgstr ""
-"Модуль ALSA: Помилка під час виклику функції snd_mixer_attach для карти %1"
+"Модуль ALSA: помилка під час виклику функції snd_mixer_attach для карти %1"
 
 #: alsa-sound.cpp:1027
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
 msgstr ""
-"Модуль ALSA: Поммилка під час виклику функції snd_mixer_selem_register для "
+"Модуль ALSA: помилка під час виклику функції snd_mixer_selem_register для "
 "карти %1"
 
 #: alsa-sound.cpp:1031
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_load for card %1"
 msgstr ""
-"Модуль ALSA: Помилка під час виклику функції snd_mixer_load для карти %1"
+"Модуль ALSA: помилка під час виклику функції snd_mixer_load для карти %1"
 
 #: alsa-sound.cpp:1103
 #, kde-format

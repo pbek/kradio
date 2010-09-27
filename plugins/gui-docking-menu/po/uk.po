@@ -1,104 +1,97 @@
 # translation of uk.po to Ukrainian
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-27 01:56+0200\n"
-"PO-Revision-Date: 2009-05-09 11:00+0300\n"
+"PO-Revision-Date: 2010-09-27 11:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: docking-configuration.cpp:126
-#, fuzzy
 msgid "Mouse Click on Tray Icon"
-msgstr "Клацанням лівою кнопкою у лотку"
+msgstr "Клацання кнопкою на піктограмі лотка"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
 msgid "Left"
-msgstr ""
+msgstr "Ліва"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
 msgid "Right"
-msgstr ""
+msgstr "Права"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
 msgid "Middle"
-msgstr ""
+msgstr "Середня"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
 msgid "XButton1"
-msgstr ""
+msgstr "X-кнопка 1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
 msgid "XButton2"
-msgstr ""
+msgstr "X-кнопка 2"
 
 #: docking-configuration.cpp:133
-#, fuzzy
 msgid "Mouse Double-Click on Tray Icon"
-msgstr "Клацанням лівою кнопкою у лотку"
+msgstr "Подвійне клацання на піктограмі лотка"
 
 #: docking-configuration.cpp:140
 msgid "Mouse Wheel Action on Tray Icon"
-msgstr ""
+msgstr "Дія прокручування коліщатка на піктограмі лотка"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
-msgstr ""
+msgstr "Жодних дій"
 
 #: docking-configuration.cpp:147
-#, fuzzy
 msgid "Show/Hide Windows"
-msgstr "Показати/сховати"
+msgstr "Показати/Сховати вікна"
 
 #: docking-configuration.cpp:148
 msgid "Power On/Off"
 msgstr "Увімкнути/вимкнути"
 
 #: docking-configuration.cpp:149
-#, fuzzy
 msgid "Pause/Play"
-msgstr "Призупинити відтворення"
+msgstr "Пауза/Відтворення"
 
 #: docking-configuration.cpp:150 docking.cpp:316
 msgid "Recording"
 msgstr "Запис"
 
 #: docking-configuration.cpp:151
-#, fuzzy
 msgid "System Tray Menu"
-msgstr "Піктограма системного лотка"
+msgstr "Меню системного лотка"
 
 #: docking-configuration.cpp:152
 msgid "GUI-Plugin Menu"
-msgstr ""
+msgstr "Меню графічних модулів"
 
 #: docking-configuration.cpp:153
-#, fuzzy
 msgid "Configuration"
-msgstr "Налаштування поведінки піктограми лотка"
+msgstr "Налаштування"
 
 #: docking-configuration.cpp:157
-#, fuzzy
 msgid "Change Station"
-msgstr "Шукати наступну станцію"
+msgstr "Змінити станцію"
 
 #: docking-configuration.cpp:158
 msgid "Change Volume"
-msgstr ""
+msgstr "Змінити гучність"
 
 #: docking-configuration.cpp:159
 msgid "Change Frequency"
-msgstr ""
+msgstr "Змінити частоту"
 
 #: docking.cpp:46
 msgid "System Tray Icon/Menu for KRadio"

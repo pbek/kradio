@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-16 23:14+0200\n"
-"PO-Revision-Date: 2010-09-17 18:01+0300\n"
+"PO-Revision-Date: 2010-09-27 12:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
@@ -290,9 +290,9 @@ msgstr ""
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600;\">Активне відтворення</span> слід використовувати, "
-"якщо вашу радіокартску не з’єднано з вхідним каналом вашої звукової картки "
+"якщо вашу радіокартку не з’єднано з вхідним каналом вашої звукової картки "
 "кабелем. У такому випадку, KRadio доведеться захоплювати дані PCM з пристрою "
-"захоплення звуку для того, щоб надіслати дані PCM на пристній відтворення "
+"захоплення звуку для того, щоб надіслати дані PCM на пристрій відтворення "
 "звуку. Тому, якщо ви увімкнете <span style=\" font-weight:600;\">Активне "
 "відтворення</span>, вам доведеться обрати належний канал/пристрій мікшера і "
 "належний канал/мікшер відтворення PCM. Це зокрема важливо для <span style=\" "
@@ -459,7 +459,7 @@ msgstr "Підтримка пристроїв V4l(2)"
 
 #: v4lradio.cpp:73
 msgid "Video For Linux Plugin"
-msgstr "Модуль \"Відео для Linux\""
+msgstr "Модуль «Відео для Linux»"
 
 #: v4lradio.cpp:810
 #, kde-format
@@ -469,7 +469,7 @@ msgstr "некоректна частота %1"
 #: v4lradio.cpp:835 v4lradio.cpp:1708 v4lradio.cpp:1902
 #, kde-format
 msgid "don't known how to handle V4L-version %1"
-msgstr "невідомо що робити з версією V4l \"%1\""
+msgstr "невідомо що робити з версією V4l «%1»"
 
 #: v4lradio.cpp:837 v4lradio.cpp:1710 v4lradio.cpp:1904
 #, kde-format
@@ -502,7 +502,7 @@ msgstr ""
 
 #: v4lradio.cpp:1282
 msgid "Could not find an accessible v4l(2) radio device."
-msgstr "Неможливо знайти доступний пристрій V4l(2)."
+msgstr "Не вдалося знайти доступний пристрій V4l(2)."
 
 #: v4lradio.cpp:1358
 msgid "V4L Radio"
@@ -544,23 +544,23 @@ msgstr "можливості звуку = %1"
 
 #: v4lradio.cpp:1554
 msgid "V4L2: Querying mute control failed"
-msgstr "V4L2: Неможливо опитати вимикач звуку"
+msgstr "V4L2: Не вдалося опитати вимикач звуку"
 
 #: v4lradio.cpp:1561
 msgid "V4L2: Querying volume control failed"
-msgstr "V4L2: Неможливо опитати регулятор гучності"
+msgstr "V4L2: Не вдалося опитати регулятор гучності"
 
 #: v4lradio.cpp:1569
 msgid "V4L2: Querying treble control failed"
-msgstr "V4L2: Неможливо опитати регулятор високих частот"
+msgstr "V4L2: Не вдалося опитати регулятор високих частот"
 
 #: v4lradio.cpp:1577
 msgid "V4L2: Querying bass control failed"
-msgstr "V4L2: Неможливо опитати регулятор нижніх частот"
+msgstr "V4L2: Не вдалося опитати регулятор нижніх частот"
 
 #: v4lradio.cpp:1585
 msgid "V4L2: Querying balance control failed"
-msgstr "V4L2: Неможливо опитати регулятор стереобалансу"
+msgstr "V4L2: Не вдалося опитати регулятор стереобалансу"
 
 #: v4lradio.cpp:1588
 #, kde-format
@@ -574,7 +574,7 @@ msgstr "Пристроїв V4L не знайдено"
 #: v4lradio.cpp:1718
 #, kde-format
 msgid "cannot get tuner info (error %1)"
-msgstr "Неможливо отримати інформацію про тюнер (код помилки %1)"
+msgstr "Не вдалося отримати інформацію про тюнер (код помилки %1)"
 
 #: v4lradio.cpp:1911
 msgid "write"

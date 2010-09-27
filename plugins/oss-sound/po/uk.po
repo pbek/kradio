@@ -1,22 +1,22 @@
 # translation of uk.po to Ukrainian
 # This file is put in the public domain.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-16 23:14+0200\n"
-"PO-Revision-Date: 2009-05-09 10:22+0300\n"
+"PO-Revision-Date: 2010-09-27 11:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: oss-sound.cpp:38
 msgid "Open Sound System (OSS) Support"
@@ -52,27 +52,27 @@ msgstr "Помилка %1 під час роботи з пристроєм OSS %
 #: oss-sound.cpp:607 oss-sound.cpp:633
 #, kde-format
 msgid "Cannot open DSP device %1"
-msgstr "Неможливо відкрити пристрій DSP %1"
+msgstr "Не вдалося відкрити пристрій DSP %1"
 
 #: oss-sound.cpp:613
 #, kde-format
 msgid "Cannot read DSP capabilities for %1"
-msgstr "Неможливо прочитати можливості DSP для %1"
+msgstr "Не вдалося прочитати можливості DSP для %1"
 
 #: oss-sound.cpp:640
 #, kde-format
 msgid "Cannot set DSP sample format for %1"
-msgstr "Неможливо встановити формат зразку для %1"
+msgstr "Не вдалося встановити формат зразку для %1"
 
 #: oss-sound.cpp:645
 #, kde-format
 msgid "Cannot set number of channels for %1"
-msgstr "Неможливо встановити число каналів для звукової карти %1"
+msgstr "Не вдалося встановити число каналів для звукової карти %1"
 
 #: oss-sound.cpp:650
 #, kde-format
 msgid "Cannot set sampling rate for %1"
-msgstr "Неможливо встановити частоту дискретизації для звукової карти %1"
+msgstr "Не вдалося встановити частоту дискретизації для звукової карти %1"
 
 #: oss-sound.cpp:652
 #, kde-format
@@ -82,22 +82,22 @@ msgstr "Було подано запит на %1 Гц, однак %2 викор�
 #: oss-sound.cpp:662
 #, kde-format
 msgid "Cannot set stereo mode for %1"
-msgstr "Неможливо встановити стерео режим для звукової карти %1"
+msgstr "Не вдалося встановити стерео режим для звукової карти %1"
 
 #: oss-sound.cpp:667
 #, kde-format
 msgid "Cannot set sample size for %1"
-msgstr "Неможливо встановити розмір елементу вибірки для звукової карти %1"
+msgstr "Не вдалося встановити розмір елементу вибірки для звукової карти %1"
 
 #: oss-sound.cpp:676
 #, kde-format
 msgid "Cannot set buffers for %1"
-msgstr "Неможливо встановити буфери для звукової карти %1"
+msgstr "Не вдалося встановити буфери для звукової карти %1"
 
 #: oss-sound.cpp:681
 #, kde-format
 msgid "Cannot read buffer size for %1"
-msgstr "Неможливо прочитати розмір буфера звукової карти %1"
+msgstr "Не вдалося прочитати розмір буфера звукової карти %1"
 
 #: oss-sound.cpp:683
 #, kde-format
@@ -107,25 +107,26 @@ msgstr "%1 використовує блоки буфера по %2 байт"
 #: oss-sound.cpp:686
 #, kde-format
 msgid "adjusted own buffer size to %1 bytes"
-msgstr "Розмір власного буферу встановлено у  %1 байт."
+msgstr "Розмір власного буфера встановлено у  %1 байт."
 
 #: oss-sound.cpp:738
 #, kde-format
 msgid "Cannot open mixer device %1"
-msgstr "Неможливо відкрити пристрій мікшера %1"
+msgstr "Не вдалося відкрити пристрій мікшера %1"
 
 #: oss-sound.cpp:771
 #, kde-format
 msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
 msgstr ""
-"OSSSoundDevice::getMixerChannels: Неможливо відкрити пристрій мікшера %1"
+"OSSSoundDevice::getMixerChannels: не вдалося відкрити пристрій мікшера %1"
 
 #: oss-sound.cpp:785
 #, kde-format
 msgid ""
 "OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
 msgstr ""
-"OSSSoundDevice::getMixerChannels: Неможливо прочитати маску пристрою мікшера "
+"OSSSoundDevice::getMixerChannels: не вдалося прочитати маску пристрою "
+"мікшера "
 "для пристрою %1"
 
 #: oss-sound.cpp:890
@@ -181,7 +182,7 @@ msgstr "Пристрій мікшера"
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:12 rc.cpp:38
 msgid "Buffer Size"
-msgstr "Розмір буферу"
+msgstr "Розмір буфера"
 
 #. i18n: file: oss-sound-configuration-ui.ui:75
 #. i18n: ectx: property (suffix), widget (KIntSpinBox)
@@ -199,13 +200,13 @@ msgstr "Додаткові параметри"
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
 msgid "Disable Playback"
-msgstr "Заборонити &відтворення"
+msgstr "Вимкнути відтворення"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
 msgid "Disable Capture"
-msgstr "Заборонити &запис"
+msgstr "Вимкнути запис"
 
 #: rc.cpp:25
 msgctxt "NAME OF TRANSLATORS"
@@ -216,3 +217,4 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
+

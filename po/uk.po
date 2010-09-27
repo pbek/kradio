@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-16 23:14+0200\n"
-"PO-Revision-Date: 2010-09-17 18:02+0300\n"
+"PO-Revision-Date: 2010-09-27 12:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
@@ -56,7 +56,7 @@ msgstr "%1 кГц"
 
 #: radiostations/radiostation-config.cpp:48
 msgid "I don't know how to edit this station"
-msgstr "Не знаю, как редагувати цю станцію"
+msgstr "Спосіб редагування цієї станції невідомий"
 
 #: radiostations/radiostation-config.cpp:74
 msgid "Frequency:"
@@ -120,7 +120,7 @@ msgstr "PLS"
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
-msgstr "Немає "
+msgstr "№"
 
 #: radiostations/radiostation-listview.cpp:36
 msgid "Icon"
@@ -196,7 +196,7 @@ msgstr "FileRingBuffer::takeData: не вдалося прочитати дан�
 msgid ""
 "<qt>No information available.<br />The supplied KAboutData object does not "
 "exist.</qt>"
-msgstr "<qt>Інформація відсутня.<br />Наданий об'єкт KAboutData не існує.</qt>"
+msgstr "<qt>Немає даних.<br />Наданий об'єкт KAboutData не існує.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
@@ -334,7 +334,7 @@ msgstr "Різнобічна програма для роботи з AM/FM/ін�
 
 #: src/main.cpp:38
 msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
-msgstr "© 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
+msgstr "© Martin Witte, Klas Kalass, Frank Schwanz, 2002–2009"
 
 #: src/main.cpp:43
 msgid "Ernst Martin Witte"
@@ -507,7 +507,7 @@ msgstr "помилка під час звантаження файла нала�
 #: src/stationlist.cpp:205
 #, kde-format
 msgid "Download of the station preset file at %1 failed."
-msgstr "Не можу скачати файл радіостанцій %1."
+msgstr "Не можу звантажити файл набору радіостанцій %1."
 
 #: src/stationlist.cpp:214
 msgid "temporary file: "
@@ -608,12 +608,12 @@ msgstr "Символи елементу %1 проігноровано"
 #: src/widgetpluginbase.cpp:293
 #, kde-format
 msgid "Show %1"
-msgstr "Показати \"%1\""
+msgstr "Показати «%1»"
 
 #: src/widgetpluginbase.cpp:297
 #, kde-format
 msgid "Hide %1"
-msgstr "Сховати \"%1\""
+msgstr "Сховати «%1»"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -680,7 +680,7 @@ msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
-"Оберіть бібліотеку модуля за допомогою діалогового вікна вибору файлів. Цю "
+"Виберіть бібліотеку модуля за допомогою діалогового вікна вибору файлів. Цю "
 "бібліотеку буде додано до списку бібліотек після натискання кнопки "
 "«Завантажити бібліотеку»."
 
@@ -788,7 +788,7 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
 #: rc.cpp:81
 msgid "Stations search in progress ..."
-msgstr "Іде пошук станцій..."
+msgstr "Виконується пошук станцій..."
 
 #. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)

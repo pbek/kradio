@@ -1,64 +1,65 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the KRadio package.
 #
 #
+# Yuri Chornoivan <yurchor@ukr.net>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-26 15:41+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2010-09-27 11:50+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: convert-presets.cpp:53 convert-presets.cpp:134
 msgid "error opening preset file"
-msgstr ""
+msgstr "помилка відкриття файла набору радіостанцій"
 
 #: convert-presets.cpp:55
 msgid "for reading"
-msgstr ""
+msgstr "для читання"
 
 #: convert-presets.cpp:136
 msgid "for writing"
-msgstr ""
+msgstr "для запису"
 
 #: convert-presets.cpp:148
 msgid "error writing preset file"
-msgstr ""
+msgstr "помилка під час спроби запису файла набору радіостанцій"
 
 #: convert-presets.cpp:163
 msgid "kradio4-convert-presets"
-msgstr ""
+msgstr "kradio4-convert-presets"
 
 #: convert-presets.cpp:165
 msgid "(c) 2003-2010 Martin Witte"
-msgstr ""
+msgstr "© Martin Witte, 2003–2010"
 
 #: convert-presets.cpp:168
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: convert-presets.cpp:173
 msgid "quiet mode - no informational output"
-msgstr ""
+msgstr "«мовчазний» режим — без виведення повідомлень"
 
 #: convert-presets.cpp:174
 msgid "preset files to convert"
-msgstr ""
+msgstr "файли наборів, які слід перетворити"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Юрій Чорноіван"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "yurchor@ukr.net"
+
