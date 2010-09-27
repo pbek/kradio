@@ -408,7 +408,7 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
 
     // auxiliary variables
     qreal   margin = qMax(4.0, qMin(width / 50.0, height / 50.0));
-    qreal   tmp    = qMin(height, (width - 2 * margin) / 6.0);
+    qreal   tmp    = qMin(height, (width - 2 * margin) / qreal(6.0));
     qreal   xd_st  = qMin((height - margin * 2) / 3.0, tmp / 3.0);
     qreal   xw     = qMin(tmp / 2.0, xd_st * 1.5);
     qreal   penw   = qMax(1.0, xw / 25.0);
