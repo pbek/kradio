@@ -868,8 +868,11 @@ bool InternetRadio::setURL(const KUrl &url, const InternetRadioStation *rs)
 
     if (oldurl != url) {
         if (isPowerOn()) {
-            radio_done();
-            radio_init();
+            // with pulse audio, latency steadily increases if not powered off/on
+            //radio_done();
+            //radio_init();
+            powerOff();
+            powerOn();
         }
         notifyURLChanged(url, &m_currentStation);
     }
