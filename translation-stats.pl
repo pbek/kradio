@@ -25,7 +25,13 @@ foreach my $lang(sort keys %langs) {
     my $total          = 0 + keys %records;
     my $fuzzy          = 0 + grep { exists $$_{fuzzy}   && $$_{fuzzy}        } values %records;
     my $not_translated = 0 + grep { !exists $$_{msgstr} || $$_{msgstr} eq "" } values %records;
-    printf "%-5s:   total:%5i     fuzzy: %5i     untranslated: %5i\n", $lang, $total, $fuzzy, $not_translated;
+    my $translated     = $total - $fuzzy - $not_translated;
+    printf "%-5s:   total:%5i     translated: %5i (%3i%%)    fuzzy: %5i (%3i%%)     untranslated: %5i (%3i%%)\n",
+           $lang,
+           $total,
+           $translated,     $translated     * 100 / $total,
+           $fuzzy,          $fuzzy          * 100 / $total,
+           $not_translated, $not_translated * 100 / $total;
 }
 
 
