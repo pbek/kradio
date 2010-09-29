@@ -1,13 +1,38 @@
 This package was debianized by Ernst Martin Witte <emw@users.sourceforge.net> on
 Sun, 29 Mar 2009 13:31:07 +0200.
 
-It was downloaded from kttp://kradio.sourceforge.net/
+It was downloaded from http://kradio.sourceforge.net/
 
 Upstream Author: Ernst Martin Witte <emw@users.sourceforge.net>
 
-Copyright: This software is copyright (C) 2002-2009 by Ernst Martin Witte
+Copyright Holder: Ernst Martin Witte (C) 2002-2010
+Additional copyright information:
+             (C) 2001, 2002 by Frank Schwanz, Ernst Martin Witte
+                    schwanz@fh-brandenburg.de, emw@users.sourceforge.net
+             (C) 2001-2005 by Ernst Martin Witte, Frank Schwanz
+                    emw@users.sourceforge.net, schwanz@fh-brandenburg.de
+             (C) 2002-2003 by Ernst Martin Witte, Klas Kalass, Frank Schwanz
+                    emw@users.sourceforge.net, klas.kalass@gmx.de, schwanz@fh-brandenburg.de
+             (C) 2005 by by Ernst Martin Witte, Marcus Camen
+                    emw@users.sourceforge.net, mcamen@mcamen.de
 
-You are free to distribute this software under the terms of the GNU
-General Public License. 
-On Debian systems, the complete text of the GNU General Public License
-can be found in the file `/usr/share/common-licenses/GPL'.
+
+         The following files have the copyright notice
+
+            Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+              plugins/gui-quickbar/buttonflowlayout4.h
+              plugins/gui-quickbar/buttonflowlayout4.cpp
+
+License:
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License, version 2
+or higher as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANDABILITY of FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for details.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.

@@ -1,1 +1,7 @@
-?package(kradio4):needs=X11 section=Apps/Sound title="KRadio4" command="/usr/bin/kradio4"
+?package(kradio4):needs="X11"          \
+  section="Apps/Sound"                 \
+  hints="KDE"                          \
+  title="KRadio4"                      \
+  longtitle="K-Radio Application"      \
+  command="/usr/bin/kradio4"           \
+  icon="/usr/share/pixmap/kradio4.png"
