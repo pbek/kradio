@@ -1,7 +1,7 @@
 %bcond_without ffmpeg
 
 Version:   4.0.1
-%define    rel2 rc2
+%define    rel2 release
 %define    rel %{version}-%{rel2}
 Name:      kradio4
 License:   GPLv2
