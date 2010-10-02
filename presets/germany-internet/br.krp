@@ -18,7 +18,7 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://streams.br-online.de/bayern1_2.asx</url>
+			<url>http://streams.br-online.de/bayern1_2.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
@@ -29,7 +29,7 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://streams.br-online.de/bayern2_2.asx</url>
+			<url>http://streams.br-online.de/bayern2_2.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
@@ -40,18 +40,18 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://streams.br-online.de/bayern3_2.asx</url>
+			<url>http://streams.br-online.de/bayern3_2.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
 			<stationID>12371567901550516BD66D7E68FDBD536E4C9AC0E88B484619E23544F188A760F0EB10</stationID>
-			<name>Bayern 4 (Net)</name>
+			<name>Bayern 4 Klassik (Net)</name>
 			<shortname>BR4</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://streams.br-online.de/bayern4klassik_2.asx</url>
+			<url>http://streams.br-online.de/br-klassik_2.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
@@ -62,7 +62,40 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://streams.br-online.de/b5aktuell_2.asx</url>
+			<url>http://streams.br-online.de/b5aktuell_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286033239B325F016310350460AC66C71716255D0ACCFEE9C54BEDFC1EE7FBA885485</stationID>
+			<name>B5 plus (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/b5plus_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286033284DEB94F25443A6F98DA62E30596F502C3AD8283564E69625E8017DCD7EF2A</stationID>
+			<name>Bayern plus (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/bayernplus_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>128603329920D5F7BD10DE834F215017D985AE4A3FA74271E1899A15049F8D36EDA543</stationID>
+			<name>BR on3-radio (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.br-online.de/jugend-radio_2.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
