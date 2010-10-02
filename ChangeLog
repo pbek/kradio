@@ -4,6 +4,8 @@
         - internet radio: limit time required for autodetection. Parameters
           are currently only configurable in config file, will be added to
           GUI in 4.0.2
+        - fixed segfault when opening of internet radio stream fails
+        - keep selection in station list editor when ok/apply is pressed
 
 2010-09-29
 

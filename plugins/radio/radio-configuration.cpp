@@ -211,9 +211,15 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 {
     m_ignoreChanges = true;
 
+    QString old_id = m_stations.at(listStations->currentStationIndex()).stationID();
+
     m_stations = sl;
 
     listStations->setStations(sl);
+
+    listStations->setCurrentStation(m_stations.idxWithID(old_id));
+    listStations->ensureItemVisible(listStations->currentItem());
+
 
     StationListMetaData &info = m_stations.metaData();
 
