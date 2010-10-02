@@ -327,14 +327,27 @@ void RadioConfiguration::slotNewStation(QAction *a)
 
 void RadioConfiguration::createNewStation(const RadioStation *rs_template)
 {
-    RadioStation       *newst = rs_template->copyNewID();
-    int n = m_stations.count();
+    RadioStation   *newst      = rs_template->copyNewID();
+    int             currentIdx = listStations->currentStationIndex();
+    int             n          = m_stations.count();
+    if (currentIdx < 0) {
+        currentIdx = n - 1;
+    }
+
     m_stations.addStation(*newst);
     if (m_stations.count() > n) {
+        m_stations.moveStation(n, currentIdx + 1);
+
+        m_ignoreChanges = true;
         listStations->appendStation(*newst);
-        listStations->setCurrentStation (listStations->count()-1);
-        slotStationSelectionChanged(listStations->count()-1);
-        listStations->ensureItemVisible(listStations->selectedItem());
+        for (int i = currentIdx + 1; i <= n; ++i) {
+            listStations->setStation(i, m_stations.at(i));
+        }
+        listStations->setCurrentStation(currentIdx + 1);
+        listStations->ensureItemVisible(listStations->currentItem());
+        m_ignoreChanges = false;
+        slotStationSelectionChanged(listStations->currentStationIndex());
+
     }
     delete newst;
 }
@@ -489,6 +502,7 @@ void RadioConfiguration::slotStationUp()
         listStations->setStation(idx-1, sl.at(idx-1));
         listStations->setStation(idx,   sl.at(idx));
         listStations->setCurrentStation(idx-1);
+        listStations->ensureItemVisible(listStations->currentItem());
 //         listStations->blockSignals(o);
         m_ignoreChanges = false;
     }
@@ -510,6 +524,7 @@ void RadioConfiguration::slotStationDown()
         listStations->setStation(idx,   sl.at(idx));
         listStations->setStation(idx+1, sl.at(idx+1));
         listStations->setCurrentStation(idx+1);
+        listStations->ensureItemVisible(listStations->currentItem());
 //         listStations->blockSignals(o);
         m_ignoreChanges = false;
     }

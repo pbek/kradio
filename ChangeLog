@@ -7,6 +7,8 @@
         - fixed segfault when opening of internet radio stream fails
         - keep selection in station list editor when ok/apply is pressed
         - updated German internet radio streems part of ARD (WDR, SWR, BR, MDR, Radio Bremen, SR, RBB, NDR, HR)
+        - ensure station list items visible in station list editor
+        - new stations are added at cursor position
 
 2010-09-29
 
