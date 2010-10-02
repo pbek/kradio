@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r1028</creator>
+			<maintainer>Ernst Martin Witte, witte@kawo1.rwth-aachen.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>12860312415972B7809CC245BE8410E912BDA143F1B79896F3827DF78C33B2F871FC61</stationID>
+			<name>SR1 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streaming01.sr-online.de/sr1_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>128603125420A302004DC67E17F52BB28588DD24271215EA1A23F84E37549D9CE3DDF1</stationID>
+			<name>SR2 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streaming01.sr-online.de/sr2_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12860312934DCD46AEA8386F2101D6B778CC133CFA1374D9D761EC629ED76155FDD1A5</stationID>
+			<name>SR3 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streaming01.sr-online.de/sr3_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

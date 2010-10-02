@@ -12,57 +12,57 @@
 			<comments></comments>
 		</info>
 		<InternetRadioStation>
-			<stationID>1237142252D4B580AB620F4C41A0D5B0F92AC192E61FDE90FA15C502D8890783DE38ED</stationID>
-			<name>1Live (Net)</name>
-			<shortname>11</shortname>
+			<stationID>12860299850C97A3A94A036232B5F3E7B27064DCF09C718B7A6C4FBDE93B5089E7E074</stationID>
+			<name>Bremen Vier (Net)</name>
+			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://www.wdr.de/wdrlive/media/einslive.m3u</url>
+			<url>http://httpmedia.radiobremen.de/bremenvier.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>123714230553EA6A71F0FDA7C1F432C42B5301B85109884BEDF22F31441CC31D1F0C46</stationID>
-			<name>WDR2 (Net)</name>
-			<shortname>12</shortname>
+			<stationID>128602999624D307FBA1226D845F66419E97482C67E794F6D0AC480F9F0560AD9ABFFD</stationID>
+			<name>Bremen Vier Next (Net)</name>
+			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://www.wdr.de/wdrlive/media/wdr2.m3u</url>
+			<url>http://httpmedia.radiobremen.de/bremen_vier_next.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>12371423584455BB25A3829E56DB7447374206E9BD2256B19666B1B5D877A847C06B70</stationID>
-			<name>WDR3 (Net)</name>
-			<shortname>13</shortname>
+			<stationID>1286030477037777DA76E26C69F4056F22790A2F1D4E196B6D9F8572D2EE27D8F4E82B</stationID>
+			<name>Nordwestradio (Net)</name>
+			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://www.wdr.de/wdrlive/media/wdr3.m3u</url>
+			<url>http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w50a.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>1237142391C5A3DD0CDCB83D513BF86A572D4D511CABC23ED279EC8C1122582850FAA1</stationID>
-			<name>WDR4 (Net)</name>
-			<shortname>14</shortname>
+			<stationID>12860304952B4D5C8DBF2BF0CB9CDCC8DE3F5C8A9AF4A5035E1D8270D16F27BB12105F</stationID>
+			<name>Bremen Eins (Net)</name>
+			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://www.wdr.de/wdrlive/media/wdr4.m3u</url>
+			<url>http://httpmedia.radiobremen.de/bremeneins.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>1235914433606741557349ED501B7B206A30E64AFEFBA6030A91EA9D79E3E1BD6CFC36B0A2</stationID>
-			<name>WDR5 (Net)</name>
-			<shortname>15</shortname>
+			<stationID>12860305723F4FDC29DC5A435A7D335204672B27F33741E9C2F57D614AD0A135072711</stationID>
+			<name>Funkhaus Europa (Net)</name>
+			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://www.wdr.de/wdrlive/media/wdr5.m3u</url>
+			<url>http://www.wdr.de/wdrlive/media/fhe.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>

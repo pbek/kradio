@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r1028</creator>
+			<maintainer>Ernst Martin Witte, witte@kawo1.rwth-aachen.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>1286029561819783A62369A162D4EA4E8D7AB29CFB7EF00175823EDA52B4C6B18F0567</stationID>
+			<name>hr1 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://metafiles.gl-systemhaus.de/hr/hr1_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12860295810B951A2D3446205B5337F399AC9A1576020A74BCE1B13CE3488EED4E5E98</stationID>
+			<name>hr2 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://metafiles.gl-systemhaus.de/hr/hr2_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286029604977F7980A76A9E46AAF5EB56B640CD7E6C2E0E1089241D94C2FB49B511B6</stationID>
+			<name>hr3 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12860296790D591068CDCD2EE077F59F18BADF81C07ED7402D206343D39E9DDA05C010</stationID>
+			<name>hr4 (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://metafiles.gl-systemhaus.de/hr/hr4_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286029688A6585E7D3C8E7FB48575DF908FD1A42D7F2CDA13E0584D060249B50B1A94</stationID>
+			<name>hr-iNFO (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://metafiles.gl-systemhaus.de/hr/hrinfo_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>128602972912ED6F2AFE4B777EC5F09DABC30D9E83E24A7828C9E6B5D81313C622D093</stationID>
+			<name>hr YOU FM (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://metafiles.gl-systemhaus.de/hr/youfm_2.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

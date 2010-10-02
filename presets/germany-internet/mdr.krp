@@ -12,90 +12,90 @@
 			<comments></comments>
 		</info>
 		<InternetRadioStation>
-			<stationID>1237240843C62106FC81654A0459F16EA93E01B0DDE6F7FB3EF13E60112CB49EDDCD6D</stationID>
-			<name>SWR1 Badenwürttemberg (Net)</name>
+			<stationID>12860291734DF78639AF0B7F624B6A8FA3F684A6E36D60823A4FBF4B6D869EB7321269</stationID>
+			<name>MDR1 Radio Sachsen (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.swr.de/swr1bw_m.m3u</url>
+			<url>http://avw.mdr.de/livestreams/mdr1_radio_sachsen_live_128.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>12860284838AA513CB33390D30F63A6817E3B9039F5F6306204F3DE609F68152110DC6</stationID>
-			<name>SWR1 Rheinland-Pfalz (Net)</name>
+			<stationID>12860292062AAF4B1548B2D7DDFF1008DCAE804CF05B762A3F60A77E0103F182778F7D</stationID>
+			<name>MDR1 Radio Sachsen-Anhalt (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.swr.de/swr1rp_m.m3u</url>
+			<url>http://avw.mdr.de/livestreams/mdr1_radio_sachsen-anhalt_live_128.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>12372431983EDE86B073825000118F110FC79EA8F0BA391E32FADE9DEBCCEFC734DBD6</stationID>
-			<name>SWR2 (Net)</name>
+			<stationID>1286029241C081DC6AC8C1DC36C5F0880013E260CFFDB84392C06E04050EB2658061E0</stationID>
+			<name>MDR1 Radio Thüringen (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.swr.de/swr2_m.m3u</url>
+			<url>http://avw.mdr.de/livestreams/mdr1_radio_thueringen_live_128.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>1237243574D7495B8238B697237B9D79021AFC8F04FA3D0D27EEB428753DB04E202940</stationID>
-			<name>SWR3 (Net)</name>
+			<stationID>12860292644B43908AF5CC0E5EDBFC605554DB4D16CA1BD7A3AAD3F676DAEDAF6D02CC</stationID>
+			<name>MDR Figaro (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.swr3.de/swr3_m.m3u</url>
+			<url>http://avw.mdr.de/livestreams/mdr_figaro_live_128.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>1237243647C7623CCA866D914183A545764BFD20C8DEF44FBA118CAC52361CF23A6C9B</stationID>
-			<name>SWR4 Baden-Württemberg (Net)</name>
+			<stationID>1286029299CB8A01D8729E66FC4A2218009B456535D2F9513231537265FF7E6608DCA3</stationID>
+			<name>MDR Info (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.swr.de/swr4bw_m.m3u</url>
+			<url>http://avw.mdr.de/livestreams/mdr_info_live_128.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>1286028601F7A1681647D640A5259CC4A9622CF01CF7A21E9B6C604E94BEEA260DCB50</stationID>
-			<name>SWR4 Rheinland-Pfalz (Net)</name>
+			<stationID>12860293499BEE0AD0C6AC0690B1B49E1504F2E47368D12E402BA38FCEDAD21C370B5A</stationID>
+			<name>MDR Klassik (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.swr.de/swr4rp_m.m3u</url>
+			<url>http://avw.mdr.de/livestreams/mdr_klassik_live_128.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>1286028662F23AC864B1C0E6EE4CD150DB6C288C4613048025846B586B8EDCD980056A</stationID>
-			<name>SWR - Das Ding (Net)</name>
+			<stationID>128602939538ED1157FF37AC72C6705CD32B22BD06288C0DEFC16531D1ED6A574CBD46</stationID>
+			<name>MDR Jump (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.dasding.de/dasding_m.m3u</url>
+			<url>http://www.jumpradio.de/static/webchannel/jump_live_channel_high.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>12860286869AFDEE67001EF9F4ABA7FF3A95C6BD5403DDF8EE006D9D9271447DA49A64</stationID>
-			<name>SWR - cont.ra (Net)</name>
+			<stationID>1286029445D73EDF13B3B0C757F77FE322B73ADA98AA63E1C5721AD6EC06936836B331</stationID>
+			<name>MDR Sputnik (Net)</name>
 			<shortname></shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://mp3-live.swr.de/contra_m.m3u</url>
+			<url>http://www.sputnik.de/m3u/live.hi.m3u</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>

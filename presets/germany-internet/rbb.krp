@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-svn-r1028</creator>
+			<maintainer>Ernst Martin Witte, witte@kawo1.rwth-aachen.de</maintainer>
+			<changed>2009-03-16T22:09:12</changed>
+			<country>Germany</country>
+			<city>Aachen</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>1286030712A4E84A1048CDED2F28D2EBC079A03B528AE829C193E6D35624CB446A4E5E</stationID>
+			<name>rbb - Antenne Brandenburg (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.antennebrandenburg.de/live.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286030730D273BC02004BE7BDFA7AA5460802BC5BCE269E8F13249FB68EBD2A92170C</stationID>
+			<name>rbb - Radio Berlin (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.radioberlin.de/live.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12860309083FC90E7F22C94EC04481FBD3AA317436997F7C99CFA0A3811E6B028193DE</stationID>
+			<name>rbb - Radio Eins (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.radioeins.de/live.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286030958B1520D00AF8C0FAD1D815B64ADB9CB92CDE3D56DFCDAA14E27FCEF26E325</stationID>
+			<name>rbb - Info radio (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.inforadio.de/live.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286031057E8C207A307AEBDD52AFA33E01A311D2C605C331A9BC2B51B486721DB9595</stationID>
+			<name>rbb - Kulturradio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.kulturradio.de/live.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1286031099D0291EE4F302744B2B8CF16B388FF3F59DF126BA5B7B00A6DE7FB11877D4</stationID>
+			<name>rbb - Fritz</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.fritz.de/live.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

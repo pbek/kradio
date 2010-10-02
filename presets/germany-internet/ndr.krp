@@ -3,8 +3,8 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<creator>kradio-svn-r752</creator>
-			<maintainer>Ernst Martin Witte, emw@nocabal.de</maintainer>
+			<creator>kradio-svn-r1028</creator>
+			<maintainer>Ernst Martin Witte, witte@kawo1.rwth-aachen.de</maintainer>
 			<changed>2009-03-16T22:09:12</changed>
 			<country>Germany</country>
 			<city>Aachen</city>
@@ -18,8 +18,8 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/ndr1niedersachsen.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr1niedersachsen_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
@@ -29,8 +29,8 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/ndr1radiomv.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr1radiomv_hi_mp3</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
@@ -40,8 +40,8 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/ndr1wellenord.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr1wellenord_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
@@ -51,8 +51,8 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/ndr903.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr903_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
@@ -62,8 +62,8 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/ndr2.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr2_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
@@ -73,8 +73,19 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/ndrinfo.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndrinfo_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>12860289961BAAC151B109A63B84C8C8C823DCFFBC926A12D5805B826D126097AB9E74</stationID>
+			<name>NDR Info Spezial (Net)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndrinfo_spezial_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
@@ -84,8 +95,8 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/n-joy.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_n-joy_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 		<InternetRadioStation>
@@ -95,8 +106,8 @@
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>http://lsd.newmedia.nacamar.net/bb/redirect.lsc?content=live&amp;media=mp3&amp;stream=ndr/ndrkultur.mp3</url>
-			<decoderclass>mp3</decoderclass>
+			<url>http://ndr.ic.llnwd.net/stream/ndr_ndrkultur_hi_mp3.m3u</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
 		</InternetRadioStation>
 	</stationlist>
