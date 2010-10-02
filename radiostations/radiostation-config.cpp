@@ -137,20 +137,20 @@ InternetRadioStationConfig::InternetRadioStationConfig (QWidget *parent)
     vl->addWidget (m_comboPlaylistClass);
 
     m_comboDecoderClass->clear();
-    m_comboDecoderClass->addItem(i18n("<autodetect (very slow!)>"), QVariant(""));
-    m_comboDecoderClass->addItem(i18n("MP3"),                       QVariant("mp3"));
-    m_comboDecoderClass->addItem(i18n("ACC/ACCP"),                  QVariant("acc"));
-    m_comboDecoderClass->addItem(i18n("ASF"),                       QVariant("asf"));
-//     m_comboDecoderClass->addItem(i18n("ASF Stream"),                QVariant("asf_stream"));
-    m_comboDecoderClass->addItem(i18n("OGG/Vorbis"),                QVariant("ogg"));
+    m_comboDecoderClass->addItem(i18nc("Stream Format", "<autodetect>"),    QVariant(""));
+    m_comboDecoderClass->addItem(i18n("MP3"),                               QVariant("mp3"));
+    m_comboDecoderClass->addItem(i18n("ACC/ACCP"),                          QVariant("acc"));
+    m_comboDecoderClass->addItem(i18n("ASF"),                               QVariant("asf"));
+//     m_comboDecoderClass->addItem(i18n("ASF Stream"),                        QVariant("asf_stream"));
+    m_comboDecoderClass->addItem(i18n("OGG/Vorbis"),                        QVariant("ogg"));
 
     m_comboPlaylistClass->clear();
-    m_comboPlaylistClass->addItem(i18n("<autodetect>"),             QVariant("auto"));
-    m_comboPlaylistClass->addItem(i18n("<none>"),                   QVariant(""));
-    m_comboPlaylistClass->addItem(i18n("ASX"),                      QVariant("asx"));
-    m_comboPlaylistClass->addItem(i18n("LSC"),                      QVariant("lsc"));
-    m_comboPlaylistClass->addItem(i18n("M3U"),                      QVariant("m3u"));
-    m_comboPlaylistClass->addItem(i18n("PLS"),                      QVariant("pls"));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "<autodetect>"), QVariant("auto"));
+    m_comboPlaylistClass->addItem(i18n("<none>"),                           QVariant(""));
+    m_comboPlaylistClass->addItem(i18n("ASX"),                              QVariant("asx"));
+    m_comboPlaylistClass->addItem(i18n("LSC"),                              QVariant("lsc"));
+    m_comboPlaylistClass->addItem(i18n("M3U"),                              QVariant("m3u"));
+    m_comboPlaylistClass->addItem(i18n("PLS"),                              QVariant("pls"));
 
 
 

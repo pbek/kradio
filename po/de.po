@@ -76,8 +76,9 @@ msgid "Playlist Class:"
 msgstr "Wiedergabelisten-Klasse"
 
 #: radiostations/radiostation-config.cpp:140
-msgid "<autodetect (very slow!)>"
-msgstr "<Auto-Erkennung (sehr langsam!)>"
+msgctxt "Stream Format"
+msgid "<autodetect>"
+msgstr "<Auto-Erkennung>"
 
 #: radiostations/radiostation-config.cpp:141
 msgid "MP3"
@@ -96,6 +97,7 @@ msgid "OGG/Vorbis"
 msgstr "OGG/Vorbis"
 
 #: radiostations/radiostation-config.cpp:148
+msgctxt "Playlist Format"
 msgid "<autodetect>"
 msgstr "<Auto-Erkennung>"
 

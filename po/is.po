@@ -76,8 +76,9 @@ msgid "Playlist Class:"
 msgstr "Flokkur spilunarlista:"
 
 #: radiostations/radiostation-config.cpp:140
-msgid "<autodetect (very slow!)>"
-msgstr "<finna sjálfvirkt (mjög tímafrekt!)>"
+msgctxt "Stream Format"
+msgid "<autodetect>"
+msgstr "<finna sjálfvirkt>"
 
 #: radiostations/radiostation-config.cpp:141
 msgid "MP3"
@@ -96,6 +97,7 @@ msgid "OGG/Vorbis"
 msgstr "OGG/Vorbis"
 
 #: radiostations/radiostation-config.cpp:148
+msgctxt "Playlist Format"
 msgid "<autodetect>"
 msgstr "<autodetect>"
 
