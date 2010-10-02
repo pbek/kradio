@@ -14,9 +14,9 @@ for cat in $catalogs; do
         echo "merging $pot into $cat"
         test -e $cat || cat $pot | sed 's/charset=CHARSET/charset=UTF-8/; s/^#, fuzzy/#/' > $cat
         if test -e $cat ; then 
-            msgmerge --update -q $cat $pot
+            msgmerge --update -q $cat $pot || exit -1
         else
-            msgmerge --update -q -o $cat.new $cat $pot
+            msgmerge --update -q -o $cat.new $cat $pot || exit -1
             mv $cat.new $cat
         fi
     done
