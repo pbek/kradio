@@ -111,11 +111,13 @@ protected:
 
     bool                  m_decoderOpened;
     AVFormatContext      *m_av_pFormatCtx;
+    bool                  m_av_pFormatCtx_opened;
     int                   m_av_audioStream;
     AVCodecContext       *m_av_aCodecCtx;
     AVCodec              *m_av_aCodec;
     ByteIOContext         m_av_byteio_context;
 
+    bool                  m_is_mms_stream;
     mmsx_t               *m_mms_stream;
     char                  m_mms_buffer[32768];
 

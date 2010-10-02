@@ -40,10 +40,12 @@
 DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers, int max_probe_size_bytes, float max_analyze_secs)
 :   m_decoderOpened (false),
     m_av_pFormatCtx (NULL),
+    m_av_pFormatCtx_opened(false),
     m_av_audioStream(-1),
     m_av_aCodecCtx  (NULL),
     m_av_aCodec     (NULL),
 
+    m_is_mms_stream (false),
     m_mms_stream    (NULL),
 
     m_parent        (parent),
@@ -497,6 +499,8 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
     memset(&av_params, 0, sizeof(av_params));
     av_params.prealloced_context = 1;
 
+    m_av_pFormatCtx_opened = false;
+    m_is_mms_stream        = false;
 
     // if a format has been specified, set up the proper structures
 
@@ -505,6 +509,7 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
 
     // load asf stream
     if (stream.startsWith("mms://")) {
+        m_is_mms_stream = true;
         m_mms_stream = mmsx_connect(NULL, NULL, stream.toUtf8(), 1);
         if (!m_mms_stream) {
             if (warningsNotErrors) {
@@ -538,6 +543,7 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
             closeAVStream();
             return; // Couldn't open file
         }
+        m_av_pFormatCtx_opened = true;
     }
     else {
 
@@ -551,6 +557,7 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
             closeAVStream();
             return; // Couldn't open file
         }
+        m_av_pFormatCtx_opened = true;
 //         IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_open_input_file done");
     }
 
@@ -653,11 +660,18 @@ void DecoderThread::closeAVStream()
         avcodec_close(m_av_aCodecCtx);
     }
 
-    if (m_mms_stream) {
+    if (!m_av_pFormatCtx_opened) {
+        av_free(m_av_pFormatCtx);
+        m_av_pFormatCtx = NULL;
+    }
+
+    if (m_is_mms_stream) {
         if (m_av_pFormatCtx) {
             av_close_input_stream(m_av_pFormatCtx);
         }
-        mmsx_close(m_mms_stream);
+        if (m_mms_stream) {
+            mmsx_close(m_mms_stream);
+        }
     } else if (m_av_pFormatCtx) {
         av_close_input_file(m_av_pFormatCtx);
     }
