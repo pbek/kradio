@@ -67,6 +67,8 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_RDS_visible(false),
     m_RDS_StationName(QString()),
     m_RDS_RadioText(QString()),
+    m_maxStreamProbeSize(4096),
+    m_maxStreamAnalyzeTime(0.5),
     m_waitForBufferMinFill(true)/*,
     m_MimetypeJob(NULL)*/
 {
@@ -526,6 +528,8 @@ void   InternetRadio::saveState (KConfigGroup &config) const
     config.writeEntry("defaultPlaybackVolume",       m_defaultPlaybackVolume);
     config.writeEntry("URL",                         m_currentStation.url());
     config.writeEntry("PowerOn",                     isPowerOn());
+    config.writeEntry("maxStreamProbeSize",          m_maxStreamProbeSize);
+    config.writeEntry("maxStreamAnalyzeTime",        m_maxStreamAnalyzeTime);
 
     saveRadioDeviceID(config);
 }
@@ -540,6 +544,11 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     QString PlaybackMixerChannel  = config.readEntry ("PlaybackMixerChannel",        "PCM");
     bool    muteOnPowerOff        = config.readEntry ("PlaybackMixerMuteOnPowerOff", false);
     m_defaultPlaybackVolume       = config.readEntry ("defaultPlaybackVolume",       0.5);
+
+
+    m_maxStreamProbeSize          = config.readEntry ("maxStreamProbeSize",          4096);
+    m_maxStreamAnalyzeTime        = config.readEntry ("maxStreamAnalyzeTime",        0.5);
+
 
     setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel, muteOnPowerOff, /* force = */ true);
 
@@ -608,7 +617,7 @@ void InternetRadio::radio_init()
 //     QObject::connect(m_MimetypeJob, SIGNAL(mimetype(KIO::Job *, const QString &)), this, SLOT(slotMimetypeResult(KIO::Job *, const QString &)));
 //     m_MimetypeJob->start();
 
-    m_decoderThread = new DecoderThread(this, m_currentStation, MAX_BUFFERS);
+    m_decoderThread = new DecoderThread(this, m_currentStation, MAX_BUFFERS, m_maxStreamProbeSize, m_maxStreamAnalyzeTime);
     m_decoderThread->start();
 
     m_waitForBufferMinFill = true;

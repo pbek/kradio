@@ -56,7 +56,7 @@ class DecoderThread : public QThread
 {
 Q_OBJECT
 public:
-    DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers);
+    DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers, int max_probe_size_bytes, float max_analyze_secs);
 
     virtual ~DecoderThread();
 
@@ -144,6 +144,9 @@ protected:
     QList<DataBuffer>     m_buffers;
     QSemaphore            m_bufferAccessLock;
     QSemaphore            m_bufferCountSemaphore;
+
+    int                   m_maxProbeSize;    // in bytes,   see openAVStream
+    float                 m_maxAnalyzeTime;  // in seconds, see openAVStream
 };
 
 

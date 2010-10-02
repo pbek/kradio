@@ -1,3 +1,10 @@
+2010-10-02
+
+    emw - internet radio: automatic reconnect if connection is terminated
+        - internet radio: limit time required for autodetection. Parameters
+          are currently only configurable in config file, will be added to
+          GUI in 4.0.2
+
 2010-09-29
 
     emw - polished debian build files based on parts of the ubuntu patch set

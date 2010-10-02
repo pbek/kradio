@@ -23,6 +23,9 @@ For 4.0.1
 
 For 4.0.2
 
+  * GUI config of internet radio ffmpeg parameters (probesize, analyze time)
+  * move network connection/etc. part from ffmpeg to Qt/KDE (in order to
+    allow user to have better influence on proxy settings)
   * lirc 0.8.5 compatibility fixes
   * check box for v4l config to disable caps check at startup to minimize interference
 

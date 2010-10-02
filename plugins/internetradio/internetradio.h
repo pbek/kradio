@@ -207,6 +207,8 @@ protected:
     QString                       m_RDS_RadioText;
 
 
+    int                           m_maxStreamProbeSize;    // in bytes,   see DecoderThread::openAVStream
+    float                         m_maxStreamAnalyzeTime;  // in seconds, see DecoderThread::openAVStream
 
     bool                          m_waitForBufferMinFill;
 

@@ -37,7 +37,7 @@
 #include "errorlog_interfaces.h"
 
 
-DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers)
+DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers, int max_probe_size_bytes, float max_analyze_secs)
 :   m_decoderOpened (false),
     m_av_pFormatCtx (NULL),
     m_av_audioStream(-1),
@@ -61,7 +61,9 @@ DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, in
     m_decodedSize   (0),
     m_inputURL      (m_RadioStation.url()),
     m_bufferAccessLock(1),
-    m_bufferCountSemaphore(max_buffers)
+    m_bufferCountSemaphore(max_buffers),
+    m_maxProbeSize  (max_probe_size_bytes > 1024 ? max_probe_size_bytes : 4096),
+    m_maxAnalyzeTime(max_analyze_secs > 0.01     ? max_analyze_secs     : 0.5)
 {
     setTerminationEnabled(true);
 }
@@ -248,90 +250,94 @@ void DecoderThread::run()
     QTimer::singleShot(100, this, SLOT(loadPlaylist()));
     exec();
 
+    while (!m_error && !m_done) {
 
-    int retries = 2;
-    unsigned int start_play_idx = (unsigned int) rint((m_playListURLs.size()-1) * (float)rand() / (float)RAND_MAX);
-    int n = m_playListURLs.size();
-    for (int i = 0; !m_decoderOpened && i < n; ++i) {
-        m_playURL = m_playListURLs[(start_play_idx + i) % n];
-        for (int j = 0; j < retries && !m_decoderOpened; ++j) {
-            addDebugString(i18n("opening stream %1", m_playURL.pathOrUrl()));
-            openAVStream(m_playURL.pathOrUrl(), true);
-        }
-        if (!m_decoderOpened) {
-            addWarningString(i18n("failed to open %1. Trying next stream in play list.", m_playURL.pathOrUrl()));
-        }
-    }
-    if (!m_decoderOpened) {
-        addErrorString(i18n("Could not open any input stream of %1.", m_inputURL.pathOrUrl()));
-    }
-
-    AVPacket pkt;
-
-    time_t  start_time      = time(NULL);
-
-    while (!m_error && !m_done && m_decoderOpened && (av_read_frame(m_av_pFormatCtx, &pkt) >= 0)) {
-
-        if (!m_done && pkt.stream_index == m_av_audioStream) {
-
-            uint8_t *audio_pkt_data = pkt.data;
-            int      audio_pkt_size = pkt.size;
-
-            while (!m_error && !m_done && m_decoderOpened && (audio_pkt_size > 0)) {
-                char output_buf[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
-                int  generated_output_bytes = sizeof(output_buf);
-
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 34, 0)
-                int  processed_input_bytes = avcodec_decode_audio3(m_av_aCodecCtx,
-                                                                   (int16_t *)output_buf,
-                                                                   &generated_output_bytes,
-                                                                   &pkt);
-#else
-                int  processed_input_bytes = avcodec_decode_audio2(m_av_aCodecCtx,
-                                                                   (int16_t *)output_buf,
-                                                                   &generated_output_bytes,
-                                                                   audio_pkt_data,
-                                                                   audio_pkt_size);
-#endif
-                if (processed_input_bytes < 0) {
-                    /* if error, skip frame */
-                    addWarningString(i18n("%1: error decoding packet. Discarding packet\n").arg(m_playURL.pathOrUrl()));
-                    break;
-                }
-                else if (generated_output_bytes > 0) {
-                    time_t cur_time = time(NULL);
-                    SoundMetaData  md(m_decodedSize, cur_time - start_time, cur_time, i18n("internal stream, not stored (%1)", m_playURL.pathOrUrl()));
-
-                    DataBuffer buf(output_buf, generated_output_bytes, md, m_soundFormat);
-
-//                     printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
-//                     printf ("storing decoded data ...");
-                    pushBuffer(buf);
-//                     printf (" done\n");
-
-/*                    printf ("semaphore available: %i\n", m_runSemaphore.available());
-                    m_runSemaphore.acquire(1);
-                    if (!m_done) {
-                        SoundStreamDecodingStepEvent *e = new SoundStreamDecodingStepEvent(m_soundFormat, output_buf, generated_output_bytes, md);
-                        QApplication::postEvent(m_parent, e);
-                    }*/
-                    m_decodedSize += generated_output_bytes;
-                }
-
-                audio_pkt_data += processed_input_bytes;
-                audio_pkt_size -= processed_input_bytes;
-
+        int retries = 2;
+        unsigned int start_play_idx = (unsigned int) rint((m_playListURLs.size()-1) * (float)rand() / (float)RAND_MAX);
+        int n = m_playListURLs.size();
+        for (int i = 0; !m_decoderOpened && i < n; ++i) {
+            m_playURL = m_playListURLs[(start_play_idx + i) % n];
+            for (int j = 0; j < retries && !m_decoderOpened; ++j) {
+                addDebugString(i18n("opening stream %1", m_playURL.pathOrUrl()));
+                openAVStream(m_playURL.pathOrUrl(), true);
+            }
+            if (!m_decoderOpened) {
+                addWarningString(i18n("failed to open %1. Trying next stream in play list.", m_playURL.pathOrUrl()));
             }
         }
+        if (!m_decoderOpened) {
+            addErrorString(i18n("Could not open any input stream of %1.", m_inputURL.pathOrUrl()));
+        }
 
-        av_free_packet(&pkt);
-//         printf ("waiting for next packet\n");
+        AVPacket pkt;
+
+        time_t  start_time      = time(NULL);
+
+        while (!m_error && !m_done && m_decoderOpened && (av_read_frame(m_av_pFormatCtx, &pkt) >= 0)) {
+
+            if (!m_done && pkt.stream_index == m_av_audioStream) {
+
+                uint8_t *audio_pkt_data = pkt.data;
+                int      audio_pkt_size = pkt.size;
+
+                while (!m_error && !m_done && m_decoderOpened && (audio_pkt_size > 0)) {
+                    char output_buf[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
+                    int  generated_output_bytes = sizeof(output_buf);
+
+    #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 34, 0)
+                    int  processed_input_bytes = avcodec_decode_audio3(m_av_aCodecCtx,
+                                                                    (int16_t *)output_buf,
+                                                                    &generated_output_bytes,
+                                                                    &pkt);
+    #else
+                    int  processed_input_bytes = avcodec_decode_audio2(m_av_aCodecCtx,
+                                                                    (int16_t *)output_buf,
+                                                                    &generated_output_bytes,
+                                                                    audio_pkt_data,
+                                                                    audio_pkt_size);
+    #endif
+                    if (processed_input_bytes < 0) {
+                        /* if error, skip frame */
+                        addWarningString(i18n("%1: error decoding packet. Discarding packet\n").arg(m_playURL.pathOrUrl()));
+                        break;
+                    }
+                    else if (generated_output_bytes > 0) {
+                        time_t cur_time = time(NULL);
+                        SoundMetaData  md(m_decodedSize, cur_time - start_time, cur_time, i18n("internal stream, not stored (%1)", m_playURL.pathOrUrl()));
+
+                        DataBuffer buf(output_buf, generated_output_bytes, md, m_soundFormat);
+
+    //                     printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
+    //                     printf ("storing decoded data ...");
+                        pushBuffer(buf);
+    //                     printf (" done\n");
+
+    /*                    printf ("semaphore available: %i\n", m_runSemaphore.available());
+                        m_runSemaphore.acquire(1);
+                        if (!m_done) {
+                            SoundStreamDecodingStepEvent *e = new SoundStreamDecodingStepEvent(m_soundFormat, output_buf, generated_output_bytes, md);
+                            QApplication::postEvent(m_parent, e);
+                        }*/
+                        m_decodedSize += generated_output_bytes;
+                    }
+
+                    audio_pkt_data += processed_input_bytes;
+                    audio_pkt_size -= processed_input_bytes;
+
+                }
+            }
+
+            av_free_packet(&pkt);
+        //         printf ("waiting for next packet\n");
+        }
+
+        //     printf ("closing stream\n");
+        closeAVStream();
     }
+
 //     printf ("posting event\n");
     QApplication::postEvent(m_parent, new SoundStreamEncodingTerminatedEvent(m_soundFormat));
 
-//     printf ("closing stream\n");
-    closeAVStream();
     exit();
 }
 
@@ -470,6 +476,30 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
         return;
     }
 
+    // care a bit about maximum delay when opening and autodetecting the stream:
+    // two effects:
+    //   * av_open_input_{stream,file}   has some autodetection which tries to get
+    //                                   some quite high score, which may require loading
+    //                                   e.g. 256kB (WDR5) of data... that takes time...
+    //                                   However, less data (~8kB == 1 sec @ 64kBit) should be sufficient
+    //                                   This time can be tuned by m_av_pFormatCtx->probesize
+    //   * av_find_stream_info           is also looking for some extra data before starting playback...
+    //                                   this time can be tuned by m_av_pFormatCtx->max_analyze_duration
+
+
+    //av_log_set_level(255);
+    m_av_pFormatCtx = avformat_alloc_context();
+    memset(m_av_pFormatCtx, 0, sizeof(*m_av_pFormatCtx));
+    m_av_pFormatCtx->probesize = m_maxProbeSize;
+    m_av_pFormatCtx->max_analyze_duration = m_maxAnalyzeTime * AV_TIME_BASE;
+
+    AVFormatParameters av_params;
+    memset(&av_params, 0, sizeof(av_params));
+    av_params.prealloced_context = 1;
+
+
+    // if a format has been specified, set up the proper structures
+
     av_register_all();
     AVInputFormat   *iformat = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
 
@@ -499,7 +529,7 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
             iformat = av_find_input_format("asf");
         }
 
-        if (av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, NULL) != 0) {
+        if (av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, &av_params) != 0) {
             if (warningsNotErrors) {
                 addWarningString(i18n("Could not open Stream %1").arg(stream));
             } else {
@@ -511,7 +541,8 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
     }
     else {
 
-        if (av_open_input_file(&m_av_pFormatCtx, stream.toUtf8(), iformat, 0, NULL) != 0) {
+//         IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_open_input_file start");
+        if (av_open_input_file(&m_av_pFormatCtx, stream.toUtf8(), iformat, 0, &av_params) != 0) {
             if (warningsNotErrors) {
                 addWarningString(i18n("Could not open Stream %1").arg(stream));
             } else {
@@ -520,7 +551,12 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
             closeAVStream();
             return; // Couldn't open file
         }
+//         IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_open_input_file done");
     }
+
+//     m_av_pFormatCtx->max_analyze_duration = 1 * AV_TIME_BASE; // max 1 second, default is too long
+
+//     IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_find_stream_info start");
 
     // Retrieve stream information
     if (av_find_stream_info(m_av_pFormatCtx) < 0) {
@@ -532,6 +568,33 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
         closeAVStream();
         return; // Couldn't find stream information
     }
+
+//     IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_find_stream_info done");
+
+//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Title == %1").arg(m_av_pFormatCtx->title));
+//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Author == %1").arg(m_av_pFormatCtx->author));
+//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Copyright == %1").arg(m_av_pFormatCtx->copyright));
+//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Comment == %1").arg(m_av_pFormatCtx->comment));
+//
+//     AVMetadata    *metadata     = m_av_pFormatCtx->metadata;
+//     AVMetadataTag *metadata_tag = NULL;
+//
+//     while((metadata_tag = av_metadata_get(metadata, "", metadata_tag, AV_METADATA_IGNORE_SUFFIX))) {
+//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: MetadataTag: %1 => %2").arg(metadata_tag->key).arg(metadata_tag->value));
+//     }
+//
+//     for (unsigned int i = 0; i < m_av_pFormatCtx->nb_chapters; i++) {
+//         AVChapter *ch = m_av_pFormatCtx->chapters[i];
+//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Chapter %1").arg(i));
+//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream:     start: %1").arg(ch->start * av_q2d(ch->time_base)));
+//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream:     end:   %1").arg(ch->end   * av_q2d(ch->time_base)));
+//         metadata_tag = NULL;
+//         while((metadata_tag = av_metadata_get(ch->metadata, "", metadata_tag, AV_METADATA_IGNORE_SUFFIX))) {
+//             IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream:     MetadataTag: %1 => %2").arg(metadata_tag->key).arg(metadata_tag->value));
+//         }
+//     }
+//
+//     dump_format(m_av_pFormatCtx, 0, stream.toUtf8(), false);
 
 
     m_av_audioStream = -1;
