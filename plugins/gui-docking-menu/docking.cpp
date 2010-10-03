@@ -650,6 +650,8 @@ bool RadioDocking::handleClickAction(SystrayClickAction clickAction)
                 SoundFormat   sf;
                 queryIsRecordingRunning(ssid, q = false, sf);
                 if (!q) {
+                    if (!queryIsPowerOn())
+                        sendPowerOn();
                     sendStartRecording(ssid);
                 } else {
                     sendStopRecording(ssid);
