@@ -23,12 +23,15 @@ email                : emw-kradio@nocabal.de
 AlsaSoundDeviceMetaData::AlsaSoundDeviceMetaData(const QString &name, const QString &alsa_raw_description)
     : m_pcmDeviceName(name)
 {
+    IErrorLogClient::staticLogDebug("AlsaSoundDeviceMetaData::AlsaSoundDeviceMetaData: alsa device name: >>" + name + "<<");
+    IErrorLogClient::staticLogDebug("AlsaSoundDeviceMetaData::AlsaSoundDeviceMetaData: alsa raw description: >>" + alsa_raw_description + "<<");
+
     QStringList descrlines = alsa_raw_description.trimmed().split("\n");
 
     if (descrlines.size() > 1) {
         QStringList devDescrList   = descrlines[0].trimmed().split(",");
         m_cardDescription          = devDescrList[0].trimmed();
-        m_deviceDescription        = devDescrList[1].trimmed();
+        m_deviceDescription        = devDescrList.size() > 1 ? devDescrList[1].trimmed() : QString::null;
         m_deviceVerboseDescription = descrlines[1].trimmed();
     } else {
         m_cardDescription          = QString::null;
