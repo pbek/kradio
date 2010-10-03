@@ -364,10 +364,11 @@ bool V4LRadio::powerOff ()
     muteSource(m_SoundStreamSourceID, true);
     radio_done();
 
-    sendStopPlayback(m_SoundStreamSinkID);
-    sendStopCapture(m_SoundStreamSinkID);
-    closeSoundStream(m_SoundStreamSourceID);
-    closeSoundStream(m_SoundStreamSinkID);
+    sendStopRecording(m_SoundStreamSinkID);
+    sendStopPlayback (m_SoundStreamSinkID);
+    sendStopCapture  (m_SoundStreamSinkID);
+    closeSoundStream (m_SoundStreamSourceID);
+    closeSoundStream (m_SoundStreamSinkID);
     m_SoundStreamSourceID = createNewSoundStream(m_SoundStreamSourceID, false);
     m_SoundStreamSinkID   = m_SoundStreamSourceID;
     notifySoundStreamCreated(m_SoundStreamSourceID);
