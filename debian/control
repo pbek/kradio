@@ -13,7 +13,7 @@ Homepage: http://kradio.sourceforge.net/
 Package: kradio4
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Comfortable Radio Application for KDE 4.x
+Description: Comfortable AM/FM/Internet Radio Application for KDE 4.x
  KRadio is a comfortable AM/FM/Internet radio application for KDE 4.x with support 
  for V4L and V4L2 radio cards drivers.
  .

@@ -1,3 +1,9 @@
+
+2010-10-03
+
+    emw - fixed segfault in ALSA module caused by insufficient checks while
+          parsing ALSA device descriptions
+
 2010-10-02 (4.0.1)
 
     emw - internet radio: automatic reconnect if connection is terminated

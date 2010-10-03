@@ -28,6 +28,11 @@ For 4.0.2
     allow user to have better influence on proxy settings)
   * lirc 0.8.5 compatibility fixes
   * check box for v4l config to disable caps check at startup to minimize interference
+  * Fix segfault caused by dbus startrecording if power of 
+  * Fix startrecording with power off for internet radio
+  * provide drop-down box for radio device in v4l radio (but with option to
+    manually add device
+  * reactivate OSS support?
 
 For 4.0.x
 
