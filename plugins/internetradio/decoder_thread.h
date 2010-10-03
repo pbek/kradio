@@ -52,15 +52,16 @@ extern "C" {
 }
 
 
-class DecoderThread : public QThread
+
+
+
+class InternetRadioDecoder : public QObject
 {
 Q_OBJECT
 public:
-    DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers, int max_probe_size_bytes, float max_analyze_secs);
+    InternetRadioDecoder(QObject *event_parent, const InternetRadioStation &station, const KUrl::List &playlist, int max_buffers, int max_probe_size_bytes, float max_analyze_secs);
 
-    virtual ~DecoderThread();
-
-    void                  run();
+    virtual ~InternetRadioDecoder();
 
     bool                  error()         const { return m_error; }
     QString               errorString(bool resetError = true);
@@ -85,11 +86,13 @@ public:
 protected:
     void                  pushBuffer(const DataBuffer &);
 
+signals:
+    void                  sigSelfTrigger();
 
 protected slots:
 
-    void                  loadPlaylist();
-
+//     void                  loadPlaylist();
+    void                  run();
 
 protected:
     void                  addErrorString  (const QString &s);
@@ -97,10 +100,10 @@ protected:
     void                  addDebugString  (const QString &s);
 
 
-    void                  loadPlaylistM3U(bool errorIfEmpty = true);
-    void                  loadPlaylistLSC(bool errorIfEmpty = true);
-    void                  loadPlaylistPLS(bool errorIfEmpty = true);
-    void                  loadPlaylistASX(bool errorIfEmpty = true);
+//     void                  loadPlaylistM3U(bool errorIfEmpty = true);
+//     void                  loadPlaylistLSC(bool errorIfEmpty = true);
+//     void                  loadPlaylistPLS(bool errorIfEmpty = true);
+//     void                  loadPlaylistASX(bool errorIfEmpty = true);
 
 
     bool                  decoderOpened() const { return m_decoderOpened; }
@@ -139,8 +142,7 @@ protected:
     SoundFormat           m_soundFormat;
     quint64               m_decodedSize;
 
-    KUrl                  m_inputURL;
-    QList<KUrl>           m_playListURLs;
+    KUrl::List            m_playListURLs;
     KUrl                  m_playURL;
 
     QList<DataBuffer>     m_buffers;
@@ -150,6 +152,39 @@ protected:
     int                   m_maxProbeSize;    // in bytes,   see openAVStream
     float                 m_maxAnalyzeTime;  // in seconds, see openAVStream
 };
+
+
+
+
+
+
+
+
+
+
+
+class DecoderThread : public QThread
+{
+Q_OBJECT
+public:
+    DecoderThread(QObject *parent, const InternetRadioStation &station, const KUrl::List &playlist, int max_buffers, int max_probe_size_bytes, float max_analyze_secs);
+    virtual ~DecoderThread();
+
+    void                  run();
+
+    InternetRadioDecoder *decoder() const { return m_decoder; }
+
+protected:
+
+    InternetRadioStation  m_station;
+    int                   m_max_buffers;
+    int                   m_max_probe_size_bytes;
+    float                 m_max_analyze_secs;
+
+    InternetRadioDecoder *m_decoder;
+    KUrl::List            m_playlist;
+};
+
 
 
 #endif

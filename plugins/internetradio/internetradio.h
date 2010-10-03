@@ -176,6 +176,22 @@ protected:
     void    radio_done();  // terminates thread
     void    freeAllBuffers();
 
+
+protected slots:
+    void    slotPlaylistData(KIO::Job *job, const QByteArray &data);
+    void    slotPlaylistLoadDone(KJob *job);
+
+protected:
+    void    loadPlaylistStartJob();
+    QString getPlaylistClass();
+    void    interpretePlaylistData(const QByteArray &a);
+    void    interpretePlaylistLSC(const QByteArray &a);
+    void    interpretePlaylistM3U(const QByteArray &playlistData);
+    void    interpretePlaylistPLS(const QByteArray &playlistData);
+    void    interpretePlaylistASX(const QByteArray &xmlData);
+
+    void    startDecoderThread();
+
     void    searchMixer(ISoundStreamClient **playback_mixer);
 
     const InternetRadioStation *findMatchingStation(const StationList &sl) const;
@@ -186,9 +202,11 @@ protected:
 
 protected:
 
+    bool                          m_powerOn;
     DecoderThread                *m_decoderThread;
 
     InternetRadioStation          m_currentStation;
+    KUrl::List                    m_currentPlaylist;
     bool                          m_stereoFlag;
     bool                          m_muted;
 
@@ -211,6 +229,9 @@ protected:
     float                         m_maxStreamAnalyzeTime;  // in seconds, see DecoderThread::openAVStream
 
     bool                          m_waitForBufferMinFill;
+
+    QByteArray                    m_playlistData;
+    KIO::TransferJob             *m_playlistJob;
 
 //     KIO::MimetypeJob             *m_MimetypeJob;
 };

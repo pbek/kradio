@@ -8,6 +8,7 @@
         - stop recording v4l stream when powering off v4l plugin
         - power on before starting recording triggered by system tray icon/menu
         - fixed signal naming mistake in recording configuration dialog
+        - internet radio: big rework of playlist download method. should be much cleaner now
 
 2010-10-02 (4.0.1)
 

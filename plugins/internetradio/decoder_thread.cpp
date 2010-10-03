@@ -23,7 +23,7 @@
 
 #include <QtGui/QApplication>
 #include <QtCore/QXmlStreamReader>
-#include <QtCore/QTimer>
+#include <QtCore/QAbstractEventDispatcher>
 
 #include <kio/jobclasses.h>
 #include <kio/netaccess.h>
@@ -37,7 +37,7 @@
 #include "errorlog_interfaces.h"
 
 
-DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, int max_buffers, int max_probe_size_bytes, float max_analyze_secs)
+InternetRadioDecoder::InternetRadioDecoder(QObject *event_parent, const InternetRadioStation &rs, const KUrl::List &playlist, int max_buffers, int max_probe_size_bytes, float max_analyze_secs)
 :   m_decoderOpened (false),
     m_av_pFormatCtx (NULL),
     m_av_pFormatCtx_opened(false),
@@ -48,7 +48,7 @@ DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, in
     m_is_mms_stream (false),
     m_mms_stream    (NULL),
 
-    m_parent        (parent),
+    m_parent        (event_parent),
     m_RadioStation  (rs),
 
     m_error         (false),
@@ -61,196 +61,203 @@ DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, in
     m_done          (false),
 
     m_decodedSize   (0),
-    m_inputURL      (m_RadioStation.url()),
+
+    m_playListURLs  (playlist),
+
+/*    m_inputURL      (m_RadioStation.url()),*/
     m_bufferAccessLock(1),
     m_bufferCountSemaphore(max_buffers),
     m_maxProbeSize  (max_probe_size_bytes > 1024 ? max_probe_size_bytes : 4096),
     m_maxAnalyzeTime(max_analyze_secs > 0.01     ? max_analyze_secs     : 0.5)
 {
-    setTerminationEnabled(true);
+//     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: this->thread() = %012p",             thread()));
+//     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: dispatcher for this thread = %012p", QAbstractEventDispatcher::instance()));
+
+    QObject::connect(this, SIGNAL(sigSelfTrigger()), this, SLOT(run()), Qt::QueuedConnection);
+    emit sigSelfTrigger();
 }
 
-DecoderThread::~DecoderThread()
+InternetRadioDecoder::~InternetRadioDecoder()
 {
     flushBuffers();
     closeAVStream();
 }
 
 
-void DecoderThread::loadPlaylist()
+// void InternetRadioDecoder::loadPlaylist()
+// {
+//     IErrorLogClient::staticLogDebug("InternetRadioDecoder::loadPlaylist");
+//     QString plscls = m_RadioStation.playlistClass();
+//     if (plscls == "auto") {
+//         if (m_inputURL.path().endsWith(".lsc")) {
+//             loadPlaylistLSC();
+//         }
+//         else if (m_inputURL.path().endsWith(".m3u")) {
+//             loadPlaylistM3U();
+//         }
+//         else if (m_inputURL.path().endsWith(".pls")) {
+//             loadPlaylistPLS();
+//         }
+//         else if (m_inputURL.path().endsWith(".asx")) {
+//             loadPlaylistASX();
+//         } else {
+//             m_playListURLs.append(m_inputURL);
+//         }
+//     } else if (plscls == "lsc") {
+//             loadPlaylistLSC();
+//     } else if (plscls == "m3u") {
+//             loadPlaylistM3U();
+//     } else if (plscls == "asx") {
+//             loadPlaylistASX();
+//     } else if (plscls == "pls") {
+//             loadPlaylistPLS();
+//     } else {
+//         m_playListURLs.append(m_inputURL);
+//     }
+// }
+//
+//
+// void InternetRadioDecoder::loadPlaylistLSC(bool errorIfEmpty)
+// {
+//     loadPlaylistM3U(false);
+//     if (!m_playListURLs.size()) {
+//         loadPlaylistASX(errorIfEmpty);
+//     }
+// }
+//
+// void InternetRadioDecoder::loadPlaylistM3U(bool errorIfEmpty)
+// {
+//     IErrorLogClient::staticLogDebug(i18n("downloading playlist %1", m_inputURL.pathOrUrl()));
+//     QByteArray        playlistData;
+//     KIO::TransferJob *job = KIO::get(m_inputURL, KIO::NoReload, KIO::HideProgressInfo);
+//
+//     m_playListURLs.clear();
+//
+//     if (KIO::NetAccess::synchronousRun(job, NULL, &playlistData)) {
+//         QStringList lines = QString(playlistData).split("\n");
+//         QString line;
+//         foreach (line, lines) {
+//             QString t = line.trimmed();
+//             if (t.startsWith("http://") || t.startsWith("https://") || t.startsWith("mms://")) {
+//                 m_playListURLs.append(t);
+//             }
+//         }
+//         if (errorIfEmpty && !m_playListURLs.size()) {
+//             addErrorString(i18n("%1 does not contain any usable radio stream", m_inputURL.pathOrUrl()));
+//         }
+//     } else {
+//         addErrorString(i18n("failed to download %1", m_inputURL.pathOrUrl()));
+//     }
+//     job->deleteLater();
+// }
+//
+//
+// void InternetRadioDecoder::loadPlaylistPLS(bool errorIfEmpty)
+// {
+//     IErrorLogClient::staticLogDebug(i18n("downloading playlist %1", m_inputURL.pathOrUrl()));
+//
+//     m_playListURLs.clear();
+//
+//     QString tmpFile;
+//     if( KIO::NetAccess::download(m_inputURL, tmpFile, NULL) ) {
+//         KConfig      cfg(tmpFile);
+//
+//         // mapping group names to lower case in order to be case insensitive
+//         QStringList            groups = cfg.groupList();
+//         QMap<QString, QString> group_lc_map;
+//         QString                grp;
+//         foreach(grp, groups) {
+//             group_lc_map.insert(grp.toLower(), grp);
+//         }
+//
+//         KConfigGroup cfggrp = cfg.group(group_lc_map["playlist"]);
+//
+//         // mapping entry keys to lower case in order to be case insensitive
+//         QStringList keys = cfggrp.keyList();
+//         QMap<QString, QString> key_lc_map;
+//         QString key;
+//         foreach(key, keys) {
+//             key_lc_map.insert(key.toLower(), key);
+//         }
+//
+//         unsigned int entries = cfggrp.readEntry(key_lc_map["numberofentries"], 0);
+//         if (entries) {
+//             for (unsigned int i = 0; i < entries; ++i) {
+//                 QString url = cfggrp.readEntry(key_lc_map[QString("file%1").arg(i)], QString());
+//                 if (url.length()) {
+//                     m_playListURLs.append(url);
+//                 }
+//             }
+//         }
+//
+//         if (errorIfEmpty && !m_playListURLs.size()) {
+//             addErrorString(i18n("%1 does not contain any usable radio stream", m_inputURL.pathOrUrl()));
+//         }
+//         KIO::NetAccess::removeTempFile(tmpFile);
+//     } else {
+//         addErrorString(i18n("failed to download %1", m_inputURL.pathOrUrl()));
+//     }
+// }
+//
+//
+// void InternetRadioDecoder::loadPlaylistASX(bool errorIfEmpty)
+// {
+//     QByteArray        xmlData;
+//     KIO::TransferJob *job = KIO::get(m_inputURL, KIO::NoReload, KIO::HideProgressInfo);
+//
+//     m_playListURLs.clear();
+//
+//     if (KIO::NetAccess::synchronousRun(job, NULL, &xmlData)) {
+//         QXmlStreamReader reader(xmlData);
+//
+//         bool inEntry = false;
+//
+//         while (!reader.atEnd() && (reader.error() == QXmlStreamReader::NoError)) {
+//             reader.readNext();
+//             if (reader.isStartElement()) {
+//                 QStringRef name = reader.name();
+//                 if (name.toString().toLower() == "entry") {
+//                     inEntry = true;
+//                 }
+//                 else if (name.toString().toLower() == "ref" && inEntry) {
+//                     QXmlStreamAttributes attrs = reader.attributes();
+//                     QXmlStreamAttribute  attr;
+//                     foreach(attr, attrs) {
+//                         if(attr.name().toString().toLower() == "href") {
+//                             m_playListURLs.append(attr.value().toString());
+//                         }
+//                     }
+//                 }
+//             }
+//             else if (reader.isEndElement()) {
+//                 QStringRef name = reader.name();
+//                 if (name == "entry") {
+//                     inEntry = false;
+//                 }
+//             }
+//         }
+//
+//         if (reader.error() != QXmlStreamReader::NoError) {
+//             addErrorString(i18n("error while reading asx file", reader.error()));
+//         }
+//
+//         if (errorIfEmpty && !m_playListURLs.size()) {
+//             addErrorString(i18n("%1 does not contain any usable radio stream", m_inputURL.pathOrUrl()));
+//         }
+//
+//     } else {
+//         addErrorString(i18n("failed to download %1", m_inputURL.pathOrUrl()));
+//     }
+//     job->deleteLater();
+// }
+
+
+void InternetRadioDecoder::run()
 {
-    QString plscls = m_RadioStation.playlistClass();
-    if (plscls == "auto") {
-        if (m_inputURL.path().endsWith(".lsc")) {
-            loadPlaylistLSC();
-        }
-        else if (m_inputURL.path().endsWith(".m3u")) {
-            loadPlaylistM3U();
-        }
-        else if (m_inputURL.path().endsWith(".pls")) {
-            loadPlaylistPLS();
-        }
-        else if (m_inputURL.path().endsWith(".asx")) {
-            loadPlaylistASX();
-        } else {
-            m_playListURLs.append(m_inputURL);
-        }
-    } else if (plscls == "lsc") {
-            loadPlaylistLSC();
-    } else if (plscls == "m3u") {
-            loadPlaylistM3U();
-    } else if (plscls == "asx") {
-            loadPlaylistASX();
-    } else if (plscls == "pls") {
-            loadPlaylistPLS();
-    } else {
-        m_playListURLs.append(m_inputURL);
-    }
-    // exit event loop, but continue with decoding
-    quit();
-}
+//     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::run: this->thread() = %012p",             thread()));
+//     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::run: dispatcher for this thread = %012p", QAbstractEventDispatcher::instance(this)));
 
-
-void DecoderThread::loadPlaylistLSC(bool errorIfEmpty)
-{
-    loadPlaylistM3U(false);
-    if (!m_playListURLs.size()) {
-        loadPlaylistASX(errorIfEmpty);
-    }
-}
-
-void DecoderThread::loadPlaylistM3U(bool errorIfEmpty)
-{
-    IErrorLogClient::staticLogDebug(i18n("downloading playlist %1", m_inputURL.pathOrUrl()));
-    QByteArray        playlistData;
-    KIO::TransferJob *job = KIO::get(m_inputURL, KIO::NoReload, KIO::HideProgressInfo);
-
-    m_playListURLs.clear();
-
-    if (KIO::NetAccess::synchronousRun(job, NULL, &playlistData)) {
-        QStringList lines = QString(playlistData).split("\n");
-        QString line;
-        foreach (line, lines) {
-            QString t = line.trimmed();
-            if (t.startsWith("http://") || t.startsWith("https://") || t.startsWith("mms://")) {
-                m_playListURLs.append(t);
-            }
-        }
-        if (errorIfEmpty && !m_playListURLs.size()) {
-            addErrorString(i18n("%1 does not contain any usable radio stream", m_inputURL.pathOrUrl()));
-        }
-    } else {
-        addErrorString(i18n("failed to download %1", m_inputURL.pathOrUrl()));
-    }
-}
-
-
-void DecoderThread::loadPlaylistPLS(bool errorIfEmpty)
-{
-    IErrorLogClient::staticLogDebug(i18n("downloading playlist %1", m_inputURL.pathOrUrl()));
-
-    m_playListURLs.clear();
-
-    QString tmpFile;
-    if( KIO::NetAccess::download(m_inputURL, tmpFile, NULL) ) {
-        KConfig      cfg(tmpFile);
-
-        // mapping group names to lower case in order to be case insensitive
-        QStringList            groups = cfg.groupList();
-        QMap<QString, QString> group_lc_map;
-        QString                grp;
-        foreach(grp, groups) {
-            group_lc_map.insert(grp.toLower(), grp);
-        }
-
-        KConfigGroup cfggrp = cfg.group(group_lc_map["playlist"]);
-
-        // mapping entry keys to lower case in order to be case insensitive
-        QStringList keys = cfggrp.keyList();
-        QMap<QString, QString> key_lc_map;
-        QString key;
-        foreach(key, keys) {
-            key_lc_map.insert(key.toLower(), key);
-        }
-
-        unsigned int entries = cfggrp.readEntry(key_lc_map["numberofentries"], 0);
-        if (entries) {
-            for (unsigned int i = 0; i < entries; ++i) {
-                QString url = cfggrp.readEntry(key_lc_map[QString("file%1").arg(i)], QString());
-                if (url.length()) {
-                    m_playListURLs.append(url);
-                }
-            }
-        }
-
-        if (errorIfEmpty && !m_playListURLs.size()) {
-            addErrorString(i18n("%1 does not contain any usable radio stream", m_inputURL.pathOrUrl()));
-        }
-        KIO::NetAccess::removeTempFile(tmpFile);
-    } else {
-        addErrorString(i18n("failed to download %1", m_inputURL.pathOrUrl()));
-    }
-}
-
-
-void DecoderThread::loadPlaylistASX(bool errorIfEmpty)
-{
-    QByteArray        xmlData;
-    KIO::TransferJob *job = KIO::get(m_inputURL, KIO::NoReload, KIO::HideProgressInfo);
-
-    m_playListURLs.clear();
-
-    if (KIO::NetAccess::synchronousRun(job, NULL, &xmlData)) {
-        QXmlStreamReader reader(xmlData);
-
-        bool inEntry = false;
-
-        while (!reader.atEnd() && (reader.error() == QXmlStreamReader::NoError)) {
-            reader.readNext();
-            if (reader.isStartElement()) {
-                QStringRef name = reader.name();
-                if (name.toString().toLower() == "entry") {
-                    inEntry = true;
-                }
-                else if (name.toString().toLower() == "ref" && inEntry) {
-                    QXmlStreamAttributes attrs = reader.attributes();
-                    QXmlStreamAttribute  attr;
-                    foreach(attr, attrs) {
-                        if(attr.name().toString().toLower() == "href") {
-                            m_playListURLs.append(attr.value().toString());
-                        }
-                    }
-                }
-            }
-            else if (reader.isEndElement()) {
-                QStringRef name = reader.name();
-                if (name == "entry") {
-                    inEntry = false;
-                }
-            }
-        }
-
-        if (reader.error() != QXmlStreamReader::NoError) {
-            addErrorString(i18n("error while reading asx file", reader.error()));
-        }
-
-        if (errorIfEmpty && !m_playListURLs.size()) {
-            addErrorString(i18n("%1 does not contain any usable radio stream", m_inputURL.pathOrUrl()));
-        }
-
-    } else {
-        addErrorString(i18n("failed to download %1", m_inputURL.pathOrUrl()));
-    }
-}
-
-
-void DecoderThread::run()
-{
-    setTerminationEnabled(true);
-
-    // load play list requires event loop
-    QTimer::singleShot(100, this, SLOT(loadPlaylist()));
-    exec();
+//     loadPlaylist();
 
     while (!m_error && !m_done) {
 
@@ -268,7 +275,7 @@ void DecoderThread::run()
             }
         }
         if (!m_decoderOpened) {
-            addErrorString(i18n("Could not open any input stream of %1.", m_inputURL.pathOrUrl()));
+            addErrorString(i18n("Could not open any input stream of %1.", m_RadioStation.url().pathOrUrl()));
         }
 
         AVPacket pkt;
@@ -338,13 +345,12 @@ void DecoderThread::run()
     }
 
 //     printf ("posting event\n");
-    QApplication::postEvent(m_parent, new SoundStreamEncodingTerminatedEvent(m_soundFormat));
 
-    exit();
+    thread()->exit();
 }
 
 
-void DecoderThread::pushBuffer(const DataBuffer &buf)
+void InternetRadioDecoder::pushBuffer(const DataBuffer &buf)
 {
     m_bufferCountSemaphore.acquire();
     m_bufferAccessLock.acquire();
@@ -353,7 +359,7 @@ void DecoderThread::pushBuffer(const DataBuffer &buf)
 }
 
 
-int DecoderThread::availableBuffers()
+int InternetRadioDecoder::availableBuffers()
 {
     int n = 0;
     m_bufferAccessLock.acquire();
@@ -362,7 +368,7 @@ int DecoderThread::availableBuffers()
     return n;
 }
 
-DataBuffer &DecoderThread::getFirstBuffer()
+DataBuffer &InternetRadioDecoder::getFirstBuffer()
 {
     DataBuffer *tmp;
     m_bufferAccessLock.acquire();
@@ -371,7 +377,7 @@ DataBuffer &DecoderThread::getFirstBuffer()
     return *tmp;
 }
 
-void DecoderThread::popFirstBuffer()
+void InternetRadioDecoder::popFirstBuffer()
 {
     m_bufferAccessLock.acquire();
     DataBuffer &buf = m_buffers.first();
@@ -381,7 +387,7 @@ void DecoderThread::popFirstBuffer()
     m_bufferCountSemaphore.release();
 }
 
-void DecoderThread::flushBuffers()
+void InternetRadioDecoder::flushBuffers()
 {
     m_bufferAccessLock.acquire();
     while (m_buffers.size()) {
@@ -393,12 +399,12 @@ void DecoderThread::flushBuffers()
     m_bufferAccessLock.release();
 }
 
-void DecoderThread::setDone()
+void InternetRadioDecoder::setDone()
 {
     m_done = true;
 }
 
-QString DecoderThread::errorString(bool resetError)
+QString InternetRadioDecoder::errorString(bool resetError)
 {
     m_modErrWarnSemaphore.acquire();
     QString ret = QString(m_errorString.constData(), m_errorString.length()); // deep copy
@@ -410,7 +416,7 @@ QString DecoderThread::errorString(bool resetError)
     return ret;
 }
 
-QString DecoderThread::warningString(bool resetWarning)
+QString InternetRadioDecoder::warningString(bool resetWarning)
 {
     m_modErrWarnSemaphore.acquire();
     QString ret = QString(m_warningString.constData(), m_warningString.length()); // deep copy
@@ -422,7 +428,7 @@ QString DecoderThread::warningString(bool resetWarning)
     return ret;
 }
 
-QString DecoderThread::debugString(bool resetWarning)
+QString InternetRadioDecoder::debugString(bool resetWarning)
 {
     m_modErrWarnSemaphore.acquire();
     QString ret = QString(m_debugString.constData(), m_debugString.length()); // deep copy
@@ -434,7 +440,7 @@ QString DecoderThread::debugString(bool resetWarning)
     return ret;
 }
 
-void DecoderThread::addErrorString(const QString &s)
+void InternetRadioDecoder::addErrorString(const QString &s)
 {
     m_modErrWarnSemaphore.acquire();
     m_error = true;
@@ -445,7 +451,7 @@ void DecoderThread::addErrorString(const QString &s)
     m_modErrWarnSemaphore.release();
 }
 
-void DecoderThread::addWarningString(const QString &s)
+void InternetRadioDecoder::addWarningString(const QString &s)
 {
     m_modErrWarnSemaphore.acquire();
     m_warning = true;
@@ -456,7 +462,7 @@ void DecoderThread::addWarningString(const QString &s)
     m_modErrWarnSemaphore.release();
 }
 
-void DecoderThread::addDebugString(const QString &s)
+void InternetRadioDecoder::addDebugString(const QString &s)
 {
     m_modErrWarnSemaphore.acquire();
     m_debug = true;
@@ -472,7 +478,7 @@ static int mms_read_packet(void *opaque, uint8_t *buf, int buf_size)
     return mmsx_read(NULL, (mmsx_t*)opaque, (char*)buf, buf_size);
 }
 
-void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
+void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotErrors)
 {
     if (m_decoderOpened) {
         return;
@@ -547,7 +553,7 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
     }
     else {
 
-//         IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_open_input_file start");
+//         IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_open_input_file start");
         if (av_open_input_file(&m_av_pFormatCtx, stream.toUtf8(), iformat, 0, &av_params) != 0) {
             if (warningsNotErrors) {
                 addWarningString(i18n("Could not open Stream %1").arg(stream));
@@ -558,12 +564,12 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
             return; // Couldn't open file
         }
         m_av_pFormatCtx_opened = true;
-//         IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_open_input_file done");
+//         IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_open_input_file done");
     }
 
 //     m_av_pFormatCtx->max_analyze_duration = 1 * AV_TIME_BASE; // max 1 second, default is too long
 
-//     IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_find_stream_info start");
+//     IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_find_stream_info start");
 
     // Retrieve stream information
     if (av_find_stream_info(m_av_pFormatCtx) < 0) {
@@ -576,28 +582,28 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
         return; // Couldn't find stream information
     }
 
-//     IErrorLogClient::staticLogDebug("DecoderThread::openAVStream: av_find_stream_info done");
+//     IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_find_stream_info done");
 
-//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Title == %1").arg(m_av_pFormatCtx->title));
-//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Author == %1").arg(m_av_pFormatCtx->author));
-//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Copyright == %1").arg(m_av_pFormatCtx->copyright));
-//     IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Comment == %1").arg(m_av_pFormatCtx->comment));
+//     IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream: Title == %1").arg(m_av_pFormatCtx->title));
+//     IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream: Author == %1").arg(m_av_pFormatCtx->author));
+//     IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream: Copyright == %1").arg(m_av_pFormatCtx->copyright));
+//     IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream: Comment == %1").arg(m_av_pFormatCtx->comment));
 //
 //     AVMetadata    *metadata     = m_av_pFormatCtx->metadata;
 //     AVMetadataTag *metadata_tag = NULL;
 //
 //     while((metadata_tag = av_metadata_get(metadata, "", metadata_tag, AV_METADATA_IGNORE_SUFFIX))) {
-//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: MetadataTag: %1 => %2").arg(metadata_tag->key).arg(metadata_tag->value));
+//         IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream: MetadataTag: %1 => %2").arg(metadata_tag->key).arg(metadata_tag->value));
 //     }
 //
 //     for (unsigned int i = 0; i < m_av_pFormatCtx->nb_chapters; i++) {
 //         AVChapter *ch = m_av_pFormatCtx->chapters[i];
-//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream: Chapter %1").arg(i));
-//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream:     start: %1").arg(ch->start * av_q2d(ch->time_base)));
-//         IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream:     end:   %1").arg(ch->end   * av_q2d(ch->time_base)));
+//         IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream: Chapter %1").arg(i));
+//         IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream:     start: %1").arg(ch->start * av_q2d(ch->time_base)));
+//         IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream:     end:   %1").arg(ch->end   * av_q2d(ch->time_base)));
 //         metadata_tag = NULL;
 //         while((metadata_tag = av_metadata_get(ch->metadata, "", metadata_tag, AV_METADATA_IGNORE_SUFFIX))) {
-//             IErrorLogClient::staticLogDebug(QString("DecoderThread::openAVStream:     MetadataTag: %1 => %2").arg(metadata_tag->key).arg(metadata_tag->value));
+//             IErrorLogClient::staticLogDebug(QString("InternetRadioDecoder::openAVStream:     MetadataTag: %1 => %2").arg(metadata_tag->key).arg(metadata_tag->value));
 //         }
 //     }
 //
@@ -654,7 +660,7 @@ void DecoderThread::openAVStream(const QString &stream, bool warningsNotErrors)
 }
 
 
-void DecoderThread::closeAVStream()
+void InternetRadioDecoder::closeAVStream()
 {
     if (m_av_aCodecCtx) {
         avcodec_close(m_av_aCodecCtx);
@@ -683,5 +689,61 @@ void DecoderThread::closeAVStream()
     m_av_aCodec      = NULL;
     m_decoderOpened  = false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DecoderThread::DecoderThread(QObject *parent, const InternetRadioStation &rs, const KUrl::List &playlist, int max_buffers, int max_probe_size_bytes, float max_analyze_secs)
+    : QThread(parent),
+      m_station(rs),
+      m_max_buffers(max_buffers),
+      m_max_probe_size_bytes(max_probe_size_bytes),
+      m_max_analyze_secs(max_analyze_secs),
+      m_decoder(NULL),
+      m_playlist(playlist)
+{
+    setTerminationEnabled(true);
+}
+
+
+DecoderThread::~DecoderThread()
+{
+    if (m_decoder) {
+        delete m_decoder;
+        m_decoder = NULL;
+    }
+}
+
+void DecoderThread::run()
+{
+    setTerminationEnabled(true);
+    m_decoder = new InternetRadioDecoder(parent(), m_station, m_playlist, m_max_buffers, m_max_probe_size_bytes, m_max_analyze_secs);
+//     IErrorLogClient::staticLogDebug("DecoderThread::exec()");
+    exec();
+//     QApplication::postEvent(parent(), new SoundStreamEncodingTerminatedEvent(m_decoder->soundFormat()));
+    delete m_decoder;
+    m_decoder = NULL;
+    deleteLater();
+    exit();
+}
+
 
 
