@@ -150,8 +150,8 @@ void DBusSupport::playbackPause()
         SoundStreamID streamSinkID = queryCurrentSoundStreamSinkID();
         bool          paused       = false;
         queryIsPlaybackPaused(streamSinkID, paused);
-        if (paused) {
-            sendResumePlayback(streamSinkID);
+        if (!paused) {
+            sendPausePlayback(streamSinkID);
         }
     }
 }
@@ -162,8 +162,8 @@ void DBusSupport::playbackResume()
         SoundStreamID streamSinkID = queryCurrentSoundStreamSinkID();
         bool          paused       = false;
         queryIsPlaybackPaused(streamSinkID, paused);
-        if (!paused) {
-            sendPausePlayback(streamSinkID);
+        if (paused) {
+            sendResumePlayback(streamSinkID);
         }
     }
 }
@@ -200,29 +200,29 @@ void DBusSupport::decreaseVolume()
 
 void DBusSupport::nextStation()
 {
-    if (queryIsPowerOn()) {
+//     if (queryIsPowerOn()) {
         int k = queryCurrentStationIdx() + 1;
         if (k >= queryStations().count())
             k = 0;
         sendActivateStation(k);
-    }
+//     }
 }
 
 void DBusSupport::prevStation()
 {
-    if (queryIsPowerOn()) {
+//     if (queryIsPowerOn()) {
         int k = queryCurrentStationIdx() - 1;
         if (k < 0)
             k = queryStations().count() - 1;
         sendActivateStation(k);
-    }
+//     }
 }
 
 void DBusSupport::setStation(int idx)
 {
-    if (queryIsPowerOn()) {
+//     if (queryIsPowerOn()) {
         sendActivateStation(idx);
-    }
+//     }
 }
 
 void DBusSupport::setStation(const QString &stationid)
