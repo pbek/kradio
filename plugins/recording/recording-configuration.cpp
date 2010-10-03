@@ -49,7 +49,7 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
     connect(editFileFormat,               SIGNAL(activated(int)),               SLOT(slotSetDirty()));
     connect(editMP3Quality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(editOggQuality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
-    connect(editDirectory,                SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
+    connect(editDirectory,                SIGNAL(textChanged(const QString &)), SLOT(slotSetDirty()));
     connect(editBufferSize,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(editBufferCount,              SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(m_spinboxPreRecordingSeconds, SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
