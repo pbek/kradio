@@ -3,6 +3,8 @@
 
     emw - fixed segfault in ALSA module caused by insufficient checks while
           parsing ALSA device descriptions
+        - fixed mix up of pause/resume in dbus plugin
+        - dbus plugin can change stations even if power is off
 
 2010-10-02 (4.0.1)
 
