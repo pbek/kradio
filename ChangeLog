@@ -6,6 +6,7 @@
         - fixed mix up of pause/resume in dbus plugin
         - dbus plugin can change stations even if power is off
         - stop recording v4l stream when powering off v4l plugin
+        - power on before starting recording triggered by system tray icon/menu
 
 2010-10-02 (4.0.1)
 
