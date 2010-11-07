@@ -55,6 +55,14 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
 {
 
     setupUi(this);
+    QButtonGroup *bgProbe = new QButtonGroup(this);
+    bgProbe->addButton(m_rbProbeAtPowerOn);
+    bgProbe->addButton(m_rbProbeAtStartup);
+    QButtonGroup *bgV4L  = new QButtonGroup(this);
+    bgV4L->addButton(rbV4L1Version);
+    bgV4L->addButton(rbV4L2Version);
+
+
     m_PlaybackMixerHelper  .setList(comboPlaybackMixerDevice);
     m_CaptureMixerHelper   .setList(comboCaptureMixerDevice);
     m_PlaybackChannelHelper.setList(comboPlaybackMixerChannel);
@@ -64,7 +72,7 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
 
     QObject::connect(buttonSelectRadioDevice, SIGNAL(clicked()),
                      this, SLOT(selectRadioDevice()));
-    editRadioDevice->installEventFilter(this);
+//     m_cbRadioDevice->installEventFilter(this);
     QObject::connect(editMinFrequency, SIGNAL(valueChanged(int)),
                      this, SLOT(guiMinFrequencyChanged(int)));
     QObject::connect(editMaxFrequency, SIGNAL(valueChanged(int)),
@@ -93,8 +101,11 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
     QObject::connect(comboCaptureMixerDevice, SIGNAL(activated(int)),
                      this, SLOT(slotComboCaptureMixerSelected(int)));
 
-    QObject::connect(editRadioDevice, SIGNAL(editingFinished()),
+    QObject::connect(m_cbRadioDevice, SIGNAL(editTextChanged(QString)),
                      this, SLOT(slotEditRadioDeviceChanged()));
+
+    QObject::connect(m_cbRadioDevice, SIGNAL(currentIndexChanged(int)),
+                     this, SLOT(slotRadioDeviceIndexChanged(int)));
 
     sliderBalance->installEventFilter(this);
 }
@@ -123,6 +134,19 @@ bool V4LRadioConfiguration::disconnectI (Interface *i)
     bool d = ISoundStreamClient::disconnectI(i);
     return a || b || c || d;
 }
+
+void V4LRadioConfiguration::noticeConnectedI (IV4LCfg *cfg, bool pointer_valid)
+{
+    IV4LCfgClient::noticeConnectedI(cfg, pointer_valid);
+    populateDeviceComboBox();
+}
+
+void V4LRadioConfiguration::noticeDisconnectedI (IV4LCfg *cfg, bool pointer_valid)
+{
+    IV4LCfgClient::noticeDisconnectedI(cfg, pointer_valid);
+    populateDeviceComboBox();
+}
+
 
 void V4LRadioConfiguration::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
 {
@@ -181,7 +205,7 @@ bool V4LRadioConfiguration::noticeRadioDeviceChanged(const QString &s)
 {
     bool old = m_ignoreGUIChanges;
     m_ignoreGUIChanges = true;
-    editRadioDevice->setText(s);
+    m_cbRadioDevice->setEditText(s);
     m_ignoreGUIChanges = old;
 
     slotEditRadioDeviceChanged();
@@ -350,6 +374,16 @@ bool V4LRadioConfiguration::noticeForceRDSEnabledChanged(bool a)
     return true;
 }
 
+bool V4LRadioConfiguration::noticeDeviceProbeAtStartupChanged(bool e)
+{
+    bool old = m_ignoreGUIChanges;
+    m_ignoreGUIChanges = true;
+    m_rbProbeAtStartup->setChecked(e);
+    m_rbProbeAtPowerOn->setChecked(!e);
+    m_ignoreGUIChanges = old;
+    return true;
+}
+
 bool V4LRadioConfiguration::noticeVolumeZeroOnPowerOffChanged(bool a)
 {
     bool old = m_ignoreGUIChanges;
@@ -376,7 +410,7 @@ bool V4LRadioConfiguration::noticeDescriptionChanged (const QString &s, const IR
 {
     QString descr = !s.isEmpty() ? s : i18n("Could not get device description.");
 
-    const QString    &devname = editRadioDevice->text();
+    const QString    &devname = m_cbRadioDevice->currentText();
     QFileInfo         dev(devname);
     if (!dev.exists()) {
         descr = i18n("Device file does not exist or top level directories are not accessible.");
@@ -525,7 +559,7 @@ void V4LRadioConfiguration::selectRadioDevice()
     fd.setCaption (i18n("Select Radio Device"));
 
     if (fd.exec() == QDialog::Accepted) {
-        editRadioDevice->setText(fd.selectedFile());
+        m_cbRadioDevice->setEditText(fd.selectedFile());
         slotEditRadioDeviceChanged();
     }
 }
@@ -533,20 +567,25 @@ void V4LRadioConfiguration::selectRadioDevice()
 
 bool V4LRadioConfiguration::eventFilter(QObject *o, QEvent *e)
 {
-    if (e->type() == QEvent::FocusOut && o == editRadioDevice) {
+/*    if (e->type() == QEvent::FocusOut && o == editRadioDevice) {
         slotEditRadioDeviceChanged();
-    }
+    }*/
     if (e->type() == QEvent::MouseButtonDblClick && o == sliderBalance) {
         slotBalanceCenter();
     }
     return false;
 }
 
+void V4LRadioConfiguration::slotRadioDeviceIndexChanged(int idx)
+{
+    m_cbRadioDevice->setEditText(m_cbRadioDevice->itemData(idx).toString());
+    slotEditRadioDeviceChanged();
+}
 
 void V4LRadioConfiguration::slotEditRadioDeviceChanged()
 {
     if (m_ignoreGUIChanges) return;
-    const QString &s = editRadioDevice->text();
+    const QString &s = m_cbRadioDevice->currentText();
     if (s != queryRadioDevice()) { // || !queryIsPowerOn()) {
         V4LCaps c = queryCapabilities(s);
         noticeDescriptionChanged(c.description);
@@ -595,7 +634,7 @@ void V4LRadioConfiguration::slotOK()
         tmp_vo = V4L_Version2;
     }
     sendV4LVersionOverride(tmp_vo);
-    sendRadioDevice(editRadioDevice->text());
+    sendRadioDevice(m_cbRadioDevice->currentText());
 
     sendScanStep(((float)editScanStep->value()) / 1000.0);
 
@@ -608,9 +647,10 @@ void V4LRadioConfiguration::slotOK()
     QString plb_channel_id = m_PlaybackChannelHelper.getCurrentItemID();
     sendPlaybackMixer (plb_mixer_id, plb_channel_id, false);
 
-    sendActivePlayback (m_checkboxActivePlayback->isChecked(), m_checkboxActivePlaybackMuteCaptureChannelPlayback->isChecked());
-    sendMuteOnPowerOff (m_checkboxMuteOnPowerOff->isChecked());
-    sendForceRDSEnabled(m_checkboxForceRDSEnabled->isChecked());
+    sendActivePlayback      (m_checkboxActivePlayback ->isChecked(), m_checkboxActivePlaybackMuteCaptureChannelPlayback->isChecked());
+    sendMuteOnPowerOff      (m_checkboxMuteOnPowerOff ->isChecked());
+    sendForceRDSEnabled     (m_checkboxForceRDSEnabled->isChecked());
+    sendDeviceProbeAtStartup(m_rbProbeAtStartup       ->isChecked());
     sendVolumeZeroOnPowerOff(m_checkboxVolumeZeroOnPowerOff->isChecked());
 
     queryTreble (m_SoundStreamID, m_orgTreble);
@@ -631,11 +671,12 @@ void V4LRadioConfiguration::slotCancel()
     noticeMinMaxFrequencyChanged(queryMinFrequency(), queryMaxFrequency());
     bool mutecaptureplayback = false;
     bool activepb            = queryActivePlayback(mutecaptureplayback);
-    noticeActivePlaybackChanged (activepb, mutecaptureplayback);
-    noticeMuteOnPowerOffChanged (queryMuteOnPowerOff());
-    noticeForceRDSEnabledChanged(queryForceRDSEnabled());
+    noticeActivePlaybackChanged      (activepb, mutecaptureplayback);
+    noticeMuteOnPowerOffChanged      (queryMuteOnPowerOff());
+    noticeForceRDSEnabledChanged     (queryForceRDSEnabled());
+    noticeDeviceProbeAtStartupChanged(queryDeviceProbeAtStartup());
     noticeVolumeZeroOnPowerOffChanged(queryVolumeZeroOnPowerOff());
-    noticeV4LVersionOverrideChanged(queryV4LVersionOverride());
+    noticeV4LVersionOverrideChanged  (queryV4LVersionOverride());
 
     float q = 0;
     querySignalMinQuality(m_SoundStreamID, q);
@@ -732,6 +773,15 @@ void V4LRadioConfiguration::slotBalanceCenter()
     ++m_myControlChange;
     sendBalance(m_SoundStreamID, 0);
     --m_myControlChange;
+}
+
+
+void V4LRadioConfiguration::populateDeviceComboBox()
+{
+    m_cbRadioDevice->clear();
+    foreach (const DeviceInfo &dev, queryDeviceProposals()) {
+        m_cbRadioDevice->addItem(dev.description, dev.path);
+    }
 }
 
 

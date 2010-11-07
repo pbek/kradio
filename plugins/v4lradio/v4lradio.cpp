@@ -40,6 +40,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QList>
 #include <QtCore/QSocketNotifier>
+#include <QtCore/QDir>
 
 #include <kconfiggroup.h>
 #include <kiconloader.h>
@@ -106,6 +107,7 @@ V4LRadio::V4LRadio(const QString &instanceID, const QString &name)
     m_MuteOnPowerOff(false),
     m_VolumeZeroOnPowerOff(false),
     m_restorePowerOn(false),
+    m_deviceProbeAtStartup(false),
     m_V4L_version_override(V4L_Version2),
     m_V4L_version_override_by_kernel_once(false),
     m_RDS_notify(NULL),
@@ -962,7 +964,7 @@ bool  V4LRadio::setRadioDevice(const QString &s)
         powerOff();
         m_radioDev = s;
 
-        m_caps = readV4LCaps(m_radioDev);
+        m_caps = (p || m_deviceProbeAtStartup) ? readV4LCaps(m_radioDev) : V4LCaps();
         notifyRadioDeviceChanged(m_radioDev);
         notifyDescriptionChanged(m_caps.description);
         notifyCapabilitiesChanged(m_caps);
@@ -1086,10 +1088,10 @@ bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QStrin
 
 V4LCaps V4LRadio::getCapabilities(const QString &dev) const
 {
-    if (dev.isNull()) {
+    if (dev.isNull() || dev.isEmpty()) {
         return m_caps;
     } else {
-        return readV4LCaps(dev);
+        return (isPowerOn() || m_deviceProbeAtStartup) ? readV4LCaps(dev) : V4LCaps();
     }
 }
 
@@ -1149,6 +1151,15 @@ bool V4LRadio::setForceRDSEnabled(bool a)
     return true;
 }
 
+bool V4LRadio::setDeviceProbeAtStartup(bool e)
+{
+    if (e != m_deviceProbeAtStartup) {
+        m_deviceProbeAtStartup = e;
+        notifyDeviceProbeAtStartupChanged(m_deviceProbeAtStartup);
+    }
+    return true;
+}
+
 bool V4LRadio::setMuteOnPowerOff(bool a)
 {
     if (a != m_MuteOnPowerOff) {
@@ -1172,7 +1183,7 @@ bool V4LRadio::setV4LVersionOverride(V4LVersion vo)
     if (vo != m_V4L_version_override) {
         m_V4L_version_override = vo;
         notifyV4LVersionOverrideChanged(m_V4L_version_override);
-        m_caps = readV4LCaps(m_radioDev);
+        m_caps = (isPowerOn() || m_deviceProbeAtStartup) ? readV4LCaps(m_radioDev) : V4LCaps();
         notifyCapabilitiesChanged(m_caps);
         notifyDescriptionChanged(m_caps.description);
     }
@@ -1220,6 +1231,7 @@ void   V4LRadio::saveState (KConfigGroup &config) const
 
     config.writeEntry("V4LVersionOverride",                       (int)m_V4L_version_override);
     config.writeEntry("V4LVersionOverrideByKernelOnce",           (int)m_V4L_version_override_by_kernel_once);
+    config.writeEntry("DeviceProbeAtStartup",                     m_deviceProbeAtStartup);
     saveRadioDeviceID(config);
 
 }
@@ -1251,33 +1263,28 @@ void   V4LRadio::restoreState (const KConfigGroup &config)
         }
     }
 
-
-    QString base_devname = "/dev/radio";
-
-    QStringList testlist (base_devname );
-    for (int i = 0; i < 9; ++i)
-        testlist.append(base_devname + QString::number(i));
-
-    QString found_devname;
-    for (QList<QString>::const_iterator it = testlist.begin(); it != testlist.end(); ++it) {
-        QFile f(*it);
-        if (f.exists()) {
-            QFileInfo info(f);
-            if (info.isReadable() && info.isWritable()) {
-                found_devname = *it;
+    QString found_devname = "";
+    foreach (DeviceInfo devItem, getDeviceProposals()) {
+        if (devItem.path.contains("radio") && devItem.info.exists()) {
+            found_devname = devItem.path;
+            if (devItem.info.isReadable() && devItem.info.isWritable()) {
                 break;
             }
             else {
-                if (found_devname.isNull())
-                    found_devname = *it;
-                logWarning(i18n("Device %1 does exist but is not readable/writable. Please check device permissions.", *it));
+                logWarning(i18n("Device %1 does exist but is not readable/writable. Please check device permissions.", devItem.path));
             }
         }
     }
 
-    QString default_devname = found_devname.isNull() ? base_devname : found_devname;
+    QString default_devname = "/dev/radio0";
+    if (found_devname.isEmpty()) {
+        logWarning(i18n("Could not find any radio device. Using the default path for now: %1", default_devname));
+    } else {
+        default_devname = found_devname;
+    }
 
-    QString devname = config.readEntry ("RadioDev", default_devname);
+    QString devname        = config.readEntry("RadioDev",             default_devname);
+    m_deviceProbeAtStartup = config.readEntry("DeviceProbeAtStartup", true);
 
     if (found_devname.isNull() && devname == default_devname) {
         logError(i18n("Could not find an accessible v4l(2) radio device."));
@@ -1324,6 +1331,7 @@ void   V4LRadio::restoreState (const KConfigGroup &config)
     notifyActivePlaybackChanged(m_ActivePlayback, m_ActivePlaybackMuteCaptureChannelPlayback);
     notifyMuteOnPowerOffChanged(m_MuteOnPowerOff);
     notifyForceRDSEnabledChanged(m_RDSForceEnabled);
+    notifyDeviceProbeAtStartupChanged(m_deviceProbeAtStartup);
     notifyVolumeZeroOnPowerOffChanged(m_VolumeZeroOnPowerOff);
     notifyV4LVersionOverrideChanged(m_V4L_version_override);
 
@@ -1344,6 +1352,39 @@ void   V4LRadio::restoreState (const KConfigGroup &config)
     if (isPowerOff())
         notifyPlaybackVolumeChanged(m_SoundStreamSinkID, m_defaultPlaybackVolume);
 }
+
+
+
+QList<DeviceInfo> V4LRadio::getDeviceProposals(const QString &base) const
+{
+    QList<DeviceInfo>               retval;
+    QDir                            devdir(base);
+    QStringList                     filterList;   filterList << "*radio*" << "*video*";
+    QFileInfoList                   deviceInfos = devdir.entryInfoList(filterList, QDir::System, QDir::Name);
+    QFileInfoList                   subdirs     = devdir.entryInfoList(QStringList(), QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Executable | QDir::Readable, QDir::Name);
+
+    foreach(const QFileInfo &deviceInfo, deviceInfos) {
+        if (deviceInfo.exists()) {
+            QString devName = deviceInfo.absoluteFilePath();
+            bool    permsOK = deviceInfo.isReadable() && deviceInfo.isWritable();
+            V4LCaps caps    = getCapabilities(devName);
+            QString descr   = caps.deviceDescription;
+            descr           = descr.isEmpty() ? devName : descr + "[" + devName + "]";
+            if (!permsOK) {
+                descr = i18n("%1 (insufficient permissions)").arg(descr);
+            }
+            retval.append(DeviceInfo(devName, deviceInfo, caps, descr));
+        }
+    }
+
+    foreach(const QFileInfo &subdir, subdirs) {
+        retval.append(getDeviceProposals(subdir.absoluteFilePath()));
+    }
+
+    return retval;
+}
+
+
 
 void V4LRadio::startPlugin()
 {
@@ -1402,15 +1443,6 @@ void V4LRadio::radio_init()
     notifyCapabilitiesChanged(m_caps);
     notifyDescriptionChanged(m_caps.description);
 
-/*    m_mixer_fd = open(m_mixerDev, O_RDONLY);
-    if (m_mixer_fd < 0) {
-        radio_done();
-
-        logError("V4LRadio::radio_init: " +
-                 i18n("Cannot open mixer device %1", m_mixerDev));
-        return;
-    }
-*/
     m_radio_fd = open(m_radioDev.toLocal8Bit(), O_RDONLY);
     if (m_radio_fd < 0) {
         radio_done();
@@ -1495,7 +1527,8 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
         memcpy(buffer, caps.name, l);
         buffer[l] = 0;
-        v4l_caps[V4L_Version1].description = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version1, buffer);
+        v4l_caps[V4L_Version1].description       = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version1, buffer);
+        v4l_caps[V4L_Version1].deviceDescription = QString("%1").arg(buffer);
 
         v4l_caps[V4L_Version1].hasMute = false;
         v4l_caps[V4L_Version1].unsetVolume();
@@ -1538,7 +1571,8 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
         memcpy(buffer, caps.name, l);
         buffer[l] = 0;
-        v4l_caps[V4L_Version2].description = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version2, buffer);
+        v4l_caps[V4L_Version2].description       = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version2, buffer);
+        v4l_caps[V4L_Version2].deviceDescription = QString("%1").arg(buffer);
 
         v4l2_queryctrl  ctrl;
 
@@ -1605,7 +1639,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         }
     }
     if (!any_found) {
-        logError(i18n("V4L not detected"));
+        logWarning(i18n("V4L not detected"));
     }
 
     close(fd);

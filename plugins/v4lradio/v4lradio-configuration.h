@@ -56,6 +56,9 @@ public :
 // IV4LCfgClient
 
 RECEIVERS:
+    void noticeConnectedI    (IV4LCfg *cfg, bool pointer_valid);
+    void noticeDisconnectedI (IV4LCfg *cfg, bool pointer_valid);
+
     bool noticeRadioDeviceChanged(const QString &s);
 
     bool noticePlaybackMixerChanged(const QString &soundStreamClientID, const QString &Channel);
@@ -66,6 +69,7 @@ RECEIVERS:
     bool noticeActivePlaybackChanged(bool a, bool muteCaptureChannelPlayback);
     bool noticeMuteOnPowerOffChanged(bool a);
     bool noticeForceRDSEnabledChanged(bool a);
+    bool noticeDeviceProbeAtStartupChanged(bool e);
     bool noticeVolumeZeroOnPowerOffChanged(bool a);
     bool noticeV4LVersionOverrideChanged(V4LVersion vo);
 
@@ -108,15 +112,19 @@ RECEIVERS:
 
 protected:
 
-    INLINE_IMPL_DEF_noticeConnectedI(IV4LCfgClient);
-    INLINE_IMPL_DEF_noticeConnectedI(IFrequencyRadioClient);
-    INLINE_IMPL_DEF_noticeConnectedI(IRadioDeviceClient);
+    INLINE_IMPL_DEF_noticeConnectedI   (IFrequencyRadioClient);
+    INLINE_IMPL_DEF_noticeConnectedI   (IRadioDeviceClient);
+    INLINE_IMPL_DEF_noticeDisconnectedI(IFrequencyRadioClient);
+    INLINE_IMPL_DEF_noticeDisconnectedI(IRadioDeviceClient);
+    INLINE_IMPL_DEF_noticeDisconnectedI(ISoundStreamClient);
 
-    bool eventFilter(QObject *o, QEvent *e);
+    bool                             eventFilter(QObject *o, QEvent *e);
+    void                             populateDeviceComboBox();
 
 protected slots:
 
     void selectRadioDevice();
+    void slotRadioDeviceIndexChanged(int idx);
     void slotEditRadioDeviceChanged();
     void slotComboPlaybackMixerSelected(int idx);
     void slotComboCaptureMixerSelected(int idx);

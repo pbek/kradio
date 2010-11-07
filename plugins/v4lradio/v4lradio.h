@@ -59,7 +59,9 @@ public:
     virtual bool connectI (Interface *);
     virtual bool disconnectI (Interface *);
 
-    virtual QString pluginClassName() const { return "V4LRadio"; }
+    virtual QString   pluginClassName() const { return "V4LRadio"; }
+
+    QList<DeviceInfo> getDeviceProposals(const QString &devdir = "/dev/") const;
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }
@@ -75,6 +77,7 @@ public:
 //     virtual AboutPageInfo   createAboutPage();
 
     // IRadioDevice methods
+
 
 RECEIVERS:
     virtual bool setPower(bool p);
@@ -197,6 +200,7 @@ RECEIVERS:
     bool  setActivePlayback(bool a, bool muteCaptureChannelPlayback);
     bool  setMuteOnPowerOff(bool a);
     bool  setForceRDSEnabled(bool a);
+    bool  setDeviceProbeAtStartup(bool a);
     bool  setVolumeZeroOnPowerOff(bool a);
     bool  setV4LVersionOverride(V4LVersion vo);
 
@@ -207,11 +211,12 @@ ANSWERS:
     const QString &getPlaybackMixerChannel() const { return m_PlaybackMixerChannel; }
     const QString &getCaptureMixerChannel () const { return m_CaptureMixerChannel; }
     float          getDeviceVolume        () const;
-    V4LCaps        getCapabilities(const QString &dev = QString::null) const;
+    V4LCaps        getCapabilities      (const QString &dev) const;
 
     bool           getActivePlayback(bool & muteCaptureChannelPlayback) const { muteCaptureChannelPlayback = m_ActivePlaybackMuteCaptureChannelPlayback; return m_ActivePlayback; }
     bool           getMuteOnPowerOff()                                  const { return m_MuteOnPowerOff; }
     bool           getForceRDSEnabled()                                 const { return m_RDSForceEnabled; }
+    bool           getDeviceProbeAtStartup()                            const { return m_deviceProbeAtStartup; }
     bool           getVolumeZeroOnPowerOff()                            const { return m_VolumeZeroOnPowerOff; }
     V4LVersion     getV4LVersionOverride()                              const { return m_V4L_version_override; }
 
@@ -314,6 +319,7 @@ protected:
     bool                          m_VolumeZeroOnPowerOff;
 
     bool                          m_restorePowerOn;
+    bool                          m_deviceProbeAtStartup;
 
     V4LVersion                    m_V4L_version_override;
     bool                          m_V4L_version_override_by_kernel_once;

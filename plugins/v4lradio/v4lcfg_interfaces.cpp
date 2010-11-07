@@ -23,7 +23,8 @@ const char* V4LVersionStrings[V4L_Version_COUNT] = { "V4L Unknown", "V4L1", "V4L
 ///////////////////////////////////////////////////////////////////////
 
 V4LCaps::V4LCaps()
-  : description(QString::null),
+  : description(QString()),
+    deviceDescription(QString()),
     hasMute(false),
     hasVolume(false),
     minVolume(0),
@@ -47,6 +48,7 @@ V4LCaps::V4LCaps()
 
 V4LCaps::V4LCaps(const V4LCaps &c)
   : description(c.description),
+    deviceDescription(c.deviceDescription),
     hasMute(c.hasMute),
     hasVolume(c.hasVolume),
     minVolume(c.minVolume),
@@ -106,6 +108,10 @@ IF_IMPL_SENDER  (   IV4LCfg::notifyForceRDSEnabledChanged(bool a),
                     noticeForceRDSEnabledChanged(a)
                 )
 
+IF_IMPL_SENDER  (   IV4LCfg::notifyDeviceProbeAtStartupChanged(bool e),
+                    noticeDeviceProbeAtStartupChanged(e)
+                )
+
 // IV4LCfgClient
 
 IF_IMPL_SENDER  (   IV4LCfgClient::sendRadioDevice (const QString &s),
@@ -138,6 +144,10 @@ IF_IMPL_SENDER  (   IV4LCfgClient::sendV4LVersionOverride(V4LVersion vo),
 
 IF_IMPL_SENDER  (   IV4LCfgClient::sendForceRDSEnabled(bool a),
                     setForceRDSEnabled(a)
+                )
+
+IF_IMPL_SENDER  (   IV4LCfgClient::sendDeviceProbeAtStartup(bool e),
+                    setDeviceProbeAtStartup(e)
                 )
 
 
@@ -202,36 +212,47 @@ IF_IMPL_QUERY   (   bool IV4LCfgClient::queryForceRDSEnabled(),
                     false
                 )
 
+IF_IMPL_QUERY   (   bool IV4LCfgClient::queryDeviceProbeAtStartup(),
+                    getDeviceProbeAtStartup(),
+                    true
+                )
+
+IF_IMPL_QUERY   (   QList<DeviceInfo> IV4LCfgClient::queryDeviceProposals(const QString &devdir),
+                    getDeviceProposals(devdir),
+                    QList<DeviceInfo>()
+                )
 
 void IV4LCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/)
 {
-    noticeRadioDeviceChanged(queryRadioDevice());
-    noticePlaybackMixerChanged(queryPlaybackMixerID(), queryPlaybackMixerChannel());
-    noticeCaptureMixerChanged (queryCaptureMixerID(),  queryCaptureMixerChannel());
-    noticeDeviceVolumeChanged(queryDeviceVolume());
-    noticeCapabilitiesChanged(queryCapabilities());
+    noticeRadioDeviceChanged         (queryRadioDevice());
+    noticePlaybackMixerChanged       (queryPlaybackMixerID(), queryPlaybackMixerChannel());
+    noticeCaptureMixerChanged        (queryCaptureMixerID(),  queryCaptureMixerChannel());
+    noticeDeviceVolumeChanged        (queryDeviceVolume());
+    noticeCapabilitiesChanged        (queryCapabilities());
     bool muteCaptureChannelPlayback = false;
     bool activepb                   = queryActivePlayback(muteCaptureChannelPlayback);
-    noticeActivePlaybackChanged(activepb, muteCaptureChannelPlayback);
-    noticeMuteOnPowerOffChanged(queryMuteOnPowerOff());
+    noticeActivePlaybackChanged      (activepb, muteCaptureChannelPlayback);
+    noticeMuteOnPowerOffChanged      (queryMuteOnPowerOff());
     noticeVolumeZeroOnPowerOffChanged(queryVolumeZeroOnPowerOff());
-    noticeForceRDSEnabledChanged(queryForceRDSEnabled());
+    noticeForceRDSEnabledChanged     (queryForceRDSEnabled());
+    noticeDeviceProbeAtStartupChanged(queryDeviceProbeAtStartup());
 }
 
 
 void IV4LCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/)
 {
-    noticeRadioDeviceChanged(queryRadioDevice());
-    noticePlaybackMixerChanged(queryPlaybackMixerID(), queryPlaybackMixerChannel());
-    noticeCaptureMixerChanged (queryCaptureMixerID(),  queryCaptureMixerChannel());
-    noticeDeviceVolumeChanged(queryDeviceVolume());
-    noticeCapabilitiesChanged(queryCapabilities());
+    noticeRadioDeviceChanged         (queryRadioDevice());
+    noticePlaybackMixerChanged       (queryPlaybackMixerID(), queryPlaybackMixerChannel());
+    noticeCaptureMixerChanged        (queryCaptureMixerID(),  queryCaptureMixerChannel());
+    noticeDeviceVolumeChanged        (queryDeviceVolume());
+    noticeCapabilitiesChanged        (queryCapabilities());
     bool muteCaptureChannelPlayback = false;
     bool activepb                   = queryActivePlayback(muteCaptureChannelPlayback);
-    noticeActivePlaybackChanged(activepb, muteCaptureChannelPlayback);
-    noticeMuteOnPowerOffChanged(queryMuteOnPowerOff());
+    noticeActivePlaybackChanged      (activepb, muteCaptureChannelPlayback);
+    noticeMuteOnPowerOffChanged      (queryMuteOnPowerOff());
     noticeVolumeZeroOnPowerOffChanged(queryVolumeZeroOnPowerOff());
-    noticeForceRDSEnabledChanged(queryForceRDSEnabled());
+    noticeForceRDSEnabledChanged     (queryForceRDSEnabled());
+    noticeDeviceProbeAtStartupChanged(queryDeviceProbeAtStartup());
 }
 
 

@@ -9,7 +9,10 @@
         - fixed problem with non-ascii-characters / encoding detection in
           .asx playlists
         - fixed segfault caused by improper way to delete QThread objects
-
+        - check box for v4l config to disable caps check at startup to
+          minimize interference with other programs using V4L devices
+        - combo box for radio device selection in V4L radio configuration
+          (with option to manually add device)
 
 2010-10-03
 

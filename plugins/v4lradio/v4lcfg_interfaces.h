@@ -23,6 +23,7 @@
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtCore/QFileInfo>
 
 enum V4LVersion {V4L_VersionUnkown = 0,
                  V4L_Version1      = 1,
@@ -36,6 +37,7 @@ struct V4LCaps
 {
     bool    v4l_version_support[(int)V4L_Version_COUNT];
     QString description;
+    QString deviceDescription;
 
     bool    hasMute;
 
@@ -94,6 +96,20 @@ struct V4LCaps
 
 
 
+
+struct DeviceInfo
+{
+    QString   path;
+    QFileInfo info;
+    V4LCaps   caps;
+    QString   description;
+
+    DeviceInfo(const QString &_path, const QFileInfo &_info, const V4LCaps &_caps, const QString &descr)
+      : path(_path), info(_info), caps(_caps), description(descr) {}
+};
+
+
+
 INTERFACE(IV4LCfg, IV4LCfgClient)
 {
 public:
@@ -109,6 +125,8 @@ RECEIVERS:
     IF_RECEIVER(   setVolumeZeroOnPowerOff(bool m)                                )
     IF_RECEIVER(   setV4LVersionOverride(V4LVersion vo)                           )
     IF_RECEIVER(   setForceRDSEnabled(bool e)                                     )
+    IF_RECEIVER(   setDeviceProbeAtStartup(bool e)                                )
+
 
 SENDERS:
     IF_SENDER  (   notifyRadioDeviceChanged  (const QString &s)                   )
@@ -121,20 +139,23 @@ SENDERS:
     IF_SENDER  (   notifyVolumeZeroOnPowerOffChanged (bool a)                     )
     IF_SENDER  (   notifyV4LVersionOverrideChanged(V4LVersion vo)                 )
     IF_SENDER  (   notifyForceRDSEnabledChanged(bool e)                           )
+    IF_SENDER  (   notifyDeviceProbeAtStartupChanged(bool e)                      )
 
 ANSWERS:
-    IF_ANSWER  (   const QString &getRadioDevice () const                         )
-    IF_ANSWER  (   const QString &getPlaybackMixerID () const                     )
-    IF_ANSWER  (   const QString &getCaptureMixerID () const                      )
-    IF_ANSWER  (   const QString &getPlaybackMixerChannel() const                 )
-    IF_ANSWER  (   const QString &getCaptureMixerChannel() const                  )
-    IF_ANSWER  (   float          getDeviceVolume() const                         )
-    IF_ANSWER  (   V4LCaps        getCapabilities(const QString &dev = QString::null) const )
-    IF_ANSWER  (   bool           getActivePlayback(bool &mute_capture) const     )
-    IF_ANSWER  (   bool           getMuteOnPowerOff() const                       )
-    IF_ANSWER  (   bool           getVolumeZeroOnPowerOff() const                 )
-    IF_ANSWER  (   V4LVersion     getV4LVersionOverride() const                   )
-    IF_ANSWER  (   bool           getForceRDSEnabled() const                      )
+    IF_ANSWER  (   const QString    &getRadioDevice () const                         )
+    IF_ANSWER  (   const QString    &getPlaybackMixerID () const                     )
+    IF_ANSWER  (   const QString    &getCaptureMixerID () const                      )
+    IF_ANSWER  (   const QString    &getPlaybackMixerChannel() const                 )
+    IF_ANSWER  (   const QString    &getCaptureMixerChannel() const                  )
+    IF_ANSWER  (   float             getDeviceVolume() const                         )
+    IF_ANSWER  (   V4LCaps           getCapabilities(const QString &dev = QString::null) const )
+    IF_ANSWER  (   bool              getActivePlayback(bool &mute_capture) const     )
+    IF_ANSWER  (   bool              getMuteOnPowerOff() const                       )
+    IF_ANSWER  (   bool              getVolumeZeroOnPowerOff() const                 )
+    IF_ANSWER  (   V4LVersion        getV4LVersionOverride() const                   )
+    IF_ANSWER  (   bool              getForceRDSEnabled() const                      )
+    IF_ANSWER  (   bool              getDeviceProbeAtStartup() const                 )
+    IF_ANSWER  (   QList<DeviceInfo> getDeviceProposals(const QString &devdir = "/dev/") const )
 };
 
 
@@ -154,6 +175,7 @@ SENDERS:
     IF_SENDER  (   sendVolumeZeroOnPowerOff(bool a)                              )
     IF_SENDER  (   sendV4LVersionOverride(V4LVersion vo)                         )
     IF_SENDER  (   sendForceRDSEnabled(bool a)                                   )
+    IF_SENDER  (   sendDeviceProbeAtStartup(bool e)                              )
 
 RECEIVERS:
     IF_RECEIVER(   noticeRadioDeviceChanged(const QString &s)                    )
@@ -166,20 +188,23 @@ RECEIVERS:
     IF_RECEIVER(   noticeVolumeZeroOnPowerOffChanged(bool a)                     )
     IF_RECEIVER(   noticeV4LVersionOverrideChanged(V4LVersion vo)                )
     IF_RECEIVER(   noticeForceRDSEnabledChanged(bool a)                          )
+    IF_RECEIVER(   noticeDeviceProbeAtStartupChanged(bool e)                     )
 
 QUERIES:
-    IF_QUERY   (   const QString &queryRadioDevice ()                            )
-    IF_QUERY   (   const QString &queryPlaybackMixerID ()                        )
-    IF_QUERY   (   const QString &queryCaptureMixerID ()                         )
-    IF_QUERY   (   const QString &queryPlaybackMixerChannel()                    )
-    IF_QUERY   (   const QString &queryCaptureMixerChannel()                     )
-    IF_QUERY   (   float          queryDeviceVolume()                            )
-    IF_QUERY   (   V4LCaps        queryCapabilities(const QString &dev = QString::null) )
-    IF_QUERY   (   bool           queryActivePlayback(bool &mute_capture)        )
-    IF_QUERY   (   bool           queryMuteOnPowerOff()                          )
-    IF_QUERY   (   bool           queryVolumeZeroOnPowerOff()                    )
-    IF_QUERY   (   V4LVersion     queryV4LVersionOverride()                      )
-    IF_QUERY   (   bool           queryForceRDSEnabled()                         )
+    IF_QUERY   (   const QString    &queryRadioDevice ()                            )
+    IF_QUERY   (   const QString    &queryPlaybackMixerID ()                        )
+    IF_QUERY   (   const QString    &queryCaptureMixerID ()                         )
+    IF_QUERY   (   const QString    &queryPlaybackMixerChannel()                    )
+    IF_QUERY   (   const QString    &queryCaptureMixerChannel()                     )
+    IF_QUERY   (   float             queryDeviceVolume()                            )
+    IF_QUERY   (   V4LCaps           queryCapabilities(const QString &dev = QString::null) )
+    IF_QUERY   (   bool              queryActivePlayback(bool &mute_capture)        )
+    IF_QUERY   (   bool              queryMuteOnPowerOff()                          )
+    IF_QUERY   (   bool              queryVolumeZeroOnPowerOff()                    )
+    IF_QUERY   (   V4LVersion        queryV4LVersionOverride()                      )
+    IF_QUERY   (   bool              queryForceRDSEnabled()                         )
+    IF_QUERY   (   bool              queryDeviceProbeAtStartup()                    )
+    IF_QUERY   (   QList<DeviceInfo> queryDeviceProposals(const QString &devdir = "/dev/") )
 
 RECEIVERS:
     virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/);

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>469</width>
-    <height>297</height>
+    <width>473</width>
+    <height>315</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,17 +30,7 @@
        <property name="margin">
         <number>11</number>
        </property>
-       <item row="0" column="1" colspan="2">
-        <widget class="QLineEdit" name="editRadioDevice">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>5</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
+       <item row="9" column="0" colspan="2">
         <widget class="QLabel" name="labelScanStep">
          <property name="text">
           <string>Station scan step</string>
@@ -50,7 +40,7 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="3">
+       <item row="9" column="4">
         <widget class="QLabel" name="textLabel1_3">
          <property name="text">
           <string/>
@@ -60,7 +50,7 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
+       <item row="10" column="0" colspan="2">
         <widget class="QLabel" name="labelSignalMinQuality">
          <property name="text">
           <string>Minimum signal quality</string>
@@ -70,7 +60,7 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="3">
+       <item row="10" column="4">
         <widget class="QLabel" name="textLabel1_4_2">
          <property name="text">
           <string/>
@@ -80,7 +70,7 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1" colspan="3">
+       <item row="1" column="2" colspan="3">
         <widget class="QLabel" name="labelDescription">
          <property name="text">
           <string>unknown v4l device</string>
@@ -90,14 +80,14 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="3" column="0" colspan="2">
         <widget class="QLabel" name="label_3">
          <property name="text">
           <string>V4L Version to use</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
+       <item row="0" column="0" colspan="2">
         <widget class="QLabel" name="labelRadioDevice">
          <property name="text">
           <string>Radio Device</string>
@@ -107,7 +97,7 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="1">
+       <item row="9" column="2">
         <widget class="QSpinBox" name="editScanStep">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -129,7 +119,7 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="1">
+       <item row="10" column="2">
         <widget class="QSpinBox" name="editSignalMinQuality">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -142,63 +132,7 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="1" colspan="3">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QRadioButton" name="rbV4L1Version">
-           <property name="text">
-            <string>V4L-1 API</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="rbV4L2Version">
-           <property name="text">
-            <string>V4L-2 API</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="0" column="3">
-        <widget class="QPushButton" name="buttonSelectRadioDevice">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-           <horstretch>1</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0" colspan="4">
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="3" column="0">
+       <item row="4" column="0" colspan="2">
         <widget class="QLabel" name="labelMinMaxFrequency">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -214,7 +148,7 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1" rowspan="2" colspan="3">
+       <item row="4" column="2" rowspan="2" colspan="3">
         <layout class="QGridLayout" name="gridLayout_5">
          <item row="0" column="1">
           <widget class="QSpinBox" name="editMinFrequency">
@@ -332,12 +266,136 @@
          </item>
         </layout>
        </item>
-       <item row="4" column="0">
+       <item row="5" column="0" colspan="2">
         <widget class="QLabel" name="labelDevMinMaxFrequency">
          <property name="text">
           <string>Device frequency range</string>
          </property>
         </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="KComboBox" name="m_cbRadioDevice">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>5</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <property name="autoCompletion">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="buttonSelectRadioDevice">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QLabel" name="label_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Device Probing</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="2" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QRadioButton" name="m_rbProbeAtStartup">
+           <property name="toolTip">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>@ startup</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="m_rbProbeAtPowerOn">
+           <property name="toolTip">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>@ power on</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="2" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QRadioButton" name="rbV4L1Version">
+           <property name="text">
+            <string>V4L-1 API</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbV4L2Version">
+           <property name="text">
+            <string>V4L-2 API</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -992,12 +1050,16 @@ p, li { white-space: pre-wrap; }
    <extends>QWidget</extends>
    <header>knuminput.h</header>
   </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>editRadioDevice</tabstop>
+  <tabstop>kTabWidget1</tabstop>
+  <tabstop>m_cbRadioDevice</tabstop>
   <tabstop>buttonSelectRadioDevice</tabstop>
-  <tabstop>rbV4L1Version</tabstop>
-  <tabstop>rbV4L2Version</tabstop>
   <tabstop>editMinFrequency</tabstop>
   <tabstop>editMaxFrequency</tabstop>
   <tabstop>editScanStep</tabstop>
@@ -1015,7 +1077,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>sliderTreble</tabstop>
   <tabstop>sliderBass</tabstop>
   <tabstop>sliderBalance</tabstop>
-  <tabstop>kTabWidget1</tabstop>
  </tabstops>
  <includes>
   <include location="local">ktabwidget.h</include>
