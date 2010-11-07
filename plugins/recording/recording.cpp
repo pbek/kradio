@@ -389,6 +389,7 @@ bool Recording::startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf
     if (!startEncoder(id, cfg)) {
         logError(i18n("starting encoding thread failed"));
         sendStopCapture(id);
+        sendStopRecording(id);
         return false;
     }
 
