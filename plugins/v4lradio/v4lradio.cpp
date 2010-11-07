@@ -1477,14 +1477,12 @@ void V4LRadio::radio_done()
         stopSeek();
 
     if (m_radio_fd >= 0) close (m_radio_fd);
-//     if (m_mixer_fd >= 0) close (m_mixer_fd);
 
     if (m_RDS_notify)
         delete m_RDS_notify;
     m_RDS_notify = NULL;
 
     m_radio_fd = -1;
-//  m_mixer_fd = -1;
 }
 
 
