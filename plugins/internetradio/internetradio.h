@@ -180,6 +180,7 @@ protected:
 protected slots:
     void    slotPlaylistData(KIO::Job *job, const QByteArray &data);
     void    slotPlaylistLoadDone(KJob *job);
+    void    slotDecoderThreadFinished();
 
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD

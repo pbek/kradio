@@ -8,6 +8,7 @@
           still disabled.
         - fixed problem with non-ascii-characters / encoding detection in
           .asx playlists
+        - fixed segfault caused by improper way to delete QThread objects
 
 
 2010-10-03

@@ -661,7 +661,19 @@ void InternetRadio::startDecoderThread()
         m_decoderThread->quit();
     }
     m_decoderThread = new DecoderThread(this, m_currentStation, m_currentPlaylist, MAX_BUFFERS, m_maxStreamProbeSize, m_maxStreamAnalyzeTime);
+    QObject::connect(m_decoderThread, SIGNAL(finished()), this, SLOT(slotDecoderThreadFinished()));
     m_decoderThread->start();
+}
+
+
+void InternetRadio::slotDecoderThreadFinished()
+{
+    // to avoid orphaned thread objects, we will delete finished threads here.
+    // we cannot call deleteLater from within the thread loop, since
+    // deleteLate will not schedule an event in the thread but in the main loop,
+    // which might cause a deletion before the thread really finished.
+    DecoderThread *t = static_cast<DecoderThread*>(sender());
+    t->deleteLater();
 }
 
 
