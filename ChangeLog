@@ -1,3 +1,14 @@
+2010-11-07
+
+    emw - moved internet radio play list loading from decoder thread to GUI
+        - new, currently still disabled method to do the stream downloading
+          for internet radio in the main thread asynchronously, not in the
+          decoder thread any more. Unfortunately, KDE4 does not yet have
+          an kioslave for the mms:// protocol. Thus this method is currently
+          still disabled.
+        - fixed problem with non-ascii-characters / encoding detection in
+          .asx playlists
+
 
 2010-10-03
 

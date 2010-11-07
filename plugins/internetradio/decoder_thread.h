@@ -27,6 +27,8 @@
 #include <QtCore/QString>
 #include <QtCore/QThread>
 #include <QtCore/QSemaphore>
+#include <QtCore/QMutex>
+#include <QtCore/QMutexLocker>
 
 #include <kurl.h>
 
@@ -45,11 +47,13 @@ extern "C" {
 #endif
 }
 
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 extern "C" {
     #define this
     #include <libmms/mmsx.h>
     #undef this
 }
+#endif
 
 
 
@@ -59,7 +63,13 @@ class InternetRadioDecoder : public QObject
 {
 Q_OBJECT
 public:
-    InternetRadioDecoder(QObject *event_parent, const InternetRadioStation &station, const KUrl::List &playlist, int max_buffers, int max_probe_size_bytes, float max_analyze_secs);
+    InternetRadioDecoder(QObject *event_parent, 
+                         const InternetRadioStation &station, 
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+                         const KUrl::List &playlist, 
+#endif
+                         int max_buffers, 
+                         int max_probe_size_bytes, float max_analyze_secs);
 
     virtual ~InternetRadioDecoder();
 
@@ -83,27 +93,29 @@ public:
     DataBuffer           &getFirstBuffer();
     void                  popFirstBuffer();
     void                  flushBuffers();
+
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
+    QByteArray            readInputBuffer(size_t maxSize);
+#endif
+
 protected:
     void                  pushBuffer(const DataBuffer &);
 
 signals:
     void                  sigSelfTrigger();
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    void                  sigInputBufferNotFull();
+#endif
 
 protected slots:
 
-//     void                  loadPlaylist();
     void                  run();
 
 protected:
     void                  addErrorString  (const QString &s);
     void                  addWarningString(const QString &s);
     void                  addDebugString  (const QString &s);
-
-
-//     void                  loadPlaylistM3U(bool errorIfEmpty = true);
-//     void                  loadPlaylistLSC(bool errorIfEmpty = true);
-//     void                  loadPlaylistPLS(bool errorIfEmpty = true);
-//     void                  loadPlaylistASX(bool errorIfEmpty = true);
 
 
     bool                  decoderOpened() const { return m_decoderOpened; }
@@ -120,8 +132,10 @@ protected:
     AVCodec              *m_av_aCodec;
     ByteIOContext         m_av_byteio_context;
 
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     bool                  m_is_mms_stream;
     mmsx_t               *m_mms_stream;
+#endif
     char                  m_mms_buffer[32768];
 
 
@@ -142,12 +156,22 @@ protected:
     SoundFormat           m_soundFormat;
     quint64               m_decodedSize;
 
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     KUrl::List            m_playListURLs;
     KUrl                  m_playURL;
+#endif
 
     QList<DataBuffer>     m_buffers;
-    QSemaphore            m_bufferAccessLock;
+    QMutex                m_bufferAccessLock;
     QSemaphore            m_bufferCountSemaphore;
+
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    size_t                m_inputBufferMaxSize;
+    QByteArray            m_inputBuffer;
+    QMutex                m_inputBufferAccessLock;
+    QSemaphore            m_inputBufferSize;
+    KUrl                  m_inputUrl;
+#endif
 
     int                   m_maxProbeSize;    // in bytes,   see openAVStream
     float                 m_maxAnalyzeTime;  // in seconds, see openAVStream
@@ -182,7 +206,9 @@ protected:
     float                 m_max_analyze_secs;
 
     InternetRadioDecoder *m_decoder;
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     KUrl::List            m_playlist;
+#endif
 };
 
 

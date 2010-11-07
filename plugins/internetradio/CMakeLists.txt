@@ -6,6 +6,10 @@ include (KDE4Defaults)
 include (MacroLibrary)
 
 
+
+add_definitions( -DINET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD )
+
+
 #ADD_SUBDIRECTORY(icons)
 ADD_SUBDIRECTORY(po)
 

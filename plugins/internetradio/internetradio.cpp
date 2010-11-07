@@ -21,6 +21,7 @@
 
 #include <QtCore/QList>
 #include <QtCore/QXmlStreamReader>
+#include <QtCore/QTextCodec>
 
 #include <kconfiggroup.h>
 #include <kiconloader.h>
@@ -29,6 +30,7 @@
 #include <kio/jobclasses.h>
 #include <kio/job.h>
 #include <ktemporaryfile.h>
+#include <kencodingprober.h>
 
 #include <unistd.h>
 
@@ -60,6 +62,12 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_powerOn(false),
     m_decoderThread(NULL),
     m_currentStation(InternetRadioStation()),
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    m_currentStreamIdx(-1),
+    m_currentStreamRetriesMax(2),
+    m_currentStreamRetriesLeft(-1),
+    m_randStreamIdxOffset(-1),
+#endif
     m_stereoFlag(false),
     m_muted(false),
     m_defaultPlaybackVolume(0.5),
@@ -75,6 +83,9 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_waitForBufferMinFill(true)/*,
     m_MimetypeJob(NULL)*/,
     m_playlistJob(NULL)
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    , m_streamJob(NULL)
+#endif
 {
     m_SoundStreamSinkID   = createNewSoundStream(false);
     m_SoundStreamSourceID = m_SoundStreamSinkID;
@@ -266,6 +277,11 @@ bool InternetRadio::powerOff ()
 {
     if (! isPowerOn())
         return true;
+
+    loadPlaylistStopJob();
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    stopStreamDownload();
+#endif
 
     queryPlaybackVolume(m_SoundStreamSinkID, m_defaultPlaybackVolume);
     if (m_PlaybackMixerMuteOnPowerOff) {
@@ -535,6 +551,9 @@ void   InternetRadio::saveState (KConfigGroup &config) const
     config.writeEntry("PowerOn",                     isPowerOn());
     config.writeEntry("maxStreamProbeSize",          m_maxStreamProbeSize);
     config.writeEntry("maxStreamAnalyzeTime",        m_maxStreamAnalyzeTime);
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    config.writeEntry("maxStreamRetries",            m_currentStreamRetriesMax);
+#endif
 
     saveRadioDeviceID(config);
 }
@@ -553,6 +572,9 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
 
     m_maxStreamProbeSize          = config.readEntry ("maxStreamProbeSize",          4096);
     m_maxStreamAnalyzeTime        = config.readEntry ("maxStreamAnalyzeTime",        0.5);
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    m_currentStreamRetriesMax     = config.readEntry ("maxStreamRetries",            2);
+#endif
 
 
     setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel, muteOnPowerOff, /* force = */ true);
@@ -632,6 +654,9 @@ void InternetRadio::radio_init()
 
 void InternetRadio::startDecoderThread()
 {
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    startStreamDownload();
+#endif
     if (m_decoderThread) {
         m_decoderThread->quit();
     }
@@ -961,25 +986,34 @@ const InternetRadioStation *InternetRadio::findMatchingStation(const StationList
 
 
 
-
-void InternetRadio::loadPlaylistStartJob()
+void InternetRadio::loadPlaylistStopJob()
 {
-    // if the a new station is selected while the previous hasn't been loaded yet
     if (m_playlistJob) {
         QObject::disconnect(m_playlistJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotPlaylistData(KIO::Job *, const QByteArray &)));
         QObject::disconnect(m_playlistJob, SIGNAL(result(KJob *)),                        this, SLOT(slotPlaylistLoadDone(KJob *)));
         m_playlistJob->kill();
         m_playlistJob = NULL;
     }
+}
+
+void InternetRadio::loadPlaylistStartJob()
+{
+    loadPlaylistStopJob();
+    // if the a new station is selected while the previous hasn't been loaded yet
     m_playlistData   .clear();
     m_currentPlaylist.clear();
     if (getPlaylistClass().length()) {
         m_playlistJob = KIO::get(m_currentStation.url(), KIO::NoReload, KIO::HideProgressInfo);
-        QObject::connect(m_playlistJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotPlaylistData(KIO::Job *, const QByteArray &)));
-        QObject::connect(m_playlistJob, SIGNAL(result(KJob *)),                         this, SLOT(slotPlaylistLoadDone(KJob *)));
-        m_playlistJob->start();
-        if (m_playlistJob->error()) {
-            logError(i18n("Failed to load playlist %1: %2").arg(m_currentStation.url().pathOrUrl()).arg(m_playlistJob->errorString()));
+        if (m_playlistJob) {
+            QObject::connect(m_playlistJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotPlaylistData(KIO::Job *, const QByteArray &)));
+            QObject::connect(m_playlistJob, SIGNAL(result(KJob *)),                         this, SLOT(slotPlaylistLoadDone(KJob *)));
+            m_playlistJob->start();
+            if (m_playlistJob->error()) {
+                logError(i18n("Failed to load playlist %1: %2").arg(m_currentStation.url().pathOrUrl()).arg(m_playlistJob->errorString()));
+                powerOff();
+            }
+        } else {
+            logError(i18n("Failed to start playlist download of %1: KIO::get returned NULL pointer").arg(m_currentStation.url().pathOrUrl()));
             powerOff();
         }
     } else {
@@ -1071,9 +1105,9 @@ void InternetRadio::interpretePlaylistM3U(const QByteArray &playlistData)
     QStringList lines = QString(playlistData).split("\n");
     foreach (QString line, lines) {
         QString t = line.trimmed();
-        if (t.startsWith("http://") || t.startsWith("https://") || t.startsWith("mms://")) {
+//         if (t.startsWith("http://") || t.startsWith("https://") || t.startsWith("mms://")) {
             m_currentPlaylist.append(t);
-        }
+//         }
     }
 }
 
@@ -1124,9 +1158,13 @@ void InternetRadio::interpretePlaylistPLS(const QByteArray &playlistData)
 }
 
 
-void InternetRadio::interpretePlaylistASX(const QByteArray &xmlData)
+void InternetRadio::interpretePlaylistASX(const QByteArray &rawData)
 {
-    QXmlStreamReader reader(xmlData);
+
+    KEncodingProber prober;
+    prober.feed(rawData);
+
+    QXmlStreamReader reader(QTextCodec::codecForName(prober.encoding())->toUnicode(rawData));
 
     bool inEntry = false;
 
@@ -1165,9 +1203,100 @@ void InternetRadio::interpretePlaylistASX(const QByteArray &xmlData)
 
 
 
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+
+void InternetRadio::startStreamDownload()
+{
+    m_randStreamIdxOffset      = rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
+    m_currentStreamIdx         = 0;
+    m_currentStreamRetriesLeft = m_currentStreamRetriesMax;
+
+    tryNextStream();
+}
 
 
+void InternetRadio::tryNextStream()
+{
+    do {
+        if (--m_currentStreamRetriesLeft < 0) {
+            ++m_currentStreamIdx;
+            m_currentStreamRetriesLeft = m_currentStreamRetriesMax;
+        }
+        if (isPowerOn() && m_currentStreamIdx < m_currentPlaylist.size()) {
+            m_currentStreamUrl = m_currentPlaylist[(m_currentStreamIdx + m_randStreamIdxOffset) % m_currentPlaylist.size()];
 
+            // start download job
+            stopStreamDownload();
+            logDebug(i18n("opening stream %1", m_currentStreamUrl.pathOrUrl()));
+
+            m_streamJob = KIO::get(m_currentStreamUrl, KIO::NoReload, KIO::HideProgressInfo);
+            if (m_streamJob) {
+                QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
+                QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
+                m_streamJob->start();
+                if (m_streamJob->error()) {
+                    logError(i18n("Failed to start stream download of %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+                    stopStreamDownload();
+                }
+            } else {
+                logError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_currentStreamUrl.pathOrUrl()));
+                stopStreamDownload();
+            }
+        } else {
+            logError(i18n("Failed to start any stream of %1").arg(m_currentStation.longName()));
+            powerOff();
+        }
+    } while (isPowerOn() && !m_streamJob);
+}
+
+
+void InternetRadio::stopStreamDownload()
+{
+    if (m_streamJob) {
+        QObject::disconnect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
+        QObject::disconnect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
+        m_streamJob->kill();
+        m_streamJob = NULL;
+    }
+}
+
+
+void InternetRadio::slotStreamData(KIO::Job *job, const QByteArray &data)
+{
+    if (m_streamJob == job) {
+//         logDebug(QString("stream data: %1 bytes").arg(data.size()));
+        if (m_decoderThread && m_decoderThread->decoder()) {
+            bool isfull = false;
+            m_decoderThread->decoder()->writeInputBuffer(data, isfull, m_currentStreamUrl);
+            if (isfull) {
+                m_streamJob->suspend();
+            }
+        }
+    }
+}
+
+
+void InternetRadio::slotStreamContinue()
+{
+    if (m_streamJob) {
+        m_streamJob->resume();
+    }
+}
+
+
+void InternetRadio::slotStreamDone(KJob *job)
+{
+    if (m_streamJob == job) {
+        if (m_streamJob->error()) {
+            logError(i18n("Failed to load stream data for %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+            tryNextStream();
+        }
+        stopStreamDownload();
+    }
+    job->deleteLater();
+}
+
+#endif
 
 
 #include "internetradio.moc"
