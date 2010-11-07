@@ -352,22 +352,6 @@ bool Recording::stopPlayback(SoundStreamID id)
 
 bool Recording::startRecording(SoundStreamID id, const QString &filenameTemplate)
 {
-
-/*    FileRingBuffer *test = new FileRingBuffer("/tmp/ringbuffertest", 2048);
-    char buffer1[1024];
-    char buffer2[1024];
-    char buffer3[1024];
-    for (int i = 0; i < 1024; ++i) {
-        buffer1[i] = 'a';
-        buffer2[i] = 'b';
-        buffer3[i] = 'c';
-    }
-    test->addData(buffer1, 1024);
-    test->addData(buffer2, 1024);
-    test->removeData(1024);
-    test->addData(buffer3, 1024);
-*/
-
     SoundFormat realFormat = m_config.m_SoundFormat;
     return sendStartRecordingWithFormat(id, realFormat, realFormat, filenameTemplate);
 }
