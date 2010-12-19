@@ -23,11 +23,12 @@ For 4.0.1
 
 For 4.0.2
 
-  * GUI config of internet radio ffmpeg parameters (probesize, analyze time)
+  * fix segfault when playing too much with streams in recording monitor widget 
+  * GUI config of internet radio ffmpeg parameters (probesize, analyze time, connect retries)
   * make input/output buffer size configurable for internet radio
   * lirc 0.8.5 compatibility fixes
-  * Fix segfault caused by dbus startrecording if power of
   * reactivate OSS support?
+  * --done-- Fix segfault caused by dbus startrecording if power of
   * --done-- Fix startrecording with power off for internet radio
   * --done-- check box for v4l config to disable caps check at startup to minimize interference
   * --done-- provide drop-down box for radio device in v4l radio configuration (but with option to
