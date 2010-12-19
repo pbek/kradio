@@ -176,9 +176,8 @@ bool InternetRadio::noticePlaybackChannelsChanged(const QString & client_id, con
 
 bool InternetRadio::noticeSoundStreamClosed(SoundStreamID id)
 {
-    if (id == m_SoundStreamSourceID) {
-        return true;
-    } else if (id == m_SoundStreamSinkID) {
+    if (id == m_SoundStreamSourceID || id == m_SoundStreamSinkID) {
+        powerOff();
         return true;
     } else {
         return false;
@@ -293,10 +292,14 @@ bool InternetRadio::powerOff ()
     sendStopRecording(m_SoundStreamSinkID);
     sendStopPlayback (m_SoundStreamSinkID);
     sendStopCapture  (m_SoundStreamSinkID);
-    closeSoundStream (m_SoundStreamSinkID);
-    closeSoundStream (m_SoundStreamSourceID);
-    m_SoundStreamSourceID = createNewSoundStream(m_SoundStreamSourceID, false);
-    m_SoundStreamSinkID   = m_SoundStreamSourceID;
+
+    SoundStreamID oldSourceID = m_SoundStreamSourceID;
+    SoundStreamID oldSinkID   = m_SoundStreamSinkID;
+    m_SoundStreamSourceID     = createNewSoundStream(m_SoundStreamSourceID, false);
+    m_SoundStreamSinkID       = m_SoundStreamSourceID;
+    closeSoundStream (oldSourceID);
+    closeSoundStream (oldSinkID);
+
     notifySoundStreamCreated(m_SoundStreamSourceID);
     notifyCurrentSoundStreamSinkIDChanged  (m_SoundStreamSinkID);
     notifyCurrentSoundStreamSourceIDChanged(m_SoundStreamSourceID);
@@ -820,7 +823,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
     m_waitForBufferMinFill = false;
 
     size_t consumed_size = SIZE_T_DONT_CARE;
-    while ((n_bufs = m_decoderThread->decoder()->availableBuffers()) && (free_size > 0) && (consumed_size != 0)) {
+    while (m_decoderThread && (n_bufs = m_decoderThread->decoder()->availableBuffers()) && (free_size > 0) && (consumed_size != 0)) {
 
         DataBuffer         &buf           = m_decoderThread->decoder()->getFirstBuffer();
         const char         *data          = buf.currentPointer();
@@ -843,7 +846,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
         }
         free_size -= consumed_size;
         buf.addProcessedSize(consumed_size);
-        if (buf.remainingSize() <= 0) {
+        if (m_decoderThread && buf.remainingSize() <= 0) {
             m_decoderThread->decoder()->popFirstBuffer();
         }
     }

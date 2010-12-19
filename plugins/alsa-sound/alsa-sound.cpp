@@ -350,7 +350,6 @@ bool AlsaSoundDevice::startPlayback(SoundStreamID id)
             }
         }
 
-        // error handling?
         return true;
     } else {
         return false;
@@ -436,7 +435,9 @@ bool AlsaSoundDevice::startCaptureWithFormat(SoundStreamID      id,
 
             openCaptureDevice(proposed_format);
 
-            // FIXME: error handling?
+            if (!m_hCapture) {
+                return false;
+            }
         }
 
         real_format = m_CaptureFormat;
@@ -555,6 +556,10 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
         // error handling ?
     }
 
+    // in case of error, return false
+    if (!m_hPlayback) {
+        return false;
+    }
 
     const char *buffer        = data;
     char       *scaled_buffer = NULL;
@@ -752,7 +757,8 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
             m_PlaybackPollingTimer.start(m_PlaybackLatency);
         }
     } else {
-        closePlaybackDevice();
+        closePlaybackDevice(true);
+        closeSoundStream(m_PlaybackStreamID);
     }
 
     return !error;
@@ -813,7 +819,8 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
             m_CapturePollingTimer.start(m_CaptureLatency);
         }
     } else {
-        closeCaptureDevice();
+        closeCaptureDevice(true);
+        closeSoundStream(m_CaptureStreamID);
     }
 
     return !error;
@@ -909,8 +916,7 @@ bool AlsaSoundDevice::closePlaybackDevice(bool force)
 {
     if (!m_PlaybackStreamID.isValid() || force) {
 
-        if (!m_hPlaybackMixer)
-            m_PlaybackPollingTimer.stop();
+        m_PlaybackPollingTimer.stop();
 
         checkThreadErrorsAndWarning();
         if (m_use_threads && m_playbackThread) {
@@ -941,8 +947,7 @@ bool AlsaSoundDevice::closeCaptureDevice(bool force)
 {
     if (!m_CaptureStreamID.isValid() || force) {
 
-        if (!m_hCaptureMixer)
-            m_CapturePollingTimer.stop();
+        m_CapturePollingTimer.stop();
 
         checkThreadErrorsAndWarning();
         if (m_use_threads && m_captureThread) {

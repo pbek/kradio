@@ -224,6 +224,7 @@ void V4LRadio::noticeConnectedI (ISoundStreamServer *s, bool pointer_valid)
         s->register4_querySoundStreamRadioStation(this);
         s->register4_queryEnumerateSourceSoundStreams(this);
 
+        s->register4_notifySoundStreamClosed(this);
         s->register4_notifySoundStreamSourceRedirected(this);
         s->register4_notifySoundStreamSinkRedirected(this);
         notifySoundStreamCreated(m_SoundStreamSinkID);
@@ -369,10 +370,14 @@ bool V4LRadio::powerOff ()
     sendStopRecording(m_SoundStreamSinkID);
     sendStopPlayback (m_SoundStreamSinkID);
     sendStopCapture  (m_SoundStreamSinkID);
-    closeSoundStream (m_SoundStreamSourceID);
-    closeSoundStream (m_SoundStreamSinkID);
-    m_SoundStreamSourceID = createNewSoundStream(m_SoundStreamSourceID, false);
-    m_SoundStreamSinkID   = m_SoundStreamSourceID;
+
+    SoundStreamID oldSourceID = m_SoundStreamSourceID;
+    SoundStreamID oldSinkID   = m_SoundStreamSinkID;
+    m_SoundStreamSourceID     = createNewSoundStream(m_SoundStreamSourceID, false);
+    m_SoundStreamSinkID       = m_SoundStreamSourceID;
+    closeSoundStream (oldSourceID);
+    closeSoundStream (oldSinkID);
+
     notifySoundStreamCreated(m_SoundStreamSourceID);
     notifyCurrentSoundStreamSinkIDChanged  (m_SoundStreamSinkID);
     notifyCurrentSoundStreamSourceIDChanged(m_SoundStreamSourceID);
@@ -2040,6 +2045,17 @@ bool V4LRadio::enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list) c
     return false;
 }
 
+
+bool V4LRadio::noticeSoundStreamClosed(SoundStreamID id)
+{
+    if (m_SoundStreamSinkID == id || m_SoundStreamSourceID == id) {
+        // FIXME: only power off if power off did not cause the sound stream close
+        powerOff();
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 bool V4LRadio::noticeSoundStreamSinkRedirected(SoundStreamID oldID, SoundStreamID newID)

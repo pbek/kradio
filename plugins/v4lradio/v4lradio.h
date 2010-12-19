@@ -181,6 +181,7 @@ RECEIVERS:
     bool getSoundStreamRadioStation (SoundStreamID id, const RadioStation *&rs) const;
     bool enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list) const;
 
+    bool noticeSoundStreamClosed          (SoundStreamID id);
     bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID);
     bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID);
 
