@@ -1,3 +1,7 @@
+2010-12-19
+
+    emw - better error handling in case the opening of an alsa sound device fails
+
 2010-11-07
 
     emw - moved internet radio play list loading from decoder thread to GUI
