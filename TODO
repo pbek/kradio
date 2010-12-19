@@ -23,7 +23,7 @@ For 4.0.1
 
 For 4.0.2
 
-  * fix segfault when playing too much with streams in recording monitor widget 
+  * fix segfault when playing too much with streams in recording monitor widget
   * GUI config of internet radio ffmpeg parameters (probesize, analyze time, connect retries)
   * make input/output buffer size configurable for internet radio
   * lirc 0.8.5 compatibility fixes

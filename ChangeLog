@@ -1,3 +1,7 @@
+2010-12-20
+
+    emw - fixed problem with inapropriately set capture mixer volumes
+
 2010-12-19
 
     emw - better error handling in case the opening of an alsa sound device fails

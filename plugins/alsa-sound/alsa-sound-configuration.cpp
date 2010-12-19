@@ -362,6 +362,7 @@ void AlsaSoundConfiguration::slotCancel()
     idx             = m_comboCaptureMixerCard->findData(mixerName);
     if (idx >= 0) {
         m_comboCaptureMixerCard->setCurrentIndex(idx);
+        slotCaptureMixerSelected(m_comboCaptureMixerCard->currentIndex());
     }
 
     editBufferSize    ->setValue  (m_SoundDevice ?  m_SoundDevice->getBufferSize()/1024 : 4);
