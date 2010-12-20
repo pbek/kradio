@@ -1672,11 +1672,6 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
 
     logDebug("V4L final caps: " + c.getDebugDescription());
 
-//     logDebug(c.hasMute   ? i18n("Radio is mutable")         : i18n("Radio is not mutable"));
-//     logDebug(c.hasVolume ? i18n("Radio has Volume Control") : i18n("Radio has no Volume Control"));
-//     logDebug(c.hasBass   ? i18n("Radio has Bass Control")   : i18n("Radio has no Bass Control"));
-//     logDebug(c.hasTreble ? i18n("Radio has Treble Control") : i18n("Radio has no Treble Control"));
-
     return c;
 }
 
@@ -1855,7 +1850,7 @@ bool V4LRadio::updateAudioInfo(bool write) const
                     break;
             }
 
-            r = ioctl(m_radio_fd, write ? VIDIOCSAUDIO : VIDIOCGAUDIO, m_audio);
+            r = ioctl(m_radio_fd, (write ? VIDIOCSAUDIO : VIDIOCGAUDIO), m_audio);
 
             m_stereo = (r == 0) && ((m_audio->mode  & VIDEO_SOUND_STEREO) != 0);
 
