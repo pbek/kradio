@@ -1044,15 +1044,15 @@ bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QStrin
     QString old_channel          = m_CaptureMixerChannel;
     m_CaptureMixerID             = soundStreamClientID;
     ISoundStreamClient *mixer    = getSoundStreamClientWithID(m_CaptureMixerID);
-    QStringList         channels = mixer ? mixer->getPlaybackChannels() : QStringList();
+    QStringList         channels = mixer ? mixer->getCaptureChannels() : QStringList();
 
     if (channels.size()) {
         assignChannelIfValid(m_CaptureMixerChannel, channels[0], channels);  // lowest priority
     }
     assignChannelIfValid(m_CaptureMixerChannel, "PCM",       channels);
     assignChannelIfValid(m_CaptureMixerChannel, "Wave",      channels);
-    assignChannelIfValid(m_CaptureMixerChannel, "Line",      channels);
     assignChannelIfValid(m_CaptureMixerChannel, "Master",    channels);
+    assignChannelIfValid(m_CaptureMixerChannel, "Line",      channels);
     assignChannelIfValid(m_CaptureMixerChannel, "Capture",   channels);
     assignChannelIfValid(m_CaptureMixerChannel, ch,          channels);  // highest priority
 
