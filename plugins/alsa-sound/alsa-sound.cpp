@@ -684,7 +684,7 @@ void AlsaSoundDevice::slotPollCapture()
         checkThreadErrorsAndWarning();
 
         QString dev = QString("alsa://%1").arg(m_CaptureDeviceName);
-        while (m_CaptureBuffer.getFillSize() >= m_CaptureBuffer.getSize() / 8) {
+        while (m_CaptureBuffer.getFillSize() >= m_CaptureBuffer.getSize() / 8) { // FIXME: why / 8? kind of hysteresis, having buffer min fill before starting playing to avoid subsequend underflows?
             size_t size = 0;
             buffer = m_CaptureBuffer.getData(size);
             time_t cur_time = time(NULL);
@@ -830,7 +830,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency)
 {
     bool error = false;
-    int dir = 0;
+    int  dir   = 0;
 
     snd_pcm_hw_params_t *hwparams = NULL;
 
@@ -892,17 +892,25 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    snd_pcm_uframes_t period_size = 0;
+    snd_pcm_uframes_t period_size   = 0;
     if (!error && (err = snd_pcm_hw_params_get_period_size(hwparams, &period_size, &dir)) < 0) {
         logError(i18n("ALSA Plugin: Error getting period size for %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
+    snd_pcm_uframes_t hwbuffer_size = 0;
+    if (!error && (err = snd_pcm_hw_params_get_buffer_size(hwparams, &hwbuffer_size))     < 0) {
+        logError(i18n("ALSA Plugin: Error getting hw buffer size for %1: %2", pcm_name, snd_strerror(err)));
+        error = true;
+    }
+
+    logDebug(i18n("ALSA Plugin(%1): period size = %2, hwbuffer size = %3", pcm_name, period_size, hwbuffer_size));
+
     latency = (1000 * period_size) / format.m_SampleRate / 2; //oversampling factor 2 to be sure
     if (latency < 30) {
         latency = 30;
     }
-//     logDebug(i18n("ALSA Plugin: Setting timer latency to %1 for %2", latency, pcm_name));
+    logDebug(i18n("ALSA Plugin(%1): Setting timer latency to %1 for %2", pcm_name, latency));
 
     if (!error) {
         snd_pcm_prepare(alsa_handle);

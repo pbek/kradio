@@ -55,8 +55,10 @@ void AlsaThread::setDone()
 
 void AlsaThread::run()
 {
-    m_done = false;
-    bool ignoreUnderflow = true;
+    m_done                   = false;
+    bool     ignoreUnderflow = true;
+    size_t   sum_frames_read = 0;
+    size_t   n_reads         = 0;
     while (!m_done && !m_error) {
         if (m_playback_not_capture) {
             size_t min_fill = m_parent->getPlaybackBufferMinFill();
@@ -119,6 +121,14 @@ void AlsaThread::run()
 
                 if (framesRead > 0) {
                     m_parent->removeFreeCaptureBufferSpace(bytesRead);
+
+                    sum_frames_read += framesRead;
+                    n_reads++;
+//                     if (n_reads >= 100) {
+//                         printf ("alsa recording thread: average samples per read (%lli reads): %f\n", (long long)n_reads, (double)sum_frames_read / (double)n_reads);
+//                         n_reads         = 0;
+//                         sum_frames_read = 0;
+//                     }
                 }
 
                 m_parent->unlockCaptureBufferTransaction();
@@ -136,6 +146,7 @@ void AlsaThread::run()
 
             }
         }
+        // happens if there is some error or no new sound data for playing or recording
         usleep(5000);
     }
 }
