@@ -59,10 +59,12 @@ void AlsaThread::run()
 {
     m_done                   = false;
     bool     ignoreUnderflow = true;
+#ifdef __ALSA_RECORDING_BUFFER_DEBUGGING__
     size_t   sum_frames_read = 0;
     size_t   min_frames_read = ~0;
     size_t   max_frames_read = 0;
     size_t   n_reads         = 0;
+#endif
     while (!m_done && !m_error) {
         if (m_playback_not_capture) {
             size_t min_fill = m_parent->getPlaybackBufferMinFill();
@@ -126,18 +128,20 @@ void AlsaThread::run()
                 if (framesRead > 0) {
                     m_parent->removeFreeCaptureBufferSpace(bytesRead);
 
+#ifdef __ALSA_RECORDING_BUFFER_DEBUGGING__
                     sum_frames_read += framesRead;
                     min_frames_read = qMin((size_t)framesRead, min_frames_read);
                     max_frames_read = qMax((size_t)framesRead, max_frames_read);
                     n_reads++;
-//                     if (n_reads >= 100) {
-//                         printf ("alsa recording thread: samples per read(%lli reads): min = %lli, max = %lli, avg = %f --- ", (long long)n_reads, (long long)min_frames_read, (long long)max_frames_read, (double)sum_frames_read / (double)n_reads);
-//                         printf ("bytes: min = %lli, max = %lli, avg = %f\n", (long long)min_frames_read * frameSize, (long long)max_frames_read * frameSize, (double)sum_frames_read / (double)n_reads * frameSize);
-//                         n_reads         = 0;
-//                         sum_frames_read = 0;
-//                         min_frames_read = ~0;
-//                         max_frames_read = 0;
-//                     }
+                    if (n_reads >= 100) {
+                        printf ("alsa recording thread: samples per read(%lli reads): min = %lli, max = %lli, avg = %f --- ", (long long)n_reads, (long long)min_frames_read, (long long)max_frames_read, (double)sum_frames_read / (double)n_reads);
+                        printf ("bytes: min = %lli, max = %lli, avg = %f\n", (long long)min_frames_read * frameSize, (long long)max_frames_read * frameSize, (double)sum_frames_read / (double)n_reads * frameSize);
+                        n_reads         = 0;
+                        sum_frames_read = 0;
+                        min_frames_read = ~0;
+                        max_frames_read = 0;
+                    }
+#endif
                 }
 
                 m_parent->unlockCaptureBufferTransaction();
