@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>345</width>
+    <width>377</width>
     <height>416</height>
    </rect>
   </property>
@@ -273,7 +273,7 @@
           <item row="10" column="0" colspan="2">
            <widget class="QCheckBox" name="chkNonBlockingPlayback">
             <property name="text">
-             <string>Non-blocking I/O (behavior of KRadio 4.0.1)</string>
+             <string>Non-blocking I/O (used in KRadio 4.0.1, deprecated)</string>
             </property>
            </widget>
           </item>
@@ -699,7 +699,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
-             <string>Non-blocking I/O (behavior of KRadio 4.0.1)</string>
+             <string>Non-blocking I/O (used in KRadio 4.0.1, deprecated)</string>
             </property>
            </widget>
           </item>
