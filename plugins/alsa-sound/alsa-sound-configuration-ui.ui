@@ -20,7 +20,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="kTabWidget8">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="TabPage2">
       <attribute name="title">
@@ -133,7 +133,7 @@
              <string> kB</string>
             </property>
             <property name="minimum">
-             <number>1</number>
+             <number>4</number>
             </property>
             <property name="maximum">
              <number>1024</number>
@@ -378,7 +378,7 @@
              <string> kB</string>
             </property>
             <property name="minimum">
-             <number>1</number>
+             <number>4</number>
             </property>
             <property name="maximum">
              <number>1024</number>

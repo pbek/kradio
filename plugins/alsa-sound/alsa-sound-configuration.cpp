@@ -59,8 +59,8 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
     QObject::connect(chkNonBlockingPlayback,        SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
     QObject::connect(chkNonBlockingCapture,         SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
 
-    QObject::connect(editPlaybackBufferSize,        SIGNAL(valueChanged(int)),        this, SLOT(slotPlaybackBufferSizeChanged(int)));
-    QObject::connect(editCaptureBufferSize,         SIGNAL(valueChanged(int)),        this, SLOT(slotCaptureBufferSizeChanged(int)));
+    QObject::connect(editPlaybackBufferSize,        SIGNAL(editingFinished()),        this, SLOT(slotPlaybackBufferSizeChanged()));
+    QObject::connect(editCaptureBufferSize,         SIGNAL(editingFinished()),        this, SLOT(slotCaptureBufferSizeChanged()));
 
     QObject::connect(cbEnableCaptureFormatOverride, SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
     QObject::connect(m_cbRate,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
@@ -380,9 +380,7 @@ void AlsaSoundConfiguration::slotCancel()
     }
 
     editPlaybackBufferSize     ->setValue  (m_SoundDevice ?  m_SoundDevice->getPlaybackBufferSize()/1024 : 96);
-    editPlaybackBufferChunkSize->setValue  (m_SoundDevice ?  m_SoundDevice->getPlaybackChunkSize ()/1024 : 16);
     editCaptureBufferSize      ->setValue  (m_SoundDevice ?  m_SoundDevice->getCaptureBufferSize ()/1024 : 96);
-    editCaptureBufferChunkSize ->setValue  (m_SoundDevice ?  m_SoundDevice->getCaptureChunkSize  ()/1024 : 16);
     chkNonBlockingPlayback     ->setChecked(m_SoundDevice ?  m_SoundDevice->isNonBlockingPlayback() : false);
     chkNonBlockingCapture      ->setChecked(m_SoundDevice ?  m_SoundDevice->isNonBlockingPlayback() : false);
     chkDisablePlayback         ->setChecked(m_SoundDevice ? !m_SoundDevice->isPlaybackEnabled()     : false);
@@ -410,8 +408,10 @@ void AlsaSoundConfiguration::slotCancel()
 
     m_ignore_updates = false;
 
-    slotPlaybackBufferSizeChanged(editPlaybackBufferSize->value());
-    slotCaptureBufferSizeChanged (editCaptureBufferSize ->value());
+    slotPlaybackBufferSizeChanged();
+    slotCaptureBufferSizeChanged ();
+    editPlaybackBufferChunkSize->setValue  (m_SoundDevice ?  m_SoundDevice->getPlaybackChunkSize ()/1024 : 16);
+    editCaptureBufferChunkSize ->setValue  (m_SoundDevice ?  m_SoundDevice->getCaptureChunkSize  ()/1024 : 16);
 
     m_dirty = false;
 }
@@ -535,18 +535,18 @@ QString AlsaSoundConfiguration::condenseALSADeviceDescription(const AlsaSoundDev
 }
 
 
-void AlsaSoundConfiguration::slotPlaybackBufferSizeChanged(int buffer_size)
+void AlsaSoundConfiguration::slotPlaybackBufferSizeChanged()
 {
     if (!m_ignore_updates) {
-        editPlaybackBufferChunkSize->setMaximum(buffer_size / 3);
+        editPlaybackBufferChunkSize->setMaximum(editPlaybackBufferSize->value() / 3);
     }
 }
 
 
-void AlsaSoundConfiguration::slotCaptureBufferSizeChanged (int buffer_size)
+void AlsaSoundConfiguration::slotCaptureBufferSizeChanged ()
 {
     if (!m_ignore_updates) {
-        editCaptureBufferChunkSize->setMaximum(buffer_size / 3);
+        editCaptureBufferChunkSize->setMaximum(editCaptureBufferSize->value() / 3);
     }
 }
 
