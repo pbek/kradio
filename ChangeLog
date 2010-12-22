@@ -1,6 +1,7 @@
 2010-12-21
 
     emw - better configurability for alsa buffer handling plus extra debugging output
+        - fixed pause/resume for pulse audio environments
 
 2010-12-20
 
