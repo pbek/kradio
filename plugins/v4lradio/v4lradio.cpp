@@ -340,7 +340,7 @@ bool V4LRadio::powerOn ()
         sendMuteSink    (m_SoundStreamSinkID);
         sendUnmuteSink  (m_SoundStreamSinkID);
 
-        notifyPowerChanged(true);
+        notifyPowerChanged(isPowerOn());
         notifySoundStreamChanged(m_SoundStreamSourceID);
     }
 

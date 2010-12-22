@@ -255,7 +255,7 @@ bool InternetRadio::powerOn ()
 
         unmuteSource  (m_SoundStreamSourceID);
         sendUnmuteSink(m_SoundStreamSourceID);
-        notifyPowerChanged(true);
+        notifyPowerChanged(isPowerOn());
         notifyStationChanged(m_currentStation);
         notifyURLChanged(m_currentStation.url(), &m_currentStation);
 
