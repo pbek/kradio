@@ -380,9 +380,17 @@ bool AlsaSoundDevice::pausePlayback(SoundStreamID /*id*/)
 }
 
 
-bool AlsaSoundDevice::resumePlayback(SoundStreamID /*id*/)
+bool AlsaSoundDevice::resumePlayback(SoundStreamID id)
 {
-    return false;
+    if (id.isValid() && m_PlaybackStreamID == id) {
+        SoundFormat f = m_PlaybackFormat;
+        // tribute to pulse audio: With pulse audio, latency increases for times no samples are send to the device
+        // (as in paused mode). Thus we have to reopen the device.
+        openPlaybackDevice(f, /*reopen*/true);
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
@@ -752,7 +760,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
     setWaitForMinPlaybackBufferFill(66/*percent*/);
 
-    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, m_PlaybackDeviceName.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, (m_nonBlockingPlayback ? SND_PCM_NONBLOCK : 0), m_PlaybackLatency, m_PlaybackChunkSize);
+    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, m_PlaybackDeviceName.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, (m_nonBlockingPlayback ? SND_PCM_NONBLOCK : 0), m_PlaybackLatency, m_PlaybackBufferSize, m_PlaybackChunkSize);
 
     if (!error) {
 
@@ -814,7 +822,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
         m_CaptureFormat = m_CaptureFormatOverride;
     }
 
-    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, m_CaptureDeviceName.toLocal8Bit(), SND_PCM_STREAM_CAPTURE, (m_nonBlockingCapture ? SND_PCM_NONBLOCK : 0), m_CaptureLatency, m_CaptureChunkSize);
+    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, m_CaptureDeviceName.toLocal8Bit(), SND_PCM_STREAM_CAPTURE, (m_nonBlockingCapture ? SND_PCM_NONBLOCK : 0), m_CaptureLatency, m_CaptureBufferSize, m_CaptureChunkSize);
 
     if (!error) {
 
@@ -843,7 +851,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 }
 
 
-bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t chunk_size)
+bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t buffer_size, size_t chunk_size)
 {
     bool                 error    = false;
     int                  dir      = 0;
@@ -914,11 +922,12 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         logError(i18n("ALSA Plugin: Error setting period size to %1 for %2: %3", period_frames, pcm_name, snd_strerror(err)));
         error = true;
     }
-    if (!error && (err = snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &max_buffer_frames)) < 0) {
-        logError(i18n("ALSA Plugin: Error setting buffer size to %1 for %2: %3", max_buffer_frames, pcm_name, snd_strerror(err)));
+    snd_pcm_uframes_t  buffer_frames     = qMin((size_t)max_buffer_frames, buffer_size / format.frameSize());
+    if (!error && (err = snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &buffer_frames)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting buffer size to %1 for %2: %3", buffer_frames, pcm_name, snd_strerror(err)));
         error = true;
     }
-    logDebug(i18n("ALSA Plugin(%1) setting parameters near: period size = %2 [frames], hwbuffer size = %3 [frames]", pcm_name, period_frames, max_buffer_frames));
+    logDebug(i18n("ALSA Plugin(%1) setting parameters near: period size = %2 [frames], hwbuffer size = %3 [frames]", pcm_name, period_frames, buffer_frames));
 
     /* set all params */
 
@@ -961,7 +970,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    
+
     if (!error) {
         snd_pcm_prepare(alsa_handle);
         snd_pcm_dump(alsa_handle, log);
