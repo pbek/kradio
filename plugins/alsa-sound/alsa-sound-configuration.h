@@ -77,6 +77,8 @@ protected slots:
     void slotCaptureDeviceSelected (int comboIdx);
     void slotCaptureMixerSelected  (int comboIdx);
     void slotCheckSoundDevices();
+    void slotPlaybackBufferSizeChanged(int buffer_size);
+    void slotCaptureBufferSizeChanged (int buffer_size);
 
 protected:
     QString condenseALSADeviceDescription(const AlsaSoundDeviceMetaData &md);

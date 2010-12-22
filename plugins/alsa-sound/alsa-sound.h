@@ -211,7 +211,12 @@ RECEIVERS:
 
     // Config Access
 
-    int            getBufferSize()          const { return m_BufferSize; }
+    size_t         getPlaybackBufferSize()  const { return m_PlaybackBufferSize;  }
+    size_t         getPlaybackChunkSize()   const { return m_PlaybackChunkSize;   }
+    size_t         getCaptureBufferSize()   const { return m_CaptureBufferSize;   }
+    size_t         getCaptureChunkSize()    const { return m_CaptureChunkSize;    }
+    bool           isNonBlockingPlayback()  const { return m_nonBlockingPlayback; }
+    bool           isNonBlockingCapture()   const { return m_nonBlockingCapture;  }
     bool           isPlaybackEnabled()      const { return m_EnablePlayback; }
     bool           isCaptureEnabled()       const { return m_EnableCapture;  }
     const QString &getPlaybackDeviceName()  const { return m_PlaybackDeviceName; }
@@ -223,7 +228,8 @@ RECEIVERS:
     bool           getSoftPlaybackVolume(double &correction_factor) const { correction_factor = m_SoftPlaybackVolumeCorrectionFactor; return m_SoftPlaybackVolumeEnabled; }
     bool           getCaptureFormatOverride(SoundFormat &sf);
 
-    void           setBufferSize(int s);
+    void           setBufferSizes(size_t playback_size, size_t playback_chunk_size, size_t capture_size, size_t capture_chunk_size);
+    void           setNonBlockingFlags(bool playback_flag, bool capture_flag);
     void           enablePlayback(bool on);
     void           enableCapture(bool on);
     void           setPlaybackDevice(const QString &deviceName, bool force = false);
@@ -246,7 +252,7 @@ signals:
 protected:
     INLINE_IMPL_DEF_noticeConnectedI(IErrorLogClient);
 
-    bool   openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency);
+    bool   openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t chunk_size);
 
     bool   openPlaybackDevice (const SoundFormat &format, bool reopen = false);
     bool   openCaptureDevice  (const SoundFormat &format, bool reopen = false);
@@ -302,7 +308,13 @@ protected:
     SoundStreamID   m_PlaybackStreamID,
                     m_CaptureStreamID;
 
-    size_t          m_BufferSize;
+    bool            m_nonBlockingPlayback;
+    bool            m_nonBlockingCapture;
+
+    size_t          m_PlaybackChunkSize;
+    size_t          m_PlaybackBufferSize;
+    size_t          m_CaptureChunkSize;
+    size_t          m_CaptureBufferSize;
     RingBuffer      m_PlaybackBuffer,
                     m_CaptureBuffer;
     int             m_PlaybackBufferWaitForMinFill; // in percent

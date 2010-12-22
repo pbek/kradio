@@ -43,15 +43,24 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
 {
     setupUi(this);
 
-    QObject::connect(m_comboPlaybackDevice,    SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
-    QObject::connect(m_comboPlaybackMixerCard, SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
-    QObject::connect(m_comboCaptureDevice,     SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
-    QObject::connect(m_comboCaptureMixerCard,  SIGNAL(activated(int)),       this, SLOT(slotSetDirty()));
-    QObject::connect(editBufferSize,           SIGNAL(valueChanged(int)),    this, SLOT(slotSetDirty()));
-    QObject::connect(chkDisablePlayback,       SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
-    QObject::connect(chkDisableCapture,        SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
-    QObject::connect(cbEnableSoftVolume,       SIGNAL(toggled(bool)),        this, SLOT(slotSetDirty()));
-    QObject::connect(sbSoftVolumeCorrection,   SIGNAL(valueChanged(double)), this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboPlaybackDevice,         SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboPlaybackMixerCard,      SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboCaptureDevice,          SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboCaptureMixerCard,       SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
+    QObject::connect(chkDisablePlayback,            SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
+    QObject::connect(chkDisableCapture,             SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
+    QObject::connect(cbEnableSoftVolume,            SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
+    QObject::connect(sbSoftVolumeCorrection,        SIGNAL(valueChanged(double)),     this, SLOT(slotSetDirty()));
+
+    QObject::connect(editPlaybackBufferSize,        SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
+    QObject::connect(editPlaybackBufferChunkSize,   SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
+    QObject::connect(editCaptureBufferSize,         SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
+    QObject::connect(editCaptureBufferChunkSize,    SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
+    QObject::connect(chkNonBlockingPlayback,        SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
+    QObject::connect(chkNonBlockingCapture,         SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
+
+    QObject::connect(editPlaybackBufferSize,        SIGNAL(valueChanged(int)),        this, SLOT(slotPlaybackBufferSizeChanged(int)));
+    QObject::connect(editCaptureBufferSize,         SIGNAL(valueChanged(int)),        this, SLOT(slotCaptureBufferSizeChanged(int)));
 
     QObject::connect(cbEnableCaptureFormatOverride, SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
     QObject::connect(m_cbRate,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
@@ -306,9 +315,14 @@ void AlsaSoundConfiguration::slotOK()
         getCaptureSoundFormat(sf);
         m_SoundDevice->setCaptureFormatOverride(cbEnableCaptureFormatOverride->isChecked(), sf);
 
-        m_SoundDevice->setBufferSize        ( editBufferSize    ->value() * 1024);
-        m_SoundDevice->enablePlayback       (!chkDisablePlayback->isChecked());
-        m_SoundDevice->enableCapture        (!chkDisableCapture ->isChecked());
+        m_SoundDevice->setBufferSizes(editPlaybackBufferSize     ->value() * 1024,
+                                      editPlaybackBufferChunkSize->value() * 1024,
+                                      editCaptureBufferSize      ->value() * 1024,
+                                      editCaptureBufferChunkSize ->value() * 1024
+                                     );
+        m_SoundDevice->setNonBlockingFlags(chkNonBlockingPlayback->isChecked(), chkNonBlockingCapture->isChecked());
+        m_SoundDevice->enablePlayback     (!chkDisablePlayback->isChecked());
+        m_SoundDevice->enableCapture      (!chkDisableCapture ->isChecked());
 
         QString deviceName = m_comboPlaybackDevice->itemData(m_comboPlaybackDevice->currentIndex()).toString();
         m_SoundDevice->setPlaybackDevice(deviceName);
@@ -365,11 +379,14 @@ void AlsaSoundConfiguration::slotCancel()
         slotCaptureMixerSelected(m_comboCaptureMixerCard->currentIndex());
     }
 
-    editBufferSize    ->setValue  (m_SoundDevice ?  m_SoundDevice->getBufferSize()/1024 : 4);
-    chkDisablePlayback->setChecked(m_SoundDevice ? !m_SoundDevice->isPlaybackEnabled()  : false);
-    chkDisableCapture ->setChecked(m_SoundDevice ? !m_SoundDevice->isCaptureEnabled()   : false);
-
-
+    editPlaybackBufferSize     ->setValue  (m_SoundDevice ?  m_SoundDevice->getPlaybackBufferSize()/1024 : 96);
+    editPlaybackBufferChunkSize->setValue  (m_SoundDevice ?  m_SoundDevice->getPlaybackChunkSize ()/1024 : 16);
+    editCaptureBufferSize      ->setValue  (m_SoundDevice ?  m_SoundDevice->getCaptureBufferSize ()/1024 : 96);
+    editCaptureBufferChunkSize ->setValue  (m_SoundDevice ?  m_SoundDevice->getCaptureChunkSize  ()/1024 : 16);
+    chkNonBlockingPlayback     ->setChecked(m_SoundDevice ?  m_SoundDevice->isNonBlockingPlayback() : false);
+    chkNonBlockingCapture      ->setChecked(m_SoundDevice ?  m_SoundDevice->isNonBlockingPlayback() : false);
+    chkDisablePlayback         ->setChecked(m_SoundDevice ? !m_SoundDevice->isPlaybackEnabled()     : false);
+    chkDisableCapture          ->setChecked(m_SoundDevice ? !m_SoundDevice->isCaptureEnabled()      : false);
 
     if (m_SoundDevice)
         m_MixerSettings = m_SoundDevice->getCaptureMixerSettings();
@@ -392,6 +409,10 @@ void AlsaSoundConfiguration::slotCancel()
     cbEnableCaptureFormatOverride->setChecked(sf_ov_enable);
 
     m_ignore_updates = false;
+
+    slotPlaybackBufferSizeChanged(editPlaybackBufferSize->value());
+    slotCaptureBufferSizeChanged (editCaptureBufferSize ->value());
+
     m_dirty = false;
 }
 
@@ -511,6 +532,22 @@ QString AlsaSoundConfiguration::condenseALSADeviceDescription(const AlsaSoundDev
     if (res.length()) res += ", ";
     res += md.deviceVerboseDescription();
     return res;
+}
+
+
+void AlsaSoundConfiguration::slotPlaybackBufferSizeChanged(int buffer_size)
+{
+    if (!m_ignore_updates) {
+        editPlaybackBufferChunkSize->setMaximum(buffer_size / 3);
+    }
+}
+
+
+void AlsaSoundConfiguration::slotCaptureBufferSizeChanged (int buffer_size)
+{
+    if (!m_ignore_updates) {
+        editCaptureBufferChunkSize->setMaximum(buffer_size / 3);
+    }
 }
 
 

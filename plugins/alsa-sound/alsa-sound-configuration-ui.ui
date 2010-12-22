@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>343</width>
-    <height>287</height>
+    <width>345</width>
+    <height>416</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,13 +20,26 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="kTabWidget8">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="TabPage2">
       <attribute name="title">
        <string>Playback</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
+       <item row="4" column="0" colspan="3">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="0" column="0" colspan="2">
         <widget class="QCheckBox" name="chkDisablePlayback">
          <property name="text">
@@ -109,7 +122,7 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="KIntSpinBox" name="editBufferSize">
+           <widget class="KIntSpinBox" name="editPlaybackBufferSize">
             <property name="sizePolicy">
              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -133,16 +146,6 @@
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="textLabel2_2_6">
-            <property name="text">
-             <string>recommended:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
           <item row="4" column="0">
            <widget class="QLabel" name="label">
             <property name="enabled">
@@ -150,19 +153,6 @@
             </property>
             <property name="text">
              <string>Soft Volume Correction Factor</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1">
-           <widget class="QLabel" name="textLabel2_2_4">
-            <property name="text">
-             <string>96 kB</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -199,40 +189,98 @@
             </property>
            </widget>
           </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="textLabel2_2_2_3">
+            <property name="text">
+             <string>Buffer Chunk Size</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="KIntSpinBox" name="editPlaybackBufferChunkSize">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="suffix">
+             <string> kB</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1024</number>
+            </property>
+            <property name="maxValue" stdset="0">
+             <number>1024</number>
+            </property>
+            <property name="minValue" stdset="0">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="textLabel2_2_6">
+            <property name="text">
+             <string>recommended:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLabel" name="textLabel2_2_4">
+            <property name="text">
+             <string>96 kB</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="textLabel2_2_7">
+            <property name="text">
+             <string>recommended:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QLabel" name="textLabel2_2_5">
+            <property name="text">
+             <string>16 kB</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0" colspan="2">
+           <widget class="QCheckBox" name="chkNonBlockingPlayback">
+            <property name="text">
+             <string>Non-blocking I/O (behavior of KRadio 4.0.1)</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
-       <item row="3" column="0" colspan="3">
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
-      <zorder>chkDisablePlayback</zorder>
-      <zorder>line</zorder>
-      <zorder>groupBox</zorder>
-      <zorder>cbEnableSoftVolume</zorder>
-      <zorder>textLabel2_2_4</zorder>
-      <zorder>label</zorder>
-      <zorder>textLabel2_2_6</zorder>
-      <zorder>editBufferSize</zorder>
-      <zorder>textLabel2_2_2_2</zorder>
-      <zorder>sbSoftVolumeCorrection</zorder>
-      <zorder>cbEnableSoftVolume</zorder>
-      <zorder>textLabel2_2_4</zorder>
-      <zorder>label</zorder>
-      <zorder>textLabel2_2_6</zorder>
-      <zorder>editBufferSize</zorder>
-      <zorder>textLabel2_2_2_2</zorder>
-      <zorder>sbSoftVolumeCorrection</zorder>
      </widget>
      <widget class="QWidget" name="CaptureDevice">
       <attribute name="title">
@@ -268,27 +316,14 @@
           <property name="margin">
            <number>0</number>
           </property>
-          <item row="7" column="1">
-           <widget class="KComboBox" name="m_cbChannels">
-            <property name="enabled">
+          <item row="0" column="0">
+           <widget class="QLabel" name="textLabel2_4">
+            <property name="text">
+             <string>PCM Capture Device</string>
+            </property>
+            <property name="wordWrap">
              <bool>false</bool>
             </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <item>
-             <property name="text">
-              <string>Stereo</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Mono</string>
-             </property>
-            </item>
            </widget>
           </item>
           <item row="0" column="1" colspan="2">
@@ -301,43 +336,184 @@
             </property>
            </widget>
           </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="lableBits">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
+          <item row="1" column="0">
+           <widget class="QLabel" name="textLabel2_6">
             <property name="text">
-             <string>Sample Bits</string>
+             <string>Capture Mixer Card</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
             </property>
            </widget>
           </item>
-          <item row="5" column="2">
-           <widget class="KComboBox" name="m_cbSign">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
+          <item row="1" column="1" colspan="2">
+           <widget class="KComboBox" name="m_comboCaptureMixerCard">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>1</horstretch>
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <item>
-             <property name="text">
-              <string>Signed</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Unsigned</string>
-             </property>
-            </item>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="2" column="0">
+           <widget class="QLabel" name="textLabel2_2_2_4">
+            <property name="text">
+             <string>Buffer Size</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="2">
+           <widget class="KIntSpinBox" name="editCaptureBufferSize">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="suffix">
+             <string> kB</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1024</number>
+            </property>
+            <property name="maxValue" stdset="0">
+             <number>1024</number>
+            </property>
+            <property name="minValue" stdset="0">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="textLabel2_2_8">
+            <property name="text">
+             <string>recommended:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" colspan="2">
+           <widget class="QLabel" name="textLabel2_2_9">
+            <property name="text">
+             <string>96 kB</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="textLabel2_2_2_5">
+            <property name="text">
+             <string>Buffer Chunk Size</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1" colspan="2">
+           <widget class="KIntSpinBox" name="editCaptureBufferChunkSize">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="suffix">
+             <string> kB</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1024</number>
+            </property>
+            <property name="maxValue" stdset="0">
+             <number>1024</number>
+            </property>
+            <property name="minValue" stdset="0">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="textLabel2_2_10">
+            <property name="text">
+             <string>recommended:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1" colspan="2">
+           <widget class="QLabel" name="textLabel2_2_11">
+            <property name="text">
+             <string>16 kB</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="3">
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="3">
+           <widget class="QCheckBox" name="cbEnableCaptureFormatOverride">
+            <property name="toolTip">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Override Capture Format</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="labelRate">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Sample Rate</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
            <widget class="KComboBox" name="m_cbRate">
             <property name="enabled">
              <bool>false</bool>
@@ -375,100 +551,20 @@
             </item>
            </widget>
           </item>
-          <item row="6" column="1">
-           <widget class="KComboBox" name="m_cbEndianess">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <item>
-             <property name="text">
-              <string>Little Endian</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Big Endian</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="3" column="0" colspan="2">
-           <widget class="QCheckBox" name="cbEnableCaptureFormatOverride">
-            <property name="toolTip">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="whatsThis">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="text">
-             <string>Override Capture Format</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="lableChannels">
+          <item row="10" column="0">
+           <widget class="QLabel" name="lableBits">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Channels</string>
+             <string>Sample Bits</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="lableEndianess">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Endianess</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="textLabel2_4">
-            <property name="text">
-             <string>PCM Capture Device</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="labelRate">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Sample Rate</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
+          <item row="10" column="1">
            <widget class="KComboBox" name="m_cbBits">
             <property name="enabled">
              <bool>false</bool>
@@ -491,23 +587,119 @@ p, li { white-space: pre-wrap; }
             </item>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="textLabel2_6">
+          <item row="10" column="2">
+           <widget class="KComboBox" name="m_cbSign">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string>Signed</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Unsigned</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="11" column="0">
+           <widget class="QLabel" name="lableEndianess">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="text">
-             <string>Capture Mixer Card</string>
+             <string>Endianess</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
             </property>
            </widget>
           </item>
-          <item row="1" column="1" colspan="2">
-           <widget class="KComboBox" name="m_comboCaptureMixerCard">
+          <item row="11" column="1">
+           <widget class="KComboBox" name="m_cbEndianess">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string>Little Endian</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Big Endian</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="12" column="0">
+           <widget class="QLabel" name="lableChannels">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Channels</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="1">
+           <widget class="KComboBox" name="m_cbChannels">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string>Stereo</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Mono</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="3">
+           <widget class="QCheckBox" name="chkNonBlockingCapture">
+            <property name="toolTip">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Non-blocking I/O (behavior of KRadio 4.0.1)</string>
             </property>
            </widget>
           </item>
@@ -586,10 +778,15 @@ p, li { white-space: pre-wrap; }
   <tabstop>m_comboPlaybackMixerCard</tabstop>
   <tabstop>cbEnableSoftVolume</tabstop>
   <tabstop>sbSoftVolumeCorrection</tabstop>
-  <tabstop>editBufferSize</tabstop>
+  <tabstop>editPlaybackBufferSize</tabstop>
+  <tabstop>editPlaybackBufferChunkSize</tabstop>
+  <tabstop>chkNonBlockingPlayback</tabstop>
   <tabstop>chkDisableCapture</tabstop>
   <tabstop>m_comboCaptureDevice</tabstop>
   <tabstop>m_comboCaptureMixerCard</tabstop>
+  <tabstop>editCaptureBufferSize</tabstop>
+  <tabstop>editCaptureBufferChunkSize</tabstop>
+  <tabstop>chkNonBlockingCapture</tabstop>
   <tabstop>cbEnableCaptureFormatOverride</tabstop>
   <tabstop>m_cbRate</tabstop>
   <tabstop>m_cbBits</tabstop>

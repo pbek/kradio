@@ -64,9 +64,14 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_PassivePlaybackStreams(),
       m_PlaybackStreamID(),
       m_CaptureStreamID(),
-      m_BufferSize(92*1024),
-      m_PlaybackBuffer(m_BufferSize, /*synchronized =*/ true),
-      m_CaptureBuffer(m_BufferSize, /*synchronized =*/ true),
+      m_nonBlockingPlayback(false),
+      m_nonBlockingCapture (false),
+      m_PlaybackChunkSize  (16*1024),
+      m_PlaybackBufferSize (96*1024),
+      m_CaptureChunkSize   (16*1024),
+      m_CaptureBufferSize  (96*1024),
+      m_PlaybackBuffer(m_PlaybackBufferSize, /*synchronized =*/ true),
+      m_CaptureBuffer (m_CaptureBufferSize,  /*synchronized =*/ true),
       m_PlaybackBufferWaitForMinFill(66 /*percent*/),
       m_CaptureRequestCounter(0),
       m_CapturePos(0),
@@ -160,7 +165,12 @@ void AlsaSoundDevice::saveState (KConfigGroup &c) const
     c.writeEntry("capture-mixer-name",   m_CaptureMixerName);
     c.writeEntry("enable-playback",      m_EnablePlayback);
     c.writeEntry("enable-capture",       m_EnableCapture);
-    c.writeEntry("buffer-size",          (unsigned int) m_BufferSize);
+    c.writeEntry("playback-buffer-size",          (unsigned int) m_PlaybackBufferSize);
+    c.writeEntry("playback-buffer-chunk-size",    (unsigned int) m_PlaybackChunkSize);
+    c.writeEntry("capture-buffer-size",           (unsigned int) m_CaptureBufferSize);
+    c.writeEntry("capture-buffer-chunk-size",     (unsigned int) m_CaptureChunkSize);
+    c.writeEntry("nonblocking-playback",          m_nonBlockingPlayback);
+    c.writeEntry("nonblocking-capture",           m_nonBlockingCapture);
     c.writeEntry("soundstreamclient-id", m_SoundStreamClientID);
 
     c.writeEntry("mixer-settings",       m_CaptureMixerSettings.count());
@@ -186,21 +196,27 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
     PluginBase::restoreState(c);
     setSoundStreamClientID(c.readEntry("soundstreamclient-id", getSoundStreamClientID()));
 
-    m_use_threads     = c.readEntry("use-threads",          true);
+    m_use_threads         = c.readEntry("use-threads",                true);
 
-    m_EnablePlayback  = c.readEntry("enable-playback",      true);
-    m_EnableCapture   = c.readEntry("enable-capture",       true);
-    m_BufferSize      = c.readEntry("buffer-size",          96*1024);
+    m_EnablePlayback      = c.readEntry("enable-playback",            true);
+    m_EnableCapture       = c.readEntry("enable-capture",             true);
+    m_PlaybackBufferSize  = c.readEntry("playback-buffer-size",       c.readEntry("buffer-size",          96*1024));
+    m_PlaybackChunkSize   = c.readEntry("playback-buffer-chunk-size",                                     16*1024 );
+    m_CaptureBufferSize   = c.readEntry("capture-buffer-size",        c.readEntry("buffer-size",          96*1024));
+    m_CaptureChunkSize    = c.readEntry("capture-buffer-chunk-size",                                      16*1024 );
+    m_nonBlockingPlayback = c.readEntry("nonblocking-playback",       false);
+    m_nonBlockingCapture  = c.readEntry("nonblocking-capture",        false);
+
     QString dev       = c.readEntry("playback-device-name", "default");
-    setPlaybackDevice(dev, true);
+    setPlaybackDevice(dev,  true);
     dev               = c.readEntry("playback-mixer-name",  "default");
-    setPlaybackMixer(dev,  true);
+    setPlaybackMixer (dev,  true);
     dev               = c.readEntry("capture-device-name",  "default");
-    setCaptureDevice(dev,  true);
+    setCaptureDevice (dev,  true);
     dev               = c.readEntry("capture-mixer-name",   "default");
-    setCaptureMixer(dev,   true);
+    setCaptureMixer  (dev,  true);
 
-    setBufferSize(m_BufferSize);
+    setBufferSizes(m_PlaybackBufferSize, m_PlaybackChunkSize, m_CaptureBufferSize, m_CaptureChunkSize);
 
 
     int n = c.readEntry("mixer-settings",  0);
@@ -608,7 +624,7 @@ void AlsaSoundDevice::slotPollPlayback()
 
                     size_t   buffersize    = 0;
                     int      frameSize     = m_PlaybackFormat.frameSize();
-                    char     *buffer       = m_PlaybackBuffer.getData(buffersize);
+                    char     *buffer       = getPlaybackData(buffersize);
                     int      framesWritten = snd_pcm_writei(m_hPlayback, buffer, buffersize / frameSize);
                     int      bytesWritten  = framesWritten * frameSize;
 
@@ -650,7 +666,7 @@ void AlsaSoundDevice::slotPollCapture()
     if (m_CaptureStreamID.isValid() && m_hCapture) {
 
         size_t bufferSize = 0;
-        char  *buffer = m_CaptureBuffer.getFreeSpace(bufferSize);
+        char  *buffer     = getFreeCaptureBuffer(bufferSize);
 
         while (!m_use_threads && bufferSize) {
 
@@ -672,7 +688,7 @@ void AlsaSoundDevice::slotPollCapture()
                 logWarning(i18n("ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)", m_CaptureDeviceName, bufferSize, (long long unsigned)buffer));
             }
             // prepare for next read try
-            buffer = m_CaptureBuffer.getFreeSpace(bufferSize);
+            buffer     = getFreeCaptureBuffer(bufferSize);
         }
 
         if (m_use_threads && m_captureThread && m_hCapture && m_CaptureBuffer.getFreeSize() > 0) {
@@ -736,7 +752,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
     setWaitForMinPlaybackBufferFill(66/*percent*/);
 
-    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, m_PlaybackDeviceName.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, SND_PCM_NONBLOCK, m_PlaybackLatency);
+    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, m_PlaybackDeviceName.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, (m_nonBlockingPlayback ? SND_PCM_NONBLOCK : 0), m_PlaybackLatency, m_PlaybackChunkSize);
 
     if (!error) {
 
@@ -798,7 +814,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
         m_CaptureFormat = m_CaptureFormatOverride;
     }
 
-    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, m_CaptureDeviceName.toLocal8Bit(), SND_PCM_STREAM_CAPTURE, SND_PCM_NONBLOCK, m_CaptureLatency);
+    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, m_CaptureDeviceName.toLocal8Bit(), SND_PCM_STREAM_CAPTURE, (m_nonBlockingCapture ? SND_PCM_NONBLOCK : 0), m_CaptureLatency, m_CaptureChunkSize);
 
     if (!error) {
 
@@ -827,14 +843,17 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 }
 
 
-bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency)
+bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t chunk_size)
 {
-    bool error = false;
-    int  dir   = 0;
-
+    bool                 error    = false;
+    int                  dir      = 0;
+    snd_output_t        *log      = NULL;
     snd_pcm_hw_params_t *hwparams = NULL;
+    snd_pcm_sw_params_t *swparams = NULL;
 
-    snd_pcm_hw_params_alloca(&hwparams);
+    snd_pcm_hw_params_alloca(&hwparams); // allocate on stack, needs no free
+    snd_pcm_sw_params_alloca(&swparams); // allocate on stack, needs no free
+    snd_output_stdio_attach(&log, stderr, 0);
 
 
     /* OPEN */
@@ -883,7 +902,23 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         logWarning(i18n("ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 Hz instead", orgrate, pcm_name, format.m_SampleRate));
     }
 
-    // no period/hwbuffersize any more. It is not necessary. And has a high risc for incompatibilites
+    // again reenabling periods and buffer sizes, this time hopefully more correctly
+    snd_pcm_uframes_t  max_buffer_frames = 0;
+    if (!error && (err = snd_pcm_hw_params_get_buffer_size_max(hwparams, &max_buffer_frames)) < 0) {
+        logError(i18n("ALSA Plugin: Error reading max buffer size for %1: %2", pcm_name, snd_strerror(err)));
+        error = true;
+    }
+
+    snd_pcm_uframes_t  period_frames     = qMin(max_buffer_frames / 3, chunk_size / format.frameSize());
+    if (!error && (err = snd_pcm_hw_params_set_period_size_near(alsa_handle, hwparams, &period_frames, 0)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting period size to %1 for %2: %3", period_frames, pcm_name, snd_strerror(err)));
+        error = true;
+    }
+    if (!error && (err = snd_pcm_hw_params_set_buffer_size_near(alsa_handle, hwparams, &max_buffer_frames)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting buffer size to %1 for %2: %3", max_buffer_frames, pcm_name, snd_strerror(err)));
+        error = true;
+    }
+    logDebug(i18n("ALSA Plugin(%1) setting parameters near: period size = %2 [frames], hwbuffer size = %3 [frames]", pcm_name, period_frames, max_buffer_frames));
 
     /* set all params */
 
@@ -892,28 +927,44 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         error = true;
     }
 
-    snd_pcm_uframes_t period_size   = 0;
-    if (!error && (err = snd_pcm_hw_params_get_period_size(hwparams, &period_size, &dir)) < 0) {
+    snd_pcm_uframes_t period_frames_real = 0;
+    if (!error && (err = snd_pcm_hw_params_get_period_size(hwparams, &period_frames_real, 0)) < 0) {
         logError(i18n("ALSA Plugin: Error getting period size for %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
-    snd_pcm_uframes_t hwbuffer_size = 0;
-    if (!error && (err = snd_pcm_hw_params_get_buffer_size(hwparams, &hwbuffer_size))     < 0) {
+    snd_pcm_uframes_t hwbuffer_frames    = 0;
+    if (!error && (err = snd_pcm_hw_params_get_buffer_size(hwparams, &hwbuffer_frames))     < 0) {
         logError(i18n("ALSA Plugin: Error getting hw buffer size for %1: %2", pcm_name, snd_strerror(err)));
         error = true;
     }
 
-    logDebug(i18n("ALSA Plugin(%1): period size = %2, hwbuffer size = %3", pcm_name, period_size, hwbuffer_size));
+    logDebug(i18n("ALSA Plugin(%1): period size = %2 [frames], hwbuffer size = %3 [frames]", pcm_name, period_frames_real, hwbuffer_frames));
 
-    latency = (1000 * period_size) / format.m_SampleRate / 2; //oversampling factor 2 to be sure
-    if (latency < 30) {
-        latency = 30;
+    latency = (1000 * period_frames_real) / format.m_SampleRate;
+    if (latency < 40) {
+        latency = 40;
     }
-    logDebug(i18n("ALSA Plugin(%1): Setting timer latency to %1 for %2", pcm_name, latency));
+    logDebug(i18n("ALSA Plugin(%1): Setting timer latency to %2", pcm_name, latency));
 
+
+    if (!error && (err = snd_pcm_sw_params_current(alsa_handle, swparams)) < 0) {
+        logError(i18n("ALSA Plugin: Error getting sw params for %1: %2", pcm_name, snd_strerror(err)));
+        error = true;
+    }
+    if (!error && (err = snd_pcm_sw_params_set_avail_min(alsa_handle, swparams, period_frames_real)) < 0) {
+        logError(i18n("ALSA Plugin: Error setting sw params min available frames to %1 for %2: %3", period_frames_real, pcm_name, snd_strerror(err)));
+        error = true;
+    }
+    if (!error && (err = snd_pcm_sw_params(alsa_handle, swparams)) < 0) {
+        logError(i18n("ALSA Plugin: Error installing sw params for %1: %2", pcm_name, snd_strerror(err)));
+        error = true;
+    }
+
+    
     if (!error) {
         snd_pcm_prepare(alsa_handle);
+        snd_pcm_dump(alsa_handle, log);
     }
 
     return !error;
@@ -1499,17 +1550,27 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
 }
 
 
-void AlsaSoundDevice::setBufferSize(int s)
+void AlsaSoundDevice::setBufferSizes(size_t playback_size, size_t playback_chunk_size, size_t capture_size, size_t capture_chunk_size)
 {
-    m_BufferSize = s;
+    m_PlaybackBufferSize = playback_size;
+    m_PlaybackChunkSize  = playback_chunk_size;
+    m_CaptureBufferSize  = capture_size;
+    m_CaptureChunkSize   = capture_chunk_size;
 
     lockPlaybackBufferTransaction();
-    m_PlaybackBuffer.resize(m_BufferSize);
+    m_PlaybackBuffer.resize(m_PlaybackBufferSize);
     unlockPlaybackBufferTransaction();
 
     lockCaptureBufferTransaction();
-    m_CaptureBuffer.resize(m_BufferSize);
+    m_CaptureBuffer.resize(m_CaptureBufferSize);
     unlockCaptureBufferTransaction();
+}
+
+
+void AlsaSoundDevice::setNonBlockingFlags(bool playback_flag, bool capture_flag)
+{
+    m_nonBlockingPlayback = playback_flag;
+    m_nonBlockingCapture  = capture_flag;
 }
 
 
@@ -1735,6 +1796,7 @@ char *AlsaSoundDevice::getPlaybackData(size_t &buffersize)
 {
     buffersize = 0;
     char *buffer = m_PlaybackBuffer.getData(buffersize);
+    buffersize = qMin(buffersize, m_PlaybackChunkSize);
 
     return buffer;
 }
@@ -1759,8 +1821,9 @@ size_t AlsaSoundDevice::getPlaybackBufferMinFill() const
 
 char *AlsaSoundDevice::getFreeCaptureBuffer(size_t &bufsize)
 {
-    bufsize = 0;
+    bufsize      = 0;
     char *buffer =  m_CaptureBuffer.getFreeSpace(bufsize);
+    bufsize      = qMin(bufsize, m_CaptureChunkSize);
     return buffer;
 }
 
