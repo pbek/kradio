@@ -6,7 +6,7 @@ include (MacroLibrary)
 
 FIND_PACKAGE(Subversion)
 
-SET(KRADIO_VERSION "snapshot-2011-01-06-test2")
+SET(KRADIO_VERSION "snapshot-2011-01-06-test3")
 
 IF(Subversion_FOUND)
     execute_process(COMMAND svn info ${CMAKE_CURRENT_SOURCE_DIR}
