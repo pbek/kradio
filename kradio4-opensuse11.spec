@@ -1,6 +1,6 @@
 Name:          kradio4
 Summary:       AM/FM/INternet Radio Application for KDE 4.x
-Version: snapshot_2011_01_06_test1
+Version: snapshot_2011_01_06_test2
 Group:         kde4
 License:       GPL
 URL:           http://kradio.sourceforge.net
