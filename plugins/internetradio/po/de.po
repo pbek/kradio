@@ -56,7 +56,7 @@ msgstr ""
 #: decoder_thread.cpp:422
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
-msgstr "Automatisch erkanntes Format: %1 (Zuverlässigkeit: $2)"
+msgstr "Automatisch erkanntes Format: %1 (Zuverlässigkeit: %2)"
 
 #: decoder_thread.cpp:428 decoder_thread.cpp:430 decoder_thread.cpp:468
 #: decoder_thread.cpp:470 decoder_thread.cpp:482 decoder_thread.cpp:484
