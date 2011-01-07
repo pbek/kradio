@@ -722,8 +722,6 @@ void DecoderThread::run()
 //     IErrorLogClient::staticLogDebug("DecoderThread::exec()");
     exec();
 //     QApplication::postEvent(parent(), new SoundStreamEncodingTerminatedEvent(m_decoder->soundFormat()));
-    delete m_decoder;
-    m_decoder = NULL;
     exit();
 }
 

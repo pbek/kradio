@@ -664,7 +664,8 @@ void InternetRadio::startDecoderThread()
         m_decoderThread->quit();
     }
     m_decoderThread = new DecoderThread(this, m_currentStation, m_currentPlaylist, MAX_BUFFERS, m_maxStreamProbeSize, m_maxStreamAnalyzeTime);
-    QObject::connect(m_decoderThread, SIGNAL(finished()), this, SLOT(slotDecoderThreadFinished()));
+    QObject::connect(m_decoderThread, SIGNAL(finished()),   this, SLOT(slotDecoderThreadFinished()));
+    QObject::connect(m_decoderThread, SIGNAL(terminated()), this, SLOT(slotDecoderThreadFinished()));
     m_decoderThread->start();
 }
 
@@ -675,7 +676,12 @@ void InternetRadio::slotDecoderThreadFinished()
     // we cannot call deleteLater from within the thread loop, since
     // deleteLate will not schedule an event in the thread but in the main loop,
     // which might cause a deletion before the thread really finished.
+    checkDecoderMessages();
+
     DecoderThread *t = static_cast<DecoderThread*>(sender());
+    if (t == m_decoderThread) {
+        m_decoderThread = NULL;
+    }
     t->deleteLater();
 }
 
@@ -795,15 +801,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
     if (!id.isValid() || id != m_SoundStreamSourceID)
         return false;
 
-    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->warning()) {
-        logWarning(m_decoderThread->decoder()->warningString());
-    }
-    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->debug()) {
-        logDebug(m_decoderThread->decoder()->debugString());
-    }
-    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->error()) {
-        logError(m_decoderThread->decoder()->errorString());
-        powerOff();
+    if (!checkDecoderMessages()) {
         return false;
     }
 
@@ -855,6 +853,22 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
 
 
 
+bool InternetRadio::checkDecoderMessages()
+{
+    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->warning()) {
+        logWarning(m_decoderThread->decoder()->warningString());
+    }
+    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->debug()) {
+        logDebug(m_decoderThread->decoder()->debugString());
+    }
+    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->error()) {
+        logError(m_decoderThread->decoder()->errorString());
+        powerOff();
+        return false;
+    }
+    return true;
+}
+
 
 
 bool InternetRadio::event(QEvent *_e)
@@ -862,28 +876,13 @@ bool InternetRadio::event(QEvent *_e)
     if (SoundStreamDecodingEvent::isSoundStreamDecodingEvent(_e)) {
         SoundStreamDecodingEvent *e  = static_cast<SoundStreamDecodingEvent*>(_e);
 
-        if (m_decoderThread && m_decoderThread->decoder()) {
-            if (m_decoderThread->decoder()->warning()) {
-                logWarning(m_decoderThread->decoder()->warningString());
-            }
-            if (m_decoderThread && m_decoderThread->decoder()->debug()) {
-                logDebug(m_decoderThread->decoder()->debugString());
-            }
-            if (m_decoderThread->decoder()->error()) {
-                logError(m_decoderThread->decoder()->errorString());
-                powerOff();
-            } else {
-                if (e->type() == SoundStreamDecodingTerminated) {
-/*                } else if (!m_muted && e->type() == SoundStreamDecodingStep) {
-                    SoundStreamDecodingStepEvent *step = static_cast<SoundStreamDecodingStepEvent*>(e);
-                    logDebug(QString("InternetRadio::event: STORE: buf_size = %1, buf_count = %2").arg(step->size()).arg(m_DataQueue.size())+1);
+        checkDecoderMessages();
 
-                    char *data              = step->takeData();
-                    size_t s                = step->size();
-                    const SoundMetaData &md = step->metaData();
-                    const SoundFormat   &sf = step->getSoundFormat();
-                    m_DataQueue.push_back(DataBuffer(data, s, md, sf));
-*/                }
+        if (m_decoderThread && m_decoderThread->decoder()) {
+            if (e->type() == SoundStreamDecodingTerminated) {
+                DecoderThread *t = m_decoderThread;
+                m_decoderThread = NULL;
+                t->deleteLater();
             }
         }
         return true;
@@ -1120,9 +1119,9 @@ void InternetRadio::interpretePlaylistM3U(const QByteArray &playlistData)
     QStringList lines = QString(playlistData).split("\n");
     foreach (QString line, lines) {
         QString t = line.trimmed();
-//         if (t.startsWith("http://") || t.startsWith("https://") || t.startsWith("mms://")) {
+        if (t.length() > 5 && !t.startsWith("#")) {
             m_currentPlaylist.append(t);
-//         }
+        }
     }
 }
 

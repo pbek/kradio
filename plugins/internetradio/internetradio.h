@@ -176,6 +176,7 @@ protected:
     void    radio_done();  // terminates thread
     void    freeAllBuffers();
 
+    bool    checkDecoderMessages();
 
 protected slots:
     void    slotPlaylistData(KIO::Job *job, const QByteArray &data);
