@@ -11,104 +11,104 @@
 			<media></media>
 			<comments></comments>
 		</info>
-		<InternetRadioStation>
-			<stationID>1237238265192A300F2BC77898002A961DD1CADE4D4243E14CC7FF0BF1EBCCD2ECC132</stationID>
-			<name>NDR1 Niedersachsen (Net)</name>
-			<shortname>NDR1</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr1niedersachsen_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>12372383391EC0451ACED07CFB93E5CD0ED22D73581D40919502E321B2C213F07FCD11</stationID>
-			<name>NDR1 Radio MV (Net)</name>
-			<shortname>NDR1</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr1radiomv_hi_mp3</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>12372384070476E2114E24C5409E5A144B0AA1B8CE22543494695AD55DD7B366DCE8A7</stationID>
-			<name>NDR1 Welle Nord (Net)</name>
-			<shortname>NDR1 WN</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr1wellenord_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>1237238455E2F4890ADB3CDC9A26E1BD57AC3E64F3AE798C38043DBFB37110F7677643</stationID>
-			<name>NDR 90,3 (Net)</name>
-			<shortname></shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr903_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>1237238501EE229AEF5E7D29DFACB19CCC5B0D1C98882CC01602447C56D62E4A6285D4</stationID>
-			<name>NDR2 (Net)</name>
-			<shortname>NDR2</shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndr2_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>12372385402B5C7D00F4C5010290EC43DC08CDCC936A7D51C3690340FA9F5AD0A9632E</stationID>
-			<name>NDR Info (Net)</name>
-			<shortname></shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndrinfo_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>12860289961BAAC151B109A63B84C8C8C823DCFFBC926A12D5805B826D126097AB9E74</stationID>
-			<name>NDR Info Spezial (Net)</name>
-			<shortname></shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndrinfo_spezial_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>1237238596C237DEE8D8F6CDC125D1BF5FC6F6C74402FD66FED61724CB30B3884C234A</stationID>
-			<name>N-Joy (Net)</name>
-			<shortname></shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_n-joy_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>12372387242A93AC36E9AFAA68641AFE56D00B060911B28F2AB3F3AAFAA51D796FBD8D</stationID>
-			<name>NDR Kultur (Net)</name>
-			<shortname></shortname>
-			<icon></icon>
-			<volumepreset>-1</volumepreset>
-			<stereomode>dontcare</stereomode>
-			<url>http://ndr.ic.llnwd.net/stream/ndr_ndrkultur_hi_mp3.m3u</url>
-			<decoderclass></decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>1237238265192A300F2BC77898002A961DD1CADE4D4243E14CC7FF0BF1EBCCD2ECC132</stationID>
+            <name>NDR1 Niedersachsen (Net)</name>
+            <shortname>NDR1</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>12372383391EC0451ACED07CFB93E5CD0ED22D73581D40919502E321B2C213F07FCD11</stationID>
+            <name>NDR1 Radio MV (Net)</name>
+            <shortname>NDR1</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/ndr1radiomv.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>12372384070476E2114E24C5409E5A144B0AA1B8CE22543494695AD55DD7B366DCE8A7</stationID>
+            <name>NDR1 Welle Nord (Net)</name>
+            <shortname>NDR1 WN</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/ndr1wellenord.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>1237238455E2F4890ADB3CDC9A26E1BD57AC3E64F3AE798C38043DBFB37110F7677643</stationID>
+            <name>NDR 90,3 (Net)</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/ndr903.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>1237238501EE229AEF5E7D29DFACB19CCC5B0D1C98882CC01602447C56D62E4A6285D4</stationID>
+            <name>NDR2 (Net)</name>
+            <shortname>NDR2</shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/ndr2.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>12372385402B5C7D00F4C5010290EC43DC08CDCC936A7D51C3690340FA9F5AD0A9632E</stationID>
+            <name>NDR Info (Net)</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/ndrinfo.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>12860289961BAAC151B109A63B84C8C8C823DCFFBC926A12D5805B826D126097AB9E74</stationID>
+            <name>NDR Info Spezial (Net)</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndrinfo_spezial_hi_mp3</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>1237238596C237DEE8D8F6CDC125D1BF5FC6F6C74402FD66FED61724CB30B3884C234A</stationID>
+            <name>N-Joy (Net)</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/n-joy.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
+        <InternetRadioStation>
+            <stationID>12372387242A93AC36E9AFAA68641AFE56D00B060911B28F2AB3F3AAFAA51D796FBD8D</stationID>
+            <name>NDR Kultur (Net)</name>
+            <shortname></shortname>
+            <icon></icon>
+            <volumepreset>-1</volumepreset>
+            <stereomode>dontcare</stereomode>
+            <url>http://www.ndr.de/resources/metadaten/audio/m3u/ndrkultur.m3u</url>
+            <decoderclass></decoderclass>
+            <playlistclass>auto</playlistclass>
+        </InternetRadioStation>
 	</stationlist>
 </kradiorc>
