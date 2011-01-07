@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.recording.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: 2010-09-27 02:06+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-de@kde.org>\n"
@@ -198,8 +198,8 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
 "italic;\">(</span><span style=\" font-weight:600; font-style:italic;\">%s</"
-"span><span style=\" font-style:italic;\">: Sendername, </span><span style="
-"\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
+"span><span style=\" font-style:italic;\">: Sendername, </span><span style=\" "
+"font-weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
 "italic;\">: Senderindex, </span><span style=\" font-weight:600; font-style:"
 "italic;\">%Y</span><span style=\" font-style:italic;\">: Jahr (4stellig), </"
 "span><span style=\" font-weight:600; font-style:italic;\">%m</span><span "
@@ -208,16 +208,14 @@ msgstr ""
 "\">: Tag(2stellig), </span><span style=\" font-weight:600; font-style:italic;"
 "\">%B</span><span style=\" font-style:italic;\">: Monatsname, </span><span "
 "style=\" font-weight:600; font-style:italic;\">%A</span><span style=\" font-"
-"style:italic;\"> Wochentag, </span><span style=\" font-weight:600; "
-"font-style:"
-"italic;\">%H</span><span style=\" font-style:italic;\">: Stunde(2stellig), </"
-"span><span style=\" font-weight:600; font-style:italic;\">%M</span><span "
-"style=\" font-style:italic;\">: Minute(2stellig), </span><span style=\" font-"
-"weight:600; font-style:italic;\">%S</span><span style=\" font-style:italic;"
-"\"> Sekunde(2stellig),</span><span style=\" font-weight:600; "
-"font-style:italic;"
-"\"> %%</span><span style=\" font-style:italic;\">: Ersatz für %)</span></p></"
-"body></html>"
+"style:italic;\"> Wochentag, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%H</span><span style=\" font-style:italic;\">: Stunde"
+"(2stellig), </span><span style=\" font-weight:600; font-style:italic;\">%M</"
+"span><span style=\" font-style:italic;\">: Minute(2stellig), </span><span "
+"style=\" font-weight:600; font-style:italic;\">%S</span><span style=\" font-"
+"style:italic;\"> Sekunde(2stellig),</span><span style=\" font-weight:600; "
+"font-style:italic;\"> %%</span><span style=\" font-style:italic;\">: Ersatz "
+"für %)</span></p></body></html>"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -397,23 +395,23 @@ msgstr "KRadio Aufnahme-Überwachung"
 msgid "Recording"
 msgstr "Aufnahme"
 
-#: recording.cpp:378
+#: recording.cpp:362
 msgid "start capture not handled"
 msgstr "Der Aufnahmestart wurde ignoriert"
 
-#: recording.cpp:388
+#: recording.cpp:372
 msgid "Recording starting"
 msgstr "Die Aufnahme wird gestartet"
 
-#: recording.cpp:390
+#: recording.cpp:374
 msgid "starting encoding thread failed"
 msgstr "Das Starten des Aufnahme-Threads schlug fehl"
 
-#: recording.cpp:472
+#: recording.cpp:457
 msgid "could not read sufficient data"
 msgstr "es konnten nicht ausreichend Daten gelesen werden"
 
-#: recording.cpp:503
+#: recording.cpp:488
 #, kde-format
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
@@ -422,21 +420,21 @@ msgstr ""
 "Pufferüberlauf des Aufnahmepuffers des Kodierers/Komprimierers (Fehlerhafte "
 "Konfiguration der Puffer?). Es wurden %1 Bytes ignoriert."
 
-#: recording.cpp:583
+#: recording.cpp:568
 msgid "Recording::outputFile: "
 msgstr "Aufnahme::Ausgabedatei: "
 
-#: recording.cpp:633
+#: recording.cpp:618
 msgid "The encoding thread did not finish. It will be killed now."
 msgstr ""
 "Der Codierungs-Thread beendete sich nicht selber. Er wird jetzt mit roher "
 "Gewalt beendet."
 
-#: recording.cpp:653
+#: recording.cpp:638
 msgid "Recording stopped"
 msgstr "Die Aufnahme wurde beendet"
 
-#: recording.cpp:686
+#: recording.cpp:671
 #, kde-format
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
@@ -527,4 +525,3 @@ msgstr "00:00:00.00"
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
 msgstr "Aufnahme anhalten"
-

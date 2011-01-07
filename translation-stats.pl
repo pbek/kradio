@@ -3,6 +3,16 @@
 use strict;
 use Data::Dumper;
 
+# Status: 0 == excelent (no translations required)
+#         1 == good (some translations required)
+#         2 == not so good (quite some translations required)
+#         3 == bad (many translations required)
+my $STATE_EXCELENT  = 0;
+my $STATE_GOOD      = 1;
+my $STATE_NOTSOGOOD = 2;
+my $STATE_BAD       = 3;
+
+
 open ALLPO, "find -iname \"*.po\" |" or die "cannot run find -iname \"*.po\"\n: $!";
 my @allpo = <ALLPO>;
 close ALLPO;
@@ -20,18 +30,115 @@ foreach my $po(@allpo) {
 }
 
 
+my %stats = ();
+
 foreach my $lang(sort keys %langs) {
     my %records        = %{$langs{$lang}};
     my $total          = 0 + keys %records;
     my $fuzzy          = 0 + grep { exists $$_{fuzzy}   && $$_{fuzzy}        } values %records;
     my $not_translated = 0 + grep { !exists $$_{msgstr} || $$_{msgstr} eq "" } values %records;
     my $translated     = $total - $fuzzy - $not_translated;
+    $stats{$lang} = {  total           => $total,
+                       fuzzy           => $fuzzy,
+                       translated      => $translated,
+                       not_translated  => $not_translated,
+                       tobe_translated => $fuzzy + $not_translated,
+                    };
+}
+
+# standard text output
+
+foreach my $lang(sort keys %stats) {
+    my $s = $stats{$lang};
     printf "%-5s:   total:%5i     translated: %5i (%3i%%)    fuzzy: %5i (%3i%%)     untranslated: %5i (%3i%%)\n",
            $lang,
-           $total,
-           $translated,     $translated     * 100 / $total,
-           $fuzzy,          $fuzzy          * 100 / $total,
-           $not_translated, $not_translated * 100 / $total;
+           $$s{total},
+           $$s{translated},     $$s{translated}     * 100 / $$s{total},
+           $$s{fuzzy},          $$s{fuzzy}          * 100 / $$s{total},
+           $$s{not_translated}, $$s{not_translated} * 100 / $$s{total};
+}
+
+# colorful html output
+
+foreach my $lang(sort keys %stats) {
+    my $s = $stats{$lang};
+    print "<tr>";
+    print colored_html_td($lang,                                     get_lang_color($s));
+    print colored_html_td($$s{total},                                "#000000");
+    print colored_html_td(get_percent_string($s, "translated"),     get_lang_color($s));
+    print colored_html_td(get_percent_string($s, "fuzzy"),          get_color(get_status($s, 'fuzzy')));
+    print colored_html_td(get_percent_string($s, "not_translated"), get_color(get_status($s, 'not_translated')));
+    print "</tr>\n";
+}
+
+
+
+
+sub get_percent_string
+{
+    my $lang = shift;
+    my $key  = shift;
+    return "$$lang{$key} (".int($$lang{$key} * 100 / $$lang{total})."%)";
+}
+
+sub colored_html_td
+{
+    my $text  = shift;
+    my $color = shift;
+    return "<td ALIGN=center><FONT COLOR=\"$color\">$text</FONT></TD>";
+}
+
+sub get_lang_color
+{
+    my $lang   = shift;
+    my $status = get_lang_status($lang);
+    my $color  = get_color($status);
+}
+
+
+sub get_color
+{
+    my $status = shift;
+    if    ($status == $STATE_EXCELENT)  { return "#00C000"; }
+    elsif ($status == $STATE_GOOD)      { return "#0000C0"; }
+    elsif ($status == $STATE_NOTSOGOOD) { return "#FFA000"; }
+    elsif ($status == $STATE_BAD)       { return "#FF0000"; }
+    else                                { return "#FF0000"; }
+}
+
+# Status: 0 == excelent (no translations required)
+#         1 == good (some translations required)
+#         2 == not so good (quite some translations required)
+#         3 == bad (many translations required)
+sub get_lang_status
+{
+    my $lang = shift;
+    return get_status($lang, 'tobe_translated');
+}
+
+
+# Status: 0 == excelent (no translations required)
+#         1 == good (some translations required)
+#         2 == not so good (quite some translations required)
+#         3 == bad (many translations required)
+sub get_status
+{
+    my $lang = shift;
+    my $key  = shift;
+
+    my $percent = $$lang{$key} * 100 / $$lang{total};
+    if ($percent == 0) {
+        return $STATE_EXCELENT;
+    }
+    elsif ($percent <= 8) {
+        return $STATE_GOOD;
+    }
+    elsif ($percent <= 25) {
+        return $STATE_NOTSOGOOD;
+    }
+    else {
+        return $STATE_BAD;
+    }
 }
 
 

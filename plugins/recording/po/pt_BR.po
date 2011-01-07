@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: 2009-11-10 21:39-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -366,23 +366,23 @@ msgstr "Acompanhar gravação do KRadio"
 msgid "Recording"
 msgstr "Granvando"
 
-#: recording.cpp:378
+#: recording.cpp:362
 msgid "start capture not handled"
 msgstr "O início da gravação foi ignorada"
 
-#: recording.cpp:388
+#: recording.cpp:372
 msgid "Recording starting"
 msgstr "Iniciando gravação"
 
-#: recording.cpp:390
+#: recording.cpp:374
 msgid "starting encoding thread failed"
 msgstr "Falha ao iniciar processo de codificação"
 
-#: recording.cpp:472
+#: recording.cpp:457
 msgid "could not read sufficient data"
 msgstr "Não foi possível ler os dados corretamente"
 
-#: recording.cpp:503
+#: recording.cpp:488
 #, kde-format
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
@@ -391,19 +391,19 @@ msgstr ""
 "Codificar estouro de buffer de entrada (problema de configuração de "
 "buffer?). Ignorado %1 bytes de entrada"
 
-#: recording.cpp:583
+#: recording.cpp:568
 msgid "Recording::outputFile: "
 msgstr "Gravação::arquivo de saída: "
 
-#: recording.cpp:633
+#: recording.cpp:618
 msgid "The encoding thread did not finish. It will be killed now."
 msgstr "O processo de codificação não terminou. Ele será finalizado agora."
 
-#: recording.cpp:653
+#: recording.cpp:638
 msgid "Recording stopped"
 msgstr "Gravação parada"
 
-#: recording.cpp:686
+#: recording.cpp:671
 #, kde-format
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"

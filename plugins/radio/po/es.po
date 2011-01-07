@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,32 +49,32 @@ msgstr ""
 msgid "load + add presets"
 msgstr ""
 
-#: radio-configuration.cpp:414
+#: radio-configuration.cpp:433
 msgid "Image Selection"
 msgstr ""
 
-#: radio-configuration.cpp:419
+#: radio-configuration.cpp:438
 msgid "ignoring non-local image"
 msgstr ""
 
-#: radio-configuration.cpp:534 radio-configuration.cpp:562
+#: radio-configuration.cpp:555 radio-configuration.cpp:583
 msgid "KRadio Preset Files"
 msgstr ""
 
-#: radio-configuration.cpp:538
+#: radio-configuration.cpp:559
 msgid "Select Preset File"
 msgstr ""
 
-#: radio-configuration.cpp:566
+#: radio-configuration.cpp:587
 msgid "Store Preset File"
 msgstr ""
 
-#: radio-configuration.cpp:643
+#: radio-configuration.cpp:664
 #, kde-format
 msgid "found %1 new stations"
 msgstr ""
 
-#: radio-configuration.cpp:645
+#: radio-configuration.cpp:666
 #, kde-format
 msgid "have now %1 stations"
 msgstr ""

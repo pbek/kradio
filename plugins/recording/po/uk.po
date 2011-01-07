@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: 2010-09-27 12:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: encoder_mp3.cpp:80 encoder_mp3.cpp:191
 #, kde-format
@@ -193,31 +193,23 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
 "italic;\">(</span><span style=\" font-weight:600; font-style:italic;\">%s</"
 "span><span style=\" font-style:italic;\">: назва радіостанції, </span><span "
-"style="
-"\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
-"italic;\">: індекс радіостанції, </span><span style=\" font-weight:600; "
-"font-style:"
-"italic;\">%Y</span><span style=\" font-style:italic;\">: 4-цифровий рік, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%m</span><span "
-"style=\" font-style:italic;\">: 2-цифровий місяць, </span><span style=\" "
-"font-"
-"weight:600; font-style:italic;\">%d</span><span style=\" font-style:italic;"
-"\">: 2-цифровий день, </span><span style=\" font-weight:600; "
-"font-style:italic;"
-"\">%B</span><span style=\" font-style:italic;\">: назва місяця, </span><span "
-"style=\" font-weight:600; font-style:italic;\">%A</span><span style=\" font-"
-"style:italic;\"> назва дня, </span><span style=\" font-weight:600; "
-"font-style:"
-"italic;\">%H</span><span style=\" font-style:italic;\">: 2-цифрові години, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%M</span><span "
-"style=\" font-style:italic;\">: 2-цифрові хвилини, </span><span style=\" "
-"font-"
-"weight:600; font-style:italic;\">%S</span><span style=\" font-style:italic;"
-"\"> 2-цифрові секунди,</span><span style=\" font-weight:600; "
-"font-style:italic;"
-"\"> %%</span><span style=\" font-style:italic;\">: знак відсотка)</span></p>"
-"</"
-"body></html>"
+"style=\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-"
+"style:italic;\">: індекс радіостанції, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%Y</span><span style=\" font-style:italic;"
+"\">: 4-цифровий рік, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%m</span><span style=\" font-style:italic;\">: 2-цифровий місяць, "
+"</span><span style=\" font-weight:600; font-style:italic;\">%d</span><span "
+"style=\" font-style:italic;\">: 2-цифровий день, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%B</span><span style=\" font-style:italic;"
+"\">: назва місяця, </span><span style=\" font-weight:600; font-style:italic;"
+"\">%A</span><span style=\" font-style:italic;\"> назва дня, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%H</span><span style=\" font-"
+"style:italic;\">: 2-цифрові години, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%M</span><span style=\" font-style:italic;\">: 2-"
+"цифрові хвилини, </span><span style=\" font-weight:600; font-style:italic;\">"
+"%S</span><span style=\" font-style:italic;\"> 2-цифрові секунди,</span><span "
+"style=\" font-weight:600; font-style:italic;\"> %%</span><span style=\" font-"
+"style:italic;\">: знак відсотка)</span></p></body></html>"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -397,23 +389,23 @@ msgstr "Монітор запису для KRadio"
 msgid "Recording"
 msgstr "Запис"
 
-#: recording.cpp:378
+#: recording.cpp:362
 msgid "start capture not handled"
 msgstr "початок запису не керується"
 
-#: recording.cpp:388
+#: recording.cpp:372
 msgid "Recording starting"
 msgstr "Запис почато"
 
-#: recording.cpp:390
+#: recording.cpp:374
 msgid "starting encoding thread failed"
 msgstr "спроба запуску кодування зазнала невдачі"
 
-#: recording.cpp:472
+#: recording.cpp:457
 msgid "could not read sufficient data"
 msgstr "неможливо прочитати достатню кількість даних"
 
-#: recording.cpp:503
+#: recording.cpp:488
 #, kde-format
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
@@ -422,19 +414,19 @@ msgstr ""
 "Переповнення на вході кодувальника (можливо невірно налаштовано буфер). "
 "Пропущено %1 байтів на введенні."
 
-#: recording.cpp:583
+#: recording.cpp:568
 msgid "Recording::outputFile: "
 msgstr "Recording::outputFile (файл виведення запису):"
 
-#: recording.cpp:633
+#: recording.cpp:618
 msgid "The encoding thread did not finish. It will be killed now."
 msgstr "Нитку кодувальника не завершено. Процес буде знищено."
 
-#: recording.cpp:653
+#: recording.cpp:638
 msgid "Recording stopped"
 msgstr "Запис завершено"
 
-#: recording.cpp:686
+#: recording.cpp:671
 #, kde-format
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
@@ -524,5 +516,3 @@ msgstr "00:00:00.00"
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
 msgstr "&Зупинити запис"
-
-

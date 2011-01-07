@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:56+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: 2009-11-07 23:36-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -174,20 +174,20 @@ msgstr "Próximo alarme: %1"
 msgid "<no alarm pending>"
 msgstr "<nenhum alarme pendente>"
 
-#: docking.cpp:767 docking.cpp:869 docking.cpp:927
+#: docking.cpp:769 docking.cpp:871 docking.cpp:929
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Parar a gravação de %1"
 
-#: docking.cpp:855
+#: docking.cpp:857
 msgid "Start Recording"
 msgstr "Iniciar a gravação"
 
-#: docking.cpp:909
+#: docking.cpp:911
 msgid "Resume playback"
 msgstr "Continuar reprodução"
 
-#: docking.cpp:913
+#: docking.cpp:915
 msgid "Pause playback"
 msgstr "Pausar reprodução"
 

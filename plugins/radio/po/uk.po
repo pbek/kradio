@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-16 23:14+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: 2010-09-27 12:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: radio-configuration-ui.ui:320
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
@@ -50,32 +50,32 @@ msgstr "завантажити + замінити списки"
 msgid "load + add presets"
 msgstr "завантажити + додати списки"
 
-#: radio-configuration.cpp:414
+#: radio-configuration.cpp:433
 msgid "Image Selection"
 msgstr "Вибір картинки"
 
-#: radio-configuration.cpp:419
+#: radio-configuration.cpp:438
 msgid "ignoring non-local image"
 msgstr "Пропускати не локальні файли"
 
-#: radio-configuration.cpp:534 radio-configuration.cpp:562
+#: radio-configuration.cpp:555 radio-configuration.cpp:583
 msgid "KRadio Preset Files"
 msgstr "Файли KRadio"
 
-#: radio-configuration.cpp:538
+#: radio-configuration.cpp:559
 msgid "Select Preset File"
 msgstr "Оберіть файл радіостанцій"
 
-#: radio-configuration.cpp:566
+#: radio-configuration.cpp:587
 msgid "Store Preset File"
 msgstr "Зберегти файл радіостанцій"
 
-#: radio-configuration.cpp:643
+#: radio-configuration.cpp:664
 #, kde-format
 msgid "found %1 new stations"
 msgstr "знайдено %1 нових станцій"
 
-#: radio-configuration.cpp:645
+#: radio-configuration.cpp:666
 #, kde-format
 msgid "have now %1 stations"
 msgstr "зараз відомо про %1 станцій"
@@ -293,5 +293,3 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
-
-

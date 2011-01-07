@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -360,42 +360,42 @@ msgstr ""
 msgid "Recording"
 msgstr ""
 
-#: recording.cpp:378
+#: recording.cpp:362
 msgid "start capture not handled"
 msgstr ""
 
-#: recording.cpp:388
+#: recording.cpp:372
 msgid "Recording starting"
 msgstr ""
 
-#: recording.cpp:390
+#: recording.cpp:374
 msgid "starting encoding thread failed"
 msgstr ""
 
-#: recording.cpp:472
+#: recording.cpp:457
 msgid "could not read sufficient data"
 msgstr ""
 
-#: recording.cpp:503
+#: recording.cpp:488
 #, kde-format
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
 "input bytes"
 msgstr ""
 
-#: recording.cpp:583
+#: recording.cpp:568
 msgid "Recording::outputFile: "
 msgstr ""
 
-#: recording.cpp:633
+#: recording.cpp:618
 msgid "The encoding thread did not finish. It will be killed now."
 msgstr ""
 
-#: recording.cpp:653
+#: recording.cpp:638
 msgid "Recording stopped"
 msgstr ""
 
-#: recording.cpp:686
+#: recording.cpp:671
 #, kde-format
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"

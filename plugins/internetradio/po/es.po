@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-10-02 14:54+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,105 +17,137 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: decoder_thread.cpp:122 decoder_thread.cpp:148
-#, kde-format
-msgid "downloading playlist %1"
-msgstr ""
-
-#: decoder_thread.cpp:138 decoder_thread.cpp:185 decoder_thread.cpp:236
-#, kde-format
-msgid "%1 does not contain any usable radio stream"
-msgstr ""
-
-#: decoder_thread.cpp:141 decoder_thread.cpp:189 decoder_thread.cpp:240
-#, kde-format
-msgid "failed to download %1"
-msgstr ""
-
-#: decoder_thread.cpp:232
-msgid "error while reading asx file"
-msgstr ""
-
-#: decoder_thread.cpp:261
+#: decoder_thread.cpp:120 internetradio.cpp:1245
 #, kde-format
 msgid "opening stream %1"
 msgstr ""
 
-#: decoder_thread.cpp:265
+#: decoder_thread.cpp:124
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr ""
 
-#: decoder_thread.cpp:269
+#: decoder_thread.cpp:128
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr ""
 
-#: decoder_thread.cpp:301
+#: decoder_thread.cpp:163
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet\n"
 msgstr ""
 
-#: decoder_thread.cpp:306
+#: decoder_thread.cpp:177
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr ""
 
-#: decoder_thread.cpp:511 decoder_thread.cpp:513
+#: decoder_thread.cpp:415 decoder_thread.cpp:417
 #, kde-format
-msgid "cannot open MMS stream %1"
+msgid "Autodetect of stream type failed for %1"
 msgstr ""
 
-#: decoder_thread.cpp:534 decoder_thread.cpp:536 decoder_thread.cpp:547
-#: decoder_thread.cpp:549
+#: decoder_thread.cpp:422
+#, kde-format
+msgid "Autodetected format: %1 (score %2)"
+msgstr ""
+
+#: decoder_thread.cpp:428 decoder_thread.cpp:430 decoder_thread.cpp:468
+#: decoder_thread.cpp:470 decoder_thread.cpp:482 decoder_thread.cpp:484
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr ""
 
-#: decoder_thread.cpp:564 decoder_thread.cpp:566
+#: decoder_thread.cpp:445 decoder_thread.cpp:447
+#, kde-format
+msgid "cannot open MMS stream %1"
+msgstr ""
+
+#: decoder_thread.cpp:499 decoder_thread.cpp:501
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr ""
 
-#: decoder_thread.cpp:610 decoder_thread.cpp:612
+#: decoder_thread.cpp:545 decoder_thread.cpp:547
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr ""
 
-#: decoder_thread.cpp:628 decoder_thread.cpp:630
+#: decoder_thread.cpp:563 decoder_thread.cpp:565
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr ""
 
-#: decoder_thread.cpp:638 decoder_thread.cpp:640
+#: decoder_thread.cpp:573 decoder_thread.cpp:575
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr ""
 
-#: internetradio.cpp:50
+#: internetradio.cpp:54
 msgid "Pseudo radio device for internet radio stream support"
 msgstr ""
 
-#: internetradio.cpp:57
+#: internetradio.cpp:61
 msgid "Internet Radio Plugin"
 msgstr ""
 
-#: internetradio.cpp:357
+#: internetradio.cpp:381
 msgid "Internet radio station decoder / pseudo device"
 msgstr ""
 
-#: internetradio.cpp:579
+#: internetradio.cpp:609
 msgid "Internet Radio"
 msgstr ""
 
-#: internetradio.cpp:580
+#: internetradio.cpp:610
 msgid "Internet Radio Options"
 msgstr ""
 
-#: internetradio.cpp:653
-msgid ""
-"I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
-"idea to restart KRadio"
+#: internetradio.cpp:1027 internetradio.cpp:1053
+#, kde-format
+msgid "Failed to load playlist %1: %2"
+msgstr ""
+
+#: internetradio.cpp:1031
+#, kde-format
+msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
+msgstr ""
+
+#: internetradio.cpp:1100
+#, kde-format
+msgid "%1 does not contain any usable radio stream"
+msgstr ""
+
+#: internetradio.cpp:1135
+msgid "failed to create temporary file to store playlist data"
+msgstr ""
+
+#: internetradio.cpp:1139
+msgid "failed to write temporary file to store playlist data"
+msgstr ""
+
+#: internetradio.cpp:1212
+msgid "error while reading asx file: "
+msgstr ""
+
+#: internetradio.cpp:1253
+#, kde-format
+msgid "Failed to start stream download of %1: %2"
+msgstr ""
+
+#: internetradio.cpp:1257
+#, kde-format
+msgid "Failed to start stream download of %1: KIO::get returned NULL pointer"
+msgstr ""
+
+#: internetradio.cpp:1261
+#, kde-format
+msgid "Failed to start any stream of %1"
+msgstr ""
+
+#: internetradio.cpp:1306
+#, kde-format
+msgid "Failed to load stream data for %1: %2"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:14

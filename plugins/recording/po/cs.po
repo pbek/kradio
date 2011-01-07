@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: 2010-09-27 08:46+0200\n"
 "Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -200,24 +200,18 @@ msgstr ""
 "italic;\">%Y</span><span style=\" font-style:italic;\">: Rok (čtyřmístné), </"
 "span><span style=\" font-weight:600; font-style:italic;\">%m</span><span "
 "style=\" font-style:italic;\">: Měsíc (dvoumístné), </span><span style=\" "
-"font-"
-"weight:600; font-style:italic;\">%d</span><span style=\" font-style:italic;"
-"\">: Den (dvoumístné), </span><span style=\" font-weight:600; "
-"font-style:italic;"
-"\">%B</span><span style=\" font-style:italic;\">: Název měsíce, </span><span "
-"style=\" font-weight:600; font-style:italic;\">%A</span><span style=\" font-"
-"style:italic;\"> Název dne, </span><span style=\" font-weight:600; "
-"font-style:"
-"italic;\">%H</span><span style=\" font-style:italic;\">: Hodina "
-"(dvoumístné), </"
-"span><span style=\" font-weight:600; font-style:italic;\">%M</span><span "
-"style=\" font-style:italic;\">: Minuta (dvoumístné), </span><span style=\" "
-"font-"
-"weight:600; font-style:italic;\">%S</span><span style=\" font-style:italic;"
-"\"> Sekunda (dvoumístné),</span><span style=\" font-weight:600; "
-"font-style:italic;"
-"\"> %%</span><span style=\" font-style:italic;\">: Náhrada za %)</span></p></"
-"body></html>"
+"font-weight:600; font-style:italic;\">%d</span><span style=\" font-style:"
+"italic;\">: Den (dvoumístné), </span><span style=\" font-weight:600; font-"
+"style:italic;\">%B</span><span style=\" font-style:italic;\">: Název měsíce, "
+"</span><span style=\" font-weight:600; font-style:italic;\">%A</span><span "
+"style=\" font-style:italic;\"> Název dne, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%H</span><span style=\" font-style:italic;"
+"\">: Hodina (dvoumístné), </span><span style=\" font-weight:600; font-style:"
+"italic;\">%M</span><span style=\" font-style:italic;\">: Minuta "
+"(dvoumístné), </span><span style=\" font-weight:600; font-style:italic;\">"
+"%S</span><span style=\" font-style:italic;\"> Sekunda (dvoumístné),</"
+"span><span style=\" font-weight:600; font-style:italic;\"> %%</span><span "
+"style=\" font-style:italic;\">: Náhrada za %)</span></p></body></html>"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -397,23 +391,23 @@ msgstr "Dohled nad nahráváním v programu KRadio"
 msgid "Recording"
 msgstr "Nahrává"
 
-#: recording.cpp:378
+#: recording.cpp:362
 msgid "start capture not handled"
 msgstr "Začátek zachytávání byl ponechán bez povšimnutí"
 
-#: recording.cpp:388
+#: recording.cpp:372
 msgid "Recording starting"
 msgstr "Nahrávání začalo"
 
-#: recording.cpp:390
+#: recording.cpp:374
 msgid "starting encoding thread failed"
 msgstr "Začátek kódování vlákna selhal"
 
-#: recording.cpp:472
+#: recording.cpp:457
 msgid "could not read sufficient data"
 msgstr "Nebylo možné přečíst dostatek dat"
 
-#: recording.cpp:503
+#: recording.cpp:488
 #, kde-format
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
@@ -422,19 +416,19 @@ msgstr ""
 "Přetečení vstupní vyrovnávací paměti kodéru (problém s nastavením "
 "vyrovnávací paměti?) Bylo přeskočeno %1 bytů"
 
-#: recording.cpp:583
+#: recording.cpp:568
 msgid "Recording::outputFile: "
 msgstr "Nahrávání::výstupní soubor: "
 
-#: recording.cpp:633
+#: recording.cpp:618
 msgid "The encoding thread did not finish. It will be killed now."
 msgstr "Vlákno kódování se samo neukončilo. Bude nyní ukončeno hrubou silou."
 
-#: recording.cpp:653
+#: recording.cpp:638
 msgid "Recording stopped"
 msgstr "Nahrávání bylo zastaveno"
 
-#: recording.cpp:686
+#: recording.cpp:671
 #, kde-format
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
@@ -524,4 +518,3 @@ msgstr "00:00:00.00"
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
 msgstr "&Zastavit nahrávání"
-

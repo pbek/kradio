@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:56+0200\n"
+"POT-Creation-Date: 2011-01-07 15:04+0100\n"
 "PO-Revision-Date: 2010-09-27 09:00+0200\n"
 "Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -44,8 +44,7 @@ msgstr "XButton2"
 
 #: docking-configuration.cpp:133
 msgid "Mouse Double-Click on Tray Icon"
-msgstr ""
-"Dvojité klepnutí tlačítkem myši na ikonu v oznamovací oblasti panelu"
+msgstr "Dvojité klepnutí tlačítkem myši na ikonu v oznamovací oblasti panelu"
 
 #: docking-configuration.cpp:140
 msgid "Mouse Wheel Action on Tray Icon"
@@ -166,20 +165,20 @@ msgstr "Další probuzení: %1"
 msgid "<no alarm pending>"
 msgstr "<žádné nadcházející probuzení>"
 
-#: docking.cpp:767 docking.cpp:869 docking.cpp:927
+#: docking.cpp:769 docking.cpp:871 docking.cpp:929
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Zastavit nahrávání %1"
 
-#: docking.cpp:855
+#: docking.cpp:857
 msgid "Start Recording"
 msgstr "Začít s nahráváním"
 
-#: docking.cpp:909
+#: docking.cpp:911
 msgid "Resume playback"
 msgstr "Pokračovat v přehrávání"
 
-#: docking.cpp:913
+#: docking.cpp:915
 msgid "Pause playback"
 msgstr "Pozastavit přehrávání"
 
