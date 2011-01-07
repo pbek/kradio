@@ -2,6 +2,8 @@
 
     emw - updated german translation
         - added preset files
+        - fixed segfault and problems in internetradio plugin when
+          playlists/streams do not load properly
 
 2010-12-21 (4.0.2-rc1)
 
