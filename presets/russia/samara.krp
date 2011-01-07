@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+    <stationlist>
+        <format>kradio-1.0</format>
+        <info>
+            <creator>kradio-4.0.0</creator>
+            <maintainer>slider</maintainer>
+            <changed>2010-11-25T11:06:47</changed>
+            <country>Russia</country>
+            <city>Samara</city>
+            <media></media>
+            <comments>ver 0.01</comments>
+        </info>
+        <FrequencyRadioStation>
+            <stationID>12906697574C22D12352F932FBC406C8E4D27AA805ACCE94C1128DA618D2781B04FCB5</stationID>
+            <name>Добрые песни</name>
+            <shortname>Добрые песни</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>68.51</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12906699108A5C3D49F59F5AA489785116892F2745E5025BFDAB5E583F3BF2926C83BE</stationID>
+            <name>Радио России</name>
+            <shortname>Радио России</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>mono</stereomode>
+            <frequency>70.31</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290670109AC03A5A7B274C46EF2F54FB75D0E973F01E5E2CF14968E6D60D838D8DD69</stationID>
+            <name>Радио Маяк</name>
+            <shortname>Радио Маяк</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>mono</stereomode>
+            <frequency>72.05</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669458F93F12F39C5CF1E698F318744E109C1D43985D0DFDDABCFCEDCB0D74F184</stationID>
+            <name>Русское радио</name>
+            <shortname>Русское радио</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>mono</stereomode>
+            <frequency>72.83</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>129066946284D16DEFE6A632919C49CC7B59DE24C76FF17D6659DE4F709941C1923CBF</stationID>
+            <name>Самара-Максимум</name>
+            <shortname>Самара-Максимум</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>mono</stereomode>
+            <frequency>73.61</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669966CAFF3D2FE0BCA9C4ABE31755A703071613797EDBAE8220DFF911F71223C3</stationID>
+            <name>Экспресс FM</name>
+            <shortname>Экспресс FM</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>90.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669496B23BBAB0F7EA2F53447A2D2B5062D6F95A5634B03B8C642B2B6AB0DA857F</stationID>
+            <name>Милицейская волна</name>
+            <shortname>Милицейская волна</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>90.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>129066949955CCCD9BDF1541E3CBF2BD80CCD9D2169927CB1B7783CBD7EB7C84AB4E52</stationID>
+            <name>Радио 7</name>
+            <shortname>Радио 7</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>91</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12906695025E8878640F18551035279789653DC1847C3ED7FCE3C17DA0DE00814C1277</stationID>
+            <name>Ток FM / Серебряный дождь</name>
+            <shortname>Ток FM / Серебряный дождь</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>91.5</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12906701432579FB12F26EC4143B4075C5CA32161561C67469F2674F1D000639924769</stationID>
+            <name>Радио Маяк</name>
+            <shortname>Радио Маяк</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>mono</stereomode>
+            <frequency>92.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669512AA728A2909B5DA1766DCBA8FEE7319FB691CC904D364B5FD63F0E091086C</stationID>
+            <name>Юмор FM</name>
+            <shortname>Юмор FM</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>95.7</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290670209D53A20DBE72609B8DD5D1C949AD9C717D957B7EA737EE0AF4555783A9568</stationID>
+            <name>Kot FM</name>
+            <shortname>Kot FM</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>96.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669520AFD73B2A79481561F353ADAAA8019C899B98EBD5BBC7C8C523D8B5E1F4AC</stationID>
+            <name>Ретро FM</name>
+            <shortname>Ретро FM</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>98.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669523EB55855C02E8D1466C0DD69923D0AECA8D1EA4638A4324CF005F1B9396B4</stationID>
+            <name>Эхо Москвы</name>
+            <shortname>Эхо Москвы</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>99.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669526015A03960BBB8AFEAE8434E5774A10912CE23D3F30E715BC3F6AF63E2B01</stationID>
+            <name>Европа плюс</name>
+            <shortname>Европа плюс</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>99.9</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669529F2C34EF9C4054325268B74145214ED93301E756EEF49D0B6B369F0472357</stationID>
+            <name>Русское радио</name>
+            <shortname>Русское радио</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>100.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>129066953365186F4B19E0FFA6970EA7CF9BBE4CB8B4C8B29585CBEDCCADE3E0438A6B</stationID>
+            <name>Радио Шансон</name>
+            <shortname>Радио Шансон</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>101</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12906695360BE1FF43000028BE7DFFAC09A6D1C3D8D82F4230ADAFB8A97EA67063A617</stationID>
+            <name>Радио Рекорд</name>
+            <shortname>Радио Рекорд</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>101.5</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290670428DB6665C4DA8315E1F9C1C3AEE22FE5F400B378BF01D0C2091AD1D6351815</stationID>
+            <name>Радио Дача</name>
+            <shortname>Радио Дача</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>102.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669541A995A471FD47505C9A854FA3283E543CFCF2CF49D755684FA403A8B707AE</stationID>
+            <name>NRJ</name>
+            <shortname>NRJ</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>102.5</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669543FBF9E4CC1B1852F655B37CAB7142F34981CBEE8CED47387B2B1D416A3818</stationID>
+            <name>DFM</name>
+            <shortname>DFM</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>102.9</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669547A5146B3B559C4AF1D19A78B25BCBC6C96FC3FB2CE096DBBC08E1121BED6C</stationID>
+            <name>Радио Мегаполис</name>
+            <shortname>Радио Мегаполис</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>103.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669551EF9AAACB0ED236913B13084702FB32333DA1D6057709066AE87252E866F0</stationID>
+            <name>Самара-Максимум</name>
+            <shortname>Самара-Максимум</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>104.3</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290670579C8F92CAD2D08031E938BAAC59BBE4DE2F00B83A172121D8E030078F04F1B</stationID>
+            <name>Авторадио</name>
+            <shortname>Авторадио</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>104.8</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12906695578486108D25E6524980F6692BAAD184350B1AD0404E9FF46D5E553E800991</stationID>
+            <name>Радио Алла</name>
+            <shortname>Радио Алла</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>105.4</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>12906695610B4001861F6297000F9E0163510F013380B0230CB87871A69A947A5603F6</stationID>
+            <name>Дорожное радио</name>
+            <shortname>Дорожное радио</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>106.1</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290670650697A6A61F958CCF9DA5BBC65D36276B78CF50F7837A6B0102BDF4E3D51D0</stationID>
+            <name>Love радио</name>
+            <shortname>Love радио</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>106.6</frequency>
+        </FrequencyRadioStation>
+        <FrequencyRadioStation>
+            <stationID>1290669568AF4C3FA28BC38A7BFB9FB288E3CD453E4E732F49B3C509F3FDECA89B4E16</stationID>
+            <name>Детское радио</name>
+            <shortname>Детское радио</shortname>
+            <volumepreset>-1</volumepreset>
+            <stereomode>stereo</stereomode>
+            <frequency>107.2</frequency>
+        </FrequencyRadioStation>
+    </stationlist>
+</kradiorc>
