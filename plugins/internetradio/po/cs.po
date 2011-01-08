@@ -2,24 +2,24 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2011.
 # Ernst Martin Witte <emw@nocabal.de>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.cs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 15:04+0100\n"
-"PO-Revision-Date: 2009-05-01 14:24+0200\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: German\n"
+"POT-Creation-Date: 2011-01-07 19:38+0100\n"
+"PO-Revision-Date: 2011-01-08 16:18+0100\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: decoder_thread.cpp:120 internetradio.cpp:1245
+#: decoder_thread.cpp:120 internetradio.cpp:1244
 #, kde-format
 msgid "opening stream %1"
 msgstr "Otevírá se datový proud %1."
@@ -49,12 +49,12 @@ msgstr "Vnitřní zvukový datový proud, nebude uložen (%1)"
 #: decoder_thread.cpp:415 decoder_thread.cpp:417
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
-msgstr ""
+msgstr "Automatické rozpoznání formátu internetového proudu %1 se nezdařilo"
 
 #: decoder_thread.cpp:422
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
-msgstr ""
+msgstr "Automaticky rozpoznaný formát: %1 (spolehlivost: %2)"
 
 #: decoder_thread.cpp:428 decoder_thread.cpp:430 decoder_thread.cpp:468
 #: decoder_thread.cpp:470 decoder_thread.cpp:482 decoder_thread.cpp:484
@@ -110,53 +110,57 @@ msgstr "Rozhlas na internetu"
 msgid "Internet Radio Options"
 msgstr "Volby pro rozhlas na internetu"
 
-#: internetradio.cpp:1027 internetradio.cpp:1053
-#, fuzzy, kde-format
+#: internetradio.cpp:1026 internetradio.cpp:1052
+#, kde-format
 msgid "Failed to load playlist %1: %2"
-msgstr "Stahuje se seznam skladeb %1"
+msgstr "Nepodařilo se nahrát seznam skladeb %1: %2"
 
-#: internetradio.cpp:1031
+#: internetradio.cpp:1030
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
+"Nepodařilo se spustit stahování seznamu skladeb %1: KIO::get vrátil NULL "
+"pointer"
 
-#: internetradio.cpp:1100
+#: internetradio.cpp:1099
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 neobsahuje žádný použitelný rozhlasový datový proud"
 
-#: internetradio.cpp:1135
+#: internetradio.cpp:1134
 msgid "failed to create temporary file to store playlist data"
-msgstr ""
+msgstr "Nepodařilo se vytvořit dočasný soubor pro uložení dat seznamu skladeb"
 
-#: internetradio.cpp:1139
+#: internetradio.cpp:1138
 msgid "failed to write temporary file to store playlist data"
-msgstr ""
+msgstr "Nepodařilo se zapsat dočasný soubor pro uložení dat seznamu skladeb"
 
-#: internetradio.cpp:1212
-#, fuzzy
+#: internetradio.cpp:1211
 msgid "error while reading asx file: "
-msgstr "Nahrání souboru asx selhalo"
+msgstr "Nahrání souboru asx se nezdařilo: "
 
-#: internetradio.cpp:1253
-#, fuzzy, kde-format
+#: internetradio.cpp:1252
+#, kde-format
 msgid "Failed to start stream download of %1: %2"
-msgstr "Stažení %1 selhalo."
+msgstr "Stažení internetového proudu %1 se nezdařilo: %2"
 
-#: internetradio.cpp:1257
+#: internetradio.cpp:1256
 #, kde-format
 msgid "Failed to start stream download of %1: KIO::get returned NULL pointer"
 msgstr ""
+"Stažení internetového proudu %1 se nepodařilo spustit: KIO::get vrátil NULL "
+"pointer"
 
-#: internetradio.cpp:1261
-#, fuzzy, kde-format
+#: internetradio.cpp:1260
+#, kde-format
 msgid "Failed to start any stream of %1"
-msgstr "Nelze otevřít žádný rozhlasový datový proud ze seznamu %1."
+msgstr ""
+"Nepodařilo se otevřít žádný rozhlasový datový proud ze seznamu skladeb %1."
 
-#: internetradio.cpp:1306
+#: internetradio.cpp:1305
 #, kde-format
 msgid "Failed to load stream data for %1: %2"
-msgstr ""
+msgstr "Nahrání dat rozhlasového proudu %1 se nezdařilo: %2"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
