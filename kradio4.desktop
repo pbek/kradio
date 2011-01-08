@@ -2,7 +2,7 @@
 Type=Application
 Name=kradio4
 Exec=kradio4 -caption "%c"
-Icon=kradio4.svg
+Icon=kradio4
 X-DocPath=kradio4/index.html
 Comment=V4L/V4L2-Radio Application for KDE4
 Terminal=false
