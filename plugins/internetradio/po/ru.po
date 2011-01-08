@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 15:04+0100\n"
+"POT-Creation-Date: 2011-01-08 17:27+0100\n"
 "PO-Revision-Date: 2009-05-01 14:25+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: German\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: decoder_thread.cpp:120 internetradio.cpp:1245
+#: decoder_thread.cpp:120 internetradio.cpp:1244
 #, kde-format
 msgid "opening stream %1"
 msgstr "открываю поток %1"
@@ -106,50 +106,50 @@ msgstr "Интернет-радио"
 msgid "Internet Radio Options"
 msgstr "Параметры интернет-радио"
 
-#: internetradio.cpp:1027 internetradio.cpp:1053
+#: internetradio.cpp:1026 internetradio.cpp:1052
 #, fuzzy, kde-format
 msgid "Failed to load playlist %1: %2"
 msgstr "скачиваю список %1"
 
-#: internetradio.cpp:1031
+#: internetradio.cpp:1030
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
 
-#: internetradio.cpp:1100
+#: internetradio.cpp:1099
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 не содержит "
 
-#: internetradio.cpp:1135
+#: internetradio.cpp:1134
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
 
-#: internetradio.cpp:1139
+#: internetradio.cpp:1138
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 
-#: internetradio.cpp:1212
+#: internetradio.cpp:1211
 #, fuzzy
 msgid "error while reading asx file: "
 msgstr "ошибка чтения файла ASX"
 
-#: internetradio.cpp:1253
+#: internetradio.cpp:1252
 #, fuzzy, kde-format
 msgid "Failed to start stream download of %1: %2"
 msgstr "не смог скачать %1"
 
-#: internetradio.cpp:1257
+#: internetradio.cpp:1256
 #, kde-format
 msgid "Failed to start stream download of %1: KIO::get returned NULL pointer"
 msgstr ""
 
-#: internetradio.cpp:1261
+#: internetradio.cpp:1260
 #, fuzzy, kde-format
 msgid "Failed to start any stream of %1"
 msgstr "Не удалось открыть ни один поток из %1."
 
-#: internetradio.cpp:1306
+#: internetradio.cpp:1305
 #, kde-format
 msgid "Failed to load stream data for %1: %2"
 msgstr ""

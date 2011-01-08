@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 15:04+0100\n"
+"POT-Creation-Date: 2011-01-08 17:27+0100\n"
 "PO-Revision-Date: 2011-01-08 13:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.2\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: decoder_thread.cpp:120 internetradio.cpp:1245
+#: decoder_thread.cpp:120 internetradio.cpp:1244
 #, kde-format
 msgid "opening stream %1"
 msgstr "відкриття потоку %1"
@@ -106,57 +106,57 @@ msgstr "Інтернет-радіо"
 msgid "Internet Radio Options"
 msgstr "Параметри інтернет-радіо"
 
-#: internetradio.cpp:1027 internetradio.cpp:1053
+#: internetradio.cpp:1026 internetradio.cpp:1052
 #, kde-format
 msgid "Failed to load playlist %1: %2"
 msgstr "Не вдалося завантажити список відтворення %1: %2"
 
-#: internetradio.cpp:1031
+#: internetradio.cpp:1030
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
 "Не вдалося розпочати звантаження списку відтворення %1: KIO::get повернуто "
 "нульовий вказівник"
 
-#: internetradio.cpp:1100
+#: internetradio.cpp:1099
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 не містить жодного придатного потоку радіо"
 
-#: internetradio.cpp:1135
+#: internetradio.cpp:1134
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
 "не вдалося створити файл тимчасових даних для зберігання даних списку "
 "відтворення"
 
-#: internetradio.cpp:1139
+#: internetradio.cpp:1138
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 "не вдалося записати файл тимчасових даних для зберігання даних списку "
 "відтворення"
 
-#: internetradio.cpp:1212
+#: internetradio.cpp:1211
 msgid "error while reading asx file: "
 msgstr "помилка під час спроби читання файла asx: "
 
-#: internetradio.cpp:1253
+#: internetradio.cpp:1252
 #, kde-format
 msgid "Failed to start stream download of %1: %2"
 msgstr "Не вдалося розпочати звантаження потокових даних %1: %2"
 
-#: internetradio.cpp:1257
+#: internetradio.cpp:1256
 #, kde-format
 msgid "Failed to start stream download of %1: KIO::get returned NULL pointer"
 msgstr ""
 "Не вдалося розпочати звантаження потокових даних %1: KIO::get повернуто "
 "нульовий вказівник"
 
-#: internetradio.cpp:1261
+#: internetradio.cpp:1260
 #, kde-format
 msgid "Failed to start any stream of %1"
 msgstr "Не вдалося розпочати отримання будь-яких потокових даних %1"
 
-#: internetradio.cpp:1306
+#: internetradio.cpp:1305
 #, kde-format
 msgid "Failed to load stream data for %1: %2"
 msgstr "Не вдалося завантажити потокові дані %1: %2"
