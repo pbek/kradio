@@ -2,22 +2,22 @@
 # This file is distributed under the same license as the kradio package.
 #
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-01-07 15:04+0100\n"
-"PO-Revision-Date: 2009-05-09 11:01+0300\n"
+"PO-Revision-Date: 2011-01-08 13:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: decoder_thread.cpp:120 internetradio.cpp:1245
 #, kde-format
@@ -48,12 +48,12 @@ msgstr "внутрішній потік, не збережено (%1)"
 #: decoder_thread.cpp:415 decoder_thread.cpp:417
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
-msgstr ""
+msgstr "Не вдалося автоматично визначити тип потокових даних %1"
 
 #: decoder_thread.cpp:422
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
-msgstr ""
+msgstr "Автовизначений формат: %1 (оцінка %2)"
 
 #: decoder_thread.cpp:428 decoder_thread.cpp:430 decoder_thread.cpp:468
 #: decoder_thread.cpp:470 decoder_thread.cpp:482 decoder_thread.cpp:484
@@ -107,14 +107,16 @@ msgid "Internet Radio Options"
 msgstr "Параметри інтернет-радіо"
 
 #: internetradio.cpp:1027 internetradio.cpp:1053
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to load playlist %1: %2"
-msgstr "звантаження списку відтворення %1"
+msgstr "Не вдалося завантажити список відтворення %1: %2"
 
 #: internetradio.cpp:1031
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
+"Не вдалося розпочати звантаження списку відтворення %1: KIO::get повернуто "
+"нульовий вказівник"
 
 #: internetradio.cpp:1100
 #, kde-format
@@ -124,35 +126,40 @@ msgstr "%1 не містить жодного придатного потоку 
 #: internetradio.cpp:1135
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
+"не вдалося створити файл тимчасових даних для зберігання даних списку "
+"відтворення"
 
 #: internetradio.cpp:1139
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
+"не вдалося записати файл тимчасових даних для зберігання даних списку "
+"відтворення"
 
 #: internetradio.cpp:1212
-#, fuzzy
 msgid "error while reading asx file: "
-msgstr "помилка під час спроби читання файла asx"
+msgstr "помилка під час спроби читання файла asx: "
 
 #: internetradio.cpp:1253
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to start stream download of %1: %2"
-msgstr "не вдалося звантажити %1"
+msgstr "Не вдалося розпочати звантаження потокових даних %1: %2"
 
 #: internetradio.cpp:1257
 #, kde-format
 msgid "Failed to start stream download of %1: KIO::get returned NULL pointer"
 msgstr ""
+"Не вдалося розпочати звантаження потокових даних %1: KIO::get повернуто "
+"нульовий вказівник"
 
 #: internetradio.cpp:1261
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to start any stream of %1"
-msgstr "Не вдалося відкрити жодного вхідного потоку %1."
+msgstr "Не вдалося розпочати отримання будь-яких потокових даних %1"
 
 #: internetradio.cpp:1306
 #, kde-format
 msgid "Failed to load stream data for %1: %2"
-msgstr ""
+msgstr "Не вдалося завантажити потокові дані %1: %2"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)

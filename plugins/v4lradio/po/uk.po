@@ -1,22 +1,22 @@
 # translation of uk.po to Ukrainian
 # This file is put in the public domain.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-01-07 15:04+0100\n"
-"PO-Revision-Date: 2010-09-27 12:22+0300\n"
+"PO-Revision-Date: 2011-01-08 13:22+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
@@ -125,7 +125,6 @@ msgstr "Діапазон частот пристрою"
 #. i18n: file: v4lradio-configuration-ui.ui:373
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
 #: rc.cpp:51 rc.cpp:61 rc.cpp:71 rc.cpp:231 rc.cpp:241 rc.cpp:251
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -148,39 +147,35 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Зауваження щодо підтримки RDS:</span> "
-"Якщо у вашій картці передбачено підтримку RDS, RDS не працює, будь ласка, "
-"перевірте, чи завантажено модуль ядра <span style=\" font-weight:600;"
-"\">kernel module saa6588.ko</span>. Якщо картку побудовано на основі "
-"мікросхеми saa6588, цей модуль типово <span style=\" font-style:italic;"
-"\">не</span> завантажується автоматично. Визначити, чи підтримується RDS "
-"модулем V4L/V4L2 вашого ядра, можна за стандартною панеллю радіо: індикатор "
-"RDS має бути підсвічено (подібно до індикаторів стерео і AM/FM). Текст RDS "
-"має з’явитися на стандартній панелі радіо, а підказки — над піктограмою "
-"лотка. Назви станцій RDS буде використано у діалоговому вікні сканування як "
-"типові назви для створених записів станцій.</p></body></html>"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Для "
+"використання можливості виявлення пристроїв V4L потрібен доступ для відкриття "
+"пристрою. У отриманні такого доступу може бути відмовлено через використання "
+"файла пристрою або драйвера сторонніми програмами. Якщо у вас виникають "
+"подібні проблеми, вам слід виконувати виявлення пристроїв лише під час "
+"вмикання. Єдиним незручним моментом може бути діалогове вікно налаштування: "
+"після запуску ви, ймовірно, побачите у ньому замість опису пристрою лише "
+"назву псевдофайла пристрою.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:333
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:58 rc.cpp:238
 msgid "Device Probing"
-msgstr ""
+msgstr "Виявлення пристроїв"
 
 #. i18n: file: v4lradio-configuration-ui.ui:362
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
 #: rc.cpp:68 rc.cpp:248
 msgid "@ startup"
-msgstr ""
+msgstr "при запуску"
 
 #. i18n: file: v4lradio-configuration-ui.ui:376
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtPowerOn)
 #: rc.cpp:78 rc.cpp:258
 msgid "@ power on"
-msgstr ""
+msgstr "при вмиканні"
 
 #. i18n: file: v4lradio-configuration-ui.ui:387
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
@@ -572,6 +567,8 @@ msgstr ""
 #, kde-format
 msgid "Could not find any radio device. Using the default path for now: %1"
 msgstr ""
+"Не вдалося виявити жодного пристрою радіоприймача. Використано типовий "
+"каталог пошуку: %1"
 
 #: v4lradio.cpp:1295
 msgid "Could not find an accessible v4l(2) radio device."
@@ -580,7 +577,7 @@ msgstr "Не вдалося знайти доступний пристрій V4l
 #: v4lradio.cpp:1379
 #, kde-format
 msgid "%1 (insufficient permissions)"
-msgstr ""
+msgstr "%1 (недостатні права доступу)"
 
 #: v4lradio.cpp:1405
 msgid "V4L Radio"
