@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-01-08 17:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. i18n: file: timecontrol-configuration-ui.ui:19
+#. i18n: ectx: property (text), widget (QLabel, labelSleep)
+#: rc.cpp:3 rc.cpp:54
+msgid "sleep countdown"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:29
+#. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
+#: rc.cpp:6 rc.cpp:57
+msgid " min"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
+#: rc.cpp:9 rc.cpp:60 timecontrol.cpp:282
+msgid "Alarms"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:130
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
+#: rc.cpp:12 rc.cpp:63
+msgid "Date"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:146
+#. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
+#: rc.cpp:15 rc.cpp:66
+msgid "dd.MM.yyyy"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:157
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
+#: rc.cpp:18 rc.cpp:69
+msgid "Time"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:173
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
+#: rc.cpp:21 rc.cpp:72
+msgid "HH:mm:ss"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:184
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
+#: rc.cpp:24 rc.cpp:75
+msgid "Volume"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:200
+#. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
+#: rc.cpp:28 rc.cpp:79
+#, no-c-format
+msgid " %"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:241
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
+#: rc.cpp:31 rc.cpp:82
+msgid "daily/weekly"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:248
+#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
+#: rc.cpp:34 rc.cpp:85
+msgid "Active weekdays:"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:255
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
+#: rc.cpp:37 rc.cpp:88
+msgid "enabled"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:264
+#. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
+#: rc.cpp:40 rc.cpp:91
+msgid "Radio Station"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:285
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplate)
+#: rc.cpp:44 rc.cpp:95
+#, no-c-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Recording Filename "
+"Template:</p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
+"style:italic;\">: station name, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%i</span><span style=\" font-style:italic;\">: station "
+"index, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
+"span><span style=\" font-style:italic;\">: 4-digit year, </span><span style="
+"\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
+"italic;\">: 2-digit month, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%d</span><span style=\" font-style:italic;\">: 2-digit day, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%B</span><span "
+"style=\" font-style:italic;\">: month name, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%A</span><span style=\" font-style:italic;"
+"\"> day name, </span><span style=\" font-weight:600; font-style:italic;\">"
+"%H</span><span style=\" font-style:italic;\">: 2-digit hour, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%M</span><span style=\" font-"
+"style:italic;\">: 2-digit minute, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%S</span><span style=\" font-style:italic;\"> 2-digit "
+"second,</span><span style=\" font-weight:600; font-style:italic;\"> %%</"
+"span><span style=\" font-style:italic;\">: literal %)</span></p></body></"
+"html>"
+msgstr ""
+
+#: rc.cpp:50
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:51
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: timecontrol-configuration.cpp:60
+msgid "Start Playing"
+msgstr ""
+
+#: timecontrol-configuration.cpp:61
+msgid "Stop Playing"
+msgstr ""
+
+#: timecontrol-configuration.cpp:62
+msgid "Start Recording"
+msgstr ""
+
+#: timecontrol-configuration.cpp:63
+msgid "Stop Recording"
+msgstr ""
+
+#: timecontrol-configuration.cpp:66
+msgid "unchanged"
+msgstr ""
+
+#: timecontrol-configuration.cpp:68
+msgid "Monday"
+msgstr ""
+
+#: timecontrol-configuration.cpp:69
+msgid "Tuesday"
+msgstr ""
+
+#: timecontrol-configuration.cpp:70
+msgid "Wednesday"
+msgstr ""
+
+#: timecontrol-configuration.cpp:71
+msgid "Thursday"
+msgstr ""
+
+#: timecontrol-configuration.cpp:72
+msgid "Friday"
+msgstr ""
+
+#: timecontrol-configuration.cpp:73
+msgid "Saturday"
+msgstr ""
+
+#: timecontrol-configuration.cpp:74
+msgid "Sunday"
+msgstr ""
+
+#: timecontrol-configuration.cpp:203
+msgid "<don't change>"
+msgstr ""
+
+#: timecontrol.cpp:44
+msgid "Time Control and Alarm Functions"
+msgstr ""
+
+#: timecontrol.cpp:50
+msgid "TimeControl Plugin"
+msgstr ""
+
+#: timecontrol.cpp:283
+msgid "Setup Alarms"
+msgstr ""

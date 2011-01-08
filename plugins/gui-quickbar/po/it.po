@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-01-08 17:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: quickbar.cpp:48
+msgid "Radio Station Quick Selection Toolbar"
+msgstr ""
+
+#: quickbar.cpp:54
+msgid "Quickbar Plugin"
+msgstr ""
+
+#: quickbar.cpp:143
+msgid "Quickbar"
+msgstr ""
+
+#: quickbar.cpp:144
+msgid "Quickbar Configuration"
+msgstr ""
+
+#: quickbar.cpp:377
+msgid "contentsDragEnterEvent accepted"
+msgstr ""
+
+#: quickbar.cpp:379
+msgid "contentsDragEnterEvent rejected"
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
