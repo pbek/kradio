@@ -537,6 +537,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 //         if (m_av_pFormatCtx->streams[i]->codec->codec_type == CODEC_TYPE_AUDIO && m_av_audioStream < 0) {
         if (m_av_pFormatCtx->streams[i]->codec->codec_type == CODEC_TYPE_AUDIO) { // take last stream
             m_av_audioStream = i;
+            break;
         }
     }
 
