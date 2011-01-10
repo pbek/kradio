@@ -1,192 +1,192 @@
-# SOME DESCRIPTIVE TITLE.
+# Italian translation for kradio.
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# This file is distributed under the same license as the kradio package.
+# 
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2011-01-08 20:08+0100\n"
+"PO-Revision-Date: 2011-01-08 20:10+0200\n"
+"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
+"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: docking-configuration.cpp:126
 msgid "Mouse Click on Tray Icon"
-msgstr ""
+msgstr "Clic del mouse sull'icona del vassoio"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
 msgid "Left"
-msgstr ""
+msgstr "Sinistra"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
 msgid "Right"
-msgstr ""
+msgstr "Destra"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
 msgid "Middle"
-msgstr ""
+msgstr "Centrale"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
 msgid "XButton1"
-msgstr ""
+msgstr "XButton1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
 msgid "XButton2"
-msgstr ""
+msgstr "XButton2"
 
 #: docking-configuration.cpp:133
 msgid "Mouse Double-Click on Tray Icon"
-msgstr ""
+msgstr "Doppio clic del mouse sull'icona del vassoio"
 
 #: docking-configuration.cpp:140
 msgid "Mouse Wheel Action on Tray Icon"
-msgstr ""
+msgstr "Azione della rotella del mouse sull'icona del vassoio"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
-msgstr ""
+msgstr "Nessuna azione"
 
 #: docking-configuration.cpp:147
 msgid "Show/Hide Windows"
-msgstr ""
+msgstr "Mostra/Nascondi finestre"
 
 #: docking-configuration.cpp:148
 msgid "Power On/Off"
-msgstr ""
+msgstr "Accendi/Spegni"
 
 #: docking-configuration.cpp:149
 msgid "Pause/Play"
-msgstr ""
+msgstr "Pausa/Riproduci"
 
 #: docking-configuration.cpp:150 docking.cpp:316
 msgid "Recording"
-msgstr ""
+msgstr "Regitra"
 
 #: docking-configuration.cpp:151
 msgid "System Tray Menu"
-msgstr ""
+msgstr "Menu del vassoio di sistema"
 
 #: docking-configuration.cpp:152
 msgid "GUI-Plugin Menu"
-msgstr ""
+msgstr "Menu del Plugin della GUI"
 
 #: docking-configuration.cpp:153
 msgid "Configuration"
-msgstr ""
+msgstr "Configurazione"
 
 #: docking-configuration.cpp:157
 msgid "Change Station"
-msgstr ""
+msgstr "Cambio stazione"
 
 #: docking-configuration.cpp:158
 msgid "Change Volume"
-msgstr ""
+msgstr "Cambio volume"
 
 #: docking-configuration.cpp:159
 msgid "Change Frequency"
-msgstr ""
+msgstr "Cambio frequenza"
 
 #: docking.cpp:46
 msgid "System Tray Icon/Menu for KRadio"
-msgstr ""
+msgstr "Icona/Menu del vassoio di sistema di KRadio"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
-msgstr ""
+msgstr "Plugin del vassoio di sistema"
 
 #: docking.cpp:251
 msgid "System Tray Icon"
-msgstr ""
+msgstr "Icona del vassoio di sistema"
 
 #: docking.cpp:252
 msgid "System Tray Icon Configuration"
-msgstr ""
+msgstr "Configurazione dell'icona del vassoio di sistema"
 
 #: docking.cpp:306
 msgid "Search Next Station"
-msgstr ""
+msgstr "Ricerca della prossima stazione"
 
 #: docking.cpp:307
 msgid "Search Previous Station"
-msgstr ""
+msgstr "Ricerca della precedente stazione"
 
 #: docking.cpp:321
 msgid "Pause Radio"
-msgstr ""
+msgstr "Metti la radio in pausa"
 
 #: docking.cpp:332
 msgid "Show/Hide Plugins"
-msgstr ""
+msgstr "Mostra/Nascondi i plugin"
 
 #: docking.cpp:340
 msgid "&Quit"
-msgstr ""
+msgstr "&Esci"
 
 #: docking.cpp:454
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
-msgstr ""
+msgstr "Ferma il conto alla rovescia dello sleep (in funzione fino a %1)"
 
 #: docking.cpp:457 docking.cpp:466 docking.cpp:474
 msgid "Start Sleep Countdown"
-msgstr ""
+msgstr "Avvia il conto alla rovescia dello sleep"
 
 #: docking.cpp:482
 msgid "Power Off"
-msgstr ""
+msgstr "Spegni"
 
 #: docking.cpp:482
 msgid "Power On"
-msgstr ""
+msgstr "Accendi"
 
 #: docking.cpp:497 docking.cpp:518
 msgid "invalid station"
-msgstr ""
+msgstr "stazione non valida"
 
 #: docking.cpp:500
 #, kde-format
 msgid "KRadio: %1"
-msgstr ""
+msgstr "KRadio: %1"
 
 #: docking.cpp:510
 #, kde-format
 msgid "next alarm: %1"
-msgstr ""
+msgstr "prossimo allarme: %1"
 
 #: docking.cpp:512
 msgid "<no alarm pending>"
-msgstr ""
+msgstr "<nessun allarme in esecuzione>"
 
 #: docking.cpp:769 docking.cpp:871 docking.cpp:929
 #, kde-format
 msgid "Stop Recording of %1"
-msgstr ""
+msgstr "Ferma la registrazione di %1"
 
 #: docking.cpp:857
 msgid "Start Recording"
-msgstr ""
+msgstr "Avvia la registrazione"
 
 #: docking.cpp:911
 msgid "Resume playback"
-msgstr ""
+msgstr "Riprendi il playback"
 
 #: docking.cpp:915
 msgid "Pause playback"
-msgstr ""
+msgstr "Metti in pausa il playback"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Giovanni Scafora"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "giovanni@archlinux.org"
