@@ -23,11 +23,6 @@ For 4.0.1
 
 For 4.0.2
 
-  * fix segfault when playing too much with streams in recording monitor widget
-  * GUI config of internet radio ffmpeg parameters (probesize, analyze time, connect retries)
-  * make input/output buffer size configurable for internet radio
-  * lirc 0.8.5 compatibility fixes
-  * reactivate OSS support?
   * --done-- Fix segfault caused by dbus startrecording if power of
   * --done-- Fix startrecording with power off for internet radio
   * --done-- check box for v4l config to disable caps check at startup to minimize interference
@@ -39,8 +34,20 @@ For 4.0.2
                move network connection/etc. part from ffmpeg to Qt/KDE (in order to
                allow user to have better influence on proxy settings)
 
+For 4.0.3
+
+  * DVB support?
+  * fix problems with mms / asx stuff
+  * gui for internet radio selection
+  * switch drag & drop to qt4
+
 For 4.0.x
 
+  * fix segfault when playing too much with streams in recording monitor widget
+  * GUI config of internet radio ffmpeg parameters (probesize, analyze time, connect retries)
+  * make input/output buffer size configurable for internet radio
+  * lirc 0.8.5 compatibility fixes
+  * reactivate OSS support?
   * fix reconnect for streams that stop after some time (e.g. 5 hours for WDR5 literaturmarathon)
   * use pkgconfig stuff where possible
   * add some indicator that init of lirc failed in config dialog
