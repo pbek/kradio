@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
+"POT-Creation-Date: 2011-01-10 21:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,17 +68,17 @@ msgstr ""
 msgid "Could not find stream information in %1"
 msgstr ""
 
-#: decoder_thread.cpp:545 decoder_thread.cpp:547
+#: decoder_thread.cpp:546 decoder_thread.cpp:548
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr ""
 
-#: decoder_thread.cpp:563 decoder_thread.cpp:565
+#: decoder_thread.cpp:564 decoder_thread.cpp:566
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr ""
 
-#: decoder_thread.cpp:573 decoder_thread.cpp:575
+#: decoder_thread.cpp:574 decoder_thread.cpp:576
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr ""

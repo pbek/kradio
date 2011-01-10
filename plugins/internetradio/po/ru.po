@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
+"POT-Creation-Date: 2011-01-10 21:00+0100\n"
 "PO-Revision-Date: 2009-05-01 14:25+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: German\n"
@@ -71,17 +71,17 @@ msgstr "не удалось открыть поток MMS %1"
 msgid "Could not find stream information in %1"
 msgstr "Не удалось найти информацию о потоке в %1"
 
-#: decoder_thread.cpp:545 decoder_thread.cpp:547
+#: decoder_thread.cpp:546 decoder_thread.cpp:548
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Не удалось найти аудиопоток в %1"
 
-#: decoder_thread.cpp:563 decoder_thread.cpp:565
+#: decoder_thread.cpp:564 decoder_thread.cpp:566
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Не удалось найти кодек для %1"
 
-#: decoder_thread.cpp:573 decoder_thread.cpp:575
+#: decoder_thread.cpp:574 decoder_thread.cpp:576
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Не удалось открыть кодек для %1"

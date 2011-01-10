@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
+"POT-Creation-Date: 2011-01-10 21:00+0100\n"
 "PO-Revision-Date: 2011-01-08 13:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -71,17 +71,17 @@ msgstr "не вдалося відкрити потік MMS %1"
 msgid "Could not find stream information in %1"
 msgstr "Не вдалося знайти відомості про потік у %1"
 
-#: decoder_thread.cpp:545 decoder_thread.cpp:547
+#: decoder_thread.cpp:546 decoder_thread.cpp:548
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Не вдалося знайти звуковий потік у %1"
 
-#: decoder_thread.cpp:563 decoder_thread.cpp:565
+#: decoder_thread.cpp:564 decoder_thread.cpp:566
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Не вдалося знайти кодек для %1"
 
-#: decoder_thread.cpp:573 decoder_thread.cpp:575
+#: decoder_thread.cpp:574 decoder_thread.cpp:576
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Спроба відкриття кодека для %1 зазнала невдачі"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_internetradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
+"POT-Creation-Date: 2011-01-10 21:00+0100\n"
 "PO-Revision-Date: 2010-01-08 09:08+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -68,17 +68,17 @@ msgstr "gat ekki opnað MMS straum %1"
 msgid "Could not find stream information in %1"
 msgstr "Fann engar straumupplýsingar í %1"
 
-#: decoder_thread.cpp:545 decoder_thread.cpp:547
+#: decoder_thread.cpp:546 decoder_thread.cpp:548
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Fann engan hljóðstraum í %1"
 
-#: decoder_thread.cpp:563 decoder_thread.cpp:565
+#: decoder_thread.cpp:564 decoder_thread.cpp:566
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Fann ekki afkóðunarlykla (codec) fyrir %1"
 
-#: decoder_thread.cpp:573 decoder_thread.cpp:575
+#: decoder_thread.cpp:574 decoder_thread.cpp:576
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Mistókst að opna afkóðunarlykla (codec) fyrir %1"

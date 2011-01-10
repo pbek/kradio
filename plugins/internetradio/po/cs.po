@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.cs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 19:38+0100\n"
+"POT-Creation-Date: 2011-01-10 21:00+0100\n"
 "PO-Revision-Date: 2011-01-08 16:18+0100\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -72,17 +72,17 @@ msgstr "Nelze otevřít MMS datový proud %1"
 msgid "Could not find stream information in %1"
 msgstr "Nelze najít metainformace v zvukovém datovém proudu %1"
 
-#: decoder_thread.cpp:545 decoder_thread.cpp:547
+#: decoder_thread.cpp:546 decoder_thread.cpp:548
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Nelze najít žádný zvukový datový proud na adrese %1."
 
-#: decoder_thread.cpp:563 decoder_thread.cpp:565
+#: decoder_thread.cpp:564 decoder_thread.cpp:566
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Nelze najít žádný dekodér pro %1."
 
-#: decoder_thread.cpp:573 decoder_thread.cpp:575
+#: decoder_thread.cpp:574 decoder_thread.cpp:576
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Otevření dekodéru pro %1 selhalo."
