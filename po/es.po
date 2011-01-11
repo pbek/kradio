@@ -2,7 +2,7 @@
 # translation of kradio.po to es_ES
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rafael RodrÌguez MartÌn <apt-drink@telefonica.net>, 2004.
+# Rafael Rodr√≠guez Mart√≠n <apt-drink@telefonica.net>, 2004.
 #
 msgid ""
 msgstr ""
@@ -10,11 +10,11 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-17 00:32+0200\n"
 "PO-Revision-Date: 2004-02-28 22:45+0000\n"
-"Last-Translator: Rafael RodrÌguez MartÌn <apt-drink@telefonica.net>\n"
+"Last-Translator: Rafael Rodr√≠guez Mart√≠n <apt-drink@telefonica.net>\n"
 "Language-Team: es_ES <kde-es@kybs.de>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
@@ -22,42 +22,42 @@ msgstr ""
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
 #, kde-format
 msgid "%1 Error: %2"
-msgstr ""
+msgstr "%1 Error: %2"
 
 #: interfaces/errorlog_interfaces.cpp:50 interfaces/errorlog_interfaces.cpp:77
 #, fuzzy, kde-format
 msgid "%1 Warning: %2"
-msgstr "Avisos"
+msgstr "%1 Advertencia: %2"
 
 #: interfaces/errorlog_interfaces.cpp:57 interfaces/errorlog_interfaces.cpp:84
 #, fuzzy, kde-format
 msgid "%1 Information: %2"
-msgstr "Avisos"
+msgstr "%1 Informaci√≥n: %2"
 
 #: interfaces/errorlog_interfaces.cpp:64 interfaces/errorlog_interfaces.cpp:91
 #, kde-format
 msgid "%1 Debug: %2"
-msgstr ""
+msgstr "%1 Debug: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
 #: radiostations/internetradiostation.cpp:143
 #, fuzzy, kde-format
 msgid "%1, %2"
-msgstr "%1 %2, %3"
+msgstr "%1, %2"
 
 #: radiostations/frequencyradiostation.cpp:134
 #, fuzzy, kde-format
 msgid "%1 MHz"
-msgstr " kHz"
+msgstr "%1 MHz"
 
 #: radiostations/frequencyradiostation.cpp:136
 #, fuzzy, kde-format
 msgid "%1 kHz"
-msgstr " kHz"
+msgstr "%1 kHz"
 
 #: radiostations/radiostation-config.cpp:48
 msgid "I don't know how to edit this station"
-msgstr "No sÈ como editar esta emisora"
+msgstr "No s√© como editar esta emisora"
 
 #: radiostations/radiostation-config.cpp:74
 msgid "Frequency:"
@@ -65,69 +65,69 @@ msgstr "Frecuencia:"
 
 #: radiostations/radiostation-config.cpp:127
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: radiostations/radiostation-config.cpp:131
 msgid "Decoder Class:"
-msgstr ""
+msgstr "Decodificador:"
 
 #: radiostations/radiostation-config.cpp:135
 msgid "Playlist Class:"
-msgstr ""
+msgstr "Lista de Reproducci√≥n:"
 
 #: radiostations/radiostation-config.cpp:140
 msgctxt "Stream Format"
 msgid "<autodetect>"
-msgstr ""
+msgstr "<autodetecci√≥n>"
 
 #: radiostations/radiostation-config.cpp:141
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: radiostations/radiostation-config.cpp:142
 msgid "ACC/ACCP"
-msgstr ""
+msgstr "ACC/ACCP"
 
 #: radiostations/radiostation-config.cpp:143
 msgid "ASF"
-msgstr ""
+msgstr "ASF"
 
 #: radiostations/radiostation-config.cpp:145
 msgid "OGG/Vorbis"
-msgstr ""
+msgstr "OGG/Vorbis"
 
 #: radiostations/radiostation-config.cpp:148
 msgctxt "Playlist Format"
 msgid "<autodetect>"
-msgstr ""
+msgstr "<autodetecci√≥n>"
 
 #: radiostations/radiostation-config.cpp:149
 msgid "<none>"
-msgstr ""
+msgstr "<ninguna>"
 
 #: radiostations/radiostation-config.cpp:150
 msgid "ASX"
-msgstr ""
+msgstr "ASX"
 
 #: radiostations/radiostation-config.cpp:151
 msgid "LSC"
-msgstr ""
+msgstr "LSC"
 
 #: radiostations/radiostation-config.cpp:152
 msgid "M3U"
-msgstr ""
+msgstr "M3U"
 
 #: radiostations/radiostation-config.cpp:153
 msgid "PLS"
-msgstr ""
+msgstr "PLS"
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
-msgstr ""
+msgstr "Nro."
 
 #: radiostations/radiostation-listview.cpp:36
 msgid "Icon"
-msgstr ""
+msgstr "√çcono"
 
 #: radiostations/radiostation-listview.cpp:37
 #, fuzzy
@@ -140,33 +140,33 @@ msgstr "Emisoras"
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: radiostations/radiostation-listview.cpp:38 rc.cpp:50 rc.cpp:68
 msgid "Description"
-msgstr ""
+msgstr "Descripci√≥n"
 
 #: radiostations/radiostation-listview.cpp:228
 msgid "dragEnterEvent accepted"
-msgstr ""
+msgstr "dragEnterEvent aceptado"
 
 #: radiostations/radiostation-listview.cpp:232
 msgid "dragEnterEvent rejected"
-msgstr ""
+msgstr "dragEnterEvent rechazado"
 
 #: radiostations/radiostation-listview.cpp:241
 msgid "contentsDragEnterEvent accepted"
-msgstr ""
+msgstr "contentsDragEnterEvent aceptado"
 
 #: radiostations/radiostation-listview.cpp:245
 msgid "contentsDragEnterEvent rejected"
-msgstr ""
+msgstr "contentsDragEnterEvent rechazado"
 
 #: radiostations/frequencyradiostation.h:72
 #, fuzzy
 msgid "AM/FM Radio Station"
-msgstr "Emisora de radio"
+msgstr "Emisora de radio AM/FM"
 
 #: radiostations/internetradiostation.h:73
 #, fuzzy
 msgid "Internet Radio Station"
-msgstr "Seleccionar una emisora de radio"
+msgstr "Emisora de Radio Online"
 
 #: radiostations/radiostation.h:161 radiostations/radiostation.h:162
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
@@ -176,33 +176,35 @@ msgstr "desconocido"
 #: src/fileringbuffer.cpp:35 src/fileringbuffer.cpp:68
 #, fuzzy, kde-format
 msgid "cannot open buffer file %1"
-msgstr "No se puede abrir el archivo de salida %1. "
+msgstr "no se puede abrir el archivo de salida %1"
 
 #: src/fileringbuffer.cpp:93
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
-msgstr ""
+msgstr "FileRingbuffer::resize: Escritura a archivo temporal %1 fallida. "
 
 #: src/fileringbuffer.cpp:99
 #, kde-format
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
-msgstr ""
+msgstr "FileReingbuffer::resize: Apertura de archivo temportal %1 fallida. "
 
 #: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
 #, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
-msgstr ""
+msgstr "FileRingBuffer::addData: escritura de datos en archivo %1 fallida."
 
 #: src/fileringbuffer.cpp:168
 #, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
-msgstr ""
+msgstr "FileRingBuffer::takeData: lectura de datos en archivo %1 fallida."
 
 #: src/kradioaboutwidget.cpp:65
 msgid ""
 "<qt>No information available.<br />The supplied KAboutData object does not "
 "exist.</qt>"
 msgstr ""
+"<qt>Sin informaci√≥n disponible.<br /> El objeto KAboutData suministrado no "
+"existe.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
@@ -210,15 +212,17 @@ msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
 "html>"
 msgstr ""
+"<html><font size=\"5\">%1</font><br /><b>Versi√≥n %2</b><br />Utilizando KDE %3</"
+"html>"
 
 #: src/kradioaboutwidget.cpp:125
 #, kde-format
 msgid "License: %1"
-msgstr ""
+msgstr "Licencia: %1"
 
 #: src/kradioaboutwidget.cpp:138
 msgid "&About"
-msgstr ""
+msgstr "&Acerca de"
 
 #: src/kradioaboutwidget.cpp:147
 msgid "A&uthor"
@@ -233,11 +237,13 @@ msgid ""
 "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
 "bugs.\n"
 msgstr ""
+"Favor use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> para reportar "
+"errores.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr ""
+msgstr "Favor reporte errores a <a href=\"mailto:%1\">%2</a>.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
@@ -245,22 +251,22 @@ msgstr "&Gracias a"
 
 #: src/kradioaboutwidget.cpp:232
 msgid "T&ranslation"
-msgstr "T&raducciÛn"
+msgstr "T&raducci√≥n"
 
 #: src/kradioaboutwidget.cpp:255
 #, fuzzy
 msgid "License Agreement"
-msgstr "&Acuerdo de licencia"
+msgstr "Acuerdo de Licencia"
 
 #: src/kradioapp.cpp:132
 #, kde-format
 msgid "Library %1: Plugin Entry Point is missing\n"
-msgstr ""
+msgstr "Biblioteca %1: Plugin Entry Point no encontrado\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
-msgstr ""
+msgstr "Plugin Library Load Error"
 
 #: src/kradioapp.cpp:140
 #, kde-format
@@ -268,19 +274,21 @@ msgid ""
 "Library %1: \n"
 "%2"
 msgstr ""
+"Biblioteca %1: \n"
+"%2"
 
 #: src/kradioapp.cpp:166
 msgid "saveState"
-msgstr ""
+msgstr "saveState"
 
 #: src/kradioapp.cpp:216
 msgid "New plugin libraries found. Should the libraries be loaded now?"
-msgstr ""
+msgstr "Nueva biblioteca de plugin encontrada. Desea cargar la biblioteca ahora?"
 
 #: src/kradioapp.cpp:218
 #, fuzzy
 msgid "New Plugin Libraries found"
-msgstr "ConfiguraciÛn de barra de acceso r·pido"
+msgstr "Configuraci√≥n de barra de acceso r√°pido"
 
 #: src/kradioapp.cpp:234
 #, kde-format
@@ -293,7 +301,7 @@ msgstr ""
 #: src/kradioapp.cpp:239
 #, fuzzy
 msgid "KRadio4 Installation Error"
-msgstr "Emisoras de radio"
+msgstr "Error en la Instalaci√≥n de KRadio4"
 
 #: src/kradioapp.cpp:264
 msgid "Instance"
@@ -301,7 +309,7 @@ msgstr "Instancia"
 
 #: src/kradioapp.cpp:285
 msgid "KRadio Configuration"
-msgstr "ConfiguraciÛn de KRadio"
+msgstr "Configuraci√≥n de KRadio"
 
 #: src/kradioapp.cpp:286
 msgid "About KRadio Components"
@@ -310,74 +318,76 @@ msgstr "Acerca de los componentes de KRadio"
 #: src/kradioapp.cpp:314
 #, fuzzy, kde-format
 msgid "Error: Loading Library %1 failed: %2"
-msgstr "error al leer %1: %2"
+msgstr "Error: Carga de Biblioteca %1 fallida: %2"
 
 #: src/kradioapp.cpp:364
 #, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 failed."
-msgstr ""
+msgstr "Error: Creaci√≥n de instancia \"%1\" de clase %2 fallida."
 
 #: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr ""
+msgstr "Error: No se puede crear instancia %1 de clase desconocida %2."
 
 #: src/main.cpp:34
 #, fuzzy
 msgid "KRadio4"
-msgstr "KRadio"
+msgstr "KRadio4"
 
 #: src/main.cpp:36
 msgid "A versatile KDE AM/FM/Internet radio application"
-msgstr ""
+msgstr "Una aplicaci√≥n de radio AM/FM/Internet vers√°til para KDE"
 
 #: src/main.cpp:38
 msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
-msgstr ""
+msgstr "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
 
 #: src/main.cpp:43
 msgid "Ernst Martin Witte"
-msgstr ""
+msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
 #, fuzzy
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, lirc support, alarms, misc"
-msgstr "reescritura para 0.3.0, grabaciÛn, soporte lirc, alertas, miscel·nea"
+msgstr ""
+"KDE4 port, soporte RDS, accesos directos, soporte PVR, reescritura para 1.0/0.3.0, "
+"grabaci√≥n, soporte lirc, alarmas, miscel√°neos"
 
 #: src/main.cpp:44
 msgid "Marcus Camen"
-msgstr ""
+msgstr "Marcus Camen"
 
 #: src/main.cpp:44
 msgid "Buildsystem, Standards Conformance, Cleanups"
-msgstr ""
+msgstr "Buildsystem, Standards Conformance, Cleanunps"
 
 #: src/main.cpp:45
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: src/main.cpp:45
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Miscel√°neos"
 
 #: src/main.cpp:46
 msgid "Frank Schwanz"
-msgstr ""
+msgstr "Frank Schwanz"
 
 #: src/main.cpp:46
 #, fuzzy
 msgid "initial idea, first basic KDE 2 application"
-msgstr "idea, primera aplicaciÛn b·sica"
+msgstr "idea inicial, primera aplicaci√≥n b√°sica KDE 2"
 
 #: src/multibuffer.cpp:89
 msgid "Buffer Overflow. "
-msgstr ""
+msgstr "Buffer Overflow. "
 
 #: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
-msgstr "Di·logo de configuraciÛn"
+msgstr "Di√°logo de configuraci√≥n"
 
 #: src/pluginmanager-configuration.cpp:196
 #, kde-format
@@ -385,10 +395,12 @@ msgid ""
 "Library %1: \n"
 "Cannot load non-local library"
 msgstr ""
+"Biblioteca %1: \n"
+"No se pudo cargar una biblioteca no local"
 
 #: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
-msgstr ""
+msgstr "Ingrese el nombre del Plugin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
@@ -400,59 +412,60 @@ msgstr "Instancia"
 #: src/pluginmanager.cpp:436
 #, fuzzy
 msgid "Plugins"
-msgstr "Plugin LIRC"
+msgstr "Plugins"
 
 #: src/pluginmanager.cpp:437
 #, fuzzy
 msgid "Plugin Library Configuration"
-msgstr "ConfiguraciÛn de barra de acceso r·pido"
+msgstr "Configuraci√≥n de barra de acceso r√°pido"
 
 #: src/pluginmanager.cpp:570
 #, fuzzy
 msgid "Starting Plugins"
-msgstr "Iniciar reproducciÛn"
+msgstr "Iniciando Plugins"
 
 #: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, fuzzy, kde-format
 msgid "Creating Plugin %1"
-msgstr "Plugin de grabaciÛn"
+msgstr "Creando Plugin %1"
 
 #: src/pluginmanager.cpp:605
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
+"Nuevos plugins encontrados. Desea crear autom√°ticamente estas instancias ahora?"
 
 #: src/pluginmanager.cpp:607
 msgid "New Plugins found"
-msgstr ""
+msgstr "Nuevos Plugins encontrados"
 
 #: src/pluginmanager.cpp:642
 #, fuzzy, kde-format
 msgid "Initializing Plugin %1"
-msgstr "inicializando el plugin lirc de kradio"
+msgstr "Inicializando Plugin %1"
 
 #: src/pluginmanager.cpp:767
 #, fuzzy
 msgid "Show all"
-msgstr "Mostrar %1"
+msgstr "Mostrar todo"
 
 #: src/pluginmanager.cpp:768
 #, fuzzy
 msgid "Hide all"
-msgstr "Esconder %1"
+msgstr "Esconder todo"
 
 #: src/pluginmanager.cpp:769
 msgid "Restore all"
-msgstr ""
+msgstr "Restaurar todo"
 
 #: src/pluginmanager.cpp:770
 msgid "restore state before last hide-all activation"
-msgstr ""
+msgstr "restaurar estado anterior a la √∫ltima activaci√≥n Esconder-Todo"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 #, fuzzy
 msgid "&Start"
-msgstr "Estado"
+msgstr "E&stado"
 
 #. i18n: file: src/standardscandialog-ui.ui:58
 #. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
@@ -463,19 +476,19 @@ msgstr "&Detener"
 #: src/standardscandialog.cpp:163
 #, fuzzy, kde-format
 msgid "<p align=\"right\">%1</p>"
-msgstr "<p align=\"right\">nada aquÌ</p>"
+msgstr "<p align=\"right\">%1</p>"
 
 #: src/standardscandialog.cpp:226
 msgid "new station "
-msgstr "nueva emisora"
+msgstr "nueva emisora "
 
 #: src/station-drag-object.cpp:70
 msgid "canDecode = true"
-msgstr ""
+msgstr "canDecode = true"
 
 #: src/stationlist.cpp:135
 msgid "Contains merged Data"
-msgstr "Contiene datos fusionados "
+msgstr "Contiene datos fusionados"
 
 #: src/stationlist.cpp:176
 msgid ""
@@ -484,30 +497,30 @@ msgid ""
 "menu."
 msgstr ""
 "Probablemente fue leido un archivo de configuracion de emisoras antiguo.\n"
-"Tiene que reconstruir su selecciÛn de emisoras para la barra de acceso "
-"r·pido y el men˙ de empotrado."
+"Tiene que reconstruir su selecci√≥n de emisoras para la barra de acceso "
+"r√°pido y el men√∫ de empotrado."
 
 #: src/stationlist.cpp:185
 msgid "parsing failed"
-msgstr "fallÛ el an·lisis sint·ctico"
+msgstr "fall√≥ el an√°lisis sint√°ctico"
 
 #: src/stationlist.cpp:189
 msgid ""
 "Parsing the station preset file failed.\n"
 "See console output for more details."
 msgstr ""
-"FallÛ el an·lisis sint·ctico del archivo de configuraciÛn de emisoras.\n"
-"Observe la salida en la consola para m·s detalles."
+"Fall√≥ el an√°lisis sint√°ctico del archivo de configuraci√≥n de emisoras.\n"
+"Observe la salida en la consola para m√°s detalles."
 
 #: src/stationlist.cpp:203 src/stationlist.cpp:208
 #, kde-format
 msgid "error downloading preset file %1"
-msgstr "error al descargar el archivo de configuraciÛn %1"
+msgstr "error al descargar el archivo de configuraci√≥n %1"
 
 #: src/stationlist.cpp:205
 #, kde-format
 msgid "Download of the station preset file at %1 failed."
-msgstr "FallÛ la descarga del archivo de configuraciÛn de emisoras en %1."
+msgstr "Fall√≥ la descarga del archivo de configuraci√≥n de emisoras en %1."
 
 #: src/stationlist.cpp:214
 msgid "temporary file: "
@@ -516,16 +529,16 @@ msgstr "archivo temporal: "
 #: src/stationlist.cpp:220
 #, kde-format
 msgid "error opening preset file %1"
-msgstr "error abriendo el archivo de configuraciÛn %1"
+msgstr "error abriendo el archivo de configuraci√≥n %1"
 
 #: src/stationlist.cpp:223
 #, kde-format
 msgid "Opening of the station preset file at %1 failed."
-msgstr "FallÛ la apertura del archivo de configuraciÛn en %1."
+msgstr "Fall√≥ la apertura del archivo de configuraci√≥n en %1."
 
 #: src/stationlist.cpp:243
 msgid "Old Preset File Format detected"
-msgstr "Detectado formato de archivo de configuraciÛn antiguo"
+msgstr "Detectado formato de archivo de configuraci√≥n antiguo"
 
 #: src/stationlist.cpp:322
 #, kde-format
@@ -535,12 +548,12 @@ msgstr "error al escribir al archivo temporal %1"
 #: src/stationlist.cpp:325
 #, kde-format
 msgid "Writing station preset file %1 failed."
-msgstr "FallÛ la escritura del archivo de configuraciÛn de emisoras %1."
+msgstr "Fall√≥ la escritura del archivo de configuraci√≥n de emisoras %1."
 
 #: src/stationlist.cpp:335
 #, fuzzy, kde-format
 msgid "uploading preset file %1: "
-msgstr "Error al subir el archivo de configuraciÛn %1"
+msgstr "Error al subir el archivo de configuraci√≥n %1: "
 
 #: src/stationlist.cpp:337
 #, kde-format
@@ -548,16 +561,18 @@ msgid ""
 "something strange happened, station list has only %1 entries. Writing station "
 "preset file skipped"
 msgstr ""
+"algo extra√±o pas√≥, el listado de emisoras tiene s√≥lo %1 entradas. Escritura de archivo "
+"de emisoras pre-seteadas omitido"
 
 #: src/stationlist.cpp:342
 #, kde-format
 msgid "error uploading preset file %1"
-msgstr "Error al subir el archivo de configuraciÛn %1"
+msgstr "error al subir el archivo de configuraci√≥n %1"
 
 #: src/stationlist.cpp:346
 #, kde-format
 msgid "Upload of station preset file to %1 failed."
-msgstr "FallÛ la subida del archivo de configuraciÛn de emisoras a %1."
+msgstr "Fall√≥ la subida del archivo de configuraci√≥n de emisoras a %1."
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
 #, fuzzy
@@ -577,7 +592,7 @@ msgstr "elemento %1 desconocido o inesperado"
 #: src/stationlistxmlhandler.cpp:144
 #, kde-format
 msgid "expected element %1, but found %2"
-msgstr "se esperaba el elemento %1, pero se encontrÛ %2"
+msgstr "se esperaba el elemento %1, pero se encontr√≥ %2"
 
 #: src/stationlistxmlhandler.cpp:147
 #, kde-format
@@ -587,7 +602,7 @@ msgstr "elemento inesperado %1"
 #: src/stationlistxmlhandler.cpp:155
 #, kde-format
 msgid "invalid data for element %1"
-msgstr "datos no v·lidos para elemento %1"
+msgstr "datos no v√°lidos para elemento %1"
 
 #: src/stationlistxmlhandler.cpp:169
 #, kde-format
@@ -618,7 +633,7 @@ msgstr "Esconder %1"
 #, fuzzy
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Nombre corto"
+msgstr ""
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
@@ -636,7 +651,7 @@ msgstr "DockingConfigurationUI"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:8
 msgid "Automatic detection and load of new plugins"
-msgstr ""
+msgstr "Detecci√≥n autom√°tica y carga de nuevos plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:60
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
@@ -654,13 +669,13 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:17
 msgid "Please Ask!"
-msgstr ""
+msgstr "Pregunte Por Favor!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:106
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:20
 msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
-msgstr ""
+msgstr "Mostrar la Barra de Progreso durante el Inicio para la Iniciali&zaci√≥n del Plugin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:109
 #. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
@@ -673,7 +688,7 @@ msgstr ""
 #: rc.cpp:26
 #, fuzzy
 msgid "Plugin Libraries"
-msgstr "ConfiguraciÛn de barra de acceso r·pido"
+msgstr "Bibliotecas de Plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:129
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
@@ -687,13 +702,13 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
 #: rc.cpp:32
 msgid "Loads the library specified in the box left to this button."
-msgstr ""
+msgstr "Cargar la biblioteca especificada en el cuadro a la izquierda de este bot√≥n."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:161
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
 #: rc.cpp:35
 msgid "list of loaded plugin libraries"
-msgstr ""
+msgstr "lista de bibliotecas de plugin cargada"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:174
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
@@ -706,13 +721,13 @@ msgstr ""
 #: rc.cpp:41
 #, fuzzy
 msgid "Plugin Classes"
-msgstr "Emisoras disponibles"
+msgstr "Clases de Plugin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:216
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
 #: rc.cpp:44
 msgid "List of available plugin classes found in the plugin libraries"
-msgstr ""
+msgstr "Lista de plugins disponibles encontrados en la biblioteca de plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:223
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -720,32 +735,32 @@ msgstr ""
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: rc.cpp:47 rc.cpp:62
 msgid "Plugin Class"
-msgstr ""
+msgstr "Clase de Plugin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:254
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
 #: rc.cpp:53
 msgid "Create a new instance of plugin class selected in the list on the left"
-msgstr ""
+msgstr "Crear una nueva instancia del plugin seleccionado en el listado de la izquierda"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:281
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
 #: rc.cpp:56
 #, fuzzy
 msgid "Plugin Instances"
-msgstr "Plugin de grabaciÛn"
+msgstr "Instancias de Plugin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:296
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
 #: rc.cpp:59
 msgid "List of the plugin instances currently running"
-msgstr ""
+msgstr "Listado de plugins actualmente ejecut√°ndose"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:345
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:71
 msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr ""
+msgstr "Elimina/detiene la instancia del plugin seleccionado en el listado de la izquierda"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:381
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -767,24 +782,39 @@ msgid ""
 "have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
 "html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Puedes "
+"<span style=\" font-weight:600;\">renombrar</span> una instancia de plugin haciendo "
+"doble clic en el nombre de la instancia. This name will appear below the configuration "
+"page icon, in the config page header and e.g. in the name of your sound "
+"device. Editing plugin names is recommended for your convenience e.g. if you "
+"have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
+"html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
 #: rc.cpp:81
 msgid "Stations search in progress ..."
-msgstr "B˙squeda de emisoras en progreso ..."
+msgstr "B√∫squeda de emisoras en progreso ..."
 
 #. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
 #: rc.cpp:84
 msgid "&Ok"
-msgstr ""
+msgstr "&Ok"
 
 #. i18n: file: src/standardscandialog-ui.ui:65
 #. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
 #: rc.cpp:90
 msgid "&Discard"
-msgstr ""
+msgstr "&Descartar"
 
 #. i18n: file: src/standardscandialog-ui.ui:92
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
@@ -796,7 +826,7 @@ msgstr "tiempo restante"
 #. i18n: ectx: property (text), widget (QLabel, labelTime)
 #: rc.cpp:96
 msgid "<p align=\"right\">nothing here</p>"
-msgstr "<p align=\"right\">nada aquÌ</p>"
+msgstr "<p align=\"right\">nada aqu√≠</p>"
 
 #. i18n: file: src/stationselector-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, StationSelectorUI)
@@ -819,7 +849,7 @@ msgstr "Emisoras disponibles"
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"
 #~ "Your names"
-#~ msgstr "Rafael RodrÌguez MartÌn"
+#~ msgstr "Rafael Rodr√≠guez Mart√≠n"
 
 #~ msgid ""
 #~ "_: EMAIL OF TRANSLATORS\n"
@@ -828,7 +858,7 @@ msgstr "Emisoras disponibles"
 
 #, fuzzy
 #~ msgid "Invalid layout"
-#~ msgstr "emisora no v·lida"
+#~ msgstr "emisora no v√°lida"
 
 #~ msgid "%1 %2 (Using KDE %3)"
 #~ msgstr "%1 %2 (Utilizando KDE %3)"
@@ -848,11 +878,11 @@ msgstr "Emisoras disponibles"
 #~ "like to contribute your ideas, your own plugins or translations, don't "
 #~ "hesitate to contact one of the authors.<P>"
 #~ msgstr ""
-#~ "KRadio - La aplicaciÛn de radio para KDE<P>Con KRadio puede escuchar "
+#~ "KRadio - La aplicaci√≥n de radio para KDE<P>Con KRadio puede escuchar "
 #~ "retransmisiones de radio con la ayuda de su tarjeta de radio compatible "
 #~ "con V4L/V4L2.<P>El proyecto KRadio contiene una base de datos de "
 #~ "configuraciones de emisoras. Para completar esta base de datos, le "
-#~ "animamos a contribuir al proyecto con su configuraciÛn. SÛlo envÌela a "
+#~ "animamos a contribuir al proyecto con su configuraci√≥n. S√≥lo env√≠ela a "
 #~ "uno de los autores. <P>Si desea contribuir con sus ideas, sus propios "
 #~ "plugins, o sus traducciones, no dude en contactar con uno de los autores."
 #~ "<P>"
@@ -862,7 +892,7 @@ msgstr "Emisoras disponibles"
 #~ "0.3.0, Misc"
 #~ msgstr ""
 #~ "Base de datos de configuraciones, soporte de control remoto, alertas, "
-#~ "reescritura para KRadio 0.3.0, Miscel·nea"
+#~ "reescritura para KRadio 0.3.0, Miscel√°nea"
 
 #~ msgid "Many People around the World ... "
 #~ msgstr "Mucha gente alrededor del mundo ... "
@@ -872,7 +902,7 @@ msgstr "Emisoras disponibles"
 #~ "and tested early and unstable snapshots of KRadio \n"
 #~ "with much patience"
 #~ msgstr ""
-#~ "... que ha contribuido con archivos de configuraciÛn de emisoras \n"
+#~ "... que ha contribuido con archivos de configuraci√≥n de emisoras \n"
 #~ "y ha testeado las primeras versiones inestables no oficiales de KRadio \n"
 #~ "con mucha paciencia"
 
@@ -895,22 +925,22 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Plugin de icono empotrable"
 
 #~ msgid "Stop Recording"
-#~ msgstr "Detener grabaciÛn"
+#~ msgstr "Detener grabaci√≥n"
 
 #~ msgid "Start Recording"
-#~ msgstr "Iniciar grabaciÛn"
+#~ msgstr "Iniciar grabaci√≥n"
 
 #~ msgid "Docking Menu"
-#~ msgstr "Men˙ de icono empotrable"
+#~ msgstr "Men√∫ de icono empotrable"
 
 #~ msgid "Docking Menu Configuration"
-#~ msgstr "ConfiguraciÛn del men˙ de icono empotrable"
+#~ msgstr "Configuraci√≥n del men√∫ de icono empotrable"
 
 #~ msgid "Docking Menu for KRadio"
-#~ msgstr "Men˙ de icono empotrable de KRadio"
+#~ msgstr "Men√∫ de icono empotrable de KRadio"
 
 #~ msgid "Docking Menu Plugin"
-#~ msgstr "Plugin de men˙ del icono empotrable"
+#~ msgstr "Plugin de men√∫ del icono empotrable"
 
 #~ msgid "Search Next Station"
 #~ msgstr "Buscar siguiente emisora"
@@ -925,10 +955,10 @@ msgstr "Emisoras disponibles"
 #~ msgstr "<no alarm pending>"
 
 #~ msgid "Stop Sleep Countdown (running until %1)"
-#~ msgstr "Detener cuenta atr·s para dormir (corriendo hasta %1)"
+#~ msgstr "Detener cuenta atr√°s para dormir (corriendo hasta %1)"
 
 #~ msgid "Start Sleep Countdown"
-#~ msgstr "Iniciar cuenta atr·s para dormir"
+#~ msgstr "Iniciar cuenta atr√°s para dormir"
 
 #~ msgid "Power Off"
 #~ msgstr "Apagar"
@@ -952,7 +982,7 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Errores"
 
 #~ msgid "Debugging"
-#~ msgstr "DepuraciÛn"
+#~ msgstr "Depuraci√≥n"
 
 #~ msgid "Log Files"
 #~ msgstr "Archivos de registro"
@@ -964,10 +994,10 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Guardar datos de registro como ..."
 
 #~ msgid "Initializing kradio lirc plugin failed"
-#~ msgstr "FallÛ la inicializaciÛn del plugin lirc de kradio"
+#~ msgstr "Fall√≥ la inicializaci√≥n del plugin lirc de kradio"
 
 #~ msgid "Initializing kradio lirc plugin successful"
-#~ msgstr "InicializaciÛn del plugin lirc de kradio correcta"
+#~ msgstr "Inicializaci√≥n del plugin lirc de kradio correcta"
 
 #~ msgid "Linux Infrared Remote Control Support for KRadio"
 #~ msgstr ""
@@ -978,34 +1008,34 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Soporte LIRC"
 
 #~ msgid "Quickbar Plugin"
-#~ msgstr "Plugin de barra de acceso r·pido"
+#~ msgstr "Plugin de barra de acceso r√°pido"
 
 #~ msgid "Quickbar"
-#~ msgstr "Barra de acceso r·pido"
+#~ msgstr "Barra de acceso r√°pido"
 
 #~ msgid "Quickback for KRadio"
-#~ msgstr "Barra de acceso r·pido de KRadio"
+#~ msgstr "Barra de acceso r√°pido de KRadio"
 
 #~ msgid "Images"
-#~ msgstr "Im·genes"
+#~ msgstr "Im√°genes"
 
 #~ msgid "Pixmap Selection"
-#~ msgstr "SelecciÛn de mapa de pÌxels"
+#~ msgstr "Selecci√≥n de mapa de p√≠xels"
 
 #~ msgid "Select Station Pixmap"
-#~ msgstr "Seleccionar mapa de pÌxels de la estaciÛn"
+#~ msgstr "Seleccionar mapa de p√≠xels de la estaci√≥n"
 
 #~ msgid "KRadio Preset Files"
-#~ msgstr "Archivos de configuraciÛn de emisoras de KRadio"
+#~ msgstr "Archivos de configuraci√≥n de emisoras de KRadio"
 
 #~ msgid "Preset File Selection"
-#~ msgstr "SelecciÛn de archivos de configuraciÛn"
+#~ msgstr "Selecci√≥n de archivos de configuraci√≥n"
 
 #~ msgid "Select Preset File"
-#~ msgstr "Seleccionar archivo de configuraciÛn"
+#~ msgstr "Seleccionar archivo de configuraci√≥n"
 
 #~ msgid "Store Preset File"
-#~ msgstr "Guardar archivo de configuraciÛn"
+#~ msgstr "Guardar archivo de configuraci√≥n"
 
 #~ msgid "Radio Multiplexer Plugin"
 #~ msgstr "Plugin de multiplexado de radio"
@@ -1015,23 +1045,23 @@ msgstr "Emisoras disponibles"
 
 #~ msgid "Radio Device Multiplexer and Station Management for KRadio"
 #~ msgstr ""
-#~ "Multiplexador de dispositivos de radio y administraciÛn de emisoras de "
+#~ "Multiplexador de dispositivos de radio y administraci√≥n de emisoras de "
 #~ "KRadio"
 
 #~ msgid "Device and Station Management"
-#~ msgstr "AdministraciÛn de dispositivos y emisoras"
+#~ msgstr "Administraci√≥n de dispositivos y emisoras"
 
 #~ msgid "Radio Device Multiplexer and Station Management"
-#~ msgstr "AdministraciÛn de emisoras y multiplexado de dispositivos de radio"
+#~ msgstr "Administraci√≥n de emisoras y multiplexado de dispositivos de radio"
 
 #~ msgid "Radio Display"
 #~ msgstr "Pantalla de radio"
 
 #~ msgid "Start Recording and display Recording Monitor"
-#~ msgstr "Iniciar grabaciÛn y mostrar monitor de grabaciÛn"
+#~ msgstr "Iniciar grabaci√≥n y mostrar monitor de grabaci√≥n"
 
 #~ msgid "Start Monitoring"
-#~ msgstr "Iniciar monitorizaciÛn"
+#~ msgstr "Iniciar monitorizaci√≥n"
 
 #~ msgid "Configure KRadio"
 #~ msgstr "Configurar KRadio"
@@ -1043,28 +1073,28 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Salir de KRadio"
 
 #~ msgid "Start/Stop Recording"
-#~ msgstr "Iniciar/detener grabaciÛn"
+#~ msgstr "Iniciar/detener grabaci√≥n"
 
 #~ msgid "Start/Stop Sleep Countdown"
-#~ msgstr "Iniciar cuenta atr·s para dormir"
+#~ msgstr "Iniciar cuenta atr√°s para dormir"
 
 #~ msgid "no preset defined"
-#~ msgstr "ninguna configuraciÛn definida"
+#~ msgstr "ninguna configuraci√≥n definida"
 
 #~ msgid "Display"
 #~ msgstr "Pantalla"
 
 #~ msgid "Display Configuration"
-#~ msgstr "ConfiguraciÛn de la pantalla"
+#~ msgstr "Configuraci√≥n de la pantalla"
 
 #~ msgid "set Toolbar-Flag for Display"
 #~ msgstr "activar el indicador de barra de herramientas para la pantalla"
 
 #~ msgid "Common"
-#~ msgstr "Com˙n"
+#~ msgstr "Com√∫n"
 
 #~ msgid "Standard Radio Display for KRadio"
-#~ msgstr "Pantalla est·ndar de radio para KRadio"
+#~ msgstr "Pantalla est√°ndar de radio para KRadio"
 
 #~ msgid "Frequency Display"
 #~ msgstr "Pantalla de la frecuencia"
@@ -1112,7 +1142,7 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Nombre"
 
 #~ msgid "Pixmap File"
-#~ msgstr "Archivo de mapa de pÌxels"
+#~ msgstr "Archivo de mapa de p√≠xels"
 
 #~ msgid " %"
 #~ msgstr " %"
@@ -1121,13 +1151,13 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Volumen predefinido"
 
 #~ msgid "Personal Preset File"
-#~ msgstr "Archivo de configuraciÛn personal"
+#~ msgstr "Archivo de configuraci√≥n personal"
 
 #~ msgid "City"
 #~ msgstr "Ciudad"
 
 #~ msgid "Country"
-#~ msgstr "PaÌs"
+#~ msgstr "Pa√≠s"
 
 #~ msgid "&Now"
 #~ msgstr "&Ahora"
@@ -1142,14 +1172,14 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Responsable del mantenimiento"
 
 #~ msgid "Last Change"
-#~ msgstr "⁄ltimo cambio"
+#~ msgstr "√öltimo cambio"
 
 #~ msgid ""
 #~ "<p align=\"center\">Click on the link below to contribute this station "
 #~ "preset file to the kradio project.</p>"
 #~ msgstr ""
 #~ "<p align=\"center\">Pulse en el enlace de abajo para contribuir con este "
-#~ "archivo de configuraciÛn de emisoras al proyecto KRadio.</p>"
+#~ "archivo de configuraci√≥n de emisoras al proyecto KRadio.</p>"
 
 #~ msgid "RadioView_SeekInterface"
 #~ msgstr "RadioView_SeekInterface"
@@ -1174,22 +1204,22 @@ msgstr "Emisoras disponibles"
 #~ msgstr "RecordingConfigurationUI"
 
 #~ msgid "Buffer Management"
-#~ msgstr "AdministraciÛn del b˙fer"
+#~ msgstr "Administraci√≥n del b√∫fer"
 
 #~ msgid " kB"
 #~ msgstr " kb"
 
 #~ msgid "Encoding Buffer Size"
-#~ msgstr "TamaÒo del b˙fer de codificaciÛn"
+#~ msgstr "Tama√±o del b√∫fer de codificaci√≥n"
 
 #~ msgid "Number of Buffers"
-#~ msgstr "N˙mero de b˙fers"
+#~ msgstr "N√∫mero de b√∫fers"
 
 #~ msgid "Output"
 #~ msgstr "Salida"
 
 #~ msgid "Recording Directory"
-#~ msgstr "Directorio de grabaciÛn"
+#~ msgstr "Directorio de grabaci√≥n"
 
 #~ msgid "MP3 Quality(0 - high, 1 - low)"
 #~ msgstr "Calidad del MP3 (0 - alta, 1 - baja)"
@@ -1234,10 +1264,10 @@ msgstr "Emisoras disponibles"
 #~ msgstr "8"
 
 #~ msgid "Recording Device"
-#~ msgstr "Dispositivo de grabaciÛn"
+#~ msgstr "Dispositivo de grabaci√≥n"
 
 #~ msgid "Endianess"
-#~ msgstr "PosiciÛn del byte m·s significativo"
+#~ msgstr "Posici√≥n del byte m√°s significativo"
 
 #~ msgid "Channels"
 #~ msgstr "Canales"
@@ -1255,13 +1285,13 @@ msgstr "Emisoras disponibles"
 #~ msgstr "Little endian ( byte menos significativo primero)"
 
 #~ msgid "Big Endian"
-#~ msgstr "Big endian (byte m·s significativo primero)"
+#~ msgstr "Big endian (byte m√°s significativo primero)"
 
 #~ msgid "Sample Rate"
 #~ msgstr "Frecuencia de muestreo"
 
 #~ msgid "Stereo"
-#~ msgstr "EstÈreo"
+#~ msgstr "Est√©reo"
 
 #~ msgid "Mono"
 #~ msgstr "Mono"
@@ -1270,7 +1300,7 @@ msgstr "Emisoras disponibles"
 #~ msgstr "TimeControlConfigurationUI"
 
 #~ msgid "sleep countdown"
-#~ msgstr "cuenta atr·s para dormir"
+#~ msgstr "cuenta atr√°s para dormir"
 
 #~ msgid " min"
 #~ msgstr " min"
@@ -1294,7 +1324,7 @@ msgstr "Emisoras disponibles"
 #~ msgstr "diario"
 
 #~ msgid "Stop Playing"
-#~ msgstr "Detener reproducciÛn"
+#~ msgstr "Detener reproducci√≥n"
 
 #~ msgid "SetupDialogGeneral"
 #~ msgstr "SetupDialogGeneral"
@@ -1318,10 +1348,10 @@ msgstr "Emisoras disponibles"
 #~ msgstr "a"
 
 #~ msgid "minimum signal quality"
-#~ msgstr "calidad mÌnima de seÒal"
+#~ msgstr "calidad m√≠nima de se√±al"
 
 #~ msgid "station scan step"
-#~ msgstr "Paso mÌnimo al buscar emisoras"
+#~ msgstr "Paso m√≠nimo al buscar emisoras"
 
 #~ msgid "allowed frequency range"
 #~ msgstr "Rango de frecuencias permitidas"
@@ -1342,34 +1372,34 @@ msgstr "Emisoras disponibles"
 #~ msgstr "balance"
 
 #~ msgid "Recording Monitor"
-#~ msgstr "Monitor de grabaciÛn"
+#~ msgstr "Monitor de grabaci√≥n"
 
 #~ msgid "<undefined>"
 #~ msgstr "<undefined>"
 
 #~ msgid "Recording File"
-#~ msgstr "Archivo de grabaciÛn"
+#~ msgstr "Archivo de grabaci√≥n"
 
 #~ msgid "File Size"
-#~ msgstr "TamaÒo del archivo"
+#~ msgstr "Tama√±o del archivo"
 
 #~ msgid "Recording Time"
-#~ msgstr "Tiempo de grabaciÛn"
+#~ msgstr "Tiempo de grabaci√≥n"
 
 #~ msgid "Hide/Show when recording stops/starts"
-#~ msgstr "Esconder/Iniciar cuando la grabaciÛn se detiene/inicia"
+#~ msgstr "Esconder/Iniciar cuando la grabaci√≥n se detiene/inicia"
 
 #~ msgid "Monitor Input"
 #~ msgstr "Monitorizar entrada"
 
 #~ msgid "Recording Monitor Plugin for KRadio"
-#~ msgstr "Plugin de monitor de grabaciÛn para KRadio"
+#~ msgstr "Plugin de monitor de grabaci√≥n para KRadio"
 
 #~ msgid "Recording Monitor Plugin"
-#~ msgstr "Plugin de monitor de grabaciÛn"
+#~ msgstr "Plugin de monitor de grabaci√≥n"
 
 #~ msgid "not running"
-#~ msgstr "no est· ejecut·ndose"
+#~ msgstr "no est√° ejecut√°ndose"
 
 #~ msgid "recording"
 #~ msgstr "grabando"
@@ -1378,104 +1408,104 @@ msgstr "Emisoras disponibles"
 #~ msgstr "monitorizando"
 
 #~ msgid "error occurred"
-#~ msgstr "ocurriÛ un error"
+#~ msgstr "ocurri√≥ un error"
 
 #~ msgid "finished"
 #~ msgstr "finalizado"
 
 #~ msgid "KRadio Recording Plugin"
-#~ msgstr "Plugin de grabaciÛn de KRadio"
+#~ msgstr "Plugin de grabaci√≥n de KRadio"
 
 #~ msgid "Recording"
-#~ msgstr "GrabaciÛn"
+#~ msgstr "Grabaci√≥n"
 
 #~ msgid "Recording Monitor for KRadio"
-#~ msgstr "Monitor de grabaciÛn de KRadio"
+#~ msgstr "Monitor de grabaci√≥n de KRadio"
 
 #~ msgid "Recording starting"
-#~ msgstr "Iniciando grabaciÛn"
+#~ msgstr "Iniciando grabaci√≥n"
 
 #~ msgid "Recording stopped with error"
-#~ msgstr "GrabaciÛn detenida con error"
+#~ msgstr "Grabaci√≥n detenida con error"
 
 #~ msgid "Monitoring starting"
-#~ msgstr "Iniciando monitorizaciÛn"
+#~ msgstr "Iniciando monitorizaci√≥n"
 
 #~ msgid "Monitoring stopped with error"
-#~ msgstr "MonitorizaciÛn detenida con error"
+#~ msgstr "Monitorizaci√≥n detenida con error"
 
 #~ msgid "Recording stopped"
-#~ msgstr "GrabaciÛn detenida"
+#~ msgstr "Grabaci√≥n detenida"
 
 #~ msgid "Monitoring stopped"
-#~ msgstr "MonitorizaciÛn detenida"
+#~ msgstr "Monitorizaci√≥n detenida"
 
 #~ msgid "Cannot open DSP device %1"
 #~ msgstr "No se puede abrir dispositivo DSP %1"
 
 #~ msgid "Cannot set sample format for recording"
-#~ msgstr "No se puede fijar el formato de muestreo para la grabaciÛn"
+#~ msgstr "No se puede fijar el formato de muestreo para la grabaci√≥n"
 
 #~ msgid "Cannot set number of channels for recording"
-#~ msgstr "No se puede fijar el n˙mero de canales para grabaciÛn"
+#~ msgstr "No se puede fijar el n√∫mero de canales para grabaci√≥n"
 
 #~ msgid "Cannot set sampling rate for recording"
-#~ msgstr "No se puede fijar la frecuencia de muestreo para la grabaciÛn"
+#~ msgstr "No se puede fijar la frecuencia de muestreo para la grabaci√≥n"
 
 #~ msgid "Asking for recording at %1 Hz but hardware uses %2 Hz"
 #~ msgstr "Intentando grabar a %1 Hz pero el hardware utiliza %2 Hz"
 
 #~ msgid "Cannot set stereo mode for recording"
-#~ msgstr "No se puede fijar el formato estÈreo para la grabaciÛn"
+#~ msgstr "No se puede fijar el formato est√©reo para la grabaci√≥n"
 
 #~ msgid "Cannot set sample size for recording"
-#~ msgstr "No se puede fijar el tamaÒo de muestreo para la grabaciÛn"
+#~ msgstr "No se puede fijar el tama√±o de muestreo para la grabaci√≥n"
 
 #~ msgid "Cannot set recording buffers"
-#~ msgstr "No se pueden establecer los b˙fers de grabaciÛn"
+#~ msgstr "No se pueden establecer los b√∫fers de grabaci√≥n"
 
 #~ msgid "Cannot read recording buffer size"
-#~ msgstr "No se puede leer el tamaÒo del b˙fer de grabaciÛn"
+#~ msgstr "No se puede leer el tama√±o del b√∫fer de grabaci√≥n"
 
 #~ msgid "Hardware uses buffer blocks of %1 bytes"
-#~ msgstr "El hardware utiliza blÛques de b˙fer de %1 bytes"
+#~ msgstr "El hardware utiliza bl√≥ques de b√∫fer de %1 bytes"
 
 #~ msgid "Recording::outputFile: "
 #~ msgstr "Recording::outputFile: "
 
 #~ msgid "The encoding thread did not finish. It will be killed now."
 #~ msgstr ""
-#~ "El hilo de ejecuciÛn de la codificaciÛn no finalizÛ. Ser· matado ahora."
+#~ "El hilo de ejecuci√≥n de la codificaci√≥n no finaliz√≥. Ser√° matado ahora."
 
 #~ msgid "Waiting for encoding thread to terminate."
-#~ msgstr "Esperando a que el hilo de ejecuciÛn de la codificaciÛn finalice."
+#~ msgstr "Esperando a que el hilo de ejecuci√≥n de la codificaci√≥n finalice."
 
 #~ msgid "Input buffer overflow. Skipped %1 input bytes"
-#~ msgstr "Desbordamiento del b˙fer de entrada. Saltados %1 bytes de entrada"
+#~ msgstr "Desbordamiento del b√∫fer de entrada. Saltados %1 bytes de entrada"
 
 #~ msgid "No data to record"
 #~ msgstr "No hay datos para grabar"
 
 #~ msgid "Error %1 while recording"
-#~ msgstr "Error %1 durante la grabaciÛn"
+#~ msgstr "Error %1 durante la grabaci√≥n"
 
 #~ msgid "Error %1 writing output. "
 #~ msgstr "Error %1 al escribir la salida. "
 
 #~ msgid "Error %1 while encoding mp3. "
-#~ msgstr "Error %1 durante la codificaciÛn del mp3"
+#~ msgstr "Error %1 durante la codificaci√≥n del mp3"
 
 #~ msgid "Cannot initialize lalibmp3lame. "
 #~ msgstr "No se puede inicializar lalibmp3lame. "
 
 #~ msgid "Cannot initialize libmp3lame parameters. "
-#~ msgstr "No se pueden inicializar los par·metros de libmp3lame. "
+#~ msgstr "No se pueden inicializar los par√°metros de libmp3lame. "
 
 #~ msgid "Recorded by KRadio"
 #~ msgstr "Grabado por KRadio"
 
 #~ msgid "Cannot allocate buffers for mp3 encoding. "
-#~ msgstr "No se pueden asignar los b˙fers para la codificaciÛn del mp3. "
+#~ msgstr "No se pueden asignar los b√∫fers para la codificaci√≥n del mp3. "
 
 #~ msgid "<don't change>"
 #~ msgstr "<don't change>"
@@ -1489,7 +1519,7 @@ msgstr "Emisoras disponibles"
 #~ msgid ""
 #~ "Time Control Plugin for KRadio.<P>Provides Alarms and Sleep Countdown<P>"
 #~ msgstr ""
-#~ "Plugin de control de tiempo de KRadio.<P>Provee alertas y cuenta atr·s "
+#~ "Plugin de control de tiempo de KRadio.<P>Provee alertas y cuenta atr√°s "
 #~ "para dormir<P>"
 
 #~ msgid "Time Control Plugin"
@@ -1499,13 +1529,13 @@ msgstr "Emisoras disponibles"
 #~ msgstr "cualquiera ( * )"
 
 #~ msgid "Radio Device Selection"
-#~ msgstr "SelecciÛn del dispositivo de radio"
+#~ msgstr "Selecci√≥n del dispositivo de radio"
 
 #~ msgid "Select Radio Device"
 #~ msgstr "Seleccionar dispositivo de radio"
 
 #~ msgid "Mixer Device Selection"
-#~ msgstr "SelecciÛn del dispositivo mezclador"
+#~ msgstr "Selecci√≥n del dispositivo mezclador"
 
 #~ msgid "Select Mixer Device"
 #~ msgstr "Seleccionar dispositivo mezclador"
@@ -1520,10 +1550,10 @@ msgstr "Emisoras disponibles"
 #~ msgstr "error %1 al leer el volumen"
 
 #~ msgid "invalid frequency %1"
-#~ msgstr "frecuencia no v·lida %1"
+#~ msgstr "frecuencia no v√°lida %1"
 
 #~ msgid "don't known how to handle V4L-version %1"
-#~ msgstr "no se sabe como manejar V4L versiÛn %1"
+#~ msgstr "no se sabe como manejar V4L versi√≥n %1"
 
 #~ msgid "error setting frequency to %1 (%2)"
 #~ msgstr "error al fijar la frecuencia en %1 (%2)"
@@ -1531,14 +1561,14 @@ msgstr "Emisoras disponibles"
 #~ msgid ""
 #~ "Selecting V4L radio input as recording source failed with error code %1"
 #~ msgstr ""
-#~ "FallÛ la selecciÛn de la entrada de radio de V4L como fuente de grabaciÛn "
-#~ "con cÛdigo de error %1"
+#~ "Fall√≥ la selecci√≥n de la entrada de radio de V4L como fuente de grabaci√≥n "
+#~ "con c√≥digo de error %1"
 
 #~ msgid "Reading igain volume failed with error code %1"
-#~ msgstr "FallÛ la lectura del volumen igain con cÛdigo de error %1"
+#~ msgstr "Fall√≥ la lectura del volumen igain con c√≥digo de error %1"
 
 #~ msgid "Setting igain volume failed with error code %1"
-#~ msgstr "FallÛ la escritura del volumen igain con cÛdigo de error %1"
+#~ msgstr "Fall√≥ la escritura del volumen igain con c√≥digo de error %1"
 
 #~ msgid "V4L Radio Options"
 #~ msgstr "Opciones de radio V4L"
@@ -1572,22 +1602,22 @@ msgstr "Emisoras disponibles"
 #~ msgstr "error al leer las capacidades de V4L1"
 
 #~ msgid "V4L2: Querying mute control failed"
-#~ msgstr "V4L2: FallÛ el acceso al control de silenciado"
+#~ msgstr "V4L2: Fall√≥ el acceso al control de silenciado"
 
 #~ msgid "V4L2: Querying volume control failed"
-#~ msgstr "V4L2: FallÛ el acceso al control de volumen"
+#~ msgstr "V4L2: Fall√≥ el acceso al control de volumen"
 
 #~ msgid "V4L2: Querying treble control failed"
-#~ msgstr "V4L2: FallÛ el acceso al control de agudos"
+#~ msgstr "V4L2: Fall√≥ el acceso al control de agudos"
 
 #~ msgid "V4L2: Querying bass control failed"
-#~ msgstr "V4L2: FallÛ el acceso al control de bajos"
+#~ msgstr "V4L2: Fall√≥ el acceso al control de bajos"
 
 #~ msgid "V4L2: Querying balance control failed"
-#~ msgstr "V4L2: FallÛ el acceso al control de balanceo"
+#~ msgstr "V4L2: Fall√≥ el acceso al control de balanceo"
 
 #~ msgid "V4LRadio::readV4LCaps: Reading V4L2 caps failed"
-#~ msgstr "V4LRadio::readV4LCaps: FallÛ la lectura de las capacidades de V4L2"
+#~ msgstr "V4LRadio::readV4LCaps: Fall√≥ la lectura de las capacidades de V4L2"
 
 #~ msgid "V4L %1 detected"
 #~ msgstr "Detectado V4L %1"
@@ -1620,13 +1650,13 @@ msgstr "Emisoras disponibles"
 #~ msgstr "La radio no tiene control de agudos"
 
 #~ msgid "cannot get tuner info (error %1)"
-#~ msgstr "no se puede obtener informaciÛn del sintonizador (error %1)"
+#~ msgstr "no se puede obtener informaci√≥n del sintonizador (error %1)"
 
 #~ msgid "error setting %1: %2"
 #~ msgstr "error al fijar %1: %2"
 
 #~ msgid "error updating radio audio info (%1): %2"
-#~ msgstr "error al actualizar la informaciÛn de audio de la radio (%1): %2"
+#~ msgstr "error al actualizar la informaci√≥n de audio de la radio (%1): %2"
 
 #~ msgid "write"
 #~ msgstr "escribir"
