@@ -1,147 +1,149 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Italian translation for kradio.
+# Copyright (C) 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kradio package.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2011-01-10 21:25+0100\n"
+"PO-Revision-Date: 2011-01-10 21:30+0200\n"
+"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
+"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lirc-configuration.cpp:51
 msgid "digit 0"
-msgstr ""
+msgstr "numero 0"
 
 #: lirc-configuration.cpp:52
 msgid "digit 1"
-msgstr ""
+msgstr "numero 1"
 
 #: lirc-configuration.cpp:53
 msgid "digit 2"
-msgstr ""
+msgstr "numero 2"
 
 #: lirc-configuration.cpp:54
 msgid "digit 3"
-msgstr ""
+msgstr "numero 3"
 
 #: lirc-configuration.cpp:55
 msgid "digit 4"
-msgstr ""
+msgstr "numero 4"
 
 #: lirc-configuration.cpp:56
 msgid "digit 5"
-msgstr ""
+msgstr "numero 5"
 
 #: lirc-configuration.cpp:57
 msgid "digit 6"
-msgstr ""
+msgstr "numero 6"
 
 #: lirc-configuration.cpp:58
 msgid "digit 7"
-msgstr ""
+msgstr "numero 7"
 
 #: lirc-configuration.cpp:59
 msgid "digit 8"
-msgstr ""
+msgstr "numero 8"
 
 #: lirc-configuration.cpp:60
 msgid "digit 9"
-msgstr ""
+msgstr "numero 9"
 
 #: lirc-configuration.cpp:61
 msgid "Power On"
-msgstr ""
+msgstr "Accendi"
 
 #: lirc-configuration.cpp:62
 msgid "Power Off"
-msgstr ""
+msgstr "Spegni"
 
 #: lirc-configuration.cpp:63
 msgid "Pause"
-msgstr ""
+msgstr "Pausa"
 
 #: lirc-configuration.cpp:64
 msgid "Start Recording"
-msgstr ""
+msgstr "Avvia la registrazione"
 
 #: lirc-configuration.cpp:65
 msgid "Stop Recording"
-msgstr ""
+msgstr "Ferma la registrazione"
 
 #: lirc-configuration.cpp:66
 msgid "Increase Volume"
-msgstr ""
+msgstr "Aumenta il volume"
 
 #: lirc-configuration.cpp:67
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Diminuisci il volume"
 
 #: lirc-configuration.cpp:68
 msgid "Next Channel"
-msgstr ""
+msgstr "Prossimo canale"
 
 #: lirc-configuration.cpp:69
 msgid "Previous Channel"
-msgstr ""
+msgstr "Canale precedente"
 
 #: lirc-configuration.cpp:70
 msgid "Search Next Channel"
-msgstr ""
+msgstr "Cerca il prossimo canale"
 
 #: lirc-configuration.cpp:71
 msgid "Search Previous Channel"
-msgstr ""
+msgstr "Cerca il canale precedente"
 
 #: lirc-configuration.cpp:72
 msgid "Enable Sleep Countdown"
-msgstr ""
+msgstr "Abilita il conto alla rovescia dello sleep"
 
 #: lirc-configuration.cpp:73
 msgid "Quit KRadio"
-msgstr ""
+msgstr "Esci da KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
 msgid "<don't care>"
-msgstr ""
+msgstr "<non ti preoccupare>"
 
 #: lirc-configuration.cpp:278
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
 msgstr ""
+"Digita la stringa di caratteri del tuo telecomando o premi il pulsante sul tuo "
+"telecomando"
 
 #: lirc-configuration.cpp:284
 msgid "Double Click on the entries to change the assignments"
-msgstr ""
+msgstr "Doppio clic sulle voci per cambiare le assegnazioni"
 
 #: lircsupport.cpp:49
 msgid "Linux Infrared Control (LIRC) Support"
-msgstr ""
+msgstr "Linux Infrared Control (LIRC) Support"
 
 #: lircsupport.cpp:55 lircsupport.cpp:493
 msgid "LIRC Plugin"
-msgstr ""
+msgstr "Plugin di LIRC"
 
 #: lircsupport.cpp:83 lircsupport.cpp:84
 msgid "initializing kradio lirc plugin"
-msgstr ""
+msgstr "inizializzazione del plugin di lirc di kradio"
 
 #: lircsupport.cpp:90 lircsupport.cpp:91
 msgid "Initializing kradio lirc plugin failed"
-msgstr ""
+msgstr "Si è verificato un errore durante l'inizializzazione del plugin lirc di kradio"
 
 #: lircsupport.cpp:97 lircsupport.cpp:98
 msgid "Initializing kradio lirc plugin successful"
-msgstr ""
+msgstr "L'inizializzazione del plugin di lirc di kradio è avvenuta con successo"
 
 #: lircsupport.cpp:124
 #, kde-format
@@ -151,6 +153,10 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: in %1 una voce della configurazione di KRadio "
+"non è stata associata a nessun pulsante/telecomando.\n"
+"Ciò, molto probabilmente, causerà dei problemi. Usa \"pulsante=*\" e "
+"\"telecomando=*\" come wilcard per tutti i pulsanti/telecomandi"
 
 #: lircsupport.cpp:131
 #, kde-format
@@ -160,109 +166,116 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: in %1 una delle voci della configurazione di KRadio "
+"presenta un incompleto pulsante/telecomando associato.\n"
+"Ciò, molto probabilmente, causerà dei problemi. Usa \"pulsante=*\" e "
+"\"telecomando=*\" come wilcard per tutti i pulsanti/telecomandi"
 
 #: lircsupport.cpp:142
 #, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
-msgstr ""
+msgstr "Non ci sono voci per kradio nel tuo file .lircrc %1."
 
 #: lircsupport.cpp:143
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
-msgstr ""
+msgstr "Configura correttamente il tuo file .lircrc %1."
 
 #: lircsupport.cpp:147 lircsupport.cpp:148
 #, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
-msgstr ""
+msgstr "Impossibile inizializzare il plugin di lirc di kradio. Impossibile leggere il file di configurazione %1"
 
 #: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
+"%1 non esiste. Il file è stato creato, utilizzando il file .lircrc proposto di default da KRadio"
 
 #: lircsupport.cpp:202
 #, kde-format
 msgid "failed to read file %1"
-msgstr ""
+msgstr "impossibile leggere il file %1"
 
 #: lircsupport.cpp:254
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
 msgstr ""
+"Impossibile leggere dal socket di LIRC. Disabilito le funzioni di LIRC fino al "
+"prossimo avvio di kradio"
 
 #: lircsupport.cpp:492
 msgid "LIRC Support"
-msgstr ""
+msgstr "Supporto LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, LIRCConfigurationUI)
 #: rc.cpp:3 rc.cpp:35
 msgid "LIRCConfigurationUI"
-msgstr ""
+msgstr "LIRCConfigurationUI"
 
 #. i18n: file: lirc-configuration-ui.ui:40
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:6 rc.cpp:38
 msgid "Action"
-msgstr ""
+msgstr "Azione"
 
 #. i18n: file: lirc-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:9 rc.cpp:41
 msgid "LIRC String"
-msgstr ""
+msgstr "Stringa di LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:62
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:12 rc.cpp:44
 msgid "Alternative LIRC String"
-msgstr ""
+msgstr "Stringa alternativa di LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
 #: rc.cpp:15 rc.cpp:47
 msgid "textLabel1"
-msgstr ""
+msgstr "textLabel1"
 
 #. i18n: file: lirc-configuration-ui.ui:106
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:18 rc.cpp:50
 msgid "Power off .lircrc mode"
-msgstr ""
+msgstr "Disabilita la modalità di .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:21 rc.cpp:53
 msgid "Power on .lircrc mode"
-msgstr ""
+msgstr "Abilita la modalità di .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:24 rc.cpp:56
 msgid "Synchronize .lircrc modes at runtime"
-msgstr ""
+msgstr "Sincronizza in tempo reale le modalità di .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:137
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:59
 msgid "Synchronize .lircrc modes at startup"
-msgstr ""
+msgstr "Sincronizza le modalità di .lircrc all'avvio"
 
 #. i18n: file: lirc-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:30 rc.cpp:62
 msgid "LIRC Configuration File"
-msgstr ""
+msgstr "File di configurazione di LIRC"
 
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Giovanni Scafora"
 
 #: rc.cpp:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "giovanni@archlinux.org"

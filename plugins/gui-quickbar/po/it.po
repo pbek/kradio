@@ -1,52 +1,52 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Italian translation of kradio.
+# Copyright (C) 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kradio package.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2011-01-10 21:25+0100\n"
+"PO-Revision-Date: 2011-01-10 21:30+0200\n"
+"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
+"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: quickbar.cpp:48
 msgid "Radio Station Quick Selection Toolbar"
-msgstr ""
+msgstr "Barra veloce degli strumenti di selezione delle stazioni radio"
 
 #: quickbar.cpp:54
 msgid "Quickbar Plugin"
-msgstr ""
+msgstr "Plugin della barra veloce"
 
 #: quickbar.cpp:143
 msgid "Quickbar"
-msgstr ""
+msgstr "Barra veloce"
 
 #: quickbar.cpp:144
 msgid "Quickbar Configuration"
-msgstr ""
+msgstr "Configurazione della barra veloce"
 
 #: quickbar.cpp:377
 msgid "contentsDragEnterEvent accepted"
-msgstr ""
+msgstr "contentsDragEnterEvent accettato"
 
 #: quickbar.cpp:379
 msgid "contentsDragEnterEvent rejected"
-msgstr ""
+msgstr "contentsDragEnterEvent rifiutato"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Giovanni Scafora"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "giovanni@archlinux.org"

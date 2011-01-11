@@ -1,18 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Italian translation for kradio.
+# Copyright (C) 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kradio package.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-10 21:00+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2011-01-10 21:25+0100\n"
+"PO-Revision-Date: 2011-01-10 21:30+0200\n"
+"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
+"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,162 +20,162 @@ msgstr ""
 #: decoder_thread.cpp:120 internetradio.cpp:1244
 #, kde-format
 msgid "opening stream %1"
-msgstr ""
+msgstr "Apertura del flusso %1"
 
 #: decoder_thread.cpp:124
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
-msgstr ""
+msgstr "impossibile aprire %1. Apertura del prossimo flusso presente nella play list."
 
 #: decoder_thread.cpp:128
 #, kde-format
 msgid "Could not open any input stream of %1."
-msgstr ""
+msgstr "Impossibile aprire nessun flusso d'ingresso di %1"
 
 #: decoder_thread.cpp:163
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet\n"
-msgstr ""
+msgstr "%1: si è verificato un errore durante la decodifica del pacchetto. Il pacchetto sarà saltato\n"
 
 #: decoder_thread.cpp:177
 #, kde-format
 msgid "internal stream, not stored (%1)"
-msgstr ""
+msgstr "flusso interno, non salvato (%1)"
 
 #: decoder_thread.cpp:415 decoder_thread.cpp:417
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
-msgstr ""
+msgstr "Si è verificato un errore durante l'autorilevamento del tipo di flusso di %1"
 
 #: decoder_thread.cpp:422
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
-msgstr ""
+msgstr "È stato individuato un formato: %1 (score %2)"
 
 #: decoder_thread.cpp:428 decoder_thread.cpp:430 decoder_thread.cpp:468
 #: decoder_thread.cpp:470 decoder_thread.cpp:482 decoder_thread.cpp:484
 #, kde-format
 msgid "Could not open Stream %1"
-msgstr ""
+msgstr "Impossibile aprire il flusso %1"
 
 #: decoder_thread.cpp:445 decoder_thread.cpp:447
 #, kde-format
 msgid "cannot open MMS stream %1"
-msgstr ""
+msgstr "Impossibile aprire il flusso MMS %1"
 
 #: decoder_thread.cpp:499 decoder_thread.cpp:501
 #, kde-format
 msgid "Could not find stream information in %1"
-msgstr ""
+msgstr "Impossibile trovare l'informazione del flusso in %1"
 
 #: decoder_thread.cpp:546 decoder_thread.cpp:548
 #, kde-format
 msgid "Could not find an audio stream in %1"
-msgstr ""
+msgstr "Impossibile trovare un flusso audio in %1"
 
 #: decoder_thread.cpp:564 decoder_thread.cpp:566
 #, kde-format
 msgid "Could not find a codec for %1"
-msgstr ""
+msgstr "Impossibile trovare un codec per %1"
 
 #: decoder_thread.cpp:574 decoder_thread.cpp:576
 #, kde-format
 msgid "Opening codec for %1 failed"
-msgstr ""
+msgstr "Impossibile aprire il codec per %1"
 
 #: internetradio.cpp:54
 msgid "Pseudo radio device for internet radio stream support"
-msgstr ""
+msgstr "Pseudo dispositivo radio per il supporto del flusso radio via internet"
 
 #: internetradio.cpp:61
 msgid "Internet Radio Plugin"
-msgstr ""
+msgstr "Plugin della radio via internet"
 
 #: internetradio.cpp:381
 msgid "Internet radio station decoder / pseudo device"
-msgstr ""
+msgstr "Decodificatore delle stazioni radio via internet / pseudo dispositivo"
 
 #: internetradio.cpp:609
 msgid "Internet Radio"
-msgstr ""
+msgstr "Radio via internet"
 
 #: internetradio.cpp:610
 msgid "Internet Radio Options"
-msgstr ""
+msgstr "Opzioni della radio via internet"
 
 #: internetradio.cpp:1026 internetradio.cpp:1052
 #, kde-format
 msgid "Failed to load playlist %1: %2"
-msgstr ""
+msgstr "Impossibile caricare la playlist %1: %2"
 
 #: internetradio.cpp:1030
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
-msgstr ""
+msgstr "Impossibile avviare il download della playlist di %1: KIO::get ha ritornato un puntatore NULL"
 
 #: internetradio.cpp:1099
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
-msgstr ""
+msgstr "%1 non contiene nessun flusso radio utilizzabile"
 
 #: internetradio.cpp:1134
 msgid "failed to create temporary file to store playlist data"
-msgstr ""
+msgstr "impossibile creare un file temporaneo per salvare i dati della playlist"
 
 #: internetradio.cpp:1138
 msgid "failed to write temporary file to store playlist data"
-msgstr ""
+msgstr "impossibile scrivere un file temporaneo per salvare i dati della playlist"
 
 #: internetradio.cpp:1211
 msgid "error while reading asx file: "
-msgstr ""
+msgstr "si è verificato un errore durante la lettura del file asx: "
 
 #: internetradio.cpp:1252
 #, kde-format
 msgid "Failed to start stream download of %1: %2"
-msgstr ""
+msgstr "Impossibile avviare il download del flusso di %1: %2"
 
 #: internetradio.cpp:1256
 #, kde-format
 msgid "Failed to start stream download of %1: KIO::get returned NULL pointer"
-msgstr ""
+msgstr "Impossibile avviare il download del flusso di %1: KIO::get ha ritornato un puntatore NULL"
 
 #: internetradio.cpp:1260
 #, kde-format
 msgid "Failed to start any stream of %1"
-msgstr ""
+msgstr "Impossibile avviare il flusso di %1"
 
 #: internetradio.cpp:1305
 #, kde-format
 msgid "Failed to load stream data for %1: %2"
-msgstr ""
+msgstr "Impossibile caricare i dati del flusso di %1: %2"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:18
 msgid "SetupDialogGeneral"
-msgstr ""
+msgstr "SetupDialogGeneral"
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:6 rc.cpp:21
 msgid "Playback Mixer Device"
-msgstr ""
+msgstr "Dispositivo del mixer del playback"
 
 #. i18n: file: internetradio-configuration-ui.ui:51
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:9 rc.cpp:24
 msgid "test"
-msgstr ""
+msgstr "test"
 
 #. i18n: file: internetradio-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:12 rc.cpp:27
 msgid "Playback Mixer Channel"
-msgstr ""
+msgstr "Canale del mixer del playback"
 
 #. i18n: file: internetradio-configuration-ui.ui:107
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:30
 msgid "Mute Playback Channel on Power Off"
-msgstr ""
+msgstr "Canale del playback muto su spegni"
