@@ -1,18 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Italian translation for kradio.
+# Copyright (C) 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kradio package.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 17:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2011-01-11 15:31+0100\n"
+"PO-Revision-Date: 2011-01-11 16:00+0200\n"
+"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
+"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,129 +20,129 @@ msgstr ""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Giovanni Scafora"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "giovanni@archlinux.org"
 
 #: shortcuts.cpp:47
 msgid "Shortcuts Support"
-msgstr ""
+msgstr "Supporto delle scorciatoie"
 
 #: shortcuts.cpp:53 shortcuts.cpp:199
 msgid "Shortcuts Plugin"
-msgstr ""
+msgstr "Plugin delle scorciatoie"
 
 #: shortcuts.cpp:61
 msgid "Standard Actions"
-msgstr ""
+msgstr "Azioni standard"
 
 #: shortcuts.cpp:62
 msgid "Station Actions"
-msgstr ""
+msgstr "Azioni della stazione"
 
 #: shortcuts.cpp:64
 msgid "Digit 0"
-msgstr ""
+msgstr "Cifra 0"
 
 #: shortcuts.cpp:65
 msgid "Digit 1"
-msgstr ""
+msgstr "Cifra 1"
 
 #: shortcuts.cpp:66
 msgid "Digit 2"
-msgstr ""
+msgstr "Cifra 2"
 
 #: shortcuts.cpp:67
 msgid "Digit 3"
-msgstr ""
+msgstr "Cifra 3"
 
 #: shortcuts.cpp:68
 msgid "Digit 4"
-msgstr ""
+msgstr "Cifra 4"
 
 #: shortcuts.cpp:69
 msgid "Digit 5"
-msgstr ""
+msgstr "Cifra 5"
 
 #: shortcuts.cpp:70
 msgid "Digit 6"
-msgstr ""
+msgstr "Cifra 6"
 
 #: shortcuts.cpp:71
 msgid "Digit 7"
-msgstr ""
+msgstr "Cifra 7"
 
 #: shortcuts.cpp:72
 msgid "Digit 8"
-msgstr ""
+msgstr "Cifra 8"
 
 #: shortcuts.cpp:73
 msgid "Digit 9"
-msgstr ""
+msgstr "Cifra 9"
 
 #: shortcuts.cpp:74
 msgid "Power on"
-msgstr ""
+msgstr "Accendi"
 
 #: shortcuts.cpp:75
 msgid "Power off"
-msgstr ""
+msgstr "Spegni"
 
 #: shortcuts.cpp:76
 msgid "Pause"
-msgstr ""
+msgstr "Pausa"
 
 #: shortcuts.cpp:77
 msgid "Start recording"
-msgstr ""
+msgstr "Avvia la registrazione"
 
 #: shortcuts.cpp:78
 msgid "Stop recording"
-msgstr ""
+msgstr "Ferma la registrazione"
 
 #: shortcuts.cpp:79
 msgid "Increase volume"
-msgstr ""
+msgstr "Aumenta il volume"
 
 #: shortcuts.cpp:80
 msgid "Decrease volume"
-msgstr ""
+msgstr "Diminuisci il volume"
 
 #: shortcuts.cpp:81
 msgid "Increase Frequency"
-msgstr ""
+msgstr "Aumenta la frequenza"
 
 #: shortcuts.cpp:82
 msgid "Decrease Frequency"
-msgstr ""
+msgstr "Diminuisci la frequenza"
 
 #: shortcuts.cpp:83
 msgid "Next station"
-msgstr ""
+msgstr "Prossima stazione"
 
 #: shortcuts.cpp:84
 msgid "Previous station"
-msgstr ""
+msgstr "Stazione precedente"
 
 #: shortcuts.cpp:85
 msgid "Search next station"
-msgstr ""
+msgstr "Cerca la prossima stazione"
 
 #: shortcuts.cpp:86
 msgid "Search previous station"
-msgstr ""
+msgstr "Cerca la precedente stazione"
 
 #: shortcuts.cpp:87
 msgid "Sleep"
-msgstr ""
+msgstr "Sleep"
 
 #: shortcuts.cpp:88
 msgid "Quit KRadio"
-msgstr ""
+msgstr "Esco da KRadio"
 
 #: shortcuts.cpp:198
 msgid "Shortcuts"
-msgstr ""
+msgstr "Scorciatoie"
