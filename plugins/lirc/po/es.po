@@ -1,61 +1,61 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Spanish translation for kradio.
+# Copyright (C) 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kradio package.
 #
+# Sergio Ahumada Navea <sahumada@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: es\n"
+"Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2011-01-11 23:02+0200\n"
+"Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
+"Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lirc-configuration.cpp:51
 msgid "digit 0"
-msgstr ""
+msgstr "dígito 0"
 
 #: lirc-configuration.cpp:52
 msgid "digit 1"
-msgstr ""
+msgstr "dígito 1"
 
 #: lirc-configuration.cpp:53
 msgid "digit 2"
-msgstr ""
+msgstr "dígito 2"
 
 #: lirc-configuration.cpp:54
 msgid "digit 3"
-msgstr ""
+msgstr "dígito 3"
 
 #: lirc-configuration.cpp:55
 msgid "digit 4"
-msgstr ""
+msgstr "dígito 4"
 
 #: lirc-configuration.cpp:56
 msgid "digit 5"
-msgstr ""
+msgstr "dígito 5"
 
 #: lirc-configuration.cpp:57
 msgid "digit 6"
-msgstr ""
+msgstr "dígito 6"
 
 #: lirc-configuration.cpp:58
 msgid "digit 7"
-msgstr ""
+msgstr "dígito 7"
 
 #: lirc-configuration.cpp:59
 msgid "digit 8"
-msgstr ""
+msgstr "dígito 8"
 
 #: lirc-configuration.cpp:60
 msgid "digit 9"
-msgstr ""
+msgstr "dígito 9"
 
 #: lirc-configuration.cpp:61
 msgid "Power On"
@@ -260,9 +260,9 @@ msgstr ""
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Sergio Ahumada Navea"
 
 #: rc.cpp:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sahumada@gmail.com"

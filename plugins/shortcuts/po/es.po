@@ -1,18 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Spanish translation for kradio.
+# Copyright (C) 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kradio package.
 #
+# Sergio Ahumada Navea <sahumada@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: es\n"
+"Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2011-01-11 23:02+0200\n"
+"Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
+"Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Sergio Ahumada Navea"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sahumada@gmail.com"
 
 #: shortcuts.cpp:47
 msgid "Shortcuts Support"
@@ -45,43 +45,43 @@ msgstr ""
 
 #: shortcuts.cpp:64
 msgid "Digit 0"
-msgstr ""
+msgstr "Dígito 0"
 
 #: shortcuts.cpp:65
 msgid "Digit 1"
-msgstr ""
+msgstr "Dígito 1"
 
 #: shortcuts.cpp:66
 msgid "Digit 2"
-msgstr ""
+msgstr "Dígito 2"
 
 #: shortcuts.cpp:67
 msgid "Digit 3"
-msgstr ""
+msgstr "Dígito 3"
 
 #: shortcuts.cpp:68
 msgid "Digit 4"
-msgstr ""
+msgstr "Dígito 4"
 
 #: shortcuts.cpp:69
 msgid "Digit 5"
-msgstr ""
+msgstr "Dígito 5"
 
 #: shortcuts.cpp:70
 msgid "Digit 6"
-msgstr ""
+msgstr "Dígito 6"
 
 #: shortcuts.cpp:71
 msgid "Digit 7"
-msgstr ""
+msgstr "Dígito 7"
 
 #: shortcuts.cpp:72
 msgid "Digit 8"
-msgstr ""
+msgstr "Dígito 8"
 
 #: shortcuts.cpp:73
 msgid "Digit 9"
-msgstr ""
+msgstr "Dígito 9"
 
 #: shortcuts.cpp:74
 msgid "Power on"
@@ -93,23 +93,23 @@ msgstr ""
 
 #: shortcuts.cpp:76
 msgid "Pause"
-msgstr ""
+msgstr "Pausar"
 
 #: shortcuts.cpp:77
 msgid "Start recording"
-msgstr ""
+msgstr "Comenzar grabación"
 
 #: shortcuts.cpp:78
 msgid "Stop recording"
-msgstr ""
+msgstr "Detener grabación"
 
 #: shortcuts.cpp:79
 msgid "Increase volume"
-msgstr ""
+msgstr "Aumentar volumen"
 
 #: shortcuts.cpp:80
 msgid "Decrease volume"
-msgstr ""
+msgstr "Disminuir volumen"
 
 #: shortcuts.cpp:81
 msgid "Increase Frequency"
@@ -121,11 +121,11 @@ msgstr ""
 
 #: shortcuts.cpp:83
 msgid "Next station"
-msgstr ""
+msgstr "Emisora siguiente"
 
 #: shortcuts.cpp:84
 msgid "Previous station"
-msgstr ""
+msgstr "Emisora anterior"
 
 #: shortcuts.cpp:85
 msgid "Search next station"
