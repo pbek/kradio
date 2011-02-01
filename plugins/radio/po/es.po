@@ -21,25 +21,25 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
 #: radio-configuration.cpp:81 rc.cpp:52 rc.cpp:146
 msgid "unchanged"
-msgstr ""
+msgstr "sin cambios"
 
 #. i18n: file: radio-configuration-ui.ui:293
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:84 rc.cpp:40 rc.cpp:134
 msgid "<don't care>"
-msgstr ""
+msgstr "<sin importancia>"
 
 #. i18n: file: radio-configuration-ui.ui:298
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:85 rc.cpp:43 rc.cpp:137
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #. i18n: file: radio-configuration-ui.ui:303
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:86 rc.cpp:46 rc.cpp:140
 msgid "Stereo"
-msgstr ""
+msgstr "Estéreo"
 
 #: radio-configuration.cpp:89
 msgid "load + replace presets"
@@ -102,7 +102,7 @@ msgstr ""
 
 #: radio.cpp:399
 msgid "unknown"
-msgstr ""
+msgstr "desconocido"
 
 #. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
@@ -193,13 +193,13 @@ msgstr ""
 #: rc.cpp:56 rc.cpp:150
 #, no-c-format
 msgid " %"
-msgstr ""
+msgstr " %"
 
 #. i18n: file: radio-configuration-ui.ui:336
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
 #: rc.cpp:59 rc.cpp:153
 msgid "Stereo Mode"
-msgstr ""
+msgstr "Modo Estéreo"
 
 #. i18n: file: radio-configuration-ui.ui:346
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
@@ -223,43 +223,43 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
 #: rc.cpp:71 rc.cpp:165
 msgid "City"
-msgstr ""
+msgstr "Ciudad"
 
 #. i18n: file: radio-configuration-ui.ui:430
 #. i18n: ectx: property (text), widget (QLabel, labelCountry)
 #: rc.cpp:74 rc.cpp:168
 msgid "Country"
-msgstr ""
+msgstr "Pais"
 
 #. i18n: file: radio-configuration-ui.ui:461
 #. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
 #: rc.cpp:77 rc.cpp:171
 msgid "&Now"
-msgstr ""
+msgstr "&Ahora"
 
 #. i18n: file: radio-configuration-ui.ui:470
 #. i18n: ectx: property (text), widget (QLabel, labelComment)
 #: rc.cpp:80 rc.cpp:174
 msgid "Comment"
-msgstr ""
+msgstr "Comentario"
 
 #. i18n: file: radio-configuration-ui.ui:483
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
 #: rc.cpp:83 rc.cpp:177
 msgid "Media"
-msgstr ""
+msgstr "Medio"
 
 #. i18n: file: radio-configuration-ui.ui:493
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
 #: rc.cpp:86 rc.cpp:180
 msgid "Maintainer"
-msgstr ""
+msgstr "Mantenedor"
 
 #. i18n: file: radio-configuration-ui.ui:506
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
 #: rc.cpp:89 rc.cpp:183
 msgid "Last Change"
-msgstr ""
+msgstr "Último Cambio"
 
 #. i18n: file: radio-configuration-ui.ui:540
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -272,9 +272,9 @@ msgstr ""
 #: rc.cpp:93
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Sergio Ahumada Navea"
 
 #: rc.cpp:94
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sahumada@gmail.com"

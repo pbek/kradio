@@ -20,7 +20,7 @@ msgstr ""
 #: decoder_thread.cpp:120 internetradio.cpp:1244
 #, kde-format
 msgid "opening stream %1"
-msgstr ""
+msgstr "abriendo stream %1"
 
 #: decoder_thread.cpp:124
 #, kde-format
@@ -56,12 +56,12 @@ msgstr ""
 #: decoder_thread.cpp:470 decoder_thread.cpp:482 decoder_thread.cpp:484
 #, kde-format
 msgid "Could not open Stream %1"
-msgstr ""
+msgstr "No se puede abrir Stream %1"
 
 #: decoder_thread.cpp:445 decoder_thread.cpp:447
 #, kde-format
 msgid "cannot open MMS stream %1"
-msgstr ""
+msgstr "No se puede abrir stream MMS %1"
 
 #: decoder_thread.cpp:499 decoder_thread.cpp:501
 #, kde-format
@@ -89,7 +89,7 @@ msgstr ""
 
 #: internetradio.cpp:61
 msgid "Internet Radio Plugin"
-msgstr ""
+msgstr "Plugin de Radio en Internet"
 
 #: internetradio.cpp:381
 msgid "Internet radio station decoder / pseudo device"
@@ -116,7 +116,7 @@ msgstr ""
 #: internetradio.cpp:1099
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
-msgstr ""
+msgstr "%1 no contiende ningún stream de radio válido"
 
 #: internetradio.cpp:1134
 msgid "failed to create temporary file to store playlist data"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: internetradio.cpp:1211
 msgid "error while reading asx file: "
-msgstr ""
+msgstr "error en lectura de archivo asx: "
 
 #: internetradio.cpp:1252
 #, kde-format
@@ -154,7 +154,7 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:18
 msgid "SetupDialogGeneral"
-msgstr ""
+msgstr "SetupDialogGeneral"
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
@@ -166,7 +166,7 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:9 rc.cpp:24
 msgid "test"
-msgstr ""
+msgstr "probar"
 
 #. i18n: file: internetradio-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)

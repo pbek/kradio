@@ -31,11 +31,11 @@ msgstr ""
 
 #: errorlog.cpp:55
 msgid "Save &as"
-msgstr ""
+msgstr "Guardar como"
 
 #: errorlog.cpp:60
 msgid "Information"
-msgstr ""
+msgstr "Información"
 
 #: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
 #, kde-format
@@ -44,19 +44,19 @@ msgstr ""
 
 #: errorlog.cpp:63
 msgid "Warnings"
-msgstr ""
+msgstr "Advertencias"
 
 #: errorlog.cpp:66
 msgid "Errors"
-msgstr ""
+msgstr "Errores"
 
 #: errorlog.cpp:69
 msgid "Debugging"
-msgstr ""
+msgstr "Depuración"
 
 #: errorlog.cpp:182
 msgid "Log Files"
-msgstr ""
+msgstr "Archivos de Log"
 
 #: errorlog.cpp:187
 msgid "Save KRadio Logging Data as ..."
@@ -65,9 +65,9 @@ msgstr ""
 #: errorlog.cpp:212
 #, kde-format
 msgid "error writing to tempfile %1"
-msgstr ""
+msgstr "error escribiendo al archivo temporal %1"
 
 #: errorlog.cpp:221
 #, kde-format
 msgid "error uploading preset file %1"
-msgstr ""
+msgstr "error cargando archivo %1"

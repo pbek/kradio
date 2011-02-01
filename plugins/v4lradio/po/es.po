@@ -21,13 +21,13 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:183
 msgid "SetupDialogGeneral"
-msgstr ""
+msgstr "SetupDialogGeneral"
 
 #. i18n: file: v4lradio-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
 #: rc.cpp:6 rc.cpp:186
 msgid "V4L Device"
-msgstr ""
+msgstr "Dispositivo V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:36
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
@@ -73,7 +73,7 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
 #: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:204 rc.cpp:210 rc.cpp:219
 msgid " kHz"
-msgstr ""
+msgstr " kHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:144
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
@@ -97,13 +97,13 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
 #: rc.cpp:36 rc.cpp:216
 msgid "65 MHz"
-msgstr ""
+msgstr "65 MHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:260
 #. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
 #: rc.cpp:45 rc.cpp:225
 msgid "108 MHz"
-msgstr ""
+msgstr "108 MHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:272
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
@@ -393,12 +393,12 @@ msgstr ""
 #: rc.cpp:179
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Sergio Ahumada Navea"
 
 #: rc.cpp:180
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sahumada@gmail.com"
 
 #: v4lradio-configuration.cpp:411
 msgid "Could not get device description."

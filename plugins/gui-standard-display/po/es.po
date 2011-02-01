@@ -27,7 +27,7 @@ msgstr ""
 
 #: displaycfg.cpp:50
 msgid "Background Color"
-msgstr ""
+msgstr "Color de Fondo de Pantalla"
 
 #: radioview.cpp:54
 msgid "Standard Display for KRadio"
@@ -39,11 +39,11 @@ msgstr ""
 
 #: radioview.cpp:145
 msgid "Pause KRadio"
-msgstr ""
+msgstr "Pausar KRadio"
 
 #: radioview.cpp:150
 msgid "Start Recording"
-msgstr ""
+msgstr "Comenzar Grabación"
 
 #: radioview.cpp:158
 msgid "5 min"
@@ -79,15 +79,15 @@ msgstr "Configurar KRadio"
 
 #: radioview.cpp:228
 msgid "Power On/Off"
-msgstr ""
+msgstr "Encender/Apagar"
 
 #: radioview.cpp:229
 msgid "Quit KRadio Application"
-msgstr ""
+msgstr "Salir de la Aplicación KRadio"
 
 #: radioview.cpp:230
 msgid "Start/Stop Recording"
-msgstr ""
+msgstr "Comenzar/Detener Grabación"
 
 #: radioview.cpp:231
 msgid "Start/Stop Sleep Countdown"
@@ -103,7 +103,7 @@ msgstr "Ayuda sobre KRadio y KDE"
 
 #: radioview.cpp:234
 msgid "Select a Radio Station"
-msgstr ""
+msgstr "Seleccionar una Emisora de Radio"
 
 #: radioview.cpp:407
 msgid "no preset defined"
@@ -112,27 +112,27 @@ msgstr ""
 #: radioview.cpp:555 radioview.cpp:625
 #, kde-format
 msgid "Stop Recording of %1"
-msgstr ""
+msgstr "Detener Grabación de %1"
 
 #: radioview.cpp:608
 msgid "Resume playback"
-msgstr ""
+msgstr "Continuar reproducción"
 
 #: radioview.cpp:612
 msgid "Pause playback"
-msgstr ""
+msgstr "Pausar reproducción"
 
 #: radioview.cpp:705
 msgid "Display"
-msgstr ""
+msgstr "Display"
 
 #: radioview.cpp:706
 msgid "Display Configuration"
-msgstr ""
+msgstr "Configuración de Display"
 
 #: radioview_frequencyradio.cpp:122 radioview_frequencyradio.cpp:123
 msgid "Frequency Display"
-msgstr ""
+msgstr "Frecuencia del Display"
 
 #: radioview_frequencyradio.cpp:402
 msgid "AM"
@@ -170,25 +170,25 @@ msgstr ""
 
 #: radioview_frequencyseeker.cpp:81
 msgid "Decrement Frequency"
-msgstr ""
+msgstr "Disminuir Frecuencia"
 
 #: radioview_frequencyseeker.cpp:82
 msgid "Increment Frequency"
-msgstr ""
+msgstr "Aumentar Frecuencia"
 
 #: radioview_frequencyseeker.cpp:83
 msgid "Change Frequency"
-msgstr ""
+msgstr "Cambiar Frecuencia"
 
 #: radioview_volume.cpp:59
 msgid "Change Volume"
-msgstr ""
+msgstr "Cambiar Volumen"
 
 #. i18n: file: radioview_seekinterface.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
 #: rc.cpp:3 rc.cpp:23
 msgid "RadioView_SeekInterface"
-msgstr ""
+msgstr "RadioView_SeekInterface"
 
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
@@ -207,7 +207,7 @@ msgstr ""
 #: rc.cpp:12 rc.cpp:32
 msgctxt "Frequency"
 msgid "Frequency control"
-msgstr ""
+msgstr "Control de Frecuencia"
 
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)

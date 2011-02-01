@@ -33,7 +33,7 @@ msgstr " MB"
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:9 rc.cpp:27
 msgid "Maximum File Size"
-msgstr ""
+msgstr "Tamaño Máximo de Archivo"
 
 #. i18n: file: timeshifter-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
@@ -55,7 +55,7 @@ msgstr ""
 
 #: timeshifter-configuration.cpp:146
 msgid "any ( * )"
-msgstr ""
+msgstr "cualquiera ( * )"
 
 #: timeshifter-configuration.cpp:150
 msgid "Select TimeShifter Temporary File"
@@ -89,4 +89,4 @@ msgstr ""
 
 #: timeshifter.cpp:592
 msgid "internal stream, not stored"
-msgstr ""
+msgstr "stream interno, no almacenado"

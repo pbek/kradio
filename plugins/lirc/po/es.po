@@ -59,15 +59,15 @@ msgstr "dígito 9"
 
 #: lirc-configuration.cpp:61
 msgid "Power On"
-msgstr ""
+msgstr "Encender"
 
 #: lirc-configuration.cpp:62
 msgid "Power Off"
-msgstr ""
+msgstr "Apagar"
 
 #: lirc-configuration.cpp:63
 msgid "Pause"
-msgstr ""
+msgstr "Pausar"
 
 #: lirc-configuration.cpp:64
 msgid "Start Recording"
@@ -87,19 +87,19 @@ msgstr ""
 
 #: lirc-configuration.cpp:68
 msgid "Next Channel"
-msgstr ""
+msgstr "Canal Siguiente"
 
 #: lirc-configuration.cpp:69
 msgid "Previous Channel"
-msgstr ""
+msgstr "Canal Anterior"
 
 #: lirc-configuration.cpp:70
 msgid "Search Next Channel"
-msgstr ""
+msgstr "Buscar Siguiente Canal"
 
 #: lirc-configuration.cpp:71
 msgid "Search Previous Channel"
-msgstr ""
+msgstr "Buscar Canal Anterior"
 
 #: lirc-configuration.cpp:72
 msgid "Enable Sleep Countdown"
@@ -107,11 +107,11 @@ msgstr ""
 
 #: lirc-configuration.cpp:73
 msgid "Quit KRadio"
-msgstr ""
+msgstr "Salir de KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
 msgid "<don't care>"
-msgstr ""
+msgstr "<sin importancia>"
 
 #: lirc-configuration.cpp:278
 msgid ""
@@ -129,7 +129,7 @@ msgstr ""
 
 #: lircsupport.cpp:55 lircsupport.cpp:493
 msgid "LIRC Plugin"
-msgstr ""
+msgstr "Plugin LIRC"
 
 #: lircsupport.cpp:83 lircsupport.cpp:84
 msgid "initializing kradio lirc plugin"
@@ -195,13 +195,13 @@ msgstr ""
 
 #: lircsupport.cpp:492
 msgid "LIRC Support"
-msgstr ""
+msgstr "Soporte LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, LIRCConfigurationUI)
 #: rc.cpp:3 rc.cpp:35
 msgid "LIRCConfigurationUI"
-msgstr ""
+msgstr "LIRCConfigurationUI"
 
 #. i18n: file: lirc-configuration-ui.ui:40
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
@@ -225,7 +225,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
 #: rc.cpp:15 rc.cpp:47
 msgid "textLabel1"
-msgstr ""
+msgstr "textLabel1"
 
 #. i18n: file: lirc-configuration-ui.ui:106
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -255,7 +255,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:30 rc.cpp:62
 msgid "LIRC Configuration File"
-msgstr ""
+msgstr "Archivo de Configuración LIRC"
 
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"

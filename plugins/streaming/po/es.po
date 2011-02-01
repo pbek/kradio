@@ -21,7 +21,7 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, StreamingConfigurationUI)
 #: rc.cpp:3 rc.cpp:97
 msgid "StreamingConfigurationUI"
-msgstr ""
+msgstr "StreamingConfigurationUI"
 
 #. i18n: file: streaming-configuration-ui.ui:29
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
@@ -33,13 +33,13 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:9 rc.cpp:103
 msgid "Stereo"
-msgstr ""
+msgstr "Estéreo"
 
 #. i18n: file: streaming-configuration-ui.ui:50
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:12 rc.cpp:106
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #. i18n: file: streaming-configuration-ui.ui:58
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
@@ -51,7 +51,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:18 rc.cpp:112
 msgid "Channels"
-msgstr ""
+msgstr "Canales"
 
 #. i18n: file: streaming-configuration-ui.ui:84
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
@@ -75,43 +75,43 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:30 rc.cpp:124
 msgid "48000"
-msgstr ""
+msgstr "48000"
 
 #. i18n: file: streaming-configuration-ui.ui:126
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:33 rc.cpp:127
 msgid "44100"
-msgstr ""
+msgstr "441000"
 
 #. i18n: file: streaming-configuration-ui.ui:131
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:36 rc.cpp:130
 msgid "32000"
-msgstr ""
+msgstr "32000"
 
 #. i18n: file: streaming-configuration-ui.ui:136
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:39 rc.cpp:133
 msgid "22050"
-msgstr ""
+msgstr "22050"
 
 #. i18n: file: streaming-configuration-ui.ui:141
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:42 rc.cpp:136
 msgid "11025"
-msgstr ""
+msgstr "11025"
 
 #. i18n: file: streaming-configuration-ui.ui:156
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
 #: rc.cpp:45 rc.cpp:139
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #. i18n: file: streaming-configuration-ui.ui:161
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
 #: rc.cpp:48 rc.cpp:142
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #. i18n: file: streaming-configuration-ui.ui:176
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbFormat)
@@ -123,19 +123,19 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, m_sbBufferSize)
 #: rc.cpp:54 rc.cpp:148
 msgid "kB"
-msgstr ""
+msgstr "kB"
 
 #. i18n: file: streaming-configuration-ui.ui:221
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
 #: rc.cpp:57 rc.cpp:151
 msgid "Buffer Size"
-msgstr ""
+msgstr "Tamaño del Buffer"
 
 #. i18n: file: streaming-configuration-ui.ui:237
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
 #: rc.cpp:60 rc.cpp:154
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 #. i18n: file: streaming-configuration-ui.ui:253
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
@@ -193,7 +193,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (K3ListView, m_ListPlaybackURLs)
 #: rc.cpp:82 rc.cpp:91 rc.cpp:176 rc.cpp:185
 msgid "No."
-msgstr ""
+msgstr "Nro."
 
 #. i18n: file: streaming-configuration-ui.ui:501
 #. i18n: ectx: property (text), widget (K3ListView, m_ListCaptureURLs)
@@ -205,7 +205,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (K3ListView, m_ListPlaybackURLs)
 #: rc.cpp:85 rc.cpp:94 rc.cpp:179 rc.cpp:188
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. i18n: file: streaming-configuration-ui.ui:571
 #. i18n: ectx: attribute (title), widget (QWidget, PlaybackURLs)
@@ -257,12 +257,12 @@ msgstr ""
 #: streaming-job.cpp:146 streaming-job.cpp:225
 #, kde-format
 msgid "error %1 (%2)"
-msgstr ""
+msgstr "error %1 (%2)"
 
 #: streaming-job.cpp:175 streaming-job.cpp:182 streaming-job.cpp:263
 #, kde-format
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: streaming-job.cpp:303
 #, kde-format
@@ -282,4 +282,4 @@ msgstr ""
 #: streaming-job.cpp:453
 #, kde-format
 msgid "Error: %1 (%2)"
-msgstr ""
+msgstr "Error: %1 (%2)"

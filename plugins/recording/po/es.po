@@ -37,7 +37,7 @@ msgstr ""
 
 #: encoder_mp3.cpp:130 encoder_ogg.cpp:181
 msgid "unknown station"
-msgstr ""
+msgstr "emisora desconocida"
 
 #: encoder_mp3.cpp:132
 msgid "Recorded by KRadio"
@@ -79,7 +79,7 @@ msgstr ""
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
 #: rc.cpp:6 rc.cpp:133
 msgid "Output"
-msgstr ""
+msgstr "Salida"
 
 #. i18n: file: recording-configuration-ui.ui:104
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
@@ -133,7 +133,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
 #: rc.cpp:33 rc.cpp:160
 msgid "File Format"
-msgstr ""
+msgstr "Formato de Archivo"
 
 #. i18n: file: recording-configuration-ui.ui:177
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
@@ -192,25 +192,25 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
 #: rc.cpp:53 rc.cpp:180
 msgid "48000"
-msgstr ""
+msgstr "48000"
 
 #. i18n: file: recording-configuration-ui.ui:284
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
 #: rc.cpp:56 rc.cpp:183
 msgid "44100"
-msgstr ""
+msgstr "44100"
 
 #. i18n: file: recording-configuration-ui.ui:289
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
 #: rc.cpp:59 rc.cpp:186
 msgid "22050"
-msgstr ""
+msgstr "22050"
 
 #. i18n: file: recording-configuration-ui.ui:294
 #. i18n: ectx: property (text), item, widget (KComboBox, editRate)
 #: rc.cpp:62 rc.cpp:189
 msgid "11025"
-msgstr ""
+msgstr "11025"
 
 #. i18n: file: recording-configuration-ui.ui:302
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
@@ -222,13 +222,13 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
 #: rc.cpp:68 rc.cpp:195
 msgid "Stereo"
-msgstr ""
+msgstr "Estéreo"
 
 #. i18n: file: recording-configuration-ui.ui:340
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
 #: rc.cpp:71 rc.cpp:198
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #. i18n: file: recording-configuration-ui.ui:348
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
@@ -252,19 +252,19 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, editBits)
 #: rc.cpp:83 rc.cpp:210
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #. i18n: file: recording-configuration-ui.ui:390
 #. i18n: ectx: property (text), item, widget (KComboBox, editBits)
 #: rc.cpp:86 rc.cpp:213
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #. i18n: file: recording-configuration-ui.ui:398
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:89 rc.cpp:216
 msgid "Channels"
-msgstr ""
+msgstr "Canales"
 
 #. i18n: file: recording-configuration-ui.ui:408
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
@@ -288,13 +288,13 @@ msgstr ""
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_3)
 #: rc.cpp:101 rc.cpp:228
 msgid "&Buffers"
-msgstr ""
+msgstr "&Buffers"
 
 #. i18n: file: recording-configuration-ui.ui:484
 #. i18n: ectx: property (suffix), widget (QSpinBox, editBufferSize)
 #: rc.cpp:104 rc.cpp:231
 msgid " kB"
-msgstr ""
+msgstr " kB"
 
 #. i18n: file: recording-configuration-ui.ui:503
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
@@ -306,7 +306,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
 #: rc.cpp:110 rc.cpp:237
 msgid "Number of Buffers"
-msgstr ""
+msgstr "Número de Buffers"
 
 #. i18n: file: recording-configuration-ui.ui:552
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
@@ -318,13 +318,13 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxPreRecordingEnable)
 #: rc.cpp:116 rc.cpp:243
 msgid "E&nable"
-msgstr ""
+msgstr "&Habilitar"
 
 #. i18n: file: recording-configuration-ui.ui:568
 #. i18n: ectx: property (shortcut), widget (QCheckBox, m_checkboxPreRecordingEnable)
 #: rc.cpp:119 rc.cpp:246
 msgid "Alt+N"
-msgstr ""
+msgstr "Alt+N"
 
 #. i18n: file: recording-configuration-ui.ui:598
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
@@ -336,17 +336,17 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
 #: rc.cpp:125 rc.cpp:252
 msgid " s"
-msgstr ""
+msgstr " s"
 
 #: rc.cpp:126
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Sergio Ahumada Navea"
 
 #: rc.cpp:127
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sahumada@gmail.com"
 
 #: recording.cpp:46 recording.cpp:53
 msgid "KRadio Recording Plugin"
@@ -358,7 +358,7 @@ msgstr ""
 
 #: recording.cpp:135 recording.cpp:136
 msgid "Recording"
-msgstr ""
+msgstr "Grabando"
 
 #: recording.cpp:362
 msgid "start capture not handled"
@@ -393,7 +393,7 @@ msgstr ""
 
 #: recording.cpp:638
 msgid "Recording stopped"
-msgstr ""
+msgstr "Grabación detenida"
 
 #: recording.cpp:671
 #, kde-format
@@ -404,7 +404,7 @@ msgstr ""
 #: recording-datamonitor.cpp:205 recording-datamonitor.cpp:211
 #, kde-format
 msgid "%1 dB"
-msgstr ""
+msgstr "%1 dB"
 
 #: recording-monitor.cpp:34
 msgid "Recording Monitor"
@@ -424,11 +424,11 @@ msgstr ""
 #: recording-monitor.cpp:392 recording-monitor.cpp:393
 #: recording-monitor.cpp:394
 msgid "<undefined>"
-msgstr ""
+msgstr "<indefinido>"
 
 #: recording-monitor.cpp:50
 msgid "File Size"
-msgstr ""
+msgstr "Tamaño de Archivo"
 
 #: recording-monitor.cpp:52
 msgid "Recording Time"
@@ -436,22 +436,22 @@ msgstr ""
 
 #: recording-monitor.cpp:64
 msgid "&Close"
-msgstr ""
+msgstr "%Cerrar"
 
 #: recording-monitor.cpp:65 recording-monitor.cpp:417
 #: recording-monitor.cpp:420
 msgid "&Record"
-msgstr ""
+msgstr "&Grabar"
 
 #: recording-monitor.cpp:84 recording-monitor.cpp:127
 #: recording-monitor.cpp:151
 msgid "nothing"
-msgstr ""
+msgstr "nada"
 
 #: recording-monitor.cpp:341
 #, kde-format
 msgid "%1 Byte"
-msgstr ""
+msgstr "%1 Byte"
 
 #: recording-monitor.cpp:342
 #, kde-format
@@ -461,26 +461,26 @@ msgstr ""
 #: recording-monitor.cpp:343
 #, kde-format
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: recording-monitor.cpp:344
 #, kde-format
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: recording-monitor.cpp:347
 #, kde-format
 msgid "%1 Hz"
-msgstr ""
+msgstr "%1 Hz"
 
 #: recording-monitor.cpp:383
 msgid "0.000 kB"
-msgstr ""
+msgstr "0.000 kB"
 
 #: recording-monitor.cpp:384
 msgid "00:00:00.00"
-msgstr ""
+msgstr "00:00:00.00"
 
 #: recording-monitor.cpp:417
 msgid "&Stop Recording"
-msgstr ""
+msgstr "&Detener Grabación"

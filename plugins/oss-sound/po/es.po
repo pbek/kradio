@@ -23,15 +23,15 @@ msgstr ""
 
 #: oss-sound.cpp:46
 msgid "KRadio OSS Sound Plugin"
-msgstr ""
+msgstr "Plugin de Sonido KRadio OSS"
 
 #: oss-sound.cpp:180
 msgid "OSS Sound"
-msgstr ""
+msgstr "Sonido OSS"
 
 #: oss-sound.cpp:181
 msgid "OSS Sound Device Options"
-msgstr ""
+msgstr "Opciones de Dispositivo de Sonido OSS"
 
 #: oss-sound.cpp:521
 #, kde-format
@@ -152,55 +152,55 @@ msgstr ""
 #: oss-sound.cpp:1000
 #, kde-format
 msgid "OSS Sound Device %1"
-msgstr ""
+msgstr "Dispositivo de Sonido OSS %1"
 
 #. i18n: file: oss-sound-configuration-ui.ui:27
 #. i18n: ectx: property (title), widget (QGroupBox)
 #: rc.cpp:3 rc.cpp:29
 msgid "Devices"
-msgstr ""
+msgstr "Dispositivos"
 
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
 msgid "PCM Device"
-msgstr ""
+msgstr "Dispositivo PCM"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
 msgid "Mixer Device"
-msgstr ""
+msgstr "Dispositivo Mezclador"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:12 rc.cpp:38
 msgid "Buffer Size"
-msgstr ""
+msgstr "Tamaño del Buffer"
 
 #. i18n: file: oss-sound-configuration-ui.ui:75
 #. i18n: ectx: property (suffix), widget (KIntSpinBox)
 #: rc.cpp:15 rc.cpp:41
 msgid " kB"
-msgstr ""
+msgstr " kB"
 
 #. i18n: file: oss-sound-configuration-ui.ui:91
 #. i18n: ectx: property (title), widget (QGroupBox)
 #: rc.cpp:18 rc.cpp:44
 msgid "Extended Options"
-msgstr ""
+msgstr "Opciones Extendidas"
 
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
 msgid "Disable Playback"
-msgstr ""
+msgstr "Deshabilitar Playback"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
 msgid "Disable Capture"
-msgstr ""
+msgstr "Deshabilitar Captura"
 
 #: rc.cpp:25
 msgctxt "NAME OF TRANSLATORS"

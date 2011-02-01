@@ -59,7 +59,7 @@ msgstr ""
 
 #: docking-configuration.cpp:148
 msgid "Power On/Off"
-msgstr ""
+msgstr "Encender/Apagar"
 
 #: docking-configuration.cpp:149
 msgid "Pause/Play"
@@ -127,7 +127,7 @@ msgstr ""
 
 #: docking.cpp:340
 msgid "&Quit"
-msgstr ""
+msgstr "&Salir"
 
 #: docking.cpp:454
 #, kde-format
@@ -140,15 +140,15 @@ msgstr ""
 
 #: docking.cpp:482
 msgid "Power Off"
-msgstr ""
+msgstr "Apagar"
 
 #: docking.cpp:482
 msgid "Power On"
-msgstr ""
+msgstr "Encender"
 
 #: docking.cpp:497 docking.cpp:518
 msgid "invalid station"
-msgstr ""
+msgstr "emisora inválida"
 
 #: docking.cpp:500
 #, kde-format
@@ -158,11 +158,11 @@ msgstr "KRadio: %1"
 #: docking.cpp:510
 #, kde-format
 msgid "next alarm: %1"
-msgstr ""
+msgstr "próxima alarma: %1"
 
 #: docking.cpp:512
 msgid "<no alarm pending>"
-msgstr ""
+msgstr "<sin alarmas pendientes>"
 
 #: docking.cpp:769 docking.cpp:871 docking.cpp:929
 #, kde-format
