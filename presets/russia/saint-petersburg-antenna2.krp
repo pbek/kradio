@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.0</creator>
+			<maintainer>Hanataro (Александр Николаевич &lt;hanataro25@gmail.com&gt;)</maintainer>
+			<changed>2011-03-04T16:29:42</changed>
+			<country>Russia</country>
+			<city>Saint-Petersburg</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>12992427093FBA5E1570243458E2D5F851F3BBFC99DF2268059177356E9A652BFD2E3F</stationID>
+			<name>Дорожное радио</name>
+			<shortname>Дорожное радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>87</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992267583B237AB8A0CA36A5978FDB4D934789809AA63B645C0D7EFB86FF3B224776</stationID>
+			<name>Ретро</name>
+			<shortname>Ретро</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>87.9996</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992267615D79138BF78E489668066A5F161E95CB0C2E1F0D2D2C7E8B3AED74947879</stationID>
+			<name>Авто Радио</name>
+			<shortname>Авто Радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>88.3496</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1299245224DFDE600C4E78F81A578FBA1F2A45006C1A483D5738B2BF48ED284BC2C9FC</stationID>
+			<name>Для Двоих</name>
+			<shortname>Для Двоих</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1299226770ED601040E43EE3B93E2438C4AC6AFC01DDEACC98B1EE08302A04F82068E7</stationID>
+			<name>Кекс FM</name>
+			<shortname>Кекс FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.0996</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1299226773D02C541B6C989B46A7BE9E07EF3C544185FC9341F54F2EDBE86E17D89BC7</stationID>
+			<name>Эхо Москвы</name>
+			<shortname>Эхо Москвы</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.4996</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992450064E4AAA3432B8FCA126079FA296A86E336905CE3ABF2EFED8C373D58C3798</stationID>
+			<name>Радио Рокс</name>
+			<shortname>Радио Рокс</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992268058FEAF0C94EF06273EB673743E6258F75242AB4295D51C5B66F4EC057F2AF</stationID>
+			<name>Студио</name>
+			<shortname>Студио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.349</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992435281FDB16BE9B711DE92E41FCEA928DDD2FC1ABA6AFCD5B07A578393BD0EC54</stationID>
+			<name>Динамит FM</name>
+			<shortname>Динамит FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992268107030A254DC106BD62B943CE1313E4BADD282E927475E0B571AA5F3694D92</stationID>
+			<name>Наше Радио</name>
+			<shortname>Наше</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1299226813353F96B553C09BB1CC06CB806CA6EE34705D76534B42A70C5E8C2BB99596</stationID>
+			<name>Русский Шансон</name>
+			<shortname>Русский Шансон</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.399</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1299226815509A209761FCE70F2AA153A6D6118E92DD70A6516B2E44535A25AC5A117C</stationID>
+			<name>Балтика</name>
+			<shortname>Балтика</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.849</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992439342FE6A60DC705889C54E4E43102EE5BD7A70338627821A114AEA10A547484</stationID>
+			<name>Love</name>
+			<shortname>Love</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>129922681953A87D8654349F7F46E20C2482A6BE6EA8C59008AE1DD6F9650CFD33F414</stationID>
+			<name>Спутник</name>
+			<shortname>Спутник</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.899</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1299226822C937A9D0C21E95F9AB1D7A36CACD1AAD8751DF1E0868B8499D496E10F3E1</stationID>
+			<name>record</name>
+			<shortname>record</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.299</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1299226825ADD93E9496FBE70152AEF5833A1B98A1B2EEC51A47DE80A35C432EE4A6D7</stationID>
+			<name>Маяк</name>
+			<shortname>Маяк</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.949</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992448213D3022DC21C96DB5D1AED00A71539ABED1EB113698432D0D45C6B9CA1540</stationID>
+			<name>Бизнес FM</name>
+			<shortname>Бизнес FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.35</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>12992448794E7CF4A66A7FAFC810B559EFE948480288CC3288AB469C6F84B28CC51F89</stationID>
+			<name>Русское радио</name>
+			<shortname>Русское радио</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.8</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
