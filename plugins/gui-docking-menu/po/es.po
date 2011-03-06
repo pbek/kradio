@@ -35,11 +35,11 @@ msgstr ""
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
 msgid "XButton1"
-msgstr ""
+msgstr "XButton1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
 msgid "XButton2"
-msgstr ""
+msgstr "XButton2"
 
 #: docking-configuration.cpp:133
 msgid "Mouse Double-Click on Tray Icon"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: docking-configuration.cpp:147
 msgid "Show/Hide Windows"
-msgstr ""
+msgstr "Mostrar/Ocultar Ventanas"
 
 #: docking-configuration.cpp:148
 msgid "Power On/Off"
@@ -63,11 +63,11 @@ msgstr "Encender/Apagar"
 
 #: docking-configuration.cpp:149
 msgid "Pause/Play"
-msgstr ""
+msgstr "Pausa/Reproducción"
 
 #: docking-configuration.cpp:150 docking.cpp:316
 msgid "Recording"
-msgstr ""
+msgstr "Grabando"
 
 #: docking-configuration.cpp:151
 msgid "System Tray Menu"
@@ -79,19 +79,19 @@ msgstr ""
 
 #: docking-configuration.cpp:153
 msgid "Configuration"
-msgstr ""
+msgstr "Configuración"
 
 #: docking-configuration.cpp:157
 msgid "Change Station"
-msgstr ""
+msgstr "Cambiar Emisora"
 
 #: docking-configuration.cpp:158
 msgid "Change Volume"
-msgstr ""
+msgstr "Cambiar Volumen"
 
 #: docking-configuration.cpp:159
 msgid "Change Frequency"
-msgstr ""
+msgstr "Cambiar Frecuencia"
 
 #: docking.cpp:46
 msgid "System Tray Icon/Menu for KRadio"
@@ -111,19 +111,19 @@ msgstr ""
 
 #: docking.cpp:306
 msgid "Search Next Station"
-msgstr ""
+msgstr "Buscar Estación Próxima"
 
 #: docking.cpp:307
 msgid "Search Previous Station"
-msgstr ""
+msgstr "Buscar Estación Anterior"
 
 #: docking.cpp:321
 msgid "Pause Radio"
-msgstr ""
+msgstr "Pausar Radio"
 
 #: docking.cpp:332
 msgid "Show/Hide Plugins"
-msgstr ""
+msgstr "Mostar/Ocular Plugins"
 
 #: docking.cpp:340
 msgid "&Quit"
@@ -167,19 +167,19 @@ msgstr "<sin alarmas pendientes>"
 #: docking.cpp:769 docking.cpp:871 docking.cpp:929
 #, kde-format
 msgid "Stop Recording of %1"
-msgstr ""
+msgstr "Detener Grabación de %1"
 
 #: docking.cpp:857
 msgid "Start Recording"
-msgstr ""
+msgstr "Comenzar Grabación"
 
 #: docking.cpp:911
 msgid "Resume playback"
-msgstr ""
+msgstr "Continuar reproducción"
 
 #: docking.cpp:915
 msgid "Pause playback"
-msgstr ""
+msgstr "Detener reproducción"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"

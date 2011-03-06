@@ -82,7 +82,7 @@ msgstr "diario/semanal"
 #. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
 #: rc.cpp:34 rc.cpp:85
 msgid "Active weekdays:"
-msgstr ""
+msgstr "Días laborales activos:"
 
 #. i18n: file: timecontrol-configuration-ui.ui:255
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
@@ -133,6 +133,37 @@ msgid ""
 "span><span style=\" font-style:italic;\">: literal %)</span></p></body></"
 "html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Recording Filename "
+"Template:</p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
+"style:italic;\">: nombre emisora, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%i</span><span style=\" font-style:italic;\">: station "
+"index, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
+"span><span style=\" font-style:italic;\">: 4 dígitos año, </span><span style="
+"\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
+"italic;\">: 2 dígitos mes, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%d</span><span style=\" font-style:italic;\">: 2 dígitos día, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%B</span><span "
+"style=\" font-style:italic;\">: nombre mes, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%A</span><span style=\" font-style:italic;"
+"\"> nombre día, </span><span style=\" font-weight:600; font-style:italic;\">"
+"%H</span><span style=\" font-style:italic;\">: 2 dígitos hora, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%M</span><span style=\" font-"
+"style:italic;\">: 2 dígitos minutos, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%S</span><span style=\" font-style:italic;\"> 2 dígitos "
+"segundos,</span><span style=\" font-weight:600; font-style:italic;\"> %%</"
+"span><span style=\" font-style:italic;\">: literal %)</span></p></body></"
+"html>"
 
 #: rc.cpp:50
 msgctxt "NAME OF TRANSLATORS"
@@ -146,23 +177,23 @@ msgstr "sahumada@gmail.com"
 
 #: timecontrol-configuration.cpp:60
 msgid "Start Playing"
-msgstr ""
+msgstr "Comenzar Reproducción"
 
 #: timecontrol-configuration.cpp:61
 msgid "Stop Playing"
-msgstr ""
+msgstr "Detener Reproducción"
 
 #: timecontrol-configuration.cpp:62
 msgid "Start Recording"
-msgstr ""
+msgstr "Comenzar Grabación"
 
 #: timecontrol-configuration.cpp:63
 msgid "Stop Recording"
-msgstr ""
+msgstr "Detener Grabación"
 
 #: timecontrol-configuration.cpp:66
 msgid "unchanged"
-msgstr ""
+msgstr "sin cambios"
 
 #: timecontrol-configuration.cpp:68
 msgid "Monday"

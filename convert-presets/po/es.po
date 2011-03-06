@@ -19,7 +19,7 @@ msgstr ""
 
 #: convert-presets.cpp:53 convert-presets.cpp:134
 msgid "error opening preset file"
-msgstr ""
+msgstr "error abriendo archivo de configuración"
 
 #: convert-presets.cpp:55
 msgid "for reading"
@@ -31,7 +31,7 @@ msgstr "para escritura"
 
 #: convert-presets.cpp:148
 msgid "error writing preset file"
-msgstr ""
+msgstr "error escribiendo archivo de configuración"
 
 #: convert-presets.cpp:163
 msgid "kradio4-convert-presets"
@@ -47,11 +47,11 @@ msgstr "Martin Witte"
 
 #: convert-presets.cpp:173
 msgid "quiet mode - no informational output"
-msgstr ""
+msgstr "modo silencioso - sin información de salida"
 
 #: convert-presets.cpp:174
 msgid "preset files to convert"
-msgstr ""
+msgstr "archivos de configuración a convertir"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"

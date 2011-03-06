@@ -129,7 +129,6 @@ msgid "Icon"
 msgstr "Ícono"
 
 #: radiostations/radiostation-listview.cpp:37
-#,
 msgid "Station"
 msgstr "Emisoras"
 
@@ -251,7 +250,6 @@ msgid "T&ranslation"
 msgstr "T&raducción"
 
 #: src/kradioaboutwidget.cpp:255
-#,
 msgid "License Agreement"
 msgstr "Acuerdo de Licencia"
 
@@ -293,6 +291,9 @@ msgid ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr ""
+"Se han encontrado sólo %1 bibliotecas. Se esperaba un mínimo de 5. Favor revisar "
+"el directorio de instalación de KRadio4 y las variables de ambiente KDEDIR, KDEDIRS "
+"y KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
@@ -698,7 +699,7 @@ msgstr "lista de bibliotecas de plugin cargada"
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
 #: rc.cpp:38
 msgid "Unload the plugin library selected in the list on the left side"
-msgstr ""
+msgstr "Descargar el plugin de biblioteca seleccionado en el listado de la izquierda"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:201
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)

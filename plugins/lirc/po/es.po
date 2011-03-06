@@ -71,19 +71,19 @@ msgstr "Pausar"
 
 #: lirc-configuration.cpp:64
 msgid "Start Recording"
-msgstr ""
+msgstr "Comenzar Grabación"
 
 #: lirc-configuration.cpp:65
 msgid "Stop Recording"
-msgstr ""
+msgstr "Detener Grabación"
 
 #: lirc-configuration.cpp:66
 msgid "Increase Volume"
-msgstr ""
+msgstr "Aumentar Volumen"
 
 #: lirc-configuration.cpp:67
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Disminuir Volumen"
 
 #: lirc-configuration.cpp:68
 msgid "Next Channel"
@@ -103,7 +103,7 @@ msgstr "Buscar Canal Anterior"
 
 #: lirc-configuration.cpp:72
 msgid "Enable Sleep Countdown"
-msgstr ""
+msgstr "Habilitar Sleep Countdown"
 
 #: lirc-configuration.cpp:73
 msgid "Quit KRadio"
@@ -121,11 +121,11 @@ msgstr ""
 
 #: lirc-configuration.cpp:284
 msgid "Double Click on the entries to change the assignments"
-msgstr ""
+msgstr "Haga doble clic en las entradas para cambiar las asignaciones"
 
 #: lircsupport.cpp:49
 msgid "Linux Infrared Control (LIRC) Support"
-msgstr ""
+msgstr "Soporte para Linux Infrared Control (LIRC)"
 
 #: lircsupport.cpp:55 lircsupport.cpp:493
 msgid "LIRC Plugin"
@@ -133,15 +133,15 @@ msgstr "Plugin LIRC"
 
 #: lircsupport.cpp:83 lircsupport.cpp:84
 msgid "initializing kradio lirc plugin"
-msgstr ""
+msgstr "inicializando plugin lirc de kradio"
 
 #: lircsupport.cpp:90 lircsupport.cpp:91
 msgid "Initializing kradio lirc plugin failed"
-msgstr ""
+msgstr "Inicialización de plugin lirc de kradio fallida"
 
 #: lircsupport.cpp:97 lircsupport.cpp:98
 msgid "Initializing kradio lirc plugin successful"
-msgstr ""
+msgstr "Inicialización de plugin lirc de kradio exitosa"
 
 #: lircsupport.cpp:124
 #, kde-format
@@ -151,6 +151,10 @@ msgid ""
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: En %1 una Entrada de Configuración LIRC para KRadio "
+"no tiene un botón/remoto asociado.\n"
+"Es posible que esto cause algunos problemas. Favor usar \"button=*\" y "
+"\"remote=*\" como wildcard para todos los botones/remotos"
 
 #: lircsupport.cpp:131
 #, kde-format
@@ -164,28 +168,29 @@ msgstr ""
 #: lircsupport.cpp:142
 #, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
-msgstr ""
+msgstr "No existe una entrada para kradio en tu archivo .lircrc %1."
 
 #: lircsupport.cpp:143
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
-msgstr ""
+msgstr "Favor configurar su archivo .lircrc %1 correctamente."
 
 #: lircsupport.cpp:147 lircsupport.cpp:148
 #, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
-msgstr ""
+msgstr "Inicialización de plugin lirc de kradio fallida. No se puede leer archivo de configuración %1"
 
 #: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
+"%1 no existe. Archivo fue creado con archivo .lircrc de KRadio propuesto por omisión"
 
 #: lircsupport.cpp:202
 #, kde-format
 msgid "failed to read file %1"
-msgstr ""
+msgstr "lectura de archivo %1 fallida"
 
 #: lircsupport.cpp:254
 msgid ""
@@ -207,19 +212,19 @@ msgstr "LIRCConfigurationUI"
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:6 rc.cpp:38
 msgid "Action"
-msgstr ""
+msgstr "Acción"
 
 #. i18n: file: lirc-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:9 rc.cpp:41
 msgid "LIRC String"
-msgstr ""
+msgstr "Cadena LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:62
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:12 rc.cpp:44
 msgid "Alternative LIRC String"
-msgstr ""
+msgstr "Cadena LIRC Alternativa"
 
 #. i18n: file: lirc-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
@@ -231,25 +236,25 @@ msgstr "textLabel1"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:18 rc.cpp:50
 msgid "Power off .lircrc mode"
-msgstr ""
+msgstr "Apagar modo .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:21 rc.cpp:53
 msgid "Power on .lircrc mode"
-msgstr ""
+msgstr "Enceder modo .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:24 rc.cpp:56
 msgid "Synchronize .lircrc modes at runtime"
-msgstr ""
+msgstr "Sincronizar modos .lircrc en tiempo de ejecución"
 
 #. i18n: file: lirc-configuration-ui.ui:137
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:59
 msgid "Synchronize .lircrc modes at startup"
-msgstr ""
+msgstr "Sincronizar modos .lircrc al inicio"
 
 #. i18n: file: lirc-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label_5)
