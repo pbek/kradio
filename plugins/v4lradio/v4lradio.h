@@ -195,8 +195,8 @@ RECEIVERS:
     // IV4LCfg
 RECEIVERS:
     bool  setRadioDevice  (const QString &s);
-    bool  setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool force = false);
-    bool  setCaptureMixer (const QString &soundStreamClientID, const QString &ch, bool force = false);
+    bool  setPlaybackMixer(QString soundStreamClientID, QString ch, bool force = false);
+    bool  setCaptureMixer (QString soundStreamClientID, QString ch, bool force = false);
     bool  setDeviceVolume (float v);
     bool  setActivePlayback(bool a, bool muteCaptureChannelPlayback);
     bool  setMuteOnPowerOff(bool a);

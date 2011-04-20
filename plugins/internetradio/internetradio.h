@@ -151,7 +151,7 @@ RECEIVERS:
     // anything else
 public:
 
-    bool  setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force);
+    bool  setPlaybackMixer(QString soundStreamClientID, QString ch, bool muteOnPowerOff, bool force);
 
 protected slots:
 

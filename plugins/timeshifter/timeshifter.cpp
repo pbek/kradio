@@ -115,7 +115,7 @@ void   TimeShifter::restoreState (const KConfigGroup &config)
     QString mixerID = config.readEntry ("PlaybackMixerID", QString());
     QString channel = config.readEntry ("PlaybackMixerChannel", "PCM");
 
-    setPlaybackMixer(mixerID, channel);
+    setPlaybackMixer(mixerID, channel, /* force = */ true);
     setTempFile(fname, fsize);
 
     emit sigUpdateConfig();
@@ -131,6 +131,25 @@ ConfigPageInfo  TimeShifter::createConfigurationPage()
                            i18n("Timeshifter Options"),
                            "media-playback-pause");
 }
+
+
+void TimeShifter::noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid)
+{
+    if (i && pointer_valid && i->getSoundStreamClientID() == m_PlaybackMixerID) {
+        setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel, /* force = */ true);
+    }
+}
+
+
+bool TimeShifter::noticePlaybackChannelsChanged(const QString & client_id, const QStringList &/*channels*/)
+{
+    if (client_id == m_PlaybackMixerID) {
+        setPlaybackMixer(m_PlaybackMixerID, m_PlaybackMixerChannel, /* force = */ true);
+    }
+    return true;
+}
+
+
 
 
 bool TimeShifter::noticeSoundStreamClosed(SoundStreamID id)
@@ -559,28 +578,49 @@ ISoundStreamClient *TimeShifter::searchPlaybackMixer()
 }
 
 
-bool  TimeShifter::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch)
+static inline void assignChannelIfValid(QString &dest_channel, const QString &test_channel, const QStringList &valid_channels)
 {
-    m_PlaybackMixerID = soundStreamClientID;
-    m_PlaybackMixerChannel = ch;
-
-    ISoundStreamClient *playback_mixer = searchPlaybackMixer();
-
-    float  oldVolume;
-    if (m_OutputStreamSinkID.isValid()) {
-        queryPlaybackVolume(m_OutputStreamSinkID, oldVolume);
-        sendStopPlayback(m_OutputStreamSinkID);
-        sendReleasePlayback(m_OutputStreamSinkID);
+    if (valid_channels.contains(test_channel) || !valid_channels.size()) {
+        dest_channel = test_channel;
     }
+}
 
-    if (playback_mixer)
-        playback_mixer->preparePlayback(m_OutputStreamSinkID, m_PlaybackMixerChannel, /*active*/true, /*start_imm*/false);
+bool  TimeShifter::setPlaybackMixer(QString soundStreamClientID, QString ch, bool force)
+{
+    QString old_channel           = m_PlaybackMixerChannel;
+    m_PlaybackMixerID             = soundStreamClientID;
+    ISoundStreamClient *mixer     = searchPlaybackMixer();
+    QStringList         channels  = mixer ? mixer->getPlaybackChannels() : QStringList();
 
-    if (m_OutputStreamSinkID.isValid()) {
-        sendStartPlayback(m_OutputStreamSinkID);
-        sendPlaybackVolume(m_OutputStreamSinkID, oldVolume);
+    if (channels.size()) {
+        assignChannelIfValid(m_PlaybackMixerChannel, channels[0], channels);  // lowest priority
     }
+    assignChannelIfValid(m_PlaybackMixerChannel, "PCM",       channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, "Wave",      channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, "Master",    channels);
+    assignChannelIfValid(m_PlaybackMixerChannel, ch,          channels);  // highest priority
 
+    bool change = (m_PlaybackMixerID != soundStreamClientID) || (old_channel != m_PlaybackMixerChannel);
+
+    if (change || force) {
+        float  oldVolume = -1;
+        if (m_OutputStreamSinkID.isValid()) {
+            queryPlaybackVolume(m_OutputStreamSinkID, oldVolume);
+            sendStopPlayback(m_OutputStreamSinkID);
+            sendReleasePlayback(m_OutputStreamSinkID);
+        }
+
+        if (mixer)
+            mixer->preparePlayback(m_OutputStreamSinkID, m_PlaybackMixerChannel, /*active*/true, /*start_imm*/false);
+
+        if (m_OutputStreamSinkID.isValid()) {
+            sendStartPlayback(m_OutputStreamSinkID);
+            sendPlaybackVolume(m_OutputStreamSinkID, oldVolume);
+        }
+
+        if (change)
+            emit sigUpdateConfig();
+    }
     return true;
 }
 

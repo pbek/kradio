@@ -117,8 +117,8 @@ public:
 
 RECEIVERS:
     IF_RECEIVER(   setRadioDevice  (const QString &s)                             )
-    IF_RECEIVER(   setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool force = false)  )
-    IF_RECEIVER(   setCaptureMixer (const QString &soundStreamClientID, const QString &ch, bool force = false)  )
+    IF_RECEIVER(   setPlaybackMixer(QString soundStreamClientID, QString ch, bool force = false)  )
+    IF_RECEIVER(   setCaptureMixer (QString soundStreamClientID, QString ch, bool force = false)  )
     IF_RECEIVER(   setDeviceVolume(float v)                                       )
     IF_RECEIVER(   setActivePlayback(bool enabled, bool mute_capture)             )
     IF_RECEIVER(   setMuteOnPowerOff(bool m)                                      )

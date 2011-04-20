@@ -171,7 +171,7 @@ void TimeShifterConfiguration::slotOK()
         m_PlaybackChannelHelper.slotOK();
         m_Shifter->setTempFile(editTempFile->text(), editTempFileSize->value() * (quint64)(1024 * 1024));
         m_Shifter->setPlaybackMixer(m_PlaybackMixerHelper  .getCurrentItemID(),
-                                    m_PlaybackChannelHelper.getCurrentItemID());
+                                    m_PlaybackChannelHelper.getCurrentItemID(), false);
         m_dirty = false;
     }
 }

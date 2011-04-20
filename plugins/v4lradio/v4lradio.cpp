@@ -985,7 +985,7 @@ static inline void assignChannelIfValid(QString &dest_channel, const QString &te
     }
 }
 
-bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool force)
+bool  V4LRadio::setPlaybackMixer(QString soundStreamClientID, QString ch, bool force)
 {
     QString old_channel          = m_PlaybackMixerChannel;
     m_PlaybackMixerID            = soundStreamClientID;
@@ -1033,13 +1033,13 @@ bool  V4LRadio::setPlaybackMixer(const QString &soundStreamClientID, const QStri
         }
 
         if (change) // update config IV4LCfg
-            notifyPlaybackMixerChanged(soundStreamClientID, ch);
+            notifyPlaybackMixerChanged(soundStreamClientID, m_PlaybackMixerChannel);
     }
     return true;
 }
 
 
-bool  V4LRadio::setCaptureMixer(const QString &soundStreamClientID, const QString &ch, bool force)
+bool  V4LRadio::setCaptureMixer(QString soundStreamClientID, QString ch, bool force)
 {
     QString old_channel          = m_CaptureMixerChannel;
     m_CaptureMixerID             = soundStreamClientID;

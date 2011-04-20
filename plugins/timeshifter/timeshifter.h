@@ -53,7 +53,7 @@ public:
     quint64        getTempFileMaxSize()      const { return m_TempFileMaxSize; }
 
     void setTempFile(const QString &filename, quint64  s);
-    bool setPlaybackMixer(const QString &soundStreamClientID, const QString &ch);
+    bool setPlaybackMixer(QString soundStreamClientID, QString ch, bool force);
 
     // PluginBase
 
@@ -100,12 +100,19 @@ protected:
     bool isStereo           (SoundStreamID, bool &s)  const;
 
 
+    // ISoundStreamClient: mixer functions
+RECEIVERS:
+    void noticeConnectedSoundClient       (ISoundStreamClient::thisInterface *i, bool pointer_valid);
+    bool noticePlaybackChannelsChanged    (const QString & client_id, const QStringList &/*channels*/);
     bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID);
     bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID);
 
 signals:
 
     void sigUpdateConfig();
+
+
+    
 
 protected:
 

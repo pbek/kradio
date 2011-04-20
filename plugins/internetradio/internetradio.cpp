@@ -486,7 +486,7 @@ static inline void assignChannelIfValid(QString &dest_channel, const QString &te
 }
 
 
-bool  InternetRadio::setPlaybackMixer(const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force)
+bool  InternetRadio::setPlaybackMixer(QString soundStreamClientID, QString ch, bool muteOnPowerOff, bool force)
 {
     QString old_channel           = m_PlaybackMixerChannel;
     m_PlaybackMixerID             = soundStreamClientID;
