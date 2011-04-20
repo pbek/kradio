@@ -1068,8 +1068,8 @@ bool  V4LRadio::setCaptureMixer(QString soundStreamClientID, QString ch, bool fo
         if (isPowerOn() && r) {
             queryCaptureVolume(m_SoundStreamSourceID, v);
             sendStopCapture   (m_SoundStreamSourceID);
-            sendReleaseCapture(m_SoundStreamSourceID);
         }
+        sendReleaseCapture(m_SoundStreamSourceID);
 
         ISoundStreamClient *capture_mixer  = NULL;
         searchMixers(NULL, &capture_mixer);
