@@ -88,6 +88,8 @@ protected:
     void    getCaptureSoundFormat(SoundFormat &sf) const;
     void    setCaptureSoundFormat(const SoundFormat &sf);
 
+    void    resetDirtyFlags();
+
     AlsaSoundDevice                       *m_SoundDevice;
     QString                                m_currentCaptureMixer;
     QFrame                                *m_groupMixerFrame;

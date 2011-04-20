@@ -248,6 +248,14 @@ void AlsaSoundConfiguration::slotCaptureMixerSelected (int comboIdx)
 }
 
 
+void AlsaSoundConfiguration::resetDirtyFlags()
+{
+    m_dirty = false;
+    for (QMap<QString, QAlsaMixerElement*>::iterator it = m_MixerElements.begin(); it != m_MixerElements.end(); ++it) {
+        QAlsaMixerElement *e         = *it;
+        e->slotResetDirty();
+    }
+}
 
 void AlsaSoundConfiguration::saveCaptureMixerSettings()
 {
@@ -344,7 +352,7 @@ void AlsaSoundConfiguration::slotOK()
 
 
     }
-    m_dirty = false;
+    resetDirtyFlags();
 }
 
 
@@ -413,7 +421,7 @@ void AlsaSoundConfiguration::slotCancel()
     editPlaybackBufferChunkSize->setValue  (m_SoundDevice ?  m_SoundDevice->getPlaybackChunkSize ()/1024 : 16);
     editCaptureBufferChunkSize ->setValue  (m_SoundDevice ?  m_SoundDevice->getCaptureChunkSize  ()/1024 : 16);
 
-    m_dirty = false;
+    resetDirtyFlags();
 }
 
 
