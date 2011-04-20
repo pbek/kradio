@@ -104,7 +104,7 @@ void QAlsaMixerElement::setActive(bool active)
 void QAlsaMixerElement::setVolume(float vol)
 {
     m_ignore_updates = true;
-    int v = (int)rint(vol*100 + 0.5);
+    int v = (int)rint(trunc(vol*100 + 0.5));
     m_sliderVolume->setValue(v);
     m_spinboxVolume->setValue(v);
     m_ignore_updates = false;
