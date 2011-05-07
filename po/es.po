@@ -170,27 +170,22 @@ msgid "unknown"
 msgstr "desconocido"
 
 #: src/fileringbuffer.cpp:35 src/fileringbuffer.cpp:68
-#, kde-format
 msgid "cannot open buffer file %1"
 msgstr "no se puede abrir el archivo de salida %1"
 
 #: src/fileringbuffer.cpp:93
-#, kde-format
 msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
 msgstr "FileRingbuffer::resize: Escritura a archivo temporal %1 fallida. "
 
 #: src/fileringbuffer.cpp:99
-#, kde-format
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
 msgstr "FileReingbuffer::resize: apertura de archivo temportal %1 fallida. "
 
 #: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
-#, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
 msgstr "FileRingBuffer::addData: escritura de datos en archivo %1 fallida."
 
 #: src/fileringbuffer.cpp:168
-#, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: lectura de datos en archivo %1 fallida."
 
@@ -203,7 +198,6 @@ msgstr ""
 "existe.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
-#, kde-format
 msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
 "html>"
@@ -212,7 +206,6 @@ msgstr ""
 "html>"
 
 #: src/kradioaboutwidget.cpp:125
-#, kde-format
 msgid "License: %1"
 msgstr "Licencia: %1"
 
@@ -237,7 +230,6 @@ msgstr ""
 "errores.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
-#, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
 msgstr "Favor reporte errores a <a href=\"mailto:%1\">%2</a>.\n"
 
@@ -254,7 +246,6 @@ msgid "License Agreement"
 msgstr "Acuerdo de Licencia"
 
 #: src/kradioapp.cpp:132
-#, kde-format
 msgid "Library %1: Plugin Entry Point is missing\n"
 msgstr "Biblioteca %1: Plugin Entry Point no encontrado\n"
 
@@ -264,7 +255,6 @@ msgid "Plugin Library Load Error"
 msgstr "Plugin Library Load Error"
 
 #: src/kradioapp.cpp:140
-#, kde-format
 msgid ""
 "Library %1: \n"
 "%2"
@@ -312,17 +302,14 @@ msgid "About KRadio Components"
 msgstr "Acerca de los componentes de KRadio"
 
 #: src/kradioapp.cpp:314
-#, kde-format
 msgid "Error: Loading Library %1 failed: %2"
 msgstr "Error: Carga de Biblioteca %1 fallida: %2"
 
 #: src/kradioapp.cpp:364
-#, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 failed."
 msgstr "Error: Creación de instancia \"%1\" de clase %2 fallida."
 
 #: src/kradioapp.cpp:370
-#, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
 msgstr "Error: No se puede crear instancia \"%1\" de clase desconocida %2."
 
@@ -383,7 +370,6 @@ msgid "Configuration Dialog"
 msgstr "Diálogo de configuración"
 
 #: src/pluginmanager-configuration.cpp:196
-#, kde-format
 msgid ""
 "Library %1: \n"
 "Cannot load non-local library"
@@ -414,7 +400,6 @@ msgid "Starting Plugins"
 msgstr "Iniciando Plugins"
 
 #: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
-#, kde-format
 msgid "Creating Plugin %1"
 msgstr "Creando Plugin %1"
 
@@ -429,17 +414,14 @@ msgid "New Plugins found"
 msgstr "Nuevos Plugins encontrados"
 
 #: src/pluginmanager.cpp:642
-#, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Inicializando Plugin %1"
 
 #: src/pluginmanager.cpp:767
-#,
 msgid "Show all"
 msgstr "Mostrar todo"
 
 #: src/pluginmanager.cpp:768
-#,
 msgid "Hide all"
 msgstr "Esconder todo"
 
@@ -452,7 +434,6 @@ msgid "restore state before last hide-all activation"
 msgstr "restaurar estado anterior a la última activación Esconder-Todo"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
-#,
 msgid "&Start"
 msgstr "&Comenzar"
 
@@ -463,7 +444,6 @@ msgid "&Stop"
 msgstr "&Detener"
 
 #: src/standardscandialog.cpp:163
-#, kde-format
 msgid "<p align=\"right\">%1</p>"
 msgstr "<p align=\"right\">%1</p>"
 
@@ -502,12 +482,10 @@ msgstr ""
 "Observe la salida en la consola para más detalles."
 
 #: src/stationlist.cpp:203 src/stationlist.cpp:208
-#, kde-format
 msgid "error downloading preset file %1"
 msgstr "error al descargar el archivo de configuración %1"
 
 #: src/stationlist.cpp:205
-#, kde-format
 msgid "Download of the station preset file at %1 failed."
 msgstr "Falló la descarga del archivo de configuración de emisoras en %1."
 
@@ -516,7 +494,6 @@ msgid "temporary file: "
 msgstr "archivo temporal: "
 
 #: src/stationlist.cpp:220
-#, kde-format
 msgid "error opening preset file %1"
 msgstr "error abriendo el archivo de configuración %1"
 
@@ -530,22 +507,18 @@ msgid "Old Preset File Format detected"
 msgstr "Detectado formato de archivo de configuración antiguo"
 
 #: src/stationlist.cpp:322
-#, kde-format
 msgid "error writing to tempfile %1"
 msgstr "error al escribir al archivo temporal %1"
 
 #: src/stationlist.cpp:325
-#, kde-format
 msgid "Writing station preset file %1 failed."
 msgstr "Falló la escritura del archivo de configuración de emisoras %1."
 
 #: src/stationlist.cpp:335
-#, kde-format
 msgid "uploading preset file %1: "
 msgstr "Error al subir el archivo de configuración %1: "
 
 #: src/stationlist.cpp:337
-#, kde-format
 msgid ""
 "something strange happened, station list has only %1 entries. Writing station "
 "preset file skipped"
@@ -554,12 +527,10 @@ msgstr ""
 "de emisoras pre-seteadas omitido"
 
 #: src/stationlist.cpp:342
-#, kde-format
 msgid "error uploading preset file %1"
 msgstr "error al subir el archivo de configuración %1"
 
 #: src/stationlist.cpp:346
-#, kde-format
 msgid "Upload of station preset file to %1 failed."
 msgstr "Falló la subida del archivo de configuración de emisoras a %1."
 
@@ -568,17 +539,14 @@ msgid "error creating temp file"
 msgstr "error al escribir al archivo temporal"
 
 #: src/stationlistxmlhandler.cpp:64
-#, kde-format
 msgid "misplaced element %1"
 msgstr "elemento %1 mal posicionado"
 
 #: src/stationlistxmlhandler.cpp:115
-#, kde-format
 msgid "unknown or unexpected element %1"
 msgstr "elemento %1 desconocido o inesperado"
 
 #: src/stationlistxmlhandler.cpp:144
-#, kde-format
 msgid "expected element %1, but found %2"
 msgstr "se esperaba el elemento %1, pero se encontró %2"
 
@@ -588,22 +556,18 @@ msgid "unexpected element %1"
 msgstr "elemento inesperado %1"
 
 #: src/stationlistxmlhandler.cpp:155
-#, kde-format
 msgid "invalid data for element %1"
 msgstr "datos no válidos para elemento %1"
 
 #: src/stationlistxmlhandler.cpp:169
-#, kde-format
 msgid "found a station list with unknown format %1"
 msgstr "encontrada una lista de emisoras con formato desconocido %1"
 
 #: src/stationlistxmlhandler.cpp:209
-#, kde-format
 msgid "unknown property %1 for class %2"
 msgstr "propiedad desconocida %1 para clase %2"
 
 #: src/stationlistxmlhandler.cpp:214
-#, kde-format
 msgid "characters ignored for element %1"
 msgstr "caracteres ignorados para elemento %1"
 
@@ -667,7 +631,7 @@ msgstr "Mostrar la Barra de Progreso durante el Inicio para la Iniciali&zación 
 #. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:23
 msgid "Alt+Z"
-msgstr ""
+msgstr "Alt+Z"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:120
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
@@ -682,6 +646,8 @@ msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
+"Seleccione un plugin desde un diálogo de archivo. Será agregado al listado "
+"de biblioteca si presiona el botón \"Cargar Biblioteca\""
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:142
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
@@ -775,10 +741,10 @@ msgstr ""
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Puedes "
 "<span style=\" font-weight:600;\">renombrar</span> una instancia de plugin haciendo "
-"doble clic en el nombre de la instancia. This name will appear below the configuration "
-"page icon, in the config page header and e.g. in the name of your sound "
-"device. Editing plugin names is recommended for your convenience e.g. if you "
-"have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
+"doble clic en el nombre de la instancia. Este nombre aparecerá debajo del ícono de configuración "
+"de página, en la cabecera de configuración de página y p.ej. en el nombre de su dispositivo "
+"de sonido. Se recomienda editar los nombres de plugin en caso de ser necesario p.ej. si "
+"tiene múltiples tarjetas de sonido y/o múltiples instancias de plugin ALSA.</p></body></"
 "html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14

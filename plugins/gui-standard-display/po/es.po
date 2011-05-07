@@ -19,11 +19,11 @@ msgstr ""
 
 #: displaycfg.cpp:48
 msgid "Active Text"
-msgstr ""
+msgstr "Texto Activo"
 
 #: displaycfg.cpp:49
 msgid "Inactive Text"
-msgstr ""
+msgstr "Texto Inactivo"
 
 #: displaycfg.cpp:50
 msgid "Background Color"
@@ -31,11 +31,11 @@ msgstr "Color de Fondo de Pantalla"
 
 #: radioview.cpp:54
 msgid "Standard Display for KRadio"
-msgstr ""
+msgstr "Despligue Estándar para KRadio"
 
 #: radioview.cpp:60
 msgid "Radio Display"
-msgstr ""
+msgstr "Despliegue de Radio"
 
 #: radioview.cpp:145
 msgid "Pause KRadio"
@@ -91,7 +91,7 @@ msgstr "Comenzar/Detener Grabación"
 
 #: radioview.cpp:231
 msgid "Start/Stop Sleep Countdown"
-msgstr ""
+msgstr "Comenzar/Detener Suspención"
 
 #: radioview.cpp:232
 msgid "Show/Hide Plugins"
@@ -107,7 +107,7 @@ msgstr "Seleccionar una Emisora de Radio"
 
 #: radioview.cpp:407
 msgid "no preset defined"
-msgstr ""
+msgstr "sin predeterminados definido"
 
 #: radioview.cpp:555 radioview.cpp:625
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "Pausar reproducción"
 
 #: radioview.cpp:705
 msgid "Display"
-msgstr "Display"
+msgstr "Despliegue"
 
 #: radioview.cpp:706
 msgid "Display Configuration"
@@ -151,22 +151,20 @@ msgid "NET"
 msgstr "NET"
 
 #: radioview_frequencyradio.cpp:546
-#, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
 #: radioview_frequencyradio.cpp:548
-#, kde-format
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
 #: radioview_frequencyseeker.cpp:79
 msgid "Search for previous Radio Station"
-msgstr ""
+msgstr "Buscar Emisora de Radio anterior"
 
 #: radioview_frequencyseeker.cpp:80
 msgid "Search for next Radio Station"
-msgstr ""
+msgstr "Buscar Emisora de Radio siguiente"
 
 #: radioview_frequencyseeker.cpp:81
 msgid "Decrement Frequency"
@@ -194,13 +192,13 @@ msgstr "RadioView_SeekInterface"
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
 msgid "search previous station"
-msgstr ""
+msgstr "buscar emisora anterior"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
 msgid "decrease freq. by 0.05 MHz"
-msgstr ""
+msgstr "disminuir frec. en 0.05 MHz"
 
 #. i18n: file: radioview_seekinterface.ui:70
 #. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
@@ -213,13 +211,13 @@ msgstr "Control de Frecuencia"
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
 msgid "increase freq. by 0.05 MHz"
-msgstr ""
+msgstr "aumentar frec. en 0.05 MHz"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
 msgid "search next station"
-msgstr ""
+msgstr "buscar emisora siguiente"
 
 #: rc.cpp:19
 msgctxt "NAME OF TRANSLATORS"

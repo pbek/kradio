@@ -118,6 +118,8 @@ msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
 msgstr ""
+"Ingrese la clave de su control remoto o sólo presione el botón en su control "
+"control"
 
 #: lirc-configuration.cpp:284
 msgid "Double Click on the entries to change the assignments"
@@ -144,7 +146,6 @@ msgid "Initializing kradio lirc plugin successful"
 msgstr "Inicialización de plugin lirc de kradio exitosa"
 
 #: lircsupport.cpp:124
-#, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
 "not have a button/remote associated.\n"
@@ -157,38 +158,36 @@ msgstr ""
 "\"remote=*\" como wildcard para todos los botones/remotos"
 
 #: lircsupport.cpp:131
-#, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
 "incomplete button/remote associated.\n"
 "This will most probably lead to problems. Please use \"button=*\" and "
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
+"LircSupport::LIRC_init_config: En %1 una Entrada de Configuración LIRC para KRadio tiene un "
+"botón/remoto incompleto asociado.\n"
+"Es posible que esto cause algunos problemas. Favor usar \"button=*\" y "
+"\"remote=*\" como wildcard para todos los botones/remotos"
 
 #: lircsupport.cpp:142
-#, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
 msgstr "No existe una entrada para kradio en tu archivo .lircrc %1."
 
 #: lircsupport.cpp:143
-#, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Favor configurar su archivo .lircrc %1 correctamente."
 
 #: lircsupport.cpp:147 lircsupport.cpp:148
-#, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
 msgstr "Inicialización de plugin lirc de kradio fallida. No se puede leer archivo de configuración %1"
 
 #: lircsupport.cpp:189
-#, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
 "%1 no existe. Archivo fue creado con archivo .lircrc de KRadio propuesto por omisión"
 
 #: lircsupport.cpp:202
-#, kde-format
 msgid "failed to read file %1"
 msgstr "lectura de archivo %1 fallida"
 
@@ -197,6 +196,8 @@ msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
 msgstr ""
+"Lectura de socket LIRC fallida. Deshabilitando Funciones LIRC hasta el próximo inicio de "
+"kradio"
 
 #: lircsupport.cpp:492
 msgid "LIRC Support"
