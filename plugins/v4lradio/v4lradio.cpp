@@ -136,8 +136,10 @@ V4LRadio::V4LRadio(const QString &instanceID, const QString &name)
     m_tuner = new video_tuner;
     bzero(m_tuner, sizeof(video_tuner));
 #ifdef HAVE_V4L2
-    m_tuner2 = new v4l2_tuner;
+    m_tuner2        = new v4l2_tuner;
     bzero(m_tuner2, sizeof(v4l2_tuner));
+    m_tuner2->index = 0;
+    m_tuner2->type  = V4L2_TUNER_RADIO;
 #endif
 
     m_seekHelper = new FrequencySeekHelper(*this);
@@ -1714,8 +1716,11 @@ bool V4LRadio::readTunerInfo() const
             r = ioctl(m_radio_fd, VIDIOCGTUNER, m_tuner);
 
             if (r == 0) {
-                if ((m_tuner->flags & VIDEO_TUNER_LOW) != 0)
+                if ((m_tuner->flags & VIDEO_TUNER_LOW) != 0) {
                     m_tunercache.deltaF = 1.0 / 16000.0;
+                } else {
+                    m_tunercache.deltaF = 1.0 / 16.0;
+                }
                 m_tunercache.minF = float(m_tuner->rangelow)  * m_tunercache.deltaF;
                 m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
                 m_tunercache.valid = true;
@@ -1737,10 +1742,21 @@ bool V4LRadio::readTunerInfo() const
             r = ioctl(m_radio_fd, VIDIOC_G_TUNER, m_tuner2);
 
             if (r == 0) {
-                if ((m_tuner2->capability & V4L2_TUNER_CAP_LOW) != 0)
+                if ((m_tuner2->capability & V4L2_TUNER_CAP_LOW) != 0) {
                     m_tunercache.deltaF = 1.0 / 16000.0;
-                m_tunercache.minF  = float(m_tuner2->rangelow)  * m_tunercache.deltaF;
-                m_tunercache.maxF  = float(m_tuner2->rangehigh) * m_tunercache.deltaF;
+                } else {
+                    m_tunercache.deltaF = 1.0 / 16.0;
+                }
+                if (m_tuner2->rangelow) {
+                    m_tunercache.minF  = float(m_tuner2->rangelow)  * m_tunercache.deltaF;
+                } else if (!m_tunercache.minF) {
+                    m_tunercache.minF  = 0.1;
+                }
+                if (m_tuner2->rangehigh) {
+                    m_tunercache.maxF  = float(m_tuner2->rangehigh) * m_tunercache.deltaF;
+                } else if (!m_tunercache.maxF) {
+                    m_tunercache.minF  = 1000;
+                }
                 m_tunercache.valid = true;
                 m_signalQuality    = float(m_tuner2->signal) / 32767.0;
                 newRDS             = m_RDSForceEnabled || m_caps.hasRDS;
