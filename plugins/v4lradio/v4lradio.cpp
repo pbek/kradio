@@ -1492,16 +1492,22 @@ void V4LRadio::radio_done()
 
 
 
+static QString extractNameBuffer(const char *buffer, int buffer_size)
+{
+    char    tmp_buffer[buffer_size + 1];
+    memcpy(tmp_buffer, buffer, buffer_size);
+    tmp_buffer[buffer_size] = 0;
+    QString res = tmp_buffer;
+    return res;
+}
 
 
-#define CAPS_NAME_LEN 127
 V4LCaps V4LRadio::readV4LCaps(const QString &device) const
 {
     if (device == IGNORED_INIT_DUMMY_V4LDEV_STRING) {
         return V4LCaps();
     }
 
-    char buffer[CAPS_NAME_LEN+1];
     int r;
     int fd;
 
@@ -1518,122 +1524,127 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         return v4l_caps[m_V4L_version_override];
     }
 
-    video_capability caps;
-    r = ioctl(fd, VIDIOCGCAP, &caps);
-    if (r == 0) {
-        v4l_caps[V4L_Version1].v4l_version_support[V4L_Version1] = true;
-        logInfo(i18n("detected %1", V4LVersionStrings[V4L_Version1]));
+    // scope for V4L1
+    {
+        video_capability    caps;
+        r = ioctl(fd, VIDIOCGCAP, &caps);
+        if (r == 0) {
+            v4l_caps[V4L_Version1].v4l_version_support[V4L_Version1] = true;
+            logInfo(i18n("detected %1", V4LVersionStrings[V4L_Version1]));
 
-        v4l_caps[V4L_Version1].hasRDS  = true;
+            v4l_caps[V4L_Version1].hasRDS  = true;
 
-        size_t l = sizeof(caps.name);
-        l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
-        memcpy(buffer, caps.name, l);
-        buffer[l] = 0;
-        v4l_caps[V4L_Version1].description       = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version1, buffer);
-        v4l_caps[V4L_Version1].deviceDescription = QString("%1").arg(buffer);
+            QString cardName = extractNameBuffer(caps.name, sizeof(caps.name));
+            v4l_caps[V4L_Version1].description       = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version1, cardName);
+            v4l_caps[V4L_Version1].deviceDescription = cardName;
 
-        v4l_caps[V4L_Version1].hasMute = false;
-        v4l_caps[V4L_Version1].unsetVolume();
-        v4l_caps[V4L_Version1].unsetTreble();
-        v4l_caps[V4L_Version1].unsetBass();
-        v4l_caps[V4L_Version1].unsetBalance();
+            v4l_caps[V4L_Version1].hasMute = false;
+            v4l_caps[V4L_Version1].unsetVolume();
+            v4l_caps[V4L_Version1].unsetTreble();
+            v4l_caps[V4L_Version1].unsetBass();
+            v4l_caps[V4L_Version1].unsetBalance();
 
-        video_audio audiocaps;
-        if (0 == ioctl(fd, VIDIOCGAUDIO, &audiocaps)) {
-            if ((audiocaps.flags & VIDEO_AUDIO_MUTABLE) != 0)
-                v4l_caps[V4L_Version1].hasMute = true;
-            if ((audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0)
-                v4l_caps[V4L_Version1].setVolume (0, 65535);
-            if ((audiocaps.flags & VIDEO_AUDIO_TREBLE)  != 0)
-                v4l_caps[V4L_Version1].setTreble (0, 65535);
-            if ((audiocaps.flags & VIDEO_AUDIO_BASS)    != 0)
-                v4l_caps[V4L_Version1].setBass   (0, 65535);
-            if ((audiocaps.flags & VIDEO_AUDIO_BALANCE) != 0)
-                v4l_caps[V4L_Version1].setBalance(0, 65535);
+            video_audio audiocaps;
+            if (0 == ioctl(fd, VIDIOCGAUDIO, &audiocaps)) {
+                if ((audiocaps.flags & VIDEO_AUDIO_MUTABLE) != 0)
+                    v4l_caps[V4L_Version1].hasMute = true;
+                if ((audiocaps.flags & VIDEO_AUDIO_VOLUME)  != 0)
+                    v4l_caps[V4L_Version1].setVolume (0, 65535);
+                if ((audiocaps.flags & VIDEO_AUDIO_TREBLE)  != 0)
+                    v4l_caps[V4L_Version1].setTreble (0, 65535);
+                if ((audiocaps.flags & VIDEO_AUDIO_BASS)    != 0)
+                    v4l_caps[V4L_Version1].setBass   (0, 65535);
+                if ((audiocaps.flags & VIDEO_AUDIO_BALANCE) != 0)
+                    v4l_caps[V4L_Version1].setBalance(0, 65535);
 
-            logDebug("V4LRadio::readV4LCaps: " +
-                     i18n("audio caps = %1", QString().sprintf("0x%08X", audiocaps.flags)));
-            logDebug("V4L1 full caps: " + v4l_caps[V4L_Version1].getDebugDescription());
+                logDebug("V4LRadio::readV4LCaps: " +
+                         i18n("audio caps = %1", QString().sprintf("0x%08X", audiocaps.flags)));
+                logDebug("V4L1 full caps: " + v4l_caps[V4L_Version1].getDebugDescription());
+            }
+        } else {
+    //         logError("V4LRadio::readV4LCaps: " +
+    //                  i18n("error reading V4L1 caps"));
         }
-    } else {
-//         logError("V4LRadio::readV4LCaps: " +
-//                  i18n("error reading V4L1 caps"));
+    } // END V4L1
+
+
+    // scope for V4L2
+    {
+    #ifdef HAVE_V4L2
+        v4l2_capability caps2;
+        r = ioctl(fd, VIDIOC_QUERYCAP, &caps2);
+        if (r == 0) {
+            v4l_caps[V4L_Version2].v4l_version_support[V4L_Version2] = true;
+            logInfo(i18n("detected %1", V4LVersionStrings[V4L_Version2]));
+
+            v4l_caps[V4L_Version2].hasRDS = m_RDSForceEnabled || (((~caps2.capabilities) & (V4L2_CAP_RDS_CAPTURE | V4L2_CAP_READWRITE)) == 0);
+
+            QString cardName = extractNameBuffer((char*)caps2.card, sizeof(caps2.card));
+
+            v4l_caps[V4L_Version2].description       = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version2, cardName);
+            v4l_caps[V4L_Version2].deviceDescription = QString("%1").arg(cardName);
+
+            v4l2_queryctrl  ctrl;
+
+            v4l_caps[V4L_Version2].hasMute = false;
+            v4l_caps[V4L_Version2].unsetVolume();
+            v4l_caps[V4L_Version2].unsetTreble();
+            v4l_caps[V4L_Version2].unsetBass();
+            v4l_caps[V4L_Version2].unsetBalance();
+
+            ctrl.id = V4L2_CID_AUDIO_MUTE;
+            if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl))
+                v4l_caps[V4L_Version2].hasMute = !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
+            else
+                logWarning(i18n("V4L2: Querying mute control failed"));
+
+            ctrl.id = V4L2_CID_AUDIO_VOLUME;
+            if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+                if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+                    v4l_caps[V4L_Version2].setVolume(ctrl.minimum, ctrl.maximum);
+            } else {
+                logWarning(i18n("V4L2: Querying volume control failed"));
+            }
+
+            ctrl.id = V4L2_CID_AUDIO_TREBLE;
+            if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+                if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+                    v4l_caps[V4L_Version2].setTreble(ctrl.minimum, ctrl.maximum);
+            } else {
+                logWarning(i18n("V4L2: Querying treble control failed"));
+            }
+
+            ctrl.id = V4L2_CID_AUDIO_BASS;
+            if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+                if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+                    v4l_caps[V4L_Version2].setBass(ctrl.minimum, v4l_caps[V4L_Version2].maxBass = ctrl.maximum);
+            } else {
+                logWarning(i18n("V4L2: Querying bass control failed"));
+            }
+
+            ctrl.id = V4L2_CID_AUDIO_BALANCE;
+            if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
+                if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
+                    v4l_caps[V4L_Version2].setBalance(ctrl.minimum, ctrl.maximum);
+            } else {
+                logWarning(i18n("V4L2: Querying balance control failed"));
+            }
+
+            logDebug(i18n("V4L2 - Version: %1, caps=%2",
+                          QString().sprintf("0x%08X", caps2.version),
+                          QString().sprintf("0x%08X", caps2.capabilities))
+                    );
+
+            logDebug("V4L2 full caps: " + v4l_caps[V4L_Version2].getDebugDescription());
+
+        } else {
+    //         logWarning(i18n("V4LRadio::readV4LCaps: Reading V4L2 caps failed"));
+        }
+    #endif
     }
 
-#ifdef HAVE_V4L2
-    v4l2_capability caps2;
-    r = ioctl(fd, VIDIOC_QUERYCAP, &caps2);
-    if (r == 0) {
-        v4l_caps[V4L_Version2].v4l_version_support[V4L_Version2] = true;
-        logInfo(i18n("detected %1", V4LVersionStrings[V4L_Version2]));
+    
 
-        v4l_caps[V4L_Version2].hasRDS = m_RDSForceEnabled || (((~caps2.capabilities) & (V4L2_CAP_RDS_CAPTURE | V4L2_CAP_READWRITE)) == 0);
-
-        size_t l = sizeof(caps.name);
-        l = l < CAPS_NAME_LEN ? l : CAPS_NAME_LEN;
-        memcpy(buffer, caps.name, l);
-        buffer[l] = 0;
-        v4l_caps[V4L_Version2].description       = i18n("V4L Plugin (V4L%1 mode): %2", V4L_Version2, buffer);
-        v4l_caps[V4L_Version2].deviceDescription = QString("%1").arg(buffer);
-
-        v4l2_queryctrl  ctrl;
-
-        v4l_caps[V4L_Version2].hasMute = false;
-        v4l_caps[V4L_Version2].unsetVolume();
-        v4l_caps[V4L_Version2].unsetTreble();
-        v4l_caps[V4L_Version2].unsetBass();
-        v4l_caps[V4L_Version2].unsetBalance();
-
-        ctrl.id = V4L2_CID_AUDIO_MUTE;
-        if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl))
-            v4l_caps[V4L_Version2].hasMute = !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
-        else
-            logWarning(i18n("V4L2: Querying mute control failed"));
-
-        ctrl.id = V4L2_CID_AUDIO_VOLUME;
-        if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
-            if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-                v4l_caps[V4L_Version2].setVolume(ctrl.minimum, ctrl.maximum);
-        } else {
-            logWarning(i18n("V4L2: Querying volume control failed"));
-        }
-
-        ctrl.id = V4L2_CID_AUDIO_TREBLE;
-        if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
-            if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-                v4l_caps[V4L_Version2].setTreble(ctrl.minimum, ctrl.maximum);
-        } else {
-            logWarning(i18n("V4L2: Querying treble control failed"));
-        }
-
-        ctrl.id = V4L2_CID_AUDIO_BASS;
-        if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
-            if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-                v4l_caps[V4L_Version2].setBass(ctrl.minimum, v4l_caps[V4L_Version2].maxBass = ctrl.maximum);
-        } else {
-            logWarning(i18n("V4L2: Querying bass control failed"));
-        }
-
-        ctrl.id = V4L2_CID_AUDIO_BALANCE;
-        if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
-            if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
-                v4l_caps[V4L_Version2].setBalance(ctrl.minimum, ctrl.maximum);
-        } else {
-            logWarning(i18n("V4L2: Querying balance control failed"));
-        }
-
-        logDebug(i18n("V4L2 - Version: %1, caps=%2",
-                      QString().sprintf("0x%08X", caps2.version),
-                      QString().sprintf("0x%08X", caps2.capabilities))
-                );
-
-        logDebug("V4L2 full caps: " + v4l_caps[V4L_Version2].getDebugDescription());
-
-    } else {
-//         logWarning(i18n("V4LRadio::readV4LCaps: Reading V4L2 caps failed"));
-    }
-#endif
     bool any_found = false;
     for (int i = 0; i < (int)V4L_Version_COUNT; ++i) {
         if (v4l_caps[i].v4l_version_support[i]) {
