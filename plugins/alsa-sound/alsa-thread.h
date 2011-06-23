@@ -45,6 +45,8 @@ public:
     void                  setDone();
     bool                  isDone() const { return m_done; }
 
+    void                  setLatency(unsigned int us);
+
 //     void                  awake();
 protected:
 
@@ -65,6 +67,8 @@ protected:
     bool                  m_warning;
     QString               m_warningString;
     bool                  m_done;
+
+    unsigned int          m_latency_us;
 
 
 //     QSemaphore            m_waitSemaphore;

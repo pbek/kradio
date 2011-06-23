@@ -29,7 +29,8 @@ AlsaThread::AlsaThread (AlsaSoundDevice *parent, bool playback_not_capture, snd_
       m_warning(false),
       m_done(false),
 //       m_waitSemaphore(1),
-      m_errwarnModifySemaphore(1)
+      m_errwarnModifySemaphore(1),
+      m_latency_us(10000)
 {
 //     waitForParent(); // aquire semaphore in order to guarantee that we do not start before the parent wants us to start.
 }
@@ -65,12 +66,15 @@ void AlsaThread::run()
     size_t   max_frames_read = 0;
     size_t   n_reads         = 0;
 #endif
+
     while (!m_done && !m_error) {
         if (m_playback_not_capture) {
             size_t min_fill = m_parent->getPlaybackBufferMinFill();
 /*            if(!m_warning) {
                 addWarningString(i18n("ALSA Thread: min fill = %1", min_fill));
             }*/
+            m_parent->setWaitForMinPlaybackBufferFill(66/*percent*/);
+
             while(!m_done && !m_error) {
 
                 m_parent->lockPlaybackBufferTransaction();
@@ -89,6 +93,7 @@ void AlsaThread::run()
                 int      framesWritten = snd_pcm_writei(m_alsa_handle, buffer, buffersize / frameSize);
                 int      bytesWritten  = framesWritten * frameSize;
 
+
                 if (framesWritten > 0) {
                     m_parent->freePlaybackData(bytesWritten);
                     ignoreUnderflow = false;
@@ -106,6 +111,9 @@ void AlsaThread::run()
                     addWarningString(i18n("ALSA Thread: buffer underrun"));
                 }
 
+                // for some reason, the blocking functionality of alsa seems to be suboptimum (causes high CPU load and system calls)
+                // therefore let's wait for one alsa-period
+                usleep(m_latency_us);
             }
         }
         else {
@@ -157,10 +165,13 @@ void AlsaThread::run()
                     addWarningString(i18n("AlsaThread: buffer overrun"));
                 }
 
+                // for some reason, the blocking functionality of alsa seems to be suboptimum (causes high CPU load and system calls)
+                // therefore let's wait for one alsa-period
+                usleep(m_latency_us);
             }
         }
         // happens if there is some error or no new sound data for playing or recording
-        usleep(5000);
+        usleep(10000);
     }
 }
 
@@ -221,3 +232,10 @@ QString AlsaThread::errorString() const
     m_errwarnModifySemaphore.release();
     return ret;
 }
+
+
+void AlsaThread::setLatency(unsigned int us)
+{
+    m_latency_us = us > 1000 ? us : 1000; // let's define some minimum (1ms), although this 1ms might be far too low for reasonable purposes
+}
+
