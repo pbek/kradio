@@ -40,7 +40,7 @@ string(REGEX REPLACE "-Wl,--no-undefined" "" CMAKE_MODULE_LINKER_FLAGS ${CMAKE_M
 
 SET_TARGET_PROPERTIES(kradio4_plugin_radio
     PROPERTIES
-    VERSION    4.0.1
+    VERSION    4.0.3
     SOVERSION  4
 
 )
