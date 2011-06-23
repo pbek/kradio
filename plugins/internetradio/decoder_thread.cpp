@@ -20,6 +20,7 @@
 #endif
 
 #include <math.h>
+#include <unistd.h>
 
 #include <QtGui/QApplication>
 #include <QtCore/QXmlStreamReader>
@@ -135,7 +136,21 @@ void InternetRadioDecoder::run()
 
         time_t  start_time      = time(NULL);
 
-        while (!m_error && !m_done && m_decoderOpened && (av_read_frame(m_av_pFormatCtx, &pkt) >= 0)) {
+        while (!m_error && !m_done && m_decoderOpened) {
+
+            int frame_read_res = av_read_frame(m_av_pFormatCtx, &pkt);
+            if (frame_read_res < 0) {
+                if (frame_read_res == AVERROR_EOF || (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->eof_reached)) {
+                    m_done = true;
+                    break;
+                }
+                if (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->error) {
+                    m_error = true;
+                    break;
+                }
+                usleep(50000);
+                continue;
+            }
 
             if (!m_done && pkt.stream_index == m_av_audioStream) {
 
@@ -374,6 +389,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     //av_log_set_level(255);
     m_av_pFormatCtx = avformat_alloc_context();
     m_av_pFormatCtx->probesize = m_maxProbeSize;
+
     m_av_pFormatCtx->max_analyze_duration = m_maxAnalyzeTime * AV_TIME_BASE;
 
     AVFormatParameters av_params;
