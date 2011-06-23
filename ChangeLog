@@ -1,3 +1,18 @@
+2011-06-23
+
+    emw - segfault and compatibility fixes with recent libav / libffmpeg
+        - workaround for problem with high cpu load during blocking ALSA pcm
+          writes (ALSA seems to poll to a certain degree)  
+
+2011-06-12
+
+    emw - fixed reading of radio card name
+
+2011-04-20
+
+    emw - fixed save/restore of mixer settings
+        - fixed wrong handling of prepare/releaseCapture in v4l
+
 2011-03-05
 
     turgay
