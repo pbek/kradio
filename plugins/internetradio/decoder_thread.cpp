@@ -373,7 +373,6 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
     //av_log_set_level(255);
     m_av_pFormatCtx = avformat_alloc_context();
-    memset(m_av_pFormatCtx, 0, sizeof(*m_av_pFormatCtx));
     m_av_pFormatCtx->probesize = m_maxProbeSize;
     m_av_pFormatCtx->max_analyze_duration = m_maxAnalyzeTime * AV_TIME_BASE;
 
@@ -475,7 +474,6 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         m_av_pFormatCtx_opened = true;
     }
     else {
-
 //         IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_open_input_file start");
         if (av_open_input_file(&m_av_pFormatCtx, stream.toUtf8(), iformat, 0, &av_params) != 0) {
             if (warningsNotErrors) {
@@ -535,7 +533,11 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     m_av_audioStream = -1;
     for (unsigned int i = 0; i < m_av_pFormatCtx->nb_streams; i++) {
 //         if (m_av_pFormatCtx->streams[i]->codec->codec_type == CODEC_TYPE_AUDIO && m_av_audioStream < 0) {
+#if LIBAVCODEC_VERSION_MAJOR < 53
         if (m_av_pFormatCtx->streams[i]->codec->codec_type == CODEC_TYPE_AUDIO) { // take last stream
+#else
+        if (m_av_pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO) { // take last stream
+#endif
             m_av_audioStream = i;
             break;
         }
