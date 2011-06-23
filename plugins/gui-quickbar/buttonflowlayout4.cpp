@@ -146,7 +146,7 @@ int ButtonFlowLayout4::doLayout(const QRect &r, bool testonly) const
     int   totalWidth   = r.width();
     int   totalHeight  = r.height();
 
-    QList<QLayoutItem*>::const_iterator  it = m_itemList.begin();
+//     QList<QLayoutItem*>::const_iterator  it = m_itemList.begin();
 
     // get the width of the biggest Button
     QLayoutItem *item;
