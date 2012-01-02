@@ -4,12 +4,13 @@
 #
 # Ernst Martin Witte <emw-kradio@nocabal.de>, 2006.
 # Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2010.
+# Frederik Schwarzer <schwarzerf@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2010-09-27 19:14+0200\n"
+"PO-Revision-Date: 2012-01-02 16:43+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-de@kde.org>\n"
 "Language: \n"
@@ -69,7 +70,7 @@ msgstr "URL:"
 
 #: radiostations/radiostation-config.cpp:131
 msgid "Decoder Class:"
-msgstr "Decoder Klasse:"
+msgstr "Decoder-Klasse:"
 
 #: radiostations/radiostation-config.cpp:135
 msgid "Playlist Class:"
@@ -237,12 +238,12 @@ msgid ""
 "bugs.\n"
 msgstr ""
 "Bitte <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> verwenden, um "
-"Fehler/Bugs zu berrichten.\n"
+"Fehler zu berichten.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Bitte Fehler/Bugs an <a href=\"mailto:%1\">%2</a> berichten.\n"
+msgstr "Bitte Fehler an <a href=\"mailto:%1\">%2</a> berichten.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
@@ -312,11 +313,11 @@ msgstr "Instanz"
 
 #: src/kradioapp.cpp:285
 msgid "KRadio Configuration"
-msgstr "KRadio-Konfiguration "
+msgstr "KRadio-Konfiguration"
 
 #: src/kradioapp.cpp:286
 msgid "About KRadio Components"
-msgstr "Über die KRadio-Komponenten "
+msgstr "Über die KRadio-Komponenten"
 
 #: src/kradioapp.cpp:314
 #, kde-format
@@ -326,7 +327,7 @@ msgstr "Fehler: Das Laden der Bibliothek %1 schlug fehl: %2"
 #: src/kradioapp.cpp:364
 #, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 failed."
-msgstr "Fehler: Das erzeugen der Instanz \"%1\" der Klasse %2 schlug fehl."
+msgstr "Fehler: Das Erzeugen der Instanz \"%1\" der Klasse %2 schlug fehl."
 
 #: src/kradioapp.cpp:370
 #, kde-format
@@ -365,7 +366,7 @@ msgstr "Marcus Camen"
 
 #: src/main.cpp:44
 msgid "Buildsystem, Standards Conformance, Cleanups"
-msgstr "Buildsystem, Standardkonformität, Aufräumarbeiten "
+msgstr "Buildsystem, Standardkonformität, Aufräumarbeiten"
 
 #: src/main.cpp:45
 msgid "Klas Kalass"
@@ -381,11 +382,11 @@ msgstr "Frank Schwanz"
 
 #: src/main.cpp:46
 msgid "initial idea, first basic KDE 2 application"
-msgstr "Initiale Idee, allererste KDE 2 Anwendung"
+msgstr "Initiale Idee, allererste KDE-2-Anwendung"
 
 #: src/multibuffer.cpp:89
 msgid "Buffer Overflow. "
-msgstr "Puffer Überlauf."
+msgstr "Puffer-Überlauf."
 
 #: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
@@ -398,7 +399,7 @@ msgid ""
 "Cannot load non-local library"
 msgstr ""
 "Bibliothek %1: \n"
-"Kann keine nicht-lokalen Bibliotheken laden"
+"Kann keine nichtlokalen Bibliotheken laden"
 
 #: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
@@ -449,7 +450,7 @@ msgstr "Alle anzeigen"
 
 #: src/pluginmanager.cpp:768
 msgid "Hide all"
-msgstr "Alle verstecken"
+msgstr "Alle ausblenden"
 
 #: src/pluginmanager.cpp:769
 msgid "Restore all"
@@ -458,7 +459,7 @@ msgstr "Alle wiederherstellen"
 #: src/pluginmanager.cpp:770
 msgid "restore state before last hide-all activation"
 msgstr ""
-"Wiederherstellen aller Zustände vor der letzten \"Alle-Verstecken\"-Aktion"
+"Wiederherstellen des Zustands vor der letzten \"Alle ausblenden\"-Aktion"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
@@ -507,7 +508,7 @@ msgid ""
 "See console output for more details."
 msgstr ""
 "Das Parsen der Senderdatei schlug fehl.\n"
-"Mehr informationen gibts in der Ausgabe auf der Konsole."
+"Mehr Informationen gibts in der Ausgabe auf der Konsole."
 
 #: src/stationlist.cpp:203 src/stationlist.cpp:208
 #, kde-format
@@ -540,7 +541,7 @@ msgstr "Altes Senderdateiformat erkannt"
 #: src/stationlist.cpp:322
 #, kde-format
 msgid "error writing to tempfile %1"
-msgstr "Fehler beim schreiben in die temporäre Datei %1"
+msgstr "Fehler beim Schreiben in die temporäre Datei %1"
 
 #: src/stationlist.cpp:325
 #, kde-format
@@ -598,7 +599,7 @@ msgstr "unerwartetes Element %1"
 #: src/stationlistxmlhandler.cpp:155
 #, kde-format
 msgid "invalid data for element %1"
-msgstr "ingültige Daten im Element %1"
+msgstr "ungültige Daten im Element %1"
 
 #: src/stationlistxmlhandler.cpp:169
 #, kde-format
@@ -623,7 +624,7 @@ msgstr "%1 anzeigen"
 #: src/widgetpluginbase.cpp:297
 #, kde-format
 msgid "Hide %1"
-msgstr "Verstecke %1"
+msgstr "%1 ausblenden"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -645,7 +646,7 @@ msgstr "PluginManagerConfigurationUI"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:8
 msgid "Automatic detection and load of new plugins"
-msgstr "Automatische Erkennung/Laden von neuen Plugins"
+msgstr "Automatisches Erkennen/Laden von neuen Plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:60
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
@@ -691,13 +692,13 @@ msgid ""
 "list if you press the \"Load Library\" button."
 msgstr ""
 "Auswahl einer Plugin-Bibliothek in einem Datei-Dialog. Die Bibliothek wird "
-"geladen, sobald der \"Bibliothek Laden\"-Knopf gedrückt wird."
+"geladen, sobald der \"Bibliothek laden\"-Knopf gedrückt wird."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:142
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
 #: rc.cpp:32
 msgid "Loads the library specified in the box left to this button."
-msgstr "Läd die links angegebene Bibliothek."
+msgstr "Lädt die links angegebene Bibliothek."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:161
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
@@ -709,7 +710,7 @@ msgstr "Liste der geladenen Plugin-Bibliotheken"
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
 #: rc.cpp:38
 msgid "Unload the plugin library selected in the list on the left side"
-msgstr "Entläd die auf der linken Seite ausgewählte Plugin-Bibliothek"
+msgstr "Entlädt die auf der linken Seite ausgewählte Plugin-Bibliothek"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:201
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
@@ -721,7 +722,7 @@ msgstr "Plugin-Klassen"
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
 #: rc.cpp:44
 msgid "List of available plugin classes found in the plugin libraries"
-msgstr "Liste in den Plugin-Bibliotheken gefundenen verfügbaren Plugin-Klassen"
+msgstr "Liste der in den Plugin-Bibliotheken gefundenen verfügbaren Plugin-Klassen"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:223
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -729,7 +730,7 @@ msgstr "Liste in den Plugin-Bibliotheken gefundenen verfügbaren Plugin-Klassen"
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: rc.cpp:47 rc.cpp:62
 msgid "Plugin Class"
-msgstr "Plugin Klasse"
+msgstr "Plugin-Klasse"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:254
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
@@ -737,7 +738,7 @@ msgstr "Plugin Klasse"
 msgid "Create a new instance of plugin class selected in the list on the left"
 msgstr ""
 "Erzeugen einer neuen Instanz der in der linken Liste ausgewählten "
-"Pluginklasse"
+"Plugin-Klasse"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:281
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
@@ -787,7 +788,7 @@ msgstr ""
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Eine "
 "Plugin-Instanz kann <span style=\" font-weight:600;\">umbenannt</span> "
-"werden, indem man auf den Instanz-Namen doppel-klickt. Dieser Name wird "
+"werden, indem man auf den Instanz-Namen doppelklickt. Dieser Name wird "
 "unter den Symbolen der Konfigurations-Seiten, in den Kopfzeilen der "
 "Konfigurations-Seiten und z.B. im Namen der Audio-Geräte angezeigt. Die "
 "Anpassung der Plugin-Instanznamen ist für den persönlichen Komfort zu "
