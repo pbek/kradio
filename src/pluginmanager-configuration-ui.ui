@@ -10,9 +10,6 @@
     <height>381</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>PluginManagerConfigurationUI</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout_gen1">
    <property name="margin">
     <number>11</number>
@@ -104,9 +101,6 @@
     <widget class="QCheckBox" name="cbShowProgressBar">
      <property name="text">
       <string>Show Progress Bar during Startup for Plugin Initiali&amp;zation</string>
-     </property>
-     <property name="shortcut">
-      <string>Alt+Z</string>
      </property>
     </widget>
    </item>

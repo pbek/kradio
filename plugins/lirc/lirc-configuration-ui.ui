@@ -11,9 +11,6 @@
     <height>585</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>LIRCConfigurationUI</string>
-  </property>
   <layout class="QGridLayout">
    <item row="5" column="0" colspan="3">
     <widget class="K3ListView" name="m_ActionList">

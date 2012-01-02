@@ -553,9 +553,6 @@ p, li { white-space: pre-wrap; }
          <property name="text">
           <string>Set playback channel volume to &amp;zero at power off</string>
          </property>
-         <property name="shortcut">
-          <string>Alt+Z</string>
-         </property>
         </widget>
        </item>
        <item row="8" column="1" colspan="2">
@@ -568,9 +565,6 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="text">
           <string>Mute play&amp;back channel at power off</string>
-         </property>
-         <property name="shortcut">
-          <string>Alt+B</string>
          </property>
         </widget>
        </item>
@@ -642,9 +636,6 @@ p, li { white-space: pre-wrap; }
          <property name="text">
           <string>Use active pla&amp;yback by capturing (use for PVR cards!)</string>
          </property>
-         <property name="shortcut">
-          <string>Alt+Y</string>
-         </property>
         </widget>
        </item>
        <item row="1" column="0">
@@ -660,9 +651,6 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="text">
           <string>Mute playback of capture channel when active playback is running</string>
-         </property>
-         <property name="shortcut">
-          <string>Alt+Y</string>
          </property>
          <property name="checked">
           <bool>true</bool>

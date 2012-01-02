@@ -10,9 +10,6 @@
     <height>140</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form1</string>
-  </property>
   <layout class="QVBoxLayout">
    <item>
     <layout class="QHBoxLayout">
@@ -175,18 +172,12 @@
          <property name="text">
           <string>Capture O&amp;n</string>
          </property>
-         <property name="shortcut">
-          <string>Alt+N</string>
-         </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="m_checkboxOverride">
          <property name="text">
           <string>&amp;Override</string>
-         </property>
-         <property name="shortcut">
-          <string>Alt+U</string>
          </property>
         </widget>
        </item>

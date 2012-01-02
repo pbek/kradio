@@ -10,9 +10,6 @@
     <height>416</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>AlsaSoundConfigurationUI</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout_gen1">
    <property name="margin">
     <number>0</number>
@@ -44,9 +41,6 @@
         <widget class="QCheckBox" name="chkDisablePlayback">
          <property name="text">
           <string>Disable Pla&amp;yback</string>
-         </property>
-         <property name="shortcut">
-          <string>Alt+Y</string>
          </property>
         </widget>
        </item>
@@ -291,9 +285,6 @@
         <widget class="QCheckBox" name="chkDisableCapture">
          <property name="text">
           <string>Disa&amp;ble Capture</string>
-         </property>
-         <property name="shortcut">
-          <string>Alt+B</string>
          </property>
         </widget>
        </item>

@@ -10,9 +10,6 @@
     <height>315</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>RecordingConfigurationUI</string>
-  </property>
   <layout class="QGridLayout">
    <property name="margin">
     <number>0</number>
@@ -563,9 +560,6 @@ p, li { white-space: pre-wrap; }
             <widget class="QCheckBox" name="m_checkboxPreRecordingEnable">
              <property name="text">
               <string>E&amp;nable</string>
-             </property>
-             <property name="shortcut">
-              <string>Alt+N</string>
              </property>
             </widget>
            </item>

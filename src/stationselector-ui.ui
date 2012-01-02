@@ -10,9 +10,6 @@
     <height>84</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>StationSelectorUI</string>
-  </property>
   <layout class="QGridLayout" name="StationSelectorUILayout">
    <property name="margin">
     <number>0</number>
