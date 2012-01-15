@@ -29,8 +29,8 @@ AlsaThread::AlsaThread (AlsaSoundDevice *parent, bool playback_not_capture, snd_
       m_warning(false),
       m_done(false),
 //       m_waitSemaphore(1),
-      m_errwarnModifySemaphore(1),
-      m_latency_us(10000)
+      m_latency_us(10000),
+      m_errwarnModifySemaphore(1)
 {
 //     waitForParent(); // aquire semaphore in order to guarantee that we do not start before the parent wants us to start.
 }
