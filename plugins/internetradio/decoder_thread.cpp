@@ -555,7 +555,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         if (m_av_pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO) { // take last stream
 #endif
             m_av_audioStream = i;
-            break;
+            // break; // do not break here: wait for last stream - currently only way to get some multi-stream sources running with the first stream unusable .
         }
     }
 
