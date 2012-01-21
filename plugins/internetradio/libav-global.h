@@ -28,9 +28,10 @@ class LibAVGlobal
 {
 protected:
     LibAVGlobal();
-    ~LibAVGlobal();
 
 public:
+    ~LibAVGlobal();
+
     static LibAVGlobal *instance();
 
     static void         ensureInitDone() { instance(); }

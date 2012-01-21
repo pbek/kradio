@@ -133,7 +133,14 @@ void InternetRadioDecoder::run()
         openAVStream(m_inputUrl.pathOrUrl(), true);
 #endif
 
-        AVPacket pkt;
+        AVPacket    pkt;
+
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+        AVFrame    *decoded_frame = avcodec_alloc_frame();
+        if (!decoded_frame) {
+            addErrorString("Failed allocating AVFrame.");
+        }
+#endif
 
         time_t  start_time      = time(NULL);
 
@@ -159,21 +166,54 @@ void InternetRadioDecoder::run()
                 int      audio_pkt_size = pkt.size;
 
                 while (!m_error && !m_done && m_decoderOpened && (audio_pkt_size > 0)) {
-                    char output_buf[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
-                    int  generated_output_bytes = sizeof(output_buf);
+                    char *output_buf             = NULL;
+                    int   generated_output_bytes = 0;
+                    int   processed_input_bytes  = 0;
+                    int   got_frame              = 0;
 
-    #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 34, 0)
-                    int  processed_input_bytes = avcodec_decode_audio3(m_av_aCodecCtx,
-                                                                    (int16_t *)output_buf,
-                                                                    &generated_output_bytes,
-                                                                    &pkt);
-    #else
-                    int  processed_input_bytes = avcodec_decode_audio2(m_av_aCodecCtx,
-                                                                    (int16_t *)output_buf,
-                                                                    &generated_output_bytes,
-                                                                    audio_pkt_data,
-                                                                    audio_pkt_size);
-    #endif
+                    AVPacket  effective_packet;
+                    effective_packet.data = audio_pkt_data;
+                    effective_packet.size = audio_pkt_size;
+                    effective_packet.dts  =
+                    effective_packet.pts  = AV_NOPTS_VALUE;
+
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+                    avcodec_get_frame_defaults(decoded_frame);
+                    processed_input_bytes = avcodec_decode_audio4(m_av_aCodecCtx,
+                                                                  decoded_frame,
+                                                                  &got_frame,
+                                                                  &effective_packet);
+
+                    if (processed_input_bytes > 0 && got_frame) {
+                        /* if a frame has been decoded, output it */
+                        generated_output_bytes = av_samples_get_buffer_size(NULL,
+                                                                      m_av_aCodecCtx->channels,
+                                                                      decoded_frame->nb_samples,
+                                                                      m_av_aCodecCtx->sample_fmt,
+                                                                      1
+                                                                     );
+                        output_buf = (char*)decoded_frame->data[0];
+                    }
+
+#elif  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 34, 0)
+                    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
+                    output_buf             = output_buf_data;
+                    generated_output_bytes = sizeof(output_buf_data);
+                    
+                    processed_input_bytes  = avcodec_decode_audio3(m_av_aCodecCtx,
+                                                                   (int16_t *)output_buf,
+                                                                   &generated_output_bytes,
+                                                                   &effective_packet);
+#else
+                    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
+                    output_buf             = output_buf_data;
+                    generated_output_bytes = sizeof(output_buf_data);
+                    processed_input_bytes  = avcodec_decode_audio2(m_av_aCodecCtx,
+                                                                   (int16_t *)output_buf,
+                                                                   &generated_output_bytes,
+                                                                   audio_pkt_data,
+                                                                   audio_pkt_size);
+#endif
                     if (processed_input_bytes < 0) {
                         /* if error, skip frame */
                         addWarningString(i18n("%1: error decoding packet. Discarding packet\n")
@@ -186,6 +226,7 @@ void InternetRadioDecoder::run()
                         break;
                     }
                     else if (generated_output_bytes > 0) {
+
                         time_t cur_time = time(NULL);
                         SoundMetaData  md(m_decodedSize,
                                           cur_time - start_time,
@@ -227,6 +268,9 @@ void InternetRadioDecoder::run()
 
         //     printf ("closing stream\n");
         closeAVStream();
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+        av_free(decoded_frame);
+#endif
     }
 
 //     printf ("posting event\n");
