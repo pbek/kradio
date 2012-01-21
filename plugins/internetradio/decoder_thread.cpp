@@ -688,6 +688,13 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 //
 //     dump_format(m_av_pFormatCtx, 0, stream.toUtf8(), false);
 
+    for (unsigned int i = 0; i < m_av_pFormatCtx->nb_streams; i++) {
+        int rate = m_av_pFormatCtx->streams[i]->codec->sample_rate;
+        int ch   = m_av_pFormatCtx->streams[i]->codec->channels;
+        int fmt  = m_av_pFormatCtx->streams[i]->codec->sample_fmt;
+        int type = m_av_pFormatCtx->streams[i]->codec->codec_type;
+        IErrorLogClient::staticLogDebug(QString("stream[%1]: codec_type = %2, channels = %3, sample rate = %4, format-id = %5").arg(i).arg(type).arg(ch).arg(rate).arg(fmt));
+    }
 
 #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 100, 0)
     m_av_audioStream = av_find_best_stream(
@@ -727,7 +734,29 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     m_av_aCodecCtx = m_av_pFormatCtx->streams[m_av_audioStream]->codec;
 
 
-    m_soundFormat = SoundFormat(m_av_aCodecCtx->sample_rate, m_av_aCodecCtx->channels, 16, true);
+    int fmt      = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
+    int bits     = 0;
+    int issigned = 0;
+    switch(fmt) {
+        case AV_SAMPLE_FMT_U8:
+            bits     = 8;
+            issigned = false;
+            break;
+        case AV_SAMPLE_FMT_S16:
+            bits     = 16;
+            issigned = true;
+            break;
+        case AV_SAMPLE_FMT_S32:
+            bits     = 32;
+            issigned = true;
+            break;
+        default:
+            addErrorString(i18n("Cannot use libav sample format id %1").arg(fmt));
+            closeAVStream();
+            return;
+    }
+
+    m_soundFormat = SoundFormat(m_av_aCodecCtx->sample_rate, m_av_aCodecCtx->channels, bits, issigned);
 
     if (!m_av_aCodec) {
         m_av_aCodec = avcodec_find_decoder(m_av_aCodecCtx->codec_id);
