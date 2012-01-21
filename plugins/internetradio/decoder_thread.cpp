@@ -509,7 +509,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
             int err = -1;
 
 #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
-            m_av_pFormatCtx->pb = &m_av_byteio_contextPtr;
+            m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
             err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
 
             if (err != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled

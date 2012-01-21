@@ -195,7 +195,15 @@ class DecoderThread : public QThread
 {
 Q_OBJECT
 public:
-    DecoderThread(QObject *parent, const InternetRadioStation &station, const KUrl::List &playlist, int max_buffers, int max_probe_size_bytes, float max_analyze_secs);
+    DecoderThread(QObject *parent,
+                  const InternetRadioStation &station,
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+                  const KUrl::List &playlist,
+#endif
+                  int max_buffers,
+                  int max_probe_size_bytes,
+                  float max_analyze_secs
+                 );
     virtual ~DecoderThread();
 
     void                  run();

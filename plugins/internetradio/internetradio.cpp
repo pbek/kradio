@@ -663,7 +663,15 @@ void InternetRadio::startDecoderThread()
     if (m_decoderThread) {
         m_decoderThread->quit();
     }
-    m_decoderThread = new DecoderThread(this, m_currentStation, m_currentPlaylist, MAX_BUFFERS, m_maxStreamProbeSize, m_maxStreamAnalyzeTime);
+    m_decoderThread = new DecoderThread(this,
+                                        m_currentStation,
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+                                        m_currentPlaylist,
+#endif
+                                        MAX_BUFFERS,
+                                        m_maxStreamProbeSize,
+                                        m_maxStreamAnalyzeTime
+                                       );
     QObject::connect(m_decoderThread, SIGNAL(finished()),   this, SLOT(slotDecoderThreadFinished()));
     QObject::connect(m_decoderThread, SIGNAL(terminated()), this, SLOT(slotDecoderThreadFinished()));
     m_decoderThread->start();
