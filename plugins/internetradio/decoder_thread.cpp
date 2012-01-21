@@ -689,6 +689,16 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 //     dump_format(m_av_pFormatCtx, 0, stream.toUtf8(), false);
 
 
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 100, 0)
+    m_av_audioStream = av_find_best_stream(
+        m_av_pFormatCtx,
+        AVMEDIA_TYPE_AUDIO,
+        -1,
+        -1,
+        &m_av_aCodec,
+        0
+    );
+#else // LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 100, 0)
     m_av_audioStream = -1;
     for (unsigned int i = 0; i < m_av_pFormatCtx->nb_streams; i++) {
 //         if (m_av_pFormatCtx->streams[i]->codec->codec_type == CODEC_TYPE_AUDIO && m_av_audioStream < 0) {
@@ -701,6 +711,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
             // break; // do not break here: wait for last stream - currently only way to get some multi-stream sources running with the first stream unusable .
         }
     }
+#endif // LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 100, 0)
 
     if (m_av_audioStream == -1) {
         if (warningsNotErrors) {
@@ -718,8 +729,9 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
     m_soundFormat = SoundFormat(m_av_aCodecCtx->sample_rate, m_av_aCodecCtx->channels, 16, true);
 
-
-    m_av_aCodec = avcodec_find_decoder(m_av_aCodecCtx->codec_id);
+    if (!m_av_aCodec) {
+        m_av_aCodec = avcodec_find_decoder(m_av_aCodecCtx->codec_id);
+    }
     if (!m_av_aCodec) {
         if (warningsNotErrors) {
             addWarningString (i18n("Could not find a codec for %1").arg(stream));
