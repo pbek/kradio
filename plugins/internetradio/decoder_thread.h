@@ -121,7 +121,7 @@ protected:
     bool                  decoderOpened() const { return m_decoderOpened; }
     void                  openAVStream(const QString &stream, bool warningsNotErros = false);
     void                  closeAVStream();
-
+    void                  freeAVIOContext();
 
 
     bool                  m_decoderOpened;
@@ -140,7 +140,7 @@ protected:
     bool                  m_is_mms_stream;
     mmsx_t               *m_mms_stream;
 #endif
-    char                  m_mms_buffer[32768];
+//     char                  m_mms_buffer[32768];
 
 
     QObject              *m_parent;
