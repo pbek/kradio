@@ -172,6 +172,13 @@ void InternetRadioDecoder::run()
 
             if (!m_done && pkt.stream_index == m_av_audioStream) {
 
+//                 AVDictionaryEntry *t = NULL;
+//                 int                n = 0;
+//                 while ((t = av_dict_get(m_av_pFormatCtx->streams[m_av_audioStream]->metadata, "", t, AV_DICT_IGNORE_SUFFIX))) {
+//                     ++n;
+//                 }
+//                 IErrorLogClient::staticLogDebug(QString("stream metadata: %1 entries").arg(n));
+
                 uint8_t *audio_pkt_data = pkt.data;
                 int      audio_pkt_size = pkt.size;
 

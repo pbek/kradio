@@ -41,6 +41,7 @@
 extern "C" {
 #ifdef HAVE_FFMPEG
     #include <libavformat/avformat.h>
+    #include <libavutil/dict.h>
 #endif
 #ifdef HAVE_FFMPEG_OLD
     #include <ffmpeg/avformat.h>
