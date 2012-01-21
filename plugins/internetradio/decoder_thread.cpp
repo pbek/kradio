@@ -37,6 +37,7 @@
 #include "decoder_thread.h"
 #include "errorlog_interfaces.h"
 
+#include "libav-global.h"
 
 InternetRadioDecoder::InternetRadioDecoder(QObject *event_parent,
                                            const InternetRadioStation &rs,
@@ -140,7 +141,7 @@ void InternetRadioDecoder::run()
 
             int frame_read_res = av_read_frame(m_av_pFormatCtx, &pkt);
             if (frame_read_res < 0) {
-                if (frame_read_res == AVERROR_EOF || (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->eof_reached)) {
+                if (frame_read_res == (int)AVERROR_EOF || (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->eof_reached)) {
                     m_done = true;
                     break;
                 }
@@ -402,7 +403,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 #endif
     // if a format has been specified, set up the proper structures
 
-    av_register_all();
+    LibAVGlobal::ensureInitDone();
     AVInputFormat   *iformat = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
