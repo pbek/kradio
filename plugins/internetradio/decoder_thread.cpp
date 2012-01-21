@@ -639,7 +639,13 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 
     // Retrieve stream information
-    if (av_find_stream_info(m_av_pFormatCtx) < 0) {
+    int err = -1;
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    err = avformat_find_stream_info(m_av_pFormatCtx, NULL);
+#else
+    err = av_find_stream_info(m_av_pFormatCtx);
+#endif
+    if (err < 0) {
         if (warningsNotErrors) {
             addWarningString(i18n("Could not find stream information in %1").arg(stream));
         } else {
@@ -718,7 +724,12 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         return;
     }
 
-    if (avcodec_open(m_av_aCodecCtx, m_av_aCodec) < 0) {
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    err = avcodec_open2(m_av_aCodecCtx, m_av_aCodec, NULL);
+#else
+    err = avcodec_open(m_av_aCodecCtx, m_av_aCodec);
+#endif
+    if (err < 0) {
         if (warningsNotErrors) {
             addWarningString(i18n("Opening codec for %1 failed").arg(stream));
         } else {
