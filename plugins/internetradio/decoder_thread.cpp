@@ -37,6 +37,7 @@
 #include "decoder_thread.h"
 #include "errorlog_interfaces.h"
 
+#include "libavformat/avio.h"
 #include "libav-global.h"
 
 InternetRadioDecoder::InternetRadioDecoder(QObject *event_parent,
@@ -46,12 +47,15 @@ InternetRadioDecoder::InternetRadioDecoder(QObject *event_parent,
 #endif
                                            int max_buffers,
                                            int max_probe_size_bytes, float max_analyze_secs)
-:   m_decoderOpened (false),
-    m_av_pFormatCtx (NULL),
+:   m_decoderOpened       (false),
+    m_av_pFormatCtx       (NULL),
     m_av_pFormatCtx_opened(false),
-    m_av_audioStream(-1),
-    m_av_aCodecCtx  (NULL),
-    m_av_aCodec     (NULL),
+    m_av_audioStream      (-1),
+    m_av_aCodecCtx        (NULL),
+    m_av_aCodec           (NULL),
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    m_av_byteio_contextPtr(NULL),
+#endif
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_is_mms_stream (false),
@@ -437,9 +441,14 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
     m_av_pFormatCtx->max_analyze_duration = m_maxAnalyzeTime * AV_TIME_BASE;
 
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    AVDictionary  *av_params = NULL;
+    av_dict_set(&av_params, "key", "value", 0);
+#else
     AVFormatParameters av_params;
     memset(&av_params, 0, sizeof(av_params));
     av_params.prealloced_context = 1;
+#endif
 
     m_av_pFormatCtx_opened = false;
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -451,15 +460,29 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     AVInputFormat   *iformat = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+
+    m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)m_mms_buffer,
+                                                sizeof(m_mms_buffer),
+                                                /*write_flag = */ false,
+                                                this,
+                                                &InternetRadioDecoder_readInputBuffer,
+                                                NULL,
+                                                NULL
+                                               );
+#else
+
     init_put_byte(&m_av_byteio_context,
-                    (unsigned char*)m_mms_buffer,
-                    sizeof(m_mms_buffer),
-                    false,
-                    this,
-                    &InternetRadioDecoder_readInputBuffer,
-                    NULL,
-                    NULL
+                  (unsigned char*)m_mms_buffer,
+                  sizeof(m_mms_buffer),
+                  false,
+                  this,
+                  &InternetRadioDecoder_readInputBuffer,
+                  NULL,
+                  NULL
                  );
+#endif
 
     // run autodetection if format is not known
     if (!iformat) {
@@ -477,23 +500,37 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
                 addErrorString(i18n("Autodetect of stream type failed for %1").arg(stream));
             }
             closeAVStream();
-            return;
         } else {
             addDebugString(i18n("Autodetected format: %1 (score %2)", iformat->long_name, score));
         }
     }
 
-    if (av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, &av_params) != 0) {
-        if (warningsNotErrors) {
-            addWarningString(i18n("Could not open Stream %1").arg(stream));
-        } else {
-            addErrorString(i18n("Could not open Stream %1").arg(stream));
-        }
-        closeAVStream();
-        return;
-    }
-    m_av_pFormatCtx_opened = true;
+    if (iformat) { // format setup / detection worked well ==> open stream
+            int err = -1;
+
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+            m_av_pFormatCtx->pb = &m_av_byteio_contextPtr;
+            err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
+
+            if (err != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled
+                m_av_pFormatCtx        = NULL;
+                m_av_pFormatCtx_opened = false;
+            }
 #else
+        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, &av_params);
+#endif
+        if (err != 0) {
+            if (warningsNotErrors) {
+                addWarningString(i18n("Could not open Stream %1").arg(stream));
+            } else {
+                addErrorString(i18n("Could not open Stream %1").arg(stream));
+            }
+            closeAVStream();
+        } else {
+            m_av_pFormatCtx_opened = true;
+        }
+    }
+#else // INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 
 
     // load asf stream
@@ -507,50 +544,99 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
                 addErrorString(i18n("cannot open MMS stream %1", stream));
             }
             closeAVStream();
-            return;
+        } else {
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+            m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)m_mms_buffer,
+                                                        sizeof(m_mms_buffer),
+                                                        /*write_flag = */ false,
+                                                        m_mms_stream,
+                                                        &mms_read_packet,
+                                                        NULL,
+                                                        NULL
+                                                       );
+#else
+            init_put_byte(&m_av_byteio_context,
+                          (unsigned char*)m_mms_buffer,
+                          sizeof(m_mms_buffer),
+                          false,
+                          m_mms_stream,
+                          &mms_read_packet,
+                          NULL,
+                          NULL
+                         );
+#endif
         }
-        init_put_byte(&m_av_byteio_context,
-                      (unsigned char*)m_mms_buffer,
-                      sizeof(m_mms_buffer),
-                      false,
-                      m_mms_stream,
-                      &mms_read_packet,
-                      NULL,
-                      NULL
-                     );
 
         if (!iformat) {
             iformat = av_find_input_format("asf");
         }
 
-        if (av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, &av_params) != 0) {
-            if (warningsNotErrors) {
-                addWarningString(i18n("Could not open Stream %1").arg(stream));
-            } else {
-                addErrorString(i18n("Could not open Stream %1").arg(stream));
+        if (iformat && m_mms_stream) {
+            int err = -1;
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+            m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
+            err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
+
+            if (err != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled
+                m_av_pFormatCtx        = NULL;
+                m_av_pFormatCtx_opened = false;
             }
-            closeAVStream();
-            return; // Couldn't open file
+#else
+            err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, &av_params);
+#endif
+            if (err != 0) {
+                if (warningsNotErrors) {
+                    addWarningString(i18n("Could not open Stream %1").arg(stream));
+                } else {
+                    addErrorString(i18n("Could not open Stream %1").arg(stream));
+                }
+                closeAVStream();
+            } else {
+                m_av_pFormatCtx_opened = true;
+            }
         }
-        m_av_pFormatCtx_opened = true;
     }
     else {
 //         IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_open_input_file start");
-        if (av_open_input_file(&m_av_pFormatCtx, stream.toUtf8(), iformat, 0, &av_params) != 0) {
+        int open_result = -1;
+
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+        open_result = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
+
+        if (open_result != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled
+            m_av_pFormatCtx        = NULL;
+            m_av_pFormatCtx_opened = false;
+        }
+#else
+        open_result = av_open_input_file (&m_av_pFormatCtx, stream.toUtf8(), iformat, 0, &av_params);
+#endif
+
+        if (open_result != 0) {
             if (warningsNotErrors) {
                 addWarningString(i18n("Could not open Stream %1").arg(stream));
             } else {
                 addErrorString(i18n("Could not open Stream %1").arg(stream));
             }
             closeAVStream();
-            return; // Couldn't open file
+        } else {
+            m_av_pFormatCtx_opened = true;
         }
-        m_av_pFormatCtx_opened = true;
 //         IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_open_input_file done");
     }
 
 //     IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_find_stream_info start");
+#endif // INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+
+
+
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    av_dict_free(&av_params);
 #endif
+
+    if (!m_av_pFormatCtx_opened) {
+        return;
+    }
+
 
     // Retrieve stream information
     if (av_find_stream_info(m_av_pFormatCtx) < 0) {
@@ -652,6 +738,13 @@ void InternetRadioDecoder::closeAVStream()
         avcodec_close(m_av_aCodecCtx);
     }
 
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    if (m_av_byteio_contextPtr) {
+        av_free(m_av_byteio_contextPtr);
+        m_av_byteio_contextPtr = NULL;
+    }
+#endif
+
     if (!m_av_pFormatCtx_opened) {
         av_free(m_av_pFormatCtx);
         m_av_pFormatCtx = NULL;
@@ -668,7 +761,7 @@ void InternetRadioDecoder::closeAVStream()
             mmsx_close(m_mms_stream);
         }
     } else if (m_av_pFormatCtx) {
-        av_close_input_file(m_av_pFormatCtx);
+        avformat_close_input(&m_av_pFormatCtx);
     }
     m_mms_stream     = NULL;
 #endif
