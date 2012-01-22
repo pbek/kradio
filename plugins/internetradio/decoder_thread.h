@@ -89,25 +89,26 @@ public:
     // sound format is only valid if initDone returns true
     const SoundFormat    &soundFormat() const { return m_soundFormat; }
 
-
+    // output buffers
     int                   availableBuffers();
     DataBuffer           &getFirstBuffer();
     void                  popFirstBuffer();
     void                  flushBuffers();
 
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
-    QByteArray            readInputBuffer(size_t maxSize);
-#endif
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+//     void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
+//     QByteArray            readInputBuffer(size_t maxSize);
+// #endif
 
 protected:
+    // output buffer
     void                  pushBuffer(const DataBuffer &);
 
 signals:
     void                  sigSelfTrigger();
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    void                  sigInputBufferNotFull();
-#endif
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+//     void                  sigInputBufferNotFull();
+// #endif
 
 protected slots:
 
@@ -123,6 +124,13 @@ protected:
     void                  openAVStream(const QString &stream, bool warningsNotErros = false);
     void                  closeAVStream();
     void                  freeAVIOContext();
+
+    bool                  readFrame(AVPacket &pkt);
+    bool                  decodePacket(uint8_t *audio_pkt_data, int audio_pkt_size, int &decoded_input_size);
+
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    void                  selectStreamFromPlaylist();
+#endif
 
 
     bool                  m_decoderOpened;
@@ -166,16 +174,17 @@ protected:
     KUrl                  m_playURL;
 #endif
 
+    // output buffers
     QList<DataBuffer>     m_buffers;
     QMutex                m_bufferAccessLock;
     QSemaphore            m_bufferCountSemaphore;
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    size_t                m_inputBufferMaxSize;
-    QByteArray            m_inputBuffer;
-    QMutex                m_inputBufferAccessLock;
-    QSemaphore            m_inputBufferSize;
-    KUrl                  m_inputUrl;
+//     size_t                m_inputBufferMaxSize;
+//     QByteArray            m_inputBuffer;
+//     QMutex                m_inputBufferAccessLock;
+//     QSemaphore            m_inputBufferSize;
+//     KUrl                  m_inputUrl;
 #endif
 
     int                   m_maxProbeSize;    // in bytes,   see openAVStream

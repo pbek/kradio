@@ -85,10 +85,10 @@ InternetRadioDecoder::InternetRadioDecoder(QObject *event_parent,
 #endif
 /*    m_inputURL      (m_RadioStation.url()),*/
     m_bufferCountSemaphore(max_buffers),
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_inputBufferMaxSize(65536),
-    m_inputBufferSize(0),
-#endif
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+//     m_inputBufferMaxSize(65536),
+//     m_inputBufferSize(0),
+// #endif
     m_maxProbeSize  (max_probe_size_bytes > 1024 ? max_probe_size_bytes : 4096),
     m_maxAnalyzeTime(max_analyze_secs > 0.01     ? max_analyze_secs     : 0.5)
 {
@@ -97,7 +97,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject *event_parent,
 //     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: dispatcher for this thread = %012p", QAbstractEventDispatcher::instance()));
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    QObject::connect(this, SIGNAL(sigInputBufferNotFull()), m_parent, SLOT(slotStreamContinue()));
+    QObject::connect(this, SIGNAL(sigInputBufferNotFull()), m_parent, SLOT(slotStreamContinue()), Qt::QueuedConnection);
 #endif
     QObject::connect(this, SIGNAL(sigSelfTrigger()), this, SLOT(run()), Qt::QueuedConnection);
     emit sigSelfTrigger();
@@ -111,6 +111,142 @@ InternetRadioDecoder::~InternetRadioDecoder()
 }
 
 
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+void InternetRadioDecoder::selectStreamFromPlaylist()
+{
+    int retries = 2;
+    unsigned int start_play_idx = (unsigned int) rint((m_playListURLs.size()-1) * (float)rand() / (float)RAND_MAX);
+    int n = m_playListURLs.size();
+    for (int i = 0; !m_decoderOpened && i < n; ++i) {
+        m_playURL = m_playListURLs[(start_play_idx + i) % n];
+        for (int j = 0; j < retries && !m_decoderOpened; ++j) {
+            addDebugString(i18n("opening stream %1", m_playURL.pathOrUrl()));
+            openAVStream(m_playURL.pathOrUrl(), true);
+        }
+        if (!m_decoderOpened) {
+            addWarningString(i18n("failed to open %1. Trying next stream in play list.", m_playURL.pathOrUrl()));
+        }
+    }
+    if (!m_decoderOpened) {
+        addErrorString(i18n("Could not open any input stream of %1.", m_RadioStation.url().pathOrUrl()));
+    }
+}
+#endif
+
+
+bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_size, int &processed_input_bytes)
+{
+    char *output_buf             = NULL;
+    int   generated_output_bytes = 0;
+          processed_input_bytes  = 0;
+    int   got_frame              = 0;
+
+    AVPacket  effective_packet;
+    effective_packet.data = audio_pkt_data;
+    effective_packet.size = audio_pkt_size;
+    effective_packet.dts  =
+    effective_packet.pts  = AV_NOPTS_VALUE;
+
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    avcodec_get_frame_defaults(decoded_frame);
+    processed_input_bytes = avcodec_decode_audio4(m_av_aCodecCtx,
+                                                  decoded_frame,
+                                                  &got_frame,
+                                                  &effective_packet);
+
+    if (processed_input_bytes > 0 && got_frame) {
+        /* if a frame has been decoded, output it */
+        generated_output_bytes = av_samples_get_buffer_size(NULL,
+                                                      m_av_aCodecCtx->channels,
+                                                      decoded_frame->nb_samples,
+                                                      m_av_aCodecCtx->sample_fmt,
+                                                      1
+                                                     );
+        output_buf = (char*)decoded_frame->data[0];
+    }
+
+#elif  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 34, 0)
+    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
+    output_buf             = output_buf_data;
+    generated_output_bytes = sizeof(output_buf_data);
+
+    processed_input_bytes  = avcodec_decode_audio3(m_av_aCodecCtx,
+                                                   (int16_t *)output_buf,
+                                                   &generated_output_bytes,
+                                                   &effective_packet);
+#else
+    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
+    output_buf             = output_buf_data;
+    generated_output_bytes = sizeof(output_buf_data);
+    processed_input_bytes  = avcodec_decode_audio2(m_av_aCodecCtx,
+                                                   (int16_t *)output_buf,
+                                                   &generated_output_bytes,
+                                                   audio_pkt_data,
+                                                   audio_pkt_size);
+#endif
+    if (processed_input_bytes < 0) {
+        /* if error, skip frame */
+        addWarningString(i18n("%1: error decoding packet. Discarding packet\n")
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+                         .arg(m_playURL.pathOrUrl())
+#else
+                         .arg(m_inputUrl.pathOrUrl())
+#endif
+                        );
+        return false;
+    }
+    else if (generated_output_bytes > 0) {
+
+        time_t cur_time = time(NULL);
+        SoundMetaData  md(m_decodedSize,
+                          cur_time - start_time,
+                          cur_time,
+                          i18n("internal stream, not stored (%1)",
+#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+                               m_playURL.pathOrUrl()
+#else
+                               m_inputUrl.pathOrUrl()
+#endif
+                              )
+                         );
+
+        DataBuffer buf(output_buf, generated_output_bytes, md, m_soundFormat);
+
+//                     printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
+//                     printf ("storing decoded data ...");
+        pushBuffer(buf);
+//                     printf (" done\n");
+
+/*                    printf ("semaphore available: %i\n", m_runSemaphore.available());
+        m_runSemaphore.acquire(1);
+        if (!m_done) {
+            SoundStreamDecodingStepEvent *e = new SoundStreamDecodingStepEvent(m_soundFormat, output_buf, generated_output_bytes, md);
+            QApplication::postEvent(m_parent, e);
+        }*/
+        m_decodedSize += generated_output_bytes;
+    }
+    return true;
+}
+
+
+
+bool InternetRadioDecoder::readFrame(AVPacket &pkt)
+{
+    int frame_read_res = av_read_frame(m_av_pFormatCtx, &pkt);
+    if (frame_read_res < 0) {
+        if (frame_read_res == (int)AVERROR_EOF || (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->eof_reached)) {
+            m_done = true;
+            return false;
+        }
+        if (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->error) {
+            m_error = true;
+            return false;
+        }
+        usleep(50000);
+        return false;
+    }
+    return true;
+}
 
 
 void InternetRadioDecoder::run()
@@ -123,22 +259,7 @@ void InternetRadioDecoder::run()
     while (!m_error && !m_done) {
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-        int retries = 2;
-        unsigned int start_play_idx = (unsigned int) rint((m_playListURLs.size()-1) * (float)rand() / (float)RAND_MAX);
-        int n = m_playListURLs.size();
-        for (int i = 0; !m_decoderOpened && i < n; ++i) {
-            m_playURL = m_playListURLs[(start_play_idx + i) % n];
-            for (int j = 0; j < retries && !m_decoderOpened; ++j) {
-                addDebugString(i18n("opening stream %1", m_playURL.pathOrUrl()));
-                openAVStream(m_playURL.pathOrUrl(), true);
-            }
-            if (!m_decoderOpened) {
-                addWarningString(i18n("failed to open %1. Trying next stream in play list.", m_playURL.pathOrUrl()));
-            }
-        }
-        if (!m_decoderOpened) {
-            addErrorString(i18n("Could not open any input stream of %1.", m_RadioStation.url().pathOrUrl()));
-        }
+        selectStreamFromPlaylist();
 #else
         openAVStream(m_inputUrl.pathOrUrl(), true);
 #endif
@@ -156,17 +277,7 @@ void InternetRadioDecoder::run()
 
         while (!m_error && !m_done && m_decoderOpened) {
 
-            int frame_read_res = av_read_frame(m_av_pFormatCtx, &pkt);
-            if (frame_read_res < 0) {
-                if (frame_read_res == (int)AVERROR_EOF || (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->eof_reached)) {
-                    m_done = true;
-                    break;
-                }
-                if (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->error) {
-                    m_error = true;
-                    break;
-                }
-                usleep(50000);
+            if (!readFrame(AVPacket &pkt)) {
                 continue;
             }
 
@@ -183,99 +294,12 @@ void InternetRadioDecoder::run()
                 int      audio_pkt_size = pkt.size;
 
                 while (!m_error && !m_done && m_decoderOpened && (audio_pkt_size > 0)) {
-                    char *output_buf             = NULL;
-                    int   generated_output_bytes = 0;
-                    int   processed_input_bytes  = 0;
-                    int   got_frame              = 0;
-
-                    AVPacket  effective_packet;
-                    effective_packet.data = audio_pkt_data;
-                    effective_packet.size = audio_pkt_size;
-                    effective_packet.dts  =
-                    effective_packet.pts  = AV_NOPTS_VALUE;
-
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
-                    avcodec_get_frame_defaults(decoded_frame);
-                    processed_input_bytes = avcodec_decode_audio4(m_av_aCodecCtx,
-                                                                  decoded_frame,
-                                                                  &got_frame,
-                                                                  &effective_packet);
-
-                    if (processed_input_bytes > 0 && got_frame) {
-                        /* if a frame has been decoded, output it */
-                        generated_output_bytes = av_samples_get_buffer_size(NULL,
-                                                                      m_av_aCodecCtx->channels,
-                                                                      decoded_frame->nb_samples,
-                                                                      m_av_aCodecCtx->sample_fmt,
-                                                                      1
-                                                                     );
-                        output_buf = (char*)decoded_frame->data[0];
-                    }
-
-#elif  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 34, 0)
-                    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
-                    output_buf             = output_buf_data;
-                    generated_output_bytes = sizeof(output_buf_data);
-                    
-                    processed_input_bytes  = avcodec_decode_audio3(m_av_aCodecCtx,
-                                                                   (int16_t *)output_buf,
-                                                                   &generated_output_bytes,
-                                                                   &effective_packet);
-#else
-                    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
-                    output_buf             = output_buf_data;
-                    generated_output_bytes = sizeof(output_buf_data);
-                    processed_input_bytes  = avcodec_decode_audio2(m_av_aCodecCtx,
-                                                                   (int16_t *)output_buf,
-                                                                   &generated_output_bytes,
-                                                                   audio_pkt_data,
-                                                                   audio_pkt_size);
-#endif
-                    if (processed_input_bytes < 0) {
-                        /* if error, skip frame */
-                        addWarningString(i18n("%1: error decoding packet. Discarding packet\n")
-#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                                         .arg(m_playURL.pathOrUrl())
-#else
-                                         .arg(m_inputUrl.pathOrUrl())
-#endif
-                                        );
+                    int processed_input_bytes = 0;
+                    if (!decodePacket(audio_pkt_data, audio_pkt_size, processed_input_bytes)) {
                         break;
                     }
-                    else if (generated_output_bytes > 0) {
-
-                        time_t cur_time = time(NULL);
-                        SoundMetaData  md(m_decodedSize,
-                                          cur_time - start_time,
-                                          cur_time,
-                                          i18n("internal stream, not stored (%1)",
-#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                                               m_playURL.pathOrUrl()
-#else
-                                               m_inputUrl.pathOrUrl()
-#endif
-                                              )
-                                         );
-
-                        DataBuffer buf(output_buf, generated_output_bytes, md, m_soundFormat);
-
-    //                     printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
-    //                     printf ("storing decoded data ...");
-                        pushBuffer(buf);
-    //                     printf (" done\n");
-
-    /*                    printf ("semaphore available: %i\n", m_runSemaphore.available());
-                        m_runSemaphore.acquire(1);
-                        if (!m_done) {
-                            SoundStreamDecodingStepEvent *e = new SoundStreamDecodingStepEvent(m_soundFormat, output_buf, generated_output_bytes, md);
-                            QApplication::postEvent(m_parent, e);
-                        }*/
-                        m_decodedSize += generated_output_bytes;
-                    }
-
                     audio_pkt_data += processed_input_bytes;
                     audio_pkt_size -= processed_input_bytes;
-
                 }
             }
 
@@ -877,48 +901,48 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
 }
 
 
-// blocking function if buffer is empty!
-QByteArray InternetRadioDecoder::readInputBuffer(size_t maxSize)
-{
-    bool       isfull = false;
-    QByteArray retval;
-
-    if (m_done) {
-        return QByteArray();
-    }
-
-    // block until at least 1 byte is readable
-    m_inputBufferSize.acquire(1);
-
-    {   QMutexLocker  lock(&m_inputBufferAccessLock);
-
-        QByteArray shared = m_inputBuffer.left(maxSize);
-        retval = QByteArray(shared.data(), shared.size()); // force deep copy for threading reasons
-        m_inputBuffer.remove(0, retval.size());
-        isfull = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
-    }
-
-    // keep track of the bytes read
-    if (retval.size() > 0) {
-        m_inputBufferSize.acquire(retval.size() - 1);
-    }
-
-    if (!isfull) {
-        emit sigInputBufferNotFull();
-    }
-    return retval;
-}
-
-
-void InternetRadioDecoder::writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl)
-{
-    QMutexLocker  lock(&m_inputBufferAccessLock);
-
-    m_inputBuffer.append(data.data(), data.size()); // force deep copy
-    isFull     = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
-    m_inputUrl = inputUrl;
-    m_inputBufferSize.release(data.size());
-}
+// // blocking function if buffer is empty!
+// QByteArray InternetRadioDecoder::readInputBuffer(size_t maxSize)
+// {
+//     bool       isfull = false;
+//     QByteArray retval;
+// 
+//     if (m_done) {
+//         return QByteArray();
+//     }
+// 
+//     // block until at least 1 byte is readable
+//     m_inputBufferSize.acquire(1);
+// 
+//     {   QMutexLocker  lock(&m_inputBufferAccessLock);
+// 
+//         QByteArray shared = m_inputBuffer.left(maxSize);
+//         retval = QByteArray(shared.data(), shared.size()); // force deep copy for threading reasons
+//         m_inputBuffer.remove(0, retval.size());
+//         isfull = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
+//     }
+// 
+//     // keep track of the bytes read
+//     if (retval.size() > 0) {
+//         m_inputBufferSize.acquire(retval.size() - 1);
+//     }
+// 
+//     if (!isfull) {
+//         emit sigInputBufferNotFull();
+//     }
+//     return retval;
+// }
+// 
+// 
+// void InternetRadioDecoder::writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl)
+// {
+//     QMutexLocker  lock(&m_inputBufferAccessLock);
+// 
+//     m_inputBuffer.append(data.data(), data.size()); // force deep copy
+//     isFull     = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
+//     m_inputUrl = inputUrl;
+//     m_inputBufferSize.release(data.size());
+// }
 #endif
 
 

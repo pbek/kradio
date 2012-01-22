@@ -184,11 +184,11 @@ protected slots:
     void    slotDecoderThreadFinished();
 
 
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    void    slotStreamData(KIO::Job *job, const QByteArray &data);
-    void    slotStreamDone(KJob *job);
-    void    slotStreamContinue();
-#endif
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+//     void    slotStreamData(KIO::Job *job, const QByteArray &data);
+//     void    slotStreamDone(KJob *job);
+//     void    slotStreamContinue();
+// #endif
 
 protected:
     void    loadPlaylistStopJob();
@@ -201,11 +201,11 @@ protected:
     void    interpretePlaylistASX(const QByteArray &xmlData);
 
 
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    void    startStreamDownload();
-    void    tryNextStream();
-    void    stopStreamDownload();
-#endif
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+//     void    startStreamDownload();
+//     void    tryNextStream();
+//     void    stopStreamDownload();
+// #endif
     void    startDecoderThread();
 
     void    searchMixer(ISoundStreamClient **playback_mixer);
@@ -224,11 +224,11 @@ protected:
     InternetRadioStation          m_currentStation;
     KUrl::List                    m_currentPlaylist;
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    KUrl                          m_currentStreamUrl;
-    int                           m_currentStreamIdx;
+//     KUrl                          m_currentStreamUrl;
+//     int                           m_currentStreamIdx;
     int                           m_currentStreamRetriesMax;
-    int                           m_currentStreamRetriesLeft;
-    int                           m_randStreamIdxOffset;
+//     int                           m_currentStreamRetriesLeft;
+//     int                           m_randStreamIdxOffset;
 #endif
 
     bool                          m_stereoFlag;
@@ -256,9 +256,9 @@ protected:
 
     QByteArray                    m_playlistData;
     KIO::TransferJob             *m_playlistJob;
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    KIO::TransferJob             *m_streamJob;
-#endif
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+//     KIO::TransferJob             *m_streamJob;
+// #endif
 };
 
 #endif
