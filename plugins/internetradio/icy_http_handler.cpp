@@ -21,6 +21,10 @@
 #include <QtNetwork/QHttpResponseHeader>
 #include "errorlog_interfaces.h"
 
+// avoid ever-growing metadata buffers
+#define METADATA_MAX_SIZE       (1024 * 1024)
+
+
 IcyHttpHandler::IcyHttpHandler(const KUrl &url)
   : m_url               (url),
     m_transferJob       (NULL),
@@ -91,6 +95,9 @@ void IcyHttpHandler::jobDataAvailable(KIO::Job *job, QByteArray data)
                 m_metaData.clear();
             }
             size_t chunk = qMin(m_metaRest, (size_t)data.size());
+            if (m_metaData.size() + chunk > METADATA_MAX_SIZE) {
+                m_metaData.clear();
+            }
             m_metaData.append(data.left(chunk));
             data = data.mid(chunk);
             m_metaRest -= chunk;
