@@ -68,6 +68,8 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_currentStreamRetriesMax(2),
 //     m_currentStreamRetriesLeft(-1),
 //     m_randStreamIdxOffset(-1),
+    m_streamInputBuffer      (NULL),
+    m_icyHttpHandler         (NULL),
 #endif
     m_stereoFlag(false),
     m_muted(false),
@@ -90,12 +92,23 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
 {
     m_SoundStreamSinkID   = createNewSoundStream(false);
     m_SoundStreamSourceID = m_SoundStreamSinkID;
+
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    m_streamInputBuffer = new StreamInputBuffer(128 * 1024);         // FIXME: make buffer configurable
+    m_icyHttpHandler    = new IcyHttpHandler(m_streamInputBuffer);
+#endif
 }
 
 
 InternetRadio::~InternetRadio()
 {
     setPower(false);
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    delete m_streamInputBuffer;
+    delete m_icyHttpHandler;
+    m_streamInputBuffer = NULL;
+    m_icyHttpHandler    = NULL;
+#endif
 }
 
 
@@ -280,7 +293,7 @@ bool InternetRadio::powerOff ()
 
     loadPlaylistStopJob();
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    stopStreamDownload();
+    m_icyHttpHandler->stopStreamDownload();
 #endif
 
     queryPlaybackVolume(m_SoundStreamSinkID, m_defaultPlaybackVolume);
@@ -659,20 +672,17 @@ void InternetRadio::radio_init()
 void InternetRadio::startDecoderThread()
 {
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    startStreamDownload();
+    m_icyHttpHandler->startStreamDownload(m_currentPlaylist, m_currentStation, m_currentStreamRetriesMax);
 #endif
     if (m_decoderThread) {
         m_decoderThread->quit();
     }
-//     // EMW: debug icy stuff
-//         // dont worry about mem leaks for this initial test
-//         IcyHttpHandler *icy = new IcyHttpHandler(m_currentPlaylist.first());
-//         icy->start();
-//     // EMW: end debug
     m_decoderThread = new DecoderThread(this,
                                         m_currentStation,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
                                         m_currentPlaylist,
+#else
+                                        m_streamInputBuffer,
 #endif
                                         MAX_BUFFERS,
                                         m_maxStreamProbeSize,

@@ -34,21 +34,27 @@ public:
     StreamInputBuffer(int max_size);
     ~StreamInputBuffer();
 
-    void                  clearBuffer();
+    void                  resetBuffer();
 
     void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
-    QByteArray            readInputBuffer(size_t maxSize, KUrl &currentUrl_out);
+    QByteArray            readInputBuffer(size_t minSize, size_t maxSize, KUrl &currentUrl_out, bool consume);
+    KUrl                  getInputUrl() const;
 
 signals:
     // connects with this signal need to be Qt::QueuedConnection in order to avoid race conditions when suspending/waking up writing thread
     void                  sigInputBufferNotFull();
 
 protected:
+
+    void                  clearReset();
+    
     size_t                m_inputBufferMaxSize;
     QByteArray            m_inputBuffer;
-    QMutex                m_inputBufferAccessLock;
+    mutable QMutex        m_inputBufferAccessLock;
     QSemaphore            m_inputBufferSize;
     KUrl                  m_inputUrl;
+
+    size_t                m_readPending;
 };
 
 

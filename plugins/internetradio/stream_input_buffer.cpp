@@ -19,35 +19,65 @@
 
 StreamInputBuffer::StreamInputBuffer(int max_size)
   : m_inputBufferMaxSize(max_size),
-    m_inputBufferSize(0)
+    m_inputBufferSize   (0),
+    m_readPending       (0)
 {
 }
 
 
-// blocking function if buffer is empty!
-QByteArray StreamInputBuffer::readInputBuffer(size_t maxSize, KUrl &currentUrl_out)
+StreamInputBuffer::~StreamInputBuffer()
 {
-    bool       isfull = false;
+    resetBuffer();
+}
+
+
+
+// blocking function if buffer is empty!
+QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KUrl &currentUrl_out, bool consume)
+{
+    bool       isfull        = false;
+    bool       resetDetected = false;
     QByteArray retval;
 
+    m_readPending = minSize;
+
     // block until at least 1 byte is readable
-    m_inputBufferSize.acquire(1);
+    m_inputBufferSize.acquire(minSize);
 
     {   QMutexLocker  lock(&m_inputBufferAccessLock);
 
-        QByteArray shared = m_inputBuffer.left(maxSize);
-        retval = QByteArray(shared.data(), shared.size()); // force deep copy for threading reasons
-        m_inputBuffer.remove(0, retval.size());
-        isfull = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
+        // cleanup after possible reset conditions
+        int n_suggested = m_inputBufferSize.available() + minSize;
+        int n_real      = m_inputBuffer.size();
+        if (n_suggested > n_real) {
+            m_inputBufferSize.acquire(n_suggested - n_real);
+            resetDetected = true;
+        }
 
-        // must be inside locked region in order to guarantee the clearBuffer works correctly
+        QByteArray shared = m_inputBuffer.left(maxSize);
+
+        if (!resetDetected && (size_t)shared.size() > minSize) {
+            retval = QByteArray(shared.data(), shared.size()); // force deep copy for threading reasons
+            if (consume) {
+                m_inputBuffer.remove(0, retval.size());
+            }
+            isfull = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
+        }
+
+        // must be inside locked region in order to guarantee the resetBuffer works correctly
         // keep track of the bytes read
-        if (retval.size() > 0) {
-            m_inputBufferSize.acquire(retval.size() - 1); // -1 since we already aquired 1 byte above
+        if (consume) {
+            if ((size_t)retval.size() > minSize) {
+                m_inputBufferSize.acquire(retval.size() - minSize);
+            }
+        } else {
+            m_inputBufferSize.release(qMin((size_t)retval.size(), minSize));
         }
 
         // let's hope that this is really a deep copy
         currentUrl_out = m_inputUrl.url();
+
+        m_readPending = 0;
     }
 
     if (!isfull) {
@@ -68,7 +98,7 @@ void StreamInputBuffer::writeInputBuffer(const QByteArray &data, bool &isFull, c
 }
 
 
-void StreamInputBuffer::clearBuffer()
+void StreamInputBuffer::resetBuffer()
 {
     QMutexLocker  lock(&m_inputBufferAccessLock);
 
@@ -77,6 +107,16 @@ void StreamInputBuffer::clearBuffer()
     }
     m_inputBuffer.clear();
     m_inputUrl = KUrl();
+    m_inputBufferSize.release(m_readPending); // ensure that a waiting read gets released (they will return 0 bytes)
     emit sigInputBufferNotFull();
 }
 
+
+KUrl StreamInputBuffer::getInputUrl() const
+{
+    QMutexLocker  lock(&m_inputBufferAccessLock);
+
+    // let's hope that this is really a deep copy
+    KUrl currentUrl_out = m_inputUrl.url();
+    return currentUrl_out;
+}

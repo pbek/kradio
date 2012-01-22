@@ -33,6 +33,8 @@
 #include "internetradiostation.h"
 #include "radio_interfaces.h"
 #include "soundstreamclient_interfaces.h"
+#include "stream_input_buffer.h"
+#include "icy_http_handler.h"
 
 class DecoderThread;
 
@@ -229,6 +231,8 @@ protected:
     int                           m_currentStreamRetriesMax;
 //     int                           m_currentStreamRetriesLeft;
 //     int                           m_randStreamIdxOffset;
+    StreamInputBuffer            *m_streamInputBuffer;
+    IcyHttpHandler               *m_icyHttpHandler;
 #endif
 
     bool                          m_stereoFlag;

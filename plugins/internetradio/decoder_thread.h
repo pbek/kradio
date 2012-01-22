@@ -37,6 +37,7 @@
 #include "internetradiostation.h"
 
 #include "databuffer.h"
+#include "stream_input_buffer.h"
 
 extern "C" {
 #ifdef HAVE_FFMPEG
@@ -64,12 +65,14 @@ class InternetRadioDecoder : public QObject
 {
 Q_OBJECT
 public:
-    InternetRadioDecoder(QObject *event_parent, 
-                         const InternetRadioStation &station, 
+    InternetRadioDecoder(QObject                    *event_parent,
+                         const InternetRadioStation &station,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                         const KUrl::List &playlist, 
+                         const KUrl::List           &playlist,
+#else
+                         StreamInputBuffer          *input_buffer,
 #endif
-                         int max_buffers, 
+                         int max_buffers,
                          int max_probe_size_bytes, float max_analyze_secs);
 
     virtual ~InternetRadioDecoder();
@@ -144,6 +147,9 @@ protected:
 #else
     ByteIOContext         m_av_byteio_context;
 #endif
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+    AVFrame              *m_decoded_frame;
+#endif
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     bool                  m_is_mms_stream;
@@ -168,6 +174,7 @@ protected:
 
     SoundFormat           m_soundFormat;
     quint64               m_decodedSize;
+    time_t                m_startTime;
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     KUrl::List            m_playListURLs;
@@ -180,11 +187,12 @@ protected:
     QSemaphore            m_bufferCountSemaphore;
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    StreamInputBuffer    *m_streamInputBuffer;
 //     size_t                m_inputBufferMaxSize;
 //     QByteArray            m_inputBuffer;
 //     QMutex                m_inputBufferAccessLock;
 //     QSemaphore            m_inputBufferSize;
-//     KUrl                  m_inputUrl;
+    KUrl                  m_inputUrl;
 #endif
 
     int                   m_maxProbeSize;    // in bytes,   see openAVStream
@@ -205,10 +213,12 @@ class DecoderThread : public QThread
 {
 Q_OBJECT
 public:
-    DecoderThread(QObject *parent,
+    DecoderThread(QObject                    *parent,
                   const InternetRadioStation &station,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                  const KUrl::List &playlist,
+                  const KUrl::List           &playlist,
+#else
+                  StreamInputBuffer          *input_buffer,
 #endif
                   int max_buffers,
                   int max_probe_size_bytes,
@@ -230,6 +240,8 @@ protected:
     InternetRadioDecoder *m_decoder;
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     KUrl::List            m_playlist;
+#else
+    StreamInputBuffer    *m_streamInputBuffer;
 #endif
 };
 

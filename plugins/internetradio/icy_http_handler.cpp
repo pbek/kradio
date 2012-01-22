@@ -86,7 +86,7 @@ void IcyHttpHandler::startCurrentStreamJob()
     m_dataRest           = 0;
     m_metaRest           = 0;
 
-    m_inputBuffer->clearBuffer();
+    m_inputBuffer->resetBuffer();
 
     m_streamJob->start();
     emit sigStartedStream(m_currentStreamUrl);
@@ -151,7 +151,7 @@ void IcyHttpHandler::stopCurrentStreamDownload()
         m_streamJob->kill(); // stop and delete
         m_streamJob = NULL;
 
-        m_inputBuffer->clearBuffer();
+        m_inputBuffer->resetBuffer();
         emit sigFinishedStream(m_currentStreamUrl);
     }
 }
@@ -278,7 +278,7 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
         } else {
             stopStreamDownload();
         }
-        m_inputBuffer->clearBuffer();
+        m_inputBuffer->resetBuffer();
     }
     job->deleteLater();
 }
