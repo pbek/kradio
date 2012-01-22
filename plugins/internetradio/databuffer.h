@@ -29,8 +29,11 @@
 class DataBuffer {
     public:
         DataBuffer();
+        // this constructor creates a copy of the data!
         DataBuffer(const char *data, size_t size, const SoundMetaData &md, const SoundFormat &);
+        // copy constructor does not copy the data!
         DataBuffer(const DataBuffer &b);
+        // the m_data field is not freed automatically!!!
         ~DataBuffer();
 
         void                 freeData(); // must be called MANUALL. Destructor will not delete data!
