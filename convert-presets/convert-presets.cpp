@@ -14,6 +14,7 @@
 #include <time.h>
 #include <sys/fcntl.h>
 #include <unistd.h>
+#include <stdio.h>
 
 #define dev_urandom  "/dev/urandom"
 
@@ -26,7 +27,11 @@ QString createStationID()
     stime.setNum(time(NULL));
 
     int fd = open (dev_urandom, O_RDONLY);
-    read(fd, buffer, buffersize);
+    int err = read(fd, buffer, buffersize);
+    if (err != 0) {
+        fprintf(stderr, "cannot read from %s: %s\n", dev_urandom, strerror(err));
+        exit(-1);
+    }
     close(fd);
     for (int i = 0; i < buffersize; ++i)
         srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
@@ -86,7 +91,7 @@ bool convertFile(const QString &file)
         while ( (f = xmlData.indexOf("<" stationIDElement "></" stationIDElement ">", p, Qt::CaseInsensitive) ) >= 0) {
             xmlData.insert(f + 2 + QString(stationIDElement).length(), createStationID());
         }
-        
+
     } else {
 
         ////////////////////////////////////////////////////////////////////////
