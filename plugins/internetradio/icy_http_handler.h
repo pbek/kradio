@@ -57,6 +57,8 @@ signals:
     void                        sigFinishedPlaylist(const KUrl &url);
     void                        sigStartedPlaylist(const KUrl &url);
 
+    void                        sigMetaDataUpdate(QMap<QString, QString> metadata);
+
 protected slots:
     void                        slotStreamData(KIO::Job *job, QByteArray data);
     void                        slotStreamDone(KJob *job);

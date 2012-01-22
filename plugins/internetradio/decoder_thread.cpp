@@ -106,9 +106,9 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 //     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: this->thread() = %012p",             thread()));
 //     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: dispatcher for this thread = %012p", QAbstractEventDispatcher::instance()));
 
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    QObject::connect(this, SIGNAL(sigInputBufferNotFull()), m_parent, SLOT(slotStreamContinue()), Qt::QueuedConnection);
-#endif
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+//     QObject::connect(this, SIGNAL(sigInputBufferNotFull()), m_parent, SLOT(slotStreamContinue()), Qt::QueuedConnection);
+// #endif
     QObject::connect(this, SIGNAL(sigSelfTrigger()), this, SLOT(run()), Qt::QueuedConnection);
     emit sigSelfTrigger();
 }

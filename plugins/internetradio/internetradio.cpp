@@ -96,6 +96,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_streamInputBuffer = new StreamInputBuffer(128 * 1024);         // FIXME: make buffer configurable
     m_icyHttpHandler    = new IcyHttpHandler(m_streamInputBuffer);
+    connect(m_icyHttpHandler, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)), this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
 #endif
 }
 
@@ -1239,6 +1240,14 @@ void InternetRadio::interpretePlaylistASX(const QByteArray &rawData)
 
 
 
+void InternetRadio::slotMetaDataUpdate(QMap<QString, QString> metadata)
+{
+    if (metadata.contains("StreamTitle")) {
+        QString title = metadata["StreamTitle"];
+        updateRDSRadioText(title);
+        updateRDSState(true);
+    }
+}
 
 
 // #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD

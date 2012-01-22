@@ -210,7 +210,50 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
     if (complete) {
         QString metaString = QString::fromUtf8(m_metaData.data());
         if (metaString.size()) {
-            IErrorLogClient::staticLogDebug(QString("meta: %1").arg(metaString));
+            logDebug(QString("meta: %1").arg(metaString));
+
+            // parse meta data
+            QMap<QString, QString>  metaData;
+
+            while (metaString.size()) {
+                int eqIdx = metaString.indexOf('=');
+                if (eqIdx < 0) {
+                    break;
+                }
+                QString key = metaString.left(eqIdx).trimmed();
+//                 IErrorLogClient::staticLogDebug(QString("Metadata Key: %1").arg(key));
+                
+                metaString  = metaString.mid(eqIdx + 1).trimmed();
+                bool useQuotes = metaString.startsWith("'");
+                metaString.remove(0,useQuotes);
+
+                int      curIdx  = 0;
+                QString  escapeRegExp = "\\.|''";
+                QString  termRegExp   = useQuotes ? "'\\s*;" : ";";
+                QRegExp  findRegExp("(" + escapeRegExp + "|" + termRegExp + ")");
+                while (curIdx < metaString.size()) {
+                    int findIdx  = findRegExp.indexIn(metaString, curIdx);
+                    int matchLen = findRegExp.matchedLength();
+                    if (findIdx >= 0) {
+                        QString tmp = metaString.mid(findIdx, matchLen);
+                        if (QRegExp(escapeRegExp).exactMatch(tmp)) {
+                            curIdx += matchLen;
+                        } else {
+                            QString value = metaString.left(findIdx);
+                            metaData.insert(key, value);
+                            metaString = metaString.mid(findIdx + matchLen).trimmed();
+                            IErrorLogClient::staticLogDebug(QString("Metadata Key: %1 = %2").arg(key).arg(value));
+                            break;
+                        }
+                    } else {
+                        metaData.insert(key, metaString);
+                        metaString = QString::null;
+                        break;
+                    }
+                }
+            }
+
+            emit sigMetaDataUpdate(metaData);
         }
 
         // free buffer for next meta data transmission
