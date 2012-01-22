@@ -210,7 +210,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
     if (complete) {
         QString metaString = QString::fromUtf8(m_metaData.data());
         if (metaString.size()) {
-            logDebug(QString("meta: %1").arg(metaString));
+            IErrorLogClient::staticLogDebug(QString("meta: %1").arg(metaString));
 
             // parse meta data
             QMap<QString, QString>  metaData;
@@ -222,7 +222,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                 }
                 QString key = metaString.left(eqIdx).trimmed();
 //                 IErrorLogClient::staticLogDebug(QString("Metadata Key: %1").arg(key));
-                
+
                 metaString  = metaString.mid(eqIdx + 1).trimmed();
                 bool useQuotes = metaString.startsWith("'");
                 metaString.remove(0,useQuotes);

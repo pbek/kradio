@@ -21,6 +21,8 @@
 #include <QtCore/QTimer>
 
 #include <kurl.h>
+#include <QtGui/QPen>
+#include <QtGui/QBrush>
 
 #include "radiodevice_interfaces.h"
 #include "frequencyradio_interfaces.h"
@@ -32,6 +34,27 @@
 /**
   *@author Martin Witte
   */
+
+// // START: DEBUG
+// #include <QtGui/QPainter>
+// class TmpWidget : public QWidget
+// {
+// Q_OBJECT
+// public:
+//     TmpWidget() {};
+//     ~TmpWidget() {};
+//     void setPixmap(const QPixmap &p) { m_pixmap = p; update(); }
+//     void paintEvent(QPaintEvent *e) {
+//         QPainter paint(this);
+//         paint.setCompositionMode(QPainter::CompositionMode_Source);
+//         paint.drawPixmap(0, 0, m_pixmap);
+//     }
+//     QPixmap m_pixmap;
+// };
+// // END: DEBUG
+
+
+
 
 class RadioViewFrequencyRadio : public RadioViewElement,  // is a QObject, must be first
                                 public IRadioDeviceClient,
@@ -118,7 +141,7 @@ protected:
     void paintEvent(QPaintEvent *e);
     void resizeEvent(QResizeEvent *e);
 
-    void updateRadioTextRing();
+//     void updateRadioTextRing();
 
 protected slots:
 
@@ -143,10 +166,30 @@ protected:
     QString  m_RDSStationName;
 
     QTimer   m_RadioTextTimer;
-    QString  m_RadioTextRing;
-    qreal    m_RadioTextX0;
+//     QString  m_RadioTextRing;
+//     qreal    m_RadioTextX0;
     qreal    m_RadioTextDX;
-    bool     m_RadioTextRepaint;
+//     bool     m_RadioTextRepaint;
+
+    QPen     m_activePen;
+    QPen     m_inactivePen;
+    QBrush   m_activeBrush;
+    QBrush   m_inactiveBrush;
+
+    // sliding radio text
+    void     resetRadioTextVisualBuffer();
+    void     updateRadioTextVisualBuffer(QRectF newVisualRect);
+    void     advanceRadioTextVisualBuffer();
+    QRectF   drawTextInRadioTextVisualBuffer(QPainter &paint);
+    void     paintRadioTextVisualBuffer(QPainter &paint);
+//     TmpWidget *m_bufferVisualizer;
+
+    QRectF   m_radioTextRect;
+    int      m_radioTextVisualBufferOverSizeFactor;
+    QSize    m_radioTextVisualBufferSize;
+    qreal    m_radioTextVisualBufferCurrentReadX;
+    qreal    m_radioTextVisualBufferCurrentWriteX;
+    QPixmap  m_radioTextVisualBuffer;
 };
 
 #endif

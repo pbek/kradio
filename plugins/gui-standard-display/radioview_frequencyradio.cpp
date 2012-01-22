@@ -20,6 +20,10 @@
 #include <QtGui/QPainter>
 #include <QtGui/QImage>
 #include <QtGui/QPixmap>
+#include <QtGui/QBitmap>
+#include <QtGui/QResizeEvent>
+
+#include <math.h>
 
 #include <kconfiggroup.h>
 
@@ -44,10 +48,16 @@ RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString 
       m_frequency(0),
       m_quality(0.0),
       m_stereo(false),
-      m_RadioTextRing(QString()),
-      m_RadioTextX0(0),
+//       m_RadioTextRing(QString()),
+//       m_RadioTextX0(0),
       m_RadioTextDX(1),
-      m_RadioTextRepaint(false)
+//       m_RadioTextRepaint(false),
+//       m_bufferVisualizer(NULL),
+      m_radioTextRect(0, 0, 0, 0),
+      m_radioTextVisualBufferOverSizeFactor(5),
+      m_radioTextVisualBufferSize(0, 0),
+      m_radioTextVisualBufferCurrentReadX(0),
+      m_radioTextVisualBufferCurrentWriteX(0)
 {
     setFrameStyle(Box | Sunken);
     setLineWidth(1);
@@ -258,6 +268,8 @@ bool RadioViewFrequencyRadio::noticePowerChanged (bool on, const IRadioDevice */
     queryIsStereo(ssid, s);
     noticeStereoChanged(ssid, s);
 
+    resetRadioTextVisualBuffer();
+    
     update();
     return true;
 }
@@ -272,7 +284,7 @@ bool RadioViewFrequencyRadio::noticeStationChanged (const RadioStation &/*rs*/, 
     } else if (frs) {
         noticeFrequencyChanged(frs->frequency(), frs);
     }*/
-    m_RadioTextRing = QString();
+//     m_RadioTextRing = QString();
     return false;   // we don't care
 }
 
@@ -293,7 +305,7 @@ bool RadioViewFrequencyRadio::noticeRDSRadioTextChanged(const QString &s, const 
 {
     if (m_RDSRadioText != s) {
         m_RDSRadioText           = s;
-        updateRadioTextRing();
+//         updateRadioTextRing();
         update();
     }
     return true;
@@ -383,6 +395,9 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
 {
     BlockProfiler p("RadioViewFrequencyRadio::paintEvent");
 
+    QRect eraseRect = e->rect();
+    bool  onlyReadioText = m_radioTextRect.toRect().contains(eraseRect);
+
     // guarantee that the painter is destroyed before we call the QFrame::paintEvent
     {
 
@@ -468,140 +483,167 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
     const QPalette &pl = palette();
     QPalette::ColorGroup cg = isEnabled() ? (isActiveWindow() ? QPalette::Active : QPalette::Inactive) : QPalette::Disabled;
 
-    QPen   activePen      (pl.brush(cg, QPalette::Text), penw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
-    QPen   inactivePen    (pl.brush(cg, QPalette::Mid),  penw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+    m_activePen     = QPen(pl.brush(cg, QPalette::Text), penw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+    m_inactivePen   = QPen(pl.brush(cg, QPalette::Mid),  penw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+    m_activeBrush   = pl.brush(cg, QPalette::Text);
+    m_inactiveBrush = pl.brush(QPalette::Mid);
 
-    QBrush activeBrush   = pl.brush(cg, QPalette::Text);
-    QBrush inactiveBrush = pl.brush(QPalette::Mid);
+    if (!onlyReadioText) {
 
-    // draw stereo symbol
-    paint.setPen(  (m_stereo && m_power) ? activePen : inactivePen);
-    paint.drawArc(QRectF( xx_st,            xy_st, (xd_st - penw), (xd_st - penw)), 0, 360*16);
-    paint.drawArc(QRectF((xx_st + xd_st/2), xy_st, (xd_st - penw), (xd_st - penw)), 0, 360*16);
+        // draw stereo symbol
+        paint.setPen(  (m_stereo && m_power) ? m_activePen : m_inactivePen);
+        paint.drawArc(QRectF( xx_st,            xy_st, (xd_st - penw), (xd_st - penw)), 0, 360*16);
+        paint.drawArc(QRectF((xx_st + xd_st/2), xy_st, (xd_st - penw), (xd_st - penw)), 0, 360*16);
 
-    // draw signal quality symbol
-    qreal cx = xx_sg,
-          cy = xy_sg,
-          cw = xw,
-          ch = xw;
+        // draw signal quality symbol
+        qreal cx = xx_sg,
+              cy = xy_sg,
+              cw = xw,
+              ch = xw;
 
-    qreal open_a = 30.0;
-    // outer circle
-    paint.setPen(  (m_quality > 0.75 && m_power) ? activePen : inactivePen);
-    paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
+        qreal open_a = 30.0;
+        // outer circle
+        paint.setPen(  (m_quality > 0.75 && m_power) ? m_activePen : m_inactivePen);
+        paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
 
-    // mid circle
-    paint.setPen(  (m_quality > 0.50 && m_power) ? activePen : inactivePen);
-    cx += xw/5.0;  cy += xw/5.0;
-    cw -= xw/2.5;  ch -= xw/2.5;
-    paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
+        // mid circle
+        paint.setPen(  (m_quality > 0.50 && m_power) ? m_activePen : m_inactivePen);
+        cx += xw/5.0;  cy += xw/5.0;
+        cw -= xw/2.5;  ch -= xw/2.5;
+        paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
 
-    // inner circle
-    paint.setPen(  (m_quality > 0.25 && m_power) ? activePen : inactivePen);
-    cx += xw/5.0;  cy += xw/5.0;
-    cw -= xw/2.5;  ch -= xw/2.5;
-    paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
+        // inner circle
+        paint.setPen(  (m_quality > 0.25 && m_power) ? m_activePen : m_inactivePen);
+        cx += xw/5.0;  cy += xw/5.0;
+        cw -= xw/2.5;  ch -= xw/2.5;
+        paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
 
-    // triangle
-    QPen tmppen =    (m_quality > 0.1 && m_power) ? activePen   : inactivePen;
-    tmppen.setWidth(1);
-    paint.setPen(tmppen);
-    paint.setBrush(  (m_quality > 0.1 && m_power) ? activeBrush : inactiveBrush);
-    QPointF pts[3];
-    pts[0] = QPointF((xx_sg + xw      / 4.0), (xy_sg + xh_sg - penw/2.0));
-    pts[1] = QPointF((xx_sg + xw *3.0 / 4.0), (xy_sg + xh_sg - penw/2.0));
-    pts[2] = QPointF((xx_sg + xw      / 2.0), (xy_sg + xw/2.0  + penw));
-    paint.drawConvexPolygon(pts, 3);
-
-
-    // AM/FM display
+        // triangle
+        QPen tmppen =    (m_quality > 0.1 && m_power) ? m_activePen   : m_inactivePen;
+        tmppen.setWidth(1);
+        paint.setPen(tmppen);
+        paint.setBrush(  (m_quality > 0.1 && m_power) ? m_activeBrush : m_inactiveBrush);
+        QPointF pts[3];
+        pts[0] = QPointF((xx_sg + xw      / 4.0), (xy_sg + xh_sg - penw/2.0));
+        pts[1] = QPointF((xx_sg + xw *3.0 / 4.0), (xy_sg + xh_sg - penw/2.0));
+        pts[2] = QPointF((xx_sg + xw      / 2.0), (xy_sg + xw/2.0  + penw));
+        paint.drawConvexPolygon(pts, 3);
 
 
-    paint.setPen (  (m_frequency > 0 && m_frequency <= 10 && m_power) ? activePen : inactivePen);
-    f.setPixelSize(xh_am);
-    paint.setFont(f);
-    paint.drawText(QPointF(xx_am, xy_am + xh_am - 1), am_text);
+        // AM/FM display
 
-    paint.setPen (  (m_frequency > 0 && m_frequency >  10 && m_power) ? activePen : inactivePen);
-    f.setPixelSize(xh_fm);
-    paint.setFont(f);
-    paint.drawText(QPointF(xx_fm, xy_fm + xh_fm - 1), fm_text);
 
-    paint.setPen (  (m_url.isValid() > 0 && m_power) ? activePen : inactivePen);
-    f.setPixelSize(xh_net);
-    paint.setFont(f);
-    paint.drawText(QPointF(xx_net, xy_net + xh_net - 1), net_text);
+        paint.setPen (  (m_frequency > 0 && m_frequency <= 10 && m_power) ? m_activePen : m_inactivePen);
+        f.setPixelSize(xh_am);
+        paint.setFont(f);
+        paint.drawText(QPointF(xx_am, xy_am + xh_am - 1), am_text);
 
-    // RDS display
-    paint.setPen (  (m_RDS_enabled && m_power) ? activePen : inactivePen);
-    f.setPixelSize(xh_rds);
-    paint.setFont(f);
-    paint.drawText(QPointF(xx_rds, xy_rds + xh_rds - 1), rds_text);
+        paint.setPen (  (m_frequency > 0 && m_frequency >  10 && m_power) ? m_activePen : m_inactivePen);
+        f.setPixelSize(xh_fm);
+        paint.setFont(f);
+        paint.drawText(QPointF(xx_fm, xy_fm + xh_fm - 1), fm_text);
 
-    // Frequency Display
+        paint.setPen (  (m_url.isValid() > 0 && m_power) ? m_activePen : m_inactivePen);
+        f.setPixelSize(xh_net);
+        paint.setFont(f);
+        paint.drawText(QPointF(xx_net, xy_net + xh_net - 1), net_text);
 
-    QString s;
-    if (m_frequency > 0 && !m_url.isValid()) {
-        if (m_frequency < 10) {
-            s = i18n("%1 kHz", KGlobal::locale()->formatNumber((int)(m_frequency * 1000), 0));
-        } else {
-            s = i18n("%1 MHz", KGlobal::locale()->formatNumber(m_frequency, 2));
+        // RDS display
+        paint.setPen (  (m_RDS_enabled && m_power) ? m_activePen : m_inactivePen);
+        f.setPixelSize(xh_rds);
+        paint.setFont(f);
+        paint.drawText(QPointF(xx_rds, xy_rds + xh_rds - 1), rds_text);
+
+        // Frequency Display
+
+        QString s;
+        if (m_frequency > 0 && !m_url.isValid()) {
+            if (m_frequency < 10) {
+                s = i18n("%1 kHz", KGlobal::locale()->formatNumber((int)(m_frequency * 1000), 0));
+            } else {
+                s = i18n("%1 MHz", KGlobal::locale()->formatNumber(m_frequency, 2));
+            }
+        } else if (m_url.isValid()) {
+            s = m_station_name;
         }
-    } else if (m_url.isValid()) {
-        s = m_station_name;
-    }
 
-    qreal pxs = xh_f;
-    paint.setPen (  m_power ? activePen : inactivePen);
-    f.setPixelSize((int)pxs);
-    int n = 30;
-    while (1) {
-        QFontMetricsF fm(f);
-        qreal sw = fm.boundingRect(QRectF(xx_f, xy_f, xw_f, xh_f), Qt::AlignRight | Qt::AlignVCenter, s).width();
-        if (sw <= xw_f || --n <= 0) break;
+        qreal pxs = xh_f;
+        paint.setPen (  m_power ? m_activePen : m_inactivePen);
+        f.setPixelSize((int)pxs);
+        int n = 30;
+        while (1) {
+            QFontMetricsF fm(f);
+            qreal sw = fm.boundingRect(QRectF(xx_f, xy_f, xw_f, xh_f), Qt::AlignRight | Qt::AlignVCenter, s).width();
+            if (sw <= xw_f || --n <= 0) break;
 
-        qreal fact = xw_f / sw;
-        pxs = qMin(pxs - 1, pxs * fact);
-        f.setPixelSize(qMax(1,(int)pxs));
+            qreal fact = xw_f / sw;
+            pxs = qMin(pxs - 1, pxs * fact);
+            f.setPixelSize(qMax(1,(int)pxs));
+        }
+        paint.setFont(f);
+        paint.drawText(QRectF(xx_f, xy_f, xw_f, xh_f), Qt::AlignRight | Qt::AlignVCenter, s);
     }
-    paint.setFont(f);
-    paint.drawText(QRectF(xx_f, xy_f, xw_f, xh_f), Qt::AlignRight | Qt::AlignVCenter, s);
 
     // RDS Radio Text
-    if (m_power && m_RadioTextRing.length() && m_RadioTextRepaint) {
-        m_RadioTextRepaint = false;
-
-        paint.setPen (  m_power ? activePen : inactivePen);
-        f.setPixelSize((int)xh_rt);
-
-        bool    oldClipping       = paint.hasClipping();
-        QRegion oldClippingRegion = paint.clipRegion();
-        QRect   newClippingRegion(xx_rt, xy_rt, xw_rt, xh_rt);
-
-        paint.setClipRect(newClippingRegion);
-        paint.setClipping(true);
-
-        // find first visible character
-        QFontMetricsF fm(f);
-        qreal         tmp_w = 0;
-        while (m_RadioTextRing.length() && (m_RadioTextX0 + (tmp_w = fm.width(m_RadioTextRing.left(1))) < 0)) {
-            m_RadioTextX0   += tmp_w;
-            m_RadioTextRing =  m_RadioTextRing.mid(1);
-        }
-        updateRadioTextRing();
-
-        m_RadioTextDX            = fm.width(QString(" ")) / 2;
-
-        qreal max_width = (xw_rt - m_RadioTextX0) + fm.maxWidth();
-        int   n_chars   = (int)(max_width / fm.averageCharWidth() * 1.2);
-
-        paint.setFont(f);
-        paint.drawText(QRectF(xx_rt + m_RadioTextX0, xy_rt, xw_rt - m_RadioTextX0, xh_rt), Qt::AlignVCenter, m_RadioTextRing.left(n_chars));
-
-        paint.setClipRegion(oldClippingRegion);
-        paint.setClipping  (oldClipping);
-
+    if (m_power && m_RDSRadioText.length()) {
+        updateRadioTextVisualBuffer(QRectF(xx_rt, xy_rt, xw_rt, xh_rt));
+        paintRadioTextVisualBuffer(paint);
     }
+
+//     if (m_power && m_RadioTextRing.length() && m_RadioTextRepaint) {
+//         m_RadioTextRepaint = false;
+// 
+//         updateRadioTextVisualBuffer(QRectF(xx_rt, xy_rt, xw_rt, xh_rt));
+// 
+//         QPixmap    cachedImg(xw_rt, xh_rt);
+//         QPainter   cachedPainter;
+//         QBitmap    transpMask(xw_rt, xh_rt);
+//         transpMask.clear();
+//         cachedImg.setMask(transpMask);
+//         cachedImg.fill(Qt::transparent);
+//         cachedPainter.begin(&cachedImg);
+//         cachedPainter.setBackgroundMode(Qt::TransparentMode);
+// 
+//         paint.setPen        (  m_power ? m_activePen : m_inactivePen);
+//         cachedPainter.setPen(  m_power ? m_activePen : m_inactivePen);
+//         f.setPixelSize((int)xh_rt);
+// 
+// //         bool    oldClipping       = paint.hasClipping();
+// //         QRegion oldClippingRegion = paint.clipRegion();
+// //         QRect   newClippingRegion(xx_rt, xy_rt, xw_rt, xh_rt);
+// 
+// 
+// //         paint.setClipRect(newClippingRegion);
+// //         paint.setClipping(true);
+// 
+//         // find first visible character
+//         QFontMetricsF fm(f);
+//         qreal         tmp_w = 0;
+//         while (m_RadioTextRing.length() && (m_RadioTextX0 + (tmp_w = fm.width(m_RadioTextRing.left(1))) < 0)) {
+//             m_RadioTextX0   += tmp_w;
+//             m_RadioTextRing =  m_RadioTextRing.mid(1);
+//         }
+//         updateRadioTextRing();
+// 
+//         m_RadioTextDX            = fm.width(QString(" ")) / 2;
+// 
+//         qreal max_width = (xw_rt - m_RadioTextX0) + fm.maxWidth();
+//         int   n_chars   = (int)(max_width / fm.averageCharWidth() * 1.2);
+// 
+// //         paint.setFont(f);
+// //         paint.drawText(QRectF(xx_rt + m_RadioTextX0, xy_rt, xw_rt - m_RadioTextX0, xh_rt), Qt::AlignVCenter, m_RadioTextRing.left(n_chars));
+// 
+// //         cachedPainter.eraseRect(QRectF(0, 0, xw_rt, xh_rt));
+//         cachedPainter.setFont(f);
+//         cachedPainter.drawText(QRectF(m_RadioTextX0, 0, xw_rt - m_RadioTextX0, xh_rt), Qt::AlignVCenter, m_RadioTextRing.left(n_chars));
+//         QRectF  dstRect(xx_rt, xy_rt, xw_rt, xh_rt);
+//         QRectF  srcRect(0, 0, xw_rt, xh_rt);
+//         paint.drawPixmap(dstRect, cachedImg, srcRect);
+// 
+// //         paint.setClipRegion(oldClippingRegion);
+// //         paint.setClipping  (oldClipping);
+// 
+//     }
 
 
 
@@ -616,20 +658,20 @@ void RadioViewFrequencyRadio::resizeEvent(QResizeEvent *e)
     RadioViewElement::resizeEvent(e);
 }
 
-void RadioViewFrequencyRadio::updateRadioTextRing()
-{
-    if (m_RDSRadioText.length()) {
-        QString spaces  = "     ";
-        if (!m_RadioTextRing.length()) {
-            m_RadioTextRing = "          ";
-        }
-        while (m_RadioTextRing.length() < 160) { // 2 * max_msg_len (==2*64) + some spaces
-            m_RadioTextRing += spaces + m_RDSRadioText;
-        }
-    } else {
-        m_RadioTextRing = "";
-    }
-}
+// void RadioViewFrequencyRadio::updateRadioTextRing()
+// {
+//     if (m_RDSRadioText.length()) {
+//         QString spaces  = "     ";
+//         if (!m_RadioTextRing.length()) {
+//             m_RadioTextRing = "          ";
+//         }
+//         while (m_RadioTextRing.length() < 160) { // 2 * max_msg_len (==2*64) + some spaces
+//             m_RadioTextRing += spaces + m_RDSRadioText;
+//         }
+//     } else {
+//         m_RadioTextRing = "";
+//     }
+// }
 
 void RadioViewFrequencyRadio::setParent(QWidget * parent)
 {
@@ -648,12 +690,129 @@ void RadioViewFrequencyRadio::slotRadioTextTimer()
     //IErrorLogClient::staticLogDebug("RadioViewFrequencyRadio::slotRadioTextTimer()");
     BlockProfiler p("RadioViewFrequencyRadio::slotRadioTextTimer");
 
-    m_RadioTextX0      -= m_RadioTextDX;
-    m_RadioTextRepaint =  true;
+    advanceRadioTextVisualBuffer();
+
+//     m_RadioTextX0      -= m_RadioTextDX;
     if (m_RDSRadioText.length()) {
-        update();
+//         m_RadioTextRepaint =  true;
+        update(m_radioTextRect.toRect());
     }
 }
+
+void RadioViewFrequencyRadio::resetRadioTextVisualBuffer()
+{
+    // reset radio text buffer
+    updateRadioTextVisualBuffer(QRectF(0, 0, 0, 0));
+}
+
+
+
+void RadioViewFrequencyRadio::updateRadioTextVisualBuffer(QRectF newVisualRect)
+{
+    QSize newBufferSize(newVisualRect.width() * m_radioTextVisualBufferOverSizeFactor, ceil(newVisualRect.height()));
+    if (m_radioTextVisualBufferSize != newBufferSize) {
+        m_radioTextRect             = newVisualRect;
+        m_radioTextVisualBufferSize = newBufferSize;
+        m_radioTextVisualBuffer     = QPixmap(newBufferSize);
+        QBitmap    transpMask(newBufferSize);
+        transpMask.clear();
+        m_radioTextVisualBuffer.setMask(transpMask);
+        m_radioTextVisualBuffer.fill(Qt::transparent);
+        m_radioTextVisualBufferCurrentReadX  = 0;
+        m_radioTextVisualBufferCurrentWriteX = 0;
+
+        QFont f = m_font;
+        f.setPixelSize(m_radioTextVisualBufferSize.height());
+        QFontMetricsF fm(f);
+        m_RadioTextDX = qMax(1.0, floor(fm.width(QString(" ")) / 2.0 + 0.5));
+
+//         // DEBUG
+//         if (!m_bufferVisualizer) {
+//             m_bufferVisualizer = new TmpWidget();
+//             m_bufferVisualizer->setWindowTitle("visualizer test");
+//         }
+//         m_bufferVisualizer->resize(m_radioTextVisualBufferSize);
+//         m_bufferVisualizer->show();
+    }
+}
+
+
+void RadioViewFrequencyRadio::advanceRadioTextVisualBuffer()
+{
+    // unwrapped investigation
+    while (m_radioTextRect.isValid() && m_radioTextVisualBufferSize.isValid()) {
+        qreal uw_newReadX  = m_radioTextVisualBufferCurrentReadX + m_RadioTextDX;
+        qreal uw_newReadX2 = uw_newReadX + m_radioTextRect.width();
+        qreal uw_writeX    = m_radioTextVisualBufferCurrentWriteX + (m_radioTextVisualBufferCurrentWriteX < m_radioTextVisualBufferCurrentReadX ? m_radioTextVisualBufferSize.width() : 0);
+        if (uw_newReadX2 > uw_writeX) {
+            QFont    f     = m_font;
+            QPainter paint;
+            paint.begin(&m_radioTextVisualBuffer);
+            paint.setBackgroundMode(Qt::TransparentMode);
+            paint.setBackground(Qt::transparent);
+            paint.setCompositionMode(QPainter::CompositionMode_Source);
+
+            paint.setPen        (  m_power ? m_activePen : m_inactivePen);
+            f.setPixelSize(m_radioTextVisualBufferSize.height());
+            paint.setFont(f);
+            QRectF textBoundingRect = drawTextInRadioTextVisualBuffer(paint);
+            if (m_radioTextVisualBufferCurrentWriteX >= m_radioTextVisualBufferSize.width()) {
+                m_radioTextVisualBufferCurrentWriteX -= m_radioTextVisualBufferSize.width() + textBoundingRect.width();
+                drawTextInRadioTextVisualBuffer(paint);
+            }
+        } else {
+            break;
+        }
+    }
+    m_radioTextVisualBufferCurrentReadX = m_radioTextVisualBufferCurrentReadX + m_RadioTextDX;
+    if (m_radioTextVisualBufferCurrentReadX > m_radioTextVisualBufferSize.width()) {
+        m_radioTextVisualBufferCurrentReadX -= m_radioTextVisualBufferSize.width();
+    }
+//     if (m_bufferVisualizer) {
+//         m_bufferVisualizer->setPixmap(m_radioTextVisualBuffer);
+//     }
+}
+
+
+QRectF RadioViewFrequencyRadio::drawTextInRadioTextVisualBuffer(QPainter &paint)
+{
+    // FIXME: eraseBackground
+    QString       theText = m_RDSRadioText + "     ";
+    QRectF        textBoundingRect;
+    QFontMetricsF fm(paint.font());
+    paint.eraseRect(QRectF(m_radioTextVisualBufferCurrentWriteX, 0, fm.width(theText), m_radioTextVisualBufferSize.height()));
+    paint.drawText(QRectF(m_radioTextVisualBufferCurrentWriteX,
+                          0,
+                          m_radioTextVisualBufferSize.width() - m_radioTextVisualBufferCurrentWriteX,
+                          m_radioTextVisualBufferSize.height()),
+                   Qt::AlignVCenter,
+                   theText,
+                   &textBoundingRect
+                  );
+    m_radioTextVisualBufferCurrentWriteX += textBoundingRect.width();
+    return textBoundingRect;
+}
+
+
+void RadioViewFrequencyRadio::paintRadioTextVisualBuffer(QPainter &paint)
+{
+    qreal w    = m_radioTextRect.width();
+    qreal dstx = m_radioTextRect.left();
+    qreal srcx = m_radioTextVisualBufferCurrentReadX;
+    if (w > m_radioTextVisualBufferSize.width() - m_radioTextVisualBufferCurrentReadX) {
+        qreal w1 = m_radioTextVisualBufferSize.width() - m_radioTextVisualBufferCurrentReadX;
+        paint.drawPixmap(QRectF(dstx, m_radioTextRect.top(), w1, m_radioTextRect.height()),
+                         m_radioTextVisualBuffer,
+                         QRectF(srcx, 0, w1, m_radioTextRect.height()));
+        w    -= w1;
+        dstx += w1;
+        srcx  = 0;
+    }
+    paint.drawPixmap(QRectF(dstx, m_radioTextRect.top(), w, m_radioTextRect.height()),
+                     m_radioTextVisualBuffer,
+                     QRectF(srcx, 0, w, m_radioTextRect.height()));
+}
+
 
 
 #include "radioview_frequencyradio.moc"
