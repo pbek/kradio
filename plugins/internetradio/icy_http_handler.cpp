@@ -82,7 +82,12 @@ void IcyHttpHandler::jobDataAvailable(KIO::Job *job, QByteArray data)
     }
     while (data.size()) {
         // is it stream data?
-        if (m_ICYMetaInt <= 0 || (m_dataRest > 0)) {
+        if (m_ICYMetaInt <= 0) {
+            size_t chunk = data.size();
+            data = data.mid(chunk);
+            m_dataRest -= chunk;
+        }
+        else if (m_dataRest > 0) {
             size_t chunk = qMin(m_dataRest, (size_t)data.size());
             data = data.mid(chunk);
             m_dataRest -= chunk;
@@ -95,6 +100,7 @@ void IcyHttpHandler::jobDataAvailable(KIO::Job *job, QByteArray data)
                 m_metaData.clear();
             }
             size_t chunk = qMin(m_metaRest, (size_t)data.size());
+            // avoid that the buffer grows too large in case the transmission is broken by whatever
             if (m_metaData.size() + chunk > METADATA_MAX_SIZE) {
                 m_metaData.clear();
             }
