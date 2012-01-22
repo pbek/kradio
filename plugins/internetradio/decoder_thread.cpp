@@ -37,8 +37,11 @@
 #include "decoder_thread.h"
 #include "errorlog_interfaces.h"
 
-#include "libavformat/avio.h"
 #include "libav-global.h"
+extern "C" {
+  #include "libavformat/avio.h"
+  #include "libavformat/avformat.h"
+}
 
 
 #define DEFAULT_MMS_BUFFER_SIZE         65536
@@ -56,7 +59,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject *event_parent,
     m_av_audioStream      (-1),
     m_av_aCodecCtx        (NULL),
     m_av_aCodec           (NULL),
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
     m_av_byteio_contextPtr(NULL),
 #endif
 
@@ -139,8 +142,9 @@ bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_
     char *output_buf             = NULL;
     int   generated_output_bytes = 0;
           processed_input_bytes  = 0;
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
     int   got_frame              = 0;
-
+#endif
     AVPacket  effective_packet;
     effective_packet.data = audio_pkt_data;
     effective_packet.size = audio_pkt_size;
@@ -478,9 +482,9 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
     m_av_pFormatCtx->max_analyze_duration = m_maxAnalyzeTime * AV_TIME_BASE;
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
     AVDictionary  *av_params = NULL;
-    av_dict_set(&av_params, "key", "value", 0);
+    //av_dict_set(&av_params, "key", "value", 0);
 #else
     AVFormatParameters av_params;
     memset(&av_params, 0, sizeof(av_params));
@@ -498,7 +502,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
 
     m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE), //(unsigned char*)m_mms_buffer,
                                                 DEFAULT_MMS_BUFFER_SIZE,            //sizeof(m_mms_buffer),
@@ -545,7 +549,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     if (iformat) { // format setup / detection worked well ==> open stream
             int err = -1;
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
             m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
             err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
 
@@ -582,7 +586,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
             }
             closeAVStream();
         } else {
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
             m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE), // (unsigned char*)m_mms_buffer,
                                                         DEFAULT_MMS_BUFFER_SIZE,            // sizeof(m_mms_buffer),
                                                         /*write_flag = */ false,
@@ -610,7 +614,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
         if (iformat && m_mms_stream) {
             int err = -1;
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
             m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
             err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
 
@@ -637,7 +641,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 //         IErrorLogClient::staticLogDebug("InternetRadioDecoder::openAVStream: av_open_input_file start");
         int open_result = -1;
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
         open_result = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
 
         if (open_result != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled
@@ -666,7 +670,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
     av_dict_free(&av_params);
 #endif
 
@@ -677,7 +681,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
     // Retrieve stream information
     int err = -1;
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
     err = avformat_find_stream_info(m_av_pFormatCtx, NULL);
 #else
     err = av_find_stream_info(m_av_pFormatCtx);
@@ -802,7 +806,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         return;
     }
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
     err = avcodec_open2(m_av_aCodecCtx, m_av_aCodec, NULL);
 #else
     err = avcodec_open(m_av_aCodecCtx, m_av_aCodec);
@@ -823,7 +827,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 void InternetRadioDecoder::freeAVIOContext()
 {
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
     if (m_av_byteio_contextPtr) {
         if (m_av_byteio_contextPtr->buffer) {
             av_free(m_av_byteio_contextPtr->buffer);
@@ -833,9 +837,9 @@ void InternetRadioDecoder::freeAVIOContext()
         m_av_byteio_contextPtr = NULL;
     }
 #else
-    if (m_av_byteio_context->buffer) {
-        av_free(m_av_byteio_context->buffer);
-        m_av_byteio_context->buffer = NULL;
+    if (m_av_byteio_context.buffer) {
+        av_free(m_av_byteio_context.buffer);
+        m_av_byteio_context.buffer = NULL;
     }
 #endif
     if (m_av_pFormatCtx) {
