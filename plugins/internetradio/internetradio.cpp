@@ -41,6 +41,7 @@
 #include "decoder_thread.h"
 
 #include "internetradio-configuration.h"
+#include "icy_http_handler.h"
 
 
 #ifdef KRADIO_ENABLE_FIXMES
@@ -1309,11 +1310,16 @@ void InternetRadio::slotStreamContinue()
 void InternetRadio::slotStreamDone(KJob *job)
 {
     if (m_streamJob == job) {
+        bool err = false;
         if (m_streamJob->error()) {
             logError(i18n("Failed to load stream data for %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
-            tryNextStream();
+            err = true;
         }
         stopStreamDownload();
+        if (err) {
+            m_currentStreamRetriesLeft = 0;
+            tryNextStream();
+        }
     }
     job->deleteLater();
 }
