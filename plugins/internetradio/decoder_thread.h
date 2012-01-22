@@ -131,7 +131,7 @@ protected:
     int                   m_av_audioStream;
     AVCodecContext       *m_av_aCodecCtx;
     AVCodec              *m_av_aCodec;
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
     AVIOContext          *m_av_byteio_contextPtr;
 #else
     ByteIOContext         m_av_byteio_context;
