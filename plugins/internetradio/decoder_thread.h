@@ -90,6 +90,7 @@ public:
     bool                  initDone() const    { return m_decoderOpened; }
 
     // sound format is only valid if initDone returns true
+    void                  updateSoundFormat();
     const SoundFormat    &soundFormat() const { return m_soundFormat; }
 
     // output buffers

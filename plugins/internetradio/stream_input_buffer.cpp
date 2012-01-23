@@ -17,6 +17,8 @@
 
 #include "stream_input_buffer.h"
 
+#include <stdio.h>
+
 StreamInputBuffer::StreamInputBuffer(int max_size)
   : m_inputBufferMaxSize(max_size),
     m_inputBufferSize   (0),
@@ -42,21 +44,27 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
     m_readPending = minSize;
 
     // block until at least 1 byte is readable
+//     printf ("buffer start read(minsize = %zi, maxsize = %zi) - acquire\n", minSize, maxSize);
     m_inputBufferSize.acquire(minSize);
 
     {   QMutexLocker  lock(&m_inputBufferAccessLock);
+//         printf ("buffer start read(minsize = %zi, maxsize = %zi) - locked\n", minSize, maxSize);
 
         // cleanup after possible reset conditions
         int n_suggested = m_inputBufferSize.available() + minSize;
         int n_real      = m_inputBuffer.size();
         if (n_suggested > n_real) {
-            m_inputBufferSize.acquire(n_suggested - n_real);
+            if (n_suggested - n_real - minSize > 0) {
+                m_inputBufferSize.acquire(n_suggested - n_real - minSize);
+            }
+//             printf ("buffer reset detected\n");
             resetDetected = true;
         }
 
         QByteArray shared = m_inputBuffer.left(maxSize);
+//         printf ("reading stream input buffer: shared.size = %i\n", shared.size());
 
-        if (!resetDetected && (size_t)shared.size() > minSize) {
+        if (!resetDetected && (size_t)shared.size() >= minSize) {
             retval = QByteArray(shared.data(), shared.size()); // force deep copy for threading reasons
             if (consume) {
                 m_inputBuffer.remove(0, retval.size());
@@ -80,6 +88,7 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
         m_readPending = 0;
     }
 
+//     printf ("reading stream input buffer: %i bytes (min = %zi, max = %zi)\n", retval.size(), minSize, maxSize);
     if (!isfull) {
         emit sigInputBufferNotFull();
     }
@@ -95,12 +104,16 @@ void StreamInputBuffer::writeInputBuffer(const QByteArray &data, bool &isFull, c
     isFull     = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
     m_inputUrl = inputUrl;
     m_inputBufferSize.release(data.size());
+
+//     printf ("wrote stream input buffer: %i bytes\n", data.size());
 }
 
 
 void StreamInputBuffer::resetBuffer()
 {
     QMutexLocker  lock(&m_inputBufferAccessLock);
+
+//     printf ("reset input buffer\n");
 
     while (m_inputBufferSize.available()) {
         m_inputBufferSize.tryAcquire(m_inputBufferSize.available());

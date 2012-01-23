@@ -247,6 +247,8 @@ bool InternetRadioDecoder::readFrame(AVPacket &pkt)
 
     m_inputUrl = m_streamInputBuffer->getInputUrl();
 
+//     printf ("readFrame: res = %i", frame_read_res);
+
     if (frame_read_res < 0) {
         if (frame_read_res == (int)AVERROR_EOF || (m_av_pFormatCtx->pb && m_av_pFormatCtx->pb->eof_reached)) {
             m_done = true;
@@ -275,7 +277,7 @@ void InternetRadioDecoder::run()
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
         selectStreamFromPlaylist();
 #else
-        openAVStream(m_inputUrl.pathOrUrl(), true);
+        openAVStream(m_inputUrl.pathOrUrl(), false);
 #endif
 
         AVPacket    pkt;
@@ -782,31 +784,6 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
     m_av_aCodecCtx = m_av_pFormatCtx->streams[m_av_audioStream]->codec;
 
-
-    int fmt      = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
-    int bits     = 0;
-    int issigned = 0;
-    switch(fmt) {
-        case AV_SAMPLE_FMT_U8:
-            bits     = 8;
-            issigned = false;
-            break;
-        case AV_SAMPLE_FMT_S16:
-            bits     = 16;
-            issigned = true;
-            break;
-        case AV_SAMPLE_FMT_S32:
-            bits     = 32;
-            issigned = true;
-            break;
-        default:
-            addErrorString(i18n("Cannot use libav sample format id %1").arg(fmt));
-            closeAVStream();
-            return;
-    }
-
-    m_soundFormat = SoundFormat(m_av_aCodecCtx->sample_rate, m_av_aCodecCtx->channels, bits, issigned);
-
     if (!m_av_aCodec) {
         m_av_aCodec = avcodec_find_decoder(m_av_aCodecCtx->codec_id);
     }
@@ -835,7 +812,38 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         return;
     }
 
+    updateSoundFormat();
     m_decoderOpened = true;
+}
+
+
+
+void InternetRadioDecoder::updateSoundFormat()
+{
+    if (m_av_aCodecCtx) {
+        int fmt      = m_av_aCodecCtx->sample_fmt;
+        int bits     = 0;
+        int issigned = 0;
+        switch(fmt) {
+            case AV_SAMPLE_FMT_U8:
+                bits     = 8;
+                issigned = false;
+                break;
+            case AV_SAMPLE_FMT_S16:
+                bits     = 16;
+                issigned = true;
+                break;
+            case AV_SAMPLE_FMT_S32:
+                bits     = 32;
+                issigned = true;
+                break;
+            default:
+                addErrorString(i18n("Cannot use libav sample format id %1").arg(fmt));
+                closeAVStream();
+                return;
+        }
+        m_soundFormat = SoundFormat(m_av_aCodecCtx->sample_rate, m_av_aCodecCtx->channels, bits, issigned);
+    }
 }
 
 

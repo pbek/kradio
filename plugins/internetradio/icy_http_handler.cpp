@@ -192,8 +192,9 @@ void IcyHttpHandler::handleStreamData(const QByteArray &data)
 //         logDebug(QString("stream data: %1 bytes").arg(data.size()));
     if (m_inputBuffer) {
         bool isfull = false;
-        m_inputBuffer->writeInputBuffer(data, isfull, m_currentStreamUrl);
+        m_inputBuffer->writeInputBuffer(QByteArray(data.data(), data.size()), isfull, m_currentStreamUrl);
         if (isfull) {
+//             printf ("stream SUSPENDED\n");
             m_streamJob->suspend();
         }
     }
@@ -206,7 +207,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
     if (m_metaData.size() + data.size() > METADATA_MAX_SIZE) {
         m_metaData.clear();
     }
-    m_metaData.append(data);
+    m_metaData.append(QByteArray(data.data(), data.size()));
     if (complete) {
         QString metaString = QString::fromUtf8(m_metaData.data());
         if (metaString.size()) {
@@ -268,10 +269,12 @@ void IcyHttpHandler::slotStreamData(KIO::Job *job, QByteArray data)
         if (!m_httpHeaderAnalyzed) {
             analyzeHttpHeader(job);
         }
+//         printf ("received packet: %i bytes\n", data.size());
         while (data.size()) {
             // is it stream data?
             if (m_ICYMetaInt <= 0 || m_dataRest > 0) {
                 size_t chunk = m_ICYMetaInt > 0 ? qMin(m_dataRest, (size_t)data.size()) : data.size();
+//                 printf ("    stream chunk: %zi bytes\n", chunk);
                 handleStreamData(data.left(chunk));
                 data = data.mid(chunk);
                 m_dataRest -= chunk;
@@ -283,6 +286,7 @@ void IcyHttpHandler::slotStreamData(KIO::Job *job, QByteArray data)
                     data = data.mid(1);
                 }
                 size_t     chunk        = qMin(m_metaRest, (size_t)data.size());
+//                 printf ("    meta chunk: %zi + 1 bytes\n", chunk);
                 QByteArray mdata        = data.left(chunk);
                            m_metaRest   -= chunk;
                 bool       metaComplete = m_metaRest <= 0;
@@ -301,6 +305,7 @@ void IcyHttpHandler::slotStreamContinue()
 {
     if (m_streamJob) {
         m_streamJob->resume();
+//         printf ("stream CONTINUED\n");
     }
 }
 
