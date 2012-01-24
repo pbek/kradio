@@ -74,6 +74,8 @@ struct KDE_EXPORT SoundFormat {
 
     void     scaleSamples(char *_src, float scale, size_t n_frames) const;
 
+    bool     isValid() const { return m_SampleRate > 1000 && m_Channels > 0 && m_SampleBits >= 8; }
+
 };
 
 
