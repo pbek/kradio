@@ -1122,6 +1122,7 @@ void InternetRadio::interpretePlaylistData(const QByteArray &a)
     }
     if (!m_currentPlaylist.size()) {
         logError(i18n("%1 does not contain any usable radio stream", m_currentStation.url().pathOrUrl()));
+        powerOff();
     }
 
 /*    logDebug("Playlist:");
