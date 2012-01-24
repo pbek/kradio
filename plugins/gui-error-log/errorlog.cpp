@@ -146,6 +146,7 @@ void    ErrorLog::hideEvent(QHideEvent *e)
 
 bool ErrorLog::logError  (const QString &s)
 {
+    QMutexLocker   lock(&m_sequentializer);
     m_teErrors->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
     if (init_done) {
         setCurrentPage(m_errors);
@@ -156,18 +157,21 @@ bool ErrorLog::logError  (const QString &s)
 
 bool ErrorLog::logWarning(const QString &s)
 {
+    QMutexLocker   lock(&m_sequentializer);
     m_teWarnings->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
     return true;
 }
 
 bool ErrorLog::logInfo   (const QString &s)
 {
+    QMutexLocker   lock(&m_sequentializer);
     m_teInfos->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
     return true;
 }
 
 bool ErrorLog::logDebug   (const QString &s)
 {
+    QMutexLocker   lock(&m_sequentializer);
     m_teDebug->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
     return true;
 }

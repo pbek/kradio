@@ -19,6 +19,7 @@
 #define KRADIO_ERRORLOG_H
 
 #include <kpagedialog.h>
+#include <QtCore/QMutex>
 
 #include "errorlog_interfaces.h"
 #include "widgetpluginbase.h"
@@ -91,7 +92,9 @@ protected:
                     *m_warnings,
                     *m_errors;
 
-    bool        init_done;
+    bool             init_done;
+
+    QMutex           m_sequentializer;
 };
 
 #endif
