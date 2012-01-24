@@ -221,6 +221,10 @@ bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_
                               )
                          );
 
+        if (!m_soundFormat.isValid()) {
+            updateSoundFormat();
+        }
+
         DataBuffer buf(output_buf, generated_output_bytes, md, m_soundFormat);
 
 //                     printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
@@ -924,8 +928,12 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
     StreamInputBuffer *x = static_cast<StreamInputBuffer*>(opaque);
     KUrl               url;
     QByteArray tmp = x->readInputBuffer(1, max_size, url, /* consume */ true);
-    memcpy(buffer, tmp.constData(), tmp.size());
-    return tmp.size();
+    if (tmp.size() > 0) {
+        memcpy(buffer, tmp.constData(), tmp.size());
+        return tmp.size();
+    } else {
+        return -1;
+    }
 }
 
 
