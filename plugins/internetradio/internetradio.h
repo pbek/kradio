@@ -186,6 +186,7 @@ protected slots:
     void    slotDecoderThreadFinished();
 
     void    slotMetaDataUpdate(QMap<QString, QString> metadata);
+    void    slotDownloadError();
 
 // #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 //     void    slotStreamData(KIO::Job *job, const QByteArray &data);

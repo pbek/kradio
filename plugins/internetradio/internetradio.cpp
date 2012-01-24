@@ -97,6 +97,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_streamInputBuffer = new StreamInputBuffer(128 * 1024);         // FIXME: make buffer configurable
     m_icyHttpHandler    = new IcyHttpHandler(m_streamInputBuffer);
     connect(m_icyHttpHandler, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)), this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
+    connect(m_icyHttpHandler, SIGNAL(sigErrorPlaylist(KUrl)),                   this, SLOT(slotDownloadError()));
 #endif
 }
 
@@ -1250,6 +1251,10 @@ void InternetRadio::slotMetaDataUpdate(QMap<QString, QString> metadata)
     }
 }
 
+void InternetRadio::slotDownloadError()
+{
+    powerOff();
+}
 
 // #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 // 

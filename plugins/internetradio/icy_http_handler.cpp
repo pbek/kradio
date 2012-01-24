@@ -72,7 +72,7 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url)
         QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
         QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
     } else {
-        logError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_currentStreamUrl.pathOrUrl()));
+        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_currentStreamUrl.pathOrUrl()));
         emit sigErrorStream(m_currentStreamUrl);
         stopCurrentStreamDownload();
     }
@@ -92,7 +92,7 @@ void IcyHttpHandler::startCurrentStreamJob()
     emit sigStartedStream(m_currentStreamUrl);
 
     if (m_streamJob->error()) {
-        logError(i18n("Failed to start stream download of %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
         emit sigErrorStream(m_currentStreamUrl);
         stopCurrentStreamDownload();
     }
@@ -132,7 +132,7 @@ void IcyHttpHandler::tryNextStream()
             setupStreamJob(m_currentPlaylist[(m_currentStreamIdx + m_randStreamIdxOffset) % m_currentPlaylist.size()]);
             startCurrentStreamJob();
         } else {
-            logError(i18n("Failed to start any stream of %1").arg(m_currentStation.longName()));
+            IErrorLogClient::staticLogError(i18n("Failed to start any stream of %1").arg(m_currentStation.longName()));
             stopStreamDownload();
 
             m_active = false;
@@ -315,9 +315,19 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
     if (m_streamJob == job) {
         bool local_err = false;
         if (m_streamJob->error()) {
-            logError(i18n("Failed to load stream data for %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+            IErrorLogClient::staticLogError(i18n("Failed to load stream data for %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
             local_err = true;
             emit sigErrorStream(m_currentStreamUrl);
+        }
+
+        KIO::MetaData md = m_streamJob->metaData();
+        if (md.contains("HTTP-Headers")) {
+            int http_response_code = md["responsecode"].toInt();
+            if (http_response_code < 200 || http_response_code >= 300) {
+                IErrorLogClient::staticLogError(i18n("HTTP error %1 for stream %2").arg(http_response_code).arg(m_currentStreamUrl.pathOrUrl()));
+                emit sigErrorStream(m_currentStreamUrl);
+                local_err = true;
+            }
         }
         if (local_err) {
             stopCurrentStreamDownload();
