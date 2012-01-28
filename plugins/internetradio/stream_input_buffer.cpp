@@ -41,7 +41,9 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
     bool       resetDetected = false;
     QByteArray retval;
 
-    m_readPending = minSize;
+    {   QMutexLocker  lock(&m_inputBufferAccessLock);
+        m_readPending += minSize;
+    }
 
     // block until at least 1 byte is readable
 //     printf ("buffer start read(minsize = %zi, maxsize = %zi) - acquire\n", minSize, maxSize);
@@ -85,7 +87,7 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
         // let's hope that this is really a deep copy
         currentUrl_out = m_inputUrl.url();
 
-        m_readPending = 0;
+        m_readPending -= minSize;
     }
 
 //     printf ("reading stream input buffer: %i bytes (min = %zi, max = %zi)\n", retval.size(), minSize, maxSize);
