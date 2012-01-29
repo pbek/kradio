@@ -44,21 +44,17 @@ public:
     // FIXME: parent class with standardized interface
     // FIXME: parent class which cares about playlist handling
 
-    void                        startStreamDownload(const KUrl::List &urls, const InternetRadioStation &rs, int max_retries);
+    void                        startStreamDownload(KUrl url);
     void                        stopStreamDownload();
 
 signals:
-    // sigs emitted for each stream
-    void                        sigErrorStream(const KUrl &url);
-    void                        sigFinishedStream(const KUrl &url);
-    void                        sigStartedStream(const KUrl &url);
-    // sigs emitted only for the playlist
-    void                        sigErrorPlaylist(const KUrl &url);  // only emitted when all playlist entries fail
-    void                        sigFinishedPlaylist(const KUrl &url);
-    void                        sigStartedPlaylist(const KUrl &url);
+    void                        sigError(KUrl url);
+    void                        sigFinished(KUrl url);
+    void                        sigStarted(KUrl url);
+
+    void                        sigUrlChanged(KUrl url);
 
     void                        sigMetaDataUpdate(QMap<QString, QString> metadata);
-    void                        sigUrlChanged(KUrl url);
 
 protected slots:
     void                        slotStreamData(KIO::Job *job, QByteArray data);
@@ -67,9 +63,7 @@ protected slots:
 
 protected:
     void                        setupStreamJob(const KUrl &url);
-    void                        startCurrentStreamJob();
-    void                        tryNextStream();
-    void                        stopCurrentStreamDownload();
+    void                        startStreamJob();
 
     void                        analyzeHttpHeader(KIO::Job *job);
     void                        handleStreamData(const QByteArray &data);
@@ -82,20 +76,8 @@ protected:
     size_t                      m_metaRest;
     QByteArray                  m_metaData;
 
-
-    InternetRadioStation        m_currentStation;
-    KUrl::List                  m_currentPlaylist;
-    KUrl                        m_currentStreamUrl;
-    int                         m_currentStreamIdx;
-    int                         m_currentStreamRetriesMax;
-    int                         m_currentStreamRetriesLeft;
-    int                         m_randStreamIdxOffset;
-
-    bool                        m_error;
-    bool                        m_active;
-
+    KUrl                        m_streamUrl;
     KIO::TransferJob           *m_streamJob;
-
     StreamInputBuffer          *m_inputBuffer;
 };
 

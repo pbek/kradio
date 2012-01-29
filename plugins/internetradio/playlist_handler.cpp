@@ -51,9 +51,10 @@ void PlaylistHandler::resetError()
     m_error = false;
 }
 
-void PlaylistHandler::setPlayListUrl(const InternetRadioStation &s)
+void PlaylistHandler::setPlayListUrl(const InternetRadioStation &s, int maxStreamRetries)
 {
-    m_currentStation = s;
+    m_currentStation   = s;
+    m_maxStreamRetries = maxStreamRetries;
 }
 
 
@@ -66,7 +67,7 @@ void PlaylistHandler::startPlaylistDownload()
 
 void PlaylistHandler::stopPlaylistDownload()
 {
-    loadPlaylistStartJob();
+    loadPlaylistStopJob();
 }
 
 

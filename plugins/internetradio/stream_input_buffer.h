@@ -37,7 +37,7 @@ public:
     void                  resetBuffer();
 
     void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
-    QByteArray            readInputBuffer(size_t minSize, size_t maxSize, KUrl &currentUrl_out, bool consume);
+    QByteArray            readInputBuffer(size_t minSize, size_t maxSize, KUrl &currentUrl_out, bool consume, bool &err);
     KUrl                  getInputUrl() const;
 
 signals:

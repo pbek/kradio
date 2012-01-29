@@ -45,7 +45,7 @@ signals:
     void        sigError(QString errorMsg);
 
 public slots:
-    void        setPlayListUrl(const InternetRadioStation &s);
+    void        setPlayListUrl(const InternetRadioStation &s, int maxStreamRetries);
     void        startPlaylistDownload();
     void        stopPlaylistDownload();
     void        selectNextStream(bool allowRetrySameString, bool errorIfEOL);

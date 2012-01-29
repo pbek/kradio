@@ -162,7 +162,7 @@ protected slots:
     void    slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
 //     void slotMimetypeResult(KIO::Job *job, const QString &type);
 
-    // playlist handling
+    // playlist handling via PlaylistHandler object
     void    slotPlaylistLoaded(KUrl::List playlist);
     void    slotPlaylistStreamSelected(KUrl stream);
     void    slotPlaylistError(QString errorMsg);
@@ -190,15 +190,22 @@ protected slots:
     void    slotDecoderThreadFinished();
 
     void    slotMetaDataUpdate(QMap<QString, QString> metadata);
-    void    slotDownloadError();
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     void    slotInputStreamUrlChanged(KUrl url);
+    void    slotStreamError   (KUrl url);
+    void    slotStreamFinished(KUrl url);
+    void    slotStreamStarted (KUrl url);
 #endif
 
 protected:
     void    startDecoderThread();
     void    stopDecoderThread();
+
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    void    startStreamReader(KUrl stream);
+    void    stopStreamReader();
+#endif
 
     void    searchMixer(ISoundStreamClient **playback_mixer);
 
@@ -241,6 +248,7 @@ protected:
 
     int                           m_maxStreamProbeSize;    // in bytes,   see DecoderThread::openAVStream
     float                         m_maxStreamAnalyzeTime;  // in seconds, see DecoderThread::openAVStream
+    int                           m_maxStreamRetries;
 
     bool                          m_waitForBufferMinFill;
 };

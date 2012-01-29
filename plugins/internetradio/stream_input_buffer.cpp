@@ -39,8 +39,10 @@ StreamInputBuffer::~StreamInputBuffer()
 
 
 // blocking function if buffer is empty!
-QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KUrl &currentUrl_out, bool consume)
+QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KUrl &currentUrl_out, bool consume, bool &err)
 {
+    minSize = qMin(minSize, maxSize);
+
     bool       isfull        = false;
     bool       resetDetected = false;
     QByteArray retval;
@@ -62,7 +64,7 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
         // the acquire above succeeded.
         // For us it means, that the requested minSize is completely unavailable from the buffer.
         if (m_readPendingReleased > 0) {
-            printf ("buffer reset detected\n");
+//             printf ("buffer reset detected\n");
             resetDetected = true;
             if (minSize > m_readPendingReleased) {
                 // this should never happen, but let's handle it gracefully:
@@ -72,24 +74,12 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
             m_readPendingReleased -= qMin(m_readPendingReleased, minSize);
         }
 
-//         // cleanup after possible reset conditions
-//         int n_suggested = m_inputBufferSize.available() + minSize;
-//         int n_real      = m_inputBuffer.size();
-//         if (n_suggested > n_real) {
-//             if (n_suggested - n_real - minSize > 0) {
-//                 m_inputBufferSize.acquire(n_suggested - n_real - minSize);
-//             }
-// //             printf ("buffer reset detected\n");
-//             resetDetected = true;
-//         }
-//
-
         // although it should not happen, we need to consider that some other process could
         // be also acquiring concurrently
-        maxSize = qMin(maxSize, (size_t)m_inputBufferSize.available() + minSize);
-        maxSize -= maxSize % 8; // alignment! Otherwise decoder might fail!
-        printf ("bufferSize = %i      maxSize = %zi\n", m_inputBuffer.size(), maxSize);
-        QByteArray shared = m_inputBuffer.left(maxSize);
+        size_t realSize = qMin(maxSize, (size_t)m_inputBufferSize.available() + minSize);
+//         realSize = qMax(minSize, realSize - realSize % 8); // alignment! Otherwise decoder might fail!
+//         printf ("bufferSize = %i      minSize = %zi,  maxSize = %zi       realSize = %zi\n", m_inputBuffer.size(), minSize, maxSize, realSize);
+        QByteArray shared = m_inputBuffer.left(realSize);
 //         printf ("reading stream input buffer: shared.size = %i\n", shared.size());
 
         if (!resetDetected && (size_t)shared.size() >= minSize) {
@@ -122,6 +112,7 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
     if (!isfull) {
         emit sigInputBufferNotFull();
     }
+    err = resetDetected;
     return retval;
 }
 
@@ -130,12 +121,14 @@ void StreamInputBuffer::writeInputBuffer(const QByteArray &data, bool &isFull, c
 {
     QMutexLocker  lock(&m_inputBufferAccessLock);
 
+//     int oldSize = m_inputBuffer.size();
+
     m_inputBuffer.append(data.data(), data.size()); // force deep copy
     isFull     = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
     m_inputUrl = inputUrl;
     m_inputBufferSize.release(data.size());
 
-//     printf ("wrote stream input buffer: %i bytes\n", data.size());
+//     printf ("wrote stream input buffer: %i bytes (oldSize = %i, newSize = %i)\n", data.size(), oldSize, m_inputBuffer.size());
 }
 
 

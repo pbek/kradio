@@ -36,12 +36,6 @@ IcyHttpHandler::IcyHttpHandler(StreamInputBuffer *buffer)
     m_ICYMetaInt              (0),
     m_dataRest                (0),
     m_metaRest                (0),
-    m_currentStreamIdx        (-1),
-    m_currentStreamRetriesMax (2),
-    m_currentStreamRetriesLeft(-1),
-    m_randStreamIdxOffset     (-1),
-    m_error                   (false),
-    m_active                  (false),
     m_streamJob               (NULL),
     m_inputBuffer             (buffer)
 {
@@ -58,15 +52,15 @@ IcyHttpHandler::~IcyHttpHandler()
 void IcyHttpHandler::setupStreamJob(const KUrl &url)
 {
     // stop old job if present
-    stopCurrentStreamDownload();
+    stopStreamDownload();
 
     // start download job
-    m_currentStreamUrl = url;
-    IErrorLogClient::staticLogDebug(i18n("opening stream %1", m_currentStreamUrl.pathOrUrl()));
+    m_streamUrl = url;
+    IErrorLogClient::staticLogDebug(i18n("opening stream %1", m_streamUrl.pathOrUrl()));
 
-    emit sigUrlChanged(m_currentStreamUrl);
+    emit sigUrlChanged(m_streamUrl);
 
-    m_streamJob = KIO::get(m_currentStreamUrl, KIO::NoReload, KIO::HideProgressInfo);
+    m_streamJob = KIO::get(m_streamUrl, KIO::NoReload, KIO::HideProgressInfo);
     if (m_streamJob) {
         m_streamJob->addMetaData("customHTTPHeader", "Icy-MetaData:1");
         m_streamJob->addMetaData("PropagateHttpHeader", "true");
@@ -74,78 +68,46 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url)
         QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
         QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
     } else {
-        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_currentStreamUrl.pathOrUrl()));
-        emit sigErrorStream(m_currentStreamUrl);
-        stopCurrentStreamDownload();
+        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_streamUrl.pathOrUrl()));
+        stopStreamDownload();
+        emit sigError(m_streamUrl);
     }
 }
 
 
-void IcyHttpHandler::startCurrentStreamJob()
+void IcyHttpHandler::startStreamJob()
 {
     m_httpHeaderAnalyzed = false;
     m_ICYMetaInt         = 0;
     m_dataRest           = 0;
     m_metaRest           = 0;
 
-    m_inputBuffer->resetBuffer();
+//     m_inputBuffer->resetBuffer();
 
     m_streamJob->start();
-    emit sigStartedStream(m_currentStreamUrl);
+    emit sigStarted(m_streamUrl);
 
     if (m_streamJob->error()) {
-        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
-        emit sigErrorStream(m_currentStreamUrl);
-        stopCurrentStreamDownload();
+        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+        stopStreamDownload();
+        emit sigError(m_streamUrl);
     }
 }
 
 
-void IcyHttpHandler::startStreamDownload(const KUrl::List &urls, const InternetRadioStation &rs, int max_retries)
+void IcyHttpHandler::startStreamDownload(KUrl url)
 {
     // just in case, stop current downloads
     stopStreamDownload();
 
-    m_currentPlaylist          = urls;
-    m_currentStation           = rs;
-    m_currentStreamRetriesMax  = max_retries;
-    
-    m_randStreamIdxOffset      = rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
-    m_currentStreamIdx         = 0;
-    m_currentStreamRetriesLeft = m_currentStreamRetriesMax;
+    m_streamUrl = url;
 
-    m_active                   = true;
-    m_error                    = false;
-
-    emit sigStartedPlaylist(m_currentStation.url());
-
-    tryNextStream();
+    setupStreamJob(m_streamUrl);
+    startStreamJob();
 }
 
 
-void IcyHttpHandler::tryNextStream()
-{
-    do {
-        if (--m_currentStreamRetriesLeft < 0) {
-            ++m_currentStreamIdx;
-            m_currentStreamRetriesLeft = m_currentStreamRetriesMax;
-        }
-        if (m_active && m_currentStreamIdx < m_currentPlaylist.size()) {
-            setupStreamJob(m_currentPlaylist[(m_currentStreamIdx + m_randStreamIdxOffset) % m_currentPlaylist.size()]);
-            startCurrentStreamJob();
-        } else {
-            IErrorLogClient::staticLogError(i18n("Failed to start any stream of %1").arg(m_currentStation.longName()));
-            stopStreamDownload();
-
-            m_active = false;
-            m_error  = true;
-            emit sigErrorPlaylist(m_currentStation.url());
-        }
-    } while (m_active && !m_streamJob);
-}
-
-
-void IcyHttpHandler::stopCurrentStreamDownload()
+void IcyHttpHandler::stopStreamDownload()
 {
     if (m_streamJob) {
         QObject::disconnect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
@@ -154,17 +116,7 @@ void IcyHttpHandler::stopCurrentStreamDownload()
         m_streamJob = NULL;
 
         m_inputBuffer->resetBuffer();
-        emit sigFinishedStream(m_currentStreamUrl);
-    }
-}
-
-
-void IcyHttpHandler::stopStreamDownload()
-{
-    stopCurrentStreamDownload();
-    if (m_active) {
-        m_active = false;
-        emit sigFinishedPlaylist(m_currentStation.url());
+        emit sigFinished(m_streamUrl);
     }
 }
 
@@ -194,7 +146,7 @@ void IcyHttpHandler::handleStreamData(const QByteArray &data)
 //         logDebug(QString("stream data: %1 bytes").arg(data.size()));
     if (m_inputBuffer) {
         bool isfull = false;
-        m_inputBuffer->writeInputBuffer(QByteArray(data.data(), data.size()), isfull, m_currentStreamUrl);
+        m_inputBuffer->writeInputBuffer(QByteArray(data.data(), data.size()), isfull, m_streamUrl);
         if (isfull) {
 //             printf ("stream SUSPENDED\n");
             m_streamJob->suspend();
@@ -317,28 +269,23 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
     if (m_streamJob == job) {
         bool local_err = false;
         if (m_streamJob->error()) {
-            IErrorLogClient::staticLogError(i18n("Failed to load stream data for %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+            IErrorLogClient::staticLogError(i18n("Failed to load stream data for %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
             local_err = true;
-            emit sigErrorStream(m_currentStreamUrl);
         }
 
         KIO::MetaData md = m_streamJob->metaData();
         if (md.contains("HTTP-Headers")) {
             int http_response_code = md["responsecode"].toInt();
             if (http_response_code < 200 || http_response_code >= 300) {
-                IErrorLogClient::staticLogError(i18n("HTTP error %1 for stream %2").arg(http_response_code).arg(m_currentStreamUrl.pathOrUrl()));
-                emit sigErrorStream(m_currentStreamUrl);
+                IErrorLogClient::staticLogError(i18n("HTTP error %1 for stream %2").arg(http_response_code).arg(m_streamUrl.pathOrUrl()));
                 local_err = true;
             }
         }
-        if (local_err) {
-            stopCurrentStreamDownload();
-            m_currentStreamRetriesLeft = 0;
-            tryNextStream();
-        } else {
-            stopStreamDownload();
-        }
+        stopStreamDownload();
         m_inputBuffer->resetBuffer();
+        if (local_err) {
+            emit sigError(m_streamUrl);
+        }
     }
     job->deleteLater();
 }

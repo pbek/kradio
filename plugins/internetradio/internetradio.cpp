@@ -93,7 +93,9 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_streamInputBuffer = new StreamInputBuffer(128 * 1024);         // FIXME: make buffer configurable
     m_icyHttpHandler    = new IcyHttpHandler(m_streamInputBuffer);
     connect(m_icyHttpHandler, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)), this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
-    connect(m_icyHttpHandler, SIGNAL(sigErrorPlaylist(KUrl)),                   this, SLOT(slotDownloadError()));
+    connect(m_icyHttpHandler, SIGNAL(sigError(KUrl)),                           this, SLOT(slotStreamError(KUrl)));
+    connect(m_icyHttpHandler, SIGNAL(sigFinished(KUrl)),                        this, SLOT(slotStreamFinished(KUrl)));
+    connect(m_icyHttpHandler, SIGNAL(sigStarted(KUrl)),                         this, SLOT(slotStreamStarted(KUrl)));
     connect(m_icyHttpHandler, SIGNAL(sigUrlChanged(KUrl)),                      this, SLOT(slotInputStreamUrlChanged(KUrl)));
 #endif
 }
@@ -289,11 +291,6 @@ bool InternetRadio::powerOff ()
 {
     if (! isPowerOn())
         return true;
-
-    m_playlistHandler.stopPlaylistDownload();
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_icyHttpHandler->stopStreamDownload();
-#endif
 
     queryPlaybackVolume(m_SoundStreamSinkID, m_defaultPlaybackVolume);
     if (m_PlaybackMixerMuteOnPowerOff) {
@@ -568,7 +565,7 @@ void   InternetRadio::saveState (KConfigGroup &config) const
     config.writeEntry("maxStreamProbeSize",          m_maxStreamProbeSize);
     config.writeEntry("maxStreamAnalyzeTime",        m_maxStreamAnalyzeTime);
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    config.writeEntry("maxStreamRetries",            m_currentStreamRetriesMax);
+    config.writeEntry("maxStreamRetries",            m_maxStreamRetries);
 #endif
 
     saveRadioDeviceID(config);
@@ -589,7 +586,7 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     m_maxStreamProbeSize          = config.readEntry ("maxStreamProbeSize",          4096);
     m_maxStreamAnalyzeTime        = config.readEntry ("maxStreamAnalyzeTime",        0.5);
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_currentStreamRetriesMax     = config.readEntry ("maxStreamRetries",            2);
+    m_maxStreamRetries            = config.readEntry ("maxStreamRetries",            2);
 #endif
 
 
@@ -656,7 +653,7 @@ void InternetRadio::radio_init()
     m_waitForBufferMinFill = true;
     m_powerOn              = true;
 
-    m_playlistHandler.setPlayListUrl(m_currentStation);
+    m_playlistHandler.setPlayListUrl(m_currentStation, m_maxStreamRetries);
     m_playlistHandler.startPlaylistDownload();
 
     logDebug(QString("InternetRadio::radio_init"));
@@ -670,7 +667,7 @@ void InternetRadio::slotPlaylistLoaded(KUrl::List playlist)
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     startDecoderThread();
 #else
-    m_playlistHandler.tryNextStream();
+    m_playlistHandler.selectNextStream(true, true);
 #endif
 }
 
@@ -678,15 +675,15 @@ void InternetRadio::slotPlaylistLoaded(KUrl::List playlist)
 void InternetRadio::slotPlaylistStreamSelected(KUrl stream)
 {
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    stopDecoderThread();
     stopStreamReader();
+    stopDecoderThread();
     startStreamReader(stream);
     startDecoderThread();
 #endif
 }
 
 
-void InternetRadio::slotPlaylistError(QString errorMsg)
+void InternetRadio::slotPlaylistError(QString /*errorMsg*/)
 {
     // no extra error msg, messages have already been issued by the playlist handler
     powerOff();
@@ -697,6 +694,22 @@ void InternetRadio::slotPlaylistEOL()
 {
     powerOff();
 }
+
+
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+// FIXME: handle signals of stream reader properly
+void InternetRadio::startStreamReader(KUrl stream)
+{
+    m_icyHttpHandler->startStreamDownload(stream);
+}
+
+
+void InternetRadio::stopStreamReader()
+{
+    m_icyHttpHandler->stopStreamDownload();
+}
+
+#endif
 
 
 void InternetRadio::startDecoderThread()
@@ -718,9 +731,6 @@ void InternetRadio::startDecoderThread()
     QObject::connect(m_decoderThread, SIGNAL(finished()),   this, SLOT(slotDecoderThreadFinished()));
     QObject::connect(m_decoderThread, SIGNAL(terminated()), this, SLOT(slotDecoderThreadFinished()));
     m_decoderThread->start();
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_icyHttpHandler->startStreamDownload(m_currentPlaylist, m_currentStation, m_currentStreamRetriesMax);
-#endif
 }
 
 
@@ -762,6 +772,11 @@ void InternetRadio::radio_done()
     freeAllBuffers();
     m_powerOn    = false;
     m_stereoFlag = false;
+
+    m_playlistHandler.stopPlaylistDownload();
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    stopStreamReader();
+#endif
     stopDecoderThread();
 }
 
@@ -1069,12 +1084,27 @@ void InternetRadio::slotMetaDataUpdate(QMap<QString, QString> metadata)
     }
 }
 
-void InternetRadio::slotDownloadError()
+
+
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+
+
+void InternetRadio::slotStreamError(KUrl /*url*/)
+{
+    m_playlistHandler.selectNextStream(true, true);
+}
+
+
+void InternetRadio::slotStreamFinished(KUrl /*url*/)
 {
     powerOff();
 }
 
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+
+void InternetRadio::slotStreamStarted(KUrl /*url*/)
+{
+}
+
 
 
 void    InternetRadio::slotInputStreamUrlChanged(KUrl url)

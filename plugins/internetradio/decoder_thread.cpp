@@ -551,15 +551,19 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     // run autodetection if format is not known
     if (!iformat) {
 
-        QByteArray probeData = m_streamInputBuffer->readInputBuffer(m_maxProbeSize, m_maxProbeSize, m_inputUrl, /* consume */ false);
+        int        score     = 0;
+        bool       err       = false;
+        QByteArray probeData = m_streamInputBuffer->readInputBuffer(m_maxProbeSize, m_maxProbeSize, m_inputUrl, /* consume */ false, err);
         printf("probe data size = %i\n", probeData.size());
 
-        m_inputUrl = m_streamInputBuffer->getInputUrl();
+        if (!err) {
+            m_inputUrl = m_streamInputBuffer->getInputUrl();
 
-        AVProbeData pd = { m_inputUrl.pathOrUrl().toLocal8Bit(), (unsigned char*)probeData.data(), probeData.size() };
+            AVProbeData pd = { m_inputUrl.pathOrUrl().toLocal8Bit(), (unsigned char*)probeData.data(), probeData.size() };
 
-        int score = 0;
-        iformat = av_probe_input_format2(&pd, 1, &score);
+            iformat = av_probe_input_format2(&pd, 1, &score);
+        }
+
         if (!iformat) {
             if (warningsNotErrors) {
                 addWarningString(i18n("Autodetect of stream type failed for %1").arg(m_inputUrl.pathOrUrl()));
@@ -933,8 +937,10 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
 {
     StreamInputBuffer *x = static_cast<StreamInputBuffer*>(opaque);
     KUrl               url;
-    QByteArray tmp = x->readInputBuffer(1, max_size, url, /* consume */ true);
-    if (tmp.size() > 0) {
+    bool               err = false;
+    QByteArray tmp = x->readInputBuffer(1024, max_size, url, /* consume */ true, err); // at least a kB
+//     printf ("read returned %i bytes, err = %i\n", tmp.size(), err);
+    if (!err) {
         memcpy(buffer, tmp.constData(), tmp.size());
         return tmp.size();
     } else {
