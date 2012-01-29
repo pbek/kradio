@@ -38,6 +38,7 @@
 
 #include "databuffer.h"
 #include "stream_input_buffer.h"
+#include "icy_http_handler.h"
 
 extern "C" {
 #ifdef HAVE_FFMPEG
@@ -216,7 +217,8 @@ public:
                   const KUrl::List           &playlist,
 #else
                   const KUrl                 &currentStreamUrl,
-                  StreamInputBuffer          *input_buffer,
+                  IcyHttpHandler             *streamReader,
+//                   StreamInputBuffer          *input_buffer,
 #endif
                   int max_buffers,
                   int max_probe_size_bytes,

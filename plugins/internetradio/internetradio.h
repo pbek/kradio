@@ -224,7 +224,6 @@ protected:
     KUrl::List                    m_currentPlaylist;
     PlaylistHandler               m_playlistHandler;
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    StreamInputBuffer            *m_streamInputBuffer;
     IcyHttpHandler               *m_icyHttpHandler;
 #endif
 

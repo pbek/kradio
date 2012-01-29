@@ -35,7 +35,7 @@ class IcyHttpHandler : public QObject
 {
 Q_OBJECT
 public:
-    IcyHttpHandler(StreamInputBuffer *buffer);
+    IcyHttpHandler();
     ~IcyHttpHandler();
 
     // FIXME: store ICY meta data
@@ -54,12 +54,14 @@ signals:
 
     void                        sigUrlChanged(KUrl url);
 
+    void                        sigStreamData(QByteArray data);
     void                        sigMetaDataUpdate(QMap<QString, QString> metadata);
 
 protected slots:
     void                        slotStreamData(KIO::Job *job, QByteArray data);
     void                        slotStreamDone(KJob *job);
     void                        slotStreamContinue();
+    void                        slotStreamPause();
 
 protected:
     void                        setupStreamJob(const KUrl &url);
@@ -78,7 +80,6 @@ protected:
 
     KUrl                        m_streamUrl;
     KIO::TransferJob           *m_streamJob;
-    StreamInputBuffer          *m_inputBuffer;
 };
 
 

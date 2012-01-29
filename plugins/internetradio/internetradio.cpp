@@ -64,7 +64,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_decoderThread(NULL),
     m_currentStation(InternetRadioStation()),
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_streamInputBuffer      (NULL),
+//     m_streamInputBuffer      (NULL),
     m_icyHttpHandler         (NULL),
 #endif
     m_stereoFlag(false),
@@ -90,8 +90,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     QObject::connect(&m_playlistHandler, SIGNAL(sigStreamSelected(KUrl)),       this, SLOT(slotPlaylistStreamSelected(KUrl)));
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_streamInputBuffer = new StreamInputBuffer(128 * 1024);         // FIXME: make buffer configurable
-    m_icyHttpHandler    = new IcyHttpHandler(m_streamInputBuffer);
+    m_icyHttpHandler    = new IcyHttpHandler();
     connect(m_icyHttpHandler, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)), this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
     connect(m_icyHttpHandler, SIGNAL(sigError(KUrl)),                           this, SLOT(slotStreamError(KUrl)));
     connect(m_icyHttpHandler, SIGNAL(sigFinished(KUrl)),                        this, SLOT(slotStreamFinished(KUrl)));
@@ -105,9 +104,7 @@ InternetRadio::~InternetRadio()
 {
     setPower(false);
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    delete m_streamInputBuffer;
     delete m_icyHttpHandler;
-    m_streamInputBuffer = NULL;
     m_icyHttpHandler    = NULL;
 #endif
 }
@@ -723,7 +720,8 @@ void InternetRadio::startDecoderThread()
                                         m_currentPlaylist,
 #else
                                         m_playlistHandler.currentStreamUrl(),
-                                        m_streamInputBuffer,
+                                        m_icyHttpHandler,
+//                                         m_streamInputBuffer,
 #endif
                                         MAX_BUFFERS,
                                         m_maxStreamProbeSize,

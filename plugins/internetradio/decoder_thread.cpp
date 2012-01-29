@@ -550,7 +550,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
         int        score     = 0;
         bool       err       = false;
-        QByteArray probeData = m_streamInputBuffer->readInputBuffer(m_maxProbeSize, m_maxProbeSize, m_inputUrl, /* consume */ false, err);
+        QByteArray probeData = m_streamInputBuffer->readInputBuffer(m_maxProbeSize, m_maxProbeSize, /* consume */ false, err);
         printf("probe data size = %i\n", probeData.size());
 
         if (!err) {
@@ -931,9 +931,8 @@ void InternetRadioDecoder::closeAVStream()
 static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, int max_size)
 {
     StreamInputBuffer *x = static_cast<StreamInputBuffer*>(opaque);
-    KUrl               url;
     bool               err = false;
-    QByteArray tmp = x->readInputBuffer(1024, max_size, url, /* consume */ true, err); // at least a kB
+    QByteArray tmp = x->readInputBuffer(1024, max_size, /* consume */ true, err); // at least a kB
 //     printf ("read returned %i bytes, err = %i\n", tmp.size(), err);
     if (!err) {
         memcpy(buffer, tmp.constData(), tmp.size());
@@ -1000,7 +999,8 @@ DecoderThread::DecoderThread(QObject *parent,
                              const KUrl::List           &playlist,
 #else
                              const KUrl                 &currentStreamUrl,
-                             StreamInputBuffer          *streamInputBuffer,
+                             IcyHttpHandler             *streamReader,
+//                              StreamInputBuffer          *streamInputBuffer,
 #endif
                              int max_buffers,
                              int max_probe_size_bytes, float max_analyze_secs)
@@ -1014,9 +1014,15 @@ DecoderThread::DecoderThread(QObject *parent,
       , m_playlist(playlist)
 #else
       , m_currentStreamUrl (currentStreamUrl)
-      , m_streamInputBuffer(streamInputBuffer)
+//       , m_streamInputBuffer(streamInputBuffer)
 #endif
 {
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    m_streamInputBuffer = new StreamInputBuffer(128 * 1024);         // FIXME: make buffer configurable
+    QObject::connect(streamReader,        SIGNAL(sigStreamData(QByteArray)), m_streamInputBuffer, SLOT(slotWriteInputBuffer(QByteArray)));
+    QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferFull()),      streamReader,        SLOT(slotStreamPause()));
+    QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferNotFull()),   streamReader,        SLOT(slotStreamContinue()));
+#endif
     setTerminationEnabled(true);
 }
 
@@ -1027,8 +1033,12 @@ DecoderThread::~DecoderThread()
         delete m_decoder;
         m_decoder = NULL;
     }
+    m_streamInputBuffer->resetBuffer();
+    m_streamInputBuffer->deleteLater();
+    m_streamInputBuffer = NULL;
     IErrorLogClient::staticLogDebug("DecoderThread::~DecoderThread()");
 }
+
 
 void DecoderThread::run()
 {
@@ -1048,6 +1058,7 @@ void DecoderThread::run()
 //     IErrorLogClient::staticLogDebug("DecoderThread::exec()");
     exec();
 //     QApplication::postEvent(parent(), new SoundStreamEncodingTerminatedEvent(m_decoder->soundFormat()));
+    m_streamInputBuffer->resetBuffer();
     exit();
 }
 

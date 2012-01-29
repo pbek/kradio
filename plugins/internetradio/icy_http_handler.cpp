@@ -34,15 +34,13 @@
 #define METADATA_MAX_SIZE       (1024 * 1024)
 
 
-IcyHttpHandler::IcyHttpHandler(StreamInputBuffer *buffer)
+IcyHttpHandler::IcyHttpHandler()
   : m_httpHeaderAnalyzed      (false),
     m_ICYMetaInt              (0),
     m_dataRest                (0),
     m_metaRest                (0),
-    m_streamJob               (NULL),
-    m_inputBuffer             (buffer)
+    m_streamJob               (NULL)
 {
-    QObject::connect(m_inputBuffer, SIGNAL(sigInputBufferNotFull()), this, SLOT(slotStreamContinue()), Qt::QueuedConnection);
 }
 
 
@@ -117,8 +115,6 @@ void IcyHttpHandler::stopStreamDownload()
         QObject::disconnect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
         m_streamJob->kill(); // stop and delete
         m_streamJob = NULL;
-
-        m_inputBuffer->resetBuffer();
         emit sigFinished(m_streamUrl);
     }
 }
@@ -146,15 +142,8 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
 
 void IcyHttpHandler::handleStreamData(const QByteArray &data)
 {
-//         logDebug(QString("stream data: %1 bytes").arg(data.size()));
-    if (m_inputBuffer) {
-        bool isfull = false;
-        m_inputBuffer->writeInputBuffer(QByteArray(data.data(), data.size()), isfull, m_streamUrl);
-        if (isfull) {
-//             printf ("stream SUSPENDED\n");
-            m_streamJob->suspend();
-        }
-    }
+//    logDebug(QString("stream data: %1 bytes").arg(data.size()));
+    emit sigStreamData(data);
 }
 
 
@@ -279,6 +268,13 @@ void IcyHttpHandler::slotStreamContinue()
 }
 
 
+void IcyHttpHandler::slotStreamPause()
+{
+    m_streamJob->suspend();
+}
+
+
+
 void IcyHttpHandler::slotStreamDone(KJob *job)
 {
     if (m_streamJob == job) {
@@ -297,7 +293,6 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
             }
         }
         stopStreamDownload();
-        m_inputBuffer->resetBuffer();
         if (local_err) {
             emit sigError(m_streamUrl);
         }

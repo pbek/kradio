@@ -39,7 +39,7 @@ StreamInputBuffer::~StreamInputBuffer()
 
 
 // blocking function if buffer is empty!
-QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KUrl &currentUrl_out, bool consume, bool &err)
+QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, bool consume, bool &err)
 {
     minSize = qMin(minSize, maxSize);
 
@@ -102,9 +102,6 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
             m_inputBufferSize.release(retval.size());
         }
 
-        // let's hope that this is really a deep copy
-        currentUrl_out = m_inputUrl.url();
-
         m_readPending -= minSize;
     }
 
@@ -117,17 +114,21 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
 }
 
 
-void StreamInputBuffer::writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl)
+void StreamInputBuffer::slotWriteInputBuffer(QByteArray data)
 {
-    QMutexLocker  lock(&m_inputBufferAccessLock);
+    bool isFull = false;
+//     int oldSize = 0;
+    {   QMutexLocker  lock(&m_inputBufferAccessLock);
 
-//     int oldSize = m_inputBuffer.size();
+//         oldSize = m_inputBuffer.size();
+        m_inputBuffer.append(data.data(), data.size()); // force deep copy
+        isFull = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
 
-    m_inputBuffer.append(data.data(), data.size()); // force deep copy
-    isFull     = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
-    m_inputUrl = inputUrl;
-    m_inputBufferSize.release(data.size());
-
+        m_inputBufferSize.release(data.size());
+    }
+    if (isFull) {
+        emit sigInputBufferFull();
+    }
 //     printf ("wrote stream input buffer: %i bytes (oldSize = %i, newSize = %i)\n", data.size(), oldSize, m_inputBuffer.size());
 }
 
@@ -142,18 +143,9 @@ void StreamInputBuffer::resetBuffer()
         m_inputBufferSize.tryAcquire(m_inputBufferSize.available());
     }
     m_inputBuffer.clear();
-    m_inputUrl = KUrl();
     m_readPendingReleased += m_readPending;
     m_inputBufferSize.release(m_readPending); // ensure that a waiting read gets released (they will return 0 bytes)
     emit sigInputBufferNotFull();
 }
 
 
-KUrl StreamInputBuffer::getInputUrl() const
-{
-    QMutexLocker  lock(&m_inputBufferAccessLock);
-
-    // let's hope that this is really a deep copy
-    KUrl currentUrl_out = m_inputUrl.url();
-    return currentUrl_out;
-}
