@@ -47,12 +47,16 @@ public:
     void                        startStreamDownload(KUrl url);
     void                        stopStreamDownload();
 
+    KIO::MetaData               getConnectionMetaData() const { return m_connectionMetaData; }
+
 signals:
     void                        sigError(KUrl url);
     void                        sigFinished(KUrl url);
     void                        sigStarted(KUrl url);
+    void                        sigConnectionEstablished(KUrl url, KIO::MetaData metaData);
 
     void                        sigUrlChanged(KUrl url);
+    void                        sigContentType(QString contentType);
 
     void                        sigStreamData(QByteArray data);
     void                        sigMetaDataUpdate(QMap<QString, QString> metadata);
@@ -80,6 +84,7 @@ protected:
 
     KUrl                        m_streamUrl;
     KIO::TransferJob           *m_streamJob;
+    KIO::MetaData               m_connectionMetaData;
 };
 
 

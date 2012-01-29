@@ -196,6 +196,7 @@ protected slots:
     void    slotStreamError   (KUrl url);
     void    slotStreamFinished(KUrl url);
     void    slotStreamStarted (KUrl url);
+    void    slotStreamConnectionEstablished(KUrl url, KIO::MetaData metaData);
 #endif
 
 protected:

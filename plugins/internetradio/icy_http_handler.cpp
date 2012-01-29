@@ -123,9 +123,9 @@ void IcyHttpHandler::stopStreamDownload()
 void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
 {
     m_httpHeaderAnalyzed = true;
-    KIO::MetaData md = job->metaData();
-    foreach(QString k, md.keys()) {
-        QString v = md[k];
+    m_connectionMetaData = job->metaData();
+    foreach(QString k, m_connectionMetaData.keys()) {
+        QString v = m_connectionMetaData[k];
         IErrorLogClient::staticLogDebug(QString("%1 = %2").arg(k).arg(v));
         if (k == "HTTP-Headers") {
             QHttpResponseHeader hdr(v);
@@ -136,7 +136,11 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
                 IErrorLogClient::staticLogDebug(QString("found metaint: %1").arg(m_ICYMetaInt));
             }
         }
+        else if (k == "content-type") {
+            emit sigContentType(m_connectionMetaData[k]);
+        }
     }
+    emit sigConnectionEstablished(m_streamUrl, m_connectionMetaData);
 }
 
 

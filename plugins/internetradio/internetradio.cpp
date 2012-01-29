@@ -91,11 +91,12 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_icyHttpHandler    = new IcyHttpHandler();
-    connect(m_icyHttpHandler, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)), this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
-    connect(m_icyHttpHandler, SIGNAL(sigError(KUrl)),                           this, SLOT(slotStreamError(KUrl)));
-    connect(m_icyHttpHandler, SIGNAL(sigFinished(KUrl)),                        this, SLOT(slotStreamFinished(KUrl)));
-    connect(m_icyHttpHandler, SIGNAL(sigStarted(KUrl)),                         this, SLOT(slotStreamStarted(KUrl)));
-    connect(m_icyHttpHandler, SIGNAL(sigUrlChanged(KUrl)),                      this, SLOT(slotInputStreamUrlChanged(KUrl)));
+    connect(m_icyHttpHandler, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)),     this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
+    connect(m_icyHttpHandler, SIGNAL(sigError(KUrl)),                               this, SLOT(slotStreamError(KUrl)));
+    connect(m_icyHttpHandler, SIGNAL(sigFinished(KUrl)),                            this, SLOT(slotStreamFinished(KUrl)));
+    connect(m_icyHttpHandler, SIGNAL(sigStarted(KUrl)),                             this, SLOT(slotStreamStarted(KUrl)));
+    connect(m_icyHttpHandler, SIGNAL(sigUrlChanged(KUrl)),                          this, SLOT(slotInputStreamUrlChanged(KUrl)));
+    connect(m_icyHttpHandler, SIGNAL(sigConnectionEstablished(KUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(KUrl,KIO::MetaData)));
 #endif
 }
 
@@ -675,7 +676,6 @@ void InternetRadio::slotPlaylistStreamSelected(KUrl stream)
     stopStreamReader();
     stopDecoderThread();
     startStreamReader(stream);
-    startDecoderThread();
 #endif
 }
 
@@ -1105,6 +1105,11 @@ void InternetRadio::slotStreamStarted(KUrl /*url*/)
     // currently ignored
 }
 
+
+void InternetRadio::slotStreamConnectionEstablished(KUrl url, KIO::MetaData metaData)
+{
+    startDecoderThread();
+}
 
 
 void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)

@@ -73,6 +73,7 @@ public:
 #else
                          const KUrl                 &currentStreamUrl,
                          StreamInputBuffer          *input_buffer,
+                         QString                     contentType,
 #endif
                          int max_buffers,
                          int max_probe_size_bytes, float max_analyze_secs);
@@ -191,6 +192,7 @@ protected:
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     KUrl                  m_inputUrl;
     StreamInputBuffer    *m_streamInputBuffer;
+    QString               m_contentType;
 #endif
 
     int                   m_maxProbeSize;    // in bytes,   see openAVStream
@@ -243,6 +245,7 @@ protected:
 #else
     KUrl                  m_currentStreamUrl;
     StreamInputBuffer    *m_streamInputBuffer;
+    QString               m_contentType;
 #endif
 };
 

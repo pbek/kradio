@@ -53,6 +53,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #else
                                            const KUrl                 &currentStreamUrl,
                                            StreamInputBuffer          *streamInputBuffer,
+                                           QString                     contentType,
 #endif
                                            int max_buffers,
                                            int max_probe_size_bytes, float max_analyze_secs)
@@ -98,6 +99,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_inputUrl(currentStreamUrl),
     m_streamInputBuffer(streamInputBuffer),
+    m_contentType(contentType),
 //     m_inputBufferMaxSize(65536),
 //     m_inputBufferSize(0),
 #endif
@@ -516,6 +518,13 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     // if a format has been specified, set up the proper structures
 
     LibAVGlobal::ensureInitDone();
+    QString decoderClass = m_RadioStation.decoderClass();
+    if (m_contentType == "audio/mpeg") {
+        decoderClass = "mp3";
+    } else if (m_contentType == "audio/ogg") {
+        decoderClass = "ogg";
+    }
+
     AVInputFormat   *iformat = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
 
 
@@ -1022,6 +1031,10 @@ DecoderThread::DecoderThread(QObject *parent,
     QObject::connect(streamReader,        SIGNAL(sigStreamData(QByteArray)), m_streamInputBuffer, SLOT(slotWriteInputBuffer(QByteArray)));
     QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferFull()),      streamReader,        SLOT(slotStreamPause()));
     QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferNotFull()),   streamReader,        SLOT(slotStreamContinue()));
+    KIO::MetaData md = streamReader->getConnectionMetaData();
+    if (md.contains("content-type")) {
+        m_contentType = md["content-type"];
+    }
 #endif
     setTerminationEnabled(true);
 }
@@ -1050,6 +1063,7 @@ void DecoderThread::run()
 #else
                                          m_currentStreamUrl,
                                          m_streamInputBuffer,
+                                         m_contentType,
 #endif
                                          m_max_buffers,
                                          m_max_probe_size_bytes,
