@@ -55,6 +55,7 @@ protected:
     KUrl                  m_inputUrl;
 
     size_t                m_readPending;
+    size_t                m_readPendingReleased;
 };
 
 

@@ -99,10 +99,11 @@ public:
     void                  popFirstBuffer();
     void                  flushBuffers();
 
-// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    void                  setInputUrl(KUrl url);
 //     void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
 //     QByteArray            readInputBuffer(size_t maxSize);
-// #endif
+#endif
 
 protected:
     // output buffer

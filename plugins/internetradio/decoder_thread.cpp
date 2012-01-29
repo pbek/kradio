@@ -92,7 +92,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_playListURLs  (playlist),
 #endif
-/*    m_inputURL      (m_RadioStation.url()),*/
+/*    m_inputURL      (m_RadioStation.pathOrUrl()),*/
     m_bufferCountSemaphore(max_buffers),
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_streamInputBuffer(streamInputBuffer),
@@ -249,7 +249,9 @@ bool InternetRadioDecoder::readFrame(AVPacket &pkt)
 {
     int frame_read_res = av_read_frame(m_av_pFormatCtx, &pkt);
 
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_inputUrl = m_streamInputBuffer->getInputUrl();
+#endif
 
 //     printf ("readFrame: res = %i", frame_read_res);
 
@@ -281,6 +283,7 @@ void InternetRadioDecoder::run()
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
         selectStreamFromPlaylist();
 #else
+        m_inputUrl = m_streamInputBuffer->getInputUrl();
         openAVStream(m_inputUrl.pathOrUrl(), false);
 #endif
 
@@ -393,10 +396,10 @@ void InternetRadioDecoder::setDone()
     m_done = true;
     // guarantee that all blocking functions return from their locking status
     flushBuffers();
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_streamInputBuffer->resetBuffer();
-// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 //     m_inputBufferSize.release(m_maxProbeSize);
-// #endif
+#endif
 }
 
 QString InternetRadioDecoder::errorString(bool resetError)
@@ -549,16 +552,19 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     if (!iformat) {
 
         QByteArray probeData = m_streamInputBuffer->readInputBuffer(m_maxProbeSize, m_maxProbeSize, m_inputUrl, /* consume */ false);
+        printf("probe data size = %i\n", probeData.size());
 
-        AVProbeData pd = { stream.toLocal8Bit(), (unsigned char*)probeData.data(), probeData.size() };
+        m_inputUrl = m_streamInputBuffer->getInputUrl();
+
+        AVProbeData pd = { m_inputUrl.pathOrUrl().toLocal8Bit(), (unsigned char*)probeData.data(), probeData.size() };
 
         int score = 0;
         iformat = av_probe_input_format2(&pd, 1, &score);
         if (!iformat) {
             if (warningsNotErrors) {
-                addWarningString(i18n("Autodetect of stream type failed for %1").arg(stream));
+                addWarningString(i18n("Autodetect of stream type failed for %1").arg(m_inputUrl.pathOrUrl()));
             } else {
-                addErrorString(i18n("Autodetect of stream type failed for %1").arg(stream));
+                addErrorString(i18n("Autodetect of stream type failed for %1").arg(m_inputUrl.pathOrUrl()));
             }
             closeAVStream();
         } else {
@@ -571,20 +577,20 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
             m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
-            err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, &av_params);
+            err = avformat_open_input(&m_av_pFormatCtx, m_inputUrl.pathOrUrl().toUtf8(), iformat, &av_params);
 
             if (err != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled
                 m_av_pFormatCtx        = NULL;
                 m_av_pFormatCtx_opened = false;
             }
 #else
-        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, &av_params);
+        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, m_inputUrl.toUtf8(), iformat, &av_params);
 #endif
         if (err != 0) {
             if (warningsNotErrors) {
-                addWarningString(i18n("Could not open Stream %1").arg(stream));
+                addWarningString(i18n("Could not open Stream %1").arg(m_inputUrl.pathOrUrl()));
             } else {
-                addErrorString(i18n("Could not open Stream %1").arg(stream));
+                addErrorString(i18n("Could not open Stream %1").arg(m_inputUrl.pathOrUrl()));
             }
             closeAVStream();
         } else {
@@ -602,7 +608,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
             if (warningsNotErrors) {
                 addWarningString(i18n("cannot open MMS stream %1", stream));
             } else {
-                addErrorString(i18n("cannot open MMS stream %1", stream));
+                addErrorString(i18n("cannot open MMS  %1", stream));
             }
             closeAVStream();
         } else {
@@ -934,6 +940,11 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
     } else {
         return -1;
     }
+}
+
+void InternetRadioDecoder::setInputUrl(KUrl url)
+{
+    m_inputUrl = url;
 }
 
 

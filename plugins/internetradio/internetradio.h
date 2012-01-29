@@ -35,6 +35,7 @@
 #include "soundstreamclient_interfaces.h"
 #include "stream_input_buffer.h"
 #include "icy_http_handler.h"
+#include "playlist_handler.h"
 
 class DecoderThread;
 
@@ -153,18 +154,23 @@ RECEIVERS:
     // anything else
 public:
 
-    bool  setPlaybackMixer(QString soundStreamClientID, QString ch, bool muteOnPowerOff, bool force);
+    bool    setPlaybackMixer(QString soundStreamClientID, QString ch, bool muteOnPowerOff, bool force);
 
 protected slots:
 
-    bool event(QEvent *e);
-    void slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
+    bool    event(QEvent *e);
+    void    slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
 //     void slotMimetypeResult(KIO::Job *job, const QString &type);
+
+    // playlist handling
+    void    slotPlaylistLoaded(KUrl::List playlist);
+    void    slotPlaylistStreamSelected(KUrl stream);
+    void    slotPlaylistError(QString errorMsg);
+    void    slotPlaylistEOL();
 
 signals:
 
-    void sigNotifyPlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
-
+    void    sigNotifyPlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
 
 protected:
 
@@ -181,36 +187,18 @@ protected:
     bool    checkDecoderMessages();
 
 protected slots:
-    void    slotPlaylistData(KIO::Job *job, const QByteArray &data);
-    void    slotPlaylistLoadDone(KJob *job);
     void    slotDecoderThreadFinished();
 
     void    slotMetaDataUpdate(QMap<QString, QString> metadata);
     void    slotDownloadError();
 
-// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-//     void    slotStreamData(KIO::Job *job, const QByteArray &data);
-//     void    slotStreamDone(KJob *job);
-//     void    slotStreamContinue();
-// #endif
+#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    void    slotInputStreamUrlChanged(KUrl url);
+#endif
 
 protected:
-    void    loadPlaylistStopJob();
-    void    loadPlaylistStartJob();
-    QString getPlaylistClass();
-    void    interpretePlaylistData(const QByteArray &a);
-    void    interpretePlaylistLSC(const QByteArray &a);
-    void    interpretePlaylistM3U(const QByteArray &playlistData);
-    void    interpretePlaylistPLS(const QByteArray &playlistData);
-    void    interpretePlaylistASX(const QByteArray &xmlData);
-
-
-// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-//     void    startStreamDownload();
-//     void    tryNextStream();
-//     void    stopStreamDownload();
-// #endif
     void    startDecoderThread();
+    void    stopDecoderThread();
 
     void    searchMixer(ISoundStreamClient **playback_mixer);
 
@@ -227,12 +215,8 @@ protected:
 
     InternetRadioStation          m_currentStation;
     KUrl::List                    m_currentPlaylist;
+    PlaylistHandler               m_playlistHandler;
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-//     KUrl                          m_currentStreamUrl;
-//     int                           m_currentStreamIdx;
-    int                           m_currentStreamRetriesMax;
-//     int                           m_currentStreamRetriesLeft;
-//     int                           m_randStreamIdxOffset;
     StreamInputBuffer            *m_streamInputBuffer;
     IcyHttpHandler               *m_icyHttpHandler;
 #endif
@@ -259,12 +243,6 @@ protected:
     float                         m_maxStreamAnalyzeTime;  // in seconds, see DecoderThread::openAVStream
 
     bool                          m_waitForBufferMinFill;
-
-    QByteArray                    m_playlistData;
-    KIO::TransferJob             *m_playlistJob;
-// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-//     KIO::TransferJob             *m_streamJob;
-// #endif
 };
 
 #endif

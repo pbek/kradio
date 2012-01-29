@@ -62,7 +62,9 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url)
 
     // start download job
     m_currentStreamUrl = url;
-    logDebug(i18n("opening stream %1", m_currentStreamUrl.pathOrUrl()));
+    IErrorLogClient::staticLogDebug(i18n("opening stream %1", m_currentStreamUrl.pathOrUrl()));
+
+    emit sigUrlChanged(m_currentStreamUrl);
 
     m_streamJob = KIO::get(m_currentStreamUrl, KIO::NoReload, KIO::HideProgressInfo);
     if (m_streamJob) {

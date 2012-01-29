@@ -31,7 +31,7 @@
 #include "internetradiostation.h"
 #include "stream_input_buffer.h"
 
-class IcyHttpHandler : public QObject, public IErrorLogClient
+class IcyHttpHandler : public QObject
 {
 Q_OBJECT
 public:
@@ -58,6 +58,7 @@ signals:
     void                        sigStartedPlaylist(const KUrl &url);
 
     void                        sigMetaDataUpdate(QMap<QString, QString> metadata);
+    void                        sigUrlChanged(KUrl url);
 
 protected slots:
     void                        slotStreamData(KIO::Job *job, QByteArray data);

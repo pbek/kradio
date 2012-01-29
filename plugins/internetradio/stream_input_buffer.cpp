@@ -16,13 +16,17 @@
  ***************************************************************************/
 
 #include "stream_input_buffer.h"
+#include "errorlog_interfaces.h"
+
+#include <klocale.h>
 
 #include <stdio.h>
 
 StreamInputBuffer::StreamInputBuffer(int max_size)
-  : m_inputBufferMaxSize(max_size),
-    m_inputBufferSize   (0),
-    m_readPending       (0)
+  : m_inputBufferMaxSize (max_size),
+    m_inputBufferSize    (0),
+    m_readPending        (0),
+    m_readPendingReleased(0)
 {
 }
 
@@ -52,17 +56,39 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
     {   QMutexLocker  lock(&m_inputBufferAccessLock);
 //         printf ("buffer start read(minsize = %zi, maxsize = %zi) - locked\n", minSize, maxSize);
 
-        // cleanup after possible reset conditions
-        int n_suggested = m_inputBufferSize.available() + minSize;
-        int n_real      = m_inputBuffer.size();
-        if (n_suggested > n_real) {
-            if (n_suggested - n_real - minSize > 0) {
-                m_inputBufferSize.acquire(n_suggested - n_real - minSize);
-            }
-//             printf ("buffer reset detected\n");
+        // new reset detection code
+        // we had a reset if (m_readPendingReleased != 0)
+        // this means that the semaphore was m_readPendingReleased higher than the buffer size when
+        // the acquire above succeeded.
+        // For us it means, that the requested minSize is completely unavailable from the buffer.
+        if (m_readPendingReleased > 0) {
+            printf ("buffer reset detected\n");
             resetDetected = true;
+            if (minSize > m_readPendingReleased) {
+                // this should never happen, but let's handle it gracefully:
+                m_inputBufferSize.release(minSize - m_readPendingReleased);
+                IErrorLogClient::staticLogError(i18n("This should never happen: inconsistency in buffer locking / buffer size!"));
+            }
+            m_readPendingReleased -= qMin(m_readPendingReleased, minSize);
         }
 
+//         // cleanup after possible reset conditions
+//         int n_suggested = m_inputBufferSize.available() + minSize;
+//         int n_real      = m_inputBuffer.size();
+//         if (n_suggested > n_real) {
+//             if (n_suggested - n_real - minSize > 0) {
+//                 m_inputBufferSize.acquire(n_suggested - n_real - minSize);
+//             }
+// //             printf ("buffer reset detected\n");
+//             resetDetected = true;
+//         }
+//
+
+        // although it should not happen, we need to consider that some other process could
+        // be also acquiring concurrently
+        maxSize = qMin(maxSize, (size_t)m_inputBufferSize.available() + minSize);
+        maxSize -= maxSize % 8; // alignment! Otherwise decoder might fail!
+        printf ("bufferSize = %i      maxSize = %zi\n", m_inputBuffer.size(), maxSize);
         QByteArray shared = m_inputBuffer.left(maxSize);
 //         printf ("reading stream input buffer: shared.size = %i\n", shared.size());
 
@@ -76,12 +102,14 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, KU
 
         // must be inside locked region in order to guarantee the resetBuffer works correctly
         // keep track of the bytes read
-        if (consume) {
-            if ((size_t)retval.size() > minSize) {
-                m_inputBufferSize.acquire(retval.size() - minSize);
-            }
-        } else {
-            m_inputBufferSize.release(qMin((size_t)retval.size(), minSize));
+
+        // we got more data than minSize: thus we need to acquire more
+        if ((size_t)retval.size() > minSize) {
+            m_inputBufferSize.acquire(retval.size() - minSize);
+        }
+        // if we don't consume the data, we need to release what we acquired before
+        if (!consume && retval.size()) {
+            m_inputBufferSize.release(retval.size());
         }
 
         // let's hope that this is really a deep copy
@@ -122,6 +150,7 @@ void StreamInputBuffer::resetBuffer()
     }
     m_inputBuffer.clear();
     m_inputUrl = KUrl();
+    m_readPendingReleased += m_readPending;
     m_inputBufferSize.release(m_readPending); // ensure that a waiting read gets released (they will return 0 bytes)
     emit sigInputBufferNotFull();
 }
