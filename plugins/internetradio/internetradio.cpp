@@ -749,11 +749,11 @@ void InternetRadio::slotDecoderThreadFinished()
     DecoderThread *t = static_cast<DecoderThread*>(sender());
     if (t == m_decoderThread) {
         m_decoderThread = NULL;
+        if (isPowerOn()) {
+            powerOff();
+        }
     }
     t->deleteLater();
-    if (isPowerOn()) {
-        powerOff();
-    }
 }
 
 
