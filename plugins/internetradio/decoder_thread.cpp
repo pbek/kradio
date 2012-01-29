@@ -51,6 +51,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
                                            const KUrl::List           &playlist,
 #else
+                                           const KUrl                 &currentStreamUrl,
                                            StreamInputBuffer          *streamInputBuffer,
 #endif
                                            int max_buffers,
@@ -95,6 +96,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 /*    m_inputURL      (m_RadioStation.pathOrUrl()),*/
     m_bufferCountSemaphore(max_buffers),
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
+    m_inputUrl(currentStreamUrl),
     m_streamInputBuffer(streamInputBuffer),
 //     m_inputBufferMaxSize(65536),
 //     m_inputBufferSize(0),
@@ -249,10 +251,6 @@ bool InternetRadioDecoder::readFrame(AVPacket &pkt)
 {
     int frame_read_res = av_read_frame(m_av_pFormatCtx, &pkt);
 
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_inputUrl = m_streamInputBuffer->getInputUrl();
-#endif
-
 //     printf ("readFrame: res = %i", frame_read_res);
 
     if (frame_read_res < 0) {
@@ -283,7 +281,6 @@ void InternetRadioDecoder::run()
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
         selectStreamFromPlaylist();
 #else
-        m_inputUrl = m_streamInputBuffer->getInputUrl();
         openAVStream(m_inputUrl.pathOrUrl(), false);
 #endif
 
@@ -557,8 +554,6 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         printf("probe data size = %i\n", probeData.size());
 
         if (!err) {
-            m_inputUrl = m_streamInputBuffer->getInputUrl();
-
             AVProbeData pd = { m_inputUrl.pathOrUrl().toLocal8Bit(), (unsigned char*)probeData.data(), probeData.size() };
 
             iformat = av_probe_input_format2(&pd, 1, &score);
@@ -948,12 +943,6 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
     }
 }
 
-void InternetRadioDecoder::setInputUrl(KUrl url)
-{
-    m_inputUrl = url;
-}
-
-
 // // blocking function if buffer is empty!
 // QByteArray InternetRadioDecoder::readInputBuffer(size_t maxSize)
 // {
@@ -993,7 +982,6 @@ void InternetRadioDecoder::setInputUrl(KUrl url)
 // 
 //     m_inputBuffer.append(data.data(), data.size()); // force deep copy
 //     isFull     = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
-//     m_inputUrl = inputUrl;
 //     m_inputBufferSize.release(data.size());
 // }
 #endif
@@ -1009,9 +997,10 @@ void InternetRadioDecoder::setInputUrl(KUrl url)
 DecoderThread::DecoderThread(QObject *parent,
                              const InternetRadioStation &rs,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                             const KUrl::List &playlist,
+                             const KUrl::List           &playlist,
 #else
-                             StreamInputBuffer *streamInputBuffer,
+                             const KUrl                 &currentStreamUrl,
+                             StreamInputBuffer          *streamInputBuffer,
 #endif
                              int max_buffers,
                              int max_probe_size_bytes, float max_analyze_secs)
@@ -1024,6 +1013,7 @@ DecoderThread::DecoderThread(QObject *parent,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
       , m_playlist(playlist)
 #else
+      , m_currentStreamUrl (currentStreamUrl)
       , m_streamInputBuffer(streamInputBuffer)
 #endif
 {
@@ -1048,6 +1038,7 @@ void DecoderThread::run()
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
                                          m_playlist,
 #else
+                                         m_currentStreamUrl,
                                          m_streamInputBuffer,
 #endif
                                          m_max_buffers,

@@ -20,6 +20,9 @@
 
 #include <kio/global.h>
 #include <klocale.h>
+#include <kencodingprober.h>
+
+#include <QtCore/QTextCodec>
 
 #include <math.h>
 
@@ -163,8 +166,20 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
     }
     m_metaData.append(QByteArray(data.data(), data.size()));
     if (complete) {
-        QString metaString = QString::fromUtf8(m_metaData.data());
+
+        QString         metaString = QString::fromUtf8(m_metaData.data());
         if (metaString.size()) {
+
+            KEncodingProber prober;
+            prober.setProberType(KEncodingProber::WesternEuropean);
+            for (int i = 0; i < 1000; ++i) {
+                prober.feed(m_metaData);
+            }
+            printf ("confidence = %f\n", prober.confidence());
+            if (prober.confidence() > 0.2) {
+                metaString = QTextCodec::codecForName(prober.encoding())->toUnicode(m_metaData);
+            }
+
             IErrorLogClient::staticLogDebug(QString("meta: %1").arg(metaString));
 
             // parse meta data

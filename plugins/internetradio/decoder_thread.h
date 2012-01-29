@@ -70,6 +70,7 @@ public:
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
                          const KUrl::List           &playlist,
 #else
+                         const KUrl                 &currentStreamUrl,
                          StreamInputBuffer          *input_buffer,
 #endif
                          int max_buffers,
@@ -99,11 +100,10 @@ public:
     void                  popFirstBuffer();
     void                  flushBuffers();
 
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    void                  setInputUrl(KUrl url);
+// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 //     void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
 //     QByteArray            readInputBuffer(size_t maxSize);
-#endif
+// #endif
 
 protected:
     // output buffer
@@ -157,7 +157,6 @@ protected:
     bool                  m_is_mms_stream;
     mmsx_t               *m_mms_stream;
 #endif
-//     char                  m_mms_buffer[32768];
 
 
     QObject              *m_parent;
@@ -189,12 +188,8 @@ protected:
     QSemaphore            m_bufferCountSemaphore;
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    StreamInputBuffer    *m_streamInputBuffer;
-//     size_t                m_inputBufferMaxSize;
-//     QByteArray            m_inputBuffer;
-//     QMutex                m_inputBufferAccessLock;
-//     QSemaphore            m_inputBufferSize;
     KUrl                  m_inputUrl;
+    StreamInputBuffer    *m_streamInputBuffer;
 #endif
 
     int                   m_maxProbeSize;    // in bytes,   see openAVStream
@@ -220,6 +215,7 @@ public:
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
                   const KUrl::List           &playlist,
 #else
+                  const KUrl                 &currentStreamUrl,
                   StreamInputBuffer          *input_buffer,
 #endif
                   int max_buffers,
@@ -243,6 +239,7 @@ protected:
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     KUrl::List            m_playlist;
 #else
+    KUrl                  m_currentStreamUrl;
     StreamInputBuffer    *m_streamInputBuffer;
 #endif
 };

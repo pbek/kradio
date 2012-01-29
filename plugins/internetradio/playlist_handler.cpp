@@ -78,9 +78,9 @@ void  PlaylistHandler::selectNextStream(bool allowRetrySameString, bool errorIfE
         m_currentStreamRetriesLeft = m_maxStreamRetries;
     }
     if (m_currentStreamIdx < m_currentPlaylist.size()) {
-        int     realIdx = (m_currentStreamIdx + m_randStreamIdxOffset) % m_currentPlaylist.size();
-        KUrl    stream  = m_currentPlaylist[realIdx];
-        emit sigStreamSelected(stream);
+        int     realIdx    = (m_currentStreamIdx + m_randStreamIdxOffset) % m_currentPlaylist.size();
+        m_currentStreamUrl = m_currentPlaylist[realIdx];
+        emit sigStreamSelected(m_currentStreamUrl);
     } else {
         emit sigEOL();
         if (errorIfEOL) {
@@ -205,10 +205,10 @@ void PlaylistHandler::interpretePlaylistData(const QByteArray &a)
 
 void PlaylistHandler::playlistSuccessfullyLoaded()
 {
-        m_randStreamIdxOffset      = rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
-        m_currentStreamIdx         = 0;
-        m_currentStreamRetriesLeft = m_maxStreamRetries;
-        emit sigPlaylistLoaded(m_currentPlaylist);
+    m_randStreamIdxOffset      = rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
+    m_currentStreamIdx         = 0;
+    m_currentStreamRetriesLeft = m_maxStreamRetries;
+    emit sigPlaylistLoaded(m_currentPlaylist);
 }
 
 

@@ -36,7 +36,8 @@ public:
     PlaylistHandler();
     ~PlaylistHandler();
 
-    bool        hadError() const { return m_error; }
+    bool        hadError()         const { return m_error; }
+    KUrl        currentStreamUrl() const { return m_currentStreamUrl; }
 
 signals:
     void        sigPlaylistLoaded(KUrl::List  streamList);
@@ -89,3 +90,4 @@ protected:
 
 
 #endif
+

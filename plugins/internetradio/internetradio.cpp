@@ -722,6 +722,7 @@ void InternetRadio::startDecoderThread()
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
                                         m_currentPlaylist,
 #else
+                                        m_playlistHandler.currentStreamUrl(),
                                         m_streamInputBuffer,
 #endif
                                         MAX_BUFFERS,
@@ -1103,15 +1104,14 @@ void InternetRadio::slotStreamFinished(KUrl /*url*/)
 
 void InternetRadio::slotStreamStarted(KUrl /*url*/)
 {
+    // currently ignored
 }
 
 
 
-void    InternetRadio::slotInputStreamUrlChanged(KUrl url)
+void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 {
-    if (m_decoderThread && m_decoderThread->decoder()) {
-        m_decoderThread->decoder()->setInputUrl(url);
-    }
+    // currently ignored
 }
 
 // 
