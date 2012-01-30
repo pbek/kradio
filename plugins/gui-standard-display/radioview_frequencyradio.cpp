@@ -590,61 +590,6 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
         paintRadioTextVisualBuffer(paint);
     }
 
-//     if (m_power && m_RadioTextRing.length() && m_RadioTextRepaint) {
-//         m_RadioTextRepaint = false;
-// 
-//         updateRadioTextVisualBuffer(QRectF(xx_rt, xy_rt, xw_rt, xh_rt));
-// 
-//         QPixmap    cachedImg(xw_rt, xh_rt);
-//         QPainter   cachedPainter;
-//         QBitmap    transpMask(xw_rt, xh_rt);
-//         transpMask.clear();
-//         cachedImg.setMask(transpMask);
-//         cachedImg.fill(Qt::transparent);
-//         cachedPainter.begin(&cachedImg);
-//         cachedPainter.setBackgroundMode(Qt::TransparentMode);
-// 
-//         paint.setPen        (  m_power ? m_activePen : m_inactivePen);
-//         cachedPainter.setPen(  m_power ? m_activePen : m_inactivePen);
-//         f.setPixelSize((int)xh_rt);
-// 
-// //         bool    oldClipping       = paint.hasClipping();
-// //         QRegion oldClippingRegion = paint.clipRegion();
-// //         QRect   newClippingRegion(xx_rt, xy_rt, xw_rt, xh_rt);
-// 
-// 
-// //         paint.setClipRect(newClippingRegion);
-// //         paint.setClipping(true);
-// 
-//         // find first visible character
-//         QFontMetricsF fm(f);
-//         qreal         tmp_w = 0;
-//         while (m_RadioTextRing.length() && (m_RadioTextX0 + (tmp_w = fm.width(m_RadioTextRing.left(1))) < 0)) {
-//             m_RadioTextX0   += tmp_w;
-//             m_RadioTextRing =  m_RadioTextRing.mid(1);
-//         }
-//         updateRadioTextRing();
-// 
-//         m_RadioTextDX            = fm.width(QString(" ")) / 2;
-// 
-//         qreal max_width = (xw_rt - m_RadioTextX0) + fm.maxWidth();
-//         int   n_chars   = (int)(max_width / fm.averageCharWidth() * 1.2);
-// 
-// //         paint.setFont(f);
-// //         paint.drawText(QRectF(xx_rt + m_RadioTextX0, xy_rt, xw_rt - m_RadioTextX0, xh_rt), Qt::AlignVCenter, m_RadioTextRing.left(n_chars));
-// 
-// //         cachedPainter.eraseRect(QRectF(0, 0, xw_rt, xh_rt));
-//         cachedPainter.setFont(f);
-//         cachedPainter.drawText(QRectF(m_RadioTextX0, 0, xw_rt - m_RadioTextX0, xh_rt), Qt::AlignVCenter, m_RadioTextRing.left(n_chars));
-//         QRectF  dstRect(xx_rt, xy_rt, xw_rt, xh_rt);
-//         QRectF  srcRect(0, 0, xw_rt, xh_rt);
-//         paint.drawPixmap(dstRect, cachedImg, srcRect);
-// 
-// //         paint.setClipRegion(oldClippingRegion);
-// //         paint.setClipping  (oldClipping);
-// 
-//     }
-
 
 
     } // end of the block in which the QPainter exists. It will be destroyed before calling QFrame::paintEvent
@@ -657,21 +602,6 @@ void RadioViewFrequencyRadio::resizeEvent(QResizeEvent *e)
 {
     RadioViewElement::resizeEvent(e);
 }
-
-// void RadioViewFrequencyRadio::updateRadioTextRing()
-// {
-//     if (m_RDSRadioText.length()) {
-//         QString spaces  = "     ";
-//         if (!m_RadioTextRing.length()) {
-//             m_RadioTextRing = "          ";
-//         }
-//         while (m_RadioTextRing.length() < 160) { // 2 * max_msg_len (==2*64) + some spaces
-//             m_RadioTextRing += spaces + m_RDSRadioText;
-//         }
-//     } else {
-//         m_RadioTextRing = "";
-//     }
-// }
 
 void RadioViewFrequencyRadio::setParent(QWidget * parent)
 {
