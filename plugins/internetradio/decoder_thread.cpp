@@ -1008,7 +1008,7 @@ DecoderThread::DecoderThread(QObject *parent,
                              const KUrl::List           &playlist,
 #else
                              const KUrl                 &currentStreamUrl,
-                             IcyHttpHandler             *streamReader,
+                             StreamReader               *streamReader,
 //                              StreamInputBuffer          *streamInputBuffer,
 #endif
                              int max_buffers,

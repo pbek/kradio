@@ -219,7 +219,7 @@ public:
                   const KUrl::List           &playlist,
 #else
                   const KUrl                 &currentStreamUrl,
-                  IcyHttpHandler             *streamReader,
+                  StreamReader               *streamReader,
 //                   StreamInputBuffer          *input_buffer,
 #endif
                   int max_buffers,

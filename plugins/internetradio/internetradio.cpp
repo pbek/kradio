@@ -65,7 +65,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_currentStation(InternetRadioStation()),
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 //     m_streamInputBuffer      (NULL),
-    m_icyHttpHandler         (NULL),
+    m_streamReader             (NULL),
 #endif
     m_stereoFlag(false),
     m_muted(false),
@@ -88,16 +88,6 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     QObject::connect(&m_playlistHandler, SIGNAL(sigError(QString)),             this, SLOT(slotPlaylistError(QString)));
     QObject::connect(&m_playlistHandler, SIGNAL(sigPlaylistLoaded(KUrl::List)), this, SLOT(slotPlaylistLoaded(KUrl::List)));
     QObject::connect(&m_playlistHandler, SIGNAL(sigStreamSelected(KUrl)),       this, SLOT(slotPlaylistStreamSelected(KUrl)));
-
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_icyHttpHandler    = new IcyHttpHandler();
-    connect(m_icyHttpHandler, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)),     this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
-    connect(m_icyHttpHandler, SIGNAL(sigError(KUrl)),                               this, SLOT(slotStreamError(KUrl)));
-    connect(m_icyHttpHandler, SIGNAL(sigFinished(KUrl)),                            this, SLOT(slotStreamFinished(KUrl)));
-    connect(m_icyHttpHandler, SIGNAL(sigStarted(KUrl)),                             this, SLOT(slotStreamStarted(KUrl)));
-    connect(m_icyHttpHandler, SIGNAL(sigUrlChanged(KUrl)),                          this, SLOT(slotInputStreamUrlChanged(KUrl)));
-    connect(m_icyHttpHandler, SIGNAL(sigConnectionEstablished(KUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(KUrl,KIO::MetaData)));
-#endif
 }
 
 
@@ -105,8 +95,8 @@ InternetRadio::~InternetRadio()
 {
     setPower(false);
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    delete m_icyHttpHandler;
-    m_icyHttpHandler    = NULL;
+    delete m_streamReader;
+    m_streamReader    = NULL;
 #endif
 }
 
@@ -694,16 +684,29 @@ void InternetRadio::slotPlaylistEOL()
 
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-// FIXME: handle signals of stream reader properly
 void InternetRadio::startStreamReader(KUrl stream)
 {
-    m_icyHttpHandler->startStreamDownload(stream);
+    stopStreamReader();
+    m_streamReader = new IcyHttpHandler();
+    connect(m_streamReader, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)),     this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
+    connect(m_streamReader, SIGNAL(sigError(KUrl)),                               this, SLOT(slotStreamError(KUrl)));
+    connect(m_streamReader, SIGNAL(sigFinished(KUrl)),                            this, SLOT(slotStreamFinished(KUrl)));
+    connect(m_streamReader, SIGNAL(sigStarted(KUrl)),                             this, SLOT(slotStreamStarted(KUrl)));
+    connect(m_streamReader, SIGNAL(sigUrlChanged(KUrl)),                          this, SLOT(slotInputStreamUrlChanged(KUrl)));
+    connect(m_streamReader, SIGNAL(sigConnectionEstablished(KUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(KUrl,KIO::MetaData)));
+
+    m_streamReader->startStreamDownload(stream);
 }
 
 
 void InternetRadio::stopStreamReader()
 {
-    m_icyHttpHandler->stopStreamDownload();
+    if (m_streamReader) {
+        m_streamReader->stopStreamDownload();
+        m_streamReader->disconnect(this);
+        m_streamReader->deleteLater();
+        m_streamReader = NULL;
+    }
 }
 
 #endif
@@ -720,7 +723,7 @@ void InternetRadio::startDecoderThread()
                                         m_currentPlaylist,
 #else
                                         m_playlistHandler.currentStreamUrl(),
-                                        m_icyHttpHandler,
+                                        m_streamReader,
 //                                         m_streamInputBuffer,
 #endif
                                         MAX_BUFFERS,
@@ -1076,7 +1079,7 @@ const InternetRadioStation *InternetRadio::findMatchingStation(const StationList
 
 void InternetRadio::slotMetaDataUpdate(QMap<QString, QString> metadata)
 {
-    if (metadata.contains("StreamTitle")) {
+    if (isPowerOn() && metadata.contains("StreamTitle")) {
         QString title = metadata["StreamTitle"];
         updateRDSRadioText(title);
         updateRDSState(true);
@@ -1106,7 +1109,7 @@ void InternetRadio::slotStreamStarted(KUrl /*url*/)
 }
 
 
-void InternetRadio::slotStreamConnectionEstablished(KUrl url, KIO::MetaData metaData)
+void InternetRadio::slotStreamConnectionEstablished(KUrl /*url*/, KIO::MetaData /*metaData*/)
 {
     startDecoderThread();
 }

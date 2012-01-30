@@ -225,7 +225,7 @@ protected:
     KUrl::List                    m_currentPlaylist;
     PlaylistHandler               m_playlistHandler;
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    IcyHttpHandler               *m_icyHttpHandler;
+    StreamReader                 *m_streamReader;
 #endif
 
     bool                          m_stereoFlag;
