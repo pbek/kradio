@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KRADIO_ICY_HTTP_HANDLER_H
-#define KRADIO_ICY_HTTP_HANDLER_H
+#ifndef KRADIO_MMSX_HANDLER_H
+#define KRADIO_MMSX_HANDLER_H
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -24,20 +24,17 @@
 
 #include <QtCore/QSharedPointer>
 #include <kurl.h>
-#include <kio/job.h>
-#include <kio/jobclasses.h>
 
 #include "stream_reader.h"
 
-class IcyHttpHandler : public StreamReader
+class MMSXHandlerThread;
+
+class MMSXHandler : public StreamReader
 {
 Q_OBJECT
 public:
-    IcyHttpHandler();
-    ~IcyHttpHandler();
-
-    // FIXME: parent class with standardized interface
-    // FIXME: parent class which cares about playlist handling
+    MMSXHandler();
+    ~MMSXHandler();
 
     void                        startStreamDownload(KUrl url);
     void                        stopStreamDownload();
@@ -45,31 +42,28 @@ public:
     KIO::MetaData               getConnectionMetaData() const { return m_connectionMetaData; }
 
 public slots:
-    void                        slotStreamContinue();
-    void                        slotStreamPause();
+    virtual void                slotStreamContinue() {} // currently not supported
+    virtual void                slotStreamPause()    {}
 
-protected slots:
-    void                        slotStreamData(KIO::Job *job, QByteArray data);
-    void                        slotStreamDone(KJob *job);
+public slots:
+
+    void    proxyError   (KUrl url)                                      { emit sigError(url);               }
+    void    proxyFinished(KUrl url)                                      { emit sigFinished(url);            }
+    void    proxyStarted (KUrl url)                                      { emit sigStarted(url);             }
+    void    proxyConnectionEstablished(KUrl url, KIO::MetaData metaData) { emit sigConnectionEstablished(url, metaData); }
+
+    void    proxyUrlChanged(KUrl url)                                    { emit sigUrlChanged(url);          }
+    void    proxyContentType(QString contentType)                        { emit sigContentType(contentType); }
+
+    void    proxyStreamData    (QByteArray data)                         { emit sigStreamData(data);         }
+    void    proxyMetaDataUpdate(KIO::MetaData metadata)                  { emit sigMetaDataUpdate(metadata); }
+
 
 protected:
-    void                        setupStreamJob(const KUrl &url);
-    void                        startStreamJob();
-
-    void                        analyzeHttpHeader(KIO::Job *job);
-    void                        handleStreamData(const QByteArray &data);
-    void                        handleMetaData(const QByteArray &data, bool complete);
-
-protected:
-    bool                        m_httpHeaderAnalyzed;
-    size_t                      m_ICYMetaInt;
-    size_t                      m_dataRest;
-    size_t                      m_metaRest;
-    QByteArray                  m_metaData;
 
     KUrl                        m_streamUrl;
-    KIO::TransferJob           *m_streamJob;
     KIO::MetaData               m_connectionMetaData;
+    MMSXHandlerThread          *m_mmsxThread;
 };
 
 

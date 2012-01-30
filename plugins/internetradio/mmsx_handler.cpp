@@ -1,7 +1,7 @@
 /***************************************************************************
-                          stream_reader.cpp  -  description
+                          mmsx_handler.cpp  -  description
                              -------------------
-    begin                : Mon Jan 30 2012
+    begin                : Sun Jan 22 2012
     copyright            : (C) 2012 by Martin Witte
     email                : emw-kradio@nocabal.de
  ***************************************************************************/
@@ -15,13 +15,36 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stream_reader.h"
+#include "mmsx_handler.h"
+#include "mmsx_handler_thread.h"
 
-StreamReader::StreamReader()
-{
-    qRegisterMetaType<KIO::MetaData>();
-}
-
-StreamReader::~StreamReader()
+MMSXHandler::MMSXHandler()
+ :  m_mmsxThread(NULL)
 {
 }
+
+
+MMSXHandler::~MMSXHandler()
+{
+}
+
+
+void MMSXHandler::startStreamDownload(KUrl url)
+{
+    stopStreamDownload();
+    m_streamUrl  = url;
+    m_mmsxThread = new MMSXHandlerThread(url, this);
+    m_mmsxThread->start();
+}
+
+
+void MMSXHandler::stopStreamDownload()
+{
+    if (m_mmsxThread) {
+        m_mmsxThread->stop();
+        m_mmsxThread->quit();
+        // delete m_mmsxThread; // the thread will delete itself, but only when it really finished.
+        m_mmsxThread = NULL;
+    }
+}
+

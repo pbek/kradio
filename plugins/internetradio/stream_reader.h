@@ -40,6 +40,10 @@ public:
 
     virtual KIO::MetaData       getConnectionMetaData() const = 0;
 
+public slots:
+    virtual void                slotStreamContinue() = 0;
+    virtual void                slotStreamPause()    = 0;
+
 signals:
     void                        sigError   (KUrl url);
     void                        sigFinished(KUrl url);
@@ -50,8 +54,9 @@ signals:
     void                        sigContentType(QString contentType);
 
     void                        sigStreamData    (QByteArray data);
-    void                        sigMetaDataUpdate(QMap<QString, QString> metadata);
+    void                        sigMetaDataUpdate(KIO::MetaData metadata);
 };
 
+Q_DECLARE_METATYPE(KIO::MetaData)
 
 #endif

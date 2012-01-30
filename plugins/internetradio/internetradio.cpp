@@ -42,6 +42,7 @@
 
 #include "internetradio-configuration.h"
 #include "icy_http_handler.h"
+#include "mmsx_handler.h"
 
 
 #ifdef KRADIO_ENABLE_FIXMES
@@ -687,8 +688,12 @@ void InternetRadio::slotPlaylistEOL()
 void InternetRadio::startStreamReader(KUrl stream)
 {
     stopStreamReader();
-    m_streamReader = new IcyHttpHandler();
-    connect(m_streamReader, SIGNAL(sigMetaDataUpdate(QMap<QString,QString>)),     this, SLOT(slotMetaDataUpdate(QMap<QString,QString>)));
+    if (stream.protocol() == "mms" || stream.protocol() == "mmsx") {
+        m_streamReader = new MMSXHandler();
+    } else {
+        m_streamReader = new IcyHttpHandler();
+    }
+    connect(m_streamReader, SIGNAL(sigMetaDataUpdate(KIO::MetaData)),             this, SLOT(slotMetaDataUpdate(KIO::MetaData)));
     connect(m_streamReader, SIGNAL(sigError(KUrl)),                               this, SLOT(slotStreamError(KUrl)));
     connect(m_streamReader, SIGNAL(sigFinished(KUrl)),                            this, SLOT(slotStreamFinished(KUrl)));
     connect(m_streamReader, SIGNAL(sigStarted(KUrl)),                             this, SLOT(slotStreamStarted(KUrl)));
@@ -1077,7 +1082,7 @@ const InternetRadioStation *InternetRadio::findMatchingStation(const StationList
 
 
 
-void InternetRadio::slotMetaDataUpdate(QMap<QString, QString> metadata)
+void InternetRadio::slotMetaDataUpdate(KIO::MetaData metadata)
 {
     if (isPowerOn() && metadata.contains("StreamTitle")) {
         QString title = metadata["StreamTitle"];

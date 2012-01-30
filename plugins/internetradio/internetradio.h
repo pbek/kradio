@@ -189,7 +189,7 @@ protected:
 protected slots:
     void    slotDecoderThreadFinished();
 
-    void    slotMetaDataUpdate(QMap<QString, QString> metadata);
+    void    slotMetaDataUpdate(KIO::MetaData metadata);
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     void    slotInputStreamUrlChanged(KUrl url);
