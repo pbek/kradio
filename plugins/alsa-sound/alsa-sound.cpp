@@ -616,6 +616,8 @@ void AlsaSoundDevice::slotPollPlayback()
 {
     //     logDebug("AlsaSoundDevice::slotPollPlayback()");
     BlockProfiler p("AlsaSoundDevice::slotPollPlayback()");
+    
+    printf ("slotPollPlayback\n");      
 
     if (m_PlaybackStreamID.isValid()) {
 
@@ -653,7 +655,9 @@ void AlsaSoundDevice::slotPollPlayback()
         }
         checkThreadErrorsAndWarning();
 
+        printf ("    slotPollPlayback: before buffer size check: free size = %zi, size = %zi, free ratio = %4.1f %%\n", m_PlaybackBuffer.getFreeSize(), m_PlaybackBuffer.getSize(), (double)m_PlaybackBuffer.getFreeSize() / (double) m_PlaybackBuffer.getSize() * 100.0 );      
         if (m_PlaybackBuffer.getFreeSize() > m_PlaybackBuffer.getSize() / 3) {
+            printf ("    slotPollPlayback: buffer check successful: requesting data\n");      
             notifyReadyForPlaybackData(m_PlaybackStreamID, m_PlaybackBuffer.getFreeSize());
         }
 
