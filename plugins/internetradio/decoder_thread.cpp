@@ -351,6 +351,7 @@ void InternetRadioDecoder::pushBuffer(const DataBuffer &buf)
     m_bufferCountSemaphore.acquire();
     QMutexLocker lock(&m_bufferAccessLock);
     m_buffers.push_back(buf);
+    printf("wrote pcm buffer: curSize = %zi,  nbufs=%i\n", buf.remainingSize(), m_buffers.size());
 }
 
 
@@ -956,38 +957,38 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
 // {
 //     bool       isfull = false;
 //     QByteArray retval;
-// 
+//
 //     if (m_done) {
 //         return QByteArray();
 //     }
-// 
+//
 //     // block until at least 1 byte is readable
 //     m_inputBufferSize.acquire(1);
-// 
+//
 //     {   QMutexLocker  lock(&m_inputBufferAccessLock);
-// 
+//
 //         QByteArray shared = m_inputBuffer.left(maxSize);
 //         retval = QByteArray(shared.data(), shared.size()); // force deep copy for threading reasons
 //         m_inputBuffer.remove(0, retval.size());
 //         isfull = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
 //     }
-// 
+//
 //     // keep track of the bytes read
 //     if (retval.size() > 0) {
 //         m_inputBufferSize.acquire(retval.size() - 1);
 //     }
-// 
+//
 //     if (!isfull) {
 //         emit sigInputBufferNotFull();
 //     }
 //     return retval;
 // }
-// 
-// 
+//
+//
 // void InternetRadioDecoder::writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl)
 // {
 //     QMutexLocker  lock(&m_inputBufferAccessLock);
-// 
+//
 //     m_inputBuffer.append(data.data(), data.size()); // force deep copy
 //     isFull     = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
 //     m_inputBufferSize.release(data.size());

@@ -918,12 +918,14 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
         }
 
 //         logDebug(QString("InternetRadio::noticeReadyForPlaybackData: PLAY: buf_size = %1, min_count = %2, buf_count = %3").arg(size).arg(min_size).arg(n_bufs));
+        printf("PLAY: buf_size = %zi, min_count = %i, buf_count = %i, free_size=%zi\n", size, min_size, n_bufs, free_size);
 
         notifySoundStreamData(id, sf, data, size, consumed_size, md);
 
         if (consumed_size == SIZE_T_DONT_CARE) {
             consumed_size = size;
         }
+        printf("     consumed: %zi\n", consumed_size);
         free_size -= consumed_size;
         buf.addProcessedSize(consumed_size);
         if (m_decoderThread && buf.remainingSize() <= 0) {
@@ -1125,17 +1127,17 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
     // currently ignored
 }
 
-// 
+//
 // void InternetRadio::startStreamDownload()
 // {
 //     m_randStreamIdxOffset      = rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
 //     m_currentStreamIdx         = 0;
 //     m_currentStreamRetriesLeft = m_currentStreamRetriesMax;
-// 
+//
 //     tryNextStream();
 // }
-// 
-// 
+//
+//
 // void InternetRadio::tryNextStream()
 // {
 //     do {
@@ -1145,11 +1147,11 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //         }
 //         if (isPowerOn() && m_currentStreamIdx < m_currentPlaylist.size()) {
 //             m_currentStreamUrl = m_currentPlaylist[(m_currentStreamIdx + m_randStreamIdxOffset) % m_currentPlaylist.size()];
-// 
+//
 //             // start download job
 //             stopStreamDownload();
 //             logDebug(i18n("opening stream %1", m_currentStreamUrl.pathOrUrl()));
-// 
+//
 //             m_streamJob = KIO::get(m_currentStreamUrl, KIO::NoReload, KIO::HideProgressInfo);
 //             if (m_streamJob) {
 //                 QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
@@ -1169,8 +1171,8 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //         }
 //     } while (isPowerOn() && !m_streamJob);
 // }
-// 
-// 
+//
+//
 // void InternetRadio::stopStreamDownload()
 // {
 //     if (m_streamJob) {
@@ -1180,8 +1182,8 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //         m_streamJob = NULL;
 //     }
 // }
-// 
-// 
+//
+//
 // void InternetRadio::slotStreamData(KIO::Job *job, const QByteArray &data)
 // {
 //     if (m_streamJob == job) {
@@ -1195,16 +1197,16 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //         }
 //     }
 // }
-// 
-// 
+//
+//
 // void InternetRadio::slotStreamContinue()
 // {
 //     if (m_streamJob) {
 //         m_streamJob->resume();
 //     }
 // }
-// 
-// 
+//
+//
 // void InternetRadio::slotStreamDone(KJob *job)
 // {
 //     if (m_streamJob == job) {
@@ -1221,7 +1223,7 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //     }
 //     job->deleteLater();
 // }
-// 
+//
 #endif
 
 

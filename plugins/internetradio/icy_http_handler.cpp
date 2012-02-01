@@ -267,7 +267,7 @@ void IcyHttpHandler::slotStreamContinue()
 {
     if (m_streamJob) {
         m_streamJob->resume();
-//         printf ("stream CONTINUED\n");
+        printf ("stream CONTINUED\n");
     }
 }
 
@@ -275,6 +275,7 @@ void IcyHttpHandler::slotStreamContinue()
 void IcyHttpHandler::slotStreamPause()
 {
     m_streamJob->suspend();
+    printf ("stream PAUSED\n");
 }
 
 
