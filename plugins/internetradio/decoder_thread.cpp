@@ -352,19 +352,19 @@ void InternetRadioDecoder::pushBuffer(const char *data, size_t dataSize, const S
     }
 
     bool    foundBuffer       = false;
-    size_t  bufferFullSize    = 0;
-    size_t  remainingCapacity = 0;
-    size_t  remainingSize     = 0;
-    size_t  nBufs             = 0;
+//     size_t  bufferFullSize    = 0;
+//     size_t  remainingCapacity = 0;
+//     size_t  remainingSize     = 0;
+//     size_t  nBufs             = 0;
     {   QMutexLocker lock(&m_bufferAccessLock);
         if (m_buffers.size() > 0) {
             DataBuffer &buf = m_buffers.last();
             if (buf.soundFormat() == sf && buf.remainingCapacity() >= dataSize) {
                 buf.addData(data, dataSize);
-                bufferFullSize    = buf.fullSize();
-                remainingCapacity = buf.remainingCapacity();
-                remainingSize     = buf.remainingSize();
-                nBufs             = m_buffers.size();
+//                 bufferFullSize    = buf.fullSize();
+//                 remainingCapacity = buf.remainingCapacity();
+//                 remainingSize     = buf.remainingSize();
+//                 nBufs             = m_buffers.size();
                 foundBuffer = true;
             }
         }
@@ -373,13 +373,13 @@ void InternetRadioDecoder::pushBuffer(const char *data, size_t dataSize, const S
         m_bufferCountSemaphore.acquire();
         QMutexLocker lock(&m_bufferAccessLock);
         m_buffers.push_back(DataBuffer(m_maxSingleBufferSize, data, dataSize, md, sf));
-        DataBuffer &buf = m_buffers.last();
-        bufferFullSize    = buf.fullSize();
-        remainingCapacity = buf.remainingCapacity();
-        remainingSize     = buf.remainingSize();
-        nBufs             = m_buffers.size();
+//         DataBuffer &buf = m_buffers.last();
+//         bufferFullSize    = buf.fullSize();
+//         remainingCapacity = buf.remainingCapacity();
+//         remainingSize     = buf.remainingSize();
+//         nBufs             = m_buffers.size();
     }
-    printf("wrote pcm buffer: nbufs=%zi, current: fullSize = %zi, remainingSize = %zi, remainingCapacity = %zi, increment = %zi\n", nBufs, bufferFullSize, remainingSize, remainingCapacity, dataSize);
+//     printf("wrote pcm buffer: nbufs=%zi, current: fullSize = %zi, remainingSize = %zi, remainingCapacity = %zi, increment = %zi\n", nBufs, bufferFullSize, remainingSize, remainingCapacity, dataSize);
 }
 
 
@@ -599,7 +599,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         int        score     = 0;
         bool       err       = false;
         QByteArray probeData = m_streamInputBuffer->readInputBuffer(m_maxProbeSize, m_maxProbeSize, /* consume */ false, err);
-        printf("probe data size = %i\n", probeData.size());
+//         printf("probe data size = %i\n", probeData.size());
 
         if (!err) {
             AVProbeData pd = { m_inputUrl.pathOrUrl().toLocal8Bit(), (unsigned char*)probeData.data(), probeData.size() };

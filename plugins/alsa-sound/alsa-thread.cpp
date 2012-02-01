@@ -113,7 +113,7 @@ void AlsaThread::run()
 
                 // for some reason, the blocking functionality of alsa seems to be suboptimum (causes high CPU load and system calls)
                 // therefore let's wait for one alsa-period
-                printf("alsa snd: waiting for %i us\n", m_latency_us);
+//                 printf("alsa snd: waiting for %i us\n", m_latency_us);
                 usleep(m_latency_us);
             }
         }

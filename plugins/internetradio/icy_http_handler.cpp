@@ -168,7 +168,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
             for (int i = 0; i < 1000; ++i) {
                 prober.feed(m_metaData);
             }
-            printf ("confidence = %f\n", prober.confidence());
+//             printf ("confidence = %f\n", prober.confidence());
             if (prober.confidence() > 0.2) {
                 metaString = QTextCodec::codecForName(prober.encoding())->toUnicode(m_metaData);
             }
@@ -267,7 +267,7 @@ void IcyHttpHandler::slotStreamContinue()
 {
     if (m_streamJob) {
         m_streamJob->resume();
-        printf ("stream CONTINUED\n");
+//         printf ("stream CONTINUED\n");
     }
 }
 
@@ -275,7 +275,7 @@ void IcyHttpHandler::slotStreamContinue()
 void IcyHttpHandler::slotStreamPause()
 {
     m_streamJob->suspend();
-    printf ("stream PAUSED\n");
+//     printf ("stream PAUSED\n");
 }
 
 

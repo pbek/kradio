@@ -78,7 +78,7 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, bo
         // be also acquiring concurrently
         size_t realSize = qMin(maxSize, (size_t)m_inputBufferSize.available() + minSize);
 //         realSize = qMax(minSize, realSize - realSize % 8); // alignment! Otherwise decoder might fail!
-        printf ("bufferSize = %i      minSize = %zi,  maxSize = %zi       realSize = %zi\n", m_inputBuffer.size(), minSize, maxSize, realSize);
+//         printf ("bufferSize = %i      minSize = %zi,  maxSize = %zi       realSize = %zi\n", m_inputBuffer.size(), minSize, maxSize, realSize);
         QByteArray shared = m_inputBuffer.left(realSize);
 //         printf ("reading stream input buffer: shared.size = %i\n", shared.size());
 
@@ -117,10 +117,10 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, bo
 void StreamInputBuffer::slotWriteInputBuffer(QByteArray data)
 {
     bool isFull = false;
-    int oldSize = 0;
+//     int oldSize = 0;
     {   QMutexLocker  lock(&m_inputBufferAccessLock);
 
-        oldSize = m_inputBuffer.size();
+//         oldSize = m_inputBuffer.size();
         m_inputBuffer.append(data.data(), data.size()); // force deep copy
         isFull = (size_t)m_inputBuffer.size() >= m_inputBufferMaxSize;
 
@@ -129,7 +129,7 @@ void StreamInputBuffer::slotWriteInputBuffer(QByteArray data)
     if (isFull) {
         emit sigInputBufferFull();
     }
-    printf ("wrote stream input buffer: %i bytes (oldSize = %i, newSize = %i)\n", data.size(), oldSize, m_inputBuffer.size());
+//     printf ("wrote stream input buffer: %i bytes (oldSize = %i, newSize = %i)\n", data.size(), oldSize, m_inputBuffer.size());
 }
 
 
