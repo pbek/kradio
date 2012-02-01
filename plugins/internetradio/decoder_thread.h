@@ -75,8 +75,10 @@ public:
                          StreamInputBuffer          *input_buffer,
                          QString                     contentType,
 #endif
-                         int max_buffers,
-                         int max_probe_size_bytes, float max_analyze_secs);
+                         int   max_buffers,
+                         int   max_singleBufferSize,
+                         int   max_probe_size_bytes,
+                         float max_analyze_secs);
 
     virtual ~InternetRadioDecoder();
 
@@ -109,7 +111,7 @@ public:
 
 protected:
     // output buffer
-    void                  pushBuffer(const DataBuffer &);
+    void                  pushBuffer(const char *data, size_t dataSize, const SoundMetaData &md, const SoundFormat &sf);
 
 signals:
     void                  sigSelfTrigger();
@@ -188,6 +190,8 @@ protected:
     QList<DataBuffer>     m_buffers;
     QMutex                m_bufferAccessLock;
     QSemaphore            m_bufferCountSemaphore;
+    size_t                m_maxBufferCount;
+    size_t                m_maxSingleBufferSize;
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     KUrl                  m_inputUrl;
@@ -222,8 +226,9 @@ public:
                   StreamReader               *streamReader,
 //                   StreamInputBuffer          *input_buffer,
 #endif
-                  int max_buffers,
-                  int max_probe_size_bytes,
+                  int   max_buffers,
+                  int   max_singleBufferSize,
+                  int   max_probe_size_bytes,
                   float max_analyze_secs
                  );
     virtual ~DecoderThread();
@@ -236,6 +241,7 @@ protected:
 
     InternetRadioStation  m_station;
     int                   m_max_buffers;
+    int                   m_max_singleBufferSize;
     int                   m_max_probe_size_bytes;
     float                 m_max_analyze_secs;
 

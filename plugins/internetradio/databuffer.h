@@ -30,26 +30,28 @@ class DataBuffer {
     public:
         DataBuffer();
         // this constructor creates a copy of the data!
-        DataBuffer(const char *data, size_t size, const SoundMetaData &md, const SoundFormat &);
-        // copy constructor does not copy the data!
+        DataBuffer(size_t reserved_size, const char *data, size_t data_size, const SoundMetaData &md, const SoundFormat &);
+        // copy constructor uses implicit sharing in QByteArray
         DataBuffer(const DataBuffer &b);
-        // the m_data field is not freed automatically!!!
         ~DataBuffer();
-
-        void                 freeData(); // must be called MANUALL. Destructor will not delete data!
 
         bool                 isValid() const;
 
-        char   *             currentPointer() const;
-        size_t               remainingSize()  const;
+        // adds a copy of the data to the buffer
+        void                 addData(const char *data, size_t data_size);
+
+        QByteArray           remainingData()     const { return m_data.mid(m_processedSize);       }
+        size_t               remainingSize()     const { return m_data.size() - m_processedSize;   }
+        size_t               remainingCapacity() const { return m_data.capacity() - m_data.size(); }
+        size_t               fullSize()          const { return m_data.size();                     }
+        size_t               processedSize()     const { return m_processedSize; }
         void                 addProcessedSize(size_t s);
 
         const SoundMetaData &metaData()    const { return m_MetaData; }
         const SoundFormat   &soundFormat() const { return m_SoundFormat; }
 
     protected:
-        char                *m_Data;
-        size_t               m_Size;
+        QByteArray           m_data;
         size_t               m_processedSize;
         SoundMetaData        m_MetaData;
         SoundFormat          m_SoundFormat;

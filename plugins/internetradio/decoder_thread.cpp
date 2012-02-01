@@ -55,8 +55,10 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
                                            StreamInputBuffer          *streamInputBuffer,
                                            QString                     contentType,
 #endif
-                                           int max_buffers,
-                                           int max_probe_size_bytes, float max_analyze_secs)
+                                           int                         max_buffers,
+                                           int                         max_singleBufferSize,
+                                           int                         max_probe_size_bytes,
+                                           float                       max_analyze_secs)
 :   m_decoderOpened       (false),
     m_av_pFormatCtx       (NULL),
     m_av_pFormatCtx_opened(false),
@@ -96,6 +98,8 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #endif
 /*    m_inputURL      (m_RadioStation.pathOrUrl()),*/
     m_bufferCountSemaphore(max_buffers),
+    m_maxBufferCount      (max_buffers),
+    m_maxSingleBufferSize (max_singleBufferSize),
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_inputUrl(currentStreamUrl),
     m_streamInputBuffer(streamInputBuffer),
@@ -229,11 +233,9 @@ bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_
             updateSoundFormat();
         }
 
-        DataBuffer buf(output_buf, generated_output_bytes, md, m_soundFormat);
-
 //                     printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
 //                     printf ("storing decoded data ...");
-        pushBuffer(buf);
+        pushBuffer(output_buf, generated_output_bytes, md, m_soundFormat);
 //                     printf (" done\n");
 
 /*                    printf ("semaphore available: %i\n", m_runSemaphore.available());
@@ -343,53 +345,81 @@ void InternetRadioDecoder::run()
 }
 
 
-void InternetRadioDecoder::pushBuffer(const DataBuffer &buf)
+void InternetRadioDecoder::pushBuffer(const char *data, size_t dataSize, const SoundMetaData &md, const SoundFormat &sf)
 {
     if (m_done) {
         return;
     }
-    m_bufferCountSemaphore.acquire();
-    QMutexLocker lock(&m_bufferAccessLock);
-    m_buffers.push_back(buf);
-    printf("wrote pcm buffer: curSize = %zi,  nbufs=%i\n", buf.remainingSize(), m_buffers.size());
+
+    bool    foundBuffer       = false;
+    size_t  bufferFullSize    = 0;
+    size_t  remainingCapacity = 0;
+    size_t  remainingSize     = 0;
+    size_t  nBufs             = 0;
+    {   QMutexLocker lock(&m_bufferAccessLock);
+        if (m_buffers.size() > 0) {
+            DataBuffer &buf = m_buffers.last();
+            if (buf.soundFormat() == sf && buf.remainingCapacity() >= dataSize) {
+                buf.addData(data, dataSize);
+                bufferFullSize    = buf.fullSize();
+                remainingCapacity = buf.remainingCapacity();
+                remainingSize     = buf.remainingSize();
+                nBufs             = m_buffers.size();
+                foundBuffer = true;
+            }
+        }
+    }
+    if (!foundBuffer) {
+        m_bufferCountSemaphore.acquire();
+        QMutexLocker lock(&m_bufferAccessLock);
+        m_buffers.push_back(DataBuffer(m_maxSingleBufferSize, data, dataSize, md, sf));
+        DataBuffer &buf = m_buffers.last();
+        bufferFullSize    = buf.fullSize();
+        remainingCapacity = buf.remainingCapacity();
+        remainingSize     = buf.remainingSize();
+        nBufs             = m_buffers.size();
+    }
+    printf("wrote pcm buffer: nbufs=%zi, current: fullSize = %zi, remainingSize = %zi, remainingCapacity = %zi, increment = %zi\n", nBufs, bufferFullSize, remainingSize, remainingCapacity, dataSize);
 }
 
 
 int InternetRadioDecoder::availableBuffers()
 {
-    QMutexLocker lock(&m_bufferAccessLock);
     int n = 0;
-    n = m_buffers.size();
+    { QMutexLocker lock(&m_bufferAccessLock);
+      n = m_buffers.size();
+    }
     return n;
 }
 
+
 DataBuffer &InternetRadioDecoder::getFirstBuffer()
 {
-    QMutexLocker lock(&m_bufferAccessLock);
-    DataBuffer *tmp;
-    tmp = &(m_buffers.first());
+    DataBuffer *tmp = NULL;
+    { QMutexLocker lock(&m_bufferAccessLock);
+      tmp = &(m_buffers.first());
+    }
     return *tmp;
 }
+
 
 void InternetRadioDecoder::popFirstBuffer()
 {
     QMutexLocker lock(&m_bufferAccessLock);
-    DataBuffer &buf = m_buffers.first();
-    buf.freeData();
     m_buffers.pop_front();
     m_bufferCountSemaphore.release();
 }
+
 
 void InternetRadioDecoder::flushBuffers()
 {
     QMutexLocker lock(&m_bufferAccessLock);
     while (m_buffers.size()) {
-        DataBuffer &buf = m_buffers.first();
-        buf.freeData();
         m_buffers.pop_front();
         m_bufferCountSemaphore.release();
     }
 }
+
 
 void InternetRadioDecoder::setDone()
 {
@@ -1012,11 +1042,14 @@ DecoderThread::DecoderThread(QObject *parent,
                              StreamReader               *streamReader,
 //                              StreamInputBuffer          *streamInputBuffer,
 #endif
-                             int max_buffers,
-                             int max_probe_size_bytes, float max_analyze_secs)
+                             int   max_buffers,
+                             int   max_singleBufferSize,
+                             int   max_probe_size_bytes,
+                             float max_analyze_secs)
     : QThread(parent),
       m_station(rs),
       m_max_buffers(max_buffers),
+      m_max_singleBufferSize(max_singleBufferSize),
       m_max_probe_size_bytes(max_probe_size_bytes),
       m_max_analyze_secs(max_analyze_secs),
       m_decoder(NULL)
@@ -1067,6 +1100,7 @@ void DecoderThread::run()
                                          m_contentType,
 #endif
                                          m_max_buffers,
+                                         m_max_singleBufferSize,
                                          m_max_probe_size_bytes,
                                          m_max_analyze_secs
                                         );

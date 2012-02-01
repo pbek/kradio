@@ -48,8 +48,10 @@
 #ifdef KRADIO_ENABLE_FIXMES
     #warning "FIXME: make buffer size configurable"
 #endif
-#define MAX_BUFFERS           20
-#define MIN_BUFFERS4PLAYBACK  10
+#define MAX_BUFFER_SIZE       (256*1024)
+#define MAX_BUFFERS           8
+#define MAX_BYTES_PER_BUFFER  ((MAX_BUFFER_SIZE) / (MAX_BUFFERS))
+#define MIN_BUFFERS4PLAYBACK  2
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -732,6 +734,7 @@ void InternetRadio::startDecoderThread()
 //                                         m_streamInputBuffer,
 #endif
                                         MAX_BUFFERS,
+                                        MAX_BYTES_PER_BUFFER,
                                         m_maxStreamProbeSize,
                                         m_maxStreamAnalyzeTime
                                        );
@@ -906,8 +909,9 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
     while (m_decoderThread && (n_bufs = m_decoderThread->decoder()->availableBuffers()) && (free_size > 0) && (consumed_size != 0)) {
 
         DataBuffer         &buf           = m_decoderThread->decoder()->getFirstBuffer();
-        const char         *data          = buf.currentPointer();
-        size_t              size          = min(buf.remainingSize(), free_size);
+        QByteArray          data          = buf.remainingData();
+        size_t              dataSize      = data.size();
+        size_t              size          = min(dataSize, free_size);
                             consumed_size = SIZE_T_DONT_CARE;
         const SoundMetaData &md           = buf.metaData();
         const SoundFormat   &sf           = buf.soundFormat();
@@ -918,13 +922,13 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
         }
 
 //         logDebug(QString("InternetRadio::noticeReadyForPlaybackData: PLAY: buf_size = %1, min_count = %2, buf_count = %3").arg(size).arg(min_size).arg(n_bufs));
-        printf("PLAY: buf_size = %zi, min_count = %i, buf_count = %i, free_size=%zi\n", size, min_size, n_bufs, free_size);
 
-        notifySoundStreamData(id, sf, data, size, consumed_size, md);
+        notifySoundStreamData(id, sf, data.data(), size, consumed_size, md);
 
         if (consumed_size == SIZE_T_DONT_CARE) {
             consumed_size = size;
         }
+        printf("PLAY: buf_size = %zi, min_count = %i, buf_count = %i, free_size=%zi, avail_size=%zi\n", size, min_size, n_bufs, free_size, dataSize);
         printf("     consumed: %zi\n", consumed_size);
         free_size -= consumed_size;
         buf.addProcessedSize(consumed_size);

@@ -22,66 +22,48 @@
 #include "databuffer.h"
 
 DataBuffer::DataBuffer()
-  : m_Data(NULL),
-    m_Size(0),
-    m_processedSize(0),
+  : m_processedSize(0),
     m_MetaData(0,0,0)
 {
 }
 
-DataBuffer::DataBuffer(const char *data, size_t size, const SoundMetaData &md, const SoundFormat &sf)
-  : m_Data(NULL),
-    m_Size(size),
+
+DataBuffer::DataBuffer(size_t reservedSize, const char *data, size_t dataSize, const SoundMetaData &md, const SoundFormat &sf)
+  : m_data(data, dataSize),
     m_processedSize(0),
     m_MetaData(md),
     m_SoundFormat(sf)
 {
-    m_Data = new char [m_Size];
-    memcpy (m_Data, data, m_Size);
+    m_data.reserve(reservedSize);
 }
 
+
 DataBuffer::DataBuffer(const DataBuffer &b)
-  : m_Data(b.m_Data),
-    m_Size(b.m_Size),
+  : m_data(b.m_data),
     m_processedSize(b.m_processedSize),
     m_MetaData(b.m_MetaData),
     m_SoundFormat(b.m_SoundFormat)
 {
 }
 
+
 DataBuffer::~DataBuffer()
 {
-    m_Data          = NULL;
-    m_Size          = 0;
-    m_processedSize = 0;
-}
-
-
-void DataBuffer::freeData() // must be called MANUALL. Destructor will not delete data!
-{
-    if (m_Data) {
-        delete m_Data;
-    }
-    m_Data          = NULL;
-    m_Size          = 0;
     m_processedSize = 0;
 }
 
 
 bool DataBuffer::isValid() const
 {
-    return m_Data;
+    return m_data.capacity() > 0;
 }
 
-char *DataBuffer::currentPointer() const
+
+void DataBuffer::addData(const char* data, size_t data_size)
 {
-    return m_Data ? m_Data + m_processedSize : NULL;
+    m_data.append(data, data_size);
 }
 
-size_t DataBuffer::remainingSize() const
-{
-    return m_Data ? m_Size - m_processedSize : 0;
-}
 
 void DataBuffer::addProcessedSize(size_t s) {
     m_processedSize += s;
