@@ -549,14 +549,22 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     // if a format has been specified, set up the proper structures
 
     LibAVGlobal::ensureInitDone();
-    QString decoderClass = m_RadioStation.decoderClass();
-    if (m_contentType == "audio/mpeg") {
-        decoderClass = "mp3";
-    } else if (m_contentType == "audio/ogg") {
-        decoderClass = "ogg";
+    AVInputFormat   *iformat      = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
+    if (!iformat) {
+        QString decoderClass;
+        if (m_contentType == "audio/mpeg") {
+            decoderClass = "mp3";
+        } else if (m_contentType == "audio/ogg") {
+            decoderClass = "ogg";
+        }
+        if (decoderClass.length()) {
+            iformat = av_find_input_format(decoderClass.toLocal8Bit());
+            if (iformat) {
+                IErrorLogClient::staticLogDebug(QString("found content-type = \"%1\": skipping auto detection and setting decoder class to \"%2\"").arg(m_contentType).arg(decoderClass));
+            }
+        }
     }
 
-    AVInputFormat   *iformat = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
 
 
 

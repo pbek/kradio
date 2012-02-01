@@ -779,7 +779,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
                 m_playbackThread = NULL;
             }
             m_playbackThread = new AlsaThread(this, /*playback_not_capture = */ true, m_hPlayback, m_PlaybackFormat);
-            m_playbackThread->setLatency(m_PlaybackLatency * 1000);
+            m_playbackThread->setLatency(qMin(50u, m_PlaybackLatency) * 1000);
             m_playbackThread->start();
             m_PlaybackPollingTimer.start(50); // polling still necessary, however mainly for pushing sound around and getting volume
         } else {
@@ -842,7 +842,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
                 m_captureThread = NULL;
             }
             m_captureThread = new AlsaThread(this, /*playback_not_capture = */ false, m_hCapture, m_CaptureFormat);
-            m_captureThread->setLatency(m_CaptureLatency * 1000);
+            m_captureThread->setLatency(qMin(50u, m_CaptureLatency) * 1000);
             m_captureThread->start();
             m_CapturePollingTimer.start(50); // polling still necessary, however mainly for pushing sound around and getting volume
         } else {
