@@ -154,7 +154,7 @@ protected slots:
 protected slots:
 
     void    buildContextMenu();
-    void    slotUpdateRecordingMenu();
+//     void    slotUpdateRecordingMenu();
 
 protected:
     bool    event(QEvent *e);
@@ -218,17 +218,17 @@ protected:
     SystrayWheelAction                         m_WheelAction;
 
 
-    QTimer                                     m_menuRebuildWorkaroundTimer;
-    bool                                       m_inMenuAction;
-    bool                                       m_scheduleMenuRebuild;
+//     QTimer                                     m_menuRebuildWorkaroundTimer;
+//     bool                                       m_inMenuAction;
+//     bool                                       m_scheduleMenuRebuild;
 
 
     bool                                       m_paused;
     bool                                       m_recording;
     bool                                       m_playing;
 
-    QList<QAction*>                            m_WorkaroundRecordingMenuActionsToBeDeleted;
-    QTimer                                     m_WorkaroundRecordingMenuUpdate;
+//     QList<QAction*>                            m_WorkaroundRecordingMenuActionsToBeDeleted;
+//     QTimer                                     m_WorkaroundRecordingMenuUpdate;
 };
 
 

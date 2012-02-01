@@ -65,9 +65,9 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
     m_sleepID(NULL),
     m_seekfwID(NULL),
     m_seekbwID(NULL),
-    m_stationsActionGroup(NULL),
-    m_inMenuAction(false),
-    m_scheduleMenuRebuild(false)
+    m_stationsActionGroup(NULL)
+//     m_inMenuAction(false),
+//     m_scheduleMenuRebuild(false)
 {
     // default click actions
     m_ClickActions[Qt::LeftButton]        = staShowHide;
@@ -82,9 +82,9 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
     m_DoubleClickActions[Qt::XButton2]    = staNone;
     m_WheelAction                         = swaChangeStation;
 
-    m_menuRebuildWorkaroundTimer.setInterval(100);
-    m_menuRebuildWorkaroundTimer.setSingleShot(true);
-    QObject::connect(&m_menuRebuildWorkaroundTimer, SIGNAL(timeout()), this, SLOT(buildContextMenu()));
+//     m_menuRebuildWorkaroundTimer.setInterval(100);
+//     m_menuRebuildWorkaroundTimer.setSingleShot(true);
+//     QObject::connect(&m_menuRebuildWorkaroundTimer, SIGNAL(timeout()), this, SLOT(buildContextMenu()));
 
     QObject::connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
                      this, SLOT(slotActivated(QSystemTrayIcon::ActivationReason)));
@@ -103,9 +103,9 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
     #endif
     //setAcceptDrops(true);
 
-    m_WorkaroundRecordingMenuUpdate.setInterval(100);
-    m_WorkaroundRecordingMenuUpdate.setSingleShot(true);
-    QObject::connect(&m_WorkaroundRecordingMenuUpdate, SIGNAL(timeout()), this, SLOT(slotUpdateRecordingMenu()));
+//     m_WorkaroundRecordingMenuUpdate.setInterval(100);
+//     m_WorkaroundRecordingMenuUpdate.setSingleShot(true);
+//     QObject::connect(&m_WorkaroundRecordingMenuUpdate, SIGNAL(timeout()), this, SLOT(slotUpdateRecordingMenu()));
 }
 
 RadioDocking::~RadioDocking()
@@ -281,17 +281,17 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
 
 void RadioDocking::buildContextMenu()
 {
-    m_WorkaroundRecordingMenuActionsToBeDeleted.clear();
+//     m_WorkaroundRecordingMenuActionsToBeDeleted.clear();
 
-    if (m_inMenuAction) {
-        m_scheduleMenuRebuild = true;
-        return;
-    }
-    m_scheduleMenuRebuild = false;
+//     if (m_inMenuAction) {
+//         m_scheduleMenuRebuild = true;
+//         return;
+//     }
+//     m_scheduleMenuRebuild = false;
 
     m_menu->clear();
     if (m_recordingMenu) {
-        delete m_recordingMenu;
+        m_recordingMenu->deleteLater();
     }
     m_recordingMenu = NULL;
 
@@ -346,7 +346,7 @@ void RadioDocking::buildStationList()
 {
     m_stationMenuIDs.clear();
     if (m_stationsActionGroup) {
-        delete m_stationsActionGroup;
+        m_stationsActionGroup->deleteLater();
     }
     m_stationsActionGroup = new QActionGroup(this);
     m_stationsActionGroup->setExclusive(true);
@@ -400,17 +400,18 @@ void RadioDocking::slotSeekBkwd()
 
 void RadioDocking::slotPower()
 {
-    bool old_inMenuAction = m_inMenuAction;
-    m_inMenuAction = true;
+//     bool old_inMenuAction = m_inMenuAction;
+//     m_inMenuAction = true;
     if (queryIsPowerOn()) {
         sendPowerOff();
     } else {
         sendPowerOn();
     }
-    if (m_scheduleMenuRebuild && !old_inMenuAction) {
-        m_menuRebuildWorkaroundTimer.start();
-    }
-    m_inMenuAction = old_inMenuAction;
+//     buildContextMenu();
+//     if (m_scheduleMenuRebuild && !old_inMenuAction) {
+//         m_menuRebuildWorkaroundTimer.start();
+//     }
+//     m_inMenuAction = old_inMenuAction;
 }
 
 
@@ -527,7 +528,8 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
     queryIsRecordingRunning(queryCurrentSoundStreamSinkID(), r, sf);
     m_recordingID->setEnabled(!r);
 
-    m_scheduleMenuRebuild = true;
+//     m_scheduleMenuRebuild = true;
+    buildContextMenu();
     return true;
 }
 
@@ -717,8 +719,8 @@ void RadioDocking::ShowHideWidgetPlugins()
 
 void RadioDocking::slotMenuItemActivated(QAction *a)
 {
-    bool old_inMenuAction = m_inMenuAction;
-    m_inMenuAction = true;
+//     bool old_inMenuAction = m_inMenuAction;
+//     m_inMenuAction = true;
 
     const StationList &sl = queryStations();
     QString stationID = a->data().toString();
@@ -745,11 +747,11 @@ void RadioDocking::slotMenuItemActivated(QAction *a)
         }
     }
 
-
-    if (m_scheduleMenuRebuild && !old_inMenuAction) {
-        m_menuRebuildWorkaroundTimer.start();
-    }
-    m_inMenuAction = old_inMenuAction;
+//     buildContextMenu();
+//     if (m_scheduleMenuRebuild && !old_inMenuAction) {
+//         m_menuRebuildWorkaroundTimer.start();
+//     }
+//     m_inMenuAction = old_inMenuAction;
 }
 
 
@@ -785,8 +787,9 @@ bool RadioDocking::stopRecording (SoundStreamID id)
     if (m_StreamID2MenuID.contains(id)) {
         QAction *a = m_StreamID2MenuID[id];
         m_StreamID2MenuID.remove(id);
-        m_WorkaroundRecordingMenuActionsToBeDeleted.append(a);
-        m_WorkaroundRecordingMenuUpdate.start();
+        a->deleteLater();
+//         m_WorkaroundRecordingMenuActionsToBeDeleted.append(a);
+//         m_WorkaroundRecordingMenuUpdate.start();
     }
 
     if (id == queryCurrentSoundStreamSinkID())
@@ -878,7 +881,7 @@ void RadioDocking::buildRecordingMenu()
     }
 
     if (m_recordingMenu) {
-        delete m_recordingMenu;
+        m_recordingMenu->deleteLater();
     }
     m_recordingMenu = m;
 }
@@ -994,14 +997,14 @@ bool RadioDocking::noticeRDSRadioTextChanged(const QString &s)
 }
 
 
-void RadioDocking::slotUpdateRecordingMenu()
-{
-    QAction *a = NULL;
-    foreach(a, m_WorkaroundRecordingMenuActionsToBeDeleted) {
-        delete a;
-    }
-    m_WorkaroundRecordingMenuActionsToBeDeleted.clear();
-}
+// void RadioDocking::slotUpdateRecordingMenu()
+// {
+//     QAction *a = NULL;
+//     foreach(a, m_WorkaroundRecordingMenuActionsToBeDeleted) {
+//         delete a;
+//     }
+//     m_WorkaroundRecordingMenuActionsToBeDeleted.clear();
+// }
 
 
 #include "docking.moc"
