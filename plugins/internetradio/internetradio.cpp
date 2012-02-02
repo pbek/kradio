@@ -1056,11 +1056,11 @@ bool InternetRadio::startCaptureWithFormat(SoundStreamID      id,
         powerOn();
     }
 
-    for (int i = 0; i < 20 && isPowerOn() && !(m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->initDone()); ++i) {
+    for (int i = 0; i < 100 && isPowerOn() && !(m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->initDone()); ++i) {
         QEventLoop loop;
         QTimer::singleShot(200, &loop, SLOT(quit()));
         loop.exec();
-    } // wait max 4 secs*/
+    } // wait max 20 secs*/
     if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->initDone()) {
         real_format = m_decoderThread->decoder()->soundFormat();
         return true;

@@ -360,6 +360,8 @@ bool Recording::startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf
 {
     if (!sendStartCaptureWithFormat(id, sf, real_format, /* force_format = */ true)) {
         logError(i18n("start capture not handled"));
+        sendStopCapture(id);
+        sendStopRecording(id);
         return false;
     }
 
