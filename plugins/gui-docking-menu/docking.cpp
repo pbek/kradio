@@ -91,6 +91,10 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
 
 
     m_menu = new KMenu();
+    contextMenu()->deleteLater();
+    // strangely the activated signals reach this class 
+    // when running remotely on ubuntu, but not when running locally.
+    // for now let's add the system tray menu
     setContextMenu(NULL);
 
     QObject::connect(m_menu, SIGNAL(triggered(QAction *)),
@@ -195,6 +199,8 @@ void   RadioDocking::restoreState (const KConfigGroup &config)
     buildContextMenu();
     notifyStationSelectionChanged(m_stationIDs);
 
+    setContextMenu(m_ClickActions[Qt::RightButton] == staSystrayMenu ? m_menu : NULL);
+    
     emit sigClickActionChanged      (Qt::LeftButton,  m_ClickActions      [Qt::LeftButton] );
     emit sigClickActionChanged      (Qt::RightButton, m_ClickActions      [Qt::RightButton]);
     emit sigClickActionChanged      (Qt::MidButton,   m_ClickActions      [Qt::MidButton]  );
@@ -684,6 +690,7 @@ bool RadioDocking::handleClickAction(SystrayClickAction clickAction)
 void RadioDocking::slotActivated ( QSystemTrayIcon::ActivationReason reason )
 {
     SystrayClickAction  clickAction = staNone;
+//     printf("slotActivated called: %i\n", reason);
 
     switch (reason) {
         case QSystemTrayIcon::Context:
@@ -941,6 +948,8 @@ void RadioDocking::setClickAction(Qt::MouseButton btn, SystrayClickAction action
 //     IErrorLogClient::staticLogDebug(QString("RadioDocking::setClickAction(%1, %2)").arg(btn).arg(action));
     if (m_ClickActions[btn] != action) {
         m_ClickActions[btn] = action;
+        
+        setContextMenu(m_ClickActions[Qt::RightButton] == staSystrayMenu ? m_menu : NULL);
         emit sigClickActionChanged(btn, action);
     }
 }
