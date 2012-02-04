@@ -625,14 +625,14 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
         m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
-        err = avformat_open_input(&m_av_pFormatCtx, m_inputUrl.pathOrUrl().toUtf8(), iformat, &av_params);
+        err = avformat_open_input(&m_av_pFormatCtx, "", iformat, &av_params);
 
         if (err != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled
             m_av_pFormatCtx        = NULL;
             m_av_pFormatCtx_opened = false;
         }
 #else
-        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, m_inputUrl.toUtf8(), iformat, &av_params);
+        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, "", iformat, &av_params);
 #endif
         if (err != 0) {
             if (warningsNotErrors) {
