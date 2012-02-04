@@ -107,8 +107,8 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 //     m_inputBufferMaxSize(65536),
 //     m_inputBufferSize(0),
 #endif
-    m_maxProbeSize  (max_probe_size_bytes > 1024 ? max_probe_size_bytes : 4096),
-    m_maxAnalyzeTime(max_analyze_secs > 0.01     ? max_analyze_secs     : 0.5)
+    m_maxProbeSize  (max_probe_size_bytes > 2048 ? max_probe_size_bytes : 8192),
+    m_maxAnalyzeTime(max_analyze_secs     > 0.3  ? max_analyze_secs     : 0.8)
 {
 //     m_mms_buffer = av_malloc(65536)
 //     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: this->thread() = %012p",             thread()));

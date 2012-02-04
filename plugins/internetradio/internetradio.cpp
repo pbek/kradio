@@ -80,8 +80,8 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_RDS_visible(false),
     m_RDS_StationName(QString()),
     m_RDS_RadioText(QString()),
-    m_maxStreamProbeSize(4096),
-    m_maxStreamAnalyzeTime(0.5),
+    m_maxStreamProbeSize(8192),
+    m_maxStreamAnalyzeTime(0.8),
     m_waitForBufferMinFill(true)
 {
     m_SoundStreamSinkID   = createNewSoundStream(false);
@@ -553,8 +553,8 @@ void   InternetRadio::saveState (KConfigGroup &config) const
     config.writeEntry("defaultPlaybackVolume",       m_defaultPlaybackVolume);
     config.writeEntry("URL",                         m_currentStation.url());
     config.writeEntry("PowerOn",                     isPowerOn());
-    config.writeEntry("maxStreamProbeSize",          m_maxStreamProbeSize);
-    config.writeEntry("maxStreamAnalyzeTime",        m_maxStreamAnalyzeTime);
+    config.writeEntry("maxStreamProbeSizeNew",       m_maxStreamProbeSize);
+    config.writeEntry("maxStreamAnalyzeTimeNew",     m_maxStreamAnalyzeTime);
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     config.writeEntry("maxStreamRetries",            m_maxStreamRetries);
 #endif
@@ -574,8 +574,8 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     m_defaultPlaybackVolume       = config.readEntry ("defaultPlaybackVolume",       0.5);
 
 
-    m_maxStreamProbeSize          = config.readEntry ("maxStreamProbeSize",          4096);
-    m_maxStreamAnalyzeTime        = config.readEntry ("maxStreamAnalyzeTime",        0.5);
+    m_maxStreamProbeSize          = config.readEntry ("maxStreamProbeSizeNew",       8192);
+    m_maxStreamAnalyzeTime        = config.readEntry ("maxStreamAnalyzeTimeNew",     0.8);
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_maxStreamRetries            = config.readEntry ("maxStreamRetries",            2);
 #endif
