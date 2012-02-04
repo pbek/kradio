@@ -205,7 +205,9 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                             QString value = metaString.left(findIdx);
                             metaData.insert(key, value);
                             metaString = metaString.mid(findIdx + matchLen).trimmed();
+#ifdef DEBUG
                             IErrorLogClient::staticLogDebug(QString("Metadata Key: %1 = %2").arg(key).arg(value));
+#endif
                             break;
                         }
                     } else {
