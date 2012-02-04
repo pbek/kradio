@@ -152,7 +152,7 @@ void InternetRadioDecoder::selectStreamFromPlaylist()
 #endif
 
 
-bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_size, int &processed_input_bytes)
+bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_bytes)
 {
     char *output_buf             = NULL;
     int   generated_output_bytes = 0;
@@ -160,18 +160,13 @@ bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     int   got_frame              = 0;
 #endif
-    AVPacket  effective_packet;
-    effective_packet.data = audio_pkt_data;
-    effective_packet.size = audio_pkt_size;
-    effective_packet.dts  =
-    effective_packet.pts  = AV_NOPTS_VALUE;
 
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     avcodec_get_frame_defaults(m_decoded_frame);
     processed_input_bytes = avcodec_decode_audio4(m_av_aCodecCtx,
                                                   m_decoded_frame,
                                                   &got_frame,
-                                                  &effective_packet);
+                                                  &pkt);
 
     if (processed_input_bytes > 0 && got_frame) {
         /* if a frame has been decoded, output it */
@@ -192,7 +187,7 @@ bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_
     processed_input_bytes  = avcodec_decode_audio3(m_av_aCodecCtx,
                                                    (int16_t *)output_buf,
                                                    &generated_output_bytes,
-                                                   &effective_packet);
+                                                   &pkt);
 #else
     char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
     output_buf             = output_buf_data;
@@ -200,8 +195,8 @@ bool InternetRadioDecoder::decodePacket(uint8_t *audio_pkt_data, int  audio_pkt_
     processed_input_bytes  = avcodec_decode_audio2(m_av_aCodecCtx,
                                                    (int16_t *)output_buf,
                                                    &generated_output_bytes,
-                                                   audio_pkt_data,
-                                                   audio_pkt_size);
+                                                   pkt.data,
+                                                   pkt.size);
 #endif
     if (processed_input_bytes < 0) {
         /* if error, skip frame */
@@ -314,17 +309,21 @@ void InternetRadioDecoder::run()
 //                 }
 //                 IErrorLogClient::staticLogDebug(QString("stream metadata: %1 entries").arg(n));
 
-                uint8_t *audio_pkt_data = pkt.data;
-                int      audio_pkt_size = pkt.size;
+                uint8_t *audio_pkt_org_data = pkt.data;
+                int      audio_pkt_org_size = pkt.size;
 
-                while (!m_error && !m_done && m_decoderOpened && (audio_pkt_size > 0)) {
+                while (!m_error && !m_done && m_decoderOpened && (pkt.size > 0)) {
                     int processed_input_bytes = 0;
-                    if (!decodePacket(audio_pkt_data, audio_pkt_size, processed_input_bytes)) {
+                    if (!decodePacket(pkt, processed_input_bytes)) {
                         break;
                     }
-                    audio_pkt_data += processed_input_bytes;
-                    audio_pkt_size -= processed_input_bytes;
+                    pkt.data += processed_input_bytes;
+                    pkt.size -= processed_input_bytes;
                 }
+
+                // restore original ptrs in order to allow a proper freeing
+                pkt.data = audio_pkt_org_data;
+                pkt.size = audio_pkt_org_size;
             }
 
             av_free_packet(&pkt);
@@ -556,6 +555,8 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
             decoderClass = "mp3";
         } else if (m_contentType == "audio/ogg") {
             decoderClass = "ogg";
+        } else if (m_contentType == "application/flv") {
+            decoderClass = "FLV";
         }
         if (decoderClass.length()) {
             iformat = av_find_input_format(decoderClass.toLocal8Bit());
@@ -837,6 +838,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         closeAVStream();
         return;
     }
+    updateSoundFormat();
 
 
     m_av_aCodecCtx = m_av_pFormatCtx->streams[m_av_audioStream]->codec;
@@ -869,7 +871,9 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         return;
     }
 
-    updateSoundFormat();
+    if (!m_soundFormat.isValid()) {
+        updateSoundFormat();
+    }
     m_decoderOpened = true;
 }
 
@@ -877,8 +881,15 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 void InternetRadioDecoder::updateSoundFormat()
 {
-    if (m_av_aCodecCtx) {
-        int fmt      = m_av_aCodecCtx->sample_fmt;
+    if (m_av_pFormatCtx &&
+        m_av_audioStream                 >= 0                &&
+        (int)m_av_pFormatCtx->nb_streams >  m_av_audioStream &&
+        m_av_pFormatCtx->streams[m_av_audioStream]      &&
+        m_av_pFormatCtx->streams[m_av_audioStream]->codec
+    ) {
+        int rate = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_rate;
+        int ch   = m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels;
+        int fmt  = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
         int bits     = 0;
         int issigned = 0;
         switch(fmt) {
@@ -899,7 +910,7 @@ void InternetRadioDecoder::updateSoundFormat()
                 closeAVStream();
                 return;
         }
-        m_soundFormat = SoundFormat(m_av_aCodecCtx->sample_rate, m_av_aCodecCtx->channels, bits, issigned);
+        m_soundFormat = SoundFormat(rate, ch, bits, issigned);
     }
 }
 

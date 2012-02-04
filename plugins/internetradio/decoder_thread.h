@@ -135,7 +135,7 @@ protected:
     void                  freeAVIOContext();
 
     bool                  readFrame(AVPacket &pkt);
-    bool                  decodePacket(uint8_t *audio_pkt_data, int audio_pkt_size, int &decoded_input_size);
+    bool                  decodePacket(AVPacket &pkt, int &decoded_input_size);
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     void                  selectStreamFromPlaylist();
