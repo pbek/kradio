@@ -131,7 +131,7 @@ bool InternetRadioConfiguration::noticeSoundStreamCreated(SoundStreamID id)
 
 void InternetRadioConfiguration::slotNoticePlaybackMixerChanged(const QString &mixer_id, const QString &Channel, bool muteOnPowerOff, bool /*force*/)
 {
-    IErrorLogClient::staticLogDebug(QString("mixer: %1, channel: %2").arg(mixer_id).arg(Channel));
+//     IErrorLogClient::staticLogDebug(QString("mixer: %1, channel: %2").arg(mixer_id).arg(Channel));
     m_PlaybackMixerHelper  .setOrgItemID(mixer_id);
     m_PlaybackChannelHelper.setOrgItemID(Channel);
     cbMutePlaybackMixerOnPowerOff->setChecked(m_orgMuteOnPowerOff = muteOnPowerOff);
