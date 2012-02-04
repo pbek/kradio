@@ -979,7 +979,9 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
 
     if (!error) {
         snd_pcm_prepare(alsa_handle);
+#ifdef DEBUG
         snd_pcm_dump(alsa_handle, log);
+#endif
     }
 
     return !error;
