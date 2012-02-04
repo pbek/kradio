@@ -652,7 +652,7 @@ void RadioViewFrequencyRadio::updateRadioTextVisualBuffer(QRectF newVisualRect)
         m_radioTextVisualBufferCurrentWriteX = 0;
 
         QFont f = m_font;
-        f.setPixelSize(m_radioTextVisualBufferSize.height());
+        f.setPixelSize(qMax(1, m_radioTextVisualBufferSize.height()));
         QFontMetricsF fm(f);
         m_RadioTextDX = qMax(1.0, floor(fm.width(QString(" ")) / 2.0 + 0.5));
 
@@ -683,7 +683,7 @@ void RadioViewFrequencyRadio::advanceRadioTextVisualBuffer()
             paint.setCompositionMode(QPainter::CompositionMode_Source);
 
             paint.setPen        (  m_power ? m_activePen : m_inactivePen);
-            f.setPixelSize(m_radioTextVisualBufferSize.height());
+            f.setPixelSize(qMax(1, m_radioTextVisualBufferSize.height()));
             paint.setFont(f);
             QRectF textBoundingRect = drawTextInRadioTextVisualBuffer(paint);
             if (m_radioTextVisualBufferCurrentWriteX >= m_radioTextVisualBufferSize.width()) {
