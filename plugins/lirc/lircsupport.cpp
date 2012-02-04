@@ -80,22 +80,29 @@ LircSupport::~LircSupport()
 
 void LircSupport::LIRC_init_fd()
 {
-    logDebug(i18n("initializing kradio lirc plugin"));
-    fprintf (stderr, "%s\n", (const char*)i18n("initializing kradio lirc plugin").toUtf8());
+    QString dbgStartMsg1 = i18n("initializing kradio lirc plugin");
+    QString dbgStartMsg2 = i18n("warnings/errors about missing sockets don't harm - usually the LIRC daemon is not running in these cases.");
+    logDebug(dbgStartMsg1);
+    logDebug(dbgStartMsg2);
+    fprintf (stderr, "%s\n%s\n", dbgStartMsg1.toLocal8Bit().data(), dbgStartMsg2.toLocal8Bit().data());
 
     m_fd_lirc     = lirc_init(LIRCPROG, 1);
 
     if (m_fd_lirc == -1) {
         m_lirc_notify = NULL;
-        logWarning      (i18n("Initializing kradio lirc plugin failed"));
-        staticLogWarning(i18n("Initializing kradio lirc plugin failed"));
+        QString         warnMsg = i18n("Initializing kradio lirc plugin failed");
+        logWarning      (warnMsg);
+        staticLogWarning(warnMsg);
+        fprintf (stderr, "%s\n", warnMsg.toLocal8Bit().data());
     } else {
         m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this);
         if (m_lirc_notify)
             QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
 
-        logDebug      (i18n("Initializing kradio lirc plugin successful"));
-        staticLogDebug(i18n("Initializing kradio lirc plugin successful"));
+        QString       dbgMsg = i18n("Initializing kradio lirc plugin successful");
+        logDebug      (dbgMsg);
+        staticLogDebug(dbgMsg);
+        fprintf (stderr, "%s\n", dbgMsg.toLocal8Bit().data());
     }
 }
 
