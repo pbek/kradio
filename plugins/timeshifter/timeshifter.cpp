@@ -504,18 +504,24 @@ bool TimeShifter::noticeReadyForPlaybackData(SoundStreamID id, size_t free_size)
         } else {
             while (!m_RingBuffer.error() && m_RingBuffer.getFillSize() > 0 && free_size > 0) {
                 if (m_PlaybackDataLeftInBuffer == 0) {
-                    char meta_buffer[1024];
-                    char prop_buffer[ 128];
-                    size_t &meta_size = *(size_t*)(void*)meta_buffer;
-                    size_t &prop_size = *(size_t*)(void*)prop_buffer;
+                    const size_t meta_size_max = 4*1024;
+                    const size_t prop_size_max = 1*1024;
+                    union {
+                        size_t meta_size;
+                        char   meta_buffer[meta_size_max];
+                    };
+                    union {
+                        size_t prop_size;
+                        char   prop_buffer[prop_size_max];
+                    };
                     meta_size = 0;
                     prop_size = 0;
 
-                    m_RingBuffer.takeData(meta_buffer, sizeof(meta_size));
+                    m_RingBuffer.takeData((char*)&meta_size, sizeof(meta_size));
                     if (meta_size && meta_size <= sizeof(meta_buffer)) {
                         m_RingBuffer.takeData(meta_buffer + sizeof(meta_size), meta_size - sizeof(meta_size));
                         readMetaDataFromBuffer(m_PlaybackMetaData, meta_buffer, meta_size);
-                    } else {
+                    } else if (meta_size > sizeof(meta_size)) {
                         m_RingBuffer.removeData(meta_size - sizeof(meta_size));
                     }
 
@@ -523,7 +529,7 @@ bool TimeShifter::noticeReadyForPlaybackData(SoundStreamID id, size_t free_size)
                     if (prop_size && prop_size <= sizeof(prop_buffer)) {
                         m_RingBuffer.takeData(prop_buffer + sizeof(prop_size), prop_size - sizeof(prop_size));
                         readCurrentStreamPropertiesFromBuffer(prop_buffer, prop_size);
-                    } else {
+                    } else if (prop_size > sizeof(prop_size)) {
                         m_RingBuffer.removeData(prop_size - sizeof(prop_size));
                     }
 
