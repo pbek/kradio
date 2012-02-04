@@ -148,12 +148,12 @@ protected:
     int                   m_av_audioStream;
     AVCodecContext       *m_av_aCodecCtx;
     AVCodec              *m_av_aCodec;
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 0, 0)
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
     AVIOContext          *m_av_byteio_contextPtr;
 #else
     ByteIOContext         m_av_byteio_context;
 #endif
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
+#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     AVFrame              *m_decoded_frame;
 #endif
 
