@@ -457,6 +457,14 @@ bool RadioView::noticeActiveDeviceChanged(IRadioDevice *newDevice)
     }
 
     selectTopWidgets();
+
+// EMW: works in principle, but is not very nice from the visual point of view of the seekers are missing
+//     if (dynamic_cast<ISeekRadio*>(newDevice)) {
+//         widgetStacks[clsRadioSeek]->show();
+//     } else {
+//         widgetStacks[clsRadioSeek]->hide();
+//     }
+// 
     return true;
 }
 
