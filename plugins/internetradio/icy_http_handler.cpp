@@ -40,6 +40,15 @@ IcyHttpHandler::IcyHttpHandler()
     m_dataRest                (0),
     m_metaRest                (0),
     m_streamJob               (NULL)
+#ifdef DEBUG_DUMP_ICY_STREAMS
+    , m_debugFullStream (NULL)
+    , m_debugMetaStream (NULL)
+    , m_debugDataStream (NULL)
+    , m_debugDecodingLog(NULL)
+    , m_debugFullPos    (0)
+    , m_debugDataPos    (0)
+    , m_debugMetaPos    (0)
+#endif
 {
 }
 
@@ -105,6 +114,16 @@ void IcyHttpHandler::startStreamDownload(KUrl url)
 
     setupStreamJob(m_streamUrl);
     startStreamJob();
+
+#ifdef DEBUG_DUMP_ICY_STREAMS
+    m_debugFullStream  = fopen("/tmp/kradio-debug-icy-full-stream",  "w");
+    m_debugMetaStream  = fopen("/tmp/kradio-debug-icy-meta-stream",  "w");
+    m_debugDataStream  = fopen("/tmp/kradio-debug-icy-data-stream",  "w");
+    m_debugDecodingLog = fopen("/tmp/kradio-debug-icy-decoding-log", "w");
+    m_debugFullPos     = 0;
+    m_debugDataPos     = 0;
+    m_debugMetaPos     = 0;
+#endif
 }
 
 
@@ -117,6 +136,12 @@ void IcyHttpHandler::stopStreamDownload()
         m_streamJob = NULL;
         emit sigFinished(m_streamUrl);
     }
+#ifdef DEBUG_DUMP_ICY_STREAMS
+    if (m_debugFullStream)  fclose(m_debugFullStream);  m_debugFullStream  = NULL;
+    if (m_debugMetaStream)  fclose(m_debugMetaStream);  m_debugMetaStream  = NULL;
+    if (m_debugDataStream)  fclose(m_debugDataStream);  m_debugDataStream  = NULL;
+    if (m_debugDecodingLog) fclose(m_debugDecodingLog); m_debugDecodingLog = NULL;
+#endif
 }
 
 
@@ -147,6 +172,11 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
 void IcyHttpHandler::handleStreamData(const QByteArray &data)
 {
 //    logDebug(QString("stream data: %1 bytes").arg(data.size()));
+#ifdef DEBUG_DUMP_ICY_STREAMS
+    fwrite(data.constData(), data.size(), 1, m_debugDataStream);
+    fprintf(m_debugDecodingLog, "   data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugDataPos);
+    m_debugDataPos += data.size();
+#endif
     emit sigStreamData(data);
 }
 
@@ -158,8 +188,15 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
         m_metaData.clear();
     }
     m_metaData.append(QByteArray(data.data(), data.size()));
-    if (complete) {
 
+#ifdef DEBUG_DUMP_ICY_STREAMS
+    fwrite(data.constData(), data.size(), 1, m_debugMetaStream);
+    fflush(m_debugMetaStream);
+    fprintf(m_debugDecodingLog, "   meta data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugMetaPos);
+    m_debugMetaPos += data.size();
+#endif
+
+    if (complete) {
         QString         metaString = QString::fromUtf8(m_metaData.data());
         if (metaString.size()) {
 
@@ -233,6 +270,13 @@ void IcyHttpHandler::slotStreamData(KIO::Job *job, QByteArray data)
         if (!m_httpHeaderAnalyzed) {
             analyzeHttpHeader(job);
         }
+
+#ifdef DEBUG_DUMP_ICY_STREAMS
+        fwrite(data.constData(), data.size(), 1, m_debugFullStream);
+        fprintf(m_debugDecodingLog, "full stream data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugFullPos);
+        m_debugFullPos += data.size();
+#endif
+
 //         printf ("received packet: %i bytes\n", data.size());
         while (data.size()) {
             // is it stream data?

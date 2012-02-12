@@ -59,7 +59,11 @@ extern "C" {
 #endif
 
 
-
+// if this macro is defined, the encoded input stream and decoded PCM audio stream
+// as well as some log information about chunk sizes and positions in the streams
+// are dumped to statically named files in /tmp
+//
+// #define DEBUG_DUMP_DECODER_STREAMS
 
 
 class InternetRadioDecoder : public QObject
@@ -82,12 +86,15 @@ public:
 
     virtual ~InternetRadioDecoder();
 
-    bool                  error()         const { return m_error; }
-    QString               errorString(bool resetError = true);
+    typedef   bool    (InternetRadioDecoder::*logAvailable_t) ()                 const;
+    typedef   QString (InternetRadioDecoder::*logString_t)    (bool resetStatus);
+
+    bool                  error()         const { return m_error;   }
     bool                  warning()       const { return m_warning; }
+    bool                  debug()         const { return m_debug;   }
+    QString               errorString  (bool resetError   = true);
     QString               warningString(bool resetWarning = true);
-    bool                  debug()         const { return m_debug; }
-    QString               debugString(bool resetDebug = true);
+    QString               debugString  (bool resetDebug   = true);
 
     void                  setDone();
     bool                  isDone() const { return m_done; }
@@ -179,6 +186,7 @@ protected:
 
     SoundFormat           m_soundFormat;
     quint64               m_decodedSize;
+    quint64               m_encodedSize;
     time_t                m_startTime;
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -201,6 +209,12 @@ protected:
 
     int                   m_maxProbeSize;    // in bytes,   see openAVStream
     float                 m_maxAnalyzeTime;  // in seconds, see openAVStream
+
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    FILE  *m_debugCodedStream;
+    FILE  *m_debugDecodedStream;
+    FILE  *m_debugMetaStream;
+#endif
 };
 
 

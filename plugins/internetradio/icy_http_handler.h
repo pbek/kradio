@@ -29,6 +29,14 @@
 
 #include "stream_reader.h"
 
+#include <stdio.h>
+
+// if this macro is defined, the full icy stream and the demuxed data and
+// metadata streams as well as some log information about chunk sizes and positions
+// in the streams are dumped to statically named files in /tmp
+//
+// #define DEBUG_DUMP_ICY_STREAMS
+
 class IcyHttpHandler : public StreamReader
 {
 Q_OBJECT
@@ -70,6 +78,16 @@ protected:
     KUrl                        m_streamUrl;
     KIO::TransferJob           *m_streamJob;
     KIO::MetaData               m_connectionMetaData;
+
+#ifdef DEBUG_DUMP_ICY_STREAMS
+    FILE                       *m_debugFullStream;
+    FILE                       *m_debugMetaStream;
+    FILE                       *m_debugDataStream;
+    FILE                       *m_debugDecodingLog;
+    size_t                      m_debugFullPos;
+    size_t                      m_debugDataPos;
+    size_t                      m_debugMetaPos;
+#endif
 };
 
 

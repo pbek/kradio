@@ -49,6 +49,8 @@ public:
     IF_SENDER  (    sendLogInfo   (const QString &)     )
     IF_SENDER  (    sendLogDebug  (const QString &)     )
 
+    typedef   void (IErrorLogClient::*logFunction_t) (const QString &s) const;
+
     void logError  (const QString &s) const { sendLogError(s);   }
     void logWarning(const QString &s) const { sendLogWarning(s); }
     void logInfo   (const QString &s) const { sendLogInfo(s);    }

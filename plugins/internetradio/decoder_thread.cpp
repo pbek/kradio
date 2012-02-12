@@ -91,6 +91,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
     m_done          (false),
 
     m_decodedSize   (0),
+    m_encodedSize   (0),
     m_startTime     (0),
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -109,10 +110,17 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #endif
     m_maxProbeSize  (max_probe_size_bytes > 2048 ? max_probe_size_bytes : 8192),
     m_maxAnalyzeTime(max_analyze_secs     > 0.3  ? max_analyze_secs     : 0.8)
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    , m_debugCodedStream(NULL)
+    , m_debugDecodedStream(NULL)
+    , m_debugMetaStream(NULL)
+#endif
 {
-//     m_mms_buffer = av_malloc(65536)
-//     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: this->thread() = %012p",             thread()));
-//     IErrorLogClient::staticLogDebug(QString().sprintf("InternetRadioDecoder::InternetRadioDecoder: dispatcher for this thread = %012p", QAbstractEventDispatcher::instance()));
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    m_debugCodedStream   = fopen("/tmp/kradio-debug-coded-stream",   "w");
+    m_debugDecodedStream = fopen("/tmp/kradio-debug-decoded-stream", "w");
+    m_debugMetaStream    = fopen("/tmp/kradio-debug-meta-stream",    "w");
+#endif
 
 // #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 //     QObject::connect(this, SIGNAL(sigInputBufferNotFull()), m_parent, SLOT(slotStreamContinue()), Qt::QueuedConnection);
@@ -125,6 +133,11 @@ InternetRadioDecoder::~InternetRadioDecoder()
 {
     flushBuffers();
     closeAVStream();
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    fclose(m_debugCodedStream);
+    fclose(m_debugDecodedStream);
+    fclose(m_debugMetaStream);
+#endif
 //     av_free(m_mms_buffer);
 }
 
@@ -198,6 +211,23 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
                                                    pkt.data,
                                                    pkt.size);
 #endif
+
+    m_encodedSize += (processed_input_bytes > 0) ? processed_input_bytes : 0;
+
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    fprintf(m_debugMetaStream, "    processed input  chunk size %zi @ pos %zi\n",
+            (size_t)processed_input_bytes,
+            (size_t)m_encodedSize
+           );
+    fprintf(m_debugMetaStream, "    generated output chunk size %zi (%zi samples) @ pos %zi (%zi samples)\n",
+            (size_t)(generated_output_bytes),
+            (size_t)(generated_output_bytes / m_soundFormat.frameSize()),
+            (size_t)(m_decodedSize),
+            (size_t)(m_decodedSize          / m_soundFormat.frameSize())
+           );
+#endif
+
+
     if (processed_input_bytes < 0) {
         /* if error, skip frame */
         addWarningString(i18n("%1: error decoding packet. Discarding packet\n")
@@ -210,6 +240,10 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
         return false;
     }
     else if (generated_output_bytes > 0) {
+
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+        fwrite  (output_buf, (size_t)generated_output_bytes, 1, m_debugDecodedStream);
+#endif
 
         time_t cur_time = time(NULL);
         SoundMetaData  md(m_decodedSize,
@@ -241,6 +275,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
         }*/
         m_decodedSize += generated_output_bytes;
     }
+
     return true;
 }
 
@@ -261,7 +296,7 @@ bool InternetRadioDecoder::readFrame(AVPacket &pkt)
             m_error = true;
             return false;
         }
-        usleep(50000);
+        usleep(20000);
         return false;
     }
     return true;
@@ -301,6 +336,11 @@ void InternetRadioDecoder::run()
             }
 
             if (!m_done && pkt.stream_index == m_av_audioStream) {
+
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+                fprintf(m_debugMetaStream,  "received packed, size %zi\n", (size_t)pkt.size);
+                fwrite  (pkt.data, (size_t)pkt.size, 1, m_debugCodedStream);
+#endif
 
 //                 AVDictionaryEntry *t = NULL;
 //                 int                n = 0;
@@ -561,7 +601,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         if (decoderClass.length()) {
             iformat = av_find_input_format(decoderClass.toLocal8Bit());
             if (iformat) {
-                IErrorLogClient::staticLogDebug(QString("found content-type = \"%1\": skipping auto detection and setting decoder class to \"%2\"").arg(m_contentType).arg(decoderClass));
+                addDebugString(QString("found content-type = \"%1\": skipping auto detection and setting decoder class to \"%2\"").arg(m_contentType).arg(decoderClass));
             }
         }
     }
@@ -802,7 +842,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         int ch   = m_av_pFormatCtx->streams[i]->codec->channels;
         int fmt  = m_av_pFormatCtx->streams[i]->codec->sample_fmt;
         int type = m_av_pFormatCtx->streams[i]->codec->codec_type;
-        IErrorLogClient::staticLogDebug(QString("stream[%1]: codec_type = %2, channels = %3, sample rate = %4, format-id = %5").arg(i).arg(type).arg(ch).arg(rate).arg(fmt));
+        addDebugString(QString("stream[%1]: codec_type = %2, channels = %3, sample rate = %4, format-id = %5").arg(i).arg(type).arg(ch).arg(rate).arg(fmt));
     }
 
 #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 122, 0) // checked: av_find_best_stream in ffmpeg >= 0.7

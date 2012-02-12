@@ -36,6 +36,7 @@
 #include "stream_input_buffer.h"
 #include "icy_http_handler.h"
 #include "playlist_handler.h"
+#include "decoder_thread.h"
 
 class DecoderThread;
 
@@ -185,6 +186,7 @@ protected:
     void    freeAllBuffers();
 
     bool    checkDecoderMessages();
+    bool    checkDecoderMessages(InternetRadioDecoder::logAvailable_t statusFunc, InternetRadioDecoder::logString_t stringFunc, IErrorLogClient::logFunction_t logFunc);
 
 protected slots:
     void    slotDecoderThreadFinished();

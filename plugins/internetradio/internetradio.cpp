@@ -940,21 +940,33 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
 }
 
 
+bool InternetRadio::checkDecoderMessages(InternetRadioDecoder::logAvailable_t statusFunc, InternetRadioDecoder::logString_t stringFunc, IErrorLogClient::logFunction_t logFunc)
+{
+    bool hadMessages = false;
+    if ((m_decoderThread->decoder()->*statusFunc)()) {
+        QString     msg     = (m_decoderThread->decoder()->*stringFunc)(/* reset status*/ true);
+        QStringList msgList = msg.split("\n");
+        foreach(QString s, msgList) {
+            (this->*logFunc)(s);
+        }
+        hadMessages = true;
+    }
+    return hadMessages;
+}
+
 
 bool InternetRadio::checkDecoderMessages()
 {
-    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->warning()) {
-        logWarning(m_decoderThread->decoder()->warningString());
+    bool errorsDetected = false;
+    if (m_decoderThread && m_decoderThread->decoder()) {
+        checkDecoderMessages(&InternetRadioDecoder::warning, &InternetRadioDecoder::warningString, &InternetRadio::logWarning);
+        checkDecoderMessages(&InternetRadioDecoder::debug,   &InternetRadioDecoder::debugString,   &InternetRadio::logDebug);
+        errorsDetected = checkDecoderMessages(&InternetRadioDecoder::error,   &InternetRadioDecoder::errorString,   &InternetRadio::logError);
     }
-    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->debug()) {
-        logDebug(m_decoderThread->decoder()->debugString());
-    }
-    if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->error()) {
-        logError(m_decoderThread->decoder()->errorString());
+    if (errorsDetected) {
         powerOff();
-        return false;
     }
-    return true;
+    return !errorsDetected;
 }
 
 
