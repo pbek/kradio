@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 20:08+0100\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2011-01-08 20:10+0200\n"
 "Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
 "Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
@@ -54,20 +54,21 @@ msgstr "Errori"
 msgid "Debugging"
 msgstr "Debugging"
 
-#: errorlog.cpp:182
+#: errorlog.cpp:186
 msgid "Log Files"
 msgstr "File di log"
 
-#: errorlog.cpp:187
+#: errorlog.cpp:191
 msgid "Save KRadio Logging Data as ..."
 msgstr "Salva il logging di KRadio come ..."
 
-#: errorlog.cpp:212
+#: errorlog.cpp:216
 #, kde-format
 msgid "error writing to tempfile %1"
 msgstr "si è verificato un errore durante la scrittura nel file temporaneo %1"
 
-#: errorlog.cpp:221
+#: errorlog.cpp:225
 #, kde-format
 msgid "error uploading preset file %1"
-msgstr "si è verificato un errore durante l'invio del file di preimpostazione %1"
+msgstr ""
+"si è verificato un errore durante l'invio del file di preimpostazione %1"

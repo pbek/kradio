@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,20 +54,20 @@ msgstr ""
 msgid "Debugging"
 msgstr ""
 
-#: errorlog.cpp:182
+#: errorlog.cpp:186
 msgid "Log Files"
 msgstr ""
 
-#: errorlog.cpp:187
+#: errorlog.cpp:191
 msgid "Save KRadio Logging Data as ..."
 msgstr ""
 
-#: errorlog.cpp:212
+#: errorlog.cpp:216
 #, kde-format
 msgid "error writing to tempfile %1"
 msgstr ""
 
-#: errorlog.cpp:221
+#: errorlog.cpp:225
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr ""

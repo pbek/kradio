@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 15:04+0100\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2009-04-18 19:37+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -71,7 +71,7 @@ msgstr "Включить/выключить"
 msgid "Pause/Play"
 msgstr "Приостановить воспроизведение"
 
-#: docking-configuration.cpp:150 docking.cpp:316
+#: docking-configuration.cpp:150 docking.cpp:322
 msgid "Recording"
 msgstr "Запись"
 
@@ -110,83 +110,83 @@ msgstr "Значок и меню в системном лотке"
 msgid "System Tray Plugin"
 msgstr "Модуль значка в системном лотке"
 
-#: docking.cpp:251
+#: docking.cpp:257
 msgid "System Tray Icon"
 msgstr "Пиктограмма в системном лотке"
 
-#: docking.cpp:252
+#: docking.cpp:258
 msgid "System Tray Icon Configuration"
 msgstr "Настройка значка в системном лотке"
 
-#: docking.cpp:306
+#: docking.cpp:312
 msgid "Search Next Station"
 msgstr "Искать следующую станцию"
 
-#: docking.cpp:307
+#: docking.cpp:313
 msgid "Search Previous Station"
 msgstr "Искать предыдущую станцию"
 
-#: docking.cpp:321
+#: docking.cpp:327
 msgid "Pause Radio"
 msgstr "Приостановить"
 
-#: docking.cpp:332
+#: docking.cpp:338
 msgid "Show/Hide Plugins"
 msgstr "Показать/скрыть"
 
-#: docking.cpp:340
+#: docking.cpp:346
 msgid "&Quit"
 msgstr "В&ыход"
 
-#: docking.cpp:454
+#: docking.cpp:461
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Остановить таймер отключения (установлено на %1)"
 
-#: docking.cpp:457 docking.cpp:466 docking.cpp:474
+#: docking.cpp:464 docking.cpp:473 docking.cpp:481
 msgid "Start Sleep Countdown"
 msgstr "Запустить таймер отключения"
 
-#: docking.cpp:482
+#: docking.cpp:489
 msgid "Power Off"
 msgstr "Выключить"
 
-#: docking.cpp:482
+#: docking.cpp:489
 msgid "Power On"
 msgstr "Включить"
 
-#: docking.cpp:497 docking.cpp:518
+#: docking.cpp:504 docking.cpp:525
 msgid "invalid station"
 msgstr "Неверная станция"
 
-#: docking.cpp:500
+#: docking.cpp:507
 #, kde-format
 msgid "KRadio: %1"
 msgstr "Радиоприёмник KDE: %1"
 
-#: docking.cpp:510
+#: docking.cpp:517
 #, kde-format
 msgid "next alarm: %1"
 msgstr "След. действие: %1"
 
-#: docking.cpp:512
+#: docking.cpp:519
 msgid "<no alarm pending>"
 msgstr "<Расписание пусто>"
 
-#: docking.cpp:769 docking.cpp:871 docking.cpp:929
+#: docking.cpp:778 docking.cpp:881 docking.cpp:939
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Остановить запись %1"
 
-#: docking.cpp:857
+#: docking.cpp:867
 msgid "Start Recording"
 msgstr "Начать запись"
 
-#: docking.cpp:911
+#: docking.cpp:921
 msgid "Resume playback"
 msgstr "Возобновить воспроизведение"
 
-#: docking.cpp:915
+#: docking.cpp:925
 msgid "Pause playback"
 msgstr "Приостановить воспроизведение"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2004-01-05 13:29+0000\n"
 "Last-Translator: \n"
 "Language-Team:  <pl@li.org>\n"
@@ -137,11 +137,11 @@ msgstr ""
 msgid "Station"
 msgstr "Stacje"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:234
+#. i18n: file: src/pluginmanager-configuration-ui.ui:228
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:325
+#. i18n: file: src/pluginmanager-configuration-ui.ui:319
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: radiostations/radiostation-listview.cpp:38 rc.cpp:50 rc.cpp:68
+#: radiostations/radiostation-listview.cpp:38 rc.cpp:44 rc.cpp:62
 msgid "Description"
 msgstr ""
 
@@ -393,9 +393,9 @@ msgstr ""
 msgid "Enter Plugin Instance Name"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:314
+#. i18n: file: src/pluginmanager-configuration-ui.ui:308
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: src/pluginmanager-configuration.cpp:227 rc.cpp:65
+#: src/pluginmanager-configuration.cpp:227 rc.cpp:59
 msgid "Instance Name"
 msgstr ""
 
@@ -457,7 +457,7 @@ msgstr "&Start"
 
 #. i18n: file: src/standardscandialog-ui.ui:58
 #. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
-#: src/standardscandialog.cpp:92 rc.cpp:87
+#: src/standardscandialog.cpp:92 rc.cpp:81
 msgid "&Stop"
 msgstr "&Stop"
 
@@ -543,8 +543,8 @@ msgstr "Błąd podczas wysyłania pliku zapamiętanych stacji: %1"
 #: src/stationlist.cpp:337
 #, kde-format
 msgid ""
-"something strange happened, station list has only %1 entries. Writing station "
-"preset file skipped"
+"something strange happened, station list has only %1 entries. Writing "
+"station preset file skipped"
 msgstr ""
 
 #: src/stationlist.cpp:342
@@ -623,131 +623,118 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, PluginManagerConfigurationUI)
-#: rc.cpp:5
-#, fuzzy
-msgid "PluginManagerConfigurationUI"
-msgstr "Konfiguracja dokowalnego menu"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:39
+#. i18n: file: src/pluginmanager-configuration-ui.ui:36
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
-#: rc.cpp:8
+#: rc.cpp:5
 msgid "Automatic detection and load of new plugins"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:60
+#. i18n: file: src/pluginmanager-configuration-ui.ui:57
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
-#: rc.cpp:11
+#: rc.cpp:8
 msgid "Do not check/load!"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:73
+#. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
-#: rc.cpp:14
+#: rc.cpp:11
 msgid "Automatically check/load!"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:86
+#. i18n: file: src/pluginmanager-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
-#: rc.cpp:17
+#: rc.cpp:14
 msgid "Please Ask!"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:106
+#. i18n: file: src/pluginmanager-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
-#: rc.cpp:20
+#: rc.cpp:17
 msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:109
-#. i18n: ectx: property (shortcut), widget (QCheckBox, cbShowProgressBar)
-#: rc.cpp:23
-msgid "Alt+Z"
-msgstr ""
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:120
+#. i18n: file: src/pluginmanager-configuration-ui.ui:114
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
-#: rc.cpp:26
+#: rc.cpp:20
 #, fuzzy
 msgid "Plugin Libraries"
 msgstr "Konfiguracja paska skrótów"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:129
+#. i18n: file: src/pluginmanager-configuration-ui.ui:123
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
-#: rc.cpp:29
+#: rc.cpp:23
 msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:142
+#. i18n: file: src/pluginmanager-configuration-ui.ui:136
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
-#: rc.cpp:32
+#: rc.cpp:26
 msgid "Loads the library specified in the box left to this button."
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:161
+#. i18n: file: src/pluginmanager-configuration-ui.ui:155
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
-#: rc.cpp:35
+#: rc.cpp:29
 msgid "list of loaded plugin libraries"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:174
+#. i18n: file: src/pluginmanager-configuration-ui.ui:168
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
-#: rc.cpp:38
+#: rc.cpp:32
 msgid "Unload the plugin library selected in the list on the left side"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:201
+#. i18n: file: src/pluginmanager-configuration-ui.ui:195
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
-#: rc.cpp:41
+#: rc.cpp:35
 #, fuzzy
 msgid "Plugin Classes"
 msgstr "Dostępne stacje"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:216
+#. i18n: file: src/pluginmanager-configuration-ui.ui:210
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
-#: rc.cpp:44
+#: rc.cpp:38
 msgid "List of available plugin classes found in the plugin libraries"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:223
+#. i18n: file: src/pluginmanager-configuration-ui.ui:217
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
-#. i18n: file: src/pluginmanager-configuration-ui.ui:303
+#. i18n: file: src/pluginmanager-configuration-ui.ui:297
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: rc.cpp:47 rc.cpp:62
+#: rc.cpp:41 rc.cpp:56
 msgid "Plugin Class"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:254
+#. i18n: file: src/pluginmanager-configuration-ui.ui:248
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
-#: rc.cpp:53
+#: rc.cpp:47
 msgid "Create a new instance of plugin class selected in the list on the left"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:281
+#. i18n: file: src/pluginmanager-configuration-ui.ui:275
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
-#: rc.cpp:56
+#: rc.cpp:50
 #, fuzzy
 msgid "Plugin Instances"
 msgstr "Wtyczka nagrywania"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:296
+#. i18n: file: src/pluginmanager-configuration-ui.ui:290
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
-#: rc.cpp:59
+#: rc.cpp:53
 msgid "List of the plugin instances currently running"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:345
+#. i18n: file: src/pluginmanager-configuration-ui.ui:339
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
-#: rc.cpp:71
+#: rc.cpp:65
 msgid "Removes/stops the plugin instance selected in the list on the left"
 msgstr ""
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:381
+#. i18n: file: src/pluginmanager-configuration-ui.ui:375
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:74
+#: rc.cpp:68
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -768,51 +755,49 @@ msgstr ""
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
-#: rc.cpp:81
+#: rc.cpp:75
 msgid "Stations search in progress ..."
 msgstr "Trwa poszukiwanie stacji..."
 
 #. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
-#: rc.cpp:84
+#: rc.cpp:78
 msgid "&Ok"
 msgstr ""
 
 #. i18n: file: src/standardscandialog-ui.ui:65
 #. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
-#: rc.cpp:90
+#: rc.cpp:84
 msgid "&Discard"
 msgstr ""
 
 #. i18n: file: src/standardscandialog-ui.ui:92
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
-#: rc.cpp:93
+#: rc.cpp:87
 msgid "remaining time"
 msgstr "Pozostały czas"
 
 #. i18n: file: src/standardscandialog-ui.ui:108
 #. i18n: ectx: property (text), widget (QLabel, labelTime)
-#: rc.cpp:96
+#: rc.cpp:90
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">nic</p>"
 
-#. i18n: file: src/stationselector-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, StationSelectorUI)
-#: rc.cpp:99
-msgid "StationSelectorUI"
-msgstr ""
-
-#. i18n: file: src/stationselector-ui.ui:23
+#. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
-#: rc.cpp:102
+#: rc.cpp:93
 msgid "Selected Stations"
 msgstr "Wybrane stacje"
 
-#. i18n: file: src/stationselector-ui.ui:105
+#. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
-#: rc.cpp:105
+#: rc.cpp:96
 msgid "Available Stations"
 msgstr "Dostępne stacje"
+
+#, fuzzy
+#~ msgid "PluginManagerConfigurationUI"
+#~ msgstr "Konfiguracja dokowalnego menu"
 
 #, fuzzy
 #~ msgid "Invalid layout"

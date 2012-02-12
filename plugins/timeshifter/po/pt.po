@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2006-11-19 18:23+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -79,19 +79,19 @@ msgstr "Suspensor de Tempo (\"TimeShifter\")"
 msgid "Timeshifter Options"
 msgstr "Opções do Suspensor de Tempo (\"TimeShifter\")"
 
-#: timeshifter.cpp:193
+#: timeshifter.cpp:212
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr ""
 
-#: timeshifter.cpp:533
+#: timeshifter.cpp:558
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: Clientes saltados %1 bytes. Perda de "
 "Dados"
 
-#: timeshifter.cpp:592
+#: timeshifter.cpp:638
 msgid "internal stream, not stored"
 msgstr "fluxo interno, não guardado"
 

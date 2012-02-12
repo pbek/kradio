@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_error_log\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 16:19+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2009-06-15 14:01+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -54,20 +54,20 @@ msgstr "Villur"
 msgid "Debugging"
 msgstr "Aflúsun"
 
-#: errorlog.cpp:182
+#: errorlog.cpp:186
 msgid "Log Files"
 msgstr "Annálaskrár"
 
-#: errorlog.cpp:187
+#: errorlog.cpp:191
 msgid "Save KRadio Logging Data as ..."
 msgstr "Vista annálsgögn KRadio sem..."
 
-#: errorlog.cpp:212
+#: errorlog.cpp:216
 #, kde-format
 msgid "error writing to tempfile %1"
 msgstr "villa við að skrifa í bráðabirgðaskrána %1"
 
-#: errorlog.cpp:221
+#: errorlog.cpp:225
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "villa við upphleðslu forstillingaskrár %1"

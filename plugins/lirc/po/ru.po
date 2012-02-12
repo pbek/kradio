@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2009-04-21 17:38+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -129,23 +129,29 @@ msgstr "Для изменения привязки дважды щёлкните
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Поддержка ПДУ в Linux (LIRC)"
 
-#: lircsupport.cpp:55 lircsupport.cpp:493
+#: lircsupport.cpp:55 lircsupport.cpp:500
 msgid "LIRC Plugin"
 msgstr "Модуль ДУ (LIRC)"
 
-#: lircsupport.cpp:83 lircsupport.cpp:84
+#: lircsupport.cpp:83
 msgid "initializing kradio lirc plugin"
 msgstr "Инициализация модуля LIRC"
 
-#: lircsupport.cpp:90 lircsupport.cpp:91
+#: lircsupport.cpp:84
+msgid ""
+"warnings/errors about missing sockets don't harm - usually the LIRC daemon "
+"is not running in these cases."
+msgstr ""
+
+#: lircsupport.cpp:93
 msgid "Initializing kradio lirc plugin failed"
 msgstr "Инициализация модуля LIRC не удалась"
 
-#: lircsupport.cpp:97 lircsupport.cpp:98
+#: lircsupport.cpp:102
 msgid "Initializing kradio lirc plugin successful"
 msgstr "Модуль LIRC инициализирован"
 
-#: lircsupport.cpp:124
+#: lircsupport.cpp:131
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -158,7 +164,7 @@ msgstr ""
 "Это, вероятнее всего, приведёт к проблемам в дальнейшем. Используйте в как "
 "шаблон для всех кнопок/пультов \"button=*\" и \"remote=*\" соответственно."
 
-#: lircsupport.cpp:131
+#: lircsupport.cpp:138
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -171,34 +177,34 @@ msgstr ""
 "Это, вероятнее всего, приведёт к проблемам в дальнейшем. Используйте в как "
 "шаблон для всех кнопок/пультов \"button=*\" и \"remote=*\" соответственно."
 
-#: lircsupport.cpp:142
+#: lircsupport.cpp:149
 #, kde-format
 msgid "There is no entry for kradio in your .lircrc files %1."
 msgstr "Ни в одном из ваших файлов .lircrc %1 нет упоминания о KRadio."
 
-#: lircsupport.cpp:143
+#: lircsupport.cpp:150
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Настройте файлы .lircrc %1."
 
-#: lircsupport.cpp:147 lircsupport.cpp:148
+#: lircsupport.cpp:154 lircsupport.cpp:155
 #, kde-format
 msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
 msgstr ""
 "Инициализация модуля LIRC не удалась. Не могу прочитать файл ностроек %1."
 
-#: lircsupport.cpp:189
+#: lircsupport.cpp:196
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr "%1 не существует. Был создан файл .lircrc для KRadio по умолчанию"
 
-#: lircsupport.cpp:202
+#: lircsupport.cpp:209
 #, kde-format
 msgid "failed to read file %1"
 msgstr "не могу прочитать файл %1"
 
-#: lircsupport.cpp:254
+#: lircsupport.cpp:261
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
 "kradio"
@@ -206,79 +212,76 @@ msgstr ""
 "Чтение из сокета LIRC не удалось. Отключаю функции LIRC до следующего "
 "запуска KRadio."
 
-#: lircsupport.cpp:492
+#: lircsupport.cpp:499
 msgid "LIRC Support"
 msgstr "Поддержка LIRC"
 
-#. i18n: file: lirc-configuration-ui.ui:15
-#. i18n: ectx: property (windowTitle), widget (QWidget, LIRCConfigurationUI)
-#: rc.cpp:3 rc.cpp:35
-msgid "LIRCConfigurationUI"
-msgstr "LIRCConfigurationUI"
-
-#. i18n: file: lirc-configuration-ui.ui:40
+#. i18n: file: lirc-configuration-ui.ui:37
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
-#: rc.cpp:6 rc.cpp:38
+#: rc.cpp:3 rc.cpp:32
 msgid "Action"
 msgstr "Действие"
 
-#. i18n: file: lirc-configuration-ui.ui:51
+#. i18n: file: lirc-configuration-ui.ui:48
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
-#: rc.cpp:9 rc.cpp:41
+#: rc.cpp:6 rc.cpp:35
 msgid "LIRC String"
 msgstr "Строка LIRC"
 
-#. i18n: file: lirc-configuration-ui.ui:62
+#. i18n: file: lirc-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
-#: rc.cpp:12 rc.cpp:44
+#: rc.cpp:9 rc.cpp:38
 msgid "Alternative LIRC String"
 msgstr "Альтернативная строка LIRC"
 
-#. i18n: file: lirc-configuration-ui.ui:86
+#. i18n: file: lirc-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
-#: rc.cpp:15 rc.cpp:47
+#: rc.cpp:12 rc.cpp:41
 msgid "textLabel1"
 msgstr "textLabel1"
 
-#. i18n: file: lirc-configuration-ui.ui:106
+#. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:18 rc.cpp:50
+#: rc.cpp:15 rc.cpp:44
 msgid "Power off .lircrc mode"
 msgstr "Выключить режим .lircrc"
 
-#. i18n: file: lirc-configuration-ui.ui:113
+#. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:21 rc.cpp:53
+#: rc.cpp:18 rc.cpp:47
 msgid "Power on .lircrc mode"
 msgstr "Включить режим .lircrc"
 
-#. i18n: file: lirc-configuration-ui.ui:130
+#. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:24 rc.cpp:56
+#: rc.cpp:21 rc.cpp:50
 msgid "Synchronize .lircrc modes at runtime"
 msgstr "Синхронизировать режимы .lircrc во время работы"
 
-#. i18n: file: lirc-configuration-ui.ui:137
+#. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:27 rc.cpp:59
+#: rc.cpp:24 rc.cpp:53
 msgid "Synchronize .lircrc modes at startup"
 msgstr "Синхронизировать режимы .lircrc при запуске"
 
-#. i18n: file: lirc-configuration-ui.ui:164
+#. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:30 rc.cpp:62
+#: rc.cpp:27 rc.cpp:56
 msgid "LIRC Configuration File"
 msgstr "файл настроек LIRC"
 
-#: rc.cpp:31
+#: rc.cpp:28
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: rc.cpp:32
+#: rc.cpp:29
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
+
+#~ msgid "LIRCConfigurationUI"
+#~ msgstr "LIRCConfigurationUI"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"

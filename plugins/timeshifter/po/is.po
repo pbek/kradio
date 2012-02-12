@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_timeshifter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 16:19+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2010-01-08 10:17+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -77,17 +77,17 @@ msgstr "Tímahliðrun"
 msgid "Timeshifter Options"
 msgstr "Valmöguleikar tímahliðrunar"
 
-#: timeshifter.cpp:193
+#: timeshifter.cpp:212
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr "Tímahliðrun á %1 (%2)"
 
-#: timeshifter.cpp:533
+#: timeshifter.cpp:558
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: forrit steppti %1 bætum. Gögn töpuðust"
 
-#: timeshifter.cpp:592
+#: timeshifter.cpp:638
 msgid "internal stream, not stored"
 msgstr "innri straumur, ekki geymdur"

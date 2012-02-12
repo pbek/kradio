@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2009-04-18 19:38+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -58,20 +58,20 @@ msgstr ""
 "Отладочные\n"
 "сообщения"
 
-#: errorlog.cpp:182
+#: errorlog.cpp:186
 msgid "Log Files"
 msgstr "Файлы журнала"
 
-#: errorlog.cpp:187
+#: errorlog.cpp:191
 msgid "Save KRadio Logging Data as ..."
 msgstr "Сохранить данные журнала KRadio как..."
 
-#: errorlog.cpp:212
+#: errorlog.cpp:216
 #, kde-format
 msgid "error writing to tempfile %1"
 msgstr "Ошибка записи во временный файл %1"
 
-#: errorlog.cpp:221
+#: errorlog.cpp:225
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "Ошибка выгрузки файла настроек %1"

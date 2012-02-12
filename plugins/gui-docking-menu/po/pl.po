@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 15:04+0100\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Pause/Play"
 msgstr ""
 
-#: docking-configuration.cpp:150 docking.cpp:316
+#: docking-configuration.cpp:150 docking.cpp:322
 msgid "Recording"
 msgstr ""
 
@@ -101,83 +101,83 @@ msgstr ""
 msgid "System Tray Plugin"
 msgstr ""
 
-#: docking.cpp:251
+#: docking.cpp:257
 msgid "System Tray Icon"
 msgstr ""
 
-#: docking.cpp:252
+#: docking.cpp:258
 msgid "System Tray Icon Configuration"
 msgstr ""
 
-#: docking.cpp:306
+#: docking.cpp:312
 msgid "Search Next Station"
 msgstr ""
 
-#: docking.cpp:307
+#: docking.cpp:313
 msgid "Search Previous Station"
 msgstr ""
 
-#: docking.cpp:321
+#: docking.cpp:327
 msgid "Pause Radio"
 msgstr ""
 
-#: docking.cpp:332
+#: docking.cpp:338
 msgid "Show/Hide Plugins"
 msgstr ""
 
-#: docking.cpp:340
+#: docking.cpp:346
 msgid "&Quit"
 msgstr ""
 
-#: docking.cpp:454
+#: docking.cpp:461
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr ""
 
-#: docking.cpp:457 docking.cpp:466 docking.cpp:474
+#: docking.cpp:464 docking.cpp:473 docking.cpp:481
 msgid "Start Sleep Countdown"
 msgstr ""
 
-#: docking.cpp:482
+#: docking.cpp:489
 msgid "Power Off"
 msgstr ""
 
-#: docking.cpp:482
+#: docking.cpp:489
 msgid "Power On"
 msgstr ""
 
-#: docking.cpp:497 docking.cpp:518
+#: docking.cpp:504 docking.cpp:525
 msgid "invalid station"
 msgstr ""
 
-#: docking.cpp:500
+#: docking.cpp:507
 #, kde-format
 msgid "KRadio: %1"
 msgstr ""
 
-#: docking.cpp:510
+#: docking.cpp:517
 #, kde-format
 msgid "next alarm: %1"
 msgstr ""
 
-#: docking.cpp:512
+#: docking.cpp:519
 msgid "<no alarm pending>"
 msgstr ""
 
-#: docking.cpp:769 docking.cpp:871 docking.cpp:929
+#: docking.cpp:778 docking.cpp:881 docking.cpp:939
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr ""
 
-#: docking.cpp:857
+#: docking.cpp:867
 msgid "Start Recording"
 msgstr ""
 
-#: docking.cpp:911
+#: docking.cpp:921
 msgid "Resume playback"
 msgstr ""
 
-#: docking.cpp:915
+#: docking.cpp:925
 msgid "Pause playback"
 msgstr ""
 

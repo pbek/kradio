@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 15:04+0100\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2010-09-27 02:01+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-de@kde.org>\n"
@@ -66,7 +66,7 @@ msgstr "Ein/Ausschalten"
 msgid "Pause/Play"
 msgstr "Pause/Wiedergabe"
 
-#: docking-configuration.cpp:150 docking.cpp:316
+#: docking-configuration.cpp:150 docking.cpp:322
 msgid "Recording"
 msgstr "Aufnahme"
 
@@ -102,83 +102,83 @@ msgstr "Tray-Symbol/Menü für KRadio"
 msgid "System Tray Plugin"
 msgstr "System Tray Plugin"
 
-#: docking.cpp:251
+#: docking.cpp:257
 msgid "System Tray Icon"
 msgstr "System Tray Icon"
 
-#: docking.cpp:252
+#: docking.cpp:258
 msgid "System Tray Icon Configuration"
 msgstr "Konfiguration des System Tray Icons"
 
-#: docking.cpp:306
+#: docking.cpp:312
 msgid "Search Next Station"
 msgstr "Suche nächsten Sender"
 
-#: docking.cpp:307
+#: docking.cpp:313
 msgid "Search Previous Station"
 msgstr "Suche vorherigen Sender"
 
-#: docking.cpp:321
+#: docking.cpp:327
 msgid "Pause Radio"
 msgstr "Radiowiedergabe pausieren"
 
-#: docking.cpp:332
+#: docking.cpp:338
 msgid "Show/Hide Plugins"
 msgstr "Plugins anzeigen/verstecken"
 
-#: docking.cpp:340
+#: docking.cpp:346
 msgid "&Quit"
 msgstr "&Beenden"
 
-#: docking.cpp:454
+#: docking.cpp:461
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Schlummermodus abbrechen (liefe bis %1)"
 
-#: docking.cpp:457 docking.cpp:466 docking.cpp:474
+#: docking.cpp:464 docking.cpp:473 docking.cpp:481
 msgid "Start Sleep Countdown"
 msgstr "Schlummermodus einschalten"
 
-#: docking.cpp:482
+#: docking.cpp:489
 msgid "Power Off"
 msgstr "Ausschalten"
 
-#: docking.cpp:482
+#: docking.cpp:489
 msgid "Power On"
 msgstr "Einschalten"
 
-#: docking.cpp:497 docking.cpp:518
+#: docking.cpp:504 docking.cpp:525
 msgid "invalid station"
 msgstr "ungültiger Sender"
 
-#: docking.cpp:500
+#: docking.cpp:507
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:510
+#: docking.cpp:517
 #, kde-format
 msgid "next alarm: %1"
 msgstr "Nächstes Wecken: %1"
 
-#: docking.cpp:512
+#: docking.cpp:519
 msgid "<no alarm pending>"
 msgstr "<Wecker nicht aktiv>"
 
-#: docking.cpp:769 docking.cpp:871 docking.cpp:929
+#: docking.cpp:778 docking.cpp:881 docking.cpp:939
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Aufnahme %1 abbrechen"
 
-#: docking.cpp:857
+#: docking.cpp:867
 msgid "Start Recording"
 msgstr "Aufnahme starten"
 
-#: docking.cpp:911
+#: docking.cpp:921
 msgid "Resume playback"
 msgstr "Wiedergabe fortsetzen"
 
-#: docking.cpp:915
+#: docking.cpp:925
 msgid "Pause playback"
 msgstr "Wiedergabe pausieren"
 

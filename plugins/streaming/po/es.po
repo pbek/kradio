@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -17,147 +17,141 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. i18n: file: streaming-configuration-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, StreamingConfigurationUI)
-#: rc.cpp:3 rc.cpp:97
-msgid "StreamingConfigurationUI"
-msgstr "StreamingConfigurationUI"
-
-#. i18n: file: streaming-configuration-ui.ui:29
+#. i18n: file: streaming-configuration-ui.ui:26
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: rc.cpp:6 rc.cpp:100
+#: rc.cpp:3 rc.cpp:94
 msgid "URL Properties"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:45
+#. i18n: file: streaming-configuration-ui.ui:42
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:9 rc.cpp:103
+#: rc.cpp:6 rc.cpp:97
 msgid "Stereo"
 msgstr "Estéreo"
 
-#. i18n: file: streaming-configuration-ui.ui:50
+#. i18n: file: streaming-configuration-ui.ui:47
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:12 rc.cpp:106
+#: rc.cpp:9 rc.cpp:100
 msgid "Mono"
 msgstr "Mono"
 
-#. i18n: file: streaming-configuration-ui.ui:58
+#. i18n: file: streaming-configuration-ui.ui:55
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
-#: rc.cpp:15 rc.cpp:109
+#: rc.cpp:12 rc.cpp:103
 msgid "Sample Bits"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:74
+#. i18n: file: streaming-configuration-ui.ui:71
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
-#: rc.cpp:18 rc.cpp:112
+#: rc.cpp:15 rc.cpp:106
 msgid "Channels"
 msgstr "Canales"
 
-#. i18n: file: streaming-configuration-ui.ui:84
+#. i18n: file: streaming-configuration-ui.ui:81
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
-#: rc.cpp:21 rc.cpp:115
+#: rc.cpp:18 rc.cpp:109
 msgid "Endianess"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:101
+#. i18n: file: streaming-configuration-ui.ui:98
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
-#: rc.cpp:24 rc.cpp:118
+#: rc.cpp:21 rc.cpp:112
 msgid "Little Endian"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:106
+#. i18n: file: streaming-configuration-ui.ui:103
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
-#: rc.cpp:27 rc.cpp:121
+#: rc.cpp:24 rc.cpp:115
 msgid "Big Endian"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:121
+#. i18n: file: streaming-configuration-ui.ui:118
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:30 rc.cpp:124
+#: rc.cpp:27 rc.cpp:118
 msgid "48000"
 msgstr "48000"
 
-#. i18n: file: streaming-configuration-ui.ui:126
+#. i18n: file: streaming-configuration-ui.ui:123
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:33 rc.cpp:127
+#: rc.cpp:30 rc.cpp:121
 msgid "44100"
 msgstr "441000"
 
-#. i18n: file: streaming-configuration-ui.ui:131
+#. i18n: file: streaming-configuration-ui.ui:128
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:36 rc.cpp:130
+#: rc.cpp:33 rc.cpp:124
 msgid "32000"
 msgstr "32000"
 
-#. i18n: file: streaming-configuration-ui.ui:136
+#. i18n: file: streaming-configuration-ui.ui:133
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:39 rc.cpp:133
+#: rc.cpp:36 rc.cpp:127
 msgid "22050"
 msgstr "22050"
 
-#. i18n: file: streaming-configuration-ui.ui:141
+#. i18n: file: streaming-configuration-ui.ui:138
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:42 rc.cpp:136
+#: rc.cpp:39 rc.cpp:130
 msgid "11025"
 msgstr "11025"
 
-#. i18n: file: streaming-configuration-ui.ui:156
+#. i18n: file: streaming-configuration-ui.ui:153
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:45 rc.cpp:139
+#: rc.cpp:42 rc.cpp:133
 msgid "16"
 msgstr "16"
 
-#. i18n: file: streaming-configuration-ui.ui:161
+#. i18n: file: streaming-configuration-ui.ui:158
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:48 rc.cpp:142
+#: rc.cpp:45 rc.cpp:136
 msgid "8"
 msgstr "8"
 
-#. i18n: file: streaming-configuration-ui.ui:176
+#. i18n: file: streaming-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbFormat)
-#: rc.cpp:51 rc.cpp:145
+#: rc.cpp:48 rc.cpp:139
 msgid "Raw"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:190
+#. i18n: file: streaming-configuration-ui.ui:187
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, m_sbBufferSize)
-#: rc.cpp:54 rc.cpp:148
+#: rc.cpp:51 rc.cpp:142
 msgid "kB"
 msgstr "kB"
 
-#. i18n: file: streaming-configuration-ui.ui:221
+#. i18n: file: streaming-configuration-ui.ui:218
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
-#: rc.cpp:57 rc.cpp:151
+#: rc.cpp:54 rc.cpp:145
 msgid "Buffer Size"
 msgstr "Tamaño del Buffer"
 
-#. i18n: file: streaming-configuration-ui.ui:237
+#. i18n: file: streaming-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
-#: rc.cpp:60 rc.cpp:154
+#: rc.cpp:57 rc.cpp:148
 msgid "Format"
 msgstr "Formato"
 
-#. i18n: file: streaming-configuration-ui.ui:253
+#. i18n: file: streaming-configuration-ui.ui:250
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:63 rc.cpp:157
+#: rc.cpp:60 rc.cpp:151
 msgid "Sample Rate"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:270
+#. i18n: file: streaming-configuration-ui.ui:267
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:66 rc.cpp:160
+#: rc.cpp:63 rc.cpp:154
 msgid "Signed"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:275
+#. i18n: file: streaming-configuration-ui.ui:272
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:69 rc.cpp:163
+#: rc.cpp:66 rc.cpp:157
 msgid "Unsigned"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:376
+#. i18n: file: streaming-configuration-ui.ui:373
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:72 rc.cpp:166
+#: rc.cpp:69 rc.cpp:160
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -177,39 +171,39 @@ msgid ""
 "font-weight:600;\">PVR radio card</span>.</p></body></html>"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:405
+#. i18n: file: streaming-configuration-ui.ui:402
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureURLs)
-#: rc.cpp:79 rc.cpp:173
+#: rc.cpp:76 rc.cpp:167
 msgid "Capture URLs"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:490
+#. i18n: file: streaming-configuration-ui.ui:487
 #. i18n: ectx: property (text), widget (K3ListView, m_ListCaptureURLs)
-#. i18n: file: streaming-configuration-ui.ui:593
+#. i18n: file: streaming-configuration-ui.ui:590
 #. i18n: ectx: property (text), widget (K3ListView, m_ListPlaybackURLs)
-#. i18n: file: streaming-configuration-ui.ui:490
+#. i18n: file: streaming-configuration-ui.ui:487
 #. i18n: ectx: property (text), widget (K3ListView, m_ListCaptureURLs)
-#. i18n: file: streaming-configuration-ui.ui:593
+#. i18n: file: streaming-configuration-ui.ui:590
 #. i18n: ectx: property (text), widget (K3ListView, m_ListPlaybackURLs)
-#: rc.cpp:82 rc.cpp:91 rc.cpp:176 rc.cpp:185
+#: rc.cpp:79 rc.cpp:88 rc.cpp:170 rc.cpp:179
 msgid "No."
 msgstr "Nro."
 
-#. i18n: file: streaming-configuration-ui.ui:501
+#. i18n: file: streaming-configuration-ui.ui:498
 #. i18n: ectx: property (text), widget (K3ListView, m_ListCaptureURLs)
-#. i18n: file: streaming-configuration-ui.ui:604
+#. i18n: file: streaming-configuration-ui.ui:601
 #. i18n: ectx: property (text), widget (K3ListView, m_ListPlaybackURLs)
-#. i18n: file: streaming-configuration-ui.ui:501
+#. i18n: file: streaming-configuration-ui.ui:498
 #. i18n: ectx: property (text), widget (K3ListView, m_ListCaptureURLs)
-#. i18n: file: streaming-configuration-ui.ui:604
+#. i18n: file: streaming-configuration-ui.ui:601
 #. i18n: ectx: property (text), widget (K3ListView, m_ListPlaybackURLs)
-#: rc.cpp:85 rc.cpp:94 rc.cpp:179 rc.cpp:188
+#: rc.cpp:82 rc.cpp:91 rc.cpp:173 rc.cpp:182
 msgid "URL"
 msgstr "URL"
 
-#. i18n: file: streaming-configuration-ui.ui:571
+#. i18n: file: streaming-configuration-ui.ui:568
 #. i18n: ectx: attribute (title), widget (QWidget, PlaybackURLs)
-#: rc.cpp:88 rc.cpp:182
+#: rc.cpp:85 rc.cpp:176
 msgid "Playback URLs"
 msgstr ""
 
@@ -283,3 +277,6 @@ msgstr ""
 #, kde-format
 msgid "Error: %1 (%2)"
 msgstr "Error: %1 (%2)"
+
+#~ msgid "StreamingConfigurationUI"
+#~ msgstr "StreamingConfigurationUI"

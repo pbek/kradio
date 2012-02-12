@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:56+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,53 +109,53 @@ msgstr ""
 msgid "no preset defined"
 msgstr ""
 
-#: radioview.cpp:555 radioview.cpp:625
+#: radioview.cpp:563 radioview.cpp:633
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr ""
 
-#: radioview.cpp:608
+#: radioview.cpp:616
 msgid "Resume playback"
 msgstr ""
 
-#: radioview.cpp:612
+#: radioview.cpp:620
 msgid "Pause playback"
 msgstr ""
 
-#: radioview.cpp:705
+#: radioview.cpp:713
 msgid "Display"
 msgstr ""
 
-#: radioview.cpp:706
+#: radioview.cpp:714
 msgid "Display Configuration"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:122 radioview_frequencyradio.cpp:123
+#: radioview_frequencyradio.cpp:132 radioview_frequencyradio.cpp:133
 msgid "Frequency Display"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:402
+#: radioview_frequencyradio.cpp:417
 msgid "AM"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:403
+#: radioview_frequencyradio.cpp:418
 msgid "FM"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:404
+#: radioview_frequencyradio.cpp:419
 msgid "RDS"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:405
+#: radioview_frequencyradio.cpp:420
 msgid "NET"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:546
+#: radioview_frequencyradio.cpp:562
 #, kde-format
 msgid "%1 kHz"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:548
+#: radioview_frequencyradio.cpp:564
 #, kde-format
 msgid "%1 MHz"
 msgstr ""

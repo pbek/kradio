@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 19:38+0100\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2011-02-06 02:42+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -15,42 +15,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: convert-presets.cpp:53 convert-presets.cpp:134
+#: convert-presets.cpp:58 convert-presets.cpp:139
 msgid "error opening preset file"
 msgstr ""
 
-#: convert-presets.cpp:55
+#: convert-presets.cpp:60
 msgid "for reading"
 msgstr "okumak için"
 
-#: convert-presets.cpp:136
+#: convert-presets.cpp:141
 msgid "for writing"
 msgstr "yazmak için"
 
-#: convert-presets.cpp:148
+#: convert-presets.cpp:153
 msgid "error writing preset file"
 msgstr ""
 
-#: convert-presets.cpp:163
+#: convert-presets.cpp:168
 msgid "kradio4-convert-presets"
 msgstr ""
 
-#: convert-presets.cpp:165
+#: convert-presets.cpp:170
 msgid "(c) 2003-2010 Martin Witte"
 msgstr "(c) 2003-2010 Martin Witte"
 
-#: convert-presets.cpp:168
+#: convert-presets.cpp:173
 msgid "Martin Witte"
 msgstr "Martin Witte"
 
-#: convert-presets.cpp:173
+#: convert-presets.cpp:178
 msgid "quiet mode - no informational output"
 msgstr ""
 
-#: convert-presets.cpp:174
+#: convert-presets.cpp:179
 msgid "preset files to convert"
 msgstr ""
 
@@ -63,5 +63,3 @@ msgstr "Your names"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Your emails"
-
-

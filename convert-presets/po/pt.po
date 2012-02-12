@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 15:41+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2006-02-07 13:13+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -19,40 +19,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: convert-presets.cpp:53 convert-presets.cpp:134
+#: convert-presets.cpp:58 convert-presets.cpp:139
 msgid "error opening preset file"
 msgstr "erro ao abrir o ficheiro das estações"
 
-#: convert-presets.cpp:55
+#: convert-presets.cpp:60
 msgid "for reading"
 msgstr "em modo de leitura"
 
-#: convert-presets.cpp:136
+#: convert-presets.cpp:141
 msgid "for writing"
 msgstr "em modo de escrita"
 
-#: convert-presets.cpp:148
+#: convert-presets.cpp:153
 msgid "error writing preset file"
 msgstr "erro ao escrever o ficheiro das estações"
 
-#: convert-presets.cpp:163
+#: convert-presets.cpp:168
 #, fuzzy
 msgid "kradio4-convert-presets"
 msgstr "converter estações prédefinidas"
 
-#: convert-presets.cpp:165
+#: convert-presets.cpp:170
 msgid "(c) 2003-2010 Martin Witte"
 msgstr ""
 
-#: convert-presets.cpp:168
+#: convert-presets.cpp:173
 msgid "Martin Witte"
 msgstr ""
 
-#: convert-presets.cpp:173
+#: convert-presets.cpp:178
 msgid "quiet mode - no informational output"
 msgstr ""
 
-#: convert-presets.cpp:174
+#: convert-presets.cpp:179
 #, fuzzy
 msgid "preset files to convert"
 msgstr "ficheiro das estações a converter"

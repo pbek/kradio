@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 15:41+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2010-09-26 15:42+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-de@kde.org>\n"
@@ -18,39 +18,39 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: convert-presets.cpp:53 convert-presets.cpp:134
+#: convert-presets.cpp:58 convert-presets.cpp:139
 msgid "error opening preset file"
 msgstr "Fehler beim Öffnen der Senderliste"
 
-#: convert-presets.cpp:55
+#: convert-presets.cpp:60
 msgid "for reading"
 msgstr "zum Lesen"
 
-#: convert-presets.cpp:136
+#: convert-presets.cpp:141
 msgid "for writing"
 msgstr "zum Schreiben"
 
-#: convert-presets.cpp:148
+#: convert-presets.cpp:153
 msgid "error writing preset file"
 msgstr "Fehler beim Schreiben der Senderliste"
 
-#: convert-presets.cpp:163
+#: convert-presets.cpp:168
 msgid "kradio4-convert-presets"
 msgstr "kradio4-convert-presets"
 
-#: convert-presets.cpp:165
+#: convert-presets.cpp:170
 msgid "(c) 2003-2010 Martin Witte"
 msgstr "(c) 2003-2010 Martin Witte"
 
-#: convert-presets.cpp:168
+#: convert-presets.cpp:173
 msgid "Martin Witte"
 msgstr "Martin Witte"
 
-#: convert-presets.cpp:173
+#: convert-presets.cpp:178
 msgid "quiet mode - no informational output"
 msgstr "Verarbeitungsmodus ohne unnötige Ausgabe von Zusatzinformationen"
 
-#: convert-presets.cpp:174
+#: convert-presets.cpp:179
 msgid "preset files to convert"
 msgstr "zu konvertierende Senderlisten"
 

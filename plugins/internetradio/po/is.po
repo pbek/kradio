@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_internetradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-10 21:00+0100\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2010-01-08 09:08+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,139 +17,174 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: decoder_thread.cpp:120 internetradio.cpp:1244
+#: decoder_thread.cpp:135
 #, kde-format
 msgid "opening stream %1"
 msgstr "opna straum %1"
 
-#: decoder_thread.cpp:124
+#: decoder_thread.cpp:139
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr "tókst ekki að opna %1. Reyni við næsta straum í spilunarlista."
 
-#: decoder_thread.cpp:128
+#: decoder_thread.cpp:144
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Gat ekki opnað neinn inntaksstraum úr %1."
 
-#: decoder_thread.cpp:163
-#, kde-format
-msgid "%1: error decoding packet. Discarding packet\n"
+#: decoder_thread.cpp:215
+#, fuzzy, kde-format
+msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: villa við afkóðun pakka. Hendi pakkanum\n"
 
-#: decoder_thread.cpp:177
+#: decoder_thread.cpp:234
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "innri straumur, ekki geymdur (%1)"
 
-#: decoder_thread.cpp:415 decoder_thread.cpp:417
+#: decoder_thread.cpp:298
+msgid "Failed allocating AVFrame."
+msgstr ""
+
+#: decoder_thread.cpp:555 decoder_thread.cpp:558
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr ""
 
-#: decoder_thread.cpp:422
+#: decoder_thread.cpp:562
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr ""
 
-#: decoder_thread.cpp:428 decoder_thread.cpp:430 decoder_thread.cpp:468
-#: decoder_thread.cpp:470 decoder_thread.cpp:482 decoder_thread.cpp:484
+#: decoder_thread.cpp:582 decoder_thread.cpp:585 decoder_thread.cpp:649
+#: decoder_thread.cpp:652 decoder_thread.cpp:677 decoder_thread.cpp:680
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr "Get ekki opnað straum %1"
 
-#: decoder_thread.cpp:445 decoder_thread.cpp:447
+#: decoder_thread.cpp:601
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "gat ekki opnað MMS straum %1"
 
-#: decoder_thread.cpp:499 decoder_thread.cpp:501
+#: decoder_thread.cpp:604
+#, fuzzy, kde-format
+msgid "cannot open MMS  %1"
+msgstr "gat ekki opnað MMS straum %1"
+
+#: decoder_thread.cpp:712 decoder_thread.cpp:715
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Fann engar straumupplýsingar í %1"
 
-#: decoder_thread.cpp:546 decoder_thread.cpp:548
+#: decoder_thread.cpp:780 decoder_thread.cpp:783
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Fann engan hljóðstraum í %1"
 
-#: decoder_thread.cpp:564 decoder_thread.cpp:566
+#: decoder_thread.cpp:798 decoder_thread.cpp:801
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Fann ekki afkóðunarlykla (codec) fyrir %1"
 
-#: decoder_thread.cpp:574 decoder_thread.cpp:576
+#: decoder_thread.cpp:814 decoder_thread.cpp:817
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Mistókst að opna afkóðunarlykla (codec) fyrir %1"
 
-#: internetradio.cpp:54
+#: decoder_thread.cpp:859
+#, kde-format
+msgid "Cannot use libav sample format id %1"
+msgstr ""
+
+#: icy_http_handler.cpp:69
+#, kde-format
+msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
+msgstr ""
+
+#: icy_http_handler.cpp:81
+#, kde-format
+msgid ""
+"Internet Radio Plugin (ICY http handler): Failed to start stream download of "
+"%1: KIO::get returned NULL pointer"
+msgstr ""
+
+#: icy_http_handler.cpp:101
+#, fuzzy, kde-format
+msgid ""
+"Internet Radio Plugin (ICY http handler): Failed to start stream download of "
+"%1: %2"
+msgstr "tókst ekki að ná í %1"
+
+#: icy_http_handler.cpp:334
+#, kde-format
+msgid ""
+"Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
+"%2"
+msgstr ""
+
+#: icy_http_handler.cpp:342
+#, kde-format
+msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
+msgstr ""
+
+#: internetradio.cpp:51
 msgid "Pseudo radio device for internet radio stream support"
 msgstr "Gervi-útvarpstæki til stuðnings við internet-útvarpsstrauma"
 
-#: internetradio.cpp:61
+#: internetradio.cpp:58
 msgid "Internet Radio Plugin"
 msgstr "Internetútvarps-íforrit"
 
-#: internetradio.cpp:381
+#: internetradio.cpp:374
 msgid "Internet radio station decoder / pseudo device"
 msgstr "Afkóðari/gervitæki fyrir internetútvarpsstöðvar"
 
-#: internetradio.cpp:609
+#: internetradio.cpp:611
 msgid "Internet Radio"
 msgstr "Internet-útvarp"
 
-#: internetradio.cpp:610
+#: internetradio.cpp:612
 msgid "Internet Radio Options"
 msgstr "Valkostir internet-útvarps"
 
-#: internetradio.cpp:1026 internetradio.cpp:1052
-#, fuzzy, kde-format
-msgid "Failed to load playlist %1: %2"
-msgstr "næ í spilunarlistann %1"
-
-#: internetradio.cpp:1030
-#, kde-format
-msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
-msgstr ""
-
-#: internetradio.cpp:1099
-#, kde-format
-msgid "%1 does not contain any usable radio stream"
-msgstr "%1 inniheldur engan nothæfan útvarpsstraum"
-
-#: internetradio.cpp:1134
-msgid "failed to create temporary file to store playlist data"
-msgstr ""
-
-#: internetradio.cpp:1138
-msgid "failed to write temporary file to store playlist data"
-msgstr ""
-
-#: internetradio.cpp:1211
+#: internetradio.cpp:946
 #, fuzzy
-msgid "error while reading asx file: "
-msgstr "villa við lestur á asx skrá"
+msgid "Internet Radio Plugin: "
+msgstr "Internetútvarps-íforrit"
 
-#: internetradio.cpp:1252
-#, fuzzy, kde-format
-msgid "Failed to start stream download of %1: %2"
-msgstr "tókst ekki að ná í %1"
-
-#: internetradio.cpp:1256
-#, kde-format
-msgid "Failed to start stream download of %1: KIO::get returned NULL pointer"
-msgstr ""
-
-#: internetradio.cpp:1260
+#: playlist_handler.cpp:87
 #, fuzzy, kde-format
 msgid "Failed to start any stream of %1"
 msgstr "Gat ekki opnað neinn inntaksstraum úr %1."
 
-#: internetradio.cpp:1305
+#: playlist_handler.cpp:126 playlist_handler.cpp:149
+#, fuzzy, kde-format
+msgid "Failed to load playlist %1: %2"
+msgstr "næ í spilunarlistann %1"
+
+#: playlist_handler.cpp:129
 #, kde-format
-msgid "Failed to load stream data for %1: %2"
+msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
+
+#: playlist_handler.cpp:194
+#, kde-format
+msgid "%1 does not contain any usable radio stream"
+msgstr "%1 inniheldur engan nothæfan útvarpsstraum"
+
+#: playlist_handler.cpp:240
+msgid "failed to create temporary file to store playlist data"
+msgstr ""
+
+#: playlist_handler.cpp:244
+msgid "failed to write temporary file to store playlist data"
+msgstr ""
+
+#: playlist_handler.cpp:317
+#, fuzzy
+msgid "error while reading asx file: "
+msgstr "villa við lestur á asx skrá"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
@@ -180,6 +215,11 @@ msgstr "Hljóðblöndunarrás fyrir afspilun"
 #: rc.cpp:15 rc.cpp:30
 msgid "Mute Playback Channel on Power Off"
 msgstr "Þagga niður ljóðblöndunarrás þegar slökkt er"
+
+#: stream_input_buffer.cpp:72
+msgid ""
+"This should never happen: inconsistency in buffer locking / buffer size!"
+msgstr ""
 
 #~ msgid ""
 #~ "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "

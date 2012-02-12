@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2009-05-09 10:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -78,18 +78,18 @@ msgstr "Призупинка"
 msgid "Timeshifter Options"
 msgstr "Параметри призупинки мовлення"
 
-#: timeshifter.cpp:193
+#: timeshifter.cpp:212
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr "Часовий зсув %1 (%2)"
 
-#: timeshifter.cpp:533
+#: timeshifter.cpp:558
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: клієнти пропустили %1 байтів. Дані "
 "втрачено."
 
-#: timeshifter.cpp:592
+#: timeshifter.cpp:638
 msgid "internal stream, not stored"
 msgstr "внутрішній потік, не збережено"

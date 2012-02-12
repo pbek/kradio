@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 19:38+0100\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
 "PO-Revision-Date: 2011-02-06 05:11+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: displaycfg.cpp:48
 msgid "Active Text"
@@ -110,53 +110,53 @@ msgstr "Bir Radyo İstasyonu Seçin"
 msgid "no preset defined"
 msgstr ""
 
-#: radioview.cpp:555 radioview.cpp:625
+#: radioview.cpp:563 radioview.cpp:633
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr ""
 
-#: radioview.cpp:608
+#: radioview.cpp:616
 msgid "Resume playback"
 msgstr ""
 
-#: radioview.cpp:612
+#: radioview.cpp:620
 msgid "Pause playback"
 msgstr ""
 
-#: radioview.cpp:705
+#: radioview.cpp:713
 msgid "Display"
 msgstr ""
 
-#: radioview.cpp:706
+#: radioview.cpp:714
 msgid "Display Configuration"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:122 radioview_frequencyradio.cpp:123
+#: radioview_frequencyradio.cpp:132 radioview_frequencyradio.cpp:133
 msgid "Frequency Display"
 msgstr "Frekansı Göster"
 
-#: radioview_frequencyradio.cpp:402
+#: radioview_frequencyradio.cpp:417
 msgid "AM"
 msgstr "AM"
 
-#: radioview_frequencyradio.cpp:403
+#: radioview_frequencyradio.cpp:418
 msgid "FM"
 msgstr "FM"
 
-#: radioview_frequencyradio.cpp:404
+#: radioview_frequencyradio.cpp:419
 msgid "RDS"
 msgstr "RDS"
 
-#: radioview_frequencyradio.cpp:405
+#: radioview_frequencyradio.cpp:420
 msgid "NET"
 msgstr "NET"
 
-#: radioview_frequencyradio.cpp:546
+#: radioview_frequencyradio.cpp:562
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: radioview_frequencyradio.cpp:548
+#: radioview_frequencyradio.cpp:564
 #, kde-format
 msgid "%1 MHz"
 msgstr "%1 MHz"
@@ -231,5 +231,3 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-
-
