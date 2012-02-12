@@ -20,24 +20,17 @@
 #endif
 
 #include <QtCore/QList>
-// #include <QtCore/QXmlStreamReader>
-// #include <QtCore/QTextCodec>
 
 #include <kconfiggroup.h>
 #include <kiconloader.h>
 #include <kaboutdata.h>
 #include <klocale.h>
-// #include <kio/jobclasses.h>
-// #include <kio/job.h>
-// #include <ktemporaryfile.h>
-// #include <kencodingprober.h>
 
 #include <unistd.h>
 
 #include "stationlist.h"
 #include "utils.h"
 #include "internetradio.h"
-#include "soundstream_decoding_step_event.h"
 #include "decoder_thread.h"
 
 #include "internetradio-configuration.h"
@@ -67,7 +60,6 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_decoderThread(NULL),
     m_currentStation(InternetRadioStation()),
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-//     m_streamInputBuffer      (NULL),
     m_streamReader             (NULL),
 #endif
     m_stereoFlag(false),
@@ -474,6 +466,15 @@ bool    InternetRadio::isSourceMuted(SoundStreamID id, bool &m) const
 
     m = m_muted;
     return true;
+}
+
+
+
+
+// pure virtual members of ThreadLoggingClient
+IErrorLogClient    *InternetRadio::getErrorLogClient()
+{
+    return this;
 }
 
 
@@ -940,56 +941,15 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
 }
 
 
-bool InternetRadio::checkDecoderMessages(InternetRadioDecoder::logAvailable_t statusFunc, InternetRadioDecoder::logString_t stringFunc, IErrorLogClient::logFunction_t logFunc)
-{
-    bool hadMessages = false;
-    if ((m_decoderThread->decoder()->*statusFunc)()) {
-        QString     msg     = (m_decoderThread->decoder()->*stringFunc)(/* reset status*/ true);
-        QStringList msgList = msg.split("\n");
-        foreach(QString s, msgList) {
-            (this->*logFunc)(s);
-        }
-        hadMessages = true;
-    }
-    return hadMessages;
-}
-
-
 bool InternetRadio::checkDecoderMessages()
 {
-    bool errorsDetected = false;
-    if (m_decoderThread && m_decoderThread->decoder()) {
-        checkDecoderMessages(&InternetRadioDecoder::warning, &InternetRadioDecoder::warningString, &InternetRadio::logWarning);
-        checkDecoderMessages(&InternetRadioDecoder::debug,   &InternetRadioDecoder::debugString,   &InternetRadio::logDebug);
-        errorsDetected = checkDecoderMessages(&InternetRadioDecoder::error,   &InternetRadioDecoder::errorString,   &InternetRadio::logError);
-    }
+    bool errorsDetected = !checkLogs(m_decoderThread ? m_decoderThread->decoder() : NULL, i18n("Internet Radio Plugin: "), /*resetLogs = */ true);
     if (errorsDetected) {
         powerOff();
     }
     return !errorsDetected;
 }
 
-
-
-bool InternetRadio::event(QEvent *_e)
-{
-    if (SoundStreamDecodingEvent::isSoundStreamDecodingEvent(_e)) {
-        SoundStreamDecodingEvent *e  = static_cast<SoundStreamDecodingEvent*>(_e);
-
-        checkDecoderMessages();
-
-        if (m_decoderThread && m_decoderThread->decoder()) {
-            if (e->type() == SoundStreamDecodingTerminated) {
-                DecoderThread *t = m_decoderThread;
-                m_decoderThread = NULL;
-                t->deleteLater();
-            }
-        }
-        return true;
-    } else {
-        return QObject::event(_e);
-    }
-}
 
 
 void InternetRadio::freeAllBuffers()

@@ -66,7 +66,7 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url)
 
     // start download job
     m_streamUrl = url;
-    IErrorLogClient::staticLogDebug(i18n("opening stream %1", m_streamUrl.pathOrUrl()));
+    IErrorLogClient::staticLogDebug(i18n("Internet Radio Plugin (ICY http handler): opening stream %1", m_streamUrl.pathOrUrl()));
 
     emit sigUrlChanged(m_streamUrl);
 
@@ -78,7 +78,7 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url)
         QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
         QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
     } else {
-        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_streamUrl.pathOrUrl()));
+        IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_streamUrl.pathOrUrl()));
         stopStreamDownload();
         emit sigError(m_streamUrl);
     }
@@ -98,7 +98,7 @@ void IcyHttpHandler::startStreamJob()
     emit sigStarted(m_streamUrl);
 
     if (m_streamJob->error()) {
-        IErrorLogClient::staticLogError(i18n("Failed to start stream download of %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+        IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
         stopStreamDownload();
         emit sigError(m_streamUrl);
     }
@@ -151,14 +151,14 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
     m_connectionMetaData = job->metaData();
     foreach(QString k, m_connectionMetaData.keys()) {
         QString v = m_connectionMetaData[k];
-        IErrorLogClient::staticLogDebug(QString("%1 = %2").arg(k).arg(v));
+        IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):      %1 = %2").arg(k).arg(v));
         if (k == "HTTP-Headers") {
             QHttpResponseHeader hdr(v);
             QString             icyMetaIntKey = "ICY-metaint";
             if (hdr.hasKey(icyMetaIntKey)) {
                 m_ICYMetaInt = hdr.value(icyMetaIntKey).toInt();
                 m_dataRest   = m_ICYMetaInt;
-                IErrorLogClient::staticLogDebug(QString("found metaint: %1").arg(m_ICYMetaInt));
+                IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     found metaint: %1").arg(m_ICYMetaInt));
             }
         }
         else if (k == "content-type") {
@@ -210,7 +210,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                 metaString = QTextCodec::codecForName(prober.encoding())->toUnicode(m_metaData);
             }
 
-            IErrorLogClient::staticLogDebug(QString("meta: %1").arg(metaString));
+            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1").arg(metaString));
 
             // parse meta data
             QMap<QString, QString>  metaData;
@@ -243,7 +243,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                             metaData.insert(key, value);
                             metaString = metaString.mid(findIdx + matchLen).trimmed();
 #ifdef DEBUG
-                            IErrorLogClient::staticLogDebug(QString("Metadata Key: %1 = %2").arg(key).arg(value));
+                            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     Metadata Key: %1 = %2").arg(key).arg(value));
 #endif
                             break;
                         }
@@ -331,7 +331,7 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
     if (m_streamJob == job) {
         bool local_err = false;
         if (m_streamJob->error()) {
-            IErrorLogClient::staticLogError(i18n("Failed to load stream data for %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+            IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
             local_err = true;
         }
 
@@ -339,7 +339,7 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
         if (md.contains("HTTP-Headers") && md.contains("responsecode")) {
             int http_response_code = md["responsecode"].toInt();
             if (http_response_code < 200 || http_response_code >= 300) {
-                IErrorLogClient::staticLogError(i18n("HTTP error %1 for stream %2").arg(http_response_code).arg(m_streamUrl.pathOrUrl()));
+                IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2").arg(http_response_code).arg(m_streamUrl.pathOrUrl()));
                 local_err = true;
             }
         }

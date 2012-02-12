@@ -34,6 +34,7 @@
 
 #include "soundformat.h"
 #include "sound_metadata.h"
+#include "thread-logging.h"
 #include "internetradiostation.h"
 
 #include "databuffer.h"
@@ -66,7 +67,8 @@ extern "C" {
 // #define DEBUG_DUMP_DECODER_STREAMS
 
 
-class InternetRadioDecoder : public QObject
+class InternetRadioDecoder : public QObject,
+                             public ThreadLogging
 {
 Q_OBJECT
 public:
@@ -86,16 +88,6 @@ public:
 
     virtual ~InternetRadioDecoder();
 
-    typedef   bool    (InternetRadioDecoder::*logAvailable_t) ()                 const;
-    typedef   QString (InternetRadioDecoder::*logString_t)    (bool resetStatus);
-
-    bool                  error()         const { return m_error;   }
-    bool                  warning()       const { return m_warning; }
-    bool                  debug()         const { return m_debug;   }
-    QString               errorString  (bool resetError   = true);
-    QString               warningString(bool resetWarning = true);
-    QString               debugString  (bool resetDebug   = true);
-
     void                  setDone();
     bool                  isDone() const { return m_done; }
 
@@ -111,30 +103,18 @@ public:
     void                  popFirstBuffer();
     void                  flushBuffers();
 
-// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-//     void                  writeInputBuffer(const QByteArray &data, bool &isFull, const KUrl &inputUrl);
-//     QByteArray            readInputBuffer(size_t maxSize);
-// #endif
-
 protected:
     // output buffer
     void                  pushBuffer(const char *data, size_t dataSize, const SoundMetaData &md, const SoundFormat &sf);
 
 signals:
     void                  sigSelfTrigger();
-// #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-//     void                  sigInputBufferNotFull();
-// #endif
 
 protected slots:
 
     void                  run();
 
 protected:
-    void                  addErrorString  (const QString &s);
-    void                  addWarningString(const QString &s);
-    void                  addDebugString  (const QString &s);
-
 
     bool                  decoderOpened() const { return m_decoderOpened; }
     void                  openAVStream(const QString &stream, bool warningsNotErros = false);
@@ -174,14 +154,6 @@ protected:
     InternetRadioStation  m_RadioStation;
 
     bool                  m_error;
-    QString               m_errorString;
-    bool                  m_warning;
-    QString               m_warningString;
-    bool                  m_debug;
-    QString               m_debugString;
-    mutable
-    QSemaphore            m_modErrWarnSemaphore;
-
     bool                  m_done;
 
     SoundFormat           m_soundFormat;

@@ -611,6 +611,11 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
 }
 
 
+// pure virtual members of ThreadLoggingClient
+IErrorLogClient *AlsaSoundDevice::getErrorLogClient()
+{
+    return this;
+}
 
 void AlsaSoundDevice::slotPollPlayback()
 {
@@ -1878,24 +1883,12 @@ void   AlsaSoundDevice::unlockCaptureBufferTransaction()
 void  AlsaSoundDevice::checkThreadErrorsAndWarning()
 {
     if (m_captureThread) {
-        if (m_captureThread->error()) {
-            logError  (i18n("AlsaPlugin(capture thread on %1): %2", m_CaptureDeviceName, m_captureThread->errorString()));
-            m_captureThread->resetError();
-        }
-        if (m_captureThread->warning()) {
-            logWarning(i18n("AlsaPlugin(capture thread on %1): %2", m_CaptureDeviceName, m_captureThread->warningString()));
-            m_captureThread->resetWarning();
-        }
+        checkLogs(m_captureThread, i18n("AlsaPlugin(capture thread on %1): ",   m_CaptureDeviceName),    /*resetLogs = */ true);
+        m_captureThread->resetError();
     }
     if (m_playbackThread) {
-        if (m_playbackThread->error()) {
-            logError  (i18n("AlsaPlugin(playback thread on %1): %2", m_CaptureDeviceName, m_playbackThread->errorString()));
-            m_playbackThread->resetError();
-        }
-        if (m_playbackThread->warning()) {
-            logWarning(i18n("AlsaPlugin(playback thread on %1): %2", m_CaptureDeviceName, m_playbackThread->warningString()));
-            m_playbackThread->resetWarning();
-        }
+        checkLogs(m_playbackThread, i18n("AlsaPlugin(playback thread on %1): ", m_PlaybackDeviceName), /*resetLogs = */ true);
+        m_playbackThread->resetError();
     }
 }
 

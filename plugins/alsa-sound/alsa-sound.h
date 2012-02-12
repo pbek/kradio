@@ -96,7 +96,8 @@ protected:
 
 class AlsaSoundDevice : public QObject,
                         public PluginBase,
-                        public ISoundStreamClient
+                        public ISoundStreamClient,
+                        public ThreadLoggingClient
 {
 Q_OBJECT
 
@@ -239,6 +240,10 @@ RECEIVERS:
     void           setCaptureMixerSettings(const QMap<QString, AlsaConfigMixerSetting> &map);
     void           setSoftPlaybackVolume(bool enable, double correction_factor);
     void           setCaptureFormatOverride(bool override_enabled, const SoundFormat &sf);
+
+// pure virtual members of ThreadLoggingClient
+protected:
+    IErrorLogClient    *getErrorLogClient();
 
 protected slots:
 

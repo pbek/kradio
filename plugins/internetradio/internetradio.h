@@ -37,6 +37,7 @@
 #include "icy_http_handler.h"
 #include "playlist_handler.h"
 #include "decoder_thread.h"
+#include "thread-logging.h"
 
 class DecoderThread;
 
@@ -45,8 +46,8 @@ class InternetRadio : public QObject,
                       public IRadioDevice,
                       public IRadioClient,
                       public IInternetRadio,
-                      public ISoundStreamClient/*,*/
-//                       public IV4LCfg
+                      public ISoundStreamClient,
+                      public ThreadLoggingClient
 {
 Q_OBJECT
 public:
@@ -151,6 +152,9 @@ RECEIVERS:
     bool       setPlaybackVolume(SoundStreamID id, float volume);
     bool       getPlaybackVolume(SoundStreamID id, float &volume) const;
 
+// pure virtual members of ThreadLoggingClient
+protected:
+    IErrorLogClient    *getErrorLogClient();
 
     // anything else
 public:
@@ -159,9 +163,7 @@ public:
 
 protected slots:
 
-    bool    event(QEvent *e);
     void    slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
-//     void slotMimetypeResult(KIO::Job *job, const QString &type);
 
     // playlist handling via PlaylistHandler object
     void    slotPlaylistLoaded(KUrl::List playlist);
@@ -186,7 +188,6 @@ protected:
     void    freeAllBuffers();
 
     bool    checkDecoderMessages();
-    bool    checkDecoderMessages(InternetRadioDecoder::logAvailable_t statusFunc, InternetRadioDecoder::logString_t stringFunc, IErrorLogClient::logFunction_t logFunc);
 
 protected slots:
     void    slotDecoderThreadFinished();

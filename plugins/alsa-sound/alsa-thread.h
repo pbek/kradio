@@ -24,9 +24,11 @@
 #include <alsa/asoundlib.h>
 
 #include "soundformat.h"
+#include "thread-logging.h"
 
 class AlsaSoundDevice;
-class AlsaThread : public QThread
+class AlsaThread : public QThread,
+                   public ThreadLogging
 {
 public:
     AlsaThread (AlsaSoundDevice *parent, bool playback_not_capture, snd_pcm_t *handle, const SoundFormat &sf);
@@ -35,25 +37,14 @@ public:
     void                  run();
 
     bool                  error()       const { return m_error; }
-    QString               errorString() const;
     void                  resetError();
-
-    bool                  warning()       const { return m_warning; }
-    QString               warningString() const;
-    void                  resetWarning();
 
     void                  setDone();
     bool                  isDone() const { return m_done; }
 
     void                  setLatency(unsigned int us);
 
-//     void                  awake();
 protected:
-
-//     void                  waitForParent();
-    void                  addErrorString(const QString &s);
-    void                  addWarningString(const QString &s);
-
 
 protected:
 
@@ -63,16 +54,9 @@ protected:
     SoundFormat           m_soundFormat;
 
     bool                  m_error;
-    QString               m_errorString;
-    bool                  m_warning;
-    QString               m_warningString;
     bool                  m_done;
 
     unsigned int          m_latency_us;
-
-
-//     QSemaphore            m_waitSemaphore;
-    mutable QSemaphore    m_errwarnModifySemaphore;
 };
 
 #endif
