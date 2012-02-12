@@ -1,3 +1,24 @@
+2012-02-12 (4.0.3)
+
+    emw - major rework of internet radio stream handling:
+          support for shoutcast http icy protocol extensions (RDS-like meta data support)
+        - improved running text in radio display
+        - eliminated ancient workarounds in docking menu
+        - fixes for docking menue issues on Ubuntu
+        - fixed stuttering playback on Ubuntu
+        - working FLV support (simply based on libffmpeg, but many thanks to Paulo Cavalcanti for   
+          reporting/debungging/testing!)
+
+2012-01-21
+
+    emw - libffmpeg fixes for recent deprecations
+
+2012-01-02
+
+    Frederik Schwarzer
+        - German translation fixes
+        - fixed UI files
+
 2011-06-23
 
     emw - segfault and compatibility fixes with recent libav / libffmpeg
@@ -7,6 +28,11 @@
 2011-06-12
 
     emw - fixed reading of radio card name
+
+2011-05-07
+
+    Sergio Ahumada
+        - Added partial spanish translation
 
 2011-04-20
 
