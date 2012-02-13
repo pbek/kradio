@@ -175,7 +175,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
     }
 
 #elif  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(52, 72, 2) // checked: avcodec_decode_audio3 in ffmpeg >= 0.6
-    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
+    DECLARE_ALIGNED(16, char, output_buf_data)[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
     output_buf             = output_buf_data;
     generated_output_bytes = sizeof(output_buf_data);
 
@@ -184,7 +184,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
                                                    &generated_output_bytes,
                                                    &pkt);
 #else
-    char output_buf_data[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
+    DECLARE_ALIGNED(16, char, output_buf_data)[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
     output_buf             = output_buf_data;
     generated_output_bytes = sizeof(output_buf_data);
     processed_input_bytes  = avcodec_decode_audio2(m_av_aCodecCtx,
