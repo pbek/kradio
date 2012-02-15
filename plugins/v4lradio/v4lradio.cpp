@@ -114,7 +114,8 @@ V4LRadio::V4LRadio(const QString &instanceID, const QString &name)
     m_RDS_visible(false),
     m_RDS_decoder(new RDSGroupV4L()),
     m_RDS_errorRate_subsample_counter(0),
-    m_RDSForceEnabled(false)
+    m_RDSForceEnabled  (false),
+    m_tunerInfoReported(false)
 {
     m_SoundStreamSourceID = createNewSoundStream(false);
     m_SoundStreamSinkID   = m_SoundStreamSourceID;
@@ -834,8 +835,9 @@ bool V4LRadio::setFrequency(float freq, const FrequencyRadioStation *rs)
 #ifdef HAVE_V4L2
         else if (m_V4L_version_override == V4L_Version2 && m_caps.v4l_version_support[V4L_Version2]) {
             v4l2_frequency   tmp;
-            tmp.tuner = 0;
-            tmp.type = V4L2_TUNER_RADIO;
+            // memset(&tmp, 0, sizeof(tmp));
+            tmp.tuner     = 0;
+            tmp.type      = V4L2_TUNER_RADIO;
             tmp.frequency = lfreq;
             r = ioctl(m_radio_fd, VIDIOC_S_FREQUENCY, &tmp);
         }
@@ -1446,6 +1448,8 @@ void V4LRadio::radio_init()
     if (isSeekRunning())
         stopSeek();
 
+    m_tunerInfoReported = false;
+
     m_caps = readV4LCaps(m_radioDev);
     notifyCapabilitiesChanged(m_caps);
     notifyDescriptionChanged(m_caps.description);
@@ -1574,6 +1578,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
     {
     #ifdef HAVE_V4L2
         v4l2_capability caps2;
+        // memset(&caps2, 0, sizeof(caps2));
         r = ioctl(fd, VIDIOC_QUERYCAP, &caps2);
         if (r == 0) {
             v4l_caps[V4L_Version2].v4l_version_support[V4L_Version2] = true;
@@ -1594,12 +1599,14 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
             v4l_caps[V4L_Version2].unsetBass();
             v4l_caps[V4L_Version2].unsetBalance();
 
+            // memset(&ctrl, 0, sizeof(ctrl));
             ctrl.id = V4L2_CID_AUDIO_MUTE;
             if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl))
                 v4l_caps[V4L_Version2].hasMute = !(ctrl.flags & V4L2_CTRL_FLAG_DISABLED);
             else
                 logWarning(i18n("V4L2: Querying mute control failed"));
 
+            // memset(&ctrl, 0, sizeof(ctrl));
             ctrl.id = V4L2_CID_AUDIO_VOLUME;
             if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
                 if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
@@ -1608,6 +1615,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
                 logWarning(i18n("V4L2: Querying volume control failed"));
             }
 
+            // memset(&ctrl, 0, sizeof(ctrl));
             ctrl.id = V4L2_CID_AUDIO_TREBLE;
             if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
                 if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
@@ -1616,6 +1624,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
                 logWarning(i18n("V4L2: Querying treble control failed"));
             }
 
+            // memset(&ctrl, 0, sizeof(ctrl));
             ctrl.id = V4L2_CID_AUDIO_BASS;
             if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
                 if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
@@ -1624,6 +1633,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
                 logWarning(i18n("V4L2: Querying bass control failed"));
             }
 
+            // memset(&ctrl, 0, sizeof(ctrl));
             ctrl.id = V4L2_CID_AUDIO_BALANCE;
             if (0 == ioctl(fd, VIDIOC_QUERYCTRL, &ctrl)) {
                 if (!(ctrl.flags & V4L2_CTRL_FLAG_DISABLED))
@@ -1725,12 +1735,12 @@ bool V4LRadio::readTunerInfo() const
                 m_tunercache.maxF = float(m_tuner->rangehigh) * m_tunercache.deltaF;
                 m_tunercache.valid = true;
                 m_signalQuality = float(m_tuner->signal) / 32767.0;
-                {
-                    static int debug_print_count = 0;
-                    if ((debug_print_count++ & 0x3F) == 0) {
-                        logDebug(QString("V4L1 tuner->flags = %1").arg(QString().sprintf("%08X", m_tuner->flags)));
-                    }
-                }
+//                 {
+//                     static int debug_print_count = 0;
+//                     if ((debug_print_count++ & 0x3F) == 0) {
+//                         logDebug(QString("V4L1 tuner->flags = %1").arg(QString().sprintf("%08X", m_tuner->flags)));
+//                     }
+//                 }
                 newRDS = m_RDSForceEnabled || (m_tuner->flags & VIDEO_TUNER_RDS_ON);
 
             }
@@ -1747,13 +1757,25 @@ bool V4LRadio::readTunerInfo() const
                 } else {
                     m_tunercache.deltaF = 1.0 / 16.0;
                 }
+                float tunerMinF = float(m_tuner2->rangelow)  * m_tunercache.deltaF;
+                float tunerMaxF = float(m_tuner2->rangehigh) * m_tunercache.deltaF;
+                if (!m_tunerInfoReported) {
+                    QString msg = i18n("V4L2 tuner reported range: %1 ... %2 MHz").arg(tunerMinF).arg(tunerMaxF);
+                    if (m_tuner2->rangelow == m_tuner2->rangehigh) {
+                        logError(msg);
+                        logError(i18n("Note: you might be running a kernel with a broken v4l2 radio API"));
+                    } else {
+                        logDebug(msg);
+                    }
+                    m_tunerInfoReported = true;
+                }
                 if (m_tuner2->rangelow) {
-                    m_tunercache.minF  = float(m_tuner2->rangelow)  * m_tunercache.deltaF;
+                    m_tunercache.minF  = tunerMinF;
                 } else if (!m_tunercache.minF) {
                     m_tunercache.minF  = 0.1;
                 }
                 if (m_tuner2->rangehigh) {
-                    m_tunercache.maxF  = float(m_tuner2->rangehigh) * m_tunercache.deltaF;
+                    m_tunercache.maxF  = tunerMaxF;
                 } else if (!m_tunercache.maxF) {
                     m_tunercache.minF  = 1000;
                 }
@@ -1814,7 +1836,8 @@ bool V4LRadio::readTunerInfo() const
 
 
 #define V4L2_S_CTRL(what,val) \
- {  ctl.value = (val); \
+ {  /* memset(&ctl, 0, sizeof(ctl));*/ \
+    ctl.value = (val); \
     ctl.id    = (what); \
     /* Problem: Current V4L2 development has changed the IOCTL-IDs for VIDIOC_S_CTRL */ \
     /* => we must do "try and error" to figure out what version we should use */ \
@@ -1830,7 +1853,8 @@ bool V4LRadio::readTunerInfo() const
  }
 
 #define V4L2_G_CTRL(what) \
- {    ctl.id    = (what); \
+ {  /* memset(&ctl, 0, sizeof(ctl));*/ \
+    ctl.id    = (what); \
     r = ioctl (m_radio_fd, VIDIOC_G_CTRL, &ctl); \
     x = x ? x : r; \
     if (r) \

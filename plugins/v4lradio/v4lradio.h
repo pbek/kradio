@@ -333,6 +333,9 @@ protected:
     int                           m_RDS_errorRate_subsample_counter;
     bool                          m_RDSForceEnabled;
 
+
+    mutable bool                  m_tunerInfoReported;
+
 protected slots:
     void slotEmulateRDS();
 
