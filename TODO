@@ -34,15 +34,11 @@ For 4.0.2
                move network connection/etc. part from ffmpeg to Qt/KDE (in order to
                allow user to have better influence on proxy settings)
 
-For 4.0.3
-
-  * DVB support?
-  * fix problems with mms / asx stuff
-  * gui for internet radio selection
-  * switch drag & drop to qt4
-
 For 4.0.x
 
+  * DVB support?
+  * gui for internet radio selection
+  * switch drag & drop to qt4
   * fix segfault when playing too much with streams in recording monitor widget
   * GUI config of internet radio ffmpeg parameters (probesize, analyze time, connect retries)
   * make input/output buffer size configurable for internet radio
@@ -50,14 +46,11 @@ For 4.0.x
   * reactivate OSS support?
   * fix reconnect for streams that stop after some time (e.g. 5 hours for WDR5 literaturmarathon)
   * use pkgconfig stuff where possible
-  * add some indicator that init of lirc failed in config dialog
   * alsa config, pvr page, mute playback channel of recording if active playback always disabled
   * plugin libs version check
   * consistent dirty bits for config pages
   * v4l: disable all if radio dev not valid
   * postponed: get rid of libmms (kde4 does not have a mms:// kioslave yet)
-               move network connection/etc. part from ffmpeg to Qt/KDE (in order to
-               allow user to have better influence on proxy settings)
 
 For 4.1.0
 
@@ -69,8 +62,6 @@ For 4.1.0
   * signal detector as optional replacement for RSSI (idea came up in discussing "bug" report 2790231)
 
 Later:
-  * netradio: make buffer sizes for internet radio configurable
-  * netradio: better realization of display
   * ?fix: config dialog: force "apply" when changing pages  (requires dirty flag/function in all pages!)
   * feature: flac rec support
   * feature: record to new file, but do not stop recording!
