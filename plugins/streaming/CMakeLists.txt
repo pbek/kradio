@@ -44,7 +44,7 @@ kde4_add_plugin(kradio4_plugin_streaming
 
 SET_TARGET_PROPERTIES(kradio4_plugin_streaming
     PROPERTIES
-    VERSION       4.0.3
+    VERSION       ${KRADIO_VERSION}
     SOVERSION     4
 
 )
