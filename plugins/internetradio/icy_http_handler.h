@@ -35,7 +35,7 @@
 // metadata streams as well as some log information about chunk sizes and positions
 // in the streams are dumped to statically named files in /tmp
 //
-// #define DEBUG_DUMP_ICY_STREAMS
+#define DEBUG_DUMP_ICY_STREAMS
 
 class IcyHttpHandler : public StreamReader
 {
@@ -64,7 +64,11 @@ protected:
     void                        setupStreamJob(const KUrl &url);
     void                        startStreamJob();
 
+    QMap<QString, QString>      splitExtractHttpHeaderKeys(QString httpHeader);
     void                        analyzeHttpHeader(KIO::Job *job);
+    QByteArray                  analyzeICYHeader(QByteArray packet);
+    void                        analyzeHttpHeader(QString httpHeader, KIO::MetaData &metaData);
+
     void                        handleStreamData(const QByteArray &data);
     void                        handleMetaData(const QByteArray &data, bool complete);
 

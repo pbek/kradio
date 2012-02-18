@@ -16,11 +16,10 @@
  ***************************************************************************/
 
 
-#include <QtNetwork/QHttpResponseHeader>
-
 #include <kio/global.h>
 #include <klocale.h>
 #include <kencodingprober.h>
+#include <kio/slaveconfig.h>
 
 #include <QtCore/QTextCodec>
 
@@ -72,7 +71,10 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url)
 
     m_streamJob = KIO::get(m_streamUrl, KIO::NoReload, KIO::HideProgressInfo);
     if (m_streamJob) {
-        m_streamJob->addMetaData("customHTTPHeader", "Icy-MetaData:1");
+        m_streamJob->addMetaData("customHTTPHeader",    "Icy-MetaData:1");
+        m_streamJob->addMetaData("accept",              "Accept: */*");
+        m_streamJob->addMetaData("UserAgent",            QString("KRadio Internet Radio Plugin, Version %1").arg(KRADIO_VERSION));
+
         m_streamJob->addMetaData("PropagateHttpHeader", "true");
 
         QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
@@ -145,6 +147,73 @@ void IcyHttpHandler::stopStreamDownload()
 }
 
 
+QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(QString httpHeader)
+{
+    // urg... QHttpResponseHeader is deprecated and does not parse ICY headers correctly.
+    // let's do it ourselves
+    QStringList  lines = httpHeader.split(QRegExp("\\r?\\n"));
+
+    // fix HTTP header line continuations
+    QStringList  consolidatedLines;
+    foreach(QString line, lines) {
+        if (line.startsWith(" ")) {
+            consolidatedLines.last() += line;
+        } else {
+            consolidatedLines.append(line);
+        }
+    }
+
+    // extract keys form header lines
+    QMap<QString, QString> headerMap;
+    foreach(QString line, consolidatedLines) {
+        QRegExp  colonRegExp("\\s*:\\s*");
+        int colonIdx = colonRegExp.indexIn(line);
+        if (colonRegExp.matchedLength() > 0 && colonIdx > 0 && colonIdx < line.length()) {
+            QString  key = line.left(colonIdx);
+            QString  val = line.mid (colonIdx + colonRegExp.matchedLength());
+            headerMap.insert(key, val);
+        }
+    }
+    return headerMap;
+}
+
+
+void IcyHttpHandler::analyzeHttpHeader(QString httpHeader, KIO::MetaData &metaData)
+{
+    QMap<QString, QString> headerMap      = splitExtractHttpHeaderKeys(httpHeader);
+    QString                icyMetaIntKey  = "icy-metaint";
+    QString                contentTypeKey = "content-type";
+
+    foreach(QString key, headerMap.keys()) {
+        if (key.toLower() == icyMetaIntKey) {
+            m_ICYMetaInt = headerMap.value(key).toInt();
+            m_dataRest   = m_ICYMetaInt;
+            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     found metaint: %1").arg(m_ICYMetaInt));
+        }
+        if (key.toLower() == contentTypeKey) {
+            emit sigContentType(headerMap.value(key));
+        }
+    }
+    foreach(QString key, headerMap.keys()) {
+        metaData.insert(key, headerMap.value(key));
+    }
+}
+
+
+// returns packet minus header
+QByteArray IcyHttpHandler::analyzeICYHeader(QByteArray packet)
+{
+    m_httpHeaderAnalyzed = true;
+    QString              headerStr     = packet;
+    int                  headerLen     = headerStr.indexOf("\r\n\r\n");
+    QByteArray           remainingData = packet.mid(headerLen + 4);
+    m_connectionMetaData.clear();
+    analyzeHttpHeader(headerStr.left(headerLen + 4), m_connectionMetaData);
+    emit sigConnectionEstablished(m_streamUrl, m_connectionMetaData);
+    return remainingData;
+}
+
+
 void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
 {
     m_httpHeaderAnalyzed = true;
@@ -153,13 +222,7 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
         QString v = m_connectionMetaData[k];
         IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):      %1 = %2").arg(k).arg(v));
         if (k == "HTTP-Headers") {
-            QHttpResponseHeader hdr(v);
-            QString             icyMetaIntKey = "ICY-metaint";
-            if (hdr.hasKey(icyMetaIntKey)) {
-                m_ICYMetaInt = hdr.value(icyMetaIntKey).toInt();
-                m_dataRest   = m_ICYMetaInt;
-                IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     found metaint: %1").arg(m_ICYMetaInt));
-            }
+            analyzeHttpHeader(v, m_connectionMetaData);
         }
         else if (k == "content-type") {
             emit sigContentType(m_connectionMetaData[k]);
@@ -268,7 +331,12 @@ void IcyHttpHandler::slotStreamData(KIO::Job *job, QByteArray data)
 {
     if (m_streamJob == job) {
         if (!m_httpHeaderAnalyzed) {
-            analyzeHttpHeader(job);
+            QRegExp  ICYHeaderRegExp("^ICY\\s+\\d+\\s+\\w+[\r\n]");
+            if (QString(data).indexOf(ICYHeaderRegExp) == 0) {
+                data = analyzeICYHeader(data);
+            } else {
+                analyzeHttpHeader(job);
+            }
         }
 
 #ifdef DEBUG_DUMP_ICY_STREAMS
