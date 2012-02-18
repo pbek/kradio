@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2012-02-18 23:06+0100\n"
 "PO-Revision-Date: 2009-06-11 22:24+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -502,34 +502,34 @@ msgstr "Поддержка устройств V4l(2)"
 msgid "Video For Linux Plugin"
 msgstr "Модуль \"Видео для linux\""
 
-#: v4lradio.cpp:820
+#: v4lradio.cpp:821
 #, kde-format
 msgid "invalid frequency %1"
 msgstr "Неправильная частота %1"
 
-#: v4lradio.cpp:845 v4lradio.cpp:1768 v4lradio.cpp:1962
+#: v4lradio.cpp:847 v4lradio.cpp:1790 v4lradio.cpp:1986
 #, kde-format
 msgid "don't known how to handle V4L-version %1"
 msgstr "Не знаю что делать с версией V4l \"%1\""
 
-#: v4lradio.cpp:847 v4lradio.cpp:1770 v4lradio.cpp:1964
+#: v4lradio.cpp:849 v4lradio.cpp:1792 v4lradio.cpp:1988
 #, kde-format
 msgid "%1 Support: %2"
 msgstr "Поддержка %1: %2"
 
-#: v4lradio.cpp:853
+#: v4lradio.cpp:855
 #, kde-format
 msgid "error setting frequency to %1 (%2)"
 msgstr "Ошибка установки частоты %1 (%2)"
 
-#: v4lradio.cpp:1267
+#: v4lradio.cpp:1269
 msgid ""
 "You have selected V4L API Version 1. Starting with kernel 2.6.31, the "
 "support for V4L1 seems to be not working properly any more. I'm now once "
 "switching to V4L Version 2. You may override it later."
 msgstr ""
 
-#: v4lradio.cpp:1281
+#: v4lradio.cpp:1283
 #, kde-format
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
@@ -538,115 +538,124 @@ msgstr ""
 "Устройство %1 недоступно для чтения/записи. Проверьте права на устройство, а "
 "также не использует ли его другая программа."
 
-#: v4lradio.cpp:1288
+#: v4lradio.cpp:1290
 #, kde-format
 msgid "Could not find any radio device. Using the default path for now: %1"
 msgstr ""
 
-#: v4lradio.cpp:1297
+#: v4lradio.cpp:1299
 msgid "Could not find an accessible v4l(2) radio device."
 msgstr "Не найти доступное устройство V4l(2)."
 
-#: v4lradio.cpp:1381
+#: v4lradio.cpp:1383
 #, kde-format
 msgid "%1 (insufficient permissions)"
 msgstr ""
 
-#: v4lradio.cpp:1407
+#: v4lradio.cpp:1409
 msgid "V4L Radio"
 msgstr "Радио V4l"
 
-#: v4lradio.cpp:1408
+#: v4lradio.cpp:1410
 msgid "V4L Radio Options"
 msgstr "Параметры устройства V4l"
 
-#: v4lradio.cpp:1458
+#: v4lradio.cpp:1462
 #, kde-format
 msgid "Cannot open radio device %1"
 msgstr "Не могу открыть устройство радио: %1"
 
-#: v4lradio.cpp:1518
+#: v4lradio.cpp:1522
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
 msgstr "Модуль V4L (режим V4L%1, неверное устройство): %2"
 
-#: v4lradio.cpp:1525
+#: v4lradio.cpp:1529
 #, kde-format
 msgid "cannot open %1"
 msgstr "Не могу открыть %1"
 
-#: v4lradio.cpp:1535 v4lradio.cpp:1580
+#: v4lradio.cpp:1539 v4lradio.cpp:1585
 #, kde-format
 msgid "detected %1"
 msgstr "обнаружено %1"
 
-#: v4lradio.cpp:1540 v4lradio.cpp:1586
+#: v4lradio.cpp:1544 v4lradio.cpp:1591
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
 msgstr "Модуль V4L (режим V4L%1): %2"
 
-#: v4lradio.cpp:1563
+#: v4lradio.cpp:1567
 #, kde-format
 msgid "audio caps = %1"
 msgstr "возможности звука = %1"
 
-#: v4lradio.cpp:1601
+#: v4lradio.cpp:1607
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Не могу обратиться к выключателю звука платы"
 
-#: v4lradio.cpp:1608
+#: v4lradio.cpp:1615
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Не могу обратиться к регулятору громкости"
 
-#: v4lradio.cpp:1616
+#: v4lradio.cpp:1624
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Не могу обратиться к регулятору верхних частот"
 
-#: v4lradio.cpp:1624
+#: v4lradio.cpp:1633
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Не могу обратиться к регулятору нижних частот"
 
-#: v4lradio.cpp:1632
+#: v4lradio.cpp:1642
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Не могу обратиться к регулятору стереобаланса"
 
-#: v4lradio.cpp:1635
+#: v4lradio.cpp:1645
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
 msgstr "V4l2: версия %1, возможности: %2"
 
-#: v4lradio.cpp:1658
+#: v4lradio.cpp:1668
 msgid "V4L not detected"
 msgstr "Устройств V4L не обнаружено"
 
-#: v4lradio.cpp:1778
+#: v4lradio.cpp:1763
+#, kde-format
+msgid "V4L2 tuner reported range: %1 ... %2 MHz"
+msgstr ""
+
+#: v4lradio.cpp:1766
+msgid "Note: you might be running a kernel with a broken v4l2 radio API"
+msgstr ""
+
+#: v4lradio.cpp:1800
 #, kde-format
 msgid "cannot get tuner info (error %1)"
 msgstr "Не могу получить информацию о тюнере (код ошибки %1)"
 
-#: v4lradio.cpp:1971
+#: v4lradio.cpp:1995
 msgid "write"
 msgstr "запись"
 
-#: v4lradio.cpp:1971
+#: v4lradio.cpp:1995
 msgid "read"
 msgstr "чтение"
 
-#: v4lradio.cpp:1970
+#: v4lradio.cpp:1994
 #, kde-format
 msgid "error updating radio audio info (%1): %2"
 msgstr "Ошибка %1: %2"
 
-#: v4lradio.cpp:2164
+#: v4lradio.cpp:2188
 msgid "error reading RDS data\n"
 msgstr "не могу прочитать данные RDS\n"
 
-#: v4lradio.cpp:2180
+#: v4lradio.cpp:2204
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: ошибка скорости блока: %1 %"
 
-#: v4lradio.cpp:2183
+#: v4lradio.cpp:2207
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: групповая (~4 блока) ошибка скорости: %1 %"
