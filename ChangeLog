@@ -1,3 +1,16 @@
+2012-02-18
+
+    emw - improved shoutcast support: fixed "Accept:" HTTP header field
+
+2012-02-15
+
+    emw - issue warning if a broken V4L2 kernel is detected
+
+2012-02-13
+
+    emw - fixed buffer alignment issue to avoid alignment-error segfault in
+          libffmpeg sse2 code
+
 2012-02-12 (4.0.3)
 
     emw - major rework of internet radio stream handling:
