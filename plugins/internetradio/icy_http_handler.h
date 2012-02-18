@@ -35,7 +35,7 @@
 // metadata streams as well as some log information about chunk sizes and positions
 // in the streams are dumped to statically named files in /tmp
 //
-#define DEBUG_DUMP_ICY_STREAMS
+// #define DEBUG_DUMP_ICY_STREAMS
 
 class IcyHttpHandler : public StreamReader
 {
@@ -43,9 +43,6 @@ Q_OBJECT
 public:
     IcyHttpHandler();
     ~IcyHttpHandler();
-
-    // FIXME: parent class with standardized interface
-    // FIXME: parent class which cares about playlist handling
 
     void                        startStreamDownload(KUrl url);
     void                        stopStreamDownload();
