@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009, 2011.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2011, 2012.
 # Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_v4lradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-02-18 23:06+0100\n"
-"PO-Revision-Date: 2011-01-08 16:02+0100\n"
+"PO-Revision-Date: 2012-02-19 19:02+0100\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
@@ -631,11 +631,11 @@ msgstr "Rozhlasové zařízení V4L nepodporuje"
 #: v4lradio.cpp:1763
 #, kde-format
 msgid "V4L2 tuner reported range: %1 ... %2 MHz"
-msgstr ""
+msgstr "Ohlášený rozsah tuneru V4L2: %1 ... %2 MHz"
 
 #: v4lradio.cpp:1766
 msgid "Note: you might be running a kernel with a broken v4l2 radio API"
-msgstr ""
+msgstr "Poznámka: Možná spouštíte jádro s poškozeným v4l2 radio API"
 
 #: v4lradio.cpp:1800
 #, kde-format

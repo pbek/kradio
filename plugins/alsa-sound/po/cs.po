@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2012.
 # Pavel Fric <fripohled@blogspot.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-02-12 20:35+0100\n"
-"PO-Revision-Date: 2010-09-17 08:09+0200\n"
-"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
+"PO-Revision-Date: 2012-02-19 19:28+0100\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: alsa-sound.cpp:43
@@ -119,25 +119,24 @@ msgstr ""
 "Místo toho se bude používat %3 Hz"
 
 #: alsa-sound.cpp:927
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error reading max buffer size for %1: %2"
 msgstr ""
-"Přídavný modul ALSA: Chyba při nastavení velikosti vyrovnávací paměti pro "
-"zařízení %1"
+"Přídavný modul ALSA: Chyba při čtení největší velikosti vyrovnávací paměti "
+"pro %1: %2"
 
 #: alsa-sound.cpp:933
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error setting period size to %1 for %2: %3"
 msgstr ""
-"Přídavný modul ALSA: Chyba při nastavení velikosti period na %1 pro zařízení "
-"%2"
+"Přídavný modul ALSA: Chyba při nastavení velikosti periody na %1 pro %2: %3"
 
 #: alsa-sound.cpp:938
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error setting buffer size to %1 for %2: %3"
 msgstr ""
-"Přídavný modul ALSA: Chyba při nastavení velikosti period na %1 pro zařízení "
-"%2"
+"Přídavný modul ALSA: Chyba při nastavení velikosti vyrovnávací paměti na %1 "
+"pro %2: %3"
 
 #: alsa-sound.cpp:941
 #, kde-format
@@ -145,6 +144,9 @@ msgid ""
 "ALSA Plugin(%1) setting parameters near: period size = %2 [frames], hwbuffer "
 "size = %3 [frames]"
 msgstr ""
+"Přídavný modul ALSA (%1): Nastavení parametrů blízko: velikost periody = %2 "
+"[snímků], velikost "
+"vyrovnávací paměti technického vybavení = %3 [snímků]"
 
 #: alsa-sound.cpp:946
 #, kde-format
@@ -159,41 +161,44 @@ msgid "ALSA Plugin: Error getting period size for %1: %2"
 msgstr "Přídavný modul ALSA: Chyba při získávání velikosti periody u %1: %2"
 
 #: alsa-sound.cpp:958
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error getting hw buffer size for %1: %2"
 msgstr ""
-"Přídavný modul ALSA: Chyba při nastavení velikosti vyrovnávací paměti pro "
-"zařízení %1"
+"Přídavný modul ALSA: Chyba při získání velikosti vyrovnávací paměti "
+"technického vybavení pro "
+"zařízení %1: %2"
 
 #: alsa-sound.cpp:962
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin(%1): period size = %2 [frames], hwbuffer size = %3 [frames]"
-msgstr "Přídavný modul ALSA: Velikost period: %1 rámečků"
+msgstr ""
+"Přídavný modul ALSA (%1): Velikost period: %1 [snímků], velikosti vyrovnávací "
+"paměti technického vybavení = %3 [snímků]"
 
 #: alsa-sound.cpp:968
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin(%1): Setting timer latency to %2"
-msgstr ""
-"Přídavný modul ALSA: Chyba při nastavení latence časovače (zdroje hodinových "
-"impulzů) na %1 pro zařízení %2"
+msgstr "Přídavný modul ALSA (%1): Nastavení prodlevy časovače na %2"
 
 #: alsa-sound.cpp:972
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error getting sw params for %1: %2"
-msgstr "Přídavný modul ALSA: Chyba při nastavení kmitočtu pro %1: %2"
+msgstr ""
+"Přídavný modul ALSA: Chyba při získání programových parametrů pro %1: %2"
 
 #: alsa-sound.cpp:976
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "ALSA Plugin: Error setting sw params min available frames to %1 for %2: %3"
 msgstr ""
-"Přídavný modul ALSA: Chyba při nastavení velikosti period na %1 pro zařízení "
-"%2"
+"Přídavný modul ALSA: Chyba při nastavení programových parametrů nejméně "
+"dostupných snímků na %1 pro %2: %3"
 
 #: alsa-sound.cpp:980
-#, fuzzy, kde-format
+#, kde-format
 msgid "ALSA Plugin: Error installing sw params for %1: %2"
-msgstr "Přídavný modul ALSA: Chyba při nastavení kmitočtu pro %1: %2"
+msgstr ""
+"Přídavný modul ALSA: Chyba při instalaci programových parametrů pro %1: %2"
 
 #: alsa-sound.cpp:1007
 #, kde-format
@@ -269,14 +274,14 @@ msgid "ALSA Sound Device %1"
 msgstr "Zvukové zařízení ALSA %1"
 
 #: alsa-sound.cpp:1886
-#, fuzzy, kde-format
+#, kde-format
 msgid "AlsaPlugin(capture thread on %1): "
-msgstr "Přídavný modul ALSA (vlákno zachytávání na %1): %2"
+msgstr "Přídavný modul ALSA (vlákno zachytávání na %1): "
 
 #: alsa-sound.cpp:1890
-#, fuzzy, kde-format
+#, kde-format
 msgid "AlsaPlugin(playback thread on %1): "
-msgstr "Přídavný modul ALSA (vlákno přehrávání na %1): %2"
+msgstr "Přídavný modul ALSA (vlákno přehrávání na %1): "
 
 #: alsa-thread.cpp:105
 msgid "ALSA Thread: cannot write data"
@@ -390,9 +395,8 @@ msgstr "Karta mixéru pro přehrávání"
 #. i18n: file: alsa-sound-configuration-ui.ui:411
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_5)
 #: rc.cpp:36 rc.cpp:81 rc.cpp:216 rc.cpp:261
-#, fuzzy
 msgid "Buffer Chunk Size"
-msgstr "Velikost vyrovnávací paměti"
+msgstr "Velikost kusu vyrovnávací paměti"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:224
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_6)
@@ -436,9 +440,8 @@ msgstr "96 kB"
 #. i18n: file: alsa-sound-configuration-ui.ui:456
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
 #: rc.cpp:51 rc.cpp:90 rc.cpp:231 rc.cpp:270
-#, fuzzy
 msgid "16 kB"
-msgstr "96 kB"
+msgstr "16 kB"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:270
 #. i18n: ectx: property (text), widget (QCheckBox, chkNonBlockingPlayback)
@@ -450,7 +453,7 @@ msgstr "96 kB"
 #. i18n: ectx: property (text), widget (QCheckBox, chkNonBlockingCapture)
 #: rc.cpp:54 rc.cpp:175 rc.cpp:234 rc.cpp:355
 msgid "Non-blocking I/O (used in KRadio 4.0.1, deprecated)"
-msgstr ""
+msgstr "Neblokující I/O (použito vn KRadio 4.0.1, odmítnuto)"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:281
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)

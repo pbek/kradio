@@ -2,21 +2,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009, 2011.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2011, 2012.
 # Ernst Martin Witte <emw@nocabal.de>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.cs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-02-18 23:06+0100\n"
-"PO-Revision-Date: 2011-01-08 16:18+0100\n"
+"PO-Revision-Date: 2012-02-19 19:15+0100\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: decoder_thread.cpp:135
@@ -37,9 +37,9 @@ msgid "Could not open any input stream of %1."
 msgstr "Nelze otevřít žádný rozhlasový datový proud ze seznamu %1."
 
 #: decoder_thread.cpp:215
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1: error decoding packet. Discarding packet"
-msgstr "%1: Chyba při dekódování paketu. Paket byl odmítnut\n"
+msgstr "%1: Chyba při dekódování paketu. Paket byl odmítnut"
 
 #: decoder_thread.cpp:234
 #, kde-format
@@ -48,7 +48,7 @@ msgstr "Vnitřní zvukový datový proud, nebude uložen (%1)"
 
 #: decoder_thread.cpp:298
 msgid "Failed allocating AVFrame."
-msgstr ""
+msgstr "Nepodařilo se přidělit AVFrame."
 
 #: decoder_thread.cpp:555 decoder_thread.cpp:558
 #, kde-format
@@ -72,9 +72,9 @@ msgid "cannot open MMS stream %1"
 msgstr "Nelze otevřít MMS datový proud %1"
 
 #: decoder_thread.cpp:604
-#, fuzzy, kde-format
+#, kde-format
 msgid "cannot open MMS  %1"
-msgstr "Nelze otevřít MMS datový proud %1"
+msgstr "Nelze otevřít MMS %1"
 
 #: decoder_thread.cpp:712 decoder_thread.cpp:715
 #, kde-format
@@ -99,40 +99,51 @@ msgstr "Otevření dekodéru pro %1 selhalo."
 #: decoder_thread.cpp:859
 #, kde-format
 msgid "Cannot use libav sample format id %1"
-msgstr ""
+msgstr "Nelze použít ID formátu vzorku libav %1"
 
 #: icy_http_handler.cpp:68
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
 msgstr ""
+"Přídavný modul pro internetový rozhlas (manipulátor http ICY): otevírá se "
+"proud %1"
 
 #: icy_http_handler.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
 "%1: KIO::get returned NULL pointer"
 msgstr ""
-"Stažení internetového proudu %1 se nepodařilo spustit: KIO::get vrátil NULL "
-"pointer"
+"Přídavný modul pro internetový rozhlas (manipulátor http ICY): Nepodařilo "
+"spustit "
+"stahování proudu %1: KIO::get vrátil ukazatel NULL"
 
 #: icy_http_handler.cpp:103
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
 "%1: %2"
-msgstr "Stažení internetového proudu %1 se nezdařilo: %2"
+msgstr ""
+"Přídavný modul pro internetový rozhlas (manipulátor http ICY): Nepodařilo "
+"spustit "
+"stahování proudu %1: %2"
 
 #: icy_http_handler.cpp:402
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
 "%2"
-msgstr "Nahrání dat rozhlasového proudu %1 se nezdařilo: %2"
+msgstr ""
+"Přídavný modul pro internetový rozhlas (manipulátor http ICY): Nepodařilo "
+"nahrát "
+"data proudu pro %1: %2"
 
 #: icy_http_handler.cpp:410
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
+"Přídavný modul pro internetový rozhlas (manipulátor http ICY): Chyba HTTP %1 "
+"pro proud %2"
 
 #: internetradio.cpp:51
 msgid "Pseudo radio device for internet radio stream support"
@@ -158,9 +169,8 @@ msgid "Internet Radio Options"
 msgstr "Volby pro rozhlas na internetu"
 
 #: internetradio.cpp:946
-#, fuzzy
 msgid "Internet Radio Plugin: "
-msgstr "Přídavný modul pro rozhlas na internetu"
+msgstr "Přídavný modul pro internetový rozhlas: "
 
 #: playlist_handler.cpp:87
 #, kde-format
@@ -231,6 +241,8 @@ msgstr "Ztlumit přehrá&vaný kanál při vypnutí"
 msgid ""
 "This should never happen: inconsistency in buffer locking / buffer size!"
 msgstr ""
+"Toto se nikdy nemělo stát: nesrovnalost v zamknutí vyrovnávací "
+"paměti/velikosti vyrovnávací paměti!"
 
 #~ msgid ""
 #~ "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
