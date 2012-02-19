@@ -17,10 +17,11 @@
 Name:          kradio4
 Summary:       AM/FM/INternet Radio Application for KDE 4.x
 Version:       4.0.4
+Release:       1.opensuse
 Group:         Hardware/Radio
 License:       GPL-2.0+
 URL:           http://kradio.sourceforge.net
-Source:        http://sourceforge.net/projects/kradio/files/kradio/%{version}/%name-%{version}.tar.gz/download
+Source:        http://sourceforge.net/projects/kradio/files/kradio/%{version}/%name-%{version}.tar.gz
 BuildRequires: fdupes
 BuildRequires: libkde4-devel >= 4.2.0
 BuildRequires: libsndfile-devel
@@ -32,6 +33,8 @@ Provides:      kde4-kradio = 4.0.4
 Obsoletes:     kde4-kradio < 4.0.4
 BuildRoot:     %{_tmppath}/%{name}-%{version}-build
 %kde4_runtime_requires
+Vendor:        Martin Witte <emw-kradio@nocabal.de>
+Packager:      Martin Witte <emw-kradio@nocabal.de>
 
 %description 
 Comfortable AM/FM/Internet-Radio Application for KDE4
@@ -84,6 +87,8 @@ Authors:
 
 %install
 %make_install
+mkdir %{buildroot}/%{_docdir}
+mv %{buildroot}/%{_docdir}/../%{name} %{buildroot}/%{_docdir}/%{name}
 %suse_update_desktop_file -G "KDE Radio Tuner" kradio4 AudioVideo Tuner
 %kde_post_install
 %fdupes %{buildroot}
