@@ -90,8 +90,12 @@ protected:
     AlarmVector      alarms;
     QVector<QString> stationIDs;
 
-    bool ignoreChanges;
-    bool m_dirty;
+    bool             ignoreChanges;
+    bool             m_dirty;
+
+    QBrush           m_enabledAlarmTextForeground;
+    QBrush           m_disabledAlarmTextForeground;
+    bool             m_defaultAlarmTextForegroundValid;
 };
 
 #endif

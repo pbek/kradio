@@ -50,7 +50,10 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
       ITimeControlClient(),
       IRadioClient(),
       ignoreChanges(false),
-      m_dirty(false)
+      m_dirty(false),
+      m_enabledAlarmTextForeground(Qt::black),
+      m_disabledAlarmTextForeground(Qt::gray),
+      m_defaultAlarmTextForegroundValid(false)
 {
     setupUi(this);
 
@@ -139,7 +142,15 @@ bool TimeControlConfiguration::noticeAlarmsChanged(const AlarmVector &sl)
     idx = -1;
     int k = 0;
     for (ciAlarmVector i = alarms.begin(); i != alarms.end(); ++i, ++k) {
-        listAlarms->addItem(i->nextAlarm(true).toString());
+        const Alarm &alarm = *i;
+        QString      dateString = alarm.nextAlarm(true).toString();
+        dateString += alarm.isEnabled() ? "" : " (disabled)";
+        listAlarms->addItem(dateString);
+        QListWidgetItem *item = listAlarms->item(listAlarms->count()-1);
+        if (!m_defaultAlarmTextForegroundValid) {
+            m_enabledAlarmTextForeground = item->foreground();
+        }
+        item->setForeground(!alarm.isEnabled() ? m_disabledAlarmTextForeground : m_enabledAlarmTextForeground);
         if (i->ID() == currentID)
             idx = k;
     }
@@ -306,7 +317,13 @@ void TimeControlConfiguration::slotEnabledChanged( bool b)
 {
     int idx = listAlarms->currentRow();
     if (idx >= 0 && idx < alarms.size()) {
-        alarms[idx].setEnabled(b);
+        Alarm           &alarm      = alarms[idx];
+        QString          dateString = alarm.nextAlarm(true).toString();
+        QListWidgetItem *item       = listAlarms->item(idx);
+        alarm.setEnabled(b);
+        dateString += alarm.isEnabled() ? "" : " (disabled)";
+        item->setForeground(!alarm.isEnabled() ? m_disabledAlarmTextForeground : m_enabledAlarmTextForeground);
+        item->setText(dateString);
     }
 }
 
