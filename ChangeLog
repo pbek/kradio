@@ -1,3 +1,17 @@
+2012-04-08
+
+    emw - visualization of disabled alarms
+        - endianess and sample conversion code speedup
+        - disabled alsa blocking usleep workaround by default and added configuration option
+        - updated German translation
+
+2012-02-19
+
+    Pavel Fric <pavelfric@seznam.cz>
+        - Czech translation update
+
+    emw - spec file updates
+
 2012-02-18 (4.0.4)
 
     emw - improved shoutcast support: fixed "Accept:" HTTP header field
