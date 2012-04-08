@@ -30,6 +30,7 @@ class AlsaSoundDevice;
 class AlsaThread : public QThread,
                    public ThreadLogging
 {
+Q_OBJECT
 public:
     AlsaThread (AlsaSoundDevice *parent, bool playback_not_capture, snd_pcm_t *handle, const SoundFormat &sf);
     ~AlsaThread();
@@ -44,7 +45,9 @@ public:
 
     void                  setLatency(unsigned int us);
 
-protected:
+signals:
+    void                  sigRequestPlaybackData();
+    void                  sigCaptureDataAvailable();
 
 protected:
 

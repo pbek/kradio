@@ -72,7 +72,7 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_CaptureBufferSize  (96*1024),
       m_PlaybackBuffer(m_PlaybackBufferSize, /*synchronized =*/ true),
       m_CaptureBuffer (m_CaptureBufferSize,  /*synchronized =*/ true),
-      m_PlaybackBufferWaitForMinFill(66 /*percent*/),
+      m_PlaybackBufferWaitForMinFill(90 /*percent*/),
       m_CaptureRequestCounter(0),
       m_CapturePos(0),
       m_CaptureStartTime(0),
@@ -591,26 +591,26 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
     }
 
     const char *buffer        = data;
-    char       *scaled_buffer = NULL;
-    if (m_SoftPlaybackVolumeEnabled) {
-        double f = m_SoftPlaybackVolumeMuted ? 0 : m_SoftPlaybackVolume * m_SoftPlaybackVolumeCorrectionFactor;
+    // char       *scaled_buffer = NULL;
+    // if (m_SoftPlaybackVolumeEnabled) {
+    //     double f = m_SoftPlaybackVolumeMuted ? 0 : m_SoftPlaybackVolume * m_SoftPlaybackVolumeCorrectionFactor;
 
-        scaled_buffer = new char[size];
-        memcpy(scaled_buffer, data, size);
+    //     scaled_buffer = new char[size];
+    //     memcpy(scaled_buffer, data, size);
 
-        format.scaleSamples(scaled_buffer, f, size/format.frameSize());
+    //     format.scaleSamples(scaled_buffer, f, size/format.frameSize());
 
-        buffer = scaled_buffer;
-    }
+    //     buffer = scaled_buffer;
+    // }
 
     size_t n = m_PlaybackBuffer.addData(buffer, size);
     consumed_size  = (consumed_size == SIZE_T_DONT_CARE) ? n : min (consumed_size, n);
 
 
-    if (scaled_buffer) {
-        delete scaled_buffer;
-        scaled_buffer = NULL;
-    }
+    // if (scaled_buffer) {
+    //     delete scaled_buffer;
+    //     scaled_buffer = NULL;
+    // }
 
     return true;
 }
@@ -642,11 +642,12 @@ void AlsaSoundDevice::slotPollPlayback()
             } else {
                 while (!m_use_threads && m_PlaybackBuffer.getFillSize() > 0 && m_hPlayback) {
 
-                    size_t   buffersize    = 0;
-                    int      frameSize     = m_PlaybackFormat.frameSize();
-                    char     *buffer       = getPlaybackData(buffersize);
-                    int      framesWritten = snd_pcm_writei(m_hPlayback, buffer, buffersize / frameSize);
-                    int      bytesWritten  = framesWritten * frameSize;
+                    size_t   buffersize       = 0;
+                    size_t   maxAvailableSize = 0;
+                    int      frameSize        = m_PlaybackFormat.frameSize();
+                    char     *buffer          = getPlaybackData(buffersize, maxAvailableSize);
+                    int      framesWritten    = snd_pcm_writei(m_hPlayback, buffer, buffersize / frameSize);
+                    int      bytesWritten     = framesWritten * frameSize;
 
                     if (framesWritten > 0) {
                         m_PlaybackBuffer.removeData(bytesWritten);
@@ -665,13 +666,18 @@ void AlsaSoundDevice::slotPollPlayback()
         }
         checkThreadErrorsAndWarning();
 
-//         printf ("    slotPollPlayback: before buffer size check: free size = %zi, size = %zi, free ratio = %4.1f %%\n", m_PlaybackBuffer.getFreeSize(), m_PlaybackBuffer.getSize(), (double)m_PlaybackBuffer.getFreeSize() / (double) m_PlaybackBuffer.getSize() * 100.0 );
-        size_t oldFree = 0;
-        while (oldFree != m_PlaybackBuffer.getFreeSize() && m_PlaybackBuffer.getFreeSize() > 0) {
-//             printf ("    slotPollPlayback: buffer check successful: requesting data\n");
-            oldFree = m_PlaybackBuffer.getFreeSize();
-            notifyReadyForPlaybackData(m_PlaybackStreamID, m_PlaybackBuffer.getFreeSize());
+        // printf ("    slotPollPlayback: before buffer size check: free size = %zi, size = %zi, free ratio = %4.1f %%\n", m_PlaybackBuffer.getFreeSize(), m_PlaybackBuffer.
+	// 	getSize(), (double)m_PlaybackBuffer.getFreeSize() / (double) m_PlaybackBuffer.getSize() * 100.0 );
+        // size_t startFill = m_PlaybackBuffer.getFillSize();
+        size_t oldFree   = 0;
+        size_t curFree   = m_PlaybackBuffer.getFreeSize();
+        while (oldFree != curFree && curFree > 0) {
+            // printf ("    slotPollPlayback: buffer check successful: requesting data\n");
+            notifyReadyForPlaybackData(m_PlaybackStreamID, curFree);
+	    oldFree = curFree;
+            curFree = m_PlaybackBuffer.getFreeSize();
         }
+        // printf ("    slotPollPlayback: free = %zi, fill = %zi, added %zi\n", m_PlaybackBuffer.getFreeSize(), m_PlaybackBuffer.getFillSize(), m_PlaybackBuffer.getFillSize() - startFill);
 
         checkMixerVolume(m_PlaybackStreamID);
     }
@@ -774,7 +780,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
     m_PlaybackFormat = format;
 
-    setWaitForMinPlaybackBufferFill(66/*percent*/);
+    setWaitForMinPlaybackBufferFill(90/*percent*/);
 
     bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, m_PlaybackDeviceName.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, (m_nonBlockingPlayback ? SND_PCM_NONBLOCK : 0), m_PlaybackLatency, m_PlaybackBufferSize, m_PlaybackChunkSize);
 
@@ -794,6 +800,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
             m_playbackThread->setLatency(m_workaroundSleepPlaybackMilliSeconds * 1000);
             m_playbackThread->start();
             m_PlaybackPollingTimer.start(40); // polling still necessary, however mainly for pushing sound around and getting volume
+	    QObject::connect(m_playbackThread, SIGNAL(sigRequestPlaybackData()), this, SLOT(slotPollPlayback()), Qt::QueuedConnection);
         } else {
             m_PlaybackPollingTimer.start(m_PlaybackLatency);
         }
@@ -857,6 +864,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
             m_captureThread->setLatency(m_workaroundSleepCaptureMilliSeconds * 1000);
             m_captureThread->start();
             m_CapturePollingTimer.start(40); // polling still necessary, however mainly for pushing sound around and getting volume
+	    QObject::connect(m_captureThread, SIGNAL(sigCaptureDataAvailable()), this, SLOT(slotPollCapture()), Qt::QueuedConnection);
         } else {
             m_CapturePollingTimer.start(m_CaptureLatency);
         }
@@ -1821,11 +1829,12 @@ void AlsaSoundDevice::setCaptureMixerSettings(const QMap<QString, AlsaConfigMixe
 
 
 
-char *AlsaSoundDevice::getPlaybackData(size_t &buffersize)
+char *AlsaSoundDevice::getPlaybackData(size_t &buffersize, size_t &maxAvailableData)
 {
-    buffersize = 0;
-    char *buffer = m_PlaybackBuffer.getData(buffersize);
-    buffersize = qMin(buffersize, m_PlaybackChunkSize);
+    buffersize       = 0;
+    char *buffer     = m_PlaybackBuffer.getData(buffersize);
+    // buffersize       = qMin(buffersize, m_PlaybackChunkSize);
+    maxAvailableData = m_PlaybackBuffer.getFillSize();
 
     return buffer;
 }

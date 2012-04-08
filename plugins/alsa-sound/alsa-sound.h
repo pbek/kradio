@@ -227,6 +227,7 @@ RECEIVERS:
     const QMap<QString, AlsaConfigMixerSetting> &
                    getCaptureMixerSettings() const { return m_CaptureMixerSettings; }
     bool           getSoftPlaybackVolume(double &correction_factor) const { correction_factor = m_SoftPlaybackVolumeCorrectionFactor; return m_SoftPlaybackVolumeEnabled; }
+    double         getSoftPlaybackVolumeValue()                     const { return m_SoftPlaybackVolumeMuted ? 0 : m_SoftPlaybackVolume; }
     bool           getCaptureFormatOverride(SoundFormat &sf);
 
     void           setBufferSizes(size_t playback_size, size_t playback_chunk_size, size_t capture_size, size_t capture_chunk_size);
@@ -357,7 +358,7 @@ protected:
 
 
 public:
-    char  *getPlaybackData(size_t &buffersize);
+    char  *getPlaybackData(size_t &buffersize, size_t &maxAvailableData);
     void   freePlaybackData(size_t bytes);
     void   lockPlaybackBufferTransaction();
     void   unlockPlaybackBufferTransaction();

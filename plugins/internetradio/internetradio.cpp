@@ -41,10 +41,10 @@
 #ifdef KRADIO_ENABLE_FIXMES
     #warning "FIXME: make buffer size configurable"
 #endif
-#define MAX_BUFFER_SIZE       (256*1024)
-#define MAX_BUFFERS           8
+#define MAX_BUFFER_SIZE       (512*1024)
+#define MAX_BUFFERS           16
 #define MAX_BYTES_PER_BUFFER  ((MAX_BUFFER_SIZE) / (MAX_BUFFERS))
-#define MIN_BUFFERS4PLAYBACK  2
+#define MIN_BUFFERS4PLAYBACK  (MAX_BUFFERS/3)
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -898,8 +898,9 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
 
     int n_bufs = m_decoderThread->decoder()->availableBuffers();
 
+    // printf("inet radio PLAY: n_bufs = %i, min_size = %i\n", n_bufs, min_size);
     if (n_bufs < min_size) {
-        m_waitForBufferMinFill = true;
+        // m_waitForBufferMinFill = true;
 //         logDebug(QString("InternetRadio::noticeReadyForPlaybackData: SKIP: min_count = %1, buf_count = %2").arg(min_size).arg(n_bufs));
         return false;
     }
@@ -929,8 +930,8 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
         if (consumed_size == SIZE_T_DONT_CARE) {
             consumed_size = size;
         }
-//         printf("PLAY: buf_size = %zi, min_count = %i, buf_count = %i, free_size=%zi, avail_size=%zi\n", size, min_size, n_bufs, free_size, dataSize);
-//         printf("     consumed: %zi\n", consumed_size);
+        // printf("inet radio PLAY: buf_size = %zi, min_count = %i, buf_count = %i, free_size=%zi, avail_size=%zi\n", size, min_size, n_bufs, free_size, dataSize);
+        // printf("     consumed: %zi\n", consumed_size);
         free_size -= consumed_size;
         buf.addProcessedSize(consumed_size);
         if (m_decoderThread && buf.remainingSize() <= 0) {
