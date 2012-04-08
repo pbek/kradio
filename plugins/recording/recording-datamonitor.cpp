@@ -356,29 +356,25 @@ bool RecordingDataMonitor::noticeSoundStreamData(SoundStreamID /*id*/,
 {
     if (!isEnabled())
         return false;
-    int nSamples    = size / sf.frameSize();
-    int sample_size = sf.sampleSize();
+    int nFrames  = size / sf.frameSize();
 
-    int bias = 0;
+//     int bias = 0;
     setChannels(sf.m_Channels);
     int old_max = m_maxValue;
     m_maxValue = sf.maxValue();
     if (!sf.m_IsSigned) {
         m_maxValue /= 2;
-        bias = -m_maxValue;
+//         bias = -m_maxValue;
     }
 
-    int c = 0;
-    for (int s = 0; s < nSamples; ++s, ++c, data += sample_size) {
-        if (c >= m_channels) c -= m_channels;   // avoid slow c = s % m_channels
-
-        int &m = m_channelsMax[c];
-        int x = abs(sf.convertSampleToInt(data, false) + bias);
-        if (m < x) m = x;
-        m_channelsAvg[c] += x;
+    double  minMag[m_channels];
+    double  maxMag[m_channels];
+    double  avgMag[m_channels];
+    sf.minMaxAvgMagnitudePerChannel(data, nFrames, minMag, maxMag, avgMag);
+    for (int ch = 0; ch < m_channels; ++ch) {
+        m_channelsAvg[ch] = avgMag[ch];
+        m_channelsMax[ch] = maxMag[ch];
     }
-    for (int i = 0; i < m_channels; ++i)
-        m_channelsAvg[i] /= nSamples;
 
     update(m_maxValue != old_max ? updateAllForced : updatePartially);
     return true;

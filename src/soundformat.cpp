@@ -20,6 +20,9 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
+#include <boost/type_traits.hpp>
+#include <boost/static_assert.hpp>
+
 #include <math.h>
 
 int SoundFormat::sampleSize() const
@@ -75,264 +78,721 @@ void  SoundFormat::saveConfig(const QString &prefix, KConfigGroup &c) const
 }
 
 
-int SoundFormat::convertSampleToInt(const char *sample, bool do_scale) const
-{
-    int size     = sampleSize();
 
-    unsigned val = 0;
-    if (m_Endianess == LITTLE_ENDIAN) {
-        sample = sample + size - 1;
-        for (int i = size - 1; i >= 0; --i, --sample) {
-            val = (val << 8) | (unsigned char)*sample;
-        }
+
+#define  BITS(T)        (sizeof(T) << 3)
+#define  IS_SIGNED(T)   (((T)(~((T)0))) < (T)0)
+
+template<typename T> T minMax(T v, T min, T max)
+{
+    T res = v;
+    if (v < min) {
+        res = min;
+    }
+    if (v > max) {
+        res = max;
+    }
+    return res;
+}
+
+template<typename T, int c_bits> inline T maxValue(int var_bits = 0)
+{
+    int  bits     = c_bits ? c_bits     : var_bits;
+    return (((((T)1) << (bits - 1 - IS_SIGNED(T))) - 1) << 1) | 1;
+}
+
+
+template<typename T, int c_bits> inline T minValue(int var_bits = 0)
+{
+    int  bits     = c_bits ? c_bits     : var_bits;
+    if (IS_SIGNED(T)) {
+        return ((T)~((T)0)) << (bits - 1);
     } else {
-        for (int i = 0; i < size; ++i, ++sample) {
-            val = (val << 8) | (unsigned char)*sample;
+        return 0;
+    }
+}
+
+
+
+template<typename T, int c_bits>
+inline bool is_negative(T v, int var_bits = 0)
+{
+    return v ^ minValue<T, c_bits>(var_bits);
+}
+
+
+template<typename T, int c_bits>
+inline T bias(int var_bits = 0)
+{
+    const bool isSigned = IS_SIGNED(T);
+    const int  bits     = c_bits ? c_bits : var_bits;
+    if (isSigned) {
+        return 0;
+    } else {
+        return ((T)1) << (bits - 1);
+    }
+}
+
+
+
+template<typename T, int c_fromBits>
+inline T signExtend(T v, int var_fromBits = 0)
+{
+    const int  fromBits   = c_fromBits ? c_fromBits    : var_fromBits;
+    const bool c_isSigned = IS_SIGNED(T);
+    const int  c_dstBits  = BITS(T);
+    const int  shift      = c_isSigned ? c_dstBits - fromBits : 0;
+    if (c_isSigned && shift > 0) {
+        return (v << shift) >> shift;
+    } else {
+        return v;
+    }
+}
+
+
+
+template<typename srcT, typename dstT, int c_srcBits, int c_dstBits>
+inline dstT scale(srcT v, int var_srcBits = 0, int var_dstBits = 0)
+{
+    const srcT biasOld     = bias<srcT, c_srcBits>(var_srcBits);
+    const dstT biasNew     = bias<dstT, c_dstBits>(var_dstBits);
+    const int  srcBits     = c_srcBits ? c_srcBits : var_srcBits;
+    const int  dstBits     = c_dstBits ? c_dstBits : var_dstBits;
+
+    // to avoid warnings about neg shifts
+    const int  shift       = srcBits > dstBits ? srcBits - dstBits : dstBits - srcBits;
+
+    if (srcBits > dstBits) {
+        return (((srcT)v - biasOld) >> shift) + biasNew;
+    } else {
+        return (((dstT)v - biasOld) << shift) + biasNew;
+    }
+}
+
+
+template<typename srcT, typename dstT, int c_srcBits, int c_dstBits>
+inline dstT saturate(srcT v, int var_srcBits = 0, int var_dstBits = 0)
+{
+    const srcT biasOld   = bias<srcT, c_srcBits>(var_srcBits);
+    const dstT biasNew   = bias<dstT, c_dstBits>(var_dstBits);
+
+    // saturation in case destT cannot represent the full sample range
+    const srcT mappedBiasDiff = bias<srcT, c_srcBits>(var_srcBits) - bias<srcT, c_dstBits>(var_dstBits);
+    const srcT minDstVal = minValue<srcT, c_dstBits>(var_dstBits) + mappedBiasDiff; // value does not matter if src_bits <= dst_bits
+    const srcT maxDstVal = maxValue<srcT, c_dstBits>(var_dstBits) + mappedBiasDiff; // value does not matter if src_bits <= dst_bits
+    const int  src_bits  = c_srcBits ? c_srcBits : var_srcBits;
+    const int  dst_bits  = c_dstBits ? c_dstBits : var_dstBits;
+
+    srcT tmp = v;
+    if (src_bits > dst_bits) {
+        tmp =  minMax(v, minDstVal, maxDstVal);
+    }
+    return tmp + biasNew - biasOld;
+}
+
+
+template<typename srcT, typename dstT, int c_srcBits, int c_dstBits, bool do_scale>
+class convertSample
+{
+public:
+    inline dstT operator()(srcT src, int var_srcBits, int var_dstBits)
+    {
+        if (do_scale) {
+            return scale   <srcT, dstT, c_srcBits, c_dstBits>(src, var_srcBits, var_dstBits);
+        } else {
+            return saturate<srcT, dstT, c_srcBits, c_dstBits>(src, var_srcBits, var_dstBits);
         }
     }
+};
 
-    int scale    = (sizeof(unsigned) << 3) - m_SampleBits;
-    int signmask = do_scale ? (!m_IsSigned << ((sizeof(unsigned) << 3) - 1)) :
-                              (-m_IsSigned << ((size << 3)             - 1)) ;
-    if (do_scale) {
-        // map to int number space
-        return (val << scale) ^ signmask;
-    } else {
-        // do only sign extension
-        if (val & signmask)
-            val |= signmask;
+
+template<typename srcT, typename dstT, int c_srcBits, bool do_scale>
+class convertSampleToFlt
+{
+public:
+    inline dstT operator()(srcT src, int var_srcBits, int /*var_dstBits*/)
+    {
+        const srcT   biasSrc = bias<srcT, c_srcBits>(var_srcBits);
+        const int    srcBits = c_srcBits ? c_srcBits : var_srcBits;
+        dstT         tmp     = ((dstT)src) - (dstT)biasSrc;
+        if (do_scale) {
+            dstT   scale = 1.0 / ( 2.0 * (((srcT)1) << (srcBits - 2)));
+            return tmp * scale;
+        } else {
+            return tmp;
+        }
+    }
+};
+
+template<typename srcT, int c_srcBits, int c_dstBits, bool do_scale>
+class convertSample<srcT, double, c_srcBits, c_dstBits, do_scale> : public convertSampleToFlt<srcT, double, c_srcBits, do_scale>
+{};
+
+template<typename srcT, int c_srcBits, int c_dstBits, bool do_scale>
+class convertSample<srcT, float,  c_srcBits, c_dstBits, do_scale> : public convertSampleToFlt<srcT, double, c_srcBits, do_scale>
+{};
+
+
+template<typename srcT, typename dstT, int c_dstBits, bool do_scale>
+class convertSampleFromFlt
+{
+public:
+    inline dstT operator()(srcT src, int /*var_srcBits*/, int var_dstBits)
+    {
+        const dstT biasDst = bias<dstT, c_dstBits>(var_dstBits);
+        const int  dstBits = c_dstBits ? c_dstBits : var_dstBits;
+        srcT       tmp     = src + biasDst;
+
+        if (do_scale) {
+            srcT  scale =  2.0 * (((dstT)1) << (dstBits - 2));
+            tmp *= scale;
+        }
+        const srcT minDst = minValue<dstT, c_dstBits>(var_dstBits);
+        const srcT maxDst = maxValue<dstT, c_dstBits>(var_dstBits);
+        return minMax(tmp, minDst, maxDst);
+    }
+};
+
+
+template<typename dstT, int c_srcBits, int c_dstBits, bool do_scale>
+class convertSample<double, dstT, c_srcBits, c_dstBits, do_scale> : public convertSampleFromFlt<double, dstT, c_dstBits, do_scale>
+{};
+
+template<typename dstT, int c_srcBits, int c_dstBits, bool do_scale>
+class convertSample<float,  dstT, c_srcBits, c_dstBits, do_scale> : public convertSampleFromFlt<double, dstT, c_dstBits, do_scale>
+{};
+
+
+inline unsigned int systemEndianess()
+{
+    union {
+        unsigned int  endianessTest;
+        unsigned char bytes[sizeof(int)];
+    };
+    endianessTest = 0x12345678;
+    return (bytes[0] == 0x78) ? LITTLE_ENDIAN : BIG_ENDIAN;
+}
+
+
+template<unsigned int endianess>
+inline bool needsEndianessSwap()
+{
+    return systemEndianess() != endianess;
+}
+
+
+template<typename T, int bits>  class bswap
+{
+public:
+    inline T operator () (T v);
+};
+
+
+template<typename T> class bswap<T, 8>
+{
+public:
+    inline T operator ()(T v) {
+        BOOST_STATIC_ASSERT(sizeof(T) == 1);
+        BOOST_STATIC_ASSERT(boost::is_arithmetic<T>::value);
+        return v;
+    }
+};
+
+
+template<typename T> class bswap<T, 16>
+{
+public:
+    inline T operator () (T v) {
+        BOOST_STATIC_ASSERT(sizeof(T) == 2);
+        BOOST_STATIC_ASSERT(boost::is_arithmetic<T>::value);
+#ifdef __bswap_16
+        return __bswap_16(v);
+#else
+        return   (((unsigned short)v & 0x00FFu) << 8)
+               | (((unsigned short)v & 0xFF00u) >> 8);
+#endif
+    }
+};
+
+
+template<typename T> class bswap<T, 32>
+{
+public:
+    inline T operator () (T v) {
+        BOOST_STATIC_ASSERT(sizeof(T) == 4);
+        BOOST_STATIC_ASSERT(boost::is_arithmetic<T>::value);
+#ifdef __bswap_32
+        return __bswap_32(v);
+#else
+        return   ((v & 0x000000FFu) << 24)
+               | ((v & 0x0000FF00u) <<  8)
+               | ((v & 0x00FF0000u) >>  8)
+               | ((v & 0xFF000000u) >> 24);
+#endif
+    }
+};
+
+
+template<typename T> class bswap<T, 24>
+{
+public:
+    inline T operator () (T v) {
+        BOOST_STATIC_ASSERT(sizeof(T) == 4);
+        BOOST_STATIC_ASSERT(boost::is_arithmetic<T>::value);
+        return bswap<T, 32>()(v) >> 8;
+    }
+};
+
+
+template<typename T> class bswap<T, 64>
+{
+public:
+    inline T operator () (T v) {
+        BOOST_STATIC_ASSERT(sizeof(T) == 8);
+        BOOST_STATIC_ASSERT(boost::is_arithmetic<T>::value);
+#ifdef __bswap_64
+        return __bswap_64(v);
+#else
+        return   ((v & 0x00000000000000FFull) << 56)
+               | ((v & 0x000000000000FF00ull) << 40)
+               | ((v & 0x0000000000FF0000ull) << 24)
+               | ((v & 0x00000000FF000000ull) <<  8)
+               | ((v & 0x000000FF00000000ull) >>  8)
+               | ((v & 0x0000FF0000000000ull) >> 24)
+               | ((v & 0x00FF000000000000ull) >> 40)
+               | ((v & 0xFF00000000000000ull) >> 56);
+#endif
+    }
+};
+
+
+template<typename T, int bits>
+void check_bswap_static_assertions()
+{
+    // ensure the data is only 1, 2, 3, 4 or 8 bytes
+    BOOST_STATIC_ASSERT(   (sizeof(T) == 1 && bits ==  8)
+                        || (sizeof(T) == 2 && bits == 16)
+                        || (sizeof(T) == 4 && bits == 24)
+                        || (sizeof(T) == 4 && bits == 32)
+                        || (sizeof(T) == 8 && bits == 64));
+
+    // ensure we're only swapping arithmetic types
+    BOOST_STATIC_ASSERT(boost::is_arithmetic<T>::value);
+}
+
+
+template<typename T, int bits, unsigned int otherEndianess>
+inline T toFromSystemEndianess(T v)
+{
+    check_bswap_static_assertions<T, bits>();
+    return !needsEndianessSwap<otherEndianess>() ? v : bswap<T, bits>()(v);
+}
+
+
+
+
+/// read sample (now sign extension, scaling, unbiasing...) and proceed with sample pointer
+template<typename storageT, int c_bits, unsigned int c_srcEndianess>
+class readSampleRaw
+{
+public:
+    inline storageT operator()(const char *&samplePtr, int /*var_size*/ = 0)
+    {
+        check_bswap_static_assertions<storageT, c_bits>();
+
+        // 24 bits are also saved in a full 32 bit word in sample memory
+        storageT tmp = *(storageT*)samplePtr;
+        samplePtr += sizeof(storageT);
+
+        // fix endianess
+        tmp   = toFromSystemEndianess<storageT, c_bits, c_srcEndianess>(tmp);
+        return tmp;
+    }
+};
+
+
+/// read sample (now sign extension, scaling, unbiasing...) and proceed with sample pointer
+template<typename storageT, unsigned int c_srcEndianess>
+class readSampleRaw<storageT, 0, c_srcEndianess>
+{
+public:
+    inline storageT operator()(const char *&samplePtr, int var_size)
+    {
+        storageT val = 0;
+        if (c_srcEndianess == LITTLE_ENDIAN) {
+            samplePtr = samplePtr + var_size - 1;
+            for (int i = var_size - 1; i >= 0; --i, --samplePtr) {
+                val = (val << 8) | (unsigned char)*samplePtr;
+            }
+            samplePtr += var_size + 1;
+        } else {
+            for (int i = 0; i < var_size; ++i, ++samplePtr) {
+                val = (val << 8) | (unsigned char)*samplePtr;
+            }
+        }
         return val;
     }
+};
+
+
+
+/// read sample and proceed with sample pointer
+template<typename destT, typename storageT, int c_bits, unsigned int c_srcEndianess, bool c_do_scale>
+inline destT readSample(const char *&samplePtr, int var_bits = 0, int var_size = 0)
+{
+    // 24 bits are also saved in a full 32 bit word in sample memory
+    storageT tmp = readSampleRaw<storageT, c_bits, c_srcEndianess>()(samplePtr, var_size);
+    // sign extend
+    tmp   = signExtend<storageT, c_bits>(tmp);
+
+    return convertSample<storageT, destT, c_bits, BITS(destT), c_do_scale>()(tmp, var_bits, BITS(destT));
 }
 
 
-void SoundFormat::convertIntToSample(int src, char *dst, bool is_scaled) const
-{
-    int size     = sampleSize();
-    int scale    = (sizeof(unsigned) * 8) - m_SampleBits;
-    int signmask = (!m_IsSigned << (sizeof(unsigned) * 8 - 1));
 
-    unsigned val = is_scaled ? (src ^ signmask) >> scale : src;
-    if (m_Endianess == LITTLE_ENDIAN) {
-        for (int i = 0; i < size; ++i, ++dst) {
-            (unsigned char &)*dst = val & 0xFF;
-             val >>= 8;
-        }
-    } else {
-        dst = dst - 1 + size;
-        for (int i = size - 1; i >= 0; --i, --dst) {
-            (unsigned char &)*dst = val & 0xFF;
-             val >>= 8;
-        }
+
+
+
+
+
+
+
+/// write sample and proceed with sample pointer
+template<typename storageT, int c_bits, unsigned int c_dstEndianess>
+class writeSampleRaw
+{
+public:
+    inline void operator()(storageT v, char *&samplePtr, int /*var_samplesize*/ = 0)
+    {
+        check_bswap_static_assertions<storageT, c_bits>();
+
+        // 24 bits are also saved in a full 32 bit word in sample memory
+        *(storageT*)samplePtr = toFromSystemEndianess<storageT, c_bits, c_dstEndianess>(v);
+        samplePtr += sizeof(storageT);
     }
-}
+};
 
 
-void SoundFormat::convertSamplesToInts(const char *src, int *dst, size_t n, bool do_scale) const
+
+/// write sample and proceed with sample pointer
+template<typename storageT, unsigned int c_dstEndianess>
+class writeSampleRaw<storageT, 0, c_dstEndianess>
 {
-    int size  = sampleSize();
-    int scale    = (sizeof(unsigned) * 8) - m_SampleBits;
-    int signmask = do_scale ? (!m_IsSigned << ((sizeof(unsigned) << 3) - 1)) :
-                              (-m_IsSigned << ((size << 3)             - 1)) ;
-    if (m_Endianess == LITTLE_ENDIAN) {
-        src = src - 1 + (size * n);
-        int *end = dst;
-        for (dst = dst - 1 + n; dst >= end; --dst) {
-            unsigned val = 0;
-            for (int i = size - 1; i >= 0; --i, --src) {
-                val = (val << 8) | (unsigned char)*src;
+public:
+    inline void operator()(storageT val, char *&samplePtr, int var_samplesize)
+    {
+        if (c_dstEndianess == LITTLE_ENDIAN) {
+            char *dst = samplePtr;
+            for (int i = 0; i < var_samplesize; ++i, ++dst) {
+                (unsigned char &)*dst = val & 0xFF;
+                 val >>= 8;
             }
-            if (do_scale) {
-                *dst = (val << scale) ^ signmask;
-            } else if (val & signmask) {
-                *dst = val | signmask;
-            }
-        }
-    } else {
-        for (int *end = dst + n; dst < end; ++dst) {
-            unsigned val = 0;
-            for (int i = 0; i < size; ++i, ++src) {
-                val = (val << 8) | (unsigned char)*src;
-            }
-            if (do_scale) {
-                *dst = (val << scale) ^ signmask;
-            } else if (val & signmask) {
-                *dst = val | signmask;
-            }
-        }
-    }
-}
-
-
-void SoundFormat::convertIntsToSamples(const int *src, char *dst, size_t n, bool is_scaled) const
-{
-    int size     = sampleSize();
-    int scale    = (sizeof(unsigned) * 8) - m_SampleBits;
-    int signmask = (!m_IsSigned << (sizeof(unsigned) * 8 - 1));
-
-    if (m_Endianess == LITTLE_ENDIAN) {
-        for (const int *end = src+n; src < end; ++src) {
-            unsigned val = is_scaled ? ((unsigned)(*src ^ signmask)) >> scale : *src;
-            for (int i = 0; i < size; ++i, ++dst) {
+        } else {
+            char *dst = samplePtr - 1 + var_samplesize;
+            for (int i = var_samplesize - 1; i >= 0; --i, --dst) {
                 (unsigned char &)*dst = val & 0xFF;
                 val >>= 8;
             }
         }
-    } else {
-        dst = dst - 1 + (size * n);
-        const int *end = src;
-        for (src = src - 1 + n; src >= end; --src) {
-            unsigned val = is_scaled ? ((unsigned)(*src ^ signmask)) >> scale : *src;
-            for (int i = size - 1; i >= 0; --i, --dst) {
-                (unsigned char &)*dst = val & 0xFF;
-                val >>= 8;
-            }
-        }
+        samplePtr += var_samplesize;
     }
-}
+};
 
 
-void SoundFormat::convertSamplesToFloat(const char *_src, float **_dst, size_t n) const
+template<typename srcT, typename storageT, int c_bits, unsigned int c_dstEndianess, bool c_was_scaled>
+inline void writeSample(srcT v, char *&samplePtr, int var_bits = 0, int var_samplesize = 0)
 {
-    int sample_size = sampleSize();
-    int frame_size  = frameSize();
-    int scale       = (sizeof(short) << 3) - m_SampleBits;
-    int signmask    = !m_IsSigned << ((sizeof(short) << 3) - 1);
-    int skip        = frame_size - sample_size;
-
-    if (m_Endianess == LITTLE_ENDIAN) {
-        const char *src_ch0_end = _src + frame_size * (n - 1) + sample_size - 1;
-        for (unsigned ch = 0; ch < m_Channels; ++ch) {
-            const char *src = src_ch0_end + sample_size * ch;
-            float      *dst = _dst[ch];
-            float      *end = dst;
-            for (dst = dst - 1 + n; dst >= end; --dst) {
-                unsigned val = 0;
-                for (int i = sample_size - 1; i >= 0; --i, --src) {
-                    val = (val << 8) | (unsigned char)*src;
-                }
-                *dst = (float)(signed short)((val << scale) ^ signmask) / 32768.0f;
-                src = src - skip;
-            }
-        }
-    } else {
-        for (unsigned ch = 0; ch < m_Channels; ++ch) {
-            const char *src = _src + sample_size * ch;
-            float      *dst = _dst[ch];
-            for (float *end = dst + n; dst < end; ++dst) {
-                unsigned val = 0;
-                for (int i = 0; i < sample_size; ++i, ++src) {
-                    val = (val << 8) | (unsigned char)*src;
-                }
-                *dst = (float)(signed short)((val << scale) ^ signmask) / 32768.0f;
-                src = src + skip;
-            }
-        }
-    }
+    storageT  storageVal = convertSample<srcT, storageT, BITS(srcT), c_bits, c_was_scaled>()(v, BITS(srcT), var_bits);
+    writeSampleRaw<storageT, c_bits, c_dstEndianess>()(storageVal, samplePtr, var_samplesize);
 }
 
 
 
-void SoundFormat::convertFloatsToSamples(const float **_src, char *_dst, size_t n) const
+
+#define  resolveVariableBits(function,destT,bits,samplesize,signedness,endianess,do_scale,...)                \
+        switch(bits) {                                                                                        \
+            case 8:                                                                                           \
+                function<destT, signedness char,       8, endianess,do_scale>(__VA_ARGS__);                   \
+                break;                                                                                        \
+            case 16:                                                                                          \
+                function<destT, signedness short,     16, endianess,do_scale>(__VA_ARGS__);                   \
+                break;                                                                                        \
+            case 24:                                                                                          \
+                function<destT, signedness int,       24, endianess,do_scale>(__VA_ARGS__);                   \
+                break;                                                                                        \
+            case 32:                                                                                          \
+                function<destT, signedness int,       32, endianess,do_scale>(__VA_ARGS__);                   \
+                break;                                                                                        \
+            case 64:                                                                                          \
+                function<destT, signedness long long, 64, endianess,do_scale>(__VA_ARGS__);                   \
+                break;                                                                                        \
+            default:                                                                                          \
+                function<destT, signedness long long,  0, endianess,do_scale>(__VA_ARGS__, bits, samplesize); \
+                break;                                                                                        \
+        }
+
+#define  resolveVariableSignednessAndBits(function,destT,bits,samplesize,is_signed,endianess,do_scale,...)  \
+    if (!is_signed) {                                                                                       \
+        resolveVariableBits(function,destT,bits,samplesize,unsigned,endianess,do_scale,__VA_ARGS__)         \
+    } else {                                                                                                \
+        resolveVariableBits(function,destT,bits,samplesize,signed,  endianess,do_scale,__VA_ARGS__)         \
+    }
+
+#define  resolveVariableEndianessSignednessAndBits(function,destT,bits,samplesize,is_signed,endianess,do_scale,...)     \
+    if (endianess == LITTLE_ENDIAN) {                                                                                   \
+        resolveVariableSignednessAndBits(function,destT,bits,samplesize,is_signed,do_scale,LITTLE_ENDIAN,__VA_ARGS__)   \
+    } else {                                                                                                            \
+        resolveVariableSignednessAndBits(function,destT,bits,samplesize,is_signed,do_scale,BIG_ENDIAN,   __VA_ARGS__)   \
+    }
+
+
+
+template<typename dstT, typename storageT, int c_bits, unsigned int c_srcEndianess, bool c_do_scale>
+inline void convertSamplesToTypeInterleaved(const char *src, dstT *dst, size_t n_samples, int var_bits = 0, int var_samplesize = 0)
 {
-    int sample_size = sampleSize();
-    int frame_size  = frameSize();
-    int scale       = (sizeof(short) << 3) - m_SampleBits;
-    int signmask    = (((!m_IsSigned) << (sizeof(short) << 3)) - 1);
-    int skip        = frame_size - sample_size;
+    for (size_t i = 0; i < n_samples; ++i) {
+        dst[i] = readSample<dstT, storageT, c_bits, c_srcEndianess, c_do_scale>(src, var_bits, var_samplesize);
+    }
+}
 
-    if (m_Endianess == LITTLE_ENDIAN) {
-        for (unsigned ch = 0; ch < m_Channels; ++ch) {
-            const float *src = _src[ch];
-            char        *dst = _dst + ch * sample_size;
-            for (const float *end = src+n; src < end; ++src) {
-                unsigned val = ((  ((unsigned)(*src * 32768.0f)) ^ signmask)) >> scale;
-                for (int i = 0; i < sample_size; ++i, ++dst) {
-                    (unsigned char &)*dst = val & 0xFF;
-                    val >>= 8;
-                }
-                dst = dst + skip;
-            }
-        }
-    } else {
-        char  *dst_ch0_end = _dst + frame_size * (n - 1) + sample_size - 1;
-        for (unsigned ch = 0; ch < m_Channels; ++ch) {
-            char        *dst = dst_ch0_end + sample_size * ch;
-            const float *src = _src[ch];
-            const float *end = src;
-            for (src = src - 1 + n; src >= end; --src) {
-                unsigned val = (( ((unsigned)(*src * 32768.0f)) ^ signmask)) >> scale;
-                for (int i = sample_size - 1; i >= 0; --i, --dst) {
-                    (unsigned char &)*dst = val & 0xFF;
-                    val >>= 8;
-                }
-                dst = dst - skip;
-            }
+
+template<typename dstT, typename storageT, int c_bits, unsigned int c_srcEndianess, bool c_do_scale>
+inline void convertSamplesToTypeNonInterleaved(const char *src, dstT **dst, size_t n_channels, size_t n_frames, int var_bits = 0, int var_samplesize = 0)
+{
+    for (size_t frm = 0; frm < n_frames; ++frm) {
+        for (size_t ch = 0; ch < n_channels; ++ch) {
+            dst[ch][frm] = readSample<dstT, storageT, c_bits, c_srcEndianess, c_do_scale>(src, var_bits, var_samplesize);
         }
     }
 }
 
+
+template<typename srcT, typename storageT, int c_bits, unsigned int c_dstEndianess, bool c_was_scaled>
+inline void convertTypeInterleavedToSamples(const srcT *src, char *dst, size_t n_samples, int var_bits = 0, int var_samplesize = 0)
+{
+    for (size_t i = 0; i < n_samples; ++i) {
+        writeSample<srcT, storageT, c_bits, c_dstEndianess, c_was_scaled>(src[i], dst, var_bits, var_samplesize);
+    }
+}
+
+
+template<typename srcT, typename storageT, int c_bits, unsigned int c_dstEndianess, bool c_was_scaled>
+inline void convertTypeNonInterleavedToSamples(const srcT **src, char *dst, size_t n_channels, size_t n_frames, int var_bits = 0, int var_samplesize = 0)
+{
+    for (size_t frm = 0; frm < n_frames; ++frm) {
+        for (size_t ch = 0; ch < n_channels; ++ch) {
+            writeSample<srcT, storageT, c_bits, c_dstEndianess, c_was_scaled>(src[ch][frm], dst, var_bits, var_samplesize);
+        }
+    }
+}
+
+
+void SoundFormat::convertSamplesToFloatInterleaved(const char *src, float *dst, size_t n_frames) const
+{
+    resolveVariableEndianessSignednessAndBits(::convertSamplesToTypeInterleaved, float, m_SampleBits, sampleSize(), m_IsSigned, m_Endianess, true, src, dst, n_frames * m_Channels);
+}
+
+
+void SoundFormat::convertFloatInterleavedToSamples(const float *src, char *dst, size_t n_frames) const
+{
+    resolveVariableEndianessSignednessAndBits(::convertTypeInterleavedToSamples, float, m_SampleBits, sampleSize(), m_IsSigned, m_Endianess, true, src, dst, n_frames * m_Channels);
+}
+
+void SoundFormat::convertSamplesToFloatNonInterleaved(const char *src, float **dst, size_t n_frames) const
+{
+    resolveVariableEndianessSignednessAndBits(::convertSamplesToTypeNonInterleaved, float, m_SampleBits, sampleSize(), m_IsSigned, m_Endianess, true, src, dst, m_Channels, n_frames);
+}
+
+
+void SoundFormat::convertFloatNonInterleavedToSamples(const float **src, char *dst, size_t n_frames) const
+{
+    resolveVariableEndianessSignednessAndBits(::convertTypeNonInterleavedToSamples, float, m_SampleBits, sampleSize(), m_IsSigned, m_Endianess, true, src, dst, m_Channels, n_frames);
+}
+
+
+
+template<typename tmpT, typename storageT, int c_bits, unsigned int c_endianess, bool do_scale_dummy>
+inline void scaleSamples(char *_src, float scale, size_t n, int var_bits = 0, int var_sampleSize = 0)
+{
+    const char   *src = _src;
+    char         *dst = _src;
+    for (size_t i = 0; i < n; ++i) {
+        tmpT tmp = readSample<tmpT, storageT, c_bits, c_endianess, false>(src, var_bits, var_sampleSize);
+        tmp *= scale;
+        writeSample<tmpT, storageT, c_bits, c_endianess, false>(tmp, dst, var_bits, var_sampleSize);
+    }
+}
 
 
 void SoundFormat::scaleSamples(char *_src, float scale, size_t n_frames) const
 {
-    int sample_size = sampleSize();
-    int frame_size  = frameSize();
-    unsigned int signmask    = (m_IsSigned) << (m_SampleBits - 1);
-    unsigned int signext     = (-1 << m_SampleBits);
+    resolveVariableEndianessSignednessAndBits(::scaleSamples, double, m_SampleBits, sampleSize(), m_IsSigned, m_Endianess, false, _src, scale, n_frames * m_Channels);
+}
 
-    if (m_Endianess == LITTLE_ENDIAN) {
-        unsigned char *src = (unsigned char*)_src;
-        for (size_t is = 0; is < n_frames * frame_size / sample_size; ++is, src += sample_size) {
-            unsigned int val = 0;
-            // read
-            for (int i = sample_size - 1; i >= 0; --i) {
-                val = (val << 8) | src[i];
-            }
-            // sign extension
-            if (val & signmask) {
-                val |= signext;
-            }
-            val = (int)rint(scale * (double)((signed int)val));
-            // saturation
-            if ((val & signmask) && (val < signext)) {
-                val = signext;
-            } else if (!(val & signmask) && val > ~signext) {
-                val = ~signext;
-            }
-            // write back
-            for (int i = 0; i < sample_size; ++i) {
-                src[i] = (val & 0xFF);
-                val = val >> 8;
-            }
+
+
+template<typename dstT, typename storageT, int c_bits, unsigned int c_endianess, bool do_scale>
+inline void minMaxAvgMagnitudePerChannel(const char *src, size_t channels, size_t n_frames, dstT *vmin, dstT *vmax, dstT *vavg, int var_bits = 0, int var_sampleSize = 0)
+{
+    size_t n_samples = n_frames * channels;
+    for (size_t ch = 0; ch < channels; ++ch) {
+        dstT     v    = readSample<dstT, storageT, c_bits, c_endianess, do_scale>(src, var_bits, var_sampleSize);
+        dstT     absV = v < 0 ? -v : v;
+        vmin[ch] = absV;
+        vmax[ch] = absV;
+        vavg[ch] = absV;
+    }
+    size_t ch = 0;
+    for (size_t i = channels; i < n_samples; ++i) {
+        dstT     v    = readSample<dstT, storageT, c_bits, c_endianess, do_scale>(src, var_bits, var_sampleSize);
+        dstT     absV = v < 0 ? -v : v;
+        vmin[ch]  = std::min(vmin[ch], absV);
+        vmax[ch]  = std::max(vmax[ch], absV);
+        vavg[ch] += absV;
+        if (++ch >= channels) {
+            ch -= channels;
         }
-    } else {
-        unsigned char *src = (unsigned char*)_src;
-        for (size_t is = 0; is < n_frames * frame_size / sample_size; ++is, src += sample_size) {
-            unsigned int val = 0;
-            // read
-            for (int i = 0; i < sample_size; ++i) {
-                val = (val << 8) | src[i];
-            }
-            // sign extension
-            if (val & signmask) {
-                val |= signext;
-            }
-            val = (int)rint(scale * (double)(signed int)val);
-            // saturation
-            if ((val & signmask) && (val < signext)) {
-                val = signext;
-            } else if (!(val & signmask) && val > ~signext) {
-                val = ~signext;
-            }
-            // write back
-            for (int i = sample_size-1; i >= 0; --i) {
-                src[i] = (val & 0xFF);
-                val = val >> 8;
-            }
-        }
+    }
+    for (size_t ch = 0; ch < channels; ++ch) {
+        vavg[ch] /= n_frames;
     }
 }
 
 
+void SoundFormat::minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames, double *vmin, double *vmax, double *vavg) const
+{
+    resolveVariableEndianessSignednessAndBits(::minMaxAvgMagnitudePerChannel, double, m_SampleBits, sampleSize(), m_IsSigned, m_Endianess, false, src, m_Channels, n_frames, vmin, vmax, vavg);
+}
+
+
+
+
+int test(const char *&samplePtr)
+{
+    return readSample<int, short, 16, LITTLE_ENDIAN, false>(samplePtr);
+}
+
+
+int test2(const char *&samplePtr)
+{
+    return readSample<int, short, 16, BIG_ENDIAN, false>(samplePtr);
+}
+
+
+short test3(short tmp)
+{
+    return bswap<short, 16>()(tmp);
+}
+
+
+int test4(int tmp)
+{
+    return bswap<int, 32>()(tmp);
+}
+
+
+long long test5(long long tmp)
+{
+    return bswap<long long, 64>()(tmp);
+}
+
+
+long long test5(const char *&samplePtr, int bits, int samplesize, bool is_signed)
+{
+    resolveVariableSignednessAndBits(return ::readSample,long long,bits,samplesize,is_signed,LITTLE_ENDIAN,false,samplePtr);
+    return 0;
+}
+
+
+long long test6(const char *&samplePtr)
+{
+    return readSample<long long, unsigned int, 24, LITTLE_ENDIAN, false>(samplePtr);
+}
+
+long long test6a(const char *&samplePtr)
+{
+    return readSample<long long, unsigned int, 24, LITTLE_ENDIAN, true>(samplePtr);
+}
+
+void test7(const char *&samplePtr, long long *dst, size_t n_samples)
+{
+    convertSamplesToTypeInterleaved<long long, int, 24, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
+}
+
+void test7a(const char *&samplePtr, long long *dst, size_t n_samples)
+{
+    convertSamplesToTypeInterleaved<long long, int, 24, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
+}
+
+void test8(const char *&samplePtr, long long *dst, size_t n_samples)
+{
+    convertSamplesToTypeInterleaved<long long, short, 16, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
+}
+
+void test8a(const char *&samplePtr, long long *dst, size_t n_samples)
+{
+    convertSamplesToTypeInterleaved<long long, short, 16, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
+}
+
+
+void test9(const char *&samplePtr, double *dst, size_t n_samples)
+{
+    convertSamplesToTypeInterleaved<double, short, 16, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
+}
+
+void test9a(const char *&samplePtr, double *dst, size_t n_samples)
+{
+    convertSamplesToTypeInterleaved<double, short, 16, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
+}
+
+
+void test10(char *&samplePtr, const double *dst, size_t n_samples)
+{
+    convertTypeInterleavedToSamples<double, short, 16, LITTLE_ENDIAN, false>(dst, samplePtr, n_samples);
+}
+
+void test10a(char *&samplePtr, const double *dst, size_t n_samples)
+{
+    convertTypeInterleavedToSamples<double, short, 16, LITTLE_ENDIAN, true>(dst, samplePtr, n_samples);
+}
+
+void test10b(char *&samplePtr, const long long *src, size_t n_samples)
+{
+    convertTypeInterleavedToSamples<long long, short, 16, LITTLE_ENDIAN, false>(src, samplePtr, n_samples);
+}
+
+void test10c(char *&samplePtr, const long long *src, size_t n_samples)
+{
+    convertTypeInterleavedToSamples<long long, short, 16, LITTLE_ENDIAN, true>(src, samplePtr, n_samples);
+}
+
+void test10d(char *&samplePtr, const long long *src, size_t n_samples)
+{
+    convertTypeInterleavedToSamples<long long, int, 32, BIG_ENDIAN, false>(src, samplePtr, n_samples);
+}
+
+void test10e(char *&samplePtr, const long long *src, size_t n_samples)
+{
+    convertTypeInterleavedToSamples<long long, int, 32, BIG_ENDIAN, true>(src, samplePtr, n_samples);
+}
+
+void test11a(char *&samplePtr, long long src)
+{
+    writeSample<long long, int, 32, LITTLE_ENDIAN, false>(src, samplePtr);
+}
+
+void test11b(char *&samplePtr, long long src)
+{
+    writeSample<long long, int, 32, LITTLE_ENDIAN, true>(src, samplePtr);
+}
+
+void test11c(char *&samplePtr, long long src)
+{
+    writeSample<long long, int, 32, BIG_ENDIAN, false>(src, samplePtr);
+}
+
+void test11d(char *&samplePtr, long long src)
+{
+    writeSample<long long, int, 32, BIG_ENDIAN, true>(src, samplePtr);
+}
 

@@ -59,7 +59,7 @@ void RecordingEncodingOgg::encode(const char *_buffer, size_t buffer_size, char 
     // buffer[channel][sample], normalized to -1..0..+1
     float **buffer = vorbis_analysis_buffer(&m_VorbisDSP, (samples < 512 ? 512 : samples));
 
-    sf.convertSamplesToFloat(_buffer, buffer, samples);
+    sf.convertSamplesToFloatNonInterleaved(_buffer, buffer, samples);
 
     /* Tell the library how many samples (per channel) we wrote
        into the supplied buffer */

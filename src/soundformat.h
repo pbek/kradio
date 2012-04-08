@@ -54,7 +54,7 @@ struct KDE_EXPORT SoundFormat {
                                                            m_Endianess  == o.m_Endianess  &&
                                                            m_Encoding   == o.m_Encoding
                                                     ;
-                                                   }
+                                                  }
     bool operator != (const SoundFormat &o) const  { return !operator == (o); }
 
     int      sampleSize() const;      // size of a single sample
@@ -65,14 +65,13 @@ struct KDE_EXPORT SoundFormat {
     void     restoreConfig(const QString &prefix, const KConfigGroup &c);
     void     saveConfig   (const QString &prefix,       KConfigGroup &c) const;
 
-    int      convertSampleToInt(const char *sample, bool do_scale) const;
-    void     convertIntToSample(int src, char *dst, bool is_scaled) const;
-    void     convertSamplesToInts(const char *src, int  *dst, size_t n, bool do_scale) const;
-    void     convertIntsToSamples(const int  *src, char *dst, size_t n, bool is_scaled) const;
-    void     convertSamplesToFloat (const char   *src, float **dst, size_t n_frames) const;
-    void     convertFloatsToSamples(const float **src,   char *dst, size_t n_frames) const;
+    void     convertSamplesToFloatInterleaved   (const char   *src, float  *dst, size_t n_frames) const;
+    void     convertFloatInterleavedToSamples   (const float  *src, char   *dst, size_t n_frames) const;
+    void     convertSamplesToFloatNonInterleaved(const char   *src, float **dst, size_t n_frames) const;
+    void     convertFloatNonInterleavedToSamples(const float **src, char   *dst, size_t n_frames) const;
 
-    void     scaleSamples(char *_src, float scale, size_t n_frames) const;
+    void     scaleSamples    (char *_src, float scale, size_t n_frames) const;
+    void     minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames, double *vmin, double *vmax, double *vavg) const;
 
     bool     isValid() const { return m_SampleRate > 1000 && m_Channels > 0 && m_SampleBits >= 8; }
 
