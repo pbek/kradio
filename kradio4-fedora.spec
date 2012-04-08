@@ -27,6 +27,7 @@ Buildrequires: libogg-devel
 Buildrequires: libvorbis-devel 
 Buildrequires: qt-devel >= 4.4 
 Buildrequires: strigi-devel 
+Buildrequires: libboost-devel
 
 %description
 KRadio is a comfortable radio application for KDE4 with support for 

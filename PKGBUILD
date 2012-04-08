@@ -7,7 +7,7 @@ arch=(i686 x86_64)
 url="http://kradio.sourceforge.net"
 license=('GPL')
 depends=('libsndfile' 'kdelibs>=4.2.0' 'lame' 'ffmpeg' 'libmms>=0.5' 'libogg' 'libvorbis' 'lirc>=0.8.0'  'dbus' 'alsa-lib' )
-makedepends=('svn' 'cmake>=2.6.2')
+makedepends=('svn' 'cmake>=2.6.2' 'boost')
 source=()
 md5sums=()
 
