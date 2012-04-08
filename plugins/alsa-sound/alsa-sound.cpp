@@ -665,9 +665,11 @@ void AlsaSoundDevice::slotPollPlayback()
         }
         checkThreadErrorsAndWarning();
 
-//         printf ("    slotPollPlayback: before buffer size check: free size = %zi, size = %zi, free ratio = %4.1f %%\n", m_PlaybackBuffer.getFreeSize(), m_PlaybackBuffer.getSize(), (double)m_PlaybackBuffer.getFreeSize() / (double) m_PlaybackBuffer.getSize() * 100.0 );      
-        if (m_PlaybackBuffer.getFreeSize() > m_PlaybackBuffer.getSize() / 3) {
-//             printf ("    slotPollPlayback: buffer check successful: requesting data\n");      
+//         printf ("    slotPollPlayback: before buffer size check: free size = %zi, size = %zi, free ratio = %4.1f %%\n", m_PlaybackBuffer.getFreeSize(), m_PlaybackBuffer.getSize(), (double)m_PlaybackBuffer.getFreeSize() / (double) m_PlaybackBuffer.getSize() * 100.0 );
+        size_t oldFree = 0;
+        while (oldFree != m_PlaybackBuffer.getFreeSize() && m_PlaybackBuffer.getFreeSize() > 0) {
+//             printf ("    slotPollPlayback: buffer check successful: requesting data\n");
+            oldFree = m_PlaybackBuffer.getFreeSize();
             notifyReadyForPlaybackData(m_PlaybackStreamID, m_PlaybackBuffer.getFreeSize());
         }
 
@@ -791,7 +793,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
             m_playbackThread = new AlsaThread(this, /*playback_not_capture = */ true, m_hPlayback, m_PlaybackFormat);
             m_playbackThread->setLatency(m_workaroundSleepPlaybackMilliSeconds * 1000);
             m_playbackThread->start();
-            m_PlaybackPollingTimer.start(50); // polling still necessary, however mainly for pushing sound around and getting volume
+            m_PlaybackPollingTimer.start(40); // polling still necessary, however mainly for pushing sound around and getting volume
         } else {
             m_PlaybackPollingTimer.start(m_PlaybackLatency);
         }
@@ -854,7 +856,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
             m_captureThread = new AlsaThread(this, /*playback_not_capture = */ false, m_hCapture, m_CaptureFormat);
             m_captureThread->setLatency(m_workaroundSleepCaptureMilliSeconds * 1000);
             m_captureThread->start();
-            m_CapturePollingTimer.start(50); // polling still necessary, however mainly for pushing sound around and getting volume
+            m_CapturePollingTimer.start(40); // polling still necessary, however mainly for pushing sound around and getting volume
         } else {
             m_CapturePollingTimer.start(m_CaptureLatency);
         }
@@ -966,7 +968,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
 
     logDebug(i18n("ALSA Plugin(%1): period size = %2 [frames], hwbuffer size = %3 [frames]", pcm_name, period_frames_real, hwbuffer_frames));
 
-    latency = (1000 * period_frames_real) / format.m_SampleRate;
+    latency = (1000 * period_frames_real) / format.m_SampleRate / 2;
     if (latency < 40) {
         latency = 40;
     }
