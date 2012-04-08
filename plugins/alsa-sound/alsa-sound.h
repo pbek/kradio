@@ -241,6 +241,11 @@ RECEIVERS:
     void           setSoftPlaybackVolume(bool enable, double correction_factor);
     void           setCaptureFormatOverride(bool override_enabled, const SoundFormat &sf);
 
+
+    unsigned       getWorkaroundPlaybackSleepTime() const { return m_workaroundSleepPlaybackMilliSeconds; }
+    unsigned       getWorkaroundCaptureSleepTime()  const { return m_workaroundSleepCaptureMilliSeconds;  }
+    void           setWorkaroundSleepTime(unsigned play, unsigned cap) { m_workaroundSleepPlaybackMilliSeconds = play; m_workaroundSleepCaptureMilliSeconds = cap; }
+
 // pure virtual members of ThreadLoggingClient
 protected:
     IErrorLogClient    *getErrorLogClient();
@@ -295,6 +300,9 @@ protected:
 
     unsigned        m_PlaybackLatency;
     unsigned        m_CaptureLatency;
+
+    unsigned        m_workaroundSleepPlaybackMilliSeconds;
+    unsigned        m_workaroundSleepCaptureMilliSeconds;
 
     QStringList     m_PlaybackChannels,
                     m_CaptureChannels,

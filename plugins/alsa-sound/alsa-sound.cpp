@@ -188,6 +188,9 @@ void AlsaSoundDevice::saveState (KConfigGroup &c) const
 
     c.writeEntry("sound_format_override_enable",           m_CaptureFormatOverrideEnable);
     m_CaptureFormatOverride.saveConfig("sound_format_override_", c);
+
+    c.writeEntry("workaroundSleepPlaybackMilliSeconds", m_workaroundSleepPlaybackMilliSeconds);
+    c.writeEntry("workaroundSleepCaptureMilliSeconds",  m_workaroundSleepCaptureMilliSeconds);
 }
 
 
@@ -234,6 +237,8 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
     m_CaptureFormatOverrideEnable        = c.readEntry("sound_format_override_enable",           false);
     m_CaptureFormatOverride.restoreConfig("sound_format_override_", c);
 
+    m_workaroundSleepPlaybackMilliSeconds = c.readEntry("workaroundSleepPlaybackMilliSeconds",  0);
+    m_workaroundSleepCaptureMilliSeconds  = c.readEntry("workaroundSleepCaptureMilliSeconds",   0);
 
     emit sigUpdateConfig();
 }
@@ -784,7 +789,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
                 m_playbackThread = NULL;
             }
             m_playbackThread = new AlsaThread(this, /*playback_not_capture = */ true, m_hPlayback, m_PlaybackFormat);
-            m_playbackThread->setLatency(qMin(50u, m_PlaybackLatency) * 1000);
+            m_playbackThread->setLatency(m_workaroundSleepPlaybackMilliSeconds * 1000);
             m_playbackThread->start();
             m_PlaybackPollingTimer.start(50); // polling still necessary, however mainly for pushing sound around and getting volume
         } else {
@@ -847,7 +852,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
                 m_captureThread = NULL;
             }
             m_captureThread = new AlsaThread(this, /*playback_not_capture = */ false, m_hCapture, m_CaptureFormat);
-            m_captureThread->setLatency(qMin(50u, m_CaptureLatency) * 1000);
+            m_captureThread->setLatency(m_workaroundSleepCaptureMilliSeconds * 1000);
             m_captureThread->start();
             m_CapturePollingTimer.start(50); // polling still necessary, however mainly for pushing sound around and getting volume
         } else {

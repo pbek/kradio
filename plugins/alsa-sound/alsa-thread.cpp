@@ -29,7 +29,7 @@ AlsaThread::AlsaThread (AlsaSoundDevice *parent, bool playback_not_capture, snd_
 //       m_warning(false),
       m_done(false),
 //       m_waitSemaphore(1),
-      m_latency_us(10000)
+      m_latency_us(0)
 //       m_errwarnModifySemaphore(1)
 {
 //     waitForParent(); // aquire semaphore in order to guarantee that we do not start before the parent wants us to start.
@@ -115,7 +115,9 @@ void AlsaThread::run()
                 // for some reason, the blocking functionality of alsa seems to be suboptimum (causes high CPU load and system calls)
                 // therefore let's wait for one alsa-period
 //                 printf("alsa snd: waiting for %i us\n", m_latency_us);
-                usleep(m_latency_us);
+                if (m_latency_us) {
+                    usleep(m_latency_us);
+                }
             }
         }
         else {
@@ -170,7 +172,9 @@ void AlsaThread::run()
 
                 // for some reason, the blocking functionality of alsa seems to be suboptimum (causes high CPU load and system calls)
                 // therefore let's wait for one alsa-period
-                usleep(m_latency_us);
+                if (m_latency_us) {
+                    usleep(m_latency_us);
+                }
             }
         }
         // happens if there is some error or no new sound data for playing or recording
@@ -189,6 +193,6 @@ void AlsaThread::resetError()
 
 void AlsaThread::setLatency(unsigned int us)
 {
-    m_latency_us = us > 1000 ? us : 1000; // let's define some minimum (1ms), although this 1ms might be far too low for reasonable purposes
+    m_latency_us = us; // > 1000 ? us : 1000; // let's define some minimum (1ms), although this 1ms might be far too low for reasonable purposes
 }
 

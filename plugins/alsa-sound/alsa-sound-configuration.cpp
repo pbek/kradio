@@ -69,7 +69,8 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
     QObject::connect(m_cbEndianess,                 SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
     QObject::connect(m_cbChannels,                  SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
 
-
+    QObject::connect(editPlaybackWorkaroundSleep,   SIGNAL(editingFinished()),        this, SLOT(slotSetDirty()));
+    QObject::connect(editCaptureWorkaroundSleep,    SIGNAL(editingFinished()),        this, SLOT(slotSetDirty()));
 
     QObject::connect(m_comboPlaybackDevice,    SIGNAL(activated(int)),
                      this,                     SLOT  (slotPlaybackDeviceSelected(int)));
@@ -350,7 +351,7 @@ void AlsaSoundConfiguration::slotOK()
         m_SoundDevice->setSoftPlaybackVolume(cbEnableSoftVolume->isChecked(), sbSoftVolumeCorrection->value());
 
 
-
+        m_SoundDevice->setWorkaroundSleepTime(editPlaybackWorkaroundSleep->value(), editCaptureWorkaroundSleep->value());
     }
     resetDirtyFlags();
 }
@@ -421,6 +422,8 @@ void AlsaSoundConfiguration::slotCancel()
     editPlaybackBufferChunkSize->setValue  (m_SoundDevice ?  m_SoundDevice->getPlaybackChunkSize ()/1024 : 16);
     editCaptureBufferChunkSize ->setValue  (m_SoundDevice ?  m_SoundDevice->getCaptureChunkSize  ()/1024 : 16);
 
+    editPlaybackWorkaroundSleep->setValue  (m_SoundDevice ? m_SoundDevice->getWorkaroundPlaybackSleepTime() : 0);
+    editCaptureWorkaroundSleep ->setValue  (m_SoundDevice ? m_SoundDevice->getWorkaroundCaptureSleepTime()  : 0);
     resetDirtyFlags();
 }
 
