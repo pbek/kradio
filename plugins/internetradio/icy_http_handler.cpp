@@ -18,7 +18,6 @@
 
 #include <kio/global.h>
 #include <klocale.h>
-#include <kencodingprober.h>
 #include <kio/slaveconfig.h>
 
 #include <QtCore/QTextCodec>
@@ -38,7 +37,9 @@ IcyHttpHandler::IcyHttpHandler()
     m_ICYMetaInt              (0),
     m_dataRest                (0),
     m_metaRest                (0),
-    m_streamJob               (NULL)
+    m_streamJob               (NULL),
+    m_metaDataEncoding        ("auto"),
+    m_metaDataEncodingCodec   (NULL)
 #ifdef DEBUG_DUMP_ICY_STREAMS
     , m_debugFullStream (NULL)
     , m_debugMetaStream (NULL)
@@ -58,10 +59,13 @@ IcyHttpHandler::~IcyHttpHandler()
 }
 
 
-void IcyHttpHandler::setupStreamJob(const KUrl &url)
+void IcyHttpHandler::setupStreamJob(const KUrl &url, const QString &metaDataEncoding)
 {
     // stop old job if present
     stopStreamDownload();
+
+    m_metaDataEncoding      = metaDataEncoding;
+    m_metaDataEncodingCodec = QTextCodec::codecForName(m_metaDataEncoding.toLocal8Bit());
 
     // start download job
     m_streamUrl = url;
@@ -71,8 +75,11 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url)
 
     m_streamJob = KIO::get(m_streamUrl, KIO::NoReload, KIO::HideProgressInfo);
     if (m_streamJob) {
-        m_streamJob->addMetaData("customHTTPHeader",    "Icy-MetaData:1");
-        m_streamJob->addMetaData("accept",              "Accept: */*");
+        m_streamJob->addMetaData("customHTTPHeader",     "Icy-MetaData:1");
+        m_streamJob->addMetaData("accept",               "*/*");
+        m_streamJob->addMetaData("Encodings",            "*");
+        m_streamJob->addMetaData("Charsets",             "*");
+        m_streamJob->addMetaData("Languages",            "*");
         m_streamJob->addMetaData("UserAgent",            QString("KRadio Internet Radio Plugin, Version %1").arg(KRADIO_VERSION));
 
         m_streamJob->addMetaData("PropagateHttpHeader", "true");
@@ -107,14 +114,14 @@ void IcyHttpHandler::startStreamJob()
 }
 
 
-void IcyHttpHandler::startStreamDownload(KUrl url)
+void IcyHttpHandler::startStreamDownload(KUrl url, const QString &metaDataEncoding)
 {
     // just in case, stop current downloads
     stopStreamDownload();
 
     m_streamUrl = url;
 
-    setupStreamJob(m_streamUrl);
+    setupStreamJob(m_streamUrl, metaDataEncoding);
     startStreamJob();
 
 #ifdef DEBUG_DUMP_ICY_STREAMS
@@ -260,18 +267,20 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
 #endif
 
     if (complete) {
-        QString         metaString = QString::fromUtf8(m_metaData.data());
-        if (metaString.size()) {
-
-            KEncodingProber prober;
-            prober.setProberType(KEncodingProber::WesternEuropean);
-            for (int i = 0; i < 1000; ++i) {
-                prober.feed(m_metaData);
+        if (m_metaData.size()) {
+            QString         tmpString;
+            if (m_metaDataEncoding == "auto" || !m_metaDataEncodingCodec) {
+                tmpString = QString::fromUtf8(m_metaData.data());
+                m_metaDataEncodingProber.feed(m_metaData);
+    //             printf ("confidence = %f\n", prober.confidence());
+                if (m_metaDataEncodingProber.confidence() > 0.8) {
+                    tmpString = QTextCodec::codecForName(m_metaDataEncodingProber.encoding())->toUnicode(m_metaData);
+                }
+            } else {
+                tmpString = m_metaDataEncodingCodec->toUnicode(m_metaData);
             }
-//             printf ("confidence = %f\n", prober.confidence());
-            if (prober.confidence() > 0.2) {
-                metaString = QTextCodec::codecForName(prober.encoding())->toUnicode(m_metaData);
-            }
+            // enforce deep copy
+            QString metaString(tmpString.constData(), tmpString.size());
 
             IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1").arg(metaString));
 
@@ -363,10 +372,10 @@ void IcyHttpHandler::slotStreamData(KIO::Job *job, QByteArray data)
                 }
                 size_t     chunk        = qMin(m_metaRest, (size_t)data.size());
 //                 printf ("    meta chunk: %zi + 1 bytes\n", chunk);
-                QByteArray mdata        = data.left(chunk);
+                QByteArray mdata(data.constData(), chunk);
                            m_metaRest   -= chunk;
                 bool       metaComplete = m_metaRest <= 0;
-                           data         =  data.mid(chunk);
+                           data         = data.mid(chunk);
                 if (metaComplete) {
                    m_dataRest   = m_ICYMetaInt;
                 }

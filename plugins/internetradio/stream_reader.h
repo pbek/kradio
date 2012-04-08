@@ -35,7 +35,7 @@ public:
     StreamReader();
     virtual ~StreamReader();
 
-    virtual void                startStreamDownload(KUrl url) = 0;
+    virtual void                startStreamDownload(KUrl url, const QString &metaDataEncoding) = 0;
     virtual void                stopStreamDownload()          = 0;
 
     virtual KIO::MetaData       getConnectionMetaData() const = 0;

@@ -703,7 +703,7 @@ void InternetRadio::startStreamReader(KUrl stream)
     connect(m_streamReader, SIGNAL(sigUrlChanged(KUrl)),                          this, SLOT(slotInputStreamUrlChanged(KUrl)));
     connect(m_streamReader, SIGNAL(sigConnectionEstablished(KUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(KUrl,KIO::MetaData)));
 
-    m_streamReader->startStreamDownload(stream);
+    m_streamReader->startStreamDownload(stream, m_currentStation.metaDataEncoding());
 }
 
 

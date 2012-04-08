@@ -36,7 +36,7 @@ public:
     MMSXHandler();
     ~MMSXHandler();
 
-    void                        startStreamDownload(KUrl url);
+    void                        startStreamDownload(KUrl url, const QString &metaDataEncoding);
     void                        stopStreamDownload();
 
     KIO::MetaData               getConnectionMetaData() const { return m_connectionMetaData; }

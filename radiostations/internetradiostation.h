@@ -34,8 +34,8 @@
 class KDE_EXPORT InternetRadioStation : public RadioStation  {
 public:
     InternetRadioStation();
-    InternetRadioStation(KUrl const &url, const QString &decoder_class, const QString &playlist_class);
-    InternetRadioStation(const QString &name, const QString &shortName, KUrl const &url, const QString &decoder_class, const QString &playlist_class);
+    InternetRadioStation(KUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
+    InternetRadioStation(const QString &name, const QString &shortName, KUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
     InternetRadioStation(const InternetRadioStation &);
     InternetRadioStation(RegisterStationClass, const QString &classname = QString::null);
     ~InternetRadioStation();
@@ -43,10 +43,12 @@ public:
     const KUrl     &url() const                       { return m_url; }
     void            setUrl(KUrl const &url)           { m_url = url;  }
 
-    const QString  &decoderClass() const               { return m_decoderClass;  }
-    const QString  &playlistClass() const              { return m_playlistClass; }
-    void            setDecoderClass(const QString &c)  { m_decoderClass = c;     }
-    void            setPlaylistClass(const QString &c) { m_playlistClass = c;    }
+    const QString  &decoderClass    () const              { return m_decoderClass;     }
+    const QString  &playlistClass   () const              { return m_playlistClass;    }
+    const QString  &metaDataEncoding() const              { return m_metaDataEncoding; }
+    void            setDecoderClass    (const QString &c) { m_decoderClass = c;        }
+    void            setPlaylistClass   (const QString &c) { m_playlistClass = c;       }
+    void            setMetaDataEncoding(const QString &c) { m_metaDataEncoding = c;    }
 
     virtual QString longName() const;
     virtual QString description() const;
@@ -79,6 +81,7 @@ protected:
     KUrl    m_url;
     QString m_decoderClass;
     QString m_playlistClass;
+    QString m_metaDataEncoding;
 };
 
 #endif

@@ -26,6 +26,7 @@
 #include <kurl.h>
 #include <kio/job.h>
 #include <kio/jobclasses.h>
+#include <kencodingprober.h>
 
 #include "stream_reader.h"
 
@@ -44,7 +45,7 @@ public:
     IcyHttpHandler();
     ~IcyHttpHandler();
 
-    void                        startStreamDownload(KUrl url);
+    void                        startStreamDownload(KUrl url, const QString &metaDataEncoding);
     void                        stopStreamDownload();
 
     KIO::MetaData               getConnectionMetaData() const { return m_connectionMetaData; }
@@ -58,7 +59,7 @@ protected slots:
     void                        slotStreamDone(KJob *job);
 
 protected:
-    void                        setupStreamJob(const KUrl &url);
+    void                        setupStreamJob(const KUrl &url, const QString &metaDataEncoding);
     void                        startStreamJob();
 
     QMap<QString, QString>      splitExtractHttpHeaderKeys(QString httpHeader);
@@ -79,6 +80,10 @@ protected:
     KUrl                        m_streamUrl;
     KIO::TransferJob           *m_streamJob;
     KIO::MetaData               m_connectionMetaData;
+
+    QString                     m_metaDataEncoding;
+    QTextCodec                 *m_metaDataEncodingCodec;
+    KEncodingProber             m_metaDataEncodingProber;
 
 #ifdef DEBUG_DUMP_ICY_STREAMS
     FILE                       *m_debugFullStream;

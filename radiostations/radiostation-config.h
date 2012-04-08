@@ -86,17 +86,22 @@ public:
 
     virtual void setStationData   (const RadioStation &rs);
     virtual void storeStationData (RadioStation &rs);
+    
+protected:
+    void         initCodecList() const;
 
 protected slots:
     virtual void slotUrlChanged(const QString &);
     virtual void slotDecoderClassChanged(int idx);
     virtual void slotPlaylistClassChanged(int idx);
+    virtual void slotMetadataEncodingChanged(int idx);
 
 protected:
 
     KUrlRequester *m_editUrl;
     KComboBox     *m_comboDecoderClass;
     KComboBox     *m_comboPlaylistClass;
+    KComboBox     *m_comboMetaDataEncoding;
 };
 
 

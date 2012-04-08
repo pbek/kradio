@@ -21,9 +21,10 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-const char *StationUrlElement           = "url";
-const char *StationDecoderClassElement  = "decoderclass";
-const char *StationPlaylistClassElement = "playlistclass";
+const char *StationUrlElement              = "url";
+const char *StationDecoderClassElement     = "decoderclass";
+const char *StationPlaylistClassElement    = "playlistclass";
+const char *StationMetaDataEncodingElement = "metadata_encoding";
 
 static InternetRadioStation  emptyInternetRadioStation(registerStationClass);
 
@@ -33,15 +34,17 @@ InternetRadioStation::InternetRadioStation()
     : RadioStation(),
       m_url(),
       m_decoderClass(),
-      m_playlistClass("auto")
+      m_playlistClass("auto"),
+      m_metaDataEncoding("auto")
 {
 }
 
-InternetRadioStation::InternetRadioStation(const KUrl &url, const QString &decoder_class, const QString &playlist_class)
+InternetRadioStation::InternetRadioStation(const KUrl &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding)
     : RadioStation(),
       m_url(url),
       m_decoderClass(decoder_class),
-      m_playlistClass(playlist_class)
+      m_playlistClass(playlist_class),
+      m_metaDataEncoding(meta_data_encoding)
 {
 }
 
@@ -49,11 +52,13 @@ InternetRadioStation::InternetRadioStation(const QString &name,
                                            const QString &shortName,
                                            const KUrl    &url,
                                            const QString &decoder_class,
-                                           const QString &playlist_class)
+                                           const QString &playlist_class,
+                                           const QString &meta_data_encoding)
     : RadioStation(name, shortName),
       m_url(url),
       m_decoderClass(decoder_class),
-      m_playlistClass(playlist_class)
+      m_playlistClass(playlist_class),
+      m_metaDataEncoding(meta_data_encoding)
 {
 }
 
@@ -61,7 +66,8 @@ InternetRadioStation::InternetRadioStation(const InternetRadioStation &s)
     : RadioStation(s),
       m_url(s.m_url),
       m_decoderClass (s.m_decoderClass),
-      m_playlistClass(s.m_playlistClass)
+      m_playlistClass(s.m_playlistClass),
+      m_metaDataEncoding(s.m_metaDataEncoding)
 {
 }
 
@@ -70,7 +76,8 @@ InternetRadioStation::InternetRadioStation(RegisterStationClass, const QString &
     : RadioStation(registerStationClass, !classname.isNull() ? classname : getClassName()),
       m_url(),
       m_decoderClass(),
-      m_playlistClass("auto")
+      m_playlistClass("auto"),
+      m_metaDataEncoding("auto")
 {
 }
 
@@ -117,9 +124,14 @@ int InternetRadioStation::compare(const RadioStation &_s) const
     int url_cmp = thisurl.compare(thaturl);
     int dec_cmp = m_decoderClass.compare (s->m_decoderClass);
     int pls_cmp = m_playlistClass.compare(s->m_playlistClass);
+    int mde_cmp = m_metaDataEncoding.compare(s->m_metaDataEncoding);
     if (url_cmp == 0) {
         if (pls_cmp == 0) {
-            return dec_cmp;
+            if (dec_cmp == 0) {
+                return mde_cmp;
+            } else {
+                return dec_cmp;
+            }
         } else {
             return pls_cmp;
         }
@@ -162,11 +174,14 @@ bool InternetRadioStation::setProperty(const QString &pn, const QString &val)
         m_url  = val;
         retval = true;
     } else if (pn == StationDecoderClassElement) {
-        m_decoderClass = val;
-        retval         = true;
+        m_decoderClass     = val;
+        retval             = true;
     } else if (pn == StationPlaylistClassElement) {
-        m_playlistClass = val;
-        retval          = true;
+        m_playlistClass    = val;
+        retval             = true;
+    } else if (pn == StationMetaDataEncodingElement) {
+        m_metaDataEncoding = val;
+        retval             = true;
     } else {
         retval = RadioStation::setProperty(pn, val);
     }
@@ -181,6 +196,8 @@ QString InternetRadioStation::getProperty(const QString &pn) const
         return m_decoderClass;
     } else if (pn == StationPlaylistClassElement) {
         return m_playlistClass;
+    } else if (pn == StationMetaDataEncodingElement) {
+        return m_metaDataEncoding;
     } else {
         return RadioStation::getProperty(pn);
     }
@@ -192,6 +209,7 @@ QStringList InternetRadioStation::getPropertyNames() const
     l.push_back(StationUrlElement);
     l.push_back(StationDecoderClassElement);
     l.push_back(StationPlaylistClassElement);
+    l.push_back(StationMetaDataEncodingElement);
     return l;
 }
 

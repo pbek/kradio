@@ -15,6 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QtCore/QTextCodec>
 #include <QtGui/QLabel>
 #include <QtGui/QSpinBox>
 #include <QtGui/QLayout>
@@ -153,15 +154,23 @@ InternetRadioStationConfig::InternetRadioStationConfig (QWidget *parent)
     m_comboPlaylistClass->addItem(i18n("PLS"),                              QVariant("pls"));
 
 
+    vl->addWidget (new QLabel(i18n("Meta-Data Stream Encoding:"), this));
+    m_comboMetaDataEncoding = new KComboBox(this);
+    vl->addWidget (m_comboMetaDataEncoding);
 
-    connect (m_editUrl,            SIGNAL(textChanged(const QString& )), this, SLOT(slotUrlChanged(const QString &)));
-    connect (m_comboDecoderClass,  SIGNAL(currentIndexChanged(int)),     this, SLOT(slotDecoderClassChanged(int)));
-    connect (m_comboPlaylistClass, SIGNAL(currentIndexChanged(int)),     this, SLOT(slotPlaylistClassChanged(int)));
+    initCodecList();
+
+
+    connect (m_editUrl,               SIGNAL(textChanged(const QString& )), this, SLOT(slotUrlChanged(const QString &)));
+    connect (m_comboDecoderClass,     SIGNAL(currentIndexChanged(int)),     this, SLOT(slotDecoderClassChanged(int)));
+    connect (m_comboPlaylistClass,    SIGNAL(currentIndexChanged(int)),     this, SLOT(slotPlaylistClassChanged(int)));
+    connect (m_comboMetaDataEncoding, SIGNAL(currentIndexChanged(int)),     this, SLOT(slotMetadataEncodingChanged(int)));
 }
 
 InternetRadioStationConfig::~InternetRadioStationConfig()
 {
 }
+
 
 void InternetRadioStationConfig::setStationData   (const RadioStation &x)
 {
@@ -176,16 +185,22 @@ void InternetRadioStationConfig::setStationData   (const RadioStation &x)
         if(idx >= 0) {
             m_comboPlaylistClass->setCurrentIndex(idx);
         }
+        idx = m_comboMetaDataEncoding->findData(QVariant(rs->metaDataEncoding()));
+        if(idx >= 0) {
+            m_comboMetaDataEncoding->setCurrentIndex(idx);
+        }
     }
 }
+
 
 void InternetRadioStationConfig::storeStationData (RadioStation &x)
 {
     InternetRadioStation *rs = dynamic_cast<InternetRadioStation*>(&x);
     if (rs) {
         rs->setUrl(m_editUrl->url());
-        rs->setDecoderClass(m_comboDecoderClass->itemData(m_comboDecoderClass->currentIndex()).value<QString>());
-        rs->setPlaylistClass(m_comboPlaylistClass->itemData(m_comboPlaylistClass->currentIndex()).value<QString>());
+        rs->setDecoderClass    (m_comboDecoderClass    ->itemData(m_comboDecoderClass    ->currentIndex()).value<QString>());
+        rs->setPlaylistClass   (m_comboPlaylistClass   ->itemData(m_comboPlaylistClass   ->currentIndex()).value<QString>());
+        rs->setMetaDataEncoding(m_comboMetaDataEncoding->itemData(m_comboMetaDataEncoding->currentIndex()).value<QString>());
     }
 }
 
@@ -205,7 +220,27 @@ void InternetRadioStationConfig::slotPlaylistClassChanged(int /*idx*/)
 }
 
 
+void InternetRadioStationConfig::slotMetadataEncodingChanged(int /*idx*/)
+{
+    emit changed(this);
+}
 
+
+void InternetRadioStationConfig::initCodecList() const
+{
+    QMap<QString, QString> codecs;
+
+    foreach (const QByteArray &_name, QTextCodec::availableCodecs()) {
+        QString name = _name;
+        codecs.insert(name.toUpper(), name);
+    }
+    QStringList sortedKeys = codecs.keys();
+    sortedKeys.sort();
+    m_comboMetaDataEncoding->addItem(i18n("auto"), QVariant("auto"));
+    foreach (QString key, sortedKeys) {
+        m_comboMetaDataEncoding->addItem(codecs[key], QVariant(key));
+    }
+}
 
 
 #include "radiostation-config.moc"
