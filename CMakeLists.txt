@@ -26,6 +26,20 @@ ENDIF(Subversion_FOUND)
 
 MESSAGE(STATUS "Compiling KRadio4-${KRADIO_VERSION}")
 
+
+
+########################################################################
+#       Check if libboost is available                                 #
+########################################################################
+
+
+find_package( Boost 1.20 REQUIRED)
+# find_package( Boost 1.xx COMPONENTS regex REQUIRED)
+
+
+
+########################################################################
+
 ADD_DEFINITIONS (
     -DKRADIO_VERSION="\\"${KRADIO_VERSION}\\""
     ${KDE4_DEFINITIONS}
@@ -36,9 +50,14 @@ IF(WITH_KRADIO_FIXMES)
     ADD_DEFINITIONS( -DKRADIO_ENABLE_FIXMES )
 ENDIF(WITH_KRADIO_FIXMES)
 
+LINK_DIRECTORIES(
+    ${Boost_LIBRARY_DIRS}
+)
+
 INCLUDE_DIRECTORIES(
     ${KDE4_INCLUDE_DIR}
     ${QT_INCLUDE_DIR}
+    ${Boost_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/interfaces
@@ -112,6 +131,7 @@ TARGET_LINK_LIBRARIES(kradio4
   ${KDE4_KPARTS_LIBS}
   ${QT_QT3SUPPORT_LIBRARY}
   ${KDE4_KDE3SUPPORT_LIBRARY}
+  ${Boost_LIBRARIES}
 )
 
 INSTALL(TARGETS kradio4 ${INSTALL_TARGETS_DEFAULT_ARGS})
