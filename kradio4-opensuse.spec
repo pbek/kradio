@@ -16,7 +16,7 @@
 #
 Name:          kradio4
 Summary:       AM/FM/INternet Radio Application for KDE 4.x
-Version:       4.0.4
+Version:       4.0.5
 Release:       1.opensuse
 Group:         Hardware/Radio
 License:       GPL-2.0+
@@ -29,8 +29,8 @@ BuildRequires: libvorbis-devel
 BuildRequires: lirc-devel
 BuildRequires: libffmpeg-devel
 BuildRequires: libmms-devel
-Provides:      kde4-kradio = 4.0.4
-Obsoletes:     kde4-kradio < 4.0.4
+Provides:      kde4-kradio = 4.0.5
+Obsoletes:     kde4-kradio < 4.0.5
 BuildRoot:     %{_tmppath}/%{name}-%{version}-build
 %kde4_runtime_requires
 Vendor:        Martin Witte <emw-kradio@nocabal.de>

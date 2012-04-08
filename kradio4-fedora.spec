@@ -1,6 +1,6 @@
 %bcond_without ffmpeg
 
-Version:   4.0.4
+Version:   4.0.5
 %define    rel2 release
 %define    rel %{version}-%{rel2}
 Name:      kradio4
