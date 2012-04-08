@@ -540,9 +540,9 @@ inline void writeSample(srcT v, char *&samplePtr, int var_bits = 0, int var_samp
 
 #define  resolveVariableEndianessSignednessAndBits(function,destT,bits,samplesize,is_signed,endianess,do_scale,...)     \
     if (endianess == LITTLE_ENDIAN) {                                                                                   \
-        resolveVariableSignednessAndBits(function,destT,bits,samplesize,is_signed,do_scale,LITTLE_ENDIAN,__VA_ARGS__)   \
+        resolveVariableSignednessAndBits(function,destT,bits,samplesize,is_signed,LITTLE_ENDIAN,do_scale,__VA_ARGS__)   \
     } else {                                                                                                            \
-        resolveVariableSignednessAndBits(function,destT,bits,samplesize,is_signed,do_scale,BIG_ENDIAN,   __VA_ARGS__)   \
+        resolveVariableSignednessAndBits(function,destT,bits,samplesize,is_signed,BIG_ENDIAN,   do_scale,__VA_ARGS__)   \
     }
 
 
@@ -667,132 +667,132 @@ void SoundFormat::minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames,
 
 
 
-int test(const char *&samplePtr)
-{
-    return readSample<int, short, 16, LITTLE_ENDIAN, false>(samplePtr);
-}
-
-
-int test2(const char *&samplePtr)
-{
-    return readSample<int, short, 16, BIG_ENDIAN, false>(samplePtr);
-}
-
-
-short test3(short tmp)
-{
-    return bswap<short, 16>()(tmp);
-}
-
-
-int test4(int tmp)
-{
-    return bswap<int, 32>()(tmp);
-}
-
-
-long long test5(long long tmp)
-{
-    return bswap<long long, 64>()(tmp);
-}
-
-
-long long test5(const char *&samplePtr, int bits, int samplesize, bool is_signed)
-{
-    resolveVariableSignednessAndBits(return ::readSample,long long,bits,samplesize,is_signed,LITTLE_ENDIAN,false,samplePtr);
-    return 0;
-}
-
-
-long long test6(const char *&samplePtr)
-{
-    return readSample<long long, unsigned int, 24, LITTLE_ENDIAN, false>(samplePtr);
-}
-
-long long test6a(const char *&samplePtr)
-{
-    return readSample<long long, unsigned int, 24, LITTLE_ENDIAN, true>(samplePtr);
-}
-
-void test7(const char *&samplePtr, long long *dst, size_t n_samples)
-{
-    convertSamplesToTypeInterleaved<long long, int, 24, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
-}
-
-void test7a(const char *&samplePtr, long long *dst, size_t n_samples)
-{
-    convertSamplesToTypeInterleaved<long long, int, 24, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
-}
-
-void test8(const char *&samplePtr, long long *dst, size_t n_samples)
-{
-    convertSamplesToTypeInterleaved<long long, short, 16, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
-}
-
-void test8a(const char *&samplePtr, long long *dst, size_t n_samples)
-{
-    convertSamplesToTypeInterleaved<long long, short, 16, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
-}
-
-
-void test9(const char *&samplePtr, double *dst, size_t n_samples)
-{
-    convertSamplesToTypeInterleaved<double, short, 16, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
-}
-
-void test9a(const char *&samplePtr, double *dst, size_t n_samples)
-{
-    convertSamplesToTypeInterleaved<double, short, 16, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
-}
-
-
-void test10(char *&samplePtr, const double *dst, size_t n_samples)
-{
-    convertTypeInterleavedToSamples<double, short, 16, LITTLE_ENDIAN, false>(dst, samplePtr, n_samples);
-}
-
-void test10a(char *&samplePtr, const double *dst, size_t n_samples)
-{
-    convertTypeInterleavedToSamples<double, short, 16, LITTLE_ENDIAN, true>(dst, samplePtr, n_samples);
-}
-
-void test10b(char *&samplePtr, const long long *src, size_t n_samples)
-{
-    convertTypeInterleavedToSamples<long long, short, 16, LITTLE_ENDIAN, false>(src, samplePtr, n_samples);
-}
-
-void test10c(char *&samplePtr, const long long *src, size_t n_samples)
-{
-    convertTypeInterleavedToSamples<long long, short, 16, LITTLE_ENDIAN, true>(src, samplePtr, n_samples);
-}
-
-void test10d(char *&samplePtr, const long long *src, size_t n_samples)
-{
-    convertTypeInterleavedToSamples<long long, int, 32, BIG_ENDIAN, false>(src, samplePtr, n_samples);
-}
-
-void test10e(char *&samplePtr, const long long *src, size_t n_samples)
-{
-    convertTypeInterleavedToSamples<long long, int, 32, BIG_ENDIAN, true>(src, samplePtr, n_samples);
-}
-
-void test11a(char *&samplePtr, long long src)
-{
-    writeSample<long long, int, 32, LITTLE_ENDIAN, false>(src, samplePtr);
-}
-
-void test11b(char *&samplePtr, long long src)
-{
-    writeSample<long long, int, 32, LITTLE_ENDIAN, true>(src, samplePtr);
-}
-
-void test11c(char *&samplePtr, long long src)
-{
-    writeSample<long long, int, 32, BIG_ENDIAN, false>(src, samplePtr);
-}
-
-void test11d(char *&samplePtr, long long src)
-{
-    writeSample<long long, int, 32, BIG_ENDIAN, true>(src, samplePtr);
-}
-
+// int test(const char *&samplePtr)
+// {
+//     return readSample<int, short, 16, LITTLE_ENDIAN, false>(samplePtr);
+// }
+// 
+// 
+// int test2(const char *&samplePtr)
+// {
+//     return readSample<int, short, 16, BIG_ENDIAN, false>(samplePtr);
+// }
+// 
+// 
+// short test3(short tmp)
+// {
+//     return bswap<short, 16>()(tmp);
+// }
+// 
+// 
+// int test4(int tmp)
+// {
+//     return bswap<int, 32>()(tmp);
+// }
+// 
+// 
+// long long test5(long long tmp)
+// {
+//     return bswap<long long, 64>()(tmp);
+// }
+// 
+// 
+// long long test5(const char *&samplePtr, int bits, int samplesize, bool is_signed)
+// {
+//     resolveVariableSignednessAndBits(return ::readSample,long long,bits,samplesize,is_signed,LITTLE_ENDIAN,false,samplePtr);
+//     return 0;
+// }
+// 
+// 
+// long long test6(const char *&samplePtr)
+// {
+//     return readSample<long long, unsigned int, 24, LITTLE_ENDIAN, false>(samplePtr);
+// }
+// 
+// long long test6a(const char *&samplePtr)
+// {
+//     return readSample<long long, unsigned int, 24, LITTLE_ENDIAN, true>(samplePtr);
+// }
+// 
+// void test7(const char *&samplePtr, long long *dst, size_t n_samples)
+// {
+//     convertSamplesToTypeInterleaved<long long, int, 24, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
+// }
+// 
+// void test7a(const char *&samplePtr, long long *dst, size_t n_samples)
+// {
+//     convertSamplesToTypeInterleaved<long long, int, 24, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
+// }
+// 
+// void test8(const char *&samplePtr, long long *dst, size_t n_samples)
+// {
+//     convertSamplesToTypeInterleaved<long long, short, 16, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
+// }
+// 
+// void test8a(const char *&samplePtr, long long *dst, size_t n_samples)
+// {
+//     convertSamplesToTypeInterleaved<long long, short, 16, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
+// }
+// 
+// 
+// void test9(const char *&samplePtr, double *dst, size_t n_samples)
+// {
+//     convertSamplesToTypeInterleaved<double, short, 16, LITTLE_ENDIAN, false>(samplePtr, dst, n_samples);
+// }
+// 
+// void test9a(const char *&samplePtr, double *dst, size_t n_samples)
+// {
+//     convertSamplesToTypeInterleaved<double, short, 16, LITTLE_ENDIAN, true>(samplePtr, dst, n_samples);
+// }
+// 
+// 
+// void test10(char *&samplePtr, const double *dst, size_t n_samples)
+// {
+//     convertTypeInterleavedToSamples<double, short, 16, LITTLE_ENDIAN, false>(dst, samplePtr, n_samples);
+// }
+// 
+// void test10a(char *&samplePtr, const double *dst, size_t n_samples)
+// {
+//     convertTypeInterleavedToSamples<double, short, 16, LITTLE_ENDIAN, true>(dst, samplePtr, n_samples);
+// }
+// 
+// void test10b(char *&samplePtr, const long long *src, size_t n_samples)
+// {
+//     convertTypeInterleavedToSamples<long long, short, 16, LITTLE_ENDIAN, false>(src, samplePtr, n_samples);
+// }
+// 
+// void test10c(char *&samplePtr, const long long *src, size_t n_samples)
+// {
+//     convertTypeInterleavedToSamples<long long, short, 16, LITTLE_ENDIAN, true>(src, samplePtr, n_samples);
+// }
+// 
+// void test10d(char *&samplePtr, const long long *src, size_t n_samples)
+// {
+//     convertTypeInterleavedToSamples<long long, int, 32, BIG_ENDIAN, false>(src, samplePtr, n_samples);
+// }
+// 
+// void test10e(char *&samplePtr, const long long *src, size_t n_samples)
+// {
+//     convertTypeInterleavedToSamples<long long, int, 32, BIG_ENDIAN, true>(src, samplePtr, n_samples);
+// }
+// 
+// void test11a(char *&samplePtr, long long src)
+// {
+//     writeSample<long long, int, 32, LITTLE_ENDIAN, false>(src, samplePtr);
+// }
+// 
+// void test11b(char *&samplePtr, long long src)
+// {
+//     writeSample<long long, int, 32, LITTLE_ENDIAN, true>(src, samplePtr);
+// }
+// 
+// void test11c(char *&samplePtr, long long src)
+// {
+//     writeSample<long long, int, 32, BIG_ENDIAN, false>(src, samplePtr);
+// }
+// 
+// void test11d(char *&samplePtr, long long src)
+// {
+//     writeSample<long long, int, 32, BIG_ENDIAN, true>(src, samplePtr);
+// }
+// 
