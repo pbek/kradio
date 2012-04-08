@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 19:38+0100\n"
+"POT-Creation-Date: 2012-04-08 13:12+0200\n"
 "PO-Revision-Date: 2011-02-06 05:16+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: timecontrol-configuration-ui.ui:19
 #. i18n: ectx: property (text), widget (QLabel, labelSleep)
@@ -145,55 +145,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: timecontrol-configuration.cpp:60
+#: timecontrol-configuration.cpp:63
 msgid "Start Playing"
 msgstr "Oynatmayı başlat"
 
-#: timecontrol-configuration.cpp:61
+#: timecontrol-configuration.cpp:64
 msgid "Stop Playing"
 msgstr "Oynatmayı Durdur"
 
-#: timecontrol-configuration.cpp:62
+#: timecontrol-configuration.cpp:65
 msgid "Start Recording"
 msgstr "Kaydı Başlat"
 
-#: timecontrol-configuration.cpp:63
+#: timecontrol-configuration.cpp:66
 msgid "Stop Recording"
 msgstr "Kaydı Durdur"
 
-#: timecontrol-configuration.cpp:66
+#: timecontrol-configuration.cpp:69
 msgid "unchanged"
 msgstr "değiştirilmemiş"
 
-#: timecontrol-configuration.cpp:68
+#: timecontrol-configuration.cpp:71
 msgid "Monday"
 msgstr "Pazartesi"
 
-#: timecontrol-configuration.cpp:69
+#: timecontrol-configuration.cpp:72
 msgid "Tuesday"
 msgstr "Salı"
 
-#: timecontrol-configuration.cpp:70
+#: timecontrol-configuration.cpp:73
 msgid "Wednesday"
 msgstr "Çarşamba"
 
-#: timecontrol-configuration.cpp:71
+#: timecontrol-configuration.cpp:74
 msgid "Thursday"
 msgstr "Perşembe"
 
-#: timecontrol-configuration.cpp:72
+#: timecontrol-configuration.cpp:75
 msgid "Friday"
 msgstr "Cuma"
 
-#: timecontrol-configuration.cpp:73
+#: timecontrol-configuration.cpp:76
 msgid "Saturday"
 msgstr "Cumartesi"
 
-#: timecontrol-configuration.cpp:74
+#: timecontrol-configuration.cpp:77
 msgid "Sunday"
 msgstr "Pazar"
 
-#: timecontrol-configuration.cpp:203
+#: timecontrol-configuration.cpp:214
 msgid "<don't change>"
 msgstr "<umursamıyorum>"
 
@@ -208,5 +208,3 @@ msgstr "Zaman Kontrol Eklentisi"
 #: timecontrol.cpp:283
 msgid "Setup Alarms"
 msgstr ""
-
-

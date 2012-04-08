@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_timecontrol\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2012-04-08 13:12+0200\n"
 "PO-Revision-Date: 2010-09-27 08:52+0200\n"
 "Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -151,25 +151,20 @@ msgstr ""
 "style:italic;\">%i</span><span style=\" font-style:italic;\">: Index "
 "stanice, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
 "span><span style=\" font-style:italic;\">: Rok (čtyřmístné), </span><span "
-"style="
-"\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
-"italic;\">: Měsíc (dvoumístné), </span><span style=\" font-weight:600; "
-"font-style:"
-"italic;\">%d</span><span style=\" font-style:italic;\">: Den (dvoumístné), </"
-"span><span style=\" font-weight:600; font-style:italic;\">%B</span><span "
-"style=\" font-style:italic;\">: Název měsíce, </span><span style=\" font-"
-"weight:600; font-style:italic;\">%A</span><span style=\" font-style:italic;"
-"\"> Název dne, </span><span style=\" font-weight:600; font-style:italic;\">"
-"%H</span><span style=\" font-style:italic;\">: Hodina "
-"(dvoumístné), </span><span "
-"style=\" font-weight:600; font-style:italic;\">%M</span><span style=\" font-"
-"style:italic;\">: Minuta (dvoumístné), </span><span style=\" "
-"font-weight:600; "
-"font-style:italic;\">%S</span><span style=\" font-style:italic;\"> Sekunda "
-"(dvoumístné),</span><span style=\" font-weight:600; font-style:italic;\"> "
-"%%</"
-"span><span style=\" font-style:italic;\">: Náhrada za %)</span></p></body></"
-"html>"
+"style=\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-"
+"style:italic;\">: Měsíc (dvoumístné), </span><span style=\" font-weight:600; "
+"font-style:italic;\">%d</span><span style=\" font-style:italic;\">: Den "
+"(dvoumístné), </span><span style=\" font-weight:600; font-style:italic;\">"
+"%B</span><span style=\" font-style:italic;\">: Název měsíce, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%A</span><span style=\" font-"
+"style:italic;\"> Název dne, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%H</span><span style=\" font-style:italic;\">: Hodina "
+"(dvoumístné), </span><span style=\" font-weight:600; font-style:italic;\">"
+"%M</span><span style=\" font-style:italic;\">: Minuta (dvoumístné), </"
+"span><span style=\" font-weight:600; font-style:italic;\">%S</span><span "
+"style=\" font-style:italic;\"> Sekunda (dvoumístné),</span><span style=\" "
+"font-weight:600; font-style:italic;\"> %%</span><span style=\" font-style:"
+"italic;\">: Náhrada za %)</span></p></body></html>"
 
 #: rc.cpp:50
 msgctxt "NAME OF TRANSLATORS"
@@ -181,55 +176,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "fripohled.blogspot.com"
 
-#: timecontrol-configuration.cpp:60
+#: timecontrol-configuration.cpp:63
 msgid "Start Playing"
 msgstr "Zapnout rozhlas"
 
-#: timecontrol-configuration.cpp:61
+#: timecontrol-configuration.cpp:64
 msgid "Stop Playing"
 msgstr "Vypnout rozhlas"
 
-#: timecontrol-configuration.cpp:62
+#: timecontrol-configuration.cpp:65
 msgid "Start Recording"
 msgstr "Začít s nahráváním"
 
-#: timecontrol-configuration.cpp:63
+#: timecontrol-configuration.cpp:66
 msgid "Stop Recording"
 msgstr "Zastavit nahrávání"
 
-#: timecontrol-configuration.cpp:66
+#: timecontrol-configuration.cpp:69
 msgid "unchanged"
 msgstr "nezměněno"
 
-#: timecontrol-configuration.cpp:68
+#: timecontrol-configuration.cpp:71
 msgid "Monday"
 msgstr "Pondělí"
 
-#: timecontrol-configuration.cpp:69
+#: timecontrol-configuration.cpp:72
 msgid "Tuesday"
 msgstr "Úterý"
 
-#: timecontrol-configuration.cpp:70
+#: timecontrol-configuration.cpp:73
 msgid "Wednesday"
 msgstr "Středa"
 
-#: timecontrol-configuration.cpp:71
+#: timecontrol-configuration.cpp:74
 msgid "Thursday"
 msgstr "Čtvrtek"
 
-#: timecontrol-configuration.cpp:72
+#: timecontrol-configuration.cpp:75
 msgid "Friday"
 msgstr "Pátek"
 
-#: timecontrol-configuration.cpp:73
+#: timecontrol-configuration.cpp:76
 msgid "Saturday"
 msgstr "Sobota"
 
-#: timecontrol-configuration.cpp:74
+#: timecontrol-configuration.cpp:77
 msgid "Sunday"
 msgstr "Neděle"
 
-#: timecontrol-configuration.cpp:203
+#: timecontrol-configuration.cpp:214
 msgid "<don't change>"
 msgstr "<neměň>"
 
@@ -244,4 +239,3 @@ msgstr "Přídavný modul řízení času"
 #: timecontrol.cpp:283
 msgid "Setup Alarms"
 msgstr "Nastavit budíky"
-

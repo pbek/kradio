@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2012-04-08 13:12+0200\n"
 "PO-Revision-Date: 2009-04-20 20:50+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -146,55 +146,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
 
-#: timecontrol-configuration.cpp:60
+#: timecontrol-configuration.cpp:63
 msgid "Start Playing"
 msgstr "Начать воспроизведение"
 
-#: timecontrol-configuration.cpp:61
+#: timecontrol-configuration.cpp:64
 msgid "Stop Playing"
 msgstr "Остановить воспроизведение"
 
-#: timecontrol-configuration.cpp:62
+#: timecontrol-configuration.cpp:65
 msgid "Start Recording"
 msgstr "Начать запись"
 
-#: timecontrol-configuration.cpp:63
+#: timecontrol-configuration.cpp:66
 msgid "Stop Recording"
 msgstr "Остановить запись"
 
-#: timecontrol-configuration.cpp:66
+#: timecontrol-configuration.cpp:69
 msgid "unchanged"
 msgstr "<не менять>"
 
-#: timecontrol-configuration.cpp:68
+#: timecontrol-configuration.cpp:71
 msgid "Monday"
 msgstr "Понедельник"
 
-#: timecontrol-configuration.cpp:69
+#: timecontrol-configuration.cpp:72
 msgid "Tuesday"
 msgstr "Вторник"
 
-#: timecontrol-configuration.cpp:70
+#: timecontrol-configuration.cpp:73
 msgid "Wednesday"
 msgstr "Среда"
 
-#: timecontrol-configuration.cpp:71
+#: timecontrol-configuration.cpp:74
 msgid "Thursday"
 msgstr "Четверг"
 
-#: timecontrol-configuration.cpp:72
+#: timecontrol-configuration.cpp:75
 msgid "Friday"
 msgstr "Пятница"
 
-#: timecontrol-configuration.cpp:73
+#: timecontrol-configuration.cpp:76
 msgid "Saturday"
 msgstr "Суббота"
 
-#: timecontrol-configuration.cpp:74
+#: timecontrol-configuration.cpp:77
 msgid "Sunday"
 msgstr "Воскресенье"
 
-#: timecontrol-configuration.cpp:203
+#: timecontrol-configuration.cpp:214
 msgid "<don't change>"
 msgstr "<не менять>"
 

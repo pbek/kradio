@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-11 15:31+0100\n"
+"POT-Creation-Date: 2012-04-08 13:12+0200\n"
 "PO-Revision-Date: 2011-01-11 16:00+0200\n"
 "Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
 "Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
@@ -141,29 +141,29 @@ msgstr ""
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Struttura del nome del file "
-"di registrazione:</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Struttura del nome del "
+"file di registrazione:</p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
-"style:italic;\">: nome della stazione, </span><span style=\" font-weight:600; font-"
-"style:italic;\">%i</span><span style=\" font-style:italic;\">: indice della "
-"stazione, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
-"span><span style=\" font-style:italic;\">: anno a 4 cifre, </span><span style="
-"\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
-"italic;\">: mese a 2 cifre, </span><span style=\" font-weight:600; font-style:"
-"italic;\">%d</span><span style=\" font-style:italic;\">: giorno a 2 cifre, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%B</span><span "
-"style=\" font-style:italic;\">: nome del mese, </span><span style=\" font-"
-"weight:600; font-style:italic;\">%A</span><span style=\" font-style:italic;"
-"\"> nome del giorno, </span><span style=\" font-weight:600; font-style:italic;\">"
-"%H</span><span style=\" font-style:italic;\">: ore a 2 cifre, </span><span "
-"style=\" font-weight:600; font-style:italic;\">%M</span><span style=\" font-"
-"style:italic;\">: minuti a 2 cifre, </span><span style=\" font-weight:600; "
-"font-style:italic;\">%S</span><span style=\" font-style:italic;\"> secondi "
-"a 2 cifre,</span><span style=\" font-weight:600; font-style:italic;\"> %%</"
-"span><span style=\" font-style:italic;\">: letterale %)</span></p></body></"
-"html>"
+"style:italic;\">: nome della stazione, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%i</span><span style=\" font-style:italic;"
+"\">: indice della stazione, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%Y</span><span style=\" font-style:italic;\">: anno a 4 "
+"cifre, </span><span style=\" font-weight:600; font-style:italic;\">%m</"
+"span><span style=\" font-style:italic;\">: mese a 2 cifre, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%d</span><span style=\" font-"
+"style:italic;\">: giorno a 2 cifre, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%B</span><span style=\" font-style:italic;\">: nome del "
+"mese, </span><span style=\" font-weight:600; font-style:italic;\">%A</"
+"span><span style=\" font-style:italic;\"> nome del giorno, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%H</span><span style=\" font-"
+"style:italic;\">: ore a 2 cifre, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%M</span><span style=\" font-style:italic;\">: minuti a 2 "
+"cifre, </span><span style=\" font-weight:600; font-style:italic;\">%S</"
+"span><span style=\" font-style:italic;\"> secondi a 2 cifre,</span><span "
+"style=\" font-weight:600; font-style:italic;\"> %%</span><span style=\" font-"
+"style:italic;\">: letterale %)</span></p></body></html>"
 
 #: rc.cpp:50
 msgctxt "NAME OF TRANSLATORS"
@@ -175,55 +175,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "giovanni@archlinux.org"
 
-#: timecontrol-configuration.cpp:60
+#: timecontrol-configuration.cpp:63
 msgid "Start Playing"
 msgstr "Avvia il playback"
 
-#: timecontrol-configuration.cpp:61
+#: timecontrol-configuration.cpp:64
 msgid "Stop Playing"
 msgstr "Ferma il playback"
 
-#: timecontrol-configuration.cpp:62
+#: timecontrol-configuration.cpp:65
 msgid "Start Recording"
 msgstr "Avvia la registrazione"
 
-#: timecontrol-configuration.cpp:63
+#: timecontrol-configuration.cpp:66
 msgid "Stop Recording"
 msgstr "Ferma la registrazione"
 
-#: timecontrol-configuration.cpp:66
+#: timecontrol-configuration.cpp:69
 msgid "unchanged"
 msgstr "invariato"
 
-#: timecontrol-configuration.cpp:68
+#: timecontrol-configuration.cpp:71
 msgid "Monday"
 msgstr "Lunedi"
 
-#: timecontrol-configuration.cpp:69
+#: timecontrol-configuration.cpp:72
 msgid "Tuesday"
 msgstr "Martedi"
 
-#: timecontrol-configuration.cpp:70
+#: timecontrol-configuration.cpp:73
 msgid "Wednesday"
 msgstr "Mercoledi"
 
-#: timecontrol-configuration.cpp:71
+#: timecontrol-configuration.cpp:74
 msgid "Thursday"
 msgstr "Giovedi"
 
-#: timecontrol-configuration.cpp:72
+#: timecontrol-configuration.cpp:75
 msgid "Friday"
 msgstr "Venerdi"
 
-#: timecontrol-configuration.cpp:73
+#: timecontrol-configuration.cpp:76
 msgid "Saturday"
 msgstr "Sabato"
 
-#: timecontrol-configuration.cpp:74
+#: timecontrol-configuration.cpp:77
 msgid "Sunday"
 msgstr "Domenica"
 
-#: timecontrol-configuration.cpp:203
+#: timecontrol-configuration.cpp:214
 msgid "<don't change>"
 msgstr "<non modificare>"
 

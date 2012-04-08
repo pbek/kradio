@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-04-08 13:12+0200\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -146,8 +146,8 @@ msgstr ""
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
-"style:italic;\">: nombre emisora, </span><span style=\" font-weight:600; font-"
-"style:italic;\">%i</span><span style=\" font-style:italic;\">: station "
+"style:italic;\">: nombre emisora, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%i</span><span style=\" font-style:italic;\">: station "
 "index, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
 "span><span style=\" font-style:italic;\">: 4 dígitos año, </span><span style="
 "\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
@@ -175,55 +175,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahumada@gmail.com"
 
-#: timecontrol-configuration.cpp:60
+#: timecontrol-configuration.cpp:63
 msgid "Start Playing"
 msgstr "Comenzar Reproducción"
 
-#: timecontrol-configuration.cpp:61
+#: timecontrol-configuration.cpp:64
 msgid "Stop Playing"
 msgstr "Detener Reproducción"
 
-#: timecontrol-configuration.cpp:62
+#: timecontrol-configuration.cpp:65
 msgid "Start Recording"
 msgstr "Comenzar Grabación"
 
-#: timecontrol-configuration.cpp:63
+#: timecontrol-configuration.cpp:66
 msgid "Stop Recording"
 msgstr "Detener Grabación"
 
-#: timecontrol-configuration.cpp:66
+#: timecontrol-configuration.cpp:69
 msgid "unchanged"
 msgstr "sin cambios"
 
-#: timecontrol-configuration.cpp:68
+#: timecontrol-configuration.cpp:71
 msgid "Monday"
 msgstr "Lunes"
 
-#: timecontrol-configuration.cpp:69
+#: timecontrol-configuration.cpp:72
 msgid "Tuesday"
 msgstr "Martes"
 
-#: timecontrol-configuration.cpp:70
+#: timecontrol-configuration.cpp:73
 msgid "Wednesday"
 msgstr "Miércoles"
 
-#: timecontrol-configuration.cpp:71
+#: timecontrol-configuration.cpp:74
 msgid "Thursday"
 msgstr "Jueves"
 
-#: timecontrol-configuration.cpp:72
+#: timecontrol-configuration.cpp:75
 msgid "Friday"
 msgstr "Viernes"
 
-#: timecontrol-configuration.cpp:73
+#: timecontrol-configuration.cpp:76
 msgid "Saturday"
 msgstr "Sábado"
 
-#: timecontrol-configuration.cpp:74
+#: timecontrol-configuration.cpp:77
 msgid "Sunday"
 msgstr "Domingo"
 
-#: timecontrol-configuration.cpp:203
+#: timecontrol-configuration.cpp:214
 msgid "<don't change>"
 msgstr "<no cambiar>"
 

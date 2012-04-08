@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-27 01:57+0200\n"
+"POT-Creation-Date: 2012-04-08 13:12+0200\n"
 "PO-Revision-Date: 2010-09-27 12:07+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: timecontrol-configuration-ui.ui:19
 #. i18n: ectx: property (text), widget (QLabel, labelSleep)
@@ -142,38 +142,29 @@ msgstr ""
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Шаблон назви файла "
-"запису:</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Шаблон назви файла запису:"
+"</p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600; font-style:italic;\">("
-"%s</"
-"span><span style=\" font-style:italic;\">: назва радіостанції, </span><span "
-"style="
-"\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
-"italic;\">: індекс радіостанції, </span><span style=\" font-weight:600; "
-"font-style:"
-"italic;\">%Y</span><span style=\" font-style:italic;\">: 4-цифровий рік, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%m</span><span "
-"style=\" font-style:italic;\">: 2-цифровий місяць, </span><span style=\" "
-"font-"
-"weight:600; font-style:italic;\">%d</span><span style=\" font-style:italic;"
-"\">: 2-цифровий день, </span><span style=\" font-weight:600; "
-"font-style:italic;"
-"\">%B</span><span style=\" font-style:italic;\">: назва місяця, </span><span "
+"style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
+"style:italic;\">: назва радіостанції, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%i</span><span style=\" font-style:italic;\">: індекс "
+"радіостанції, </span><span style=\" font-weight:600; font-style:italic;\">"
+"%Y</span><span style=\" font-style:italic;\">: 4-цифровий рік, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-"
+"style:italic;\">: 2-цифровий місяць, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%d</span><span style=\" font-style:italic;\">: 2-"
+"цифровий день, </span><span style=\" font-weight:600; font-style:italic;\">"
+"%B</span><span style=\" font-style:italic;\">: назва місяця, </span><span "
 "style=\" font-weight:600; font-style:italic;\">%A</span><span style=\" font-"
-"style:italic;\"> назва дня, </span><span style=\" font-weight:600; "
-"font-style:"
-"italic;\">%H</span><span style=\" font-style:italic;\">: 2-цифрові години, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%M</span><span "
-"style=\" font-style:italic;\">: 2-цифрові хвилини, </span><span style=\" "
-"font-"
-"weight:600; font-style:italic;\">%S</span><span style=\" font-style:italic;"
-"\"> 2-цифрові секунди,</span><span style=\" font-weight:600; "
-"font-style:italic;"
-"\"> %%</span><span style=\" font-style:italic;\">: знак відсотка)</span></p>"
-"</"
-"body></html>"
+"style:italic;\"> назва дня, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%H</span><span style=\" font-style:italic;\">: 2-цифрові "
+"години, </span><span style=\" font-weight:600; font-style:italic;\">%M</"
+"span><span style=\" font-style:italic;\">: 2-цифрові хвилини, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%S</span><span style=\" font-"
+"style:italic;\"> 2-цифрові секунди,</span><span style=\" font-weight:600; "
+"font-style:italic;\"> %%</span><span style=\" font-style:italic;\">: знак "
+"відсотка)</span></p></body></html>"
 
 #: rc.cpp:50
 msgctxt "NAME OF TRANSLATORS"
@@ -185,55 +176,55 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: timecontrol-configuration.cpp:60
+#: timecontrol-configuration.cpp:63
 msgid "Start Playing"
 msgstr "Почати відтворення"
 
-#: timecontrol-configuration.cpp:61
+#: timecontrol-configuration.cpp:64
 msgid "Stop Playing"
 msgstr "Зупинити відтворення"
 
-#: timecontrol-configuration.cpp:62
+#: timecontrol-configuration.cpp:65
 msgid "Start Recording"
 msgstr "Почати запис"
 
-#: timecontrol-configuration.cpp:63
+#: timecontrol-configuration.cpp:66
 msgid "Stop Recording"
 msgstr "Зупинити запис"
 
-#: timecontrol-configuration.cpp:66
+#: timecontrol-configuration.cpp:69
 msgid "unchanged"
 msgstr "без змін"
 
-#: timecontrol-configuration.cpp:68
+#: timecontrol-configuration.cpp:71
 msgid "Monday"
 msgstr "понеділок"
 
-#: timecontrol-configuration.cpp:69
+#: timecontrol-configuration.cpp:72
 msgid "Tuesday"
 msgstr "вівторок"
 
-#: timecontrol-configuration.cpp:70
+#: timecontrol-configuration.cpp:73
 msgid "Wednesday"
 msgstr "середа"
 
-#: timecontrol-configuration.cpp:71
+#: timecontrol-configuration.cpp:74
 msgid "Thursday"
 msgstr "четвер"
 
-#: timecontrol-configuration.cpp:72
+#: timecontrol-configuration.cpp:75
 msgid "Friday"
 msgstr "п'ятниця"
 
-#: timecontrol-configuration.cpp:73
+#: timecontrol-configuration.cpp:76
 msgid "Saturday"
 msgstr "субота"
 
-#: timecontrol-configuration.cpp:74
+#: timecontrol-configuration.cpp:77
 msgid "Sunday"
 msgstr "неділя"
 
-#: timecontrol-configuration.cpp:203
+#: timecontrol-configuration.cpp:214
 msgid "<don't change>"
 msgstr "<не змінювати>"
 
@@ -248,4 +239,3 @@ msgstr "Модуль керування часом"
 #: timecontrol.cpp:283
 msgid "Setup Alarms"
 msgstr "Розклад повідомлень"
-
