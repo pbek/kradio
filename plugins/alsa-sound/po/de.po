@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.alsa-sound.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-04-08 13:12+0200\n"
-"PO-Revision-Date: 2012-02-12 20:38+0100\n"
+"PO-Revision-Date: 2012-04-08 13:43+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 "Language: \n"
@@ -440,7 +440,7 @@ msgstr "16 kB"
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editCaptureWorkaroundSleep)
 #: rc.cpp:54 rc.cpp:102 rc.cpp:252 rc.cpp:300
 msgid "disabled"
-msgstr ""
+msgstr "abgeschaltet"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:266
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
@@ -452,7 +452,7 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editCaptureWorkaroundSleep)
 #: rc.cpp:57 rc.cpp:105 rc.cpp:255 rc.cpp:303
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:288
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_6)
@@ -464,7 +464,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_7)
 #: rc.cpp:60 rc.cpp:108 rc.cpp:258 rc.cpp:306
 msgid "Broken blocking I/O workaround:"
-msgstr ""
+msgstr "Workaround für blockierendes I/O:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:311
 #. i18n: ectx: property (text), widget (QCheckBox, chkNonBlockingPlayback)
