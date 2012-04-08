@@ -5,6 +5,7 @@
         - disabled alsa blocking usleep workaround by default and added configuration option
         - updated German translation
         - added config option for internet radio stations to set metadata encoding charsets
+        - further buffer management fixes to stop repeated skips on certain systems
 
 2012-02-19
 
