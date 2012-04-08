@@ -4,6 +4,7 @@
         - endianess and sample conversion code speedup
         - disabled alsa blocking usleep workaround by default and added configuration option
         - updated German translation
+        - added config option for internet radio stations to set metadata encoding charsets
 
 2012-02-19
 
