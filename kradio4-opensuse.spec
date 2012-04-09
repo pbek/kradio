@@ -29,7 +29,7 @@ BuildRequires: libvorbis-devel
 BuildRequires: lirc-devel
 BuildRequires: libffmpeg-devel
 BuildRequires: libmms-devel
-BuildRequires: libboost-devel
+BuildRequires: boost-devel
 Provides:      kde4-kradio = 4.0.5
 Obsoletes:     kde4-kradio < 4.0.5
 BuildRoot:     %{_tmppath}/%{name}-%{version}-build
