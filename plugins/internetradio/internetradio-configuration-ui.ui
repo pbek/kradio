@@ -22,6 +22,149 @@
      <property name="margin">
       <number>7</number>
      </property>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Input Buffer Size</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="KIntSpinBox" name="spinboxStreamInputBufferSize">
+       <property name="suffix">
+        <string> kB</string>
+       </property>
+       <property name="minimum">
+        <number>32</number>
+       </property>
+       <property name="maximum">
+        <number>2048</number>
+       </property>
+       <property name="singleStep">
+        <number>16</number>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>PCM Output Buffer Size</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="KIntSpinBox" name="spinboxStreamOutputBufferSize">
+       <property name="suffix">
+        <string> kB</string>
+       </property>
+       <property name="minimum">
+        <number>128</number>
+       </property>
+       <property name="maximum">
+        <number>2048</number>
+       </property>
+       <property name="singleStep">
+        <number>16</number>
+       </property>
+       <property name="value">
+        <number>512</number>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>libffmpeg: stream info analysis time</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="KIntSpinBox" name="spinboxWatchdogTimeout">
+       <property name="specialValueText">
+        <string comment="0">disabled</string>
+       </property>
+       <property name="suffix">
+        <string> s</string>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>3600</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Watchdog: Reconnect after</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="KDoubleNumInput" name="spinboxAnalysisTime">
+       <property name="value">
+        <double>0.800000000000000</double>
+       </property>
+       <property name="minimum">
+        <double>0.300000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>10.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="suffix">
+        <string> s</string>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="sliderEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="labelPlaybackMixerDevice">
        <property name="sizePolicy">
@@ -79,7 +222,7 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="6" column="1">
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -118,11 +261,58 @@
        </property>
       </widget>
      </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>libffmpeg: format probe size</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="KIntSpinBox" name="spinboxProbeSize">
+       <property name="suffix">
+        <string> kB</string>
+       </property>
+       <property name="minimum">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <number>32</number>
+       </property>
+       <property name="singleStep">
+        <number>16</number>
+       </property>
+       <property name="value">
+        <number>8</number>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="0"/>
+ <customwidgets>
+  <customwidget>
+   <class>KDoubleNumInput</class>
+   <extends>QWidget</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>comboPlaybackMixerDevice</tabstop>
   <tabstop>comboPlaybackMixerChannel</tabstop>

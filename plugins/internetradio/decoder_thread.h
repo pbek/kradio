@@ -81,10 +81,12 @@ public:
                          StreamInputBuffer          *input_buffer,
                          QString                     contentType,
 #endif
-                         int   max_buffers,
-                         int   max_singleBufferSize,
+                         int   max_output_buffers,
+                         int   max_output_buffer_chunk_size,
                          int   max_probe_size_bytes,
-                         float max_analyze_secs);
+                         float max_analyze_secs,
+                         int   max_retries
+                        );
 
     virtual ~InternetRadioDecoder();
 
@@ -181,6 +183,7 @@ protected:
 
     int                   m_maxProbeSize;    // in bytes,   see openAVStream
     float                 m_maxAnalyzeTime;  // in seconds, see openAVStream
+    int                   m_maxRetries;
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
     FILE  *m_debugCodedStream;
@@ -212,10 +215,12 @@ public:
                   StreamReader               *streamReader,
 //                   StreamInputBuffer          *input_buffer,
 #endif
-                  int   max_buffers,
-                  int   max_singleBufferSize,
+                  int   input_buffer_size,
+                  int   max_output_buffers,
+                  int   max_output_buffer_chunk_size,
                   int   max_probe_size_bytes,
-                  float max_analyze_secs
+                  float max_analyze_secs,
+                  int   max_retries
                  );
     virtual ~DecoderThread();
 
@@ -230,6 +235,7 @@ protected:
     int                   m_max_singleBufferSize;
     int                   m_max_probe_size_bytes;
     float                 m_max_analyze_secs;
+    int                   m_max_retries;
 
     InternetRadioDecoder *m_decoder;
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD

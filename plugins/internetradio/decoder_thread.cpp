@@ -52,7 +52,9 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
                                            int                         max_buffers,
                                            int                         max_singleBufferSize,
                                            int                         max_probe_size_bytes,
-                                           float                       max_analyze_secs)
+                                           float                       max_analyze_secs,
+                                           int                         max_retries
+                                          )
 :   m_decoderOpened       (false),
     m_av_pFormatCtx       (NULL),
     m_av_pFormatCtx_opened(false),
@@ -94,7 +96,8 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
     m_contentType(contentType),
 #endif
     m_maxProbeSize  (max_probe_size_bytes > 2048 ? max_probe_size_bytes : 8192),
-    m_maxAnalyzeTime(max_analyze_secs     > 0.3  ? max_analyze_secs     : 0.8)
+    m_maxAnalyzeTime(max_analyze_secs     > 0.3  ? max_analyze_secs     : 0.8),
+    m_maxRetries    (max_retries)
 #ifdef DEBUG_DUMP_DECODER_STREAMS
     , m_debugCodedStream(NULL)
     , m_debugDecodedStream(NULL)
@@ -126,7 +129,7 @@ InternetRadioDecoder::~InternetRadioDecoder()
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 void InternetRadioDecoder::selectStreamFromPlaylist()
 {
-    int retries = 2;
+    int retries = m_maxRetries;
     unsigned int start_play_idx = (unsigned int) rint((m_playListURLs.size()-1) * (float)rand() / (float)RAND_MAX);
     int n = m_playListURLs.size();
     for (int i = 0; !m_decoderOpened && i < n; ++i) {
@@ -970,16 +973,20 @@ DecoderThread::DecoderThread(QObject *parent,
                              StreamReader               *streamReader,
 //                              StreamInputBuffer          *streamInputBuffer,
 #endif
-                             int   max_buffers,
-                             int   max_singleBufferSize,
+                             int   input_buffer_size,
+                             int   max_output_buffers,
+                             int   max_output_buffer_chunk_size,
                              int   max_probe_size_bytes,
-                             float max_analyze_secs)
+                             float max_analyze_secs,
+                             int   max_retries
+                            )
     : QThread(parent),
       m_station(rs),
-      m_max_buffers(max_buffers),
-      m_max_singleBufferSize(max_singleBufferSize),
+      m_max_buffers(max_output_buffers),
+      m_max_singleBufferSize(max_output_buffer_chunk_size),
       m_max_probe_size_bytes(max_probe_size_bytes),
       m_max_analyze_secs(max_analyze_secs),
+      m_max_retries(max_retries),
       m_decoder(NULL)
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
       , m_playlist(playlist)
@@ -989,7 +996,7 @@ DecoderThread::DecoderThread(QObject *parent,
 #endif
 {
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    m_streamInputBuffer = new StreamInputBuffer(128 * 1024);         // FIXME: make buffer configurable
+    m_streamInputBuffer = new StreamInputBuffer(input_buffer_size);
     QObject::connect(streamReader,        SIGNAL(sigStreamData(QByteArray)), m_streamInputBuffer, SLOT(slotWriteInputBuffer(QByteArray)));
     QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferFull()),      streamReader,        SLOT(slotStreamPause()));
     QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferNotFull()),   streamReader,        SLOT(slotStreamContinue()));
@@ -1030,7 +1037,8 @@ void DecoderThread::run()
                                          m_max_buffers,
                                          m_max_singleBufferSize,
                                          m_max_probe_size_bytes,
-                                         m_max_analyze_secs
+                                         m_max_analyze_secs,
+                                         m_max_retries
                                         );
     exec();
     m_streamInputBuffer->resetBuffer();

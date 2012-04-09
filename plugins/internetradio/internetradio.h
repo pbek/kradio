@@ -164,6 +164,9 @@ public:
 protected slots:
 
     void    slotNoticePlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
+    void    slotBufferSettingsChanged     (int inputBufSize, int outputBufSize);
+    void    slotWatchdogSettingsChanged   (int timeout);
+    void    slotDecoderSettingsChanged    (int probe_size, double analysis_time);
 
     // playlist handling via PlaylistHandler object
     void    slotPlaylistLoaded(KUrl::List playlist);
@@ -174,6 +177,9 @@ protected slots:
 signals:
 
     void    sigNotifyPlaybackMixerChanged(const QString &mixerID, const QString &channelID, bool muteOnPowerOff, bool force);
+    void    sigBufferSettingsChanged  (int inputBufferSize, int outputBufferSize);
+    void    sigWatchdogSettingsChanged(int watchdogTimeout);
+    void    sigDecoderSettingsChanged (int probe_size, double analysis_time);
 
 protected:
 
@@ -252,6 +258,10 @@ protected:
     int                           m_maxStreamProbeSize;    // in bytes,   see DecoderThread::openAVStream
     float                         m_maxStreamAnalyzeTime;  // in seconds, see DecoderThread::openAVStream
     int                           m_maxStreamRetries;
+
+    int                           m_inputBufferSize;
+    int                           m_outputBufferSize;
+    int                           m_watchdogTimeout;
 
     bool                          m_waitForBufferMinFill;
 };

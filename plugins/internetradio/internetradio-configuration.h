@@ -58,6 +58,9 @@ RECEIVERS:
 
 public slots:
     void slotNoticePlaybackMixerChanged(const QString &_mixer_id, const QString &Channel, bool muteOnPowerOff, bool force);
+    void slotBufferSettingsChanged     (int inputBufSize, int outputBufSize);
+    void slotWatchdogSettingsChanged   (int timeout);
+    void slotDecoderSettingsChanged    (int probe_size, double analysis_time);
 
 protected slots:
 
@@ -69,16 +72,17 @@ protected slots:
 
 signals:
 
-    void sigPlaybackMixerChanged(const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force);
+    void sigPlaybackMixerChanged   (const QString &soundStreamClientID, const QString &ch, bool muteOnPowerOff, bool force);
+    void sigBufferSettingsChanged  (int inputBufferSize, int outputBufferSize);
+    void sigWatchdogSettingsChanged(int watchdogTimeout);
+    void sigDecoderSettingsChanged (int probe_size, double analysis_time);
 
 
 protected:
 
-    SoundStreamID m_SoundStreamID;
+    SoundStreamID     m_SoundStreamID;
 
-    bool    m_ignoreGUIChanges;
-
-    int     m_myControlChange;
+    bool              m_ignoreGUIChanges;
 
     typedef GUIListHelper<QComboBox, QString>       StringListHelper;
 
@@ -86,6 +90,11 @@ protected:
     StringListHelper  m_PlaybackChannelHelper;
 
     bool              m_orgMuteOnPowerOff;
+    int               m_orgInputBufferSize;
+    int               m_orgOutputBufferSize;
+    int               m_orgWatchdogTimeout;
+    int               m_orgProbeSize;
+    double            m_orgAnalysisTime;
 };
 
 #endif

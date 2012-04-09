@@ -42,9 +42,13 @@ InternetRadioConfiguration::InternetRadioConfiguration (QWidget *parent, SoundSt
   : QWidget(parent),
     m_SoundStreamID(ssid),
     m_ignoreGUIChanges(false),
-    m_myControlChange(0),
     m_PlaybackMixerHelper  (NULL, StringListHelper::SORT_BY_DESCR),
-    m_PlaybackChannelHelper(NULL, StringListHelper::SORT_NONE)
+    m_PlaybackChannelHelper(NULL, StringListHelper::SORT_NONE),
+    m_orgInputBufferSize (128*1024),
+    m_orgOutputBufferSize(512*1024),
+    m_orgWatchdogTimeout (0),
+    m_orgProbeSize       (8192),
+    m_orgAnalysisTime    (0.8)
 {
 
     setupUi(this);
@@ -138,6 +142,29 @@ void InternetRadioConfiguration::slotNoticePlaybackMixerChanged(const QString &m
 }
 
 
+void InternetRadioConfiguration::slotBufferSettingsChanged(int inputBufSize, int outputBufSize)
+{
+    m_orgInputBufferSize  = inputBufSize;
+    m_orgOutputBufferSize = outputBufSize;
+    spinboxStreamInputBufferSize ->setValue(m_orgInputBufferSize  / 1024);
+    spinboxStreamOutputBufferSize->setValue(m_orgOutputBufferSize / 1024);
+}
+
+
+void InternetRadioConfiguration::slotWatchdogSettingsChanged(int timeout)
+{
+    m_orgWatchdogTimeout = timeout;
+    spinboxWatchdogTimeout->setValue(m_orgWatchdogTimeout);
+}
+
+void InternetRadioConfiguration::slotDecoderSettingsChanged(int probe_size, double analysis_time)
+{
+    m_orgProbeSize    = probe_size;
+    m_orgAnalysisTime = analysis_time;
+    spinboxProbeSize   ->setValue(m_orgProbeSize / 1024);
+    spinboxAnalysisTime->setValue(m_orgAnalysisTime);
+}
+
 // GUI Slots
 
 
@@ -158,7 +185,16 @@ void InternetRadioConfiguration::slotOK()
     QString mixer_id       = m_PlaybackMixerHelper  .getCurrentItemID();
     QString channel_id     = m_PlaybackChannelHelper.getCurrentItemID();
     m_orgMuteOnPowerOff    = cbMutePlaybackMixerOnPowerOff->isChecked();
-    emit sigPlaybackMixerChanged (mixer_id, channel_id, m_orgMuteOnPowerOff, /* force = */ false);
+    m_orgInputBufferSize   = spinboxStreamInputBufferSize ->value() * 1024;
+    m_orgOutputBufferSize  = spinboxStreamOutputBufferSize->value() * 1024;
+    m_orgWatchdogTimeout   = spinboxWatchdogTimeout       ->value();
+    m_orgProbeSize         = spinboxProbeSize             ->value() * 1024;
+    m_orgAnalysisTime      = spinboxAnalysisTime          ->value();
+    
+    emit sigPlaybackMixerChanged   (mixer_id, channel_id, m_orgMuteOnPowerOff, /* force = */ false);
+    emit sigBufferSettingsChanged  (m_orgInputBufferSize, m_orgOutputBufferSize);
+    emit sigWatchdogSettingsChanged(m_orgWatchdogTimeout);
+    emit sigDecoderSettingsChanged (m_orgProbeSize, m_orgAnalysisTime);
 }
 
 
@@ -168,6 +204,11 @@ void InternetRadioConfiguration::slotCancel()
     m_PlaybackMixerHelper  .slotCancel();
     m_PlaybackChannelHelper.slotCancel();
     cbMutePlaybackMixerOnPowerOff->setChecked(m_orgMuteOnPowerOff);
+    spinboxStreamInputBufferSize ->setValue(m_orgInputBufferSize  / 1024);
+    spinboxStreamOutputBufferSize->setValue(m_orgOutputBufferSize / 1024);
+    spinboxWatchdogTimeout       ->setValue(m_orgWatchdogTimeout);
+    spinboxProbeSize             ->setValue(m_orgProbeSize        / 1024);
+    spinboxAnalysisTime          ->setValue(m_orgAnalysisTime);
 }
 
 

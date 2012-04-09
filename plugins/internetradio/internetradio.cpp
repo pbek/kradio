@@ -38,13 +38,13 @@
 #include "mmsx_handler.h"
 
 
-#ifdef KRADIO_ENABLE_FIXMES
-    #warning "FIXME: make buffer size configurable"
-#endif
-#define MAX_BUFFER_SIZE       (512*1024)
-#define MAX_BUFFERS           16
-#define MAX_BYTES_PER_BUFFER  ((MAX_BUFFER_SIZE) / (MAX_BUFFERS))
-#define MIN_BUFFERS4PLAYBACK  (MAX_BUFFERS/3)
+// #ifdef KRADIO_ENABLE_FIXMES
+//     #warning "FIXME: make buffer size configurable"
+// #endif
+// #define MAX_BUFFER_SIZE       (512*1024)
+#define MAX_BUFFER_CHUNKS           16
+// #define MAX_BYTES_PER_BUFFER        ((MAX_BUFFER_SIZE) / (MAX_BUFFER_CHUNKS))
+#define MIN_BUFFER_CHUNKS4PLAYBACK  (MAX_BUFFER_CHUNKS/3)
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -74,6 +74,9 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_RDS_RadioText(QString()),
     m_maxStreamProbeSize(8192),
     m_maxStreamAnalyzeTime(0.8),
+    m_inputBufferSize(128*1024),
+    m_outputBufferSize(512*1024),
+    m_watchdogTimeout(0),
     m_waitForBufferMinFill(true)
 {
     m_SoundStreamSinkID   = createNewSoundStream(false);
@@ -542,6 +545,26 @@ void InternetRadio::slotNoticePlaybackMixerChanged(const QString &mixerID, const
 }
 
 
+void InternetRadio::slotBufferSettingsChanged (int inputBufSize, int outputBufSize)
+{
+    m_inputBufferSize  = inputBufSize;
+    m_outputBufferSize = outputBufSize;
+}
+
+
+void InternetRadio::slotWatchdogSettingsChanged (int timeout)
+{
+    m_watchdogTimeout  = timeout;
+}
+
+
+void InternetRadio::slotDecoderSettingsChanged (int probe_size, double analysis_time)
+{
+    m_maxStreamProbeSize   = probe_size;
+    m_maxStreamAnalyzeTime = analysis_time;
+}
+
+
 // PluginBase methods
 
 void   InternetRadio::saveState (KConfigGroup &config) const
@@ -551,14 +574,15 @@ void   InternetRadio::saveState (KConfigGroup &config) const
     config.writeEntry("PlaybackMixerID",             m_PlaybackMixerID);
     config.writeEntry("PlaybackMixerChannel",        m_PlaybackMixerChannel);
     config.writeEntry("PlaybackMixerMuteOnPowerOff", m_PlaybackMixerMuteOnPowerOff);
+    config.writeEntry("InputBufferSize",             m_inputBufferSize);
+    config.writeEntry("OutputBufferSize",            m_outputBufferSize);
+    config.writeEntry("WatchdogTimeout",             m_watchdogTimeout);
     config.writeEntry("defaultPlaybackVolume",       m_defaultPlaybackVolume);
     config.writeEntry("URL",                         m_currentStation.url());
     config.writeEntry("PowerOn",                     isPowerOn());
     config.writeEntry("maxStreamProbeSizeNew",       m_maxStreamProbeSize);
     config.writeEntry("maxStreamAnalyzeTimeNew",     m_maxStreamAnalyzeTime);
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     config.writeEntry("maxStreamRetries",            m_maxStreamRetries);
-#endif
 
     saveRadioDeviceID(config);
 }
@@ -572,17 +596,21 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     QString PlaybackMixerID       = config.readEntry ("PlaybackMixerID",             QString());
     QString PlaybackMixerChannel  = config.readEntry ("PlaybackMixerChannel",        "PCM");
     bool    muteOnPowerOff        = config.readEntry ("PlaybackMixerMuteOnPowerOff", false);
+    m_inputBufferSize             = config.readEntry ("InputBufferSize",             128*1024);
+    m_outputBufferSize            = config.readEntry ("OutputBufferSize",            512*1024);
+    m_watchdogTimeout             = config.readEntry ("WatchdogTimeout",             0);
     m_defaultPlaybackVolume       = config.readEntry ("defaultPlaybackVolume",       0.5);
 
 
     m_maxStreamProbeSize          = config.readEntry ("maxStreamProbeSizeNew",       8192);
     m_maxStreamAnalyzeTime        = config.readEntry ("maxStreamAnalyzeTimeNew",     0.8);
-#ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_maxStreamRetries            = config.readEntry ("maxStreamRetries",            2);
-#endif
 
 
     setPlaybackMixer(PlaybackMixerID, PlaybackMixerChannel, muteOnPowerOff, /* force = */ true);
+    emit sigBufferSettingsChanged  (m_inputBufferSize, m_outputBufferSize);
+    emit sigWatchdogSettingsChanged(m_watchdogTimeout);
+    emit sigDecoderSettingsChanged (m_maxStreamProbeSize, m_maxStreamAnalyzeTime);
 
     setURL(config.readEntry("URL", KUrl()), NULL);
     m_restorePowerOn = config.readEntry ("PowerOn", false);
@@ -590,6 +618,7 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     if (isPowerOff())
         notifyPlaybackVolumeChanged(m_SoundStreamSinkID, m_defaultPlaybackVolume);
 }
+
 
 void InternetRadio::startPlugin()
 {
@@ -603,9 +632,15 @@ ConfigPageInfo InternetRadio::createConfigurationPage()
 
     QObject::connect(this, SIGNAL(sigNotifyPlaybackMixerChanged (const QString &, const QString &, bool, bool)),
                      conf, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool, bool)));
+    QObject::connect(this, SIGNAL(sigBufferSettingsChanged  (int,int)),    conf, SLOT(slotBufferSettingsChanged  (int,int)));
+    QObject::connect(this, SIGNAL(sigWatchdogSettingsChanged(int)),        conf, SLOT(slotWatchdogSettingsChanged(int)));
+    QObject::connect(this, SIGNAL(sigDecoderSettingsChanged (int,double)), conf, SLOT(slotDecoderSettingsChanged (int,double)));
 
     QObject::connect(conf, SIGNAL(sigPlaybackMixerChanged       (const QString &, const QString &, bool, bool)),
                      this, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool, bool)));
+    QObject::connect(conf, SIGNAL(sigBufferSettingsChanged  (int,int)),    this, SLOT(slotBufferSettingsChanged  (int,int)));
+    QObject::connect(conf, SIGNAL(sigWatchdogSettingsChanged(int)),        this, SLOT(slotWatchdogSettingsChanged(int)));
+    QObject::connect(conf, SIGNAL(sigDecoderSettingsChanged (int,double)), this, SLOT(slotDecoderSettingsChanged (int,double)));
 
     return ConfigPageInfo (conf,
                            i18n("Internet Radio"),
@@ -734,10 +769,12 @@ void InternetRadio::startDecoderThread()
                                         m_streamReader,
 //                                         m_streamInputBuffer,
 #endif
-                                        MAX_BUFFERS,
-                                        MAX_BYTES_PER_BUFFER,
+                                        m_inputBufferSize,
+                                        m_outputBufferSize,
+                                        m_outputBufferSize / MAX_BUFFER_CHUNKS,
                                         m_maxStreamProbeSize,
-                                        m_maxStreamAnalyzeTime
+                                        m_maxStreamAnalyzeTime,
+                                        m_maxStreamRetries
                                        );
     QObject::connect(m_decoderThread, SIGNAL(finished()),   this, SLOT(slotDecoderThreadFinished()));
     QObject::connect(m_decoderThread, SIGNAL(terminated()), this, SLOT(slotDecoderThreadFinished()));
@@ -891,7 +928,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
         return false;
     }
 
-    int min_size = m_waitForBufferMinFill ? MIN_BUFFERS4PLAYBACK : 1;
+    int min_size = m_waitForBufferMinFill ? MIN_BUFFER_CHUNKS4PLAYBACK : 1;
 
     if (!m_decoderThread || !m_decoderThread->decoder())
         return false;
