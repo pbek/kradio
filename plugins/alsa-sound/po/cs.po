@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-08 13:12+0200\n"
+"POT-Creation-Date: 2012-04-09 02:25+0200\n"
 "PO-Revision-Date: 2012-02-19 19:28+0100\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -34,34 +34,34 @@ msgstr "ALSA Sound"
 msgid "ALSA Sound Device Options"
 msgstr "Volby zvukového zařízení ALSA"
 
-#: alsa-sound.cpp:654
+#: alsa-sound.cpp:655
 #, kde-format
 msgid "ALSA Plugin: cannot write data for device %1"
 msgstr "Přídavný modul ALSA: nelze zapisovat data u zařízení %1"
 
-#: alsa-sound.cpp:661
+#: alsa-sound.cpp:662
 #, kde-format
 msgid "ALSA Plugin: buffer underrun for device %1"
 msgstr "Přídavný modul ALSA: Podtečení vyrovnávací paměti u zařízení %1"
 
-#: alsa-sound.cpp:703
+#: alsa-sound.cpp:711
 #, kde-format
 msgid "ALSA Plugin: cannot read data from device %1"
 msgstr "Přídavný modul ALSA: nelze zapisovat data ze zařízení %1"
 
-#: alsa-sound.cpp:710
+#: alsa-sound.cpp:718
 #, kde-format
 msgid "ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)"
 msgstr ""
 "Přídavný modul ALSA: Přetečení vyrovnávací paměti u zařízení %1 (Velikost "
 "vyrovnávací paměti=%2, vyrovnávací paměť=%3)"
 
-#: alsa-sound.cpp:731
+#: alsa-sound.cpp:739
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Vnitřní zvukový datový proud, nebude uložen (%1)"
 
-#: alsa-sound.cpp:783
+#: alsa-sound.cpp:791
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing playback thread, but found "
 "one\n"
@@ -69,7 +69,7 @@ msgstr ""
 "Přídavný modul ALSA: vnitřní chyba. Vlákno přehrávání ještě existovalo - v "
 "rozporu s očekáváním\n"
 
-#: alsa-sound.cpp:846
+#: alsa-sound.cpp:855
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing capture thread, but found "
 "one\n"
@@ -77,39 +77,39 @@ msgstr ""
 "Přídavný modul ALSA: vnitřní chyba. Vlákno zachytávání ještě existovalo - v "
 "rozporu s očekáváním\n"
 
-#: alsa-sound.cpp:887
+#: alsa-sound.cpp:897
 #, kde-format
 msgid "ALSA Plugin: Error opening PCM device %1: %2"
 msgstr "Přídavný modul ALSA: Chyba při otevírání PCM zařízení %1: %2"
 
-#: alsa-sound.cpp:892
+#: alsa-sound.cpp:902
 #, kde-format
 msgid "ALSA Plugin: Can not configure PCM device %1: %2"
 msgstr "Přídavný modul ALSA: Nelze nastavit PCM zařízení %1: %2"
 
-#: alsa-sound.cpp:899
+#: alsa-sound.cpp:909
 #, kde-format
 msgid "ALSA Plugin: Error setting access for %1"
 msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení režimu přístupu pro zařízení %1"
 
-#: alsa-sound.cpp:909
+#: alsa-sound.cpp:919
 #, kde-format
 msgid "ALSA Plugin: Error setting sample format for %1: %2"
 msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení vzorkovacího formátu pro %1: %2"
 
-#: alsa-sound.cpp:915
+#: alsa-sound.cpp:925
 #, kde-format
 msgid "ALSA Plugin: Error setting channels for %1: %2"
 msgstr "Přídavný modul ALSA: Chyba při nastavení kanálů pro %1: %2"
 
-#: alsa-sound.cpp:922
+#: alsa-sound.cpp:932
 #, kde-format
 msgid "ALSA Plugin: Error setting rate for %1: %2"
 msgstr "Přídavný modul ALSA: Chyba při nastavení kmitočtu pro %1: %2"
 
-#: alsa-sound.cpp:926
+#: alsa-sound.cpp:936
 #, kde-format
 msgid ""
 "ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 "
@@ -118,27 +118,27 @@ msgstr ""
 "Přídavný modul ALSA: Kmitočet %1 Hz není podporován vaší zvukovou kartou %2. "
 "Místo toho se bude používat %3 Hz"
 
-#: alsa-sound.cpp:932
+#: alsa-sound.cpp:942
 #, kde-format
 msgid "ALSA Plugin: Error reading max buffer size for %1: %2"
 msgstr ""
 "Přídavný modul ALSA: Chyba při čtení největší velikosti vyrovnávací paměti "
 "pro %1: %2"
 
-#: alsa-sound.cpp:938
+#: alsa-sound.cpp:948
 #, kde-format
 msgid "ALSA Plugin: Error setting period size to %1 for %2: %3"
 msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení velikosti periody na %1 pro %2: %3"
 
-#: alsa-sound.cpp:943
+#: alsa-sound.cpp:953
 #, kde-format
 msgid "ALSA Plugin: Error setting buffer size to %1 for %2: %3"
 msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení velikosti vyrovnávací paměti na %1 "
 "pro %2: %3"
 
-#: alsa-sound.cpp:946
+#: alsa-sound.cpp:956
 #, kde-format
 msgid ""
 "ALSA Plugin(%1) setting parameters near: period size = %2 [frames], hwbuffer "
@@ -147,44 +147,44 @@ msgstr ""
 "Přídavný modul ALSA (%1): Nastavení parametrů blízko: velikost periody = %2 "
 "[snímků], velikost vyrovnávací paměti technického vybavení = %3 [snímků]"
 
-#: alsa-sound.cpp:951
+#: alsa-sound.cpp:961
 #, kde-format
 msgid "ALSA Plugin: Error setting HW params: %1"
 msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení pomocných proměnných technického "
 "vybavení: %1"
 
-#: alsa-sound.cpp:957
+#: alsa-sound.cpp:967
 #, kde-format
 msgid "ALSA Plugin: Error getting period size for %1: %2"
 msgstr "Přídavný modul ALSA: Chyba při získávání velikosti periody u %1: %2"
 
-#: alsa-sound.cpp:963
+#: alsa-sound.cpp:973
 #, kde-format
 msgid "ALSA Plugin: Error getting hw buffer size for %1: %2"
 msgstr ""
 "Přídavný modul ALSA: Chyba při získání velikosti vyrovnávací paměti "
 "technického vybavení pro zařízení %1: %2"
 
-#: alsa-sound.cpp:967
+#: alsa-sound.cpp:977
 #, kde-format
 msgid "ALSA Plugin(%1): period size = %2 [frames], hwbuffer size = %3 [frames]"
 msgstr ""
 "Přídavný modul ALSA (%1): Velikost period: %2 [snímků], velikosti "
 "vyrovnávací paměti technického vybavení = %3 [snímků]"
 
-#: alsa-sound.cpp:973
+#: alsa-sound.cpp:983
 #, kde-format
 msgid "ALSA Plugin(%1): Setting timer latency to %2"
 msgstr "Přídavný modul ALSA (%1): Nastavení prodlevy časovače na %2"
 
-#: alsa-sound.cpp:977
+#: alsa-sound.cpp:987
 #, kde-format
 msgid "ALSA Plugin: Error getting sw params for %1: %2"
 msgstr ""
 "Přídavný modul ALSA: Chyba při získání programových parametrů pro %1: %2"
 
-#: alsa-sound.cpp:981
+#: alsa-sound.cpp:991
 #, kde-format
 msgid ""
 "ALSA Plugin: Error setting sw params min available frames to %1 for %2: %3"
@@ -192,13 +192,13 @@ msgstr ""
 "Přídavný modul ALSA: Chyba při nastavení programových parametrů nejméně "
 "dostupných snímků na %1 pro %2: %3"
 
-#: alsa-sound.cpp:985
+#: alsa-sound.cpp:995
 #, kde-format
 msgid "ALSA Plugin: Error installing sw params for %1: %2"
 msgstr ""
 "Přídavný modul ALSA: Chyba při instalaci programových parametrů pro %1: %2"
 
-#: alsa-sound.cpp:1012
+#: alsa-sound.cpp:1022
 #, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the playback thread. It did not "
@@ -207,7 +207,7 @@ msgstr ""
 "Přídavný modul ALSA (zařízení %1): Jémine, vlákno přehrávání muselo být "
 "zabito, protože se samo neukončilo, jak se toužebně očekávalo."
 
-#: alsa-sound.cpp:1043
+#: alsa-sound.cpp:1053
 #, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the capture thread. It did not "
@@ -216,84 +216,84 @@ msgstr ""
 "Přídavný modul ALSA (zařízení %1): Jémine, vlákno zachytávání muselo být "
 "zabito, protože se samo neukončilo, jak se toužebně očekávalo."
 
-#: alsa-sound.cpp:1105
+#: alsa-sound.cpp:1115
 msgid "ALSA Plugin: Error opening mixer"
 msgstr "Přídavný modul ALSA: Chyba při otevírání mixážního zařízení"
 
-#: alsa-sound.cpp:1111
+#: alsa-sound.cpp:1121
 #, kde-format
 msgid "ALSA Plugin: ERROR: snd_mixer_attach for card %1"
 msgstr ""
 "Přídavný modul ALSA: Chyba ve funkci snd_mixer_attach pro zvukovou kartu %1"
 
-#: alsa-sound.cpp:1118
+#: alsa-sound.cpp:1128
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
 msgstr ""
 "Přídavný modul ALSA: Chyba ve funkci snd_mixer_selem_register pro zvukovou "
 "kartu %1"
 
-#: alsa-sound.cpp:1122
+#: alsa-sound.cpp:1132
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_load for card %1"
 msgstr ""
 "Přídavný modul ALSA: Chyba ve funkci snd_mixer_load pro zvukovou kartu %1"
 
-#: alsa-sound.cpp:1194
+#: alsa-sound.cpp:1204
 #, kde-format
 msgctxt "context-mixername-number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: alsa-sound.cpp:1247
+#: alsa-sound.cpp:1257
 #, kde-format
 msgctxt "context-mixerelement-name-number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: alsa-sound.cpp:1410 alsa-sound.cpp:1438
+#: alsa-sound.cpp:1420 alsa-sound.cpp:1448
 #, kde-format
 msgid "error while reading volume from %1, channel %2"
 msgstr "Chyba při čtení hlasitosti z %1, kanál %2"
 
-#: alsa-sound.cpp:1480 alsa-sound.cpp:1512
+#: alsa-sound.cpp:1490 alsa-sound.cpp:1522
 #, kde-format
 msgid "error while writing volume %1 to %2, channel %3"
 msgstr "Chyba při zápisu hlasitosti %1 do %2, kanál %3"
 
-#: alsa-sound.cpp:1532
+#: alsa-sound.cpp:1542
 #, kde-format
 msgid "error while setting capture switch %1 for %2"
 msgstr "Chyba při nastavování přepínače zachytávání %1 pro %2"
 
-#: alsa-sound.cpp:1727
+#: alsa-sound.cpp:1737
 #, kde-format
 msgid "ALSA Sound Device %1"
 msgstr "Zvukové zařízení ALSA %1"
 
-#: alsa-sound.cpp:1891
+#: alsa-sound.cpp:1902
 #, kde-format
 msgid "AlsaPlugin(capture thread on %1): "
 msgstr "Přídavný modul ALSA (vlákno zachytávání na %1): "
 
-#: alsa-sound.cpp:1895
+#: alsa-sound.cpp:1906
 #, kde-format
 msgid "AlsaPlugin(playback thread on %1): "
 msgstr "Přídavný modul ALSA (vlákno přehrávání na %1): "
 
-#: alsa-thread.cpp:105
+#: alsa-thread.cpp:130
 msgid "ALSA Thread: cannot write data"
 msgstr "Vlákno ALSA: Nelze zapisovat data"
 
-#: alsa-thread.cpp:112
+#: alsa-thread.cpp:137
 msgid "ALSA Thread: buffer underrun"
 msgstr "Vlákno ALSA: Podtečení vyrovnávací paměti"
 
-#: alsa-thread.cpp:164
+#: alsa-thread.cpp:196
 msgid "AlsaThread: cannot read data"
 msgstr "Vlákno ALSA: Nelze číst data"
 
-#: alsa-thread.cpp:170
+#: alsa-thread.cpp:202
 msgid "AlsaThread: buffer overrun"
 msgstr "Vlákno ALSA: Přetečení vyrovnávací paměti"
 

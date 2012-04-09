@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-04-09 02:25+0200\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -32,6 +32,11 @@ msgstr "Quickbar"
 #: quickbar.cpp:144
 msgid "Quickbar Configuration"
 msgstr "Configuración Quickbar"
+
+#: quickbar.cpp:370
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar%1"
+msgstr "Quickbar"
 
 #: quickbar.cpp:377
 msgid "contentsDragEnterEvent accepted"

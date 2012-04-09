@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_quickbar\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 16:19+0200\n"
+"POT-Creation-Date: 2012-04-09 02:25+0200\n"
 "PO-Revision-Date: 2009-06-27 13:34+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -32,6 +32,11 @@ msgstr "Skyndivallisti"
 #: quickbar.cpp:144
 msgid "Quickbar Configuration"
 msgstr "Stillingar skyndivallista"
+
+#: quickbar.cpp:370
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar%1"
+msgstr "Skyndivallisti"
 
 #: quickbar.cpp:377
 msgid "contentsDragEnterEvent accepted"

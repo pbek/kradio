@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-04-09 02:25+0200\n"
 "PO-Revision-Date: 2006-11-19 16:12+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -34,6 +34,11 @@ msgstr "Barra de Acesso Rápido"
 #: quickbar.cpp:144
 msgid "Quickbar Configuration"
 msgstr "Configuração da Barra de Acesso Rápido"
+
+#: quickbar.cpp:370
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar%1"
+msgstr "Barra de Acesso Rápido"
 
 #: quickbar.cpp:377
 msgid "contentsDragEnterEvent accepted"

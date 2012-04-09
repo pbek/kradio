@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-08 13:12+0200\n"
+"POT-Creation-Date: 2012-04-09 02:25+0200\n"
 "PO-Revision-Date: 2011-02-06 03:00+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -34,231 +34,231 @@ msgstr "ALSA Ses"
 msgid "ALSA Sound Device Options"
 msgstr "ALSA Ses Aygıt Seçenekleri"
 
-#: alsa-sound.cpp:654
+#: alsa-sound.cpp:655
 #, kde-format
 msgid "ALSA Plugin: cannot write data for device %1"
 msgstr ""
 
-#: alsa-sound.cpp:661
+#: alsa-sound.cpp:662
 #, kde-format
 msgid "ALSA Plugin: buffer underrun for device %1"
 msgstr ""
 
-#: alsa-sound.cpp:703
+#: alsa-sound.cpp:711
 #, kde-format
 msgid "ALSA Plugin: cannot read data from device %1"
 msgstr ""
 
-#: alsa-sound.cpp:710
+#: alsa-sound.cpp:718
 #, kde-format
 msgid "ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)"
 msgstr ""
 
-#: alsa-sound.cpp:731
+#: alsa-sound.cpp:739
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr ""
 
-#: alsa-sound.cpp:783
+#: alsa-sound.cpp:791
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing playback thread, but found "
 "one\n"
 msgstr ""
 
-#: alsa-sound.cpp:846
+#: alsa-sound.cpp:855
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing capture thread, but found "
 "one\n"
 msgstr ""
 
-#: alsa-sound.cpp:887
+#: alsa-sound.cpp:897
 #, kde-format
 msgid "ALSA Plugin: Error opening PCM device %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:892
+#: alsa-sound.cpp:902
 #, kde-format
 msgid "ALSA Plugin: Can not configure PCM device %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:899
+#: alsa-sound.cpp:909
 #, kde-format
 msgid "ALSA Plugin: Error setting access for %1"
 msgstr ""
 
-#: alsa-sound.cpp:909
+#: alsa-sound.cpp:919
 #, kde-format
 msgid "ALSA Plugin: Error setting sample format for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:915
+#: alsa-sound.cpp:925
 #, kde-format
 msgid "ALSA Plugin: Error setting channels for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:922
+#: alsa-sound.cpp:932
 #, kde-format
 msgid "ALSA Plugin: Error setting rate for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:926
+#: alsa-sound.cpp:936
 #, kde-format
 msgid ""
 "ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 "
 "Hz instead"
 msgstr ""
 
-#: alsa-sound.cpp:932
+#: alsa-sound.cpp:942
 #, kde-format
 msgid "ALSA Plugin: Error reading max buffer size for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:938
+#: alsa-sound.cpp:948
 #, kde-format
 msgid "ALSA Plugin: Error setting period size to %1 for %2: %3"
 msgstr ""
 
-#: alsa-sound.cpp:943
+#: alsa-sound.cpp:953
 #, kde-format
 msgid "ALSA Plugin: Error setting buffer size to %1 for %2: %3"
 msgstr ""
 
-#: alsa-sound.cpp:946
+#: alsa-sound.cpp:956
 #, kde-format
 msgid ""
 "ALSA Plugin(%1) setting parameters near: period size = %2 [frames], hwbuffer "
 "size = %3 [frames]"
 msgstr ""
 
-#: alsa-sound.cpp:951
+#: alsa-sound.cpp:961
 #, kde-format
 msgid "ALSA Plugin: Error setting HW params: %1"
 msgstr ""
 
-#: alsa-sound.cpp:957
+#: alsa-sound.cpp:967
 #, kde-format
 msgid "ALSA Plugin: Error getting period size for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:963
+#: alsa-sound.cpp:973
 #, kde-format
 msgid "ALSA Plugin: Error getting hw buffer size for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:967
+#: alsa-sound.cpp:977
 #, kde-format
 msgid "ALSA Plugin(%1): period size = %2 [frames], hwbuffer size = %3 [frames]"
 msgstr ""
 
-#: alsa-sound.cpp:973
+#: alsa-sound.cpp:983
 #, kde-format
 msgid "ALSA Plugin(%1): Setting timer latency to %2"
 msgstr ""
 
-#: alsa-sound.cpp:977
+#: alsa-sound.cpp:987
 #, kde-format
 msgid "ALSA Plugin: Error getting sw params for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:981
+#: alsa-sound.cpp:991
 #, kde-format
 msgid ""
 "ALSA Plugin: Error setting sw params min available frames to %1 for %2: %3"
 msgstr ""
 
-#: alsa-sound.cpp:985
+#: alsa-sound.cpp:995
 #, kde-format
 msgid "ALSA Plugin: Error installing sw params for %1: %2"
 msgstr ""
 
-#: alsa-sound.cpp:1012
+#: alsa-sound.cpp:1022
 #, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the playback thread. It did not "
 "stop as desired"
 msgstr ""
 
-#: alsa-sound.cpp:1043
+#: alsa-sound.cpp:1053
 #, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the capture thread. It did not "
 "stop as desired"
 msgstr ""
 
-#: alsa-sound.cpp:1105
+#: alsa-sound.cpp:1115
 msgid "ALSA Plugin: Error opening mixer"
 msgstr ""
 
-#: alsa-sound.cpp:1111
+#: alsa-sound.cpp:1121
 #, kde-format
 msgid "ALSA Plugin: ERROR: snd_mixer_attach for card %1"
 msgstr ""
 
-#: alsa-sound.cpp:1118
+#: alsa-sound.cpp:1128
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
 msgstr ""
 
-#: alsa-sound.cpp:1122
+#: alsa-sound.cpp:1132
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_load for card %1"
 msgstr ""
 
-#: alsa-sound.cpp:1194
+#: alsa-sound.cpp:1204
 #, kde-format
 msgctxt "context-mixername-number"
 msgid "%1 %2"
 msgstr ""
 
-#: alsa-sound.cpp:1247
+#: alsa-sound.cpp:1257
 #, kde-format
 msgctxt "context-mixerelement-name-number"
 msgid "%1 %2"
 msgstr ""
 
-#: alsa-sound.cpp:1410 alsa-sound.cpp:1438
+#: alsa-sound.cpp:1420 alsa-sound.cpp:1448
 #, kde-format
 msgid "error while reading volume from %1, channel %2"
 msgstr ""
 
-#: alsa-sound.cpp:1480 alsa-sound.cpp:1512
+#: alsa-sound.cpp:1490 alsa-sound.cpp:1522
 #, kde-format
 msgid "error while writing volume %1 to %2, channel %3"
 msgstr ""
 
-#: alsa-sound.cpp:1532
+#: alsa-sound.cpp:1542
 #, kde-format
 msgid "error while setting capture switch %1 for %2"
 msgstr ""
 
-#: alsa-sound.cpp:1727
+#: alsa-sound.cpp:1737
 #, kde-format
 msgid "ALSA Sound Device %1"
 msgstr "%1 ALSA Ses Aygıtı"
 
-#: alsa-sound.cpp:1891
+#: alsa-sound.cpp:1902
 #, kde-format
 msgid "AlsaPlugin(capture thread on %1): "
 msgstr ""
 
-#: alsa-sound.cpp:1895
+#: alsa-sound.cpp:1906
 #, kde-format
 msgid "AlsaPlugin(playback thread on %1): "
 msgstr ""
 
-#: alsa-thread.cpp:105
+#: alsa-thread.cpp:130
 msgid "ALSA Thread: cannot write data"
 msgstr ""
 
-#: alsa-thread.cpp:112
+#: alsa-thread.cpp:137
 msgid "ALSA Thread: buffer underrun"
 msgstr ""
 
-#: alsa-thread.cpp:164
+#: alsa-thread.cpp:196
 msgid "AlsaThread: cannot read data"
 msgstr ""
 
-#: alsa-thread.cpp:170
+#: alsa-thread.cpp:202
 msgid "AlsaThread: buffer overrun"
 msgstr ""
 

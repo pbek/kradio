@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2012-04-09 02:25+0200\n"
 "PO-Revision-Date: 2009-05-09 10:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -33,6 +33,11 @@ msgstr "Швидкий доступ"
 #: quickbar.cpp:144
 msgid "Quickbar Configuration"
 msgstr "Налаштування панелі швидкого доступу"
+
+#: quickbar.cpp:370
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar%1"
+msgstr "Швидкий доступ"
 
 #: quickbar.cpp:377
 msgid "contentsDragEnterEvent accepted"

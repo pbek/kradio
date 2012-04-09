@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2012-04-09 02:25+0200\n"
 "PO-Revision-Date: 2011-01-08 15:00+0200\n"
 "Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
 "Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
@@ -39,7 +39,7 @@ msgid "%1 Debug: %2"
 msgstr "%1 Debug: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
-#: radiostations/internetradiostation.cpp:143
+#: radiostations/internetradiostation.cpp:155
 #, kde-format
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -54,71 +54,79 @@ msgstr "%1 MHz"
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: radiostations/radiostation-config.cpp:48
+#: radiostations/radiostation-config.cpp:49
 msgid "I don't know how to edit this station"
 msgstr "Non so come modificare questa stazione"
 
-#: radiostations/radiostation-config.cpp:74
+#: radiostations/radiostation-config.cpp:75
 msgid "Frequency:"
 msgstr "Frequenza:"
 
-#: radiostations/radiostation-config.cpp:127
+#: radiostations/radiostation-config.cpp:128
 msgid "URL:"
 msgstr "URL:"
 
-#: radiostations/radiostation-config.cpp:131
+#: radiostations/radiostation-config.cpp:132
 msgid "Decoder Class:"
 msgstr "Classe del decoder:"
 
-#: radiostations/radiostation-config.cpp:135
+#: radiostations/radiostation-config.cpp:136
 msgid "Playlist Class:"
 msgstr "Classe della playlist"
 
-#: radiostations/radiostation-config.cpp:140
+#: radiostations/radiostation-config.cpp:141
 msgctxt "Stream Format"
 msgid "<autodetect>"
 msgstr "<autorilevamento>"
 
-#: radiostations/radiostation-config.cpp:141
+#: radiostations/radiostation-config.cpp:142
 msgid "MP3"
 msgstr "MP3"
 
-#: radiostations/radiostation-config.cpp:142
+#: radiostations/radiostation-config.cpp:143
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
-#: radiostations/radiostation-config.cpp:143
+#: radiostations/radiostation-config.cpp:144
 msgid "ASF"
 msgstr "ASF"
 
-#: radiostations/radiostation-config.cpp:145
+#: radiostations/radiostation-config.cpp:146
 msgid "OGG/Vorbis"
 msgstr "OGG/Vorbis"
 
-#: radiostations/radiostation-config.cpp:148
+#: radiostations/radiostation-config.cpp:149
 msgctxt "Playlist Format"
 msgid "<autodetect>"
 msgstr "<autorilevamento>"
 
-#: radiostations/radiostation-config.cpp:149
+#: radiostations/radiostation-config.cpp:150
 msgid "<none>"
 msgstr "<nessuno>"
 
-#: radiostations/radiostation-config.cpp:150
+#: radiostations/radiostation-config.cpp:151
 msgid "ASX"
 msgstr "ASX"
 
-#: radiostations/radiostation-config.cpp:151
+#: radiostations/radiostation-config.cpp:152
 msgid "LSC"
 msgstr "LSC"
 
-#: radiostations/radiostation-config.cpp:152
+#: radiostations/radiostation-config.cpp:153
 msgid "M3U"
 msgstr "M3U"
 
-#: radiostations/radiostation-config.cpp:153
+#: radiostations/radiostation-config.cpp:154
 msgid "PLS"
 msgstr "PLS"
+
+#: radiostations/radiostation-config.cpp:157
+msgid "Meta-Data Stream Encoding:"
+msgstr ""
+
+#: radiostations/radiostation-config.cpp:239
+msgid "auto"
+msgstr ""
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
@@ -160,7 +168,7 @@ msgstr "contentsDragEnterEvent rifiutato"
 msgid "AM/FM Radio Station"
 msgstr "AM/FM Stazione radio"
 
-#: radiostations/internetradiostation.h:73
+#: radiostations/internetradiostation.h:75
 msgid "Internet Radio Station"
 msgstr "Stazione radio internet"
 
