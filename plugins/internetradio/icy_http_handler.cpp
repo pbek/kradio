@@ -268,7 +268,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
 
     if (complete) {
         if (m_metaData.size()) {
-            // truncate tailing zeros
+            // truncate tailing zeros, seems that the codecs also translate zero chars
             int     zpos = m_metaData.indexOf('\000');
             if (zpos >= 0) {
                 m_metaData = m_metaData.left(zpos);
@@ -288,7 +288,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
             // enforce deep copy
             QString metaString(tmpString.constData(), tmpString.size());
 
-            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1").arg(metaString));
+            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1 (len %2)").arg(metaString).arg(metaString.length()));
 
             // parse meta data
             QMap<QString, QString>  metaData;
