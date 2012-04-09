@@ -140,31 +140,6 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="1">
-      <widget class="KDoubleNumInput" name="spinboxAnalysisTime">
-       <property name="value">
-        <double>0.800000000000000</double>
-       </property>
-       <property name="minimum">
-        <double>0.300000000000000</double>
-       </property>
-       <property name="maximum">
-        <double>10.000000000000000</double>
-       </property>
-       <property name="singleStep">
-        <double>0.100000000000000</double>
-       </property>
-       <property name="suffix">
-        <string> s</string>
-       </property>
-       <property name="decimals">
-        <number>1</number>
-       </property>
-       <property name="sliderEnabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="labelPlaybackMixerDevice">
        <property name="sizePolicy">
@@ -289,10 +264,35 @@
         <number>32</number>
        </property>
        <property name="singleStep">
-        <number>16</number>
+        <number>1</number>
        </property>
        <property name="value">
         <number>8</number>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="KDoubleNumInput" name="spinboxAnalysisTime">
+       <property name="value">
+        <double>0.800000000000000</double>
+       </property>
+       <property name="minimum">
+        <double>0.300000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>10.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="suffix">
+        <string> s</string>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="sliderEnabled">
+        <bool>false</bool>
        </property>
       </widget>
      </item>

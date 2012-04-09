@@ -199,6 +199,8 @@ protected slots:
     void    slotDecoderThreadFinished();
 
     void    slotMetaDataUpdate(KIO::MetaData metadata);
+    void    slotWatchdogData(QByteArray data);
+    void    slotWatchdogTimeout();
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     void    slotInputStreamUrlChanged(KUrl url);
@@ -261,7 +263,10 @@ protected:
 
     int                           m_inputBufferSize;
     int                           m_outputBufferSize;
+
     int                           m_watchdogTimeout;
+    bool                          m_watchdogHandlerInService;
+    QTimer                        m_watchdogTimer;
 
     bool                          m_waitForBufferMinFill;
 };

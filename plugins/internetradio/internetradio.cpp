@@ -38,12 +38,7 @@
 #include "mmsx_handler.h"
 
 
-// #ifdef KRADIO_ENABLE_FIXMES
-//     #warning "FIXME: make buffer size configurable"
-// #endif
-// #define MAX_BUFFER_SIZE       (512*1024)
 #define MAX_BUFFER_CHUNKS           16
-// #define MAX_BYTES_PER_BUFFER        ((MAX_BUFFER_SIZE) / (MAX_BUFFER_CHUNKS))
 #define MIN_BUFFER_CHUNKS4PLAYBACK  (MAX_BUFFER_CHUNKS/3)
 
 ///////////////////////////////////////////////////////////////////////
@@ -77,6 +72,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_inputBufferSize(128*1024),
     m_outputBufferSize(512*1024),
     m_watchdogTimeout(0),
+    m_watchdogHandlerInService(false),
     m_waitForBufferMinFill(true)
 {
     m_SoundStreamSinkID   = createNewSoundStream(false);
@@ -86,6 +82,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     QObject::connect(&m_playlistHandler, SIGNAL(sigError(QString)),             this, SLOT(slotPlaylistError(QString)));
     QObject::connect(&m_playlistHandler, SIGNAL(sigPlaylistLoaded(KUrl::List)), this, SLOT(slotPlaylistLoaded(KUrl::List)));
     QObject::connect(&m_playlistHandler, SIGNAL(sigStreamSelected(KUrl)),       this, SLOT(slotPlaylistStreamSelected(KUrl)));
+    QObject::connect(&m_watchdogTimer,   SIGNAL(timeout()),                     this, SLOT(slotWatchdogTimeout()));
 }
 
 
@@ -555,6 +552,7 @@ void InternetRadio::slotBufferSettingsChanged (int inputBufSize, int outputBufSi
 void InternetRadio::slotWatchdogSettingsChanged (int timeout)
 {
     m_watchdogTimeout  = timeout;
+    m_watchdogTimer.stop();
 }
 
 
@@ -737,6 +735,8 @@ void InternetRadio::startStreamReader(KUrl stream)
     connect(m_streamReader, SIGNAL(sigStarted(KUrl)),                             this, SLOT(slotStreamStarted(KUrl)));
     connect(m_streamReader, SIGNAL(sigUrlChanged(KUrl)),                          this, SLOT(slotInputStreamUrlChanged(KUrl)));
     connect(m_streamReader, SIGNAL(sigConnectionEstablished(KUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(KUrl,KIO::MetaData)));
+
+    connect(m_streamReader, SIGNAL(sigStreamData(QByteArray)),                    this, SLOT(slotWatchdogData(QByteArray)));
 
     m_streamReader->startStreamDownload(stream, m_currentStation.metaDataEncoding());
 }
@@ -1108,6 +1108,36 @@ void InternetRadio::slotMetaDataUpdate(KIO::MetaData metadata)
 }
 
 
+// #define  DEBUG_TEST_WATCHDOG
+
+void InternetRadio::slotWatchdogData(QByteArray data)
+{
+#ifdef DEBUG_TEST_WATCHDOG
+    bool reset = data.size() > 0 && !m_watchdogTimer.isActive();
+#else
+    bool reset = data.size() > 0;
+#endif
+    if (isPowerOn() && reset) {
+        m_watchdogTimer.stop();
+        if (m_watchdogTimeout > 0) {
+            m_watchdogTimer.setSingleShot(true);
+            m_watchdogTimer.start(m_watchdogTimeout * 1000);
+        }
+    }
+}
+
+
+void InternetRadio::slotWatchdogTimeout()
+{
+    if (isPowerOn() && !m_watchdogHandlerInService) {
+        m_watchdogHandlerInService = true;
+        logWarning(i18n("Internet Radio Plugin (%1): stream data timeout (>= %2 s)").arg(m_playlistHandler.currentStreamUrl().pathOrUrl()).arg(m_watchdogTimeout));
+        m_playlistHandler.selectNextStream(false, false, false);
+        m_watchdogHandlerInService = false;
+    }
+}
+
+
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 
@@ -1120,7 +1150,11 @@ void InternetRadio::slotStreamError(KUrl /*url*/)
 
 void InternetRadio::slotStreamFinished(KUrl /*url*/)
 {
-    powerOff();
+    if (m_watchdogTimeout) {
+        slotWatchdogTimeout();
+    } else {
+        powerOff();
+    }
 }
 
 

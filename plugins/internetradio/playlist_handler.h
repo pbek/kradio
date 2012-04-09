@@ -49,7 +49,7 @@ public slots:
     void        setPlayListUrl(const InternetRadioStation &s, int maxStreamRetries);
     void        startPlaylistDownload();
     void        stopPlaylistDownload();
-    void        selectNextStream(bool allowRetrySameString, bool errorIfEOL);
+    void        selectNextStream(bool allowRetrySameString, bool errorIfEOL, bool isRetry = true);
 
     void        setMaxRetries(int maxRetries);
 

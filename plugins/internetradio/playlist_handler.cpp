@@ -71,10 +71,14 @@ void PlaylistHandler::stopPlaylistDownload()
 }
 
 
-void  PlaylistHandler::selectNextStream(bool allowRetrySameString, bool errorIfEOL)
+void  PlaylistHandler::selectNextStream(bool allowRetrySameString, bool errorIfEOL, bool isRetry)
 {
-    if (--m_currentStreamRetriesLeft < 0 || !allowRetrySameString) {
+    m_currentStreamRetriesLeft -= isRetry;
+    if (m_currentStreamRetriesLeft < 0 || !allowRetrySameString) {
         ++m_currentStreamIdx;
+        if (!isRetry) {
+            m_currentStreamIdx %= m_currentPlaylist.size();
+        }
         m_currentStreamRetriesLeft = m_maxStreamRetries;
     }
     if (m_currentStreamIdx < m_currentPlaylist.size()) {

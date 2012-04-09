@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-09 02:25+0200\n"
+"POT-Creation-Date: 2012-04-09 13:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,82 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: decoder_thread.cpp:135
+#: decoder_thread.cpp:138
 #, kde-format
 msgid "opening stream %1"
 msgstr ""
 
-#: decoder_thread.cpp:139
+#: decoder_thread.cpp:142
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr ""
 
-#: decoder_thread.cpp:144
+#: decoder_thread.cpp:147
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr ""
 
-#: decoder_thread.cpp:215
+#: decoder_thread.cpp:218
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr ""
 
-#: decoder_thread.cpp:234
+#: decoder_thread.cpp:237
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr ""
 
-#: decoder_thread.cpp:298
+#: decoder_thread.cpp:301
 msgid "Failed allocating AVFrame."
 msgstr ""
 
-#: decoder_thread.cpp:555 decoder_thread.cpp:558
+#: decoder_thread.cpp:558 decoder_thread.cpp:561
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr ""
 
-#: decoder_thread.cpp:562
+#: decoder_thread.cpp:565
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr ""
 
-#: decoder_thread.cpp:582 decoder_thread.cpp:585 decoder_thread.cpp:649
-#: decoder_thread.cpp:652 decoder_thread.cpp:677 decoder_thread.cpp:680
+#: decoder_thread.cpp:585 decoder_thread.cpp:588 decoder_thread.cpp:652
+#: decoder_thread.cpp:655 decoder_thread.cpp:680 decoder_thread.cpp:683
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr ""
 
-#: decoder_thread.cpp:601
+#: decoder_thread.cpp:604
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr ""
 
-#: decoder_thread.cpp:604
+#: decoder_thread.cpp:607
 #, kde-format
 msgid "cannot open MMS  %1"
 msgstr ""
 
-#: decoder_thread.cpp:712 decoder_thread.cpp:715
+#: decoder_thread.cpp:715 decoder_thread.cpp:718
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr ""
 
-#: decoder_thread.cpp:780 decoder_thread.cpp:783
+#: decoder_thread.cpp:783 decoder_thread.cpp:786
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr ""
 
-#: decoder_thread.cpp:798 decoder_thread.cpp:801
+#: decoder_thread.cpp:801 decoder_thread.cpp:804
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr ""
 
-#: decoder_thread.cpp:814 decoder_thread.cpp:817
+#: decoder_thread.cpp:817 decoder_thread.cpp:820
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr ""
 
-#: decoder_thread.cpp:859
+#: decoder_thread.cpp:862
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr ""
@@ -116,23 +116,23 @@ msgid ""
 "%1: %2"
 msgstr ""
 
-#: icy_http_handler.cpp:411
+#: icy_http_handler.cpp:417
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
 "%2"
 msgstr ""
 
-#: icy_http_handler.cpp:419
+#: icy_http_handler.cpp:425
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
 
-#: internetradio.cpp:51
+#: internetradio.cpp:46
 msgid "Pseudo radio device for internet radio stream support"
 msgstr ""
 
-#: internetradio.cpp:58
+#: internetradio.cpp:53
 msgid "Internet Radio Plugin"
 msgstr ""
 
@@ -140,78 +140,147 @@ msgstr ""
 msgid "Internet radio station decoder / pseudo device"
 msgstr ""
 
-#: internetradio.cpp:611
+#: internetradio.cpp:644
 msgid "Internet Radio"
 msgstr ""
 
-#: internetradio.cpp:612
+#: internetradio.cpp:645
 msgid "Internet Radio Options"
 msgstr ""
 
-#: internetradio.cpp:947
+#: internetradio.cpp:984
 msgid "Internet Radio Plugin: "
 msgstr ""
 
-#: playlist_handler.cpp:87
+#: internetradio.cpp:1134
+#, kde-format
+msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
+msgstr ""
+
+#: playlist_handler.cpp:91
 #, kde-format
 msgid "Failed to start any stream of %1"
 msgstr ""
 
-#: playlist_handler.cpp:126 playlist_handler.cpp:149
+#: playlist_handler.cpp:130 playlist_handler.cpp:153
 #, kde-format
 msgid "Failed to load playlist %1: %2"
 msgstr ""
 
-#: playlist_handler.cpp:129
+#: playlist_handler.cpp:133
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
 
-#: playlist_handler.cpp:194
+#: playlist_handler.cpp:198
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr ""
 
-#: playlist_handler.cpp:240
+#: playlist_handler.cpp:244
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
 
-#: playlist_handler.cpp:244
+#: playlist_handler.cpp:248
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 
-#: playlist_handler.cpp:317
+#: playlist_handler.cpp:321
 msgid "error while reading asx file: "
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:18
+#: rc.cpp:3 rc.cpp:51
 msgid "SetupDialogGeneral"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:34
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:6 rc.cpp:54
+msgid "Input Buffer Size"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:44
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:258
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
+#. i18n: file: internetradio-configuration-ui.ui:44
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:258
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
+#: rc.cpp:9 rc.cpp:15 rc.cpp:45 rc.cpp:57 rc.cpp:63 rc.cpp:93
+msgid " kB"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:66
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:12 rc.cpp:60
+msgid "PCM Output Buffer Size"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:101
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:18 rc.cpp:66
+msgid "libffmpeg: stream info analysis time"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:111
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#: rc.cpp:21 rc.cpp:69
+msgid "disabled"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:114
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#. i18n: file: internetradio-configuration-ui.ui:289
+#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
+#. i18n: file: internetradio-configuration-ui.ui:114
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#. i18n: file: internetradio-configuration-ui.ui:289
+#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
+#: rc.cpp:24 rc.cpp:48 rc.cpp:72 rc.cpp:96
+msgid " s"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:136
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:27 rc.cpp:75
+msgid "Watchdog: Reconnect after"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:6 rc.cpp:21
+#: rc.cpp:30 rc.cpp:78
 msgid "Playback Mixer Device"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:51
+#. i18n: file: internetradio-configuration-ui.ui:169
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:9 rc.cpp:24
+#: rc.cpp:33 rc.cpp:81
 msgid "test"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:65
+#. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:12 rc.cpp:27
+#: rc.cpp:36 rc.cpp:84
 msgid "Playback Mixer Channel"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:107
+#. i18n: file: internetradio-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:15 rc.cpp:30
+#: rc.cpp:39 rc.cpp:87
 msgid "Mute Playback Channel on Power Off"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:248
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:42 rc.cpp:90
+msgid "libffmpeg: format probe size"
 msgstr ""
 
 #: stream_input_buffer.cpp:72
