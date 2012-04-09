@@ -268,13 +268,19 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
 
     if (complete) {
         if (m_metaData.size()) {
+            // truncate tailing zeros
+            int     zpos = m_metaData.indexOf('\000');
+            if (zpos >= 0) {
+                m_metaData = m_metaData.left(zpos);
+            }
             QString         tmpString;
             if (m_metaDataEncoding == "auto" || !m_metaDataEncodingCodec) {
-                tmpString = QString::fromUtf8(m_metaData.data());
                 m_metaDataEncodingProber.feed(m_metaData);
     //             printf ("confidence = %f\n", prober.confidence());
                 if (m_metaDataEncodingProber.confidence() > 0.8) {
                     tmpString = QTextCodec::codecForName(m_metaDataEncodingProber.encoding())->toUnicode(m_metaData);
+                } else {
+                    tmpString = QString::fromUtf8(m_metaData.data());
                 }
             } else {
                 tmpString = m_metaDataEncodingCodec->toUnicode(m_metaData);
