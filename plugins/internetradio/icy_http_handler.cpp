@@ -88,7 +88,7 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url, const QString &metaDataEnco
         QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
     } else {
         IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_streamUrl.pathOrUrl()));
-        stopStreamDownload();
+        stopStreamDownload(false);
         emit sigError(m_streamUrl);
     }
 }
@@ -108,7 +108,7 @@ void IcyHttpHandler::startStreamJob()
 
     if (m_streamJob->error()) {
         IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
-        stopStreamDownload();
+        stopStreamDownload(false);
         emit sigError(m_streamUrl);
     }
 }
@@ -136,14 +136,16 @@ void IcyHttpHandler::startStreamDownload(KUrl url, const QString &metaDataEncodi
 }
 
 
-void IcyHttpHandler::stopStreamDownload()
+void IcyHttpHandler::stopStreamDownload(bool emitSigFinished)
 {
     if (m_streamJob) {
         QObject::disconnect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
         QObject::disconnect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
         m_streamJob->kill(); // stop and delete
         m_streamJob = NULL;
-        emit sigFinished(m_streamUrl);
+        if (emitSigFinished) {
+            emit sigFinished(m_streamUrl);
+        }
     }
 #ifdef DEBUG_DUMP_ICY_STREAMS
     if (m_debugFullStream)  fclose(m_debugFullStream);  m_debugFullStream  = NULL;
@@ -426,7 +428,7 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
                 local_err = true;
             }
         }
-        stopStreamDownload();
+        stopStreamDownload(!local_err);
         if (local_err) {
             emit sigError(m_streamUrl);
         }

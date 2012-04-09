@@ -86,6 +86,7 @@ void MMSXWrapper::run()
     emit sigUrlChanged(m_url);
     m_mms_stream = mmsx_connect(NULL, NULL, m_url.pathOrUrl().toUtf8(), 1);
     if (!m_mms_stream) {
+        m_error = true;
         emit sigError(m_url);
         return;
     }
@@ -107,5 +108,7 @@ void MMSXWrapper::run()
     if (m_mms_stream) {
         mmsx_close(m_mms_stream);
     }
-    emit sigFinished(m_url);
+    if (!m_error) {
+        emit sigFinished(m_url);
+    }
 }

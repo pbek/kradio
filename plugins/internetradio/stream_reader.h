@@ -46,6 +46,7 @@ public slots:
 
 signals:
     void                        sigError   (KUrl url);
+    // if an error occurred (sigError), sigFinished should not be emitted
     void                        sigFinished(KUrl url);
     void                        sigStarted (KUrl url);
     void                        sigConnectionEstablished(KUrl url, KIO::MetaData metaData);

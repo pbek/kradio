@@ -46,7 +46,7 @@ public:
     ~IcyHttpHandler();
 
     void                        startStreamDownload(KUrl url, const QString &metaDataEncoding);
-    void                        stopStreamDownload();
+    void                        stopStreamDownload() { stopStreamDownload(true); }
 
     KIO::MetaData               getConnectionMetaData() const { return m_connectionMetaData; }
 
@@ -59,6 +59,7 @@ protected slots:
     void                        slotStreamDone(KJob *job);
 
 protected:
+    void                        stopStreamDownload(bool emitSigFinished);
     void                        setupStreamJob(const KUrl &url, const QString &metaDataEncoding);
     void                        startStreamJob();
 
