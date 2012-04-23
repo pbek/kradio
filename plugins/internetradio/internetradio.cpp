@@ -770,7 +770,7 @@ void InternetRadio::startDecoderThread()
 //                                         m_streamInputBuffer,
 #endif
                                         m_inputBufferSize,
-                                        m_outputBufferSize,
+                                        MAX_BUFFER_CHUNKS,
                                         m_outputBufferSize / MAX_BUFFER_CHUNKS,
                                         m_maxStreamProbeSize,
                                         m_maxStreamAnalyzeTime,

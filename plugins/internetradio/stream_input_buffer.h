@@ -38,6 +38,8 @@ public:
 
     QByteArray            readInputBuffer(size_t minSize, size_t maxSize, bool consume, bool &err);
 
+    size_t                debugBytesAvailable() const { return m_inputBuffer.size(); }
+
 signals:
     // connects with this signal need to be Qt::QueuedConnection in order to avoid race conditions when suspending/waking up writing thread
     void                  sigInputBufferNotFull();

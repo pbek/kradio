@@ -210,6 +210,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
             (size_t)(m_decodedSize),
             (size_t)(m_decodedSize          / m_soundFormat.frameSize())
            );
+    fflush(m_debugMetaStream);
 #endif
 
 
@@ -227,7 +228,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
     else if (generated_output_bytes > 0) {
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
-        fwrite  (output_buf, (size_t)generated_output_bytes, 1, m_debugDecodedStream);
+        fwrite  (output_buf, (size_t)generated_output_bytes, 1, m_debugDecodedStream); fflush(m_debugDecodedStream);
 #endif
 
         time_t cur_time = time(NULL);
@@ -313,8 +314,8 @@ void InternetRadioDecoder::run()
             if (!m_done && pkt.stream_index == m_av_audioStream) {
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
-                fprintf(m_debugMetaStream,  "received packed, size %zi\n", (size_t)pkt.size);
-                fwrite  (pkt.data, (size_t)pkt.size, 1, m_debugCodedStream);
+                fprintf(m_debugMetaStream,  "received packed, size %zi\n", (size_t)pkt.size); fflush(m_debugMetaStream);
+                fwrite  (pkt.data, (size_t)pkt.size, 1, m_debugCodedStream); fflush(m_debugCodedStream);
 #endif
 
 //                 AVDictionaryEntry *t = NULL;
@@ -353,6 +354,13 @@ void InternetRadioDecoder::run()
 #endif
     }
 
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    fprintf(m_debugMetaStream, "left decoder thread main loop @ pos %zi, left %zi bytes in input buffer\n",
+            (size_t)m_encodedSize,
+            m_streamInputBuffer->debugBytesAvailable()
+           );
+    fflush(m_debugMetaStream);
+#endif
     thread()->exit();
 }
 
@@ -364,19 +372,23 @@ void InternetRadioDecoder::pushBuffer(const char *data, size_t dataSize, const S
     }
 
     bool    foundBuffer       = false;
-//     size_t  bufferFullSize    = 0;
-//     size_t  remainingCapacity = 0;
-//     size_t  remainingSize     = 0;
-//     size_t  nBufs             = 0;
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    size_t  bufferFullSize    = 0;
+    size_t  remainingCapacity = 0;
+    size_t  remainingSize     = 0;
+    size_t  nBufs             = 0;
+#endif
     {   QMutexLocker lock(&m_bufferAccessLock);
         if (m_buffers.size() > 0) {
             DataBuffer &buf = m_buffers.last();
             if (buf.soundFormat() == sf && buf.remainingCapacity() >= dataSize) {
                 buf.addData(data, dataSize);
-//                 bufferFullSize    = buf.fullSize();
-//                 remainingCapacity = buf.remainingCapacity();
-//                 remainingSize     = buf.remainingSize();
-//                 nBufs             = m_buffers.size();
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+                bufferFullSize    = buf.fullSize();
+                remainingCapacity = buf.remainingCapacity();
+                remainingSize     = buf.remainingSize();
+                nBufs             = m_buffers.size();
+#endif
                 foundBuffer = true;
             }
         }
@@ -385,13 +397,17 @@ void InternetRadioDecoder::pushBuffer(const char *data, size_t dataSize, const S
         m_bufferCountSemaphore.acquire();
         QMutexLocker lock(&m_bufferAccessLock);
         m_buffers.push_back(DataBuffer(m_maxSingleBufferSize, data, dataSize, md, sf));
-//         DataBuffer &buf = m_buffers.last();
-//         bufferFullSize    = buf.fullSize();
-//         remainingCapacity = buf.remainingCapacity();
-//         remainingSize     = buf.remainingSize();
-//         nBufs             = m_buffers.size();
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+        DataBuffer &buf = m_buffers.last();
+        bufferFullSize    = buf.fullSize();
+        remainingCapacity = buf.remainingCapacity();
+        remainingSize     = buf.remainingSize();
+        nBufs             = m_buffers.size();
+#endif
     }
-//     printf("wrote pcm buffer: nbufs=%zi, current: fullSize = %zi, remainingSize = %zi, remainingCapacity = %zi, increment = %zi\n", nBufs, bufferFullSize, remainingSize, remainingCapacity, dataSize);
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    printf("wrote pcm buffer: nbufs=%zi, current: fullSize = %zi, remainingSize = %zi, remainingCapacity = %zi, increment = %zi\n", nBufs, bufferFullSize, remainingSize, remainingCapacity, dataSize);
+#endif
 }
 
 
@@ -942,12 +958,24 @@ void InternetRadioDecoder::closeAVStream()
 
 static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, int max_size)
 {
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    static FILE *debugFH = NULL;
+    if (!debugFH) {
+        debugFH = fopen("/tmp/kradio-decoder-thread-input-stream.bin", "w");
+        printf("InternetRadioDecoder_readInputBuffer: opened input-stream debug file\n");
+    }
+#endif
+
     StreamInputBuffer *x = static_cast<StreamInputBuffer*>(opaque);
     bool               err = false;
     QByteArray tmp = x->readInputBuffer(1024, max_size, /* consume */ true, err); // at least a kB
 //     printf ("read returned %i bytes, err = %i\n", tmp.size(), err);
     if (!err) {
         memcpy(buffer, tmp.constData(), tmp.size());
+
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+        fwrite(tmp.constData(), tmp.size(), 1, debugFH); fflush(debugFH);
+#endif
         return tmp.size();
     } else {
         return -1;

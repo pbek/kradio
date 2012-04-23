@@ -245,8 +245,8 @@ void IcyHttpHandler::handleStreamData(const QByteArray &data)
 {
 //    logDebug(QString("stream data: %1 bytes").arg(data.size()));
 #ifdef DEBUG_DUMP_ICY_STREAMS
-    fwrite(data.constData(), data.size(), 1, m_debugDataStream);
-    fprintf(m_debugDecodingLog, "   data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugDataPos);
+    fwrite(data.constData(), data.size(), 1, m_debugDataStream); fflush(m_debugDataStream);
+    fprintf(m_debugDecodingLog, "   data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugDataPos); fflush(m_debugDecodingLog);
     m_debugDataPos += data.size();
 #endif
     emit sigStreamData(data);
@@ -262,9 +262,8 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
     m_metaData.append(QByteArray(data.data(), data.size()));
 
 #ifdef DEBUG_DUMP_ICY_STREAMS
-    fwrite(data.constData(), data.size(), 1, m_debugMetaStream);
-    fflush(m_debugMetaStream);
-    fprintf(m_debugDecodingLog, "   meta data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugMetaPos);
+    fwrite(data.constData(), data.size(), 1, m_debugMetaStream);  fflush(m_debugMetaStream);
+    fprintf(m_debugDecodingLog, "   meta data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugMetaPos); fflush(m_debugDecodingLog);
     m_debugMetaPos += data.size();
 #endif
 
@@ -357,8 +356,8 @@ void IcyHttpHandler::slotStreamData(KIO::Job *job, QByteArray data)
         }
 
 #ifdef DEBUG_DUMP_ICY_STREAMS
-        fwrite(data.constData(), data.size(), 1, m_debugFullStream);
-        fprintf(m_debugDecodingLog, "full stream data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugFullPos);
+        fwrite(data.constData(), data.size(), 1, m_debugFullStream); fflush(m_debugFullStream);
+        fprintf(m_debugDecodingLog, "full stream data received: size = %zi @ pos %zi\n", (size_t)data.size(), m_debugFullPos); fflush(m_debugDecodingLog);
         m_debugFullPos += data.size();
 #endif
 
@@ -405,8 +404,10 @@ void IcyHttpHandler::slotStreamContinue()
 
 void IcyHttpHandler::slotStreamPause()
 {
-    m_streamJob->suspend();
-//     printf ("stream PAUSED\n");
+    if (m_streamJob) {
+        m_streamJob->suspend();
+//         printf ("stream PAUSED\n");
+    }
 }
 
 
