@@ -1,3 +1,14 @@
+2012-07-28
+
+    emw - finally fixed the problem with skips and stops in internet radio
+          stream decoding
+
+    Paulo Cavalcanti
+        - updated preset file for RioDeJaneiro/Brazil
+
+    Roman Paholík
+        - initial partial Slovak translation
+
 2012-04-09
 
     emw - added watchdog for internet streams: reconnects after a configurable stall time

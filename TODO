@@ -44,7 +44,7 @@ For 4.0.x
   * make input/output buffer size configurable for internet radio
   * lirc 0.8.5 compatibility fixes
   * reactivate OSS support?
-  * fix reconnect for streams that stop after some time (e.g. 5 hours for WDR5 literaturmarathon)
+  * --done-- fix reconnect for streams that stop after some time (e.g. 5 hours for WDR5 literaturmarathon)
   * use pkgconfig stuff where possible
   * alsa config, pvr page, mute playback channel of recording if active playback always disabled
   * plugin libs version check
