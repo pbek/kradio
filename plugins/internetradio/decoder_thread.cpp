@@ -38,8 +38,6 @@ extern "C" {
 }
 
 
-#define DEFAULT_MMS_BUFFER_SIZE         65536
-
 InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_parent,
                                            const InternetRadioStation &rs,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -152,6 +150,18 @@ void InternetRadioDecoder::selectStreamFromPlaylist()
 
 bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_bytes)
 {
+
+#ifdef DEBUG_EXIT_ON_EXAMPLE_ERROR_PACKET
+    if (m_debugPacketCount == 29289) {
+        printf("packet %zi: (buf: %p)\n", m_debugPacketCount, pkt.data);
+        for (int i = 0; i < 8 ; ++i) {
+            printf("%02x ", (unsigned char)pkt.data[i]);
+        }
+        printf("\n");
+        exit (-1);
+    }
+#endif
+
     char *output_buf             = NULL;
     int   generated_output_bytes = 0;
           processed_input_bytes  = 0;
@@ -197,7 +207,6 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
                                                    pkt.size);
 #endif
 
-    m_encodedSize += (processed_input_bytes > 0) ? processed_input_bytes : 0;
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
     fprintf(m_debugMetaStream, "    processed input  chunk size %zi @ pos %zi\n",
@@ -212,6 +221,8 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
            );
     fflush(m_debugMetaStream);
 #endif
+
+    m_encodedSize += (processed_input_bytes > 0) ? processed_input_bytes : 0;
 
 
     if (processed_input_bytes < 0) {
@@ -248,10 +259,19 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
             updateSoundFormat();
         }
 
-//                     printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
-//                     printf ("storing decoded data ...");
+
+#ifdef DEBUG_LOG_BUFFER_STATE
+        printf ("free buffers: %i\n", m_bufferCountSemaphore.available());
+        printf ("storing decoded data ...");
+#endif
+
+#ifndef DEBUG_DISCARD_DECODED_PCM_DATA
         pushBuffer(output_buf, generated_output_bytes, md, m_soundFormat);
-//                     printf (" done\n");
+#endif
+
+#ifdef DEBUG_LOG_BUFFER_STATE
+        printf (" done\n");
+#endif
 
         m_decodedSize += generated_output_bytes;
     }
@@ -314,8 +334,14 @@ void InternetRadioDecoder::run()
             if (!m_done && pkt.stream_index == m_av_audioStream) {
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
-                fprintf(m_debugMetaStream,  "received packed, size %zi\n", (size_t)pkt.size); fflush(m_debugMetaStream);
+                m_debugPacketCount++;
+                fprintf(m_debugMetaStream,  "received packet nr. %zi (stream %i), size %zi\n", m_debugPacketCount, pkt.stream_index, (size_t)pkt.size); fflush(m_debugMetaStream);
                 fwrite  (pkt.data, (size_t)pkt.size, 1, m_debugCodedStream); fflush(m_debugCodedStream);
+                fprintf(m_debugMetaStream,  "   first 8 bytes (buf: %p): ", pkt.data);
+                for (int i = 0; i < 8 ; ++i) {
+                    fprintf(m_debugMetaStream, "%02x ", (unsigned char)pkt.data[i]);
+                }
+                fprintf(m_debugMetaStream, "\n"); fflush(m_debugMetaStream);
 #endif
 
 //                 AVDictionaryEntry *t = NULL;
@@ -340,9 +366,23 @@ void InternetRadioDecoder::run()
                 // restore original ptrs in order to allow a proper freeing
                 pkt.data = audio_pkt_org_data;
                 pkt.size = audio_pkt_org_size;
+            } else {
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+                fprintf(m_debugMetaStream,  "discarded packet with size %zi\n", (size_t)pkt.size); fflush(m_debugMetaStream);
+                fprintf(m_debugMetaStream,  "   first 8 bytes (buf: %p): ", pkt.data);
+                for (int i = 0; i < 8 ; ++i) {
+                    fprintf(m_debugMetaStream, "%02x ", (unsigned char)pkt.data[i]);
+                }
+                fprintf(m_debugMetaStream, "\n"); fflush(m_debugMetaStream);
+                fflush(stdout);
+                if (m_debugPacketCount >= 29289) {
+                    exit (-1);
+                }
+#endif
             }
 
             av_free_packet(&pkt);
+            memset(&pkt, 0, sizeof(pkt));
         //         printf ("waiting for next packet\n");
         }
 
@@ -476,6 +516,10 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
         return;
     }
 
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+    m_debugPacketCount = -1;
+#endif
+
     // care a bit about maximum delay when opening and autodetecting the stream:
     // two effects:
     //   * av_open_input_{stream,file}   has some autodetection which tries to get
@@ -534,7 +578,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
 
-    m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE), //(unsigned char*)m_mms_buffer,
+    m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE + 4 * FF_INPUT_BUFFER_PADDING_SIZE), //(unsigned char*)m_mms_buffer, paranoia padding: 4x requirement
                                                 DEFAULT_MMS_BUFFER_SIZE,            //sizeof(m_mms_buffer),
                                                 /*write_flag = */ false,
                                                 m_streamInputBuffer,
@@ -542,10 +586,12 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
                                                 NULL,
                                                 NULL
                                                );
+    m_av_byteio_contextPtr->seekable = 0;
+
 #else
 
     init_put_byte(&m_av_byteio_context,
-                  (unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE), // (unsigned char*)m_mms_buffer,
+                  (unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE + 4 * FF_INPUT_BUFFER_PADDING_SIZE), // (unsigned char*)m_mms_buffer, paranoia padding: 4x requirement
                   DEFAULT_MMS_BUFFER_SIZE,            // sizeof(m_mms_buffer),
                   false,
                   this,
@@ -553,6 +599,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
                   NULL,
                   NULL
                  );
+
 #endif
 
     // run autodetection if format is not known
@@ -625,7 +672,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
             closeAVStream();
         } else {
 #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
-            m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE), // (unsigned char*)m_mms_buffer,
+            m_av_byteio_contextPtr = avio_alloc_context((unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE + 4 * FF_INPUT_BUFFER_PADDING_SIZE), //(unsigned char*)m_mms_buffer, paranoia padding: 4x requirement
                                                         DEFAULT_MMS_BUFFER_SIZE,            // sizeof(m_mms_buffer),
                                                         /*write_flag = */ false,
                                                         m_mms_stream,
@@ -633,9 +680,10 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
                                                         NULL,
                                                         NULL
                                                        );
+            m_av_byteio_contextPtr->seekable = 0;
 #else
             init_put_byte(&m_av_byteio_context,
-                          (unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE), // (unsigned char*)m_mms_buffer,
+                          (unsigned char*)av_malloc(DEFAULT_MMS_BUFFER_SIZE + 4 * FF_INPUT_BUFFER_PADDING_SIZE), //(unsigned char*)m_mms_buffer, paranoia padding: 4x requirement
                           DEFAULT_MMS_BUFFER_SIZE,            // sizeof(m_mms_buffer),
                           false,
                           m_mms_stream,
@@ -824,7 +872,9 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     }
 
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(52, 123, 0) // checked: avcodec_open2 in ffmpeg >= 0.7.8
-    err = avcodec_open2(m_av_aCodecCtx, m_av_aCodec, NULL);
+    AVDictionary *codecOpts = NULL;
+    av_dict_set(&codecOpts, "threads", "auto", 0);
+    err = avcodec_open2(m_av_aCodecCtx, m_av_aCodec, &codecOpts);
 #else
     err = avcodec_open(m_av_aCodecCtx, m_av_aCodec);
 #endif
@@ -959,22 +1009,39 @@ void InternetRadioDecoder::closeAVStream()
 static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, int max_size)
 {
 #ifdef DEBUG_DUMP_DECODER_STREAMS
-    static FILE *debugFH = NULL;
+    static FILE   *debugFH = NULL;
+    static size_t  pos     = 0;
     if (!debugFH) {
         debugFH = fopen("/tmp/kradio-decoder-thread-input-stream.bin", "w");
         printf("InternetRadioDecoder_readInputBuffer: opened input-stream debug file\n");
     }
+//     if (pos >= 0x808000) {
+//         printf("dummy\n");
+//     }
 #endif
 
     StreamInputBuffer *x = static_cast<StreamInputBuffer*>(opaque);
     bool               err = false;
     QByteArray tmp = x->readInputBuffer(1024, max_size, /* consume */ true, err); // at least a kB
-//     printf ("read returned %i bytes, err = %i\n", tmp.size(), err);
     if (!err) {
-        memcpy(buffer, tmp.constData(), tmp.size());
+        const unsigned char *rxBuf   = (const unsigned char*)tmp.constData();
+        size_t               bufsize = tmp.size();
+        memcpy(buffer, rxBuf, bufsize);
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
-        fwrite(tmp.constData(), tmp.size(), 1, debugFH); fflush(debugFH);
+        printf ("input stream read @ %zi (0x%08zx), rxBuf = %p, returned %zi bytes (0x%08zx), err = %i, buf=%p, maxSize = 0x%08x\n", pos, pos, rxBuf, bufsize, bufsize, err, buffer, max_size);
+        printf ("  first 16 bytes: ");
+        for (int i = 0; i < 16; ++i) {
+            printf("%02x ", buffer[i]);
+        }
+        printf("\n"); fflush(stdout);
+        printf ("  last 17 bytes:  ");
+        for (int i = -17; i < 0; ++i) {
+            printf("%02x ", buffer[bufsize + i]);
+        }
+        printf("\n"); fflush(stdout);
+        fwrite(tmp.constData(), bufsize, 1, debugFH); fflush(debugFH);
+        pos += tmp.size();
 #endif
         return tmp.size();
     } else {

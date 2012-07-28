@@ -60,11 +60,33 @@ extern "C" {
 #endif
 
 
-// if this macro is defined, the encoded input stream and decoded PCM audio stream
-// as well as some log information about chunk sizes and positions in the streams
-// are dumped to statically named files in /tmp
-//
+/*! if this macro is defined, the encoded input stream and decoded PCM audio stream
+    as well as some log information about chunk sizes and positions in the streams
+    are dumped to statically named files in /tmp
+*/
 // #define DEBUG_DUMP_DECODER_STREAMS
+
+/*! Enable DEBUGGING: Log Buffer States
+ */
+//#define DEBUG_LOG_BUFFER_STATE
+
+/*! Enable DEBUGGING: Do not send PCM data to the audio
+ *  interface (fast decoding)
+ */
+// #define DEBUG_DISCARD_DECODED_PCM_DATA
+
+
+/*! Stop execution at some hard coded known packed number for easier decoding problem
+ *  analysis
+ */
+#ifdef DEBUG_DUMP_DECODER_STREAMS
+//     #define DEBUG_EXIT_ON_EXAMPLE_ERROR_PACKET
+#endif
+
+
+
+#define DEFAULT_MMS_BUFFER_SIZE         65536
+
 
 
 class InternetRadioDecoder : public QObject,
@@ -189,6 +211,8 @@ protected:
     FILE  *m_debugCodedStream;
     FILE  *m_debugDecodedStream;
     FILE  *m_debugMetaStream;
+
+    size_t m_debugPacketCount;
 #endif
 };
 
