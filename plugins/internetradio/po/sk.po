@@ -1,18 +1,18 @@
-# Spanish translation for kradio.
-# Copyright (C) 2011 This_file_is_part_of_KDE
-# This file is distributed under the same license as the kradio package.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Sergio Ahumada Navea <sahumada@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kradio\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-07-28 14:51+0200\n"
-"PO-Revision-Date: 2011-01-11 23:02+0200\n"
-"Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
-"Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
-"Language: es\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: decoder_thread.cpp:136
 #, kde-format
 msgid "opening stream %1"
-msgstr "abriendo stream %1"
+msgstr ""
 
 #: decoder_thread.cpp:140
 #, kde-format
@@ -60,17 +60,17 @@ msgstr ""
 #: decoder_thread.cpp:719 decoder_thread.cpp:744 decoder_thread.cpp:747
 #, kde-format
 msgid "Could not open Stream %1"
-msgstr "No se puede abrir Stream %1"
+msgstr ""
 
 #: decoder_thread.cpp:667
 #, kde-format
 msgid "cannot open MMS stream %1"
-msgstr "No se puede abrir stream MMS %1"
+msgstr ""
 
 #: decoder_thread.cpp:670
-#, fuzzy, kde-format
+#, kde-format
 msgid "cannot open MMS  %1"
-msgstr "No se puede abrir stream MMS %1"
+msgstr ""
 
 #: decoder_thread.cpp:779 decoder_thread.cpp:782
 #, kde-format
@@ -134,7 +134,7 @@ msgstr ""
 
 #: internetradio.cpp:53
 msgid "Internet Radio Plugin"
-msgstr "Plugin de Radio en Internet"
+msgstr ""
 
 #: internetradio.cpp:374
 msgid "Internet radio station decoder / pseudo device"
@@ -142,16 +142,15 @@ msgstr ""
 
 #: internetradio.cpp:644
 msgid "Internet Radio"
-msgstr "Radio en Internet"
+msgstr ""
 
 #: internetradio.cpp:645
 msgid "Internet Radio Options"
-msgstr "Opciones de Radio en Internet"
+msgstr ""
 
 #: internetradio.cpp:984
-#, fuzzy
 msgid "Internet Radio Plugin: "
-msgstr "Plugin de Radio en Internet"
+msgstr ""
 
 #: internetradio.cpp:1134
 #, kde-format
@@ -176,7 +175,7 @@ msgstr ""
 #: playlist_handler.cpp:198
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
-msgstr "%1 no contiende ningún stream de radio válido"
+msgstr ""
 
 #: playlist_handler.cpp:244
 msgid "failed to create temporary file to store playlist data"
@@ -188,13 +187,13 @@ msgstr ""
 
 #: playlist_handler.cpp:321
 msgid "error while reading asx file: "
-msgstr "error en lectura de archivo asx: "
+msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:51
 msgid "SetupDialogGeneral"
-msgstr "SetupDialogGeneral"
+msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -264,7 +263,7 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:33 rc.cpp:81
 msgid "test"
-msgstr "probar"
+msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)

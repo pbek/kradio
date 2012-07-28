@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-09 13:22+0200\n"
+"POT-Creation-Date: 2012-07-28 14:51+0200\n"
 "PO-Revision-Date: 2011-01-08 13:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -19,83 +19,83 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: decoder_thread.cpp:138
+#: decoder_thread.cpp:136
 #, kde-format
 msgid "opening stream %1"
 msgstr "відкриття потоку %1"
 
-#: decoder_thread.cpp:142
+#: decoder_thread.cpp:140
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr ""
 "не вдалося відкрити %1. Спроба використання наступного потоку у списку."
 
-#: decoder_thread.cpp:147
+#: decoder_thread.cpp:145
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Не вдалося відкрити жодного вхідного потоку %1."
 
-#: decoder_thread.cpp:218
+#: decoder_thread.cpp:230
 #, fuzzy, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: помилка під час спроби декодування пакета. Пакет відкинуто\n"
 
-#: decoder_thread.cpp:237
+#: decoder_thread.cpp:249
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "внутрішній потік, не збережено (%1)"
 
-#: decoder_thread.cpp:301
+#: decoder_thread.cpp:322
 msgid "Failed allocating AVFrame."
 msgstr ""
 
-#: decoder_thread.cpp:558 decoder_thread.cpp:561
+#: decoder_thread.cpp:621 decoder_thread.cpp:624
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr "Не вдалося автоматично визначити тип потокових даних %1"
 
-#: decoder_thread.cpp:565
+#: decoder_thread.cpp:628
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Автовизначений формат: %1 (оцінка %2)"
 
-#: decoder_thread.cpp:585 decoder_thread.cpp:588 decoder_thread.cpp:652
-#: decoder_thread.cpp:655 decoder_thread.cpp:680 decoder_thread.cpp:683
+#: decoder_thread.cpp:648 decoder_thread.cpp:651 decoder_thread.cpp:716
+#: decoder_thread.cpp:719 decoder_thread.cpp:744 decoder_thread.cpp:747
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr "Не вдалося відкрити потік %1"
 
-#: decoder_thread.cpp:604
+#: decoder_thread.cpp:667
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "не вдалося відкрити потік MMS %1"
 
-#: decoder_thread.cpp:607
+#: decoder_thread.cpp:670
 #, fuzzy, kde-format
 msgid "cannot open MMS  %1"
 msgstr "не вдалося відкрити потік MMS %1"
 
-#: decoder_thread.cpp:715 decoder_thread.cpp:718
+#: decoder_thread.cpp:779 decoder_thread.cpp:782
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Не вдалося знайти відомості про потік у %1"
 
-#: decoder_thread.cpp:783 decoder_thread.cpp:786
+#: decoder_thread.cpp:847 decoder_thread.cpp:850
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Не вдалося знайти звуковий потік у %1"
 
-#: decoder_thread.cpp:801 decoder_thread.cpp:804
+#: decoder_thread.cpp:865 decoder_thread.cpp:868
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Не вдалося знайти кодек для %1"
 
-#: decoder_thread.cpp:817 decoder_thread.cpp:820
+#: decoder_thread.cpp:883 decoder_thread.cpp:886
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Спроба відкриття кодека для %1 зазнала невдачі"
 
-#: decoder_thread.cpp:862
+#: decoder_thread.cpp:928
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr ""
@@ -121,14 +121,14 @@ msgid ""
 "%1: %2"
 msgstr "Не вдалося розпочати звантаження потокових даних %1: %2"
 
-#: icy_http_handler.cpp:417
+#: icy_http_handler.cpp:420
 #, fuzzy, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
 "%2"
 msgstr "Не вдалося завантажити потокові дані %1: %2"
 
-#: icy_http_handler.cpp:425
+#: icy_http_handler.cpp:428
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""

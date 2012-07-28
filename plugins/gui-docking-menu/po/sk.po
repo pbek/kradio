@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-07-28 14:51+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: docking-configuration.cpp:126
+msgid "Mouse Click on Tray Icon"
+msgstr ""
+
+#: docking-configuration.cpp:127 docking-configuration.cpp:134
+msgid "Left"
+msgstr ""
+
+#: docking-configuration.cpp:128 docking-configuration.cpp:135
+msgid "Right"
+msgstr ""
+
+#: docking-configuration.cpp:129 docking-configuration.cpp:136
+msgid "Middle"
+msgstr ""
+
+#: docking-configuration.cpp:130 docking-configuration.cpp:137
+msgid "XButton1"
+msgstr ""
+
+#: docking-configuration.cpp:131 docking-configuration.cpp:138
+msgid "XButton2"
+msgstr ""
+
+#: docking-configuration.cpp:133
+msgid "Mouse Double-Click on Tray Icon"
+msgstr ""
+
+#: docking-configuration.cpp:140
+msgid "Mouse Wheel Action on Tray Icon"
+msgstr ""
+
+#: docking-configuration.cpp:146 docking-configuration.cpp:156
+msgid "No Action"
+msgstr ""
+
+#: docking-configuration.cpp:147
+msgid "Show/Hide Windows"
+msgstr ""
+
+#: docking-configuration.cpp:148
+msgid "Power On/Off"
+msgstr ""
+
+#: docking-configuration.cpp:149
+msgid "Pause/Play"
+msgstr ""
+
+#: docking-configuration.cpp:150 docking.cpp:322
+msgid "Recording"
+msgstr ""
+
+#: docking-configuration.cpp:151
+msgid "System Tray Menu"
+msgstr ""
+
+#: docking-configuration.cpp:152
+msgid "GUI-Plugin Menu"
+msgstr ""
+
+#: docking-configuration.cpp:153
+msgid "Configuration"
+msgstr ""
+
+#: docking-configuration.cpp:157
+msgid "Change Station"
+msgstr ""
+
+#: docking-configuration.cpp:158
+msgid "Change Volume"
+msgstr ""
+
+#: docking-configuration.cpp:159
+msgid "Change Frequency"
+msgstr ""
+
+#: docking.cpp:46
+msgid "System Tray Icon/Menu for KRadio"
+msgstr ""
+
+#: docking.cpp:54
+msgid "System Tray Plugin"
+msgstr ""
+
+#: docking.cpp:257
+msgid "System Tray Icon"
+msgstr ""
+
+#: docking.cpp:258
+msgid "System Tray Icon Configuration"
+msgstr ""
+
+#: docking.cpp:312
+msgid "Search Next Station"
+msgstr ""
+
+#: docking.cpp:313
+msgid "Search Previous Station"
+msgstr ""
+
+#: docking.cpp:327
+msgid "Pause Radio"
+msgstr ""
+
+#: docking.cpp:338
+msgid "Show/Hide Plugins"
+msgstr ""
+
+#: docking.cpp:346
+msgid "&Quit"
+msgstr ""
+
+#: docking.cpp:461
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr ""
+
+#: docking.cpp:464 docking.cpp:473 docking.cpp:481
+msgid "Start Sleep Countdown"
+msgstr ""
+
+#: docking.cpp:489
+msgid "Power Off"
+msgstr ""
+
+#: docking.cpp:489
+msgid "Power On"
+msgstr ""
+
+#: docking.cpp:504 docking.cpp:525
+msgid "invalid station"
+msgstr ""
+
+#: docking.cpp:507
+#, kde-format
+msgid "KRadio: %1"
+msgstr ""
+
+#: docking.cpp:517
+#, kde-format
+msgid "next alarm: %1"
+msgstr ""
+
+#: docking.cpp:519
+msgid "<no alarm pending>"
+msgstr ""
+
+#: docking.cpp:778 docking.cpp:881 docking.cpp:939
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr ""
+
+#: docking.cpp:867
+msgid "Start Recording"
+msgstr ""
+
+#: docking.cpp:921
+msgid "Resume playback"
+msgstr ""
+
+#: docking.cpp:925
+msgid "Pause playback"
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_internetradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-09 13:22+0200\n"
+"POT-Creation-Date: 2012-07-28 14:51+0200\n"
 "PO-Revision-Date: 2010-01-08 09:08+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,82 +17,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: decoder_thread.cpp:138
+#: decoder_thread.cpp:136
 #, kde-format
 msgid "opening stream %1"
 msgstr "opna straum %1"
 
-#: decoder_thread.cpp:142
+#: decoder_thread.cpp:140
 #, kde-format
 msgid "failed to open %1. Trying next stream in play list."
 msgstr "tókst ekki að opna %1. Reyni við næsta straum í spilunarlista."
 
-#: decoder_thread.cpp:147
+#: decoder_thread.cpp:145
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Gat ekki opnað neinn inntaksstraum úr %1."
 
-#: decoder_thread.cpp:218
+#: decoder_thread.cpp:230
 #, fuzzy, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: villa við afkóðun pakka. Hendi pakkanum\n"
 
-#: decoder_thread.cpp:237
+#: decoder_thread.cpp:249
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "innri straumur, ekki geymdur (%1)"
 
-#: decoder_thread.cpp:301
+#: decoder_thread.cpp:322
 msgid "Failed allocating AVFrame."
 msgstr ""
 
-#: decoder_thread.cpp:558 decoder_thread.cpp:561
+#: decoder_thread.cpp:621 decoder_thread.cpp:624
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr ""
 
-#: decoder_thread.cpp:565
+#: decoder_thread.cpp:628
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr ""
 
-#: decoder_thread.cpp:585 decoder_thread.cpp:588 decoder_thread.cpp:652
-#: decoder_thread.cpp:655 decoder_thread.cpp:680 decoder_thread.cpp:683
+#: decoder_thread.cpp:648 decoder_thread.cpp:651 decoder_thread.cpp:716
+#: decoder_thread.cpp:719 decoder_thread.cpp:744 decoder_thread.cpp:747
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr "Get ekki opnað straum %1"
 
-#: decoder_thread.cpp:604
+#: decoder_thread.cpp:667
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "gat ekki opnað MMS straum %1"
 
-#: decoder_thread.cpp:607
+#: decoder_thread.cpp:670
 #, fuzzy, kde-format
 msgid "cannot open MMS  %1"
 msgstr "gat ekki opnað MMS straum %1"
 
-#: decoder_thread.cpp:715 decoder_thread.cpp:718
+#: decoder_thread.cpp:779 decoder_thread.cpp:782
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Fann engar straumupplýsingar í %1"
 
-#: decoder_thread.cpp:783 decoder_thread.cpp:786
+#: decoder_thread.cpp:847 decoder_thread.cpp:850
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Fann engan hljóðstraum í %1"
 
-#: decoder_thread.cpp:801 decoder_thread.cpp:804
+#: decoder_thread.cpp:865 decoder_thread.cpp:868
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Fann ekki afkóðunarlykla (codec) fyrir %1"
 
-#: decoder_thread.cpp:817 decoder_thread.cpp:820
+#: decoder_thread.cpp:883 decoder_thread.cpp:886
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Mistókst að opna afkóðunarlykla (codec) fyrir %1"
 
-#: decoder_thread.cpp:862
+#: decoder_thread.cpp:928
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr ""
@@ -116,14 +116,14 @@ msgid ""
 "%1: %2"
 msgstr "tókst ekki að ná í %1"
 
-#: icy_http_handler.cpp:417
+#: icy_http_handler.cpp:420
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
 "%2"
 msgstr ""
 
-#: icy_http_handler.cpp:425
+#: icy_http_handler.cpp:428
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
