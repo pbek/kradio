@@ -3,9 +3,9 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<creator>kradio-4.0.1</creator>
+			<creator>kradio-4.0.5</creator>
 			<maintainer>Paulo Roma</maintainer>
-			<changed>2010-12-23T14:00:45</changed>
+			<changed>2012-04-26T07:20:16</changed>
 			<country>Brasil</country>
 			<city>Rio de Janeiro</city>
 			<media>FM</media>
@@ -21,11 +21,11 @@
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>1108522606CF0E16071B00E33871043B85546C70AA2AF543A71B4C24B9B04E1817131E5CCC</stationID>
-			<name>Globo</name>
+			<name>Rádio Globo</name>
 			<shortname>Globo</shortname>
 			<volumepreset>-1</volumepreset>
 			<stereomode>stereo</stereomode>
-			<frequency>89.3001</frequency>
+			<frequency>89.5</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>11085226079713E38261AB9287D23763C4D825CBFAB4756409F233A41E405EDAAFF360E6CA</stationID>
@@ -61,7 +61,7 @@
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>11085226135301AB1B95E41ACE07478D6F2C86942A06944D1BDD11C73CED9D3A56D0850081</stationID>
-			<name>BandNews</name>
+			<name>Band News FM</name>
 			<shortname>BandNews</shortname>
 			<volumepreset>-1</volumepreset>
 			<stereomode>stereo</stereomode>
@@ -77,19 +77,19 @@
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>1108522615798A0B2E248B18387E6433FD51190E66587E9A13EEA19E005588B98DAFEFC51F</stationID>
-			<name>Tupy</name>
-			<shortname>Tupy</shortname>
+			<name>Tupi</name>
+			<shortname>Tupi</shortname>
 			<volumepreset>-1</volumepreset>
 			<stereomode>stereo</stereomode>
 			<frequency>96.5</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>11433383473BEC1138AFC3903343768372D4EB8FA0B5AB2718054CDE6B0F901A2DFE8CEA8C</stationID>
-			<name>Beat 98</name>
+			<name>Beat98</name>
 			<shortname>Beat 98</shortname>
 			<volumepreset>-1</volumepreset>
 			<stereomode>stereo</stereomode>
-			<frequency>98</frequency>
+			<frequency>98.1</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>110852261861A65E9E025217236634A2FED71D33BA90B39E7DBB47F575E638DDD14D6AA426</stationID>
@@ -133,8 +133,8 @@
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
 			<stationID>1108522623AA9FD006C835CEB5488A4806543277E5A79D0C98EB07A1A0C4D39E223B5636D0</stationID>
-			<name>Oi FM</name>
-			<shortname>Oi</shortname>
+			<name>Jovem Pan</name>
+			<shortname>JP</shortname>
 			<volumepreset>-0.01</volumepreset>
 			<stereomode>stereo</stereomode>
 			<frequency>102.9</frequency>
@@ -171,6 +171,305 @@
 			<stereomode>stereo</stereomode>
 			<frequency>107.9</frequency>
 		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1335605678EE85AF1020B8DF8362741004FE16087079630F7DB4CB0CFB62DD2CD05FE0</stationID>
+			<name>_______________________________</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>0</frequency>
+		</FrequencyRadioStation>
+		<InternetRadioStation>
+			<stationID>132964209102A9E373176AC345769BF95FCDDAED10FB54E88137B307776909426B6C56</stationID>
+			<name>Rádio MEC AM 800</name>
+			<shortname></shortname>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://radioslivres.radiobras.gov.br:8080/mecam.mp3</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1336644686598A6CE56A5C9830626FA81717D9A01E731EC60FA3B6AF59CD4AB5B3A732</stationID>
+			<name>Tamoio AM 900</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://187.110.226.22:8038/</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13284779563ADDF256BA86B8FC0F07902C774D4E69BF5C55175E5516936186668A1E0A</stationID>
+			<name>Rádio Nacional AM 1130</name>
+			<shortname>Nacional</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://radioslivres.radiobras.gov.br:8080/nacionalrio.mp3</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1238681020F4AA90589682D934172A4DB15EC4A4C4A424EDA082486D4B12937E556280</stationID>
+			<name>Globo AM 1220</name>
+			<shortname></shortname>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>stereo</stereomode>
+			<url>mms://wm-sgr-live.globo.com/sgr_off_globoamrj_live.wma</url>
+			<decoderclass>asf</decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13356057218399B5BC913429CADDBA31F3BFA6BAC21E8937216AB392FE91E9809A7809</stationID>
+			<name>_______________________________</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>0</frequency>
+		</FrequencyRadioStation>
+		<InternetRadioStation>
+			<stationID>1241912811385B06FDB95068194C12F870D6E306E21E52A93991673FD9A33EFD54FE66</stationID>
+			<name>MPB FM 90.3</name>
+			<shortname>MPB</shortname>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>stereo</stereomode>
+			<url>http://69.31.54.133:3690/MPBFM903AAC</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13374327174E01A225AE834F813CF5FDB60EEEB0412AE69F60A691A52776326CD37649</stationID>
+			<name>Bradesco Esportes FM</name>
+			<shortname>Bradesco</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://208.80.54.47:3690/94_1FMAAC</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>133522364599C458AA2A85B35A918926F023F98BE5BB28B91CF0D8694A0555EC9F538B</stationID>
+			<name>93 FM</name>
+			<shortname>93</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://208.80.52.116:3690/FM93AAC</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1335405280FCCDE167E4908818F689FA3D41031FA10768F902A5ABCC2876A5EED361AA</stationID>
+			<name>CBN 92.5</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>mms://wm-sgr-live.globo.com/sgr_off_cbnfmrj_live.wma</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1241911980183645EA2E4C247D327AD84BF532AF96F33271106F18B8882403861A32E4</stationID>
+			<name>Roquette Pinto 94.1</name>
+			<shortname></shortname>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>mms://roquette.94fm.rj.gov.br:8000/</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13353557754B5172FDD46B8EB4D8BA35E9154441E9EC339FA9CD0A197374035E482AAE</stationID>
+			<name>Band News FM 94.9</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://69.31.54.135:3690/NEWSRIOAAC</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>124191172671DC04E508F9A1D3362A912E1F854FA07FDB3ADA063131E4DD0AB040D5BB</stationID>
+			<name>Paradiso FM 95.7</name>
+			<shortname>Paradiso</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<url>mms://p.mm.uol.com.br/paradisofm</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>132964185813145D4AD44B972E36DB138819AAE5DBF3CE5BB3473D7344BEB83F1A0ED8</stationID>
+			<name>Rádio Nacional FM 96.1</name>
+			<shortname>Nacional</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<url>http://radioslivres.radiobras.gov.br:8080/nacionalfm.mp3</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13355333701F162639AD78EE2E18697712D5F192ADF258987197C411D5AE1A34B9292E</stationID>
+			<name>Super Rádio Tupi AM 1280 + FM 96.5</name>
+			<shortname>Tupi</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://174.122.109.90:8888/;stream.nsv</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13355348680B1FB972724DB59A39863C1C5D9B21EF95FF4EA1C3C90D39AC2E0D2842DE</stationID>
+			<name>Melodia 97.5</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>mms://streaming3.joinhost.com.br:80/radio_melodia</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13352238428A36568CBE8FE46E0C6B2CBD31197D3F5E6BDB12916A4A49F98165C43283</stationID>
+			<name>Beat98 FM 98.1</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>mms://wm-sgr-live.globo.com/sgr_off_98fmrj_live.wma</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1244201041C189FB35391781907985642BA71B78711FC0CAE3A34D1F0D608D045257B3</stationID>
+			<name>Rádio MEC FM 98.9</name>
+			<shortname>MEC</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<url>http://radioslivres.radiobras.gov.br:8080/mecfm.mp3</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>123868105729D7E1299035CBCBA570A5A24F356BE7D9D223BCA0C3BDDD6ECCCA2AE11B</stationID>
+			<name>JB FM 99.7</name>
+			<shortname>JB</shortname>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>stereo</stereomode>
+			<url>http://5923.live.streamtheworld.com:80/JBFMAAC1</url>
+			<decoderclass>acc</decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1335529955E1A22D934A874936D0D88353FBDFA33AF011B13156DD75C64F4C5483BCD5</stationID>
+			<name>FM O Dia 100.5</name>
+			<shortname>O DIa</shortname>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://208.80.54.128/FMODIAAAC</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13352190307C9B15684F734B7E4B18D36C631B14DF9E09A38B8727354C2584CF33712E</stationID>
+			<name>Mix FM 102.1</name>
+			<shortname>Mix</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>mms://p.mm.uol.com.br/mixriofm</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1335353779649713E5D0A6BB8A85BC827406176719BCCB1B51AC83755B450738B932AA</stationID>
+			<name>Nativa FM 103.7</name>
+			<shortname>Nativa</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://174.122.109.82:8886/</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13355282288C45165B0BBDECB759392355069E5BE468AD7A55C30A1F1514358A762CB6</stationID>
+			<name>RádioCom 104.5 FM</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://67.23.248.77:8000/aovivo.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1335699232EAD8EF7FB5319FA0106BBDE01E023AFCA7617548C0BED9720F656C7038FA</stationID>
+			<name>Aleluia 105.1 FM</name>
+			<shortname>Aleluia</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://servidor5.crossdigital.com.br:8016/;stream.nsv</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1335698861C025BAFB1EF74C6A2C8DA652B1C34CDB5B75B799E3B2F86AA23B42A00FCA</stationID>
+			<name>Catedral FM 106.7</name>
+			<shortname>Catedral</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://67.205.76.171:8092</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13356959814BA482B505F6D897EC382C8B7815ABE593C6D2F0CF52E8A1934E32DE2212</stationID>
+			<name>Gospel 107.9 FM</name>
+			<shortname>Gospel</shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://173.192.184.70:8358/live</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<FrequencyRadioStation>
+			<stationID>133560574414161FAD76ADBCF1007E27A277E0AD8217CC4ED0A0E9F0171F236180826C</stationID>
+			<name>_______________________________</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>0</frequency>
+		</FrequencyRadioStation>
+		<InternetRadioStation>
+			<stationID>126182762802DF5F4526D4D07BB0BC6E56A040A7C4C9C7EC8CB2701522EB06BEA69A8F</stationID>
+			<name>Antena 1</name>
+			<shortname>Antena 1</shortname>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://a1rj.streams.com.br:7801/stream</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
 		<InternetRadioStation>
 			<stationID>1238680874AB4FA8C5EA96C4654CBFE110206A226CFCB5B48C6941FE5D9453ECE7B65C</stationID>
 			<name>Globo FM</name>
@@ -180,26 +479,18 @@
 			<url>mms://wm-sgr-live.globo.com/sgr_off_globofmrj_live.wma</url>
 			<decoderclass>asf</decoderclass>
 			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>1238681020F4AA90589682D934172A4DB15EC4A4C4A424EDA082486D4B12937E556280</stationID>
-			<name>Globo AM</name>
-			<shortname></shortname>
+			<stationID>13352802088D62569EA16EC2CD29B6F997067230DEC4294CFA2274B1253F297B47948D</stationID>
+			<name>Oi FM</name>
+			<shortname>Oi</shortname>
 			<volumepreset>-0.01</volumepreset>
-			<stereomode>stereo</stereomode>
-			<url>mms://wm-sgr-live.globo.com/sgr_off_globoamrj_live.wma</url>
-			<decoderclass>asf</decoderclass>
+			<stereomode>dontcare</stereomode>
+			<url>http://173.236.58.98:9470/;stream.mp3</url>
+			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>123868105729D7E1299035CBCBA570A5A24F356BE7D9D223BCA0C3BDDD6ECCCA2AE11B</stationID>
-			<name>JB FM</name>
-			<shortname></shortname>
-			<volumepreset>-0.01</volumepreset>
-			<stereomode>stereo</stereomode>
-			<url>mms://200.222.115.50/oifm_jbfm</url>
-			<decoderclass>asf</decoderclass>
-			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
 		</InternetRadioStation>
 		<InternetRadioStation>
 			<stationID>1238681086AABDFCAFFEDB4F0B52BCC889E6BDD5AC00AADB1DB9FF67CCA23685633656</stationID>
@@ -210,56 +501,29 @@
 			<url>mms://wmedia.telium.com.br/transrjpop</url>
 			<decoderclass>asf</decoderclass>
 			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
 		</InternetRadioStation>
 		<InternetRadioStation>
-			<stationID>124191172671DC04E508F9A1D3362A912E1F854FA07FDB3ADA063131E4DD0AB040D5BB</stationID>
-			<name>Paradiso</name>
-			<shortname></shortname>
-			<volumepreset>-1</volumepreset>
-			<stereomode>stereo</stereomode>
-			<url>mms://p.mm.uol.com.br/paradisofm</url>
-			<decoderclass>asf</decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>1241911980183645EA2E4C247D327AD84BF532AF96F33271106F18B8882403861A32E4</stationID>
-			<name>Roquete Pinto</name>
-			<shortname></shortname>
-			<volumepreset>-0.01</volumepreset>
-			<stereomode>stereo</stereomode>
-			<url>mms://roquette.94fm.rj.gov.br:8000/</url>
-			<decoderclass>asf</decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>1241912811385B06FDB95068194C12F870D6E306E21E52A93991673FD9A33EFD54FE66</stationID>
-			<name>MPB</name>
-			<shortname></shortname>
-			<volumepreset>-0.01</volumepreset>
-			<stereomode>stereo</stereomode>
-			<url>mms://media01.comdominio.com.br/MPBFM64K</url>
-			<decoderclass>asf</decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>1244201041C189FB35391781907985642BA71B78711FC0CAE3A34D1F0D608D045257B3</stationID>
-			<name>Rádio MEC</name>
-			<shortname>MEC</shortname>
-			<volumepreset>-1</volumepreset>
-			<stereomode>stereo</stereomode>
-			<url>mms://200.166.72.15/radiofm</url>
-			<decoderclass>asf</decoderclass>
-			<playlistclass>auto</playlistclass>
-		</InternetRadioStation>
-		<InternetRadioStation>
-			<stationID>126182762802DF5F4526D4D07BB0BC6E56A040A7C4C9C7EC8CB2701522EB06BEA69A8F</stationID>
-			<name>Antena 1</name>
+			<stationID>13284445512FDABAA1CA058AEAAD0E7A618DAAF8A3694549C7B185EB9291D3F1D3A55B</stationID>
+			<name>Tupi FM</name>
 			<shortname></shortname>
 			<volumepreset>-1</volumepreset>
 			<stereomode>dontcare</stereomode>
-			<url>mms://www.antena1.com.br/</url>
+			<url>mms://servidor10.crossdigital.com.br:8000/tupifm</url>
 			<decoderclass></decoderclass>
 			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13283722598C2F9B55731F7F7A4313A4F3A75BC13B5B983DFFFCA7B153803582085B0E</stationID>
+			<name>WestDeutscher Rundfunk</name>
+			<shortname></shortname>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.wdr.de/wdrlive/media/wdr5.m3u</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+			<metadata_encoding>auto</metadata_encoding>
 		</InternetRadioStation>
 	</stationlist>
 </kradiorc>
