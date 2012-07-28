@@ -1,0 +1,64 @@
+# translation of convert-presets.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: convert-presets\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-02-18 23:35+0100\n"
+"PO-Revision-Date: 2012-06-01 10:08+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: convert-presets.cpp:58
+#: convert-presets.cpp:139
+msgid "error opening preset file"
+msgstr "chyba otvárania súboru predvolieb"
+
+#: convert-presets.cpp:60
+msgid "for reading"
+msgstr "na čítanie"
+
+#: convert-presets.cpp:141
+msgid "for writing"
+msgstr "na zápis"
+
+#: convert-presets.cpp:153
+msgid "error writing preset file"
+msgstr "chyba zápisu súboru predvolieb"
+
+#: convert-presets.cpp:168
+msgid "kradio4-convert-presets"
+msgstr "kradio4-convert-presets"
+
+#: convert-presets.cpp:170
+msgid "(c) 2003-2010 Martin Witte"
+msgstr "(c) 2003-2010 Martin Witte"
+
+#: convert-presets.cpp:173
+msgid "Martin Witte"
+msgstr "Martin Witte"
+
+#: convert-presets.cpp:178
+msgid "quiet mode - no informational output"
+msgstr "tichý režim - žiadny informačný výstup"
+
+#: convert-presets.cpp:179
+msgid "preset files to convert"
+msgstr "súbory predvolieb na prevod"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
