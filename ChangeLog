@@ -2,6 +2,7 @@
 
     emw - finally fixed the problem with skips and stops in internet radio
           stream decoding
+        - fixed handling of HTTP 304 (not modified) response code
 
     Paulo Cavalcanti
         - updated preset file for RioDeJaneiro/Brazil
