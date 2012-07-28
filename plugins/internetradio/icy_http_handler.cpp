@@ -424,7 +424,7 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
         KIO::MetaData md = m_streamJob->metaData();
         if (md.contains("HTTP-Headers") && md.contains("responsecode")) {
             int http_response_code = md["responsecode"].toInt();
-            if (http_response_code < 200 || http_response_code >= 300) {
+            if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304) {  // skip 304 NOT MODIFIED http response codes
                 IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2").arg(http_response_code).arg(m_streamUrl.pathOrUrl()));
                 local_err = true;
             }
