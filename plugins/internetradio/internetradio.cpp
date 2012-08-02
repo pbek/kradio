@@ -821,6 +821,7 @@ void InternetRadio::radio_done()
     m_powerOn    = false;
     m_stereoFlag = false;
 
+    m_watchdogTimer.stop();
     m_playlistHandler.stopPlaylistDownload();
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     stopStreamReader();
