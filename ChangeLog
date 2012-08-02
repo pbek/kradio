@@ -1,3 +1,10 @@
+2012-08-02
+
+    emw - bugfix for http error handling in playlist handler
+        - cleanup of internet radio libffmpeg/libav code
+        - fixed watchdog handlinlg: it was not stopped during station change
+          and caused accessing empty playlists, thus div/0
+
 2012-07-28
 
     emw - finally fixed the problem with skips and stops in internet radio
