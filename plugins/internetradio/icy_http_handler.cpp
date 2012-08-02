@@ -289,7 +289,11 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
             // enforce deep copy
             QString metaString(tmpString.constData(), tmpString.size());
 
-            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1 (len %2)").arg(metaString).arg(metaString.length()));
+            QString charcode = "";
+            for (int i = 0; i < metaString.length(); ++i) {
+                charcode += QString::number(metaString[i].toAscii(), 16) + " ";
+            }
+            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1 (len %2), %3").arg(metaString).arg(metaString.length()).arg(charcode));
 
             // parse meta data
             QMap<QString, QString>  metaData;
@@ -307,9 +311,11 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                 metaString.remove(0,useQuotes);
 
                 int      curIdx  = 0;
-                QString  escapeRegExp = "\\.|''";
+                QString  escapeRegExp = "\\\\.|''";
                 QString  termRegExp   = useQuotes ? "'\\s*;" : ";";
                 QRegExp  findRegExp("(" + escapeRegExp + "|" + termRegExp + ")");
+                // step by step replace escapes and generate variable value
+                QString  value;
                 while (curIdx < metaString.size()) {
                     int findIdx  = findRegExp.indexIn(metaString, curIdx);
                     int matchLen = findRegExp.matchedLength();
@@ -318,20 +324,20 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                         if (QRegExp(escapeRegExp).exactMatch(tmp)) {
                             curIdx += matchLen;
                         } else {
-                            QString value = metaString.left(findIdx);
-                            metaData.insert(key, value);
+                            value      = metaString.left(findIdx);
                             metaString = metaString.mid(findIdx + matchLen).trimmed();
-#ifdef DEBUG
-                            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     Metadata Key: %1 = %2").arg(key).arg(value));
-#endif
                             break;
                         }
                     } else {
-                        metaData.insert(key, metaString);
+                        value      = metaString;
                         metaString = QString::null;
                         break;
                     }
                 }
+                metaData.insert(key, value);
+#ifdef DEBUG
+                IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     Metadata Key: %1 = %2").arg(key).arg(value));
+#endif
             }
 
             emit sigMetaDataUpdate(metaData);
