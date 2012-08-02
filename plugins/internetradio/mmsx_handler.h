@@ -50,13 +50,13 @@ public slots:
     void    proxyError   (KUrl url)                                      { emit sigError(url);               }
     void    proxyFinished(KUrl url)                                      { emit sigFinished(url);            }
     void    proxyStarted (KUrl url)                                      { emit sigStarted(url);             }
-    void    proxyConnectionEstablished(KUrl url, KIO::MetaData metaData) { emit sigConnectionEstablished(url, metaData); }
+    void    proxyConnectionEstablished(KUrl url, KIO::MetaData metaData) { m_connectionMetaData = metaData; emit sigConnectionEstablished(url, metaData); }
 
     void    proxyUrlChanged(KUrl url)                                    { emit sigUrlChanged(url);          }
     void    proxyContentType(QString contentType)                        { emit sigContentType(contentType); }
 
     void    proxyStreamData    (QByteArray data)                         { emit sigStreamData(data);         }
-    void    proxyMetaDataUpdate(KIO::MetaData metadata)                  { emit sigMetaDataUpdate(metadata); }
+    void    proxyMetaDataUpdate(KIO::MetaData metaData)                  { m_connectionMetaData = metaData; emit sigMetaDataUpdate(metaData); }
 
 
 protected:

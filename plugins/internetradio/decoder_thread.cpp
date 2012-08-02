@@ -605,10 +605,32 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
         QString decoderClass;
         if (m_contentType == "audio/mpeg") {
             decoderClass = "mp3";
+        } else if (m_contentType == "audio/x-mpeg") {
+            decoderClass = "mp3";
+        } else if (m_contentType == "audio/mp3") {
+            decoderClass = "mp3";
+        } else if (m_contentType == "audio/x-mp3") {
+            decoderClass = "mp3";
+        } else if (m_contentType == "video/mpeg") {
+            decoderClass = "mp3";
+        } else if (m_contentType == "video/x-mpeg") {
+            decoderClass = "mp3";
+        } else if (m_contentType == "application/x-ogg") {
+            decoderClass = "ogg";
+        } else if (m_contentType == "application/ogg") {
+            decoderClass = "ogg";
         } else if (m_contentType == "audio/ogg") {
+            decoderClass = "ogg";
+        } else if (m_contentType == "video/ogg") {
             decoderClass = "ogg";
         } else if (m_contentType == "application/flv") {
             decoderClass = "FLV";
+        } else if (m_contentType == "audio/asf") {
+            decoderClass = "asf";
+        } else if (m_contentType == "video/x-ms-asf") {
+            decoderClass = "asf";
+        } else if (m_contentType == "application/x-ms-asf-plugin") {
+            decoderClass = "asf";
         }
         if (decoderClass.length()) {
             iformat = av_find_input_format(decoderClass.toLocal8Bit());

@@ -90,8 +90,11 @@ void MMSXWrapper::run()
         emit sigError(m_url);
         return;
     }
-    emit sigContentType("audio/asf");
-    emit sigConnectionEstablished(m_url, KIO::MetaData());
+    m_metaData.clear();
+    m_metaData.insert("content-type", "audio/asf");
+    emit sigContentType          (m_metaData["content-type"]);
+    emit sigConnectionEstablished(m_url, m_metaData);
+    emit sigMetaDataUpdate       (m_metaData);
     while(!m_stopRequested && !m_error) {
         int n = mmsx_read(NULL, m_mms_stream, buffer, buffer_size);
         if (n < 0) {

@@ -75,10 +75,11 @@ signals:
     void  sigMetaDataUpdate(KIO::MetaData metadata);
 
 protected:
-    KUrl    m_url;
-    mmsx_t *m_mms_stream;
-    bool    m_stopRequested;
-    bool    m_error;
+    KUrl           m_url;
+    mmsx_t        *m_mms_stream;
+    bool           m_stopRequested;
+    bool           m_error;
+    KIO::MetaData  m_metaData;
 };
 
 

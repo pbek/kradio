@@ -6,6 +6,7 @@
           and caused accessing empty playlists, thus div/0
         - removing cr/lf in ICY meta data / RDS data for running text in GUI
         - fixed typo in escape sequence code for ICY meta data parsing 
+        - fixed content-type handling for mms streams (allows now skipping slow autodetection)
 
 2012-07-28
 
