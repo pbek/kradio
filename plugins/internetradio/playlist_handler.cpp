@@ -148,13 +148,36 @@ void PlaylistHandler::slotPlaylistData(KIO::Job *job, const QByteArray &data)
 
 void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
 {
+    bool local_error = false;
     if (job == m_playlistJob) {
         if (m_playlistJob->error()) {
             setError(i18n("Failed to load playlist %1: %2").arg(m_currentStation.url().pathOrUrl()).arg(m_playlistJob->errorString()));
+            local_error = true;
         } else {
-            interpretePlaylistData(m_playlistData);
+            KIO::MetaData md = m_playlistJob->metaData();
+            if (md.contains("responsecode")) {
+                int http_response_code = md["responsecode"].toInt();
+                if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304) {  // skip 304 NOT MODIFIED http response codes
+                    setError(i18n("Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2").arg(http_response_code).arg(m_currentStation.url().pathOrUrl()));
+                    local_error = true;
+                }
+            }
+            foreach(QString k, md.keys()) {
+                QString v = md[k];
+                IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (Playlist handler):      %1 = %2").arg(k).arg(v));
+                if (k == "HTTP-Headers") {
+//                     analyzeHttpHeader(v, m_connectionMetaData);
+                }
+                else if (k == "content-type") {
+//                     emit sigContentType(m_connectionMetaData[k]);
+                }
+            }
         }
         m_playlistJob = NULL;
+
+        if (!local_error) {
+            interpretePlaylistData(m_playlistData);
+        }
     }
     job->deleteLater();
 }
