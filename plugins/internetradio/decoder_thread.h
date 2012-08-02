@@ -22,7 +22,6 @@
 #include <config.h>
 #endif
 
-
 #include <QtCore/QObject>
 #include <QtCore/QString>
 #include <QtCore/QThread>
@@ -144,6 +143,11 @@ protected:
     void                  openAVStream(const QString &stream, bool warningsNotErros = false);
     void                  closeAVStream();
     void                  freeAVIOContext();
+    void                  initIOCallbacks(void *opaque, int(*read_packet_func)(void *, uint8_t *, int ));
+    void                  open_av_input(AVInputFormat *iformat, const QString &stream, bool warningsNotErrors, bool use_io_context);
+    AVInputFormat *       getInputFormat(const QString &fallbackFormat, bool warningsNotErrors);
+    bool                  retrieveStreamInformation(const QString &stream, bool warningsNotErrors);
+    bool                  openCodec(const QString &stream, bool warningsNotErrors);
 
     bool                  readFrame(AVPacket &pkt);
     bool                  decodePacket(AVPacket &pkt, int &decoded_input_size);
