@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2012-08-02 23:41+0200\n"
 "PO-Revision-Date: 2009-04-20 20:47+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -136,28 +136,28 @@ msgstr "Настройка внешнего вида"
 msgid "Frequency Display"
 msgstr "Отображение частоты"
 
-#: radioview_frequencyradio.cpp:417
+#: radioview_frequencyradio.cpp:419
 msgid "AM"
 msgstr "ДВ/СВ/КВ"
 
-#: radioview_frequencyradio.cpp:418
+#: radioview_frequencyradio.cpp:420
 msgid "FM"
 msgstr "УКВ"
 
-#: radioview_frequencyradio.cpp:419
+#: radioview_frequencyradio.cpp:421
 msgid "RDS"
 msgstr "RDS"
 
-#: radioview_frequencyradio.cpp:420
+#: radioview_frequencyradio.cpp:422
 msgid "NET"
 msgstr "СЕТЬ"
 
-#: radioview_frequencyradio.cpp:562
+#: radioview_frequencyradio.cpp:564
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 кГц"
 
-#: radioview_frequencyradio.cpp:564
+#: radioview_frequencyradio.cpp:566
 #, kde-format
 msgid "%1 MHz"
 msgstr "%1 МГц"

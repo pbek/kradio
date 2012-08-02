@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2012-08-02 23:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,28 +134,28 @@ msgstr ""
 msgid "Frequency Display"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:417
+#: radioview_frequencyradio.cpp:419
 msgid "AM"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:418
+#: radioview_frequencyradio.cpp:420
 msgid "FM"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:419
+#: radioview_frequencyradio.cpp:421
 msgid "RDS"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:420
+#: radioview_frequencyradio.cpp:422
 msgid "NET"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:562
+#: radioview_frequencyradio.cpp:564
 #, kde-format
 msgid "%1 kHz"
 msgstr ""
 
-#: radioview_frequencyradio.cpp:564
+#: radioview_frequencyradio.cpp:566
 #, kde-format
 msgid "%1 MHz"
 msgstr ""

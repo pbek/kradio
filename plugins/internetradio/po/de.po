@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-07-28 14:51+0200\n"
-"PO-Revision-Date: 2012-04-09 13:27+0200\n"
+"POT-Creation-Date: 2012-08-02 23:41+0200\n"
+"PO-Revision-Date: 2012-08-02 23:43+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 "Language: trunk\n"
@@ -50,55 +50,54 @@ msgstr "Interner-Audio-Datenstrom, wird nicht gespeichert (%1)"
 msgid "Failed allocating AVFrame."
 msgstr "Fehler beim Allokieren eines AVFrame."
 
-#: decoder_thread.cpp:621 decoder_thread.cpp:624
+#: decoder_thread.cpp:583 decoder_thread.cpp:586
+#, kde-format
+msgid "Could not open Stream %1"
+msgstr "Der Audio-Datenstrom %1 kann nicht geöffnet werden"
+
+#: decoder_thread.cpp:662 decoder_thread.cpp:665
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr ""
 "Die automatische Erkennung des Formates des Internet-Streams %1 ist "
 "fehlgeschlagen"
 
-#: decoder_thread.cpp:628
+#: decoder_thread.cpp:669
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Automatisch erkanntes Format: %1 (Zuverlässigkeit: %2)"
 
-#: decoder_thread.cpp:648 decoder_thread.cpp:651 decoder_thread.cpp:716
-#: decoder_thread.cpp:719 decoder_thread.cpp:744 decoder_thread.cpp:747
-#, kde-format
-msgid "Could not open Stream %1"
-msgstr "Der Audio-Datenstrom %1 kann nicht geöffnet werden"
-
-#: decoder_thread.cpp:667
-#, kde-format
-msgid "cannot open MMS stream %1"
-msgstr "der MMS-Datenstrom %1 kann nicht geöffnet werden"
-
-#: decoder_thread.cpp:670
-#, kde-format
-msgid "cannot open MMS  %1"
-msgstr "der MMS-Datenstrom %1 kann nicht geöffnet werden"
-
-#: decoder_thread.cpp:779 decoder_thread.cpp:782
+#: decoder_thread.cpp:695 decoder_thread.cpp:698
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Kann die Meta-Informationen im Audio-Datenstrom %1 nicht finden."
 
-#: decoder_thread.cpp:847 decoder_thread.cpp:850
+#: decoder_thread.cpp:763 decoder_thread.cpp:766
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Kann keinen Audio-Datenstrom in der URL %1 finden."
 
-#: decoder_thread.cpp:865 decoder_thread.cpp:868
+#: decoder_thread.cpp:786 decoder_thread.cpp:789
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Kann keinen Decoder für %1 finden."
 
-#: decoder_thread.cpp:883 decoder_thread.cpp:886
+#: decoder_thread.cpp:804 decoder_thread.cpp:807
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Das Öffnen des Decoders für %1 schlug fehl."
 
-#: decoder_thread.cpp:928
+#: decoder_thread.cpp:873
+#, kde-format
+msgid "cannot open MMS stream %1"
+msgstr "der MMS-Datenstrom %1 kann nicht geöffnet werden"
+
+#: decoder_thread.cpp:876
+#, kde-format
+msgid "cannot open MMS  %1"
+msgstr "der MMS-Datenstrom %1 kann nicht geöffnet werden"
+
+#: decoder_thread.cpp:948
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Das libav-Sample-Format mit ID %1 kann nicht verwendet werden"
@@ -127,7 +126,7 @@ msgstr ""
 "Internet-Radio-Plugin (ICY http Handler): Das Laden des Internet-Streams %1 "
 "schlug fehl: %2"
 
-#: icy_http_handler.cpp:420
+#: icy_http_handler.cpp:426
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
@@ -136,7 +135,7 @@ msgstr ""
 "Internet-Radio-Plugin (ICY http Handler): Das Laden der Radio-Stream-Daten "
 "von %1 schlug fehl: %2"
 
-#: icy_http_handler.cpp:428
+#: icy_http_handler.cpp:434
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
@@ -163,11 +162,11 @@ msgstr "Internet-Radio"
 msgid "Internet Radio Options"
 msgstr "Option für Internet-Radio"
 
-#: internetradio.cpp:984
+#: internetradio.cpp:985
 msgid "Internet Radio Plugin: "
 msgstr "Internet-Radio Plugin: "
 
-#: internetradio.cpp:1134
+#: internetradio.cpp:1135
 #, kde-format
 msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
 msgstr ""
@@ -179,7 +178,7 @@ msgid "Failed to start any stream of %1"
 msgstr ""
 "Keinen Radio-Datenstrom aus der Wiedergabeliste %1 konnte geöffnet werden."
 
-#: playlist_handler.cpp:130 playlist_handler.cpp:153
+#: playlist_handler.cpp:130 playlist_handler.cpp:154
 #, kde-format
 msgid "Failed to load playlist %1: %2"
 msgstr "Das Laden der Wiedergabeliste %1 schlug fehl: %2"
@@ -191,24 +190,31 @@ msgstr ""
 "Der Download der Wiedergabeliste %1 konnte nicht gestartet werden: KIO::get "
 "gab einen NULL-Pointer zurück"
 
-#: playlist_handler.cpp:198
+#: playlist_handler.cpp:161
+#, kde-format
+msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
+msgstr ""
+"Internet-Radio-Plugin (Playlist handler): HTTP-Fehler %1 beim Verbindung zu "
+"%2"
+
+#: playlist_handler.cpp:221
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 enthält keinen brauchbaren Radio-Datenstrom"
 
-#: playlist_handler.cpp:244
+#: playlist_handler.cpp:267
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
 "Das Erzeugen einer temporären Datei zur Speicherung der Wiedergabelisten-"
 "Daten schlug fehl."
 
-#: playlist_handler.cpp:248
+#: playlist_handler.cpp:271
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 "Das Schreiben der temporären Date zur Speicherung der Wiedergabelisten-Daten "
 "schlug fehl."
 
-#: playlist_handler.cpp:321
+#: playlist_handler.cpp:344
 msgid "error while reading asx file: "
 msgstr "Das Laden der ASX-Datei schlug fehl: "
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2012-08-02 23:41+0200\n"
 "PO-Revision-Date: 2011-01-10 21:30+0200\n"
 "Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
 "Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
@@ -134,28 +134,28 @@ msgstr "Visualizza la configurazione"
 msgid "Frequency Display"
 msgstr "Visualizza la frequenza"
 
-#: radioview_frequencyradio.cpp:417
+#: radioview_frequencyradio.cpp:419
 msgid "AM"
 msgstr "AM"
 
-#: radioview_frequencyradio.cpp:418
+#: radioview_frequencyradio.cpp:420
 msgid "FM"
 msgstr "FM"
 
-#: radioview_frequencyradio.cpp:419
+#: radioview_frequencyradio.cpp:421
 msgid "RDS"
 msgstr "RDS"
 
-#: radioview_frequencyradio.cpp:420
+#: radioview_frequencyradio.cpp:422
 msgid "NET"
 msgstr "NET"
 
-#: radioview_frequencyradio.cpp:562
+#: radioview_frequencyradio.cpp:564
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: radioview_frequencyradio.cpp:564
+#: radioview_frequencyradio.cpp:566
 #, kde-format
 msgid "%1 MHz"
 msgstr "%1 MHz"
