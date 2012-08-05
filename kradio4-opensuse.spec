@@ -16,7 +16,7 @@
 #
 Name:          kradio4
 Summary:       AM/FM/INternet Radio Application for KDE 4.x
-Version:       4.0.5
+Version: 4.0.5
 Release:       1.opensuse
 Group:         Hardware/Radio
 License:       GPL-2.0+
