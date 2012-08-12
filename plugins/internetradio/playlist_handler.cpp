@@ -232,7 +232,7 @@ void PlaylistHandler::interpretePlaylistData(const QByteArray &a)
 
 void PlaylistHandler::playlistSuccessfullyLoaded()
 {
-    m_randStreamIdxOffset      = rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
+    m_randStreamIdxOffset      = 0; //rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
     m_currentStreamIdx         = 0;
     m_currentStreamRetriesLeft = m_maxStreamRetries;
     emit sigPlaylistLoaded(m_currentPlaylist);
@@ -295,7 +295,8 @@ void PlaylistHandler::interpretePlaylistPLS(const QByteArray &playlistData)
 
     unsigned int entries = cfggrp.readEntry(key_lc_map["numberofentries"], 0);
     if (entries) {
-        for (unsigned int i = 0; i < entries; ++i) {
+        // some pls files start with offset 1, some at offset 0... thus we need to start at index 0 and stop at index #entries
+        for (unsigned int i = 0; i <= entries; ++i) {
             QString url = cfggrp.readEntry(key_lc_map[QString("file%1").arg(i)], QString());
             if (url.length()) {
                 m_currentPlaylist.append(url);
