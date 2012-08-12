@@ -865,7 +865,8 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
 
 
     // load asf stream
-    if (stream.startsWith("mms://") || stream.startsWith("mmsx://")) {
+    KUrl  streamUrl = stream;
+    if (streamUrl.protocol().startsWith("mms")) {
         m_is_mms_stream = true;
         m_mms_stream = mmsx_connect(NULL, NULL, stream.toUtf8(), 1);
         if (!m_mms_stream) {

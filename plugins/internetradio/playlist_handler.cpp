@@ -27,6 +27,9 @@
 
 #include <math.h>
 
+
+#define MAX_PLAYLIST_PROBE_SIZE 8192
+
 PlaylistHandler::PlaylistHandler()
   : m_currentStreamIdx        (-1),
     m_maxStreamRetries        (2),
@@ -118,9 +121,14 @@ void PlaylistHandler::loadPlaylistStartJob()
 {
     loadPlaylistStopJob();
     // if the a new station is selected while the previous hasn't been loaded yet
+    m_contentType    .clear();
     m_playlistData   .clear();
     m_currentPlaylist.clear();
-    if (getPlaylistClass().length()) {
+    IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (Playlist handler): loading playlist %1").arg(m_currentStation.url().url()));
+    QString protocol = m_currentStation.url().protocol();
+    // protocol mms / mmsx can only be plain streams and cannot be interpreted by KDE
+    // also if playlist class is set to "" (none) we skip the playlist download
+    if (!protocol.startsWith("mms") && m_currentStation.playlistClass() != "") {
         m_playlistJob = KIO::get(m_currentStation.url(), KIO::NoReload, KIO::HideProgressInfo);
         if (m_playlistJob) {
             QObject::connect(m_playlistJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotPlaylistData(KIO::Job *, const QByteArray &)));
@@ -142,6 +150,13 @@ void PlaylistHandler::slotPlaylistData(KIO::Job *job, const QByteArray &data)
 {
     if (job == m_playlistJob) {
         m_playlistData.append(data);
+
+        // if we do autodetection, load max 4kB
+        if (m_currentStation.playlistClass() == "auto") {
+            if (m_playlistData.size() >= MAX_PLAYLIST_PROBE_SIZE) {
+                slotPlaylistLoadDone(m_playlistJob);
+            }
+        }
     }
 }
 
@@ -150,14 +165,14 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
 {
     bool local_error = false;
     if (job == m_playlistJob) {
-        if (m_playlistJob->error()) {
+        if (m_playlistData.size() == 0 && m_playlistJob->error()) {
             setError(i18n("Failed to load playlist %1: %2").arg(m_currentStation.url().pathOrUrl()).arg(m_playlistJob->errorString()));
             local_error = true;
         } else {
             KIO::MetaData md = m_playlistJob->metaData();
             if (md.contains("responsecode")) {
                 int http_response_code = md["responsecode"].toInt();
-                if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304) {  // skip 304 NOT MODIFIED http response codes
+                if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304 && http_response_code != 0) {  // skip 304 NOT MODIFIED http response codes
                     setError(i18n("Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2").arg(http_response_code).arg(m_currentStation.url().pathOrUrl()));
                     local_error = true;
                 }
@@ -169,7 +184,7 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
 //                     analyzeHttpHeader(v, m_connectionMetaData);
                 }
                 else if (k == "content-type") {
-//                     emit sigContentType(m_connectionMetaData[k]);
+                    m_contentType = v;
                 }
             }
         }
@@ -183,21 +198,44 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
 }
 
 
+QString PlaylistHandler::getPlaylistClassFromContentType(const QString &curPlsCls)
+{
+    QString plscls = curPlsCls;
+    if (plscls == "auto" && m_contentType.length()) {
+        if        (m_contentType == "audio/x-scpls") {
+            plscls = "pls";
+        }
+    }
+    return plscls;
+}
+
+
+QString PlaylistHandler::getPlaylistClassFromURL(const QString &curPlsCls)
+{
+    QString plscls = curPlsCls;
+    if (plscls == "auto") {
+        QString path   = m_currentStation.url().path();
+        if        (path.endsWith(".lsc")) {
+            plscls = "lsc";
+        } else if (path.endsWith(".m3u")) {
+            plscls = "m3u";
+        } else if (path.endsWith(".asx")) {
+            plscls = "asx";
+        } else if (path.endsWith(".pls")) {
+            plscls = "pls";
+        }
+    }
+    return plscls;
+}
+
+
 QString PlaylistHandler::getPlaylistClass()
 {
     QString plscls = m_currentStation.playlistClass();
-    QString path   = m_currentStation.url().path();
-    if        (plscls == "lsc" || (plscls == "auto" && path.endsWith(".lsc"))) {
-            return "lsc";
-    } else if (plscls == "m3u" || (plscls == "auto" && path.endsWith(".m3u"))) {
-            return "m3u";
-    } else if (plscls == "asx" || (plscls == "auto" && path.endsWith(".asx"))) {
-            return "asx";
-    } else if (plscls == "pls" || (plscls == "auto" && path.endsWith(".pls"))) {
-            return "pls";
-    } else {
-            return "";
-    }
+    plscls = getPlaylistClassFromURL        (plscls);
+    plscls = getPlaylistClassFromContentType(plscls);
+    IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (Playlist handler): playlist type \"%1\" detected").arg(plscls));
+    return plscls;
 }
 
 
@@ -207,13 +245,30 @@ void PlaylistHandler::interpretePlaylistData(const QByteArray &a)
     QString plscls = getPlaylistClass();
     m_currentPlaylist.clear();
     if        (plscls == "lsc") {
-            interpretePlaylistLSC(a);
+        interpretePlaylistLSC(a);
     } else if (plscls == "m3u") {
-            interpretePlaylistM3U(a);
+        interpretePlaylistM3U(a);
     } else if (plscls == "asx") {
-            interpretePlaylistASX(a);
+        interpretePlaylistASX(a);
     } else if (plscls == "pls") {
-            interpretePlaylistPLS(a);
+        interpretePlaylistPLS(a);
+    } else if (plscls == "wmv") {
+        interpretePlaylistWMV(a);
+    } else if (plscls == "auto") {
+        // if it is still auto, we have to probe
+        if (!m_currentPlaylist.size()) {
+            interpretePlaylistASX(a, /* probe */ true);
+        }
+        if (!m_currentPlaylist.size()) {
+            interpretePlaylistPLS(a, /* probe */ true);
+        }
+        if (!m_currentPlaylist.size()) {
+            interpretePlaylistWMV(a, /* probe */ true);
+        }
+        // if still empty: no known playlist, thus try as plain stream
+        if (!m_currentPlaylist.size()) {
+            m_currentPlaylist.append(m_currentStation.url());
+        }
     } else {
         m_currentPlaylist.append(m_currentStation.url());
     }
@@ -247,6 +302,7 @@ void PlaylistHandler::interpretePlaylistLSC(const QByteArray &a)
     }
 }
 
+
 void PlaylistHandler::interpretePlaylistM3U(const QByteArray &playlistData)
 {
     QStringList lines = QString(playlistData).split("\n");
@@ -259,8 +315,123 @@ void PlaylistHandler::interpretePlaylistM3U(const QByteArray &playlistData)
 }
 
 
-void PlaylistHandler::interpretePlaylistPLS(const QByteArray &playlistData)
+bool PlaylistHandler::isTextual(const QByteArray &playlistData)
 {
+    for (int i = 0; i < playlistData.size(); ++i) {
+        unsigned char b = playlistData[i];
+        switch(b) {
+            case 0x00:
+            case 0x01:
+            case 0x02:
+            case 0x03:
+            case 0x04:
+            case 0x05:
+            case 0x06:
+            case 0x07:
+            case 0x08:
+//             case 0x09: // tab
+//             case 0x0a: // \n
+            case 0x0b:
+            case 0x0c:
+//             case 0x0d: // \r
+            case 0x0e:
+            case 0x0f:
+            case 0x10:
+            case 0x11:
+            case 0x12:
+            case 0x13:
+            case 0x14:
+            case 0x15:
+            case 0x16:
+            case 0x17:
+            case 0x18:
+            case 0x19:
+            case 0x1a:
+//             case 0x1b: // esc
+            case 0x1c:
+            case 0x1d:
+            case 0x1e:
+            case 0x1f:
+                return false;
+                break;
+            default:
+                break;
+        }
+    }
+    return true;
+}
+
+
+void PlaylistHandler::interpretePlaylistWMV(const QByteArray &playlistData, bool /*probe*/)
+{
+    // simple check if it is text and if it contains some required syntax parts
+    if (!isTextual(playlistData)) {
+        return;
+    }
+    QByteArray tmp = playlistData.toLower();
+    if (!tmp.contains("[reference]")) {
+        return;
+    }
+
+    KTemporaryFile tmpFile;
+    tmpFile.setAutoRemove(true);
+    if (!tmpFile.open()) {
+        setError(i18n("failed to create temporary file to store playlist data"));
+        return;
+    }
+    if (tmpFile.write(playlistData) != playlistData.size()) {
+        setError(i18n("failed to write temporary file to store playlist data"));
+        return;
+    }
+    tmpFile.close();
+
+    KConfig      cfg(tmpFile.fileName());
+
+    // mapping group names to lower case in order to be case insensitive
+    QStringList            groups = cfg.groupList();
+    QMap<QString, QString> group_lc_map;
+    QString                grp;
+    foreach(grp, groups) {
+        group_lc_map.insert(grp.toLower(), grp);
+    }
+
+    KConfigGroup cfggrp = cfg.group(group_lc_map["reference"]);
+
+    // mapping entry keys to lower case in order to be case insensitive
+    QStringList keys = cfggrp.keyList();
+    QMap<QString, QString> key_lc_map;
+    QString key;
+    foreach(key, keys) {
+        key_lc_map.insert(key.toLower(), key);
+    }
+
+    unsigned int entries = keys.size();
+    if (entries) {
+        // some pls files start with offset 1, some at offset 0... thus we need to start at index 0 and stop at index #entries
+        for (unsigned int i = 0; i <= entries; ++i) {
+            QString url = cfggrp.readEntry(key_lc_map[QString("ref%1").arg(i)], QString());
+            if (url.length()) {
+                KUrl tmp = url;
+                tmp.setProtocol("mms");
+                m_currentPlaylist.append(tmp.url());
+            }
+        }
+    }
+}
+
+
+
+void PlaylistHandler::interpretePlaylistPLS(const QByteArray &playlistData, bool /*probe*/)
+{
+    // simple check if it is text and if it contains some required syntax parts
+    if (!isTextual(playlistData)) {
+        return;
+    }
+    QByteArray tmp = playlistData.toLower();
+    if (!tmp.contains("[playlist]")) {
+        return;
+    }
+
     KTemporaryFile tmpFile;
     tmpFile.setAutoRemove(true);
     if (!tmpFile.open()) {
@@ -306,7 +477,7 @@ void PlaylistHandler::interpretePlaylistPLS(const QByteArray &playlistData)
 }
 
 
-void PlaylistHandler::interpretePlaylistASX(const QByteArray &rawData)
+void PlaylistHandler::interpretePlaylistASX(const QByteArray &rawData, bool probe)
 {
 
     KEncodingProber prober;
@@ -315,15 +486,20 @@ void PlaylistHandler::interpretePlaylistASX(const QByteArray &rawData)
     QXmlStreamReader reader(QTextCodec::codecForName(prober.encoding())->toUnicode(rawData));
 
     bool inEntry = false;
+    bool inASX   = false;
 
     while (!reader.atEnd() && (reader.error() == QXmlStreamReader::NoError)) {
         reader.readNext();
         if (reader.isStartElement()) {
-            QStringRef name = reader.name();
-            if (name.toString().toLower() == "entry") {
+            QStringRef name   = reader.name();
+            QString    nameLC = name.toString().toLower();
+            if (nameLC == "entry") {
                 inEntry = true;
             }
-            else if (name.toString().toLower() == "ref" && inEntry) {
+            else if (nameLC == "asx") {
+                inASX = true;
+            }
+            else if (nameLC == "ref" && inEntry && inASX) {
                 QXmlStreamAttributes attrs = reader.attributes();
                 QXmlStreamAttribute  attr;
                 foreach(attr, attrs) {
@@ -334,14 +510,18 @@ void PlaylistHandler::interpretePlaylistASX(const QByteArray &rawData)
             }
         }
         else if (reader.isEndElement()) {
-            QStringRef name = reader.name();
-            if (name == "entry") {
+            QStringRef name   = reader.name();
+            QString    nameLC = name.toString().toLower();
+            if (nameLC == "entry") {
                 inEntry = false;
+            }
+            else if (nameLC == "asx") {
+                inASX = false;
             }
         }
     }
 
-    if (reader.error() != QXmlStreamReader::NoError) {
+    if (!probe && reader.error() != QXmlStreamReader::NoError) {
         setError(i18n("error while reading asx file: ", reader.error()));
     }
 }

@@ -63,12 +63,16 @@ protected:
     void        loadPlaylistStartJob();
     void        loadPlaylistStopJob();
     void        playlistSuccessfullyLoaded();
+    QString     getPlaylistClassFromContentType(const QString &curPlsCls);
+    QString     getPlaylistClassFromURL        (const QString &curPlsCls);
     QString     getPlaylistClass();
     void        interpretePlaylistData(const QByteArray &a);
     void        interpretePlaylistLSC(const QByteArray &a);
     void        interpretePlaylistM3U(const QByteArray &playlistData);
-    void        interpretePlaylistPLS(const QByteArray &playlistData);
-    void        interpretePlaylistASX(const QByteArray &xmlData);
+    void        interpretePlaylistPLS(const QByteArray &playlistData, bool probe = false);
+    void        interpretePlaylistWMV(const QByteArray &playlistData, bool probe = false);
+    void        interpretePlaylistASX(const QByteArray &xmlData,      bool probe = false);
+    bool        isTextual(const QByteArray &playlistData);
 
 
     void        setError(QString errorMsg);
@@ -85,6 +89,7 @@ protected:
     bool                        m_error;
 
     QByteArray                  m_playlistData;
+    QString                     m_contentType;
     KIO::TransferJob           *m_playlistJob;
 };
 

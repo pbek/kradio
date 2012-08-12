@@ -724,7 +724,7 @@ void InternetRadio::slotPlaylistEOL()
 void InternetRadio::startStreamReader(KUrl stream)
 {
     stopStreamReader();
-    if (stream.protocol() == "mms" || stream.protocol() == "mmsx") {
+    if (stream.protocol().startsWith("mms")) {
         m_streamReader = new MMSXHandler();
     } else {
         m_streamReader = new IcyHttpHandler();

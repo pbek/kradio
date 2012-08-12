@@ -152,6 +152,7 @@ InternetRadioStationConfig::InternetRadioStationConfig (QWidget *parent)
     m_comboPlaylistClass->addItem(i18n("LSC"),                              QVariant("lsc"));
     m_comboPlaylistClass->addItem(i18n("M3U"),                              QVariant("m3u"));
     m_comboPlaylistClass->addItem(i18n("PLS"),                              QVariant("pls"));
+    m_comboPlaylistClass->addItem(i18n("WMV"),                              QVariant("wmv"));
 
 
     vl->addWidget (new QLabel(i18n("Meta-Data Stream Encoding:"), this));
