@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.2</creator>
+			<maintainer>Andrey Tomilenko (aka Thom) thom82@mail.ru</maintainer>
+			<changed>2012-06-22T20:57:29</changed>
+			<country>Russia</country>
+			<city>Khabarovsk</city>
+			<media>Antenna</media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1305638939C1FD865E64BAC19C5F57AA772A41E3154D83B787C6A8BBE41BA59C2D4F50</stationID>
+			<name>Радио Юность</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>71.24</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305638967B8157796236B9C31EA6815AB3C48379EF65E79F49A3C79C36703B1F4D915</stationID>
+			<name>Радио Маяк</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>72.02</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13056389922F1F70C837614DE48AE22EF0FEFBFCBF25660BC1196A68629EE08CB0F3C1</stationID>
+			<name>Радио России</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>72.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130563904442B5A2DDA4F2CE53202F339A5EDE755CEE833D693FC05B308A26E05303B5</stationID>
+			<name>Ретро FM</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>87.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13056390981FCC9EC91AA3DC33CE07779742EDC01DFAD322F810AA5C641578B689A25B</stationID>
+			<name>Авторадио</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>88.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13056391188DDE01EF727CF401895206DAA0BB3FF7E907AC8105D76121359DEA67894A</stationID>
+			<name>Русское Радио</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>89.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13403587309CACBC90948F03CBCD705121A11FCB3C08F1015195B38A61E19CA9FF1B7C</stationID>
+			<name>Юмор FM</name>
+			<shortname>7</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13056391680029FBFC1E1A539CD8847454B89ACC8B316221B4FE23591283568D29EB74</stationID>
+			<name>Милицейская волна</name>
+			<shortname>8</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13056392023511D5D2255D527F78A9F3A2773304264B21F4431550D50A0C7935A891B0</stationID>
+			<name>Радио 101.8 FM</name>
+			<shortname>9</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1340358776C1D2B150D77B86BB2AC6634B476162CAE427444FC5FD63B7F5428393489A</stationID>
+			<name>Серебряный дождь</name>
+			<shortname>10</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130563925202974C20BE1F41D064DF0F58F50BF73A3FD4C3DFD97D4CF50362D7ADC943</stationID>
+			<name>Радио Дача</name>
+			<shortname>11</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305639289B512A628A955D08E53324832FB8CDCEBDA010C75CD50714594D7633004AC</stationID>
+			<name>Восток России</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130563932489FDF6E2BD0FE5CE07D11879AB3EC67D4504F7245EBE90EC3372BF8E9401</stationID>
+			<name>Дорожное радио</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305639357C85ADEAA9CE0A129200D98B6FC5343251C2F74FBE88C22E5A5808BE77F0C</stationID>
+			<name>Вести FM</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305639381A545F9CA03ED0BFEAAE4186B78418905B20AF41ADF875DFF7E13F9282768</stationID>
+			<name>Европа Плюс Хабаровск</name>
+			<shortname>15</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.6</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305639414A15F8313B28FA6B1F1DD6DB5C43F107C068A2E9F0B46D5C3C024F5CA8562</stationID>
+			<name>Маяк FM</name>
+			<shortname>16</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.8</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.2</creator>
+			<maintainer>Igor Isaias Banlian &lt;igorisaiasbanlian@gmail.com&gt;</maintainer>
+			<changed>2011-06-21T16:25:53</changed>
+			<country>Brazil</country>
+			<city>São Paulo</city>
+			<media></media>
+			<comments>Fonte das informações: http://pt.wikipedia.org/wiki/Anexo:Lista_de_rádios_do_Brasil#S.C3.A3o_Paulo</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1068544851063A4998A78195FDC4F511AD5E39A77EDF4A99545FEFEE1BA09A5159FB2DFC85</stationID>
+			<name>Gazeta (Popular)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>88.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851FA44B51067379B772E91D69C3F36BFD1BE373BFAAB02FB267BB9E79745D094DD</stationID>
+			<name>Fast 89 FM (Antiga Rádio Rock) (Pop, Black, Dance)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>89.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106854485192E7A1C2D349D37CBD77495D3ADB558CD7D921C3160003AE475BF39F3F0CA024</stationID>
+			<name>Nova Brasil FM (MPB)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>89.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851D8831804C6159634263FC359AE57CB8B96FF009B4FB4CB79FF39DB2CBF31EEBF</stationID>
+			<name>Gospel FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448518D7B45F6186E596C2A56A3F91C4FC1B773F7133E30BC2AA6FE1898DB34D5F4BA</stationID>
+			<name>CBN (Jornalismo)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448519B29A95C1A4F8B221A919B011D9296D15B5227225A5A7E27C9DA6703B1E3469A</stationID>
+			<name>Rádio Bandeirantes (Jornalismo, Esportes)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448517DD84085761847C094F78696B91D9B023BA80862F534827883165058CD06133E</stationID>
+			<name>Rádio Disney Brasil (Jovem, Pop, Rock, Dance)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851707ADA489310244DA5D4FAB004D99CD01601FA9FF7F5424A4660A53D88D5ECBE</stationID>
+			<name>Rádio SulAmérica Trânsito (Trânsito de SP)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851C9201AFEE47247B9A616E705AEAB7E3DAE707A43BD1824390AE427C12EB9B9FB</stationID>
+			<name>Mitsubishi FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851C5394861FBDFCE6794363776BC90E7F84124E8816818200879AD3CA2859D9632</stationID>
+			<name>Estadão ESPN (Antiga Eldorado) (Jornalismo, Adulto)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>92.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851D0289AC2B0AEFDED22C4D9341F534BF08DF140FE238FEA37C8A72639352C846D</stationID>
+			<name>USP FM (MPB, Alternativas, Informação)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>93.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851F9AFD5FC0F3384511069DC8DCF2220A0F7A12D5501388F4D66F8A72180CF7873</stationID>
+			<name>Oi FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>94.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448518696F96431246C0E8811A76A86CE07D3ADEF74C0D19B888A8B826160DBFD203C</stationID>
+			<name>Rede Antena 1 (Flashback, Pop Romântico)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>94.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851A8F04BB0725196CA919E38D5B9EF9A0DF5F0FF0C920636BFE7466E5C6FAF623E</stationID>
+			<name>Nativa FM (Popular, Sertanejo)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448512EF7D6A7AF70B101A36763BE25A3FB5C486C40C0B9BC29B17EBF2EA27536562E</stationID>
+			<name>Mundial (Esotérica)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>95.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448518BB559FF1125C773021E9DE13BA19BED84E488D4B73448D879DE9ECFF21C5DE7</stationID>
+			<name>Band FM (Popular, Black, Pop, Dance)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>96.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106854485184EF62D3E00617144EDB7EF0E3160F9A94464D4E529D28B4E160C5A0B44A45D8</stationID>
+			<name>Rádio Vida FM (Gospel)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>96.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448515838BB6F8E6831C577DB6BEF8B55E18F5A2179AE031EC4C4A76B809918137072</stationID>
+			<name>BandNews FM (Jornalismo)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>96.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851337DE5C347B8E19FF0E880A2B9E38392C48EE37BEF918272CCCCF4E084AFE46F</stationID>
+			<name>Energia 97 (Dance, House, Black, D&amp;B, Techno)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>97.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448513711C1C26ADA91953A177554A9796A2B4BF879C198A82715BAB4D241F0BB73E6</stationID>
+			<name>IMPD 98.1 FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>98.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448516A0B12A86C5DAD2C72F95B4991D5A9B5D1A490DFF605544AD7972C0A484A0A5A</stationID>
+			<name>Metropolitana (Pop, Black, Dance)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>98.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851AF15E6AD95800F485702F159914B0A93E46E5CD68DDB11EB583B3C37F08F02F4</stationID>
+			<name>Rádio Terra FM (Sertanejo)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>98.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>10685448519842A5E231775F250B013D3604832F184655D2BCEA1CFD1DCA1B572B9F26A4B3</stationID>
+			<name>Rede Aleluia (Evangélica)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>99.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106854485168590AD0DB7DB99C33772D5B362AB8C2575DB634C5F44FE18158E50FDD895B3B</stationID>
+			<name>Transamérica (Pop, Black, Dance)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>100.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851BDAF9DFE698BB91435D5C87510098BC54A6B834354B76112E5DB9F191BA03DAC</stationID>
+			<name>Jovem Pan 2 FM (Pop, Dance, Black)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>100.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851218C33FE44396A6CDD072A46BFE3A2F19DF815140048DD499C8AF8CEFE4A2A70</stationID>
+			<name>Alpha FM (Flashback, Pop Romântico, MPB)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1068544851D6B3C38519AC4F100AFBFF40437A2A057346EDF60B8807F52960204DD1CE389D</stationID>
+			<name>Kiss FM (Classic Rock)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13086474014771276F6D1BA9B00AFB695144042EDED6BB404D402F81B027F40384964F</stationID>
+			<name>Imprensa (Forró, Música Regional)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130864745047ED7EFBBF90962261A79A431A64CB0ECD2EAAABF66F8E5311C226B6A5A1</stationID>
+			<name>Scalla FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1308647468484F8C0F98D8735571D9B96214477C9DAB79D700CF25B9881D22115226FC</stationID>
+			<name>Cultura (Clássico, Jazz)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130864748710A1608AF577C02453814307DFD3655C0E861E79F78791ACD6CE495C96BB</stationID>
+			<name>Tupi FM (Sertanejo)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1308647494E822E4E85F316E1C17F8EC537A030FC331E04BAAF0CBBA6810992A66AE7B</stationID>
+			<name>Dumont FM (Pop, Rock, Dance, Black)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1308647510BDB203D6312D5A3BCC630E7BB8B0A4BC78BFEF1379F8F6199D24A09278A3</stationID>
+			<name>Transcontinental (Pagode, Black)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1308647524F17E6261EFB800C8F3C8ADF362AFA88B11F34592467EEC7664D775156F51</stationID>
+			<name>105 FM (Samba, Pagode, Black, Soul, Rap)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130864754047125139D3E46F3A0C763A2BE51930358CEB355F4519F848AF19119760FE</stationID>
+			<name>Musical (Gospel)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130864756116CA5CC9C506A3261D2D4A41BB16A6AACC553A25126997731A6D0FE37FBE</stationID>
+			<name>Mix FM (Pop, Black, Dance)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>130864756972F0365E169147F735A06E5B9725A745726FB42524895A11269E28536CF6</stationID>
+			<name>RBR (Rede Brasil de Radiodifusão) (Popular)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1308647624EE4ABB9AA1AA1DEDFBFAA05A523E62E6CEE3DBB91670F11484C7C906FCC9</stationID>
+			<name>Nossa Rádio FM (Evangélica)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1308647642AA11EFF0E0E71AB18CFCAB5956BD81E12BF480CDDB6410C67926DA129328</stationID>
+			<name>Rádio Eldorado (Antiga Brasil 2000) (Pop, Rock)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13086476879578B3D1BB9352761178E199CF7CE9A3070997936A161A0B366E2F30DBFE</stationID>
+			<name>Tropical (Popular)</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>107.9</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>
