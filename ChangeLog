@@ -1,7 +1,13 @@
+2012-08-15 (4.0.6)
+
+    emw - release 4.0.6
+
 2012-08-12
 
     emw - bugfixes for playlist file .pls handling (BBC stations and further
           UK radio stations, see bugreport 3534405)
+        - support for WMV playlists
+        - improved playlist type autodetection
 
 2012-08-02 (4.0.5)
 
