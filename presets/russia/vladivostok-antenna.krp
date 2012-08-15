@@ -3,100 +3,138 @@
 	<stationlist>
 		<format>kradio-1.0</format>
 		<info>
-			<creator>kradio-snapshot-2006-11-12-r497</creator>
-			<maintainer>Andrey Tomilenko (aka Thom) &lt;thom82@mail.ru&gt;</maintainer>
-			<changed>2009-03-24T21:10:00</changed>
+			<creator>kradio-4.0.2</creator>
+			<maintainer>Andrey Tomilenko (aka Thom) thom82@mail.ru</maintainer>
+			<changed>2012-06-22T20:47:29</changed>
 			<country>Russia</country>
 			<city>Vladivostok</city>
 			<media>Antenna</media>
 			<comments></comments>
 		</info>
 		<FrequencyRadioStation>
-			<stationID>1237882792763A2937610D057DEDD942606D6D929CBCD0A08AC9BB61B235E975EDF85D7264</stationID>
-			<name>Авторадио</name>
+			<stationID>1305629847E4E1C8DFAE28601AA9FF6FED89E658E93D0FB8E6CD6E38CAE5F9FD312294</stationID>
+			<name>Радио Маяк</name>
 			<shortname>1</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>88.3</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>69.68</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>12378828419438D06C2C925078F177BB3D47F445DC3D47789C887D821390533FDAB73B2AB1</stationID>
-			<name>Радио VBC</name>
+			<stationID>13056302742651484CC5912F72A23F69F67301C3D59DE23FEE9DDBB143FD366F972D12</stationID>
+			<name>Радио России</name>
 			<shortname>2</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>101.7</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>71.84</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1237882862CE4265596C240284994BD596598CC3B75DEAC73A19054CB82D57DAD3B32843C5</stationID>
-			<name>Радио Лемма</name>
+			<stationID>1305630309F71DD598694A4024E35B0E728919D3C07279C5A8517CCD3CAF6665D50FDE</stationID>
+			<name>Авторадио</name>
 			<shortname>3</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>102.7</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>88.3</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1237882884FEEC47ADB86F318F929B01DB42A4DA68000B1C73867A9582CEA322A29EFB2712</stationID>
-			<name>Радио Шансон</name>
+			<stationID>1305630337CE26C7EFFA5A35679CA6A2014859F842B5784AE6CD400457AAB500DA93CA</stationID>
+			<name>Радио 7</name>
 			<shortname>4</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>103.2</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>91.3</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1237882927F902B76EE9BD6CA607330A9588031BAFCB672058726BE7463BBEF9C6F9D27050</stationID>
-			<name>Ретро FM</name>
+			<stationID>1305630407C3530D192583FA82B955F4DC456E7280CA9FAAF485DCDB1017EF8AFDBCAD</stationID>
+			<name>Радио VBC</name>
 			<shortname>5</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>103.7</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>101.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>123788294790EFA8561CF59B0E06460BDA8855E437363ACF0386772361A067A6445D067874</stationID>
-			<name>Европа+ Владивосток</name>
+			<stationID>130563042542AAA24D5F407A403C4A7197B4CFA710A0DC193EBD8830AAC41C95A4ADF1</stationID>
+			<name>Радио Лемма</name>
 			<shortname>6</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>104.2</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>102.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1237882976B92D9C5F98B83CD6BFB292C4C60D1B88868F2C4BE350E4C25734AE0AD8E49117</stationID>
-			<name>Радио 7</name>
+			<stationID>1305630440AAD7287143E964761B40147B5B4300A6F0E875FD2F16CB7CF19636145C52</stationID>
+			<name>Радио Шансон</name>
 			<shortname>7</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>104.7</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.2</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1237883011C9EEA2A2D396AFD77D5CBB0BF9FCEAD72FB4F6488905B5594430C150EE541F44</stationID>
-			<name>DFM</name>
+			<stationID>13056304542589A59330FDFD3BC5C59CF6F361BD834A851576B85BC0B2DD0882E7A094</stationID>
+			<name>Ретро FM</name>
 			<shortname>8</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>105.3</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>103.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>1237883028ABC4EEF4D64A3F6E0681CD4864206A0EF59AE4AF24F209A7798ED3DAEFCB60E5</stationID>
-			<name>Радио Монте-Карло</name>
+			<stationID>13056304729BC63FBCDAEACF9BF8E31BB50C14D2A3BA718D7CC67516720549D43308ED</stationID>
+			<name>Европа Плюс Владивосток</name>
 			<shortname>9</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>105.7</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.2</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>12378830455E0D0DED76AAA63E5A67F80BDB7AE8F96EBC5409D08C0993E93A0610F9F6FC2D</stationID>
-			<name>Владивосток FM</name>
+			<stationID>130563049042596A28FF0B0A75A1EEE2646A0F66383E7ADACD04F3CCFEF9CD2D291A32</stationID>
+			<name>Радио Дача</name>
 			<shortname>10</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
-			<frequency>106.4</frequency>
+			<stereomode>dontcare</stereomode>
+			<frequency>104.7</frequency>
 		</FrequencyRadioStation>
 		<FrequencyRadioStation>
-			<stationID>123788305948F49FAA088CB0CDA6DEFFC8D4D7F3D3266187C5A247E2FA8D313960C6D1C8A7</stationID>
-			<name>Русское Радио</name>
+			<stationID>1305630506C7D70286FAD616EDC0D58CE0E911282596E00793C5A5D9E1D402700207F7</stationID>
+			<name>DFM</name>
 			<shortname>11</shortname>
 			<icon></icon>
 			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305630522CCF6CD3D24E933D486C62C00D4279BC46C85AA7B71F9170ECB4900CF7899</stationID>
+			<name>Хит FM</name>
+			<shortname>12</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>105.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305630536EF153D9BA1638772799D7C1D066D0C8E431B98476DD073FC4B05AA07C4A9</stationID>
+			<name>Владивосток FM</name>
+			<shortname>13</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1305630551DEB55372DD2D6225FD2472EB4B5926B50BD2F6D652E4E9DBB8F8E8E590B8</stationID>
+			<name>Русское Радио</name>
+			<shortname>14</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
 			<frequency>107</frequency>
 		</FrequencyRadioStation>
 	</stationlist>
