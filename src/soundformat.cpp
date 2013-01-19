@@ -30,6 +30,8 @@ int SoundFormat::sampleSize() const
     if (m_SampleBits <= 8)  return 1;
     if (m_SampleBits <= 16) return 2;
     if (m_SampleBits <= 32) return 4;
+    if (m_SampleBits <= 48) return 6; // FIXME: verify!
+    if (m_SampleBits == 64) return 8;
 
     // unknown
     return -1;
@@ -64,6 +66,7 @@ void  SoundFormat::restoreConfig(const QString &prefix, const KConfigGroup &c)
     bool littleEndian = c.readEntry(prefix + "littleEndian", true);
     m_Endianess = littleEndian ? LITTLE_ENDIAN : BIG_ENDIAN;
     m_Encoding        = c.readEntry(prefix + "encoding", "raw");
+    m_IsPlanar        = c.readEntry(prefix + "planar",   false);
 }
 
 
@@ -75,6 +78,7 @@ void  SoundFormat::saveConfig(const QString &prefix, KConfigGroup &c) const
     c.writeEntry(prefix + "samplerate",   m_SampleRate);
     c.writeEntry(prefix + "littleEndian", m_Endianess == LITTLE_ENDIAN);
     c.writeEntry(prefix + "encoding",     m_Encoding);
+    c.writeEntry(prefix + "planar",       m_IsPlanar);
 }
 
 
@@ -94,6 +98,7 @@ template<typename T> T minMax(T v, T min, T max)
     }
     return res;
 }
+
 
 template<typename T, int c_bits> inline T maxValue(int var_bits = 0)
 {
@@ -611,6 +616,46 @@ void SoundFormat::convertFloatNonInterleavedToSamples(const float **src, char *d
 
 
 
+template<typename storageT>
+void convertNonInterleavedToInterleaved(const char *_src, char *_dst, size_t n_frames, size_t n_channels)
+{
+    const storageT *src = (const storageT*)_src;
+    storageT       *dst = (storageT*)      _dst;
+    for(size_t iChannel = 0; iChannel < n_channels; ++iChannel) {
+        storageT *curDst = dst + iChannel;
+        for (size_t iSample = 0; iSample < n_frames; ++iSample) {
+            *curDst = *(src++);
+            curDst += n_channels;
+        }
+    }
+}
+
+
+void SoundFormat::convertNonInterleavedToInterleaved(const char *src, char *dst, size_t n_frames) const
+{
+    switch(sampleSize()) {
+        case 1:
+            ::convertNonInterleavedToInterleaved<unsigned char>     (src, dst, n_frames, m_Channels);
+            break;
+        case 2:
+            ::convertNonInterleavedToInterleaved<unsigned short>    (src, dst, n_frames, m_Channels);
+            break;
+        case 4:
+            ::convertNonInterleavedToInterleaved<unsigned int>      (src, dst, n_frames, m_Channels);
+            break;
+        case 8:
+            ::convertNonInterleavedToInterleaved<unsigned long long>(src, dst, n_frames, m_Channels);
+            break;
+        default:
+            // FIXME: do sth here
+            break;
+    }
+}
+
+
+
+
+
 template<typename tmpT, typename storageT, int c_bits, unsigned int c_endianess, bool do_scale_dummy>
 inline void scaleSamples(char *_src, float scale, size_t n, int var_bits = 0, int var_sampleSize = 0)
 {
@@ -796,3 +841,4 @@ void SoundFormat::minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames,
 //     writeSample<long long, int, 32, BIG_ENDIAN, true>(src, samplePtr);
 // }
 // 
+

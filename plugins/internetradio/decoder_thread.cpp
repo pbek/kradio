@@ -405,10 +405,21 @@ void InternetRadioDecoder::run()
 }
 
 
-void InternetRadioDecoder::pushBuffer(const char *data, size_t dataSize, const SoundMetaData &md, const SoundFormat &sf)
+void InternetRadioDecoder::pushBuffer(const char *_data, size_t dataSize, const SoundMetaData &md, const SoundFormat &orgSF)
 {
     if (m_done) {
         return;
+    }
+
+    SoundFormat sf = orgSF;
+    sf.m_IsPlanar  = false;
+
+    const char *data = _data;
+    char        convBuf[dataSize];
+    if (orgSF.m_IsPlanar) {
+        data = convBuf;
+        size_t nFrames = dataSize / orgSF.frameSize();
+        orgSF.convertNonInterleavedToInterleaved(_data, convBuf, nFrames);
     }
 
     bool    foundBuffer       = false;
@@ -926,31 +937,52 @@ void InternetRadioDecoder::updateSoundFormat()
         m_av_pFormatCtx->streams[m_av_audioStream]      &&
         m_av_pFormatCtx->streams[m_av_audioStream]->codec
     ) {
-        int rate = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_rate;
-        int ch   = m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels;
-        int fmt  = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
-        int bits     = 0;
-        int issigned = 0;
+        int  rate = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_rate;
+        int  ch   = m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels;
+        int  fmt  = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
+        int  bits     = 0;
+        int  issigned = 0;
+        bool isplanar = false;
         switch(fmt) {
             case AV_SAMPLE_FMT_U8:
                 bits     = 8;
                 issigned = false;
+                isplanar = false;
                 break;
             case AV_SAMPLE_FMT_S16:
                 bits     = 16;
                 issigned = true;
+                isplanar = false;
                 break;
             case AV_SAMPLE_FMT_S32:
                 bits     = 32;
                 issigned = true;
+                isplanar = false;
                 break;
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(50, 15, 1) // checked: first in ffmpeg >= 0.9
+            case AV_SAMPLE_FMT_U8P:
+                bits     = 8;
+                issigned = false;
+                isplanar = true;
+                break;
+            case AV_SAMPLE_FMT_S16P:
+                bits     = 16;
+                issigned = true;
+                isplanar = true;
+                break;
+            case AV_SAMPLE_FMT_S32P:
+                bits     = 32;
+                issigned = true;
+                isplanar = true;
+                break;
+#endif
             default:
                 m_error = true;
                 log(ThreadLogging::LogError, i18n("Cannot use libav sample format id %1").arg(fmt));
                 closeAVStream();
                 return;
         }
-        m_soundFormat = SoundFormat(rate, ch, bits, issigned);
+        m_soundFormat = SoundFormat(rate, ch, bits, issigned, isplanar);
     }
 }
 
@@ -990,7 +1022,8 @@ void InternetRadioDecoder::closeAVStream()
     // otherwise the avformat_close_input function calls will do the job
     if (!m_av_pFormatCtx_opened && m_av_pFormatCtx) {
         av_free(m_av_pFormatCtx);
-        m_av_pFormatCtx = NULL;
+        m_av_pFormatCtx        = NULL;
+        m_av_pFormatCtx_opened = false;
     }
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -1017,11 +1050,12 @@ void InternetRadioDecoder::closeAVStream()
     m_mms_stream     = NULL;
 #endif
 
-    m_av_pFormatCtx  = NULL;
-    m_av_audioStream = -1;
-    m_av_aCodecCtx   = NULL;
-    m_av_aCodec      = NULL;
-    m_decoderOpened  = false;
+    m_av_pFormatCtx        = NULL;
+    m_av_pFormatCtx_opened = NULL;
+    m_av_audioStream       = -1;
+    m_av_aCodecCtx         = NULL;
+    m_av_aCodec            = NULL;
+    m_decoderOpened        = false;
 }
 
 
