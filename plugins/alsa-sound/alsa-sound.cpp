@@ -1103,7 +1103,7 @@ static int mixer_dummy_callback(snd_mixer_t *, unsigned int /*mask*/, snd_mixer_
 bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, const QString &mixerName, bool reopen, QTimer *timer, int timer_latency)
 {
     if (reopen) {
-        if (mixer_handle >= 0)
+        if (mixer_handle != NULL)
             closeMixerDevice(mixer_handle, mixerName, SoundStreamID::InvalidID, NULL, /* force = */ true, timer);
         else
             return true;
