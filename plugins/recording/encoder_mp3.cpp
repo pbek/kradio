@@ -18,6 +18,7 @@
 #include "encoder_mp3.h"
 
 #include <QtCore/QMutex>
+#include <QtCore/QTextCodec>
 #include <QtCore/QDateTime>
 #include <klocale.h>
 
@@ -131,10 +132,15 @@ bool RecordingEncodingMP3::openOutput(const QString &output)
                 QString artist = m_config.m_template.id3Artist;
                 QString genre  = m_config.m_template.id3Genre;
                 QString comment = i18n("Recorded by KRadio");
-                id3tag_set_title  (m_LAMEFlags, title  .toLocal8Bit());
-                id3tag_set_comment(m_LAMEFlags, comment.toLocal8Bit());
-                id3tag_set_artist (m_LAMEFlags, artist .toLocal8Bit());
-                id3tag_set_genre  (m_LAMEFlags, genre  .toLocal8Bit());
+                QTextCodec *isoCodec  = QTextCodec::codecForName("ISO-8859-1");
+                QByteArray ba_title   = isoCodec->fromUnicode(title);
+                QByteArray ba_artist  = isoCodec->fromUnicode(artist);
+                QByteArray ba_genre   = isoCodec->fromUnicode(genre);
+                QByteArray ba_comment = isoCodec->fromUnicode(comment);
+                id3tag_set_title  (m_LAMEFlags, ba_title);
+                id3tag_set_comment(m_LAMEFlags, ba_comment);
+                id3tag_set_artist (m_LAMEFlags, ba_artist);
+                id3tag_set_genre  (m_LAMEFlags, ba_genre);
             }
 
             m_MP3Output = fopen(output.toLocal8Bit(), "wb+");

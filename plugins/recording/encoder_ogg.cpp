@@ -18,9 +18,13 @@
 #include "encoder_ogg.h"
 
 #include <QtCore/QDateTime>
+#include <QtCore/QTextCodec>
 
 #include <klocale.h>
 #include <stdlib.h>
+
+
+#include <errorlog_interfaces.h>
 
 RecordingEncodingOgg::RecordingEncodingOgg(QObject *parent,            SoundStreamID ssid,
                                            const RecordingConfig &cfg, const RadioStation *rs,
@@ -122,11 +126,9 @@ void RecordingEncodingOgg::encode(const char *_buffer, size_t buffer_size, char 
 #ifdef HAVE_OGG
 static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, const QString &value)
 {
-    char *stag   = strdup(tag.toLocal8Bit());
-    char *svalue = strdup(value.toUtf8());
-    vorbis_comment_add_tag(vc, stag, svalue);
-    free(stag);
-    free(svalue);
+    QByteArray   ba_tag    = tag  .toUtf8();
+    QByteArray   ba_value  = value.toUtf8();
+    vorbis_comment_add_tag(vc, ba_tag, ba_value);
 }
 #endif
 
@@ -178,9 +180,9 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
     vorbis_comment  vc;
     vorbis_comment_init (&vc);
     vorbis_comment_add_tag_new(&vc, "creator", "KRadio" KRADIO_VERSION);
-    vorbis_comment_add_tag_new(&vc, "title",   m_config.m_template.id3Title .toLocal8Bit());
-    vorbis_comment_add_tag_new(&vc, "artist",  m_config.m_template.id3Artist.toLocal8Bit());
-    vorbis_comment_add_tag_new(&vc, "genre",   m_config.m_template.id3Genre .toLocal8Bit());
+    vorbis_comment_add_tag_new(&vc, "title",   m_config.m_template.id3Title);
+    vorbis_comment_add_tag_new(&vc, "artist",  m_config.m_template.id3Artist);
+    vorbis_comment_add_tag_new(&vc, "genre",   m_config.m_template.id3Genre);
     vorbis_comment_add_tag_new(&vc, "date",    QDateTime::currentDateTime().toString(Qt::ISODate));
 
     vorbis_analysis_headerout(&m_VorbisDSP, &vc,

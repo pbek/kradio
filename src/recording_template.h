@@ -43,11 +43,10 @@ struct recordingTemplate_t
     QString  id3Genre;
 
     recordingTemplate_t()
-      : filename("kradio-recording-%s-%Y.%m.%d-%H.%M.%S"),
-        id3Title(i18n("%s, %m/%d/%Y, %H:%M:%S, kradio4 recording")),
-        id3Artist("%s"),
-        id3Genre ("")
     {
+        // keep all strings empty. required in recording to distinguish
+        // uninitialized templates (recording started e.g. by GUI button)
+        // from initialized (recording started by alarm)
     }
 
     recordingTemplate_t(const QString &pFilename,
