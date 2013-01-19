@@ -233,7 +233,9 @@ void    TimeControl::restoreState (const KConfigGroup &config)
         float     vol               = config.readEntry(AlarmVolumeElement            + num, 1.0);
         QString   sid               = config.readEntry(AlarmStationIDElement         + num, QString());
         int       type              = config.readEntry(AlarmTypeElement              + num, (int)Alarm::StartPlaying);
-        QString   recordingTemplate = config.readEntry(AlarmRecordingTemplateElement + num, "kradio-recording-%s-%Y.%m.%d-%H.%M.%S");
+
+        recordingTemplate_t recordingTemplate;
+        recordingTemplate.restoreState(AlarmRecordingTemplateElement + num, config, AlarmRecordingTemplateElement + num);
 
         enable &= d.isValid();
 
@@ -267,7 +269,7 @@ void    TimeControl::saveState    (KConfigGroup &config) const
         config.writeEntry (AlarmVolumeElement            + num, i->volumePreset());
         config.writeEntry (AlarmStationIDElement         + num, i->stationID());
         config.writeEntry (AlarmTypeElement              + num, (int)i->alarmType());
-        config.writeEntry (AlarmRecordingTemplateElement + num, i->recordingTemplate());
+        i->recordingTemplate().saveState(AlarmRecordingTemplateElement + num, config);
     }
 
     config.writeEntry("countdownSeconds",  m_countdownSeconds);

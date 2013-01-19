@@ -24,11 +24,18 @@
 
 #include <QtCore/QDateTime>
 #include <QtCore/QVector>
+
 #include <kdemacros.h>
+#include <kconfig.h>
+#include <kconfiggroup.h>
+
+#include "recording_template.h"
 
 /**
   *@author Martin Witte
   */
+
+
 
 class KDE_EXPORT Alarm
 {
@@ -47,7 +54,7 @@ protected:
     float         m_volumePreset;  // < 0: disabled
 
     AlarmType     m_type;
-    QString       m_recordingTemplate;
+    recordingTemplate_t       m_recordingTemplate;
 
     int           m_ID;
 
@@ -67,7 +74,7 @@ public:
     const QString &stationID () const                      { return m_stationID;           }
     float          volumePreset () const                   { return m_volumePreset;        }
     AlarmType      alarmType() const                       { return m_type;                }
-    const QString &recordingTemplate() const               { return m_recordingTemplate;   }
+    const recordingTemplate_t &recordingTemplate() const   { return m_recordingTemplate;   }
 
     int            ID() const                              { return m_ID;                  }
 
@@ -79,7 +86,7 @@ public:
     void           setVolumePreset(float v)                { m_volumePreset      = v;      }
     void           setStationID(const QString &id)         { m_stationID         = id;     }
     void           setAlarmType(AlarmType t)               { m_type              = t;      }
-    void           setRecordingTemplate(const QString & t) { m_recordingTemplate = t;      }
+    void           setRecordingTemplate(const recordingTemplate_t & t) { m_recordingTemplate = t;  }
 
 
     bool  operator == (const Alarm &x) const {

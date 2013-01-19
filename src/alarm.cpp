@@ -26,7 +26,11 @@ Alarm::Alarm(const QDateTime &time, bool daily, bool enabled)
       m_stationID         (QString::null),
       m_volumePreset      (-1),
       m_type              (StartPlaying),
-      m_recordingTemplate ("kradio-recording-%s-%Y.%m.%d-%H.%M.%S"),
+      m_recordingTemplate ("kradio-recording-%s-%Y.%m.%d-%H.%M.%S",
+                           "kradio-recording-%s-%Y.%m.%d-%H.%M.%S",
+                           "%s",
+                           ""
+                          ),
       m_ID                (++m_LastID)
 {
 }
@@ -40,7 +44,11 @@ Alarm::Alarm ()
       m_stationID         (QString::null),
       m_volumePreset      (-1),
       m_type              (StartPlaying),
-      m_recordingTemplate ("kradio-recording-%s-%Y.%m.%d-%H.%M.%S"),
+      m_recordingTemplate ("kradio-recording-%s-%Y.%m.%d-%H.%M.%S",
+                           "kradio-recording-%s-%Y.%m.%d-%H.%M.%S",
+                           "%s",
+                           ""
+                          ),
       m_ID                (++m_LastID)
 {
 }

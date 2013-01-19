@@ -23,6 +23,7 @@
 #endif
 
 #include "soundformat.h"
+#include "recording_template.h"
 
 class KConfig;
 struct SF_INFO;
@@ -41,10 +42,12 @@ public:
 
 public:
     RecordingConfig ();
-    RecordingConfig (const QString &directory,
-                     const QString &filenameTemplate,
-                     OutputFormat of,
-                     const SoundFormat &, int mp3_q, float ogg_q);
+    RecordingConfig (const QString             &directory,
+                     const recordingTemplate_t &templ,
+                     OutputFormat               of,
+                     const SoundFormat         &sf,
+                     int                        mp3_q,
+                     float                      ogg_q);
     RecordingConfig (const RecordingConfig &c);
 
     void     saveConfig   (      KConfigGroup &c) const;
@@ -55,18 +58,18 @@ public:
     void     checkFormatSettings();
 
 public:
-    size_t       m_EncodeBufferSize;
-    size_t       m_EncodeBufferCount;
+    size_t              m_EncodeBufferSize;
+    size_t              m_EncodeBufferCount;
 
-    SoundFormat  m_SoundFormat;
-    int          m_mp3Quality;
-    float        m_oggQuality;
-    QString      m_Directory;
-    QString      m_FilenameTemplate;
-    OutputFormat m_OutputFormat;
+    SoundFormat         m_SoundFormat;
+    int                 m_mp3Quality;
+    float               m_oggQuality;
+    QString             m_Directory;
+    recordingTemplate_t m_template;
+    OutputFormat        m_OutputFormat;
 
-    bool         m_PreRecordingEnable;
-    int          m_PreRecordingSeconds;
+    bool                m_PreRecordingEnable;
+    int                 m_PreRecordingSeconds;
 };
 
 

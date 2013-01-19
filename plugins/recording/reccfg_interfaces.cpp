@@ -31,7 +31,7 @@ IF_IMPL_SENDER  (   IRecCfg::notifyMP3QualityChanged(int q),
 IF_IMPL_SENDER  (   IRecCfg::notifyOggQualityChanged(float q),
                     noticeOggQualityChanged(q)
                 );
-IF_IMPL_SENDER  (   IRecCfg::notifyRecordingDirectoryChanged(const QString &dir, const QString &templ),
+IF_IMPL_SENDER  (   IRecCfg::notifyRecordingDirectoryChanged(const QString &dir, const recordingTemplate_t &templ),
                     noticeRecordingDirectoryChanged(dir, templ)
                 );
 IF_IMPL_SENDER  (   IRecCfg::notifyOutputFormatChanged(RecordingConfig::OutputFormat of),
@@ -58,7 +58,7 @@ IF_IMPL_SENDER  (   IRecCfgClient::sendMP3Quality(int q),
 IF_IMPL_SENDER  (   IRecCfgClient::sendOggQuality(float q),
                     setOggQuality(q)
                 );
-IF_IMPL_SENDER  (   IRecCfgClient::sendRecordingDirectory(const QString &dir, const QString &templ),
+IF_IMPL_SENDER  (   IRecCfgClient::sendRecordingDirectory(const QString &dir, const recordingTemplate_t &templ),
                     setRecordingDirectory(dir, templ)
                 );
 IF_IMPL_SENDER  (   IRecCfgClient::sendOutputFormat(RecordingConfig::OutputFormat of),
@@ -93,7 +93,7 @@ IF_IMPL_QUERY   (   float IRecCfgClient::queryOggQuality (),
                 );
 
 static QString defaultRecDir("/tmp");
-IF_IMPL_QUERY   (   void IRecCfgClient::queryRecordingDirectory(QString &dir, QString &templ),
+IF_IMPL_QUERY   (   void IRecCfgClient::queryRecordingDirectory(QString &dir, recordingTemplate_t &templ),
                     getRecordingDirectory(dir, templ),
 
                 );
@@ -123,7 +123,8 @@ void IRecCfgClient::noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/
     noticeMP3QualityChanged (queryMP3Quality());
     noticeOggQualityChanged (queryOggQuality());
 
-    QString dir, templ;
+    QString dir;
+    recordingTemplate_t templ;
     queryRecordingDirectory(dir, templ);
     noticeRecordingDirectoryChanged(dir, templ);
 
@@ -144,7 +145,8 @@ void IRecCfgClient::noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/
     noticeMP3QualityChanged (queryMP3Quality());
     noticeOggQualityChanged (queryOggQuality());
 
-    QString dir, templ;
+    QString dir;
+    recordingTemplate_t templ;
     queryRecordingDirectory(dir, templ);
     noticeRecordingDirectoryChanged(dir, templ);
 

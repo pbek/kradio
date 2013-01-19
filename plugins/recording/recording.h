@@ -97,7 +97,7 @@ protected:
     bool   setSoundFormat       (const SoundFormat &sf);
     bool   setMP3Quality        (int q);
     bool   setOggQuality        (float q);
-    bool   setRecordingDirectory(const QString &dir, const QString &templ);
+    bool   setRecordingDirectory(const QString &dir, const recordingTemplate_t &templ);
     bool   setOutputFormat      (RecordingConfig::OutputFormat of);
     bool   setPreRecording      (bool enable, int seconds);
     bool   setRecordingConfig   (const RecordingConfig &cfg);
@@ -106,7 +106,7 @@ protected:
     const SoundFormat             &getSoundFormat () const;
     int                            getMP3Quality () const;
     float                          getOggQuality () const;
-    void                           getRecordingDirectory(QString &dir, QString &templ) const;
+    void                           getRecordingDirectory(QString &dir, recordingTemplate_t &templ) const;
     RecordingConfig::OutputFormat  getOutputFormat() const;
     bool                           getPreRecording(int &seconds) const;
     const RecordingConfig         &getRecordingConfig() const;
@@ -118,8 +118,8 @@ protected:
     bool startPlayback(SoundStreamID id);
     bool stopPlayback(SoundStreamID id);
 
-    bool startRecording(SoundStreamID id, const QString &filenameTemplate);
-    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const QString &filenameTemplate);
+    bool startRecording(SoundStreamID id, const recordingTemplate_t &templ);
+    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const recordingTemplate_t &templ);
     bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
     bool stopRecording(SoundStreamID id);
     bool isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;

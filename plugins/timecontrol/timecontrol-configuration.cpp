@@ -88,7 +88,10 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotNewAlarm()));
     QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotDeleteAlarm()));
     QObject::connect(comboAlarmType,        SIGNAL(highlighted(int)),            this, SLOT(slotAlarmTypeChanged(int)));
-    QObject::connect(editRecordingTemplate, SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateChanged(const QString &)));
+    QObject::connect(editRecordingTemplateFileName,  SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateFilenameChanged (const QString &)));
+    QObject::connect(editRecordingTemplateID3Title,  SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateID3TitleChanged (const QString &)));
+    QObject::connect(editRecordingTemplateID3Artist, SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateID3ArtistChanged(const QString &)));
+    QObject::connect(editRecordingTemplateID3Genre,  SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateID3GenreChanged (const QString &)));
 
 
     QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
@@ -102,7 +105,10 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotSetDirty()));
     QObject::connect(comboAlarmType,        SIGNAL(activated(int)),              this, SLOT(slotSetDirty()));
     QObject::connect(editSleep,             SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
-    QObject::connect(editRecordingTemplate, SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
+    QObject::connect(editRecordingTemplateFileName,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
+    QObject::connect(editRecordingTemplateID3Title,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
+    QObject::connect(editRecordingTemplateID3Artist, SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
+    QObject::connect(editRecordingTemplateID3Genre,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
 }
 
 TimeControlConfiguration::~TimeControlConfiguration ()
@@ -353,17 +359,59 @@ void TimeControlConfiguration::slotAlarmTypeChanged(int t)
     int idx = listAlarms->currentRow();
     if (idx >= 0 && idx < alarms.size()) {
         alarms[idx].setAlarmType((Alarm::AlarmType)t);
-        editRecordingTemplate ->setDisabled(t != Alarm::StartRecording);
-        labelRecordingTemplate->setDisabled(t != Alarm::StartRecording);
+        editRecordingTemplateFileName  ->setDisabled(t != Alarm::StartRecording);
+        editRecordingTemplateID3Title  ->setDisabled(t != Alarm::StartRecording);
+        editRecordingTemplateID3Artist ->setDisabled(t != Alarm::StartRecording);
+        editRecordingTemplateID3Genre  ->setDisabled(t != Alarm::StartRecording);
+        labelRecordingTemplate         ->setDisabled(t != Alarm::StartRecording);
+        labelRecordingTemplateFilename ->setDisabled(t != Alarm::StartRecording);
+        labelRecordingTemplateID3Title ->setDisabled(t != Alarm::StartRecording);
+        labelRecordingTemplateID3Artist->setDisabled(t != Alarm::StartRecording);
+        labelRecordingTemplateID3Genre ->setDisabled(t != Alarm::StartRecording);
     }
 }
 
 
-void TimeControlConfiguration::slotRecordingTemplateChanged(const QString &t)
+void TimeControlConfiguration::slotRecordingTemplateFilenameChanged(const QString &t)
 {
     int idx = listAlarms->currentRow();
     if (idx >= 0 && idx < alarms.size()) {
-        alarms[idx].setRecordingTemplate(t);
+        recordingTemplate_t tmp = alarms[idx].recordingTemplate();
+        tmp.filename = t;
+        alarms[idx].setRecordingTemplate(tmp);
+    }
+}
+
+
+void TimeControlConfiguration::slotRecordingTemplateID3TitleChanged(const QString &t)
+{
+    int idx = listAlarms->currentRow();
+    if (idx >= 0 && idx < alarms.size()) {
+        recordingTemplate_t tmp = alarms[idx].recordingTemplate();
+        tmp.id3Title = t;
+        alarms[idx].setRecordingTemplate(tmp);
+    }
+}
+
+
+void TimeControlConfiguration::slotRecordingTemplateID3ArtistChanged(const QString &t)
+{
+    int idx = listAlarms->currentRow();
+    if (idx >= 0 && idx < alarms.size()) {
+        recordingTemplate_t tmp = alarms[idx].recordingTemplate();
+        tmp.id3Artist = t;
+        alarms[idx].setRecordingTemplate(tmp);
+    }
+}
+
+
+void TimeControlConfiguration::slotRecordingTemplateID3GenreChanged(const QString &t)
+{
+    int idx = listAlarms->currentRow();
+    if (idx >= 0 && idx < alarms.size()) {
+        recordingTemplate_t tmp = alarms[idx].recordingTemplate();
+        tmp.id3Genre = t;
+        alarms[idx].setRecordingTemplate(tmp);
     }
 }
 
@@ -397,8 +445,15 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
     labelStationSelection ->setDisabled(!valid);
     buttonDeleteAlarm     ->setDisabled(!valid);
     comboAlarmType        ->setDisabled(!valid);
-    editRecordingTemplate ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
-    labelRecordingTemplate->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    editRecordingTemplateFileName  ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    editRecordingTemplateID3Title  ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    editRecordingTemplateID3Artist ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    editRecordingTemplateID3Genre  ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    labelRecordingTemplate         ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    labelRecordingTemplateFilename ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    labelRecordingTemplateID3Title ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    labelRecordingTemplateID3Artist->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
+    labelRecordingTemplateID3Genre ->setDisabled(!valid || a.alarmType() != Alarm::StartRecording);
 
     editAlarmDate         ->setDate(a.alarmTime().date());
     editAlarmTime         ->setTime(a.alarmTime().time());
@@ -406,7 +461,10 @@ void TimeControlConfiguration::slotAlarmSelectChanged(int idx)
     checkboxAlarmEnable   ->setChecked(a.isEnabled());
     editAlarmVolume       ->setValue((int)rint(a.volumePreset() * 100));
     comboAlarmType        ->setCurrentIndex(a.alarmType());
-    editRecordingTemplate ->setText(a.recordingTemplate());
+    editRecordingTemplateFileName ->setText(a.recordingTemplate().filename);
+    editRecordingTemplateID3Title ->setText(a.recordingTemplate().id3Title);
+    editRecordingTemplateID3Artist->setText(a.recordingTemplate().id3Artist);
+    editRecordingTemplateID3Genre ->setText(a.recordingTemplate().id3Genre);
 
     int k = 0;
     const QString &sID = a.stationID();

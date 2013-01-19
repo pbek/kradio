@@ -73,7 +73,7 @@ RECEIVERS:
     bool noticeSoundStreamClosed (SoundStreamID id);
     bool noticeSoundStreamChanged(SoundStreamID id);
 
-    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const QString &filenameTemplate);
+    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const recordingTemplate_t &templ);
     bool stopRecording(SoundStreamID id);
 
     bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);

@@ -76,7 +76,10 @@ protected slots:
     void slotTimeChanged(const QTime &d);
     void slotVolumeChanged(int v);
     void slotAlarmTypeChanged(int idx);
-    void slotRecordingTemplateChanged(const QString &t);
+    void slotRecordingTemplateFilenameChanged (const QString &t);
+    void slotRecordingTemplateID3TitleChanged (const QString &t);
+    void slotRecordingTemplateID3ArtistChanged(const QString &t);
+    void slotRecordingTemplateID3GenreChanged (const QString &t);
 
     void slotNewAlarm();
     void slotDeleteAlarm();

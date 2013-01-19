@@ -203,11 +203,11 @@ bool   Recording::setOggQuality        (float q)
     return true;
 }
 
-bool   Recording::setRecordingDirectory(const QString &dir, const QString &templ)
+bool   Recording::setRecordingDirectory(const QString &dir, const recordingTemplate_t &templ)
 {
-    if (m_config.m_Directory != dir || m_config.m_FilenameTemplate != templ) {
+    if (m_config.m_Directory != dir || m_config.m_template != templ) {
         m_config.m_Directory        = dir;
-        m_config.m_FilenameTemplate = templ;
+        m_config.m_template         = templ;
         notifyRecordingDirectoryChanged(dir, templ);
     }
     return true;
@@ -277,10 +277,10 @@ float Recording::getOggQuality () const
     return m_config.m_oggQuality;
 }
 
-void Recording::getRecordingDirectory(QString &dir, QString &templ) const
+void Recording::getRecordingDirectory(QString &dir, recordingTemplate_t &templ) const
 {
     dir   = m_config.m_Directory;
-    templ = m_config.m_FilenameTemplate;
+    templ = m_config.m_template;
 }
 
 RecordingConfig::OutputFormat Recording::getOutputFormat() const
@@ -305,7 +305,7 @@ bool Recording::setRecordingConfig(const RecordingConfig &c)
     setSoundFormat       (c.m_SoundFormat);
     setMP3Quality        (c.m_mp3Quality);
     setOggQuality        (c.m_oggQuality);
-    setRecordingDirectory(c.m_Directory, c.m_FilenameTemplate);
+    setRecordingDirectory(c.m_Directory, c.m_template);
     setOutputFormat      (c.m_OutputFormat);
     setPreRecording      (c.m_PreRecordingEnable, c.m_PreRecordingSeconds);
 
@@ -350,13 +350,13 @@ bool Recording::stopPlayback(SoundStreamID id)
     return false;
 }
 
-bool Recording::startRecording(SoundStreamID id, const QString &filenameTemplate)
+bool Recording::startRecording(SoundStreamID id, const recordingTemplate_t &templ)
 {
     SoundFormat realFormat = m_config.m_SoundFormat;
-    return sendStartRecordingWithFormat(id, realFormat, realFormat, filenameTemplate);
+    return sendStartRecordingWithFormat(id, realFormat, realFormat, templ);
 }
 
-bool Recording::startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const QString &filenameTemplate)
+bool Recording::startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const recordingTemplate_t &templ)
 {
     if (!sendStartCaptureWithFormat(id, sf, real_format, /* force_format = */ true)) {
         logError(i18n("start capture not handled"));
@@ -367,8 +367,8 @@ bool Recording::startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf
 
     RecordingConfig cfg = m_config;
     cfg.m_SoundFormat   = real_format;
-    if (filenameTemplate.length()) {
-        cfg.m_FilenameTemplate = filenameTemplate;
+    if (templ.filename.length()) {
+        cfg.m_template = templ;
     }
 
     logInfo(i18n("Recording starting"));
@@ -509,10 +509,12 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
 
 
 
-bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
+bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &_cfg)
 {
     if (m_EncodingThreads.contains(ssid))
         return false;
+    
+    RecordingConfig cfg = _cfg;
 
     SoundStreamID encID = createNewSoundStream(ssid, false);
     m_RawStreams2EncodedStreams[ssid] = encID;
@@ -534,38 +536,18 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &cfg)
     }
 
 
-    QDate               date        = QDate::currentDate();
-    QTime               time        = QTime::currentTime();
     const RadioStation *rs          = NULL;
     querySoundStreamRadioStation(ssid, rs);
-    QString             stationName = rs ? rs->name(): "unknown";
     int                 stationIdx  = rs ? queryStationIdx(*rs) : -1;
-    stationName.replace(QRegExp("[/*?]"), "_");
 
-    QString sdate;
-
-    sdate.sprintf("%04d.%02d.%02d-%02d.%02d",date.year(),date.month(),date.day(),time.hour(),time.minute());
+    cfg.m_template.realizeTemplateParameters(rs, stationIdx);
 
 
-    QString filename = cfg.m_FilenameTemplate.length() ? cfg.m_FilenameTemplate : "kradio-recording-%s-%Y.%m.%d-%H.%M.%S";
-    filename.replace(QString("%s"), stationName);
-    filename.replace(QString("%i"), QString::number(stationIdx));
-    filename.replace(QString("%Y"), QString().sprintf("%04d", date.year()));
-    filename.replace(QString("%m"), QString().sprintf("%02d", date.month()));
-    filename.replace(QString("%d"), QString().sprintf("%02d", date.day()));
-    filename.replace(QString("%H"), QString().sprintf("%02d", time.hour()));
-    filename.replace(QString("%M"), QString().sprintf("%02d", time.minute()));
-    filename.replace(QString("%S"), QString().sprintf("%02d", time.second()));
-    filename.replace(QString("%A"), QDate::longDayName(date.dayOfWeek()));
-    filename.replace(QString("%B"), QDate::longMonthName(date.month()));
-
-    filename.replace("%%", "%");
-
-    if (!filename.startsWith("/")) {
-        filename = cfg.m_Directory + "/" + filename;
+    if (!cfg.m_template.filename.startsWith("/")) {
+        cfg.m_template.filename = cfg.m_Directory + "/" + cfg.m_template.filename;
     }
 
-    QString output = filename + ext;
+    QString output = cfg.m_template.filename + ext;
 
     logInfo(i18n("Recording::outputFile: ") + output);
 

@@ -119,10 +119,10 @@ IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStopCapture, (SoundStreamID id),
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, queryIsCaptureRunning, (SoundStreamID id, bool &b, SoundFormat &sf),
                  isCaptureRunning(id, b, sf)                                                                  );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecording, (SoundStreamID id, const QString &templ),
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecording, (SoundStreamID id, const recordingTemplate_t &templ),
                  startRecording(id, templ)                                                                    );
 
-IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecordingWithFormat, (SoundStreamID id, const SoundFormat &proposed_format, SoundFormat &real_format, const QString &templ),
+IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStartRecordingWithFormat, (SoundStreamID id, const SoundFormat &proposed_format, SoundFormat &real_format, const recordingTemplate_t &templ),
                  startRecordingWithFormat(id, proposed_format, real_format, templ)                            );
 
 IF_IMPL_SENDER_FINE (  ISoundStreamServer, sendStopRecording, (SoundStreamID id),

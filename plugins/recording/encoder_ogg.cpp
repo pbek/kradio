@@ -178,7 +178,9 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
     vorbis_comment  vc;
     vorbis_comment_init (&vc);
     vorbis_comment_add_tag_new(&vc, "creator", "KRadio" KRADIO_VERSION);
-    vorbis_comment_add_tag_new(&vc, "title",   m_RadioStation ? m_RadioStation->longName().toUtf8() : i18n("unknown station"));
+    vorbis_comment_add_tag_new(&vc, "title",   m_config.m_template.id3Title .toLocal8Bit());
+    vorbis_comment_add_tag_new(&vc, "artist",  m_config.m_template.id3Artist.toLocal8Bit());
+    vorbis_comment_add_tag_new(&vc, "genre",   m_config.m_template.id3Genre .toLocal8Bit());
     vorbis_comment_add_tag_new(&vc, "date",    QDateTime::currentDateTime().toString(Qt::ISODate));
 
     vorbis_analysis_headerout(&m_VorbisDSP, &vc,

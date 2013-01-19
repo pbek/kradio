@@ -55,6 +55,9 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
     connect(m_spinboxPreRecordingSeconds, SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
     connect(m_checkboxPreRecordingEnable, SIGNAL(toggled(bool)),                SLOT(slotSetDirty()));
     connect(editFilenameTemplate,         SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
+    connect(editID3TitleTemplate,         SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
+    connect(editID3ArtistTemplate,        SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
+    connect(editID3GenreTemplate,         SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
 
 // attention: remove items with higher index first ;-) otherwise indexes are not valid
 #ifndef HAVE_OGG
@@ -87,8 +90,11 @@ void RecordingConfiguration::setGUIBuffers(const RecordingConfig &c)
 
 void RecordingConfiguration::setGUIDirectories(const RecordingConfig &c)
 {
-    editDirectory       ->setUrl(c.m_Directory);
-    editFilenameTemplate->setText(c.m_FilenameTemplate);
+    editDirectory        ->setUrl(c.m_Directory);
+    editFilenameTemplate ->setText(c.m_template.filename);
+    editID3TitleTemplate ->setText(c.m_template.id3Title);
+    editID3ArtistTemplate->setText(c.m_template.id3Artist);
+    editID3GenreTemplate ->setText(c.m_template.id3Genre);
 }
 
 void RecordingConfiguration::setGUISoundFormat(const RecordingConfig &c)
@@ -175,8 +181,11 @@ void RecordingConfiguration::storeConfig()
     c.m_EncodeBufferSize  = editBufferSize->value() * 1024;
     c.m_EncodeBufferCount = editBufferCount->value();
 
-    c.m_Directory         = editDirectory->url().pathOrUrl();
-    c.m_FilenameTemplate  = editFilenameTemplate->text();
+    c.m_Directory          = editDirectory->url().pathOrUrl();
+    c.m_template.filename  = editFilenameTemplate ->text();
+    c.m_template.id3Title  = editID3TitleTemplate ->text();
+    c.m_template.id3Artist = editID3ArtistTemplate->text();
+    c.m_template.id3Genre  = editID3GenreTemplate ->text();
 
     switch(editRate->currentIndex()) {
         case RATE_48000_IDX: c.m_SoundFormat.m_SampleRate = 48000; break;
@@ -365,11 +374,11 @@ bool RecordingConfiguration::noticeOggQualityChanged (float q)
     return true;
 }
 
-bool RecordingConfiguration::noticeRecordingDirectoryChanged(const QString &dir, const QString &templ)
+bool RecordingConfiguration::noticeRecordingDirectoryChanged(const QString &dir, const recordingTemplate_t &templ)
 {
-    m_ignore_gui_updates                 = true;
-    m_RecordingConfig.m_Directory        = dir;
-    m_RecordingConfig.m_FilenameTemplate = templ;
+    m_ignore_gui_updates          = true;
+    m_RecordingConfig.m_Directory = dir;
+    m_RecordingConfig.m_template  = templ;
     setGUIDirectories(m_RecordingConfig);
     slotFormatSelectionChanged();
     m_ignore_gui_updates = false;

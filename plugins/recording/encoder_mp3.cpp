@@ -23,7 +23,7 @@
 
 RecordingEncodingMP3::RecordingEncodingMP3(QObject *parent,            SoundStreamID ssid,
                                            const RecordingConfig &cfg, const RadioStation *rs,
-                                           const QString &filename)
+                                           const QString         &filename)
     : RecordingEncoding(parent, ssid, cfg, rs, filename)
 #ifdef HAVE_LAME
       ,
@@ -127,17 +127,14 @@ bool RecordingEncodingMP3::openOutput(const QString &output)
             if (!m_error) {
                 id3tag_init(m_LAMEFlags);
                 id3tag_add_v2(m_LAMEFlags);
-                QString title = m_RadioStation ? m_RadioStation->name() : i18n("unknown station");
-                title += QString(" - %1").arg(QDateTime::currentDateTime().toString(Qt::ISODate));
+                QString title  = m_config.m_template.id3Title;
+                QString artist = m_config.m_template.id3Artist;
+                QString genre  = m_config.m_template.id3Genre;
                 QString comment = i18n("Recorded by KRadio");
-                size_t l = title.length() + comment.length() + 10;
-                m_ID3Tags = new char[l];
-                char *ctitle   = m_ID3Tags;
-                strcpy(ctitle, title.toLocal8Bit());
-                char *ccomment = m_ID3Tags + strlen(ctitle) + 1;
-                strcpy(ccomment, comment.toLocal8Bit());
-                id3tag_set_title(m_LAMEFlags, ctitle);
-                id3tag_set_comment(m_LAMEFlags, ccomment);
+                id3tag_set_title  (m_LAMEFlags, title  .toLocal8Bit());
+                id3tag_set_comment(m_LAMEFlags, comment.toLocal8Bit());
+                id3tag_set_artist (m_LAMEFlags, artist .toLocal8Bit());
+                id3tag_set_genre  (m_LAMEFlags, genre  .toLocal8Bit());
             }
 
             m_MP3Output = fopen(output.toLocal8Bit(), "wb+");

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>336</height>
+    <width>544</width>
+    <height>406</height>
    </rect>
   </property>
   <layout class="QGridLayout">
@@ -242,17 +242,17 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="labelActiveWeekdays">
-         <property name="text">
-          <string>Active weekdays:</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="0">
         <widget class="QCheckBox" name="checkboxAlarmEnable">
          <property name="text">
           <string>enabled</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="labelActiveWeekdays">
+         <property name="text">
+          <string>Active weekdays:</string>
          </property>
         </widget>
        </item>
@@ -290,7 +290,55 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="editRecordingTemplate"/>
+      <layout class="QGridLayout">
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="editRecordingTemplateFileName">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="editRecordingTemplateID3Title"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="editRecordingTemplateID3Artist"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="editRecordingTemplateID3Genre"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelRecordingTemplateFilename">
+         <property name="text">
+          <string>Filename</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelRecordingTemplateID3Title">
+         <property name="text">
+          <string>ID3 Title</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelRecordingTemplateID3Artist">
+         <property name="text">
+          <string>ID3 Artist</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelRecordingTemplateID3Genre">
+         <property name="text">
+          <string>ID3 Genre</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>

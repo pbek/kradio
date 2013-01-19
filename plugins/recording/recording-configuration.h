@@ -92,7 +92,7 @@ public :
     bool noticeSoundFormatChanged       (const SoundFormat &sf);
     bool noticeMP3QualityChanged        (int   q);
     bool noticeOggQualityChanged        (float q);
-    bool noticeRecordingDirectoryChanged(const QString &dir, const QString &templ);
+    bool noticeRecordingDirectoryChanged(const QString &dir, const recordingTemplate_t &templ);
     bool noticeOutputFormatChanged      (RecordingConfig::OutputFormat of);
     bool noticePreRecordingChanged      (bool enable, int seconds);
     bool noticeRecordingConfigChanged   (const RecordingConfig &cfg);

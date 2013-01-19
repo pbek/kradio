@@ -768,7 +768,7 @@ bool RadioDocking::startRecordingWithFormat(
     SoundStreamID      id,
     const SoundFormat &/*proposed_format*/,
     SoundFormat       &/*real_format*/,
-    const QString     &/*filenameTemplate*/)
+    const recordingTemplate_t &/*filenameTemplate*/)
 {
     if (!id.isValid() || id != queryCurrentSoundStreamSinkID() || m_StreamID2MenuID.contains(id))
         return false;
