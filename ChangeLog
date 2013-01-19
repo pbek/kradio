@@ -3,6 +3,7 @@
     emw - fix for planar sound sample formats in very recent ffmpeg releases
         - support for id3 tags in recording configuration
         - fixed segfault in case sample format is unknown
+        - fixed charset/encoding of id3 tags / vorbis comments
 
 2012-08-15 (4.0.6)
 
