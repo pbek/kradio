@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: convert-presets\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: convert-presets.cpp:58 convert-presets.cpp:139
+msgid "error opening preset file"
+msgstr "greška kod otvaranja fajla sa stanicama"
+
+#: convert-presets.cpp:60
+msgid "for reading"
+msgstr "za čitanje"
+
+#: convert-presets.cpp:141
+msgid "for writing"
+msgstr "za pisanje"
+
+#: convert-presets.cpp:153
+msgid "error writing preset file"
+msgstr "greška kod upisivanja fajla sa stanicama"
+
+#: convert-presets.cpp:168
+msgid "kradio4-convert-presets"
+msgstr "kradio-konvert-stanice"
+
+#: convert-presets.cpp:170
+msgid "(c) 2003-2010 Martin Witte"
+msgstr "c) 2003-2010 Martin Witte"
+
+#: convert-presets.cpp:173
+msgid "Martin Witte"
+msgstr "Martin Witte"
+
+#: convert-presets.cpp:178
+msgid "quiet mode - no informational output"
+msgstr "tihi režim - nema informacioni izlaz"
+
+#: convert-presets.cpp:179
+msgid "preset files to convert"
+msgstr "fajlovi za stanicama za konvertovanje"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Goran Simović"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "simovic@mailup.net"

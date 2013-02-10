@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: radio (plugins)\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#. i18n: file: radio-configuration-ui.ui:320
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
+#: radio-configuration.cpp:81 rc.cpp:52 rc.cpp:146
+msgid "unchanged"
+msgstr "nepromenjeno"
+
+#. i18n: file: radio-configuration-ui.ui:293
+#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
+#: radio-configuration.cpp:84 rc.cpp:40 rc.cpp:134
+msgid "<don't care>"
+msgstr "<nezanimljivo>"
+
+#. i18n: file: radio-configuration-ui.ui:298
+#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
+#: radio-configuration.cpp:85 rc.cpp:43 rc.cpp:137
+msgid "Mono"
+msgstr "Mono"
+
+#. i18n: file: radio-configuration-ui.ui:303
+#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
+#: radio-configuration.cpp:86 rc.cpp:46 rc.cpp:140
+msgid "Stereo"
+msgstr "Stereo"
+
+#: radio-configuration.cpp:89
+msgid "load + replace presets"
+msgstr "učitaj + zameni fajl sa stanicama"
+
+#: radio-configuration.cpp:90
+msgid "load + add presets"
+msgstr "učitaj + dodaj fajl sa stanicama"
+
+#: radio-configuration.cpp:433
+msgid "Image Selection"
+msgstr "Izaberi sliku"
+
+#: radio-configuration.cpp:438
+msgid "ignoring non-local image"
+msgstr "Ignoriši ne-lokalnu sliku"
+
+#: radio-configuration.cpp:555 radio-configuration.cpp:583
+msgid "KRadio Preset Files"
+msgstr "KRadio fajl sa stanicama"
+
+#: radio-configuration.cpp:559
+msgid "Select Preset File"
+msgstr "Izaberi fajl sa stanicama"
+
+#: radio-configuration.cpp:587
+msgid "Store Preset File"
+msgstr "Uskladišti fajl sa stanicama"
+
+#: radio-configuration.cpp:664
+#, kde-format
+msgid "found %1 new stations"
+msgstr "pronadjen %1 novih stanica"
+
+#: radio-configuration.cpp:666
+#, kde-format
+msgid "have now %1 stations"
+msgstr "Ima novih %1 stanica"
+
+#: radio.cpp:35
+msgid "Central Radio Device Multiplexer"
+msgstr "Centralni multipleksni radio uredjaj"
+
+#: radio.cpp:40
+msgid "Radio Multiplexer Plugin"
+msgstr "Radio multipleksni priključak"
+
+#: radio.cpp:133
+msgid "Radio Stations"
+msgstr "Radio stanice"
+
+#: radio.cpp:134
+msgid "Setup Radio Stations"
+msgstr "Podešavanje radio stanica"
+
+#: radio.cpp:204
+#, kde-format
+msgid "Could not find a plugin for radio station %1"
+msgstr "Ne mogu pronaći priključak za radio stanicu %1"
+
+#: radio.cpp:399
+msgid "unknown"
+msgstr "nepoznato"
+
+#. i18n: file: radio-configuration-ui.ui:21
+#. i18n: ectx: attribute (title), widget (QWidget, stations)
+#: rc.cpp:3 rc.cpp:97
+msgid "Station &Presets"
+msgstr "Stanice"
+
+#. i18n: file: radio-configuration-ui.ui:104
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:107
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:104
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:107
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#: rc.cpp:6 rc.cpp:9 rc.cpp:100 rc.cpp:103
+msgid "Search Stations"
+msgstr "Pretraga stanica"
+
+#. i18n: file: radio-configuration-ui.ui:123
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:126
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:123
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:126
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#: rc.cpp:12 rc.cpp:15 rc.cpp:106 rc.cpp:109
+msgid "Load Presets"
+msgstr "Učitavanje fajla sa stanicama"
+
+#. i18n: file: radio-configuration-ui.ui:142
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:145
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:142
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:145
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#: rc.cpp:18 rc.cpp:21 rc.cpp:112 rc.cpp:115
+msgid "Save Presets as ..."
+msgstr "Sačuvaj fajl sa stanicama kao..."
+
+#. i18n: file: radio-configuration-ui.ui:184
+#. i18n: ectx: property (text), widget (QLabel, labelStationName)
+#: rc.cpp:24 rc.cpp:118
+msgid "Name"
+msgstr "Ime"
+
+#. i18n: file: radio-configuration-ui.ui:208
+#. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
+#: rc.cpp:27 rc.cpp:121
+msgid "Short Name"
+msgstr "Skraćeno ime"
+
+#. i18n: file: radio-configuration-ui.ui:232
+#. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
+#: rc.cpp:30 rc.cpp:124
+msgid "Pixmap File"
+msgstr "Raster fajl"
+
+#. i18n: file: radio-configuration-ui.ui:289
+#. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
+#: rc.cpp:33 rc.cpp:127
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select if you want to "
+"force the tuner to Stereo/Mono mode. <span style=\" font-style:italic;"
+"\">Please be aware, that some drivers might ignore this flag without saying "
+"they will ignore it.</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\"> <html><head><meta name=\"qrichtext\" content=\"1\" /"
+"><style type=\"text/css\"> p, li { white-space: pre-wrap; } </style></"
+"head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\"> <p style=\" margin-top:0px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">Izaberi ako želiš da nateraš prijemnik u Stereo/Mono mod. "
+"<span style=\" font-style:italic;\">Imajte na umu da neki programi mogu "
+"ignorisati ovu zastavu, bez upozorenja da će biti ignorisana.</span></p></"
+"body></html>"
+
+#. i18n: file: radio-configuration-ui.ui:317
+#. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:49 rc.cpp:143
+msgid "The volume that is used when the station is tuned"
+msgstr "Jačina zvuka koja se koristi kada je stanica podešena"
+
+#. i18n: file: radio-configuration-ui.ui:323
+#. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:56 rc.cpp:150
+#, no-c-format
+msgid " %"
+msgstr "␣%"
+
+#. i18n: file: radio-configuration-ui.ui:336
+#. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
+#: rc.cpp:59 rc.cpp:153
+msgid "Stereo Mode"
+msgstr "Stereo mod"
+
+#. i18n: file: radio-configuration-ui.ui:346
+#. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
+#: rc.cpp:62 rc.cpp:156
+msgid "Volume Preset"
+msgstr "Podešavanje jačine"
+
+#. i18n: file: radio-configuration-ui.ui:393
+#. i18n: ectx: attribute (title), widget (QWidget, About)
+#: rc.cpp:65 rc.cpp:159
+msgid "Preset &File"
+msgstr "Fajl sa stanicama"
+
+#. i18n: file: radio-configuration-ui.ui:402
+#. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
+#: rc.cpp:68 rc.cpp:162
+msgid "Personal Preset File"
+msgstr "Lični fajl sa stanicama"
+
+#. i18n: file: radio-configuration-ui.ui:417
+#. i18n: ectx: property (text), widget (QLabel, labelCity)
+#: rc.cpp:71 rc.cpp:165
+msgid "City"
+msgstr "Grad"
+
+#. i18n: file: radio-configuration-ui.ui:430
+#. i18n: ectx: property (text), widget (QLabel, labelCountry)
+#: rc.cpp:74 rc.cpp:168
+msgid "Country"
+msgstr "Država"
+
+#. i18n: file: radio-configuration-ui.ui:461
+#. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
+#: rc.cpp:77 rc.cpp:171
+msgid "&Now"
+msgstr "&Sad"
+
+#. i18n: file: radio-configuration-ui.ui:470
+#. i18n: ectx: property (text), widget (QLabel, labelComment)
+#: rc.cpp:80 rc.cpp:174
+msgid "Comment"
+msgstr "Komentar"
+
+#. i18n: file: radio-configuration-ui.ui:483
+#. i18n: ectx: property (text), widget (QLabel, labelMedia)
+#: rc.cpp:83 rc.cpp:177
+msgid "Media"
+msgstr "Medij"
+
+#. i18n: file: radio-configuration-ui.ui:493
+#. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
+#: rc.cpp:86 rc.cpp:180
+msgid "Maintainer"
+msgstr "Održavatelj"
+
+#. i18n: file: radio-configuration-ui.ui:506
+#. i18n: ectx: property (text), widget (QLabel, labelLastChange)
+#: rc.cpp:89 rc.cpp:183
+msgid "Last Change"
+msgstr "Poslednja promena"
+
+#. i18n: file: radio-configuration-ui.ui:540
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:92 rc.cpp:186
+msgid ""
+"<p align=\"center\">Click on the link below to contribute this station "
+"preset file to the kradio project.</p>"
+msgstr ""
+"<p align=\"center\">Klik na link ispod je doprinos ovim fajlom za kradio "
+"projekat.</p>"
+
+#: rc.cpp:93
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Goran Simović"
+
+#: rc.cpp:94
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "simovic@mailup.net"

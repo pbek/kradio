@@ -1,0 +1,276 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lirc (plugins)\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: lirc-configuration.cpp:51
+msgid "digit 0"
+msgstr "cifra 0"
+
+#: lirc-configuration.cpp:52
+msgid "digit 1"
+msgstr "cifra 1"
+
+#: lirc-configuration.cpp:53
+msgid "digit 2"
+msgstr "cifra 2"
+
+#: lirc-configuration.cpp:54
+msgid "digit 3"
+msgstr "cifra 3"
+
+#: lirc-configuration.cpp:55
+msgid "digit 4"
+msgstr "cifra 4"
+
+#: lirc-configuration.cpp:56
+msgid "digit 5"
+msgstr "cifra 5"
+
+#: lirc-configuration.cpp:57
+msgid "digit 6"
+msgstr "cifra 6"
+
+#: lirc-configuration.cpp:58
+msgid "digit 7"
+msgstr "cifra 7"
+
+#: lirc-configuration.cpp:59
+msgid "digit 8"
+msgstr "cifra 8"
+
+#: lirc-configuration.cpp:60
+msgid "digit 9"
+msgstr "cifra 9"
+
+#: lirc-configuration.cpp:61
+msgid "Power On"
+msgstr "Uključi"
+
+#: lirc-configuration.cpp:62
+msgid "Power Off"
+msgstr "Isključi"
+
+#: lirc-configuration.cpp:63
+msgid "Pause"
+msgstr "Pauza"
+
+#: lirc-configuration.cpp:64
+msgid "Start Recording"
+msgstr "Počni snimanje"
+
+#: lirc-configuration.cpp:65
+msgid "Stop Recording"
+msgstr "Zaustavi snimanje"
+
+#: lirc-configuration.cpp:66
+msgid "Increase Volume"
+msgstr "Povećaj jačinu"
+
+#: lirc-configuration.cpp:67
+msgid "Decrease Volume"
+msgstr "Smanji jačinu"
+
+#: lirc-configuration.cpp:68
+msgid "Next Channel"
+msgstr "Sledeći kanal"
+
+#: lirc-configuration.cpp:69
+msgid "Previous Channel"
+msgstr "Predhodni kanal"
+
+#: lirc-configuration.cpp:70
+msgid "Search Next Channel"
+msgstr "Traži sledeći kanal"
+
+#: lirc-configuration.cpp:71
+msgid "Search Previous Channel"
+msgstr "Traži predhodni kanal"
+
+#: lirc-configuration.cpp:72
+msgid "Enable Sleep Countdown"
+msgstr "Omogući tajmer isključenja"
+
+#: lirc-configuration.cpp:73
+msgid "Quit KRadio"
+msgstr "Napusti KRadio"
+
+#: lirc-configuration.cpp:125 lirc-configuration.cpp:126
+msgid "<don't care>"
+msgstr "<nebitno>"
+
+#: lirc-configuration.cpp:278
+msgid ""
+"Enter the key string of your remote or just press the button on your remote "
+"control"
+msgstr ""
+"Unesite ključni niz od vašeg daljinskog ili samo pritisnite dugme na vašoj "
+"udaljenoj kontroli"
+
+#: lirc-configuration.cpp:284
+msgid "Double Click on the entries to change the assignments"
+msgstr "Dupli klik na ulazu za promenu zadataka "
+
+#: lircsupport.cpp:49
+msgid "Linux Infrared Control (LIRC) Support"
+msgstr "Podrška za Linux infracrvenu kontrolu (LIRC)"
+
+#: lircsupport.cpp:55 lircsupport.cpp:500
+msgid "LIRC Plugin"
+msgstr "LIRC priključak"
+
+#: lircsupport.cpp:83
+msgid "initializing kradio lirc plugin"
+msgstr "Inicijalizacija kradio lirc priključka"
+
+#: lircsupport.cpp:84
+msgid ""
+"warnings/errors about missing sockets don't harm - usually the LIRC daemon "
+"is not running in these cases."
+msgstr ""
+"upozorenja/greške o nedostajućim utičnicama - obično LIRC priključak nije "
+"pokrenut u ovim slučajevima."
+
+#: lircsupport.cpp:93
+msgid "Initializing kradio lirc plugin failed"
+msgstr "inicijalizacija kradio lirc priključka nije uspela"
+
+#: lircsupport.cpp:102
+msgid "Initializing kradio lirc plugin successful"
+msgstr "Inicijalizacija kradio lirc priključka je uspela"
+
+#: lircsupport.cpp:131
+#, kde-format
+msgid ""
+"LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
+"not have a button/remote associated.\n"
+"This will most probably lead to problems. Please use \"button=*\" and "
+"\"remote=*\" as wildcard for all buttons/remotes"
+msgstr ""
+"LircSupport::LIRC_init_config: U %1 jedne LIRC stavke za KRadio nema dugme/"
+"daljinski povezivanje. Ovo će najverovatnije voditi do problema. Molim "
+"koristite \"dugme=*\" i  \"daljinski=*\" kao džoker za sve dugmad/daljinski"
+
+#: lircsupport.cpp:138
+#, kde-format
+msgid ""
+"LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
+"incomplete button/remote associated.\n"
+"This will most probably lead to problems. Please use \"button=*\" and "
+"\"remote=*\" as wildcard for all buttons/remotes"
+msgstr ""
+"LircSupport::LIRC_init_config: U %1 jedne LIRC stavke za KRadio ima "
+"nekompletno dugme/daljinski povezivanje. Ovo će najverovatnije voditi do "
+"problema. Molim koristite \"dugme=*\" i  \"daljinski=*\" kao džoker za sve "
+"dugmad/daljinski"
+
+#: lircsupport.cpp:149
+#, kde-format
+msgid "There is no entry for kradio in your .lircrc files %1."
+msgstr "Ne postoji stavka za kradio u vašim .lircrc fajlovima %1."
+
+#: lircsupport.cpp:150
+#, kde-format
+msgid "Please setup your .lircrc file %1 correctly."
+msgstr "Molimo podesite vaš .lircrc fajl %1 ispravno."
+
+#: lircsupport.cpp:154 lircsupport.cpp:155
+#, kde-format
+msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
+msgstr ""
+"Inicijalizacija kradio priključka neuspela. Ne mogu čitati konfiguracioni "
+"fajl %1"
+
+#: lircsupport.cpp:196
+#, kde-format
+msgid ""
+"%1 does not exist. File was created with KRadio's default .lircrc proposal"
+msgstr ""
+"%1 ne postoji. Fajl je bio kreiran sa KRadio podrazumevanim .lircrc predlogom"
+
+#: lircsupport.cpp:209
+#, kde-format
+msgid "failed to read file %1"
+msgstr "neispravno čitanje fajla %1"
+
+#: lircsupport.cpp:261
+msgid ""
+"Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
+"kradio"
+msgstr ""
+"Čitanje LIRC utičnice neuspelo. Onemogućavanje LIRC funkcija na sledećem "
+"pokretanju kradia"
+
+#: lircsupport.cpp:499
+msgid "LIRC Support"
+msgstr "LIRC podrška"
+
+#. i18n: file: lirc-configuration-ui.ui:37
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:3 rc.cpp:32
+msgid "Action"
+msgstr "Akcija"
+
+#. i18n: file: lirc-configuration-ui.ui:48
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:6 rc.cpp:35
+msgid "LIRC String"
+msgstr "Lirc linija"
+
+#. i18n: file: lirc-configuration-ui.ui:59
+#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
+#: rc.cpp:9 rc.cpp:38
+msgid "Alternative LIRC String"
+msgstr "Alternativna LIRC linija"
+
+#. i18n: file: lirc-configuration-ui.ui:83
+#. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
+#: rc.cpp:12 rc.cpp:41
+msgid "textLabel1"
+msgstr "oznakateksta1"
+
+#. i18n: file: lirc-configuration-ui.ui:103
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:15 rc.cpp:44
+msgid "Power off .lircrc mode"
+msgstr "Isključi .lircrc mod"
+
+#. i18n: file: lirc-configuration-ui.ui:110
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:18 rc.cpp:47
+msgid "Power on .lircrc mode"
+msgstr "Uključi .lircrc mod"
+
+#. i18n: file: lirc-configuration-ui.ui:127
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:21 rc.cpp:50
+msgid "Synchronize .lircrc modes at runtime"
+msgstr "Sinhronizuj .lircrc modove u kretanju"
+
+#. i18n: file: lirc-configuration-ui.ui:134
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:24 rc.cpp:53
+msgid "Synchronize .lircrc modes at startup"
+msgstr "Sinhronizuj. lircrc modove  na početku"
+
+#. i18n: file: lirc-configuration-ui.ui:161
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:27 rc.cpp:56
+msgid "LIRC Configuration File"
+msgstr "LIRC konfiguracioni fajl"
+
+#: rc.cpp:28
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Goran Simović"
+
+#: rc.cpp:29
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "simovic@mailup.net"

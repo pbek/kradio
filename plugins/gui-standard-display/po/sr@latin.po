@@ -1,0 +1,224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gui-standard-display (plugins)\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: displaycfg.cpp:48
+msgid "Active Text"
+msgstr "Aktivan tekst"
+
+#: displaycfg.cpp:49
+msgid "Inactive Text"
+msgstr "Neaktivan tekst"
+
+#: displaycfg.cpp:50
+msgid "Background Color"
+msgstr "Boja pozadine"
+
+#: radioview.cpp:54
+msgid "Standard Display for KRadio"
+msgstr "Standardan ekran za KRadio"
+
+#: radioview.cpp:60
+msgid "Radio Display"
+msgstr "Radio ekran"
+
+#: radioview.cpp:145
+msgid "Pause KRadio"
+msgstr "Pauza Kradio"
+
+#: radioview.cpp:150
+msgid "Start Recording"
+msgstr "Start snimanja"
+
+#: radioview.cpp:158
+msgid "5 min"
+msgstr "5 min"
+
+#: radioview.cpp:162
+msgid "10 min"
+msgstr "10 min"
+
+#: radioview.cpp:166
+msgid "15 min"
+msgstr "15 min"
+
+#: radioview.cpp:170
+msgid "30 min"
+msgstr "30 min"
+
+#: radioview.cpp:174
+msgid "60 min"
+msgstr "60 min"
+
+#: radioview.cpp:178
+msgid "90 min"
+msgstr "90 min"
+
+#: radioview.cpp:182
+msgid "120 min"
+msgstr "120 min"
+
+#: radioview.cpp:227
+msgid "Configure KRadio"
+msgstr "KRadio konfigurisanje"
+
+#: radioview.cpp:228
+msgid "Power On/Off"
+msgstr "Uključi/Isključi"
+
+#: radioview.cpp:229
+msgid "Quit KRadio Application"
+msgstr "Napusti KRadio program"
+
+#: radioview.cpp:230
+msgid "Start/Stop Recording"
+msgstr "Pokreni/Zaustavi snimanje"
+
+#: radioview.cpp:231
+msgid "Start/Stop Sleep Countdown"
+msgstr "Pokreni/Zaustavi tajmer"
+
+#: radioview.cpp:232
+msgid "Show/Hide Plugins"
+msgstr "Pokaži/Sakrij priključak"
+
+#: radioview.cpp:233
+msgid "Help about KRadio and KDE"
+msgstr "Pomoć za KRadio i KDE"
+
+#: radioview.cpp:234
+msgid "Select a Radio Station"
+msgstr "Izaberi Radio stanicu"
+
+#: radioview.cpp:407
+msgid "no preset defined"
+msgstr "stanica nije odredjena"
+
+#: radioview.cpp:563 radioview.cpp:633
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr "Stop snimanja od %1"
+
+#: radioview.cpp:616
+msgid "Resume playback"
+msgstr "Nastavi reprodukciju"
+
+#: radioview.cpp:620
+msgid "Pause playback"
+msgstr "Pauziraj reprodukciju"
+
+#: radioview.cpp:713
+msgid "Display"
+msgstr "Ekran"
+
+#: radioview.cpp:714
+msgid "Display Configuration"
+msgstr "Konfiguracija ekrana"
+
+#: radioview_frequencyradio.cpp:132 radioview_frequencyradio.cpp:133
+msgid "Frequency Display"
+msgstr "Prikaz frekvencije"
+
+#: radioview_frequencyradio.cpp:419
+msgid "AM"
+msgstr "AM"
+
+#: radioview_frequencyradio.cpp:420
+msgid "FM"
+msgstr "FM"
+
+#: radioview_frequencyradio.cpp:421
+msgid "RDS"
+msgstr "RDS"
+
+#: radioview_frequencyradio.cpp:422
+msgid "NET"
+msgstr "NET"
+
+#: radioview_frequencyradio.cpp:564
+#, kde-format
+msgid "%1 kHz"
+msgstr "%1 kHz"
+
+#: radioview_frequencyradio.cpp:566
+#, kde-format
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: radioview_frequencyseeker.cpp:79
+msgid "Search for previous Radio Station"
+msgstr "Traži prethodnu radio stanicu"
+
+#: radioview_frequencyseeker.cpp:80
+msgid "Search for next Radio Station"
+msgstr "Traži sledeću radio stanicu"
+
+#: radioview_frequencyseeker.cpp:81
+msgid "Decrement Frequency"
+msgstr "Smanjenje frekvencije"
+
+#: radioview_frequencyseeker.cpp:82
+msgid "Increment Frequency"
+msgstr "Povećanje frekvencije"
+
+#: radioview_frequencyseeker.cpp:83
+msgid "Change Frequency"
+msgstr "Promena frekvencije"
+
+#: radioview_volume.cpp:59
+msgid "Change Volume"
+msgstr "Promeni jačinu zvuka"
+
+#. i18n: file: radioview_seekinterface.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
+#: rc.cpp:3 rc.cpp:23
+msgid "RadioView_SeekInterface"
+msgstr "Radio_PretragaInterfejs"
+
+#. i18n: file: radioview_seekinterface.ui:30
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
+#: rc.cpp:6 rc.cpp:26
+msgid "search previous station"
+msgstr "traži predhodnu stanicu"
+
+#. i18n: file: radioview_seekinterface.ui:53
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
+#: rc.cpp:9 rc.cpp:29
+msgid "decrease freq. by 0.05 MHz"
+msgstr "smanjenje frek. za 0.05 MHz"
+
+#. i18n: file: radioview_seekinterface.ui:70
+#. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
+#: rc.cpp:12 rc.cpp:32
+msgctxt "Frequency"
+msgid "Frequency control"
+msgstr "Kontrola frekvencije"
+
+#. i18n: file: radioview_seekinterface.ui:107
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
+#: rc.cpp:15 rc.cpp:35
+msgid "increase freq. by 0.05 MHz"
+msgstr "povećanje frek. za 0.05 MHz"
+
+#. i18n: file: radioview_seekinterface.ui:127
+#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
+#: rc.cpp:18 rc.cpp:38
+msgid "search next station"
+msgstr "traži sledeću stanicu"
+
+#: rc.cpp:19
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Goran Simović"
+
+#: rc.cpp:20
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "simović@mailup.net"

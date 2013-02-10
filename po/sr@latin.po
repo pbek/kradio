@@ -1,0 +1,806 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: po\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
+#, kde-format
+msgid "%1 Error: %2"
+msgstr "%1 Greška: %2"
+
+#: interfaces/errorlog_interfaces.cpp:50 interfaces/errorlog_interfaces.cpp:77
+#, kde-format
+msgid "%1 Warning: %2"
+msgstr "%1 Upozorenje: %2"
+
+#: interfaces/errorlog_interfaces.cpp:57 interfaces/errorlog_interfaces.cpp:84
+#, kde-format
+msgid "%1 Information: %2"
+msgstr "%1 Informacija: %2"
+
+#: interfaces/errorlog_interfaces.cpp:64 interfaces/errorlog_interfaces.cpp:91
+#, kde-format
+msgid "%1 Debug: %2"
+msgstr "%1 Ispravka: %2"
+
+#: radiostations/frequencyradiostation.cpp:120
+#: radiostations/internetradiostation.cpp:155
+#, kde-format
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: radiostations/frequencyradiostation.cpp:134
+#, kde-format
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: radiostations/frequencyradiostation.cpp:136
+#, kde-format
+msgid "%1 kHz"
+msgstr "%1 kHz"
+
+#: radiostations/radiostation-config.cpp:49
+msgid "I don't know how to edit this station"
+msgstr "Ne znam kako da izmenim ovu stanicu"
+
+#: radiostations/radiostation-config.cpp:75
+msgid "Frequency:"
+msgstr "Frekvencija:"
+
+#: radiostations/radiostation-config.cpp:128
+msgid "URL:"
+msgstr "URL:"
+
+#: radiostations/radiostation-config.cpp:132
+msgid "Decoder Class:"
+msgstr "Klasa dekodera"
+
+#: radiostations/radiostation-config.cpp:136
+msgid "Playlist Class:"
+msgstr "Klasa plejliste"
+
+#: radiostations/radiostation-config.cpp:141
+msgctxt "Stream Format"
+msgid "<autodetect>"
+msgstr "<autodetekcija>"
+
+#: radiostations/radiostation-config.cpp:142
+msgid "MP3"
+msgstr "MP3"
+
+#: radiostations/radiostation-config.cpp:143
+msgid "ACC/ACCP"
+msgstr "ACC/ACCP"
+
+#: radiostations/radiostation-config.cpp:144
+msgid "ASF"
+msgstr "ASF"
+
+#: radiostations/radiostation-config.cpp:146
+msgid "OGG/Vorbis"
+msgstr "OGG/Vorbis"
+
+#: radiostations/radiostation-config.cpp:149
+msgctxt "Playlist Format"
+msgid "<autodetect>"
+msgstr "<autodetekcija>"
+
+#: radiostations/radiostation-config.cpp:150
+msgid "<none>"
+msgstr "<nijedan>"
+
+#: radiostations/radiostation-config.cpp:151
+msgid "ASX"
+msgstr "ASX"
+
+#: radiostations/radiostation-config.cpp:152
+msgid "LSC"
+msgstr "LSC"
+
+#: radiostations/radiostation-config.cpp:153
+msgid "M3U"
+msgstr "M3U"
+
+#: radiostations/radiostation-config.cpp:154
+msgid "PLS"
+msgstr "PLS"
+
+#: radiostations/radiostation-config.cpp:155
+msgid "WMV"
+msgstr "WMV"
+
+#: radiostations/radiostation-config.cpp:158
+msgid "Meta-Data Stream Encoding:"
+msgstr "Meta-podatak Strim Enkoding:"
+
+#: radiostations/radiostation-config.cpp:240
+msgid "auto"
+msgstr "auto"
+
+#: radiostations/radiostation-listview.cpp:35
+msgid "No."
+msgstr "Br."
+
+#: radiostations/radiostation-listview.cpp:36
+msgid "Icon"
+msgstr "Ikona"
+
+#: radiostations/radiostation-listview.cpp:37
+msgid "Station"
+msgstr "Stanica"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:228
+#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
+#. i18n: file: src/pluginmanager-configuration-ui.ui:319
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: radiostations/radiostation-listview.cpp:38 rc.cpp:44 rc.cpp:62
+msgid "Description"
+msgstr "Opis"
+
+#: radiostations/radiostation-listview.cpp:228
+msgid "dragEnterEvent accepted"
+msgstr "dragEnterEvent odobren"
+
+#: radiostations/radiostation-listview.cpp:232
+msgid "dragEnterEvent rejected"
+msgstr "dragEnterEvent odbijen"
+
+#: radiostations/radiostation-listview.cpp:241
+msgid "contentsDragEnterEvent accepted"
+msgstr "contentsDragEnterEvent odobren"
+
+#: radiostations/radiostation-listview.cpp:245
+msgid "contentsDragEnterEvent rejected"
+msgstr "contentsDragEnterEvent odbijen"
+
+#: radiostations/frequencyradiostation.h:72
+msgid "AM/FM Radio Station"
+msgstr "AM/FM Radio Stanica"
+
+#: radiostations/internetradiostation.h:75
+msgid "Internet Radio Station"
+msgstr "Internet Radio Stanica"
+
+#: radiostations/radiostation.h:161 radiostations/radiostation.h:162
+#: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
+msgid "unknown"
+msgstr "nepoznat"
+
+#: src/fileringbuffer.cpp:35 src/fileringbuffer.cpp:68
+#, kde-format
+msgid "cannot open buffer file %1"
+msgstr "ne mogu otvoriti bafer fajl %1"
+
+#: src/fileringbuffer.cpp:93
+#, kde-format
+msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
+msgstr "FileRingbuffer::resize: Ne mogu pisati u tmp fajl %1.␣"
+
+#: src/fileringbuffer.cpp:99
+#, kde-format
+msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
+msgstr "FileRingbuffer::resize: Ne mogu otvoriti tmp fajl %1.␣"
+
+#: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
+#, kde-format
+msgid "FileRingBuffer::addData: failed writing data to file %1."
+msgstr "FileRingBuffer::addData: ne mogu pisati podatke u fajlu %1."
+
+#: src/fileringbuffer.cpp:168
+#, kde-format
+msgid "FileRingBuffer::takeData: failed reading data to file %1."
+msgstr "FileRingBuffer::takeData: ne mogu čitati podatke u fajlu %1."
+
+#: src/kradioaboutwidget.cpp:65
+msgid ""
+"<qt>No information available.<br />The supplied KAboutData object does not "
+"exist.</qt>"
+msgstr "<qt>Informacije nedostupna.<br />Objekat KAboutData ne postoji.</qt>"
+
+#: src/kradioaboutwidget.cpp:92
+#, kde-format
+msgid ""
+"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
+"html>"
+msgstr ""
+"<html><font size=\"5\">%1</font><br /><b>Verzija %2</b><br />Koristi KDE %3</"
+"html>"
+
+#: src/kradioaboutwidget.cpp:125
+#, kde-format
+msgid "License: %1"
+msgstr "Licenca %1"
+
+#: src/kradioaboutwidget.cpp:138
+msgid "&About"
+msgstr "&O programu"
+
+#: src/kradioaboutwidget.cpp:147
+msgid "A&uthor"
+msgstr "&Autor"
+
+#: src/kradioaboutwidget.cpp:147
+msgid "A&uthors"
+msgstr "&Autori"
+
+#: src/kradioaboutwidget.cpp:152
+msgid ""
+"Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
+"bugs.\n"
+msgstr ""
+"Molimo koristite <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> za "
+"prijavu grešaka."
+
+#: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
+#, kde-format
+msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
+msgstr "Molimo prijavite greške na <a href=\"mailto:%1\">%2</a>.␣"
+
+#: src/kradioaboutwidget.cpp:210
+msgid "&Thanks To"
+msgstr "&Hvala za"
+
+#: src/kradioaboutwidget.cpp:232
+msgid "T&ranslation"
+msgstr "&Prevod"
+
+#: src/kradioaboutwidget.cpp:255
+msgid "License Agreement"
+msgstr "Ugovor o licenci"
+
+#: src/kradioapp.cpp:132
+#, kde-format
+msgid "Library %1: Plugin Entry Point is missing\n"
+msgstr "Biblioteka %1: Priključak ulazne tačke nedostaje␣"
+
+#: src/kradioapp.cpp:133 src/kradioapp.cpp:141
+#: src/pluginmanager-configuration.cpp:197
+msgid "Plugin Library Load Error"
+msgstr "Priključak biblioteke učitava grešku"
+
+#: src/kradioapp.cpp:140
+#, kde-format
+msgid ""
+"Library %1: \n"
+"%2"
+msgstr "Biblioteka %1: %2"
+
+#: src/kradioapp.cpp:166
+msgid "saveState"
+msgstr "saveState"
+
+#: src/kradioapp.cpp:216
+msgid "New plugin libraries found. Should the libraries be loaded now?"
+msgstr "Novi priključak pronadjen. Treba li biblioteka biti učitana sada?"
+
+#: src/kradioapp.cpp:218
+msgid "New Plugin Libraries found"
+msgstr "Nova biblioteka priključka pronadjena"
+
+#: src/kradioapp.cpp:234
+#, kde-format
+msgid ""
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"installation directory and the environment variables KDEDIR, KDEDIRS and "
+"KDEHOME.\n"
+msgstr ""
+"Pronadjeno samo %1 biblioteke. Očekivani minimum je 5. Molimo proverite "
+"KRadio4 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.␣"
+
+#: src/kradioapp.cpp:239
+msgid "KRadio4 Installation Error"
+msgstr "KRadio4 instalaciona greška"
+
+#: src/kradioapp.cpp:264
+msgid "Instance"
+msgstr "Primer"
+
+#: src/kradioapp.cpp:285
+msgid "KRadio Configuration"
+msgstr "KRadio konfiguracija"
+
+#: src/kradioapp.cpp:286
+msgid "About KRadio Components"
+msgstr "O KRadio komponentama"
+
+#: src/kradioapp.cpp:314
+#, kde-format
+msgid "Error: Loading Library %1 failed: %2"
+msgstr "Greška: Učitavanje biblioteke %1 pogrešno: %2"
+
+#: src/kradioapp.cpp:364
+#, kde-format
+msgid "Error: Creation of instance \"%1\" of class %2 failed."
+msgstr "Greška: Kreiranje primera \"%1\" klase %2 pogrešno."
+
+#: src/kradioapp.cpp:370
+#, kde-format
+msgid "Error: Cannot create instance \"%1\" of unknown class %2."
+msgstr "Greška: Ne mogu kreirati primer \"%1\" nepoznate klase %2."
+
+#: src/main.cpp:34
+msgid "KRadio4"
+msgstr "KRadio4"
+
+#: src/main.cpp:36
+msgid "A versatile KDE AM/FM/Internet radio application"
+msgstr "Višenamenski KDE AM/FM internet radio program"
+
+#: src/main.cpp:38
+msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
+msgstr "c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
+
+#: src/main.cpp:43
+msgid "Ernst Martin Witte"
+msgstr "Ernst Martin Witte"
+
+#: src/main.cpp:43
+msgid ""
+"KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
+"recording, lirc support, alarms, misc"
+msgstr ""
+"KDE4 port, RDS podrška, prečice, PVR podrška, napisan za 1.0/0.3.0, "
+"snimanje, lirc podrška, alarmi, ostalo"
+
+#: src/main.cpp:44
+msgid "Marcus Camen"
+msgstr "Marcus Camen"
+
+#: src/main.cpp:44
+msgid "Buildsystem, Standards Conformance, Cleanups"
+msgstr "Izgradnja sistema, standardizacija, čišćenje koda"
+
+#: src/main.cpp:45
+msgid "Klas Kalass"
+msgstr "Klas Kalass"
+
+#: src/main.cpp:45
+msgid "Miscellaneous"
+msgstr "Razno"
+
+#: src/main.cpp:46
+msgid "Frank Schwanz"
+msgstr "Frank Schwanz"
+
+#: src/main.cpp:46
+msgid "initial idea, first basic KDE 2 application"
+msgstr "Početna ideja, prva osnovna KDE 2 aplikacija"
+
+#: src/multibuffer.cpp:89
+msgid "Buffer Overflow. "
+msgstr "Bafer prelivanje.␣"
+
+#: src/plugin_configuration_dialog.cpp:35
+msgid "Configuration Dialog"
+msgstr "Konfiguracioni dijalog"
+
+#: src/pluginmanager-configuration.cpp:196
+#, kde-format
+msgid ""
+"Library %1: \n"
+"Cannot load non-local library"
+msgstr "Biblioteka %1: Ne mogu učitati ne-lokalnu biblioteku"
+
+#: src/pluginmanager-configuration.cpp:226
+msgid "Enter Plugin Instance Name"
+msgstr "Unesite ime priključka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:308
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: src/pluginmanager-configuration.cpp:227 rc.cpp:59
+msgid "Instance Name"
+msgstr "Ime primera"
+
+#: src/pluginmanager.cpp:436
+msgid "Plugins"
+msgstr "Priključci"
+
+#: src/pluginmanager.cpp:437
+msgid "Plugin Library Configuration"
+msgstr "Konfiguracija biblioteke priključka"
+
+#: src/pluginmanager.cpp:570
+msgid "Starting Plugins"
+msgstr "Pokretanje priključka"
+
+#: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
+#, kde-format
+msgid "Creating Plugin %1"
+msgstr "Kreiranje priključka %1"
+
+#: src/pluginmanager.cpp:605
+msgid ""
+"New plugins found. Do you want me to automatically create instances now?"
+msgstr "Novi priključci pronadjeni. Da li želite odmah kreirati primer?"
+
+#: src/pluginmanager.cpp:607
+msgid "New Plugins found"
+msgstr "Novi priključci pronadjeni"
+
+#: src/pluginmanager.cpp:642
+#, kde-format
+msgid "Initializing Plugin %1"
+msgstr "Pokretanje priključka %1"
+
+#: src/pluginmanager.cpp:767
+msgid "Show all"
+msgstr "Pokaži sve"
+
+#: src/pluginmanager.cpp:768
+msgid "Hide all"
+msgstr "Sakrij sve"
+
+#: src/pluginmanager.cpp:769
+msgid "Restore all"
+msgstr "Obnovi sve"
+
+#: src/pluginmanager.cpp:770
+msgid "restore state before last hide-all activation"
+msgstr "Obnovi stanje pre poslednjeg skrivanja aktivacija"
+
+#: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
+msgid "&Start"
+msgstr "&Start"
+
+#. i18n: file: src/standardscandialog-ui.ui:58
+#. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
+#: src/standardscandialog.cpp:92 rc.cpp:81
+msgid "&Stop"
+msgstr "&Stop"
+
+#: src/standardscandialog.cpp:163
+#, kde-format
+msgid "<p align=\"right\">%1</p>"
+msgstr "<p align=\"right\">%1</p>"
+
+#: src/standardscandialog.cpp:226
+msgid "new station "
+msgstr "nova stanica␣"
+
+#: src/station-drag-object.cpp:70
+msgid "canDecode = true"
+msgstr "canDecode = true"
+
+#: src/stationlist.cpp:135
+msgid "Contains merged Data"
+msgstr "Sadržaj objedinjenih podataka"
+
+#: src/stationlist.cpp:176
+msgid ""
+"Probably an old station preset file was read.\n"
+"You have to rebuild your station selections for the quickbar and the docking "
+"menu."
+msgstr ""
+"Verovatno je stari fajl sa stanicom pročitan.\n"
+"Morate obnoviti svoj izbor stanica za brzi bar i meni."
+
+#: src/stationlist.cpp:185
+msgid "parsing failed"
+msgstr "parsiranje pogrešno"
+
+#: src/stationlist.cpp:189
+msgid ""
+"Parsing the station preset file failed.\n"
+"See console output for more details."
+msgstr ""
+"Parsiranje fajla sa stanicom pogrešno.\n"
+"Pogledaj izlaz konzole za više detalja."
+
+#: src/stationlist.cpp:203 src/stationlist.cpp:208
+#, kde-format
+msgid "error downloading preset file %1"
+msgstr "greška kod preuzimanja fajla sa stanicom %1"
+
+#: src/stationlist.cpp:205
+#, kde-format
+msgid "Download of the station preset file at %1 failed."
+msgstr "Preuzimanje fajla sa stanicom %1 pogrešno."
+
+#: src/stationlist.cpp:214
+msgid "temporary file: "
+msgstr "privremeni fajl:␣"
+
+#: src/stationlist.cpp:220
+#, kde-format
+msgid "error opening preset file %1"
+msgstr "greška kod otvaranja fajla sa stanicom %1"
+
+#: src/stationlist.cpp:223
+#, kde-format
+msgid "Opening of the station preset file at %1 failed."
+msgstr "Otvaranje fajla sa stanicom %1 pogrešno."
+
+#: src/stationlist.cpp:243
+msgid "Old Preset File Format detected"
+msgstr "Otkriven zastareli fajl sa stanicom"
+
+#: src/stationlist.cpp:322
+#, kde-format
+msgid "error writing to tempfile %1"
+msgstr "greška kod upisivanja u privremeni fajl %1"
+
+#: src/stationlist.cpp:325
+#, kde-format
+msgid "Writing station preset file %1 failed."
+msgstr "Upisivanje fajla sa stanicom %1 pogrešno."
+
+#: src/stationlist.cpp:335
+#, kde-format
+msgid "uploading preset file %1: "
+msgstr "otpremanje fajla sa stanicom %1:␣"
+
+#: src/stationlist.cpp:337
+#, kde-format
+msgid ""
+"something strange happened, station list has only %1 entries. Writing "
+"station preset file skipped"
+msgstr ""
+"nešto nepoznato se dogodilo, lista stanica ima samo %1 stavki. Upisivanje "
+"fajla sa stanicama je preskočeno"
+
+#: src/stationlist.cpp:342
+#, kde-format
+msgid "error uploading preset file %1"
+msgstr "greška kod otpremanja fajla sa stanicom %1"
+
+#: src/stationlist.cpp:346
+#, kde-format
+msgid "Upload of station preset file to %1 failed."
+msgstr "Otpremanje fajla sa stanicom %1 pogrešno."
+
+#: src/stationlist.cpp:353 src/stationlist.cpp:354
+msgid "error creating temp file"
+msgstr "greška kod kreiranja privremenog fajla"
+
+#: src/stationlistxmlhandler.cpp:64
+#, kde-format
+msgid "misplaced element %1"
+msgstr "izgubljen element %1"
+
+#: src/stationlistxmlhandler.cpp:115
+#, kde-format
+msgid "unknown or unexpected element %1"
+msgstr "nepoznat ili neočekivan element %1"
+
+#: src/stationlistxmlhandler.cpp:144
+#, kde-format
+msgid "expected element %1, but found %2"
+msgstr "očekivani element %1, ali nadjeno %2"
+
+#: src/stationlistxmlhandler.cpp:147
+#, kde-format
+msgid "unexpected element %1"
+msgstr "neočekivani element %1"
+
+#: src/stationlistxmlhandler.cpp:155
+#, kde-format
+msgid "invalid data for element %1"
+msgstr "nevažeći podaci za element %1"
+
+#: src/stationlistxmlhandler.cpp:169
+#, kde-format
+msgid "found a station list with unknown format %1"
+msgstr "pronadjena stanica sa nepoznatim formatom %1"
+
+#: src/stationlistxmlhandler.cpp:209
+#, kde-format
+msgid "unknown property %1 for class %2"
+msgstr "nepoznata osobina %1 za klasu %2"
+
+#: src/stationlistxmlhandler.cpp:214
+#, kde-format
+msgid "characters ignored for element %1"
+msgstr "karakteri ignorisani za element %1"
+
+#: src/widgetpluginbase.cpp:293
+#, kde-format
+msgid "Show %1"
+msgstr "Pokaži %1"
+
+#: src/widgetpluginbase.cpp:297
+#, kde-format
+msgid "Hide %1"
+msgstr "Sakrij %1"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Goran Simović"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "simovic@mailup.net"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:36
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
+#: rc.cpp:5
+msgid "Automatic detection and load of new plugins"
+msgstr "Automatska detekcija i učitavanje novih priključaka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:57
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
+#: rc.cpp:8
+msgid "Do not check/load!"
+msgstr "Ne proveravaj/učitavaj"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:70
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
+#: rc.cpp:11
+msgid "Automatically check/load!"
+msgstr "Automatski proveri/učitaj"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:83
+#. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
+#: rc.cpp:14
+msgid "Please Ask!"
+msgstr "Molim pitajte!"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:103
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
+#: rc.cpp:17
+msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
+msgstr "Pokaži progres bar tokom starta za pokretanje priključka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:114
+#. i18n: ectx: attribute (title), widget (QWidget, Seite)
+#: rc.cpp:20
+msgid "Plugin Libraries"
+msgstr "Biblioteka priključaka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:123
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
+#: rc.cpp:23
+msgid ""
+"Select a plugin library from a file dialog. It will added to the library "
+"list if you press the \"Load Library\" button."
+msgstr ""
+"Selektuj biblioteku priključka preko fajl dijaloga. To će dodati listu "
+"biblioteke ako pritisnete dugme \"Učitaj biblioteku\"."
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:136
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
+#: rc.cpp:26
+msgid "Loads the library specified in the box left to this button."
+msgstr "Učitavanje biblioteke navedeno u polju levo od ovog dugmeta"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:155
+#. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
+#: rc.cpp:29
+msgid "list of loaded plugin libraries"
+msgstr "lista učitanih biblioteka za priključke"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:168
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
+#: rc.cpp:32
+msgid "Unload the plugin library selected in the list on the left side"
+msgstr "Ukloni biblioteku priključka selektovanu u listi na levoj strani"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:195
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
+#: rc.cpp:35
+msgid "Plugin Classes"
+msgstr "Klasa priključaka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:210
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
+#: rc.cpp:38
+msgid "List of available plugin classes found in the plugin libraries"
+msgstr "Lista dostupnih klasa pronadjenih u biblioteci priključaka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:217
+#. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
+#. i18n: file: src/pluginmanager-configuration-ui.ui:297
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: rc.cpp:41 rc.cpp:56
+msgid "Plugin Class"
+msgstr "Klasa priključka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:248
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
+#: rc.cpp:47
+msgid "Create a new instance of plugin class selected in the list on the left"
+msgstr "Kreiraj novi primer priključka odabran u listi levo"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:275
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
+#: rc.cpp:50
+msgid "Plugin Instances"
+msgstr "Primeri priključaka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:290
+#. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
+#: rc.cpp:53
+msgid "List of the plugin instances currently running"
+msgstr "Lista primera priključka trenutno pokrenuta"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:339
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
+#: rc.cpp:65
+msgid "Removes/stops the plugin instance selected in the list on the left"
+msgstr "Ukloni/zaustavi primer priključka odabran u listi levo"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:375
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:68
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">You can "
+"<span style=\" font-weight:600;\">rename</span> a plugin instance by double "
+"clicking on the instance name. This name will appear below the configuration "
+"page icon, in the config page header and e.g. in the name of your sound "
+"device. Editing plugin names is recommended for your convenience e.g. if you "
+"have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
+"html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\"> <html><head><meta name=\"qrichtext\" content=\"1\" /"
+"><style type=\"text/css\"> p, li { white-space: pre-wrap; } </style></"
+"head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\"> <p align=\"justify\" style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">Vi možete <span style=\" font-weight:600;"
+"\">preimenovati</span>  primer priključka duplim klikom na ime primera.Ovo "
+"ime će se pokazati ispod ikone konfiguracione strane, u zaglavlju strane i "
+"npr. u imenu vašeg zvučnog uredjaja. Izmena imena priljučka se preporučuje "
+"za  pogodnost npr. ako  imate više zvučnih karti i/ili više Alsa priključaka."
+"</p></body></html>"
+
+#. i18n: file: src/standardscandialog-ui.ui:14
+#. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
+#: rc.cpp:75
+msgid "Stations search in progress ..."
+msgstr "Pretraga stanica u napretku..."
+
+#. i18n: file: src/standardscandialog-ui.ui:51
+#. i18n: ectx: property (text), widget (QPushButton, buttonOk)
+#: rc.cpp:78
+msgid "&Ok"
+msgstr "&Ok"
+
+#. i18n: file: src/standardscandialog-ui.ui:65
+#. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
+#: rc.cpp:84
+msgid "&Discard"
+msgstr "&Odbaciti"
+
+#. i18n: file: src/standardscandialog-ui.ui:92
+#. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
+#: rc.cpp:87
+msgid "remaining time"
+msgstr "preostalo vreme"
+
+#. i18n: file: src/standardscandialog-ui.ui:108
+#. i18n: ectx: property (text), widget (QLabel, labelTime)
+#: rc.cpp:90
+msgid "<p align=\"right\">nothing here</p>"
+msgstr "<p align=\"right\">nothing here</p>"
+
+#. i18n: file: src/stationselector-ui.ui:20
+#. i18n: ectx: property (text), widget (QLabel, labelSelected)
+#: rc.cpp:93
+msgid "Selected Stations"
+msgstr "Izabrane stanice"
+
+#. i18n: file: src/stationselector-ui.ui:102
+#. i18n: ectx: property (text), widget (QLabel, labelAvailable)
+#: rc.cpp:96
+msgid "Available Stations"
+msgstr "Dostupne stanice"
+
+#: src/recording_template.h:84
+msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
+msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4 snimanje"

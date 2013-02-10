@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: timeshifter (plugins)\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#. i18n: file: timeshifter-configuration-ui.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
+#: rc.cpp:3 rc.cpp:21
+msgid "SetupDialogGeneral"
+msgstr "DijalogOpštaPodešavanja"
+
+#. i18n: file: timeshifter-configuration-ui.ui:57
+#. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
+#: rc.cpp:6 rc.cpp:24
+msgid " MB"
+msgstr "␣MB"
+
+#. i18n: file: timeshifter-configuration-ui.ui:76
+#. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
+#: rc.cpp:9 rc.cpp:27
+msgid "Maximum File Size"
+msgstr "Maksimalna veličina fajla"
+
+#. i18n: file: timeshifter-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:30
+msgid "Playback Mixer Device"
+msgstr "Uredjaj za reprodukciju"
+
+#. i18n: file: timeshifter-configuration-ui.ui:96
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:15 rc.cpp:33
+msgid "Temporary File"
+msgstr "Privremeni fajl"
+
+#. i18n: file: timeshifter-configuration-ui.ui:109
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:18 rc.cpp:36
+msgid "Playback Mixer Channel"
+msgstr "Kanal miksera za reprodukciju"
+
+#: timeshifter-configuration.cpp:146
+msgid "any ( * )"
+msgstr "bilo koji ( * )"
+
+#: timeshifter-configuration.cpp:150
+msgid "Select TimeShifter Temporary File"
+msgstr "Odaberi privremeni fajj za odloženo emitovanje"
+
+#: timeshifter.cpp:31
+msgid "TimeShift Support"
+msgstr "Podrška za odloženo emitovanje"
+
+#: timeshifter.cpp:36
+msgid "TimeShifter Plugin"
+msgstr "Priključak za odloženo emitovanje"
+
+#: timeshifter.cpp:130
+msgid "Timeshifter"
+msgstr "Odloženo emitovanje"
+
+#: timeshifter.cpp:131
+msgid "Timeshifter Options"
+msgstr "Opcije odloženog emitovanja"
+
+#: timeshifter.cpp:212
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr "Odloženo emitovanje od %1 (%2)"
+
+#: timeshifter.cpp:558
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr ""
+"TimeShifter::notifySoundStreamData: klijenti preskočeni %1 bajtova. Podaci "
+"izgubljeni"
+
+#: timeshifter.cpp:638
+msgid "internal stream, not stored"
+msgstr "interni strim, ne pamti"

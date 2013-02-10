@@ -1,0 +1,252 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: timecontrol (plugins)\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#. i18n: file: timecontrol-configuration-ui.ui:19
+#. i18n: ectx: property (text), widget (QLabel, labelSleep)
+#: rc.cpp:3 rc.cpp:66
+msgid "sleep countdown"
+msgstr "tajmer isključenja"
+
+#. i18n: file: timecontrol-configuration-ui.ui:29
+#. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
+#: rc.cpp:6 rc.cpp:69
+msgid " min"
+msgstr "␣min"
+
+#. i18n: file: timecontrol-configuration-ui.ui:86
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
+#: rc.cpp:9 rc.cpp:72 timecontrol.cpp:284
+msgid "Alarms"
+msgstr "Alarmi"
+
+#. i18n: file: timecontrol-configuration-ui.ui:130
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
+#: rc.cpp:12 rc.cpp:75
+msgid "Date"
+msgstr "Datum"
+
+#. i18n: file: timecontrol-configuration-ui.ui:146
+#. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
+#: rc.cpp:15 rc.cpp:78
+msgid "dd.MM.yyyy"
+msgstr "dd.MM.yyyy"
+
+#. i18n: file: timecontrol-configuration-ui.ui:157
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
+#: rc.cpp:18 rc.cpp:81
+msgid "Time"
+msgstr "Vreme"
+
+#. i18n: file: timecontrol-configuration-ui.ui:173
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
+#: rc.cpp:21 rc.cpp:84
+msgid "HH:mm:ss"
+msgstr "HH:mm:ss"
+
+#. i18n: file: timecontrol-configuration-ui.ui:184
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
+#: rc.cpp:24 rc.cpp:87
+msgid "Volume"
+msgstr "Jačina zvuka"
+
+#. i18n: file: timecontrol-configuration-ui.ui:200
+#. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
+#: rc.cpp:28 rc.cpp:91
+#, no-c-format
+msgid " %"
+msgstr "␣%"
+
+#. i18n: file: timecontrol-configuration-ui.ui:241
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
+#: rc.cpp:31 rc.cpp:94
+msgid "daily/weekly"
+msgstr "dnevno/nedeljno"
+
+#. i18n: file: timecontrol-configuration-ui.ui:248
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
+#: rc.cpp:34 rc.cpp:97
+msgid "enabled"
+msgstr "omogućeno"
+
+#. i18n: file: timecontrol-configuration-ui.ui:255
+#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
+#: rc.cpp:37 rc.cpp:100
+msgid "Active weekdays:"
+msgstr "Aktivni radnim danima:"
+
+#. i18n: file: timecontrol-configuration-ui.ui:264
+#. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
+#: rc.cpp:40 rc.cpp:103
+msgid "Radio Station"
+msgstr "Radio stanica"
+
+#. i18n: file: timecontrol-configuration-ui.ui:285
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplate)
+#: rc.cpp:44 rc.cpp:107
+#, no-c-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Recording Filename "
+"Template:</p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
+"style:italic;\">: station name, </span><span style=\" font-weight:600; font-"
+"style:italic;\">%i</span><span style=\" font-style:italic;\">: station "
+"index, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
+"span><span style=\" font-style:italic;\">: 4-digit year, </span><span style="
+"\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
+"italic;\">: 2-digit month, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%d</span><span style=\" font-style:italic;\">: 2-digit day, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%B</span><span "
+"style=\" font-style:italic;\">: month name, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%A</span><span style=\" font-style:italic;"
+"\"> day name, </span><span style=\" font-weight:600; font-style:italic;\">"
+"%H</span><span style=\" font-style:italic;\">: 2-digit hour, </span><span "
+"style=\" font-weight:600; font-style:italic;\">%M</span><span style=\" font-"
+"style:italic;\">: 2-digit minute, </span><span style=\" font-weight:600; "
+"font-style:italic;\">%S</span><span style=\" font-style:italic;\"> 2-digit "
+"second,</span><span style=\" font-weight:600; font-style:italic;\"> %%</"
+"span><span style=\" font-style:italic;\">: literal %)</span></p></body></"
+"html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\"> <html><head><meta name=\"qrichtext\" content=\"1\" /"
+"><style type=\"text/css\"> p, li { white-space: pre-wrap; } </style></"
+"head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\"> <p style=\" margin-top:0px; margin-"
+"bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\">Šablon za snimanje:</p> <p align=\"justify\" style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600; font-style:"
+"italic;\">(%s</span><span style=\" font-style:italic;\">: ime stanice, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%i</span><span "
+"style=\" font-style:italic;\">: indeks stanice, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%Y</span><span style=\" font-style:italic;"
+"\">: 4-cifre godina, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%m</span><span style=\" font-style:italic;\">: 2-cifre mesec, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%d</span><span "
+"style=\" font-style:italic;\">: 2-cifre dan, </span><span style=\" font-"
+"weight:600; font-style:italic;\">%B</span><span style=\" font-style:italic;"
+"\">: ime meseca, </span><span style=\" font-weight:600; font-style:italic;\">"
+"%A</span><span style=\" font-style:italic;\"> ime dana, </span><span style="
+"\" font-weight:600; font-style:italic;\">%H</span><span style=\" font-style:"
+"italic;\">: 2-cifre sati, </span><span style=\" font-weight:600; font-style:"
+"italic;\">%M</span><span style=\" font-style:italic;\">: 2-cifre minuti, </"
+"span><span style=\" font-weight:600; font-style:italic;\">%S</span><span "
+"style=\" font-style:italic;\"> 2-cifre sekunde,</span><span style=\" font-"
+"weight:600; font-style:italic;\"> %%</span><span style=\" font-style:italic;"
+"\">: literal %)</span></p></body></html>"
+
+#. i18n: file: timecontrol-configuration-ui.ui:316
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateFilename)
+#: rc.cpp:52 rc.cpp:115
+msgid "Filename"
+msgstr "Ime fajla"
+
+#. i18n: file: timecontrol-configuration-ui.ui:323
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Title)
+#: rc.cpp:55 rc.cpp:118
+msgid "ID3 Title"
+msgstr "ID3 Naslov"
+
+#. i18n: file: timecontrol-configuration-ui.ui:330
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Artist)
+#: rc.cpp:58 rc.cpp:121
+msgid "ID3 Artist"
+msgstr "ID3 Izvodjač"
+
+#. i18n: file: timecontrol-configuration-ui.ui:337
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Genre)
+#: rc.cpp:61 rc.cpp:124
+msgid "ID3 Genre"
+msgstr "ID3 Žanr"
+
+#: rc.cpp:62
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Goran Simović"
+
+#: rc.cpp:63
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "simovic@mailup.net"
+
+#: timecontrol-configuration.cpp:63
+msgid "Start Playing"
+msgstr "Počni reprodukciju"
+
+#: timecontrol-configuration.cpp:64
+msgid "Stop Playing"
+msgstr "Zaustavi reprodukciju"
+
+#: timecontrol-configuration.cpp:65
+msgid "Start Recording"
+msgstr "Počni snimanje"
+
+#: timecontrol-configuration.cpp:66
+msgid "Stop Recording"
+msgstr "Zaustavi snimanje"
+
+#: timecontrol-configuration.cpp:69
+msgid "unchanged"
+msgstr "nepromenjeno"
+
+#: timecontrol-configuration.cpp:71
+msgid "Monday"
+msgstr "Ponedeljak"
+
+#: timecontrol-configuration.cpp:72
+msgid "Tuesday"
+msgstr "Utorak"
+
+#: timecontrol-configuration.cpp:73
+msgid "Wednesday"
+msgstr "Sreda"
+
+#: timecontrol-configuration.cpp:74
+msgid "Thursday"
+msgstr "Četvrtak"
+
+#: timecontrol-configuration.cpp:75
+msgid "Friday"
+msgstr "Petak"
+
+#: timecontrol-configuration.cpp:76
+msgid "Saturday"
+msgstr "Subota"
+
+#: timecontrol-configuration.cpp:77
+msgid "Sunday"
+msgstr "Nedelja"
+
+#: timecontrol-configuration.cpp:220
+msgid "<don't change>"
+msgstr "<bez promena>"
+
+#: timecontrol.cpp:44
+msgid "Time Control and Alarm Functions"
+msgstr "Vremenska kontrola i funkcije alarma"
+
+#: timecontrol.cpp:50
+msgid "TimeControl Plugin"
+msgstr "Priključak vremenske kontrole"
+
+#: timecontrol.cpp:285
+msgid "Setup Alarms"
+msgstr "Podešavanje alarma"
