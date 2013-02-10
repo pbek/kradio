@@ -1,92 +1,97 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #
+# Roman Paholík <wizzardsk@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-07-28 14:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-08-09 14:22+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. i18n: file: timeshifter-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
 #: rc.cpp:3 rc.cpp:21
 msgid "SetupDialogGeneral"
-msgstr ""
+msgstr "SetupDialogGeneral"
 
 #. i18n: file: timeshifter-configuration-ui.ui:57
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
 #: rc.cpp:6 rc.cpp:24
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: file: timeshifter-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:9 rc.cpp:27
 msgid "Maximum File Size"
-msgstr ""
+msgstr "Maximálna veľkosť súboru"
 
 #. i18n: file: timeshifter-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:12 rc.cpp:30
 msgid "Playback Mixer Device"
-msgstr ""
+msgstr "Prehrávacie zariadenie zmiešavača"
 
 #. i18n: file: timeshifter-configuration-ui.ui:96
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
 #: rc.cpp:15 rc.cpp:33
 msgid "Temporary File"
-msgstr ""
+msgstr "Dočasný súbor"
 
 #. i18n: file: timeshifter-configuration-ui.ui:109
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:18 rc.cpp:36
 msgid "Playback Mixer Channel"
-msgstr ""
+msgstr "Prehrávací kanál zmiešavača"
 
 #: timeshifter-configuration.cpp:146
 msgid "any ( * )"
-msgstr ""
+msgstr "hocičo ( * )"
 
 #: timeshifter-configuration.cpp:150
 msgid "Select TimeShifter Temporary File"
-msgstr ""
+msgstr "Vybrat dočasný súbor TimeShiftera"
 
 #: timeshifter.cpp:31
 msgid "TimeShift Support"
-msgstr ""
+msgstr "Podpora časového posunu"
 
 #: timeshifter.cpp:36
 msgid "TimeShifter Plugin"
-msgstr ""
+msgstr "Plugin Časový posun"
 
 #: timeshifter.cpp:130
 msgid "Timeshifter"
-msgstr ""
+msgstr "Časový posun"
 
 #: timeshifter.cpp:131
 msgid "Timeshifter Options"
-msgstr ""
+msgstr "Voľby časového posunu"
 
 #: timeshifter.cpp:212
 #, kde-format
 msgid "Time shift of %1 (%2)"
-msgstr ""
+msgstr "Časový posun %1 (%2)"
 
 #: timeshifter.cpp:558
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
+"TimeShifter::notifySoundStreamData: klienti preskočili %1 bajtov. Dáta "
+"stratené"
 
 #: timeshifter.cpp:638
 msgid "internal stream, not stored"
-msgstr ""
+msgstr "interný prúd, neuložený"
+
+

@@ -1,192 +1,195 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #
+# Roman Paholík <wizzardsk@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-07-28 14:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-08-14 16:00+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: docking-configuration.cpp:126
 msgid "Mouse Click on Tray Icon"
-msgstr ""
+msgstr "Kliknutie na Tray ikonu"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
 msgid "Left"
-msgstr ""
+msgstr "Vľavo"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
 msgid "Right"
-msgstr ""
+msgstr "Vpravo"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
 msgid "Middle"
-msgstr ""
+msgstr "Stred"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
 msgid "XButton1"
-msgstr ""
+msgstr "XButton1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
 msgid "XButton2"
-msgstr ""
+msgstr "XButton2"
 
 #: docking-configuration.cpp:133
 msgid "Mouse Double-Click on Tray Icon"
-msgstr ""
+msgstr "Dvojklik na Tray ikonu"
 
 #: docking-configuration.cpp:140
 msgid "Mouse Wheel Action on Tray Icon"
-msgstr ""
+msgstr "Akcia kolieska na Tray ikonu"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
-msgstr ""
+msgstr "Žiadna akcia"
 
 #: docking-configuration.cpp:147
 msgid "Show/Hide Windows"
-msgstr ""
+msgstr "Zobraziť/Skryť okná"
 
 #: docking-configuration.cpp:148
 msgid "Power On/Off"
-msgstr ""
+msgstr "Zapnúť/Vypnúť"
 
 #: docking-configuration.cpp:149
 msgid "Pause/Play"
-msgstr ""
+msgstr "Pozastaviť/Hrať"
 
 #: docking-configuration.cpp:150 docking.cpp:322
 msgid "Recording"
-msgstr ""
+msgstr "Nahrávanie"
 
 #: docking-configuration.cpp:151
 msgid "System Tray Menu"
-msgstr ""
+msgstr "Ponuka System Tray"
 
 #: docking-configuration.cpp:152
 msgid "GUI-Plugin Menu"
-msgstr ""
+msgstr "GUI-Ponuka pluginu"
 
 #: docking-configuration.cpp:153
 msgid "Configuration"
-msgstr ""
+msgstr "Nastavenie"
 
 #: docking-configuration.cpp:157
 msgid "Change Station"
-msgstr ""
+msgstr "Zmeniť stanicu"
 
 #: docking-configuration.cpp:158
 msgid "Change Volume"
-msgstr ""
+msgstr "Zmeniť hlasitosť"
 
 #: docking-configuration.cpp:159
 msgid "Change Frequency"
-msgstr ""
+msgstr "Zmeniť frekvenciu"
 
 #: docking.cpp:46
 msgid "System Tray Icon/Menu for KRadio"
-msgstr ""
+msgstr "Ikona System Tray/Menu pre KRadio"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
-msgstr ""
+msgstr "Plugin System Tray"
 
 #: docking.cpp:257
 msgid "System Tray Icon"
-msgstr ""
+msgstr "Ikona v systémovej časti panelu"
 
 #: docking.cpp:258
 msgid "System Tray Icon Configuration"
-msgstr ""
+msgstr "Nastavenie ikony System Tray"
 
 #: docking.cpp:312
 msgid "Search Next Station"
-msgstr ""
+msgstr "Hľadať nasledovnú stanicu"
 
 #: docking.cpp:313
 msgid "Search Previous Station"
-msgstr ""
+msgstr "Hľadať predošlú stanicu"
 
 #: docking.cpp:327
 msgid "Pause Radio"
-msgstr ""
+msgstr "Pozastaviť rádio"
 
 #: docking.cpp:338
 msgid "Show/Hide Plugins"
-msgstr ""
+msgstr "Zobraziť/Skryť pluginy"
 
 #: docking.cpp:346
 msgid "&Quit"
-msgstr ""
+msgstr "&Koniec"
 
 #: docking.cpp:461
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
-msgstr ""
+msgstr "Zastaviť odpočet uspania (beží do %1)"
 
 #: docking.cpp:464 docking.cpp:473 docking.cpp:481
 msgid "Start Sleep Countdown"
-msgstr ""
+msgstr "Spustiť odpočet uspania"
 
 #: docking.cpp:489
 msgid "Power Off"
-msgstr ""
+msgstr "Vypnúť"
 
 #: docking.cpp:489
 msgid "Power On"
-msgstr ""
+msgstr "Zapnúť"
 
 #: docking.cpp:504 docking.cpp:525
 msgid "invalid station"
-msgstr ""
+msgstr "neplatná stanica"
 
 #: docking.cpp:507
 #, kde-format
 msgid "KRadio: %1"
-msgstr ""
+msgstr "KRadio: %1"
 
 #: docking.cpp:517
 #, kde-format
 msgid "next alarm: %1"
-msgstr ""
+msgstr "ďalší alarm: %1"
 
 #: docking.cpp:519
 msgid "<no alarm pending>"
-msgstr ""
+msgstr "<alarm neaktívny>"
 
 #: docking.cpp:778 docking.cpp:881 docking.cpp:939
 #, kde-format
 msgid "Stop Recording of %1"
-msgstr ""
+msgstr "Zastaviť nahrávanie %1"
 
 #: docking.cpp:867
 msgid "Start Recording"
-msgstr ""
+msgstr "Spustiť nahrávanie"
 
 #: docking.cpp:921
 msgid "Resume playback"
-msgstr ""
+msgstr "Pokračovať v prehrávaní"
 
 #: docking.cpp:925
 msgid "Pause playback"
-msgstr ""
+msgstr "Pozastaviť prehrávanie"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Roman Paholík"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "wizzardsk@gmail.com"
+
+

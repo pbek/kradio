@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #
+# Roman Paholík <wizzardsk@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-07-28 14:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-08-14 16:06+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: alsa-sound.cpp:43
 msgid "Advanced Linux Sound Architecture (ALSA) Support"
@@ -56,7 +57,7 @@ msgstr ""
 #: alsa-sound.cpp:739
 #, kde-format
 msgid "internal stream, not stored (%1)"
-msgstr ""
+msgstr "interný prúd, neuložený (%1)"
 
 #: alsa-sound.cpp:791
 msgid ""
@@ -207,13 +208,13 @@ msgstr ""
 #, kde-format
 msgctxt "context-mixername-number"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: alsa-sound.cpp:1257
 #, kde-format
 msgctxt "context-mixerelement-name-number"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: alsa-sound.cpp:1420 alsa-sound.cpp:1448
 #, kde-format
@@ -271,7 +272,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxOverride)
 #: rc.cpp:6 rc.cpp:204
 msgid "&Override"
-msgstr ""
+msgstr "Prepísať"
 
 #. i18n: file: alsa-mixer-element-ui.ui:210
 #. i18n: ectx: property (text), widget (QLabel, m_labelMixerElementName)
@@ -283,7 +284,7 @@ msgstr ""
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
 #: rc.cpp:12 rc.cpp:210
 msgid "Playback"
-msgstr ""
+msgstr "Prehrávanie"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:30
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
@@ -307,7 +308,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_4)
 #: rc.cpp:21 rc.cpp:78 rc.cpp:219 rc.cpp:276
 msgid "Buffer Size"
-msgstr ""
+msgstr "Veľkosť buffera"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:114
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackBufferSize)
@@ -328,7 +329,7 @@ msgstr ""
 #: rc.cpp:24 rc.cpp:51 rc.cpp:81 rc.cpp:93 rc.cpp:222 rc.cpp:249 rc.cpp:279
 #: rc.cpp:291
 msgid " kB"
-msgstr ""
+msgstr " KB"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -377,9 +378,10 @@ msgstr ""
 #. i18n: file: alsa-sound-configuration-ui.ui:499
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_10)
 #: rc.cpp:39 rc.cpp:45 rc.cpp:84 rc.cpp:96 rc.cpp:237 rc.cpp:243 rc.cpp:282
+#, fuzzy
 #: rc.cpp:294
 msgid "recommended:"
-msgstr ""
+msgstr "Odporúčané ( %1 )"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:196
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
@@ -391,7 +393,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_9)
 #: rc.cpp:42 rc.cpp:87 rc.cpp:240 rc.cpp:285
 msgid "96 kB"
-msgstr ""
+msgstr "96 kB"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:219
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_5)
@@ -403,7 +405,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
 #: rc.cpp:48 rc.cpp:99 rc.cpp:246 rc.cpp:297
 msgid "16 kB"
-msgstr ""
+msgstr "16 kB"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:263
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
@@ -415,7 +417,7 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editCaptureWorkaroundSleep)
 #: rc.cpp:54 rc.cpp:102 rc.cpp:252 rc.cpp:300
 msgid "disabled"
-msgstr ""
+msgstr "zakázané"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:266
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
@@ -427,7 +429,7 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editCaptureWorkaroundSleep)
 #: rc.cpp:57 rc.cpp:105 rc.cpp:255 rc.cpp:303
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:288
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_6)
@@ -457,7 +459,7 @@ msgstr ""
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)
 #: rc.cpp:66 rc.cpp:264
 msgid "Capture"
-msgstr ""
+msgstr "Zachytiť"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:340
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
@@ -518,103 +520,103 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:128 rc.cpp:326
 msgid "Channels"
-msgstr ""
+msgstr "Kanály"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:600
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:131 rc.cpp:329
 msgid "Sample Rate"
-msgstr ""
+msgstr "Vzorkovacia frekvencia"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:613
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:134 rc.cpp:332
 msgid "Sample Bits"
-msgstr ""
+msgstr "Samplovacie bity"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:626
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:137 rc.cpp:335
 msgid "Endianess"
-msgstr ""
+msgstr "Endianess"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:646
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
 #: rc.cpp:140 rc.cpp:338
 msgid "Little Endian"
-msgstr ""
+msgstr "Little Endian"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:651
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
 #: rc.cpp:143 rc.cpp:341
 msgid "Big Endian"
-msgstr ""
+msgstr "Big Endian"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:669
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
 #: rc.cpp:146 rc.cpp:344
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:674
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
 #: rc.cpp:149 rc.cpp:347
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:692
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:152 rc.cpp:350
 msgid "48000"
-msgstr ""
+msgstr "48000"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:697
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:155 rc.cpp:353
 msgid "44100"
-msgstr ""
+msgstr "44100"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:702
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:158 rc.cpp:356
 msgid "32000"
-msgstr ""
+msgstr "32000"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:707
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:161 rc.cpp:359
 msgid "22050"
-msgstr ""
+msgstr "22050"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:712
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:164 rc.cpp:362
 msgid "11025"
-msgstr ""
+msgstr "11025"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:730
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:167 rc.cpp:365
 msgid "Signed"
-msgstr ""
+msgstr "Podpísané"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:735
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:170 rc.cpp:368
 msgid "Unsigned"
-msgstr ""
+msgstr "Bez znamienka"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:753
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:173 rc.cpp:371
 msgid "Stereo"
-msgstr ""
+msgstr "Stereo"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:758
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
 #: rc.cpp:176 rc.cpp:374
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:787
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCaptureFormatOverride)
@@ -631,9 +633,11 @@ msgstr ""
 #: rc.cpp:197
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Roman Paholík"
 
 #: rc.cpp:198
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "wizzardsk@gmail.com"
+
+

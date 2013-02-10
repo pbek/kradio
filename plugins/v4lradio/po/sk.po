@@ -1,27 +1,28 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #
+# Roman Paholík <wizzardsk@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-07-28 14:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-08-14 16:06+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:171
 msgid "SetupDialogGeneral"
-msgstr ""
+msgstr "SetupDialogGeneral"
 
 #. i18n: file: v4lradio-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
@@ -73,7 +74,7 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
 #: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:192 rc.cpp:198 rc.cpp:207
 msgid " kHz"
-msgstr ""
+msgstr " kHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:144
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
@@ -91,19 +92,19 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
 #: rc.cpp:33 rc.cpp:42 rc.cpp:201 rc.cpp:210
 msgid "to"
-msgstr ""
+msgstr "do"
 
 #. i18n: file: v4lradio-configuration-ui.ui:203
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
 #: rc.cpp:36 rc.cpp:204
 msgid "65 MHz"
-msgstr ""
+msgstr "65 MHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:260
 #. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
 #: rc.cpp:45 rc.cpp:213
 msgid "108 MHz"
-msgstr ""
+msgstr "108 MHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:272
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
@@ -151,32 +152,34 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:362
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
 #: rc.cpp:68 rc.cpp:236
+#, fuzzy
 msgid "@ startup"
-msgstr ""
+msgstr "Spustenie"
 
 #. i18n: file: v4lradio-configuration-ui.ui:376
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtPowerOn)
 #: rc.cpp:78 rc.cpp:246
+#, fuzzy
 msgid "@ power on"
-msgstr ""
+msgstr "Zapnúť"
 
 #. i18n: file: v4lradio-configuration-ui.ui:387
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
 #: rc.cpp:81 rc.cpp:249
 msgid "V4L-1 API"
-msgstr ""
+msgstr "V4L-1 API"
 
 #. i18n: file: v4lradio-configuration-ui.ui:394
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
 #: rc.cpp:84 rc.cpp:252
 msgid "V4L-2 API"
-msgstr ""
+msgstr "V4L-2 API"
 
 #. i18n: file: v4lradio-configuration-ui.ui:404
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
 #: rc.cpp:87 rc.cpp:255
 msgid "RDS"
-msgstr ""
+msgstr "RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:413
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
@@ -219,13 +222,13 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:103 rc.cpp:271
 msgid "test"
-msgstr ""
+msgstr "test"
 
 #. i18n: file: v4lradio-configuration-ui.ui:491
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:106 rc.cpp:274
 msgid "Playback Mixer Channel"
-msgstr ""
+msgstr "Prehrávací kanál zmiešavača"
 
 #. i18n: file: v4lradio-configuration-ui.ui:511
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
@@ -255,7 +258,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:121 rc.cpp:289
 msgid "Playback Mixer Device"
-msgstr ""
+msgstr "Prehrávacie zariadenie zmiešavača"
 
 #. i18n: file: v4lradio-configuration-ui.ui:608
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
@@ -345,36 +348,40 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:730
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
 #: rc.cpp:157 rc.cpp:325
+#, fuzzy
 msgid "volume"
-msgstr ""
+msgstr "hlasitosť"
 
 #. i18n: file: v4lradio-configuration-ui.ui:806
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
 #: rc.cpp:160 rc.cpp:328
+#, fuzzy
 msgid "treble"
-msgstr ""
+msgstr "Výšky"
 
 #. i18n: file: v4lradio-configuration-ui.ui:882
 #. i18n: ectx: property (text), widget (QLabel, labelBass)
 #: rc.cpp:163 rc.cpp:331
+#, fuzzy
 msgid "bass"
-msgstr ""
+msgstr "Basy"
 
 #. i18n: file: v4lradio-configuration-ui.ui:955
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
 #: rc.cpp:166 rc.cpp:334
+#, fuzzy
 msgid "balance"
-msgstr ""
+msgstr "Vyváženie"
 
 #: rc.cpp:167
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Roman Paholík"
 
 #: rc.cpp:168
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "wizzardsk@gmail.com"
 
 #: v4lradio-configuration.cpp:411
 msgid "Could not get device description."
@@ -399,11 +406,11 @@ msgstr ""
 #: v4lradio-configuration.cpp:455 v4lradio-configuration.cpp:456
 #, kde-format
 msgid "%1 kHz"
-msgstr ""
+msgstr "%1 kHz"
 
 #: v4lradio-configuration.cpp:555
 msgid "any ( * )"
-msgstr ""
+msgstr "hocičo ( * )"
 
 #: v4lradio-configuration.cpp:559
 msgid "Select Radio Device"
@@ -428,9 +435,9 @@ msgid "don't known how to handle V4L-version %1"
 msgstr ""
 
 #: v4lradio.cpp:849 v4lradio.cpp:1792 v4lradio.cpp:1988
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1 Support: %2"
-msgstr ""
+msgstr "Podpora"
 
 #: v4lradio.cpp:855
 #, kde-format
@@ -461,9 +468,9 @@ msgid "Could not find an accessible v4l(2) radio device."
 msgstr ""
 
 #: v4lradio.cpp:1383
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1 (insufficient permissions)"
-msgstr ""
+msgstr "Nedoststočné práva."
 
 #: v4lradio.cpp:1409
 msgid "V4L Radio"
@@ -484,14 +491,14 @@ msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
 msgstr ""
 
 #: v4lradio.cpp:1529
-#, kde-format
+#, fuzzy, kde-format
 msgid "cannot open %1"
-msgstr ""
+msgstr "Nie je možné otvoriť %1: %2"
 
 #: v4lradio.cpp:1539 v4lradio.cpp:1585
-#, kde-format
+#, fuzzy, kde-format
 msgid "detected %1"
-msgstr ""
+msgstr "Zistené:"
 
 #: v4lradio.cpp:1544 v4lradio.cpp:1591
 #, kde-format
@@ -547,12 +554,14 @@ msgid "cannot get tuner info (error %1)"
 msgstr ""
 
 #: v4lradio.cpp:1995
+#, fuzzy
 msgid "write"
-msgstr ""
+msgstr "Zápis"
 
 #: v4lradio.cpp:1995
+#, fuzzy
 msgid "read"
-msgstr ""
+msgstr "Prečítané"
 
 #: v4lradio.cpp:1994
 #, kde-format
@@ -572,3 +581,5 @@ msgstr ""
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr ""
+
+
