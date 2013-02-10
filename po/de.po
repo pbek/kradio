@@ -3,14 +3,14 @@
 # This file is put in the public domain.
 #
 # Ernst Martin Witte <emw-kradio@nocabal.de>, 2006.
-# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2010, 2012.
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2010, 2012, 2013.
 # Frederik Schwarzer <schwarzerf@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-09 02:25+0200\n"
-"PO-Revision-Date: 2012-04-09 02:28+0200\n"
+"POT-Creation-Date: 2013-02-10 14:22+0100\n"
+"PO-Revision-Date: 2013-02-10 14:30+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 "Language: trunk\n"
@@ -122,11 +122,15 @@ msgstr "M3U"
 msgid "PLS"
 msgstr "PLS"
 
-#: radiostations/radiostation-config.cpp:157
+#: radiostations/radiostation-config.cpp:155
+msgid "WMV"
+msgstr "WMV"
+
+#: radiostations/radiostation-config.cpp:158
 msgid "Meta-Data Stream Encoding:"
 msgstr "Zeichensatz für Meta-Daten:"
 
-#: radiostations/radiostation-config.cpp:239
+#: radiostations/radiostation-config.cpp:240
 msgid "auto"
 msgstr "automatisch"
 
@@ -833,6 +837,10 @@ msgstr "Ausgewählte Sender"
 #: rc.cpp:96
 msgid "Available Stations"
 msgstr "Verfügbare Sender"
+
+#: src/recording_template.h:84
+msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
+msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4-Aufnahme"
 
 #~ msgid "PluginManagerConfigurationUI"
 #~ msgstr "PluginManagerConfigurationUI"

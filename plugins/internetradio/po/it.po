@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-02 23:41+0200\n"
+"POT-Creation-Date: 2013-02-10 14:22+0100\n"
 "PO-Revision-Date: 2011-01-10 21:30+0200\n"
 "Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
 "Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
@@ -49,53 +49,53 @@ msgstr "flusso interno, non salvato (%1)"
 msgid "Failed allocating AVFrame."
 msgstr ""
 
-#: decoder_thread.cpp:583 decoder_thread.cpp:586
+#: decoder_thread.cpp:594 decoder_thread.cpp:597
 #, kde-format
 msgid "Could not open Stream %1"
 msgstr "Impossibile aprire il flusso %1"
 
-#: decoder_thread.cpp:662 decoder_thread.cpp:665
+#: decoder_thread.cpp:673 decoder_thread.cpp:676
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr ""
 "Si è verificato un errore durante l'autorilevamento del tipo di flusso di %1"
 
-#: decoder_thread.cpp:669
+#: decoder_thread.cpp:680
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "È stato individuato un formato: %1 (score %2)"
 
-#: decoder_thread.cpp:695 decoder_thread.cpp:698
+#: decoder_thread.cpp:706 decoder_thread.cpp:709
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Impossibile trovare l'informazione del flusso in %1"
 
-#: decoder_thread.cpp:763 decoder_thread.cpp:766
+#: decoder_thread.cpp:774 decoder_thread.cpp:777
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Impossibile trovare un flusso audio in %1"
 
-#: decoder_thread.cpp:786 decoder_thread.cpp:789
+#: decoder_thread.cpp:797 decoder_thread.cpp:800
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Impossibile trovare un codec per %1"
 
-#: decoder_thread.cpp:804 decoder_thread.cpp:807
+#: decoder_thread.cpp:815 decoder_thread.cpp:818
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Impossibile aprire il codec per %1"
 
-#: decoder_thread.cpp:873
+#: decoder_thread.cpp:885
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "Impossibile aprire il flusso MMS %1"
 
-#: decoder_thread.cpp:876
+#: decoder_thread.cpp:888
 #, fuzzy, kde-format
 msgid "cannot open MMS  %1"
 msgstr "Impossibile aprire il flusso MMS %1"
 
-#: decoder_thread.cpp:948
+#: decoder_thread.cpp:981
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr ""
@@ -163,44 +163,44 @@ msgstr "Plugin della radio via internet"
 msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
 msgstr "Impossibile caricare i dati del flusso di %1: %2"
 
-#: playlist_handler.cpp:91
+#: playlist_handler.cpp:94
 #, kde-format
 msgid "Failed to start any stream of %1"
 msgstr "Impossibile avviare il flusso di %1"
 
-#: playlist_handler.cpp:130 playlist_handler.cpp:154
+#: playlist_handler.cpp:138 playlist_handler.cpp:169
 #, kde-format
 msgid "Failed to load playlist %1: %2"
 msgstr "Impossibile caricare la playlist %1: %2"
 
-#: playlist_handler.cpp:133
+#: playlist_handler.cpp:141
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
 "Impossibile avviare il download della playlist di %1: KIO::get ha ritornato "
 "un puntatore NULL"
 
-#: playlist_handler.cpp:161
+#: playlist_handler.cpp:176
 #, fuzzy, kde-format
 msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
 msgstr "Impossibile caricare i dati del flusso di %1: %2"
 
-#: playlist_handler.cpp:221
+#: playlist_handler.cpp:276
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 non contiene nessun flusso radio utilizzabile"
 
-#: playlist_handler.cpp:267
+#: playlist_handler.cpp:379 playlist_handler.cpp:438
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
 "impossibile creare un file temporaneo per salvare i dati della playlist"
 
-#: playlist_handler.cpp:271
+#: playlist_handler.cpp:383 playlist_handler.cpp:442
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 "impossibile scrivere un file temporaneo per salvare i dati della playlist"
 
-#: playlist_handler.cpp:344
+#: playlist_handler.cpp:525
 msgid "error while reading asx file: "
 msgstr "si è verificato un errore durante la lettura del file asx: "
 

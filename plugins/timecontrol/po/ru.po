@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-08 13:12+0200\n"
+"POT-Creation-Date: 2013-02-10 14:22+0100\n"
 "PO-Revision-Date: 2009-04-20 20:50+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,86 +21,86 @@ msgstr ""
 
 #. i18n: file: timecontrol-configuration-ui.ui:19
 #. i18n: ectx: property (text), widget (QLabel, labelSleep)
-#: rc.cpp:3 rc.cpp:54
+#: rc.cpp:3 rc.cpp:66
 msgid "sleep countdown"
 msgstr "Задержка таймера отключения"
 
 #. i18n: file: timecontrol-configuration-ui.ui:29
 #. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
-#: rc.cpp:6 rc.cpp:57
+#: rc.cpp:6 rc.cpp:69
 msgid " min"
 msgstr " мин"
 
 #. i18n: file: timecontrol-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
-#: rc.cpp:9 rc.cpp:60 timecontrol.cpp:282
+#: rc.cpp:9 rc.cpp:72 timecontrol.cpp:284
 msgid "Alarms"
 msgstr "Расписание"
 
 #. i18n: file: timecontrol-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
-#: rc.cpp:12 rc.cpp:63
+#: rc.cpp:12 rc.cpp:75
 msgid "Date"
 msgstr "Дата"
 
 #. i18n: file: timecontrol-configuration-ui.ui:146
 #. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
-#: rc.cpp:15 rc.cpp:66
+#: rc.cpp:15 rc.cpp:78
 msgid "dd.MM.yyyy"
 msgstr "dd.MM.yyyy"
 
 #. i18n: file: timecontrol-configuration-ui.ui:157
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
-#: rc.cpp:18 rc.cpp:69
+#: rc.cpp:18 rc.cpp:81
 msgid "Time"
 msgstr "Время"
 
 #. i18n: file: timecontrol-configuration-ui.ui:173
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
-#: rc.cpp:21 rc.cpp:72
+#: rc.cpp:21 rc.cpp:84
 msgid "HH:mm:ss"
 msgstr "HH:mm:ss"
 
 #. i18n: file: timecontrol-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
-#: rc.cpp:24 rc.cpp:75
+#: rc.cpp:24 rc.cpp:87
 msgid "Volume"
 msgstr "Громкость"
 
 #. i18n: file: timecontrol-configuration-ui.ui:200
 #. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
-#: rc.cpp:28 rc.cpp:79
+#: rc.cpp:28 rc.cpp:91
 #, no-c-format
 msgid " %"
 msgstr " %"
 
 #. i18n: file: timecontrol-configuration-ui.ui:241
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
-#: rc.cpp:31 rc.cpp:82
+#: rc.cpp:31 rc.cpp:94
 msgid "daily/weekly"
 msgstr "ежедневно/еженедельно"
 
 #. i18n: file: timecontrol-configuration-ui.ui:248
-#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
-#: rc.cpp:34 rc.cpp:85
-msgid "Active weekdays:"
-msgstr "Дни недели:"
-
-#. i18n: file: timecontrol-configuration-ui.ui:255
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
-#: rc.cpp:37 rc.cpp:88
+#: rc.cpp:34 rc.cpp:97
 msgid "enabled"
 msgstr "Включено"
 
+#. i18n: file: timecontrol-configuration-ui.ui:255
+#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
+#: rc.cpp:37 rc.cpp:100
+msgid "Active weekdays:"
+msgstr "Дни недели:"
+
 #. i18n: file: timecontrol-configuration-ui.ui:264
 #. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
-#: rc.cpp:40 rc.cpp:91
+#: rc.cpp:40 rc.cpp:103
 msgid "Radio Station"
 msgstr "Радиостанция"
 
 #. i18n: file: timecontrol-configuration-ui.ui:285
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplate)
-#: rc.cpp:44 rc.cpp:95
+#: rc.cpp:44 rc.cpp:107
 #, no-c-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -136,12 +136,36 @@ msgid ""
 "html>"
 msgstr ""
 
-#: rc.cpp:50
+#. i18n: file: timecontrol-configuration-ui.ui:316
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateFilename)
+#: rc.cpp:52 rc.cpp:115
+msgid "Filename"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:323
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Title)
+#: rc.cpp:55 rc.cpp:118
+msgid "ID3 Title"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:330
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Artist)
+#: rc.cpp:58 rc.cpp:121
+msgid "ID3 Artist"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:337
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Genre)
+#: rc.cpp:61 rc.cpp:124
+msgid "ID3 Genre"
+msgstr ""
+
+#: rc.cpp:62
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: rc.cpp:51
+#: rc.cpp:63
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
@@ -194,7 +218,7 @@ msgstr "Суббота"
 msgid "Sunday"
 msgstr "Воскресенье"
 
-#: timecontrol-configuration.cpp:214
+#: timecontrol-configuration.cpp:220
 msgid "<don't change>"
 msgstr "<не менять>"
 
@@ -206,7 +230,7 @@ msgstr "Функции таймера и работы по расписанию"
 msgid "TimeControl Plugin"
 msgstr "Модуль ремени"
 
-#: timecontrol.cpp:283
+#: timecontrol.cpp:285
 msgid "Setup Alarms"
 msgstr "Расписание"
 

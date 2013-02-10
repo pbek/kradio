@@ -1,5 +1,5 @@
 <KrossScripting>
   <collection comment="Extras" name="tools" text="Extras">
-    <script icon="text-x-python" comment="Ein Klick mit der mittleren Maustaste auf ein Bedienelement in einer KDE-Anwendung startet die Suche in der Übersetzungsdatenbank in allen geöffneten Lokalize-Fenstern." name="widget-text-capture" interpreter="python" text="Texterfassung"/>
+    <script enabled="false" icon="text-x-python" comment="Ein Klick mit der mittleren Maustaste auf ein Bedienelement in einer KDE-Anwendung startet die Suche in der Übersetzungsdatenbank in allen geöffneten Lokalize-Fenstern." name="widget-text-capture" interpreter="python" text="Texterfassung"/>
   </collection>
 </KrossScripting>

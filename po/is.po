@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-09 02:25+0200\n"
+"POT-Creation-Date: 2013-02-10 14:22+0100\n"
 "PO-Revision-Date: 2009-06-15 21:43+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -121,11 +121,15 @@ msgstr "M3U"
 msgid "PLS"
 msgstr "PLS"
 
-#: radiostations/radiostation-config.cpp:157
+#: radiostations/radiostation-config.cpp:155
+msgid "WMV"
+msgstr ""
+
+#: radiostations/radiostation-config.cpp:158
 msgid "Meta-Data Stream Encoding:"
 msgstr ""
 
-#: radiostations/radiostation-config.cpp:239
+#: radiostations/radiostation-config.cpp:240
 msgid "auto"
 msgstr ""
 
@@ -824,6 +828,10 @@ msgstr "Valdar stöðvar"
 #: rc.cpp:96
 msgid "Available Stations"
 msgstr "Tiltækar stöðvar"
+
+#: src/recording_template.h:84
+msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
+msgstr ""
 
 #~ msgid "PluginManagerConfigurationUI"
 #~ msgstr "PluginManagerConfigurationUI"

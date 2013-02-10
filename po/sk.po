@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-18 23:35+0100\n"
+"POT-Creation-Date: 2013-02-10 14:22+0100\n"
 "PO-Revision-Date: 2012-06-01 10:02+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,32 +15,28 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: interfaces/errorlog_interfaces.cpp:43
-#: interfaces/errorlog_interfaces.cpp:70
+#: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
 #, kde-format
 msgid "%1 Error: %2"
 msgstr "%1 Chyba: %2"
 
-#: interfaces/errorlog_interfaces.cpp:50
-#: interfaces/errorlog_interfaces.cpp:77
+#: interfaces/errorlog_interfaces.cpp:50 interfaces/errorlog_interfaces.cpp:77
 #, kde-format
 msgid "%1 Warning: %2"
 msgstr "%1 Upozornenie: %2"
 
-#: interfaces/errorlog_interfaces.cpp:57
-#: interfaces/errorlog_interfaces.cpp:84
+#: interfaces/errorlog_interfaces.cpp:57 interfaces/errorlog_interfaces.cpp:84
 #, kde-format
 msgid "%1 Information: %2"
 msgstr "%1 Informácia: %2"
 
-#: interfaces/errorlog_interfaces.cpp:64
-#: interfaces/errorlog_interfaces.cpp:91
+#: interfaces/errorlog_interfaces.cpp:64 interfaces/errorlog_interfaces.cpp:91
 #, kde-format
 msgid "%1 Debug: %2"
 msgstr "%1 Ladenie: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
-#: radiostations/internetradiostation.cpp:143
+#: radiostations/internetradiostation.cpp:155
 #, kde-format
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -55,71 +51,83 @@ msgstr "%1 MHz"
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: radiostations/radiostation-config.cpp:48
+#: radiostations/radiostation-config.cpp:49
 msgid "I don't know how to edit this station"
 msgstr "Neviem ako upraviť túto stanicu"
 
-#: radiostations/radiostation-config.cpp:74
+#: radiostations/radiostation-config.cpp:75
 msgid "Frequency:"
 msgstr "Frekvencia:"
 
-#: radiostations/radiostation-config.cpp:127
+#: radiostations/radiostation-config.cpp:128
 msgid "URL:"
 msgstr "URL:"
 
-#: radiostations/radiostation-config.cpp:131
+#: radiostations/radiostation-config.cpp:132
 msgid "Decoder Class:"
 msgstr "Trieda dekódera:"
 
-#: radiostations/radiostation-config.cpp:135
+#: radiostations/radiostation-config.cpp:136
 msgid "Playlist Class:"
 msgstr "Trieda zoznamu skladieb:"
 
-#: radiostations/radiostation-config.cpp:140
+#: radiostations/radiostation-config.cpp:141
 msgctxt "Stream Format"
 msgid "<autodetect>"
 msgstr "<autodetekcia>"
 
-#: radiostations/radiostation-config.cpp:141
+#: radiostations/radiostation-config.cpp:142
 msgid "MP3"
 msgstr "MP3"
 
-#: radiostations/radiostation-config.cpp:142
+#: radiostations/radiostation-config.cpp:143
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
-#: radiostations/radiostation-config.cpp:143
+#: radiostations/radiostation-config.cpp:144
 msgid "ASF"
 msgstr "ASF"
 
-#: radiostations/radiostation-config.cpp:145
+#: radiostations/radiostation-config.cpp:146
 msgid "OGG/Vorbis"
 msgstr "OGG/Vorbis"
 
-#: radiostations/radiostation-config.cpp:148
+#: radiostations/radiostation-config.cpp:149
 msgctxt "Playlist Format"
 msgid "<autodetect>"
 msgstr "<autodetekcia>"
 
-#: radiostations/radiostation-config.cpp:149
+#: radiostations/radiostation-config.cpp:150
 msgid "<none>"
 msgstr "<žiadne>"
 
-#: radiostations/radiostation-config.cpp:150
+#: radiostations/radiostation-config.cpp:151
 msgid "ASX"
 msgstr "ASX"
 
-#: radiostations/radiostation-config.cpp:151
+#: radiostations/radiostation-config.cpp:152
 msgid "LSC"
 msgstr "LSC"
 
-#: radiostations/radiostation-config.cpp:152
+#: radiostations/radiostation-config.cpp:153
 msgid "M3U"
 msgstr "M3U"
 
-#: radiostations/radiostation-config.cpp:153
+#: radiostations/radiostation-config.cpp:154
 msgid "PLS"
 msgstr "PLS"
+
+#: radiostations/radiostation-config.cpp:155
+msgid "WMV"
+msgstr ""
+
+#: radiostations/radiostation-config.cpp:158
+msgid "Meta-Data Stream Encoding:"
+msgstr ""
+
+#: radiostations/radiostation-config.cpp:240
+msgid "auto"
+msgstr ""
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
@@ -137,9 +145,7 @@ msgstr "Stanica"
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
 #. i18n: file: src/pluginmanager-configuration-ui.ui:319
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: radiostations/radiostation-listview.cpp:38
-#: rc.cpp:44
-#: rc.cpp:62
+#: radiostations/radiostation-listview.cpp:38 rc.cpp:44 rc.cpp:62
 msgid "Description"
 msgstr "Popis"
 
@@ -163,19 +169,16 @@ msgstr "contentsDragEnterEvent odmietnuté"
 msgid "AM/FM Radio Station"
 msgstr "Rozhlasová stanica AM/FM"
 
-#: radiostations/internetradiostation.h:73
+#: radiostations/internetradiostation.h:75
 msgid "Internet Radio Station"
 msgstr "Internetová rozhlasová stanica"
 
-#: radiostations/radiostation.h:161
-#: radiostations/radiostation.h:162
-#: src/standardscandialog.cpp:165
-#: src/standardscandialog.cpp:168
+#: radiostations/radiostation.h:161 radiostations/radiostation.h:162
+#: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
 msgid "unknown"
 msgstr "neznáme"
 
-#: src/fileringbuffer.cpp:35
-#: src/fileringbuffer.cpp:68
+#: src/fileringbuffer.cpp:35 src/fileringbuffer.cpp:68
 #, kde-format
 msgid "cannot open buffer file %1"
 msgstr "nemôžem otvoriť súbor buffera %1"
@@ -190,8 +193,7 @@ msgstr "FileRingbuffer::resize: Zápis do tmpfile %1 zlyhal. "
 msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
 msgstr "FileRingbuffer::resize: Otvorenie tmpfile %1 zlyhalo. "
 
-#: src/fileringbuffer.cpp:127
-#: src/fileringbuffer.cpp:145
+#: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
 #, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
 msgstr "FileRingBuffer::addData: zlyhal zápis dát do súboru %1."
@@ -202,13 +204,21 @@ msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: zlyhalo čítanie dát zo súboru %1."
 
 #: src/kradioaboutwidget.cpp:65
-msgid "<qt>No information available.<br />The supplied KAboutData object does not exist.</qt>"
-msgstr "<qt>Nie sú dostupné žiadne informácie.<br />Zadaný objekt KAboutData neexistuje.</qt>"
+msgid ""
+"<qt>No information available.<br />The supplied KAboutData object does not "
+"exist.</qt>"
+msgstr ""
+"<qt>Nie sú dostupné žiadne informácie.<br />Zadaný objekt KAboutData "
+"neexistuje.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
-msgid "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</html>"
-msgstr "<html><font size=\"5\">%1</font><br /><b>Verzia %2</b><br />Používa KDE %3</html>"
+msgid ""
+"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
+"html>"
+msgstr ""
+"<html><font size=\"5\">%1</font><br /><b>Verzia %2</b><br />Používa KDE %3</"
+"html>"
 
 #: src/kradioaboutwidget.cpp:125
 #, kde-format
@@ -228,11 +238,14 @@ msgid "A&uthors"
 msgstr "&Autori"
 
 #: src/kradioaboutwidget.cpp:152
-msgid "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report bugs.\n"
-msgstr "Pre nahlásenie chýb použite <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a>.\n"
+msgid ""
+"Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
+"bugs.\n"
+msgstr ""
+"Pre nahlásenie chýb použite <a href=\"http://bugs.kde.org\">http://bugs.kde."
+"org</a>.\n"
 
-#: src/kradioaboutwidget.cpp:155
-#: src/kradioaboutwidget.cpp:160
+#: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
 msgstr "Prosím nahláste chyby na <a href=\"mailto:%1\">%2</a>.\n"
@@ -254,8 +267,7 @@ msgstr "Licenčná zmluva"
 msgid "Library %1: Plugin Entry Point is missing\n"
 msgstr "Knižnica %1: Vstupný bod nenájdený\n"
 
-#: src/kradioapp.cpp:133
-#: src/kradioapp.cpp:141
+#: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
 msgstr "Chyba pri čítaní knižnice pluginov"
@@ -283,8 +295,13 @@ msgstr "Nájdené nové knižnice pluginov"
 
 #: src/kradioapp.cpp:234
 #, kde-format
-msgid "Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 installation directory and the environment variables KDEDIR, KDEDIRS and KDEHOME.\n"
-msgstr "Našlo sa iba %1 knižníc. Očakáva sa minimálne 5. Prosím skontrolujte inštalačný adresár KRadio4 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
+msgid ""
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"installation directory and the environment variables KDEDIR, KDEDIRS and "
+"KDEHOME.\n"
+msgstr ""
+"Našlo sa iba %1 knižníc. Očakáva sa minimálne 5. Prosím skontrolujte "
+"inštalačný adresár KRadio4 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"
@@ -334,8 +351,12 @@ msgid "Ernst Martin Witte"
 msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
-msgid "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, recording, lirc support, alarms, misc"
-msgstr "Prevod na KDE4, podpora RDS, skratky, podpora PVR, prepísanie pre 1.0/0.3.0, nahrávanie, podpora pre lirc, budík, rôzne"
+msgid ""
+"KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
+"recording, lirc support, alarms, misc"
+msgstr ""
+"Prevod na KDE4, podpora RDS, skratky, podpora PVR, prepísanie pre 1.0/0.3.0, "
+"nahrávanie, podpora pre lirc, budík, rôzne"
 
 #: src/main.cpp:44
 msgid "Marcus Camen"
@@ -384,8 +405,7 @@ msgstr "Zadajte názov inštancie pluginu"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:308
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: src/pluginmanager-configuration.cpp:227
-#: rc.cpp:59
+#: src/pluginmanager-configuration.cpp:227 rc.cpp:59
 msgid "Instance Name"
 msgstr "Názov inštancie"
 
@@ -401,14 +421,14 @@ msgstr "Nastavenie knižnice pluginov"
 msgid "Starting Plugins"
 msgstr "Spúšťanie pluginov"
 
-#: src/pluginmanager.cpp:587
-#: src/pluginmanager.cpp:621
+#: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Vytváram plugin %1"
 
 #: src/pluginmanager.cpp:605
-msgid "New plugins found. Do you want me to automatically create instances now?"
+msgid ""
+"New plugins found. Do you want me to automatically create instances now?"
 msgstr "Našli sa nové pluginy. Chcete teraz automaticky vytvoriť inštancie?"
 
 #: src/pluginmanager.cpp:607
@@ -436,15 +456,13 @@ msgstr "Obnoviť všetko"
 msgid "restore state before last hide-all activation"
 msgstr "obnoviť stav pred posledným krokom \"skryť všetko\""
 
-#: src/standardscandialog.cpp:46
-#: src/standardscandialog.cpp:109
+#: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
 msgstr "&Štart"
 
 #. i18n: file: src/standardscandialog-ui.ui:58
 #. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
-#: src/standardscandialog.cpp:92
-#: rc.cpp:81
+#: src/standardscandialog.cpp:92 rc.cpp:81
 msgid "&Stop"
 msgstr "Za&staviť"
 
@@ -468,7 +486,8 @@ msgstr "Obsahuje spojené záznamy"
 #: src/stationlist.cpp:176
 msgid ""
 "Probably an old station preset file was read.\n"
-"You have to rebuild your station selections for the quickbar and the docking menu."
+"You have to rebuild your station selections for the quickbar and the docking "
+"menu."
 msgstr ""
 "Pravdepodobne bol načítaný súbor so starýmii predvoľbami.\n"
 "Musíte znovu vytvoriť svoj výber staníc pre rýchlu voľbu a voľbu na paneli."
@@ -485,8 +504,7 @@ msgstr ""
 "Analýza súboru s predvoľbami zlyhala.\n"
 "Viac informácií sa dozviete z výstupu na konzoli."
 
-#: src/stationlist.cpp:203
-#: src/stationlist.cpp:208
+#: src/stationlist.cpp:203 src/stationlist.cpp:208
 #, kde-format
 msgid "error downloading preset file %1"
 msgstr "chyba sťahovania súboru predvolieb %1"
@@ -531,8 +549,12 @@ msgstr "nahrávanie súboru predvolieb %1: "
 
 #: src/stationlist.cpp:337
 #, kde-format
-msgid "something strange happened, station list has only %1 entries. Writing station preset file skipped"
-msgstr "stalo sa niečo zvláštne, zoznam staníc má iba %1 položiek. Zápis súboru predvolieb bol preskočený"
+msgid ""
+"something strange happened, station list has only %1 entries. Writing "
+"station preset file skipped"
+msgstr ""
+"stalo sa niečo zvláštne, zoznam staníc má iba %1 položiek. Zápis súboru "
+"predvolieb bol preskočený"
 
 #: src/stationlist.cpp:342
 #, kde-format
@@ -544,8 +566,7 @@ msgstr "chyba nahrávania súboru predvolieb %1"
 msgid "Upload of station preset file to %1 failed."
 msgstr "Nahranie súboru predvolieb staníc %1 zlyhalo."
 
-#: src/stationlist.cpp:353
-#: src/stationlist.cpp:354
+#: src/stationlist.cpp:353 src/stationlist.cpp:354
 msgid "error creating temp file"
 msgstr "chyba vytvárania dočasného súboru"
 
@@ -648,8 +669,12 @@ msgstr "Knižnice pluginov"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:123
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
 #: rc.cpp:23
-msgid "Select a plugin library from a file dialog. It will added to the library list if you press the \"Load Library\" button."
-msgstr "Vyberte knižnicu pluginov z dialógu. Bude načítaná po stlačení tlačidla \"Načítať knižnicu\"."
+msgid ""
+"Select a plugin library from a file dialog. It will added to the library "
+"list if you press the \"Load Library\" button."
+msgstr ""
+"Vyberte knižnicu pluginov z dialógu. Bude načítaná po stlačení tlačidla "
+"\"Načítať knižnicu\"."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:136
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
@@ -685,8 +710,7 @@ msgstr "Zoznam dostupných tried pluginov nájdených v knižniciach pluginov"
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
 #. i18n: file: src/pluginmanager-configuration-ui.ui:297
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: rc.cpp:41
-#: rc.cpp:56
+#: rc.cpp:41 rc.cpp:56
 msgid "Plugin Class"
 msgstr "Trieda pluginu"
 
@@ -718,17 +742,37 @@ msgstr "Odstráni/zastaví inštanciu pluginu vybranú v zozname vľavo"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:68
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">You can <span style=\" font-weight:600;\">rename</span> a plugin instance by double clicking on the instance name. This name will appear below the configuration page icon, in the config page header and e.g. in the name of your sound device. Editing plugin names is recommended for your convenience e.g. if you have multiple sound cards and/or multiple ALSA plugin instances.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">You can "
+"<span style=\" font-weight:600;\">rename</span> a plugin instance by double "
+"clicking on the instance name. This name will appear below the configuration "
+"page icon, in the config page header and e.g. in the name of your sound "
+"device. Editing plugin names is recommended for your convenience e.g. if you "
+"have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
+"html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Môžete <span style=\" font-weight:600;\">premenovať</span> inštanciu pluginu dvojklikom na názov inštancie. Tento názov sa objaví pod ikonou stránky s nastavením, v záhlaví stránky s nastavením a napríklad v názve vášho zvukového zariadenia. Úprava názvov pluginov sa odporúča kvôli vášmu pohodliu, napríklad ak máte viac zvukových kariet alebo inštancií pluginov ALSA.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Môžete "
+"<span style=\" font-weight:600;\">premenovať</span> inštanciu pluginu "
+"dvojklikom na názov inštancie. Tento názov sa objaví pod ikonou stránky s "
+"nastavením, v záhlaví stránky s nastavením a napríklad v názve vášho "
+"zvukového zariadenia. Úprava názvov pluginov sa odporúča kvôli vášmu "
+"pohodliu, napríklad ak máte viac zvukových kariet alebo inštancií pluginov "
+"ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
@@ -772,3 +816,6 @@ msgstr "Vybrané stanice"
 msgid "Available Stations"
 msgstr "Dostupné stanice"
 
+#: src/recording_template.h:84
+msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
+msgstr ""
