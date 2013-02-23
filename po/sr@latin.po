@@ -8,6 +8,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
+"PO-Revision-Date: 2013-02-10 14:36+0100\n"
+"Last-Translator: Goran Simović <simovic@mailup.net>\n"
+"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
 #, kde-format
@@ -235,12 +238,12 @@ msgid ""
 "bugs.\n"
 msgstr ""
 "Molimo koristite <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> za "
-"prijavu grešaka."
+"prijavu grešaka.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Molimo prijavite greške na <a href=\"mailto:%1\">%2</a>.␣"
+msgstr "Molimo prijavite greške na <a href=\"mailto:%1\">%2</a>.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
@@ -257,7 +260,7 @@ msgstr "Ugovor o licenci"
 #: src/kradioapp.cpp:132
 #, kde-format
 msgid "Library %1: Plugin Entry Point is missing\n"
-msgstr "Biblioteka %1: Priključak ulazne tačke nedostaje␣"
+msgstr "Biblioteka %1: Priključak ulazne tačke nedostaje\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
@@ -291,7 +294,7 @@ msgid ""
 "KDEHOME.\n"
 msgstr ""
 "Pronadjeno samo %1 biblioteke. Očekivani minimum je 5. Molimo proverite "
-"KRadio4 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.␣"
+"KRadio4 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.\n"
 
 #: src/kradioapp.cpp:239
 msgid "KRadio4 Installation Error"

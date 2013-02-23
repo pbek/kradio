@@ -8,6 +8,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
+"PO-Revision-Date: 2013-02-10 14:36+0100\n"
+"Last-Translator: Goran Simović <simovic@mailup.net>\n"
+"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
@@ -627,7 +630,7 @@ msgstr "greška  ažuriranja za radio audio info (%1): %2"
 
 #: v4lradio.cpp:2188
 msgid "error reading RDS data\n"
-msgstr "greška kod čitanja RDS podataka␣"
+msgstr "greška kod čitanja RDS podataka\n"
 
 #: v4lradio.cpp:2204
 #, kde-format

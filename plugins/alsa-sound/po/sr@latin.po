@@ -9,10 +9,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.5\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"PO-Revision-Date: 2013-02-10 14:40+0100\n"
-"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"PO-Revision-Date: 2013-02-10 14:40+0100\n"
+"Last-Translator: Goran Simović <simovic@mailup.net>\n"
+"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 
 #: alsa-sound.cpp:43
 msgid "Advanced Linux Sound Architecture (ALSA) Support"
@@ -62,7 +62,7 @@ msgid ""
 "one\n"
 msgstr ""
 "Alsapriključak: interna greška. Očekivano nepostojanje reprodukcijske niti, "
-"ali je nadjena jedna␣"
+"ali je nadjena jedna\n"
 
 #: alsa-sound.cpp:855
 msgid ""
@@ -70,7 +70,7 @@ msgid ""
 "one\n"
 msgstr ""
 "Alsapriključak: interna greška. Očekivano nepostojanje capture niti, ali je "
-"nadjena jedna␣"
+"nadjena jedna\n"
 
 #: alsa-sound.cpp:897
 #, kde-format
@@ -243,7 +243,7 @@ msgstr "greška kod upisivanja jačine zvuka  %1 za %2, kanal  %3"
 #: alsa-sound.cpp:1542
 #, kde-format
 msgid "error while setting capture switch %1 for %2"
-msgstr "greška kod podešavanja hvatanja %1 za 2%"
+msgstr "greška kod podešavanja hvatanja %1 za %2"
 
 #: alsa-sound.cpp:1737
 #, kde-format

@@ -8,6 +8,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
+"PO-Revision-Date: 2013-02-10 14:36+0100\n"
+"Last-Translator: Goran Simović <simovic@mailup.net>\n"
+"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 
 #: encoder_mp3.cpp:81 encoder_mp3.cpp:194
 #, kde-format
@@ -52,11 +55,11 @@ msgstr "Ne mogu otvoriti Ogg/Vorbis izlazni fajl %1: %2"
 #: encoder_ogg.cpp:154
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
 msgstr ""
-"Ogg/Vorbis Mod inicijalizacija neuspela: Oštećeni parametri za kvalitet␣"
+"Ogg/Vorbis Mod inicijalizacija neuspela: Oštećeni parametri za kvalitet\n"
 
 #: encoder_ogg.cpp:207
 msgid "Failed writing Ogg/Vorbis header to output stream\n"
-msgstr "Neuspelo upisivanje Ogg/Vorbis zaglavlja za odlazni strim␣"
+msgstr "Neuspelo upisivanje Ogg/Vorbis zaglavlja za odlazni strim\n"
 
 #. i18n: file: recording-configuration-ui.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
