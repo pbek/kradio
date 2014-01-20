@@ -2,20 +2,23 @@
 # Copyright (C) 2011 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kradio package.
 #
-# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-01-11 15:31+0100\n"
-"PO-Revision-Date: 2011-01-11 16:00+0200\n"
-"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
-"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"PO-Revision-Date: 2014-01-20 00:17+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: soundserver.cpp:27
 msgid "KRadio internal sound server"
@@ -23,8 +26,9 @@ msgstr "Server audio interno di KRadio"
 
 #: soundserver.cpp:32
 msgid "SoundServer Plugin"
-msgstr "Plugin del server audio"
+msgstr "Estensione del server audio"
 
 #: soundserver.cpp:34
 msgid "initializing kradio soundserver"
 msgstr "Inizializzazione del server audio di kradio in corso"
+

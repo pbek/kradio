@@ -2,20 +2,23 @@
 # Copyright (C) 2011 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kradio package.
 #
-# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-02-18 23:06+0100\n"
-"PO-Revision-Date: 2011-01-11 16:00+0200\n"
-"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
-"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"PO-Revision-Date: 2014-01-20 01:49+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
@@ -45,7 +48,7 @@ msgstr "Qualità minima del segnale"
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
 #: rc.cpp:15 rc.cpp:183
 msgid "unknown v4l device"
-msgstr "dispositivo v4l sconosciuto"
+msgstr "dispositivo V4L sconosciuto"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -150,19 +153,19 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Il "
-"probing delle proprietà di un dispositivo V4L, richiede l'apertura dello "
+"rilevamento delle proprietà di un dispositivo V4L richiede l'apertura dello "
 "stesso. Ciò potrebbe interferire con altre applicazioni che usano lo stesso "
 "hardware / driver, causando problemi / interferenze. Qualora si "
-"presentassero questi problemi, dovresti usare il probing solo "
-"all'accensione. L'unico svantaggio potrebbe essere che nel dialogo della "
-"configurazione, potresti non vedere la descrizione del dispositivo dopo "
+"presentassero questi problemi, dovresti usare il rilevamento solo "
+"all'accensione. L'unico svantaggio potrebbe essere che nella finestra di  "
+"configurazione potresti non vedere la descrizione del dispositivo dopo "
 "l'avvio, ma solo il nome dello pseudo dispositivo.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:333
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:58 rc.cpp:226
 msgid "Device Probing"
-msgstr "Probing del dispositivo"
+msgstr "Rilevamento del dispositivo"
 
 #. i18n: file: v4lradio-configuration-ui.ui:362
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
@@ -198,7 +201,7 @@ msgstr "RDS"
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
 #: rc.cpp:90 rc.cpp:258
 msgid "Force RDS Enabled"
-msgstr "Forza la RDS"
+msgstr "Forza RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:430
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -234,16 +237,17 @@ msgstr ""
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" text-decoration: underline;\">Nota per il supporto RDS:</span> Se "
-"la tua scheda supporta la RDS e la RDS non funziona, controlla che il <span "
+"la tua scheda supporta RDS e RDS non funziona, controlla che il <span "
 "style=\" font-weight:600;\">modulo del kernel saa6588.ko</span> sia "
 "caricato. Per le schede che hanno un chip saa6588, questo modulo, in genere, "
 "<span style=\" font-style:italic;\">non</span> viene caricato "
-"automaticamente. Se il tuo kernel V4L/V4L2 supporta la RDS, questa dovrebbe "
-"essere visibile nel display della radio, poiché l'indicatore della RDS si "
+"automaticamente. Se il tuo kernel V4L/V4L2 supporta RDS, questa funzione "
+"dovrebbe "
+"essere visibile nel display della radio, poiché l'indicatore RDS si "
 "illumina (come gli indicatori stereo e AM/FM). Il testo della radio RDS "
 "dovrebbe essere visibile nel display della radio e nei suggerimenti "
 "dell'icona del vassoio di sistema. I nomi delle stazioni RDS sono utilizzati "
-"nel dialogo della ricerca delle stazioni come nomi di default per le "
+"nella finestra di ricerca delle stazioni come nomi predefiniti per le "
 "stazioni trovate.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:467
@@ -262,37 +266,37 @@ msgstr "test"
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:106 rc.cpp:274
 msgid "Playback Mixer Channel"
-msgstr "Canale del mixer del playback"
+msgstr "Canale mixer di riproduzione"
 
 #. i18n: file: v4lradio-configuration-ui.ui:511
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
 #: rc.cpp:109 rc.cpp:277
 msgid "Capture Mixer Device"
-msgstr "Cattura del dispositivo del mixer"
+msgstr "Dispositivo del mixer di cattura"
 
 #. i18n: file: v4lradio-configuration-ui.ui:554
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
 #: rc.cpp:112 rc.cpp:280
 msgid "Set playback channel volume to &zero at power off"
-msgstr "Allo spegnimento, imposta il volume del canale del playback a &zero"
+msgstr "Allo spegnimento, imposta il volume del canale di riproduzione a &zero"
 
 #. i18n: file: v4lradio-configuration-ui.ui:567
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
 #: rc.cpp:115 rc.cpp:283
 msgid "Mute play&back channel at power off"
-msgstr "Allo spegnimento, azzera il volume del canale del play&back"
+msgstr "Allo spegnimento, silenzia il volume del canale di ripro&duzione"
 
 #. i18n: file: v4lradio-configuration-ui.ui:574
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
 #: rc.cpp:118 rc.cpp:286
 msgid "Capture Mixer Channel"
-msgstr "Canale del mixer della cattura"
+msgstr "Canale del mixer di cattura"
 
 #. i18n: file: v4lradio-configuration-ui.ui:584
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:121 rc.cpp:289
 msgid "Playback Mixer Device"
-msgstr "Dispositivo del mixer del playback"
+msgstr "Dispositivo mixer di riproduzione"
 
 #. i18n: file: v4lradio-configuration-ui.ui:608
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
@@ -341,32 +345,35 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Il playback attivo</span> è richiesto quando la "
+"style=\" font-weight:600;\">La riproduzione attiva</span> è richiesta quando "
+"la "
 "tua scheda radio non è connessa alla tua scheda audio tramite un cavo al "
-"jack della lina d'ingresso. In questo caso, KRadio deve catturare i dati del "
+"jack della linea d'ingresso. In questo caso KRadio deve catturare i dati del "
 "PCM da un dispositivo audio di cattura ed inviare i dati del PCM al "
-"dispositivo audio  di playback. Tuttavia, se abiliti il <span style=\" font-"
-"weight:600;\">playback attivo</span>, devi selezionare un dispositivo/canale "
-"del mixer della cattura ed un mixer/canale del playback del PCM. Ciò è "
+"dispositivo audio di riproduzione. Quindi, se abiliti la <span style=\" font-"
+"weight:600;\">riproduzione attiva</span>, devi selezionare un "
+"dispositivo/canale "
+"del mixer della cattura ed un mixer/canale PCM di riproduzione. Ciò è "
 "particolarmente importante per <span style=\" font-weight:600;\">le schede "
 "PVR</span> che, in genere, catturano l'audio da <span style=\" font-style:"
-"italic;\">/dev/video24</span> (oppure qualcosa del genere). Per <span style="
-"\" font-weight:600;\">le schede PVR</span>, devi, tuttavia, impostare "
-"correttamente anche il <span style=\" font-weight:600;\">plugin dello "
+"italic;\">/dev/video24</span> (o qualcosa del genere). Per <span style="
+"\" font-weight:600;\">le schede PVR</span> devi quindi impostare "
+"correttamente anche l'<span style=\" font-weight:600;\">estensione per lo "
 "streaming</span>.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:637
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
 #: rc.cpp:141 rc.cpp:309
 msgid "Use active pla&yback by capturing (use for PVR cards!)"
-msgstr "Usa il pla&yback attivo dalla cattura (per le schede PVR!)"
+msgstr "Usa la ripro&duzione attiva dalla cattura (per le schede PVR)"
 
 #. i18n: file: v4lradio-configuration-ui.ui:653
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
 #: rc.cpp:144 rc.cpp:312
 msgid "Mute playback of capture channel when active playback is running"
 msgstr ""
-"Azzera il playback del canale della cattura quando il playback è in funzione"
+"Azzera la riproduzione del canale di cattura quando la riproduzione è in "
+"esecuzione"
 
 #. i18n: file: v4lradio-configuration-ui.ui:673
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -404,19 +411,21 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Nota per i possessori delle PVR:</"
-"span> <span style=\" font-weight:600;\">Il playback attivo</span> è "
-"richiesto quando la tua scheda radio non è connessa alla tua scheda audio "
-"tramite un cavo al jack della linea d'ingresso. In questo caso, KRadio deve "
+"style=\" text-decoration: underline;\">Nota per i possessori di PVR:</"
+"span> <span style=\" font-weight:600;\">La riproduzione attiva</span> è "
+"richiesta quando la tua scheda radio non è connessa alla tua scheda audio "
+"tramite un cavo al jack della linea d'ingresso. In questo caso KRadio deve "
 "catturare i dati del PCM da un dispositivo audio di cattura per inviare i "
-"dati del PCM al dispositivo audio di playback. Tuttavia, se abiliti il <span "
-"style=\" font-weight:600;\">playback attivo</span>, devi selezionare un "
-"dispositivo/canale del mixer di cattura ed un valido mixer/canale del "
-"playback del PCM. Ciò è particolarmente importante per le <span style=\" "
+"dati del PCM al dispositivo audio di riproduzione. Quindi, se abiliti la <"
+"span "
+"style=\" font-weight:600;\">riproduzione attiva</span>, devi selezionare un "
+"dispositivo/canale del mixer di cattura ed un valido mixer/canale PCM di "
+"riproduzione. Ciò è particolarmente importante per le <span style=\" "
 "font-weight:600;\">schede PVR</span> che, in genere, catturano l'audio da "
-"<span style=\" font-style:italic;\">/dev/video24</span> (oppure qualcosa di "
-"simile). Per le <span style=\" font-weight:600;\">schede PVR</span>, devi, "
-"tuttavia, impostare anche il <span style=\" font-weight:600;\">plugin dello "
+"<span style=\" font-style:italic;\">/dev/video24</span> (o qualcosa di "
+"simile). Per le <span style=\" font-weight:600;\">schede PVR</span>, devi "
+"quindi "
+"impostare anche l'<span style=\" font-weight:600;\">l'estensione per lo "
 "streaming</span>.</p></body></html>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:713
@@ -452,21 +461,21 @@ msgstr "bilanciamento"
 #: rc.cpp:167
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Giovanni Scafora"
+msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:168
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "giovanni@archlinux.org"
+msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
 
 #: v4lradio-configuration.cpp:411
 msgid "Could not get device description."
-msgstr "Impossibile leggere la descrizione del dispositivo"
+msgstr "Impossibile ottenere la descrizione del dispositivo."
 
 #: v4lradio-configuration.cpp:416
 msgid "Device file does not exist or top level directories are not accessible."
 msgstr ""
-"Il file del dispositivo non esiste oppure le directory superiori non sono "
+"Il file del dispositivo non esiste oppure le cartelle superiori non sono "
 "accessibili."
 
 #: v4lradio-configuration.cpp:419
@@ -500,12 +509,12 @@ msgstr "Supporto per i dispositivi radio V4L(2)"
 
 #: v4lradio.cpp:74
 msgid "Video For Linux Plugin"
-msgstr "Video per il plugin di Linux"
+msgstr "Estensione Video For Linux"
 
 #: v4lradio.cpp:821
 #, kde-format
 msgid "invalid frequency %1"
-msgstr "la frequenza %1 non è valida"
+msgstr "frequenza %1 non valida"
 
 #: v4lradio.cpp:847 v4lradio.cpp:1790 v4lradio.cpp:1986
 #, kde-format
@@ -530,8 +539,8 @@ msgid ""
 "switching to V4L Version 2. You may override it later."
 msgstr ""
 "Hai selezionato la versione 1 delle API di V4L. A partire dal kernel 2.6.31, "
-"il supporto a V4L1 sembra non essere funzionare più. Adesso, sto passando "
-"alla versione 2 di V4L. In seguito, puoi ignorarlo."
+"il supporto a V4L1 sembra non funzionare più. Adesso sto passando "
+"alla versione 2 di V4L. Puoi cambiare questa impostazione successivamente."
 
 #: v4lradio.cpp:1283
 #, kde-format
@@ -546,12 +555,12 @@ msgstr ""
 #, kde-format
 msgid "Could not find any radio device. Using the default path for now: %1"
 msgstr ""
-"Impossibile trovare dei dispositivi radio. Per ora, sto usando il path di "
-"default: %1"
+"Impossibile trovare dei dispositivi radio. Per ora, sto usando il percorso "
+"predefinito: %1"
 
 #: v4lradio.cpp:1299
 msgid "Could not find an accessible v4l(2) radio device."
-msgstr "Impossibile trovare un dispositivo radio v4l(2) accessibile."
+msgstr "Impossibile trovare un dispositivo radio V4L(2) accessibile."
 
 #: v4lradio.cpp:1383
 #, kde-format
@@ -574,111 +583,100 @@ msgstr "Impossibile aprire il dispositivo radio %1"
 #: v4lradio.cpp:1522
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
-msgstr "Plugin V4L (modalità V4L%1, dispositivo non valido): %2"
+msgstr "Estensione V4L (modalità V4L%1, dispositivo non valido): %2"
 
 #: v4lradio.cpp:1529
 #, kde-format
 msgid "cannot open %1"
-msgstr "Impossibile aprire %1"
+msgstr "impossibile aprire %1"
 
 #: v4lradio.cpp:1539 v4lradio.cpp:1585
 #, kde-format
 msgid "detected %1"
-msgstr "ho individuato %1"
+msgstr "rilevato %1"
 
 #: v4lradio.cpp:1544 v4lradio.cpp:1591
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
-msgstr "Plugin V4L (modalità V4L%1): %2"
+msgstr "Estensione V4L (modalità V4L%1): %2"
 
 #: v4lradio.cpp:1567
 #, kde-format
 msgid "audio caps = %1"
-msgstr "protezioni dell'audio = %1"
+msgstr "capacità dell'audio = %1"
 
 #: v4lradio.cpp:1607
 msgid "V4L2: Querying mute control failed"
-msgstr ""
-"V4L2: si è verificato un errore durante l'interrogazione del controllo del "
-"muto"
+msgstr "V4L2: interrogazione del controllo del muto non riuscita"
 
 #: v4lradio.cpp:1615
 msgid "V4L2: Querying volume control failed"
-msgstr ""
-"V4L2: si è verificato un errore durante l'interrogazione del controllo del "
-"volume"
+msgstr "V4L2: interrogazione del controllo del volume non riuscita"
 
 #: v4lradio.cpp:1624
 msgid "V4L2: Querying treble control failed"
-msgstr ""
-"V4L2: si è verificato un errore durante l'interrogazione del controllo degli "
-"alti"
+msgstr "V4L2: interrogazione del controllo degli alti non riuscita"
 
 #: v4lradio.cpp:1633
 msgid "V4L2: Querying bass control failed"
-msgstr ""
-"V4L2: si è verificato un errore durante l'interrogazione del controllo dei "
-"bassi"
+msgstr "V4L2: interrogazione del controllo dei bassi non riuscita"
 
 #: v4lradio.cpp:1642
 msgid "V4L2: Querying balance control failed"
-msgstr ""
-"V4L2: si è verificato un errore durante l'interrogazione del controllo del "
-"bilanciamento"
+msgstr "V4L2: interrogazione del controllo del bilanciamento non riuscita"
 
 #: v4lradio.cpp:1645
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
-msgstr "V4L2 - versione: %1, protezioni=%2"
+msgstr "V4L2 - versione: %1, capacità=%2"
 
 #: v4lradio.cpp:1668
 msgid "V4L not detected"
-msgstr "V4L non è stato individuato"
+msgstr "V4L non rilevato"
 
 #: v4lradio.cpp:1763
 #, kde-format
 msgid "V4L2 tuner reported range: %1 ... %2 MHz"
-msgstr ""
+msgstr "il sintonizzatore V4L ha riportato l'intervallo %1 ... %2 MHz"
 
 #: v4lradio.cpp:1766
 msgid "Note: you might be running a kernel with a broken v4l2 radio API"
 msgstr ""
+"Nota: il kernel in uso potrebbe avere un'API radio V4L2 non funzionante"
 
 #: v4lradio.cpp:1800
 #, kde-format
 msgid "cannot get tuner info (error %1)"
-msgstr "Impossibile ottenere informazioni dal sintonizzatore (errore %1)"
+msgstr "impossibile ottenere le informazioni del sintonizzatore (errore %1)"
 
 #: v4lradio.cpp:1995
 msgid "write"
-msgstr "scrivi"
+msgstr "scrittura"
 
 #: v4lradio.cpp:1995
 msgid "read"
-msgstr "leggi"
+msgstr "lettura"
 
 #: v4lradio.cpp:1994
 #, kde-format
 msgid "error updating radio audio info (%1): %2"
 msgstr ""
-"si è verificato un errore durante l'aggiornamento delle informazioni audio "
-"della radio (%1): %2"
+"errore durante l'aggiornamento delle informazioni audio della radio (%1): %2"
 
 #: v4lradio.cpp:2188
 msgid "error reading RDS data\n"
-msgstr "si è verificato un errore durante la lettura dei dati RDS\n"
+msgstr "errore durante la lettura dei dati RDS\n"
 
 #: v4lradio.cpp:2204
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
-msgstr "V4LRadio::processRDSData: probabilità dell'errore di blocco: %1 %"
+msgstr "V4LRadio::processRDSData: tasso di errore dei blocchi: %1 %"
 
 #: v4lradio.cpp:2207
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr ""
-"V4LRadio::processRDSData: gruppo (~4 blocchi) della probabilità dell'errore: "
-"%1 %"
+"V4LRadio::processRDSData: tasso di errore dei gruppi (~4 blocchi) : %1 %"
 
 #~ msgid "Alt+Z"
 #~ msgstr "Alt+Z"
