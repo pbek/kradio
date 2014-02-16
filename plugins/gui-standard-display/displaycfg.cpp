@@ -34,8 +34,6 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
       m_ignore_gui_updates(false)
 {
     QGridLayout *gl = new QGridLayout (this);
-    gl->setSpacing( 5 );
-    gl->setMargin ( 11 );
 
     m_btnActive   = new KColorButton(queryDisplayActiveColor(),   this);
     m_btnInactive = new KColorButton(queryDisplayInactiveColor(), this);
@@ -45,37 +43,22 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     connect(m_btnInactive, SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
     connect(m_btnBkgnd,    SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
 
-    QLabel *l1  = new QLabel(i18n("Active Text"),      this);
-    QLabel *l2  = new QLabel(i18n("Inactive Text"),    this);
-    QLabel *l3  = new QLabel(i18n("Background Color"), this);
-
-    l1->setAlignment(Qt::AlignHCenter);
-    l2->setAlignment(Qt::AlignHCenter);
-    l3->setAlignment(Qt::AlignHCenter);
-
-    l1->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
-    l2->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
-    l3->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
-    m_btnActive  ->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-    m_btnInactive->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-    m_btnBkgnd   ->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-    m_btnActive  ->setMinimumSize(QSize(20, 20));
-    m_btnInactive->setMinimumSize(QSize(20, 20));
-    m_btnBkgnd   ->setMinimumSize(QSize(20, 20));
+    QLabel *l1  = new QLabel(i18n("Active text:"),      this);
+    QLabel *l2  = new QLabel(i18n("Inactive text:"),    this);
+    QLabel *l3  = new QLabel(i18n("Background color:"), this);
 
     m_fontChooser = new KFontChooser(this, KFontChooser::DisplayFrame, QStringList(), 4);
     m_fontChooser->enableColumn(KFontChooser::SizeList, false);
     m_fontChooser->setFont(queryDisplayFont());
     m_fontChooser->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
-    gl->addWidget (l1,                   0, 0, Qt::AlignCenter);
-    gl->addWidget (l2,                   0, 1, Qt::AlignCenter);
-    gl->addWidget (l3,                   0, 2, Qt::AlignCenter);
-    gl->addWidget (m_btnActive,          1, 0);
+    gl->addWidget (l1,                   0, 0);
+    gl->addWidget (m_btnActive,          0, 1);
+    gl->addWidget (l2,                   1, 0);
     gl->addWidget (m_btnInactive,        1, 1);
-    gl->addWidget (m_btnBkgnd,           1, 2);
-    gl->addWidget (m_fontChooser,        2, 0, /*rowspan*/1, /*colspan*/ 3);
+    gl->addWidget (l3,                   2, 0);
+    gl->addWidget (m_btnBkgnd,           2, 1);
+    gl->addWidget (m_fontChooser,        3, 0, /*rowspan*/1, /*colspan*/ 2);
 
     connect(m_btnActive,   SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
     connect(m_btnInactive, SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
