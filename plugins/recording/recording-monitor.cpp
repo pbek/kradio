@@ -334,14 +334,8 @@ bool RecordingMonitor::noticeSoundStreamData(SoundStreamID id,
             m_dataMonitor->setEnabled(false);
         }
 
-        double kB = B  / 1024;
-        double MB = kB / 1024;
-        double GB = MB / 1024;
         QString str_size;
-        str_size = i18n("%1 Byte", KGlobal::locale()->formatNumber((int)B, 0));
-        if (kB > 1) str_size = i18n("%1 kB", KGlobal::locale()->formatNumber(kB, 3));
-        if (MB > 1) str_size = i18n("%1 MB", KGlobal::locale()->formatNumber(MB, 3));
-        if (GB > 1) str_size = i18n("%1 GB", KGlobal::locale()->formatNumber(GB, 3));
+        str_size = KGlobal::locale()->formatByteSize(B);
         m_labelSize->setText(str_size);
 
         m_labelRate->setText(i18n("%1 Hz", sf.m_SampleRate));
