@@ -129,7 +129,7 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
             info_func(plugins);
         } else {
             KMessageBox::error(NULL,
-                               i18n("Library %1: Plugin Entry Point is missing\n", lib_name),
+                               i18n("Library %1: plugin entry point is missing", lib_name),
                                i18n("Plugin Library Load Error"));
             library.unload();
             info_func = NULL;
@@ -137,7 +137,7 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
         }
     } else {
             KMessageBox::error(NULL,
-                               i18n("Library %1: \n%2", lib_name,  library.errorString()),
+                               i18n("Library %1:\n%2", lib_name,  library.errorString()),
                                i18n("Plugin Library Load Error"));
     }
 }
@@ -163,7 +163,7 @@ KRadioApp::~KRadioApp()
 
 void KRadioApp::saveState()
 {
-    IErrorLogClient::staticLogDebug(i18n("saveState"));
+    IErrorLogClient::staticLogDebug("KRadioApp::saveState()");
     saveState(&*KGlobal::config());
 }
 
@@ -215,7 +215,7 @@ void KRadioApp::restoreState (KConfig *c)
         int action = KMessageBox::questionYesNoList(NULL,
                                                 i18n("New plugin libraries found. Should the libraries be loaded now?"),
                                                 new_libs,
-                                                i18n("New Plugin Libraries found"),
+                                                i18n("New Plugin Libraries Found"),
                                                 KStandardGuiItem::yes(),
                                                 KStandardGuiItem::no(),
                                                 "autoload_plugins");
@@ -231,11 +231,14 @@ void KRadioApp::restoreState (KConfig *c)
     // minimum number of plugin libs is around 5: radio mux, snd srv, snd card, radio dev, stations
     if (m_PluginLibraries.size() < 5) {
         KMessageBox::error(NULL,
-                           i18n("Found only %1 libraries. Expected a minimum of 5. Please check "
-                                "the KRadio4 installation directory and the environment variables "
-                                "KDEDIR, KDEDIRS and KDEHOME.\n",
-                                m_PluginLibraries.size()
-                                ),
+                           i18np("Found only %1 library. Expected a minimum of 5. Please check "
+                                 "the KRadio4 installation directory and the environment variables "
+                                 "KDEDIR, KDEDIRS and KDEHOME.\n",
+                                 "Found only %1 libraries. Expected a minimum of 5. Please check "
+                                 "the KRadio4 installation directory and the environment variables "
+                                 "KDEDIR, KDEDIRS and KDEHOME.\n",
+                                 m_PluginLibraries.size()
+                                 ),
                            i18n("KRadio4 Installation Error"));
         m_quitting = true;
         return;
@@ -261,7 +264,7 @@ void KRadioApp::restoreState (KConfig *c)
 
     for (int i = 0; i < n; ++i) {
         QString name = global_group.readEntry("instance_name_" + QString::number(i),
-                                              n > 1 ? (i18n("Instance") + " " + QString::number(i+1)) : QString(""));
+                                              n > 1 ? i18n("Instance %1", i+1) : QString(""));
         createNewInstance(name)->restoreState(c);
     }
 }
@@ -310,9 +313,7 @@ void KRadioApp::LoadLibrary (const QString &library)
         }
     } else {
         kDebug()  << QDateTime::currentDateTime().toString(Qt::ISODate)
-                  << " "
-                  << i18n("Error: Loading Library %1 failed: %2", library, libinfo.library.errorString())
-                  << endl;
+                  << " Error: Loading Library" << library << "failed:" << libinfo.library.errorString();
     }
 
     for (QMap<QString, PluginManager*>::iterator it_managers = m_Instances.begin(); it_managers != m_Instances.end(); ++it_managers) {
@@ -360,15 +361,11 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &inst
         retval = m_PluginInfos[class_name].CreateInstance(instanceID, object_name);
         if (!retval) {
             kDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-                     << " "
-                     << i18n("Error: Creation of instance \"%1\" of class %2 failed.", object_name, class_name)
-                     << endl;
+                     << " Error: Creation of instance" << object_name << "of class" << class_name << "failed.";
         }
     } else {
         kDebug()     << QDateTime::currentDateTime().toString(Qt::ISODate)
-                     << " "
-                     << i18n("Error: Cannot create instance \"%1\" of unknown class %2.", object_name, class_name)
-                     << endl;
+                     << " Error: Cannot create instance" << object_name << "of unknown class" << class_name << ".";
     }
 
     create_profiler.stop();

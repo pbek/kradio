@@ -31,7 +31,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Input Buffer Size</string>
+        <string>Input buffer size:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -63,7 +63,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>PCM Output Buffer Size</string>
+        <string>PCM output buffer size:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -98,7 +98,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>libffmpeg: stream info analysis time</string>
+        <string>libffmpeg: stream info analysis time:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -133,7 +133,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Watchdog: Reconnect after</string>
+        <string>Watchdog: reconnect after:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -149,7 +149,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Playback Mixer Device</string>
+        <string>Playback mixer device:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -180,7 +180,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Playback Mixer Channel</string>
+        <string>Playback mixer channel:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -222,7 +222,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Mute Playback Channel on Power Off</string>
+        <string>Mute playback channel on power off:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -245,7 +245,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>libffmpeg: format probe size</string>
+        <string>libffmpeg: format probe size:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

@@ -788,7 +788,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
         if (m_use_threads) {
             if (m_playbackThread) {
-                logError(i18n("AlsaPlugin: internal error. Expected non-existing playback thread, but found one\n"));
+                logError(i18n("AlsaPlugin: internal error. Expected non-existing playback thread, but found one"));
                 m_playbackThread->setDone();
                 if (!m_playbackThread->wait(1000)) {
                     m_playbackThread->terminate();
@@ -852,7 +852,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 
         if (m_use_threads) {
             if (m_captureThread) {
-                logError(i18n("AlsaPlugin: internal error. Expected non-existing capture thread, but found one\n"));
+                logError(i18n("AlsaPlugin: internal error. Expected non-existing capture thread, but found one"));
                 m_captureThread->setDone();
                 if (!m_captureThread->wait(1000)) {
                     m_captureThread->terminate();

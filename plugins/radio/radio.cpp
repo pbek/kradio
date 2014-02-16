@@ -396,7 +396,7 @@ static QString i18nqstrUnknown;
 static QString emptyString;
 const QString &Radio::queryDescription() const
 {
-    return m_activeDevice ? m_activeDevice->getDescription() : (i18nqstrUnknown = i18n("unknown"));
+    return m_activeDevice ? m_activeDevice->getDescription() : (i18nqstrUnknown = i18nc("Unknown description", "unknown"));
 }
 
 bool Radio::queryRDSState () const

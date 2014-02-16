@@ -90,13 +90,13 @@ bool FileRingBuffer::resize(const QString &filename, quint64 new_max_size)
                         newFill += tmp_size;
                     } else {
                         m_error = true;
-                        m_errorString += i18n("FileRingbuffer::resize: Writing to tmpfile %1 failed. ", tmp_file_name);
+                        m_errorString += i18n("FileRingbuffer::resize: Writing to temporary file %1 failed. ", tmp_file_name);
                     }
                 }
             }
         } else {
             m_error = true;
-            m_errorString += i18n("FileRingbuffer::resize: Opening tmpfile %1 failed. ", tmp_file_name);
+            m_errorString += i18n("FileRingbuffer::resize: Opening temporary file %1 failed. ", tmp_file_name);
         }
 
         if (!m_error) {

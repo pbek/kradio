@@ -73,7 +73,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="labelTempFileSize">
        <property name="text">
-        <string>Maximum File Size</string>
+        <string>Maximum file size:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -83,7 +83,7 @@
      <item row="2" column="0">
       <widget class="QLabel" name="labelPlaybackMixerDevice">
        <property name="text">
-        <string>Playback Mixer Device</string>
+        <string>Playback mixer device:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -93,7 +93,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="labelTempFile">
        <property name="text">
-        <string>Temporary File</string>
+        <string>Temporary file:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -106,7 +106,7 @@
      <item row="3" column="0">
       <widget class="QLabel" name="labelPlaybackMixerChannel">
        <property name="text">
-        <string>Playback Mixer Channel</string>
+        <string>Playback mixer channel:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

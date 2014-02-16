@@ -16,7 +16,7 @@
      <item>
       <widget class="QLabel" name="labelSleep">
        <property name="text">
-        <string>sleep countdown</string>
+        <string>Sleep countdown:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -83,7 +83,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Alarms</string>
+          <string>Alarms:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -127,7 +127,7 @@
          <item>
           <widget class="QLabel" name="labelAlarmDate">
            <property name="text">
-            <string>Date</string>
+            <string>Date:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -154,7 +154,7 @@
          <item>
           <widget class="QLabel" name="labelAlarmTime">
            <property name="text">
-            <string>Time</string>
+            <string>Time:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -181,7 +181,7 @@
          <item>
           <widget class="QLabel" name="labelAlarmVolume">
            <property name="text">
-            <string>Volume</string>
+            <string>Volume:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -238,14 +238,14 @@
        <item row="2" column="0">
         <widget class="QCheckBox" name="checkboxAlarmDaily">
          <property name="text">
-          <string>daily/weekly</string>
+          <string>Daily/weekly</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QCheckBox" name="checkboxAlarmEnable">
          <property name="text">
-          <string>enabled</string>
+          <string>Enabled</string>
          </property>
         </widget>
        </item>
@@ -261,7 +261,7 @@
      <item>
       <widget class="QLabel" name="labelStationSelection">
        <property name="text">
-        <string>Radio Station</string>
+        <string>Radio station:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -313,28 +313,28 @@ p, li { white-space: pre-wrap; }
        <item row="0" column="0">
         <widget class="QLabel" name="labelRecordingTemplateFilename">
          <property name="text">
-          <string>Filename</string>
+          <string>Filename:</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="labelRecordingTemplateID3Title">
          <property name="text">
-          <string>ID3 Title</string>
+          <string>ID3 title:</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="labelRecordingTemplateID3Artist">
          <property name="text">
-          <string>ID3 Artist</string>
+          <string>ID3 artist:</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="labelRecordingTemplateID3Genre">
          <property name="text">
-          <string>ID3 Genre</string>
+          <string>ID3 genre:</string>
          </property>
         </widget>
        </item>

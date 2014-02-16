@@ -123,21 +123,21 @@ void DockingConfiguration::languageChange()
 {
     StationSelector::languageChange();
 
-    m_labelClickModeCaption                 -> setText(i18n( "Mouse Click on Tray Icon"        ) );
-    m_labelClickMode      [Qt::LeftButton]  -> setText(i18n( "Left"     ) );
-    m_labelClickMode      [Qt::RightButton] -> setText(i18n( "Right"    ) );
-    m_labelClickMode      [Qt::MidButton]   -> setText(i18n( "Middle"   ) );
-    m_labelClickMode      [Qt::XButton1]    -> setText(i18n( "XButton1" ) );
-    m_labelClickMode      [Qt::XButton2]    -> setText(i18n( "XButton2" ) );
+    m_labelClickModeCaption                 -> setText(i18n( "Mouse click on tray icon:"        ) );
+    m_labelClickMode      [Qt::LeftButton]  -> setText(i18nc( "Mouse button", "Left:"     ) );
+    m_labelClickMode      [Qt::RightButton] -> setText(i18nc( "Mouse button", "Right:"    ) );
+    m_labelClickMode      [Qt::MidButton]   -> setText(i18nc( "Mouse button", "Middle:"   ) );
+    m_labelClickMode      [Qt::XButton1]    -> setText(i18nc( "Mouse button", "XButton1:" ) );
+    m_labelClickMode      [Qt::XButton2]    -> setText(i18nc( "Mouse button", "XButton2:" ) );
 
-    m_labelDoubleClickModeCaption           -> setText(i18n( "Mouse Double-Click on Tray Icon" ) );
-    m_labelDoubleClickMode[Qt::LeftButton]  -> setText(i18n( "Left"     ) );
-    m_labelDoubleClickMode[Qt::RightButton] -> setText(i18n( "Right"    ) );
-    m_labelDoubleClickMode[Qt::MidButton]   -> setText(i18n( "Middle"   ) );
-    m_labelDoubleClickMode[Qt::XButton1]    -> setText(i18n( "XButton1" ) );
-    m_labelDoubleClickMode[Qt::XButton2]    -> setText(i18n( "XButton2" ) );
+    m_labelDoubleClickModeCaption           -> setText(i18n( "Mouse double-click on tray icon:" ) );
+    m_labelDoubleClickMode[Qt::LeftButton]  -> setText(i18nc( "Mouse button", "Left:"     ) );
+    m_labelDoubleClickMode[Qt::RightButton] -> setText(i18nc( "Mouse button", "Right:"    ) );
+    m_labelDoubleClickMode[Qt::MidButton]   -> setText(i18nc( "Mouse button", "Middle:"   ) );
+    m_labelDoubleClickMode[Qt::XButton1]    -> setText(i18nc( "Mouse button", "XButton1:" ) );
+    m_labelDoubleClickMode[Qt::XButton2]    -> setText(i18nc( "Mouse button", "XButton2:" ) );
 
-    m_labelWheelMode                        -> setText(i18n( "Mouse Wheel Action on Tray Icon" ) );
+    m_labelWheelMode                        -> setText(i18n( "Mouse wheel action on tray icon:" ) );
 
     QList<QComboBox*>  allCombos = m_comboClickMode.values();
     allCombos.append(m_comboDoubleClickMode.values());

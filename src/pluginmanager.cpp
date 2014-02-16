@@ -604,7 +604,7 @@ void PluginManager::restoreState (KConfig *c)
         int action = KMessageBox::questionYesNoList(NULL,
                                                     i18n("New plugins found. Do you want me to automatically create instances now?"),
                                                     lines,
-                                                    i18n("New Plugins found"),
+                                                    i18n("New Plugins Found"),
                                                     KStandardGuiItem::yes(),
                                                     KStandardGuiItem::no(),
                                                     "autoload_plugins");
@@ -764,10 +764,10 @@ void PluginManager::updatePluginHideShowMenu()
     }
     m_widgetPluginHideShowMenu->clear();
     QAction *a = NULL;
-    a = m_widgetPluginHideShowMenu->addAction(i18n("Show all"),    this, SLOT(slotShowAllWidgetPlugins()));
-    a = m_widgetPluginHideShowMenu->addAction(i18n("Hide all"),    this, SLOT(slotHideAllWidgetPlugins()));
-    a = m_widgetPluginHideShowMenu->addAction(i18n("Restore all"), this, SLOT(slotRestoreAllWidgetPlugins()));
-    a->setToolTip(i18n("restore state before last hide-all activation"));
+    a = m_widgetPluginHideShowMenu->addAction(i18nc("Show all widget plugins", "Show all"),       this, SLOT(slotShowAllWidgetPlugins()));
+    a = m_widgetPluginHideShowMenu->addAction(i18nc("Hide all widget plugins", "Hide all"),       this, SLOT(slotHideAllWidgetPlugins()));
+    a = m_widgetPluginHideShowMenu->addAction(i18nc("Restore all widget plugins", "Restore all"), this, SLOT(slotRestoreAllWidgetPlugins()));
+    a->setToolTip(i18n("Restore state before last hide-all activation"));
     m_widgetPluginHideShowMenu->addSeparator();
     addWidgetPluginMenuItems(m_widgetPluginHideShowMenu);
 }

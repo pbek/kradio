@@ -56,7 +56,7 @@ RadioViewVolume::RadioViewVolume(QWidget *parent, const QString &name)
 
     // Tooltips
 
-    m_slider->setToolTip(i18n("Change Volume"));
+    m_slider->setToolTip(i18n("Change volume"));
 
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
 }

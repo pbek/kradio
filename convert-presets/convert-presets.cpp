@@ -54,10 +54,7 @@ bool convertFile(const QString &file)
     QFile presetFile (file);
 
     if (! presetFile.open(IO_ReadOnly)) {
-        kDebug() << "convertFile: "
-                 << i18n("error opening preset file")
-                 << " " << file << " "
-                 << i18n("for reading") << endl;
+        kDebug() << "convertFile: error opening preset file" << file << "for reading";
         return false;
     }
 
@@ -135,10 +132,7 @@ bool convertFile(const QString &file)
     ////////////////////////////////////////////////////////////////////////
 
     if (! presetFile.open(IO_WriteOnly)) {
-        kDebug() << "convertFile: "
-                 << i18n("error opening preset file")
-                 << " " << file << " "
-                 << i18n("for writing") << endl;
+        kDebug() << "convertFile: error opening preset file" << file << "for writing";
        return false;
     }
 
@@ -149,11 +143,8 @@ bool convertFile(const QString &file)
     outs << xmlData;
 
     if (presetFile.error() != QFile::NoError) {
-        kDebug() << "StationList::writeXML: "
-                 << i18n("error writing preset file")
-                 << " " << file
-                 << " (" << presetFile.error() << ")"
-                 << endl;
+        kDebug() << "StationList::writeXML: error writing preset file" << file
+                 << "(" << presetFile.error() << ")";
         return false;
     }
 

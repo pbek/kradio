@@ -122,8 +122,8 @@ void LIRCConfiguration::readLIRCConfigurationFile()
 {
     comboPowerOffMode->clear();
     comboPowerOnMode ->clear();
-    comboPowerOffMode->addItem(i18n("<don't care>"), QVariant(""));
-    comboPowerOnMode ->addItem(i18n("<don't care>"), QVariant(""));
+    comboPowerOffMode->addItem(i18n("<do not care>"), QVariant(""));
+    comboPowerOnMode ->addItem(i18n("<do not care>"), QVariant(""));
 
     if (m_LIRC && m_LIRC->getLIRC_fd() >= 0) {
 
@@ -281,7 +281,7 @@ void LIRCConfiguration::slotRenamingStarted(ListViewItemLirc */*sender*/, int /*
 
 void LIRCConfiguration::slotRenamingStopped(ListViewItemLirc */*sender*/, int /*col*/)
 {
-    m_LabelHints->setText(i18n("Double Click on the entries to change the assignments"));
+    m_LabelHints->setText(i18n("Double click on the entries to change the assignments"));
 }
 
 

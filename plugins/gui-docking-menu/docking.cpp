@@ -43,7 +43,7 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(RadioDocking, PROJECT_NAME, i18n("System Tray Icon/Menu for KRadio"));
+PLUGIN_LIBRARY_FUNCTIONS(RadioDocking, PROJECT_NAME, i18n("System Tray Icon/Menu"));
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -265,7 +265,7 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
 /*    KAboutData aboutData("kradio4",
                          NULL,
                          NULL,
-                         I18N_NOOP("Docking Menu for KRadio"),
+                         I18N_NOOP("Docking Menu"),
                          KAboutData::License_GPL,
                          "(c) 2002-2005 Martin Witte, Klas Kalass",
                          0,

@@ -150,7 +150,9 @@ bool TimeControlConfiguration::noticeAlarmsChanged(const AlarmVector &sl)
     for (ciAlarmVector i = alarms.begin(); i != alarms.end(); ++i, ++k) {
         const Alarm &alarm = *i;
         QString      dateString = alarm.nextAlarm(true).toString();
-        dateString += alarm.isEnabled() ? "" : " (disabled)";
+        if (!alarm.isEnabled()) {
+            dateString = i18nc("disabled alarm", "%1 (disabled)", dateString);
+        }
         listAlarms->addItem(dateString);
         QListWidgetItem *item = listAlarms->item(listAlarms->count()-1);
         if (!m_defaultAlarmTextForegroundValid) {
@@ -217,7 +219,7 @@ bool TimeControlConfiguration::noticeStationsChanged(const StationList &sl)
 {
     comboStationSelection->clear();
     stationIDs.clear();
-    comboStationSelection->addItem(i18n("<don't change>"));
+    comboStationSelection->addItem(i18n("<do not change>"));
     stationIDs.push_back(QString::null);
 
     for (StationList::const_iterator i = sl.begin(); i != sl.end(); ++i) {
@@ -327,7 +329,9 @@ void TimeControlConfiguration::slotEnabledChanged( bool b)
         QString          dateString = alarm.nextAlarm(true).toString();
         QListWidgetItem *item       = listAlarms->item(idx);
         alarm.setEnabled(b);
-        dateString += alarm.isEnabled() ? "" : " (disabled)";
+        if (!alarm.isEnabled()) {
+            dateString = i18nc("disabled alarm", "%1 (disabled)", dateString);
+        }
         item->setForeground(!alarm.isEnabled() ? m_disabledAlarmTextForeground : m_enabledAlarmTextForeground);
         item->setText(dateString);
     }

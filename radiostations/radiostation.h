@@ -158,8 +158,8 @@ class KDE_EXPORT UndefinedRadioStation : public RadioStation
 public:
     UndefinedRadioStation (RegisterStationClass) : RadioStation (registerStationClass, getClassName()) {}
 
-    virtual QString       longName()    const { return i18n("unknown"); }
-    virtual QString       description() const { return i18n("unknown"); }
+    virtual QString       longName()    const { return i18nc("Unknown station long name", "unknown"); }
+    virtual QString       description() const { return i18nc("Unknown station description", "unknown"); }
     virtual bool          isValid()     const { return false; }
     virtual RadioStation *copy()        const { return new UndefinedRadioStation(*this); }
     virtual RadioStation *copyNewID()   const { RadioStation *x = new UndefinedRadioStation(*this); x->generateNewStationID(); return x;  }

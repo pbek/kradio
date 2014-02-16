@@ -211,7 +211,7 @@ bool StationList::readXML (const KUrl &url, const IErrorLogClient &logger, bool 
     }
 
     logger.logDebug("StationList::readXML: " +
-             i18n("temporary file: ") + tmpfile);
+             i18n("temporary file: %1", tmpfile));
 
     QFile presetFile (tmpfile);
 
@@ -319,7 +319,7 @@ bool StationList::writeXML (const KUrl &url, const IErrorLogClient &logger, bool
         outs << output;
         if (tmpFile.error()) {
             logger.logError("StationList::writeXML: " +
-                            i18n("error writing to tempfile %1", tmpFileName));
+                            i18n("error writing to temporary file %1", tmpFileName));
             if (enableMessageBox) {
                 QMessageBox::warning(NULL, "KRadio",
                                      i18n("Writing station preset file %1 failed.", tmpFileName));
@@ -350,8 +350,8 @@ bool StationList::writeXML (const KUrl &url, const IErrorLogClient &logger, bool
         }
         return true;
     } else {
-        logger.logError("StationList::writeXML: " + i18n("error creating temp file"));
-        QMessageBox::warning(NULL, "KRadio", i18n("error creating temp file"));
+        logger.logError("StationList::writeXML: " + i18n("error creating temporary file"));
+        QMessageBox::warning(NULL, "KRadio", i18n("error creating temporary file"));
         return false;
     }
 }

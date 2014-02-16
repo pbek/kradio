@@ -300,7 +300,7 @@ void   StreamingJob::slotReadData  (KIO::Job */*job*/, const QByteArray &data)
     qint64 free = m_Buffer.getFreeSize();
     if (free < data.size()) {
         m_SkipCount += data.size() - free;
-        emit logStreamWarning(m_URL, i18n("skipped %1 bytes", data.size() - free));
+        emit logStreamWarning(m_URL, i18np("skipped %1 byte", "skipped %1 bytes", data.size() - free));
     }
     else {
         free = data.size();
@@ -357,7 +357,7 @@ void   StreamingJob::slotWriteData (KIO::Job */*job*/, QByteArray &)
     size_t size = m_Buffer.getFillSize();
     if (size) {
         if (m_SkipCount) {
-            emit logStreamWarning(m_URL, i18n("skipped %1 writes", m_SkipCount));
+            emit logStreamWarning(m_URL, i18np("skipped %1 write", "skipped %1 writes", m_SkipCount));
             m_SkipCount = 0;
         }
         char *buf = new char [size];
@@ -380,7 +380,7 @@ void   StreamingJob::slotWriteData (int fileno)
     size_t size = m_Buffer.getFillSize();
     if (size) {
         if (m_SkipCount) {
-            emit logStreamWarning(m_URL, i18n("skipped %1 writes", m_SkipCount));
+            emit logStreamWarning(m_URL, i18np("skipped %1 write", "skipped %1 writes", m_SkipCount));
             m_SkipCount = 0;
         }
         size_t buf_size = 0;

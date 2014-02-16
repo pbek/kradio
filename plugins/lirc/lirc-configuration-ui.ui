@@ -100,14 +100,14 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Power off .lircrc mode</string>
+      <string>Power off .lircrc mode:</string>
      </property>
     </widget>
    </item>
    <item row="2" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Power on .lircrc mode</string>
+      <string>Power on .lircrc mode:</string>
      </property>
     </widget>
    </item>
@@ -124,14 +124,14 @@
    <item row="4" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>Synchronize .lircrc modes at runtime</string>
+      <string>Synchronize .lircrc modes at runtime:</string>
      </property>
     </widget>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>Synchronize .lircrc modes at startup</string>
+      <string>Synchronize .lircrc modes at startup:</string>
      </property>
     </widget>
    </item>
@@ -158,7 +158,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>LIRC Configuration File</string>
+      <string>LIRC configuration file:</string>
      </property>
     </widget>
    </item>

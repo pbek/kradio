@@ -43,7 +43,7 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(InternetRadio, PROJECT_NAME, i18n("Pseudo radio device for internet radio stream support"));
+PLUGIN_LIBRARY_FUNCTIONS(InternetRadio, PROJECT_NAME, i18n("Pseudo radio device for Internet radio stream support"));
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -1132,7 +1132,7 @@ void InternetRadio::slotWatchdogTimeout()
 {
     if (isPowerOn() && !m_watchdogHandlerInService) {
         m_watchdogHandlerInService = true;
-        logWarning(i18n("Internet Radio Plugin (%1): stream data timeout (>= %2 s)").arg(m_playlistHandler.currentStreamUrl().pathOrUrl()).arg(m_watchdogTimeout));
+        logWarning(i18n("Internet Radio Plugin (%1): stream data timeout (>= %2 s)", m_playlistHandler.currentStreamUrl().pathOrUrl(), m_watchdogTimeout));
         m_playlistHandler.selectNextStream(false, false, false);
         m_watchdogHandlerInService = false;
     }
@@ -1207,15 +1207,15 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //                 QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
 //                 m_streamJob->start();
 //                 if (m_streamJob->error()) {
-//                     logError(i18n("Failed to start stream download of %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+//                     logError(i18n("Failed to start stream download of %1: %2", m_currentStreamUrl.pathOrUrl(), m_streamJob->errorString()));
 //                     stopStreamDownload();
 //                 }
 //             } else {
-//                 logError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_currentStreamUrl.pathOrUrl()));
+//                 logError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer", m_currentStreamUrl.pathOrUrl()));
 //                 stopStreamDownload();
 //             }
 //         } else {
-//             logError(i18n("Failed to start any stream of %1").arg(m_currentStation.longName()));
+//             logError(i18n("Failed to start any stream of %1", m_currentStation.longName()));
 //             powerOff();
 //         }
 //     } while (isPowerOn() && !m_streamJob);
@@ -1261,7 +1261,7 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //     if (m_streamJob == job) {
 //         bool err = false;
 //         if (m_streamJob->error()) {
-//             logError(i18n("Failed to load stream data for %1: %2").arg(m_currentStreamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+//             logError(i18n("Failed to load stream data for %1: %2", m_currentStreamUrl.pathOrUrl(), m_streamJob->errorString()));
 //             err = true;
 //         }
 //         stopStreamDownload();

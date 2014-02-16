@@ -91,7 +91,7 @@ void  PlaylistHandler::selectNextStream(bool allowRetrySameString, bool errorIfE
     } else {
         emit sigEOL();
         if (errorIfEOL) {
-            setError(i18n("Failed to start any stream of %1").arg(m_currentStation.longName()));
+            setError(i18n("Failed to start any stream of %1", m_currentStation.longName()));
         }
     }
 }
@@ -135,10 +135,10 @@ void PlaylistHandler::loadPlaylistStartJob()
             QObject::connect(m_playlistJob, SIGNAL(result(KJob *)),                         this, SLOT(slotPlaylistLoadDone(KJob *)));
             m_playlistJob->start();
             if (m_playlistJob->error()) {
-                setError(i18n("Failed to load playlist %1: %2").arg(m_currentStation.url().pathOrUrl()).arg(m_playlistJob->errorString()));
+                setError(i18n("Failed to load playlist %1: %2", m_currentStation.url().pathOrUrl(), m_playlistJob->errorString()));
             }
         } else {
-            setError(i18n("Failed to start playlist download of %1: KIO::get returned NULL pointer").arg(m_currentStation.url().pathOrUrl()));
+            setError(i18n("Failed to start playlist download of %1: KIO::get returned NULL pointer", m_currentStation.url().pathOrUrl()));
         }
     } else {
         interpretePlaylistData(QByteArray());
@@ -166,14 +166,14 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
     bool local_error = false;
     if (job == m_playlistJob) {
         if (m_playlistData.size() == 0 && m_playlistJob->error()) {
-            setError(i18n("Failed to load playlist %1: %2").arg(m_currentStation.url().pathOrUrl()).arg(m_playlistJob->errorString()));
+            setError(i18n("Failed to load playlist %1: %2", m_currentStation.url().pathOrUrl(), m_playlistJob->errorString()));
             local_error = true;
         } else {
             KIO::MetaData md = m_playlistJob->metaData();
             if (md.contains("responsecode")) {
                 int http_response_code = md["responsecode"].toInt();
                 if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304 && http_response_code != 0) {  // skip 304 NOT MODIFIED http response codes
-                    setError(i18n("Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2").arg(http_response_code).arg(m_currentStation.url().pathOrUrl()));
+                    setError(i18n("Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2", http_response_code, m_currentStation.url().pathOrUrl()));
                     local_error = true;
                 }
             }
@@ -522,7 +522,7 @@ void PlaylistHandler::interpretePlaylistASX(const QByteArray &rawData, bool prob
     }
 
     if (!probe && reader.error() != QXmlStreamReader::NoError) {
-        setError(i18n("error while reading asx file: ", reader.error()));
+        setError(i18n("error while reading asx file: %1", reader.error()));
     }
 }
 

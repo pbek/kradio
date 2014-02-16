@@ -78,7 +78,7 @@ void RecordingEncodingMP3::encode(const char *_buffer, size_t buffer_size, char 
                                    m_MP3BufferSize);
             lameSerialization.unlock();
             if (n < 0) {
-                m_errorString += i18n("Error %1 while encoding mp3. ", QString().setNum(n));
+                m_errorString += i18n("Error %1 while encoding MP3. ", QString().setNum(n));
                 m_error       = true;
             } else if (n > 0) {
                 m_encodedSize += n;
@@ -105,7 +105,7 @@ bool RecordingEncodingMP3::openOutput(const QString &output)
 
         if (!m_LAMEFlags) {
             m_error = true;
-            m_errorString += i18n("Cannot initialize lalibmp3lame. ");
+            m_errorString += i18n("Cannot initialize libmp3lame. ");
         } else {
             lame_set_in_samplerate(m_LAMEFlags, m_config.m_SoundFormat.m_SampleRate);
             lame_set_num_channels(m_LAMEFlags, 2);
@@ -158,7 +158,7 @@ bool RecordingEncodingMP3::openOutput(const QString &output)
 
             if (!m_MP3Buffer || !m_MP3LBuffer || !m_MP3RBuffer) {
                 m_error = true;
-                m_errorString += i18n("Cannot allocate buffers for mp3 encoding. ");
+                m_errorString += i18n("Cannot allocate buffers for MP3 encoding. ");
             }
         }
 
@@ -191,7 +191,7 @@ void RecordingEncodingMP3::closeOutput()
                                       m_MP3BufferSize);
             if (n < 0) {
                 m_error = true;
-                m_errorString += i18n("Error %1 while encoding mp3. ", QString().setNum(n));
+                m_errorString += i18n("Error %1 while encoding MP3. ", QString().setNum(n));
             } else if (n > 0) {
                 int r = fwrite(m_MP3Buffer, 1, n, m_MP3Output);
                 if (r <= 0) {

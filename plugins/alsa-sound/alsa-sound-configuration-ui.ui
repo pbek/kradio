@@ -27,7 +27,7 @@
        <item row="0" column="0">
         <widget class="QCheckBox" name="chkDisablePlayback">
          <property name="text">
-          <string>Disable Pla&amp;yback</string>
+          <string>Disable pla&amp;yback</string>
          </property>
         </widget>
        </item>
@@ -59,7 +59,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>PCM Playback Device</string>
+             <string>PCM playback device:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -95,7 +95,7 @@
           <item row="5" column="0">
            <widget class="QLabel" name="textLabel2_2_2_2">
             <property name="text">
-             <string>Buffer Size</string>
+             <string>Buffer size:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -133,14 +133,14 @@
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Soft Volume Correction Factor</string>
+             <string>Soft volume correction factor:</string>
             </property>
            </widget>
           </item>
           <item row="3" column="0">
            <widget class="QCheckBox" name="cbEnableSoftVolume">
             <property name="text">
-             <string>Soft Playback Volume</string>
+             <string>Soft playback volume:</string>
             </property>
            </widget>
           </item>
@@ -163,7 +163,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>Playback Mixer Card</string>
+             <string>Playback mixer card:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -173,7 +173,7 @@
           <item row="8" column="0">
            <widget class="QLabel" name="textLabel2_2_2_3">
             <property name="text">
-             <string>Buffer Chunk Size</string>
+             <string>Buffer chunk size:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -337,7 +337,7 @@
        <item row="0" column="0">
         <widget class="QCheckBox" name="chkDisableCapture">
          <property name="text">
-          <string>Disa&amp;ble Capture</string>
+          <string>Disa&amp;ble capture</string>
          </property>
         </widget>
        </item>
@@ -363,7 +363,7 @@
           <item row="0" column="0">
            <widget class="QLabel" name="textLabel2_4">
             <property name="text">
-             <string>PCM Capture Device</string>
+             <string>PCM capture device:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -383,7 +383,7 @@
           <item row="1" column="0">
            <widget class="QLabel" name="textLabel2_6">
             <property name="text">
-             <string>Capture Mixer Card</string>
+             <string>Capture mixer card:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -403,7 +403,7 @@
           <item row="2" column="0">
            <widget class="QLabel" name="textLabel2_2_2_4">
             <property name="text">
-             <string>Buffer Size</string>
+             <string>Buffer size:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -461,7 +461,7 @@
           <item row="4" column="0">
            <widget class="QLabel" name="textLabel2_2_2_5">
             <property name="text">
-             <string>Buffer Chunk Size</string>
+             <string>Buffer chunk size:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -560,18 +560,10 @@
           <item row="22" column="0" colspan="3">
            <widget class="QCheckBox" name="chkNonBlockingCapture">
             <property name="toolTip">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
             </property>
             <property name="whatsThis">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
             </property>
             <property name="text">
              <string>Non-blocking I/O (used in KRadio 4.0.1, deprecated)</string>
@@ -584,7 +576,7 @@ p, li { white-space: pre-wrap; }
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Channels</string>
+             <string>Channels:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -597,7 +589,7 @@ p, li { white-space: pre-wrap; }
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Sample Rate</string>
+             <string>Sample rate:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -610,7 +602,7 @@ p, li { white-space: pre-wrap; }
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Sample Bits</string>
+             <string>Sample bits:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -623,7 +615,7 @@ p, li { white-space: pre-wrap; }
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Endianess</string>
+             <string>Endianess:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -770,21 +762,13 @@ p, li { white-space: pre-wrap; }
           <item row="7" column="0">
            <widget class="QCheckBox" name="cbEnableCaptureFormatOverride">
             <property name="toolTip">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
             </property>
             <property name="whatsThis">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia tv/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
             </property>
             <property name="text">
-             <string>Override Capture Format</string>
+             <string>Override capture format</string>
             </property>
            </widget>
           </item>

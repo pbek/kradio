@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
                          "http://kradio.sourceforge.net",
                          NULL
                         );
-    aboutData.addAuthor(ki18n("Ernst Martin Witte"),  ki18n("KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, recording, lirc support, alarms, misc"), "emw@nocabal.de", "http://www.nocabal.de/~emw");
-    aboutData.addAuthor(ki18n("Marcus Camen"),  ki18n("Buildsystem, Standards Conformance, Cleanups"), "mcamen@mcamen.de");
+    aboutData.addAuthor(ki18n("Ernst Martin Witte"),  ki18n("KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, recording, LIRC support, alarms, misc"), "emw@nocabal.de", "http://www.nocabal.de/~emw");
+    aboutData.addAuthor(ki18n("Marcus Camen"),  ki18n("Buildsystem, standards conformance, cleanups"), "mcamen@mcamen.de");
     aboutData.addAuthor(ki18n("Klas Kalass"),   ki18n("Miscellaneous"), "klas.kalass@gmx.de");
-    aboutData.addAuthor(ki18n("Frank Schwanz"), ki18n("initial idea, first basic KDE 2 application"), "schwanz@fh-brandenburg.de");
+    aboutData.addAuthor(ki18n("Frank Schwanz"), ki18n("Initial idea, first basic KDE 2 application"), "schwanz@fh-brandenburg.de");
 
     KCmdLineArgs::init( argc, argv, &aboutData );
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.

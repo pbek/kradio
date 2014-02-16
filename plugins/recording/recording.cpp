@@ -549,7 +549,7 @@ bool Recording::startEncoder(SoundStreamID ssid, const RecordingConfig &_cfg)
 
     QString output = cfg.m_template.filename + ext;
 
-    logInfo(i18n("Recording::outputFile: ") + output);
+    logInfo(i18n("Recording::outputFile: %1", output));
 
     RecordingEncoding *thread = NULL;
     switch (m_config.m_OutputFormat) {

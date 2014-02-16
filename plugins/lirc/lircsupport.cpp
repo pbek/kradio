@@ -80,8 +80,8 @@ LircSupport::~LircSupport()
 
 void LircSupport::LIRC_init_fd()
 {
-    QString dbgStartMsg1 = i18n("initializing kradio lirc plugin");
-    QString dbgStartMsg2 = i18n("warnings/errors about missing sockets don't harm - usually the LIRC daemon is not running in these cases.");
+    QString dbgStartMsg1 = i18n("initializing KRadio LIRC plugin");
+    QString dbgStartMsg2 = i18n("warnings/errors about missing sockets do not harm - usually the LIRC daemon is not running in these cases.");
     logDebug(dbgStartMsg1);
     logDebug(dbgStartMsg2);
     fprintf (stderr, "%s\n%s\n", dbgStartMsg1.toLocal8Bit().data(), dbgStartMsg2.toLocal8Bit().data());
@@ -90,7 +90,7 @@ void LircSupport::LIRC_init_fd()
 
     if (m_fd_lirc == -1) {
         m_lirc_notify = NULL;
-        QString         warnMsg = i18n("Initializing kradio lirc plugin failed");
+        QString         warnMsg = i18n("Initializing KRadio LIRC plugin failed");
         logWarning      (warnMsg);
         staticLogWarning(warnMsg);
         fprintf (stderr, "%s\n", warnMsg.toLocal8Bit().data());
@@ -99,7 +99,7 @@ void LircSupport::LIRC_init_fd()
         if (m_lirc_notify)
             QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
 
-        QString       dbgMsg = i18n("Initializing kradio lirc plugin successful");
+        QString       dbgMsg = i18n("Initializing KRadio LIRC plugin successful");
         logDebug      (dbgMsg);
         staticLogDebug(dbgMsg);
         fprintf (stderr, "%s\n", dbgMsg.toLocal8Bit().data());
@@ -146,13 +146,13 @@ void LircSupport::LIRC_init_config()
                 }
             }
             if (!found) {
-                logWarning(i18n("There is no entry for kradio in your .lircrc files %1.", m_lirc_config_file));
+                logWarning(i18n("There is no entry for KRadio in your .lircrc files %1.", m_lirc_config_file));
                 logWarning(i18n("Please setup your .lircrc file %1 correctly.",           m_lirc_config_file));
             }
 
         } else {
-            logWarning      (i18n("Initializing kradio lirc plugin failed. Could not read config file %1", m_lirc_config_file));
-            staticLogWarning(i18n("Initializing kradio lirc plugin failed. Could not read config file %1", m_lirc_config_file));
+            logWarning      (i18n("Initializing KRadio LIRC plugin failed. Could not read config file %1", m_lirc_config_file));
+            staticLogWarning(i18n("Initializing KRadio LIRC plugin failed. Could not read config file %1", m_lirc_config_file));
         }
         if (lirc_cfg_filename_c) {
             delete lirc_cfg_filename_c;
@@ -258,7 +258,7 @@ void LircSupport::slotLIRC(int /*socket*/ )
     }
     else {
         // some error has occurred on the socket => close lirc plugin
-        logWarning(i18n("Reading from LIRC socket failed. Disabling LIRC Functions till next start of kradio"));
+        logWarning(i18n("Reading from LIRC socket failed. Disabling LIRC functionalities until the next start of KRadio"));
         delete m_lirc_notify;
         m_lirc_notify = NULL;
     }

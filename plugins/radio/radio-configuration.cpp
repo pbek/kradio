@@ -81,13 +81,13 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     editVolumePreset      ->setSpecialValueText(i18n("unchanged"));
 
     comboStereoMode->clear();
-    comboStereoMode->addItem(i18n("<don't care>"), (int)STATION_STEREO_DONTCARE);
-    comboStereoMode->addItem(i18n("Mono"),         (int)STATION_STEREO_OFF);
-    comboStereoMode->addItem(i18n("Stereo"),       (int)STATION_STEREO_ON);
+    comboStereoMode->addItem(i18nc("Sound mode", "<do not care>"),        (int)STATION_STEREO_DONTCARE);
+    comboStereoMode->addItem(i18nc("Sound mode, monophonic", "Mono"),     (int)STATION_STEREO_OFF);
+    comboStereoMode->addItem(i18nc("Sound mode, stereophonic", "Stereo"), (int)STATION_STEREO_ON);
 
     m_loadPopup = new KMenu(buttonLoadPresets);
-    m_loadPopup->addAction(KIcon("document-open"), i18n("load + replace presets"), this, SLOT(slotLoadPresets()));
-    m_loadPopup->addAction(KIcon("list-add"),      i18n("load + add presets"),     this, SLOT(slotAddPresets ()));
+    m_loadPopup->addAction(KIcon("document-open"), i18n("Load and replace presets"), this, SLOT(slotLoadPresets()));
+    m_loadPopup->addAction(KIcon("list-add"),      i18n("Load and add presets"),     this, SLOT(slotAddPresets ()));
     buttonLoadPresets->setMenu(m_loadPopup);
 
     QObject::connect(listStations, SIGNAL(sigCurrentStationChanged(int)),
@@ -584,7 +584,7 @@ void RadioConfiguration::slotStorePresets()
                    this);
     fd.setModal(true);
     fd.setMode(KFile::File);
-    fd.setCaption (i18n("Store Preset File"));
+    fd.setCaption (i18n("Save Preset File"));
 
     if (fd.exec() == QDialog::Accepted) {
         editPresetFile->setUrl(fd.selectedUrl().url());
@@ -661,9 +661,9 @@ void RadioConfiguration::slotSearchStations(QAction *a)
         if (x->exec() == QDialog::Accepted) {
             slotSetDirty();
             const StationList &found = x->getStations();
-            m_logger.logDebug(i18n("found %1 new stations", found.count()));
+            m_logger.logDebug(i18np("found %1 new station", "found %1 new stations", found.count()));
             m_stations.merge(found);
-            m_logger.logDebug(i18n("have now %1 stations", m_stations.count()));
+            m_logger.logDebug(i18np("have now %1 station", "have now %1 stations", m_stations.count()));
             noticeStationsChanged(m_stations);
         }
         delete x;

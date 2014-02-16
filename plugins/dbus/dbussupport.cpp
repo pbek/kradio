@@ -32,13 +32,13 @@
 //// plugin library functions
 
 //#ifdef HAVE_LIRC
-PLUGIN_LIBRARY_FUNCTIONS(DBusSupport, PROJECT_NAME, i18n("DBus Support"));
+PLUGIN_LIBRARY_FUNCTIONS(DBusSupport, PROJECT_NAME, i18n("D-Bus Support"));
 //#endif
 
 /////////////////////////////////////////////////////////////////////////////
 
 DBusSupport::DBusSupport(const QString &instanceID, const QString &name)
-    : PluginBase(instanceID, name, i18n("DBus Plugin"))
+    : PluginBase(instanceID, name, i18n("D-Bus Plugin"))
 {
 }
 
@@ -99,8 +99,8 @@ void   DBusSupport::restoreState (const KConfigGroup &c)
 ConfigPageInfo DBusSupport::createConfigurationPage()
 {
     return ConfigPageInfo (NULL,
-                           i18n("DBus Support"),
-                           i18n("DBus Plugin"),
+                           i18n("D-Bus Support"),
+                           i18n("D-Bus Plugin"),
                            "FIXME");
 }
 

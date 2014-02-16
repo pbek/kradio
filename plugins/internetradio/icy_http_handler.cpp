@@ -87,7 +87,7 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url, const QString &metaDataEnco
         QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
         QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
     } else {
-        IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: KIO::get returned NULL pointer").arg(m_streamUrl.pathOrUrl()));
+        IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: KIO::get returned NULL pointer", m_streamUrl.pathOrUrl()));
         stopStreamDownload(false);
         emit sigError(m_streamUrl);
     }
@@ -107,7 +107,7 @@ void IcyHttpHandler::startStreamJob()
     emit sigStarted(m_streamUrl);
 
     if (m_streamJob->error()) {
-        IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+        IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: %2", m_streamUrl.pathOrUrl(), m_streamJob->errorString()));
         stopStreamDownload(false);
         emit sigError(m_streamUrl);
     }
@@ -423,7 +423,7 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
     if (m_streamJob == job) {
         bool local_err = false;
         if (m_streamJob->error()) {
-            IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: %2").arg(m_streamUrl.pathOrUrl()).arg(m_streamJob->errorString()));
+            IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: %2", m_streamUrl.pathOrUrl(), m_streamJob->errorString()));
             local_err = true;
         }
 
@@ -431,7 +431,7 @@ void IcyHttpHandler::slotStreamDone(KJob *job)
         if (md.contains("HTTP-Headers") && md.contains("responsecode")) {
             int http_response_code = md["responsecode"].toInt();
             if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304) {  // skip 304 NOT MODIFIED http response codes
-                IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2").arg(http_response_code).arg(m_streamUrl.pathOrUrl()));
+                IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2", http_response_code, m_streamUrl.pathOrUrl()));
                 local_err = true;
             }
         }

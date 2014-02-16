@@ -38,7 +38,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>ID3 Genre</string>
+            <string>ID3 genre:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -74,7 +74,7 @@ p, li { white-space: pre-wrap; }
             </sizepolicy>
            </property>
            <property name="text">
-            <string>ID3 Title</string>
+            <string>ID3 title:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -150,7 +150,7 @@ p, li { white-space: pre-wrap; }
          <item row="1" column="0" colspan="2">
           <widget class="QLabel" name="labelMP3Quality">
            <property name="text">
-            <string>MP3 Quality(0 - high, 9 - low)</string>
+            <string>MP3 quality (0 - high, 9 - low):</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -170,7 +170,7 @@ p, li { white-space: pre-wrap; }
            </property>
            <item>
             <property name="text">
-             <string>raw pcm output (.raw)</string>
+             <string>Raw PCM Output (.raw)</string>
             </property>
            </item>
            <item>
@@ -203,7 +203,7 @@ p, li { white-space: pre-wrap; }
          <item row="3" column="0" colspan="2">
           <widget class="QLabel" name="lableDirectory">
            <property name="text">
-            <string>Recording Directory</string>
+            <string>Recording directory:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -213,7 +213,7 @@ p, li { white-space: pre-wrap; }
          <item row="0" column="0" colspan="2">
           <widget class="QLabel" name="lableFileFormat">
            <property name="text">
-            <string>File Format</string>
+            <string>File format:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -223,7 +223,7 @@ p, li { white-space: pre-wrap; }
          <item row="2" column="0">
           <widget class="QLabel" name="labelOggQuality">
            <property name="text">
-            <string>Ogg Quality(0 - low, 9 - high)</string>
+            <string>Ogg quality (0 - low, 9 - high):</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -242,7 +242,7 @@ p, li { white-space: pre-wrap; }
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Filename</string>
+            <string>Filename:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -264,7 +264,7 @@ p, li { white-space: pre-wrap; }
             </sizepolicy>
            </property>
            <property name="text">
-            <string>ID3 Artist</string>
+            <string>ID3 artist:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -353,7 +353,7 @@ p, li { white-space: pre-wrap; }
          <item row="2" column="0">
           <widget class="QLabel" name="lableEndianess">
            <property name="text">
-            <string>Endianess</string>
+            <string>Endianess:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -399,7 +399,7 @@ p, li { white-space: pre-wrap; }
          <item row="0" column="0">
           <widget class="QLabel" name="labelRate">
            <property name="text">
-            <string>Sample Rate</string>
+            <string>Sample rate:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -449,7 +449,7 @@ p, li { white-space: pre-wrap; }
          <item row="3" column="0">
           <widget class="QLabel" name="lableChannels">
            <property name="text">
-            <string>Channels</string>
+            <string>Channels:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -459,7 +459,7 @@ p, li { white-space: pre-wrap; }
          <item row="1" column="0">
           <widget class="QLabel" name="lableBits">
            <property name="text">
-            <string>Sample Bits</string>
+            <string>Sample bits:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -554,7 +554,7 @@ p, li { white-space: pre-wrap; }
          <item row="0" column="0">
           <widget class="QLabel" name="labelEditBufferSize">
            <property name="text">
-            <string>Encoding Buffer Size</string>
+            <string>Encoding buffer size:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -574,7 +574,7 @@ p, li { white-space: pre-wrap; }
          <item row="1" column="0">
           <widget class="QLabel" name="labelEditBufferCount">
            <property name="text">
-            <string>Number of Buffers</string>
+            <string>Number of buffers:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -646,7 +646,7 @@ p, li { white-space: pre-wrap; }
               <bool>false</bool>
              </property>
              <property name="text">
-              <string>PreRecording Time</string>
+              <string>Pre-recording time:</string>
              </property>
              <property name="wordWrap">
               <bool>false</bool>

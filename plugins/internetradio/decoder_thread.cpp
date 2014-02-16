@@ -137,7 +137,7 @@ void InternetRadioDecoder::selectStreamFromPlaylist()
             openAVStream(m_playURL.pathOrUrl(), true);
         }
         if (!m_decoderOpened) {
-            log(ThreadLogging::LogWarning, i18n("failed to open %1. Trying next stream in play list.", m_playURL.pathOrUrl()));
+            log(ThreadLogging::LogWarning, i18n("Failed to open %1. Trying next stream in play list.", m_playURL.pathOrUrl()));
         }
     }
     if (!m_decoderOpened) {
@@ -227,13 +227,13 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
 
     if (processed_input_bytes < 0) {
         /* if error, skip frame */
-        log(ThreadLogging::LogWarning, i18n("%1: error decoding packet. Discarding packet")
+        log(ThreadLogging::LogWarning, i18n("%1: error decoding packet. Discarding packet",
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                         .arg(m_playURL.pathOrUrl())
+                         m_playURL.pathOrUrl()
 #else
-                         .arg(m_inputUrl.pathOrUrl())
+                         m_inputUrl.pathOrUrl()
 #endif
-                        );
+                        ));
         return false;
     }
     else if (generated_output_bytes > 0) {
@@ -591,10 +591,10 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
 
     if (err != 0) {
         if (warningsNotErrors) {
-            log(ThreadLogging::LogWarning, i18n("Could not open Stream %1").arg(stream)); //m_inputUrl.pathOrUrl()));
+            log(ThreadLogging::LogWarning, i18n("Could not open stream %1", stream)); //m_inputUrl.pathOrUrl()));
         } else {
             m_error = true;
-            log(ThreadLogging::LogError, i18n("Could not open Stream %1").arg(m_inputUrl.pathOrUrl()));
+            log(ThreadLogging::LogError, i18n("Could not open stream %1", m_inputUrl.pathOrUrl()));
         }
         closeAVStream();
     } else {
@@ -670,10 +670,10 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 
         if (!iformat) {
             if (warningsNotErrors) {
-                log(ThreadLogging::LogWarning, i18n("Autodetect of stream type failed for %1").arg(m_inputUrl.pathOrUrl()));
+                log(ThreadLogging::LogWarning, i18n("Autodetect of stream type failed for %1", m_inputUrl.pathOrUrl()));
             } else {
                 m_error = true;
-                log(ThreadLogging::LogError, i18n("Autodetect of stream type failed for %1").arg(m_inputUrl.pathOrUrl()));
+                log(ThreadLogging::LogError, i18n("Autodetect of stream type failed for %1", m_inputUrl.pathOrUrl()));
             }
             closeAVStream();
         } else {
@@ -703,10 +703,10 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
 #endif
     if (err < 0) {
         if (warningsNotErrors) {
-            log(ThreadLogging::LogWarning, i18n("Could not find stream information in %1").arg(stream));
+            log(ThreadLogging::LogWarning, i18n("Could not find stream information in %1", stream));
         } else {
             m_error = true;
-            log(ThreadLogging::LogError, i18n("Could not find stream information in %1").arg(stream));
+            log(ThreadLogging::LogError, i18n("Could not find stream information in %1", stream));
         }
         closeAVStream();
         return false; // Couldn't find stream information
@@ -771,10 +771,10 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
 
     if (m_av_audioStream == -1) {
         if (warningsNotErrors) {
-            log(ThreadLogging::LogWarning, i18n("Could not find an audio stream in %1").arg(stream));
+            log(ThreadLogging::LogWarning, i18n("Could not find an audio stream in %1", stream));
         } else {
             m_error = true;
-            log(ThreadLogging::LogError, i18n("Could not find an audio stream in %1").arg(stream));
+            log(ThreadLogging::LogError, i18n("Could not find an audio stream in %1", stream));
         }
         closeAVStream();
         return false;
@@ -794,10 +794,10 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
     }
     if (!m_av_aCodec) {
         if (warningsNotErrors) {
-            log(ThreadLogging::LogWarning, i18n("Could not find a codec for %1").arg(stream));
+            log(ThreadLogging::LogWarning, i18n("Could not find a codec for %1", stream));
         } else {
             m_error = true;
-            log(ThreadLogging::LogError,   i18n("Could not find a codec for %1").arg(stream));
+            log(ThreadLogging::LogError,   i18n("Could not find a codec for %1", stream));
         }
         closeAVStream();
         return false;
@@ -812,10 +812,10 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
 #endif
     if (err < 0) {
         if (warningsNotErrors) {
-            log(ThreadLogging::LogWarning, i18n("Opening codec for %1 failed").arg(stream));
+            log(ThreadLogging::LogWarning, i18n("Opening codec for %1 failed", stream));
         } else {
             m_error = true;
-            log(ThreadLogging::LogError, i18n("Opening codec for %1 failed").arg(stream));
+            log(ThreadLogging::LogError, i18n("Opening codec for %1 failed", stream));
         }
         closeAVStream();
         return false;
@@ -885,7 +885,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
                 log(ThreadLogging::LogWarning, i18n("cannot open MMS stream %1", stream));
             } else {
                 m_error = true;
-                log(ThreadLogging::LogError, i18n("cannot open MMS  %1", stream));
+                log(ThreadLogging::LogError, i18n("cannot open MMS stream %1", stream));
             }
             closeAVStream();
         } else {
@@ -978,7 +978,7 @@ void InternetRadioDecoder::updateSoundFormat()
 #endif
             default:
                 m_error = true;
-                log(ThreadLogging::LogError, i18n("Cannot use libav sample format id %1").arg(fmt));
+                log(ThreadLogging::LogError, i18n("Cannot use libav sample format id %1", fmt));
                 closeAVStream();
                 return;
         }

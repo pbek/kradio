@@ -41,7 +41,7 @@ RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &nam
     QGridLayout *l0 = new QGridLayout(); //, 6, 2);
     l->addLayout(l0);
 
-    l0->addWidget(m_labelHdrSoundStream      = new QLabel(i18n("SoundStream"),    this), 0, 0);
+    l0->addWidget(m_labelHdrSoundStream      = new QLabel(i18n("Sound Stream"),    this), 0, 0);
     l0->addWidget(m_comboSoundStreamSelector = new KComboBox(                     this), 0, 1);
 /*    l0->addWidget(m_labelHdrStatus           = new QLabel(i18n("Status"),         this), 1, 0);
     l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);*/

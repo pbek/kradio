@@ -47,7 +47,7 @@ PLUGIN_LIBRARY_FUNCTIONS(TimeControl, PROJECT_NAME, i18n("Time Control and Alarm
 
 
 TimeControl::TimeControl (const QString &instanceID, const QString &n)
-    : PluginBase(instanceID, n, i18n("TimeControl Plugin")),
+    : PluginBase(instanceID, n, i18n("Time Control Plugin")),
       m_waitingFor(NULL),
       m_countdownSeconds(0),
       m_alarmTimer(this),

@@ -193,7 +193,7 @@ void PluginManagerConfiguration::slotAddLibrary()
         }
         else {
             KMessageBox::error(NULL,
-                               i18n("Library %1: \nCannot load non-local library", url.pathOrUrl()),
+                               i18n("Library %1:\nCannot load non-local library", url.pathOrUrl()),
                                i18n("Plugin Library Load Error"));
         }
     }
@@ -224,7 +224,7 @@ void PluginManagerConfiguration::slotNewPluginInstance()
             ++default_object_id;
 
         QString object_name = KInputDialog::getText(i18n("Enter Plugin Instance Name"),
-                                                    i18n("Instance Name"),
+                                                    i18n("Instance name:"),
                                                     class_name + QString::number(default_object_id),
                                                     &ok);
         if (ok && class_name.length() && object_name.length()) {

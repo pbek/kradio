@@ -27,7 +27,7 @@
       <enum>Qt::TabFocus</enum>
      </property>
      <property name="toolTip">
-      <string>search previous station</string>
+      <string>Search previous station</string>
      </property>
      <property name="text">
       <string/>
@@ -50,7 +50,7 @@
       <enum>Qt::TabFocus</enum>
      </property>
      <property name="toolTip">
-      <string>decrease freq. by 0.05 MHz</string>
+      <string>Decrease frequency by 0.05 MHz</string>
      </property>
      <property name="text">
       <string/>
@@ -104,7 +104,7 @@
       <enum>Qt::TabFocus</enum>
      </property>
      <property name="toolTip">
-      <string>increase freq. by 0.05 MHz</string>
+      <string>Increase frequency by 0.05 MHz</string>
      </property>
      <property name="text">
       <string/>
@@ -124,7 +124,7 @@
       <enum>Qt::TabFocus</enum>
      </property>
      <property name="toolTip">
-      <string>search next station</string>
+      <string>Search next station</string>
      </property>
      <property name="text">
       <string/>

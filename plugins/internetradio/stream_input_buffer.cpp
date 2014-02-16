@@ -69,7 +69,7 @@ QByteArray StreamInputBuffer::readInputBuffer(size_t minSize, size_t maxSize, bo
             if (minSize > m_readPendingReleased) {
                 // this should never happen, but let's handle it gracefully:
                 m_inputBufferSize.release(minSize - m_readPendingReleased);
-                IErrorLogClient::staticLogError(i18n("This should never happen: inconsistency in buffer locking / buffer size!"));
+                IErrorLogClient::staticLogError(i18n("This should never happen: inconsistency in buffer locking / buffer size"));
             }
             m_readPendingReleased -= qMin(m_readPendingReleased, minSize);
         }

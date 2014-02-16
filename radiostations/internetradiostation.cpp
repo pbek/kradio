@@ -152,7 +152,7 @@ QString InternetRadioStation::longName() const
 {
     QString longN = name();
     if (!longN.isEmpty()) {
-        longN = i18n("%1, %2", longN, description());
+        longN = i18nc("<station long name>, <station description>", "%1, %2", longN, description());
     } else {
         longN = description();
     }

@@ -367,7 +367,8 @@ void QuickBar::resizeEvent (QResizeEvent *e)
 void QuickBar::autoSetCaption()
 {
     const RadioStation &rs = queryCurrentStation();
-    setWindowTitle(i18n("KRadio4 Quickbar%1").arg((queryIsPowerOn() && rs.isValid()) ? ", " + rs.longName() : ""));
+    const QString caption = queryIsPowerOn() && rs.isValid() ? i18n("KRadio4 Quickbar, %1", rs.longName()) : i18n("KRadio4 Quickbar");
+    setWindowTitle(caption);
 }
 
 void QuickBar::dragEnterEvent(QDragEnterEvent* event)

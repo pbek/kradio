@@ -33,7 +33,7 @@
        <item row="9" column="0" colspan="2">
         <widget class="QLabel" name="labelScanStep">
          <property name="text">
-          <string>Station scan step</string>
+          <string>Station scan step:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -53,7 +53,7 @@
        <item row="10" column="0" colspan="2">
         <widget class="QLabel" name="labelSignalMinQuality">
          <property name="text">
-          <string>Minimum signal quality</string>
+          <string>Minimum signal quality:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -73,7 +73,7 @@
        <item row="1" column="2" colspan="3">
         <widget class="QLabel" name="labelDescription">
          <property name="text">
-          <string>unknown v4l device</string>
+          <string>Unknown V4L device</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -83,14 +83,14 @@
        <item row="3" column="0" colspan="2">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>V4L Version to use</string>
+          <string>V4L version to use:</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0" colspan="2">
         <widget class="QLabel" name="labelRadioDevice">
          <property name="text">
-          <string>Radio Device</string>
+          <string>Radio device:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -141,7 +141,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Allowed frequency range</string>
+          <string>Allowed frequency range:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -269,7 +269,7 @@
        <item row="5" column="0" colspan="2">
         <widget class="QLabel" name="labelDevMinMaxFrequency">
          <property name="text">
-          <string>Device frequency range</string>
+          <string>Device frequency range:</string>
          </property>
         </widget>
        </item>
@@ -323,14 +323,10 @@
           </sizepolicy>
          </property>
          <property name="toolTip">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.</string>
          </property>
          <property name="text">
-          <string>Device Probing</string>
+          <string>Device probing:</string>
          </property>
         </widget>
        </item>
@@ -352,28 +348,20 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QRadioButton" name="m_rbProbeAtStartup">
            <property name="toolTip">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.</string>
            </property>
            <property name="text">
-            <string>@ startup</string>
+            <string>At startup</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QRadioButton" name="m_rbProbeAtPowerOn">
            <property name="toolTip">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>Probing V4L device capabilities requires opening the device. This might interfere with other application which might currently use the same hardware / driver causing problems / interference. If you experience such issues, you should use the probing only at power on. The only disadvantage might be that in the configuration dialog, you might not see the device description after startup but just the device pseudo file name.</string>
            </property>
            <property name="text">
-            <string>@ power on</string>
+            <string>At power on</string>
            </property>
           </widget>
          </item>
@@ -384,14 +372,14 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QRadioButton" name="rbV4L1Version">
            <property name="text">
-            <string>V4L-1 API</string>
+            <string>V4L1 API</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QRadioButton" name="rbV4L2Version">
            <property name="text">
-            <string>V4L-2 API</string>
+            <string>V4L2 API</string>
            </property>
           </widget>
          </item>
@@ -410,7 +398,7 @@ p, li { white-space: pre-wrap; }
        <item row="0" column="0" colspan="2">
         <widget class="QCheckBox" name="m_checkboxForceRDSEnabled">
          <property name="text">
-          <string>Force RDS Enabled</string>
+          <string>Force RDS enabled</string>
          </property>
         </widget>
        </item>
@@ -423,11 +411,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Note for RDS Support:&lt;/span&gt; If your card supports RDS and RDS is not working, please check if the &lt;span style=&quot; font-weight:600;&quot;&gt;kernel module saa6588.ko&lt;/span&gt; is loaded. For cards with an saa6588 chip, this module is typically &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; loaded automatically. Whether your V4L/V4L2 kernel supports RDS should become visible in the standard radio display when the RDS indicator becomes bright (like the stereo and AM/FM indicators). RDS Radio Text should be visible in the standard radio display and the tooltips of the systray icon. RDS station names are used in the station scan dialog as default names for newly found stations.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;p&gt;&lt;u&gt;Note for RDS support:&lt;/u&gt; if your card supports RDS and RDS is not working, please check if the &lt;b&gt;kernel module saa6588.ko&lt;/b&gt; is loaded. For cards with an saa6588 chip, this module is typically &lt;i&gt;not&lt;/i&gt; loaded automatically. Whether your V4L/V4L2 kernel supports RDS should become visible in the standard radio display when the RDS indicator becomes bright (like the stereo and AM/FM indicators). RDS Radio Text should be visible in the standard radio display and the tooltips of the systray icon. RDS station names are used in the station scan dialog as default names for newly found stations.&lt;/p&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -488,7 +472,7 @@ p, li { white-space: pre-wrap; }
        <item row="1" column="1">
         <widget class="QLabel" name="labelPlaybackMixerChannel">
          <property name="text">
-          <string>Playback Mixer Channel</string>
+          <string>Playback mixer channel:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -508,7 +492,7 @@ p, li { white-space: pre-wrap; }
        <item row="2" column="1">
         <widget class="QLabel" name="labelCaptureMixerDevice">
          <property name="text">
-          <string>Capture Mixer Device</string>
+          <string>Capture mixer device:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -571,7 +555,7 @@ p, li { white-space: pre-wrap; }
        <item row="3" column="1">
         <widget class="QLabel" name="labelCaptureMixerChannel">
          <property name="text">
-          <string>Capture Mixer Channel</string>
+          <string>Capture mixer channel:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -581,7 +565,7 @@ p, li { white-space: pre-wrap; }
        <item row="0" column="1">
         <widget class="QLabel" name="labelPlaybackMixerDevice">
          <property name="text">
-          <string>Playback Mixer Device</string>
+          <string>Playback mixer device:</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -620,21 +604,13 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="toolTip">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt; is required when your radio card is not connected to your sound card via a cable to the line in jack. In this case, KRadio needs to capture the PCM data from a capture sound device in order to send the PCM data to the playback sound device. Therefore, if you enable &lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt;, you have to select a proper capture mixer device/channel and a proper PCM playback mixer/channel. This is particularly important for &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt; which usually need to capture the sound from &lt;span style=&quot; font-style:italic;&quot;&gt;/dev/video24&lt;/span&gt; (or similar). For &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt;, you therefore have to setup the &lt;span style=&quot; font-weight:600;&quot;&gt;Streaming Plugin&lt;/span&gt; properly, too.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;p&gt;&lt;b&gt;Active playback&lt;/b&gt; is required when your radio card is not connected to your sound card via a cable to the line in jack. In this case, KRadio needs to capture the PCM data from a capture sound device in order to send the PCM data to the playback sound device. Therefore, if you enable &lt;b&gt;active playback&lt;/b&gt;, you have to select a proper capture mixer device/channel and a proper PCM playback mixer/channel. This is particularly important for &lt;b&gt;PVR cards&lt;/b&gt; which usually need to capture the sound from &lt;i&gt;/dev/video24&lt;/i&gt; (or similar). For &lt;b&gt;PVR cards&lt;/b&gt;, you therefore have to setup the &lt;b&gt;Streaming Plugin&lt;/b&gt; properly, too.&lt;/p&gt;</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt; is required when your radio card is not connected to your sound card via a cable to the line in jack. In this case, KRadio needs to capture the PCM data from a capture sound device in order to send the PCM data to the playback sound device. Therefore, if you enable &lt;span style=&quot; font-weight:600;&quot;&gt;Active Playback&lt;/span&gt;, you have to select a proper capture mixer device/channel and a proper PCM playback mixer/channel. This is particularly important for &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt; which usually need to capture the sound from &lt;span style=&quot; font-style:italic;&quot;&gt;/dev/video24&lt;/span&gt; (or similar). For &lt;span style=&quot; font-weight:600;&quot;&gt;PVR cards&lt;/span&gt;, you therefore have to setup the &lt;span style=&quot; font-weight:600;&quot;&gt;Streaming Plugin&lt;/span&gt; properly, too.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;p&gt;&lt;b&gt;Active playback&lt;/b&gt; is required when your radio card is not connected to your sound card via a cable to the line in jack. In this case, KRadio needs to capture the PCM data from a capture sound device in order to send the PCM data to the playback sound device. Therefore, if you enable &lt;b&gt;active playback&lt;/b&gt;, you have to select a proper capture mixer device/channel and a proper PCM playback mixer/channel. This is particularly important for &lt;b&gt;PVR cards&lt;/b&gt; which usually need to capture the sound from &lt;i&gt;/dev/video24&lt;/i&gt; (or similar). For &lt;b&gt;PVR cards&lt;/b&gt;, you therefore have to setup the &lt;b&gt;Streaming Plugin&lt;/b&gt; properly, too.&lt;/p&gt;</string>
          </property>
          <property name="text">
-          <string>Use active pla&amp;yback by capturing (use for PVR cards!)</string>
+          <string>Use active pla&amp;yback by capturing (use for PVR cards)</string>
          </property>
         </widget>
        </item>
@@ -727,7 +703,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLabel" name="labelDeviceVolume">
            <property name="text">
-            <string>volume</string>
+            <string>Volume</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -803,7 +779,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLabel" name="labelTreble">
            <property name="text">
-            <string>treble</string>
+            <string>Treble</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -879,7 +855,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLabel" name="labelBass">
            <property name="text">
-            <string>bass</string>
+            <string>Bass</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -952,7 +928,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLabel" name="labelBalance">
            <property name="text">
-            <string>balance</string>
+            <string>Balance</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

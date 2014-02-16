@@ -51,7 +51,7 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(RadioView, PROJECT_NAME, i18n("Standard Display for KRadio"));
+PLUGIN_LIBRARY_FUNCTIONS(RadioView, PROJECT_NAME, i18n("Standard Display"));
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -225,13 +225,13 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     // tooltips
 
     btnConfigure ->setToolTip(i18n("Configure KRadio"));
-    btnPower     ->setToolTip(i18n("Power On/Off"));
-    btnQuit      ->setToolTip(i18n("Quit KRadio Application"));
-    btnRecording ->setToolTip(i18n("Start/Stop Recording"));
-    btnSnooze    ->setToolTip(i18n("Start/Stop Sleep Countdown"));
-    btnPlugins   ->setToolTip(i18n("Show/Hide Plugins"));
+    btnPower     ->setToolTip(i18n("Power on/off"));
+    btnQuit      ->setToolTip(i18n("Quit KRadio application"));
+    btnRecording ->setToolTip(i18n("Start/stop recording"));
+    btnSnooze    ->setToolTip(i18n("Start/stop sleep countdown"));
+    btnPlugins   ->setToolTip(i18n("Show/hide plugins"));
     btnHelp      ->setToolTip(i18n("Help about KRadio and KDE"));
-    comboStations->setToolTip(i18n("Select a Radio Station"));
+    comboStations->setToolTip(i18n("Select a radio station"));
 
     // testing
     addElement (new RadioViewFrequencyRadio (this, QString()));
@@ -404,7 +404,7 @@ bool RadioView::noticeStationChanged (const RadioStation &, int idx)
 bool RadioView::noticeStationsChanged(const StationList &list)
 {
     comboStations->clear();
-    comboStations->addItem("<" + i18n("no preset defined") + ">");
+    comboStations->addItem(i18n("<no preset defined>"));
 
     for (StationList::const_iterator it = list.begin(); it != list.end(); ++it) {
         RadioStation *stn = *it;
@@ -772,7 +772,7 @@ void RadioView::addCommonConfigurationTab(RadioViewConfiguration */*c*/)
     return AboutPageInfo(
               new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
               i18n("Display"),
-              i18n("Standard Radio Display for KRadio"),
+              i18n("Standard Radio Display"),
               "openterm"
            );*/
     //return AboutPageInfo();

@@ -416,7 +416,7 @@ bool V4LRadioConfiguration::noticeDescriptionChanged (const QString &s, const IR
         descr = i18n("Device file does not exist or top level directories are not accessible.");
     }
     else if (!dev.isReadable() && !dev.isWritable()) {
-        descr = i18n("You do not have read+write permissions for the device.");
+        descr = i18n("You do not have read and write permissions for the device.");
     }
     else if (!dev.isReadable()) {
         descr = i18n("You do not have read permissions for the device.");

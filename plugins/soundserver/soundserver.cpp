@@ -29,9 +29,9 @@ PLUGIN_LIBRARY_FUNCTIONS(SoundServer, PROJECT_NAME, i18n("KRadio internal sound 
 /////////////////////////////////////////////////////////////////////////////
 
 SoundServer::SoundServer(const QString &instanceID, const QString &name)
-    : PluginBase(instanceID, name, i18n("SoundServer Plugin"))
+    : PluginBase(instanceID, name, i18n("Sound Server Plugin"))
 {
-    logDebug(i18n("initializing kradio soundserver"));
+    logDebug(i18n("initializing KRadio sound server"));
 }
 
 SoundServer::~SoundServer()

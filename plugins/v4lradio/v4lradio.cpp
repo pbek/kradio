@@ -844,7 +844,7 @@ bool V4LRadio::setFrequency(float freq, const FrequencyRadioStation *rs)
 #endif
         else {
             logError("V4LRadio::setFrequency: " +
-                     i18n("don't known how to handle V4L-version %1", (int)m_V4L_version_override));
+                     i18n("do not known how to handle V4L version %1", (int)m_V4L_version_override));
             for (int i = 0; i < V4L_Version_COUNT; ++i) {
                 logDebug(i18n("%1 Support: %2", V4LVersionStrings[i], m_caps.v4l_version_support[i]));
             }
@@ -1266,7 +1266,7 @@ void   V4LRadio::restoreState (const KConfigGroup &config)
                 if (m_V4L_version_override == 1 && !m_V4L_version_override_by_kernel_once) {
                     m_V4L_version_override_by_kernel_once = true;
                     m_V4L_version_override                = V4L_Version2;
-                    logWarning(i18n("You have selected V4L API Version 1. Starting with kernel 2.6.31, the support for V4L1 seems to be not working properly any more. I'm now once switching to V4L Version 2. You may override it later."));
+                    logWarning(i18n("You have selected V4L API Version 1. Starting with kernel 2.6.31, the support for V4L1 seems to be not working properly any more. I am now once switching to V4L Version 2. You may override it later."));
                 }
             }
         }
@@ -1296,7 +1296,7 @@ void   V4LRadio::restoreState (const KConfigGroup &config)
     m_deviceProbeAtStartup = config.readEntry("DeviceProbeAtStartup", true);
 
     if (found_devname.isNull() && devname == default_devname) {
-        logError(i18n("Could not find an accessible v4l(2) radio device."));
+        logError(i18n("Could not find an accessible V4L(2) radio device."));
     }
 
     setRadioDevice(devname);
@@ -1380,7 +1380,7 @@ QList<DeviceInfo> V4LRadio::getDeviceProposals(const QString &base) const
             QString descr   = caps.deviceDescription;
             descr           = descr.isEmpty() ? devName : descr + "[" + devName + "]";
             if (!permsOK) {
-                descr = i18n("%1 (insufficient permissions)").arg(descr);
+                descr = i18n("%1 (insufficient permissions)", descr);
             }
             retval.append(DeviceInfo(devName, deviceInfo, caps, descr));
         }
@@ -1763,7 +1763,7 @@ bool V4LRadio::readTunerInfo() const
                     QString msg = i18n("V4L2 tuner reported range: %1 ... %2 MHz").arg(tunerMinF).arg(tunerMaxF);
                     if (m_tuner2->rangelow == m_tuner2->rangehigh) {
                         logError(msg);
-                        logError(i18n("Note: you might be running a kernel with a broken v4l2 radio API"));
+                        logError(i18n("Note: you might be running a kernel with a broken V4L2 radio API"));
                     } else {
                         logDebug(msg);
                     }
@@ -1787,7 +1787,7 @@ bool V4LRadio::readTunerInfo() const
 #endif
         else {
             logError("V4LRadio::readTunerInfo: " +
-                     i18n("don't known how to handle V4L-version %1", (int)m_V4L_version_override));
+                     i18n("do not known how to handle V4L version %1", (int)m_V4L_version_override));
             for (int i = 0; i < V4L_Version_COUNT; ++i) {
                 logDebug(i18n("%1 Support: %2", V4LVersionStrings[i], m_caps.v4l_version_support[i]));
             }
@@ -1983,17 +1983,16 @@ bool V4LRadio::updateAudioInfo(bool write) const
 #endif
         else  {
             logError("V4LRadio::updateAudioInfo: " +
-                     i18n("don't known how to handle V4L-version %1", m_V4L_version_override));
+                     i18n("do not known how to handle V4L version %1", m_V4L_version_override));
             for (int i = 0; i < V4L_Version_COUNT; ++i) {
                 logDebug(i18n("%1 Support: %2", V4LVersionStrings[i], m_caps.v4l_version_support[i]));
             }
         }
 
         if (r) {
+            KLocalizedString msg = write ? ki18n("error updating radio audio info (write): %1") : ki18n("error updating radio audio info (read): %1");
             logError("V4LRadio::updateAudioInfo: " +
-                     i18n("error updating radio audio info (%1): %2",
-                          write ? i18n("write") : i18n("read"),
-                          QString().setNum(r)));
+                     msg.subs(QString::number(r)).toString());
             return false;
         }
     }
@@ -2185,7 +2184,7 @@ void  V4LRadio::slotRDSData(int socket)
     size_t r = read(socket, buf, 3);
     if (r != 3) {
         m_RDS_notify->setEnabled(false);
-        logWarning(i18n("error reading RDS data\n"));
+        logWarning(i18n("error reading RDS data"));
     }
     else {
         processRDSData(buf);

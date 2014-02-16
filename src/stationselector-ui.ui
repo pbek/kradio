@@ -17,7 +17,7 @@
    <item row="0" column="2">
     <widget class="QLabel" name="labelSelected">
      <property name="text">
-      <string>Selected Stations</string>
+      <string>Selected stations:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -99,7 +99,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="labelAvailable">
      <property name="text">
-      <string>Available Stations</string>
+      <string>Available stations:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>

@@ -76,11 +76,11 @@ RadioViewFrequencySeeker::RadioViewFrequencySeeker(QWidget *parent, const QStrin
 
     // Tooltips
 
-    m_btnSearchLeft ->setToolTip(i18n("Search for previous Radio Station"));
-    m_btnSearchRight->setToolTip(i18n("Search for next Radio Station"));
-    m_btnStepLeft   ->setToolTip(i18n("Decrement Frequency"));
-    m_btnStepRight  ->setToolTip(i18n("Increment Frequency"));
-    m_sldFrequency  ->setToolTip(i18n("Change Frequency"));
+    m_btnSearchLeft ->setToolTip(i18n("Search for previous radio station"));
+    m_btnSearchRight->setToolTip(i18n("Search for next radio station"));
+    m_btnStepLeft   ->setToolTip(i18n("Decrement frequency"));
+    m_btnStepRight  ->setToolTip(i18n("Increment frequency"));
+    m_sldFrequency  ->setToolTip(i18n("Change frequency"));
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }

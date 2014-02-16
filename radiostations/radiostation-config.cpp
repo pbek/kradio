@@ -46,7 +46,7 @@ RadioStationConfig::~RadioStationConfig()
 UndefinedRadioStationConfig::UndefinedRadioStationConfig (QWidget *parent)
     : RadioStationConfig(parent)
 {
-    new QLabel (i18n("I don't know how to edit this station"), this);
+    new QLabel (i18n("I do not know how to edit this station"), this);
 }
 
 UndefinedRadioStationConfig::~UndefinedRadioStationConfig()
@@ -139,20 +139,20 @@ InternetRadioStationConfig::InternetRadioStationConfig (QWidget *parent)
 
     m_comboDecoderClass->clear();
     m_comboDecoderClass->addItem(i18nc("Stream Format", "<autodetect>"),    QVariant(""));
-    m_comboDecoderClass->addItem(i18n("MP3"),                               QVariant("mp3"));
-    m_comboDecoderClass->addItem(i18n("ACC/ACCP"),                          QVariant("acc"));
-    m_comboDecoderClass->addItem(i18n("ASF"),                               QVariant("asf"));
-//     m_comboDecoderClass->addItem(i18n("ASF Stream"),                        QVariant("asf_stream"));
-    m_comboDecoderClass->addItem(i18n("OGG/Vorbis"),                        QVariant("ogg"));
+    m_comboDecoderClass->addItem(i18nc("Stream Format", "MP3"),             QVariant("mp3"));
+    m_comboDecoderClass->addItem(i18nc("Stream Format", "ACC/ACCP"),        QVariant("acc"));
+    m_comboDecoderClass->addItem(i18nc("Stream Format", "ASF"),             QVariant("asf"));
+//     m_comboDecoderClass->addItem(i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
+    m_comboDecoderClass->addItem(i18nc("Stream Format", "Ogg/Vorbis"),      QVariant("ogg"));
 
     m_comboPlaylistClass->clear();
     m_comboPlaylistClass->addItem(i18nc("Playlist Format", "<autodetect>"), QVariant("auto"));
-    m_comboPlaylistClass->addItem(i18n("<none>"),                           QVariant(""));
-    m_comboPlaylistClass->addItem(i18n("ASX"),                              QVariant("asx"));
-    m_comboPlaylistClass->addItem(i18n("LSC"),                              QVariant("lsc"));
-    m_comboPlaylistClass->addItem(i18n("M3U"),                              QVariant("m3u"));
-    m_comboPlaylistClass->addItem(i18n("PLS"),                              QVariant("pls"));
-    m_comboPlaylistClass->addItem(i18n("WMV"),                              QVariant("wmv"));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "<none>"),       QVariant(""));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "ASX"),          QVariant("asx"));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "LSC"),          QVariant("lsc"));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "M3U"),          QVariant("m3u"));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "PLS"),          QVariant("pls"));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "WMV"),          QVariant("wmv"));
 
 
     vl->addWidget (new QLabel(i18n("Meta-Data Stream Encoding:"), this));

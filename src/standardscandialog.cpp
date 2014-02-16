@@ -223,7 +223,7 @@ void StandardScanDialog::addCurrentStation()
             st->setName(rds_name);
         }
         else {
-            st->setName(i18n("new station ") + s);
+            st->setName(i18n("new station %1", s));
         }
         st->setShortName(s);
         st->generateNewStationID();

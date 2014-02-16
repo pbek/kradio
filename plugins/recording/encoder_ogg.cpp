@@ -97,7 +97,7 @@ void RecordingEncodingOgg::encode(const char *_buffer, size_t buffer_size, char 
 
                 if (n != (ogg_pg.header_len + ogg_pg.body_len)) {
                     m_error = true;
-                    m_errorString += i18n("Failed writing data to ogg/vorbis output stream. ");
+                    m_errorString += i18n("Failed writing data to Ogg/Vorbis output stream. ");
                     break;
                 } else {
 
@@ -151,7 +151,7 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
     SoundFormat &sf = m_config.m_SoundFormat;
     if (vorbis_encode_setup_vbr(&m_VorbisInfo, sf.m_Channels, sf.m_SampleRate, m_config.m_oggQuality)) {
         m_error = true;
-        m_errorString = i18n("Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n");
+        m_errorString = i18n("Ogg/Vorbis Mode initialisation failed: invalid parameters for quality");
         vorbis_info_clear(&m_VorbisInfo);
         return false;
     }
@@ -204,7 +204,7 @@ bool RecordingEncodingOgg::openOutput(const QString &output)
 
         if(n != ogg_page.header_len + ogg_page.body_len) {
             m_error = true;
-            m_errorString += i18n("Failed writing Ogg/Vorbis header to output stream\n");
+            m_errorString += i18n("Failed writing Ogg/Vorbis header to output stream");
             break;
         }
     }

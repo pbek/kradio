@@ -52,7 +52,7 @@
       <item row="3" column="0">
        <widget class="QLabel" name="lableBits">
         <property name="text">
-         <string>Sample Bits</string>
+         <string>Sample bits:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -68,7 +68,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Channels</string>
+         <string>Channels:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -78,7 +78,7 @@
       <item row="4" column="0">
        <widget class="QLabel" name="lableEndianess">
         <property name="text">
-         <string>Endianess</string>
+         <string>Endianess:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -215,7 +215,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Buffer Size</string>
+         <string>Buffer size:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -231,7 +231,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Format</string>
+         <string>Format:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -247,7 +247,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Sample Rate</string>
+         <string>Sample rate:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>

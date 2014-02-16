@@ -32,7 +32,7 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(ErrorLog, PROJECT_NAME, i18n("Error Logging Window for KRadio"));
+PLUGIN_LIBRARY_FUNCTIONS(ErrorLog, PROJECT_NAME, i18n("Error Logging Window"));
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -188,7 +188,7 @@ void ErrorLog::slotUser1()
     fd.setModal(true);
     fd.setMode(KFile::File);
     fd.setOperationMode(KFileDialog::Saving);
-    fd.setWindowTitle (i18n("Save KRadio Logging Data as ..."));
+    fd.setWindowTitle (i18n("Save KRadio Logging Data"));
 
     if (fd.exec() == QDialog::Accepted) {
         KUrl url = fd.selectedUrl();
@@ -213,7 +213,7 @@ void ErrorLog::slotUser1()
 
             if (tmpFile.error()) {
                 logError("ErrorLogger: " +
-                        i18n("error writing to tempfile %1", filename));
+                        i18n("error writing to temporary file %1", filename));
                 return;
             }
 
