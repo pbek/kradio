@@ -24,6 +24,7 @@
 #include <QtCore/QSocketNotifier>
 #include <QtCore/QTimer>
 #include <QtCore/QFile>
+#include <QtCore/QDir>
 
 #include <kapplication.h>
 #include <kaboutdata.h>
@@ -53,7 +54,7 @@ PLUGIN_LIBRARY_FUNCTIONS(LircSupport, PROJECT_NAME, i18n("Linux Infrared Control
 
 LircSupport::LircSupport(const QString &instanceID, const QString &name)
     : PluginBase(instanceID, name, i18n("LIRC Plugin")),
-      m_lirc_config_file(QString(getenv("HOME")) + "/" + LIRCRC),
+      m_lirc_config_file(QDir::homePath() + "/" + LIRCRC),
       m_lirc_notify(NULL),
       m_fd_lirc(-1),
       m_lircConfig(NULL),
@@ -416,7 +417,7 @@ void   LircSupport::restoreState (const KConfigGroup &c)
     PluginBase::restoreState(c);
 
 
-    QString lirc_config_file_default = QString(getenv("HOME")) + "/" LIRCRC;
+    QString lirc_config_file_default = QDir::homePath() + "/" LIRCRC;
 
     m_lirc_config_file               = c.readEntry("lirc-configuration-file", lirc_config_file_default);
 
