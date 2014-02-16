@@ -192,22 +192,11 @@ void LircSupport::setLIRCConfigurationFile(const QString &fname)
 
 void LircSupport::checkLIRCConfigurationFile(const QString &fname)
 {
-    QFile  lircrc(fname);
-    if (!lircrc.exists()) {
+    if (!QFile::exists(fname)) {
         logWarning(i18n("%1 does not exist. File was created with KRadio's default .lircrc proposal", fname));
         QString default_lircrc_filename = KStandardDirs::locate("data", "kradio4/default-dot-lircrc");
-        QFile   default_lircrc(default_lircrc_filename);
-        default_lircrc.open(QIODevice::ReadOnly);
-        if (!default_lircrc.error()) {
-            lircrc.open(QIODevice::WriteOnly);
-            char *buf = new char [default_lircrc.size() + 1];
-            default_lircrc.read(buf, default_lircrc.size());
-            lircrc.write(buf, default_lircrc.size());
-            lircrc.close();
-            default_lircrc.close();
-            delete buf;
-        } else {
-            logError(i18n("failed to read file %1", default_lircrc_filename));
+        if (!QFile::copy(default_lircrc_filename, fname)) {
+            logError(i18n("Failed to copy %1 to %2", default_lircrc_filename, fname));
         }
     }
 }
