@@ -53,7 +53,7 @@ bool convertFile(const QString &file)
 
     QFile presetFile (file);
 
-    if (! presetFile.open(IO_ReadOnly)) {
+    if (! presetFile.open(QIODevice::ReadOnly)) {
         kDebug() << "convertFile: error opening preset file" << file << "for reading";
         return false;
     }
@@ -131,7 +131,7 @@ bool convertFile(const QString &file)
     // write output
     ////////////////////////////////////////////////////////////////////////
 
-    if (! presetFile.open(IO_WriteOnly)) {
+    if (! presetFile.open(QIODevice::WriteOnly)) {
         kDebug() << "convertFile: error opening preset file" << file << "for writing";
        return false;
     }

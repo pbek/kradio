@@ -1,11 +1,4 @@
 
-ADD_DEFINITIONS(
-    -DQT3_SUPPORT
-    -DKDE3_SUPPORT
-    -DQT3_SUPPORT_WARNINGS
-)
-
-
 kde4_add_executable(kradio4-convert-presets
     convert-presets.cpp
 )
