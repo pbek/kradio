@@ -2,34 +2,39 @@
 # Copyright (C) 2011 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kradio package.
 #
-# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2013-02-10 14:22+0100\n"
-"PO-Revision-Date: 2011-01-11 16:00+0200\n"
-"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
-"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"PO-Revision-Date: 2014-01-20 01:23+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: encoder_mp3.cpp:81 encoder_mp3.cpp:194
 #, kde-format
 msgid "Error %1 while encoding mp3. "
-msgstr "Si è verificato un errore durante la decodifica del mp3: %1"
+msgstr "Si è verificato l'errore %1 durante la decodifica del mp3."
 
 #: encoder_mp3.cpp:91 encoder_mp3.cpp:199 encoder_pcm.cpp:53
 #, kde-format
 msgid "Error %1 writing output. "
-msgstr "Si è verificato un errore durante la scrittura dell'output: %1. "
+msgstr ""
+"Si è verificato l'errore %1 durante la scrittura dell'output "
+". "
 
 #: encoder_mp3.cpp:108
 msgid "Cannot initialize lalibmp3lame. "
-msgstr "Impossibile inizializzare lalibmp3lame. "
+msgstr "Impossibile inizializzare libmp3lame. "
 
 #: encoder_mp3.cpp:125
 msgid "Cannot initialize libmp3lame parameters. "
@@ -46,7 +51,7 @@ msgstr "Impossibile aprire il file di output %1. "
 
 #: encoder_mp3.cpp:161
 msgid "Cannot allocate buffers for mp3 encoding. "
-msgstr "Impossibile allocare i buffer della decodifica mp3. "
+msgstr "Impossibile allocare i buffer per la decodifica mp3. "
 
 #: encoder_ogg.cpp:100
 msgid "Failed writing data to ogg/vorbis output stream. "
@@ -79,12 +84,12 @@ msgstr "uscita"
 #. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
 #: rc.cpp:6 rc.cpp:136
 msgid "ID3 Genre"
-msgstr ""
+msgstr "Genere ID3"
 
 #. i18n: file: recording-configuration-ui.ui:61
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory_3)
 #: rc.cpp:10 rc.cpp:140
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -129,42 +134,57 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
-"italic;\">(</span><span style=\" font-weight:600; font-style:italic;\">%s</"
-"span><span style=\" font-style:italic;\">: nome della stazione, </span><span "
-"style=\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-"
-"style:italic;\">: indice della stazione, </span><span style=\" font-"
-"weight:600; font-style:italic;\">%Y</span><span style=\" font-style:italic;"
-"\">: anno a 4 cifre, </span><span style=\" font-weight:600; font-style:"
-"italic;\">%m</span><span style=\" font-style:italic;\">: mese a 2 cifre, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%d</span><span "
-"style=\" font-style:italic;\">: giorno a due cifre, </span><span style=\" "
-"font-weight:600; font-style:italic;\">%B</span><span style=\" font-style:"
-"italic;\">: nome del mese, </span><span style=\" font-weight:600; font-style:"
-"italic;\">%A</span><span style=\" font-style:italic;\"> giorno della "
-"settimana, </span><span style=\" font-weight:600; font-style:italic;\">%H</"
-"span><span style=\" font-style:italic;\">: ore a 2 cifre, </span><span style="
-"\" font-weight:600; font-style:italic;\">%M</span><span style=\" font-style:"
-"italic;\">: minuti a 2 cifre, </span><span style=\" font-weight:600; font-"
-"style:italic;\">%S</span><span style=\" font-style:italic;\"> secondi a 2 "
-"cifre,</span><span style=\" font-weight:600; font-style:italic;\"> %%</"
-"span><span style=\" font-style:italic;\">: letterale %)</span></p></body></"
-"html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'DejaVu Sans'; font-style:italic;\">Modelli di registrazione: </span><"
+"span "
+"style=\" font-family:'DejaVu Sans'; font-weight:600; font-style:italic;\">"
+"%s</span><span style=\" font-family:'DejaVu Sans'; font-style:italic;\">: "
+"nome della stazione, </span><span style=\" font-family:'DejaVu Sans'; font-"
+"weight:600; font-style:italic;\">%i</span><span style=\" font-family:'DejaVu "
+"Sans'; font-style:italic;\">: indice della stazione, </span><span style=\" "
+"font-"
+"family:'DejaVu Sans'; font-weight:600; font-style:italic;\">%Y</span><span "
+"style=\" font-family:'DejaVu Sans'; font-style:italic;\">: anno a 4 cifre, </"
+"span><span style=\" font-family:'DejaVu Sans'; font-weight:600; font-style:"
+"italic;\">%m</span><span style=\" font-family:'DejaVu Sans'; font-style:"
+"italic;\">: mese a 2 cifre, </span><span style=\" font-family:'DejaVu Sans'; "
+"font-weight:600; font-style:italic;\">%d</span><span style=\" font-"
+"family:'DejaVu Sans'; font-style:italic;\">: giorno a 2 cifre, </span><span "
+"style="
+"\" font-family:'DejaVu Sans'; font-weight:600; font-style:italic;\">%B</"
+"span><span style=\" font-family:'DejaVu Sans'; font-style:italic;\">: nome "
+"del "
+"mese, </span><span style=\" font-family:'DejaVu Sans'; font-weight:600; font-"
+"style:italic;\">%A</span><span style=\" font-family:'DejaVu Sans'; font-"
+"style:italic;\"> nome del giorno, </span><span style=\" font-family:'DejaVu "
+"Sans'; "
+"font-weight:600; font-style:italic;\">%H</span><span style=\" font-"
+"family:'DejaVu Sans'; font-style:italic;\">: ora a 2 cifre, </span><span "
+"style=\" font-family:'DejaVu Sans'; font-weight:600; font-style:italic;\">"
+"%M</span><span style=\" font-family:'DejaVu Sans'; font-style:italic;\">: "
+"minuto a "
+"2 cifre, </span><span style=\" font-family:'DejaVu Sans'; font-"
+"weight:600; font-style:italic;\">%S</span><span style=\" font-family:'DejaVu "
+"Sans'; font-style:italic;\"> secondo a 2 cifre,</span><span style=\" font-"
+"family:'DejaVu Sans'; font-weight:600; font-style:italic;\"> %%</span><span "
+"style=\" font-family:'DejaVu Sans'; font-style:italic;\">: letterale %</span>"
+"</"
+"p></body></html>"
 
 #. i18n: file: recording-configuration-ui.ui:77
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)
 #: rc.cpp:17 rc.cpp:147
 msgid "ID3 Title"
-msgstr ""
+msgstr "Titolo ID3"
 
 #. i18n: file: recording-configuration-ui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
 #: rc.cpp:20 rc.cpp:150
 msgid "MP3 Quality(0 - high, 9 - low)"
-msgstr "Qualità del MP3(0 - alta, 9 - bassa)"
+msgstr "Qualità MP3(0 - alta, 9 - bassa)"
 
 #. i18n: file: recording-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
@@ -206,7 +226,7 @@ msgstr "Ogg/Vorbis compresso (.ogg)"
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
 #: rc.cpp:41 rc.cpp:171
 msgid "Recording Directory"
-msgstr "Directory di registrazione"
+msgstr "Cartella di registrazione"
 
 #. i18n: file: recording-configuration-ui.ui:216
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
@@ -218,19 +238,19 @@ msgstr "Formato del file"
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:47 rc.cpp:177
 msgid "Ogg Quality(0 - low, 9 - high)"
-msgstr "Qualità dell'ogg(0 - bassa, 9 - alta)"
+msgstr "Qualità Ogg(0 - bassa, 9 - alta)"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
 #: rc.cpp:50 rc.cpp:180
 msgid "Filename"
-msgstr ""
+msgstr "Nome del file"
 
 #. i18n: file: recording-configuration-ui.ui:267
 #. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
 #: rc.cpp:53 rc.cpp:183
 msgid "ID3 Artist"
-msgstr ""
+msgstr "Artista ID3"
 
 #. i18n: file: recording-configuration-ui.ui:299
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -284,7 +304,7 @@ msgstr "Mono"
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:80 rc.cpp:210 recording-monitor.cpp:54
 msgid "Sample Rate"
-msgstr "Frequenza di campionamento"
+msgstr "Campionamento"
 
 #. i18n: file: recording-configuration-ui.ui:419
 #. i18n: ectx: property (text), item, widget (KComboBox, editEndianess)
@@ -320,19 +340,19 @@ msgstr "Canali"
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:98 rc.cpp:228
 msgid "Sample Bits"
-msgstr "Bit semplici"
+msgstr "Profondità di bit"
 
 #. i18n: file: recording-configuration-ui.ui:479
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
 #: rc.cpp:101 rc.cpp:231
 msgid "Signed"
-msgstr "Firmato"
+msgstr "Con segno"
 
 #. i18n: file: recording-configuration-ui.ui:484
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
 #: rc.cpp:104 rc.cpp:234
 msgid "Unsigned"
-msgstr "Non firmato"
+msgstr "Senza segno"
 
 #. i18n: file: recording-configuration-ui.ui:527
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_3)
@@ -350,7 +370,7 @@ msgstr " kB"
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
 #: rc.cpp:113 rc.cpp:243
 msgid "Encoding Buffer Size"
-msgstr "Dimensione del buffer della codifica"
+msgstr "Dimensione del buffer di codifica"
 
 #. i18n: file: recording-configuration-ui.ui:577
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
@@ -385,16 +405,16 @@ msgstr " s"
 #: rc.cpp:129
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Giovanni Scafora"
+msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:130
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "giovanni@archlinux.org"
+msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
 
 #: recording.cpp:46 recording.cpp:53
 msgid "KRadio Recording Plugin"
-msgstr "Plugin della registrazione di KRadio"
+msgstr "Estensione registrazione di KRadio"
 
 #: recording.cpp:47 recording-monitor.cpp:38
 msgid "KRadio Recording Monitor"
@@ -406,7 +426,7 @@ msgstr "Registrazione"
 
 #: recording.cpp:362
 msgid "start capture not handled"
-msgstr "avvio della cattura non gestita"
+msgstr "avvio della cattura non gestito"
 
 #: recording.cpp:374
 msgid "Recording starting"
@@ -414,7 +434,7 @@ msgstr "Sta per iniziare la registrazione"
 
 #: recording.cpp:376
 msgid "starting encoding thread failed"
-msgstr "si è verificato un errore durante la partenza del thread di codifica"
+msgstr "avvio del thread di codifica non riuscito"
 
 #: recording.cpp:459
 msgid "could not read sufficient data"
@@ -435,7 +455,7 @@ msgstr "Recording::outputFile: "
 
 #: recording.cpp:602
 msgid "The encoding thread did not finish. It will be killed now."
-msgstr "Il thread della codifica non è terminato. Sarà terminato adesso."
+msgstr "Il thread di codifica non è terminato. Sarà terminato adesso."
 
 #: recording.cpp:622
 msgid "Recording stopped"
@@ -484,7 +504,7 @@ msgstr "Tempo di registrazione"
 
 #: recording-monitor.cpp:64
 msgid "&Close"
-msgstr "%Chiudi"
+msgstr "&Chiudi"
 
 #: recording-monitor.cpp:65 recording-monitor.cpp:417
 #: recording-monitor.cpp:420

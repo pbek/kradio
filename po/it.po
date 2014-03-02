@@ -2,21 +2,23 @@
 # Copyright (C) 2011 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kradio package.
 #
-# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2013-02-10 14:22+0100\n"
-"PO-Revision-Date: 2011-01-08 15:00+0200\n"
-"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
-"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"PO-Revision-Date: 2014-01-13 01:12+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
 #, kde-format
@@ -26,7 +28,7 @@ msgstr "%1 Errore: %2"
 #: interfaces/errorlog_interfaces.cpp:50 interfaces/errorlog_interfaces.cpp:77
 #, kde-format
 msgid "%1 Warning: %2"
-msgstr "%1 Attenzione: %2"
+msgstr "%1 Avviso: %2"
 
 #: interfaces/errorlog_interfaces.cpp:57 interfaces/errorlog_interfaces.cpp:84
 #, kde-format
@@ -72,7 +74,7 @@ msgstr "Classe del decoder:"
 
 #: radiostations/radiostation-config.cpp:136
 msgid "Playlist Class:"
-msgstr "Classe della playlist"
+msgstr "Classe della scaletta"
 
 #: radiostations/radiostation-config.cpp:141
 msgctxt "Stream Format"
@@ -122,15 +124,15 @@ msgstr "PLS"
 
 #: radiostations/radiostation-config.cpp:155
 msgid "WMV"
-msgstr ""
+msgstr "WMV"
 
 #: radiostations/radiostation-config.cpp:158
 msgid "Meta-Data Stream Encoding:"
-msgstr ""
+msgstr "Codifica flusso metadati:"
 
 #: radiostations/radiostation-config.cpp:240
 msgid "auto"
-msgstr ""
+msgstr "automatica"
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
@@ -158,7 +160,7 @@ msgstr "dragEnterEvent accettato"
 
 #: radiostations/radiostation-listview.cpp:232
 msgid "dragEnterEvent rejected"
-msgstr "drageEnterEvent rifiutato"
+msgstr "dragEnterEvent rifiutato"
 
 #: radiostations/radiostation-listview.cpp:241
 msgid "contentsDragEnterEvent accepted"
@@ -170,11 +172,11 @@ msgstr "contentsDragEnterEvent rifiutato"
 
 #: radiostations/frequencyradiostation.h:72
 msgid "AM/FM Radio Station"
-msgstr "AM/FM Stazione radio"
+msgstr "Stazione radio AM/FM"
 
 #: radiostations/internetradiostation.h:75
 msgid "Internet Radio Station"
-msgstr "Stazione radio internet"
+msgstr "Stazione radio Internet"
 
 #: radiostations/radiostation.h:161 radiostations/radiostation.h:162
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
@@ -215,7 +217,7 @@ msgid ""
 "<qt>No information available.<br />The supplied KAboutData object does not "
 "exist.</qt>"
 msgstr ""
-"<qt>Nessuna informazione disponibile.<br />L'oggetto fornito, KAboutData, "
+"<qt>Nessuna informazione disponibile.<br />L'oggetto KAboutData fornito "
 "non esiste.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
@@ -249,17 +251,17 @@ msgid ""
 "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
 "bugs.\n"
 msgstr ""
-"Utilizza <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> per "
-"segnalarci evenutali bug.\n"
+"Usa <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> per segnalare "
+"gli errori.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Segnala eventuali bug a <a href=\"mailto:%1\">%2</a>.\n"
+msgstr "Usa <a href=\"mailto:%1\">%2</a> per segnalare gli errori.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
-msgstr "&Grazie a"
+msgstr "&Ringraziamenti"
 
 #: src/kradioaboutwidget.cpp:232
 msgid "T&ranslation"
@@ -267,17 +269,17 @@ msgstr "T&raduzione"
 
 #: src/kradioaboutwidget.cpp:255
 msgid "License Agreement"
-msgstr "&Licenze"
+msgstr "Accordo di licenza"
 
 #: src/kradioapp.cpp:132
 #, kde-format
 msgid "Library %1: Plugin Entry Point is missing\n"
-msgstr "Libreria %1: manca il punto d'ingresso del plugin\n"
+msgstr "Libreria %1: manca il punto d'ingresso dell'estensione\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
-msgstr "Impossibile caricare la libreria del plugin"
+msgstr "Impossibile caricare la libreria dell'estensione"
 
 #: src/kradioapp.cpp:140
 #, kde-format
@@ -295,11 +297,11 @@ msgstr "saveState"
 #: src/kradioapp.cpp:216
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr ""
-"Sono state trovate delle nuove librerie del plugin. Vuoi caricarle adesso?"
+"Sono state trovate delle nuove librerie di estensioni. Vuoi caricarle adesso?"
 
 #: src/kradioapp.cpp:218
 msgid "New Plugin Libraries found"
-msgstr "Sono state trovate delle nuove librerie del plugin"
+msgstr "Sono state trovate delle nuove librerie di estensioni"
 
 #: src/kradioapp.cpp:234
 #, kde-format
@@ -337,14 +339,13 @@ msgstr "Errore, il caricamento della libreria %1 non è andato a buon fine: %2"
 #, kde-format
 msgid "Error: Creation of instance \"%1\" of class %2 failed."
 msgstr ""
-"Errore: la creazione dell'istanza \"%1\" della classe %2 non è andata a buon "
+"Errore: la creazione dell'istanza «%1» della classe %2 non è andata a buon "
 "fine."
 
 #: src/kradioapp.cpp:370
 #, kde-format
 msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr ""
-"Errore: impossibile creare l'istanza \"%1\" della classe sconosciuta %2."
+msgstr "Errore: impossibile creare l'istanza «%1» della classe sconosciuta %2."
 
 #: src/main.cpp:34
 msgid "KRadio4"
@@ -367,7 +368,7 @@ msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, lirc support, alarms, misc"
 msgstr ""
-"Portato su KDE4, supporto RDS, scorciatoie, supporto PVR, riscritto per "
+"Migrazione a KDE4, supporto RDS, scorciatoie, supporto PVR, riscrittura per "
 "1.0/0.3.0, registrazione, supporto lirc, allarmi, varie"
 
 #: src/main.cpp:44
@@ -376,7 +377,7 @@ msgstr "Marcus Camen"
 
 #: src/main.cpp:44
 msgid "Buildsystem, Standards Conformance, Cleanups"
-msgstr "Buildsystem, Standards Conformance, Cleanups"
+msgstr "Sistema di compilazione, conformità agli standard, pulizia"
 
 #: src/main.cpp:45
 msgid "Klas Kalass"
@@ -384,7 +385,7 @@ msgstr "Klas Kalass"
 
 #: src/main.cpp:45
 msgid "Miscellaneous"
-msgstr "Miscellanea"
+msgstr "Varie"
 
 #: src/main.cpp:46
 msgid "Frank Schwanz"
@@ -400,7 +401,7 @@ msgstr "Buffer overflow. "
 
 #: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
-msgstr "Dialogo di configurazione"
+msgstr "Finestra di configurazione"
 
 #: src/pluginmanager-configuration.cpp:196
 #, kde-format
@@ -413,7 +414,7 @@ msgstr ""
 
 #: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
-msgstr "Inserisci il nome dell'istanza del plugin"
+msgstr "Inserisci il nome dell'istanza dell'estensione"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:308
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
@@ -423,36 +424,37 @@ msgstr "Nome dell'istanza"
 
 #: src/pluginmanager.cpp:436
 msgid "Plugins"
-msgstr "Plugin"
+msgstr "Estensioni"
 
 #: src/pluginmanager.cpp:437
 msgid "Plugin Library Configuration"
-msgstr "Configurazione della libreria del plugin"
+msgstr "Configurazione della libreria dell'estensione"
 
 #: src/pluginmanager.cpp:570
 msgid "Starting Plugins"
-msgstr "Avvio dei plugin in corso"
+msgstr "Avvio dell'estensione in corso"
 
 #: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, kde-format
 msgid "Creating Plugin %1"
-msgstr "Creazione del plugin %1 in corso"
+msgstr "Creazione dell'estensione %1 in corso"
 
 #: src/pluginmanager.cpp:605
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
-"Sono stati trovati dei nuovi plugin. Vuoi creare automaticamente delle nuove "
+"Sono state trovate delle nuove estensioni. Vuoi creare automaticamente delle "
+"nuove "
 "istanze adesso?"
 
 #: src/pluginmanager.cpp:607
 msgid "New Plugins found"
-msgstr "Sono stati trovati dei nuovi plugin"
+msgstr "Sono state trovate delle nuove estensioni"
 
 #: src/pluginmanager.cpp:642
 #, kde-format
 msgid "Initializing Plugin %1"
-msgstr "Inizializzazione del plugin %1 in corso"
+msgstr "Inizializzazione dell'estensione %1 in corso"
 
 #: src/pluginmanager.cpp:767
 msgid "Show all"
@@ -505,25 +507,24 @@ msgid ""
 msgstr ""
 "Probabilmente è stato letto un vecchio file di preimpostazione della "
 "stazione.\n"
-"Devi rifare le selezioni della stazione per il menu e per la barra veloce."
+"Devi rifare le selezioni della stazione per la barra veloce ed il menu."
 
 #: src/stationlist.cpp:185
 msgid "parsing failed"
-msgstr "impossibile effettuare il parsing"
+msgstr "analisi non riuscita"
 
 #: src/stationlist.cpp:189
 msgid ""
 "Parsing the station preset file failed.\n"
 "See console output for more details."
 msgstr ""
-"Impossibile effettuare il parsing del file di preimpostazione della "
-"stazione.\n"
+"Impossibile analizzare il file di preimpostazione della stazione.\n"
 "Per maggiori informazioni, dai uno sguardo all'output della console."
 
 #: src/stationlist.cpp:203 src/stationlist.cpp:208
 #, kde-format
 msgid "error downloading preset file %1"
-msgstr "si è verificato un errore durante il download del file %1"
+msgstr "si è verificato un errore durante lo scaricamento del file %1"
 
 #: src/stationlist.cpp:205
 #, kde-format
@@ -543,7 +544,7 @@ msgstr ""
 #: src/stationlist.cpp:223
 #, kde-format
 msgid "Opening of the station preset file at %1 failed."
-msgstr "Impossibile aprire il file di preimpostazione della stazione da %1"
+msgstr "Impossibile aprire il file di preimpostazione della stazione da %1."
 
 #: src/stationlist.cpp:243
 msgid "Old Preset File Format detected"
@@ -641,18 +642,18 @@ msgstr "Nascondi %1"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Giovanni Scafora"
+msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "giovanni@archlinux.org"
+msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:36
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:5
 msgid "Automatic detection and load of new plugins"
-msgstr "Individuazione e caricamento automatico dei nuovi plugin"
+msgstr "Individuazione e caricamento automatico delle nuove estensioni"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:57
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
@@ -670,21 +671,21 @@ msgstr "Controlla/carica automaticamente!"
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:14
 msgid "Please Ask!"
-msgstr "Per favore, chiedi!"
+msgstr "Chiedi!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:17
 msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
 msgstr ""
-"Mostra la barra di avanzamento durante l'avvio dell'iniziali&zzazione del "
-"plugin"
+"Mostra la barra di avanzamento per l'iniziali&zzazione delle estensioni "
+"durante l'avvio"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:114
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
 #: rc.cpp:20
 msgid "Plugin Libraries"
-msgstr "Librerie del plugin"
+msgstr "Librerie delle estensioni"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:123
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
@@ -693,41 +694,43 @@ msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
-"Seleziona una libreria del plugin da un file di dialogo. Sarà aggiunta alla "
-"lista delle librerie, se premi il pulsante \"Load Library\"."
+"Seleziona una libreria dell'estensione dalla finestra di selezione dei file. "
+"Sarà aggiunta all'elenco delle librerie se premi il pulsante «Carica "
+"libreria»."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:136
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
 #: rc.cpp:26
 msgid "Loads the library specified in the box left to this button."
 msgstr ""
-"Carica la libreria specificata nel box situato alla sinistra di questo "
+"Carica la libreria specificata nella casella situata alla sinistra di questo "
 "pulsante."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:155
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
 #: rc.cpp:29
 msgid "list of loaded plugin libraries"
-msgstr "lista delle librerie caricate dei plugin"
+msgstr "elenco delle librerie di estensioni caricate"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:168
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
 #: rc.cpp:32
 msgid "Unload the plugin library selected in the list on the left side"
 msgstr ""
-"Rimuovi la libreria del plugin selezionato nella lista situata sulla sinistra"
+"Rimuovi la libreria di estensione selezionata nell'elenco situato sulla "
+"sinistra"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:195
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
 #: rc.cpp:35
 msgid "Plugin Classes"
-msgstr "Classi del plugin"
+msgstr "Classi delle estensioni"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:210
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
 #: rc.cpp:38
 msgid "List of available plugin classes found in the plugin libraries"
-msgstr "Lista delle classi disponibili trovate nelle librerie dei plugin"
+msgstr "Elenco delle classi di estensioni disponibili trovate nelle librerie"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:217
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -735,34 +738,35 @@ msgstr "Lista delle classi disponibili trovate nelle librerie dei plugin"
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: rc.cpp:41 rc.cpp:56
 msgid "Plugin Class"
-msgstr "Classe del plugin"
+msgstr "Classe di estensione"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:248
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
 #: rc.cpp:47
 msgid "Create a new instance of plugin class selected in the list on the left"
 msgstr ""
-"Crea una nuova istanza della classe del plugin selezionato nella lista sulla "
+"Crea una nuova istanza della classe di estensione selezionata nell'elenco "
+"sulla "
 "sinistra"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:275
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
 #: rc.cpp:50
 msgid "Plugin Instances"
-msgstr "Istanze dei plugin"
+msgstr "Istanze delle estensioni"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:290
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
 #: rc.cpp:53
 msgid "List of the plugin instances currently running"
-msgstr "Lista delle istanze dei plugin attualmente in esecuzione"
+msgstr "Elenco delle istanze delle estensioni attualmente in esecuzione"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:339
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:65
 msgid "Removes/stops the plugin instance selected in the list on the left"
 msgstr ""
-"Rimuovi/ferma l'istanza del plugin selezionato nella lista situata sulla "
+"Rimuovi/ferma l'istanza dell'estensione selezionata nell'elenco situato sulla "
 "sinistra"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:375
@@ -794,12 +798,14 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Puoi "
-"<span style=\" font-weight:600;\">rinominare</span> l'istanza del plugin "
-"cliccando due volte sul nome dell'istanza. Questo nome apparirà sotto "
+"<span style=\" font-weight:600;\">rinominare</span> l'istanza dell'estensione "
+" "
+"facendo clic due volte sul nome dell'istanza. Questo nome apparirà sotto "
 "l'icona della pagina di configurazione, nell'intestazione della pagina di "
 "configurazione e ad esempio nel nome del tuo dispositivo audio. Si "
-"raccomanda di modificare i nomi dei plugin, ad esempio quando avete più di "
-"una scheda audio e/o più istanze dei plugin ALSA.</p></body></html>"
+"raccomanda di modificare i nomi delle estensioni, ad esempio quando avete più "
+"di "
+"una scheda audio e/o più istanze dell'estensione ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
@@ -845,7 +851,7 @@ msgstr "Stazioni disponibili"
 
 #: src/recording_template.h:84
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
-msgstr ""
+msgstr "%s, %m/%d/%Y, %H:%M:%S, registrazione di kradio4"
 
 #~ msgid "PluginManagerConfigurationUI"
 #~ msgstr "PluginManagerConfigurationUI"

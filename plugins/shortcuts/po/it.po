@@ -2,30 +2,33 @@
 # Copyright (C) 2011 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kradio package.
 #
-# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-01-11 15:31+0100\n"
-"PO-Revision-Date: 2011-01-11 16:00+0200\n"
-"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
-"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"PO-Revision-Date: 2014-01-20 00:20+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Giovanni Scafora"
+msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "giovanni@archlinux.org"
+msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
 
 #: shortcuts.cpp:47
 msgid "Shortcuts Support"
@@ -33,7 +36,7 @@ msgstr "Supporto delle scorciatoie"
 
 #: shortcuts.cpp:53 shortcuts.cpp:199
 msgid "Shortcuts Plugin"
-msgstr "Plugin delle scorciatoie"
+msgstr "Estensione delle scorciatoie"
 
 #: shortcuts.cpp:61
 msgid "Standard Actions"
@@ -121,7 +124,7 @@ msgstr "Diminuisci la frequenza"
 
 #: shortcuts.cpp:83
 msgid "Next station"
-msgstr "Prossima stazione"
+msgstr "Stazione successiva"
 
 #: shortcuts.cpp:84
 msgid "Previous station"
@@ -129,20 +132,21 @@ msgstr "Stazione precedente"
 
 #: shortcuts.cpp:85
 msgid "Search next station"
-msgstr "Cerca la prossima stazione"
+msgstr "Ricerca della stazione successiva"
 
 #: shortcuts.cpp:86
 msgid "Search previous station"
-msgstr "Cerca la precedente stazione"
+msgstr "Ricerca della stazione precedente"
 
 #: shortcuts.cpp:87
 msgid "Sleep"
-msgstr "Sleep"
+msgstr "Sospensione"
 
 #: shortcuts.cpp:88
 msgid "Quit KRadio"
-msgstr "Esco da KRadio"
+msgstr "Esci da KRadio"
 
 #: shortcuts.cpp:198
 msgid "Shortcuts"
 msgstr "Scorciatoie"
+

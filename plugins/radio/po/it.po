@@ -2,20 +2,23 @@
 # Copyright (C) 2011 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kradio package.
 #
-# Giovanni Scafora <giovanni@archlinux.org>, 2011.
 #
+# Giovanni Scafora <giovanni@archlinux.org>, 2011.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-01-11 15:31+0100\n"
-"PO-Revision-Date: 2011-01-11 16:00+0200\n"
-"Last-Translator: Giovanni Scafora <giovanni@archlinux.org>\n"
-"Language-Team: Arch Linux Italian Team <giovanni@archlinux.org>\n"
+"PO-Revision-Date: 2014-01-20 00:56+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. i18n: file: radio-configuration-ui.ui:320
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
@@ -27,7 +30,7 @@ msgstr "invariato"
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: radio-configuration.cpp:84 rc.cpp:40 rc.cpp:134
 msgid "<don't care>"
-msgstr "<non ti preoccupare>"
+msgstr "<non importante>"
 
 #. i18n: file: radio-configuration-ui.ui:298
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
@@ -55,7 +58,7 @@ msgstr "Selezione dell'immagine"
 
 #: radio-configuration.cpp:438
 msgid "ignoring non-local image"
-msgstr "Le immagini non lo cali saranno ignorate"
+msgstr "le immagini non locali saranno ignorate"
 
 #: radio-configuration.cpp:555 radio-configuration.cpp:583
 msgid "KRadio Preset Files"
@@ -85,7 +88,7 @@ msgstr "Multiplexer del dispositivo radio centrale"
 
 #: radio.cpp:40
 msgid "Radio Multiplexer Plugin"
-msgstr "Plugin del multiplexer radio"
+msgstr "Estensione multiplexer radio"
 
 #: radio.cpp:133
 msgid "Radio Stations"
@@ -98,7 +101,7 @@ msgstr "Impostazione delle stazioni radio"
 #: radio.cpp:204
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
-msgstr "Impossibile trovare un plugin per la stazione radio %1"
+msgstr "Impossibile trovare un'estensione per la stazione radio %1"
 
 #: radio.cpp:399
 msgid "unknown"
@@ -120,7 +123,7 @@ msgstr "&Preimpostazioni della stazione"
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
 #: rc.cpp:6 rc.cpp:9 rc.cpp:100 rc.cpp:103
 msgid "Search Stations"
-msgstr "Cerca le stazioni"
+msgstr "Cerca stazioni"
 
 #. i18n: file: radio-configuration-ui.ui:123
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
@@ -144,7 +147,7 @@ msgstr "Carica le preimpostazioni"
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
 #: rc.cpp:18 rc.cpp:21 rc.cpp:112 rc.cpp:115
 msgid "Save Presets as ..."
-msgstr "Salva le preimpostazioni come ..."
+msgstr "Salva le preimpostazioni come..."
 
 #. i18n: file: radio-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
@@ -156,7 +159,7 @@ msgstr "Nome"
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
 #: rc.cpp:27 rc.cpp:121
 msgid "Short Name"
-msgstr "Nome corto"
+msgstr "Nome breve"
 
 #. i18n: file: radio-configuration-ui.ui:232
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
@@ -189,10 +192,11 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona il sintonizzatore, "
-"se vuoi forzare la modalità Stereo/Mono. <span style=\" font-style:italic;"
-"\">Fai attenzione, però, perché alcuni driver potrebbero ignorare questa " 
-"impostazione, senza avvisarti.</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona il "
+"sintonizzatore, "
+"se vuoi forzare la modalità Stereo/mono. <span style=\" font-style:italic;"
+"\">Fai attenzione, però, perché alcuni driver potrebbero ignorare questa "
+"impostazione senza avvisarti.</span></p></body></html>"
 
 #. i18n: file: radio-configuration-ui.ui:317
 #. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
@@ -271,7 +275,7 @@ msgstr "Responsabile"
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
 #: rc.cpp:89 rc.cpp:183
 msgid "Last Change"
-msgstr "Ultimo cambiamento"
+msgstr "Ultima modifica"
 
 #. i18n: file: radio-configuration-ui.ui:540
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -280,15 +284,16 @@ msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
 msgstr ""
-"<p align=\"center\">Clicca sul link sottostante per inviare al progetto " 
-"Kradio questo file di preimpostazione della stazione.</p>"
+"<p align=\"center\">Fai clic sul link sottostante per inviare al progetto "
+"KRadio questo file di preimpostazione della stazione.</p>"
 
 #: rc.cpp:93
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Giovanni Scafora"
+msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:94
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "giovanni@archlinux.org"
+msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
+
