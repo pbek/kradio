@@ -81,49 +81,49 @@ void AlsaThread::run()
 
             while(!m_done && !m_error) {
 
-   	        // printf("Enter Locking Buffer Phase\n");
+                   // printf("Enter Locking Buffer Phase\n");
                 m_parent->lockPlaybackBufferTransaction();
-   	        // printf("Entered Locking Buffer Phase\n");
-		
+                   // printf("Entered Locking Buffer Phase\n");
+                
 
                 size_t  buffersize       = 0;
-		size_t  maxAvailableSize = 0;
+                size_t  maxAvailableSize = 0;
                 char   *buffer           = m_parent->getPlaybackData(buffersize, maxAvailableSize);
                 int     n_frames         = buffersize / frameSize;
 
                 if (!buffersize || maxAvailableSize < min_fill) {
                     m_parent->unlockPlaybackBufferTransaction();
-  		    // printf("skipping pcm write: buffersize = %zi, min_fill = %zi\n", maxAvailableSize, min_fill);
-		    emit sigRequestPlaybackData();
+                      // printf("skipping pcm write: buffersize = %zi, min_fill = %zi\n", maxAvailableSize, min_fill);
+                    emit sigRequestPlaybackData();
                     break;
                 }
                 m_parent->setWaitForMinPlaybackBufferFill(0/*percent*/);
 //                 addWarningString(i18n("ALSA Thread: playing, bufsize = %1", buffersize));
 
                 double softVolCorrectionFactor = 1;
-		if (m_parent->getSoftPlaybackVolume(softVolCorrectionFactor)) {
-		    double scale = m_parent->getSoftPlaybackVolumeValue() * softVolCorrectionFactor;
-		    m_soundFormat.scaleSamples(buffer, scale, n_frames);
-		}
+                if (m_parent->getSoftPlaybackVolume(softVolCorrectionFactor)) {
+                    double scale = m_parent->getSoftPlaybackVolumeValue() * softVolCorrectionFactor;
+                    m_soundFormat.scaleSamples(buffer, scale, n_frames);
+                }
 
-		if (needsPrepare) {
+                if (needsPrepare) {
                     // printf("pcm prepare\n");
-		    snd_pcm_prepare(m_alsa_handle);
-		    needsPrepare = false;
-		}
+                    snd_pcm_prepare(m_alsa_handle);
+                    needsPrepare = false;
+                }
 
                 min_fill = 0; // once we start writing, no min fill any more
-   	        // printf("start pcm write: %i frames\n", n_frames);
+                   // printf("start pcm write: %i frames\n", n_frames);
                 int      framesWritten = snd_pcm_writei(m_alsa_handle, buffer, n_frames);
                 int      bytesWritten  = framesWritten * frameSize;
-   	        // printf("end pcm write: frames written = %i\n", framesWritten);
+                   // printf("end pcm write: frames written = %i\n", framesWritten);
 
                 if (framesWritten > 0) {
                     m_parent->freePlaybackData(bytesWritten);
                     ignoreUnderflow = false;
                 }
                 m_parent->unlockPlaybackBufferTransaction();
-   	        // printf("left buffer lock phase\n");
+                   // printf("left buffer lock phase\n");
 
                 if (framesWritten == 0) {
                     m_error = true;
@@ -132,18 +132,18 @@ void AlsaThread::run()
                 } else if (framesWritten == -EAGAIN) {
                     break;
                 } else if (framesWritten < 0 && !ignoreUnderflow){
-		    min_fill     = min_fill_base;
-		    needsPrepare = true;
+                    min_fill     = min_fill_base;
+                    needsPrepare = true;
                     log(ThreadLogging::LogWarning, i18n("ALSA Thread: buffer underrun"));
-		    // printf("========================================================================\n");
-		    // printf("=              UNDERFLOW!!!!!                                           \n");
-		    // printf("========================================================================\n");
+                    // printf("========================================================================\n");
+                    // printf("=              UNDERFLOW!!!!!                                           \n");
+                    // printf("========================================================================\n");
                 }
 
                 // for some reason, the blocking functionality of alsa seems to be suboptimum (causes high CPU load and system calls)
                 // therefore let's wait for one alsa-period
                 if (m_latency_us) {
-		    // printf("alsa snd: waiting for %i us\n", m_latency_us);		  
+                    // printf("alsa snd: waiting for %i us\n", m_latency_us);                  
                     usleep(m_latency_us);
                 }
             }
@@ -158,14 +158,14 @@ void AlsaThread::run()
 
                 if (!bufsize) {
                     m_parent->unlockCaptureBufferTransaction();
-		    emit sigCaptureDataAvailable();
+                    emit sigCaptureDataAvailable();
                     break;
                 }
 
-		if (needsPrepare) {
-		    snd_pcm_prepare(m_alsa_handle);
-		    needsPrepare = false;
-		}
+                if (needsPrepare) {
+                    snd_pcm_prepare(m_alsa_handle);
+                    needsPrepare = false;
+                }
 
                 int    framesRead = snd_pcm_readi(m_alsa_handle, buffer, bufsize / frameSize);
                 size_t bytesRead  = framesRead > 0 ? framesRead * frameSize : 0;
@@ -198,7 +198,7 @@ void AlsaThread::run()
                 } else if (framesRead == -EAGAIN) {
                     break;
                 } else if (framesRead < 0) {
-		    needsPrepare = true;
+                    needsPrepare = true;
                     log(ThreadLogging::LogWarning, i18n("AlsaThread: buffer overrun"));
                 }
 
@@ -210,7 +210,7 @@ void AlsaThread::run()
             }
         }
         // happens if there is some error or no new sound data for playing or recording
-	// printf ("long usleep\n");
+        // printf ("long usleep\n");
         usleep(10000);
     }
     snd_pcm_prepare(m_alsa_handle);
