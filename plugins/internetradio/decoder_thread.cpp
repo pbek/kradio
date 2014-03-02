@@ -780,7 +780,7 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
         return false;
     }
     updateSoundFormat();
-    return true;
+    return m_av_pFormatCtx_opened;
 }
 
 
@@ -975,6 +975,14 @@ void InternetRadioDecoder::updateSoundFormat()
                 issigned = true;
                 isplanar = true;
                 break;
+            case AV_SAMPLE_FMT_FLT:
+            case AV_SAMPLE_FMT_DBL:
+            case AV_SAMPLE_FMT_FLTP:
+            case AV_SAMPLE_FMT_DBLP:
+                m_error = true;
+                log(ThreadLogging::LogError, i18n("Not yet implemented: libav sample format id %1", fmt));
+                closeAVStream();
+                return;
 #endif
             default:
                 m_error = true;
