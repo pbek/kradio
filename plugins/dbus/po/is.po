@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_dbus\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 16:19+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-06-15 13:31+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -18,9 +18,11 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: dbussupport.cpp:35 dbussupport.cpp:102
-msgid "DBus Support"
+#, fuzzy
+msgid "D-Bus Support"
 msgstr "DBus stuðningur"
 
 #: dbussupport.cpp:41 dbussupport.cpp:103
-msgid "DBus Plugin"
+#, fuzzy
+msgid "D-Bus Plugin"
 msgstr "DBus íforrit"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -116,14 +116,16 @@ msgstr "No se puede abrir dispositivo mezclador %1"
 #: oss-sound.cpp:771
 #, kde-format
 msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
-msgstr "OSSSoundDevice::getMixerChannels: No se puede abrir dispositivo mezclador %1"
+msgstr ""
+"OSSSoundDevice::getMixerChannels: No se puede abrir dispositivo mezclador %1"
 
 #: oss-sound.cpp:785
 #, kde-format
 msgid ""
 "OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
 msgstr ""
-"OSSSoundDevide::getMixerChannels: No se puede leer máscara de dispositivo mezclador en dispositivo %1"
+"OSSSoundDevide::getMixerChannels: No se puede leer máscara de dispositivo "
+"mezclador en dispositivo %1"
 
 #: oss-sound.cpp:890
 #, kde-format
@@ -138,7 +140,9 @@ msgstr "error %1 mientras se ajustaba el volumen a %2 en dispositivo %3"
 #: oss-sound.cpp:929
 #, kde-format
 msgid "Selecting recording source on device %1 failed with error code %2"
-msgstr "Seleccionando origen de grabación en dispositivo %1 fallido con código de error %2"
+msgstr ""
+"Seleccionando origen de grabación en dispositivo %1 fallido con código de "
+"error %2"
 
 #: oss-sound.cpp:935
 #, kde-format
@@ -164,13 +168,15 @@ msgstr "Dispositivos"
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
-msgid "PCM Device"
+#, fuzzy
+msgid "PCM device:"
 msgstr "Dispositivo PCM"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
-msgid "Mixer Device"
+#, fuzzy
+msgid "Mixer device:"
 msgstr "Dispositivo Mezclador"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
@@ -194,13 +200,15 @@ msgstr "Opciones Extendidas"
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
-msgid "Disable Playback"
+#, fuzzy
+msgid "Disable playback"
 msgstr "Deshabilitar Playback"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
-msgid "Disable Capture"
+#, fuzzy
+msgid "Disable capture"
 msgstr "Deshabilitar Captura"
 
 #: rc.cpp:25

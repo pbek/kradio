@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2011-02-06 05:15+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -39,19 +39,21 @@ msgstr "Mono"
 #. i18n: file: streaming-configuration-ui.ui:55
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:12 rc.cpp:103
-msgid "Sample Bits"
+msgid "Sample bits:"
 msgstr ""
 
 #. i18n: file: streaming-configuration-ui.ui:71
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:15 rc.cpp:106
-msgid "Channels"
+#, fuzzy
+msgid "Channels:"
 msgstr "Kanallar"
 
 #. i18n: file: streaming-configuration-ui.ui:81
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:18 rc.cpp:109
-msgid "Endianess"
+#, fuzzy
+msgid "Endianess:"
 msgstr "Endianess"
 
 #. i18n: file: streaming-configuration-ui.ui:98
@@ -123,19 +125,21 @@ msgstr "kB"
 #. i18n: file: streaming-configuration-ui.ui:218
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
 #: rc.cpp:54 rc.cpp:145
-msgid "Buffer Size"
+#, fuzzy
+msgid "Buffer size:"
 msgstr "Önbellek Boyutu"
 
 #. i18n: file: streaming-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
 #: rc.cpp:57 rc.cpp:148
-msgid "Format"
+#, fuzzy
+msgid "Format:"
 msgstr "Biçim"
 
 #. i18n: file: streaming-configuration-ui.ui:250
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:60 rc.cpp:151
-msgid "Sample Rate"
+msgid "Sample rate:"
 msgstr ""
 
 #. i18n: file: streaming-configuration-ui.ui:267
@@ -261,8 +265,11 @@ msgstr "%1 (%2)"
 
 #: streaming-job.cpp:303
 #, kde-format
-msgid "skipped %1 bytes"
-msgstr ""
+msgid "skipped %1 byte"
+msgid_plural "skipped %1 bytes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: streaming-job.cpp:347 streaming-job.cpp:398
 #, kde-format
@@ -271,8 +278,11 @@ msgstr "hata numarası %1"
 
 #: streaming-job.cpp:360 streaming-job.cpp:383
 #, kde-format
-msgid "skipped %1 writes"
-msgstr ""
+msgid "skipped %1 write"
+msgid_plural "skipped %1 writes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: streaming-job.cpp:453
 #, kde-format

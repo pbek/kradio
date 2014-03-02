@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-07 15:04+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2010-09-27 12:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -18,36 +18,38 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#. i18n: file: radio-configuration-ui.ui:320
+#. i18n: file: radio-configuration-ui.ui:316
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: radio-configuration.cpp:81 rc.cpp:52 rc.cpp:146
+#: radio-configuration.cpp:81 rc.cpp:48 rc.cpp:138
 msgid "unchanged"
 msgstr "без змін"
 
-#. i18n: file: radio-configuration-ui.ui:293
-#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
-#: radio-configuration.cpp:84 rc.cpp:40 rc.cpp:134
-msgid "<don't care>"
+#: radio-configuration.cpp:84
+#, fuzzy
+msgctxt "Sound mode"
+msgid "<do not care>"
 msgstr "<байдуже>"
 
-#. i18n: file: radio-configuration-ui.ui:298
-#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
-#: radio-configuration.cpp:85 rc.cpp:43 rc.cpp:137
+#: radio-configuration.cpp:85
+#, fuzzy
+msgctxt "Sound mode, monophonic"
 msgid "Mono"
 msgstr "Моно"
 
-#. i18n: file: radio-configuration-ui.ui:303
-#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
-#: radio-configuration.cpp:86 rc.cpp:46 rc.cpp:140
+#: radio-configuration.cpp:86
+#, fuzzy
+msgctxt "Sound mode, stereophonic"
 msgid "Stereo"
 msgstr "Стерео"
 
 #: radio-configuration.cpp:89
-msgid "load + replace presets"
+#, fuzzy
+msgid "Load and replace presets"
 msgstr "завантажити + замінити списки"
 
 #: radio-configuration.cpp:90
-msgid "load + add presets"
+#, fuzzy
+msgid "Load and add presets"
 msgstr "завантажити + додати списки"
 
 #: radio-configuration.cpp:433
@@ -67,18 +69,25 @@ msgid "Select Preset File"
 msgstr "Оберіть файл радіостанцій"
 
 #: radio-configuration.cpp:587
-msgid "Store Preset File"
+#, fuzzy
+msgid "Save Preset File"
 msgstr "Зберегти файл радіостанцій"
 
 #: radio-configuration.cpp:664
-#, kde-format
-msgid "found %1 new stations"
-msgstr "знайдено %1 нових станцій"
+#, fuzzy, kde-format
+msgid "found %1 new station"
+msgid_plural "found %1 new stations"
+msgstr[0] "знайдено %1 нових станцій"
+msgstr[1] "знайдено %1 нових станцій"
+msgstr[2] "знайдено %1 нових станцій"
 
 #: radio-configuration.cpp:666
-#, kde-format
-msgid "have now %1 stations"
-msgstr "зараз відомо про %1 станцій"
+#, fuzzy, kde-format
+msgid "have now %1 station"
+msgid_plural "have now %1 stations"
+msgstr[0] "зараз відомо про %1 станцій"
+msgstr[1] "зараз відомо про %1 станцій"
+msgstr[2] "зараз відомо про %1 станцій"
 
 #: radio.cpp:35
 msgid "Central Radio Device Multiplexer"
@@ -102,12 +111,14 @@ msgid "Could not find a plugin for radio station %1"
 msgstr "Не вдалося знайти модуль для радіостанції %1"
 
 #: radio.cpp:399
+#, fuzzy
+msgctxt "Unknown description"
 msgid "unknown"
 msgstr "невідомо"
 
 #. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
-#: rc.cpp:3 rc.cpp:97
+#: rc.cpp:3 rc.cpp:93
 msgid "Station &Presets"
 msgstr "Набори &радіостанцій"
 
@@ -119,8 +130,9 @@ msgstr "Набори &радіостанцій"
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
 #. i18n: file: radio-configuration-ui.ui:107
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
-#: rc.cpp:6 rc.cpp:9 rc.cpp:100 rc.cpp:103
-msgid "Search Stations"
+#: rc.cpp:6 rc.cpp:9 rc.cpp:96 rc.cpp:99
+#, fuzzy
+msgid "Search stations"
 msgstr "Шукати радіостанції"
 
 #. i18n: file: radio-configuration-ui.ui:123
@@ -131,8 +143,9 @@ msgstr "Шукати радіостанції"
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
 #. i18n: file: radio-configuration-ui.ui:126
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
-#: rc.cpp:12 rc.cpp:15 rc.cpp:106 rc.cpp:109
-msgid "Load Presets"
+#: rc.cpp:12 rc.cpp:15 rc.cpp:102 rc.cpp:105
+#, fuzzy
+msgid "Load presets"
 msgstr "Завантажити списки"
 
 #. i18n: file: radio-configuration-ui.ui:142
@@ -143,140 +156,151 @@ msgstr "Завантажити списки"
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
 #. i18n: file: radio-configuration-ui.ui:145
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
-#: rc.cpp:18 rc.cpp:21 rc.cpp:112 rc.cpp:115
-msgid "Save Presets as ..."
+#: rc.cpp:18 rc.cpp:21 rc.cpp:108 rc.cpp:111
+#, fuzzy
+msgid "Save presets as..."
 msgstr "Зберегти списки як…"
 
 #. i18n: file: radio-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
-#: rc.cpp:24 rc.cpp:118
-msgid "Name"
+#: rc.cpp:24 rc.cpp:114
+#, fuzzy
+msgid "Name:"
 msgstr "Назва"
 
 #. i18n: file: radio-configuration-ui.ui:208
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
-#: rc.cpp:27 rc.cpp:121
-msgid "Short Name"
+#: rc.cpp:27 rc.cpp:117
+#, fuzzy
+msgid "Short name:"
 msgstr "Скорочена назва"
 
 #. i18n: file: radio-configuration-ui.ui:232
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
-#: rc.cpp:30 rc.cpp:124
-msgid "Pixmap File"
+#: rc.cpp:30 rc.cpp:120
+#, fuzzy
+msgid "Pixmap file:"
 msgstr "Піктограма"
 
-#. i18n: file: radio-configuration-ui.ui:289
+#. i18n: file: radio-configuration-ui.ui:285
 #. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
-#: rc.cpp:33 rc.cpp:127
+#: rc.cpp:33 rc.cpp:123
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Select if you want to "
-"force the tuner to Stereo/Mono mode. <span style=\" font-style:italic;"
-"\">Please be aware, that some drivers might ignore this flag without saying "
-"they will ignore it.</span></p></body></html>"
+"<p>Select if you want to force the tuner to stereo/mono mode. <i>Please be "
+"aware, that some drivers might ignore this flag without saying they will "
+"ignore it.</i></p>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Визначіться з тим, чи "
-"бажаєте ви примусово перемкнути тюнер у режим Стерео/Моно. <span style=\" "
-"font-style:italic;\">Будь ласка, майте на увазі, що деякі драйвери можуть "
-"ігнорувати цей параметр без попередження.</span></p></body></html>"
 
-#. i18n: file: radio-configuration-ui.ui:317
+#. i18n: file: radio-configuration-ui.ui:289
+#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
+#: rc.cpp:36 rc.cpp:126
+#, fuzzy
+msgid "<do not care>"
+msgstr "<байдуже>"
+
+#. i18n: file: radio-configuration-ui.ui:294
+#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
+#: rc.cpp:39 rc.cpp:129
+msgid "Mono"
+msgstr "Моно"
+
+#. i18n: file: radio-configuration-ui.ui:299
+#. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
+#: rc.cpp:42 rc.cpp:132
+msgid "Stereo"
+msgstr "Стерео"
+
+#. i18n: file: radio-configuration-ui.ui:313
 #. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:49 rc.cpp:143
+#: rc.cpp:45 rc.cpp:135
 msgid "The volume that is used when the station is tuned"
 msgstr "Гучність після налаштування на цю станцію"
 
-#. i18n: file: radio-configuration-ui.ui:323
+#. i18n: file: radio-configuration-ui.ui:319
 #. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:56 rc.cpp:150
+#: rc.cpp:52 rc.cpp:142
 #, no-c-format
 msgid " %"
 msgstr " %"
 
-#. i18n: file: radio-configuration-ui.ui:336
+#. i18n: file: radio-configuration-ui.ui:332
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
-#: rc.cpp:59 rc.cpp:153
-msgid "Stereo Mode"
+#: rc.cpp:55 rc.cpp:145
+#, fuzzy
+msgid "Stereo mode:"
 msgstr "Режим стерео"
 
-#. i18n: file: radio-configuration-ui.ui:346
+#. i18n: file: radio-configuration-ui.ui:342
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
-#: rc.cpp:62 rc.cpp:156
-msgid "Volume Preset"
+#: rc.cpp:58 rc.cpp:148
+#, fuzzy
+msgid "Volume preset:"
 msgstr "Налаштування гучності (-1=не змінювати)"
 
-#. i18n: file: radio-configuration-ui.ui:393
+#. i18n: file: radio-configuration-ui.ui:389
 #. i18n: ectx: attribute (title), widget (QWidget, About)
-#: rc.cpp:65 rc.cpp:159
+#: rc.cpp:61 rc.cpp:151
 msgid "Preset &File"
 msgstr "&Файл списку радіостанцій"
 
-#. i18n: file: radio-configuration-ui.ui:402
+#. i18n: file: radio-configuration-ui.ui:398
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
-#: rc.cpp:68 rc.cpp:162
-msgid "Personal Preset File"
+#: rc.cpp:64 rc.cpp:154
+#, fuzzy
+msgid "Personal preset file:"
 msgstr "Особистий файл налаштувань"
 
-#. i18n: file: radio-configuration-ui.ui:417
+#. i18n: file: radio-configuration-ui.ui:413
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
-#: rc.cpp:71 rc.cpp:165
-msgid "City"
+#: rc.cpp:67 rc.cpp:157
+#, fuzzy
+msgid "City:"
 msgstr "Місто"
 
-#. i18n: file: radio-configuration-ui.ui:430
+#. i18n: file: radio-configuration-ui.ui:426
 #. i18n: ectx: property (text), widget (QLabel, labelCountry)
-#: rc.cpp:74 rc.cpp:168
-msgid "Country"
+#: rc.cpp:70 rc.cpp:160
+#, fuzzy
+msgid "Country:"
 msgstr "Країна"
 
-#. i18n: file: radio-configuration-ui.ui:461
+#. i18n: file: radio-configuration-ui.ui:457
 #. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
-#: rc.cpp:77 rc.cpp:171
+#: rc.cpp:73 rc.cpp:163
 msgid "&Now"
 msgstr "&Поточний час"
 
-#. i18n: file: radio-configuration-ui.ui:470
+#. i18n: file: radio-configuration-ui.ui:466
 #. i18n: ectx: property (text), widget (QLabel, labelComment)
-#: rc.cpp:80 rc.cpp:174
-msgid "Comment"
+#: rc.cpp:76 rc.cpp:166
+#, fuzzy
+msgid "Comment:"
 msgstr "Опис"
 
-#. i18n: file: radio-configuration-ui.ui:483
+#. i18n: file: radio-configuration-ui.ui:479
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
-#: rc.cpp:83 rc.cpp:177
-msgid "Media"
+#: rc.cpp:79 rc.cpp:169
+#, fuzzy
+msgid "Media:"
 msgstr "Носій"
 
-#. i18n: file: radio-configuration-ui.ui:493
+#. i18n: file: radio-configuration-ui.ui:489
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
-#: rc.cpp:86 rc.cpp:180
-msgid "Maintainer"
+#: rc.cpp:82 rc.cpp:172
+#, fuzzy
+msgid "Maintainer:"
 msgstr "Автор"
 
-#. i18n: file: radio-configuration-ui.ui:506
+#. i18n: file: radio-configuration-ui.ui:502
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
-#: rc.cpp:89 rc.cpp:183
-msgid "Last Change"
+#: rc.cpp:85 rc.cpp:175
+#, fuzzy
+msgid "Last change:"
 msgstr "Остання зміна"
 
-#. i18n: file: radio-configuration-ui.ui:540
+#. i18n: file: radio-configuration-ui.ui:536
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:92 rc.cpp:186
+#: rc.cpp:88 rc.cpp:178
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
@@ -284,12 +308,39 @@ msgstr ""
 "<p align=\"center\"> Щоб додати цей файл до проекту KRadio, клацніть на "
 "посилання нижче</p>"
 
-#: rc.cpp:93
+#: rc.cpp:89
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: rc.cpp:94
+#: rc.cpp:90
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select if you want to "
+#~ "force the tuner to Stereo/Mono mode. <span style=\" font-style:italic;"
+#~ "\">Please be aware, that some drivers might ignore this flag without "
+#~ "saying they will ignore it.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Визначіться з тим, чи "
+#~ "бажаєте ви примусово перемкнути тюнер у режим Стерео/Моно. <span style=\" "
+#~ "font-style:italic;\">Будь ласка, майте на увазі, що деякі драйвери можуть "
+#~ "ігнорувати цей параметр без попередження.</span></p></body></html>"

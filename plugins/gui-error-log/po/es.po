@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: errorlog.cpp:35
-msgid "Error Logging Window for KRadio"
+#, fuzzy
+msgid "Error Logging Window"
 msgstr "Error Registrando Ventana para KRadio"
 
 #: errorlog.cpp:41
@@ -59,12 +60,13 @@ msgid "Log Files"
 msgstr "Archivos de Registro"
 
 #: errorlog.cpp:191
-msgid "Save KRadio Logging Data as ..."
+#, fuzzy
+msgid "Save KRadio Logging Data"
 msgstr "Guardar Archivo de Registro de KRadio como ..."
 
 #: errorlog.cpp:216
-#, kde-format
-msgid "error writing to tempfile %1"
+#, fuzzy, kde-format
+msgid "error writing to temporary file %1"
 msgstr "error escribiendo al archivo temporal %1"
 
 #: errorlog.cpp:225

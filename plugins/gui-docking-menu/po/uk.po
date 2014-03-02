@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2010-09-27 11:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -18,35 +18,48 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: docking-configuration.cpp:126
-msgid "Mouse Click on Tray Icon"
+#, fuzzy
+msgid "Mouse click on tray icon:"
 msgstr "Клацання кнопкою на піктограмі лотка"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-msgid "Left"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Left:"
 msgstr "Ліва"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-msgid "Right"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Right:"
 msgstr "Права"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-msgid "Middle"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Middle:"
 msgstr "Середня"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgid "XButton1"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton1:"
 msgstr "X-кнопка 1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgid "XButton2"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton2:"
 msgstr "X-кнопка 2"
 
 #: docking-configuration.cpp:133
-msgid "Mouse Double-Click on Tray Icon"
+#, fuzzy
+msgid "Mouse double-click on tray icon:"
 msgstr "Подвійне клацання на піктограмі лотка"
 
 #: docking-configuration.cpp:140
-msgid "Mouse Wheel Action on Tray Icon"
+#, fuzzy
+msgid "Mouse wheel action on tray icon:"
 msgstr "Дія прокручування коліщатка на піктограмі лотка"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
@@ -94,8 +107,9 @@ msgid "Change Frequency"
 msgstr "Змінити частоту"
 
 #: docking.cpp:46
-msgid "System Tray Icon/Menu for KRadio"
-msgstr "Піктограма/Меню лотка для KRadio"
+#, fuzzy
+msgid "System Tray Icon/Menu"
+msgstr "Піктограма системного лотка"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
@@ -190,6 +204,9 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Піктограма/Меню лотка для KRadio"
 
 #~ msgid "Show/Hide all GUI Elements"
 #~ msgstr "Показати/сховати всі вікна"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-02-10 14:22+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-11-08 00:31-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -43,7 +43,8 @@ msgstr "%1 Depurar: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
 #: radiostations/internetradiostation.cpp:155
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "<station long name>, <station description>"
 msgid "%1, %2"
 msgstr "%1, %2"
 
@@ -58,7 +59,8 @@ msgid "%1 kHz"
 msgstr "%1 kHz"
 
 #: radiostations/radiostation-config.cpp:49
-msgid "I don't know how to edit this station"
+#, fuzzy
+msgid "I do not know how to edit this station"
 msgstr "Eu não sei como editar esta estação"
 
 #: radiostations/radiostation-config.cpp:75
@@ -83,19 +85,27 @@ msgid "<autodetect>"
 msgstr "<autodetectar>"
 
 #: radiostations/radiostation-config.cpp:142
+#, fuzzy
+msgctxt "Stream Format"
 msgid "MP3"
 msgstr "MP3"
 
 #: radiostations/radiostation-config.cpp:143
+#, fuzzy
+msgctxt "Stream Format"
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
 #: radiostations/radiostation-config.cpp:144
+#, fuzzy
+msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
 #: radiostations/radiostation-config.cpp:146
-msgid "OGG/Vorbis"
+#, fuzzy
+msgctxt "Stream Format"
+msgid "Ogg/Vorbis"
 msgstr "OGG/Vorbis"
 
 #: radiostations/radiostation-config.cpp:149
@@ -104,26 +114,37 @@ msgid "<autodetect>"
 msgstr "<autodetectar>"
 
 #: radiostations/radiostation-config.cpp:150
+#, fuzzy
+msgctxt "Playlist Format"
 msgid "<none>"
 msgstr "<nada>"
 
 #: radiostations/radiostation-config.cpp:151
+#, fuzzy
+msgctxt "Playlist Format"
 msgid "ASX"
 msgstr "ASX"
 
 #: radiostations/radiostation-config.cpp:152
+#, fuzzy
+msgctxt "Playlist Format"
 msgid "LSC"
 msgstr "LSC"
 
 #: radiostations/radiostation-config.cpp:153
+#, fuzzy
+msgctxt "Playlist Format"
 msgid "M3U"
 msgstr "M3U"
 
 #: radiostations/radiostation-config.cpp:154
+#, fuzzy
+msgctxt "Playlist Format"
 msgid "PLS"
 msgstr "PLS"
 
 #: radiostations/radiostation-config.cpp:155
+msgctxt "Playlist Format"
 msgid "WMV"
 msgstr ""
 
@@ -179,8 +200,15 @@ msgstr "Estação de rádio AM/FM"
 msgid "Internet Radio Station"
 msgstr "Estação de rádio internet"
 
-#: radiostations/radiostation.h:161 radiostations/radiostation.h:162
-#: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
+#: radiostations/radiostation.h:161
+#, fuzzy
+msgctxt "Unknown station long name"
+msgid "unknown"
+msgstr "Desconhecido"
+
+#: radiostations/radiostation.h:162
+#, fuzzy
+msgctxt "Unknown station description"
 msgid "unknown"
 msgstr "Desconhecido"
 
@@ -190,13 +218,13 @@ msgid "cannot open buffer file %1"
 msgstr "Não foi possível abrir arquivo %1 do buffer"
 
 #: src/fileringbuffer.cpp:93
-#, kde-format
-msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
+#, fuzzy, kde-format
+msgid "FileRingbuffer::resize: Writing to temporary file %1 failed. "
 msgstr "FileRingbuffer::resize: Falha ao escrever arquivo temporário %1. "
 
 #: src/fileringbuffer.cpp:99
-#, kde-format
-msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
+#, fuzzy, kde-format
+msgid "FileRingbuffer::resize: Opening temporary file %1 failed. "
 msgstr "FileRingbuffer::resize: Falha ao abrir arquivo temporário %1. "
 
 #: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
@@ -270,8 +298,8 @@ msgid "License Agreement"
 msgstr "Licença"
 
 #: src/kradioapp.cpp:132
-#, kde-format
-msgid "Library %1: Plugin Entry Point is missing\n"
+#, fuzzy, kde-format
+msgid "Library %1: plugin entry point is missing"
 msgstr "Biblioteca %1: Plug-in 'Entry Point' está faltando\n"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
@@ -280,17 +308,13 @@ msgid "Plugin Library Load Error"
 msgstr "Erro ao carregar plug-in da biblioteca"
 
 #: src/kradioapp.cpp:140
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
-"Library %1: \n"
+"Library %1:\n"
 "%2"
 msgstr ""
 "Biblioteca %1: \n"
 "%2"
-
-#: src/kradioapp.cpp:166
-msgid "saveState"
-msgstr "Salvar estado"
 
 #: src/kradioapp.cpp:216
 msgid "New plugin libraries found. Should the libraries be loaded now?"
@@ -299,51 +323,45 @@ msgstr ""
 "carregadas agora?"
 
 #: src/kradioapp.cpp:218
-msgid "New Plugin Libraries found"
+#, fuzzy
+msgid "New Plugin Libraries Found"
 msgstr "Novas Bibliotecas de Plug-in encontradas"
 
 #: src/kradioapp.cpp:234
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"installation directory and the environment variables KDEDIR, KDEDIRS and "
+"KDEHOME.\n"
+msgid_plural ""
 "Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
-msgstr ""
+msgstr[0] ""
+"KRadio4 encontrou apenas %1 bibliotecas de plug-ins. Esperado um mínimo de "
+"5. Por favor, verifique o diretório de instalação do KRadio4 e se as "
+"variáveis de ambiente KDEDIR, KDEDIRS e KDEHOME tem valores adequados.\n"
+msgstr[1] ""
 "KRadio4 encontrou apenas %1 bibliotecas de plug-ins. Esperado um mínimo de "
 "5. Por favor, verifique o diretório de instalação do KRadio4 e se as "
 "variáveis de ambiente KDEDIR, KDEDIRS e KDEHOME tem valores adequados.\n"
 
-#: src/kradioapp.cpp:239
+#: src/kradioapp.cpp:242
 msgid "KRadio4 Installation Error"
 msgstr "Erro Na Instalação dD KRadio4"
 
-#: src/kradioapp.cpp:264
-msgid "Instance"
+#: src/kradioapp.cpp:267
+#, fuzzy, kde-format
+msgid "Instance %1"
 msgstr "Instância"
 
-#: src/kradioapp.cpp:285
+#: src/kradioapp.cpp:288
 msgid "KRadio Configuration"
 msgstr "Configuração Do KRadio"
 
-#: src/kradioapp.cpp:286
+#: src/kradioapp.cpp:289
 msgid "About KRadio Components"
 msgstr "Sobre Os Componentes Do KRadio"
-
-#: src/kradioapp.cpp:314
-#, kde-format
-msgid "Error: Loading Library %1 failed: %2"
-msgstr "Erro: Falha Ao Carregar Biblioteca %1: %2"
-
-#: src/kradioapp.cpp:364
-#, kde-format
-msgid "Error: Creation of instance \"%1\" of class %2 failed."
-msgstr "Erro: Falha na criação da instância \"%1\" de classe %2."
-
-#: src/kradioapp.cpp:370
-#, kde-format
-msgid "Error: Cannot create instance \"%1\" of unknown class %2."
-msgstr ""
-"Erro: Não foi possível criar instância \"%1\" de classe %2 desconhecida."
 
 #: src/main.cpp:34
 msgid "KRadio4"
@@ -362,9 +380,10 @@ msgid "Ernst Martin Witte"
 msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
+#, fuzzy
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
-"recording, lirc support, alarms, misc"
+"recording, LIRC support, alarms, misc"
 msgstr ""
 "Porte para KDE4, suporte RDS, atalhos, suporte a PVR, reescrito para "
 "1.0/0.3.0, função de gravação, suporte lirc, alarme, entre outros"
@@ -374,7 +393,8 @@ msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
 #: src/main.cpp:44
-msgid "Buildsystem, Standards Conformance, Cleanups"
+#, fuzzy
+msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Sistema De Construção, Padrões De Conformidade, Limpeza"
 
 #: src/main.cpp:45
@@ -390,7 +410,8 @@ msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
 #: src/main.cpp:46
-msgid "initial idea, first basic KDE 2 application"
+#, fuzzy
+msgid "Initial idea, first basic KDE 2 application"
 msgstr "Ideia inicial, primeira aplicação para o KDE 2"
 
 #: src/multibuffer.cpp:89
@@ -402,9 +423,9 @@ msgid "Configuration Dialog"
 msgstr "Diálogo De Configuração"
 
 #: src/pluginmanager-configuration.cpp:196
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
-"Library %1: \n"
+"Library %1:\n"
 "Cannot load non-local library"
 msgstr ""
 "Biblioteca %1: \n"
@@ -414,10 +435,9 @@ msgstr ""
 msgid "Enter Plugin Instance Name"
 msgstr "Digite O Nome Da Instância Do Plug-in"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:308
-#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
-#: src/pluginmanager-configuration.cpp:227 rc.cpp:59
-msgid "Instance Name"
+#: src/pluginmanager-configuration.cpp:227
+#, fuzzy
+msgid "Instance name:"
 msgstr "Nome Da Instância"
 
 #: src/pluginmanager.cpp:436
@@ -445,7 +465,8 @@ msgstr ""
 "agora?"
 
 #: src/pluginmanager.cpp:607
-msgid "New Plugins found"
+#, fuzzy
+msgid "New Plugins Found"
 msgstr "Novos Plug-ins encontrados"
 
 #: src/pluginmanager.cpp:642
@@ -454,19 +475,26 @@ msgid "Initializing Plugin %1"
 msgstr "Inicializando Plug-ins %1"
 
 #: src/pluginmanager.cpp:767
+#, fuzzy
+msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Mostrar todos"
 
 #: src/pluginmanager.cpp:768
+#, fuzzy
+msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Ocultar todos"
 
 #: src/pluginmanager.cpp:769
+#, fuzzy
+msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Restaurar todos"
 
 #: src/pluginmanager.cpp:770
-msgid "restore state before last hide-all activation"
+#, fuzzy
+msgid "Restore state before last hide-all activation"
 msgstr "Restaurar estado antes da última ativação 'Esconder todos'"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
@@ -475,7 +503,7 @@ msgstr "&Iniciar"
 
 #. i18n: file: src/standardscandialog-ui.ui:58
 #. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
-#: src/standardscandialog.cpp:92 rc.cpp:81
+#: src/standardscandialog.cpp:92 rc.cpp:77
 msgid "&Stop"
 msgstr "&Parar"
 
@@ -484,8 +512,13 @@ msgstr "&Parar"
 msgid "<p align=\"right\">%1</p>"
 msgstr "<p align=\"right\">%1</p>"
 
+#: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
+msgid "unknown"
+msgstr "Desconhecido"
+
 #: src/standardscandialog.cpp:226
-msgid "new station "
+#, fuzzy, kde-format
+msgid "new station %1"
 msgstr "Nova estação"
 
 #: src/station-drag-object.cpp:70
@@ -529,7 +562,8 @@ msgid "Download of the station preset file at %1 failed."
 msgstr "Falha ao obter arquivo predefinido de estações de %1."
 
 #: src/stationlist.cpp:214
-msgid "temporary file: "
+#, fuzzy, kde-format
+msgid "temporary file: %1"
 msgstr "Arquivo temporário: "
 
 #: src/stationlist.cpp:220
@@ -547,8 +581,8 @@ msgid "Old Preset File Format detected"
 msgstr "Detectado Formato Antigo Do Arquivo Predefinido"
 
 #: src/stationlist.cpp:322
-#, kde-format
-msgid "error writing to tempfile %1"
+#, fuzzy, kde-format
+msgid "error writing to temporary file %1"
 msgstr "Erro ao escrever arquivo temporário %1"
 
 #: src/stationlist.cpp:325
@@ -581,7 +615,8 @@ msgid "Upload of station preset file to %1 failed."
 msgstr "Falha ao enviar arquivo predefinido de estações para %1."
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
-msgid "error creating temp file"
+#, fuzzy
+msgid "error creating temporary file"
 msgstr "Erro ao criar arquivo temporário"
 
 #: src/stationlistxmlhandler.cpp:64
@@ -647,31 +682,36 @@ msgstr "marciopanto@gmail.com"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:36
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:5
-msgid "Automatic detection and load of new plugins"
+#, fuzzy
+msgid "Automatic Detection and Load of New Plugins"
 msgstr "Detecção e carregamento automático de novos plug-ins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:57
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
 #: rc.cpp:8
-msgid "Do not check/load!"
+#, fuzzy
+msgid "Do not check/load"
 msgstr "Não verifcar/carregar!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
 #: rc.cpp:11
-msgid "Automatically check/load!"
+#, fuzzy
+msgid "Automatically check/load"
 msgstr "Automaticamente verificar/carregar!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:14
-msgid "Please Ask!"
+#, fuzzy
+msgid "Please ask"
 msgstr "Por favor, pergunte!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:17
-msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
+#, fuzzy
+msgid "Show progress bar during startup for plugin initiali&zation"
 msgstr ""
 "Mostrar A Barra De Progresso Durante O Início Para O Plug-in 'Iniciali&zação'"
 
@@ -753,93 +793,124 @@ msgstr "Instâncias De Plug-ins Criadas"
 msgid "List of the plugin instances currently running"
 msgstr "Lista de instâncias de plug-ins atualmente em execução"
 
+#. i18n: file: src/pluginmanager-configuration-ui.ui:308
+#. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
+#: rc.cpp:59
+msgid "Instance Name"
+msgstr "Nome Da Instância"
+
 #. i18n: file: src/pluginmanager-configuration-ui.ui:339
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:65
 msgid "Removes/stops the plugin instance selected in the list on the left"
 msgstr "Remove/Para a instância do plug-in selecionado na lista a esquerda"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:375
+#. i18n: file: src/pluginmanager-configuration-ui.ui:371
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:68
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">You can "
-"<span style=\" font-weight:600;\">rename</span> a plugin instance by double "
-"clicking on the instance name. This name will appear below the configuration "
-"page icon, in the config page header and e.g. in the name of your sound "
-"device. Editing plugin names is recommended for your convenience e.g. if you "
-"have multiple sound cards and/or multiple ALSA plugin instances.</p></body></"
-"html>"
+"<p>You can <b>rename</b> a plugin instance by double clicking on the "
+"instance name. This name will appear below the configuration page icon, in "
+"the config page header and e.g. in the name of your sound device. Editing "
+"plugin names is recommended for your convenience e.g. if you have multiple "
+"sound cards and/or multiple ALSA plugin instances.</p>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Você pode "
-"<span style=\" font-weight:600;\">renomear</span> uma instânia do plug-in "
-"por um duplo clique no nome da instância. Este nome irá aparecer abaixo do "
-"ícone da página de configuração, no cabeçalho da página de configuração e, "
-"por exemplo, no nome do seu dispositivo de som. A edição de nomes dos plug-"
-"in é recomendada para a sua conveniência, por exemplo,se você tiver várias "
-"placas de som e/ou várias instâncias de plug-ins ALSA.</p></body></html>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
-#: rc.cpp:75
-msgid "Stations search in progress ..."
+#: rc.cpp:71
+#, fuzzy
+msgid "Stations Search in Progress..."
 msgstr "Pesquisa de estações em andamento ..."
 
 #. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
-#: rc.cpp:78
+#: rc.cpp:74
 msgid "&Ok"
 msgstr "&Ok"
 
 #. i18n: file: src/standardscandialog-ui.ui:65
 #. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
-#: rc.cpp:84
+#: rc.cpp:80
 msgid "&Discard"
 msgstr "&Descartar"
 
 #. i18n: file: src/standardscandialog-ui.ui:92
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
-#: rc.cpp:87
+#: rc.cpp:83
 msgid "remaining time"
 msgstr "Tempo restante"
 
 #. i18n: file: src/standardscandialog-ui.ui:108
 #. i18n: ectx: property (text), widget (QLabel, labelTime)
-#: rc.cpp:90
+#: rc.cpp:86
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">nada aqui</p>"
 
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
-#: rc.cpp:93
-msgid "Selected Stations"
+#: rc.cpp:89
+#, fuzzy
+msgid "Selected stations:"
 msgstr "Estações Selecionadas"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
-#: rc.cpp:96
-msgid "Available Stations"
+#: rc.cpp:92
+#, fuzzy
+msgid "Available stations:"
 msgstr "Estações Disponíveis"
 
 #: src/recording_template.h:84
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr ""
+
+#~ msgid "saveState"
+#~ msgstr "Salvar estado"
+
+#~ msgid "Error: Loading Library %1 failed: %2"
+#~ msgstr "Erro: Falha Ao Carregar Biblioteca %1: %2"
+
+#~ msgid "Error: Creation of instance \"%1\" of class %2 failed."
+#~ msgstr "Erro: Falha na criação da instância \"%1\" de classe %2."
+
+#~ msgid "Error: Cannot create instance \"%1\" of unknown class %2."
+#~ msgstr ""
+#~ "Erro: Não foi possível criar instância \"%1\" de classe %2 desconhecida."
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">You "
+#~ "can <span style=\" font-weight:600;\">rename</span> a plugin instance by "
+#~ "double clicking on the instance name. This name will appear below the "
+#~ "configuration page icon, in the config page header and e.g. in the name "
+#~ "of your sound device. Editing plugin names is recommended for your "
+#~ "convenience e.g. if you have multiple sound cards and/or multiple ALSA "
+#~ "plugin instances.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Você "
+#~ "pode <span style=\" font-weight:600;\">renomear</span> uma instânia do "
+#~ "plug-in por um duplo clique no nome da instância. Este nome irá aparecer "
+#~ "abaixo do ícone da página de configuração, no cabeçalho da página de "
+#~ "configuração e, por exemplo, no nome do seu dispositivo de som. A edição "
+#~ "de nomes dos plug-in é recomendada para a sua conveniência, por exemplo,"
+#~ "se você tiver várias placas de som e/ou várias instâncias de plug-ins "
+#~ "ALSA.</p></body></html>"
 
 #~ msgid "PluginManagerConfigurationUI"
 #~ msgstr "PluginManagerConfigurationUI"

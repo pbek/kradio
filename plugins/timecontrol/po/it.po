@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-02-10 14:22+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2014-01-20 01:50+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -23,7 +23,8 @@ msgstr ""
 #. i18n: file: timecontrol-configuration-ui.ui:19
 #. i18n: ectx: property (text), widget (QLabel, labelSleep)
 #: rc.cpp:3 rc.cpp:66
-msgid "sleep countdown"
+#, fuzzy
+msgid "Sleep countdown:"
 msgstr "conto alla rovescia della sospensione"
 
 #. i18n: file: timecontrol-configuration-ui.ui:29
@@ -34,14 +35,16 @@ msgstr " min"
 
 #. i18n: file: timecontrol-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
-#: rc.cpp:9 rc.cpp:72 timecontrol.cpp:284
-msgid "Alarms"
+#: rc.cpp:9 rc.cpp:72
+#, fuzzy
+msgid "Alarms:"
 msgstr "Allarmi"
 
 #. i18n: file: timecontrol-configuration-ui.ui:130
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
 #: rc.cpp:12 rc.cpp:75
-msgid "Date"
+#, fuzzy
+msgid "Date:"
 msgstr "Data"
 
 #. i18n: file: timecontrol-configuration-ui.ui:146
@@ -53,7 +56,8 @@ msgstr "dd.MM.yyyy"
 #. i18n: file: timecontrol-configuration-ui.ui:157
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
 #: rc.cpp:18 rc.cpp:81
-msgid "Time"
+#, fuzzy
+msgid "Time:"
 msgstr "Orario"
 
 #. i18n: file: timecontrol-configuration-ui.ui:173
@@ -65,7 +69,8 @@ msgstr "HH:mm:ss"
 #. i18n: file: timecontrol-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
 #: rc.cpp:24 rc.cpp:87
-msgid "Volume"
+#, fuzzy
+msgid "Volume:"
 msgstr "Volume"
 
 #. i18n: file: timecontrol-configuration-ui.ui:200
@@ -78,13 +83,15 @@ msgstr " %"
 #. i18n: file: timecontrol-configuration-ui.ui:241
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
 #: rc.cpp:31 rc.cpp:94
-msgid "daily/weekly"
+#, fuzzy
+msgid "Daily/weekly"
 msgstr "giornaliero/settimanale"
 
 #. i18n: file: timecontrol-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
 #: rc.cpp:34 rc.cpp:97
-msgid "enabled"
+#, fuzzy
+msgid "Enabled"
 msgstr "abilitato"
 
 #. i18n: file: timecontrol-configuration-ui.ui:255
@@ -96,7 +103,8 @@ msgstr "Giorni della settimana attivi:"
 #. i18n: file: timecontrol-configuration-ui.ui:264
 #. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
 #: rc.cpp:40 rc.cpp:103
-msgid "Radio Station"
+#, fuzzy
+msgid "Radio station:"
 msgstr "Stazione radio"
 
 #. i18n: file: timecontrol-configuration-ui.ui:285
@@ -144,8 +152,8 @@ msgstr ""
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Modello del nome del "
-"file di registrazione:</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Modello del nome del file "
+"di registrazione:</p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
@@ -171,25 +179,29 @@ msgstr ""
 #. i18n: file: timecontrol-configuration-ui.ui:316
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateFilename)
 #: rc.cpp:52 rc.cpp:115
-msgid "Filename"
+#, fuzzy
+msgid "Filename:"
 msgstr "Nome del file"
 
 #. i18n: file: timecontrol-configuration-ui.ui:323
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Title)
 #: rc.cpp:55 rc.cpp:118
-msgid "ID3 Title"
+#, fuzzy
+msgid "ID3 title:"
 msgstr "Titolo ID3"
 
 #. i18n: file: timecontrol-configuration-ui.ui:330
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Artist)
 #: rc.cpp:58 rc.cpp:121
-msgid "ID3 Artist"
+#, fuzzy
+msgid "ID3 artist:"
 msgstr "Artista ID3"
 
 #. i18n: file: timecontrol-configuration-ui.ui:337
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Genre)
 #: rc.cpp:61 rc.cpp:124
-msgid "ID3 Genre"
+#, fuzzy
+msgid "ID3 genre:"
 msgstr "Genere ID3"
 
 #: rc.cpp:62
@@ -250,8 +262,15 @@ msgstr "Sabato"
 msgid "Sunday"
 msgstr "Domenica"
 
-#: timecontrol-configuration.cpp:220
-msgid "<don't change>"
+#: timecontrol-configuration.cpp:154 timecontrol-configuration.cpp:333
+#, kde-format
+msgctxt "disabled alarm"
+msgid "%1 (disabled)"
+msgstr ""
+
+#: timecontrol-configuration.cpp:222
+#, fuzzy
+msgid "<do not change>"
 msgstr "<non modificare>"
 
 #: timecontrol.cpp:44
@@ -259,11 +278,14 @@ msgid "Time Control and Alarm Functions"
 msgstr "Funzioni di controllo del tempo e degli allarmi"
 
 #: timecontrol.cpp:50
-msgid "TimeControl Plugin"
+#, fuzzy
+msgid "Time Control Plugin"
 msgstr "Estensione per il controllo del tempo"
+
+#: timecontrol.cpp:284
+msgid "Alarms"
+msgstr "Allarmi"
 
 #: timecontrol.cpp:285
 msgid "Setup Alarms"
 msgstr "Imposta gli allarmi"
-
-

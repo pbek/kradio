@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_error_log\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-04-02 21:26+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: errorlog.cpp:35
-msgid "Error Logging Window for KRadio"
+#, fuzzy
+msgid "Error Logging Window"
 msgstr "Okno zápisu chyb pro aplikaci KRadio"
 
 #: errorlog.cpp:41
@@ -59,12 +60,13 @@ msgid "Log Files"
 msgstr "Soubory zápisu"
 
 #: errorlog.cpp:191
-msgid "Save KRadio Logging Data as ..."
+#, fuzzy
+msgid "Save KRadio Logging Data"
 msgstr "Uložit zápis chyb aplikace KRadio jako..."
 
 #: errorlog.cpp:216
-#, kde-format
-msgid "error writing to tempfile %1"
+#, fuzzy, kde-format
+msgid "error writing to temporary file %1"
 msgstr "Chyba při zapisování do dočasného souboru %1"
 
 #: errorlog.cpp:225

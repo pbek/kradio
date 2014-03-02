@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-02 23:41+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: displaycfg.cpp:46
+msgid "Active text:"
+msgstr ""
+
+#: displaycfg.cpp:47
+msgid "Inactive text:"
+msgstr ""
+
 #: displaycfg.cpp:48
-msgid "Active Text"
-msgstr ""
-
-#: displaycfg.cpp:49
-msgid "Inactive Text"
-msgstr ""
-
-#: displaycfg.cpp:50
-msgid "Background Color"
+msgid "Background color:"
 msgstr ""
 
 #: radioview.cpp:54
-msgid "Standard Display for KRadio"
+msgid "Standard Display"
 msgstr ""
 
 #: radioview.cpp:60
@@ -78,23 +78,23 @@ msgid "Configure KRadio"
 msgstr ""
 
 #: radioview.cpp:228
-msgid "Power On/Off"
+msgid "Power on/off"
 msgstr ""
 
 #: radioview.cpp:229
-msgid "Quit KRadio Application"
+msgid "Quit KRadio application"
 msgstr ""
 
 #: radioview.cpp:230
-msgid "Start/Stop Recording"
+msgid "Start/stop recording"
 msgstr ""
 
 #: radioview.cpp:231
-msgid "Start/Stop Sleep Countdown"
+msgid "Start/stop sleep countdown"
 msgstr ""
 
 #: radioview.cpp:232
-msgid "Show/Hide Plugins"
+msgid "Show/hide plugins"
 msgstr ""
 
 #: radioview.cpp:233
@@ -102,11 +102,11 @@ msgid "Help about KRadio and KDE"
 msgstr ""
 
 #: radioview.cpp:234
-msgid "Select a Radio Station"
+msgid "Select a radio station"
 msgstr ""
 
 #: radioview.cpp:407
-msgid "no preset defined"
+msgid "<no preset defined>"
 msgstr ""
 
 #: radioview.cpp:563 radioview.cpp:633
@@ -161,27 +161,27 @@ msgid "%1 MHz"
 msgstr ""
 
 #: radioview_frequencyseeker.cpp:79
-msgid "Search for previous Radio Station"
+msgid "Search for previous radio station"
 msgstr ""
 
 #: radioview_frequencyseeker.cpp:80
-msgid "Search for next Radio Station"
+msgid "Search for next radio station"
 msgstr ""
 
 #: radioview_frequencyseeker.cpp:81
-msgid "Decrement Frequency"
+msgid "Decrement frequency"
 msgstr ""
 
 #: radioview_frequencyseeker.cpp:82
-msgid "Increment Frequency"
+msgid "Increment frequency"
 msgstr ""
 
 #: radioview_frequencyseeker.cpp:83
-msgid "Change Frequency"
+msgid "Change frequency"
 msgstr ""
 
 #: radioview_volume.cpp:59
-msgid "Change Volume"
+msgid "Change volume"
 msgstr ""
 
 #. i18n: file: radioview_seekinterface.ui:15
@@ -193,13 +193,13 @@ msgstr ""
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-msgid "search previous station"
+msgid "Search previous station"
 msgstr ""
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-msgid "decrease freq. by 0.05 MHz"
+msgid "Decrease frequency by 0.05 MHz"
 msgstr ""
 
 #. i18n: file: radioview_seekinterface.ui:70
@@ -212,13 +212,13 @@ msgstr ""
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-msgid "increase freq. by 0.05 MHz"
+msgid "Increase frequency by 0.05 MHz"
 msgstr ""
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-msgid "search next station"
+msgid "Search next station"
 msgstr ""
 
 #: rc.cpp:19

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_lirc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2012-02-19 19:04+0100\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -110,7 +110,8 @@ msgid "Quit KRadio"
 msgstr "Ukončit KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-msgid "<don't care>"
+#, fuzzy
+msgid "<do not care>"
 msgstr "<neměj péči>"
 
 #: lirc-configuration.cpp:278
@@ -122,39 +123,43 @@ msgstr ""
 "na svém dálkovém ovládání"
 
 #: lirc-configuration.cpp:284
-msgid "Double Click on the entries to change the assignments"
+#, fuzzy
+msgid "Double click on the entries to change the assignments"
 msgstr "Dvojité klepnutí na záznamy kvůli změně přiřazení"
 
-#: lircsupport.cpp:49
+#: lircsupport.cpp:50
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Podpora pro dálkové ovládání (Linux Infrared Control, LIRC) "
 
-#: lircsupport.cpp:55 lircsupport.cpp:500
+#: lircsupport.cpp:56 lircsupport.cpp:490
 msgid "LIRC Plugin"
 msgstr "Přídavný modul LIRC"
 
-#: lircsupport.cpp:83
-msgid "initializing kradio lirc plugin"
+#: lircsupport.cpp:84
+#, fuzzy
+msgid "initializing KRadio LIRC plugin"
 msgstr "Inicializace přídavného modulu LIRC programu KRadio"
 
-#: lircsupport.cpp:84
+#: lircsupport.cpp:85
+#, fuzzy
 msgid ""
-"warnings/errors about missing sockets don't harm - usually the LIRC daemon "
+"warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
 msgstr ""
 "Varování/chyby o chybějících zásuvkách nezpůsobují škodu - obvykle v těchto "
-"případech "
-"démon LIRC neběží."
+"případech démon LIRC neběží."
 
-#: lircsupport.cpp:93
-msgid "Initializing kradio lirc plugin failed"
+#: lircsupport.cpp:94
+#, fuzzy
+msgid "Initializing KRadio LIRC plugin failed"
 msgstr "Inicializace přídavného modulu LIRC programu KRadio selhala"
 
-#: lircsupport.cpp:102
-msgid "Initializing kradio lirc plugin successful"
+#: lircsupport.cpp:103
+#, fuzzy
+msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Inicializace přídavného modulu LIRC programu KRadio proběhla úspěšně"
 
-#: lircsupport.cpp:131
+#: lircsupport.cpp:132
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -167,7 +172,7 @@ msgstr ""
 "Toto povede velice pravděpodobně k potížím. Použijte, prosím, \"button=*\" a "
 "\"remote=*\" jako divokou kartu pro všechna tlačítka/dálkového ovládání"
 
-#: lircsupport.cpp:138
+#: lircsupport.cpp:139
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -180,19 +185,19 @@ msgstr ""
 "Toto povede velice pravděpodobně k potížím. Použijte, prosím, \"button=*\" a "
 "\"remote=*\" jako divokou kartu pro všechna tlačítka/dálkového ovládání"
 
-#: lircsupport.cpp:149
-#, kde-format
-msgid "There is no entry for kradio in your .lircrc files %1."
+#: lircsupport.cpp:150
+#, fuzzy, kde-format
+msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "Neexistuje žádný záznam pro KRadio ve vašich .lircrc souborech %1."
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:151
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Nastavte, prosím, správně svůj .lircrc soubor %1."
 
-#: lircsupport.cpp:154 lircsupport.cpp:155
-#, kde-format
-msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
+#: lircsupport.cpp:155 lircsupport.cpp:156
+#, fuzzy, kde-format
+msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inicializace přídavného modulu LIRC pro KRadio selhala. Nelze číst z "
 "konfiguračního souboru %1"
@@ -205,20 +210,21 @@ msgstr ""
 "Soubor %1 neexistuje. Soubor byl vytvořen s výchozím .lircrc nastavením "
 "programu KRadio"
 
-#: lircsupport.cpp:209
+#: lircsupport.cpp:199
 #, kde-format
-msgid "failed to read file %1"
-msgstr "Soubor %1 nelze přečíst."
+msgid "Failed to copy %1 to %2"
+msgstr ""
 
-#: lircsupport.cpp:261
+#: lircsupport.cpp:251
+#, fuzzy
 msgid ""
-"Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
-"kradio"
+"Reading from LIRC socket failed. Disabling LIRC functionalities until the "
+"next start of KRadio"
 msgstr ""
 "Čtení ze zásuvky (socket) LIRC selhalo.LIRC funkce je až do příštího "
 "spuštění KRadia vypnuta."
 
-#: lircsupport.cpp:499
+#: lircsupport.cpp:489
 msgid "LIRC Support"
 msgstr "Podpora dálkového ovládání (LIRC)"
 
@@ -249,31 +255,36 @@ msgstr "Textový štítek 1"
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-msgid "Power off .lircrc mode"
+#, fuzzy
+msgid "Power off .lircrc mode:"
 msgstr "Vypnout režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-msgid "Power on .lircrc mode"
+#, fuzzy
+msgid "Power on .lircrc mode:"
 msgstr "Zapnout režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-msgid "Synchronize .lircrc modes at runtime"
+#, fuzzy
+msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Seřídit režimy .lircrc za běhu"
 
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-msgid "Synchronize .lircrc modes at startup"
+#, fuzzy
+msgid "Synchronize .lircrc modes at startup:"
 msgstr "Seřídit režimy .lircrc při spuštění"
 
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-msgid "LIRC Configuration File"
+#, fuzzy
+msgid "LIRC configuration file:"
 msgstr "Konfigurační soubor LIRC"
 
 #: rc.cpp:28
@@ -285,6 +296,9 @@ msgstr "Pavel Fric"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pavelfric@seznam.cz"
+
+#~ msgid "failed to read file %1"
+#~ msgstr "Soubor %1 nelze přečíst."
 
 #~ msgid "LIRCConfigurationUI"
 #~ msgstr "LIRCConfigurationUI"

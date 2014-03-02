@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-08 20:08+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2014-01-20 00:02+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -21,10 +21,11 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: dbussupport.cpp:35 dbussupport.cpp:102
-msgid "DBus Support"
+#, fuzzy
+msgid "D-Bus Support"
 msgstr "Supporto per DBus"
 
 #: dbussupport.cpp:41 dbussupport.cpp:103
-msgid "DBus Plugin"
+#, fuzzy
+msgid "D-Bus Plugin"
 msgstr "Estensione DBus"
-

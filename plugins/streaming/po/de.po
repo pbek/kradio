@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-03-29 12:07+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: \n"
@@ -39,19 +39,22 @@ msgstr "Mono"
 #. i18n: file: streaming-configuration-ui.ui:55
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:12 rc.cpp:103
-msgid "Sample Bits"
+#, fuzzy
+msgid "Sample bits:"
 msgstr "Quantisierungs-Bits"
 
 #. i18n: file: streaming-configuration-ui.ui:71
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:15 rc.cpp:106
-msgid "Channels"
+#, fuzzy
+msgid "Channels:"
 msgstr "Kanäle"
 
 #. i18n: file: streaming-configuration-ui.ui:81
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:18 rc.cpp:109
-msgid "Endianess"
+#, fuzzy
+msgid "Endianess:"
 msgstr "Byte-Reihenfolge"
 
 #. i18n: file: streaming-configuration-ui.ui:98
@@ -123,19 +126,22 @@ msgstr "kB"
 #. i18n: file: streaming-configuration-ui.ui:218
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
 #: rc.cpp:54 rc.cpp:145
-msgid "Buffer Size"
+#, fuzzy
+msgid "Buffer size:"
 msgstr "Puffergröße"
 
 #. i18n: file: streaming-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
 #: rc.cpp:57 rc.cpp:148
-msgid "Format"
+#, fuzzy
+msgid "Format:"
 msgstr "Format"
 
 #. i18n: file: streaming-configuration-ui.ui:250
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:60 rc.cpp:151
-msgid "Sample Rate"
+#, fuzzy
+msgid "Sample rate:"
 msgstr "Abtastrate"
 
 #. i18n: file: streaming-configuration-ui.ui:267
@@ -278,9 +284,11 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: streaming-job.cpp:303
-#, kde-format
-msgid "skipped %1 bytes"
-msgstr "%1 bytes wurden übersprungen"
+#, fuzzy, kde-format
+msgid "skipped %1 byte"
+msgid_plural "skipped %1 bytes"
+msgstr[0] "%1 bytes wurden übersprungen"
+msgstr[1] "%1 bytes wurden übersprungen"
 
 #: streaming-job.cpp:347 streaming-job.cpp:398
 #, kde-format
@@ -288,9 +296,11 @@ msgid "error no %1"
 msgstr "Fehler Nr. %1"
 
 #: streaming-job.cpp:360 streaming-job.cpp:383
-#, kde-format
-msgid "skipped %1 writes"
-msgstr "%1 bytes wurden beim Schreiben übersprungen"
+#, fuzzy, kde-format
+msgid "skipped %1 write"
+msgid_plural "skipped %1 writes"
+msgstr[0] "%1 bytes wurden beim Schreiben übersprungen"
+msgstr[1] "%1 bytes wurden beim Schreiben übersprungen"
 
 #: streaming-job.cpp:453
 #, kde-format

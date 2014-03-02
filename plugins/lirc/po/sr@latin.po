@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lirc (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"PO-Revision-Date: 2013-02-10 14:36+0100\n"
+"Last-Translator: Goran Simović <simovic@mailup.net>\n"
+"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"PO-Revision-Date: 2013-02-10 14:36+0100\n"
-"Last-Translator: Goran Simović <simovic@mailup.net>\n"
-"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 
 #: lirc-configuration.cpp:51
 msgid "digit 0"
@@ -105,7 +105,8 @@ msgid "Quit KRadio"
 msgstr "Napusti KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-msgid "<don't care>"
+#, fuzzy
+msgid "<do not care>"
 msgstr "<nebitno>"
 
 #: lirc-configuration.cpp:278
@@ -117,38 +118,43 @@ msgstr ""
 "udaljenoj kontroli"
 
 #: lirc-configuration.cpp:284
-msgid "Double Click on the entries to change the assignments"
+#, fuzzy
+msgid "Double click on the entries to change the assignments"
 msgstr "Dupli klik na ulazu za promenu zadataka "
 
-#: lircsupport.cpp:49
+#: lircsupport.cpp:50
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Podrška za Linux infracrvenu kontrolu (LIRC)"
 
-#: lircsupport.cpp:55 lircsupport.cpp:500
+#: lircsupport.cpp:56 lircsupport.cpp:490
 msgid "LIRC Plugin"
 msgstr "LIRC priključak"
 
-#: lircsupport.cpp:83
-msgid "initializing kradio lirc plugin"
+#: lircsupport.cpp:84
+#, fuzzy
+msgid "initializing KRadio LIRC plugin"
 msgstr "Inicijalizacija kradio lirc priključka"
 
-#: lircsupport.cpp:84
+#: lircsupport.cpp:85
+#, fuzzy
 msgid ""
-"warnings/errors about missing sockets don't harm - usually the LIRC daemon "
+"warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
 msgstr ""
 "upozorenja/greške o nedostajućim utičnicama - obično LIRC priključak nije "
 "pokrenut u ovim slučajevima."
 
-#: lircsupport.cpp:93
-msgid "Initializing kradio lirc plugin failed"
+#: lircsupport.cpp:94
+#, fuzzy
+msgid "Initializing KRadio LIRC plugin failed"
 msgstr "inicijalizacija kradio lirc priključka nije uspela"
 
-#: lircsupport.cpp:102
-msgid "Initializing kradio lirc plugin successful"
+#: lircsupport.cpp:103
+#, fuzzy
+msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Inicijalizacija kradio lirc priključka je uspela"
 
-#: lircsupport.cpp:131
+#: lircsupport.cpp:132
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -160,7 +166,7 @@ msgstr ""
 "daljinski povezivanje. Ovo će najverovatnije voditi do problema. Molim "
 "koristite \"dugme=*\" i  \"daljinski=*\" kao džoker za sve dugmad/daljinski"
 
-#: lircsupport.cpp:138
+#: lircsupport.cpp:139
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -173,19 +179,19 @@ msgstr ""
 "problema. Molim koristite \"dugme=*\" i  \"daljinski=*\" kao džoker za sve "
 "dugmad/daljinski"
 
-#: lircsupport.cpp:149
-#, kde-format
-msgid "There is no entry for kradio in your .lircrc files %1."
+#: lircsupport.cpp:150
+#, fuzzy, kde-format
+msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "Ne postoji stavka za kradio u vašim .lircrc fajlovima %1."
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:151
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Molimo podesite vaš .lircrc fajl %1 ispravno."
 
-#: lircsupport.cpp:154 lircsupport.cpp:155
-#, kde-format
-msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
+#: lircsupport.cpp:155 lircsupport.cpp:156
+#, fuzzy, kde-format
+msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inicijalizacija kradio priključka neuspela. Ne mogu čitati konfiguracioni "
 "fajl %1"
@@ -197,20 +203,21 @@ msgid ""
 msgstr ""
 "%1 ne postoji. Fajl je bio kreiran sa KRadio podrazumevanim .lircrc predlogom"
 
-#: lircsupport.cpp:209
+#: lircsupport.cpp:199
 #, kde-format
-msgid "failed to read file %1"
-msgstr "neispravno čitanje fajla %1"
+msgid "Failed to copy %1 to %2"
+msgstr ""
 
-#: lircsupport.cpp:261
+#: lircsupport.cpp:251
+#, fuzzy
 msgid ""
-"Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
-"kradio"
+"Reading from LIRC socket failed. Disabling LIRC functionalities until the "
+"next start of KRadio"
 msgstr ""
 "Čitanje LIRC utičnice neuspelo. Onemogućavanje LIRC funkcija na sledećem "
 "pokretanju kradia"
 
-#: lircsupport.cpp:499
+#: lircsupport.cpp:489
 msgid "LIRC Support"
 msgstr "LIRC podrška"
 
@@ -241,31 +248,36 @@ msgstr "oznakateksta1"
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-msgid "Power off .lircrc mode"
+#, fuzzy
+msgid "Power off .lircrc mode:"
 msgstr "Isključi .lircrc mod"
 
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-msgid "Power on .lircrc mode"
+#, fuzzy
+msgid "Power on .lircrc mode:"
 msgstr "Uključi .lircrc mod"
 
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-msgid "Synchronize .lircrc modes at runtime"
+#, fuzzy
+msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Sinhronizuj .lircrc modove u kretanju"
 
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-msgid "Synchronize .lircrc modes at startup"
+#, fuzzy
+msgid "Synchronize .lircrc modes at startup:"
 msgstr "Sinhronizuj. lircrc modove  na početku"
 
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-msgid "LIRC Configuration File"
+#, fuzzy
+msgid "LIRC configuration file:"
 msgstr "LIRC konfiguracioni fajl"
 
 #: rc.cpp:28
@@ -277,3 +289,6 @@ msgstr "Goran Simović"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "simovic@mailup.net"
+
+#~ msgid "failed to read file %1"
+#~ msgstr "neispravno čitanje fajla %1"

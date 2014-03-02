@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: errorlog.cpp:35
-msgid "Error Logging Window for KRadio"
+msgid "Error Logging Window"
 msgstr ""
 
 #: errorlog.cpp:41
@@ -59,12 +59,12 @@ msgid "Log Files"
 msgstr ""
 
 #: errorlog.cpp:191
-msgid "Save KRadio Logging Data as ..."
+msgid "Save KRadio Logging Data"
 msgstr ""
 
 #: errorlog.cpp:216
 #, kde-format
-msgid "error writing to tempfile %1"
+msgid "error writing to temporary file %1"
 msgstr ""
 
 #: errorlog.cpp:225

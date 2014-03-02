@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-11-07 23:30-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -22,9 +22,11 @@ msgstr ""
 "X-Language: pt_BR\n"
 
 #: dbussupport.cpp:35 dbussupport.cpp:102
-msgid "DBus Support"
+#, fuzzy
+msgid "D-Bus Support"
 msgstr "Suporte DBus"
 
 #: dbussupport.cpp:41 dbussupport.cpp:103
-msgid "DBus Plugin"
+#, fuzzy
+msgid "D-Bus Plugin"
 msgstr "Plug-in DBus"

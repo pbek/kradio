@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-07-28 14:51+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2012-08-09 13:04+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -19,7 +19,8 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: errorlog.cpp:35
-msgid "Error Logging Window for KRadio"
+#, fuzzy
+msgid "Error Logging Window"
 msgstr "Okno zaznamenávača chýb pre KRadio"
 
 #: errorlog.cpp:41
@@ -60,16 +61,16 @@ msgid "Log Files"
 msgstr "Log súbory"
 
 #: errorlog.cpp:191
-msgid "Save KRadio Logging Data as ..."
+#, fuzzy
+msgid "Save KRadio Logging Data"
 msgstr "Uložiť zaznamenané dáta KRadio ako..."
 
 #: errorlog.cpp:216
-#, kde-format
-msgid "error writing to tempfile %1"
+#, fuzzy, kde-format
+msgid "error writing to temporary file %1"
 msgstr "chyba zápisu do dočasného súboru %1"
 
 #: errorlog.cpp:225
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "chyba nahrávania súboru predvolieb %1"
-

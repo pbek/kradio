@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2011-02-06 02:22+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -111,7 +111,8 @@ msgid "Quit KRadio"
 msgstr "KRadio Çıkış"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-msgid "<don't care>"
+#, fuzzy
+msgid "<do not care>"
 msgstr "<umursamıyorum>"
 
 #: lirc-configuration.cpp:278
@@ -121,36 +122,36 @@ msgid ""
 msgstr ""
 
 #: lirc-configuration.cpp:284
-msgid "Double Click on the entries to change the assignments"
+msgid "Double click on the entries to change the assignments"
 msgstr ""
 
-#: lircsupport.cpp:49
+#: lircsupport.cpp:50
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr ""
 
-#: lircsupport.cpp:55 lircsupport.cpp:500
+#: lircsupport.cpp:56 lircsupport.cpp:490
 msgid "LIRC Plugin"
 msgstr "LIRC Eklenti"
 
-#: lircsupport.cpp:83
-msgid "initializing kradio lirc plugin"
+#: lircsupport.cpp:84
+msgid "initializing KRadio LIRC plugin"
 msgstr ""
 
-#: lircsupport.cpp:84
+#: lircsupport.cpp:85
 msgid ""
-"warnings/errors about missing sockets don't harm - usually the LIRC daemon "
+"warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
 msgstr ""
 
-#: lircsupport.cpp:93
-msgid "Initializing kradio lirc plugin failed"
+#: lircsupport.cpp:94
+msgid "Initializing KRadio LIRC plugin failed"
 msgstr ""
 
-#: lircsupport.cpp:102
-msgid "Initializing kradio lirc plugin successful"
+#: lircsupport.cpp:103
+msgid "Initializing KRadio LIRC plugin successful"
 msgstr ""
 
-#: lircsupport.cpp:131
+#: lircsupport.cpp:132
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -159,7 +160,7 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:138
+#: lircsupport.cpp:139
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -168,19 +169,19 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:149
+#: lircsupport.cpp:150
 #, kde-format
-msgid "There is no entry for kradio in your .lircrc files %1."
+msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr ""
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:151
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr ""
 
-#: lircsupport.cpp:154 lircsupport.cpp:155
+#: lircsupport.cpp:155 lircsupport.cpp:156
 #, kde-format
-msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
+msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 
 #: lircsupport.cpp:196
@@ -189,18 +190,18 @@ msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
 
-#: lircsupport.cpp:209
+#: lircsupport.cpp:199
 #, kde-format
-msgid "failed to read file %1"
+msgid "Failed to copy %1 to %2"
 msgstr ""
 
-#: lircsupport.cpp:261
+#: lircsupport.cpp:251
 msgid ""
-"Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
-"kradio"
+"Reading from LIRC socket failed. Disabling LIRC functionalities until the "
+"next start of KRadio"
 msgstr ""
 
-#: lircsupport.cpp:499
+#: lircsupport.cpp:489
 msgid "LIRC Support"
 msgstr "LIRC Desteği"
 
@@ -231,31 +232,36 @@ msgstr ""
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-msgid "Power off .lircrc mode"
+#, fuzzy
+msgid "Power off .lircrc mode:"
 msgstr ".lircrc mod güç kapat"
 
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-msgid "Power on .lircrc mode"
+#, fuzzy
+msgid "Power on .lircrc mode:"
 msgstr ".lircrc mod güç aç"
 
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-msgid "Synchronize .lircrc modes at runtime"
+#, fuzzy
+msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Çalışırken .lircrc modu senkronize et"
 
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-msgid "Synchronize .lircrc modes at startup"
+#, fuzzy
+msgid "Synchronize .lircrc modes at startup:"
 msgstr "Başlangıçta .lircrc modu senkronize et"
 
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-msgid "LIRC Configuration File"
+#, fuzzy
+msgid "LIRC configuration file:"
 msgstr "LIRC Yapılandırma Dosyası"
 
 #: rc.cpp:28

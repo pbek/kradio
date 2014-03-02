@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2014-01-20 00:50+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -21,35 +21,48 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: docking-configuration.cpp:126
-msgid "Mouse Click on Tray Icon"
+#, fuzzy
+msgid "Mouse click on tray icon:"
 msgstr "Clic del mouse sull'icona del vassoio"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-msgid "Left"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Left:"
 msgstr "Sinistro"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-msgid "Right"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Right:"
 msgstr "Destro"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-msgid "Middle"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Middle:"
 msgstr "Centrale"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgid "XButton1"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton1:"
 msgstr "XButton1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgid "XButton2"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton2:"
 msgstr "XButton2"
 
 #: docking-configuration.cpp:133
-msgid "Mouse Double-Click on Tray Icon"
+#, fuzzy
+msgid "Mouse double-click on tray icon:"
 msgstr "Doppio clic del mouse sull'icona del vassoio"
 
 #: docking-configuration.cpp:140
-msgid "Mouse Wheel Action on Tray Icon"
+#, fuzzy
+msgid "Mouse wheel action on tray icon:"
 msgstr "Azione della rotella del mouse sull'icona del vassoio"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
@@ -97,8 +110,9 @@ msgid "Change Frequency"
 msgstr "Cambio frequenza"
 
 #: docking.cpp:46
-msgid "System Tray Icon/Menu for KRadio"
-msgstr "Icona/Menu del vassoio di sistema di KRadio"
+#, fuzzy
+msgid "System Tray Icon/Menu"
+msgstr "Icona del vassoio di sistema"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
@@ -194,3 +208,5 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
 
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Icona/Menu del vassoio di sistema di KRadio"

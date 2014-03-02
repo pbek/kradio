@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-02-10 14:22+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2006-11-19 17:20+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: KBabel 1.10.2\n"
 
 #: encoder_mp3.cpp:81 encoder_mp3.cpp:194
-#, kde-format
-msgid "Error %1 while encoding mp3. "
+#, fuzzy, kde-format
+msgid "Error %1 while encoding MP3. "
 msgstr "Erro %1 durante a codificação do mp3"
 
 #: encoder_mp3.cpp:91 encoder_mp3.cpp:199 encoder_pcm.cpp:53
@@ -30,7 +30,8 @@ msgid "Error %1 writing output. "
 msgstr "Erro %1 ao escrever a saída"
 
 #: encoder_mp3.cpp:108
-msgid "Cannot initialize lalibmp3lame. "
+#, fuzzy
+msgid "Cannot initialize libmp3lame. "
 msgstr "Não se consegue iniciar lalibmp3lame. "
 
 #: encoder_mp3.cpp:125
@@ -47,11 +48,13 @@ msgid "Cannot open output file %1. "
 msgstr "Não se consegue abrir o ficheiro de saída %1. "
 
 #: encoder_mp3.cpp:161
-msgid "Cannot allocate buffers for mp3 encoding. "
+#, fuzzy
+msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Não se consegue alocar os tampões para a codificação mp3. "
 
 #: encoder_ogg.cpp:100
-msgid "Failed writing data to ogg/vorbis output stream. "
+#, fuzzy
+msgid "Failed writing data to Ogg/Vorbis output stream. "
 msgstr "Falha na escrita de dados para o fluxo saída ogg/vorbis. "
 
 #: encoder_ogg.cpp:141
@@ -60,13 +63,15 @@ msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Não se conseguiu abrir o ficheiro de saída Ogg/Vorbis %1. "
 
 #: encoder_ogg.cpp:154
-msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
+#, fuzzy
+msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
 msgstr ""
 "Falhou a inicialização do modo Ogg/Vorbis: parâmetros inválidos para a "
 "qualidade\n"
 
 #: encoder_ogg.cpp:207
-msgid "Failed writing Ogg/Vorbis header to output stream\n"
+#, fuzzy
+msgid "Failed writing Ogg/Vorbis header to output stream"
 msgstr "Falhou a escrita do cabeçalho Ogg/Vorbis no fluxo de saída\n"
 
 #. i18n: file: recording-configuration-ui.ui:24
@@ -78,7 +83,7 @@ msgstr "Saída"
 #. i18n: file: recording-configuration-ui.ui:41
 #. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
 #: rc.cpp:6 rc.cpp:136
-msgid "ID3 Genre"
+msgid "ID3 genre:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:61
@@ -128,19 +133,21 @@ msgstr ""
 #. i18n: file: recording-configuration-ui.ui:77
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)
 #: rc.cpp:17 rc.cpp:147
-msgid "ID3 Title"
+msgid "ID3 title:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
 #: rc.cpp:20 rc.cpp:150
-msgid "MP3 Quality(0 - high, 9 - low)"
+#, fuzzy
+msgid "MP3 quality (0 - high, 9 - low):"
 msgstr "Qualidade MP3 (0 - alta, 9 - baixa)"
 
 #. i18n: file: recording-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
 #: rc.cpp:23 rc.cpp:153
-msgid "raw pcm output (.raw)"
+#, fuzzy
+msgid "Raw PCM Output (.raw)"
 msgstr " saída pcm em bruto (.raw)"
 
 #. i18n: file: recording-configuration-ui.ui:178
@@ -176,31 +183,34 @@ msgstr "Ogg/Vorbis Comprimido (.ogg)"
 #. i18n: file: recording-configuration-ui.ui:206
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
 #: rc.cpp:41 rc.cpp:171
-msgid "Recording Directory"
+#, fuzzy
+msgid "Recording directory:"
 msgstr "Directoria de Gravação"
 
 #. i18n: file: recording-configuration-ui.ui:216
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
 #: rc.cpp:44 rc.cpp:174
-msgid "File Format"
+#, fuzzy
+msgid "File format:"
 msgstr "Formato do Ficheiro"
 
 #. i18n: file: recording-configuration-ui.ui:226
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:47 rc.cpp:177
-msgid "Ogg Quality(0 - low, 9 - high)"
+#, fuzzy
+msgid "Ogg quality (0 - low, 9 - high):"
 msgstr "Qualidade Ogg (0 - alta, 9 - baixa)"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
 #: rc.cpp:50 rc.cpp:180
-msgid "Filename"
+msgid "Filename:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:267
 #. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
 #: rc.cpp:53 rc.cpp:183
-msgid "ID3 Artist"
+msgid "ID3 artist:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:299
@@ -236,7 +246,8 @@ msgstr "11025"
 #. i18n: file: recording-configuration-ui.ui:356
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:71 rc.cpp:201
-msgid "Endianess"
+#, fuzzy
+msgid "Endianess:"
 msgstr "Posição do byte mais significativo"
 
 #. i18n: file: recording-configuration-ui.ui:389
@@ -253,8 +264,9 @@ msgstr "Mono"
 
 #. i18n: file: recording-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:80 rc.cpp:210 recording-monitor.cpp:54
-msgid "Sample Rate"
+#: rc.cpp:80 rc.cpp:210
+#, fuzzy
+msgid "Sample rate:"
 msgstr "Frequência de Amostragem"
 
 #. i18n: file: recording-configuration-ui.ui:419
@@ -284,13 +296,15 @@ msgstr "8"
 #. i18n: file: recording-configuration-ui.ui:452
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:95 rc.cpp:225
-msgid "Channels"
+#, fuzzy
+msgid "Channels:"
 msgstr "Canais"
 
 #. i18n: file: recording-configuration-ui.ui:462
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:98 rc.cpp:228
-msgid "Sample Bits"
+#, fuzzy
+msgid "Sample bits:"
 msgstr "Bits de Amostragem"
 
 #. i18n: file: recording-configuration-ui.ui:479
@@ -320,13 +334,15 @@ msgstr " kB"
 #. i18n: file: recording-configuration-ui.ui:557
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
 #: rc.cpp:113 rc.cpp:243
-msgid "Encoding Buffer Size"
+#, fuzzy
+msgid "Encoding buffer size:"
 msgstr "Tamanho do Tampão de Codificação"
 
 #. i18n: file: recording-configuration-ui.ui:577
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
 #: rc.cpp:116 rc.cpp:246
-msgid "Number of Buffers"
+#, fuzzy
+msgid "Number of buffers:"
 msgstr "Número de Tampões"
 
 #. i18n: file: recording-configuration-ui.ui:606
@@ -344,7 +360,8 @@ msgstr "&Activar"
 #. i18n: file: recording-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
 #: rc.cpp:125 rc.cpp:255
-msgid "PreRecording Time"
+#, fuzzy
+msgid "Pre-recording time:"
 msgstr "Tempo de Pré-Gravação"
 
 #. i18n: file: recording-configuration-ui.ui:662
@@ -401,7 +418,8 @@ msgstr ""
 "tampão?). Saltaram-se %1 bytes de entrada"
 
 #: recording.cpp:552
-msgid "Recording::outputFile: "
+#, fuzzy, kde-format
+msgid "Recording::outputFile: %1"
 msgstr "Recording::outputFile: "
 
 #: recording.cpp:602
@@ -429,7 +447,8 @@ msgid "Recording Monitor"
 msgstr "Monitor de Gravação"
 
 #: recording-monitor.cpp:44
-msgid "SoundStream"
+#, fuzzy
+msgid "Sound Stream"
 msgstr "Fluxo de Som"
 
 #: recording-monitor.cpp:48
@@ -437,10 +456,10 @@ msgid "Recording File"
 msgstr "Ficheiro de Gravação"
 
 #: recording-monitor.cpp:49 recording-monitor.cpp:51 recording-monitor.cpp:53
-#: recording-monitor.cpp:55 recording-monitor.cpp:385
-#: recording-monitor.cpp:386 recording-monitor.cpp:391
-#: recording-monitor.cpp:392 recording-monitor.cpp:393
-#: recording-monitor.cpp:394
+#: recording-monitor.cpp:55 recording-monitor.cpp:379
+#: recording-monitor.cpp:380 recording-monitor.cpp:385
+#: recording-monitor.cpp:386 recording-monitor.cpp:387
+#: recording-monitor.cpp:388
 msgid "<undefined>"
 msgstr "<indefinido>"
 
@@ -452,12 +471,16 @@ msgstr "Tamanho do Ficheiro"
 msgid "Recording Time"
 msgstr "Tempo de Gravação"
 
+#: recording-monitor.cpp:54
+msgid "Sample Rate"
+msgstr "Frequência de Amostragem"
+
 #: recording-monitor.cpp:64
 msgid "&Close"
 msgstr ""
 
-#: recording-monitor.cpp:65 recording-monitor.cpp:417
-#: recording-monitor.cpp:420
+#: recording-monitor.cpp:65 recording-monitor.cpp:411
+#: recording-monitor.cpp:414
 msgid "&Record"
 msgstr "%Gravar"
 
@@ -468,40 +491,32 @@ msgstr "nada"
 
 #: recording-monitor.cpp:341
 #, kde-format
-msgid "%1 Byte"
-msgstr "%1 Byte"
-
-#: recording-monitor.cpp:342
-#, kde-format
-msgid "%1 kB"
-msgstr "%1 kB"
-
-#: recording-monitor.cpp:343
-#, kde-format
-msgid "%1 MB"
-msgstr "%1 MB"
-
-#: recording-monitor.cpp:344
-#, kde-format
-msgid "%1 GB"
-msgstr "%1 GB"
-
-#: recording-monitor.cpp:347
-#, kde-format
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
-#: recording-monitor.cpp:383
+#: recording-monitor.cpp:377
 msgid "0.000 kB"
 msgstr ""
 
-#: recording-monitor.cpp:384
+#: recording-monitor.cpp:378
 msgid "00:00:00.00"
 msgstr ""
 
-#: recording-monitor.cpp:417
+#: recording-monitor.cpp:411
 msgid "&Stop Recording"
 msgstr "%Parar a Gravação"
+
+#~ msgid "%1 Byte"
+#~ msgstr "%1 Byte"
+
+#~ msgid "%1 kB"
+#~ msgstr "%1 kB"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 MB"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 GB"
 
 #, fuzzy
 #~ msgid "Recording Filename Template"

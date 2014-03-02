@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-11-11 10:24-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -25,9 +25,11 @@ msgid "KRadio internal sound server"
 msgstr "Servidor de som interno KRadio"
 
 #: soundserver.cpp:32
-msgid "SoundServer Plugin"
+#, fuzzy
+msgid "Sound Server Plugin"
 msgstr "Plug-in do servidor de som"
 
 #: soundserver.cpp:34
-msgid "initializing kradio soundserver"
+#, fuzzy
+msgid "initializing KRadio sound server"
 msgstr "Iniciando o servidor de som do KRadio"

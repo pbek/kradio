@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-11-07 23:36-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -22,37 +22,43 @@ msgstr ""
 
 #: docking-configuration.cpp:126
 #, fuzzy
-msgid "Mouse Click on Tray Icon"
+msgid "Mouse click on tray icon:"
 msgstr "Clique com o botão esquerdo do mouse na bandeja"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-msgid "Left"
+msgctxt "Mouse button"
+msgid "Left:"
 msgstr ""
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-msgid "Right"
+msgctxt "Mouse button"
+msgid "Right:"
 msgstr ""
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-msgid "Middle"
+msgctxt "Mouse button"
+msgid "Middle:"
 msgstr ""
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgid "XButton1"
+msgctxt "Mouse button"
+msgid "XButton1:"
 msgstr ""
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgid "XButton2"
+msgctxt "Mouse button"
+msgid "XButton2:"
 msgstr ""
 
 #: docking-configuration.cpp:133
 #, fuzzy
-msgid "Mouse Double-Click on Tray Icon"
+msgid "Mouse double-click on tray icon:"
 msgstr "Clique com o botão esquerdo do mouse na bandeja"
 
 #: docking-configuration.cpp:140
-msgid "Mouse Wheel Action on Tray Icon"
-msgstr ""
+#, fuzzy
+msgid "Mouse wheel action on tray icon:"
+msgstr "Clique com o botão esquerdo do mouse na bandeja"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
@@ -104,8 +110,9 @@ msgid "Change Frequency"
 msgstr ""
 
 #: docking.cpp:46
-msgid "System Tray Icon/Menu for KRadio"
-msgstr "Menu/Ícone da bandeja do sistema para o KRadio"
+#, fuzzy
+msgid "System Tray Icon/Menu"
+msgstr "Ícone da bandeja do sistema"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
@@ -200,6 +207,9 @@ msgstr "Márcio Moraes"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "marciopanto@gmail.com"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Menu/Ícone da bandeja do sistema para o KRadio"
 
 #~ msgid "Show/Hide all GUI Elements"
 #~ msgstr "Mostrar/Ocultar todos os elementos gráficos"

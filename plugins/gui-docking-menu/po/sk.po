@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-07-28 14:51+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2012-08-14 16:00+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -19,35 +19,48 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: docking-configuration.cpp:126
-msgid "Mouse Click on Tray Icon"
+#, fuzzy
+msgid "Mouse click on tray icon:"
 msgstr "Kliknutie na Tray ikonu"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-msgid "Left"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Left:"
 msgstr "Vľavo"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-msgid "Right"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Right:"
 msgstr "Vpravo"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-msgid "Middle"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Middle:"
 msgstr "Stred"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgid "XButton1"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton1:"
 msgstr "XButton1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgid "XButton2"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton2:"
 msgstr "XButton2"
 
 #: docking-configuration.cpp:133
-msgid "Mouse Double-Click on Tray Icon"
+#, fuzzy
+msgid "Mouse double-click on tray icon:"
 msgstr "Dvojklik na Tray ikonu"
 
 #: docking-configuration.cpp:140
-msgid "Mouse Wheel Action on Tray Icon"
+#, fuzzy
+msgid "Mouse wheel action on tray icon:"
 msgstr "Akcia kolieska na Tray ikonu"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
@@ -95,8 +108,9 @@ msgid "Change Frequency"
 msgstr "Zmeniť frekvenciu"
 
 #: docking.cpp:46
-msgid "System Tray Icon/Menu for KRadio"
-msgstr "Ikona System Tray/Menu pre KRadio"
+#, fuzzy
+msgid "System Tray Icon/Menu"
+msgstr "Ikona v systémovej časti panelu"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
@@ -192,4 +206,5 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Ikona System Tray/Menu pre KRadio"

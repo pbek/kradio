@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.oss-sound.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-04-18 12:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: German <en@li.org>\n"
@@ -174,13 +174,15 @@ msgstr "Geräte"
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
-msgid "PCM Device"
+#, fuzzy
+msgid "PCM device:"
 msgstr "Gerät"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
-msgid "Mixer Device"
+#, fuzzy
+msgid "Mixer device:"
 msgstr "Mixer Gerätedatei"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
@@ -204,13 +206,15 @@ msgstr "Erweiterte Optionen"
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
-msgid "Disable Playback"
+#, fuzzy
+msgid "Disable playback"
 msgstr "Wiedergabe abschalten"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
-msgid "Disable Capture"
+#, fuzzy
+msgid "Disable capture"
 msgstr "Aufnahme abschalten"
 
 #: rc.cpp:25

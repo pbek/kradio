@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2010-09-27 02:01+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-de@kde.org>\n"
@@ -19,35 +19,48 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: docking-configuration.cpp:126
-msgid "Mouse Click on Tray Icon"
+#, fuzzy
+msgid "Mouse click on tray icon:"
 msgstr "Mausklick auf Kontrolleistensymbol"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-msgid "Left"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Left:"
 msgstr "Links"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-msgid "Right"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Right:"
 msgstr "Rechts"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-msgid "Middle"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "Middle:"
 msgstr "Mitte"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgid "XButton1"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton1:"
 msgstr "XButton1"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgid "XButton2"
+#, fuzzy
+msgctxt "Mouse button"
+msgid "XButton2:"
 msgstr "XButton2"
 
 #: docking-configuration.cpp:133
-msgid "Mouse Double-Click on Tray Icon"
+#, fuzzy
+msgid "Mouse double-click on tray icon:"
 msgstr "Doppelklick auf Kontrolleistensymbol"
 
 #: docking-configuration.cpp:140
-msgid "Mouse Wheel Action on Tray Icon"
+#, fuzzy
+msgid "Mouse wheel action on tray icon:"
 msgstr "Mausrad auf dem System Tray Icon"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
@@ -95,8 +108,9 @@ msgid "Change Frequency"
 msgstr "Frequence Verändern"
 
 #: docking.cpp:46
-msgid "System Tray Icon/Menu for KRadio"
-msgstr "Tray-Symbol/Menü für KRadio"
+#, fuzzy
+msgid "System Tray Icon/Menu"
+msgstr "System Tray Icon"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
@@ -191,6 +205,9 @@ msgstr "Ernst Martin Witte "
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nodabal.de"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Tray-Symbol/Menü für KRadio"
 
 #~ msgid "Show/Hide all GUI Elements"
 #~ msgstr "Alle Fenster anzeigen/verstecken"

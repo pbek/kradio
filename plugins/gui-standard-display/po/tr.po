@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-02 23:41+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2011-02-06 05:11+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -18,20 +18,22 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#: displaycfg.cpp:46
+msgid "Active text:"
+msgstr ""
+
+#: displaycfg.cpp:47
+msgid "Inactive text:"
+msgstr ""
+
 #: displaycfg.cpp:48
-msgid "Active Text"
-msgstr ""
-
-#: displaycfg.cpp:49
-msgid "Inactive Text"
-msgstr ""
-
-#: displaycfg.cpp:50
-msgid "Background Color"
+#, fuzzy
+msgid "Background color:"
 msgstr "Arka plan rengi"
 
 #: radioview.cpp:54
-msgid "Standard Display for KRadio"
+#, fuzzy
+msgid "Standard Display"
 msgstr "KRadio için Standart Görüntü"
 
 #: radioview.cpp:60
@@ -79,23 +81,27 @@ msgid "Configure KRadio"
 msgstr "KRadio Yapılandır"
 
 #: radioview.cpp:228
-msgid "Power On/Off"
+#, fuzzy
+msgid "Power on/off"
 msgstr "Güç Açma/Kapama"
 
 #: radioview.cpp:229
-msgid "Quit KRadio Application"
+#, fuzzy
+msgid "Quit KRadio application"
 msgstr "KRadio Uygulamasından Çıkışl"
 
 #: radioview.cpp:230
-msgid "Start/Stop Recording"
-msgstr ""
+#, fuzzy
+msgid "Start/stop recording"
+msgstr "Kaydı Başlat"
 
 #: radioview.cpp:231
-msgid "Start/Stop Sleep Countdown"
+msgid "Start/stop sleep countdown"
 msgstr ""
 
 #: radioview.cpp:232
-msgid "Show/Hide Plugins"
+#, fuzzy
+msgid "Show/hide plugins"
 msgstr "Eklentileri Göster/Gizle"
 
 #: radioview.cpp:233
@@ -103,11 +109,12 @@ msgid "Help about KRadio and KDE"
 msgstr "KDE ve KRadio hakkında yardım"
 
 #: radioview.cpp:234
-msgid "Select a Radio Station"
+#, fuzzy
+msgid "Select a radio station"
 msgstr "Bir Radyo İstasyonu Seçin"
 
 #: radioview.cpp:407
-msgid "no preset defined"
+msgid "<no preset defined>"
 msgstr ""
 
 #: radioview.cpp:563 radioview.cpp:633
@@ -162,27 +169,32 @@ msgid "%1 MHz"
 msgstr "%1 MHz"
 
 #: radioview_frequencyseeker.cpp:79
-msgid "Search for previous Radio Station"
+#, fuzzy
+msgid "Search for previous radio station"
 msgstr "Önceki radyo istasyonu için arama"
 
 #: radioview_frequencyseeker.cpp:80
-msgid "Search for next Radio Station"
+#, fuzzy
+msgid "Search for next radio station"
 msgstr "Sonraki radyo istasyonu için arama"
 
 #: radioview_frequencyseeker.cpp:81
-msgid "Decrement Frequency"
+msgid "Decrement frequency"
 msgstr ""
 
 #: radioview_frequencyseeker.cpp:82
-msgid "Increment Frequency"
-msgstr ""
+#, fuzzy
+msgid "Increment frequency"
+msgstr "Frekans Değiştir"
 
 #: radioview_frequencyseeker.cpp:83
-msgid "Change Frequency"
+#, fuzzy
+msgid "Change frequency"
 msgstr "Frekans Değiştir"
 
 #: radioview_volume.cpp:59
-msgid "Change Volume"
+#, fuzzy
+msgid "Change volume"
 msgstr "Ses Değiştir"
 
 #. i18n: file: radioview_seekinterface.ui:15
@@ -194,13 +206,15 @@ msgstr ""
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-msgid "search previous station"
+#, fuzzy
+msgid "Search previous station"
 msgstr "önceki istasyonu ara"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-msgid "decrease freq. by 0.05 MHz"
+#, fuzzy
+msgid "Decrease frequency by 0.05 MHz"
 msgstr "Frekansı 0.05 MHz düşür"
 
 #. i18n: file: radioview_seekinterface.ui:70
@@ -213,13 +227,15 @@ msgstr "Frekans Kontrol"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-msgid "increase freq. by 0.05 MHz"
+#, fuzzy
+msgid "Increase frequency by 0.05 MHz"
 msgstr "Frekansı 0.05 MHz yükselt"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-msgid "search next station"
+#, fuzzy
+msgid "Search next station"
 msgstr "sonraki istasyonu ara"
 
 #: rc.cpp:19

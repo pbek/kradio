@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-04-09 02:25+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2012-04-09 02:27+0200\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -35,15 +35,20 @@ msgid "Quickbar Configuration"
 msgstr "Konfiguration des Kurzwahlfensters"
 
 #: quickbar.cpp:370
-#, kde-format
-msgid "KRadio4 Quickbar%1"
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar, %1"
 msgstr "KRadio4 Kurzwahlfenster%1"
 
-#: quickbar.cpp:377
+#: quickbar.cpp:370
+#, fuzzy
+msgid "KRadio4 Quickbar"
+msgstr "KRadio4 Kurzwahlfenster%1"
+
+#: quickbar.cpp:378
 msgid "contentsDragEnterEvent accepted"
 msgstr "contentsDragEnterEvent angenommen"
 
-#: quickbar.cpp:379
+#: quickbar.cpp:380
 msgid "contentsDragEnterEvent rejected"
 msgstr "contentsDragEnterEvent abgelehnt"
 
@@ -56,4 +61,3 @@ msgstr "Ernst Martin Witte"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
-

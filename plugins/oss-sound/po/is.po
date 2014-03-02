@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_oss_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-26 16:19+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2010-09-15 09:26+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -163,13 +163,15 @@ msgstr "Tæki"
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
-msgid "PCM Device"
+#, fuzzy
+msgid "PCM device:"
 msgstr "PCM tæki"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
-msgid "Mixer Device"
+#, fuzzy
+msgid "Mixer device:"
 msgstr "Hljóðblöndunartæki"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
@@ -193,13 +195,15 @@ msgstr "Ítarlegir valkostir"
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
-msgid "Disable Playback"
+#, fuzzy
+msgid "Disable playback"
 msgstr "Gera afspilun óvirka"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
-msgid "Disable Capture"
+#, fuzzy
+msgid "Disable capture"
 msgstr "Gera upptöku óvirka"
 
 #: rc.cpp:25

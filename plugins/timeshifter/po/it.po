@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2014-01-20 00:27+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -35,25 +35,29 @@ msgstr " MB"
 #. i18n: file: timeshifter-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:9 rc.cpp:27
-msgid "Maximum File Size"
+#, fuzzy
+msgid "Maximum file size:"
 msgstr "Dimensione massima del file"
 
 #. i18n: file: timeshifter-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:12 rc.cpp:30
-msgid "Playback Mixer Device"
+#, fuzzy
+msgid "Playback mixer device:"
 msgstr "Dispositivo mixer di riproduzione"
 
 #. i18n: file: timeshifter-configuration-ui.ui:96
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
 #: rc.cpp:15 rc.cpp:33
-msgid "Temporary File"
+#, fuzzy
+msgid "Temporary file:"
 msgstr "File temporaneo"
 
 #. i18n: file: timeshifter-configuration-ui.ui:109
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:18 rc.cpp:36
-msgid "Playback Mixer Channel"
+#, fuzzy
+msgid "Playback mixer channel:"
 msgstr "Canale mixer di riproduzione"
 
 #: timeshifter-configuration.cpp:146
@@ -95,4 +99,3 @@ msgstr ""
 #: timeshifter.cpp:638
 msgid "internal stream, not stored"
 msgstr "flusso interno, non salvato"
-

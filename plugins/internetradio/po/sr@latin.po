@@ -3,15 +3,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: internetradio (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-02-10 14:36+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"PO-Revision-Date: 2013-02-10 14:38+0100\n"
+"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
+"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.5\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"PO-Revision-Date: 2013-02-10 14:38+0100\n"
-"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: decoder_thread.cpp:136
@@ -20,8 +20,8 @@ msgid "opening stream %1"
 msgstr "otvaranje strima %1"
 
 #: decoder_thread.cpp:140
-#, kde-format
-msgid "failed to open %1. Trying next stream in play list."
+#, fuzzy, kde-format
+msgid "Failed to open %1. Trying next stream in play list."
 msgstr "neuspelo otvaranje %1. Probajte sledeći strim sa plej liste."
 
 #: decoder_thread.cpp:145
@@ -44,8 +44,8 @@ msgid "Failed allocating AVFrame."
 msgstr "Neuspela dodela ACFrame."
 
 #: decoder_thread.cpp:594 decoder_thread.cpp:597
-#, kde-format
-msgid "Could not open Stream %1"
+#, fuzzy, kde-format
+msgid "Could not open stream %1"
 msgstr "Nije moguće otvoriti strim %1"
 
 #: decoder_thread.cpp:673 decoder_thread.cpp:676
@@ -78,17 +78,17 @@ msgstr "Nije moguće pronaći kodek za %1"
 msgid "Opening codec for %1 failed"
 msgstr "Otvaranje kodeka za %1 neuspelo"
 
-#: decoder_thread.cpp:885
+#: decoder_thread.cpp:885 decoder_thread.cpp:888
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "ne mogu otvoriti MMS strim %1"
 
-#: decoder_thread.cpp:888
-#, kde-format
-msgid "cannot open MMS  %1"
-msgstr "ne mogu otvoriti MMS %1"
+#: decoder_thread.cpp:983
+#, fuzzy, kde-format
+msgid "Not yet implemented: libav sample format id %1"
+msgstr "Ne mogu koristiti libav format id %1"
 
-#: decoder_thread.cpp:981
+#: decoder_thread.cpp:989
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Ne mogu koristiti libav format id %1"
@@ -132,7 +132,8 @@ msgstr ""
 "Internet radio priključak (ICY http handler): HTTP greška %1 za strim %2"
 
 #: internetradio.cpp:46
-msgid "Pseudo radio device for internet radio stream support"
+#, fuzzy
+msgid "Pseudo radio device for Internet radio stream support"
 msgstr "Pseudo radio uredjaj za podršku radio strima"
 
 #: internetradio.cpp:53
@@ -198,7 +199,8 @@ msgstr ""
 "neuspelo upisivanje privremenog fajla za skladištenje podataka plej liste"
 
 #: playlist_handler.cpp:525
-msgid "error while reading asx file: "
+#, fuzzy, kde-format
+msgid "error while reading asx file: %1"
 msgstr "greška tokom čitanja asx fajla:␣"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
@@ -210,7 +212,8 @@ msgstr "DijalogOpštegPodešavanja"
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:6 rc.cpp:54
-msgid "Input Buffer Size"
+#, fuzzy
+msgid "Input buffer size:"
 msgstr "Veličina ulaznog bafera"
 
 #. i18n: file: internetradio-configuration-ui.ui:44
@@ -232,13 +235,15 @@ msgstr "␣kB"
 #. i18n: file: internetradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:12 rc.cpp:60
-msgid "PCM Output Buffer Size"
+#, fuzzy
+msgid "PCM output buffer size:"
 msgstr "PCM veličina odlaznog bafera"
 
 #. i18n: file: internetradio-configuration-ui.ui:101
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:18 rc.cpp:66
-msgid "libffmpeg: stream info analysis time"
+#, fuzzy
+msgid "libffmpeg: stream info analysis time:"
 msgstr "libffmpeg: analiza vremena za strim"
 
 #. i18n: file: internetradio-configuration-ui.ui:111
@@ -262,13 +267,15 @@ msgstr "␣s"
 #. i18n: file: internetradio-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:75
-msgid "Watchdog: Reconnect after"
+#, fuzzy
+msgid "Watchdog: reconnect after:"
 msgstr "Nadzornik: Ponovno povezivanje posle"
 
 #. i18n: file: internetradio-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:30 rc.cpp:78
-msgid "Playback Mixer Device"
+#, fuzzy
+msgid "Playback mixer device:"
 msgstr "Mikser reprodukcije"
 
 #. i18n: file: internetradio-configuration-ui.ui:169
@@ -280,25 +287,30 @@ msgstr "test"
 #. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:36 rc.cpp:84
-msgid "Playback Mixer Channel"
+#, fuzzy
+msgid "Playback mixer channel:"
 msgstr "Kanal miksera reprodukcije"
 
 #. i18n: file: internetradio-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:39 rc.cpp:87
-msgid "Mute Playback Channel on Power Off"
+#, fuzzy
+msgid "Mute playback channel on power off:"
 msgstr "Isključi zvuk na kanalu reprodukcije na izlazu"
 
 #. i18n: file: internetradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:42 rc.cpp:90
-msgid "libffmpeg: format probe size"
+#, fuzzy
+msgid "libffmpeg: format probe size:"
 msgstr "libffmpeg: proba veličine formata"
 
 #: stream_input_buffer.cpp:72
-msgid ""
-"This should never happen: inconsistency in buffer locking / buffer size!"
+#, fuzzy
+msgid "This should never happen: inconsistency in buffer locking / buffer size"
 msgstr ""
 "Ovo nikada nije trebalo da se dogodi: nedoslednost u bafer zaključavanju / "
 "veličini bafera!"
 
+#~ msgid "cannot open MMS  %1"
+#~ msgstr "ne mogu otvoriti MMS %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-07-28 14:51+0200\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2012-08-14 15:37+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -39,19 +39,22 @@ msgstr "Mono"
 #. i18n: file: streaming-configuration-ui.ui:55
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:12 rc.cpp:103
-msgid "Sample Bits"
+#, fuzzy
+msgid "Sample bits:"
 msgstr "Samplovacie bity"
 
 #. i18n: file: streaming-configuration-ui.ui:71
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:15 rc.cpp:106
-msgid "Channels"
+#, fuzzy
+msgid "Channels:"
 msgstr "Kanály"
 
 #. i18n: file: streaming-configuration-ui.ui:81
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:18 rc.cpp:109
-msgid "Endianess"
+#, fuzzy
+msgid "Endianess:"
 msgstr "Endianess"
 
 #. i18n: file: streaming-configuration-ui.ui:98
@@ -123,19 +126,22 @@ msgstr "kB"
 #. i18n: file: streaming-configuration-ui.ui:218
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
 #: rc.cpp:54 rc.cpp:145
-msgid "Buffer Size"
+#, fuzzy
+msgid "Buffer size:"
 msgstr "Veľkosť buffera"
 
 #. i18n: file: streaming-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
 #: rc.cpp:57 rc.cpp:148
-msgid "Format"
+#, fuzzy
+msgid "Format:"
 msgstr "Formát"
 
 #. i18n: file: streaming-configuration-ui.ui:250
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:60 rc.cpp:151
-msgid "Sample Rate"
+#, fuzzy
+msgid "Sample rate:"
 msgstr "Vzorkovacia frekvencia"
 
 #. i18n: file: streaming-configuration-ui.ui:267
@@ -179,15 +185,14 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">"
-"Streamovací "
-"plugin sa prezentuje k zvyšku programu KRadio ako <span style="
-"\" font-weight:600;\">zvukové zariadenie</span>, teda máte možnosť vybrať"
-"URL zadané nižšie ako <span style=\" font-weight:600;\">kanály zmiešavača</"
-"span> napr. v plugine V4L2. Toto umožní použitie rúr a zariadení ako"
-"zvukový vstup pre KRadio, napr. <span style=\" font-style:italic;\">/dev/"
-"video24</span>. Toto je užitočné hlavne ak máte <span style=\" "
-"font-weight:600;\">rádio kartu PVR</span>.</p></body></html>"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+"\">Streamovací plugin sa prezentuje k zvyšku programu KRadio ako <span style="
+"\" font-weight:600;\">zvukové zariadenie</span>, teda máte možnosť vybraťURL "
+"zadané nižšie ako <span style=\" font-weight:600;\">kanály zmiešavača</span> "
+"napr. v plugine V4L2. Toto umožní použitie rúr a zariadení akozvukový vstup "
+"pre KRadio, napr. <span style=\" font-style:italic;\">/dev/video24</span>. "
+"Toto je užitočné hlavne ak máte <span style=\" font-weight:600;\">rádio "
+"kartu PVR</span>.</p></body></html>"
 
 #. i18n: file: streaming-configuration-ui.ui:402
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureURLs)
@@ -279,9 +284,12 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: streaming-job.cpp:303
-#, kde-format
-msgid "skipped %1 bytes"
-msgstr "preskočených %1 bajtov"
+#, fuzzy, kde-format
+msgid "skipped %1 byte"
+msgid_plural "skipped %1 bytes"
+msgstr[0] "preskočených %1 bajtov"
+msgstr[1] "preskočených %1 bajtov"
+msgstr[2] "preskočených %1 bajtov"
 
 #: streaming-job.cpp:347 streaming-job.cpp:398
 #, kde-format
@@ -289,13 +297,14 @@ msgid "error no %1"
 msgstr "chyba č. %1"
 
 #: streaming-job.cpp:360 streaming-job.cpp:383
-#, kde-format
-msgid "skipped %1 writes"
-msgstr "preskočených %1 zápisov"
+#, fuzzy, kde-format
+msgid "skipped %1 write"
+msgid_plural "skipped %1 writes"
+msgstr[0] "preskočených %1 zápisov"
+msgstr[1] "preskočených %1 zápisov"
+msgstr[2] "preskočených %1 zápisov"
 
 #: streaming-job.cpp:453
 #, kde-format
 msgid "Error: %1 (%2)"
 msgstr "Chyba: %1 (%2)"
-
-

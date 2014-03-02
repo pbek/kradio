@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2014-01-13 01:12+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,41 +20,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: convert-presets.cpp:58 convert-presets.cpp:139
-msgid "error opening preset file"
-msgstr ""
-"si è verificato un errore durante l'apertura del file della preimpostazione"
-
-#: convert-presets.cpp:60
-msgid "for reading"
-msgstr "per la lettura"
-
-#: convert-presets.cpp:141
-msgid "for writing"
-msgstr "per la scrittura"
-
-#: convert-presets.cpp:153
-msgid "error writing preset file"
-msgstr ""
-"si è verificato un errore durante la scrittura del file della preimpostazione"
-
-#: convert-presets.cpp:168
+#: convert-presets.cpp:159
 msgid "kradio4-convert-presets"
 msgstr "conversione delle preimpostazioni di kradio4"
 
-#: convert-presets.cpp:170
+#: convert-presets.cpp:161
 msgid "(c) 2003-2010 Martin Witte"
 msgstr "(c) 2003-2010 Martin Witte"
 
-#: convert-presets.cpp:173
+#: convert-presets.cpp:164
 msgid "Martin Witte"
 msgstr "Martin Witte"
 
-#: convert-presets.cpp:178
+#: convert-presets.cpp:169
 msgid "quiet mode - no informational output"
 msgstr "modalità silenziosa, nessuna informazione stampata in output"
 
-#: convert-presets.cpp:179
+#: convert-presets.cpp:170
 msgid "preset files to convert"
 msgstr "file di preimpostazione da convertire"
 
@@ -68,3 +50,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
 
+#~ msgid "error opening preset file"
+#~ msgstr ""
+#~ "si è verificato un errore durante l'apertura del file della "
+#~ "preimpostazione"
+
+#~ msgid "for reading"
+#~ msgstr "per la lettura"
+
+#~ msgid "for writing"
+#~ msgstr "per la scrittura"
+
+#~ msgid "error writing preset file"
+#~ msgstr ""
+#~ "si è verificato un errore durante la scrittura del file della "
+#~ "preimpostazione"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2010-09-27 09:04+0200\n"
 "Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -20,39 +20,23 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: convert-presets.cpp:58 convert-presets.cpp:139
-msgid "error opening preset file"
-msgstr "Chyba při otevírání souboru s přednastavením"
-
-#: convert-presets.cpp:60
-msgid "for reading"
-msgstr "pro čtení"
-
-#: convert-presets.cpp:141
-msgid "for writing"
-msgstr "pro zápis"
-
-#: convert-presets.cpp:153
-msgid "error writing preset file"
-msgstr "Chyba při zápisu souboru s přednastavením"
-
-#: convert-presets.cpp:168
+#: convert-presets.cpp:159
 msgid "kradio4-convert-presets"
 msgstr "kradio4-převod-přednastavení"
 
-#: convert-presets.cpp:170
+#: convert-presets.cpp:161
 msgid "(c) 2003-2010 Martin Witte"
 msgstr "(c) 2003-2010 Martin Witte"
 
-#: convert-presets.cpp:173
+#: convert-presets.cpp:164
 msgid "Martin Witte"
 msgstr "Martin Witte"
 
-#: convert-presets.cpp:178
+#: convert-presets.cpp:169
 msgid "quiet mode - no informational output"
 msgstr "Tichý režim - žádný nepotřebný dodatečný informační výstup"
 
-#: convert-presets.cpp:179
+#: convert-presets.cpp:170
 msgid "preset files to convert"
 msgstr "Soubory s přednastavením pro převod"
 
@@ -65,6 +49,18 @@ msgstr "Pavel Fric"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "fripohled.blogspot.com"
+
+#~ msgid "error opening preset file"
+#~ msgstr "Chyba při otevírání souboru s přednastavením"
+
+#~ msgid "for reading"
+#~ msgstr "pro čtení"
+
+#~ msgid "for writing"
+#~ msgstr "pro zápis"
+
+#~ msgid "error writing preset file"
+#~ msgstr "Chyba při zápisu souboru s přednastavením"
 
 #~ msgid "PluginManagerConfigurationUI"
 #~ msgstr "PluginManagerConfigurationUI"

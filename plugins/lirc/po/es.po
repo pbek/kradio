@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -110,7 +110,8 @@ msgid "Quit KRadio"
 msgstr "Salir de KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-msgid "<don't care>"
+#, fuzzy
+msgid "<do not care>"
 msgstr "<sin importancia>"
 
 #: lirc-configuration.cpp:278
@@ -122,36 +123,40 @@ msgstr ""
 "control"
 
 #: lirc-configuration.cpp:284
-msgid "Double Click on the entries to change the assignments"
+#, fuzzy
+msgid "Double click on the entries to change the assignments"
 msgstr "Haga doble clic en las entradas para cambiar las asignaciones"
 
-#: lircsupport.cpp:49
+#: lircsupport.cpp:50
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Soporte para Linux Infrared Control (LIRC)"
 
-#: lircsupport.cpp:55 lircsupport.cpp:500
+#: lircsupport.cpp:56 lircsupport.cpp:490
 msgid "LIRC Plugin"
 msgstr "Plugin LIRC"
 
-#: lircsupport.cpp:83
-msgid "initializing kradio lirc plugin"
+#: lircsupport.cpp:84
+#, fuzzy
+msgid "initializing KRadio LIRC plugin"
 msgstr "inicializando plugin lirc de kradio"
 
-#: lircsupport.cpp:84
+#: lircsupport.cpp:85
 msgid ""
-"warnings/errors about missing sockets don't harm - usually the LIRC daemon "
+"warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
 msgstr ""
 
-#: lircsupport.cpp:93
-msgid "Initializing kradio lirc plugin failed"
+#: lircsupport.cpp:94
+#, fuzzy
+msgid "Initializing KRadio LIRC plugin failed"
 msgstr "Inicialización de plugin lirc de kradio fallida"
 
-#: lircsupport.cpp:102
-msgid "Initializing kradio lirc plugin successful"
+#: lircsupport.cpp:103
+#, fuzzy
+msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Inicialización de plugin lirc de kradio exitosa"
 
-#: lircsupport.cpp:131
+#: lircsupport.cpp:132
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -164,7 +169,7 @@ msgstr ""
 "Es posible que esto cause algunos problemas. Favor usar \"button=*\" y "
 "\"remote=*\" como wildcard para todos los botones/remotos"
 
-#: lircsupport.cpp:138
+#: lircsupport.cpp:139
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -177,19 +182,19 @@ msgstr ""
 "Es posible que esto cause algunos problemas. Favor usar \"button=*\" y "
 "\"remote=*\" como wildcard para todos los botones/remotos"
 
-#: lircsupport.cpp:149
-#, kde-format
-msgid "There is no entry for kradio in your .lircrc files %1."
+#: lircsupport.cpp:150
+#, fuzzy, kde-format
+msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "No existe una entrada para kradio en tu archivo .lircrc %1."
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:151
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Favor configurar su archivo .lircrc %1 correctamente."
 
-#: lircsupport.cpp:154 lircsupport.cpp:155
-#, kde-format
-msgid "Initializing kradio lirc plugin failed. Could not read config file %1"
+#: lircsupport.cpp:155 lircsupport.cpp:156
+#, fuzzy, kde-format
+msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inicialización de plugin lirc de kradio fallida. No se puede leer archivo de "
 "configuración %1"
@@ -202,20 +207,21 @@ msgstr ""
 "%1 no existe. Archivo fue creado con archivo .lircrc de KRadio propuesto por "
 "omisión"
 
-#: lircsupport.cpp:209
+#: lircsupport.cpp:199
 #, kde-format
-msgid "failed to read file %1"
-msgstr "lectura de archivo %1 fallida"
+msgid "Failed to copy %1 to %2"
+msgstr ""
 
-#: lircsupport.cpp:261
+#: lircsupport.cpp:251
+#, fuzzy
 msgid ""
-"Reading from LIRC socket failed. Disabling LIRC Functions till next start of "
-"kradio"
+"Reading from LIRC socket failed. Disabling LIRC functionalities until the "
+"next start of KRadio"
 msgstr ""
 "Lectura de socket LIRC fallida. Deshabilitando Funciones LIRC hasta el "
 "próximo inicio de kradio"
 
-#: lircsupport.cpp:499
+#: lircsupport.cpp:489
 msgid "LIRC Support"
 msgstr "Soporte LIRC"
 
@@ -246,31 +252,36 @@ msgstr "textLabel1"
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-msgid "Power off .lircrc mode"
+#, fuzzy
+msgid "Power off .lircrc mode:"
 msgstr "Apagar modo .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-msgid "Power on .lircrc mode"
+#, fuzzy
+msgid "Power on .lircrc mode:"
 msgstr "Enceder modo .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-msgid "Synchronize .lircrc modes at runtime"
+#, fuzzy
+msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Sincronizar modos .lircrc en tiempo de ejecución"
 
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-msgid "Synchronize .lircrc modes at startup"
+#, fuzzy
+msgid "Synchronize .lircrc modes at startup:"
 msgstr "Sincronizar modos .lircrc al inicio"
 
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-msgid "LIRC Configuration File"
+#, fuzzy
+msgid "LIRC configuration file:"
 msgstr "Archivo de Configuración LIRC"
 
 #: rc.cpp:28
@@ -282,6 +293,9 @@ msgstr "Sergio Ahumada Navea"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahumada@gmail.com"
+
+#~ msgid "failed to read file %1"
+#~ msgstr "lectura de archivo %1 fallida"
 
 #~ msgid "LIRCConfigurationUI"
 #~ msgstr "LIRCConfigurationUI"

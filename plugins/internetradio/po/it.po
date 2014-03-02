@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-02-10 14:22+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2014-01-20 02:00+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -26,8 +26,8 @@ msgid "opening stream %1"
 msgstr "apertura del flusso %1"
 
 #: decoder_thread.cpp:140
-#, kde-format
-msgid "failed to open %1. Trying next stream in play list."
+#, fuzzy, kde-format
+msgid "Failed to open %1. Trying next stream in play list."
 msgstr "impossibile aprire %1. Apertura del flusso successivo della scaletta."
 
 #: decoder_thread.cpp:145
@@ -52,8 +52,8 @@ msgid "Failed allocating AVFrame."
 msgstr "Errore nell'allocazione di AVFrame."
 
 #: decoder_thread.cpp:594 decoder_thread.cpp:597
-#, kde-format
-msgid "Could not open Stream %1"
+#, fuzzy, kde-format
+msgid "Could not open stream %1"
 msgstr "Impossibile aprire il flusso %1"
 
 #: decoder_thread.cpp:673 decoder_thread.cpp:676
@@ -86,17 +86,17 @@ msgstr "Impossibile trovare un codec per %1"
 msgid "Opening codec for %1 failed"
 msgstr "Impossibile aprire il codec per %1"
 
-#: decoder_thread.cpp:885
+#: decoder_thread.cpp:885 decoder_thread.cpp:888
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "impossibile aprire il flusso MMS %1"
 
-#: decoder_thread.cpp:888
-#, kde-format
-msgid "cannot open MMS  %1"
-msgstr "Impossibile aprire l'MMS %1"
+#: decoder_thread.cpp:983
+#, fuzzy, kde-format
+msgid "Not yet implemented: libav sample format id %1"
+msgstr "Impossibile usare il formato di campionamento con id %1 di libav"
 
-#: decoder_thread.cpp:981
+#: decoder_thread.cpp:989
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Impossibile usare il formato di campionamento con id %1 di libav"
@@ -105,8 +105,8 @@ msgstr "Impossibile usare il formato di campionamento con id %1 di libav"
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
 msgstr ""
-"Estensione della radio via Internet (gestore HTTP ICY): apertura dello stream "
-"%1"
+"Estensione della radio via Internet (gestore HTTP ICY): apertura dello "
+"stream %1"
 
 #: icy_http_handler.cpp:90
 #, kde-format
@@ -139,11 +139,12 @@ msgstr ""
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
-"Estensione della radio via Internet (gestore HTTP ICY): errore HTTP %1 per il "
-"flusso %2"
+"Estensione della radio via Internet (gestore HTTP ICY): errore HTTP %1 per "
+"il flusso %2"
 
 #: internetradio.cpp:46
-msgid "Pseudo radio device for internet radio stream support"
+#, fuzzy
+msgid "Pseudo radio device for Internet radio stream support"
 msgstr "Pseudo-dispositivo radio per il supporto del flusso radio via internet"
 
 #: internetradio.cpp:53
@@ -170,8 +171,8 @@ msgstr "Estensione della radio via Internet: "
 #, kde-format
 msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
 msgstr ""
-"Estensione della radio via Internet (%1): tempo scaduto per il flusso di dati "
-"(>= %2 s)"
+"Estensione della radio via Internet (%1): tempo scaduto per il flusso di "
+"dati (>= %2 s)"
 
 #: playlist_handler.cpp:94
 #, kde-format
@@ -188,8 +189,7 @@ msgstr "Impossibile caricare la scaletta %1: %2"
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
 "Impossibile avviare lo scaricamento della scaletta di %1: KIO::get ha "
-"ritornato "
-"un puntatore NULL"
+"ritornato un puntatore NULL"
 
 #: playlist_handler.cpp:176
 #, kde-format
@@ -214,7 +214,8 @@ msgstr ""
 "impossibile scrivere un file temporaneo per salvare i dati della scaletta"
 
 #: playlist_handler.cpp:525
-msgid "error while reading asx file: "
+#, fuzzy, kde-format
+msgid "error while reading asx file: %1"
 msgstr "si è verificato un errore durante la lettura del file asx: "
 
 #. i18n: file: internetradio-configuration-ui.ui:14
@@ -226,7 +227,8 @@ msgstr "SetupDialogGeneral"
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:6 rc.cpp:54
-msgid "Input Buffer Size"
+#, fuzzy
+msgid "Input buffer size:"
 msgstr "Dimensione buffer di input"
 
 #. i18n: file: internetradio-configuration-ui.ui:44
@@ -248,13 +250,15 @@ msgstr " kB"
 #. i18n: file: internetradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:12 rc.cpp:60
-msgid "PCM Output Buffer Size"
+#, fuzzy
+msgid "PCM output buffer size:"
 msgstr "Dimensione buffer di output PCM"
 
 #. i18n: file: internetradio-configuration-ui.ui:101
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:18 rc.cpp:66
-msgid "libffmpeg: stream info analysis time"
+#, fuzzy
+msgid "libffmpeg: stream info analysis time:"
 msgstr "libffmpeg: tempo di analisi informazioni sul flusso"
 
 #. i18n: file: internetradio-configuration-ui.ui:111
@@ -278,13 +282,15 @@ msgstr " s"
 #. i18n: file: internetradio-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:75
-msgid "Watchdog: Reconnect after"
+#, fuzzy
+msgid "Watchdog: reconnect after:"
 msgstr "Watchdog: riconnetti dopo"
 
 #. i18n: file: internetradio-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:30 rc.cpp:78
-msgid "Playback Mixer Device"
+#, fuzzy
+msgid "Playback mixer device:"
 msgstr "Dispositivo mixer di riproduzione"
 
 #. i18n: file: internetradio-configuration-ui.ui:169
@@ -296,26 +302,30 @@ msgstr "test"
 #. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:36 rc.cpp:84
-msgid "Playback Mixer Channel"
+#, fuzzy
+msgid "Playback mixer channel:"
 msgstr "Canale mixer di riproduzione"
 
 #. i18n: file: internetradio-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:39 rc.cpp:87
-msgid "Mute Playback Channel on Power Off"
+#, fuzzy
+msgid "Mute playback channel on power off:"
 msgstr "Canale di riproduzione muto allo spegnimento"
 
 #. i18n: file: internetradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:42 rc.cpp:90
-msgid "libffmpeg: format probe size"
+#, fuzzy
+msgid "libffmpeg: format probe size:"
 msgstr "libffmpeg: dimensione rilevamento formato"
 
 #: stream_input_buffer.cpp:72
-msgid ""
-"This should never happen: inconsistency in buffer locking / buffer size!"
+#, fuzzy
+msgid "This should never happen: inconsistency in buffer locking / buffer size"
 msgstr ""
 "Questo non dovrebbe succedere: incongruenza nel locking dei buffer / "
 "dimensione dei buffer."
 
-
+#~ msgid "cannot open MMS  %1"
+#~ msgstr "Impossibile aprire l'MMS %1"

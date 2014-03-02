@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-02-10 14:22+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2009-06-27 16:26+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: encoder_mp3.cpp:81 encoder_mp3.cpp:194
 #, kde-format
-msgid "Error %1 while encoding mp3. "
+msgid "Error %1 while encoding MP3. "
 msgstr ""
 
 #: encoder_mp3.cpp:91 encoder_mp3.cpp:199 encoder_pcm.cpp:53
@@ -28,7 +28,7 @@ msgid "Error %1 writing output. "
 msgstr ""
 
 #: encoder_mp3.cpp:108
-msgid "Cannot initialize lalibmp3lame. "
+msgid "Cannot initialize libmp3lame. "
 msgstr ""
 
 #: encoder_mp3.cpp:125
@@ -45,11 +45,11 @@ msgid "Cannot open output file %1. "
 msgstr ""
 
 #: encoder_mp3.cpp:161
-msgid "Cannot allocate buffers for mp3 encoding. "
+msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr ""
 
 #: encoder_ogg.cpp:100
-msgid "Failed writing data to ogg/vorbis output stream. "
+msgid "Failed writing data to Ogg/Vorbis output stream. "
 msgstr ""
 
 #: encoder_ogg.cpp:141
@@ -58,11 +58,11 @@ msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr ""
 
 #: encoder_ogg.cpp:154
-msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
+msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
 msgstr ""
 
 #: encoder_ogg.cpp:207
-msgid "Failed writing Ogg/Vorbis header to output stream\n"
+msgid "Failed writing Ogg/Vorbis header to output stream"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:24
@@ -75,7 +75,7 @@ msgstr "Úttak"
 #. i18n: file: recording-configuration-ui.ui:41
 #. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
 #: rc.cpp:6 rc.cpp:136
-msgid "ID3 Genre"
+msgid "ID3 genre:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:61
@@ -125,19 +125,20 @@ msgstr ""
 #. i18n: file: recording-configuration-ui.ui:77
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)
 #: rc.cpp:17 rc.cpp:147
-msgid "ID3 Title"
+msgid "ID3 title:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
 #: rc.cpp:20 rc.cpp:150
-msgid "MP3 Quality(0 - high, 9 - low)"
-msgstr ""
+#, fuzzy
+msgid "MP3 quality (0 - high, 9 - low):"
+msgstr "Gæði Ogg (0 - lág, 9 - há)"
 
 #. i18n: file: recording-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
 #: rc.cpp:23 rc.cpp:153
-msgid "raw pcm output (.raw)"
+msgid "Raw PCM Output (.raw)"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:178
@@ -173,32 +174,33 @@ msgstr ""
 #. i18n: file: recording-configuration-ui.ui:206
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
 #: rc.cpp:41 rc.cpp:171
-msgid "Recording Directory"
+msgid "Recording directory:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:216
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
 #: rc.cpp:44 rc.cpp:174
 #, fuzzy
-msgid "File Format"
+msgid "File format:"
 msgstr "Skráarsnið"
 
 #. i18n: file: recording-configuration-ui.ui:226
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:47 rc.cpp:177
-msgid "Ogg Quality(0 - low, 9 - high)"
+#, fuzzy
+msgid "Ogg quality (0 - low, 9 - high):"
 msgstr "Gæði Ogg (0 - lág, 9 - há)"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
 #: rc.cpp:50 rc.cpp:180
-msgid "Filename"
+msgid "Filename:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:267
 #. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
 #: rc.cpp:53 rc.cpp:183
-msgid "ID3 Artist"
+msgid "ID3 artist:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:299
@@ -234,7 +236,7 @@ msgstr ""
 #. i18n: file: recording-configuration-ui.ui:356
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:71 rc.cpp:201
-msgid "Endianess"
+msgid "Endianess:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:389
@@ -253,9 +255,9 @@ msgstr "Mónó"
 
 #. i18n: file: recording-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:80 rc.cpp:210 recording-monitor.cpp:54
+#: rc.cpp:80 rc.cpp:210
 #, fuzzy
-msgid "Sample Rate"
+msgid "Sample rate:"
 msgstr "Söfnunartíðni"
 
 #. i18n: file: recording-configuration-ui.ui:419
@@ -288,14 +290,15 @@ msgstr "8"
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:95 rc.cpp:225
 #, fuzzy
-msgid "Channels"
+msgid "Channels:"
 msgstr "Rásir"
 
 #. i18n: file: recording-configuration-ui.ui:462
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:98 rc.cpp:228
-msgid "Sample Bits"
-msgstr ""
+#, fuzzy
+msgid "Sample bits:"
+msgstr "Söfnunartíðni"
 
 #. i18n: file: recording-configuration-ui.ui:479
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
@@ -325,13 +328,13 @@ msgstr " kB"
 #. i18n: file: recording-configuration-ui.ui:557
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
 #: rc.cpp:113 rc.cpp:243
-msgid "Encoding Buffer Size"
+msgid "Encoding buffer size:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:577
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
 #: rc.cpp:116 rc.cpp:246
-msgid "Number of Buffers"
+msgid "Number of buffers:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:606
@@ -350,7 +353,7 @@ msgstr "&Virkja"
 #. i18n: file: recording-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
 #: rc.cpp:125 rc.cpp:255
-msgid "PreRecording Time"
+msgid "Pre-recording time:"
 msgstr ""
 
 #. i18n: file: recording-configuration-ui.ui:662
@@ -407,7 +410,8 @@ msgid ""
 msgstr ""
 
 #: recording.cpp:552
-msgid "Recording::outputFile: "
+#, kde-format
+msgid "Recording::outputFile: %1"
 msgstr ""
 
 #: recording.cpp:602
@@ -434,7 +438,7 @@ msgid "Recording Monitor"
 msgstr ""
 
 #: recording-monitor.cpp:44
-msgid "SoundStream"
+msgid "Sound Stream"
 msgstr ""
 
 #: recording-monitor.cpp:48
@@ -442,10 +446,10 @@ msgid "Recording File"
 msgstr ""
 
 #: recording-monitor.cpp:49 recording-monitor.cpp:51 recording-monitor.cpp:53
-#: recording-monitor.cpp:55 recording-monitor.cpp:385
-#: recording-monitor.cpp:386 recording-monitor.cpp:391
-#: recording-monitor.cpp:392 recording-monitor.cpp:393
-#: recording-monitor.cpp:394
+#: recording-monitor.cpp:55 recording-monitor.cpp:379
+#: recording-monitor.cpp:380 recording-monitor.cpp:385
+#: recording-monitor.cpp:386 recording-monitor.cpp:387
+#: recording-monitor.cpp:388
 #, fuzzy
 msgid "<undefined>"
 msgstr "<óskilgreint>"
@@ -459,13 +463,18 @@ msgstr "Skráarstærð"
 msgid "Recording Time"
 msgstr ""
 
+#: recording-monitor.cpp:54
+#, fuzzy
+msgid "Sample Rate"
+msgstr "Söfnunartíðni"
+
 #: recording-monitor.cpp:64
 #, fuzzy
 msgid "&Close"
 msgstr "&Loka"
 
-#: recording-monitor.cpp:65 recording-monitor.cpp:417
-#: recording-monitor.cpp:420
+#: recording-monitor.cpp:65 recording-monitor.cpp:411
+#: recording-monitor.cpp:414
 #, fuzzy
 msgid "&Record"
 msgstr "&Taka upp"
@@ -477,41 +486,33 @@ msgid "nothing"
 msgstr "ekkert"
 
 #: recording-monitor.cpp:341
-#, kde-format
-msgid "%1 Byte"
-msgstr ""
-
-#: recording-monitor.cpp:342
-#, fuzzy, kde-format
-msgid "%1 kB"
-msgstr "%1 kb"
-
-#: recording-monitor.cpp:343
-#, fuzzy, kde-format
-msgid "%1 MB"
-msgstr "%1 Mb"
-
-#: recording-monitor.cpp:344
-#, fuzzy, kde-format
-msgid "%1 GB"
-msgstr "%1 Gb"
-
-#: recording-monitor.cpp:347
 #, fuzzy, kde-format
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
-#: recording-monitor.cpp:383
+#: recording-monitor.cpp:377
 msgid "0.000 kB"
 msgstr ""
 
-#: recording-monitor.cpp:384
+#: recording-monitor.cpp:378
 msgid "00:00:00.00"
 msgstr ""
 
-#: recording-monitor.cpp:417
+#: recording-monitor.cpp:411
 msgid "&Stop Recording"
 msgstr ""
+
+#, fuzzy
+#~ msgid "%1 kB"
+#~ msgstr "%1 kb"
+
+#, fuzzy
+#~ msgid "%1 MB"
+#~ msgstr "%1 Mb"
+
+#, fuzzy
+#~ msgid "%1 GB"
+#~ msgstr "%1 Gb"
 
 #, fuzzy
 #~ msgid "Alt+N"

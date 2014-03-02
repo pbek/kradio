@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-03-02 22:51+0100\n"
 "PO-Revision-Date: 2006-11-19 16:07+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -21,37 +21,43 @@ msgstr ""
 
 #: docking-configuration.cpp:126
 #, fuzzy
-msgid "Mouse Click on Tray Icon"
+msgid "Mouse click on tray icon:"
 msgstr "Clique Botão Esquerdo do Rato no Painel"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-msgid "Left"
+msgctxt "Mouse button"
+msgid "Left:"
 msgstr ""
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-msgid "Right"
+msgctxt "Mouse button"
+msgid "Right:"
 msgstr ""
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-msgid "Middle"
+msgctxt "Mouse button"
+msgid "Middle:"
 msgstr ""
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgid "XButton1"
+msgctxt "Mouse button"
+msgid "XButton1:"
 msgstr ""
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgid "XButton2"
+msgctxt "Mouse button"
+msgid "XButton2:"
 msgstr ""
 
 #: docking-configuration.cpp:133
 #, fuzzy
-msgid "Mouse Double-Click on Tray Icon"
+msgid "Mouse double-click on tray icon:"
 msgstr "Clique Botão Esquerdo do Rato no Painel"
 
 #: docking-configuration.cpp:140
-msgid "Mouse Wheel Action on Tray Icon"
-msgstr ""
+#, fuzzy
+msgid "Mouse wheel action on tray icon:"
+msgstr "Clique Botão Esquerdo do Rato no Painel"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
@@ -103,7 +109,7 @@ msgstr ""
 
 #: docking.cpp:46
 #, fuzzy
-msgid "System Tray Icon/Menu for KRadio"
+msgid "System Tray Icon/Menu"
 msgstr "Menu do Painel do KRadio"
 
 #: docking.cpp:54
@@ -199,6 +205,10 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#, fuzzy
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Menu do Painel do KRadio"
 
 #~ msgid "Show/Hide all GUI Elements"
 #~ msgstr "Mostrar/Esconder todos os Elementos do Interface Gráfico"
