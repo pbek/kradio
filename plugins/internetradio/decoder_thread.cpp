@@ -181,7 +181,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
                                                   &pkt);
 
 #ifdef HAVE_LIBSWR
-    DECLARE_ALIGNED(16, uint8_t, tmp_swr_output_buffer)[m_decoded_frame->nb_samples * m_soundFormat.frameSize()];
+    DECLARE_ALIGNED(32, uint8_t, tmp_swr_output_buffer)[m_decoded_frame->nb_samples * m_soundFormat.frameSize() + 64];
 #endif
     if (processed_input_bytes > 0 && got_frame) {
         /* if a frame has been decoded, output it */
@@ -201,6 +201,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
             got_frame             = 0;
         }
         output_buf = (char*)tmp_swr_output_buffer;
+        generated_output_bytes = ret * m_soundFormat.frameSize();
 #endif
     }
 
@@ -842,13 +843,31 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
 #ifdef HAVE_LIBSWR
     // Set up SWR context once you've got codec information
     m_swr_context = swr_alloc();
-    av_opt_set_int       (m_swr_context, "in_channel_layout",  m_av_aCodecCtx->channel_layout, 0);
-    av_opt_set_int       (m_swr_context, "out_channel_layout", m_av_aCodecCtx->channel_layout, 0);
-    av_opt_set_int       (m_swr_context, "in_sample_rate",     m_av_aCodecCtx->sample_rate,    0);
-    av_opt_set_int       (m_swr_context, "out_sample_rate",    m_av_aCodecCtx->sample_rate,    0);
-    av_opt_set_sample_fmt(m_swr_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
-    av_opt_set_sample_fmt(m_swr_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
-    swr_init(m_swr_context);
+    uint64_t chLayout = m_av_aCodecCtx->channel_layout;
+    if (!chLayout) {
+        switch(m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels) {
+            case 1:
+                chLayout = AV_CH_LAYOUT_MONO;
+                break;
+            case 2:
+                chLayout = AV_CH_LAYOUT_STEREO;
+                break;
+            default:
+                m_error = true;
+                log(ThreadLogging::LogError, i18n("Unknown channel layout for %1", stream));
+                closeAVStream();
+                break;
+        }
+    }
+    if (!m_error) {
+        av_opt_set_int       (m_swr_context, "in_channel_layout",  chLayout,                       0);
+        av_opt_set_int       (m_swr_context, "out_channel_layout", chLayout,                       0);
+        av_opt_set_int       (m_swr_context, "in_sample_rate",     m_av_aCodecCtx->sample_rate,    0);
+        av_opt_set_int       (m_swr_context, "out_sample_rate",    m_av_aCodecCtx->sample_rate,    0);
+        av_opt_set_sample_fmt(m_swr_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
+        av_opt_set_sample_fmt(m_swr_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
+        swr_init(m_swr_context);
+    }
 #endif
 
     if (!m_soundFormat.isValid()) {
