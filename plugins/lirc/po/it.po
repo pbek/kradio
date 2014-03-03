@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2014-01-20 00:44+0100\n"
+"POT-Creation-Date: 2014-03-03 01:44+0100\n"
+"PO-Revision-Date: 2014-03-03 00:46+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -113,7 +113,6 @@ msgid "Quit KRadio"
 msgstr "Esci da KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-#, fuzzy
 msgid "<do not care>"
 msgstr "<non importante>"
 
@@ -126,7 +125,6 @@ msgstr ""
 "tuo telecomando"
 
 #: lirc-configuration.cpp:284
-#, fuzzy
 msgid "Double click on the entries to change the assignments"
 msgstr "Doppio clic sulle voci per cambiare le assegnazioni"
 
@@ -139,12 +137,10 @@ msgid "LIRC Plugin"
 msgstr "Estensione LIRC"
 
 #: lircsupport.cpp:84
-#, fuzzy
 msgid "initializing KRadio LIRC plugin"
 msgstr "inizializzazione dell'estensione LIRC di KRadio"
 
 #: lircsupport.cpp:85
-#, fuzzy
 msgid ""
 "warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
@@ -153,12 +149,10 @@ msgstr ""
 "LIRC non è in esecuzione in questi casi."
 
 #: lircsupport.cpp:94
-#, fuzzy
 msgid "Initializing KRadio LIRC plugin failed"
 msgstr "Inizializzazione dell'estensione LIRC di KRadio non riuscita"
 
 #: lircsupport.cpp:103
-#, fuzzy
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr ""
 "Inizializzazione dell'estensione LIRC di KRadio è avvenuta con successo"
@@ -190,7 +184,7 @@ msgstr ""
 "\" come caratteri jolly per indicare tutti i pulsanti/telecomandi"
 
 #: lircsupport.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "Non ci sono voci per KRadio nel tuo file .lircrc %1."
 
@@ -200,7 +194,7 @@ msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Configura correttamente il tuo file .lircrc %1."
 
 #: lircsupport.cpp:155 lircsupport.cpp:156
-#, fuzzy, kde-format
+#, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inizializzazione dell'estensione LIRC di KRadio non riuscita. Impossibile "
@@ -217,10 +211,9 @@ msgstr ""
 #: lircsupport.cpp:199
 #, kde-format
 msgid "Failed to copy %1 to %2"
-msgstr ""
+msgstr "Impossibile copiare %1 in %2"
 
 #: lircsupport.cpp:251
-#, fuzzy
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
 "next start of KRadio"
@@ -259,37 +252,32 @@ msgstr "textLabel1"
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-#, fuzzy
 msgid "Power off .lircrc mode:"
-msgstr "Modalità di .lircrc di spegnimento"
+msgstr "Modalità di .lircrc di spegnimento:"
 
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-#, fuzzy
 msgid "Power on .lircrc mode:"
-msgstr "Modalità di .lircrc di accensione"
+msgstr "Modalità di .lircrc di accensione:"
 
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-#, fuzzy
 msgid "Synchronize .lircrc modes at runtime:"
-msgstr "Sincronizza le modalità di .lircrc a tempo d'esecuzione "
+msgstr "Sincronizza le modalità di .lircrc a tempo d'esecuzione:"
 
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-#, fuzzy
 msgid "Synchronize .lircrc modes at startup:"
-msgstr "Sincronizza le modalità di .lircrc all'avvio"
+msgstr "Sincronizza le modalità di .lircrc all'avvio:"
 
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-#, fuzzy
 msgid "LIRC configuration file:"
-msgstr "File di configurazione di LIRC"
+msgstr "File di configurazione di LIRC:"
 
 #: rc.cpp:28
 msgctxt "NAME OF TRANSLATORS"

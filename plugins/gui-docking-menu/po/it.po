@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2014-01-20 00:50+0100\n"
+"POT-Creation-Date: 2014-03-03 01:44+0100\n"
+"PO-Revision-Date: 2014-03-03 00:42+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -21,49 +21,41 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: docking-configuration.cpp:126
-#, fuzzy
 msgid "Mouse click on tray icon:"
-msgstr "Clic del mouse sull'icona del vassoio"
+msgstr "Clic del mouse sull'icona del vassoio:"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Left:"
-msgstr "Sinistro"
+msgstr "Sinistro:"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Right:"
-msgstr "Destro"
+msgstr "Destro:"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Middle:"
-msgstr "Centrale"
+msgstr "Centrale:"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-#, fuzzy
 msgctxt "Mouse button"
 msgid "XButton1:"
-msgstr "XButton1"
+msgstr "XButton1:"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-#, fuzzy
 msgctxt "Mouse button"
 msgid "XButton2:"
-msgstr "XButton2"
+msgstr "XButton2:"
 
 #: docking-configuration.cpp:133
-#, fuzzy
 msgid "Mouse double-click on tray icon:"
-msgstr "Doppio clic del mouse sull'icona del vassoio"
+msgstr "Doppio clic del mouse sull'icona del vassoio:"
 
 #: docking-configuration.cpp:140
-#, fuzzy
 msgid "Mouse wheel action on tray icon:"
-msgstr "Azione della rotella del mouse sull'icona del vassoio"
+msgstr "Azione della rotella del mouse sull'icona del vassoio:"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
@@ -110,9 +102,8 @@ msgid "Change Frequency"
 msgstr "Cambio frequenza"
 
 #: docking.cpp:46
-#, fuzzy
 msgid "System Tray Icon/Menu"
-msgstr "Icona del vassoio di sistema"
+msgstr "Icona/Menu del vassoio di sistema:"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
