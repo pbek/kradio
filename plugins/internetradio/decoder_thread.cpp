@@ -33,8 +33,9 @@
 
 #include "libav-global.h"
 extern "C" {
-  #include "libavformat/avio.h"
-  #include "libavformat/avformat.h"
+  #include <libavformat/avio.h>
+  #include <libavformat/avformat.h>
+  #include <libavutil/opt.h>
 }
 
 
@@ -64,6 +65,9 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #endif
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     m_decoded_frame       (NULL),
+#endif
+#ifdef HAVE_LIBSWR
+    m_swr_context         (NULL),
 #endif
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -176,15 +180,28 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
                                                   &got_frame,
                                                   &pkt);
 
+#ifdef HAVE_LIBSWR
+    DECLARE_ALIGNED(16, uint8_t, tmp_swr_output_buffer)[m_decoded_frame->nb_samples * m_soundFormat.frameSize()];
+#endif
     if (processed_input_bytes > 0 && got_frame) {
         /* if a frame has been decoded, output it */
         generated_output_bytes = av_samples_get_buffer_size(NULL,
                                                       m_av_aCodecCtx->channels,
                                                       m_decoded_frame->nb_samples,
                                                       m_av_aCodecCtx->sample_fmt,
-                                                      1
+                                                      0
                                                      );
         output_buf = (char*)m_decoded_frame->data[0];
+
+#ifdef HAVE_LIBSWR
+        uint8_t *tmpBuf[2] = { tmp_swr_output_buffer, NULL };
+        int ret = swr_convert(m_swr_context, tmpBuf, m_decoded_frame->nb_samples, (const uint8_t**)m_decoded_frame->extended_data, m_decoded_frame->nb_samples);
+        if (ret < 0) {
+            processed_input_bytes = 0;
+            got_frame             = 0;
+        }
+        output_buf = (char*)tmp_swr_output_buffer;
+#endif
     }
 
 #elif  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(52, 72, 2) // checked: avcodec_decode_audio3 in ffmpeg >= 0.6
@@ -820,6 +837,19 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
         closeAVStream();
         return false;
     }
+    
+    
+#ifdef HAVE_LIBSWR
+    // Set up SWR context once you've got codec information
+    m_swr_context = swr_alloc();
+    av_opt_set_int       (m_swr_context, "in_channel_layout",  m_av_aCodecCtx->channel_layout, 0);
+    av_opt_set_int       (m_swr_context, "out_channel_layout", m_av_aCodecCtx->channel_layout, 0);
+    av_opt_set_int       (m_swr_context, "in_sample_rate",     m_av_aCodecCtx->sample_rate,    0);
+    av_opt_set_int       (m_swr_context, "out_sample_rate",    m_av_aCodecCtx->sample_rate,    0);
+    av_opt_set_sample_fmt(m_swr_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
+    av_opt_set_sample_fmt(m_swr_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
+    swr_init(m_swr_context);
+#endif
 
     if (!m_soundFormat.isValid()) {
         updateSoundFormat();
@@ -940,6 +970,9 @@ void InternetRadioDecoder::updateSoundFormat()
         int  rate = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_rate;
         int  ch   = m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels;
         int  fmt  = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
+#ifdef HAVE_LIBSWR
+        fmt       = AV_SAMPLE_FMT_S16;
+#endif
         int  bits     = 0;
         int  issigned = 0;
         bool isplanar = false;
@@ -1023,6 +1056,12 @@ void InternetRadioDecoder::closeAVStream()
     if (m_av_aCodecCtx) {
         avcodec_close(m_av_aCodecCtx);
     }
+#ifdef HAVE_LIBSWR
+    if (m_swr_context) {
+        swr_free(&m_swr_context);
+        m_swr_context = NULL;
+    }
+#endif
 
     freeAVIOContext();
 

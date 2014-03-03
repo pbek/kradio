@@ -45,6 +45,9 @@ extern "C" {
     #include <libavformat/avformat.h>
     #include <libavutil/dict.h>
 #endif
+#ifdef HAVE_LIBSWR
+    #include <libswresample/swresample.h>
+#endif
 #ifdef HAVE_FFMPEG_OLD
     #include <ffmpeg/avformat.h>
 #endif
@@ -67,7 +70,7 @@ extern "C" {
 
 /*! Enable DEBUGGING: Log Buffer States
  */
-//#define DEBUG_LOG_BUFFER_STATE
+// #define DEBUG_LOG_BUFFER_STATE
 
 /*! Enable DEBUGGING: Do not send PCM data to the audio
  *  interface (fast decoding)
@@ -170,6 +173,9 @@ protected:
 #endif
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     AVFrame              *m_decoded_frame;
+#endif
+#ifdef HAVE_LIBSWR
+    SwrContext           *m_swr_context;
 #endif
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
