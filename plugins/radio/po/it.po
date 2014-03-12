@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-03 01:44+0100\n"
-"PO-Revision-Date: 2014-03-03 00:54+0100\n"
+"PO-Revision-Date: 2014-03-03 01:54+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -43,11 +43,11 @@ msgstr "Stereo"
 
 #: radio-configuration.cpp:89
 msgid "Load and replace presets"
-msgstr "Carica e sostituisce le preimpostazioni"
+msgstr "Carica e sostituisci le preimpostazioni"
 
 #: radio-configuration.cpp:90
 msgid "Load and add presets"
-msgstr "Carica e aggiunge le preimpostazioni"
+msgstr "Carica e aggiungi le preimpostazioni"
 
 #: radio-configuration.cpp:433
 msgid "Image Selection"
@@ -113,7 +113,7 @@ msgstr "sconosciuto"
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
 #: rc.cpp:3 rc.cpp:93
 msgid "Station &Presets"
-msgstr "&Preimpostazioni della stazioni"
+msgstr "&Preimpostazioni delle stazioni"
 
 #. i18n: file: radio-configuration-ui.ui:104
 #. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
