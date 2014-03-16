@@ -92,7 +92,7 @@ sub colored_html_td
 {
     my $text  = shift;
     my $color = shift;
-    return "<td ALIGN=center><FONT COLOR=\"$color\">$text</FONT></TD>";
+    return "<td align=\"center\"><font color=\"$color\">$text</font></td>";
 }
 
 sub get_lang_color
