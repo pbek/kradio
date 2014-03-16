@@ -2,6 +2,7 @@
 
 use strict;
 use Data::Dumper;
+use Locale::PO;
 
 # Status: 0 == excelent (no translations required)
 #         1 == good (some translations required)
@@ -26,17 +27,22 @@ foreach my $po(@allpo) {
     $lang =~ s:^.*/::;
     $lang =~ s:\.po$::;
     my %res = analyze_po($po);
-    $langs{$lang} = { %{ $langs{$lang} || {} }, %res };
+    $langs{$lang}{$po} = \%res;
 }
 
 
 my %stats = ();
 
-foreach my $lang(sort keys %langs) {
-    my %records        = %{$langs{$lang}};
-    my $total          = 0 + keys %records;
-    my $fuzzy          = 0 + grep { exists $$_{fuzzy}   && $$_{fuzzy}        } values %records;
-    my $not_translated = 0 + grep { !exists $$_{msgstr} || $$_{msgstr} eq "" } values %records;
+while (my ($lang, $pofiles) = each(%langs)) {
+    my $total          = 0;
+    my $fuzzy          = 0;
+    my $not_translated = 0;
+    while (my ($pofile, $postats) = each(%$pofiles)) {
+        my %po = %$postats;
+        $total += $po{total};
+        $fuzzy += $po{fuzzy};
+        $not_translated += $po{untranslated};
+    }
     my $translated     = $total - $fuzzy - $not_translated;
     $stats{$lang} = {  total           => $total,
                        fuzzy           => $fuzzy,
@@ -161,91 +167,40 @@ sub get_status
 sub analyze_po
 {
     my $po = shift;
-    open PO, $po or die "cannot read file $po: $!\n";
-    my @lines = <PO>;
-    close PO;
-    chomp @lines;
-
-    @lines = merge_multi_lines(@lines);
-
-    my %translations = get_translations($po, @lines);
-}
-
-
-
-
-sub get_translations
-{
-    my $filename = shift;
-    my @lines    = @_;
-    my $dirname  = $filename;
-    $dirname     =~ s:/[^/]+$::;
-    my %res      = ();
-
-    my $record   = {};
-
-#    if ($filename =~ m:convert-presets/po/es.po$: ) {
-#        print map ("debug: $filename: $_\n", @lines);
-#    }
-
-    while (@lines) {
-        my $line = shift @lines;
-
-        # file name and line number
-        if ($line =~ /^\#:\s+/) {
-            $$record{location} = "$'";
-            $$record{key}      = "$dirname -- $$record{location}";
-        }
-        # file name and line number
-        elsif ($line =~ /^\#\.\si18n:\s+file:\s+/) {
-            $$record{uilocation} = $';
-        }
-        elsif ($line =~ /^\#,\s+.*\bfuzzy\b/) {
-            $$record{fuzzy} = 1;
-        }
-        elsif ($line =~ /^msgid\s+\"(.+)\"\s*$/) {
-            $$record{msgid} = $1;
-        }
-        elsif ($line =~ /^msgstr\s+\"(.*)\"\s*$/) {
-            $$record{msgstr} = $1;
-        }
-        elsif ($line =~ /^\s*$/ && exists $$record{msgid}) {
-            $res{$$record{key}} = $record;
-            $record = {};
-        }
-        else {
-            #ignore
+    my $aref = Locale::PO->load_file_asarray($po) or die "cannot read file $po: $!\n";
+    my %res = ();
+    foreach my $entry(@{$aref}) {
+        my $msgid = $entry->msgid();
+        if (defined($entry->obsolete()) or $msgid eq '""') {
+            # skip obsolete messages or the header
+        } else {
+            $res{total}++;
+            if (defined($entry->msgstr_n())) {
+                my $count = 0;
+                foreach my $str(%{$entry->msgstr_n()}){
+                    $count++ if $str eq '""';
+                }
+                $res{untranslated}++ if $count eq scalar($entry->msgstr_n());
+            } else {
+                $res{untranslated}++ if $entry->msgstr() eq '""';
+            }
+            if ($entry->fuzzy()) {
+                $res{fuzzy}++;
+            }
         }
     }
-    if (exists $$record{msgid}) {
-        $res{$$record{key}} = $record;
-        $record = {};
+    if (not defined($res{total})) {
+        $res{total} = 0;
     }
-#    if ($filename =~ m:convert-presets/po/es.po$: ) {
-#        print Dumper(\%res);
-#    }
+    if (not defined($res{fuzzy})) {
+        $res{fuzzy} = 0;
+    }
+    if (not defined($res{untranslated})) {
+        $res{untranslated} = 0;
+    }
     return %res;
 }
 
-
-sub merge_multi_lines
-{
-    my @input  = @_;
-    my @output = ();
-    foreach my $line(@input) {
-        # if line starts with quoted string, continue previous line
-        if ($line =~ /^\"/ && @output && $output[$#output] =~ /\"\s*$/) {
-            $output[$#output] =~ s/\"\s*$//;
-            $line             =~ s/^\"//;
-            $output[$#output] .= $line;
-        }
-        # else just add the line to the list of output lines
-        else {
-            push @output, $line;
-        }
-    }
-    return @output;
-}
 
 
 # for LANG in $(find -iname "*.po" | while read line; do basename $line .po ; done | sort -u) ; do
