@@ -66,8 +66,8 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     m_decoded_frame       (NULL),
 #endif
-#ifdef HAVE_LIBSWR
-    m_swr_context         (NULL),
+#if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
+    m_resample_context    (NULL),
 #endif
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -180,27 +180,39 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
                                                   &got_frame,
                                                   &pkt);
 
-#ifdef HAVE_LIBSWR
-    DECLARE_ALIGNED(32, uint8_t, tmp_swr_output_buffer)[m_decoded_frame->nb_samples * m_soundFormat.frameSize() + 64];
+#if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
+    DECLARE_ALIGNED(32, uint8_t, tmp_resample_output_buffer)[m_decoded_frame->nb_samples * m_soundFormat.frameSize() + 64];
 #endif
     if (processed_input_bytes > 0 && got_frame) {
         /* if a frame has been decoded, output it */
-        generated_output_bytes = av_samples_get_buffer_size(NULL,
-                                                      m_av_aCodecCtx->channels,
-                                                      m_decoded_frame->nb_samples,
-                                                      m_av_aCodecCtx->sample_fmt,
-                                                      0
-                                                     );
+        int lineSize = 0;
+        generated_output_bytes = av_samples_get_buffer_size(&lineSize,
+                                                             m_av_aCodecCtx->channels,
+                                                             m_decoded_frame->nb_samples,
+                                                             m_av_aCodecCtx->sample_fmt,
+                                                             0
+                                                           );
         output_buf = (char*)m_decoded_frame->data[0];
 
-#ifdef HAVE_LIBSWR
-        uint8_t *tmpBuf[2] = { tmp_swr_output_buffer, NULL };
-        int ret = swr_convert(m_swr_context, tmpBuf, m_decoded_frame->nb_samples, (const uint8_t**)m_decoded_frame->extended_data, m_decoded_frame->nb_samples);
+#if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
+        uint8_t *tmpBuf[2]        = { tmp_resample_output_buffer, NULL };
+        int      resampleLineSize = sizeof(tmp_resample_output_buffer) / m_soundFormat.m_Channels;
+        #ifdef HAVE_LIBAVRESAMPLE
+            int ret = avresample_convert(m_resample_context, 
+                                         tmpBuf, resampleLineSize, m_decoded_frame->nb_samples, 
+                                         m_decoded_frame->extended_data, lineSize, m_decoded_frame->nb_samples
+                                        );
+        #elif  defined (HAVE_LIBSWRESAMPLE)
+            int ret = swr_convert       (m_resample_context, 
+                                         tmpBuf, m_decoded_frame->nb_samples, 
+                                         (const uint8_t**)m_decoded_frame->extended_data, m_decoded_frame->nb_samples
+                                        );
+        #endif
         if (ret < 0) {
             processed_input_bytes = 0;
             got_frame             = 0;
         }
-        output_buf = (char*)tmp_swr_output_buffer;
+        output_buf = (char*)tmp_resample_output_buffer;
         generated_output_bytes = ret * m_soundFormat.frameSize();
 #endif
     }
@@ -840,9 +852,13 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
     }
     
     
-#ifdef HAVE_LIBSWR
+#if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
     // Set up SWR context once you've got codec information
-    m_swr_context = swr_alloc();
+#ifdef HAVE_LIBAVRESAMPLE
+    m_resample_context = avresample_alloc_context();
+#elif defined HAVE_LIBSWRESAMPLE
+    m_resample_context = swr_alloc();
+#endif
     uint64_t chLayout = m_av_aCodecCtx->channel_layout;
     if (!chLayout) {
         switch(m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels) {
@@ -860,13 +876,23 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
         }
     }
     if (!m_error) {
-        av_opt_set_int       (m_swr_context, "in_channel_layout",  chLayout,                       0);
-        av_opt_set_int       (m_swr_context, "out_channel_layout", chLayout,                       0);
-        av_opt_set_int       (m_swr_context, "in_sample_rate",     m_av_aCodecCtx->sample_rate,    0);
-        av_opt_set_int       (m_swr_context, "out_sample_rate",    m_av_aCodecCtx->sample_rate,    0);
-        av_opt_set_sample_fmt(m_swr_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
-        av_opt_set_sample_fmt(m_swr_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
-        swr_init(m_swr_context);
+        av_opt_set_int       (m_resample_context, "in_channel_layout",  chLayout,                       0);
+        av_opt_set_int       (m_resample_context, "out_channel_layout", chLayout,                       0);
+        av_opt_set_int       (m_resample_context, "in_sample_rate",     m_av_aCodecCtx->sample_rate,    0);
+        av_opt_set_int       (m_resample_context, "out_sample_rate",    m_av_aCodecCtx->sample_rate,    0);
+#ifdef HAVE_LIBAVRESAMPLE
+        av_opt_set_int       (m_resample_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
+        av_opt_set_int       (m_resample_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
+#elif defined HAVE_LIBSWRESAMPLE
+        av_opt_set_sample_fmt(m_resample_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
+        av_opt_set_sample_fmt(m_resample_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
+#endif
+
+#ifdef HAVE_LIBAVRESAMPLE
+        avresample_open(m_resample_context);
+#elif defined HAVE_LIBSWRESAMPLE
+        swr_init(m_resample_context);
+#endif
     }
 #endif
 
@@ -989,7 +1015,7 @@ void InternetRadioDecoder::updateSoundFormat()
         int  rate = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_rate;
         int  ch   = m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels;
         int  fmt  = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
-#ifdef HAVE_LIBSWR
+#if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
         fmt       = AV_SAMPLE_FMT_S16;
 #endif
         int  bits     = 0;
@@ -1075,10 +1101,16 @@ void InternetRadioDecoder::closeAVStream()
     if (m_av_aCodecCtx) {
         avcodec_close(m_av_aCodecCtx);
     }
-#ifdef HAVE_LIBSWR
-    if (m_swr_context) {
-        swr_free(&m_swr_context);
-        m_swr_context = NULL;
+#ifdef HAVE_LIBAVRESAMPLE
+    if (m_resample_context) {
+        avresample_close(m_resample_context);
+        avresample_free(&m_resample_context);
+        m_resample_context = NULL;
+    }
+#elif defined HAVE_LIBSWRESAMPLE
+    if (m_resample_context) {
+        swr_free(&m_resample_context);
+        m_resample_context = NULL;
     }
 #endif
 

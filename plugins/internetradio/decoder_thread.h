@@ -45,7 +45,9 @@ extern "C" {
     #include <libavformat/avformat.h>
     #include <libavutil/dict.h>
 #endif
-#ifdef HAVE_LIBSWR
+#ifdef HAVE_LIBAVRESAMPLE
+    #include <libavresample/avresample.h>
+#elif defined(HAVE_LIBSWRESAMPLE)
     #include <libswresample/swresample.h>
 #endif
 #ifdef HAVE_FFMPEG_OLD
@@ -174,8 +176,10 @@ protected:
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     AVFrame              *m_decoded_frame;
 #endif
-#ifdef HAVE_LIBSWR
-    SwrContext           *m_swr_context;
+#ifdef HAVE_LIBAVRESAMPLE
+    AVAudioResampleContext  *m_resample_context;
+#elif defined HAVE_LIBSWRESAMPLE
+    SwrContext              *m_resample_context;
 #endif
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD

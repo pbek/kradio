@@ -128,12 +128,21 @@ IF(WITH_FFMPEG)
     pkg_check_modules(LIBSWRESAMPLE libswresample)
     IF(LIBSWRESAMPLE_FOUND)
         SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBSWRESAMPLE_LIBRARIES}   )
-        add_definitions( -DHAVE_LIBSWR )
-    ELSE(LIBSWRESAMPLE_FOUND)
-        IF(NOT LIBAVCODEC_VERSION LESS 53.42.0)
-            ERROR(FATAL_ERROR "ERROR: found libavcodec " ${LIBAVCODEC_VERSION} " which requires libswresample. However, libswresample is not available.")
-        ENDIF(NOT LIBAVCODEC_VERSION LESS 53.42.0)
+        add_definitions( -DHAVE_LIBSWRESAMPLE )
     ENDIF(LIBSWRESAMPLE_FOUND)
+
+
+    pkg_check_modules(LIBAVRESAMPLE libavresample)
+    IF(LIBAVRESAMPLE_FOUND)
+        SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBAVRESAMPLE_LIBRARIES}   )
+        add_definitions( -DHAVE_LIBAVRESAMPLE )
+    ENDIF(LIBAVRESAMPLE_FOUND)
+
+    IF(NOT LIBAVCODEC_VERSION LESS 53.42.0)
+        IF(NOT LIBSWRESAMPLE_FOUND AND NOT LIBAVRESAMPLE_FOUND)
+            ERROR(FATAL_ERROR "ERROR: found libavcodec " ${LIBAVCODEC_VERSION} " which requires libswresample or libavesample. However, none is not available.")
+        ENDIF(NOT LIBSWRESAMPLE_FOUND AND NOT LIBAVRESAMPLE_FOUND)
+    ENDIF(NOT LIBAVCODEC_VERSION LESS 53.42.0)
 
 
     pkg_check_modules(LIBMMS libmms)
