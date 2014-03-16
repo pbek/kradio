@@ -3,6 +3,7 @@
 use strict;
 use Data::Dumper;
 use Locale::PO;
+use File::Find;
 
 # Status: 0 == excelent (no translations required)
 #         1 == good (some translations required)
@@ -14,11 +15,11 @@ my $STATE_NOTSOGOOD = 2;
 my $STATE_BAD       = 3;
 
 
-open ALLPO, "find -iname \"*.po\" |" or die "cannot run find -iname \"*.po\"\n: $!";
-my @allpo = <ALLPO>;
-close ALLPO;
-
-chomp @allpo;
+my @allpo;
+sub collectfiles {
+  push @allpo, $File::Find::name if -f && /\.po$/;
+}
+File::Find::find(\&collectfiles, '.');
 
 my %langs = ();
 
