@@ -94,7 +94,7 @@ void Profiler::printData ()
         if (l < 50) l = 50;
         const profile_data &d = m_ProfileData[*it];
         printf(("%-"+QString::number(l)+"s: total: %3.8f (%9lli)  avg: %3.8f  min: %3.8f  max: %3.8f\n").toLocal8Bit().constData(),
-               (*it).toLocal8Bit().constData(),
+               qPrintable(*it),
                (double)d.accumulatedCounter / 1.666e9,
                d.callCounter,
                (double)d.accumulatedCounter / (double)d.callCounter / 1.666e9,
