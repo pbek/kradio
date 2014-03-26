@@ -22,6 +22,8 @@
 #include <math.h>
 #include <unistd.h>
 
+#include <QtCore/QFile>
+
 #include <kio/jobclasses.h>
 #include <kio/netaccess.h>
 #include <kio/job.h>
@@ -693,7 +695,7 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 //         printf("probe data size = %i\n", probeData.size());
 
         if (!err) {
-            const QByteArray path = m_inputUrl.pathOrUrl().toLocal8Bit();
+            const QByteArray path = QFile::encodeName(m_inputUrl.pathOrUrl());
             AVProbeData pd = { path.constData(), (unsigned char*)probeData.data(), probeData.size() };
 
             iformat = av_probe_input_format2(&pd, 1, &score);

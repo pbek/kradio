@@ -20,6 +20,7 @@
 #include <QtCore/QMutex>
 #include <QtCore/QTextCodec>
 #include <QtCore/QDateTime>
+#include <QtCore/QFile>
 #include <klocale.h>
 
 RecordingEncodingMP3::RecordingEncodingMP3(QObject *parent,            SoundStreamID ssid,
@@ -143,7 +144,7 @@ bool RecordingEncodingMP3::openOutput(const QString &output)
                 id3tag_set_genre  (m_LAMEFlags, ba_genre);
             }
 
-            m_MP3Output = fopen(output.toLocal8Bit(), "wb+");
+            m_MP3Output = fopen(QFile::encodeName(output), "wb+");
             if (!m_MP3Output) {
                 m_errorString += i18n("Cannot open output file %1. ", output);
                 m_error = true;

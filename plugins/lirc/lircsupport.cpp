@@ -114,7 +114,7 @@ void LircSupport::LIRC_init_config()
     m_lircConfig  = 0;
 
     if (m_fd_lirc != -1) {
-        QByteArray lirc_cfg_filename_ba = m_lirc_config_file.toUtf8();
+        QByteArray lirc_cfg_filename_ba = QFile::encodeName(m_lirc_config_file);
         if (lirc_readconfig (lirc_cfg_filename_ba.data(), &m_lircConfig, NULL) == 0) {
 
             // check config

@@ -17,6 +17,7 @@
 
 #include <klocale.h>
 #include <kaboutdata.h>
+#include <QtCore/QFile>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
@@ -782,7 +783,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
 
     setWaitForMinPlaybackBufferFill(90/*percent*/);
 
-    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, m_PlaybackDeviceName.toLocal8Bit(), SND_PCM_STREAM_PLAYBACK, (m_nonBlockingPlayback ? SND_PCM_NONBLOCK : 0), m_PlaybackLatency, m_PlaybackBufferSize, m_PlaybackChunkSize);
+    bool error = !openAlsaDevice(m_hPlayback, m_PlaybackFormat, QFile::encodeName(m_PlaybackDeviceName), SND_PCM_STREAM_PLAYBACK, (m_nonBlockingPlayback ? SND_PCM_NONBLOCK : 0), m_PlaybackLatency, m_PlaybackBufferSize, m_PlaybackChunkSize);
 
     if (!error) {
 
@@ -846,7 +847,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
         m_CaptureFormat = m_CaptureFormatOverride;
     }
 
-    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, m_CaptureDeviceName.toLocal8Bit(), SND_PCM_STREAM_CAPTURE, (m_nonBlockingCapture ? SND_PCM_NONBLOCK : 0), m_CaptureLatency, m_CaptureBufferSize, m_CaptureChunkSize);
+    bool error = !openAlsaDevice(m_hCapture, m_CaptureFormat, QFile::encodeName(m_CaptureDeviceName), SND_PCM_STREAM_CAPTURE, (m_nonBlockingCapture ? SND_PCM_NONBLOCK : 0), m_CaptureLatency, m_CaptureBufferSize, m_CaptureChunkSize);
 
     if (!error) {
 
@@ -877,13 +878,14 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
 }
 
 
-bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t buffer_size, size_t chunk_size)
+bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const QByteArray &pcm_name_ba, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t buffer_size, size_t chunk_size)
 {
     bool                 error    = false;
     int                  dir      = 0;
     snd_output_t        *log      = NULL;
     snd_pcm_hw_params_t *hwparams = NULL;
     snd_pcm_sw_params_t *swparams = NULL;
+    const char          *pcm_name = pcm_name_ba.constData();
 
     snd_pcm_hw_params_alloca(&hwparams); // allocate on stack, needs no free
     snd_pcm_sw_params_alloca(&swparams); // allocate on stack, needs no free

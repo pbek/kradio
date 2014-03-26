@@ -263,7 +263,7 @@ signals:
 protected:
     INLINE_IMPL_DEF_noticeConnectedI(IErrorLogClient);
 
-    bool   openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const char *pcm_name, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t buffer_size, size_t chunk_size);
+    bool   openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &format, const QByteArray &pcm_name_ba, snd_pcm_stream_t stream, int flags, unsigned &latency, size_t buffer_size, size_t chunk_size);
 
     bool   openPlaybackDevice (const SoundFormat &format, bool reopen = false);
     bool   openCaptureDevice  (const SoundFormat &format, bool reopen = false);

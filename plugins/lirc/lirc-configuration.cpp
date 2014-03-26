@@ -130,7 +130,7 @@ void LIRCConfiguration::readLIRCConfigurationFile()
         QStringList modes;
 
         QString     lirc_config_file    = edLIRCConfigurationFile->url().path();
-        QByteArray  lirc_cfg_filename_ba = lirc_config_file.toUtf8();
+        QByteArray  lirc_cfg_filename_ba = QFile::encodeName(lirc_config_file);
 
         QFileInfo   lirc_config_file_info(lirc_config_file);
 

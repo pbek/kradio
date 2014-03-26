@@ -18,6 +18,7 @@
 #include "fileringbuffer.h"
 
 #include <QtCore/QString>
+#include <QtCore/QFile>
 #include <unistd.h>
 #include <klocale.h>
 
@@ -26,7 +27,7 @@ FileRingBuffer::FileRingBuffer(const QString &filename, quint64 max_size)
     m_BaseFileName = filename;
     m_FileIdx  = 0;
     m_FileName = m_BaseFileName + "_" + QString::number(++m_FileIdx);
-    m_File     = fopen(m_FileName.toLocal8Bit(), "w+");
+    m_File     = fopen(QFile::encodeName(m_FileName), "w+");
     m_MaxSize  = max_size;
     m_RealSize = 0;
     m_FillSize = 0;
@@ -40,7 +41,7 @@ FileRingBuffer::~FileRingBuffer()
 {
     if (m_File) {
         fclose (m_File);
-        unlink (m_FileName.toLocal8Bit());
+        unlink (QFile::encodeName(m_FileName));
     }
     m_File   = NULL;
     m_FileName = QString::null;
@@ -59,11 +60,11 @@ bool FileRingBuffer::resize(const QString &filename, quint64 new_max_size)
         clear();
         if (m_File) {
             fclose (m_File);
-            unlink (m_FileName.toLocal8Bit());
+            unlink (QFile::encodeName(m_FileName));
         }
         m_BaseFileName = filename;
         m_FileName = m_BaseFileName + "_" + QString::number(++m_FileIdx);
-        m_File     = fopen(m_FileName.toLocal8Bit(), "w+");
+        m_File     = fopen(QFile::encodeName(m_FileName), "w+");
         m_error    = m_File == NULL;
         m_errorString = m_File ? QString() : i18n("cannot open buffer file %1", m_FileName);
     }
@@ -80,7 +81,7 @@ bool FileRingBuffer::resize(const QString &filename, quint64 new_max_size)
         char           buffer[buffer_size];
 
         QString tmp_file_name = m_BaseFileName + "_" + QString::number(++m_FileIdx);
-        FILE *tmp_file = fopen (tmp_file_name.toLocal8Bit(), "w+");
+        FILE *tmp_file = fopen (QFile::encodeName(tmp_file_name), "w+");
         quint64  newFill = 0;
         if (tmp_file) {
             while (!m_error && m_FillSize > 0) {
