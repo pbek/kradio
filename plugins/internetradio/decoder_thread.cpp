@@ -645,7 +645,7 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
     LibAVGlobal::ensureInitDone();
     AVInputFormat   *iformat      = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
     if (!iformat) {
-        QString decoderClass;
+        QByteArray decoderClass;
         if (m_contentType == "audio/mpeg") {
             decoderClass = "mp3";
         } else if (m_contentType == "audio/x-mpeg") {
@@ -676,9 +676,9 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
             decoderClass = "asf";
         }
         if (decoderClass.length()) {
-            iformat = av_find_input_format(decoderClass.toLocal8Bit());
+            iformat = av_find_input_format(decoderClass.constData());
             if (iformat) {
-                log(ThreadLogging::LogDebug, QString("found content-type = \"%1\": skipping auto detection and setting decoder class to \"%2\"").arg(m_contentType).arg(decoderClass));
+                log(ThreadLogging::LogDebug, QString("found content-type = \"%1\": skipping auto detection and setting decoder class to \"%2\"").arg(m_contentType).arg(decoderClass.constData()));
             }
         }
     }
