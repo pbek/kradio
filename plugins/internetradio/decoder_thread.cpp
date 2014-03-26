@@ -643,7 +643,7 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
 AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackFormat, bool warningsNotErrors)
 {
     LibAVGlobal::ensureInitDone();
-    AVInputFormat   *iformat      = av_find_input_format(m_RadioStation.decoderClass().toLocal8Bit());
+    AVInputFormat   *iformat      = av_find_input_format(m_RadioStation.decoderClass().toLatin1());
     if (!iformat) {
         QByteArray decoderClass;
         if (m_contentType == "audio/mpeg") {
@@ -717,7 +717,7 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 #endif
 
     if (!iformat && fallbackFormat.length()) {
-        iformat = av_find_input_format(fallbackFormat.toLocal8Bit());
+        iformat = av_find_input_format(fallbackFormat.toLatin1());
     }
 
     return iformat;

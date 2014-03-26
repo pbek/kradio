@@ -65,7 +65,7 @@ void IcyHttpHandler::setupStreamJob(const KUrl &url, const QString &metaDataEnco
     stopStreamDownload();
 
     m_metaDataEncoding      = metaDataEncoding;
-    m_metaDataEncodingCodec = QTextCodec::codecForName(m_metaDataEncoding.toLocal8Bit());
+    m_metaDataEncodingCodec = QTextCodec::codecForName(m_metaDataEncoding.toLatin1());
 
     // start download job
     m_streamUrl = url;
