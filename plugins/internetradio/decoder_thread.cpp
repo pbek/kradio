@@ -693,7 +693,8 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 //         printf("probe data size = %i\n", probeData.size());
 
         if (!err) {
-            AVProbeData pd = { m_inputUrl.pathOrUrl().toLocal8Bit(), (unsigned char*)probeData.data(), probeData.size() };
+            const QByteArray path = m_inputUrl.pathOrUrl().toLocal8Bit();
+            AVProbeData pd = { path.constData(), (unsigned char*)probeData.data(), probeData.size() };
 
             iformat = av_probe_input_format2(&pd, 1, &score);
         }
