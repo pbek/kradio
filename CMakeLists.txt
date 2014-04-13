@@ -151,7 +151,7 @@ SET(documentation_files
 
 INSTALL(
 	FILES       ${documentation_files}
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/kradio4/
+    DESTINATION ${SHARE_INSTALL_PREFIX}/doc/kradio4/
 )
 
 INSTALL(
