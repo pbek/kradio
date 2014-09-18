@@ -1,3 +1,36 @@
+2014-09-18
+
+   emw  - cleaned backlog of translation & preset emails
+        - suspend-on-sleep feature added
+        - fixed alarm time slip after suspend
+        - updated for recent libav/libffmpeg
+        - updated German translation
+
+2014-03-26
+ 
+   Pino Toscano
+        - QString -> char* conversion fixes
+        - various Build system fixes
+        - various misc / conformance fixes
+
+2014-03-13
+
+   Luigi Toscano
+        - updated Italian translation
+
+2014-02-16
+ 
+
+   Pino Toscano
+        - MPRIS Plugin
+        - various build system fixes
+        - various misc/i18n-conformance improvements
+
+2013-03-09
+
+   Alexey Kouznetsov
+        - updated Russian translation
+
 2013-02-23
 
    emw  - fixed compilation problems in Serbian translation
