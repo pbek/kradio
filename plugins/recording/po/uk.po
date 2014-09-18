@@ -1,24 +1,24 @@
 # translation of uk.po to Ukrainian
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2010-09-27 12:03+0300\n"
+"PO-Revision-Date: 2014-09-18 19:14+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: encoder_mp3.cpp:82 encoder_mp3.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error %1 while encoding MP3. "
 msgstr "Під час кодування MP3 сталася помилка: %1. "
 
@@ -28,9 +28,8 @@ msgid "Error %1 writing output. "
 msgstr "Під час запису сталася помилка: %1"
 
 #: encoder_mp3.cpp:109
-#, fuzzy
 msgid "Cannot initialize libmp3lame. "
-msgstr "Не вдалося ініціалізувати lalibmp3lame. "
+msgstr "Не вдалося ініціалізувати libmp3lame. "
 
 #: encoder_mp3.cpp:126
 msgid "Cannot initialize libmp3lame parameters. "
@@ -46,14 +45,12 @@ msgid "Cannot open output file %1. "
 msgstr "Не вдалося відкрити файл виведення %1. "
 
 #: encoder_mp3.cpp:162
-#, fuzzy
 msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Не вдалося розмістити у пам'яті буфери для кодування MP3."
 
 #: encoder_ogg.cpp:100
-#, fuzzy
 msgid "Failed writing data to Ogg/Vorbis output stream. "
-msgstr "Помилка запису даних у потік виведення ogg/vorbis. "
+msgstr "Помилка запису даних у потік виведення Ogg/Vorbis. "
 
 #: encoder_ogg.cpp:141
 #, kde-format
@@ -61,15 +58,13 @@ msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Не вдалося відкрити файл виведення Ogg/Vorbis «%1»: %2"
 
 #: encoder_ogg.cpp:154
-#, fuzzy
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
 msgstr ""
-"Запуск режиму Ogg/Vorbis зазнав невдачі: якість запису вказано помилково\n"
+"Запуск режиму Ogg/Vorbis зазнав невдачі: якість запису вказано помилково"
 
 #: encoder_ogg.cpp:207
-#, fuzzy
 msgid "Failed writing Ogg/Vorbis header to output stream"
-msgstr "Помилка запису заголовку Ogg/Vorbis у потік виведення\n"
+msgstr "Помилка запису заголовку Ogg/Vorbis до потоку виведення"
 
 #. i18n: file: recording-configuration-ui.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
@@ -81,12 +76,12 @@ msgstr "Виведення"
 #. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
 #: rc.cpp:6 rc.cpp:136
 msgid "ID3 genre:"
-msgstr ""
+msgstr "Жанр ID3:"
 
 #. i18n: file: recording-configuration-ui.ui:61
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory_3)
 #: rc.cpp:10 rc.cpp:140
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -131,49 +126,61 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
-"italic;\">(</span><span style=\" font-weight:600; font-style:italic;\">%s</"
-"span><span style=\" font-style:italic;\">: назва радіостанції, </span><span "
-"style=\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-"
-"style:italic;\">: індекс радіостанції, </span><span style=\" font-"
-"weight:600; font-style:italic;\">%Y</span><span style=\" font-style:italic;"
-"\">: 4-цифровий рік, </span><span style=\" font-weight:600; font-style:"
-"italic;\">%m</span><span style=\" font-style:italic;\">: 2-цифровий місяць, "
-"</span><span style=\" font-weight:600; font-style:italic;\">%d</span><span "
-"style=\" font-style:italic;\">: 2-цифровий день, </span><span style=\" font-"
-"weight:600; font-style:italic;\">%B</span><span style=\" font-style:italic;"
-"\">: назва місяця, </span><span style=\" font-weight:600; font-style:italic;"
-"\">%A</span><span style=\" font-style:italic;\"> назва дня, </span><span "
-"style=\" font-weight:600; font-style:italic;\">%H</span><span style=\" font-"
-"style:italic;\">: 2-цифрові години, </span><span style=\" font-weight:600; "
-"font-style:italic;\">%M</span><span style=\" font-style:italic;\">: 2-"
-"цифрові хвилини, </span><span style=\" font-weight:600; font-style:italic;\">"
-"%S</span><span style=\" font-style:italic;\"> 2-цифрові секунди,</span><span "
-"style=\" font-weight:600; font-style:italic;\"> %%</span><span style=\" font-"
-"style:italic;\">: знак відсотка)</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'DejaVu Sans'; font-style:italic;\">Шаблони запису: </span><span "
+"style=\" font-family:'DejaVu Sans'; font-weight:600; font-style:italic;\">"
+"%s</span><span style=\" font-family:'DejaVu Sans'; font-style:italic;\">: "
+"назва станції, </span><span style=\" font-family:'DejaVu Sans'; font-"
+"weight:600; font-style:italic;\">%i</span><span style=\" font-family:'DejaVu "
+"Sans'; font-style:italic;\">: індекс станції, </span><span style=\" font-"
+"family:'DejaVu Sans'; font-weight:600; font-style:italic;\">%Y</span><span "
+"style=\" font-family:'DejaVu Sans'; font-style:italic;\">: 4-цифровий рік, </"
+"span><span style=\" font-family:'DejaVu Sans'; font-weight:600; font-style:"
+"italic;\">%m</span><span style=\" font-family:'DejaVu Sans'; font-style:"
+"italic;\">: 2-цифровий місяць, </span><span style=\" font-family:'DejaVu "
+"Sans'; "
+"font-weight:600; font-style:italic;\">%d</span><span style=\" font-"
+"family:'DejaVu Sans'; font-style:italic;\">: 2-цифровий день, </span><span "
+"style="
+"\" font-family:'DejaVu Sans'; font-weight:600; font-style:italic;\">%B</"
+"span><span style=\" font-family:'DejaVu Sans'; font-style:italic;\">: назва "
+"місяця, </span><span style=\" font-family:'DejaVu Sans'; font-weight:600; "
+"font-"
+"style:italic;\">%A</span><span style=\" font-family:'DejaVu Sans'; font-"
+"style:italic;\"> день місяця, </span><span style=\" font-family:'DejaVu "
+"Sans'; "
+"font-weight:600; font-style:italic;\">%H</span><span style=\" font-"
+"family:'DejaVu Sans'; font-style:italic;\">: 2-цифрові години, </span><span "
+"style=\" font-family:'DejaVu Sans'; font-weight:600; font-style:italic;\">"
+"%M</span><span style=\" font-family:'DejaVu Sans'; font-style:italic;\">: 2-"
+"цифрові хвилини, </span><span style=\" font-family:'DejaVu Sans'; font-"
+"weight:600; font-style:italic;\">%S</span><span style=\" font-family:'DejaVu "
+"Sans'; font-style:italic;\"> 2-цифрові секунди,</span><span style=\" font-"
+"family:'DejaVu Sans'; font-weight:600; font-style:italic;\"> %%</span><span "
+"style=\" font-family:'DejaVu Sans'; font-style:italic;\">: символ відсотків<"
+"/span></"
+"p></body></html>"
 
 #. i18n: file: recording-configuration-ui.ui:77
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)
 #: rc.cpp:17 rc.cpp:147
 msgid "ID3 title:"
-msgstr ""
+msgstr "Заголовок у ID3:"
 
 #. i18n: file: recording-configuration-ui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
 #: rc.cpp:20 rc.cpp:150
-#, fuzzy
 msgid "MP3 quality (0 - high, 9 - low):"
-msgstr "Якість MP3 (0 — висока, 9 — низька)"
+msgstr "Якість MP3 (0 — висока, 9 — низька):"
 
 #. i18n: file: recording-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
 #: rc.cpp:23 rc.cpp:153
-#, fuzzy
 msgid "Raw PCM Output (.raw)"
-msgstr "Неформатоване виведення (.raw)"
+msgstr "Неформатоване виведення до PCM (.raw)"
 
 #. i18n: file: recording-configuration-ui.ui:178
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
@@ -208,35 +215,32 @@ msgstr "Стиснутий Ogg Vorbis (.ogg)"
 #. i18n: file: recording-configuration-ui.ui:206
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
 #: rc.cpp:41 rc.cpp:171
-#, fuzzy
 msgid "Recording directory:"
-msgstr "Тека для зберігання"
+msgstr "Тека для зберігання:"
 
 #. i18n: file: recording-configuration-ui.ui:216
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
 #: rc.cpp:44 rc.cpp:174
-#, fuzzy
 msgid "File format:"
-msgstr "Формат файла"
+msgstr "Формат файла:"
 
 #. i18n: file: recording-configuration-ui.ui:226
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:47 rc.cpp:177
-#, fuzzy
 msgid "Ogg quality (0 - low, 9 - high):"
-msgstr "Якість Ogg (0 — низька, 9 — висока)"
+msgstr "Якість Ogg (0 — низька, 9 — висока):"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
 #: rc.cpp:50 rc.cpp:180
 msgid "Filename:"
-msgstr ""
+msgstr "Назва файла:"
 
 #. i18n: file: recording-configuration-ui.ui:267
 #. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
 #: rc.cpp:53 rc.cpp:183
 msgid "ID3 artist:"
-msgstr ""
+msgstr "Виконавець у ID3:"
 
 #. i18n: file: recording-configuration-ui.ui:299
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -271,9 +275,8 @@ msgstr "11025"
 #. i18n: file: recording-configuration-ui.ui:356
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:71 rc.cpp:201
-#, fuzzy
 msgid "Endianess:"
-msgstr "Порядок байтів"
+msgstr "Порядок байтів:"
 
 #. i18n: file: recording-configuration-ui.ui:389
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
@@ -290,9 +293,8 @@ msgstr "1 (Моно)"
 #. i18n: file: recording-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:80 rc.cpp:210
-#, fuzzy
 msgid "Sample rate:"
-msgstr "Частота дискретизації"
+msgstr "Частота дискретизації:"
 
 #. i18n: file: recording-configuration-ui.ui:419
 #. i18n: ectx: property (text), item, widget (KComboBox, editEndianess)
@@ -321,16 +323,14 @@ msgstr "8"
 #. i18n: file: recording-configuration-ui.ui:452
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:95 rc.cpp:225
-#, fuzzy
 msgid "Channels:"
-msgstr "Число каналів"
+msgstr "Кількість каналів:"
 
 #. i18n: file: recording-configuration-ui.ui:462
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:98 rc.cpp:228
-#, fuzzy
 msgid "Sample bits:"
-msgstr "Бітів на елемент вибірки"
+msgstr "Бітів у семплі:"
 
 #. i18n: file: recording-configuration-ui.ui:479
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
@@ -359,16 +359,14 @@ msgstr " кБ"
 #. i18n: file: recording-configuration-ui.ui:557
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
 #: rc.cpp:113 rc.cpp:243
-#, fuzzy
 msgid "Encoding buffer size:"
-msgstr "Розмір буфера для запису"
+msgstr "Розмір буфера для запису:"
 
 #. i18n: file: recording-configuration-ui.ui:577
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
 #: rc.cpp:116 rc.cpp:246
-#, fuzzy
 msgid "Number of buffers:"
-msgstr "Кількість буферів"
+msgstr "Кількість буферів:"
 
 #. i18n: file: recording-configuration-ui.ui:606
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
@@ -385,9 +383,8 @@ msgstr "Увімкнути"
 #. i18n: file: recording-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
 #: rc.cpp:125 rc.cpp:255
-#, fuzzy
 msgid "Pre-recording time:"
-msgstr "Час попереднього запису"
+msgstr "Час попереднього запису:"
 
 #. i18n: file: recording-configuration-ui.ui:662
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
@@ -443,9 +440,9 @@ msgstr ""
 "Пропущено %1 байтів на введенні."
 
 #: recording.cpp:552
-#, fuzzy, kde-format
+#, kde-format
 msgid "Recording::outputFile: %1"
-msgstr "Recording::outputFile (файл виведення запису):"
+msgstr "Recording::outputFile: %1"
 
 #: recording.cpp:602
 msgid "The encoding thread did not finish. It will be killed now."
@@ -472,9 +469,8 @@ msgid "Recording Monitor"
 msgstr "Монітор запису"
 
 #: recording-monitor.cpp:44
-#, fuzzy
 msgid "Sound Stream"
-msgstr "Джерело звуку"
+msgstr "Потік звуку"
 
 #. i18n("Status"),         this), 1, 0);
 #. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);

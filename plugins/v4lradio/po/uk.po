@@ -1,20 +1,20 @@
 # translation of uk.po to Ukrainian
 # This file is put in the public domain.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010, 2011.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010, 2011, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2011-01-08 13:22+0200\n"
+"PO-Revision-Date: 2014-09-18 19:27+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -33,37 +33,32 @@ msgstr "Пристрій V4L"
 #. i18n: file: v4lradio-configuration-ui.ui:36
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
 #: rc.cpp:9 rc.cpp:153
-#, fuzzy
 msgid "Station scan step:"
-msgstr "Крок сканування"
+msgstr "Крок сканування:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:56
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
 #: rc.cpp:12 rc.cpp:156
-#, fuzzy
 msgid "Minimum signal quality:"
-msgstr "Мінімальна якість сигналу"
+msgstr "Мінімальна якість сигналу:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
 #: rc.cpp:15 rc.cpp:159
-#, fuzzy
 msgid "Unknown V4L device"
-msgstr "невідомий пристрій v4l"
+msgstr "Невідомий пристрій V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:18 rc.cpp:162
-#, fuzzy
 msgid "V4L version to use:"
-msgstr "Версія V4L"
+msgstr "Версія V4L:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
 #: rc.cpp:21 rc.cpp:165
-#, fuzzy
 msgid "Radio device:"
-msgstr "Пристрій радіо"
+msgstr "Пристрій радіо:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:109
 #. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
@@ -84,9 +79,8 @@ msgstr " кГц"
 #. i18n: file: v4lradio-configuration-ui.ui:144
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
 #: rc.cpp:27 rc.cpp:171
-#, fuzzy
 msgid "Allowed frequency range:"
-msgstr "Припустимий частотний діапазон"
+msgstr "Припустимий частотний діапазон:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:190
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
@@ -115,9 +109,8 @@ msgstr "108 МГц"
 #. i18n: file: v4lradio-configuration-ui.ui:272
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
 #: rc.cpp:48 rc.cpp:192
-#, fuzzy
 msgid "Device frequency range:"
-msgstr "Діапазон частот пристрою"
+msgstr "Діапазон частот пристрою:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:326
 #. i18n: ectx: property (toolTip), widget (QLabel, label_5)
@@ -132,7 +125,6 @@ msgstr "Діапазон частот пристрою"
 #. i18n: file: v4lradio-configuration-ui.ui:361
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
 #: rc.cpp:51 rc.cpp:57 rc.cpp:63 rc.cpp:195 rc.cpp:201 rc.cpp:207
-#, fuzzy
 msgid ""
 "Probing V4L device capabilities requires opening the device. This might "
 "interfere with other application which might currently use the same "
@@ -141,57 +133,43 @@ msgid ""
 "might be that in the configuration dialog, you might not see the device "
 "description after startup but just the device pseudo file name."
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Для "
-"використання можливості виявлення пристроїв V4L потрібен доступ для "
+"Для використання можливості виявлення пристроїв V4L потрібен доступ для "
 "відкриття пристрою. У отриманні такого доступу може бути відмовлено через "
 "використання файла пристрою або драйвера сторонніми програмами. Якщо у вас "
 "виникають подібні проблеми, вам слід виконувати виявлення пристроїв лише під "
 "час вмикання. Єдиним незручним моментом може бути діалогове вікно "
 "налаштування: після запуску ви, ймовірно, побачите у ньому замість опису "
-"пристрою лише назву псевдофайла пристрою.</p></body></html>"
+"пристрою лише назву псевдофайла пристрою."
 
 #. i18n: file: v4lradio-configuration-ui.ui:329
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:54 rc.cpp:198
-#, fuzzy
 msgid "Device probing:"
-msgstr "Виявлення пристроїв"
+msgstr "Виявлення пристроїв:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:354
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
 #: rc.cpp:60 rc.cpp:204
-#, fuzzy
 msgid "At startup"
-msgstr "при запуску"
+msgstr "Під час запуску"
 
 #. i18n: file: v4lradio-configuration-ui.ui:364
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtPowerOn)
 #: rc.cpp:66 rc.cpp:210
-#, fuzzy
 msgid "At power on"
-msgstr "при вмиканні"
+msgstr "Під час вмикання"
 
 #. i18n: file: v4lradio-configuration-ui.ui:375
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
 #: rc.cpp:69 rc.cpp:213
-#, fuzzy
 msgid "V4L1 API"
-msgstr "V4L-1 API"
+msgstr "API V4L1"
 
 #. i18n: file: v4lradio-configuration-ui.ui:382
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
 #: rc.cpp:72 rc.cpp:216
-#, fuzzy
 msgid "V4L2 API"
-msgstr "V4L-2 API"
+msgstr "API V4L2"
 
 #. i18n: file: v4lradio-configuration-ui.ui:392
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
@@ -202,14 +180,12 @@ msgstr "RDS"
 #. i18n: file: v4lradio-configuration-ui.ui:401
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
 #: rc.cpp:78 rc.cpp:222
-#, fuzzy
 msgid "Force RDS enabled"
 msgstr "Примусове вмикання RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:414
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:81 rc.cpp:225
-#, fuzzy
 msgid ""
 "<p><u>Note for RDS support:</u> if your card supports RDS and RDS is not "
 "working, please check if the <b>kernel module saa6588.ko</b> is loaded. For "
@@ -221,26 +197,17 @@ msgid ""
 "names are used in the station scan dialog as default names for newly found "
 "stations.</p>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Зауваження щодо підтримки RDS:</span> "
+"<p><u>Зауваження щодо підтримки RDS:</u> "
 "Якщо у вашій картці передбачено підтримку RDS, RDS не працює, будь ласка, "
-"перевірте, чи завантажено модуль ядра <span style=\" font-weight:600;"
-"\">kernel module saa6588.ko</span>. Якщо картку побудовано на основі "
-"мікросхеми saa6588, цей модуль типово <span style=\" font-style:italic;"
-"\">не</span> завантажується автоматично. Визначити, чи підтримується RDS "
+"перевірте, чи завантажено модуль ядра <b>kernel module saa6588.ko</b>. Якщо "
+"картку побудовано на основі "
+"мікросхеми saa6588, цей модуль типово <i>не завантажується</i> автоматично. "
+"Визначити, чи підтримується RDS "
 "модулем V4L/V4L2 вашого ядра, можна за стандартною панеллю радіо: індикатор "
 "RDS має бути підсвічено (подібно до індикаторів стерео і AM/FM). Текст RDS "
 "має з’явитися на стандартній панелі радіо, а підказки — над піктограмою "
 "лотка. Назви станцій RDS буде використано у діалоговому вікні сканування як "
-"типові назви для створених записів станцій.</p></body></html>"
+"типові назви для створених записів станцій.</p>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:451
 #. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
@@ -257,16 +224,14 @@ msgstr "перевірка"
 #. i18n: file: v4lradio-configuration-ui.ui:475
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:90 rc.cpp:234
-#, fuzzy
 msgid "Playback mixer channel:"
-msgstr "Канал відтворення"
+msgstr "Канал мікшера відтворення:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:495
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
 #: rc.cpp:93 rc.cpp:237
-#, fuzzy
 msgid "Capture mixer device:"
-msgstr "Пристрій запису"
+msgstr "Пристрій запису:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:538
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
@@ -283,16 +248,14 @@ msgstr "Ви&мкнути звук на каналі відтворення пі
 #. i18n: file: v4lradio-configuration-ui.ui:558
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
 #: rc.cpp:102 rc.cpp:246
-#, fuzzy
 msgid "Capture mixer channel:"
-msgstr "Канал запису"
+msgstr "Канал запису:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:568
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:105 rc.cpp:249
-#, fuzzy
 msgid "Playback mixer device:"
-msgstr "Пристрій відтворення"
+msgstr "Пристрій мікшування відтворення:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:592
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
@@ -309,7 +272,6 @@ msgstr "PVR"
 #. i18n: file: v4lradio-configuration-ui.ui:610
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
 #: rc.cpp:111 rc.cpp:114 rc.cpp:255 rc.cpp:258
-#, fuzzy
 msgid ""
 "<p><b>Active playback</b> is required when your radio card is not connected "
 "to your sound card via a cable to the line in jack. In this case, KRadio "
@@ -321,34 +283,23 @@ msgid ""
 "<i>/dev/video24</i> (or similar). For <b>PVR cards</b>, you therefore have "
 "to setup the <b>Streaming Plugin</b> properly, too.</p>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Активне відтворення</span> слід використовувати, "
+"<p><b>Активне відтворення</b> слід використовувати, "
 "якщо вашу радіокартку не з’єднано з вхідним каналом вашої звукової картки "
 "кабелем. У такому випадку, KRadio доведеться захоплювати дані PCM з пристрою "
 "захоплення звуку для того, щоб надіслати дані PCM на пристрій відтворення "
-"звуку. Тому, якщо ви увімкнете <span style=\" font-weight:600;\">Активне "
-"відтворення</span>, вам доведеться обрати належний канал/пристрій мікшера і "
-"належний канал/мікшер відтворення PCM. Це зокрема важливо для <span style=\" "
-"font-weight:600;\">карток PVR</span>, які, зазвичай, потребують захоплення "
-"звуку з пристрою <span style=\" font-style:italic;\">/dev/video24</span> "
-"(або подібного пристрою). Тому для <span style=\" font-weight:600;\">карток "
-"PVR</span> вам слід також належно налаштувати <span style=\" font-weight:600;"
-"\">Модуль трансляції</span>.</p></body></html>"
+"звуку. Тому, якщо ви увімкнете <b>активне відтворення</b>, вам доведеться "
+"обрати належний канал/пристрій мікшера і "
+"належний канал/мікшер відтворення PCM. Це зокрема важливо для <b>карток PVR<"
+"/b>, які, зазвичай, потребують захоплення "
+"звуку з пристрою <i>/dev/video24</i> (або подібного пристрою). Тому для <b>"
+"карток PVR</b> вам слід також належно налаштувати <b>Модуль трансляції</b>.<"
+"/p>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:613
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
 #: rc.cpp:117 rc.cpp:261
-#, fuzzy
 msgid "Use active pla&yback by capturing (use for PVR cards)"
-msgstr "Використовувати активне ві&дтворення з захопленням (для карток PVR!)"
+msgstr "Використовувати активне ві&дтворення з захопленням (для карток PVR)"
 
 #. i18n: file: v4lradio-configuration-ui.ui:629
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
@@ -416,14 +367,12 @@ msgstr "Апаратні регулятори V4l"
 #. i18n: file: v4lradio-configuration-ui.ui:706
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
 #: rc.cpp:133 rc.cpp:277
-#, fuzzy
 msgid "Volume"
 msgstr "Гучність"
 
 #. i18n: file: v4lradio-configuration-ui.ui:782
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
 #: rc.cpp:136 rc.cpp:280
-#, fuzzy
 msgid "Treble"
 msgstr "ВЧ"
 
@@ -431,12 +380,11 @@ msgstr "ВЧ"
 #. i18n: ectx: property (text), widget (QLabel, labelBass)
 #: rc.cpp:139 rc.cpp:283
 msgid "Bass"
-msgstr ""
+msgstr "Бас"
 
 #. i18n: file: v4lradio-configuration-ui.ui:931
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
 #: rc.cpp:142 rc.cpp:286
-#, fuzzy
 msgid "Balance"
 msgstr "Стереобаланс"
 
@@ -461,7 +409,6 @@ msgstr ""
 "найвищого рівня."
 
 #: v4lradio-configuration.cpp:419
-#, fuzzy
 msgid "You do not have read and write permissions for the device."
 msgstr "Ви не маєте прав доступ на читання і запис до пристрою."
 
@@ -500,9 +447,9 @@ msgid "invalid frequency %1"
 msgstr "некоректна частота %1"
 
 #: v4lradio.cpp:847 v4lradio.cpp:1790 v4lradio.cpp:1986
-#, fuzzy, kde-format
+#, kde-format
 msgid "do not known how to handle V4L version %1"
-msgstr "невідомо що робити з версією V4l «%1»"
+msgstr "невідомо, що робити з версією V4L «%1»"
 
 #: v4lradio.cpp:849 v4lradio.cpp:1792 v4lradio.cpp:1988
 #, kde-format
@@ -515,7 +462,6 @@ msgid "error setting frequency to %1 (%2)"
 msgstr "Помилка встановлення частоти %1 (%2)"
 
 #: v4lradio.cpp:1269
-#, fuzzy
 msgid ""
 "You have selected V4L API Version 1. Starting with kernel 2.6.31, the "
 "support for V4L1 seems to be not working properly any more. I am now once "
@@ -542,9 +488,8 @@ msgstr ""
 "каталог пошуку: %1"
 
 #: v4lradio.cpp:1299
-#, fuzzy
 msgid "Could not find an accessible V4L(2) radio device."
-msgstr "Не вдалося знайти доступний пристрій V4l(2)."
+msgstr "Не вдалося знайти доступний пристрій V4L(2)."
 
 #: v4lradio.cpp:1383
 #, kde-format
@@ -621,11 +566,13 @@ msgstr "Пристроїв V4L не знайдено"
 #: v4lradio.cpp:1763
 #, kde-format
 msgid "V4L2 tuner reported range: %1 ... %2 MHz"
-msgstr ""
+msgstr "Повідомлений тюнером V4L2 діапазон: від %1 до %2 МГц"
 
 #: v4lradio.cpp:1766
 msgid "Note: you might be running a kernel with a broken V4L2 radio API"
 msgstr ""
+"Зауваження: можливо, ви працюєте у системі з помилками у реалізації "
+"програмного інтерфейсу радіо у V4L2"
 
 #: v4lradio.cpp:1800
 #, kde-format
@@ -633,19 +580,18 @@ msgid "cannot get tuner info (error %1)"
 msgstr "Не вдалося отримати інформацію про тюнер (код помилки %1)"
 
 #: v4lradio.cpp:1993
-#, fuzzy, kde-format
+#, kde-format
 msgid "error updating radio audio info (write): %1"
-msgstr "помилка оновлення інформації про аудіо радіо (%1): %2"
+msgstr "помилка оновлення інформації про аудіо радіо (запис): %1"
 
 #: v4lradio.cpp:1993
-#, fuzzy, kde-format
+#, kde-format
 msgid "error updating radio audio info (read): %1"
-msgstr "помилка оновлення інформації про аудіо радіо (%1): %2"
+msgstr "помилка оновлення інформації про аудіо радіо (читання): %1"
 
 #: v4lradio.cpp:2187
-#, fuzzy
 msgid "error reading RDS data"
-msgstr "помилка читання даних RDS\n"
+msgstr "помилка читання даних RDS"
 
 #: v4lradio.cpp:2203
 #, kde-format

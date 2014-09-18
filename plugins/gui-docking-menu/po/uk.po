@@ -1,66 +1,58 @@
 # translation of uk.po to Ukrainian
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2010-09-27 11:55+0300\n"
+"PO-Revision-Date: 2014-09-18 18:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: docking-configuration.cpp:126
-#, fuzzy
 msgid "Mouse click on tray icon:"
-msgstr "Клацання кнопкою на піктограмі лотка"
+msgstr "Клацання кнопкою на піктограмі лотка:"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Left:"
-msgstr "Ліва"
+msgstr "Ліва:"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Right:"
-msgstr "Права"
+msgstr "Права:"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Middle:"
-msgstr "Середня"
+msgstr "Середня:"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-#, fuzzy
 msgctxt "Mouse button"
 msgid "XButton1:"
-msgstr "X-кнопка 1"
+msgstr "X-кнопка 1:"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-#, fuzzy
 msgctxt "Mouse button"
 msgid "XButton2:"
-msgstr "X-кнопка 2"
+msgstr "X-кнопка 2:"
 
 #: docking-configuration.cpp:133
-#, fuzzy
 msgid "Mouse double-click on tray icon:"
-msgstr "Подвійне клацання на піктограмі лотка"
+msgstr "Подвійне клацання на піктограмі лотка:"
 
 #: docking-configuration.cpp:140
-#, fuzzy
 msgid "Mouse wheel action on tray icon:"
-msgstr "Дія прокручування коліщатка на піктограмі лотка"
+msgstr "Дія прокручування коліщатка на піктограмі лотка:"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
@@ -107,9 +99,8 @@ msgid "Change Frequency"
 msgstr "Змінити частоту"
 
 #: docking.cpp:46
-#, fuzzy
 msgid "System Tray Icon/Menu"
-msgstr "Піктограма системного лотка"
+msgstr "Піктограма або меню системного лотка"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"

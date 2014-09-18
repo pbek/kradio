@@ -1,42 +1,38 @@
 # translation of uk.po to Ukrainian
 # This file is put in the public domain.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2010-09-27 12:18+0300\n"
+"PO-Revision-Date: 2014-09-18 18:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: displaycfg.cpp:46
-#, fuzzy
 msgid "Active text:"
-msgstr "Колір активного тексту"
+msgstr "Активний текст:"
 
 #: displaycfg.cpp:47
-#, fuzzy
 msgid "Inactive text:"
-msgstr "Колір неактивного тексту"
+msgstr "Неактивний текст:"
 
 #: displaycfg.cpp:48
-#, fuzzy
 msgid "Background color:"
-msgstr "Колір тла"
+msgstr "Колір тла:"
 
 #: radioview.cpp:54
-#, fuzzy
 msgid "Standard Display"
-msgstr "Головне вікно KRadio"
+msgstr "Стандартна панель"
 
 #: radioview.cpp:60
 msgid "Radio Display"
@@ -83,27 +79,22 @@ msgid "Configure KRadio"
 msgstr "Налаштувати KRadio"
 
 #: radioview.cpp:228
-#, fuzzy
 msgid "Power on/off"
 msgstr "Увімкнути/вимкнути"
 
 #: radioview.cpp:229
-#, fuzzy
 msgid "Quit KRadio application"
-msgstr "Закрити KRadio"
+msgstr "Вийти із програми KRadio"
 
 #: radioview.cpp:230
-#, fuzzy
 msgid "Start/stop recording"
 msgstr "Почати/припинити запис"
 
 #: radioview.cpp:231
-#, fuzzy
 msgid "Start/stop sleep countdown"
 msgstr "Увімкнути/вимкнути таймер вимкнення"
 
 #: radioview.cpp:232
-#, fuzzy
 msgid "Show/hide plugins"
 msgstr "Показати/приховати модулі"
 
@@ -112,14 +103,12 @@ msgid "Help about KRadio and KDE"
 msgstr "Довідка щодо KRadio і KDE"
 
 #: radioview.cpp:234
-#, fuzzy
 msgid "Select a radio station"
 msgstr "Вибір радіостанції"
 
 #: radioview.cpp:407
-#, fuzzy
 msgid "<no preset defined>"
-msgstr "не визначено список"
+msgstr "<не визначено набору>"
 
 #: radioview.cpp:563 radioview.cpp:633
 #, kde-format
@@ -173,32 +162,26 @@ msgid "%1 MHz"
 msgstr "%1 МГц"
 
 #: radioview_frequencyseeker.cpp:79
-#, fuzzy
 msgid "Search for previous radio station"
-msgstr "Пошук попередньої станції"
+msgstr "Пошук попередньої радіостанції"
 
 #: radioview_frequencyseeker.cpp:80
-#, fuzzy
 msgid "Search for next radio station"
-msgstr "Пошук наступної станції"
+msgstr "Пошук наступної радіостанції"
 
 #: radioview_frequencyseeker.cpp:81
-#, fuzzy
 msgid "Decrement frequency"
 msgstr "Зменшити частоту"
 
 #: radioview_frequencyseeker.cpp:82
-#, fuzzy
 msgid "Increment frequency"
 msgstr "Збільшити частоту"
 
 #: radioview_frequencyseeker.cpp:83
-#, fuzzy
 msgid "Change frequency"
 msgstr "Змінити частоту"
 
 #: radioview_volume.cpp:59
-#, fuzzy
 msgid "Change volume"
 msgstr "Змінити гучність"
 
@@ -211,16 +194,14 @@ msgstr "RadioView_SeekInterface"
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-#, fuzzy
 msgid "Search previous station"
 msgstr "Пошук попередньої станції"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-#, fuzzy
 msgid "Decrease frequency by 0.05 MHz"
-msgstr "Зменшувати частоту по 0,05 МГц"
+msgstr "Зменшити частоту на 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:70
 #. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
@@ -232,14 +213,12 @@ msgstr "Керування частотою"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-#, fuzzy
 msgid "Increase frequency by 0.05 MHz"
-msgstr "Збільшувати частоту по 0,05 МГц"
+msgstr "Збільшити частоту на 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-#, fuzzy
 msgid "Search next station"
 msgstr "Пошук наступної станції"
 

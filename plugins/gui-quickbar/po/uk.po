@@ -1,20 +1,20 @@
 # translation of uk.po to Ukrainian
 # This file is put in the public domain.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-05-09 10:04+0300\n"
+"PO-Revision-Date: 2014-09-18 18:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -35,14 +35,13 @@ msgid "Quickbar Configuration"
 msgstr "Налаштування панелі швидкого доступу"
 
 #: quickbar.cpp:370
-#, fuzzy, kde-format
+#, kde-format
 msgid "KRadio4 Quickbar, %1"
-msgstr "Швидкий доступ"
+msgstr "Швидкий доступ до KRadio4, %1"
 
 #: quickbar.cpp:370
-#, fuzzy
 msgid "KRadio4 Quickbar"
-msgstr "Швидкий доступ"
+msgstr "Швидкий доступ до KRadio4"
 
 #: quickbar.cpp:378
 msgid "contentsDragEnterEvent accepted"
@@ -61,3 +60,4 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
+

@@ -2,20 +2,20 @@
 # This file is distributed under the same license as the kradio package.
 #
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2011.
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2011, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2011-01-08 13:17+0200\n"
+"PO-Revision-Date: 2014-09-18 18:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -25,10 +25,10 @@ msgid "opening stream %1"
 msgstr "відкриття потоку %1"
 
 #: decoder_thread.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to open %1. Trying next stream in play list."
 msgstr ""
-"не вдалося відкрити %1. Спроба використання наступного потоку у списку."
+"не вдалося відкрити %1. Спробуємо скористатися наступним потоком у списку."
 
 #: decoder_thread.cpp:151
 #, kde-format
@@ -36,9 +36,9 @@ msgid "Could not open any input stream of %1."
 msgstr "Не вдалося відкрити жодного вхідного потоку %1."
 
 #: decoder_thread.cpp:266
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1: error decoding packet. Discarding packet"
-msgstr "%1: помилка під час спроби декодування пакета. Пакет відкинуто\n"
+msgstr "%1: помилка під час спроби декодування пакета. Пакет відкинуто"
 
 #: decoder_thread.cpp:285
 #, kde-format
@@ -47,10 +47,10 @@ msgstr "внутрішній потік, не збережено (%1)"
 
 #: decoder_thread.cpp:362
 msgid "Failed allocating AVFrame."
-msgstr ""
+msgstr "Не вдалося розмістити AVFrame."
 
 #: decoder_thread.cpp:634 decoder_thread.cpp:637
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not open stream %1"
 msgstr "Не вдалося відкрити потік %1"
 
@@ -87,7 +87,7 @@ msgstr "Спроба відкриття кодека для %1 зазнала н
 #: decoder_thread.cpp:889
 #, kde-format
 msgid "Unknown channel layout for %1"
-msgstr ""
+msgstr "Невідоме компонування каналів для %1"
 
 #: decoder_thread.cpp:981 decoder_thread.cpp:984
 #, kde-format
@@ -97,48 +97,52 @@ msgstr "не вдалося відкрити потік MMS %1"
 #: decoder_thread.cpp:1082
 #, kde-format
 msgid "Not yet implemented: libav sample format id %1"
-msgstr ""
+msgstr "Ще не реалізовано: ідентифікатор семплу libav %1"
 
 #: decoder_thread.cpp:1088
 #, kde-format
 msgid "Cannot use libav sample format id %1"
-msgstr ""
+msgstr "Не вдалося використати ідентифікатор формату семплу libav %1"
 
 #: icy_http_handler.cpp:72
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
-msgstr ""
+msgstr "Модуль інтернет-радіо (обробник http ICY): відкриваємо потік %1"
 
 #: icy_http_handler.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
 "%1: KIO::get returned NULL pointer"
 msgstr ""
-"Не вдалося розпочати звантаження потокових даних %1: KIO::get повернуто "
+"Додаток інтернет-радіо (обробник http ICY): не вдалося розпочати звантаження "
+"потокових даних %1: KIO::get повернуто "
 "нульовий вказівник"
 
 #: icy_http_handler.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
 "%1: %2"
-msgstr "Не вдалося розпочати звантаження потокових даних %1: %2"
+msgstr ""
+"Додаток інтернет-радіо (обробник http ICY): не вдалося розпочати звантаження "
+"потокових даних %1: %2"
 
 #: icy_http_handler.cpp:426
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
 "%2"
-msgstr "Не вдалося завантажити потокові дані %1: %2"
+msgstr ""
+"Додаток інтернет-радіо (обробник http ICY): не вдалося завантажити дані "
+"потоку для %1: %2"
 
 #: icy_http_handler.cpp:434
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
-msgstr ""
+msgstr "Модуль інтернет-радіо (обробник http ICY): помилка HTTP %1 потоку %2"
 
 #: internetradio.cpp:46
-#, fuzzy
 msgid "Pseudo radio device for Internet radio stream support"
 msgstr "Псевдопристрій радіо для підтримки потоків інтернет-радіо"
 
@@ -159,14 +163,15 @@ msgid "Internet Radio Options"
 msgstr "Параметри інтернет-радіо"
 
 #: internetradio.cpp:985
-#, fuzzy
 msgid "Internet Radio Plugin: "
-msgstr "Модуль інтернет-радіо"
+msgstr "Модуль інтернет-радіо: "
 
 #: internetradio.cpp:1135
-#, fuzzy, kde-format
+#, kde-format
 msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
-msgstr "Не вдалося завантажити потокові дані %1: %2"
+msgstr ""
+"Модуль інтернет-радіо (%1): перевищення часу очікування на потік даних (>= %2 "
+"с)"
 
 #: playlist_handler.cpp:94
 #, kde-format
@@ -186,9 +191,11 @@ msgstr ""
 "нульовий вказівник"
 
 #: playlist_handler.cpp:176
-#, fuzzy, kde-format
+#, kde-format
 msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
-msgstr "Не вдалося завантажити потокові дані %1: %2"
+msgstr ""
+"Модуль інтернет-радіо (обробник списків відтворення): помилка HTTP %1 потоку %"
+"2"
 
 #: playlist_handler.cpp:276
 #, kde-format
@@ -208,9 +215,9 @@ msgstr ""
 "відтворення"
 
 #: playlist_handler.cpp:525
-#, fuzzy, kde-format
+#, kde-format
 msgid "error while reading asx file: %1"
-msgstr "помилка під час спроби читання файла asx: "
+msgstr "помилка під час спроби читання файла asx: %1"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
@@ -222,7 +229,7 @@ msgstr "SetupDialogGeneral"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:6 rc.cpp:54
 msgid "Input buffer size:"
-msgstr ""
+msgstr "Розмір буфера вхідних даних:"
 
 #. i18n: file: internetradio-configuration-ui.ui:44
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
@@ -238,25 +245,25 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
 #: rc.cpp:9 rc.cpp:15 rc.cpp:45 rc.cpp:57 rc.cpp:63 rc.cpp:93
 msgid " kB"
-msgstr ""
+msgstr " кБ"
 
 #. i18n: file: internetradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:12 rc.cpp:60
 msgid "PCM output buffer size:"
-msgstr ""
+msgstr "Розмір буфера виведення PCM:"
 
 #. i18n: file: internetradio-configuration-ui.ui:101
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:18 rc.cpp:66
 msgid "libffmpeg: stream info analysis time:"
-msgstr ""
+msgstr "libffmpeg: час аналізу даних потоку:"
 
 #. i18n: file: internetradio-configuration-ui.ui:111
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
 #: rc.cpp:21 rc.cpp:69
 msgid "disabled"
-msgstr ""
+msgstr "вимкнено"
 
 #. i18n: file: internetradio-configuration-ui.ui:114
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
@@ -268,20 +275,19 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
 #: rc.cpp:24 rc.cpp:48 rc.cpp:72 rc.cpp:96
 msgid " s"
-msgstr ""
+msgstr " с"
 
 #. i18n: file: internetradio-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:75
 msgid "Watchdog: reconnect after:"
-msgstr ""
+msgstr "Нагляд: повторне з’єднання за:"
 
 #. i18n: file: internetradio-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:30 rc.cpp:78
-#, fuzzy
 msgid "Playback mixer device:"
-msgstr "Пристрій мікшування відтворення"
+msgstr "Пристрій мікшування відтворення:"
 
 #. i18n: file: internetradio-configuration-ui.ui:169
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
@@ -292,26 +298,26 @@ msgstr "перевірка"
 #. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:36 rc.cpp:84
-#, fuzzy
 msgid "Playback mixer channel:"
-msgstr "Канал мікшера відтворення"
+msgstr "Канал мікшера відтворення:"
 
 #. i18n: file: internetradio-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:39 rc.cpp:87
-#, fuzzy
 msgid "Mute playback channel on power off:"
-msgstr "Вимкнути канал відтворення під час завершення роботи"
+msgstr "Вимкнути канал відтворення під час завершення роботи:"
 
 #. i18n: file: internetradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:42 rc.cpp:90
 msgid "libffmpeg: format probe size:"
-msgstr ""
+msgstr "libffmpeg: розмір фрагмента зондування формату:"
 
 #: stream_input_buffer.cpp:72
 msgid "This should never happen: inconsistency in buffer locking / buffer size"
 msgstr ""
+"Такого не повинно було статися: непослідовність у блокування "
+"буфера/обчисленні розміру буфера"
 
 #, fuzzy
 #~ msgid "cannot open MMS  %1"

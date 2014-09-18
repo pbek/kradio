@@ -1,20 +1,20 @@
 # translation of uk.po to Ukrainian
 # This file is put in the public domain.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2009-05-09 10:21+0300\n"
+"PO-Revision-Date: 2014-09-18 19:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -111,7 +111,6 @@ msgid "Quit KRadio"
 msgstr "Вийти з KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-#, fuzzy
 msgid "<do not care>"
 msgstr "<байдуже>"
 
@@ -122,9 +121,8 @@ msgid ""
 msgstr "Введіть ключовий рядок вашого ПДК або просто натисніть кнопку на ньому"
 
 #: lirc-configuration.cpp:276
-#, fuzzy
 msgid "Double click on the entries to change the assignments"
-msgstr "Для зміни прив'язки двічі клацніть по пункту мишею"
+msgstr "Для зміни прив'язки двічі клацніть на пункті мишею"
 
 #: lircsupport.cpp:50
 msgid "Linux Infrared Control (LIRC) Support"
@@ -135,25 +133,25 @@ msgid "LIRC Plugin"
 msgstr "Модуль ДК (LIRC)"
 
 #: lircsupport.cpp:84
-#, fuzzy
 msgid "initializing KRadio LIRC plugin"
-msgstr "Ініціалізація модуля LIRC"
+msgstr "ініціалізуємо модуль LIRC KRadio"
 
 #: lircsupport.cpp:85
 msgid ""
 "warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
 msgstr ""
+"попередження або повідомлення щодо помилок, пов’язаних із відсутністю "
+"сокетів, не завадять роботі: зазвичай, у таких випадках просто не запущено "
+"фонову службу LIRC."
 
 #: lircsupport.cpp:94
-#, fuzzy
 msgid "Initializing KRadio LIRC plugin failed"
-msgstr "Запуск модуля LIRC не був вдалим"
+msgstr "Не вдалося ініціалізувати модуль LIRC KRadio"
 
 #: lircsupport.cpp:103
-#, fuzzy
 msgid "Initializing KRadio LIRC plugin successful"
-msgstr "Модуль LIRC вдало запущено"
+msgstr "Модуль LIRC KRadio вдало запущено"
 
 #: lircsupport.cpp:129
 #, kde-format
@@ -182,7 +180,7 @@ msgstr ""
 "\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
 #: lircsupport.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "У жодному з ваших файлів .lircrc %1 немає згадки про KRadio."
 
@@ -192,10 +190,10 @@ msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Будь ласка коректно налаштуйте ваш файл .lircrc %1."
 
 #: lircsupport.cpp:152 lircsupport.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
-"Спроба запуску модуля LIRC kradio завершилася невдало. Не вдалося прочитати "
+"Спроба запуску модуля LIRC KRadio завершилася невдало. Не вдалося прочитати "
 "файл налаштувань %1"
 
 #: lircsupport.cpp:189
@@ -207,10 +205,9 @@ msgstr "%1 не існує. Було створено типовий файл .l
 #: lircsupport.cpp:192
 #, kde-format
 msgid "Failed to copy %1 to %2"
-msgstr ""
+msgstr "Не вдалося скопіювати %1 до %2"
 
 #: lircsupport.cpp:244
-#, fuzzy
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
 "next start of KRadio"
@@ -249,37 +246,32 @@ msgstr "textLabel1"
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-#, fuzzy
 msgid "Power off .lircrc mode:"
-msgstr "Режим вимикання .lircrc"
+msgstr "Режим вимикання .lircrc:"
 
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-#, fuzzy
 msgid "Power on .lircrc mode:"
-msgstr "Режим вмикання .lircrc"
+msgstr "Режим вмикання .lircrc:"
 
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-#, fuzzy
 msgid "Synchronize .lircrc modes at runtime:"
-msgstr "Синхронізувати режими .lircrc під час виконання"
+msgstr "Синхронізувати режими .lircrc під час виконання:"
 
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-#, fuzzy
 msgid "Synchronize .lircrc modes at startup:"
-msgstr "Синхронізувати режими .lircrc під час запуску"
+msgstr "Синхронізувати режими .lircrc під час запуску:"
 
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-#, fuzzy
 msgid "LIRC configuration file:"
-msgstr "Файл налаштування LIRC"
+msgstr "Файл налаштування LIRC:"
 
 #: rc.cpp:28
 msgctxt "NAME OF TRANSLATORS"

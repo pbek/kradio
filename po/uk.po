@@ -1,20 +1,20 @@
 # translation of kradio.po to Ukrainian
 # This file is put in the public domain.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2009, 2010, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 17:39+0200\n"
-"PO-Revision-Date: 2010-09-27 12:15+0300\n"
+"PO-Revision-Date: 2014-09-18 18:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -40,7 +40,7 @@ msgstr "Зневаджування %1: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
 #: radiostations/internetradiostation.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "<station long name>, <station description>"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -56,7 +56,6 @@ msgid "%1 kHz"
 msgstr "%1 кГц"
 
 #: radiostations/radiostation-config.cpp:49
-#, fuzzy
 msgid "I do not know how to edit this station"
 msgstr "Спосіб редагування цієї станції невідомий"
 
@@ -82,29 +81,25 @@ msgid "<autodetect>"
 msgstr "<автоматичне визначення>"
 
 #: radiostations/radiostation-config.cpp:142
-#, fuzzy
 msgctxt "Stream Format"
 msgid "MP3"
 msgstr "MP3"
 
 #: radiostations/radiostation-config.cpp:143
-#, fuzzy
 msgctxt "Stream Format"
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
 #: radiostations/radiostation-config.cpp:144
-#, fuzzy
 msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
 #. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
 #: radiostations/radiostation-config.cpp:146
-#, fuzzy
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
-msgstr "OGG/Vorbis"
+msgstr "Ogg/Vorbis"
 
 #: radiostations/radiostation-config.cpp:149
 msgctxt "Playlist Format"
@@ -112,31 +107,26 @@ msgid "<autodetect>"
 msgstr "<автовизначення>"
 
 #: radiostations/radiostation-config.cpp:150
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "<none>"
 msgstr "<немає>"
 
 #: radiostations/radiostation-config.cpp:151
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "ASX"
 msgstr "ASX"
 
 #: radiostations/radiostation-config.cpp:152
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "LSC"
 msgstr "LSC"
 
 #: radiostations/radiostation-config.cpp:153
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "M3U"
 msgstr "M3U"
 
 #: radiostations/radiostation-config.cpp:154
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "PLS"
 msgstr "PLS"
@@ -144,15 +134,15 @@ msgstr "PLS"
 #: radiostations/radiostation-config.cpp:155
 msgctxt "Playlist Format"
 msgid "WMV"
-msgstr ""
+msgstr "WMV"
 
 #: radiostations/radiostation-config.cpp:158
 msgid "Meta-Data Stream Encoding:"
-msgstr ""
+msgstr "Кодування потоку метаданих:"
 
 #: radiostations/radiostation-config.cpp:240
 msgid "auto"
-msgstr ""
+msgstr "авто"
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
@@ -199,16 +189,14 @@ msgid "Internet Radio Station"
 msgstr "Інтернет-радіостанція"
 
 #: radiostations/radiostation.h:161
-#, fuzzy
 msgctxt "Unknown station long name"
 msgid "unknown"
-msgstr "невідомо"
+msgstr "невідома"
 
 #: radiostations/radiostation.h:162
-#, fuzzy
 msgctxt "Unknown station description"
 msgid "unknown"
-msgstr "невідомо"
+msgstr "невідомий"
 
 #: src/fileringbuffer.cpp:36 src/fileringbuffer.cpp:69
 #, kde-format
@@ -216,14 +204,14 @@ msgid "cannot open buffer file %1"
 msgstr "Не можу відкрити буферний файл %1"
 
 #: src/fileringbuffer.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "FileRingbuffer::resize: Writing to temporary file %1 failed. "
-msgstr "FileRingbuffer::resize: Не можу записати тимчасовий файл %1. "
+msgstr "FileRingbuffer::resize: не можу записати тимчасовий файл %1. "
 
 #: src/fileringbuffer.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "FileRingbuffer::resize: Opening temporary file %1 failed. "
-msgstr "FileRingbuffer::resize: Не можу відкрити тимчасовий файл %1. "
+msgstr "FileRingbuffer::resize: не можу відкрити тимчасовий файл %1. "
 
 #: src/fileringbuffer.cpp:128 src/fileringbuffer.cpp:146
 #, kde-format
@@ -295,9 +283,9 @@ msgid "License Agreement"
 msgstr "Ліцензійна угода"
 
 #: src/kradioapp.cpp:132
-#, fuzzy, kde-format
+#, kde-format
 msgid "Library %1: plugin entry point is missing"
-msgstr "Бібліотеку %1: не знайдено точку входження модуля\n"
+msgstr "Бібліотека %1: не знайдено точку входження модуля"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
@@ -305,12 +293,12 @@ msgid "Plugin Library Load Error"
 msgstr "Помилка завантаження бібліотечного модулю"
 
 #: src/kradioapp.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Library %1:\n"
 "%2"
 msgstr ""
-"Бібліотека %1: \n"
+"Бібліотека %1:\n"
 "%2"
 
 #: src/kradioapp.cpp:216
@@ -318,12 +306,11 @@ msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr "Знайдено нові бібліотеки модулів. Завантажити бібліотеки зараз?"
 
 #: src/kradioapp.cpp:218
-#, fuzzy
 msgid "New Plugin Libraries Found"
 msgstr "Знайдено нові бібліотеки модулів"
 
 #: src/kradioapp.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
@@ -333,15 +320,15 @@ msgid_plural ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
-"Знайдено лише бібліотеки %1. Очікувалося, що їх кількість не менша за 5. "
+"Знайдено лише %1 бібліотеку. Очікувалося, що їх кількість не менша за 5. "
 "Будь ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення "
 "мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
 msgstr[1] ""
-"Знайдено лише бібліотеки %1. Очікувалося, що їх кількість не менша за 5. "
+"Знайдено лише %1 бібліотеки. Очікувалося, що їх кількість не менша за 5. "
 "Будь ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення "
 "мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
 msgstr[2] ""
-"Знайдено лише бібліотеки %1. Очікувалося, що їх кількість не менша за 5. "
+"Знайдено лише %1 бібліотек. Очікувалося, що їх кількість не менша за 5. "
 "Будь ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення "
 "мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
 
@@ -350,9 +337,9 @@ msgid "KRadio4 Installation Error"
 msgstr "Помилка встановлення KRadio4"
 
 #: src/kradioapp.cpp:267
-#, fuzzy, kde-format
+#, kde-format
 msgid "Instance %1"
-msgstr "Екземпляр"
+msgstr "Екземпляр %1"
 
 #: src/kradioapp.cpp:288
 msgid "KRadio Configuration"
@@ -379,17 +366,16 @@ msgid "Ernst Martin Witte"
 msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
-#, fuzzy
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, LIRC support, alarms, misc"
 msgstr ""
 "Портування на KDE4, підтримка RDS, скорочення, підтримка PVR, переписування "
-"для 1.0/0.3.0, запис, підтримка lirc, нагадування тощо"
+"для 1.0/0.3.0, запис, підтримка LIRC, нагадування тощо"
 
 #: src/main.cpp:44
 msgid "Pino Toscano"
-msgstr ""
+msgstr "Pino Toscano"
 
 #: src/main.cpp:44
 #, fuzzy
@@ -401,7 +387,6 @@ msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
 #: src/main.cpp:45
-#, fuzzy
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Система збирання, стандартизація, чистка коду"
 
@@ -418,7 +403,6 @@ msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
 #: src/main.cpp:47
-#, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Ідея, перший варіант програми для KDE 2"
 
@@ -431,12 +415,12 @@ msgid "Configuration Dialog"
 msgstr "Вікно параметрів"
 
 #: src/pluginmanager-configuration.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Library %1:\n"
 "Cannot load non-local library"
 msgstr ""
-"Бібліотека %1: \n"
+"Бібліотека %1:\n"
 "Не вдалося завантажити нелокальну бібліотеку"
 
 #: src/pluginmanager-configuration.cpp:226
@@ -444,9 +428,8 @@ msgid "Enter Plugin Instance Name"
 msgstr "Зазначте назву для цього екземпляра"
 
 #: src/pluginmanager-configuration.cpp:227
-#, fuzzy
 msgid "Instance name:"
-msgstr "Назва копії"
+msgstr "Назва копії^"
 
 #: src/pluginmanager.cpp:436
 msgid "Plugins"
@@ -474,7 +457,6 @@ msgstr ""
 "Знайдено нові модулі. Бажаєте створити екземплярів цих модулів негайно?"
 
 #: src/pluginmanager.cpp:607
-#, fuzzy
 msgid "New Plugins Found"
 msgstr "Знайдено нові модулі"
 
@@ -484,27 +466,23 @@ msgid "Initializing Plugin %1"
 msgstr "Вмикаю модуль %1"
 
 #: src/pluginmanager.cpp:767
-#, fuzzy
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Показати всі"
 
 #: src/pluginmanager.cpp:768
-#, fuzzy
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Сховати всі"
 
 #: src/pluginmanager.cpp:769
-#, fuzzy
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Відновити всі"
 
 #: src/pluginmanager.cpp:770
-#, fuzzy
 msgid "Restore state before last hide-all activation"
-msgstr "відновити стан на час останньої активації дії «Сховати всі»"
+msgstr "Відновити стан на час останньої активації дії «Сховати всі»"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
@@ -526,9 +504,9 @@ msgid "unknown"
 msgstr "невідомо"
 
 #: src/standardscandialog.cpp:226
-#, fuzzy, kde-format
+#, kde-format
 msgid "new station %1"
-msgstr "Нова станція"
+msgstr "нова станція %1"
 
 #: src/station-drag-object.cpp:70
 msgid "canDecode = true"
@@ -572,9 +550,9 @@ msgid "Download of the station preset file at %1 failed."
 msgstr "Не можу звантажити файл набору радіостанцій %1."
 
 #: src/stationlist.cpp:214
-#, fuzzy, kde-format
+#, kde-format
 msgid "temporary file: %1"
-msgstr "тимчасовий файл: "
+msgstr "тимчасовий файл: %1"
 
 #: src/stationlist.cpp:220
 #, kde-format
@@ -591,9 +569,9 @@ msgid "Old Preset File Format detected"
 msgstr "Старий формат файла радіостанцій"
 
 #: src/stationlist.cpp:322
-#, fuzzy, kde-format
+#, kde-format
 msgid "error writing to temporary file %1"
-msgstr "Помилка запису в тимчасовий файл %1"
+msgstr "Помилка запису до тимчасового файла %1"
 
 #: src/stationlist.cpp:325
 #, kde-format
@@ -625,7 +603,6 @@ msgid "Upload of station preset file to %1 failed."
 msgstr "Завантаження файла радіостанцій %1 завершилося невдало."
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
-#, fuzzy
 msgid "error creating temporary file"
 msgstr "Помилка під час спроби створення тимчасового файла"
 
@@ -692,35 +669,30 @@ msgstr "yurchor@ukr.net"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:36
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:5
-#, fuzzy
 msgid "Automatic Detection and Load of New Plugins"
 msgstr "Автоматичне виявлення і завантаження нових модулів"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:57
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
 #: rc.cpp:8
-#, fuzzy
 msgid "Do not check/load"
-msgstr "Не перевіряти/Не завантажувати!"
+msgstr "Не перевіряти/Не завантажувати"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
 #: rc.cpp:11
-#, fuzzy
 msgid "Automatically check/load"
-msgstr "Автоматично перевіряти/завантажувати!"
+msgstr "Автоматично перевіряти/завантажувати"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:14
-#, fuzzy
 msgid "Please ask"
-msgstr "Запитувати!"
+msgstr "Запитувати"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:17
-#, fuzzy
 msgid "Show progress bar during startup for plugin initiali&zation"
 msgstr "&Демонструвати завантаження модулів під час запуску програми"
 
@@ -820,13 +792,19 @@ msgid ""
 "plugin names is recommended for your convenience e.g. if you have multiple "
 "sound cards and/or multiple ALSA plugin instances.</p>"
 msgstr ""
+"<p>Для того, щоб <b>перейменувати</b> екземпляр модуля, "
+"наведіть вказівник на його позначку і двічі клацніть лівою кнопкою миші. Цю "
+"назву буде показано під піктограмою сторінки налаштування, у заголовку "
+"сторінки налаштування і, наприклад, у назві вашого звукового пристрою. "
+"Можливість редагування назв модулів призначено для зручності у випадках, "
+"коли у вас є декілька звукових карток і/або декілька екземплярів додатків "
+"ALSA.</p>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
 #: rc.cpp:71
-#, fuzzy
 msgid "Stations Search in Progress..."
-msgstr "Виконується пошук станцій..."
+msgstr "Виконуємо пошук станцій…"
 
 #. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
@@ -855,20 +833,18 @@ msgstr "<p align=\"right\">тут нічого</p>"
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:89
-#, fuzzy
 msgid "Selected stations:"
-msgstr "Вибрані"
+msgstr "Вибрані станції:"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:92
-#, fuzzy
 msgid "Available stations:"
-msgstr "Доступні"
+msgstr "Доступні станції:"
 
 #: src/recording_template.h:84
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
-msgstr ""
+msgstr "%s, %d-%m-%Y, %H:%M:%S, запис kradio4"
 
 #~ msgid "saveState"
 #~ msgstr "saveState"
