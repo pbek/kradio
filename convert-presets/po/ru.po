@@ -3,60 +3,68 @@
 #
 # Ernst Martin Witte <emw-kradio@nocabal.de>, 2006.
 # Ernst Martin Witte <emw@nocabal.de>, 2006.
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2009.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2009, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-04-20 20:42+0400\n"
-"Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
+"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"PO-Revision-Date: 2013-03-09 07:24+0400\n"
+"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: convert-presets.cpp:159
+#: convert-presets.cpp:58 convert-presets.cpp:139
+msgid "error opening preset file"
+msgstr "ошибка при открытии  файла настроек %1"
+
+#: convert-presets.cpp:60
+msgid "for reading"
+msgstr "для чтения"
+
+#: convert-presets.cpp:141
+msgid "for writing"
+msgstr "для записи"
+
+#: convert-presets.cpp:153
+msgid "error writing preset file"
+msgstr "ошибка при записи файла настроек %1"
+
+#: convert-presets.cpp:168
 msgid "kradio4-convert-presets"
-msgstr ""
-
-#: convert-presets.cpp:161
-msgid "(c) 2003-2010 Martin Witte"
-msgstr ""
-
-#: convert-presets.cpp:164
-msgid "Martin Witte"
-msgstr ""
-
-#: convert-presets.cpp:169
-msgid "quiet mode - no informational output"
-msgstr ""
+msgstr "Преобразование настроек"
 
 #: convert-presets.cpp:170
+msgid "(c) 2003-2010 Martin Witte"
+msgstr "(c) 2003-2010 Martin Witte"
+
+#: convert-presets.cpp:173
+msgid "Martin Witte"
+msgstr "Martin Witte"
+
+#: convert-presets.cpp:178
+msgid "quiet mode - no informational output"
+msgstr "тихий режим - без информационных сообщений"
+
+#: convert-presets.cpp:179
 msgid "preset files to convert"
-msgstr ""
+msgstr "файлы настроек для преобразования"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Алексей Кузнецов"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
-
-#, fuzzy
-#~ msgid "error opening preset file"
-#~ msgstr "ошибка при открытии  файла настроек %1"
-
-#, fuzzy
-#~ msgid "error writing preset file"
-#~ msgstr "ошибка при открытии  файла настроек %1"
+msgstr "Alexey.Kouznetsov@gmail.com"
 
 #~ msgid "PluginManagerConfigurationUI"
 #~ msgstr "PluginManagerConfigurationUI"

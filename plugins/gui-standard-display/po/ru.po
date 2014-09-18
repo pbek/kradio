@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2013-03-09 07:55+0400\n"
 "PO-Revision-Date: 2009-04-20 20:47+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,24 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: displaycfg.cpp:46
-#, fuzzy
-msgid "Active text:"
+#: displaycfg.cpp:48
+msgid "Active Text"
 msgstr "Цвет активного текста"
 
-#: displaycfg.cpp:47
-#, fuzzy
-msgid "Inactive text:"
+#: displaycfg.cpp:49
+msgid "Inactive Text"
 msgstr "Цвет инертного текста"
 
-#: displaycfg.cpp:48
-#, fuzzy
-msgid "Background color:"
+#: displaycfg.cpp:50
+msgid "Background Color"
 msgstr "Цвет фона"
 
 #: radioview.cpp:54
-#, fuzzy
-msgid "Standard Display"
+msgid "Standard Display for KRadio"
 msgstr "Главное окно KRadio"
 
 #: radioview.cpp:60
@@ -84,28 +80,23 @@ msgid "Configure KRadio"
 msgstr "Настроить KRadio"
 
 #: radioview.cpp:228
-#, fuzzy
-msgid "Power on/off"
+msgid "Power On/Off"
 msgstr "Включить/выключить"
 
 #: radioview.cpp:229
-#, fuzzy
-msgid "Quit KRadio application"
+msgid "Quit KRadio Application"
 msgstr "Закрыть KRadio"
 
 #: radioview.cpp:230
-#, fuzzy
-msgid "Start/stop recording"
+msgid "Start/Stop Recording"
 msgstr "Начать/завершить запись"
 
 #: radioview.cpp:231
-#, fuzzy
-msgid "Start/stop sleep countdown"
+msgid "Start/Stop Sleep Countdown"
 msgstr "Включить/выключить таймер отключения"
 
 #: radioview.cpp:232
-#, fuzzy
-msgid "Show/hide plugins"
+msgid "Show/Hide Plugins"
 msgstr "Показать/скрыть"
 
 #: radioview.cpp:233
@@ -113,13 +104,11 @@ msgid "Help about KRadio and KDE"
 msgstr "Справка по KRadi и KDE"
 
 #: radioview.cpp:234
-#, fuzzy
-msgid "Select a radio station"
+msgid "Select a Radio Station"
 msgstr "Выбор радиостанции из списка"
 
 #: radioview.cpp:407
-#, fuzzy
-msgid "<no preset defined>"
+msgid "no preset defined"
 msgstr "Станция не определена"
 
 #: radioview.cpp:563 radioview.cpp:633
@@ -174,33 +163,27 @@ msgid "%1 MHz"
 msgstr "%1 МГц"
 
 #: radioview_frequencyseeker.cpp:79
-#, fuzzy
-msgid "Search for previous radio station"
+msgid "Search for previous Radio Station"
 msgstr "Искать станцию вниз"
 
 #: radioview_frequencyseeker.cpp:80
-#, fuzzy
-msgid "Search for next radio station"
+msgid "Search for next Radio Station"
 msgstr "Искать станцию вверх"
 
 #: radioview_frequencyseeker.cpp:81
-#, fuzzy
-msgid "Decrement frequency"
+msgid "Decrement Frequency"
 msgstr "Уменьшить частоту"
 
 #: radioview_frequencyseeker.cpp:82
-#, fuzzy
-msgid "Increment frequency"
+msgid "Increment Frequency"
 msgstr "Увеличить частоту"
 
 #: radioview_frequencyseeker.cpp:83
-#, fuzzy
-msgid "Change frequency"
+msgid "Change Frequency"
 msgstr "Изменить частоту"
 
 #: radioview_volume.cpp:59
-#, fuzzy
-msgid "Change volume"
+msgid "Change Volume"
 msgstr "Изменить громкость"
 
 #. i18n: file: radioview_seekinterface.ui:15
@@ -212,15 +195,13 @@ msgstr "RadioView_SeekInterface"
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-#, fuzzy
-msgid "Search previous station"
+msgid "search previous station"
 msgstr "Поиск предыдущей станции"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-#, fuzzy
-msgid "Decrease frequency by 0.05 MHz"
+msgid "decrease freq. by 0.05 MHz"
 msgstr "Уменьшать частоту по 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:70
@@ -233,15 +214,13 @@ msgstr "Настройка частоты"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-#, fuzzy
-msgid "Increase frequency by 0.05 MHz"
+msgid "increase freq. by 0.05 MHz"
 msgstr "Увеличивать частоту по 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-#, fuzzy
-msgid "Search next station"
+msgid "search next station"
 msgstr "Поиск следующей станции"
 
 #: rc.cpp:19
