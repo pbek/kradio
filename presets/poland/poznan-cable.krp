@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.4</creator>
+			<maintainer>Tomasz Kaźmierczak &lt;tomek-k@wp.eu&gt;</maintainer>
+			<changed>2013-04-11T23:30:04</changed>
+			<country>Poland</country>
+			<city>Poznań</city>
+			<media>cable</media>
+			<comments>Cable provider: Winogradzka Telewizja Kablowa (WTvK - http://wtvk.pl)</comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>13657140843EB64A69B47E4EEABD1E43A176CE6689D2CDA7858DDFF480F3411A00B946</stationID>
+			<name>Polskie Radio Program 1</name>
+			<shortname>PR 1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>88.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365714265DA63D079076DEFEA485EABADE5E7FC14469FD63D82A962C1E32C6A0FD68E</stationID>
+			<name>Polskie Radio Program 2</name>
+			<shortname>PR 2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>88.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365714556BC8D9994603A42E2C48490BEF625893198A1E6B37DBC12EF1CEE0FCA4F99</stationID>
+			<name>Polskie Radio Program 3</name>
+			<shortname>PR 3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13657145762362E9E4B0CF2993EC732394B12D2CD2715EA84EC5D419037EAA2A9393A1</stationID>
+			<name>Radio Merkury</name>
+			<shortname>Merkury</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365714637C5793D5DD0BF688CFFC3417CA0067F4A18EA06A54AAB42B3BA633F48AB2A</stationID>
+			<name>Radio Maryja</name>
+			<shortname>Maryja</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>91.45</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365714642F2056A30C4174D1A5F700ADEAEE8CE556186B3F1B02375FEDCF12335FCA1</stationID>
+			<name>RMF MAXXX Poznań</name>
+			<shortname>RMF MAXXX</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>91.95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365714645F2D077CB6F9E5DCBC9FFDB79B5C8118800FE7FDEB074522BF925D499C1A1</stationID>
+			<name>Radio Emaus</name>
+			<shortname>Emaus</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>92.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365714646259C0357FA3346ADF8CB390C0B7A76BC2EFB162287F6A3D05C2828F1E15B</stationID>
+			<name>Radio TOK FM</name>
+			<shortname>TOK FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>93.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13657148982D519CCE7136255DDF87F1CD07DADEC6C06A257B7604E6E56FACAB50B673</stationID>
+			<name>Radio Afera</name>
+			<shortname>Afera</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>94.25</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>136571493024AACFD15CB9BE2A7A197DD5C541BCA17630B3B206DD794577B84A2D6557</stationID>
+			<name>Radio Eska Rock</name>
+			<shortname>Eska Rock</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13657150127FC39B612C1C1D42C6860D5F031E7CB069A89CA7A9F9E4111E529933545B</stationID>
+			<name>RMF FM</name>
+			<shortname>RMF FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>96.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13657150504C4743F10DB0B11C39F11B12751DA21CF20FF3F4CA7D7DD8624DA37188FF</stationID>
+			<name>Radio Eska</name>
+			<shortname>Eska</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>97.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365715072C37D6C62B820C52F95716BADD9F967746E465AF9BCA0872D2C22ACE3879F</stationID>
+			<name>Chilli ZET</name>
+			<shortname>Chilli ZET</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>98.15</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>136571526323180D69D316852FFD546130A948CAFE39D1261B06EB6E9F6F86540C3B61</stationID>
+			<name>Radio ZET</name>
+			<shortname>ZET</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>98.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13657152689C5A354324ED524B1EA56AFF3E565896AD7E22B468A9E1FAD2F6AD407046</stationID>
+			<name>Planeta FM</name>
+			<shortname>Planeta FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>99.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365715270B6BA949741A945685425024D59B383DC99EDEB00AC92383789223B62F5FE</stationID>
+			<name>Radio Roxy FM</name>
+			<shortname>Roxy FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365715271737577B9D44E70833B42E655E4656AFEB2ECE6478E8574BEC229D2CF6AA2</stationID>
+			<name>Radio Złote Przeboje</name>
+			<shortname>Złote Przeboje</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>104.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365715272E4CA8AD25F0E93EDB808412B2DB519EBE6BFB31D1F19EFF17B73206103AC</stationID>
+			<name>Radio Blue FM</name>
+			<shortname>Blue FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>136571527529A9676A625088347AB677CE9D0D5EFA4668E1806FC977DECC75B895C5A6</stationID>
+			<name>RMF Classic</name>
+			<shortname>RMF Classic</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365715276B31F6D32F37F5A26CA4CA6ABCC70CE149E5A3F76899AD91B1130229C50E2</stationID>
+			<name>MC Radio</name>
+			<shortname>MC Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>106.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1365715278880C0274259EC51CE53466747ACB8A47B6AFA779A0DE054531D331107EF4</stationID>
+			<name>Polskie Radio Europa</name>
+			<shortname>PR Europa</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>107.7</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

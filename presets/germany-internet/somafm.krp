@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.4</creator>
+			<maintainer>Ulrik Stervbo &lt;ulrik.stervbo@gmail.com&gt;</maintainer>
+			<changed>2013-08-02T12:34:16</changed>
+			<country>Germany</country>
+			<city>Berlin</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>137525455550C83AE7A9F4F1A3549F25B2D95C0972E18DD215DE0EB83AE26C50EA6A88</stationID>
+			<name>SomaFM - Groove Salad</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/groovesalad.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375439594CE382C447BBDB4A284431D623FFAED3BD9F06FA611415952C4C488CE03EC</stationID>
+			<name>SomaFM - Dub Step Beyond</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/dubstep.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525456399D852AEAD879032B047F42EFF97E5577344818A176D09EE049DF028AFF2</stationID>
+			<name>SomaFM - Secret Agent</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/secretagent.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525457705E7694B761D8EA7C0F1D102345EDE76E8B83ED8A3F51B5AF50F6C098046</stationID>
+			<name>SomaFM - Drone Zone</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/dronezone.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13752545800A8C7F4E28208C190358E1DBE80834C841D42E9390E02C0661C276333362</stationID>
+			<name>SomaFM - Indie Pop Rocks!</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/indiepop.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254637A3C77F6D24D103264324DAB306A29CE25E25B27C82CDE23727EFE31C7E9D</stationID>
+			<name>SomaFM - cliqhop idm</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/cliqhop.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254643E9C71A7DD85C83B9378545C80B1B92D620CA92595C9461D0886E54CDA0B8</stationID>
+			<name>SomaFM - beatblender</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/beatblender.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525464454F3B46BDBA8AEAAAC83AEF78A55EC6CB466A283985E567AF7DCE55AA7D1</stationID>
+			<name>SomaFM - Tag&apos;s Trip</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/tags.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525464635B3B2D3B346C16C59AD0D8242C9000E2F6C05E92E5F83558A743EF9FBFD</stationID>
+			<name>SomaFM - Illinois Street Lounge</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/illstreet.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254647516E8405FC2CD1D2F27D6C3C37764A8A24CFC663C030E4643F19D36312AB</stationID>
+			<name>SomaFM - Space Station Soma</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/spacestation.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13752546498F8622C4A2DBABF26EBD9AA63DD14132840FC2E4929750E5767D3024D931</stationID>
+			<name>SomaFM - Doomed</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/doomed.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13752546507BD626516F0E25746F3A868A2A7829E294F767FA6BFA5F5042994B0E4489</stationID>
+			<name>SomaFM - Boot Liquor</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/bootliquor.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525465190DA276595259180B79DC33000FF56B57F986A519B286EA7214CB9B8FA16</stationID>
+			<name>SomaFM - Lush</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/lush.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525465357A073E74E714F10A8E572D512F1D01BAEC5C1EBD7477D173997A3A29D74</stationID>
+			<name>SomaFM - Digitalis</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/digitalis.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254654A01D43D6C8EEA87D5E3E4770F6C560CE595524A31B662BE2464F57D384B2</stationID>
+			<name>SomaFM - Suburbs of Goa</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/suburbsofgoa.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525465595D2116BDB29BAC478E23807D4DA7E49144A6D70D4E5FA9EF3C23C651287</stationID>
+			<name>SomaFM - Sonic Universe</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/sonicuniverse.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254657144786978ECAC8BB1BCA89920BB292ACAB711F70108E4C9DEA48AA69E9D4</stationID>
+			<name>SomaFM - PopTron</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/poptron.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13752546582C4467D2F181451566B816EC6FF46CBEB2A4DE2581FE9A5DAF230A274975</stationID>
+			<name>SomaFM - Covers</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/covers.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254660BD926AEBF212FF64F8FB94E93680C6186268D640114A171BE01D0AC90F46</stationID>
+			<name>SomaFM - Black Rock FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/brfm.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>137525466100D24192FE9DBAF575A21C945A3F42F63D8FF8B86E92F8BBA4145ABBB8AD</stationID>
+			<name>SomaFM - Mission Control</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/missioncontrol.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254663ADAF352C80661E998CFEEF0EB86CBE5BE3F668B4A3D0E57B3994CD72FE6A</stationID>
+			<name>SomaFM - BAGel Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/480min.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13753316672861F3231A095F574A70096A5C8685701335D40F19D9CF32C855390EB2D0</stationID>
+			<name>SomaFM - Def Con 21</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/events.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375254664C7B9C20C76885C1C38DD14ECC76C522CF6B99660FF5270DC89BD46231A9E</stationID>
+			<name>SomaFM - Underground 80s</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/u80s.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1375331482A5A300F63CD3C51272BE7FB86E29F3396244FC9054315C4D1E2653E822F0</stationID>
+			<name>SomaFM - SF 10-33</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://somafm.com/sf1033.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>

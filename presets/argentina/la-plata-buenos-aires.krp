@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.4</creator>
+			<maintainer>Alfredo Jesús Delaiti &lt;alfredodelaiti@netscape.net&gt;</maintainer>
+			<changed>2012-09-25T15:50:57</changed>
+			<country>Argentina</country>
+			<city>La Plata, Buenos Aires</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>1348331331296700361BC03731C3E5B048E018856109BCDB6C595A42D1C76A9930B177</stationID>
+			<name>FM Avivamiento</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>107.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13485989559033284A4C5C3EFB33E3344E01DC5D2894E7324AC4272238A614E70ABC20</stationID>
+			<name></name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>107.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331296C100217461246CF4D796E2ECEA2932735B2FF8049AE4BD7D14A58695353E</stationID>
+			<name>Radio Universidad</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>107.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483312789DF5A11F3ECDC43BDB06EBB2D7F8E4DF25A5EDAE4EACC20F508B77CEE8DC</stationID>
+			<name>FM Ozono</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>107.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483312539EEDA5B3ED3A6F4F2F13F49980C7B4E1A69C7E9E993EE246C7F351C5C647</stationID>
+			<name>FM Mágica</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>106.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331235486878B8B849B4106BB1C1A37ED736B63274224487BE33984EB6C993B824</stationID>
+			<name>FM Record</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>106.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331217E6011D5721D09A6114AF609AAFFED07EB1A4C22BD277BFC54AF60518C67E</stationID>
+			<name>Red Aleluya</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>106.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331205E5F6A7AC1CC03C0EB1205FA2A1089E054E423E492E22625CACF45F2C3329</stationID>
+			<name>La ese ve</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>106.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331191DB78460B3FA12A041C5EB284CF6DD2D3619C196FB359789C17E78A580644</stationID>
+			<name>Red Puerto Libre</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13485987947D63BEF0B38A3A0892676DD19B3850C0EDAA4506CEF43D25E553908F521C</stationID>
+			<name>FM Luna</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134829348385BBC2B392776D3ABBAA16E23A937A9C0CE6273FEAC30D44EEF539F43D45</stationID>
+			<name>105.5 FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331158A8F22ADC70692AA1A63379F726BF5A030ED8983863CB2F6E82B5EF2DAFF4</stationID>
+			<name>Blue</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331145CED65A5C944978288AD74DC97EA33AF6143E4E66B162FF44566FC8FAAB08</stationID>
+			<name>Radio Sur</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483311257B6E1F6BCE83A82FA56B7D44C212213D96B8F05C9EF660CE8A0C1A9BC089</stationID>
+			<name>Uno en el Señor</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>104.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13482934404E1465EC51276F172F46E4B7979941BCCC6C50279BB41680D226088E4A1B</stationID>
+			<name>FM Sensación</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>104.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331104555923606BD69E9FD3EF2FEA25F48616759E1AE02A92E8E056129D4E98F0</stationID>
+			<name>Planeta 80</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>104.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13485987239373B6547D9BF19DC7DEFEB82FC85DFD3E68C248283FE475CD4A57B96BD0</stationID>
+			<name>La 104.3</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>104.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348289880BF80679C2B2748851C4A6D2910D969AE34044F412A0576A0EE86B49BA13E</stationID>
+			<name>FM Fundación</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>104.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331072C54EBDE2DE9C48CBDE88C49A460A479B3637B233EC5BDBE7D07F50FF7B2E</stationID>
+			<name>Cool Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>103.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331059D2121975DDD2351470174474B23F45111EA3CBB8D7AFE90C5E8C9BFA7296</stationID>
+			<name>Cielo</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>103.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348293361012A52AB46CF98D0822900D41E1640FD05F7EE167D5D73E35FAE135ADB8F</stationID>
+			<name>Paraná FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>103.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348331032AA05DBFE500424F0FF880D56ED04E38D113A5B5876F5BFB748A3F8E0C482</stationID>
+			<name>Solo Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>103.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134816097152BD379B587F959C5CF7A523B4AFC50741FAC436D585077CA781FF2AF87D</stationID>
+			<name>Mixs</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>102.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483309575E1E683EE2678494F306118923AF4886D3664FE025B859895A308547DDC0</stationID>
+			<name>FM Maná</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>102.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134833090202D69CC7F5F01384148F353F30A88A93C1591EDEA64984BDD147798D5D78</stationID>
+			<name>La Calle Record</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>102.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483308554BA6017E98568ED179027558ED63CDCD6B590701091352604FB75DB3E57D</stationID>
+			<name>FM El Buen Samaritano</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>101.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134833083901F72A20AD7AB34DD73A7CEFC2E78D90D9E043027A107E23F94D288B20CA</stationID>
+			<name>POP</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>101.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330808FCE8D7829557BD9DC76917C8CBEAFFF9DDADE7C2BBB5246A757E987A401F</stationID>
+			<name>Radio Gol</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>101.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483307835282F372D3455EB368377C4701800C75376ABD94801A35EBF0F36755F4EC</stationID>
+			<name>Mileño FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>101.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330748FC6BF2CAFDAD2D8819F56EF77C91DBB223BE9DEE7FDE2F9D22E650009DF6</stationID>
+			<name>Radio Diagonal</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>100.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483307219DB15CBE345C3940A2BA32FAD19248181E3E540619112392E27D09A496CE</stationID>
+			<name>Blu FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>100.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134829305549F92132D0D220E109E7E32D84DED11B8F0D0CA926D50241AAF9A8E77C80</stationID>
+			<name>La Redonda</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>100.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13482465205065BB2415B14A7C2CA74423126DB7FB272BFC7290EFBAFF7138E866CB73</stationID>
+			<name>La 100</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>99.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330620872E5D626AC1C60DCE756202798394A2D04AE0E9E29500A7D266F805421D</stationID>
+			<name>Modelo Argentino</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>99.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483306048F6BA9F783076A76C6A5F566A99ED51A8A6F904DF20C1A1E278286A7AB71</stationID>
+			<name>Radio Maria</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>99.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13485983999BB18EAD601BECAE625190D62670BA499B51C05E3BC17829ADB9F17612D2</stationID>
+			<name>Senda Antigua</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>99.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330586E7AD082A3EE75B9C5BA486626E0ECE323AB0FA3235C2B1D80305A89DC793</stationID>
+			<name>La 99</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>99.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483305527D875D3A4E1FA4D292A54980EBD498DAAAF815E20DA83F1E8B12C70F87D7</stationID>
+			<name>FM Sensación</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>98.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348598079C628B5356FC67F1B3133C1C62BB5DE2A48D7A18F170F4EAE870A48C221C8</stationID>
+			<name>Mega</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>98.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330536011958ACAD7A419CE33AE6FFC1D0ACEBA8FFBEFB84AEC29D85E4D7468445</stationID>
+			<name>Radio Difusión</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>98.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483305191FCB1FEE48B573573B1C1E98F9A2343E6CE728398907DE3ECD74F1BC2C83</stationID>
+			<name>Radio Cultura</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>97.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13485944903949FA19713EDFADA3F19F654CBB3E62D84CEB9479C37E54366DE0048022</stationID>
+			<name>Creación FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>97.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134833048738BF3CA18E37F13C010D0EE254C0DB63FAC9EE7A548F13C3D317E22B0965</stationID>
+			<name>FM Universo</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>97.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483304691DC2455D01B4057FCF2E33D76196F1FF738DD31B10333B07D161A3BF6947</stationID>
+			<name>Hola FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>97.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330451DDC5626A00AF25DAE1F1D423EC40EACB33B8B0544452B76132EF2362CA98</stationID>
+			<name>Radio Provincia</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>97.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330432CC4C2FD48E89C6BB00E8407083602A710C54DC3DF483F359949FEB85DB13</stationID>
+			<name>Radio Plus</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>96.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348597739F1AD540A1309776A904CE0A87D8254D1B474C8FD9F0397A0B888640E61CF</stationID>
+			<name>96-5 &quot;Número 1 en Éxitos&quot;</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>96.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330415F96A5C64543DE26E18EF7AB6804219FC26E7CFA77F186A01EA03BA753E38</stationID>
+			<name>Digital News</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>96.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330397562EDA39E0FC38AB66E51363EB5A36C73A322D65D1CC7454486B140420E7</stationID>
+			<name>Rock and Pop</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134844022196B2B53FCB5C686BBFE669EF338890EFA2DAE885A122112F305C61A28174</stationID>
+			<name>Radio Fest</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134833038295C473E8B67484F1F8F2BA3D26D74442256952715E4EEFD6C371D896C39A</stationID>
+			<name>Radio Capital</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483303698D0B96160EE9E26CF1163BC9381BB2F0BFF9ED56F0D16713B86AAB1341D5</stationID>
+			<name>FM Sofía</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330356B9C28A002B72FE2E59ECDFED31F4681B65F251FE20B4E908A9178116EBD7</stationID>
+			<name>Metro 95 1</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330340D645FBF4DFE2370E06DBAD562F7E82726A5C85916B2D0C9B7D70935F4F19</stationID>
+			<name>Lasers</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>94.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330325319A050976841D8879EC5C3C623AB985886B640EEE5DCE8D9C31A5681F23</stationID>
+			<name>Radio Zeta</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>94.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483303074FE255A9473E43C7A9C3574A20EB4E3F52BC7033FAA4456BF4D5C97053D8</stationID>
+			<name>Radio Disney</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>94.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330278045EABDD0D906CDEA623B6F8D1C469C8AB8FB6A6606FF74441D5277C4136</stationID>
+			<name>FM Cualidades</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>93.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134833026382A1FADCAAFB8342F6B1DA57FF4FEB5A74DC61527DBCB39F7E49E677BE60</stationID>
+			<name>Radio Universal</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>93.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483302440C000399EF36F7318E5CC9504558ADE5272804A5BC5643A5E1119F16E6DC</stationID>
+			<name>Radio Vibra</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>93.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330220B48B0ABDBCD689B24D496CD05B12BCD98C5761C1E7A2B301E72DDF413234</stationID>
+			<name>Radio 93</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>93.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483301885259D26F6AB79BEE5E840E03B9F688DC3A7C12C0846A54971B53A4317EC0</stationID>
+			<name>Radio Andina</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>92.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134833016933557B10E3A426212D099651630DBC5D996CAEF1F080E1B0EDF7ECF1AE46</stationID>
+			<name>Estación Latina</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>92.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483405882A25E0107DA3137D9889D2869F49A138B04D05B1FA48DD3A60D1A2336C9E</stationID>
+			<name>FM Color</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>92.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13482464536220D2E1A7D5688FB50E99D077C7339CBA59341B785A1EBB1AF3D053383A</stationID>
+			<name>Red 92</name>
+			<shortname>La 92</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>92.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134833011250A3D587095185A31E1DB05270FFDAC83C9A083F7720D39152865B9318F3</stationID>
+			<name>Radioestación Sur</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>91.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483300929FFF6C0933ED406408D87E47C60DEFADE88AD7AB37107AA5E8F35A81A9D8</stationID>
+			<name>Bumerang Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>91.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348330064885BE72C129290C77FA243152A15E40A75B00BB23F4E0FAD55BAF38C75B0</stationID>
+			<name>Los 40</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>91.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483300347B9B271405BEF9D5FDF920732E629C6CCE5776D84B787F320E767C804227</stationID>
+			<name>FM del Este</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>91.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348329999BEB404873CFC045311D079B06183F2159EE6BF4DF965C6CFC9A9E786C2E7</stationID>
+			<name>Radio La Plata</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348329979F9D03E01980A24356A07498D710F460A57532726DE765141F939DEDA3F59</stationID>
+			<name>Copara FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134832995168A5D97B20D1DEF2D1DDB2EBAF260CB6A0DA8E04304918D210BEBA2DF79A</stationID>
+			<name>Radio Futura</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348329923A1E8B698AEF05EF31E2B4A109C52DA4CCDFC279A0B8874B0AB2D8933F522</stationID>
+			<name>CTN</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134859662701E9DAC22C60796957FD9C9F74B87DCB64F430A33E03DC56DC38B881FA77</stationID>
+			<name>Keops FM</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483298719C2F5C426F352ED5136683413EF88CFF3920241F9063B3270F4C9B6BAF40</stationID>
+			<name>FM Platense</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>89.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348329842755D63A1E44C5457CAC43C36AC9C934015BB34929E0CA52C767886C3ED7C</stationID>
+			<name>2-2-1 Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>89.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348329820854918076028049C1DE8CEA412AAA0D11F12D20EB793827B5622302C9121</stationID>
+			<name>Cadena UOCRA</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>89.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13483336068FCC324E387C3ECD5505EA3B76E05EA2439CA6CAD8BB0E0391250FC477C0</stationID>
+			<name>Radio Norte</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>89.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13485964720BCCBBC26DCBAAF8CFD684613CA44504CC7E59638CD11EFBB501305A1A22</stationID>
+			<name>FM Raices</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>88.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134832975954227A30587D5C98D4479C8428DF2590358AB474C73D0A3D93716E149C3C</stationID>
+			<name>Cadena Río</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>88.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>134859635092E57B6BF52BFADC6B19B61D81F5A8C3529672D113C8A7DC22519A441F2C</stationID>
+			<name>FM Norteña</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>88.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1348329721C6CECDCCBCEFFA609AA5E7567B757B61A8B9C898005B94E04766FA477245</stationID>
+			<name>FM Auténtica</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>88.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13482939244BCD8B7D5FE1F24816511BAC1AC60A5F8609325AEC5BBFA8CC8F2E1058ED</stationID>
+			<name>NQP Radio</name>
+			<shortname></shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>87.9</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

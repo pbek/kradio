@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.7</creator>
+			<maintainer>Joaquin Ferrero &lt;explorer@joaquinferrero.com&gt;</maintainer>
+			<changed>2014-03-01T22:33:05</changed>
+			<country>España</country>
+			<city>Valladolid</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<FrequencyRadioStation>
+			<stationID>13627495725757570B0E01B8AA0FB4C4CB6BAC6CBBEDF71545CDFB9507D3BCBD867A94</stationID>
+			<name>Cadena 100</name>
+			<shortname>C100</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>88.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1362748390BEE468636C4E69A4FEB67DB239348C63A71F4B35839B8ED2BEAAA7F1B71C</stationID>
+			<name>Mortal FM</name>
+			<shortname>Mortal</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.2015</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1362749275B075EED35FB695957442BE0DD9F162F06BDCC6286C5E57E711546892F14A</stationID>
+			<name>Cadena 40</name>
+			<shortname>40</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>90.9</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>136275011346E9498CAA591249499158DEF2A48E0627B427BF6AE2399C155087593D02</stationID>
+			<name>Fun Radio</name>
+			<shortname>Fun</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>91.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>136274839895127ED224BD88B0B0C3398C4BB6D0B51BFA126D772002D1C6921D23B68F</stationID>
+			<name>RNE Radio 3</name>
+			<shortname>RNE3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>92.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1362748401F12B78E9438903E78BD2C3CDDBC62286D8E5E40C0D4E36D3428191CA2011</stationID>
+			<name>RNE Clásica</name>
+			<shortname>RNE2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>93.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13627484070737D63E4057998B6F8AFE4A2517EC809104E7D393A6526F1759BAE594B2</stationID>
+			<name>Europa FM</name>
+			<shortname>Europa</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>94.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385402F22D0388FC0D149D3DAC9DF746F8708CF8DF8241B918E98EC257B2153BBF35B0</stationID>
+			<name>RNE Radio 5 Todo Noticias</name>
+			<shortname>RNE5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385402052E3E022C37987480C61880E7BE9684F8CB55E77D9C246786FA8D609632327B</stationID>
+			<name>Radio María</name>
+			<shortname>María</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>95.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13627506792FE8435BC9DA40B2AEEEF347C6F19B70B18F43AB34E9BC4C5C32F07F3BC9</stationID>
+			<name>RNE Radio Nacional</name>
+			<shortname>RNE1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>97.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1362748422A01133442D303A9FD9305D33FCE0E4C9D39670152185E36752E7743DCC69</stationID>
+			<name>Máxima FM</name>
+			<shortname>Maxima</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>98.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1362748426EFEAD3ACB3690ED3BE94E012E4FF9140A50C596427A3559EEDDD2DB42D56</stationID>
+			<name>Kiss FM</name>
+			<shortname>Kiss</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>99.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385402006B850A756896DF06419324B111E5A6CC26777754F2F1497F596F768345EED4</stationID>
+			<name>Cadena Dial</name>
+			<shortname>Dial</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>100.4</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13667847673763E3CFAA64BB9C6AB5B2DB4E4E69A3D1E37E313FE7487331958051D4F2</stationID>
+			<name>Melodía FM</name>
+			<shortname>Melodía</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>102.3</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>106338540279ED1A9708087766063B585712D58A8948DA0CDD7836A97C1E357C7ABB382A0B</stationID>
+			<name>Castilla y León Radio</name>
+			<shortname>CyL</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>102.8</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13627484407A516092FCBA3D25B47E43426C365875D4EA5F290BA6BDFE1E0149EE7500</stationID>
+			<name>Rock FM</name>
+			<shortname>Rock</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>103.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1362748444BD26ACC999FAF0C6FDF4E2BB8C4B549DCF0782A2886D0E4A29D484E72461</stationID>
+			<name>Cadena Cope</name>
+			<shortname>Cope</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>104.5</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1063385402226C08A7B96129A9F3C1485D9282D1526C86E0B8D1B68CEA0DC1F665C4B0CE45</stationID>
+			<name>Onda Cero</name>
+			<shortname>Cero</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>105.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>1362748453F0FD460B7E5D62A69E7B102D152BF3DAD9432C23E0F8D03BAC8C53899765</stationID>
+			<name>Radio Vaughan</name>
+			<shortname>Vaughan</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>106.2</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>136275140197A137B95FFD342AD3A66100E6C8360987A64354627A623914042EAB809B</stationID>
+			<name>Cadena Ser</name>
+			<shortname>Ser</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>106.7</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13627514364CC44A0647FC64A79914A0719A8A6FFC1F0B95632CB4E89BFEB5F7C5494F</stationID>
+			<name>Vive Radio</name>
+			<shortname>Vive</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>107.1</frequency>
+		</FrequencyRadioStation>
+		<FrequencyRadioStation>
+			<stationID>13937092318CC83FD70A1C97D3D1086A5C23EE3E0E803FE5148C2EF486F260F6E60EBB</stationID>
+			<name>Radio Nueva Vida</name>
+			<shortname>Vida</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>stereo</stereomode>
+			<frequency>107.7</frequency>
+		</FrequencyRadioStation>
+	</stationlist>
+</kradiorc>

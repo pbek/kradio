@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kradiorc>
+	<stationlist>
+		<format>kradio-1.0</format>
+		<info>
+			<creator>kradio-4.0.2</creator>
+			<maintainer>morfus <morfus@hccnet.nl</maintainer>
+			<changed>2012-09-17T09:26:05</changed>
+			<country>Netherland </country>
+			<city>Utrecht</city>
+			<media></media>
+			<comments></comments>
+		</info>
+		<InternetRadioStation>
+			<stationID>13478657985C520FF72F209CD07C9BFF6A75F5612FE78BC002ADAAF7DE376A943CC2C8</stationID>
+			<name>NPS Output - Grooves</name>
+			<shortname>NPS Grooves</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8022/</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>134786586358508E67EF7E96C365A94D083F8823383EB78D6797220BEB7A25AF0EEBBC</stationID>
+			<name>NPS Output - Jazz</name>
+			<shortname>NPS Jazz</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8192</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347865912A9B600BF0E5304C69FE92220ABCEBA905B656F0AB033E92D13E70C3AAAA4</stationID>
+			<name>NPS Output - World</name>
+			<shortname>NPS World</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8194/</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347866246A698C4E35F54BABFB509F92564D86C50068F8B131ED9A9BF5E39242B3CC4</stationID>
+			<name>Beyond the Beat generation</name>
+			<shortname>Beyond the Beat</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://82.148.208.55:8000/listen.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>134786570342C5DDD62C7111185FC11026D834D69F36ECC3494DFCC0315E7FAB1B15AC</stationID>
+			<name>Nashville FM</name>
+			<shortname>Nashville FM</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.nashvillefm.eu/live/breedband.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347865229881B7A59C38F080D81C96C7F839132262310958E7510AFA9BC2E3371CA74</stationID>
+			<name>Q-Music</name>
+			<shortname>Q-Music</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://vip2.str.reasonnet.com/qmusic.aac.32</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13478653513DC99D60D9D735C025A60FDC98714D935D49A1B3FB5C29C7220E4C12001A</stationID>
+			<name>New Age Music</name>
+			<shortname>New Age Music</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://87.230.21.161:6667</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347817839BD9DE27F713FACFE017AF51D15F29DAA7CA95F3B951FBA34112906B002B6</stationID>
+			<name>Concertzender</name>
+			<shortname>Concerzender</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://streams.greenhost.nl:8080/live</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347865014F65B8A8F50FB8065EFDB155C328E67DD2084C40326DDDF7B51FC0C6A7430</stationID>
+			<name>Sky Radio 101 FM</name>
+			<shortname>Sky Radio</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://www.skyradio.nl/player/skyradio.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347817530FF99C0D323C4281755176107C384D79BA2BE500EE4610B05A2EB3EB82EC3</stationID>
+			<name>Avro Het best van het beste</name>
+			<shortname>Het best van het beste</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8072</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13478660318E9E83174DCCEF3AD60BD84D1341957D55704A64B2F1B6B9A72632EEAEC6</stationID>
+			<name>Avro Old School</name>
+			<shortname>Avro Old School</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8056</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347817578FB850A10CA84533C7463FA138B8272158500429451BC0B84A5C85FA38C5C</stationID>
+			<name>Avro Ziel en zaligheid</name>
+			<shortname>Ziel en zaligheid</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8074</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347817631EE088B3BCA77E25D70B71902C7F653B61259794A62628435D183A98CD106</stationID>
+			<name>Avro Operette</name>
+			<shortname>Operette</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8060</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347817684F2E2943E2F7FC4935A406C1AEB02E3330B99C93427AFF0EC91336A28E62D</stationID>
+			<name>Avro Easy Listening</name>
+			<shortname>Easy Listening</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8058</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347817215A1AB064FFFE8ABD08285197AD16680497171410DB1AEA2DF5A7D18D46AAD</stationID>
+			<name>Avro Festival Classique</name>
+			<shortname>Festival Calssique</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8148/listen.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13478173112AEE64CAD2E64E349DA05BF0F6C2CB8AED21142A5CCCF326D9252C397374</stationID>
+			<name>Avro Baroque around the clock</name>
+			<shortname>Baroque</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8068</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347817387D0A8E2FDE3DBEEB845496F08B68966548FBB256EF61905AF33492B7E4F66</stationID>
+			<name>Avro Musique du film</name>
+			<shortname>Musique du film</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8070</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347809911076BC9E592412BEA6140EE0C06A0D18388BAF785DA1459A3C93ED93E6A4C</stationID>
+			<name>Avro Toppers van Toen</name>
+			<shortname>Toppers van Toen</shortname>
+			<icon></icon>
+			<volumepreset>-0.01</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8062</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347818554AC856498F4A92361F2493C62084BE7C2390FFA5D91F4E6345786E10CEDB1</stationID>
+			<name>Radio M</name>
+			<shortname>Radio M</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://mediaplayer.rtvutrecht.nl/stream/radiomutrecht_hi</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347809248D08A48335B7175E25409E53F54FFB42D3EC8F0C46AC648299973FE188EBF</stationID>
+			<name>Avro Steenen Tijdperk 50s</name>
+			<shortname>Steenen Tijdperk 50s</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8064</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347866138E95D819F310AE848D62D0EB9DDA23EA51E7005A81DA103EF980203A8EAE1</stationID>
+			<name>Avro Steenen Tijdperk 60s</name>
+			<shortname>Steenen Tijdperk 60s</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://shoutcast.omroep.nl:8066</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1235914507013CED4BFB030CFA7CB0F1BD4FB0523DB966BD816A23C3C6A172FC194C12C3CD</stationID>
+			<name>Radio 1</name>
+			<shortname>1</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio1-bb.pls</url>
+			<decoderclass>mp3</decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808501BD62B2AFF23AEB973EDCB01F699BEAA60CC468AF16F6A1214FA41F1ABAB6</stationID>
+			<name>Radio 2</name>
+			<shortname>2</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio2-bb.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808538F28DCB66059EC0CA267886BF00055C4105B8210C7B45B86AC515DEE32F2E</stationID>
+			<name>3fm</name>
+			<shortname>3</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/3fm-bb.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808601E07AEC3ADA31203710DD6E7699AD5DE3D390307A65D060F2E9892DCCAFE6</stationID>
+			<name>Radio 4</name>
+			<shortname>4</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio4-bb.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808627BB9521E96651A37225C5844B6E3B3C647B50234523F1E008D87A757D8E26</stationID>
+			<name>Radio 5</name>
+			<shortname>5</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio5-bb.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13478086546D64375E2FA3AD91D4B02EC146440D5D0E2B9DB7E2C420549295D3520F32</stationID>
+			<name>Radio 6</name>
+			<shortname>6</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio6-bb.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808690D4A390BC67C609840C12936D2298EE0F793454B3FEF86B8D16C50A6E2DEE</stationID>
+			<name>Radio 2 in Concert</name>
+			<shortname>In Concert</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio2_inconcert.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808735B7895FD4E35924D3930930FABFC6416351069EE4E481A7DB7D95932C4782</stationID>
+			<name>Radio 2 Liedkunst</name>
+			<shortname>Liedkunst</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio2_liedkunst.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13478087731F13B7919243E820C6528B32927300125481F0DCF87B5AEBC5C8B36D8AFC</stationID>
+			<name>Radio 2 Sterren</name>
+			<shortname>Sterren</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio2_sterrennl.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>134780880763007190B34F47580CAF066A65B930D77BB27DBE6F7DCB6D7ECA748896E0</stationID>
+			<name>Radio 2 Top 2000</name>
+			<shortname>Top 2000</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio2_top2000.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808852B650182AD6219E5AD16C3320376734D96FDBD778615558CD0D2414AA07E3</stationID>
+			<name>Radio 4 Eigentijds</name>
+			<shortname>Eigentijds</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio4_eigentijds.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13478088818F2918AE26CEBB77EDD43EC5FB3A63C7818AA698A2AEAB34E7BC16D3CBA1</stationID>
+			<name>Radio 4 Jongklassiek</name>
+			<shortname>Jongklassiek</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio4_jongklassiek.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808918667E10931977AEE8AD7A2EDA57260A4349170DD7D364DEB46AEDBEE37D05</stationID>
+			<name>Radio 4 Musicreligiosa</name>
+			<shortname>Musicareligiosa</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio4_musicareligiosa.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>1347808960060E3EAF03E812FAF11D8C44D15E137DBF0F35D0D36DF01A0BD52FDD0641</stationID>
+			<name>Radio 5 Nostalgia</name>
+			<shortname>Nostalgia</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio5_nostalgia.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+		<InternetRadioStation>
+			<stationID>13478089931AFEE7D7578A8087E26E74957E03E0BF1476A0D6BAA70EAA60DD440CFE81</stationID>
+			<name>Radio 6 JazzJong</name>
+			<shortname>JazzJong</shortname>
+			<icon></icon>
+			<volumepreset>-1</volumepreset>
+			<stereomode>dontcare</stereomode>
+			<url>http://livestreams.omroep.nl/npo/mp3/radio6_jazzjong.pls</url>
+			<decoderclass></decoderclass>
+			<playlistclass>auto</playlistclass>
+		</InternetRadioStation>
+	</stationlist>
+</kradiorc>
