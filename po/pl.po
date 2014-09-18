@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-18 17:39+0200\n"
 "PO-Revision-Date: 2004-01-05 13:29+0000\n"
 "Last-Translator: \n"
 "Language-Team:  <pl@li.org>\n"
@@ -369,26 +369,34 @@ msgid ""
 msgstr "przepisanie wersji 0.3.0, nagrywanie, obsługa lirc, alarmy, różne"
 
 #: src/main.cpp:44
-msgid "Marcus Camen"
+msgid "Pino Toscano"
 msgstr ""
 
 #: src/main.cpp:44
+msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
+msgstr ""
+
+#: src/main.cpp:45
+msgid "Marcus Camen"
+msgstr ""
+
+#: src/main.cpp:45
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr ""
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Klas Kalass"
 msgstr ""
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Miscellaneous"
 msgstr "Różne"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Frank Schwanz"
 msgstr ""
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Pomysł, pierwsza wersja aplikacji"

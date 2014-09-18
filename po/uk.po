@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-18 17:39+0200\n"
 "PO-Revision-Date: 2010-09-27 12:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -388,27 +388,36 @@ msgstr ""
 "для 1.0/0.3.0, запис, підтримка lirc, нагадування тощо"
 
 #: src/main.cpp:44
+msgid "Pino Toscano"
+msgstr ""
+
+#: src/main.cpp:44
+#, fuzzy
+msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
+msgstr "Система збирання, стандартизація, чистка коду"
+
+#: src/main.cpp:45
 msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
-#: src/main.cpp:44
+#: src/main.cpp:45
 #, fuzzy
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Система збирання, стандартизація, чистка коду"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Miscellaneous"
 msgstr "Різне"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Ідея, перший варіант програми для KDE 2"

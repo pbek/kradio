@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-18 17:39+0200\n"
 "PO-Revision-Date: 2009-11-08 00:31-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -390,27 +390,36 @@ msgstr ""
 "1.0/0.3.0, função de gravação, suporte lirc, alarme, entre outros"
 
 #: src/main.cpp:44
+msgid "Pino Toscano"
+msgstr ""
+
+#: src/main.cpp:44
+#, fuzzy
+msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
+msgstr "Sistema De Construção, Padrões De Conformidade, Limpeza"
+
+#: src/main.cpp:45
 msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
-#: src/main.cpp:44
+#: src/main.cpp:45
 #, fuzzy
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Sistema De Construção, Padrões De Conformidade, Limpeza"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Miscellaneous"
 msgstr "Variedades"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Ideia inicial, primeira aplicação para o KDE 2"

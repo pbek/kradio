@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-18 17:39+0200\n"
 "PO-Revision-Date: 2011-02-06 05:02+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -371,26 +371,34 @@ msgid ""
 msgstr ""
 
 #: src/main.cpp:44
-msgid "Marcus Camen"
-msgstr "Marcus Camen"
+msgid "Pino Toscano"
+msgstr ""
 
 #: src/main.cpp:44
-msgid "Buildsystem, standards conformance, cleanups"
+msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
 msgstr ""
 
 #: src/main.cpp:45
+msgid "Marcus Camen"
+msgstr "Marcus Camen"
+
+#: src/main.cpp:45
+msgid "Buildsystem, standards conformance, cleanups"
+msgstr ""
+
+#: src/main.cpp:46
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Miscellaneous"
 msgstr "Miscellaneous"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Initial idea, first basic KDE 2 application"
 msgstr ""
 

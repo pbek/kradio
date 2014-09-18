@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-18 17:39+0200\n"
 "PO-Revision-Date: 2010-09-17 08:23+0200\n"
 "Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -389,27 +389,36 @@ msgstr ""
 "nahrávání, podpora pro lirc, budík, různé"
 
 #: src/main.cpp:44
+msgid "Pino Toscano"
+msgstr ""
+
+#: src/main.cpp:44
+#, fuzzy
+msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
+msgstr "Vytvořený systém, shoda se standardy, úklidové práce"
+
+#: src/main.cpp:45
 msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
-#: src/main.cpp:44
+#: src/main.cpp:45
 #, fuzzy
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Vytvořený systém, shoda se standardy, úklidové práce"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Miscellaneous"
 msgstr "Různé"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Počáteční myšlenka, první aplikace pro KDE 2"

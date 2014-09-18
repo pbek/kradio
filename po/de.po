@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2014-09-18 16:01+0200\n"
+"POT-Creation-Date: 2014-09-18 17:39+0200\n"
+"PO-Revision-Date: 2014-09-18 17:40+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
 "Language: trunk\n"
@@ -381,26 +381,35 @@ msgstr ""
 "Verschiedenes"
 
 #: src/main.cpp:44
+msgid "Pino Toscano"
+msgstr "Pino Toscano"
+
+#: src/main.cpp:44
+#| msgid "Buildsystem, standards conformance, cleanups"
+msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
+msgstr "MPRIS-Plugin, Buildsystem, Standardkonformität, Aufräumarbeiten"
+
+#: src/main.cpp:45
 msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
-#: src/main.cpp:44
+#: src/main.cpp:45
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Buildsystem, Standardkonformität, Aufräumarbeiten"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Miscellaneous"
 msgstr "Verschiedenes"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Initiale Idee, allererste KDE-2-Anwendung"
 

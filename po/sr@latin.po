@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-18 17:39+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -373,27 +373,36 @@ msgstr ""
 "snimanje, lirc podrška, alarmi, ostalo"
 
 #: src/main.cpp:44
+msgid "Pino Toscano"
+msgstr ""
+
+#: src/main.cpp:44
+#, fuzzy
+msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
+msgstr "Izgradnja sistema, standardizacija, čišćenje koda"
+
+#: src/main.cpp:45
 msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
-#: src/main.cpp:44
+#: src/main.cpp:45
 #, fuzzy
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Izgradnja sistema, standardizacija, čišćenje koda"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Početna ideja, prva osnovna KDE 2 aplikacija"
