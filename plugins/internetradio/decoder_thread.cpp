@@ -176,7 +176,11 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
 #endif
 
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
+#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55, 28, 1) // libav commit: https://gitorious.org/libav/libav/commit/d7b3ee9a3a03ab88d61a5895fbdbc6689f4dd671
+    av_frame_unref(m_decoded_frame);
+#else
     avcodec_get_frame_defaults(m_decoded_frame);
+#endif
     processed_input_bytes = avcodec_decode_audio4(m_av_aCodecCtx,
                                                   m_decoded_frame,
                                                   &got_frame,
@@ -348,7 +352,11 @@ void InternetRadioDecoder::run()
         AVPacket    pkt;
 
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
+#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55, 28, 1) // libav commit: https://gitorious.org/libav/libav/commit/d7b3ee9a3a03ab88d61a5895fbdbc6689f4dd671
+        m_decoded_frame = av_frame_alloc();
+#else
         m_decoded_frame = avcodec_alloc_frame();
+#endif
         if (!m_decoded_frame) {
             m_error = true;
             log(ThreadLogging::LogError, i18n("Failed allocating AVFrame."));
@@ -696,7 +704,12 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 
         if (!err) {
             const QByteArray path = QFile::encodeName(m_inputUrl.pathOrUrl());
-            AVProbeData pd = { path.constData(), (unsigned char*)probeData.data(), probeData.size() };
+            
+#if  (LIBAVFORMAT_VERSION_MAJOR > 55) // ffmpeg commit 5482780a3b6ef0a8934cf29aa7e2f1ef7ccb701e
+            AVProbeData pd = { path.constData(), (unsigned char*)probeData.data(), probeData.size(), NULL };
+#else
+            AVProbeData pd = { path.constData(), (unsigned char*)probeData.data(), probeData.size()       };
+#endif
 
             iformat = av_probe_input_format2(&pd, 1, &score);
         }
@@ -931,7 +944,12 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     m_av_pFormatCtx = avformat_alloc_context();
     m_av_pFormatCtx->probesize = m_maxProbeSize;
 
-    m_av_pFormatCtx->max_analyze_duration = m_maxAnalyzeTime * AV_TIME_BASE;
+    
+#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 43, 100) // ffmpeg commit 5482780a3b6ef0a8934cf29aa7e2f1ef7ccb701e
+    m_av_pFormatCtx->max_analyze_duration2 = m_maxAnalyzeTime * AV_TIME_BASE;
+#else
+    m_av_pFormatCtx->max_analyze_duration  = m_maxAnalyzeTime * AV_TIME_BASE;
+#endif
 
     m_av_pFormatCtx_opened = false;
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
