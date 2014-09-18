@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recording (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -12,35 +12,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 
-#: encoder_mp3.cpp:81 encoder_mp3.cpp:194
+#: encoder_mp3.cpp:82 encoder_mp3.cpp:195
 #, fuzzy, kde-format
 msgid "Error %1 while encoding MP3. "
 msgstr "Greška %1 kod kodiranja mp3.␣"
 
-#: encoder_mp3.cpp:91 encoder_mp3.cpp:199 encoder_pcm.cpp:53
+#: encoder_mp3.cpp:92 encoder_mp3.cpp:200 encoder_pcm.cpp:54
 #, kde-format
 msgid "Error %1 writing output. "
 msgstr "Greška %1 kod upisivanja izlaza.␣"
 
-#: encoder_mp3.cpp:108
+#: encoder_mp3.cpp:109
 #, fuzzy
 msgid "Cannot initialize libmp3lame. "
 msgstr "Ne mogu inicijalizovati lalibmp3lame.␣"
 
-#: encoder_mp3.cpp:125
+#: encoder_mp3.cpp:126
 msgid "Cannot initialize libmp3lame parameters. "
 msgstr "Ne mogu inicijalizovati libmp3lame parametre.␣"
 
-#: encoder_mp3.cpp:134
+#: encoder_mp3.cpp:135
 msgid "Recorded by KRadio"
 msgstr "Snimljeni od KRadio"
 
-#: encoder_mp3.cpp:148 encoder_pcm.cpp:66
+#: encoder_mp3.cpp:149 encoder_pcm.cpp:67
 #, kde-format
 msgid "Cannot open output file %1. "
 msgstr "Ne mogu otvoriti odlazni fajl %1.␣"
 
-#: encoder_mp3.cpp:161
+#: encoder_mp3.cpp:162
 #, fuzzy
 msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Ne mogu locirati bafere za mp3 kodiranje.␣"
@@ -482,6 +482,8 @@ msgstr "Monitor za snimanje"
 msgid "Sound Stream"
 msgstr "Zvučni strim"
 
+#. i18n("Status"),         this), 1, 0);
+#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
 #: recording-monitor.cpp:48
 msgid "Recording File"
 msgstr "Snimanje fajla"

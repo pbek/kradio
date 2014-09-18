@@ -2,41 +2,37 @@
 # translation of kradio-gui-standard-display.po to
 # This file is put in the public domain.
 #
-# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-03-28 22:31+0100\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: \n"
-"Language: \n"
+"PO-Revision-Date: 2014-09-18 15:24+0200\n"
+"Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: displaycfg.cpp:46
-#, fuzzy
 msgid "Active text:"
-msgstr "Aktiver Text"
+msgstr "Aktiver Text:"
 
 #: displaycfg.cpp:47
-#, fuzzy
 msgid "Inactive text:"
-msgstr "Inaktiver Text"
+msgstr "Inaktiver Text:"
 
 #: displaycfg.cpp:48
-#, fuzzy
 msgid "Background color:"
-msgstr "Hintergrundfarbe"
+msgstr "Hintergrundfarbe:"
 
 #: radioview.cpp:54
-#, fuzzy
 msgid "Standard Display"
-msgstr "Standardanzeige für KRadio"
+msgstr "Standardanzeige"
 
 #: radioview.cpp:60
 msgid "Radio Display"
@@ -83,27 +79,22 @@ msgid "Configure KRadio"
 msgstr "KRadio Einrichten"
 
 #: radioview.cpp:228
-#, fuzzy
 msgid "Power on/off"
 msgstr "Ein/Ausschalten"
 
 #: radioview.cpp:229
-#, fuzzy
 msgid "Quit KRadio application"
 msgstr "KRadio beenden"
 
 #: radioview.cpp:230
-#, fuzzy
 msgid "Start/stop recording"
 msgstr "Aufnahme starten/beenden"
 
 #: radioview.cpp:231
-#, fuzzy
 msgid "Start/stop sleep countdown"
 msgstr "Schlummermodus ein/ausschalten"
 
 #: radioview.cpp:232
-#, fuzzy
 msgid "Show/hide plugins"
 msgstr "Plugins anzeigen/verstecken"
 
@@ -112,14 +103,12 @@ msgid "Help about KRadio and KDE"
 msgstr "Hilfe über KRadio4 und KDE"
 
 #: radioview.cpp:234
-#, fuzzy
 msgid "Select a radio station"
 msgstr "Sender auswählen"
 
 #: radioview.cpp:407
-#, fuzzy
 msgid "<no preset defined>"
-msgstr "kein voreingestellter Sender gefunden"
+msgstr "<kein voreingestellter Sender gefunden>"
 
 #: radioview.cpp:563 radioview.cpp:633
 #, kde-format
@@ -173,32 +162,26 @@ msgid "%1 MHz"
 msgstr "%1 MHz"
 
 #: radioview_frequencyseeker.cpp:79
-#, fuzzy
 msgid "Search for previous radio station"
 msgstr "Suche nach vorherigem Sender"
 
 #: radioview_frequencyseeker.cpp:80
-#, fuzzy
 msgid "Search for next radio station"
 msgstr "Suche nach nächstem Sender"
 
 #: radioview_frequencyseeker.cpp:81
-#, fuzzy
 msgid "Decrement frequency"
 msgstr "Frequenz erniedrigen"
 
 #: radioview_frequencyseeker.cpp:82
-#, fuzzy
 msgid "Increment frequency"
 msgstr "Frequenz erhöhen"
 
 #: radioview_frequencyseeker.cpp:83
-#, fuzzy
 msgid "Change frequency"
 msgstr "Frequenz verändern"
 
 #: radioview_volume.cpp:59
-#, fuzzy
 msgid "Change volume"
 msgstr "Läutstärke verändern"
 
@@ -211,14 +194,12 @@ msgstr "RadioView_SeekInterface"
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-#, fuzzy
 msgid "Search previous station"
 msgstr "Suche vorherigen Sender"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-#, fuzzy
 msgid "Decrease frequency by 0.05 MHz"
 msgstr "Frequenz um 0.05 MHz verringern"
 
@@ -232,14 +213,12 @@ msgstr "Frequenz-Regler"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-#, fuzzy
 msgid "Increase frequency by 0.05 MHz"
 msgstr "Frequenz um 0.05 MHz erhöhen"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-#, fuzzy
 msgid "Search next station"
 msgstr "Suche nächsten Sender"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-12 20:35+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2009-04-18 19:38+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -20,7 +20,9 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: errorlog.cpp:35
-msgid "Error Logging Window for KRadio"
+#, fuzzy
+#| msgid "Error Logging Window for KRadio"
+msgid "Error Logging Window"
 msgstr "Окно ведения журнала ошибок KRadio"
 
 #: errorlog.cpp:41
@@ -63,12 +65,15 @@ msgid "Log Files"
 msgstr "Файлы журнала"
 
 #: errorlog.cpp:191
-msgid "Save KRadio Logging Data as ..."
+#, fuzzy
+#| msgid "Save KRadio Logging Data as ..."
+msgid "Save KRadio Logging Data"
 msgstr "Сохранить данные журнала KRadio как..."
 
 #: errorlog.cpp:216
-#, kde-format
-msgid "error writing to tempfile %1"
+#, fuzzy, kde-format
+#| msgid "error writing to tempfile %1"
+msgid "error writing to temporary file %1"
 msgstr "Ошибка записи во временный файл %1"
 
 #: errorlog.cpp:225

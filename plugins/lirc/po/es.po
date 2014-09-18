@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -114,7 +114,7 @@ msgstr "Salir de KRadio"
 msgid "<do not care>"
 msgstr "<sin importancia>"
 
-#: lirc-configuration.cpp:278
+#: lirc-configuration.cpp:270
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -122,7 +122,7 @@ msgstr ""
 "Ingrese la clave de su control remoto o sólo presione el botón en su control "
 "control"
 
-#: lirc-configuration.cpp:284
+#: lirc-configuration.cpp:276
 #, fuzzy
 msgid "Double click on the entries to change the assignments"
 msgstr "Haga doble clic en las entradas para cambiar las asignaciones"
@@ -131,7 +131,7 @@ msgstr "Haga doble clic en las entradas para cambiar las asignaciones"
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Soporte para Linux Infrared Control (LIRC)"
 
-#: lircsupport.cpp:56 lircsupport.cpp:490
+#: lircsupport.cpp:56 lircsupport.cpp:483
 msgid "LIRC Plugin"
 msgstr "Plugin LIRC"
 
@@ -156,7 +156,7 @@ msgstr "Inicialización de plugin lirc de kradio fallida"
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Inicialización de plugin lirc de kradio exitosa"
 
-#: lircsupport.cpp:132
+#: lircsupport.cpp:129
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -169,7 +169,7 @@ msgstr ""
 "Es posible que esto cause algunos problemas. Favor usar \"button=*\" y "
 "\"remote=*\" como wildcard para todos los botones/remotos"
 
-#: lircsupport.cpp:139
+#: lircsupport.cpp:136
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -182,24 +182,24 @@ msgstr ""
 "Es posible que esto cause algunos problemas. Favor usar \"button=*\" y "
 "\"remote=*\" como wildcard para todos los botones/remotos"
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:147
 #, fuzzy, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "No existe una entrada para kradio en tu archivo .lircrc %1."
 
-#: lircsupport.cpp:151
+#: lircsupport.cpp:148
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Favor configurar su archivo .lircrc %1 correctamente."
 
-#: lircsupport.cpp:155 lircsupport.cpp:156
+#: lircsupport.cpp:152 lircsupport.cpp:153
 #, fuzzy, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inicialización de plugin lirc de kradio fallida. No se puede leer archivo de "
 "configuración %1"
 
-#: lircsupport.cpp:196
+#: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
@@ -207,12 +207,12 @@ msgstr ""
 "%1 no existe. Archivo fue creado con archivo .lircrc de KRadio propuesto por "
 "omisión"
 
-#: lircsupport.cpp:199
+#: lircsupport.cpp:192
 #, kde-format
 msgid "Failed to copy %1 to %2"
 msgstr ""
 
-#: lircsupport.cpp:251
+#: lircsupport.cpp:244
 #, fuzzy
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
@@ -221,7 +221,7 @@ msgstr ""
 "Lectura de socket LIRC fallida. Deshabilitando Funciones LIRC hasta el "
 "próximo inicio de kradio"
 
-#: lircsupport.cpp:489
+#: lircsupport.cpp:482
 msgid "LIRC Support"
 msgstr "Soporte LIRC"
 

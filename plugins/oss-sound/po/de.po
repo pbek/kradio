@@ -3,20 +3,21 @@
 # translation of kradio-oss-sound.po to
 # This file is put in the public domain.
 #
-# Ernst Martin Witte <emw@nocabal.de>, 2006.
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.oss-sound.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-04-18 12:06+0200\n"
-"Last-Translator: \n"
-"Language-Team: German <en@li.org>\n"
+"PO-Revision-Date: 2014-09-18 15:32+0200\n"
+"Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: oss-sound.cpp:38
 msgid "Open Sound System (OSS) Support"
@@ -174,16 +175,14 @@ msgstr "Geräte"
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
-#, fuzzy
 msgid "PCM device:"
-msgstr "Gerät"
+msgstr "Audiowiedergabe-Gerätedatei:"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
-#, fuzzy
 msgid "Mixer device:"
-msgstr "Mixer Gerätedatei"
+msgstr "Mixer Gerätedatei:"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
 #. i18n: ectx: property (text), widget (QLabel)
@@ -206,14 +205,12 @@ msgstr "Erweiterte Optionen"
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
-#, fuzzy
 msgid "Disable playback"
 msgstr "Wiedergabe abschalten"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
-#, fuzzy
 msgid "Disable capture"
 msgstr "Aufnahme abschalten"
 
@@ -226,3 +223,4 @@ msgstr "Ernst Martin Witte"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
+

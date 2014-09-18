@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-09 07:55+0400\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2013-03-09 08:30+0400\n"
 "Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -20,81 +20,89 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: decoder_thread.cpp:136
+#: decoder_thread.cpp:142
 #, kde-format
 msgid "opening stream %1"
 msgstr "открываю поток %1"
 
-#: decoder_thread.cpp:140
-#, kde-format
-msgid "failed to open %1. Trying next stream in play list."
+#: decoder_thread.cpp:146
+#, fuzzy, kde-format
+#| msgid "failed to open %1. Trying next stream in play list."
+msgid "Failed to open %1. Trying next stream in play list."
 msgstr "не удалось открыть %1. Пробую следующий по списку."
 
-#: decoder_thread.cpp:145
+#: decoder_thread.cpp:151
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Не удалось открыть ни один поток из %1."
 
-#: decoder_thread.cpp:230
+#: decoder_thread.cpp:266
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: ошибка при декодировании пакета. Отбрасываю пакет"
 
-#: decoder_thread.cpp:249
+#: decoder_thread.cpp:285
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "внутренний поток, не сохраняется (%1)"
 
-#: decoder_thread.cpp:322
+#: decoder_thread.cpp:362
 msgid "Failed allocating AVFrame."
 msgstr "Не  удалось выделить AVFrame"
 
-#: decoder_thread.cpp:594 decoder_thread.cpp:597
-#, kde-format
-msgid "Could not open Stream %1"
+#: decoder_thread.cpp:634 decoder_thread.cpp:637
+#, fuzzy, kde-format
+#| msgid "Could not open Stream %1"
+msgid "Could not open stream %1"
 msgstr "Не удалось открыть поток %1"
 
-#: decoder_thread.cpp:673 decoder_thread.cpp:676
+#: decoder_thread.cpp:719 decoder_thread.cpp:722
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr "Не удалось определить тип потока %1"
 
-#: decoder_thread.cpp:680
+#: decoder_thread.cpp:726
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Определён формат: %1 (достоверность %2)"
 
-#: decoder_thread.cpp:706 decoder_thread.cpp:709
+#: decoder_thread.cpp:752 decoder_thread.cpp:755
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Не удалось найти информацию о потоке в %1"
 
-#: decoder_thread.cpp:774 decoder_thread.cpp:777
+#: decoder_thread.cpp:820 decoder_thread.cpp:823
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Не удалось найти аудиопоток в %1"
 
-#: decoder_thread.cpp:797 decoder_thread.cpp:800
+#: decoder_thread.cpp:843 decoder_thread.cpp:846
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Не удалось найти кодек для %1"
 
-#: decoder_thread.cpp:815 decoder_thread.cpp:818
+#: decoder_thread.cpp:861 decoder_thread.cpp:864
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Не удалось открыть кодек для %1"
 
-#: decoder_thread.cpp:885
+#: decoder_thread.cpp:889
+#, kde-format
+msgid "Unknown channel layout for %1"
+msgstr ""
+
+#: decoder_thread.cpp:981 decoder_thread.cpp:984
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "не удалось открыть поток MMS %1"
 
-#: decoder_thread.cpp:888
-#, kde-format
-msgid "cannot open MMS  %1"
-msgstr "не удалось открыть поток MMS %1"
+#: decoder_thread.cpp:1082
+#, fuzzy, kde-format
+#| msgid "Cannot use libav sample format id %1"
+msgid "Not yet implemented: libav sample format id %1"
+msgstr "Не могу использовать формат элемента libav %1"
 
-#: decoder_thread.cpp:981
+#: decoder_thread.cpp:1088
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Не могу использовать формат элемента libav %1"
@@ -111,8 +119,7 @@ msgid ""
 "%1: KIO::get returned NULL pointer"
 msgstr ""
 "Модуль интернет-радио (обработчик ICY http): не удалось запустить потоковое "
-"скачивание "
-"%1: KIO::get вернул NULL"
+"скачивание %1: KIO::get вернул NULL"
 
 #: icy_http_handler.cpp:110
 #, kde-format
@@ -130,8 +137,7 @@ msgid ""
 "%2"
 msgstr ""
 "Модуль интернет-радио (обработчик ICY http): не удалось загрузить данные "
-"потока для %1: "
-"%2"
+"потока для %1: %2"
 
 #: icy_http_handler.cpp:434
 #, kde-format
@@ -139,7 +145,9 @@ msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr "Модуль интернет-радио (обработчик ICY http): ошибка HTTP %1 потока %2"
 
 #: internetradio.cpp:46
-msgid "Pseudo radio device for internet radio stream support"
+#, fuzzy
+#| msgid "Pseudo radio device for internet radio stream support"
+msgid "Pseudo radio device for Internet radio stream support"
 msgstr "Фальшивое устройство радио для поддержки сетевого вещания"
 
 #: internetradio.cpp:53
@@ -203,7 +211,9 @@ msgid "failed to write temporary file to store playlist data"
 msgstr "не удалось записать список во временный файл"
 
 #: playlist_handler.cpp:525
-msgid "error while reading asx file: "
+#, fuzzy, kde-format
+#| msgid "error while reading asx file: "
+msgid "error while reading asx file: %1"
 msgstr "ошибка чтения файла ASX:"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
@@ -215,7 +225,9 @@ msgstr "SetupDialogGeneral"
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:6 rc.cpp:54
-msgid "Input Buffer Size"
+#, fuzzy
+#| msgid "Input Buffer Size"
+msgid "Input buffer size:"
 msgstr "Размер входного буфера"
 
 #. i18n: file: internetradio-configuration-ui.ui:44
@@ -237,13 +249,17 @@ msgstr "кБ"
 #. i18n: file: internetradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:12 rc.cpp:60
-msgid "PCM Output Buffer Size"
+#, fuzzy
+#| msgid "PCM Output Buffer Size"
+msgid "PCM output buffer size:"
 msgstr "Размер выходного буфера PCM"
 
 #. i18n: file: internetradio-configuration-ui.ui:101
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:18 rc.cpp:66
-msgid "libffmpeg: stream info analysis time"
+#, fuzzy
+#| msgid "libffmpeg: stream info analysis time"
+msgid "libffmpeg: stream info analysis time:"
 msgstr "libffmpeg: время анализа информации о потоке"
 
 #. i18n: file: internetradio-configuration-ui.ui:111
@@ -267,13 +283,17 @@ msgstr "с"
 #. i18n: file: internetradio-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:75
-msgid "Watchdog: Reconnect after"
+#, fuzzy
+#| msgid "Watchdog: Reconnect after"
+msgid "Watchdog: reconnect after:"
 msgstr "Если зависнет, перезагрузить через"
 
 #. i18n: file: internetradio-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:30 rc.cpp:78
-msgid "Playback Mixer Device"
+#, fuzzy
+#| msgid "Playback Mixer Device"
+msgid "Playback mixer device:"
 msgstr "Микшер воспроизведения"
 
 #. i18n: file: internetradio-configuration-ui.ui:169
@@ -285,26 +305,37 @@ msgstr "проверка"
 #. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:36 rc.cpp:84
-msgid "Playback Mixer Channel"
+#, fuzzy
+#| msgid "Playback Mixer Channel"
+msgid "Playback mixer channel:"
 msgstr "Канал воспроизведения"
 
 #. i18n: file: internetradio-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:39 rc.cpp:87
-msgid "Mute Playback Channel on Power Off"
+#, fuzzy
+#| msgid "Mute Playback Channel on Power Off"
+msgid "Mute playback channel on power off:"
 msgstr "Выключать звук на канале воспроизведения при выходе"
 
 #. i18n: file: internetradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:42 rc.cpp:90
-msgid "libffmpeg: format probe size"
+#, fuzzy
+#| msgid "libffmpeg: format probe size"
+msgid "libffmpeg: format probe size:"
 msgstr "libffmpeg: размер фрагмента для анализа формата"
 
 #: stream_input_buffer.cpp:72
-msgid ""
-"This should never happen: inconsistency in buffer locking / buffer size!"
+#, fuzzy
+#| msgid ""
+#| "This should never happen: inconsistency in buffer locking / buffer size!"
+msgid "This should never happen: inconsistency in buffer locking / buffer size"
 msgstr ""
 "Вообще-то, такого быть не может: несоответствие в блокировке/размере буфера."
+
+#~ msgid "cannot open MMS  %1"
+#~ msgstr "не удалось открыть поток MMS %1"
 
 #~ msgid ""
 #~ "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-09 07:55+0400\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2009-04-20 20:47+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,20 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: displaycfg.cpp:48
-msgid "Active Text"
+#: displaycfg.cpp:46
+#, fuzzy
+#| msgid "Active Text"
+msgid "Active text:"
 msgstr "Цвет активного текста"
 
-#: displaycfg.cpp:49
-msgid "Inactive Text"
+#: displaycfg.cpp:47
+#, fuzzy
+#| msgid "Inactive Text"
+msgid "Inactive text:"
 msgstr "Цвет инертного текста"
 
-#: displaycfg.cpp:50
-msgid "Background Color"
+#: displaycfg.cpp:48
+#, fuzzy
+#| msgid "Background Color"
+msgid "Background color:"
 msgstr "Цвет фона"
 
 #: radioview.cpp:54
-msgid "Standard Display for KRadio"
+#, fuzzy
+#| msgid "Standard Display for KRadio"
+msgid "Standard Display"
 msgstr "Главное окно KRadio"
 
 #: radioview.cpp:60
@@ -80,23 +88,33 @@ msgid "Configure KRadio"
 msgstr "Настроить KRadio"
 
 #: radioview.cpp:228
-msgid "Power On/Off"
+#, fuzzy
+#| msgid "Power On/Off"
+msgid "Power on/off"
 msgstr "Включить/выключить"
 
 #: radioview.cpp:229
-msgid "Quit KRadio Application"
+#, fuzzy
+#| msgid "Quit KRadio Application"
+msgid "Quit KRadio application"
 msgstr "Закрыть KRadio"
 
 #: radioview.cpp:230
-msgid "Start/Stop Recording"
+#, fuzzy
+#| msgid "Start/Stop Recording"
+msgid "Start/stop recording"
 msgstr "Начать/завершить запись"
 
 #: radioview.cpp:231
-msgid "Start/Stop Sleep Countdown"
+#, fuzzy
+#| msgid "Start/Stop Sleep Countdown"
+msgid "Start/stop sleep countdown"
 msgstr "Включить/выключить таймер отключения"
 
 #: radioview.cpp:232
-msgid "Show/Hide Plugins"
+#, fuzzy
+#| msgid "Show/Hide Plugins"
+msgid "Show/hide plugins"
 msgstr "Показать/скрыть"
 
 #: radioview.cpp:233
@@ -104,11 +122,15 @@ msgid "Help about KRadio and KDE"
 msgstr "Справка по KRadi и KDE"
 
 #: radioview.cpp:234
-msgid "Select a Radio Station"
+#, fuzzy
+#| msgid "Select a Radio Station"
+msgid "Select a radio station"
 msgstr "Выбор радиостанции из списка"
 
 #: radioview.cpp:407
-msgid "no preset defined"
+#, fuzzy
+#| msgid "no preset defined"
+msgid "<no preset defined>"
 msgstr "Станция не определена"
 
 #: radioview.cpp:563 radioview.cpp:633
@@ -163,27 +185,39 @@ msgid "%1 MHz"
 msgstr "%1 МГц"
 
 #: radioview_frequencyseeker.cpp:79
-msgid "Search for previous Radio Station"
+#, fuzzy
+#| msgid "Search for previous Radio Station"
+msgid "Search for previous radio station"
 msgstr "Искать станцию вниз"
 
 #: radioview_frequencyseeker.cpp:80
-msgid "Search for next Radio Station"
+#, fuzzy
+#| msgid "Search for next Radio Station"
+msgid "Search for next radio station"
 msgstr "Искать станцию вверх"
 
 #: radioview_frequencyseeker.cpp:81
-msgid "Decrement Frequency"
+#, fuzzy
+#| msgid "Decrement Frequency"
+msgid "Decrement frequency"
 msgstr "Уменьшить частоту"
 
 #: radioview_frequencyseeker.cpp:82
-msgid "Increment Frequency"
+#, fuzzy
+#| msgid "Increment Frequency"
+msgid "Increment frequency"
 msgstr "Увеличить частоту"
 
 #: radioview_frequencyseeker.cpp:83
-msgid "Change Frequency"
+#, fuzzy
+#| msgid "Change Frequency"
+msgid "Change frequency"
 msgstr "Изменить частоту"
 
 #: radioview_volume.cpp:59
-msgid "Change Volume"
+#, fuzzy
+#| msgid "Change Volume"
+msgid "Change volume"
 msgstr "Изменить громкость"
 
 #. i18n: file: radioview_seekinterface.ui:15
@@ -195,13 +229,17 @@ msgstr "RadioView_SeekInterface"
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-msgid "search previous station"
+#, fuzzy
+#| msgid "search previous station"
+msgid "Search previous station"
 msgstr "Поиск предыдущей станции"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-msgid "decrease freq. by 0.05 MHz"
+#, fuzzy
+#| msgid "decrease freq. by 0.05 MHz"
+msgid "Decrease frequency by 0.05 MHz"
 msgstr "Уменьшать частоту по 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:70
@@ -214,13 +252,17 @@ msgstr "Настройка частоты"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-msgid "increase freq. by 0.05 MHz"
+#, fuzzy
+#| msgid "increase freq. by 0.05 MHz"
+msgid "Increase frequency by 0.05 MHz"
 msgstr "Увеличивать частоту по 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-msgid "search next station"
+#, fuzzy
+#| msgid "search next station"
+msgid "Search next station"
 msgstr "Поиск следующей станции"
 
 #: rc.cpp:19

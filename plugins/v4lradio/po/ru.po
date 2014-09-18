@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-09 07:55+0400\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2013-03-09 08:01+0400\n"
 "Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,44 +21,54 @@ msgstr ""
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:171
+#: rc.cpp:3 rc.cpp:147
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: v4lradio-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
-#: rc.cpp:6 rc.cpp:174
+#: rc.cpp:6 rc.cpp:150
 msgid "V4L Device"
 msgstr "Устройство V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:36
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
-#: rc.cpp:9 rc.cpp:177
-msgid "Station scan step"
+#: rc.cpp:9 rc.cpp:153
+#, fuzzy
+#| msgid "Station scan step"
+msgid "Station scan step:"
 msgstr "Шаг изменения частоты при поиске"
 
 #. i18n: file: v4lradio-configuration-ui.ui:56
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
-#: rc.cpp:12 rc.cpp:180
-msgid "Minimum signal quality"
+#: rc.cpp:12 rc.cpp:156
+#, fuzzy
+#| msgid "Minimum signal quality"
+msgid "Minimum signal quality:"
 msgstr "Минимальный уровень сигнала "
 
 #. i18n: file: v4lradio-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
-#: rc.cpp:15 rc.cpp:183
-msgid "unknown v4l device"
+#: rc.cpp:15 rc.cpp:159
+#, fuzzy
+#| msgid "unknown v4l device"
+msgid "Unknown V4L device"
 msgstr "неизвестно"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:18 rc.cpp:186
-msgid "V4L Version to use"
+#: rc.cpp:18 rc.cpp:162
+#, fuzzy
+#| msgid "V4L Version to use"
+msgid "V4L version to use:"
 msgstr "Версия драйвера"
 
 #. i18n: file: v4lradio-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
-#: rc.cpp:21 rc.cpp:189
-msgid "Radio Device"
+#: rc.cpp:21 rc.cpp:165
+#, fuzzy
+#| msgid "Radio Device"
+msgid "Radio device:"
 msgstr "Устройство радио"
 
 #. i18n: file: v4lradio-configuration-ui.ui:109
@@ -73,14 +83,16 @@ msgstr "Устройство радио"
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
 #. i18n: file: v4lradio-configuration-ui.ui:225
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
-#: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:192 rc.cpp:198 rc.cpp:207
+#: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:168 rc.cpp:174 rc.cpp:183
 msgid " kHz"
 msgstr " кГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:144
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
-#: rc.cpp:27 rc.cpp:195
-msgid "Allowed frequency range"
+#: rc.cpp:27 rc.cpp:171
+#, fuzzy
+#| msgid "Allowed frequency range"
+msgid "Allowed frequency range:"
 msgstr "Допустимый частотный диапазон"
 
 #. i18n: file: v4lradio-configuration-ui.ui:190
@@ -91,57 +103,68 @@ msgstr "Допустимый частотный диапазон"
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
 #. i18n: file: v4lradio-configuration-ui.ui:247
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
-#: rc.cpp:33 rc.cpp:42 rc.cpp:201 rc.cpp:210
+#: rc.cpp:33 rc.cpp:42 rc.cpp:177 rc.cpp:186
 msgid "to"
 msgstr "до"
 
 #. i18n: file: v4lradio-configuration-ui.ui:203
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
-#: rc.cpp:36 rc.cpp:204
+#: rc.cpp:36 rc.cpp:180
 msgid "65 MHz"
 msgstr "65 МГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:260
 #. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
-#: rc.cpp:45 rc.cpp:213
+#: rc.cpp:45 rc.cpp:189
 msgid "108 MHz"
 msgstr "108 МГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:272
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
-#: rc.cpp:48 rc.cpp:216
-msgid "Device frequency range"
+#: rc.cpp:48 rc.cpp:192
+#, fuzzy
+#| msgid "Device frequency range"
+msgid "Device frequency range:"
 msgstr "Частотный диапазон устройства"
 
-#. i18n: file: v4lradio-configuration-ui.ui:330
+#. i18n: file: v4lradio-configuration-ui.ui:326
 #. i18n: ectx: property (toolTip), widget (QLabel, label_5)
-#. i18n: file: v4lradio-configuration-ui.ui:359
+#. i18n: file: v4lradio-configuration-ui.ui:351
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtStartup)
-#. i18n: file: v4lradio-configuration-ui.ui:373
+#. i18n: file: v4lradio-configuration-ui.ui:361
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
-#. i18n: file: v4lradio-configuration-ui.ui:330
+#. i18n: file: v4lradio-configuration-ui.ui:326
 #. i18n: ectx: property (toolTip), widget (QLabel, label_5)
-#. i18n: file: v4lradio-configuration-ui.ui:359
+#. i18n: file: v4lradio-configuration-ui.ui:351
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtStartup)
-#. i18n: file: v4lradio-configuration-ui.ui:373
+#. i18n: file: v4lradio-configuration-ui.ui:361
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
-#: rc.cpp:51 rc.cpp:61 rc.cpp:71 rc.cpp:219 rc.cpp:229 rc.cpp:239
+#: rc.cpp:51 rc.cpp:57 rc.cpp:63 rc.cpp:195 rc.cpp:201 rc.cpp:207
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#| "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#| "\">Probing V4L device capabilities requires opening the device. This "
+#| "might interfere with other application which might currently use the same "
+#| "hardware / driver causing problems / interference. If you experience such "
+#| "issues, you should use the probing only at power on. The only "
+#| "disadvantage might be that in the configuration dialog, you might not see "
+#| "the device description after startup but just the device pseudo file name."
+#| "</p></body></html>"
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Probing "
-"V4L device capabilities requires opening the device. This might interfere "
-"with other application which might currently use the same hardware / driver "
-"causing problems / interference. If you experience such issues, you should "
-"use the probing only at power on. The only disadvantage might be that in the "
-"configuration dialog, you might not see the device description after startup "
-"but just the device pseudo file name.</p></body></html>"
+"Probing V4L device capabilities requires opening the device. This might "
+"interfere with other application which might currently use the same "
+"hardware / driver causing problems / interference. If you experience such "
+"issues, you should use the probing only at power on. The only disadvantage "
+"might be that in the configuration dialog, you might not see the device "
+"description after startup but just the device pseudo file name."
 msgstr ""
 " <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -152,81 +175,102 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Проверка "
-"возможностей "
-"устройства V4L требует открытия устройства. Это может быть причиной проблем, "
-"если "
-"оно уже используется другой программой. Чтобы избежать этого, Вы можете "
-"разрешить "
-"проверку устройства только при его включении. Единственный недостаток этого - "
-"до включения устройства в окне настроек будет указан лишь адрес устройства, а "
-"не "
-"его описание.</p></body></html>"
+"возможностей устройства V4L требует открытия устройства. Это может быть "
+"причиной проблем, если оно уже используется другой программой. Чтобы "
+"избежать этого, Вы можете разрешить проверку устройства только при его "
+"включении. Единственный недостаток этого - до включения устройства в окне "
+"настроек будет указан лишь адрес устройства, а не его описание.</p></body></"
+"html>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:333
+#. i18n: file: v4lradio-configuration-ui.ui:329
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:58 rc.cpp:226
-msgid "Device Probing"
+#: rc.cpp:54 rc.cpp:198
+#, fuzzy
+#| msgid "Device Probing"
+msgid "Device probing:"
 msgstr "Проверка устройства"
 
-#. i18n: file: v4lradio-configuration-ui.ui:362
+#. i18n: file: v4lradio-configuration-ui.ui:354
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
-#: rc.cpp:68 rc.cpp:236
-msgid "@ startup"
+#: rc.cpp:60 rc.cpp:204
+#, fuzzy
+#| msgid "@ startup"
+msgid "At startup"
 msgstr "при запуске"
 
-#. i18n: file: v4lradio-configuration-ui.ui:376
+#. i18n: file: v4lradio-configuration-ui.ui:364
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtPowerOn)
-#: rc.cpp:78 rc.cpp:246
-msgid "@ power on"
+#: rc.cpp:66 rc.cpp:210
+#, fuzzy
+#| msgid "@ power on"
+msgid "At power on"
 msgstr "при включении"
 
-#. i18n: file: v4lradio-configuration-ui.ui:387
+#. i18n: file: v4lradio-configuration-ui.ui:375
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
-#: rc.cpp:81 rc.cpp:249
-msgid "V4L-1 API"
+#: rc.cpp:69 rc.cpp:213
+#, fuzzy
+#| msgid "V4L-1 API"
+msgid "V4L1 API"
 msgstr "V4L-1"
 
-#. i18n: file: v4lradio-configuration-ui.ui:394
+#. i18n: file: v4lradio-configuration-ui.ui:382
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
-#: rc.cpp:84 rc.cpp:252
-msgid "V4L-2 API"
+#: rc.cpp:72 rc.cpp:216
+#, fuzzy
+#| msgid "V4L-2 API"
+msgid "V4L2 API"
 msgstr "V4L-2"
 
-#. i18n: file: v4lradio-configuration-ui.ui:404
+#. i18n: file: v4lradio-configuration-ui.ui:392
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
-#: rc.cpp:87 rc.cpp:255
+#: rc.cpp:75 rc.cpp:219
 msgid "RDS"
 msgstr "RDS"
 
-#. i18n: file: v4lradio-configuration-ui.ui:413
+#. i18n: file: v4lradio-configuration-ui.ui:401
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
-#: rc.cpp:90 rc.cpp:258
-msgid "Force RDS Enabled"
+#: rc.cpp:78 rc.cpp:222
+#, fuzzy
+#| msgid "Force RDS Enabled"
+msgid "Force RDS enabled"
 msgstr "Принудительно включить "
 
-#. i18n: file: v4lradio-configuration-ui.ui:430
+#. i18n: file: v4lradio-configuration-ui.ui:414
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:93 rc.cpp:261
+#: rc.cpp:81 rc.cpp:225
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#| "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#| "style=\" text-decoration: underline;\">Note for RDS Support:</span> If "
+#| "your card supports RDS and RDS is not working, please check if the <span "
+#| "style=\" font-weight:600;\">kernel module saa6588.ko</span> is loaded. "
+#| "For cards with an saa6588 chip, this module is typically <span style=\" "
+#| "font-style:italic;\">not</span> loaded automatically. Whether your V4L/"
+#| "V4L2 kernel supports RDS should become visible in the standard radio "
+#| "display when the RDS indicator becomes bright (like the stereo and AM/FM "
+#| "indicators). RDS Radio Text should be visible in the standard radio "
+#| "display and the tooltips of the systray icon. RDS station names are used "
+#| "in the station scan dialog as default names for newly found stations.</"
+#| "p></body></html>"
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Note for RDS Support:</span> If your "
-"card supports RDS and RDS is not working, please check if the <span style=\" "
-"font-weight:600;\">kernel module saa6588.ko</span> is loaded. For cards with "
-"an saa6588 chip, this module is typically <span style=\" font-style:italic;"
-"\">not</span> loaded automatically. Whether your V4L/V4L2 kernel supports "
-"RDS should become visible in the standard radio display when the RDS "
-"indicator becomes bright (like the stereo and AM/FM indicators). RDS Radio "
-"Text should be visible in the standard radio display and the tooltips of the "
-"systray icon. RDS station names are used in the station scan dialog as "
-"default names for newly found stations.</p></body></html>"
+"<p><u>Note for RDS support:</u> if your card supports RDS and RDS is not "
+"working, please check if the <b>kernel module saa6588.ko</b> is loaded. For "
+"cards with an saa6588 chip, this module is typically <i>not</i> loaded "
+"automatically. Whether your V4L/V4L2 kernel supports RDS should become "
+"visible in the standard radio display when the RDS indicator becomes bright "
+"(like the stereo and AM/FM indicators). RDS Radio Text should be visible in "
+"the standard radio display and the tooltips of the systray icon. RDS station "
+"names are used in the station scan dialog as default names for newly found "
+"stations.</p>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -250,91 +294,110 @@ msgstr ""
 "из RDS будут использованы в диалоге сканирования каналов для вновь найденных "
 "станций.</p></body></html>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:467
+#. i18n: file: v4lradio-configuration-ui.ui:451
 #. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
-#: rc.cpp:100 rc.cpp:268
+#: rc.cpp:84 rc.cpp:228
 msgid "Sound Devices"
 msgstr "Звуковые устройства"
 
-#. i18n: file: v4lradio-configuration-ui.ui:483
+#. i18n: file: v4lradio-configuration-ui.ui:467
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:103 rc.cpp:271
+#: rc.cpp:87 rc.cpp:231
 msgid "test"
 msgstr "проверка"
 
-#. i18n: file: v4lradio-configuration-ui.ui:491
+#. i18n: file: v4lradio-configuration-ui.ui:475
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:106 rc.cpp:274
-msgid "Playback Mixer Channel"
+#: rc.cpp:90 rc.cpp:234
+#, fuzzy
+#| msgid "Playback Mixer Channel"
+msgid "Playback mixer channel:"
 msgstr "Канал воспроизведения"
 
-#. i18n: file: v4lradio-configuration-ui.ui:511
+#. i18n: file: v4lradio-configuration-ui.ui:495
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
-#: rc.cpp:109 rc.cpp:277
-msgid "Capture Mixer Device"
+#: rc.cpp:93 rc.cpp:237
+#, fuzzy
+#| msgid "Capture Mixer Device"
+msgid "Capture mixer device:"
 msgstr "Устройство записи"
 
-#. i18n: file: v4lradio-configuration-ui.ui:554
+#. i18n: file: v4lradio-configuration-ui.ui:538
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
-#: rc.cpp:112 rc.cpp:280
+#: rc.cpp:96 rc.cpp:240
 msgid "Set playback channel volume to &zero at power off"
 msgstr "Устанавливать &нулевую громкость воспроизведения при выходе"
 
-#. i18n: file: v4lradio-configuration-ui.ui:567
+#. i18n: file: v4lradio-configuration-ui.ui:551
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
-#: rc.cpp:115 rc.cpp:283
+#: rc.cpp:99 rc.cpp:243
 msgid "Mute play&back channel at power off"
 msgstr "Выключать звук на канале воспроизведения при выходе"
 
-#. i18n: file: v4lradio-configuration-ui.ui:574
+#. i18n: file: v4lradio-configuration-ui.ui:558
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
-#: rc.cpp:118 rc.cpp:286
-msgid "Capture Mixer Channel"
+#: rc.cpp:102 rc.cpp:246
+#, fuzzy
+#| msgid "Capture Mixer Channel"
+msgid "Capture mixer channel:"
 msgstr "Канал записи"
 
-#. i18n: file: v4lradio-configuration-ui.ui:584
+#. i18n: file: v4lradio-configuration-ui.ui:568
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:121 rc.cpp:289
-msgid "Playback Mixer Device"
+#: rc.cpp:105 rc.cpp:249
+#, fuzzy
+#| msgid "Playback Mixer Device"
+msgid "Playback mixer device:"
 msgstr "Устройство воспроизведения"
 
-#. i18n: file: v4lradio-configuration-ui.ui:608
+#. i18n: file: v4lradio-configuration-ui.ui:592
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
-#: rc.cpp:124 rc.cpp:292
+#: rc.cpp:108 rc.cpp:252
 msgid "PVR && Co"
 msgstr "PVR && Co"
 
-#. i18n: file: v4lradio-configuration-ui.ui:627
+#. i18n: file: v4lradio-configuration-ui.ui:607
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:634
+#. i18n: file: v4lradio-configuration-ui.ui:610
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:627
+#. i18n: file: v4lradio-configuration-ui.ui:607
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:634
+#. i18n: file: v4lradio-configuration-ui.ui:610
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:127 rc.cpp:134 rc.cpp:295 rc.cpp:302
+#: rc.cpp:111 rc.cpp:114 rc.cpp:255 rc.cpp:258
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#| "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#| "style=\" font-weight:600;\">Active Playback</span> is required when your "
+#| "radio card is not connected to your sound card via a cable to the line in "
+#| "jack. In this case, KRadio needs to capture the PCM data from a capture "
+#| "sound device in order to send the PCM data to the playback sound device. "
+#| "Therefore, if you enable <span style=\" font-weight:600;\">Active "
+#| "Playback</span>, you have to select a proper capture mixer device/channel "
+#| "and a proper PCM playback mixer/channel. This is particularly important "
+#| "for <span style=\" font-weight:600;\">PVR cards</span> which usually need "
+#| "to capture the sound from <span style=\" font-style:italic;\">/dev/"
+#| "video24</span> (or similar). For <span style=\" font-weight:600;\">PVR "
+#| "cards</span>, you therefore have to setup the <span style=\" font-"
+#| "weight:600;\">Streaming Plugin</span> properly, too.</p></body></html>"
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">Active Playback</span> is required when your "
-"radio card is not connected to your sound card via a cable to the line in "
-"jack. In this case, KRadio needs to capture the PCM data from a capture "
-"sound device in order to send the PCM data to the playback sound device. "
-"Therefore, if you enable <span style=\" font-weight:600;\">Active Playback</"
-"span>, you have to select a proper capture mixer device/channel and a proper "
-"PCM playback mixer/channel. This is particularly important for <span style="
-"\" font-weight:600;\">PVR cards</span> which usually need to capture the "
-"sound from <span style=\" font-style:italic;\">/dev/video24</span> (or "
-"similar). For <span style=\" font-weight:600;\">PVR cards</span>, you "
-"therefore have to setup the <span style=\" font-weight:600;\">Streaming "
-"Plugin</span> properly, too.</p></body></html>"
+"<p><b>Active playback</b> is required when your radio card is not connected "
+"to your sound card via a cable to the line in jack. In this case, KRadio "
+"needs to capture the PCM data from a capture sound device in order to send "
+"the PCM data to the playback sound device. Therefore, if you enable "
+"<b>active playback</b>, you have to select a proper capture mixer device/"
+"channel and a proper PCM playback mixer/channel. This is particularly "
+"important for <b>PVR cards</b> which usually need to capture the sound from "
+"<i>/dev/video24</i> (or similar). For <b>PVR cards</b>, you therefore have "
+"to setup the <b>Streaming Plugin</b> properly, too.</p>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -356,21 +419,23 @@ msgstr ""
 "Для таких карт нужно настроить и  <span style=\" font-weight:600;\">Модуль "
 "потового вещания</span>.</p></body></html>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:637
+#. i18n: file: v4lradio-configuration-ui.ui:613
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:141 rc.cpp:309
-msgid "Use active pla&yback by capturing (use for PVR cards!)"
+#: rc.cpp:117 rc.cpp:261
+#, fuzzy
+#| msgid "Use active pla&yback by capturing (use for PVR cards!)"
+msgid "Use active pla&yback by capturing (use for PVR cards)"
 msgstr "Захватывать звук и затем проигрывать его (используйте для плат PVR!)"
 
-#. i18n: file: v4lradio-configuration-ui.ui:653
+#. i18n: file: v4lradio-configuration-ui.ui:629
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
-#: rc.cpp:144 rc.cpp:312
+#: rc.cpp:120 rc.cpp:264
 msgid "Mute playback of capture channel when active playback is running"
 msgstr "Заглушить канал записи при включённом активном воспроизведении"
 
-#. i18n: file: v4lradio-configuration-ui.ui:673
+#. i18n: file: v4lradio-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:147 rc.cpp:315
+#: rc.cpp:123 rc.cpp:267
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -416,42 +481,48 @@ msgstr ""
 "то в этом роде). Для таких карт нужно настроить и  <span style=\" font-"
 "weight:600;\">Модуль потового вещания</span>.</p></body></html>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:713
+#. i18n: file: v4lradio-configuration-ui.ui:689
 #. i18n: ectx: attribute (title), widget (QWidget, V4LMixerControls)
-#: rc.cpp:154 rc.cpp:322
+#: rc.cpp:130 rc.cpp:274
 msgid "V4L Mixer Controls"
 msgstr "Аппаратные регуляторы V4l"
 
-#. i18n: file: v4lradio-configuration-ui.ui:730
+#. i18n: file: v4lradio-configuration-ui.ui:706
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
-#: rc.cpp:157 rc.cpp:325
-msgid "volume"
+#: rc.cpp:133 rc.cpp:277
+#, fuzzy
+#| msgid "volume"
+msgid "Volume"
 msgstr "Громкость"
 
-#. i18n: file: v4lradio-configuration-ui.ui:806
+#. i18n: file: v4lradio-configuration-ui.ui:782
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
-#: rc.cpp:160 rc.cpp:328
-msgid "treble"
+#: rc.cpp:136 rc.cpp:280
+#, fuzzy
+#| msgid "treble"
+msgid "Treble"
 msgstr "ВЧ"
 
-#. i18n: file: v4lradio-configuration-ui.ui:882
+#. i18n: file: v4lradio-configuration-ui.ui:858
 #. i18n: ectx: property (text), widget (QLabel, labelBass)
-#: rc.cpp:163 rc.cpp:331
-msgid "bass"
-msgstr "НЧ"
+#: rc.cpp:139 rc.cpp:283
+msgid "Bass"
+msgstr ""
 
-#. i18n: file: v4lradio-configuration-ui.ui:955
+#. i18n: file: v4lradio-configuration-ui.ui:931
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
-#: rc.cpp:166 rc.cpp:334
-msgid "balance"
+#: rc.cpp:142 rc.cpp:286
+#, fuzzy
+#| msgid "balance"
+msgid "Balance"
 msgstr "Стереобаланс"
 
-#: rc.cpp:167
+#: rc.cpp:143
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: rc.cpp:168
+#: rc.cpp:144
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
@@ -466,7 +537,9 @@ msgstr ""
 "Файл устройства не существует либо недоступен каталог, где он расположен"
 
 #: v4lradio-configuration.cpp:419
-msgid "You do not have read+write permissions for the device."
+#, fuzzy
+#| msgid "You do not have read+write permissions for the device."
+msgid "You do not have read and write permissions for the device."
 msgstr "У вас нет прав на чтение и запись в устройство."
 
 #: v4lradio-configuration.cpp:422
@@ -504,8 +577,9 @@ msgid "invalid frequency %1"
 msgstr "Неправильная частота %1"
 
 #: v4lradio.cpp:847 v4lradio.cpp:1790 v4lradio.cpp:1986
-#, kde-format
-msgid "don't known how to handle V4L-version %1"
+#, fuzzy, kde-format
+#| msgid "don't known how to handle V4L-version %1"
+msgid "do not known how to handle V4L version %1"
 msgstr "Не знаю что делать с версией V4l \"%1\""
 
 #: v4lradio.cpp:849 v4lradio.cpp:1792 v4lradio.cpp:1988
@@ -519,9 +593,14 @@ msgid "error setting frequency to %1 (%2)"
 msgstr "Ошибка установки частоты %1 (%2)"
 
 #: v4lradio.cpp:1269
+#, fuzzy
+#| msgid ""
+#| "You have selected V4L API Version 1. Starting with kernel 2.6.31, the "
+#| "support for V4L1 seems to be not working properly any more. I'm now once "
+#| "switching to V4L Version 2. You may override it later."
 msgid ""
 "You have selected V4L API Version 1. Starting with kernel 2.6.31, the "
-"support for V4L1 seems to be not working properly any more. I'm now once "
+"support for V4L1 seems to be not working properly any more. I am now once "
 "switching to V4L Version 2. You may override it later."
 msgstr ""
 "Вы выбрали V4L версии 1. Однако, начиная с ядра 2.6.31 поддержка V4L1 "
@@ -543,7 +622,9 @@ msgid "Could not find any radio device. Using the default path for now: %1"
 msgstr "Не найдено устройство радио. Пока что использую %1"
 
 #: v4lradio.cpp:1299
-msgid "Could not find an accessible v4l(2) radio device."
+#, fuzzy
+#| msgid "Could not find an accessible v4l(2) radio device."
+msgid "Could not find an accessible V4L(2) radio device."
 msgstr "Не найти доступное устройство V4l(2)."
 
 #: v4lradio.cpp:1383
@@ -624,7 +705,9 @@ msgid "V4L2 tuner reported range: %1 ... %2 MHz"
 msgstr "Диапазон V4L2 (сообщено драйвером): %1 ... %2 МГц"
 
 #: v4lradio.cpp:1766
-msgid "Note: you might be running a kernel with a broken v4l2 radio API"
+#, fuzzy
+#| msgid "Note: you might be running a kernel with a broken v4l2 radio API"
+msgid "Note: you might be running a kernel with a broken V4L2 radio API"
 msgstr "Примечание: возможно, в ядре не работает поддержка радио v4l2"
 
 #: v4lradio.cpp:1800
@@ -632,32 +715,42 @@ msgstr "Примечание: возможно, в ядре не работае�
 msgid "cannot get tuner info (error %1)"
 msgstr "Не могу получить информацию о тюнере (код ошибки %1)"
 
-#: v4lradio.cpp:1995
-msgid "write"
-msgstr "запись"
-
-#: v4lradio.cpp:1995
-msgid "read"
-msgstr "чтение"
-
-#: v4lradio.cpp:1994
-#, kde-format
-msgid "error updating radio audio info (%1): %2"
+#: v4lradio.cpp:1993
+#, fuzzy, kde-format
+#| msgid "error updating radio audio info (%1): %2"
+msgid "error updating radio audio info (write): %1"
 msgstr "Ошибка %1: %2"
 
-#: v4lradio.cpp:2188
-msgid "error reading RDS data\n"
+#: v4lradio.cpp:1993
+#, fuzzy, kde-format
+#| msgid "error updating radio audio info (%1): %2"
+msgid "error updating radio audio info (read): %1"
+msgstr "Ошибка %1: %2"
+
+#: v4lradio.cpp:2187
+#, fuzzy
+#| msgid "error reading RDS data\n"
+msgid "error reading RDS data"
 msgstr "не могу прочитать данные RDS\n"
 
-#: v4lradio.cpp:2204
+#: v4lradio.cpp:2203
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: ошибка скорости блока: %1 %"
 
-#: v4lradio.cpp:2207
+#: v4lradio.cpp:2206
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: групповая (~4 блока) ошибка скорости: %1 %"
+
+#~ msgid "bass"
+#~ msgstr "НЧ"
+
+#~ msgid "write"
+#~ msgstr "запись"
+
+#~ msgid "read"
+#~ msgstr "чтение"
 
 #~ msgid "Alt+Z"
 #~ msgstr "Alt+Z"

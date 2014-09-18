@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,13 +113,13 @@ msgstr ""
 msgid "<do not care>"
 msgstr ""
 
-#: lirc-configuration.cpp:278
+#: lirc-configuration.cpp:270
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
 msgstr ""
 
-#: lirc-configuration.cpp:284
+#: lirc-configuration.cpp:276
 msgid "Double click on the entries to change the assignments"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr ""
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr ""
 
-#: lircsupport.cpp:56 lircsupport.cpp:490
+#: lircsupport.cpp:56 lircsupport.cpp:483
 msgid "LIRC Plugin"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr ""
 
-#: lircsupport.cpp:132
+#: lircsupport.cpp:129
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -158,7 +158,7 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:139
+#: lircsupport.cpp:136
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -167,39 +167,39 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:147
 #, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr ""
 
-#: lircsupport.cpp:151
+#: lircsupport.cpp:148
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr ""
 
-#: lircsupport.cpp:155 lircsupport.cpp:156
+#: lircsupport.cpp:152 lircsupport.cpp:153
 #, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 
-#: lircsupport.cpp:196
+#: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
 
-#: lircsupport.cpp:199
+#: lircsupport.cpp:192
 #, kde-format
 msgid "Failed to copy %1 to %2"
 msgstr ""
 
-#: lircsupport.cpp:251
+#: lircsupport.cpp:244
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
 "next start of KRadio"
 msgstr ""
 
-#: lircsupport.cpp:489
+#: lircsupport.cpp:482
 msgid "LIRC Support"
 msgstr ""
 

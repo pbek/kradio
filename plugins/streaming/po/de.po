@@ -2,20 +2,20 @@
 # translation of kradio-streaming.po to
 # This file is put in the public domain.
 #
-# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009.
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-03-29 12:07+0200\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: \n"
-"Language: \n"
+"PO-Revision-Date: 2014-09-18 15:41+0200\n"
+"Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. i18n: file: streaming-configuration-ui.ui:26
@@ -39,23 +39,20 @@ msgstr "Mono"
 #. i18n: file: streaming-configuration-ui.ui:55
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:12 rc.cpp:103
-#, fuzzy
 msgid "Sample bits:"
-msgstr "Quantisierungs-Bits"
+msgstr "Quantisierungs-Bits:"
 
 #. i18n: file: streaming-configuration-ui.ui:71
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:15 rc.cpp:106
-#, fuzzy
 msgid "Channels:"
-msgstr "Kanäle"
+msgstr "Kanäle:"
 
 #. i18n: file: streaming-configuration-ui.ui:81
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:18 rc.cpp:109
-#, fuzzy
 msgid "Endianess:"
-msgstr "Byte-Reihenfolge"
+msgstr "Byte-Reihenfolge:"
 
 #. i18n: file: streaming-configuration-ui.ui:98
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
@@ -126,23 +123,20 @@ msgstr "kB"
 #. i18n: file: streaming-configuration-ui.ui:218
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
 #: rc.cpp:54 rc.cpp:145
-#, fuzzy
 msgid "Buffer size:"
-msgstr "Puffergröße"
+msgstr "Puffergröße:"
 
 #. i18n: file: streaming-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
 #: rc.cpp:57 rc.cpp:148
-#, fuzzy
 msgid "Format:"
-msgstr "Format"
+msgstr "Format:"
 
 #. i18n: file: streaming-configuration-ui.ui:250
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:60 rc.cpp:151
-#, fuzzy
 msgid "Sample rate:"
-msgstr "Abtastrate"
+msgstr "Abtastrate:"
 
 #. i18n: file: streaming-configuration-ui.ui:267
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
@@ -284,11 +278,11 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: streaming-job.cpp:303
-#, fuzzy, kde-format
+#, kde-format
 msgid "skipped %1 byte"
 msgid_plural "skipped %1 bytes"
-msgstr[0] "%1 bytes wurden übersprungen"
-msgstr[1] "%1 bytes wurden übersprungen"
+msgstr[0] "%1 Byte wurde übersprungen"
+msgstr[1] "%1 Bytes wurden übersprungen"
 
 #: streaming-job.cpp:347 streaming-job.cpp:398
 #, kde-format
@@ -296,11 +290,11 @@ msgid "error no %1"
 msgstr "Fehler Nr. %1"
 
 #: streaming-job.cpp:360 streaming-job.cpp:383
-#, fuzzy, kde-format
+#, kde-format
 msgid "skipped %1 write"
 msgid_plural "skipped %1 writes"
-msgstr[0] "%1 bytes wurden beim Schreiben übersprungen"
-msgstr[1] "%1 bytes wurden beim Schreiben übersprungen"
+msgstr[0] "%1 Byte wurde beim Schreiben übersprungen"
+msgstr[1] "%1 Bytes wurden beim Schreiben übersprungen"
 
 #: streaming-job.cpp:453
 #, kde-format

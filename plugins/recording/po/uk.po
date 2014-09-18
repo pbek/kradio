@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2010-09-27 12:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: encoder_mp3.cpp:81 encoder_mp3.cpp:194
+#: encoder_mp3.cpp:82 encoder_mp3.cpp:195
 #, fuzzy, kde-format
 msgid "Error %1 while encoding MP3. "
 msgstr "Під час кодування MP3 сталася помилка: %1. "
 
-#: encoder_mp3.cpp:91 encoder_mp3.cpp:199 encoder_pcm.cpp:53
+#: encoder_mp3.cpp:92 encoder_mp3.cpp:200 encoder_pcm.cpp:54
 #, kde-format
 msgid "Error %1 writing output. "
 msgstr "Під час запису сталася помилка: %1"
 
-#: encoder_mp3.cpp:108
+#: encoder_mp3.cpp:109
 #, fuzzy
 msgid "Cannot initialize libmp3lame. "
 msgstr "Не вдалося ініціалізувати lalibmp3lame. "
 
-#: encoder_mp3.cpp:125
+#: encoder_mp3.cpp:126
 msgid "Cannot initialize libmp3lame parameters. "
 msgstr "Не вдалося задати параметри libmp3lame. "
 
-#: encoder_mp3.cpp:134
+#: encoder_mp3.cpp:135
 msgid "Recorded by KRadio"
 msgstr "Записано KRadio"
 
-#: encoder_mp3.cpp:148 encoder_pcm.cpp:66
+#: encoder_mp3.cpp:149 encoder_pcm.cpp:67
 #, kde-format
 msgid "Cannot open output file %1. "
 msgstr "Не вдалося відкрити файл виведення %1. "
 
-#: encoder_mp3.cpp:161
+#: encoder_mp3.cpp:162
 #, fuzzy
 msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Не вдалося розмістити у пам'яті буфери для кодування MP3."
@@ -476,6 +476,8 @@ msgstr "Монітор запису"
 msgid "Sound Stream"
 msgstr "Джерело звуку"
 
+#. i18n("Status"),         this), 1, 0);
+#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
 #: recording-monitor.cpp:48
 msgid "Recording File"
 msgstr "Файл запису"

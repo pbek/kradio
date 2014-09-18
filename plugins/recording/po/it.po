@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-03 01:44+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2014-03-03 00:30+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,34 +20,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: encoder_mp3.cpp:81 encoder_mp3.cpp:194
+#: encoder_mp3.cpp:82 encoder_mp3.cpp:195
 #, kde-format
 msgid "Error %1 while encoding MP3. "
 msgstr "Errore %1 durante la codifica del MP3. "
 
-#: encoder_mp3.cpp:91 encoder_mp3.cpp:199 encoder_pcm.cpp:53
+#: encoder_mp3.cpp:92 encoder_mp3.cpp:200 encoder_pcm.cpp:54
 #, kde-format
 msgid "Error %1 writing output. "
 msgstr "Errore %1 durante la scrittura dell'output. "
 
-#: encoder_mp3.cpp:108
+#: encoder_mp3.cpp:109
 msgid "Cannot initialize libmp3lame. "
 msgstr "Impossibile inizializzare libmp3lame. "
 
-#: encoder_mp3.cpp:125
+#: encoder_mp3.cpp:126
 msgid "Cannot initialize libmp3lame parameters. "
 msgstr "Impossibile inizializzare i parametri di libmp3lame. "
 
-#: encoder_mp3.cpp:134
+#: encoder_mp3.cpp:135
 msgid "Recorded by KRadio"
 msgstr "Registrato da KRadio"
 
-#: encoder_mp3.cpp:148 encoder_pcm.cpp:66
+#: encoder_mp3.cpp:149 encoder_pcm.cpp:67
 #, kde-format
 msgid "Cannot open output file %1. "
 msgstr "Impossibile aprire il file di output %1. "
 
-#: encoder_mp3.cpp:161
+#: encoder_mp3.cpp:162
 msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Impossibile allocare i buffer per la codifica MP3. "
 
@@ -473,6 +473,8 @@ msgstr "Monitor della registrazione"
 msgid "Sound Stream"
 msgstr "Flusso sonoro"
 
+#. i18n("Status"),         this), 1, 0);
+#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
 #: recording-monitor.cpp:48
 msgid "Recording File"
 msgstr "File di registrazione"

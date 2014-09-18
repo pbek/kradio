@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-09 07:55+0400\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2009-04-18 20:23+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -168,13 +168,17 @@ msgstr "Устройства"
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
-msgid "PCM Device"
+#, fuzzy
+#| msgid "PCM Device"
+msgid "PCM device:"
 msgstr "Устройство PCM"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
-msgid "Mixer Device"
+#, fuzzy
+#| msgid "Mixer Device"
+msgid "Mixer device:"
 msgstr "Устройство микшера"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
@@ -198,13 +202,17 @@ msgstr "Дополнительные параметры"
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
-msgid "Disable Playback"
+#, fuzzy
+#| msgid "Disable Playback"
+msgid "Disable playback"
 msgstr "Запретить &воспроизведение"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
-msgid "Disable Capture"
+#, fuzzy
+#| msgid "Disable Capture"
+msgid "Disable capture"
 msgstr "Запретить &запись"
 
 #: rc.cpp:25

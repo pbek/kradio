@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-05 20:03+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2014-03-05 23:14+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,87 +20,87 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: decoder_thread.cpp:140
+#: decoder_thread.cpp:142
 #, kde-format
 msgid "opening stream %1"
 msgstr "apertura del flusso %1"
 
-#: decoder_thread.cpp:144
+#: decoder_thread.cpp:146
 #, kde-format
 msgid "Failed to open %1. Trying next stream in play list."
 msgstr "Impossibile aprire %1. Apertura del flusso successivo della scaletta."
 
-#: decoder_thread.cpp:149
+#: decoder_thread.cpp:151
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Impossibile aprire qualsiasi flusso d'ingresso di %1."
 
-#: decoder_thread.cpp:248
+#: decoder_thread.cpp:266
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr ""
 "%1: errore durante la decodifica del pacchetto. Il pacchetto sarà scartato"
 
-#: decoder_thread.cpp:267
+#: decoder_thread.cpp:285
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "flusso interno, non salvato (%1)"
 
-#: decoder_thread.cpp:340
+#: decoder_thread.cpp:362
 msgid "Failed allocating AVFrame."
 msgstr "Errore nell'allocazione di AVFrame."
 
-#: decoder_thread.cpp:612 decoder_thread.cpp:615
+#: decoder_thread.cpp:634 decoder_thread.cpp:637
 #, kde-format
 msgid "Could not open stream %1"
 msgstr "Impossibile aprire il flusso %1"
 
-#: decoder_thread.cpp:691 decoder_thread.cpp:694
+#: decoder_thread.cpp:719 decoder_thread.cpp:722
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr "Autorilevamento del tipo di flusso di %1 non riuscito"
 
-#: decoder_thread.cpp:698
+#: decoder_thread.cpp:726
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Formato rilevato automaticamente: %1 (punteggio %2)"
 
-#: decoder_thread.cpp:724 decoder_thread.cpp:727
+#: decoder_thread.cpp:752 decoder_thread.cpp:755
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Impossibile trovare informazioni sul flusso in %1"
 
-#: decoder_thread.cpp:792 decoder_thread.cpp:795
+#: decoder_thread.cpp:820 decoder_thread.cpp:823
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Impossibile trovare un flusso audio in %1"
 
-#: decoder_thread.cpp:815 decoder_thread.cpp:818
+#: decoder_thread.cpp:843 decoder_thread.cpp:846
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Impossibile trovare un codec per %1"
 
-#: decoder_thread.cpp:833 decoder_thread.cpp:836
+#: decoder_thread.cpp:861 decoder_thread.cpp:864
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Impossibile aprire il codec per %1"
 
-#: decoder_thread.cpp:857
+#: decoder_thread.cpp:889
 #, kde-format
 msgid "Unknown channel layout for %1"
 msgstr "Schema dei canali sconosciuto per %1"
 
-#: decoder_thread.cpp:934 decoder_thread.cpp:937
+#: decoder_thread.cpp:981 decoder_thread.cpp:984
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "impossibile aprire il flusso MMS %1"
 
-#: decoder_thread.cpp:1035
+#: decoder_thread.cpp:1082
 #, kde-format
 msgid "Not yet implemented: libav sample format id %1"
 msgstr "Non ancora implementato: formato di campionamento con id %1 di libav"
 
-#: decoder_thread.cpp:1041
+#: decoder_thread.cpp:1088
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Impossibile usare il formato di campionamento con id %1 di libav"

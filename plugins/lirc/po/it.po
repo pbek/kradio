@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-03 01:44+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2014-03-03 00:46+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -116,7 +116,7 @@ msgstr "Esci da KRadio"
 msgid "<do not care>"
 msgstr "<non importante>"
 
-#: lirc-configuration.cpp:278
+#: lirc-configuration.cpp:270
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -124,7 +124,7 @@ msgstr ""
 "Digita la stringa di caratteri del tuo telecomando o premi il pulsante sul "
 "tuo telecomando"
 
-#: lirc-configuration.cpp:284
+#: lirc-configuration.cpp:276
 msgid "Double click on the entries to change the assignments"
 msgstr "Doppio clic sulle voci per cambiare le assegnazioni"
 
@@ -132,7 +132,7 @@ msgstr "Doppio clic sulle voci per cambiare le assegnazioni"
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Supporto per Linux Infrared Control (LIRC)"
 
-#: lircsupport.cpp:56 lircsupport.cpp:490
+#: lircsupport.cpp:56 lircsupport.cpp:483
 msgid "LIRC Plugin"
 msgstr "Estensione LIRC"
 
@@ -157,7 +157,7 @@ msgid "Initializing KRadio LIRC plugin successful"
 msgstr ""
 "Inizializzazione dell'estensione LIRC di KRadio è avvenuta con successo"
 
-#: lircsupport.cpp:132
+#: lircsupport.cpp:129
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -170,7 +170,7 @@ msgstr ""
 "Ciò, molto probabilmente, causerà dei problemi. Usa \"button=*\" e \"remote=*"
 "\" come caratteri jolly per indicare tutti i pulsanti/telecomandi"
 
-#: lircsupport.cpp:139
+#: lircsupport.cpp:136
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -183,24 +183,24 @@ msgstr ""
 "Ciò, molto probabilmente, causerà dei problemi. Usa \"button=*\" e \"remote=*"
 "\" come caratteri jolly per indicare tutti i pulsanti/telecomandi"
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:147
 #, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "Non ci sono voci per KRadio nel tuo file .lircrc %1."
 
-#: lircsupport.cpp:151
+#: lircsupport.cpp:148
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Configura correttamente il tuo file .lircrc %1."
 
-#: lircsupport.cpp:155 lircsupport.cpp:156
+#: lircsupport.cpp:152 lircsupport.cpp:153
 #, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inizializzazione dell'estensione LIRC di KRadio non riuscita. Impossibile "
 "leggere il file di configurazione %1"
 
-#: lircsupport.cpp:196
+#: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
@@ -208,12 +208,12 @@ msgstr ""
 "%1 non esiste. Il file è stato creato, utilizzando il file .lircrc "
 "predefinito proposto da KRadio"
 
-#: lircsupport.cpp:199
+#: lircsupport.cpp:192
 #, kde-format
 msgid "Failed to copy %1 to %2"
 msgstr "Impossibile copiare %1 in %2"
 
-#: lircsupport.cpp:251
+#: lircsupport.cpp:244
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
 "next start of KRadio"
@@ -221,7 +221,7 @@ msgstr ""
 "Impossibile leggere dal socket di LIRC. Disabilito le funzioni di LIRC fino "
 "al prossimo avvio di KRadio"
 
-#: lircsupport.cpp:489
+#: lircsupport.cpp:482
 msgid "LIRC Support"
 msgstr "Supporto LIRC"
 

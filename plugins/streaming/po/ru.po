@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-09 07:55+0400\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2013-03-09 07:45+0400\n"
 "Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -40,19 +40,25 @@ msgstr "1 (Моно)"
 #. i18n: file: streaming-configuration-ui.ui:55
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:12 rc.cpp:103
-msgid "Sample Bits"
+#, fuzzy
+#| msgid "Sample Bits"
+msgid "Sample bits:"
 msgstr "Бит на элемент выборки"
 
 #. i18n: file: streaming-configuration-ui.ui:71
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:15 rc.cpp:106
-msgid "Channels"
+#, fuzzy
+#| msgid "Channels"
+msgid "Channels:"
 msgstr "Число каналов"
 
 #. i18n: file: streaming-configuration-ui.ui:81
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:18 rc.cpp:109
-msgid "Endianess"
+#, fuzzy
+#| msgid "Endianess"
+msgid "Endianess:"
 msgstr "Порядок байтов"
 
 #. i18n: file: streaming-configuration-ui.ui:98
@@ -124,19 +130,25 @@ msgstr "кБ"
 #. i18n: file: streaming-configuration-ui.ui:218
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
 #: rc.cpp:54 rc.cpp:145
-msgid "Buffer Size"
+#, fuzzy
+#| msgid "Buffer Size"
+msgid "Buffer size:"
 msgstr "Размер буфера"
 
 #. i18n: file: streaming-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
 #: rc.cpp:57 rc.cpp:148
-msgid "Format"
+#, fuzzy
+#| msgid "Format"
+msgid "Format:"
 msgstr "Формат"
 
 #. i18n: file: streaming-configuration-ui.ui:250
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:60 rc.cpp:151
-msgid "Sample Rate"
+#, fuzzy
+#| msgid "Sample Rate"
+msgid "Sample rate:"
 msgstr "Частота дискретизации"
 
 #. i18n: file: streaming-configuration-ui.ui:267
@@ -280,9 +292,13 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: streaming-job.cpp:303
-#, kde-format
-msgid "skipped %1 bytes"
-msgstr "Пропущено %1 байт"
+#, fuzzy, kde-format
+#| msgid "skipped %1 bytes"
+msgid "skipped %1 byte"
+msgid_plural "skipped %1 bytes"
+msgstr[0] "Пропущено %1 байт"
+msgstr[1] "Пропущено %1 байт"
+msgstr[2] "Пропущено %1 байт"
 
 #: streaming-job.cpp:347 streaming-job.cpp:398
 #, kde-format
@@ -290,9 +306,13 @@ msgid "error no %1"
 msgstr "ошибка no %1"
 
 #: streaming-job.cpp:360 streaming-job.cpp:383
-#, kde-format
-msgid "skipped %1 writes"
-msgstr "запись пропущена %1 раз"
+#, fuzzy, kde-format
+#| msgid "skipped %1 writes"
+msgid "skipped %1 write"
+msgid_plural "skipped %1 writes"
+msgstr[0] "запись пропущена %1 раз"
+msgstr[1] "запись пропущена %1 раз"
+msgstr[2] "запись пропущена %1 раз"
 
 #: streaming-job.cpp:453
 #, kde-format

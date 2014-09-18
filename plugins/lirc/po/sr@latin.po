@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lirc (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -109,7 +109,7 @@ msgstr "Napusti KRadio"
 msgid "<do not care>"
 msgstr "<nebitno>"
 
-#: lirc-configuration.cpp:278
+#: lirc-configuration.cpp:270
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -117,7 +117,7 @@ msgstr ""
 "Unesite ključni niz od vašeg daljinskog ili samo pritisnite dugme na vašoj "
 "udaljenoj kontroli"
 
-#: lirc-configuration.cpp:284
+#: lirc-configuration.cpp:276
 #, fuzzy
 msgid "Double click on the entries to change the assignments"
 msgstr "Dupli klik na ulazu za promenu zadataka "
@@ -126,7 +126,7 @@ msgstr "Dupli klik na ulazu za promenu zadataka "
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Podrška za Linux infracrvenu kontrolu (LIRC)"
 
-#: lircsupport.cpp:56 lircsupport.cpp:490
+#: lircsupport.cpp:56 lircsupport.cpp:483
 msgid "LIRC Plugin"
 msgstr "LIRC priključak"
 
@@ -154,7 +154,7 @@ msgstr "inicijalizacija kradio lirc priključka nije uspela"
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Inicijalizacija kradio lirc priključka je uspela"
 
-#: lircsupport.cpp:132
+#: lircsupport.cpp:129
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -166,7 +166,7 @@ msgstr ""
 "daljinski povezivanje. Ovo će najverovatnije voditi do problema. Molim "
 "koristite \"dugme=*\" i  \"daljinski=*\" kao džoker za sve dugmad/daljinski"
 
-#: lircsupport.cpp:139
+#: lircsupport.cpp:136
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -179,36 +179,36 @@ msgstr ""
 "problema. Molim koristite \"dugme=*\" i  \"daljinski=*\" kao džoker za sve "
 "dugmad/daljinski"
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:147
 #, fuzzy, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "Ne postoji stavka za kradio u vašim .lircrc fajlovima %1."
 
-#: lircsupport.cpp:151
+#: lircsupport.cpp:148
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Molimo podesite vaš .lircrc fajl %1 ispravno."
 
-#: lircsupport.cpp:155 lircsupport.cpp:156
+#: lircsupport.cpp:152 lircsupport.cpp:153
 #, fuzzy, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inicijalizacija kradio priključka neuspela. Ne mogu čitati konfiguracioni "
 "fajl %1"
 
-#: lircsupport.cpp:196
+#: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
 "%1 ne postoji. Fajl je bio kreiran sa KRadio podrazumevanim .lircrc predlogom"
 
-#: lircsupport.cpp:199
+#: lircsupport.cpp:192
 #, kde-format
 msgid "Failed to copy %1 to %2"
 msgstr ""
 
-#: lircsupport.cpp:251
+#: lircsupport.cpp:244
 #, fuzzy
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
@@ -217,7 +217,7 @@ msgstr ""
 "Čitanje LIRC utičnice neuspelo. Onemogućavanje LIRC funkcija na sledećem "
 "pokretanju kradia"
 
-#: lircsupport.cpp:489
+#: lircsupport.cpp:482
 msgid "LIRC Support"
 msgstr "LIRC podrška"
 

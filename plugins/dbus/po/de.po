@@ -3,28 +3,27 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Ernst Martin Witte <emw@nocabal.de>, 2009.
+# Ernst Martin Witte <emw@nocabal.de>, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-03-28 17:23+0100\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: \n"
-"Language: \n"
+"PO-Revision-Date: 2014-09-18 15:21+0200\n"
+"Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: dbussupport.cpp:35 dbussupport.cpp:102
-#, fuzzy
 msgid "D-Bus Support"
-msgstr "DBus Unterstützung"
+msgstr "D-Bus Unterstützung"
 
 #: dbussupport.cpp:41 dbussupport.cpp:103
-#, fuzzy
 msgid "D-Bus Plugin"
-msgstr "DBus Plugin"
+msgstr "D-Bus Plugin"
+

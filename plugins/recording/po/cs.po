@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2010-09-27 08:46+0200\n"
 "Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: encoder_mp3.cpp:81 encoder_mp3.cpp:194
+#: encoder_mp3.cpp:82 encoder_mp3.cpp:195
 #, fuzzy, kde-format
 msgid "Error %1 while encoding MP3. "
 msgstr "Chyba %1 při kódování proudu mp3."
 
-#: encoder_mp3.cpp:91 encoder_mp3.cpp:199 encoder_pcm.cpp:53
+#: encoder_mp3.cpp:92 encoder_mp3.cpp:200 encoder_pcm.cpp:54
 #, kde-format
 msgid "Error %1 writing output. "
 msgstr "Chyba %1 při zápisu výstupního souboru."
 
-#: encoder_mp3.cpp:108
+#: encoder_mp3.cpp:109
 #, fuzzy
 msgid "Cannot initialize libmp3lame. "
 msgstr "Nelze inicializovat knihovnu funkcí libmp3lame."
 
-#: encoder_mp3.cpp:125
+#: encoder_mp3.cpp:126
 msgid "Cannot initialize libmp3lame parameters. "
 msgstr "Nelze inicializovat pomocné proměnné knihovny funkcí libmp3lame."
 
-#: encoder_mp3.cpp:134
+#: encoder_mp3.cpp:135
 msgid "Recorded by KRadio"
 msgstr "Nahráno programem KRadio"
 
-#: encoder_mp3.cpp:148 encoder_pcm.cpp:66
+#: encoder_mp3.cpp:149 encoder_pcm.cpp:67
 #, kde-format
 msgid "Cannot open output file %1. "
 msgstr "Nelze otevřít výstupní soubor %1. "
 
-#: encoder_mp3.cpp:161
+#: encoder_mp3.cpp:162
 #, fuzzy
 msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Vyrovnávací paměť pro kódování mp3 nelze přidělit."
@@ -478,6 +478,8 @@ msgstr "Dohled nad nahráváním"
 msgid "Sound Stream"
 msgstr "Datový proud s nahrávaný zvukem"
 
+#. i18n("Status"),         this), 1, 0);
+#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
 #: recording-monitor.cpp:48
 msgid "Recording File"
 msgstr "Soubor s nahrávkou"

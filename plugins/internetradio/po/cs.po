@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.cs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-05 20:03+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2012-02-19 19:15+0100\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -19,88 +19,88 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: decoder_thread.cpp:140
+#: decoder_thread.cpp:142
 #, kde-format
 msgid "opening stream %1"
 msgstr "Otevírá se datový proud %1."
 
-#: decoder_thread.cpp:144
+#: decoder_thread.cpp:146
 #, fuzzy, kde-format
 msgid "Failed to open %1. Trying next stream in play list."
 msgstr ""
 "Otevření %1 selhalo. Pokuste se otevřít následující rozhlasový datový proud "
 "v seznamu."
 
-#: decoder_thread.cpp:149
+#: decoder_thread.cpp:151
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Nelze otevřít žádný rozhlasový datový proud ze seznamu %1."
 
-#: decoder_thread.cpp:248
+#: decoder_thread.cpp:266
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: Chyba při dekódování paketu. Paket byl odmítnut"
 
-#: decoder_thread.cpp:267
+#: decoder_thread.cpp:285
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Vnitřní zvukový datový proud, nebude uložen (%1)"
 
-#: decoder_thread.cpp:340
+#: decoder_thread.cpp:362
 msgid "Failed allocating AVFrame."
 msgstr "Nepodařilo se přidělit AVFrame."
 
-#: decoder_thread.cpp:612 decoder_thread.cpp:615
+#: decoder_thread.cpp:634 decoder_thread.cpp:637
 #, fuzzy, kde-format
 msgid "Could not open stream %1"
 msgstr "Nelze otevřít zvukový datový proud %1"
 
-#: decoder_thread.cpp:691 decoder_thread.cpp:694
+#: decoder_thread.cpp:719 decoder_thread.cpp:722
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr "Automatické rozpoznání formátu internetového proudu %1 se nezdařilo"
 
-#: decoder_thread.cpp:698
+#: decoder_thread.cpp:726
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Automaticky rozpoznaný formát: %1 (spolehlivost: %2)"
 
-#: decoder_thread.cpp:724 decoder_thread.cpp:727
+#: decoder_thread.cpp:752 decoder_thread.cpp:755
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Nelze najít metainformace v zvukovém datovém proudu %1"
 
-#: decoder_thread.cpp:792 decoder_thread.cpp:795
+#: decoder_thread.cpp:820 decoder_thread.cpp:823
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Nelze najít žádný zvukový datový proud na adrese %1."
 
-#: decoder_thread.cpp:815 decoder_thread.cpp:818
+#: decoder_thread.cpp:843 decoder_thread.cpp:846
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Nelze najít žádný dekodér pro %1."
 
-#: decoder_thread.cpp:833 decoder_thread.cpp:836
+#: decoder_thread.cpp:861 decoder_thread.cpp:864
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Otevření dekodéru pro %1 selhalo."
 
-#: decoder_thread.cpp:857
+#: decoder_thread.cpp:889
 #, kde-format
 msgid "Unknown channel layout for %1"
 msgstr ""
 
-#: decoder_thread.cpp:934 decoder_thread.cpp:937
+#: decoder_thread.cpp:981 decoder_thread.cpp:984
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "Nelze otevřít MMS datový proud %1"
 
-#: decoder_thread.cpp:1035
+#: decoder_thread.cpp:1082
 #, fuzzy, kde-format
 msgid "Not yet implemented: libav sample format id %1"
 msgstr "Nelze použít ID formátu vzorku libav %1"
 
-#: decoder_thread.cpp:1041
+#: decoder_thread.cpp:1088
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Nelze použít ID formátu vzorku libav %1"

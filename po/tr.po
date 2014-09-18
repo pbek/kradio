@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2011-02-06 05:02+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -98,6 +98,7 @@ msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
+#. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
 #: radiostations/radiostation-config.cpp:146
 #, fuzzy
 msgctxt "Stream Format"
@@ -208,27 +209,27 @@ msgctxt "Unknown station description"
 msgid "unknown"
 msgstr "bilinmiyor"
 
-#: src/fileringbuffer.cpp:35 src/fileringbuffer.cpp:68
+#: src/fileringbuffer.cpp:36 src/fileringbuffer.cpp:69
 #, kde-format
 msgid "cannot open buffer file %1"
 msgstr ""
 
-#: src/fileringbuffer.cpp:93
+#: src/fileringbuffer.cpp:94
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to temporary file %1 failed. "
 msgstr ""
 
-#: src/fileringbuffer.cpp:99
+#: src/fileringbuffer.cpp:100
 #, kde-format
 msgid "FileRingbuffer::resize: Opening temporary file %1 failed. "
 msgstr ""
 
-#: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
+#: src/fileringbuffer.cpp:128 src/fileringbuffer.cpp:146
 #, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
 msgstr ""
 
-#: src/fileringbuffer.cpp:168
+#: src/fileringbuffer.cpp:169
 #, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr ""

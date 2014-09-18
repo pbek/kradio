@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_lirc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
 "PO-Revision-Date: 2012-02-19 19:04+0100\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -114,7 +114,7 @@ msgstr "Ukončit KRadio"
 msgid "<do not care>"
 msgstr "<neměj péči>"
 
-#: lirc-configuration.cpp:278
+#: lirc-configuration.cpp:270
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -122,7 +122,7 @@ msgstr ""
 "Zadejte řetězec znaků svého dálkového řízení, nebo pouze stiskněte tlačítko "
 "na svém dálkovém ovládání"
 
-#: lirc-configuration.cpp:284
+#: lirc-configuration.cpp:276
 #, fuzzy
 msgid "Double click on the entries to change the assignments"
 msgstr "Dvojité klepnutí na záznamy kvůli změně přiřazení"
@@ -131,7 +131,7 @@ msgstr "Dvojité klepnutí na záznamy kvůli změně přiřazení"
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Podpora pro dálkové ovládání (Linux Infrared Control, LIRC) "
 
-#: lircsupport.cpp:56 lircsupport.cpp:490
+#: lircsupport.cpp:56 lircsupport.cpp:483
 msgid "LIRC Plugin"
 msgstr "Přídavný modul LIRC"
 
@@ -159,7 +159,7 @@ msgstr "Inicializace přídavného modulu LIRC programu KRadio selhala"
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Inicializace přídavného modulu LIRC programu KRadio proběhla úspěšně"
 
-#: lircsupport.cpp:132
+#: lircsupport.cpp:129
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -172,7 +172,7 @@ msgstr ""
 "Toto povede velice pravděpodobně k potížím. Použijte, prosím, \"button=*\" a "
 "\"remote=*\" jako divokou kartu pro všechna tlačítka/dálkového ovládání"
 
-#: lircsupport.cpp:139
+#: lircsupport.cpp:136
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -185,24 +185,24 @@ msgstr ""
 "Toto povede velice pravděpodobně k potížím. Použijte, prosím, \"button=*\" a "
 "\"remote=*\" jako divokou kartu pro všechna tlačítka/dálkového ovládání"
 
-#: lircsupport.cpp:150
+#: lircsupport.cpp:147
 #, fuzzy, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "Neexistuje žádný záznam pro KRadio ve vašich .lircrc souborech %1."
 
-#: lircsupport.cpp:151
+#: lircsupport.cpp:148
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Nastavte, prosím, správně svůj .lircrc soubor %1."
 
-#: lircsupport.cpp:155 lircsupport.cpp:156
+#: lircsupport.cpp:152 lircsupport.cpp:153
 #, fuzzy, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Inicializace přídavného modulu LIRC pro KRadio selhala. Nelze číst z "
 "konfiguračního souboru %1"
 
-#: lircsupport.cpp:196
+#: lircsupport.cpp:189
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
@@ -210,12 +210,12 @@ msgstr ""
 "Soubor %1 neexistuje. Soubor byl vytvořen s výchozím .lircrc nastavením "
 "programu KRadio"
 
-#: lircsupport.cpp:199
+#: lircsupport.cpp:192
 #, kde-format
 msgid "Failed to copy %1 to %2"
 msgstr ""
 
-#: lircsupport.cpp:251
+#: lircsupport.cpp:244
 #, fuzzy
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
@@ -224,7 +224,7 @@ msgstr ""
 "Čtení ze zásuvky (socket) LIRC selhalo.LIRC funkce je až do příštího "
 "spuštění KRadia vypnuta."
 
-#: lircsupport.cpp:489
+#: lircsupport.cpp:482
 msgid "LIRC Support"
 msgstr "Podpora dálkového ovládání (LIRC)"
 

@@ -3,16 +3,16 @@
 # This file is put in the public domain.
 #
 # Ernst Martin Witte <emw-kradio@nocabal.de>, 2006.
-# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2010, 2012, 2013.
+# Ernst Martin Witte <emw@nocabal.de>, 2006, 2009, 2010, 2012, 2013, 2014.
 # Frederik Schwarzer <schwarzerf@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2013-02-10 14:30+0100\n"
-"Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
-"Language-Team: trunk <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"PO-Revision-Date: 2014-09-18 16:01+0200\n"
+"Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
 "Language: trunk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "%1 Debug: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
 #: radiostations/internetradiostation.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "<station long name>, <station description>"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -58,7 +58,6 @@ msgid "%1 kHz"
 msgstr "%1 kHz"
 
 #: radiostations/radiostation-config.cpp:49
-#, fuzzy
 msgid "I do not know how to edit this station"
 msgstr "Keine Ahnung, wie dieser Sender bearbeitet werden soll"
 
@@ -84,28 +83,25 @@ msgid "<autodetect>"
 msgstr "<Auto-Erkennung>"
 
 #: radiostations/radiostation-config.cpp:142
-#, fuzzy
 msgctxt "Stream Format"
 msgid "MP3"
 msgstr "MP3"
 
 #: radiostations/radiostation-config.cpp:143
-#, fuzzy
 msgctxt "Stream Format"
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
 #: radiostations/radiostation-config.cpp:144
-#, fuzzy
 msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
+#. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
 #: radiostations/radiostation-config.cpp:146
-#, fuzzy
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
-msgstr "OGG/Vorbis"
+msgstr "Ogg/Vorbis"
 
 #: radiostations/radiostation-config.cpp:149
 msgctxt "Playlist Format"
@@ -113,37 +109,31 @@ msgid "<autodetect>"
 msgstr "<Auto-Erkennung>"
 
 #: radiostations/radiostation-config.cpp:150
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "<none>"
 msgstr "<nichts>"
 
 #: radiostations/radiostation-config.cpp:151
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "ASX"
 msgstr "ASX"
 
 #: radiostations/radiostation-config.cpp:152
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "LSC"
 msgstr "LSC"
 
 #: radiostations/radiostation-config.cpp:153
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "M3U"
 msgstr "M3U"
 
 #: radiostations/radiostation-config.cpp:154
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "PLS"
 msgstr "PLS"
 
 #: radiostations/radiostation-config.cpp:155
-#, fuzzy
 msgctxt "Playlist Format"
 msgid "WMV"
 msgstr "WMV"
@@ -201,40 +191,38 @@ msgid "Internet Radio Station"
 msgstr "Internet-Sender"
 
 #: radiostations/radiostation.h:161
-#, fuzzy
 msgctxt "Unknown station long name"
 msgid "unknown"
 msgstr "unbekannt"
 
 #: radiostations/radiostation.h:162
-#, fuzzy
 msgctxt "Unknown station description"
 msgid "unknown"
 msgstr "unbekannt"
 
-#: src/fileringbuffer.cpp:35 src/fileringbuffer.cpp:68
+#: src/fileringbuffer.cpp:36 src/fileringbuffer.cpp:69
 #, kde-format
 msgid "cannot open buffer file %1"
 msgstr "kann die Puffer-Datei %1 nicht öffnen"
 
-#: src/fileringbuffer.cpp:93
-#, fuzzy, kde-format
+#: src/fileringbuffer.cpp:94
+#, kde-format
 msgid "FileRingbuffer::resize: Writing to temporary file %1 failed. "
 msgstr ""
-"FileRingbuffer::resize: Schreiben in die temporäre Datei %1 schlug fehl. "
+"FileRingbuffer::resize: Das Schreiben in die temporäre Datei %1 schlug fehl. "
 
-#: src/fileringbuffer.cpp:99
-#, fuzzy, kde-format
+#: src/fileringbuffer.cpp:100
+#, kde-format
 msgid "FileRingbuffer::resize: Opening temporary file %1 failed. "
 msgstr ""
 "FileRingbuffer::resize: Das Öffnen der temporären Datei %1 schlug fehl. "
 
-#: src/fileringbuffer.cpp:127 src/fileringbuffer.cpp:145
+#: src/fileringbuffer.cpp:128 src/fileringbuffer.cpp:146
 #, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
 msgstr "FileRingBuffer::addData: Das Schreiben in die Datei %1 schlug fehl."
 
-#: src/fileringbuffer.cpp:168
+#: src/fileringbuffer.cpp:169
 #, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: Das Lesen aus der Datei %1 schlug fehl."
@@ -299,9 +287,9 @@ msgid "License Agreement"
 msgstr "&Lizenzen"
 
 #: src/kradioapp.cpp:132
-#, fuzzy, kde-format
+#, kde-format
 msgid "Library %1: plugin entry point is missing"
-msgstr "Bibliothek %1: Eintrittspunkt wurde nicht gefunden\n"
+msgstr "Bibliothek %1: Eintrittspunkt wurde nicht gefunden"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
@@ -309,12 +297,12 @@ msgid "Plugin Library Load Error"
 msgstr "Das Laden der Bibliothek schlug fehl"
 
 #: src/kradioapp.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Library %1:\n"
 "%2"
 msgstr ""
-"Bibliothek %1: \n"
+"Bibliothek %1:\n"
 "%2"
 
 #: src/kradioapp.cpp:216
@@ -324,12 +312,11 @@ msgstr ""
 "geladen werden?"
 
 #: src/kradioapp.cpp:218
-#, fuzzy
 msgid "New Plugin Libraries Found"
 msgstr "Neue Plugin-Bibliotheken wurden gefunden"
 
 #: src/kradioapp.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
@@ -339,7 +326,7 @@ msgid_plural ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
-"KRadio4 hat nur %1 Plugin-Bibliotheken gefunden. Erwartet wurden aber "
+"KRadio4 hat nur %1 Plugin-Bibliothek gefunden. Erwartet wurden aber "
 "mindestens 5. Bitte überprüfen Sie, ob das Installationsverzeichnis von "
 "KRadio4 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie "
 "bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und "
@@ -356,9 +343,9 @@ msgid "KRadio4 Installation Error"
 msgstr "Fehler in der KRadio4-Installation"
 
 #: src/kradioapp.cpp:267
-#, fuzzy, kde-format
+#, kde-format
 msgid "Instance %1"
-msgstr "Instanz"
+msgstr "Instanz %1"
 
 #: src/kradioapp.cpp:288
 msgid "KRadio Configuration"
@@ -385,7 +372,6 @@ msgid "Ernst Martin Witte"
 msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
-#, fuzzy
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, LIRC support, alarms, misc"
@@ -399,7 +385,6 @@ msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
 #: src/main.cpp:44
-#, fuzzy
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Buildsystem, Standardkonformität, Aufräumarbeiten"
 
@@ -416,7 +401,6 @@ msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
 #: src/main.cpp:46
-#, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Initiale Idee, allererste KDE-2-Anwendung"
 
@@ -429,12 +413,12 @@ msgid "Configuration Dialog"
 msgstr "Konfigurationsdialog"
 
 #: src/pluginmanager-configuration.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Library %1:\n"
 "Cannot load non-local library"
 msgstr ""
-"Bibliothek %1: \n"
+"Bibliothek %1:\n"
 "Kann keine nichtlokalen Bibliotheken laden"
 
 #: src/pluginmanager-configuration.cpp:226
@@ -442,9 +426,8 @@ msgid "Enter Plugin Instance Name"
 msgstr "Name der Plugin-Instanz eingeben"
 
 #: src/pluginmanager-configuration.cpp:227
-#, fuzzy
 msgid "Instance name:"
-msgstr "Name der Instanz"
+msgstr "Name der Instanz:"
 
 #: src/pluginmanager.cpp:436
 msgid "Plugins"
@@ -471,7 +454,6 @@ msgstr ""
 "automatisch erzeugt werden?"
 
 #: src/pluginmanager.cpp:607
-#, fuzzy
 msgid "New Plugins Found"
 msgstr "Neue Plugins wurden gefunden"
 
@@ -481,25 +463,21 @@ msgid "Initializing Plugin %1"
 msgstr "Starten des Plugins %1"
 
 #: src/pluginmanager.cpp:767
-#, fuzzy
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Alle anzeigen"
 
 #: src/pluginmanager.cpp:768
-#, fuzzy
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Alle ausblenden"
 
 #: src/pluginmanager.cpp:769
-#, fuzzy
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Alle wiederherstellen"
 
 #: src/pluginmanager.cpp:770
-#, fuzzy
 msgid "Restore state before last hide-all activation"
 msgstr ""
 "Wiederherstellen des Zustands vor der letzten \"Alle ausblenden\"-Aktion"
@@ -524,9 +502,9 @@ msgid "unknown"
 msgstr "unbekannt"
 
 #: src/standardscandialog.cpp:226
-#, fuzzy, kde-format
+#, kde-format
 msgid "new station %1"
-msgstr "Neuer Sender "
+msgstr "neuer Sender  %1"
 
 #: src/station-drag-object.cpp:70
 msgid "canDecode = true"
@@ -569,9 +547,9 @@ msgid "Download of the station preset file at %1 failed."
 msgstr "Der Download der Senderdatei %1 schlug fehl."
 
 #: src/stationlist.cpp:214
-#, fuzzy, kde-format
+#, kde-format
 msgid "temporary file: %1"
-msgstr "temporäre Datei: "
+msgstr "temporäre Datei:  %1"
 
 #: src/stationlist.cpp:220
 #, kde-format
@@ -588,7 +566,7 @@ msgid "Old Preset File Format detected"
 msgstr "Altes Senderdateiformat erkannt"
 
 #: src/stationlist.cpp:322
-#, fuzzy, kde-format
+#, kde-format
 msgid "error writing to temporary file %1"
 msgstr "Fehler beim Schreiben in die temporäre Datei %1"
 
@@ -622,7 +600,6 @@ msgid "Upload of station preset file to %1 failed."
 msgstr "Der Upload der Senderdatei %1 schlug fehl."
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
-#, fuzzy
 msgid "error creating temporary file"
 msgstr "Fehler beim Erzeugen der temporären Datei"
 
@@ -689,35 +666,30 @@ msgstr "emw@nocabal.de"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:36
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:5
-#, fuzzy
 msgid "Automatic Detection and Load of New Plugins"
 msgstr "Automatisches Erkennen/Laden von neuen Plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:57
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
 #: rc.cpp:8
-#, fuzzy
 msgid "Do not check/load"
-msgstr "Nicht überprüfen/laden!"
+msgstr "Nicht überprüfen/laden"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
 #: rc.cpp:11
-#, fuzzy
 msgid "Automatically check/load"
-msgstr "Automatisch überprüfen/laden!"
+msgstr "Automatisch überprüfen/laden"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:14
-#, fuzzy
 msgid "Please ask"
-msgstr "Bitte nachfragen!"
+msgstr "Bitte nachfragen"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:17
-#, fuzzy
 msgid "Show progress bar during startup for plugin initiali&zation"
 msgstr "Fortschrittsbalken bei der Initialisierung der Plugins anzeigen"
 
@@ -818,13 +790,18 @@ msgid ""
 "plugin names is recommended for your convenience e.g. if you have multiple "
 "sound cards and/or multiple ALSA plugin instances.</p>"
 msgstr ""
+"<p>Man kann eine Plugin-Instanz durch einen Doppelklick auf den Instanznamen "
+"<b>umbenennen</b>. Dieser Name wird unter dem Symbol und als Titel der "
+"jeweiligen Konfigurationsseite erscheinen, z.B. als Name eines Audiogerätes. "
+"Die bearbeitung der Plugin-Instanznamen wird zur besseren Übersicht "
+"empfohlen, z.B.  wenn mehrere Audiogeräte oder Instanzen des ALSO-Plugins "
+"vorhanden sind.</p>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
 #: rc.cpp:71
-#, fuzzy
 msgid "Stations Search in Progress..."
-msgstr "Sendersuchlauf läuft ..."
+msgstr "Sendersuchlauf läuft..."
 
 #. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
@@ -853,16 +830,14 @@ msgstr "<p align=\"right\">hier ist nix</p>"
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:89
-#, fuzzy
 msgid "Selected stations:"
-msgstr "Ausgewählte Sender"
+msgstr "Ausgewählte Sender:"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:92
-#, fuzzy
 msgid "Available stations:"
-msgstr "Verfügbare Sender"
+msgstr "Verfügbare Sender:"
 
 #: src/recording_template.h:84
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
