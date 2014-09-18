@@ -2,14 +2,14 @@
 # translation of kradio-radio.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2013-03-09 07:01+0400\n"
-"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
+"PO-Revision-Date: 2014-09-18 20:57+0400\n"
+"Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -26,37 +26,32 @@ msgid "unchanged"
 msgstr "оставлено"
 
 #: radio-configuration.cpp:84
-#, fuzzy
 #| msgid "<don't care>"
 msgctxt "Sound mode"
 msgid "<do not care>"
 msgstr "<не важно>"
 
 #: radio-configuration.cpp:85
-#, fuzzy
 #| msgid "Mono"
 msgctxt "Sound mode, monophonic"
 msgid "Mono"
 msgstr "Моно"
 
 #: radio-configuration.cpp:86
-#, fuzzy
 #| msgid "Stereo"
 msgctxt "Sound mode, stereophonic"
 msgid "Stereo"
 msgstr "Стерео"
 
 #: radio-configuration.cpp:89
-#, fuzzy
 #| msgid "load + replace presets"
 msgid "Load and replace presets"
-msgstr "загрузить и заменить установки"
+msgstr "Загрузить и заменить установки"
 
 #: radio-configuration.cpp:90
-#, fuzzy
 #| msgid "load + add presets"
 msgid "Load and add presets"
-msgstr "загрузить и добавить установки"
+msgstr "Загрузить и добавить установки"
 
 #: radio-configuration.cpp:433
 msgid "Image Selection"
@@ -75,27 +70,26 @@ msgid "Select Preset File"
 msgstr "Выбор файла радиостанций"
 
 #: radio-configuration.cpp:587
-#, fuzzy
 #| msgid "Store Preset File"
 msgid "Save Preset File"
 msgstr "Сохранить файл радиостанций"
 
 #: radio-configuration.cpp:664
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "found %1 new stations"
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
-msgstr[0] "найдено %1 новых станций"
-msgstr[1] "найдено %1 новых станций"
+msgstr[0] "найдено %1 новая станция"
+msgstr[1] "найдено %1 новые станции"
 msgstr[2] "найдено %1 новых станций"
 
 #: radio-configuration.cpp:666
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "have now %1 stations"
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"
-msgstr[0] "всего сейчас %1 станций"
-msgstr[1] "всего сейчас %1 станций"
+msgstr[0] "всего сейчас %1 станция"
+msgstr[1] "всего сейчас %1 станции"
 msgstr[2] "всего сейчас %1 станций"
 
 #: radio.cpp:35
@@ -120,7 +114,6 @@ msgid "Could not find a plugin for radio station %1"
 msgstr "Не могу найти модуль для радиостанции %1"
 
 #: radio.cpp:399
-#, fuzzy
 #| msgid "unknown"
 msgctxt "Unknown description"
 msgid "unknown"
@@ -141,7 +134,6 @@ msgstr "Параметры &радиостанций"
 #. i18n: file: radio-configuration-ui.ui:107
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
 #: rc.cpp:6 rc.cpp:9 rc.cpp:96 rc.cpp:99
-#, fuzzy
 #| msgid "Search Stations"
 msgid "Search stations"
 msgstr "Искать станции"
@@ -155,7 +147,6 @@ msgstr "Искать станции"
 #. i18n: file: radio-configuration-ui.ui:126
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
 #: rc.cpp:12 rc.cpp:15 rc.cpp:102 rc.cpp:105
-#, fuzzy
 #| msgid "Load Presets"
 msgid "Load presets"
 msgstr "Загрузить установки"
@@ -169,7 +160,6 @@ msgstr "Загрузить установки"
 #. i18n: file: radio-configuration-ui.ui:145
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
 #: rc.cpp:18 rc.cpp:21 rc.cpp:108 rc.cpp:111
-#, fuzzy
 #| msgid "Save Presets as ..."
 msgid "Save presets as..."
 msgstr "Сохранить установки как..."
@@ -177,26 +167,23 @@ msgstr "Сохранить установки как..."
 #. i18n: file: radio-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
 #: rc.cpp:24 rc.cpp:114
-#, fuzzy
 #| msgid "Name"
 msgid "Name:"
-msgstr "Название"
+msgstr "Название:"
 
 #. i18n: file: radio-configuration-ui.ui:208
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
 #: rc.cpp:27 rc.cpp:117
-#, fuzzy
 #| msgid "Short Name"
 msgid "Short name:"
-msgstr "Сокращённое название"
+msgstr "Сокращённое название:"
 
 #. i18n: file: radio-configuration-ui.ui:232
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
 #: rc.cpp:30 rc.cpp:120
-#, fuzzy
 #| msgid "Pixmap File"
 msgid "Pixmap file:"
-msgstr "Пиктограмма"
+msgstr "Пиктограмма:"
 
 #. i18n: file: radio-configuration-ui.ui:285
 #. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
@@ -206,11 +193,12 @@ msgid ""
 "aware, that some drivers might ignore this flag without saying they will "
 "ignore it.</i></p>"
 msgstr ""
+"<p>Заставить тюнер работать в моно/стерео режиме.<i> Некоторые "
+"драйверы могут игнорировать этот параметр, не сообщая об этом</i></p>"
 
 #. i18n: file: radio-configuration-ui.ui:289
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: rc.cpp:36 rc.cpp:126
-#, fuzzy
 #| msgid "<don't care>"
 msgid "<do not care>"
 msgstr "<не важно>"
@@ -243,18 +231,16 @@ msgstr " %"
 #. i18n: file: radio-configuration-ui.ui:332
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
 #: rc.cpp:55 rc.cpp:145
-#, fuzzy
 #| msgid "Stereo Mode"
 msgid "Stereo mode:"
-msgstr "Стерео режим"
+msgstr "Стерео режим:"
 
 #. i18n: file: radio-configuration-ui.ui:342
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
 #: rc.cpp:58 rc.cpp:148
-#, fuzzy
 #| msgid "Volume Preset"
 msgid "Volume preset:"
-msgstr "Установить громкость (-1=не менять)"
+msgstr "Установить громкость:"
 
 #. i18n: file: radio-configuration-ui.ui:389
 #. i18n: ectx: attribute (title), widget (QWidget, About)
@@ -265,26 +251,23 @@ msgstr "Файл &радиостанций"
 #. i18n: file: radio-configuration-ui.ui:398
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
 #: rc.cpp:64 rc.cpp:154
-#, fuzzy
 #| msgid "Personal Preset File"
 msgid "Personal preset file:"
-msgstr "Пользовательский файл настроек"
+msgstr "Пользовательский файл настроек:"
 
 #. i18n: file: radio-configuration-ui.ui:413
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
 #: rc.cpp:67 rc.cpp:157
-#, fuzzy
 #| msgid "City"
 msgid "City:"
-msgstr "Город"
+msgstr "Город:"
 
 #. i18n: file: radio-configuration-ui.ui:426
 #. i18n: ectx: property (text), widget (QLabel, labelCountry)
 #: rc.cpp:70 rc.cpp:160
-#, fuzzy
 #| msgid "Country"
 msgid "Country:"
-msgstr "Страна"
+msgstr "Страна:"
 
 #. i18n: file: radio-configuration-ui.ui:457
 #. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
@@ -295,34 +278,30 @@ msgstr "&Текущее время"
 #. i18n: file: radio-configuration-ui.ui:466
 #. i18n: ectx: property (text), widget (QLabel, labelComment)
 #: rc.cpp:76 rc.cpp:166
-#, fuzzy
 #| msgid "Comment"
 msgid "Comment:"
-msgstr "Описание"
+msgstr "Описание:"
 
 #. i18n: file: radio-configuration-ui.ui:479
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
 #: rc.cpp:79 rc.cpp:169
-#, fuzzy
 #| msgid "Media"
 msgid "Media:"
-msgstr "Носитель"
+msgstr "Источник:"
 
 #. i18n: file: radio-configuration-ui.ui:489
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
 #: rc.cpp:82 rc.cpp:172
-#, fuzzy
 #| msgid "Maintainer"
 msgid "Maintainer:"
-msgstr "Автор"
+msgstr "Автор:"
 
 #. i18n: file: radio-configuration-ui.ui:502
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
 #: rc.cpp:85 rc.cpp:175
-#, fuzzy
 #| msgid "Last Change"
 msgid "Last change:"
-msgstr "Последнее изменение"
+msgstr "Последнее изменение:"
 
 #. i18n: file: radio-configuration-ui.ui:536
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)

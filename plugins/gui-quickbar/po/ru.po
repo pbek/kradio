@@ -2,14 +2,14 @@
 # translation of kradio-gui-quickbar.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2013-03-09 07:10+0400\n"
-"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
+"PO-Revision-Date: 2014-09-18 20:47+0400\n"
+"Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -36,16 +36,15 @@ msgid "Quickbar Configuration"
 msgstr "Настройка панели быстрого доступа"
 
 #: quickbar.cpp:370
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "KRadio4 Quickbar%1"
 msgid "KRadio4 Quickbar, %1"
 msgstr "Панель радиостанций %1"
 
 #: quickbar.cpp:370
-#, fuzzy
 #| msgid "KRadio4 Quickbar%1"
 msgid "KRadio4 Quickbar"
-msgstr "Панель радиостанций %1"
+msgstr "Панель радиостанций"
 
 #: quickbar.cpp:378
 msgid "contentsDragEnterEvent accepted"

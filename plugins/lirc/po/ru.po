@@ -2,14 +2,14 @@
 # translation of kradio-lirc.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2013-03-09 07:06+0400\n"
-"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
+"PO-Revision-Date: 2014-09-18 20:52+0400\n"
+"Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,6 @@ msgid "Quit KRadio"
 msgstr "Закрыть KRadio"
 
 #: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-#, fuzzy
 #| msgid "<don't care>"
 msgid "<do not care>"
 msgstr "<не важно>"
@@ -124,7 +123,6 @@ msgid ""
 msgstr "Введите ключевую строку вашего ПДУ либо просто нажмите кнопку на нём."
 
 #: lirc-configuration.cpp:276
-#, fuzzy
 #| msgid "Double Click on the entries to change the assignments"
 msgid "Double click on the entries to change the assignments"
 msgstr "Для изменения привязки дважды щёлкните по ней мышью."
@@ -138,13 +136,11 @@ msgid "LIRC Plugin"
 msgstr "Модуль ДУ (LIRC)"
 
 #: lircsupport.cpp:84
-#, fuzzy
 #| msgid "initializing kradio lirc plugin"
 msgid "initializing KRadio LIRC plugin"
 msgstr "Инициализация модуля LIRC"
 
 #: lircsupport.cpp:85
-#, fuzzy
 #| msgid ""
 #| "warnings/errors about missing sockets don't harm - usually the LIRC "
 #| "daemon is not running in these cases."
@@ -156,13 +152,11 @@ msgstr ""
 "случаях LIRC не запущен."
 
 #: lircsupport.cpp:94
-#, fuzzy
 #| msgid "Initializing kradio lirc plugin failed"
 msgid "Initializing KRadio LIRC plugin failed"
 msgstr "Инициализация модуля LIRC не удалась"
 
 #: lircsupport.cpp:103
-#, fuzzy
 #| msgid "Initializing kradio lirc plugin successful"
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Модуль LIRC инициализирован"
@@ -194,10 +188,10 @@ msgstr ""
 "шаблон для всех кнопок/пультов \"button=*\" и \"remote=*\" соответственно."
 
 #: lircsupport.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "There is no entry for kradio in your .lircrc files %1."
 msgid "There is no entry for KRadio in your .lircrc files %1."
-msgstr "Ни в одном из ваших файлов .lircrc %1 нет упоминания о KRadio."
+msgstr "Ни в одном из ваших файлов .lircrc %1 нет настроек для KRadio."
 
 #: lircsupport.cpp:148
 #, kde-format
@@ -205,7 +199,7 @@ msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Настройте файлы .lircrc %1."
 
 #: lircsupport.cpp:152 lircsupport.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Initializing kradio lirc plugin failed. Could not read config file %1"
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
@@ -221,10 +215,9 @@ msgstr "%1 не существует. Был создан файл .lircrc дл�
 #: lircsupport.cpp:192
 #, kde-format
 msgid "Failed to copy %1 to %2"
-msgstr ""
+msgstr "Не удалось скопировать %1 в %2"
 
 #: lircsupport.cpp:244
-#, fuzzy
 #| msgid ""
 #| "Reading from LIRC socket failed. Disabling LIRC Functions till next start "
 #| "of kradio"
@@ -266,7 +259,6 @@ msgstr "textLabel1"
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-#, fuzzy
 #| msgid "Power off .lircrc mode"
 msgid "Power off .lircrc mode:"
 msgstr "Выключить режим .lircrc"
@@ -274,7 +266,6 @@ msgstr "Выключить режим .lircrc"
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-#, fuzzy
 #| msgid "Power on .lircrc mode"
 msgid "Power on .lircrc mode:"
 msgstr "Включить режим .lircrc"
@@ -282,7 +273,6 @@ msgstr "Включить режим .lircrc"
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-#, fuzzy
 #| msgid "Synchronize .lircrc modes at runtime"
 msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Синхронизировать режимы .lircrc во время работы"
@@ -290,7 +280,6 @@ msgstr "Синхронизировать режимы .lircrc во время р
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-#, fuzzy
 #| msgid "Synchronize .lircrc modes at startup"
 msgid "Synchronize .lircrc modes at startup:"
 msgstr "Синхронизировать режимы .lircrc при запуске"
@@ -298,7 +287,6 @@ msgstr "Синхронизировать режимы .lircrc при запус�
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-#, fuzzy
 #| msgid "LIRC Configuration File"
 msgid "LIRC configuration file:"
 msgstr "файл настроек LIRC"

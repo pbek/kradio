@@ -2,14 +2,14 @@
 # translation of kradio-alsa-sound.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2013-03-09 08:16+0400\n"
-"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
+"PO-Revision-Date: 2014-09-18 20:44+0400\n"
+"Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,6 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: alsa-sound.cpp:44
-#, fuzzy
 msgid "Advanced Linux Sound Architecture (ALSA) Support"
 msgstr "Поддержка Расширенной звуковой архитектуры Linux (ALSA)"
 
@@ -63,7 +62,6 @@ msgid "internal stream, not stored (%1)"
 msgstr "внутренний поток, не сохраняется (%1)"
 
 #: alsa-sound.cpp:792
-#, fuzzy
 #| msgid ""
 #| "AlsaPlugin: internal error. Expected non-existing playback thread, but "
 #| "found one\n"
@@ -74,7 +72,6 @@ msgstr ""
 "AlsaPlugin: внутренняя ошибка. Найден не ожидавшийся поток воспроизведения\n"
 
 #: alsa-sound.cpp:856
-#, fuzzy
 #| msgid ""
 #| "AlsaPlugin: internal error. Expected non-existing capture thread, but "
 #| "found one\n"
@@ -287,7 +284,6 @@ msgstr "Поток ALSA: опустошение буфера"
 #. i18n: file: alsa-mixer-element-ui.ui:173
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActive)
 #: rc.cpp:3 rc.cpp:176
-#, fuzzy
 #| msgid "Capture O&n"
 msgid "Capture o&n"
 msgstr "Захват &включён"
@@ -313,7 +309,6 @@ msgstr "Воспроизведение"
 #. i18n: file: alsa-sound-configuration-ui.ui:30
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
 #: rc.cpp:15 rc.cpp:188
-#, fuzzy
 #| msgid "Disable Pla&yback"
 msgid "Disable pla&yback"
 msgstr "Запретить &воспроизведение"
@@ -321,10 +316,9 @@ msgstr "Запретить &воспроизведение"
 #. i18n: file: alsa-sound-configuration-ui.ui:62
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_3)
 #: rc.cpp:18 rc.cpp:191
-#, fuzzy
 #| msgid "PCM Playback Device"
 msgid "PCM playback device:"
-msgstr "Устройство воспроизведения"
+msgstr "Устройство воспроизведения:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:98
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_2)
@@ -335,10 +329,9 @@ msgstr "Устройство воспроизведения"
 #. i18n: file: alsa-sound-configuration-ui.ui:380
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_4)
 #: rc.cpp:21 rc.cpp:72 rc.cpp:194 rc.cpp:245
-#, fuzzy
 #| msgid "Buffer Size"
 msgid "Buffer size:"
-msgstr "Размер буфера"
+msgstr "Размер буфера:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:114
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackBufferSize)
@@ -364,26 +357,23 @@ msgstr " кБ"
 #. i18n: file: alsa-sound-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:27 rc.cpp:200
-#, fuzzy
 #| msgid "Soft Volume Correction Factor"
 msgid "Soft volume correction factor:"
-msgstr "Корректировочный множитель громкости"
+msgstr "Корректировочный множитель громкости:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:143
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableSoftVolume)
 #: rc.cpp:30 rc.cpp:203
-#, fuzzy
 #| msgid "Soft Playback Volume"
 msgid "Soft playback volume:"
-msgstr "Программное изменение громкости"
+msgstr "Программное изменение громкости: "
 
 #. i18n: file: alsa-sound-configuration-ui.ui:166
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_5)
 #: rc.cpp:33 rc.cpp:206
-#, fuzzy
 #| msgid "Playback Mixer Card"
 msgid "Playback mixer card:"
-msgstr "Аудиокарта воспроизведения"
+msgstr "Аудиокарта воспроизведения:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:176
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_3)
@@ -394,10 +384,9 @@ msgstr "Аудиокарта воспроизведения"
 #. i18n: file: alsa-sound-configuration-ui.ui:425
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_5)
 #: rc.cpp:36 rc.cpp:81 rc.cpp:209 rc.cpp:254
-#, fuzzy
 #| msgid "Buffer Chunk Size"
 msgid "Buffer chunk size:"
-msgstr "Размер фрагмента буфера"
+msgstr "Размер фрагмента буфера:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:186
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
@@ -408,10 +397,9 @@ msgstr "Размер фрагмента буфера"
 #. i18n: file: alsa-sound-configuration-ui.ui:415
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_9)
 #: rc.cpp:39 rc.cpp:78 rc.cpp:212 rc.cpp:251
-#, fuzzy
 #| msgid "recommended: 96 kB"
 msgid "(recommended: 96 kB)"
-msgstr "рекомендуется: 96 кБ"
+msgstr "(рекомендуется: 96 кБ)"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:196
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_5)
@@ -422,10 +410,9 @@ msgstr "рекомендуется: 96 кБ"
 #. i18n: file: alsa-sound-configuration-ui.ui:461
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
 #: rc.cpp:42 rc.cpp:90 rc.cpp:215 rc.cpp:263
-#, fuzzy
 #| msgid "recommended: 96 kB"
 msgid "(recommended: 16 kB)"
-msgstr "рекомендуется: 96 кБ"
+msgstr "(рекомендуется: 16 кБ)"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:237
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
@@ -484,7 +471,6 @@ msgstr "Захват"
 #. i18n: file: alsa-sound-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
 #: rc.cpp:63 rc.cpp:236
-#, fuzzy
 #| msgid "Disa&ble Capture"
 msgid "Disa&ble capture"
 msgstr "Запретить &запись"
@@ -492,18 +478,16 @@ msgstr "Запретить &запись"
 #. i18n: file: alsa-sound-configuration-ui.ui:340
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_4)
 #: rc.cpp:66 rc.cpp:239
-#, fuzzy
 #| msgid "PCM Capture Device"
 msgid "PCM capture device:"
-msgstr "Устройство записи"
+msgstr "Устройство записи:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:360
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_6)
 #: rc.cpp:69 rc.cpp:242
-#, fuzzy
 #| msgid "Capture Mixer Card"
 msgid "Capture mixer card:"
-msgstr "Аудиокарта записи"
+msgstr "Аудиокарта записи:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:460
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
@@ -529,7 +513,6 @@ msgstr "16 кБ"
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCaptureFormatOverride)
 #: rc.cpp:102 rc.cpp:105 rc.cpp:162 rc.cpp:165 rc.cpp:275 rc.cpp:278
 #: rc.cpp:335 rc.cpp:338
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -555,53 +538,40 @@ msgid ""
 "issue for some Avermedia TV/radio card drivers which create a pseudo ALSA "
 "sound device to provide the sound samples aquired over the PCI bus."
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Этот "
-"переключатель нужно включить, чтобы разрешить KRadio использовать внутренние "
+"Этот переключатель нужно включить, чтобы разрешить KRadio использовать "
+"внутренние "
 "аудиоданные с правильными настройками в случае, если драйвер "
 "(псевдо)устройства ALSA сообщает неверную информацию об этих данных. Это "
 "известно, по меньшей мере, о некоторых ТВ/радио платах от AverMedia, которые "
-"создают псевдоустройство ALSA чтобы передавать аудиоданные через шину PCI.</"
-"p></body></html>"
+"создают псевдоустройство ALSA чтобы передавать аудиоданные через шину PCI."
 
 #. i18n: file: alsa-sound-configuration-ui.ui:528
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:111 rc.cpp:284
-#, fuzzy
 #| msgid "Channels"
 msgid "Channels:"
-msgstr "Число каналов"
+msgstr "Число каналов:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:541
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:114 rc.cpp:287
-#, fuzzy
 #| msgid "Sample Rate"
 msgid "Sample rate:"
-msgstr "Частота выборки"
+msgstr "Частота выборки:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:554
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:117 rc.cpp:290
-#, fuzzy
 #| msgid "Sample Bits"
 msgid "Sample bits:"
-msgstr "Битов на элемент"
+msgstr "Битов на элемент:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:567
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:120 rc.cpp:293
-#, fuzzy
 #| msgid "Endianess"
 msgid "Endianess:"
-msgstr "Порядок байтов"
+msgstr "Порядок байтов:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:587
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
@@ -684,7 +654,6 @@ msgstr "Моно"
 #. i18n: file: alsa-sound-configuration-ui.ui:720
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCaptureFormatOverride)
 #: rc.cpp:168 rc.cpp:341
-#, fuzzy
 #| msgid "Override Capture Format"
 msgid "Override capture format"
 msgstr "Использовать свой формат для захвата"

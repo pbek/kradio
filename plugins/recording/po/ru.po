@@ -2,14 +2,14 @@
 # translation of kradio-recording.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2013-03-09 08:31+0400\n"
-"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
+"PO-Revision-Date: 2014-09-18 20:59+0400\n"
+"Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: encoder_mp3.cpp:82 encoder_mp3.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Error %1 while encoding mp3. "
 msgid "Error %1 while encoding MP3. "
 msgstr "При кодировании MP3 произошла ошибка: %1. "
@@ -31,11 +31,10 @@ msgid "Error %1 writing output. "
 msgstr "Во время записи произошла ошибка: %1"
 
 #: encoder_mp3.cpp:109
-#, fuzzy
 #| msgid "Cannot initialize lalibmp3lame. "
 msgid "Cannot initialize libmp3lame. "
 msgstr ""
-"Не могу инициализировать lalibmp3lame — необходимо для кодирования в MP3."
+"Не могу инициализировать libmp3lame — необходимо для кодирования в MP3."
 
 #: encoder_mp3.cpp:126
 msgid "Cannot initialize libmp3lame parameters. "
@@ -53,13 +52,11 @@ msgid "Cannot open output file %1. "
 msgstr "Не могу открыть выходной файл %1. "
 
 #: encoder_mp3.cpp:162
-#, fuzzy
 #| msgid "Cannot allocate buffers for mp3 encoding. "
 msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Не могу разместить в памяти буферы для кодирования MP3."
 
 #: encoder_ogg.cpp:100
-#, fuzzy
 #| msgid "Failed writing data to ogg/vorbis output stream. "
 msgid "Failed writing data to Ogg/Vorbis output stream. "
 msgstr "Ошибка записи данных в выходной поток ogg/vorbis. "
@@ -70,7 +67,6 @@ msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\": %2"
 
 #: encoder_ogg.cpp:154
-#, fuzzy
 #| msgid ""
 #| "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
@@ -78,7 +74,6 @@ msgstr ""
 "Инициализация режима Ogg/Vorbis не удалась: качество записи указано неверно\n"
 
 #: encoder_ogg.cpp:207
-#, fuzzy
 #| msgid "Failed writing Ogg/Vorbis header to output stream\n"
 msgid "Failed writing Ogg/Vorbis header to output stream"
 msgstr "Ошибка записи заголовка Ogg/Vorbis в выходной поток\n"
@@ -92,10 +87,9 @@ msgstr "Выход"
 #. i18n: file: recording-configuration-ui.ui:41
 #. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
 #: rc.cpp:6 rc.cpp:136
-#, fuzzy
 #| msgid "ID3 Genre"
 msgid "ID3 genre:"
-msgstr "Жанр"
+msgstr "Жанр:"
 
 #. i18n: file: recording-configuration-ui.ui:61
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory_3)
@@ -178,23 +172,20 @@ msgstr ""
 #. i18n: file: recording-configuration-ui.ui:77
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)
 #: rc.cpp:17 rc.cpp:147
-#, fuzzy
 #| msgid "ID3 Title"
 msgid "ID3 title:"
-msgstr "Название"
+msgstr "Название:"
 
 #. i18n: file: recording-configuration-ui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
 #: rc.cpp:20 rc.cpp:150
-#, fuzzy
 #| msgid "MP3 Quality(0 - high, 9 - low)"
 msgid "MP3 quality (0 - high, 9 - low):"
-msgstr "Качество MP3 (0 — высокое, 9 — низкое)"
+msgstr "Качество MP3 (0 — высокое, 9 — низкое):"
 
 #. i18n: file: recording-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
 #: rc.cpp:23 rc.cpp:153
-#, fuzzy
 #| msgid "raw pcm output (.raw)"
 msgid "Raw PCM Output (.raw)"
 msgstr "Неформатированный вывод (.raw)"
@@ -232,42 +223,37 @@ msgstr "Сжатый Ogg Vorbis (.ogg)"
 #. i18n: file: recording-configuration-ui.ui:206
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
 #: rc.cpp:41 rc.cpp:171
-#, fuzzy
 #| msgid "Recording Directory"
 msgid "Recording directory:"
-msgstr "Каталог для сохранения"
+msgstr "Каталог для сохранения:"
 
 #. i18n: file: recording-configuration-ui.ui:216
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
 #: rc.cpp:44 rc.cpp:174
-#, fuzzy
 #| msgid "File Format"
 msgid "File format:"
-msgstr "Формат файла"
+msgstr "Формат файла:"
 
 #. i18n: file: recording-configuration-ui.ui:226
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:47 rc.cpp:177
-#, fuzzy
 #| msgid "Ogg Quality(0 - low, 9 - high)"
 msgid "Ogg quality (0 - low, 9 - high):"
-msgstr "Качество Ogg (0 — ниже, 9 — выше)"
+msgstr "Качество Ogg (0 — ниже, 9 — выше):"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
 #: rc.cpp:50 rc.cpp:180
-#, fuzzy
 #| msgid "Filename"
 msgid "Filename:"
-msgstr "Имя файла"
+msgstr "Имя файла:"
 
 #. i18n: file: recording-configuration-ui.ui:267
 #. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
 #: rc.cpp:53 rc.cpp:183
-#, fuzzy
 #| msgid "ID3 Artist"
 msgid "ID3 artist:"
-msgstr "Исполнитель"
+msgstr "Исполнитель:"
 
 #. i18n: file: recording-configuration-ui.ui:299
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -302,10 +288,9 @@ msgstr "11025"
 #. i18n: file: recording-configuration-ui.ui:356
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:71 rc.cpp:201
-#, fuzzy
 #| msgid "Endianess"
 msgid "Endianess:"
-msgstr "Порядок байтов"
+msgstr "Порядок байтов:"
 
 #. i18n: file: recording-configuration-ui.ui:389
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
@@ -322,10 +307,9 @@ msgstr "1 (Моно)"
 #. i18n: file: recording-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:80 rc.cpp:210
-#, fuzzy
 #| msgid "Sample Rate"
 msgid "Sample rate:"
-msgstr "Частота дискретизации"
+msgstr "Частота дискретизации:"
 
 #. i18n: file: recording-configuration-ui.ui:419
 #. i18n: ectx: property (text), item, widget (KComboBox, editEndianess)
@@ -354,18 +338,16 @@ msgstr "8"
 #. i18n: file: recording-configuration-ui.ui:452
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:95 rc.cpp:225
-#, fuzzy
 #| msgid "Channels"
 msgid "Channels:"
-msgstr "Число каналов"
+msgstr "Число каналов:"
 
 #. i18n: file: recording-configuration-ui.ui:462
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:98 rc.cpp:228
-#, fuzzy
 #| msgid "Sample Bits"
 msgid "Sample bits:"
-msgstr "Бит на элемент выборки"
+msgstr "Бит на элемент выборки:"
 
 #. i18n: file: recording-configuration-ui.ui:479
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
@@ -394,18 +376,16 @@ msgstr " кБ"
 #. i18n: file: recording-configuration-ui.ui:557
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
 #: rc.cpp:113 rc.cpp:243
-#, fuzzy
 #| msgid "Encoding Buffer Size"
 msgid "Encoding buffer size:"
-msgstr "Размер буфера для записи"
+msgstr "Размер буфера для записи:"
 
 #. i18n: file: recording-configuration-ui.ui:577
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
 #: rc.cpp:116 rc.cpp:246
-#, fuzzy
 #| msgid "Number of Buffers"
 msgid "Number of buffers:"
-msgstr "Количество буферов"
+msgstr "Количество буферов:"
 
 #. i18n: file: recording-configuration-ui.ui:606
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
@@ -422,10 +402,9 @@ msgstr "Включить"
 #. i18n: file: recording-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
 #: rc.cpp:125 rc.cpp:255
-#, fuzzy
 #| msgid "PreRecording Time"
 msgid "Pre-recording time:"
-msgstr "Упреждение"
+msgstr "Упреждение:"
 
 #. i18n: file: recording-configuration-ui.ui:662
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
@@ -481,10 +460,10 @@ msgstr ""
 "Пропускаю %1 байт на входе."
 
 #: recording.cpp:552
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Recording::outputFile: "
 msgid "Recording::outputFile: %1"
-msgstr "Recording::outputFile (выходной файл записи):"
+msgstr "Recording::outputFile (выходной файл записи): %1"
 
 #: recording.cpp:602
 msgid "The encoding thread did not finish. It will be killed now."
@@ -511,7 +490,6 @@ msgid "Recording Monitor"
 msgstr "Монитор записи"
 
 #: recording-monitor.cpp:44
-#, fuzzy
 #| msgid "SoundStream"
 msgid "Sound Stream"
 msgstr "Источник"

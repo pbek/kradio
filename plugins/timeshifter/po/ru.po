@@ -2,14 +2,14 @@
 # translation of kradio-timeshifter.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2013-03-09 08:07+0400\n"
-"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
+"PO-Revision-Date: 2014-09-18 21:07+0400\n"
+"Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -34,34 +34,30 @@ msgstr " Мб"
 #. i18n: file: timeshifter-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:9 rc.cpp:27
-#, fuzzy
 #| msgid "Maximum File Size"
 msgid "Maximum file size:"
-msgstr "Размер файла, не более"
+msgstr "Размер файла, не более:"
 
 #. i18n: file: timeshifter-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:12 rc.cpp:30
-#, fuzzy
 #| msgid "Playback Mixer Device"
 msgid "Playback mixer device:"
-msgstr "Устройство воспроизведения"
+msgstr "Устройство воспроизведения:"
 
 #. i18n: file: timeshifter-configuration-ui.ui:96
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
 #: rc.cpp:15 rc.cpp:33
-#, fuzzy
 #| msgid "Temporary File"
 msgid "Temporary file:"
-msgstr "Временный файл"
+msgstr "Временный файл:"
 
 #. i18n: file: timeshifter-configuration-ui.ui:109
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:18 rc.cpp:36
-#, fuzzy
 #| msgid "Playback Mixer Channel"
 msgid "Playback mixer channel:"
-msgstr "Канал воспроизведения"
+msgstr "Канал воспроизведения:"
 
 #: timeshifter-configuration.cpp:146
 msgid "any ( * )"

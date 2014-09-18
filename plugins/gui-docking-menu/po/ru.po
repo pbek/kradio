@@ -2,14 +2,14 @@
 # translation of kradio-gui-docking-menu.po to
 # This file is put in the public domain.
 #
-# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2006, 2009, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2013-03-09 07:13+0400\n"
-"Last-Translator: Алексей <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
+"PO-Revision-Date: 2014-09-18 20:46+0400\n"
+"Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,57 +20,49 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: docking-configuration.cpp:126
-#, fuzzy
 #| msgid "Mouse Click on Tray Icon"
 msgid "Mouse click on tray icon:"
-msgstr "Щелчок мышью по иконке в лотке"
+msgstr "Щелчок мышью по иконке в лотке:"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-#, fuzzy
 #| msgid "Left"
 msgctxt "Mouse button"
 msgid "Left:"
-msgstr "Левая кнопка"
+msgstr "Левая кнопка:"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-#, fuzzy
 #| msgid "Right"
 msgctxt "Mouse button"
 msgid "Right:"
-msgstr "Правая кнопка"
+msgstr "Правая кнопка:"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-#, fuzzy
 #| msgid "Middle"
 msgctxt "Mouse button"
 msgid "Middle:"
-msgstr "Средняя кнопка"
+msgstr "Средняя кнопка:"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-#, fuzzy
 #| msgid "XButton1"
 msgctxt "Mouse button"
 msgid "XButton1:"
-msgstr "Доп. кнопка 1"
+msgstr "Доп. кнопка 1:"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-#, fuzzy
 #| msgid "XButton2"
 msgctxt "Mouse button"
 msgid "XButton2:"
-msgstr "Доп. кнопка 2"
+msgstr "Доп. кнопка 2:"
 
 #: docking-configuration.cpp:133
-#, fuzzy
 #| msgid "Mouse Double-Click on Tray Icon"
 msgid "Mouse double-click on tray icon:"
-msgstr "Двойной щелчок мышью по иконке в лотке"
+msgstr "Двойной щелчок мышью по иконке в лотке:"
 
 #: docking-configuration.cpp:140
-#, fuzzy
 #| msgid "Mouse Wheel Action on Tray Icon"
 msgid "Mouse wheel action on tray icon:"
-msgstr "Колесо мыши"
+msgstr "Колесо мыши:"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
@@ -117,10 +109,9 @@ msgid "Change Frequency"
 msgstr "Изменить частоту"
 
 #: docking.cpp:46
-#, fuzzy
 #| msgid "System Tray Icon"
 msgid "System Tray Icon/Menu"
-msgstr "Пиктограмма в системном лотке"
+msgstr "Пиктограмма/меню в системном лотке"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
