@@ -880,7 +880,7 @@ void RadioView::slotSnooze()
     QAction *a = dynamic_cast<QAction*>(sender());
     const QVariant &data = a->data();
     if (!data.isNull() && data.isValid() && data.canConvert<int>()) {
-        sendCountdownSeconds(60 * data.value<int>());
+        sendCountdownSeconds(60 * data.value<int>(), querySuspendOnSleep());
         sendStartCountdown();
     }
 }

@@ -134,7 +134,7 @@ RECEIVERS:
     bool noticeCountdownStarted(const QDateTime &/*end*/) { return false; }
     bool noticeCountdownStopped()                      { return false; }
     bool noticeCountdownZero()                         { return false; }
-    bool noticeCountdownSecondsChanged(int /*n*/)      { return false; }
+    bool noticeCountdownSecondsChanged(int /*n*/, bool /*resumeOnSuspend*/)      { return false; }
 
     // IRadioDevicePoolClient
 

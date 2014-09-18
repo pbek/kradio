@@ -38,6 +38,7 @@ protected:
     Alarm const *     m_waitingFor;         // m_alarmTimer is exactly for this date/time
 
     int               m_countdownSeconds;   // in seconds
+    bool              m_suspendOnSleep;
     QDateTime         m_countdownEnd;
 
     QTimer            m_alarmTimer;
@@ -62,6 +63,8 @@ public:
 public:
     virtual void   saveState    (      KConfigGroup &) const;
     virtual void   restoreState (const KConfigGroup &);
+    
+    virtual void   updateTimers ();
 
     virtual ConfigPageInfo  createConfigurationPage();
 //     virtual AboutPageInfo   createAboutPage();
@@ -71,7 +74,7 @@ public:
 
 RECEIVERS:
     bool setAlarms(const AlarmVector &sl);
-    bool setCountdownSeconds(int n);
+    bool setCountdownSeconds(int n, bool suspendOnSleep);
     bool startCountdown();
     bool stopCountdown();
 
@@ -80,6 +83,7 @@ ANSWERS:
     const Alarm*        getNextAlarm () const;
     const AlarmVector & getAlarms () const { return m_alarms; }
     int                 getCountdownSeconds () const { return m_countdownSeconds; }
+    bool                getSuspendOnSleep () const { return m_suspendOnSleep; }
     QDateTime           getCountdownEnd () const;
 
 
@@ -88,6 +92,7 @@ ANSWERS:
 protected slots:
     virtual void    slotQTimerAlarmTimeout();
     virtual void    slotQTimerCountdownTimeout();
+    virtual void    slotResumingFromSuspend();
 
 };
 

@@ -105,6 +105,7 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotSetDirty()));
     QObject::connect(comboAlarmType,        SIGNAL(activated(int)),              this, SLOT(slotSetDirty()));
     QObject::connect(editSleep,             SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
+    QObject::connect(cbSuspendOnSleep,      SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
     QObject::connect(editRecordingTemplateFileName,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
     QObject::connect(editRecordingTemplateID3Title,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
     QObject::connect(editRecordingTemplateID3Artist, SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
@@ -196,11 +197,13 @@ bool TimeControlConfiguration::noticeCountdownZero()
     return false;
 }
 
-bool TimeControlConfiguration::noticeCountdownSecondsChanged(int n)
+bool TimeControlConfiguration::noticeCountdownSecondsChanged(int n, bool suspendOnSleep)
 {
     editSleep->setValue((int)rint(n / 60));
+    cbSuspendOnSleep->setChecked(suspendOnSleep);
     return false;
 }
+
 
 
 // IRadioClient
@@ -517,7 +520,7 @@ void TimeControlConfiguration::slotOK()
 {
     if (m_dirty) {
         sendAlarms(alarms);
-        sendCountdownSeconds(editSleep->value() * 60);
+        sendCountdownSeconds(editSleep->value() * 60, cbSuspendOnSleep->isChecked());
         m_dirty = false;
     }
 }
@@ -526,7 +529,7 @@ void TimeControlConfiguration::slotCancel()
 {
     if (m_dirty) {
         noticeAlarmsChanged(queryAlarms());
-        noticeCountdownSecondsChanged(queryCountdownSeconds());
+        noticeCountdownSecondsChanged(queryCountdownSeconds(), querySuspendOnSleep());
         m_dirty = false;
     }
 }

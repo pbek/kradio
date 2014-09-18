@@ -17,6 +17,7 @@
 
 #include <kaboutdata.h>
 #include <kconfig.h>
+#include <solid/powermanagement.h>
 
 #include "timecontrol.h"
 #include "timecontrol-configuration.h"
@@ -50,11 +51,14 @@ TimeControl::TimeControl (const QString &instanceID, const QString &n)
     : PluginBase(instanceID, n, i18n("Time Control Plugin")),
       m_waitingFor(NULL),
       m_countdownSeconds(0),
+      m_suspendOnSleep(false),
       m_alarmTimer(this),
       m_countdownTimer(this)
 {
     QObject::connect(&m_alarmTimer,     SIGNAL(timeout()), this, SLOT(slotQTimerAlarmTimeout()));
     QObject::connect(&m_countdownTimer, SIGNAL(timeout()), this, SLOT(slotQTimerCountdownTimeout()));
+    
+    QObject::connect(Solid::PowerManagement::notifier(), SIGNAL(resumingFromSuspend()), this, SLOT(slotResumingFromSuspend()));
 }
 
 
@@ -84,7 +88,7 @@ bool TimeControl::setAlarms (const AlarmVector &al)
 
         m_alarms = al;
 
-        slotQTimerAlarmTimeout();
+        updateTimers();
 
         notifyAlarmsChanged(m_alarms);
     }
@@ -92,12 +96,15 @@ bool TimeControl::setAlarms (const AlarmVector &al)
 }
 
 
-bool TimeControl::setCountdownSeconds(int n)
+bool TimeControl::setCountdownSeconds(int n, bool suspendOnSleep)
 {
-    int old = m_countdownSeconds;
+    int    oldSec     = m_countdownSeconds;
+    bool   oldSuspend = m_suspendOnSleep;
     m_countdownSeconds = n;
-    if (old != n)
-        notifyCountdownSecondsChanged(n);
+    m_suspendOnSleep   = suspendOnSleep;
+    if (oldSec != n || oldSuspend != suspendOnSleep) {
+        notifyCountdownSecondsChanged(m_countdownSeconds, m_suspendOnSleep);
+    }
     return true;
 }
 
@@ -174,6 +181,10 @@ void TimeControl::slotQTimerCountdownTimeout()
     stopCountdown();
 
     notifyCountdownZero();
+    
+    if (m_suspendOnSleep) {
+        Solid::PowerManagement::requestSleep(Solid::PowerManagement::SuspendState, this, SLOT(slotResumingFromSuspend()));
+    }
 }
 
 
@@ -182,7 +193,12 @@ void TimeControl::slotQTimerAlarmTimeout()
     if (m_waitingFor) {
         notifyAlarm(*m_waitingFor);
     }
+    updateTimers();
 
+}
+
+void TimeControl::updateTimers()
+{
     QDateTime now  = QDateTime::currentDateTime();
     Alarm const *n = getNextAlarm();
     QDateTime na   = getNextAlarmTime();
@@ -194,7 +210,7 @@ void TimeControl::slotQTimerAlarmTimeout()
         int days  = now.daysTo(na);
         int msecs = now.time().msecsTo(na.time());
 
-        if (days > 1) {
+        if (days >= 1) {
 
             m_alarmTimer.setSingleShot(true);
             m_alarmTimer.start(24 * 3600 * 1000);
@@ -249,7 +265,10 @@ void    TimeControl::restoreState (const KConfigGroup &config)
     }
 
     setAlarms(al);
-    setCountdownSeconds(config.readEntry("countdownSeconds", 30*60));
+    setCountdownSeconds(
+        config.readEntry("countdownSeconds", 30*60),
+        config.readEntry("suspendOnSleep",   false)
+    );
 }
 
 
@@ -273,6 +292,7 @@ void    TimeControl::saveState    (KConfigGroup &config) const
     }
 
     config.writeEntry("countdownSeconds",  m_countdownSeconds);
+    config.writeEntry("suspendOnSleep",    m_suspendOnSleep);
 }
 
 
@@ -285,6 +305,13 @@ ConfigPageInfo TimeControl::createConfigurationPage()
                            i18n("Setup Alarms"),
                            "kradio_kalarm"
                           );
+}
+
+
+
+void TimeControl::slotResumingFromSuspend()
+{
+    updateTimers();
 }
 
 

@@ -134,7 +134,7 @@ RECEIVERS:
     bool noticeCountdownStarted(const QDateTime &end);
     bool noticeCountdownStopped();
     bool noticeCountdownZero();
-    bool noticeCountdownSecondsChanged(int)           { return false; }
+    bool noticeCountdownSecondsChanged(int /*n*/, bool /*suspendOnSleep*/) { return false; }
 
 protected slots:
 

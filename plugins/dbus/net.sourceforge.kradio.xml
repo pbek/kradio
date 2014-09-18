@@ -51,7 +51,8 @@
     <method name="searchPrevStation">
     </method>
     <method name="startSleepCountdown">
-      <arg name="seconds" type="i" direction="in"/>
+      <arg name="seconds"        type="i" direction="in"/>
+      <arg name="suspendOnSleep" type="b" direction="in"/>
     </method>
     <method name="stopSleepCountdown">
     </method>

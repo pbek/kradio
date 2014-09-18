@@ -492,7 +492,7 @@ bool RadioDocking::noticePowerChanged(bool on)
     return true;
 }
 
-bool RadioDocking::noticeCountdownSecondsChanged(int /*n*/)
+bool RadioDocking::noticeCountdownSecondsChanged(int /*n*/, bool /*suspendOnSleep*/)
 {
     return false;
 }

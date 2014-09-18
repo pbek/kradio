@@ -184,7 +184,7 @@ RECEIVERS:
     bool noticeCountdownStarted(const QDateTime &/*end*/){ return false; } // ignore
     bool noticeCountdownStopped()                        { return false; } // ignore
     bool noticeCountdownZero();
-    bool noticeCountdownSecondsChanged(int /*n*/)        { return false; } // ignore
+    bool noticeCountdownSecondsChanged(int /*n*/, bool /*resumeOnSuspend*/) { return false; } // ignore
 
     // ISoundStreamClient
 

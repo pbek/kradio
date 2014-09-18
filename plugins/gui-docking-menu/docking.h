@@ -96,7 +96,7 @@ RECEIVERS:
     bool noticeCountdownStarted(const QDateTime &/*end*/);
     bool noticeCountdownStopped();
     bool noticeCountdownZero();
-    bool noticeCountdownSecondsChanged(int n);
+    bool noticeCountdownSecondsChanged(int n, bool suspendOnSleep);
 
 
     // IRadioClient

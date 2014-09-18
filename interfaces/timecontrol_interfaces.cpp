@@ -39,16 +39,16 @@ IF_IMPL_SENDER  (  ITimeControl::notifyCountdownStopped(),
 IF_IMPL_SENDER  (  ITimeControl::notifyCountdownZero(),
                    noticeCountdownZero()                                     )
 
-IF_IMPL_SENDER  (  ITimeControl::notifyCountdownSecondsChanged(int n),
-                   noticeCountdownSecondsChanged(n)                          )
+IF_IMPL_SENDER  (  ITimeControl::notifyCountdownSecondsChanged(int n, bool suspendOnSleep),
+                   noticeCountdownSecondsChanged(n, suspendOnSleep)          )
                    
 // ITimeControlClient
 
 IF_IMPL_SENDER  (  ITimeControlClient::sendAlarms(const AlarmVector &sl),
                    setAlarms(sl)                                             )
                    
-IF_IMPL_SENDER  (  ITimeControlClient::sendCountdownSeconds(int n),
-                   setCountdownSeconds(n)                                    )
+IF_IMPL_SENDER  (  ITimeControlClient::sendCountdownSeconds(int n, bool suspendOnSleep),
+                   setCountdownSeconds(n, suspendOnSleep)                    )
                    
 IF_IMPL_SENDER  (  ITimeControlClient::sendStartCountdown(),
                    startCountdown()                                          )
@@ -72,6 +72,10 @@ IF_IMPL_QUERY   (  const AlarmVector &ITimeControlClient::queryAlarms (),
 IF_IMPL_QUERY   (  int            ITimeControlClient::queryCountdownSeconds (),
                    getCountdownSeconds(),
                    30*60                                                     )
+
+IF_IMPL_QUERY   (  bool           ITimeControlClient::querySuspendOnSleep (),
+                   getSuspendOnSleep(),
+                   true                                                      )
 
 IF_IMPL_QUERY   (  QDateTime      ITimeControlClient::queryCountdownEnd (),
                    getCountdownEnd(),

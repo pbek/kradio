@@ -41,7 +41,7 @@ public :
 
 RECEIVERS:
     IF_RECEIVER(    setAlarms(const AlarmVector &sl)                 )
-    IF_RECEIVER(    setCountdownSeconds(int n)                       )
+    IF_RECEIVER(    setCountdownSeconds(int n, bool suspendOnSleep)  )
     IF_RECEIVER(    startCountdown()                                 )
     IF_RECEIVER(    stopCountdown()                                  )
 
@@ -53,7 +53,7 @@ SENDERS:
     IF_SENDER  (    notifyCountdownStarted(const QDateTime &end)     )
     IF_SENDER  (    notifyCountdownStopped()                         )
     IF_SENDER  (    notifyCountdownZero()                            )
-    IF_SENDER  (    notifyCountdownSecondsChanged(int n)             )
+    IF_SENDER  (    notifyCountdownSecondsChanged(int n, bool suspendOnSleep) )
 
 
 ANSWERS:
@@ -61,6 +61,7 @@ ANSWERS:
     IF_ANSWER  (    const Alarm*        getNextAlarm () const        )
     IF_ANSWER  (    const AlarmVector & getAlarms () const           )
     IF_ANSWER  (    int                 getCountdownSeconds () const )
+    IF_ANSWER  (    bool                getSuspendOnSleep() const    )
     IF_ANSWER  (    QDateTime           getCountdownEnd () const     )
 
 };
@@ -73,7 +74,7 @@ public :
 
 SENDERS:
     IF_SENDER  (    sendAlarms(const AlarmVector &sl)                )
-    IF_SENDER  (    sendCountdownSeconds(int n)                      )
+    IF_SENDER  (    sendCountdownSeconds(int n, bool suspendOnSleep) )
     IF_SENDER  (    sendStartCountdown()                             )
     IF_SENDER  (    sendStopCountdown()                              )
 
@@ -85,7 +86,7 @@ RECEIVERS:
     IF_RECEIVER(    noticeCountdownStarted(const QDateTime &end)     )
     IF_RECEIVER(    noticeCountdownStopped()                         )
     IF_RECEIVER(    noticeCountdownZero()                            )
-    IF_RECEIVER(    noticeCountdownSecondsChanged(int n)             )
+    IF_RECEIVER(    noticeCountdownSecondsChanged(int n, bool suspendOnSleep) )
 
 
 QUERIES:
@@ -93,6 +94,7 @@ QUERIES:
     IF_QUERY   (    const Alarm*        queryNextAlarm ()            )
     IF_QUERY   (    const AlarmVector & queryAlarms ()               )
     IF_QUERY   (    int                 queryCountdownSeconds ()     )
+    IF_QUERY   (    bool                querySuspendOnSleep ()       )
     IF_QUERY   (    QDateTime           queryCountdownEnd ()         )
 
 RECEIVERS:

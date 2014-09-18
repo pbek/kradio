@@ -255,10 +255,10 @@ void DBusSupport::searchPrevStation()
 }
 
 
-void DBusSupport::startSleepCountdown(int seconds)
+void DBusSupport::startSleepCountdown(int seconds, bool suspendOnSleep)
 {
     if (queryIsPowerOn()) {
-        sendCountdownSeconds(seconds);
+        sendCountdownSeconds(seconds, suspendOnSleep);
         sendStartCountdown();
     }
 }

@@ -81,13 +81,13 @@ RECEIVERS:
     // ITimeControlClient
 
 RECEIVERS:
-    bool noticeAlarmsChanged(const AlarmVector &)                       { return false; }
-    bool noticeAlarm(const Alarm &)                                     { return false; }
-    bool noticeNextAlarmChanged(const Alarm *)                          { return false; }
-    bool noticeCountdownStarted(const QDateTime &end)                   { emit sleepCountdownStarted(end.toTime_t());  return false; }
-    bool noticeCountdownStopped()                                       { emit sleepCountdownStopped();     return false; }
-    bool noticeCountdownZero()                                          { emit sleepCountdownZeroReached(); return false; }
-    bool noticeCountdownSecondsChanged(int /*n*/)                       { return false; }
+    bool noticeAlarmsChanged(const AlarmVector &)                          { return false; }
+    bool noticeAlarm(const Alarm &)                                        { return false; }
+    bool noticeNextAlarmChanged(const Alarm *)                             { return false; }
+    bool noticeCountdownStarted(const QDateTime &end)                      { emit sleepCountdownStarted(end.toTime_t());  return false; }
+    bool noticeCountdownStopped()                                          { emit sleepCountdownStopped();     return false; }
+    bool noticeCountdownZero()                                             { emit sleepCountdownZeroReached(); return false; }
+    bool noticeCountdownSecondsChanged(int /*n*/, bool /*suspendOnSleep*/) { return false; }
 
     // IRadioDevicePoolClient
 
@@ -120,7 +120,7 @@ public Q_SLOTS:
     Q_SCRIPTABLE void      searchNextStation();
     Q_SCRIPTABLE void      searchPrevStation();
 
-    Q_SCRIPTABLE void      startSleepCountdown(int seconds);
+    Q_SCRIPTABLE void      startSleepCountdown(int seconds, bool suspendOnSleep);
     Q_SCRIPTABLE void      stopSleepCountdown();
 
     Q_SCRIPTABLE void      showAllWidgets();
