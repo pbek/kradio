@@ -73,8 +73,9 @@ bool FileRingBuffer::resize(const QString &filename, quint64 new_max_size)
         m_MaxSize = new_max_size;
     }
     else if ((m_Start + m_FillSize < m_RealSize) && (new_max_size > m_Start + m_FillSize)) {
-        ftruncate(fileno(m_File), new_max_size);
-        m_MaxSize = new_max_size;
+        if (ftruncate(fileno(m_File), new_max_size) == 0) {
+            m_MaxSize = new_max_size;
+        }
     }
     else if (new_max_size >= m_FillSize) {
         const size_t buffer_size = 65536;
@@ -245,9 +246,10 @@ quint64 FileRingBuffer::removeData(quint64 size)
 void FileRingBuffer::clear()
 {
     if (!m_error) {
-        ftruncate(fileno(m_File), 0);
-        m_Start    = 0;
-        m_FillSize = 0;
-        m_RealSize = 0;
+        if (ftruncate(fileno(m_File), 0) == 0) {
+            m_Start    = 0;
+            m_FillSize = 0;
+            m_RealSize = 0;
+        }
     }
 }
