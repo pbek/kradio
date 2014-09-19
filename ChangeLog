@@ -1,3 +1,11 @@
+2014-09-19
+
+   emw  - fixed handling of alsa devices without mixer elements
+        - enabled internet radio reconnect-watchdog with default timeout 4s
+        - fixed Qt include paths for Ubuntu
+        - fixed build dependencies in CMakeLists.txt and Debian/SuSE/Fedora
+          build scripts
+
 2014-09-18
 
    emw  - cleaned backlog of translation & preset emails
