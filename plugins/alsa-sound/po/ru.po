@@ -69,7 +69,7 @@ msgid ""
 "AlsaPlugin: internal error. Expected non-existing playback thread, but found "
 "one"
 msgstr ""
-"AlsaPlugin: внутренняя ошибка. Найден не ожидавшийся поток воспроизведения\n"
+"AlsaPlugin: внутренняя ошибка. Найден не ожидавшийся поток воспроизведения"
 
 #: alsa-sound.cpp:856
 #| msgid ""
@@ -78,7 +78,7 @@ msgstr ""
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing capture thread, but found "
 "one"
-msgstr "AlsaPlugin: внутренняя ошибка. Найден не ожидавшийся поток записи. \n"
+msgstr "AlsaPlugin: внутренняя ошибка. Найден не ожидавшийся поток записи."
 
 #: alsa-sound.cpp:899
 #, kde-format

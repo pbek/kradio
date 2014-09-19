@@ -2,9 +2,11 @@ project(kradio4)
 
 find_package(KDE4 REQUIRED)
 include (KDE4Defaults)
+include (FindKDE4Workspace)
 include (MacroLibrary)
 
 FIND_PACKAGE(Subversion)
+FIND_PACKAGE(KDE4Workspace 4.7.0 REQUIRED)
 
 SET(KRADIO_VERSION "4.0.8")
 
