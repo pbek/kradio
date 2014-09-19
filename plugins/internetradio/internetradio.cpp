@@ -71,7 +71,7 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_maxStreamAnalyzeTime(0.8),
     m_inputBufferSize(128*1024),
     m_outputBufferSize(512*1024),
-    m_watchdogTimeout(0),
+    m_watchdogTimeout(4),
     m_watchdogHandlerInService(false),
     m_waitForBufferMinFill(true)
 {
@@ -596,7 +596,7 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     bool    muteOnPowerOff        = config.readEntry ("PlaybackMixerMuteOnPowerOff", false);
     m_inputBufferSize             = config.readEntry ("InputBufferSize",             128*1024);
     m_outputBufferSize            = config.readEntry ("OutputBufferSize",            512*1024);
-    m_watchdogTimeout             = config.readEntry ("WatchdogTimeout",             0);
+    m_watchdogTimeout             = config.readEntry ("WatchdogTimeout",             4);
     m_defaultPlaybackVolume       = config.readEntry ("defaultPlaybackVolume",       0.5);
 
 
