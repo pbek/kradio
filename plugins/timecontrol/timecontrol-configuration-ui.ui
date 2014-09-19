@@ -45,7 +45,7 @@
      <item>
       <widget class="QCheckBox" name="cbSuspendOnSleep">
        <property name="text">
-        <string>suspend computer on sleep</string>
+        <string>Suspend computer on sleep</string>
        </property>
       </widget>
      </item>
