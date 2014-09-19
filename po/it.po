@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-19 03:17+0200\n"
+"POT-Creation-Date: 2014-09-19 20:36+0200\n"
 "PO-Revision-Date: 2014-03-03 01:58+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -97,6 +97,7 @@ msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
+#. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
 #: radiostations/radiostation-config.cpp:146
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
@@ -204,26 +205,26 @@ msgstr "sconosciuta"
 msgid "cannot open buffer file %1"
 msgstr "impossibile aprire il buffer %1"
 
-#: src/fileringbuffer.cpp:94
+#: src/fileringbuffer.cpp:95
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to temporary file %1 failed. "
 msgstr ""
 "FileRingbuffer::resize: la scrittura del file temporaneo %1 non è andata a "
 "buon fine. "
 
-#: src/fileringbuffer.cpp:100
+#: src/fileringbuffer.cpp:101
 #, kde-format
 msgid "FileRingbuffer::resize: Opening temporary file %1 failed. "
 msgstr ""
 "FileRingbuffer::resize: l'apertura del file temporaneo %1 non è andata a "
 "buon fine. "
 
-#: src/fileringbuffer.cpp:128 src/fileringbuffer.cpp:146
+#: src/fileringbuffer.cpp:129 src/fileringbuffer.cpp:147
 #, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
 msgstr "FileRingBuffer::addData: impossibile scrivere i dati nel file %1."
 
-#: src/fileringbuffer.cpp:169
+#: src/fileringbuffer.cpp:170
 #, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: impossibile leggere i dati nel file %1."
@@ -377,13 +378,12 @@ msgstr ""
 
 #: src/main.cpp:44
 msgid "Pino Toscano"
-msgstr ""
+msgstr "Pino Toscano"
 
 #: src/main.cpp:44
-#, fuzzy
-#| msgid "Buildsystem, standards conformance, cleanups"
 msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
-msgstr "Sistema di compilazione, conformità agli standard, pulizia"
+msgstr ""
+"Estensione MPRIS, Sistema di compilazione, conformità agli standard, pulizia"
 
 #: src/main.cpp:45
 msgid "Marcus Camen"
