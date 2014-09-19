@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-19 03:17+0200\n"
 "PO-Revision-Date: 2014-09-18 20:59+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,7 +21,6 @@ msgstr ""
 
 #: encoder_mp3.cpp:82 encoder_mp3.cpp:195
 #, kde-format
-#| msgid "Error %1 while encoding mp3. "
 msgid "Error %1 while encoding MP3. "
 msgstr "При кодировании MP3 произошла ошибка: %1. "
 
@@ -31,7 +30,6 @@ msgid "Error %1 writing output. "
 msgstr "Во время записи произошла ошибка: %1"
 
 #: encoder_mp3.cpp:109
-#| msgid "Cannot initialize lalibmp3lame. "
 msgid "Cannot initialize libmp3lame. "
 msgstr ""
 "Не могу инициализировать libmp3lame — необходимо для кодирования в MP3."
@@ -52,12 +50,10 @@ msgid "Cannot open output file %1. "
 msgstr "Не могу открыть выходной файл %1. "
 
 #: encoder_mp3.cpp:162
-#| msgid "Cannot allocate buffers for mp3 encoding. "
 msgid "Cannot allocate buffers for MP3 encoding. "
 msgstr "Не могу разместить в памяти буферы для кодирования MP3."
 
 #: encoder_ogg.cpp:100
-#| msgid "Failed writing data to ogg/vorbis output stream. "
 msgid "Failed writing data to Ogg/Vorbis output stream. "
 msgstr "Ошибка записи данных в выходной поток ogg/vorbis. "
 
@@ -67,14 +63,11 @@ msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\": %2"
 
 #: encoder_ogg.cpp:154
-#| msgid ""
-#| "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
 msgstr ""
 "Инициализация режима Ogg/Vorbis не удалась: качество записи указано неверно"
 
 #: encoder_ogg.cpp:207
-#| msgid "Failed writing Ogg/Vorbis header to output stream\n"
 msgid "Failed writing Ogg/Vorbis header to output stream"
 msgstr "Ошибка записи заголовка Ogg/Vorbis в выходной поток"
 
@@ -87,7 +80,6 @@ msgstr "Выход"
 #. i18n: file: recording-configuration-ui.ui:41
 #. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
 #: rc.cpp:6 rc.cpp:136
-#| msgid "ID3 Genre"
 msgid "ID3 genre:"
 msgstr "Жанр:"
 
@@ -172,21 +164,18 @@ msgstr ""
 #. i18n: file: recording-configuration-ui.ui:77
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)
 #: rc.cpp:17 rc.cpp:147
-#| msgid "ID3 Title"
 msgid "ID3 title:"
 msgstr "Название:"
 
 #. i18n: file: recording-configuration-ui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
 #: rc.cpp:20 rc.cpp:150
-#| msgid "MP3 Quality(0 - high, 9 - low)"
 msgid "MP3 quality (0 - high, 9 - low):"
 msgstr "Качество MP3 (0 — высокое, 9 — низкое):"
 
 #. i18n: file: recording-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
 #: rc.cpp:23 rc.cpp:153
-#| msgid "raw pcm output (.raw)"
 msgid "Raw PCM Output (.raw)"
 msgstr "Неформатированный вывод (.raw)"
 
@@ -223,35 +212,30 @@ msgstr "Сжатый Ogg Vorbis (.ogg)"
 #. i18n: file: recording-configuration-ui.ui:206
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
 #: rc.cpp:41 rc.cpp:171
-#| msgid "Recording Directory"
 msgid "Recording directory:"
 msgstr "Каталог для сохранения:"
 
 #. i18n: file: recording-configuration-ui.ui:216
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
 #: rc.cpp:44 rc.cpp:174
-#| msgid "File Format"
 msgid "File format:"
 msgstr "Формат файла:"
 
 #. i18n: file: recording-configuration-ui.ui:226
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:47 rc.cpp:177
-#| msgid "Ogg Quality(0 - low, 9 - high)"
 msgid "Ogg quality (0 - low, 9 - high):"
 msgstr "Качество Ogg (0 — ниже, 9 — выше):"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
 #: rc.cpp:50 rc.cpp:180
-#| msgid "Filename"
 msgid "Filename:"
 msgstr "Имя файла:"
 
 #. i18n: file: recording-configuration-ui.ui:267
 #. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
 #: rc.cpp:53 rc.cpp:183
-#| msgid "ID3 Artist"
 msgid "ID3 artist:"
 msgstr "Исполнитель:"
 
@@ -288,7 +272,6 @@ msgstr "11025"
 #. i18n: file: recording-configuration-ui.ui:356
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:71 rc.cpp:201
-#| msgid "Endianess"
 msgid "Endianess:"
 msgstr "Порядок байтов:"
 
@@ -307,7 +290,6 @@ msgstr "1 (Моно)"
 #. i18n: file: recording-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:80 rc.cpp:210
-#| msgid "Sample Rate"
 msgid "Sample rate:"
 msgstr "Частота дискретизации:"
 
@@ -338,14 +320,12 @@ msgstr "8"
 #. i18n: file: recording-configuration-ui.ui:452
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:95 rc.cpp:225
-#| msgid "Channels"
 msgid "Channels:"
 msgstr "Число каналов:"
 
 #. i18n: file: recording-configuration-ui.ui:462
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:98 rc.cpp:228
-#| msgid "Sample Bits"
 msgid "Sample bits:"
 msgstr "Бит на элемент выборки:"
 
@@ -376,14 +356,12 @@ msgstr " кБ"
 #. i18n: file: recording-configuration-ui.ui:557
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
 #: rc.cpp:113 rc.cpp:243
-#| msgid "Encoding Buffer Size"
 msgid "Encoding buffer size:"
 msgstr "Размер буфера для записи:"
 
 #. i18n: file: recording-configuration-ui.ui:577
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
 #: rc.cpp:116 rc.cpp:246
-#| msgid "Number of Buffers"
 msgid "Number of buffers:"
 msgstr "Количество буферов:"
 
@@ -402,7 +380,6 @@ msgstr "Включить"
 #. i18n: file: recording-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
 #: rc.cpp:125 rc.cpp:255
-#| msgid "PreRecording Time"
 msgid "Pre-recording time:"
 msgstr "Упреждение:"
 
@@ -461,7 +438,6 @@ msgstr ""
 
 #: recording.cpp:552
 #, kde-format
-#| msgid "Recording::outputFile: "
 msgid "Recording::outputFile: %1"
 msgstr "Recording::outputFile (выходной файл записи): %1"
 
@@ -490,12 +466,9 @@ msgid "Recording Monitor"
 msgstr "Монитор записи"
 
 #: recording-monitor.cpp:44
-#| msgid "SoundStream"
 msgid "Sound Stream"
 msgstr "Источник"
 
-#. i18n("Status"),         this), 1, 0);
-#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
 #: recording-monitor.cpp:48
 msgid "Recording File"
 msgstr "Файл"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 17:39+0200\n"
+"POT-Creation-Date: 2014-09-19 03:17+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -93,7 +93,6 @@ msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
-#. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
 #: radiostations/radiostation-config.cpp:146
 #, fuzzy
 msgctxt "Stream Format"

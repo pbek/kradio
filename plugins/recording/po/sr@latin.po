@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recording (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2014-09-19 03:17+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -482,8 +482,6 @@ msgstr "Monitor za snimanje"
 msgid "Sound Stream"
 msgstr "Zvučni strim"
 
-#. i18n("Status"),         this), 1, 0);
-#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
 #: recording-monitor.cpp:48
 msgid "Recording File"
 msgstr "Snimanje fajla"

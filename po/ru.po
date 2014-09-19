@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 17:39+0200\n"
+"POT-Creation-Date: 2014-09-19 03:17+0200\n"
 "PO-Revision-Date: 2014-09-18 20:40+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -41,7 +41,6 @@ msgstr "Отладочное сообщение %1: %2"
 #: radiostations/frequencyradiostation.cpp:120
 #: radiostations/internetradiostation.cpp:155
 #, kde-format
-#| msgid "%1, %2"
 msgctxt "<station long name>, <station description>"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -57,7 +56,6 @@ msgid "%1 kHz"
 msgstr "%1 кГц"
 
 #: radiostations/radiostation-config.cpp:49
-#| msgid "I don't know how to edit this station"
 msgid "I do not know how to edit this station"
 msgstr "Не знаю, как изменить эту станцию"
 
@@ -83,26 +81,21 @@ msgid "<autodetect>"
 msgstr "<автоопределение>"
 
 #: radiostations/radiostation-config.cpp:142
-#| msgid "MP3"
 msgctxt "Stream Format"
 msgid "MP3"
 msgstr "MP3"
 
 #: radiostations/radiostation-config.cpp:143
-#| msgid "ACC/ACCP"
 msgctxt "Stream Format"
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
 #: radiostations/radiostation-config.cpp:144
-#| msgid "ASF"
 msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
-#. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
 #: radiostations/radiostation-config.cpp:146
-#| msgid "OGG/Vorbis"
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
 msgstr "Oпп/Vorbis"
@@ -113,37 +106,31 @@ msgid "<autodetect>"
 msgstr "<автоопределение>"
 
 #: radiostations/radiostation-config.cpp:150
-#| msgid "<none>"
 msgctxt "Playlist Format"
 msgid "<none>"
 msgstr "<нет>"
 
 #: radiostations/radiostation-config.cpp:151
-#| msgid "ASX"
 msgctxt "Playlist Format"
 msgid "ASX"
 msgstr "ASX"
 
 #: radiostations/radiostation-config.cpp:152
-#| msgid "LSC"
 msgctxt "Playlist Format"
 msgid "LSC"
 msgstr "LSC"
 
 #: radiostations/radiostation-config.cpp:153
-#| msgid "M3U"
 msgctxt "Playlist Format"
 msgid "M3U"
 msgstr "M3U"
 
 #: radiostations/radiostation-config.cpp:154
-#| msgid "PLS"
 msgctxt "Playlist Format"
 msgid "PLS"
 msgstr "PLS"
 
 #: radiostations/radiostation-config.cpp:155
-#| msgid "WMV"
 msgctxt "Playlist Format"
 msgid "WMV"
 msgstr "WMV"
@@ -201,13 +188,11 @@ msgid "Internet Radio Station"
 msgstr "Сетевая радиостанция"
 
 #: radiostations/radiostation.h:161
-#| msgid "unknown"
 msgctxt "Unknown station long name"
 msgid "unknown"
 msgstr "неизвестно"
 
 #: radiostations/radiostation.h:162
-#| msgid "unknown"
 msgctxt "Unknown station description"
 msgid "unknown"
 msgstr "неизвестно"
@@ -219,13 +204,11 @@ msgstr "Не могу открыть буферный файл %1"
 
 #: src/fileringbuffer.cpp:94
 #, kde-format
-#| msgid "FileRingbuffer::resize: Writing to tmpfile %1 failed. "
 msgid "FileRingbuffer::resize: Writing to temporary file %1 failed. "
 msgstr "FileRingbuffer::resize: Не могу записать временный файл %1. "
 
 #: src/fileringbuffer.cpp:100
 #, kde-format
-#| msgid "FileRingbuffer::resize: Opening tmpfile %1 failed. "
 msgid "FileRingbuffer::resize: Opening temporary file %1 failed. "
 msgstr "FileRingbuffer::resize: Не могу открыть временный файл %1. "
 
@@ -300,7 +283,6 @@ msgstr "Лицензионное соглашение"
 
 #: src/kradioapp.cpp:132
 #, kde-format
-#| msgid "Library %1: Plugin Entry Point is missing\n"
 msgid "Library %1: plugin entry point is missing"
 msgstr "Библиотека %1: не найдена точка вхождения модуля"
 
@@ -311,9 +293,6 @@ msgstr "Ошибка загрузки библиотечного модуля"
 
 #: src/kradioapp.cpp:140
 #, kde-format
-#| msgid ""
-#| "Library %1: \n"
-#| "%2"
 msgid ""
 "Library %1:\n"
 "%2"
@@ -326,16 +305,11 @@ msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr "Найдены новые библиотеки модулей. Загрузить их сейчас?"
 
 #: src/kradioapp.cpp:218
-#| msgid "New Plugin Libraries found"
 msgid "New Plugin Libraries Found"
 msgstr "Найдены новые библиотеки модулей"
 
 #: src/kradioapp.cpp:234
 #, kde-format
-#| msgid ""
-#| "Found only %1 libraries. Expected a minimum of 5. Please check the "
-#| "KRadio4 installation directory and the environment variables KDEDIR, "
-#| "KDEDIRS and KDEHOME.\n"
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
@@ -360,7 +334,6 @@ msgstr "Ошибка установки KRadio4"
 
 #: src/kradioapp.cpp:267
 #, kde-format
-#| msgid "Instance"
 msgid "Instance %1"
 msgstr "Экземпляр %1"
 
@@ -391,24 +364,19 @@ msgid "Ernst Martin Witte"
 msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
-#| msgid ""
-#| "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
-#| "recording, lirc support, alarms, misc"
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, LIRC support, alarms, misc"
 msgstr ""
 "Написание версии для KDE4, поддержка RDS, комбинации клавиш, работа на "
-"версиями 1.0/0.3.0, "
-" запись звука, поддержка PVR, дистанционное управление, работа по расписанию "
-"и проч."
+"версиями 1.0/0.3.0,  запись звука, поддержка PVR, дистанционное управление, "
+"работа по расписанию и проч."
 
 #: src/main.cpp:44
 msgid "Pino Toscano"
 msgstr "Pino Toscano"
 
 #: src/main.cpp:44
-#| msgid "Buildsystem, Standards Conformance, Cleanups"
 msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
 msgstr "Модуль MPRIS, Система сборки, стандартизация, чистка кода"
 
@@ -417,7 +385,6 @@ msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
 #: src/main.cpp:45
-#| msgid "Buildsystem, Standards Conformance, Cleanups"
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Система сборки, стандартизация, чистка кода"
 
@@ -434,7 +401,6 @@ msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
 #: src/main.cpp:47
-#| msgid "initial idea, first basic KDE 2 application"
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Идея, первый вариант программы для KDE2"
 
@@ -448,9 +414,6 @@ msgstr "Окно параметров"
 
 #: src/pluginmanager-configuration.cpp:196
 #, kde-format
-#| msgid ""
-#| "Library %1: \n"
-#| "Cannot load non-local library"
 msgid ""
 "Library %1:\n"
 "Cannot load non-local library"
@@ -463,7 +426,6 @@ msgid "Enter Plugin Instance Name"
 msgstr "Введите название для этого экземпляра"
 
 #: src/pluginmanager-configuration.cpp:227
-#| msgid "Instance Name"
 msgid "Instance name:"
 msgstr "Название экземпляра: "
 
@@ -490,7 +452,6 @@ msgid ""
 msgstr "Найдены новые модули. Создать их экземпляры?"
 
 #: src/pluginmanager.cpp:607
-#| msgid "New Plugins found"
 msgid "New Plugins Found"
 msgstr "Найдены новые модули"
 
@@ -500,25 +461,21 @@ msgid "Initializing Plugin %1"
 msgstr "Включаю модуль %1"
 
 #: src/pluginmanager.cpp:767
-#| msgid "Show all"
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Показать всё"
 
 #: src/pluginmanager.cpp:768
-#| msgid "Hide all"
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Скрыть всё"
 
 #: src/pluginmanager.cpp:769
-#| msgid "Restore all"
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Восстановить всё"
 
 #: src/pluginmanager.cpp:770
-#| msgid "restore state before last hide-all activation"
 msgid "Restore state before last hide-all activation"
 msgstr "Восстанавливает все окна, скрытые действием \"Скрыть всё\""
 
@@ -543,7 +500,6 @@ msgstr "неизвестно"
 
 #: src/standardscandialog.cpp:226
 #, kde-format
-#| msgid "new station "
 msgid "new station %1"
 msgstr "Новая станция %1"
 
@@ -590,7 +546,6 @@ msgstr "Не могу скачать файл радиостанций %1."
 
 #: src/stationlist.cpp:214
 #, kde-format
-#| msgid "temporary file: "
 msgid "temporary file: %1"
 msgstr "временный файл: %1"
 
@@ -610,7 +565,6 @@ msgstr "Старый формат файла радиостанций"
 
 #: src/stationlist.cpp:322
 #, kde-format
-#| msgid "error writing to tempfile %1"
 msgid "error writing to temporary file %1"
 msgstr "Ошибка записи во временный файл %1"
 
@@ -644,7 +598,6 @@ msgid "Upload of station preset file to %1 failed."
 msgstr "Выгрузка файла радиостанций %1 завершилась неудачей."
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
-#| msgid "error creating temp file"
 msgid "error creating temporary file"
 msgstr "Ошибка при создании временного файл"
 
@@ -711,35 +664,30 @@ msgstr "Alexey.Kouznetsov@gmail.com"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:36
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:5
-#| msgid "Automatic detection and load of new plugins"
 msgid "Automatic Detection and Load of New Plugins"
 msgstr "Автоматический поиск и загрузка новых модулей"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:57
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
 #: rc.cpp:8
-#| msgid "Do not check/load!"
 msgid "Do not check/load"
 msgstr "Не проверять/загружать"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
 #: rc.cpp:11
-#| msgid "Automatically check/load!"
 msgid "Automatically check/load"
 msgstr "Автопроверка/загрузка"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:14
-#| msgid "Please Ask!"
 msgid "Please ask"
 msgstr "Уточнить"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:17
-#| msgid "Show Progress Bar during Startup for Plugin Initiali&zation"
 msgid "Show progress bar during startup for plugin initiali&zation"
 msgstr "&Иллюстрировать загрузку модулей во время запуска программы"
 
@@ -838,17 +786,14 @@ msgid ""
 "sound cards and/or multiple ALSA plugin instances.</p>"
 msgstr ""
 "<p>Вы можете <b>переименовать</b> экземпляр модуля с помощью двойного щелчка "
-"мышью "
-"по названию существующего экземпляра. Название будет видно под пиктограммой "
-"экземпляра модуля, на странице параметров и, например, в названии звукового "
-"устройства. "
-"Правка названия удобна, например, чтобы различать разные звуковые платы и/или "
-"разные экземпляры модуля ALSA.</p>"
+"мышью по названию существующего экземпляра. Название будет видно под "
+"пиктограммой экземпляра модуля, на странице параметров и, например, в "
+"названии звукового устройства. Правка названия удобна, например, чтобы "
+"различать разные звуковые платы и/или разные экземпляры модуля ALSA.</p>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
 #: rc.cpp:71
-#| msgid "Stations search in progress ..."
 msgid "Stations Search in Progress..."
 msgstr "Идёт поиск станций..."
 
@@ -879,14 +824,12 @@ msgstr "<p align=\"right\">ничего</p>"
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:89
-#| msgid "Selected Stations"
 msgid "Selected stations:"
 msgstr "Выбранные:"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
 #: rc.cpp:92
-#| msgid "Available Stations"
 msgid "Available stations:"
 msgstr "Доступные станции:"
 

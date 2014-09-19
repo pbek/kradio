@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 17:39+0200\n"
+"POT-Creation-Date: 2014-09-19 03:17+0200\n"
 "PO-Revision-Date: 2014-09-18 17:40+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -97,7 +97,6 @@ msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
-#. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
 #: radiostations/radiostation-config.cpp:146
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
@@ -385,7 +384,6 @@ msgid "Pino Toscano"
 msgstr "Pino Toscano"
 
 #: src/main.cpp:44
-#| msgid "Buildsystem, standards conformance, cleanups"
 msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
 msgstr "MPRIS-Plugin, Buildsystem, Standardkonformität, Aufräumarbeiten"
 
