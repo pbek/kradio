@@ -592,26 +592,8 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
     }
 
     const char *buffer        = data;
-    // char       *scaled_buffer = NULL;
-    // if (m_SoftPlaybackVolumeEnabled) {
-    //     double f = m_SoftPlaybackVolumeMuted ? 0 : m_SoftPlaybackVolume * m_SoftPlaybackVolumeCorrectionFactor;
-
-    //     scaled_buffer = new char[size];
-    //     memcpy(scaled_buffer, data, size);
-
-    //     format.scaleSamples(scaled_buffer, f, size/format.frameSize());
-
-    //     buffer = scaled_buffer;
-    // }
-
     size_t n = m_PlaybackBuffer.addData(buffer, size);
     consumed_size  = (consumed_size == SIZE_T_DONT_CARE) ? n : min (consumed_size, n);
-
-
-    // if (scaled_buffer) {
-    //     delete scaled_buffer;
-    //     scaled_buffer = NULL;
-    // }
 
     return true;
 }
@@ -1384,51 +1366,50 @@ void AlsaSoundDevice::checkMixerVolume(SoundStreamID id)
 
 float AlsaSoundDevice::readPlaybackMixerVolume(const QString &channel, bool &muted) const
 {
-    if (!m_hPlaybackMixer)
-        return 0; // without error
-
+    // do we have soft playback volume? 
+    // ... Then we do not need to query any device below
+    if (m_SoftPlaybackVolumeEnabled                        &&
+        m_PlaybackStreamID.isValid()                       &&
+        m_PlaybackStreams.contains(m_PlaybackStreamID)     &&
+        m_PlaybackStreams[m_PlaybackStreamID].m_ActiveMode &&
+        m_PlaybackStreams[m_PlaybackStreamID].m_Channel == channel)
+    {
+        muted = m_SoftPlaybackVolumeMuted;
+        return m_SoftPlaybackVolume;
+    }
+    
     if (m_PlaybackChannels2ID.contains(channel) && m_hPlaybackMixer) {
         AlsaMixerElement  sid  = m_PlaybackChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hPlaybackMixer, sid);
         if (elem) {
-            if (m_SoftPlaybackVolumeEnabled                        &&
-                m_PlaybackStreamID.isValid()                       &&
-                m_PlaybackStreams.contains(m_PlaybackStreamID)     &&
-                m_PlaybackStreams[m_PlaybackStreamID].m_ActiveMode &&
-                m_PlaybackStreams[m_PlaybackStreamID].m_Channel == channel)
-            {
-                muted = m_SoftPlaybackVolumeMuted;
-                return m_SoftPlaybackVolume;
-            } else {
-                long min = 0;
-                long max = 0;
-                snd_mixer_selem_get_playback_volume_range(elem, &min, &max);
-                if (min != max) {
-                    long val = min;
+            long min = 0;
+            long max = 0;
+            snd_mixer_selem_get_playback_volume_range(elem, &min, &max);
+            if (min != max) {
+                long val = min;
 
-                    muted = false;
-                    int m = false;
-                    if (snd_mixer_selem_get_playback_switch(elem, SND_MIXER_SCHN_FRONT_LEFT, &m) == 0) {
-                        muted = !m;
-                    }
-                    if (snd_mixer_selem_get_playback_volume(elem, SND_MIXER_SCHN_FRONT_LEFT, &val) == 0) {
-                        return ((float)(val - min)) / (float)(max - min);
-                    }
+                muted = false;
+                int m = false;
+                if (snd_mixer_selem_get_playback_switch(elem, SND_MIXER_SCHN_FRONT_LEFT, &m) == 0) {
+                    muted = !m;
+                }
+                if (snd_mixer_selem_get_playback_volume(elem, SND_MIXER_SCHN_FRONT_LEFT, &val) == 0) {
+                    return ((float)(val - min)) / (float)(max - min);
                 }
             }
         }
+        // if we end up here, we have entered some mixer element but alsa either didn't 
+        // find it or we could not successfully query the mixer status.
+        logError("AlsaSound::readPlaybackMixerVolume: " +
+                 i18n("error while reading volume from %1, channel %2", m_PlaybackMixerName, channel));
     }
-    logError("AlsaSound::readPlaybackMixerVolume: " +
-             i18n("error while reading volume from %1, channel %2", m_PlaybackMixerName, channel));
+    // silently fail here in case we do not have any mixer element
     return 0;
 }
 
 
 float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
 {
-    if (!m_hCaptureMixer)
-        return 0; // without error
-
     if (m_CaptureChannels2ID.contains(channel) && m_hCaptureMixer) {
         AlsaMixerElement sid = m_CaptureChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
@@ -1445,9 +1426,12 @@ float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
                 }
             }
         }
+        // if we end up here, we have entered some mixer element but alsa either didn't 
+        // find it or we could not successfully query the mixer status.
+        logError("AlsaSound::readCaptureMixerVolume: " +
+                i18n("error while reading volume from %1, channel %2", m_CaptureMixerName, channel));
     }
-    logError("AlsaSound::readCaptureMixerVolume: " +
-             i18n("error while reading volume from %1, channel %2", m_CaptureMixerName, channel));
+    // silently fail here in case we do not have any mixer element
     return 0;
 }
 
@@ -1457,39 +1441,42 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &v
     if (vol > 1.0) vol = 1.0;
     if (vol < 0) vol = 0.0;
 
-    if (!m_hPlaybackMixer)
-        return false;
-
+    // do we have soft playback volume? 
+    // ... Then we do not need to write any device below
+    if (m_SoftPlaybackVolumeEnabled                        &&
+        m_PlaybackStreamID.isValid()                       &&
+        m_PlaybackStreams.contains(m_PlaybackStreamID)     &&
+        m_PlaybackStreams[m_PlaybackStreamID].m_ActiveMode &&
+        m_PlaybackStreams[m_PlaybackStreamID].m_Channel == channel)
+    {
+        m_SoftPlaybackVolume = vol;
+        m_SoftPlaybackVolumeMuted   = muted;
+        return true;
+    }
+    
     if (m_PlaybackChannels2ID.contains(channel) && m_hPlaybackMixer) {
         AlsaMixerElement sid = m_PlaybackChannels2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hPlaybackMixer, sid);
         if (elem) {
-            if (m_SoftPlaybackVolumeEnabled                        &&
-                m_PlaybackStreamID.isValid()                       &&
-                m_PlaybackStreams.contains(m_PlaybackStreamID)     &&
-                m_PlaybackStreams[m_PlaybackStreamID].m_ActiveMode &&
-                m_PlaybackStreams[m_PlaybackStreamID].m_Channel == channel)
-            {
-                m_SoftPlaybackVolume = vol;
-                m_SoftPlaybackVolumeMuted   = muted;
-                return true;
-            } else {
-                long min = 0;
-                long max = 0;
-                snd_mixer_selem_get_playback_volume_range(elem, &min, &max);
-                if (min != max) {
-                    long val = (int)rint(min + (max - min) * vol);
-                    vol = (float)(val - min) / (float)(max - min);
-                    snd_mixer_selem_set_playback_switch_all(elem, !muted);
-                    if (snd_mixer_selem_set_playback_volume_all(elem, val)    == 0) {
-                        return true;
-                    }
+            long min = 0;
+            long max = 0;
+            snd_mixer_selem_get_playback_volume_range(elem, &min, &max);
+            if (min != max) {
+                long val = (int)rint(min + (max - min) * vol);
+                vol = (float)(val - min) / (float)(max - min);
+                snd_mixer_selem_set_playback_switch_all(elem, !muted);
+                if (snd_mixer_selem_set_playback_volume_all(elem, val)    == 0) {
+                    return true;
                 }
             }
         }
+        // if we end up here, we have entered some mixer element but alsa either didn't 
+        // find it or we could not successfully query the mixer status.
+        logError("AlsaSound::writePlaybackMixerVolume: " +
+        i18n("error while writing volume %1 to %2, channel %3", vol, m_PlaybackMixerName, channel));
+        return false;
     }
-    logError("AlsaSound::writePlaybackMixerVolume: " +
-    i18n("error while writing volume %1 to %2, channel %3", vol, m_PlaybackMixerName, channel));
+    // silently fail here in case we do not have any mixer element
     return false;
 }
 
@@ -1500,9 +1487,6 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
 {
     if (vol > 1.0) vol = 1.0;
     if (vol < 0) vol = 0.0;
-
-    if (!m_hCaptureMixer)
-        return false;
 
     if (m_CaptureChannels2ID.contains(channel) && m_hCaptureMixer) {
         AlsaMixerElement sid = m_CaptureChannels2ID[channel];
@@ -1519,18 +1503,19 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
                 }
             }
         }
+        // if we end up here, we have entered some mixer element but alsa either didn't 
+        // find it or we could not successfully query the mixer status.
+        logError("AlsaSound::writeCaptureMixerVolume: " +
+                i18n("error while writing volume %1 to %2, channel %3", vol, m_CaptureMixerName, channel));
+        return false;
     }
-    logError("AlsaSound::writeCaptureMixerVolume: " +
-             i18n("error while writing volume %1 to %2, channel %3", vol, m_CaptureMixerName, channel));
+    // silently fail here in case we do not have any mixer element
     return false;
 }
 
 
 bool AlsaSoundDevice::writeCaptureMixerSwitch (const QString &channel, bool capture)
 {
-    if (!m_hCaptureMixer)
-        return false;
-
     if (m_CaptureChannelsSwitch2ID.contains(channel) && m_hCaptureMixer) {
         AlsaMixerElement sid = m_CaptureChannelsSwitch2ID[channel];
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
@@ -1539,9 +1524,9 @@ bool AlsaSoundDevice::writeCaptureMixerSwitch (const QString &channel, bool capt
                 return true;
             }
         }
+        logError("AlsaSound::writeCaptureMixerSwitch: " +
+                i18n("error while setting capture switch %1 for %2", channel, m_CaptureMixerName));
     }
-    logError("AlsaSound::writeCaptureMixerSwitch: " +
-             i18n("error while setting capture switch %1 for %2", channel, m_CaptureMixerName));
     return false;
 }
 
