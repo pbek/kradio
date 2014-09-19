@@ -302,7 +302,7 @@ msgstr "Лицензионное соглашение"
 #, kde-format
 #| msgid "Library %1: Plugin Entry Point is missing\n"
 msgid "Library %1: plugin entry point is missing"
-msgstr "Библиотека %1: не найдена точка вхождения модуля\n"
+msgstr "Библиотека %1: не найдена точка вхождения модуля"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197

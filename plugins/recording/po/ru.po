@@ -71,12 +71,12 @@ msgstr "Не могу открыть выходной файл Ogg/Vorbis \"%1\"
 #| "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality\n"
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
 msgstr ""
-"Инициализация режима Ogg/Vorbis не удалась: качество записи указано неверно\n"
+"Инициализация режима Ogg/Vorbis не удалась: качество записи указано неверно"
 
 #: encoder_ogg.cpp:207
 #| msgid "Failed writing Ogg/Vorbis header to output stream\n"
 msgid "Failed writing Ogg/Vorbis header to output stream"
-msgstr "Ошибка записи заголовка Ogg/Vorbis в выходной поток\n"
+msgstr "Ошибка записи заголовка Ogg/Vorbis в выходной поток"
 
 #. i18n: file: recording-configuration-ui.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
