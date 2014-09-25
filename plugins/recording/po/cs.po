@@ -2,26 +2,26 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
-# Pavel Fric <fripohled@blogspot.com>, 2010.
+# Pavel Fric <fripohled@blogspot.com>, 2010, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-19 03:17+0200\n"
-"PO-Revision-Date: 2010-09-27 08:46+0200\n"
-"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
+"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"PO-Revision-Date: 2014-09-22 22:44+0200\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: encoder_mp3.cpp:82 encoder_mp3.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error %1 while encoding MP3. "
-msgstr "Chyba %1 při kódování proudu mp3."
+msgstr "Chyba %1 při kódování proudu MP3. "
 
 #: encoder_mp3.cpp:92 encoder_mp3.cpp:200 encoder_pcm.cpp:54
 #, kde-format
@@ -29,9 +29,8 @@ msgid "Error %1 writing output. "
 msgstr "Chyba %1 při zápisu výstupního souboru."
 
 #: encoder_mp3.cpp:109
-#, fuzzy
 msgid "Cannot initialize libmp3lame. "
-msgstr "Nelze inicializovat knihovnu funkcí libmp3lame."
+msgstr "Nelze inicializovat knihovnu funkcí libmp3lame. "
 
 #: encoder_mp3.cpp:126
 msgid "Cannot initialize libmp3lame parameters. "
@@ -47,14 +46,12 @@ msgid "Cannot open output file %1. "
 msgstr "Nelze otevřít výstupní soubor %1. "
 
 #: encoder_mp3.cpp:162
-#, fuzzy
 msgid "Cannot allocate buffers for MP3 encoding. "
-msgstr "Vyrovnávací paměť pro kódování mp3 nelze přidělit."
+msgstr "Vyrovnávací paměť pro kódování MP3 nelze přidělit. "
 
 #: encoder_ogg.cpp:100
-#, fuzzy
 msgid "Failed writing data to Ogg/Vorbis output stream. "
-msgstr "Zápis dat do výstupního proudu ogg/vorbis selhal."
+msgstr "Zápis dat do výstupního proudu Ogg/Vorbis selhal. "
 
 #: encoder_ogg.cpp:141
 #, kde-format
@@ -62,16 +59,14 @@ msgid "Cannot open Ogg/Vorbis output file %1: %2"
 msgstr "Nelze otevřít výstupní soubor Ogg/Vorbis %1: %2"
 
 #: encoder_ogg.cpp:154
-#, fuzzy
 msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
 msgstr ""
-"Inicializace režimu Ogg/Vorbis selhala: neplatné pomocné proměnné pro "
-"kvalitu\n"
+"Inicializace režimu Ogg/Vorbis selhala: neplatné parametry pro "
+"kvalitu"
 
 #: encoder_ogg.cpp:207
-#, fuzzy
 msgid "Failed writing Ogg/Vorbis header to output stream"
-msgstr "Zápis hlavičky Ogg/Vorbis do výstupního datového proudu selhal\n"
+msgstr "Zápis hlavičky Ogg/Vorbis do výstupního datového proudu selhal"
 
 #. i18n: file: recording-configuration-ui.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
@@ -83,12 +78,12 @@ msgstr "Výstup"
 #. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
 #: rc.cpp:6 rc.cpp:136
 msgid "ID3 genre:"
-msgstr ""
+msgstr "Žánr ID3:"
 
 #. i18n: file: recording-configuration-ui.ui:61
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory_3)
 #: rc.cpp:10 rc.cpp:140
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -133,13 +128,16 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
-"italic;\">(</span><span style=\" font-weight:600; font-style:italic;\">%s</"
-"span><span style=\" font-style:italic;\">: Název stanice, </span><span style="
-"\" font-weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'DejaVu Sans'; font-style:italic;\">Předlohy pro nahrávání: </span><"
+"span "
+"style=\" font-family:'DejaVu Sans'; font-weight:600; font-style:italic;\">"
+"%s</span><span style=\" font-family:'DejaVu Sans'; font-style:italic;\">: "
+"Název stanice, </span><span style=\" font-family:'DejaVu Sans'; font-"
+"weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
 "italic;\">: Index stanice, </span><span style=\" font-weight:600; font-style:"
 "italic;\">%Y</span><span style=\" font-style:italic;\">: Rok (čtyřmístné), </"
 "span><span style=\" font-weight:600; font-style:italic;\">%m</span><span "
@@ -161,21 +159,19 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)
 #: rc.cpp:17 rc.cpp:147
 msgid "ID3 title:"
-msgstr ""
+msgstr "Název ID3:"
 
 #. i18n: file: recording-configuration-ui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
 #: rc.cpp:20 rc.cpp:150
-#, fuzzy
 msgid "MP3 quality (0 - high, 9 - low):"
-msgstr "Kvalita MP3 (0 - vysoká, 9 - nízká)"
+msgstr "Kvalita MP3 (0 - vysoká, 9 - nízká):"
 
 #. i18n: file: recording-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
 #: rc.cpp:23 rc.cpp:153
-#, fuzzy
 msgid "Raw PCM Output (.raw)"
-msgstr "čistý výstup pcm (.raw)"
+msgstr "Nezpracovaný výstup PCM (.raw)"
 
 #. i18n: file: recording-configuration-ui.ui:178
 #. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
@@ -210,35 +206,32 @@ msgstr "Komprimovaný Ogg/Vorbis (.ogg)"
 #. i18n: file: recording-configuration-ui.ui:206
 #. i18n: ectx: property (text), widget (QLabel, lableDirectory)
 #: rc.cpp:41 rc.cpp:171
-#, fuzzy
 msgid "Recording directory:"
-msgstr "Adresář pro nahrávání"
+msgstr "Adresář pro nahrávání:"
 
 #. i18n: file: recording-configuration-ui.ui:216
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
 #: rc.cpp:44 rc.cpp:174
-#, fuzzy
 msgid "File format:"
-msgstr "Formát souboru"
+msgstr "Formát souboru:"
 
 #. i18n: file: recording-configuration-ui.ui:226
 #. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
 #: rc.cpp:47 rc.cpp:177
-#, fuzzy
 msgid "Ogg quality (0 - low, 9 - high):"
-msgstr "Kvalita Ogg (0 - vysoká, 9 - nízká)"
+msgstr "Kvalita Ogg (0 - vysoká, 9 - nízká):"
 
 #. i18n: file: recording-configuration-ui.ui:245
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
 #: rc.cpp:50 rc.cpp:180
 msgid "Filename:"
-msgstr ""
+msgstr "Název souboru:"
 
 #. i18n: file: recording-configuration-ui.ui:267
 #. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
 #: rc.cpp:53 rc.cpp:183
 msgid "ID3 artist:"
-msgstr ""
+msgstr "Umělec ID3:"
 
 #. i18n: file: recording-configuration-ui.ui:299
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -273,9 +266,8 @@ msgstr "11025"
 #. i18n: file: recording-configuration-ui.ui:356
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:71 rc.cpp:201
-#, fuzzy
 msgid "Endianess:"
-msgstr "Pořadí bytů"
+msgstr "Pořadí bytů:"
 
 #. i18n: file: recording-configuration-ui.ui:389
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
@@ -292,9 +284,8 @@ msgstr "Mono"
 #. i18n: file: recording-configuration-ui.ui:402
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:80 rc.cpp:210
-#, fuzzy
 msgid "Sample rate:"
-msgstr "Vzorkovací kmitočet"
+msgstr "Vzorkovací kmitočet:"
 
 #. i18n: file: recording-configuration-ui.ui:419
 #. i18n: ectx: property (text), item, widget (KComboBox, editEndianess)
@@ -323,16 +314,14 @@ msgstr "8"
 #. i18n: file: recording-configuration-ui.ui:452
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:95 rc.cpp:225
-#, fuzzy
 msgid "Channels:"
-msgstr "Kanály"
+msgstr "Kanály:"
 
 #. i18n: file: recording-configuration-ui.ui:462
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:98 rc.cpp:228
-#, fuzzy
 msgid "Sample bits:"
-msgstr "Vzorkovací bity"
+msgstr "Vzorkovací bity:"
 
 #. i18n: file: recording-configuration-ui.ui:479
 #. i18n: ectx: property (text), item, widget (KComboBox, editSign)
@@ -361,22 +350,20 @@ msgstr "kB"
 #. i18n: file: recording-configuration-ui.ui:557
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
 #: rc.cpp:113 rc.cpp:243
-#, fuzzy
 msgid "Encoding buffer size:"
-msgstr "Velikost vyrovnávací paměti pro kódování"
+msgstr "Velikost vyrovnávací paměti pro kódování:"
 
 #. i18n: file: recording-configuration-ui.ui:577
 #. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
 #: rc.cpp:116 rc.cpp:246
-#, fuzzy
 msgid "Number of buffers:"
-msgstr "Počet vyrovnávacích pamětí"
+msgstr "Počet vyrovnávacích pamětí:"
 
 #. i18n: file: recording-configuration-ui.ui:606
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
 #: rc.cpp:119 rc.cpp:249
 msgid "Pre-Recordin&g"
-msgstr "Nahrávání pře&d"
+msgstr "&Před-nahrávání"
 
 #. i18n: file: recording-configuration-ui.ui:619
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxPreRecordingEnable)
@@ -387,9 +374,8 @@ msgstr "P&ovolit"
 #. i18n: file: recording-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
 #: rc.cpp:125 rc.cpp:255
-#, fuzzy
 msgid "Pre-recording time:"
-msgstr "Čas náhrávání před"
+msgstr "Čas před-nahrávání:"
 
 #. i18n: file: recording-configuration-ui.ui:662
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
@@ -445,9 +431,9 @@ msgstr ""
 "vyrovnávací paměti?) Bylo přeskočeno %1 bytů"
 
 #: recording.cpp:552
-#, fuzzy, kde-format
+#, kde-format
 msgid "Recording::outputFile: %1"
-msgstr "Nahrávání::výstupní soubor: "
+msgstr "Nahrávání::výstupní soubor: %1"
 
 #: recording.cpp:602
 msgid "The encoding thread did not finish. It will be killed now."
@@ -474,10 +460,11 @@ msgid "Recording Monitor"
 msgstr "Dohled nad nahráváním"
 
 #: recording-monitor.cpp:44
-#, fuzzy
 msgid "Sound Stream"
 msgstr "Datový proud s nahrávaný zvukem"
 
+#. i18n("Status"),         this), 1, 0);
+#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
 #: recording-monitor.cpp:48
 msgid "Recording File"
 msgstr "Soubor s nahrávkou"

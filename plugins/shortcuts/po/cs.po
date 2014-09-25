@@ -1,20 +1,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_shortcuts\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-09-17 00:32+0200\n"
-"PO-Revision-Date: 2009-04-02 19:05+0200\n"
+"PO-Revision-Date: 2014-09-22 22:36+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: rc.cpp:1
@@ -37,7 +37,7 @@ msgstr "Přídavný modul pro zkratky"
 
 #: shortcuts.cpp:61
 msgid "Standard Actions"
-msgstr "Standardní akce"
+msgstr "Standardní činnosti"
 
 #: shortcuts.cpp:62
 msgid "Station Actions"
@@ -97,7 +97,7 @@ msgstr "Pozastavit"
 
 #: shortcuts.cpp:77
 msgid "Start recording"
-msgstr "Začít s nahráváním"
+msgstr "Začít nahrávání"
 
 #: shortcuts.cpp:78
 msgid "Stop recording"
@@ -129,11 +129,11 @@ msgstr "Předchozí stanice"
 
 #: shortcuts.cpp:85
 msgid "Search next station"
-msgstr "Hledej následující stanici"
+msgstr "Hledat následující stanici"
 
 #: shortcuts.cpp:86
 msgid "Search previous station"
-msgstr "Hledej předchozí stanici"
+msgstr "Hledat předchozí vysílací stanici"
 
 #: shortcuts.cpp:87
 msgid "Sleep"
@@ -141,8 +141,9 @@ msgstr "Zapnout režim spánku"
 
 #: shortcuts.cpp:88
 msgid "Quit KRadio"
-msgstr "Ukončit KRadio"
+msgstr "Ukončit"
 
 #: shortcuts.cpp:198
 msgid "Shortcuts"
 msgstr "Klávesové zkratky"
+

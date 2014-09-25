@@ -1,41 +1,37 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_standard_display\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-04-04 14:28+0200\n"
+"PO-Revision-Date: 2014-09-22 22:04+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: displaycfg.cpp:46
-#, fuzzy
 msgid "Active text:"
-msgstr "Činný text"
+msgstr "Činný text:"
 
 #: displaycfg.cpp:47
-#, fuzzy
 msgid "Inactive text:"
-msgstr "Nečinný text"
+msgstr "Nečinný text:"
 
 #: displaycfg.cpp:48
-#, fuzzy
 msgid "Background color:"
-msgstr "Barva pozadí"
+msgstr "Barva pozadí:"
 
 #: radioview.cpp:54
-#, fuzzy
 msgid "Standard Display"
-msgstr "Obvyklé zobrazení pro KRadio"
+msgstr "Obvyklé zobrazení"
 
 #: radioview.cpp:60
 msgid "Radio Display"
@@ -79,46 +75,39 @@ msgstr "120 min"
 
 #: radioview.cpp:227
 msgid "Configure KRadio"
-msgstr "Nastavit KRadio"
+msgstr "Nastavit"
 
 #: radioview.cpp:228
-#, fuzzy
 msgid "Power on/off"
-msgstr "Zapnout/Vypnout"
+msgstr "Zapnout/Vypnout energii"
 
 #: radioview.cpp:229
-#, fuzzy
 msgid "Quit KRadio application"
-msgstr "Ukončit KRadio"
+msgstr "Ukončit"
 
 #: radioview.cpp:230
-#, fuzzy
 msgid "Start/stop recording"
 msgstr "Začít/Zastavit nahrávání"
 
 #: radioview.cpp:231
-#, fuzzy
 msgid "Start/stop sleep countdown"
 msgstr "Začít/Zastavit režim spánku"
 
 #: radioview.cpp:232
-#, fuzzy
 msgid "Show/hide plugins"
 msgstr "Ukázat/Skrýt přídavné moduly"
 
 #: radioview.cpp:233
 msgid "Help about KRadio and KDE"
-msgstr "Nápověda k aplikaci KRadio a k prostředí KDE"
+msgstr "Nápověda k programu KRadio a k prostředí KDE"
 
 #: radioview.cpp:234
-#, fuzzy
 msgid "Select a radio station"
 msgstr "Vybrat rozhlasovou vysílací stanici"
 
 #: radioview.cpp:407
-#, fuzzy
 msgid "<no preset defined>"
-msgstr "Nebyla nalezena žádná předvolba s vysílací stanicí"
+msgstr "<Nestanoveno žádné přednastavení stanice>"
 
 #: radioview.cpp:563 radioview.cpp:633
 #, kde-format
@@ -172,32 +161,26 @@ msgid "%1 MHz"
 msgstr "%1 MHz"
 
 #: radioview_frequencyseeker.cpp:79
-#, fuzzy
 msgid "Search for previous radio station"
-msgstr "Hledání předchozí rozhlasové vysílací stanice"
+msgstr "Hledat předchozí rozhlasovou vysílací stanici"
 
 #: radioview_frequencyseeker.cpp:80
-#, fuzzy
 msgid "Search for next radio station"
-msgstr "Hledání následující rozhlasové vysílací stanice"
+msgstr "Hledat následující rozhlasovou vysílací stanici"
 
 #: radioview_frequencyseeker.cpp:81
-#, fuzzy
 msgid "Decrement frequency"
 msgstr "Snížit kmitočet"
 
 #: radioview_frequencyseeker.cpp:82
-#, fuzzy
 msgid "Increment frequency"
 msgstr "Zvýšit kmitočet"
 
 #: radioview_frequencyseeker.cpp:83
-#, fuzzy
 msgid "Change frequency"
 msgstr "Změnit kmitočet"
 
 #: radioview_volume.cpp:59
-#, fuzzy
 msgid "Change volume"
 msgstr "Změnit hlasitost"
 
@@ -210,14 +193,12 @@ msgstr "RadioView_SeekInterface"
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-#, fuzzy
 msgid "Search previous station"
-msgstr "Hledej předchozí vysílací stanici"
+msgstr "Hledat předchozí vysílací stanici"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-#, fuzzy
 msgid "Decrease frequency by 0.05 MHz"
 msgstr "Snížit kmitočet o 0.05 MHz"
 
@@ -231,16 +212,14 @@ msgstr "Ovládání kmitočtu"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-#, fuzzy
 msgid "Increase frequency by 0.05 MHz"
 msgstr "Zvýšit kmitočet o 0.05 MHz"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-#, fuzzy
 msgid "Search next station"
-msgstr "Hledej následující vysílací stanici"
+msgstr "Hledat následující vysílací stanici"
 
 #: rc.cpp:19
 msgctxt "NAME OF TRANSLATORS"

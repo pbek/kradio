@@ -2,20 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009, 2012.
-# Pavel Fric <fripohled@blogspot.com>, 2010.
+# Pavel Fric <fripohled@blogspot.com>, 2010, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-18 15:07+0200\n"
-"PO-Revision-Date: 2012-02-19 19:28+0100\n"
+"PO-Revision-Date: 2014-09-22 21:46+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: alsa-sound.cpp:44
@@ -62,22 +62,20 @@ msgid "internal stream, not stored (%1)"
 msgstr "Vnitřní zvukový datový proud, nebude uložen (%1)"
 
 #: alsa-sound.cpp:792
-#, fuzzy
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing playback thread, but found "
 "one"
 msgstr ""
-"Přídavný modul ALSA: vnitřní chyba. Vlákno přehrávání ještě existovalo - v "
-"rozporu s očekáváním\n"
+"Přídavný modul ALSA: vnitřní chyba. Očekáváno neexistující vlákno přehrávání, "
+"ale jedno nalezeno"
 
 #: alsa-sound.cpp:856
-#, fuzzy
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing capture thread, but found "
 "one"
 msgstr ""
-"Přídavný modul ALSA: vnitřní chyba. Vlákno zachytávání ještě existovalo - v "
-"rozporu s očekáváním\n"
+"Přídavný modul ALSA: vnitřní chyba. Očekáváno neexistující vlákno "
+"zachytávání, ale jedno nalezeno"
 
 #: alsa-sound.cpp:899
 #, kde-format
@@ -302,9 +300,8 @@ msgstr "Vlákno ALSA: Přetečení vyrovnávací paměti"
 #. i18n: file: alsa-mixer-element-ui.ui:173
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActive)
 #: rc.cpp:3 rc.cpp:176
-#, fuzzy
 msgid "Capture o&n"
-msgstr "Zachytávání zapnuto"
+msgstr "Zachytávání &zapnuto"
 
 #. i18n: file: alsa-mixer-element-ui.ui:180
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxOverride)
@@ -316,7 +313,7 @@ msgstr "&Přepsat"
 #. i18n: ectx: property (text), widget (QLabel, m_labelMixerElementName)
 #: rc.cpp:9 rc.cpp:182
 msgid "MixerName"
-msgstr "Název mixážního zařízení"
+msgstr "Název směšovacího zařízení"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
@@ -327,16 +324,14 @@ msgstr "Přehrávání"
 #. i18n: file: alsa-sound-configuration-ui.ui:30
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
 #: rc.cpp:15 rc.cpp:188
-#, fuzzy
 msgid "Disable pla&yback"
 msgstr "Zastavit pře&hrávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:62
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_3)
 #: rc.cpp:18 rc.cpp:191
-#, fuzzy
 msgid "PCM playback device:"
-msgstr "Přehrávací zařízení PCM"
+msgstr "Přehrávací zařízení PCM:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:98
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_2)
@@ -347,9 +342,8 @@ msgstr "Přehrávací zařízení PCM"
 #. i18n: file: alsa-sound-configuration-ui.ui:380
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_4)
 #: rc.cpp:21 rc.cpp:72 rc.cpp:194 rc.cpp:245
-#, fuzzy
 msgid "Buffer size:"
-msgstr "Velikost vyrovnávací paměti"
+msgstr "Velikost vyrovnávací paměti:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:114
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackBufferSize)
@@ -375,23 +369,20 @@ msgstr " kB"
 #. i18n: file: alsa-sound-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:27 rc.cpp:200
-#, fuzzy
 msgid "Soft volume correction factor:"
-msgstr "Opravný činitel programově řízené hlasitosti přehrávání"
+msgstr "Jemný činitel opravy hlasitosti"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:143
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableSoftVolume)
 #: rc.cpp:30 rc.cpp:203
-#, fuzzy
 msgid "Soft playback volume:"
-msgstr "Programově řízená hlasitost přehrávání"
+msgstr "Jemná hlasitost přehrávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:166
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_5)
 #: rc.cpp:33 rc.cpp:206
-#, fuzzy
 msgid "Playback mixer card:"
-msgstr "Karta mixéru pro přehrávání"
+msgstr "Karta směšovače pro přehrávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:176
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_3)
@@ -402,9 +393,8 @@ msgstr "Karta mixéru pro přehrávání"
 #. i18n: file: alsa-sound-configuration-ui.ui:425
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_5)
 #: rc.cpp:36 rc.cpp:81 rc.cpp:209 rc.cpp:254
-#, fuzzy
 msgid "Buffer chunk size:"
-msgstr "Velikost kusu vyrovnávací paměti"
+msgstr "Velikost kusu vyrovnávací paměti:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:186
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
@@ -415,9 +405,8 @@ msgstr "Velikost kusu vyrovnávací paměti"
 #. i18n: file: alsa-sound-configuration-ui.ui:415
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_9)
 #: rc.cpp:39 rc.cpp:78 rc.cpp:212 rc.cpp:251
-#, fuzzy
 msgid "(recommended: 96 kB)"
-msgstr "doporučováno: 96 kB"
+msgstr "(doporučováno: 96 kB)"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:196
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_5)
@@ -428,9 +417,8 @@ msgstr "doporučováno: 96 kB"
 #. i18n: file: alsa-sound-configuration-ui.ui:461
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
 #: rc.cpp:42 rc.cpp:90 rc.cpp:215 rc.cpp:263
-#, fuzzy
 msgid "(recommended: 16 kB)"
-msgstr "doporučováno: 96 kB"
+msgstr "(doporučováno: 16 kB)"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:237
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
@@ -442,7 +430,7 @@ msgstr "doporučováno: 96 kB"
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editCaptureWorkaroundSleep)
 #: rc.cpp:48 rc.cpp:93 rc.cpp:221 rc.cpp:266
 msgid "disabled"
-msgstr ""
+msgstr "zakázáno"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:240
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
@@ -454,7 +442,7 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editCaptureWorkaroundSleep)
 #: rc.cpp:51 rc.cpp:96 rc.cpp:224 rc.cpp:269
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:262
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_6)
@@ -466,7 +454,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_7)
 #: rc.cpp:54 rc.cpp:99 rc.cpp:227 rc.cpp:272
 msgid "Broken blocking I/O workaround:"
-msgstr ""
+msgstr "Ošetření poškozeného blokujícího vstupu/výstupu:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:285
 #. i18n: ectx: property (text), widget (QCheckBox, chkNonBlockingPlayback)
@@ -478,7 +466,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, chkNonBlockingCapture)
 #: rc.cpp:57 rc.cpp:108 rc.cpp:230 rc.cpp:281
 msgid "Non-blocking I/O (used in KRadio 4.0.1, deprecated)"
-msgstr "Neblokující I/O (použito vn KRadio 4.0.1, odmítnuto)"
+msgstr "Neblokující vstup/výstup (použito vn KRadio 4.0.1, odmítnuto)"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:308
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)
@@ -489,23 +477,20 @@ msgstr "Zachytávání"
 #. i18n: file: alsa-sound-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
 #: rc.cpp:63 rc.cpp:236
-#, fuzzy
 msgid "Disa&ble capture"
-msgstr "Zasta&vit zachytávání"
+msgstr "&Zakázat zachytávání"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:340
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_4)
 #: rc.cpp:66 rc.cpp:239
-#, fuzzy
 msgid "PCM capture device:"
-msgstr "Zařízení PCM pro zachytávání"
+msgstr "Zařízení PCM pro zachytávání:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:360
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_6)
 #: rc.cpp:69 rc.cpp:242
-#, fuzzy
 msgid "Capture mixer card:"
-msgstr "Karta mixéru pro zachytávání"
+msgstr "Karta směšovače pro zachytávání:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:460
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
@@ -531,7 +516,6 @@ msgstr "16 kB"
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCaptureFormatOverride)
 #: rc.cpp:102 rc.cpp:105 rc.cpp:162 rc.cpp:165 rc.cpp:275 rc.cpp:278
 #: rc.cpp:335 rc.cpp:338
-#, fuzzy
 msgid ""
 "You need to enable this switch in order to allow KRadio to tag the sound "
 "data internally processed with the correct format/sampling information if "
@@ -540,50 +524,39 @@ msgid ""
 "issue for some Avermedia TV/radio card drivers which create a pseudo ALSA "
 "sound device to provide the sound samples aquired over the PCI bus."
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tato "
-"volba musíbýt povolena, když zvukové (předstírané) zařízení ALSA má ovladač, "
-"který neposkytuje správné informace, např. o kmitočtu, aby KRadio přesto "
+"Tato volba musí být povolena, když zvukové (předstírané) zařízení ALSA má "
+"ovladač, "
+"který přes rozhraní ALSA neposkytuje správné informace, např. o kmitočtu, aby "
+"KRadio přesto "
 "mohlo správně zpracovávat zvuková data (se správnou informací o formátu/ "
 "vzorkovacím kmitočtu). Toto je, jak se zdá, případ některých ovladačů tv/"
 "radio karet Avermedia, které vytvářejí předstírané zvukové zařízení ALSA, "
 "jejichž ovladače dodávají PCM zvuková data (vzorky) získané přes sběrnici "
-"PCI.</p></body></html>"
+"PCI."
 
 #. i18n: file: alsa-sound-configuration-ui.ui:528
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
 #: rc.cpp:111 rc.cpp:284
-#, fuzzy
 msgid "Channels:"
-msgstr "Kanály"
+msgstr "Kanály:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:541
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
 #: rc.cpp:114 rc.cpp:287
-#, fuzzy
 msgid "Sample rate:"
-msgstr "Vzorkovací kmitočet"
+msgstr "Vzorkovací kmitočet:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:554
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
 #: rc.cpp:117 rc.cpp:290
-#, fuzzy
 msgid "Sample bits:"
-msgstr "Vzorkovací bity"
+msgstr "Vzorkovací bity:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:567
 #. i18n: ectx: property (text), widget (QLabel, lableEndianess)
 #: rc.cpp:120 rc.cpp:293
-#, fuzzy
 msgid "Endianess:"
-msgstr "Pořadí bytů"
+msgstr "Pořadí bytů:"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:587
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianess)
@@ -643,13 +616,13 @@ msgstr "11025"
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:150 rc.cpp:323
 msgid "Signed"
-msgstr "Podepsáno"
+msgstr "Se znaménkem"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:676
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
 #: rc.cpp:153 rc.cpp:326
 msgid "Unsigned"
-msgstr "Nepodepsáno"
+msgstr "Bez znaménka"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:694
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
@@ -666,7 +639,6 @@ msgstr "Monofonní zvuk"
 #. i18n: file: alsa-sound-configuration-ui.ui:720
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCaptureFormatOverride)
 #: rc.cpp:168 rc.cpp:341
-#, fuzzy
 msgid "Override capture format"
 msgstr "Přepsat zachytávací formát"
 
@@ -674,7 +646,7 @@ msgstr "Přepsat zachytávací formát"
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage1)
 #: rc.cpp:171 rc.cpp:344
 msgid "Capture Mixers"
-msgstr "Mixážní zařízení pro zachytávání"
+msgstr "Směšovací zařízení pro zachytávání"
 
 #: rc.cpp:172
 msgctxt "NAME OF TRANSLATORS"

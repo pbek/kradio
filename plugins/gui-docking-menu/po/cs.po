@@ -2,66 +2,58 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pavel Fric <pavelfric@seznam.cz>, 2009.
-# Pavel Fric <fripohled@blogspot.com>, 2010.
+# Pavel Fric <fripohled@blogspot.com>, 2010, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2010-09-27 09:00+0200\n"
-"Last-Translator: Pavel Fric <fripohled@blogspot.com>\n"
+"PO-Revision-Date: 2014-09-22 22:02+0200\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: docking-configuration.cpp:126
-#, fuzzy
 msgid "Mouse click on tray icon:"
-msgstr "Klepnutí tlačítkem myši na ikonu v oznamovací oblasti panelu"
+msgstr "Klepnutí tlačítkem myši na ikonu v panelu:"
 
 #: docking-configuration.cpp:127 docking-configuration.cpp:134
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Left:"
-msgstr "Levé"
+msgstr "Levé:"
 
 #: docking-configuration.cpp:128 docking-configuration.cpp:135
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Right:"
-msgstr "Pravé"
+msgstr "Pravé:"
 
 #: docking-configuration.cpp:129 docking-configuration.cpp:136
-#, fuzzy
 msgctxt "Mouse button"
 msgid "Middle:"
-msgstr "Prostřední"
+msgstr "Prostřední:"
 
 #: docking-configuration.cpp:130 docking-configuration.cpp:137
-#, fuzzy
 msgctxt "Mouse button"
 msgid "XButton1:"
-msgstr "XButton1"
+msgstr "XButton1:"
 
 #: docking-configuration.cpp:131 docking-configuration.cpp:138
-#, fuzzy
 msgctxt "Mouse button"
 msgid "XButton2:"
-msgstr "XButton2"
+msgstr "XButton2:"
 
 #: docking-configuration.cpp:133
-#, fuzzy
 msgid "Mouse double-click on tray icon:"
-msgstr "Dvojité klepnutí tlačítkem myši na ikonu v oznamovací oblasti panelu"
+msgstr "Dvojité klepnutí tlačítkem myši na ikonu v panelu:"
 
 #: docking-configuration.cpp:140
-#, fuzzy
 msgid "Mouse wheel action on tray icon:"
-msgstr "Činnost kolečkem myši na ikonu v oznamovací oblasti panelu"
+msgstr "Použití činnosti kolečka myši na ikonu v panelu:"
 
 #: docking-configuration.cpp:146 docking-configuration.cpp:156
 msgid "No Action"
@@ -108,9 +100,8 @@ msgid "Change Frequency"
 msgstr "Změnit kmitočet"
 
 #: docking.cpp:46
-#, fuzzy
 msgid "System Tray Icon/Menu"
-msgstr "Ikona pro systémovou část panelu"
+msgstr "Ikona/Nabídka pro panel"
 
 #: docking.cpp:54
 msgid "System Tray Plugin"
@@ -118,7 +109,7 @@ msgstr "Přídavný modul pro systémovou část panelu"
 
 #: docking.cpp:257
 msgid "System Tray Icon"
-msgstr "Ikona pro systémovou část panelu"
+msgstr "Ikona pro panel"
 
 #: docking.cpp:258
 msgid "System Tray Icon Configuration"
@@ -126,11 +117,11 @@ msgstr "Nastavení ikony pro systémovou část panelu"
 
 #: docking.cpp:312
 msgid "Search Next Station"
-msgstr "Hledej následující stanici"
+msgstr "Hledat následující stanici"
 
 #: docking.cpp:313
 msgid "Search Previous Station"
-msgstr "Hledej předchozí stanici"
+msgstr "Hledat předchozí stanici"
 
 #: docking.cpp:327
 msgid "Pause Radio"

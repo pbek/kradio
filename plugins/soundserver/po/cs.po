@@ -1,32 +1,31 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_soundserver\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-04-02 19:54+0200\n"
+"PO-Revision-Date: 2014-09-22 22:37+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: soundserver.cpp:27
 msgid "KRadio internal sound server"
-msgstr "Interní zvukový server programu KRadio"
+msgstr "Vnitřní zvukový server programu KRadio"
 
 #: soundserver.cpp:32
-#, fuzzy
 msgid "Sound Server Plugin"
 msgstr "Přídavný modul zvukového serveru"
 
 #: soundserver.cpp:34
-#, fuzzy
 msgid "initializing KRadio sound server"
 msgstr "Spuštění zvukového serveru programu KRadio"
+

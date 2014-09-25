@@ -1,20 +1,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Pavel Fric <pavelfric@seznam.cz>, 2009.
+# Pavel Fric <pavelfric@seznam.cz>, 2009, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_alsa_sound\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2009-04-04 08:17+0200\n"
+"PO-Revision-Date: 2014-09-22 22:20+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: oss-sound.cpp:38
@@ -168,16 +168,14 @@ msgstr "Zařízení"
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
-#, fuzzy
 msgid "PCM device:"
-msgstr "Zařízení PCM"
+msgstr "Zařízení PCM:"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
-#, fuzzy
 msgid "Mixer device:"
-msgstr "Mixážní zařízení"
+msgstr "Směšovací zařízení:"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
 #. i18n: ectx: property (text), widget (QLabel)
@@ -200,16 +198,14 @@ msgstr "Rozšířené Volby"
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
-#, fuzzy
 msgid "Disable playback"
-msgstr "Zastavit přehrávání"
+msgstr "Zakázat přehrávání"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
-#, fuzzy
 msgid "Disable capture"
-msgstr "Zastavit zachytávání"
+msgstr "Zakázat zachytávání"
 
 #: rc.cpp:25
 msgctxt "NAME OF TRANSLATORS"
@@ -220,3 +216,4 @@ msgstr "Pavel Fric"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pavelfric@seznam.cz"
+
