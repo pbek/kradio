@@ -23,8 +23,7 @@ License:       GPL-2.0+
 URL:           http://kradio.sourceforge.net
 Source:        http://sourceforge.net/projects/kradio/files/kradio/%{version}/%name-%{version}.tar.gz
 BuildRequires: fdupes
-BuildRequires: libkde4-devel >= 4.2.0
-BuildRequires: kdebase4-workspace-devel >= 4.7.0
+BuildRequires: libkde4-devel >= 4.7.0
 BuildRequires: libsndfile-devel
 BuildRequires: libvorbis-devel
 BuildRequires: lirc-devel

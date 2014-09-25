@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: Ernst Martin Witte <emw@users.sourceforge.net>
 Build-Depends: debhelper (>> 7.0.0), pkg-kde-tools (>= 0.5), qt4-dev-tools (>= 4.4.0), libqt4-dev (>= 4.4), 
- kdelibs5-dev (>= 4.2.0), kde-workspace-dev (>= 4.7.0), liblircclient-dev (>> 0.8.0), libsndfile1-dev(>= 1.0.4),
+ kdelibs5-dev (>= 4.7.0), liblircclient-dev (>> 0.8.0), libsndfile1-dev(>= 1.0.4),
  libasound2-dev, libavformat-dev, libavcodec-dev, libglib2.0-dev, libmms-dev (>= 0.6), cdbs (>= 0.4.51),
  cmake (>= 2.6.2), libmp3lame-dev (>= 3.98), libogg-dev (>= 1.1.0), libvorbis-dev (>= 1.1.0),
  automoc, libdbus-1-dev, libboost-dev (>= 1.20), gettext, libswresample-dev | libavresample-dev

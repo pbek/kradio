@@ -1,30 +1,10 @@
 project(kradio4)
 
-find_package(KDE4 REQUIRED)
+find_package(KDE4 4.7.0 REQUIRED)
 include (KDE4Defaults)
-include (FindKDE4Workspace)
 include (MacroLibrary)
 
-FIND_PACKAGE(Subversion)
-FIND_PACKAGE(KDE4Workspace 4.7.0 REQUIRED)
-
 SET(KRADIO_VERSION "4.0.8")
-
-IF(Subversion_FOUND)
-    execute_process(COMMAND svn info ${CMAKE_CURRENT_SOURCE_DIR}
-                    COMMAND grep "^Revision: "
-                    COMMAND gawk "{print $2}"
-                    RESULT_VARIABLE SVN_CHECK_RESULT
-                    OUTPUT_VARIABLE SVN_CHECK_STDOUT
-                    ERROR_VARIABLE  SVN_CHECK_STDERR
-                    OUTPUT_STRIP_TRAILING_WHITESPACE
-                   )
-
-    IF( ${SVN_CHECK_RESULT} EQUAL 0  AND NOT  ${SVN_CHECK_STDOUT} EQUAL "" )
-        MESSAGE(STATUS "Compiling KRadio4 from SVN revision ${SVN_CHECK_STDOUT}")
-        SET(KRADIO_VERSION "svn-r${SVN_CHECK_STDOUT}")
-    ENDIF( ${SVN_CHECK_RESULT} EQUAL 0  AND NOT  ${SVN_CHECK_STDOUT} EQUAL "" )
-ENDIF(Subversion_FOUND)
 
 MESSAGE(STATUS "Compiling KRadio4-${KRADIO_VERSION}")
 

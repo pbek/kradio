@@ -20,8 +20,7 @@ Buildrequires: gcc-c++ gettext flex doxygen graphviz dbus-devel
 Buildrequires: ffmpeg-devel
 Buildrequires: libmms-devel
 %endif
-Buildrequires: kdelibs-devel >= 4.2
-Buildrequires: kdebase-workspace-devel >= 4.7
+Buildrequires: kdelibs-devel >= 4.7
 Buildrequires: lirc-devel 
 Buildrequires: libsndfile-devel
 Buildrequires: libogg-devel 
