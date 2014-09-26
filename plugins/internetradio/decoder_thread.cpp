@@ -944,12 +944,25 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     m_av_pFormatCtx = avformat_alloc_context();
     m_av_pFormatCtx->probesize = m_maxProbeSize;
 
-    
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 43, 100) // ffmpeg commit 5482780a3b6ef0a8934cf29aa7e2f1ef7ccb701e
-    m_av_pFormatCtx->max_analyze_duration2 = m_maxAnalyzeTime * AV_TIME_BASE;
-#else
+    // FIXME: divergence between mpeg.org and libav.org
+    // ffmpeg.org:  current:    max_analyze_duration2
+    //              deprecated: max_analyze_duration
+    //              LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 43, 100)
+    //              commit: 5482780a3b6ef0a8934cf29aa7e2f1ef7ccb701e
+    // libav.org:   current/master:    max_analyze_duration
+    //              no change in any branch/release, at least up to
+    //              LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(56, 6, 0)
+    //
+    // As long as libav does not switch to max_analyze_duration2, and as
+    // long as we cannot distinguish libav.org and libffmpeg, we need to
+    // stay with max_analyze_duration
     m_av_pFormatCtx->max_analyze_duration  = m_maxAnalyzeTime * AV_TIME_BASE;
-#endif
+
+// #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 43, 100) // ffmpeg commit 5482780a3b6ef0a8934cf29aa7e2f1ef7ccb701e
+//     m_av_pFormatCtx->max_analyze_duration2 = m_maxAnalyzeTime * AV_TIME_BASE;
+// #else
+//     m_av_pFormatCtx->max_analyze_duration  = m_maxAnalyzeTime * AV_TIME_BASE;
+// #endif
 
     m_av_pFormatCtx_opened = false;
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
