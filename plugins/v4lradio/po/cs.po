@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: kradio4_plugin_v4lradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-02 22:51+0100\n"
-"PO-Revision-Date: 2014-09-22 22:57+0200\n"
+"PO-Revision-Date: 2014-09-26 08:45+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
-"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -579,14 +579,14 @@ msgid "cannot get tuner info (error %1)"
 msgstr "Informace o tuneru nelze přečíst (chyba %1)"
 
 #: v4lradio.cpp:1993
-#, fuzzy, kde-format
+#, kde-format
 msgid "error updating radio audio info (write): %1"
-msgstr "Chyba FIXME při aktualizaci informací o rozhlasovém zvuku (zápis): %1"
+msgstr "Chyba při aktualizaci informací o rozhlasovém zvuku (zápis): %1"
 
 #: v4lradio.cpp:1993
-#, fuzzy, kde-format
+#, kde-format
 msgid "error updating radio audio info (read): %1"
-msgstr "Chyba FIXME při aktualizaci informací o rozhlasovém zvuku (čtení): %1"
+msgstr "Chyba při aktualizaci informací o rozhlasovém zvuku (čtení): %1"
 
 #: v4lradio.cpp:2187
 msgid "error reading RDS data"
