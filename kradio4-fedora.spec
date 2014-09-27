@@ -1,21 +1,25 @@
 %bcond_without ffmpeg
+%bcond_without lame
 
 Version:   4.0.8
 %define    rel2 release
-%define    rel %{version}-%{rel2}
+%define    rel %{version}
 Name:      kradio4
 License:   GPLv2
 Summary:   V4L/V4L2-Radio Application for KDE4
 Release:   %{rel}%{?dist}
 Url:       http://kradio.sourceforge.net/
 Group:     Applications/Multimedia
-Source0:   http://downloads.sourceforge.net/%{name}/%{name}-%{rel}.tar.bz2
+Source0:   http://downloads.sourceforge.net/%{name}/%{name}-%{rel}.tar.gz
 Source1:   Doxyfile.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{release}-root-%(%{__id_u}-n)
+BuildRoot: %{_tmppath}/%{name}-%{release}-root-%(%{__id_u} -n)
 Buildrequires: chrpath 
 Buildrequires: cmake >= 2.6.2 
 Buildrequires: alsa-lib-devel
 Buildrequires: gcc-c++ gettext flex doxygen graphviz dbus-devel
+%if %{with lame}
+Buildrequires: lame-devel
+%endif
 %if %{with ffmpeg}
 Buildrequires: ffmpeg-devel
 Buildrequires: libmms-devel
@@ -111,6 +115,7 @@ rm -rf %{buildroot}
 # conflicts with previous kradio
 %exclude %{_datadir}/man/man3/*
 %exclude %{_datadir}/doc/%{name}
+%exclude %{_bindir}/%{name}-convert-presets
 
 %changelog
 
@@ -119,7 +124,7 @@ rm -rf %{buildroot}
 - Using %%cmake. Rpaths removed automatically.
 - Changed Source URL.
 
-* Fri Apr 11 2009 Paulo Roma <roma@lcg.ufrj.br> - 4.0.0-0.6.r829.20090411
+* Sat Apr 11 2009 Paulo Roma <roma@lcg.ufrj.br> - 4.0.0-0.6.r829.20090411
 - Updated to snapshot 829.
 - Removed already applied mute patch.
 
@@ -136,7 +141,7 @@ rm -rf %{buildroot}
 - Added BR strigi-devel and libmms-devel for internet radio plugin.
 - Updated to 4.0.0-rc1
 
-* Fri Mar 31 2009 Paulo Roma <roma@lcg.ufrj.br> - 4.0.0-0.1.r778.20090322
+* Tue Mar 31 2009 Paulo Roma <roma@lcg.ufrj.br> - 4.0.0-0.1.r778.20090322
 - Added BR alsa-lib-devel.
 
 * Fri Mar 27 2009 Paulo Roma <roma@lcg.ufrj.br> - 4.0-0.1.r778.20090322
