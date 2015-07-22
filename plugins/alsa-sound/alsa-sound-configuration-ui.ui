@@ -509,10 +509,10 @@
           <item row="22" column="0" colspan="3">
            <widget class="QCheckBox" name="chkNonBlockingCapture">
             <property name="toolTip">
-             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples acquired over the PCI bus.</string>
             </property>
             <property name="whatsThis">
-             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples acquired over the PCI bus.</string>
             </property>
             <property name="text">
              <string>Non-blocking I/O (used in KRadio 4.0.1, deprecated)</string>
@@ -711,10 +711,10 @@
           <item row="7" column="0">
            <widget class="QCheckBox" name="cbEnableCaptureFormatOverride">
             <property name="toolTip">
-             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples acquired over the PCI bus.</string>
             </property>
             <property name="whatsThis">
-             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples aquired over the PCI bus.</string>
+             <string>You need to enable this switch in order to allow KRadio to tag the sound data internally processed with the correct format/sampling information if your ALSA (pseudo) sound device has a driver that does not report correctly the sampling information via the ALSA interface. This is at least a known issue for some Avermedia TV/radio card drivers which create a pseudo ALSA sound device to provide the sound samples acquired over the PCI bus.</string>
             </property>
             <property name="text">
              <string>Override capture format</string>
