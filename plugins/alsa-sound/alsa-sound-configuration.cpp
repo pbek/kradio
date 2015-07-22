@@ -66,7 +66,7 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
     QObject::connect(m_cbRate,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
     QObject::connect(m_cbBits,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
     QObject::connect(m_cbSign,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
-    QObject::connect(m_cbEndianess,                 SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
+    QObject::connect(m_cbEndianness,                SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
     QObject::connect(m_cbChannels,                  SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
 
     QObject::connect(editPlaybackWorkaroundSleep,   SIGNAL(editingFinished()),        this, SLOT(slotSetDirty()));
@@ -454,7 +454,7 @@ void AlsaSoundConfiguration::setCaptureSoundFormat(const SoundFormat &sf)
     int idx_Bits      = BITS_16_IDX;
     int idx_Sign      = SIGN_SIGNED_IDX;
     int idx_Channels  = CHANNELS_STEREO_IDX;
-    int idx_Endianess = ENDIAN_LITTLE_IDX;
+    int idx_Endianness = ENDIAN_LITTLE_IDX;
 
     switch(sf.m_SampleRate) {
         case 48000 : idx_Rate = RATE_48000_IDX; break;
@@ -479,16 +479,16 @@ void AlsaSoundConfiguration::setCaptureSoundFormat(const SoundFormat &sf)
         case 1: idx_Channels = CHANNELS_MONO_IDX; break;
     }
 
-    switch(sf.m_Endianess) {
-        case LITTLE_ENDIAN: idx_Endianess = ENDIAN_LITTLE_IDX; break;
-        case BIG_ENDIAN:    idx_Endianess = ENDIAN_BIG_IDX;    break;
+    switch(sf.m_Endianness) {
+        case LITTLE_ENDIAN: idx_Endianness = ENDIAN_LITTLE_IDX; break;
+        case BIG_ENDIAN:    idx_Endianness = ENDIAN_BIG_IDX;    break;
     }
 
     m_cbRate      ->setCurrentIndex(idx_Rate);
     m_cbBits      ->setCurrentIndex(idx_Bits);
     m_cbSign      ->setCurrentIndex(idx_Sign);
     m_cbChannels  ->setCurrentIndex(idx_Channels);
-    m_cbEndianess ->setCurrentIndex(idx_Endianess);
+    m_cbEndianness ->setCurrentIndex(idx_Endianness);
 
     m_ignore_updates = false;
 }
@@ -500,7 +500,7 @@ void AlsaSoundConfiguration::getCaptureSoundFormat(SoundFormat &sf) const
     int idx_Bits      = m_cbBits      ->currentIndex();
     int idx_Sign      = m_cbSign      ->currentIndex();
     int idx_Channels  = m_cbChannels  ->currentIndex();
-    int idx_Endianess = m_cbEndianess ->currentIndex();
+    int idx_Endianness = m_cbEndianness ->currentIndex();
 
     switch(idx_Rate) {
         case RATE_48000_IDX : sf.m_SampleRate = 48000; break;
@@ -529,10 +529,10 @@ void AlsaSoundConfiguration::getCaptureSoundFormat(SoundFormat &sf) const
         default                  : sf.m_Channels = 2; break;
     }
 
-    switch(idx_Endianess) {
-        case ENDIAN_LITTLE_IDX : sf.m_Endianess = LITTLE_ENDIAN; break;
-        case ENDIAN_BIG_IDX    : sf.m_Endianess = BIG_ENDIAN;    break;
-        default                : sf.m_Endianess = BYTE_ORDER;    break;
+    switch(idx_Endianness) {
+        case ENDIAN_LITTLE_IDX : sf.m_Endianness = LITTLE_ENDIAN; break;
+        case ENDIAN_BIG_IDX    : sf.m_Endianness = BIG_ENDIAN;    break;
+        default                : sf.m_Endianness = BYTE_ORDER;    break;
     }
 }
 

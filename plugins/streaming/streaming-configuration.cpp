@@ -61,7 +61,7 @@ StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice
 
     connect(m_cbBits,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
     connect(m_cbChannels,   SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
-    connect(m_cbEndianess,  SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
+    connect(m_cbEndianness, SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
     connect(m_cbFormat,     SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
     connect(m_cbRate,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
     connect(m_cbSign,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
@@ -402,7 +402,7 @@ void StreamingConfiguration::slotPlaybackSelectionChanged()
     m_cbBits      ->setEnabled(e);
     m_cbSign      ->setEnabled(e);
     m_cbChannels  ->setEnabled(e);
-    m_cbEndianess ->setEnabled(e);
+    m_cbEndianness ->setEnabled(e);
     m_sbBufferSize->setEnabled(e);
     m_pbUpPlaybackURL    ->setEnabled(up_possible);
     m_pbDownPlaybackURL  ->setEnabled(down_possible);
@@ -437,7 +437,7 @@ void StreamingConfiguration::slotCaptureSelectionChanged()
     m_cbBits      ->setEnabled(e);
     m_cbSign      ->setEnabled(e);
     m_cbChannels  ->setEnabled(e);
-    m_cbEndianess ->setEnabled(e);
+    m_cbEndianness ->setEnabled(e);
     m_sbBufferSize->setEnabled(e);
     m_pbUpCaptureURL    ->setEnabled(up_possible);
     m_pbDownCaptureURL  ->setEnabled(down_possible);
@@ -485,7 +485,7 @@ void StreamingConfiguration::setStreamOptions(const SoundFormat &sf, int BufferS
     int idx_Bits      = BITS_16_IDX;
     int idx_Sign      = SIGN_SIGNED_IDX;
     int idx_Channels  = CHANNELS_STEREO_IDX;
-    int idx_Endianess = ENDIAN_LITTLE_IDX;
+    int idx_Endianness = ENDIAN_LITTLE_IDX;
 
     if (sf.m_Encoding == "raw") {
         idx_Format = FORMAT_RAW_IDX;
@@ -517,9 +517,9 @@ void StreamingConfiguration::setStreamOptions(const SoundFormat &sf, int BufferS
         case 1: idx_Channels = CHANNELS_MONO_IDX; break;
     }
 
-    switch(sf.m_Endianess) {
-        case LITTLE_ENDIAN: idx_Endianess = ENDIAN_LITTLE_IDX; break;
-        case BIG_ENDIAN:    idx_Endianess = ENDIAN_BIG_IDX;    break;
+    switch(sf.m_Endianness) {
+        case LITTLE_ENDIAN: idx_Endianness = ENDIAN_LITTLE_IDX; break;
+        case BIG_ENDIAN:    idx_Endianness = ENDIAN_BIG_IDX;    break;
     }
 
     m_cbFormat    ->setCurrentIndex(idx_Format);
@@ -527,7 +527,7 @@ void StreamingConfiguration::setStreamOptions(const SoundFormat &sf, int BufferS
     m_cbBits      ->setCurrentIndex(idx_Bits);
     m_cbSign      ->setCurrentIndex(idx_Sign);
     m_cbChannels  ->setCurrentIndex(idx_Channels);
-    m_cbEndianess ->setCurrentIndex(idx_Endianess);
+    m_cbEndianness ->setCurrentIndex(idx_Endianness);
     m_sbBufferSize->setValue(BufferSize / 1024);
 
     m_ignore_updates = false;
@@ -541,7 +541,7 @@ void StreamingConfiguration::getStreamOptions(SoundFormat &sf, int &BufferSize) 
     int idx_Bits      = m_cbBits      ->currentIndex();
     int idx_Sign      = m_cbSign      ->currentIndex();
     int idx_Channels  = m_cbChannels  ->currentIndex();
-    int idx_Endianess = m_cbEndianess ->currentIndex();
+    int idx_Endianness = m_cbEndianness ->currentIndex();
 
     BufferSize = m_sbBufferSize->value() * 1024;
 
@@ -579,10 +579,10 @@ void StreamingConfiguration::getStreamOptions(SoundFormat &sf, int &BufferSize) 
         default                  : sf.m_Channels = 2; break;
     }
 
-    switch(idx_Endianess) {
-        case ENDIAN_LITTLE_IDX : sf.m_Endianess = LITTLE_ENDIAN; break;
-        case ENDIAN_BIG_IDX    : sf.m_Endianess = BIG_ENDIAN;    break;
-        default                : sf.m_Endianess = BYTE_ORDER;    break;
+    switch(idx_Endianness) {
+        case ENDIAN_LITTLE_IDX : sf.m_Endianness = LITTLE_ENDIAN; break;
+        case ENDIAN_BIG_IDX    : sf.m_Endianness = BIG_ENDIAN;    break;
+        default                : sf.m_Endianness = BYTE_ORDER;    break;
     }
 }
 

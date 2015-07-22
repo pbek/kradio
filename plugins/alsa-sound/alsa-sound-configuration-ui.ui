@@ -559,12 +559,12 @@
            </widget>
           </item>
           <item row="8" column="0">
-           <widget class="QLabel" name="lableEndianess">
+           <widget class="QLabel" name="lableEndianness">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Endianess:</string>
+             <string>Endianness:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -572,7 +572,7 @@
            </widget>
           </item>
           <item row="8" column="1">
-           <widget class="KComboBox" name="m_cbEndianess">
+           <widget class="KComboBox" name="m_cbEndianness">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -916,7 +916,7 @@
   <connection>
    <sender>cbEnableCaptureFormatOverride</sender>
    <signal>toggled(bool)</signal>
-   <receiver>lableEndianess</receiver>
+   <receiver>lableEndianness</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -980,7 +980,7 @@
   <connection>
    <sender>cbEnableCaptureFormatOverride</sender>
    <signal>toggled(bool)</signal>
-   <receiver>m_cbEndianess</receiver>
+   <receiver>m_cbEndianness</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

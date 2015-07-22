@@ -949,7 +949,7 @@ void OSSSoundDevice::selectCaptureChannel (int channel)
 int OSSSoundDevice::getOSSFormat(const SoundFormat &f)
 {
     if (f.m_SampleBits == 16) {
-        switch (2 * f.m_IsSigned + (f.m_Endianess == LITTLE_ENDIAN)) {
+        switch (2 * f.m_IsSigned + (f.m_Endianness == LITTLE_ENDIAN)) {
             case 0: return AFMT_U16_BE;
             case 1: return AFMT_U16_LE;
             case 2: return AFMT_S16_BE;

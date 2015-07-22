@@ -33,26 +33,26 @@ struct KDE_EXPORT SoundFormat {
     unsigned     m_Channels;
     unsigned     m_SampleBits;
     bool         m_IsSigned;
-    unsigned     m_Endianess;
+    unsigned     m_Endianness;
     QString      m_Encoding;     // "raw", "mp3", ...  (no "wav", because it's only header + raw data)
     bool         m_IsPlanar;
 
-    SoundFormat(unsigned sample_rate, unsigned channels, unsigned sample_bits, bool is_signed, unsigned endianess, const QString &enc, bool is_planar)
+    SoundFormat(unsigned sample_rate, unsigned channels, unsigned sample_bits, bool is_signed, unsigned endianness, const QString &enc, bool is_planar)
         : m_SampleRate(sample_rate),
           m_Channels  (channels),
           m_SampleBits(sample_bits),
           m_IsSigned  (is_signed),
-          m_Endianess (endianess),
+          m_Endianness (endianness),
           m_Encoding  (enc),
           m_IsPlanar  (is_planar)
     {}
         
-    SoundFormat(unsigned sample_rate, unsigned channels, unsigned sample_bits, bool is_signed, unsigned endianess, bool is_planar)
+    SoundFormat(unsigned sample_rate, unsigned channels, unsigned sample_bits, bool is_signed, unsigned endianness, bool is_planar)
         : m_SampleRate(sample_rate),
           m_Channels  (channels),
           m_SampleBits(sample_bits),
           m_IsSigned  (is_signed),
-          m_Endianess (endianess),
+          m_Endianness (endianness),
           m_Encoding  ("raw"),
           m_IsPlanar  (is_planar)
     {}
@@ -62,7 +62,7 @@ struct KDE_EXPORT SoundFormat {
           m_Channels  (channels),
           m_SampleBits(sample_bits),
           m_IsSigned  (is_signed),
-          m_Endianess (BYTE_ORDER),
+          m_Endianness (BYTE_ORDER),
           m_Encoding  ("raw"),
           m_IsPlanar  (is_planar)
     {}
@@ -72,7 +72,7 @@ struct KDE_EXPORT SoundFormat {
           m_Channels  (stereo ? 2 : 1),
           m_SampleBits(16),
           m_IsSigned  (true),
-          m_Endianess (BYTE_ORDER),
+          m_Endianness (BYTE_ORDER),
           m_Encoding  ("raw"),
           m_IsPlanar  (is_planar)
     {}
@@ -82,7 +82,7 @@ struct KDE_EXPORT SoundFormat {
           m_Channels  (2),
           m_SampleBits(16),
           m_IsSigned  (true),
-          m_Endianess (BYTE_ORDER),
+          m_Endianness (BYTE_ORDER),
           m_Encoding  ("raw"),
           m_IsPlanar  (false)
     {}
@@ -91,7 +91,7 @@ struct KDE_EXPORT SoundFormat {
                                                            m_Channels   == o.m_Channels   &&
                                                            m_SampleBits == o.m_SampleBits &&
                                                            m_IsSigned   == o.m_IsSigned   &&
-                                                           m_Endianess  == o.m_Endianess  &&
+                                                           m_Endianness == o.m_Endianness  &&
                                                            m_Encoding   == o.m_Encoding   &&
                                                            m_IsPlanar   == o.m_IsPlanar
                                                     ;

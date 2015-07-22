@@ -44,7 +44,7 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
     connect(editRate,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
     connect(editBits,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
     connect(editSign,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
-    connect(editEndianess,                SIGNAL(activated(int)),               SLOT(slotSetDirty()));
+    connect(editEndianness,               SIGNAL(activated(int)),               SLOT(slotSetDirty()));
     connect(editChannels,                 SIGNAL(activated(int)),               SLOT(slotSetDirty()));
     connect(editFileFormat,               SIGNAL(activated(int)),               SLOT(slotSetDirty()));
     connect(editMP3Quality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
@@ -122,10 +122,10 @@ void RecordingConfiguration::setGUISoundFormat(const RecordingConfig &c)
         case 11025: editRate->setCurrentIndex(RATE_11025_IDX); break;
         default:    editRate->setCurrentIndex(RATE_44100_IDX); break;
     }
-    switch (c.m_SoundFormat.m_Endianess) {
-        case BIG_ENDIAN    : editEndianess->setCurrentIndex(ENDIAN_BIG_IDX); break;
-        case LITTLE_ENDIAN : editEndianess->setCurrentIndex(ENDIAN_LITTLE_IDX); break;
-        default:             editEndianess->setCurrentIndex(ENDIAN_LITTLE_IDX); break;
+    switch (c.m_SoundFormat.m_Endianness) {
+        case BIG_ENDIAN    : editEndianness->setCurrentIndex(ENDIAN_BIG_IDX); break;
+        case LITTLE_ENDIAN : editEndianness->setCurrentIndex(ENDIAN_LITTLE_IDX); break;
+        default:             editEndianness->setCurrentIndex(ENDIAN_LITTLE_IDX); break;
     }
 }
 
@@ -205,10 +205,10 @@ void RecordingConfiguration::storeConfig()
         case SIGN_SIGNED_IDX:   c.m_SoundFormat.m_IsSigned = true;  break;
         default:                c.m_SoundFormat.m_IsSigned = true; break;
     }
-    switch(editEndianess->currentIndex()) {
-        case ENDIAN_LITTLE_IDX: c.m_SoundFormat.m_Endianess = LITTLE_ENDIAN; break;
-        case ENDIAN_BIG_IDX:    c.m_SoundFormat.m_Endianess = BIG_ENDIAN; break;
-        default:                c.m_SoundFormat.m_Endianess = LITTLE_ENDIAN; break;
+    switch(editEndianness->currentIndex()) {
+        case ENDIAN_LITTLE_IDX: c.m_SoundFormat.m_Endianness = LITTLE_ENDIAN; break;
+        case ENDIAN_BIG_IDX:    c.m_SoundFormat.m_Endianness = BIG_ENDIAN; break;
+        default:                c.m_SoundFormat.m_Endianness = LITTLE_ENDIAN; break;
     }
     switch(editBits->currentIndex()) {
         case BITS_8_IDX:  c.m_SoundFormat.m_SampleBits = 8; break;
@@ -304,26 +304,26 @@ void RecordingConfiguration::slotFormatSelectionChanged()
 
     switch (formatIDX) {
         case FORMAT_RAW_IDX :
-            editEndianess->setDisabled(false);
+            editEndianness->setDisabled(false);
             break;
 #ifdef HAVE_LAME
         case FORMAT_MP3_IDX :
-            editEndianess->setCurrentIndex(littleEndian ? ENDIAN_LITTLE_IDX : ENDIAN_BIG_IDX);
-            editEndianess->setDisabled(true);
+            editEndianness->setCurrentIndex(littleEndian ? ENDIAN_LITTLE_IDX : ENDIAN_BIG_IDX);
+            editEndianness->setDisabled(true);
             break;
 #endif
 #ifdef HAVE_OGG
         case FORMAT_OGG_IDX :
-            editEndianess->setCurrentIndex(littleEndian ? ENDIAN_LITTLE_IDX : ENDIAN_BIG_IDX);
-            editEndianess->setDisabled(true);
+            editEndianness->setCurrentIndex(littleEndian ? ENDIAN_LITTLE_IDX : ENDIAN_BIG_IDX);
+            editEndianness->setDisabled(true);
             break;
 #endif
         default:
-            editEndianess->setDisabled(true);
+            editEndianness->setDisabled(true);
             if (formatIDX == FORMAT_AIFF_IDX || formatIDX == FORMAT_AU_IDX) {
-                editEndianess->setCurrentIndex(ENDIAN_BIG_IDX);
+                editEndianness->setCurrentIndex(ENDIAN_BIG_IDX);
             } else {
-                editEndianess->setCurrentIndex(ENDIAN_LITTLE_IDX);
+                editEndianness->setCurrentIndex(ENDIAN_LITTLE_IDX);
             }
             break;
     }

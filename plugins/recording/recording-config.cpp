@@ -158,7 +158,7 @@ void RecordingConfig::getSoundFileInfo(SF_INFO &sinfo, bool input)
     if (m_SoundFormat.m_SampleBits == 16)
         sinfo.format |= SF_FORMAT_PCM_16;
 
-    if (m_SoundFormat.m_Endianess == LITTLE_ENDIAN)
+    if (m_SoundFormat.m_Endianness == LITTLE_ENDIAN)
         sinfo.format |= SF_ENDIAN_LITTLE;
     else
         sinfo.format |= SF_ENDIAN_BIG;
@@ -179,10 +179,10 @@ void RecordingConfig::getSoundFileInfo(SF_INFO &sinfo, bool input)
 
 void RecordingConfig::checkFormatSettings()
 {
-    // correct Endianess and Signs for specific formats
+    // correct Endianness and Signs for specific formats
     switch (m_OutputFormat) {
         case outputWAV:
-            m_SoundFormat.m_Endianess = LITTLE_ENDIAN;
+            m_SoundFormat.m_Endianness = LITTLE_ENDIAN;
             if (m_SoundFormat.m_SampleBits == 8)
                 m_SoundFormat.m_IsSigned = false;
             // libsndfile only supports signed 16 bit samples
@@ -190,13 +190,13 @@ void RecordingConfig::checkFormatSettings()
                 m_SoundFormat.m_IsSigned = true;
             break;
         case outputAIFF:
-            m_SoundFormat.m_Endianess = BIG_ENDIAN;
+            m_SoundFormat.m_Endianness = BIG_ENDIAN;
             // libsndfile only supports signed 16 bit samples
             if (m_SoundFormat.m_SampleBits == 16)
                 m_SoundFormat.m_IsSigned = true;
             break;
         case outputAU:
-            m_SoundFormat.m_Endianess = BIG_ENDIAN;
+            m_SoundFormat.m_Endianness = BIG_ENDIAN;
             m_SoundFormat.m_IsSigned = true;
             // libsndfile only supports signed 16 bit samples
             if (m_SoundFormat.m_SampleBits == 16)

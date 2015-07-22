@@ -898,7 +898,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
     snd_pcm_format_t sample_format = snd_pcm_build_linear_format(format.m_SampleBits,
                                                                  format.m_SampleBits,
                                                                  !format.m_IsSigned,
-                                                                 format.m_Endianess == BIG_ENDIAN);
+                                                                 format.m_Endianness == BIG_ENDIAN);
     if (!error && (err = snd_pcm_hw_params_set_format(alsa_handle, hwparams, sample_format)) < 0) {
         logError(i18n("ALSA Plugin: Error setting sample format for %1: %2", pcm_name, snd_strerror(err)));
         error = true;

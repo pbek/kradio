@@ -351,9 +351,9 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QLabel" name="lableEndianess">
+          <widget class="QLabel" name="lableEndianness">
            <property name="text">
-            <string>Endianess:</string>
+            <string>Endianness:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -407,7 +407,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="KComboBox" name="editEndianess">
+          <widget class="KComboBox" name="editEndianness">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -725,7 +725,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>editRate</tabstop>
   <tabstop>editBits</tabstop>
   <tabstop>editSign</tabstop>
-  <tabstop>editEndianess</tabstop>
+  <tabstop>editEndianness</tabstop>
   <tabstop>editChannels</tabstop>
   <tabstop>editBufferSize</tabstop>
   <tabstop>editBufferCount</tabstop>
