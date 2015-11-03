@@ -42,7 +42,8 @@
 #include <math.h>
 
 ButtonFlowLayout4::ButtonFlowLayout4(QWidget *parent, int margin, int spacing)
-    : QLayout(parent)
+    : QLayout(parent),
+      m_cached_width(-1)  /* force heightForWidth() to recalc it */
 {
     setMargin(margin);
     setSpacing(spacing);
