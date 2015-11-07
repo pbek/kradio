@@ -109,11 +109,7 @@ void RecordingConfiguration::setGUISoundFormat(const RecordingConfig &c)
         case 2 : editChannels->setCurrentIndex(CHANNELS_STEREO_IDX); break;
         default: editChannels->setCurrentIndex(CHANNELS_STEREO_IDX); break;
     }
-    switch (c.m_SoundFormat.m_IsSigned) {
-        case 0 : editSign->setCurrentIndex(SIGN_UNSIGNED_IDX); break;
-        case 1 : editSign->setCurrentIndex(SIGN_SIGNED_IDX); break;
-        default: editSign->setCurrentIndex(SIGN_SIGNED_IDX); break;
-    }
+    editSign->setCurrentIndex(c.m_SoundFormat.m_IsSigned ? SIGN_SIGNED_IDX : SIGN_UNSIGNED_IDX);
     switch (c.m_SoundFormat.m_SampleRate) {
         case 48000: editRate->setCurrentIndex(RATE_48000_IDX); break;
         case 44100: editRate->setCurrentIndex(RATE_44100_IDX); break;

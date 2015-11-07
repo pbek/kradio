@@ -462,10 +462,7 @@ void AlsaSoundConfiguration::setCaptureSoundFormat(const SoundFormat &sf)
         case 16 : idx_Bits = BITS_16_IDX; break;
     }
 
-    switch(sf.m_IsSigned) {
-        case true  : idx_Sign = SIGN_SIGNED_IDX; break;
-        case false : idx_Sign = SIGN_UNSIGNED_IDX; break;
-    }
+    idx_Sign = sf.m_IsSigned ? SIGN_SIGNED_IDX : SIGN_UNSIGNED_IDX;
 
     switch(sf.m_Channels) {
         case 2: idx_Channels = CHANNELS_STEREO_IDX; break;
