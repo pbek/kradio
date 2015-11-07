@@ -89,6 +89,7 @@ KTextEdit *ErrorLog::createTextEditPage(const QString &title, const KIcon &icon,
     linfo->setMargin ( 0 );
     linfo->addWidget(edit, 0, 0);
     edit->setReadOnly(true);
+    edit->setUndoRedoEnabled(false);
 
     item = addPage(frame, title);
     item->setHeader(title);
