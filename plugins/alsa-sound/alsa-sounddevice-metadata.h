@@ -32,6 +32,15 @@ public:
     const QString &deviceDescription()        const { return m_deviceDescription;        }
     const QString &deviceVerboseDescription() const { return m_deviceVerboseDescription; }
 
+    bool operator==(const AlsaSoundDeviceMetaData &other) const
+    {
+        return m_pcmDeviceName == other.m_pcmDeviceName
+               && m_mixerCardName == other.m_mixerCardName
+               && m_cardDescription == other.m_cardDescription
+               && m_deviceDescription == other.m_deviceDescription
+               && m_deviceVerboseDescription == other.m_deviceVerboseDescription;
+    }
+
 protected:
     QString  m_pcmDeviceName;
     QString  m_mixerCardName;
@@ -49,6 +58,12 @@ public:
 
     const QString &mixerCardName()            const { return m_mixerCardName;            }
     const QString &cardDescription()          const { return m_cardDescription;          }
+
+    bool operator==(const AlsaMixerMetaData &other) const
+    {
+        return m_mixerCardName == other.m_mixerCardName
+               && m_cardDescription == other.m_cardDescription;
+    }
 
 protected:
     QString  m_mixerCardName;
