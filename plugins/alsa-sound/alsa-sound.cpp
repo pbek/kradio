@@ -62,6 +62,8 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_CaptureMixerName  ("default"),
       m_PlaybackLatency(30),
       m_CaptureLatency(30),
+      m_workaroundSleepPlaybackMilliSeconds(0),
+      m_workaroundSleepCaptureMilliSeconds(0),
       m_PassivePlaybackStreams(),
       m_PlaybackStreamID(),
       m_CaptureStreamID(),
