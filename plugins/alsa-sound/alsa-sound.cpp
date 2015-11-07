@@ -987,6 +987,7 @@ bool AlsaSoundDevice::openAlsaDevice(snd_pcm_t *&alsa_handle, SoundFormat &forma
         snd_pcm_dump(alsa_handle, log);
 #endif
     }
+    snd_output_close(log);
 
     return !error;
 }
