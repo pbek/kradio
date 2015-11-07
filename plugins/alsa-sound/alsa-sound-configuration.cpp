@@ -30,6 +30,7 @@
 #include "alsa-mixer-element.h"
 #include "alsa-sound-configuration.h"
 #include "alsa-sound.h"
+#include "alsa-sound-models.h"
 
 
 AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice *dev)
@@ -42,6 +43,15 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
    m_ignore_updates(false)
 {
     setupUi(this);
+
+    m_playbackDeviceModel = new AlsaSoundPlaybackDeviceModel(m_comboPlaybackDevice);
+    m_comboPlaybackDevice->setModel(m_playbackDeviceModel);
+    m_playbackMixerModel = new AlsaSoundPlaybackMixerModel(m_comboPlaybackMixerCard);
+    m_comboPlaybackMixerCard->setModel(m_playbackMixerModel);
+    m_captureDeviceModel = new AlsaSoundCaptureDeviceModel(m_comboCaptureDevice);
+    m_comboCaptureDevice->setModel(m_captureDeviceModel);
+    m_captureMixerModel = new AlsaSoundCaptureMixerModel(m_comboCaptureMixerCard);
+    m_comboCaptureMixerCard->setModel(m_captureMixerModel);
 
     QObject::connect(m_comboPlaybackDevice,         SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
     QObject::connect(m_comboPlaybackMixerCard,      SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
@@ -119,61 +129,44 @@ void AlsaSoundConfiguration::slotCheckSoundDevices()
     QString old_ca_device = m_comboCaptureDevice    ->itemData(m_comboCaptureDevice    ->currentIndex()).toString();
     QString old_ca_mixer  = m_comboCaptureMixerCard ->itemData(m_comboCaptureMixerCard ->currentIndex()).toString();
 
-    m_comboPlaybackDevice   ->clear();
-    m_comboPlaybackMixerCard->clear();
-    m_comboCaptureDevice    ->clear();
-    m_comboCaptureMixerCard ->clear();
-
-    QList<AlsaSoundDeviceMetaData> pbDevices = AlsaSoundDevice::getPCMPlaybackDeviceDescriptions();
-    QList<AlsaMixerMetaData>       pbMixers  = AlsaSoundDevice::getPlaybackMixerDescriptions();
-    QList<AlsaSoundDeviceMetaData> caDevices = AlsaSoundDevice::getPCMCaptureDeviceDescriptions();
-    QList<AlsaMixerMetaData>       caMixers  = AlsaSoundDevice::getCaptureMixerDescriptions();
-
-    AlsaSoundDeviceMetaData it;
-    AlsaMixerMetaData       itm;
-    foreach(it, pbDevices) {
-        m_comboPlaybackDevice    ->addItem(condenseALSADeviceDescription(it), it.pcmDeviceName());
-    }
-    foreach(itm, pbMixers) {
-        m_comboPlaybackMixerCard ->addItem(itm.cardDescription(), itm.mixerCardName());
-    }
-    foreach(it, caDevices) {
-        m_comboCaptureDevice     ->addItem(condenseALSADeviceDescription(it), it.pcmDeviceName());
-    }
-    foreach(itm, caMixers) {
-        m_comboCaptureMixerCard  ->addItem(itm.cardDescription(), itm.mixerCardName());
+    if (m_playbackDeviceModel->reload()) {
+        int new_pb_idx = m_comboPlaybackDevice->findData(old_pb_device);
+        if (new_pb_idx >= 0) {
+            m_comboPlaybackDevice->setCurrentIndex(new_pb_idx);
+        } else if (new_pb_idx < 0) {
+            slotPlaybackDeviceSelected(m_comboPlaybackDevice->currentIndex());
+            slotSetDirty();
+        }
     }
 
-    int new_pb_idx = m_comboPlaybackDevice->findData(old_pb_device);
-    if (new_pb_idx >= 0) {
-        m_comboPlaybackDevice->setCurrentIndex(new_pb_idx);
-    } else if (new_pb_idx < 0) {
-        slotPlaybackDeviceSelected(m_comboPlaybackDevice->currentIndex());
-        slotSetDirty();
+    if (m_playbackMixerModel->reload()) {
+        int new_pbm_idx = m_comboPlaybackMixerCard->findData(old_pb_mixer);
+        if (new_pbm_idx >= 0) {
+            m_comboPlaybackMixerCard->setCurrentIndex(new_pbm_idx);
+        } else if (new_pbm_idx < 0) {
+            slotPlaybackMixerSelected(m_comboPlaybackMixerCard->currentIndex());
+            slotSetDirty();
+        }
     }
 
-    int new_pbm_idx = m_comboPlaybackMixerCard->findData(old_pb_mixer);
-    if (new_pbm_idx >= 0) {
-        m_comboPlaybackMixerCard->setCurrentIndex(new_pbm_idx);
-    } else if (new_pbm_idx < 0) {
-        slotPlaybackMixerSelected(m_comboPlaybackMixerCard->currentIndex());
-        slotSetDirty();
+    if (m_captureDeviceModel->reload()) {
+        int new_ca_idx = m_comboCaptureDevice->findData(old_ca_device);
+        if (new_ca_idx >= 0) {
+            m_comboCaptureDevice->setCurrentIndex(new_ca_idx);
+        } else if (new_ca_idx < 0) {
+            slotCaptureDeviceSelected(m_comboCaptureDevice->currentIndex());
+            slotSetDirty();
+        }
     }
 
-    int new_ca_idx = m_comboCaptureDevice->findData(old_ca_device);
-    if (new_ca_idx >= 0) {
-        m_comboCaptureDevice->setCurrentIndex(new_ca_idx);
-    } else if (new_ca_idx < 0) {
-        slotCaptureDeviceSelected(m_comboCaptureDevice->currentIndex());
-        slotSetDirty();
-    }
-
-    int new_cam_idx = m_comboCaptureMixerCard->findData(old_ca_mixer);
-    if (new_cam_idx >= 0) {
-        m_comboCaptureMixerCard->setCurrentIndex(new_cam_idx);
-    } else if (new_cam_idx < 0) {
-        slotCaptureMixerSelected(m_comboCaptureMixerCard->currentIndex());
-        slotSetDirty();
+    if (m_captureMixerModel->reload()) {
+        int new_cam_idx = m_comboCaptureMixerCard->findData(old_ca_mixer);
+        if (new_cam_idx >= 0) {
+            m_comboCaptureMixerCard->setCurrentIndex(new_cam_idx);
+        } else if (new_cam_idx < 0) {
+            slotCaptureMixerSelected(m_comboCaptureMixerCard->currentIndex());
+            slotSetDirty();
+        }
     }
 }
 

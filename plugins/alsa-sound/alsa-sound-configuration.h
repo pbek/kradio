@@ -55,6 +55,11 @@ class QAlsaMixerElement;
 class QScrollArea;
 class QFrame;
 
+class AlsaSoundPlaybackDeviceModel;
+class AlsaSoundPlaybackMixerModel;
+class AlsaSoundCaptureDeviceModel;
+class AlsaSoundCaptureMixerModel;
+
 class AlsaSoundConfiguration : public QWidget,
                                public Ui_AlsaSoundConfigurationUI
 {
@@ -103,6 +108,11 @@ protected:
     bool                                   m_ignore_updates;
 
     QTimer                                 m_soundDevicesCheckTimer;
+
+    AlsaSoundPlaybackDeviceModel          *m_playbackDeviceModel;
+    AlsaSoundPlaybackMixerModel           *m_playbackMixerModel;
+    AlsaSoundCaptureDeviceModel           *m_captureDeviceModel;
+    AlsaSoundCaptureMixerModel            *m_captureMixerModel;
 };
 
 #endif
