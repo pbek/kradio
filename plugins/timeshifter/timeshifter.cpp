@@ -37,6 +37,7 @@ TimeShifter::TimeShifter (const QString &instanceID, const QString &name)
       m_TempFileMaxSize(256*1024*1024),
       m_PlaybackMixerID(QString::null),
       m_PlaybackMixerChannel("PCM"),
+      m_StreamPaused(false),
       m_orgVolume(0.0),
       m_PlaybackMetaData(0,0,0),
       m_PlaybackDataLeftInBuffer(0),
