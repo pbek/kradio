@@ -159,6 +159,7 @@ KRadioApp::KRadioApp()
 KRadioApp::~KRadioApp()
 {
     IErrorLogClient::staticLogDebug("KRadioApp::~KRadioApp()");
+    qDeleteAll(m_Instances);
 }
 
 void KRadioApp::saveState()
