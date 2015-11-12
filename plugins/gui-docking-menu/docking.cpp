@@ -91,7 +91,10 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
 
 
     m_menu = new KMenu();
-    contextMenu()->deleteLater();
+    // do not delete the context menu set by KSystemTrayIcon:
+    // as it does not track it using a smart pointer, deleting its
+    // context menu will result in crashes later.
+    //contextMenu()->deleteLater();
     // strangely the activated signals reach this class 
     // when running remotely on ubuntu, but not when running locally.
     // for now let's add the system tray menu
