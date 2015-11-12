@@ -87,8 +87,8 @@ PluginManager::~PluginManager()
 //     m_aboutPageFrames.clear();
 //     m_aboutDialog = NULL;
 
-    while (PluginBase *p = m_plugins.first()) {
-        deletePlugin(p);
+    while (!m_plugins.isEmpty()) {
+        deletePlugin(m_plugins.first());
     }
 
     if (m_widgetPluginHideShowMenu) {
