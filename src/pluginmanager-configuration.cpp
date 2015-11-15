@@ -27,7 +27,6 @@
 #include <kstandarddirs.h>
 #include <kfiledialog.h>
 #include <kdemacros.h>
-#include <kdeversion.h>
 
 #include <QtGui/QCheckBox>
 
@@ -48,11 +47,7 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
     btnAddLibrary          ->setIcon(KIcon("document-new"));
 
     QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio4/plugins";
-    #if KDE_IS_VERSION(4, 2, 80)
-        editPluginLibrary->setStartDir(defaultPluginDir);
-    #else
-        editPluginLibrary->setPath    (defaultPluginDir);
-    #endif
+    editPluginLibrary->setStartDir(defaultPluginDir);
 
     noticePluginLibrariesChanged();
     noticePluginsChanged();
