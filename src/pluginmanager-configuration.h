@@ -22,6 +22,7 @@
 #include <config.h>
 #endif
 
+class QColorGroup;
 #include "ui_pluginmanager-configuration-ui.h"
 
 class QWidget;

@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "ui_pluginmanager-configuration-ui.h"
 #include "pluginmanager-configuration.h"
 #include "kradioapp.h"
 #include "pluginmanager.h"

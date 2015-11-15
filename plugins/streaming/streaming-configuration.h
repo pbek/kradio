@@ -22,6 +22,7 @@
 #include <config.h>
 #endif
 
+class QColorGroup;
 #include "ui_streaming-configuration-ui.h"
 #include "streaming.h"
 
