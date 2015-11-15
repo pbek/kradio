@@ -18,7 +18,7 @@
 #include <kcmdlineargs.h>
 #include <kiconloader.h>
 #include <QtGui/QToolTip>
-#include <QtGui/QDragEnterEvent>
+#include <QtGui/QMouseEvent>
 
 #include <kmenu.h>
 #include <kapplication.h>
@@ -36,7 +36,6 @@
 #include "widgetpluginbase.h"
 #include "radiostation.h"
 //#include "aboutwidget.h"
-#include "station-drag-object.h"
 
 #include "docking.h"
 #include "docking-configuration.h"
@@ -104,11 +103,6 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
                      this,   SLOT(slotMenuItemActivated(QAction *)));
 
     buildContextMenu ();
-
-    #ifdef KRADIO_ENABLE_FIXMES
-        #warning "FIXME: enable drops again for systray icon"
-    #endif
-    //setAcceptDrops(true);
 
 //     m_WorkaroundRecordingMenuUpdate.setInterval(100);
 //     m_WorkaroundRecordingMenuUpdate.setSingleShot(true);
@@ -975,31 +969,6 @@ void RadioDocking::setWheelAction(SystrayWheelAction action)
     }
 }
 
-
-void RadioDocking::dragEnterEvent(QDragEnterEvent* event)
-{
-    bool a = StationDragObject::canDecode(event->mimeData());
-    if (a)
-        IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
-    else
-        IErrorLogClient::staticLogDebug("contentsDragEnterEvent rejected");
-    if (a) {
-        event->accept();
-    }
-}
-
-void RadioDocking::dropEvent(QDropEvent* event)
-{
-    QStringList list;
-
-    if (StationDragObject::decode(event->mimeData(), list)) {
-        QStringList l = getStationSelection();
-        for (QList<QString>::const_iterator it = list.begin(); it != list.end(); ++it)
-            if (!l.contains(*it))
-                l.append(*it);
-        setStationSelection(l);
-    }
-}
 
 bool RadioDocking::noticeRDSRadioTextChanged(const QString &s)
 {

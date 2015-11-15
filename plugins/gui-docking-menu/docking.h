@@ -169,12 +169,6 @@ protected:
 
     void    ShowHideWidgetPlugins();
 
-    #ifdef KRADIO_ENABLE_FIXMES
-        #warning "FIXME: port to QT4 drag and drop"
-    #endif
-    void    dragEnterEvent(QDragEnterEvent* event);
-    void    dropEvent(QDropEvent* event);
-
 public:
 
     SystrayClickAction   getClickAction      (Qt::MouseButton btn)  const { return m_ClickActions[btn];       }
