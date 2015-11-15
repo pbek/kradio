@@ -47,8 +47,6 @@ SET_TARGET_PROPERTIES(kradio4_plugin_soundserver
 
 TARGET_LINK_LIBRARIES(kradio4_plugin_soundserver 
   ${KDE4_KDEUI_LIBS}
-  ${QT_QT3SUPPORT_LIBRARY}
-  ${KDE4_KDE3SUPPORT_LIBRARY}
 )
 
 INSTALL(TARGETS kradio4_plugin_soundserver ${INSTALL_TARGETS_DEFAULT_ARGS})

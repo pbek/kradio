@@ -44,8 +44,6 @@ SET_TARGET_PROPERTIES(kradio4_plugin_gui_error_log
 
 TARGET_LINK_LIBRARIES(kradio4_plugin_gui_error_log
   ${KDE4_KDEUI_LIBS}
-  ${QT_QT3SUPPORT_LIBRARY}
-  ${KDE4_KDE3SUPPORT_LIBRARY}
 )
 
 INSTALL(TARGETS kradio4_plugin_gui_error_log ${INSTALL_TARGETS_DEFAULT_ARGS})
