@@ -211,14 +211,14 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 {
     m_ignoreChanges = true;
 
-    QString old_id = m_stations.at(listStations->currentStationIndex()).stationID();
+    QString old_id = listStations->currentStationID();
 
     m_stations = sl;
 
     listStations->setStations(sl);
 
     listStations->setCurrentStation(m_stations.idxWithID(old_id));
-    listStations->ensureItemVisible(listStations->currentItem());
+    listStations->scrollTo(listStations->currentIndex());
 
 
     StationListMetaData &info = m_stations.metaData();
@@ -344,7 +344,7 @@ void RadioConfiguration::createNewStation(const RadioStation *rs_template)
             listStations->setStation(i, m_stations.at(i));
         }
         listStations->setCurrentStation(currentIdx + 1);
-        listStations->ensureItemVisible(listStations->currentItem());
+        listStations->scrollTo(listStations->currentIndex());
         m_ignoreChanges = false;
         slotStationSelectionChanged(listStations->currentStationIndex());
 
@@ -502,7 +502,7 @@ void RadioConfiguration::slotStationUp()
         listStations->setStation(idx-1, sl.at(idx-1));
         listStations->setStation(idx,   sl.at(idx));
         listStations->setCurrentStation(idx-1);
-        listStations->ensureItemVisible(listStations->currentItem());
+        listStations->scrollTo(listStations->currentIndex());
 //         listStations->blockSignals(o);
         m_ignoreChanges = false;
     }
@@ -524,7 +524,7 @@ void RadioConfiguration::slotStationDown()
         listStations->setStation(idx,   sl.at(idx));
         listStations->setStation(idx+1, sl.at(idx+1));
         listStations->setCurrentStation(idx+1);
-        listStations->ensureItemVisible(listStations->currentItem());
+        listStations->scrollTo(listStations->currentIndex());
 //         listStations->blockSignals(o);
         m_ignoreChanges = false;
     }

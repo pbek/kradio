@@ -31,11 +31,6 @@
 
 #include "radiostation-listview.h"
 
-#ifdef KRADIO_ENABLE_FIXMES
-    #warning "konvert from k3listview to KListWidget"
-#endif
-//#include <k3listview.h>
-
 class RadioStationListView;
 class Ui_StationSelectorUI;
 class QGridLayout;
@@ -79,8 +74,6 @@ protected slots:
 
     void slotButtonToLeft();
     void slotButtonToRight();
-    void slotMoveToRight(const QStringList &list);
-    void slotMoveToLeft(const QStringList &list);
 
     void slotOK();
     void slotCancel();
@@ -94,9 +87,8 @@ protected:
 
     QGridLayout   *getGridLayout();
 
-    void moveItem (RadioStationListView *fromListView,    QStringList          &fromIDList,
-                   Q3ListViewItem       *item,            int                   fromIdx,
-                   RadioStationListView *toListView,      QStringList          &toIDList);
+    void moveSelectedRows(RadioStationListView *fromListView,
+                          RadioStationListView *toListView);
 
     void updateListViews();
 

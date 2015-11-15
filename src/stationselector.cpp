@@ -40,11 +40,17 @@ StationSelector::StationSelector (QWidget *parent)
 
     QObject::connect(m_ui->buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
     QObject::connect(m_ui->buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
-    QObject::connect(m_ui->listAvailable, SIGNAL(sigStationsReceived(const QStringList&)), this, SLOT(slotMoveToLeft(const QStringList&)));
-    QObject::connect(m_ui->listSelected,  SIGNAL(sigStationsReceived(const QStringList&)), this, SLOT(slotMoveToRight(const QStringList&)));
+    QObject::connect(m_ui->listAvailable->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
+                     this, SLOT(slotSetDirty()));
+    QObject::connect(m_ui->listAvailable->model(), SIGNAL(rowsRemoved(QModelIndex,int,int)),
+                     this, SLOT(slotSetDirty()));
+    QObject::connect(m_ui->listSelected->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
+                     this, SLOT(slotSetDirty()));
+    QObject::connect(m_ui->listSelected->model(), SIGNAL(rowsRemoved(QModelIndex,int,int)),
+                     this, SLOT(slotSetDirty()));
 
-    m_ui->listSelected->setSelectionMode(Q3ListView::Extended);
-    m_ui->listAvailable->setSelectionMode(Q3ListView::Extended);
+    m_ui->listSelected->setSelectionMode(QAbstractItemView::ExtendedSelection);
+    m_ui->listAvailable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 }
 
 
@@ -128,93 +134,13 @@ bool StationSelector::noticeStationsChanged(const StationList &sl)
 
 void StationSelector::slotButtonToLeft()
 {
-    slotSetDirty();
-    m_ui->listAvailable->clearSelection();
-    Q3ListViewItem *item = m_ui->listSelected->firstChild();
-    int idx_from = 0;
-    while (item) {
-        Q3ListViewItem *next_item = item->nextSibling();
-
-        if (item->isSelected()) {
-
-            moveItem (m_ui->listSelected,  m_stationIDsSelected,
-                      item,                idx_from,
-                      m_ui->listAvailable, m_stationIDsAvailable);
-
-            --idx_from;
-        }
-        item = next_item;
-        ++idx_from;
-    }
+    moveSelectedRows(m_ui->listSelected, m_ui->listAvailable);
 }
 
 
 void StationSelector::slotButtonToRight()
 {
-    slotSetDirty();
-    m_ui->listSelected->clearSelection();
-    Q3ListViewItem *item = m_ui->listAvailable->firstChild();
-    int idx_from = 0;
-    while (item) {
-        Q3ListViewItem *next_item = item->nextSibling();
-
-        if (item->isSelected()) {
-
-            moveItem (m_ui->listAvailable, m_stationIDsAvailable,
-                      item,                idx_from,
-                      m_ui->listSelected,  m_stationIDsSelected);
-
-            --idx_from;
-        }
-        item = next_item;
-        ++idx_from;
-    }
-}
-
-
-void StationSelector::slotMoveToRight(const QStringList &list)
-{
-    slotSetDirty();
-    m_ui->listSelected->clearSelection();
-    Q3ListViewItem *item = m_ui->listAvailable->firstChild();
-    int idx_from = 0;
-    while (item) {
-        Q3ListViewItem *next_item = item->nextSibling();
-
-        if (list.contains(m_stationIDsAvailable[idx_from])) {
-
-            moveItem (m_ui->listAvailable, m_stationIDsAvailable,
-                      item,                idx_from,
-                      m_ui->listSelected,  m_stationIDsSelected);
-
-            --idx_from;
-        }
-        item = next_item;
-        ++idx_from;
-    }
-}
-
-
-void StationSelector::slotMoveToLeft(const QStringList &list)
-{
-    slotSetDirty();
-    m_ui->listAvailable->clearSelection();
-    Q3ListViewItem *item = m_ui->listSelected->firstChild();
-    int idx_from = 0;
-    while (item) {
-        Q3ListViewItem *next_item = item->nextSibling();
-
-        if (list.contains(m_stationIDsSelected[idx_from])) {
-
-            moveItem (m_ui->listSelected,  m_stationIDsSelected,
-                      item,                idx_from,
-                      m_ui->listAvailable, m_stationIDsAvailable);
-
-            --idx_from;
-        }
-        item = next_item;
-        ++idx_from;
-    }
+    moveSelectedRows(m_ui->listAvailable, m_ui->listSelected);
 }
 
 
@@ -223,52 +149,31 @@ QGridLayout   *StationSelector::getGridLayout()
     return m_ui ? m_ui->StationSelectorUILayout : NULL;
 }
 
-void StationSelector::moveItem(
+
+void StationSelector::moveSelectedRows(
   RadioStationListView *fromListView,
-  QStringList          &fromIDList,
-  Q3ListViewItem       *item,
-  int                   idx_from,
-  RadioStationListView *toListView,
-  QStringList          &toIDList
+  RadioStationListView *toListView
 )
 {
-    fromListView->takeItem(item, idx_from);
-
-    QString id = fromIDList[idx_from];
-    fromIDList.removeAt(idx_from);
-
-    int             idx_to  = 0,
-                    idx_all = 0;
-    bool            found   = false;
-    Q3ListViewItem *item_to      = toListView->firstChild(),
-                   *prev_item_to = NULL;
-
-    while (idx_all < m_stationIDsAll.count() &&
-           idx_to  < toIDList.count())
-    {
-        while (m_stationIDsAll[idx_all] != toIDList[idx_to])
-        {
-            if (m_stationIDsAll[idx_all] == id) {
-                found = true;
-                break;
-            }
-            ++idx_all;
+    QSet<int> rowsSet;
+    foreach (const QModelIndex &index, fromListView->selectionModel()->selectedRows()) {
+        if (index.isValid()) {
+            rowsSet << index.row();
         }
-        if (found)
-            break;
-
-        prev_item_to = item_to;
-        item_to = item_to->nextSibling();
-        ++idx_to;
     }
+    QList<int> rows = rowsSet.toList();
+    // iterate the list of rows by last to first, otherwise
+    // removing lower rows will invalidate following ones
+    qSort(rows.begin(), rows.end(), qGreater<int>());
+    const StationList &stations = queryStations();
+    foreach (int row, rows) {
+        const QModelIndex fromIndex = fromListView->model()->index(row, 0);
+        const QString id = fromIndex.data(RadioStationModel::StationIdRole).toString();
+        const RadioStation &rs = stations.stationWithID(id);
+        const int nr = stations.idxWithID(id)+1;
 
-    toIDList.insert(idx_to, id);
-    toListView->insertItem(item, id, idx_to);
-    if (prev_item_to) {
-        item->moveItem(prev_item_to);
-    } else {
-        item->moveItem(item_to);
-        if (item_to) item_to->moveItem(item);
+        toListView->insertStationByNr(rs, nr);
+        fromListView->removeStation(row);
     }
 }
 
@@ -293,7 +198,12 @@ void StationSelector::updateListViews()
 void StationSelector::slotOK()
 {
     if (m_dirty) {
-        QStringList l = m_stationIDsSelected;
+        QStringList l;
+        const int count = m_ui->listSelected->childCount();
+        for (int i = 0; i < count; ++i) {
+            QModelIndex mi = m_ui->listSelected->model()->index(i, 0);
+            l.append(mi.data(RadioStationModel::StationIdRole).toString());
+        }
         for (int i = 0; i < m_stationIDsNotDisplayed.count(); ++i)
             l.append(m_stationIDsNotDisplayed[i]);
         sendStationSelection(l);

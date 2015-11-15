@@ -21,34 +21,299 @@
 #include "station-drag-object.h"
 
 #include <klocale.h>
-#include <QtCore/QFile>
+#include <QtCore/QDataStream>
 #include <QtGui/QImage>
 #include <QtGui/QPixmap>
 #include <QtGui/QDragMoveEvent>
+#include <QtGui/QHeaderView>
 
 #include <kconfiggroup.h>
 
-RadioStationListView::RadioStationListView(QWidget *parent, const char *name)
-  : K3ListView(parent)
+static const char rsm_mime[] = "application/x-radiostationmodel-list";
+
+static QDataStream &operator<<(QDataStream &out, const RadioStationModel::RS &rs)
 {
-    K3ListView::setObjectName(name);
-    addColumn(i18n("No."));
-    addColumn(i18n("Icon"));
-    addColumn(i18n("Station"));
-    addColumn(i18n("Description"));
-    setAllColumnsShowFocus(true);
-    setSorting(-1);
+    out << rs.nr << rs.id << rs.name << rs.description << rs.icon;
+    return out;
+}
 
-    QObject::connect(this, SIGNAL(spacePressed(Q3ListViewItem*)),
-                     this, SLOT(slotStationActivation(Q3ListViewItem* )));
-    QObject::connect(this, SIGNAL(returnPressed(Q3ListViewItem*)),
-                     this, SLOT(slotStationActivation(Q3ListViewItem* )));
-    QObject::connect(this, SIGNAL(doubleClicked(Q3ListViewItem*)),
-                     this, SLOT(slotStationActivation(Q3ListViewItem *)));
-    QObject::connect(this, SIGNAL(currentChanged(Q3ListViewItem*)),
-                     this, SLOT(slotCurrentStationChanged(Q3ListViewItem *)));
 
-    setAcceptDrops(true);
+static QDataStream &operator>>(QDataStream &in, RadioStationModel::RS &rs)
+{
+    in >> rs.nr >> rs.id >> rs.name >> rs.description >> rs.icon;
+    return in;
+}
+
+
+Q_DECLARE_METATYPE(RadioStationModel::RS)
+
+
+RadioStationModel::RadioStationModel(QObject *parent)
+  : QAbstractItemModel(parent)
+{
+    qRegisterMetaTypeStreamOperators<RadioStationModel::RS>("RadioStationModel::RS");
+}
+
+
+RadioStationModel::~RadioStationModel()
+{
+}
+
+
+int RadioStationModel::columnCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : 3;
+}
+
+
+QVariant RadioStationModel::data(const QModelIndex &index, int role) const
+{
+    if (index.row() < 0 || index.row() >= m_stations.count()) {
+        return QVariant();
+    }
+
+    const RS &rs = m_stations.at(index.row());
+    switch(role) {
+        case StationIdRole: return rs.id;
+        case Qt::DisplayRole:
+            switch(index.column()) {
+                case 1: return rs.name;
+                case 2: return rs.description;
+            }
+            break;
+        case Qt::DecorationRole:
+            switch(index.column()) {
+                case 0: return rs.icon;
+            }
+            break;
+    }
+
+    return QVariant();
+}
+
+
+bool RadioStationModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int /*row*/, int column, const QModelIndex &/*parent*/)
+{
+    if (action == Qt::IgnoreAction)
+        return true;
+
+    if (!data->hasFormat(rsm_mime) || column >= 3)
+        return false;
+
+    QByteArray encodedData = data->data(rsm_mime);
+    QDataStream stream(&encodedData, QIODevice::ReadOnly);
+    QList<RS> newItems;
+    stream >> newItems;
+
+    foreach (const RS &rs, newItems) {
+        const int beginRow = indexForNr(rs.nr);
+
+        beginInsertRows(QModelIndex(), beginRow, beginRow);
+        if (beginRow < m_stations.count() - 1) {
+            m_stations.insert(beginRow, rs);
+        } else {
+            m_stations.append(rs);
+        }
+        endInsertRows();
+    }
+
+    return true;
+}
+
+Qt::ItemFlags RadioStationModel::flags(const QModelIndex &index) const
+{
+    Qt::ItemFlags defaultFlags = QAbstractItemModel::flags(index);
+
+    if (index.isValid()) {
+        return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;
+    } else {
+        return Qt::ItemIsDropEnabled | defaultFlags;
+    }
+}
+
+
+QVariant RadioStationModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (orientation != Qt::Horizontal || role != Qt::DisplayRole) {
+        return QVariant();
+    }
+
+    switch(section) {
+        case 0: return i18n("Icon");
+        case 1: return i18n("Station");
+        case 2: return i18n("Description");
+    }
+    return QVariant();
+}
+
+
+QModelIndex RadioStationModel::index(int row, int column, const QModelIndex &parent) const
+{
+    if (parent.isValid() || row < 0 || row >= m_stations.count()
+        || column < 0 || column >= 3) {
+        return QModelIndex();
+    }
+
+    return createIndex(row, column);
+}
+
+
+bool RadioStationModel::insertRows(int row, int count, const QModelIndex &parent)
+{
+    if (parent.isValid() || row < 0 || row > m_stations.count() || count <= 0) {
+        return false;
+    }
+
+    beginInsertRows(parent, row, row + count - 1);
+    if (row < m_stations.count() - 1) {
+        m_stations.insert(row, count, RS());
+    } else {
+        m_stations.resize(m_stations.size() + count);
+    }
+    endInsertRows();
+    return true;
+}
+
+
+QMimeData *RadioStationModel::mimeData(const QModelIndexList &indexes) const
+{
+    QSet<int> rowsSet;
+    rowsSet.reserve(indexes.count());
+    foreach (const QModelIndex &index, indexes) {
+        if (index.isValid()) {
+            rowsSet << index.row();
+        }
+    }
+    QList<int> rows = rowsSet.toList();
+    qSort(rows);
+
+    QList<RS> items;
+    foreach (int row, rows) {
+        items << m_stations.at(row);
+    }
+
+    QMimeData *mimeData = new QMimeData();
+    QByteArray encodedData;
+    QDataStream stream(&encodedData, QIODevice::WriteOnly);
+    stream << items;
+    mimeData->setData(rsm_mime, encodedData);
+
+    return mimeData;
+}
+
+
+QStringList RadioStationModel::mimeTypes() const
+{
+    return QStringList() << QLatin1String(rsm_mime);
+}
+
+
+QModelIndex RadioStationModel::parent(const QModelIndex &) const
+{
+    return QModelIndex();
+}
+
+
+bool RadioStationModel::removeRows(int row, int count, const QModelIndex &parent)
+{
+    if (parent.isValid() || row < 0 || row >= m_stations.count() || count <= 0) {
+        return false;
+    }
+
+    count = qMin(count, m_stations.count() - row);
+    beginRemoveRows(parent, row, row + count - 1);
+    m_stations.remove(row, count);
+    endRemoveRows();
+
+    return true;
+}
+
+
+int RadioStationModel::rowCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : m_stations.count();
+}
+
+
+Qt::DropActions RadioStationModel::supportedDropActions() const
+{
+    return Qt::MoveAction;
+}
+
+
+void RadioStationModel::setStation(int idx, const RadioStation &station, int nr)
+{
+    setRS(m_stations[idx], station, nr);
+
+    emit dataChanged(createIndex(idx, 0), createIndex(idx, 3));
+}
+
+
+void RadioStationModel::setStations(const StationList &list)
+{
+    beginResetModel();
+    m_stations.resize(list.count());
+    for (int i = 0; i < list.count(); ++i) {
+        setRS(m_stations[i], list.at(i), i+1);
+    }
+    endResetModel();
+}
+
+
+void RadioStationModel::insertStationByNr(const RadioStation &st, int nr)
+{
+    RS rs;
+    setRS(rs, st, nr);
+
+    const int beginRow = indexForNr(nr);
+    beginInsertRows(QModelIndex(), beginRow, beginRow);
+    if (beginRow < m_stations.count() - 1) {
+        m_stations.insert(beginRow, rs);
+    } else {
+        m_stations.append(rs);
+    }
+    endInsertRows();
+}
+
+
+void RadioStationModel::setRS(RS &rs, const RadioStation &station, int nr)
+{
+    rs.nr = nr;
+    rs.id = station.stationID();
+    rs.name = station.name();
+    rs.description = station.description();
+    rs.icon = QPixmap(station.iconName());
+}
+
+
+int RadioStationModel::indexForNr(int nr) const
+{
+    int i = 0;
+    for (; i < m_stations.count(); ++i) {
+        if (m_stations.at(i).nr > nr)
+            break;
+    }
+    return i;
+}
+
+
+
+RadioStationListView::RadioStationListView(QWidget *parent, const char *name)
+  : QTreeView(parent)
+{
+    setObjectName(name);
+    setRootIsDecorated(false);
+    setDragEnabled(true);
+    setDragDropMode(DragDrop);
+    viewport()->setAcceptDrops(true);
+    setDropIndicatorShown(true);
+
+    QObject::connect(this, SIGNAL(doubleClicked(QModelIndex)),
+                     this, SLOT(slotStationActivation(QModelIndex)));
+
+    m_model = new RadioStationModel(this);
+    setModel(m_model);
+    header()->setResizeMode(0, QHeaderView::ResizeToContents);
 }
 
 
@@ -57,75 +322,17 @@ RadioStationListView::~RadioStationListView()
 }
 
 
-Q3ListViewItem *RadioStationListView::getItemForIndex(int idx) const
-{
-    Q3ListViewItem *item = NULL;
-
-    if (idx >= 0 && idx < childCount()) {
-        item = firstChild();
-        int i = 0;
-        while (item && i < idx) {
-            item = item->nextSibling();
-            ++i;
-        }
-    }
-    return item;
-}
-
-
-int RadioStationListView::getIndexForItem(Q3ListViewItem *queryItem) const
-{
-    int idx = -1;
-
-    if (queryItem) {
-        Q3ListViewItem *item = firstChild();
-        ++idx;
-        while (item && item != queryItem) {
-            item = item->nextSibling();
-            ++idx;
-        }
-        if (!item)
-            idx = -1;
-    }
-
-    return idx;
-}
-
-
 void RadioStationListView::setStation(int idx, const RadioStation &s, int nr)
 {
-    Q3ListViewItem *item = getItemForIndex(idx);
-
     if (idx < 0) {
-        item = new Q3ListViewItem(this, firstChild());
-        firstChild()->moveItem(item);
-        m_StationIDs.prepend(s.stationID());
+        m_model->insertRow(0);
         idx = 0;
     } else if (idx >= childCount()) {
-        item = new Q3ListViewItem(this, lastChild());
-        m_StationIDs.append(s.stationID());
+        m_model->insertRow(childCount());
         idx = childCount() - 1;
     }
 
-    if (item) {
-        item->setDragEnabled(true);
-        item->setDropEnabled(true);
-
-        item->setText(0, QString::number(nr > 0 ? nr : idx+1));
-        item->setText(2, s.name());
-        item->setText(3, s.description());
-
-        m_StationIDs[idx] = s.stationID();
-
-        QImage  img(s.iconName());
-        if (!img.isNull()) {
-            int   h = img.height();
-            float f = 0.9 * (float)(item->height()) / (h ? (float)h : 1.0);
-            item->setPixmap(1, QPixmap::fromImage(img.scaled((int)(img.width()*f), (int)(h * f))));
-        } else {
-            item->setPixmap(1, QPixmap());
-        }
-    }
+    m_model->setStation(idx, s, nr > 0 ? nr : idx+1);
 }
 
 
@@ -137,133 +344,88 @@ void RadioStationListView::appendStation(const RadioStation &st, int nr)
 
 void RadioStationListView::setStations(const StationList &stations)
 {
-    clear();
-    
-    for (StationList::const_iterator it = stations.begin(); it != stations.end(); ++it) {
-        setStation(childCount(), **it);
-    }
+    m_model->setStations(stations);
+}
+
+
+void RadioStationListView::insertStationByNr(const RadioStation &st, int nr)
+{
+    m_model->insertStationByNr(st, nr);
 }
 
 
 void RadioStationListView::removeStation(int idx)
 {
-    Q3ListViewItem *item = getItemForIndex(idx);
-    if (item) {
-        delete item;
-        m_StationIDs.erase(m_StationIDs.begin() + idx);
-    }
+    m_model->removeRow(idx);
 }
 
-void RadioStationListView::takeItem(Q3ListViewItem *item, int idx)
-{
-    Q3ListView::takeItem(item);
-    m_StationIDs.erase(m_StationIDs.begin() + idx);
-}
-
-void RadioStationListView::insertItem(Q3ListViewItem *item, const QString &stationid, int idx_to)
-{
-    Q3ListView::insertItem(item);
-    m_StationIDs.insert(idx_to, stationid);
-}
 
 void RadioStationListView::setCurrentStation(int idx)
 {
-    Q3ListViewItem *item = getItemForIndex(idx);
-    if (item) {
-        clearSelection();
-        setSelected(item, true);
-        setCurrentItem(item);
-    }
+    setCurrentIndex(m_model->index(idx, 0));
 }
 
 
 int RadioStationListView::currentStationIndex() const
 {
-    return getIndexForItem(currentItem());
+    const QModelIndex mi = currentIndex();
+    return mi.isValid() ? mi.row() : -1;
 }
 
 
-void RadioStationListView::slotStationActivation(Q3ListViewItem *item)
+QString RadioStationListView::currentStationID() const
 {
-    emit sigStationActivated(getIndexForItem(item));
+    const QModelIndex mi = currentIndex();
+    return mi.isValid() ? mi.data(RadioStationModel::StationIdRole).toString() : QString();
 }
 
 
-void RadioStationListView::slotCurrentStationChanged(Q3ListViewItem *item)
+int RadioStationListView::childCount() const
 {
-    emit sigCurrentStationChanged(getIndexForItem(item));
+    return m_model->rowCount();
+}
+
+
+void RadioStationListView::clear()
+{
+    m_model->setStations(StationList());
+}
+
+
+void RadioStationListView::slotStationActivation(const QModelIndex &index)
+{
+    emit sigStationActivated(index.row());
 }
 
 
 void RadioStationListView::saveState (KConfigGroup &cfg) const
 {
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 3; ++i)
         cfg.writeEntry(QString(objectName()) + "_radiostation_listview_col_" + QString::number(i), columnWidth(i));
 }
 
 
 void RadioStationListView::restoreState (const KConfigGroup &cfg)
 {
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 3; ++i)
         setColumnWidth(i, cfg.readEntry(QString(objectName()) + "_radiostation_listview_col_" + QString::number(i), -1));
 }
 
 
-Q3DragObject *RadioStationListView::dragObject()
+void RadioStationListView::dragMoveEvent(QDragMoveEvent *event)
 {
-    QStringList list;
-    Q3ListViewItem *item = firstChild();
-    for (int idx = 0; item; ++idx, item = item->nextSibling()) {
-        if (item->isSelected()) {
-            list.append(m_StationIDs[idx]);
-        }
-    }
-    return new StationDragObject(list, this);
-}
-
-void RadioStationListView::dragEnterEvent(QDragEnterEvent* event)
-{
-    bool a = StationDragObject::canDecode(event);
-    if (a) {
-        IErrorLogClient::staticLogDebug(i18n("dragEnterEvent accepted"));
-        event->accept();
-    }
-    else {
-        IErrorLogClient::staticLogDebug(i18n("dragEnterEvent rejected"));
+    QTreeView::dragMoveEvent(event);
+    if (event->isAccepted() && event->source() == this) {
         event->ignore();
     }
 }
 
-void RadioStationListView::contentsDragEnterEvent(QDragEnterEvent* event)
-{
-    bool a = StationDragObject::canDecode(event);
-    if (a) {
-        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent accepted"));
-        event->accept();
-    }
-    else {
-        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent rejected"));
-        event->ignore();
-    }
-}
 
-void RadioStationListView::dropEvent(QDropEvent* event)
+void RadioStationListView::currentChanged(const QModelIndex &current, const QModelIndex &previous)
 {
-    QStringList list;
+    QTreeView::currentChanged(current, previous);
 
-    if ( StationDragObject::decode(event, list) ) {
-        emit sigStationsReceived(list);
-    }
-}
-
-void RadioStationListView::contentsDropEvent(QDropEvent* event)
-{
-    dropEvent(event);
-}
-
-void RadioStationListView::contentsDragMoveEvent(QDragMoveEvent* event)
-{
-    event->accept();
+    emit sigCurrentStationChanged(current.row());
 }
 
 #include "radiostation-listview.moc"
