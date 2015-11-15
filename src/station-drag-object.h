@@ -18,26 +18,19 @@
 #ifndef KRADIO_STATION_DRAG_OBJECT_H
 #define KRADIO_STATION_DRAG_OBJECT_H
 
-#ifdef KRADIO_ENABLE_FIXMES
-    #warning "Port drag&drop to QT4"
-#endif
-#include <Qt3Support/Q3DragObject>
+#include <QStringList>
 
 #include <kdemacros.h>
 
-class KDE_EXPORT StationDragObject : public Q3StoredDrag
+class QMimeData;
+
+class KDE_EXPORT StationDragObject
 {
 public:
-    StationDragObject(const QStringList &stationIDs, QWidget *dragSource = NULL, const char * name = NULL);
-    StationDragObject(QWidget *dragSource = NULL, const char * name = NULL);
-    virtual ~StationDragObject();
+    static void encode(QMimeData *data, const QStringList &stationIDs);
 
-    const char *format(int i = 0) const;
-
-    void setStations(const QStringList &stationIDs);
-
-    static bool canDecode (const QMimeSource *e);
-    static bool decode (const QMimeSource *e, QStringList &stationIDs);
+    static bool canDecode(const QMimeData *data);
+    static bool decode(const QMimeData *data, QStringList &stationIDs);
 };
 
 #endif

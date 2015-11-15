@@ -373,7 +373,7 @@ void QuickBar::autoSetCaption()
 
 void QuickBar::dragEnterEvent(QDragEnterEvent* event)
 {
-    bool a = StationDragObject::canDecode(event);
+    bool a = StationDragObject::canDecode(event->mimeData());
     if (a)
         IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent accepted"));
     else
@@ -385,7 +385,7 @@ void QuickBar::dropEvent(QDropEvent* event)
 {
     QStringList list;
 
-    if ( StationDragObject::decode(event, list) ) {
+    if (StationDragObject::decode(event->mimeData(), list)) {
         QStringList l = getStationSelection();
         for (QList<QString>::const_iterator it = list.begin(); it != list.end(); ++it)
             if (!l.contains(*it))

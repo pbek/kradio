@@ -978,7 +978,7 @@ void RadioDocking::setWheelAction(SystrayWheelAction action)
 
 void RadioDocking::dragEnterEvent(QDragEnterEvent* event)
 {
-    bool a = StationDragObject::canDecode(event);
+    bool a = StationDragObject::canDecode(event->mimeData());
     if (a)
         IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
     else
@@ -992,7 +992,7 @@ void RadioDocking::dropEvent(QDropEvent* event)
 {
     QStringList list;
 
-    if ( StationDragObject::decode(event, list) ) {
+    if (StationDragObject::decode(event->mimeData(), list)) {
         QStringList l = getStationSelection();
         for (QList<QString>::const_iterator it = list.begin(); it != list.end(); ++it)
             if (!l.contains(*it))

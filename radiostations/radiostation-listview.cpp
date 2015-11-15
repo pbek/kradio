@@ -188,8 +188,10 @@ QMimeData *RadioStationModel::mimeData(const QModelIndexList &indexes) const
     qSort(rows);
 
     QList<RS> items;
+    QStringList ids;
     foreach (int row, rows) {
         items << m_stations.at(row);
+        ids << m_stations.at(row).id;
     }
 
     QMimeData *mimeData = new QMimeData();
@@ -197,6 +199,8 @@ QMimeData *RadioStationModel::mimeData(const QModelIndexList &indexes) const
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
     stream << items;
     mimeData->setData(rsm_mime, encodedData);
+
+    StationDragObject::encode(mimeData, ids);
 
     return mimeData;
 }

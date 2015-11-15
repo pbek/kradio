@@ -33,7 +33,6 @@
 #include "stationselection_interfaces.h"
 #include "pluginbase.h"
 #include "soundstreamclient_interfaces.h"
-#include <Qt3Support/Q3DragObject>
 #include <QtCore/QTimer>
 
 enum SystrayClickAction { staShowHide = 0, staPowerOnOff = 1, staPause, staRecord, staSystrayMenu, staGuiPluginsMenu, staConfigDialog, staNone };
