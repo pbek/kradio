@@ -19,7 +19,6 @@
 #include "kradioapp.h"
 #include "pluginmanager.h"
 
-#include <k3listview.h>
 #include <kpushbutton.h>
 #include <kurlrequester.h>
 #include <kinputdialog.h>
@@ -29,6 +28,7 @@
 #include <kdemacros.h>
 
 #include <QtGui/QCheckBox>
+#include <QtGui/QStandardItemModel>
 
 
 #include "id-generator.h"
@@ -49,6 +49,14 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
     QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio4/plugins";
     editPluginLibrary->setStartDir(defaultPluginDir);
 
+    m_pluginInstancesModel = new QStandardItemModel(listPluginInstances);
+    QStringList headers;
+    headers << i18n("Plugin Class");
+    headers << i18n("Instance Name");
+    headers << i18n("Description");
+    m_pluginInstancesModel->setHorizontalHeaderLabels(headers);
+    listPluginInstances->setModel(m_pluginInstancesModel);
+
     noticePluginLibrariesChanged();
     noticePluginsChanged();
 
@@ -62,8 +70,8 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
     QObject::connect(rbAutoLoadNo,            SIGNAL(clicked(bool)), this, SLOT(slotSetDirty()));
     QObject::connect(rbAutoLoadAsk,           SIGNAL(clicked(bool)), this, SLOT(slotSetDirty()));
 
-    QObject::connect(listPluginInstances,     SIGNAL(itemRenamed      (Q3ListViewItem *, int, const QString &)),
-                     this,                    SLOT  (slotPluginRenamed(Q3ListViewItem *, int, const QString &)));
+    QObject::connect(m_pluginInstancesModel,  SIGNAL(itemChanged      (QStandardItem *)),
+                     this,                    SLOT  (slotPluginRenamed(QStandardItem *)));
 
 
     slotCancel();
@@ -75,12 +83,12 @@ PluginManagerConfiguration::~PluginManagerConfiguration ()
 }
 
 
-void PluginManagerConfiguration::slotPluginRenamed(Q3ListViewItem *item, int col, const QString &name)
+void PluginManagerConfiguration::slotPluginRenamed(QStandardItem *item)
 {
-    if (col == 1) {
+    if (item->column() == 1) {
         if (m_pluginItems.contains(item)) {
             PluginBase *p = m_pluginItems[item];
-            p->setName(name);
+            p->setName(item->text());
             slotSetDirty();
         }
     }
@@ -110,29 +118,40 @@ void PluginManagerConfiguration::noticePluginLibrariesChanged()
 
 void PluginManagerConfiguration::noticePluginsChanged()
 {
-    listPluginInstances->clear();
+    // do not use clear() with QStandardItemModel, as it removes
+    // also the header items!
+    m_pluginInstancesModel->setRowCount(0);
     m_pluginItems      .clear();
     const PluginList &plugins = m_PluginManager->plugins();
     const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
 
+    const Qt::ItemFlags baseFlags = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
     for (QList<PluginBase*>::const_iterator it = plugins.begin(); it != plugins.end(); ++it) {
         QString class_name = (*it)->pluginClassName();
         if (classes.contains(class_name)) {
             QString         obj_name = (*it)->name();
-            K3ListViewItem *item     = new K3ListViewItem(listPluginInstances, class_name, obj_name, classes[class_name].description);
-            item->setRenameEnabled(1, true);
-            listPluginInstances->insertItem(item);
+            QList<QStandardItem *> items;
+            items << new QStandardItem(class_name);
+            items[0]->setFlags(baseFlags);
+            items << new QStandardItem(obj_name);
+            items[1]->setFlags(baseFlags | Qt::ItemIsEditable);
+            items << new QStandardItem(classes[class_name].description);
+            items[2]->setFlags(baseFlags);
+            m_pluginInstancesModel->appendRow(items);
 
-            m_pluginItems.insert(item, *it);
+            m_pluginItems.insert(items[1], *it);
         }
     }
+    listPluginInstances->resizeColumnToContents(0);
+    listPluginInstances->resizeColumnToContents(1);
+    listPluginInstances->resizeColumnToContents(2);
 }
 
 void PluginManagerConfiguration::noticePluginRenamed(PluginBase *p, const QString &name)
 {
-    Q3ListViewItem *item = m_pluginItems.key(p, NULL);
+    QStandardItem *item = m_pluginItems.key(p, NULL);
     if (item) {
-        item->setText(1, name);
+        item->setText(name);
     }
 }
 
@@ -237,10 +256,11 @@ void PluginManagerConfiguration::slotRemovePluginInstance()
 {
     slotSetDirty();
     if (m_Application && m_PluginManager) {
-        Q3ListViewItem *item = listPluginInstances->currentItem();
-        QString object_name = item ? item->text(1) : QString::null;
-        if (object_name.length())
-            m_PluginManager->deletePluginByName(object_name);
+        QModelIndex current = listPluginInstances->currentIndex();
+        if (current.isValid()) {
+            QStandardItem *item = m_pluginInstancesModel->item(current.row(), 1);
+            m_PluginManager->deletePluginByName(item->text());
+        }
     }
 }
 

@@ -22,9 +22,10 @@
 #include <config.h>
 #endif
 
-class QColorGroup;
 #include "ui_pluginmanager-configuration-ui.h"
 
+class QStandardItemModel;
+class QStandardItem;
 class QWidget;
 class KRadioApp;
 class PluginManager;
@@ -54,15 +55,16 @@ protected slots:
     void slotRemoveLibrary();
     void slotNewPluginInstance();
     void slotRemovePluginInstance();
-    void slotPluginRenamed(Q3ListViewItem *item, int col, const QString &name);
+    void slotPluginRenamed(QStandardItem *item);
 
 protected:
 
     KRadioApp             *m_Application;
     PluginManager         *m_PluginManager;
     bool                   m_dirty;
+    QStandardItemModel    *m_pluginInstancesModel;
 
-    QMap<Q3ListViewItem*, PluginBase*> m_pluginItems;         // listviewitem => instanceID
+    QMap<QStandardItem*, PluginBase*> m_pluginItems;          // modelitem => instanceID
 };
 
 #endif
