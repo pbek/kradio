@@ -24,8 +24,6 @@
 
 #include "ui_pluginmanager-configuration-ui.h"
 
-QT_BEGIN_NAMESPACE
-
 class QWidget;
 class KRadioApp;
 class PluginManager;
