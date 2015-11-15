@@ -9,13 +9,6 @@ include (MacroLibrary)
 ADD_SUBDIRECTORY(icons)
 ADD_SUBDIRECTORY(po)
 
-ADD_DEFINITIONS(
-    -DQT3_SUPPORT
-    -DKDE3_SUPPORT
-    -DQT3_SUPPORT_WARNINGS
-)
-
-
 FILE(GLOB kradio_plugin_streaming_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 )

@@ -68,13 +68,6 @@ ADD_SUBDIRECTORY(convert-presets)
 #     The lines below only affect the executable, no plugins!          #
 ########################################################################
 
-ADD_DEFINITIONS(
-    -DQT3_SUPPORT
-    -DKDE3_SUPPORT
-    -DQT3_SUPPORT_WARNINGS
-)
-
-
 file(GLOB kradio_radiostation_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/radiostations/*.cpp
 )
