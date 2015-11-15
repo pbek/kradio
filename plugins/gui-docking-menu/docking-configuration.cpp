@@ -38,26 +38,18 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     m_labelClickMode      [Qt::LeftButton]  = new QLabel(this);
     m_labelClickMode      [Qt::RightButton] = new QLabel(this);
     m_labelClickMode      [Qt::MidButton]   = new QLabel(this);
-    m_labelClickMode      [Qt::XButton1]    = new QLabel(this);
-    m_labelClickMode      [Qt::XButton2]    = new QLabel(this);
     m_labelDoubleClickModeCaption           = new QLabel(this);
     m_labelDoubleClickMode[Qt::LeftButton]  = new QLabel(this);
     m_labelDoubleClickMode[Qt::RightButton] = new QLabel(this);
     m_labelDoubleClickMode[Qt::MidButton]   = new QLabel(this);
-    m_labelDoubleClickMode[Qt::XButton1]    = new QLabel(this);
-    m_labelDoubleClickMode[Qt::XButton2]    = new QLabel(this);
     m_labelWheelMode                        = new QLabel(this);
 
     m_comboClickMode      [Qt::LeftButton]  = new QComboBox(this);
     m_comboClickMode      [Qt::RightButton] = new QComboBox(this);
     m_comboClickMode      [Qt::MidButton]   = new QComboBox(this);
-    m_comboClickMode      [Qt::XButton1]    = new QComboBox(this);
-    m_comboClickMode      [Qt::XButton2]    = new QComboBox(this);
     m_comboDoubleClickMode[Qt::LeftButton]  = new QComboBox(this);
     m_comboDoubleClickMode[Qt::RightButton] = new QComboBox(this);
     m_comboDoubleClickMode[Qt::MidButton]   = new QComboBox(this);
-    m_comboDoubleClickMode[Qt::XButton1]    = new QComboBox(this);
-    m_comboDoubleClickMode[Qt::XButton2]    = new QComboBox(this);
     m_comboWheelMode                        = new QComboBox(this);
 
 
@@ -68,10 +60,6 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     layoutClicks->addWidget(m_comboClickMode      [Qt::MidButton],   /*row*/ 1, /*col*/ 3);
     layoutClicks->addWidget(m_labelClickMode      [Qt::RightButton], /*row*/ 1, /*col*/ 4);
     layoutClicks->addWidget(m_comboClickMode      [Qt::RightButton], /*row*/ 1, /*col*/ 5);
-    layoutClicks->addWidget(m_labelClickMode      [Qt::XButton1],    /*row*/ 2, /*col*/ 0);
-    layoutClicks->addWidget(m_comboClickMode      [Qt::XButton1],    /*row*/ 2, /*col*/ 1);
-    layoutClicks->addWidget(m_labelClickMode      [Qt::XButton2],    /*row*/ 2, /*col*/ 2);
-    layoutClicks->addWidget(m_comboClickMode      [Qt::XButton2],    /*row*/ 2, /*col*/ 3);
 
     layoutClicks->addWidget(m_labelDoubleClickModeCaption,           /*row*/ 3, /*col*/ 0, /*rowspan*/ 1, /*colspan*/ 6);
     layoutClicks->addWidget(m_labelDoubleClickMode[Qt::LeftButton],  /*row*/ 4, /*col*/ 0);
@@ -80,10 +68,6 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     layoutClicks->addWidget(m_comboDoubleClickMode[Qt::MidButton],   /*row*/ 4, /*col*/ 3);
     layoutClicks->addWidget(m_labelDoubleClickMode[Qt::RightButton], /*row*/ 4, /*col*/ 4);
     layoutClicks->addWidget(m_comboDoubleClickMode[Qt::RightButton], /*row*/ 4, /*col*/ 5);
-    layoutClicks->addWidget(m_labelDoubleClickMode[Qt::XButton1],    /*row*/ 5, /*col*/ 0);
-    layoutClicks->addWidget(m_comboDoubleClickMode[Qt::XButton1],    /*row*/ 5, /*col*/ 1);
-    layoutClicks->addWidget(m_labelDoubleClickMode[Qt::XButton2],    /*row*/ 5, /*col*/ 2);
-    layoutClicks->addWidget(m_comboDoubleClickMode[Qt::XButton2],    /*row*/ 5, /*col*/ 3);
 
     layoutWheel->addWidget(m_labelWheelMode);
     layoutWheel->addWidget(m_comboWheelMode);
@@ -127,15 +111,11 @@ void DockingConfiguration::languageChange()
     m_labelClickMode      [Qt::LeftButton]  -> setText(i18nc( "Mouse button", "Left:"     ) );
     m_labelClickMode      [Qt::RightButton] -> setText(i18nc( "Mouse button", "Right:"    ) );
     m_labelClickMode      [Qt::MidButton]   -> setText(i18nc( "Mouse button", "Middle:"   ) );
-    m_labelClickMode      [Qt::XButton1]    -> setText(i18nc( "Mouse button", "XButton1:" ) );
-    m_labelClickMode      [Qt::XButton2]    -> setText(i18nc( "Mouse button", "XButton2:" ) );
 
     m_labelDoubleClickModeCaption           -> setText(i18n( "Mouse double-click on tray icon:" ) );
     m_labelDoubleClickMode[Qt::LeftButton]  -> setText(i18nc( "Mouse button", "Left:"     ) );
     m_labelDoubleClickMode[Qt::RightButton] -> setText(i18nc( "Mouse button", "Right:"    ) );
     m_labelDoubleClickMode[Qt::MidButton]   -> setText(i18nc( "Mouse button", "Middle:"   ) );
-    m_labelDoubleClickMode[Qt::XButton1]    -> setText(i18nc( "Mouse button", "XButton1:" ) );
-    m_labelDoubleClickMode[Qt::XButton2]    -> setText(i18nc( "Mouse button", "XButton2:" ) );
 
     m_labelWheelMode                        -> setText(i18n( "Mouse wheel action on tray icon:" ) );
 
@@ -160,19 +140,11 @@ void DockingConfiguration::languageChange()
 
 
     // features currently not supported by SystemTrayIcon/StatusNotifier mechanisms
-    m_labelClickMode      [Qt::XButton1]    ->setEnabled(false);
-    m_labelClickMode      [Qt::XButton2]    ->setEnabled(false);
     m_labelDoubleClickMode[Qt::RightButton] ->setEnabled(false);
     m_labelDoubleClickMode[Qt::MidButton]   ->setEnabled(false);
-    m_labelDoubleClickMode[Qt::XButton1]    ->setEnabled(false);
-    m_labelDoubleClickMode[Qt::XButton2]    ->setEnabled(false);
 
-    m_comboClickMode      [Qt::XButton1]    ->setEnabled(false);
-    m_comboClickMode      [Qt::XButton2]    ->setEnabled(false);
     m_comboDoubleClickMode[Qt::RightButton] ->setEnabled(false);
     m_comboDoubleClickMode[Qt::MidButton]   ->setEnabled(false);
-    m_comboDoubleClickMode[Qt::XButton1]    ->setEnabled(false);
-    m_comboDoubleClickMode[Qt::XButton2]    ->setEnabled(false);
 
 }
 

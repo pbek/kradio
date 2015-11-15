@@ -72,13 +72,9 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
     m_ClickActions[Qt::LeftButton]        = staShowHide;
     m_ClickActions[Qt::RightButton]       = staSystrayMenu;
     m_ClickActions[Qt::MidButton]         = staGuiPluginsMenu;
-    m_ClickActions[Qt::XButton1]          = staNone;
-    m_ClickActions[Qt::XButton2]          = staNone;
     m_DoubleClickActions[Qt::LeftButton]  = staPowerOnOff;
     m_DoubleClickActions[Qt::RightButton] = staRecord;
     m_DoubleClickActions[Qt::MidButton]   = staNone;
-    m_DoubleClickActions[Qt::XButton1]    = staNone;
-    m_DoubleClickActions[Qt::XButton2]    = staNone;
     m_WheelAction                         = swaChangeStation;
 
 //     m_menuRebuildWorkaroundTimer.setInterval(100);
@@ -184,13 +180,9 @@ void   RadioDocking::restoreState (const KConfigGroup &config)
     m_ClickActions[Qt::LeftButton]        = (SystrayClickAction)config.readEntry("left_click_action",           (int)m_ClickActions[Qt::LeftButton]);
     m_ClickActions[Qt::RightButton]       = (SystrayClickAction)config.readEntry("right_click_action",          (int)m_ClickActions[Qt::RightButton]);
     m_ClickActions[Qt::MidButton]         = (SystrayClickAction)config.readEntry("mid_click_action",            (int)m_ClickActions[Qt::MidButton]);
-    m_ClickActions[Qt::XButton1]          = (SystrayClickAction)config.readEntry("xbutton1_click_action",       (int)m_ClickActions[Qt::XButton1]);
-    m_ClickActions[Qt::XButton2]          = (SystrayClickAction)config.readEntry("xbutton2_click_action",       (int)m_ClickActions[Qt::XButton2]);
     m_DoubleClickActions[Qt::LeftButton]  = (SystrayClickAction)config.readEntry("left_doubleclick_action",     (int)m_DoubleClickActions[Qt::LeftButton]);
     m_DoubleClickActions[Qt::RightButton] = (SystrayClickAction)config.readEntry("right_doubleclick_action",    (int)m_DoubleClickActions[Qt::RightButton]);
     m_DoubleClickActions[Qt::MidButton]   = (SystrayClickAction)config.readEntry("mid_doubleclick_action",      (int)m_DoubleClickActions[Qt::MidButton]);
-    m_DoubleClickActions[Qt::XButton1]    = (SystrayClickAction)config.readEntry("xbutton1_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton1]);
-    m_DoubleClickActions[Qt::XButton2]    = (SystrayClickAction)config.readEntry("xbutton2_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton2]);
     m_WheelAction                         = (SystrayWheelAction)config.readEntry("wheel_action",                (int)m_WheelAction);
 
     buildContextMenu();
@@ -201,13 +193,9 @@ void   RadioDocking::restoreState (const KConfigGroup &config)
     emit sigClickActionChanged      (Qt::LeftButton,  m_ClickActions      [Qt::LeftButton] );
     emit sigClickActionChanged      (Qt::RightButton, m_ClickActions      [Qt::RightButton]);
     emit sigClickActionChanged      (Qt::MidButton,   m_ClickActions      [Qt::MidButton]  );
-    emit sigClickActionChanged      (Qt::XButton1,    m_ClickActions      [Qt::XButton1]   );
-    emit sigClickActionChanged      (Qt::XButton2,    m_ClickActions      [Qt::XButton2]   );
     emit sigDoubleClickActionChanged(Qt::LeftButton,  m_DoubleClickActions[Qt::LeftButton] );
     emit sigDoubleClickActionChanged(Qt::RightButton, m_DoubleClickActions[Qt::RightButton]);
     emit sigDoubleClickActionChanged(Qt::MidButton,   m_DoubleClickActions[Qt::MidButton]  );
-    emit sigDoubleClickActionChanged(Qt::XButton1,    m_DoubleClickActions[Qt::XButton1]   );
-    emit sigDoubleClickActionChanged(Qt::XButton2,    m_DoubleClickActions[Qt::XButton2]   );
     emit sigWheelActionChanged      (m_WheelAction);
 }
 
@@ -226,13 +214,9 @@ void RadioDocking::saveState (KConfigGroup &config) const
     config.writeEntry("left_click_action",           (int)m_ClickActions[Qt::LeftButton]);
     config.writeEntry("right_click_action",          (int)m_ClickActions[Qt::RightButton]);
     config.writeEntry("mid_click_action",            (int)m_ClickActions[Qt::MidButton]);
-    config.writeEntry("xbutton1_click_action",       (int)m_ClickActions[Qt::XButton1]);
-    config.writeEntry("xbutton2_click_action",       (int)m_ClickActions[Qt::XButton2]);
     config.writeEntry("left_doubleclick_action",     (int)m_DoubleClickActions[Qt::LeftButton]);
     config.writeEntry("right_doubleclick_action",    (int)m_DoubleClickActions[Qt::RightButton]);
     config.writeEntry("mid_doubleclick_action",      (int)m_DoubleClickActions[Qt::MidButton]);
-    config.writeEntry("xbutton1_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton1]);
-    config.writeEntry("xbutton2_doubleclick_action", (int)m_DoubleClickActions[Qt::XButton2]);
     config.writeEntry("wheel_action",                (int)m_WheelAction);
 }
 
