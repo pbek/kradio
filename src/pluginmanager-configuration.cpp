@@ -105,8 +105,10 @@ void PluginManagerConfiguration::noticePluginLibrariesChanged()
     const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
     QMap<QString, PluginClassInfo>::const_iterator end_cls = classes.end();
     for (QMap<QString, PluginClassInfo>::const_iterator it = classes.begin(); it != end_cls; ++it) {
-        listPluginClasses->insertItem(new K3ListViewItem(listPluginClasses, it.key(), (*it).description));
+        listPluginClasses->addTopLevelItem(new QTreeWidgetItem(QStringList() << it.key() << (*it).description));
     }
+    listPluginClasses->resizeColumnToContents(0);
+    listPluginClasses->resizeColumnToContents(1);
 
     noticePluginsChanged();
 }
@@ -215,7 +217,7 @@ void PluginManagerConfiguration::slotNewPluginInstance()
 {
     slotSetDirty();
     if (m_Application && m_PluginManager) {
-        Q3ListViewItem *item = listPluginClasses->currentItem();
+        QTreeWidgetItem *item = listPluginClasses->currentItem();
         QString class_name = item ? item->text(0) : QString::null;
         bool ok = false;
         int default_object_id = 1;
