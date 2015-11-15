@@ -20,7 +20,6 @@
 #include "kradioapp.h"
 #include "pluginmanager.h"
 
-#include <k3listbox.h>
 #include <k3listview.h>
 #include <kpushbutton.h>
 #include <kurlrequester.h>
@@ -99,7 +98,7 @@ void PluginManagerConfiguration::noticePluginLibrariesChanged()
     const QMap<QString, PluginLibraryInfo> &libs = m_Application->getPluginLibraries();
     QMap<QString,PluginLibraryInfo>::const_iterator end = libs.end();
     for (QMap<QString,PluginLibraryInfo>::const_iterator it = libs.begin(); it != end; ++it) {
-        listPluginLibraries->insertItem(it.key());
+        listPluginLibraries->addItem(it.key());
     }
 
     listPluginClasses->clear();
@@ -204,9 +203,9 @@ void PluginManagerConfiguration::slotRemoveLibrary()
 {
     slotSetDirty();
     if (m_Application) {
-        QString lib = listPluginLibraries->currentText();
-        if (lib.length()) {
-            m_Application->UnloadLibrary(lib);
+        QListWidgetItem *item = listPluginLibraries->currentItem();
+        if (item) {
+            m_Application->UnloadLibrary(item->text());
         }
     }
 }

@@ -144,7 +144,7 @@
         </widget>
        </item>
        <item row="1" column="0" rowspan="2">
-        <widget class="K3ListBox" name="listPluginLibraries">
+        <widget class="QListWidget" name="listPluginLibraries">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -400,11 +400,6 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>Q3ListBox</class>
-   <extends>Q3Frame</extends>
-   <header>q3listbox.h</header>
-  </customwidget>
-  <customwidget>
    <class>Q3ListView</class>
    <extends>Q3Frame</extends>
    <header>q3listview.h</header>
@@ -430,11 +425,6 @@
    <header>ktabwidget.h</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>K3ListBox</class>
-   <extends>Q3ListBox</extends>
-   <header location="global">k3listbox.h</header>
-  </customwidget>
  </customwidgets>
  <includes>
   <include location="local">k3listview.h</include>
@@ -446,7 +436,6 @@
   <include location="local">kpushbutton.h</include>
   <include location="local">kpushbutton.h</include>
   <include location="local">kpushbutton.h</include>
-  <include location="local">k3listbox.h</include>
  </includes>
  <resources/>
  <connections/>
