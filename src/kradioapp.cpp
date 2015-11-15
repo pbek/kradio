@@ -23,6 +23,7 @@
 #include <ksharedconfig.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
+#include <kdebug.h>
 
 // #include <kprogress.h>
 
@@ -30,6 +31,7 @@
 //#include "aboutwidget.h"
 #include "kradioaboutwidget.h"
 #include "errorlog_interfaces.h"
+#include "pluginmanager.h"
 
 #include "debug-profiler.h"
 

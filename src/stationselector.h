@@ -25,11 +25,10 @@
 #include "stationselection_interfaces.h"
 #include "stationlist.h"
 
-#include "radiostation-listview.h"
-
 class RadioStationListView;
 class Ui_StationSelectorUI;
 class QGridLayout;
+class KConfigGroup;
 
 class KDE_EXPORT StationSelector : public QWidget,
                                    public IRadioClient,

@@ -19,11 +19,12 @@
 #define KRADIO_FREQUENCY_SEEKHELPER_H
 
 #include <QtCore/QObject>
-#include <QtCore/QTimer>
 //#include "radiodevice_interfaces.h"
 #include "frequencyradio_interfaces.h"
 #include "seekhelper.h"
 #include <kdemacros.h>
+
+class QTimer;
 
 class KDE_EXPORT FrequencySeekHelper : public QObject,
                                        public SeekHelper,

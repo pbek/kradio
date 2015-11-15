@@ -21,6 +21,7 @@
 #define KRADIO_PLUGINS_INTERFACES_H
 
 #include <kglobal.h>
+#include <klocale.h>
 
 #include "errorlog_interfaces.h"
 #include <QtCore/QString>

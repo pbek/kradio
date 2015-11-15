@@ -26,7 +26,6 @@
 #ifndef KRADIO_SOUNDSTREAMCLIENT_INTERFACES_H
 #define KRADIO_SOUNDSTREAMCLIENT_INTERFACES_H
 
-#include <kconfig.h>
 #include <QtCore/QMap>
 
 #include "interfaces.h"

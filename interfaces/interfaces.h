@@ -20,7 +20,6 @@
 
 #include <QtCore/QList>
 #include <QtCore/QMap>
-#include <kdebug.h>
 #include <typeinfo>
 
 #include <kdemacros.h>

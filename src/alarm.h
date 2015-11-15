@@ -22,8 +22,6 @@
 #include <QtCore/QVector>
 
 #include <kdemacros.h>
-#include <kconfig.h>
-#include <kconfiggroup.h>
 
 #include "recording_template.h"
 

@@ -21,6 +21,7 @@
 #include <QtCore/QDateTime>
 #include <QtGui/QLayout>
 #include <QtCore/QTextCodec>
+#include <QTextStream>
 
 #include <ktextedit.h>
 #include <klocale.h>

@@ -19,9 +19,6 @@
 #define KRADIO_SOUND_METADATA_H
 
 #include <time.h>
-#include <endian.h>
-#include <QtCore/QString>
-#include <kconfig.h>
 #include <kurl.h>
 
 class KDE_EXPORT SoundMetaData

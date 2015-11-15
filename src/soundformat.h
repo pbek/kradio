@@ -20,7 +20,8 @@
 
 #include <endian.h>
 #include <QtCore/QString>
-#include <kconfig.h>
+
+#include <kdemacros.h>
 
 class KConfigGroup;
 

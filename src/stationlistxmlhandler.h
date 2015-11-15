@@ -18,7 +18,6 @@
 #define KRADIO_RADIOCFGXMLHANDLER_H
 
 #include <QtXml/QtXml>
-#include <QtCore/QObject>
 
 #include "radiostation.h"
 #include "stationlist.h"

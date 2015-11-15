@@ -25,10 +25,10 @@
 #include <klibrary.h>
 
 //#include <kaboutapplication.h>
-#include "pluginmanager.h"
 #include "pluginbase.h"
 
 class KLibrary;
+class PluginManager;
 
 // class KRadioAbout : public PluginBase
 // {

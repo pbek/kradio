@@ -23,7 +23,6 @@
 
 #include "pluginbase.h"
 
-class PluginBase;
 class WidgetPluginBase;
 class PluginConfigurationDialog;
 class PluginManagerConfiguration;
