@@ -18,10 +18,6 @@
 #ifndef KRADIO_ICY_HTTP_HANDLER_H
 #define KRADIO_ICY_HTTP_HANDLER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QSharedPointer>
 #include <kurl.h>
 #include <kio/job.h>

@@ -18,10 +18,6 @@
 #ifndef KRADIO_DEBUG_PROFILER_H
 #define KRADIO_DEBUG_PROFILER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QString>
 #include <QtCore/QMap>
 #include <kdemacros.h>

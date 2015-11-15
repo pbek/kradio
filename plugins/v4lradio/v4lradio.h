@@ -18,10 +18,6 @@
 #ifndef KRADIO_V4LRADIO_H
 #define KRADIO_V4LRADIO_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QTimer>
 
 #include "radiodevice_interfaces.h"

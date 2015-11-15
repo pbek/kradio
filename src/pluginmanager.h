@@ -18,10 +18,6 @@
 #ifndef KRADIO_PLUGINMANAGER_INTERFACES_H
 #define KRADIO_PLUGINMANAGER_INTERFACES_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QString>
 #include <QtCore/QMap>
 

@@ -18,10 +18,6 @@
 #ifndef KRADIO_RECORDING_CONFIGURATION_H
 #define KRADIO_RECORDING_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "soundformat.h"
 
 #include "recording-config.h"

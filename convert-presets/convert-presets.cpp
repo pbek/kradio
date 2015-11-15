@@ -1,7 +1,3 @@
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kapplication.h>
 #include <QtCore/QString>
 #include <QtCore/QTextStream>

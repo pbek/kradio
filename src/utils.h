@@ -18,10 +18,6 @@
 #ifndef KRADIO_UTILS_H
 #define KRADIO_UTILS_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 using namespace std;
 
 #include <kconfig.h>

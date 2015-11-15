@@ -18,10 +18,6 @@
 #ifndef _KRADIO_ALSA_SOUND_H
 #define _KRADIO_ALSA_SOUND_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "ringbuffer.h"
 #include "pluginbase.h"
 #include "soundstreamclient_interfaces.h"

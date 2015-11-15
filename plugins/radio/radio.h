@@ -18,11 +18,6 @@
 #ifndef KRADIO_RADIO_H
 #define KRADIO_RADIO_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-
 #include "radio_interfaces.h"
 #include "radiodevicepool_interfaces.h"
 #include "radiodevice_interfaces.h"

@@ -18,10 +18,6 @@
 #ifndef KRADIO_STREAM_READER_H
 #define KRADIO_STREAM_READER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QSharedPointer>
 #include <kurl.h>
 

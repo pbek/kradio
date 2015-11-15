@@ -18,10 +18,6 @@
 #ifndef KRADIO_RADIOSTATION_CONFIG_H
 #define KRADIO_RADIOSTATION_CONFIG_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtGui/QWidget>
 
 class RadioStation;

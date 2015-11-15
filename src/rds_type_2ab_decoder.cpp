@@ -15,10 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "rds_type_2ab_decoder.h"
 
 RDS_Type2AB_Decoder::RDS_Type2AB_Decoder(bool type_A_not_B)

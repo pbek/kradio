@@ -18,10 +18,6 @@
 #ifndef _KRADIO_STREAMING_JOB_H
 #define _KRADIO_STREAMING_JOB_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "ringbuffer.h"
 #include "soundformat.h"
 #include "soundstreamclient_interfaces.h"

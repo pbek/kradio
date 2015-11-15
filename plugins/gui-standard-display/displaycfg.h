@@ -18,10 +18,6 @@
 #ifndef KRADIO_DISPLAYCFG_H
 #define KRADIO_DISPLAYCFG_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "displaycfg_interfaces.h"
 #include <QtGui/QWidget>
 

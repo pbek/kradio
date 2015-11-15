@@ -17,10 +17,6 @@
 #ifndef DBUSSUPPORT_H
 #define DBUSSUPPORT_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QObject>
 #include "radio_interfaces.h"
 #include "soundstreamclient_interfaces.h"

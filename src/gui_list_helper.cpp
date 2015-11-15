@@ -15,10 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "gui_list_helper.h"
 
 GUIListHelperQObjectBase::GUIListHelperQObjectBase()

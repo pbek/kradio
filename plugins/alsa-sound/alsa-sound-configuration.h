@@ -18,10 +18,6 @@
 #ifndef KRADIO_ALSA_SOUND_CONFIGURATION_H
 #define KRADIO_ALSA_SOUND_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtGui/QWidget>
 
 #include "ui_alsa-sound-configuration-ui.h"

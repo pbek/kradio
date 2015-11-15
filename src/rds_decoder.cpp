@@ -15,10 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "rds_decoder.h"
 
 RDSDecoder::RDSDecoder(RDSGroup *rds_group_decoder)

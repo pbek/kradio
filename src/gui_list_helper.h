@@ -18,10 +18,6 @@
 #ifndef _KRADIO_LIBKRADIO_GUI_GUI_LIST_HELPER_H_
 #define _KRADIO_LIBKRADIO_GUI_GUI_LIST_HELPER_H_
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kdemacros.h>
 
 #include <QtCore/QMap>

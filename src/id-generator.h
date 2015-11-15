@@ -18,10 +18,6 @@
 #ifndef __KRADIO_ID_GENERATOR_H__
 #define __KRADIO_ID_GENERATOR_H__
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 
 extern QString generateRandomID(size_t length);
 

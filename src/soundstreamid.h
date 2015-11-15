@@ -18,10 +18,6 @@
 #ifndef KRADIO_SOUNDSTREAMID_H
 #define KRADIO_SOUNDSTREAMID_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kdemacros.h>
 #include <QtCore/QMetaType>
 

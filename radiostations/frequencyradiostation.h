@@ -18,10 +18,6 @@
 #ifndef KRADIO_FREQUENCYRADIOSTATION_H
 #define KRADIO_FREQUENCYRADIOSTATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "radiostation.h"
 
 /**

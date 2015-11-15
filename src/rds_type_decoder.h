@@ -18,10 +18,6 @@
 #ifndef KRADIO_V4LRADIO_RDS_TYPE_DECODER_H
 #define KRADIO_V4LRADIO_RDS_TYPE_DECODER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kdemacros.h>
 
 #include "rds_group.h"

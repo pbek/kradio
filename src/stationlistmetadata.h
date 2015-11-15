@@ -20,10 +20,6 @@
 #ifndef STATIONLISTMETADATA_H
 #define STATIONLISTMETADATA_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QString>
 #include <QtCore/QDateTime>
 

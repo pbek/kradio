@@ -15,11 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #ifndef _KRADIO_RADIOSTATION_LISTVIEW_H_
 #define _KRADIO_RADIOSTATION_LISTVIEW_H_
 

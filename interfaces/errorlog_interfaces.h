@@ -18,10 +18,6 @@
 #ifndef KRADIO_ERRORLOG_INTERFACES_H
 #define KRADIO_ERRORLOG_INTERFACES_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "interfaces.h"
 
 INTERFACE(IErrorLog, IErrorLogClient)

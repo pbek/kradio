@@ -18,10 +18,6 @@
 #ifndef KRADIO_TIMESHIFTER_H
 #define KRADIO_TIMESHIFTER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "pluginbase.h"
 #include "soundstreamclient_interfaces.h"
 #include "fileringbuffer.h"

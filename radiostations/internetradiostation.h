@@ -18,10 +18,6 @@
 #ifndef KRADIO_INTERNETRADIOSTATION_H
 #define KRADIO_INTERNETRADIOSTATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "radiostation.h"
 
 // KDE includes

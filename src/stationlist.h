@@ -18,10 +18,6 @@
 #ifndef STATIONLIST_H
 #define STATIONLIST_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "stationlistmetadata.h"
 #include "errorlog_interfaces.h"
 

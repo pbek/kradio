@@ -18,10 +18,6 @@
 #ifndef KRADIO_STANDARDSCANDIALOG_H
 #define KRADIO_STANDARDSCANDIALOG_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "seekradio_interfaces.h"
 #include "radio_interfaces.h"
 #include "stationlist.h"

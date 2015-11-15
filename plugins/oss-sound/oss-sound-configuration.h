@@ -18,10 +18,6 @@
 #ifndef KRADIO_OSS_SOUND_CONFIGURATION_H
 #define KRADIO_OSS_SOUND_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "oss-sound-configuration-ui.h"
 #include "oss-sound.h"
 

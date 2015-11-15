@@ -18,10 +18,6 @@
 #ifndef KRADIO_MMSX_HANDLER_H
 #define KRADIO_MMSX_HANDLER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QSharedPointer>
 #include <kurl.h>
 

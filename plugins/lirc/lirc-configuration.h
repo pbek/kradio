@@ -18,10 +18,6 @@
 #ifndef KRADIO_LIRC_CONFIGURATION_H
 #define KRADIO_LIRC_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "ui_lirc-configuration-ui.h"
 #include "lircsupport.h"
 #include "listviewitem_lirc.h"

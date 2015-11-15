@@ -18,10 +18,6 @@
 #ifndef KRADIO_STREAMING_CONFIGURATION_H
 #define KRADIO_STREAMING_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 class QColorGroup;
 #include "ui_streaming-configuration-ui.h"
 #include "streaming.h"

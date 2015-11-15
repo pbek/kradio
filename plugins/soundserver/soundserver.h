@@ -18,10 +18,6 @@
 #ifndef KRADIO_SOUNDSERVER_H
 #define KRADIO_SOUNDSERVER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "soundstreamclient_interfaces.h"
 #include "pluginbase.h"
 

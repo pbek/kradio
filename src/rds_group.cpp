@@ -15,10 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "rds_group.h"
 
 #define STATS_MAX_GROUP_COUNT    2000

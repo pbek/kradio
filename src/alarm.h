@@ -18,10 +18,6 @@
 #ifndef KRADIO_ALARM_H
 #define KRADIO_ALARM_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QDateTime>
 #include <QtCore/QVector>
 

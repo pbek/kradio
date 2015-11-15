@@ -18,10 +18,6 @@
 #ifndef KRADIO_DOCKING_H
 #define KRADIO_DOCKING_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <ksystemtrayicon.h>
 #include <kmenu.h>
 #include <khelpmenu.h>

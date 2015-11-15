@@ -18,10 +18,6 @@
 #ifndef KRADIO_RECORDING_TEMPLATE_H
 #define KRADIO_RECORDING_TEMPLATE_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QString>
 #include <QtCore/QDate>
 #include <QtCore/QTime>

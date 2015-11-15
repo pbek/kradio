@@ -18,10 +18,6 @@
 #ifndef LISTVIEWITEM_LIRC_H
 #define LISTVIEWITEM_LIRC_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <Qt3Support/Q3ListView>
 
 class ListViewItemLirc : public QObject, 

@@ -18,10 +18,6 @@
 #ifndef KRADIO_SHORTCUTS_CONFIGURATION_H
 #define KRADIO_SHORTCUTS_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kshortcutseditor.h>
 
 class ShortcutsConfiguration : public KShortcutsEditor

@@ -18,10 +18,6 @@
 #ifndef _KRADIO_OSS_SOUND_H
 #define _KRADIO_OSS_SOUND_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "../../src/include/ringbuffer.h"
 #include "../../src/include/plugins.h"
 #include "../../src/include/soundstreamclient_interfaces.h"

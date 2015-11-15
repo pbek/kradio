@@ -17,10 +17,6 @@
 #ifndef KRADIO_RADIOCFGXMLHANDLER_H
 #define KRADIO_RADIOCFGXMLHANDLER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtXml/QtXml>
 #include <QtCore/QObject>
 

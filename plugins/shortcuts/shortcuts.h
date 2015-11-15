@@ -18,10 +18,6 @@
 #ifndef KRADIO_SHORTCUTS_H
 #define KRADIO_SHORTCUTS_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QObject>
 #include "timecontrol_interfaces.h"
 #include "radio_interfaces.h"

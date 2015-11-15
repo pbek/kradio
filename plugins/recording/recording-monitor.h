@@ -18,10 +18,6 @@
 #ifndef KRADIO_RECORDING_MONITOR_H
 #define KRADIO_RECORDING_MONITOR_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtGui/QWidget>
 
 #include "widgetpluginbase.h"

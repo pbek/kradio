@@ -18,11 +18,6 @@
 #ifndef KRADIO_RECORDING_ENCODER_H
 #define KRADIO_RECORDING_ENCODER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-
 #include <QtCore/QObject>
 #include <QtCore/QString>
 #include <QtCore/QThread>

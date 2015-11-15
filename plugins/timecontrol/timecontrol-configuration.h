@@ -17,10 +17,6 @@
 #ifndef KRADIO_TIMECONTROL_CONFIGURATION_H
 #define KRADIO_TIMECONTROL_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "radio_interfaces.h"
 #include "timecontrol_interfaces.h"
 #include "ui_timecontrol-configuration-ui.h"

@@ -18,10 +18,6 @@
 #ifndef DBUSSUPPORT_H
 #define DBUSSUPPORT_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QObject>
 #include "timecontrol_interfaces.h"
 #include "radio_interfaces.h"

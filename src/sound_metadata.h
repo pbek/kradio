@@ -18,10 +18,6 @@
 #ifndef KRADIO_SOUND_METADATA_H
 #define KRADIO_SOUND_METADATA_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <time.h>
 #include <endian.h>
 #include <QtCore/QString>

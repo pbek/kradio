@@ -18,10 +18,6 @@
 #ifndef KRADIO_PLUGINMANAGER_CONFIGURATION_H
 #define KRADIO_PLUGINMANAGER_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "ui_pluginmanager-configuration-ui.h"
 
 class QStandardItemModel;

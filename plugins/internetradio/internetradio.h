@@ -18,10 +18,6 @@
 #ifndef KRADIO_INTERNETRADIO_H
 #define KRADIO_INTERNETRADIO_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QTimer>
 
 #include <kio/job.h>

@@ -18,10 +18,6 @@
 #ifndef KRADIO_RECORDING_ENCODER_OGG_H
 #define KRADIO_RECORDING_ENCODER_OGG_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "encoder.h"
 
 #ifdef HAVE_OGG

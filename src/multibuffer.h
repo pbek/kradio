@@ -18,10 +18,6 @@
 #ifndef KRADIO_MULTIBUFFER_H
 #define KRADIO_MULTIBUFFER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QSemaphore>
 #include <QtCore/QString>
 #include <kdemacros.h>

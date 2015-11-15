@@ -29,10 +29,6 @@
 #ifndef KRADIO_RADIODEVICE_INTERFACES_H
 #define KRADIO_RADIODEVICE_INTERFACES_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "soundstreamid.h"
 #include "interfaces.h"
 

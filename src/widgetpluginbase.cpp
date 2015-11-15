@@ -18,10 +18,6 @@
 #include "widgetpluginbase.h"
 #include "pluginmanager.h"
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kwindowsystem.h>
 #include <kwindowinfo.h>
 #include <QtGui/QWidget>

@@ -18,10 +18,6 @@
 #ifndef KRADIO_SOUNDFORMAT_H
 #define KRADIO_SOUNDFORMAT_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <endian.h>
 #include <QtCore/QString>
 #include <kconfig.h>

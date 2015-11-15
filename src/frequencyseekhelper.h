@@ -18,10 +18,6 @@
 #ifndef KRADIO_FREQUENCY_SEEKHELPER_H
 #define KRADIO_FREQUENCY_SEEKHELPER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
 //#include "radiodevice_interfaces.h"

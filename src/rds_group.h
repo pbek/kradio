@@ -18,10 +18,6 @@
 #ifndef KRADIO_V4LRADIO_RDS_GROUP_H
 #define KRADIO_V4LRADIO_RDS_GROUP_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kdemacros.h>
 
 #define RDS_BLK_A          0

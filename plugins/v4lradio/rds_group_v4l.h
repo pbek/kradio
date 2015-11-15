@@ -18,10 +18,6 @@
 #ifndef KRADIO_V4LRADIO_RDS_GROUP_V4L_H
 #define KRADIO_V4LRADIO_RDS_GROUP_V4L_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "rds_group.h"
 
 #define RDS_V4L_ERROR_UNCORRECTABLE 0x80

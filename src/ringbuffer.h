@@ -18,10 +18,6 @@
 #ifndef _KRADIO_RING_BUFFER_H
 #define _KRADIO_RING_BUFFER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <sys/types.h>
 #include <kdemacros.h>
 #include <QtCore/QSemaphore>

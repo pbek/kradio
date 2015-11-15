@@ -18,10 +18,6 @@
 #ifndef KRADIO_RADIOVIEW_ELEMENT_H
 #define KRADIO_RADIOVIEW_ELEMENT_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtGui/QFrame>
 #include "interfaces.h"
 #include "pluginbase.h"

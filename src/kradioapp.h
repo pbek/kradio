@@ -18,10 +18,6 @@
 #ifndef KRADIO_KRADIOAPP_H
 #define KRADIO_KRADIOAPP_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QMap>
 
 #include <kconfig.h>

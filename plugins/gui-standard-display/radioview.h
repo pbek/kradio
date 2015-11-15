@@ -18,10 +18,6 @@
 #ifndef KRADIO_RADIOVIEW_H
 #define KRADIO_RADIOVIEW_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtGui/QWidget>
 #include <QtCore/QTimer>
 #include <khelpmenu.h>

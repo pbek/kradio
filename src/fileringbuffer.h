@@ -18,10 +18,6 @@
 #ifndef _KRADIO_FILE_RING_BUFFER_H
 #define _KRADIO_FILE_RING_BUFFER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kdemacros.h>
 #include <QtCore/QString>
 #include <stdio.h>

@@ -18,12 +18,6 @@
 #ifndef KRADIO_RADIOVIEW_CONFIGURATION_H
 #define KRADIO_RADIOVIEW_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-
-
 #include <ktabwidget.h>
 
 class RadioViewConfiguration : public KTabWidget

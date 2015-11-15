@@ -17,10 +17,6 @@
 #ifndef KRADIO_PLUGIN_CONFIGURATION_DIALOG
 #define KRADIO_PLUGIN_CONFIGURATION_DIALOG
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kpagedialog.h>
 #include "widgetpluginbase.h"
 

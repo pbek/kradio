@@ -15,10 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "rds_type_0a_decoder.h"
 
 RDS_Type0A_Decoder::RDS_Type0A_Decoder()

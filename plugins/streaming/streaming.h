@@ -18,10 +18,6 @@
 #ifndef _KRADIO_STREAMING_H
 #define _KRADIO_STREAMING_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "pluginbase.h"
 #include "soundformat.h"
 #include "soundstreamclient_interfaces.h"

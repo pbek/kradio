@@ -18,10 +18,6 @@
 #ifndef KRADIO_SEEKHELPER_H
 #define KRADIO_SEEKHELPER_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "radiodevice_interfaces.h"
 #include "seekradio_interfaces.h"
 #include "soundstreamclient_interfaces.h"

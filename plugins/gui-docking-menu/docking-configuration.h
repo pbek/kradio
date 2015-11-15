@@ -18,10 +18,6 @@
 #ifndef KRADIO_DOCKING_CONFIGURATION_H
 #define KRADIO_DOCKING_CONFIGURATION_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <QtCore/QMap>
 
 #include "stationselector.h"

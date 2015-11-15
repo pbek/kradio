@@ -18,10 +18,6 @@
 #ifndef KRADIO_MMSX_HANDLER_THREAD_H
 #define KRADIO_MMSX_HANDLER_THREAD_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kurl.h>
 #include <QtCore/QThread>
 
