@@ -73,7 +73,7 @@ msgstr "URL:"
 
 #: radiostations/radiostation-config.cpp:132
 msgid "Decoder Class:"
-msgstr "Classe Do Decoficador:"
+msgstr "Classe Do Descodificador:"
 
 #: radiostations/radiostation-config.cpp:136
 msgid "Playlist Class:"
@@ -150,7 +150,7 @@ msgstr ""
 
 #: radiostations/radiostation-config.cpp:158
 msgid "Meta-Data Stream Encoding:"
-msgstr ""
+msgstr "Codificação de Meta-Dados de Emissão"
 
 #: radiostations/radiostation-config.cpp:240
 msgid "auto"
@@ -243,7 +243,7 @@ msgid ""
 "<qt>No information available.<br />The supplied KAboutData object does not "
 "exist.</qt>"
 msgstr ""
-"<qt>Nenhuma informação disponível.<br />O objeto KAboutData fornecido-não "
+"<qt>Nenhuma informação disponível.<br />O objeto KAboutData fornecido não "
 "existe.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
@@ -348,7 +348,7 @@ msgstr[1] ""
 
 #: src/kradioapp.cpp:242
 msgid "KRadio4 Installation Error"
-msgstr "Erro Na Instalação dD KRadio4"
+msgstr "Erro Na Instalação do KRadio4"
 
 #: src/kradioapp.cpp:267
 #, fuzzy, kde-format
@@ -357,7 +357,7 @@ msgstr "Instância"
 
 #: src/kradioapp.cpp:288
 msgid "KRadio Configuration"
-msgstr "Configuração Do KRadio"
+msgstr "Configuração do KRadio"
 
 #: src/kradioapp.cpp:289
 msgid "About KRadio Components"
@@ -700,7 +700,7 @@ msgstr "Detecção e carregamento automático de novos plug-ins"
 #: rc.cpp:8
 #, fuzzy
 msgid "Do not check/load"
-msgstr "Não verifcar/carregar!"
+msgstr "Não verificar/carregar!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
@@ -721,8 +721,7 @@ msgstr "Por favor, pergunte!"
 #: rc.cpp:17
 #, fuzzy
 msgid "Show progress bar during startup for plugin initiali&zation"
-msgstr ""
-"Mostrar A Barra De Progresso Durante O Início Para O Plug-in 'Iniciali&zação'"
+msgstr "Mostrar A Barra De Progresso Durante O Início Para O Plug-in 'Iniciali&zação'"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:114
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
@@ -824,6 +823,11 @@ msgid ""
 "plugin names is recommended for your convenience e.g. if you have multiple "
 "sound cards and/or multiple ALSA plugin instances.</p>"
 msgstr ""
+"<p>Você pode <b>renomear</b> uma instância de plug-in, fazendo duplo-click no "
+"nome da instância. Este nome aparecerá abaixo do ícone da página de configuração, "
+"no cabeçalho da página de configuração e no nome do seu dispositivo de som. A "
+"edição de nomes de plug-in é recomendada no caso de você tiver várias placas de "
+"multimídia e/ou múltiplas instâncias de plug-in ALSA.</p>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)

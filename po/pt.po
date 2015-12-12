@@ -4,60 +4,61 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Hélio Guilherme <helio.guilherme@bluebottle.com>, 2006.
 # Helio Guilherme <helio.guilherme@bluebottle.com>, 2006.
-#
+# Hélio Guilherme <helio_guilherme@hotmail.com>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: pt\n"
+"Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-09-19 03:17+0200\n"
-"PO-Revision-Date: 2006-02-07 13:13+0000\n"
-"Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
-"Language-Team: Português <pt@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2015-12-12 21:15+0100\n"
+"Last-Translator: Hélio Guilherme <helio_guilherme@hotmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: kde\n"
 
 #: interfaces/errorlog_interfaces.cpp:43 interfaces/errorlog_interfaces.cpp:70
 #, kde-format
 msgid "%1 Error: %2"
-msgstr ""
+msgstr "%1 Erro: %2"
 
 #: interfaces/errorlog_interfaces.cpp:50 interfaces/errorlog_interfaces.cpp:77
 #, kde-format
 msgid "%1 Warning: %2"
-msgstr ""
+msgstr "%1 Aviso: %2"
 
 #: interfaces/errorlog_interfaces.cpp:57 interfaces/errorlog_interfaces.cpp:84
 #, kde-format
 msgid "%1 Information: %2"
-msgstr ""
+msgstr "%1 Informação: %2"
 
 #: interfaces/errorlog_interfaces.cpp:64 interfaces/errorlog_interfaces.cpp:91
 #, kde-format
 msgid "%1 Debug: %2"
-msgstr ""
+msgstr "%1 Depurar: %2"
 
 #: radiostations/frequencyradiostation.cpp:120
 #: radiostations/internetradiostation.cpp:155
 #, kde-format
 msgctxt "<station long name>, <station description>"
 msgid "%1, %2"
-msgstr ""
+msgstr "%1, %2"
 
 #: radiostations/frequencyradiostation.cpp:134
 #, kde-format
 msgid "%1 MHz"
-msgstr ""
+msgstr "%1 MHz"
 
 #: radiostations/frequencyradiostation.cpp:136
 #, kde-format
 msgid "%1 kHz"
-msgstr ""
+msgstr "%1 kHz"
 
 #: radiostations/radiostation-config.cpp:49
-#, fuzzy
 msgid "I do not know how to edit this station"
 msgstr "Não sei como editar esta estação"
 
@@ -67,95 +68,95 @@ msgstr "Frequência:"
 
 #: radiostations/radiostation-config.cpp:128
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: radiostations/radiostation-config.cpp:132
 msgid "Decoder Class:"
-msgstr ""
+msgstr "Classe do Descodificador:"
 
 #: radiostations/radiostation-config.cpp:136
 msgid "Playlist Class:"
-msgstr ""
+msgstr "Classe da Playlist:"
 
 #: radiostations/radiostation-config.cpp:141
 msgctxt "Stream Format"
 msgid "<autodetect>"
-msgstr ""
+msgstr "<autodetectar>"
 
 #: radiostations/radiostation-config.cpp:142
 msgctxt "Stream Format"
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: radiostations/radiostation-config.cpp:143
 msgctxt "Stream Format"
 msgid "ACC/ACCP"
-msgstr ""
+msgstr "ACC/ACCP"
 
 #: radiostations/radiostation-config.cpp:144
 msgctxt "Stream Format"
 msgid "ASF"
-msgstr ""
+msgstr "ASF"
 
 #: radiostations/radiostation-config.cpp:146
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
-msgstr ""
+msgstr "OGG/Vorbis"
 
 #: radiostations/radiostation-config.cpp:149
 msgctxt "Playlist Format"
 msgid "<autodetect>"
-msgstr ""
+msgstr "<autodetectar>"
 
 #: radiostations/radiostation-config.cpp:150
 msgctxt "Playlist Format"
 msgid "<none>"
-msgstr ""
+msgstr "<nenhum>"
 
 #: radiostations/radiostation-config.cpp:151
 msgctxt "Playlist Format"
 msgid "ASX"
-msgstr ""
+msgstr "ASX"
 
 #: radiostations/radiostation-config.cpp:152
 msgctxt "Playlist Format"
 msgid "LSC"
-msgstr ""
+msgstr "LSC"
 
 #: radiostations/radiostation-config.cpp:153
 msgctxt "Playlist Format"
 msgid "M3U"
-msgstr ""
+msgstr "M3U"
 
 #: radiostations/radiostation-config.cpp:154
 msgctxt "Playlist Format"
 msgid "PLS"
-msgstr ""
+msgstr "PLS"
 
 #: radiostations/radiostation-config.cpp:155
 msgctxt "Playlist Format"
 msgid "WMV"
-msgstr ""
+msgstr "WMV"
 
 #: radiostations/radiostation-config.cpp:158
 msgid "Meta-Data Stream Encoding:"
-msgstr ""
+msgstr "Codificação de Meta-Dados de Emissão"
 
 #: radiostations/radiostation-config.cpp:240
 msgid "auto"
-msgstr ""
+msgstr "auto"
 
 #: radiostations/radiostation-listview.cpp:35
 msgid "No."
-msgstr ""
+msgstr "Nº."
 
 #: radiostations/radiostation-listview.cpp:36
 msgid "Icon"
-msgstr ""
+msgstr "Ícone"
 
 #: radiostations/radiostation-listview.cpp:37
 msgid "Station"
-msgstr ""
+msgstr "Estação"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:228
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -163,41 +164,38 @@ msgstr ""
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: radiostations/radiostation-listview.cpp:38 rc.cpp:44 rc.cpp:62
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: radiostations/radiostation-listview.cpp:228
 msgid "dragEnterEvent accepted"
-msgstr ""
+msgstr "dragEnterEvent aceite"
 
 #: radiostations/radiostation-listview.cpp:232
 msgid "dragEnterEvent rejected"
-msgstr ""
+msgstr "drageEnterEvent rejeitado"
 
 #: radiostations/radiostation-listview.cpp:241
 msgid "contentsDragEnterEvent accepted"
-msgstr ""
+msgstr "contentsDragEnterEvent aceite"
 
 #: radiostations/radiostation-listview.cpp:245
 msgid "contentsDragEnterEvent rejected"
-msgstr ""
+msgstr "contentsDragEnterEvent rejeitado"
 
 #: radiostations/frequencyradiostation.h:72
 msgid "AM/FM Radio Station"
-msgstr ""
+msgstr "Estação de rádio AM/FM"
 
 #: radiostations/internetradiostation.h:75
-#, fuzzy
 msgid "Internet Radio Station"
-msgstr "Estações Seleccionadas"
+msgstr "Estação de Rádio Internet"
 
 #: radiostations/radiostation.h:161
-#, fuzzy
 msgctxt "Unknown station long name"
 msgid "unknown"
 msgstr "desconhecido"
 
 #: radiostations/radiostation.h:162
-#, fuzzy
 msgctxt "Unknown station description"
 msgid "unknown"
 msgstr "desconhecido"
@@ -205,33 +203,36 @@ msgstr "desconhecido"
 #: src/fileringbuffer.cpp:36 src/fileringbuffer.cpp:69
 #, kde-format
 msgid "cannot open buffer file %1"
-msgstr ""
+msgstr "Não foi possível abrir ficheiro de memória intermédia %1"
 
 #: src/fileringbuffer.cpp:94
 #, kde-format
 msgid "FileRingbuffer::resize: Writing to temporary file %1 failed. "
-msgstr ""
+msgstr "FileRingbuffer::resize: Falha ao escrever ficheiro temporário %1. "
 
 #: src/fileringbuffer.cpp:100
 #, kde-format
 msgid "FileRingbuffer::resize: Opening temporary file %1 failed. "
-msgstr ""
+msgstr "FileRingbuffer::resize: Falha ao abrir ficheiro temporário %1. "
 
 #: src/fileringbuffer.cpp:128 src/fileringbuffer.cpp:146
 #, kde-format
 msgid "FileRingBuffer::addData: failed writing data to file %1."
-msgstr ""
+msgstr "FileRingBuffer::addData: Falha ao escrever dados no ficheiro %1."
 
 #: src/fileringbuffer.cpp:169
 #, kde-format
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr ""
+"FileRingBuffer::takeData: Falha ao ler os dados do arquivo temporário %1."
 
 #: src/kradioaboutwidget.cpp:65
 msgid ""
 "<qt>No information available.<br />The supplied KAboutData object does not "
 "exist.</qt>"
 msgstr ""
+"<qt>Nenhuma informação disponível.<br />O objeto KAboutData fornecido não "
+"existe.</qt>"
 
 #: src/kradioaboutwidget.cpp:92
 #, kde-format
@@ -239,15 +240,17 @@ msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
 "html>"
 msgstr ""
+"<html><font size=\"5\">%1</font><br /><b>Versão %2</b><br />Usando KDE %3</"
+"html>"
 
 #: src/kradioaboutwidget.cpp:125
 #, kde-format
 msgid "License: %1"
-msgstr ""
+msgstr "Licença: %1"
 
 #: src/kradioaboutwidget.cpp:138
 msgid "&About"
-msgstr ""
+msgstr "&Acerca"
 
 #: src/kradioaboutwidget.cpp:147
 msgid "A&uthor"
@@ -262,11 +265,13 @@ msgid ""
 "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
 "bugs.\n"
 msgstr ""
+"Por favor, use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> para "
+"relatar falhas.\n"
 
 #: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
 #, kde-format
 msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr ""
+msgstr "Por favor, relate falhas para <a href=\"mailto:%1\">%2</a>.\n"
 
 #: src/kradioaboutwidget.cpp:210
 msgid "&Thanks To"
@@ -277,19 +282,18 @@ msgid "T&ranslation"
 msgstr "T&radução"
 
 #: src/kradioaboutwidget.cpp:255
-#, fuzzy
 msgid "License Agreement"
-msgstr "Acordo de &licença"
+msgstr "Acordo de Licença"
 
 #: src/kradioapp.cpp:132
 #, kde-format
 msgid "Library %1: plugin entry point is missing"
-msgstr ""
+msgstr "Biblioteca %1: Em falta o ponto de entrada do plugin"
 
 #: src/kradioapp.cpp:133 src/kradioapp.cpp:141
 #: src/pluginmanager-configuration.cpp:197
 msgid "Plugin Library Load Error"
-msgstr ""
+msgstr "Erro ao carregar plugin da biblioteca"
 
 #: src/kradioapp.cpp:140
 #, kde-format
@@ -297,14 +301,18 @@ msgid ""
 "Library %1:\n"
 "%2"
 msgstr ""
+"Biblioteca %1: \n"
+"%2"
 
 #: src/kradioapp.cpp:216
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr ""
+"Encontradas novas bibliotecas de plugins. As bibliotecas devem ser "
+"carregadas agora?"
 
 #: src/kradioapp.cpp:218
 msgid "New Plugin Libraries Found"
-msgstr ""
+msgstr "Encontradas novas Bibliotecas de plugin"
 
 #: src/kradioapp.cpp:234
 #, kde-format
@@ -317,16 +325,22 @@ msgid_plural ""
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
+"KRadio4 encontrou apenas %1 bibliotecas de plugins. É esperado um mínimo de "
+"5. Por favor, verifique a diretoria de instalação do KRadio4 e se as "
+"variáveis de ambiente KDEDIR, KDEDIRS e KDEHOME têm valores adequados.\n"
 msgstr[1] ""
+"KRadio4 encontrou apenas %1 bibliotecas de plugins. É esperado um mínimo de "
+"5. Por favor, verifique a diretoria de instalação do KRadio4 e se as "
+"variáveis de ambiente KDEDIR, KDEDIRS e KDEHOME têm valores adequados.\n"
 
 #: src/kradioapp.cpp:242
 msgid "KRadio4 Installation Error"
-msgstr ""
+msgstr "Erro Na Instalação do KRadio4"
 
 #: src/kradioapp.cpp:267
-#, fuzzy, kde-format
+#, kde-format
 msgid "Instance %1"
-msgstr "Instância"
+msgstr "Instância %1"
 
 #: src/kradioapp.cpp:288
 msgid "KRadio Configuration"
@@ -337,65 +351,64 @@ msgid "About KRadio Components"
 msgstr "Acerca dos componentes do KRadio"
 
 #: src/main.cpp:34
-#, fuzzy
 msgid "KRadio4"
-msgstr "KRadio"
+msgstr "KRadio4"
 
 #: src/main.cpp:36
 msgid "A versatile KDE AM/FM/Internet radio application"
-msgstr ""
+msgstr "Uma versátil aplicação de rádio AM/FM/Internet para o KDE"
 
 #: src/main.cpp:38
 msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
-msgstr ""
+msgstr "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
 
 #: src/main.cpp:43
 msgid "Ernst Martin Witte"
-msgstr ""
+msgstr "Ernst Martin Witte"
 
 #: src/main.cpp:43
-#, fuzzy
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
 "recording, LIRC support, alarms, misc"
-msgstr "reescrito para 0.3.0, gravação, suporte lirc, alarmes, diversos"
+msgstr ""
+"Porte para KDE4, suporte RDS, atalhos, suporte a PVR, reescrito para "
+"1.0/0.3.0, função de gravação, suporte lirc, alarme, entre outros"
 
 #: src/main.cpp:44
 msgid "Pino Toscano"
-msgstr ""
+msgstr "Pino Toscano"
 
 #: src/main.cpp:44
 msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
-msgstr ""
+msgstr "Plugin MPRIS, sistema de construção, padrões de conformidade, limpezas"
 
 #: src/main.cpp:45
 msgid "Marcus Camen"
-msgstr ""
+msgstr "Marcus Camen"
 
 #: src/main.cpp:45
 msgid "Buildsystem, standards conformance, cleanups"
-msgstr ""
+msgstr "Sistema de construção, padrões de conformidade, limpezas"
 
 #: src/main.cpp:46
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: src/main.cpp:46
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Diversos"
 
 #: src/main.cpp:47
 msgid "Frank Schwanz"
-msgstr ""
+msgstr "Frank Schwanz"
 
 #: src/main.cpp:47
-#, fuzzy
 msgid "Initial idea, first basic KDE 2 application"
-msgstr "ideia, primeira aplicação básica"
+msgstr "Ideia inicial, primeira aplicação básica em KDE 2"
 
 #: src/multibuffer.cpp:89
 msgid "Buffer Overflow. "
-msgstr ""
+msgstr "Sobrecarga de Memória Intermédia."
 
 #: src/plugin_configuration_dialog.cpp:35
 msgid "Configuration Dialog"
@@ -407,95 +420,96 @@ msgid ""
 "Library %1:\n"
 "Cannot load non-local library"
 msgstr ""
+"Biblioteca %1: \n"
+"Não foi possível carregar biblioteca não local"
 
 #: src/pluginmanager-configuration.cpp:226
 msgid "Enter Plugin Instance Name"
-msgstr ""
+msgstr "Introduza o nome da instância do plugin"
 
 #: src/pluginmanager-configuration.cpp:227
-#, fuzzy
 msgid "Instance name:"
-msgstr "Instância"
+msgstr "Nome da instância:"
 
 #: src/pluginmanager.cpp:436
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins"
 
 #: src/pluginmanager.cpp:437
 msgid "Plugin Library Configuration"
-msgstr ""
+msgstr "Configuração da biblioteca de plugins"
 
 #: src/pluginmanager.cpp:570
 msgid "Starting Plugins"
-msgstr ""
+msgstr "Iniciando Plugins"
 
 #: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
 #, kde-format
 msgid "Creating Plugin %1"
-msgstr ""
+msgstr "Criando Plugin %1"
 
 #: src/pluginmanager.cpp:605
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
 msgstr ""
+"Encontrados novos plugins. Você deseja criar automaticamente as instâncias "
+"agora?"
 
 #: src/pluginmanager.cpp:607
 msgid "New Plugins Found"
-msgstr ""
+msgstr "Encontrados novos plugins"
 
 #: src/pluginmanager.cpp:642
 #, kde-format
 msgid "Initializing Plugin %1"
-msgstr ""
+msgstr "Inicializando plugins %1"
 
 #: src/pluginmanager.cpp:767
-#, fuzzy
 msgctxt "Show all widget plugins"
 msgid "Show all"
-msgstr "Mostrar %1"
+msgstr "Mostrar todos"
 
 #: src/pluginmanager.cpp:768
-#, fuzzy
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
-msgstr "Esconder %1"
+msgstr "Esconder todos"
 
 #: src/pluginmanager.cpp:769
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
-msgstr ""
+msgstr "Restaurar todos"
 
 #: src/pluginmanager.cpp:770
 msgid "Restore state before last hide-all activation"
-msgstr ""
+msgstr "Restaurar estado antes da última ativação 'Esconder todos'"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 msgid "&Start"
-msgstr ""
+msgstr "&Iniciar"
 
 #. i18n: file: src/standardscandialog-ui.ui:58
 #. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
 #: src/standardscandialog.cpp:92 rc.cpp:77
 msgid "&Stop"
-msgstr ""
+msgstr "&Parar"
 
 #: src/standardscandialog.cpp:163
 #, kde-format
 msgid "<p align=\"right\">%1</p>"
-msgstr ""
+msgstr "<p align=\"right\">%1</p>"
 
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
 msgid "unknown"
 msgstr "desconhecido"
 
 #: src/standardscandialog.cpp:226
-#, fuzzy, kde-format
+#, kde-format
 msgid "new station %1"
-msgstr "nova estação"
+msgstr "nova estação %1"
 
 #: src/station-drag-object.cpp:70
 msgid "canDecode = true"
-msgstr ""
+msgstr "canDecode = true"
 
 #: src/stationlist.cpp:135
 msgid "Contains merged Data"
@@ -535,9 +549,9 @@ msgid "Download of the station preset file at %1 failed."
 msgstr "Falhou o download do ficheiro de configuração de estações em %1."
 
 #: src/stationlist.cpp:214
-#, fuzzy, kde-format
+#, kde-format
 msgid "temporary file: %1"
-msgstr "ficheiro temporário: "
+msgstr "ficheiro temporário: %1"
 
 #: src/stationlist.cpp:220
 #, kde-format
@@ -554,7 +568,7 @@ msgid "Old Preset File Format detected"
 msgstr "Detectado formato antigo do ficheiro de configuração"
 
 #: src/stationlist.cpp:322
-#, fuzzy, kde-format
+#, kde-format
 msgid "error writing to temporary file %1"
 msgstr "erro ao escrever no ficheiro temporário %1"
 
@@ -566,7 +580,7 @@ msgstr "Falhou a escrita do ficheiro de configuração de estações %1."
 #: src/stationlist.cpp:335
 #, kde-format
 msgid "uploading preset file %1: "
-msgstr ""
+msgstr "enviando o ficheiro de configuração Estações de Rádio %1"
 
 #: src/stationlist.cpp:337
 #, kde-format
@@ -574,11 +588,13 @@ msgid ""
 "something strange happened, station list has only %1 entries. Writing "
 "station preset file skipped"
 msgstr ""
+"Algo de estranho aconteceu, a lista de estações tem apenas %1 entradas. "
+"Ignorada a escrita do ficheiro de configuração de estações"
 
 #: src/stationlist.cpp:342
 #, kde-format
 msgid "error uploading preset file %1"
-msgstr "Erro ao enviar o ficheiro de Estações de Rádio %1"
+msgstr "Erro ao enviar o ficheiro de configuração Estações de Rádio %1"
 
 #: src/stationlist.cpp:346
 #, kde-format
@@ -586,7 +602,6 @@ msgid "Upload of station preset file to %1 failed."
 msgstr "Falhou o envio do ficheiro de configuração de estações %1."
 
 #: src/stationlist.cpp:353 src/stationlist.cpp:354
-#, fuzzy
 msgid "error creating temporary file"
 msgstr "erro ao escrever no ficheiro temporário %1"
 
@@ -643,48 +658,48 @@ msgstr "Esconder %1"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Hélio Guilherme"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "helio_guilherme@hotmail.com"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:36
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4_2)
 #: rc.cpp:5
 msgid "Automatic Detection and Load of New Plugins"
-msgstr ""
+msgstr "Detecção e carregamento automático de novos plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:57
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadNo)
 #: rc.cpp:8
 msgid "Do not check/load"
-msgstr ""
+msgstr "Não verificar/carregar!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadYes)
 #: rc.cpp:11
 msgid "Automatically check/load"
-msgstr ""
+msgstr "Automaticamente verificar/carregar!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QRadioButton, rbAutoLoadAsk)
 #: rc.cpp:14
 msgid "Please ask"
-msgstr ""
+msgstr "Por favor, pergunte!"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowProgressBar)
 #: rc.cpp:17
 msgid "Show progress bar during startup for plugin initiali&zation"
-msgstr ""
+msgstr "Mostrar a barra de progresso durante o início do plugin 'Iniciali&zação'"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:114
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
 #: rc.cpp:20
 msgid "Plugin Libraries"
-msgstr ""
+msgstr "Bibliotecas de plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:123
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
@@ -693,37 +708,41 @@ msgid ""
 "Select a plugin library from a file dialog. It will added to the library "
 "list if you press the \"Load Library\" button."
 msgstr ""
+"Selecionar uma biblioteca de plugin a partir do diálogo de ficheiro. Será "
+"adicionado à lista da biblioteca se você pressionar o botão \"Carregar "
+"biblioteca\"."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:136
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
 #: rc.cpp:26
 msgid "Loads the library specified in the box left to this button."
-msgstr ""
+msgstr "Carrega a biblioteca especificada na caixa esquerda a este botão."
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:155
 #. i18n: ectx: property (toolTip), widget (K3ListBox, listPluginLibraries)
 #: rc.cpp:29
 msgid "list of loaded plugin libraries"
-msgstr ""
+msgstr "Lista de bibliotecas de plugins carregadas"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:168
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
 #: rc.cpp:32
 msgid "Unload the plugin library selected in the list on the left side"
 msgstr ""
+"Descarregar a biblioteca de plugin selecionada na lista no lado esquerdo"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:195
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
 #: rc.cpp:35
-#, fuzzy
 msgid "Plugin Classes"
-msgstr "Estações Disponíveis"
+msgstr "Classes de Plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:210
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginClasses)
 #: rc.cpp:38
 msgid "List of available plugin classes found in the plugin libraries"
 msgstr ""
+"Lista de classes de plugins disponíveis encontrada nas bibliotecas de plugin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:217
 #. i18n: ectx: property (text), widget (K3ListView, listPluginClasses)
@@ -731,38 +750,39 @@ msgstr ""
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: rc.cpp:41 rc.cpp:56
 msgid "Plugin Class"
-msgstr ""
+msgstr "Classe do Plugin"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:248
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
 #: rc.cpp:47
 msgid "Create a new instance of plugin class selected in the list on the left"
 msgstr ""
+"Criar um nova instância de classes de plugins selecionadas na lista à "
+"esquerda"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:275
 #. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
 #: rc.cpp:50
-#, fuzzy
 msgid "Plugin Instances"
-msgstr "Instância"
+msgstr "Instâncias de Plugins"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:290
 #. i18n: ectx: property (toolTip), widget (K3ListView, listPluginInstances)
 #: rc.cpp:53
 msgid "List of the plugin instances currently running"
-msgstr ""
+msgstr "Lista de instâncias de plugins atualmente em execução"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:308
 #. i18n: ectx: property (text), widget (K3ListView, listPluginInstances)
 #: rc.cpp:59
 msgid "Instance Name"
-msgstr ""
+msgstr "Nome da Instância"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:339
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
 #: rc.cpp:65
 msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr ""
+msgstr "Remove/Pára a instância do plugin selecionado na lista a esquerda"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:371
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -774,11 +794,15 @@ msgid ""
 "plugin names is recommended for your convenience e.g. if you have multiple "
 "sound cards and/or multiple ALSA plugin instances.</p>"
 msgstr ""
+"<p>Você pode <b>renomear</b> uma instância de plugin, fazendo duplo-click no "
+"nome da instância. Este nome aparecerá abaixo do ícone da página de configuração, "
+"no cabeçalho da página de configuração e no nome do seu dispositivo de som. A "
+"edição de nomes de plugin é recomendada no caso de você tiver várias placas de "
+"multimédia e/ou múltiplas instâncias de plugin ALSA.</p>"
 
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
 #: rc.cpp:71
-#, fuzzy
 msgid "Stations Search in Progress..."
 msgstr "Pesquisa de estações a decorrer..."
 
@@ -786,13 +810,13 @@ msgstr "Pesquisa de estações a decorrer..."
 #. i18n: ectx: property (text), widget (QPushButton, buttonOk)
 #: rc.cpp:74
 msgid "&Ok"
-msgstr ""
+msgstr "&Ok"
 
 #. i18n: file: src/standardscandialog-ui.ui:65
 #. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
 #: rc.cpp:80
 msgid "&Discard"
-msgstr ""
+msgstr "&Descartar"
 
 #. i18n: file: src/standardscandialog-ui.ui:92
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
@@ -809,9 +833,8 @@ msgstr "<p align=\"right\">nada aqui</p>"
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
 #: rc.cpp:89
-#, fuzzy
 msgid "Selected stations:"
-msgstr "Estações Seleccionadas"
+msgstr "Estações Selecionadas"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
@@ -822,7 +845,7 @@ msgstr "Estações Disponíveis"
 
 #: src/recording_template.h:84
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
-msgstr ""
+msgstr "%s, %m/%d/%Y, %H:%M:%S, gravação kradio4"
 
 #~ msgid "StationSelectorUI"
 #~ msgstr "StationSelectorUI"
