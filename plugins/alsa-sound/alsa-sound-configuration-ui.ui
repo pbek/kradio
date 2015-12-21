@@ -783,7 +783,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="0"/>
- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
    <class>KIntSpinBox</class>
