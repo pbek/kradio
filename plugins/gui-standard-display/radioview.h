@@ -142,7 +142,6 @@ protected slots:
     void slotSnooze ();
     void slotStartDefaultRecording();
     void slotRecordingMenu(QAction *a);
-    void slotBtnPluginsClicked();
     void slotComboStationSelected(int);
 
     void slotConfigPageDeleted(QObject*);

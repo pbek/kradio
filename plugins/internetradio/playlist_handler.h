@@ -48,8 +48,6 @@ public slots:
     void        stopPlaylistDownload();
     void        selectNextStream(bool allowRetrySameString, bool errorIfEOL, bool isRetry = true);
 
-    void        setMaxRetries(int maxRetries);
-
     void        resetError();
 
 protected slots:
