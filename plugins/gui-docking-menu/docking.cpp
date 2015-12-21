@@ -289,9 +289,9 @@ void RadioDocking::buildContextMenu()
 
     m_alarmID  = m_menu->addTitle (generateAlarmTitle());
 
-    m_sleepID  = m_menu->addAction(SmallIcon("kradio_zzz"), "sleep-dummy");
-    m_seekfwID = m_menu->addAction(SmallIcon("media-seek-forward"),  i18n("Search Next Station"));
-    m_seekbwID = m_menu->addAction(SmallIcon("media-seek-backward"), i18n("Search Previous Station"));
+    m_sleepID  = m_menu->addAction(KIcon("kradio_zzz"), "sleep-dummy");
+    m_seekfwID = m_menu->addAction(KIcon("media-seek-forward"),  i18n("Search Next Station"));
+    m_seekbwID = m_menu->addAction(KIcon("media-seek-backward"), i18n("Search Previous Station"));
     QObject::connect(m_sleepID,  SIGNAL(triggered()), this, SLOT(slotSleepCountdown()));
     QObject::connect(m_seekfwID, SIGNAL(triggered()), this, SLOT(slotSeekFwd()));
     QObject::connect(m_seekbwID, SIGNAL(triggered()), this, SLOT(slotSeekBkwd()));
@@ -304,8 +304,8 @@ void RadioDocking::buildContextMenu()
     m_recordingMenuAction->setIcon(KIcon("media-record"));
 
 
-    m_powerID = m_menu->addAction(SmallIcon("media-playback-start"), "power-dummy");
-    m_pauseID = m_menu->addAction(SmallIcon("media-playback-pause"), i18n("Pause Radio"));
+    m_powerID = m_menu->addAction(KIcon("media-playback-start"), "power-dummy");
+    m_pauseID = m_menu->addAction(KIcon("media-playback-pause"), i18n("Pause Radio"));
     QObject::connect(m_powerID,  SIGNAL(triggered()), this, SLOT(slotPower()));
     QObject::connect(m_pauseID,  SIGNAL(triggered()), this, SLOT(slotPause()));
     noticePowerChanged(queryIsPowerOn());
@@ -438,10 +438,10 @@ bool RadioDocking::noticeNextAlarmChanged(const Alarm */*a*/)
 bool RadioDocking::noticeCountdownStarted(const QDateTime &end)
 {
     if (end.isValid()) {
-        m_sleepID->setIcon(SmallIcon("kradio_zzz"));
+        m_sleepID->setIcon(KIcon("kradio_zzz"));
         m_sleepID->setText(i18n("Stop Sleep Countdown (running until %1)", end.toString()));
     } else {
-        m_sleepID->setIcon(SmallIcon("kradio_zzz"));
+        m_sleepID->setIcon(KIcon("kradio_zzz"));
         m_sleepID->setText(i18n("Start Sleep Countdown"));
     }
     return true;
@@ -450,7 +450,7 @@ bool RadioDocking::noticeCountdownStarted(const QDateTime &end)
 
 bool RadioDocking::noticeCountdownStopped()
 {
-    m_sleepID->setIcon(SmallIcon("kradio_zzz"));
+    m_sleepID->setIcon(KIcon("kradio_zzz"));
     m_sleepID->setText(i18n("Start Sleep Countdown"));
     return true;
 }
@@ -458,7 +458,7 @@ bool RadioDocking::noticeCountdownStopped()
 
 bool RadioDocking::noticeCountdownZero()
 {
-    m_sleepID->setIcon(SmallIcon("kradio_zzz"));
+    m_sleepID->setIcon(KIcon("kradio_zzz"));
     m_sleepID->setText(i18n("Start Sleep Countdown"));
     return true;
 }
@@ -466,7 +466,7 @@ bool RadioDocking::noticeCountdownZero()
 
 bool RadioDocking::noticePowerChanged(bool on)
 {
-    m_powerID->setIcon(SmallIcon(on ? "media-playback-stop" : "media-playback-start"));
+    m_powerID->setIcon(KIcon(on ? "media-playback-stop" : "media-playback-start"));
     m_powerID->setText(on ? i18n("Power Off") : i18n("Power On"));
     m_pauseID->setEnabled(on);
     updateTrayIcon(true, true, false, false);
@@ -845,7 +845,7 @@ void RadioDocking::buildRecordingMenu()
 
     KMenu *m = new KMenu(m_menu);
 
-    m_recordingID = m->addAction(SmallIcon("media-record"), i18n("Start Recording"));
+    m_recordingID = m->addAction(KIcon("media-record"), i18n("Start Recording"));
     QObject::connect(m_recordingID, SIGNAL(triggered()),          this, SLOT(slotStartDefaultRecording()));
     QObject::connect(m,             SIGNAL(triggered(QAction *)), this, SLOT(slotRecordingMenu(QAction *)));
     SoundStreamID currentSinkID = queryCurrentSoundStreamSinkID();
@@ -859,7 +859,7 @@ void RadioDocking::buildRecordingMenu()
         SoundFormat   sf;
         queryIsRecordingRunning(id, r, sf);
         if (r) {
-            QAction *a = m->addAction(SmallIcon("media-record"), i18n("Stop Recording of %1", descr));
+            QAction *a = m->addAction(KIcon("media-record"), i18n("Stop Recording of %1", descr));
             m_StreamID2MenuID.insert(id, a);
 
             if (id == currentSinkID) {
@@ -916,7 +916,7 @@ bool RadioDocking::noticeSoundStreamChanged(SoundStreamID id)
         QAction *a = m_StreamID2MenuID[id];
         QString descr;
         querySoundStreamDescription(id, descr);
-        a->setIcon(SmallIcon("media-record"));
+        a->setIcon(KIcon("media-record"));
         a->setText(i18n("Stop Recording of %1", descr));
         return true;
     }
