@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2011-02-06 05:11+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -19,101 +19,117 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: displaycfg.cpp:46
+#, kde-format
 msgid "Active text:"
 msgstr ""
 
 #: displaycfg.cpp:47
+#, kde-format
 msgid "Inactive text:"
 msgstr ""
 
 #: displaycfg.cpp:48
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Background color:"
 msgstr "Arka plan rengi"
 
 #: radioview.cpp:54
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Standard Display"
 msgstr "KRadio için Standart Görüntü"
 
 #: radioview.cpp:60
+#, kde-format
 msgid "Radio Display"
 msgstr "Radyo Göster"
 
 #: radioview.cpp:145
+#, kde-format
 msgid "Pause KRadio"
 msgstr "KRadio Durdur"
 
 #: radioview.cpp:150
+#, kde-format
 msgid "Start Recording"
 msgstr "Kaydı Başlat"
 
 #: radioview.cpp:158
+#, kde-format
 msgid "5 min"
 msgstr "5 dak"
 
 #: radioview.cpp:162
+#, kde-format
 msgid "10 min"
 msgstr "10 dak"
 
 #: radioview.cpp:166
+#, kde-format
 msgid "15 min"
 msgstr "15 dak"
 
 #: radioview.cpp:170
+#, kde-format
 msgid "30 min"
 msgstr "30 dak"
 
 #: radioview.cpp:174
+#, kde-format
 msgid "60 min"
 msgstr "60 dak"
 
 #: radioview.cpp:178
+#, kde-format
 msgid "90 min"
 msgstr "90 dak"
 
 #: radioview.cpp:182
+#, kde-format
 msgid "120 min"
 msgstr "120 dak"
 
 #: radioview.cpp:227
+#, kde-format
 msgid "Configure KRadio"
 msgstr "KRadio Yapılandır"
 
 #: radioview.cpp:228
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Power on/off"
 msgstr "Güç Açma/Kapama"
 
 #: radioview.cpp:229
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Quit KRadio application"
 msgstr "KRadio Uygulamasından Çıkışl"
 
 #: radioview.cpp:230
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Start/stop recording"
 msgstr "Kaydı Başlat"
 
 #: radioview.cpp:231
+#, kde-format
 msgid "Start/stop sleep countdown"
 msgstr ""
 
 #: radioview.cpp:232
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Show/hide plugins"
 msgstr "Eklentileri Göster/Gizle"
 
 #: radioview.cpp:233
+#, kde-format
 msgid "Help about KRadio and KDE"
 msgstr "KDE ve KRadio hakkında yardım"
 
 #: radioview.cpp:234
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Select a radio station"
 msgstr "Bir Radyo İstasyonu Seçin"
 
 #: radioview.cpp:407
+#, kde-format
 msgid "<no preset defined>"
 msgstr ""
 
@@ -123,38 +139,47 @@ msgid "Stop Recording of %1"
 msgstr ""
 
 #: radioview.cpp:616
+#, kde-format
 msgid "Resume playback"
 msgstr ""
 
 #: radioview.cpp:620
+#, kde-format
 msgid "Pause playback"
 msgstr ""
 
 #: radioview.cpp:713
+#, kde-format
 msgid "Display"
 msgstr ""
 
 #: radioview.cpp:714
+#, kde-format
 msgid "Display Configuration"
 msgstr ""
 
 #: radioview_frequencyradio.cpp:132 radioview_frequencyradio.cpp:133
+#, kde-format
 msgid "Frequency Display"
 msgstr "Frekansı Göster"
 
 #: radioview_frequencyradio.cpp:419
+#, kde-format
 msgid "AM"
 msgstr "AM"
 
 #: radioview_frequencyradio.cpp:420
+#, kde-format
 msgid "FM"
 msgstr "FM"
 
 #: radioview_frequencyradio.cpp:421
+#, kde-format
 msgid "RDS"
 msgstr "RDS"
 
 #: radioview_frequencyradio.cpp:422
+#, kde-format
 msgid "NET"
 msgstr "NET"
 
@@ -168,58 +193,61 @@ msgstr "%1 kHz"
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: radioview_frequencyseeker.cpp:79
-#, fuzzy
+#: radioview_frequencyseeker.cpp:78
+#, fuzzy, kde-format
 msgid "Search for previous radio station"
 msgstr "Önceki radyo istasyonu için arama"
 
-#: radioview_frequencyseeker.cpp:80
-#, fuzzy
+#: radioview_frequencyseeker.cpp:79
+#, fuzzy, kde-format
 msgid "Search for next radio station"
 msgstr "Sonraki radyo istasyonu için arama"
 
-#: radioview_frequencyseeker.cpp:81
+#: radioview_frequencyseeker.cpp:80
+#, kde-format
 msgid "Decrement frequency"
 msgstr ""
 
-#: radioview_frequencyseeker.cpp:82
-#, fuzzy
+#: radioview_frequencyseeker.cpp:81
+#, fuzzy, kde-format
 msgid "Increment frequency"
 msgstr "Frekans Değiştir"
 
-#: radioview_frequencyseeker.cpp:83
-#, fuzzy
+#: radioview_frequencyseeker.cpp:82
+#, fuzzy, kde-format
 msgid "Change frequency"
 msgstr "Frekans Değiştir"
 
 #: radioview_volume.cpp:59
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Change volume"
 msgstr "Ses Değiştir"
 
 #. i18n: file: radioview_seekinterface.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
 #: rc.cpp:3 rc.cpp:23
+#, kde-format
 msgid "RadioView_SeekInterface"
 msgstr ""
 
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Search previous station"
 msgstr "önceki istasyonu ara"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Decrease frequency by 0.05 MHz"
 msgstr "Frekansı 0.05 MHz düşür"
 
 #. i18n: file: radioview_seekinterface.ui:70
 #. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
 #: rc.cpp:12 rc.cpp:32
+#, kde-format
 msgctxt "Frequency"
 msgid "Frequency control"
 msgstr "Frekans Kontrol"
@@ -227,23 +255,25 @@ msgstr "Frekans Kontrol"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Increase frequency by 0.05 MHz"
 msgstr "Frekansı 0.05 MHz yükselt"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Search next station"
 msgstr "sonraki istasyonu ara"
 
 #: rc.cpp:19
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
 #: rc.cpp:20
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""

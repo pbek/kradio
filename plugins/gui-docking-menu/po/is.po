@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2010-01-08 07:49+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,190 +17,207 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: docking-configuration.cpp:126
-#, fuzzy
+#: docking-configuration.cpp:110
+#, fuzzy, kde-format
 msgid "Mouse click on tray icon:"
 msgstr "Smella með vinstri músarhnapp á kerfisbakka"
 
-#: docking-configuration.cpp:127 docking-configuration.cpp:134
+#: docking-configuration.cpp:111 docking-configuration.cpp:116
+#, kde-format
 msgctxt "Mouse button"
 msgid "Left:"
 msgstr ""
 
-#: docking-configuration.cpp:128 docking-configuration.cpp:135
+#: docking-configuration.cpp:112 docking-configuration.cpp:117
+#, kde-format
 msgctxt "Mouse button"
 msgid "Right:"
 msgstr ""
 
-#: docking-configuration.cpp:129 docking-configuration.cpp:136
+#: docking-configuration.cpp:113 docking-configuration.cpp:118
+#, kde-format
 msgctxt "Mouse button"
 msgid "Middle:"
 msgstr ""
 
-#: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgctxt "Mouse button"
-msgid "XButton1:"
-msgstr ""
-
-#: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgctxt "Mouse button"
-msgid "XButton2:"
-msgstr ""
-
-#: docking-configuration.cpp:133
-#, fuzzy
+#: docking-configuration.cpp:115
+#, fuzzy, kde-format
 msgid "Mouse double-click on tray icon:"
 msgstr "Smella með vinstri músarhnapp á kerfisbakka"
 
-#: docking-configuration.cpp:140
-#, fuzzy
+#: docking-configuration.cpp:120
+#, fuzzy, kde-format
 msgid "Mouse wheel action on tray icon:"
 msgstr "Smella með vinstri músarhnapp á kerfisbakka"
 
-#: docking-configuration.cpp:146 docking-configuration.cpp:156
+#: docking-configuration.cpp:126 docking-configuration.cpp:136
+#, kde-format
 msgid "No Action"
 msgstr ""
 
-#: docking-configuration.cpp:147
-#, fuzzy
+#: docking-configuration.cpp:127
+#, fuzzy, kde-format
 msgid "Show/Hide Windows"
 msgstr "Sýna/fela íforrit"
 
-#: docking-configuration.cpp:148
+#: docking-configuration.cpp:128
+#, kde-format
 msgid "Power On/Off"
 msgstr "Af/Á"
 
-#: docking-configuration.cpp:149
-#, fuzzy
+#: docking-configuration.cpp:129
+#, fuzzy, kde-format
 msgid "Pause/Play"
 msgstr "Gera hlé á afspilun"
 
-#: docking-configuration.cpp:150 docking.cpp:322
+#: docking-configuration.cpp:130 docking.cpp:303
+#, kde-format
 msgid "Recording"
 msgstr "Upptaka"
 
-#: docking-configuration.cpp:151
-#, fuzzy
+#: docking-configuration.cpp:131
+#, fuzzy, kde-format
 msgid "System Tray Menu"
 msgstr "Táknmynd í kerfisbakka"
 
-#: docking-configuration.cpp:152
+#: docking-configuration.cpp:132
+#, kde-format
 msgid "GUI-Plugin Menu"
 msgstr ""
 
-#: docking-configuration.cpp:153
-#, fuzzy
+#: docking-configuration.cpp:133
+#, fuzzy, kde-format
 msgid "Configuration"
 msgstr "Stillingar fyrir táknmynd í kerfisbakka"
 
-#: docking-configuration.cpp:157
-#, fuzzy
+#: docking-configuration.cpp:137
+#, fuzzy, kde-format
 msgid "Change Station"
 msgstr "Finna næstu útvarpsstöð"
 
-#: docking-configuration.cpp:158
+#: docking-configuration.cpp:138
+#, kde-format
 msgid "Change Volume"
 msgstr ""
 
-#: docking-configuration.cpp:159
+#: docking-configuration.cpp:139
+#, kde-format
 msgid "Change Frequency"
 msgstr ""
 
-#: docking.cpp:46
-#, fuzzy
+#: docking.cpp:45
+#, fuzzy, kde-format
 msgid "System Tray Icon/Menu"
 msgstr "Táknmynd í kerfisbakka"
 
-#: docking.cpp:54
+#: docking.cpp:53
+#, kde-format
 msgid "System Tray Plugin"
 msgstr "Íforrit í kerfisbakka"
 
-#: docking.cpp:257
+#: docking.cpp:238
+#, kde-format
 msgid "System Tray Icon"
 msgstr "Táknmynd í kerfisbakka"
 
-#: docking.cpp:258
+#: docking.cpp:239
+#, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Stillingar fyrir táknmynd í kerfisbakka"
 
-#: docking.cpp:312
+#: docking.cpp:293
+#, kde-format
 msgid "Search Next Station"
 msgstr "Finna næstu útvarpsstöð"
 
-#: docking.cpp:313
+#: docking.cpp:294
+#, kde-format
 msgid "Search Previous Station"
 msgstr "Finna fyrri útvarpsstöð"
 
-#: docking.cpp:327
+#: docking.cpp:308
+#, kde-format
 msgid "Pause Radio"
 msgstr "Gera hlé á útvarpi"
 
-#: docking.cpp:338
+#: docking.cpp:319
+#, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Sýna/fela íforrit"
 
-#: docking.cpp:346
+#: docking.cpp:327
+#, kde-format
 msgid "&Quit"
 msgstr "&Hætta"
 
-#: docking.cpp:461
+#: docking.cpp:442
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Stöðva niðurtalningu í svæfingu (keyrir til %1)"
 
-#: docking.cpp:464 docking.cpp:473 docking.cpp:481
+#: docking.cpp:445 docking.cpp:454 docking.cpp:462
+#, kde-format
 msgid "Start Sleep Countdown"
 msgstr "Virkja niðurtalningu í svæfingu"
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power Off"
 msgstr "Slökkva"
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power On"
 msgstr "Kveikja"
 
-#: docking.cpp:504 docking.cpp:525
+#: docking.cpp:485 docking.cpp:506
+#, kde-format
 msgid "invalid station"
 msgstr "Ógild stöð"
 
-#: docking.cpp:507
+#: docking.cpp:488
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:517
+#: docking.cpp:498
 #, kde-format
 msgid "next alarm: %1"
 msgstr "næsta kvaðning: %1"
 
-#: docking.cpp:519
+#: docking.cpp:500
+#, kde-format
 msgid "<no alarm pending>"
 msgstr "<engin kvaðning í gangi>"
 
-#: docking.cpp:778 docking.cpp:881 docking.cpp:939
+#: docking.cpp:759 docking.cpp:862 docking.cpp:920
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Hætta upptöku á %1"
 
-#: docking.cpp:867
+#: docking.cpp:848
+#, kde-format
 msgid "Start Recording"
 msgstr "Byrja upptöku"
 
-#: docking.cpp:921
+#: docking.cpp:902
+#, kde-format
 msgid "Resume playback"
 msgstr "Halda áfram með spilun"
 
-#: docking.cpp:925
+#: docking.cpp:906
+#, kde-format
 msgid "Pause playback"
 msgstr "Gera hlé á afspilun"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Sveinn í Felli"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sveinki@nett.is"

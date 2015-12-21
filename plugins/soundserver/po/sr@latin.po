@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: soundserver (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -13,15 +13,16 @@ msgstr ""
 "X-Generator: POEditor.com\n"
 
 #: soundserver.cpp:27
+#, kde-format
 msgid "KRadio internal sound server"
 msgstr "KRadio interni zvučni server"
 
 #: soundserver.cpp:32
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Sound Server Plugin"
 msgstr "Zvučni server priključak"
 
 #: soundserver.cpp:34
-#, fuzzy
+#, fuzzy, kde-format
 msgid "initializing KRadio sound server"
 msgstr "inicijalizacija kradio zvučnog servera"

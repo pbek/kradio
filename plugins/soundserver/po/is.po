@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_soundserver\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2009-06-27 14:57+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -18,15 +18,16 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: soundserver.cpp:27
+#, kde-format
 msgid "KRadio internal sound server"
 msgstr "Innbyggður KRadio hljóðmiðlari"
 
 #: soundserver.cpp:32
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Sound Server Plugin"
 msgstr "Hljóðmiðlara-íforrit"
 
 #: soundserver.cpp:34
-#, fuzzy
+#, fuzzy, kde-format
 msgid "initializing KRadio sound server"
 msgstr "ræsi KRadio hljóðmiðlara"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-09-18 18:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,58 +17,67 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: errorlog.cpp:35
+#: errorlog.cpp:36
+#, kde-format
 msgid "Error Logging Window"
 msgstr "Вікно ведення журналу помилок"
 
-#: errorlog.cpp:41
+#: errorlog.cpp:42
+#, kde-format
 msgid "Error Logger"
 msgstr "Журнал помилок"
 
-#: errorlog.cpp:49 errorlog.cpp:58
+#: errorlog.cpp:50 errorlog.cpp:59
+#, kde-format
 msgid "KRadio Logger"
 msgstr "Журнал KRadio"
 
-#: errorlog.cpp:55
+#: errorlog.cpp:56
+#, kde-format
 msgid "Save &as"
 msgstr "Зберегти &як"
 
-#: errorlog.cpp:60
+#: errorlog.cpp:61
+#, kde-format
 msgid "Information"
 msgstr "Відомості"
 
-#: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
+#: errorlog.cpp:62 errorlog.cpp:65 errorlog.cpp:68 errorlog.cpp:71
 #, kde-format
 msgid "KRadio4 Version %1 logging started"
 msgstr "Запис журналу KRadio4 версії %1 розпочато"
 
-#: errorlog.cpp:63
+#: errorlog.cpp:64
+#, kde-format
 msgid "Warnings"
 msgstr "Попередження"
 
-#: errorlog.cpp:66
+#: errorlog.cpp:67
+#, kde-format
 msgid "Errors"
 msgstr "Помилки"
 
-#: errorlog.cpp:69
+#: errorlog.cpp:70
+#, kde-format
 msgid "Debugging"
 msgstr "Зневадження"
 
-#: errorlog.cpp:186
+#: errorlog.cpp:188
+#, kde-format
 msgid "Log Files"
 msgstr "Файли журналу"
 
-#: errorlog.cpp:191
+#: errorlog.cpp:193
+#, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Зберегти дані журналу KRadio"
 
-#: errorlog.cpp:216
+#: errorlog.cpp:218
 #, kde-format
 msgid "error writing to temporary file %1"
 msgstr "Помилка запису до тимчасового файла %1"
 
-#: errorlog.cpp:225
+#: errorlog.cpp:227
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "помилка під час завантаження файла налаштувань %1"
-

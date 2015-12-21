@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-19 03:17+0200\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-09-18 20:48+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -20,94 +20,117 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: displaycfg.cpp:46
+#, kde-format
 msgid "Active text:"
 msgstr "Цвет активного текста:"
 
 #: displaycfg.cpp:47
+#, kde-format
 msgid "Inactive text:"
 msgstr "Цвет инертного текста:"
 
 #: displaycfg.cpp:48
+#, kde-format
 msgid "Background color:"
 msgstr "Цвет фона:"
 
 #: radioview.cpp:54
+#, kde-format
 msgid "Standard Display"
 msgstr "Главное окно KRadio:"
 
 #: radioview.cpp:60
+#, kde-format
 msgid "Radio Display"
 msgstr "Главное окно"
 
 #: radioview.cpp:145
+#, kde-format
 msgid "Pause KRadio"
 msgstr "Приостановить"
 
 #: radioview.cpp:150
+#, kde-format
 msgid "Start Recording"
 msgstr "Начать запись"
 
 #: radioview.cpp:158
+#, kde-format
 msgid "5 min"
 msgstr "5 минут"
 
 #: radioview.cpp:162
+#, kde-format
 msgid "10 min"
 msgstr "10 минут"
 
 #: radioview.cpp:166
+#, kde-format
 msgid "15 min"
 msgstr "четверть часа"
 
 #: radioview.cpp:170
+#, kde-format
 msgid "30 min"
 msgstr "полчаса"
 
 #: radioview.cpp:174
+#, kde-format
 msgid "60 min"
 msgstr "час"
 
 #: radioview.cpp:178
+#, kde-format
 msgid "90 min"
 msgstr "полтора часа"
 
 #: radioview.cpp:182
+#, kde-format
 msgid "120 min"
 msgstr "2 часа"
 
 #: radioview.cpp:227
+#, kde-format
 msgid "Configure KRadio"
 msgstr "Настроить KRadio"
 
 #: radioview.cpp:228
+#, kde-format
 msgid "Power on/off"
 msgstr "Включить/выключить"
 
 #: radioview.cpp:229
+#, kde-format
 msgid "Quit KRadio application"
 msgstr "Закрыть KRadio"
 
 #: radioview.cpp:230
+#, kde-format
 msgid "Start/stop recording"
 msgstr "Начать/завершить запись"
 
 #: radioview.cpp:231
+#, kde-format
 msgid "Start/stop sleep countdown"
 msgstr "Включить/выключить таймер отключения"
 
 #: radioview.cpp:232
+#, kde-format
 msgid "Show/hide plugins"
 msgstr "Показать/скрыть"
 
 #: radioview.cpp:233
+#, kde-format
 msgid "Help about KRadio and KDE"
 msgstr "Справка по KRadi и KDE"
 
 #: radioview.cpp:234
+#, kde-format
 msgid "Select a radio station"
 msgstr "Выбор радиостанции из списка"
 
 #: radioview.cpp:407
+#, kde-format
 msgid "<no preset defined>"
 msgstr "<Станция не определена>"
 
@@ -117,38 +140,47 @@ msgid "Stop Recording of %1"
 msgstr "Остановить запись %1"
 
 #: radioview.cpp:616
+#, kde-format
 msgid "Resume playback"
 msgstr "Возобновить воспроизведение"
 
 #: radioview.cpp:620
+#, kde-format
 msgid "Pause playback"
 msgstr "Приостановить воспроизведение"
 
 #: radioview.cpp:713
+#, kde-format
 msgid "Display"
 msgstr "Вид"
 
 #: radioview.cpp:714
+#, kde-format
 msgid "Display Configuration"
 msgstr "Настройка внешнего вида"
 
 #: radioview_frequencyradio.cpp:132 radioview_frequencyradio.cpp:133
+#, kde-format
 msgid "Frequency Display"
 msgstr "Отображение частоты"
 
 #: radioview_frequencyradio.cpp:419
+#, kde-format
 msgid "AM"
 msgstr "ДВ/СВ/КВ"
 
 #: radioview_frequencyradio.cpp:420
+#, kde-format
 msgid "FM"
 msgstr "УКВ"
 
 #: radioview_frequencyradio.cpp:421
+#, kde-format
 msgid "RDS"
 msgstr "RDS"
 
 #: radioview_frequencyradio.cpp:422
+#, kde-format
 msgid "NET"
 msgstr "СЕТЬ"
 
@@ -162,51 +194,61 @@ msgstr "%1 кГц"
 msgid "%1 MHz"
 msgstr "%1 МГц"
 
-#: radioview_frequencyseeker.cpp:79
+#: radioview_frequencyseeker.cpp:78
+#, kde-format
 msgid "Search for previous radio station"
 msgstr "Искать станцию назад"
 
-#: radioview_frequencyseeker.cpp:80
+#: radioview_frequencyseeker.cpp:79
+#, kde-format
 msgid "Search for next radio station"
 msgstr "Искать станцию вперёд"
 
-#: radioview_frequencyseeker.cpp:81
+#: radioview_frequencyseeker.cpp:80
+#, kde-format
 msgid "Decrement frequency"
 msgstr "Уменьшить частоту"
 
-#: radioview_frequencyseeker.cpp:82
+#: radioview_frequencyseeker.cpp:81
+#, kde-format
 msgid "Increment frequency"
 msgstr "Увеличить частоту"
 
-#: radioview_frequencyseeker.cpp:83
+#: radioview_frequencyseeker.cpp:82
+#, kde-format
 msgid "Change frequency"
 msgstr "Изменить частоту"
 
 #: radioview_volume.cpp:59
+#, kde-format
 msgid "Change volume"
 msgstr "Изменить громкость"
 
 #. i18n: file: radioview_seekinterface.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
 #: rc.cpp:3 rc.cpp:23
+#, kde-format
 msgid "RadioView_SeekInterface"
 msgstr "RadioView_SeekInterface"
 
 #. i18n: file: radioview_seekinterface.ui:30
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
 #: rc.cpp:6 rc.cpp:26
+#, kde-format
 msgid "Search previous station"
 msgstr "Поиск предыдущей станции"
 
 #. i18n: file: radioview_seekinterface.ui:53
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
 #: rc.cpp:9 rc.cpp:29
+#, kde-format
 msgid "Decrease frequency by 0.05 MHz"
 msgstr "Уменьшать частоту по 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:70
 #. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
 #: rc.cpp:12 rc.cpp:32
+#, kde-format
 msgctxt "Frequency"
 msgid "Frequency control"
 msgstr "Настройка частоты"
@@ -214,21 +256,25 @@ msgstr "Настройка частоты"
 #. i18n: file: radioview_seekinterface.ui:107
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
 #: rc.cpp:15 rc.cpp:35
+#, kde-format
 msgid "Increase frequency by 0.05 MHz"
 msgstr "Увеличивать частоту по 0,05 МГц"
 
 #. i18n: file: radioview_seekinterface.ui:127
 #. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
 #: rc.cpp:18 rc.cpp:38
+#, kde-format
 msgid "Search next station"
 msgstr "Поиск следующей станции"
 
 #: rc.cpp:19
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
 #: rc.cpp:20
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@GMail.com"

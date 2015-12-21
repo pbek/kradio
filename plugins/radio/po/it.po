@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-03 01:44+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-03-25 01:40+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -22,61 +22,72 @@ msgstr ""
 
 #. i18n: file: radio-configuration-ui.ui:316
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: radio-configuration.cpp:81 rc.cpp:48 rc.cpp:138
+#: radio-configuration.cpp:76 rc.cpp:48 rc.cpp:138
+#, kde-format
 msgid "unchanged"
 msgstr "invariato"
 
-#: radio-configuration.cpp:84
+#: radio-configuration.cpp:79
+#, kde-format
 msgctxt "Sound mode"
 msgid "<do not care>"
 msgstr "<non importante>"
 
-#: radio-configuration.cpp:85
+#: radio-configuration.cpp:80
+#, kde-format
 msgctxt "Sound mode, monophonic"
 msgid "Mono"
 msgstr "Mono"
 
-#: radio-configuration.cpp:86
+#: radio-configuration.cpp:81
+#, kde-format
 msgctxt "Sound mode, stereophonic"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: radio-configuration.cpp:89
+#: radio-configuration.cpp:84
+#, kde-format
 msgid "Load and replace presets"
 msgstr "Carica e sostituisci le preimpostazioni"
 
-#: radio-configuration.cpp:90
+#: radio-configuration.cpp:85
+#, kde-format
 msgid "Load and add presets"
 msgstr "Carica e aggiungi le preimpostazioni"
 
-#: radio-configuration.cpp:433
+#: radio-configuration.cpp:428
+#, kde-format
 msgid "Image Selection"
 msgstr "Selezione dell'immagine"
 
-#: radio-configuration.cpp:438
+#: radio-configuration.cpp:433
+#, kde-format
 msgid "ignoring non-local image"
 msgstr "le immagini non locali saranno ignorate"
 
-#: radio-configuration.cpp:555 radio-configuration.cpp:583
+#: radio-configuration.cpp:550 radio-configuration.cpp:578
+#, kde-format
 msgid "KRadio Preset Files"
 msgstr "File di preimpostazione di KRadio"
 
-#: radio-configuration.cpp:559
+#: radio-configuration.cpp:554
+#, kde-format
 msgid "Select Preset File"
 msgstr "Seleziona un file di preimpostazione"
 
-#: radio-configuration.cpp:587
+#: radio-configuration.cpp:582
+#, kde-format
 msgid "Save Preset File"
 msgstr "Salva il file di preimpostazione"
 
-#: radio-configuration.cpp:664
+#: radio-configuration.cpp:628
 #, kde-format
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
 msgstr[0] "è stata trovata 1 nuova stazione"
 msgstr[1] "sono state trovate %1 nuove stazioni"
 
-#: radio-configuration.cpp:666
+#: radio-configuration.cpp:630
 #, kde-format
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"
@@ -84,18 +95,22 @@ msgstr[0] "adesso hai 1 stazione"
 msgstr[1] "adesso hai %1 stazioni"
 
 #: radio.cpp:35
+#, kde-format
 msgid "Central Radio Device Multiplexer"
 msgstr "Multiplexer del dispositivo radio centrale"
 
 #: radio.cpp:40
+#, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Estensione multiplexer radio"
 
 #: radio.cpp:133
+#, kde-format
 msgid "Radio Stations"
 msgstr "Stazioni radio"
 
 #: radio.cpp:134
+#, kde-format
 msgid "Setup Radio Stations"
 msgstr "Impostazione delle stazioni radio"
 
@@ -105,6 +120,7 @@ msgid "Could not find a plugin for radio station %1"
 msgstr "Impossibile trovare un'estensione per la stazione radio %1"
 
 #: radio.cpp:399
+#, kde-format
 msgctxt "Unknown description"
 msgid "unknown"
 msgstr "sconosciuto"
@@ -112,6 +128,7 @@ msgstr "sconosciuto"
 #. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
 #: rc.cpp:3 rc.cpp:93
+#, kde-format
 msgid "Station &Presets"
 msgstr "&Preimpostazioni delle stazioni"
 
@@ -124,6 +141,7 @@ msgstr "&Preimpostazioni delle stazioni"
 #. i18n: file: radio-configuration-ui.ui:107
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
 #: rc.cpp:6 rc.cpp:9 rc.cpp:96 rc.cpp:99
+#, kde-format
 msgid "Search stations"
 msgstr "Cerca stazioni"
 
@@ -136,6 +154,7 @@ msgstr "Cerca stazioni"
 #. i18n: file: radio-configuration-ui.ui:126
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
 #: rc.cpp:12 rc.cpp:15 rc.cpp:102 rc.cpp:105
+#, kde-format
 msgid "Load presets"
 msgstr "Carica le preimpostazioni"
 
@@ -148,30 +167,35 @@ msgstr "Carica le preimpostazioni"
 #. i18n: file: radio-configuration-ui.ui:145
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
 #: rc.cpp:18 rc.cpp:21 rc.cpp:108 rc.cpp:111
+#, kde-format
 msgid "Save presets as..."
 msgstr "Salva le preimpostazioni come..."
 
 #. i18n: file: radio-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
 #: rc.cpp:24 rc.cpp:114
+#, kde-format
 msgid "Name:"
 msgstr "Nome:"
 
 #. i18n: file: radio-configuration-ui.ui:208
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
 #: rc.cpp:27 rc.cpp:117
+#, kde-format
 msgid "Short name:"
 msgstr "Nome breve:"
 
 #. i18n: file: radio-configuration-ui.ui:232
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
 #: rc.cpp:30 rc.cpp:120
+#, kde-format
 msgid "Pixmap file:"
 msgstr "File di pixmap:"
 
 #. i18n: file: radio-configuration-ui.ui:285
 #. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
 #: rc.cpp:33 rc.cpp:123
+#, kde-format
 msgid ""
 "<p>Select if you want to force the tuner to stereo/mono mode. <i>Please be "
 "aware, that some drivers might ignore this flag without saying they will "
@@ -184,103 +208,119 @@ msgstr ""
 #. i18n: file: radio-configuration-ui.ui:289
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: rc.cpp:36 rc.cpp:126
+#, kde-format
 msgid "<do not care>"
 msgstr "<non importante>"
 
 #. i18n: file: radio-configuration-ui.ui:294
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: rc.cpp:39 rc.cpp:129
+#, kde-format
 msgid "Mono"
 msgstr "Mono"
 
 #. i18n: file: radio-configuration-ui.ui:299
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: rc.cpp:42 rc.cpp:132
+#, kde-format
 msgid "Stereo"
 msgstr "Stereo"
 
 #. i18n: file: radio-configuration-ui.ui:313
 #. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:45 rc.cpp:135
+#, kde-format
 msgid "The volume that is used when the station is tuned"
 msgstr "Il volume utilizzato quando la stazione è sintonizzata"
 
 #. i18n: file: radio-configuration-ui.ui:319
 #. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:52 rc.cpp:142
-#, no-c-format
+#, no-c-format, kde-format
 msgid " %"
 msgstr " %"
 
 #. i18n: file: radio-configuration-ui.ui:332
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
 #: rc.cpp:55 rc.cpp:145
+#, kde-format
 msgid "Stereo mode:"
 msgstr "Modalità stereo:"
 
 #. i18n: file: radio-configuration-ui.ui:342
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
 #: rc.cpp:58 rc.cpp:148
+#, kde-format
 msgid "Volume preset:"
 msgstr "Preimpostazione del volume:"
 
 #. i18n: file: radio-configuration-ui.ui:389
 #. i18n: ectx: attribute (title), widget (QWidget, About)
 #: rc.cpp:61 rc.cpp:151
+#, kde-format
 msgid "Preset &File"
 msgstr "&File di preimpostazione"
 
 #. i18n: file: radio-configuration-ui.ui:398
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
 #: rc.cpp:64 rc.cpp:154
+#, kde-format
 msgid "Personal preset file:"
 msgstr "File di preimpostazione personale:"
 
 #. i18n: file: radio-configuration-ui.ui:413
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
 #: rc.cpp:67 rc.cpp:157
+#, kde-format
 msgid "City:"
 msgstr "Città:"
 
 #. i18n: file: radio-configuration-ui.ui:426
 #. i18n: ectx: property (text), widget (QLabel, labelCountry)
 #: rc.cpp:70 rc.cpp:160
+#, kde-format
 msgid "Country:"
 msgstr "Nazione:"
 
 #. i18n: file: radio-configuration-ui.ui:457
 #. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
 #: rc.cpp:73 rc.cpp:163
+#, kde-format
 msgid "&Now"
 msgstr "&Adesso"
 
 #. i18n: file: radio-configuration-ui.ui:466
 #. i18n: ectx: property (text), widget (QLabel, labelComment)
 #: rc.cpp:76 rc.cpp:166
+#, kde-format
 msgid "Comment:"
 msgstr "Commento:"
 
 #. i18n: file: radio-configuration-ui.ui:479
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
 #: rc.cpp:79 rc.cpp:169
+#, kde-format
 msgid "Media:"
 msgstr "Media:"
 
 #. i18n: file: radio-configuration-ui.ui:489
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
 #: rc.cpp:82 rc.cpp:172
+#, kde-format
 msgid "Maintainer:"
 msgstr "Responsabile:"
 
 #. i18n: file: radio-configuration-ui.ui:502
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
 #: rc.cpp:85 rc.cpp:175
+#, kde-format
 msgid "Last change:"
 msgstr "Ultima modifica:"
 
 #. i18n: file: radio-configuration-ui.ui:536
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:88 rc.cpp:178
+#, kde-format
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
@@ -289,11 +329,13 @@ msgstr ""
 "progetto KRadio questo file di preimpostazione della stazione.</p>"
 
 #: rc.cpp:89
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:90
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"

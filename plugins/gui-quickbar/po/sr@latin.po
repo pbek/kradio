@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gui-quickbar (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -13,18 +13,22 @@ msgstr ""
 "X-Generator: POEditor.com\n"
 
 #: quickbar.cpp:48
+#, kde-format
 msgid "Radio Station Quick Selection Toolbar"
 msgstr "Traka alatki za brzu selekciju stanica"
 
 #: quickbar.cpp:54
+#, kde-format
 msgid "Quickbar Plugin"
 msgstr "Brzi pokretač"
 
 #: quickbar.cpp:143
+#, kde-format
 msgid "Quickbar"
 msgstr "Brzi pokretač"
 
 #: quickbar.cpp:144
+#, kde-format
 msgid "Quickbar Configuration"
 msgstr "Podešavanje brzog pokretača"
 
@@ -34,24 +38,28 @@ msgid "KRadio4 Quickbar, %1"
 msgstr "KRadio4 pokretanje%1"
 
 #: quickbar.cpp:370
-#, fuzzy
+#, fuzzy, kde-format
 msgid "KRadio4 Quickbar"
 msgstr "KRadio4 pokretanje%1"
 
 #: quickbar.cpp:378
+#, kde-format
 msgid "contentsDragEnterEvent accepted"
 msgstr "sadržaj PrevuciUnetiDogadjaj prihvaćen"
 
 #: quickbar.cpp:380
+#, kde-format
 msgid "contentsDragEnterEvent rejected"
 msgstr "sadržaj PrevuciUnetiDogadjaj odbijen"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Goran Simović"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "simovic@mailup.net"

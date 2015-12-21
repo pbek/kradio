@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_error_log\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2009-06-15 14:01+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,59 +17,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: errorlog.cpp:35
-#, fuzzy
+#: errorlog.cpp:36
+#, fuzzy, kde-format
 msgid "Error Logging Window"
 msgstr "Villuskráningargluggi fyrir KRadio"
 
-#: errorlog.cpp:41
+#: errorlog.cpp:42
+#, kde-format
 msgid "Error Logger"
 msgstr "Villuskráning"
 
-#: errorlog.cpp:49 errorlog.cpp:58
+#: errorlog.cpp:50 errorlog.cpp:59
+#, kde-format
 msgid "KRadio Logger"
 msgstr "Annálsskráning fyrir KRadio"
 
-#: errorlog.cpp:55
+#: errorlog.cpp:56
+#, kde-format
 msgid "Save &as"
 msgstr "Vist&a sem"
 
-#: errorlog.cpp:60
+#: errorlog.cpp:61
+#, kde-format
 msgid "Information"
 msgstr "Upplýsingar"
 
-#: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
+#: errorlog.cpp:62 errorlog.cpp:65 errorlog.cpp:68 errorlog.cpp:71
 #, kde-format
 msgid "KRadio4 Version %1 logging started"
 msgstr "Skráning annáls fyrir KRadio4 útgáfu %1 er hafin"
 
-#: errorlog.cpp:63
+#: errorlog.cpp:64
+#, kde-format
 msgid "Warnings"
 msgstr "Aðvaranir"
 
-#: errorlog.cpp:66
+#: errorlog.cpp:67
+#, kde-format
 msgid "Errors"
 msgstr "Villur"
 
-#: errorlog.cpp:69
+#: errorlog.cpp:70
+#, kde-format
 msgid "Debugging"
 msgstr "Aflúsun"
 
-#: errorlog.cpp:186
+#: errorlog.cpp:188
+#, kde-format
 msgid "Log Files"
 msgstr "Annálaskrár"
 
-#: errorlog.cpp:191
-#, fuzzy
+#: errorlog.cpp:193
+#, fuzzy, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Vista annálsgögn KRadio sem..."
 
-#: errorlog.cpp:216
+#: errorlog.cpp:218
 #, fuzzy, kde-format
 msgid "error writing to temporary file %1"
 msgstr "villa við að skrifa í bráðabirgðaskrána %1"
 
-#: errorlog.cpp:225
+#: errorlog.cpp:227
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "villa við upphleðslu forstillingaskrár %1"

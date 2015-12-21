@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2012-08-14 16:00+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -18,193 +18,220 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: docking-configuration.cpp:126
-#, fuzzy
+#: docking-configuration.cpp:110
+#, fuzzy, kde-format
 msgid "Mouse click on tray icon:"
 msgstr "Kliknutie na Tray ikonu"
 
-#: docking-configuration.cpp:127 docking-configuration.cpp:134
-#, fuzzy
+#: docking-configuration.cpp:111 docking-configuration.cpp:116
+#, fuzzy, kde-format
 msgctxt "Mouse button"
 msgid "Left:"
 msgstr "Vľavo"
 
-#: docking-configuration.cpp:128 docking-configuration.cpp:135
-#, fuzzy
+#: docking-configuration.cpp:112 docking-configuration.cpp:117
+#, fuzzy, kde-format
 msgctxt "Mouse button"
 msgid "Right:"
 msgstr "Vpravo"
 
-#: docking-configuration.cpp:129 docking-configuration.cpp:136
-#, fuzzy
+#: docking-configuration.cpp:113 docking-configuration.cpp:118
+#, fuzzy, kde-format
 msgctxt "Mouse button"
 msgid "Middle:"
 msgstr "Stred"
 
-#: docking-configuration.cpp:130 docking-configuration.cpp:137
-#, fuzzy
-msgctxt "Mouse button"
-msgid "XButton1:"
-msgstr "XButton1"
-
-#: docking-configuration.cpp:131 docking-configuration.cpp:138
-#, fuzzy
-msgctxt "Mouse button"
-msgid "XButton2:"
-msgstr "XButton2"
-
-#: docking-configuration.cpp:133
-#, fuzzy
+#: docking-configuration.cpp:115
+#, fuzzy, kde-format
 msgid "Mouse double-click on tray icon:"
 msgstr "Dvojklik na Tray ikonu"
 
-#: docking-configuration.cpp:140
-#, fuzzy
+#: docking-configuration.cpp:120
+#, fuzzy, kde-format
 msgid "Mouse wheel action on tray icon:"
 msgstr "Akcia kolieska na Tray ikonu"
 
-#: docking-configuration.cpp:146 docking-configuration.cpp:156
+#: docking-configuration.cpp:126 docking-configuration.cpp:136
+#, kde-format
 msgid "No Action"
 msgstr "Žiadna akcia"
 
-#: docking-configuration.cpp:147
+#: docking-configuration.cpp:127
+#, kde-format
 msgid "Show/Hide Windows"
 msgstr "Zobraziť/Skryť okná"
 
-#: docking-configuration.cpp:148
+#: docking-configuration.cpp:128
+#, kde-format
 msgid "Power On/Off"
 msgstr "Zapnúť/Vypnúť"
 
-#: docking-configuration.cpp:149
+#: docking-configuration.cpp:129
+#, kde-format
 msgid "Pause/Play"
 msgstr "Pozastaviť/Hrať"
 
-#: docking-configuration.cpp:150 docking.cpp:322
+#: docking-configuration.cpp:130 docking.cpp:303
+#, kde-format
 msgid "Recording"
 msgstr "Nahrávanie"
 
-#: docking-configuration.cpp:151
+#: docking-configuration.cpp:131
+#, kde-format
 msgid "System Tray Menu"
 msgstr "Ponuka System Tray"
 
-#: docking-configuration.cpp:152
+#: docking-configuration.cpp:132
+#, kde-format
 msgid "GUI-Plugin Menu"
 msgstr "GUI-Ponuka pluginu"
 
-#: docking-configuration.cpp:153
+#: docking-configuration.cpp:133
+#, kde-format
 msgid "Configuration"
 msgstr "Nastavenie"
 
-#: docking-configuration.cpp:157
+#: docking-configuration.cpp:137
+#, kde-format
 msgid "Change Station"
 msgstr "Zmeniť stanicu"
 
-#: docking-configuration.cpp:158
+#: docking-configuration.cpp:138
+#, kde-format
 msgid "Change Volume"
 msgstr "Zmeniť hlasitosť"
 
-#: docking-configuration.cpp:159
+#: docking-configuration.cpp:139
+#, kde-format
 msgid "Change Frequency"
 msgstr "Zmeniť frekvenciu"
 
-#: docking.cpp:46
-#, fuzzy
+#: docking.cpp:45
+#, fuzzy, kde-format
 msgid "System Tray Icon/Menu"
 msgstr "Ikona v systémovej časti panelu"
 
-#: docking.cpp:54
+#: docking.cpp:53
+#, kde-format
 msgid "System Tray Plugin"
 msgstr "Plugin System Tray"
 
-#: docking.cpp:257
+#: docking.cpp:238
+#, kde-format
 msgid "System Tray Icon"
 msgstr "Ikona v systémovej časti panelu"
 
-#: docking.cpp:258
+#: docking.cpp:239
+#, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Nastavenie ikony System Tray"
 
-#: docking.cpp:312
+#: docking.cpp:293
+#, kde-format
 msgid "Search Next Station"
 msgstr "Hľadať nasledovnú stanicu"
 
-#: docking.cpp:313
+#: docking.cpp:294
+#, kde-format
 msgid "Search Previous Station"
 msgstr "Hľadať predošlú stanicu"
 
-#: docking.cpp:327
+#: docking.cpp:308
+#, kde-format
 msgid "Pause Radio"
 msgstr "Pozastaviť rádio"
 
-#: docking.cpp:338
+#: docking.cpp:319
+#, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Zobraziť/Skryť pluginy"
 
-#: docking.cpp:346
+#: docking.cpp:327
+#, kde-format
 msgid "&Quit"
 msgstr "&Koniec"
 
-#: docking.cpp:461
+#: docking.cpp:442
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Zastaviť odpočet uspania (beží do %1)"
 
-#: docking.cpp:464 docking.cpp:473 docking.cpp:481
+#: docking.cpp:445 docking.cpp:454 docking.cpp:462
+#, kde-format
 msgid "Start Sleep Countdown"
 msgstr "Spustiť odpočet uspania"
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power Off"
 msgstr "Vypnúť"
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power On"
 msgstr "Zapnúť"
 
-#: docking.cpp:504 docking.cpp:525
+#: docking.cpp:485 docking.cpp:506
+#, kde-format
 msgid "invalid station"
 msgstr "neplatná stanica"
 
-#: docking.cpp:507
+#: docking.cpp:488
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:517
+#: docking.cpp:498
 #, kde-format
 msgid "next alarm: %1"
 msgstr "ďalší alarm: %1"
 
-#: docking.cpp:519
+#: docking.cpp:500
+#, kde-format
 msgid "<no alarm pending>"
 msgstr "<alarm neaktívny>"
 
-#: docking.cpp:778 docking.cpp:881 docking.cpp:939
+#: docking.cpp:759 docking.cpp:862 docking.cpp:920
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Zastaviť nahrávanie %1"
 
-#: docking.cpp:867
+#: docking.cpp:848
+#, kde-format
 msgid "Start Recording"
 msgstr "Spustiť nahrávanie"
 
-#: docking.cpp:921
+#: docking.cpp:902
+#, kde-format
 msgid "Resume playback"
 msgstr "Pokračovať v prehrávaní"
 
-#: docking.cpp:925
+#: docking.cpp:906
+#, kde-format
 msgid "Pause playback"
 msgstr "Pozastaviť prehrávanie"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Roman Paholík"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
+
+#, fuzzy
+#~ msgctxt "Mouse button"
+#~ msgid "XButton1:"
+#~ msgstr "XButton1"
+
+#, fuzzy
+#~ msgctxt "Mouse button"
+#~ msgid "XButton2:"
+#~ msgstr "XButton2"
 
 #~ msgid "System Tray Icon/Menu for KRadio"
 #~ msgstr "Ikona System Tray/Menu pre KRadio"

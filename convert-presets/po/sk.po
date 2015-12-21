@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: convert-presets\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2012-06-01 10:08+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,32 +15,39 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: convert-presets.cpp:159
+#: convert-presets.cpp:155
+#, kde-format
 msgid "kradio4-convert-presets"
 msgstr "kradio4-convert-presets"
 
-#: convert-presets.cpp:161
+#: convert-presets.cpp:157
+#, kde-format
 msgid "(c) 2003-2010 Martin Witte"
 msgstr "(c) 2003-2010 Martin Witte"
 
-#: convert-presets.cpp:164
+#: convert-presets.cpp:160
+#, kde-format
 msgid "Martin Witte"
 msgstr "Martin Witte"
 
-#: convert-presets.cpp:169
+#: convert-presets.cpp:165
+#, kde-format
 msgid "quiet mode - no informational output"
 msgstr "tichý režim - žiadny informačný výstup"
 
-#: convert-presets.cpp:170
+#: convert-presets.cpp:166
+#, kde-format
 msgid "preset files to convert"
 msgstr "súbory predvolieb na prevod"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Roman Paholík"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"

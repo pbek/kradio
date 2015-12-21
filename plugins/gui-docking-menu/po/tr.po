@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2011-02-06 03:11+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -18,187 +18,217 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: docking-configuration.cpp:126
+#: docking-configuration.cpp:110
+#, kde-format
 msgid "Mouse click on tray icon:"
 msgstr ""
 
-#: docking-configuration.cpp:127 docking-configuration.cpp:134
-#, fuzzy
+#: docking-configuration.cpp:111 docking-configuration.cpp:116
+#, fuzzy, kde-format
 msgctxt "Mouse button"
 msgid "Left:"
 msgstr "Sol"
 
-#: docking-configuration.cpp:128 docking-configuration.cpp:135
-#, fuzzy
+#: docking-configuration.cpp:112 docking-configuration.cpp:117
+#, fuzzy, kde-format
 msgctxt "Mouse button"
 msgid "Right:"
 msgstr "Sağ"
 
-#: docking-configuration.cpp:129 docking-configuration.cpp:136
-#, fuzzy
+#: docking-configuration.cpp:113 docking-configuration.cpp:118
+#, fuzzy, kde-format
 msgctxt "Mouse button"
 msgid "Middle:"
 msgstr "Orta"
 
-#: docking-configuration.cpp:130 docking-configuration.cpp:137
-#, fuzzy
-msgctxt "Mouse button"
-msgid "XButton1:"
-msgstr "XButon1"
-
-#: docking-configuration.cpp:131 docking-configuration.cpp:138
-#, fuzzy
-msgctxt "Mouse button"
-msgid "XButton2:"
-msgstr "XButon2"
-
-#: docking-configuration.cpp:133
+#: docking-configuration.cpp:115
+#, kde-format
 msgid "Mouse double-click on tray icon:"
 msgstr ""
 
-#: docking-configuration.cpp:140
+#: docking-configuration.cpp:120
+#, kde-format
 msgid "Mouse wheel action on tray icon:"
 msgstr ""
 
-#: docking-configuration.cpp:146 docking-configuration.cpp:156
+#: docking-configuration.cpp:126 docking-configuration.cpp:136
+#, kde-format
 msgid "No Action"
 msgstr "Eylemsiz"
 
-#: docking-configuration.cpp:147
+#: docking-configuration.cpp:127
+#, kde-format
 msgid "Show/Hide Windows"
 msgstr "Pencereleri Göster/Gizle"
 
-#: docking-configuration.cpp:148
+#: docking-configuration.cpp:128
+#, kde-format
 msgid "Power On/Off"
 msgstr "Güç Açma/Kapama"
 
-#: docking-configuration.cpp:149
+#: docking-configuration.cpp:129
+#, kde-format
 msgid "Pause/Play"
 msgstr "Duraklat/Oynat"
 
-#: docking-configuration.cpp:150 docking.cpp:322
+#: docking-configuration.cpp:130 docking.cpp:303
+#, kde-format
 msgid "Recording"
 msgstr ""
 
-#: docking-configuration.cpp:151
+#: docking-configuration.cpp:131
+#, kde-format
 msgid "System Tray Menu"
 msgstr ""
 
-#: docking-configuration.cpp:152
+#: docking-configuration.cpp:132
+#, kde-format
 msgid "GUI-Plugin Menu"
 msgstr ""
 
-#: docking-configuration.cpp:153
+#: docking-configuration.cpp:133
+#, kde-format
 msgid "Configuration"
 msgstr "Yapılandır"
 
-#: docking-configuration.cpp:157
+#: docking-configuration.cpp:137
+#, kde-format
 msgid "Change Station"
 msgstr "İstasyon Değiştir"
 
-#: docking-configuration.cpp:158
+#: docking-configuration.cpp:138
+#, kde-format
 msgid "Change Volume"
 msgstr "Ses Değiştir"
 
-#: docking-configuration.cpp:159
+#: docking-configuration.cpp:139
+#, kde-format
 msgid "Change Frequency"
 msgstr "Frekans Değiştir"
 
-#: docking.cpp:46
-#, fuzzy
+#: docking.cpp:45
+#, fuzzy, kde-format
 msgid "System Tray Icon/Menu"
 msgstr "Sistem Çekmecesi Simge"
 
-#: docking.cpp:54
+#: docking.cpp:53
+#, kde-format
 msgid "System Tray Plugin"
 msgstr "Sistem Çekmecesi Eklenti"
 
-#: docking.cpp:257
+#: docking.cpp:238
+#, kde-format
 msgid "System Tray Icon"
 msgstr "Sistem Çekmecesi Simge"
 
-#: docking.cpp:258
+#: docking.cpp:239
+#, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Sistem Çekmecesi Simge Yapılandır"
 
-#: docking.cpp:312
+#: docking.cpp:293
+#, kde-format
 msgid "Search Next Station"
 msgstr "Sonraki İstasyonu Ara"
 
-#: docking.cpp:313
+#: docking.cpp:294
+#, kde-format
 msgid "Search Previous Station"
 msgstr "Önceki İstasyonu Ara"
 
-#: docking.cpp:327
+#: docking.cpp:308
+#, kde-format
 msgid "Pause Radio"
 msgstr "Radyo Durdur"
 
-#: docking.cpp:338
+#: docking.cpp:319
+#, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Eklentileri Göster/Gizle"
 
-#: docking.cpp:346
+#: docking.cpp:327
+#, kde-format
 msgid "&Quit"
 msgstr "&Çık"
 
-#: docking.cpp:461
+#: docking.cpp:442
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr ""
 
-#: docking.cpp:464 docking.cpp:473 docking.cpp:481
+#: docking.cpp:445 docking.cpp:454 docking.cpp:462
+#, kde-format
 msgid "Start Sleep Countdown"
 msgstr ""
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power Off"
 msgstr "Güç Kapama"
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power On"
 msgstr "Güç Açma"
 
-#: docking.cpp:504 docking.cpp:525
+#: docking.cpp:485 docking.cpp:506
+#, kde-format
 msgid "invalid station"
 msgstr "geçersiz istasyon"
 
-#: docking.cpp:507
+#: docking.cpp:488
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:517
+#: docking.cpp:498
 #, kde-format
 msgid "next alarm: %1"
 msgstr "sonraki alarm: %1"
 
-#: docking.cpp:519
+#: docking.cpp:500
+#, kde-format
 msgid "<no alarm pending>"
 msgstr "<alarm beklemede>"
 
-#: docking.cpp:778 docking.cpp:881 docking.cpp:939
+#: docking.cpp:759 docking.cpp:862 docking.cpp:920
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr ""
 
-#: docking.cpp:867
+#: docking.cpp:848
+#, kde-format
 msgid "Start Recording"
 msgstr ""
 
-#: docking.cpp:921
+#: docking.cpp:902
+#, kde-format
 msgid "Resume playback"
 msgstr ""
 
-#: docking.cpp:925
+#: docking.cpp:906
+#, kde-format
 msgid "Pause playback"
 msgstr "Çalmayı duraklat"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Zeugma"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Sunder67@hotmail.com"
+
+#, fuzzy
+#~ msgctxt "Mouse button"
+#~ msgid "XButton1:"
+#~ msgstr "XButon1"
+
+#, fuzzy
+#~ msgctxt "Mouse button"
+#~ msgid "XButton2:"
+#~ msgstr "XButon2"

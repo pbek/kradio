@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2012-08-09 13:01+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: dbussupport.cpp:35 dbussupport.cpp:102
-#, fuzzy
+#, fuzzy, kde-format
 msgid "D-Bus Support"
 msgstr "Podpora DBus"
 
 #: dbussupport.cpp:41 dbussupport.cpp:103
-#, fuzzy
+#, fuzzy, kde-format
 msgid "D-Bus Plugin"
 msgstr "PluginDBus"

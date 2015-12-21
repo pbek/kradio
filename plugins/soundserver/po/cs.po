@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_soundserver\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-09-22 22:37+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -18,14 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: soundserver.cpp:27
+#, kde-format
 msgid "KRadio internal sound server"
 msgstr "Vnitřní zvukový server programu KRadio"
 
 #: soundserver.cpp:32
+#, kde-format
 msgid "Sound Server Plugin"
 msgstr "Přídavný modul zvukového serveru"
 
 #: soundserver.cpp:34
+#, kde-format
 msgid "initializing KRadio sound server"
 msgstr "Spuštění zvukového serveru programu KRadio"
-

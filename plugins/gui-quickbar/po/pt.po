@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2006-11-19 16:12+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -20,18 +20,22 @@ msgstr ""
 "X-Generator: KBabel 1.10.2\n"
 
 #: quickbar.cpp:48
+#, kde-format
 msgid "Radio Station Quick Selection Toolbar"
 msgstr "Barra de Acesso Rápido das Estações de Rádio"
 
 #: quickbar.cpp:54
+#, kde-format
 msgid "Quickbar Plugin"
 msgstr "Plugin de Barra de Acesso Rápido"
 
 #: quickbar.cpp:143
+#, kde-format
 msgid "Quickbar"
 msgstr "Barra de Acesso Rápido"
 
 #: quickbar.cpp:144
+#, kde-format
 msgid "Quickbar Configuration"
 msgstr "Configuração da Barra de Acesso Rápido"
 
@@ -41,24 +45,28 @@ msgid "KRadio4 Quickbar, %1"
 msgstr "Barra de Acesso Rápido"
 
 #: quickbar.cpp:370
-#, fuzzy
+#, fuzzy, kde-format
 msgid "KRadio4 Quickbar"
 msgstr "Barra de Acesso Rápido"
 
 #: quickbar.cpp:378
+#, kde-format
 msgid "contentsDragEnterEvent accepted"
 msgstr "contentsDragEnterEvent aceite"
 
 #: quickbar.cpp:380
+#, kde-format
 msgid "contentsDragEnterEvent rejected"
 msgstr "contentsDragEnterEvent rejeitado"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""

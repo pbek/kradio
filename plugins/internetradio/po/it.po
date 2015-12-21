@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-03-05 23:14+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,87 +20,88 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: decoder_thread.cpp:142
+#: decoder_thread.cpp:138
 #, kde-format
 msgid "opening stream %1"
 msgstr "apertura del flusso %1"
 
-#: decoder_thread.cpp:146
+#: decoder_thread.cpp:142
 #, kde-format
 msgid "Failed to open %1. Trying next stream in play list."
 msgstr "Impossibile aprire %1. Apertura del flusso successivo della scaletta."
 
-#: decoder_thread.cpp:151
+#: decoder_thread.cpp:147
 #, kde-format
 msgid "Could not open any input stream of %1."
 msgstr "Impossibile aprire qualsiasi flusso d'ingresso di %1."
 
-#: decoder_thread.cpp:266
+#: decoder_thread.cpp:262
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr ""
 "%1: errore durante la decodifica del pacchetto. Il pacchetto sarà scartato"
 
-#: decoder_thread.cpp:285
+#: decoder_thread.cpp:281
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "flusso interno, non salvato (%1)"
 
-#: decoder_thread.cpp:362
+#: decoder_thread.cpp:358
+#, kde-format
 msgid "Failed allocating AVFrame."
 msgstr "Errore nell'allocazione di AVFrame."
 
-#: decoder_thread.cpp:634 decoder_thread.cpp:637
+#: decoder_thread.cpp:630 decoder_thread.cpp:633
 #, kde-format
 msgid "Could not open stream %1"
 msgstr "Impossibile aprire il flusso %1"
 
-#: decoder_thread.cpp:719 decoder_thread.cpp:722
+#: decoder_thread.cpp:715 decoder_thread.cpp:718
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr "Autorilevamento del tipo di flusso di %1 non riuscito"
 
-#: decoder_thread.cpp:726
+#: decoder_thread.cpp:722
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Formato rilevato automaticamente: %1 (punteggio %2)"
 
-#: decoder_thread.cpp:752 decoder_thread.cpp:755
+#: decoder_thread.cpp:748 decoder_thread.cpp:751
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Impossibile trovare informazioni sul flusso in %1"
 
-#: decoder_thread.cpp:820 decoder_thread.cpp:823
+#: decoder_thread.cpp:816 decoder_thread.cpp:819
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Impossibile trovare un flusso audio in %1"
 
-#: decoder_thread.cpp:843 decoder_thread.cpp:846
+#: decoder_thread.cpp:839 decoder_thread.cpp:842
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Impossibile trovare un codec per %1"
 
-#: decoder_thread.cpp:861 decoder_thread.cpp:864
+#: decoder_thread.cpp:857 decoder_thread.cpp:860
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Impossibile aprire il codec per %1"
 
-#: decoder_thread.cpp:889
+#: decoder_thread.cpp:885
 #, kde-format
 msgid "Unknown channel layout for %1"
 msgstr "Schema dei canali sconosciuto per %1"
 
-#: decoder_thread.cpp:981 decoder_thread.cpp:984
+#: decoder_thread.cpp:990 decoder_thread.cpp:993
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "impossibile aprire il flusso MMS %1"
 
-#: decoder_thread.cpp:1082
+#: decoder_thread.cpp:1091
 #, kde-format
 msgid "Not yet implemented: libav sample format id %1"
 msgstr "Non ancora implementato: formato di campionamento con id %1 di libav"
 
-#: decoder_thread.cpp:1088
+#: decoder_thread.cpp:1097
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Impossibile usare il formato di campionamento con id %1 di libav"
@@ -146,77 +147,85 @@ msgstr ""
 "Estensione della radio via Internet (gestore HTTP ICY): errore HTTP %1 per "
 "il flusso %2"
 
-#: internetradio.cpp:46
+#: internetradio.cpp:41
+#, kde-format
 msgid "Pseudo radio device for Internet radio stream support"
 msgstr "Pseudo-dispositivo radio per il supporto del flusso radio via Internet"
 
-#: internetradio.cpp:53
+#: internetradio.cpp:48
+#, kde-format
 msgid "Internet Radio Plugin"
 msgstr "Estensione della radio via Internet"
 
-#: internetradio.cpp:374
+#: internetradio.cpp:369
+#, kde-format
 msgid "Internet radio station decoder / pseudo device"
 msgstr "Decodificatore / pseudo-dispositivo delle stazioni radio via Internet"
 
-#: internetradio.cpp:644
+#: internetradio.cpp:639
+#, kde-format
 msgid "Internet Radio"
 msgstr "Radio via Internet"
 
-#: internetradio.cpp:645
+#: internetradio.cpp:640
+#, kde-format
 msgid "Internet Radio Options"
 msgstr "Opzioni della radio via Internet"
 
-#: internetradio.cpp:985
+#: internetradio.cpp:980
+#, kde-format
 msgid "Internet Radio Plugin: "
 msgstr "Estensione della radio via Internet: "
 
-#: internetradio.cpp:1135
+#: internetradio.cpp:1130
 #, kde-format
 msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
 msgstr ""
 "Estensione della radio via Internet (%1): tempo scaduto per il flusso di "
 "dati (>= %2 s)"
 
-#: playlist_handler.cpp:94
+#: playlist_handler.cpp:95
 #, kde-format
 msgid "Failed to start any stream of %1"
 msgstr "Impossibile avviare il flusso di %1"
 
-#: playlist_handler.cpp:138 playlist_handler.cpp:169
+#: playlist_handler.cpp:139 playlist_handler.cpp:170
 #, kde-format
 msgid "Failed to load playlist %1: %2"
 msgstr "Impossibile caricare la scaletta %1: %2"
 
-#: playlist_handler.cpp:141
+#: playlist_handler.cpp:142
 #, kde-format
 msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
 "Impossibile avviare lo scaricamento della scaletta di %1: KIO::get ha "
 "ritornato un puntatore NULL"
 
-#: playlist_handler.cpp:176
+#: playlist_handler.cpp:177
 #, kde-format
 msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
 msgstr ""
 "Estensione della radio via Internet (gestore della scaletta): errore HTTP %1 "
 "per il flusso %2"
 
-#: playlist_handler.cpp:276
+#: playlist_handler.cpp:277
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 non contiene nessun flusso radio utilizzabile"
 
-#: playlist_handler.cpp:379 playlist_handler.cpp:438
+#: playlist_handler.cpp:380 playlist_handler.cpp:439
+#, kde-format
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
 "impossibile creare un file temporaneo per salvare i dati della scaletta"
 
-#: playlist_handler.cpp:383 playlist_handler.cpp:442
+#: playlist_handler.cpp:384 playlist_handler.cpp:443
+#, kde-format
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 "impossibile scrivere un file temporaneo per salvare i dati della scaletta"
 
-#: playlist_handler.cpp:525
+#: playlist_handler.cpp:526
 #, kde-format
 msgid "error while reading asx file: %1"
 msgstr "durante la lettura del file asx: %1"
@@ -224,12 +233,14 @@ msgstr "durante la lettura del file asx: %1"
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:51
+#, kde-format
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:6 rc.cpp:54
+#, kde-format
 msgid "Input buffer size:"
 msgstr "Dimensione buffer di input:"
 
@@ -246,24 +257,28 @@ msgstr "Dimensione buffer di input:"
 #. i18n: file: internetradio-configuration-ui.ui:258
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
 #: rc.cpp:9 rc.cpp:15 rc.cpp:45 rc.cpp:57 rc.cpp:63 rc.cpp:93
+#, kde-format
 msgid " kB"
 msgstr " kB"
 
 #. i18n: file: internetradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:12 rc.cpp:60
+#, kde-format
 msgid "PCM output buffer size:"
 msgstr "Dimensione buffer di output PCM:"
 
 #. i18n: file: internetradio-configuration-ui.ui:101
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:18 rc.cpp:66
+#, kde-format
 msgid "libffmpeg: stream info analysis time:"
 msgstr "libffmpeg: tempo di analisi informazioni sul flusso:"
 
 #. i18n: file: internetradio-configuration-ui.ui:111
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
 #: rc.cpp:21 rc.cpp:69
+#, kde-format
 msgid "disabled"
 msgstr "disabilitata"
 
@@ -276,46 +291,54 @@ msgstr "disabilitata"
 #. i18n: file: internetradio-configuration-ui.ui:289
 #. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
 #: rc.cpp:24 rc.cpp:48 rc.cpp:72 rc.cpp:96
+#, kde-format
 msgid " s"
 msgstr " s"
 
 #. i18n: file: internetradio-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:75
+#, kde-format
 msgid "Watchdog: reconnect after:"
 msgstr "Watchdog: riconnetti dopo:"
 
 #. i18n: file: internetradio-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:30 rc.cpp:78
+#, kde-format
 msgid "Playback mixer device:"
 msgstr "Dispositivo mixer di riproduzione:"
 
 #. i18n: file: internetradio-configuration-ui.ui:169
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:33 rc.cpp:81
+#, kde-format
 msgid "test"
 msgstr "test"
 
 #. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:36 rc.cpp:84
+#, kde-format
 msgid "Playback mixer channel:"
 msgstr "Canale mixer di riproduzione:"
 
 #. i18n: file: internetradio-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:39 rc.cpp:87
+#, kde-format
 msgid "Mute playback channel on power off:"
 msgstr "Canale di riproduzione muto allo spegnimento:"
 
 #. i18n: file: internetradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:42 rc.cpp:90
+#, kde-format
 msgid "libffmpeg: format probe size:"
 msgstr "libffmpeg: dimensione rilevamento formato:"
 
 #: stream_input_buffer.cpp:72
+#, kde-format
 msgid "This should never happen: inconsistency in buffer locking / buffer size"
 msgstr ""
 "Questo non dovrebbe succedere: incongruenza nel locking dei buffer / "

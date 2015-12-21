@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_error_log\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-09-22 22:01+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -17,58 +17,67 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: errorlog.cpp:35
+#: errorlog.cpp:36
+#, kde-format
 msgid "Error Logging Window"
 msgstr "Okno se zápisem chyb"
 
-#: errorlog.cpp:41
+#: errorlog.cpp:42
+#, kde-format
 msgid "Error Logger"
 msgstr "Zápis chyb"
 
-#: errorlog.cpp:49 errorlog.cpp:58
+#: errorlog.cpp:50 errorlog.cpp:59
+#, kde-format
 msgid "KRadio Logger"
 msgstr "Zápis chyb"
 
-#: errorlog.cpp:55
+#: errorlog.cpp:56
+#, kde-format
 msgid "Save &as"
 msgstr "Uložit &jako"
 
-#: errorlog.cpp:60
+#: errorlog.cpp:61
+#, kde-format
 msgid "Information"
 msgstr "Informace"
 
-#: errorlog.cpp:61 errorlog.cpp:64 errorlog.cpp:67 errorlog.cpp:70
+#: errorlog.cpp:62 errorlog.cpp:65 errorlog.cpp:68 errorlog.cpp:71
 #, kde-format
 msgid "KRadio4 Version %1 logging started"
 msgstr "KRadio4, Verze %1: začátek zápisu"
 
-#: errorlog.cpp:63
+#: errorlog.cpp:64
+#, kde-format
 msgid "Warnings"
 msgstr "Varování"
 
-#: errorlog.cpp:66
+#: errorlog.cpp:67
+#, kde-format
 msgid "Errors"
 msgstr "Chyby"
 
-#: errorlog.cpp:69
+#: errorlog.cpp:70
+#, kde-format
 msgid "Debugging"
 msgstr "Vyhledávání a odstraňování chyb"
 
-#: errorlog.cpp:186
+#: errorlog.cpp:188
+#, kde-format
 msgid "Log Files"
 msgstr "Soubory zápisu"
 
-#: errorlog.cpp:191
+#: errorlog.cpp:193
+#, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Uložit zápis chyb programu KRadio jako..."
 
-#: errorlog.cpp:216
+#: errorlog.cpp:218
 #, kde-format
 msgid "error writing to temporary file %1"
 msgstr "Chyba při zapisování do dočasného souboru %1"
 
-#: errorlog.cpp:225
+#: errorlog.cpp:227
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "Chyba při nahrávání souboru s přednastavením %1"
-

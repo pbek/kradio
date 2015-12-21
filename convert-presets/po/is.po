@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: convert-presets.cpp:159
+#: convert-presets.cpp:155
+#, kde-format
 msgid "kradio4-convert-presets"
 msgstr ""
 
-#: convert-presets.cpp:161
+#: convert-presets.cpp:157
+#, kde-format
 msgid "(c) 2003-2010 Martin Witte"
 msgstr ""
 
-#: convert-presets.cpp:164
+#: convert-presets.cpp:160
+#, kde-format
 msgid "Martin Witte"
 msgstr ""
 
-#: convert-presets.cpp:169
+#: convert-presets.cpp:165
+#, kde-format
 msgid "quiet mode - no informational output"
 msgstr ""
 
-#: convert-presets.cpp:170
+#: convert-presets.cpp:166
+#, kde-format
 msgid "preset files to convert"
 msgstr ""
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""

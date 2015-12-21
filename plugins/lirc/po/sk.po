@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-18 15:07+0200\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2012-08-14 16:39+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -18,104 +18,128 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: lirc-configuration.cpp:51
+#: lirc-configuration.cpp:50
+#, kde-format
 msgid "digit 0"
 msgstr "číslica 0"
 
-#: lirc-configuration.cpp:52
+#: lirc-configuration.cpp:51
+#, kde-format
 msgid "digit 1"
 msgstr "číslica 1"
 
-#: lirc-configuration.cpp:53
+#: lirc-configuration.cpp:52
+#, kde-format
 msgid "digit 2"
 msgstr "číslica 2"
 
-#: lirc-configuration.cpp:54
+#: lirc-configuration.cpp:53
+#, kde-format
 msgid "digit 3"
 msgstr "číslica 3"
 
-#: lirc-configuration.cpp:55
+#: lirc-configuration.cpp:54
+#, kde-format
 msgid "digit 4"
 msgstr "číslica 4"
 
-#: lirc-configuration.cpp:56
+#: lirc-configuration.cpp:55
+#, kde-format
 msgid "digit 5"
 msgstr "číslica 5"
 
-#: lirc-configuration.cpp:57
+#: lirc-configuration.cpp:56
+#, kde-format
 msgid "digit 6"
 msgstr "číslica 6"
 
-#: lirc-configuration.cpp:58
+#: lirc-configuration.cpp:57
+#, kde-format
 msgid "digit 7"
 msgstr "číslica 7"
 
-#: lirc-configuration.cpp:59
+#: lirc-configuration.cpp:58
+#, kde-format
 msgid "digit 8"
 msgstr "číslica 8"
 
-#: lirc-configuration.cpp:60
+#: lirc-configuration.cpp:59
+#, kde-format
 msgid "digit 9"
 msgstr "číslica 9"
 
-#: lirc-configuration.cpp:61
+#: lirc-configuration.cpp:60
+#, kde-format
 msgid "Power On"
 msgstr "Zapnúť"
 
-#: lirc-configuration.cpp:62
+#: lirc-configuration.cpp:61
+#, kde-format
 msgid "Power Off"
 msgstr "Vypnúť"
 
-#: lirc-configuration.cpp:63
+#: lirc-configuration.cpp:62
+#, kde-format
 msgid "Pause"
 msgstr "Pozastaviť"
 
-#: lirc-configuration.cpp:64
+#: lirc-configuration.cpp:63
+#, kde-format
 msgid "Start Recording"
 msgstr "Spustiť nahrávanie"
 
-#: lirc-configuration.cpp:65
+#: lirc-configuration.cpp:64
+#, kde-format
 msgid "Stop Recording"
 msgstr "Ukončiť nahrávanie"
 
-#: lirc-configuration.cpp:66
+#: lirc-configuration.cpp:65
+#, kde-format
 msgid "Increase Volume"
 msgstr "Zvýšiť hlasitosť"
 
-#: lirc-configuration.cpp:67
+#: lirc-configuration.cpp:66
+#, kde-format
 msgid "Decrease Volume"
 msgstr "Znížiť hlasitosť"
 
-#: lirc-configuration.cpp:68
+#: lirc-configuration.cpp:67
+#, kde-format
 msgid "Next Channel"
 msgstr "Ďalší kanál"
 
-#: lirc-configuration.cpp:69
+#: lirc-configuration.cpp:68
+#, kde-format
 msgid "Previous Channel"
 msgstr "Predošlý kanál"
 
-#: lirc-configuration.cpp:70
+#: lirc-configuration.cpp:69
+#, kde-format
 msgid "Search Next Channel"
 msgstr "Hľadať ďalší kanál"
 
-#: lirc-configuration.cpp:71
+#: lirc-configuration.cpp:70
+#, kde-format
 msgid "Search Previous Channel"
 msgstr "Hľadať predošlý kanál"
 
-#: lirc-configuration.cpp:72
+#: lirc-configuration.cpp:71
+#, kde-format
 msgid "Enable Sleep Countdown"
 msgstr "Povoliť odpočet uspania"
 
-#: lirc-configuration.cpp:73
+#: lirc-configuration.cpp:72
+#, kde-format
 msgid "Quit KRadio"
 msgstr "Ukončiť KRadio"
 
-#: lirc-configuration.cpp:125 lirc-configuration.cpp:126
-#, fuzzy
+#: lirc-configuration.cpp:124 lirc-configuration.cpp:125
+#, fuzzy, kde-format
 msgid "<do not care>"
 msgstr "<nestarať sa>"
 
-#: lirc-configuration.cpp:270
+#: lirc-configuration.cpp:265
+#, kde-format
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
@@ -123,26 +147,28 @@ msgstr ""
 "Zadajte klávesový reťazec vášho diaľkového ovládania alebo len stlačte "
 "tlačidlo na vašom diaľkovom ovládaní."
 
-#: lirc-configuration.cpp:276
-#, fuzzy
+#: lirc-configuration.cpp:271
+#, fuzzy, kde-format
 msgid "Double click on the entries to change the assignments"
 msgstr "Dvakrát kliknite na položky na zmenu priradení"
 
 #: lircsupport.cpp:50
+#, kde-format
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Podpora Linux Infrared Control (LIRC)"
 
 #: lircsupport.cpp:56 lircsupport.cpp:483
+#, kde-format
 msgid "LIRC Plugin"
 msgstr "Plugin LIRC"
 
 #: lircsupport.cpp:84
-#, fuzzy
+#, fuzzy, kde-format
 msgid "initializing KRadio LIRC plugin"
 msgstr "inicializujem plugin kradio lirc"
 
 #: lircsupport.cpp:85
-#, fuzzy
+#, fuzzy, kde-format
 msgid ""
 "warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
@@ -151,12 +177,12 @@ msgstr ""
 "nebeží v týchto prípadoch."
 
 #: lircsupport.cpp:94
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Initializing KRadio LIRC plugin failed"
 msgstr "Inicializácia pluginu kradio lirc zlyhala"
 
 #: lircsupport.cpp:103
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Inicializácie pluginu kradio lirc úspešná"
 
@@ -216,7 +242,7 @@ msgid "Failed to copy %1 to %2"
 msgstr ""
 
 #: lircsupport.cpp:244
-#, fuzzy
+#, fuzzy, kde-format
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
 "next start of KRadio"
@@ -225,74 +251,81 @@ msgstr ""
 "KRadio."
 
 #: lircsupport.cpp:482
+#, kde-format
 msgid "LIRC Support"
 msgstr "Podpora LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:37
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:3 rc.cpp:32
+#, kde-format
 msgid "Action"
 msgstr "Akcia"
 
 #. i18n: file: lirc-configuration-ui.ui:48
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:6 rc.cpp:35
+#, kde-format
 msgid "LIRC String"
 msgstr "Reťazec LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
 #: rc.cpp:9 rc.cpp:38
+#, kde-format
 msgid "Alternative LIRC String"
 msgstr "Alternatívny reťazec LIRC"
 
 #. i18n: file: lirc-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
 #: rc.cpp:12 rc.cpp:41
+#, kde-format
 msgid "textLabel1"
 msgstr "textLabel1"
 
 #. i18n: file: lirc-configuration-ui.ui:103
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:15 rc.cpp:44
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Power off .lircrc mode:"
 msgstr "Vypnúť režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:18 rc.cpp:47
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Power on .lircrc mode:"
 msgstr "Zapnúť režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:127
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:21 rc.cpp:50
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Synchronizovať režimy .lircrc pri behu"
 
 #. i18n: file: lirc-configuration-ui.ui:134
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:24 rc.cpp:53
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Synchronize .lircrc modes at startup:"
 msgstr "Synchronizovať režimy .lircrc pri spustení"
 
 #. i18n: file: lirc-configuration-ui.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:27 rc.cpp:56
-#, fuzzy
+#, fuzzy, kde-format
 msgid "LIRC configuration file:"
 msgstr "Konfiguračný súbor LIRC"
 
 #: rc.cpp:28
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Roman Paholík"
 
 #: rc.cpp:29
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"

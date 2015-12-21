@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2009-11-11 22:24-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -23,79 +23,88 @@ msgstr ""
 #. i18n: file: timeshifter-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
 #: rc.cpp:3 rc.cpp:21
+#, kde-format
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: timeshifter-configuration-ui.ui:57
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
 #: rc.cpp:6 rc.cpp:24
+#, kde-format
 msgid " MB"
 msgstr " MB"
 
 #. i18n: file: timeshifter-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:9 rc.cpp:27
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Maximum file size:"
 msgstr "Tamanho máximo do arquivo"
 
 #. i18n: file: timeshifter-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:12 rc.cpp:30
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Playback mixer device:"
 msgstr "Dispositivo mixer de reprodução"
 
 #. i18n: file: timeshifter-configuration-ui.ui:96
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
 #: rc.cpp:15 rc.cpp:33
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Temporary file:"
 msgstr "Arquivo temporário"
 
 #. i18n: file: timeshifter-configuration-ui.ui:109
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:18 rc.cpp:36
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Playback mixer channel:"
 msgstr "Canal mixer de reprodução"
 
 #: timeshifter-configuration.cpp:146
+#, kde-format
 msgid "any ( * )"
 msgstr "Todos ( * )"
 
 #: timeshifter-configuration.cpp:150
+#, kde-format
 msgid "Select TimeShifter Temporary File"
 msgstr "Selecionar arquivo temporário para TimerShiffer"
 
-#: timeshifter.cpp:31
+#: timeshifter.cpp:27
+#, kde-format
 msgid "TimeShift Support"
 msgstr "Suporte a tempo de mudança"
 
-#: timeshifter.cpp:36
+#: timeshifter.cpp:32
+#, kde-format
 msgid "TimeShifter Plugin"
 msgstr "Plug-in TimeShifter"
 
-#: timeshifter.cpp:130
+#: timeshifter.cpp:127
+#, kde-format
 msgid "Timeshifter"
 msgstr "Timeshifter"
 
-#: timeshifter.cpp:131
+#: timeshifter.cpp:128
+#, kde-format
 msgid "Timeshifter Options"
 msgstr "Opções para TimeShifter"
 
-#: timeshifter.cpp:212
+#: timeshifter.cpp:209
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr "Tempo de mudança de %1 (%2)"
 
-#: timeshifter.cpp:558
+#: timeshifter.cpp:555
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: clientes ignorados em %1 bytes. Dados "
 "perdidos"
 
-#: timeshifter.cpp:638
+#: timeshifter.cpp:635
+#, kde-format
 msgid "internal stream, not stored"
 msgstr "Stream interno, não armazenado"

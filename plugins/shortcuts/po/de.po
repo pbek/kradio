@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-17 00:32+0200\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2009-03-29 01:04+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: \n"
@@ -20,131 +20,163 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Ernst Martin Witte"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
 
 #: shortcuts.cpp:47
+#, kde-format
 msgid "Shortcuts Support"
 msgstr "Kurzwahl-Tasten-Unterstützung"
 
 #: shortcuts.cpp:53 shortcuts.cpp:199
+#, kde-format
 msgid "Shortcuts Plugin"
 msgstr "Kurzwahl-Tasten-Plugin"
 
 #: shortcuts.cpp:61
+#, kde-format
 msgid "Standard Actions"
 msgstr "Standard-Aktionen"
 
 #: shortcuts.cpp:62
+#, kde-format
 msgid "Station Actions"
 msgstr "Sender-Aktionen"
 
 #: shortcuts.cpp:64
+#, kde-format
 msgid "Digit 0"
 msgstr "Ziffer 0"
 
 #: shortcuts.cpp:65
+#, kde-format
 msgid "Digit 1"
 msgstr "Ziffer 1"
 
 #: shortcuts.cpp:66
+#, kde-format
 msgid "Digit 2"
 msgstr "Ziffer 2"
 
 #: shortcuts.cpp:67
+#, kde-format
 msgid "Digit 3"
 msgstr "Ziffer 3"
 
 #: shortcuts.cpp:68
+#, kde-format
 msgid "Digit 4"
 msgstr "Ziffer 4"
 
 #: shortcuts.cpp:69
+#, kde-format
 msgid "Digit 5"
 msgstr "Ziffer 5"
 
 #: shortcuts.cpp:70
+#, kde-format
 msgid "Digit 6"
 msgstr "Ziffer 6"
 
 #: shortcuts.cpp:71
+#, kde-format
 msgid "Digit 7"
 msgstr "Ziffer 7"
 
 #: shortcuts.cpp:72
+#, kde-format
 msgid "Digit 8"
 msgstr "Ziffer 8"
 
 #: shortcuts.cpp:73
+#, kde-format
 msgid "Digit 9"
 msgstr "Ziffer 9"
 
 #: shortcuts.cpp:74
+#, kde-format
 msgid "Power on"
 msgstr "Einschalten"
 
 #: shortcuts.cpp:75
+#, kde-format
 msgid "Power off"
 msgstr "Ausschalten"
 
 #: shortcuts.cpp:76
+#, kde-format
 msgid "Pause"
 msgstr "Pause"
 
 #: shortcuts.cpp:77
+#, kde-format
 msgid "Start recording"
 msgstr "Aufnahme starten"
 
 #: shortcuts.cpp:78
+#, kde-format
 msgid "Stop recording"
 msgstr "Aufnahme beenden"
 
 #: shortcuts.cpp:79
+#, kde-format
 msgid "Increase volume"
 msgstr "Lautstärke erhöhen"
 
 #: shortcuts.cpp:80
+#, kde-format
 msgid "Decrease volume"
 msgstr "Lautstärke verringern"
 
 #: shortcuts.cpp:81
+#, kde-format
 msgid "Increase Frequency"
 msgstr "Frequenz erhöhen"
 
 #: shortcuts.cpp:82
+#, kde-format
 msgid "Decrease Frequency"
 msgstr "Frequenz verringern"
 
 #: shortcuts.cpp:83
+#, kde-format
 msgid "Next station"
 msgstr "Nächster Sender"
 
 #: shortcuts.cpp:84
+#, kde-format
 msgid "Previous station"
 msgstr "Vorheriger Sender"
 
 #: shortcuts.cpp:85
+#, kde-format
 msgid "Search next station"
 msgstr "Suche nächsten Sender"
 
 #: shortcuts.cpp:86
+#, kde-format
 msgid "Search previous station"
 msgstr "Suche vorherigen Sender"
 
 #: shortcuts.cpp:87
+#, kde-format
 msgid "Sleep"
 msgstr "Schlummer-Modus einschalten"
 
 #: shortcuts.cpp:88
+#, kde-format
 msgid "Quit KRadio"
 msgstr "KRadio Beenden"
 
 #: shortcuts.cpp:198
+#, kde-format
 msgid "Shortcuts"
 msgstr "Kurzwahl-Tasten"

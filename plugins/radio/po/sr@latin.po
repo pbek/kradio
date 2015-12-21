@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: radio (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -14,67 +14,72 @@ msgstr ""
 
 #. i18n: file: radio-configuration-ui.ui:316
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: radio-configuration.cpp:81 rc.cpp:48 rc.cpp:138
+#: radio-configuration.cpp:76 rc.cpp:48 rc.cpp:138
+#, kde-format
 msgid "unchanged"
 msgstr "nepromenjeno"
 
-#: radio-configuration.cpp:84
-#, fuzzy
+#: radio-configuration.cpp:79
+#, fuzzy, kde-format
 msgctxt "Sound mode"
 msgid "<do not care>"
 msgstr "<nezanimljivo>"
 
-#: radio-configuration.cpp:85
-#, fuzzy
+#: radio-configuration.cpp:80
+#, fuzzy, kde-format
 msgctxt "Sound mode, monophonic"
 msgid "Mono"
 msgstr "Mono"
 
-#: radio-configuration.cpp:86
-#, fuzzy
+#: radio-configuration.cpp:81
+#, fuzzy, kde-format
 msgctxt "Sound mode, stereophonic"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: radio-configuration.cpp:89
-#, fuzzy
+#: radio-configuration.cpp:84
+#, fuzzy, kde-format
 msgid "Load and replace presets"
 msgstr "učitaj + zameni fajl sa stanicama"
 
-#: radio-configuration.cpp:90
-#, fuzzy
+#: radio-configuration.cpp:85
+#, fuzzy, kde-format
 msgid "Load and add presets"
 msgstr "učitaj + dodaj fajl sa stanicama"
 
-#: radio-configuration.cpp:433
+#: radio-configuration.cpp:428
+#, kde-format
 msgid "Image Selection"
 msgstr "Izaberi sliku"
 
-#: radio-configuration.cpp:438
+#: radio-configuration.cpp:433
+#, kde-format
 msgid "ignoring non-local image"
 msgstr "Ignoriši ne-lokalnu sliku"
 
-#: radio-configuration.cpp:555 radio-configuration.cpp:583
+#: radio-configuration.cpp:550 radio-configuration.cpp:578
+#, kde-format
 msgid "KRadio Preset Files"
 msgstr "KRadio fajl sa stanicama"
 
-#: radio-configuration.cpp:559
+#: radio-configuration.cpp:554
+#, kde-format
 msgid "Select Preset File"
 msgstr "Izaberi fajl sa stanicama"
 
-#: radio-configuration.cpp:587
-#, fuzzy
+#: radio-configuration.cpp:582
+#, fuzzy, kde-format
 msgid "Save Preset File"
 msgstr "Uskladišti fajl sa stanicama"
 
-#: radio-configuration.cpp:664
+#: radio-configuration.cpp:628
 #, fuzzy, kde-format
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
 msgstr[0] "pronadjen %1 novih stanica"
 msgstr[1] "pronadjen %1 novih stanica"
 
-#: radio-configuration.cpp:666
+#: radio-configuration.cpp:630
 #, fuzzy, kde-format
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"
@@ -82,18 +87,22 @@ msgstr[0] "Ima novih %1 stanica"
 msgstr[1] "Ima novih %1 stanica"
 
 #: radio.cpp:35
+#, kde-format
 msgid "Central Radio Device Multiplexer"
 msgstr "Centralni multipleksni radio uredjaj"
 
 #: radio.cpp:40
+#, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Radio multipleksni priključak"
 
 #: radio.cpp:133
+#, kde-format
 msgid "Radio Stations"
 msgstr "Radio stanice"
 
 #: radio.cpp:134
+#, kde-format
 msgid "Setup Radio Stations"
 msgstr "Podešavanje radio stanica"
 
@@ -103,7 +112,7 @@ msgid "Could not find a plugin for radio station %1"
 msgstr "Ne mogu pronaći priključak za radio stanicu %1"
 
 #: radio.cpp:399
-#, fuzzy
+#, fuzzy, kde-format
 msgctxt "Unknown description"
 msgid "unknown"
 msgstr "nepoznato"
@@ -111,6 +120,7 @@ msgstr "nepoznato"
 #. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
 #: rc.cpp:3 rc.cpp:93
+#, kde-format
 msgid "Station &Presets"
 msgstr "Stanice"
 
@@ -123,7 +133,7 @@ msgstr "Stanice"
 #. i18n: file: radio-configuration-ui.ui:107
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
 #: rc.cpp:6 rc.cpp:9 rc.cpp:96 rc.cpp:99
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Search stations"
 msgstr "Pretraga stanica"
 
@@ -136,7 +146,7 @@ msgstr "Pretraga stanica"
 #. i18n: file: radio-configuration-ui.ui:126
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
 #: rc.cpp:12 rc.cpp:15 rc.cpp:102 rc.cpp:105
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Load presets"
 msgstr "Učitavanje fajla sa stanicama"
 
@@ -149,34 +159,35 @@ msgstr "Učitavanje fajla sa stanicama"
 #. i18n: file: radio-configuration-ui.ui:145
 #. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
 #: rc.cpp:18 rc.cpp:21 rc.cpp:108 rc.cpp:111
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Save presets as..."
 msgstr "Sačuvaj fajl sa stanicama kao..."
 
 #. i18n: file: radio-configuration-ui.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelStationName)
 #: rc.cpp:24 rc.cpp:114
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Name:"
 msgstr "Ime"
 
 #. i18n: file: radio-configuration-ui.ui:208
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
 #: rc.cpp:27 rc.cpp:117
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Short name:"
 msgstr "Skraćeno ime"
 
 #. i18n: file: radio-configuration-ui.ui:232
 #. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
 #: rc.cpp:30 rc.cpp:120
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Pixmap file:"
 msgstr "Raster fajl"
 
 #. i18n: file: radio-configuration-ui.ui:285
 #. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
 #: rc.cpp:33 rc.cpp:123
+#, kde-format
 msgid ""
 "<p>Select if you want to force the tuner to stereo/mono mode. <i>Please be "
 "aware, that some drivers might ignore this flag without saying they will "
@@ -186,113 +197,119 @@ msgstr ""
 #. i18n: file: radio-configuration-ui.ui:289
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: rc.cpp:36 rc.cpp:126
-#, fuzzy
+#, fuzzy, kde-format
 msgid "<do not care>"
 msgstr "<nezanimljivo>"
 
 #. i18n: file: radio-configuration-ui.ui:294
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: rc.cpp:39 rc.cpp:129
+#, kde-format
 msgid "Mono"
 msgstr "Mono"
 
 #. i18n: file: radio-configuration-ui.ui:299
 #. i18n: ectx: property (text), item, widget (KComboBox, comboStereoMode)
 #: rc.cpp:42 rc.cpp:132
+#, kde-format
 msgid "Stereo"
 msgstr "Stereo"
 
 #. i18n: file: radio-configuration-ui.ui:313
 #. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:45 rc.cpp:135
+#, kde-format
 msgid "The volume that is used when the station is tuned"
 msgstr "Jačina zvuka koja se koristi kada je stanica podešena"
 
 #. i18n: file: radio-configuration-ui.ui:319
 #. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:52 rc.cpp:142
-#, no-c-format
+#, no-c-format, kde-format
 msgid " %"
 msgstr "␣%"
 
 #. i18n: file: radio-configuration-ui.ui:332
 #. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
 #: rc.cpp:55 rc.cpp:145
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Stereo mode:"
 msgstr "Stereo mod"
 
 #. i18n: file: radio-configuration-ui.ui:342
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
 #: rc.cpp:58 rc.cpp:148
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Volume preset:"
 msgstr "Podešavanje jačine"
 
 #. i18n: file: radio-configuration-ui.ui:389
 #. i18n: ectx: attribute (title), widget (QWidget, About)
 #: rc.cpp:61 rc.cpp:151
+#, kde-format
 msgid "Preset &File"
 msgstr "Fajl sa stanicama"
 
 #. i18n: file: radio-configuration-ui.ui:398
 #. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
 #: rc.cpp:64 rc.cpp:154
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Personal preset file:"
 msgstr "Lični fajl sa stanicama"
 
 #. i18n: file: radio-configuration-ui.ui:413
 #. i18n: ectx: property (text), widget (QLabel, labelCity)
 #: rc.cpp:67 rc.cpp:157
-#, fuzzy
+#, fuzzy, kde-format
 msgid "City:"
 msgstr "Grad"
 
 #. i18n: file: radio-configuration-ui.ui:426
 #. i18n: ectx: property (text), widget (QLabel, labelCountry)
 #: rc.cpp:70 rc.cpp:160
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Country:"
 msgstr "Država"
 
 #. i18n: file: radio-configuration-ui.ui:457
 #. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
 #: rc.cpp:73 rc.cpp:163
+#, kde-format
 msgid "&Now"
 msgstr "&Sad"
 
 #. i18n: file: radio-configuration-ui.ui:466
 #. i18n: ectx: property (text), widget (QLabel, labelComment)
 #: rc.cpp:76 rc.cpp:166
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Comment:"
 msgstr "Komentar"
 
 #. i18n: file: radio-configuration-ui.ui:479
 #. i18n: ectx: property (text), widget (QLabel, labelMedia)
 #: rc.cpp:79 rc.cpp:169
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Media:"
 msgstr "Medij"
 
 #. i18n: file: radio-configuration-ui.ui:489
 #. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
 #: rc.cpp:82 rc.cpp:172
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Maintainer:"
 msgstr "Održavatelj"
 
 #. i18n: file: radio-configuration-ui.ui:502
 #. i18n: ectx: property (text), widget (QLabel, labelLastChange)
 #: rc.cpp:85 rc.cpp:175
-#, fuzzy
+#, fuzzy, kde-format
 msgid "Last change:"
 msgstr "Poslednja promena"
 
 #. i18n: file: radio-configuration-ui.ui:536
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:88 rc.cpp:178
+#, kde-format
 msgid ""
 "<p align=\"center\">Click on the link below to contribute this station "
 "preset file to the kradio project.</p>"
@@ -301,11 +318,13 @@ msgstr ""
 "projekat.</p>"
 
 #: rc.cpp:89
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Goran Simović"
 
 #: rc.cpp:90
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "simovic@mailup.net"

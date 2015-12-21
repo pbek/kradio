@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-19 03:17+0200\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-09-18 20:53+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -20,18 +20,22 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: oss-sound.cpp:38
+#, kde-format
 msgid "Open Sound System (OSS) Support"
 msgstr "Поддержка Открытой звуковой системы (OSS)"
 
 #: oss-sound.cpp:46
+#, kde-format
 msgid "KRadio OSS Sound Plugin"
 msgstr "Модуль OSS для KRadio"
 
 #: oss-sound.cpp:180
+#, kde-format
 msgid "OSS Sound"
 msgstr "OSS"
 
 #: oss-sound.cpp:181
+#, kde-format
 msgid "OSS Sound Device Options"
 msgstr "Параметры звука для драйвера OSS"
 
@@ -162,57 +166,67 @@ msgstr "Устройство OSS: %1"
 #. i18n: file: oss-sound-configuration-ui.ui:27
 #. i18n: ectx: property (title), widget (QGroupBox)
 #: rc.cpp:3 rc.cpp:29
+#, kde-format
 msgid "Devices"
 msgstr "Устройства"
 
 #. i18n: file: oss-sound-configuration-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:6 rc.cpp:32
+#, kde-format
 msgid "PCM device:"
 msgstr "Устройство PCM:"
 
 #. i18n: file: oss-sound-configuration-ui.ui:59
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:35
+#, kde-format
 msgid "Mixer device:"
 msgstr "Устройство микшера:"
 
 #. i18n: file: oss-sound-configuration-ui.ui:67
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:12 rc.cpp:38
+#, kde-format
 msgid "Buffer Size"
 msgstr "Размер буфера"
 
 #. i18n: file: oss-sound-configuration-ui.ui:75
 #. i18n: ectx: property (suffix), widget (KIntSpinBox)
 #: rc.cpp:15 rc.cpp:41
+#, kde-format
 msgid " kB"
 msgstr " кБ"
 
 #. i18n: file: oss-sound-configuration-ui.ui:91
 #. i18n: ectx: property (title), widget (QGroupBox)
 #: rc.cpp:18 rc.cpp:44
+#, kde-format
 msgid "Extended Options"
 msgstr "Дополнительные параметры"
 
 #. i18n: file: oss-sound-configuration-ui.ui:105
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:21 rc.cpp:47
+#, kde-format
 msgid "Disable playback"
 msgstr "Запретить воспроизведение"
 
 #. i18n: file: oss-sound-configuration-ui.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:50
+#, kde-format
 msgid "Disable capture"
 msgstr "Запретить запись"
 
 #: rc.cpp:25
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
 #: rc.cpp:26
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"

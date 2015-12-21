@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-03 01:44+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-03-03 00:42+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,184 +20,218 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: docking-configuration.cpp:126
+#: docking-configuration.cpp:110
+#, kde-format
 msgid "Mouse click on tray icon:"
 msgstr "Clic del mouse sull'icona del vassoio:"
 
-#: docking-configuration.cpp:127 docking-configuration.cpp:134
+#: docking-configuration.cpp:111 docking-configuration.cpp:116
+#, kde-format
 msgctxt "Mouse button"
 msgid "Left:"
 msgstr "Sinistro:"
 
-#: docking-configuration.cpp:128 docking-configuration.cpp:135
+#: docking-configuration.cpp:112 docking-configuration.cpp:117
+#, kde-format
 msgctxt "Mouse button"
 msgid "Right:"
 msgstr "Destro:"
 
-#: docking-configuration.cpp:129 docking-configuration.cpp:136
+#: docking-configuration.cpp:113 docking-configuration.cpp:118
+#, kde-format
 msgctxt "Mouse button"
 msgid "Middle:"
 msgstr "Centrale:"
 
-#: docking-configuration.cpp:130 docking-configuration.cpp:137
-msgctxt "Mouse button"
-msgid "XButton1:"
-msgstr "XButton1:"
-
-#: docking-configuration.cpp:131 docking-configuration.cpp:138
-msgctxt "Mouse button"
-msgid "XButton2:"
-msgstr "XButton2:"
-
-#: docking-configuration.cpp:133
+#: docking-configuration.cpp:115
+#, kde-format
 msgid "Mouse double-click on tray icon:"
 msgstr "Doppio clic del mouse sull'icona del vassoio:"
 
-#: docking-configuration.cpp:140
+#: docking-configuration.cpp:120
+#, kde-format
 msgid "Mouse wheel action on tray icon:"
 msgstr "Azione della rotella del mouse sull'icona del vassoio:"
 
-#: docking-configuration.cpp:146 docking-configuration.cpp:156
+#: docking-configuration.cpp:126 docking-configuration.cpp:136
+#, kde-format
 msgid "No Action"
 msgstr "Nessuna azione"
 
-#: docking-configuration.cpp:147
+#: docking-configuration.cpp:127
+#, kde-format
 msgid "Show/Hide Windows"
 msgstr "Mostra/nascondi finestre"
 
-#: docking-configuration.cpp:148
+#: docking-configuration.cpp:128
+#, kde-format
 msgid "Power On/Off"
 msgstr "Accendi/spegni"
 
-#: docking-configuration.cpp:149
+#: docking-configuration.cpp:129
+#, kde-format
 msgid "Pause/Play"
 msgstr "Pausa/riproduci"
 
-#: docking-configuration.cpp:150 docking.cpp:322
+#: docking-configuration.cpp:130 docking.cpp:303
+#, kde-format
 msgid "Recording"
 msgstr "Registra"
 
-#: docking-configuration.cpp:151
+#: docking-configuration.cpp:131
+#, kde-format
 msgid "System Tray Menu"
 msgstr "Menu del vassoio di sistema"
 
-#: docking-configuration.cpp:152
+#: docking-configuration.cpp:132
+#, kde-format
 msgid "GUI-Plugin Menu"
 msgstr "Menu dell'estensione della GUI"
 
-#: docking-configuration.cpp:153
+#: docking-configuration.cpp:133
+#, kde-format
 msgid "Configuration"
 msgstr "Configurazione"
 
-#: docking-configuration.cpp:157
+#: docking-configuration.cpp:137
+#, kde-format
 msgid "Change Station"
 msgstr "Cambio stazione"
 
-#: docking-configuration.cpp:158
+#: docking-configuration.cpp:138
+#, kde-format
 msgid "Change Volume"
 msgstr "Cambio volume"
 
-#: docking-configuration.cpp:159
+#: docking-configuration.cpp:139
+#, kde-format
 msgid "Change Frequency"
 msgstr "Cambio frequenza"
 
-#: docking.cpp:46
+#: docking.cpp:45
+#, kde-format
 msgid "System Tray Icon/Menu"
 msgstr "Icona/Menu del vassoio di sistema:"
 
-#: docking.cpp:54
+#: docking.cpp:53
+#, kde-format
 msgid "System Tray Plugin"
 msgstr "Estensione del vassoio di sistema"
 
-#: docking.cpp:257
+#: docking.cpp:238
+#, kde-format
 msgid "System Tray Icon"
 msgstr "Icona del vassoio di sistema"
 
-#: docking.cpp:258
+#: docking.cpp:239
+#, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Configurazione dell'icona del vassoio di sistema"
 
-#: docking.cpp:312
+#: docking.cpp:293
+#, kde-format
 msgid "Search Next Station"
 msgstr "Ricerca della stazione successiva"
 
-#: docking.cpp:313
+#: docking.cpp:294
+#, kde-format
 msgid "Search Previous Station"
 msgstr "Ricerca della stazione precedente"
 
-#: docking.cpp:327
+#: docking.cpp:308
+#, kde-format
 msgid "Pause Radio"
 msgstr "Metti la radio in pausa"
 
-#: docking.cpp:338
+#: docking.cpp:319
+#, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Mostra/nascondi le estensioni"
 
-#: docking.cpp:346
+#: docking.cpp:327
+#, kde-format
 msgid "&Quit"
 msgstr "&Esci"
 
-#: docking.cpp:461
+#: docking.cpp:442
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Ferma il conto alla rovescia della sospensione(in funzione fino a %1)"
 
-#: docking.cpp:464 docking.cpp:473 docking.cpp:481
+#: docking.cpp:445 docking.cpp:454 docking.cpp:462
+#, kde-format
 msgid "Start Sleep Countdown"
 msgstr "Avvia il conto alla rovescia della sospensione"
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power Off"
 msgstr "Spegni"
 
-#: docking.cpp:489
+#: docking.cpp:470
+#, kde-format
 msgid "Power On"
 msgstr "Accendi"
 
-#: docking.cpp:504 docking.cpp:525
+#: docking.cpp:485 docking.cpp:506
+#, kde-format
 msgid "invalid station"
 msgstr "stazione non valida"
 
-#: docking.cpp:507
+#: docking.cpp:488
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:517
+#: docking.cpp:498
 #, kde-format
 msgid "next alarm: %1"
 msgstr "allarme successivo: %1"
 
-#: docking.cpp:519
+#: docking.cpp:500
+#, kde-format
 msgid "<no alarm pending>"
 msgstr "<nessun allarme in esecuzione>"
 
-#: docking.cpp:778 docking.cpp:881 docking.cpp:939
+#: docking.cpp:759 docking.cpp:862 docking.cpp:920
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Ferma la registrazione di %1"
 
-#: docking.cpp:867
+#: docking.cpp:848
+#, kde-format
 msgid "Start Recording"
 msgstr "Avvia la registrazione"
 
-#: docking.cpp:921
+#: docking.cpp:902
+#, kde-format
 msgid "Resume playback"
 msgstr "Riprendi la riproduzione"
 
-#: docking.cpp:925
+#: docking.cpp:906
+#, kde-format
 msgid "Pause playback"
 msgstr "Metti in pausa la riproduzione"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
+
+#~ msgctxt "Mouse button"
+#~ msgid "XButton1:"
+#~ msgstr "XButton1:"
+
+#~ msgctxt "Mouse button"
+#~ msgid "XButton2:"
+#~ msgstr "XButton2:"
 
 #~ msgid "System Tray Icon/Menu for KRadio"
 #~ msgstr "Icona/Menu del vassoio di sistema di KRadio"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-09-18 15:31+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -19,20 +19,23 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: mprissupport.cpp:38 mprissupport.cpp:121
+#, kde-format
 msgid "MPRIS Support"
 msgstr "MPRIS Unterstützung"
 
 #: mprissupport.cpp:43 mprissupport.cpp:122
+#, kde-format
 msgid "MPRIS Plugin"
 msgstr "MPRIS Plugin"
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Deine Namen"
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Deine Emails"
-

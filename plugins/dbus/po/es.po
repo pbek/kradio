@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: dbussupport.cpp:35 dbussupport.cpp:102
-#, fuzzy
+#, fuzzy, kde-format
 msgid "D-Bus Support"
 msgstr "Soporte DBus"
 
 #: dbussupport.cpp:41 dbussupport.cpp:103
-#, fuzzy
+#, fuzzy, kde-format
 msgid "D-Bus Plugin"
 msgstr "Plugin DBus"

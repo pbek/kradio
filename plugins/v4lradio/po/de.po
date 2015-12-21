@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.v4lradio.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2014-09-18 15:57+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -22,42 +22,49 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
 #: rc.cpp:3 rc.cpp:147
+#, kde-format
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: v4lradio-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
 #: rc.cpp:6 rc.cpp:150
+#, kde-format
 msgid "V4L Device"
 msgstr "V4L Gerät"
 
 #. i18n: file: v4lradio-configuration-ui.ui:36
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
 #: rc.cpp:9 rc.cpp:153
+#, kde-format
 msgid "Station scan step:"
 msgstr "Sendersuchschrittweite:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:56
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
 #: rc.cpp:12 rc.cpp:156
+#, kde-format
 msgid "Minimum signal quality:"
 msgstr "Mindest-Signalpegel:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
 #: rc.cpp:15 rc.cpp:159
+#, kde-format
 msgid "Unknown V4L device"
 msgstr "Unbekanntes V4L-Gerät"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:18 rc.cpp:162
+#, kde-format
 msgid "V4L version to use:"
 msgstr "Zu verwendende V4L-Version:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
 #: rc.cpp:21 rc.cpp:165
+#, kde-format
 msgid "Radio device:"
 msgstr "Radio Gerät:"
 
@@ -74,12 +81,14 @@ msgstr "Radio Gerät:"
 #. i18n: file: v4lradio-configuration-ui.ui:225
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
 #: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:168 rc.cpp:174 rc.cpp:183
+#, kde-format
 msgid " kHz"
 msgstr " kHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:144
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
 #: rc.cpp:27 rc.cpp:171
+#, kde-format
 msgid "Allowed frequency range:"
 msgstr "Erlaubter Frequenzbereich:"
 
@@ -92,24 +101,28 @@ msgstr "Erlaubter Frequenzbereich:"
 #. i18n: file: v4lradio-configuration-ui.ui:247
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
 #: rc.cpp:33 rc.cpp:42 rc.cpp:177 rc.cpp:186
+#, kde-format
 msgid "to"
 msgstr "bis"
 
 #. i18n: file: v4lradio-configuration-ui.ui:203
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
 #: rc.cpp:36 rc.cpp:180
+#, kde-format
 msgid "65 MHz"
 msgstr "65 kHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:260
 #. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
 #: rc.cpp:45 rc.cpp:189
+#, kde-format
 msgid "108 MHz"
 msgstr "108 MHz"
 
 #. i18n: file: v4lradio-configuration-ui.ui:272
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
 #: rc.cpp:48 rc.cpp:192
+#, kde-format
 msgid "Device frequency range:"
 msgstr "Erlaubter Geräte-Frequenzbereich:"
 
@@ -126,6 +139,7 @@ msgstr "Erlaubter Geräte-Frequenzbereich:"
 #. i18n: file: v4lradio-configuration-ui.ui:361
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
 #: rc.cpp:51 rc.cpp:57 rc.cpp:63 rc.cpp:195 rc.cpp:201 rc.cpp:207
+#, kde-format
 msgid ""
 "Probing V4L device capabilities requires opening the device. This might "
 "interfere with other application which might currently use the same "
@@ -134,11 +148,10 @@ msgid ""
 "might be that in the configuration dialog, you might not see the device "
 "description after startup but just the device pseudo file name."
 msgstr ""
-"Das "
-"Prüfen der Geräteeigenschaften eines V4L-Gerätes erfordert das Öffnen der "
-"Geräte-Spezialdatei. Dies kann zu Konflikten mit anderen Anwendungen führen, "
-"die die gleiche Hardware bzw. den gleichen Treiber gerade verwenden. Wenn "
-"Sie ein solches Problem haben, sollten die Überprüfung der "
+"Das Prüfen der Geräteeigenschaften eines V4L-Gerätes erfordert das Öffnen "
+"der Geräte-Spezialdatei. Dies kann zu Konflikten mit anderen Anwendungen "
+"führen, die die gleiche Hardware bzw. den gleichen Treiber gerade verwenden. "
+"Wenn Sie ein solches Problem haben, sollten die Überprüfung der "
 "Geräteeigenschaften nur beim Einschalten des Radios verwendet werden.Der "
 "einzige vernachlässigbare Nachteil ist dann, dass direkt nach dem Starten "
 "von KRadio im Konfigurationsdialog die Gerätebeschreibung fehlt und nur der "
@@ -147,48 +160,56 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:329
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:54 rc.cpp:198
+#, kde-format
 msgid "Device probing:"
 msgstr "Überprüfen der Geräteeigenschaften:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:354
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
 #: rc.cpp:60 rc.cpp:204
+#, kde-format
 msgid "At startup"
 msgstr "Beim Start von KRadio"
 
 #. i18n: file: v4lradio-configuration-ui.ui:364
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtPowerOn)
 #: rc.cpp:66 rc.cpp:210
+#, kde-format
 msgid "At power on"
 msgstr "Beim Einschalten"
 
 #. i18n: file: v4lradio-configuration-ui.ui:375
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
 #: rc.cpp:69 rc.cpp:213
+#, kde-format
 msgid "V4L1 API"
 msgstr "V4L1 API"
 
 #. i18n: file: v4lradio-configuration-ui.ui:382
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
 #: rc.cpp:72 rc.cpp:216
+#, kde-format
 msgid "V4L2 API"
 msgstr "V4L2 API"
 
 #. i18n: file: v4lradio-configuration-ui.ui:392
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
 #: rc.cpp:75 rc.cpp:219
+#, kde-format
 msgid "RDS"
 msgstr "RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:401
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
 #: rc.cpp:78 rc.cpp:222
+#, kde-format
 msgid "Force RDS enabled"
 msgstr "RDS-Verwendung erzwingen"
 
 #. i18n: file: v4lradio-configuration-ui.ui:414
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:81 rc.cpp:225
+#, kde-format
 msgid ""
 "<p><u>Note for RDS support:</u> if your card supports RDS and RDS is not "
 "working, please check if the <b>kernel module saa6588.ko</b> is loaded. For "
@@ -201,68 +222,76 @@ msgid ""
 "stations.</p>"
 msgstr ""
 "<p><u>Hinweis für die RDS-Unterstützung:</u> Falls die Radio-Karte RDS "
-"unterstützt und RDS nicht zu funktionieren "
-"scheint, empfiehlt es sich, zu überprüfen, ob das <b>Kernel-Modul saa6588.ko<"
-"/b> geladen ist. Dieses Modul wird "
-"üblicherweise <i>nicht</i> automatisch "
-"geladen, selbst wenn die Radio-Karte einen saa6588-Chip enthält. Falls der "
-"V4L/V4L2-Treiber RDS unterstützt, zeigt das Standard-Display das RDS-Symbol "
-"hervorgehoben/hell an (wie z.B. die AM/FM-Indikatoren). Der RDS-Radio-Text "
-"sollte im Standard-Display als Lauftext und in den Tool-Tipps des Tray-Icons "
-"sichtbar sein, die RDS-Sendernamen werden im Sendersuch-Dialog als Default-"
-"Sendernamen für neu gefundene Sender verwendet.</p>"
+"unterstützt und RDS nicht zu funktionieren scheint, empfiehlt es sich, zu "
+"überprüfen, ob das <b>Kernel-Modul saa6588.ko</b> geladen ist. Dieses Modul "
+"wird üblicherweise <i>nicht</i> automatisch geladen, selbst wenn die Radio-"
+"Karte einen saa6588-Chip enthält. Falls der V4L/V4L2-Treiber RDS "
+"unterstützt, zeigt das Standard-Display das RDS-Symbol hervorgehoben/hell an "
+"(wie z.B. die AM/FM-Indikatoren). Der RDS-Radio-Text sollte im Standard-"
+"Display als Lauftext und in den Tool-Tipps des Tray-Icons sichtbar sein, die "
+"RDS-Sendernamen werden im Sendersuch-Dialog als Default-Sendernamen für neu "
+"gefundene Sender verwendet.</p>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:451
 #. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
 #: rc.cpp:84 rc.cpp:228
+#, kde-format
 msgid "Sound Devices"
 msgstr "Audio-Geräte"
 
 #. i18n: file: v4lradio-configuration-ui.ui:467
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
 #: rc.cpp:87 rc.cpp:231
+#, kde-format
 msgid "test"
 msgstr "test"
 
 #. i18n: file: v4lradio-configuration-ui.ui:475
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:90 rc.cpp:234
+#, kde-format
 msgid "Playback mixer channel:"
 msgstr "Wiedergabe Mixerkanal:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:495
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
 #: rc.cpp:93 rc.cpp:237
+#, kde-format
 msgid "Capture mixer device:"
 msgstr "Aufnahme Mixer:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:538
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
 #: rc.cpp:96 rc.cpp:240
+#, kde-format
 msgid "Set playback channel volume to &zero at power off"
 msgstr "Wiedergabelautstärke beim Abschalten des Radios auf 0 setzen"
 
 #. i18n: file: v4lradio-configuration-ui.ui:551
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
 #: rc.cpp:99 rc.cpp:243
+#, kde-format
 msgid "Mute play&back channel at power off"
 msgstr "Wiedergabekanal beim Abschalten des Radios stummschalten"
 
 #. i18n: file: v4lradio-configuration-ui.ui:558
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
 #: rc.cpp:102 rc.cpp:246
+#, kde-format
 msgid "Capture mixer channel:"
 msgstr "Aufnahme Mixerkanal:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:568
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
 #: rc.cpp:105 rc.cpp:249
+#, kde-format
 msgid "Playback mixer device:"
 msgstr "Wiedergabe Mixer:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:592
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
 #: rc.cpp:108 rc.cpp:252
+#, kde-format
 msgid "PVR && Co"
 msgstr "PVR && Co"
 
@@ -275,6 +304,7 @@ msgstr "PVR && Co"
 #. i18n: file: v4lradio-configuration-ui.ui:610
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
 #: rc.cpp:111 rc.cpp:114 rc.cpp:255 rc.cpp:258
+#, kde-format
 msgid ""
 "<p><b>Active playback</b> is required when your radio card is not connected "
 "to your sound card via a cable to the line in jack. In this case, KRadio "
@@ -286,22 +316,21 @@ msgid ""
 "<i>/dev/video24</i> (or similar). For <b>PVR cards</b>, you therefore have "
 "to setup the <b>Streaming Plugin</b> properly, too.</p>"
 msgstr ""
-"<p><b>Die aktive Wiedergabe</b> wird benötigt, wenn "
-"die Radio-Karte nicht über ein Kabel zum Line-In-Eingang mit der Soundkarte "
-"verbunden ist. In diesem Fall muss KRadio die PCM-Daten von einem "
-"Aufnahmegerät (Pseudo-Sound-Device oder Radio-Device) aufzeichnen und an die "
-"Soundkarte senden. Daher muss, wenn die <b>Aktive Wiedergabe</b> "
-"eingeschaltet ist, ein passendes Aufnahme-Gerät "
-"und ein passendes Wiedergabegerät ausgewählt werden. Dies ist insbesondere "
-"dann wichtig für<b>PVR-Karten</b>, die "
-"üblicherweise die PCM-Daten über ein Gerät wie z.B. <i>/dev/video24</i> (oder "
-"ähnlich) bereitstellen. Für <b>PVR-Karten</i> muss daher auch das <b>"
-"Streaming-Plugin</b> geeignet konfiguriert "
-"werden.</p>"
+"<p><b>Die aktive Wiedergabe</b> wird benötigt, wenn die Radio-Karte nicht "
+"über ein Kabel zum Line-In-Eingang mit der Soundkarte verbunden ist. In "
+"diesem Fall muss KRadio die PCM-Daten von einem Aufnahmegerät (Pseudo-Sound-"
+"Device oder Radio-Device) aufzeichnen und an die Soundkarte senden. Daher "
+"muss, wenn die <b>Aktive Wiedergabe</b> eingeschaltet ist, ein passendes "
+"Aufnahme-Gerät und ein passendes Wiedergabegerät ausgewählt werden. Dies ist "
+"insbesondere dann wichtig für<b>PVR-Karten</b>, die üblicherweise die PCM-"
+"Daten über ein Gerät wie z.B. <i>/dev/video24</i> (oder ähnlich) "
+"bereitstellen. Für <b>PVR-Karten</i> muss daher auch das <b>Streaming-"
+"Plugin</b> geeignet konfiguriert werden.</p>"
 
 #. i18n: file: v4lradio-configuration-ui.ui:613
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
 #: rc.cpp:117 rc.cpp:261
+#, kde-format
 msgid "Use active pla&yback by capturing (use for PVR cards)"
 msgstr ""
 "Aktive &Wiedergabe verwenden (Aufgenommenes abspielen, bei Verwendung von "
@@ -310,6 +339,7 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:629
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
 #: rc.cpp:120 rc.cpp:264
+#, kde-format
 msgid "Mute playback of capture channel when active playback is running"
 msgstr ""
 "Wiedergabe des Aufnahme-Kanals bei der aktiven Wiedergabe stummschalten"
@@ -317,6 +347,7 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:649
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:123 rc.cpp:267
+#, kde-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -368,62 +399,74 @@ msgstr ""
 #. i18n: file: v4lradio-configuration-ui.ui:689
 #. i18n: ectx: attribute (title), widget (QWidget, V4LMixerControls)
 #: rc.cpp:130 rc.cpp:274
+#, kde-format
 msgid "V4L Mixer Controls"
 msgstr "V4L Mixersteuerung"
 
 #. i18n: file: v4lradio-configuration-ui.ui:706
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
 #: rc.cpp:133 rc.cpp:277
+#, kde-format
 msgid "Volume"
 msgstr "Lautstärke"
 
 #. i18n: file: v4lradio-configuration-ui.ui:782
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
 #: rc.cpp:136 rc.cpp:280
+#, kde-format
 msgid "Treble"
 msgstr "Höhen"
 
 #. i18n: file: v4lradio-configuration-ui.ui:858
 #. i18n: ectx: property (text), widget (QLabel, labelBass)
 #: rc.cpp:139 rc.cpp:283
+#, kde-format
 msgid "Bass"
 msgstr "Bässe"
 
 #. i18n: file: v4lradio-configuration-ui.ui:931
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
 #: rc.cpp:142 rc.cpp:286
+#, kde-format
 msgid "Balance"
 msgstr "Balance"
 
 #: rc.cpp:143
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Ernst Martin Witte"
 
 #: rc.cpp:144
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
 
 #: v4lradio-configuration.cpp:411
+#, kde-format
 msgid "Could not get device description."
 msgstr "Gerätebeschreibung konnte nicht ermittelt werden."
 
 #: v4lradio-configuration.cpp:416
+#, kde-format
 msgid "Device file does not exist or top level directories are not accessible."
 msgstr ""
 "Die Gerätedatei existiert nicht oder der Zugriff auf die übergeordneten "
 "Verzeichnisse ist nicht erlaubt."
 
 #: v4lradio-configuration.cpp:419
+#, kde-format
 msgid "You do not have read and write permissions for the device."
 msgstr "Der Lese/Schreibzugriff auf das Gerät ist nicht erlaubt."
 
 #: v4lradio-configuration.cpp:422
+#, kde-format
 msgid "You do not have read permissions for the device."
 msgstr "Der Lesezugriff auf das Gerät ist nicht erlaubt."
 
 #: v4lradio-configuration.cpp:425
+#, kde-format
 msgid "You do not have write permissions for the device."
 msgstr "Der Schreibzugriff auf das Gerät ist nicht erlaubt."
 
@@ -433,42 +476,47 @@ msgid "%1 kHz"
 msgstr "%1 kHz"
 
 #: v4lradio-configuration.cpp:555
+#, kde-format
 msgid "any ( * )"
 msgstr "Alle ( * )"
 
 #: v4lradio-configuration.cpp:559
+#, kde-format
 msgid "Select Radio Device"
 msgstr "Wählen Sie die Radio-Gerätedatei aus"
 
-#: v4lradio.cpp:65
+#: v4lradio.cpp:60
+#, kde-format
 msgid "Support for V4L(2) Radio Devices"
 msgstr "Unterstützung für V4L(2)-Radiogeräte"
 
-#: v4lradio.cpp:74
+#: v4lradio.cpp:69
+#, kde-format
 msgid "Video For Linux Plugin"
 msgstr "Video für Linux (V4L) Plugin"
 
-#: v4lradio.cpp:821
+#: v4lradio.cpp:816
 #, kde-format
 msgid "invalid frequency %1"
 msgstr "ungültige Frequenz: %1"
 
-#: v4lradio.cpp:847 v4lradio.cpp:1790 v4lradio.cpp:1986
+#: v4lradio.cpp:842 v4lradio.cpp:1785 v4lradio.cpp:1981
 #, kde-format
 msgid "do not known how to handle V4L version %1"
 msgstr "Keine Ahnung, wie die V4L-Version %1 behandelt werden soll"
 
-#: v4lradio.cpp:849 v4lradio.cpp:1792 v4lradio.cpp:1988
+#: v4lradio.cpp:844 v4lradio.cpp:1787 v4lradio.cpp:1983
 #, kde-format
 msgid "%1 Support: %2"
 msgstr "%1 Unterstützung: %2"
 
-#: v4lradio.cpp:855
+#: v4lradio.cpp:850
 #, kde-format
 msgid "error setting frequency to %1 (%2)"
 msgstr "Fehler (%2) beim Einstellen der Frequenz auf %1."
 
-#: v4lradio.cpp:1269
+#: v4lradio.cpp:1264
+#, kde-format
 msgid ""
 "You have selected V4L API Version 1. Starting with kernel 2.6.31, the "
 "support for V4L1 seems to be not working properly any more. I am now once "
@@ -479,7 +527,7 @@ msgstr ""
 "jetzt das V4L-API in Version 2. Wenn gewünscht, kann das V4L-API im "
 "Konfigurationsdialog später geändert werden."
 
-#: v4lradio.cpp:1283
+#: v4lradio.cpp:1278
 #, kde-format
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
@@ -488,124 +536,135 @@ msgstr ""
 "Das Gerät %1 existiert, ist aber nicht lesbar/schreibbar. Bitte überprüfen "
 "Sie die Einstellung der Zugriffsrechte für das Gerät."
 
-#: v4lradio.cpp:1290
+#: v4lradio.cpp:1285
 #, kde-format
 msgid "Could not find any radio device. Using the default path for now: %1"
 msgstr ""
 "Es konnte kein Radiogerät gefunden werden. Es wird standardmäßig der Pfad %1 "
 "verwendet."
 
-#: v4lradio.cpp:1299
+#: v4lradio.cpp:1294
+#, kde-format
 msgid "Could not find an accessible V4L(2) radio device."
 msgstr "Kann kein verwendbares V4L(2)-Radiogerät finden."
 
-#: v4lradio.cpp:1383
+#: v4lradio.cpp:1378
 #, kde-format
 msgid "%1 (insufficient permissions)"
 msgstr "%1 (unzureichende Zugriffsrechte)"
 
-#: v4lradio.cpp:1409
+#: v4lradio.cpp:1404
+#, kde-format
 msgid "V4L Radio"
 msgstr "V4L Radio"
 
-#: v4lradio.cpp:1410
+#: v4lradio.cpp:1405
+#, kde-format
 msgid "V4L Radio Options"
 msgstr "Optionen des V4L-Radios"
 
-#: v4lradio.cpp:1462
+#: v4lradio.cpp:1457
 #, kde-format
 msgid "Cannot open radio device %1"
 msgstr "Die Radiogerätedatei %1 kann nicht geöffnet werden"
 
-#: v4lradio.cpp:1522
+#: v4lradio.cpp:1517
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
 msgstr "V4L Plugin (V4L%1-Modus, ungültiges Gerät): %2"
 
-#: v4lradio.cpp:1529
+#: v4lradio.cpp:1524
 #, kde-format
 msgid "cannot open %1"
 msgstr "%1 kann nicht geöffnet werden"
 
-#: v4lradio.cpp:1539 v4lradio.cpp:1585
+#: v4lradio.cpp:1534 v4lradio.cpp:1580
 #, kde-format
 msgid "detected %1"
 msgstr "%1 wurde gefunden"
 
-#: v4lradio.cpp:1544 v4lradio.cpp:1591
+#: v4lradio.cpp:1539 v4lradio.cpp:1586
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
 msgstr "V4L Plugin (V4L%1-Modus): %2"
 
-#: v4lradio.cpp:1567
+#: v4lradio.cpp:1562
 #, kde-format
 msgid "audio caps = %1"
 msgstr "audio caps = %1"
 
-#: v4lradio.cpp:1607
+#: v4lradio.cpp:1602
+#, kde-format
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Die Abfrage des Stummschaltungs-Reglers schlug fehl"
 
-#: v4lradio.cpp:1615
+#: v4lradio.cpp:1610
+#, kde-format
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Die Abfrage des Lautstärke-Reglers schlug fehl"
 
-#: v4lradio.cpp:1624
+#: v4lradio.cpp:1619
+#, kde-format
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Die Abfrage des Höhen-Reglers schlug fehl"
 
-#: v4lradio.cpp:1633
+#: v4lradio.cpp:1628
+#, kde-format
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Die Abfrage des Bass-Reglers schlug fehl"
 
-#: v4lradio.cpp:1642
+#: v4lradio.cpp:1637
+#, kde-format
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Die Abfrage des Balance-Reglers schlug fehl"
 
-#: v4lradio.cpp:1645
+#: v4lradio.cpp:1640
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
 msgstr "V4L2 - Version: %1, caps=%2"
 
-#: v4lradio.cpp:1668
+#: v4lradio.cpp:1663
+#, kde-format
 msgid "V4L not detected"
 msgstr "Das Radiogerät unterstützt V4L nicht"
 
-#: v4lradio.cpp:1763
+#: v4lradio.cpp:1758
 #, kde-format
 msgid "V4L2 tuner reported range: %1 ... %2 MHz"
 msgstr "Frequenzbereich des V4L2-Tuners: %1 ... %2 MHz"
 
-#: v4lradio.cpp:1766
+#: v4lradio.cpp:1761
+#, kde-format
 msgid "Note: you might be running a kernel with a broken V4L2 radio API"
 msgstr ""
 "Hinweis: Es läuft wahrscheinlich ein Kernel mit einem defekten V4L2-Radio-API"
 
-#: v4lradio.cpp:1800
+#: v4lradio.cpp:1795
 #, kde-format
 msgid "cannot get tuner info (error %1)"
 msgstr "Tuner-Informationen können nicht gelesen werden (Fehler %1)"
 
-#: v4lradio.cpp:1993
+#: v4lradio.cpp:1988
 #, kde-format
 msgid "error updating radio audio info (write): %1"
 msgstr "Fehler beim Updaten der Audio-Informationen (Schreibzugriff): %1"
 
-#: v4lradio.cpp:1993
+#: v4lradio.cpp:1988
 #, kde-format
 msgid "error updating radio audio info (read): %1"
 msgstr "Fehler beim Updaten der Audio-Informationen (Lesezugriff): %1"
 
-#: v4lradio.cpp:2187
+#: v4lradio.cpp:2182
+#, kde-format
 msgid "error reading RDS data"
 msgstr "Fehler beim Lesen der RDS-Daten"
 
-#: v4lradio.cpp:2203
+#: v4lradio.cpp:2198
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: Blockfehlerrate: %1 %"
 
-#: v4lradio.cpp:2206
+#: v4lradio.cpp:2201
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: Gruppenfehlerrate (Gruppe ~4 Blocks): %1 %"

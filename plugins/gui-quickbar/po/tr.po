@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-03-02 22:51+0100\n"
+"POT-Creation-Date: 2015-12-21 21:40+0100\n"
 "PO-Revision-Date: 2011-02-06 05:09+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -19,18 +19,22 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: quickbar.cpp:48
+#, kde-format
 msgid "Radio Station Quick Selection Toolbar"
 msgstr "Radyo İstasyonu Hızlı Seçim Araç Çubuğu"
 
 #: quickbar.cpp:54
+#, kde-format
 msgid "Quickbar Plugin"
 msgstr "Hızlı bar Eklentisi"
 
 #: quickbar.cpp:143
+#, kde-format
 msgid "Quickbar"
 msgstr "Hızlı bar"
 
 #: quickbar.cpp:144
+#, kde-format
 msgid "Quickbar Configuration"
 msgstr "Hızlı bar Yapılandırma"
 
@@ -40,24 +44,28 @@ msgid "KRadio4 Quickbar, %1"
 msgstr "Hızlı bar"
 
 #: quickbar.cpp:370
-#, fuzzy
+#, fuzzy, kde-format
 msgid "KRadio4 Quickbar"
 msgstr "Hızlı bar"
 
 #: quickbar.cpp:378
+#, kde-format
 msgid "contentsDragEnterEvent accepted"
 msgstr ""
 
 #: quickbar.cpp:380
+#, kde-format
 msgid "contentsDragEnterEvent rejected"
 msgstr ""
 
 #: rc.cpp:1
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
 #: rc.cpp:2
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
