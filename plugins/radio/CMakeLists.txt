@@ -38,13 +38,6 @@ KDE4_ADD_PLUGIN(kradio4_plugin_radio
 
 string(REGEX REPLACE "-Wl,--no-undefined" "" CMAKE_MODULE_LINKER_FLAGS ${CMAKE_MODULE_LINKER_FLAGS})
 
-SET_TARGET_PROPERTIES(kradio4_plugin_radio
-    PROPERTIES
-    VERSION    ${KRADIO_VERSION}
-    SOVERSION  4
-
-)
-
 TARGET_LINK_LIBRARIES(kradio4_plugin_radio 
   ${KDE4_KDEUI_LIBS}
 )

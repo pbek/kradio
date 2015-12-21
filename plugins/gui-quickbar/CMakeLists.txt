@@ -36,13 +36,6 @@ kde4_add_plugin(kradio4_plugin_gui_quickbar
     ${kradio_plugin_gui_quickbar_sources}
 )
 
-SET_TARGET_PROPERTIES(kradio4_plugin_gui_quickbar
-    PROPERTIES
-    VERSION       ${KRADIO_VERSION}
-    SOVERSION     4
-
-)
-
 TARGET_LINK_LIBRARIES(kradio4_plugin_gui_quickbar
   ${KDE4_KDEUI_LIBS}
 )

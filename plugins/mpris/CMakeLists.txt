@@ -35,12 +35,6 @@ kde4_add_plugin(kradio4_plugin_mpris
     ${kradio_plugin_mpris_sources}
 )
 
-SET_TARGET_PROPERTIES(kradio4_plugin_mpris
-    PROPERTIES
-    VERSION       ${KRADIO_VERSION}
-    SOVERSION     4
-)
-
 TARGET_LINK_LIBRARIES(kradio4_plugin_mpris
   ${KDE4_KDEUI_LIBS}
 )

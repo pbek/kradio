@@ -36,12 +36,6 @@ kde4_add_plugin(kradio4_plugin_gui_standard_display
     ${kradio_plugin_gui_standard_display_sources}
 )
 
-SET_TARGET_PROPERTIES(kradio4_plugin_gui_standard_display
-    PROPERTIES
-    VERSION       ${KRADIO_VERSION}
-    SOVERSION     4
-)
-
 TARGET_LINK_LIBRARIES(kradio4_plugin_gui_standard_display
   ${KDE4_KDEUI_LIBS}
 )
