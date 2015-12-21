@@ -32,7 +32,7 @@
 #include <kapplication.h>
 #include <kglobal.h>
 #include <kglobalsettings.h>
-#include <kiconloader.h>
+#include <kicon.h>
 #include <klocalizedstring.h>
 #include <ktextbrowser.h>
 #include <ktitlewidget.h>

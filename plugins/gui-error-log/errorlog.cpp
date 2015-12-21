@@ -25,7 +25,7 @@
 
 #include <ktextedit.h>
 #include <klocalizedstring.h>
-#include <kiconloader.h>
+#include <kicon.h>
 #include <kfiledialog.h>
 #include <kurl.h>
 #include <ktemporaryfile.h>

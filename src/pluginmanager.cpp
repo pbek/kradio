@@ -27,7 +27,7 @@
 #include "stationselection_interfaces.h"
 
 
-#include <kiconloader.h>
+#include <kicon.h>
 #include <kpagedialog.h>
 #include <klocalizedstring.h>
 #include <kconfig.h>

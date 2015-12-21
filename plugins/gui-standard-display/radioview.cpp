@@ -27,7 +27,7 @@
 
 #include <kcmdlineargs.h>
 #include <kcombobox.h>
-#include <kiconloader.h>
+#include <kicon.h>
 #include <klocalizedstring.h>
 #include <kapplication.h>
 #include <kwindowsystem.h>
