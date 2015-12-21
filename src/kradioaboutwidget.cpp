@@ -33,7 +33,7 @@
 #include <kglobal.h>
 #include <kglobalsettings.h>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <ktextbrowser.h>
 #include <ktitlewidget.h>
 

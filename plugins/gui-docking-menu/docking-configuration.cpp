@@ -22,7 +22,7 @@
 #include <QtGui/QLayout>
 #include <QtGui/QFrame>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 using namespace std;
 

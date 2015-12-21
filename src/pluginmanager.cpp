@@ -29,7 +29,7 @@
 
 #include <kiconloader.h>
 #include <kpagedialog.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kconfig.h>
 #include <kprogressdialog.h>
 #include <kmenu.h>

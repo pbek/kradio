@@ -22,7 +22,7 @@
 #include <kwindowinfo.h>
 #include <QtGui/QWidget>
 #include <kconfiggroup.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kicon.h>
 
 WidgetPluginBase::WidgetPluginBase(QWidget *myself, const QString &instanceID, const QString &name, const QString &description)

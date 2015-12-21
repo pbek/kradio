@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kaboutdata.h>
 #include <QtCore/QFile>
 #include <sys/types.h>

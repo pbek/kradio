@@ -25,7 +25,7 @@
 #include <QtGui/QCheckBox>
 
 #include <kcombobox.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kconfiggroup.h>
 #include <kaboutdata.h>
 

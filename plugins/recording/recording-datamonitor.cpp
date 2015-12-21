@@ -26,7 +26,7 @@
 
 // #include <kimageeffect.h>  // fading, blending, ...
 // #include <kpixmapio.h>     // fast conversion between QPixmap/QImage
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include <limits.h>
 #include <stdlib.h>

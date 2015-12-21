@@ -20,7 +20,7 @@
 #include <kcolorbutton.h>
 #include <kcolordialog.h>
 #include <kfontdialog.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include <QtGui/QLayout>
 #include <QtGui/QGridLayout>

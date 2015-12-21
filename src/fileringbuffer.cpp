@@ -20,7 +20,7 @@
 #include <QtCore/QString>
 #include <QtCore/QFile>
 #include <unistd.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 FileRingBuffer::FileRingBuffer(const QString &filename, quint64 max_size)
 {

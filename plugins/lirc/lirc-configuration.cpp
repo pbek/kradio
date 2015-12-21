@@ -23,7 +23,7 @@ class QColorGroup;
 #include <QtGui/QWidget>
 
 #include <klistwidget.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kurlrequester.h>
 #include <kdemacros.h>
 

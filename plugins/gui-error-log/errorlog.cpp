@@ -24,7 +24,7 @@
 #include <QTextStream>
 
 #include <ktextedit.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kiconloader.h>
 #include <kfiledialog.h>
 #include <kurl.h>

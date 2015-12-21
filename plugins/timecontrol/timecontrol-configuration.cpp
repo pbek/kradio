@@ -27,7 +27,7 @@ using std::sort;
 #include <QtGui/QCheckBox>
 #include <QtGui/QPushButton>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include "stationlist.h"
 #include "alarm.h"

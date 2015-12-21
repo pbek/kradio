@@ -18,7 +18,7 @@
 #include "stream_input_buffer.h"
 #include "errorlog_interfaces.h"
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include <stdio.h>
 

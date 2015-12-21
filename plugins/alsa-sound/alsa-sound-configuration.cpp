@@ -25,7 +25,7 @@
 #include <klineedit.h>
 #include <kcombobox.h>
 #include <ktabwidget.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include "alsa-mixer-element.h"
 #include "alsa-sound-configuration.h"

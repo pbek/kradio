@@ -22,7 +22,7 @@
 // #include <QtGui/QAccel>
 
 #include <kiconloader.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kicon.h>
 
 #include "radioview_frequencyseeker.h"

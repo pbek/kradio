@@ -21,7 +21,7 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QDateTime>
 #include <QtCore/QFile>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 RecordingEncodingMP3::RecordingEncodingMP3(QObject *parent,            SoundStreamID ssid,
                                            const RecordingConfig &cfg, const RadioStation *rs,

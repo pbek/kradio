@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kuser.h>
 
 #include "utils.h"

@@ -19,6 +19,7 @@
 #include <typeinfo>
 #include "radiostation-config.h"
 #include <klocale.h>
+#include <klocalizedstring.h>
 #include <kglobal.h>
 
 /////////////////////////////////////////////////////////////////////////////

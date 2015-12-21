@@ -19,7 +19,7 @@
 #include "errorlog_interfaces.h"
 #include <QDataStream>
 #include <QMimeData>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #define STATION_LIST_MIME_TYPE "multimedia/kradio-stationids"
 

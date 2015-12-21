@@ -28,7 +28,7 @@
 
 #include <kfiledialog.h>
 #include <knuminput.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include "utils.h"
 #include "gui_list_helper.h"

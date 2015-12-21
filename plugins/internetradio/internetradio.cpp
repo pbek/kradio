@@ -20,7 +20,7 @@
 #include <kconfiggroup.h>
 #include <kiconloader.h>
 #include <kaboutdata.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include <unistd.h>
 

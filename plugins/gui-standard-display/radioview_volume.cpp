@@ -21,7 +21,7 @@
 #include <QtGui/QToolTip>
 // #include <QtGui/QAccel>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include "radioview_volume.h"
 #include "pluginbase.h"

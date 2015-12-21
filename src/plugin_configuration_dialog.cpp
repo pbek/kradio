@@ -17,7 +17,7 @@
 
 #include "plugin_configuration_dialog.h"
 #include <kconfig.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <QtGui/QLayout>
 
 PluginConfigurationDialog::PluginConfigurationDialog(

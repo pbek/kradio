@@ -30,7 +30,7 @@
 
 #include <kconfig.h>
 #include <kdeversion.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 RecordingEncoding::RecordingEncoding(QObject *parent,            SoundStreamID ssid,
                                      const RecordingConfig &cfg, const RadioStation *rs,

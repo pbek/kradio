@@ -19,7 +19,7 @@
 
 #include <QtCore/QFile>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 RecordingEncodingPCM::RecordingEncodingPCM(QObject *parent,            SoundStreamID ssid,
                                            const RecordingConfig &cfg, const RadioStation *rs,

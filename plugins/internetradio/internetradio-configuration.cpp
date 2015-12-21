@@ -29,7 +29,7 @@
 
 #include <kfiledialog.h>
 #include <knuminput.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <ktabwidget.h>
 
 #include "utils.h"

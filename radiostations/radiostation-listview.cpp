@@ -20,7 +20,7 @@
 #include "radiostation.h"
 #include "station-drag-object.h"
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <QtCore/QDataStream>
 #include <QtGui/QImage>
 #include <QtGui/QPixmap>

@@ -18,7 +18,7 @@
 #include "errorlog_interfaces.h"
 
 #include <kdebug.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <QtCore/QDateTime>
 
 IErrorLog *staticLogger = NULL;

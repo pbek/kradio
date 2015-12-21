@@ -26,7 +26,7 @@
 //#include <ktoolbarbutton.h>
 #include <kwindowinfo.h>
 #include <kwindowsystem.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kglobal.h>
 #include <kconfiggroup.h>
 #include <kaboutdata.h>

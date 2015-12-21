@@ -23,7 +23,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QMap>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 /**
   *@author Martin Witte, Klas Kalass

@@ -19,7 +19,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QSpinBox>
 #include <QtGui/QLayout>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kurlrequester.h>
 #include <kcombobox.h>
 

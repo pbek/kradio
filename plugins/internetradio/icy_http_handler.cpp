@@ -17,7 +17,7 @@
 
 
 #include <kio/global.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kio/slaveconfig.h>
 
 #include <QtCore/QTextCodec>

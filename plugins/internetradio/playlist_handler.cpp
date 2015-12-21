@@ -18,10 +18,11 @@
 #include "playlist_handler.h"
 #include <errorlog_interfaces.h>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <ktemporaryfile.h>
 #include <kencodingprober.h>
 #include <kconfiggroup.h>
+#include <kconfig.h>
 #include <QtCore/QXmlStreamReader>
 #include <QtCore/QTextCodec>
 

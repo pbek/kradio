@@ -18,7 +18,7 @@
 #include "soundserver.h"
 
 #include <kapplication.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 
 ///////////////////////////////////////////////////////////////////////

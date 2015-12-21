@@ -23,7 +23,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include <math.h>
 

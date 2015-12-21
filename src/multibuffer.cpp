@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include "multibuffer.h"
 

@@ -21,7 +21,7 @@
 using namespace std;
 
 #include <kconfig.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kdebug.h>
 #include <QtCore/QString>
 #define __USE_ISOC99 1

@@ -20,7 +20,7 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QTextCodec>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <stdlib.h>
 
 

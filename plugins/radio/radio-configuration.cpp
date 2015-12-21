@@ -45,7 +45,7 @@
 #include <kstandarddirs.h>
 #include <kurllabel.h>
 #include <kurlrequester.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kmenu.h>
 #include <kdemacros.h>
 #include <ktoolinvocation.h>

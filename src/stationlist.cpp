@@ -27,7 +27,7 @@
 #include <QtGui/QMessageBox>
 #include <kio/netaccess.h>
 #include <ktemporaryfile.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 //////////////////////////////////////////////////////////////////////////////
 

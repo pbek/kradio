@@ -18,7 +18,7 @@
 #include "oss-sound.h"
 
 #include "../../src/include/aboutwidget.h"
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kaboutdata.h>
 #include <sys/types.h>
 #include <sys/stat.h>

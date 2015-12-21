@@ -2,7 +2,7 @@
 #include <QtCore/QString>
 #include <QtCore/QTextStream>
 #include <QtCore/QFile>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kdebug.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>

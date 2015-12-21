@@ -17,7 +17,7 @@
 
 #include <kmessagebox.h>
 #include <kaboutdata.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <klibloader.h>
 #include <kconfig.h>
 #include <ksharedconfig.h>

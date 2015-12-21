@@ -23,7 +23,7 @@
 #include <kcombobox.h>
 #include <knuminput.h>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include "streaming-configuration.h"
 #include "streaming.h"
