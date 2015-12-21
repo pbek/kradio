@@ -32,6 +32,20 @@
 #define METADATA_MAX_SIZE       (1024 * 1024)
 
 
+static char char2hex(unsigned char c)
+{
+    return c <= 9 ? '0' + c : 'A' + c - 10;
+}
+
+
+static void int2chars(char x, char *res)
+{
+    res[0] = char2hex(x / 16);
+    res[1] = char2hex(x % 16);
+
+}
+
+
 IcyHttpHandler::IcyHttpHandler()
   : m_httpHeaderAnalyzed      (false),
     m_ICYMetaInt              (0),
@@ -289,11 +303,18 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
             // enforce deep copy
             QString metaString(tmpString.constData(), tmpString.size());
 
-            QString charcode = "";
+            QByteArray charcode;
+            charcode.reserve(metaString.length() * 3);
             for (int i = 0; i < metaString.length(); ++i) {
-                charcode += QString::number(metaString[i].toAscii(), 16) + " ";
+                char hex[3];
+                int2chars(metaString[i].toAscii(), hex);
+                hex[2] = ' ';
+                charcode += QByteArray::fromRawData(hex, 3);
             }
-            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1 (len %2), %3").arg(metaString).arg(metaString.length()).arg(charcode));
+            if (!charcode.isEmpty()) {
+                charcode[charcode.length() - 1] = '\0';
+            }
+            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1 (len %2), %3").arg(metaString).arg(metaString.length()).arg(charcode.constData()));
 
             // parse meta data
             QMap<QString, QString>  metaData;
