@@ -21,7 +21,6 @@
 #include <QtGui/QToolButton>
 // #include <QtGui/QAccel>
 
-#include <kiconloader.h>
 #include <klocalizedstring.h>
 #include <kicon.h>
 
