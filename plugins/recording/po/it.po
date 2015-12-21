@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-21 21:40+0100\n"
-"PO-Revision-Date: 2014-03-03 00:30+0100\n"
+"PO-Revision-Date: 2015-12-21 21:52+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -302,10 +302,10 @@ msgstr "11025"
 #. i18n: file: recording-configuration-ui.ui:356
 #. i18n: ectx: property (text), widget (QLabel, lableEndianness)
 #: rc.cpp:71 rc.cpp:201
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Endianess:"
 msgid "Endianness:"
-msgstr "Endianess:"
+msgstr "Ordine dei byte:"
 
 #. i18n: file: recording-configuration-ui.ui:389
 #. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
