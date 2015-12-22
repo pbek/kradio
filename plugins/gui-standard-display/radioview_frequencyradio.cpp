@@ -26,6 +26,7 @@
 #include <math.h>
 
 #include <kconfiggroup.h>
+#include <kglobal.h>
 
 #ifdef KRADIO_ENABLE_FIXMES
     #warning "FIXME: port kimageeffect stuff"

@@ -28,6 +28,7 @@
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
 #include <kaboutdata.h>
+#include <kglobal.h>
 
 RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &name)
   : QWidget(NULL),
