@@ -37,8 +37,6 @@ kde4_add_plugin(kradio4_plugin_streaming
 
 TARGET_LINK_LIBRARIES(kradio4_plugin_streaming
   ${KDE4_KDEUI_LIBS}
-  ${QT_QT3SUPPORT_LIBRARY}
-  ${KDE4_KDE3SUPPORT_LIBRARY}
 )
 
 INSTALL(TARGETS kradio4_plugin_streaming ${INSTALL_TARGETS_DEFAULT_ARGS})
