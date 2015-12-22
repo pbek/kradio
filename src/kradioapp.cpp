@@ -24,6 +24,8 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
+#include <kglobal.h>
+#include <klocale.h>
 
 // #include <kprogress.h>
 
@@ -89,52 +91,43 @@
 //// PluginLibraryInfo
 
 PluginLibraryInfo::PluginLibraryInfo (const PluginLibraryInfo &libinfo)
- : library(libinfo.library.fileName()),
-   init_func(libinfo.init_func),
-   info_func(libinfo.info_func),
-   libload_func(libinfo.libload_func),
-   libunload_func(libinfo.libunload_func)
+ : factory(libinfo.factory),
+   plugins(libinfo.plugins),
+   errorString(libinfo.errorString)
 {
 }
 
 
 PluginLibraryInfo &PluginLibraryInfo::operator = (const PluginLibraryInfo &libinfo)
  {
-    library.setFileName(libinfo.library.fileName());
-    init_func      = libinfo.init_func;
-    info_func      = libinfo.info_func;
-    libload_func   = libinfo.libload_func;
-    libunload_func = libinfo.libunload_func;
+    factory = libinfo.factory;
+    plugins = libinfo.plugins;
+    errorString = libinfo.errorString;
     return *this;
 }
 
 
 PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
- : library(lib_name),
-   init_func(NULL),
-   info_func(NULL),
-   libload_func(NULL),
-   libunload_func(NULL)
+ : factory(NULL)
 {
-    if (library.load()) {
-        info_func      = (t_kradio_plugin_info_func)     library.resolveSymbol("KRadioPlugin_GetAvailablePlugins");
-        init_func      = (t_kradio_plugin_init_func)     library.resolveSymbol("KRadioPlugin_CreatePlugin");
-        libload_func   = (t_kradio_plugin_libload_func)  library.resolveSymbol("KRadioPlugin_LoadLibrary");
-        libunload_func = (t_kradio_plugin_libunload_func)library.resolveSymbol("KRadioPlugin_UnloadLibrary");
-        if (info_func && init_func && libload_func && libunload_func) {
-            libload_func();
-            info_func(plugins);
+    QPluginLoader loader(lib_name);
+    if (loader.load()) {
+        factory = qobject_cast<KRadioPluginFactoryBase *>(loader.instance());
+        if (factory) {
+            foreach (const KAboutData &about, factory->components()) {
+                KGlobal::locale()->insertCatalog(about.catalogName());
+                plugins.insert(about.appName(), about.shortDescription());
+            }
         } else {
             KMessageBox::error(NULL,
                                i18n("Library %1: plugin entry point is missing", lib_name),
                                i18n("Plugin Library Load Error"));
-            library.unload();
-            info_func = NULL;
-            init_func = NULL;
+            loader.unload();
         }
     } else {
+        errorString = loader.errorString();
             KMessageBox::error(NULL,
-                               i18n("Library %1:\n%2", lib_name,  library.errorString()),
+                               i18n("Library %1:\n%2", lib_name, errorString),
                                i18n("Plugin Library Load Error"));
     }
 }
@@ -307,11 +300,11 @@ void KRadioApp::LoadLibrary (const QString &library)
         m_PluginLibraries.insert(library, libinfo);
         QMap<QString,QString>::const_iterator end = libinfo.plugins.end();
         for (QMap<QString,QString>::const_iterator it = libinfo.plugins.begin(); it != end; ++it) {
-            m_PluginInfos.insert(it.key(), PluginClassInfo (it.key(), *it, libinfo.init_func));
+            m_PluginInfos.insert(it.key(), PluginClassInfo (it.key(), *it, libinfo.factory));
         }
     } else {
         kDebug()  << QDateTime::currentDateTime().toString(Qt::ISODate)
-                  << " Error: Loading Library" << library << "failed:" << libinfo.library.errorString();
+                  << " Error: Loading Library" << library << "failed:" << libinfo.errorString;
     }
 
     for (QMap<QString, PluginManager*>::iterator it_managers = m_Instances.begin(); it_managers != m_Instances.end(); ++it_managers) {
@@ -337,9 +330,6 @@ void KRadioApp::UnloadLibrary (const QString &library)
         m_PluginInfos.remove(it_classes.key());
     }
     m_PluginLibraries.remove(library);
-
-    info.libunload_func();
-    info.library.unload();
 
     for (QMap<QString, PluginManager*>::iterator it_managers = m_Instances.begin(); it_managers != m_Instances.end(); ++it_managers) {
         it_managers.value()->noticeLibrariesChanged();

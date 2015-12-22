@@ -43,8 +43,8 @@
 //// plugin library functions
 
 PLUGIN_LIBRARY_FUNCTIONS2(
-    Recording,        PROJECT_NAME, i18n("KRadio Recording Plugin"),
-    RecordingMonitor,               i18n("KRadio Recording Monitor")
+    Recording,        PROJECT_NAME, ki18n("KRadio Recording Plugin"),
+    RecordingMonitor,               ki18n("KRadio Recording Monitor")
 );
 
 ///////////////////////////////////////////////////////////////////////

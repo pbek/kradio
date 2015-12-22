@@ -57,7 +57,7 @@ struct _lrvol { unsigned char l, r; short dummy; };
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(V4LRadio, PROJECT_NAME, i18n("Support for V4L(2) Radio Devices"));
+PLUGIN_LIBRARY_FUNCTIONS(V4LRadio, PROJECT_NAME, ki18n("Support for V4L(2) Radio Devices"));
 
 ///////////////////////////////////////////////////////////////////////
 

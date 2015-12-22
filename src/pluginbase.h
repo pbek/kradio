@@ -20,13 +20,13 @@
 #ifndef KRADIO_PLUGINS_INTERFACES_H
 #define KRADIO_PLUGINS_INTERFACES_H
 
-#include <kglobal.h>
-#include <klocale.h>
+#include <kaboutdata.h>
 
 #include "errorlog_interfaces.h"
 #include <QtCore/QString>
 #include <QtCore/QObject>
 #include <QtCore/QList>
+#include <QtCore/QtPlugin>
 
 #include <kconfiggroup.h>
 
@@ -138,59 +138,67 @@ protected :
 };
 
 
+class KDE_EXPORT KRadioPluginFactoryBase : public QObject
+{
+Q_OBJECT
+public:
+    KRadioPluginFactoryBase();
+    virtual ~KRadioPluginFactoryBase();
+
+    QList<KAboutData> components() const;
+    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) = 0;
+
+protected:
+    void registerComponent(const QByteArray &className, const QByteArray &catalogName, const KLocalizedString &description);
+
+private:
+    QList<KAboutData> m_components;
+};
+
+
 #define PLUGIN_LIBRARY_FUNCTIONS(class_name, i18nName, description) \
-extern "C" KDE_EXPORT void KRadioPlugin_LoadLibrary() \
-{                                                                 \
-    KGlobal::locale()->insertCatalog(i18nName);                   \
-}                                                                 \
-                                                                  \
-extern "C" KDE_EXPORT void KRadioPlugin_UnloadLibrary() \
-{                                                                 \
-    KGlobal::locale()->removeCatalog(i18nName);                   \
-}                                                                 \
-                                                                  \
-extern "C" KDE_EXPORT void KRadioPlugin_GetAvailablePlugins(QMap<QString, QString> &info) \
-{                                                                 \
-    info.insert(#class_name, (description));                      \
-}                                                                 \
-                                                                  \
-extern "C" KDE_EXPORT PluginBase *KRadioPlugin_CreatePlugin(const QString &type, const QString &instanceID, const QString &object_name) \
-{                                                                                    \
-    if (type == #class_name) {                                                       \
-        return new class_name(instanceID, object_name);                                          \
-    } else {                                                                         \
-        return NULL;                                                                 \
-    }                                                                                \
-}
+class class_name ## PluginFactory : public KRadioPluginFactoryBase  \
+{                                                                   \
+public:                                                             \
+    class_name ## PluginFactory()                                   \
+    {                                                               \
+        registerComponent(#class_name, i18nName, description);      \
+    }                                                               \
+                                                                    \
+    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) \
+    {                                                               \
+        if (type == QLatin1String(#class_name)) {                   \
+            return new class_name(instanceID, object_name);         \
+        } else {                                                    \
+            return NULL;                                            \
+        }                                                           \
+    }                                                               \
+};                                                                  \
+Q_EXPORT_PLUGIN(class_name ## PluginFactory)
 
 
 #define PLUGIN_LIBRARY_FUNCTIONS2(class_name1, i18nName, description1, class_name2, description2) \
-extern "C" KDE_EXPORT void KRadioPlugin_LoadLibrary() \
-{                                                                 \
-    KGlobal::locale()->insertCatalog(i18nName);                   \
-}                                                                 \
-                                                                  \
-extern "C" KDE_EXPORT void KRadioPlugin_UnloadLibrary() \
-{                                                                 \
-    KGlobal::locale()->removeCatalog(i18nName);                   \
-}                                                                 \
-                                                                  \
-extern "C" KDE_EXPORT void KRadioPlugin_GetAvailablePlugins(QMap<QString, QString> &info) \
-{                                                                 \
-    info.insert(#class_name1, (description1));                    \
-    info.insert(#class_name2, (description2));                    \
-}                                                                 \
-                                                                  \
-extern "C" KDE_EXPORT PluginBase *KRadioPlugin_CreatePlugin(const QString &type, const QString &instanceID, const QString &object_name) \
-{                                                                                       \
-    if (type == #class_name1) {                                                         \
-        return new class_name1(instanceID, object_name);                                            \
-    } else if (type == #class_name2) {                                                  \
-        return new class_name2(instanceID, object_name);                                            \
-    } else {                                                                            \
-        return NULL;                                                                    \
-    }                                                                                   \
-}
+class class_name1 ## PluginFactory : public KRadioPluginFactoryBase  \
+{                                                                    \
+public:                                                              \
+    class_name1 ## PluginFactory()                                   \
+    {                                                                \
+        registerComponent(#class_name1, i18nName, description1);     \
+        registerComponent(#class_name2, i18nName, description2);     \
+    }                                                                \
+                                                                     \
+    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) \
+    {                                                                \
+        if (type == QLatin1String(#class_name1)) {                   \
+            return new class_name1(instanceID, object_name);         \
+        } else if (type == QLatin1String(#class_name2)) {            \
+            return new class_name2(instanceID, object_name);         \
+        } else {                                                     \
+            return NULL;                                             \
+        }                                                            \
+    }                                                                \
+};                                                                   \
+Q_EXPORT_PLUGIN(class_name1 ## PluginFactory)
 
 
 #endif

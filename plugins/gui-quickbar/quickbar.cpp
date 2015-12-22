@@ -45,7 +45,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(QuickBar, PROJECT_NAME, i18n("Radio Station Quick Selection Toolbar"));
+PLUGIN_LIBRARY_FUNCTIONS(QuickBar, PROJECT_NAME, ki18n("Radio Station Quick Selection Toolbar"));
 
 /////////////////////////////////////////////////////////////////////////////
 

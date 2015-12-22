@@ -22,7 +22,6 @@
 
 #include <kconfig.h>
 #include <kapplication.h>
-#include <klibrary.h>
 
 //#include <kaboutapplication.h>
 #include "pluginbase.h"
@@ -47,26 +46,16 @@ class PluginManager;
 
 
 
-typedef  PluginBase     *(*t_kradio_plugin_init_func)(const QString & cls, const QString &instanceID, const QString &obj);
-typedef  void            (*t_kradio_plugin_info_func)(QMap<QString, QString> &);
-typedef  void            (*t_kradio_plugin_libload_func)();
-typedef  void            (*t_kradio_plugin_libunload_func)();
-#ifdef KRADIO_ENABLE_FIXMES
-    #warning "FIXME: switch to KPluginFactory stuff"
-#endif
 struct PluginLibraryInfo {
-    KLibrary                       library;
+    KRadioPluginFactoryBase       *factory;
     QMap<QString,QString>          plugins;
-    t_kradio_plugin_init_func      init_func;
-    t_kradio_plugin_info_func      info_func;
-    t_kradio_plugin_libload_func   libload_func;
-    t_kradio_plugin_libunload_func libunload_func;
+    QString                        errorString;
 
-    PluginLibraryInfo() : library(NULL), init_func(NULL), info_func(NULL), libload_func(NULL), libunload_func(NULL) {}
+    PluginLibraryInfo() : factory(NULL) {}
     PluginLibraryInfo(const QString &libname);
     PluginLibraryInfo (const PluginLibraryInfo &);
     PluginLibraryInfo &operator = (const PluginLibraryInfo &);
-    bool valid() { return init_func && info_func && library.isLoaded() && libload_func && libunload_func; }
+    bool valid() { return factory; }
 
 private:
     // disable copy constructor
@@ -76,12 +65,12 @@ private:
 struct PluginClassInfo {
     QString                    class_name;
     QString                    description;
-    t_kradio_plugin_init_func  create_function;
+    KRadioPluginFactoryBase   *factory;
 
-    PluginClassInfo() : create_function(NULL) {}
-    PluginClassInfo(const QString &_name, const QString &descr, t_kradio_plugin_init_func init_func)
-        : class_name(_name), description(descr), create_function(init_func) {}
-    PluginBase *CreateInstance(const QString &instanceID, const QString &obj_name) { return create_function ? create_function(class_name, instanceID, obj_name) : NULL; }
+    PluginClassInfo() : factory(NULL) {}
+    PluginClassInfo(const QString &_name, const QString &descr, KRadioPluginFactoryBase *f)
+        : class_name(_name), description(descr), factory(f) {}
+    PluginBase *CreateInstance(const QString &instanceID, const QString &obj_name) { return factory ? factory->create(class_name, instanceID, obj_name) : NULL; }
 };
 
 

@@ -41,7 +41,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(AlsaSoundDevice, PROJECT_NAME, i18n("Advanced Linux Sound Architecture (ALSA) Support"));
+PLUGIN_LIBRARY_FUNCTIONS(AlsaSoundDevice, PROJECT_NAME, ki18n("Advanced Linux Sound Architecture (ALSA) Support"));
 
 /////////////////////////////////////////////////////////////////////////////
 

@@ -38,7 +38,7 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(InternetRadio, PROJECT_NAME, i18n("Pseudo radio device for Internet radio stream support"));
+PLUGIN_LIBRARY_FUNCTIONS(InternetRadio, PROJECT_NAME, ki18n("Pseudo radio device for Internet radio stream support"));
 
 ///////////////////////////////////////////////////////////////////////
 

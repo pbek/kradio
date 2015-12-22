@@ -47,7 +47,7 @@
 //// plugin library functions
 
 //#ifdef HAVE_LIRC
-PLUGIN_LIBRARY_FUNCTIONS(LircSupport, PROJECT_NAME, i18n("Linux Infrared Control (LIRC) Support"));
+PLUGIN_LIBRARY_FUNCTIONS(LircSupport, PROJECT_NAME, ki18n("Linux Infrared Control (LIRC) Support"));
 //#endif
 
 /////////////////////////////////////////////////////////////////////////////

@@ -24,7 +24,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(SoundServer, PROJECT_NAME, i18n("KRadio internal sound server"));
+PLUGIN_LIBRARY_FUNCTIONS(SoundServer, PROJECT_NAME, ki18n("KRadio internal sound server"));
 
 /////////////////////////////////////////////////////////////////////////////
 

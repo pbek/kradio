@@ -32,7 +32,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(Radio, PROJECT_NAME, i18n("Central Radio Device Multiplexer"));
+PLUGIN_LIBRARY_FUNCTIONS(Radio, PROJECT_NAME, ki18n("Central Radio Device Multiplexer"));
 
 /////////////////////////////////////////////////////////////////////////////
 

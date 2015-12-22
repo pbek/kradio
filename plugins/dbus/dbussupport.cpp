@@ -32,7 +32,7 @@
 //// plugin library functions
 
 //#ifdef HAVE_LIRC
-PLUGIN_LIBRARY_FUNCTIONS(DBusSupport, PROJECT_NAME, i18n("D-Bus Support"));
+PLUGIN_LIBRARY_FUNCTIONS(DBusSupport, PROJECT_NAME, ki18n("D-Bus Support"));
 //#endif
 
 /////////////////////////////////////////////////////////////////////////////

@@ -42,7 +42,7 @@ const char *AlarmRecordingTemplateElement = "recordingTemplate";
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(TimeControl, PROJECT_NAME, i18n("Time Control and Alarm Functions"));
+PLUGIN_LIBRARY_FUNCTIONS(TimeControl, PROJECT_NAME, ki18n("Time Control and Alarm Functions"));
 
 ///////////////////////////////////////////////////////////////////////
 

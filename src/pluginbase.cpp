@@ -108,3 +108,27 @@ void   PluginBase::startPlugin()
 void   PluginBase::aboutToQuit()
 {
 }
+
+
+KRadioPluginFactoryBase::KRadioPluginFactoryBase()
+{
+}
+
+
+KRadioPluginFactoryBase::~KRadioPluginFactoryBase()
+{
+}
+
+
+QList<KAboutData> KRadioPluginFactoryBase::components() const
+{
+    return m_components;
+}
+
+
+void KRadioPluginFactoryBase::registerComponent(const QByteArray &className, const QByteArray &catalogName, const KLocalizedString &description)
+{
+    KAboutData about(className, catalogName, KLocalizedString(), QByteArray());
+    about.setShortDescription(description);
+    m_components.append(about);
+}

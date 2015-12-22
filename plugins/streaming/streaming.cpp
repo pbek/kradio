@@ -29,7 +29,7 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(StreamingDevice, PROJECT_NAME, i18n("Streaming Support"));
+PLUGIN_LIBRARY_FUNCTIONS(StreamingDevice, PROJECT_NAME, ki18n("Streaming Support"));
 
 /////////////////////////////////////////////////////////////////////////////
 
