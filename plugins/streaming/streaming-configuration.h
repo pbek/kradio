@@ -18,10 +18,11 @@
 #ifndef KRADIO_STREAMING_CONFIGURATION_H
 #define KRADIO_STREAMING_CONFIGURATION_H
 
-class QColorGroup;
 #include "ui_streaming-configuration-ui.h"
 #include "streaming.h"
 
+
+#include <QAbstractItemModel>
 
 
 #define RATE_48000_IDX      0
@@ -43,6 +44,43 @@ class QColorGroup;
 #define ENDIAN_BIG_IDX      1
 
 #define FORMAT_RAW_IDX      0
+
+
+class StreamingConfigurationModel : public QAbstractItemModel
+{
+Q_OBJECT
+public:
+    enum MoveDirection { MoveUp, MoveDown };
+    enum { DeviceRole = Qt::UserRole + 100, SoundFormatRole, BufferSizeRole };
+
+    StreamingConfigurationModel(QObject *parent = 0);
+    ~StreamingConfigurationModel();
+
+    virtual int columnCount(const QModelIndex &parent = QModelIndex()) const;
+    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+    virtual Qt::ItemFlags flags(const QModelIndex &index) const;
+    virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+    virtual QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const;
+    virtual QModelIndex parent(const QModelIndex &index) const;
+    virtual bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
+    virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
+    virtual bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
+
+    void clear();
+    QModelIndex addDevice(const QString &device, const SoundFormat &format, int bufferSize);
+    void moveRow(int row, MoveDirection dir);
+    void editIndex(const QModelIndex &index, const SoundFormat &format, int bufferSize);
+
+private:
+    struct Data
+    {
+        QString device;
+        SoundFormat format;
+        int bufferSize;
+    };
+
+    QVector<Data> m_data;
+};
 
 
 class StreamingConfiguration : public QWidget,
@@ -78,14 +116,16 @@ protected slots:
     void slotUpdateSoundFormat();
     void slotSetDirty();
 
+    void slotTabChanged(int);
+
 protected:
 
     void setStreamOptions(const SoundFormat &sf, int BufferSize);
     void getStreamOptions(SoundFormat &sf, int &BufferSize) const ;
 
 
-    QList<SoundFormat>      m_PlaybackSoundFormats, m_CaptureSoundFormats;
-    QList<int>              m_PlaybackBufferSizes,  m_CaptureBufferSizes;
+    StreamingConfigurationModel *m_PlaybackModel;
+    StreamingConfigurationModel *m_CaptureModel;
 
     bool                    m_ignore_updates;
     bool                    m_dirty;

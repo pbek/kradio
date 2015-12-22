@@ -19,7 +19,6 @@
 
 #include <kurlrequester.h>
 #include <knuminput.h>
-#include <k3listview.h>
 #include <kcombobox.h>
 #include <knuminput.h>
 
@@ -27,6 +26,172 @@
 
 #include "streaming-configuration.h"
 #include "streaming.h"
+
+Q_DECLARE_METATYPE(SoundFormat)
+
+StreamingConfigurationModel::StreamingConfigurationModel(QObject *parent)
+ : QAbstractItemModel(parent)
+{
+}
+
+
+StreamingConfigurationModel::~StreamingConfigurationModel()
+{
+}
+
+
+int StreamingConfigurationModel::columnCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : 1;
+}
+
+
+QVariant StreamingConfigurationModel::data(const QModelIndex &index, int role) const
+{
+    if (!index.isValid() || index.row() < 0 || index.row() >= m_data.count() || index.column() != 0) {
+        return QVariant();
+    }
+
+    const Data &d = m_data.at(index.row());
+    switch (role) {
+    case Qt::DisplayRole:
+    case Qt::EditRole:
+    case DeviceRole:
+        return d.device;
+    case SoundFormatRole:
+        return QVariant::fromValue(d.format);
+    case BufferSizeRole:
+        return d.bufferSize;
+    }
+    return QVariant();
+}
+
+
+Qt::ItemFlags StreamingConfigurationModel::flags(const QModelIndex &index) const
+{
+    Qt::ItemFlags f = QAbstractItemModel::flags(index);
+    if (index.isValid()) {
+        f |= Qt::ItemIsEditable;
+    }
+    return f;
+}
+
+
+QVariant StreamingConfigurationModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (orientation != Qt::Horizontal || section != 0 || role != Qt::DisplayRole) {
+        return QVariant();
+    }
+
+    return i18n("URL");
+}
+
+
+QModelIndex StreamingConfigurationModel::index(int row, int column, const QModelIndex &parent) const
+{
+    if (row < 0 || row >= m_data.count() || column != 0 || parent.isValid()) {
+        return QModelIndex();
+    }
+
+    return createIndex(row, column);
+}
+
+
+QModelIndex StreamingConfigurationModel::parent(const QModelIndex &) const
+{
+    return QModelIndex();
+}
+
+
+bool StreamingConfigurationModel::removeRows(int row, int count, const QModelIndex &parent)
+{
+    if (parent.isValid() || row < 0 || count < 1) {
+        return false;
+    }
+
+    beginRemoveRows(QModelIndex(), row, row + count - 1);
+    m_data.remove(row, count);
+    endRemoveRows();
+    return true;
+}
+
+
+int StreamingConfigurationModel::rowCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : m_data.count();
+}
+
+
+bool StreamingConfigurationModel::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    if (!index.isValid() || !value.isValid()) {
+        return false;
+    }
+
+    Data &d = m_data[index.row()];
+    switch (role) {
+    case Qt::EditRole:
+        d.device = value.toString();
+        break;
+    default:
+        return false;
+    }
+    emit dataChanged(index, index);
+    return true;
+}
+
+
+void StreamingConfigurationModel::clear()
+{
+    beginResetModel();
+    m_data.clear();
+    endResetModel();
+}
+
+
+QModelIndex StreamingConfigurationModel::addDevice(const QString &device, const SoundFormat &format, int bufferSize)
+{
+    beginInsertRows(QModelIndex(), m_data.count(), m_data.count());
+    Data d;
+    d.device = device;
+    d.format = format;
+    d.bufferSize = bufferSize;
+    m_data.append(d);
+    endInsertRows();
+    return createIndex(m_data.count() - 1, 0);
+}
+
+
+void StreamingConfigurationModel::moveRow(int row, MoveDirection dir)
+{
+    if (row < 0 || row >= m_data.count() || (dir == MoveUp && row == 0)
+        || (dir == MoveDown && row == m_data.count() - 1)) {
+        return;
+    }
+
+    if (dir == MoveUp) {
+        --row;
+    }
+    beginMoveRows(QModelIndex(), row + 1, row + 1, QModelIndex(), row);
+    const Data d = m_data.at(row + 1);
+    m_data.remove(row + 1);
+    m_data.insert(row, d);
+    endMoveRows();
+}
+
+
+void StreamingConfigurationModel::editIndex(const QModelIndex &index, const SoundFormat &format, int bufferSize)
+{
+    if (!index.isValid()) {
+        return;
+    }
+
+    Data &d = m_data[index.row()];
+    d.format = format;
+    d.bufferSize = bufferSize;
+    emit dataChanged(index, index);
+}
+
 
 StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice *streamer)
  : QWidget(parent),
@@ -45,19 +210,26 @@ StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice
     m_pbDownCaptureURL   ->setIcon(KIcon("arrow-down"));
     m_pbDownPlaybackURL  ->setIcon(KIcon("arrow-down"));
 
+    m_PlaybackModel = new StreamingConfigurationModel(m_ListPlaybackURLs);
+    m_ListPlaybackURLs->setModel(m_PlaybackModel);
+    m_CaptureModel = new StreamingConfigurationModel(m_ListCaptureURLs);
+    m_ListCaptureURLs->setModel(m_CaptureModel);
+
     connect(m_pbNewPlaybackURL,    SIGNAL(clicked()), this, SLOT(slotNewPlaybackChannel()));
     connect(m_pbDeletePlaybackURL, SIGNAL(clicked()), this, SLOT(slotDeletePlaybackChannel()));
     connect(m_pbUpPlaybackURL,     SIGNAL(clicked()), this, SLOT(slotUpPlaybackChannel()));
     connect(m_pbDownPlaybackURL,   SIGNAL(clicked()), this, SLOT(slotDownPlaybackChannel()));
-    connect(m_ListPlaybackURLs,    SIGNAL(selectionChanged()),           this, SLOT(slotPlaybackSelectionChanged()));
-    connect(m_ListPlaybackURLs,    SIGNAL(itemRenamed(Q3ListViewItem *, int)), this, SLOT(slotSetDirty()));
+    connect(m_ListPlaybackURLs->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
+            this, SLOT(slotPlaybackSelectionChanged()));
+    connect(m_PlaybackModel,       SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(slotSetDirty()));
 
     connect(m_pbNewCaptureURL,     SIGNAL(clicked()), this, SLOT(slotNewCaptureChannel()));
     connect(m_pbDeleteCaptureURL,  SIGNAL(clicked()), this, SLOT(slotDeleteCaptureChannel()));
     connect(m_pbUpCaptureURL,      SIGNAL(clicked()), this, SLOT(slotUpCaptureChannel()));
     connect(m_pbDownCaptureURL,    SIGNAL(clicked()), this, SLOT(slotDownCaptureChannel()));
-    connect(m_ListCaptureURLs,     SIGNAL(selectionChanged()),           this, SLOT(slotCaptureSelectionChanged()));
-    connect(m_ListCaptureURLs,     SIGNAL(itemRenamed(Q3ListViewItem *, int)), this, SLOT(slotSetDirty()));
+    connect(m_ListCaptureURLs->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
+            this, SLOT(slotCaptureSelectionChanged()));
+    connect(m_CaptureModel,        SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(slotSetDirty()));
 
     connect(m_cbBits,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
     connect(m_cbChannels,   SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
@@ -67,10 +239,7 @@ StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice
     connect(m_cbSign,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
     connect(m_sbBufferSize, SIGNAL(valueChanged(int)), this, SLOT(slotUpdateSoundFormat()));
 
-    m_ListPlaybackURLs->setAllColumnsShowFocus(true);
-    m_ListPlaybackURLs->setSorting(-1);
-    m_ListCaptureURLs->setAllColumnsShowFocus(true);
-    m_ListCaptureURLs->setSorting(-1);
+    connect(ktabwidget,     SIGNAL(currentChanged(int)), this, SLOT(slotTabChanged(int)));
 
     slotCancel();
 }
@@ -89,14 +258,22 @@ void StreamingConfiguration::slotOK()
     m_StreamingDevice->resetPlaybackStreams(false);
     m_StreamingDevice->resetCaptureStreams(false);
 
-    Q3ListViewItem *item = m_ListPlaybackURLs->firstChild();
-    for (int i = 0; item; ++i, item = item->nextSibling()) {
-        m_StreamingDevice->addPlaybackStream(item->text(1), m_PlaybackSoundFormats[i], m_PlaybackBufferSizes[i], !item->nextSibling());
+    int rows = m_PlaybackModel->rowCount();
+    for (int i = 0; i < rows; ++i) {
+        const QModelIndex index = m_PlaybackModel->index(i, 0);
+        const QString device = index.data(StreamingConfigurationModel::DeviceRole).toString();
+        const SoundFormat sf = index.data(StreamingConfigurationModel::SoundFormatRole).value<SoundFormat>();
+        const int buffer_size = index.data(StreamingConfigurationModel::BufferSizeRole).toInt();
+        m_StreamingDevice->addPlaybackStream(device, sf, buffer_size, i == rows - 1);
     }
 
-    item = m_ListCaptureURLs->firstChild();
-    for (int i = 0; item; ++i, item = item->nextSibling()) {
-        m_StreamingDevice->addCaptureStream(item->text(1), m_CaptureSoundFormats[i], m_CaptureBufferSizes[i], !item->nextSibling());
+    rows = m_CaptureModel->rowCount();
+    for (int i = 0; i < rows; ++i) {
+        const QModelIndex index = m_CaptureModel->index(i, 0);
+        const QString device = index.data(StreamingConfigurationModel::DeviceRole).toString();
+        const SoundFormat sf = index.data(StreamingConfigurationModel::SoundFormatRole).value<SoundFormat>();
+        const int buffer_size = index.data(StreamingConfigurationModel::BufferSizeRole).toInt();
+        m_StreamingDevice->addCaptureStream(device, sf, buffer_size, i == rows - 1);
     }
 
     m_dirty = false;
@@ -111,43 +288,26 @@ void StreamingConfiguration::slotCancel()
     const QStringList &playbackChannels = m_StreamingDevice->getPlaybackChannels();
     const QStringList &captureChannels  = m_StreamingDevice->getCaptureChannels();
 
-    m_ListPlaybackURLs->clear();
-    m_PlaybackBufferSizes.clear();
-    m_PlaybackSoundFormats.clear();
+    m_PlaybackModel->clear();
 
     for (int i = 0; i < playbackChannels.size(); ++i) {
         SoundFormat sf;
         size_t      buffer_size;
         KUrl        url;
         m_StreamingDevice->getPlaybackStreamOptions(playbackChannels[i], url, sf, buffer_size);
-        m_PlaybackSoundFormats.append(sf);
-        m_PlaybackBufferSizes.append(buffer_size);
-
-        Q3ListViewItem *item = new Q3ListViewItem(m_ListPlaybackURLs, m_ListPlaybackURLs->lastChild());
-        item->setText(0, QString::number(m_ListPlaybackURLs->childCount()));
-        item->setText(1, url.pathOrUrl());
-        item->setRenameEnabled(1, true);
+        m_PlaybackModel->addDevice(url.pathOrUrl(), sf, buffer_size);
     }
 
-    m_ListCaptureURLs->clear();
-    m_CaptureBufferSizes.clear();
-    m_CaptureSoundFormats.clear();
+    m_CaptureModel->clear();
 
     for (int i = 0; i < captureChannels.size(); ++i) {
         SoundFormat sf;
         size_t      buffer_size;
         KUrl        url;
         m_StreamingDevice->getCaptureStreamOptions(captureChannels[i], url, sf, buffer_size);
-        m_CaptureSoundFormats.append(sf);
-        m_CaptureBufferSizes.append(buffer_size);
-
-        Q3ListViewItem *item = new Q3ListViewItem(m_ListCaptureURLs, m_ListCaptureURLs->lastChild());
-        item->setText(0, QString::number(m_ListCaptureURLs->childCount()));
-        item->setText(1, url.pathOrUrl());
-        item->setRenameEnabled(1, true);
+        m_CaptureModel->addDevice(url.pathOrUrl(), sf, buffer_size);
     }
-    slotPlaybackSelectionChanged();
-    slotCaptureSelectionChanged();
+    slotTabChanged(ktabwidget->currentIndex());
 
     m_dirty = false;
 }
@@ -161,107 +321,53 @@ void StreamingConfiguration::slotUpdateConfig()
 void StreamingConfiguration::slotNewPlaybackChannel()
 {
     slotSetDirty();
-    Q3ListViewItem *item = new Q3ListViewItem(m_ListPlaybackURLs, m_ListPlaybackURLs->lastChild());
 
-    m_PlaybackSoundFormats.append(SoundFormat());
-    m_PlaybackBufferSizes .append(64*1024);
-    int n = m_PlaybackSoundFormats.size();
-    setStreamOptions(m_PlaybackSoundFormats[n-1], m_PlaybackBufferSizes[n-1]);
+    const SoundFormat sf;
+    const int buffer_size = 64*1024;
+    setStreamOptions(sf, buffer_size);
 
-    item->setText(0, QString::number(m_ListPlaybackURLs->childCount()));
-    item->setText(1, i18n("new channel"));
-    item->setRenameEnabled(1,true);
-    item->startRename(1);
-
+    const QModelIndex index = m_PlaybackModel->addDevice(i18n("new channel"), sf, buffer_size);
+    m_ListPlaybackURLs->setCurrentIndex(index);
+    m_ListPlaybackURLs->edit(index);
 }
 
 
 void StreamingConfiguration::slotDeletePlaybackChannel()
 {
-    slotSetDirty();
-    Q3ListViewItem *item = m_ListPlaybackURLs->selectedItem();
-    if (item) {
-        int idx = 0;
-        Q3ListViewItem *i    = m_ListPlaybackURLs->firstChild(),
-                       *prev = NULL,
-                       *next = item->nextSibling();
-        for (; i && i != item; i = i->nextSibling()) {
-            prev = i;
-            ++idx;
-        }
-        if(next) {
-            m_ListPlaybackURLs->setSelected(next, true);
-        } else if (prev){
-            m_ListPlaybackURLs->setSelected(prev, true);
-        }
-        int x = item->text(0).toUInt();
-        for (i = next; i; i = i->nextSibling(), ++x) {
-            i->setText(0, QString::number(x));
-        }
-        m_ListPlaybackURLs->takeItem(item);
-        delete item;
-
-        m_PlaybackSoundFormats.removeAt(idx);
-        m_PlaybackBufferSizes .removeAt(idx);
-        int n = m_PlaybackSoundFormats.size();
-        idx = idx < n - 1 ? idx : n - 1;
-        if (n > 0) {
-            setStreamOptions( m_PlaybackSoundFormats[idx], m_PlaybackBufferSizes[idx]);
-        }
-        slotPlaybackSelectionChanged();
+    const QModelIndex index = m_ListPlaybackURLs->currentIndex();
+    if (!index.isValid()) {
+        return;
     }
+
+    m_PlaybackModel->removeRow(index.row());
+    slotSetDirty();
+    slotPlaybackSelectionChanged();
 }
 
 
 void StreamingConfiguration::slotUpPlaybackChannel()
 {
+    const QModelIndex index = m_ListPlaybackURLs->currentIndex();
+    if (!index.isValid()) {
+        return;
+    }
+
+    m_PlaybackModel->moveRow(index.row(), StreamingConfigurationModel::MoveUp);
     slotSetDirty();
-    Q3ListViewItem *prev = NULL;
-    Q3ListViewItem *i    = m_ListPlaybackURLs->firstChild();
-    Q3ListViewItem *item = m_ListPlaybackURLs->selectedItem();
-    int idx = 0;
-    for (; i && i != item; i = i->nextSibling(), ++idx) {
-        prev = i;
-    }
-    if (prev && item) {
-        QString s = prev->text(1);
-        prev->setText(1, item->text(1));
-        item->setText(1, s);
-        SoundFormat sf = m_PlaybackSoundFormats[idx];
-        m_PlaybackSoundFormats[idx] = m_PlaybackSoundFormats[idx-1];
-        m_PlaybackSoundFormats[idx-1] = sf;
-        size_t size = m_PlaybackBufferSizes[idx];
-        m_PlaybackBufferSizes[idx] = m_PlaybackBufferSizes[idx-1];
-        m_PlaybackBufferSizes[idx-1] = size;
-        m_ListPlaybackURLs->setSelected(prev, true);
-    }
-    m_ListPlaybackURLs->ensureItemVisible(prev);
+    slotPlaybackSelectionChanged();
 }
 
 
 void StreamingConfiguration::slotDownPlaybackChannel()
 {
+    const QModelIndex index = m_ListPlaybackURLs->currentIndex();
+    if (!index.isValid()) {
+        return;
+    }
+
+    m_PlaybackModel->moveRow(index.row(), StreamingConfigurationModel::MoveDown);
     slotSetDirty();
-    Q3ListViewItem *item = m_ListPlaybackURLs->selectedItem();
-    Q3ListViewItem *next = item ? item->nextSibling() : NULL;
-    Q3ListViewItem *i    = m_ListPlaybackURLs->firstChild();
-    int idx = 0;
-    for (; i && i != item; i = i->nextSibling()) {
-        ++idx;
-    }
-    if (next && item) {
-        QString s = next->text(1);
-        next->setText(1, item->text(1));
-        item->setText(1, s);
-        SoundFormat sf = m_PlaybackSoundFormats[idx];
-        m_PlaybackSoundFormats[idx] = m_PlaybackSoundFormats[idx+1];
-        m_PlaybackSoundFormats[idx+1] = sf;
-        size_t size = m_PlaybackBufferSizes[idx];
-        m_PlaybackBufferSizes[idx] = m_PlaybackBufferSizes[idx+1];
-        m_PlaybackBufferSizes[idx+1] = size;
-        m_ListPlaybackURLs->setSelected(next, true);
-    }
-    m_ListPlaybackURLs->ensureItemVisible(next);
+    slotPlaybackSelectionChanged();
 }
 
 
@@ -269,106 +375,53 @@ void StreamingConfiguration::slotDownPlaybackChannel()
 void StreamingConfiguration::slotNewCaptureChannel()
 {
     slotSetDirty();
-    Q3ListViewItem *item = new Q3ListViewItem(m_ListCaptureURLs, m_ListCaptureURLs->lastChild());
 
-    m_CaptureSoundFormats.append(SoundFormat());
-    m_CaptureBufferSizes .append(64*1024);
-    int n = m_CaptureSoundFormats.size();
-    setStreamOptions(m_CaptureSoundFormats[n-1], m_CaptureBufferSizes[n-1]);
+    const SoundFormat sf;
+    const int buffer_size = 64*1024;
+    setStreamOptions(sf, buffer_size);
 
-    item->setText(0, QString::number(m_ListCaptureURLs->childCount()));
-    item->setText(1, i18n("new channel"));
-    item->setRenameEnabled(1,true);
-    item->startRename(1);
+    const QModelIndex index = m_CaptureModel->addDevice(i18n("new channel"), sf, buffer_size);
+    m_ListCaptureURLs->setCurrentIndex(index);
+    m_ListCaptureURLs->edit(index);
 }
 
 
 void StreamingConfiguration::slotDeleteCaptureChannel()
 {
-    slotSetDirty();
-    Q3ListViewItem *item = m_ListCaptureURLs->selectedItem();
-    if (item) {
-        int idx = 0;
-        Q3ListViewItem *i    = m_ListCaptureURLs->firstChild(),
-                      *prev = NULL,
-                      *next = item->nextSibling();
-        for (; i && i != item; i = i->nextSibling()) {
-            prev = i;
-            ++idx;
-        }
-        if (next) {
-            m_ListCaptureURLs->setSelected(next, true);
-        } else if (prev){
-            m_ListCaptureURLs->setSelected(prev, true);
-        }
-        int x = item->text(0).toUInt();
-        for (i = next; i; i = i->nextSibling(), ++x) {
-            i->setText(0, QString::number(x));
-        }
-        m_ListCaptureURLs->takeItem(item);
-        delete item;
-
-        m_CaptureSoundFormats.removeAt(idx);
-        m_CaptureBufferSizes .removeAt(idx);
-        int n = m_CaptureSoundFormats.size();
-        idx = idx < n - 1 ? idx : n - 1;
-        if (n > 0) {
-            setStreamOptions( m_CaptureSoundFormats[idx], m_CaptureBufferSizes[idx]);
-        }
-        slotCaptureSelectionChanged();
+    const QModelIndex index = m_ListCaptureURLs->currentIndex();
+    if (!index.isValid()) {
+        return;
     }
+
+    m_CaptureModel->removeRow(index.row());
+    slotSetDirty();
+    slotCaptureSelectionChanged();
 }
 
 
 void StreamingConfiguration::slotUpCaptureChannel()
 {
+    const QModelIndex index = m_ListCaptureURLs->currentIndex();
+    if (!index.isValid()) {
+        return;
+    }
+
+    m_CaptureModel->moveRow(index.row(), StreamingConfigurationModel::MoveUp);
     slotSetDirty();
-    Q3ListViewItem *prev = NULL;
-    Q3ListViewItem *i    = m_ListCaptureURLs->firstChild();
-    Q3ListViewItem *item = m_ListCaptureURLs->selectedItem();
-    int idx = 0;
-    for (; i && i != item; i = i->nextSibling(), ++idx) {
-        prev = i;
-    }
-    if (prev && item) {
-        QString s = prev->text(1);
-        prev->setText(1, item->text(1));
-        item->setText(1, s);
-        SoundFormat sf = m_CaptureSoundFormats[idx];
-        m_CaptureSoundFormats[idx] = m_CaptureSoundFormats[idx-1];
-        m_CaptureSoundFormats[idx-1] = sf;
-        size_t size = m_CaptureBufferSizes[idx];
-        m_CaptureBufferSizes[idx] = m_CaptureBufferSizes[idx-1];
-        m_CaptureBufferSizes[idx-1] = size;
-        m_ListCaptureURLs->setSelected(prev, true);
-    }
-    m_ListCaptureURLs->ensureItemVisible(prev);
+    slotCaptureSelectionChanged();
 }
 
 
 void StreamingConfiguration::slotDownCaptureChannel()
 {
+    const QModelIndex index = m_ListCaptureURLs->currentIndex();
+    if (!index.isValid()) {
+        return;
+    }
+
+    m_CaptureModel->moveRow(index.row(), StreamingConfigurationModel::MoveDown);
     slotSetDirty();
-    Q3ListViewItem *item = m_ListCaptureURLs->selectedItem();
-    Q3ListViewItem *next = item ? item->nextSibling() : NULL;
-    Q3ListViewItem *i    = m_ListCaptureURLs->firstChild();
-    int idx = 0;
-    for (; i && i != item; i = i->nextSibling()) {
-        ++idx;
-    }
-    if (next && item) {
-        QString s = next->text(1);
-        next->setText(1, item->text(1));
-        item->setText(1, s);
-        SoundFormat sf = m_CaptureSoundFormats[idx];
-        m_CaptureSoundFormats[idx] = m_CaptureSoundFormats[idx+1];
-        m_CaptureSoundFormats[idx+1] = sf;
-        size_t size = m_CaptureBufferSizes[idx];
-        m_CaptureBufferSizes[idx] = m_CaptureBufferSizes[idx+1];
-        m_CaptureBufferSizes[idx+1] = size;
-        m_ListCaptureURLs->setSelected(next, true);
-    }
-    m_ListCaptureURLs->ensureItemVisible(next);
+    slotCaptureSelectionChanged();
 }
 
 
@@ -377,26 +430,19 @@ void StreamingConfiguration::slotDownCaptureChannel()
 
 void StreamingConfiguration::slotPlaybackSelectionChanged()
 {
-    Q3ListViewItem *item = m_ListPlaybackURLs->selectedItem();
+    const QModelIndex index = m_ListPlaybackURLs->currentIndex();
     bool up_possible   = false;
     bool down_possible = false;
-    if (item) {
-        int idx = 0;
-        Q3ListViewItem *i = m_ListPlaybackURLs->firstChild();
-        for (; i && i != item; i = i->nextSibling()) {
-            ++idx;
-        }
+    bool e = false;
+    if (index.isValid()) {
+        int idx = index.row();
         up_possible   = idx > 0;
-        down_possible = idx < m_ListPlaybackURLs->childCount() - 1;
-        setStreamOptions(m_PlaybackSoundFormats[idx], m_PlaybackBufferSizes[idx]);
-
-        item = m_ListCaptureURLs->selectedItem();
-        if (item)
-            m_ListCaptureURLs->setSelected(item, false);
+        down_possible = idx < m_PlaybackModel->rowCount() - 1;
+        e = true;
+        const SoundFormat sf = index.data(StreamingConfigurationModel::SoundFormatRole).value<SoundFormat>();
+        const int buffer_size = index.data(StreamingConfigurationModel::BufferSizeRole).toInt();
+        setStreamOptions(sf, buffer_size);
     }
-    Q3ListViewItem *playback_item = m_ListPlaybackURLs->selectedItem();
-    Q3ListViewItem *capture_item  = m_ListCaptureURLs->selectedItem();
-    bool e = (playback_item || capture_item);
     m_cbFormat    ->setEnabled(e);
     m_cbRate      ->setEnabled(e);
     m_cbBits      ->setEnabled(e);
@@ -412,26 +458,19 @@ void StreamingConfiguration::slotPlaybackSelectionChanged()
 
 void StreamingConfiguration::slotCaptureSelectionChanged()
 {
-    Q3ListViewItem *item = m_ListCaptureURLs->selectedItem();
+    const QModelIndex index = m_ListCaptureURLs->currentIndex();
     bool up_possible   = false;
     bool down_possible = false;
-    if (item) {
-        int idx = 0;
-        Q3ListViewItem *i = m_ListCaptureURLs->firstChild();
-        for (; i && i != item; i = i->nextSibling()) {
-            ++idx;
-        }
+    bool e = false;
+    if (index.isValid()) {
+        int idx = index.row();
         up_possible   = idx > 0;
-        down_possible = idx < m_ListCaptureURLs->childCount() - 1;
-        setStreamOptions(m_CaptureSoundFormats[idx], m_CaptureBufferSizes[idx]);
-
-        item = m_ListPlaybackURLs->selectedItem();
-        if (item)
-            m_ListPlaybackURLs->setSelected(item, false);
+        down_possible = idx < m_CaptureModel->rowCount() - 1;
+        e = true;
+        const SoundFormat sf = index.data(StreamingConfigurationModel::SoundFormatRole).value<SoundFormat>();
+        const int buffer_size = index.data(StreamingConfigurationModel::BufferSizeRole).toInt();
+        setStreamOptions(sf, buffer_size);
     }
-    Q3ListViewItem *playback_item = m_ListPlaybackURLs->selectedItem();
-    Q3ListViewItem *capture_item  = m_ListCaptureURLs->selectedItem();
-    bool e = (playback_item || capture_item);
     m_cbFormat    ->setEnabled(e);
     m_cbRate      ->setEnabled(e);
     m_cbBits      ->setEnabled(e);
@@ -454,24 +493,36 @@ void StreamingConfiguration::slotUpdateSoundFormat()
     if (m_ignore_updates)
         return;
 
-    slotSetDirty();
-    Q3ListViewItem *playback_item = m_ListPlaybackURLs->selectedItem();
-    Q3ListViewItem *capture_item  = m_ListCaptureURLs->selectedItem();
-    if (playback_item) {
-        int idx = 0;
-        Q3ListViewItem *i = m_ListPlaybackURLs->firstChild();
-        for (; i && i != playback_item; i = i->nextSibling()) {
-            ++idx;
-        }
-        getStreamOptions(m_PlaybackSoundFormats[idx], m_PlaybackBufferSizes[idx]);
+    QTreeView *currentView;
+    StreamingConfigurationModel *currentModel;
+    if (ktabwidget->currentIndex() == 0) {
+        currentView = m_ListCaptureURLs;
+        currentModel = m_CaptureModel;
+    } else {
+        currentView = m_ListPlaybackURLs;
+        currentModel = m_PlaybackModel;
     }
-    else if (capture_item) {
-        int idx = 0;
-        Q3ListViewItem *i = m_ListCaptureURLs->firstChild();
-        for (; i && i != capture_item; i = i->nextSibling()) {
-            ++idx;
-        }
-        getStreamOptions(m_CaptureSoundFormats[idx], m_CaptureBufferSizes[idx]);
+    const QModelIndex index = currentView->currentIndex();
+    if (!index.isValid()) {
+        return;
+    }
+
+    SoundFormat sf;
+    int buffer_size;
+    getStreamOptions(sf, buffer_size);
+    m_ignore_updates = true;
+    currentModel->editIndex(index, sf, buffer_size);
+    m_ignore_updates = false;
+    slotSetDirty();
+}
+
+
+void StreamingConfiguration::slotTabChanged(int index)
+{
+    if (index == 0) {
+        slotCaptureSelectionChanged();
+    } else {
+        slotPlaybackSelectionChanged();
     }
 }
 

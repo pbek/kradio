@@ -472,38 +472,10 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="0" column="0" rowspan="5">
-        <widget class="K3ListView" name="m_ListCaptureURLs">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <widget class="QTreeView" name="m_ListCaptureURLs">
+         <property name="rootIsDecorated">
+          <bool>false</bool>
          </property>
-         <property name="defaultRenameAction">
-          <enum>Q3ListView::Accept</enum>
-         </property>
-         <column>
-          <property name="text">
-           <string>No.</string>
-          </property>
-          <property name="clickable">
-           <bool>true</bool>
-          </property>
-          <property name="resizable">
-           <bool>true</bool>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>URL</string>
-          </property>
-          <property name="clickable">
-           <bool>true</bool>
-          </property>
-          <property name="resizable">
-           <bool>true</bool>
-          </property>
-         </column>
         </widget>
        </item>
        <item row="1" column="1">
@@ -557,11 +529,6 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
       </layout>
-      <zorder>m_pbDownCaptureURL</zorder>
-      <zorder>m_pbNewCaptureURL</zorder>
-      <zorder>m_ListCaptureURLs</zorder>
-      <zorder>m_pbDeleteCaptureURL</zorder>
-      <zorder>m_pbUpCaptureURL</zorder>
      </widget>
      <widget class="QWidget" name="PlaybackURLs">
       <attribute name="title">
@@ -572,41 +539,10 @@ p, li { white-space: pre-wrap; }
         <number>8</number>
        </property>
        <item row="0" column="0" rowspan="5">
-        <widget class="K3ListView" name="m_ListPlaybackURLs">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <widget class="QTreeView" name="m_ListPlaybackURLs">
+         <property name="rootIsDecorated">
+          <bool>false</bool>
          </property>
-         <property name="selectionMode">
-          <enum>Q3ListView::Single</enum>
-         </property>
-         <property name="defaultRenameAction">
-          <enum>Q3ListView::Accept</enum>
-         </property>
-         <column>
-          <property name="text">
-           <string>No.</string>
-          </property>
-          <property name="clickable">
-           <bool>true</bool>
-          </property>
-          <property name="resizable">
-           <bool>true</bool>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>URL</string>
-          </property>
-          <property name="clickable">
-           <bool>true</bool>
-          </property>
-          <property name="resizable">
-           <bool>true</bool>
-          </property>
-         </column>
         </widget>
        </item>
        <item row="3" column="1">
@@ -734,30 +670,14 @@ p, li { white-space: pre-wrap; }
  <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
   <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Q3ListView</class>
-   <extends>Q3Frame</extends>
-   <header>q3listview.h</header>
-  </customwidget>
-  <customwidget>
-   <class>K3ListView</class>
-   <extends>Q3ListView</extends>
-   <header>k3listview.h</header>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>KIntSpinBox</class>
    <extends>QSpinBox</extends>
    <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>KTabWidget</class>
@@ -776,7 +696,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>m_cbChannels</tabstop>
  </tabstops>
  <includes>
-  <include location="local">k3listview.h</include>
   <include location="local">kcombobox.h</include>
   <include location="local">knuminput.h</include>
  </includes>
