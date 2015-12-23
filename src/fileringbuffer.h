@@ -19,7 +19,7 @@
 #define _KRADIO_FILE_RING_BUFFER_H
 
 #include <kdemacros.h>
-#include <QtCore/QString>
+#include <QString>
 #include <stdio.h>
 
 class KDE_EXPORT FileRingBuffer

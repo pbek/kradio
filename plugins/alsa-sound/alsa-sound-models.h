@@ -17,8 +17,8 @@
 #ifndef KRADIO_ALSA_SOUNDDEVICE_MODEL_H
 #define KRADIO_ALSA_SOUNDDEVICE_MODEL_H
 
-#include <QtCore/QAbstractListModel>
-#include <QtCore/QString>
+#include <QAbstractListModel>
+#include <QString>
 
 #include "alsa-sound.h"
 

@@ -15,15 +15,15 @@
  *                                                                         *
  ***************************************************************************/
 
-// #include <QtGui/QWidgetStack>
-#include <QtGui/QLayout>
-#include <QtGui/QToolButton>
-#include <QtGui/QSlider>
-#include <QtCore/QFile>
-#include <QtGui/QCheckBox>
-#include <QtGui/QImage>
-#include <QtGui/QStackedWidget>
-#include <QtGui/QGridLayout>
+// #include <QWidgetStack>
+#include <QLayout>
+#include <QToolButton>
+#include <QSlider>
+#include <QFile>
+#include <QCheckBox>
+#include <QImage>
+#include <QStackedWidget>
+#include <QGridLayout>
 
 #include <kcmdlineargs.h>
 #include <kcombobox.h>

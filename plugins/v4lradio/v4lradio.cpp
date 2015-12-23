@@ -31,12 +31,12 @@
 
 #include <string.h> // memcpy needed
 
-#include <QtGui/QLayout>
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QList>
-#include <QtCore/QSocketNotifier>
-#include <QtCore/QDir>
+#include <QLayout>
+#include <QFile>
+#include <QFileInfo>
+#include <QList>
+#include <QSocketNotifier>
+#include <QDir>
 
 #include <kconfiggroup.h>
 #include <kaboutdata.h>

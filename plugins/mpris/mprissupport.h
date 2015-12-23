@@ -17,7 +17,7 @@
 #ifndef DBUSSUPPORT_H
 #define DBUSSUPPORT_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include "radio_interfaces.h"
 #include "soundstreamclient_interfaces.h"
 #include "pluginbase.h"

@@ -17,8 +17,8 @@
 #ifndef MPRISROOT_H
 #define MPRISROOT_H
 
-#include <QtDBus/QDBusAbstractAdaptor>
-#include <QtCore/QStringList>
+#include <QDBusAbstractAdaptor>
+#include <QStringList>
 
 #include "mprisbase.h"
 

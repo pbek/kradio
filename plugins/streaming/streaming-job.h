@@ -22,7 +22,7 @@
 #include "soundformat.h"
 #include "soundstreamclient_interfaces.h"
 
-#include <QtCore/QObject>
+#include <QObject>
 
 #include <kio/jobclasses.h>
 

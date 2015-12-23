@@ -28,17 +28,17 @@
 
 #include <math.h>
 
-#include <QtGui/QListWidget>
-#include <QtGui/QDateTimeEdit>
-#include <QtGui/QLineEdit>
-#include <QtGui/QLabel>
-#include <QtGui/QSpinBox>
-#include <QtGui/QPushButton>
-#include <QtGui/QMenu>
-#include <QtGui/QToolButton>
-#include <QtGui/QStackedWidget>
-#include <QtGui/QImage>
-#include <QtCore/QRegExp>
+#include <QListWidget>
+#include <QDateTimeEdit>
+#include <QLineEdit>
+#include <QLabel>
+#include <QSpinBox>
+#include <QPushButton>
+#include <QMenu>
+#include <QToolButton>
+#include <QStackedWidget>
+#include <QImage>
+#include <QRegExp>
 
 #include <klistwidget.h>
 #include <kfiledialog.h>

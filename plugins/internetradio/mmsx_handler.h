@@ -18,7 +18,7 @@
 #ifndef KRADIO_MMSX_HANDLER_H
 #define KRADIO_MMSX_HANDLER_H
 
-#include <QtCore/QSharedPointer>
+#include <QSharedPointer>
 #include <kurl.h>
 
 #include "stream_reader.h"

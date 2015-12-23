@@ -19,7 +19,7 @@
 #define KRADIO_ERRORLOG_H
 
 #include <kpagedialog.h>
-#include <QtCore/QMutex>
+#include <QMutex>
 
 #include "errorlog_interfaces.h"
 #include "widgetpluginbase.h"

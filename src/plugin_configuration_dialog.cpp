@@ -18,7 +18,7 @@
 #include "plugin_configuration_dialog.h"
 #include <kconfig.h>
 #include <klocalizedstring.h>
-#include <QtGui/QLayout>
+#include <QLayout>
 
 PluginConfigurationDialog::PluginConfigurationDialog(
         const QString         &instanceID,

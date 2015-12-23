@@ -19,10 +19,10 @@
 #define KRADIO_STREAM_INPUT_BUFFER_H
 
 
-#include <QtCore/QObject>
-#include <QtCore/QSemaphore>
-#include <QtCore/QMutex>
-#include <QtCore/QMutexLocker>
+#include <QObject>
+#include <QSemaphore>
+#include <QMutex>
+#include <QMutexLocker>
 
 #include <kurl.h>
 

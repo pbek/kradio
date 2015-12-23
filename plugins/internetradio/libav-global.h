@@ -18,7 +18,7 @@
 #ifndef KRADIO_LIBAV_GLOBAL_H
 #define KRADIO_LIBAV_GLOBAL_H
 
-#include <QtCore/QSharedPointer>
+#include <QSharedPointer>
 
 class LibAVGlobal
 {

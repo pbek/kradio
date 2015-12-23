@@ -19,7 +19,7 @@
 #define KRADIO_MMSX_HANDLER_THREAD_H
 
 #include <kurl.h>
-#include <QtCore/QThread>
+#include <QThread>
 
 #include "stream_reader.h"
 

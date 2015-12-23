@@ -18,7 +18,7 @@
 #ifndef KRADIO_FREQUENCY_SEEKHELPER_H
 #define KRADIO_FREQUENCY_SEEKHELPER_H
 
-#include <QtCore/QObject>
+#include <QObject>
 //#include "radiodevice_interfaces.h"
 #include "frequencyradio_interfaces.h"
 #include "seekhelper.h"

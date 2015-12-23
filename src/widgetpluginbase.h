@@ -18,7 +18,7 @@
 #ifndef KRADIO_WIDGETPLUGINS_INTERFACES_H
 #define KRADIO_WIDGETPLUGINS_INTERFACES_H
 
-#include <QtGui/QAction>
+#include <QAction>
 
 #include "pluginbase.h"
 

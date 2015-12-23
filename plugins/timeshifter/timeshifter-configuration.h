@@ -18,8 +18,8 @@
 #ifndef KRADIO_TIMESHIFTER_CONFIGURATION_H
 #define KRADIO_TIMESHIFTER_CONFIGURATION_H
 
-#include <QtGui/QWidget>
-#include <QtGui/QComboBox>
+#include <QWidget>
+#include <QComboBox>
 
 #include "soundstreamclient_interfaces.h"
 #include "gui_list_helper.h"

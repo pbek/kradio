@@ -29,9 +29,9 @@
 #include "encoder_ogg.h"
 #include "encoder_pcm.h"
 
-#include <QtCore/QEvent>
-#include <QtGui/QApplication>
-#include <QtCore/QRegExp>
+#include <QEvent>
+#include <QApplication>
+#include <QRegExp>
 
 #include <kconfig.h>
 #include <kdeversion.h>

@@ -27,8 +27,8 @@
 #include <kfiledialog.h>
 #include <kdemacros.h>
 
-#include <QtGui/QCheckBox>
-#include <QtGui/QStandardItemModel>
+#include <QCheckBox>
+#include <QStandardItemModel>
 
 
 #include "id-generator.h"

@@ -19,7 +19,7 @@
 #define _KRADIO_RADIOSTATION_LISTVIEW_H_
 
 #include <QAbstractItemModel>
-#include <QtGui/QTreeView>
+#include <QTreeView>
 
 #include <kconfiggroup.h>
 

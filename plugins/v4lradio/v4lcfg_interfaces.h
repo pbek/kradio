@@ -21,9 +21,9 @@
 #include "interfaces.h"
 #include "math.h"
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
-#include <QtCore/QFileInfo>
+#include <QString>
+#include <QStringList>
+#include <QFileInfo>
 
 enum V4LVersion {V4L_VersionUnkown = 0,
                  V4L_Version1      = 1,

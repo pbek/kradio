@@ -18,7 +18,7 @@
 #ifndef KRADIO_RADIOVIEW_VOLUME_H
 #define KRADIO_RADIOVIEW_VOLUME_H
 
-#include <QtGui/QAction>
+#include <QAction>
 
 #include "radiodevice_interfaces.h"
 #include "soundstreamclient_interfaces.h"

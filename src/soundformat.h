@@ -19,7 +19,7 @@
 #define KRADIO_SOUNDFORMAT_H
 
 #include <endian.h>
-#include <QtCore/QString>
+#include <QString>
 
 #include <kdemacros.h>
 

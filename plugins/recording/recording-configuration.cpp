@@ -18,9 +18,9 @@
 #include "recording-configuration.h"
 //#include "recording-context.h"
 
-#include <QtGui/QSpinBox>
-#include <QtGui/QLabel>
-#include <QtGui/QCheckBox>
+#include <QSpinBox>
+#include <QLabel>
+#include <QCheckBox>
 
 #include <kurlrequester.h>
 #include <kcombobox.h>

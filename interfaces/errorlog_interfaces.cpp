@@ -19,7 +19,7 @@
 
 #include <kdebug.h>
 #include <klocalizedstring.h>
-#include <QtCore/QDateTime>
+#include <QDateTime>
 
 IErrorLog *staticLogger = NULL;
 

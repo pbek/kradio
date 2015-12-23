@@ -18,8 +18,8 @@
 #ifndef KRADIO_DEBUG_PROFILER_H
 #define KRADIO_DEBUG_PROFILER_H
 
-#include <QtCore/QString>
-#include <QtCore/QMap>
+#include <QString>
+#include <QMap>
 #include <kdemacros.h>
 
 #if (defined __i386__) || (defined __x86_64__)

@@ -20,8 +20,8 @@
 
 #include "interfaces.h"
 
-#include <QtGui/QFont>
-#include <QtGui/QColor>
+#include <QFont>
+#include <QColor>
 
 ///////////////////////////////////////////////////////////////////////
 

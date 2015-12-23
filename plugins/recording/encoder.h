@@ -18,9 +18,9 @@
 #ifndef KRADIO_RECORDING_ENCODER_H
 #define KRADIO_RECORDING_ENCODER_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
-#include <QtCore/QThread>
+#include <QObject>
+#include <QString>
+#include <QThread>
 
 #include "radiostation.h"
 #include "multibuffer.h"

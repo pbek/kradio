@@ -17,7 +17,7 @@
 
 #include "soundstreamclient_interfaces.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include "id-generator.h"
 

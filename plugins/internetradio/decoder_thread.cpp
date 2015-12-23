@@ -18,7 +18,7 @@
 #include <math.h>
 #include <unistd.h>
 
-#include <QtCore/QFile>
+#include <QFile>
 
 #include <kio/jobclasses.h>
 #include <kio/netaccess.h>

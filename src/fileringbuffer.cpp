@@ -17,8 +17,8 @@
 
 #include "fileringbuffer.h"
 
-#include <QtCore/QString>
-#include <QtCore/QFile>
+#include <QString>
+#include <QFile>
 #include <unistd.h>
 #include <klocalizedstring.h>
 

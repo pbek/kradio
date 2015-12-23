@@ -20,12 +20,12 @@
 
 #include <kdemacros.h>
 
-#include <QtCore/QMap>
-#include <QtCore/QList>
-#include <QtCore/QString>
-#include <QtCore/QObject>
-#include <QtCore/QVariant>
-#include <QtCore/QObject>
+#include <QMap>
+#include <QList>
+#include <QString>
+#include <QObject>
+#include <QVariant>
+#include <QObject>
 
 class KDE_EXPORT GUIListHelperQObjectBase : public QObject
 {

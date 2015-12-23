@@ -19,10 +19,10 @@
 //#include "recording-context.h"
 #include <math.h>
 
-#include <QtGui/QPainter>
-#include <QtGui/QImage>
-#include <QtGui/QPixmap>
-#include <QtGui/QPalette>
+#include <QPainter>
+#include <QImage>
+#include <QPixmap>
+#include <QPalette>
 
 // #include <kimageeffect.h>  // fading, blending, ...
 // #include <kpixmapio.h>     // fast conversion between QPixmap/QImage

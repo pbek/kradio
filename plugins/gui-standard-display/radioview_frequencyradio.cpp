@@ -17,11 +17,11 @@
 
 #include "utils.h"
 
-#include <QtGui/QPainter>
-#include <QtGui/QImage>
-#include <QtGui/QPixmap>
-#include <QtGui/QBitmap>
-#include <QtGui/QResizeEvent>
+#include <QPainter>
+#include <QImage>
+#include <QPixmap>
+#include <QBitmap>
+#include <QResizeEvent>
 
 #include <math.h>
 

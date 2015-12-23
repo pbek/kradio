@@ -18,8 +18,8 @@
 #ifndef __ALSA_THREAD_H__
 #define __ALSA_THREAD_H__
 
-#include <QtCore/QThread>
-#include <QtCore/QSemaphore>
+#include <QThread>
+#include <QSemaphore>
 
 #include <alsa/asoundlib.h>
 

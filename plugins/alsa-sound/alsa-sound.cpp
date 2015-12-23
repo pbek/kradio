@@ -17,7 +17,7 @@
 
 #include <klocalizedstring.h>
 #include <kaboutdata.h>
-#include <QtCore/QFile>
+#include <QFile>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>

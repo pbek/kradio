@@ -20,7 +20,7 @@
 #include <klocalizedstring.h>
 #include <kio/slaveconfig.h>
 
-#include <QtCore/QTextCodec>
+#include <QTextCodec>
 
 #include <math.h>
 

@@ -21,7 +21,7 @@
 #include "stationlistmetadata.h"
 #include "errorlog_interfaces.h"
 
-#include <QtCore/QList>
+#include <QList>
 
 class RadioStation;
 class KUrl;

@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <QtGui/QLayout>
-#include <QtGui/QScrollArea>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QLayout>
+#include <QScrollArea>
 
 #include <kurlrequester.h>
 #include <knuminput.h>

@@ -23,7 +23,7 @@ using namespace std;
 #include <kconfig.h>
 #include <klocalizedstring.h>
 #include <kdebug.h>
-#include <QtCore/QString>
+#include <QString>
 #define __USE_ISOC99 1
 #include <math.h>
 

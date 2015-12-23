@@ -18,7 +18,7 @@
 #ifndef KRADIO_RADIOVIEW_ELEMENT_H
 #define KRADIO_RADIOVIEW_ELEMENT_H
 
-#include <QtGui/QFrame>
+#include <QFrame>
 #include "interfaces.h"
 #include "pluginbase.h"
 

@@ -22,11 +22,11 @@
 #include <kfontdialog.h>
 #include <klocalizedstring.h>
 
-#include <QtGui/QLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QGroupBox>
+#include <QLayout>
+#include <QGridLayout>
+#include <QLabel>
+#include <QButtonGroup>
+#include <QGroupBox>
 
 DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     : QWidget (parent),

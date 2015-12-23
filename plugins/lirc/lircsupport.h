@@ -18,7 +18,7 @@
 #ifndef LIRCSUPPORT_H
 #define LIRCSUPPORT_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include "timecontrol_interfaces.h"
 #include "radio_interfaces.h"
 #include "radiodevicepool_interfaces.h"

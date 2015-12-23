@@ -20,7 +20,7 @@
 
 #include "ui_alsa-mixer-element-ui.h"
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class QAlsaMixerElement : public QWidget,
                           public Ui_AlsaMixerElementUI

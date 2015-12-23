@@ -19,10 +19,10 @@
 #include "recording-datamonitor.h"
 //#include "aboutwidget.h"
 
-#include <QtGui/QLabel>
-#include <QtGui/QPushButton>
-#include <QtGui/QLayout>
-#include <QtGui/QCheckBox>
+#include <QLabel>
+#include <QPushButton>
+#include <QLayout>
+#include <QCheckBox>
 
 #include <kcombobox.h>
 #include <klocalizedstring.h>

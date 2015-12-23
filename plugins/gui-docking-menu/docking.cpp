@@ -17,8 +17,8 @@
 
 #include <kcmdlineargs.h>
 #include <kicon.h>
-#include <QtGui/QToolTip>
-#include <QtGui/QMouseEvent>
+#include <QToolTip>
+#include <QMouseEvent>
 
 #include <kmenu.h>
 #include <kapplication.h>

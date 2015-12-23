@@ -36,10 +36,10 @@
 #include <kwindowsystem.h>
 #include <kmessagebox.h>
 
-#include <QtGui/QProgressBar>
-#include <QtGui/QLayout>
-#include <QtGui/QFrame>
-#include <QtGui/QMenu>
+#include <QProgressBar>
+#include <QLayout>
+#include <QFrame>
+#include <QMenu>
 
 #include "debug-profiler.h"
 

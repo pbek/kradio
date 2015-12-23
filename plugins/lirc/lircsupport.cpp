@@ -21,10 +21,10 @@
 #include <lirc/lirc_client.h>
 #endif
 
-#include <QtCore/QSocketNotifier>
-#include <QtCore/QTimer>
-#include <QtCore/QFile>
-#include <QtCore/QDir>
+#include <QSocketNotifier>
+#include <QTimer>
+#include <QFile>
+#include <QDir>
 
 #include <kapplication.h>
 #include <kaboutdata.h>

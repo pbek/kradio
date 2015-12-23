@@ -22,11 +22,11 @@
 
 #include "kradioaboutwidget.h"
 
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QPushButton>
-#include <QtGui/QScrollBar>
-#include <QtGui/QTabWidget>
+#include <QLabel>
+#include <QLayout>
+#include <QPushButton>
+#include <QScrollBar>
+#include <QTabWidget>
 
 #include <kaboutdata.h>
 #include <kapplication.h>

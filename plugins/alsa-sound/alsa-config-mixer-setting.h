@@ -18,7 +18,7 @@
 #ifndef __KRADIO_ALSA_CONFIG_MIXER_SETTING_H
 #define __KRADIO_ALSA_CONFIG_MIXER_SETTING_H
 
-#include <QtCore/QString>
+#include <QString>
 
 class KConfigGroup;
 

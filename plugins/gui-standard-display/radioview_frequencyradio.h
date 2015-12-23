@@ -18,11 +18,11 @@
 #ifndef KRADIO_RADIOVIEW_FREQUENCYRADIO_H
 #define KRADIO_RADIOVIEW_FREQUENCYRADIO_H
 
-#include <QtCore/QTimer>
+#include <QTimer>
 
 #include <kurl.h>
-#include <QtGui/QPen>
-#include <QtGui/QBrush>
+#include <QPen>
+#include <QBrush>
 
 #include "radiodevice_interfaces.h"
 #include "frequencyradio_interfaces.h"
@@ -36,7 +36,7 @@
   */
 
 // // START: DEBUG
-// #include <QtGui/QPainter>
+// #include <QPainter>
 // class TmpWidget : public QWidget
 // {
 // Q_OBJECT

@@ -18,8 +18,8 @@
 #ifndef KRADIO_TIMECONTROL_H
 #define KRADIO_TIMECONTROL_H
 
-#include <QtCore/QObject>
-#include <QtCore/QTimer>
+#include <QObject>
+#include <QTimer>
 
 #include "alarm.h"
 #include "pluginbase.h"

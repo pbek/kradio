@@ -17,8 +17,8 @@
 #ifndef MPRISBASE_H
 #define MPRISBASE_H
 
-#include <QtCore/QObject>
-#include <QtCore/QVariantMap>
+#include <QObject>
+#include <QVariantMap>
 
 class MPRISBase
 {

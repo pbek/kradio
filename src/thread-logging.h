@@ -19,8 +19,8 @@
 #define __THREAD_LOGGING_H__
 
 
-#include <QtCore/QMutex>
-#include <QtCore/QString>
+#include <QMutex>
+#include <QString>
 #include <errorlog_interfaces.h>
 
 // logging in thread

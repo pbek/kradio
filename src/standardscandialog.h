@@ -22,9 +22,9 @@
 #include "radio_interfaces.h"
 #include "stationlist.h"
 
-#include <QtCore/QTimer>
-#include <QtCore/QDateTime>
-#include <QtGui/QDialog>
+#include <QTimer>
+#include <QDateTime>
+#include <QDialog>
 
 class Ui_StandardScanDialogUI;
 

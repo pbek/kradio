@@ -20,9 +20,9 @@
 #include "utils.h"
 
 
-#include <QtCore/QFile>
-#include <QtCore/QSocketNotifier>
-#include <QtCore/QIODevice>
+#include <QFile>
+#include <QSocketNotifier>
+#include <QIODevice>
 #include <kurl.h>
 #include <kio/job.h>
 

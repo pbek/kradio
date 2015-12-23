@@ -23,10 +23,10 @@
 #include <kaboutdata.h>
 
 #include "errorlog_interfaces.h"
-#include <QtCore/QString>
-#include <QtCore/QObject>
-#include <QtCore/QList>
-#include <QtCore/QtPlugin>
+#include <QString>
+#include <QObject>
+#include <QList>
+#include <QtPlugin>
 
 #include <kconfiggroup.h>
 

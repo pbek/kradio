@@ -20,8 +20,8 @@
 #ifndef STATIONLISTMETADATA_H
 #define STATIONLISTMETADATA_H
 
-#include <QtCore/QString>
-#include <QtCore/QDateTime>
+#include <QString>
+#include <QDateTime>
 
 /**
  * Meta Data about a stationlist

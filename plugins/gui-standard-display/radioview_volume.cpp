@@ -16,10 +16,10 @@
  ***************************************************************************/
 
 #include <math.h>
-#include <QtGui/QSlider>
-#include <QtGui/QLayout>
-#include <QtGui/QToolTip>
-// #include <QtGui/QAccel>
+#include <QSlider>
+#include <QLayout>
+#include <QToolTip>
+// #include <QAccel>
 
 #include <klocalizedstring.h>
 

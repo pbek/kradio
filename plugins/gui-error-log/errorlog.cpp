@@ -17,10 +17,10 @@
 
 #include "errorlog.h"
 
-#include <QtGui/QFrame>
-#include <QtCore/QDateTime>
-#include <QtGui/QLayout>
-#include <QtCore/QTextCodec>
+#include <QFrame>
+#include <QDateTime>
+#include <QLayout>
+#include <QTextCodec>
 #include <QTextStream>
 
 #include <ktextedit.h>

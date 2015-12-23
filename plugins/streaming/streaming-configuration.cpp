@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtGui/QCheckBox>
+#include <QCheckBox>
 
 #include <kurlrequester.h>
 #include <knuminput.h>

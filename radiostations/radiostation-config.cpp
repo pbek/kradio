@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtCore/QTextCodec>
-#include <QtGui/QLabel>
-#include <QtGui/QSpinBox>
-#include <QtGui/QLayout>
+#include <QTextCodec>
+#include <QLabel>
+#include <QSpinBox>
+#include <QLayout>
 #include <klocalizedstring.h>
 #include <kurlrequester.h>
 #include <kcombobox.h>

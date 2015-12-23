@@ -18,8 +18,8 @@
 #ifndef KRADIO_RECORDING_DATA_MONITOR
 #define KRADIO_RECORDING_DATA_MONITOR
 
-#include <QtGui/QFrame>
-#include <QtGui/QColor>
+#include <QFrame>
+#include <QColor>
 
 //#include <kradio/interfaces/recording-interfaces.h>
 #include "soundstreamclient_interfaces.h"

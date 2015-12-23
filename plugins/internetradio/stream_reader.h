@@ -18,7 +18,7 @@
 #ifndef KRADIO_STREAM_READER_H
 #define KRADIO_STREAM_READER_H
 
-#include <QtCore/QSharedPointer>
+#include <QSharedPointer>
 #include <kurl.h>
 
 #include <kio/jobclasses.h>

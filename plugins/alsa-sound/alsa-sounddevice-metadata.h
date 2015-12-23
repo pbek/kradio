@@ -18,7 +18,7 @@
 #ifndef _KRADIO_ALSA_SOUNDDEVICE_METADATA_H
 #define _KRADIO_ALSA_SOUNDDEVICE_METADATA_H
 
-#include <QtCore/QString>
+#include <QString>
 
 class AlsaSoundDeviceMetaData
 {

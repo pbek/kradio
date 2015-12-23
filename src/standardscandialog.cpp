@@ -19,9 +19,9 @@
 #include "ui_standardscandialog-ui.h"
 #include "radiostation.h"
 
-#include <QtGui/QProgressBar>
-#include <QtGui/QLabel>
-#include <QtGui/QPushButton>
+#include <QProgressBar>
+#include <QLabel>
+#include <QPushButton>
 
 #include <klocalizedstring.h>
 

@@ -18,12 +18,12 @@
 #ifndef KRADIO_DECODER_THREAD_H
 #define KRADIO_DECODER_THREAD_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
-#include <QtCore/QThread>
-#include <QtCore/QSemaphore>
-#include <QtCore/QMutex>
-#include <QtCore/QMutexLocker>
+#include <QObject>
+#include <QString>
+#include <QThread>
+#include <QSemaphore>
+#include <QMutex>
+#include <QMutexLocker>
 
 #include <kurl.h>
 

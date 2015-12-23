@@ -17,8 +17,8 @@
 
 #include "encoder_ogg.h"
 
-#include <QtCore/QDateTime>
-#include <QtCore/QTextCodec>
+#include <QDateTime>
+#include <QTextCodec>
 
 #include <klocalizedstring.h>
 #include <stdlib.h>

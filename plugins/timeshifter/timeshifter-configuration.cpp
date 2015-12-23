@@ -19,12 +19,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include <QtGui/QSpinBox>
-#include <QtGui/QLineEdit>
-#include <QtGui/QComboBox>
-#include <QtGui/QLabel>
-#include <QtGui/QPushButton>
-#include <QtCore/QFile>
+#include <QSpinBox>
+#include <QLineEdit>
+#include <QComboBox>
+#include <QLabel>
+#include <QPushButton>
+#include <QFile>
 
 #include <kfiledialog.h>
 #include <knuminput.h>

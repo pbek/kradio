@@ -21,10 +21,10 @@
 #include "stationlist.h"
 #include "stationlistxmlhandler.h"
 
-#include <QtCore/QString>
-#include <QtCore/QFile>
-#include <QtCore/QIODevice>
-#include <QtGui/QMessageBox>
+#include <QString>
+#include <QFile>
+#include <QIODevice>
+#include <QMessageBox>
 #include <kio/netaccess.h>
 #include <ktemporaryfile.h>
 #include <klocalizedstring.h>

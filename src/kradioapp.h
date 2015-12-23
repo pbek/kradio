@@ -18,7 +18,7 @@
 #ifndef KRADIO_KRADIOAPP_H
 #define KRADIO_KRADIOAPP_H
 
-#include <QtCore/QMap>
+#include <QMap>
 
 #include <kconfig.h>
 #include <kapplication.h>

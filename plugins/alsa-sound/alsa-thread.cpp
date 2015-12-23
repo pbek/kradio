@@ -18,7 +18,7 @@
 #include "alsa-thread.h"
 #include "alsa-sound.h"
 
-#include <QtCore/QtGlobal>
+#include <QtGlobal>
 
 AlsaThread::AlsaThread (AlsaSoundDevice *parent, bool playback_not_capture, snd_pcm_t *handle, const SoundFormat &sf)
     : m_parent(parent),

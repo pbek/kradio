@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtGui/QToolTip>
-#include <QtGui/QToolButton>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QResizeEvent>
-#include <QtGui/QDragEnterEvent>
-#include <QtGui/QDropEvent>
-//#include <QtCore/QNameSpace>
+#include <QToolTip>
+#include <QToolButton>
+#include <QButtonGroup>
+#include <QResizeEvent>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+//#include <QNameSpace>
 
 //#include <ktoolbarbutton.h>
 #include <kwindowinfo.h>

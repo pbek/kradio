@@ -18,7 +18,7 @@
 #ifndef KRADIO_INTERNETRADIO_H
 #define KRADIO_INTERNETRADIO_H
 
-#include <QtCore/QTimer>
+#include <QTimer>
 
 #include <kio/job.h>
 

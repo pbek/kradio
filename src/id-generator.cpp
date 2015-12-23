@@ -1,7 +1,7 @@
 
 #include <time.h>
-#include <QtCore/QString>
-#include <QtCore/QFile>
+#include <QString>
+#include <QFile>
 
 static QString dev_urandom = "/dev/urandom";
 

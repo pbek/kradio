@@ -17,7 +17,7 @@
 
 #include "encoder_pcm.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 
 #include <klocalizedstring.h>
 

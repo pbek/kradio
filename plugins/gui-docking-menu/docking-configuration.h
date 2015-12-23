@@ -18,7 +18,7 @@
 #ifndef KRADIO_DOCKING_CONFIGURATION_H
 #define KRADIO_DOCKING_CONFIGURATION_H
 
-#include <QtCore/QMap>
+#include <QMap>
 
 #include "stationselector.h"
 #include "docking.h"

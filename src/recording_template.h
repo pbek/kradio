@@ -18,9 +18,9 @@
 #ifndef KRADIO_RECORDING_TEMPLATE_H
 #define KRADIO_RECORDING_TEMPLATE_H
 
-#include <QtCore/QString>
-#include <QtCore/QDate>
-#include <QtCore/QTime>
+#include <QString>
+#include <QDate>
+#include <QTime>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>

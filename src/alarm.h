@@ -18,8 +18,8 @@
 #ifndef KRADIO_ALARM_H
 #define KRADIO_ALARM_H
 
-#include <QtCore/QDateTime>
-#include <QtCore/QVector>
+#include <QDateTime>
+#include <QVector>
 
 #include <kdemacros.h>
 

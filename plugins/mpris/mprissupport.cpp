@@ -14,7 +14,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtDBus/QDBusConnection>
+#include <QDBusConnection>
 #include <KDE/KAboutData>
 #include <KDE/KCmdLineArgs>
 

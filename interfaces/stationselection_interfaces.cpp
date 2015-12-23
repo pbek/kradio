@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "stationselection_interfaces.h"
-#include <QtCore/QStringList>
+#include <QStringList>
 
 IF_IMPL_SENDER  (   IStationSelection::notifyStationSelectionChanged(const QStringList &sl),
                     noticeStationSelectionChanged(sl)

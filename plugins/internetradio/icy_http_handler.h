@@ -18,7 +18,7 @@
 #ifndef KRADIO_ICY_HTTP_HANDLER_H
 #define KRADIO_ICY_HTTP_HANDLER_H
 
-#include <QtCore/QSharedPointer>
+#include <QSharedPointer>
 #include <kurl.h>
 #include <kio/job.h>
 #include <kio/jobclasses.h>

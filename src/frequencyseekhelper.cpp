@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "frequencyseekhelper.h"
-#include <QtCore/QTimer>
+#include <QTimer>
 
 FrequencySeekHelper::FrequencySeekHelper(ISeekRadio &parent)
   : SeekHelper(parent)

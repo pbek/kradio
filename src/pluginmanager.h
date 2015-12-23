@@ -18,8 +18,8 @@
 #ifndef KRADIO_PLUGINMANAGER_INTERFACES_H
 #define KRADIO_PLUGINMANAGER_INTERFACES_H
 
-#include <QtCore/QString>
-#include <QtCore/QMap>
+#include <QString>
+#include <QMap>
 
 #include "pluginbase.h"
 

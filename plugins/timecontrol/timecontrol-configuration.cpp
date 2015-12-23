@@ -19,13 +19,13 @@
 #include <algorithm>
 using std::sort;
 
-#include <QtCore/QDateTime>
-#include <QtGui/QComboBox>
-#include <QtGui/QDateTimeEdit>
-#include <QtGui/QLabel>
-#include <QtGui/QSpinBox>
-#include <QtGui/QCheckBox>
-#include <QtGui/QPushButton>
+#include <QDateTime>
+#include <QComboBox>
+#include <QDateTimeEdit>
+#include <QLabel>
+#include <QSpinBox>
+#include <QCheckBox>
+#include <QPushButton>
 
 #include <klocalizedstring.h>
 

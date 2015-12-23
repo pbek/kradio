@@ -17,10 +17,10 @@
 
 #include "encoder_mp3.h"
 
-#include <QtCore/QMutex>
-#include <QtCore/QTextCodec>
-#include <QtCore/QDateTime>
-#include <QtCore/QFile>
+#include <QMutex>
+#include <QTextCodec>
+#include <QDateTime>
+#include <QFile>
 #include <klocalizedstring.h>
 
 RecordingEncodingMP3::RecordingEncodingMP3(QObject *parent,            SoundStreamID ssid,

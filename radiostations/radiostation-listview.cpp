@@ -21,11 +21,11 @@
 #include "station-drag-object.h"
 
 #include <klocalizedstring.h>
-#include <QtCore/QDataStream>
-#include <QtGui/QImage>
-#include <QtGui/QPixmap>
-#include <QtGui/QDragMoveEvent>
-#include <QtGui/QHeaderView>
+#include <QDataStream>
+#include <QImage>
+#include <QPixmap>
+#include <QDragMoveEvent>
+#include <QHeaderView>
 
 #include <kconfiggroup.h>
 

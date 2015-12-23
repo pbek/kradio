@@ -18,7 +18,7 @@
 #ifndef KRADIO_RECORDING_MONITOR_H
 #define KRADIO_RECORDING_MONITOR_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #include "widgetpluginbase.h"
 #include "soundstreamclient_interfaces.h"

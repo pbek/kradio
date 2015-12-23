@@ -18,8 +18,8 @@
 #ifndef KRADIO_MULTIBUFFER_H
 #define KRADIO_MULTIBUFFER_H
 
-#include <QtCore/QSemaphore>
-#include <QtCore/QString>
+#include <QSemaphore>
+#include <QString>
 #include <kdemacros.h>
 
 class KDE_EXPORT MultiBuffer

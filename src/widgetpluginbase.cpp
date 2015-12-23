@@ -20,7 +20,7 @@
 
 #include <kwindowsystem.h>
 #include <kwindowinfo.h>
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
 #include <kicon.h>

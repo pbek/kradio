@@ -18,7 +18,7 @@ email                : emw-kradio@nocabal.de
 #include "alsa-sounddevice-metadata.h"
 #include "alsa-sound.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 AlsaSoundDeviceMetaData::AlsaSoundDeviceMetaData(const QString &name, const QString &alsa_raw_description)
     : m_pcmDeviceName(name)

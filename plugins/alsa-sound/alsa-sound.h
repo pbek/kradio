@@ -24,9 +24,9 @@
 
 #include "alsa-config-mixer-setting.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QTimer>
-#include <QtCore/QSemaphore>
+#include <QObject>
+#include <QTimer>
+#include <QSemaphore>
 
 #include <alsa/asoundlib.h>
 

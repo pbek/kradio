@@ -22,9 +22,9 @@
 #include "soundformat.h"
 #include "soundstreamclient_interfaces.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QMap>
-#include <QtCore/QStringList>
+#include <QObject>
+#include <QMap>
+#include <QStringList>
 
 class StreamingJob;
 

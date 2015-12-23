@@ -22,7 +22,7 @@
 
 #include "rds_type_decoder.h"
 
-#include <QtCore/QString>
+#include <QString>
 
 #ifndef max
     #define max(a,b)  ((a) > (b) ? (a) : (b))

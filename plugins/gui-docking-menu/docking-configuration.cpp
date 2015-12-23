@@ -17,10 +17,10 @@
 
 #include "docking-configuration.h"
 
-#include <QtGui/QComboBox>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QFrame>
+#include <QComboBox>
+#include <QLabel>
+#include <QLayout>
+#include <QFrame>
 
 #include <klocalizedstring.h>
 

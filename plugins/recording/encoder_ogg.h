@@ -24,7 +24,7 @@
     #include <vorbis/vorbisenc.h>
 #endif
 
-#include <QtCore/QFile>
+#include <QFile>
 
 class RecordingEncodingOgg : public RecordingEncoding
 {

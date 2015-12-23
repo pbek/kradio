@@ -18,9 +18,9 @@
 #ifndef KRADIO_RECORDING_H
 #define KRADIO_RECORDING_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
-#include <QtCore/QMap>
+#include <QObject>
+#include <QString>
+#include <QMap>
 
 #include "pluginbase.h"
 #include "timecontrol_interfaces.h"

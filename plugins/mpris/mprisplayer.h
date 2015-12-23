@@ -19,9 +19,9 @@
 
 #include "mprisbase.h"
 
-#include <QtCore/QObject>
-#include <QtDBus/QDBusAbstractAdaptor>
-#include <QtDBus/QDBusObjectPath>
+#include <QObject>
+#include <QDBusAbstractAdaptor>
+#include <QDBusObjectPath>
 
 class MPRISSupport;
 

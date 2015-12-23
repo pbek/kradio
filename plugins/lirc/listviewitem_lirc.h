@@ -18,7 +18,7 @@
 #ifndef LISTVIEWITEM_LIRC_H
 #define LISTVIEWITEM_LIRC_H
 
-#include <Qt3Support/Q3ListView>
+#include <Q3ListView>
 
 class ListViewItemLirc : public QObject, 
                          public Q3ListViewItem

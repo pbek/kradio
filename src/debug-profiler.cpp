@@ -17,7 +17,7 @@
 
 #include "debug-profiler.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include <sys/resource.h>
 #include <stdio.h>

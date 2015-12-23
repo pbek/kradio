@@ -40,9 +40,9 @@
 #ifndef BUTTONFLOWLAYOUT4_H
 #define BUTTONFLOWLAYOUT4_H
 
-#include <QtCore/QRect>
-#include <QtGui/QLayout>
-#include <QtGui/QWidgetItem>
+#include <QRect>
+#include <QLayout>
+#include <QWidgetItem>
 
 class ButtonFlowLayout4 : public QLayout
 {

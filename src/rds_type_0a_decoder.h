@@ -22,7 +22,7 @@
 
 #include "rds_type_decoder.h"
 
-#include <QtCore/QString>
+#include <QString>
 
 #define RDS_0A_POS_BLOCK          RDS_BLK_B
 #define RDS_0A_POS_SHIFT          0

@@ -20,7 +20,7 @@
 
 #include <sys/types.h>
 #include <kdemacros.h>
-#include <QtCore/QSemaphore>
+#include <QSemaphore>
 
 class KDE_EXPORT RingBuffer
 {

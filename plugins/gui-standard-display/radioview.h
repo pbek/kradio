@@ -18,8 +18,8 @@
 #ifndef KRADIO_RADIOVIEW_H
 #define KRADIO_RADIOVIEW_H
 
-#include <QtGui/QWidget>
-#include <QtCore/QTimer>
+#include <QWidget>
+#include <QTimer>
 #include <khelpmenu.h>
 
 #include "radio_interfaces.h"

@@ -16,11 +16,11 @@
  ***************************************************************************/
 
 class QColorGroup;
-#include <Qt3Support/Q3ListView>
-#include <QtGui/QLabel>
-#include <QtCore/QString>
-#include <QtCore/QFileInfo>
-#include <QtGui/QWidget>
+#include <Q3ListView>
+#include <QLabel>
+#include <QString>
+#include <QFileInfo>
+#include <QWidget>
 
 #include <klistwidget.h>
 #include <klocalizedstring.h>

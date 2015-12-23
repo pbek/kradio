@@ -29,7 +29,7 @@
 #include "stationselection_interfaces.h"
 #include "pluginbase.h"
 #include "soundstreamclient_interfaces.h"
-#include <QtCore/QTimer>
+#include <QTimer>
 
 enum SystrayClickAction { staShowHide = 0, staPowerOnOff = 1, staPause, staRecord, staSystrayMenu, staGuiPluginsMenu, staConfigDialog, staNone };
 enum SystrayWheelAction { swaChangeStation = 0, swaChangeVolume, swaChangeFrequency, swaNone };

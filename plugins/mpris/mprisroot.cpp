@@ -17,7 +17,7 @@
 #include "mprisroot.h"
 #include "mprissupport.h"
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <KDE/KAboutData>
 #include <KDE/KCmdLineArgs>
 #include <KDE/KProtocolInfo>

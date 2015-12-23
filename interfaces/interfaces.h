@@ -18,8 +18,8 @@
 #ifndef KRADIO_INTERFACES_H
 #define KRADIO_INTERFACES_H
 
-#include <QtCore/QList>
-#include <QtCore/QMap>
+#include <QList>
+#include <QMap>
 #include <typeinfo>
 
 #include <kdemacros.h>

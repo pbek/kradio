@@ -18,9 +18,9 @@
 #include "errorlog_interfaces.h"
 #include "thread-logging.h"
 
-#include <QtCore/QMutex>
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QMutex>
+#include <QString>
+#include <QStringList>
 
 ThreadLogging::ThreadLogging()
 {

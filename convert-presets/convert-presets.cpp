@@ -1,12 +1,12 @@
 #include <kapplication.h>
-#include <QtCore/QString>
-#include <QtCore/QTextStream>
-#include <QtCore/QFile>
+#include <QString>
+#include <QTextStream>
+#include <QFile>
 #include <klocalizedstring.h>
 #include <kdebug.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
-#include <QtCore/QRegExp>
+#include <QRegExp>
 #include <time.h>
 #include <sys/fcntl.h>
 #include <unistd.h>

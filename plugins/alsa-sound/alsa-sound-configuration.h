@@ -18,7 +18,7 @@
 #ifndef KRADIO_ALSA_SOUND_CONFIGURATION_H
 #define KRADIO_ALSA_SOUND_CONFIGURATION_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #include "ui_alsa-sound-configuration-ui.h"
 #include "alsa-sound.h"

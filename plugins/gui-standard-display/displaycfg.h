@@ -19,7 +19,7 @@
 #define KRADIO_DISPLAYCFG_H
 
 #include "displaycfg_interfaces.h"
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class KColorButton;
 class KFontChooser;

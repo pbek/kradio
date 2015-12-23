@@ -18,9 +18,9 @@
 #include "shortcuts.h"
 #include "widgetpluginbase.h"
 
-#include <QtCore/QSocketNotifier>
-#include <QtCore/QTimer>
-#include <QtCore/QFile>
+#include <QSocketNotifier>
+#include <QTimer>
+#include <QFile>
 
 #include <kapplication.h>
 #include <kaboutdata.h>

@@ -23,10 +23,10 @@
 #include "recording-configuration.h"
 #include "soundstreamevent.h"
 
-#include <QtCore/QSocketNotifier>
-#include <QtCore/QEvent>
-#include <QtGui/QApplication>
-#include <QtCore/QRegExp>
+#include <QSocketNotifier>
+#include <QEvent>
+#include <QApplication>
+#include <QRegExp>
 
 #include <kconfig.h>
 #include <kdeversion.h>

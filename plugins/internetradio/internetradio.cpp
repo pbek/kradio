@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtCore/QList>
+#include <QList>
 
 #include <kconfiggroup.h>
 #include <kaboutdata.h>

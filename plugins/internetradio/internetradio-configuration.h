@@ -18,7 +18,7 @@
 #ifndef KRADIO_INTERNETRADIO_CONFIGURATION_H
 #define KRADIO_INTERNETRADIO_CONFIGURATION_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #include "soundstreamclient_interfaces.h"
 #include "gui_list_helper.h"

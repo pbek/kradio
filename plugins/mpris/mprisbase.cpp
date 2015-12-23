@@ -16,10 +16,10 @@
 
 #include "mprisbase.h"
 
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusMessage>
-#include <QtCore/QMetaClassInfo>
-#include <QtCore/QStringList>
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QMetaClassInfo>
+#include <QStringList>
 
 MPRISBase::MPRISBase(QObject *adaptor)
     : m_adaptor(adaptor)

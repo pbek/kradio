@@ -18,7 +18,7 @@
 #ifndef KRADIO_RECORDING_SOUNDSTREAM_EVENT_H
 #define KRADIO_RECORDING_SOUNDSTREAM_EVENT_H
 
-#include <QtCore/QEvent>
+#include <QEvent>
 
 #include "sound_metadata.h"
 

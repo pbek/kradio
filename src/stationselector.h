@@ -18,8 +18,8 @@
 #ifndef KRADIO_STATIONSELECTOR_H
 #define KRADIO_STATIONSELECTOR_H
 
-#include <QtCore/QStringList>
-#include <QtGui/QWidget>
+#include <QStringList>
+#include <QWidget>
 
 #include "radio_interfaces.h"
 #include "stationselection_interfaces.h"

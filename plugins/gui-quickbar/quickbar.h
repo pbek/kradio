@@ -18,8 +18,8 @@
 #ifndef KRADIO_QUICKBAR_H
 #define KRADIO_QUICKBAR_H
 
-#include <QtGui/QWidget>
-#include <QtCore/QSignalMapper>
+#include <QWidget>
+#include <QSignalMapper>
 
 
 #include "radio_interfaces.h"

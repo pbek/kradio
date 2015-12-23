@@ -14,7 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include <QtDBus/QDBusConnection>
+#include <QDBusConnection>
 #include <kapplication.h>
 
 #include "dbussupport.h"

@@ -18,7 +18,7 @@
 #ifndef KRADIO_RADIOVIEW_FREQUENCYSEEKER_H
 #define KRADIO_RADIOVIEW_FREQUENCYSEEKER_H
 
-#include <QtGui/QAction>
+#include <QAction>
 
 #include "seekradio_interfaces.h"
 #include "frequencyradio_interfaces.h"

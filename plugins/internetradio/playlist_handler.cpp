@@ -23,8 +23,8 @@
 #include <kencodingprober.h>
 #include <kconfiggroup.h>
 #include <kconfig.h>
-#include <QtCore/QXmlStreamReader>
-#include <QtCore/QTextCodec>
+#include <QXmlStreamReader>
+#include <QTextCodec>
 
 #include <math.h>
 

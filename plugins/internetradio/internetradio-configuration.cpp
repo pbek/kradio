@@ -19,13 +19,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include <QtGui/QSpinBox>
-#include <QtGui/QLineEdit>
-#include <QtGui/QLabel>
-#include <QtCore/QFile>
-#include <QtGui/QPushButton>
-#include <QtGui/QSlider>
-#include <QtGui/QCheckBox>
+#include <QSpinBox>
+#include <QLineEdit>
+#include <QLabel>
+#include <QFile>
+#include <QPushButton>
+#include <QSlider>
+#include <QCheckBox>
 
 #include <kfiledialog.h>
 #include <knuminput.h>
