@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gui-docking-menu (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -65,7 +65,7 @@ msgstr "Uključi/Isključi"
 msgid "Pause/Play"
 msgstr "Pauza/Emituj"
 
-#: docking-configuration.cpp:130 docking.cpp:303
+#: docking-configuration.cpp:130 docking.cpp:304
 #, kde-format
 msgid "Recording"
 msgstr "Snimanje"
@@ -110,37 +110,37 @@ msgstr "Ikona sistemske kasete"
 msgid "System Tray Plugin"
 msgstr "Priključak sistemske kasete"
 
-#: docking.cpp:238
+#: docking.cpp:239
 #, kde-format
 msgid "System Tray Icon"
 msgstr "Ikona sistemske kasete"
 
-#: docking.cpp:239
+#: docking.cpp:240
 #, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Konfiguracija ikone sistemske kasete"
 
-#: docking.cpp:293
+#: docking.cpp:294
 #, kde-format
 msgid "Search Next Station"
 msgstr "Traži sledeću stanicu"
 
-#: docking.cpp:294
+#: docking.cpp:295
 #, kde-format
 msgid "Search Previous Station"
 msgstr "Traži predhodnu stanicu"
 
-#: docking.cpp:308
+#: docking.cpp:309
 #, kde-format
 msgid "Pause Radio"
 msgstr "Pauziraj radio"
 
-#: docking.cpp:319
+#: docking.cpp:320
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Pokaži/Sakrij priključke"
 
-#: docking.cpp:327
+#: docking.cpp:328
 #, kde-format
 msgid "&Quit"
 msgstr "&Napusti"

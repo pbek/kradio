@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2012-08-14 16:05+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -414,7 +414,7 @@ msgstr "wizzardsk@gmail.com"
 msgid "KRadio Recording Plugin"
 msgstr ""
 
-#: recording.cpp:47 recording-monitor.cpp:38
+#: recording.cpp:47 recording-monitor.cpp:39
 #, kde-format
 msgid "KRadio Recording Monitor"
 msgstr ""
@@ -477,77 +477,77 @@ msgstr ""
 msgid "%1 dB"
 msgstr "%1 dB"
 
-#: recording-monitor.cpp:34
+#: recording-monitor.cpp:35
 #, kde-format
 msgid "Recording Monitor"
 msgstr ""
 
-#: recording-monitor.cpp:44
+#: recording-monitor.cpp:45
 #, kde-format
 msgid "Sound Stream"
 msgstr ""
 
 #. i18n("Status"),         this), 1, 0);
 #. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
-#: recording-monitor.cpp:48
+#: recording-monitor.cpp:49
 #, kde-format
 msgid "Recording File"
 msgstr ""
 
-#: recording-monitor.cpp:49 recording-monitor.cpp:51 recording-monitor.cpp:53
-#: recording-monitor.cpp:55 recording-monitor.cpp:379 recording-monitor.cpp:380
-#: recording-monitor.cpp:385 recording-monitor.cpp:386
-#: recording-monitor.cpp:387 recording-monitor.cpp:388
+#: recording-monitor.cpp:50 recording-monitor.cpp:52 recording-monitor.cpp:54
+#: recording-monitor.cpp:56 recording-monitor.cpp:380 recording-monitor.cpp:381
+#: recording-monitor.cpp:386 recording-monitor.cpp:387
+#: recording-monitor.cpp:388 recording-monitor.cpp:389
 #, kde-format
 msgid "<undefined>"
 msgstr ""
 
-#: recording-monitor.cpp:50
+#: recording-monitor.cpp:51
 #, kde-format
 msgid "File Size"
 msgstr "Veľkosť súboru"
 
-#: recording-monitor.cpp:52
+#: recording-monitor.cpp:53
 #, kde-format
 msgid "Recording Time"
 msgstr ""
 
-#: recording-monitor.cpp:54
+#: recording-monitor.cpp:55
 #, kde-format
 msgid "Sample Rate"
 msgstr "Vzorkovacia frekvencia"
 
-#: recording-monitor.cpp:64
+#: recording-monitor.cpp:65
 #, kde-format
 msgid "&Close"
 msgstr "&Zavrieť"
 
-#: recording-monitor.cpp:65 recording-monitor.cpp:411 recording-monitor.cpp:414
+#: recording-monitor.cpp:66 recording-monitor.cpp:412 recording-monitor.cpp:415
 #, kde-format
 msgid "&Record"
 msgstr "Nahrať"
 
-#: recording-monitor.cpp:84 recording-monitor.cpp:127 recording-monitor.cpp:151
+#: recording-monitor.cpp:85 recording-monitor.cpp:128 recording-monitor.cpp:152
 #, kde-format
 msgid "nothing"
 msgstr "nič"
 
-#: recording-monitor.cpp:341
+#: recording-monitor.cpp:342
 #, kde-format
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
-#: recording-monitor.cpp:377
+#: recording-monitor.cpp:378
 #, kde-format
 msgid "0.000 kB"
 msgstr "0.000 kB"
 
-#: recording-monitor.cpp:378
+#: recording-monitor.cpp:379
 #, kde-format
 msgid "00:00:00.00"
 msgstr "00:00:00.00"
 
-#: recording-monitor.cpp:411
+#: recording-monitor.cpp:412
 #, kde-format
 msgid "&Stop Recording"
 msgstr "Ukončiť nahrávanie"

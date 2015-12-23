@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -102,33 +102,33 @@ msgstr ""
 msgid "Cannot use libav sample format id %1"
 msgstr ""
 
-#: icy_http_handler.cpp:72
+#: icy_http_handler.cpp:86
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
 msgstr ""
 
-#: icy_http_handler.cpp:90
+#: icy_http_handler.cpp:104
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
 "%1: KIO::get returned NULL pointer"
 msgstr ""
 
-#: icy_http_handler.cpp:110
+#: icy_http_handler.cpp:124
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
 "%1: %2"
 msgstr ""
 
-#: icy_http_handler.cpp:426
+#: icy_http_handler.cpp:447
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
 "%2"
 msgstr ""
 
-#: icy_http_handler.cpp:434
+#: icy_http_handler.cpp:455
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""

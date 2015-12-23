@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.recording.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2014-09-18 15:40+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -458,7 +458,7 @@ msgstr "emw@nocabal.de"
 msgid "KRadio Recording Plugin"
 msgstr "KRadio Aufnahme-Plugin"
 
-#: recording.cpp:47 recording-monitor.cpp:38
+#: recording.cpp:47 recording-monitor.cpp:39
 #, kde-format
 msgid "KRadio Recording Monitor"
 msgstr "KRadio Aufnahme-Überwachung"
@@ -527,77 +527,77 @@ msgstr ""
 msgid "%1 dB"
 msgstr "%1 dB"
 
-#: recording-monitor.cpp:34
+#: recording-monitor.cpp:35
 #, kde-format
 msgid "Recording Monitor"
 msgstr "Aufnahme-Überwachung"
 
-#: recording-monitor.cpp:44
+#: recording-monitor.cpp:45
 #, kde-format
 msgid "Sound Stream"
 msgstr "Aufnahmedatenstrom"
 
 #. i18n("Status"),         this), 1, 0);
 #. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
-#: recording-monitor.cpp:48
+#: recording-monitor.cpp:49
 #, kde-format
 msgid "Recording File"
 msgstr "Aufnahmedatei"
 
-#: recording-monitor.cpp:49 recording-monitor.cpp:51 recording-monitor.cpp:53
-#: recording-monitor.cpp:55 recording-monitor.cpp:379 recording-monitor.cpp:380
-#: recording-monitor.cpp:385 recording-monitor.cpp:386
-#: recording-monitor.cpp:387 recording-monitor.cpp:388
+#: recording-monitor.cpp:50 recording-monitor.cpp:52 recording-monitor.cpp:54
+#: recording-monitor.cpp:56 recording-monitor.cpp:380 recording-monitor.cpp:381
+#: recording-monitor.cpp:386 recording-monitor.cpp:387
+#: recording-monitor.cpp:388 recording-monitor.cpp:389
 #, kde-format
 msgid "<undefined>"
 msgstr "<undefiniert>"
 
-#: recording-monitor.cpp:50
+#: recording-monitor.cpp:51
 #, kde-format
 msgid "File Size"
 msgstr "Dateigröße"
 
-#: recording-monitor.cpp:52
+#: recording-monitor.cpp:53
 #, kde-format
 msgid "Recording Time"
 msgstr "Aufnahmezeit"
 
-#: recording-monitor.cpp:54
+#: recording-monitor.cpp:55
 #, kde-format
 msgid "Sample Rate"
 msgstr "Abtastrate"
 
-#: recording-monitor.cpp:64
+#: recording-monitor.cpp:65
 #, kde-format
 msgid "&Close"
 msgstr "Sch&ließen"
 
-#: recording-monitor.cpp:65 recording-monitor.cpp:411 recording-monitor.cpp:414
+#: recording-monitor.cpp:66 recording-monitor.cpp:412 recording-monitor.cpp:415
 #, kde-format
 msgid "&Record"
 msgstr "&Aufnehmen"
 
-#: recording-monitor.cpp:84 recording-monitor.cpp:127 recording-monitor.cpp:151
+#: recording-monitor.cpp:85 recording-monitor.cpp:128 recording-monitor.cpp:152
 #, kde-format
 msgid "nothing"
 msgstr "nichts"
 
-#: recording-monitor.cpp:341
+#: recording-monitor.cpp:342
 #, kde-format
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
-#: recording-monitor.cpp:377
+#: recording-monitor.cpp:378
 #, kde-format
 msgid "0.000 kB"
 msgstr "0.000 kB"
 
-#: recording-monitor.cpp:378
+#: recording-monitor.cpp:379
 #, kde-format
 msgid "00:00:00.00"
 msgstr "00:00:00.00"
 
-#: recording-monitor.cpp:411
+#: recording-monitor.cpp:412
 #, kde-format
 msgid "&Stop Recording"
 msgstr "Aufnahme anhalten"

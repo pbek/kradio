@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2012-06-01 10:02+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -173,7 +173,7 @@ msgstr "Stanica"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
 #: radiostations/radiostation-listview.cpp:144
-#: src/pluginmanager-configuration.cpp:56 rc.cpp:44
+#: src/pluginmanager-configuration.cpp:57 rc.cpp:44
 #, kde-format
 msgid "Description"
 msgstr "Popis"
@@ -292,18 +292,17 @@ msgstr "&Preklad"
 msgid "License Agreement"
 msgstr "Licenčná zmluva"
 
-#: src/kradioapp.cpp:129
+#: src/kradioapp.cpp:123
 #, fuzzy, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Knižnica %1: Vstupný bod nenájdený\n"
 
-#: src/kradioapp.cpp:130 src/kradioapp.cpp:138
-#: src/pluginmanager-configuration.cpp:211
+#: src/kradioapp.cpp:124 src/kradioapp.cpp:131
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Chyba pri čítaní knižnice pluginov"
 
-#: src/kradioapp.cpp:137
+#: src/kradioapp.cpp:130
 #, fuzzy, kde-format
 msgid ""
 "Library %1:\n"
@@ -312,17 +311,17 @@ msgstr ""
 "Knižnica %1: \n"
 "%2"
 
-#: src/kradioapp.cpp:214
+#: src/kradioapp.cpp:207
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr "Našli sa nové knižnice pluginov. Chcete ich teraz načítať?"
 
-#: src/kradioapp.cpp:216
+#: src/kradioapp.cpp:209
 #, fuzzy, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Nájdené nové knižnice pluginov"
 
-#: src/kradioapp.cpp:232
+#: src/kradioapp.cpp:225
 #, fuzzy, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -342,22 +341,22 @@ msgstr[2] ""
 "Našlo sa iba %1 knižníc. Očakáva sa minimálne 5. Prosím skontrolujte "
 "inštalačný adresár KRadio4 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
 
-#: src/kradioapp.cpp:240
+#: src/kradioapp.cpp:233
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "Chyba inštalácie KRadio4"
 
-#: src/kradioapp.cpp:265
+#: src/kradioapp.cpp:258
 #, fuzzy, kde-format
 msgid "Instance %1"
 msgstr "Inštancia"
 
-#: src/kradioapp.cpp:286
+#: src/kradioapp.cpp:279
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "Nastavenie KRadio"
 
-#: src/kradioapp.cpp:287
+#: src/kradioapp.cpp:280
 #, kde-format
 msgid "About KRadio Components"
 msgstr "O komponentoch KRadio"
@@ -443,90 +442,81 @@ msgstr "Dialógové okno s nastaveniami"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:220
 #. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
-#: src/pluginmanager-configuration.cpp:54 rc.cpp:41
+#: src/pluginmanager-configuration.cpp:55 rc.cpp:41
 #, kde-format
 msgid "Plugin Class"
 msgstr "Trieda pluginu"
 
-#: src/pluginmanager-configuration.cpp:55
+#: src/pluginmanager-configuration.cpp:56
 #, kde-format
 msgid "Instance Name"
 msgstr "Názov inštancie"
 
-#: src/pluginmanager-configuration.cpp:210
-#, fuzzy, kde-format
-msgid ""
-"Library %1:\n"
-"Cannot load non-local library"
-msgstr ""
-"Knižnica %1: \n"
-"Nemôžem načítať ne-miestnu knižnicu"
-
-#: src/pluginmanager-configuration.cpp:240
+#: src/pluginmanager-configuration.cpp:238
 #, kde-format
 msgid "Enter Plugin Instance Name"
 msgstr "Zadajte názov inštancie pluginu"
 
-#: src/pluginmanager-configuration.cpp:241
+#: src/pluginmanager-configuration.cpp:239
 #, fuzzy, kde-format
 msgid "Instance name:"
 msgstr "Názov inštancie"
 
-#: src/pluginmanager.cpp:436
+#: src/pluginmanager.cpp:435
 #, kde-format
 msgid "Plugins"
 msgstr "Prídavné moduly"
 
-#: src/pluginmanager.cpp:437
+#: src/pluginmanager.cpp:436
 #, kde-format
 msgid "Plugin Library Configuration"
 msgstr "Nastavenie knižnice pluginov"
 
-#: src/pluginmanager.cpp:570
+#: src/pluginmanager.cpp:568
 #, kde-format
 msgid "Starting Plugins"
 msgstr "Spúšťanie pluginov"
 
-#: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
+#: src/pluginmanager.cpp:585 src/pluginmanager.cpp:619
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Vytváram plugin %1"
 
-#: src/pluginmanager.cpp:605
+#: src/pluginmanager.cpp:603
 #, kde-format
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
 msgstr "Našli sa nové pluginy. Chcete teraz automaticky vytvoriť inštancie?"
 
-#: src/pluginmanager.cpp:607
+#: src/pluginmanager.cpp:605
 #, fuzzy, kde-format
 msgid "New Plugins Found"
 msgstr "Našli sa nové pluginy"
 
-#: src/pluginmanager.cpp:642
+#: src/pluginmanager.cpp:640
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Inicializujem plugin %1"
 
-#: src/pluginmanager.cpp:767
+#: src/pluginmanager.cpp:765
 #, fuzzy, kde-format
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Zobraziť všetko"
 
-#: src/pluginmanager.cpp:768
+#: src/pluginmanager.cpp:766
 #, fuzzy, kde-format
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Skryť všetko"
 
-#: src/pluginmanager.cpp:769
+#: src/pluginmanager.cpp:767
 #, fuzzy, kde-format
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Obnoviť všetko"
 
-#: src/pluginmanager.cpp:770
+#: src/pluginmanager.cpp:768
 #, fuzzy, kde-format
 msgid "Restore state before last hide-all activation"
 msgstr "obnoviť stav pred posledným krokom \"skryť všetko\""
@@ -563,12 +553,12 @@ msgstr "nová stanica"
 msgid "canDecode = true"
 msgstr "canDecode = true"
 
-#: src/stationlist.cpp:135
+#: src/stationlist.cpp:134
 #, kde-format
 msgid "Contains merged Data"
 msgstr "Obsahuje spojené záznamy"
 
-#: src/stationlist.cpp:176
+#: src/stationlist.cpp:175
 #, kde-format
 msgid ""
 "Probably an old station preset file was read.\n"
@@ -578,12 +568,12 @@ msgstr ""
 "Pravdepodobne bol načítaný súbor so starýmii predvoľbami.\n"
 "Musíte znovu vytvoriť svoj výber staníc pre rýchlu voľbu a voľbu na paneli."
 
-#: src/stationlist.cpp:185
+#: src/stationlist.cpp:184
 #, kde-format
 msgid "parsing failed"
 msgstr "analýza zlyhala"
 
-#: src/stationlist.cpp:189
+#: src/stationlist.cpp:188
 #, kde-format
 msgid ""
 "Parsing the station preset file failed.\n"
@@ -592,52 +582,52 @@ msgstr ""
 "Analýza súboru s predvoľbami zlyhala.\n"
 "Viac informácií sa dozviete z výstupu na konzoli."
 
-#: src/stationlist.cpp:203 src/stationlist.cpp:208
+#: src/stationlist.cpp:202 src/stationlist.cpp:207
 #, kde-format
 msgid "error downloading preset file %1"
 msgstr "chyba sťahovania súboru predvolieb %1"
 
-#: src/stationlist.cpp:205
+#: src/stationlist.cpp:204
 #, kde-format
 msgid "Download of the station preset file at %1 failed."
 msgstr "Stiahnutie súboru predvolieb staníc %1 zlyhalo."
 
-#: src/stationlist.cpp:214
+#: src/stationlist.cpp:213
 #, fuzzy, kde-format
 msgid "temporary file: %1"
 msgstr "dočasný súbor:"
 
-#: src/stationlist.cpp:220
+#: src/stationlist.cpp:219
 #, kde-format
 msgid "error opening preset file %1"
 msgstr "chyba otvárania súboru predvolieb %1"
 
-#: src/stationlist.cpp:223
+#: src/stationlist.cpp:222
 #, kde-format
 msgid "Opening of the station preset file at %1 failed."
 msgstr "Otvorenie súboru predvolieb staníc %1 zlyhalo."
 
-#: src/stationlist.cpp:243
+#: src/stationlist.cpp:242
 #, kde-format
 msgid "Old Preset File Format detected"
 msgstr "Detekovaný starý formát súboru predvolieb"
 
-#: src/stationlist.cpp:322
+#: src/stationlist.cpp:320
 #, fuzzy, kde-format
 msgid "error writing to temporary file %1"
 msgstr "chyba zápisu do dočasného súboru %1"
 
-#: src/stationlist.cpp:325
+#: src/stationlist.cpp:323
 #, kde-format
 msgid "Writing station preset file %1 failed."
 msgstr "Zápis súboru predvolieb staníc %1 zlyhal."
 
-#: src/stationlist.cpp:335
+#: src/stationlist.cpp:333
 #, kde-format
 msgid "uploading preset file %1: "
 msgstr "nahrávanie súboru predvolieb %1: "
 
-#: src/stationlist.cpp:337
+#: src/stationlist.cpp:335
 #, kde-format
 msgid ""
 "something strange happened, station list has only %1 entries. Writing "
@@ -646,17 +636,17 @@ msgstr ""
 "stalo sa niečo zvláštne, zoznam staníc má iba %1 položiek. Zápis súboru "
 "predvolieb bol preskočený"
 
-#: src/stationlist.cpp:342
+#: src/stationlist.cpp:340
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "chyba nahrávania súboru predvolieb %1"
 
-#: src/stationlist.cpp:346
+#: src/stationlist.cpp:344
 #, kde-format
 msgid "Upload of station preset file to %1 failed."
 msgstr "Nahranie súboru predvolieb staníc %1 zlyhalo."
 
-#: src/stationlist.cpp:353 src/stationlist.cpp:354
+#: src/stationlist.cpp:351 src/stationlist.cpp:352
 #, fuzzy, kde-format
 msgid "error creating temporary file"
 msgstr "chyba vytvárania dočasného súboru"
@@ -904,6 +894,14 @@ msgstr "Dostupné stanice"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Library %1:\n"
+#~ "Cannot load non-local library"
+#~ msgstr ""
+#~ "Knižnica %1: \n"
+#~ "Nemôžem načítať ne-miestnu knižnicu"
 
 #~ msgid "No."
 #~ msgstr "Č."

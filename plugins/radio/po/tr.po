@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2011-02-06 05:13+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -53,32 +53,32 @@ msgstr ""
 msgid "Load and add presets"
 msgstr ""
 
-#: radio-configuration.cpp:428
+#: radio-configuration.cpp:426
 #, kde-format
 msgid "Image Selection"
 msgstr "Görüntü Seçimi"
 
-#: radio-configuration.cpp:433
+#: radio-configuration.cpp:431
 #, kde-format
 msgid "ignoring non-local image"
 msgstr ""
 
-#: radio-configuration.cpp:550 radio-configuration.cpp:578
+#: radio-configuration.cpp:548 radio-configuration.cpp:576
 #, kde-format
 msgid "KRadio Preset Files"
 msgstr "KRadio Önayar Dosyaları"
 
-#: radio-configuration.cpp:554
+#: radio-configuration.cpp:552
 #, kde-format
 msgid "Select Preset File"
 msgstr ""
 
-#: radio-configuration.cpp:582
+#: radio-configuration.cpp:580
 #, fuzzy, kde-format
 msgid "Save Preset File"
 msgstr "KRadio Önayar Dosyaları"
 
-#: radio-configuration.cpp:628
+#: radio-configuration.cpp:626
 #, fuzzy, kde-format
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
@@ -86,7 +86,7 @@ msgstr[0] "yeni istasyon %1 bulundu"
 msgstr[1] "yeni istasyon %1 bulundu"
 msgstr[2] "yeni istasyon %1 bulundu"
 
-#: radio-configuration.cpp:630
+#: radio-configuration.cpp:628
 #, fuzzy, kde-format
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"

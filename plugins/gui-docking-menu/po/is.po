@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2010-01-08 07:49+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -70,7 +70,7 @@ msgstr "Af/Á"
 msgid "Pause/Play"
 msgstr "Gera hlé á afspilun"
 
-#: docking-configuration.cpp:130 docking.cpp:303
+#: docking-configuration.cpp:130 docking.cpp:304
 #, kde-format
 msgid "Recording"
 msgstr "Upptaka"
@@ -115,37 +115,37 @@ msgstr "Táknmynd í kerfisbakka"
 msgid "System Tray Plugin"
 msgstr "Íforrit í kerfisbakka"
 
-#: docking.cpp:238
+#: docking.cpp:239
 #, kde-format
 msgid "System Tray Icon"
 msgstr "Táknmynd í kerfisbakka"
 
-#: docking.cpp:239
+#: docking.cpp:240
 #, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Stillingar fyrir táknmynd í kerfisbakka"
 
-#: docking.cpp:293
+#: docking.cpp:294
 #, kde-format
 msgid "Search Next Station"
 msgstr "Finna næstu útvarpsstöð"
 
-#: docking.cpp:294
+#: docking.cpp:295
 #, kde-format
 msgid "Search Previous Station"
 msgstr "Finna fyrri útvarpsstöð"
 
-#: docking.cpp:308
+#: docking.cpp:309
 #, kde-format
 msgid "Pause Radio"
 msgstr "Gera hlé á útvarpi"
 
-#: docking.cpp:319
+#: docking.cpp:320
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Sýna/fela íforrit"
 
-#: docking.cpp:327
+#: docking.cpp:328
 #, kde-format
 msgid "&Quit"
 msgstr "&Hætta"

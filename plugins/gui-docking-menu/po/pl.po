@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Pause/Play"
 msgstr ""
 
-#: docking-configuration.cpp:130 docking.cpp:303
+#: docking-configuration.cpp:130 docking.cpp:304
 #, kde-format
 msgid "Recording"
 msgstr ""
@@ -115,37 +115,37 @@ msgstr ""
 msgid "System Tray Plugin"
 msgstr ""
 
-#: docking.cpp:238
+#: docking.cpp:239
 #, kde-format
 msgid "System Tray Icon"
 msgstr ""
 
-#: docking.cpp:239
+#: docking.cpp:240
 #, kde-format
 msgid "System Tray Icon Configuration"
 msgstr ""
 
-#: docking.cpp:293
+#: docking.cpp:294
 #, kde-format
 msgid "Search Next Station"
 msgstr ""
 
-#: docking.cpp:294
+#: docking.cpp:295
 #, kde-format
 msgid "Search Previous Station"
 msgstr ""
 
-#: docking.cpp:308
+#: docking.cpp:309
 #, kde-format
 msgid "Pause Radio"
 msgstr ""
 
-#: docking.cpp:319
+#: docking.cpp:320
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr ""
 
-#: docking.cpp:327
+#: docking.cpp:328
 #, kde-format
 msgid "&Quit"
 msgstr ""

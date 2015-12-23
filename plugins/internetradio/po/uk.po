@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2014-09-18 18:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -105,12 +105,12 @@ msgstr "Ще не реалізовано: ідентифікатор семпл�
 msgid "Cannot use libav sample format id %1"
 msgstr "Не вдалося використати ідентифікатор формату семплу libav %1"
 
-#: icy_http_handler.cpp:72
+#: icy_http_handler.cpp:86
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
 msgstr "Модуль інтернет-радіо (обробник http ICY): відкриваємо потік %1"
 
-#: icy_http_handler.cpp:90
+#: icy_http_handler.cpp:104
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
@@ -119,7 +119,7 @@ msgstr ""
 "Додаток інтернет-радіо (обробник http ICY): не вдалося розпочати звантаження "
 "потокових даних %1: KIO::get повернуто нульовий вказівник"
 
-#: icy_http_handler.cpp:110
+#: icy_http_handler.cpp:124
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
@@ -128,7 +128,7 @@ msgstr ""
 "Додаток інтернет-радіо (обробник http ICY): не вдалося розпочати звантаження "
 "потокових даних %1: %2"
 
-#: icy_http_handler.cpp:426
+#: icy_http_handler.cpp:447
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
@@ -137,7 +137,7 @@ msgstr ""
 "Додаток інтернет-радіо (обробник http ICY): не вдалося завантажити дані "
 "потоку для %1: %2"
 
-#: icy_http_handler.cpp:434
+#: icy_http_handler.cpp:455
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr "Модуль інтернет-радіо (обробник http ICY): помилка HTTP %1 потоку %2"

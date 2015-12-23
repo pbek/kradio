@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2014-09-18 15:21+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr "Ein/Ausschalten"
 msgid "Pause/Play"
 msgstr "Pause/Wiedergabe"
 
-#: docking-configuration.cpp:130 docking.cpp:303
+#: docking-configuration.cpp:130 docking.cpp:304
 #, kde-format
 msgid "Recording"
 msgstr "Aufnahme"
@@ -116,37 +116,37 @@ msgstr "System Tray Icon/Menü"
 msgid "System Tray Plugin"
 msgstr "System Tray Plugin"
 
-#: docking.cpp:238
+#: docking.cpp:239
 #, kde-format
 msgid "System Tray Icon"
 msgstr "System Tray Icon"
 
-#: docking.cpp:239
+#: docking.cpp:240
 #, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Konfiguration des System Tray Icons"
 
-#: docking.cpp:293
+#: docking.cpp:294
 #, kde-format
 msgid "Search Next Station"
 msgstr "Suche nächsten Sender"
 
-#: docking.cpp:294
+#: docking.cpp:295
 #, kde-format
 msgid "Search Previous Station"
 msgstr "Suche vorherigen Sender"
 
-#: docking.cpp:308
+#: docking.cpp:309
 #, kde-format
 msgid "Pause Radio"
 msgstr "Radiowiedergabe pausieren"
 
-#: docking.cpp:319
+#: docking.cpp:320
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Plugins anzeigen/verstecken"
 
-#: docking.cpp:327
+#: docking.cpp:328
 #, kde-format
 msgid "&Quit"
 msgstr "&Beenden"

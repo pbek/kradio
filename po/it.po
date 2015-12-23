@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2014-03-03 01:58+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -178,7 +178,7 @@ msgstr "Stazione"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
 #: radiostations/radiostation-listview.cpp:144
-#: src/pluginmanager-configuration.cpp:56 rc.cpp:44
+#: src/pluginmanager-configuration.cpp:57 rc.cpp:44
 #, kde-format
 msgid "Description"
 msgstr "Descrizione"
@@ -301,18 +301,17 @@ msgstr "T&raduzione"
 msgid "License Agreement"
 msgstr "Accordo di licenza"
 
-#: src/kradioapp.cpp:129
+#: src/kradioapp.cpp:123
 #, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Libreria %1: manca il punto d'ingresso dell'estensione"
 
-#: src/kradioapp.cpp:130 src/kradioapp.cpp:138
-#: src/pluginmanager-configuration.cpp:211
+#: src/kradioapp.cpp:124 src/kradioapp.cpp:131
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Impossibile caricare la libreria dell'estensione"
 
-#: src/kradioapp.cpp:137
+#: src/kradioapp.cpp:130
 #, kde-format
 msgid ""
 "Library %1:\n"
@@ -321,18 +320,18 @@ msgstr ""
 "Libreria %1:\n"
 "%2"
 
-#: src/kradioapp.cpp:214
+#: src/kradioapp.cpp:207
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr ""
 "Sono state trovate delle nuove librerie di estensioni. Vuoi caricarle adesso?"
 
-#: src/kradioapp.cpp:216
+#: src/kradioapp.cpp:209
 #, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Sono state trovate delle nuove librerie di estensioni"
 
-#: src/kradioapp.cpp:232
+#: src/kradioapp.cpp:225
 #, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -351,22 +350,22 @@ msgstr[1] ""
 "Controlla la directory di installazione di KRadio4 e le variabili d'ambiente "
 "KDEDIR, KDEDIRS e KDEHOME.\n"
 
-#: src/kradioapp.cpp:240
+#: src/kradioapp.cpp:233
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "Errore di installazione di KRadio4"
 
-#: src/kradioapp.cpp:265
+#: src/kradioapp.cpp:258
 #, kde-format
 msgid "Instance %1"
 msgstr "Istanza %1"
 
-#: src/kradioapp.cpp:286
+#: src/kradioapp.cpp:279
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "Configurazione di KRadio"
 
-#: src/kradioapp.cpp:287
+#: src/kradioapp.cpp:280
 #, kde-format
 msgid "About KRadio Components"
 msgstr "Informazioni sui componenti di KRadio"
@@ -453,56 +452,47 @@ msgstr "Finestra di configurazione"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:220
 #. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
-#: src/pluginmanager-configuration.cpp:54 rc.cpp:41
+#: src/pluginmanager-configuration.cpp:55 rc.cpp:41
 #, kde-format
 msgid "Plugin Class"
 msgstr "Classe di estensione"
 
-#: src/pluginmanager-configuration.cpp:55
+#: src/pluginmanager-configuration.cpp:56
 #, kde-format
 msgid "Instance Name"
 msgstr "Nome dell'istanza"
 
-#: src/pluginmanager-configuration.cpp:210
-#, kde-format
-msgid ""
-"Library %1:\n"
-"Cannot load non-local library"
-msgstr ""
-"Libreria %1:\n"
-"Impossibile caricare una libreria che non sia locale"
-
-#: src/pluginmanager-configuration.cpp:240
+#: src/pluginmanager-configuration.cpp:238
 #, kde-format
 msgid "Enter Plugin Instance Name"
 msgstr "Inserisci il nome dell'istanza dell'estensione"
 
-#: src/pluginmanager-configuration.cpp:241
+#: src/pluginmanager-configuration.cpp:239
 #, kde-format
 msgid "Instance name:"
 msgstr "Nome dell'istanza:"
 
-#: src/pluginmanager.cpp:436
+#: src/pluginmanager.cpp:435
 #, kde-format
 msgid "Plugins"
 msgstr "Estensioni"
 
-#: src/pluginmanager.cpp:437
+#: src/pluginmanager.cpp:436
 #, kde-format
 msgid "Plugin Library Configuration"
 msgstr "Configurazione della libreria dell'estensione"
 
-#: src/pluginmanager.cpp:570
+#: src/pluginmanager.cpp:568
 #, kde-format
 msgid "Starting Plugins"
 msgstr "Avvio dell'estensione in corso"
 
-#: src/pluginmanager.cpp:587 src/pluginmanager.cpp:621
+#: src/pluginmanager.cpp:585 src/pluginmanager.cpp:619
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Creazione dell'estensione %1 in corso"
 
-#: src/pluginmanager.cpp:605
+#: src/pluginmanager.cpp:603
 #, kde-format
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
@@ -510,35 +500,35 @@ msgstr ""
 "Sono state trovate delle nuove estensioni. Vuoi creare automaticamente delle "
 "nuove istanze adesso?"
 
-#: src/pluginmanager.cpp:607
+#: src/pluginmanager.cpp:605
 #, kde-format
 msgid "New Plugins Found"
 msgstr "Trovate nuove estensioni"
 
-#: src/pluginmanager.cpp:642
+#: src/pluginmanager.cpp:640
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Inizializzazione dell'estensione %1 in corso"
 
-#: src/pluginmanager.cpp:767
+#: src/pluginmanager.cpp:765
 #, kde-format
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Mostra tutto"
 
-#: src/pluginmanager.cpp:768
+#: src/pluginmanager.cpp:766
 #, kde-format
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Nascondi tutto"
 
-#: src/pluginmanager.cpp:769
+#: src/pluginmanager.cpp:767
 #, kde-format
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Ripristina tutto"
 
-#: src/pluginmanager.cpp:770
+#: src/pluginmanager.cpp:768
 #, kde-format
 msgid "Restore state before last hide-all activation"
 msgstr "Ripristina lo stato prima dell'attivazione di nascondi tutto"
@@ -575,12 +565,12 @@ msgstr "nuova stazione %1"
 msgid "canDecode = true"
 msgstr "canDecode = true"
 
-#: src/stationlist.cpp:135
+#: src/stationlist.cpp:134
 #, kde-format
 msgid "Contains merged Data"
 msgstr "Contiene dei dati raggruppati"
 
-#: src/stationlist.cpp:176
+#: src/stationlist.cpp:175
 #, kde-format
 msgid ""
 "Probably an old station preset file was read.\n"
@@ -591,12 +581,12 @@ msgstr ""
 "stazione.\n"
 "Devi rifare le selezioni della stazione per la barra veloce ed il menu."
 
-#: src/stationlist.cpp:185
+#: src/stationlist.cpp:184
 #, kde-format
 msgid "parsing failed"
 msgstr "analisi non riuscita"
 
-#: src/stationlist.cpp:189
+#: src/stationlist.cpp:188
 #, kde-format
 msgid ""
 "Parsing the station preset file failed.\n"
@@ -605,52 +595,52 @@ msgstr ""
 "Impossibile analizzare il file di preimpostazione della stazione.\n"
 "Per maggiori informazioni, dai uno sguardo all'output della console."
 
-#: src/stationlist.cpp:203 src/stationlist.cpp:208
+#: src/stationlist.cpp:202 src/stationlist.cpp:207
 #, kde-format
 msgid "error downloading preset file %1"
 msgstr "errore durante lo scaricamento del file %1"
 
-#: src/stationlist.cpp:205
+#: src/stationlist.cpp:204
 #, kde-format
 msgid "Download of the station preset file at %1 failed."
 msgstr "Impossibile scaricare il file di preimpostazione della stazione da %1."
 
-#: src/stationlist.cpp:214
+#: src/stationlist.cpp:213
 #, kde-format
 msgid "temporary file: %1"
 msgstr "file temporaneo: %1"
 
-#: src/stationlist.cpp:220
+#: src/stationlist.cpp:219
 #, kde-format
 msgid "error opening preset file %1"
 msgstr "errore durante l'apertura del file di preimpostazione %1"
 
-#: src/stationlist.cpp:223
+#: src/stationlist.cpp:222
 #, kde-format
 msgid "Opening of the station preset file at %1 failed."
 msgstr "Impossibile aprire il file di preimpostazione della stazione da %1."
 
-#: src/stationlist.cpp:243
+#: src/stationlist.cpp:242
 #, kde-format
 msgid "Old Preset File Format detected"
 msgstr "È stato individuato un vecchio formato del file di preimpostazione"
 
-#: src/stationlist.cpp:322
+#: src/stationlist.cpp:320
 #, kde-format
 msgid "error writing to temporary file %1"
 msgstr "errore durante la scrittura del file temporaneo %1"
 
-#: src/stationlist.cpp:325
+#: src/stationlist.cpp:323
 #, kde-format
 msgid "Writing station preset file %1 failed."
 msgstr "Impossibile scrivere il file di preimpostazione della stazione %1."
 
-#: src/stationlist.cpp:335
+#: src/stationlist.cpp:333
 #, kde-format
 msgid "uploading preset file %1: "
 msgstr "invio del file di preimpostazione %1 in corso: "
 
-#: src/stationlist.cpp:337
+#: src/stationlist.cpp:335
 #, kde-format
 msgid ""
 "something strange happened, station list has only %1 entries. Writing "
@@ -659,17 +649,17 @@ msgstr ""
 "è successo qualcosa di strano, la lista delle stazioni ha solo %1 voci. La "
 "scrittura del file di preimpostazione della stazione sarà ignorata"
 
-#: src/stationlist.cpp:342
+#: src/stationlist.cpp:340
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "errore durante l'invio del file di preimpostazione %1"
 
-#: src/stationlist.cpp:346
+#: src/stationlist.cpp:344
 #, kde-format
 msgid "Upload of station preset file to %1 failed."
 msgstr "Impossibile inviare il file di preimpostazione della stazione %1."
 
-#: src/stationlist.cpp:353 src/stationlist.cpp:354
+#: src/stationlist.cpp:351 src/stationlist.cpp:352
 #, kde-format
 msgid "error creating temporary file"
 msgstr "errore durante la creazione del file temporaneo"
@@ -934,6 +924,13 @@ msgstr "Stazioni disponibili:"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, registrazione di kradio4"
+
+#~ msgid ""
+#~ "Library %1:\n"
+#~ "Cannot load non-local library"
+#~ msgstr ""
+#~ "Libreria %1:\n"
+#~ "Impossibile caricare una libreria che non sia locale"
 
 #~ msgid "No."
 #~ msgstr "Nr."

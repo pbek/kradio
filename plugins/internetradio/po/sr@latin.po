@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: internetradio (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2013-02-10 14:38+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -99,12 +99,12 @@ msgstr "Ne mogu koristiti libav format id %1"
 msgid "Cannot use libav sample format id %1"
 msgstr "Ne mogu koristiti libav format id %1"
 
-#: icy_http_handler.cpp:72
+#: icy_http_handler.cpp:86
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
 msgstr "Internet radio priključak (ICY http handler): otvaranje strima %1"
 
-#: icy_http_handler.cpp:90
+#: icy_http_handler.cpp:104
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
@@ -113,7 +113,7 @@ msgstr ""
 "Internet radio priključak (ICY http handler): Neuspeo početak preuzimanja "
 "strima  %1: KIO::get returned NULL pointer"
 
-#: icy_http_handler.cpp:110
+#: icy_http_handler.cpp:124
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to start stream download of "
@@ -122,7 +122,7 @@ msgstr ""
 "Internet radio priključak (ICY http handler): Neuspeo početak preuzmanja "
 "strima  %1: %2"
 
-#: icy_http_handler.cpp:426
+#: icy_http_handler.cpp:447
 #, kde-format
 msgid ""
 "Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
@@ -131,7 +131,7 @@ msgstr ""
 "Internet radio priključak (ICY http handler): Neuspelo učitavanje podataka "
 "za strim  %1: %2"
 
-#: icy_http_handler.cpp:434
+#: icy_http_handler.cpp:455
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""

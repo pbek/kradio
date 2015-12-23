@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.radio.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-23 20:10+0100\n"
 "PO-Revision-Date: 2009-11-10 20:51-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -56,39 +56,39 @@ msgstr "Carregar e substituir estações predefinidas"
 msgid "Load and add presets"
 msgstr "Carregar e adicionar estações predefinidas"
 
-#: radio-configuration.cpp:428
+#: radio-configuration.cpp:426
 #, kde-format
 msgid "Image Selection"
 msgstr "Seleção de imagem"
 
-#: radio-configuration.cpp:433
+#: radio-configuration.cpp:431
 #, kde-format
 msgid "ignoring non-local image"
 msgstr "Ignorar imagnes não locais"
 
-#: radio-configuration.cpp:550 radio-configuration.cpp:578
+#: radio-configuration.cpp:548 radio-configuration.cpp:576
 #, kde-format
 msgid "KRadio Preset Files"
 msgstr "Arquivos predefinidos para o KRadio"
 
-#: radio-configuration.cpp:554
+#: radio-configuration.cpp:552
 #, kde-format
 msgid "Select Preset File"
 msgstr "Selecionar arquivo predefinido"
 
-#: radio-configuration.cpp:582
+#: radio-configuration.cpp:580
 #, fuzzy, kde-format
 msgid "Save Preset File"
 msgstr "Armazenar arquivo predefinido"
 
-#: radio-configuration.cpp:628
+#: radio-configuration.cpp:626
 #, fuzzy, kde-format
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
 msgstr[0] "Encontradas %1 novas estações"
 msgstr[1] "Encontradas %1 novas estações"
 
-#: radio-configuration.cpp:630
+#: radio-configuration.cpp:628
 #, fuzzy, kde-format
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"
