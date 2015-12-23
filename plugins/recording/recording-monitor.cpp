@@ -150,8 +150,8 @@ void RecordingMonitor::noticeConnectedI (ISoundStreamServer *s, bool pointer_val
         m_SoundStreamID2idx.clear();
         m_idx2SoundStreamID.clear();
         m_comboSoundStreamSelector->addItem(i18n("nothing"));
-        QMap<QString, SoundStreamID>::const_iterator end = tmp.end();
-        for (QMap<QString, SoundStreamID>::const_iterator it = tmp.begin(); it != end; ++it) {
+        QMap<QString, SoundStreamID>::const_iterator end = tmp.constEnd();
+        for (QMap<QString, SoundStreamID>::const_iterator it = tmp.constBegin(); it != end; ++it) {
             int idx = m_comboSoundStreamSelector->count();
             m_comboSoundStreamSelector->addItem(it.key());
             m_idx2SoundStreamID[idx] = *it;

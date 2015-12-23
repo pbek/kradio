@@ -148,7 +148,7 @@ bool TimeControlConfiguration::noticeAlarmsChanged(const AlarmVector &sl)
     listAlarms->clear();
     idx = -1;
     int k = 0;
-    for (ciAlarmVector i = alarms.begin(); i != alarms.end(); ++i, ++k) {
+    for (ciAlarmVector i = alarms.constBegin(); i != alarms.constEnd(); ++i, ++k) {
         const Alarm &alarm = *i;
         QString      dateString = alarm.nextAlarm(true).toString();
         if (!alarm.isEnabled()) {

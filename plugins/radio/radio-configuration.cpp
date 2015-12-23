@@ -274,8 +274,8 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
 
     stackStationEdit->setDisabled(!s);
     if (s) {
-        QMap<QString, RadioStationConfig*>::const_iterator it_c = m_stationEditors.find(s->getClassName());
-        RadioStationConfig *c = it_c != m_stationEditors.end() ? *it_c : NULL;
+        QMap<QString, RadioStationConfig*>::const_iterator it_c = m_stationEditors.constFind(s->getClassName());
+        RadioStationConfig *c = it_c != m_stationEditors.constEnd() ? *it_c : NULL;
         if (!c) {
             c = s->createEditor();
             if (c) {

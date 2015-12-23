@@ -849,8 +849,8 @@ void RadioDocking::buildRecordingMenu()
     QObject::connect(m,             SIGNAL(triggered(QAction *)), this, SLOT(slotRecordingMenu(QAction *)));
     SoundStreamID currentSinkID = queryCurrentSoundStreamSinkID();
 
-    QMap<QString, SoundStreamID>     ::const_iterator end = streams.end();
-    for (QMap<QString, SoundStreamID>::const_iterator it  = streams.begin(); it != end; ++it) {
+    QMap<QString, SoundStreamID>     ::const_iterator end = streams.constEnd();
+    for (QMap<QString, SoundStreamID>::const_iterator it  = streams.constBegin(); it != end; ++it) {
 
         SoundStreamID id    = *it;
         QString       descr = it.key();

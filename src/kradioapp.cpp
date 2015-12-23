@@ -166,16 +166,16 @@ void KRadioApp::saveState (KConfig *c)
     global_group.writeEntry("instances", m_Instances.count());
 
     int i = 0;
-    QMap<QString, PluginManager*>::const_iterator it1 = m_Instances.begin();
-    for (; it1 != m_Instances.end(); ++it1, ++i) {
+    QMap<QString, PluginManager*>::const_iterator it1 = m_Instances.constBegin();
+    for (; it1 != m_Instances.constEnd(); ++it1, ++i) {
         global_group.writeEntry("instance_name_" + QString::number(i), it1.key());
         it1.value()->saveState(c);
     }
 
     plugin_group.writeEntry("count", m_PluginLibraries.count());
     int idx = 0;
-    QMap<QString, PluginLibraryInfo>::const_iterator it2 = m_PluginLibraries.begin();
-    for (; it2 != m_PluginLibraries.end(); ++it2, ++idx) {
+    QMap<QString, PluginLibraryInfo>::const_iterator it2 = m_PluginLibraries.constBegin();
+    for (; it2 != m_PluginLibraries.constEnd(); ++it2, ++idx) {
         plugin_group.writeEntry("library_" + QString::number(idx), it2.key());
     }
 
@@ -298,8 +298,8 @@ void KRadioApp::LoadLibrary (const QString &library)
     PluginLibraryInfo libinfo(library);
     if (libinfo.valid()) {
         m_PluginLibraries.insert(library, libinfo);
-        QMap<QString,QString>::const_iterator end = libinfo.plugins.end();
-        for (QMap<QString,QString>::const_iterator it = libinfo.plugins.begin(); it != end; ++it) {
+        QMap<QString,QString>::const_iterator end = libinfo.plugins.constEnd();
+        for (QMap<QString,QString>::const_iterator it = libinfo.plugins.constBegin(); it != end; ++it) {
             m_PluginInfos.insert(it.key(), PluginClassInfo (it.key(), *it, libinfo.factory));
         }
     } else {
@@ -322,8 +322,8 @@ void KRadioApp::UnloadLibrary (const QString &library)
 
     PluginLibraryInfo info = m_PluginLibraries[library];
 
-    QMap<QString, QString>::const_iterator end_classes = info.plugins.end();
-    for (QMap<QString, QString>::const_iterator it_classes = info.plugins.begin(); it_classes != end_classes; ++it_classes) {
+    QMap<QString, QString>::const_iterator end_classes = info.plugins.constEnd();
+    for (QMap<QString, QString>::const_iterator it_classes = info.plugins.constBegin(); it_classes != end_classes; ++it_classes) {
         foreach (PluginManager *manager, m_Instances) {
             manager->unloadPlugins(it_classes.key());
         }

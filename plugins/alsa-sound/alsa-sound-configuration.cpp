@@ -223,7 +223,7 @@ void AlsaSoundConfiguration::slotCaptureMixerSelected (int comboIdx)
     int cols = (all_list.count()+rows-1)/rows;
 
     int idx = 0;
-    for (QList<QString>::const_iterator it = all_list.begin(); it != all_list.end(); ++it, ++idx) {
+    for (QList<QString>::const_iterator it = all_list.constBegin(); it != all_list.constEnd(); ++it, ++idx) {
         QAlsaMixerElement *e = new QAlsaMixerElement(m_groupMixerFrame, *it,
                                                      sw_list.contains(*it), vol_list.contains(*it));
         e->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
