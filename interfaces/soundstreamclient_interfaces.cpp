@@ -48,9 +48,9 @@ void ISoundStreamServer::noticeDisconnectedI(cmplInterface *i, bool pointer_vali
 QList<ISoundStreamClient*> ISoundStreamServer::getPlaybackMixers() const
 {
     QList<ISoundStreamClient*> tmp;
-    for (IFConstIterator it(iConnections.begin()); it != iConnections.end(); ++it) {
-        if ((*it)->supportsPlayback())
-            tmp.append(*it);
+    foreach (ISoundStreamClient *client, iConnections) {
+        if (client->supportsPlayback())
+            tmp.append(client);
     }
     return tmp;
 }
@@ -58,9 +58,9 @@ QList<ISoundStreamClient*> ISoundStreamServer::getPlaybackMixers() const
 QList<ISoundStreamClient*> ISoundStreamServer::getCaptureMixers() const
 {
     QList<ISoundStreamClient*> tmp;
-    for (IFConstIterator it(iConnections.begin()); it != iConnections.end(); ++it) {
-        if ((*it)->supportsCapture())
-            tmp.append(*it);
+    foreach (ISoundStreamClient *client, iConnections) {
+        if (client->supportsCapture())
+            tmp.append(client);
     }
     return tmp;
 }
@@ -339,9 +339,9 @@ QMap<QString, ISoundStreamClient *> ISoundStreamServer::getPlaybackClients() con
 {
     QMap<QString, ISoundStreamClient *> map;
 
-    for (IFConstIterator it(iConnections.begin()); it != iConnections.end(); ++it) {
-        if ((*it)->supportsPlayback())
-            map.insert((*it)->getSoundStreamClientID(), (*it));
+    foreach (ISoundStreamClient *client, iConnections) {
+        if (client->supportsPlayback())
+            map.insert(client->getSoundStreamClientID(), client);
     }
     return map;
 }
@@ -357,9 +357,9 @@ QMap<QString, QString> ISoundStreamClient::getPlaybackClientDescriptions() const
 QMap<QString, QString> ISoundStreamServer::getPlaybackClientDescriptions() const
 {
     QMap<QString, QString> map;
-    for (IFConstIterator it(iConnections.begin()); it != iConnections.end(); ++it) {
-        if ((*it)->supportsPlayback())
-            map.insert((*it)->getSoundStreamClientID(), (*it)->getSoundStreamClientDescription());
+    foreach (ISoundStreamClient *client, iConnections) {
+        if (client->supportsPlayback())
+            map.insert(client->getSoundStreamClientID(), client->getSoundStreamClientDescription());
     }
     return map;
 }
@@ -376,9 +376,9 @@ QMap<QString, ISoundStreamClient *> ISoundStreamClient::getCaptureClients() cons
 QMap<QString, ISoundStreamClient *> ISoundStreamServer::getCaptureClients() const
 {
     QMap<QString, ISoundStreamClient *> map;
-    for (IFConstIterator it(iConnections.begin()); it != iConnections.end(); ++it) {
-        if ((*it)->supportsCapture())
-            map.insert((*it)->getSoundStreamClientID(), (*it));
+    foreach (ISoundStreamClient *client, iConnections) {
+        if (client->supportsCapture())
+            map.insert(client->getSoundStreamClientID(), client);
     }
     return map;
 }
@@ -394,9 +394,9 @@ QMap<QString, QString> ISoundStreamClient::getCaptureClientDescriptions() const
 QMap<QString, QString> ISoundStreamServer::getCaptureClientDescriptions() const
 {
     QMap<QString, QString> map;
-    for (IFConstIterator it(iConnections.begin()); it != iConnections.end(); ++it) {
-        if ((*it)->supportsCapture())
-            map.insert((*it)->getSoundStreamClientID(), (*it)->getSoundStreamClientDescription());
+    foreach (ISoundStreamClient *client, iConnections) {
+        if (client->supportsCapture())
+            map.insert(client->getSoundStreamClientID(), client->getSoundStreamClientDescription());
     }
     return map;
 }
@@ -412,10 +412,10 @@ ISoundStreamClient *ISoundStreamClient::getSoundStreamClientWithID(const QString
 
 ISoundStreamClient *ISoundStreamServer::getSoundStreamClientWithID(const QString &search_id) const
 {
-    for (IFConstIterator it(iConnections.begin()); it != iConnections.end(); ++it) {
-        const QString &id = (*it)->getSoundStreamClientID();
+    foreach (ISoundStreamClient *client, iConnections) {
+        const QString &id = client->getSoundStreamClientID();
         if (id == search_id)
-            return (*it);
+            return client;
     }
     return NULL;
 }

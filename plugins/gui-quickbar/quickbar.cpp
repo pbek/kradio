@@ -387,9 +387,9 @@ void QuickBar::dropEvent(QDropEvent* event)
 
     if (StationDragObject::decode(event->mimeData(), list)) {
         QStringList l = getStationSelection();
-        for (QList<QString>::const_iterator it = list.begin(); it != list.end(); ++it)
-            if (!l.contains(*it))
-                l.append(*it);
+        foreach (const QString &it, list)
+            if (!l.contains(it))
+                l.append(it);
         setStationSelection(l);
     }
 }

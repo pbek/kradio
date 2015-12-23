@@ -55,9 +55,7 @@ StationList::~StationList()
 
 StationList &StationList::clearStations()
 {
-    for (iterator it = begin(); it != end(); ++it) {
-        delete *it;
-    }
+    qDeleteAll(m_stations);
     m_stations.clear();
     return *this;
 }
@@ -289,9 +287,8 @@ QString StationList::writeXML (const IErrorLogClient &/*logger*/) const
         data += tt + xmlOpenTag (s->getClassName());
 
         QStringList properties = s->getPropertyNames();
-        QStringList::iterator end = properties.end();
-        for (QStringList::iterator sit = properties.begin(); sit != end; ++sit) {
-            data += ttt + xmlTag (*sit, s->getProperty(*sit));
+        foreach (const QString &prop, properties) {
+            data += ttt + xmlTag (prop, s->getProperty(prop));
         }
         data += tt + xmlCloseTag(s->getClassName());
 
@@ -379,9 +376,9 @@ bool StationList::operator == (const StationList &x) const
 
 const RadioStation &StationList::stationWithID(const QString &sid) const
 {
-    for (const_iterator it = m_stations.begin(); it != m_stations.end(); ++it) {
-        if ((*it)->stationID() == sid)
-            return **it;
+    foreach (RadioStation *rs, m_stations) {
+        if (rs->stationID() == sid)
+            return *rs;
     }
     return (const RadioStation &) undefinedRadioStation;
 }
@@ -389,9 +386,9 @@ const RadioStation &StationList::stationWithID(const QString &sid) const
 
 RadioStation &StationList::stationWithID(const QString &sid)
 {
-    for (const_iterator it = m_stations.begin(); it != m_stations.end(); ++it) {
-        if ((*it)->stationID() == sid)
-            return **it;
+    foreach (RadioStation *rs, m_stations) {
+        if (rs->stationID() == sid)
+            return *rs;
     }
     return (RadioStation &) undefinedRadioStation;
 }

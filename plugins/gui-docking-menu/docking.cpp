@@ -342,9 +342,8 @@ void RadioDocking::buildStationList()
     const RadioStation   &crs = queryCurrentStation();
 
     int k = 0;
-    QStringList::iterator end = m_stationIDs.end();
-    for (QStringList::iterator it = m_stationIDs.begin(); it != end; ++it) {
-        const RadioStation &rs = sl.stationWithID(*it);
+    foreach (const QString &id, m_stationIDs) {
+        const RadioStation &rs = sl.stationWithID(id);
 
         if (rs.isValid()) {
 

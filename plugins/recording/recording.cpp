@@ -689,11 +689,10 @@ bool Recording::getSoundStreamRadioStation(SoundStreamID id, const RadioStation 
 
 bool Recording::enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list) const
 {
-    QMap<SoundStreamID,SoundStreamID>::const_iterator      end = m_RawStreams2EncodedStreams.end();
-    for (QMap<SoundStreamID,SoundStreamID>::const_iterator  it = m_RawStreams2EncodedStreams.begin(); it != end; ++it) {
+    foreach (const SoundStreamID &sid, m_RawStreams2EncodedStreams) {
         QString tmp = QString::null;
-        getSoundStreamDescription(*it, tmp);
-        list[tmp] = *it;
+        getSoundStreamDescription(sid, tmp);
+        list[tmp] = sid;
     }
     return m_RawStreams2EncodedStreams.count() > 0;
 }

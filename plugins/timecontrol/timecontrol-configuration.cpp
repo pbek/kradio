@@ -305,8 +305,8 @@ void TimeControlConfiguration::slotWeekdaysChanged ()
 
     int mask = 0;
     QList<QListWidgetItem *> sel = listWeekdays->selectedItems();
-    for (QList<QListWidgetItem *>::iterator it = sel.begin(); it != sel.end(); ++it) {
-        mask |= (1 << listWeekdays->row(*it));
+    foreach (QListWidgetItem *item, sel) {
+        mask |= (1 << listWeekdays->row(item));
     }
 
     int idx = listAlarms->currentRow();

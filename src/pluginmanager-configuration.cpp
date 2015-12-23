@@ -127,10 +127,10 @@ void PluginManagerConfiguration::noticePluginsChanged()
     const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
 
     const Qt::ItemFlags baseFlags = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
-    for (QList<PluginBase*>::const_iterator it = plugins.begin(); it != plugins.end(); ++it) {
-        QString class_name = (*it)->pluginClassName();
+    foreach (PluginBase *plugin, plugins) {
+        QString class_name = plugin->pluginClassName();
         if (classes.contains(class_name)) {
-            QString         obj_name = (*it)->name();
+            QString         obj_name = plugin->name();
             QList<QStandardItem *> items;
             items << new QStandardItem(class_name);
             items[0]->setFlags(baseFlags);
@@ -140,7 +140,7 @@ void PluginManagerConfiguration::noticePluginsChanged()
             items[2]->setFlags(baseFlags);
             m_pluginInstancesModel->appendRow(items);
 
-            m_pluginItems.insert(items[1], *it);
+            m_pluginItems.insert(items[1], plugin);
         }
     }
     listPluginInstances->resizeColumnToContents(0);

@@ -107,8 +107,7 @@ void PluginManager::noticeLibrariesChanged()
 void PluginManager::unloadPlugins(const QString &class_name)
 {
     PluginList plugins = m_plugins;
-    for (PluginIterator it = plugins.begin(); it != plugins.end(); ++it) {
-        PluginBase *p = (*it);
+    foreach (PluginBase *p, plugins) {
         if (p->pluginClassName() == class_name) {
             deletePlugin(p);
         }
@@ -118,8 +117,8 @@ void PluginManager::unloadPlugins(const QString &class_name)
 
 void PluginManager::addWidgetPluginMenuItems(QMenu *menu) const
 {
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(*it);
+    foreach (PluginBase *plugin, m_plugins) {
+        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(plugin);
         if (!b) continue;
 
         //QAction *action = b->getHideShowAction();
@@ -149,8 +148,8 @@ void PluginManager::updateWidgetPluginMenuItem(WidgetPluginBase *b, QMenu *menu,
 
 void PluginManager::noticeWidgetPluginShown(WidgetPluginBase *p, bool shown)
 {
-    for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        (*it)->noticeWidgetPluginShown(p, shown);
+    foreach (PluginBase *plugin, m_plugins) {
+        plugin->noticeWidgetPluginShown(p, shown);
     }
     if (shown) {
         m_widgetsShownCache.clear();
@@ -159,8 +158,8 @@ void PluginManager::noticeWidgetPluginShown(WidgetPluginBase *p, bool shown)
 
 void PluginManager::noticePluginRenamed(PluginBase *p, const QString &name)
 {
-    for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        (*it)->noticePluginRenamed(p, name);
+    foreach (PluginBase *plugin, m_plugins) {
+        plugin->noticePluginRenamed(p, name);
 
     }
     if (m_pluginManagerConfiguration)
@@ -201,9 +200,9 @@ void PluginManager::setConfigPageNameEtc(PluginBase *p)
 
 PluginBase *PluginManager::getPluginByName(const QString &name) const
 {
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        if ((*it)->name() == name)
-            return (*it);
+    foreach (PluginBase *plugin, m_plugins) {
+        if (plugin->name() == name)
+            return plugin;
     }
     return NULL;
 }
@@ -234,11 +233,11 @@ void PluginManager::insertPlugin(PluginBase *p)
         BlockProfiler profiler_connect("PluginManager::insertPlugin - connect");
 
         // connect plugins with each other
-        for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-            if ((*it) != p) {
+        foreach (PluginBase *plugin, m_plugins) {
+            if (plugin != p) {
                 /*kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
-                          << " Debug: connecting with " << it.current()->name() << "\n";*/
-                p->connectI((*it));
+                          << " Debug: connecting with " << plugin->name() << "\n";*/
+                p->connectI(plugin);
             }
         }
 
@@ -255,11 +254,11 @@ void PluginManager::insertPlugin(PluginBase *p)
 
         notifyPluginsChanged();
         WidgetPluginBase *w1 = dynamic_cast<WidgetPluginBase*>(p);
-        for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
+        foreach (PluginBase *plugin, m_plugins) {
             if (w1)
-                (*it)->noticeWidgetPluginShown(w1, w1->isReallyVisible());
+                plugin->noticeWidgetPluginShown(w1, w1->isReallyVisible());
 
-            WidgetPluginBase *w2 = dynamic_cast<WidgetPluginBase*>((*it));
+            WidgetPluginBase *w2 = dynamic_cast<WidgetPluginBase*>(plugin);
             if (w2)
                 p->noticeWidgetPluginShown(w2, w2->isReallyVisible());
         }
@@ -284,13 +283,13 @@ void PluginManager::removePlugin(PluginBase *p)
 {
     if (p && m_plugins.contains(p)) {
 
-        for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-            if ((*it) != p) {
+        foreach (PluginBase *plugin, m_plugins) {
+            if (plugin != p) {
                 // workaround for buggy compilers/libstdc++
                 if (p->destructorCalled()) {
-                    p->PluginBase::disconnectI((*it));
+                    p->PluginBase::disconnectI(plugin);
                 } else {
-                    p->disconnectI((*it));
+                    p->disconnectI(plugin);
                 }
             }
         }
@@ -329,8 +328,8 @@ void PluginManager::removePlugin(PluginBase *p)
 
 void PluginManager::notifyPluginsChanged()
 {
-    for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        (*it)->noticePluginsChanged(m_plugins);
+    foreach (PluginBase *plugin, m_plugins) {
+        plugin->noticePluginsChanged(m_plugins);
     }
     if (m_pluginManagerConfiguration)
         m_pluginManagerConfiguration->noticePluginsChanged();
@@ -358,8 +357,8 @@ KPageWidgetItem *PluginManager::addConfigurationPage (PluginBase *forWhom,
     // example: timecontrol profits from radio plugin
     Interface *i = dynamic_cast<Interface *>(info.page);
     if (i) {
-        for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it)
-            i->connectI((*it));
+        foreach (PluginBase *plugin, m_plugins)
+            i->connectI(plugin);
     }
     return f;
 }
@@ -422,9 +421,9 @@ void PluginManager::createConfigDialog(const QString &title)
 
     addConfigurationPage(createOwnConfigurationPage());
 
-    for (PluginIterator it = m_plugins.begin(); m_configDialog && it != m_plugins.end(); ++it) {
-        addConfigurationPage((*it),
-                             (*it)->createConfigurationPage());
+    foreach (PluginBase *plugin, m_plugins) {
+        addConfigurationPage(plugin,
+                             plugin->createConfigurationPage());
     }
 }
 
@@ -517,10 +516,10 @@ void PluginManager::saveState (KConfig *c) const
     }
 
     int n = 0;
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        QString class_name  = (*it)->pluginClassName();
-        QString object_name = (*it)->name();
-        QString object_id   = (*it)->instanceID();
+    foreach (PluginBase *plugin, m_plugins) {
+        QString class_name  = plugin->pluginClassName();
+        QString object_name = plugin->name();
+        QString object_id   = plugin->instanceID();
         if (class_name.length() && object_name.length() &&
             m_Application->getPluginClasses().contains(class_name))
         {
@@ -532,8 +531,7 @@ void PluginManager::saveState (KConfig *c) const
     }
     cfggrp.writeEntry("plugins", n);
 
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        PluginBase  *p           = *it;
+    foreach (PluginBase *p, m_plugins) {
         QString      config_name = m_Name + "-" + p->pluginClassName() + "-" + p->name() + "-" + p->instanceID();
         KConfigGroup config      = c->group(config_name);
         p->saveState(config);
@@ -731,16 +729,16 @@ void PluginManager::slotConfigOK()
 void  PluginManager::startPlugins()
 {
     int d = KWindowSystem::currentDesktop();
-    for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        (*it)->startPlugin();
+    foreach (PluginBase *plugin, m_plugins) {
+        plugin->startPlugin();
     }
     KWindowSystem::setCurrentDesktop(d);
 }
 
 void  PluginManager::aboutToQuit()
 {
-    for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        (*it)->aboutToQuit();
+    foreach (PluginBase *plugin, m_plugins) {
+        plugin->aboutToQuit();
     }
 }
 
@@ -774,8 +772,8 @@ void PluginManager::updatePluginHideShowMenu()
 
 void PluginManager::slotShowAllWidgetPlugins()
 {
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(*it);
+    foreach (PluginBase *plugin, m_plugins) {
+        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(plugin);
         if (!b) continue;
         b->getWidget()->show();
     }
@@ -783,8 +781,8 @@ void PluginManager::slotShowAllWidgetPlugins()
 
 void PluginManager::slotHideAllWidgetPlugins()
 {
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(*it);
+    foreach (PluginBase *plugin, m_plugins) {
+        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(plugin);
         if (!b) continue;
         bool visible = b->isAnywhereVisible();
         QString name = b->name();
@@ -797,8 +795,8 @@ void PluginManager::slotRestoreAllWidgetPlugins()
 {
     QMap<QString, bool> tmpCache = m_widgetsShownCache;
     int d = KWindowSystem::currentDesktop();
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(*it);
+    foreach (PluginBase *plugin, m_plugins) {
+        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(plugin);
         if (!b) continue;
         QString name = b ? b->name() : QString();
         if (b && tmpCache.contains(name) && tmpCache[name]) {
@@ -822,8 +820,8 @@ void PluginManager::slotHideRestoreAllWidgetPlugins()
 
 void PluginManager::slotDesktopChanged(int /*d*/)
 {
-    for (PluginConstIterator it = m_plugins.begin(); it != m_plugins.end(); ++it) {
-        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(*it);
+    foreach (PluginBase *plugin, m_plugins) {
+        WidgetPluginBase *b = dynamic_cast<WidgetPluginBase*>(plugin);
         if (!b) continue;
 
         b->updateHideShowAction(b->isReallyVisible());

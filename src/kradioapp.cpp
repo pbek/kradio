@@ -307,8 +307,8 @@ void KRadioApp::LoadLibrary (const QString &library)
                   << " Error: Loading Library" << library << "failed:" << libinfo.errorString;
     }
 
-    for (QMap<QString, PluginManager*>::iterator it_managers = m_Instances.begin(); it_managers != m_Instances.end(); ++it_managers) {
-        (*it_managers)->noticeLibrariesChanged();
+    foreach (PluginManager *manager, m_Instances) {
+        manager->noticeLibrariesChanged();
     }
 
     //return libinfo.valid() ? libinfo.library : NULL;
@@ -324,15 +324,15 @@ void KRadioApp::UnloadLibrary (const QString &library)
 
     QMap<QString, QString>::const_iterator end_classes = info.plugins.end();
     for (QMap<QString, QString>::const_iterator it_classes = info.plugins.begin(); it_classes != end_classes; ++it_classes) {
-        for (QMap<QString, PluginManager*>::iterator it_managers = m_Instances.begin(); it_managers != m_Instances.end(); ++it_managers) {
-            it_managers.value()->unloadPlugins(it_classes.key());
+        foreach (PluginManager *manager, m_Instances) {
+            manager->unloadPlugins(it_classes.key());
         }
         m_PluginInfos.remove(it_classes.key());
     }
     m_PluginLibraries.remove(library);
 
-    for (QMap<QString, PluginManager*>::iterator it_managers = m_Instances.begin(); it_managers != m_Instances.end(); ++it_managers) {
-        it_managers.value()->noticeLibrariesChanged();
+    foreach (PluginManager *manager, m_Instances) {
+        manager->noticeLibrariesChanged();
     }
 }
 
@@ -373,9 +373,8 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &inst
 
 void  KRadioApp::startPlugins()
 {
-    QMap<QString, PluginManager*>::iterator it = m_Instances.begin();
-    for (; it != m_Instances.end(); ++it) {
-        it.value()->startPlugins();
+    foreach (PluginManager *manager, m_Instances) {
+        manager->startPlugins();
     }
 }
 
@@ -386,9 +385,8 @@ void  KRadioApp::slotAboutToQuit()
         IErrorLogClient::staticLogDebug("slotAboutToQuit, m_quitting = false");
         m_quitting = true;
         saveState();
-        QMap<QString, PluginManager*>::iterator it = m_Instances.begin();
-        for (; it != m_Instances.end(); ++it) {
-            it.value()->aboutToQuit();
+        foreach (PluginManager *manager, m_Instances) {
+            manager->aboutToQuit();
         }
         m_quitting = false;
     }

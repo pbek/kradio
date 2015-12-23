@@ -86,16 +86,14 @@ void Profiler::printData ()
 
     QStringList keys=m_ProfileData.keys();
     keys.sort();
-    QList<QString>::iterator it  = keys.begin();
-    QList<QString>::iterator end = keys.end();
-    for (; it != end; ++it) {
-        int l = (*it).length();
+    foreach (const QString &key, keys) {
+        int l = key.length();
         l = (((l-1) / 25) + 1) * 25;
         if (l < 50) l = 50;
-        const profile_data &d = m_ProfileData[*it];
+        const profile_data &d = m_ProfileData[key];
         printf("%-*s: total: %3.8f (%9lli)  avg: %3.8f  min: %3.8f  max: %3.8f\n",
                l,
-               qPrintable(*it),
+               qPrintable(key),
                (double)d.accumulatedCounter / 1.666e9,
                d.callCounter,
                (double)d.accumulatedCounter / (double)d.callCounter / 1.666e9,

@@ -667,9 +667,8 @@ void AlsaSoundDevice::slotPollPlayback()
         checkMixerVolume(m_PlaybackStreamID);
     }
 
-    QList<SoundStreamID>::const_iterator end = m_PassivePlaybackStreams.end();
-    for (QList<SoundStreamID>::const_iterator it = m_PassivePlaybackStreams.begin(); it != end; ++it)
-        checkMixerVolume(*it);
+    foreach (const SoundStreamID &sid, m_PassivePlaybackStreams)
+        checkMixerVolume(sid);
 }
 
 
@@ -1564,8 +1563,7 @@ void AlsaSoundDevice::selectCaptureChannel (const QString &channel)
         writeCaptureMixerSwitch(Capture, true);
     }
 
-    for (QMap<QString, AlsaConfigMixerSetting>::const_iterator it = m_CaptureMixerSettings.begin(); it != m_CaptureMixerSettings.end(); ++it) {
-        const AlsaConfigMixerSetting &s = *it;
+    foreach (const AlsaConfigMixerSetting &s, m_CaptureMixerSettings) {
         if (s.mixerName() == m_CaptureMixerName && s.use()) {
             float vol = s.volume();
             if (m_CaptureChannels2ID.contains(s.name()))

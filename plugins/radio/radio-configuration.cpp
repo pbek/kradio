@@ -176,12 +176,10 @@ bool RadioConfiguration::disconnectI (Interface *i)
 
 bool RadioConfiguration::noticeDevicesChanged(const QList<IRadioDevice*> &l)
 {
-    QList<IRadioDevice*>::const_iterator it = l.begin();
     m_devices.clear();
     m_devicePopup->clear();
     int id = 0;
-    for (; it != l.end(); ++it) {
-        IRadioDevice *d = (*it);
+    foreach (IRadioDevice *d, l) {
         if (dynamic_cast<ISeekRadio*>(d)) {
             QAction *a = m_devicePopup->addAction(d->getDescription());
             a->setData(id++);

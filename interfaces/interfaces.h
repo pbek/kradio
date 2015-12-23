@@ -436,8 +436,8 @@ private:
 
 #define IF_SEND_MESSAGE(call) \
         int ____n = 0; \
-        for (IFConstIterator i = iConnections.begin(); i != iConnections.end(); ++i) {   \
-            if ((*i)->call ) ++____n; \
+        foreach (cmplInterface *__i, iConnections)  {   \
+            if (__i->call ) ++____n; \
         }  \
         return ____n;
 
@@ -499,8 +499,8 @@ private: \
 
 #define IF_SEND_MESSAGE_FINE(name, params, call) \
         int ____n = 0; \
-        for (IFConstIterator ____it = m_Listeners_##name.begin(); ____it != m_Listeners_##name.end(); ++____it) {   \
-            if ((*____it)->call ) ++____n; \
+        foreach (cmplInterface *____i, m_Listeners_##name) {   \
+            if (____i->call ) ++____n; \
         }  \
         return ____n;
 
@@ -673,16 +673,16 @@ template <class thisIF, class cmplIF>
 void InterfaceBase<thisIF, cmplIF>::disconnectAllI()
 {
     IFList tmp = iConnections;
-    for (IFIterator it = tmp.begin(); it != tmp.end(); ++it) {
+    foreach (cmplInterface *iface, tmp) {
         /* Do not call virtual methods if I'm in the contstructor!
            Actually this should be ensured by the compiler generated
            code and virtual method tables, but unfortunately some compilers
            seem to ignore this in some situations.
          */
         if (me_valid)
-            disconnectI(*it);
+            disconnectI(iface);
         else
-            thisClass::disconnectI(*it);
+            thisClass::disconnectI(iface);
     }
 }
 
