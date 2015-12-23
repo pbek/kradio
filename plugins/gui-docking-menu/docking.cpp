@@ -107,6 +107,7 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
 
 RadioDocking::~RadioDocking()
 {
+    delete m_menu;
 }
 
 

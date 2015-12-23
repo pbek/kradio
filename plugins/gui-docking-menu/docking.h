@@ -181,7 +181,7 @@ signals:
 
 protected:
 
-    KMenu                                     *m_menu;
+    QPointer<KMenu>                            m_menu;
     KMenu                                     *m_recordingMenu;
     KHelpMenu                                  m_helpMenu;
     QStringList                                m_stationIDs;
