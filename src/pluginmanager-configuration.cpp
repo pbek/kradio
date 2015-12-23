@@ -48,6 +48,7 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
 
     QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio4/plugins";
     editPluginLibrary->setStartDir(defaultPluginDir);
+    editPluginLibrary->setMode(editPluginLibrary->mode() | KFile::LocalOnly);
 
     m_pluginInstancesModel = new QStandardItemModel(listPluginInstances);
     QStringList headers;
@@ -202,14 +203,11 @@ void PluginManagerConfiguration::slotAddLibrary()
     slotSetDirty();
     KUrl url = editPluginLibrary->url();
     if (m_Application && url.pathOrUrl().length()) {
-        if (url.isLocalFile()) {
-            m_Application->LoadLibrary(url.toLocalFile());
+        if (!url.isLocalFile()) {
+            return;  // shouldn't happen, the url requester takes care
+                     // of that
         }
-        else {
-            KMessageBox::error(NULL,
-                               i18n("Library %1:\nCannot load non-local library", url.pathOrUrl()),
-                               i18n("Plugin Library Load Error"));
-        }
+        m_Application->LoadLibrary(url.toLocalFile());
     }
 }
 
