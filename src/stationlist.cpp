@@ -25,6 +25,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QMessageBox>
+#include <QTextCodec>
 #include <kio/netaccess.h>
 #include <ktemporaryfile.h>
 #include <klocalizedstring.h>
