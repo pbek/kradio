@@ -9,6 +9,10 @@ include (MacroLibrary)
 
 ADD_SUBDIRECTORY(po)
 
+INCLUDE_DIRECTORIES(
+    ${LircClient_INCLUDE_DIRS}
+)
+
 FILE(GLOB kradio_plugin_lirc_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 )
@@ -39,7 +43,7 @@ TARGET_LINK_LIBRARIES(kradio4_plugin_lirc
   ${KDE4_KDEUI_LIBS}
   ${QT_QT3SUPPORT_LIBRARY}
   ${KDE4_KDE3SUPPORT_LIBRARY}
-  "-llirc_client"
+  ${LircClient_LIBRARIES}
 )
 
 INSTALL(TARGETS kradio4_plugin_lirc ${INSTALL_TARGETS_DEFAULT_ARGS})

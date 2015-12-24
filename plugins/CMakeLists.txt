@@ -46,16 +46,16 @@ MACRO_LOG_FEATURE(WITH_ALSA "ALSA support" "Support for ALSA Sound Devices" "htt
 option(WITH_LIRC "Compile with LIRC support" ON)
 
 IF(WITH_LIRC)
-    CHECK_INCLUDE_FILE_CXX(lirc/lirc_client.h HAVE_LIRC_INC)
-    CHECK_LIBRARY_EXISTS(lirc_client lirc_init "" HAVE_LIRC_LIB)
-    IF(NOT HAVE_LIRC_INC OR NOT HAVE_LIRC_LIB)
+    find_package(LircClient)
+
+    IF(NOT LircClient_FOUND)
 
         SET(WITH_LIRC OFF
             CACHE BOOL "LIRC files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: LIRC files could not be found on this system. Compiling without LIRC support")
 
-    ENDIF(NOT HAVE_LIRC_INC OR NOT HAVE_LIRC_LIB)
+    ENDIF(NOT LircClient_FOUND)
 ENDIF(WITH_LIRC)
 
 
