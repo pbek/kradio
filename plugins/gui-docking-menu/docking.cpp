@@ -19,9 +19,9 @@
 #include <kicon.h>
 #include <QToolTip>
 #include <QMouseEvent>
+#include <QApplication>
 
 #include <kmenu.h>
-#include <kapplication.h>
 #include <kaction.h>
 #include <kaboutdata.h>
 #include <kconfiggroup.h>
@@ -326,7 +326,7 @@ void RadioDocking::buildContextMenu()
 
     m_menu->addSeparator();
     m_quitID = m_menu->addAction( KIcon("application-exit"), i18n("&Quit" ));
-    QObject::connect(m_quitID, SIGNAL(triggered()), kapp, SLOT(quit()) );
+    QObject::connect(m_quitID, SIGNAL(triggered()), qApp, SLOT(quit()) );
 }
 
 

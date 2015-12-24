@@ -25,8 +25,8 @@
 #include <QTimer>
 #include <QFile>
 #include <QDir>
+#include <QApplication>
 
-#include <kapplication.h>
 #include <kaboutdata.h>
 #include <kstandarddirs.h>
 
@@ -682,7 +682,7 @@ bool LircSupport::checkActions(const QString &lirc_string, int repeat_counter, c
                     break;
                 case LIRC_APPLICATION_QUIT :
                     retval = true;
-                    kapp->quit();
+                    qApp->quit();
                     break;
                 default:
                     break;

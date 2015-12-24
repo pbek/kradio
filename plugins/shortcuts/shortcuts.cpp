@@ -21,8 +21,8 @@
 #include <QSocketNotifier>
 #include <QTimer>
 #include <QFile>
+#include <QApplication>
 
-#include <kapplication.h>
 #include <kaboutdata.h>
 #include <kstandarddirs.h>
 #include <kshortcutseditor.h>
@@ -397,7 +397,7 @@ void Shortcuts::slotActionTriggered(QAction *a)
             }
             break;
         case SHORTCUT_APPLICATION_QUIT :
-            kapp->quit();
+            qApp->quit();
             break;
         default:
             break;

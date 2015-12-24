@@ -24,12 +24,12 @@
 #include <QImage>
 #include <QStackedWidget>
 #include <QGridLayout>
+#include <QApplication>
 
 #include <kcmdlineargs.h>
 #include <kcombobox.h>
 #include <kicon.h>
 #include <klocalizedstring.h>
-#include <kapplication.h>
 #include <kwindowsystem.h>
 #include <kconfiggroup.h>
 #include <kmenu.h>
@@ -208,7 +208,7 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     QObject::connect(btnPower,      SIGNAL(toggled(bool)),
                      this,          SLOT(slotPower(bool)));
     QObject::connect(btnQuit,       SIGNAL(clicked()),
-                     kapp,          SLOT(quit()));
+                     qApp,          SLOT(quit()));
     QObject::connect(btnConfigure,  SIGNAL(toggled(bool)),
                      this,          SLOT(slotConfigure(bool)));
     QObject::connect(btnRecording,  SIGNAL(clicked()),

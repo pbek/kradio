@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 #include <QDBusConnection>
-#include <kapplication.h>
+#include <QApplication>
 
 #include "dbussupport.h"
 
@@ -295,7 +295,7 @@ void DBusSupport::restoreAllWidgets()
 
 void DBusSupport::quitKRadio()
 {
-    kapp->quit();
+    qApp->quit();
 }
 
 
