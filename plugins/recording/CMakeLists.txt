@@ -72,14 +72,10 @@ MACRO_LOG_FEATURE(WITH_LAME "mp3/lame support"  "Support for audio compression f
 
 SET(WITH_LIBSNDFILE ON)
 
-CHECK_INCLUDE_FILE(sndfile.h HAVE_SNDFILE_INC)
-CHECK_LIBRARY_EXISTS(sndfile sf_open "" HAVE_SNDFILE_LIB)
-IF(NOT HAVE_SNDFILE_INC OR NOT HAVE_SNDFILE_LIB)
+find_package(Sndfile REQUIRED)
+SET(WITH_LIBSNDFILE ${Sndfile_FOUND})
 
-    SET(WITH_LIBSNDFILE OFF)
-    MESSAGE(SEND_ERROR "libsndfile files could not be found on this system.")
-
-ENDIF(NOT HAVE_SNDFILE_INC OR NOT HAVE_SNDFILE_LIB)
+include_directories(${Sndfile_INCLUDE_DIRS})
 
 MACRO_LOG_FEATURE(WITH_LIBSNDFILE "libsndfile generic sound file support"  "Support for some standard audio formats (e.g. .wav)" "http://www.mega-nerd.com/libsndfile" TRUE)
 
@@ -116,7 +112,7 @@ TARGET_LINK_LIBRARIES(kradio4_plugin_recording
   ${KDE4_KDEUI_LIBS}
   ${LIB_OGG}
   ${LIB_LAME}
-  -lsndfile
+  ${Sndfile_LIBRARIES}
 )
 
 INSTALL(TARGETS kradio4_plugin_recording ${INSTALL_TARGETS_DEFAULT_ARGS})
