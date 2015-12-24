@@ -1,11 +1,6 @@
 project(kradio4_plugin_timecontrol)
 add_definitions( -DPROJECT_NAME="\\"${PROJECT_NAME}\\"" )
 
-find_package(KDE4 REQUIRED)
-include (KDE4Defaults)
-include (MacroLibrary)
-
-
 ADD_SUBDIRECTORY(icons)
 ADD_SUBDIRECTORY(po)
 

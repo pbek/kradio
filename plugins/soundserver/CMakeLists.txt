@@ -1,11 +1,6 @@
 project(kradio4_plugin_soundserver)
 add_definitions( -DPROJECT_NAME="\\"${PROJECT_NAME}\\"" )
 
-find_package(KDE4 REQUIRED)
-include (KDE4Defaults)
-include (MacroLibrary)
-
-
 ADD_SUBDIRECTORY(po)
 
 FILE(GLOB kradio_plugin_soundserver_sources

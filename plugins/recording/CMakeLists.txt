@@ -1,10 +1,6 @@
 project(kradio4_plugin_recording)
 add_definitions( -DPROJECT_NAME="\\"${PROJECT_NAME}\\"" )
 
-find_package(KDE4 REQUIRED)
-include (KDE4Defaults)
-include (MacroLibrary)
-
 include(CheckIncludeFile)
 
 ADD_SUBDIRECTORY(icons)

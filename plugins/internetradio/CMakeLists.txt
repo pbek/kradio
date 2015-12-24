@@ -1,12 +1,6 @@
 project(kradio4_plugin_internetradio)
 add_definitions( -DPROJECT_NAME="\\"${PROJECT_NAME}\\"" )
 
-find_package(KDE4 REQUIRED)
-include (KDE4Defaults)
-include (MacroLibrary)
-
-
-
 #add_definitions( -DINET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD )
 
 

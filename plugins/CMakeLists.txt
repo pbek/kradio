@@ -1,10 +1,6 @@
 project(kradio4plugins)
 
-# search packages used by KDE
-find_package(KDE4 REQUIRED)
-include (KDE4Defaults)
 include (FindPkgConfig)
-include (MacroLibrary)
 
 include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
