@@ -44,23 +44,23 @@ MACRO_LOG_FEATURE(WITH_OGG_VORBIS "ogg/vorbis support"  "Support for audio compr
 
 
 IF(WITH_LAME)
-    CHECK_INCLUDE_FILE(lame/lame.h HAVE_LAME_INC)
-    CHECK_LIBRARY_EXISTS(mp3lame lame_init "" HAVE_LAME_LIB)
-    IF(NOT HAVE_LAME_INC OR NOT HAVE_LAME_LIB)
+    find_package(Lame)
+    IF(NOT Lame_FOUND)
 
         SET(WITH_LAME OFF
             CACHE BOOL "mp3/lame files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: mp3/lame files could not be found on this system. Compiling without mp3/lame support")
 
-    ENDIF(NOT HAVE_LAME_INC OR NOT HAVE_LAME_LIB)
+    ENDIF(NOT Lame_FOUND)
 ENDIF(WITH_LAME)
 
 
 IF (WITH_LAME)
     message(STATUS "   Compiling with mp3/lame support")
     add_definitions( -DHAVE_LAME )
-    set(LIB_LAME "-lmp3lame")
+    include_directories(${Lame_INCLUDE_DIRS})
+    set(LIB_LAME ${Lame_LIBRARIES})
 ELSE(WITH_LAME)
     message(STATUS "   Compiling without mp3/lame support")
     set(LIB_LAME "")
