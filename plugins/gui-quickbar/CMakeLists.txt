@@ -1,5 +1,5 @@
 project(kradio4_plugin_gui_quickbar)
-add_definitions( -DPROJECT_NAME="\\"${PROJECT_NAME}\\"" )
+add_definitions( -DPROJECT_NAME="${PROJECT_NAME}" )
 
 ADD_SUBDIRECTORY(po)
 

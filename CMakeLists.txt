@@ -30,7 +30,7 @@ find_package( Boost 1.20 REQUIRED)
 ########################################################################
 
 ADD_DEFINITIONS (
-    -DKRADIO_VERSION="\\"${KRADIO_VERSION}\\""
+    -DKRADIO_VERSION="${KRADIO_VERSION}"
     ${KDE4_DEFINITIONS}
     -DQT_STRICT_ITERATORS
 )

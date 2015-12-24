@@ -1,6 +1,6 @@
 project(kradio4_plugin_alsa_sound)
 
-add_definitions( -DPROJECT_NAME="\\"${PROJECT_NAME}\\"" )
+add_definitions( -DPROJECT_NAME="${PROJECT_NAME}" )
 
 ADD_SUBDIRECTORY(icons)
 ADD_SUBDIRECTORY(po)

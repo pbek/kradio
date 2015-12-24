@@ -1,5 +1,5 @@
 project(kradio4_plugin_recording)
-add_definitions( -DPROJECT_NAME="\\"${PROJECT_NAME}\\"" )
+add_definitions( -DPROJECT_NAME="${PROJECT_NAME}" )
 
 include(CheckIncludeFile)
 
