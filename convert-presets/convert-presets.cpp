@@ -32,7 +32,7 @@ QString createStationID()
     for (int i = 0; i < buffersize; ++i)
         srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
 
-//    kDebug() << i18n("generated StationID: ") << stime << srandom << endl;
+//    kDebug() << "generated StationID:" << stime << srandom;
 
     return stime + srandom;
 }
@@ -50,7 +50,7 @@ bool convertFile(const QString &file)
     QFile presetFile (file);
 
     if (! presetFile.open(QIODevice::ReadOnly)) {
-        kDebug() << "convertFile: error opening preset file" << file << "for reading";
+        kDebug() << "error opening preset file" << file << "for reading";
         return false;
     }
 
@@ -64,7 +64,7 @@ bool convertFile(const QString &file)
     }
 
     if (xmlData.indexOf("<format>", 0, Qt::CaseInsensitive) >= 0) {
-        kDebug() << "file " << file << " already in new format" << endl;
+        kDebug() << "file" << file << "already in new format";
         // but add <?xml line at beginning if missing
 
         {
@@ -128,7 +128,7 @@ bool convertFile(const QString &file)
     ////////////////////////////////////////////////////////////////////////
 
     if (! presetFile.open(QIODevice::WriteOnly)) {
-        kDebug() << "convertFile: error opening preset file" << file << "for writing";
+        kDebug() << "error opening preset file" << file << "for writing";
        return false;
     }
 
@@ -139,7 +139,7 @@ bool convertFile(const QString &file)
     outs << xmlData;
 
     if (presetFile.error() != QFile::NoError) {
-        kDebug() << "StationList::writeXML: error writing preset file" << file
+        kDebug() << "error writing preset file" << file
                  << "(" << presetFile.error() << ")";
         return false;
     }
@@ -176,11 +176,11 @@ int main(int argc, char *argv[])
             return -1;
         } else {
             if (! args->isSet("q"))
-                kDebug() << x << ": ok" << endl;
+                kDebug() << x << ": ok";
         }
     }
     if (args->count() == 0) {
-        kDebug() << "no input" << endl;
+        kDebug() << "no input";
         return -1;
     }
 
