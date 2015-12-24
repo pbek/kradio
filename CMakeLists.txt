@@ -1,5 +1,10 @@
 project(kradio4)
 
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_policy(SET CMP0002 OLD)  # duplicated translations targets
+cmake_policy(SET CMP0059 OLD)
+cmake_policy(SET CMP0064 OLD)
+
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 find_package(KDE4 4.7.0 REQUIRED)
