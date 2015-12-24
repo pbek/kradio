@@ -19,6 +19,7 @@
 #define KRADIO_KRADIOAPP_H
 
 #include <QMap>
+#include <QSharedPointer>
 
 #include <kconfig.h>
 #include <kapplication.h>
@@ -47,7 +48,7 @@ class PluginManager;
 
 
 struct PluginLibraryInfo {
-    KRadioPluginFactoryBase       *factory;
+    QSharedPointer<KRadioPluginFactoryBase> factory;
     QMap<QString,QString>          plugins;
     QString                        errorString;
 
@@ -65,10 +66,10 @@ private:
 struct PluginClassInfo {
     QString                    class_name;
     QString                    description;
-    KRadioPluginFactoryBase   *factory;
+    QSharedPointer<KRadioPluginFactoryBase> factory;
 
     PluginClassInfo() : factory(NULL) {}
-    PluginClassInfo(const QString &_name, const QString &descr, KRadioPluginFactoryBase *f)
+    PluginClassInfo(const QString &_name, const QString &descr, QSharedPointer<KRadioPluginFactoryBase> f)
         : class_name(_name), description(descr), factory(f) {}
     PluginBase *CreateInstance(const QString &instanceID, const QString &obj_name) { return factory ? factory->create(class_name, instanceID, obj_name) : NULL; }
 };

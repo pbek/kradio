@@ -18,7 +18,7 @@
 #include <kmessagebox.h>
 #include <kaboutdata.h>
 #include <klocalizedstring.h>
-#include <klibloader.h>
+#include <kpluginloader.h>
 #include <kconfig.h>
 #include <ksharedconfig.h>
 #include <kmessagebox.h>
@@ -108,9 +108,10 @@ PluginLibraryInfo &PluginLibraryInfo::operator = (const PluginLibraryInfo &libin
 PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
  : factory(NULL)
 {
-    QPluginLoader loader(lib_name);
-    if (loader.load()) {
-        factory = qobject_cast<KRadioPluginFactoryBase *>(loader.instance());
+    KPluginLoader loader(lib_name);
+    KPluginFactory* ff = loader.factory();
+    if (ff) {
+        factory = QSharedPointer<KRadioPluginFactoryBase>(ff->create<KRadioPluginFactoryBase>());
         if (factory) {
             foreach (const KAboutData &about, factory->components()) {
                 KGlobal::locale()->insertCatalog(about.catalogName());

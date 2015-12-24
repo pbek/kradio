@@ -26,7 +26,7 @@
 #include <QString>
 #include <QObject>
 #include <QList>
-#include <QtPlugin>
+#include <kpluginfactory.h>
 
 #include <kconfiggroup.h>
 
@@ -160,7 +160,7 @@ private:
 class class_name ## PluginFactory : public KRadioPluginFactoryBase  \
 {                                                                   \
 public:                                                             \
-    class_name ## PluginFactory()                                   \
+    class_name ## PluginFactory(QObject *, const QVariantList &)    \
     {                                                               \
         registerComponent(#class_name, i18nName, description);      \
     }                                                               \
@@ -174,14 +174,15 @@ public:                                                             \
         }                                                           \
     }                                                               \
 };                                                                  \
-Q_EXPORT_PLUGIN(class_name ## PluginFactory)
+K_PLUGIN_FACTORY(class_name ## Plugin, registerPlugin<class_name ## PluginFactory>();) \
+K_EXPORT_PLUGIN(class_name ## Plugin)
 
 
 #define PLUGIN_LIBRARY_FUNCTIONS2(class_name1, i18nName, description1, class_name2, description2) \
 class class_name1 ## PluginFactory : public KRadioPluginFactoryBase  \
 {                                                                    \
 public:                                                              \
-    class_name1 ## PluginFactory()                                   \
+    class_name1 ## PluginFactory(QObject *, const QVariantList &)    \
     {                                                                \
         registerComponent(#class_name1, i18nName, description1);     \
         registerComponent(#class_name2, i18nName, description2);     \
@@ -198,7 +199,8 @@ public:                                                              \
         }                                                            \
     }                                                                \
 };                                                                   \
-Q_EXPORT_PLUGIN(class_name1 ## PluginFactory)
+K_PLUGIN_FACTORY(class_name1 ## Plugin, registerPlugin<class_name1 ## PluginFactory>();) \
+K_EXPORT_PLUGIN(class_name1 ## Plugin)
 
 
 #endif
