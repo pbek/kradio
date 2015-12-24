@@ -30,8 +30,6 @@
 // #include <kprogress.h>
 
 #include "kradioapp.h"
-//#include "aboutwidget.h"
-#include "kradioaboutwidget.h"
 #include "errorlog_interfaces.h"
 #include "pluginmanager.h"
 
