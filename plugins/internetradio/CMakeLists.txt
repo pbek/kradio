@@ -19,6 +19,7 @@ LINK_DIRECTORIES(
 
 INCLUDE_DIRECTORIES(
     ${FFMPEG_INCLUDE_DIRS}
+    ${Libmms_INCLUDE_DIRS}
 )
 
 FILE(GLOB kradio_plugin_internetradio_sources
@@ -51,6 +52,7 @@ TARGET_LINK_LIBRARIES(kradio4_plugin_internetradio
   ${KDE4_KDEUI_LIBS}
   ${FFMPEG_LIBRARIES}
   ${LIBSWRESAMPLE_LIBRARIES}
+  ${Libmms_LIBRARIES}
 )
 
 INSTALL(TARGETS kradio4_plugin_internetradio ${INSTALL_TARGETS_DEFAULT_ARGS})

@@ -124,35 +124,14 @@ IF(WITH_FFMPEG)
     ENDIF(NOT LIBAVCODEC_VERSION LESS 53.42.0)
 
 
-    pkg_check_modules(LIBMMS libmms)
-    IF(LIBMMS_FOUND)
-        SET(LIBMMS_MIN_VERSION 0.5)
-        IF(NOT LIBMMS_VERSION LESS LIBMMS_MIN_VERSION)
-            SET(HAVE_MMSX_INC ON)
-            SET(HAVE_MMSX_LIB ON)
+    find_package(Libmms 0.5)
 
-            SET(FFMPEG_LIBRARY_DIRS ${FFMPEG_LIBRARY_DIRS} ${LIBMMS_LIBRARY_DIRS})
-            SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBMMS_LIBRARIES}   )
-            SET(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} ${LIBMMS_INCLUDE_DIRS})
-        ELSE(NOT LIBMMS_VERSION LESS LIBMMS_MIN_VERSION)
-            MESSAGE("WARNING: found libmms " ${LIBMMS_VERSION} ", however, version >= " LIBMMS_MIN_VERSION " required")
-            SET(LIBMMS_FOUND false)
-        ENDIF(NOT LIBMMS_VERSION LESS LIBMMS_MIN_VERSION)
-    ELSE(LIBMMS_FOUND)
-        CHECK_INCLUDE_FILE("libmms/mmsx.h"       HAVE_MMSX_INC)
-        CHECK_LIBRARY_EXISTS(mms mmsx_connect "" HAVE_MMSX_LIB)
-        IF (HAVE_MMSX_INC AND HAVE_MMSX_LIB)
-            SET(LIBMMS_FOUND ON)
-            SET(FFMPEG_LIBRARIES "mms" ${FFMPEG_LIBRARIES})
-        ENDIF(HAVE_MMSX_INC AND HAVE_MMSX_LIB)
-    ENDIF(LIBMMS_FOUND)
-
-    IF ( NOT LIBMMS_FOUND OR NOT LIBAVFORMAT_FOUND )
+    IF ( NOT Libmms_FOUND OR NOT LIBAVFORMAT_FOUND )
         SET(WITH_FFMPEG OFF
             CACHE BOOL "libffmpeg and/or libmms files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: libffmpeg and/or libmms files could not be found on this system. Compiling without Internet Radio Stations support")
-    ENDIF( NOT LIBMMS_FOUND OR NOT LIBAVFORMAT_FOUND )
+    ENDIF( NOT Libmms_FOUND OR NOT LIBAVFORMAT_FOUND )
 
 ENDIF(WITH_FFMPEG)
 
@@ -162,6 +141,8 @@ IF (WITH_FFMPEG)
     message(STATUS "       FFMPEG_INCLUDE_DIRS = ${FFMPEG_INCLUDE_DIRS}")
     message(STATUS "       FFMPEG_LIBRARY_DIRS = ${FFMPEG_LIBRARY_DIRS}")
     message(STATUS "       FFMPEG_LIBRARIES    = ${FFMPEG_LIBRARIES}")
+    message(STATUS "       Libmms_INCLUDE_DIRS = ${Libmms_INCLUDE_DIRS}")
+    message(STATUS "       Libmms_LIBRARIES    = ${Libmms_LIBRARIES}")
 
     IF(HAVE_AVFORMAT_OLD_INC)
         add_definitions( -DHAVE_FFMPEG_OLD )
