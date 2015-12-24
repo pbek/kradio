@@ -554,7 +554,7 @@ void V4LRadioConfiguration::selectRadioDevice()
     KFileDialog fd(KUrl("/dev/"),
                    i18n("any ( * )"),
                    this);
-    fd.setModal(TRUE);
+    fd.setModal(true);
     fd.setMode(KFile::File | KFile::ExistingOnly);
     fd.setCaption (i18n("Select Radio Device"));
 
