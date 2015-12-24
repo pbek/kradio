@@ -16,25 +16,23 @@ option(WITH_LAME       "Compile with mp3/lame   support" ON)
 ###############################################################################
 
 IF(WITH_OGG_VORBIS)
-    CHECK_INCLUDE_FILE(vorbis/vorbisenc.h HAVE_VORBIS_INC)
-    CHECK_INCLUDE_FILE(ogg/ogg.h          HAVE_OGG_INC)
-    CHECK_LIBRARY_EXISTS(vorbisenc vorbis_encode_init  "" HAVE_VORBIS_LIB)
-    CHECK_LIBRARY_EXISTS(ogg       ogg_stream_packetin "" HAVE_OGG_LIB)
-    IF(NOT HAVE_VORBIS_INC OR NOT HAVE_OGG_INC OR NOT HAVE_VORBIS_LIB OR NOT HAVE_OGG_LIB)
+    find_package(OggVorbis)
+    IF(NOT OGGVORBIS_FOUND OR NOT HAVE_LIBVORBISENC2)
 
         SET(WITH_OGG_VORBIS OFF
             CACHE BOOL "ogg/vorbis files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: ogg/vorbis files could not be found on this system. Compiling without ogg/vorbis support")
 
-    ENDIF(NOT HAVE_VORBIS_INC OR NOT HAVE_OGG_INC OR NOT HAVE_VORBIS_LIB OR NOT HAVE_OGG_LIB)
+    ENDIF(NOT OGGVORBIS_FOUND OR NOT HAVE_LIBVORBISENC2)
 ENDIF(WITH_OGG_VORBIS)
 
 
 IF (WITH_OGG_VORBIS)
     message(STATUS "   Compiling with ogg/vorbis support")
     add_definitions( -DHAVE_OGG )
-    set(LIB_OGG "-logg -lvorbisenc")
+    include_directories(${OGGVORBIS_INCLUDE_DIR} ${VORBIS_INCLUDE_DIR})
+    set(LIB_OGG ${OGGVORBIS_LIBRARIES})
 ELSE(WITH_OGG_VORBIS)
     message(STATUS "   Compiling without ogg/vorbis support")
     set(LIB_OGG "")
