@@ -64,7 +64,7 @@ static KAboutData aboutData()
                      ki18nc("@title", "Support for V4L(2) Radio Devices"),
                      KAboutData::License_GPL,
                      ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
-                     ki18n("Provides support for V4L/V4L2 based radio cards."),
+                     KLocalizedString(),
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
