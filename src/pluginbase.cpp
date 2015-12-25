@@ -132,3 +132,8 @@ void KRadioPluginFactoryBase::registerComponent(const QByteArray &className, con
     about.setShortDescription(description);
     m_components.append(about);
 }
+
+void KRadioPluginFactoryBase::registerComponent(const KAboutData &aboutData)
+{
+    m_components.append(aboutData);
+}
