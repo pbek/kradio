@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2012-08-09 13:31+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -296,22 +296,54 @@ msgstr ""
 msgid "<do not change>"
 msgstr "<nemeniť>"
 
-#: timecontrol.cpp:45
-#, kde-format
+#: timecontrol.cpp:47
+#, fuzzy, kde-format
+#| msgid "Alarms"
+msgctxt "@title"
+msgid "Alarms"
+msgstr "Alarmy"
+
+#: timecontrol.cpp:49
+#, fuzzy, kde-format
+#| msgid "Time Control and Alarm Functions"
+msgctxt "@title"
 msgid "Time Control and Alarm Functions"
 msgstr "Funkcie ovládania času a budíka"
 
 #: timecontrol.cpp:51
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: timecontrol.cpp:52
+#, kde-format
+msgid "Provides alarms and sleep countdown."
+msgstr ""
+
+#: timecontrol.cpp:55
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: timecontrol.cpp:56
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: timecontrol.cpp:66
 #, fuzzy, kde-format
 msgid "Time Control Plugin"
 msgstr "Plugin TimeControl"
 
-#: timecontrol.cpp:304
+#: timecontrol.cpp:319
 #, kde-format
 msgid "Alarms"
 msgstr "Alarmy"
 
-#: timecontrol.cpp:305
+#: timecontrol.cpp:320
 #, kde-format
 msgid "Setup Alarms"
 msgstr "Nastaviť budíky"

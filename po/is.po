@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2009-06-15 21:43+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -229,84 +229,17 @@ msgstr "FileRingBuffer::addData: mistókst að skrifa gögn í skrá %1."
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: mistókst að lesa gögn yfir í skrá %1."
 
-#: src/kradioaboutwidget.cpp:65
-#, kde-format
-msgid ""
-"<qt>No information available.<br />The supplied KAboutData object does not "
-"exist.</qt>"
-msgstr ""
-"<qt>Því miður eru engar upplýsingar tiltækar.<br />Þessi KAboutData hlutur "
-"er ekki til.</qt>"
-
-#: src/kradioaboutwidget.cpp:92
-#, kde-format
-msgid ""
-"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
-"html>"
-msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>Útgáfa %2</b><br />Notar KDE %3</"
-"html>"
-
-#: src/kradioaboutwidget.cpp:125
-#, kde-format
-msgid "License: %1"
-msgstr "Leyfi: %1"
-
-#: src/kradioaboutwidget.cpp:138
-#, kde-format
-msgid "&About"
-msgstr "&Um"
-
-#: src/kradioaboutwidget.cpp:147
-#, kde-format
-msgid "A&uthor"
-msgstr "Höf&undur"
-
-#: src/kradioaboutwidget.cpp:147
-#, kde-format
-msgid "A&uthors"
-msgstr "Höf&undar"
-
-#: src/kradioaboutwidget.cpp:152
-#, kde-format
-msgid ""
-"Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
-"bugs.\n"
-msgstr ""
-"Vinsamlega notaðu <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> "
-"til að senda inn villuskýrslur.\n"
-
-#: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
-#, kde-format
-msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Vinsamlega sendu villuskýrslur til <a href=\"mailto:%1\">%2</a>.\n"
-
-#: src/kradioaboutwidget.cpp:210
-#, kde-format
-msgid "&Thanks To"
-msgstr "Þakkir &fá"
-
-#: src/kradioaboutwidget.cpp:232
-#, kde-format
-msgid "T&ranslation"
-msgstr "Þýð&ing"
-
-#: src/kradioaboutwidget.cpp:255
-#, kde-format
-msgid "License Agreement"
-msgstr "Notandaleyfi"
-
-#: src/kradioapp.cpp:123
+#: src/kradioapp.cpp:122
 #, fuzzy, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Skráasafn %1: Upphafspunkt íforritsins vantar\n"
 
-#: src/kradioapp.cpp:124 src/kradioapp.cpp:131
+#: src/kradioapp.cpp:123 src/kradioapp.cpp:130
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Hleðsluvilla skráasafns íforrits"
 
-#: src/kradioapp.cpp:130
+#: src/kradioapp.cpp:129
 #, fuzzy, kde-format
 msgid ""
 "Library %1:\n"
@@ -315,17 +248,17 @@ msgstr ""
 "Skráasafn %1: \n"
 "%2"
 
-#: src/kradioapp.cpp:207
+#: src/kradioapp.cpp:206
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr "Ný skráasöfn íforrita fundust. Viltu láta hlaða þeim inn núna?"
 
-#: src/kradioapp.cpp:209
+#: src/kradioapp.cpp:208
 #, fuzzy, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Ný skráasöfn íforrita fundust"
 
-#: src/kradioapp.cpp:225
+#: src/kradioapp.cpp:224
 #, fuzzy, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -344,22 +277,22 @@ msgstr[1] ""
 "með uppsetningarmöppu KRadio4 og umhverfisbreyturnar KDEDIR, KDEDIRS og "
 "KDEHOME.\n"
 
-#: src/kradioapp.cpp:233
+#: src/kradioapp.cpp:232
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "Villa við uppsetningu KRadio4"
 
-#: src/kradioapp.cpp:258
+#: src/kradioapp.cpp:257
 #, fuzzy, kde-format
 msgid "Instance %1"
 msgstr "Tilvik"
 
-#: src/kradioapp.cpp:279
+#: src/kradioapp.cpp:278
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "Stillingar KRadio"
 
-#: src/kradioapp.cpp:280
+#: src/kradioapp.cpp:279
 #, kde-format
 msgid "About KRadio Components"
 msgstr "Um einingar KRadio"
@@ -904,6 +837,51 @@ msgstr "Tiltækar stöðvar"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr ""
+
+#~ msgid ""
+#~ "<qt>No information available.<br />The supplied KAboutData object does "
+#~ "not exist.</qt>"
+#~ msgstr ""
+#~ "<qt>Því miður eru engar upplýsingar tiltækar.<br />Þessi KAboutData "
+#~ "hlutur er ekki til.</qt>"
+
+#~ msgid ""
+#~ "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE "
+#~ "%3</html>"
+#~ msgstr ""
+#~ "<html><font size=\"5\">%1</font><br /><b>Útgáfa %2</b><br />Notar KDE %3</"
+#~ "html>"
+
+#~ msgid "License: %1"
+#~ msgstr "Leyfi: %1"
+
+#~ msgid "&About"
+#~ msgstr "&Um"
+
+#~ msgid "A&uthor"
+#~ msgstr "Höf&undur"
+
+#~ msgid "A&uthors"
+#~ msgstr "Höf&undar"
+
+#~ msgid ""
+#~ "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to "
+#~ "report bugs.\n"
+#~ msgstr ""
+#~ "Vinsamlega notaðu <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> "
+#~ "til að senda inn villuskýrslur.\n"
+
+#~ msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
+#~ msgstr "Vinsamlega sendu villuskýrslur til <a href=\"mailto:%1\">%2</a>.\n"
+
+#~ msgid "&Thanks To"
+#~ msgstr "Þakkir &fá"
+
+#~ msgid "T&ranslation"
+#~ msgstr "Þýð&ing"
+
+#~ msgid "License Agreement"
+#~ msgstr "Notandaleyfi"
 
 #, fuzzy
 #~ msgid ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: timeshifter (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -14,45 +14,57 @@ msgstr ""
 
 #. i18n: file: timeshifter-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
-#: rc.cpp:3 rc.cpp:21
+#: rc.cpp:3 rc.cpp:23
 #, kde-format
 msgid "SetupDialogGeneral"
 msgstr "DijalogOpštaPodešavanja"
 
 #. i18n: file: timeshifter-configuration-ui.ui:57
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
-#: rc.cpp:6 rc.cpp:24
+#: rc.cpp:6 rc.cpp:26
 #, kde-format
 msgid " MB"
 msgstr "␣MB"
 
 #. i18n: file: timeshifter-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
-#: rc.cpp:9 rc.cpp:27
+#: rc.cpp:9 rc.cpp:29
 #, fuzzy, kde-format
 msgid "Maximum file size:"
 msgstr "Maksimalna veličina fajla"
 
 #. i18n: file: timeshifter-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:12 rc.cpp:30
+#: rc.cpp:12 rc.cpp:32
 #, fuzzy, kde-format
 msgid "Playback mixer device:"
 msgstr "Uredjaj za reprodukciju"
 
 #. i18n: file: timeshifter-configuration-ui.ui:96
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
-#: rc.cpp:15 rc.cpp:33
+#: rc.cpp:15 rc.cpp:35
 #, fuzzy, kde-format
 msgid "Temporary file:"
 msgstr "Privremeni fajl"
 
 #. i18n: file: timeshifter-configuration-ui.ui:109
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:18 rc.cpp:36
+#: rc.cpp:18 rc.cpp:38
 #, fuzzy, kde-format
 msgid "Playback mixer channel:"
 msgstr "Kanal miksera za reprodukciju"
+
+#: rc.cpp:19
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:20
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #: timeshifter-configuration.cpp:146
 #, kde-format
@@ -64,39 +76,41 @@ msgstr "bilo koji ( * )"
 msgid "Select TimeShifter Temporary File"
 msgstr "Odaberi privremeni fajj za odloženo emitovanje"
 
-#: timeshifter.cpp:27
-#, kde-format
+#: timeshifter.cpp:33
+#, fuzzy, kde-format
+#| msgid "TimeShift Support"
+msgctxt "@title"
 msgid "TimeShift Support"
 msgstr "Podrška za odloženo emitovanje"
 
-#: timeshifter.cpp:32
+#: timeshifter.cpp:47
 #, kde-format
 msgid "TimeShifter Plugin"
 msgstr "Priključak za odloženo emitovanje"
 
-#: timeshifter.cpp:127
+#: timeshifter.cpp:142
 #, kde-format
 msgid "Timeshifter"
 msgstr "Odloženo emitovanje"
 
-#: timeshifter.cpp:128
+#: timeshifter.cpp:143
 #, kde-format
 msgid "Timeshifter Options"
 msgstr "Opcije odloženog emitovanja"
 
-#: timeshifter.cpp:209
+#: timeshifter.cpp:224
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr "Odloženo emitovanje od %1 (%2)"
 
-#: timeshifter.cpp:555
+#: timeshifter.cpp:570
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: klijenti preskočeni %1 bajtova. Podaci "
 "izgubljeni"
 
-#: timeshifter.cpp:635
+#: timeshifter.cpp:650
 #, kde-format
 msgid "internal stream, not stored"
 msgstr "interni strim, ne pamti"

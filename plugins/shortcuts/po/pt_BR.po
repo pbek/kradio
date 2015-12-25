@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2009-11-11 10:15-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -33,152 +33,161 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "marciopanto@gmail.com"
 
-#: shortcuts.cpp:47
-#, kde-format
+#: shortcuts.cpp:50
+#, fuzzy, kde-format
+#| msgid "Shortcuts"
+msgctxt "@title"
+msgid "Shortcuts"
+msgstr "Teclas de atalho"
+
+#: shortcuts.cpp:52
+#, fuzzy, kde-format
+#| msgid "Shortcuts Support"
+msgctxt "@title"
 msgid "Shortcuts Support"
 msgstr "Suporte a teclas de atalho"
 
-#: shortcuts.cpp:53 shortcuts.cpp:199
+#: shortcuts.cpp:67 shortcuts.cpp:213
 #, kde-format
 msgid "Shortcuts Plugin"
 msgstr "Plug-in de teclas de atalho"
 
-#: shortcuts.cpp:61
+#: shortcuts.cpp:75
 #, kde-format
 msgid "Standard Actions"
 msgstr "Ações padrão"
 
-#: shortcuts.cpp:62
+#: shortcuts.cpp:76
 #, kde-format
 msgid "Station Actions"
 msgstr "Ação da estação"
 
-#: shortcuts.cpp:64
+#: shortcuts.cpp:78
 #, kde-format
 msgid "Digit 0"
 msgstr "Digito 0"
 
-#: shortcuts.cpp:65
+#: shortcuts.cpp:79
 #, kde-format
 msgid "Digit 1"
 msgstr "Digito 1"
 
-#: shortcuts.cpp:66
+#: shortcuts.cpp:80
 #, kde-format
 msgid "Digit 2"
 msgstr "Digito 2"
 
-#: shortcuts.cpp:67
+#: shortcuts.cpp:81
 #, kde-format
 msgid "Digit 3"
 msgstr "Digito 3"
 
-#: shortcuts.cpp:68
+#: shortcuts.cpp:82
 #, kde-format
 msgid "Digit 4"
 msgstr "Digito 4"
 
-#: shortcuts.cpp:69
+#: shortcuts.cpp:83
 #, kde-format
 msgid "Digit 5"
 msgstr "Digito 5"
 
-#: shortcuts.cpp:70
+#: shortcuts.cpp:84
 #, kde-format
 msgid "Digit 6"
 msgstr "Digito 6"
 
-#: shortcuts.cpp:71
+#: shortcuts.cpp:85
 #, kde-format
 msgid "Digit 7"
 msgstr "Digito 7"
 
-#: shortcuts.cpp:72
+#: shortcuts.cpp:86
 #, kde-format
 msgid "Digit 8"
 msgstr "Digito 8"
 
-#: shortcuts.cpp:73
+#: shortcuts.cpp:87
 #, kde-format
 msgid "Digit 9"
 msgstr "Digito 9"
 
-#: shortcuts.cpp:74
+#: shortcuts.cpp:88
 #, kde-format
 msgid "Power on"
 msgstr "Ligar"
 
-#: shortcuts.cpp:75
+#: shortcuts.cpp:89
 #, kde-format
 msgid "Power off"
 msgstr "Desligar"
 
-#: shortcuts.cpp:76
+#: shortcuts.cpp:90
 #, kde-format
 msgid "Pause"
 msgstr "Pausar"
 
-#: shortcuts.cpp:77
+#: shortcuts.cpp:91
 #, kde-format
 msgid "Start recording"
 msgstr "Iniciar a gravação"
 
-#: shortcuts.cpp:78
+#: shortcuts.cpp:92
 #, kde-format
 msgid "Stop recording"
 msgstr "Parar a gravação"
 
-#: shortcuts.cpp:79
+#: shortcuts.cpp:93
 #, kde-format
 msgid "Increase volume"
 msgstr "Aumentar volume"
 
-#: shortcuts.cpp:80
+#: shortcuts.cpp:94
 #, kde-format
 msgid "Decrease volume"
 msgstr "Diminuir volume"
 
-#: shortcuts.cpp:81
+#: shortcuts.cpp:95
 #, kde-format
 msgid "Increase Frequency"
 msgstr "Aumentar frequência"
 
-#: shortcuts.cpp:82
+#: shortcuts.cpp:96
 #, kde-format
 msgid "Decrease Frequency"
 msgstr "Diminuir frequência"
 
-#: shortcuts.cpp:83
+#: shortcuts.cpp:97
 #, kde-format
 msgid "Next station"
 msgstr "Próxima estação"
 
-#: shortcuts.cpp:84
+#: shortcuts.cpp:98
 #, kde-format
 msgid "Previous station"
 msgstr "Estação anterior"
 
-#: shortcuts.cpp:85
+#: shortcuts.cpp:99
 #, kde-format
 msgid "Search next station"
 msgstr "Pesquisar próxima estação"
 
-#: shortcuts.cpp:86
+#: shortcuts.cpp:100
 #, kde-format
 msgid "Search previous station"
 msgstr "Pesquisar estação anterior"
 
-#: shortcuts.cpp:87
+#: shortcuts.cpp:101
 #, kde-format
 msgid "Sleep"
 msgstr "Modo hibernação"
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:102
 #, kde-format
 msgid "Quit KRadio"
 msgstr "Sair"
 
-#: shortcuts.cpp:198
+#: shortcuts.cpp:212
 #, kde-format
 msgid "Shortcuts"
 msgstr "Teclas de atalho"

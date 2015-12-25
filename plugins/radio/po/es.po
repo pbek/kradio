@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -91,32 +91,51 @@ msgid_plural "have now %1 stations"
 msgstr[0] "tiene %1 emisoras"
 msgstr[1] "tiene %1 emisoras"
 
-#: radio.cpp:35
+#: radio.cpp:39
 #, kde-format
+msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
 msgstr ""
 
-#: radio.cpp:40
+#: radio.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radio.cpp:45
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radio.cpp:46
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radio.cpp:55
 #, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr ""
 
-#: radio.cpp:133
+#: radio.cpp:148
 #, kde-format
 msgid "Radio Stations"
 msgstr "Emisoras de Radio"
 
-#: radio.cpp:134
+#: radio.cpp:149
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Configurar Emisoras de Radio"
 
-#: radio.cpp:204
+#: radio.cpp:190
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
 msgstr "No se pudo encontrar un plugin para emisora %1"
 
-#: radio.cpp:399
+#: radio.cpp:385
 #, fuzzy, kde-format
 msgctxt "Unknown description"
 msgid "unknown"

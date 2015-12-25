@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2014-09-18 20:53+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: German <kde-russian@lists.kde.ru>\n"
@@ -18,15 +18,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: mprissupport.cpp:38 mprissupport.cpp:121
+#: mprissupport.cpp:42
 #, kde-format
+msgctxt "@title"
+msgid "MPRIS"
+msgstr ""
+
+#: mprissupport.cpp:44
+#, fuzzy, kde-format
+#| msgid "MPRIS Support"
+msgctxt "@title"
 msgid "MPRIS Support"
 msgstr "Поддержка MPRIS"
 
-#: mprissupport.cpp:43 mprissupport.cpp:122
+#: mprissupport.cpp:46
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2014 Pino Toscano"
+msgstr ""
+
+#: mprissupport.cpp:50
+#, kde-format
+msgctxt "@info:credit"
+msgid "Pino Toscano"
+msgstr ""
+
+#: mprissupport.cpp:59 mprissupport.cpp:138
 #, kde-format
 msgid "MPRIS Plugin"
 msgstr "Модуль MPRIS"
+
+#: mprissupport.cpp:137
+#, kde-format
+msgid "MPRIS Support"
+msgstr "Поддержка MPRIS"
 
 #: rc.cpp:1
 #, kde-format

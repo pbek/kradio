@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2012-08-14 16:05+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -409,64 +409,85 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: recording.cpp:46 recording.cpp:53
+#: recording.cpp:48
+#, fuzzy, kde-format
+#| msgid "Recording"
+msgctxt "@title"
+msgid "Recording"
+msgstr "Nahrávanie"
+
+#: recording.cpp:50
+#, fuzzy, kde-format
+#| msgid "Recording"
+msgctxt "@title"
+msgid "Recording Plugin"
+msgstr "Nahrávanie"
+
+#: recording.cpp:52 recording-monitor.cpp:40
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte"
+msgstr ""
+
+#: recording.cpp:56 recording-monitor.cpp:44
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: recording.cpp:68
 #, kde-format
 msgid "KRadio Recording Plugin"
 msgstr ""
 
-#: recording.cpp:47 recording-monitor.cpp:39
-#, kde-format
-msgid "KRadio Recording Monitor"
-msgstr ""
-
-#: recording.cpp:135 recording.cpp:136
+#: recording.cpp:150 recording.cpp:151
 #, kde-format
 msgid "Recording"
 msgstr "Nahrávanie"
 
-#: recording.cpp:362
+#: recording.cpp:354
 #, kde-format
 msgid "start capture not handled"
 msgstr ""
 
-#: recording.cpp:374
+#: recording.cpp:366
 #, kde-format
 msgid "Recording starting"
 msgstr ""
 
-#: recording.cpp:376
+#: recording.cpp:368
 #, kde-format
 msgid "starting encoding thread failed"
 msgstr ""
 
-#: recording.cpp:459
+#: recording.cpp:451
 #, kde-format
 msgid "could not read sufficient data"
 msgstr ""
 
-#: recording.cpp:490
+#: recording.cpp:482
 #, kde-format
 msgid ""
 "Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
 "input bytes"
 msgstr ""
 
-#: recording.cpp:552
+#: recording.cpp:544
 #, kde-format
 msgid "Recording::outputFile: %1"
 msgstr ""
 
-#: recording.cpp:602
+#: recording.cpp:594
 #, kde-format
 msgid "The encoding thread did not finish. It will be killed now."
 msgstr ""
 
-#: recording.cpp:622
+#: recording.cpp:614
 #, kde-format
 msgid "Recording stopped"
 msgstr ""
 
-#: recording.cpp:655
+#: recording.cpp:647
 #, kde-format
 msgid ""
 "Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
@@ -477,77 +498,95 @@ msgstr ""
 msgid "%1 dB"
 msgstr "%1 dB"
 
-#: recording-monitor.cpp:35
+#: recording-monitor.cpp:36
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Recording Monitor"
+msgstr "Nahrávanie"
+
+#: recording-monitor.cpp:38
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Recording Monitor Plugin"
+msgstr "Nahrávanie"
+
+#: recording-monitor.cpp:50
 #, kde-format
 msgid "Recording Monitor"
 msgstr ""
 
-#: recording-monitor.cpp:45
+#: recording-monitor.cpp:54
+#, kde-format
+msgid "KRadio Recording Monitor"
+msgstr ""
+
+#: recording-monitor.cpp:60
 #, kde-format
 msgid "Sound Stream"
 msgstr ""
 
 #. i18n("Status"),         this), 1, 0);
 #. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
-#: recording-monitor.cpp:49
+#: recording-monitor.cpp:64
 #, kde-format
 msgid "Recording File"
 msgstr ""
 
-#: recording-monitor.cpp:50 recording-monitor.cpp:52 recording-monitor.cpp:54
-#: recording-monitor.cpp:56 recording-monitor.cpp:380 recording-monitor.cpp:381
-#: recording-monitor.cpp:386 recording-monitor.cpp:387
-#: recording-monitor.cpp:388 recording-monitor.cpp:389
+#: recording-monitor.cpp:65 recording-monitor.cpp:67 recording-monitor.cpp:69
+#: recording-monitor.cpp:71 recording-monitor.cpp:372 recording-monitor.cpp:373
+#: recording-monitor.cpp:378 recording-monitor.cpp:379
+#: recording-monitor.cpp:380 recording-monitor.cpp:381
 #, kde-format
 msgid "<undefined>"
 msgstr ""
 
-#: recording-monitor.cpp:51
+#: recording-monitor.cpp:66
 #, kde-format
 msgid "File Size"
 msgstr "Veľkosť súboru"
 
-#: recording-monitor.cpp:53
+#: recording-monitor.cpp:68
 #, kde-format
 msgid "Recording Time"
 msgstr ""
 
-#: recording-monitor.cpp:55
+#: recording-monitor.cpp:70
 #, kde-format
 msgid "Sample Rate"
 msgstr "Vzorkovacia frekvencia"
 
-#: recording-monitor.cpp:65
+#: recording-monitor.cpp:80
 #, kde-format
 msgid "&Close"
 msgstr "&Zavrieť"
 
-#: recording-monitor.cpp:66 recording-monitor.cpp:412 recording-monitor.cpp:415
+#: recording-monitor.cpp:81 recording-monitor.cpp:404 recording-monitor.cpp:407
 #, kde-format
 msgid "&Record"
 msgstr "Nahrať"
 
-#: recording-monitor.cpp:85 recording-monitor.cpp:128 recording-monitor.cpp:152
+#: recording-monitor.cpp:100 recording-monitor.cpp:143
+#: recording-monitor.cpp:167
 #, kde-format
 msgid "nothing"
 msgstr "nič"
 
-#: recording-monitor.cpp:342
+#: recording-monitor.cpp:334
 #, kde-format
 msgid "%1 Hz"
 msgstr "%1 Hz"
 
-#: recording-monitor.cpp:378
+#: recording-monitor.cpp:370
 #, kde-format
 msgid "0.000 kB"
 msgstr "0.000 kB"
 
-#: recording-monitor.cpp:379
+#: recording-monitor.cpp:371
 #, kde-format
 msgid "00:00:00.00"
 msgstr "00:00:00.00"
 
-#: recording-monitor.cpp:412
+#: recording-monitor.cpp:404
 #, kde-format
 msgid "&Stop Recording"
 msgstr "Ukončiť nahrávanie"

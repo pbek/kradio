@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -32,127 +32,152 @@ msgstr "Texto Inactivo"
 msgid "Background color:"
 msgstr "Color de Fondo de Pantalla"
 
-#: radioview.cpp:54
+#: radioview.cpp:57
 #, fuzzy, kde-format
+msgctxt "@title"
 msgid "Standard Display"
 msgstr "Despligue Estándar para KRadio"
 
-#: radioview.cpp:60
+#: radioview.cpp:59
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Standard Radio Display"
+msgstr "Despligue Estándar para KRadio"
+
+#: radioview.cpp:61
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radioview.cpp:66
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:76
 #, kde-format
 msgid "Radio Display"
 msgstr "Despliegue de Radio"
 
-#: radioview.cpp:145
+#: radioview.cpp:161
 #, kde-format
 msgid "Pause KRadio"
 msgstr "Pausar KRadio"
 
-#: radioview.cpp:150
+#: radioview.cpp:166
 #, kde-format
 msgid "Start Recording"
 msgstr "Comenzar Grabación"
 
-#: radioview.cpp:158
+#: radioview.cpp:174
 #, kde-format
 msgid "5 min"
 msgstr "5 min"
 
-#: radioview.cpp:162
+#: radioview.cpp:178
 #, kde-format
 msgid "10 min"
 msgstr "10 min"
 
-#: radioview.cpp:166
+#: radioview.cpp:182
 #, kde-format
 msgid "15 min"
 msgstr "15 min"
 
-#: radioview.cpp:170
+#: radioview.cpp:186
 #, kde-format
 msgid "30 min"
 msgstr "30 min"
 
-#: radioview.cpp:174
+#: radioview.cpp:190
 #, kde-format
 msgid "60 min"
 msgstr "60 min"
 
-#: radioview.cpp:178
+#: radioview.cpp:194
 #, kde-format
 msgid "90 min"
 msgstr "90 min"
 
-#: radioview.cpp:182
+#: radioview.cpp:198
 #, kde-format
 msgid "120 min"
 msgstr "120 min"
 
-#: radioview.cpp:227
+#: radioview.cpp:243
 #, kde-format
 msgid "Configure KRadio"
 msgstr "Configurar KRadio"
 
-#: radioview.cpp:228
+#: radioview.cpp:244
 #, fuzzy, kde-format
 msgid "Power on/off"
 msgstr "Encender/Apagar"
 
-#: radioview.cpp:229
+#: radioview.cpp:245
 #, fuzzy, kde-format
 msgid "Quit KRadio application"
 msgstr "Salir de la Aplicación KRadio"
 
-#: radioview.cpp:230
+#: radioview.cpp:246
 #, fuzzy, kde-format
 msgid "Start/stop recording"
 msgstr "Comenzar/Detener Grabación"
 
-#: radioview.cpp:231
+#: radioview.cpp:247
 #, fuzzy, kde-format
 msgid "Start/stop sleep countdown"
 msgstr "Comenzar/Detener Suspención"
 
-#: radioview.cpp:232
+#: radioview.cpp:248
 #, fuzzy, kde-format
 msgid "Show/hide plugins"
 msgstr "Mostrar/Ocultar Plugins"
 
-#: radioview.cpp:233
+#: radioview.cpp:249
 #, kde-format
 msgid "Help about KRadio and KDE"
 msgstr "Ayuda sobre KRadio y KDE"
 
-#: radioview.cpp:234
+#: radioview.cpp:250
 #, fuzzy, kde-format
 msgid "Select a radio station"
 msgstr "Seleccionar una Emisora de Radio"
 
-#: radioview.cpp:407
+#: radioview.cpp:423
 #, fuzzy, kde-format
 msgid "<no preset defined>"
 msgstr "sin predeterminados definido"
 
-#: radioview.cpp:563 radioview.cpp:633
+#: radioview.cpp:579 radioview.cpp:649
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Detener Grabación de %1"
 
-#: radioview.cpp:616
+#: radioview.cpp:632
 #, kde-format
 msgid "Resume playback"
 msgstr "Continuar reproducción"
 
-#: radioview.cpp:620
+#: radioview.cpp:636
 #, kde-format
 msgid "Pause playback"
 msgstr "Pausar reproducción"
 
-#: radioview.cpp:713
+#: radioview.cpp:729
 #, kde-format
 msgid "Display"
 msgstr "Despliegue"
 
-#: radioview.cpp:714
+#: radioview.cpp:730
 #, kde-format
 msgid "Display Configuration"
 msgstr "Configuración de Display"

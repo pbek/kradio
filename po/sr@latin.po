@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -222,99 +222,34 @@ msgstr "FileRingBuffer::addData: ne mogu pisati podatke u fajlu %1."
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: ne mogu čitati podatke u fajlu %1."
 
-#: src/kradioaboutwidget.cpp:65
-#, kde-format
-msgid ""
-"<qt>No information available.<br />The supplied KAboutData object does not "
-"exist.</qt>"
-msgstr "<qt>Informacije nedostupna.<br />Objekat KAboutData ne postoji.</qt>"
-
-#: src/kradioaboutwidget.cpp:92
-#, kde-format
-msgid ""
-"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
-"html>"
-msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>Verzija %2</b><br />Koristi KDE %3</"
-"html>"
-
-#: src/kradioaboutwidget.cpp:125
-#, kde-format
-msgid "License: %1"
-msgstr "Licenca %1"
-
-#: src/kradioaboutwidget.cpp:138
-#, kde-format
-msgid "&About"
-msgstr "&O programu"
-
-#: src/kradioaboutwidget.cpp:147
-#, kde-format
-msgid "A&uthor"
-msgstr "&Autor"
-
-#: src/kradioaboutwidget.cpp:147
-#, kde-format
-msgid "A&uthors"
-msgstr "&Autori"
-
-#: src/kradioaboutwidget.cpp:152
-#, kde-format
-msgid ""
-"Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
-"bugs.\n"
-msgstr ""
-"Molimo koristite <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> za "
-"prijavu grešaka.\n"
-
-#: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
-#, kde-format
-msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Molimo prijavite greške na <a href=\"mailto:%1\">%2</a>.\n"
-
-#: src/kradioaboutwidget.cpp:210
-#, kde-format
-msgid "&Thanks To"
-msgstr "&Hvala za"
-
-#: src/kradioaboutwidget.cpp:232
-#, kde-format
-msgid "T&ranslation"
-msgstr "&Prevod"
-
-#: src/kradioaboutwidget.cpp:255
-#, kde-format
-msgid "License Agreement"
-msgstr "Ugovor o licenci"
-
-#: src/kradioapp.cpp:123
+#: src/kradioapp.cpp:122
 #, fuzzy, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Biblioteka %1: Priključak ulazne tačke nedostaje\n"
 
-#: src/kradioapp.cpp:124 src/kradioapp.cpp:131
+#: src/kradioapp.cpp:123 src/kradioapp.cpp:130
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Priključak biblioteke učitava grešku"
 
-#: src/kradioapp.cpp:130
+#: src/kradioapp.cpp:129
 #, fuzzy, kde-format
 msgid ""
 "Library %1:\n"
 "%2"
 msgstr "Biblioteka %1: %2"
 
-#: src/kradioapp.cpp:207
+#: src/kradioapp.cpp:206
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr "Novi priključak pronadjen. Treba li biblioteka biti učitana sada?"
 
-#: src/kradioapp.cpp:209
+#: src/kradioapp.cpp:208
 #, fuzzy, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Nova biblioteka priključka pronadjena"
 
-#: src/kradioapp.cpp:225
+#: src/kradioapp.cpp:224
 #, fuzzy, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -331,22 +266,22 @@ msgstr[1] ""
 "Pronadjeno samo %1 biblioteke. Očekivani minimum je 5. Molimo proverite "
 "KRadio4 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.\n"
 
-#: src/kradioapp.cpp:233
+#: src/kradioapp.cpp:232
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "KRadio4 instalaciona greška"
 
-#: src/kradioapp.cpp:258
+#: src/kradioapp.cpp:257
 #, fuzzy, kde-format
 msgid "Instance %1"
 msgstr "Primer"
 
-#: src/kradioapp.cpp:279
+#: src/kradioapp.cpp:278
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "KRadio konfiguracija"
 
-#: src/kradioapp.cpp:280
+#: src/kradioapp.cpp:279
 #, kde-format
 msgid "About KRadio Components"
 msgstr "O KRadio komponentama"
@@ -884,6 +819,50 @@ msgstr "Dostupne stanice"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4 snimanje"
+
+#~ msgid ""
+#~ "<qt>No information available.<br />The supplied KAboutData object does "
+#~ "not exist.</qt>"
+#~ msgstr ""
+#~ "<qt>Informacije nedostupna.<br />Objekat KAboutData ne postoji.</qt>"
+
+#~ msgid ""
+#~ "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE "
+#~ "%3</html>"
+#~ msgstr ""
+#~ "<html><font size=\"5\">%1</font><br /><b>Verzija %2</b><br />Koristi KDE "
+#~ "%3</html>"
+
+#~ msgid "License: %1"
+#~ msgstr "Licenca %1"
+
+#~ msgid "&About"
+#~ msgstr "&O programu"
+
+#~ msgid "A&uthor"
+#~ msgstr "&Autor"
+
+#~ msgid "A&uthors"
+#~ msgstr "&Autori"
+
+#~ msgid ""
+#~ "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to "
+#~ "report bugs.\n"
+#~ msgstr ""
+#~ "Molimo koristite <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> "
+#~ "za prijavu grešaka.\n"
+
+#~ msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
+#~ msgstr "Molimo prijavite greške na <a href=\"mailto:%1\">%2</a>.\n"
+
+#~ msgid "&Thanks To"
+#~ msgstr "&Hvala za"
+
+#~ msgid "T&ranslation"
+#~ msgstr "&Prevod"
+
+#~ msgid "License Agreement"
+#~ msgstr "Ugovor o licenci"
 
 #, fuzzy
 #~ msgid ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dbus (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -12,12 +12,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 
-#: dbussupport.cpp:35 dbussupport.cpp:102
+#: dbussupport.cpp:37
+#, kde-format
+msgctxt "@title"
+msgid "D-Bus"
+msgstr ""
+
+#: dbussupport.cpp:39
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "D-Bus Support"
+msgstr "DBus podrška"
+
+#: dbussupport.cpp:55 dbussupport.cpp:117
+#, fuzzy, kde-format
+msgid "D-Bus Plugin"
+msgstr "DBus priključak"
+
+#: dbussupport.cpp:116
 #, fuzzy, kde-format
 msgid "D-Bus Support"
 msgstr "DBus podrška"
 
-#: dbussupport.cpp:41 dbussupport.cpp:103
-#, fuzzy, kde-format
-msgid "D-Bus Plugin"
-msgstr "DBus priključak"
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

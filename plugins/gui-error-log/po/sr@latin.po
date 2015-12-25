@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gui-error-log (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2013-02-10 14:39+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -14,67 +14,80 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: errorlog.cpp:36
+#: errorlog.cpp:42
 #, fuzzy, kde-format
+msgctxt "@title"
 msgid "Error Logging Window"
 msgstr "Prozor logova sa greškama za KRadio"
 
-#: errorlog.cpp:42
+#: errorlog.cpp:57
 #, kde-format
 msgid "Error Logger"
 msgstr "Logove grešaka"
 
-#: errorlog.cpp:50 errorlog.cpp:59
+#: errorlog.cpp:65 errorlog.cpp:74
 #, kde-format
 msgid "KRadio Logger"
 msgstr "Kradio logovi"
 
-#: errorlog.cpp:56
+#: errorlog.cpp:71
 #, kde-format
 msgid "Save &as"
 msgstr "Sačuvaj & као"
 
-#: errorlog.cpp:61
+#: errorlog.cpp:76
 #, kde-format
 msgid "Information"
 msgstr "Informacije"
 
-#: errorlog.cpp:62 errorlog.cpp:65 errorlog.cpp:68 errorlog.cpp:71
+#: errorlog.cpp:77 errorlog.cpp:80 errorlog.cpp:83 errorlog.cpp:86
 #, kde-format
 msgid "KRadio4 Version %1 logging started"
 msgstr "KRadio4 verzija %1 beleženje počelo"
 
-#: errorlog.cpp:64
+#: errorlog.cpp:79
 #, kde-format
 msgid "Warnings"
 msgstr "Upozorenja"
 
-#: errorlog.cpp:67
+#: errorlog.cpp:82
 #, kde-format
 msgid "Errors"
 msgstr "Greške"
 
-#: errorlog.cpp:70
+#: errorlog.cpp:85
 #, kde-format
 msgid "Debugging"
 msgstr "Otklanjanje grešaka"
 
-#: errorlog.cpp:188
+#: errorlog.cpp:203
 #, kde-format
 msgid "Log Files"
 msgstr "Log fajlovi"
 
-#: errorlog.cpp:193
+#: errorlog.cpp:208
 #, fuzzy, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Sačuvaj KRadio podatke logovanja kao ..."
 
-#: errorlog.cpp:218
+#: errorlog.cpp:233
 #, fuzzy, kde-format
 msgid "error writing to temporary file %1"
 msgstr "greška kod pisanja privremenog fajla %1"
 
-#: errorlog.cpp:227
+#: errorlog.cpp:242
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "greška kod otpremanja fajla sa stanicama %1"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

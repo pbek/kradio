@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.oss-sound.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2009-11-09 12:03-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -21,115 +21,135 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Language: pt_BR\n"
 
-#: oss-sound.cpp:38
+#: oss-sound.cpp:41
 #, kde-format
+msgctxt "@title Open Sound System"
+msgid "OSS"
+msgstr ""
+
+#: oss-sound.cpp:43
+#, fuzzy, kde-format
+#| msgid "Open Sound System (OSS) Support"
+msgctxt "@title"
 msgid "Open Sound System (OSS) Support"
 msgstr "Suporte a Sistema de Som Aberto (OSS)"
 
-#: oss-sound.cpp:46
+#: oss-sound.cpp:45
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2004 Martin Witte"
+msgstr ""
+
+#: oss-sound.cpp:49
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: oss-sound.cpp:61
 #, kde-format
 msgid "KRadio OSS Sound Plugin"
 msgstr "Plug-in de som OSS para KRadio"
 
-#: oss-sound.cpp:180
+#: oss-sound.cpp:195
 #, kde-format
 msgid "OSS Sound"
 msgstr "Som OSS"
 
-#: oss-sound.cpp:181
+#: oss-sound.cpp:196
 #, kde-format
 msgid "OSS Sound Device Options"
 msgstr "Opções do dispositivo de som OSS"
 
-#: oss-sound.cpp:521
+#: oss-sound.cpp:511
 #, kde-format
 msgid "OSS device %1: No data to record"
 msgstr "Dispositivo OSS %1: Não há dados para gravação"
 
-#: oss-sound.cpp:531
+#: oss-sound.cpp:521
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Stream interno, não armazenado (%1)"
 
-#: oss-sound.cpp:563
+#: oss-sound.cpp:553
 #, kde-format
 msgid "Error %1 while handling OSS device %2"
 msgstr "Erro %1 durante o manuseio do dipositivo OSS %2"
 
-#: oss-sound.cpp:607 oss-sound.cpp:633
+#: oss-sound.cpp:597 oss-sound.cpp:623
 #, kde-format
 msgid "Cannot open DSP device %1"
 msgstr "Não foi possível abrir dispositivo de áudio %1"
 
-#: oss-sound.cpp:613
+#: oss-sound.cpp:603
 #, kde-format
 msgid "Cannot read DSP capabilities for %1"
 msgstr "Não foi possível ler as capacidades do áudio de %1"
 
-#: oss-sound.cpp:640
+#: oss-sound.cpp:630
 #, kde-format
 msgid "Cannot set DSP sample format for %1"
 msgstr "Não foi possível definir o formato de amostragem de áudio de %1"
 
-#: oss-sound.cpp:645
+#: oss-sound.cpp:635
 #, kde-format
 msgid "Cannot set number of channels for %1"
 msgstr "Não foi possível definir o número de canais de %1"
 
-#: oss-sound.cpp:650
+#: oss-sound.cpp:640
 #, kde-format
 msgid "Cannot set sampling rate for %1"
 msgstr "Não foi possível definir a taxa de amostragem de %1"
 
-#: oss-sound.cpp:652
+#: oss-sound.cpp:642
 #, kde-format
 msgid "Asking for %1 Hz but %2 uses %3 Hz"
 msgstr ""
 "%1 Hz deve ser utilizado como taxa de amostragem, mas o dispositivo %2 está "
 "utilizando apenas %3 Hz"
 
-#: oss-sound.cpp:662
+#: oss-sound.cpp:652
 #, kde-format
 msgid "Cannot set stereo mode for %1"
 msgstr "Não foi possível definir o modo estéreo para %1"
 
-#: oss-sound.cpp:667
+#: oss-sound.cpp:657
 #, kde-format
 msgid "Cannot set sample size for %1"
 msgstr "Não foi possível definir o tamanhdo da amostragem para %1"
 
-#: oss-sound.cpp:676
+#: oss-sound.cpp:666
 #, kde-format
 msgid "Cannot set buffers for %1"
 msgstr "Não foi possível definir o buffer para %1"
 
-#: oss-sound.cpp:681
+#: oss-sound.cpp:671
 #, kde-format
 msgid "Cannot read buffer size for %1"
 msgstr "Não foi possível ler o tamanho do buffer para %1"
 
-#: oss-sound.cpp:683
+#: oss-sound.cpp:673
 #, kde-format
 msgid "%1 uses buffer blocks of %2 bytes"
 msgstr "%1 utiliza blocos de buffer de %2 bytes"
 
-#: oss-sound.cpp:686
+#: oss-sound.cpp:676
 #, kde-format
 msgid "adjusted own buffer size to %1 bytes"
 msgstr "O tamanho do buffer interno foi ajustado para %1 bytes"
 
-#: oss-sound.cpp:738
+#: oss-sound.cpp:728
 #, kde-format
 msgid "Cannot open mixer device %1"
 msgstr "Não foi possível abrir dispositivo mixer %1"
 
-#: oss-sound.cpp:771
+#: oss-sound.cpp:761
 #, kde-format
 msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
 msgstr ""
 "OSSSoundDevice::getMixerChannels: Não foi possível abrir dispositivo mixer %1"
 
-#: oss-sound.cpp:785
+#: oss-sound.cpp:775
 #, kde-format
 msgid ""
 "OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
@@ -137,36 +157,36 @@ msgstr ""
 "OSSSoundDevice::getMixerChannels: Não foi possível ler a máscara do "
 "dispositivo mixer de %1"
 
-#: oss-sound.cpp:890
+#: oss-sound.cpp:880
 #, kde-format
 msgid "error %1 while reading volume from %2"
 msgstr "Erro %1 ao ler volume de %2"
 
-#: oss-sound.cpp:913
+#: oss-sound.cpp:903
 #, kde-format
 msgid "error %1 while setting volume to %2 on device %3"
 msgstr "Erro %1 ao definir volume para %2 no dispositivo %3"
 
-#: oss-sound.cpp:929
+#: oss-sound.cpp:919
 #, kde-format
 msgid "Selecting recording source on device %1 failed with error code %2"
 msgstr ""
 "Falha ao selecionar a fonte de gravação no dispositivo %1 com o código de "
 "erro %2"
 
-#: oss-sound.cpp:935
+#: oss-sound.cpp:925
 #, kde-format
 msgid "Reading igain volume on device %1 failed with error code %2"
 msgstr ""
 "Falha ao ler o volume novamente no dispositivo %1 com o código de erro %2"
 
-#: oss-sound.cpp:942
+#: oss-sound.cpp:932
 #, kde-format
 msgid "Setting igain volume on device %1 failed with error code %2"
 msgstr ""
 "Falha ao definir o volume novamente no dispositivo %1 com o código de erro %2"
 
-#: oss-sound.cpp:1000
+#: oss-sound.cpp:990
 #, kde-format
 msgid "OSS Sound Device %1"
 msgstr "Dispositivo de som OSS %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2009-06-27 13:53+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -91,32 +91,52 @@ msgid_plural "have now %1 stations"
 msgstr[0] "hef núna %1 stöðvar"
 msgstr[1] "hef núna %1 stöðvar"
 
-#: radio.cpp:35
-#, kde-format
+#: radio.cpp:39
+#, fuzzy, kde-format
+#| msgid "Central Radio Device Multiplexer"
+msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
 msgstr "Miðlægur afþáttari (multiplexer) fyrir útvarpstæki"
 
-#: radio.cpp:40
+#: radio.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radio.cpp:45
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radio.cpp:46
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radio.cpp:55
 #, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Afþáttaraíforrit (multiplexer plugin) fyrir útvarp"
 
-#: radio.cpp:133
+#: radio.cpp:148
 #, kde-format
 msgid "Radio Stations"
 msgstr "Útvarpsstöðvar"
 
-#: radio.cpp:134
+#: radio.cpp:149
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Setja upp útvarpsstöðvar"
 
-#: radio.cpp:204
+#: radio.cpp:190
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
 msgstr "Fann ekkert íforrit fyrir útvarpsstöðina %1"
 
-#: radio.cpp:399
+#: radio.cpp:385
 #, fuzzy, kde-format
 msgctxt "Unknown description"
 msgid "unknown"

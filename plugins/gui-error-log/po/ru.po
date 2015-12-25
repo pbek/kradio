@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2014-09-18 20:46+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,72 +19,86 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: errorlog.cpp:36
-#, kde-format
+#: errorlog.cpp:42
+#, fuzzy, kde-format
+#| msgid "Error Logging Window"
+msgctxt "@title"
 msgid "Error Logging Window"
 msgstr "Окно ведения журнала ошибок KRadio"
 
-#: errorlog.cpp:42
+#: errorlog.cpp:57
 #, kde-format
 msgid "Error Logger"
 msgstr "Журнал ошибок"
 
-#: errorlog.cpp:50 errorlog.cpp:59
+#: errorlog.cpp:65 errorlog.cpp:74
 #, kde-format
 msgid "KRadio Logger"
 msgstr "Журнал KRadio"
 
-#: errorlog.cpp:56
+#: errorlog.cpp:71
 #, kde-format
 msgid "Save &as"
 msgstr "Сохранить &как"
 
-#: errorlog.cpp:61
+#: errorlog.cpp:76
 #, kde-format
 msgid "Information"
 msgstr "Информация"
 
-#: errorlog.cpp:62 errorlog.cpp:65 errorlog.cpp:68 errorlog.cpp:71
+#: errorlog.cpp:77 errorlog.cpp:80 errorlog.cpp:83 errorlog.cpp:86
 #, kde-format
 msgid "KRadio4 Version %1 logging started"
 msgstr "Журналирование включено: KRadio %1"
 
-#: errorlog.cpp:64
+#: errorlog.cpp:79
 #, kde-format
 msgid "Warnings"
 msgstr "Предупреждения"
 
-#: errorlog.cpp:67
+#: errorlog.cpp:82
 #, kde-format
 msgid "Errors"
 msgstr "Ошибки"
 
-#: errorlog.cpp:70
+#: errorlog.cpp:85
 #, kde-format
 msgid "Debugging"
 msgstr ""
 "Отладочные\n"
 "сообщения"
 
-#: errorlog.cpp:188
+#: errorlog.cpp:203
 #, kde-format
 msgid "Log Files"
 msgstr "Файлы журнала"
 
-#: errorlog.cpp:193
+#: errorlog.cpp:208
 #, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Сохранить данные журнала KRadio как..."
 
-#: errorlog.cpp:218
+#: errorlog.cpp:233
 #, kde-format
 msgid "error writing to temporary file %1"
 msgstr "Ошибка записи во временный файл %1"
 
-#: errorlog.cpp:227
+#: errorlog.cpp:242
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "Ошибка выгрузки файла настроек %1"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #~ msgid "Select Log File"
 #~ msgstr "Выберите файлы журнала"

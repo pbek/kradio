@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_lirc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2009-06-27 13:45+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -149,39 +149,59 @@ msgstr ""
 msgid "Double click on the entries to change the assignments"
 msgstr ""
 
-#: lircsupport.cpp:50
+#: lircsupport.cpp:52
 #, kde-format
+msgctxt "@title"
+msgid "LIRC"
+msgstr ""
+
+#: lircsupport.cpp:54
+#, fuzzy, kde-format
+#| msgid "Linux Infrared Control (LIRC) Support"
+msgctxt "@title"
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Stuðningur við Linux Infrared Control (LIRC)"
 
-#: lircsupport.cpp:56 lircsupport.cpp:483
+#: lircsupport.cpp:56
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte"
+msgstr ""
+
+#: lircsupport.cpp:60
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: lircsupport.cpp:71 lircsupport.cpp:498
 #, kde-format
 msgid "LIRC Plugin"
 msgstr "LIRC íforrit"
 
-#: lircsupport.cpp:84
+#: lircsupport.cpp:99
 #, kde-format
 msgid "initializing KRadio LIRC plugin"
 msgstr ""
 
-#: lircsupport.cpp:85
+#: lircsupport.cpp:100
 #, kde-format
 msgid ""
 "warnings/errors about missing sockets do not harm - usually the LIRC daemon "
 "is not running in these cases."
 msgstr ""
 
-#: lircsupport.cpp:94
+#: lircsupport.cpp:109
 #, kde-format
 msgid "Initializing KRadio LIRC plugin failed"
 msgstr ""
 
-#: lircsupport.cpp:103
+#: lircsupport.cpp:118
 #, kde-format
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr ""
 
-#: lircsupport.cpp:129
+#: lircsupport.cpp:144
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -190,7 +210,7 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:136
+#: lircsupport.cpp:151
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -199,40 +219,40 @@ msgid ""
 "\"remote=*\" as wildcard for all buttons/remotes"
 msgstr ""
 
-#: lircsupport.cpp:147
+#: lircsupport.cpp:162
 #, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr ""
 
-#: lircsupport.cpp:148
+#: lircsupport.cpp:163
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr ""
 
-#: lircsupport.cpp:152 lircsupport.cpp:153
+#: lircsupport.cpp:167 lircsupport.cpp:168
 #, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 
-#: lircsupport.cpp:189
+#: lircsupport.cpp:204
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr ""
 
-#: lircsupport.cpp:192
+#: lircsupport.cpp:207
 #, kde-format
 msgid "Failed to copy %1 to %2"
 msgstr ""
 
-#: lircsupport.cpp:244
+#: lircsupport.cpp:259
 #, kde-format
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
 "next start of KRadio"
 msgstr ""
 
-#: lircsupport.cpp:482
+#: lircsupport.cpp:497
 #, kde-format
 msgid "LIRC Support"
 msgstr "LIRC stuðningur"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_standard_display\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2014-09-22 22:04+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -32,127 +32,154 @@ msgstr "Nečinný text:"
 msgid "Background color:"
 msgstr "Barva pozadí:"
 
-#: radioview.cpp:54
-#, kde-format
+#: radioview.cpp:57
+#, fuzzy, kde-format
+#| msgid "Standard Display"
+msgctxt "@title"
 msgid "Standard Display"
 msgstr "Obvyklé zobrazení"
 
-#: radioview.cpp:60
+#: radioview.cpp:59
+#, fuzzy, kde-format
+#| msgid "Standard Display"
+msgctxt "@title"
+msgid "Standard Radio Display"
+msgstr "Obvyklé zobrazení"
+
+#: radioview.cpp:61
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radioview.cpp:66
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:76
 #, kde-format
 msgid "Radio Display"
 msgstr "Rozhlasové zobrazení"
 
-#: radioview.cpp:145
+#: radioview.cpp:161
 #, kde-format
 msgid "Pause KRadio"
 msgstr "Pozastavit KRadio"
 
-#: radioview.cpp:150
+#: radioview.cpp:166
 #, kde-format
 msgid "Start Recording"
 msgstr "Začít s nahráváním"
 
-#: radioview.cpp:158
+#: radioview.cpp:174
 #, kde-format
 msgid "5 min"
 msgstr "5 min"
 
-#: radioview.cpp:162
+#: radioview.cpp:178
 #, kde-format
 msgid "10 min"
 msgstr "10 min"
 
-#: radioview.cpp:166
+#: radioview.cpp:182
 #, kde-format
 msgid "15 min"
 msgstr "15 min"
 
-#: radioview.cpp:170
+#: radioview.cpp:186
 #, kde-format
 msgid "30 min"
 msgstr "30 min"
 
-#: radioview.cpp:174
+#: radioview.cpp:190
 #, kde-format
 msgid "60 min"
 msgstr "60 min"
 
-#: radioview.cpp:178
+#: radioview.cpp:194
 #, kde-format
 msgid "90 min"
 msgstr "90 min"
 
-#: radioview.cpp:182
+#: radioview.cpp:198
 #, kde-format
 msgid "120 min"
 msgstr "120 min"
 
-#: radioview.cpp:227
+#: radioview.cpp:243
 #, kde-format
 msgid "Configure KRadio"
 msgstr "Nastavit"
 
-#: radioview.cpp:228
+#: radioview.cpp:244
 #, kde-format
 msgid "Power on/off"
 msgstr "Zapnout/Vypnout energii"
 
-#: radioview.cpp:229
+#: radioview.cpp:245
 #, kde-format
 msgid "Quit KRadio application"
 msgstr "Ukončit"
 
-#: radioview.cpp:230
+#: radioview.cpp:246
 #, kde-format
 msgid "Start/stop recording"
 msgstr "Začít/Zastavit nahrávání"
 
-#: radioview.cpp:231
+#: radioview.cpp:247
 #, kde-format
 msgid "Start/stop sleep countdown"
 msgstr "Začít/Zastavit režim spánku"
 
-#: radioview.cpp:232
+#: radioview.cpp:248
 #, kde-format
 msgid "Show/hide plugins"
 msgstr "Ukázat/Skrýt přídavné moduly"
 
-#: radioview.cpp:233
+#: radioview.cpp:249
 #, kde-format
 msgid "Help about KRadio and KDE"
 msgstr "Nápověda k programu KRadio a k prostředí KDE"
 
-#: radioview.cpp:234
+#: radioview.cpp:250
 #, kde-format
 msgid "Select a radio station"
 msgstr "Vybrat rozhlasovou vysílací stanici"
 
-#: radioview.cpp:407
+#: radioview.cpp:423
 #, kde-format
 msgid "<no preset defined>"
 msgstr "<Nestanoveno žádné přednastavení stanice>"
 
-#: radioview.cpp:563 radioview.cpp:633
+#: radioview.cpp:579 radioview.cpp:649
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Zastavit nahrávání %1"
 
-#: radioview.cpp:616
+#: radioview.cpp:632
 #, kde-format
 msgid "Resume playback"
 msgstr "Pokračovat v přehrávání"
 
-#: radioview.cpp:620
+#: radioview.cpp:636
 #, kde-format
 msgid "Pause playback"
 msgstr "Pozastavit přehrávání"
 
-#: radioview.cpp:713
+#: radioview.cpp:729
 #, kde-format
 msgid "Display"
 msgstr "Zobrazení"
 
-#: radioview.cpp:714
+#: radioview.cpp:730
 #, kde-format
 msgid "Display Configuration"
 msgstr "Nastavení zobrazení"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_internetradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2010-01-08 09:08+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -133,37 +133,45 @@ msgstr ""
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
 
-#: internetradio.cpp:41
+#: internetradio.cpp:45
 #, fuzzy, kde-format
+#| msgid "Internet Radio"
+msgctxt "@title"
+msgid "Internet Radio"
+msgstr "Internet-útvarp"
+
+#: internetradio.cpp:47
+#, fuzzy, kde-format
+msgctxt "@title"
 msgid "Pseudo radio device for Internet radio stream support"
 msgstr "Gervi-útvarpstæki til stuðnings við internet-útvarpsstrauma"
 
-#: internetradio.cpp:48
+#: internetradio.cpp:63
 #, kde-format
 msgid "Internet Radio Plugin"
 msgstr "Internetútvarps-íforrit"
 
-#: internetradio.cpp:369
+#: internetradio.cpp:384
 #, kde-format
 msgid "Internet radio station decoder / pseudo device"
 msgstr "Afkóðari/gervitæki fyrir internetútvarpsstöðvar"
 
-#: internetradio.cpp:639
+#: internetradio.cpp:654
 #, kde-format
 msgid "Internet Radio"
 msgstr "Internet-útvarp"
 
-#: internetradio.cpp:640
+#: internetradio.cpp:655
 #, kde-format
 msgid "Internet Radio Options"
 msgstr "Valkostir internet-útvarps"
 
-#: internetradio.cpp:980
+#: internetradio.cpp:995
 #, fuzzy, kde-format
 msgid "Internet Radio Plugin: "
 msgstr "Internetútvarps-íforrit"
 
-#: internetradio.cpp:1130
+#: internetradio.cpp:1145
 #, kde-format
 msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
 msgstr ""
@@ -210,14 +218,14 @@ msgstr "villa við lestur á asx skrá"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:51
+#: rc.cpp:3 rc.cpp:53
 #, kde-format
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: internetradio-configuration-ui.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:6 rc.cpp:54
+#: rc.cpp:6 rc.cpp:56
 #, kde-format
 msgid "Input buffer size:"
 msgstr ""
@@ -234,28 +242,28 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
 #. i18n: file: internetradio-configuration-ui.ui:258
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
-#: rc.cpp:9 rc.cpp:15 rc.cpp:45 rc.cpp:57 rc.cpp:63 rc.cpp:93
+#: rc.cpp:9 rc.cpp:15 rc.cpp:45 rc.cpp:59 rc.cpp:65 rc.cpp:95
 #, kde-format
 msgid " kB"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:66
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:12 rc.cpp:60
+#: rc.cpp:12 rc.cpp:62
 #, kde-format
 msgid "PCM output buffer size:"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:101
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:18 rc.cpp:66
+#: rc.cpp:18 rc.cpp:68
 #, kde-format
 msgid "libffmpeg: stream info analysis time:"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:111
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#: rc.cpp:21 rc.cpp:69
+#: rc.cpp:21 rc.cpp:71
 #, kde-format
 msgid "disabled"
 msgstr ""
@@ -268,51 +276,63 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
 #. i18n: file: internetradio-configuration-ui.ui:289
 #. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
-#: rc.cpp:24 rc.cpp:48 rc.cpp:72 rc.cpp:96
+#: rc.cpp:24 rc.cpp:48 rc.cpp:74 rc.cpp:98
 #, kde-format
 msgid " s"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:27 rc.cpp:75
+#: rc.cpp:27 rc.cpp:77
 #, kde-format
 msgid "Watchdog: reconnect after:"
 msgstr ""
 
 #. i18n: file: internetradio-configuration-ui.ui:152
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:30 rc.cpp:78
+#: rc.cpp:30 rc.cpp:80
 #, fuzzy, kde-format
 msgid "Playback mixer device:"
 msgstr "Hljóðblöndunartæki fyrir afspilun"
 
 #. i18n: file: internetradio-configuration-ui.ui:169
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:33 rc.cpp:81
+#: rc.cpp:33 rc.cpp:83
 #, kde-format
 msgid "test"
 msgstr "prófa"
 
 #. i18n: file: internetradio-configuration-ui.ui:183
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:36 rc.cpp:84
+#: rc.cpp:36 rc.cpp:86
 #, fuzzy, kde-format
 msgid "Playback mixer channel:"
 msgstr "Hljóðblöndunarrás fyrir afspilun"
 
 #. i18n: file: internetradio-configuration-ui.ui:225
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:39 rc.cpp:87
+#: rc.cpp:39 rc.cpp:89
 #, fuzzy, kde-format
 msgid "Mute playback channel on power off:"
 msgstr "Þagga niður ljóðblöndunarrás þegar slökkt er"
 
 #. i18n: file: internetradio-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:42 rc.cpp:90
+#: rc.cpp:42 rc.cpp:92
 #, kde-format
 msgid "libffmpeg: format probe size:"
+msgstr ""
+
+#: rc.cpp:49
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:50
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
 
 #: stream_input_buffer.cpp:72

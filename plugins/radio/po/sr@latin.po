@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: radio (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -86,32 +86,52 @@ msgid_plural "have now %1 stations"
 msgstr[0] "Ima novih %1 stanica"
 msgstr[1] "Ima novih %1 stanica"
 
-#: radio.cpp:35
-#, kde-format
+#: radio.cpp:39
+#, fuzzy, kde-format
+#| msgid "Central Radio Device Multiplexer"
+msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
 msgstr "Centralni multipleksni radio uredjaj"
 
-#: radio.cpp:40
+#: radio.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radio.cpp:45
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radio.cpp:46
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radio.cpp:55
 #, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Radio multipleksni priključak"
 
-#: radio.cpp:133
+#: radio.cpp:148
 #, kde-format
 msgid "Radio Stations"
 msgstr "Radio stanice"
 
-#: radio.cpp:134
+#: radio.cpp:149
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Podešavanje radio stanica"
 
-#: radio.cpp:204
+#: radio.cpp:190
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
 msgstr "Ne mogu pronaći priključak za radio stanicu %1"
 
-#: radio.cpp:399
+#: radio.cpp:385
 #, fuzzy, kde-format
 msgctxt "Unknown description"
 msgid "unknown"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2014-09-18 17:40+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -232,84 +232,17 @@ msgstr "FileRingBuffer::addData: Das Schreiben in die Datei %1 schlug fehl."
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: Das Lesen aus der Datei %1 schlug fehl."
 
-#: src/kradioaboutwidget.cpp:65
-#, kde-format
-msgid ""
-"<qt>No information available.<br />The supplied KAboutData object does not "
-"exist.</qt>"
-msgstr ""
-"<qt>Keine Informationen verfügbar.<br />Das übergebene KAboutData-Objekt "
-"existiert nicht.</qt>"
-
-#: src/kradioaboutwidget.cpp:92
-#, kde-format
-msgid ""
-"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %3</"
-"html>"
-msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Verwendet KDE "
-"%3</html>"
-
-#: src/kradioaboutwidget.cpp:125
-#, kde-format
-msgid "License: %1"
-msgstr "Lizenz: %1"
-
-#: src/kradioaboutwidget.cpp:138
-#, kde-format
-msgid "&About"
-msgstr "Ü&ber"
-
-#: src/kradioaboutwidget.cpp:147
-#, kde-format
-msgid "A&uthor"
-msgstr "A&utor"
-
-#: src/kradioaboutwidget.cpp:147
-#, kde-format
-msgid "A&uthors"
-msgstr "A&utoren"
-
-#: src/kradioaboutwidget.cpp:152
-#, kde-format
-msgid ""
-"Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to report "
-"bugs.\n"
-msgstr ""
-"Bitte <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> verwenden, um "
-"Fehler zu berichten.\n"
-
-#: src/kradioaboutwidget.cpp:155 src/kradioaboutwidget.cpp:160
-#, kde-format
-msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
-msgstr "Bitte Fehler an <a href=\"mailto:%1\">%2</a> berichten.\n"
-
-#: src/kradioaboutwidget.cpp:210
-#, kde-format
-msgid "&Thanks To"
-msgstr "&Dank an"
-
-#: src/kradioaboutwidget.cpp:232
-#, kde-format
-msgid "T&ranslation"
-msgstr "Ü&bersetzungen"
-
-#: src/kradioaboutwidget.cpp:255
-#, kde-format
-msgid "License Agreement"
-msgstr "&Lizenzen"
-
-#: src/kradioapp.cpp:123
+#: src/kradioapp.cpp:122
 #, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Bibliothek %1: Eintrittspunkt wurde nicht gefunden"
 
-#: src/kradioapp.cpp:124 src/kradioapp.cpp:131
+#: src/kradioapp.cpp:123 src/kradioapp.cpp:130
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Das Laden der Bibliothek schlug fehl"
 
-#: src/kradioapp.cpp:130
+#: src/kradioapp.cpp:129
 #, kde-format
 msgid ""
 "Library %1:\n"
@@ -318,19 +251,19 @@ msgstr ""
 "Bibliothek %1:\n"
 "%2"
 
-#: src/kradioapp.cpp:207
+#: src/kradioapp.cpp:206
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr ""
 "Neue Plugin-Bibliotheken wurden gefunden. Sollen diese Bibliotheken jetzt "
 "geladen werden?"
 
-#: src/kradioapp.cpp:209
+#: src/kradioapp.cpp:208
 #, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Neue Plugin-Bibliotheken wurden gefunden"
 
-#: src/kradioapp.cpp:225
+#: src/kradioapp.cpp:224
 #, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -353,22 +286,22 @@ msgstr[1] ""
 "bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und "
 "KDEHOME.\n"
 
-#: src/kradioapp.cpp:233
+#: src/kradioapp.cpp:232
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "Fehler in der KRadio4-Installation"
 
-#: src/kradioapp.cpp:258
+#: src/kradioapp.cpp:257
 #, kde-format
 msgid "Instance %1"
 msgstr "Instanz %1"
 
-#: src/kradioapp.cpp:279
+#: src/kradioapp.cpp:278
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "KRadio-Konfiguration"
 
-#: src/kradioapp.cpp:280
+#: src/kradioapp.cpp:279
 #, kde-format
 msgid "About KRadio Components"
 msgstr "Über die KRadio-Komponenten"
@@ -920,6 +853,51 @@ msgstr "Verfügbare Sender:"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4-Aufnahme"
+
+#~ msgid ""
+#~ "<qt>No information available.<br />The supplied KAboutData object does "
+#~ "not exist.</qt>"
+#~ msgstr ""
+#~ "<qt>Keine Informationen verfügbar.<br />Das übergebene KAboutData-Objekt "
+#~ "existiert nicht.</qt>"
+
+#~ msgid ""
+#~ "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE "
+#~ "%3</html>"
+#~ msgstr ""
+#~ "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Verwendet "
+#~ "KDE %3</html>"
+
+#~ msgid "License: %1"
+#~ msgstr "Lizenz: %1"
+
+#~ msgid "&About"
+#~ msgstr "Ü&ber"
+
+#~ msgid "A&uthor"
+#~ msgstr "A&utor"
+
+#~ msgid "A&uthors"
+#~ msgstr "A&utoren"
+
+#~ msgid ""
+#~ "Please use <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> to "
+#~ "report bugs.\n"
+#~ msgstr ""
+#~ "Bitte <a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> verwenden, "
+#~ "um Fehler zu berichten.\n"
+
+#~ msgid "Please report bugs to <a href=\"mailto:%1\">%2</a>.\n"
+#~ msgstr "Bitte Fehler an <a href=\"mailto:%1\">%2</a> berichten.\n"
+
+#~ msgid "&Thanks To"
+#~ msgstr "&Dank an"
+
+#~ msgid "T&ranslation"
+#~ msgstr "Ü&bersetzungen"
+
+#~ msgid "License Agreement"
+#~ msgstr "&Lizenzen"
 
 #~ msgid ""
 #~ "Library %1:\n"

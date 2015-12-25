@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2014-03-03 00:42+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -73,7 +73,7 @@ msgstr "Accendi/spegni"
 msgid "Pause/Play"
 msgstr "Pausa/riproduci"
 
-#: docking-configuration.cpp:130 docking.cpp:304
+#: docking-configuration.cpp:130 docking.cpp:295
 #, kde-format
 msgid "Recording"
 msgstr "Registra"
@@ -108,107 +108,133 @@ msgstr "Cambio volume"
 msgid "Change Frequency"
 msgstr "Cambio frequenza"
 
-#: docking.cpp:45
+#: docking.cpp:48
 #, kde-format
+msgctxt "@title"
+msgid "Docking Menu"
+msgstr ""
+
+#: docking.cpp:50
+#, fuzzy, kde-format
+#| msgid "System Tray Icon/Menu"
+msgctxt "@title"
 msgid "System Tray Icon/Menu"
 msgstr "Icona/Menu del vassoio di sistema:"
 
-#: docking.cpp:53
+#: docking.cpp:52
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: docking.cpp:56
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: docking.cpp:57
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: docking.cpp:69
 #, kde-format
 msgid "System Tray Plugin"
 msgstr "Estensione del vassoio di sistema"
 
-#: docking.cpp:239
+#: docking.cpp:255
 #, kde-format
 msgid "System Tray Icon"
 msgstr "Icona del vassoio di sistema"
 
-#: docking.cpp:240
+#: docking.cpp:256
 #, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Configurazione dell'icona del vassoio di sistema"
 
-#: docking.cpp:294
+#: docking.cpp:285
 #, kde-format
 msgid "Search Next Station"
 msgstr "Ricerca della stazione successiva"
 
-#: docking.cpp:295
+#: docking.cpp:286
 #, kde-format
 msgid "Search Previous Station"
 msgstr "Ricerca della stazione precedente"
 
-#: docking.cpp:309
+#: docking.cpp:300
 #, kde-format
 msgid "Pause Radio"
 msgstr "Metti la radio in pausa"
 
-#: docking.cpp:320
+#: docking.cpp:311
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Mostra/nascondi le estensioni"
 
-#: docking.cpp:328
+#: docking.cpp:319
 #, kde-format
 msgid "&Quit"
 msgstr "&Esci"
 
-#: docking.cpp:442
+#: docking.cpp:433
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Ferma il conto alla rovescia della sospensione(in funzione fino a %1)"
 
-#: docking.cpp:445 docking.cpp:454 docking.cpp:462
+#: docking.cpp:436 docking.cpp:445 docking.cpp:453
 #, kde-format
 msgid "Start Sleep Countdown"
 msgstr "Avvia il conto alla rovescia della sospensione"
 
-#: docking.cpp:470
+#: docking.cpp:461
 #, kde-format
 msgid "Power Off"
 msgstr "Spegni"
 
-#: docking.cpp:470
+#: docking.cpp:461
 #, kde-format
 msgid "Power On"
 msgstr "Accendi"
 
-#: docking.cpp:485 docking.cpp:506
+#: docking.cpp:476 docking.cpp:497
 #, kde-format
 msgid "invalid station"
 msgstr "stazione non valida"
 
-#: docking.cpp:488
+#: docking.cpp:479
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:498
+#: docking.cpp:489
 #, kde-format
 msgid "next alarm: %1"
 msgstr "allarme successivo: %1"
 
-#: docking.cpp:500
+#: docking.cpp:491
 #, kde-format
 msgid "<no alarm pending>"
 msgstr "<nessun allarme in esecuzione>"
 
-#: docking.cpp:759 docking.cpp:862 docking.cpp:920
+#: docking.cpp:750 docking.cpp:853 docking.cpp:911
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Ferma la registrazione di %1"
 
-#: docking.cpp:848
+#: docking.cpp:839
 #, kde-format
 msgid "Start Recording"
 msgstr "Avvia la registrazione"
 
-#: docking.cpp:902
+#: docking.cpp:893
 #, kde-format
 msgid "Resume playback"
 msgstr "Riprendi la riproduzione"
 
-#: docking.cpp:906
+#: docking.cpp:897
 #, kde-format
 msgid "Pause playback"
 msgstr "Metti in pausa la riproduzione"

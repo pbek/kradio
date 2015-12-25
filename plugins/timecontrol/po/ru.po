@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2014-09-18 21:05+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -296,22 +296,54 @@ msgstr "%1 (выключен)"
 msgid "<do not change>"
 msgstr "<не менять>"
 
-#: timecontrol.cpp:45
-#, kde-format
+#: timecontrol.cpp:47
+#, fuzzy, kde-format
+#| msgid "Alarms"
+msgctxt "@title"
+msgid "Alarms"
+msgstr "Расписание"
+
+#: timecontrol.cpp:49
+#, fuzzy, kde-format
+#| msgid "Time Control and Alarm Functions"
+msgctxt "@title"
 msgid "Time Control and Alarm Functions"
 msgstr "Функции таймера и работы по расписанию"
 
 #: timecontrol.cpp:51
 #, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: timecontrol.cpp:52
+#, kde-format
+msgid "Provides alarms and sleep countdown."
+msgstr ""
+
+#: timecontrol.cpp:55
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: timecontrol.cpp:56
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: timecontrol.cpp:66
+#, kde-format
 msgid "Time Control Plugin"
 msgstr "Модуль времени"
 
-#: timecontrol.cpp:304
+#: timecontrol.cpp:319
 #, kde-format
 msgid "Alarms"
 msgstr "Расписание"
 
-#: timecontrol.cpp:305
+#: timecontrol.cpp:320
 #, kde-format
 msgid "Setup Alarms"
 msgstr "Расписание"

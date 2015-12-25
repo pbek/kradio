@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.v4lradio.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2009-11-11 22:35-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -561,37 +561,68 @@ msgstr "Todos ( * )"
 msgid "Select Radio Device"
 msgstr "Selecionar arquivo de dispositivo de rádio"
 
-#: v4lradio.cpp:60
+#: v4lradio.cpp:62
 #, kde-format
+msgctxt "@title"
+msgid "V4L/V4L2"
+msgstr ""
+
+#: v4lradio.cpp:64
+#, fuzzy, kde-format
+#| msgid "Support for V4L(2) Radio Devices"
+msgctxt "@title"
 msgid "Support for V4L(2) Radio Devices"
 msgstr "Suporte para dispositivos de rádio V4L(2)"
 
-#: v4lradio.cpp:69
+#: v4lradio.cpp:66
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: v4lradio.cpp:67
+#, kde-format
+msgid "Provides support for V4L/V4L2 based radio cards."
+msgstr ""
+
+#: v4lradio.cpp:70
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: v4lradio.cpp:71
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: v4lradio.cpp:84
 #, kde-format
 msgid "Video For Linux Plugin"
 msgstr "Plug-in para Video for Linux (V4L)"
 
-#: v4lradio.cpp:816
+#: v4lradio.cpp:831
 #, kde-format
 msgid "invalid frequency %1"
 msgstr "Frequência %1 inválida"
 
-#: v4lradio.cpp:842 v4lradio.cpp:1785 v4lradio.cpp:1981
+#: v4lradio.cpp:857 v4lradio.cpp:1773 v4lradio.cpp:1969
 #, fuzzy, kde-format
 msgid "do not known how to handle V4L version %1"
 msgstr "Não sabe como lidar com V4L-versão %1"
 
-#: v4lradio.cpp:844 v4lradio.cpp:1787 v4lradio.cpp:1983
+#: v4lradio.cpp:859 v4lradio.cpp:1775 v4lradio.cpp:1971
 #, kde-format
 msgid "%1 Support: %2"
 msgstr "%1 Suporta: %2"
 
-#: v4lradio.cpp:850
+#: v4lradio.cpp:865
 #, kde-format
 msgid "error setting frequency to %1 (%2)"
 msgstr "Erro (%2) ao definir frequência para %1"
 
-#: v4lradio.cpp:1264
+#: v4lradio.cpp:1279
 #, kde-format
 msgid ""
 "You have selected V4L API Version 1. Starting with kernel 2.6.31, the "
@@ -599,7 +630,7 @@ msgid ""
 "switching to V4L Version 2. You may override it later."
 msgstr ""
 
-#: v4lradio.cpp:1278
+#: v4lradio.cpp:1293
 #, kde-format
 msgid ""
 "Device %1 does exist but is not readable/writable. Please check device "
@@ -608,132 +639,132 @@ msgstr ""
 "Dispositivo %1 existe, mas não está legível/gravável. Por favor, verifique "
 "as permissões do dispositivo."
 
-#: v4lradio.cpp:1285
+#: v4lradio.cpp:1300
 #, kde-format
 msgid "Could not find any radio device. Using the default path for now: %1"
 msgstr ""
 
-#: v4lradio.cpp:1294
+#: v4lradio.cpp:1309
 #, fuzzy, kde-format
 msgid "Could not find an accessible V4L(2) radio device."
 msgstr "Não foi possível localizar um dispositivo de rádio v4l(2) acessível."
 
-#: v4lradio.cpp:1378
+#: v4lradio.cpp:1393
 #, kde-format
 msgid "%1 (insufficient permissions)"
 msgstr ""
 
-#: v4lradio.cpp:1404
+#: v4lradio.cpp:1419
 #, kde-format
 msgid "V4L Radio"
 msgstr "Rádio V4L"
 
-#: v4lradio.cpp:1405
+#: v4lradio.cpp:1420
 #, kde-format
 msgid "V4L Radio Options"
 msgstr "Opções do Rádio V4L"
 
-#: v4lradio.cpp:1457
+#: v4lradio.cpp:1445
 #, kde-format
 msgid "Cannot open radio device %1"
 msgstr "Não foi possível abrir dispositivo %1"
 
-#: v4lradio.cpp:1517
+#: v4lradio.cpp:1505
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
 msgstr ""
 
-#: v4lradio.cpp:1524
+#: v4lradio.cpp:1512
 #, kde-format
 msgid "cannot open %1"
 msgstr "Não foi possível abrir %1"
 
-#: v4lradio.cpp:1534 v4lradio.cpp:1580
+#: v4lradio.cpp:1522 v4lradio.cpp:1568
 #, kde-format
 msgid "detected %1"
 msgstr "%1 detectado(s)"
 
-#: v4lradio.cpp:1539 v4lradio.cpp:1586
+#: v4lradio.cpp:1527 v4lradio.cpp:1574
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
 msgstr ""
 
-#: v4lradio.cpp:1562
+#: v4lradio.cpp:1550
 #, kde-format
 msgid "audio caps = %1"
 msgstr "Áudio caps = %1"
 
-#: v4lradio.cpp:1602
+#: v4lradio.cpp:1590
 #, kde-format
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Falha ao consultar o controle mudo"
 
-#: v4lradio.cpp:1610
+#: v4lradio.cpp:1598
 #, kde-format
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Falha ao consultar o controle de volume"
 
-#: v4lradio.cpp:1619
+#: v4lradio.cpp:1607
 #, kde-format
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Falha ao consultar o controle agudo"
 
-#: v4lradio.cpp:1628
+#: v4lradio.cpp:1616
 #, kde-format
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Falha ao consultar o controle de profundidade"
 
-#: v4lradio.cpp:1637
+#: v4lradio.cpp:1625
 #, kde-format
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Falha ao consultar o controle de balanço"
 
-#: v4lradio.cpp:1640
+#: v4lradio.cpp:1628
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
 msgstr "V4L2 - Versão: %1, caps=%2"
 
-#: v4lradio.cpp:1663
+#: v4lradio.cpp:1651
 #, kde-format
 msgid "V4L not detected"
 msgstr "Dispositivo V4L não detectado"
 
-#: v4lradio.cpp:1758
+#: v4lradio.cpp:1746
 #, kde-format
 msgid "V4L2 tuner reported range: %1 ... %2 MHz"
 msgstr ""
 
-#: v4lradio.cpp:1761
+#: v4lradio.cpp:1749
 #, kde-format
 msgid "Note: you might be running a kernel with a broken V4L2 radio API"
 msgstr ""
 
-#: v4lradio.cpp:1795
+#: v4lradio.cpp:1783
 #, kde-format
 msgid "cannot get tuner info (error %1)"
 msgstr "Não foi possível obter informações do sintonizador (erro %1)"
 
-#: v4lradio.cpp:1988
+#: v4lradio.cpp:1976
 #, fuzzy, kde-format
 msgid "error updating radio audio info (write): %1"
 msgstr "Erro %2 ao atualizar as informações de áudio do rádio (%1)"
 
-#: v4lradio.cpp:1988
+#: v4lradio.cpp:1976
 #, fuzzy, kde-format
 msgid "error updating radio audio info (read): %1"
 msgstr "Erro %2 ao atualizar as informações de áudio do rádio (%1)"
 
-#: v4lradio.cpp:2182
+#: v4lradio.cpp:2170
 #, fuzzy, kde-format
 msgid "error reading RDS data"
 msgstr "Erro ao ler dados de RDS\n"
 
-#: v4lradio.cpp:2198
+#: v4lradio.cpp:2186
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: Taxa do bloco de erro: %1 %"
 
-#: v4lradio.cpp:2201
+#: v4lradio.cpp:2189
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: Taxa do grupo de erro (~4 Blocos): %1 %"

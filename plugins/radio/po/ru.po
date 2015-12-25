@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-23 20:10+0100\n"
+"POT-Creation-Date: 2015-12-25 15:46+0100\n"
 "PO-Revision-Date: 2014-09-18 20:57+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -95,32 +95,52 @@ msgstr[0] "всего сейчас %1 станция"
 msgstr[1] "всего сейчас %1 станции"
 msgstr[2] "всего сейчас %1 станций"
 
-#: radio.cpp:35
-#, kde-format
+#: radio.cpp:39
+#, fuzzy, kde-format
+#| msgid "Central Radio Device Multiplexer"
+msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
 msgstr "Главный мультиплексор устройства радио"
 
-#: radio.cpp:40
+#: radio.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radio.cpp:45
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radio.cpp:46
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radio.cpp:55
 #, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Модуль мультиплексирования для KRadio"
 
-#: radio.cpp:133
+#: radio.cpp:148
 #, kde-format
 msgid "Radio Stations"
 msgstr "Радиостанции"
 
-#: radio.cpp:134
+#: radio.cpp:149
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Настройка радиостанции"
 
-#: radio.cpp:204
+#: radio.cpp:190
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
 msgstr "Не могу найти модуль для радиостанции %1"
 
-#: radio.cpp:399
+#: radio.cpp:385
 #, kde-format
 msgctxt "Unknown description"
 msgid "unknown"
