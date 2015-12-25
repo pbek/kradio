@@ -35,7 +35,23 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(OSSSoundDevice, "kradio-oss-sound", ki18n("Open Sound System (OSS) Support"));
+static KAboutData aboutData()
+{
+    KAboutData about("OSSSoundDevice",
+                     PROJECT_NAME,
+                     ki18nc("@title Open Sound System", "OSS"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Open Sound System (OSS) Support"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2004 Martin Witte"),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(OSSSoundDevice, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

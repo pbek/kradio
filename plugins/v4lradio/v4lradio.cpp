@@ -57,7 +57,24 @@ struct _lrvol { unsigned char l, r; short dummy; };
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(V4LRadio, PROJECT_NAME, ki18n("Support for V4L(2) Radio Devices"));
+static KAboutData aboutData()
+{
+    KAboutData about("V4LRadio",
+                     PROJECT_NAME,
+                     ki18nc("@title", "V4L/V4L2"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Support for V4L(2) Radio Devices"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     ki18n("Provides support for V4L/V4L2 based radio cards."),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(V4LRadio, aboutData())
 
 ///////////////////////////////////////////////////////////////////////
 

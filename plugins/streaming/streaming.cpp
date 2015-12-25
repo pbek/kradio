@@ -29,7 +29,22 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(StreamingDevice, PROJECT_NAME, ki18n("Streaming Support"));
+static KAboutData aboutData()
+{
+    KAboutData about("StreamingDevice",
+                     PROJECT_NAME,
+                     KLocalizedString(),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Streaming Support"),
+                     KAboutData::License_GPL,
+                     KLocalizedString(),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(StreamingDevice, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

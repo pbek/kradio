@@ -142,6 +142,7 @@ protected:
     QString                  m_defaultStreamDescription;
 };
 
+KAboutData aboutDataRecordingMonitor();
 
 
 

@@ -32,7 +32,24 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(Radio, PROJECT_NAME, ki18n("Central Radio Device Multiplexer"));
+static KAboutData aboutData()
+{
+    KAboutData about("Radio",
+                     PROJECT_NAME,
+                     KLocalizedString(),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Central Radio Device Multiplexer"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(Radio, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

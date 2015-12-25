@@ -24,7 +24,22 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(SoundServer, PROJECT_NAME, ki18n("KRadio internal sound server"));
+static KAboutData aboutData()
+{
+    KAboutData about("SoundServer",
+                     PROJECT_NAME,
+                     KLocalizedString(),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "KRadio internal sound server"),
+                     KAboutData::License_GPL,
+                     KLocalizedString(),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(SoundServer, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

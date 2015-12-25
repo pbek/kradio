@@ -46,8 +46,24 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
+static KAboutData aboutData()
+{
+    KAboutData about("LircSupport",
+                     PROJECT_NAME,
+                     ki18nc("@title", "LIRC"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Linux Infrared Control (LIRC) Support"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte"),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    return about;
+}
+
 //#ifdef HAVE_LIRC
-PLUGIN_LIBRARY_FUNCTIONS(LircSupport, PROJECT_NAME, ki18n("Linux Infrared Control (LIRC) Support"));
+KRADIO_EXPORT_PLUGIN(LircSupport, aboutData())
 //#endif
 
 /////////////////////////////////////////////////////////////////////////////

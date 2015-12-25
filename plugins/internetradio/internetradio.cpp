@@ -38,7 +38,22 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(InternetRadio, PROJECT_NAME, ki18n("Pseudo radio device for Internet radio stream support"));
+static KAboutData aboutData()
+{
+    KAboutData about("InternetRadio",
+                     PROJECT_NAME,
+                     ki18nc("@title", "Internet Radio"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Pseudo radio device for Internet radio stream support"),
+                     KAboutData::License_GPL,
+                     KLocalizedString(),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(InternetRadio, aboutData())
 
 ///////////////////////////////////////////////////////////////////////
 

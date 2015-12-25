@@ -33,7 +33,22 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(ErrorLog, PROJECT_NAME, ki18n("Error Logging Window"));
+static KAboutData aboutData()
+{
+    KAboutData about("ErrorLog",
+                     PROJECT_NAME,
+                     KLocalizedString(),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Error Logging Window"),
+                     KAboutData::License_GPL,
+                     KLocalizedString(),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(ErrorLog, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

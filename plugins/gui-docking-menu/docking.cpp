@@ -42,7 +42,24 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(RadioDocking, PROJECT_NAME, ki18n("System Tray Icon/Menu"));
+static KAboutData aboutData()
+{
+    KAboutData about("RadioDocking",
+                     PROJECT_NAME,
+                     ki18nc("@title", "Docking Menu"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "System Tray Icon/Menu"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(RadioDocking, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

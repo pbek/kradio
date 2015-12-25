@@ -24,7 +24,22 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-PLUGIN_LIBRARY_FUNCTIONS(TimeShifter, PROJECT_NAME, ki18n("TimeShift Support"));
+static KAboutData aboutData()
+{
+    KAboutData about("TimeShifter",
+                     PROJECT_NAME,
+                     KLocalizedString(),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "TimeShift Support"),
+                     KAboutData::License_GPL,
+                     KLocalizedString(),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(TimeShifter, aboutData())
 
 ///////////////////////////////////////////////////////////////////////
 

@@ -30,6 +30,22 @@
 #include <kaboutdata.h>
 #include <kglobal.h>
 
+KAboutData aboutDataRecordingMonitor()
+{
+    KAboutData about("RecordingMonitor",
+                     PROJECT_NAME,
+                     ki18nc("@title", "Recording Monitor"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Recording Monitor Plugin"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte"),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    return about;
+}
+
 RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &name)
   : QWidget(NULL),
     WidgetPluginBase(this, instanceID, name, i18n("Recording Monitor")),

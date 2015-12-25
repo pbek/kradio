@@ -31,8 +31,23 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
+static KAboutData aboutData()
+{
+    KAboutData about("DBusSupport",
+                     PROJECT_NAME,
+                     ki18nc("@title", "D-Bus"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "D-Bus Support"),
+                     KAboutData::License_GPL,
+                     KLocalizedString(),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    return about;
+}
+
 //#ifdef HAVE_LIRC
-PLUGIN_LIBRARY_FUNCTIONS(DBusSupport, PROJECT_NAME, ki18n("D-Bus Support"));
+KRADIO_EXPORT_PLUGIN(DBusSupport, aboutData())
 //#endif
 
 /////////////////////////////////////////////////////////////////////////////

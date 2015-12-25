@@ -41,7 +41,23 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(AlsaSoundDevice, PROJECT_NAME, ki18n("Advanced Linux Sound Architecture (ALSA) Support"));
+static KAboutData aboutData()
+{
+    KAboutData about("AlsaSoundDevice",
+                     PROJECT_NAME,
+                     ki18nc("@title", "ALSA Sound"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Advanced Linux Sound Architecture (ALSA) Support"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2005 Martin Witte"),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(AlsaSoundDevice, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

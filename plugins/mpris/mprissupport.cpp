@@ -35,7 +35,23 @@
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(MPRISSupport, PROJECT_NAME, ki18n("MPRIS Support"));
+static KAboutData aboutData()
+{
+    KAboutData about("MPRISSupport",
+                     PROJECT_NAME,
+                     ki18nc("@title", "MPRIS"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "MPRIS Support"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2014 Pino Toscano"),
+                     KLocalizedString(),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Pino Toscano"), KLocalizedString(), "toscano.pino@tiscali.it");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(MPRISSupport, aboutData())
 
 /////////////////////////////////////////////////////////////////////////////
 

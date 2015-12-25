@@ -42,7 +42,24 @@ const char *AlarmRecordingTemplateElement = "recordingTemplate";
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions
 
-PLUGIN_LIBRARY_FUNCTIONS(TimeControl, PROJECT_NAME, ki18n("Time Control and Alarm Functions"));
+static KAboutData aboutData()
+{
+    KAboutData about("TimeControl",
+                     PROJECT_NAME,
+                     ki18nc("@title", "Alarms"),
+                     KRADIO_VERSION,
+                     ki18nc("@title", "Time Control and Alarm Functions"),
+                     KAboutData::License_GPL,
+                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     ki18n("Provides alarms and sleep countdown."),
+                     "http://sourceforge.net/projects/kradio",
+                     "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    return about;
+}
+
+KRADIO_EXPORT_PLUGIN(TimeControl, aboutData())
 
 ///////////////////////////////////////////////////////////////////////
 
