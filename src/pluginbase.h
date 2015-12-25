@@ -149,59 +149,11 @@ public:
     virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) = 0;
 
 protected:
-    void registerComponent(const QByteArray &className, const QByteArray &catalogName, const KLocalizedString &description);
     void registerComponent(const KAboutData &aboutData);
 
 private:
     QList<KAboutData> m_components;
 };
-
-
-#define PLUGIN_LIBRARY_FUNCTIONS(class_name, i18nName, description) \
-class class_name ## PluginFactory : public KRadioPluginFactoryBase  \
-{                                                                   \
-public:                                                             \
-    class_name ## PluginFactory(QObject *, const QVariantList &)    \
-    {                                                               \
-        registerComponent(#class_name, i18nName, description);      \
-    }                                                               \
-                                                                    \
-    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) \
-    {                                                               \
-        if (type == QLatin1String(#class_name)) {                   \
-            return new class_name(instanceID, object_name);         \
-        } else {                                                    \
-            return NULL;                                            \
-        }                                                           \
-    }                                                               \
-};                                                                  \
-K_PLUGIN_FACTORY(class_name ## Plugin, registerPlugin<class_name ## PluginFactory>();) \
-K_EXPORT_PLUGIN(class_name ## Plugin)
-
-
-#define PLUGIN_LIBRARY_FUNCTIONS2(class_name1, i18nName, description1, class_name2, description2) \
-class class_name1 ## PluginFactory : public KRadioPluginFactoryBase  \
-{                                                                    \
-public:                                                              \
-    class_name1 ## PluginFactory(QObject *, const QVariantList &)    \
-    {                                                                \
-        registerComponent(#class_name1, i18nName, description1);     \
-        registerComponent(#class_name2, i18nName, description2);     \
-    }                                                                \
-                                                                     \
-    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) \
-    {                                                                \
-        if (type == QLatin1String(#class_name1)) {                   \
-            return new class_name1(instanceID, object_name);         \
-        } else if (type == QLatin1String(#class_name2)) {            \
-            return new class_name2(instanceID, object_name);         \
-        } else {                                                     \
-            return NULL;                                             \
-        }                                                            \
-    }                                                                \
-};                                                                   \
-K_PLUGIN_FACTORY(class_name1 ## Plugin, registerPlugin<class_name1 ## PluginFactory>();) \
-K_EXPORT_PLUGIN(class_name1 ## Plugin)
 
 
 #define KRADIO_EXPORT_PLUGIN(class_name, aboutData)                 \

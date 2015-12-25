@@ -126,13 +126,6 @@ QList<KAboutData> KRadioPluginFactoryBase::components() const
 }
 
 
-void KRadioPluginFactoryBase::registerComponent(const QByteArray &className, const QByteArray &catalogName, const KLocalizedString &description)
-{
-    KAboutData about(className, catalogName, KLocalizedString(), QByteArray());
-    about.setShortDescription(description);
-    m_components.append(about);
-}
-
 void KRadioPluginFactoryBase::registerComponent(const KAboutData &aboutData)
 {
     m_components.append(aboutData);
