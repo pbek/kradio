@@ -17,7 +17,6 @@
 
 #include "radiostation.h"
 #include "errorlog_interfaces.h"
-//#include "aboutwidget.h"
 
 #include "recording.h"
 #include "recording-configuration.h"

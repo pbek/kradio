@@ -73,7 +73,6 @@ protected:
     virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
 public slots:
     // connects destroy-msg with remove-function

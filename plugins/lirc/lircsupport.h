@@ -102,7 +102,6 @@ public:
     virtual void   restoreState (const KConfigGroup &);
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
 
 

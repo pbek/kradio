@@ -33,8 +33,6 @@
 #include "alsa-sound.h"
 #include "alsa-sound-configuration.h"
 // #include "capture-thread.h"
-// #warning "FIXME: port about widgets"
-//#include "aboutwidget.h"
 #include "utils.h"
 #include "debug-profiler.h"
 
@@ -272,31 +270,6 @@ ConfigPageInfo  AlsaSoundDevice::createConfigurationPage()
                            i18n("ALSA Sound Device Options"),
                            "kradio_alsa2");
 }
-
-
-/*AboutPageInfo AlsaSoundDevice::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("ALSA Sound Plugin for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2005 Martin Witte",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("ALSA Sound"),
-              i18n("ALSA Sound"),
-              "kradio_alsa_sound"
-           );
-*/
-//     return AboutPageInfo();
-// }
-
 
 
 bool AlsaSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately)

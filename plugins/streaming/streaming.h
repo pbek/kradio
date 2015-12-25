@@ -62,7 +62,6 @@ public:
     virtual void setName(const QString &n);
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
     // ISoundStreamClient: direct device access
 

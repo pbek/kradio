@@ -22,8 +22,6 @@
 #include "timecontrol.h"
 #include "timecontrol-configuration.h"
 #include "pluginmanager.h"
-// #warning "FIXME: port about stuff"
-//#include "aboutwidget.h"
 
 //const char *AlarmListElement              = "alarmlist";
 //const char *AlarmElement                  = "alarm";
@@ -330,33 +328,6 @@ void TimeControl::slotResumingFromSuspend()
 {
     updateTimers();
 }
-
-
-/*AboutPageInfo TimeControl::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Time Control Plugin for KRadio."
-                                   "<P>"
-                                   "Provides Alarms and Sleep Countdown"
-                                   "<P>"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte, Klas Kalass",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("Alarms"),
-              i18n("Time Control Plugin"),
-              "kradio_kalarm"
-           );*/
-//     return AboutPageInfo();
-// }
 
 
 #include "timecontrol.moc"

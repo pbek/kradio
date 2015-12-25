@@ -70,7 +70,6 @@ public:
     virtual void   startPlugin();
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
     // IRadioDevice methods
 

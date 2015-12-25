@@ -35,7 +35,6 @@
 #include "plugin_configuration_dialog.h"
 #include "widgetpluginbase.h"
 #include "radiostation.h"
-//#include "aboutwidget.h"
 
 #include "docking.h"
 #include "docking-configuration.h"
@@ -258,31 +257,6 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
         "kmenuedit"
     );
 }
-
-/*AboutPageInfo RadioDocking::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Docking Menu"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte, Klas Kalass",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("Docking Menu"),
-              i18n("Docking Menu Plugin"),
-              "kmenuedit"
-           );*/
-//     return AboutPageInfo();
-// }
-
-
 
 void RadioDocking::buildContextMenu()
 {

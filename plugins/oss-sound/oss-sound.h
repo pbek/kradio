@@ -79,7 +79,6 @@ public:
 //     virtual       QString &name()       { return PluginBase::name(); }
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
     // ISoundStreamClient: direct device access
 

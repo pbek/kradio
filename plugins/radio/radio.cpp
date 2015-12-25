@@ -16,8 +16,6 @@
  ***************************************************************************/
 
 #include "radiostation.h"
-// #warning "FIXME: port aboutwidgets"
-//#include "aboutwidget.h"
 #include "radiodevice_interfaces.h"
 #include "radio.h"
 #include "radio-configuration.h"
@@ -152,35 +150,6 @@ ConfigPageInfo Radio::createConfigurationPage()
         "kradio4"
     );
 }
-
-
-/*AboutPageInfo Radio::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Radio Device Multiplexer and Station Management for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte, Klas Kalass",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("Device and Station Management"),
-              i18n("Radio Device Multiplexer and Station Management"),
-              "kradio4"
-           );
-*/
-// /*    return AboutPageInfo();
-// }*/
-
-
-
-
 
 
 /* IRadio Interface Methods

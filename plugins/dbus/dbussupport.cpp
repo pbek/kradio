@@ -24,7 +24,6 @@
 #include "seekradio_interfaces.h"
 #include "stationlist.h"
 #include "pluginmanager.h"
-//#include "aboutwidget.h"
 
 #include "kradioadaptor.h"
 

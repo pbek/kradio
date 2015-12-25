@@ -17,7 +17,6 @@
 
 #include "recording-monitor.h"
 #include "recording-datamonitor.h"
-//#include "aboutwidget.h"
 
 #include <QLabel>
 #include <QPushButton>
@@ -180,29 +179,6 @@ ConfigPageInfo  RecordingMonitor::createConfigurationPage()
 {
     return ConfigPageInfo();
 }
-
-/*AboutPageInfo   RecordingMonitor::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Recording Monitor Plugin for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("Recording Monitor"),
-              i18n("Recording Monitor Plugin"),
-              "goto"
-           );
-*/
-//     return AboutPageInfo();
-// }
 
 void RecordingMonitor::setVisible(bool v)
 {

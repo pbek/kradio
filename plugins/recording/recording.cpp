@@ -17,7 +17,6 @@
 
 #include "radiostation.h"
 #include "errorlog_interfaces.h"
-//#include "aboutwidget.h"
 #include "fileringbuffer.h"
 #include "utils.h"
 
@@ -153,29 +152,6 @@ ConfigPageInfo  Recording::createConfigurationPage()
                           "kradio_record"
                          );
 }
-
-
-/*AboutPageInfo Recording::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Recording Monitor for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("Recording"),
-              i18n("Recording Plugin"),
-              "kradio_record"
-           );*/
-//     return AboutPageInfo();
-// }
 
 
 // IRecCfg

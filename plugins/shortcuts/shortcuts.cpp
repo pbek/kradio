@@ -34,7 +34,6 @@
 #include "seekradio_interfaces.h"
 #include "stationlist.h"
 #include "radiostation.h"
-//#include "aboutwidget.h"
 
 #include "shortcuts-configuration.h"
 
@@ -244,29 +243,6 @@ void Shortcuts::updateShortcutsEditors()
         updateShortcutsEditor(sce);
     }
 }
-
-/*AboutPageInfo Shortcuts::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Linux Infrared Remote Control Support for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("LIRC Support"),
-              i18n("LIRC Plugin"),
-              "connect_creating"
-           );*/
-//     return AboutPageInfo();
-// }
-
 
 void Shortcuts::slotActionTriggered(QAction *a)
 {

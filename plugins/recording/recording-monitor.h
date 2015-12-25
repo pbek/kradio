@@ -59,7 +59,6 @@ public:
     virtual bool   disconnectI(Interface *i);
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
     // ISoundStreamClient
 RECEIVERS:

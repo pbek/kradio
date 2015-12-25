@@ -39,7 +39,6 @@
 #include "stationlist.h"
 #include "pluginmanager.h"
 #include "plugin_configuration_dialog.h"
-//#include "aboutwidget.h"
 
 #include "radioview.h"
 #include "radioview_frequencyradio.h"
@@ -770,30 +769,6 @@ void RadioView::addCommonConfigurationTab(RadioViewConfiguration */*c*/)
 
     c->addElementTab(f, i18n("Common"));*/
 }
-
-
-/*AboutPageInfo RadioView::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Standard Radio Display for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte, Klas Kalass",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("Display"),
-              i18n("Standard Radio Display"),
-              "openterm"
-           );*/
-    //return AboutPageInfo();
-// }
 
 
 void RadioView::noticeWidgetPluginShown(WidgetPluginBase *p, bool shown)

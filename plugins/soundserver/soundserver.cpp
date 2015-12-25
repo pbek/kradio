@@ -84,8 +84,3 @@ ConfigPageInfo SoundServer::createConfigurationPage()
 {
     return ConfigPageInfo ();
 }
-
-// AboutPageInfo SoundServer::createAboutPage()
-// {
-//     return AboutPageInfo();
-// }

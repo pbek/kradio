@@ -36,7 +36,6 @@
 #include "radiodevice_interfaces.h"
 #include "seekradio_interfaces.h"
 #include "stationlist.h"
-//#include "aboutwidget.h"
 
 #include "lirc-configuration.h"
 
@@ -499,29 +498,6 @@ ConfigPageInfo LircSupport::createConfigurationPage()
                            i18n("LIRC Plugin"),
                            "network-wireless");
 }
-
-
-/*AboutPageInfo LircSupport::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Linux Infrared Remote Control Support for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("LIRC Support"),
-              i18n("LIRC Plugin"),
-              "connect_creating"
-           );*/
-//     return AboutPageInfo();
-// }
 
 
 bool LircSupport::checkActions(const QString &lirc_string, int repeat_counter, const QMap<LIRC_Actions, QString> &map)

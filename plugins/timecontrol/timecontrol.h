@@ -67,7 +67,6 @@ public:
     virtual void   updateTimers ();
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
 
     // ITimeControl Interface methods

@@ -68,7 +68,6 @@ public:
     virtual void   restoreState(const KConfigGroup &g, bool b) { WidgetPluginBase::restoreState(g, b); }
 
     virtual ConfigPageInfo  createConfigurationPage();
-//     virtual AboutPageInfo   createAboutPage();
 
     // IRadioClient
 

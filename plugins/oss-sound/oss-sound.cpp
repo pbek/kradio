@@ -17,7 +17,6 @@
 
 #include "oss-sound.h"
 
-#include "../../src/include/aboutwidget.h"
 #include <klocalizedstring.h>
 #include <kaboutdata.h>
 #include <sys/types.h>
@@ -197,31 +196,6 @@ ConfigPageInfo  OSSSoundDevice::createConfigurationPage()
                            i18n("OSS Sound Device Options"),
                            "kradio_oss");
 }
-
-
-/*AboutPageInfo OSSSoundDevice::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("OSS Sound Plugin for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2004 Martin Witte",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("OSS Sound"),
-              i18n("OSS Sound"),
-              "kradio_oss_sound"
-           );
-*/
-//     return AboutPageInfo();
-// }
-
 
 
 bool OSSSoundDevice::preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately)

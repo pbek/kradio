@@ -33,7 +33,6 @@
 #include <kbuttongroup.h>
 #include <kicon.h>
 
-//#include "aboutwidget.h"
 #include "station-drag-object.h"
 #include "stationlist.h"
 #include "radiostation.h"
@@ -162,30 +161,6 @@ ConfigPageInfo QuickBar::createConfigurationPage()
         "view-list-icons"
     );
 }
-
-
-/*AboutPageInfo QuickBar::createAboutPage()
-{*/
-/*    KAboutData aboutData("kradio4",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("Quickback for KRadio"),
-                         KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte, Klas Kalass",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("Quickbar"),
-              i18n("Quickbar Plugin"),
-              "view-list-icons"
-           );*/
-//     return AboutPageInfo();
-// }
 
 
 // IRadio methods

@@ -43,8 +43,6 @@
 #include <klocalizedstring.h>
 
 #include "stationlist.h"
-// #warning "FIXME: port aboutwidget"
-//#include "../../src/include/aboutwidget.h"
 #include "utils.h"
 #include "v4lradio.h"
 #include "v4lradio-configuration.h"
@@ -1424,33 +1422,6 @@ ConfigPageInfo V4LRadio::createConfigurationPage()
                           );
 }
 
-
-/*AboutPageInfo V4LRadio::createAboutPage()
-{
-#warning "FIXME: port about stuff"*/
-/*    KAboutData aboutData("kradio",
-                         NULL,
-                         NULL,
-                         I18N_NOOP("V4L/V4L2 Plugin for KRadio."
-                                   "<P>"
-                                   "Provides Support for V4L/V4L2 based Radio Cards"
-                                   "<P>"),
-                         0,
-                         //KAboutData::License_GPL,
-                         "(c) 2002-2005 Martin Witte, Klas Kalass",
-                         0,
-                         "http://sourceforge.net/projects/kradio",
-                         0);
-    aboutData.addAuthor("Martin Witte",  "", "emw-kradio@nocabal.de");
-    aboutData.addAuthor("Klas Kalass",   "", "klas.kalass@gmx.de");
-
-    return AboutPageInfo(
-              new KRadioAboutWidget(aboutData, KRadioAboutWidget::AbtTabbed),
-              i18n("V4L/V4L2"),
-              i18n("V4L/V4L2 Plugin"),
-              "kradio_v4l"
-           );*/
-// }
 
 ////////////////////////////////////////
 // anything else

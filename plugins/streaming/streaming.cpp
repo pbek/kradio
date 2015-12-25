@@ -17,7 +17,6 @@
 
 #include "streaming.h"
 
-//#include "../../src/include/aboutwidget.h"
 #include "utils.h"
 #include <klocalizedstring.h>
 #include <kaboutdata.h>
@@ -191,13 +190,6 @@ ConfigPageInfo  StreamingDevice::createConfigurationPage()
                            "kradio_streaming"
                           );
 }
-
-
-// AboutPageInfo StreamingDevice::createAboutPage()
-// {
-//     return AboutPageInfo();
-// }
-
 
 
 bool StreamingDevice::preparePlayback(SoundStreamID id, const QString &channel, bool /*active_mode*/, bool start_immediately)

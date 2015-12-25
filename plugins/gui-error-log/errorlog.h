@@ -62,7 +62,6 @@ protected:
     virtual void hideEvent(QHideEvent *);
 
     virtual ConfigPageInfo createConfigurationPage () { return ConfigPageInfo(); }
-//     virtual AboutPageInfo  createAboutPage ()         { return AboutPageInfo(); }
 
     KTextEdit *createTextEditPage(const QString &title, const KIcon &icon, KPageWidgetItem *& item);
 
