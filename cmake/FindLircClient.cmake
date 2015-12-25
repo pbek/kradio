@@ -37,6 +37,7 @@ if (PKG_CONFIG_FOUND)
     set(version_string ">=${LircClient_FIND_VERSION}")
   endif()
   pkg_check_modules(PC_LIRC liblircclient0${version_string})
+  unset(version_string)
 else()
   # assume it was found
   set(PC_LIRC_FOUND TRUE)

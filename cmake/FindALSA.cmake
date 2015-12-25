@@ -37,6 +37,7 @@ if (PKG_CONFIG_FOUND)
     set(version_string ">=${ALSA_FIND_VERSION}")
   endif()
   pkg_check_modules(PC_ALSA alsa${version_string})
+  unset(version_string)
 else()
   # assume it was found
   set(PC_ALSA_FOUND TRUE)
