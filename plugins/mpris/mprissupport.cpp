@@ -133,10 +133,7 @@ void MPRISSupport::restoreState (const KConfigGroup &c)
 
 ConfigPageInfo MPRISSupport::createConfigurationPage()
 {
-    return ConfigPageInfo (NULL,
-                           i18n("MPRIS Support"),
-                           i18n("MPRIS Plugin"),
-                           QString());
+    return ConfigPageInfo();
 }
 
 bool MPRISSupport::noticePowerChanged(bool on)

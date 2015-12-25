@@ -112,10 +112,7 @@ void   DBusSupport::restoreState (const KConfigGroup &c)
 
 ConfigPageInfo DBusSupport::createConfigurationPage()
 {
-    return ConfigPageInfo (NULL,
-                           i18n("D-Bus Support"),
-                           i18n("D-Bus Plugin"),
-                           "FIXME");
+    return ConfigPageInfo();
 }
 
 
