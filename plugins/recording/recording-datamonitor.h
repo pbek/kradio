@@ -21,7 +21,6 @@
 #include <QFrame>
 #include <QColor>
 
-//#include <kradio/interfaces/recording-interfaces.h>
 #include "soundstreamclient_interfaces.h"
 
 class RecordingDataMonitor : public QFrame

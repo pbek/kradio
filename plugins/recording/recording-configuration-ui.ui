@@ -731,17 +731,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>m_checkboxPreRecordingEnable</tabstop>
   <tabstop>m_spinboxPreRecordingSeconds</tabstop>
  </tabstops>
- <includes>
-  <include location="local">kurlrequester.h</include>
-  <include location="local">klineedit.h</include>
-  <include location="local">kpushbutton.h</include>
-  <include location="local">kcombobox.h</include>
-  <include location="local">kcombobox.h</include>
-  <include location="local">kcombobox.h</include>
-  <include location="local">kcombobox.h</include>
-  <include location="local">kcombobox.h</include>
-  <include location="local">kcombobox.h</include>
- </includes>
  <resources/>
  <connections>
   <connection>

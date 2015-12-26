@@ -193,9 +193,6 @@
   <tabstop>cbSyncAtRuntime</tabstop>
   <tabstop>m_ActionList</tabstop>
  </tabstops>
- <includes>
-  <include location="local">k3listview.h</include>
- </includes>
  <resources/>
  <connections/>
 </ui>

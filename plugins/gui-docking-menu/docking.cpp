@@ -17,7 +17,6 @@
 
 #include <kcmdlineargs.h>
 #include <kicon.h>
-#include <QToolTip>
 #include <QMouseEvent>
 #include <QApplication>
 
@@ -25,8 +24,6 @@
 #include <kaction.h>
 #include <kaboutdata.h>
 #include <kconfiggroup.h>
-#include <kwindowsystem.h>
-#include <kwindowinfo.h>
 
 #include "radiodevice_interfaces.h"
 #include "seekradio_interfaces.h"

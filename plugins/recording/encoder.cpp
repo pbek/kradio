@@ -22,13 +22,10 @@
 #include "recording-configuration.h"
 #include "soundstreamevent.h"
 
-#include <QSocketNotifier>
 #include <QEvent>
 #include <QApplication>
-#include <QRegExp>
 
 #include <kconfig.h>
-#include <kdeversion.h>
 #include <klocalizedstring.h>
 
 RecordingEncoding::RecordingEncoding(QObject *parent,            SoundStreamID ssid,

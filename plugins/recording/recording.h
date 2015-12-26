@@ -33,7 +33,6 @@
 
 class RadioStation;
 class StationList;
-class QSocketNotifier;
 class RecordingEncoding;
 class FileRingBuffer;
 

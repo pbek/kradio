@@ -19,7 +19,6 @@
 #define __ALSA_THREAD_H__
 
 #include <QThread>
-#include <QSemaphore>
 
 #include <alsa/asoundlib.h>
 

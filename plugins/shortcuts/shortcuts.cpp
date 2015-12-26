@@ -20,7 +20,6 @@
 
 #include <QSocketNotifier>
 #include <QTimer>
-#include <QFile>
 #include <QApplication>
 
 #include <kaboutdata.h>

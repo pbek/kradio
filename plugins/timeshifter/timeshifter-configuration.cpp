@@ -29,6 +29,7 @@
 #include <kfiledialog.h>
 #include <knuminput.h>
 #include <klocalizedstring.h>
+#include <kicon.h>
 
 #include "utils.h"
 #include "gui_list_helper.h"

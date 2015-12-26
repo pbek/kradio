@@ -137,10 +137,6 @@
    <header>radiostation-listview.h</header>
   </customwidget>
  </customwidgets>
- <includes>
-  <include location="local">radiostation-listview.h</include>
-  <include location="local">kpushbutton.h</include>
- </includes>
  <resources/>
  <connections/>
 </ui>

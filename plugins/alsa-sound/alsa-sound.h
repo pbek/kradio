@@ -26,7 +26,6 @@
 
 #include <QObject>
 #include <QTimer>
-#include <QSemaphore>
 
 #include <alsa/asoundlib.h>
 

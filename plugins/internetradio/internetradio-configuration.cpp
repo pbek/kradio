@@ -22,12 +22,10 @@
 #include <QSpinBox>
 #include <QLineEdit>
 #include <QLabel>
-#include <QFile>
 #include <QPushButton>
 #include <QSlider>
 #include <QCheckBox>
 
-#include <kfiledialog.h>
 #include <knuminput.h>
 #include <klocalizedstring.h>
 #include <ktabwidget.h>

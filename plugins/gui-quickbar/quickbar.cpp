@@ -15,22 +15,15 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QToolTip>
 #include <QToolButton>
-#include <QButtonGroup>
 #include <QResizeEvent>
 #include <QDragEnterEvent>
 #include <QDropEvent>
-//#include <QNameSpace>
 
-//#include <ktoolbarbutton.h>
-#include <kwindowinfo.h>
-#include <kwindowsystem.h>
 #include <klocalizedstring.h>
 #include <kglobal.h>
 #include <kconfiggroup.h>
 #include <kaboutdata.h>
-#include <kbuttongroup.h>
 #include <kicon.h>
 
 #include "station-drag-object.h"

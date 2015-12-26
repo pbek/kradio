@@ -18,14 +18,12 @@
 #include "displaycfg.h"
 
 #include <kcolorbutton.h>
-#include <kcolordialog.h>
 #include <kfontdialog.h>
 #include <klocalizedstring.h>
 
 #include <QLayout>
 #include <QGridLayout>
 #include <QLabel>
-#include <QButtonGroup>
 #include <QGroupBox>
 
 DisplayConfiguration::DisplayConfiguration(QWidget *parent)

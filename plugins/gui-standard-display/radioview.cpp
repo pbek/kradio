@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// #include <QWidgetStack>
 #include <QLayout>
 #include <QToolButton>
 #include <QSlider>

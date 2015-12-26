@@ -810,10 +810,6 @@
   <tabstop>editCaptureBufferChunkSize</tabstop>
   <tabstop>chkNonBlockingCapture</tabstop>
  </tabstops>
- <includes>
-  <include location="local">kcombobox.h</include>
-  <include location="local">knuminput.h</include>
- </includes>
  <resources/>
  <connections>
   <connection>

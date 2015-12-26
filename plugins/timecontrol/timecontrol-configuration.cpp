@@ -28,6 +28,7 @@ using std::sort;
 #include <QPushButton>
 
 #include <klocalizedstring.h>
+#include <kicon.h>
 
 #include "stationlist.h"
 #include "alarm.h"

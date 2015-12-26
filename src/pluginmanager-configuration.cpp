@@ -24,7 +24,6 @@
 #include <kinputdialog.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
-#include <kfiledialog.h>
 #include <kdemacros.h>
 
 #include <QCheckBox>

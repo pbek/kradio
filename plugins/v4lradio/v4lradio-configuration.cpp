@@ -28,11 +28,13 @@
 #include <QPushButton>
 #include <QSlider>
 #include <QCheckBox>
+#include <QButtonGroup>
 
 #include <kfiledialog.h>
 #include <knuminput.h>
 #include <klocalizedstring.h>
 #include <ktabwidget.h>
+#include <kicon.h>
 
 #include "utils.h"
 #include "gui_list_helper.h"

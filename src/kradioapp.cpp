@@ -20,14 +20,10 @@
 #include <klocalizedstring.h>
 #include <kpluginloader.h>
 #include <kconfig.h>
-#include <ksharedconfig.h>
-#include <kmessagebox.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kglobal.h>
 #include <klocale.h>
-
-// #include <kprogress.h>
 
 #include "kradioapp.h"
 #include "errorlog_interfaces.h"

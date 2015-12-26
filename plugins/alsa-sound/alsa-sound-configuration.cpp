@@ -22,7 +22,6 @@
 
 #include <kurlrequester.h>
 #include <knuminput.h>
-#include <klineedit.h>
 #include <kcombobox.h>
 #include <ktabwidget.h>
 #include <klocalizedstring.h>

@@ -30,11 +30,8 @@
 
 #include <QEvent>
 #include <QApplication>
-#include <QRegExp>
 
 #include <kconfig.h>
-#include <kdeversion.h>
-
 #include <kaboutdata.h>
 
 

@@ -15,14 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QCheckBox>
-
 #include <kurlrequester.h>
 #include <knuminput.h>
 #include <kcombobox.h>
-#include <knuminput.h>
-
 #include <klocalizedstring.h>
+#include <kicon.h>
 
 #include "streaming-configuration.h"
 #include "streaming.h"

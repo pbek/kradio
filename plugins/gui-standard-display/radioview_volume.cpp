@@ -18,8 +18,6 @@
 #include <math.h>
 #include <QSlider>
 #include <QLayout>
-#include <QToolTip>
-// #include <QAccel>
 
 #include <klocalizedstring.h>
 

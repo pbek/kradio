@@ -35,12 +35,8 @@
 #include <QSpinBox>
 #include <QPushButton>
 #include <QMenu>
-#include <QToolButton>
 #include <QStackedWidget>
-#include <QImage>
-#include <QRegExp>
 
-#include <klistwidget.h>
 #include <kfiledialog.h>
 #include <kstandarddirs.h>
 #include <kurllabel.h>
@@ -48,6 +44,8 @@
 #include <klocalizedstring.h>
 #include <kdemacros.h>
 #include <ktoolinvocation.h>
+#include <kglobal.h>
+#include <kicon.h>
 
 RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &logger)
     : QWidget(parent),

@@ -20,7 +20,6 @@
 #include <QApplication>
 #include <KDE/KAboutData>
 #include <KDE/KCmdLineArgs>
-#include <KDE/KProtocolInfo>
 
 MPRIRoot::MPRIRoot(MPRISSupport *parent)
     : QDBusAbstractAdaptor(parent)

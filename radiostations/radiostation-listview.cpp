@@ -22,10 +22,10 @@
 
 #include <klocalizedstring.h>
 #include <QDataStream>
-#include <QImage>
 #include <QPixmap>
 #include <QDragMoveEvent>
 #include <QHeaderView>
+#include <QMimeData>
 
 #include <kconfiggroup.h>
 

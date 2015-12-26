@@ -629,12 +629,6 @@
   <tabstop>editMedia</tabstop>
   <tabstop>editComment</tabstop>
  </tabstops>
- <includes>
-  <include location="local">radiostation-listview.h</include>
-  <include location="local">kurlrequester.h</include>
-  <include location="local">klineedit.h</include>
-  <include location="local">kpushbutton.h</include>
- </includes>
  <resources/>
  <connections/>
 </ui>

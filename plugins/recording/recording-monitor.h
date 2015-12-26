@@ -23,7 +23,6 @@
 #include "widgetpluginbase.h"
 #include "soundstreamclient_interfaces.h"
 #include "radio_interfaces.h"
-//#include <kradio/interfaces/recording-interfaces.h>
 
 
 class QLabel;

@@ -17,9 +17,7 @@
 
 #include "lircsupport.h"
 
-#ifdef HAVE_LIRC
 #include <lirc/lirc_client.h>
-#endif
 
 #include <QSocketNotifier>
 #include <QTimer>
@@ -29,8 +27,6 @@
 
 #include <kaboutdata.h>
 #include <kstandarddirs.h>
-
-#include <lirc/lirc_client.h>
 
 #include "errorlog_interfaces.h"
 #include "radiodevice_interfaces.h"
