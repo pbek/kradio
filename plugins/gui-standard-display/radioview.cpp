@@ -170,35 +170,29 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     btnRecording->setMenu(m_RecordingMenu);
 
     m_SnoozeMenu   = new QMenu(btnSnooze);
+    QObject::connect(m_SnoozeMenu, SIGNAL(triggered(QAction*)), this, SLOT(slotSnooze(QAction*)));
 
     QAction *a = NULL;
     a = m_SnoozeMenu->addAction(i18n("5 min"));
     a->setData(5);
-    QObject::connect(a, SIGNAL(triggered()), this, SLOT(slotSnooze()));
 
     a = m_SnoozeMenu->addAction(i18n("10 min"));
     a->setData(10);
-    QObject::connect(a, SIGNAL(triggered()), this, SLOT(slotSnooze()));
 
     a = m_SnoozeMenu->addAction(i18n("15 min"));
     a->setData(15);
-    QObject::connect(a, SIGNAL(triggered(bool)), this, SLOT(slotSnooze()));
 
     a = m_SnoozeMenu->addAction(i18n("30 min"));
     a->setData(30);
-    QObject::connect(a, SIGNAL(triggered(bool)), this, SLOT(slotSnooze()));
 
     a = m_SnoozeMenu->addAction(i18n("60 min"));
     a->setData(60);
-    QObject::connect(a, SIGNAL(triggered()), this, SLOT(slotSnooze()));
 
     a = m_SnoozeMenu->addAction(i18n("90 min"));
     a->setData(90);
-    QObject::connect(a, SIGNAL(triggered()), this, SLOT(slotSnooze()));
 
     a = m_SnoozeMenu->addAction(i18n("120 min"));
     a->setData(120);
-    QObject::connect(a, SIGNAL(triggered()), this, SLOT(slotSnooze()));
 
     btnSnooze->setMenu(m_SnoozeMenu);
 //     btnSnooze->setPopupDelay(200);
@@ -868,9 +862,8 @@ void RadioView::slotSnooze(bool on)
 }
 
 
-void RadioView::slotSnooze()
+void RadioView::slotSnooze(QAction *a)
 {
-    QAction *a = dynamic_cast<QAction*>(sender());
     const QVariant &data = a->data();
     if (!data.isNull() && data.isValid() && data.canConvert<int>()) {
         sendCountdownSeconds(60 * data.value<int>(), querySuspendOnSleep());

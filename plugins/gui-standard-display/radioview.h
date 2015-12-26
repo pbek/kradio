@@ -137,7 +137,7 @@ protected slots:
     void slotConfigure (bool show);
     void slotRecord ();
     void slotSnooze (bool start);
-    void slotSnooze ();
+    void slotSnooze (QAction *a);
     void slotStartDefaultRecording();
     void slotRecordingMenu(QAction *a);
     void slotComboStationSelected(int);
