@@ -21,6 +21,7 @@ macro(process_po_files)
             list(APPEND _gmoFiles ${_gmoFile})
         endforeach()
 
-        add_custom_target(translations ALL DEPENDS ${_gmoFiles})
+        string(REGEX REPLACE "^kradio4_plugin_(.*)" "\\1" _name "${catalogname}")
+        add_custom_target(translations-${_name} ALL DEPENDS ${_gmoFiles})
     endif()
 endmacro()

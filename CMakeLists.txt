@@ -1,7 +1,6 @@
 project(kradio4)
 
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-cmake_policy(SET CMP0002 OLD)  # duplicated translations targets
 cmake_policy(SET CMP0059 OLD)
 cmake_policy(SET CMP0064 OLD)
 
