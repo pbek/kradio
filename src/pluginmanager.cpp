@@ -32,7 +32,6 @@
 #include <klocalizedstring.h>
 #include <kconfig.h>
 #include <kprogressdialog.h>
-#include <kmenu.h>
 #include <kwindowsystem.h>
 #include <kmessagebox.h>
 
@@ -747,7 +746,7 @@ void  PluginManager::aboutToQuit()
 
 
 
-KMenu * PluginManager::getPluginHideShowMenu()
+QMenu * PluginManager::getPluginHideShowMenu()
 {
     if (!m_widgetPluginHideShowMenu) {
         updatePluginHideShowMenu();
@@ -758,7 +757,7 @@ KMenu * PluginManager::getPluginHideShowMenu()
 void PluginManager::updatePluginHideShowMenu()
 {
     if (!m_widgetPluginHideShowMenu) {
-        m_widgetPluginHideShowMenu = new KMenu();
+        m_widgetPluginHideShowMenu = new QMenu();
     }
     m_widgetPluginHideShowMenu->clear();
     QAction *a = NULL;

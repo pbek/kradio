@@ -46,7 +46,6 @@
 #include <kurllabel.h>
 #include <kurlrequester.h>
 #include <klocalizedstring.h>
-#include <kmenu.h>
 #include <kdemacros.h>
 #include <ktoolinvocation.h>
 
@@ -80,7 +79,7 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     comboStereoMode->addItem(i18nc("Sound mode, monophonic", "Mono"),     (int)STATION_STEREO_OFF);
     comboStereoMode->addItem(i18nc("Sound mode, stereophonic", "Stereo"), (int)STATION_STEREO_ON);
 
-    m_loadPopup = new KMenu(buttonLoadPresets);
+    m_loadPopup = new QMenu(buttonLoadPresets);
     m_loadPopup->addAction(KIcon("document-open"), i18n("Load and replace presets"), this, SLOT(slotLoadPresets()));
     m_loadPopup->addAction(KIcon("list-add"),      i18n("Load and add presets"),     this, SLOT(slotAddPresets ()));
     buttonLoadPresets->setMenu(m_loadPopup);
@@ -134,7 +133,7 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
 
 
 
-    m_stationTypeMenu = new KMenu(this);
+    m_stationTypeMenu = new QMenu(this);
 
     const QList<RadioStation *> &classes = RadioStation::getStationClasses();
     const RadioStation *st = NULL;

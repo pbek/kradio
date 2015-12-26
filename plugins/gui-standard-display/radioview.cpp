@@ -25,6 +25,7 @@
 #include <QStackedWidget>
 #include <QGridLayout>
 #include <QApplication>
+#include <QMenu>
 
 #include <kcmdlineargs.h>
 #include <kcombobox.h>
@@ -157,18 +158,18 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     l04->addWidget (btnPlugins,   2, 1);
     l06->addWidget (btnHelp);
 
-    m_pauseMenu     = new KMenu(this);
+    m_pauseMenu     = new QMenu(this);
     m_pauseMenuItem = m_pauseMenu->addAction(KIcon("media-playback-pause"), i18n("Pause KRadio"));
     QObject::connect(m_pauseMenuItem, SIGNAL(triggered()), this, SLOT(slotPause()));
     btnPower->setMenu(m_pauseMenu);
 
-    m_RecordingMenu            = new KMenu(btnRecording);
+    m_RecordingMenu            = new QMenu(btnRecording);
     m_recordingDefaultMenuItem = m_RecordingMenu->addAction(KIcon("media-record"), i18n("Start Recording"));
     QObject::connect(m_RecordingMenu,            SIGNAL(triggered(QAction *)), this, SLOT(slotRecordingMenu(QAction *)));
     QObject::connect(m_recordingDefaultMenuItem, SIGNAL(triggered()),          this, SLOT(slotStartDefaultRecording()));
     btnRecording->setMenu(m_RecordingMenu);
 
-    m_SnoozeMenu   = new KMenu(btnSnooze);
+    m_SnoozeMenu   = new QMenu(btnSnooze);
 
     QAction *a = NULL;
     a = m_SnoozeMenu->addAction(i18n("5 min"));

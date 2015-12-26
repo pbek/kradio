@@ -35,7 +35,6 @@ class KPageWidgetItem;
 
 struct ConfigPageInfo;
 class QMenu;
-class KMenu;
 class KRadioApp;
 
 
@@ -94,7 +93,7 @@ public :
     virtual void                       noticePluginRenamed(PluginBase *p, const QString &name);
 
 
-    virtual KMenu                     *getPluginHideShowMenu();
+    virtual QMenu                     *getPluginHideShowMenu();
 
 
 protected :
@@ -161,7 +160,7 @@ protected:
     QString                     m_configDialogTitle;
 //     QString                     m_aboutDialogTitle;
 
-    KMenu                      *m_widgetPluginHideShowMenu;
+    QMenu                      *m_widgetPluginHideShowMenu;
     QMap<QString, bool>         m_widgetsShownCache;
 };
 

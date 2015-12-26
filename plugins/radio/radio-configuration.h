@@ -24,7 +24,6 @@
 #include "ui_radio-configuration-ui.h"
 
 class RadioStationConfig;
-class KMenu;
 
 
 class RadioConfiguration : public QWidget,
@@ -110,7 +109,7 @@ protected:
     const IErrorLogClient               &m_logger;
     bool                                 m_dirty;
 
-    KMenu                               *m_stationTypeMenu;
+    QMenu                               *m_stationTypeMenu;
 };
 
 #endif

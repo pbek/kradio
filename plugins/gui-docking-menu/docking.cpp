@@ -834,7 +834,7 @@ void RadioDocking::buildRecordingMenu()
     QMap<QString, SoundStreamID> streams;
     queryEnumerateSourceSoundStreams(streams);
 
-    KMenu *m = new KMenu(m_menu);
+    QMenu *m = new QMenu(m_menu);
 
     m_recordingID = m->addAction(KIcon("media-record"), i18n("Start Recording"));
     QObject::connect(m_recordingID, SIGNAL(triggered()),          this, SLOT(slotStartDefaultRecording()));

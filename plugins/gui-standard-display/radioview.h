@@ -30,7 +30,6 @@
 #include "radioview_element.h"
 
 class KComboBox;
-class KMenu;
 
 class QStackedWidget;
 class QToolButton;
@@ -194,9 +193,9 @@ protected:
 
     IRadioDevice                  *currentDevice;
 
-    KMenu                         *m_RecordingMenu;
-    KMenu                         *m_pauseMenu;
-    KMenu                         *m_SnoozeMenu;
+    QMenu                         *m_RecordingMenu;
+    QMenu                         *m_pauseMenu;
+    QMenu                         *m_SnoozeMenu;
     QMap<SoundStreamID, QAction*>  m_StreamID2MenuID;
 
     QAction                       *m_recordingDefaultMenuItem;
