@@ -29,6 +29,14 @@ find_package( Boost 1.20 REQUIRED)
 
 ########################################################################
 
+find_program(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
+if(NOT GETTEXT_MSGFMT_EXECUTABLE)
+    message(STATUS "msgfmt not found. Translations will *not* be installed")
+endif()
+include(MacroProcessPoFiles)
+
+########################################################################
+
 ADD_DEFINITIONS (
     -DKRADIO_VERSION="${KRADIO_VERSION}"
     ${KDE4_DEFINITIONS}
