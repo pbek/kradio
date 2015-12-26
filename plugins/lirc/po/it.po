@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2014-03-03 00:46+0100\n"
+"PO-Revision-Date: 2015-12-25 16:15+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -158,10 +158,10 @@ msgstr "Doppio clic sulle voci per cambiare le assegnazioni"
 #, kde-format
 msgctxt "@title"
 msgid "LIRC"
-msgstr ""
+msgstr "LIRC"
 
 #: lircsupport.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Linux Infrared Control (LIRC) Support"
 msgctxt "@title"
 msgid "Linux Infrared Control (LIRC) Support"
@@ -171,13 +171,13 @@ msgstr "Supporto per Linux Infrared Control (LIRC)"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte"
-msgstr ""
+msgstr "(c) 2002-2005 Martin Witte"
 
 #: lircsupport.cpp:60
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: lircsupport.cpp:71 lircsupport.cpp:498
 #, kde-format

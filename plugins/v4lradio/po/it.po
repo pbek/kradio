@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2015-12-23 19:01+0100\n"
+"PO-Revision-Date: 2015-12-25 16:15+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -488,10 +488,10 @@ msgstr "Seleziona il dispositivo radio"
 #, kde-format
 msgctxt "@title"
 msgid "V4L/V4L2"
-msgstr ""
+msgstr "V4L/V4L2"
 
 #: v4lradio.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Support for V4L(2) Radio Devices"
 msgctxt "@title"
 msgid "Support for V4L(2) Radio Devices"
@@ -501,24 +501,24 @@ msgstr "Supporto per i dispositivi radio V4L(2)"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
+msgstr "(c) 2002-2005 Martin Witte, Klas Kalass"
 
 #: v4lradio.cpp:67
 #, kde-format
 msgid "Provides support for V4L/V4L2 based radio cards."
-msgstr ""
+msgstr "Fornisce il supporto per le schede radio basate su V4L/V4L2."
 
 #: v4lradio.cpp:70
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: v4lradio.cpp:71
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: v4lradio.cpp:84
 #, kde-format

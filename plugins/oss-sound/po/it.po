@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2014-03-03 00:19+0100\n"
+"PO-Revision-Date: 2015-12-25 16:17+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -24,10 +24,10 @@ msgstr ""
 #, kde-format
 msgctxt "@title Open Sound System"
 msgid "OSS"
-msgstr ""
+msgstr "OSS"
 
 #: oss-sound.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Open Sound System (OSS) Support"
 msgctxt "@title"
 msgid "Open Sound System (OSS) Support"
@@ -37,13 +37,13 @@ msgstr "Supporto per Open Sound System (OSS)"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2004 Martin Witte"
-msgstr ""
+msgstr "(c) 2004 Martin Witte"
 
 #: oss-sound.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: oss-sound.cpp:61
 #, kde-format

@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2014-03-03 00:48+0100\n"
+"PO-Revision-Date: 2015-12-26 00:58+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -36,36 +36,36 @@ msgid "Background color:"
 msgstr "Colore dello sfondo:"
 
 #: radioview.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Standard Display"
 msgctxt "@title"
 msgid "Standard Display"
-msgstr "Display standard di KRadio"
+msgstr "Schermo standard"
 
 #: radioview.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Standard Display"
 msgctxt "@title"
 msgid "Standard Radio Display"
-msgstr "Display standard di KRadio"
+msgstr "Schermo standard della radio"
 
 #: radioview.cpp:61
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
+msgstr "(c) 2002-2005 Martin Witte, Klas Kalass"
 
 #: radioview.cpp:65
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: radioview.cpp:66
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: radioview.cpp:76
 #, kde-format

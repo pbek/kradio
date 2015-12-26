@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2014-03-03 00:19+0100\n"
+"PO-Revision-Date: 2015-12-25 17:56+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -66,13 +66,13 @@ msgstr "Canale mixer di riproduzione:"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Luigi Toscano,Giovanni Scafora"
 
 #: rc.cpp:20
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "luigi.toscano@tiscali.it,"
 
 #: timeshifter-configuration.cpp:146
 #, kde-format
@@ -85,11 +85,11 @@ msgid "Select TimeShifter Temporary File"
 msgstr "Seleziona il file temporaneo per l'ascolto in differita"
 
 #: timeshifter.cpp:33
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "TimeShift Support"
 msgctxt "@title"
 msgid "TimeShift Support"
-msgstr "Supporto all'ascolto in differita"
+msgstr "Supporto per l'ascolto in differita"
 
 #: timeshifter.cpp:47
 #, kde-format

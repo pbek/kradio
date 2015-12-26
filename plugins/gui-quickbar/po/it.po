@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2014-03-03 00:20+0100\n"
+"PO-Revision-Date: 2015-12-25 16:14+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -21,14 +21,14 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: quickbar.cpp:51
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Quickbar"
 msgctxt "@title"
 msgid "Quickbar"
 msgstr "Barra veloce"
 
 #: quickbar.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Radio Station Quick Selection Toolbar"
 msgctxt "@title"
 msgid "Radio Station Quick Selection Toolbar"
@@ -38,19 +38,19 @@ msgstr "Barra di selezione rapida delle stazioni radio"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
+msgstr "(c) 2002-2005 Martin Witte, Klas Kalass"
 
 #: quickbar.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: quickbar.cpp:60
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: quickbar.cpp:70
 #, kde-format

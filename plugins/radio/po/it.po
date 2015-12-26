@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2014-03-25 01:40+0100\n"
+"PO-Revision-Date: 2015-12-25 16:17+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -95,7 +95,7 @@ msgstr[0] "adesso hai 1 stazione"
 msgstr[1] "adesso hai %1 stazioni"
 
 #: radio.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Central Radio Device Multiplexer"
 msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
@@ -105,19 +105,19 @@ msgstr "Multiplexer del dispositivo radio centrale"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
+msgstr "(c) 2002-2005 Martin Witte, Klas Kalass"
 
 #: radio.cpp:45
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: radio.cpp:46
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: radio.cpp:55
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2015-12-21 21:52+0100\n"
+"PO-Revision-Date: 2015-12-25 16:02+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -452,14 +452,14 @@ msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
 
 #: recording.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Recording"
 msgctxt "@title"
 msgid "Recording"
 msgstr "Registrazione"
 
 #: recording.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "KRadio Recording Plugin"
 msgctxt "@title"
 msgid "Recording Plugin"
@@ -469,13 +469,13 @@ msgstr "Estensione registrazione di KRadio"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte"
-msgstr ""
+msgstr "(c) 2002-2005 Martin Witte"
 
 #: recording.cpp:56 recording-monitor.cpp:44
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: recording.cpp:68
 #, kde-format
@@ -545,18 +545,18 @@ msgid "%1 dB"
 msgstr "%1 dB"
 
 #: recording-monitor.cpp:36
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Recording Monitor"
 msgctxt "@title"
 msgid "Recording Monitor"
 msgstr "Monitor della registrazione"
 
 #: recording-monitor.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Recording Monitor"
 msgctxt "@title"
 msgid "Recording Monitor Plugin"
-msgstr "Monitor della registrazione"
+msgstr "Estensione monitor della registrazione"
 
 #: recording-monitor.cpp:50
 #, kde-format

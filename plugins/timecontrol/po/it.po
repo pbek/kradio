@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2014-09-19 20:12+0200\n"
+"PO-Revision-Date: 2015-12-25 16:12+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -299,41 +299,41 @@ msgid "<do not change>"
 msgstr "<non modificare>"
 
 #: timecontrol.cpp:47
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Alarms"
 msgctxt "@title"
 msgid "Alarms"
-msgstr "Allarmi"
+msgstr "Avvisi"
 
 #: timecontrol.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Time Control and Alarm Functions"
 msgctxt "@title"
 msgid "Time Control and Alarm Functions"
-msgstr "Funzioni di controllo del tempo e degli allarmi"
+msgstr "Funzioni di controllo del tempo e degli avvisi"
 
 #: timecontrol.cpp:51
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
+msgstr "(c) 2002-2005 Martin Witte, Klas Kalass"
 
 #: timecontrol.cpp:52
 #, kde-format
 msgid "Provides alarms and sleep countdown."
-msgstr ""
+msgstr "Fornisce avvisi e il conto alla rovescia alla sospensione."
 
 #: timecontrol.cpp:55
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: timecontrol.cpp:56
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
-msgstr ""
+msgstr "Klas Kalass"
 
 #: timecontrol.cpp:66
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-25 15:46+0100\n"
-"PO-Revision-Date: 2015-12-21 21:55+0100\n"
+"PO-Revision-Date: 2015-12-25 16:05+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -21,14 +21,14 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: alsa-sound.cpp:46
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "ALSA Sound"
 msgctxt "@title"
 msgid "ALSA Sound"
 msgstr "Audio ALSA"
 
 #: alsa-sound.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Advanced Linux Sound Architecture (ALSA) Support"
 msgctxt "@title"
 msgid "Advanced Linux Sound Architecture (ALSA) Support"
@@ -38,13 +38,13 @@ msgstr "Supporto per Advanced Linux Sound Architecture (ALSA)"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2005 Martin Witte"
-msgstr ""
+msgstr "(c) 2005 Martin Witte"
 
 #: alsa-sound.cpp:54
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
-msgstr ""
+msgstr "Martin Witte"
 
 #: alsa-sound.cpp:66
 #, kde-format
@@ -716,7 +716,7 @@ msgstr "Mono"
 #: rc.cpp:168 rc.cpp:341
 #, kde-format
 msgid "Override capture format"
-msgstr "Sovrascrivi il formato di cattura"
+msgstr "Ridefinisci il formato di cattura"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:751
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage1)
