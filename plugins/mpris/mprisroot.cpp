@@ -21,69 +21,69 @@
 #include <KDE/KAboutData>
 #include <KDE/KCmdLineArgs>
 
-MPRIRoot::MPRIRoot(MPRISSupport *parent)
+MPRISRoot::MPRISRoot(MPRISSupport *parent)
     : QDBusAbstractAdaptor(parent)
     , MPRISBase(this)
     , m_support(parent)
 {
 }
 
-void MPRIRoot::Raise() const
+void MPRISRoot::Raise() const
 {
     m_support->showAllWidgetPlugins();
 }
 
-void MPRIRoot::Quit() const
+void MPRISRoot::Quit() const
 {
     qApp->quit();
 }
 
-bool MPRIRoot::CanQuit() const
+bool MPRISRoot::CanQuit() const
 {
     return true;
 }
 
-bool MPRIRoot::Fullscreen() const
+bool MPRISRoot::Fullscreen() const
 {
     return false;
 }
 
-void MPRIRoot::setFullscreen(bool fullscreen)
+void MPRISRoot::setFullscreen(bool fullscreen)
 {
     Q_UNUSED(fullscreen)
 }
 
-bool MPRIRoot::CanSetFullscreen() const
+bool MPRISRoot::CanSetFullscreen() const
 {
     return false;
 }
 
-bool MPRIRoot::CanRaise() const
+bool MPRISRoot::CanRaise() const
 {
     return true;
 }
 
-bool MPRIRoot::HasTrackList() const
+bool MPRISRoot::HasTrackList() const
 {
     return false;
 }
 
-QString MPRIRoot::Identity() const
+QString MPRISRoot::Identity() const
 {
     return KCmdLineArgs::aboutData()->programName();
 }
 
-QString MPRIRoot::DesktopEntry() const
+QString MPRISRoot::DesktopEntry() const
 {
     return "kde4-" + KCmdLineArgs::aboutData()->appName();
 }
 
-QStringList MPRIRoot::SupportedUriSchemes() const
+QStringList MPRISRoot::SupportedUriSchemes() const
 {
     return QStringList();
 }
 
-QStringList MPRIRoot::SupportedMimeTypes() const
+QStringList MPRISRoot::SupportedMimeTypes() const
 {
     return QStringList();
 }

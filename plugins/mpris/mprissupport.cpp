@@ -77,7 +77,7 @@ void MPRISSupport::startPlugin()
 
         bool success = dbus.registerService(mpris2Name);
         if (success) {
-            QDBusAbstractAdaptor *rootAdaptor = new MPRIRoot(this);
+            QDBusAbstractAdaptor *rootAdaptor = new MPRISRoot(this);
             Q_UNUSED(rootAdaptor);
             QDBusAbstractAdaptor *playerAdaptor = new MPRISPlayer(this);
             connect(this, SIGNAL(powerChanged(bool)),

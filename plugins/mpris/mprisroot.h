@@ -24,8 +24,8 @@
 
 class MPRISSupport;
 
-class MPRIRoot : public QDBusAbstractAdaptor,
-                 public MPRISBase
+class MPRISRoot : public QDBusAbstractAdaptor,
+                  public MPRISBase
 {
 Q_OBJECT
 Q_CLASSINFO("D-Bus Interface", "org.mpris.MediaPlayer2")
@@ -41,7 +41,7 @@ Q_PROPERTY(QStringList SupportedUriSchemes READ SupportedUriSchemes)
 Q_PROPERTY(QStringList SupportedMimeTypes READ SupportedMimeTypes)
 
 public:
-    MPRIRoot(MPRISSupport *parent);
+    MPRISRoot(MPRISSupport *parent);
 
 public Q_SLOTS:
     void Raise() const;
