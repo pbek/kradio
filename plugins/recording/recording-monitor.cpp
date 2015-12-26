@@ -22,6 +22,7 @@
 #include <QPushButton>
 #include <QLayout>
 #include <QCheckBox>
+#include <QDialogButtonBox>
 
 #include <kcombobox.h>
 #include <klocalizedstring.h>
@@ -77,8 +78,9 @@ RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &nam
     m_labelHdrRate       ->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     m_labelHdrTime       ->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-    QPushButton *close     = new QPushButton(i18n("&Close"), this);
-    m_btnStartStop         = new QPushButton(i18n("&Record"), this);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
+    QPushButton *close = buttonBox->addButton(QDialogButtonBox::Close);
+    m_btnStartStop = buttonBox->addButton(i18n("&Record"), QDialogButtonBox::ActionRole);
     QObject::connect(close, SIGNAL(clicked()), this, SLOT(hide()));
     QObject::connect(m_btnStartStop, SIGNAL(clicked()), this, SLOT(slotStartStopRecording()));
 
@@ -89,12 +91,7 @@ RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &nam
     l->addLayout(hl0);
     hl0->addWidget(m_dataMonitor);
 
-    QHBoxLayout *hl2 = new QHBoxLayout();
-    l->addLayout(hl2);
-    hl2->addItem(new QSpacerItem(10, 1));
-    hl2->addWidget(close);
-    hl2->addWidget(m_btnStartStop);
-    hl2->addItem(new QSpacerItem(10, 1));
+    l->addWidget(buttonBox);
 
 
     m_comboSoundStreamSelector->addItem(i18n("nothing"));
