@@ -28,7 +28,6 @@ class PluginConfigurationDialog;
 class PluginManagerConfiguration;
 class QWidget;
 class KConfig;
-class QFrame;
 class KPageDialog;
 class KPageWidgetItem;
 

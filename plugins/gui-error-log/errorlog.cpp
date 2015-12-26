@@ -17,7 +17,6 @@
 
 #include "errorlog.h"
 
-#include <QFrame>
 #include <QDateTime>
 #include <QLayout>
 #include <QTextCodec>
@@ -98,7 +97,7 @@ ErrorLog::~ErrorLog()
 
 KTextEdit *ErrorLog::createTextEditPage(const QString &title, const KIcon &icon, KPageWidgetItem *&item)
 {
-    QFrame      *frame = new QFrame(this);
+    QWidget     *frame = new QWidget(this);
     QGridLayout *linfo = new QGridLayout(frame);
     KTextEdit   *edit  = new KTextEdit(frame);
     linfo->setSpacing( 5 );

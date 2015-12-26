@@ -754,7 +754,7 @@ void RadioView::addCommonConfigurationTab(RadioViewConfiguration */*c*/)
 /*    if (!c)
         return;
 
-    QFrame      *f = new QFrame(c);
+    QWidget     *f = new QWidget(c);
     QVBoxLayout *l = new QVBoxLayout(f);
     l->setSpacing(10);
 

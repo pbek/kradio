@@ -37,7 +37,6 @@
 
 #include <QProgressBar>
 #include <QLayout>
-#include <QFrame>
 #include <QMenu>
 
 #include "debug-profiler.h"
@@ -368,7 +367,7 @@ KPageWidgetItem *PluginManager::addConfigurationPage (const ConfigPageInfo &info
     getConfigDialog();
 
     // create empty config frame
-    QFrame *f = new QFrame();
+    QWidget *f = new QWidget();
 
     // fill config frame with layout ...
     QGridLayout *l = new QGridLayout(f);
@@ -452,7 +451,7 @@ ConfigPageInfo PluginManager::createOwnConfigurationPage()
 //
 //
 //     // create empty about frame
-//     QFrame *f = new QFrame();
+//     QWidget *f = new QWidget();
 //
 //     // fill config frame with layout ...
 //     QGridLayout *l = new QGridLayout(f);
