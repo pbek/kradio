@@ -45,6 +45,7 @@ KRADIO_EXPORT_PLUGIN(TimeShifter, aboutData())
 
 TimeShifter::TimeShifter (const QString &instanceID, const QString &name)
     : PluginBase(instanceID, name, i18n("TimeShifter Plugin")),
+      m_TempFileName("/tmp/" + KUser().loginName() + "-kradio-timeshifter-tempfile"),
       m_TempFileMaxSize(256*1024*1024),
       m_PlaybackMixerID(QString::null),
       m_PlaybackMixerChannel("PCM"),
@@ -57,8 +58,6 @@ TimeShifter::TimeShifter (const QString &instanceID, const QString &name)
       m_currentGoodQuality(false),
       m_currentStereo(false)
 {
-    KUser userid;
-    m_TempFileName = "/tmp/" + userid.loginName() + "-kradio-timeshifter-tempfile";
 }
 
 
