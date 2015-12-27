@@ -57,9 +57,7 @@ static KAboutData aboutData()
     return about;
 }
 
-//#ifdef HAVE_LIRC
 KRADIO_EXPORT_PLUGIN(LircSupport, aboutData())
-//#endif
 
 /////////////////////////////////////////////////////////////////////////////
 
