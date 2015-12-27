@@ -470,9 +470,7 @@ bool RadioDocking::noticeCountdownSecondsChanged(int /*n*/, bool /*suspendOnSlee
 QString RadioDocking::generateStationTitle() const
 {
     const RadioStation &rs = queryCurrentStation();
-    QString s = i18n("invalid station");
-    if (rs.isValid())
-        s = rs.name();
+    const QString s = rs.isValid() ? rs.name() : i18n("invalid station");
     return i18n("KRadio: %1", s);
 }
 
@@ -491,9 +489,7 @@ QString RadioDocking::generateAlarmTitle() const
 
 bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
 {
-    QString s = i18n("invalid station");
-    if (rs.isValid())
-        s = rs.longName();
+    const QString s = rs.isValid() ? rs.longName() : i18n("invalid station");
 
     const QString &rt = queryRDSRadioText();
     setToolTip(s + (rt.length() ? "\n" + rt : ""));
