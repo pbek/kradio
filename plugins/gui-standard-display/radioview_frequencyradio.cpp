@@ -610,16 +610,13 @@ void RadioViewFrequencyRadio::resizeEvent(QResizeEvent *e)
     RadioViewElement::resizeEvent(e);
 }
 
-void RadioViewFrequencyRadio::setParent(QWidget * parent)
+bool RadioViewFrequencyRadio::event(QEvent *e)
 {
-    RadioViewElement::setParent(parent);
-    setDisplayColors(m_colorActiveText, m_colorInactiveText, m_colorButton);
-}
-
-void RadioViewFrequencyRadio::setParent(QWidget * parent, Qt::WindowFlags f)
-{
-    RadioViewElement::setParent(parent, f);
-    setDisplayColors(m_colorActiveText, m_colorInactiveText, m_colorButton);
+    const bool ret = RadioViewElement::event(e);
+    if (e->type() == QEvent::ParentChange) {
+        setDisplayColors(m_colorActiveText, m_colorInactiveText, m_colorButton);
+    }
+    return ret;
 }
 
 void RadioViewFrequencyRadio::slotRadioTextTimer()

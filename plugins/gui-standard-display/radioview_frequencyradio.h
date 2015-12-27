@@ -127,11 +127,6 @@ RECEIVERS:
 
 // own stuff ;)
 
-public:
-
-    void setParent(QWidget * parent);
-    void setParent(QWidget * parent, Qt::WindowFlags f);
-
 protected:
     INLINE_IMPL_DEF_noticeConnectedI(IRadioDeviceClient);
     INLINE_IMPL_DEF_noticeConnectedI(IFrequencyRadioClient);
@@ -140,6 +135,7 @@ protected:
 
     void paintEvent(QPaintEvent *e);
     void resizeEvent(QResizeEvent *e);
+    bool event(QEvent *e);
 
 //     void updateRadioTextRing();
 
