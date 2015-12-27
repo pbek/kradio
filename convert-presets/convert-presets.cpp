@@ -1,4 +1,4 @@
-#include <kapplication.h>
+#include <QCoreApplication>
 #include <QString>
 #include <QTextStream>
 #include <QFile>
@@ -167,7 +167,7 @@ int main(int argc, char *argv[])
     options.add("+[preset files]", ki18n("preset files to convert"));
     KCmdLineArgs::addCmdLineOptions( options );
 
-    KApplication a (false);
+    QCoreApplication app(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
