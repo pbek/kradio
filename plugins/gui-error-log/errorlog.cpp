@@ -169,7 +169,7 @@ void    ErrorLog::hideEvent(QHideEvent *e)
 
 bool ErrorLog::logError  (const QString &s)
 {
-    logToPage(m_pageInfo, s, true);
+    logToPage(m_pageErrors, s, true);
     return true;
 }
 
