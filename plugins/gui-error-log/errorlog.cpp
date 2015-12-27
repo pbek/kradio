@@ -55,10 +55,6 @@ KRADIO_EXPORT_PLUGIN(ErrorLog, aboutData())
 ErrorLog::ErrorLog(const QString &instanceID, const QString &name)
     :  KPageDialog(),
        WidgetPluginBase(this, instanceID, name, i18n("Error Logger")),
-       m_debug(NULL),
-       m_infos(NULL),
-       m_warnings(NULL),
-       m_errors(NULL),
        init_done(false)
 {
     setFaceType        (KPageDialog::List);
@@ -73,16 +69,16 @@ ErrorLog::ErrorLog(const QString &instanceID, const QString &name)
 
     setWindowTitle(i18n("KRadio Logger"));
 
-    m_teInfos = createTextEditPage(i18n("Information"), KIcon("dialog-information"), m_infos);
+    setTextEditPage(i18n("Information"), KIcon("dialog-information"), &m_pageInfo);
     logInfo(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    m_teWarnings = createTextEditPage(i18n("Warnings"), KIcon("dialog-warning"), m_warnings);
+    setTextEditPage(i18n("Warnings"), KIcon("dialog-warning"), &m_pageWarnings);
     logWarning(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    m_teErrors = createTextEditPage(i18n("Errors"), KIcon("dialog-error"), m_errors);
+    setTextEditPage(i18n("Errors"), KIcon("dialog-error"), &m_pageErrors);
     logError(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    m_teDebug = createTextEditPage(i18n("Debugging"), KIcon("system-search"), m_debug);
+    setTextEditPage(i18n("Debugging"), KIcon("system-search"), &m_pageDebug);
     logDebug(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
     QObject::connect(this, SIGNAL(user1Clicked()), this, SLOT(slotUser1()));
@@ -96,22 +92,32 @@ ErrorLog::~ErrorLog()
 }
 
 
-KTextEdit *ErrorLog::createTextEditPage(const QString &title, const KIcon &icon, KPageWidgetItem *&item)
+void ErrorLog::setTextEditPage(const QString &title, const KIcon &icon, Page *page)
 {
     QWidget     *frame = new QWidget(this);
     QGridLayout *linfo = new QGridLayout(frame);
-    KTextEdit   *edit  = new KTextEdit(frame);
+    page->edit         = new KTextEdit(frame);
     linfo->setSpacing( 5 );
     linfo->setMargin ( 0 );
-    linfo->addWidget(edit, 0, 0);
-    edit->setReadOnly(true);
-    edit->setUndoRedoEnabled(false);
+    linfo->addWidget(page->edit, 0, 0);
+    page->edit->setReadOnly(true);
+    page->edit->setUndoRedoEnabled(false);
 
-    item = addPage(frame, title);
-    item->setHeader(title);
-    item->setIcon(icon);
+    page->item = addPage(frame, title);
+    page->item->setHeader(title);
+    page->item->setIcon(icon);
+}
 
-    return edit;
+void ErrorLog::logToPage(Page &page, const QString &text, bool showUp)
+{
+    const QString escaped = Qt::escape(text);
+    const QString msg = "<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n";
+    QMutexLocker lock(&page.mutex);
+    page.edit->append(msg);
+    if (showUp && init_done) {
+        setCurrentPage(page.item);
+        show();
+    }
 }
 
 
@@ -163,37 +169,25 @@ void    ErrorLog::hideEvent(QHideEvent *e)
 
 bool ErrorLog::logError  (const QString &s)
 {
-    const QString escaped = Qt::escape(s);
-    QMutexLocker   lock(&m_sequentializer);
-    m_teErrors->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
-    if (init_done) {
-        setCurrentPage(m_errors);
-        show();
-    }
+    logToPage(m_pageInfo, s, true);
     return true;
 }
 
 bool ErrorLog::logWarning(const QString &s)
 {
-    const QString escaped = Qt::escape(s);
-    QMutexLocker   lock(&m_sequentializer);
-    m_teWarnings->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
+    logToPage(m_pageWarnings, s);
     return true;
 }
 
 bool ErrorLog::logInfo   (const QString &s)
 {
-    const QString escaped = Qt::escape(s);
-    QMutexLocker   lock(&m_sequentializer);
-    m_teInfos->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
+    logToPage(m_pageInfo, s);
     return true;
 }
 
 bool ErrorLog::logDebug   (const QString &s)
 {
-    const QString escaped = Qt::escape(s);
-    QMutexLocker   lock(&m_sequentializer);
-    m_teDebug->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
+    logToPage(m_pageDebug, s);
     return true;
 }
 
@@ -222,14 +216,14 @@ void ErrorLog::slotUser1()
             QTextStream outs(&tmpFile);
             outs.setCodec(QTextCodec::QTextCodec::codecForName("UTF-8"));
 
-            if (currentPage() == m_errors) {
-                outs << m_teErrors->toPlainText();
-            } else if (currentPage() == m_warnings) {
-                outs << m_teWarnings->toPlainText();
-            } else if (currentPage() == m_infos) {
-                outs << m_teInfos->toPlainText();
-            } else if (currentPage() == m_debug) {
-                outs << m_teDebug->toPlainText();
+            if (currentPage() == m_pageErrors.item) {
+                outs << m_pageErrors.edit->toPlainText();
+            } else if (currentPage() == m_pageWarnings.item) {
+                outs << m_pageWarnings.edit->toPlainText();
+            } else if (currentPage() == m_pageInfo.item) {
+                outs << m_pageInfo.edit->toPlainText();
+            } else if (currentPage() == m_pageDebug.item) {
+                outs << m_pageDebug.edit->toPlainText();
             }
 
             if (tmpFile.error()) {

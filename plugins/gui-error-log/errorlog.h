@@ -63,7 +63,14 @@ protected:
 
     virtual ConfigPageInfo createConfigurationPage () { return ConfigPageInfo(); }
 
-    KTextEdit *createTextEditPage(const QString &title, const KIcon &icon, KPageWidgetItem *& item);
+    struct Page {
+        QMutex mutex;
+        KTextEdit *edit;
+        KPageWidgetItem *item;
+    };
+
+    void setTextEditPage(const QString &title, const KIcon &icon, Page *page);
+    void logToPage(Page &page, const QString &text, bool showUp = false);
 
 // IErrorLog
 
@@ -81,19 +88,12 @@ protected slots:
 
 protected:
 
-    KTextEdit       *m_teDebug,
-                    *m_teInfos,
-                    *m_teWarnings,
-                    *m_teErrors;
-
-    KPageWidgetItem *m_debug,
-                    *m_infos,
-                    *m_warnings,
-                    *m_errors;
+    Page             m_pageInfo,
+                     m_pageWarnings,
+                     m_pageErrors,
+                     m_pageDebug;
 
     bool             init_done;
-
-    QMutex           m_sequentializer;
 };
 
 #endif
