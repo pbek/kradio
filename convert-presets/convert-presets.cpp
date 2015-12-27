@@ -3,7 +3,6 @@
 #include <QTextStream>
 #include <QFile>
 #include <klocalizedstring.h>
-#include <kdebug.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <QRegExp>
@@ -11,6 +10,7 @@
 #include <sys/fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define dev_urandom  "/dev/urandom"
 
@@ -32,7 +32,8 @@ QString createStationID()
     for (int i = 0; i < buffersize; ++i)
         srandom += QString().sprintf("%02X", (unsigned int)buffer[i]);
 
-//    kDebug() << "generated StationID:" << stime << srandom;
+//    fprintf(stderr, "generated StationID: %s, %s\n",
+//                    qPrintable(stime), qPrintable(srandom));
 
     return stime + srandom;
 }
@@ -50,7 +51,7 @@ bool convertFile(const QString &file)
     QFile presetFile (file);
 
     if (! presetFile.open(QIODevice::ReadOnly)) {
-        kDebug() << "error opening preset file" << file << "for reading";
+        fprintf(stderr, "error opening preset file %s for reading\n", qPrintable(file));
         return false;
     }
 
@@ -64,7 +65,7 @@ bool convertFile(const QString &file)
     }
 
     if (xmlData.indexOf("<format>", 0, Qt::CaseInsensitive) >= 0) {
-        kDebug() << "file" << file << "already in new format";
+        fprintf(stdout, "%s already in new format\n", qPrintable(file));
         // but add <?xml line at beginning if missing
 
         {
@@ -128,7 +129,7 @@ bool convertFile(const QString &file)
     ////////////////////////////////////////////////////////////////////////
 
     if (! presetFile.open(QIODevice::WriteOnly)) {
-        kDebug() << "error opening preset file" << file << "for writing";
+        fprintf(stderr, "error opening preset file %s for writing\n", qPrintable(file));
        return false;
     }
 
@@ -139,8 +140,8 @@ bool convertFile(const QString &file)
     outs << xmlData;
 
     if (presetFile.error() != QFile::NoError) {
-        kDebug() << "error writing preset file" << file
-                 << "(" << presetFile.error() << ")";
+        fprintf(stderr, "error writing preset file %s (%s)\n",
+                        qPrintable(file), qPrintable(presetFile.error()));
         return false;
     }
 
@@ -176,11 +177,11 @@ int main(int argc, char *argv[])
             return -1;
         } else {
             if (! args->isSet("q"))
-                kDebug() << x << ": ok";
+                fprintf(stdout, "%s: ok\n", qPrintable(x));
         }
     }
     if (args->count() == 0) {
-        kDebug() << "no input";
+        fprintf(stderr, "no input\n");
         return -1;
     }
 
