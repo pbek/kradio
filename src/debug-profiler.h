@@ -18,7 +18,7 @@
 #ifndef KRADIO_DEBUG_PROFILER_H
 #define KRADIO_DEBUG_PROFILER_H
 
-#include <QString>
+#include <QByteArray>
 #include <QMap>
 #include <kdemacros.h>
 
@@ -42,8 +42,8 @@ public:
     Profiler();
     virtual ~Profiler();
 
-    void startProfile(const QString &descr);
-    void stopProfile (const QString &descr);
+    void startProfile(const QByteArray &descr);
+    void stopProfile (const QByteArray &descr);
 
     void printData();
 
@@ -69,7 +69,7 @@ protected:
         long long maxCounter;
     };
 
-    QMap<QString, profile_data> m_ProfileData;
+    QMap<QByteArray, profile_data> m_ProfileData;
 };
 
 
@@ -95,13 +95,13 @@ extern KDE_EXPORT MemProfiler  global_mem_profiler;
 class KDE_EXPORT BlockProfiler
 {
 public:
-    BlockProfiler(const QString &descr);
+    BlockProfiler(const QByteArray &descr);
     ~BlockProfiler();
 
     void stop();
 
 protected:
-    QString m_Description;
+    QByteArray m_Description;
 };
 
 

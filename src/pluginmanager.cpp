@@ -633,7 +633,7 @@ void PluginManager::restoreState (KConfig *c)
 
     int idx = n;
     for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it, ++idx) {
-        BlockProfiler profile_plugin("PluginManager::restoreState - " + (*it)->pluginClassName());
+        BlockProfiler profile_plugin("PluginManager::restoreState - " + (*it)->pluginClassName().toLatin1());
         if (m_showProgressBar)
             progress->QWidget::setWindowTitle(i18n("Initializing Plugin %1", (*it)->pluginClassName()));
 

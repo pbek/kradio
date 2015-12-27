@@ -288,7 +288,7 @@ PluginManager *KRadioApp::createNewInstance(const QString &_name)
 void KRadioApp::LoadLibrary (const QString &library)
 {
     BlockProfiler profiler("KRadioApp::LoadLibrary");
-    BlockProfiler libprofiler("KRadioApp::LoadLibrary - " + library);
+    BlockProfiler libprofiler("KRadioApp::LoadLibrary - " + library.toLatin1());
 
     PluginLibraryInfo libinfo(library);
     if (libinfo.valid()) {
@@ -335,7 +335,7 @@ void KRadioApp::UnloadLibrary (const QString &library)
 PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &instanceID, const QString &class_name, const QString &object_name)
 {
     BlockProfiler all_profiler  ("KRadioApp::CreatePlugin");
-    BlockProfiler class_profiler("KRadioApp::CreatePlugin - " + class_name);
+    BlockProfiler class_profiler("KRadioApp::CreatePlugin - " + class_name.toLatin1());
 
     BlockProfiler create_profiler("KRadioApp::CreatePlugin - create");
 

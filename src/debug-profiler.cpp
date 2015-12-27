@@ -17,7 +17,7 @@
 
 #include "debug-profiler.h"
 
-#include <QStringList>
+#include <QList>
 
 #include <sys/resource.h>
 #include <stdio.h>
@@ -46,12 +46,13 @@ void Profiler::startInternalCounter() {
     m_tmpStartVal = getCounter();
 }
 
-void  Profiler::startProfile(const QString &descr)
+void  Profiler::startProfile(const QByteArray &descr)
 {
     stopInternalCounter();
 
-    if (m_ProfileData.contains(descr)) {
-        profile_data &d = m_ProfileData[descr];
+    QMap<QByteArray, profile_data>::iterator it = m_ProfileData.find(descr);
+    if (it != m_ProfileData.end()) {
+        profile_data &d = *it;
         d.startCounter = m_internalCounter;
     } else {
         m_ProfileData.insert(descr, profile_data(m_internalCounter));
@@ -61,12 +62,13 @@ void  Profiler::startProfile(const QString &descr)
 }
 
 
-void Profiler::stopProfile (const QString &descr)
+void Profiler::stopProfile (const QByteArray &descr)
 {
     stopInternalCounter();
 
-    if (!descr.isNull() && m_ProfileData.contains(descr)) {
-        profile_data &d = m_ProfileData[descr];
+    QMap<QByteArray, profile_data>::iterator it = descr.isEmpty() ? m_ProfileData.end() : m_ProfileData.find(descr);
+    if (it != m_ProfileData.end()) {
+        profile_data &d = *it;
         long long diff = m_internalCounter - d.startCounter;
         d.accumulatedCounter += diff;
         if (d.maxCounter < diff)
@@ -84,16 +86,16 @@ void Profiler::printData ()
 {
     stopInternalCounter();
 
-    QStringList keys=m_ProfileData.keys();
-    keys.sort();
-    foreach (const QString &key, keys) {
+    QList<QByteArray> keys = m_ProfileData.keys();
+    qSort(keys);
+    foreach (const QByteArray &key, keys) {
         int l = key.length();
         l = (((l-1) / 25) + 1) * 25;
         if (l < 50) l = 50;
-        const profile_data &d = m_ProfileData[key];
+        const profile_data d = m_ProfileData.value(key);
         printf("%-*s: total: %3.8f (%9lli)  avg: %3.8f  min: %3.8f  max: %3.8f\n",
                l,
-               qPrintable(key),
+               key.constData(),
                (double)d.accumulatedCounter / 1.666e9,
                d.callCounter,
                (double)d.accumulatedCounter / (double)d.callCounter / 1.666e9,
@@ -116,7 +118,7 @@ long long MemProfiler::getCounter() const
 }
 
 
-BlockProfiler::BlockProfiler(const QString &descr)
+BlockProfiler::BlockProfiler(const QByteArray &descr)
     : m_Description(descr)
 {
     global_mem_profiler.startProfile(m_Description);
@@ -133,6 +135,6 @@ void BlockProfiler::stop()
 {
     global_time_profiler.stopProfile(m_Description);
     global_mem_profiler.stopProfile(m_Description);
-    m_Description = QString::null;
+    m_Description = QByteArray();
 }
 
