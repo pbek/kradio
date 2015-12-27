@@ -59,10 +59,10 @@ protected:
     void                        setupStreamJob(const KUrl &url, const QString &metaDataEncoding);
     void                        startStreamJob();
 
-    QMap<QString, QString>      splitExtractHttpHeaderKeys(QString httpHeader);
+    QMap<QString, QString>      splitExtractHttpHeaderKeys(const QString &httpHeader);
     void                        analyzeHttpHeader(KIO::Job *job);
-    QByteArray                  analyzeICYHeader(QByteArray packet);
-    void                        analyzeHttpHeader(QString httpHeader, KIO::MetaData &metaData);
+    QByteArray                  analyzeICYHeader(const QByteArray &packet);
+    void                        analyzeHttpHeader(const QString &httpHeader, KIO::MetaData &metaData);
 
     void                        handleStreamData(const QByteArray &data);
     void                        handleMetaData(const QByteArray &data, bool complete);

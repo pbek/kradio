@@ -170,7 +170,7 @@ void IcyHttpHandler::stopStreamDownload(bool emitSigFinished)
 }
 
 
-QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(QString httpHeader)
+QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(const QString &httpHeader)
 {
     // urg... QHttpResponseHeader is deprecated and does not parse ICY headers correctly.
     // let's do it ourselves
@@ -178,7 +178,7 @@ QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(QString httpHe
 
     // fix HTTP header line continuations
     QStringList  consolidatedLines;
-    foreach(QString line, lines) {
+    foreach(const QString &line, lines) {
         if (line.startsWith(" ")) {
             consolidatedLines.last() += line;
         } else {
@@ -188,7 +188,7 @@ QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(QString httpHe
 
     // extract keys form header lines
     QMap<QString, QString> headerMap;
-    foreach(QString line, consolidatedLines) {
+    foreach(const QString &line, consolidatedLines) {
         QRegExp  colonRegExp("\\s*:\\s*");
         int colonIdx = colonRegExp.indexIn(line);
         if (colonRegExp.matchedLength() > 0 && colonIdx > 0 && colonIdx < line.length()) {
@@ -201,30 +201,30 @@ QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(QString httpHe
 }
 
 
-void IcyHttpHandler::analyzeHttpHeader(QString httpHeader, KIO::MetaData &metaData)
+void IcyHttpHandler::analyzeHttpHeader(const QString &httpHeader, KIO::MetaData &metaData)
 {
-    QMap<QString, QString> headerMap      = splitExtractHttpHeaderKeys(httpHeader);
-    QString                icyMetaIntKey  = "icy-metaint";
-    QString                contentTypeKey = "content-type";
+    const QMap<QString, QString> headerMap = splitExtractHttpHeaderKeys(httpHeader);
 
-    foreach(QString key, headerMap.keys()) {
-        if (key.toLower() == icyMetaIntKey) {
-            m_ICYMetaInt = headerMap.value(key).toInt();
+    QMap<QString, QString>::const_iterator it;
+    const QMap<QString, QString>::const_iterator it_end = headerMap.constEnd();
+    for (it = headerMap.constBegin(); it != it_end; ++it) {
+        const QString key = it.key();
+        const QString value = it.value();
+        const QString key_lower = key.toLower();
+        if (key_lower == QLatin1String("icy-metaint")) {
+            m_ICYMetaInt = value.toInt();
             m_dataRest   = m_ICYMetaInt;
             IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     found metaint: %1").arg(m_ICYMetaInt));
-        }
-        if (key.toLower() == contentTypeKey) {
-            emit sigContentType(headerMap.value(key));
+        } else if (key_lower == QLatin1String("content-type")) {
+            emit sigContentType(value);
         }
     }
-    foreach(QString key, headerMap.keys()) {
-        metaData.insert(key, headerMap.value(key));
-    }
+    metaData += headerMap;
 }
 
 
 // returns packet minus header
-QByteArray IcyHttpHandler::analyzeICYHeader(QByteArray packet)
+QByteArray IcyHttpHandler::analyzeICYHeader(const QByteArray &packet)
 {
     m_httpHeaderAnalyzed = true;
     QString              headerStr     = packet;
@@ -241,14 +241,14 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
 {
     m_httpHeaderAnalyzed = true;
     m_connectionMetaData = job->metaData();
-    foreach(QString k, m_connectionMetaData.keys()) {
+    foreach(const QString &k, m_connectionMetaData.keys()) {
         QString v = m_connectionMetaData[k];
         IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):      %1 = %2").arg(k).arg(v));
-        if (k == "HTTP-Headers") {
+        if (k == QLatin1String("HTTP-Headers")) {
             analyzeHttpHeader(v, m_connectionMetaData);
         }
-        else if (k == "content-type") {
-            emit sigContentType(m_connectionMetaData[k]);
+        else if (k == QLatin1String("content-type")) {
+            emit sigContentType(v);
         }
     }
     emit sigConnectionEstablished(m_streamUrl, m_connectionMetaData);
@@ -273,7 +273,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
     if (m_metaData.size() + data.size() > METADATA_MAX_SIZE) {
         m_metaData.clear();
     }
-    m_metaData.append(QByteArray(data.data(), data.size()));
+    m_metaData.append(data);
 
 #ifdef DEBUG_DUMP_ICY_STREAMS
     fwrite(data.constData(), data.size(), 1, m_debugMetaStream);  fflush(m_debugMetaStream);
