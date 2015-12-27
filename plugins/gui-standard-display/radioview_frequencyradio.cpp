@@ -58,7 +58,11 @@ RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString 
       m_radioTextVisualBufferOverSizeFactor(5),
       m_radioTextVisualBufferSize(0, 0),
       m_radioTextVisualBufferCurrentReadX(0),
-      m_radioTextVisualBufferCurrentWriteX(0)
+      m_radioTextVisualBufferCurrentWriteX(0),
+      m_text_am(i18n("AM")),
+      m_text_fm(i18n("FM")),
+      m_text_rds(i18n("RDS")),
+      m_text_net(i18n("NET"))
 {
     setFrameStyle(Box | Sunken);
     setLineWidth(1);
@@ -370,6 +374,15 @@ bool RadioViewFrequencyRadio::noticeFrequencyChanged(float f, const FrequencyRad
     if (frs) {
         m_station_name = frs->name();
     }
+    if (m_frequency > 0) {
+        if (m_frequency < 10) {
+            m_text_frequency = i18n("%1 kHz", KGlobal::locale()->formatNumber((int)(m_frequency * 1000), 0));
+        } else {
+            m_text_frequency = i18n("%1 MHz", KGlobal::locale()->formatNumber(m_frequency, 2));
+        }
+    } else {
+        m_text_frequency = QString();
+    }
     update();
     return true;
 }
@@ -417,11 +430,6 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
     qreal   x      = cr.x() + fw;
     qreal   y      = cr.y() + fw;
 
-    QString am_text  = i18n("AM");
-    QString fm_text  = i18n("FM");
-    QString rds_text = i18n("RDS");
-    QString net_text = i18n("NET");
-
     QFont   f = m_font;
 
     // auxiliary variables
@@ -442,28 +450,28 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
     qreal   xy_am = y + margin;
     qreal   xh_am = xh_st;
     f.setPixelSize(xh_am);
-    qreal   xw_am = QFontMetricsF(f).width(am_text);
+    qreal   xw_am = QFontMetricsF(f).width(m_text_am);
 
     // position and height of FM symbol
     qreal   xx_fm = xx_am + xw_am + 2 * margin;
     qreal   xy_fm = y + margin;
     qreal   xh_fm = xh_st;
     f.setPixelSize(xh_fm);
-    qreal   xw_fm = QFontMetricsF(f).width(fm_text);
+    qreal   xw_fm = QFontMetricsF(f).width(m_text_fm);
 
     // position and height of FM symbol
     qreal   xx_net = xx_fm + xw_fm + 2 * margin;
     qreal   xy_net = y + margin;
     qreal   xh_net = xh_st;
     f.setPixelSize(xh_net);
-    qreal   xw_net = QFontMetricsF(f).width(net_text);
+    qreal   xw_net = QFontMetricsF(f).width(m_text_net);
 
     // position and height of RDS symbol
     qreal   xx_rds = xx_net + xw_net + 2 * margin;
     qreal   xy_rds = y + margin;
     qreal   xh_rds = xh_st;
     f.setPixelSize(xh_rds);
-//     qreal   xw_rds = QFontMetricsF(f).width(rds_text);
+//     qreal   xw_rds = QFontMetricsF(f).width(m_text_rds);
 
     // position and height of triangle
     qreal   xh_sg = height - margin * 2;
@@ -539,33 +547,29 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
         paint.setPen (  (m_frequency > 0 && m_frequency <= 10 && m_power) ? m_activePen : m_inactivePen);
         f.setPixelSize(xh_am);
         paint.setFont(f);
-        paint.drawText(QPointF(xx_am, xy_am + xh_am - 1), am_text);
+        paint.drawText(QPointF(xx_am, xy_am + xh_am - 1), m_text_am);
 
         paint.setPen (  (m_frequency > 0 && m_frequency >  10 && m_power) ? m_activePen : m_inactivePen);
         f.setPixelSize(xh_fm);
         paint.setFont(f);
-        paint.drawText(QPointF(xx_fm, xy_fm + xh_fm - 1), fm_text);
+        paint.drawText(QPointF(xx_fm, xy_fm + xh_fm - 1), m_text_fm);
 
         paint.setPen (  (m_url.isValid() > 0 && m_power) ? m_activePen : m_inactivePen);
         f.setPixelSize(xh_net);
         paint.setFont(f);
-        paint.drawText(QPointF(xx_net, xy_net + xh_net - 1), net_text);
+        paint.drawText(QPointF(xx_net, xy_net + xh_net - 1), m_text_net);
 
         // RDS display
         paint.setPen (  (m_RDS_enabled && m_power) ? m_activePen : m_inactivePen);
         f.setPixelSize(xh_rds);
         paint.setFont(f);
-        paint.drawText(QPointF(xx_rds, xy_rds + xh_rds - 1), rds_text);
+        paint.drawText(QPointF(xx_rds, xy_rds + xh_rds - 1), m_text_rds);
 
         // Frequency Display
 
         QString s;
         if (m_frequency > 0 && !m_url.isValid()) {
-            if (m_frequency < 10) {
-                s = i18n("%1 kHz", KGlobal::locale()->formatNumber((int)(m_frequency * 1000), 0));
-            } else {
-                s = i18n("%1 MHz", KGlobal::locale()->formatNumber(m_frequency, 2));
-            }
+            s = m_text_frequency;
         } else if (m_url.isValid()) {
             s = m_station_name;
         }

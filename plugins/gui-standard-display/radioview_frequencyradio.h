@@ -190,6 +190,12 @@ protected:
     qreal    m_radioTextVisualBufferCurrentReadX;
     qreal    m_radioTextVisualBufferCurrentWriteX;
     QPixmap  m_radioTextVisualBuffer;
+
+    QString  m_text_am;
+    QString  m_text_fm;
+    QString  m_text_rds;
+    QString  m_text_net;
+    QString  m_text_frequency;
 };
 
 #endif
