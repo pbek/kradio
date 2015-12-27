@@ -21,6 +21,7 @@
 #include <QLayout>
 #include <QTextCodec>
 #include <QTextStream>
+#include <QTextDocument>
 
 #include <ktextedit.h>
 #include <klocalizedstring.h>
@@ -162,8 +163,9 @@ void    ErrorLog::hideEvent(QHideEvent *e)
 
 bool ErrorLog::logError  (const QString &s)
 {
+    const QString escaped = Qt::escape(s);
     QMutexLocker   lock(&m_sequentializer);
-    m_teErrors->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
+    m_teErrors->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
     if (init_done) {
         setCurrentPage(m_errors);
         show();
@@ -173,22 +175,25 @@ bool ErrorLog::logError  (const QString &s)
 
 bool ErrorLog::logWarning(const QString &s)
 {
+    const QString escaped = Qt::escape(s);
     QMutexLocker   lock(&m_sequentializer);
-    m_teWarnings->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
+    m_teWarnings->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
     return true;
 }
 
 bool ErrorLog::logInfo   (const QString &s)
 {
+    const QString escaped = Qt::escape(s);
     QMutexLocker   lock(&m_sequentializer);
-    m_teInfos->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
+    m_teInfos->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
     return true;
 }
 
 bool ErrorLog::logDebug   (const QString &s)
 {
+    const QString escaped = Qt::escape(s);
     QMutexLocker   lock(&m_sequentializer);
-    m_teDebug->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + s + "\n");
+    m_teDebug->append("<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n");
     return true;
 }
 
