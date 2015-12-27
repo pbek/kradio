@@ -176,8 +176,8 @@ void LIRCConfiguration::slotOK()
         m_LIRC->setActions(actions, alt_actions);
 
         m_LIRC->setLIRCModeSync(cbSyncAtStartup->isChecked(), cbSyncAtRuntime->isChecked());
-        m_LIRC->setPowerOnMode (comboPowerOnMode ->itemData(comboPowerOnMode ->currentIndex()).value<QString>());
-        m_LIRC->setPowerOffMode(comboPowerOffMode->itemData(comboPowerOffMode->currentIndex()).value<QString>());
+        m_LIRC->setPowerOnMode (comboPowerOnMode ->itemData(comboPowerOnMode ->currentIndex()).toString());
+        m_LIRC->setPowerOffMode(comboPowerOffMode->itemData(comboPowerOffMode->currentIndex()).toString());
     }
     m_dirty = false;
 }

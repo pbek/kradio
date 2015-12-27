@@ -199,9 +199,9 @@ void InternetRadioStationConfig::storeStationData (RadioStation &x)
     InternetRadioStation *rs = dynamic_cast<InternetRadioStation*>(&x);
     if (rs) {
         rs->setUrl(m_editUrl->url());
-        rs->setDecoderClass    (m_comboDecoderClass    ->itemData(m_comboDecoderClass    ->currentIndex()).value<QString>());
-        rs->setPlaylistClass   (m_comboPlaylistClass   ->itemData(m_comboPlaylistClass   ->currentIndex()).value<QString>());
-        rs->setMetaDataEncoding(m_comboMetaDataEncoding->itemData(m_comboMetaDataEncoding->currentIndex()).value<QString>());
+        rs->setDecoderClass    (m_comboDecoderClass    ->itemData(m_comboDecoderClass    ->currentIndex()).toString());
+        rs->setPlaylistClass   (m_comboPlaylistClass   ->itemData(m_comboPlaylistClass   ->currentIndex()).toString());
+        rs->setMetaDataEncoding(m_comboMetaDataEncoding->itemData(m_comboMetaDataEncoding->currentIndex()).toString());
     }
 }
 

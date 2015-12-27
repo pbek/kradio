@@ -865,7 +865,7 @@ void RadioView::slotSnooze(QAction *a)
 {
     const QVariant &data = a->data();
     if (!data.isNull() && data.isValid() && data.canConvert<int>()) {
-        sendCountdownSeconds(60 * data.value<int>(), querySuspendOnSleep());
+        sendCountdownSeconds(60 * data.toInt(), querySuspendOnSleep());
         sendStartCountdown();
     }
 }

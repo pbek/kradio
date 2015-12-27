@@ -307,7 +307,7 @@ void RadioConfiguration::slotNewStation(QAction *a)
 {
     slotSetDirty();
 
-    QString classname = a->data().value<QString>();
+    QString classname = a->data().toString();
     const RadioStation *st = RadioStation::getStationClass(classname);
     if (st) {
         createNewStation(st);
@@ -464,7 +464,7 @@ void RadioConfiguration::slotVolumePresetChanged(int v)
 void RadioConfiguration::slotStereoModeChanged(int mode_idx)
 {
     if (mode_idx >= 0) {
-        int mode = comboStereoMode->itemData(mode_idx).value<int>();
+        int mode = comboStereoMode->itemData(mode_idx).toInt();
         int st_idx = listStations->currentStationIndex();
         if (st_idx >= 0 && st_idx < m_stations.count()) {
             slotSetDirty();

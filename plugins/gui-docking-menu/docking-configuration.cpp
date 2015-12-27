@@ -157,12 +157,12 @@ void DockingConfiguration::slotOK()
         m_disableGUIUpdates = true;
         if (m_docking) {
             foreach (Qt::MouseButton btn, m_comboClickMode.keys()) {
-                m_docking->setClickAction      (btn, (SystrayClickAction)m_comboClickMode      [btn]->itemData(m_comboClickMode      [btn]->currentIndex()).value<int>());
+                m_docking->setClickAction      (btn, (SystrayClickAction)m_comboClickMode      [btn]->itemData(m_comboClickMode      [btn]->currentIndex()).toInt());
             }
             foreach (Qt::MouseButton btn, m_comboDoubleClickMode.keys()) {
-                m_docking->setDoubleClickAction(btn, (SystrayClickAction)m_comboDoubleClickMode[btn]->itemData(m_comboDoubleClickMode[btn]->currentIndex()).value<int>());
+                m_docking->setDoubleClickAction(btn, (SystrayClickAction)m_comboDoubleClickMode[btn]->itemData(m_comboDoubleClickMode[btn]->currentIndex()).toInt());
             }
-            m_docking->setWheelAction((SystrayWheelAction)m_comboWheelMode->itemData(m_comboWheelMode->currentIndex()).value<int>());
+            m_docking->setWheelAction((SystrayWheelAction)m_comboWheelMode->itemData(m_comboWheelMode->currentIndex()).toInt());
         }
         m_disableGUIUpdates = old;
         m_dirty = false;
