@@ -20,7 +20,8 @@
 
 
 #include <QMutex>
-#include <QString>
+#include <QStringList>
+#include <QVector>
 #include <errorlog_interfaces.h>
 
 // logging in thread
@@ -28,20 +29,21 @@ class KDE_EXPORT ThreadLogging
 {
 public:
 
-    enum  LoggingClass { LogInfo, LogWarning, LogDebug, LogError };
+    enum  LoggingClass { LogInfo = 0, LogWarning, LogDebug, LogError, LogLast /* keep it as last! */ };
 
     ThreadLogging();
 
     bool                 hasLog (LoggingClass cls)                       const;
     QStringList          getLogs(LoggingClass cls, bool resetLog = true);
+    QVector<QStringList> getAllLogs(bool resetLog = true);
 
     QList<LoggingClass>  getLogClasses() const;
 
-    void                 log    (LoggingClass cls, QString logString);
+    void                 log    (LoggingClass cls, const QString &logString);
 
 private:
     mutable QMutex                    m_accessLock;
-    QMap<LoggingClass, QStringList>   logs;
+    QVector<QStringList>              logs;
 };
 
 
@@ -54,7 +56,7 @@ public:
     virtual ~ThreadLoggingClient();
 
     // returns false if there logs of class LogError are available
-    bool   checkLogs(ThreadLogging *threadLogger, QString logPrefix, bool resetLogs = true);
+    bool   checkLogs(ThreadLogging *threadLogger, const QString &logPrefix, bool resetLogs = true);
 
 
 protected:
@@ -62,8 +64,7 @@ protected:
 
 
 protected:
-    // returns true if some messages were logged
-    bool   checkLogs(ThreadLogging *threadLogger, ThreadLogging::LoggingClass cls, QString logPrefix, IErrorLogClient::logFunction_t logFunc, bool resetLog);
+    void sendLogs(const QString &logPrefix, IErrorLogClient::logFunction_t logFunc, const QStringList &messages);
 };
 
 

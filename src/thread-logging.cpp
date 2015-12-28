@@ -18,11 +18,8 @@
 #include "errorlog_interfaces.h"
 #include "thread-logging.h"
 
-#include <QMutex>
-#include <QString>
-#include <QStringList>
-
 ThreadLogging::ThreadLogging()
+    : logs(LogLast)
 {
     // nothing to do
 }
@@ -31,16 +28,18 @@ ThreadLogging::ThreadLogging()
 bool ThreadLogging::hasLog (LoggingClass cls) const
 {
     QMutexLocker  locker(&m_accessLock);
-    return logs.contains(cls) && logs[cls].size() > 0;
+    return !logs.at(cls).isEmpty();
 }
 
 
 QList<ThreadLogging::LoggingClass> ThreadLogging::getLogClasses() const
 {
     QList<ThreadLogging::LoggingClass>  keys;
-    {
-        QMutexLocker                        locker(&m_accessLock);
-        keys = logs.keys();
+    QMutexLocker                        locker(&m_accessLock);
+    for (int i = 0; i < LogLast; ++i) {
+        if (!logs.at(i).isEmpty()) {
+            keys.append(static_cast<ThreadLogging::LoggingClass>(i));
+        }
     }
     return keys;
 }
@@ -49,28 +48,33 @@ QList<ThreadLogging::LoggingClass> ThreadLogging::getLogClasses() const
 QStringList ThreadLogging::getLogs(LoggingClass cls, bool resetLog)
 {
     QStringList   deepCopyRetVal;
-    {
-        QMutexLocker  locker(&m_accessLock);
-        if (logs.contains(cls) && logs[cls].size()) {
-            foreach (QString s, logs[cls]) {
-                deepCopyRetVal.append(QString(s.constData(), s.length()));
-            }
-            if (resetLog) {
-                logs[cls].clear();
-            }
+    QMutexLocker  locker(&m_accessLock);
+    if (!logs.at(cls).isEmpty()) {
+        deepCopyRetVal = logs[cls];
+        if (resetLog) {
+            logs[cls].clear();
         }
     }
     return deepCopyRetVal;
 }
 
 
-void ThreadLogging::log(LoggingClass cls, QString logString)
+QVector<QStringList> ThreadLogging::getAllLogs(bool resetLog)
 {
     QMutexLocker  locker(&m_accessLock);
-    if (!logs.contains(cls)) {
-        logs[cls] = QStringList();
+    const QVector<QStringList> ret = logs;
+    if (resetLog) {
+        // reset the whole logs vector at once
+        logs = QVector<QStringList>(LogLast);
     }
-    logs[cls].append(QString(logString.constData(), logString.length())); // deep copy
+    return ret;
+}
+
+
+void ThreadLogging::log(LoggingClass cls, const QString &logString)
+{
+    QMutexLocker  locker(&m_accessLock);
+    logs[cls].append(logString);
 }
 
 
@@ -88,33 +92,37 @@ ThreadLoggingClient::~ThreadLoggingClient()
 
 
 // returns false if an error occurred
-bool ThreadLoggingClient::checkLogs(ThreadLogging *threadLogger, QString logPrefix, bool resetLogs)
+bool ThreadLoggingClient::checkLogs(ThreadLogging *threadLogger, const QString &logPrefix, bool resetLogs)
 {
-    bool hasError = false;
-               checkLogs(threadLogger, ThreadLogging::LogInfo,    logPrefix, &IErrorLogClient::logInfo,    resetLogs);
-               checkLogs(threadLogger, ThreadLogging::LogWarning, logPrefix, &IErrorLogClient::logWarning, resetLogs);
-               checkLogs(threadLogger, ThreadLogging::LogDebug,   logPrefix, &IErrorLogClient::logDebug,   resetLogs);
-    hasError = checkLogs(threadLogger, ThreadLogging::LogError,   logPrefix, &IErrorLogClient::logError,   resetLogs);
-    return !hasError;
+    if (!threadLogger) {
+        return true;
+    }
+
+    const QVector<QStringList> logs = threadLogger->getAllLogs(resetLogs);
+
+    sendLogs(logPrefix, &IErrorLogClient::logInfo, logs.at(ThreadLogging::LogInfo));
+    sendLogs(logPrefix, &IErrorLogClient::logWarning, logs.at(ThreadLogging::LogWarning));
+    sendLogs(logPrefix, &IErrorLogClient::logDebug, logs.at(ThreadLogging::LogDebug));
+    sendLogs(logPrefix, &IErrorLogClient::logError, logs.at(ThreadLogging::LogError));
+
+    return logs.at(ThreadLogging::LogError).isEmpty();
 }
 
 
-bool ThreadLoggingClient::checkLogs(ThreadLogging *threadLogger, ThreadLogging::LoggingClass cls, QString logPrefix, IErrorLogClient::logFunction_t logFunc, bool resetLog)
+void ThreadLoggingClient::sendLogs(const QString &logPrefix, IErrorLogClient::logFunction_t logFunc, const QStringList &messages)
 {
+    if (messages.isEmpty()) {
+        return;
+    }
+
     IErrorLogClient *log      = getErrorLogClient();
 
-    bool hadMessages = false;
-    if (threadLogger) {
-        QStringList msgList = threadLogger->getLogs(cls, resetLog);
-        foreach(QString msg, msgList) {
-            QStringList subList = msg.split("\n");
-            foreach (QString s, subList) {
-                (log->*logFunc)(logPrefix + s);
-            }
+    foreach (const QString &msg, messages) {
+        const QStringList lines = msg.split(QLatin1Char('\n'));
+        foreach (const QString &line, lines) {
+            (log->*logFunc)(logPrefix + line);
         }
-        hadMessages = msgList.size() > 0;
     }
-    return hadMessages;
 }
 
 
