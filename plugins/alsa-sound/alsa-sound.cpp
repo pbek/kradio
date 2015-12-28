@@ -18,6 +18,7 @@
 #include <klocalizedstring.h>
 #include <kaboutdata.h>
 #include <QFile>
+#include <QSet>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
@@ -2009,13 +2010,13 @@ QList<AlsaMixerMetaData> AlsaSoundDevice::getMixerDeviceDescriptions(const QStri
     QList<AlsaSoundDeviceMetaData> pcms = getPCMDeviceDescriptions(filter);
 
     QList<AlsaMixerMetaData> ret;
-    QMap<QString, bool> already_handled;
+    QSet<QString> already_handled;
 
     AlsaSoundDeviceMetaData m;
     foreach (m, pcms) {
         if (!already_handled.contains(m.mixerCardName())) {
             ret.append(AlsaMixerMetaData(m));
-            already_handled.insert(m.mixerCardName(), true);
+            already_handled.insert(m.mixerCardName());
         }
     }
     return ret;
