@@ -103,7 +103,9 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_CaptureFormatOverride(),
       m_use_threads(true),
       m_playbackThread(NULL),
-      m_captureThread(NULL)
+      m_captureThread(NULL),
+      m_i18nLogPrefixPlayback(i18n("AlsaPlugin(playback thread on %1): ", m_PlaybackDeviceName)),
+      m_i18nLogPrefixCapture(i18n("AlsaPlugin(capture thread on %1): ", m_CaptureDeviceName))
 
 {
     QObject::connect(&m_PlaybackPollingTimer, SIGNAL(timeout()), this, SLOT(slotPollPlayback()));
@@ -1647,6 +1649,7 @@ void AlsaSoundDevice::setPlaybackDevice(const QString &deviceName, bool force)
         return;
 
     m_PlaybackDeviceName = deviceName;
+    m_i18nLogPrefixPlayback = i18n("AlsaPlugin(playback thread on %1): ", m_PlaybackDeviceName);
     SoundFormat f        = m_PlaybackFormat;
     if (m_hPlayback)
         openPlaybackDevice(f, /* reopen = */ true);
@@ -1681,6 +1684,7 @@ void AlsaSoundDevice::setCaptureDevice(const QString &deviceName, bool force)
         return;
 
     m_CaptureDeviceName = deviceName;
+    m_i18nLogPrefixCapture = i18n("AlsaPlugin(capture thread on %1): ", m_CaptureDeviceName);
     SoundFormat f       = m_CaptureFormat;
     if (m_hCapture)
         openCaptureDevice(f, /* reopen = */ true);
@@ -1876,11 +1880,11 @@ void   AlsaSoundDevice::unlockCaptureBufferTransaction()
 void  AlsaSoundDevice::checkThreadErrorsAndWarning()
 {
     if (m_captureThread) {
-        checkLogs(m_captureThread, i18n("AlsaPlugin(capture thread on %1): ",   m_CaptureDeviceName),    /*resetLogs = */ true);
+        checkLogs(m_captureThread, m_i18nLogPrefixCapture,   /*resetLogs = */ true);
         m_captureThread->resetError();
     }
     if (m_playbackThread) {
-        checkLogs(m_playbackThread, i18n("AlsaPlugin(playback thread on %1): ", m_PlaybackDeviceName), /*resetLogs = */ true);
+        checkLogs(m_playbackThread, m_i18nLogPrefixPlayback, /*resetLogs = */ true);
         m_playbackThread->resetError();
     }
 }

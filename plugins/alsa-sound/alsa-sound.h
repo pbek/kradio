@@ -374,6 +374,9 @@ protected:
 
     AlsaThread     *m_playbackThread;
     AlsaThread     *m_captureThread;
+
+    QString         m_i18nLogPrefixPlayback;
+    QString         m_i18nLogPrefixCapture;
 };
 
 
