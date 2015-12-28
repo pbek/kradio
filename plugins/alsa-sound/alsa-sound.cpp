@@ -122,6 +122,10 @@ AlsaSoundDevice::~AlsaSoundDevice()
     closeCaptureDevice();
     closePlaybackMixerDevice();
     closeCaptureMixerDevice();
+    // free the global cache of the ALSA config: while it is not a
+    // real leak, doing it will make leak checkers (e.g. valgrind)
+    // happier
+    snd_config_update_free_global();
 }
 
 
