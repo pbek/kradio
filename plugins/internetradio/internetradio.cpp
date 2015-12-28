@@ -957,7 +957,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
     m_waitForBufferMinFill = false;
 
     size_t consumed_size = SIZE_T_DONT_CARE;
-    while (m_decoderThread && (n_bufs = m_decoderThread->decoder()->availableBuffers()) && (free_size > 0) && (consumed_size != 0)) {
+    while ((n_bufs = m_decoderThread->decoder()->availableBuffers()) && (free_size > 0) && (consumed_size != 0)) {
 
         DataBuffer         &buf           = m_decoderThread->decoder()->getFirstBuffer();
         QByteArray          data          = buf.remainingData();
@@ -983,7 +983,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
         // printf("     consumed: %zi\n", consumed_size);
         free_size -= consumed_size;
         buf.addProcessedSize(consumed_size);
-        if (m_decoderThread && buf.remainingSize() <= 0) {
+        if (buf.remainingSize() <= 0) {
             m_decoderThread->decoder()->popFirstBuffer();
         }
     }
