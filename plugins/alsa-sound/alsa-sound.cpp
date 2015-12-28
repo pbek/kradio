@@ -1498,8 +1498,7 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &v
 
 bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vol)
 {
-    if (vol > 1.0) vol = 1.0;
-    if (vol < 0) vol = 0.0;
+    vol = qBound<float>(0, vol, 1);
 
     if (!m_hCaptureMixer) {
         return false;
