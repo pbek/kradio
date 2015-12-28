@@ -278,13 +278,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
         SoundMetaData  md(m_decodedSize,
                           cur_time - m_startTime,
                           cur_time,
-                          i18n("internal stream, not stored (%1)",
-#ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                               m_playURL.pathOrUrl()
-#else
-                               m_inputUrl.pathOrUrl()
-#endif
-                              )
+                          m_i18nInternalStream
                          );
 
         if (!m_soundFormat.isValid()) {
@@ -341,8 +335,10 @@ void InternetRadioDecoder::run()
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
         selectStreamFromPlaylist();
+        m_i18nInternalStream = i18n("internal stream, not stored (%1)", m_playURL.pathOrUrl());
 #else
         openAVStream(m_inputUrl.pathOrUrl(), false);
+        m_i18nInternalStream = i18n("internal stream, not stored (%1)", m_inputUrl.pathOrUrl());
 #endif
 
         AVPacket    pkt;

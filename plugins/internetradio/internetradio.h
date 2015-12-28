@@ -265,6 +265,8 @@ protected:
     QTimer                        m_watchdogTimer;
 
     bool                          m_waitForBufferMinFill;
+
+    QString                       m_i18nLogPrefix;
 };
 
 #endif

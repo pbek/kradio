@@ -217,6 +217,8 @@ protected:
     float                 m_maxAnalyzeTime;  // in seconds, see openAVStream
     int                   m_maxRetries;
 
+    QString               m_i18nInternalStream;
+
 #ifdef DEBUG_DUMP_DECODER_STREAMS
     FILE  *m_debugCodedStream;
     FILE  *m_debugDecodedStream;

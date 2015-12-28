@@ -83,7 +83,8 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_outputBufferSize(512*1024),
     m_watchdogTimeout(4),
     m_watchdogHandlerInService(false),
-    m_waitForBufferMinFill(true)
+    m_waitForBufferMinFill(true),
+    m_i18nLogPrefix(i18n("Internet Radio Plugin: "))
 {
     m_SoundStreamSinkID   = createNewSoundStream(false);
     m_SoundStreamSourceID = m_SoundStreamSinkID;
@@ -992,7 +993,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
 
 bool InternetRadio::checkDecoderMessages()
 {
-    bool errorsDetected = !checkLogs(m_decoderThread ? m_decoderThread->decoder() : NULL, i18n("Internet Radio Plugin: "), /*resetLogs = */ true);
+    bool errorsDetected = !checkLogs(m_decoderThread ? m_decoderThread->decoder() : NULL, m_i18nLogPrefix, /*resetLogs = */ true);
     if (errorsDetected) {
         powerOff();
     }
