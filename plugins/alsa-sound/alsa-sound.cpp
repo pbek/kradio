@@ -1363,17 +1363,24 @@ float AlsaSoundDevice::readPlaybackMixerVolume(const QString &channel, bool &mut
     // do we have soft playback volume? 
     // ... Then we do not need to query any device below
     if (m_SoftPlaybackVolumeEnabled                        &&
-        m_PlaybackStreamID.isValid()                       &&
-        m_PlaybackStreams.contains(m_PlaybackStreamID)     &&
-        m_PlaybackStreams[m_PlaybackStreamID].m_ActiveMode &&
-        m_PlaybackStreams[m_PlaybackStreamID].m_Channel == channel)
+        m_PlaybackStreamID.isValid())
     {
-        muted = m_SoftPlaybackVolumeMuted;
-        return m_SoftPlaybackVolume;
+        QMap<SoundStreamID, SoundStreamConfig>::const_iterator it = m_PlaybackStreams.constFind(m_PlaybackStreamID);
+        if (it != m_PlaybackStreams.constEnd() &&
+            (*it).m_ActiveMode &&
+            (*it).m_Channel == channel) {
+            muted = m_SoftPlaybackVolumeMuted;
+            return m_SoftPlaybackVolume;
+        }
     }
     
-    if (m_PlaybackChannels2ID.contains(channel) && m_hPlaybackMixer) {
-        AlsaMixerElement  sid  = m_PlaybackChannels2ID[channel];
+    if (!m_hPlaybackMixer) {
+        return 0;
+    }
+
+    QMap<QString, AlsaMixerElement>::const_iterator it = m_PlaybackChannels2ID.constFind(channel);
+    if (it != m_PlaybackChannels2ID.constEnd()) {
+        AlsaMixerElement sid = *it;
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hPlaybackMixer, sid);
         if (elem) {
             long min = 0;
@@ -1404,8 +1411,13 @@ float AlsaSoundDevice::readPlaybackMixerVolume(const QString &channel, bool &mut
 
 float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
 {
-    if (m_CaptureChannels2ID.contains(channel) && m_hCaptureMixer) {
-        AlsaMixerElement sid = m_CaptureChannels2ID[channel];
+    if (!m_hCaptureMixer) {
+        return 0;
+    }
+
+    QMap<QString, AlsaMixerElement>::const_iterator it = m_CaptureChannels2ID.constFind(channel);
+    if (it != m_CaptureChannels2ID.constEnd()) {
+        AlsaMixerElement sid = *it;
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
         if (elem) {
             if (!snd_mixer_selem_has_capture_volume(elem))
@@ -1438,18 +1450,25 @@ bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &v
     // do we have soft playback volume? 
     // ... Then we do not need to write any device below
     if (m_SoftPlaybackVolumeEnabled                        &&
-        m_PlaybackStreamID.isValid()                       &&
-        m_PlaybackStreams.contains(m_PlaybackStreamID)     &&
-        m_PlaybackStreams[m_PlaybackStreamID].m_ActiveMode &&
-        m_PlaybackStreams[m_PlaybackStreamID].m_Channel == channel)
+        m_PlaybackStreamID.isValid())
     {
-        m_SoftPlaybackVolume = vol;
-        m_SoftPlaybackVolumeMuted   = muted;
-        return true;
+        QMap<SoundStreamID, SoundStreamConfig>::const_iterator it = m_PlaybackStreams.constFind(m_PlaybackStreamID);
+        if (it != m_PlaybackStreams.constEnd() &&
+            (*it).m_ActiveMode &&
+            (*it).m_Channel == channel) {
+            m_SoftPlaybackVolume = vol;
+            m_SoftPlaybackVolumeMuted   = muted;
+            return true;
+        }
     }
     
-    if (m_PlaybackChannels2ID.contains(channel) && m_hPlaybackMixer) {
-        AlsaMixerElement sid = m_PlaybackChannels2ID[channel];
+    if (!m_hPlaybackMixer) {
+        return false;
+    }
+
+    QMap<QString, AlsaMixerElement>::iterator it = m_PlaybackChannels2ID.find(channel);
+    if (it != m_PlaybackChannels2ID.end()) {
+        AlsaMixerElement &sid = *it;
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hPlaybackMixer, sid);
         if (elem) {
             long min = 0;
@@ -1482,8 +1501,13 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
     if (vol > 1.0) vol = 1.0;
     if (vol < 0) vol = 0.0;
 
-    if (m_CaptureChannels2ID.contains(channel) && m_hCaptureMixer) {
-        AlsaMixerElement sid = m_CaptureChannels2ID[channel];
+    if (!m_hCaptureMixer) {
+        return false;
+    }
+
+    QMap<QString, AlsaMixerElement>::iterator it = m_CaptureChannels2ID.find(channel);
+    if (it != m_CaptureChannels2ID.end()) {
+        AlsaMixerElement &sid = *it;
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
         if (elem) {
             long min = 0;
@@ -1510,8 +1534,13 @@ bool AlsaSoundDevice::writeCaptureMixerVolume (const QString &channel, float &vo
 
 bool AlsaSoundDevice::writeCaptureMixerSwitch (const QString &channel, bool capture)
 {
-    if (m_CaptureChannelsSwitch2ID.contains(channel) && m_hCaptureMixer) {
-        AlsaMixerElement sid = m_CaptureChannelsSwitch2ID[channel];
+    if (!m_hCaptureMixer) {
+        return false;
+    }
+
+    QMap<QString, AlsaMixerElement>::iterator it = m_CaptureChannelsSwitch2ID.find(channel);
+    if (it != m_CaptureChannelsSwitch2ID.end()) {
+        AlsaMixerElement &sid = *it;
         snd_mixer_elem_t *elem = snd_mixer_find_selem(m_hCaptureMixer, sid);
         if (elem) {
             if (snd_mixer_selem_set_capture_switch_all(elem, capture) == 0) {
