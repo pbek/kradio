@@ -87,19 +87,6 @@ void  SoundFormat::saveConfig(const QString &prefix, KConfigGroup &c) const
 #define  BITS(T)        (sizeof(T) << 3)
 #define  IS_SIGNED(T)   (((T)(~((T)0))) < (T)0)
 
-template<typename T> T minMax(T v, T min, T max)
-{
-    T res = v;
-    if (v < min) {
-        res = min;
-    }
-    if (v > max) {
-        res = max;
-    }
-    return res;
-}
-
-
 template<typename T, int c_bits> inline T maxValue(int var_bits = 0)
 {
     int  bits     = c_bits ? c_bits     : var_bits;
@@ -190,7 +177,7 @@ inline dstT saturate(srcT v, int var_srcBits = 0, int var_dstBits = 0)
 
     srcT tmp = v;
     if (src_bits > dst_bits) {
-        tmp =  minMax(v, minDstVal, maxDstVal);
+        tmp =  qBound(minDstVal, v, maxDstVal);
     }
     return tmp + biasNew - biasOld;
 }
@@ -254,7 +241,7 @@ public:
         }
         const srcT minDst = minValue<dstT, c_dstBits>(var_dstBits);
         const srcT maxDst = maxValue<dstT, c_dstBits>(var_dstBits);
-        return minMax(tmp, minDst, maxDst);
+        return qBound(minDst, tmp, maxDst);
     }
 };
 
