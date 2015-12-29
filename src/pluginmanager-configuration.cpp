@@ -57,9 +57,6 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
     m_pluginInstancesModel->setHorizontalHeaderLabels(headers);
     listPluginInstances->setModel(m_pluginInstancesModel);
 
-    noticePluginLibrariesChanged();
-    noticePluginsChanged();
-
     QObject::connect(btnAddLibrary,           SIGNAL(clicked()),     this, SLOT(slotAddLibrary()));
     QObject::connect(btnRemoveLibrary,        SIGNAL(clicked()),     this, SLOT(slotRemoveLibrary()));
     QObject::connect(btnNewPluginInstance,    SIGNAL(clicked()),     this, SLOT(slotNewPluginInstance()));
@@ -74,6 +71,8 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
                      this,                    SLOT  (slotPluginRenamed(QStandardItem *)));
 
 
+    // will directly call noticePluginLibrariesChanged() and
+    // noticePluginsChanged() indirectly
     slotCancel();
 }
 
@@ -177,8 +176,8 @@ void PluginManagerConfiguration::slotCancel()
 {
     if (m_dirty) {
         cbShowProgressBar->setChecked(m_PluginManager->showsProgressBar());
+        // will directly call noticePluginsChanged()
         noticePluginLibrariesChanged();
-        noticePluginsChanged();
 
         KMessageBox::ButtonCode btn;
         if (!KMessageBox::shouldBeShownYesNo("autoload_plugins", btn)) {
