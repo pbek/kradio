@@ -269,7 +269,8 @@ inline unsigned int systemEndianness()
 template<unsigned int endianness>
 inline bool needsEndiannessSwap()
 {
-    return systemEndianness() != endianness;
+    static const int cachedSystemEndianness = systemEndianness();
+    return cachedSystemEndianness != endianness;
 }
 
 
