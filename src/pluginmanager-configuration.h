@@ -36,7 +36,6 @@ public :
     ~PluginManagerConfiguration ();
 
     void noticePluginLibrariesChanged();
-    void noticePluginsChanged();
     void noticePluginRenamed(PluginBase *p, const QString &name);
     void noticePluginAdded(PluginBase *p);
     void noticePluginRemoved(PluginBase *p);

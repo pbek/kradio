@@ -71,8 +71,7 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioAp
                      this,                    SLOT  (slotPluginRenamed(QStandardItem *)));
 
 
-    // will directly call noticePluginLibrariesChanged() and
-    // noticePluginsChanged() indirectly
+    // will directly call noticePluginLibrariesChanged()
     slotCancel();
 }
 
@@ -111,40 +110,16 @@ void PluginManagerConfiguration::noticePluginLibrariesChanged()
     listPluginClasses->resizeColumnToContents(0);
     listPluginClasses->resizeColumnToContents(1);
 
-    noticePluginsChanged();
-}
-
-
-void PluginManagerConfiguration::noticePluginsChanged()
-{
     // do not use clear() with QStandardItemModel, as it removes
     // also the header items!
     m_pluginInstancesModel->setRowCount(0);
     m_pluginItems      .clear();
-    const PluginList &plugins = m_PluginManager->plugins();
-    const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
 
-    const Qt::ItemFlags baseFlags = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
-    foreach (PluginBase *plugin, plugins) {
-        QString class_name = plugin->pluginClassName();
-        if (classes.contains(class_name)) {
-            QString         obj_name = plugin->name();
-            QList<QStandardItem *> items;
-            items << new QStandardItem(class_name);
-            items[0]->setFlags(baseFlags);
-            items << new QStandardItem(obj_name);
-            items[1]->setFlags(baseFlags | Qt::ItemIsEditable);
-            items << new QStandardItem(classes[class_name].description);
-            items[2]->setFlags(baseFlags);
-            m_pluginInstancesModel->appendRow(items);
-
-            m_pluginItems.insert(items[1], plugin);
-        }
+    foreach (PluginBase *plugin, m_PluginManager->plugins()) {
+        noticePluginAdded(plugin);
     }
-    listPluginInstances->resizeColumnToContents(0);
-    listPluginInstances->resizeColumnToContents(1);
-    listPluginInstances->resizeColumnToContents(2);
 }
+
 
 void PluginManagerConfiguration::noticePluginRenamed(PluginBase *p, const QString &name)
 {
@@ -157,15 +132,39 @@ void PluginManagerConfiguration::noticePluginRenamed(PluginBase *p, const QStrin
 
 void PluginManagerConfiguration::noticePluginAdded(PluginBase *p)
 {
-    Q_UNUSED(p)    // FIXME
-    noticePluginsChanged();
+    const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
+
+    const QString class_name = p->pluginClassName();
+    const QMap<QString, PluginClassInfo>::const_iterator it = classes.constFind(class_name);
+    if (it != classes.constEnd()) {
+        const QString obj_name = p->name();
+        QList<QStandardItem *> items;
+        items << new QStandardItem(class_name);
+        items[0]->setEditable(false);
+        items << new QStandardItem(obj_name);
+        items[1]->setEditable(true);
+        items << new QStandardItem((*it).description);
+        items[2]->setEditable(false);
+        m_pluginInstancesModel->appendRow(items);
+
+        m_pluginItems.insert(items[1], p);
+    }
+    listPluginInstances->resizeColumnToContents(0);
+    listPluginInstances->resizeColumnToContents(1);
+    listPluginInstances->resizeColumnToContents(2);
 }
 
 
 void PluginManagerConfiguration::noticePluginRemoved(PluginBase *p)
 {
-    Q_UNUSED(p)    // FIXME
-    noticePluginsChanged();
+    const QString obj_name = p->name();
+    // remove rows from last to first, to not invalidate the indexes
+    // following a removed row
+    for (int row = m_pluginInstancesModel->rowCount() - 1; row >= 0; --row) {
+        if (m_pluginInstancesModel->item(row, 1)->text() == obj_name) {
+            m_pluginInstancesModel->removeRow(row);
+        }
+    }
 }
 
 
@@ -190,7 +189,6 @@ void PluginManagerConfiguration::slotCancel()
 {
     if (m_dirty) {
         cbShowProgressBar->setChecked(m_PluginManager->showsProgressBar());
-        // will directly call noticePluginsChanged()
         noticePluginLibrariesChanged();
 
         KMessageBox::ButtonCode btn;
