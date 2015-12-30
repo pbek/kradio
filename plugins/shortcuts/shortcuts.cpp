@@ -407,7 +407,7 @@ void Shortcuts::slotActionTriggered(QAction *a)
 }
 
 
-void Shortcuts::noticePluginsChanged(const PluginList &l)
+void Shortcuts::noticePluginsAdded(const PluginList &l)
 {
     PluginBase *p = NULL;
     foreach(p, l) {

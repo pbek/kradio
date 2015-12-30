@@ -211,6 +211,8 @@ void PluginManager::insertPlugin(PluginBase *p)
     BlockProfiler profiler("PluginManager::insertPlugin");
 
     if (p) {
+        const PluginList oldPlugins = m_plugins;
+
         BlockProfiler profiler_cfg("PluginManager::insertPlugin - about/config");
 
         /*kdDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
@@ -250,7 +252,7 @@ void PluginManager::insertPlugin(PluginBase *p)
         profiler_connect.stop();
         BlockProfiler profiler_widget("PluginManager::insertPlugin - notifywidgets");
 
-        notifyPluginsChanged();
+        notifyPluginsAdded(p, oldPlugins);
         WidgetPluginBase *w1 = dynamic_cast<WidgetPluginBase*>(p);
         foreach (PluginBase *plugin, m_plugins) {
             if (w1)
@@ -316,21 +318,40 @@ void PluginManager::removePlugin(PluginBase *p)
         m_plugins.removeAll(p);
         p->unsetManager();
 
-        p->noticePluginsChanged(PluginList());
-        notifyPluginsChanged();
+        notifyPluginsRemoved(p);
 
         updatePluginHideShowMenu();
     }
 }
 
 
-void PluginManager::notifyPluginsChanged()
+void PluginManager::notifyPluginsAdded(PluginBase *p, const PluginList &oldList)
 {
-    foreach (PluginBase *plugin, m_plugins) {
-        plugin->noticePluginsChanged(m_plugins);
+    if (!oldList.isEmpty()) {
+        const PluginList addedList = PluginList() << p;
+        foreach (PluginBase *plugin, oldList) {
+            plugin->noticePluginsAdded(addedList);
+        }
+        p->noticePluginsAdded(oldList);
     }
-    if (m_pluginManagerConfiguration)
-        m_pluginManagerConfiguration->noticePluginsChanged();
+    if (m_pluginManagerConfiguration) {
+        m_pluginManagerConfiguration->noticePluginAdded(p);
+    }
+}
+
+
+void PluginManager::notifyPluginsRemoved(PluginBase *p)
+{
+    if (!m_plugins.isEmpty()) {
+        const PluginList removedList = PluginList() << p;
+        foreach (PluginBase *plugin, m_plugins) {
+            plugin->noticePluginsRemoved(removedList);
+        }
+        p->noticePluginsRemoved(m_plugins);
+    }
+    if (m_pluginManagerConfiguration) {
+        m_pluginManagerConfiguration->noticePluginRemoved(p);
+    }
 }
 
 

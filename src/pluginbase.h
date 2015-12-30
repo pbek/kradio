@@ -125,7 +125,8 @@ public:
     //
 
     virtual void noticeWidgetPluginShown(WidgetPluginBase *, bool /*shown*/)     {}
-    virtual void noticePluginsChanged(const PluginList &)                        {}
+    virtual void noticePluginsAdded(const PluginList &)                          {}
+    virtual void noticePluginsRemoved(const PluginList &)                        {}
     virtual void noticePluginRenamed(PluginBase */*p*/, const QString &/*name*/) {}
 
 protected :

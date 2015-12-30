@@ -143,7 +143,7 @@ protected:
     void activateStation (int i);
     void updateShortcutsEditors();
     void updateShortcutsEditor(ShortcutsConfiguration *c);
-    void noticePluginsChanged(const PluginList &);
+    void noticePluginsAdded(const PluginList &);
 
 
     QTimer                 *m_kbdTimer;

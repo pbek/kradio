@@ -100,16 +100,6 @@ void PluginConfigurationDialog::hideEvent(QHideEvent *e)
     WidgetPluginBase::pHideEvent(e);
 }
 
-void PluginConfigurationDialog::noticePluginsChanged(const PluginList &list)
-{
-    WidgetPluginBase::noticePluginsChanged(list);
-    updateGeometry();
-/*    QLayout *l = layout();
-    if (l) {
-        l->invalidate();
-    }*/
-}
-
 void PluginConfigurationDialog::noticePluginRenamed(PluginBase *p, const QString &name)
 {
     WidgetPluginBase::noticePluginRenamed(p, name);

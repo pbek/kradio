@@ -53,7 +53,6 @@ public:
 
 
 
-    virtual void noticePluginsChanged(const PluginList &);
     virtual void noticePluginRenamed(PluginBase */*p*/, const QString &/*name*/);
 
 protected :

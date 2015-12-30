@@ -155,6 +155,20 @@ void PluginManagerConfiguration::noticePluginRenamed(PluginBase *p, const QStrin
 }
 
 
+void PluginManagerConfiguration::noticePluginAdded(PluginBase *p)
+{
+    Q_UNUSED(p)    // FIXME
+    noticePluginsChanged();
+}
+
+
+void PluginManagerConfiguration::noticePluginRemoved(PluginBase *p)
+{
+    Q_UNUSED(p)    // FIXME
+    noticePluginsChanged();
+}
+
+
 void PluginManagerConfiguration::slotOK()
 {
     if (m_dirty) {

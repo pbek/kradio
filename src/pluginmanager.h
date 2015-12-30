@@ -106,7 +106,8 @@ protected :
 
 
     virtual void         updatePluginHideShowMenu();
-    virtual void         notifyPluginsChanged();
+    void                 notifyPluginsAdded(PluginBase *p, const PluginList &);
+    void                 notifyPluginsRemoved(PluginBase *p);
 
 protected slots:
 
