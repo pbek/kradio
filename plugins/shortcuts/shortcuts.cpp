@@ -413,8 +413,9 @@ void Shortcuts::noticePluginsAdded(const PluginList &l)
     foreach(p, l) {
         WidgetPluginBase *w = dynamic_cast<WidgetPluginBase*>(p);
         if (w) {
-            m_stdCollection    ->addAssociatedWidget(w->getWidget());
-            m_stationCollection->addAssociatedWidget(w->getWidget());
+            QWidget *widget = w->getWidget();
+            m_stdCollection    ->addAssociatedWidget(widget);
+            m_stationCollection->addAssociatedWidget(widget);
         }
     }
 }
