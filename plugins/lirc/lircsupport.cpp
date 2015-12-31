@@ -118,11 +118,11 @@ void LircSupport::LIRC_init_fd()
 
 void LircSupport::LIRC_init_config()
 {
-    checkLIRCConfigurationFile(m_lirc_config_file);
-
     m_lircConfig  = 0;
 
     if (m_fd_lirc != -1) {
+        checkLIRCConfigurationFile(m_lirc_config_file);
+
         QByteArray lirc_cfg_filename_ba = QFile::encodeName(m_lirc_config_file);
         if (lirc_readconfig (lirc_cfg_filename_ba.data(), &m_lircConfig, NULL) == 0) {
 
