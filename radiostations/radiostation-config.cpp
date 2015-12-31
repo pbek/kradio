@@ -67,17 +67,13 @@ void UndefinedRadioStationConfig::storeStationData (RadioStation &/*rs*/)
 FrequencyRadioStationConfig::FrequencyRadioStationConfig (QWidget *parent)
     : RadioStationConfig(parent)
 {
-    QHBoxLayout *hl = new QHBoxLayout(this);
-    QVBoxLayout *vl = new QVBoxLayout();
-    hl->setSpacing(0);
-    vl->setSpacing(0);
-    hl->addLayout(vl);
+    QVBoxLayout *vl = new QVBoxLayout(this);
+    vl->setMargin(0);
     vl->addWidget (new QLabel(i18n("Frequency:"), this));
     m_editFrequency = new QSpinBox(this);
     m_editFrequency->setRange(20, 150000);
     m_editFrequency->setSingleStep(10);
     vl->addWidget (m_editFrequency);
-    hl->addItem(new QSpacerItem (10, 1, QSizePolicy::Expanding, QSizePolicy::Fixed));
 
     connect (m_editFrequency, SIGNAL(valueChanged(int)), this, SLOT(slotValueChanged(int)));
 }
@@ -116,14 +112,8 @@ void FrequencyRadioStationConfig::slotValueChanged(int /*i*/)
 InternetRadioStationConfig::InternetRadioStationConfig (QWidget *parent)
     : RadioStationConfig(parent)
 {
-    QHBoxLayout *hl = new QHBoxLayout(this);
-    QVBoxLayout *vl = new QVBoxLayout();
-    hl->setSpacing(0);
-    hl->setMargin (0);
-    vl->setSpacing(0);
+    QVBoxLayout *vl = new QVBoxLayout(this);
     vl->setMargin (0);
-
-    hl->addLayout(vl);
 
     vl->addWidget (new QLabel(i18n("URL:"), this));
     m_editUrl = new KUrlRequester(this);
