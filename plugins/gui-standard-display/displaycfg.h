@@ -22,7 +22,7 @@
 #include <QWidget>
 
 class KColorButton;
-class KFontChooser;
+class NoSizeFontRequester;
 
 class DisplayConfiguration : public QWidget,
                              public IDisplayCfgClient
@@ -58,7 +58,7 @@ protected:
     KColorButton *m_btnActive;
     KColorButton *m_btnInactive;
     KColorButton *m_btnBkgnd;
-    KFontChooser *m_fontChooser;
+    NoSizeFontRequester *m_fontChooser;
 
     bool          m_dirty;
     bool          m_ignore_gui_updates;

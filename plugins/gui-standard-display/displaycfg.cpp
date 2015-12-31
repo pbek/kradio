@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 #include "displaycfg.h"
+#include "nosizefontrequester.h"
 
 #include <kcolorbutton.h>
-#include <kfontdialog.h>
 #include <klocalizedstring.h>
 
 #include <QLayout>
@@ -40,11 +40,10 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     QLabel *l1  = new QLabel(i18n("Active text:"),      this);
     QLabel *l2  = new QLabel(i18n("Inactive text:"),    this);
     QLabel *l3  = new QLabel(i18n("Background color:"), this);
+    QLabel *l4  = new QLabel(i18nc("Font used for the display", "Display font:"), this);
 
-    m_fontChooser = new KFontChooser(this, KFontChooser::DisplayFrame, QStringList(), 4);
-    m_fontChooser->enableColumn(KFontChooser::SizeList, false);
+    m_fontChooser = new NoSizeFontRequester(this);
     m_fontChooser->setFont(queryDisplayFont());
-    m_fontChooser->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
     gl->addWidget (l1,                   0, 0);
     gl->addWidget (m_btnActive,          0, 1);
@@ -52,7 +51,9 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     gl->addWidget (m_btnInactive,        1, 1);
     gl->addWidget (l3,                   2, 0);
     gl->addWidget (m_btnBkgnd,           2, 1);
-    gl->addWidget (m_fontChooser,        3, 0, /*rowspan*/1, /*colspan*/ 2);
+    gl->addWidget (l4,                   3, 0);
+    gl->addWidget (m_fontChooser,        3, 1);
+    gl->addItem   (new QSpacerItem(10, 5, QSizePolicy::Fixed, QSizePolicy::Expanding), 4, 0);
 
     connect(m_btnActive,   SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
     connect(m_btnInactive, SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
