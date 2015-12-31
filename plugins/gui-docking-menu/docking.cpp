@@ -108,9 +108,6 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
     // for now let's add the system tray menu
     setContextMenu(NULL);
 
-    QObject::connect(m_menu, SIGNAL(triggered(QAction *)),
-                     this,   SLOT(slotMenuItemActivated(QAction *)));
-
     buildContextMenu ();
 
 //     m_WorkaroundRecordingMenuUpdate.setInterval(100);
@@ -353,6 +350,9 @@ void RadioDocking::buildStationList()
             m_stationMenuIDs.insert(rs.stationID(), a);
         }
       }
+
+    QObject::connect(m_stationsActionGroup, SIGNAL(triggered(QAction*)),
+                     this,                  SLOT(slotMenuItemActivated(QAction*)));
 }
 
 
