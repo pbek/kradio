@@ -42,8 +42,6 @@ public:
 public:
     virtual void   saveState   (      KConfigGroup &) const;
     virtual void   restoreState(const KConfigGroup &);
-
-    virtual ConfigPageInfo  createConfigurationPage();
 };
 
 #endif

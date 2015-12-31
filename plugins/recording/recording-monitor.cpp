@@ -173,11 +173,6 @@ void RecordingMonitor::noticeConnectedI (ISoundStreamServer *s, bool pointer_val
     }
 }
 
-ConfigPageInfo  RecordingMonitor::createConfigurationPage()
-{
-    return ConfigPageInfo();
-}
-
 void RecordingMonitor::setVisible(bool v)
 {
     pSetVisible(v);

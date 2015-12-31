@@ -57,8 +57,6 @@ public:
     virtual bool   connectI(Interface *i);
     virtual bool   disconnectI(Interface *i);
 
-    virtual ConfigPageInfo  createConfigurationPage();
-
     // ISoundStreamClient
 RECEIVERS:
     void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);

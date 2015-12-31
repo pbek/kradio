@@ -112,7 +112,7 @@ public:
     // they will be deleted automatically when this plugin
     // is deleted, because we disconnect from pluginmanager
     // and the plugin manager will delete all associated gui elements
-    virtual ConfigPageInfo createConfigurationPage () = 0;
+    virtual ConfigPageInfo createConfigurationPage();
 
     // save/restore status, window position, etc...
 

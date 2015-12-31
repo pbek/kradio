@@ -63,12 +63,6 @@ void   PluginConfigurationDialog::restoreState (const KConfigGroup &c)
 }
 
 
-ConfigPageInfo PluginConfigurationDialog::createConfigurationPage()
-{
-    return ConfigPageInfo();
-}
-
-
 // AboutPageInfo  PluginConfigurationDialog::createAboutPage()
 // {
 //     return AboutPageInfo();

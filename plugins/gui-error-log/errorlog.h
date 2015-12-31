@@ -61,8 +61,6 @@ protected:
     virtual void showEvent(QShowEvent *);
     virtual void hideEvent(QHideEvent *);
 
-    virtual ConfigPageInfo createConfigurationPage () { return ConfigPageInfo(); }
-
     struct Page {
         QMutex mutex;
         KTextEdit *edit;

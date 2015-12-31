@@ -37,7 +37,6 @@ class PluginManager;
 //
 //     virtual QString pluginClassName() const { return "KRadioAbout"; }
 //
-//     virtual ConfigPageInfo createConfigurationPage () { return ConfigPageInfo(); }
 // //     virtual AboutPageInfo  createAboutPage ();
 //
 //     virtual void   saveState    (      KConfigGroup &) const {}

@@ -79,8 +79,3 @@ void   SoundServer::restoreState (const KConfigGroup &config)
 {
     PluginBase::restoreState(config);
 }
-
-ConfigPageInfo SoundServer::createConfigurationPage()
-{
-    return ConfigPageInfo ();
-}

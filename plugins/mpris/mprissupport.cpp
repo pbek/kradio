@@ -131,11 +131,6 @@ void MPRISSupport::restoreState (const KConfigGroup &c)
 }
 
 
-ConfigPageInfo MPRISSupport::createConfigurationPage()
-{
-    return ConfigPageInfo();
-}
-
 bool MPRISSupport::noticePowerChanged(bool on)
 {
     emit powerChanged(on);

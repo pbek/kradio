@@ -85,6 +85,12 @@ bool PluginBase::isManagerSet () const
 }
 
 
+ConfigPageInfo PluginBase::createConfigurationPage()
+{
+    return ConfigPageInfo();
+}
+
+
 void   PluginBase::saveState (KConfigGroup &c) const
 {
     // just stored here for better readability of cfg file.

@@ -108,12 +108,6 @@ void   DBusSupport::restoreState (const KConfigGroup &c)
 }
 
 
-ConfigPageInfo DBusSupport::createConfigurationPage()
-{
-    return ConfigPageInfo();
-}
-
-
 // DBus support signals/slots
 
 

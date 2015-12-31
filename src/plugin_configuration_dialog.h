@@ -57,7 +57,6 @@ public:
 
 protected :
 
-    virtual ConfigPageInfo  createConfigurationPage();
 //     virtual AboutPageInfo   createAboutPage();
 
     // WidgetPluginBase
