@@ -45,6 +45,8 @@ signals:
     void sigCancel();
 
 protected:
+    void checkTabBar();
+
     bool m_dirty;
 };
 

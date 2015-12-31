@@ -21,6 +21,7 @@ RadioViewConfiguration::RadioViewConfiguration(QWidget *parent)
 	: KTabWidget (parent),
       m_dirty(true)
 {
+    checkTabBar();
 }
 
 
@@ -35,6 +36,7 @@ int RadioViewConfiguration::addElementTab    (QWidget *page, const QString &labe
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
+    checkTabBar();
     return r;
 }
 
@@ -45,6 +47,7 @@ int RadioViewConfiguration::addElementTab    (QWidget *page, const QIcon &icon, 
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
+    checkTabBar();
     return r;
 }
 
@@ -55,6 +58,7 @@ int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QS
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
+    checkTabBar();
     return r;
 }
 
@@ -65,6 +69,7 @@ int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QI
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
+    checkTabBar();
     return r;
 }
 
@@ -76,6 +81,7 @@ void RadioViewConfiguration::removeElementTab(int index)
     QObject::disconnect(this,  SIGNAL(sigCancel()), w,    SLOT(slotCancel()));
     QObject::disconnect(w,     SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
     KTabWidget::removeTab(index);
+    checkTabBar();
 }
 
 
@@ -99,6 +105,14 @@ void RadioViewConfiguration::slotCancel()
 void RadioViewConfiguration::slotSetDirty()
 {
     m_dirty = true;
+}
+
+
+void RadioViewConfiguration::checkTabBar()
+{
+    const bool onePage = count() < 2;
+    setTabBarHidden(onePage);
+    setDocumentMode(onePage);
 }
 
 
