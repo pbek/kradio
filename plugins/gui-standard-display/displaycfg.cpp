@@ -37,10 +37,6 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     m_btnInactive = new KColorButton(queryDisplayInactiveColor(), this);
     m_btnBkgnd    = new KColorButton(queryDisplayBkgndColor(),    this);
 
-    connect(m_btnActive,   SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
-    connect(m_btnInactive, SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
-    connect(m_btnBkgnd,    SIGNAL(changed(const QColor &)), this, SLOT(slotSetDirty()));
-
     QLabel *l1  = new QLabel(i18n("Active text:"),      this);
     QLabel *l2  = new QLabel(i18n("Inactive text:"),    this);
     QLabel *l3  = new QLabel(i18n("Background color:"), this);
