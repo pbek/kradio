@@ -176,9 +176,13 @@ void AlsaSoundConfiguration::slotCaptureDeviceSelected(int /*comboIdx*/)
 
 void AlsaSoundConfiguration::slotCaptureMixerSelected (int comboIdx)
 {
-    saveCaptureMixerSettings();
-
+    const QString oldCaptureMixer = m_currentCaptureMixer;
     m_currentCaptureMixer = m_comboCaptureMixerCard->itemData(comboIdx).toString();
+    if (oldCaptureMixer == m_currentCaptureMixer) {
+        return;
+    }
+
+    saveCaptureMixerSettings();
 
     // get new mixer elements
     QStringList                     vol_list,  sw_list, all_list;
