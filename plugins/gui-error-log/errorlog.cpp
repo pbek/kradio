@@ -197,17 +197,9 @@ bool ErrorLog::logDebug   (const QString &s)
 // store Log Data
 void ErrorLog::slotUser1()
 {
-    KFileDialog fd(KUrl(),
-                   ("*.log|" + i18n("Log Files") + "( *.log )"),
-                   this);
-    fd.setModal(true);
-    fd.setMode(KFile::File);
-    fd.setOperationMode(KFileDialog::Saving);
-    fd.setWindowTitle (i18n("Save KRadio Logging Data"));
+    const KUrl url = KFileDialog::getSaveUrl(KUrl(), "*.log|" + i18n("Log Files") + " (*.log)", this, i18n("Save KRadio Logging Data"), KFileDialog::ConfirmOverwrite);
 
-    if (fd.exec() == QDialog::Accepted) {
-        KUrl url = fd.selectedUrl();
-
+    if (url.isValid()) {
         KTemporaryFile tmpFile;
         tmpFile.setAutoRemove(true);
         if (tmpFile.open()) {

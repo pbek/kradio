@@ -541,20 +541,14 @@ void RadioConfiguration::slotAddPresets()
 
 void RadioConfiguration::loadPresets(bool add)
 {
-    KFileDialog fd(KStandardDirs::installPath ("data") + "kradio4/presets",
-                   "*.krp|" + i18n("KRadio Preset Files"),
-                   this);
-    fd.setModal(true);
-    fd.setMode(KFile::Files | KFile::ExistingOnly);
-    fd.setCaption (i18n("Select Preset File"));
+    const KUrl::List urls = KFileDialog::getOpenUrls(KStandardDirs::installPath("data") + "kradio4/presets", "*.krp|" + i18n("KRadio Preset Files"), this, i18n("Select Preset File"));
 
-    if (fd.exec() == QDialog::Accepted) {
+    if (!urls.isEmpty()) {
         slotSetDirty();
         StationList sl_all;
         if (add) {
             sl_all = m_stations;
         }
-        KUrl::List urls = fd.selectedUrls();
         KUrl url;
         foreach (url, urls) {
             StationList sl;
@@ -569,16 +563,11 @@ void RadioConfiguration::loadPresets(bool add)
 
 void RadioConfiguration::slotStorePresets()
 {
-    KFileDialog fd(QString(),
-                   "*.krp|" + i18n("KRadio Preset Files"),
-                   this);
-    fd.setModal(true);
-    fd.setMode(KFile::File);
-    fd.setCaption (i18n("Save Preset File"));
+    const KUrl url = KFileDialog::getSaveUrl(KUrl(), "*.krp|" + i18n("KRadio Preset Files"), this, i18n("Save Preset File"), KFileDialog::ConfirmOverwrite);
 
-    if (fd.exec() == QDialog::Accepted) {
-        editPresetFile->setUrl(fd.selectedUrl().url());
-        m_stations.writeXML(fd.selectedUrl(), m_logger);
+    if (url.isValid()) {
+        editPresetFile->setUrl(url.url());
+        m_stations.writeXML(url, m_logger);
     }
 }
 

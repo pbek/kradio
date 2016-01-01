@@ -553,15 +553,10 @@ bool V4LRadioConfiguration::noticeSoundStreamCreated(SoundStreamID id)
 
 void V4LRadioConfiguration::selectRadioDevice()
 {
-    KFileDialog fd(KUrl("/dev/"),
-                   i18n("any ( * )"),
-                   this);
-    fd.setModal(true);
-    fd.setMode(KFile::File | KFile::ExistingOnly);
-    fd.setCaption (i18n("Select Radio Device"));
+    const QString fileName = KFileDialog::getOpenFileName(KUrl("/dev/"), i18n("any ( * )"), this, i18n("Select Radio Device"));
 
-    if (fd.exec() == QDialog::Accepted) {
-        m_cbRadioDevice->setEditText(fd.selectedFile());
+    if (!fileName.isEmpty()) {
+        m_cbRadioDevice->setEditText(fileName);
         slotEditRadioDeviceChanged();
     }
 }
