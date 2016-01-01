@@ -24,9 +24,7 @@
 
 #include <QString>
 
-#ifndef max
-    #define max(a,b)  ((a) > (b) ? (a) : (b))
-#endif
+#define rds_max(a,b)  ((a) > (b) ? (a) : (b))
 
 #define RDS_2AB_POS_BLOCK          RDS_BLK_B
 #define RDS_2AB_POS_SHIFT          0
@@ -37,7 +35,7 @@
 
 #define RDS_RADIOTEXT_A_MAX_LEN    64
 #define RDS_RADIOTEXT_B_MAX_LEN    32
-#define RDS_RADIOTEXT_MAX_LEN      (max(RDS_RADIOTEXT_A_MAX_LEN, RDS_RADIOTEXT_B_MAX_LEN))
+#define RDS_RADIOTEXT_MAX_LEN      (rds_max(RDS_RADIOTEXT_A_MAX_LEN, RDS_RADIOTEXT_B_MAX_LEN))
 
 enum RDS_2AB_State { RDS_2AB_WAIT4GRP, RDS_2AB_COMPLETE };
 
