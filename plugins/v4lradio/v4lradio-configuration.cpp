@@ -303,28 +303,28 @@ bool V4LRadioConfiguration::noticeCapabilitiesChanged(const V4LCaps &c)
 
     labelDeviceVolume ->setEnabled(c.hasVolume);
     editDeviceVolume  ->setEnabled(c.hasVolume);
-    editDeviceVolume  ->setRange(0, 1, max(0.01, c.volumeStep()), false);
+    editDeviceVolume  ->setRange(0, 1, qMax(0.01f, c.volumeStep()), false);
     sliderDeviceVolume->setMinimum(0);
     sliderDeviceVolume->setMaximum(c.maxVolume - c.minVolume);
     sliderDeviceVolume->setEnabled(c.hasVolume);
 
     labelTreble ->setEnabled(c.hasTreble);
     editTreble  ->setEnabled(c.hasTreble);
-    editTreble  ->setRange(0, 1, max(0.01, c.trebleStep()), false);
+    editTreble  ->setRange(0, 1, qMax(0.01f, c.trebleStep()), false);
     sliderTreble->setMinimum(c.minTreble);
     sliderTreble->setMaximum(c.maxTreble);
     sliderTreble->setEnabled(c.hasTreble);
 
     labelBass ->setEnabled(c.hasBass);
     editBass  ->setEnabled(c.hasBass);
-    editBass  ->setRange(0, 1, max(0.01, c.bassStep()), false);
+    editBass  ->setRange(0, 1, qMax(0.01f, c.bassStep()), false);
     sliderBass->setMinimum(c.minBass);
     sliderBass->setMaximum(c.maxBass);
     sliderBass->setEnabled(c.hasBass);
 
     labelBalance ->setEnabled(c.hasBalance);
     editBalance  ->setEnabled(c.hasBalance);
-    editBalance  ->setRange(-1, 1, max(0.01, c.balanceStep()), false);
+    editBalance  ->setRange(-1, 1, qMax(0.01f, c.balanceStep()), false);
     sliderBalance->setMinimum(c.minBalance);
     sliderBalance->setMaximum(c.maxBalance);
     sliderBalance->setEnabled(c.hasBalance);
