@@ -477,7 +477,7 @@ bool OSSSoundDevice::noticeSoundStreamData(SoundStreamID id,
     }
 
     size_t n = m_PlaybackBuffer.addData(data, size);
-    consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? n : min(consumed_size, n);
+    consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? n : qMin(consumed_size, n);
 
 //     if (n < size) {
 //         m_PlaybackSkipCount += size - n;

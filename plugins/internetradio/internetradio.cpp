@@ -845,7 +845,7 @@ void InternetRadio::radio_done()
 bool InternetRadio::setPlaybackVolume(SoundStreamID id, float volume)
 {
     if (isPowerOff() && id == m_SoundStreamSinkID) {
-        m_defaultPlaybackVolume = min(max(volume, 0.0), 1.0);
+        m_defaultPlaybackVolume = qBound<float>(0, volume, 1);
         return true;
     } else {
         return false;
@@ -962,7 +962,7 @@ bool InternetRadio::noticeReadyForPlaybackData(SoundStreamID id, size_t free_siz
         DataBuffer         &buf           = m_decoderThread->decoder()->getFirstBuffer();
         QByteArray          data          = buf.remainingData();
         size_t              dataSize      = data.size();
-        size_t              size          = min(dataSize, free_size);
+        size_t              size          = qMin(dataSize, free_size);
                             consumed_size = SIZE_T_DONT_CARE;
         const SoundMetaData &md           = buf.metaData();
         const SoundFormat   &sf           = buf.soundFormat();

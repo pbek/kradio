@@ -410,7 +410,7 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
             fbuf.removeData(size - fbuf.getFreeSize());
         }
         size_t n = fbuf.addData(data, size);
-        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? n : min(consumed_size, n);
+        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? n : qMin(consumed_size, n);
 //         if (n != size) {
 //             logDebug("recording packet: was not written completely to tmp buf");
 //         }
@@ -488,7 +488,7 @@ bool Recording::noticeSoundStreamData(SoundStreamID id,
             remSize -= bufferSize;
             remData += bufferSize;
         }
-        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? size - remSize : min(consumed_size, size - remSize);
+        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? size - remSize : qMin(consumed_size, size - remSize);
 
         return true;
     }

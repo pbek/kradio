@@ -591,7 +591,7 @@ bool AlsaSoundDevice::noticeSoundStreamData(SoundStreamID id,
 
     const char *buffer        = data;
     size_t n = m_PlaybackBuffer.addData(buffer, size);
-    consumed_size  = (consumed_size == SIZE_T_DONT_CARE) ? n : min (consumed_size, n);
+    consumed_size  = (consumed_size == SIZE_T_DONT_CARE) ? n : qMin(consumed_size, n);
 
     return true;
 }

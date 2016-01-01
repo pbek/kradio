@@ -2019,7 +2019,7 @@ void V4LRadio::poll()
 bool V4LRadio::setPlaybackVolume(SoundStreamID id, float volume)
 {
     if (isPowerOff() && id == m_SoundStreamSinkID) {
-        m_defaultPlaybackVolume = min(max(volume, 0.0), 1.0);
+        m_defaultPlaybackVolume = qBound<float>(0, volume, 1);
         return true;
     } else {
         return false;

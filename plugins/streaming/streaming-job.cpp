@@ -410,7 +410,7 @@ void   StreamingJob::slotWriteData (int fileno)
 void StreamingJob::playData(const char *data, size_t size, size_t &consumed_size)
 {
     size_t free = m_Buffer.getFreeSize();
-    consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? free : min(consumed_size, free);
+    consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? free : qMin(consumed_size, free);
     if (free > size) {
         free = size;
     }

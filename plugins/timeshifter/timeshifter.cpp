@@ -460,7 +460,7 @@ bool TimeShifter::noticeSoundStreamData(SoundStreamID id, const SoundFormat &/*s
         m_RingBuffer.addData(buffer_prop, prop_buffer_size);
         m_RingBuffer.addData((const char*)&size, sizeof(size));
         m_RingBuffer.addData(data, size);
-        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? size : min(consumed_size, size);
+        consumed_size = (consumed_size == SIZE_T_DONT_CARE) ? size : qMin(consumed_size, size);
 
         if (m_RingBuffer.error()) {
             logError(m_RingBuffer.errorString());
