@@ -26,6 +26,7 @@
 #include <QIODevice>
 #include <QMessageBox>
 #include <QTextCodec>
+#include <QXmlStreamWriter>
 #include <kio/netaccess.h>
 #include <ktemporaryfile.h>
 #include <klocalizedstring.h>
@@ -260,44 +261,47 @@ bool StationList::readXML (const KUrl &url, const IErrorLogClient &logger, bool 
 
 QString StationList::writeXML (const IErrorLogClient &/*logger*/) const
 {
-    QString data = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    QString data;
 
-    // write station list
+    {
+    QXmlStreamWriter writer(&data);
+    writer.setAutoFormatting(true);
+    writer.setAutoFormattingIndent(-1);
+    writer.setCodec("UTF-8");
 
-    QString t   = "\t";
-    QString tt  = "\t\t";
-    QString ttt = "\t\t\t";
+    writer.writeStartDocument();
+    writer.writeStartElement(KRadioConfigElement);
+    writer.writeStartElement(StationListElement);
 
-    data +=       xmlOpenTag(KRadioConfigElement) +
-            t   + xmlOpenTag(StationListElement) +
-            tt  + xmlTag(StationListFormat, STATION_LIST_FORMAT) +
-            tt  + xmlOpenTag(StationListInfo) +
-            ttt + xmlTag(StationListInfoCreator,    "kradio-" KRADIO_VERSION) +
-            ttt + xmlTag(StationListInfoMaintainer, m_metaData.maintainer) +
-            ttt + xmlTag(StationListInfoChanged,    m_metaData.lastChange.toString(Qt::ISODate)) +
-            ttt + xmlTag(StationListInfoCountry,    m_metaData.country) +
-            ttt + xmlTag(StationListInfoCity,       m_metaData.city) +
-            ttt + xmlTag(StationListInfoMedia,      m_metaData.media) +
-            ttt + xmlTag(StationListInfoComments,   m_metaData.comment) +
-            tt  + xmlCloseTag (StationListInfo);
+    writer.writeTextElement(StationListFormat, STATION_LIST_FORMAT);
+    writer.writeStartElement(StationListInfo);
+    writer.writeTextElement(StationListInfoCreator, "kradio-" KRADIO_VERSION);
+    writer.writeTextElement(StationListInfoMaintainer, m_metaData.maintainer);
+    writer.writeTextElement(StationListInfoChanged, m_metaData.lastChange.toString(Qt::ISODate));
+    writer.writeTextElement(StationListInfoCountry, m_metaData.country);
+    writer.writeTextElement(StationListInfoCity, m_metaData.city);
+    writer.writeTextElement(StationListInfoMedia, m_metaData.media);
+    writer.writeTextElement(StationListInfoComments, m_metaData.comment);
+    writer.writeEndElement();
 
     for (const_iterator it = begin(); it != end(); ++it) {
         RadioStation *s = *it;
 
-        data += tt + xmlOpenTag (s->getClassName());
+        writer.writeStartElement(s->getClassName());
 
         QStringList properties = s->getPropertyNames();
         foreach (const QString &prop, properties) {
-            data += ttt + xmlTag (prop, s->getProperty(prop));
+            writer.writeTextElement(prop, s->getProperty(prop));
         }
-        data += tt + xmlCloseTag(s->getClassName());
+        writer.writeEndElement();
 
     }
 
-    data += t + xmlCloseTag(StationListElement) +
-                xmlCloseTag(KRadioConfigElement);
+    writer.writeEndElement();
+    writer.writeEndElement();
+    }
 
-    return data;
+    return data + QLatin1Char('\n');
 }
 
 
