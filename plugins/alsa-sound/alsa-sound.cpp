@@ -34,7 +34,6 @@
 #include "alsa-sound.h"
 #include "alsa-sound-configuration.h"
 // #include "capture-thread.h"
-#include "utils.h"
 #include "debug-profiler.h"
 
 ///////////////////////////////////////////////////////////////////////

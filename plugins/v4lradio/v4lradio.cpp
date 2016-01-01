@@ -43,7 +43,6 @@
 #include <klocalizedstring.h>
 
 #include "stationlist.h"
-#include "utils.h"
 #include "v4lradio.h"
 #include "v4lradio-configuration.h"
 

@@ -36,7 +36,6 @@
 #include <ktabwidget.h>
 #include <kicon.h>
 
-#include "utils.h"
 #include "gui_list_helper.h"
 #include "v4lradio-configuration.h"
 #include "v4lradio.h"

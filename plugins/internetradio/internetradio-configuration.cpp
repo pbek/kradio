@@ -30,7 +30,6 @@
 #include <klocalizedstring.h>
 #include <ktabwidget.h>
 
-#include "utils.h"
 #include "gui_list_helper.h"
 #include "internetradio-configuration.h"
 

@@ -31,7 +31,6 @@
 #include <klocalizedstring.h>
 #include <kicon.h>
 
-#include "utils.h"
 #include "gui_list_helper.h"
 #include "timeshifter-configuration.h"
 #include "timeshifter.h"

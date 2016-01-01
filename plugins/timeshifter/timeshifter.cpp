@@ -18,7 +18,6 @@
 #include <klocalizedstring.h>
 #include <kuser.h>
 
-#include "utils.h"
 #include "timeshifter.h"
 #include "timeshifter-configuration.h"
 

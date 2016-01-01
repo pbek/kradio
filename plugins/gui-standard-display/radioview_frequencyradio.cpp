@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "utils.h"
-
 #include <QPainter>
 #include <QImage>
 #include <QPixmap>

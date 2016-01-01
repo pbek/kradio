@@ -17,7 +17,6 @@
 
 #include "streaming.h"
 
-#include "utils.h"
 #include <klocalizedstring.h>
 #include <kaboutdata.h>
 #include <kurl.h>

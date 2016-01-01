@@ -24,7 +24,6 @@
 #include <unistd.h>
 
 #include "stationlist.h"
-#include "utils.h"
 #include "internetradio.h"
 #include "decoder_thread.h"
 

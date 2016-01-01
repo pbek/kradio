@@ -29,7 +29,6 @@
 #include <errno.h>
 
 #include "oss-sound-configuration.h"
-#include "../../src/include/utils.h"
 
 ///////////////////////////////////////////////////////////////////////
 //// plugin library functions

@@ -17,9 +17,6 @@
 
 #include "streaming-job.h"
 
-#include "utils.h"
-
-
 #include <QFile>
 #include <QSocketNotifier>
 #include <QIODevice>
