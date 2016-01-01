@@ -132,9 +132,6 @@ void AlsaSoundConfiguration::slotCheckSoundDevices()
         int new_pb_idx = m_comboPlaybackDevice->findData(old_pb_device);
         if (new_pb_idx >= 0) {
             m_comboPlaybackDevice->setCurrentIndex(new_pb_idx);
-        } else if (new_pb_idx < 0) {
-            slotPlaybackDeviceSelected(m_comboPlaybackDevice->currentIndex());
-            slotSetDirty();
         }
     }
 
@@ -142,9 +139,6 @@ void AlsaSoundConfiguration::slotCheckSoundDevices()
         int new_pbm_idx = m_comboPlaybackMixerCard->findData(old_pb_mixer);
         if (new_pbm_idx >= 0) {
             m_comboPlaybackMixerCard->setCurrentIndex(new_pbm_idx);
-        } else if (new_pbm_idx < 0) {
-            slotPlaybackMixerSelected(m_comboPlaybackMixerCard->currentIndex());
-            slotSetDirty();
         }
     }
 
@@ -152,9 +146,6 @@ void AlsaSoundConfiguration::slotCheckSoundDevices()
         int new_ca_idx = m_comboCaptureDevice->findData(old_ca_device);
         if (new_ca_idx >= 0) {
             m_comboCaptureDevice->setCurrentIndex(new_ca_idx);
-        } else if (new_ca_idx < 0) {
-            slotCaptureDeviceSelected(m_comboCaptureDevice->currentIndex());
-            slotSetDirty();
         }
     }
 
@@ -162,9 +153,6 @@ void AlsaSoundConfiguration::slotCheckSoundDevices()
         int new_cam_idx = m_comboCaptureMixerCard->findData(old_ca_mixer);
         if (new_cam_idx >= 0) {
             m_comboCaptureMixerCard->setCurrentIndex(new_cam_idx);
-        } else if (new_cam_idx < 0) {
-            slotCaptureMixerSelected(m_comboCaptureMixerCard->currentIndex());
-            slotSetDirty();
         }
     }
 }
