@@ -263,7 +263,10 @@ void PluginManager::insertPlugin(PluginBase *p)
                 p->noticeWidgetPluginShown(w2, w2->isReallyVisible());
         }
 
-        updatePluginHideShowMenu();
+        if (w1) {
+            QMenu *menu = getPluginHideShowMenu();
+            menu->addAction(w1->getHideShowAction());
+        }
 
         profiler_widget.stop();
     }
@@ -320,7 +323,15 @@ void PluginManager::removePlugin(PluginBase *p)
 
         notifyPluginsRemoved(p);
 
-        updatePluginHideShowMenu();
+        if (p->destructorCalled()) {
+            // no more vtable, so no way to dynamic_cast
+            updatePluginHideShowMenu();
+        } else if (m_widgetPluginHideShowMenu) {
+            WidgetPluginBase *w1 = dynamic_cast<WidgetPluginBase*>(p);
+            if (w1) {
+                m_widgetPluginHideShowMenu->removeAction(w1->getHideShowAction());
+            }
+        }
     }
 }
 
