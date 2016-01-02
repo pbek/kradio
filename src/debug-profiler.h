@@ -22,6 +22,8 @@
 #include <QMap>
 #include <kdemacros.h>
 
+#ifdef KRADIO_ENABLE_PROFILERS
+
 #if (defined __i386__) || (defined __x86_64__)
 static __inline__ unsigned long long int rdtsc()
 {
@@ -104,6 +106,17 @@ protected:
     QByteArray m_Description;
 };
 
+#else
 
+class BlockProfiler
+{
+public:
+    inline BlockProfiler(const QByteArray &) {}
+    inline ~BlockProfiler() {}
+
+    inline void stop() {}
+};
+
+#endif
 
 #endif

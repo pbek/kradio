@@ -17,6 +17,8 @@
 
 #include "debug-profiler.h"
 
+#ifdef KRADIO_ENABLE_PROFILERS
+
 #include <QList>
 
 #include <sys/resource.h>
@@ -138,3 +140,4 @@ void BlockProfiler::stop()
     m_Description = QByteArray();
 }
 
+#endif

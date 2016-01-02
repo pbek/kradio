@@ -69,8 +69,10 @@ int main(int argc, char *argv[])
     if (!a.quitting()) {
         ret = a.exec();
     }
+#ifdef KRADIO_ENABLE_PROFILERS
 //     global_time_profiler.printData();
 //     global_mem_profiler.printData();
+#endif
 
     IErrorLogClient::staticLogDebug("normal shutdown");
 
