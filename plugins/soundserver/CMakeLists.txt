@@ -16,8 +16,6 @@ KDE4_ADD_UI_FILES(kradio_plugin_soundserver_sources
     ${kradio_plugin_soundserver_UIs}
 )
 
-KDE4_INSTALL_ICONS( ${ICON_INSTALL_DIR}  )
-
 
 
 KDE4_ADD_PLUGIN(kradio4_plugin_soundserver

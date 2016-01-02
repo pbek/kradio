@@ -23,8 +23,6 @@ kde4_add_ui_files(kradio_plugin_alsa_sound_sources
     ${kradio_plugin_alsa_sound_UIs}
 )
 
-KDE4_INSTALL_ICONS( ${ICON_INSTALL_DIR}  )
-
 
 string(REGEX REPLACE "-Wl,--no-undefined" "" CMAKE_MODULE_LINKER_FLAGS ${CMAKE_MODULE_LINKER_FLAGS})
 
