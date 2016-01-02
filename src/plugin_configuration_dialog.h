@@ -53,8 +53,6 @@ public:
 
 
 
-    virtual void noticePluginRenamed(PluginBase */*p*/, const QString &/*name*/);
-
 protected :
 
 //     virtual AboutPageInfo   createAboutPage();
