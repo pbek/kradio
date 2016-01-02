@@ -35,8 +35,6 @@ kde4_add_plugin(kradio4_plugin_lirc
 
 TARGET_LINK_LIBRARIES(kradio4_plugin_lirc
   ${KDE4_KDEUI_LIBS}
-  ${QT_QT3SUPPORT_LIBRARY}
-  ${KDE4_KDE3SUPPORT_LIBRARY}
   ${LircClient_LIBRARIES}
 )
 
