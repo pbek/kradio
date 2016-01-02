@@ -160,7 +160,7 @@ protected:
     void    buildRecordingMenu();
     void    buildStationList(const StationList &sl, QAction *before = 0);
     QString generateStationTitle() const;
-    QString generateAlarmTitle  () const;
+    QString generateAlarmTitle  (const Alarm *) const;
 
     void    ShowHideWidgetPlugins();
 
@@ -217,6 +217,8 @@ protected:
 
 //     QList<QAction*>                            m_WorkaroundRecordingMenuActionsToBeDeleted;
 //     QTimer                                     m_WorkaroundRecordingMenuUpdate;
+
+    QString                                    m_cachedNextAlarmString;
 };
 
 

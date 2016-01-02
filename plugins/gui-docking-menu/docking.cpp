@@ -108,6 +108,8 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
     // for now let's add the system tray menu
     setContextMenu(NULL);
 
+    m_cachedNextAlarmString = generateAlarmTitle(queryNextAlarm());
+
     buildContextMenu ();
 
 //     m_WorkaroundRecordingMenuUpdate.setInterval(100);
@@ -273,7 +275,7 @@ void RadioDocking::buildContextMenu()
     buildStationList(queryStations());
 
 
-    m_alarmID  = m_menu->addTitle (generateAlarmTitle());
+    m_alarmID  = m_menu->addTitle (m_cachedNextAlarmString);
 
     m_sleepID  = m_menu->addAction(KIcon("kradio_zzz"), "sleep-dummy");
     m_seekfwID = m_menu->addAction(KIcon("media-seek-forward"),  i18n("Search Next Station"));
@@ -421,9 +423,12 @@ void RadioDocking::slotSleepCountdown()
 }
 
 
-bool RadioDocking::noticeNextAlarmChanged(const Alarm */*a*/)
+bool RadioDocking::noticeNextAlarmChanged(const Alarm *a)
 {
-    buildContextMenu();
+    const QString newTitle = generateAlarmTitle(a);
+    if (newTitle != m_cachedNextAlarmString) {
+        buildContextMenu();
+    }
     return true;
 }
 
@@ -479,14 +484,13 @@ QString RadioDocking::generateStationTitle() const
     return i18n("KRadio: %1", s);
 }
 
-QString RadioDocking::generateAlarmTitle() const
+QString RadioDocking::generateAlarmTitle(const Alarm *a) const
 {
     QDateTime d;
-    const Alarm *a = queryNextAlarm();
     if (a) d = a->nextAlarm();
 
     if (d.isValid()) {
-        return i18n("next alarm: %1", a->nextAlarm().toString());
+        return i18n("next alarm: %1", d.toString());
     } else {
         return i18n("<no alarm pending>");
     }
