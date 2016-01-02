@@ -15,14 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-class QColorGroup;
-#include <Q3ListView>
 #include <QLabel>
 #include <QString>
 #include <QFileInfo>
 #include <QWidget>
+#include <QStandardItemModel>
 
-#include <klistwidget.h>
 #include <klocalizedstring.h>
 #include <kurlrequester.h>
 #include <kdemacros.h>
@@ -31,11 +29,7 @@ class QColorGroup;
 
 #include "lirc-configuration.h"
 #include "lircsupport.h"
-#include "listviewitem_lirc.h"
-
-#ifdef KRADIO_ENABLE_FIXMES
-    #warning "FIXME: port K3ListView to KListWidget"
-#endif
+#include "styleditemdelegate_lirc.h"
 
 LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
  : QWidget(parent),
@@ -96,19 +90,28 @@ LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
     m_order[k++] = LIRC_SLEEP;
     m_order[k++] = LIRC_APPLICATION_QUIT;
 
-    m_ActionList->setSorting(-1);
-    m_ActionList->setColumnWidthMode(0, Q3ListView::Maximum);
-    m_ActionList->setColumnWidthMode(1, Q3ListView::Maximum);
-    m_ActionList->setColumnWidthMode(2, Q3ListView::Maximum);
+    m_model = new QStandardItemModel(m_ActionList);
+    QStringList headers;
+    headers.append(i18n("Action"));
+    headers.append(i18n("LIRC String"));
+    headers.append(i18n("Alternative LIRC String"));
+    m_model->setHorizontalHeaderLabels(headers);
+    m_ActionList->setModel(m_model);
+    m_delegate = new StyledItemDelegateLirc(m_ActionList);
+    m_ActionList->setItemDelegate(m_delegate);
 
-    connect(m_ActionList,      SIGNAL(itemRenamed(Q3ListViewItem*, int)), this, SLOT(slotSetDirty()));
+    connect(m_model,           SIGNAL(itemChanged(QStandardItem*)),       this, SLOT(slotSetDirty()));
     connect(comboPowerOffMode, SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
     connect(comboPowerOnMode,  SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
     connect(cbSyncAtRuntime,   SIGNAL(toggled(bool)),                     this, SLOT(slotSetDirty()));
     connect(cbSyncAtStartup,   SIGNAL(toggled(bool)),                     this, SLOT(slotSetDirty()));
+    connect(m_delegate, SIGNAL(startedRenaming(QModelIndex)), this, SLOT(slotRenamingStarted(QModelIndex)));
+    connect(m_delegate, SIGNAL(closeEditor(QWidget*,QAbstractItemDelegate::EndEditHint)),
+            this, SLOT(slotRenamingStopped()));
 
     connect(edLIRCConfigurationFile, SIGNAL(textChanged(const QString &)), this, SLOT(readLIRCConfigurationFile()));
     connect(edLIRCConfigurationFile, SIGNAL(textChanged(const QString &)), this, SLOT(slotSetDirty()));
+    slotRenamingStopped();
     slotCancel();
 }
 
@@ -161,17 +164,16 @@ void LIRCConfiguration::readLIRCConfigurationFile()
 void LIRCConfiguration::slotOK()
 {
     if (m_dirty && m_LIRC) {
-        Q3ListViewItem *item = m_ActionList->firstChild();
-
         m_LIRC->setLIRCConfigurationFile(edLIRCConfigurationFile->url().path());
 
         QMap<LIRC_Actions, QString> actions;
         QMap<LIRC_Actions, QString> alt_actions;
 
-        for (int i = 0; item; ++i, item = item->nextSibling()) {
+        const int rowCount = m_model->rowCount();
+        for (int i = 0; i < rowCount; ++i) {
             LIRC_Actions action = m_order[i];
-            actions[action]     = item->text(1);
-            alt_actions[action] = item->text(2);
+            actions[action]     = m_model->item(i, 1)->text();
+            alt_actions[action] = m_model->item(i, 2)->text();
         }
         m_LIRC->setActions(actions, alt_actions);
 
@@ -187,7 +189,10 @@ void LIRCConfiguration::slotCancel()
 {
     if (m_dirty) {
         m_ignore_gui_updates = true;
-        m_ActionList->clear();
+        m_delegate->stopEditing();
+        // do not use clear() with QStandardItemModel, as it removes
+        // also the header items!
+        m_model->setRowCount(0);
 
         int idx_power_on  = -1;
         int idx_power_off = -1;
@@ -206,12 +211,14 @@ void LIRCConfiguration::slotCancel()
                 LIRC_Actions action = m_order[i];
                 addKey(m_descriptions[action], actions[action], alt_actions[action]);
             }
+            m_ActionList->resizeColumnToContents(0);
+            m_ActionList->resizeColumnToContents(1);
+            m_ActionList->resizeColumnToContents(2);
 
             idx_power_on  = comboPowerOnMode ->findData(m_LIRC->getPowerOnMode());
             idx_power_off = comboPowerOffMode->findData(m_LIRC->getPowerOffMode());
             m_LIRC->getLIRCModeSync(at_startup, at_runtime);
         }
-        slotRenamingStopped(NULL, -1);
 
         comboPowerOnMode ->setCurrentIndex(idx_power_on  < 0 ? 0 : idx_power_on);
         comboPowerOffMode->setCurrentIndex(idx_power_off < 0 ? 0 : idx_power_off);
@@ -227,18 +234,16 @@ void LIRCConfiguration::slotCancel()
 
 void LIRCConfiguration::addKey(const QString &descr, const QString &key, const QString &alt_key)
 {
-    ListViewItemLirc *item = new ListViewItemLirc(m_ActionList, m_ActionList->lastChild());
-    if (item) {
-        QObject::connect(item, SIGNAL(sigRenamingStarted (ListViewItemLirc *, int)),
-                         this, SLOT  (slotRenamingStarted(ListViewItemLirc *, int)));
-        QObject::connect(item, SIGNAL(sigRenamingStopped (ListViewItemLirc *, int)),
-                         this, SLOT  (slotRenamingStopped(ListViewItemLirc *, int)));
-        item->setText(0, descr);
-        item->setText(1, key);
-        item->setText(2, alt_key);
-        item->setRenameEnabled(1, true);
-        item->setRenameEnabled(2, true);
-    }
+    QStandardItem *item;
+    QList<QStandardItem *> row;
+    item = new QStandardItem(descr);
+    item->setEditable(false);
+    row.append(item);
+    item = new QStandardItem(key);
+    row.append(item);
+    item = new QStandardItem(alt_key);
+    row.append(item);
+    m_model->appendRow(row);
 }
 
 void LIRCConfiguration::slotUpdateConfig()
@@ -249,25 +254,26 @@ void LIRCConfiguration::slotUpdateConfig()
 
 void LIRCConfiguration::slotRawLIRCSignal(const QString &val, int /*repeat_counter*/, bool &consumed)
 {
-    Q3ListViewItem *_it = m_ActionList->currentItem();
-    ListViewItemLirc *it = static_cast<ListViewItemLirc*>(_it);
-    if (it->isRenamingInProcess()) {
-        int col = it->getRenamingColumn();
-        it->cancelRename(col);
-        it->setText(col, val);
+    if (m_renamingItem.isValid()) {
+        // keep a copy of m_renamingItem before canceling editing
+        const QModelIndex index = m_renamingItem;
+        m_delegate->stopEditing();
+        m_model->setData(index, val);
         consumed = true;
         m_dirty = true;
     }
 }
 
-void LIRCConfiguration::slotRenamingStarted(ListViewItemLirc */*sender*/, int /*col*/)
+void LIRCConfiguration::slotRenamingStarted(const QModelIndex &index)
 {
+    m_renamingItem = index;
     m_LabelHints->setText(i18n("Enter the key string of your remote or just press the button on your remote control"));
 }
 
 
-void LIRCConfiguration::slotRenamingStopped(ListViewItemLirc */*sender*/, int /*col*/)
+void LIRCConfiguration::slotRenamingStopped()
 {
+    m_renamingItem = QPersistentModelIndex();
     m_LabelHints->setText(i18n("Double click on the entries to change the assignments"));
 }
 

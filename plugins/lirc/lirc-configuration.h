@@ -20,7 +20,9 @@
 
 #include "ui_lirc-configuration-ui.h"
 #include "lircsupport.h"
-#include "listviewitem_lirc.h"
+
+class QStandardItemModel;
+class StyledItemDelegateLirc;
 
 class LIRCConfiguration : public QWidget,
                           public Ui_LIRCConfigurationUI
@@ -39,8 +41,8 @@ protected slots:
     void slotUpdateConfig();
     void slotRawLIRCSignal(const QString &val, int repeat_counter, bool &consumed);
 
-    void slotRenamingStarted(ListViewItemLirc *, int);
-    void slotRenamingStopped(ListViewItemLirc *, int);
+    void slotRenamingStarted(const QModelIndex &index);
+    void slotRenamingStopped();
 
     void readLIRCConfigurationFile();
 
@@ -53,6 +55,10 @@ protected:
 
     QMap<int, LIRC_Actions>      m_order;
     QMap<LIRC_Actions, QString>  m_descriptions;
+
+    QStandardItemModel          *m_model;
+    StyledItemDelegateLirc      *m_delegate;
+    QPersistentModelIndex        m_renamingItem;
 
     bool                         m_dirty;
     bool                         m_ignore_gui_updates;

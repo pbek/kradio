@@ -13,58 +13,13 @@
   </property>
   <layout class="QGridLayout">
    <item row="5" column="0" colspan="3">
-    <widget class="K3ListView" name="m_ActionList">
-     <property name="allColumnsShowFocus">
-      <bool>true</bool>
-     </property>
-     <property name="itemMargin">
-      <number>2</number>
-     </property>
+    <widget class="QTreeView" name="m_ActionList">
      <property name="rootIsDecorated">
       <bool>false</bool>
      </property>
-     <property name="resizeMode">
-      <enum>Q3ListView::AllColumns</enum>
-     </property>
-     <property name="defaultRenameAction">
-      <enum>Q3ListView::Accept</enum>
-     </property>
-     <property name="fullWidth">
+     <property name="allColumnsShowFocus">
       <bool>true</bool>
      </property>
-     <column>
-      <property name="text">
-       <string>Action</string>
-      </property>
-      <property name="clickable">
-       <bool>true</bool>
-      </property>
-      <property name="resizable">
-       <bool>true</bool>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>LIRC String</string>
-      </property>
-      <property name="clickable">
-       <bool>true</bool>
-      </property>
-      <property name="resizable">
-       <bool>true</bool>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Alternative LIRC String</string>
-      </property>
-      <property name="clickable">
-       <bool>true</bool>
-      </property>
-      <property name="resizable">
-       <bool>true</bool>
-      </property>
-     </column>
     </widget>
    </item>
    <item row="6" column="0" colspan="3">
@@ -170,19 +125,14 @@
  <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
   <customwidget>
-   <class>K3ListView</class>
-   <extends>Q3ListView</extends>
-   <header>k3listview.h</header>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
