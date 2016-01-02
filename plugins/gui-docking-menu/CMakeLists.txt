@@ -8,10 +8,6 @@ FILE(GLOB kradio_plugin_gui_docking_menu_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 )
 
-FILE(GLOB kradio_plugin_gui_docking_menu_include
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.h
-)
-
 FILE(GLOB kradio_plugin_gui_docking_menu_UIs
     ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
 )

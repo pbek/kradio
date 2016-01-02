@@ -82,10 +82,6 @@ FILE(GLOB kradio_plugin_recording_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 )
 
-FILE(GLOB kradio_plugin_recording_include
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.h
-)
-
 FILE(GLOB kradio_plugin_recording_UIs
     ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
 )

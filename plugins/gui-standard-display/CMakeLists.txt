@@ -9,10 +9,6 @@ FILE(GLOB kradio_plugin_gui_standard_display_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 )
 
-FILE(GLOB kradio_plugin_gui_standard_display_include
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.h
-)
-
 FILE(GLOB kradio_plugin_gui_standard_display_UIs
     ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
 )

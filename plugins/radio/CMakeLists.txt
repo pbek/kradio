@@ -7,10 +7,6 @@ FILE(GLOB kradio_plugin_radio_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 )
 
-FILE(GLOB kradio_plugin_radio_include
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.h
-)
-
 FILE(GLOB kradio_plugin_radio_UIs
     ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
 )
