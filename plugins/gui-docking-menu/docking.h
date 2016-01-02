@@ -158,7 +158,7 @@ protected:
     void    updateTrayIcon(bool run_query_rec, bool run_query_pause, bool known_rec_state, bool known_pause_state);
     void    updatePauseMenuItem(bool run_query, bool known_pause_state);
     void    buildRecordingMenu();
-    void    buildStationList();
+    void    buildStationList(const StationList &sl, QAction *before = 0);
     QString generateStationTitle() const;
     QString generateAlarmTitle  () const;
 

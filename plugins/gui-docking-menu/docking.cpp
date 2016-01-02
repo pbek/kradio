@@ -270,7 +270,7 @@ void RadioDocking::buildContextMenu()
 
     m_titleID  = m_menu->addTitle (generateStationTitle());
 
-    buildStationList();
+    buildStationList(queryStations());
 
 
     m_alarmID  = m_menu->addTitle (generateAlarmTitle());
@@ -315,16 +315,23 @@ void RadioDocking::buildContextMenu()
 }
 
 
-void RadioDocking::buildStationList()
+void RadioDocking::buildStationList(const StationList &sl, QAction *before)
 {
     m_stationMenuIDs.clear();
-    if (m_stationsActionGroup) {
-        m_stationsActionGroup->deleteLater();
+    if (!m_stationsActionGroup) {
+        m_stationsActionGroup = new QActionGroup(this);
+        m_stationsActionGroup->setExclusive(true);
+        QObject::connect(m_stationsActionGroup, SIGNAL(triggered(QAction*)),
+                         this,                  SLOT(slotMenuItemActivated(QAction*)));
     }
-    m_stationsActionGroup = new QActionGroup(this);
-    m_stationsActionGroup->setExclusive(true);
+    const QList<QAction *> actions = m_stationsActionGroup->actions();
+    foreach (QAction *a, actions) {
+        m_stationsActionGroup->removeAction(a);
+    }
+    if (before) {
+        qDeleteAll(actions);
+    }
 
-    const StationList    &sl  = queryStations();
     const RadioStation   &crs = queryCurrentStation();
 
     int k = 0;
@@ -338,7 +345,8 @@ void RadioDocking::buildStationList()
             QString name     = rs.name();  name.replace("&", "&&");
             QString item     = shortcut + " " + name;
             QString iconName = rs.iconName();
-            QAction *a = m_menu->addAction(item);
+            QAction *a = new QAction(item, m_menu);
+            m_menu->insertAction(before, a);
             m_stationsActionGroup->addAction(a);
             a->setCheckable(true);
             if (iconName.length()) {
@@ -350,9 +358,6 @@ void RadioDocking::buildStationList()
             m_stationMenuIDs.insert(rs.stationID(), a);
         }
       }
-
-    QObject::connect(m_stationsActionGroup, SIGNAL(triggered(QAction*)),
-                     this,                  SLOT(slotMenuItemActivated(QAction*)));
 }
 
 
@@ -499,15 +504,20 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
     queryIsRecordingRunning(queryCurrentSoundStreamSinkID(), r, sf);
     m_recordingID->setEnabled(!r);
 
-//     m_scheduleMenuRebuild = true;
-    buildContextMenu();
+    if (rs.isValid()) {
+        QAction *act = m_stationMenuIDs.value(rs.stationID());
+        if (act) {
+            act->setChecked(true);
+        }
+    }
+
     return true;
 }
 
 
-bool RadioDocking::noticeStationsChanged(const StationList &/*sl*/)
+bool RadioDocking::noticeStationsChanged(const StationList &sl)
 {
-    buildContextMenu();
+    buildStationList(sl, m_alarmID);
     return true;
 }
 
