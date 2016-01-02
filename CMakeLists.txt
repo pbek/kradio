@@ -127,14 +127,10 @@ SET(documentation_files
     README
     README.PVR
     README.your-help-is-wanted
-    README.translations
     ChangeLog
-    TODO
     AUTHORS
     COPYING
     FAQ
-    INSTALL
-    REQUIREMENTS
 )
 
 INSTALL(
