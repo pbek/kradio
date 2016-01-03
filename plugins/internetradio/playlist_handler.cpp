@@ -205,6 +205,8 @@ QString PlaylistHandler::getPlaylistClassFromContentType(const QString &curPlsCl
     if (plscls == "auto" && m_contentType.length()) {
         if        (m_contentType == "audio/x-scpls") {
             plscls = "pls";
+        } else if (m_contentType == "application/xspf+xml") {
+            plscls = "xspf";
         }
     }
     return plscls;
@@ -224,6 +226,8 @@ QString PlaylistHandler::getPlaylistClassFromURL(const QString &curPlsCls)
             plscls = "asx";
         } else if (path.endsWith(".pls")) {
             plscls = "pls";
+        } else if (path.endsWith(".xspf")) {
+            plscls = "xspf";
         }
     }
     return plscls;
@@ -253,6 +257,8 @@ void PlaylistHandler::interpretePlaylistData(const QByteArray &a)
         interpretePlaylistASX(a);
     } else if (plscls == "pls") {
         interpretePlaylistPLS(a);
+    } else if (plscls == "xspf") {
+        interpretePlaylistXSPF(a);
     } else if (plscls == "wmv") {
         interpretePlaylistWMV(a);
     } else if (plscls == "auto") {
@@ -265,6 +271,9 @@ void PlaylistHandler::interpretePlaylistData(const QByteArray &a)
         }
         if (!m_currentPlaylist.size()) {
             interpretePlaylistWMV(a, /* probe */ true);
+        }
+        if (!m_currentPlaylist.size()) {
+            interpretePlaylistXSPF(a, /* probe */ true);
         }
         // if still empty: no known playlist, thus try as plain stream
         if (!m_currentPlaylist.size()) {
@@ -524,6 +533,58 @@ void PlaylistHandler::interpretePlaylistASX(const QByteArray &rawData, bool prob
 
     if (!probe && reader.error() != QXmlStreamReader::NoError) {
         setError(i18n("error while reading asx file: %1", reader.error()));
+    }
+}
+
+void PlaylistHandler::interpretePlaylistXSPF(const QByteArray &rawData, bool probe)
+{
+    QXmlStreamReader reader(rawData);
+
+    bool inPlaylist = false;
+    bool inTrackList = false;
+    bool inTrack = false;
+    bool inLocation = false;
+
+    while (!reader.atEnd() && (reader.error() == QXmlStreamReader::NoError)) {
+        const QXmlStreamReader::TokenType token = reader.readNext();
+        QStringRef name;
+        switch (token) {
+        case QXmlStreamReader::StartElement:
+            name = reader.name();
+            if (inTrack && name.compare(QLatin1String("location")) == 0) {
+                inLocation = true;
+            } else if (inTrackList && name.compare(QLatin1String("track")) == 0) {
+                inTrack = true;
+            } else if (inPlaylist && name.compare(QLatin1String("trackList")) == 0) {
+                inTrackList = true;
+            } else if (name.compare(QLatin1String("playlist")) == 0) {
+                inPlaylist = true;
+            }
+            break;
+        case QXmlStreamReader::EndElement:
+            name = reader.name();
+            if (name.compare(QLatin1String("location")) == 0) {
+                inLocation = false;
+            } else if (name.compare(QLatin1String("track")) == 0) {
+                inTrack = false;
+            } else if (name.compare(QLatin1String("trackList")) == 0) {
+                inTrackList = false;
+            } else if (name.compare(QLatin1String("playlist")) == 0) {
+                inPlaylist = false;
+            }
+            break;
+        case QXmlStreamReader::Characters:
+            if (inLocation) {
+                m_currentPlaylist.append(reader.text().toString());
+            }
+            break;
+        default:
+            break;
+        }
+    }
+
+    if (!probe && reader.error() != QXmlStreamReader::NoError) {
+        setError(i18n("error while reading XSPF file: %1", reader.error()));
     }
 }
 

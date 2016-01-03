@@ -67,6 +67,7 @@ protected:
     void        interpretePlaylistPLS(const QByteArray &playlistData, bool probe = false);
     void        interpretePlaylistWMV(const QByteArray &playlistData, bool probe = false);
     void        interpretePlaylistASX(const QByteArray &xmlData,      bool probe = false);
+    void        interpretePlaylistXSPF(const QByteArray &xmlData,     bool probe = false);
     bool        isTextual(const QByteArray &playlistData);
 
 

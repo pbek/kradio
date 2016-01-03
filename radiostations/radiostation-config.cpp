@@ -142,6 +142,7 @@ InternetRadioStationConfig::InternetRadioStationConfig (QWidget *parent)
     m_comboPlaylistClass->addItem(i18nc("Playlist Format", "LSC"),          QVariant("lsc"));
     m_comboPlaylistClass->addItem(i18nc("Playlist Format", "M3U"),          QVariant("m3u"));
     m_comboPlaylistClass->addItem(i18nc("Playlist Format", "PLS"),          QVariant("pls"));
+    m_comboPlaylistClass->addItem(i18nc("Playlist Format", "XSPF"),         QVariant("xspf"));
     m_comboPlaylistClass->addItem(i18nc("Playlist Format", "WMV"),          QVariant("wmv"));
 
 
