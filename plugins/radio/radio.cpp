@@ -20,6 +20,8 @@
 #include "radio.h"
 #include "radio-configuration.h"
 
+#include <QFile>
+
 #include <kstandarddirs.h>
 #include <kurl.h>
 #include <kaboutdata.h>
@@ -113,12 +115,14 @@ void Radio::restoreState (const KConfigGroup &config)
     m_presetFile = config.readEntry("presetfile", QString());
 
     bool first_restore = false;
-    if (m_presetFile.isNull() || m_presetFile.length() == 0) {
+    if (m_presetFile.isEmpty()) {
         m_presetFile = KStandardDirs::locateLocal("data", "kradio4/stations.krp");
         first_restore = true;
     }
 
-    m_stationList.readXML(KUrl(m_presetFile), *this, /*enable-messagebox*/ !first_restore);
+    if (!first_restore || QFile::exists(m_presetFile)) {
+        m_stationList.readXML(KUrl(m_presetFile), *this, /*enable-messagebox*/ !first_restore);
+    }
 
     notifyStationsChanged(m_stationList);
     notifyPresetFileChanged(m_presetFile);
