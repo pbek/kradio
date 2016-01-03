@@ -395,7 +395,7 @@ void PlaylistHandler::interpretePlaylistWMV(const QByteArray &playlistData, bool
     }
     tmpFile.close();
 
-    KConfig      cfg(tmpFile.fileName());
+    KConfig      cfg(tmpFile.fileName(), KConfig::SimpleConfig);
 
     // mapping group names to lower case in order to be case insensitive
     QStringList            groups = cfg.groupList();
@@ -454,7 +454,7 @@ void PlaylistHandler::interpretePlaylistPLS(const QByteArray &playlistData, bool
     }
     tmpFile.close();
 
-    KConfig      cfg(tmpFile.fileName());
+    KConfig      cfg(tmpFile.fileName(), KConfig::SimpleConfig);
 
     // mapping group names to lower case in order to be case insensitive
     QStringList            groups = cfg.groupList();
