@@ -50,7 +50,7 @@ public:
     virtual bool connectI (Interface *);
     virtual bool disconnectI (Interface *);
 
-    virtual QString pluginClassName() const { return "RadioDocking"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("RadioDocking"); }
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }

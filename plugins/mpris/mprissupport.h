@@ -36,7 +36,7 @@ public:
     virtual bool connectI (Interface *);
     virtual bool disconnectI (Interface *);
 
-    virtual QString pluginClassName() const { return "MPRISSupport"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("MPRISSupport"); }
 
     virtual void           startPlugin();
 

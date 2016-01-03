@@ -1377,7 +1377,7 @@ QList<DeviceInfo> V4LRadio::getDeviceProposals(const QString &base) const
 {
     QList<DeviceInfo>               retval;
     QDir                            devdir(base);
-    QStringList                     filterList;   filterList << "*radio*" << "*video*";
+    QStringList                     filterList;   filterList << QString::fromLatin1("*radio*") << QString::fromLatin1("*video*");
     QFileInfoList                   deviceInfos = devdir.entryInfoList(filterList, QDir::System, QDir::Name);
     QFileInfoList                   subdirs     = devdir.entryInfoList(QStringList(), QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Executable | QDir::Readable, QDir::Name);
 

@@ -137,32 +137,32 @@ QList<RadioStation *> RadioStation::getStationClasses()
 bool RadioStation::setProperty(const QString &pn, const QString &val)
 {
     bool retval = false;
-    if (pn == StationIDElement) {
+    if (pn == QLatin1String(StationIDElement)) {
         m_stationID = val;
         retval = true;
-    } else if (pn == StationNameElement) {
+    } else if (pn == QLatin1String(StationNameElement)) {
         m_name = val;
         retval = true;
-    } else if (pn == StationShortNameElement) {
+    } else if (pn == QLatin1String(StationShortNameElement)) {
         m_shortName = val;
         retval = true;
-    } else if (pn == StationIconStringElement) {
+    } else if (pn == QLatin1String(StationIconStringElement)) {
         m_iconName = val;
         retval = true;
-    } else if (pn == StationVolumePresetElement) {
+    } else if (pn == QLatin1String(StationVolumePresetElement)) {
         float x = val.toFloat(&retval);
         if (retval)
             m_initialVolume = x;
-    } else if (pn == StationStereoModeElement) {
-        if (val == "stereo") {
+    } else if (pn == QLatin1String(StationStereoModeElement)) {
+        if (val == QLatin1String("stereo")) {
             m_stereoMode = STATION_STEREO_ON;
             retval       = true;
         }
-        else if (val == "mono") {
+        else if (val == QLatin1String("mono")) {
             m_stereoMode = STATION_STEREO_OFF;
             retval       = true;
         }
-        else if (val == "dontcare") {
+        else if (val == QLatin1String("dontcare")) {
             m_stereoMode = STATION_STEREO_DONTCARE;
             retval       = true;
         }
@@ -173,29 +173,29 @@ bool RadioStation::setProperty(const QString &pn, const QString &val)
 
 QString RadioStation::getProperty(const QString &pn) const
 {
-    if (pn == StationIDElement) {
+    if (pn == QLatin1String(StationIDElement)) {
         return m_stationID;
-    } else if (pn == StationNameElement) {
+    } else if (pn == QLatin1String(StationNameElement)) {
         return m_name;
-    } else if (pn == StationShortNameElement) {
+    } else if (pn == QLatin1String(StationShortNameElement)) {
         return m_shortName;
-    } else if (pn == StationIconStringElement) {
+    } else if (pn == QLatin1String(StationIconStringElement)) {
         return m_iconName;
-    } else if (pn == StationVolumePresetElement) {
+    } else if (pn == QLatin1String(StationVolumePresetElement)) {
         return QString::number(m_initialVolume);
-    } else if (pn == StationStereoModeElement) {
+    } else if (pn == QLatin1String(StationStereoModeElement)) {
         switch (m_stereoMode) {
             case STATION_STEREO_ON:
-                return "stereo";
+                return QLatin1String("stereo");
                 break;
             case STATION_STEREO_OFF:
-                return "mono";
+                return QLatin1String("mono");
                 break;
             case STATION_STEREO_DONTCARE:
-                return "dontcare";
+                return QLatin1String("dontcare");
                 break;
             default:
-                return "dontcare";
+                return QLatin1String("dontcare");
                 break;
         }
     } else {
@@ -207,12 +207,12 @@ QString RadioStation::getProperty(const QString &pn) const
 QStringList RadioStation::getPropertyNames() const
 {
     QStringList l;
-    l.push_back(StationIDElement);
-    l.push_back(StationNameElement);
-    l.push_back(StationShortNameElement);
-    l.push_back(StationIconStringElement);
-    l.push_back(StationVolumePresetElement);
-    l.push_back(StationStereoModeElement);
+    l.push_back(QString::fromLatin1(StationIDElement));
+    l.push_back(QString::fromLatin1(StationNameElement));
+    l.push_back(QString::fromLatin1(StationShortNameElement));
+    l.push_back(QString::fromLatin1(StationIconStringElement));
+    l.push_back(QString::fromLatin1(StationVolumePresetElement));
+    l.push_back(QString::fromLatin1(StationStereoModeElement));
     return l;
 }
 

@@ -64,7 +64,7 @@ public:
     virtual bool        setProperty(const QString &property_name, const QString &val);
     virtual QString     getProperty(const QString &property_name) const;
     virtual QStringList getPropertyNames() const;
-    virtual QString     getClassName()        const { return "FrequencyRadioStation"; }
+    virtual QString     getClassName()        const { return QString::fromLatin1("FrequencyRadioStation"); }
     virtual QString     getClassDescription() const { return i18n("AM/FM Radio Station"); }
     virtual bool        isClassUserVisible()  const { return true; }
 

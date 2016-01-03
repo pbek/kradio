@@ -160,8 +160,8 @@ public:
     virtual RadioStation *copyNewID()   const { RadioStation *x = new UndefinedRadioStation(*this); x->generateNewStationID(); return x;  }
     virtual int           compare(const RadioStation &s) const;
 
-    virtual QString       getClassName()        const { return "UndefinedRadioStation"; }
-    virtual QString       getClassDescription() const { return "UndefinedRadioStation"; }
+    virtual QString       getClassName()        const { return QString::fromLatin1("UndefinedRadioStation"); }
+    virtual QString       getClassDescription() const { return QString::fromLatin1("UndefinedRadioStation"); }
     virtual bool          isClassUserVisible()  const { return false; }
     virtual RadioStationConfig *createEditor() const;
 };

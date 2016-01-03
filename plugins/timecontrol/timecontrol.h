@@ -50,7 +50,7 @@ public:
     TimeControl (const QString &instanceID, const QString &name);
     ~TimeControl();
 
-    virtual QString pluginClassName() const { return "TimeControl"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("TimeControl"); }
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }

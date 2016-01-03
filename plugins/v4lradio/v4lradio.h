@@ -55,9 +55,9 @@ public:
     virtual bool connectI (Interface *);
     virtual bool disconnectI (Interface *);
 
-    virtual QString   pluginClassName() const { return "V4LRadio"; }
+    virtual QString   pluginClassName() const { return QString::fromLatin1("V4LRadio"); }
 
-    QList<DeviceInfo> getDeviceProposals(const QString &devdir = "/dev/") const;
+    QList<DeviceInfo> getDeviceProposals(const QString &devdir = QString::fromLatin1("/dev/")) const;
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }

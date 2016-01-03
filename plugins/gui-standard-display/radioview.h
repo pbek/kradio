@@ -49,7 +49,7 @@ public:
     RadioView(const QString &instanceID, const QString &name);
     virtual ~RadioView();
 
-    virtual QString pluginClassName() const { return "RadioView"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("RadioView"); }
 
 //     const QString &name() const { return PluginBase::name(); }
 //           QString &name()       { return PluginBase::name(); }

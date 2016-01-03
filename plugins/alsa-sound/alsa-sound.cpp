@@ -1935,12 +1935,12 @@ void AlsaSoundDevice::setName(const QString &n)
 
 QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMCaptureDeviceDescriptions()
 {
-    return getPCMDeviceDescriptions("Input");
+    return getPCMDeviceDescriptions(QString::fromLatin1("Input"));
 }
 
 QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMPlaybackDeviceDescriptions()
 {
-    return getPCMDeviceDescriptions("Output");
+    return getPCMDeviceDescriptions(QString::fromLatin1("Output"));
 }
 
 
@@ -1978,7 +1978,7 @@ QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMDeviceDescriptions(const Q
         char *descr = snd_device_name_get_hint(*current_hint, "DESC");
         char *dir   = snd_device_name_get_hint(*current_hint, "IOID");
         if (!dir || filter == dir) {
-            descriptions[filter].append(AlsaSoundDeviceMetaData(name, descr));
+            descriptions[filter].append(AlsaSoundDeviceMetaData(QString::fromLatin1(name), QString::fromLatin1(descr)));
         }
         if (name != NULL) {
             free(name);
@@ -2028,12 +2028,12 @@ QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMDeviceDescriptions(const Q
 
 QList<AlsaMixerMetaData> AlsaSoundDevice::getCaptureMixerDescriptions()
 {
-    return getMixerDeviceDescriptions("Input");
+    return getMixerDeviceDescriptions(QString::fromLatin1("Input"));
 }
 
 QList<AlsaMixerMetaData> AlsaSoundDevice::getPlaybackMixerDescriptions()
 {
-    return getMixerDeviceDescriptions("Output");
+    return getMixerDeviceDescriptions(QString::fromLatin1("Output"));
 }
 
 QList<AlsaMixerMetaData> AlsaSoundDevice::getMixerDeviceDescriptions(const QString &filter)
@@ -2057,20 +2057,20 @@ QString AlsaSoundDevice::extractMixerNameFromPCMDevice(const QString &devString)
 {
     QString mixerString = devString;
 
-    int idx_colon = mixerString.indexOf(":");
+    int idx_colon = mixerString.indexOf(QLatin1Char(':'));
     if (idx_colon >= 0) {
         mixerString = mixerString.mid(idx_colon + 1);
     }
-    QString card_prefix = "CARD=";
-    if (mixerString.startsWith(card_prefix)) {
-        mixerString = mixerString.mid(card_prefix.length());
+    static const char card_prefix[] = "CARD=";
+    if (mixerString.startsWith(QLatin1String(card_prefix))) {
+        mixerString = mixerString.mid(sizeof(card_prefix) - 1);
     }
-    int idx_comma = mixerString.indexOf(",");
+    int idx_comma = mixerString.indexOf(QLatin1Char(','));
     if (idx_comma >= 0) {
         mixerString = mixerString.left(idx_comma);
     }
 
-    if (mixerString != "default") {
+    if (mixerString != QLatin1String("default")) {
         mixerString = "hw:" + mixerString;
     }
     return mixerString;

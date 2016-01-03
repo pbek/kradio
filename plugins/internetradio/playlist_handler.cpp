@@ -125,7 +125,7 @@ void PlaylistHandler::loadPlaylistStartJob()
     m_contentType    .clear();
     m_playlistData   .clear();
     m_currentPlaylist.clear();
-    IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (Playlist handler): loading playlist %1").arg(m_currentStation.url().url()));
+    IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (Playlist handler): loading playlist %1").arg(m_currentStation.url().url()));
     QString protocol = m_currentStation.url().protocol();
     // protocol mms / mmsx can only be plain streams and cannot be interpreted by KDE
     // also if playlist class is set to "" (none) we skip the playlist download

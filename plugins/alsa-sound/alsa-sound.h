@@ -120,7 +120,7 @@ public:
     virtual void   saveState    (      KConfigGroup &) const;
     virtual void   restoreState (const KConfigGroup &);
 
-    virtual QString pluginClassName() const { return "AlsaSoundDevice"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("AlsaSoundDevice"); }
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }

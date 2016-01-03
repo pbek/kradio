@@ -174,7 +174,7 @@ QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(const QString 
 {
     // urg... QHttpResponseHeader is deprecated and does not parse ICY headers correctly.
     // let's do it ourselves
-    QStringList  lines = httpHeader.split(QRegExp("\\r?\\n"));
+    QStringList  lines = httpHeader.split(QRegExp(QString::fromLatin1("\\r?\\n")));
 
     // fix HTTP header line continuations
     QStringList  consolidatedLines;
@@ -189,7 +189,7 @@ QMap<QString, QString> IcyHttpHandler::splitExtractHttpHeaderKeys(const QString 
     // extract keys form header lines
     QMap<QString, QString> headerMap;
     foreach(const QString &line, consolidatedLines) {
-        QRegExp  colonRegExp("\\s*:\\s*");
+        QRegExp  colonRegExp(QString::fromLatin1("\\s*:\\s*"));
         int colonIdx = colonRegExp.indexIn(line);
         if (colonRegExp.matchedLength() > 0 && colonIdx > 0 && colonIdx < line.length()) {
             QString  key = line.left(colonIdx);
@@ -243,7 +243,7 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
     m_connectionMetaData = job->metaData();
     foreach(const QString &k, m_connectionMetaData.keys()) {
         QString v = m_connectionMetaData[k];
-        IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):      %1 = %2").arg(k).arg(v));
+        IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (ICY http handler):      %1 = %2").arg(k).arg(v));
         if (k == QLatin1String("HTTP-Headers")) {
             analyzeHttpHeader(v, m_connectionMetaData);
         }
@@ -289,7 +289,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                 m_metaData = m_metaData.left(zpos);
             }
             QString         tmpString;
-            if (m_metaDataEncoding == "auto" || !m_metaDataEncodingCodec) {
+            if (m_metaDataEncoding == QLatin1String("auto") || !m_metaDataEncodingCodec) {
                 m_metaDataEncodingProber.feed(m_metaData);
     //             printf ("confidence = %f\n", prober.confidence());
                 if (m_metaDataEncodingProber.confidence() > 0.8) {
@@ -314,7 +314,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
             if (!charcode.isEmpty()) {
                 charcode[charcode.length() - 1] = '\0';
             }
-            IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     meta: %1 (len %2), %3").arg(metaString).arg(metaString.length()).arg(charcode.constData()));
+            IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (ICY http handler):     meta: %1 (len %2), %3").arg(metaString).arg(metaString.length()).arg(charcode.constData()));
 
             // parse meta data
             QMap<QString, QString>  metaData;
@@ -357,7 +357,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                 }
                 metaData.insert(key, value);
 #ifdef DEBUG
-                IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (ICY http handler):     Metadata Key: %1 = %2").arg(key).arg(value));
+                IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (ICY http handler):     Metadata Key: %1 = %2").arg(key).arg(value));
 #endif
             }
 
@@ -374,7 +374,7 @@ void IcyHttpHandler::slotStreamData(KIO::Job *job, QByteArray data)
 {
     if (m_streamJob == job) {
         if (!m_httpHeaderAnalyzed) {
-            QRegExp  ICYHeaderRegExp("^ICY\\s+\\d+\\s+\\w+[\r\n]");
+            QRegExp  ICYHeaderRegExp(QString::fromLatin1("^ICY\\s+\\d+\\s+\\w+[\r\n]"));
             if (QString(data).indexOf(ICYHeaderRegExp) == 0) {
                 data = analyzeICYHeader(data);
             } else {

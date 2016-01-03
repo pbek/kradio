@@ -78,7 +78,7 @@ public:
     virtual bool connectI (Interface *);
     virtual bool disconnectI (Interface *);
 
-    virtual QString pluginClassName() const { return "Shortcuts"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("Shortcuts"); }
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }

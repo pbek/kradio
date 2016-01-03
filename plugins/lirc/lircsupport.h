@@ -74,7 +74,7 @@ public:
 
     virtual void    startPlugin();
 
-    virtual QString pluginClassName() const { return "LircSupport"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("LircSupport"); }
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }

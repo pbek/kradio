@@ -150,7 +150,7 @@ bool FrequencyRadioStation::isValid() const
 bool FrequencyRadioStation::setProperty(const QString &pn, const QString &val)
 {
     bool retval = false;
-    if (pn == StationFrequencyElement) {
+    if (pn == QLatin1String(StationFrequencyElement)) {
         float f = val.toFloat(&retval);
         if (retval)
             m_frequency = f;
@@ -163,7 +163,7 @@ bool FrequencyRadioStation::setProperty(const QString &pn, const QString &val)
 
 QString FrequencyRadioStation::getProperty(const QString &pn) const
 {
-    if (pn == StationFrequencyElement) {
+    if (pn == QLatin1String(StationFrequencyElement)) {
         return QString::number(m_frequency);
     } else {
         return RadioStation::getProperty(pn);
@@ -174,7 +174,7 @@ QString FrequencyRadioStation::getProperty(const QString &pn) const
 QStringList FrequencyRadioStation::getPropertyNames() const
 {
     QStringList l = RadioStation::getPropertyNames();
-    l.push_back(StationFrequencyElement);
+    l.push_back(QString::fromLatin1(StationFrequencyElement));
     return l;
 }
 

@@ -43,7 +43,7 @@ public:
     QuickBar(const QString &instanceID, const QString &name);
     ~QuickBar();
 
-    virtual QString pluginClassName() const { return "QuickBar"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("QuickBar"); }
 
 //     const QString &name() const { return PluginBase::name(); }
 //           QString &name()       { return PluginBase::name(); }

@@ -73,7 +73,7 @@ public:
     virtual void   saveState (KConfig *) const;
     virtual void   restoreState (KConfig *);
 
-    virtual QString pluginClassName() const { return "OSSSoundDevice"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("OSSSoundDevice"); }
 
 //     virtual const QString &name() const { return PluginBase::name(); }
 //     virtual       QString &name()       { return PluginBase::name(); }

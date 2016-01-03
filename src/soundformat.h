@@ -50,7 +50,7 @@ struct KDE_EXPORT SoundFormat {
           m_SampleBits(sample_bits),
           m_IsSigned  (is_signed),
           m_Endianness (endianness),
-          m_Encoding  ("raw"),
+          m_Encoding  (QString::fromLatin1("raw")),
           m_IsPlanar  (is_planar)
     {}
     
@@ -60,7 +60,7 @@ struct KDE_EXPORT SoundFormat {
           m_SampleBits(sample_bits),
           m_IsSigned  (is_signed),
           m_Endianness (BYTE_ORDER),
-          m_Encoding  ("raw"),
+          m_Encoding  (QString::fromLatin1("raw")),
           m_IsPlanar  (is_planar)
     {}
     
@@ -70,7 +70,7 @@ struct KDE_EXPORT SoundFormat {
           m_SampleBits(16),
           m_IsSigned  (true),
           m_Endianness (BYTE_ORDER),
-          m_Encoding  ("raw"),
+          m_Encoding  (QString::fromLatin1("raw")),
           m_IsPlanar  (is_planar)
     {}
         
@@ -80,7 +80,7 @@ struct KDE_EXPORT SoundFormat {
           m_SampleBits(16),
           m_IsSigned  (true),
           m_Endianness (BYTE_ORDER),
-          m_Encoding  ("raw"),
+          m_Encoding  (QString::fromLatin1("raw")),
           m_IsPlanar  (false)
     {}
 

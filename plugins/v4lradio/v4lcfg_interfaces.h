@@ -155,7 +155,7 @@ ANSWERS:
     IF_ANSWER  (   V4LVersion        getV4LVersionOverride() const                   )
     IF_ANSWER  (   bool              getForceRDSEnabled() const                      )
     IF_ANSWER  (   bool              getDeviceProbeAtStartup() const                 )
-    IF_ANSWER  (   QList<DeviceInfo> getDeviceProposals(const QString &devdir = "/dev/") const )
+    IF_ANSWER  (   QList<DeviceInfo> getDeviceProposals(const QString &devdir = QString::fromLatin1("/dev/")) const )
 };
 
 

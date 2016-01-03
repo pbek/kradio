@@ -170,16 +170,16 @@ QString InternetRadioStation::description() const
 bool InternetRadioStation::setProperty(const QString &pn, const QString &val)
 {
     bool retval = false;
-    if (pn == StationUrlElement) {
+    if (pn == QLatin1String(StationUrlElement)) {
         m_url  = val;
         retval = true;
-    } else if (pn == StationDecoderClassElement) {
+    } else if (pn == QLatin1String(StationDecoderClassElement)) {
         m_decoderClass     = val;
         retval             = true;
-    } else if (pn == StationPlaylistClassElement) {
+    } else if (pn == QLatin1String(StationPlaylistClassElement)) {
         m_playlistClass    = val;
         retval             = true;
-    } else if (pn == StationMetaDataEncodingElement) {
+    } else if (pn == QLatin1String(StationMetaDataEncodingElement)) {
         m_metaDataEncoding = val;
         retval             = true;
     } else {
@@ -190,13 +190,13 @@ bool InternetRadioStation::setProperty(const QString &pn, const QString &val)
 
 QString InternetRadioStation::getProperty(const QString &pn) const
 {
-    if (pn == StationUrlElement) {
+    if (pn == QLatin1String(StationUrlElement)) {
         return m_url.pathOrUrl();
-    } else if (pn == StationDecoderClassElement) {
+    } else if (pn == QLatin1String(StationDecoderClassElement)) {
         return m_decoderClass;
-    } else if (pn == StationPlaylistClassElement) {
+    } else if (pn == QLatin1String(StationPlaylistClassElement)) {
         return m_playlistClass;
-    } else if (pn == StationMetaDataEncodingElement) {
+    } else if (pn == QLatin1String(StationMetaDataEncodingElement)) {
         return m_metaDataEncoding;
     } else {
         return RadioStation::getProperty(pn);
@@ -206,10 +206,10 @@ QString InternetRadioStation::getProperty(const QString &pn) const
 QStringList InternetRadioStation::getPropertyNames() const
 {
     QStringList l = RadioStation::getPropertyNames();
-    l.push_back(StationUrlElement);
-    l.push_back(StationDecoderClassElement);
-    l.push_back(StationPlaylistClassElement);
-    l.push_back(StationMetaDataEncodingElement);
+    l.push_back(QString::fromLatin1(StationUrlElement));
+    l.push_back(QString::fromLatin1(StationDecoderClassElement));
+    l.push_back(QString::fromLatin1(StationPlaylistClassElement));
+    l.push_back(QString::fromLatin1(StationMetaDataEncodingElement));
     return l;
 }
 

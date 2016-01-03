@@ -646,33 +646,23 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
     AVInputFormat   *iformat      = av_find_input_format(m_RadioStation.decoderClass().toLatin1());
     if (!iformat) {
         QByteArray decoderClass;
-        if (m_contentType == "audio/mpeg") {
+        if (m_contentType == QLatin1String("audio/mpeg") ||
+            m_contentType == QLatin1String("audio/x-mpeg") ||
+            m_contentType == QLatin1String("audio/mp3") ||
+            m_contentType == QLatin1String("audio/x-mp3") ||
+            m_contentType == QLatin1String("video/mpeg") ||
+            m_contentType == QLatin1String("video/x-mpeg")) {
             decoderClass = "mp3";
-        } else if (m_contentType == "audio/x-mpeg") {
-            decoderClass = "mp3";
-        } else if (m_contentType == "audio/mp3") {
-            decoderClass = "mp3";
-        } else if (m_contentType == "audio/x-mp3") {
-            decoderClass = "mp3";
-        } else if (m_contentType == "video/mpeg") {
-            decoderClass = "mp3";
-        } else if (m_contentType == "video/x-mpeg") {
-            decoderClass = "mp3";
-        } else if (m_contentType == "application/x-ogg") {
+        } else if (m_contentType == QLatin1String("application/x-ogg") ||
+                   m_contentType == QLatin1String("application/ogg") ||
+                   m_contentType == QLatin1String("audio/ogg") ||
+                   m_contentType == QLatin1String("video/ogg")) {
             decoderClass = "ogg";
-        } else if (m_contentType == "application/ogg") {
-            decoderClass = "ogg";
-        } else if (m_contentType == "audio/ogg") {
-            decoderClass = "ogg";
-        } else if (m_contentType == "video/ogg") {
-            decoderClass = "ogg";
-        } else if (m_contentType == "application/flv") {
+        } else if (m_contentType == QLatin1String("application/flv")) {
             decoderClass = "FLV";
-        } else if (m_contentType == "audio/asf") {
-            decoderClass = "asf";
-        } else if (m_contentType == "video/x-ms-asf") {
-            decoderClass = "asf";
-        } else if (m_contentType == "application/x-ms-asf-plugin") {
+        } else if (m_contentType == QLatin1String("audio/asf") ||
+                   m_contentType == QLatin1String("video/x-ms-asf") ||
+                   m_contentType == QLatin1String("application/x-ms-asf-plugin")) {
             decoderClass = "asf";
         }
         if (decoderClass.length()) {
@@ -782,7 +772,7 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
         int ch   = m_av_pFormatCtx->streams[i]->codec->channels;
         int fmt  = m_av_pFormatCtx->streams[i]->codec->sample_fmt;
         int type = m_av_pFormatCtx->streams[i]->codec->codec_type;
-        log(ThreadLogging::LogDebug, QString("stream[%1]: codec_type = %2, channels = %3, sample rate = %4, format-id = %5").arg(i).arg(type).arg(ch).arg(rate).arg(fmt));
+        log(ThreadLogging::LogDebug, QString::fromLatin1("stream[%1]: codec_type = %2, channels = %3, sample rate = %4, format-id = %5").arg(i).arg(type).arg(ch).arg(rate).arg(fmt));
     }
 
 #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 122, 0) // checked: av_find_best_stream in ffmpeg >= 0.7

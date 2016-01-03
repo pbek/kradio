@@ -25,7 +25,7 @@ RecordingConfig::RecordingConfig ()
     m_EncodeBufferCount(3),
     m_mp3Quality(7),
     m_oggQuality(1.0),
-    m_Directory("/tmp"),
+    m_Directory(QString::fromLatin1("/tmp")),
     m_template(),
     m_OutputFormat(outputWAV),
     m_PreRecordingEnable (false),

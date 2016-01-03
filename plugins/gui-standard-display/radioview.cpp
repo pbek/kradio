@@ -927,7 +927,7 @@ void RadioView::hideEvent(QHideEvent *e)
 void RadioView::autoSetCaption()
 {
     const RadioStation &rs = queryCurrentStation();
-    setWindowTitle((queryIsPowerOn() && rs.isValid()) ? rs.longName() : QString("KRadio"));
+    setWindowTitle((queryIsPowerOn() && rs.isValid()) ? rs.longName() : QString::fromLatin1("KRadio"));
 }
 
 

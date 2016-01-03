@@ -45,7 +45,7 @@ public:
 
     // PluginBase
 
-    virtual QString pluginClassName() const { return "PluginConfigurationDialog"; }
+    virtual QString pluginClassName() const { return QString::fromLatin1("PluginConfigurationDialog"); }
 
     virtual void   saveState    (      KConfigGroup &) const;
     virtual void   restoreState (const KConfigGroup &);
