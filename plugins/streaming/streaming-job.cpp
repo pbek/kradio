@@ -361,7 +361,7 @@ void   StreamingJob::slotWriteData (KIO::Job */*job*/, QByteArray &)
         size = m_Buffer.takeData(buf, size);
         if (m_KIO_Job)
             m_KIO_Job->sendAsyncData(QByteArray::fromRawData(buf, size));
-        delete buf;
+        delete [] buf;
         m_StreamPos += size;
     }
     else {
