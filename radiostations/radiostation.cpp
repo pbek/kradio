@@ -182,7 +182,7 @@ QString RadioStation::getProperty(const QString &pn) const
     } else if (pn == StationIconStringElement) {
         return m_iconName;
     } else if (pn == StationVolumePresetElement) {
-        return QString().setNum(m_initialVolume);
+        return QString::number(m_initialVolume);
     } else if (pn == StationStereoModeElement) {
         switch (m_stereoMode) {
             case STATION_STEREO_ON:

@@ -827,7 +827,7 @@ bool V4LRadio::setFrequency(float freq, const FrequencyRadioStation *rs)
 
         if (freq > maxf || freq < minf) {
             logError("V4LRadio::setFrequency: " +
-                     i18n("invalid frequency %1", QString().setNum(freq)));
+                     i18n("invalid frequency %1", QString::number(freq)));
             // We do not filter out the (possibly) unnecessary calls. Some drivers are reporting
             // the mute state wrongly. Therefore, unmuting would not work unless we disable this check.
             // if (!oldSourceMute && !m_ActivePlayback)
@@ -861,7 +861,7 @@ bool V4LRadio::setFrequency(float freq, const FrequencyRadioStation *rs)
 
         if (r) {
             logError("V4LRadio::setFrequency: " +
-                     i18n("error setting frequency to %1 (%2)", QString().setNum(freq), QString().setNum(r)));
+                     i18n("error setting frequency to %1 (%2)", QString::number(freq), QString::number(r)));
             // unmute the old radio with the old radio station
             // We do not filter out the (possibly) unnecessary calls. Some drivers are reporting
             // the mute state wrongly. Therefore, unmuting would not work unless we disable this check.
@@ -1779,7 +1779,7 @@ bool V4LRadio::readTunerInfo() const
             m_signalQuality = 0;
             newRDS          = false;
             logError("V4LRadio::readTunerInfo: " +
-                     i18n("cannot get tuner info (error %1)", QString().setNum(r)));
+                     i18n("cannot get tuner info (error %1)", QString::number(r)));
         }
     } else {
         m_signalQuality = 0;
@@ -1831,7 +1831,7 @@ bool V4LRadio::readTunerInfo() const
     } \
     x = x ? x : r; \
     if (r) \
-        logError(i18np("error setting %1: %2", #what, QString().setNum(r))); \
+        logError(i18np("error setting %1: %2", #what, QString::number(r))); \
  }
 
 #define V4L2_G_CTRL(what) \
@@ -1840,7 +1840,7 @@ bool V4LRadio::readTunerInfo() const
     r = ioctl (m_radio_fd, VIDIOC_G_CTRL, &ctl); \
     x = x ? x : r; \
     if (r) \
-        logError(i18np("error reading %1: %2", #what, QString().setNum(r))); \
+        logError(i18np("error reading %1: %2", #what, QString::number(r))); \
  }
 
 

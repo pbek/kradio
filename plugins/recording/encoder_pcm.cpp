@@ -51,7 +51,7 @@ void RecordingEncodingPCM::encode(const char *buffer, size_t buffer_size, char *
 
     if (err != (int)buffer_size) {
         m_error = true;
-        m_errorString += i18n("Error %1 writing output. ", QString().setNum(err));
+        m_errorString += i18n("Error %1 writing output. ", QString::number(err));
     }
 }
 

@@ -164,7 +164,7 @@ bool FrequencyRadioStation::setProperty(const QString &pn, const QString &val)
 QString FrequencyRadioStation::getProperty(const QString &pn) const
 {
     if (pn == StationFrequencyElement) {
-        return QString().setNum(m_frequency);
+        return QString::number(m_frequency);
     } else {
         return RadioStation::getProperty(pn);
     }

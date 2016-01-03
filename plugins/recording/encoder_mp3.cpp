@@ -79,7 +79,7 @@ void RecordingEncodingMP3::encode(const char *_buffer, size_t buffer_size, char 
                                    m_MP3BufferSize);
             lameSerialization.unlock();
             if (n < 0) {
-                m_errorString += i18n("Error %1 while encoding MP3. ", QString().setNum(n));
+                m_errorString += i18n("Error %1 while encoding MP3. ", QString::number(n));
                 m_error       = true;
             } else if (n > 0) {
                 m_encodedSize += n;
@@ -89,7 +89,7 @@ void RecordingEncodingMP3::encode(const char *_buffer, size_t buffer_size, char 
                 int r = fwrite(m_MP3Buffer, 1, n, m_MP3Output);
 
                 if (r <= 0) {
-                    m_errorString += i18n("Error %1 writing output. ", QString().setNum(r));
+                    m_errorString += i18n("Error %1 writing output. ", QString::number(r));
                     m_error = true;
                 }
             }
@@ -192,12 +192,12 @@ void RecordingEncodingMP3::closeOutput()
                                       m_MP3BufferSize);
             if (n < 0) {
                 m_error = true;
-                m_errorString += i18n("Error %1 while encoding MP3. ", QString().setNum(n));
+                m_errorString += i18n("Error %1 while encoding MP3. ", QString::number(n));
             } else if (n > 0) {
                 int r = fwrite(m_MP3Buffer, 1, n, m_MP3Output);
                 if (r <= 0) {
                     m_error = true;
-                    m_errorString += i18n("Error %1 writing output. ", QString().setNum(r));
+                    m_errorString += i18n("Error %1 writing output. ", QString::number(r));
                 } else {
                     lame_mp3_tags_fid(m_LAMEFlags, m_MP3Output);
                 }

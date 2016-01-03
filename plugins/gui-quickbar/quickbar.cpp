@@ -120,7 +120,7 @@ void QuickBar::restoreState (const KConfigGroup &config)
     int nStations = config.readEntry("nStations", 0);
     m_stationIDs.clear();
     for (int i = 1; i <= nStations; ++i) {
-        QString s = config.readEntry(QString("stationID-") + QString().setNum(i), QString());
+        QString s = config.readEntry(QString("stationID-") + QString::number(i), QString());
         if (s.length())
             m_stationIDs += s;
     }
@@ -138,7 +138,7 @@ void QuickBar::saveState (KConfigGroup &config) const
     int i = 1;
     QStringList::const_iterator end = m_stationIDs.end();
     for (QStringList::const_iterator it = m_stationIDs.begin(); it != end; ++it, ++i) {
-        config.writeEntry(QString("stationID-") + QString().setNum(i), *it);
+        config.writeEntry(QString("stationID-") + QString::number(i), *it);
     }
 }
 

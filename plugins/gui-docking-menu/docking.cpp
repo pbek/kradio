@@ -185,7 +185,7 @@ void   RadioDocking::restoreState (const KConfigGroup &config)
     m_stationIDs.clear();
     int nStations = config.readEntry("nStations", 0);
     for (int i = 1; i <= nStations; ++i) {
-        QString s = config.readEntry(QString("stationID-") + QString().setNum(i), QString());
+        QString s = config.readEntry(QString("stationID-") + QString::number(i), QString());
         if (s.length())
             m_stationIDs += s;
     }
@@ -221,7 +221,7 @@ void RadioDocking::saveState (KConfigGroup &config) const
     int i = 1;
     QStringList::const_iterator end = m_stationIDs.end();
     for (QStringList::const_iterator it = m_stationIDs.begin(); it != end; ++it, ++i) {
-        config.writeEntry(QString("stationID-") + QString().setNum(i), *it);
+        config.writeEntry(QString("stationID-") + QString::number(i), *it);
     }
 
     config.writeEntry("left_click_action",           (int)m_ClickActions[Qt::LeftButton]);
@@ -343,7 +343,7 @@ void RadioDocking::buildStationList(const StationList &sl, QAction *before)
         if (rs.isValid()) {
 
             ++k;
-            QString shortcut = k < 10 ? "&"+QString().setNum(k) : k == 10 ? "1&0" : QString().setNum(k);
+            QString shortcut = k < 10 ? "&"+QString::number(k) : k == 10 ? "1&0" : QString::number(k);
             QString name     = rs.name();  name.replace("&", "&&");
             QString item     = shortcut + " " + name;
             QString iconName = rs.iconName();

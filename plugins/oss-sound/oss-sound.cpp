@@ -549,7 +549,7 @@ void OSSSoundDevice::slotPoll()
     }
 
     if (err) {
-        logError(i18n("Error %1 while handling OSS device %2", QString().setNum(err), m_DSPDeviceName));
+        logError(i18n("Error %1 while handling OSS device %2", QString::number(err), m_DSPDeviceName));
     }
 
     if (m_PlaybackStreamID.isValid())
@@ -877,7 +877,7 @@ float OSSSoundDevice::readMixerVolume(int channel) const
     if (err) {
         logError("OSSSound::readMixerVolume: " +
                 i18n("error %1 while reading volume from %2",
-                     QString().setNum(err),
+                     QString::number(err),
                      m_MixerDeviceName));
         tmpvol.l = tmpvol.r = 0;
     }
@@ -900,8 +900,8 @@ float OSSSoundDevice::writeMixerVolume (int channel, float vol)
         if (err != 0) {
             logError("OSSSoundDevice::writeMixerVolume: " +
                     i18n("error %1 while setting volume to %2 on device %3",
-                         QString().setNum(err),
-                         QString().setNum(vol),
+                         QString::number(err),
+                         QString::number(vol),
                          m_MixerDeviceName));
             return -1;
         }

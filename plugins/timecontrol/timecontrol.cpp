@@ -256,7 +256,7 @@ void    TimeControl::restoreState (const KConfigGroup &config)
     int nAlarms = config.readEntry ("nAlarms", 0);
     for (int idx = 1; idx <= nAlarms; ++idx) {
 
-        QString   num               = QString().setNum(idx);
+        QString   num               = QString::number(idx);
         QDateTime d                 = config.readEntry(AlarmTimeElement              + num, QDateTime());
         bool      enable            = config.readEntry(AlarmEnabledElement           + num, false);
         bool      daily             = config.readEntry(AlarmDailyElement             + num, false);
@@ -295,7 +295,7 @@ void    TimeControl::saveState    (KConfigGroup &config) const
     int idx = 1;
     ciAlarmVector end = m_alarms.end();
     for (ciAlarmVector i = m_alarms.begin(); i != end; ++i, ++idx) {
-        QString num = QString().setNum(idx);
+        QString num = QString::number(idx);
         config.writeEntry (AlarmTimeElement              + num, i->alarmTime());
         config.writeEntry (AlarmEnabledElement           + num, i->isEnabled());
         config.writeEntry (AlarmDailyElement             + num, i->isDaily());
