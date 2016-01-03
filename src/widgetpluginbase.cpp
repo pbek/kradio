@@ -275,15 +275,11 @@ void WidgetPluginBase::startPlugin()
 
 void WidgetPluginBase::updateHideShowAction(bool show)
 {
-    QString menuitem  = QString("%1 (%2)").arg(description()).arg(name());
-    QString tmp_class = pluginClassName().toUpper();
-    QString tmp_name  = name().toUpper();
-    tmp_class.replace(" ", "");
-    tmp_name .replace(" ", "");
-    if ((tmp_class           == tmp_name) ||
-        (tmp_class    + "1"  == tmp_name)
-    ) {
-        menuitem   = description();
+    QString menuitem;
+    if (PluginManager::pluginHasDefaultName(this)) {
+        menuitem = description();
+    } else {
+        menuitem = QString::fromLatin1("%1 (%2)").arg(description(), name());
     }
     if (!show) {
         m_HideShowAction.setText(i18n("Show %1", menuitem));

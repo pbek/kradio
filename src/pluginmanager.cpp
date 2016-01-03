@@ -173,21 +173,11 @@ void PluginManager::setConfigPageNameEtc(PluginBase *p)
         ConfigPageInfo   info        = m_configPageInfos [p];
 
         if (config_page) {
-            QString itemName     = info.itemName + " (" + p->name() + ")";
-            QString pageHeader   = info.pageHeader + " (" + p->name() + ")";
-            QString tmp_class    = p->pluginClassName().toUpper();
-            QString tmp_name     = p->name().toUpper();
-            QString tmp_itemName = info.itemName.toUpper();
-            tmp_class   .replace(" ", "");
-            tmp_name    .replace(" ", "");
-            tmp_itemName.replace(" ", "");
-            if ((tmp_itemName        == tmp_name) ||
-                (tmp_itemName + "1"  == tmp_name) ||
-                (tmp_class           == tmp_name) ||
-                (tmp_class    + "1"  == tmp_name)
-            ) {
-                itemName   = info.itemName;
-                pageHeader = info.pageHeader;
+            QString itemName = info.itemName;
+            QString pageHeader = info.pageHeader;
+            if (!pluginHasDefaultName(p)) {
+                itemName = QString::fromLatin1("%1 (%2)").arg(info.itemName, p->name());
+                pageHeader = QString::fromLatin1("%1 (%2)").arg(info.pageHeader, p->name());
             }
             config_page->setName  (itemName);
             config_page->setHeader(pageHeader);
@@ -856,6 +846,17 @@ void PluginManager::slotDesktopChanged(int /*d*/)
 
         b->updateHideShowAction(b->isReallyVisible());
     }
+}
+
+
+bool PluginManager::pluginHasDefaultName(PluginBase *p)
+{
+    QString tmp_class = p->pluginClassName();
+    tmp_class = tmp_class.remove(QLatin1Char(' '));
+    QString tmp_name = p->name();
+    tmp_name = tmp_name.remove(QLatin1Char(' '));
+    return QString::compare(tmp_class, tmp_name, Qt::CaseInsensitive) == 0 ||
+           QString::compare(tmp_class + "1", tmp_name, Qt::CaseInsensitive) == 0;
 }
 
 

@@ -92,6 +92,7 @@ public :
 
 
     virtual QMenu                     *getPluginHideShowMenu();
+    static bool                        pluginHasDefaultName(PluginBase *p);
 
 
 protected :
