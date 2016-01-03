@@ -27,8 +27,6 @@ static KCmdLineOptions options;
 
 int main(int argc, char *argv[])
 {
-    IErrorLogClient::staticLogInfo(QString("KRadio4 Version %1 is starting").arg(KRADIO_VERSION));
-
     KAboutData aboutData("kradio4",
                          "kradio4",
                          ki18n("KRadio4"),
@@ -55,6 +53,8 @@ int main(int argc, char *argv[])
     KRadioApp a;
 
     profiler_kradioapp.stop();
+
+    IErrorLogClient::staticLogInfo(QString("KRadio4 Version %1 is starting").arg(KRADIO_VERSION));
 
     BlockProfiler  profiler_restore("main::restore");
 
