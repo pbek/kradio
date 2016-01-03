@@ -510,22 +510,23 @@ void RadioViewFrequencyRadio::paintEvent(QPaintEvent *e)
               cw = xw,
               ch = xw;
 
-        qreal open_a = 30.0;
+        static const int StaticArcStartAngle = (-90 + 30) * 16;
+        static const int StaticArcEndAngle = (360 - 2 * 30) * 16;
         // outer circle
         paint.setPen(  (m_quality > 0.75 && m_power) ? m_activePen : m_inactivePen);
-        paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
+        paint.drawArc(QRectF(cx, cy, cw, ch), StaticArcStartAngle, StaticArcEndAngle);
 
         // mid circle
         paint.setPen(  (m_quality > 0.50 && m_power) ? m_activePen : m_inactivePen);
         cx += xw/5.0;  cy += xw/5.0;
         cw -= xw/2.5;  ch -= xw/2.5;
-        paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
+        paint.drawArc(QRectF(cx, cy, cw, ch), StaticArcStartAngle, StaticArcEndAngle);
 
         // inner circle
         paint.setPen(  (m_quality > 0.25 && m_power) ? m_activePen : m_inactivePen);
         cx += xw/5.0;  cy += xw/5.0;
         cw -= xw/2.5;  ch -= xw/2.5;
-        paint.drawArc(QRectF(cx, cy, cw, ch), (int)(-90+open_a)*16, (int)(360 - 2*open_a)*16);
+        paint.drawArc(QRectF(cx, cy, cw, ch), StaticArcStartAngle, StaticArcEndAngle);
 
         // triangle
         QPen tmppen =    (m_quality > 0.1 && m_power) ? m_activePen   : m_inactivePen;
