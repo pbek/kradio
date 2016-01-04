@@ -180,7 +180,7 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
             }
             foreach(QString k, md.keys()) {
                 QString v = md[k];
-                IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (Playlist handler):      %1 = %2").arg(k).arg(v));
+                IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (Playlist handler):      %1 = %2").arg(k, v));
                 if (k == "HTTP-Headers") {
 //                     analyzeHttpHeader(v, m_connectionMetaData);
                 }

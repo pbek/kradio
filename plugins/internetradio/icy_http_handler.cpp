@@ -243,7 +243,7 @@ void IcyHttpHandler::analyzeHttpHeader(KIO::Job *job)
     m_connectionMetaData = job->metaData();
     foreach(const QString &k, m_connectionMetaData.keys()) {
         QString v = m_connectionMetaData[k];
-        IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (ICY http handler):      %1 = %2").arg(k).arg(v));
+        IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (ICY http handler):      %1 = %2").arg(k, v));
         if (k == QLatin1String("HTTP-Headers")) {
             analyzeHttpHeader(v, m_connectionMetaData);
         }
@@ -357,7 +357,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                 }
                 metaData.insert(key, value);
 #ifdef DEBUG
-                IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (ICY http handler):     Metadata Key: %1 = %2").arg(key).arg(value));
+                IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (ICY http handler):     Metadata Key: %1 = %2").arg(key, value));
 #endif
             }
 

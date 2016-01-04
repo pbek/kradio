@@ -433,8 +433,8 @@ void Shortcuts::slotStationTriggered(QAction *a)
     QString rs_id  =  rs.stationID();
     QString crs_id = crs.stationID();
     sendActivateStation(rs);
-/*    logDebug(QString("Shortcuts::slotStationTriggered: rs: %1, %2").arg(rs.longName()).arg(rs.stationID()));
-    logDebug(QString("Shortcuts::slotStationTriggered: crs: %1, %2").arg(crs.longName()).arg(crs.stationID()));*/
+/*    logDebug(QString("Shortcuts::slotStationTriggered: rs: %1, %2").arg(rs.longName(), rs.stationID()));
+    logDebug(QString("Shortcuts::slotStationTriggered: crs: %1, %2").arg(crs.longName(), crs.stationID()));*/
     if (rs_id == crs_id) {
         if (queryIsPowerOn()) {
 /*            logDebug("Shortcuts::slotStationTriggered: eqID, sendPowerOff()");*/

@@ -287,7 +287,7 @@ void LircSupport::processLIRCCode(const QString &c, bool is_eventmap, bool is_ra
         x = "raw::" + x;
 
     bool consumed = false;
-    logDebug(QString("LIRC(mode=%1): %2 (rep = %3)").arg(lirc_getmode(m_lircConfig)).arg(x).arg(repeat_counter));
+    logDebug(QString("LIRC(mode=%1): %2 (rep = %3)").arg(lirc_getmode(m_lircConfig), x).arg(repeat_counter));
 
     emit sigRawLIRCSignal(x, repeat_counter, consumed);
 

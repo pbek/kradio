@@ -1755,7 +1755,7 @@ bool AlsaSoundDevice::muteSink (SoundStreamID id, bool mute)
 {
     if (id.isValid() && (m_PlaybackStreamID == id || m_PassivePlaybackStreams.contains(id))) {
         SoundStreamConfig &cfg = m_PlaybackStreams[id];
-        logDebug(QString("AlsaSoundDevice::muteSink: ch=%1, old=%2, new=%3").arg(cfg.m_Channel).arg(cfg.m_Muted ? "muted" : "unmuted").arg(mute ? "muted" : "unmuted"));
+        logDebug(QString("AlsaSoundDevice::muteSink: ch=%1, old=%2, new=%3").arg(cfg.m_Channel, cfg.m_Muted ? "muted" : "unmuted", mute ? "muted" : "unmuted"));
         if (mute != cfg.m_Muted) {
             if (writePlaybackMixerVolume(cfg.m_Channel, cfg.m_Volume, cfg.m_Muted = mute)) {
                 notifySinkMuted(id, cfg.m_Muted);
@@ -1792,7 +1792,7 @@ bool AlsaSoundDevice::muteSourcePlayback (SoundStreamID id, bool mute)
 
             bool  m = false;
             float v = readPlaybackMixerVolume(cfg.m_Channel, m);
-            logDebug(QString("AlsaSoundDevice::muteSourcePlayback: ch=%1, old=%2, new=%3").arg(cfg.m_Channel).arg(m ? "muted" : "unmuted").arg(mute ? "muted" : "unmuted"));
+            logDebug(QString("AlsaSoundDevice::muteSourcePlayback: ch=%1, old=%2, new=%3").arg(cfg.m_Channel, m ? "muted" : "unmuted", mute ? "muted" : "unmuted"));
             if (mute != m) {
                 if (writePlaybackMixerVolume(cfg.m_Channel, v, mute)) {
                     notifySourcePlaybackMuted(id, cfg.m_Muted);
