@@ -725,7 +725,7 @@ void LircSupport::setLIRCMode(const QString &m)
 {
     if (m_lircConfig && doLIRCModeSync() && m.length()) {
         logDebug(QString("setting lirc mode to %1").arg(m));
-        lirc_setmode(m_lircConfig, m.toLocal8Bit());
+        lirc_setmode(m_lircConfig, m.toLocal8Bit().constData());
     } else {
 //         logDebug(QString("ignored request for setting lirc mode to %1").arg(m));
     }

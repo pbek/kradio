@@ -128,7 +128,7 @@ static void vorbis_comment_add_tag_new(vorbis_comment *vc, const QString &tag, c
 {
     QByteArray   ba_tag    = tag  .toUtf8();
     QByteArray   ba_value  = value.toUtf8();
-    vorbis_comment_add_tag(vc, ba_tag, ba_value);
+    vorbis_comment_add_tag(vc, ba_tag.constData(), ba_value.constData());
 }
 #endif
 

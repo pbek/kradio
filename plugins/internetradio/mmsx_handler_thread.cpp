@@ -84,7 +84,7 @@ void MMSXWrapper::run()
     char buffer[buffer_size];
 
     emit sigUrlChanged(m_url);
-    m_mms_stream = mmsx_connect(NULL, NULL, m_url.pathOrUrl().toUtf8(), 1);
+    m_mms_stream = mmsx_connect(NULL, NULL, m_url.pathOrUrl().toUtf8().constData(), 1);
     if (!m_mms_stream) {
         m_error = true;
         emit sigError(m_url);

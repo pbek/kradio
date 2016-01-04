@@ -138,13 +138,13 @@ bool RecordingEncodingMP3::openOutput(const QString &output)
                 QByteArray ba_artist  = isoCodec->fromUnicode(artist);
                 QByteArray ba_genre   = isoCodec->fromUnicode(genre);
                 QByteArray ba_comment = isoCodec->fromUnicode(comment);
-                id3tag_set_title  (m_LAMEFlags, ba_title);
-                id3tag_set_comment(m_LAMEFlags, ba_comment);
-                id3tag_set_artist (m_LAMEFlags, ba_artist);
-                id3tag_set_genre  (m_LAMEFlags, ba_genre);
+                id3tag_set_title  (m_LAMEFlags, ba_title.constData());
+                id3tag_set_comment(m_LAMEFlags, ba_comment.constData());
+                id3tag_set_artist (m_LAMEFlags, ba_artist.constData());
+                id3tag_set_genre  (m_LAMEFlags, ba_genre.constData());
             }
 
-            m_MP3Output = fopen(QFile::encodeName(output), "wb+");
+            m_MP3Output = fopen(QFile::encodeName(output).constData(), "wb+");
             if (!m_MP3Output) {
                 m_errorString += i18n("Cannot open output file %1. ", output);
                 m_error = true;

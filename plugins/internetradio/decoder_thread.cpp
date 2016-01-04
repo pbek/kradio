@@ -607,7 +607,7 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
     if (use_io_context) {
         m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
     }
-    err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8(), iformat, NULL);
+    err = avformat_open_input(&m_av_pFormatCtx, stream.toUtf8().constData(), iformat, NULL);
 
     if (err != 0) { // on failure the context is automatically freed. Let's guarantee that the pointer is also nulled
         m_av_pFormatCtx        = NULL;
@@ -615,9 +615,9 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
     }
 #else
     if (use_io_context) {
-        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8(), iformat, &av_params);
+        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8().constData(), iformat, &av_params);
     } else {
-        err = av_open_input_file  (&m_av_pFormatCtx, stream.toUtf8(), iformat, 0, &av_params);
+        err = av_open_input_file  (&m_av_pFormatCtx, stream.toUtf8().constData(), iformat, 0, &av_params);
     }
 #endif
 
@@ -643,7 +643,7 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
 AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackFormat, bool warningsNotErrors)
 {
     LibAVGlobal::ensureInitDone();
-    AVInputFormat   *iformat      = av_find_input_format(m_RadioStation.decoderClass().toLatin1());
+    AVInputFormat   *iformat      = av_find_input_format(m_RadioStation.decoderClass().toLatin1().constData());
     if (!iformat) {
         QByteArray decoderClass;
         if (m_contentType == QLatin1String("audio/mpeg") ||
@@ -712,7 +712,7 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 #endif
 
     if (!iformat && fallbackFormat.length()) {
-        iformat = av_find_input_format(fallbackFormat.toLatin1());
+        iformat = av_find_input_format(fallbackFormat.toLatin1().constData());
     }
 
     return iformat;
@@ -970,7 +970,7 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     KUrl  streamUrl = stream;
     if (streamUrl.protocol().startsWith("mms")) {
         m_is_mms_stream = true;
-        m_mms_stream = mmsx_connect(NULL, NULL, stream.toUtf8(), 1);
+        m_mms_stream = mmsx_connect(NULL, NULL, stream.toUtf8().constData(), 1);
         if (!m_mms_stream) {
             if (warningsNotErrors) {
                 log(ThreadLogging::LogWarning, i18n("cannot open MMS stream %1", stream));

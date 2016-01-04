@@ -1433,7 +1433,7 @@ void V4LRadio::radio_init()
     notifyCapabilitiesChanged(m_caps);
     notifyDescriptionChanged(m_caps.description);
 
-    m_radio_fd = open(QFile::encodeName(m_radioDev), O_RDONLY);
+    m_radio_fd = open(QFile::encodeName(m_radioDev).constData(), O_RDONLY);
     if (m_radio_fd < 0) {
         radio_done();
 
@@ -1501,7 +1501,7 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
         v4l_caps[i].description = i18n("V4L Plugin (V4L%1 mode, invalid device): %2", i, device);
     }
 
-    fd = open(QFile::encodeName(device), O_RDONLY);
+    fd = open(QFile::encodeName(device).constData(), O_RDONLY);
 
     if (fd < 0) {
         logWarning("V4LRadio::readV4LCaps: " +

@@ -1098,7 +1098,7 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, const QString 
         }
         bool attached = false;
         if (!error) {
-            if (snd_mixer_attach (mixer_handle, mixerName.toLocal8Bit()) < 0) {
+            if (snd_mixer_attach (mixer_handle, mixerName.toLocal8Bit().constData()) < 0) {
                 staticLogError(i18n("ALSA Plugin: ERROR: snd_mixer_attach for card %1", mixerName));
                 error = true;
             } else {
@@ -1119,7 +1119,7 @@ bool AlsaSoundDevice::openMixerDevice(snd_mixer_t *&mixer_handle, const QString 
 
         if (error) {
             if (attached) {
-                snd_mixer_detach(mixer_handle, mixerName.toLocal8Bit());
+                snd_mixer_detach(mixer_handle, mixerName.toLocal8Bit().constData());
             }
             snd_mixer_close(mixer_handle);
             mixer_handle = NULL;
@@ -1142,7 +1142,7 @@ bool AlsaSoundDevice::closeMixerDevice(snd_mixer_t *&mixer_handle, const QString
 
         if (mixer_handle) {
             snd_mixer_free(mixer_handle);
-            snd_mixer_detach(mixer_handle, mixerName.toLocal8Bit());
+            snd_mixer_detach(mixer_handle, mixerName.toLocal8Bit().constData());
             snd_mixer_close (mixer_handle);
         }
         mixer_handle = NULL;
@@ -2007,13 +2007,13 @@ QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMDeviceDescriptions(const Q
     int err = snd_mixer_open (&mixer, 0);
     if (!err) {
         foreach(devString, deviceStrings) {
-            err = snd_mixer_attach (mixer, extractMixerName(devString).toLocal8Bit());
+            err = snd_mixer_attach (mixer, extractMixerName(devString).toLocal8Bit().constData());
             if (!err) {
             }
             else {
                 printf("%s\n", snd_strerror(err));
             }
-            snd_mixer_detach(mixer, devString.toLocal8Bit());
+            snd_mixer_detach(mixer, devString.toLocal8Bit().constData());
         }
         snd_mixer_close(mixer);
     } else {

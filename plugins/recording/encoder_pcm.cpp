@@ -60,7 +60,7 @@ bool RecordingEncodingPCM::openOutput(const QString &output)
 {
     SF_INFO sinfo;
     m_config.getSoundFileInfo(sinfo, false);
-    m_output = sf_open(QFile::encodeName(output), SFM_WRITE, &sinfo);
+    m_output = sf_open(QFile::encodeName(output).constData(), SFM_WRITE, &sinfo);
 
     if (!m_output) {
         m_error = true;
