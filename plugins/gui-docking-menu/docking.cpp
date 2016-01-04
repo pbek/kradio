@@ -501,7 +501,11 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
     const QString s = rs.isValid() ? rs.longName() : i18n("invalid station");
 
     const QString &rt = queryRDSRadioText();
-    setToolTip(s + (rt.length() ? "\n" + rt : ""));
+    QString tooltip = rt;
+    if (!rt.isEmpty()) {
+        tooltip += QString::fromLatin1("\n") + rt;
+    }
+    setToolTip(tooltip);
 
     bool r = false;
     SoundFormat sf;
@@ -955,7 +959,11 @@ void RadioDocking::setWheelAction(SystrayWheelAction action)
 bool RadioDocking::noticeRDSRadioTextChanged(const QString &s)
 {
     const RadioStation &rs = queryCurrentStation();
-    setToolTip(rs.longName() + (s.length() ? "\n" + s : ""));
+    QString tooltip = rs.longName();
+    if (!s.isEmpty()) {
+        tooltip += QString::fromLatin1("\n") + s;
+    }
+    setToolTip(tooltip);
     return true;
 }
 
