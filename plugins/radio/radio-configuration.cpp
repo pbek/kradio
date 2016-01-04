@@ -566,7 +566,7 @@ void RadioConfiguration::slotStorePresets()
     const KUrl url = KFileDialog::getSaveUrl(KUrl(), "*.krp|" + i18n("KRadio Preset Files"), this, i18n("Save Preset File"), KFileDialog::ConfirmOverwrite);
 
     if (url.isValid()) {
-        editPresetFile->setUrl(url.url());
+        editPresetFile->setUrl(url);
         m_stations.writeXML(url, m_logger);
     }
 }
