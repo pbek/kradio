@@ -171,20 +171,20 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
             local_error = true;
         } else {
             KIO::MetaData md = m_playlistJob->metaData();
-            if (md.contains("responsecode")) {
-                int http_response_code = md["responsecode"].toInt();
+            const KIO::MetaData::const_iterator it_end = md.constEnd();
+            KIO::MetaData::const_iterator it = md.constFind(QString::fromLatin1("responsecode"));
+            if (it != it_end) {
+                int http_response_code = (*it).toInt();
                 if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304 && http_response_code != 0) {  // skip 304 NOT MODIFIED http response codes
                     setError(i18n("Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2", http_response_code, m_currentStation.url().pathOrUrl()));
                     local_error = true;
                 }
             }
-            foreach(QString k, md.keys()) {
-                QString v = md[k];
+            for (it = md.constBegin(); it != it_end; ++it) {
+                const QString k = it.key();
+                const QString v = it.value();
                 IErrorLogClient::staticLogDebug(QString("Internet Radio Plugin (Playlist handler):      %1 = %2").arg(k, v));
-                if (k == "HTTP-Headers") {
-//                     analyzeHttpHeader(v, m_connectionMetaData);
-                }
-                else if (k == "content-type") {
+                if (k == QLatin1String("content-type")) {
                     m_contentType = v;
                 }
             }
