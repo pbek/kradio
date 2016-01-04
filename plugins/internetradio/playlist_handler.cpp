@@ -207,6 +207,8 @@ QString PlaylistHandler::getPlaylistClassFromContentType(const QString &curPlsCl
             plscls = "pls";
         } else if (m_contentType == "application/xspf+xml") {
             plscls = "xspf";
+        } else if (m_contentType == "audio/x-mpegurl") {
+            plscls = "m3u";
         }
     }
     return plscls;
