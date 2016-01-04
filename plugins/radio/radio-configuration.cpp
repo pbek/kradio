@@ -541,7 +541,7 @@ void RadioConfiguration::slotAddPresets()
 
 void RadioConfiguration::loadPresets(bool add)
 {
-    const KUrl::List urls = KFileDialog::getOpenUrls(KStandardDirs::installPath("data") + "kradio4/presets", "*.krp|" + i18n("KRadio Preset Files"), this, i18n("Select Preset File"));
+    const KUrl::List urls = KFileDialog::getOpenUrls(KUrl(KStandardDirs::installPath("data") + "kradio4/presets"), "*.krp|" + i18n("KRadio Preset Files"), this, i18n("Select Preset File"));
 
     if (!urls.isEmpty()) {
         slotSetDirty();
