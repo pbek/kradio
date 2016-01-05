@@ -33,7 +33,7 @@ class KPageWidgetItem;
 
 struct ConfigPageInfo;
 class QMenu;
-class KRadioApp;
+class InstanceManager;
 
 
 class KDE_EXPORT PluginManager : public QObject
@@ -41,7 +41,7 @@ class KDE_EXPORT PluginManager : public QObject
 Q_OBJECT
 public :
              PluginManager(const QString &name,
-                           KRadioApp *app,
+                           InstanceManager *im,
                            const QString &configDialogTitle,
                            const QString &aboutTitle);
     virtual ~PluginManager();
@@ -141,7 +141,7 @@ protected:
     typedef QMap<PluginBase*, ConfigPageInfo>::iterator     QPlugin2ConfigPageInfoMapIterator;
 
     QString      m_Name;
-    KRadioApp   *m_Application;
+    InstanceManager *m_instanceManager;
 
     PluginList   m_plugins;
     bool         m_showProgressBar;

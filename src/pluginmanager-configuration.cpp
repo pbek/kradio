@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "pluginmanager-configuration.h"
-#include "kradioapp.h"
+#include "instancemanager.h"
 #include "pluginmanager.h"
 
 #include <kpushbutton.h>
@@ -25,6 +25,7 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 #include <kdemacros.h>
+#include <kapplication.h>
 
 #include <QCheckBox>
 #include <QStandardItemModel>
@@ -32,9 +33,9 @@
 
 #include "id-generator.h"
 
-PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, KRadioApp *app, PluginManager *pm)
+PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, InstanceManager *im, PluginManager *pm)
   : QWidget(parent),
-    m_Application(app),
+    m_instanceManager(im),
     m_PluginManager(pm),
     m_dirty(true)
 {
@@ -95,14 +96,14 @@ void PluginManagerConfiguration::slotPluginRenamed(QStandardItem *item)
 void PluginManagerConfiguration::noticePluginLibrariesChanged()
 {
     listPluginLibraries->clear();
-    const QMap<QString, PluginLibraryInfo> &libs = m_Application->getPluginLibraries();
+    const QMap<QString, PluginLibraryInfo> &libs = m_instanceManager->getPluginLibraries();
     QMap<QString,PluginLibraryInfo>::const_iterator end = libs.end();
     for (QMap<QString,PluginLibraryInfo>::const_iterator it = libs.begin(); it != end; ++it) {
         listPluginLibraries->addItem(it.key());
     }
 
     listPluginClasses->clear();
-    const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
+    const QMap<QString, PluginClassInfo> &classes = m_instanceManager->getPluginClasses();
     QMap<QString, PluginClassInfo>::const_iterator end_cls = classes.end();
     for (QMap<QString, PluginClassInfo>::const_iterator it = classes.begin(); it != end_cls; ++it) {
         listPluginClasses->addTopLevelItem(new QTreeWidgetItem(QStringList() << it.key() << (*it).description));
@@ -132,7 +133,7 @@ void PluginManagerConfiguration::noticePluginRenamed(PluginBase *p, const QStrin
 
 void PluginManagerConfiguration::noticePluginAdded(PluginBase *p)
 {
-    const QMap<QString, PluginClassInfo> &classes = m_Application->getPluginClasses();
+    const QMap<QString, PluginClassInfo> &classes = m_instanceManager->getPluginClasses();
 
     const QString class_name = p->pluginClassName();
     const QMap<QString, PluginClassInfo>::const_iterator it = classes.constFind(class_name);
@@ -212,12 +213,12 @@ void PluginManagerConfiguration::slotAddLibrary()
 {
     slotSetDirty();
     KUrl url = editPluginLibrary->url();
-    if (m_Application && url.pathOrUrl().length()) {
+    if (m_instanceManager && url.pathOrUrl().length()) {
         if (!url.isLocalFile()) {
             return;  // shouldn't happen, the url requester takes care
                      // of that
         }
-        m_Application->LoadLibrary(url.toLocalFile());
+        m_instanceManager->LoadLibrary(url.toLocalFile());
     }
 }
 
@@ -225,10 +226,10 @@ void PluginManagerConfiguration::slotAddLibrary()
 void PluginManagerConfiguration::slotRemoveLibrary()
 {
     slotSetDirty();
-    if (m_Application) {
+    if (m_instanceManager) {
         QListWidgetItem *item = listPluginLibraries->currentItem();
         if (item) {
-            m_Application->UnloadLibrary(item->text());
+            m_instanceManager->UnloadLibrary(item->text());
         }
     }
 }
@@ -237,7 +238,7 @@ void PluginManagerConfiguration::slotRemoveLibrary()
 void PluginManagerConfiguration::slotNewPluginInstance()
 {
     slotSetDirty();
-    if (m_Application && m_PluginManager) {
+    if (m_instanceManager && m_PluginManager) {
         QTreeWidgetItem *item = listPluginClasses->currentItem();
         QString class_name = item ? item->text(0) : QString::null;
         bool ok = false;
@@ -250,9 +251,9 @@ void PluginManagerConfiguration::slotNewPluginInstance()
                                                     class_name + QString::number(default_object_id),
                                                     &ok);
         if (ok && class_name.length() && object_name.length()) {
-            PluginBase *p = m_Application->CreatePlugin(m_PluginManager, generateRandomID(70), class_name, object_name);
+            PluginBase *p = m_instanceManager->CreatePlugin(m_PluginManager, generateRandomID(70), class_name, object_name);
 
-            KConfig *cfg = m_Application->sessionConfig();
+            KConfig *cfg = kapp->sessionConfig();
             m_PluginManager->restorePluginInstanceState (p, cfg);
             p->startPlugin();
         }
@@ -263,7 +264,7 @@ void PluginManagerConfiguration::slotNewPluginInstance()
 void PluginManagerConfiguration::slotRemovePluginInstance()
 {
     slotSetDirty();
-    if (m_Application && m_PluginManager) {
+    if (m_instanceManager && m_PluginManager) {
         QModelIndex current = listPluginInstances->currentIndex();
         if (current.isValid()) {
             QStandardItem *item = m_pluginInstancesModel->item(current.row(), 1);

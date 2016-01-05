@@ -20,7 +20,7 @@
 #include "pluginmanager.h"
 #include "pluginmanager-configuration.h"
 #include "plugin_configuration_dialog.h"
-#include "kradioapp.h"
+#include "instancemanager.h"
 #include "id-generator.h"
 
 // test only
@@ -43,11 +43,11 @@
 
 PluginManager::PluginManager(
     const QString &name,
-    KRadioApp     *app,
+    InstanceManager *im,
     const QString &configDialogTitle,
     const QString &/*aboutDialogTitle*/)
  : m_Name(name),
-   m_Application(app),
+   m_instanceManager(im),
    m_showProgressBar(true),
    m_configDialog (NULL),
    m_configDialogID(generateRandomID(70)),
@@ -450,7 +450,7 @@ void PluginManager::createConfigDialog(const QString &title)
 
 ConfigPageInfo PluginManager::createOwnConfigurationPage()
 {
-    m_pluginManagerConfiguration = new PluginManagerConfiguration(NULL, m_Application, this);
+    m_pluginManagerConfiguration = new PluginManagerConfiguration(NULL, m_instanceManager, this);
     return ConfigPageInfo (m_pluginManagerConfiguration,
                            i18n("Plugins"),
                            i18n("Plugin Library Configuration"),
@@ -541,7 +541,7 @@ void PluginManager::saveState (KConfig *c) const
         QString object_name = plugin->name();
         QString object_id   = plugin->instanceID();
         if (class_name.length() && object_name.length() &&
-            m_Application->getPluginClasses().contains(class_name))
+            m_instanceManager->getPluginClasses().contains(class_name))
         {
             ++n;
             cfggrp.writeEntry("plugin_class_"        + QString::number(n), class_name);
@@ -579,7 +579,7 @@ void PluginManager::restoreState (KConfig *c)
     }
 
 
-    const QMap<QString, PluginClassInfo> &plugin_classes = m_Application->getPluginClasses();
+    const QMap<QString, PluginClassInfo> &plugin_classes = m_instanceManager->getPluginClasses();
     QList<QString> unused_classes = plugin_classes.keys();
 
     n = cfggrp.readEntry("plugins", 0);
@@ -604,14 +604,14 @@ void PluginManager::restoreState (KConfig *c)
         if (m_showProgressBar)
             progress->QWidget::setWindowTitle(i18n("Creating Plugin %1", class_name));
         if (class_name.length() && object_name.length())
-            m_Application->CreatePlugin(this, object_id, class_name, object_name);
+            m_instanceManager->CreatePlugin(this, object_id, class_name, object_name);
         if (m_showProgressBar)
             progress->progressBar()->setValue(i);
     }
 
     // create instances of so far unused plugin classes
 
-    if (m_Application && unused_classes.size() > 0) {
+    if (m_instanceManager && unused_classes.size() > 0) {
         QString     cls;
         QStringList lines;
         foreach (cls, unused_classes) {
@@ -638,7 +638,7 @@ void PluginManager::restoreState (KConfig *c)
                 if (m_showProgressBar)
                     progress->QWidget::setWindowTitle(i18n("Creating Plugin %1", cls));
 
-                m_Application->CreatePlugin(this, generateRandomID(70), cls, cls);
+                m_instanceManager->CreatePlugin(this, generateRandomID(70), cls, cls);
 
                 if (m_showProgressBar)
                     progress->progressBar()->setValue(idx++);
@@ -741,8 +741,8 @@ PluginConfigurationDialog *PluginManager::getConfigDialog()
 void PluginManager::slotConfigOK()
 {
     emit sigConfigOK();
-    if (m_Application)
-        m_Application->saveState(KGlobal::config().data());
+    if (m_instanceManager)
+        m_instanceManager->saveState(KGlobal::config().data());
 }
 
 

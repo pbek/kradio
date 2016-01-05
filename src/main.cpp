@@ -18,8 +18,9 @@
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocalizedstring.h>
+#include <kapplication.h>
 
-#include "kradioapp.h"
+#include "instancemanager.h"
 
 #include "debug-profiler.h"
 
@@ -47,26 +48,28 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init( argc, argv, &aboutData );
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-    BlockProfiler  profiler_kradioapp("main::KRadioApp");
-
-
-    KRadioApp a;
-
-    profiler_kradioapp.stop();
+    KApplication a;
+    QApplication::setQuitOnLastWindowClosed(false);
 
     IErrorLogClient::staticLogInfo(QString("KRadio4 Version %1 is starting").arg(KRADIO_VERSION));
 
+    BlockProfiler  profiler_manager("main::InstanceManager");
+
+    InstanceManager manager;
+
+    profiler_manager.stop();
+
     BlockProfiler  profiler_restore("main::restore");
 
-    a.restoreState(KGlobal::config().data());
+    manager.restoreState(KGlobal::config().data());
 
-    if (!a.quitting()) {
-        a.startPlugins();
+    if (!manager.quitting()) {
+        manager.startPlugins();
     }
     profiler_restore.stop();
 
     int ret = -1;
-    if (!a.quitting()) {
+    if (!manager.quitting()) {
         ret = a.exec();
     }
 #ifdef KRADIO_ENABLE_PROFILERS

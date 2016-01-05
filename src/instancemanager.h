@@ -1,5 +1,5 @@
 /***************************************************************************
-                          kradioapp.h  -  description
+                          instancemanager.h  -  description
                              -------------------
     begin                : Sa Feb  9 2002
     copyright            : (C) 2002 by Klas Kalass / Martin Witte / Frank Schwanz
@@ -15,14 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KRADIO_KRADIOAPP_H
-#define KRADIO_KRADIOAPP_H
+#ifndef KRADIO_INSTANCEMANAGER_H
+#define KRADIO_INSTANCEMANAGER_H
 
 #include <QMap>
 #include <QSharedPointer>
+#include <QObject>
 
 #include <kconfig.h>
-#include <kapplication.h>
 
 //#include <kaboutapplication.h>
 #include "pluginbase.h"
@@ -74,12 +74,12 @@ struct PluginClassInfo {
 };
 
 
-class KRadioApp : public KApplication
+class InstanceManager : public QObject
 {
 Q_OBJECT
 public:
-    KRadioApp();
-    virtual ~KRadioApp();
+    InstanceManager();
+    virtual ~InstanceManager();
 
     virtual void             saveState    (KConfig *c);
     virtual void             restoreState (KConfig *c);
@@ -99,10 +99,6 @@ public:
 
 protected slots:
 
-    #ifdef KRADIO_ENABLE_FIXMES
-        #warning: FIXME: implement qsessionmanagement stuff
-    #endif
-    virtual void  saveState( QSessionManager& sm ) { KApplication::saveState(sm); }
     virtual void  saveState();
     virtual void  slotAboutToQuit();
 

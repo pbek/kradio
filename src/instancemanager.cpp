@@ -1,5 +1,5 @@
 /**************************************************************************
-                          kradioapp.cpp  -  description
+                          instancemanager.cpp  -  description
                              -------------------
     begin                : Sa Feb  9 CET 2002
     copyright            : (C) 2002 by Klas Kalass / Martin Witte / Frank Schwanz
@@ -25,7 +25,9 @@
 #include <kglobal.h>
 #include <klocale.h>
 
-#include "kradioapp.h"
+#include <QCoreApplication>
+
+#include "instancemanager.h"
 #include "errorlog_interfaces.h"
 #include "pluginmanager.h"
 
@@ -129,31 +131,30 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
 
 
 /////////////////////////////////////////////////////////////////////////////
-//// KRadioApp
+//// InstanceManager
 
-KRadioApp::KRadioApp()
-  : KApplication(),
+InstanceManager::InstanceManager()
+  : QObject(),
     m_quitting(false)
 {
-    setQuitOnLastWindowClosed(false);
     //m_Instances.setAutoDelete(true);
-    connect(this, SIGNAL(aboutToQuit()), this, SLOT(slotAboutToQuit()));
+    connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slotAboutToQuit()));
 }
 
 
-KRadioApp::~KRadioApp()
+InstanceManager::~InstanceManager()
 {
-    IErrorLogClient::staticLogDebug("KRadioApp::~KRadioApp()");
+    IErrorLogClient::staticLogDebug("InstanceManager::~InstanceManager()");
     qDeleteAll(m_Instances);
 }
 
-void KRadioApp::saveState()
+void InstanceManager::saveState()
 {
-    IErrorLogClient::staticLogDebug("KRadioApp::saveState()");
+    IErrorLogClient::staticLogDebug("InstanceManager::saveState()");
     saveState(&*KGlobal::config());
 }
 
-void KRadioApp::saveState (KConfig *c)
+void InstanceManager::saveState (KConfig *c)
 {
     KConfigGroup global_group = c->group("Global");
     KConfigGroup plugin_group = c->group("Plugin Libraries");
@@ -178,9 +179,9 @@ void KRadioApp::saveState (KConfig *c)
 }
 
 
-void KRadioApp::restoreState (KConfig *c)
+void InstanceManager::restoreState (KConfig *c)
 {
-    BlockProfiler profiler("KRadioApp::restoreState - loadLibraries");
+    BlockProfiler profiler("InstanceManager::restoreState - loadLibraries");
 
     KConfigGroup global_group = c->group("Global");
     KConfigGroup plugin_group = c->group("Plugin Libraries");
@@ -242,7 +243,7 @@ void KRadioApp::restoreState (KConfig *c)
     profiler.stop();
 
 
-    BlockProfiler rest_profiler("KRadioApp::restoreState - restore");
+    BlockProfiler rest_profiler("InstanceManager::restoreState - restore");
 
     int n = global_group.readEntry("instances", 1);
     if (n < 1 || n > 10)
@@ -256,9 +257,9 @@ void KRadioApp::restoreState (KConfig *c)
 }
 
 
-PluginManager *KRadioApp::createNewInstance(const QString &_name)
+PluginManager *InstanceManager::createNewInstance(const QString &_name)
 {
-    BlockProfiler profiler("KRadioApp::createNewInstance");
+    BlockProfiler profiler("InstanceManager::createNewInstance");
 
     QString instance_name = _name;
     QString title_ext = "";
@@ -285,10 +286,10 @@ PluginManager *KRadioApp::createNewInstance(const QString &_name)
 }
 
 
-void KRadioApp::LoadLibrary (const QString &library)
+void InstanceManager::LoadLibrary (const QString &library)
 {
-    BlockProfiler profiler("KRadioApp::LoadLibrary");
-    BlockProfiler libprofiler("KRadioApp::LoadLibrary - " + library.toLatin1());
+    BlockProfiler profiler("InstanceManager::LoadLibrary");
+    BlockProfiler libprofiler("InstanceManager::LoadLibrary - " + library.toLatin1());
 
     PluginLibraryInfo libinfo(library);
     if (libinfo.valid()) {
@@ -310,7 +311,7 @@ void KRadioApp::LoadLibrary (const QString &library)
 }
 
 
-void KRadioApp::UnloadLibrary (const QString &library)
+void InstanceManager::UnloadLibrary (const QString &library)
 {
     if (!m_PluginLibraries.contains(library))
         return;
@@ -332,12 +333,12 @@ void KRadioApp::UnloadLibrary (const QString &library)
 }
 
 
-PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &instanceID, const QString &class_name, const QString &object_name)
+PluginBase *InstanceManager::CreatePlugin (PluginManager *manager, const QString &instanceID, const QString &class_name, const QString &object_name)
 {
-    BlockProfiler all_profiler  ("KRadioApp::CreatePlugin");
-    BlockProfiler class_profiler("KRadioApp::CreatePlugin - " + class_name.toLatin1());
+    BlockProfiler all_profiler  ("InstanceManager::CreatePlugin");
+    BlockProfiler class_profiler("InstanceManager::CreatePlugin - " + class_name.toLatin1());
 
-    BlockProfiler create_profiler("KRadioApp::CreatePlugin - create");
+    BlockProfiler create_profiler("InstanceManager::CreatePlugin - create");
 
     PluginBase *retval = NULL;
     if (m_PluginInfos.contains(class_name)) {
@@ -355,25 +356,25 @@ PluginBase *KRadioApp::CreatePlugin (PluginManager *manager, const QString &inst
 
     if (retval) {
 
-        BlockProfiler insert_profiler("KRadioApp::CreatePlugin - insert");
+        BlockProfiler insert_profiler("InstanceManager::CreatePlugin - insert");
         manager->insertPlugin(retval);
         insert_profiler.stop();
 
-        //BlockProfiler restore_profiler("KRadioApp::CreatePlugin - restore");
+        //BlockProfiler restore_profiler("InstanceManager::CreatePlugin - restore");
         //retval->restoreState(KGlobal::config());
     }
 
     return retval;
 }
 
-void  KRadioApp::startPlugins()
+void  InstanceManager::startPlugins()
 {
     foreach (PluginManager *manager, m_Instances) {
         manager->startPlugins();
     }
 }
 
-void  KRadioApp::slotAboutToQuit()
+void  InstanceManager::slotAboutToQuit()
 {
     IErrorLogClient::staticLogDebug("slotAboutToQuit");
     if (!m_quitting) {
@@ -387,4 +388,4 @@ void  KRadioApp::slotAboutToQuit()
     }
 }
 
-#include "kradioapp.moc"
+#include "instancemanager.moc"

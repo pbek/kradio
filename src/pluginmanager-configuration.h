@@ -23,7 +23,7 @@
 class QStandardItemModel;
 class QStandardItem;
 class QWidget;
-class KRadioApp;
+class InstanceManager;
 class PluginManager;
 class PluginBase;
 
@@ -32,7 +32,7 @@ class PluginManagerConfiguration : public QWidget,
 {
 Q_OBJECT
 public :
-    PluginManagerConfiguration (QWidget *parent, KRadioApp *app, PluginManager *pm);
+    PluginManagerConfiguration (QWidget *parent, InstanceManager *im, PluginManager *pm);
     ~PluginManagerConfiguration ();
 
     void noticePluginLibrariesChanged();
@@ -56,7 +56,7 @@ protected slots:
 
 protected:
 
-    KRadioApp             *m_Application;
+    InstanceManager       *m_instanceManager;
     PluginManager         *m_PluginManager;
     bool                   m_dirty;
     QStandardItemModel    *m_pluginInstancesModel;
