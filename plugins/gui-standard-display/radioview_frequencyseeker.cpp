@@ -19,7 +19,6 @@
 #include <QLayout>
 #include <QSlider>
 #include <QToolButton>
-// #include <QAccel>
 
 #include <klocalizedstring.h>
 #include <kicon.h>

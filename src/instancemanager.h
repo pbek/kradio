@@ -24,7 +24,6 @@
 
 #include <kconfig.h>
 
-//#include <kaboutapplication.h>
 #include "pluginbase.h"
 
 class KLibrary;

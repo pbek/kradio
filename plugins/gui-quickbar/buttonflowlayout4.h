@@ -42,7 +42,6 @@
 
 #include <QRect>
 #include <QLayout>
-#include <QWidgetItem>
 
 class ButtonFlowLayout4 : public QLayout
 {

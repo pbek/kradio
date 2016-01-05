@@ -17,7 +17,6 @@
 
 #include "soundserver.h"
 
-#include <kapplication.h>
 #include <klocalizedstring.h>
 
 

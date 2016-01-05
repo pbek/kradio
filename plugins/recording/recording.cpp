@@ -28,7 +28,6 @@
 #include "encoder_pcm.h"
 
 #include <QEvent>
-#include <QApplication>
 
 #include <kconfig.h>
 #include <kaboutdata.h>

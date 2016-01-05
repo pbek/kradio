@@ -19,7 +19,6 @@
 
 #include <QMutex>
 #include <QTextCodec>
-#include <QDateTime>
 #include <QFile>
 #include <klocalizedstring.h>
 
