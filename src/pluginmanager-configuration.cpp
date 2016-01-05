@@ -18,6 +18,8 @@
 #include "pluginmanager-configuration.h"
 #include "instancemanager.h"
 #include "pluginmanager.h"
+#include "pluginsmodel.h"
+#include "pluginsdelegate.h"
 
 #include <kpushbutton.h>
 #include <kurlrequester.h>
@@ -50,13 +52,9 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     editPluginLibrary->setStartDir(defaultPluginDir);
     editPluginLibrary->setMode(editPluginLibrary->mode() | KFile::LocalOnly);
 
-    m_pluginInstancesModel = new QStandardItemModel(listPluginInstances);
-    QStringList headers;
-    headers << i18n("Plugin Class");
-    headers << i18n("Instance Name");
-    headers << i18n("Description");
-    m_pluginInstancesModel->setHorizontalHeaderLabels(headers);
-    listPluginInstances->setModel(m_pluginInstancesModel);
+    m_pluginsModel = new PluginsModel(listPlugins);
+    listPlugins->setModel(m_pluginsModel);
+    listPlugins->setItemDelegate(new PluginsDelegate(listPlugins));
 
     QObject::connect(btnAddLibrary,           SIGNAL(clicked()),     this, SLOT(slotAddLibrary()));
     QObject::connect(btnRemoveLibrary,        SIGNAL(clicked()),     this, SLOT(slotRemoveLibrary()));
@@ -68,12 +66,14 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     QObject::connect(rbAutoLoadNo,            SIGNAL(clicked(bool)), this, SLOT(slotSetDirty()));
     QObject::connect(rbAutoLoadAsk,           SIGNAL(clicked(bool)), this, SLOT(slotSetDirty()));
 
-    QObject::connect(m_pluginInstancesModel,  SIGNAL(itemChanged      (QStandardItem *)),
-                     this,                    SLOT  (slotPluginRenamed(QStandardItem *)));
+    QObject::connect(listPlugins->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
+                     this, SLOT(slotCurrentChanged(QModelIndex,QModelIndex)));
 
 
     // will directly call noticePluginLibrariesChanged()
     slotCancel();
+
+    slotCurrentChanged(listPlugins->currentIndex(), QModelIndex());
 }
 
 
@@ -81,17 +81,6 @@ PluginManagerConfiguration::~PluginManagerConfiguration ()
 {
 }
 
-
-void PluginManagerConfiguration::slotPluginRenamed(QStandardItem *item)
-{
-    if (item->column() == 1) {
-        if (m_pluginItems.contains(item)) {
-            PluginBase *p = m_pluginItems[item];
-            p->setName(item->text());
-            slotSetDirty();
-        }
-    }
-}
 
 void PluginManagerConfiguration::noticePluginLibrariesChanged()
 {
@@ -102,19 +91,7 @@ void PluginManagerConfiguration::noticePluginLibrariesChanged()
         listPluginLibraries->addItem(it.key());
     }
 
-    listPluginClasses->clear();
-    const QMap<QString, PluginClassInfo> &classes = m_instanceManager->getPluginClasses();
-    QMap<QString, PluginClassInfo>::const_iterator end_cls = classes.end();
-    for (QMap<QString, PluginClassInfo>::const_iterator it = classes.begin(); it != end_cls; ++it) {
-        listPluginClasses->addTopLevelItem(new QTreeWidgetItem(QStringList() << it.key() << (*it).description));
-    }
-    listPluginClasses->resizeColumnToContents(0);
-    listPluginClasses->resizeColumnToContents(1);
-
-    // do not use clear() with QStandardItemModel, as it removes
-    // also the header items!
-    m_pluginInstancesModel->setRowCount(0);
-    m_pluginItems      .clear();
+    m_pluginsModel->setPluginClasses(m_instanceManager->getPluginClasses());
 
     foreach (PluginBase *plugin, m_PluginManager->plugins()) {
         noticePluginAdded(plugin);
@@ -122,50 +99,21 @@ void PluginManagerConfiguration::noticePluginLibrariesChanged()
 }
 
 
-void PluginManagerConfiguration::noticePluginRenamed(PluginBase *p, const QString &name)
+void PluginManagerConfiguration::noticePluginRenamed(PluginBase *p, const QString &)
 {
-    QStandardItem *item = m_pluginItems.key(p, NULL);
-    if (item) {
-        item->setText(name);
-    }
+    m_pluginsModel->notifyPluginRenamed(p);
 }
 
 
 void PluginManagerConfiguration::noticePluginAdded(PluginBase *p)
 {
-    const QMap<QString, PluginClassInfo> &classes = m_instanceManager->getPluginClasses();
-
-    const QString class_name = p->pluginClassName();
-    const QMap<QString, PluginClassInfo>::const_iterator it = classes.constFind(class_name);
-    if (it != classes.constEnd()) {
-        const QString obj_name = p->name();
-        QList<QStandardItem *> items;
-        items << new QStandardItem(class_name);
-        items[0]->setEditable(false);
-        items << new QStandardItem(obj_name);
-        items[1]->setEditable(true);
-        items << new QStandardItem((*it).description);
-        items[2]->setEditable(false);
-        m_pluginInstancesModel->appendRow(items);
-
-        m_pluginItems.insert(items[1], p);
-    }
-    listPluginInstances->resizeColumnToContents(0);
-    listPluginInstances->resizeColumnToContents(1);
-    listPluginInstances->resizeColumnToContents(2);
+    m_pluginsModel->addPlugin(p);
 }
 
 
 void PluginManagerConfiguration::noticePluginRemoved(PluginBase *p)
 {
-    const QString obj_name = p->name();
-    // remove rows from last to first, to not invalidate the indexes
-    // following a removed row
-    for (int row = m_pluginInstancesModel->rowCount() - 1; row >= 0; --row) {
-        if (m_pluginInstancesModel->item(row, 1)->text() == obj_name) {
-            m_pluginInstancesModel->removeRow(row);
-        }
-    }
+    m_pluginsModel->removePlugin(p);
 }
 
 
@@ -237,40 +185,56 @@ void PluginManagerConfiguration::slotRemoveLibrary()
 
 void PluginManagerConfiguration::slotNewPluginInstance()
 {
-    slotSetDirty();
-    if (m_instanceManager && m_PluginManager) {
-        QTreeWidgetItem *item = listPluginClasses->currentItem();
-        QString class_name = item ? item->text(0) : QString::null;
-        bool ok = false;
-        int default_object_id = 1;
-        while (m_PluginManager->getPluginByName(class_name + QString::number(default_object_id)))
-            ++default_object_id;
+    const QModelIndex index = listPlugins->currentIndex();
+    if (!index.isValid()) {
+        return;
+    }
 
-        QString object_name = KInputDialog::getText(i18n("Enter Plugin Instance Name"),
-                                                    i18n("Instance name:"),
-                                                    class_name + QString::number(default_object_id),
-                                                    &ok);
-        if (ok && class_name.length() && object_name.length()) {
-            PluginBase *p = m_instanceManager->CreatePlugin(m_PluginManager, generateRandomID(70), class_name, object_name);
+    const QString class_name = index.data(ClassNameRole).toString();
+    if (class_name.isEmpty()) {
+        return;
+    }
 
-            KConfig *cfg = kapp->sessionConfig();
-            m_PluginManager->restorePluginInstanceState (p, cfg);
-            p->startPlugin();
-        }
+    int default_object_id = 1;
+    while (m_PluginManager->getPluginByName(class_name + QString::number(default_object_id))) {
+        ++default_object_id;
+    }
+
+    bool ok = false;
+    const QString object_name = KInputDialog::getText(i18n("Enter Plugin Instance Name"),
+                                                      i18n("Instance name:"),
+                                                      class_name + QString::number(default_object_id),
+                                                      &ok);
+    if (ok && !object_name.isEmpty()) {
+        PluginBase *p = m_instanceManager->CreatePlugin(m_PluginManager, generateRandomID(70), class_name, object_name);
+
+        KConfig *cfg = kapp->sessionConfig();
+        m_PluginManager->restorePluginInstanceState (p, cfg);
+        p->startPlugin();
     }
 }
 
 
 void PluginManagerConfiguration::slotRemovePluginInstance()
 {
-    slotSetDirty();
-    if (m_instanceManager && m_PluginManager) {
-        QModelIndex current = listPluginInstances->currentIndex();
-        if (current.isValid()) {
-            QStandardItem *item = m_pluginInstancesModel->item(current.row(), 1);
-            m_PluginManager->deletePluginByName(item->text());
-        }
+    const QModelIndex index = listPlugins->currentIndex();
+    if (!index.isValid()) {
+        return;
     }
+
+    const QString instance_name = index.data(InstanceNameRole).toString();
+    if (instance_name.isEmpty()) {
+        return;
+    }
+
+    m_PluginManager->deletePluginByName(instance_name);
+}
+
+
+void PluginManagerConfiguration::slotCurrentChanged(const QModelIndex &current, const QModelIndex &)
+{
+    btnNewPluginInstance->setEnabled(current.isValid());
+    btnRemovePluginInstance->setEnabled(current.isValid() && current.data(InstanceNameRole).isValid());
 }
 
 

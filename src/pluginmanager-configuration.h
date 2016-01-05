@@ -20,12 +20,11 @@
 
 #include "ui_pluginmanager-configuration-ui.h"
 
-class QStandardItemModel;
-class QStandardItem;
 class QWidget;
 class InstanceManager;
 class PluginManager;
 class PluginBase;
+class PluginsModel;
 
 class PluginManagerConfiguration : public QWidget,
                                    public Ui_PluginManagerConfigurationUI
@@ -52,16 +51,14 @@ protected slots:
     void slotRemoveLibrary();
     void slotNewPluginInstance();
     void slotRemovePluginInstance();
-    void slotPluginRenamed(QStandardItem *item);
+    void slotCurrentChanged(const QModelIndex &current, const QModelIndex &previous);
 
 protected:
 
     InstanceManager       *m_instanceManager;
     PluginManager         *m_PluginManager;
     bool                   m_dirty;
-    QStandardItemModel    *m_pluginInstancesModel;
-
-    QMap<QStandardItem*, PluginBase*> m_pluginItems;          // modelitem => instanceID
+    PluginsModel          *m_pluginsModel;
 };
 
 #endif
