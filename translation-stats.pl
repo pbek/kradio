@@ -57,7 +57,7 @@ while (my ($lang, $pofiles) = each(%langs)) {
 
 foreach my $lang(sort keys %stats) {
     my $s = $stats{$lang};
-    printf "%-5s:   total:%5i     translated: %5i (%3i%%)    fuzzy: %5i (%3i%%)     untranslated: %5i (%3i%%)\n",
+    printf "%-8s:   total:%5i     translated: %4i (%3i%%)    fuzzy: %4i (%3i%%)     untranslated: %4i (%3i%%)\n",
            $lang,
            $$s{total},
            $$s{translated},     $$s{translated}     * 100 / $$s{total},
