@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: convert-presets.cpp:155
+#: convert-presets.cpp:156
 #, kde-format
 msgid "kradio4-convert-presets"
 msgstr "kradio4-convert-presets"
 
-#: convert-presets.cpp:157
+#: convert-presets.cpp:158
 #, kde-format
 msgid "(c) 2003-2010 Martin Witte"
 msgstr "(c) 2003-2010 Martin Witte"
 
-#: convert-presets.cpp:160
+#: convert-presets.cpp:161
 #, kde-format
 msgid "Martin Witte"
 msgstr "Martin Witte"
 
-#: convert-presets.cpp:165
+#: convert-presets.cpp:166
 #, kde-format
 msgid "quiet mode - no informational output"
 msgstr "modo silencioso - sin información de salida"
 
-#: convert-presets.cpp:166
+#: convert-presets.cpp:167
 #, kde-format
 msgid "preset files to convert"
 msgstr "archivos de configuración a convertir"

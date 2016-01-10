@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_dbus\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2009-06-15 13:31+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -29,15 +29,10 @@ msgctxt "@title"
 msgid "D-Bus Support"
 msgstr "DBus stuðningur"
 
-#: dbussupport.cpp:55 dbussupport.cpp:117
+#: dbussupport.cpp:53
 #, fuzzy, kde-format
 msgid "D-Bus Plugin"
 msgstr "DBus íforrit"
-
-#: dbussupport.cpp:116
-#, fuzzy, kde-format
-msgid "D-Bus Support"
-msgstr "DBus stuðningur"
 
 #: rc.cpp:1
 #, kde-format
@@ -50,3 +45,7 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#, fuzzy
+#~ msgid "D-Bus Support"
+#~ msgstr "DBus stuðningur"

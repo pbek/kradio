@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2012-08-09 13:31+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -20,278 +20,221 @@ msgstr ""
 
 #. i18n: file: timecontrol-configuration-ui.ui:19
 #. i18n: ectx: property (text), widget (QLabel, labelSleep)
-#: rc.cpp:3 rc.cpp:69
+#: rc.cpp:3 rc.cpp:64
 #, fuzzy, kde-format
 msgid "Sleep countdown:"
 msgstr "odpočítavania uspania"
 
 #. i18n: file: timecontrol-configuration-ui.ui:29
 #. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
-#: rc.cpp:6 rc.cpp:72
+#: rc.cpp:6 rc.cpp:67
 #, kde-format
 msgid " min"
 msgstr " min"
 
 #. i18n: file: timecontrol-configuration-ui.ui:48
 #. i18n: ectx: property (text), widget (QCheckBox, cbSuspendOnSleep)
-#: rc.cpp:9 rc.cpp:75
+#: rc.cpp:9 rc.cpp:70
 #, kde-format
 msgid "Suspend computer on sleep"
 msgstr ""
 
 #. i18n: file: timecontrol-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
-#: rc.cpp:12 rc.cpp:78
+#: rc.cpp:12 rc.cpp:73
 #, fuzzy, kde-format
 msgid "Alarms:"
 msgstr "Alarmy"
 
 #. i18n: file: timecontrol-configuration-ui.ui:137
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
-#: rc.cpp:15 rc.cpp:81
+#: rc.cpp:15 rc.cpp:76
 #, fuzzy, kde-format
 msgid "Date:"
 msgstr "Dátum"
 
 #. i18n: file: timecontrol-configuration-ui.ui:153
 #. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
-#: rc.cpp:18 rc.cpp:84
+#: rc.cpp:18 rc.cpp:79
 #, kde-format
 msgid "dd.MM.yyyy"
 msgstr "dd.MM.yyyy"
 
 #. i18n: file: timecontrol-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
-#: rc.cpp:21 rc.cpp:87
+#: rc.cpp:21 rc.cpp:82
 #, fuzzy, kde-format
 msgid "Time:"
 msgstr "Čas"
 
 #. i18n: file: timecontrol-configuration-ui.ui:180
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
-#: rc.cpp:24 rc.cpp:90
+#: rc.cpp:24 rc.cpp:85
 #, kde-format
 msgid "HH:mm:ss"
 msgstr "HH:mm:ss"
 
 #. i18n: file: timecontrol-configuration-ui.ui:191
 #. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
-#: rc.cpp:27 rc.cpp:93
+#: rc.cpp:27 rc.cpp:88
 #, fuzzy, kde-format
 msgid "Volume:"
 msgstr "Hlasitosť"
 
 #. i18n: file: timecontrol-configuration-ui.ui:207
 #. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
-#: rc.cpp:31 rc.cpp:97
+#: rc.cpp:31 rc.cpp:92
 #, no-c-format, kde-format
 msgid " %"
 msgstr " %"
 
 #. i18n: file: timecontrol-configuration-ui.ui:248
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
-#: rc.cpp:34 rc.cpp:100
+#: rc.cpp:34 rc.cpp:95
 #, fuzzy, kde-format
 msgid "Daily/weekly"
 msgstr "denne/týždenne"
 
 #. i18n: file: timecontrol-configuration-ui.ui:255
 #. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
-#: rc.cpp:37 rc.cpp:103
+#: rc.cpp:37 rc.cpp:98
 #, fuzzy, kde-format
 msgid "Enabled"
 msgstr "povolené"
 
 #. i18n: file: timecontrol-configuration-ui.ui:262
 #. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
-#: rc.cpp:40 rc.cpp:106
+#: rc.cpp:40 rc.cpp:101
 #, kde-format
 msgid "Active weekdays:"
 msgstr "Aktívne dni v týždni"
 
 #. i18n: file: timecontrol-configuration-ui.ui:271
 #. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
-#: rc.cpp:43 rc.cpp:109
+#: rc.cpp:43 rc.cpp:104
 #, fuzzy, kde-format
 msgid "Radio station:"
 msgstr "Rozhlasová stanica"
 
-#. i18n: file: timecontrol-configuration-ui.ui:292
+#. i18n: file: timecontrol-configuration-ui.ui:287
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplate)
-#: rc.cpp:47 rc.cpp:113
+#: rc.cpp:47 rc.cpp:108
 #, no-c-format, kde-format
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Recording Filename "
-"Template:</p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
-"style:italic;\">: station name, </span><span style=\" font-weight:600; font-"
-"style:italic;\">%i</span><span style=\" font-style:italic;\">: station "
-"index, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
-"span><span style=\" font-style:italic;\">: 4-digit year, </span><span style="
-"\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
-"italic;\">: 2-digit month, </span><span style=\" font-weight:600; font-style:"
-"italic;\">%d</span><span style=\" font-style:italic;\">: 2-digit day, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%B</span><span "
-"style=\" font-style:italic;\">: month name, </span><span style=\" font-"
-"weight:600; font-style:italic;\">%A</span><span style=\" font-style:italic;"
-"\"> day name, </span><span style=\" font-weight:600; font-style:italic;\">"
-"%H</span><span style=\" font-style:italic;\">: 2-digit hour, </span><span "
-"style=\" font-weight:600; font-style:italic;\">%M</span><span style=\" font-"
-"style:italic;\">: 2-digit minute, </span><span style=\" font-weight:600; "
-"font-style:italic;\">%S</span><span style=\" font-style:italic;\"> 2-digit "
-"second,</span><span style=\" font-weight:600; font-style:italic;\"> %%</"
-"span><span style=\" font-style:italic;\">: literal %)</span></p></body></"
-"html>"
+"<p style=\"font-size: 9pt;\">Recording Filename Template:<br/><i>(<b>%s</b>: "
+"station name, <b>%i</b>: station index, <b>%Y</b>: 4-digit year, <b>%m</b>: "
+"2-digit month, <b>%d</b>: 2-digit day, <b>%B</b>: month name, <b>%A</b>: day "
+"name, <b>%H</b>: 2-digit hour, <b>%M</b>: 2-digit minute, <b>%S</b>: 2-digit "
+"second, <b>%%</b>: literal %)</i></p>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Šablóna názvu súboru "
-"nahrávania:</p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" font-"
-"style:italic;\">: názov stanice, </span><span style=\" font-weight:600; font-"
-"style:italic;\">%i</span><span style=\" font-style:italic;\">: index "
-"stanice, </span><span style=\" font-weight:600; font-style:italic;\">%Y</"
-"span><span style=\" font-style:italic;\">: 4-číselný rok, </span><span style="
-"\" font-weight:600; font-style:italic;\">%m</span><span style=\" font-style:"
-"italic;\">: 2-číselný mesiac, </span><span style=\" font-weight:600; font-"
-"style:italic;\">%d</span><span style=\" font-style:italic;\">: 2-číselný "
-"deň, </span><span style=\" font-weight:600; font-style:italic;\">%B</"
-"span><span style=\" font-style:italic;\">: názov mesiaca, </span><span style="
-"\" font-weight:600; font-style:italic;\">%A</span><span style=\" font-style:"
-"italic;\"> názov dňa, </span><span style=\" font-weight:600; font-style:"
-"italic;\">%H</span><span style=\" font-style:italic;\">: 2-číselná hodina, </"
-"span><span style=\" font-weight:600; font-style:italic;\">%M</span><span "
-"style=\" font-style:italic;\">: 2-číselná minúta, </span><span style=\" font-"
-"weight:600; font-style:italic;\">%S</span><span style=\" font-style:italic;"
-"\"> 2-číselná sekunda,</span><span style=\" font-weight:600; font-style:"
-"italic;\"> %%</span><span style=\" font-style:italic;\">: literál %)</span></"
-"p></body></html>"
 
-#. i18n: file: timecontrol-configuration-ui.ui:323
+#. i18n: file: timecontrol-configuration-ui.ui:318
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateFilename)
-#: rc.cpp:55 rc.cpp:121
+#: rc.cpp:50 rc.cpp:111
 #, kde-format
 msgid "Filename:"
 msgstr ""
 
-#. i18n: file: timecontrol-configuration-ui.ui:330
+#. i18n: file: timecontrol-configuration-ui.ui:325
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Title)
-#: rc.cpp:58 rc.cpp:124
+#: rc.cpp:53 rc.cpp:114
 #, kde-format
 msgid "ID3 title:"
 msgstr ""
 
-#. i18n: file: timecontrol-configuration-ui.ui:337
+#. i18n: file: timecontrol-configuration-ui.ui:332
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Artist)
-#: rc.cpp:61 rc.cpp:127
+#: rc.cpp:56 rc.cpp:117
 #, kde-format
 msgid "ID3 artist:"
 msgstr ""
 
-#. i18n: file: timecontrol-configuration-ui.ui:344
+#. i18n: file: timecontrol-configuration-ui.ui:339
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Genre)
-#: rc.cpp:64 rc.cpp:130
+#: rc.cpp:59 rc.cpp:120
 #, kde-format
 msgid "ID3 genre:"
 msgstr ""
 
-#: rc.cpp:65
+#: rc.cpp:60
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Roman Paholík"
 
-#: rc.cpp:66
+#: rc.cpp:61
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: timecontrol-configuration.cpp:63
+#: timecontrol-configuration.cpp:64
 #, kde-format
 msgid "Start Playing"
 msgstr "Spustiť prehrávanie"
 
-#: timecontrol-configuration.cpp:64
+#: timecontrol-configuration.cpp:65
 #, kde-format
 msgid "Stop Playing"
 msgstr "Zastaviť prehrávanie"
 
-#: timecontrol-configuration.cpp:65
+#: timecontrol-configuration.cpp:66
 #, kde-format
 msgid "Start Recording"
 msgstr "Spustiť nahrávanie"
 
-#: timecontrol-configuration.cpp:66
+#: timecontrol-configuration.cpp:67
 #, kde-format
 msgid "Stop Recording"
 msgstr "Ukončiť nahrávanie"
 
-#: timecontrol-configuration.cpp:69
+#: timecontrol-configuration.cpp:70
 #, kde-format
 msgid "unchanged"
 msgstr "nezmenené"
 
-#: timecontrol-configuration.cpp:71
+#: timecontrol-configuration.cpp:72
 #, kde-format
 msgid "Monday"
 msgstr "Pondelok"
 
-#: timecontrol-configuration.cpp:72
+#: timecontrol-configuration.cpp:73
 #, kde-format
 msgid "Tuesday"
 msgstr "Utorok"
 
-#: timecontrol-configuration.cpp:73
+#: timecontrol-configuration.cpp:74
 #, kde-format
 msgid "Wednesday"
 msgstr "Streda"
 
-#: timecontrol-configuration.cpp:74
+#: timecontrol-configuration.cpp:75
 #, kde-format
 msgid "Thursday"
 msgstr "Štvrtok"
 
-#: timecontrol-configuration.cpp:75
+#: timecontrol-configuration.cpp:76
 #, kde-format
 msgid "Friday"
 msgstr "Piatok"
 
-#: timecontrol-configuration.cpp:76
+#: timecontrol-configuration.cpp:77
 #, kde-format
 msgid "Saturday"
 msgstr "Sobota"
 
-#: timecontrol-configuration.cpp:77
+#: timecontrol-configuration.cpp:78
 #, kde-format
 msgid "Sunday"
 msgstr "Nedeľa"
 
-#: timecontrol-configuration.cpp:155 timecontrol-configuration.cpp:336
+#: timecontrol-configuration.cpp:156 timecontrol-configuration.cpp:337
 #, kde-format
 msgctxt "disabled alarm"
 msgid "%1 (disabled)"
 msgstr ""
 
-#: timecontrol-configuration.cpp:225
+#: timecontrol-configuration.cpp:226
 #, fuzzy, kde-format
 msgid "<do not change>"
 msgstr "<nemeniť>"
@@ -347,3 +290,70 @@ msgstr "Alarmy"
 #, kde-format
 msgid "Setup Alarms"
 msgstr "Nastaviť budíky"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Recording Filename "
+#~ "Template:</p>\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" "
+#~ "font-style:italic;\">: station name, </span><span style=\" font-"
+#~ "weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
+#~ "italic;\">: station index, </span><span style=\" font-weight:600; font-"
+#~ "style:italic;\">%Y</span><span style=\" font-style:italic;\">: 4-digit "
+#~ "year, </span><span style=\" font-weight:600; font-style:italic;\">%m</"
+#~ "span><span style=\" font-style:italic;\">: 2-digit month, </span><span "
+#~ "style=\" font-weight:600; font-style:italic;\">%d</span><span style=\" "
+#~ "font-style:italic;\">: 2-digit day, </span><span style=\" font-"
+#~ "weight:600; font-style:italic;\">%B</span><span style=\" font-style:"
+#~ "italic;\">: month name, </span><span style=\" font-weight:600; font-style:"
+#~ "italic;\">%A</span><span style=\" font-style:italic;\"> day name, </"
+#~ "span><span style=\" font-weight:600; font-style:italic;\">%H</span><span "
+#~ "style=\" font-style:italic;\">: 2-digit hour, </span><span style=\" font-"
+#~ "weight:600; font-style:italic;\">%M</span><span style=\" font-style:"
+#~ "italic;\">: 2-digit minute, </span><span style=\" font-weight:600; font-"
+#~ "style:italic;\">%S</span><span style=\" font-style:italic;\"> 2-digit "
+#~ "second,</span><span style=\" font-weight:600; font-style:italic;\"> %%</"
+#~ "span><span style=\" font-style:italic;\">: literal %)</span></p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Šablóna názvu súboru "
+#~ "nahrávania:</p>\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-weight:600; font-style:italic;\">(%s</span><span style=\" "
+#~ "font-style:italic;\">: názov stanice, </span><span style=\" font-"
+#~ "weight:600; font-style:italic;\">%i</span><span style=\" font-style:"
+#~ "italic;\">: index stanice, </span><span style=\" font-weight:600; font-"
+#~ "style:italic;\">%Y</span><span style=\" font-style:italic;\">: 4-číselný "
+#~ "rok, </span><span style=\" font-weight:600; font-style:italic;\">%m</"
+#~ "span><span style=\" font-style:italic;\">: 2-číselný mesiac, </span><span "
+#~ "style=\" font-weight:600; font-style:italic;\">%d</span><span style=\" "
+#~ "font-style:italic;\">: 2-číselný deň, </span><span style=\" font-"
+#~ "weight:600; font-style:italic;\">%B</span><span style=\" font-style:"
+#~ "italic;\">: názov mesiaca, </span><span style=\" font-weight:600; font-"
+#~ "style:italic;\">%A</span><span style=\" font-style:italic;\"> názov dňa, "
+#~ "</span><span style=\" font-weight:600; font-style:italic;\">%H</"
+#~ "span><span style=\" font-style:italic;\">: 2-číselná hodina, </span><span "
+#~ "style=\" font-weight:600; font-style:italic;\">%M</span><span style=\" "
+#~ "font-style:italic;\">: 2-číselná minúta, </span><span style=\" font-"
+#~ "weight:600; font-style:italic;\">%S</span><span style=\" font-style:"
+#~ "italic;\"> 2-číselná sekunda,</span><span style=\" font-weight:600; font-"
+#~ "style:italic;\"> %%</span><span style=\" font-style:italic;\">: literál "
+#~ "%)</span></p></body></html>"

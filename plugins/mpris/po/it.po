@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2015-12-25 16:16+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -25,7 +25,6 @@ msgstr "MPRIS"
 
 #: mprissupport.cpp:44
 #, kde-format
-#| msgid "MPRIS Support"
 msgctxt "@title"
 msgid "MPRIS Support"
 msgstr "Supporto per MPRIS"
@@ -42,15 +41,10 @@ msgctxt "@info:credit"
 msgid "Pino Toscano"
 msgstr "Pino Toscano"
 
-#: mprissupport.cpp:59 mprissupport.cpp:138
+#: mprissupport.cpp:59
 #, kde-format
 msgid "MPRIS Plugin"
 msgstr "Estensione MPRIS"
-
-#: mprissupport.cpp:137
-#, kde-format
-msgid "MPRIS Support"
-msgstr "Supporto per MPRIS"
 
 #: rc.cpp:1
 #, kde-format
@@ -63,3 +57,6 @@ msgstr "Luigi Toscano"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it"
+
+#~ msgid "MPRIS Support"
+#~ msgstr "Supporto per MPRIS"

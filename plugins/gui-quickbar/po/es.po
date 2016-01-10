@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -17,69 +17,69 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: quickbar.cpp:51
+#: quickbar.cpp:44
 #, fuzzy, kde-format
 #| msgid "Quickbar"
 msgctxt "@title"
 msgid "Quickbar"
 msgstr "Quickbar"
 
-#: quickbar.cpp:53
+#: quickbar.cpp:46
 #, fuzzy, kde-format
 #| msgid "Radio Station Quick Selection Toolbar"
 msgctxt "@title"
 msgid "Radio Station Quick Selection Toolbar"
 msgstr "Barra de Herramientas para Selección Rápida de Emisoras de Radio"
 
-#: quickbar.cpp:55
+#: quickbar.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: quickbar.cpp:59
+#: quickbar.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: quickbar.cpp:60
+#: quickbar.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: quickbar.cpp:70
+#: quickbar.cpp:63
 #, kde-format
 msgid "Quickbar Plugin"
 msgstr "Plugin Quickbar"
 
-#: quickbar.cpp:159
+#: quickbar.cpp:152
 #, kde-format
 msgid "Quickbar"
 msgstr "Quickbar"
 
-#: quickbar.cpp:160
+#: quickbar.cpp:153
 #, kde-format
 msgid "Quickbar Configuration"
 msgstr "Configuración Quickbar"
 
-#: quickbar.cpp:362
+#: quickbar.cpp:355
 #, fuzzy, kde-format
 msgid "KRadio4 Quickbar, %1"
 msgstr "Quickbar"
 
-#: quickbar.cpp:362
+#: quickbar.cpp:355
 #, fuzzy, kde-format
 msgid "KRadio4 Quickbar"
 msgstr "Quickbar"
 
-#: quickbar.cpp:370
+#: quickbar.cpp:363
 #, kde-format
 msgid "contentsDragEnterEvent accepted"
 msgstr "contentsDragEnterEvent acetpado"
 
-#: quickbar.cpp:372
+#: quickbar.cpp:365
 #, kde-format
 msgid "contentsDragEnterEvent rejected"
 msgstr "contentsDragEnterEvent rechazado"

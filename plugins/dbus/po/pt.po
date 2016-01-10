@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,14 +29,9 @@ msgctxt "@title"
 msgid "D-Bus Support"
 msgstr ""
 
-#: dbussupport.cpp:55 dbussupport.cpp:117
+#: dbussupport.cpp:53
 #, kde-format
 msgid "D-Bus Plugin"
-msgstr ""
-
-#: dbussupport.cpp:116
-#, kde-format
-msgid "D-Bus Support"
 msgstr ""
 
 #: rc.cpp:1

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2009-11-07 23:59-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -20,69 +20,69 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Language: pt_BR\n"
 
-#: quickbar.cpp:51
+#: quickbar.cpp:44
 #, fuzzy, kde-format
 #| msgid "Quickbar"
 msgctxt "@title"
 msgid "Quickbar"
 msgstr "Barra de acesso rápido"
 
-#: quickbar.cpp:53
+#: quickbar.cpp:46
 #, fuzzy, kde-format
 #| msgid "Radio Station Quick Selection Toolbar"
 msgctxt "@title"
 msgid "Radio Station Quick Selection Toolbar"
 msgstr "Seleção rápida da barra de ferramentas da estação de rádio"
 
-#: quickbar.cpp:55
+#: quickbar.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: quickbar.cpp:59
+#: quickbar.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: quickbar.cpp:60
+#: quickbar.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: quickbar.cpp:70
+#: quickbar.cpp:63
 #, kde-format
 msgid "Quickbar Plugin"
 msgstr "Plug-in da barra de acesso rápido"
 
-#: quickbar.cpp:159
+#: quickbar.cpp:152
 #, kde-format
 msgid "Quickbar"
 msgstr "Barra de acesso rápido"
 
-#: quickbar.cpp:160
+#: quickbar.cpp:153
 #, kde-format
 msgid "Quickbar Configuration"
 msgstr "Configuração da barra de acesso rápido"
 
-#: quickbar.cpp:362
+#: quickbar.cpp:355
 #, fuzzy, kde-format
 msgid "KRadio4 Quickbar, %1"
 msgstr "Barra de acesso rápido"
 
-#: quickbar.cpp:362
+#: quickbar.cpp:355
 #, fuzzy, kde-format
 msgid "KRadio4 Quickbar"
 msgstr "Barra de acesso rápido"
 
-#: quickbar.cpp:370
+#: quickbar.cpp:363
 #, kde-format
 msgid "contentsDragEnterEvent accepted"
 msgstr "contentsDragEnterEvent aceito"
 
-#: quickbar.cpp:372
+#: quickbar.cpp:365
 #, kde-format
 msgid "contentsDragEnterEvent rejected"
 msgstr "contentsDragEnterEvent rejeitado"

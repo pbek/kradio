@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2006-11-19 16:08+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -30,57 +30,57 @@ msgstr "Janela de Registo de Erros do KRadio"
 msgid "Error Logger"
 msgstr "Registo de erros"
 
-#: errorlog.cpp:65 errorlog.cpp:74
+#: errorlog.cpp:61 errorlog.cpp:70
 #, kde-format
 msgid "KRadio Logger"
 msgstr "Registo do KRadio"
 
-#: errorlog.cpp:71
+#: errorlog.cpp:67
 #, kde-format
 msgid "Save &as"
 msgstr "Gu&ardar como"
 
-#: errorlog.cpp:76
+#: errorlog.cpp:72
 #, kde-format
 msgid "Information"
 msgstr ""
 
-#: errorlog.cpp:77 errorlog.cpp:80 errorlog.cpp:83 errorlog.cpp:86
+#: errorlog.cpp:73 errorlog.cpp:76 errorlog.cpp:79 errorlog.cpp:82
 #, fuzzy, kde-format
 msgid "KRadio4 Version %1 logging started"
 msgstr "registo iniciado"
 
-#: errorlog.cpp:79
+#: errorlog.cpp:75
 #, kde-format
 msgid "Warnings"
 msgstr "Avisos"
 
-#: errorlog.cpp:82
+#: errorlog.cpp:78
 #, kde-format
 msgid "Errors"
 msgstr "Erros"
 
-#: errorlog.cpp:85
+#: errorlog.cpp:81
 #, kde-format
 msgid "Debugging"
 msgstr "Depuração"
 
-#: errorlog.cpp:203
+#: errorlog.cpp:200
 #, kde-format
 msgid "Log Files"
 msgstr "Ficheiros de registo"
 
-#: errorlog.cpp:208
+#: errorlog.cpp:200
 #, fuzzy, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Guardar dados do registo do KRadio como ..."
 
-#: errorlog.cpp:233
+#: errorlog.cpp:223
 #, fuzzy, kde-format
 msgid "error writing to temporary file %1"
 msgstr "erro ao escrever no ficheiro temporário %1"
 
-#: errorlog.cpp:242
+#: errorlog.cpp:232
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "Erro ao enviar o ficheiro de Estações de Rádio %1"

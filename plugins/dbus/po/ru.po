@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 20:45+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -32,15 +32,10 @@ msgctxt "@title"
 msgid "D-Bus Support"
 msgstr "Поддержка DBus"
 
-#: dbussupport.cpp:55 dbussupport.cpp:117
+#: dbussupport.cpp:53
 #, kde-format
 msgid "D-Bus Plugin"
 msgstr "Модуль DBus"
-
-#: dbussupport.cpp:116
-#, kde-format
-msgid "D-Bus Support"
-msgstr "Поддержка DBus"
 
 #: rc.cpp:1
 #, kde-format
@@ -53,3 +48,6 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "D-Bus Support"
+#~ msgstr "Поддержка DBus"

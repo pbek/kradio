@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2012-08-09 14:22+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -82,41 +82,41 @@ msgstr "hocičo ( * )"
 msgid "Select TimeShifter Temporary File"
 msgstr "Vybrat dočasný súbor TimeShiftera"
 
-#: timeshifter.cpp:33
+#: timeshifter.cpp:32
 #, fuzzy, kde-format
 #| msgid "TimeShift Support"
 msgctxt "@title"
 msgid "TimeShift Support"
 msgstr "Podpora časového posunu"
 
-#: timeshifter.cpp:47
+#: timeshifter.cpp:46
 #, kde-format
 msgid "TimeShifter Plugin"
 msgstr "Plugin Časový posun"
 
-#: timeshifter.cpp:142
+#: timeshifter.cpp:140
 #, kde-format
 msgid "Timeshifter"
 msgstr "Časový posun"
 
-#: timeshifter.cpp:143
+#: timeshifter.cpp:141
 #, kde-format
 msgid "Timeshifter Options"
 msgstr "Voľby časového posunu"
 
-#: timeshifter.cpp:224
+#: timeshifter.cpp:222
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr "Časový posun %1 (%2)"
 
-#: timeshifter.cpp:570
+#: timeshifter.cpp:568
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: klienti preskočili %1 bajtov. Dáta "
 "stratené"
 
-#: timeshifter.cpp:650
+#: timeshifter.cpp:648
 #, kde-format
 msgid "internal stream, not stored"
 msgstr "interný prúd, neuložený"

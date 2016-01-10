@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2015-12-25 16:17+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -22,124 +22,123 @@ msgstr ""
 
 #. i18n: file: radio-configuration-ui.ui:316
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: radio-configuration.cpp:76 rc.cpp:48 rc.cpp:138
+#: radio-configuration.cpp:73 rc.cpp:48 rc.cpp:138
 #, kde-format
 msgid "unchanged"
 msgstr "invariato"
 
-#: radio-configuration.cpp:79
+#: radio-configuration.cpp:76
 #, kde-format
 msgctxt "Sound mode"
 msgid "<do not care>"
 msgstr "<non importante>"
 
-#: radio-configuration.cpp:80
+#: radio-configuration.cpp:77
 #, kde-format
 msgctxt "Sound mode, monophonic"
 msgid "Mono"
 msgstr "Mono"
 
-#: radio-configuration.cpp:81
+#: radio-configuration.cpp:78
 #, kde-format
 msgctxt "Sound mode, stereophonic"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: radio-configuration.cpp:84
+#: radio-configuration.cpp:81
 #, kde-format
 msgid "Load and replace presets"
 msgstr "Carica e sostituisci le preimpostazioni"
 
-#: radio-configuration.cpp:85
+#: radio-configuration.cpp:82
 #, kde-format
 msgid "Load and add presets"
 msgstr "Carica e aggiungi le preimpostazioni"
 
-#: radio-configuration.cpp:426
+#: radio-configuration.cpp:423
 #, kde-format
 msgid "Image Selection"
 msgstr "Selezione dell'immagine"
 
-#: radio-configuration.cpp:431
+#: radio-configuration.cpp:428
 #, kde-format
 msgid "ignoring non-local image"
 msgstr "le immagini non locali saranno ignorate"
 
-#: radio-configuration.cpp:548 radio-configuration.cpp:576
+#: radio-configuration.cpp:544 radio-configuration.cpp:566
 #, kde-format
 msgid "KRadio Preset Files"
 msgstr "File di preimpostazione di KRadio"
 
-#: radio-configuration.cpp:552
+#: radio-configuration.cpp:544
 #, kde-format
 msgid "Select Preset File"
 msgstr "Seleziona un file di preimpostazione"
 
-#: radio-configuration.cpp:580
+#: radio-configuration.cpp:566
 #, kde-format
 msgid "Save Preset File"
 msgstr "Salva il file di preimpostazione"
 
-#: radio-configuration.cpp:626
+#: radio-configuration.cpp:612
 #, kde-format
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
 msgstr[0] "è stata trovata 1 nuova stazione"
 msgstr[1] "sono state trovate %1 nuove stazioni"
 
-#: radio-configuration.cpp:628
+#: radio-configuration.cpp:614
 #, kde-format
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"
 msgstr[0] "adesso hai 1 stazione"
 msgstr[1] "adesso hai %1 stazioni"
 
-#: radio.cpp:39
+#: radio.cpp:41
 #, kde-format
-#| msgid "Central Radio Device Multiplexer"
 msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
 msgstr "Multiplexer del dispositivo radio centrale"
 
-#: radio.cpp:41
+#: radio.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr "(c) 2002-2005 Martin Witte, Klas Kalass"
 
-#: radio.cpp:45
+#: radio.cpp:47
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr "Martin Witte"
 
-#: radio.cpp:46
+#: radio.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: radio.cpp:55
+#: radio.cpp:57
 #, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Estensione multiplexer radio"
 
-#: radio.cpp:148
+#: radio.cpp:152
 #, kde-format
 msgid "Radio Stations"
 msgstr "Stazioni radio"
 
-#: radio.cpp:149
+#: radio.cpp:153
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Impostazione delle stazioni radio"
 
-#: radio.cpp:190
+#: radio.cpp:194
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
 msgstr "Impossibile trovare un'estensione per la stazione radio %1"
 
-#: radio.cpp:385
+#: radio.cpp:389
 #, kde-format
 msgctxt "Unknown description"
 msgid "unknown"

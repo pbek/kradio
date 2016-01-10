@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.cs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-22 22:14+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -41,67 +41,67 @@ msgstr "Nelze otevřít žádný rozhlasový datový proud ze seznamu %1."
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: Chyba při dekódování paketu. Paket byl odmítnut"
 
-#: decoder_thread.cpp:281
+#: decoder_thread.cpp:338 decoder_thread.cpp:341
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Vnitřní zvukový datový proud, nebude uložen (%1)"
 
-#: decoder_thread.cpp:358
+#: decoder_thread.cpp:354
 #, kde-format
 msgid "Failed allocating AVFrame."
 msgstr "Nepodařilo se přidělit AVFrame."
 
-#: decoder_thread.cpp:630 decoder_thread.cpp:633
+#: decoder_thread.cpp:626 decoder_thread.cpp:629
 #, kde-format
 msgid "Could not open stream %1"
 msgstr "Nepodařilo se otevřít datový proud %1"
 
-#: decoder_thread.cpp:715 decoder_thread.cpp:718
+#: decoder_thread.cpp:701 decoder_thread.cpp:704
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr "Automatické rozpoznání formátu internetového proudu %1 se nezdařilo"
 
-#: decoder_thread.cpp:722
+#: decoder_thread.cpp:708
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Automaticky rozpoznaný formát: %1 (spolehlivost: %2)"
 
-#: decoder_thread.cpp:748 decoder_thread.cpp:751
+#: decoder_thread.cpp:734 decoder_thread.cpp:737
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Nelze najít metainformace v zvukovém datovém proudu %1"
 
-#: decoder_thread.cpp:816 decoder_thread.cpp:819
+#: decoder_thread.cpp:802 decoder_thread.cpp:805
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Nelze najít žádný zvukový datový proud na adrese %1."
 
-#: decoder_thread.cpp:839 decoder_thread.cpp:842
+#: decoder_thread.cpp:825 decoder_thread.cpp:828
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Nelze najít žádný dekodér pro %1."
 
-#: decoder_thread.cpp:857 decoder_thread.cpp:860
+#: decoder_thread.cpp:843 decoder_thread.cpp:846
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Otevření dekodéru pro %1 selhalo."
 
-#: decoder_thread.cpp:885
+#: decoder_thread.cpp:871
 #, kde-format
 msgid "Unknown channel layout for %1"
 msgstr "Neznámé rozložení kanálu pro %1"
 
-#: decoder_thread.cpp:990 decoder_thread.cpp:993
+#: decoder_thread.cpp:976 decoder_thread.cpp:979
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "Nelze otevřít MMS datový proud %1"
 
-#: decoder_thread.cpp:1091
+#: decoder_thread.cpp:1077
 #, kde-format
 msgid "Not yet implemented: libav sample format id %1"
 msgstr "Neuděláno: ID formátu vzorku libav %1"
 
-#: decoder_thread.cpp:1097
+#: decoder_thread.cpp:1083
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Nelze použít ID formátu vzorku libav %1"
@@ -147,14 +147,14 @@ msgstr ""
 "Přídavný modul pro internetový rozhlas (manipulátor http ICY): Chyba HTTP %1 "
 "pro proud %2"
 
-#: internetradio.cpp:45
+#: internetradio.cpp:44
 #, fuzzy, kde-format
 #| msgid "Internet Radio"
 msgctxt "@title"
 msgid "Internet Radio"
 msgstr "Rozhlas na internetu"
 
-#: internetradio.cpp:47
+#: internetradio.cpp:46
 #, fuzzy, kde-format
 #| msgid "Pseudo radio device for Internet radio stream support"
 msgctxt "@title"
@@ -163,10 +163,15 @@ msgstr ""
 "Předstírané rozhlasové zařízení pro podporu internetových rozhlasových "
 "datových proudů"
 
-#: internetradio.cpp:63
+#: internetradio.cpp:62
 #, kde-format
 msgid "Internet Radio Plugin"
 msgstr "Přídavný modul pro rozhlas na internetu"
+
+#: internetradio.cpp:86
+#, kde-format
+msgid "Internet Radio Plugin: "
+msgstr "Přídavný modul pro internetový rozhlas: "
 
 #: internetradio.cpp:384
 #, kde-format
@@ -183,11 +188,6 @@ msgstr "Rozhlas na internetu"
 #, kde-format
 msgid "Internet Radio Options"
 msgstr "Volby pro rozhlas na internetu"
-
-#: internetradio.cpp:995
-#, kde-format
-msgid "Internet Radio Plugin: "
-msgstr "Přídavný modul pro internetový rozhlas: "
 
 #: internetradio.cpp:1145
 #, kde-format
@@ -214,31 +214,37 @@ msgstr ""
 "Nepodařilo se spustit stahování seznamu skladeb %1: KIO::get vrátil NULL "
 "pointer"
 
-#: playlist_handler.cpp:177
+#: playlist_handler.cpp:179
 #, kde-format
 msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
 msgstr ""
 "Přídavný modul pro internetový rozhlas (manipulátor seznamu skladeb): Chyba "
 "HTTP %1 pro proud %2"
 
-#: playlist_handler.cpp:277
+#: playlist_handler.cpp:288
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 neobsahuje žádný použitelný rozhlasový datový proud"
 
-#: playlist_handler.cpp:380 playlist_handler.cpp:439
+#: playlist_handler.cpp:391 playlist_handler.cpp:450
 #, kde-format
 msgid "failed to create temporary file to store playlist data"
 msgstr "Nepodařilo se vytvořit dočasný soubor pro uložení dat seznamu skladeb"
 
-#: playlist_handler.cpp:384 playlist_handler.cpp:443
+#: playlist_handler.cpp:395 playlist_handler.cpp:454
 #, kde-format
 msgid "failed to write temporary file to store playlist data"
 msgstr "Nepodařilo se zapsat dočasný soubor pro uložení dat seznamu skladeb"
 
-#: playlist_handler.cpp:526
+#: playlist_handler.cpp:537
 #, kde-format
 msgid "error while reading asx file: %1"
+msgstr "Chyba při čtení souboru asx: %1"
+
+#: playlist_handler.cpp:589
+#, fuzzy, kde-format
+#| msgid "error while reading asx file: %1"
+msgid "error while reading XSPF file: %1"
 msgstr "Chyba při čtení souboru asx: %1"
 
 #. i18n: file: internetradio-configuration-ui.ui:14

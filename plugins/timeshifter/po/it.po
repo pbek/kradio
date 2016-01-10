@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2015-12-25 17:56+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -84,41 +84,40 @@ msgstr "tutti ( * )"
 msgid "Select TimeShifter Temporary File"
 msgstr "Seleziona il file temporaneo per l'ascolto in differita"
 
-#: timeshifter.cpp:33
+#: timeshifter.cpp:32
 #, kde-format
-#| msgid "TimeShift Support"
 msgctxt "@title"
 msgid "TimeShift Support"
 msgstr "Supporto per l'ascolto in differita"
 
-#: timeshifter.cpp:47
+#: timeshifter.cpp:46
 #, kde-format
 msgid "TimeShifter Plugin"
 msgstr "Estensione per l'ascolto in differita"
 
-#: timeshifter.cpp:142
+#: timeshifter.cpp:140
 #, kde-format
 msgid "Timeshifter"
 msgstr "Ascolto in differita"
 
-#: timeshifter.cpp:143
+#: timeshifter.cpp:141
 #, kde-format
 msgid "Timeshifter Options"
 msgstr "Opzioni dell'ascolto in differita"
 
-#: timeshifter.cpp:224
+#: timeshifter.cpp:222
 #, kde-format
 msgid "Time shift of %1 (%2)"
 msgstr "Spostamento del tempo di %1 (%2)"
 
-#: timeshifter.cpp:570
+#: timeshifter.cpp:568
 #, kde-format
 msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
 msgstr ""
 "TimeShifter::notifySoundStreamData: i client hanno ignorato %1 byte e sono "
 "andati persi"
 
-#: timeshifter.cpp:650
+#: timeshifter.cpp:648
 #, kde-format
 msgid "internal stream, not stored"
 msgstr "flusso interno, non salvato"

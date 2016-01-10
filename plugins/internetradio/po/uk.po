@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 18:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -40,67 +40,67 @@ msgstr "Не вдалося відкрити жодного вхідного п�
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: помилка під час спроби декодування пакета. Пакет відкинуто"
 
-#: decoder_thread.cpp:281
+#: decoder_thread.cpp:338 decoder_thread.cpp:341
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "внутрішній потік, не збережено (%1)"
 
-#: decoder_thread.cpp:358
+#: decoder_thread.cpp:354
 #, kde-format
 msgid "Failed allocating AVFrame."
 msgstr "Не вдалося розмістити AVFrame."
 
-#: decoder_thread.cpp:630 decoder_thread.cpp:633
+#: decoder_thread.cpp:626 decoder_thread.cpp:629
 #, kde-format
 msgid "Could not open stream %1"
 msgstr "Не вдалося відкрити потік %1"
 
-#: decoder_thread.cpp:715 decoder_thread.cpp:718
+#: decoder_thread.cpp:701 decoder_thread.cpp:704
 #, kde-format
 msgid "Autodetect of stream type failed for %1"
 msgstr "Не вдалося автоматично визначити тип потокових даних %1"
 
-#: decoder_thread.cpp:722
+#: decoder_thread.cpp:708
 #, kde-format
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Автовизначений формат: %1 (оцінка %2)"
 
-#: decoder_thread.cpp:748 decoder_thread.cpp:751
+#: decoder_thread.cpp:734 decoder_thread.cpp:737
 #, kde-format
 msgid "Could not find stream information in %1"
 msgstr "Не вдалося знайти відомості про потік у %1"
 
-#: decoder_thread.cpp:816 decoder_thread.cpp:819
+#: decoder_thread.cpp:802 decoder_thread.cpp:805
 #, kde-format
 msgid "Could not find an audio stream in %1"
 msgstr "Не вдалося знайти звуковий потік у %1"
 
-#: decoder_thread.cpp:839 decoder_thread.cpp:842
+#: decoder_thread.cpp:825 decoder_thread.cpp:828
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Не вдалося знайти кодек для %1"
 
-#: decoder_thread.cpp:857 decoder_thread.cpp:860
+#: decoder_thread.cpp:843 decoder_thread.cpp:846
 #, kde-format
 msgid "Opening codec for %1 failed"
 msgstr "Спроба відкриття кодека для %1 зазнала невдачі"
 
-#: decoder_thread.cpp:885
+#: decoder_thread.cpp:871
 #, kde-format
 msgid "Unknown channel layout for %1"
 msgstr "Невідоме компонування каналів для %1"
 
-#: decoder_thread.cpp:990 decoder_thread.cpp:993
+#: decoder_thread.cpp:976 decoder_thread.cpp:979
 #, kde-format
 msgid "cannot open MMS stream %1"
 msgstr "не вдалося відкрити потік MMS %1"
 
-#: decoder_thread.cpp:1091
+#: decoder_thread.cpp:1077
 #, kde-format
 msgid "Not yet implemented: libav sample format id %1"
 msgstr "Ще не реалізовано: ідентифікатор семплу libav %1"
 
-#: decoder_thread.cpp:1097
+#: decoder_thread.cpp:1083
 #, kde-format
 msgid "Cannot use libav sample format id %1"
 msgstr "Не вдалося використати ідентифікатор формату семплу libav %1"
@@ -142,24 +142,29 @@ msgstr ""
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr "Модуль інтернет-радіо (обробник http ICY): помилка HTTP %1 потоку %2"
 
-#: internetradio.cpp:45
+#: internetradio.cpp:44
 #, fuzzy, kde-format
 #| msgid "Internet Radio"
 msgctxt "@title"
 msgid "Internet Radio"
 msgstr "Інтернет-радіо"
 
-#: internetradio.cpp:47
+#: internetradio.cpp:46
 #, fuzzy, kde-format
 #| msgid "Pseudo radio device for Internet radio stream support"
 msgctxt "@title"
 msgid "Pseudo radio device for Internet radio stream support"
 msgstr "Псевдопристрій радіо для підтримки потоків інтернет-радіо"
 
-#: internetradio.cpp:63
+#: internetradio.cpp:62
 #, kde-format
 msgid "Internet Radio Plugin"
 msgstr "Модуль інтернет-радіо"
+
+#: internetradio.cpp:86
+#, kde-format
+msgid "Internet Radio Plugin: "
+msgstr "Модуль інтернет-радіо: "
 
 #: internetradio.cpp:384
 #, kde-format
@@ -175,11 +180,6 @@ msgstr "Інтернет-радіо"
 #, kde-format
 msgid "Internet Radio Options"
 msgstr "Параметри інтернет-радіо"
-
-#: internetradio.cpp:995
-#, kde-format
-msgid "Internet Radio Plugin: "
-msgstr "Модуль інтернет-радіо: "
 
 #: internetradio.cpp:1145
 #, kde-format
@@ -205,35 +205,41 @@ msgstr ""
 "Не вдалося розпочати звантаження списку відтворення %1: KIO::get повернуто "
 "нульовий вказівник"
 
-#: playlist_handler.cpp:177
+#: playlist_handler.cpp:179
 #, kde-format
 msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
 msgstr ""
 "Модуль інтернет-радіо (обробник списків відтворення): помилка HTTP %1 потоку "
 "%2"
 
-#: playlist_handler.cpp:277
+#: playlist_handler.cpp:288
 #, kde-format
 msgid "%1 does not contain any usable radio stream"
 msgstr "%1 не містить жодного придатного потоку радіо"
 
-#: playlist_handler.cpp:380 playlist_handler.cpp:439
+#: playlist_handler.cpp:391 playlist_handler.cpp:450
 #, kde-format
 msgid "failed to create temporary file to store playlist data"
 msgstr ""
 "не вдалося створити файл тимчасових даних для зберігання даних списку "
 "відтворення"
 
-#: playlist_handler.cpp:384 playlist_handler.cpp:443
+#: playlist_handler.cpp:395 playlist_handler.cpp:454
 #, kde-format
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 "не вдалося записати файл тимчасових даних для зберігання даних списку "
 "відтворення"
 
-#: playlist_handler.cpp:526
+#: playlist_handler.cpp:537
 #, kde-format
 msgid "error while reading asx file: %1"
+msgstr "помилка під час спроби читання файла asx: %1"
+
+#: playlist_handler.cpp:589
+#, fuzzy, kde-format
+#| msgid "error while reading asx file: %1"
+msgid "error while reading XSPF file: %1"
 msgstr "помилка під час спроби читання файла asx: %1"
 
 #. i18n: file: internetradio-configuration-ui.ui:14

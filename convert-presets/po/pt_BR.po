@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-21 21:40+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2009-11-07 22:31-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -20,27 +20,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Language: pt_BR\n"
 
-#: convert-presets.cpp:155
+#: convert-presets.cpp:156
 #, kde-format
 msgid "kradio4-convert-presets"
 msgstr ""
 
-#: convert-presets.cpp:157
+#: convert-presets.cpp:158
 #, kde-format
 msgid "(c) 2003-2010 Martin Witte"
 msgstr ""
 
-#: convert-presets.cpp:160
+#: convert-presets.cpp:161
 #, kde-format
 msgid "Martin Witte"
 msgstr ""
 
-#: convert-presets.cpp:165
+#: convert-presets.cpp:166
 #, kde-format
 msgid "quiet mode - no informational output"
 msgstr ""
 
-#: convert-presets.cpp:166
+#: convert-presets.cpp:167
 #, kde-format
 msgid "preset files to convert"
 msgstr ""

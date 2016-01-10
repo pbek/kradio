@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.alsa-sound.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 15:21+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -50,42 +50,52 @@ msgstr ""
 msgid "KRadio ALSA Sound Plugin"
 msgstr "KRadio ALSA Sound Plugin"
 
-#: alsa-sound.cpp:269
+#: alsa-sound.cpp:107 alsa-sound.cpp:1684
+#, kde-format
+msgid "AlsaPlugin(playback thread on %1): "
+msgstr "AlsaPlugin(Wiedergabe-Thread auf %1): "
+
+#: alsa-sound.cpp:108 alsa-sound.cpp:1719
+#, kde-format
+msgid "AlsaPlugin(capture thread on %1): "
+msgstr "ALSA Plugin(Aufnahme-Thread auf %1): "
+
+#: alsa-sound.cpp:275
 #, kde-format
 msgid "ALSA Sound"
 msgstr "ALSA Sound"
 
-#: alsa-sound.cpp:270
+#: alsa-sound.cpp:276
 #, kde-format
 msgid "ALSA Sound Device Options"
 msgstr "Optionen für die ALSA-Sound-Geräte"
 
-#: alsa-sound.cpp:629
+#: alsa-sound.cpp:635
 #, kde-format
 msgid "ALSA Plugin: cannot write data for device %1"
 msgstr "ALSA Plugin: Das schreiben auf das Gerät plughw:%1 schlug fehl"
 
-#: alsa-sound.cpp:636
+#: alsa-sound.cpp:642
 #, kde-format
 msgid "ALSA Plugin: buffer underrun for device %1"
 msgstr "ALSA Plugin: Pufferunterlauf im Gerät %1"
 
-#: alsa-sound.cpp:684
+#: alsa-sound.cpp:690
 #, kde-format
 msgid "ALSA Plugin: cannot read data from device %1"
 msgstr "ALSA Plugin: Das Lesen vom Gerät plughw:%1 schlug fehl"
 
-#: alsa-sound.cpp:691
+#: alsa-sound.cpp:697
 #, kde-format
 msgid "ALSA Plugin: buffer overrun for device %1 (buffersize=%2, buffer=%3)"
 msgstr "ALSA Plugin: Pufferüberlauf im Gerät %1 (Puffergröße=%2, buffer=%3)"
 
-#: alsa-sound.cpp:712
+#: alsa-sound.cpp:718
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "interner, nicht aufgezeichneter Datenstrom (%1)"
 
-#: alsa-sound.cpp:764
+#: alsa-sound.cpp:770
 #, kde-format
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing playback thread, but found "
@@ -94,7 +104,7 @@ msgstr ""
 "AlsaPlugin: Interner Fehler. Der Wiedergabe-Thread existierte noch wider "
 "erwarten"
 
-#: alsa-sound.cpp:828
+#: alsa-sound.cpp:834
 #, kde-format
 msgid ""
 "AlsaPlugin: internal error. Expected non-existing capture thread, but found "
@@ -103,37 +113,37 @@ msgstr ""
 "AlsaPlugin: Interner Fehler. Der Aufnahme-Thread existierte noch wider "
 "erwarten"
 
-#: alsa-sound.cpp:871
+#: alsa-sound.cpp:877
 #, kde-format
 msgid "ALSA Plugin: Error opening PCM device %1: %2"
 msgstr "ALSA Plugin: Fehler beim Öffnen des Gerätes %1: %2"
 
-#: alsa-sound.cpp:876
+#: alsa-sound.cpp:882
 #, kde-format
 msgid "ALSA Plugin: Can not configure PCM device %1: %2"
 msgstr "ALSA Plugin: Das Konfigurieren des Gerätes %1 schlug fehl: %2"
 
-#: alsa-sound.cpp:883
+#: alsa-sound.cpp:889
 #, kde-format
 msgid "ALSA Plugin: Error setting access for %1"
 msgstr "ALSA Plugin: Fehler beim Konfigurieren des Zugriffsmodus auf Gerät %1"
 
-#: alsa-sound.cpp:893
+#: alsa-sound.cpp:899
 #, kde-format
 msgid "ALSA Plugin: Error setting sample format for %1: %2"
 msgstr "ALSA Plugin: Fehler beim Einstellen des Abtastformats für Gerät %1: %2"
 
-#: alsa-sound.cpp:899
+#: alsa-sound.cpp:905
 #, kde-format
 msgid "ALSA Plugin: Error setting channels for %1: %2"
 msgstr "ALSA Plugin: Fehler beim Einstellen der Kanäle für Gerät %1: %2"
 
-#: alsa-sound.cpp:906
+#: alsa-sound.cpp:912
 #, kde-format
 msgid "ALSA Plugin: Error setting rate for %1: %2"
 msgstr "ALSA Plugin: Fehler beim Einstellen der Abtastrate für Gerät %1: %2"
 
-#: alsa-sound.cpp:910
+#: alsa-sound.cpp:916
 #, kde-format
 msgid ""
 "ALSA Plugin: The rate %1 Hz is not supported by your hardware %2. Using %3 "
@@ -142,25 +152,25 @@ msgstr ""
 "ALSA Plugin: Die Abtastrate von %1 Hz wird von Ihrer Soundkarte %2 nicht "
 "unterstützt. Es werden stattdessen %3 Hz verwendet"
 
-#: alsa-sound.cpp:916
+#: alsa-sound.cpp:922
 #, kde-format
 msgid "ALSA Plugin: Error reading max buffer size for %1: %2"
 msgstr "ALSA Plugin: Fehler beim Lesen der Puffergröße von Gerät %1: %2"
 
-#: alsa-sound.cpp:922
+#: alsa-sound.cpp:928
 #, kde-format
 msgid "ALSA Plugin: Error setting period size to %1 for %2: %3"
 msgstr ""
 "ALSA Plugin: Fehler beim Setzen der Puffer-Periodenlänge auf %1 von Gerät "
 "%2: %3 "
 
-#: alsa-sound.cpp:927
+#: alsa-sound.cpp:933
 #, kde-format
 msgid "ALSA Plugin: Error setting buffer size to %1 for %2: %3"
 msgstr ""
 "ALSA Plugin: Fehler beim Setzen der Puffergröße auf %1 von Gerät %2: %3"
 
-#: alsa-sound.cpp:930
+#: alsa-sound.cpp:936
 #, kde-format
 msgid ""
 "ALSA Plugin(%1) setting parameters near: period size = %2 [frames], hwbuffer "
@@ -169,40 +179,40 @@ msgstr ""
 "ALSA Plugin(%1) - Parameter werden ungefähr auf folgende Werte gesetzt: "
 "Periodenlänge = %2 [Frames], Puffergröße = %3 [frames]"
 
-#: alsa-sound.cpp:935
+#: alsa-sound.cpp:941
 #, kde-format
 msgid "ALSA Plugin: Error setting HW params: %1"
 msgstr "ALSA Plugin: Fehler beim Einstellen der Hardwareparameter: %1"
 
-#: alsa-sound.cpp:941
+#: alsa-sound.cpp:947
 #, kde-format
 msgid "ALSA Plugin: Error getting period size for %1: %2"
 msgstr ""
 "ALSA Plugin: Fehler beim Lesen der Puffer-Periodengröße von Gerät %1: %2"
 
-#: alsa-sound.cpp:947
+#: alsa-sound.cpp:953
 #, kde-format
 msgid "ALSA Plugin: Error getting hw buffer size for %1: %2"
 msgstr "ALSA Plugin: Fehler beim Lesen der Puffergröße von Gerät %1: %2"
 
-#: alsa-sound.cpp:951
+#: alsa-sound.cpp:957
 #, kde-format
 msgid "ALSA Plugin(%1): period size = %2 [frames], hwbuffer size = %3 [frames]"
 msgstr ""
 "ALSA Plugin(%1): Periodenlänge = %2 [frames], Puffergröße = %3 [frames]"
 
-#: alsa-sound.cpp:957
+#: alsa-sound.cpp:963
 #, kde-format
 msgid "ALSA Plugin(%1): Setting timer latency to %2"
 msgstr "ALSA Plugin(%1): Timer-Latenz für Gerät %2 wurde auf %1 gesetzt."
 
-#: alsa-sound.cpp:961
+#: alsa-sound.cpp:967
 #, kde-format
 msgid "ALSA Plugin: Error getting sw params for %1: %2"
 msgstr ""
 "ALSA Plugin: Fehler beim Lesen der ALSA-Software-Parameter für Gerät %1: %2"
 
-#: alsa-sound.cpp:965
+#: alsa-sound.cpp:971
 #, kde-format
 msgid ""
 "ALSA Plugin: Error setting sw params min available frames to %1 for %2: %3"
@@ -210,14 +220,14 @@ msgstr ""
 "ALSA Plugin: Fehler beim Einstellen des minimalen Stereo-Sample(Frame)-"
 "Anzahl auf %1 für Gerät %2: %3"
 
-#: alsa-sound.cpp:969
+#: alsa-sound.cpp:975
 #, kde-format
 msgid "ALSA Plugin: Error installing sw params for %1: %2"
 msgstr ""
 "ALSA Plugin: Fehler beim Einstellen der ALSA-Software-Parameter für Gerät "
 "%1: %2"
 
-#: alsa-sound.cpp:997
+#: alsa-sound.cpp:1003
 #, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the playback thread. It did not "
@@ -226,7 +236,7 @@ msgstr ""
 "Alsa Plugin (Gerät %1): Uuups, der Wiedergabethread musste getötet werden, "
 "da er sich nicht selbst beendet hat."
 
-#: alsa-sound.cpp:1028
+#: alsa-sound.cpp:1034
 #, kde-format
 msgid ""
 "Alsa Plugin (device %1): oops, had to kill the capture thread. It did not "
@@ -235,68 +245,58 @@ msgstr ""
 "Alsa Plugin (Gerät %1): Uups, der Aufnahme-Thread musste getötet werden, da "
 "er sich nicht selbst beendet hat."
 
-#: alsa-sound.cpp:1090
+#: alsa-sound.cpp:1096
 #, kde-format
 msgid "ALSA Plugin: Error opening mixer"
 msgstr "ALSA Plugin: Fehler beim Öffnen des Mixers"
 
-#: alsa-sound.cpp:1096
+#: alsa-sound.cpp:1102
 #, kde-format
 msgid "ALSA Plugin: ERROR: snd_mixer_attach for card %1"
 msgstr "ALSA Plugin: Fehler in Funktion snd_mixer_attach bei Soundkarte %1"
 
-#: alsa-sound.cpp:1103
+#: alsa-sound.cpp:1109
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_selem_register for card %1"
 msgstr ""
 "ALSA Plugin: Fehler in Funktion snd_mixer_selem_register bei Soundkarte %1"
 
-#: alsa-sound.cpp:1107
+#: alsa-sound.cpp:1113
 #, kde-format
 msgid "ALSA Plugin: Error: snd_mixer_load for card %1"
 msgstr "ALSA Plugin: Fehler in Funktion snd_mixer_load bei Soundkarte %1"
 
-#: alsa-sound.cpp:1179
+#: alsa-sound.cpp:1185
 #, kde-format
 msgctxt "context-mixername-number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: alsa-sound.cpp:1232
+#: alsa-sound.cpp:1238
 #, kde-format
 msgctxt "context-mixerelement-name-number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: alsa-sound.cpp:1395 alsa-sound.cpp:1423
+#: alsa-sound.cpp:1408 alsa-sound.cpp:1441
 #, kde-format
 msgid "error while reading volume from %1, channel %2"
 msgstr "Fehler beim Lesen der Lautstärke von Gerät %1, Kanal %2"
 
-#: alsa-sound.cpp:1467 alsa-sound.cpp:1500
+#: alsa-sound.cpp:1492 alsa-sound.cpp:1529
 #, kde-format
 msgid "error while writing volume %1 to %2, channel %3"
 msgstr "Fehler beim Setzen der Lautstärke %1 auf Gerät %2, Kanal %3"
 
-#: alsa-sound.cpp:1519
+#: alsa-sound.cpp:1553
 #, kde-format
 msgid "error while setting capture switch %1 for %2"
 msgstr "Fehler beim Einstellen des Aufnahmeauswahlschalters %1 für Gerät %2"
 
-#: alsa-sound.cpp:1714
+#: alsa-sound.cpp:1750
 #, kde-format
 msgid "ALSA Sound Device %1"
 msgstr "ALSA Soundkarte %1"
-
-#: alsa-sound.cpp:1879
-#, kde-format
-msgid "AlsaPlugin(capture thread on %1): "
-msgstr "ALSA Plugin(Aufnahme-Thread auf %1): "
-
-#: alsa-sound.cpp:1883
-#, kde-format
-msgid "AlsaPlugin(playback thread on %1): "
-msgstr "AlsaPlugin(Wiedergabe-Thread auf %1): "
 
 #: alsa-thread.cpp:130
 #, kde-format

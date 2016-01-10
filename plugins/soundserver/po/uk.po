@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 19:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -30,19 +30,19 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: soundserver.cpp:33
+#: soundserver.cpp:32
 #, fuzzy, kde-format
 #| msgid "KRadio internal sound server"
 msgctxt "@title"
 msgid "KRadio internal sound server"
 msgstr "Внутрішній звуковий сервер KRadio"
 
-#: soundserver.cpp:47
+#: soundserver.cpp:46
 #, kde-format
 msgid "Sound Server Plugin"
 msgstr "Модуль звукового сервера"
 
-#: soundserver.cpp:49
+#: soundserver.cpp:48
 #, kde-format
 msgid "initializing KRadio sound server"
 msgstr "запуск звукового сервера KRadio"

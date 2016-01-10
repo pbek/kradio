@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2009-11-11 10:27-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -22,262 +22,234 @@ msgstr ""
 
 #. i18n: file: streaming-configuration-ui.ui:26
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: rc.cpp:3 rc.cpp:84
+#: rc.cpp:3 rc.cpp:80
 #, kde-format
 msgid "URL Properties"
 msgstr "Propriedades da URL"
 
 #. i18n: file: streaming-configuration-ui.ui:42
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:6 rc.cpp:87
+#: rc.cpp:6 rc.cpp:83
 #, kde-format
 msgid "Stereo"
 msgstr "Estéreo"
 
 #. i18n: file: streaming-configuration-ui.ui:47
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:9 rc.cpp:90
+#: rc.cpp:9 rc.cpp:86
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
 #. i18n: file: streaming-configuration-ui.ui:55
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
-#: rc.cpp:12 rc.cpp:93
+#: rc.cpp:12 rc.cpp:89
 #, fuzzy, kde-format
 msgid "Sample bits:"
 msgstr "Bits de amostragem"
 
 #. i18n: file: streaming-configuration-ui.ui:71
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
-#: rc.cpp:15 rc.cpp:96
+#: rc.cpp:15 rc.cpp:92
 #, fuzzy, kde-format
 msgid "Channels:"
 msgstr "Canais"
 
 #. i18n: file: streaming-configuration-ui.ui:81
 #. i18n: ectx: property (text), widget (QLabel, lableEndianness)
-#: rc.cpp:18 rc.cpp:99
+#: rc.cpp:18 rc.cpp:95
 #, fuzzy, kde-format
 msgid "Endianness:"
 msgstr "Endianess"
 
 #. i18n: file: streaming-configuration-ui.ui:98
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
-#: rc.cpp:21 rc.cpp:102
+#: rc.cpp:21 rc.cpp:98
 #, kde-format
 msgid "Little Endian"
 msgstr "Little Endian"
 
 #. i18n: file: streaming-configuration-ui.ui:103
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
-#: rc.cpp:24 rc.cpp:105
+#: rc.cpp:24 rc.cpp:101
 #, kde-format
 msgid "Big Endian"
 msgstr "Big Endian"
 
 #. i18n: file: streaming-configuration-ui.ui:118
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:27 rc.cpp:108
+#: rc.cpp:27 rc.cpp:104
 #, kde-format
 msgid "48000"
 msgstr "48000"
 
 #. i18n: file: streaming-configuration-ui.ui:123
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:30 rc.cpp:111
+#: rc.cpp:30 rc.cpp:107
 #, kde-format
 msgid "44100"
 msgstr "44100"
 
 #. i18n: file: streaming-configuration-ui.ui:128
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:33 rc.cpp:114
+#: rc.cpp:33 rc.cpp:110
 #, kde-format
 msgid "32000"
 msgstr "32000"
 
 #. i18n: file: streaming-configuration-ui.ui:133
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:36 rc.cpp:117
+#: rc.cpp:36 rc.cpp:113
 #, kde-format
 msgid "22050"
 msgstr "22050"
 
 #. i18n: file: streaming-configuration-ui.ui:138
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:39 rc.cpp:120
+#: rc.cpp:39 rc.cpp:116
 #, kde-format
 msgid "11025"
 msgstr "11025"
 
 #. i18n: file: streaming-configuration-ui.ui:153
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:42 rc.cpp:123
+#: rc.cpp:42 rc.cpp:119
 #, kde-format
 msgid "16"
 msgstr "16"
 
 #. i18n: file: streaming-configuration-ui.ui:158
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:45 rc.cpp:126
+#: rc.cpp:45 rc.cpp:122
 #, kde-format
 msgid "8"
 msgstr "8"
 
 #. i18n: file: streaming-configuration-ui.ui:173
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbFormat)
-#: rc.cpp:48 rc.cpp:129
+#: rc.cpp:48 rc.cpp:125
 #, kde-format
 msgid "Raw"
 msgstr "Raw"
 
 #. i18n: file: streaming-configuration-ui.ui:187
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, m_sbBufferSize)
-#: rc.cpp:51 rc.cpp:132
+#: rc.cpp:51 rc.cpp:128
 #, kde-format
 msgid "kB"
 msgstr "kB"
 
 #. i18n: file: streaming-configuration-ui.ui:218
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2)
-#: rc.cpp:54 rc.cpp:135
+#: rc.cpp:54 rc.cpp:131
 #, fuzzy, kde-format
 msgid "Buffer size:"
 msgstr "Tamanho do buffer"
 
 #. i18n: file: streaming-configuration-ui.ui:234
 #. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
-#: rc.cpp:57 rc.cpp:138
+#: rc.cpp:57 rc.cpp:134
 #, fuzzy, kde-format
 msgid "Format:"
 msgstr "Formato"
 
 #. i18n: file: streaming-configuration-ui.ui:250
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:60 rc.cpp:141
+#: rc.cpp:60 rc.cpp:137
 #, fuzzy, kde-format
 msgid "Sample rate:"
 msgstr "Taxa de amostragem"
 
 #. i18n: file: streaming-configuration-ui.ui:267
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:63 rc.cpp:144
+#: rc.cpp:63 rc.cpp:140
 #, kde-format
 msgid "Signed"
 msgstr "Assinado"
 
 #. i18n: file: streaming-configuration-ui.ui:272
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:66 rc.cpp:147
+#: rc.cpp:66 rc.cpp:143
 #, kde-format
 msgid "Unsigned"
 msgstr "Não assinado"
 
-#. i18n: file: streaming-configuration-ui.ui:373
+#. i18n: file: streaming-configuration-ui.ui:369
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:69 rc.cpp:150
+#: rc.cpp:69 rc.cpp:146
 #, kde-format
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The "
-"streaming plugin will present itself to the rest of KRadio as a <span style="
-"\" font-weight:600;\">Sound Device</span>, thus you will be able to select "
-"the URLs entered below as <span style=\" font-weight:600;\">Mixer Channels</"
-"span> e.g. in the V4L2 plugin. This allows the use of pipes and devices as "
-"sound input for KRadio, e.g. <span style=\" font-style:italic;\">/dev/"
-"video24</span>. This is particularly useful if you have a <span style=\" "
-"font-weight:600;\">PVR radio card</span>.</p></body></html>"
+"<p>The streaming plugin will present itself to the rest of KRadio as a "
+"<b>Sound Device</b>, thus you will be able to select the URLs entered below "
+"as <b>Mixer Channels</b> e.g. in the V4L2 plugin. This allows the use of "
+"pipes and devices as sound input for KRadio, e.g. <i>/dev/video24</i>. This "
+"is particularly useful if you have a <b>PVR radio card</b>.</p>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">O plug-in "
-"streaming irá se apresentar para o resto da KRadio como um <span style=\" "
-"font-weight:600;\">Dispositivo de Som</span>. Asssim, você será capaz de "
-"selecionar as URLs inseridas abaixo como <span style=\" font-weight:600;"
-"\">Canais do Mixer</span>, por exemplo, no plu-gin V4L2. Isto permite o uso "
-"de pipes e dispositivos como entrada de som para o KRadio, por exemplo, "
-"<span style=\" font-style:italic;\">/dev/video24</span>. Isto é "
-"particularmente útil se você tiver uma <span style=\" font-weight:600;"
-"\">Placa de Rádio PVR</span>.</p></body></html>"
 
-#. i18n: file: streaming-configuration-ui.ui:402
+#. i18n: file: streaming-configuration-ui.ui:398
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureURLs)
-#: rc.cpp:76 rc.cpp:157
+#: rc.cpp:72 rc.cpp:149
 #, kde-format
 msgid "Capture URLs"
 msgstr "Capturar-URLs"
 
-#. i18n: file: streaming-configuration-ui.ui:535
+#. i18n: file: streaming-configuration-ui.ui:531
 #. i18n: ectx: attribute (title), widget (QWidget, PlaybackURLs)
-#: rc.cpp:79 rc.cpp:160
+#: rc.cpp:75 rc.cpp:152
 #, kde-format
 msgid "Playback URLs"
 msgstr "Reproduzir URLs"
 
-#: rc.cpp:80
+#: rc.cpp:76
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:81
+#: rc.cpp:77
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: streaming-configuration.cpp:86
+#: streaming-configuration.cpp:83
 #, kde-format
 msgid "URL"
 msgstr "URL"
 
-#: streaming-configuration.cpp:329 streaming-configuration.cpp:383
+#: streaming-configuration.cpp:326 streaming-configuration.cpp:380
 #, kde-format
 msgid "new channel"
 msgstr "Novo canal"
 
-#: streaming.cpp:37
+#: streaming.cpp:36
 #, fuzzy, kde-format
 #| msgid "Streaming Support"
 msgctxt "@title"
 msgid "Streaming Support"
 msgstr "Suporte para streaming"
 
-#: streaming.cpp:54
+#: streaming.cpp:53
 #, kde-format
 msgid "KRadio Streaming Plugin"
 msgstr "Plug-in de streaming KRadio"
 
-#: streaming.cpp:188
+#: streaming.cpp:187
 #, kde-format
 msgid "Streaming"
 msgstr "Streaming"
 
-#: streaming.cpp:189
+#: streaming.cpp:188
 #, kde-format
 msgid "Streaming Device Options"
 msgstr "Opções do dispositivo de streaming"
 
-#: streaming.cpp:418
+#: streaming.cpp:417
 #, kde-format
 msgid "internal stream, not stored (%1)"
 msgstr "Stream interno, não armazenado (%1)"
 
-#: streaming.cpp:428
+#: streaming.cpp:427
 #, kde-format
 msgid ""
 "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
@@ -285,49 +257,85 @@ msgstr ""
 "Dispositivo de Streaming %1::notifySoundStreamData: A reprodução de clientes "
 "ignorado em %2 bytes"
 
-#: streaming.cpp:451
+#: streaming.cpp:450
 #, kde-format
 msgid "Streaming Device %1"
 msgstr "Dispositivo de stream %1"
 
-#: streaming.cpp:457 streaming.cpp:462 streaming.cpp:467 streaming.cpp:472
+#: streaming.cpp:456 streaming.cpp:461 streaming.cpp:466 streaming.cpp:471
 #, kde-format
 msgid "Streaming Device %1, %2: %3"
 msgstr "Dispositivo de stream %1, %2: %3"
 
-#: streaming-job.cpp:146 streaming-job.cpp:225
+#: streaming-job.cpp:143 streaming-job.cpp:222
 #, kde-format
 msgid "error %1 (%2)"
 msgstr "Erro %1 (%2)"
 
-#: streaming-job.cpp:175 streaming-job.cpp:182 streaming-job.cpp:263
+#: streaming-job.cpp:172 streaming-job.cpp:179 streaming-job.cpp:260
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: streaming-job.cpp:303
+#: streaming-job.cpp:300
 #, fuzzy, kde-format
 msgid "skipped %1 byte"
 msgid_plural "skipped %1 bytes"
 msgstr[0] "Ignorados %1 bytes"
 msgstr[1] "Ignorados %1 bytes"
 
-#: streaming-job.cpp:347 streaming-job.cpp:398
+#: streaming-job.cpp:344 streaming-job.cpp:395
 #, kde-format
 msgid "error no %1"
 msgstr "Erro nº. %1"
 
-#: streaming-job.cpp:360 streaming-job.cpp:383
+#: streaming-job.cpp:357 streaming-job.cpp:380
 #, fuzzy, kde-format
 msgid "skipped %1 write"
 msgid_plural "skipped %1 writes"
 msgstr[0] "Ignorados %1 bytes ao escrever"
 msgstr[1] "Ignorados %1 bytes ao escrever"
 
-#: streaming-job.cpp:453
+#: streaming-job.cpp:450
 #, kde-format
 msgid "Error: %1 (%2)"
 msgstr "Erro: %1 (%2)"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The "
+#~ "streaming plugin will present itself to the rest of KRadio as a <span "
+#~ "style=\" font-weight:600;\">Sound Device</span>, thus you will be able to "
+#~ "select the URLs entered below as <span style=\" font-weight:600;\">Mixer "
+#~ "Channels</span> e.g. in the V4L2 plugin. This allows the use of pipes and "
+#~ "devices as sound input for KRadio, e.g. <span style=\" font-style:italic;"
+#~ "\">/dev/video24</span>. This is particularly useful if you have a <span "
+#~ "style=\" font-weight:600;\">PVR radio card</span>.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">O plug-"
+#~ "in streaming irá se apresentar para o resto da KRadio como um <span style="
+#~ "\" font-weight:600;\">Dispositivo de Som</span>. Asssim, você será capaz "
+#~ "de selecionar as URLs inseridas abaixo como <span style=\" font-"
+#~ "weight:600;\">Canais do Mixer</span>, por exemplo, no plu-gin V4L2. Isto "
+#~ "permite o uso de pipes e dispositivos como entrada de som para o KRadio, "
+#~ "por exemplo, <span style=\" font-style:italic;\">/dev/video24</span>. "
+#~ "Isto é particularmente útil se você tiver uma <span style=\" font-"
+#~ "weight:600;\">Placa de Rádio PVR</span>.</p></body></html>"
 
 #~ msgid "No."
 #~ msgstr "Nº."

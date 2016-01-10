@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_standard_display\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2009-06-15 21:58+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -18,20 +18,45 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: displaycfg.cpp:46
+#: displaycfg.cpp:40
 #, fuzzy, kde-format
 msgid "Active text:"
 msgstr "Virkur texti"
 
-#: displaycfg.cpp:47
+#: displaycfg.cpp:41
 #, fuzzy, kde-format
 msgid "Inactive text:"
 msgstr "Óvirkur texti"
 
-#: displaycfg.cpp:48
+#: displaycfg.cpp:42
 #, fuzzy, kde-format
 msgid "Background color:"
 msgstr "Bakgrunnslitur"
+
+#: displaycfg.cpp:43
+#, fuzzy, kde-format
+#| msgid "Display"
+msgctxt "Font used for the display"
+msgid "Display font:"
+msgstr "Skjár"
+
+#: nosizefontrequester.cpp:37
+#, kde-format
+msgctxt "@action:button Choose font"
+msgid "Choose..."
+msgstr ""
+
+#: nosizefontrequester.cpp:38
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to select a font"
+msgstr ""
+
+#: nosizefontrequester.cpp:71
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Font"
+msgstr ""
 
 #: radioview.cpp:57
 #, fuzzy, kde-format
@@ -78,7 +103,7 @@ msgstr "Setja KRadio í bið"
 msgid "Start Recording"
 msgstr "Hefja upptöku"
 
-#: radioview.cpp:174
+#: radioview.cpp:175
 #, kde-format
 msgid "5 min"
 msgstr "5 mín"
@@ -88,220 +113,200 @@ msgstr "5 mín"
 msgid "10 min"
 msgstr "10 mín"
 
-#: radioview.cpp:182
+#: radioview.cpp:181
 #, kde-format
 msgid "15 min"
 msgstr "15 mín"
 
-#: radioview.cpp:186
+#: radioview.cpp:184
 #, kde-format
 msgid "30 min"
 msgstr "30 mín"
 
-#: radioview.cpp:190
+#: radioview.cpp:187
 #, kde-format
 msgid "60 min"
 msgstr "60 mín"
 
-#: radioview.cpp:194
+#: radioview.cpp:190
 #, kde-format
 msgid "90 min"
 msgstr "90 mín"
 
-#: radioview.cpp:198
+#: radioview.cpp:193
 #, kde-format
 msgid "120 min"
 msgstr "120 mín"
 
-#: radioview.cpp:243
+#: radioview.cpp:237
 #, kde-format
 msgid "Configure KRadio"
 msgstr "Stilla KRadio"
 
-#: radioview.cpp:244
+#: radioview.cpp:238
 #, fuzzy, kde-format
 msgid "Power on/off"
 msgstr "AF/Á"
 
-#: radioview.cpp:245
+#: radioview.cpp:239
 #, fuzzy, kde-format
 msgid "Quit KRadio application"
 msgstr "Hætta í KRadio forritinu"
 
-#: radioview.cpp:246
+#: radioview.cpp:240
 #, fuzzy, kde-format
 msgid "Start/stop recording"
 msgstr "Hefja/hætta upptöku"
 
-#: radioview.cpp:247
+#: radioview.cpp:241
 #, fuzzy, kde-format
 msgid "Start/stop sleep countdown"
 msgstr "Hefja/hætta niðurtalningu í svæfingu"
 
-#: radioview.cpp:248
+#: radioview.cpp:242
 #, fuzzy, kde-format
 msgid "Show/hide plugins"
 msgstr "Sýna/fela íforrit"
 
-#: radioview.cpp:249
+#: radioview.cpp:243
 #, kde-format
 msgid "Help about KRadio and KDE"
 msgstr "Hjálp um KRadio og KDE"
 
-#: radioview.cpp:250
+#: radioview.cpp:244
 #, fuzzy, kde-format
 msgid "Select a radio station"
 msgstr "Veldu útvarpsstöð"
 
-#: radioview.cpp:423
+#: radioview.cpp:417
 #, fuzzy, kde-format
 msgid "<no preset defined>"
 msgstr "engar forstillingar tilgreindar"
 
-#: radioview.cpp:579 radioview.cpp:649
+#: radioview.cpp:573 radioview.cpp:643
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Hætta upptöku á %1"
 
-#: radioview.cpp:632
+#: radioview.cpp:626
 #, kde-format
 msgid "Resume playback"
 msgstr "Halda áfram með spilun"
 
-#: radioview.cpp:636
+#: radioview.cpp:630
 #, kde-format
 msgid "Pause playback"
 msgstr "Gera hlé á afspilun"
 
-#: radioview.cpp:729
+#: radioview.cpp:723
 #, kde-format
 msgid "Display"
 msgstr "Skjár"
 
-#: radioview.cpp:730
+#: radioview.cpp:724
 #, kde-format
 msgid "Display Configuration"
 msgstr "Stillingar skjás"
 
-#: radioview_frequencyradio.cpp:133 radioview_frequencyradio.cpp:134
-#, kde-format
-msgid "Frequency Display"
-msgstr "Tíðniskjár"
-
-#: radioview_frequencyradio.cpp:420
+#: radioview_frequencyradio.cpp:60
 #, kde-format
 msgid "AM"
 msgstr "AM"
 
-#: radioview_frequencyradio.cpp:421
+#: radioview_frequencyradio.cpp:61
 #, kde-format
 msgid "FM"
 msgstr "FM"
 
-#: radioview_frequencyradio.cpp:422
+#: radioview_frequencyradio.cpp:62
 #, kde-format
 msgid "RDS"
 msgstr "RDS"
 
-#: radioview_frequencyradio.cpp:423
+#: radioview_frequencyradio.cpp:63
 #, kde-format
 msgid "NET"
 msgstr "NET"
 
-#: radioview_frequencyradio.cpp:565
+#: radioview_frequencyradio.cpp:135 radioview_frequencyradio.cpp:136
+#, kde-format
+msgid "Frequency Display"
+msgstr "Tíðniskjár"
+
+#: radioview_frequencyradio.cpp:377
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 kHz"
 
-#: radioview_frequencyradio.cpp:567
+#: radioview_frequencyradio.cpp:379
 #, kde-format
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: radioview_frequencyseeker.cpp:78
+#: radioview_frequencyseeker.cpp:77
 #, fuzzy, kde-format
 msgid "Search for previous radio station"
 msgstr "Leita að fyrri útvarpsstöð"
 
-#: radioview_frequencyseeker.cpp:79
+#: radioview_frequencyseeker.cpp:78
 #, fuzzy, kde-format
 msgid "Search for next radio station"
 msgstr "Leita að næstu útvarpsstöð"
 
-#: radioview_frequencyseeker.cpp:80
+#: radioview_frequencyseeker.cpp:79
 #, fuzzy, kde-format
 msgid "Decrement frequency"
 msgstr "Lækka tíðni"
 
-#: radioview_frequencyseeker.cpp:81
+#: radioview_frequencyseeker.cpp:80
 #, fuzzy, kde-format
 msgid "Increment frequency"
 msgstr "Hækka tíðni"
 
-#: radioview_frequencyseeker.cpp:82
+#: radioview_frequencyseeker.cpp:81
 #, fuzzy, kde-format
 msgid "Change frequency"
 msgstr "Breyta tíðni"
 
-#: radioview_volume.cpp:59
+#: radioview_volume.cpp:57
 #, fuzzy, kde-format
 msgid "Change volume"
 msgstr "Breyta hljóðstyrk"
 
-#. i18n: file: radioview_seekinterface.ui:15
-#. i18n: ectx: property (windowTitle), widget (QWidget, RadioView_SeekerUI)
-#: rc.cpp:3 rc.cpp:23
-#, kde-format
-msgid "RadioView_SeekInterface"
-msgstr "RadioView_SeekInterface"
-
-#. i18n: file: radioview_seekinterface.ui:30
-#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchDown)
-#: rc.cpp:6 rc.cpp:26
-#, fuzzy, kde-format
-msgid "Search previous station"
-msgstr "leita að fyrri útvarpsstöð"
-
-#. i18n: file: radioview_seekinterface.ui:53
-#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepDown)
-#: rc.cpp:9 rc.cpp:29
-#, fuzzy, kde-format
-msgid "Decrease frequency by 0.05 MHz"
-msgstr "lækka tíðni í 0.05 MHz þrepum"
-
-#. i18n: file: radioview_seekinterface.ui:70
-#. i18n: ectx: property (toolTip), widget (QSlider, sldRange)
-#: rc.cpp:12 rc.cpp:32
-#, kde-format
-msgctxt "Frequency"
-msgid "Frequency control"
-msgstr "Tíðnistýring"
-
-#. i18n: file: radioview_seekinterface.ui:107
-#. i18n: ectx: property (toolTip), widget (QToolButton, btnStepUp)
-#: rc.cpp:15 rc.cpp:35
-#, fuzzy, kde-format
-msgid "Increase frequency by 0.05 MHz"
-msgstr "hækka tíðni í 0.05 MHz þrepum"
-
-#. i18n: file: radioview_seekinterface.ui:127
-#. i18n: ectx: property (toolTip), widget (QToolButton, btnSearchUp)
-#: rc.cpp:18 rc.cpp:38
-#, fuzzy, kde-format
-msgid "Search next station"
-msgstr "leita að næstu útvarpsstöð"
-
-#: rc.cpp:19
+#: rc.cpp:1
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Sveinn í Felli"
 
-#: rc.cpp:20
+#: rc.cpp:2
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sveinki@nett.is"
+
+#~ msgid "RadioView_SeekInterface"
+#~ msgstr "RadioView_SeekInterface"
+
+#, fuzzy
+#~ msgid "Search previous station"
+#~ msgstr "leita að fyrri útvarpsstöð"
+
+#, fuzzy
+#~ msgid "Decrease frequency by 0.05 MHz"
+#~ msgstr "lækka tíðni í 0.05 MHz þrepum"
+
+#~ msgctxt "Frequency"
+#~ msgid "Frequency control"
+#~ msgstr "Tíðnistýring"
+
+#, fuzzy
+#~ msgid "Increase frequency by 0.05 MHz"
+#~ msgstr "hækka tíðni í 0.05 MHz þrepum"
+
+#, fuzzy
+#~ msgid "Search next station"
+#~ msgstr "leita að næstu útvarpsstöð"
 
 #~ msgid "Display Colors"
 #~ msgstr "Sýna liti"

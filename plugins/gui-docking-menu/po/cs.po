@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_docking_menu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-22 22:02+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr "Zapnout/Vypnout"
 msgid "Pause/Play"
 msgstr "Pozastavit/Přehrát"
 
-#: docking-configuration.cpp:130 docking.cpp:295
+#: docking-configuration.cpp:130 docking.cpp:291
 #, kde-format
 msgid "Recording"
 msgstr "Nahrávání"
@@ -106,133 +106,133 @@ msgstr "Změnit hlasitost"
 msgid "Change Frequency"
 msgstr "Změnit kmitočet"
 
-#: docking.cpp:48
+#: docking.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Docking Menu"
 msgstr ""
 
-#: docking.cpp:50
+#: docking.cpp:47
 #, fuzzy, kde-format
 #| msgid "System Tray Icon/Menu"
 msgctxt "@title"
 msgid "System Tray Icon/Menu"
 msgstr "Ikona/Nabídka pro panel"
 
-#: docking.cpp:52
+#: docking.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: docking.cpp:56
+#: docking.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: docking.cpp:57
+#: docking.cpp:54
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: docking.cpp:69
+#: docking.cpp:66
 #, kde-format
 msgid "System Tray Plugin"
 msgstr "Přídavný modul pro systémovou část panelu"
 
-#: docking.cpp:255
+#: docking.cpp:251
 #, kde-format
 msgid "System Tray Icon"
 msgstr "Ikona pro panel"
 
-#: docking.cpp:256
+#: docking.cpp:252
 #, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Nastavení ikony pro systémovou část panelu"
 
-#: docking.cpp:285
+#: docking.cpp:281
 #, kde-format
 msgid "Search Next Station"
 msgstr "Hledat následující stanici"
 
-#: docking.cpp:286
+#: docking.cpp:282
 #, kde-format
 msgid "Search Previous Station"
 msgstr "Hledat předchozí stanici"
 
-#: docking.cpp:300
+#: docking.cpp:296
 #, kde-format
 msgid "Pause Radio"
 msgstr "Pozastavit přehrávání rozhlasu"
 
-#: docking.cpp:311
+#: docking.cpp:307
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Ukázat/Skrýt přídavné moduly"
 
-#: docking.cpp:319
+#: docking.cpp:315
 #, kde-format
 msgid "&Quit"
 msgstr "&Ukončit"
 
-#: docking.cpp:433
+#: docking.cpp:440
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Ukončit režim spánku (nechat běžet až po %1)"
 
-#: docking.cpp:436 docking.cpp:445 docking.cpp:453
+#: docking.cpp:443 docking.cpp:452 docking.cpp:460
 #, kde-format
 msgid "Start Sleep Countdown"
 msgstr "Zahájit režim spánku"
 
-#: docking.cpp:461
+#: docking.cpp:468
 #, kde-format
 msgid "Power Off"
 msgstr "Vypnout"
 
-#: docking.cpp:461
+#: docking.cpp:468
 #, kde-format
 msgid "Power On"
 msgstr "Zapnout"
 
-#: docking.cpp:476 docking.cpp:497
+#: docking.cpp:483 docking.cpp:501
 #, kde-format
 msgid "invalid station"
 msgstr "neplatná vysílací stanice"
 
-#: docking.cpp:479
+#: docking.cpp:484
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:489
+#: docking.cpp:493
 #, kde-format
 msgid "next alarm: %1"
 msgstr "Další probuzení: %1"
 
-#: docking.cpp:491
+#: docking.cpp:495
 #, kde-format
 msgid "<no alarm pending>"
 msgstr "<žádné nadcházející probuzení>"
 
-#: docking.cpp:750 docking.cpp:853 docking.cpp:911
+#: docking.cpp:761 docking.cpp:864 docking.cpp:922
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Zastavit nahrávání %1"
 
-#: docking.cpp:839
+#: docking.cpp:850
 #, kde-format
 msgid "Start Recording"
 msgstr "Začít s nahráváním"
 
-#: docking.cpp:893
+#: docking.cpp:904
 #, kde-format
 msgid "Resume playback"
 msgstr "Pokračovat v přehrávání"
 
-#: docking.cpp:897
+#: docking.cpp:908
 #, kde-format
 msgid "Pause playback"
 msgstr "Pozastavit přehrávání"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2015-12-25 16:14+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -28,20 +28,14 @@ msgstr "D-Bus"
 
 #: dbussupport.cpp:39
 #, kde-format
-#| msgid "D-Bus Support"
 msgctxt "@title"
 msgid "D-Bus Support"
 msgstr "Supporto per D-Bus"
 
-#: dbussupport.cpp:55 dbussupport.cpp:117
+#: dbussupport.cpp:53
 #, kde-format
 msgid "D-Bus Plugin"
 msgstr "Estensione D-Bus"
-
-#: dbussupport.cpp:116
-#, kde-format
-msgid "D-Bus Support"
-msgstr "Supporto per D-Bus"
 
 #: rc.cpp:1
 #, kde-format
@@ -54,3 +48,6 @@ msgstr "Luigi Toscano,Giovanni Scafora"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,"
+
+#~ msgid "D-Bus Support"
+#~ msgstr "Supporto per D-Bus"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 19:27+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -20,49 +20,49 @@ msgstr ""
 
 #. i18n: file: v4lradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:147
+#: rc.cpp:3 rc.cpp:143
 #, kde-format
 msgid "SetupDialogGeneral"
 msgstr "SetupDialogGeneral"
 
 #. i18n: file: v4lradio-configuration-ui.ui:27
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
-#: rc.cpp:6 rc.cpp:150
+#: rc.cpp:6 rc.cpp:146
 #, kde-format
 msgid "V4L Device"
 msgstr "Пристрій V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:36
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
-#: rc.cpp:9 rc.cpp:153
+#: rc.cpp:9 rc.cpp:149
 #, kde-format
 msgid "Station scan step:"
 msgstr "Крок сканування:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:56
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
-#: rc.cpp:12 rc.cpp:156
+#: rc.cpp:12 rc.cpp:152
 #, kde-format
 msgid "Minimum signal quality:"
 msgstr "Мінімальна якість сигналу:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
-#: rc.cpp:15 rc.cpp:159
+#: rc.cpp:15 rc.cpp:155
 #, kde-format
 msgid "Unknown V4L device"
 msgstr "Невідомий пристрій V4L"
 
 #. i18n: file: v4lradio-configuration-ui.ui:86
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:18 rc.cpp:162
+#: rc.cpp:18 rc.cpp:158
 #, kde-format
 msgid "V4L version to use:"
 msgstr "Версія V4L:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
-#: rc.cpp:21 rc.cpp:165
+#: rc.cpp:21 rc.cpp:161
 #, kde-format
 msgid "Radio device:"
 msgstr "Пристрій радіо:"
@@ -79,14 +79,14 @@ msgstr "Пристрій радіо:"
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
 #. i18n: file: v4lradio-configuration-ui.ui:225
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
-#: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:168 rc.cpp:174 rc.cpp:183
+#: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:164 rc.cpp:170 rc.cpp:179
 #, kde-format
 msgid " kHz"
 msgstr " кГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:144
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
-#: rc.cpp:27 rc.cpp:171
+#: rc.cpp:27 rc.cpp:167
 #, kde-format
 msgid "Allowed frequency range:"
 msgstr "Припустимий частотний діапазон:"
@@ -99,28 +99,28 @@ msgstr "Припустимий частотний діапазон:"
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
 #. i18n: file: v4lradio-configuration-ui.ui:247
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
-#: rc.cpp:33 rc.cpp:42 rc.cpp:177 rc.cpp:186
+#: rc.cpp:33 rc.cpp:42 rc.cpp:173 rc.cpp:182
 #, kde-format
 msgid "to"
 msgstr "до"
 
 #. i18n: file: v4lradio-configuration-ui.ui:203
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
-#: rc.cpp:36 rc.cpp:180
+#: rc.cpp:36 rc.cpp:176
 #, kde-format
 msgid "65 MHz"
 msgstr "65 МГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:260
 #. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
-#: rc.cpp:45 rc.cpp:189
+#: rc.cpp:45 rc.cpp:185
 #, kde-format
 msgid "108 MHz"
 msgstr "108 МГц"
 
 #. i18n: file: v4lradio-configuration-ui.ui:272
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
-#: rc.cpp:48 rc.cpp:192
+#: rc.cpp:48 rc.cpp:188
 #, kde-format
 msgid "Device frequency range:"
 msgstr "Діапазон частот пристрою:"
@@ -137,7 +137,7 @@ msgstr "Діапазон частот пристрою:"
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtStartup)
 #. i18n: file: v4lradio-configuration-ui.ui:361
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
-#: rc.cpp:51 rc.cpp:57 rc.cpp:63 rc.cpp:195 rc.cpp:201 rc.cpp:207
+#: rc.cpp:51 rc.cpp:57 rc.cpp:63 rc.cpp:191 rc.cpp:197 rc.cpp:203
 #, kde-format
 msgid ""
 "Probing V4L device capabilities requires opening the device. This might "
@@ -157,56 +157,56 @@ msgstr ""
 
 #. i18n: file: v4lradio-configuration-ui.ui:329
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:54 rc.cpp:198
+#: rc.cpp:54 rc.cpp:194
 #, kde-format
 msgid "Device probing:"
 msgstr "Виявлення пристроїв:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:354
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
-#: rc.cpp:60 rc.cpp:204
+#: rc.cpp:60 rc.cpp:200
 #, kde-format
 msgid "At startup"
 msgstr "Під час запуску"
 
 #. i18n: file: v4lradio-configuration-ui.ui:364
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtPowerOn)
-#: rc.cpp:66 rc.cpp:210
+#: rc.cpp:66 rc.cpp:206
 #, kde-format
 msgid "At power on"
 msgstr "Під час вмикання"
 
 #. i18n: file: v4lradio-configuration-ui.ui:375
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
-#: rc.cpp:69 rc.cpp:213
+#: rc.cpp:69 rc.cpp:209
 #, kde-format
 msgid "V4L1 API"
 msgstr "API V4L1"
 
 #. i18n: file: v4lradio-configuration-ui.ui:382
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
-#: rc.cpp:72 rc.cpp:216
+#: rc.cpp:72 rc.cpp:212
 #, kde-format
 msgid "V4L2 API"
 msgstr "API V4L2"
 
 #. i18n: file: v4lradio-configuration-ui.ui:392
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
-#: rc.cpp:75 rc.cpp:219
+#: rc.cpp:75 rc.cpp:215
 #, kde-format
 msgid "RDS"
 msgstr "RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:401
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
-#: rc.cpp:78 rc.cpp:222
+#: rc.cpp:78 rc.cpp:218
 #, kde-format
 msgid "Force RDS enabled"
 msgstr "Примусове вмикання RDS"
 
 #. i18n: file: v4lradio-configuration-ui.ui:414
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:81 rc.cpp:225
+#: rc.cpp:81 rc.cpp:221
 #, kde-format
 msgid ""
 "<p><u>Note for RDS support:</u> if your card supports RDS and RDS is not "
@@ -232,63 +232,63 @@ msgstr ""
 
 #. i18n: file: v4lradio-configuration-ui.ui:451
 #. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
-#: rc.cpp:84 rc.cpp:228
+#: rc.cpp:84 rc.cpp:224
 #, kde-format
 msgid "Sound Devices"
 msgstr "Звукові пристрої"
 
 #. i18n: file: v4lradio-configuration-ui.ui:467
 #. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:87 rc.cpp:231
+#: rc.cpp:87 rc.cpp:227
 #, kde-format
 msgid "test"
 msgstr "перевірка"
 
 #. i18n: file: v4lradio-configuration-ui.ui:475
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:90 rc.cpp:234
+#: rc.cpp:90 rc.cpp:230
 #, kde-format
 msgid "Playback mixer channel:"
 msgstr "Канал мікшера відтворення:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:495
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
-#: rc.cpp:93 rc.cpp:237
+#: rc.cpp:93 rc.cpp:233
 #, kde-format
 msgid "Capture mixer device:"
 msgstr "Пристрій запису:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:538
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
-#: rc.cpp:96 rc.cpp:240
+#: rc.cpp:96 rc.cpp:236
 #, kde-format
 msgid "Set playback channel volume to &zero at power off"
 msgstr "Встановити &нульову гучність відтворення після виходу"
 
 #. i18n: file: v4lradio-configuration-ui.ui:551
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
-#: rc.cpp:99 rc.cpp:243
+#: rc.cpp:99 rc.cpp:239
 #, kde-format
 msgid "Mute play&back channel at power off"
 msgstr "Ви&мкнути звук на каналі відтворення після виходу"
 
 #. i18n: file: v4lradio-configuration-ui.ui:558
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
-#: rc.cpp:102 rc.cpp:246
+#: rc.cpp:102 rc.cpp:242
 #, kde-format
 msgid "Capture mixer channel:"
 msgstr "Канал запису:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:568
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:105 rc.cpp:249
+#: rc.cpp:105 rc.cpp:245
 #, kde-format
 msgid "Playback mixer device:"
 msgstr "Пристрій мікшування відтворення:"
 
 #. i18n: file: v4lradio-configuration-ui.ui:592
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
-#: rc.cpp:108 rc.cpp:252
+#: rc.cpp:108 rc.cpp:248
 #, kde-format
 msgid "PVR && Co"
 msgstr "PVR"
@@ -301,7 +301,7 @@ msgstr "PVR"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
 #. i18n: file: v4lradio-configuration-ui.ui:610
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:111 rc.cpp:114 rc.cpp:255 rc.cpp:258
+#: rc.cpp:111 rc.cpp:114 rc.cpp:251 rc.cpp:254
 #, kde-format
 msgid ""
 "<p><b>Active playback</b> is required when your radio card is not connected "
@@ -326,145 +326,129 @@ msgstr ""
 
 #. i18n: file: v4lradio-configuration-ui.ui:613
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:117 rc.cpp:261
+#: rc.cpp:117 rc.cpp:257
 #, kde-format
 msgid "Use active pla&yback by capturing (use for PVR cards)"
 msgstr "Використовувати активне ві&дтворення з захопленням (для карток PVR)"
 
 #. i18n: file: v4lradio-configuration-ui.ui:629
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
-#: rc.cpp:120 rc.cpp:264
+#: rc.cpp:120 rc.cpp:260
 #, kde-format
 msgid "Mute playback of capture channel when active playback is running"
 msgstr ""
 "Вимкнути відтворення каналу захоплення після запуску активного відтворення"
 
-#. i18n: file: v4lradio-configuration-ui.ui:649
+#. i18n: file: v4lradio-configuration-ui.ui:645
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:123 rc.cpp:267
-#, kde-format
+#: rc.cpp:123 rc.cpp:263
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p><b>Active playback</b> is required when your radio card is not "
+#| "connected to your sound card via a cable to the line in jack. In this "
+#| "case, KRadio needs to capture the PCM data from a capture sound device in "
+#| "order to send the PCM data to the playback sound device. Therefore, if "
+#| "you enable <b>active playback</b>, you have to select a proper capture "
+#| "mixer device/channel and a proper PCM playback mixer/channel. This is "
+#| "particularly important for <b>PVR cards</b> which usually need to capture "
+#| "the sound from <i>/dev/video24</i> (or similar). For <b>PVR cards</b>, "
+#| "you therefore have to setup the <b>Streaming Plugin</b> properly, too.</p>"
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Note for PVR owners:</span> <span "
-"style=\" font-weight:600;\">Active Playback</span> is required when your "
+"<p><u>Note for PVR owners:</u> <b>Active Playback</b> is required when your "
 "radio card is not connected to your sound card via a cable to the line in "
 "jack. In this case, KRadio needs to capture the PCM data from a capture "
 "sound device in order to send the PCM data to the playback sound device. "
-"Therefore, if you enable <span style=\" font-weight:600;\">Active Playback</"
-"span>, you have to select a proper capture mixer device/channel and a proper "
-"PCM playback mixer/channel. This is particularly important for <span style="
-"\" font-weight:600;\">PVR cards</span> which usually need to capture the "
-"sound from <span style=\" font-style:italic;\">/dev/video24</span> (or "
-"similar). For <span style=\" font-weight:600;\">PVR cards</span>, you "
-"therefore have to setup the <span style=\" font-weight:600;\">Streaming "
-"Plugin</span> properly, too.</p></body></html>"
+"Therefore, if you enable <b>Active Playback</b>, you have to select a proper "
+"capture mixer device/channel and a proper PCM playback mixer/channel. This "
+"is particularly important for <b>PVR cards</b> which usually need to capture "
+"the sound from <i>/dev/video24</i> (or similar). For <b>PVR cards</b>, you "
+"therefore have to setup the <b>Streaming Plugin</b> properly, too.</p>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" text-decoration: underline;\">Зауваження для власників PVR:</span> "
-"<span style=\" font-weight:600;\">Активне відтворення</span> слід "
-"використовувати, якщо вашу радіокартку не з’єднано з вхідним каналом вашої "
-"звукової картки кабелем. У такому випадку, KRadio доведеться захоплювати "
-"дані PCM з пристрою захоплення звуку для того, щоб надіслати дані PCM на "
-"пристрій відтворення звуку. Тому, якщо ви увімкнете <span style=\" font-"
-"weight:600;\">Активне відтворення</span>, вам доведеться обрати належний "
-"канал/пристрій мікшера і належний канал/мікшер відтворення PCM. Це зокрема "
-"важливо для <span style=\" font-weight:600;\">карток PVR</span>, які, "
-"зазвичай, потребують захоплення звуку з пристрою <span style=\" font-style:"
-"italic;\">/dev/video24</span> (або подібного пристрою). Тому для <span style="
-"\" font-weight:600;\">карток PVR</span> вам слід також належно налаштувати "
-"<span style=\" font-weight:600;\">Модуль трансляції</span>.</p></body></html>"
+"<p><b>Активне відтворення</b> слід використовувати, якщо вашу радіокартку не "
+"з’єднано з вхідним каналом вашої звукової картки кабелем. У такому випадку, "
+"KRadio доведеться захоплювати дані PCM з пристрою захоплення звуку для того, "
+"щоб надіслати дані PCM на пристрій відтворення звуку. Тому, якщо ви "
+"увімкнете <b>активне відтворення</b>, вам доведеться обрати належний канал/"
+"пристрій мікшера і належний канал/мікшер відтворення PCM. Це зокрема важливо "
+"для <b>карток PVR</b>, які, зазвичай, потребують захоплення звуку з пристрою "
+"<i>/dev/video24</i> (або подібного пристрою). Тому для <b>карток PVR</b> вам "
+"слід також належно налаштувати <b>Модуль трансляції</b>.</p>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:689
+#. i18n: file: v4lradio-configuration-ui.ui:685
 #. i18n: ectx: attribute (title), widget (QWidget, V4LMixerControls)
-#: rc.cpp:130 rc.cpp:274
+#: rc.cpp:126 rc.cpp:266
 #, kde-format
 msgid "V4L Mixer Controls"
 msgstr "Апаратні регулятори V4l"
 
-#. i18n: file: v4lradio-configuration-ui.ui:706
+#. i18n: file: v4lradio-configuration-ui.ui:702
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
-#: rc.cpp:133 rc.cpp:277
+#: rc.cpp:129 rc.cpp:269
 #, kde-format
 msgid "Volume"
 msgstr "Гучність"
 
-#. i18n: file: v4lradio-configuration-ui.ui:782
+#. i18n: file: v4lradio-configuration-ui.ui:778
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
-#: rc.cpp:136 rc.cpp:280
+#: rc.cpp:132 rc.cpp:272
 #, kde-format
 msgid "Treble"
 msgstr "ВЧ"
 
-#. i18n: file: v4lradio-configuration-ui.ui:858
+#. i18n: file: v4lradio-configuration-ui.ui:854
 #. i18n: ectx: property (text), widget (QLabel, labelBass)
-#: rc.cpp:139 rc.cpp:283
+#: rc.cpp:135 rc.cpp:275
 #, kde-format
 msgid "Bass"
 msgstr "Бас"
 
-#. i18n: file: v4lradio-configuration-ui.ui:931
+#. i18n: file: v4lradio-configuration-ui.ui:927
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
-#: rc.cpp:142 rc.cpp:286
+#: rc.cpp:138 rc.cpp:278
 #, kde-format
 msgid "Balance"
 msgstr "Стереобаланс"
 
-#: rc.cpp:143
+#: rc.cpp:139
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: rc.cpp:144
+#: rc.cpp:140
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: v4lradio-configuration.cpp:411
+#: v4lradio-configuration.cpp:412
 #, kde-format
 msgid "Could not get device description."
 msgstr "Не вдалося отримати опис пристрою."
 
-#: v4lradio-configuration.cpp:416
+#: v4lradio-configuration.cpp:417
 #, kde-format
 msgid "Device file does not exist or top level directories are not accessible."
 msgstr ""
 "Файл пристрою не існує або програма не може отримати доступ до каталогів "
 "найвищого рівня."
 
-#: v4lradio-configuration.cpp:419
+#: v4lradio-configuration.cpp:420
 #, kde-format
 msgid "You do not have read and write permissions for the device."
 msgstr "Ви не маєте прав доступ на читання і запис до пристрою."
 
-#: v4lradio-configuration.cpp:422
+#: v4lradio-configuration.cpp:423
 #, kde-format
 msgid "You do not have read permissions for the device."
 msgstr "Ви не маєте прав доступ на читання з пристрою."
 
-#: v4lradio-configuration.cpp:425
+#: v4lradio-configuration.cpp:426
 #, kde-format
 msgid "You do not have write permissions for the device."
 msgstr "Ви не маєте прав доступ на запис до пристрою."
 
-#: v4lradio-configuration.cpp:455 v4lradio-configuration.cpp:456
+#: v4lradio-configuration.cpp:456 v4lradio-configuration.cpp:457
 #, kde-format
 msgid "%1 kHz"
 msgstr "%1 кГц"
@@ -474,7 +458,7 @@ msgstr "%1 кГц"
 msgid "any ( * )"
 msgstr "Всі ( * )"
 
-#: v4lradio-configuration.cpp:559
+#: v4lradio-configuration.cpp:555
 #, kde-format
 msgid "Select Radio Device"
 msgstr "Оберіть пристрій радіо"
@@ -496,11 +480,6 @@ msgstr "Підтримка пристроїв V4l(2)"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
-
-#: v4lradio.cpp:67
-#, kde-format
-msgid "Provides support for V4L/V4L2 based radio cards."
 msgstr ""
 
 #: v4lradio.cpp:70
@@ -525,12 +504,12 @@ msgstr "Модуль «Відео для Linux»"
 msgid "invalid frequency %1"
 msgstr "некоректна частота %1"
 
-#: v4lradio.cpp:857 v4lradio.cpp:1773 v4lradio.cpp:1969
+#: v4lradio.cpp:857 v4lradio.cpp:1769 v4lradio.cpp:1965
 #, kde-format
 msgid "do not known how to handle V4L version %1"
 msgstr "невідомо, що робити з версією V4L «%1»"
 
-#: v4lradio.cpp:859 v4lradio.cpp:1775 v4lradio.cpp:1971
+#: v4lradio.cpp:859 v4lradio.cpp:1771 v4lradio.cpp:1967
 #, kde-format
 msgid "%1 Support: %2"
 msgstr "Підтримка %1: %2"
@@ -577,122 +556,170 @@ msgstr "Не вдалося знайти доступний пристрій V4L
 msgid "%1 (insufficient permissions)"
 msgstr "%1 (недостатні права доступу)"
 
-#: v4lradio.cpp:1419
+#: v4lradio.cpp:1415
 #, kde-format
 msgid "V4L Radio"
 msgstr "Радіо V4l"
 
-#: v4lradio.cpp:1420
+#: v4lradio.cpp:1416
 #, kde-format
 msgid "V4L Radio Options"
 msgstr "Параметри радіо V4l"
 
-#: v4lradio.cpp:1445
+#: v4lradio.cpp:1441
 #, kde-format
 msgid "Cannot open radio device %1"
 msgstr "Не можу відкрити пристрій радіо %1"
 
-#: v4lradio.cpp:1505
+#: v4lradio.cpp:1501
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode, invalid device): %2"
 msgstr "Модуль V4L (режим V4L%1, некоректний пристрій): %2"
 
-#: v4lradio.cpp:1512
+#: v4lradio.cpp:1508
 #, kde-format
 msgid "cannot open %1"
 msgstr "неможливо відкрити %1"
 
-#: v4lradio.cpp:1522 v4lradio.cpp:1568
+#: v4lradio.cpp:1518 v4lradio.cpp:1564
 #, kde-format
 msgid "detected %1"
 msgstr "виявлено %1"
 
-#: v4lradio.cpp:1527 v4lradio.cpp:1574
+#: v4lradio.cpp:1523 v4lradio.cpp:1570
 #, kde-format
 msgid "V4L Plugin (V4L%1 mode): %2"
 msgstr "Модуль V4L (режим V4L%1): %2"
 
-#: v4lradio.cpp:1550
+#: v4lradio.cpp:1546
 #, kde-format
 msgid "audio caps = %1"
 msgstr "можливості звуку = %1"
 
-#: v4lradio.cpp:1590
+#: v4lradio.cpp:1586
 #, kde-format
 msgid "V4L2: Querying mute control failed"
 msgstr "V4L2: Не вдалося опитати вимикач звуку"
 
-#: v4lradio.cpp:1598
+#: v4lradio.cpp:1594
 #, kde-format
 msgid "V4L2: Querying volume control failed"
 msgstr "V4L2: Не вдалося опитати регулятор гучності"
 
-#: v4lradio.cpp:1607
+#: v4lradio.cpp:1603
 #, kde-format
 msgid "V4L2: Querying treble control failed"
 msgstr "V4L2: Не вдалося опитати регулятор високих частот"
 
-#: v4lradio.cpp:1616
+#: v4lradio.cpp:1612
 #, kde-format
 msgid "V4L2: Querying bass control failed"
 msgstr "V4L2: Не вдалося опитати регулятор нижніх частот"
 
-#: v4lradio.cpp:1625
+#: v4lradio.cpp:1621
 #, kde-format
 msgid "V4L2: Querying balance control failed"
 msgstr "V4L2: Не вдалося опитати регулятор стереобалансу"
 
-#: v4lradio.cpp:1628
+#: v4lradio.cpp:1624
 #, kde-format
 msgid "V4L2 - Version: %1, caps=%2"
 msgstr "V4L2 — Версія: %1, caps=%2"
 
-#: v4lradio.cpp:1651
+#: v4lradio.cpp:1647
 #, kde-format
 msgid "V4L not detected"
 msgstr "Пристроїв V4L не знайдено"
 
-#: v4lradio.cpp:1746
+#: v4lradio.cpp:1742
 #, kde-format
 msgid "V4L2 tuner reported range: %1 ... %2 MHz"
 msgstr "Повідомлений тюнером V4L2 діапазон: від %1 до %2 МГц"
 
-#: v4lradio.cpp:1749
+#: v4lradio.cpp:1745
 #, kde-format
 msgid "Note: you might be running a kernel with a broken V4L2 radio API"
 msgstr ""
 "Зауваження: можливо, ви працюєте у системі з помилками у реалізації "
 "програмного інтерфейсу радіо у V4L2"
 
-#: v4lradio.cpp:1783
+#: v4lradio.cpp:1779
 #, kde-format
 msgid "cannot get tuner info (error %1)"
 msgstr "Не вдалося отримати інформацію про тюнер (код помилки %1)"
 
-#: v4lradio.cpp:1976
+#: v4lradio.cpp:1972
 #, kde-format
 msgid "error updating radio audio info (write): %1"
 msgstr "помилка оновлення інформації про аудіо радіо (запис): %1"
 
-#: v4lradio.cpp:1976
+#: v4lradio.cpp:1972
 #, kde-format
 msgid "error updating radio audio info (read): %1"
 msgstr "помилка оновлення інформації про аудіо радіо (читання): %1"
 
-#: v4lradio.cpp:2170
+#: v4lradio.cpp:2166
 #, kde-format
 msgid "error reading RDS data"
 msgstr "помилка читання даних RDS"
 
-#: v4lradio.cpp:2186
+#: v4lradio.cpp:2182
 #, kde-format
 msgid "V4LRadio::processRDSData: Block Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: Помилка швидкості блоків: %1 %"
 
-#: v4lradio.cpp:2189
+#: v4lradio.cpp:2185
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: Помилка швидкості групи (~4 блоків): %1 %"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" text-decoration: underline;\">Note for PVR owners:</span> <span "
+#~ "style=\" font-weight:600;\">Active Playback</span> is required when your "
+#~ "radio card is not connected to your sound card via a cable to the line in "
+#~ "jack. In this case, KRadio needs to capture the PCM data from a capture "
+#~ "sound device in order to send the PCM data to the playback sound device. "
+#~ "Therefore, if you enable <span style=\" font-weight:600;\">Active "
+#~ "Playback</span>, you have to select a proper capture mixer device/channel "
+#~ "and a proper PCM playback mixer/channel. This is particularly important "
+#~ "for <span style=\" font-weight:600;\">PVR cards</span> which usually need "
+#~ "to capture the sound from <span style=\" font-style:italic;\">/dev/"
+#~ "video24</span> (or similar). For <span style=\" font-weight:600;\">PVR "
+#~ "cards</span>, you therefore have to setup the <span style=\" font-"
+#~ "weight:600;\">Streaming Plugin</span> properly, too.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" text-decoration: underline;\">Зауваження для власників PVR:</"
+#~ "span> <span style=\" font-weight:600;\">Активне відтворення</span> слід "
+#~ "використовувати, якщо вашу радіокартку не з’єднано з вхідним каналом "
+#~ "вашої звукової картки кабелем. У такому випадку, KRadio доведеться "
+#~ "захоплювати дані PCM з пристрою захоплення звуку для того, щоб надіслати "
+#~ "дані PCM на пристрій відтворення звуку. Тому, якщо ви увімкнете <span "
+#~ "style=\" font-weight:600;\">Активне відтворення</span>, вам доведеться "
+#~ "обрати належний канал/пристрій мікшера і належний канал/мікшер "
+#~ "відтворення PCM. Це зокрема важливо для <span style=\" font-weight:600;"
+#~ "\">карток PVR</span>, які, зазвичай, потребують захоплення звуку з "
+#~ "пристрою <span style=\" font-style:italic;\">/dev/video24</span> (або "
+#~ "подібного пристрою). Тому для <span style=\" font-weight:600;\">карток "
+#~ "PVR</span> вам слід також належно налаштувати <span style=\" font-"
+#~ "weight:600;\">Модуль трансляції</span>.</p></body></html>"
 
 #~ msgid "bass"
 #~ msgstr "НЧ"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 15:21+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -32,15 +32,10 @@ msgctxt "@title"
 msgid "D-Bus Support"
 msgstr "D-Bus Unterstützung"
 
-#: dbussupport.cpp:55 dbussupport.cpp:117
+#: dbussupport.cpp:53
 #, kde-format
 msgid "D-Bus Plugin"
 msgstr "D-Bus Plugin"
-
-#: dbussupport.cpp:116
-#, kde-format
-msgid "D-Bus Support"
-msgstr "D-Bus Unterstützung"
 
 #: rc.cpp:1
 #, kde-format
@@ -53,3 +48,6 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "D-Bus Support"
+#~ msgstr "D-Bus Unterstützung"

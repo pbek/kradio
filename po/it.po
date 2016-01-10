@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-03-03 01:58+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -62,105 +62,111 @@ msgstr "%1 kHz"
 msgid "I do not know how to edit this station"
 msgstr "Non so come modificare questa stazione"
 
-#: radiostations/radiostation-config.cpp:75
+#: radiostations/radiostation-config.cpp:72
 #, kde-format
 msgid "Frequency:"
 msgstr "Frequenza:"
 
-#: radiostations/radiostation-config.cpp:128
+#: radiostations/radiostation-config.cpp:118
 #, kde-format
 msgid "URL:"
 msgstr "URL:"
 
-#: radiostations/radiostation-config.cpp:132
+#: radiostations/radiostation-config.cpp:122
 #, kde-format
 msgid "Decoder Class:"
 msgstr "Classe del decoder:"
 
-#: radiostations/radiostation-config.cpp:136
+#: radiostations/radiostation-config.cpp:126
 #, kde-format
 msgid "Playlist Class:"
 msgstr "Classe della scaletta:"
 
-#: radiostations/radiostation-config.cpp:141
+#: radiostations/radiostation-config.cpp:131
 #, kde-format
 msgctxt "Stream Format"
 msgid "<autodetect>"
 msgstr "<autorilevamento>"
 
-#: radiostations/radiostation-config.cpp:142
+#: radiostations/radiostation-config.cpp:132
 #, kde-format
 msgctxt "Stream Format"
 msgid "MP3"
 msgstr "MP3"
 
-#: radiostations/radiostation-config.cpp:143
+#: radiostations/radiostation-config.cpp:133
 #, kde-format
 msgctxt "Stream Format"
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
-#: radiostations/radiostation-config.cpp:144
+#: radiostations/radiostation-config.cpp:134
 #, kde-format
 msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
 #. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
-#: radiostations/radiostation-config.cpp:146
+#: radiostations/radiostation-config.cpp:136
 #, kde-format
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
 msgstr "Ogg/Vorbis"
 
-#: radiostations/radiostation-config.cpp:149
+#: radiostations/radiostation-config.cpp:139
 #, kde-format
 msgctxt "Playlist Format"
 msgid "<autodetect>"
 msgstr "<autorilevamento>"
 
-#: radiostations/radiostation-config.cpp:150
+#: radiostations/radiostation-config.cpp:140
 #, kde-format
 msgctxt "Playlist Format"
 msgid "<none>"
 msgstr "<nessuno>"
 
-#: radiostations/radiostation-config.cpp:151
+#: radiostations/radiostation-config.cpp:141
 #, kde-format
 msgctxt "Playlist Format"
 msgid "ASX"
 msgstr "ASX"
 
-#: radiostations/radiostation-config.cpp:152
+#: radiostations/radiostation-config.cpp:142
 #, kde-format
 msgctxt "Playlist Format"
 msgid "LSC"
 msgstr "LSC"
 
-#: radiostations/radiostation-config.cpp:153
+#: radiostations/radiostation-config.cpp:143
 #, kde-format
 msgctxt "Playlist Format"
 msgid "M3U"
 msgstr "M3U"
 
-#: radiostations/radiostation-config.cpp:154
+#: radiostations/radiostation-config.cpp:144
 #, kde-format
 msgctxt "Playlist Format"
 msgid "PLS"
 msgstr "PLS"
 
-#: radiostations/radiostation-config.cpp:155
+#: radiostations/radiostation-config.cpp:145
+#, kde-format
+msgctxt "Playlist Format"
+msgid "XSPF"
+msgstr ""
+
+#: radiostations/radiostation-config.cpp:146
 #, kde-format
 msgctxt "Playlist Format"
 msgid "WMV"
 msgstr "WMV"
 
-#: radiostations/radiostation-config.cpp:158
+#: radiostations/radiostation-config.cpp:149
 #, kde-format
 msgid "Meta-Data Stream Encoding:"
 msgstr "Codifica flusso metadati:"
 
-#: radiostations/radiostation-config.cpp:240
+#: radiostations/radiostation-config.cpp:231
 #, kde-format
 msgid "auto"
 msgstr "automatica"
@@ -175,10 +181,7 @@ msgstr "Icona"
 msgid "Station"
 msgstr "Stazione"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:225
-#. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
 #: radiostations/radiostation-listview.cpp:144
-#: src/pluginmanager-configuration.cpp:57 rc.cpp:44
 #, kde-format
 msgid "Description"
 msgstr "Descrizione"
@@ -193,13 +196,13 @@ msgstr "Stazione radio AM/FM"
 msgid "Internet Radio Station"
 msgstr "Stazione radio Internet"
 
-#: radiostations/radiostation.h:157
+#: radiostations/radiostation.h:156
 #, kde-format
 msgctxt "Unknown station long name"
 msgid "unknown"
 msgstr "sconosciuto"
 
-#: radiostations/radiostation.h:158
+#: radiostations/radiostation.h:157
 #, kde-format
 msgctxt "Unknown station description"
 msgid "unknown"
@@ -234,17 +237,17 @@ msgstr "FileRingBuffer::addData: impossibile scrivere i dati nel file %1."
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: impossibile leggere i dati nel file %1."
 
-#: src/kradioapp.cpp:122
+#: src/instancemanager.cpp:120
 #, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Libreria %1: manca il punto d'ingresso dell'estensione"
 
-#: src/kradioapp.cpp:123 src/kradioapp.cpp:130
+#: src/instancemanager.cpp:121 src/instancemanager.cpp:128
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Impossibile caricare la libreria dell'estensione"
 
-#: src/kradioapp.cpp:129
+#: src/instancemanager.cpp:127
 #, kde-format
 msgid ""
 "Library %1:\n"
@@ -253,18 +256,18 @@ msgstr ""
 "Libreria %1:\n"
 "%2"
 
-#: src/kradioapp.cpp:206
+#: src/instancemanager.cpp:203
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr ""
 "Sono state trovate delle nuove librerie di estensioni. Vuoi caricarle adesso?"
 
-#: src/kradioapp.cpp:208
+#: src/instancemanager.cpp:205
 #, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Sono state trovate delle nuove librerie di estensioni"
 
-#: src/kradioapp.cpp:224
+#: src/instancemanager.cpp:221
 #, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -283,47 +286,47 @@ msgstr[1] ""
 "Controlla la directory di installazione di KRadio4 e le variabili d'ambiente "
 "KDEDIR, KDEDIRS e KDEHOME.\n"
 
-#: src/kradioapp.cpp:232
+#: src/instancemanager.cpp:229
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "Errore di installazione di KRadio4"
 
-#: src/kradioapp.cpp:257
+#: src/instancemanager.cpp:254
 #, kde-format
 msgid "Instance %1"
 msgstr "Istanza %1"
 
-#: src/kradioapp.cpp:278
+#: src/instancemanager.cpp:275
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "Configurazione di KRadio"
 
-#: src/kradioapp.cpp:279
+#: src/instancemanager.cpp:276
 #, kde-format
 msgid "About KRadio Components"
 msgstr "Informazioni sui componenti di KRadio"
 
-#: src/main.cpp:34
+#: src/main.cpp:33
 #, kde-format
 msgid "KRadio4"
 msgstr "KRadio4"
 
-#: src/main.cpp:36
+#: src/main.cpp:35
 #, kde-format
 msgid "A versatile KDE AM/FM/Internet radio application"
 msgstr "Una versatile applicazione radio AM/FM/Internet per KDE"
 
-#: src/main.cpp:38
+#: src/main.cpp:37
 #, kde-format
 msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
 msgstr "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
 
-#: src/main.cpp:43
+#: src/main.cpp:42
 #, kde-format
 msgid "Ernst Martin Witte"
 msgstr "Ernst Martin Witte"
 
-#: src/main.cpp:43
+#: src/main.cpp:42
 #, kde-format
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
@@ -332,43 +335,43 @@ msgstr ""
 "Migrazione a KDE4, supporto RDS, scorciatoie, supporto PVR, riscrittura per "
 "1.0/0.3.0, registrazione, supporto LIRC, allarmi, varie"
 
-#: src/main.cpp:44
+#: src/main.cpp:43
 #, kde-format
 msgid "Pino Toscano"
 msgstr "Pino Toscano"
 
-#: src/main.cpp:44
+#: src/main.cpp:43
 #, kde-format
 msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
 msgstr ""
 "Estensione MPRIS, Sistema di compilazione, conformità agli standard, pulizia"
 
-#: src/main.cpp:45
+#: src/main.cpp:44
 #, kde-format
 msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
-#: src/main.cpp:45
+#: src/main.cpp:44
 #, kde-format
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Sistema di compilazione, conformità agli standard, pulizia"
 
-#: src/main.cpp:46
+#: src/main.cpp:45
 #, kde-format
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:46
+#: src/main.cpp:45
 #, kde-format
 msgid "Miscellaneous"
 msgstr "Varie"
 
-#: src/main.cpp:47
+#: src/main.cpp:46
 #, kde-format
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:47
+#: src/main.cpp:46
 #, kde-format
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Idea iniziale, applicazione originariamente nata per KDE 2"
@@ -383,49 +386,37 @@ msgstr "Buffer overflow. "
 msgid "Configuration Dialog"
 msgstr "Finestra di configurazione"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:220
-#. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
-#: src/pluginmanager-configuration.cpp:55 rc.cpp:41
-#, kde-format
-msgid "Plugin Class"
-msgstr "Classe di estensione"
-
-#: src/pluginmanager-configuration.cpp:56
-#, kde-format
-msgid "Instance Name"
-msgstr "Nome dell'istanza"
-
-#: src/pluginmanager-configuration.cpp:238
+#: src/pluginmanager-configuration.cpp:204
 #, kde-format
 msgid "Enter Plugin Instance Name"
 msgstr "Inserisci il nome dell'istanza dell'estensione"
 
-#: src/pluginmanager-configuration.cpp:239
+#: src/pluginmanager-configuration.cpp:205
 #, kde-format
 msgid "Instance name:"
 msgstr "Nome dell'istanza:"
 
-#: src/pluginmanager.cpp:435
+#: src/pluginmanager.cpp:455
 #, kde-format
 msgid "Plugins"
 msgstr "Estensioni"
 
-#: src/pluginmanager.cpp:436
+#: src/pluginmanager.cpp:456
 #, kde-format
 msgid "Plugin Library Configuration"
 msgstr "Configurazione della libreria dell'estensione"
 
-#: src/pluginmanager.cpp:568
+#: src/pluginmanager.cpp:588
 #, kde-format
 msgid "Starting Plugins"
 msgstr "Avvio dell'estensione in corso"
 
-#: src/pluginmanager.cpp:585 src/pluginmanager.cpp:619
+#: src/pluginmanager.cpp:605 src/pluginmanager.cpp:639
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Creazione dell'estensione %1 in corso"
 
-#: src/pluginmanager.cpp:603
+#: src/pluginmanager.cpp:623
 #, kde-format
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
@@ -433,47 +424,57 @@ msgstr ""
 "Sono state trovate delle nuove estensioni. Vuoi creare automaticamente delle "
 "nuove istanze adesso?"
 
-#: src/pluginmanager.cpp:605
+#: src/pluginmanager.cpp:625
 #, kde-format
 msgid "New Plugins Found"
 msgstr "Trovate nuove estensioni"
 
-#: src/pluginmanager.cpp:640
+#: src/pluginmanager.cpp:660
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Inizializzazione dell'estensione %1 in corso"
 
-#: src/pluginmanager.cpp:765
+#: src/pluginmanager.cpp:785
 #, kde-format
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Mostra tutto"
 
-#: src/pluginmanager.cpp:766
+#: src/pluginmanager.cpp:786
 #, kde-format
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Nascondi tutto"
 
-#: src/pluginmanager.cpp:767
+#: src/pluginmanager.cpp:787
 #, kde-format
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Ripristina tutto"
 
-#: src/pluginmanager.cpp:768
+#: src/pluginmanager.cpp:788
 #, kde-format
 msgid "Restore state before last hide-all activation"
 msgstr "Ripristina lo stato prima dell'attivazione di nascondi tutto"
+
+#: src/pluginsmodel.cpp:161
+#, kde-format
+msgid "<b>%1</b> (no instances)<br />%2"
+msgstr ""
+
+#: src/pluginsmodel.cpp:164
+#, kde-format
+msgid "<b>%2</b> (%1 instance)<br />%3"
+msgid_plural "<b>%2</b> (%1 instances)<br />%3"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 #, kde-format
 msgid "&Start"
 msgstr "&Avvia"
 
-#. i18n: file: src/standardscandialog-ui.ui:58
-#. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
-#: src/standardscandialog.cpp:92 rc.cpp:68
+#: src/standardscandialog.cpp:92
 #, kde-format
 msgid "&Stop"
 msgstr "&Ferma"
@@ -558,22 +559,22 @@ msgstr "Impossibile aprire il file di preimpostazione della stazione da %1."
 msgid "Old Preset File Format detected"
 msgstr "È stato individuato un vecchio formato del file di preimpostazione"
 
-#: src/stationlist.cpp:320
+#: src/stationlist.cpp:323
 #, kde-format
 msgid "error writing to temporary file %1"
 msgstr "errore durante la scrittura del file temporaneo %1"
 
-#: src/stationlist.cpp:323
+#: src/stationlist.cpp:326
 #, kde-format
 msgid "Writing station preset file %1 failed."
 msgstr "Impossibile scrivere il file di preimpostazione della stazione %1."
 
-#: src/stationlist.cpp:333
+#: src/stationlist.cpp:336
 #, kde-format
 msgid "uploading preset file %1: "
 msgstr "invio del file di preimpostazione %1 in corso: "
 
-#: src/stationlist.cpp:335
+#: src/stationlist.cpp:338
 #, kde-format
 msgid ""
 "something strange happened, station list has only %1 entries. Writing "
@@ -582,17 +583,17 @@ msgstr ""
 "è successo qualcosa di strano, la lista delle stazioni ha solo %1 voci. La "
 "scrittura del file di preimpostazione della stazione sarà ignorata"
 
-#: src/stationlist.cpp:340
+#: src/stationlist.cpp:343
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "errore durante l'invio del file di preimpostazione %1"
 
-#: src/stationlist.cpp:344
+#: src/stationlist.cpp:347
 #, kde-format
 msgid "Upload of station preset file to %1 failed."
 msgstr "Impossibile inviare il file di preimpostazione della stazione %1."
 
-#: src/stationlist.cpp:351 src/stationlist.cpp:352
+#: src/stationlist.cpp:354 src/stationlist.cpp:355
 #, kde-format
 msgid "error creating temporary file"
 msgstr "errore durante la creazione del file temporaneo"
@@ -637,12 +638,12 @@ msgstr "proprietà sconosciuta %1 per la classe %2"
 msgid "characters ignored for element %1"
 msgstr "caratteri ignorati per l'elemento %1"
 
-#: src/widgetpluginbase.cpp:289
+#: src/widgetpluginbase.cpp:285
 #, kde-format
 msgid "Show %1"
 msgstr "Mostra %1"
 
-#: src/widgetpluginbase.cpp:293
+#: src/widgetpluginbase.cpp:289
 #, kde-format
 msgid "Hide %1"
 msgstr "Nascondi %1"
@@ -699,96 +700,22 @@ msgstr ""
 #. i18n: file: src/pluginmanager-configuration-ui.ui:114
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
 #: rc.cpp:20
-#, kde-format
-msgid "Plugin Libraries"
-msgstr "Librerie delle estensioni"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:123
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
-#: rc.cpp:23
-#, kde-format
-msgid ""
-"Select a plugin library from a file dialog. It will added to the library "
-"list if you press the \"Load Library\" button."
-msgstr ""
-"Seleziona una libreria dell'estensione dalla finestra di selezione dei file. "
-"Sarà aggiunta all'elenco delle librerie se premi il pulsante «Carica "
-"libreria»."
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:136
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
-#: rc.cpp:26
-#, kde-format
-msgid "Loads the library specified in the box left to this button."
-msgstr ""
-"Carica la libreria specificata nella casella situata alla sinistra di questo "
-"pulsante."
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:155
-#. i18n: ectx: property (toolTip), widget (QListWidget, listPluginLibraries)
-#: rc.cpp:29
-#, kde-format
-msgid "list of loaded plugin libraries"
-msgstr "elenco delle librerie di estensioni caricate"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:168
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
-#: rc.cpp:32
-#, kde-format
-msgid "Unload the plugin library selected in the list on the left side"
-msgstr ""
-"Rimuovi la libreria di estensione selezionata nell'elenco situato sulla "
-"sinistra"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:195
-#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
-#: rc.cpp:35
-#, kde-format
-msgid "Plugin Classes"
-msgstr "Classi delle estensioni"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:210
-#. i18n: ectx: property (toolTip), widget (QTreeWidget, listPluginClasses)
-#: rc.cpp:38
-#, kde-format
-msgid "List of available plugin classes found in the plugin libraries"
-msgstr "Elenco delle classi di estensioni disponibili trovate nelle librerie"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:239
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
-#: rc.cpp:47
-#, kde-format
-msgid "Create a new instance of plugin class selected in the list on the left"
-msgstr ""
-"Crea una nuova istanza della classe di estensione selezionata nell'elenco "
-"sulla sinistra"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:266
-#. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
-#: rc.cpp:50
-#, kde-format
-msgid "Plugin Instances"
+#, fuzzy, kde-format
+#| msgid "Plugin Instances"
+msgid "Classes && Instances"
 msgstr "Istanze delle estensioni"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:281
-#. i18n: ectx: property (toolTip), widget (QTreeView, listPluginInstances)
-#: rc.cpp:53
-#, kde-format
-msgid "List of the plugin instances currently running"
+#. i18n: file: src/pluginmanager-configuration-ui.ui:129
+#. i18n: ectx: property (toolTip), widget (QTreeView, listPlugins)
+#: rc.cpp:23
+#, fuzzy, kde-format
+#| msgid "List of the plugin instances currently running"
+msgid "List of the plugin classes and their instances currently running"
 msgstr "Elenco delle istanze delle estensioni attualmente in esecuzione"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:300
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
-#: rc.cpp:56
-#, kde-format
-msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr ""
-"Rimuovi/ferma l'istanza dell'estensione selezionata nell'elenco situato "
-"sulla sinistra"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:332
+#. i18n: file: src/pluginmanager-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:59
+#: rc.cpp:26
 #, kde-format
 msgid ""
 "<p>You can <b>rename</b> a plugin instance by double clicking on the "
@@ -804,51 +731,99 @@ msgstr ""
 "nomi delle estensioni, ad esempio quando hai più di una scheda audio e/o più "
 "istanze dell'estensione ALSA.</p>"
 
+#. i18n: file: src/pluginmanager-configuration-ui.ui:190
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
+#: rc.cpp:29
+#, kde-format
+msgid "Create a new instance of plugin class selected in the list on the left"
+msgstr ""
+"Crea una nuova istanza della classe di estensione selezionata nell'elenco "
+"sulla sinistra"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:206
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
+#: rc.cpp:32
+#, kde-format
+msgid "Removes/stops the plugin instance selected in the list on the left"
+msgstr ""
+"Rimuovi/ferma l'istanza dell'estensione selezionata nell'elenco situato "
+"sulla sinistra"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:217
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
+#: rc.cpp:35
+#, kde-format
+msgid "Plugin Libraries"
+msgstr "Librerie delle estensioni"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:226
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
+#: rc.cpp:38
+#, kde-format
+msgid ""
+"Select a plugin library from a file dialog. It will added to the library "
+"list if you press the \"Load Library\" button."
+msgstr ""
+"Seleziona una libreria dell'estensione dalla finestra di selezione dei file. "
+"Sarà aggiunta all'elenco delle librerie se premi il pulsante «Carica "
+"libreria»."
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:239
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
+#: rc.cpp:41
+#, kde-format
+msgid "Loads the library specified in the box left to this button."
+msgstr ""
+"Carica la libreria specificata nella casella situata alla sinistra di questo "
+"pulsante."
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:258
+#. i18n: ectx: property (toolTip), widget (QListWidget, listPluginLibraries)
+#: rc.cpp:44
+#, kde-format
+msgid "list of loaded plugin libraries"
+msgstr "elenco delle librerie di estensioni caricate"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:271
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
+#: rc.cpp:47
+#, kde-format
+msgid "Unload the plugin library selected in the list on the left side"
+msgstr ""
+"Rimuovi la libreria di estensione selezionata nell'elenco situato sulla "
+"sinistra"
+
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
-#: rc.cpp:62
+#: rc.cpp:50
 #, kde-format
 msgid "Stations Search in Progress..."
 msgstr "Ricerca delle stazioni in corso..."
 
-#. i18n: file: src/standardscandialog-ui.ui:51
-#. i18n: ectx: property (text), widget (QPushButton, buttonOk)
-#: rc.cpp:65
-#, kde-format
-msgid "&Ok"
-msgstr "&Ok"
-
-#. i18n: file: src/standardscandialog-ui.ui:65
-#. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
-#: rc.cpp:71
-#, kde-format
-msgid "&Discard"
-msgstr "&Scarta"
-
-#. i18n: file: src/standardscandialog-ui.ui:92
+#. i18n: file: src/standardscandialog-ui.ui:35
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
-#: rc.cpp:74
+#: rc.cpp:53
 #, kde-format
 msgid "remaining time"
 msgstr "tempo rimanente"
 
-#. i18n: file: src/standardscandialog-ui.ui:108
+#. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel, labelTime)
-#: rc.cpp:77
+#: rc.cpp:56
 #, kde-format
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">nulla qui</p>"
 
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
-#: rc.cpp:80
+#: rc.cpp:59
 #, kde-format
 msgid "Selected stations:"
 msgstr "Stazioni selezionate:"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
-#: rc.cpp:83
+#: rc.cpp:62
 #, kde-format
 msgid "Available stations:"
 msgstr "Stazioni disponibili:"
@@ -857,6 +832,25 @@ msgstr "Stazioni disponibili:"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, registrazione di kradio4"
+
+#~ msgid "Plugin Class"
+#~ msgstr "Classe di estensione"
+
+#~ msgid "Instance Name"
+#~ msgstr "Nome dell'istanza"
+
+#~ msgid "Plugin Classes"
+#~ msgstr "Classi delle estensioni"
+
+#~ msgid "List of available plugin classes found in the plugin libraries"
+#~ msgstr ""
+#~ "Elenco delle classi di estensioni disponibili trovate nelle librerie"
+
+#~ msgid "&Ok"
+#~ msgstr "&Ok"
+
+#~ msgid "&Discard"
+#~ msgstr "&Scarta"
 
 #~ msgid ""
 #~ "<qt>No information available.<br />The supplied KAboutData object does "

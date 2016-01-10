@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,14 +41,9 @@ msgctxt "@info:credit"
 msgid "Pino Toscano"
 msgstr ""
 
-#: mprissupport.cpp:59 mprissupport.cpp:138
+#: mprissupport.cpp:59
 #, kde-format
 msgid "MPRIS Plugin"
-msgstr ""
-
-#: mprissupport.cpp:137
-#, kde-format
-msgid "MPRIS Support"
 msgstr ""
 
 #: rc.cpp:1

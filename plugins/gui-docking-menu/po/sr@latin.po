@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gui-docking-menu (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -65,7 +65,7 @@ msgstr "Uključi/Isključi"
 msgid "Pause/Play"
 msgstr "Pauza/Emituj"
 
-#: docking-configuration.cpp:130 docking.cpp:295
+#: docking-configuration.cpp:130 docking.cpp:291
 #, kde-format
 msgid "Recording"
 msgstr "Snimanje"
@@ -100,132 +100,132 @@ msgstr "Promeni jačinu"
 msgid "Change Frequency"
 msgstr "Promeni frekvenciju"
 
-#: docking.cpp:48
+#: docking.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Docking Menu"
 msgstr ""
 
-#: docking.cpp:50
+#: docking.cpp:47
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "System Tray Icon/Menu"
 msgstr "Ikona sistemske kasete"
 
-#: docking.cpp:52
+#: docking.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: docking.cpp:56
+#: docking.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: docking.cpp:57
+#: docking.cpp:54
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: docking.cpp:69
+#: docking.cpp:66
 #, kde-format
 msgid "System Tray Plugin"
 msgstr "Priključak sistemske kasete"
 
-#: docking.cpp:255
+#: docking.cpp:251
 #, kde-format
 msgid "System Tray Icon"
 msgstr "Ikona sistemske kasete"
 
-#: docking.cpp:256
+#: docking.cpp:252
 #, kde-format
 msgid "System Tray Icon Configuration"
 msgstr "Konfiguracija ikone sistemske kasete"
 
-#: docking.cpp:285
+#: docking.cpp:281
 #, kde-format
 msgid "Search Next Station"
 msgstr "Traži sledeću stanicu"
 
-#: docking.cpp:286
+#: docking.cpp:282
 #, kde-format
 msgid "Search Previous Station"
 msgstr "Traži predhodnu stanicu"
 
-#: docking.cpp:300
+#: docking.cpp:296
 #, kde-format
 msgid "Pause Radio"
 msgstr "Pauziraj radio"
 
-#: docking.cpp:311
+#: docking.cpp:307
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Pokaži/Sakrij priključke"
 
-#: docking.cpp:319
+#: docking.cpp:315
 #, kde-format
 msgid "&Quit"
 msgstr "&Napusti"
 
-#: docking.cpp:433
+#: docking.cpp:440
 #, kde-format
 msgid "Stop Sleep Countdown (running until %1)"
 msgstr "Zastavi tajmer isključenja (radi do %1)"
 
-#: docking.cpp:436 docking.cpp:445 docking.cpp:453
+#: docking.cpp:443 docking.cpp:452 docking.cpp:460
 #, kde-format
 msgid "Start Sleep Countdown"
 msgstr "Pokreni tajmer isključenja"
 
-#: docking.cpp:461
+#: docking.cpp:468
 #, kde-format
 msgid "Power Off"
 msgstr "Isključi"
 
-#: docking.cpp:461
+#: docking.cpp:468
 #, kde-format
 msgid "Power On"
 msgstr "Uključi"
 
-#: docking.cpp:476 docking.cpp:497
+#: docking.cpp:483 docking.cpp:501
 #, kde-format
 msgid "invalid station"
 msgstr "nevažeća stanica"
 
-#: docking.cpp:479
+#: docking.cpp:484
 #, kde-format
 msgid "KRadio: %1"
 msgstr "KRadio: %1"
 
-#: docking.cpp:489
+#: docking.cpp:493
 #, kde-format
 msgid "next alarm: %1"
 msgstr "sledeći alarm: %1"
 
-#: docking.cpp:491
+#: docking.cpp:495
 #, kde-format
 msgid "<no alarm pending>"
 msgstr "<bez alarma na čekanju>"
 
-#: docking.cpp:750 docking.cpp:853 docking.cpp:911
+#: docking.cpp:761 docking.cpp:864 docking.cpp:922
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Zaustavi snimanje od %1"
 
-#: docking.cpp:839
+#: docking.cpp:850
 #, kde-format
 msgid "Start Recording"
 msgstr "Počni  snimanje"
 
-#: docking.cpp:893
+#: docking.cpp:904
 #, kde-format
 msgid "Resume playback"
 msgstr "Nastavi reprodukciju"
 
-#: docking.cpp:897
+#: docking.cpp:908
 #, kde-format
 msgid "Pause playback"
 msgstr "Pauziraj reprodukciju"

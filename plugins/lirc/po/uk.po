@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 19:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -18,174 +18,189 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: lirc-configuration.cpp:50
+#: lirc-configuration.cpp:44
 #, kde-format
 msgid "digit 0"
 msgstr "нуль"
 
-#: lirc-configuration.cpp:51
+#: lirc-configuration.cpp:45
 #, kde-format
 msgid "digit 1"
 msgstr "один"
 
-#: lirc-configuration.cpp:52
+#: lirc-configuration.cpp:46
 #, kde-format
 msgid "digit 2"
 msgstr "два"
 
-#: lirc-configuration.cpp:53
+#: lirc-configuration.cpp:47
 #, kde-format
 msgid "digit 3"
 msgstr "три"
 
-#: lirc-configuration.cpp:54
+#: lirc-configuration.cpp:48
 #, kde-format
 msgid "digit 4"
 msgstr "чотири"
 
-#: lirc-configuration.cpp:55
+#: lirc-configuration.cpp:49
 #, kde-format
 msgid "digit 5"
 msgstr "п'ять"
 
-#: lirc-configuration.cpp:56
+#: lirc-configuration.cpp:50
 #, kde-format
 msgid "digit 6"
 msgstr "шість"
 
-#: lirc-configuration.cpp:57
+#: lirc-configuration.cpp:51
 #, kde-format
 msgid "digit 7"
 msgstr "сім"
 
-#: lirc-configuration.cpp:58
+#: lirc-configuration.cpp:52
 #, kde-format
 msgid "digit 8"
 msgstr "вісім"
 
-#: lirc-configuration.cpp:59
+#: lirc-configuration.cpp:53
 #, kde-format
 msgid "digit 9"
 msgstr "дев'ять"
 
-#: lirc-configuration.cpp:60
+#: lirc-configuration.cpp:54
 #, kde-format
 msgid "Power On"
 msgstr "Увімкнути"
 
-#: lirc-configuration.cpp:61
+#: lirc-configuration.cpp:55
 #, kde-format
 msgid "Power Off"
 msgstr "Вимкнути"
 
-#: lirc-configuration.cpp:62
+#: lirc-configuration.cpp:56
 #, kde-format
 msgid "Pause"
 msgstr "Призупинити"
 
-#: lirc-configuration.cpp:63
+#: lirc-configuration.cpp:57
 #, kde-format
 msgid "Start Recording"
 msgstr "Почати запис"
 
-#: lirc-configuration.cpp:64
+#: lirc-configuration.cpp:58
 #, kde-format
 msgid "Stop Recording"
 msgstr "Зупинити запис"
 
-#: lirc-configuration.cpp:65
+#: lirc-configuration.cpp:59
 #, kde-format
 msgid "Increase Volume"
 msgstr "Збільшити гучність"
 
-#: lirc-configuration.cpp:66
+#: lirc-configuration.cpp:60
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Зменшити гучність"
 
-#: lirc-configuration.cpp:67
+#: lirc-configuration.cpp:61
 #, kde-format
 msgid "Next Channel"
 msgstr "Наступна станція"
 
-#: lirc-configuration.cpp:68
+#: lirc-configuration.cpp:62
 #, kde-format
 msgid "Previous Channel"
 msgstr "Попередня станція"
 
-#: lirc-configuration.cpp:69
+#: lirc-configuration.cpp:63
 #, kde-format
 msgid "Search Next Channel"
 msgstr "Пошук наступної станції"
 
-#: lirc-configuration.cpp:70
+#: lirc-configuration.cpp:64
 #, kde-format
 msgid "Search Previous Channel"
 msgstr "Пошук попередньої станції"
 
-#: lirc-configuration.cpp:71
+#: lirc-configuration.cpp:65
 #, kde-format
 msgid "Enable Sleep Countdown"
 msgstr "Увімкнути таймер вимкнення"
 
-#: lirc-configuration.cpp:72
+#: lirc-configuration.cpp:66
 #, kde-format
 msgid "Quit KRadio"
 msgstr "Вийти з KRadio"
 
-#: lirc-configuration.cpp:124 lirc-configuration.cpp:125
+#: lirc-configuration.cpp:95
+#, kde-format
+msgid "Action"
+msgstr "Дія"
+
+#: lirc-configuration.cpp:96
+#, kde-format
+msgid "LIRC String"
+msgstr "Рядок LIRC"
+
+#: lirc-configuration.cpp:97
+#, kde-format
+msgid "Alternative LIRC String"
+msgstr "Альтернативний рядок LIRC"
+
+#: lirc-configuration.cpp:127 lirc-configuration.cpp:128
 #, kde-format
 msgid "<do not care>"
 msgstr "<байдуже>"
 
-#: lirc-configuration.cpp:265
+#: lirc-configuration.cpp:270
 #, kde-format
 msgid ""
 "Enter the key string of your remote or just press the button on your remote "
 "control"
 msgstr "Введіть ключовий рядок вашого ПДК або просто натисніть кнопку на ньому"
 
-#: lirc-configuration.cpp:271
+#: lirc-configuration.cpp:277
 #, kde-format
 msgid "Double click on the entries to change the assignments"
 msgstr "Для зміни прив'язки двічі клацніть на пункті мишею"
 
-#: lircsupport.cpp:52
+#: lircsupport.cpp:48
 #, kde-format
 msgctxt "@title"
 msgid "LIRC"
 msgstr ""
 
-#: lircsupport.cpp:54
+#: lircsupport.cpp:50
 #, fuzzy, kde-format
 #| msgid "Linux Infrared Control (LIRC) Support"
 msgctxt "@title"
 msgid "Linux Infrared Control (LIRC) Support"
 msgstr "Підтримка ПДК у Linux (LIRC)"
 
-#: lircsupport.cpp:56
+#: lircsupport.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte"
 msgstr ""
 
-#: lircsupport.cpp:60
+#: lircsupport.cpp:56
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: lircsupport.cpp:71 lircsupport.cpp:498
+#: lircsupport.cpp:65 lircsupport.cpp:492
 #, kde-format
 msgid "LIRC Plugin"
 msgstr "Модуль ДК (LIRC)"
 
-#: lircsupport.cpp:99
+#: lircsupport.cpp:93
 #, kde-format
 msgid "initializing KRadio LIRC plugin"
 msgstr "ініціалізуємо модуль LIRC KRadio"
 
-#: lircsupport.cpp:100
+#: lircsupport.cpp:94
 #, kde-format
 msgid ""
 "warnings/errors about missing sockets do not harm - usually the LIRC daemon "
@@ -195,17 +210,17 @@ msgstr ""
 "сокетів, не завадять роботі: зазвичай, у таких випадках просто не запущено "
 "фонову службу LIRC."
 
-#: lircsupport.cpp:109
+#: lircsupport.cpp:103
 #, kde-format
 msgid "Initializing KRadio LIRC plugin failed"
 msgstr "Не вдалося ініціалізувати модуль LIRC KRadio"
 
-#: lircsupport.cpp:118
+#: lircsupport.cpp:112
 #, kde-format
 msgid "Initializing KRadio LIRC plugin successful"
 msgstr "Модуль LIRC KRadio вдало запущено"
 
-#: lircsupport.cpp:144
+#: lircsupport.cpp:138
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
@@ -218,7 +233,7 @@ msgstr ""
 "Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
 "\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
-#: lircsupport.cpp:151
+#: lircsupport.cpp:145
 #, kde-format
 msgid ""
 "LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
@@ -231,35 +246,35 @@ msgstr ""
 "Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
 "\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
 
-#: lircsupport.cpp:162
+#: lircsupport.cpp:156
 #, kde-format
 msgid "There is no entry for KRadio in your .lircrc files %1."
 msgstr "У жодному з ваших файлів .lircrc %1 немає згадки про KRadio."
 
-#: lircsupport.cpp:163
+#: lircsupport.cpp:157
 #, kde-format
 msgid "Please setup your .lircrc file %1 correctly."
 msgstr "Будь ласка коректно налаштуйте ваш файл .lircrc %1."
 
-#: lircsupport.cpp:167 lircsupport.cpp:168
+#: lircsupport.cpp:161 lircsupport.cpp:162
 #, kde-format
 msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
 msgstr ""
 "Спроба запуску модуля LIRC KRadio завершилася невдало. Не вдалося прочитати "
 "файл налаштувань %1"
 
-#: lircsupport.cpp:204
+#: lircsupport.cpp:198
 #, kde-format
 msgid ""
 "%1 does not exist. File was created with KRadio's default .lircrc proposal"
 msgstr "%1 не існує. Було створено типовий файл .lircrc для KRadio"
 
-#: lircsupport.cpp:207
+#: lircsupport.cpp:201
 #, kde-format
 msgid "Failed to copy %1 to %2"
 msgstr "Не вдалося скопіювати %1 до %2"
 
-#: lircsupport.cpp:259
+#: lircsupport.cpp:253
 #, kde-format
 msgid ""
 "Reading from LIRC socket failed. Disabling LIRC functionalities until the "
@@ -268,81 +283,60 @@ msgstr ""
 "Читання з сокету LIRC не вдалося. Вимкнено функції LIRC до наступного "
 "запуску KRadio."
 
-#: lircsupport.cpp:497
+#: lircsupport.cpp:491
 #, kde-format
 msgid "LIRC Support"
 msgstr "Підтримка LIRC"
 
-#. i18n: file: lirc-configuration-ui.ui:37
-#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
-#: rc.cpp:3 rc.cpp:32
-#, kde-format
-msgid "Action"
-msgstr "Дія"
-
-#. i18n: file: lirc-configuration-ui.ui:48
-#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
-#: rc.cpp:6 rc.cpp:35
-#, kde-format
-msgid "LIRC String"
-msgstr "Рядок LIRC"
-
-#. i18n: file: lirc-configuration-ui.ui:59
-#. i18n: ectx: property (text), widget (K3ListView, m_ActionList)
-#: rc.cpp:9 rc.cpp:38
-#, kde-format
-msgid "Alternative LIRC String"
-msgstr "Альтернативний рядок LIRC"
-
-#. i18n: file: lirc-configuration-ui.ui:83
+#. i18n: file: lirc-configuration-ui.ui:38
 #. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
-#: rc.cpp:12 rc.cpp:41
+#: rc.cpp:3 rc.cpp:23
 #, kde-format
 msgid "textLabel1"
 msgstr "textLabel1"
 
-#. i18n: file: lirc-configuration-ui.ui:103
+#. i18n: file: lirc-configuration-ui.ui:58
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:15 rc.cpp:44
+#: rc.cpp:6 rc.cpp:26
 #, kde-format
 msgid "Power off .lircrc mode:"
 msgstr "Режим вимикання .lircrc:"
 
-#. i18n: file: lirc-configuration-ui.ui:110
+#. i18n: file: lirc-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:18 rc.cpp:47
+#: rc.cpp:9 rc.cpp:29
 #, kde-format
 msgid "Power on .lircrc mode:"
 msgstr "Режим вмикання .lircrc:"
 
-#. i18n: file: lirc-configuration-ui.ui:127
+#. i18n: file: lirc-configuration-ui.ui:82
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:21 rc.cpp:50
+#: rc.cpp:12 rc.cpp:32
 #, kde-format
 msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Синхронізувати режими .lircrc під час виконання:"
 
-#. i18n: file: lirc-configuration-ui.ui:134
+#. i18n: file: lirc-configuration-ui.ui:89
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:24 rc.cpp:53
+#: rc.cpp:15 rc.cpp:35
 #, kde-format
 msgid "Synchronize .lircrc modes at startup:"
 msgstr "Синхронізувати режими .lircrc під час запуску:"
 
-#. i18n: file: lirc-configuration-ui.ui:161
+#. i18n: file: lirc-configuration-ui.ui:116
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:27 rc.cpp:56
+#: rc.cpp:18 rc.cpp:38
 #, kde-format
 msgid "LIRC configuration file:"
 msgstr "Файл налаштування LIRC:"
 
-#: rc.cpp:28
+#: rc.cpp:19
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: rc.cpp:29
+#: rc.cpp:20
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"

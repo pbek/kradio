@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -54,105 +54,111 @@ msgstr "%1 kHz"
 msgid "I do not know how to edit this station"
 msgstr "Ne znam kako da izmenim ovu stanicu"
 
-#: radiostations/radiostation-config.cpp:75
+#: radiostations/radiostation-config.cpp:72
 #, kde-format
 msgid "Frequency:"
 msgstr "Frekvencija:"
 
-#: radiostations/radiostation-config.cpp:128
+#: radiostations/radiostation-config.cpp:118
 #, kde-format
 msgid "URL:"
 msgstr "URL:"
 
-#: radiostations/radiostation-config.cpp:132
+#: radiostations/radiostation-config.cpp:122
 #, kde-format
 msgid "Decoder Class:"
 msgstr "Klasa dekodera"
 
-#: radiostations/radiostation-config.cpp:136
+#: radiostations/radiostation-config.cpp:126
 #, kde-format
 msgid "Playlist Class:"
 msgstr "Klasa plejliste"
 
-#: radiostations/radiostation-config.cpp:141
+#: radiostations/radiostation-config.cpp:131
 #, kde-format
 msgctxt "Stream Format"
 msgid "<autodetect>"
 msgstr "<autodetekcija>"
 
-#: radiostations/radiostation-config.cpp:142
+#: radiostations/radiostation-config.cpp:132
 #, fuzzy, kde-format
 msgctxt "Stream Format"
 msgid "MP3"
 msgstr "MP3"
 
-#: radiostations/radiostation-config.cpp:143
+#: radiostations/radiostation-config.cpp:133
 #, fuzzy, kde-format
 msgctxt "Stream Format"
 msgid "ACC/ACCP"
 msgstr "ACC/ACCP"
 
-#: radiostations/radiostation-config.cpp:144
+#: radiostations/radiostation-config.cpp:134
 #, fuzzy, kde-format
 msgctxt "Stream Format"
 msgid "ASF"
 msgstr "ASF"
 
 #. i18nc("Stream Format", "ASF Stream"),      QVariant("asf_stream"));
-#: radiostations/radiostation-config.cpp:146
+#: radiostations/radiostation-config.cpp:136
 #, fuzzy, kde-format
 msgctxt "Stream Format"
 msgid "Ogg/Vorbis"
 msgstr "OGG/Vorbis"
 
-#: radiostations/radiostation-config.cpp:149
+#: radiostations/radiostation-config.cpp:139
 #, kde-format
 msgctxt "Playlist Format"
 msgid "<autodetect>"
 msgstr "<autodetekcija>"
 
-#: radiostations/radiostation-config.cpp:150
+#: radiostations/radiostation-config.cpp:140
 #, fuzzy, kde-format
 msgctxt "Playlist Format"
 msgid "<none>"
 msgstr "<nijedan>"
 
-#: radiostations/radiostation-config.cpp:151
+#: radiostations/radiostation-config.cpp:141
 #, fuzzy, kde-format
 msgctxt "Playlist Format"
 msgid "ASX"
 msgstr "ASX"
 
-#: radiostations/radiostation-config.cpp:152
+#: radiostations/radiostation-config.cpp:142
 #, fuzzy, kde-format
 msgctxt "Playlist Format"
 msgid "LSC"
 msgstr "LSC"
 
-#: radiostations/radiostation-config.cpp:153
+#: radiostations/radiostation-config.cpp:143
 #, fuzzy, kde-format
 msgctxt "Playlist Format"
 msgid "M3U"
 msgstr "M3U"
 
-#: radiostations/radiostation-config.cpp:154
+#: radiostations/radiostation-config.cpp:144
 #, fuzzy, kde-format
 msgctxt "Playlist Format"
 msgid "PLS"
 msgstr "PLS"
 
-#: radiostations/radiostation-config.cpp:155
+#: radiostations/radiostation-config.cpp:145
+#, kde-format
+msgctxt "Playlist Format"
+msgid "XSPF"
+msgstr ""
+
+#: radiostations/radiostation-config.cpp:146
 #, fuzzy, kde-format
 msgctxt "Playlist Format"
 msgid "WMV"
 msgstr "WMV"
 
-#: radiostations/radiostation-config.cpp:158
+#: radiostations/radiostation-config.cpp:149
 #, kde-format
 msgid "Meta-Data Stream Encoding:"
 msgstr "Meta-podatak Strim Enkoding:"
 
-#: radiostations/radiostation-config.cpp:240
+#: radiostations/radiostation-config.cpp:231
 #, kde-format
 msgid "auto"
 msgstr "auto"
@@ -167,10 +173,7 @@ msgstr "Ikona"
 msgid "Station"
 msgstr "Stanica"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:225
-#. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
 #: radiostations/radiostation-listview.cpp:144
-#: src/pluginmanager-configuration.cpp:57 rc.cpp:44
 #, kde-format
 msgid "Description"
 msgstr "Opis"
@@ -185,13 +188,13 @@ msgstr "AM/FM Radio Stanica"
 msgid "Internet Radio Station"
 msgstr "Internet Radio Stanica"
 
-#: radiostations/radiostation.h:157
+#: radiostations/radiostation.h:156
 #, fuzzy, kde-format
 msgctxt "Unknown station long name"
 msgid "unknown"
 msgstr "nepoznat"
 
-#: radiostations/radiostation.h:158
+#: radiostations/radiostation.h:157
 #, fuzzy, kde-format
 msgctxt "Unknown station description"
 msgid "unknown"
@@ -222,34 +225,34 @@ msgstr "FileRingBuffer::addData: ne mogu pisati podatke u fajlu %1."
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: ne mogu čitati podatke u fajlu %1."
 
-#: src/kradioapp.cpp:122
+#: src/instancemanager.cpp:120
 #, fuzzy, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Biblioteka %1: Priključak ulazne tačke nedostaje\n"
 
-#: src/kradioapp.cpp:123 src/kradioapp.cpp:130
+#: src/instancemanager.cpp:121 src/instancemanager.cpp:128
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Priključak biblioteke učitava grešku"
 
-#: src/kradioapp.cpp:129
+#: src/instancemanager.cpp:127
 #, fuzzy, kde-format
 msgid ""
 "Library %1:\n"
 "%2"
 msgstr "Biblioteka %1: %2"
 
-#: src/kradioapp.cpp:206
+#: src/instancemanager.cpp:203
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr "Novi priključak pronadjen. Treba li biblioteka biti učitana sada?"
 
-#: src/kradioapp.cpp:208
+#: src/instancemanager.cpp:205
 #, fuzzy, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Nova biblioteka priključka pronadjena"
 
-#: src/kradioapp.cpp:224
+#: src/instancemanager.cpp:221
 #, fuzzy, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -266,47 +269,47 @@ msgstr[1] ""
 "Pronadjeno samo %1 biblioteke. Očekivani minimum je 5. Molimo proverite "
 "KRadio4 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.\n"
 
-#: src/kradioapp.cpp:232
+#: src/instancemanager.cpp:229
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "KRadio4 instalaciona greška"
 
-#: src/kradioapp.cpp:257
+#: src/instancemanager.cpp:254
 #, fuzzy, kde-format
 msgid "Instance %1"
 msgstr "Primer"
 
-#: src/kradioapp.cpp:278
+#: src/instancemanager.cpp:275
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "KRadio konfiguracija"
 
-#: src/kradioapp.cpp:279
+#: src/instancemanager.cpp:276
 #, kde-format
 msgid "About KRadio Components"
 msgstr "O KRadio komponentama"
 
-#: src/main.cpp:34
+#: src/main.cpp:33
 #, kde-format
 msgid "KRadio4"
 msgstr "KRadio4"
 
-#: src/main.cpp:36
+#: src/main.cpp:35
 #, kde-format
 msgid "A versatile KDE AM/FM/Internet radio application"
 msgstr "Višenamenski KDE AM/FM internet radio program"
 
-#: src/main.cpp:38
+#: src/main.cpp:37
 #, kde-format
 msgid "(c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
 msgstr "c) 2002-2009 Martin Witte, Klas Kalass, Frank Schwanz"
 
-#: src/main.cpp:43
+#: src/main.cpp:42
 #, kde-format
 msgid "Ernst Martin Witte"
 msgstr "Ernst Martin Witte"
 
-#: src/main.cpp:43
+#: src/main.cpp:42
 #, fuzzy, kde-format
 msgid ""
 "KDE4 port, RDS support, shortcuts, PVR support, rewrite for 1.0/0.3.0, "
@@ -315,42 +318,42 @@ msgstr ""
 "KDE4 port, RDS podrška, prečice, PVR podrška, napisan za 1.0/0.3.0, "
 "snimanje, lirc podrška, alarmi, ostalo"
 
-#: src/main.cpp:44
+#: src/main.cpp:43
 #, kde-format
 msgid "Pino Toscano"
 msgstr ""
 
-#: src/main.cpp:44
+#: src/main.cpp:43
 #, fuzzy, kde-format
 msgid "MPRIS plugin, buildsystem, standards conformance, cleanups"
 msgstr "Izgradnja sistema, standardizacija, čišćenje koda"
 
-#: src/main.cpp:45
+#: src/main.cpp:44
 #, kde-format
 msgid "Marcus Camen"
 msgstr "Marcus Camen"
 
-#: src/main.cpp:45
+#: src/main.cpp:44
 #, fuzzy, kde-format
 msgid "Buildsystem, standards conformance, cleanups"
 msgstr "Izgradnja sistema, standardizacija, čišćenje koda"
 
-#: src/main.cpp:46
+#: src/main.cpp:45
 #, kde-format
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: src/main.cpp:46
+#: src/main.cpp:45
 #, kde-format
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: src/main.cpp:47
+#: src/main.cpp:46
 #, kde-format
 msgid "Frank Schwanz"
 msgstr "Frank Schwanz"
 
-#: src/main.cpp:47
+#: src/main.cpp:46
 #, fuzzy, kde-format
 msgid "Initial idea, first basic KDE 2 application"
 msgstr "Početna ideja, prva osnovna KDE 2 aplikacija"
@@ -365,95 +368,93 @@ msgstr "Bafer prelivanje.␣"
 msgid "Configuration Dialog"
 msgstr "Konfiguracioni dijalog"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:220
-#. i18n: ectx: property (text), widget (QTreeWidget, listPluginClasses)
-#: src/pluginmanager-configuration.cpp:55 rc.cpp:41
-#, kde-format
-msgid "Plugin Class"
-msgstr "Klasa priključka"
-
-#: src/pluginmanager-configuration.cpp:56
-#, kde-format
-msgid "Instance Name"
-msgstr "Ime primera"
-
-#: src/pluginmanager-configuration.cpp:238
+#: src/pluginmanager-configuration.cpp:204
 #, kde-format
 msgid "Enter Plugin Instance Name"
 msgstr "Unesite ime priključka"
 
-#: src/pluginmanager-configuration.cpp:239
+#: src/pluginmanager-configuration.cpp:205
 #, fuzzy, kde-format
 msgid "Instance name:"
 msgstr "Ime primera"
 
-#: src/pluginmanager.cpp:435
+#: src/pluginmanager.cpp:455
 #, kde-format
 msgid "Plugins"
 msgstr "Priključci"
 
-#: src/pluginmanager.cpp:436
+#: src/pluginmanager.cpp:456
 #, kde-format
 msgid "Plugin Library Configuration"
 msgstr "Konfiguracija biblioteke priključka"
 
-#: src/pluginmanager.cpp:568
+#: src/pluginmanager.cpp:588
 #, kde-format
 msgid "Starting Plugins"
 msgstr "Pokretanje priključka"
 
-#: src/pluginmanager.cpp:585 src/pluginmanager.cpp:619
+#: src/pluginmanager.cpp:605 src/pluginmanager.cpp:639
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Kreiranje priključka %1"
 
-#: src/pluginmanager.cpp:603
+#: src/pluginmanager.cpp:623
 #, kde-format
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
 msgstr "Novi priključci pronadjeni. Da li želite odmah kreirati primer?"
 
-#: src/pluginmanager.cpp:605
+#: src/pluginmanager.cpp:625
 #, fuzzy, kde-format
 msgid "New Plugins Found"
 msgstr "Novi priključci pronadjeni"
 
-#: src/pluginmanager.cpp:640
+#: src/pluginmanager.cpp:660
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Pokretanje priključka %1"
 
-#: src/pluginmanager.cpp:765
+#: src/pluginmanager.cpp:785
 #, fuzzy, kde-format
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Pokaži sve"
 
-#: src/pluginmanager.cpp:766
+#: src/pluginmanager.cpp:786
 #, fuzzy, kde-format
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Sakrij sve"
 
-#: src/pluginmanager.cpp:767
+#: src/pluginmanager.cpp:787
 #, fuzzy, kde-format
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Obnovi sve"
 
-#: src/pluginmanager.cpp:768
+#: src/pluginmanager.cpp:788
 #, fuzzy, kde-format
 msgid "Restore state before last hide-all activation"
 msgstr "Obnovi stanje pre poslednjeg skrivanja aktivacija"
+
+#: src/pluginsmodel.cpp:161
+#, kde-format
+msgid "<b>%1</b> (no instances)<br />%2"
+msgstr ""
+
+#: src/pluginsmodel.cpp:164
+#, kde-format
+msgid "<b>%2</b> (%1 instance)<br />%3"
+msgid_plural "<b>%2</b> (%1 instances)<br />%3"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 #, kde-format
 msgid "&Start"
 msgstr "&Start"
 
-#. i18n: file: src/standardscandialog-ui.ui:58
-#. i18n: ectx: property (text), widget (QPushButton, buttonStartStop)
-#: src/standardscandialog.cpp:92 rc.cpp:68
+#: src/standardscandialog.cpp:92
 #, kde-format
 msgid "&Stop"
 msgstr "&Stop"
@@ -537,22 +538,22 @@ msgstr "Otvaranje fajla sa stanicom %1 pogrešno."
 msgid "Old Preset File Format detected"
 msgstr "Otkriven zastareli fajl sa stanicom"
 
-#: src/stationlist.cpp:320
+#: src/stationlist.cpp:323
 #, fuzzy, kde-format
 msgid "error writing to temporary file %1"
 msgstr "greška kod upisivanja u privremeni fajl %1"
 
-#: src/stationlist.cpp:323
+#: src/stationlist.cpp:326
 #, kde-format
 msgid "Writing station preset file %1 failed."
 msgstr "Upisivanje fajla sa stanicom %1 pogrešno."
 
-#: src/stationlist.cpp:333
+#: src/stationlist.cpp:336
 #, kde-format
 msgid "uploading preset file %1: "
 msgstr "otpremanje fajla sa stanicom %1:␣"
 
-#: src/stationlist.cpp:335
+#: src/stationlist.cpp:338
 #, kde-format
 msgid ""
 "something strange happened, station list has only %1 entries. Writing "
@@ -561,17 +562,17 @@ msgstr ""
 "nešto nepoznato se dogodilo, lista stanica ima samo %1 stavki. Upisivanje "
 "fajla sa stanicama je preskočeno"
 
-#: src/stationlist.cpp:340
+#: src/stationlist.cpp:343
 #, kde-format
 msgid "error uploading preset file %1"
 msgstr "greška kod otpremanja fajla sa stanicom %1"
 
-#: src/stationlist.cpp:344
+#: src/stationlist.cpp:347
 #, kde-format
 msgid "Upload of station preset file to %1 failed."
 msgstr "Otpremanje fajla sa stanicom %1 pogrešno."
 
-#: src/stationlist.cpp:351 src/stationlist.cpp:352
+#: src/stationlist.cpp:354 src/stationlist.cpp:355
 #, fuzzy, kde-format
 msgid "error creating temporary file"
 msgstr "greška kod kreiranja privremenog fajla"
@@ -616,12 +617,12 @@ msgstr "nepoznata osobina %1 za klasu %2"
 msgid "characters ignored for element %1"
 msgstr "karakteri ignorisani za element %1"
 
-#: src/widgetpluginbase.cpp:289
+#: src/widgetpluginbase.cpp:285
 #, kde-format
 msgid "Show %1"
 msgstr "Pokaži %1"
 
-#: src/widgetpluginbase.cpp:293
+#: src/widgetpluginbase.cpp:289
 #, kde-format
 msgid "Hide %1"
 msgstr "Sakrij %1"
@@ -676,87 +677,22 @@ msgstr "Pokaži progres bar tokom starta za pokretanje priključka"
 #. i18n: file: src/pluginmanager-configuration-ui.ui:114
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
 #: rc.cpp:20
-#, kde-format
-msgid "Plugin Libraries"
-msgstr "Biblioteka priključaka"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:123
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
-#: rc.cpp:23
-#, kde-format
-msgid ""
-"Select a plugin library from a file dialog. It will added to the library "
-"list if you press the \"Load Library\" button."
-msgstr ""
-"Selektuj biblioteku priključka preko fajl dijaloga. To će dodati listu "
-"biblioteke ako pritisnete dugme \"Učitaj biblioteku\"."
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:136
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
-#: rc.cpp:26
-#, kde-format
-msgid "Loads the library specified in the box left to this button."
-msgstr "Učitavanje biblioteke navedeno u polju levo od ovog dugmeta"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:155
-#. i18n: ectx: property (toolTip), widget (QListWidget, listPluginLibraries)
-#: rc.cpp:29
-#, kde-format
-msgid "list of loaded plugin libraries"
-msgstr "lista učitanih biblioteka za priključke"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:168
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
-#: rc.cpp:32
-#, kde-format
-msgid "Unload the plugin library selected in the list on the left side"
-msgstr "Ukloni biblioteku priključka selektovanu u listi na levoj strani"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:195
-#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
-#: rc.cpp:35
-#, kde-format
-msgid "Plugin Classes"
-msgstr "Klasa priključaka"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:210
-#. i18n: ectx: property (toolTip), widget (QTreeWidget, listPluginClasses)
-#: rc.cpp:38
-#, kde-format
-msgid "List of available plugin classes found in the plugin libraries"
-msgstr "Lista dostupnih klasa pronadjenih u biblioteci priključaka"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:239
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
-#: rc.cpp:47
-#, kde-format
-msgid "Create a new instance of plugin class selected in the list on the left"
-msgstr "Kreiraj novi primer priključka odabran u listi levo"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:266
-#. i18n: ectx: attribute (title), widget (QWidget, Seite_3)
-#: rc.cpp:50
-#, kde-format
-msgid "Plugin Instances"
+#, fuzzy, kde-format
+#| msgid "Plugin Instances"
+msgid "Classes && Instances"
 msgstr "Primeri priključaka"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:281
-#. i18n: ectx: property (toolTip), widget (QTreeView, listPluginInstances)
-#: rc.cpp:53
-#, kde-format
-msgid "List of the plugin instances currently running"
+#. i18n: file: src/pluginmanager-configuration-ui.ui:129
+#. i18n: ectx: property (toolTip), widget (QTreeView, listPlugins)
+#: rc.cpp:23
+#, fuzzy, kde-format
+#| msgid "List of the plugin instances currently running"
+msgid "List of the plugin classes and their instances currently running"
 msgstr "Lista primera priključka trenutno pokrenuta"
 
-#. i18n: file: src/pluginmanager-configuration-ui.ui:300
-#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
-#: rc.cpp:56
-#, kde-format
-msgid "Removes/stops the plugin instance selected in the list on the left"
-msgstr "Ukloni/zaustavi primer priključka odabran u listi levo"
-
-#. i18n: file: src/pluginmanager-configuration-ui.ui:332
+#. i18n: file: src/pluginmanager-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:59
+#: rc.cpp:26
 #, kde-format
 msgid ""
 "<p>You can <b>rename</b> a plugin instance by double clicking on the "
@@ -766,51 +702,90 @@ msgid ""
 "sound cards and/or multiple ALSA plugin instances.</p>"
 msgstr ""
 
+#. i18n: file: src/pluginmanager-configuration-ui.ui:190
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnNewPluginInstance)
+#: rc.cpp:29
+#, kde-format
+msgid "Create a new instance of plugin class selected in the list on the left"
+msgstr "Kreiraj novi primer priključka odabran u listi levo"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:206
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemovePluginInstance)
+#: rc.cpp:32
+#, kde-format
+msgid "Removes/stops the plugin instance selected in the list on the left"
+msgstr "Ukloni/zaustavi primer priključka odabran u listi levo"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:217
+#. i18n: ectx: attribute (title), widget (QWidget, Seite_2)
+#: rc.cpp:35
+#, kde-format
+msgid "Plugin Libraries"
+msgstr "Biblioteka priključaka"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:226
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, editPluginLibrary)
+#: rc.cpp:38
+#, kde-format
+msgid ""
+"Select a plugin library from a file dialog. It will added to the library "
+"list if you press the \"Load Library\" button."
+msgstr ""
+"Selektuj biblioteku priključka preko fajl dijaloga. To će dodati listu "
+"biblioteke ako pritisnete dugme \"Učitaj biblioteku\"."
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:239
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnAddLibrary)
+#: rc.cpp:41
+#, kde-format
+msgid "Loads the library specified in the box left to this button."
+msgstr "Učitavanje biblioteke navedeno u polju levo od ovog dugmeta"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:258
+#. i18n: ectx: property (toolTip), widget (QListWidget, listPluginLibraries)
+#: rc.cpp:44
+#, kde-format
+msgid "list of loaded plugin libraries"
+msgstr "lista učitanih biblioteka za priključke"
+
+#. i18n: file: src/pluginmanager-configuration-ui.ui:271
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnRemoveLibrary)
+#: rc.cpp:47
+#, kde-format
+msgid "Unload the plugin library selected in the list on the left side"
+msgstr "Ukloni biblioteku priključka selektovanu u listi na levoj strani"
+
 #. i18n: file: src/standardscandialog-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, StandardScanDialogUI)
-#: rc.cpp:62
+#: rc.cpp:50
 #, fuzzy, kde-format
 msgid "Stations Search in Progress..."
 msgstr "Pretraga stanica u napretku..."
 
-#. i18n: file: src/standardscandialog-ui.ui:51
-#. i18n: ectx: property (text), widget (QPushButton, buttonOk)
-#: rc.cpp:65
-#, kde-format
-msgid "&Ok"
-msgstr "&Ok"
-
-#. i18n: file: src/standardscandialog-ui.ui:65
-#. i18n: ectx: property (text), widget (QPushButton, buttonDiscard)
-#: rc.cpp:71
-#, kde-format
-msgid "&Discard"
-msgstr "&Odbaciti"
-
-#. i18n: file: src/standardscandialog-ui.ui:92
+#. i18n: file: src/standardscandialog-ui.ui:35
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
-#: rc.cpp:74
+#: rc.cpp:53
 #, kde-format
 msgid "remaining time"
 msgstr "preostalo vreme"
 
-#. i18n: file: src/standardscandialog-ui.ui:108
+#. i18n: file: src/standardscandialog-ui.ui:51
 #. i18n: ectx: property (text), widget (QLabel, labelTime)
-#: rc.cpp:77
+#: rc.cpp:56
 #, kde-format
 msgid "<p align=\"right\">nothing here</p>"
 msgstr "<p align=\"right\">nothing here</p>"
 
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
-#: rc.cpp:80
+#: rc.cpp:59
 #, fuzzy, kde-format
 msgid "Selected stations:"
 msgstr "Izabrane stanice"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
-#: rc.cpp:83
+#: rc.cpp:62
 #, fuzzy, kde-format
 msgid "Available stations:"
 msgstr "Dostupne stanice"
@@ -819,6 +794,24 @@ msgstr "Dostupne stanice"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4 snimanje"
+
+#~ msgid "Plugin Class"
+#~ msgstr "Klasa priključka"
+
+#~ msgid "Instance Name"
+#~ msgstr "Ime primera"
+
+#~ msgid "Plugin Classes"
+#~ msgstr "Klasa priključaka"
+
+#~ msgid "List of available plugin classes found in the plugin libraries"
+#~ msgstr "Lista dostupnih klasa pronadjenih u biblioteci priključaka"
+
+#~ msgid "&Ok"
+#~ msgstr "&Ok"
+
+#~ msgid "&Discard"
+#~ msgstr "&Odbaciti"
 
 #~ msgid ""
 #~ "<qt>No information available.<br />The supplied KAboutData object does "

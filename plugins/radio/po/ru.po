@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2014-09-18 20:57+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,65 +21,65 @@ msgstr ""
 
 #. i18n: file: radio-configuration-ui.ui:316
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: radio-configuration.cpp:76 rc.cpp:48 rc.cpp:138
+#: radio-configuration.cpp:73 rc.cpp:48 rc.cpp:138
 #, kde-format
 msgid "unchanged"
 msgstr "оставлено"
 
-#: radio-configuration.cpp:79
+#: radio-configuration.cpp:76
 #, kde-format
 msgctxt "Sound mode"
 msgid "<do not care>"
 msgstr "<не важно>"
 
-#: radio-configuration.cpp:80
+#: radio-configuration.cpp:77
 #, kde-format
 msgctxt "Sound mode, monophonic"
 msgid "Mono"
 msgstr "Моно"
 
-#: radio-configuration.cpp:81
+#: radio-configuration.cpp:78
 #, kde-format
 msgctxt "Sound mode, stereophonic"
 msgid "Stereo"
 msgstr "Стерео"
 
-#: radio-configuration.cpp:84
+#: radio-configuration.cpp:81
 #, kde-format
 msgid "Load and replace presets"
 msgstr "Загрузить и заменить установки"
 
-#: radio-configuration.cpp:85
+#: radio-configuration.cpp:82
 #, kde-format
 msgid "Load and add presets"
 msgstr "Загрузить и добавить установки"
 
-#: radio-configuration.cpp:426
+#: radio-configuration.cpp:423
 #, kde-format
 msgid "Image Selection"
 msgstr "Выбор картинки"
 
-#: radio-configuration.cpp:431
+#: radio-configuration.cpp:428
 #, kde-format
 msgid "ignoring non-local image"
 msgstr "Пропускать не локальные файлы"
 
-#: radio-configuration.cpp:548 radio-configuration.cpp:576
+#: radio-configuration.cpp:544 radio-configuration.cpp:566
 #, kde-format
 msgid "KRadio Preset Files"
 msgstr "Файлы KRadio"
 
-#: radio-configuration.cpp:552
+#: radio-configuration.cpp:544
 #, kde-format
 msgid "Select Preset File"
 msgstr "Выбор файла радиостанций"
 
-#: radio-configuration.cpp:580
+#: radio-configuration.cpp:566
 #, kde-format
 msgid "Save Preset File"
 msgstr "Сохранить файл радиостанций"
 
-#: radio-configuration.cpp:626
+#: radio-configuration.cpp:612
 #, kde-format
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
@@ -87,7 +87,7 @@ msgstr[0] "найдено %1 новая станция"
 msgstr[1] "найдено %1 новые станции"
 msgstr[2] "найдено %1 новых станций"
 
-#: radio-configuration.cpp:628
+#: radio-configuration.cpp:614
 #, kde-format
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"
@@ -95,52 +95,52 @@ msgstr[0] "всего сейчас %1 станция"
 msgstr[1] "всего сейчас %1 станции"
 msgstr[2] "всего сейчас %1 станций"
 
-#: radio.cpp:39
+#: radio.cpp:41
 #, fuzzy, kde-format
 #| msgid "Central Radio Device Multiplexer"
 msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
 msgstr "Главный мультиплексор устройства радио"
 
-#: radio.cpp:41
+#: radio.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: radio.cpp:45
+#: radio.cpp:47
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: radio.cpp:46
+#: radio.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: radio.cpp:55
+#: radio.cpp:57
 #, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Модуль мультиплексирования для KRadio"
 
-#: radio.cpp:148
+#: radio.cpp:152
 #, kde-format
 msgid "Radio Stations"
 msgstr "Радиостанции"
 
-#: radio.cpp:149
+#: radio.cpp:153
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Настройка радиостанции"
 
-#: radio.cpp:190
+#: radio.cpp:194
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
 msgstr "Не могу найти модуль для радиостанции %1"
 
-#: radio.cpp:385
+#: radio.cpp:389
 #, kde-format
 msgctxt "Unknown description"
 msgid "unknown"

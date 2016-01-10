@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-25 15:46+0100\n"
+"POT-Creation-Date: 2016-01-11 00:34+0100\n"
 "PO-Revision-Date: 2012-08-14 15:55+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -20,65 +20,65 @@ msgstr ""
 
 #. i18n: file: radio-configuration-ui.ui:316
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: radio-configuration.cpp:76 rc.cpp:48 rc.cpp:138
+#: radio-configuration.cpp:73 rc.cpp:48 rc.cpp:138
 #, kde-format
 msgid "unchanged"
 msgstr "nezmenené"
 
-#: radio-configuration.cpp:79
+#: radio-configuration.cpp:76
 #, fuzzy, kde-format
 msgctxt "Sound mode"
 msgid "<do not care>"
 msgstr "<nestarať sa>"
 
-#: radio-configuration.cpp:80
+#: radio-configuration.cpp:77
 #, fuzzy, kde-format
 msgctxt "Sound mode, monophonic"
 msgid "Mono"
 msgstr "Mono"
 
-#: radio-configuration.cpp:81
+#: radio-configuration.cpp:78
 #, fuzzy, kde-format
 msgctxt "Sound mode, stereophonic"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: radio-configuration.cpp:84
+#: radio-configuration.cpp:81
 #, fuzzy, kde-format
 msgid "Load and replace presets"
 msgstr "načítať + nahradiť predvoľby"
 
-#: radio-configuration.cpp:85
+#: radio-configuration.cpp:82
 #, fuzzy, kde-format
 msgid "Load and add presets"
 msgstr "načítať + pridať predvoľby"
 
-#: radio-configuration.cpp:426
+#: radio-configuration.cpp:423
 #, kde-format
 msgid "Image Selection"
 msgstr "Výber obrázka"
 
-#: radio-configuration.cpp:431
+#: radio-configuration.cpp:428
 #, kde-format
 msgid "ignoring non-local image"
 msgstr "ignorujem nemiestny obrázok"
 
-#: radio-configuration.cpp:548 radio-configuration.cpp:576
+#: radio-configuration.cpp:544 radio-configuration.cpp:566
 #, kde-format
 msgid "KRadio Preset Files"
 msgstr "Súbory predvolieb KRadio"
 
-#: radio-configuration.cpp:552
+#: radio-configuration.cpp:544
 #, kde-format
 msgid "Select Preset File"
 msgstr "Vybrať súbor predvolieb"
 
-#: radio-configuration.cpp:580
+#: radio-configuration.cpp:566
 #, fuzzy, kde-format
 msgid "Save Preset File"
 msgstr "Uložiť súbor predvolieb"
 
-#: radio-configuration.cpp:626
+#: radio-configuration.cpp:612
 #, fuzzy, kde-format
 msgid "found %1 new station"
 msgid_plural "found %1 new stations"
@@ -86,7 +86,7 @@ msgstr[0] "nájdených %1 nových staníc"
 msgstr[1] "nájdených %1 nových staníc"
 msgstr[2] "nájdených %1 nových staníc"
 
-#: radio-configuration.cpp:628
+#: radio-configuration.cpp:614
 #, fuzzy, kde-format
 msgid "have now %1 station"
 msgid_plural "have now %1 stations"
@@ -94,52 +94,52 @@ msgstr[0] "teraz máme %1 staníc"
 msgstr[1] "teraz máme %1 staníc"
 msgstr[2] "teraz máme %1 staníc"
 
-#: radio.cpp:39
+#: radio.cpp:41
 #, fuzzy, kde-format
 #| msgid "Central Radio Device Multiplexer"
 msgctxt "@title"
 msgid "Central Radio Device Multiplexer"
 msgstr "Multiplexor centrálneho zariadenia rádia"
 
-#: radio.cpp:41
+#: radio.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: radio.cpp:45
+#: radio.cpp:47
 #, kde-format
 msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: radio.cpp:46
+#: radio.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: radio.cpp:55
+#: radio.cpp:57
 #, kde-format
 msgid "Radio Multiplexer Plugin"
 msgstr "Plugin Rádio multiplexor"
 
-#: radio.cpp:148
+#: radio.cpp:152
 #, kde-format
 msgid "Radio Stations"
 msgstr "Rádio stanice"
 
-#: radio.cpp:149
+#: radio.cpp:153
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Nastaviť rádio stanice"
 
-#: radio.cpp:190
+#: radio.cpp:194
 #, kde-format
 msgid "Could not find a plugin for radio station %1"
 msgstr "Nemôžem nájsť plugin pre rádio stanicu %1"
 
-#: radio.cpp:385
+#: radio.cpp:389
 #, fuzzy, kde-format
 msgctxt "Unknown description"
 msgid "unknown"
