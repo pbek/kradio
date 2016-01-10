@@ -26,6 +26,7 @@
 #include <QDateTime>
 #include <QDialog>
 
+class QPushButton;
 class Ui_StandardScanDialogUI;
 
 class KDE_EXPORT StandardScanDialog : public QDialog,
@@ -92,6 +93,7 @@ protected:
     bool          m_ignorePower;
 
     Ui_StandardScanDialogUI *m_ui;
+    QPushButton             *m_buttonStartStop;
 
     QTimer        m_Wait4RDSTimeout;
     bool          m_waiting4RDS;

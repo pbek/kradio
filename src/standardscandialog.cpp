@@ -43,10 +43,10 @@ StandardScanDialog::StandardScanDialog(QWidget *parent)
 
     m_ui = new Ui_StandardScanDialogUI();
     m_ui->setupUi(this);
-    m_ui->buttonStartStop->setText(i18n("&Start"));
-    QObject::connect(m_ui->buttonOk,        SIGNAL(clicked()), this, SLOT(slotOk()));
-    QObject::connect(m_ui->buttonStartStop, SIGNAL(clicked()), this, SLOT(slotStartStop()));
-    QObject::connect(m_ui->buttonDiscard,   SIGNAL(clicked()), this, SLOT(slotDiscard()));
+    m_buttonStartStop = m_ui->buttons->addButton(i18n("&Start"), QDialogButtonBox::ActionRole);
+    QObject::connect(m_ui->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(slotOk()));
+    QObject::connect(m_buttonStartStop, SIGNAL(clicked()), this, SLOT(slotStartStop()));
+    QObject::connect(m_ui->buttons->button(QDialogButtonBox::Discard), SIGNAL(clicked()), this, SLOT(slotDiscard()));
 }
 
 
@@ -89,9 +89,9 @@ void StandardScanDialog::start()
         sendPowerOn();
         m_ignorePower = false;
         sendStartSeekUp();
-        m_ui->buttonStartStop->setText(i18n("&Stop"));
-        m_ui->buttonOk       ->hide();
-        m_ui->buttonDiscard  ->hide();
+        m_buttonStartStop->setText(i18n("&Stop"));
+        m_ui->buttons->button(QDialogButtonBox::Ok)->hide();
+        m_ui->buttons->button(QDialogButtonBox::Discard)->hide();
     }
 }
 
@@ -106,9 +106,9 @@ void StandardScanDialog::stop()
         sendActivateStation(*m_oldStation);
         delete m_oldStation;
         m_oldStation = NULL;
-        m_ui->buttonStartStop->setText(i18n("&Start"));
-        m_ui->buttonOk       ->show();
-        m_ui->buttonDiscard  ->show();
+        m_buttonStartStop->setText(i18n("&Start"));
+        m_ui->buttons->button(QDialogButtonBox::Ok)->show();
+        m_ui->buttons->button(QDialogButtonBox::Discard)->show();
     }
 }
 
