@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2016-01-11 00:34+0100\n"
-"PO-Revision-Date: 2015-12-25 15:59+0100\n"
+"PO-Revision-Date: 2016-01-16 13:39+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -235,13 +235,12 @@ msgstr ""
 #: playlist_handler.cpp:537
 #, kde-format
 msgid "error while reading asx file: %1"
-msgstr "durante la lettura del file asx: %1"
+msgstr "errore durante la lettura del file asx: %1"
 
 #: playlist_handler.cpp:589
-#, fuzzy, kde-format
-#| msgid "error while reading asx file: %1"
+#, kde-format
 msgid "error while reading XSPF file: %1"
-msgstr "durante la lettura del file asx: %1"
+msgstr "errore durante la lettura del file XSPF: %1"
 
 #. i18n: file: internetradio-configuration-ui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)

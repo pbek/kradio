@@ -1,16 +1,16 @@
 # Italian translation for kradio.
-# Copyright (C) 2011 This_file_is_part_of_KDE
+# Copyright (C) 2011-2016 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kradio package.
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2016-01-11 00:34+0100\n"
-"PO-Revision-Date: 2015-12-25 16:02+0100\n"
+"PO-Revision-Date: 2016-01-16 15:47+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -102,6 +102,12 @@ msgid ""
 "<b>%H</b>: 2-digit hour, <b>%M</b>: 2-digit minute, <b>%S</b>: 2-digit "
 "second, <b>%%</b>: literal %</i></p>"
 msgstr ""
+"<p style=\"font-size: 9pt;\"><i>Modelli di registrazione: <b>%s</b>: nome "
+"della stazione, <b>%i</b>: indice della stazione, <b>%Y</b>: anno a quattro "
+"cifre, <b>%m</b>: mese a due cifre, <b>%d</b>: giorno a due cifre, <b>%B</"
+"b>: nome del mese, <b>%A</b>: nome del giorno, <b>%H</b>: ora a due cifre, "
+"<b>%M</b>: minuto a due cifre, <b>%S</b>: secondo a due cifre, <b>%%</b>: "
+"simbolo «%»</i></p>"
 
 #. i18n: file: recording-configuration-ui.ui:73
 #. i18n: ectx: property (text), widget (QLabel, lableID3Title)

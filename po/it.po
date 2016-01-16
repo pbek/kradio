@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2016-01-11 00:34+0100\n"
-"PO-Revision-Date: 2014-03-03 01:58+0100\n"
+"PO-Revision-Date: 2016-01-16 13:39+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -700,18 +700,18 @@ msgstr ""
 #. i18n: file: src/pluginmanager-configuration-ui.ui:114
 #. i18n: ectx: attribute (title), widget (QWidget, Seite)
 #: rc.cpp:20
-#, fuzzy, kde-format
-#| msgid "Plugin Instances"
+#, kde-format
 msgid "Classes && Instances"
-msgstr "Istanze delle estensioni"
+msgstr "Classi ed instanze"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:129
 #. i18n: ectx: property (toolTip), widget (QTreeView, listPlugins)
 #: rc.cpp:23
-#, fuzzy, kde-format
-#| msgid "List of the plugin instances currently running"
+#, kde-format
 msgid "List of the plugin classes and their instances currently running"
-msgstr "Elenco delle istanze delle estensioni attualmente in esecuzione"
+msgstr ""
+"Elenco delle classi delle estensioni e delle relative istanze attualmente "
+"in esecuzione"
 
 #. i18n: file: src/pluginmanager-configuration-ui.ui:164
 #. i18n: ectx: property (text), widget (QLabel, label)
