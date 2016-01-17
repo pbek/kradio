@@ -177,11 +177,13 @@ sub analyze_po
         } else {
             $res{total}++;
             if (defined($entry->msgstr_n())) {
+                my %msgstr = %{$entry->msgstr_n()};
+                my $size = keys %msgstr;
                 my $count = 0;
-                foreach my $str(%{$entry->msgstr_n()}){
+                foreach my $str(%msgstr){
                     $count++ if $str eq '""';
                 }
-                $res{untranslated}++ if $count eq scalar($entry->msgstr_n());
+                $res{untranslated}++ if $count eq $size;
             } else {
                 $res{untranslated}++ if $entry->msgstr() eq '""';
             }
