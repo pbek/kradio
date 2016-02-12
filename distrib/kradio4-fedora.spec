@@ -90,7 +90,6 @@ cp -R %{_builddir}/%{name}-%{rel}/html/* \
 Type=Application
 Exec=%{name} -caption "%c" %i %m  
 Icon=%{name}.png
-X-DocPath=%{name}/index.html
 Comment=V4L/V4L2-Radio Application for KDE4
 Terminal=false
 Name=%{name}
