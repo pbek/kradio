@@ -88,7 +88,7 @@ cp -R %{_builddir}/%{name}-%{rel}/html/* \
 %{__cat} << EOF > %{buildroot}%{_datadir}/applications/kde4/%{name}.desktop
 [Desktop Entry]
 Type=Application
-Exec=%{name} -caption "%c" %i %m  
+Exec=%{name} -caption %c %i %m
 Icon=%{name}.png
 Comment=V4L/V4L2-Radio Application for KDE4
 Terminal=false

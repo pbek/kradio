@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=kradio4
-Exec=kradio4 -caption "%c"
+Exec=kradio4 -caption %c
 Icon=kradio4
 Comment=V4L/V4L2-Radio Application for KDE4
 Terminal=false
