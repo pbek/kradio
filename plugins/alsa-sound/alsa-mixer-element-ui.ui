@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>118</width>
-    <height>140</height>
+    <width>129</width>
+    <height>142</height>
    </rect>
   </property>
   <layout class="QVBoxLayout">
@@ -207,7 +207,7 @@
       <bool>true</bool>
      </property>
      <property name="text">
-      <string>MixerName</string>
+      <string notr="true">MixerName</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

@@ -35,7 +35,7 @@
    <item row="7" column="0" colspan="3">
     <widget class="QLabel" name="m_LabelHints">
      <property name="text">
-      <string>textLabel1</string>
+      <string notr="true">textLabel1</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>

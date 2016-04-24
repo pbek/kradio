@@ -10,9 +10,6 @@
     <height>318</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>SetupDialogGeneral</string>
-  </property>
   <layout class="QGridLayout">
    <property name="margin">
     <number>0</number>
@@ -164,11 +161,6 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <item>
-        <property name="text">
-         <string>test</string>
-        </property>
-       </item>
       </widget>
      </item>
      <item row="1" column="0">

@@ -70,7 +70,6 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     buttonLoadPresets     ->setIcon(KIcon("document-open"));
     buttonStorePresets    ->setIcon(KIcon("document-save-as"));
     buttonSelectPixmapFile->setIcon(KIcon("document-open"));
-    editVolumePreset      ->setSpecialValueText(i18n("unchanged"));
 
     comboStereoMode->clear();
     comboStereoMode->addItem(i18nc("Sound mode", "<do not care>"),        (int)STATION_STEREO_DONTCARE);

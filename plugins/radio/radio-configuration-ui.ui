@@ -284,21 +284,6 @@
              <property name="toolTip">
               <string>&lt;p&gt;Select if you want to force the tuner to stereo/mono mode. &lt;i&gt;Please be aware, that some drivers might ignore this flag without saying they will ignore it.&lt;/i&gt;&lt;/p&gt;</string>
              </property>
-             <item>
-              <property name="text">
-               <string>&lt;do not care&gt;</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Mono</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Stereo</string>
-              </property>
-             </item>
             </widget>
            </item>
            <item row="1" column="1">
@@ -313,7 +298,7 @@
               <string>The volume that is used when the station is tuned</string>
              </property>
              <property name="specialValueText">
-              <string>unchanged</string>
+              <string comment="unchanged volume">unchanged</string>
              </property>
              <property name="suffix">
               <string> %</string>
@@ -575,21 +560,6 @@
  <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
   <customwidget>
-   <class>KUrlRequester</class>
-   <extends>QFrame</extends>
-   <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KUrlLabel</class>
-   <extends>QLabel</extends>
-   <header>kurllabel.h</header>
-  </customwidget>
-  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
@@ -598,6 +568,21 @@
    <class>KSeparator</class>
    <extends>QFrame</extends>
    <header>kseparator.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlLabel</class>
+   <extends>QLabel</extends>
+   <header>kurllabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
   </customwidget>
   <customwidget>
    <class>RadioStationListView</class>

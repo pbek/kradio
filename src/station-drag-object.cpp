@@ -19,7 +19,6 @@
 #include "errorlog_interfaces.h"
 #include <QDataStream>
 #include <QMimeData>
-#include <klocalizedstring.h>
 
 #define STATION_LIST_MIME_TYPE "multimedia/kradio-stationids"
 
@@ -37,7 +36,7 @@ bool StationDragObject::canDecode(const QMimeData *data)
     IErrorLogClient::staticLogDebug(data->data(STATION_LIST_MIME_TYPE));
     bool retval = (data && data->hasFormat(STATION_LIST_MIME_TYPE));
     if (retval)
-        IErrorLogClient::staticLogDebug(i18n("canDecode = true"));
+        IErrorLogClient::staticLogDebug("canDecode = true");
     return retval;
 }
 

@@ -162,10 +162,10 @@ bool StandardScanDialog::noticeProgress (float f)
         if (ms > 0 && ms < 86400000)   // max one day
             m_ui->labelTime->setText(i18n("<p align=\"right\">%1</p>", QTime(0,0).addMSecs(ms).toString()));
         else
-            m_ui->labelTime->setText(i18n("unknown"));
+            m_ui->labelTime->setText(i18nc("unknown remaining time", "unknown"));
 
     } else {
-        m_ui->labelTime->setText(i18n("unknown"));
+        m_ui->labelTime->setText(i18nc("unknown remaining time", "unknown"));
     }
     return true;
 }

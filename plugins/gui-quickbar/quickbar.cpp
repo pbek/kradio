@@ -360,9 +360,9 @@ void QuickBar::dragEnterEvent(QDragEnterEvent* event)
 {
     bool a = StationDragObject::canDecode(event->mimeData());
     if (a)
-        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent accepted"));
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent accepted");
     else
-        IErrorLogClient::staticLogDebug(i18n("contentsDragEnterEvent rejected"));
+        IErrorLogClient::staticLogDebug("contentsDragEnterEvent rejected");
     event->accept();
 }
 
