@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2015-12-25 16:14+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -75,16 +75,6 @@ msgstr "Barra veloce di KRadio4, %1"
 msgid "KRadio4 Quickbar"
 msgstr "Barra veloce di KRadio4"
 
-#: quickbar.cpp:363
-#, kde-format
-msgid "contentsDragEnterEvent accepted"
-msgstr "contentsDragEnterEvent accettato"
-
-#: quickbar.cpp:365
-#, kde-format
-msgid "contentsDragEnterEvent rejected"
-msgstr "contentsDragEnterEvent rifiutato"
-
 #: rc.cpp:1
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -96,3 +86,9 @@ msgstr "Luigi Toscano,Giovanni Scafora"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
+
+#~ msgid "contentsDragEnterEvent accepted"
+#~ msgstr "contentsDragEnterEvent accettato"
+
+#~ msgid "contentsDragEnterEvent rejected"
+#~ msgstr "contentsDragEnterEvent rifiutato"

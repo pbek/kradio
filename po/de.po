@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2014-09-18 17:40+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -489,7 +489,9 @@ msgid "<p align=\"right\">%1</p>"
 msgstr "<p align=\"right\">%1</p>"
 
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "unknown"
+msgctxt "unknown remaining time"
 msgid "unknown"
 msgstr "unbekannt"
 
@@ -497,11 +499,6 @@ msgstr "unbekannt"
 #, kde-format
 msgid "new station %1"
 msgstr "neuer Sender  %1"
-
-#: src/station-drag-object.cpp:40
-#, kde-format
-msgid "canDecode = true"
-msgstr "canDecode = true"
 
 #: src/stationlist.cpp:134
 #, kde-format
@@ -798,27 +795,21 @@ msgstr "Sendersuchlauf läuft..."
 #. i18n: file: src/standardscandialog-ui.ui:35
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
 #: rc.cpp:53
-#, kde-format
-msgid "remaining time"
+#, fuzzy, kde-format
+#| msgid "remaining time"
+msgid "Remaining time:"
 msgstr "verbleibende Zeit"
-
-#. i18n: file: src/standardscandialog-ui.ui:51
-#. i18n: ectx: property (text), widget (QLabel, labelTime)
-#: rc.cpp:56
-#, kde-format
-msgid "<p align=\"right\">nothing here</p>"
-msgstr "<p align=\"right\">hier ist nix</p>"
 
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
-#: rc.cpp:59
+#: rc.cpp:56
 #, kde-format
 msgid "Selected stations:"
 msgstr "Ausgewählte Sender:"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
-#: rc.cpp:62
+#: rc.cpp:59
 #, kde-format
 msgid "Available stations:"
 msgstr "Verfügbare Sender:"
@@ -827,6 +818,12 @@ msgstr "Verfügbare Sender:"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4-Aufnahme"
+
+#~ msgid "canDecode = true"
+#~ msgstr "canDecode = true"
+
+#~ msgid "<p align=\"right\">nothing here</p>"
+#~ msgstr "<p align=\"right\">hier ist nix</p>"
 
 #~ msgid "Plugin Class"
 #~ msgstr "Plugin-Klasse"

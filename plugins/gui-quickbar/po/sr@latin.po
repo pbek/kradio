@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gui-quickbar (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -69,16 +69,6 @@ msgstr "KRadio4 pokretanje%1"
 msgid "KRadio4 Quickbar"
 msgstr "KRadio4 pokretanje%1"
 
-#: quickbar.cpp:363
-#, kde-format
-msgid "contentsDragEnterEvent accepted"
-msgstr "sadržaj PrevuciUnetiDogadjaj prihvaćen"
-
-#: quickbar.cpp:365
-#, kde-format
-msgid "contentsDragEnterEvent rejected"
-msgstr "sadržaj PrevuciUnetiDogadjaj odbijen"
-
 #: rc.cpp:1
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -90,3 +80,9 @@ msgstr "Goran Simović"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "simovic@mailup.net"
+
+#~ msgid "contentsDragEnterEvent accepted"
+#~ msgstr "sadržaj PrevuciUnetiDogadjaj prihvaćen"
+
+#~ msgid "contentsDragEnterEvent rejected"
+#~ msgstr "sadržaj PrevuciUnetiDogadjaj odbijen"

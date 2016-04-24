@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2014-09-18 21:14+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,126 +19,119 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#. i18n: file: v4lradio-configuration-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, V4LRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:143
-#, kde-format
-msgid "SetupDialogGeneral"
-msgstr "Основые параметры"
-
-#. i18n: file: v4lradio-configuration-ui.ui:27
+#. i18n: file: v4lradio-configuration-ui.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, V4LDevice)
-#: rc.cpp:6 rc.cpp:146
+#: rc.cpp:3 rc.cpp:137
 #, kde-format
 msgid "V4L Device"
 msgstr "Устройство V4L"
 
-#. i18n: file: v4lradio-configuration-ui.ui:36
+#. i18n: file: v4lradio-configuration-ui.ui:33
 #. i18n: ectx: property (text), widget (QLabel, labelScanStep)
-#: rc.cpp:9 rc.cpp:149
+#: rc.cpp:6 rc.cpp:140
 #, kde-format
 msgid "Station scan step:"
 msgstr "Шаг изменения частоты при поиске:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:56
+#. i18n: file: v4lradio-configuration-ui.ui:53
 #. i18n: ectx: property (text), widget (QLabel, labelSignalMinQuality)
-#: rc.cpp:12 rc.cpp:152
+#: rc.cpp:9 rc.cpp:143
 #, kde-format
 msgid "Minimum signal quality:"
 msgstr "Минимальный уровень сигнала:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:76
+#. i18n: file: v4lradio-configuration-ui.ui:73
 #. i18n: ectx: property (text), widget (QLabel, labelDescription)
-#: rc.cpp:15 rc.cpp:155
+#: rc.cpp:12 rc.cpp:146
 #, kde-format
 msgid "Unknown V4L device"
 msgstr "неизвестно"
 
-#. i18n: file: v4lradio-configuration-ui.ui:86
+#. i18n: file: v4lradio-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:18 rc.cpp:158
+#: rc.cpp:15 rc.cpp:149
 #, kde-format
 msgid "V4L version to use:"
 msgstr "Версия драйвера:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:93
+#. i18n: file: v4lradio-configuration-ui.ui:90
 #. i18n: ectx: property (text), widget (QLabel, labelRadioDevice)
-#: rc.cpp:21 rc.cpp:161
+#: rc.cpp:18 rc.cpp:152
 #, kde-format
 msgid "Radio device:"
 msgstr "Устройство радио:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:109
+#. i18n: file: v4lradio-configuration-ui.ui:106
 #. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
-#. i18n: file: v4lradio-configuration-ui.ui:168
+#. i18n: file: v4lradio-configuration-ui.ui:165
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
-#. i18n: file: v4lradio-configuration-ui.ui:225
+#. i18n: file: v4lradio-configuration-ui.ui:222
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
-#. i18n: file: v4lradio-configuration-ui.ui:109
+#. i18n: file: v4lradio-configuration-ui.ui:106
 #. i18n: ectx: property (suffix), widget (QSpinBox, editScanStep)
-#. i18n: file: v4lradio-configuration-ui.ui:168
+#. i18n: file: v4lradio-configuration-ui.ui:165
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMinFrequency)
-#. i18n: file: v4lradio-configuration-ui.ui:225
+#. i18n: file: v4lradio-configuration-ui.ui:222
 #. i18n: ectx: property (suffix), widget (QSpinBox, editMaxFrequency)
-#: rc.cpp:24 rc.cpp:30 rc.cpp:39 rc.cpp:164 rc.cpp:170 rc.cpp:179
+#: rc.cpp:21 rc.cpp:27 rc.cpp:36 rc.cpp:155 rc.cpp:161 rc.cpp:170
 #, kde-format
 msgid " kHz"
 msgstr " кГц"
 
-#. i18n: file: v4lradio-configuration-ui.ui:144
+#. i18n: file: v4lradio-configuration-ui.ui:141
 #. i18n: ectx: property (text), widget (QLabel, labelMinMaxFrequency)
-#: rc.cpp:27 rc.cpp:167
+#: rc.cpp:24 rc.cpp:158
 #, kde-format
 msgid "Allowed frequency range:"
 msgstr "Допустимый частотный диапазон:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:190
+#. i18n: file: v4lradio-configuration-ui.ui:187
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
-#. i18n: file: v4lradio-configuration-ui.ui:247
+#. i18n: file: v4lradio-configuration-ui.ui:244
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
-#. i18n: file: v4lradio-configuration-ui.ui:190
+#. i18n: file: v4lradio-configuration-ui.ui:187
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_3)
-#. i18n: file: v4lradio-configuration-ui.ui:247
+#. i18n: file: v4lradio-configuration-ui.ui:244
 #. i18n: ectx: property (text), widget (QLabel, labelFrequencyRange_4)
-#: rc.cpp:33 rc.cpp:42 rc.cpp:173 rc.cpp:182
+#: rc.cpp:30 rc.cpp:39 rc.cpp:164 rc.cpp:173
 #, kde-format
 msgid "to"
 msgstr "до"
 
-#. i18n: file: v4lradio-configuration-ui.ui:203
+#. i18n: file: v4lradio-configuration-ui.ui:200
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinFrequency)
-#: rc.cpp:36 rc.cpp:176
+#: rc.cpp:33 rc.cpp:167
 #, kde-format
 msgid "65 MHz"
 msgstr "65 МГц"
 
-#. i18n: file: v4lradio-configuration-ui.ui:260
+#. i18n: file: v4lradio-configuration-ui.ui:257
 #. i18n: ectx: property (text), widget (QLabel, labelDevMaxFrequency)
-#: rc.cpp:45 rc.cpp:185
+#: rc.cpp:42 rc.cpp:176
 #, kde-format
 msgid "108 MHz"
 msgstr "108 МГц"
 
-#. i18n: file: v4lradio-configuration-ui.ui:272
+#. i18n: file: v4lradio-configuration-ui.ui:269
 #. i18n: ectx: property (text), widget (QLabel, labelDevMinMaxFrequency)
-#: rc.cpp:48 rc.cpp:188
+#: rc.cpp:45 rc.cpp:179
 #, kde-format
 msgid "Device frequency range:"
 msgstr "Частотный диапазон устройства:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:326
+#. i18n: file: v4lradio-configuration-ui.ui:323
 #. i18n: ectx: property (toolTip), widget (QLabel, label_5)
-#. i18n: file: v4lradio-configuration-ui.ui:351
+#. i18n: file: v4lradio-configuration-ui.ui:348
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtStartup)
-#. i18n: file: v4lradio-configuration-ui.ui:361
+#. i18n: file: v4lradio-configuration-ui.ui:358
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
-#. i18n: file: v4lradio-configuration-ui.ui:326
+#. i18n: file: v4lradio-configuration-ui.ui:323
 #. i18n: ectx: property (toolTip), widget (QLabel, label_5)
-#. i18n: file: v4lradio-configuration-ui.ui:351
+#. i18n: file: v4lradio-configuration-ui.ui:348
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtStartup)
-#. i18n: file: v4lradio-configuration-ui.ui:361
+#. i18n: file: v4lradio-configuration-ui.ui:358
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_rbProbeAtPowerOn)
-#: rc.cpp:51 rc.cpp:57 rc.cpp:63 rc.cpp:191 rc.cpp:197 rc.cpp:203
+#: rc.cpp:48 rc.cpp:54 rc.cpp:60 rc.cpp:182 rc.cpp:188 rc.cpp:194
 #, kde-format
 msgid ""
 "Probing V4L device capabilities requires opening the device. This might "
@@ -154,58 +147,58 @@ msgstr ""
 "Единственный недостаток этого - до включения устройства в окне настроек "
 "будет указан лишь адрес устройства, а не его описание."
 
-#. i18n: file: v4lradio-configuration-ui.ui:329
+#. i18n: file: v4lradio-configuration-ui.ui:326
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:54 rc.cpp:194
+#: rc.cpp:51 rc.cpp:185
 #, kde-format
 msgid "Device probing:"
 msgstr "Проверка устройства:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:354
+#. i18n: file: v4lradio-configuration-ui.ui:351
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtStartup)
-#: rc.cpp:60 rc.cpp:200
+#: rc.cpp:57 rc.cpp:191
 #, kde-format
 msgid "At startup"
 msgstr "при запуске"
 
-#. i18n: file: v4lradio-configuration-ui.ui:364
+#. i18n: file: v4lradio-configuration-ui.ui:361
 #. i18n: ectx: property (text), widget (QRadioButton, m_rbProbeAtPowerOn)
-#: rc.cpp:66 rc.cpp:206
+#: rc.cpp:63 rc.cpp:197
 #, kde-format
 msgid "At power on"
 msgstr "при включении"
 
-#. i18n: file: v4lradio-configuration-ui.ui:375
+#. i18n: file: v4lradio-configuration-ui.ui:372
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L1Version)
-#: rc.cpp:69 rc.cpp:209
+#: rc.cpp:66 rc.cpp:200
 #, kde-format
 msgid "V4L1 API"
 msgstr "V4L-1"
 
-#. i18n: file: v4lradio-configuration-ui.ui:382
+#. i18n: file: v4lradio-configuration-ui.ui:379
 #. i18n: ectx: property (text), widget (QRadioButton, rbV4L2Version)
-#: rc.cpp:72 rc.cpp:212
+#: rc.cpp:69 rc.cpp:203
 #, kde-format
 msgid "V4L2 API"
 msgstr "V4L-2"
 
-#. i18n: file: v4lradio-configuration-ui.ui:392
+#. i18n: file: v4lradio-configuration-ui.ui:389
 #. i18n: ectx: attribute (title), widget (QWidget, RDSOptions)
-#: rc.cpp:75 rc.cpp:215
+#: rc.cpp:72 rc.cpp:206
 #, kde-format
 msgid "RDS"
 msgstr "RDS"
 
-#. i18n: file: v4lradio-configuration-ui.ui:401
+#. i18n: file: v4lradio-configuration-ui.ui:398
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxForceRDSEnabled)
-#: rc.cpp:78 rc.cpp:218
+#: rc.cpp:75 rc.cpp:209
 #, kde-format
 msgid "Force RDS enabled"
 msgstr "Принудительно включить "
 
-#. i18n: file: v4lradio-configuration-ui.ui:414
+#. i18n: file: v4lradio-configuration-ui.ui:411
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:81 rc.cpp:221
+#: rc.cpp:78 rc.cpp:212
 #, kde-format
 msgid ""
 "<p><u>Note for RDS support:</u> if your card supports RDS and RDS is not "
@@ -227,78 +220,71 @@ msgstr ""
 "подсказка у значка в системном лотке. Имена станций из RDS будут "
 "использованы в диалоге сканирования каналов для вновь найденных станций.</p>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:451
+#. i18n: file: v4lradio-configuration-ui.ui:448
 #. i18n: ectx: attribute (title), widget (QWidget, SoundDevices)
-#: rc.cpp:84 rc.cpp:224
+#: rc.cpp:81 rc.cpp:215
 #, kde-format
 msgid "Sound Devices"
 msgstr "Звуковые устройства"
 
 #. i18n: file: v4lradio-configuration-ui.ui:467
-#. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:87 rc.cpp:227
-#, kde-format
-msgid "test"
-msgstr "проверка"
-
-#. i18n: file: v4lradio-configuration-ui.ui:475
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:90 rc.cpp:230
+#: rc.cpp:84 rc.cpp:218
 #, kde-format
 msgid "Playback mixer channel:"
 msgstr "Канал воспроизведения:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:495
+#. i18n: file: v4lradio-configuration-ui.ui:487
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerDevice)
-#: rc.cpp:93 rc.cpp:233
+#: rc.cpp:87 rc.cpp:221
 #, kde-format
 msgid "Capture mixer device:"
 msgstr "Устройство записи:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:538
+#. i18n: file: v4lradio-configuration-ui.ui:530
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxVolumeZeroOnPowerOff)
-#: rc.cpp:96 rc.cpp:236
+#: rc.cpp:90 rc.cpp:224
 #, kde-format
 msgid "Set playback channel volume to &zero at power off"
 msgstr "Устанавливать &нулевую громкость воспроизведения при выходе"
 
-#. i18n: file: v4lradio-configuration-ui.ui:551
+#. i18n: file: v4lradio-configuration-ui.ui:543
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxMuteOnPowerOff)
-#: rc.cpp:99 rc.cpp:239
+#: rc.cpp:93 rc.cpp:227
 #, kde-format
 msgid "Mute play&back channel at power off"
 msgstr "Выключать звук на канале воспроизведения при выходе"
 
-#. i18n: file: v4lradio-configuration-ui.ui:558
+#. i18n: file: v4lradio-configuration-ui.ui:550
 #. i18n: ectx: property (text), widget (QLabel, labelCaptureMixerChannel)
-#: rc.cpp:102 rc.cpp:242
+#: rc.cpp:96 rc.cpp:230
 #, kde-format
 msgid "Capture mixer channel:"
 msgstr "Канал записи:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:568
+#. i18n: file: v4lradio-configuration-ui.ui:560
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:105 rc.cpp:245
+#: rc.cpp:99 rc.cpp:233
 #, kde-format
 msgid "Playback mixer device:"
 msgstr "Устройство воспроизведения:"
 
-#. i18n: file: v4lradio-configuration-ui.ui:592
+#. i18n: file: v4lradio-configuration-ui.ui:584
 #. i18n: ectx: attribute (title), widget (QWidget, ActivePlayback)
-#: rc.cpp:108 rc.cpp:248
+#: rc.cpp:102 rc.cpp:236
 #, kde-format
 msgid "PVR && Co"
 msgstr "PVR && Co"
 
-#. i18n: file: v4lradio-configuration-ui.ui:607
+#. i18n: file: v4lradio-configuration-ui.ui:599
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:610
+#. i18n: file: v4lradio-configuration-ui.ui:602
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:607
+#. i18n: file: v4lradio-configuration-ui.ui:599
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkboxActivePlayback)
-#. i18n: file: v4lradio-configuration-ui.ui:610
+#. i18n: file: v4lradio-configuration-ui.ui:602
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:111 rc.cpp:114 rc.cpp:251 rc.cpp:254
+#: rc.cpp:105 rc.cpp:108 rc.cpp:239 rc.cpp:242
 #, kde-format
 msgid ""
 "<p><b>Active playback</b> is required when your radio card is not connected "
@@ -320,23 +306,23 @@ msgstr ""
 "(или что-то в этом роде). Для таких карт нужно настроить и  <b>Модуль "
 "потового вещания<b></p>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:613
+#. i18n: file: v4lradio-configuration-ui.ui:605
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlayback)
-#: rc.cpp:117 rc.cpp:257
+#: rc.cpp:111 rc.cpp:245
 #, kde-format
 msgid "Use active pla&yback by capturing (use for PVR cards)"
 msgstr "&Захватывать звук и затем проигрывать его (используйте для плат PVR!)"
 
-#. i18n: file: v4lradio-configuration-ui.ui:629
+#. i18n: file: v4lradio-configuration-ui.ui:621
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActivePlaybackMuteCaptureChannelPlayback)
-#: rc.cpp:120 rc.cpp:260
+#: rc.cpp:114 rc.cpp:248
 #, kde-format
 msgid "Mute playback of capture channel when active playback is running"
 msgstr "Заглушить канал записи при включённом активном воспроизведении"
 
-#. i18n: file: v4lradio-configuration-ui.ui:645
+#. i18n: file: v4lradio-configuration-ui.ui:637
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:123 rc.cpp:263
+#: rc.cpp:117 rc.cpp:251
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>Active playback</b> is required when your radio card is not "
@@ -368,48 +354,48 @@ msgstr ""
 "(или что-то в этом роде). Для таких карт нужно настроить и  <b>Модуль "
 "потового вещания<b></p>"
 
-#. i18n: file: v4lradio-configuration-ui.ui:685
+#. i18n: file: v4lradio-configuration-ui.ui:677
 #. i18n: ectx: attribute (title), widget (QWidget, V4LMixerControls)
-#: rc.cpp:126 rc.cpp:266
+#: rc.cpp:120 rc.cpp:254
 #, kde-format
 msgid "V4L Mixer Controls"
 msgstr "Аппаратные регуляторы V4l"
 
-#. i18n: file: v4lradio-configuration-ui.ui:702
+#. i18n: file: v4lradio-configuration-ui.ui:694
 #. i18n: ectx: property (text), widget (QLabel, labelDeviceVolume)
-#: rc.cpp:129 rc.cpp:269
+#: rc.cpp:123 rc.cpp:257
 #, kde-format
 msgid "Volume"
 msgstr "Громкость"
 
-#. i18n: file: v4lradio-configuration-ui.ui:778
+#. i18n: file: v4lradio-configuration-ui.ui:770
 #. i18n: ectx: property (text), widget (QLabel, labelTreble)
-#: rc.cpp:132 rc.cpp:272
+#: rc.cpp:126 rc.cpp:260
 #, kde-format
 msgid "Treble"
 msgstr "ВЧ"
 
-#. i18n: file: v4lradio-configuration-ui.ui:854
+#. i18n: file: v4lradio-configuration-ui.ui:846
 #. i18n: ectx: property (text), widget (QLabel, labelBass)
-#: rc.cpp:135 rc.cpp:275
+#: rc.cpp:129 rc.cpp:263
 #, kde-format
 msgid "Bass"
 msgstr "НЧ"
 
-#. i18n: file: v4lradio-configuration-ui.ui:927
+#. i18n: file: v4lradio-configuration-ui.ui:919
 #. i18n: ectx: property (text), widget (QLabel, labelBalance)
-#: rc.cpp:138 rc.cpp:278
+#: rc.cpp:132 rc.cpp:266
 #, kde-format
 msgid "Balance"
 msgstr "Стереобаланс"
 
-#: rc.cpp:139
+#: rc.cpp:133
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: rc.cpp:140
+#: rc.cpp:134
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -662,6 +648,12 @@ msgstr "V4LRadio::processRDSData: ошибка скорости блока: %1 %
 #, kde-format
 msgid "V4LRadio::processRDSData: Group (~4 Blocks) Error Rate: %1 %"
 msgstr "V4LRadio::processRDSData: групповая (~4 блока) ошибка скорости: %1 %"
+
+#~ msgid "SetupDialogGeneral"
+#~ msgstr "Основые параметры"
+
+#~ msgid "test"
+#~ msgstr "проверка"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"

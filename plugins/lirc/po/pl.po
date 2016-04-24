@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,55 +271,48 @@ msgstr ""
 msgid "LIRC Support"
 msgstr ""
 
-#. i18n: file: lirc-configuration-ui.ui:38
-#. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
-#: rc.cpp:3 rc.cpp:23
-#, kde-format
-msgid "textLabel1"
-msgstr ""
-
 #. i18n: file: lirc-configuration-ui.ui:58
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:6 rc.cpp:26
+#: rc.cpp:3 rc.cpp:20
 #, kde-format
 msgid "Power off .lircrc mode:"
 msgstr ""
 
 #. i18n: file: lirc-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:9 rc.cpp:29
+#: rc.cpp:6 rc.cpp:23
 #, kde-format
 msgid "Power on .lircrc mode:"
 msgstr ""
 
 #. i18n: file: lirc-configuration-ui.ui:82
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:12 rc.cpp:32
+#: rc.cpp:9 rc.cpp:26
 #, kde-format
 msgid "Synchronize .lircrc modes at runtime:"
 msgstr ""
 
 #. i18n: file: lirc-configuration-ui.ui:89
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:15 rc.cpp:35
+#: rc.cpp:12 rc.cpp:29
 #, kde-format
 msgid "Synchronize .lircrc modes at startup:"
 msgstr ""
 
 #. i18n: file: lirc-configuration-ui.ui:116
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:18 rc.cpp:38
+#: rc.cpp:15 rc.cpp:32
 #, kde-format
 msgid "LIRC configuration file:"
 msgstr ""
 
-#: rc.cpp:19
+#: rc.cpp:16
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:20
+#: rc.cpp:17
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"

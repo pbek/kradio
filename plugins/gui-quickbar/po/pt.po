@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2006-11-19 16:12+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -76,16 +76,6 @@ msgstr "Barra de Acesso Rápido"
 msgid "KRadio4 Quickbar"
 msgstr "Barra de Acesso Rápido"
 
-#: quickbar.cpp:363
-#, kde-format
-msgid "contentsDragEnterEvent accepted"
-msgstr "contentsDragEnterEvent aceite"
-
-#: quickbar.cpp:365
-#, kde-format
-msgid "contentsDragEnterEvent rejected"
-msgstr "contentsDragEnterEvent rejeitado"
-
 #: rc.cpp:1
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -97,6 +87,12 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "contentsDragEnterEvent accepted"
+#~ msgstr "contentsDragEnterEvent aceite"
+
+#~ msgid "contentsDragEnterEvent rejected"
+#~ msgstr "contentsDragEnterEvent rejeitado"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"

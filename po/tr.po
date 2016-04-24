@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2011-02-06 05:02+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -467,7 +467,9 @@ msgid "<p align=\"right\">%1</p>"
 msgstr ""
 
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "unknown"
+msgctxt "unknown remaining time"
 msgid "unknown"
 msgstr "bilinmiyor"
 
@@ -475,11 +477,6 @@ msgstr "bilinmiyor"
 #, fuzzy, kde-format
 msgid "new station %1"
 msgstr "yeni istasyon"
-
-#: src/station-drag-object.cpp:40
-#, kde-format
-msgid "canDecode = true"
-msgstr ""
 
 #: src/stationlist.cpp:134
 #, kde-format
@@ -758,26 +755,19 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
 #: rc.cpp:53
 #, kde-format
-msgid "remaining time"
-msgstr ""
-
-#. i18n: file: src/standardscandialog-ui.ui:51
-#. i18n: ectx: property (text), widget (QLabel, labelTime)
-#: rc.cpp:56
-#, kde-format
-msgid "<p align=\"right\">nothing here</p>"
+msgid "Remaining time:"
 msgstr ""
 
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
-#: rc.cpp:59
+#: rc.cpp:56
 #, fuzzy, kde-format
 msgid "Selected stations:"
 msgstr "Seçilen İstasyonlar"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
-#: rc.cpp:62
+#: rc.cpp:59
 #, fuzzy, kde-format
 msgid "Available stations:"
 msgstr "Mevcut İstasyonlar"

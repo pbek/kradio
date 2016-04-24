@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2014-09-18 21:07+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,55 +19,48 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#. i18n: file: timeshifter-configuration-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
-#: rc.cpp:3 rc.cpp:23
-#, kde-format
-msgid "SetupDialogGeneral"
-msgstr "Окно параметров"
-
-#. i18n: file: timeshifter-configuration-ui.ui:57
+#. i18n: file: timeshifter-configuration-ui.ui:54
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
-#: rc.cpp:6 rc.cpp:26
+#: rc.cpp:3 rc.cpp:20
 #, kde-format
 msgid " MB"
 msgstr " Мб"
 
-#. i18n: file: timeshifter-configuration-ui.ui:76
+#. i18n: file: timeshifter-configuration-ui.ui:73
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
-#: rc.cpp:9 rc.cpp:29
+#: rc.cpp:6 rc.cpp:23
 #, kde-format
 msgid "Maximum file size:"
 msgstr "Размер файла, не более:"
 
-#. i18n: file: timeshifter-configuration-ui.ui:86
+#. i18n: file: timeshifter-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:12 rc.cpp:32
+#: rc.cpp:9 rc.cpp:26
 #, kde-format
 msgid "Playback mixer device:"
 msgstr "Устройство воспроизведения:"
 
-#. i18n: file: timeshifter-configuration-ui.ui:96
+#. i18n: file: timeshifter-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
-#: rc.cpp:15 rc.cpp:35
+#: rc.cpp:12 rc.cpp:29
 #, kde-format
 msgid "Temporary file:"
 msgstr "Временный файл:"
 
-#. i18n: file: timeshifter-configuration-ui.ui:109
+#. i18n: file: timeshifter-configuration-ui.ui:106
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:18 rc.cpp:38
+#: rc.cpp:15 rc.cpp:32
 #, kde-format
 msgid "Playback mixer channel:"
 msgstr "Канал воспроизведения:"
 
-#: rc.cpp:19
+#: rc.cpp:16
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:20
+#: rc.cpp:17
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -122,6 +115,9 @@ msgstr ""
 #| msgid "internal stream, not stored"
 msgid "internal stream, not stored"
 msgstr "внутренний поток, не сохраняется (%1)"
+
+#~ msgid "SetupDialogGeneral"
+#~ msgstr "Окно параметров"
 
 #~ msgid "TimeShifter Temporary File Selection"
 #~ msgstr "Выбор временного файла для реализации приостановки вещания"

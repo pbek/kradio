@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_timeshifter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2010-01-08 10:17+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,55 +17,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#. i18n: file: timeshifter-configuration-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
-#: rc.cpp:3 rc.cpp:23
-#, kde-format
-msgid "SetupDialogGeneral"
-msgstr "SetupDialogGeneral"
-
-#. i18n: file: timeshifter-configuration-ui.ui:57
+#. i18n: file: timeshifter-configuration-ui.ui:54
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
-#: rc.cpp:6 rc.cpp:26
+#: rc.cpp:3 rc.cpp:20
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#. i18n: file: timeshifter-configuration-ui.ui:76
+#. i18n: file: timeshifter-configuration-ui.ui:73
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
-#: rc.cpp:9 rc.cpp:29
+#: rc.cpp:6 rc.cpp:23
 #, fuzzy, kde-format
 msgid "Maximum file size:"
 msgstr "Hámarks skráastærð"
 
-#. i18n: file: timeshifter-configuration-ui.ui:86
+#. i18n: file: timeshifter-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:12 rc.cpp:32
+#: rc.cpp:9 rc.cpp:26
 #, fuzzy, kde-format
 msgid "Playback mixer device:"
 msgstr "Hljóðblöndunartæki fyrir afspilun"
 
-#. i18n: file: timeshifter-configuration-ui.ui:96
+#. i18n: file: timeshifter-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
-#: rc.cpp:15 rc.cpp:35
+#: rc.cpp:12 rc.cpp:29
 #, fuzzy, kde-format
 msgid "Temporary file:"
 msgstr "Bráðabirgðaskrá"
 
-#. i18n: file: timeshifter-configuration-ui.ui:109
+#. i18n: file: timeshifter-configuration-ui.ui:106
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:18 rc.cpp:38
+#: rc.cpp:15 rc.cpp:32
 #, fuzzy, kde-format
 msgid "Playback mixer channel:"
 msgstr "Hljóðblöndunarrás fyrir afspilun"
 
-#: rc.cpp:19
+#: rc.cpp:16
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:20
+#: rc.cpp:17
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -118,3 +111,6 @@ msgstr ""
 #, kde-format
 msgid "internal stream, not stored"
 msgstr "innri straumur, ekki geymdur"
+
+#~ msgid "SetupDialogGeneral"
+#~ msgstr "SetupDialogGeneral"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2012-08-14 16:39+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -290,59 +290,55 @@ msgstr ""
 msgid "LIRC Support"
 msgstr "Podpora LIRC"
 
-#. i18n: file: lirc-configuration-ui.ui:38
-#. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
-#: rc.cpp:3 rc.cpp:23
-#, kde-format
-msgid "textLabel1"
-msgstr "textLabel1"
-
 #. i18n: file: lirc-configuration-ui.ui:58
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:6 rc.cpp:26
+#: rc.cpp:3 rc.cpp:20
 #, fuzzy, kde-format
 msgid "Power off .lircrc mode:"
 msgstr "Vypnúť režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:9 rc.cpp:29
+#: rc.cpp:6 rc.cpp:23
 #, fuzzy, kde-format
 msgid "Power on .lircrc mode:"
 msgstr "Zapnúť režim .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:82
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:12 rc.cpp:32
+#: rc.cpp:9 rc.cpp:26
 #, fuzzy, kde-format
 msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Synchronizovať režimy .lircrc pri behu"
 
 #. i18n: file: lirc-configuration-ui.ui:89
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:15 rc.cpp:35
+#: rc.cpp:12 rc.cpp:29
 #, fuzzy, kde-format
 msgid "Synchronize .lircrc modes at startup:"
 msgstr "Synchronizovať režimy .lircrc pri spustení"
 
 #. i18n: file: lirc-configuration-ui.ui:116
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:18 rc.cpp:38
+#: rc.cpp:15 rc.cpp:32
 #, fuzzy, kde-format
 msgid "LIRC configuration file:"
 msgstr "Konfiguračný súbor LIRC"
 
-#: rc.cpp:19
+#: rc.cpp:16
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Roman Paholík"
 
-#: rc.cpp:20
+#: rc.cpp:17
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
+
+#~ msgid "textLabel1"
+#~ msgstr "textLabel1"
 
 #~ msgid "failed to read file %1"
 #~ msgstr "zlyhalo čítanie súboru %1"

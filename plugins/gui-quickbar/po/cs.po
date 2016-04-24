@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_quickbar\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2014-09-22 22:01+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -74,16 +74,6 @@ msgstr "Rychlý výběr, %1"
 msgid "KRadio4 Quickbar"
 msgstr "Rychlý výběr"
 
-#: quickbar.cpp:363
-#, kde-format
-msgid "contentsDragEnterEvent accepted"
-msgstr "contentsDragEnterEvent přijat"
-
-#: quickbar.cpp:365
-#, kde-format
-msgid "contentsDragEnterEvent rejected"
-msgstr "contentsDragEnterEvent odmítnut"
-
 #: rc.cpp:1
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -95,3 +85,9 @@ msgstr "Pavel Fric"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pavelfric@seznam.cz"
+
+#~ msgid "contentsDragEnterEvent accepted"
+#~ msgstr "contentsDragEnterEvent přijat"
+
+#~ msgid "contentsDragEnterEvent rejected"
+#~ msgstr "contentsDragEnterEvent odmítnut"

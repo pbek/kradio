@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: timeshifter (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -12,55 +12,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 
-#. i18n: file: timeshifter-configuration-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, TimeShifterConfigurationUI)
-#: rc.cpp:3 rc.cpp:23
-#, kde-format
-msgid "SetupDialogGeneral"
-msgstr "DijalogOpštaPodešavanja"
-
-#. i18n: file: timeshifter-configuration-ui.ui:57
+#. i18n: file: timeshifter-configuration-ui.ui:54
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
-#: rc.cpp:6 rc.cpp:26
+#: rc.cpp:3 rc.cpp:20
 #, kde-format
 msgid " MB"
 msgstr "␣MB"
 
-#. i18n: file: timeshifter-configuration-ui.ui:76
+#. i18n: file: timeshifter-configuration-ui.ui:73
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
-#: rc.cpp:9 rc.cpp:29
+#: rc.cpp:6 rc.cpp:23
 #, fuzzy, kde-format
 msgid "Maximum file size:"
 msgstr "Maksimalna veličina fajla"
 
-#. i18n: file: timeshifter-configuration-ui.ui:86
+#. i18n: file: timeshifter-configuration-ui.ui:83
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:12 rc.cpp:32
+#: rc.cpp:9 rc.cpp:26
 #, fuzzy, kde-format
 msgid "Playback mixer device:"
 msgstr "Uredjaj za reprodukciju"
 
-#. i18n: file: timeshifter-configuration-ui.ui:96
+#. i18n: file: timeshifter-configuration-ui.ui:93
 #. i18n: ectx: property (text), widget (QLabel, labelTempFile)
-#: rc.cpp:15 rc.cpp:35
+#: rc.cpp:12 rc.cpp:29
 #, fuzzy, kde-format
 msgid "Temporary file:"
 msgstr "Privremeni fajl"
 
-#. i18n: file: timeshifter-configuration-ui.ui:109
+#. i18n: file: timeshifter-configuration-ui.ui:106
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:18 rc.cpp:38
+#: rc.cpp:15 rc.cpp:32
 #, fuzzy, kde-format
 msgid "Playback mixer channel:"
 msgstr "Kanal miksera za reprodukciju"
 
-#: rc.cpp:19
+#: rc.cpp:16
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:20
+#: rc.cpp:17
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -114,3 +107,6 @@ msgstr ""
 #, kde-format
 msgid "internal stream, not stored"
 msgstr "interni strim, ne pamti"
+
+#~ msgid "SetupDialogGeneral"
+#~ msgstr "DijalogOpštaPodešavanja"

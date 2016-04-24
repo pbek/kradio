@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2012-08-14 16:06+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -294,42 +294,35 @@ msgstr ""
 
 #. i18n: file: alsa-mixer-element-ui.ui:173
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxActive)
-#: rc.cpp:3 rc.cpp:176
+#: rc.cpp:3 rc.cpp:173
 #, fuzzy, kde-format
 msgid "Capture o&n"
 msgstr "Zachytiť"
 
 #. i18n: file: alsa-mixer-element-ui.ui:180
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkboxOverride)
-#: rc.cpp:6 rc.cpp:179
+#: rc.cpp:6 rc.cpp:176
 #, kde-format
 msgid "&Override"
 msgstr "Prepísať"
 
-#. i18n: file: alsa-mixer-element-ui.ui:210
-#. i18n: ectx: property (text), widget (QLabel, m_labelMixerElementName)
-#: rc.cpp:9 rc.cpp:182
-#, kde-format
-msgid "MixerName"
-msgstr ""
-
 #. i18n: file: alsa-sound-configuration-ui.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
-#: rc.cpp:12 rc.cpp:185
+#: rc.cpp:9 rc.cpp:179
 #, kde-format
 msgid "Playback"
 msgstr "Prehrávanie"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:30
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisablePlayback)
-#: rc.cpp:15 rc.cpp:188
+#: rc.cpp:12 rc.cpp:182
 #, kde-format
 msgid "Disable pla&yback"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:62
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_3)
-#: rc.cpp:18 rc.cpp:191
+#: rc.cpp:15 rc.cpp:185
 #, kde-format
 msgid "PCM playback device:"
 msgstr ""
@@ -342,7 +335,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_2)
 #. i18n: file: alsa-sound-configuration-ui.ui:380
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_4)
-#: rc.cpp:21 rc.cpp:72 rc.cpp:194 rc.cpp:245
+#: rc.cpp:18 rc.cpp:69 rc.cpp:188 rc.cpp:239
 #, fuzzy, kde-format
 msgid "Buffer size:"
 msgstr "Veľkosť buffera"
@@ -363,29 +356,29 @@ msgstr "Veľkosť buffera"
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editCaptureBufferSize)
 #. i18n: file: alsa-sound-configuration-ui.ui:441
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editCaptureBufferChunkSize)
-#: rc.cpp:24 rc.cpp:45 rc.cpp:75 rc.cpp:84 rc.cpp:197 rc.cpp:218 rc.cpp:248
-#: rc.cpp:257
+#: rc.cpp:21 rc.cpp:42 rc.cpp:72 rc.cpp:81 rc.cpp:191 rc.cpp:212 rc.cpp:242
+#: rc.cpp:251
 #, kde-format
 msgid " kB"
 msgstr " KB"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:136
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:27 rc.cpp:200
+#: rc.cpp:24 rc.cpp:194
 #, kde-format
 msgid "Soft volume correction factor:"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:143
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableSoftVolume)
-#: rc.cpp:30 rc.cpp:203
+#: rc.cpp:27 rc.cpp:197
 #, kde-format
 msgid "Soft playback volume:"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:166
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_5)
-#: rc.cpp:33 rc.cpp:206
+#: rc.cpp:30 rc.cpp:200
 #, kde-format
 msgid "Playback mixer card:"
 msgstr ""
@@ -398,7 +391,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_3)
 #. i18n: file: alsa-sound-configuration-ui.ui:425
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_5)
-#: rc.cpp:36 rc.cpp:81 rc.cpp:209 rc.cpp:254
+#: rc.cpp:33 rc.cpp:78 rc.cpp:203 rc.cpp:248
 #, fuzzy, kde-format
 msgid "Buffer chunk size:"
 msgstr "Veľkosť buffera"
@@ -411,7 +404,7 @@ msgstr "Veľkosť buffera"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_4)
 #. i18n: file: alsa-sound-configuration-ui.ui:415
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_9)
-#: rc.cpp:39 rc.cpp:78 rc.cpp:212 rc.cpp:251
+#: rc.cpp:36 rc.cpp:75 rc.cpp:206 rc.cpp:245
 #, fuzzy, kde-format
 msgid "(recommended: 96 kB)"
 msgstr "Odporúčané ( %1 )"
@@ -424,7 +417,7 @@ msgstr "Odporúčané ( %1 )"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_5)
 #. i18n: file: alsa-sound-configuration-ui.ui:461
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
-#: rc.cpp:42 rc.cpp:90 rc.cpp:215 rc.cpp:263
+#: rc.cpp:39 rc.cpp:87 rc.cpp:209 rc.cpp:257
 #, fuzzy, kde-format
 msgid "(recommended: 16 kB)"
 msgstr "Odporúčané ( %1 )"
@@ -437,7 +430,7 @@ msgstr "Odporúčané ( %1 )"
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
 #. i18n: file: alsa-sound-configuration-ui.ui:477
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editCaptureWorkaroundSleep)
-#: rc.cpp:48 rc.cpp:93 rc.cpp:221 rc.cpp:266
+#: rc.cpp:45 rc.cpp:90 rc.cpp:215 rc.cpp:260
 #, kde-format
 msgid "disabled"
 msgstr "zakázané"
@@ -450,7 +443,7 @@ msgstr "zakázané"
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackWorkaroundSleep)
 #. i18n: file: alsa-sound-configuration-ui.ui:480
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editCaptureWorkaroundSleep)
-#: rc.cpp:51 rc.cpp:96 rc.cpp:224 rc.cpp:269
+#: rc.cpp:48 rc.cpp:93 rc.cpp:218 rc.cpp:263
 #, kde-format
 msgid "ms"
 msgstr "ms"
@@ -463,7 +456,7 @@ msgstr "ms"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_6)
 #. i18n: file: alsa-sound-configuration-ui.ui:502
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_2_7)
-#: rc.cpp:54 rc.cpp:99 rc.cpp:227 rc.cpp:272
+#: rc.cpp:51 rc.cpp:96 rc.cpp:221 rc.cpp:266
 #, kde-format
 msgid "Broken blocking I/O workaround:"
 msgstr ""
@@ -476,42 +469,42 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, chkNonBlockingPlayback)
 #. i18n: file: alsa-sound-configuration-ui.ui:518
 #. i18n: ectx: property (text), widget (QCheckBox, chkNonBlockingCapture)
-#: rc.cpp:57 rc.cpp:108 rc.cpp:230 rc.cpp:281
+#: rc.cpp:54 rc.cpp:105 rc.cpp:224 rc.cpp:275
 #, kde-format
 msgid "Non-blocking I/O (used in KRadio 4.0.1, deprecated)"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:308
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureDevice)
-#: rc.cpp:60 rc.cpp:233
+#: rc.cpp:57 rc.cpp:227
 #, kde-format
 msgid "Capture"
 msgstr "Zachytiť"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:314
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCapture)
-#: rc.cpp:63 rc.cpp:236
+#: rc.cpp:60 rc.cpp:230
 #, kde-format
 msgid "Disa&ble capture"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:340
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_4)
-#: rc.cpp:66 rc.cpp:239
+#: rc.cpp:63 rc.cpp:233
 #, kde-format
 msgid "PCM capture device:"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:360
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_6)
-#: rc.cpp:69 rc.cpp:242
+#: rc.cpp:66 rc.cpp:236
 #, kde-format
 msgid "Capture mixer card:"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:460
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2_11)
-#: rc.cpp:87 rc.cpp:260
+#: rc.cpp:84 rc.cpp:254
 #, kde-format
 msgid "16 kB"
 msgstr "16 kB"
@@ -532,8 +525,8 @@ msgstr "16 kB"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbEnableCaptureFormatOverride)
 #. i18n: file: alsa-sound-configuration-ui.ui:717
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbEnableCaptureFormatOverride)
-#: rc.cpp:102 rc.cpp:105 rc.cpp:162 rc.cpp:165 rc.cpp:275 rc.cpp:278 rc.cpp:335
-#: rc.cpp:338
+#: rc.cpp:99 rc.cpp:102 rc.cpp:159 rc.cpp:162 rc.cpp:269 rc.cpp:272 rc.cpp:329
+#: rc.cpp:332
 #, kde-format
 msgid ""
 "You need to enable this switch in order to allow KRadio to tag the sound "
@@ -546,144 +539,144 @@ msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:528
 #. i18n: ectx: property (text), widget (QLabel, lableChannels)
-#: rc.cpp:111 rc.cpp:284
+#: rc.cpp:108 rc.cpp:278
 #, fuzzy, kde-format
 msgid "Channels:"
 msgstr "Kanály"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:541
 #. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:114 rc.cpp:287
+#: rc.cpp:111 rc.cpp:281
 #, fuzzy, kde-format
 msgid "Sample rate:"
 msgstr "Vzorkovacia frekvencia"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:554
 #. i18n: ectx: property (text), widget (QLabel, lableBits)
-#: rc.cpp:117 rc.cpp:290
+#: rc.cpp:114 rc.cpp:284
 #, fuzzy, kde-format
 msgid "Sample bits:"
 msgstr "Samplovacie bity"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:567
 #. i18n: ectx: property (text), widget (QLabel, lableEndianness)
-#: rc.cpp:120 rc.cpp:293
+#: rc.cpp:117 rc.cpp:287
 #, fuzzy, kde-format
 msgid "Endianness:"
 msgstr "Endianess"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:587
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
-#: rc.cpp:123 rc.cpp:296
+#: rc.cpp:120 rc.cpp:290
 #, kde-format
 msgid "Little Endian"
 msgstr "Little Endian"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:592
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
-#: rc.cpp:126 rc.cpp:299
+#: rc.cpp:123 rc.cpp:293
 #, kde-format
 msgid "Big Endian"
 msgstr "Big Endian"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:610
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:129 rc.cpp:302
+#: rc.cpp:126 rc.cpp:296
 #, kde-format
 msgid "16"
 msgstr "16"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:615
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
-#: rc.cpp:132 rc.cpp:305
+#: rc.cpp:129 rc.cpp:299
 #, kde-format
 msgid "8"
 msgstr "8"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:633
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:135 rc.cpp:308
+#: rc.cpp:132 rc.cpp:302
 #, kde-format
 msgid "48000"
 msgstr "48000"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:638
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:138 rc.cpp:311
+#: rc.cpp:135 rc.cpp:305
 #, kde-format
 msgid "44100"
 msgstr "44100"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:643
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:141 rc.cpp:314
+#: rc.cpp:138 rc.cpp:308
 #, kde-format
 msgid "32000"
 msgstr "32000"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:648
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:144 rc.cpp:317
+#: rc.cpp:141 rc.cpp:311
 #, kde-format
 msgid "22050"
 msgstr "22050"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:653
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:147 rc.cpp:320
+#: rc.cpp:144 rc.cpp:314
 #, kde-format
 msgid "11025"
 msgstr "11025"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:671
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:150 rc.cpp:323
+#: rc.cpp:147 rc.cpp:317
 #, kde-format
 msgid "Signed"
 msgstr "Podpísané"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:676
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:153 rc.cpp:326
+#: rc.cpp:150 rc.cpp:320
 #, kde-format
 msgid "Unsigned"
 msgstr "Bez znamienka"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:694
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:156 rc.cpp:329
+#: rc.cpp:153 rc.cpp:323
 #, kde-format
 msgid "Stereo"
 msgstr "Stereo"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:699
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:159 rc.cpp:332
+#: rc.cpp:156 rc.cpp:326
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:720
 #. i18n: ectx: property (text), widget (QCheckBox, cbEnableCaptureFormatOverride)
-#: rc.cpp:168 rc.cpp:341
+#: rc.cpp:165 rc.cpp:335
 #, kde-format
 msgid "Override capture format"
 msgstr ""
 
 #. i18n: file: alsa-sound-configuration-ui.ui:751
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage1)
-#: rc.cpp:171 rc.cpp:344
+#: rc.cpp:168 rc.cpp:338
 #, kde-format
 msgid "Capture Mixers"
 msgstr ""
 
-#: rc.cpp:172
+#: rc.cpp:169
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Roman Paholík"
 
-#: rc.cpp:173
+#: rc.cpp:170
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"

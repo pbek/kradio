@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -288,59 +288,55 @@ msgstr ""
 msgid "LIRC Support"
 msgstr "Soporte LIRC"
 
-#. i18n: file: lirc-configuration-ui.ui:38
-#. i18n: ectx: property (text), widget (QLabel, m_LabelHints)
-#: rc.cpp:3 rc.cpp:23
-#, kde-format
-msgid "textLabel1"
-msgstr "textLabel1"
-
 #. i18n: file: lirc-configuration-ui.ui:58
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:6 rc.cpp:26
+#: rc.cpp:3 rc.cpp:20
 #, fuzzy, kde-format
 msgid "Power off .lircrc mode:"
 msgstr "Apagar modo .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:65
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:9 rc.cpp:29
+#: rc.cpp:6 rc.cpp:23
 #, fuzzy, kde-format
 msgid "Power on .lircrc mode:"
 msgstr "Enceder modo .lircrc"
 
 #. i18n: file: lirc-configuration-ui.ui:82
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:12 rc.cpp:32
+#: rc.cpp:9 rc.cpp:26
 #, fuzzy, kde-format
 msgid "Synchronize .lircrc modes at runtime:"
 msgstr "Sincronizar modos .lircrc en tiempo de ejecución"
 
 #. i18n: file: lirc-configuration-ui.ui:89
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:15 rc.cpp:35
+#: rc.cpp:12 rc.cpp:29
 #, fuzzy, kde-format
 msgid "Synchronize .lircrc modes at startup:"
 msgstr "Sincronizar modos .lircrc al inicio"
 
 #. i18n: file: lirc-configuration-ui.ui:116
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:18 rc.cpp:38
+#: rc.cpp:15 rc.cpp:32
 #, fuzzy, kde-format
 msgid "LIRC configuration file:"
 msgstr "Archivo de Configuración LIRC"
 
-#: rc.cpp:19
+#: rc.cpp:16
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Sergio Ahumada Navea"
 
-#: rc.cpp:20
+#: rc.cpp:17
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahumada@gmail.com"
+
+#~ msgid "textLabel1"
+#~ msgstr "textLabel1"
 
 #~ msgid "failed to read file %1"
 #~ msgstr "lectura de archivo %1 fallida"

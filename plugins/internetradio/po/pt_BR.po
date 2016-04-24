@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.plugins.internetradio.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2009-11-08 00:20-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -225,120 +225,106 @@ msgstr "Erro ao ler arquivo ASX"
 msgid "error while reading XSPF file: %1"
 msgstr "Erro ao ler arquivo ASX"
 
-#. i18n: file: internetradio-configuration-ui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, InternetRadioConfigurationUI)
-#: rc.cpp:3 rc.cpp:53
-#, kde-format
-msgid "SetupDialogGeneral"
-msgstr "Diálogo geral de configuração"
-
-#. i18n: file: internetradio-configuration-ui.ui:34
+#. i18n: file: internetradio-configuration-ui.ui:31
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:6 rc.cpp:56
+#: rc.cpp:3 rc.cpp:47
 #, kde-format
 msgid "Input buffer size:"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:44
+#. i18n: file: internetradio-configuration-ui.ui:41
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: file: internetradio-configuration-ui.ui:73
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:258
+#. i18n: file: internetradio-configuration-ui.ui:250
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
-#. i18n: file: internetradio-configuration-ui.ui:44
+#. i18n: file: internetradio-configuration-ui.ui:41
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: file: internetradio-configuration-ui.ui:73
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:258
+#. i18n: file: internetradio-configuration-ui.ui:250
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
-#: rc.cpp:9 rc.cpp:15 rc.cpp:45 rc.cpp:59 rc.cpp:65 rc.cpp:95
+#: rc.cpp:6 rc.cpp:12 rc.cpp:39 rc.cpp:50 rc.cpp:56 rc.cpp:83
 #, kde-format
 msgid " kB"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:66
+#. i18n: file: internetradio-configuration-ui.ui:63
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:12 rc.cpp:62
+#: rc.cpp:9 rc.cpp:53
 #, kde-format
 msgid "PCM output buffer size:"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:101
+#. i18n: file: internetradio-configuration-ui.ui:98
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:18 rc.cpp:68
+#: rc.cpp:15 rc.cpp:59
 #, kde-format
 msgid "libffmpeg: stream info analysis time:"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:111
+#. i18n: file: internetradio-configuration-ui.ui:108
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#: rc.cpp:21 rc.cpp:71
+#: rc.cpp:18 rc.cpp:62
 #, kde-format
 msgid "disabled"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:114
+#. i18n: file: internetradio-configuration-ui.ui:111
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#. i18n: file: internetradio-configuration-ui.ui:289
+#. i18n: file: internetradio-configuration-ui.ui:281
 #. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
-#. i18n: file: internetradio-configuration-ui.ui:114
+#. i18n: file: internetradio-configuration-ui.ui:111
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#. i18n: file: internetradio-configuration-ui.ui:289
+#. i18n: file: internetradio-configuration-ui.ui:281
 #. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
-#: rc.cpp:24 rc.cpp:48 rc.cpp:74 rc.cpp:98
+#: rc.cpp:21 rc.cpp:42 rc.cpp:65 rc.cpp:86
 #, kde-format
 msgid " s"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:136
+#. i18n: file: internetradio-configuration-ui.ui:133
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:27 rc.cpp:77
+#: rc.cpp:24 rc.cpp:68
 #, kde-format
 msgid "Watchdog: reconnect after:"
 msgstr ""
 
-#. i18n: file: internetradio-configuration-ui.ui:152
+#. i18n: file: internetradio-configuration-ui.ui:149
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:30 rc.cpp:80
+#: rc.cpp:27 rc.cpp:71
 #, fuzzy, kde-format
 msgid "Playback mixer device:"
 msgstr "Dispositivo do mixer de reproduação"
 
-#. i18n: file: internetradio-configuration-ui.ui:169
-#. i18n: ectx: property (text), item, widget (QComboBox, comboPlaybackMixerDevice)
-#: rc.cpp:33 rc.cpp:83
-#, kde-format
-msgid "test"
-msgstr "test"
-
-#. i18n: file: internetradio-configuration-ui.ui:183
+#. i18n: file: internetradio-configuration-ui.ui:175
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:36 rc.cpp:86
+#: rc.cpp:30 rc.cpp:74
 #, fuzzy, kde-format
 msgid "Playback mixer channel:"
 msgstr "Canal do mIxer de reprodução"
 
-#. i18n: file: internetradio-configuration-ui.ui:225
+#. i18n: file: internetradio-configuration-ui.ui:217
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:39 rc.cpp:89
+#: rc.cpp:33 rc.cpp:77
 #, fuzzy, kde-format
 msgid "Mute playback channel on power off:"
 msgstr "Canal de reprodução mudo ao Desligar"
 
-#. i18n: file: internetradio-configuration-ui.ui:248
+#. i18n: file: internetradio-configuration-ui.ui:240
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:42 rc.cpp:92
+#: rc.cpp:36 rc.cpp:80
 #, kde-format
 msgid "libffmpeg: format probe size:"
 msgstr ""
 
-#: rc.cpp:49
+#: rc.cpp:43
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:50
+#: rc.cpp:44
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -348,6 +334,12 @@ msgstr ""
 #, kde-format
 msgid "This should never happen: inconsistency in buffer locking / buffer size"
 msgstr ""
+
+#~ msgid "SetupDialogGeneral"
+#~ msgstr "Diálogo geral de configuração"
+
+#~ msgid "test"
+#~ msgstr "test"
 
 #, fuzzy
 #~ msgid "cannot open MMS  %1"

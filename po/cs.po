@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-04-24 12:03+0200\n"
 "PO-Revision-Date: 2014-09-22 21:30+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -484,7 +484,9 @@ msgid "<p align=\"right\">%1</p>"
 msgstr "<p align=\"right\">%1</p>"
 
 #: src/standardscandialog.cpp:165 src/standardscandialog.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "unknown"
+msgctxt "unknown remaining time"
 msgid "unknown"
 msgstr "Neznámá"
 
@@ -492,11 +494,6 @@ msgstr "Neznámá"
 #, kde-format
 msgid "new station %1"
 msgstr "Nová stanice %1"
-
-#: src/station-drag-object.cpp:40
-#, kde-format
-msgid "canDecode = true"
-msgstr "canDecode = true"
 
 #: src/stationlist.cpp:134
 #, kde-format
@@ -792,27 +789,21 @@ msgstr "Probíhá vyhledávání stanic..."
 #. i18n: file: src/standardscandialog-ui.ui:35
 #. i18n: ectx: property (text), widget (QLabel, labelTimeDescr)
 #: rc.cpp:53
-#, kde-format
-msgid "remaining time"
+#, fuzzy, kde-format
+#| msgid "remaining time"
+msgid "Remaining time:"
 msgstr "zbývající čas"
-
-#. i18n: file: src/standardscandialog-ui.ui:51
-#. i18n: ectx: property (text), widget (QLabel, labelTime)
-#: rc.cpp:56
-#, kde-format
-msgid "<p align=\"right\">nothing here</p>"
-msgstr "<p align=\"right\">zde nic není</p>"
 
 #. i18n: file: src/stationselector-ui.ui:20
 #. i18n: ectx: property (text), widget (QLabel, labelSelected)
-#: rc.cpp:59
+#: rc.cpp:56
 #, kde-format
 msgid "Selected stations:"
 msgstr "Vybrané stanice:"
 
 #. i18n: file: src/stationselector-ui.ui:102
 #. i18n: ectx: property (text), widget (QLabel, labelAvailable)
-#: rc.cpp:62
+#: rc.cpp:59
 #, kde-format
 msgid "Available stations:"
 msgstr "Dostupné stanice:"
@@ -821,6 +812,12 @@ msgstr "Dostupné stanice:"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, nahrávání kradio4"
+
+#~ msgid "canDecode = true"
+#~ msgstr "canDecode = true"
+
+#~ msgid "<p align=\"right\">nothing here</p>"
+#~ msgstr "<p align=\"right\">zde nic není</p>"
 
 #~ msgid "Plugin Class"
 #~ msgstr "Skupina přídavných modulů"
