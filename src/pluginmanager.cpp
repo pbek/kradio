@@ -34,6 +34,7 @@
 #include <kprogressdialog.h>
 #include <kwindowsystem.h>
 #include <kmessagebox.h>
+#include <kglobal.h>
 
 #include <QProgressBar>
 #include <QLayout>

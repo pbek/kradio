@@ -18,6 +18,7 @@
 using namespace std;
 
 #include <kpushbutton.h>
+#include <kicon.h>
 #include <algorithm>
 
 #include "stationlist.h"

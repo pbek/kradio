@@ -28,6 +28,7 @@
 #include <kstandarddirs.h>
 #include <kdemacros.h>
 #include <kapplication.h>
+#include <kicon.h>
 
 #include <QCheckBox>
 #include <QStandardItemModel>

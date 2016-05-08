@@ -27,6 +27,7 @@
 #include <kshortcutseditor.h>
 #include <kaction.h>
 #include <kglobalaccel.h>
+#include <kicon.h>
 
 #include "errorlog_interfaces.h"
 #include "radiodevice_interfaces.h"
