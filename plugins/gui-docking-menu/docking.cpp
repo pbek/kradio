@@ -970,10 +970,7 @@ bool RadioDocking::noticeRDSRadioTextChanged(const QString &s)
 
 // void RadioDocking::slotUpdateRecordingMenu()
 // {
-//     QAction *a = NULL;
-//     foreach(a, m_WorkaroundRecordingMenuActionsToBeDeleted) {
-//         delete a;
-//     }
+//     qDeleteAll(m_WorkaroundRecordingMenuActionsToBeDeleted);
 //     m_WorkaroundRecordingMenuActionsToBeDeleted.clear();
 // }
 

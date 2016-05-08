@@ -509,10 +509,7 @@ void StreamingDevice::resetPlaybackStreams(bool notification_enabled)
     m_PlaybackChannelList      .clear();
     m_PlaybackChannelStringList.clear();
 
-    StreamingJob *job;
-    foreach(job, m_PlaybackChannelJobs.values()) {
-        delete job;
-    }
+    qDeleteAll(m_PlaybackChannelJobs);
     m_PlaybackChannelJobs.clear();
 
     if (notification_enabled) {
@@ -533,10 +530,7 @@ void StreamingDevice::resetCaptureStreams(bool notification_enabled)
     m_CaptureChannelList      .clear();
     m_CaptureChannelStringList.clear();
 
-    StreamingJob *job;
-    foreach(job, m_CaptureChannelJobs.values()) {
-        delete job;
-    }
+    qDeleteAll(m_CaptureChannelJobs);
     m_CaptureChannelJobs.clear();
 
     if (notification_enabled) {

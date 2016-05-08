@@ -248,10 +248,7 @@ void QuickBar::rebuildGUI()
 {
     if (m_layout) delete m_layout;
 
-    QToolButton *btn;
-    foreach (btn, m_buttons) {
-        delete btn;
-    }
+    qDeleteAll(m_buttons);
     m_buttons.clear();
 
     m_layout = new ButtonFlowLayout4(this);

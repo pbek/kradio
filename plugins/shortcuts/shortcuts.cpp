@@ -489,10 +489,7 @@ bool Shortcuts::noticeStationsChanged(const StationList &sl)
             a->setIcon(KIcon(s->iconName()));
         }
     }
-    KAction *a = NULL;
-    foreach(a, oldActions.values()) {
-        delete a;
-    }
+    qDeleteAll(oldActions);
     updateShortcutsEditors();
 
     return true;

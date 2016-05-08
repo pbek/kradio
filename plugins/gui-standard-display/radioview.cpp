@@ -258,10 +258,7 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
 
 RadioView::~RadioView ()
 {
-    QObject *o;
-    foreach(o, m_elementConfigPages.values()) {
-        delete o;
-    }
+    qDeleteAll(m_elementConfigPages);
     m_elementConfigPages.clear();
 
     if (m_RecordingMenu) delete m_RecordingMenu;
@@ -934,10 +931,7 @@ void RadioView::autoSetCaption()
 
 void RadioView::slotUpdateRecordingMenu()
 {
-    QAction *a = NULL;
-    foreach(a, m_WorkaroundRecordingMenuActionsToBeDeleted) {
-        delete a;
-    }
+    qDeleteAll(m_WorkaroundRecordingMenuActionsToBeDeleted);
     m_WorkaroundRecordingMenuActionsToBeDeleted.clear();
 }
 
