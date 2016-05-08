@@ -75,7 +75,6 @@ protected slots:
     void slotStationNameChanged( const QString & s);
     void slotStationShortNameChanged( const QString & sn);
     void slotPixmapChanged( const QString &s );
-    void slotSelectPixmap();
     void slotVolumePresetChanged(int v);
     void slotStereoModeChanged(int m);
     void slotStationUp();

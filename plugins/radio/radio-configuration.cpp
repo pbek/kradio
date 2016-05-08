@@ -46,6 +46,7 @@
 #include <ktoolinvocation.h>
 #include <kglobal.h>
 #include <kicon.h>
+#include <kimageio.h>
 
 RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &logger)
     : QWidget(parent),
@@ -61,6 +62,9 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
 
     editPresetFile->setStartDir(defaultPresetDir);
 
+    editPixmapFile->fileDialog()->setMimeFilter(KImageIO::mimeTypes(KImageIO::Reading));
+    editPixmapFile->fileDialog()->setCaption(i18n("Image Selection"));
+
     // icon settings does not work any more in .ui files in KDE4, don't know why/how
     buttonNewStation      ->setIcon(KIcon("document-new"));
     buttonDeleteStation   ->setIcon(KIcon("edit-delete"));
@@ -69,7 +73,6 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     buttonSearchStations  ->setIcon(KIcon("edit-find"));
     buttonLoadPresets     ->setIcon(KIcon("document-open"));
     buttonStorePresets    ->setIcon(KIcon("document-save-as"));
-    buttonSelectPixmapFile->setIcon(KIcon("document-open"));
 
     comboStereoMode->clear();
     comboStereoMode->addItem(i18nc("Sound mode", "<do not care>"),        (int)STATION_STEREO_DONTCARE);
@@ -83,8 +86,6 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
 
     QObject::connect(listStations, SIGNAL(sigCurrentStationChanged(int)),
                      this, SLOT(slotStationSelectionChanged(int)));
-    QObject::connect(buttonSelectPixmapFile, SIGNAL(clicked()),
-                     this, SLOT(slotSelectPixmap()));
     QObject::connect(buttonNewStation, SIGNAL(clicked()),
                      this, SLOT(slotNewStation()));
     QObject::connect(buttonDeleteStation, SIGNAL(clicked()),
@@ -252,7 +253,6 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
     labelStationShortName ->setDisabled(!s);
     editVolumePreset      ->setDisabled(!s);
     labelVolumePreset     ->setDisabled(!s);
-    buttonSelectPixmapFile->setDisabled(!s);
     buttonDeleteStation   ->setDisabled(!s);
 
     buttonStationUp       ->setDisabled(!s || idx == 0);
@@ -412,20 +412,6 @@ void RadioConfiguration::slotStationShortNameChanged( const QString & sn)
         listStations->setStation(idx, st);
         listStations->blockSignals(o);
         m_ignoreChanges = false;
-    }
-}
-
-
-void RadioConfiguration::slotSelectPixmap()
-{
-    KUrl url = KFileDialog::getImageOpenUrl(QString(), this,
-                                            i18n("Image Selection"));
-    if (!url.isEmpty()) {
-        if (url.isLocalFile()) {
-            editPixmapFile->setText(url.path());
-        } else {
-            m_logger.logWarning(i18n("ignoring non-local image"));
-        }
     }
 }
 
