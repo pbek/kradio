@@ -251,6 +251,8 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
     labelPixmapFile       ->setDisabled(!s);
     editStationShortName  ->setDisabled(!s);
     labelStationShortName ->setDisabled(!s);
+    comboStereoMode       ->setDisabled(!s);
+    labelStereoMode       ->setDisabled(!s);
     editVolumePreset      ->setDisabled(!s);
     labelVolumePreset     ->setDisabled(!s);
     buttonDeleteStation   ->setDisabled(!s);
