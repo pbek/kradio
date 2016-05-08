@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2016-05-08 16:45+0200\n"
-"PO-Revision-Date: 2015-12-25 16:05+0100\n"
+"PO-Revision-Date: 2016-05-08 16:57+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -470,11 +470,10 @@ msgstr "(raccomandata: 16 kB)"
 #. i18n: file: alsa-sound-configuration-ui.ui:471
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, editCaptureWorkaroundSleep)
 #: rc.cpp:45 rc.cpp:87 rc.cpp:212 rc.cpp:254
-#, fuzzy, kde-format
-#| msgid "disabled"
+#, kde-format
 msgctxt "disabled blocking i/o workaround"
 msgid "disabled"
-msgstr "disabilitata"
+msgstr "disabilitato"
 
 #. i18n: file: alsa-sound-configuration-ui.ui:240
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, editPlaybackWorkaroundSleep)

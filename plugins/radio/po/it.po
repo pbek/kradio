@@ -4,13 +4,13 @@
 #
 #
 # Giovanni Scafora <giovanni@archlinux.org>, 2011.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2016-04-24 12:03+0200\n"
-"PO-Revision-Date: 2015-12-25 16:17+0100\n"
+"PO-Revision-Date: 2016-05-08 16:57+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -227,8 +227,7 @@ msgstr "Il volume utilizzato quando la stazione è sintonizzata"
 #. i18n: file: radio-configuration-ui.ui:301
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
 #: rc.cpp:39 rc.cpp:120
-#, fuzzy, kde-format
-#| msgid "unchanged"
+#, kde-format
 msgctxt "unchanged volume"
 msgid "unchanged"
 msgstr "invariato"
