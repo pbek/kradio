@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2016-05-08 16:45+0200\n"
 "PO-Revision-Date: 2016-01-24 12:09+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -237,17 +237,17 @@ msgstr "FileRingBuffer::addData: impossibile scrivere i dati nel file %1."
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: impossibile leggere i dati nel file %1."
 
-#: src/instancemanager.cpp:120
+#: src/instancemanager.cpp:70
 #, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Libreria %1: manca il punto d'ingresso dell'estensione"
 
-#: src/instancemanager.cpp:121 src/instancemanager.cpp:128
+#: src/instancemanager.cpp:71 src/instancemanager.cpp:78
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Impossibile caricare la libreria dell'estensione"
 
-#: src/instancemanager.cpp:127
+#: src/instancemanager.cpp:77
 #, kde-format
 msgid ""
 "Library %1:\n"
@@ -256,18 +256,18 @@ msgstr ""
 "Libreria %1:\n"
 "%2"
 
-#: src/instancemanager.cpp:203
+#: src/instancemanager.cpp:153
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr ""
 "Sono state trovate delle nuove librerie di estensioni. Vuoi caricarle adesso?"
 
-#: src/instancemanager.cpp:205
+#: src/instancemanager.cpp:155
 #, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Sono state trovate delle nuove librerie di estensioni"
 
-#: src/instancemanager.cpp:221
+#: src/instancemanager.cpp:171
 #, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -286,25 +286,20 @@ msgstr[1] ""
 "Controlla la directory di installazione di KRadio4 e le variabili d'ambiente "
 "KDEDIR, KDEDIRS e KDEHOME.\n"
 
-#: src/instancemanager.cpp:229
+#: src/instancemanager.cpp:179
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "Errore di installazione di KRadio4"
 
-#: src/instancemanager.cpp:254
+#: src/instancemanager.cpp:204
 #, kde-format
 msgid "Instance %1"
 msgstr "Istanza %1"
 
-#: src/instancemanager.cpp:275
+#: src/instancemanager.cpp:225
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "Configurazione di KRadio"
-
-#: src/instancemanager.cpp:276
-#, kde-format
-msgid "About KRadio Components"
-msgstr "Informazioni sui componenti di KRadio"
 
 #: src/main.cpp:33
 #, kde-format
@@ -381,42 +376,42 @@ msgstr "Idea iniziale, applicazione originariamente nata per KDE 2"
 msgid "Buffer Overflow. "
 msgstr "Buffer overflow. "
 
-#: src/plugin_configuration_dialog.cpp:35
+#: src/plugin_configuration_dialog.cpp:30
 #, kde-format
 msgid "Configuration Dialog"
 msgstr "Finestra di configurazione"
 
-#: src/pluginmanager-configuration.cpp:204
+#: src/pluginmanager-configuration.cpp:205
 #, kde-format
 msgid "Enter Plugin Instance Name"
 msgstr "Inserisci il nome dell'istanza dell'estensione"
 
-#: src/pluginmanager-configuration.cpp:205
+#: src/pluginmanager-configuration.cpp:206
 #, kde-format
 msgid "Instance name:"
 msgstr "Nome dell'istanza:"
 
-#: src/pluginmanager.cpp:455
+#: src/pluginmanager.cpp:432
 #, kde-format
 msgid "Plugins"
 msgstr "Estensioni"
 
-#: src/pluginmanager.cpp:456
+#: src/pluginmanager.cpp:433
 #, kde-format
 msgid "Plugin Library Configuration"
 msgstr "Configurazione della libreria dell'estensione"
 
-#: src/pluginmanager.cpp:588
+#: src/pluginmanager.cpp:504
 #, kde-format
 msgid "Starting Plugins"
 msgstr "Avvio dell'estensione in corso"
 
-#: src/pluginmanager.cpp:605 src/pluginmanager.cpp:639
+#: src/pluginmanager.cpp:521 src/pluginmanager.cpp:555
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Creazione dell'estensione %1 in corso"
 
-#: src/pluginmanager.cpp:623
+#: src/pluginmanager.cpp:539
 #, kde-format
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
@@ -424,35 +419,35 @@ msgstr ""
 "Sono state trovate delle nuove estensioni. Vuoi creare automaticamente delle "
 "nuove istanze adesso?"
 
-#: src/pluginmanager.cpp:625
+#: src/pluginmanager.cpp:541
 #, kde-format
 msgid "New Plugins Found"
 msgstr "Trovate nuove estensioni"
 
-#: src/pluginmanager.cpp:660
+#: src/pluginmanager.cpp:576
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Inizializzazione dell'estensione %1 in corso"
 
-#: src/pluginmanager.cpp:785
+#: src/pluginmanager.cpp:693
 #, kde-format
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Mostra tutto"
 
-#: src/pluginmanager.cpp:786
+#: src/pluginmanager.cpp:694
 #, kde-format
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Nascondi tutto"
 
-#: src/pluginmanager.cpp:787
+#: src/pluginmanager.cpp:695
 #, kde-format
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Ripristina tutto"
 
-#: src/pluginmanager.cpp:788
+#: src/pluginmanager.cpp:696
 #, kde-format
 msgid "Restore state before last hide-all activation"
 msgstr "Ripristina lo stato prima dell'attivazione di nascondi tutto"
@@ -823,6 +818,9 @@ msgstr "Stazioni disponibili:"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, registrazione di kradio4"
+
+#~ msgid "About KRadio Components"
+#~ msgstr "Informazioni sui componenti di KRadio"
 
 #~ msgid "canDecode = true"
 #~ msgstr "canDecode = true"

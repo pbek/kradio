@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-05-08 16:45+0200\n"
 "PO-Revision-Date: 2011-01-29 21:25+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -30,161 +30,161 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Sunder67@hotmail.com"
 
-#: shortcuts.cpp:49
+#: shortcuts.cpp:50
 #, fuzzy, kde-format
 #| msgid "Shortcuts"
 msgctxt "@title"
 msgid "Shortcuts"
 msgstr "Kısayollar"
 
-#: shortcuts.cpp:51
+#: shortcuts.cpp:52
 #, fuzzy, kde-format
 #| msgid "Shortcuts Support"
 msgctxt "@title"
 msgid "Shortcuts Support"
 msgstr "Kısayol Desteği"
 
-#: shortcuts.cpp:66 shortcuts.cpp:212
+#: shortcuts.cpp:67 shortcuts.cpp:213
 #, kde-format
 msgid "Shortcuts Plugin"
 msgstr "Kısayol Eklenti"
 
-#: shortcuts.cpp:74
+#: shortcuts.cpp:75
 #, kde-format
 msgid "Standard Actions"
 msgstr "Standart Eylemler"
 
-#: shortcuts.cpp:75
+#: shortcuts.cpp:76
 #, kde-format
 msgid "Station Actions"
 msgstr "İstasyon Eylemleri"
 
-#: shortcuts.cpp:77
+#: shortcuts.cpp:78
 #, kde-format
 msgid "Digit 0"
 msgstr "Hane 0"
 
-#: shortcuts.cpp:78
+#: shortcuts.cpp:79
 #, kde-format
 msgid "Digit 1"
 msgstr "Hane 1"
 
-#: shortcuts.cpp:79
+#: shortcuts.cpp:80
 #, kde-format
 msgid "Digit 2"
 msgstr "Hane 2"
 
-#: shortcuts.cpp:80
+#: shortcuts.cpp:81
 #, kde-format
 msgid "Digit 3"
 msgstr "Hane 3"
 
-#: shortcuts.cpp:81
+#: shortcuts.cpp:82
 #, kde-format
 msgid "Digit 4"
 msgstr "Hane 4"
 
-#: shortcuts.cpp:82
+#: shortcuts.cpp:83
 #, kde-format
 msgid "Digit 5"
 msgstr "Hane 5"
 
-#: shortcuts.cpp:83
+#: shortcuts.cpp:84
 #, kde-format
 msgid "Digit 6"
 msgstr "Hane 6"
 
-#: shortcuts.cpp:84
+#: shortcuts.cpp:85
 #, kde-format
 msgid "Digit 7"
 msgstr "Hane 7"
 
-#: shortcuts.cpp:85
+#: shortcuts.cpp:86
 #, kde-format
 msgid "Digit 8"
 msgstr "Hane 8"
 
-#: shortcuts.cpp:86
+#: shortcuts.cpp:87
 #, kde-format
 msgid "Digit 9"
 msgstr "Hane 9"
 
-#: shortcuts.cpp:87
+#: shortcuts.cpp:88
 #, kde-format
 msgid "Power on"
 msgstr "Güç Açma"
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:89
 #, kde-format
 msgid "Power off"
 msgstr "Güç Kapama"
 
-#: shortcuts.cpp:89
+#: shortcuts.cpp:90
 #, kde-format
 msgid "Pause"
 msgstr "Duraklat"
 
-#: shortcuts.cpp:90
+#: shortcuts.cpp:91
 #, kde-format
 msgid "Start recording"
 msgstr "Kayıt başlat"
 
-#: shortcuts.cpp:91
+#: shortcuts.cpp:92
 #, kde-format
 msgid "Stop recording"
 msgstr "Kayıt durdur"
 
-#: shortcuts.cpp:92
+#: shortcuts.cpp:93
 #, kde-format
 msgid "Increase volume"
 msgstr "Ses arttır"
 
-#: shortcuts.cpp:93
+#: shortcuts.cpp:94
 #, kde-format
 msgid "Decrease volume"
 msgstr "Ses düşür"
 
-#: shortcuts.cpp:94
+#: shortcuts.cpp:95
 #, kde-format
 msgid "Increase Frequency"
 msgstr "Frekans arttır"
 
-#: shortcuts.cpp:95
+#: shortcuts.cpp:96
 #, kde-format
 msgid "Decrease Frequency"
 msgstr "Frekans düşür"
 
-#: shortcuts.cpp:96
+#: shortcuts.cpp:97
 #, kde-format
 msgid "Next station"
 msgstr "Sonraki istasyon"
 
-#: shortcuts.cpp:97
+#: shortcuts.cpp:98
 #, kde-format
 msgid "Previous station"
 msgstr "Önceki istasyon"
 
-#: shortcuts.cpp:98
+#: shortcuts.cpp:99
 #, kde-format
 msgid "Search next station"
 msgstr "Sonraki istasyonları ara"
 
-#: shortcuts.cpp:99
+#: shortcuts.cpp:100
 #, kde-format
 msgid "Search previous station"
 msgstr "Önceki istasyonları ara"
 
-#: shortcuts.cpp:100
+#: shortcuts.cpp:101
 #, kde-format
 msgid "Sleep"
 msgstr "Uyku"
 
-#: shortcuts.cpp:101
+#: shortcuts.cpp:102
 #, kde-format
 msgid "Quit KRadio"
 msgstr "Kradio çıkış"
 
-#: shortcuts.cpp:211
+#: shortcuts.cpp:212
 #, kde-format
 msgid "Shortcuts"
 msgstr "Kısayollar"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2016-05-08 16:45+0200\n"
 "PO-Revision-Date: 2016-01-16 13:39+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -283,7 +283,9 @@ msgstr "libffmpeg: tempo di analisi informazioni sul flusso:"
 #. i18n: file: internetradio-configuration-ui.ui:108
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
 #: rc.cpp:18 rc.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "disabled"
+msgctxt "disabled watchdog"
 msgid "disabled"
 msgstr "disabilitata"
 

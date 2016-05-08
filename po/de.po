@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2016-05-08 16:45+0200\n"
 "PO-Revision-Date: 2014-09-18 17:40+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -235,17 +235,17 @@ msgstr "FileRingBuffer::addData: Das Schreiben in die Datei %1 schlug fehl."
 msgid "FileRingBuffer::takeData: failed reading data to file %1."
 msgstr "FileRingBuffer::takeData: Das Lesen aus der Datei %1 schlug fehl."
 
-#: src/instancemanager.cpp:120
+#: src/instancemanager.cpp:70
 #, kde-format
 msgid "Library %1: plugin entry point is missing"
 msgstr "Bibliothek %1: Eintrittspunkt wurde nicht gefunden"
 
-#: src/instancemanager.cpp:121 src/instancemanager.cpp:128
+#: src/instancemanager.cpp:71 src/instancemanager.cpp:78
 #, kde-format
 msgid "Plugin Library Load Error"
 msgstr "Das Laden der Bibliothek schlug fehl"
 
-#: src/instancemanager.cpp:127
+#: src/instancemanager.cpp:77
 #, kde-format
 msgid ""
 "Library %1:\n"
@@ -254,19 +254,19 @@ msgstr ""
 "Bibliothek %1:\n"
 "%2"
 
-#: src/instancemanager.cpp:203
+#: src/instancemanager.cpp:153
 #, kde-format
 msgid "New plugin libraries found. Should the libraries be loaded now?"
 msgstr ""
 "Neue Plugin-Bibliotheken wurden gefunden. Sollen diese Bibliotheken jetzt "
 "geladen werden?"
 
-#: src/instancemanager.cpp:205
+#: src/instancemanager.cpp:155
 #, kde-format
 msgid "New Plugin Libraries Found"
 msgstr "Neue Plugin-Bibliotheken wurden gefunden"
 
-#: src/instancemanager.cpp:221
+#: src/instancemanager.cpp:171
 #, kde-format
 msgid ""
 "Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
@@ -289,25 +289,20 @@ msgstr[1] ""
 "bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und "
 "KDEHOME.\n"
 
-#: src/instancemanager.cpp:229
+#: src/instancemanager.cpp:179
 #, kde-format
 msgid "KRadio4 Installation Error"
 msgstr "Fehler in der KRadio4-Installation"
 
-#: src/instancemanager.cpp:254
+#: src/instancemanager.cpp:204
 #, kde-format
 msgid "Instance %1"
 msgstr "Instanz %1"
 
-#: src/instancemanager.cpp:275
+#: src/instancemanager.cpp:225
 #, kde-format
 msgid "KRadio Configuration"
 msgstr "KRadio-Konfiguration"
-
-#: src/instancemanager.cpp:276
-#, kde-format
-msgid "About KRadio Components"
-msgstr "Über die KRadio-Komponenten"
 
 #: src/main.cpp:33
 #, kde-format
@@ -384,42 +379,42 @@ msgstr "Initiale Idee, allererste KDE-2-Anwendung"
 msgid "Buffer Overflow. "
 msgstr "Puffer-Überlauf."
 
-#: src/plugin_configuration_dialog.cpp:35
+#: src/plugin_configuration_dialog.cpp:30
 #, kde-format
 msgid "Configuration Dialog"
 msgstr "Konfigurationsdialog"
 
-#: src/pluginmanager-configuration.cpp:204
+#: src/pluginmanager-configuration.cpp:205
 #, kde-format
 msgid "Enter Plugin Instance Name"
 msgstr "Name der Plugin-Instanz eingeben"
 
-#: src/pluginmanager-configuration.cpp:205
+#: src/pluginmanager-configuration.cpp:206
 #, kde-format
 msgid "Instance name:"
 msgstr "Name der Instanz:"
 
-#: src/pluginmanager.cpp:455
+#: src/pluginmanager.cpp:432
 #, kde-format
 msgid "Plugins"
 msgstr "Plugins"
 
-#: src/pluginmanager.cpp:456
+#: src/pluginmanager.cpp:433
 #, kde-format
 msgid "Plugin Library Configuration"
 msgstr "Konfiguration der Plugin-Bibliotheken"
 
-#: src/pluginmanager.cpp:588
+#: src/pluginmanager.cpp:504
 #, kde-format
 msgid "Starting Plugins"
 msgstr "Starten der Plugins"
 
-#: src/pluginmanager.cpp:605 src/pluginmanager.cpp:639
+#: src/pluginmanager.cpp:521 src/pluginmanager.cpp:555
 #, kde-format
 msgid "Creating Plugin %1"
 msgstr "Erzeuge Plugin %1"
 
-#: src/pluginmanager.cpp:623
+#: src/pluginmanager.cpp:539
 #, kde-format
 msgid ""
 "New plugins found. Do you want me to automatically create instances now?"
@@ -427,35 +422,35 @@ msgstr ""
 "Neue Plugins wurden gefunden: Sollen Instanzen dieser Plugins jetzt "
 "automatisch erzeugt werden?"
 
-#: src/pluginmanager.cpp:625
+#: src/pluginmanager.cpp:541
 #, kde-format
 msgid "New Plugins Found"
 msgstr "Neue Plugins wurden gefunden"
 
-#: src/pluginmanager.cpp:660
+#: src/pluginmanager.cpp:576
 #, kde-format
 msgid "Initializing Plugin %1"
 msgstr "Starten des Plugins %1"
 
-#: src/pluginmanager.cpp:785
+#: src/pluginmanager.cpp:693
 #, kde-format
 msgctxt "Show all widget plugins"
 msgid "Show all"
 msgstr "Alle anzeigen"
 
-#: src/pluginmanager.cpp:786
+#: src/pluginmanager.cpp:694
 #, kde-format
 msgctxt "Hide all widget plugins"
 msgid "Hide all"
 msgstr "Alle ausblenden"
 
-#: src/pluginmanager.cpp:787
+#: src/pluginmanager.cpp:695
 #, kde-format
 msgctxt "Restore all widget plugins"
 msgid "Restore all"
 msgstr "Alle wiederherstellen"
 
-#: src/pluginmanager.cpp:788
+#: src/pluginmanager.cpp:696
 #, kde-format
 msgid "Restore state before last hide-all activation"
 msgstr ""
@@ -818,6 +813,9 @@ msgstr "Verfügbare Sender:"
 #, kde-format
 msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
 msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4-Aufnahme"
+
+#~ msgid "About KRadio Components"
+#~ msgstr "Über die KRadio-Komponenten"
 
 #~ msgid "canDecode = true"
 #~ msgstr "canDecode = true"

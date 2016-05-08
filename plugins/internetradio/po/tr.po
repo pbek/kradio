@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2016-05-08 16:45+0200\n"
 "PO-Revision-Date: 2011-02-06 02:31+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -264,6 +264,7 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
 #: rc.cpp:18 rc.cpp:62
 #, kde-format
+msgctxt "disabled watchdog"
 msgid "disabled"
 msgstr ""
 

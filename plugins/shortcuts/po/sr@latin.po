@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shortcuts (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2016-05-08 16:45+0200\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -24,161 +24,161 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "simovic@mailup.net"
 
-#: shortcuts.cpp:49
+#: shortcuts.cpp:50
 #, fuzzy, kde-format
 #| msgid "Shortcuts"
 msgctxt "@title"
 msgid "Shortcuts"
 msgstr "Prečice"
 
-#: shortcuts.cpp:51
+#: shortcuts.cpp:52
 #, fuzzy, kde-format
 #| msgid "Shortcuts Support"
 msgctxt "@title"
 msgid "Shortcuts Support"
 msgstr "Podrška za prečice"
 
-#: shortcuts.cpp:66 shortcuts.cpp:212
+#: shortcuts.cpp:67 shortcuts.cpp:213
 #, kde-format
 msgid "Shortcuts Plugin"
 msgstr "Priljučak za prečice"
 
-#: shortcuts.cpp:74
+#: shortcuts.cpp:75
 #, kde-format
 msgid "Standard Actions"
 msgstr "Standardne akcije"
 
-#: shortcuts.cpp:75
+#: shortcuts.cpp:76
 #, kde-format
 msgid "Station Actions"
 msgstr "Akcije za stanice"
 
-#: shortcuts.cpp:77
+#: shortcuts.cpp:78
 #, kde-format
 msgid "Digit 0"
 msgstr "Cifra 0"
 
-#: shortcuts.cpp:78
+#: shortcuts.cpp:79
 #, kde-format
 msgid "Digit 1"
 msgstr "Cifra 1"
 
-#: shortcuts.cpp:79
+#: shortcuts.cpp:80
 #, kde-format
 msgid "Digit 2"
 msgstr "Cifra 2"
 
-#: shortcuts.cpp:80
+#: shortcuts.cpp:81
 #, kde-format
 msgid "Digit 3"
 msgstr "Cifra 3"
 
-#: shortcuts.cpp:81
+#: shortcuts.cpp:82
 #, kde-format
 msgid "Digit 4"
 msgstr "Cifra 4"
 
-#: shortcuts.cpp:82
+#: shortcuts.cpp:83
 #, kde-format
 msgid "Digit 5"
 msgstr "Cifra 5"
 
-#: shortcuts.cpp:83
+#: shortcuts.cpp:84
 #, kde-format
 msgid "Digit 6"
 msgstr "Cifra 6"
 
-#: shortcuts.cpp:84
+#: shortcuts.cpp:85
 #, kde-format
 msgid "Digit 7"
 msgstr "Cifra 7"
 
-#: shortcuts.cpp:85
+#: shortcuts.cpp:86
 #, kde-format
 msgid "Digit 8"
 msgstr "Cifra 8"
 
-#: shortcuts.cpp:86
+#: shortcuts.cpp:87
 #, kde-format
 msgid "Digit 9"
 msgstr "Cifra 9"
 
-#: shortcuts.cpp:87
+#: shortcuts.cpp:88
 #, kde-format
 msgid "Power on"
 msgstr "Uključi"
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:89
 #, kde-format
 msgid "Power off"
 msgstr "Isključi"
 
-#: shortcuts.cpp:89
+#: shortcuts.cpp:90
 #, kde-format
 msgid "Pause"
 msgstr "Pauza"
 
-#: shortcuts.cpp:90
+#: shortcuts.cpp:91
 #, kde-format
 msgid "Start recording"
 msgstr "Start snimanja"
 
-#: shortcuts.cpp:91
+#: shortcuts.cpp:92
 #, kde-format
 msgid "Stop recording"
 msgstr "Stop snimanja"
 
-#: shortcuts.cpp:92
+#: shortcuts.cpp:93
 #, kde-format
 msgid "Increase volume"
 msgstr "Povećanje jačine"
 
-#: shortcuts.cpp:93
+#: shortcuts.cpp:94
 #, kde-format
 msgid "Decrease volume"
 msgstr "Smanjenje jačine"
 
-#: shortcuts.cpp:94
+#: shortcuts.cpp:95
 #, kde-format
 msgid "Increase Frequency"
 msgstr "Povećanje frekvencije"
 
-#: shortcuts.cpp:95
+#: shortcuts.cpp:96
 #, kde-format
 msgid "Decrease Frequency"
 msgstr "Smanjenje frekvencije"
 
-#: shortcuts.cpp:96
+#: shortcuts.cpp:97
 #, kde-format
 msgid "Next station"
 msgstr "Sledeća stanica"
 
-#: shortcuts.cpp:97
+#: shortcuts.cpp:98
 #, kde-format
 msgid "Previous station"
 msgstr "Predhodna stanica"
 
-#: shortcuts.cpp:98
+#: shortcuts.cpp:99
 #, kde-format
 msgid "Search next station"
 msgstr "Traži sledeću stanicu"
 
-#: shortcuts.cpp:99
+#: shortcuts.cpp:100
 #, kde-format
 msgid "Search previous station"
 msgstr "Traži predhodnu stanicu"
 
-#: shortcuts.cpp:100
+#: shortcuts.cpp:101
 #, kde-format
 msgid "Sleep"
 msgstr "Spavanje"
 
-#: shortcuts.cpp:101
+#: shortcuts.cpp:102
 #, kde-format
 msgid "Quit KRadio"
 msgstr "Napusti KRadio"
 
-#: shortcuts.cpp:211
+#: shortcuts.cpp:212
 #, kde-format
 msgid "Shortcuts"
 msgstr "Prečice"
