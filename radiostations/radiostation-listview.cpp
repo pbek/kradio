@@ -83,7 +83,7 @@ QVariant RadioStationModel::data(const QModelIndex &index, int role) const
             break;
         case Qt::DecorationRole:
             switch(index.column()) {
-                case 0: return rs.icon;
+                case 0: return QIcon(rs.icon);
             }
             break;
     }
