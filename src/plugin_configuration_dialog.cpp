@@ -22,27 +22,20 @@
 
 PluginConfigurationDialog::PluginConfigurationDialog(
         const QString         &instanceID,
-        KPageDialog::FaceType  dialogFace,
         const QString         &caption,
-        KDialog::ButtonCodes   buttonMask,
-        KDialog::ButtonCode    defaultButton,
         QWidget               *parent,
-        const QString         &name,
-        bool                   modal,
-        bool                   separator
+        const QString         &name
 )
-: KPageDialog(),
+: KPageDialog(parent),
   WidgetPluginBase (this, instanceID, name, i18n("Configuration Dialog")),
   m_Caption(caption)
 {
-    KPageDialog::setFaceType        (dialogFace);
+    KPageDialog::setFaceType        (KPageDialog::List);
     KPageDialog::setCaption         (m_Caption);
-    KPageDialog::setParent          (parent);
     KPageDialog::setObjectName      (name);
-    KPageDialog::setModal           (modal);
-    KPageDialog::setButtons         (buttonMask);
-    KPageDialog::setDefaultButton   (defaultButton);
-    KPageDialog::showButtonSeparator(separator);
+    KPageDialog::setModal           (false);
+    KPageDialog::setButtons         (KDialog::Apply | KDialog::Ok | KDialog::Cancel);
+    KPageDialog::showButtonSeparator(true);
 }
 
 

@@ -403,14 +403,9 @@ void PluginManager::createConfigDialog(const QString &title)
 
     PluginConfigurationDialog *cfg = new PluginConfigurationDialog(
         m_configDialogID,
-        KPageDialog::List,
         title,
-        KDialog::Apply | KDialog::Ok | KDialog::Cancel | KDialog::Reset,
-        KDialog::Ok,
         /*parent = */ NULL,
-        title,
-        /*modal = */ false,
-        /*separator = */ true);
+        title);
 
     m_configDialog = cfg;
     m_configDialog->PluginBase::setName(m_configDialog->pluginClassName());

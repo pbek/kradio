@@ -33,14 +33,9 @@ Q_OBJECT
 public:
     PluginConfigurationDialog(
         const QString         &instanceID,
-        KPageDialog::FaceType  dialogFace,
         const QString         &caption,
-        KDialog::ButtonCodes   buttonMask,
-        KDialog::ButtonCode    defaultButton,
         QWidget               *parent    = 0,
-        const QString         &name      = QString(),
-        bool                   modal     = true,
-        bool                   separator = false
+        const QString         &name      = QString()
     );
 
     // PluginBase
