@@ -44,17 +44,14 @@
 PluginManager::PluginManager(
     const QString &name,
     InstanceManager *im,
-    const QString &configDialogTitle,
-    const QString &/*aboutDialogTitle*/)
+    const QString &configDialogTitle)
  : m_Name(name),
    m_instanceManager(im),
    m_showProgressBar(true),
    m_configDialog (NULL),
    m_configDialogID(generateRandomID(70)),
    m_pluginManagerConfiguration(NULL),
-//    m_aboutDialog(NULL),
    m_configDialogTitle(configDialogTitle),
-//    m_aboutDialogTitle (aboutDialogTitle)
    m_widgetPluginHideShowMenu(NULL)
 {
 }
@@ -78,12 +75,6 @@ PluginManager::~PluginManager()
     m_configPageFrames.clear();
     m_configPageInfos .clear();
     m_configDialog = NULL;
-
-//     if (m_aboutDialog)
-//         delete m_aboutDialog;
-//     m_aboutPages.clear();
-//     m_aboutPageFrames.clear();
-//     m_aboutDialog = NULL;
 
     while (!m_plugins.isEmpty()) {
         deletePlugin(m_plugins.first());
@@ -209,15 +200,11 @@ void PluginManager::insertPlugin(PluginBase *p)
                   << " Debug: Adding Plugin: " << p->name() << "\n";*/
 
         getConfigDialog();
-//         if (!m_aboutDialog)
-//             createAboutDialog(m_aboutDialogTitle);
 
         m_plugins.append(p);
         p->setManager(this);
 
         addConfigurationPage (p, p->createConfigurationPage());
-        // FIXME: port about pages
-        //addAboutPage         (p, p->createAboutPage());
 
         profiler_cfg.stop();
         BlockProfiler profiler_connect("PluginManager::insertPlugin - connect");
@@ -300,12 +287,6 @@ void PluginManager::removePlugin(PluginBase *p)
             m_configPageInfos .remove(p);
 //             delete f;
         }
-//         while (m_aboutPageFrames.contains(p)) {
-//             KPageWidgetItem *f = m_aboutPageFrames[p];
-//             m_aboutPageFrames.remove(p);
-//             m_aboutPages.remove(p);
-//             delete f;
-//         }
 
         // remove bindings between me and plugin
         m_plugins.removeAll(p);
@@ -459,67 +440,6 @@ ConfigPageInfo PluginManager::createOwnConfigurationPage()
 
 
 
-
-
-// KPageWidgetItem *PluginManager::addAboutPage (PluginBase *forWhom,
-//                                               const AboutPageInfo &info)
-// {
-//     if (!m_aboutDialog)
-//         createAboutDialog(i18n(m_aboutDialogTitle.toLocal8Bit()));
-//
-//     if (   !forWhom || !m_plugins.contains(forWhom)
-//         || !m_aboutDialog || !info.page)
-//         return NULL;
-//
-//
-//     // create empty about frame
-//     QWidget *f = new QWidget();
-//
-//     // fill config frame with layout ...
-//     QGridLayout *l = new QGridLayout(f);
-//     l->setSpacing( 0 );
-//     l->setMargin( 0 );
-//
-//     // ... and externally created config page
-//     info.page->setParent (f);
-//     info.page->move(0,0);
-//     info.page->show();
-//     l->addWidget( info.page, 0, 0 );
-//
-//     // insert into config dialog
-//     KPageWidgetItem *item = m_aboutDialog->addPage(f, info.itemName);
-//     item->setHeader(info.pageHeader);
-//     item->setIcon(KIcon(info.iconName));
-//
-//     // register this frame and config page
-//     m_aboutPageFrames.insert(forWhom, item);
-//     m_aboutPages.insert     (forWhom, info.page);
-//
-//     return item;
-// }
-
-
-// void PluginManager::createAboutDialog(const QString &title)
-// {
-//     if (m_aboutDialog) delete m_aboutDialog;
-//     m_aboutDialog = NULL;
-//
-//     m_aboutDialog = new KPageDialog();
-//
-//     m_aboutDialog->setFaceType        (KPageDialog::List);
-//     m_aboutDialog->setCaption         (title);
-//     m_aboutDialog->setParent          (NULL);
-//     m_aboutDialog->setObjectName      (title);
-//     m_aboutDialog->setModal           (false);
-//     m_aboutDialog->setButtons         (KDialog::Close);
-//     m_aboutDialog->setDefaultButton   (KDialog::Close);
-//     m_aboutDialog->showButtonSeparator(true);
-//
-//     for (PluginIterator it = m_plugins.begin(); m_aboutDialog && it != m_plugins.end(); ++it) {
-//         addAboutPage((*it),
-//                      (*it)->createAboutPage());
-//     }
-// }
 
 
 void PluginManager::saveState (KConfig *c) const
@@ -728,14 +648,6 @@ PluginConfigurationDialog *PluginManager::getConfigDialog()
         createConfigDialog(m_configDialogTitle);
     return m_configDialog;
 }
-
-// KPageDialog               *PluginManager::getAboutDialog()
-// {
-//     if (!m_aboutDialog)
-//         createAboutDialog();
-//     return m_aboutDialog;
-// }
-//
 
 
 void PluginManager::slotConfigOK()

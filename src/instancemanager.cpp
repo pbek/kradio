@@ -34,56 +34,6 @@
 #include "debug-profiler.h"
 
 /////////////////////////////////////////////////////////////////////////////
-//// KRadioAbout
-
-// AboutPageInfo  KRadioAbout::createAboutPage ()
-// {
-//     const char *description = I18N_NOOP(
-//         "KRadio - The Radio Application for KDE"
-//         "<P>"
-//         "With KRadio you can listen to radio broadcasts with the help of your "
-//         "V4L/V4L2 compatible radio card."
-//         "<P>"
-//         "The KRadio Project contains a station preset data database. To complete "
-//         "this database you are encouraged to contribute your station preset file "
-//         "to the project. Just send it to one of the authors. "
-//         "<P>"
-//         "If you like to contribute your ideas, your own plugins or translations, "
-//         "don't hesitate to contact one of the authors."
-//         "<P>"
-//     );
-//
-//     KAboutData aboutData("kradio", // appname
-//                          "kradio4", // catalog name
-//                          ki18n("KRadio4"), // programName
-//                          KRADIO_VERSION,
-//                          ki18n(description),
-//                          KAboutData::License_GPL,
-//                          ki18n("(c) 2002-2006 Martin Witte, Klas Kalass"),
-//                          KLocalizedString(),
-//                          "http://sourceforge.net/projects/kradio"
-//                         );
-//     aboutData.addAuthor(ki18n("Martin Witte"),  ki18n("Preset Database, Remote Control Support, Alarms, Rewrite for KRadio 0.3.0, Misc"), "emw-kradio@nocabal.de");
-//     aboutData.addAuthor(ki18n("Marcus Camen"),  ki18n("Buildsystem, Standards Conformance, Cleanups"),                                    "mcamen@mcamen.de");
-//     aboutData.addAuthor(ki18n("Klas Kalass"),   ki18n("Miscellaneous"),                                                                   "klas.kalass@gmx.de");
-//     aboutData.addAuthor(ki18n("Frank Schwanz"), ki18n("idea, first basic application"),                                                   "schwanz@fh-brandenburg.de");
-//
-//     aboutData.addCredit(ki18n("Many People around the World ... "),
-//                         ki18n("... which contributed station preset files \n"
-//                               "and tested early and unstable snapshots of KRadio \n"
-//                               "with much patience"));
-//
-// #warning "FIXME: about widgets currently disabled"
-//     return AboutPageInfo(
-//               new KRadioAboutWidget(&aboutData),
-//               "KRadio",
-//               "KRadio",
-//               "kradio4"
-//            );
-// }
-
-
-/////////////////////////////////////////////////////////////////////////////
 //// PluginLibraryInfo
 
 PluginLibraryInfo::PluginLibraryInfo (const PluginLibraryInfo &libinfo)
@@ -272,15 +222,10 @@ PluginManager *InstanceManager::createNewInstance(const QString &_name)
     }
     PluginManager *pm = new PluginManager ( instance_name,
                                             this,
-                                            i18n("KRadio Configuration")    + title_ext,
-                                            i18n("About KRadio Components") + title_ext
+                                            i18n("KRadio Configuration")    + title_ext
                                           );
 
     m_Instances.insert(instance_name, pm);
-
-    /* Until we don't have library plugins we must instantiate them hard-wired */
-//     KRadioAbout      *about       = new KRadioAbout     (      "kradio-about-" + instance_name);
-//     pm->insertPlugin(about);
 
     return pm;
 }

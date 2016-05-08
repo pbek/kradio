@@ -55,8 +55,6 @@ public:
 
 protected :
 
-//     virtual AboutPageInfo   createAboutPage();
-
     // WidgetPluginBase
 
 public slots:

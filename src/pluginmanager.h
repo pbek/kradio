@@ -42,8 +42,7 @@ Q_OBJECT
 public :
              PluginManager(const QString &name,
                            InstanceManager *im,
-                           const QString &configDialogTitle,
-                           const QString &aboutTitle);
+                           const QString &configDialogTitle);
     virtual ~PluginManager();
 
     const QString        instanceName() const { return m_Name; }
@@ -83,7 +82,6 @@ public :
     // configuration dialog handling
 
     virtual PluginConfigurationDialog *getConfigDialog();
-//     virtual KPageDialog               *getAboutDialog();
     virtual bool                       showsProgressBar() const { return m_showProgressBar; }
     virtual void                       showProgressBar(bool b) { m_showProgressBar = b; }
 
@@ -97,12 +95,9 @@ public :
 
 protected :
     virtual void                       createConfigDialog(const QString &title = QString::null);
-//     virtual void                       createAboutDialog (const QString &title = QString::null);
 
     virtual KPageWidgetItem           *addConfigurationPage (PluginBase *forWhom,
                                                              const ConfigPageInfo    &info);
-//     virtual KPageWidgetItem           *addAboutPage         (PluginBase *forWhom,
-//                                                              const AboutPageInfo     &info);
     virtual void                       setConfigPageNameEtc(PluginBase *p);
 
 
@@ -150,15 +145,10 @@ protected:
     QPlugin2WidgetMap           m_configPages;
     QPlugin2ConfigPageInfoMap   m_configPageInfos;
 
-//     QPlugin2ConfigPageMap       m_aboutPageFrames;
-//     QPlugin2WidgetMap           m_aboutPages;
-
     PluginConfigurationDialog  *m_configDialog;
     QString                     m_configDialogID;
     PluginManagerConfiguration *m_pluginManagerConfiguration;
-//     KPageDialog                *m_aboutDialog;
     QString                     m_configDialogTitle;
-//     QString                     m_aboutDialogTitle;
 
     QMenu                      *m_widgetPluginHideShowMenu;
     QMap<QString, bool>         m_widgetsShownCache;

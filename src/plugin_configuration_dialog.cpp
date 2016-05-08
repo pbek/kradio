@@ -63,12 +63,6 @@ void   PluginConfigurationDialog::restoreState (const KConfigGroup &c)
 }
 
 
-// AboutPageInfo  PluginConfigurationDialog::createAboutPage()
-// {
-//     return AboutPageInfo();
-// }
-
-
 // WidgetPluginBase
 
 void PluginConfigurationDialog::setVisible(bool v)

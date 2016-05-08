@@ -76,8 +76,6 @@ struct ConfigPageInfo
     QString   iconName;
 };
 
-typedef ConfigPageInfo AboutPageInfo;
-
 
 class KDE_EXPORT PluginBase : public IErrorLogClient
 {

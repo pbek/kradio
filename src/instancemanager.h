@@ -29,20 +29,6 @@
 class KLibrary;
 class PluginManager;
 
-// class KRadioAbout : public PluginBase
-// {
-// public:
-//     KRadioAbout(const QString &name) : PluginBase(name, "KRadio Application") {}
-//
-//     virtual QString pluginClassName() const { return "KRadioAbout"; }
-//
-// //     virtual AboutPageInfo  createAboutPage ();
-//
-//     virtual void   saveState    (      KConfigGroup &) const {}
-//     virtual void   restoreState (const KConfigGroup &)       {}
-// };
-
-
 
 
 struct PluginLibraryInfo {
