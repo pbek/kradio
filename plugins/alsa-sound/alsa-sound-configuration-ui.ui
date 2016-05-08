@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>418</height>
+    <width>532</width>
+    <height>449</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout_gen1">
@@ -234,7 +234,7 @@
              </sizepolicy>
             </property>
             <property name="specialValueText">
-             <string comment="0">disabled</string>
+             <string comment="disabled blocking i/o workaround">disabled</string>
             </property>
             <property name="suffix">
              <string>ms</string>
@@ -297,11 +297,6 @@
         </widget>
        </item>
       </layout>
-      <zorder>chkDisablePlayback</zorder>
-      <zorder>line</zorder>
-      <zorder>groupBox</zorder>
-      <zorder>editPlaybackBufferChunkSize</zorder>
-      <zorder>editPlaybackBufferChunkSize</zorder>
      </widget>
      <widget class="QWidget" name="CaptureDevice">
       <attribute name="title">
@@ -457,7 +452,6 @@
           <item row="5" column="1" colspan="2">
            <widget class="QLabel" name="textLabel2_2_11">
             <property name="text">
-             <string>16 kB</string>
              <string>(recommended: 16 kB)</string>
             </property>
             <property name="wordWrap">
@@ -474,7 +468,7 @@
              </sizepolicy>
             </property>
             <property name="specialValueText">
-             <string comment="0">disabled</string>
+             <string comment="disabled blocking i/o workaround">disabled</string>
             </property>
             <property name="suffix">
              <string>ms</string>
@@ -785,14 +779,14 @@
  <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
   <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
