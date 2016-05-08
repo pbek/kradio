@@ -1,9 +1,9 @@
 project(kradio4plugins)
 
-include (FindPkgConfig)
+find_package(PkgConfig)
 
-include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
+include(CheckLibraryExists)
 
 ###############################################################################
 
