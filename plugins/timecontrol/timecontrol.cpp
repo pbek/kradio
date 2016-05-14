@@ -23,18 +23,18 @@
 #include "timecontrol-configuration.h"
 #include "pluginmanager.h"
 
-//const char *AlarmListElement              = "alarmlist";
-//const char *AlarmElement                  = "alarm";
-const char *AlarmDateElement              = "date";
-const char *AlarmTimeElement              = "time";
-const char *AlarmDailyElement             = "daily";
-const char *AlarmWeekdayMaskElement       = "weekdayMask";
-const char *AlarmEnabledElement           = "enabled";
-const char *AlarmStationIDElement         = "stationID";
-//const char *AlarmFrequencyElement         = "frequency";
-const char *AlarmVolumeElement            = "volume";
-const char *AlarmTypeElement              = "type";
-const char *AlarmRecordingTemplateElement = "recordingTemplate";
+//static const char AlarmListElement[]              = "alarmlist";
+//static const char AlarmElement[]                  = "alarm";
+//static const char AlarmDateElement[]              = "date";
+static const char AlarmTimeElement[]              = "time";
+static const char AlarmDailyElement[]             = "daily";
+static const char AlarmWeekdayMaskElement[]       = "weekdayMask";
+static const char AlarmEnabledElement[]           = "enabled";
+static const char AlarmStationIDElement[]         = "stationID";
+//static const char AlarmFrequencyElement[]         = "frequency";
+static const char AlarmVolumeElement[]            = "volume";
+static const char AlarmTypeElement[]              = "type";
+static const char AlarmRecordingTemplateElement[] = "recordingTemplate";
 
 
 ///////////////////////////////////////////////////////////////////////

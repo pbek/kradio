@@ -24,7 +24,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-const char *StationFrequencyElement        = "frequency";
+static const char StationFrequencyElement[]        = "frequency";
 
 static FrequencyRadioStation emptyFrequencyRadioStation(registerStationClass);
 

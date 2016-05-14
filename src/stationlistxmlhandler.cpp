@@ -21,7 +21,7 @@
 const char *KRadioConfigElement         = "kradiorc";
 
 const char *StationListElement          = "stationlist";
-const char *compatStationElement        = "station";
+static const char compatStationElement[] = "station";
 
 const char *StationListInfo             = "info";
 const char *StationListInfoMaintainer   = "maintainer";

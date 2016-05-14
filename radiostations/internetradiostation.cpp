@@ -21,10 +21,10 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-const char *StationUrlElement              = "url";
-const char *StationDecoderClassElement     = "decoderclass";
-const char *StationPlaylistClassElement    = "playlistclass";
-const char *StationMetaDataEncodingElement = "metadata_encoding";
+static const char StationUrlElement[]              = "url";
+static const char StationDecoderClassElement[]     = "decoderclass";
+static const char StationPlaylistClassElement[]    = "playlistclass";
+static const char StationMetaDataEncodingElement[] = "metadata_encoding";
 
 static InternetRadioStation  emptyInternetRadioStation(registerStationClass);
 

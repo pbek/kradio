@@ -19,18 +19,12 @@
 #include "radiostation-config.h"
 #include "id-generator.h"
 
-extern const char *StationNameElement;
-extern const char *StationShortNameElement;
-extern const char *StationIconStringElement;
-extern const char *StationVolumePresetElement;
-extern const char *StationIDElement;
-
-const char *StationNameElement          = "name";
-const char *StationShortNameElement     = "shortname";
-const char *StationIconStringElement    = "icon";
-const char *StationVolumePresetElement  = "volumepreset";
-const char *StationIDElement            = "stationID";
-const char *StationStereoModeElement    = "stereomode";
+static const char StationNameElement[]         = "name";
+static const char StationShortNameElement[]    = "shortname";
+static const char StationIconStringElement[]   = "icon";
+static const char StationVolumePresetElement[] = "volumepreset";
+static const char StationIDElement[]           = "stationID";
+static const char StationStereoModeElement[]   = "stereomode";
 
 /////////////////////////////////////////////////////////////////////////////
 
