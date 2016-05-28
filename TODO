@@ -38,14 +38,14 @@ For 4.0.x
 
   * DVB support?
   * gui for internet radio selection
-  * switch drag & drop to qt4
+  * --done-- switch drag & drop to qt4
   * fix segfault when playing too much with streams in recording monitor widget
   * GUI config of internet radio ffmpeg parameters (probesize, analyze time, connect retries)
   * make input/output buffer size configurable for internet radio
   * lirc 0.8.5 compatibility fixes
   * reactivate OSS support?
   * --done-- fix reconnect for streams that stop after some time (e.g. 5 hours for WDR5 literaturmarathon)
-  * use pkgconfig stuff where possible
+  * --done-- use pkgconfig stuff where possible
   * alsa config, pvr page, mute playback channel of recording if active playback always disabled
   * plugin libs version check
   * consistent dirty bits for config pages
@@ -225,7 +225,6 @@ Later:
   * FAQ
       - devices (radio, mixer, dsp)
       - mixer settings for recording
-      - artsd
 
   * tooltips complete?
 
@@ -266,7 +265,6 @@ USABILITY, STYLE-GUIDE
   * Buildsystem: manpage generation
   * Buildsystem: apidocs
   * KDE uses l10n instead of i18n now
-  * Autohell: configure checks for dependency libs, pkg-config
 
 DISTRIBUTION
 ============
