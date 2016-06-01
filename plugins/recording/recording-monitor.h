@@ -42,9 +42,6 @@ public:
     RecordingMonitor(const QString &instanceID, const QString &name);
     virtual ~RecordingMonitor();
 
-//     const QString &name() const { return PluginBase::name(); }
-//           QString &name()       { return PluginBase::name(); }
-
     virtual QString pluginClassName() const { return QString::fromLatin1("RecordingMonitor"); }
 
     // WidgetPluginBase

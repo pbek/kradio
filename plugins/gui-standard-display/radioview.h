@@ -51,9 +51,6 @@ public:
 
     virtual QString pluginClassName() const { return QString::fromLatin1("RadioView"); }
 
-//     const QString &name() const { return PluginBase::name(); }
-//           QString &name()       { return PluginBase::name(); }
-
     // WidgetPluginBase
 
 public:

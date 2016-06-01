@@ -122,8 +122,6 @@ public:
 
     virtual QString pluginClassName() const { return QString::fromLatin1("AlsaSoundDevice"); }
 
-//     virtual const QString &name() const { return PluginBase::name(); }
-//     virtual       QString &name()       { return PluginBase::name(); }
     virtual void setName(const QString &n);
 
     virtual ConfigPageInfo  createConfigurationPage();

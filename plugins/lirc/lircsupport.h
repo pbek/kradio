@@ -76,9 +76,6 @@ public:
 
     virtual QString pluginClassName() const { return QString::fromLatin1("LircSupport"); }
 
-//     virtual const QString &name() const { return PluginBase::name(); }
-//     virtual       QString &name()       { return PluginBase::name(); }
-
 
     virtual void                               setActions(const QMap<LIRC_Actions, QString> &actions, const QMap<LIRC_Actions, QString> &alt_actions);
     virtual const QMap<LIRC_Actions, QString> &getActions()            const { return m_Actions; }

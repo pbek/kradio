@@ -38,9 +38,6 @@ public:
 
     virtual QString pluginClassName() const { return QString::fromLatin1("TimeShifter"); }
 
-//     virtual const QString &name() const { return PluginBase::name(); }
-//     virtual       QString &name()       { return PluginBase::name(); }
-
     // config
 
     const QString &getPlaybackMixer()        const { return m_PlaybackMixerID; }

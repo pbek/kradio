@@ -59,9 +59,6 @@ public:
 
     QList<DeviceInfo> getDeviceProposals(const QString &devdir = QString::fromLatin1("/dev/")) const;
 
-//     virtual const QString &name() const { return PluginBase::name(); }
-//     virtual       QString &name()       { return PluginBase::name(); }
-
     // PluginBase
 
 public:

@@ -34,9 +34,6 @@ public:
 
     virtual QString pluginClassName() const { return QString::fromLatin1("SoundServer"); }
 
-//     virtual const QString &name() const { return PluginBase::name(); }
-//     virtual       QString &name()       { return PluginBase::name(); }
-
     // PluginBase
 
 public:
