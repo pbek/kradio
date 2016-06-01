@@ -27,7 +27,6 @@
 
 class RadioStationListView;
 class Ui_StationSelectorUI;
-class QGridLayout;
 class KConfigGroup;
 
 class KDE_EXPORT StationSelector : public QWidget,
@@ -79,8 +78,6 @@ signals:
     void sigDirty();
 
 protected:
-
-    QGridLayout   *getGridLayout();
 
     void moveSelectedRows(RadioStationListView *fromListView,
                           RadioStationListView *toListView);

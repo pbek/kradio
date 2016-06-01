@@ -31,6 +31,8 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
       m_docking(docking),
       m_disableGUIUpdates(false)
 {
+    QVBoxLayout *mainLay = static_cast<QVBoxLayout *>(layout());
+
     QGridLayout *layoutClicks  = new QGridLayout();
     QHBoxLayout *layoutWheel   = new QHBoxLayout();
 
@@ -80,9 +82,9 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     line->setFrameShadow( QFrame::Sunken );
     layout2->addWidget(line);
 
-    getGridLayout()->addLayout(layout2,                 /*row*/2, /*col*/0, /*rowspan*/1, /*colspan*/3);
-    getGridLayout()->addLayout(layoutClicks,            /*row*/3, /*col*/0, /*rowspan*/1, /*colspan*/3);
-    getGridLayout()->addLayout(layoutWheel,             /*row*/4, /*col*/0, /*rowspan*/1, /*colspan*/3);
+    mainLay->addLayout(layout2);
+    mainLay->addLayout(layoutClicks);
+    mainLay->addLayout(layoutWheel);
 
     foreach (QComboBox *combo, m_comboClickMode) {
         connect(combo,  SIGNAL(activated( int )), this, SLOT(slotSetDirty()));

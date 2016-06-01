@@ -36,8 +36,8 @@ StationSelector::StationSelector (QWidget *parent)
     m_ui = new Ui_StationSelectorUI();
     m_ui->setupUi(this);
 
-    m_ui->buttonToRight->setIcon(KIcon("arrow-right"));
-    m_ui->buttonToLeft->setIcon(KIcon("arrow-left"));
+    m_ui->buttonToRight->setIcon(KIcon(QApplication::isRightToLeft() ? "arrow-left" : "arrow-right"));
+    m_ui->buttonToLeft->setIcon(KIcon(QApplication::isRightToLeft() ? "arrow-right" : "arrow-left"));
 
     QObject::connect(m_ui->buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
     QObject::connect(m_ui->buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
@@ -142,12 +142,6 @@ void StationSelector::slotButtonToLeft()
 void StationSelector::slotButtonToRight()
 {
     moveSelectedRows(m_ui->listAvailable, m_ui->listSelected);
-}
-
-
-QGridLayout   *StationSelector::getGridLayout()
-{
-    return m_ui ? m_ui->StationSelectorUILayout : NULL;
 }
 
 
