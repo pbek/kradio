@@ -48,7 +48,6 @@
 class QHBoxLayout;
 class QGridLayout;
 class QAlsaMixerElement;
-class QScrollArea;
 class QFrame;
 
 class AlsaSoundPlaybackDeviceModel;
@@ -95,7 +94,6 @@ protected:
     QString                                m_currentCaptureMixer;
     QFrame                                *m_groupMixerFrame;
     QGridLayout                           *m_groupMixerFrameLayout;
-    QScrollArea                           *m_groupMixerScrollView;
     QMap<QString, QAlsaMixerElement*>      m_MixerElements;
 
     QMap<QString, AlsaConfigMixerSetting>  m_MixerSettings;

@@ -37,7 +37,6 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
    m_SoundDevice (dev),
    m_groupMixerFrame(NULL),
    m_groupMixerFrameLayout(NULL),
-   m_groupMixerScrollView(NULL),
    m_dirty(true),
    m_ignore_updates(false)
 {
@@ -89,20 +88,6 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
                      this,                     SLOT  (slotCaptureDeviceSelected (int)));
     QObject::connect(m_comboCaptureMixerCard,  SIGNAL(activated(int)),
                      this,                     SLOT  (slotCaptureMixerSelected (int)));
-
-    if (!m_groupMixer->layout())
-        new QGridLayout(m_groupMixer);
-
-    QLayout *l = m_groupMixer->layout();
-
-    m_groupMixerScrollView = new QScrollArea(m_groupMixer);
-    m_groupMixerScrollView->setFrameShape(QFrame::StyledPanel);
-    m_groupMixerScrollView->setFrameShadow(QFrame::Sunken);
-    m_groupMixerScrollView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_groupMixerScrollView->setWidgetResizable(true);
-    m_groupMixerScrollView->show();
-
-    l->addWidget(m_groupMixerScrollView);
 
     slotCheckSoundDevices();
 

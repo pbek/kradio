@@ -637,19 +637,20 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_gen2">
        <item row="0" column="0">
-        <widget class="QGroupBox" name="m_groupMixer">
-         <property name="title">
-          <string/>
-         </property>
-         <property name="flat">
+        <widget class="QScrollArea" name="m_groupMixerScrollView">
+         <property name="widgetResizable">
           <bool>true</bool>
          </property>
-         <property name="checkable">
-          <bool>false</bool>
-         </property>
-         <property name="lineWidth" stdset="0">
-          <number>0</number>
-         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>488</width>
+            <height>412</height>
+           </rect>
+          </property>
+         </widget>
         </widget>
        </item>
       </layout>
