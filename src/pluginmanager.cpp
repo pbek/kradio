@@ -370,19 +370,10 @@ KPageWidgetItem *PluginManager::addConfigurationPage (const ConfigPageInfo &info
 {
     getConfigDialog();
 
-    // create empty config frame
-    QWidget *f = new QWidget();
-
-    // fill config frame with layout ...
-    QGridLayout *l = new QGridLayout(f);
-    l->setSpacing( 0 );
-    l->setMargin( 0 );
-
-    // ... and externally created config page
-    info.page->setParent (f);
-    info.page->move(0,0);
-    info.page->show();
-    l->addWidget( info.page, 0, 0 );
+    QWidget *f = info.page;
+    if (f->layout()) {
+        f->layout()->setMargin(0);
+    }
 
     // make sure, that config page receives ok, apply and cancel signals
     QObject::connect(this,           SIGNAL(sigConfigOK()),   info.page, SLOT(slotOK()));
