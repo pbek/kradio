@@ -6,14 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>453</width>
-    <height>398</height>
+    <width>508</width>
+    <height>412</height>
    </rect>
   </property>
-  <layout class="QGridLayout">
-   <property name="margin">
-    <number>0</number>
-   </property>
+  <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QTabWidget" name="kTabWidget13">
      <property name="currentIndex">
@@ -23,262 +20,216 @@
       <attribute name="title">
        <string>Output</string>
       </attribute>
-      <layout class="QGridLayout">
-       <property name="margin">
-        <number>11</number>
-       </property>
+      <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
-        <layout class="QGridLayout">
-         <item row="8" column="0">
-          <widget class="QLabel" name="lableID3Genre">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+        <widget class="QLabel" name="lableFileFormat">
+         <property name="text">
+          <string>File format:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="KComboBox" name="editFileFormat">
+         <item>
+          <property name="text">
+           <string>Raw PCM Output (.raw)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Microsoft Wave (.wav)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Apple/SGI (.aiff)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sun/NeXT (.au)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MP3 Compressed (.mp3)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ogg/Vorbis Compressed (.ogg)</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelMP3Quality">
+         <property name="text">
+          <string>MP3 quality (0 - high, 9 - low):</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <layout class="QHBoxLayout">
+         <item>
+          <spacer name="spacer5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
-           <property name="text">
-            <string>ID3 genre:</string>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>5</width>
+             <height>5</height>
+            </size>
            </property>
-           <property name="wordWrap">
-            <bool>false</bool>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="editMP3Quality">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>9</number>
+           </property>
+           <property name="value">
+            <number>5</number>
            </property>
           </widget>
-         </item>
-         <item row="4" column="0" colspan="3">
-          <widget class="QLabel" name="lableDirectory_3">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;p style=&quot;font-size: 9pt;&quot;&gt;&lt;i&gt;Recording Templates: &lt;b&gt;%s&lt;/b&gt;: station name, &lt;b&gt;%i&lt;/b&gt;: station index, &lt;b&gt;%Y&lt;/b&gt;: 4-digit year, &lt;b&gt;%m&lt;/b&gt;: 2-digit month, &lt;b&gt;%d&lt;/b&gt;: 2-digit day, &lt;b&gt;%B&lt;/b&gt;: month name, &lt;b&gt;%A&lt;/b&gt;: day name, &lt;b&gt;%H&lt;/b&gt;: 2-digit hour, &lt;b&gt;%M&lt;/b&gt;: 2-digit minute, &lt;b&gt;%S&lt;/b&gt;: 2-digit second, &lt;b&gt;%%&lt;/b&gt;: literal %&lt;/i&gt;&lt;/p&gt;</string>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="lableID3Title">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>ID3 title:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1" colspan="2">
-          <layout class="QHBoxLayout">
-           <item>
-            <spacer name="spacer5_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Expanding</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>141</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QSpinBox" name="editOggQuality">
-             <property name="minimum">
-              <number>0</number>
-             </property>
-             <property name="maximum">
-              <number>9</number>
-             </property>
-             <property name="value">
-              <number>7</number>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="2">
-          <layout class="QHBoxLayout">
-           <item>
-            <spacer name="spacer5">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Expanding</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>141</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QSpinBox" name="editMP3Quality">
-             <property name="minimum">
-              <number>0</number>
-             </property>
-             <property name="maximum">
-              <number>9</number>
-             </property>
-             <property name="value">
-              <number>5</number>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QLabel" name="labelMP3Quality">
-           <property name="text">
-            <string>MP3 quality (0 - high, 9 - low):</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <widget class="KUrlRequester" name="editDirectory"/>
-         </item>
-         <item row="0" column="2">
-          <widget class="KComboBox" name="editFileFormat">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <item>
-            <property name="text">
-             <string>Raw PCM Output (.raw)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Microsoft Wave (.wav)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Apple/SGI (.aiff)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Sun/NeXT (.au)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>MP3 Compressed (.mp3)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Ogg/Vorbis Compressed (.ogg)</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="3" column="0" colspan="2">
-          <widget class="QLabel" name="lableDirectory">
-           <property name="text">
-            <string>Recording directory:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QLabel" name="lableFileFormat">
-           <property name="text">
-            <string>File format:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="labelOggQuality">
-           <property name="text">
-            <string>Ogg quality (0 - low, 9 - high):</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QLineEdit" name="editFilenameTemplate"/>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="lableFilename">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Filename:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="2">
-          <widget class="QLineEdit" name="editID3TitleTemplate"/>
-         </item>
-         <item row="7" column="2">
-          <widget class="QLineEdit" name="editID3ArtistTemplate"/>
-         </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="lableID3Artist">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>ID3 artist:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="2">
-          <widget class="QLineEdit" name="editID3GenreTemplate"/>
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelOggQuality">
+         <property name="text">
+          <string>Ogg quality (0 - low, 9 - high):</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <layout class="QHBoxLayout">
+         <item>
+          <spacer name="spacer5_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>5</width>
+             <height>5</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="editOggQuality">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>9</number>
+           </property>
+           <property name="value">
+            <number>7</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lableDirectory">
+         <property name="text">
+          <string>Recording directory:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="KUrlRequester" name="editDirectory"/>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QLabel" name="lableDirectory_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&lt;p style=&quot;font-size: 9pt;&quot;&gt;&lt;i&gt;Recording Templates: &lt;b&gt;%s&lt;/b&gt;: station name, &lt;b&gt;%i&lt;/b&gt;: station index, &lt;b&gt;%Y&lt;/b&gt;: 4-digit year, &lt;b&gt;%m&lt;/b&gt;: 2-digit month, &lt;b&gt;%d&lt;/b&gt;: 2-digit day, &lt;b&gt;%B&lt;/b&gt;: month name, &lt;b&gt;%A&lt;/b&gt;: day name, &lt;b&gt;%H&lt;/b&gt;: 2-digit hour, &lt;b&gt;%M&lt;/b&gt;: 2-digit minute, &lt;b&gt;%S&lt;/b&gt;: 2-digit second, &lt;b&gt;%%&lt;/b&gt;: literal %&lt;/i&gt;&lt;/p&gt;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="lableFilename">
+         <property name="text">
+          <string>Filename:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="editFilenameTemplate"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="lableID3Title">
+         <property name="text">
+          <string>ID3 title:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="editID3TitleTemplate"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="lableID3Artist">
+         <property name="text">
+          <string>ID3 artist:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="editID3ArtistTemplate"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="lableID3Genre">
+         <property name="text">
+          <string>ID3 genre:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="editID3GenreTemplate"/>
+       </item>
+       <item row="9" column="1">
         <spacer name="spacer132">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -294,219 +245,304 @@
       <attribute name="title">
        <string>I&amp;nput</string>
       </attribute>
-      <layout class="QGridLayout">
-       <property name="margin">
-        <number>11</number>
-       </property>
-       <item row="0" column="0">
-        <layout class="QGridLayout">
-         <item row="0" column="2">
-          <spacer name="spacer1">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Minimum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>225</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="1">
+        <widget class="KComboBox" name="editBits">
+         <item>
+          <property name="text">
+           <string>16</string>
+          </property>
          </item>
-         <item row="0" column="1">
-          <widget class="KComboBox" name="editRate">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <item>
-            <property name="text">
-             <string>48000</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>44100</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>22050</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>11025</string>
-            </property>
-           </item>
-          </widget>
+         <item>
+          <property name="text">
+           <string>8</string>
+          </property>
          </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="lableEndianness">
-           <property name="text">
-            <string>Endianness:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <spacer name="spacer1_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Minimum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>225</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="3" column="1">
-          <widget class="KComboBox" name="editChannels">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <item>
-            <property name="text">
-             <string>Stereo</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Mono</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="labelRate">
-           <property name="text">
-            <string>Sample rate:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="KComboBox" name="editEndianness">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <item>
-            <property name="text">
-             <string>Little Endian</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Big Endian</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="KComboBox" name="editBits">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <item>
-            <property name="text">
-             <string>16</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>8</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="lableChannels">
-           <property name="text">
-            <string>Channels:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="lableBits">
-           <property name="text">
-            <string>Sample bits:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="KComboBox" name="editSign">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <item>
-            <property name="text">
-             <string>Signed</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Unsigned</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <spacer name="spacer1_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Minimum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>225</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
+        </widget>
        </item>
        <item row="1" column="0">
-        <spacer name="spacer131">
+        <widget class="QLabel" name="lableBits">
+         <property name="text">
+          <string>Sample bits:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="KComboBox" name="editChannels">
+         <item>
+          <property name="text">
+           <string>Stereo</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Mono</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <spacer name="spacer1_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>5</width>
+           <height>5</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1">
+        <widget class="KComboBox" name="editEndianness">
+         <item>
+          <property name="text">
+           <string>Little Endian</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Big Endian</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="KComboBox" name="editRate">
+         <item>
+          <property name="text">
+           <string>48000</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>44100</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>22050</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>11025</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <spacer name="spacer1_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>5</width>
+           <height>5</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="2">
+        <spacer name="spacer1">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>5</width>
+           <height>5</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lableChannels">
+         <property name="text">
+          <string>Channels:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="KComboBox" name="editSign">
+         <item>
+          <property name="text">
+           <string>Signed</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Unsigned</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelRate">
+         <property name="text">
+          <string>Sample rate:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lableEndianness">
+         <property name="text">
+          <string>Endianness:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="TabPage_3">
+      <attribute name="title">
+       <string>&amp;Buffers</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelEditBufferSize">
+         <property name="text">
+          <string>Encoding buffer size:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSpinBox" name="editBufferSize">
+         <property name="suffix">
+          <string> kB</string>
+         </property>
+         <property name="minimum">
+          <number>64</number>
+         </property>
+         <property name="maximum">
+          <number>2048</number>
+         </property>
+         <property name="singleStep">
+          <number>16</number>
+         </property>
+         <property name="value">
+          <number>256</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelEditBufferCount">
+         <property name="text">
+          <string>Number of buffers:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="editBufferCount">
+         <property name="minimum">
+          <number>3</number>
+         </property>
+         <property name="value">
+          <number>3</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="TabPage_4">
+      <attribute name="title">
+       <string>Pre-Recordin&amp;g</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QCheckBox" name="m_checkboxPreRecordingEnable">
+         <property name="text">
+          <string>E&amp;nable</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="m_labelPreRecordingTime">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Pre-recording time:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="m_spinboxPreRecordingSeconds">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="suffix">
+            <string> s</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>999</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="spacer132_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -518,186 +554,10 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="TabPage_3">
-      <attribute name="title">
-       <string>&amp;Buffers</string>
-      </attribute>
-      <layout class="QGridLayout">
-       <property name="margin">
-        <number>11</number>
-       </property>
-       <item row="0" column="0">
-        <layout class="QGridLayout">
-         <item row="0" column="1">
-          <widget class="QSpinBox" name="editBufferSize">
-           <property name="suffix">
-            <string> kB</string>
-           </property>
-           <property name="minimum">
-            <number>64</number>
-           </property>
-           <property name="maximum">
-            <number>2048</number>
-           </property>
-           <property name="singleStep">
-            <number>16</number>
-           </property>
-           <property name="value">
-            <number>256</number>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="labelEditBufferSize">
-           <property name="text">
-            <string>Encoding buffer size:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QSpinBox" name="editBufferCount">
-           <property name="minimum">
-            <number>3</number>
-           </property>
-           <property name="value">
-            <number>3</number>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="labelEditBufferCount">
-           <property name="text">
-            <string>Number of buffers:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="0">
-        <spacer name="spacer132_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>16</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="TabPage_4">
-      <attribute name="title">
-       <string>Pre-Recordin&amp;g</string>
-      </attribute>
-      <layout class="QGridLayout">
-       <property name="margin">
-        <number>11</number>
-       </property>
-       <item row="0" column="0">
-        <layout class="QVBoxLayout">
-         <item>
-          <layout class="QHBoxLayout">
-           <item>
-            <widget class="QCheckBox" name="m_checkboxPreRecordingEnable">
-             <property name="text">
-              <string>E&amp;nable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="spacer7">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Expanding</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>380</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout">
-           <item>
-            <widget class="QLabel" name="m_labelPreRecordingTime">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>Pre-recording time:</string>
-             </property>
-             <property name="wordWrap">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSpinBox" name="m_spinboxPreRecordingSeconds">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="suffix">
-              <string> s</string>
-             </property>
-             <property name="minimum">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <number>999</number>
-             </property>
-             <property name="singleStep">
-              <number>1</number>
-             </property>
-             <property name="value">
-              <number>10</number>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="0">
-        <spacer name="spacer132_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>16</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
     </widget>
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
   <customwidget>
    <class>KComboBox</class>
@@ -711,7 +571,6 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>kTabWidget13</tabstop>
   <tabstop>editFileFormat</tabstop>
   <tabstop>editMP3Quality</tabstop>
   <tabstop>editOggQuality</tabstop>

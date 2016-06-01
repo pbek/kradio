@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>675</width>
-    <height>528</height>
+    <width>525</width>
+    <height>411</height>
    </rect>
   </property>
-  <layout class="QGridLayout" name="gridLayout_gen1">
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
     <widget class="QTabWidget" name="tabWidget3">
      <property name="currentIndex">
       <number>0</number>
@@ -21,150 +21,8 @@
        <string>Station &amp;Presets</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_gen2">
-       <property name="margin">
-        <number>11</number>
-       </property>
-       <item row="0" column="0">
+       <item row="0" column="3">
         <layout class="QVBoxLayout">
-         <property name="rightMargin">
-          <number>5</number>
-         </property>
-         <item>
-          <layout class="QVBoxLayout">
-           <item>
-            <layout class="QHBoxLayout">
-             <item>
-              <widget class="RadioStationListView" name="listStations" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>20</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout">
-               <item>
-                <widget class="KPushButton" name="buttonNewStation">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="KPushButton" name="buttonDeleteStation">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="KPushButton" name="buttonStationUp">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="KPushButton" name="buttonStationDown">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="verticalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item>
-                <widget class="KPushButton" name="buttonSearchStations">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>1</horstretch>
-                   <verstretch>1</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="toolTip">
-                  <string>Search stations</string>
-                 </property>
-                 <property name="whatsThis">
-                  <string>Search stations</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="KPushButton" name="buttonLoadPresets">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>1</horstretch>
-                   <verstretch>1</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="toolTip">
-                  <string>Load presets</string>
-                 </property>
-                 <property name="whatsThis">
-                  <string>Load presets</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="KPushButton" name="buttonStorePresets">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>1</horstretch>
-                   <verstretch>1</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="toolTip">
-                  <string>Save presets as...</string>
-                 </property>
-                 <property name="whatsThis">
-                  <string>Save presets as...</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout"/>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item row="0" column="2">
-        <layout class="QVBoxLayout">
-         <property name="leftMargin">
-          <number>5</number>
-         </property>
          <item>
           <widget class="QStackedWidget" name="stackStationEdit">
            <property name="sizePolicy">
@@ -189,14 +47,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="editStationName">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
+            <widget class="QLineEdit" name="editStationName"/>
            </item>
           </layout>
          </item>
@@ -213,14 +64,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="editStationShortName">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
+            <widget class="QLineEdit" name="editStationShortName"/>
            </item>
           </layout>
          </item>
@@ -249,12 +93,6 @@
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="0" column="1">
             <widget class="KComboBox" name="comboStereoMode">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
              <property name="toolTip">
               <string>&lt;p&gt;Select if you want to force the tuner to stereo/mono mode. &lt;i&gt;Please be aware, that some drivers might ignore this flag without saying they will ignore it.&lt;/i&gt;&lt;/p&gt;</string>
              </property>
@@ -262,12 +100,6 @@
            </item>
            <item row="1" column="1">
             <widget class="QSpinBox" name="editVolumePreset">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
              <property name="toolTip">
               <string>The volume that is used when the station is tuned</string>
              </property>
@@ -325,7 +157,7 @@
          </item>
         </layout>
        </item>
-       <item row="0" column="1">
+       <item row="0" column="2">
         <widget class="KSeparator" name="kseparator">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -341,6 +173,106 @@
          </property>
         </widget>
        </item>
+       <item row="0" column="0">
+        <widget class="RadioStationListView" name="listStations" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <layout class="QVBoxLayout" name="_2">
+         <item>
+          <widget class="KPushButton" name="buttonNewStation">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KPushButton" name="buttonDeleteStation">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KPushButton" name="buttonStationUp">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KPushButton" name="buttonStationDown">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="KPushButton" name="buttonSearchStations">
+           <property name="toolTip">
+            <string>Search stations</string>
+           </property>
+           <property name="whatsThis">
+            <string>Search stations</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KPushButton" name="buttonLoadPresets">
+           <property name="toolTip">
+            <string>Load presets</string>
+           </property>
+           <property name="whatsThis">
+            <string>Load presets</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KPushButton" name="buttonStorePresets">
+           <property name="toolTip">
+            <string>Save presets as...</string>
+           </property>
+           <property name="whatsThis">
+            <string>Save presets as...</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="About">
@@ -348,9 +280,6 @@
        <string>Preset &amp;File</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <property name="margin">
-        <number>11</number>
-       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="editLabelPresetFile">
          <property name="text">
@@ -407,7 +336,7 @@
            <item>
             <widget class="KPushButton" name="buttonLastChangeNow">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -531,7 +460,6 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
   <customwidget>
    <class>KComboBox</class>

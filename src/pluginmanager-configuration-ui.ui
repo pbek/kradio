@@ -11,9 +11,6 @@
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout_gen1">
-   <property name="margin">
-    <number>11</number>
-   </property>
    <item row="3" column="0">
     <widget class="Line" name="line1_3">
      <property name="frameShape">
@@ -26,12 +23,6 @@
    </item>
    <item row="4" column="0">
     <widget class="QGroupBox" name="groupBox4_2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="title">
       <string>Automatic Detection and Load of New Plugins</string>
      </property>
@@ -47,12 +38,6 @@
       </property>
       <item row="0" column="0">
        <widget class="QRadioButton" name="rbAutoLoadNo">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="text">
          <string>Do not check/load</string>
         </property>
@@ -60,12 +45,6 @@
       </item>
       <item row="0" column="2">
        <widget class="QRadioButton" name="rbAutoLoadYes">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="text">
          <string>Automatically check/load</string>
         </property>
@@ -73,12 +52,6 @@
       </item>
       <item row="0" column="1">
        <widget class="QRadioButton" name="rbAutoLoadAsk">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="text">
          <string>Please ask</string>
         </property>
@@ -114,17 +87,8 @@
        <string>Classes &amp;&amp; Instances</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <property name="margin">
-        <number>8</number>
-       </property>
        <item row="0" column="0" rowspan="4">
         <widget class="QTreeView" name="listPlugins">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
          <property name="toolTip">
           <string>List of the plugin classes and their instances currently running</string>
          </property>
@@ -146,20 +110,14 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>87</height>
+           <width>5</width>
+           <height>5</height>
           </size>
          </property>
         </spacer>
        </item>
        <item row="6" column="0" colspan="2">
         <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
          <property name="text">
           <string>&lt;p&gt;You can &lt;b&gt;rename&lt;/b&gt; a plugin instance by double clicking on the instance name. This name will appear below the configuration page icon, in the config page header and e.g. in the name of your sound device. Editing plugin names is recommended for your convenience e.g. if you have multiple sound cards and/or multiple ALSA plugin instances.&lt;/p&gt;</string>
          </property>
@@ -217,9 +175,6 @@
        <string>Plugin Libraries</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_6">
-       <property name="margin">
-        <number>8</number>
-       </property>
        <item row="0" column="0">
         <widget class="KUrlRequester" name="editPluginLibrary">
          <property name="toolTip">
@@ -248,12 +203,6 @@
        </item>
        <item row="1" column="0" rowspan="2">
         <widget class="QListWidget" name="listPluginLibraries">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
          <property name="toolTip">
           <string>list of loaded plugin libraries</string>
          </property>
@@ -280,13 +229,10 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>151</height>
+           <width>5</width>
+           <height>5</height>
           </size>
          </property>
         </spacer>
@@ -297,7 +243,6 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="0"/>
  <customwidgets>
   <customwidget>
    <class>KPushButton</class>

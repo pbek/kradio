@@ -6,14 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>299</width>
-    <height>84</height>
+    <width>304</width>
+    <height>125</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="StationSelectorUILayout">
-   <property name="margin">
-    <number>0</number>
-   </property>
    <item row="0" column="2">
     <widget class="QLabel" name="labelSelected">
      <property name="text">
@@ -54,12 +51,6 @@
     <layout class="QVBoxLayout">
      <item>
       <widget class="KPushButton" name="buttonToRight">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
        <property name="text">
         <string/>
        </property>
@@ -67,12 +58,6 @@
      </item>
      <item>
       <widget class="KPushButton" name="buttonToLeft">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
        <property name="text">
         <string/>
        </property>
@@ -89,7 +74,7 @@
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>40</height>
+         <height>5</height>
         </size>
        </property>
       </spacer>
@@ -106,25 +91,8 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <spacer name="spacer2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Minimum</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>10</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
    <class>KPushButton</class>
