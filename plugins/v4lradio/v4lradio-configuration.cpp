@@ -71,6 +71,8 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
 
     buttonSelectRadioDevice->setIcon(KIcon("document-open"));
 
+    deviceMessage->setCloseButtonVisible(false);
+
     QObject::connect(buttonSelectRadioDevice, SIGNAL(clicked()),
                      this, SLOT(selectRadioDevice()));
 //     m_cbRadioDevice->installEventFilter(this);
@@ -425,8 +427,8 @@ bool V4LRadioConfiguration::noticeDescriptionChanged (const QString &s, const IR
     else if (!dev.isWritable()) {
         descr = i18n("You do not have write permissions for the device.");
     }
-    labelDescription->setWordWrap(true);
-    labelDescription->setText( descr );
+    deviceMessage->setText(descr);
+    deviceMessage->setMessageType(s.isEmpty() ? KMessageWidget::Error : KMessageWidget::Information);
     return true;
 }
 
