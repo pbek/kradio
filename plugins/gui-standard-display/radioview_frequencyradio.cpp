@@ -307,7 +307,12 @@ bool RadioViewFrequencyRadio::noticeRDSStateChanged(bool enabled, const IRadioDe
 bool RadioViewFrequencyRadio::noticeRDSRadioTextChanged(const QString &s, const IRadioDevice */*sender*/)
 {
     QString tmp = s;
-    tmp.replace(QRegExp(QString::fromLatin1("\\s")), " ");
+    const QChar space(' ');
+    for (int i = 0; i < tmp.length(); ++i) {
+        if (tmp.at(i).isSpace() && tmp.at(i) != space) {
+            tmp[i] = space;
+        }
+    }
     if (m_RDSRadioText != tmp) {
         m_RDSRadioText           = tmp;
 //         updateRadioTextRing();
