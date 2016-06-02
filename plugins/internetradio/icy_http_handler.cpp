@@ -319,6 +319,9 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
             // parse meta data
             QMap<QString, QString>  metaData;
 
+            const QString escapeRegExpStr = "\\\\.|''";
+            const QRegExp escapeRegExp(escapeRegExpStr);
+
             while (metaString.size()) {
                 int eqIdx = metaString.indexOf('=');
                 if (eqIdx < 0) {
@@ -332,9 +335,8 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                 metaString.remove(0,useQuotes);
 
                 int      curIdx  = 0;
-                QString  escapeRegExp = "\\\\.|''";
                 QString  termRegExp   = useQuotes ? "'\\s*;" : ";";
-                QRegExp  findRegExp("(" + escapeRegExp + "|" + termRegExp + ")");
+                QRegExp  findRegExp("(" + escapeRegExpStr + "|" + termRegExp + ")");
                 // step by step replace escapes and generate variable value
                 QString  value;
                 while (curIdx < metaString.size()) {
@@ -342,7 +344,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                     int matchLen = findRegExp.matchedLength();
                     if (findIdx >= 0) {
                         QString tmp = metaString.mid(findIdx, matchLen);
-                        if (QRegExp(escapeRegExp).exactMatch(tmp)) {
+                        if (escapeRegExp.exactMatch(tmp)) {
                             curIdx += matchLen;
                         } else {
                             value      = metaString.left(findIdx);
