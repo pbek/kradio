@@ -97,7 +97,6 @@ void ErrorLog::setTextEditPage(const QString &title, const KIcon &icon, Page *pa
     QWidget     *frame = new QWidget(this);
     QGridLayout *linfo = new QGridLayout(frame);
     page->edit         = new KTextEdit(frame);
-    linfo->setSpacing( 5 );
     linfo->setMargin ( 0 );
     linfo->addWidget(page->edit, 0, 0);
     page->edit->setReadOnly(true);
