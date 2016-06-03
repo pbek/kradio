@@ -87,10 +87,7 @@ RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &nam
 
     m_dataMonitor = new RecordingDataMonitor(this);
     m_dataMonitor->setEnabled(false);
-
-    QHBoxLayout *hl0 = new QHBoxLayout();
-    l->addLayout(hl0);
-    hl0->addWidget(m_dataMonitor);
+    l->addWidget(m_dataMonitor);
 
     l->addWidget(buttonBox);
 
