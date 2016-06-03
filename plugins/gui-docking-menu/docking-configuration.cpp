@@ -20,9 +20,9 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QLayout>
-#include <QFrame>
 
 #include <klocalizedstring.h>
+#include <kseparator.h>
 
 using namespace std;
 
@@ -76,13 +76,7 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     layoutWheel->addItem  (new QSpacerItem( 20, 2, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
 
-    QHBoxLayout *layout2 = new QHBoxLayout();
-    QFrame     *line     = new QFrame(this);
-    line->setFrameShape ( QFrame::HLine );
-    line->setFrameShadow( QFrame::Sunken );
-    layout2->addWidget(line);
-
-    mainLay->addLayout(layout2);
+    mainLay->addWidget(new KSeparator(Qt::Horizontal, this));
     mainLay->addLayout(layoutClicks);
     mainLay->addLayout(layoutWheel);
 
