@@ -506,7 +506,9 @@ void PluginManager::restoreState (KConfig *c)
         const QString num   = QString::number(i);
         QString class_name  = cfggrp.readEntry("plugin_class_"        + num);
         QString object_name = cfggrp.readEntry("plugin_name_"         + num);
-        QString object_id   = cfggrp.readEntry("plugin_instance_id_"  + num, generateRandomID(70));
+        QString object_id   = cfggrp.readEntry("plugin_instance_id_"  + num);
+        if (object_id.isEmpty())
+            object_id = generateRandomID(70);
 
         unused_classes.removeAll(class_name);
 
