@@ -107,13 +107,6 @@ template<typename T, int c_bits> inline T minValue(int var_bits = 0)
 
 
 template<typename T, int c_bits>
-inline bool is_negative(T v, int var_bits = 0)
-{
-    return v ^ minValue<T, c_bits>(var_bits);
-}
-
-
-template<typename T, int c_bits>
 inline T bias(int var_bits = 0)
 {
     const bool isSigned = IS_SIGNED(T);
