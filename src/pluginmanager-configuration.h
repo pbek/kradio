@@ -50,6 +50,7 @@ protected slots:
     void slotAddLibrary();
     void slotRemoveLibrary();
     void slotNewPluginInstance();
+    void slotRenamePluginInstance();
     void slotRemovePluginInstance();
     void slotCurrentChanged(const QModelIndex &current, const QModelIndex &previous);
 

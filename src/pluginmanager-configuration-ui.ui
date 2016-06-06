@@ -53,6 +53,22 @@
           </widget>
          </item>
          <item>
+          <widget class="KPushButton" name="btnRenamePluginInstance">
+           <property name="maximumSize">
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Rename the plugin instance selected in the list on the left</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="KPushButton" name="btnRemovePluginInstance">
            <property name="maximumSize">
             <size>

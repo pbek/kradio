@@ -46,6 +46,7 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     // temporary fix to set icons. it does not work propertly in .ui files any more in KDE4
     btnRemovePluginInstance->setIcon(KIcon("edit-delete"));
     btnNewPluginInstance   ->setIcon(KIcon("document-new"));
+    btnRenamePluginInstance->setIcon(KIcon("edit-rename"));
     btnRemoveLibrary       ->setIcon(KIcon("edit-delete"));
     btnAddLibrary          ->setIcon(KIcon("document-new"));
 
@@ -60,6 +61,7 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     QObject::connect(btnAddLibrary,           SIGNAL(clicked()),     this, SLOT(slotAddLibrary()));
     QObject::connect(btnRemoveLibrary,        SIGNAL(clicked()),     this, SLOT(slotRemoveLibrary()));
     QObject::connect(btnNewPluginInstance,    SIGNAL(clicked()),     this, SLOT(slotNewPluginInstance()));
+    QObject::connect(btnRenamePluginInstance, SIGNAL(clicked()),     this, SLOT(slotRenamePluginInstance()));
     QObject::connect(btnRemovePluginInstance, SIGNAL(clicked()),     this, SLOT(slotRemovePluginInstance()));
     QObject::connect(cbShowProgressBar,       SIGNAL(toggled(bool)), this, SLOT(slotSetDirty()));
 
@@ -216,6 +218,17 @@ void PluginManagerConfiguration::slotNewPluginInstance()
 }
 
 
+void PluginManagerConfiguration::slotRenamePluginInstance()
+{
+    const QModelIndex index = listPlugins->currentIndex();
+    if (!index.isValid() || !index.data(InstanceNameRole).isValid()) {
+        return;
+    }
+
+    listPlugins->edit(index);
+}
+
+
 void PluginManagerConfiguration::slotRemovePluginInstance()
 {
     const QModelIndex index = listPlugins->currentIndex();
@@ -234,8 +247,12 @@ void PluginManagerConfiguration::slotRemovePluginInstance()
 
 void PluginManagerConfiguration::slotCurrentChanged(const QModelIndex &current, const QModelIndex &)
 {
-    btnNewPluginInstance->setEnabled(current.isValid());
-    btnRemovePluginInstance->setEnabled(current.isValid() && current.data(InstanceNameRole).isValid());
+    const bool anyItemSelected = current.isValid();
+    const bool anyInstanceSelected = anyItemSelected && current.data(InstanceNameRole).isValid();
+
+    btnNewPluginInstance->setEnabled(anyItemSelected);
+    btnRenamePluginInstance->setEnabled(anyInstanceSelected);
+    btnRemovePluginInstance->setEnabled(anyInstanceSelected);
 }
 
 
