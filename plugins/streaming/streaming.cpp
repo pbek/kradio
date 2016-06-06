@@ -111,28 +111,30 @@ void StreamingDevice::saveState (KConfigGroup &c) const
     for (int i = 0; i < m_PlaybackChannelList.size(); ++i) {
         KUrl                url =  m_PlaybackChannelList[i];
         const StreamingJob *j   = *m_PlaybackChannelJobs.find(url);
+        const QString num       = QString::number(i);
 
         const SoundFormat &sf          = j->getSoundFormat();
         url                            = j->getURL();
         size_t             buffer_size = j->getBufferSize();
 
-        sf.saveConfig("playback-channel-" + QString::number(i), c);
-        c.writeEntry ("playback-channel-" + QString::number(i) + "-url", url);
-        c.writeEntry ("playback-channel-" + QString::number(i) + "-buffer-size", (quint64)buffer_size);
+        sf.saveConfig("playback-channel-" + num, c);
+        c.writeEntry ("playback-channel-" + num + "-url", url);
+        c.writeEntry ("playback-channel-" + num + "-buffer-size", (quint64)buffer_size);
     }
 
     c.writeEntry("capture-channels", m_CaptureChannelList.size());
     for (int i = 0; i < m_CaptureChannelList.size(); ++i) {
         KUrl                url =  m_CaptureChannelList[i];
         const StreamingJob *j   = *m_CaptureChannelJobs.find(url);
+        const QString num       = QString::number(i);
 
         const SoundFormat &sf          = j->getSoundFormat();
         url                            = j->getURL();
         size_t             buffer_size = j->getBufferSize();
 
-        sf.saveConfig("capture-channel-" + QString::number(i), c);
-        c.writeEntry ("capture-channel-" + QString::number(i) + "-url", url);
-        c.writeEntry ("capture-channel-" + QString::number(i) + "-buffer-size", (quint64)buffer_size);
+        sf.saveConfig("capture-channel-" + num, c);
+        c.writeEntry ("capture-channel-" + num + "-url", url);
+        c.writeEntry ("capture-channel-" + num + "-buffer-size", (quint64)buffer_size);
     }
 }
 
@@ -146,9 +148,10 @@ void StreamingDevice::restoreState (const KConfigGroup &c)
     int n = c.readEntry("playback-channels", 0);
     for (int i = 0; i < n; ++i) {
         SoundFormat sf;
-        sf.restoreConfig("playback-channel-" + QString::number(i), c);
-        KUrl    url         = c.readEntry("playback-channel-" + QString::number(i) + "-url", KUrl());
-        size_t  buffer_size = c.readEntry("playback-channel-" + QString::number(i) + "-buffer-size", (quint64)32*1024);
+        const QString num = QString::number(i);
+        sf.restoreConfig("playback-channel-" + num, c);
+        KUrl    url         = c.readEntry("playback-channel-" + num + "-url", KUrl());
+        size_t  buffer_size = c.readEntry("playback-channel-" + num + "-buffer-size", (quint64)32*1024);
 
         if (url.isValid()) {
             addPlaybackStream(url, sf, buffer_size, i == n-1);
@@ -158,9 +161,10 @@ void StreamingDevice::restoreState (const KConfigGroup &c)
     n = c.readEntry("capture-channels", 0);
     for (int i = 0; i < n; ++i) {
         SoundFormat sf;
-        sf.restoreConfig("capture-channel-" + QString::number(i), c);
-        KUrl    url         = c.readEntry("capture-channel-" + QString::number(i) + "-url", KUrl());
-        size_t  buffer_size = c.readEntry("capture-channel-" + QString::number(i) + "-buffer-size", (quint64)32*1024);
+        const QString num = QString::number(i);
+        sf.restoreConfig("capture-channel-" + num, c);
+        KUrl    url         = c.readEntry("capture-channel-" + num + "-url", KUrl());
+        size_t  buffer_size = c.readEntry("capture-channel-" + num + "-buffer-size", (quint64)32*1024);
 
         if (url.isValid()) {
             addCaptureStream(url, sf, buffer_size, i == n-1);

@@ -451,9 +451,10 @@ void PluginManager::saveState (KConfig *c) const
             m_instanceManager->getPluginClasses().contains(class_name))
         {
             ++n;
-            cfggrp.writeEntry("plugin_class_"        + QString::number(n), class_name);
-            cfggrp.writeEntry("plugin_name_"         + QString::number(n), object_name);
-            cfggrp.writeEntry("plugin_instance_id_"  + QString::number(n), object_id);
+            const QString num = QString::number(n);
+            cfggrp.writeEntry("plugin_class_"        + num, class_name);
+            cfggrp.writeEntry("plugin_name_"         + num, object_name);
+            cfggrp.writeEntry("plugin_instance_id_"  + num, object_id);
         }
     }
     cfggrp.writeEntry("plugins", n);
@@ -502,9 +503,10 @@ void PluginManager::restoreState (KConfig *c)
     // restore previously present instances
 
     for (int i = 1; i <= n; ++i) {
-        QString class_name  = cfggrp.readEntry("plugin_class_"        + QString::number(i));
-        QString object_name = cfggrp.readEntry("plugin_name_"         + QString::number(i));
-        QString object_id   = cfggrp.readEntry("plugin_instance_id_"  + QString::number(i), generateRandomID(70));
+        const QString num   = QString::number(i);
+        QString class_name  = cfggrp.readEntry("plugin_class_"        + num);
+        QString object_name = cfggrp.readEntry("plugin_name_"         + num);
+        QString object_id   = cfggrp.readEntry("plugin_instance_id_"  + num, generateRandomID(70));
 
         unused_classes.removeAll(class_name);
 
