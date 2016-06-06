@@ -10,8 +10,184 @@
     <height>409</height>
    </rect>
   </property>
-  <layout class="QGridLayout" name="gridLayout_gen1">
-   <item row="3" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <widget class="KTabWidget" name="ktabwidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Seite">
+      <attribute name="title">
+       <string>Classes &amp;&amp; Instances</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QTreeView" name="listPlugins">
+         <property name="toolTip">
+          <string>List of the plugin classes and their instances currently running</string>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="headerHidden">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="KPushButton" name="btnNewPluginInstance">
+           <property name="maximumSize">
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Create a new instance of plugin class selected in the list on the left</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KPushButton" name="btnRemovePluginInstance">
+           <property name="maximumSize">
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Removes/stops the plugin instance selected in the list on the left</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="spacer3_2_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>5</width>
+             <height>5</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="Line" name="line1_2">
+         <property name="frameShape">
+          <enum>QFrame::HLine</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>&lt;p&gt;You can &lt;b&gt;rename&lt;/b&gt; a plugin instance by double clicking on the instance name. This name will appear below the configuration page icon, in the config page header and e.g. in the name of your sound device. Editing plugin names is recommended for your convenience e.g. if you have multiple sound cards and/or multiple ALSA plugin instances.&lt;/p&gt;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Seite_2">
+      <attribute name="title">
+       <string>Plugin Libraries</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="KUrlRequester" name="editPluginLibrary">
+           <property name="toolTip">
+            <string>Select a plugin library from a file dialog. It will added to the library list if you press the &quot;Load Library&quot; button.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="listPluginLibraries">
+           <property name="toolTip">
+            <string>list of loaded plugin libraries</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="KPushButton" name="btnAddLibrary">
+           <property name="maximumSize">
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Loads the library specified in the box left to this button.</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KPushButton" name="btnRemoveLibrary">
+           <property name="maximumSize">
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Unload the plugin library selected in the list on the left side</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="spacer3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>5</width>
+             <height>5</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
     <widget class="Line" name="line1_3">
      <property name="frameShape">
       <enum>QFrame::HLine</enum>
@@ -21,7 +197,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item>
     <widget class="QGroupBox" name="groupBox4_2">
      <property name="title">
       <string>Automatic Detection and Load of New Plugins</string>
@@ -60,7 +236,7 @@
      </layout>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item>
     <widget class="Line" name="line1_2_2">
      <property name="frameShape">
       <enum>QFrame::HLine</enum>
@@ -70,175 +246,11 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item>
     <widget class="QCheckBox" name="cbShowProgressBar">
      <property name="text">
       <string>Show progress bar during startup for plugin initiali&amp;zation</string>
      </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="KTabWidget" name="ktabwidget">
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="Seite">
-      <attribute name="title">
-       <string>Classes &amp;&amp; Instances</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0" rowspan="4">
-        <widget class="QTreeView" name="listPlugins">
-         <property name="toolTip">
-          <string>List of the plugin classes and their instances currently running</string>
-         </property>
-         <property name="alternatingRowColors">
-          <bool>true</bool>
-         </property>
-         <property name="headerHidden">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <spacer name="spacer3_2_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>5</width>
-           <height>5</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="6" column="0" colspan="2">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>&lt;p&gt;You can &lt;b&gt;rename&lt;/b&gt; a plugin instance by double clicking on the instance name. This name will appear below the configuration page icon, in the config page header and e.g. in the name of your sound device. Editing plugin names is recommended for your convenience e.g. if you have multiple sound cards and/or multiple ALSA plugin instances.&lt;/p&gt;</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="2">
-        <widget class="Line" name="line1_2">
-         <property name="frameShape">
-          <enum>QFrame::HLine</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="KPushButton" name="btnNewPluginInstance">
-         <property name="maximumSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Create a new instance of plugin class selected in the list on the left</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="KPushButton" name="btnRemovePluginInstance">
-         <property name="maximumSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Removes/stops the plugin instance selected in the list on the left</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="Seite_2">
-      <attribute name="title">
-       <string>Plugin Libraries</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="0">
-        <widget class="KUrlRequester" name="editPluginLibrary">
-         <property name="toolTip">
-          <string>Select a plugin library from a file dialog. It will added to the library list if you press the &quot;Load Library&quot; button.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="KPushButton" name="btnAddLibrary">
-         <property name="maximumSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Loads the library specified in the box left to this button.</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="flat">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" rowspan="2">
-        <widget class="QListWidget" name="listPluginLibraries">
-         <property name="toolTip">
-          <string>list of loaded plugin libraries</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="KPushButton" name="btnRemoveLibrary">
-         <property name="maximumSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Unload the plugin library selected in the list on the left side</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <spacer name="spacer3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>5</width>
-           <height>5</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
     </widget>
    </item>
   </layout>
