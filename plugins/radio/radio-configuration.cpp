@@ -277,9 +277,6 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
         if (!c) {
             c = s->createEditor();
             if (c) {
-                c->setParent(this);
-                c->move(QPoint(0,0));
-                c->show();
                 QObject::connect(c, SIGNAL(changed(RadioStationConfig*)),
                                  this, SLOT(slotStationEditorChanged(RadioStationConfig*)));
                 m_stationEditors.insert(s->getClassName(), c);

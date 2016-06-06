@@ -280,10 +280,6 @@ bool RadioView::addElement (RadioViewElement *e)
         return false;
 
 
-    e->setParent(this);
-    e->move(0, 0);
-    e->show();
-
     QObject::connect(e,    SIGNAL(destroyed(QObject*)),
                      this, SLOT(removeElement(QObject*)));
     m_elementConfigPages.insert(e, NULL);
