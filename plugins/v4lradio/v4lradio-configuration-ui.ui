@@ -260,13 +260,13 @@
          </item>
          <item>
           <widget class="QPushButton" name="buttonSelectRadioDevice">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>1</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
            <property name="minimumSize">
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
             <size>
              <width>26</width>
              <height>26</height>
