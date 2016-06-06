@@ -201,6 +201,7 @@ QString RadioStation::getProperty(const QString &pn) const
 QStringList RadioStation::getPropertyNames() const
 {
     QStringList l;
+    l.reserve(10);
     l.push_back(QString::fromLatin1(StationIDElement));
     l.push_back(QString::fromLatin1(StationNameElement));
     l.push_back(QString::fromLatin1(StationShortNameElement));
