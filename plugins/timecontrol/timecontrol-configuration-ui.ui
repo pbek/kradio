@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
+    <width>566</width>
     <height>455</height>
    </rect>
   </property>
@@ -258,7 +258,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboStationSelection"/>
+      <widget class="QComboBox" name="comboStationSelection">
+       <property name="minimumContentsLength">
+        <number>10</number>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QComboBox" name="comboAlarmType"/>

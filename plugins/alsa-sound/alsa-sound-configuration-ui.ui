@@ -51,7 +51,11 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="KComboBox" name="m_comboPlaybackDevice"/>
+           <widget class="KComboBox" name="m_comboPlaybackDevice">
+            <property name="minimumContentsLength">
+             <number>10</number>
+            </property>
+           </widget>
           </item>
           <item row="4" column="1">
            <widget class="QDoubleSpinBox" name="sbSoftVolumeCorrection">
@@ -116,7 +120,11 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="KComboBox" name="m_comboPlaybackMixerCard"/>
+           <widget class="KComboBox" name="m_comboPlaybackMixerCard">
+            <property name="minimumContentsLength">
+             <number>10</number>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="textLabel2_5">
@@ -293,7 +301,11 @@
            </widget>
           </item>
           <item row="0" column="1" colspan="2">
-           <widget class="KComboBox" name="m_comboCaptureDevice"/>
+           <widget class="KComboBox" name="m_comboCaptureDevice">
+            <property name="minimumContentsLength">
+             <number>10</number>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="textLabel2_6">
@@ -306,7 +318,11 @@
            </widget>
           </item>
           <item row="1" column="1" colspan="2">
-           <widget class="KComboBox" name="m_comboCaptureMixerCard"/>
+           <widget class="KComboBox" name="m_comboCaptureMixerCard">
+            <property name="minimumContentsLength">
+             <number>10</number>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="textLabel2_2_2_4">
