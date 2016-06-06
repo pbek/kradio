@@ -283,13 +283,19 @@ QString StationList::writeXML (const IErrorLogClient &/*logger*/) const
     writer.writeTextElement(StationListInfoComments, m_metaData.comment);
     writer.writeEndElement();
 
+    QHash<QString, QStringList> propertyNames;
+
     for (const_iterator it = begin(); it != end(); ++it) {
         RadioStation *s = *it;
+        const QString className = s->getClassName();
 
-        writer.writeStartElement(s->getClassName());
+        writer.writeStartElement(className);
 
-        QStringList properties = s->getPropertyNames();
-        foreach (const QString &prop, properties) {
+        QHash<QString, QStringList>::iterator propIt = propertyNames.find(className);
+        if (propIt == propertyNames.end()) {
+            propIt = propertyNames.insert(className, s->getPropertyNames());
+        }
+        foreach (const QString &prop, propIt.value()) {
             writer.writeTextElement(prop, s->getProperty(prop));
         }
         writer.writeEndElement();
