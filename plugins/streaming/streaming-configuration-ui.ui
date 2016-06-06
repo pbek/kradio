@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>515</width>
-    <height>288</height>
+    <width>569</width>
+    <height>345</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout_gen1">
@@ -43,12 +43,6 @@
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="lableChannels">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="text">
          <string>Channels:</string>
         </property>
@@ -288,7 +282,7 @@
    <item row="1" column="0">
     <widget class="KTabWidget" name="ktabwidget">
      <property name="tabPosition">
-      <enum>QTabWidget::West</enum>
+      <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -308,14 +302,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
@@ -333,8 +327,8 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>10</width>
-           <height>10</height>
+           <width>5</width>
+           <height>5</height>
           </size>
          </property>
         </spacer>
@@ -349,14 +343,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
@@ -381,14 +375,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
@@ -406,14 +400,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
@@ -445,14 +439,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
@@ -467,7 +461,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>10</width>
+           <width>5</width>
            <height>5</height>
           </size>
          </property>
@@ -483,14 +477,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
@@ -508,14 +502,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
@@ -533,14 +527,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>26</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text">
