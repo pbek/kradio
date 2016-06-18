@@ -1,8 +1,12 @@
 project(kradio4)
 
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-cmake_policy(SET CMP0059 OLD)
-cmake_policy(SET CMP0064 OLD)
+if(POLICY CMP0059)
+    cmake_policy(SET CMP0059 OLD)
+endif()
+if(POLICY CMP0064)
+    cmake_policy(SET CMP0064 OLD)
+endif()
 
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
