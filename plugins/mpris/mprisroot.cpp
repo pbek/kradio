@@ -75,7 +75,7 @@ QString MPRISRoot::Identity() const
 
 QString MPRISRoot::DesktopEntry() const
 {
-    return "kde4-" + KCmdLineArgs::aboutData()->appName();
+    return KCmdLineArgs::aboutData()->appName();
 }
 
 QStringList MPRISRoot::SupportedUriSchemes() const
