@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: oss-sound.cpp:40
+#, kde-format
+msgctxt "@title Open Sound System"
+msgid "OSS"
+msgstr ""
+
+#: oss-sound.cpp:42
+#, kde-format
+msgctxt "@title"
+msgid "Open Sound System (OSS) Support"
+msgstr ""
+
+#: oss-sound.cpp:44
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2004 Martin Witte"
+msgstr ""
+
+#: oss-sound.cpp:48
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: oss-sound.cpp:60
+#, kde-format
+msgid "KRadio OSS Sound Plugin"
+msgstr ""
+
+#: oss-sound.cpp:194
+#, kde-format
+msgid "OSS Sound"
+msgstr ""
+
+#: oss-sound.cpp:195
+#, kde-format
+msgid "OSS Sound Device Options"
+msgstr ""
+
+#: oss-sound.cpp:510
+#, kde-format
+msgid "OSS device %1: No data to record"
+msgstr ""
+
+#: oss-sound.cpp:520
+#, kde-format
+msgid "internal stream, not stored (%1)"
+msgstr ""
+
+#: oss-sound.cpp:552
+#, kde-format
+msgid "Error %1 while handling OSS device %2"
+msgstr ""
+
+#: oss-sound.cpp:596 oss-sound.cpp:622
+#, kde-format
+msgid "Cannot open DSP device %1"
+msgstr ""
+
+#: oss-sound.cpp:602
+#, kde-format
+msgid "Cannot read DSP capabilities for %1"
+msgstr ""
+
+#: oss-sound.cpp:629
+#, kde-format
+msgid "Cannot set DSP sample format for %1"
+msgstr ""
+
+#: oss-sound.cpp:634
+#, kde-format
+msgid "Cannot set number of channels for %1"
+msgstr ""
+
+#: oss-sound.cpp:639
+#, kde-format
+msgid "Cannot set sampling rate for %1"
+msgstr ""
+
+#: oss-sound.cpp:641
+#, kde-format
+msgid "Asking for %1 Hz but %2 uses %3 Hz"
+msgstr ""
+
+#: oss-sound.cpp:651
+#, kde-format
+msgid "Cannot set stereo mode for %1"
+msgstr ""
+
+#: oss-sound.cpp:656
+#, kde-format
+msgid "Cannot set sample size for %1"
+msgstr ""
+
+#: oss-sound.cpp:665
+#, kde-format
+msgid "Cannot set buffers for %1"
+msgstr ""
+
+#: oss-sound.cpp:670
+#, kde-format
+msgid "Cannot read buffer size for %1"
+msgstr ""
+
+#: oss-sound.cpp:672
+#, kde-format
+msgid "%1 uses buffer blocks of %2 bytes"
+msgstr ""
+
+#: oss-sound.cpp:675
+#, kde-format
+msgid "adjusted own buffer size to %1 bytes"
+msgstr ""
+
+#: oss-sound.cpp:727
+#, kde-format
+msgid "Cannot open mixer device %1"
+msgstr ""
+
+#: oss-sound.cpp:760
+#, kde-format
+msgid "OSSSoundDevice::getMixerChannels: Cannot open mixer device %1"
+msgstr ""
+
+#: oss-sound.cpp:774
+#, kde-format
+msgid ""
+"OSSSoundDevice::getMixerChannels: Cannot read mixer device mask on device %1"
+msgstr ""
+
+#: oss-sound.cpp:879
+#, kde-format
+msgid "error %1 while reading volume from %2"
+msgstr ""
+
+#: oss-sound.cpp:902
+#, kde-format
+msgid "error %1 while setting volume to %2 on device %3"
+msgstr ""
+
+#: oss-sound.cpp:918
+#, kde-format
+msgid "Selecting recording source on device %1 failed with error code %2"
+msgstr ""
+
+#: oss-sound.cpp:924
+#, kde-format
+msgid "Reading igain volume on device %1 failed with error code %2"
+msgstr ""
+
+#: oss-sound.cpp:931
+#, kde-format
+msgid "Setting igain volume on device %1 failed with error code %2"
+msgstr ""
+
+#: oss-sound.cpp:989
+#, kde-format
+msgid "OSS Sound Device %1"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:27
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:3 rc.cpp:29
+#, kde-format
+msgid "Devices"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:51
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:6 rc.cpp:32
+#, kde-format
+msgid "PCM device:"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:59
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:9 rc.cpp:35
+#, kde-format
+msgid "Mixer device:"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:67
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:12 rc.cpp:38
+#, kde-format
+msgid "Buffer Size"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:75
+#. i18n: ectx: property (suffix), widget (KIntSpinBox)
+#: rc.cpp:15 rc.cpp:41
+#, kde-format
+msgid " kB"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:91
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:18 rc.cpp:44
+#, kde-format
+msgid "Extended Options"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:105
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:21 rc.cpp:47
+#, kde-format
+msgid "Disable playback"
+msgstr ""
+
+#. i18n: file: oss-sound-configuration-ui.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:24 rc.cpp:50
+#, kde-format
+msgid "Disable capture"
+msgstr ""
+
+#: rc.cpp:25
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:26
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

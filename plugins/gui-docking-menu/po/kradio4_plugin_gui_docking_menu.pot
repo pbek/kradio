@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: docking-configuration.cpp:106
+#, kde-format
+msgid "Mouse click on tray icon:"
+msgstr ""
+
+#: docking-configuration.cpp:107 docking-configuration.cpp:112
+#, kde-format
+msgctxt "Mouse button"
+msgid "Left:"
+msgstr ""
+
+#: docking-configuration.cpp:108 docking-configuration.cpp:113
+#, kde-format
+msgctxt "Mouse button"
+msgid "Right:"
+msgstr ""
+
+#: docking-configuration.cpp:109 docking-configuration.cpp:114
+#, kde-format
+msgctxt "Mouse button"
+msgid "Middle:"
+msgstr ""
+
+#: docking-configuration.cpp:111
+#, kde-format
+msgid "Mouse double-click on tray icon:"
+msgstr ""
+
+#: docking-configuration.cpp:116
+#, kde-format
+msgid "Mouse wheel action on tray icon:"
+msgstr ""
+
+#: docking-configuration.cpp:122 docking-configuration.cpp:132
+#, kde-format
+msgid "No Action"
+msgstr ""
+
+#: docking-configuration.cpp:123
+#, kde-format
+msgid "Show/Hide Windows"
+msgstr ""
+
+#: docking-configuration.cpp:124
+#, kde-format
+msgid "Power On/Off"
+msgstr ""
+
+#: docking-configuration.cpp:125
+#, kde-format
+msgid "Pause/Play"
+msgstr ""
+
+#: docking-configuration.cpp:126 docking.cpp:291
+#, kde-format
+msgid "Recording"
+msgstr ""
+
+#: docking-configuration.cpp:127
+#, kde-format
+msgid "System Tray Menu"
+msgstr ""
+
+#: docking-configuration.cpp:128
+#, kde-format
+msgid "GUI-Plugin Menu"
+msgstr ""
+
+#: docking-configuration.cpp:129
+#, kde-format
+msgid "Configuration"
+msgstr ""
+
+#: docking-configuration.cpp:133
+#, kde-format
+msgid "Change Station"
+msgstr ""
+
+#: docking-configuration.cpp:134
+#, kde-format
+msgid "Change Volume"
+msgstr ""
+
+#: docking-configuration.cpp:135
+#, kde-format
+msgid "Change Frequency"
+msgstr ""
+
+#: docking.cpp:45
+#, kde-format
+msgctxt "@title"
+msgid "Docking Menu"
+msgstr ""
+
+#: docking.cpp:47
+#, kde-format
+msgctxt "@title"
+msgid "System Tray Icon/Menu"
+msgstr ""
+
+#: docking.cpp:49
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: docking.cpp:53
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: docking.cpp:54
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: docking.cpp:66
+#, kde-format
+msgid "System Tray Plugin"
+msgstr ""
+
+#: docking.cpp:251
+#, kde-format
+msgid "System Tray Icon"
+msgstr ""
+
+#: docking.cpp:252
+#, kde-format
+msgid "System Tray Icon Configuration"
+msgstr ""
+
+#: docking.cpp:281
+#, kde-format
+msgid "Search Next Station"
+msgstr ""
+
+#: docking.cpp:282
+#, kde-format
+msgid "Search Previous Station"
+msgstr ""
+
+#: docking.cpp:296
+#, kde-format
+msgid "Pause Radio"
+msgstr ""
+
+#: docking.cpp:307
+#, kde-format
+msgid "Show/Hide Plugins"
+msgstr ""
+
+#: docking.cpp:315
+#, kde-format
+msgid "&Quit"
+msgstr ""
+
+#: docking.cpp:441
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr ""
+
+#: docking.cpp:444 docking.cpp:453 docking.cpp:461
+#, kde-format
+msgid "Start Sleep Countdown"
+msgstr ""
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power Off"
+msgstr ""
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power On"
+msgstr ""
+
+#: docking.cpp:484 docking.cpp:502
+#, kde-format
+msgid "invalid station"
+msgstr ""
+
+#: docking.cpp:485
+#, kde-format
+msgid "KRadio: %1"
+msgstr ""
+
+#: docking.cpp:494
+#, kde-format
+msgid "next alarm: %1"
+msgstr ""
+
+#: docking.cpp:496
+#, kde-format
+msgid "<no alarm pending>"
+msgstr ""
+
+#: docking.cpp:769 docking.cpp:872 docking.cpp:930
+#, kde-format
+msgid "Stop Recording of %1"
+msgstr ""
+
+#: docking.cpp:858
+#, kde-format
+msgid "Start Recording"
+msgstr ""
+
+#: docking.cpp:912
+#, kde-format
+msgid "Resume playback"
+msgstr ""
+
+#: docking.cpp:916
+#, kde-format
+msgid "Pause playback"
+msgstr ""
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
