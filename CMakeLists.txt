@@ -33,7 +33,7 @@ find_package( Boost 1.20 REQUIRED)
 
 ########################################################################
 
-find_program(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
+find_package(Gettext)
 if(NOT GETTEXT_MSGFMT_EXECUTABLE)
     message(STATUS "msgfmt not found. Translations will *not* be installed")
 endif()
