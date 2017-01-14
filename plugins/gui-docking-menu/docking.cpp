@@ -513,12 +513,19 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
     queryIsRecordingRunning(queryCurrentSoundStreamSinkID(), r, sf);
     m_recordingID->setEnabled(!r);
 
-    if (rs.isValid()) {
-        QAction *act = m_stationMenuIDs.value(rs.stationID());
+    QAction *act = rs.isValid() ? m_stationMenuIDs.value(rs.stationID()) : 0;
+    if (act) {
+        act->setChecked(true);
+    } else {
+        act = m_stationsActionGroup->checkedAction();
         if (act) {
-            act->setChecked(true);
+            act->setChecked(false);
         }
     }
+
+    QAction *oldTitle = m_titleID;
+    m_titleID = m_menu->addTitle(generateStationTitle(), m_titleID);
+    delete oldTitle;
 
     return true;
 }
