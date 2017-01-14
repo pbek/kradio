@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-18 15:21+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -18,106 +18,10 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: docking-configuration.cpp:110
+#: docking.cpp:315
 #, kde-format
-msgid "Mouse click on tray icon:"
-msgstr "Mausklick auf Kontrolleistensymbol:"
-
-#: docking-configuration.cpp:111 docking-configuration.cpp:116
-#, kde-format
-msgctxt "Mouse button"
-msgid "Left:"
-msgstr "Links:"
-
-#: docking-configuration.cpp:112 docking-configuration.cpp:117
-#, kde-format
-msgctxt "Mouse button"
-msgid "Right:"
-msgstr "Rechts:"
-
-#: docking-configuration.cpp:113 docking-configuration.cpp:118
-#, kde-format
-msgctxt "Mouse button"
-msgid "Middle:"
-msgstr "Mitte:"
-
-#: docking-configuration.cpp:115
-#, kde-format
-msgid "Mouse double-click on tray icon:"
-msgstr "Doppelklick auf Kontrolleistensymbol:"
-
-#: docking-configuration.cpp:120
-#, kde-format
-msgid "Mouse wheel action on tray icon:"
-msgstr "Mausrad auf dem System Tray Icon:"
-
-#: docking-configuration.cpp:126 docking-configuration.cpp:136
-#, kde-format
-msgid "No Action"
-msgstr "Keine Action"
-
-#: docking-configuration.cpp:127
-#, kde-format
-msgid "Show/Hide Windows"
-msgstr "Fenster anzeigen/verstecken"
-
-#: docking-configuration.cpp:128
-#, kde-format
-msgid "Power On/Off"
-msgstr "Ein/Ausschalten"
-
-#: docking-configuration.cpp:129
-#, kde-format
-msgid "Pause/Play"
-msgstr "Pause/Wiedergabe"
-
-#: docking-configuration.cpp:130 docking.cpp:291
-#, kde-format
-msgid "Recording"
-msgstr "Aufnahme"
-
-#: docking-configuration.cpp:131
-#, kde-format
-msgid "System Tray Menu"
-msgstr "System Tray Menü"
-
-#: docking-configuration.cpp:132
-#, kde-format
-msgid "GUI-Plugin Menu"
-msgstr "GUI-Plugin-Menü"
-
-#: docking-configuration.cpp:133
-#, kde-format
-msgid "Configuration"
-msgstr "Konfigurationsdialog"
-
-#: docking-configuration.cpp:137
-#, kde-format
-msgid "Change Station"
-msgstr "Nächster Sender"
-
-#: docking-configuration.cpp:138
-#, kde-format
-msgid "Change Volume"
-msgstr "Lautstärke Verändern"
-
-#: docking-configuration.cpp:139
-#, kde-format
-msgid "Change Frequency"
-msgstr "Frequence Verändern"
-
-#: docking.cpp:45
-#, kde-format
-msgctxt "@title"
-msgid "Docking Menu"
-msgstr ""
-
-#: docking.cpp:47
-#, fuzzy, kde-format
-#| msgid "System Tray Icon/Menu"
-msgctxt "@title"
-msgid "System Tray Icon/Menu"
-msgstr "System Tray Icon/Menü"
+msgid "&Quit"
+msgstr "&Beenden"
 
 #: docking.cpp:49
 #, kde-format
@@ -125,11 +29,46 @@ msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: docking.cpp:53
+#: docking.cpp:496
 #, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
+msgid "<no alarm pending>"
+msgstr "<Wecker nicht aktiv>"
+
+#: docking-configuration.cpp:135
+#, kde-format
+msgid "Change Frequency"
+msgstr "Frequence Verändern"
+
+#: docking-configuration.cpp:133
+#, kde-format
+msgid "Change Station"
+msgstr "Nächster Sender"
+
+#: docking-configuration.cpp:134
+#, kde-format
+msgid "Change Volume"
+msgstr "Lautstärke Verändern"
+
+#: docking-configuration.cpp:129
+#, kde-format
+msgid "Configuration"
+msgstr "Konfigurationsdialog"
+
+#: docking.cpp:45
+#, kde-format
+msgctxt "@title"
+msgid "Docking Menu"
 msgstr ""
+
+#: docking-configuration.cpp:128
+#, kde-format
+msgid "GUI-Plugin Menu"
+msgstr "GUI-Plugin-Menü"
+
+#: docking.cpp:485
+#, kde-format
+msgid "KRadio: %1"
+msgstr "KRadio: %1"
 
 #: docking.cpp:54
 #, kde-format
@@ -137,20 +76,89 @@ msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: docking.cpp:66
+#: docking-configuration.cpp:107 docking-configuration.cpp:112
 #, kde-format
-msgid "System Tray Plugin"
-msgstr "System Tray Plugin"
+msgctxt "Mouse button"
+msgid "Left:"
+msgstr "Links:"
 
-#: docking.cpp:251
+#: docking.cpp:53
 #, kde-format
-msgid "System Tray Icon"
-msgstr "System Tray Icon"
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
 
-#: docking.cpp:252
+#: docking-configuration.cpp:109 docking-configuration.cpp:114
 #, kde-format
-msgid "System Tray Icon Configuration"
-msgstr "Konfiguration des System Tray Icons"
+msgctxt "Mouse button"
+msgid "Middle:"
+msgstr "Mitte:"
+
+#: docking-configuration.cpp:106
+#, kde-format
+msgid "Mouse click on tray icon:"
+msgstr "Mausklick auf Kontrolleistensymbol:"
+
+#: docking-configuration.cpp:111
+#, kde-format
+msgid "Mouse double-click on tray icon:"
+msgstr "Doppelklick auf Kontrolleistensymbol:"
+
+#: docking-configuration.cpp:116
+#, kde-format
+msgid "Mouse wheel action on tray icon:"
+msgstr "Mausrad auf dem System Tray Icon:"
+
+#: docking-configuration.cpp:122 docking-configuration.cpp:132
+#, kde-format
+msgid "No Action"
+msgstr "Keine Action"
+
+#: docking.cpp:296
+#, kde-format
+msgid "Pause Radio"
+msgstr "Radiowiedergabe pausieren"
+
+#: docking.cpp:916
+#, kde-format
+msgid "Pause playback"
+msgstr "Wiedergabe pausieren"
+
+#: docking-configuration.cpp:125
+#, kde-format
+msgid "Pause/Play"
+msgstr "Pause/Wiedergabe"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power Off"
+msgstr "Ausschalten"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power On"
+msgstr "Einschalten"
+
+#: docking-configuration.cpp:124
+#, kde-format
+msgid "Power On/Off"
+msgstr "Ein/Ausschalten"
+
+#: docking-configuration.cpp:126 docking.cpp:291
+#, kde-format
+msgid "Recording"
+msgstr "Aufnahme"
+
+#: docking.cpp:912
+#, kde-format
+msgid "Resume playback"
+msgstr "Wiedergabe fortsetzen"
+
+#: docking-configuration.cpp:108 docking-configuration.cpp:113
+#, kde-format
+msgctxt "Mouse button"
+msgid "Right:"
+msgstr "Rechts:"
 
 #: docking.cpp:281
 #, kde-format
@@ -162,80 +170,67 @@ msgstr "Suche nächsten Sender"
 msgid "Search Previous Station"
 msgstr "Suche vorherigen Sender"
 
-#: docking.cpp:296
-#, kde-format
-msgid "Pause Radio"
-msgstr "Radiowiedergabe pausieren"
-
 #: docking.cpp:307
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Plugins anzeigen/verstecken"
 
-#: docking.cpp:315
+#: docking-configuration.cpp:123
 #, kde-format
-msgid "&Quit"
-msgstr "&Beenden"
+msgid "Show/Hide Windows"
+msgstr "Fenster anzeigen/verstecken"
 
-#: docking.cpp:440
-#, kde-format
-msgid "Stop Sleep Countdown (running until %1)"
-msgstr "Schlummermodus abbrechen (liefe bis %1)"
-
-#: docking.cpp:443 docking.cpp:452 docking.cpp:460
-#, kde-format
-msgid "Start Sleep Countdown"
-msgstr "Schlummermodus einschalten"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power Off"
-msgstr "Ausschalten"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power On"
-msgstr "Einschalten"
-
-#: docking.cpp:483 docking.cpp:501
-#, kde-format
-msgid "invalid station"
-msgstr "ungültiger Sender"
-
-#: docking.cpp:484
-#, kde-format
-msgid "KRadio: %1"
-msgstr "KRadio: %1"
-
-#: docking.cpp:493
-#, kde-format
-msgid "next alarm: %1"
-msgstr "Nächstes Wecken: %1"
-
-#: docking.cpp:495
-#, kde-format
-msgid "<no alarm pending>"
-msgstr "<Wecker nicht aktiv>"
-
-#: docking.cpp:761 docking.cpp:864 docking.cpp:922
-#, kde-format
-msgid "Stop Recording of %1"
-msgstr "Aufnahme %1 abbrechen"
-
-#: docking.cpp:850
+#: docking.cpp:858
 #, kde-format
 msgid "Start Recording"
 msgstr "Aufnahme starten"
 
-#: docking.cpp:904
+#: docking.cpp:444 docking.cpp:453 docking.cpp:461
 #, kde-format
-msgid "Resume playback"
-msgstr "Wiedergabe fortsetzen"
+msgid "Start Sleep Countdown"
+msgstr "Schlummermodus einschalten"
 
-#: docking.cpp:908
+#: docking.cpp:769 docking.cpp:872 docking.cpp:930
 #, kde-format
-msgid "Pause playback"
-msgstr "Wiedergabe pausieren"
+msgid "Stop Recording of %1"
+msgstr "Aufnahme %1 abbrechen"
+
+#: docking.cpp:441
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Schlummermodus abbrechen (liefe bis %1)"
+
+#: docking.cpp:251
+#, kde-format
+msgid "System Tray Icon"
+msgstr "System Tray Icon"
+
+#: docking.cpp:252
+#, kde-format
+msgid "System Tray Icon Configuration"
+msgstr "Konfiguration des System Tray Icons"
+
+#: docking.cpp:47
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "System Tray Icon/Menu"
+msgstr "System Tray Icon/Menü"
+
+#: docking-configuration.cpp:127
+#, kde-format
+msgid "System Tray Menu"
+msgstr "System Tray Menü"
+
+#: docking.cpp:66
+#, kde-format
+msgid "System Tray Plugin"
+msgstr "System Tray Plugin"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "emw@nodabal.de"
 
 #: rc.cpp:1
 #, kde-format
@@ -243,11 +238,21 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Ernst Martin Witte "
 
-#: rc.cpp:2
+#: docking.cpp:484 docking.cpp:502
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "emw@nodabal.de"
+msgid "invalid station"
+msgstr "ungültiger Sender"
+
+#: docking.cpp:494
+#, kde-format
+msgid "next alarm: %1"
+msgstr "Nächstes Wecken: %1"
+
+#~ msgid "Show/Hide all GUI Elements"
+#~ msgstr "Alle Fenster anzeigen/verstecken"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Tray-Symbol/Menü für KRadio"
 
 #~ msgctxt "Mouse button"
 #~ msgid "XButton1:"
@@ -256,9 +261,3 @@ msgstr "emw@nodabal.de"
 #~ msgctxt "Mouse button"
 #~ msgid "XButton2:"
 #~ msgstr "XButton2:"
-
-#~ msgid "System Tray Icon/Menu for KRadio"
-#~ msgstr "Tray-Symbol/Menü für KRadio"
-
-#~ msgid "Show/Hide all GUI Elements"
-#~ msgstr "Alle Fenster anzeigen/verstecken"

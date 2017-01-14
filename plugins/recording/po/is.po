@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_recording\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2009-06-27 16:26+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -16,6 +16,199 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#. i18n: file: recording-configuration-ui.ui:453
+#. i18n: ectx: property (suffix), widget (QSpinBox, editBufferSize)
+#: rc.cpp:109 rc.cpp:235
+#, fuzzy, kde-format
+msgid " kB"
+msgstr " kB"
+
+#. i18n: file: recording-configuration-ui.ui:524
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
+#: rc.cpp:124 rc.cpp:250
+#, kde-format
+msgid " s"
+msgstr ""
+
+#: recording-monitor.cpp:324
+#, fuzzy, kde-format
+msgid "%1 Hz"
+msgstr "%1 Hz"
+
+#: recording-datamonitor.cpp:205 recording-datamonitor.cpp:211
+#, kde-format
+msgid "%1 dB"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:434
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage_3)
+#: rc.cpp:103 rc.cpp:229
+#, kde-format
+msgid "&Buffers"
+msgstr ""
+
+#: recording-monitor.cpp:84 recording-monitor.cpp:394 recording-monitor.cpp:398
+#, fuzzy, kde-format
+msgid "&Record"
+msgstr "&Taka upp"
+
+#: recording-monitor.cpp:394
+#, kde-format
+msgid "&Stop Recording"
+msgstr ""
+
+#: recording.cpp:47 recording-monitor.cpp:42
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte"
+msgstr ""
+
+#: recording-monitor.cpp:360
+#, kde-format
+msgid "0.000 kB"
+msgstr ""
+
+#: recording-monitor.cpp:361
+#, kde-format
+msgid "00:00:00.00"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:336
+#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
+#: rc.cpp:85 rc.cpp:211
+#, kde-format
+msgid "11025"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:253
+#. i18n: ectx: property (text), item, widget (KComboBox, editBits)
+#: rc.cpp:55 rc.cpp:181
+#, fuzzy, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: file: recording-configuration-ui.ui:331
+#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
+#: rc.cpp:82 rc.cpp:208
+#, kde-format
+msgid "22050"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:326
+#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
+#: rc.cpp:79 rc.cpp:205
+#, kde-format
+msgid "44100"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:321
+#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
+#: rc.cpp:76 rc.cpp:202
+#, kde-format
+msgid "48000"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:258
+#. i18n: ectx: property (text), item, widget (KComboBox, editBits)
+#: rc.cpp:58 rc.cpp:184
+#, fuzzy, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: file: recording-configuration-ui.ui:170
+#. i18n: ectx: property (text), widget (QLabel, lableDirectory_3)
+#: rc.cpp:37 rc.cpp:163
+#, no-c-format, kde-format
+msgid ""
+"<p style=\"font-size: 9pt;\"><i>Recording Templates: <b>%s</b>: station "
+"name, <b>%i</b>: station index, <b>%Y</b>: 4-digit year, <b>%m</b>: 2-digit "
+"month, <b>%d</b>: 2-digit day, <b>%B</b>: month name, <b>%A</b>: day name, "
+"<b>%H</b>: 2-digit hour, <b>%M</b>: 2-digit minute, <b>%S</b>: 2-digit "
+"second, <b>%%</b>: literal %</i></p>"
+msgstr ""
+
+#: recording-monitor.cpp:67 recording-monitor.cpp:69 recording-monitor.cpp:71
+#: recording-monitor.cpp:73 recording-monitor.cpp:362 recording-monitor.cpp:363
+#: recording-monitor.cpp:368 recording-monitor.cpp:369
+#: recording-monitor.cpp:370 recording-monitor.cpp:371
+#, fuzzy, kde-format
+msgid "<undefined>"
+msgstr "<óskilgreint>"
+
+#. i18n: file: recording-configuration-ui.ui:48
+#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
+#: rc.cpp:15 rc.cpp:141
+#, kde-format
+msgid "Apple/SGI (.aiff)"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:312
+#. i18n: ectx: property (text), item, widget (KComboBox, editEndianness)
+#: rc.cpp:73 rc.cpp:199
+#, kde-format
+msgid "Big Endian"
+msgstr ""
+
+#: encoder_mp3.cpp:161
+#, kde-format
+msgid "Cannot allocate buffers for MP3 encoding. "
+msgstr ""
+
+#: encoder_mp3.cpp:125
+#, kde-format
+msgid "Cannot initialize libmp3lame parameters. "
+msgstr ""
+
+#: encoder_mp3.cpp:108
+#, kde-format
+msgid "Cannot initialize libmp3lame. "
+msgstr ""
+
+#: encoder_ogg.cpp:141
+#, kde-format
+msgid "Cannot open Ogg/Vorbis output file %1: %2"
+msgstr ""
+
+#: encoder_mp3.cpp:148 encoder_pcm.cpp:67
+#, kde-format
+msgid "Cannot open output file %1. "
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:376
+#. i18n: ectx: property (text), widget (QLabel, lableChannels)
+#: rc.cpp:88 rc.cpp:214
+#, fuzzy, kde-format
+msgid "Channels:"
+msgstr "Rásir"
+
+#. i18n: file: recording-configuration-ui.ui:499
+#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxPreRecordingEnable)
+#: rc.cpp:118 rc.cpp:244
+#, fuzzy, kde-format
+msgid "E&nable"
+msgstr "&Virkja"
+
+#: recording.cpp:477
+#, kde-format
+msgid ""
+"Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
+"input bytes"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:443
+#. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
+#: rc.cpp:106 rc.cpp:232
+#, kde-format
+msgid "Encoding buffer size:"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:410
+#. i18n: ectx: property (text), widget (QLabel, lableEndianness)
+#: rc.cpp:100 rc.cpp:226
+#, fuzzy, kde-format
+msgid "Endianness:"
+msgstr "Rásir"
 
 #: encoder_mp3.cpp:81 encoder_mp3.cpp:194
 #, kde-format
@@ -27,29 +220,9 @@ msgstr ""
 msgid "Error %1 writing output. "
 msgstr ""
 
-#: encoder_mp3.cpp:108
+#: encoder_ogg.cpp:207
 #, kde-format
-msgid "Cannot initialize libmp3lame. "
-msgstr ""
-
-#: encoder_mp3.cpp:125
-#, kde-format
-msgid "Cannot initialize libmp3lame parameters. "
-msgstr ""
-
-#: encoder_mp3.cpp:134
-#, kde-format
-msgid "Recorded by KRadio"
-msgstr ""
-
-#: encoder_mp3.cpp:148 encoder_pcm.cpp:67
-#, kde-format
-msgid "Cannot open output file %1. "
-msgstr ""
-
-#: encoder_mp3.cpp:161
-#, kde-format
-msgid "Cannot allocate buffers for MP3 encoding. "
+msgid "Failed writing Ogg/Vorbis header to output stream"
 msgstr ""
 
 #: encoder_ogg.cpp:100
@@ -57,347 +230,56 @@ msgstr ""
 msgid "Failed writing data to Ogg/Vorbis output stream. "
 msgstr ""
 
-#: encoder_ogg.cpp:141
-#, kde-format
-msgid "Cannot open Ogg/Vorbis output file %1: %2"
-msgstr ""
-
-#: encoder_ogg.cpp:154
-#, kde-format
-msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
-msgstr ""
-
-#: encoder_ogg.cpp:207
-#, kde-format
-msgid "Failed writing Ogg/Vorbis header to output stream"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:24
-#. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
-#: rc.cpp:3 rc.cpp:129
+#: recording-monitor.cpp:68
 #, fuzzy, kde-format
-msgid "Output"
-msgstr "Úttak"
+msgid "File Size"
+msgstr "Skráarstærð"
 
-#. i18n: file: recording-configuration-ui.ui:41
-#. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
-#: rc.cpp:6 rc.cpp:132
-#, kde-format
-msgid "ID3 genre:"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:57
-#. i18n: ectx: property (text), widget (QLabel, lableDirectory_3)
-#: rc.cpp:10 rc.cpp:136
-#, no-c-format, kde-format
-msgid ""
-"<p style=\"font-size: 9pt;\"><i>Recording Templates: <b>%s</b>: station "
-"name, <b>%i</b>: station index, <b>%Y</b>: 4-digit year, <b>%m</b>: 2-digit "
-"month, <b>%d</b>: 2-digit day, <b>%B</b>: month name, <b>%A</b>: day name, "
-"<b>%H</b>: 2-digit hour, <b>%M</b>: 2-digit minute, <b>%S</b>: 2-digit "
-"second, <b>%%</b>: literal %</i></p>"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:73
-#. i18n: ectx: property (text), widget (QLabel, lableID3Title)
-#: rc.cpp:13 rc.cpp:139
-#, kde-format
-msgid "ID3 title:"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:149
-#. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
-#: rc.cpp:16 rc.cpp:142
-#, fuzzy, kde-format
-msgid "MP3 quality (0 - high, 9 - low):"
-msgstr "Gæði Ogg (0 - lág, 9 - há)"
-
-#. i18n: file: recording-configuration-ui.ui:169
-#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:19 rc.cpp:145
-#, kde-format
-msgid "Raw PCM Output (.raw)"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:174
-#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:22 rc.cpp:148
-#, kde-format
-msgid "Microsoft Wave (.wav)"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:179
-#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:25 rc.cpp:151
-#, kde-format
-msgid "Apple/SGI (.aiff)"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:184
-#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:28 rc.cpp:154
-#, kde-format
-msgid "Sun/NeXT (.au)"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:189
-#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:31 rc.cpp:157
-#, kde-format
-msgid "MP3 Compressed (.mp3)"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:194
-#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
-#: rc.cpp:34 rc.cpp:160
-#, kde-format
-msgid "Ogg/Vorbis Compressed (.ogg)"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:202
-#. i18n: ectx: property (text), widget (QLabel, lableDirectory)
-#: rc.cpp:37 rc.cpp:163
-#, kde-format
-msgid "Recording directory:"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:212
+#. i18n: file: recording-configuration-ui.ui:27
 #. i18n: ectx: property (text), widget (QLabel, lableFileFormat)
-#: rc.cpp:40 rc.cpp:166
+#: rc.cpp:6 rc.cpp:132
 #, fuzzy, kde-format
 msgid "File format:"
 msgstr "Skráarsnið"
 
-#. i18n: file: recording-configuration-ui.ui:222
-#. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
-#: rc.cpp:43 rc.cpp:169
-#, fuzzy, kde-format
-msgid "Ogg quality (0 - low, 9 - high):"
-msgstr "Gæði Ogg (0 - lág, 9 - há)"
-
-#. i18n: file: recording-configuration-ui.ui:241
+#. i18n: file: recording-configuration-ui.ui:180
 #. i18n: ectx: property (text), widget (QLabel, lableFilename)
-#: rc.cpp:46 rc.cpp:172
+#: rc.cpp:40 rc.cpp:166
 #, kde-format
 msgid "Filename:"
 msgstr ""
 
-#. i18n: file: recording-configuration-ui.ui:263
-#. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
-#: rc.cpp:49 rc.cpp:175
-#, kde-format
-msgid "ID3 artist:"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:295
+#. i18n: file: recording-configuration-ui.ui:246
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
 #: rc.cpp:52 rc.cpp:178
 #, kde-format
 msgid "I&nput"
 msgstr ""
 
-#. i18n: file: recording-configuration-ui.ui:329
-#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:55 rc.cpp:181
+#. i18n: file: recording-configuration-ui.ui:206
+#. i18n: ectx: property (text), widget (QLabel, lableID3Artist)
+#: rc.cpp:46 rc.cpp:172
 #, kde-format
-msgid "48000"
+msgid "ID3 artist:"
 msgstr ""
 
-#. i18n: file: recording-configuration-ui.ui:334
-#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:58 rc.cpp:184
+#. i18n: file: recording-configuration-ui.ui:219
+#. i18n: ectx: property (text), widget (QLabel, lableID3Genre)
+#: rc.cpp:49 rc.cpp:175
 #, kde-format
-msgid "44100"
+msgid "ID3 genre:"
 msgstr ""
 
-#. i18n: file: recording-configuration-ui.ui:339
-#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:61 rc.cpp:187
+#. i18n: file: recording-configuration-ui.ui:193
+#. i18n: ectx: property (text), widget (QLabel, lableID3Title)
+#: rc.cpp:43 rc.cpp:169
 #, kde-format
-msgid "22050"
+msgid "ID3 title:"
 msgstr ""
 
-#. i18n: file: recording-configuration-ui.ui:344
-#. i18n: ectx: property (text), item, widget (KComboBox, editRate)
-#: rc.cpp:64 rc.cpp:190
+#: recording-monitor.cpp:56
 #, kde-format
-msgid "11025"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:352
-#. i18n: ectx: property (text), widget (QLabel, lableEndianness)
-#: rc.cpp:67 rc.cpp:193
-#, fuzzy, kde-format
-msgid "Endianness:"
-msgstr "Rásir"
-
-#. i18n: file: recording-configuration-ui.ui:385
-#. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
-#: rc.cpp:70 rc.cpp:196
-#, fuzzy, kde-format
-msgid "Stereo"
-msgstr "Stereó"
-
-#. i18n: file: recording-configuration-ui.ui:390
-#. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
-#: rc.cpp:73 rc.cpp:199
-#, fuzzy, kde-format
-msgid "Mono"
-msgstr "Mónó"
-
-#. i18n: file: recording-configuration-ui.ui:398
-#. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:76 rc.cpp:202
-#, fuzzy, kde-format
-msgid "Sample rate:"
-msgstr "Söfnunartíðni"
-
-#. i18n: file: recording-configuration-ui.ui:415
-#. i18n: ectx: property (text), item, widget (KComboBox, editEndianness)
-#: rc.cpp:79 rc.cpp:205
-#, kde-format
-msgid "Little Endian"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:420
-#. i18n: ectx: property (text), item, widget (KComboBox, editEndianness)
-#: rc.cpp:82 rc.cpp:208
-#, kde-format
-msgid "Big Endian"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:435
-#. i18n: ectx: property (text), item, widget (KComboBox, editBits)
-#: rc.cpp:85 rc.cpp:211
-#, fuzzy, kde-format
-msgid "16"
-msgstr "16"
-
-#. i18n: file: recording-configuration-ui.ui:440
-#. i18n: ectx: property (text), item, widget (KComboBox, editBits)
-#: rc.cpp:88 rc.cpp:214
-#, fuzzy, kde-format
-msgid "8"
-msgstr "8"
-
-#. i18n: file: recording-configuration-ui.ui:448
-#. i18n: ectx: property (text), widget (QLabel, lableChannels)
-#: rc.cpp:91 rc.cpp:217
-#, fuzzy, kde-format
-msgid "Channels:"
-msgstr "Rásir"
-
-#. i18n: file: recording-configuration-ui.ui:458
-#. i18n: ectx: property (text), widget (QLabel, lableBits)
-#: rc.cpp:94 rc.cpp:220
-#, fuzzy, kde-format
-msgid "Sample bits:"
-msgstr "Söfnunartíðni"
-
-#. i18n: file: recording-configuration-ui.ui:475
-#. i18n: ectx: property (text), item, widget (KComboBox, editSign)
-#: rc.cpp:97 rc.cpp:223
-#, kde-format
-msgid "Signed"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:480
-#. i18n: ectx: property (text), item, widget (KComboBox, editSign)
-#: rc.cpp:100 rc.cpp:226
-#, kde-format
-msgid "Unsigned"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:523
-#. i18n: ectx: attribute (title), widget (QWidget, TabPage_3)
-#: rc.cpp:103 rc.cpp:229
-#, kde-format
-msgid "&Buffers"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:534
-#. i18n: ectx: property (suffix), widget (QSpinBox, editBufferSize)
-#: rc.cpp:106 rc.cpp:232
-#, fuzzy, kde-format
-msgid " kB"
-msgstr " kB"
-
-#. i18n: file: recording-configuration-ui.ui:553
-#. i18n: ectx: property (text), widget (QLabel, labelEditBufferSize)
-#: rc.cpp:109 rc.cpp:235
-#, kde-format
-msgid "Encoding buffer size:"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:573
-#. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
-#: rc.cpp:112 rc.cpp:238
-#, kde-format
-msgid "Number of buffers:"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:602
-#. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
-#: rc.cpp:115 rc.cpp:241
-#, kde-format
-msgid "Pre-Recordin&g"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:615
-#. i18n: ectx: property (text), widget (QCheckBox, m_checkboxPreRecordingEnable)
-#: rc.cpp:118 rc.cpp:244
-#, fuzzy, kde-format
-msgid "E&nable"
-msgstr "&Virkja"
-
-#. i18n: file: recording-configuration-ui.ui:645
-#. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
-#: rc.cpp:121 rc.cpp:247
-#, kde-format
-msgid "Pre-recording time:"
-msgstr ""
-
-#. i18n: file: recording-configuration-ui.ui:658
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_spinboxPreRecordingSeconds)
-#: rc.cpp:124 rc.cpp:250
-#, kde-format
-msgid " s"
-msgstr ""
-
-#: rc.cpp:125
-#, fuzzy, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Sveinn í Felli"
-
-#: rc.cpp:126
-#, fuzzy, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "sveinki@nett.is"
-
-#: recording.cpp:43
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "Recording"
-msgstr "&Taka upp"
-
-#: recording.cpp:45
-#, kde-format
-msgctxt "@title"
-msgid "Recording Plugin"
-msgstr ""
-
-#: recording.cpp:47 recording-monitor.cpp:42
-#, kde-format
-msgctxt "@info:credit"
-msgid "(c) 2002-2005 Martin Witte"
-msgstr ""
-
-#: recording.cpp:51 recording-monitor.cpp:46
-#, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
+msgid "KRadio Recording Monitor"
 msgstr ""
 
 #: recording.cpp:63
@@ -405,62 +287,127 @@ msgstr ""
 msgid "KRadio Recording Plugin"
 msgstr ""
 
+#. i18n: file: recording-configuration-ui.ui:307
+#. i18n: ectx: property (text), item, widget (KComboBox, editEndianness)
+#: rc.cpp:70 rc.cpp:196
+#, kde-format
+msgid "Little Endian"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:58
+#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
+#: rc.cpp:21 rc.cpp:147
+#, kde-format
+msgid "MP3 Compressed (.mp3)"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:71
+#. i18n: ectx: property (text), widget (QLabel, labelMP3Quality)
+#: rc.cpp:27 rc.cpp:153
+#, fuzzy, kde-format
+msgid "MP3 quality (0 - high, 9 - low):"
+msgstr "Gæði Ogg (0 - lág, 9 - há)"
+
+#: recording.cpp:51 recording-monitor.cpp:46
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:43
+#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
+#: rc.cpp:12 rc.cpp:138
+#, kde-format
+msgid "Microsoft Wave (.wav)"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:282
+#. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
+#: rc.cpp:67 rc.cpp:193
+#, fuzzy, kde-format
+msgid "Mono"
+msgstr "Mónó"
+
+#. i18n: file: recording-configuration-ui.ui:472
+#. i18n: ectx: property (text), widget (QLabel, labelEditBufferCount)
+#: rc.cpp:112 rc.cpp:238
+#, kde-format
+msgid "Number of buffers:"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:111
+#. i18n: ectx: property (text), widget (QLabel, labelOggQuality)
+#: rc.cpp:30 rc.cpp:156
+#, fuzzy, kde-format
+msgid "Ogg quality (0 - low, 9 - high):"
+msgstr "Gæði Ogg (0 - lág, 9 - há)"
+
+#. i18n: file: recording-configuration-ui.ui:63
+#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
+#: rc.cpp:24 rc.cpp:150
+#, kde-format
+msgid "Ogg/Vorbis Compressed (.ogg)"
+msgstr ""
+
+#: encoder_ogg.cpp:154
+#, kde-format
+msgid "Ogg/Vorbis Mode initialisation failed: invalid parameters for quality"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:21
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage_2)
+#: rc.cpp:3 rc.cpp:129
+#, fuzzy, kde-format
+msgid "Output"
+msgstr "Úttak"
+
+#. i18n: file: recording-configuration-ui.ui:493
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage_4)
+#: rc.cpp:115 rc.cpp:241
+#, kde-format
+msgid "Pre-Recordin&g"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:511
+#. i18n: ectx: property (text), widget (QLabel, m_labelPreRecordingTime)
+#: rc.cpp:121 rc.cpp:247
+#, kde-format
+msgid "Pre-recording time:"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:38
+#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
+#: rc.cpp:9 rc.cpp:135
+#, kde-format
+msgid "Raw PCM Output (.raw)"
+msgstr ""
+
+#: encoder_mp3.cpp:134
+#, kde-format
+msgid "Recorded by KRadio"
+msgstr ""
+
 #: recording.cpp:145 recording.cpp:146
 #, kde-format
 msgid "Recording"
 msgstr ""
 
-#: recording.cpp:349
+#: recording.cpp:43
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Recording"
+msgstr "&Taka upp"
+
+#. i18n("Status"),         this), 1, 0);
+#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
+#: recording-monitor.cpp:66
 #, kde-format
-msgid "start capture not handled"
+msgid "Recording File"
 msgstr ""
 
-#: recording.cpp:361
+#: recording-monitor.cpp:52
 #, kde-format
-msgid "Recording starting"
-msgstr ""
-
-#: recording.cpp:363
-#, kde-format
-msgid "starting encoding thread failed"
-msgstr ""
-
-#: recording.cpp:446
-#, kde-format
-msgid "could not read sufficient data"
-msgstr ""
-
-#: recording.cpp:477
-#, kde-format
-msgid ""
-"Encoder input buffer overflow (buffer configuration problem?). Skipped %1 "
-"input bytes"
-msgstr ""
-
-#: recording.cpp:539
-#, kde-format
-msgid "Recording::outputFile: %1"
-msgstr ""
-
-#: recording.cpp:589
-#, kde-format
-msgid "The encoding thread did not finish. It will be killed now."
-msgstr ""
-
-#: recording.cpp:609
-#, kde-format
-msgid "Recording stopped"
-msgstr ""
-
-#: recording.cpp:642
-#, kde-format
-msgid ""
-"Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
-msgstr ""
-
-#: recording-datamonitor.cpp:205 recording-datamonitor.cpp:211
-#, kde-format
-msgid "%1 dB"
+msgid "Recording Monitor"
 msgstr ""
 
 #: recording-monitor.cpp:38
@@ -475,44 +422,43 @@ msgctxt "@title"
 msgid "Recording Monitor Plugin"
 msgstr ""
 
-#: recording-monitor.cpp:52
+#: recording.cpp:45
 #, kde-format
-msgid "Recording Monitor"
+msgctxt "@title"
+msgid "Recording Plugin"
 msgstr ""
-
-#: recording-monitor.cpp:56
-#, kde-format
-msgid "KRadio Recording Monitor"
-msgstr ""
-
-#: recording-monitor.cpp:62
-#, kde-format
-msgid "Sound Stream"
-msgstr ""
-
-#. i18n("Status"),         this), 1, 0);
-#. l0->addWidget(m_labelStatus              = new QLabel(i18n("<undefined>"),    this), 1, 1);
-#: recording-monitor.cpp:66
-#, kde-format
-msgid "Recording File"
-msgstr ""
-
-#: recording-monitor.cpp:67 recording-monitor.cpp:69 recording-monitor.cpp:71
-#: recording-monitor.cpp:73 recording-monitor.cpp:365 recording-monitor.cpp:366
-#: recording-monitor.cpp:371 recording-monitor.cpp:372
-#: recording-monitor.cpp:373 recording-monitor.cpp:374
-#, fuzzy, kde-format
-msgid "<undefined>"
-msgstr "<óskilgreint>"
-
-#: recording-monitor.cpp:68
-#, fuzzy, kde-format
-msgid "File Size"
-msgstr "Skráarstærð"
 
 #: recording-monitor.cpp:70
 #, kde-format
 msgid "Recording Time"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:151
+#. i18n: ectx: property (text), widget (QLabel, lableDirectory)
+#: rc.cpp:33 rc.cpp:159
+#, kde-format
+msgid "Recording directory:"
+msgstr ""
+
+#: recording.cpp:361
+#, kde-format
+msgid "Recording starting"
+msgstr ""
+
+#: recording.cpp:609
+#, kde-format
+msgid "Recording stopped"
+msgstr ""
+
+#: recording.cpp:642
+#, kde-format
+msgid ""
+"Recording::notifySoundStreamData(encoded data): Receivers skipped %1 Bytes"
+msgstr ""
+
+#: recording.cpp:539
+#, kde-format
+msgid "Recording::outputFile: %1"
 msgstr ""
 
 #: recording-monitor.cpp:72
@@ -520,51 +466,105 @@ msgstr ""
 msgid "Sample Rate"
 msgstr "Söfnunartíðni"
 
-#: recording-monitor.cpp:84 recording-monitor.cpp:397 recording-monitor.cpp:401
+#. i18n: file: recording-configuration-ui.ui:266
+#. i18n: ectx: property (text), widget (QLabel, lableBits)
+#: rc.cpp:61 rc.cpp:187
 #, fuzzy, kde-format
-msgid "&Record"
-msgstr "&Taka upp"
+msgid "Sample bits:"
+msgstr "Söfnunartíðni"
 
-#: recording-monitor.cpp:98 recording-monitor.cpp:141 recording-monitor.cpp:165
+#. i18n: file: recording-configuration-ui.ui:400
+#. i18n: ectx: property (text), widget (QLabel, labelRate)
+#: rc.cpp:97 rc.cpp:223
+#, fuzzy, kde-format
+msgid "Sample rate:"
+msgstr "Söfnunartíðni"
+
+#. i18n: file: recording-configuration-ui.ui:387
+#. i18n: ectx: property (text), item, widget (KComboBox, editSign)
+#: rc.cpp:91 rc.cpp:217
+#, kde-format
+msgid "Signed"
+msgstr ""
+
+#: recording-monitor.cpp:62
+#, kde-format
+msgid "Sound Stream"
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:277
+#. i18n: ectx: property (text), item, widget (KComboBox, editChannels)
+#: rc.cpp:64 rc.cpp:190
+#, fuzzy, kde-format
+msgid "Stereo"
+msgstr "Stereó"
+
+#. i18n: file: recording-configuration-ui.ui:53
+#. i18n: ectx: property (text), item, widget (KComboBox, editFileFormat)
+#: rc.cpp:18 rc.cpp:144
+#, kde-format
+msgid "Sun/NeXT (.au)"
+msgstr ""
+
+#: recording.cpp:589
+#, kde-format
+msgid "The encoding thread did not finish. It will be killed now."
+msgstr ""
+
+#. i18n: file: recording-configuration-ui.ui:392
+#. i18n: ectx: property (text), item, widget (KComboBox, editSign)
+#: rc.cpp:94 rc.cpp:220
+#, kde-format
+msgid "Unsigned"
+msgstr ""
+
+#: rc.cpp:126
+#, fuzzy, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sveinki@nett.is"
+
+#: rc.cpp:125
+#, fuzzy, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sveinn í Felli"
+
+#: recording.cpp:446
+#, kde-format
+msgid "could not read sufficient data"
+msgstr ""
+
+#: recording-monitor.cpp:95 recording-monitor.cpp:138 recording-monitor.cpp:162
 #, fuzzy, kde-format
 msgid "nothing"
 msgstr "ekkert"
 
-#: recording-monitor.cpp:327
-#, fuzzy, kde-format
-msgid "%1 Hz"
-msgstr "%1 Hz"
-
-#: recording-monitor.cpp:363
+#: recording.cpp:349
 #, kde-format
-msgid "0.000 kB"
+msgid "start capture not handled"
 msgstr ""
 
-#: recording-monitor.cpp:364
+#: recording.cpp:363
 #, kde-format
-msgid "00:00:00.00"
-msgstr ""
-
-#: recording-monitor.cpp:397
-#, kde-format
-msgid "&Stop Recording"
+msgid "starting encoding thread failed"
 msgstr ""
 
 #, fuzzy
-#~ msgid "&Close"
-#~ msgstr "&Loka"
-
-#, fuzzy
-#~ msgid "%1 kB"
-#~ msgstr "%1 kb"
+#~ msgid "%1 GB"
+#~ msgstr "%1 Gb"
 
 #, fuzzy
 #~ msgid "%1 MB"
 #~ msgstr "%1 Mb"
 
 #, fuzzy
-#~ msgid "%1 GB"
-#~ msgstr "%1 Gb"
+#~ msgid "%1 kB"
+#~ msgstr "%1 kb"
+
+#, fuzzy
+#~ msgid "&Close"
+#~ msgstr "&Loka"
 
 #, fuzzy
 #~ msgid "Alt+N"

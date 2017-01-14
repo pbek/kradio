@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gui-standard-display (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2013-02-10 14:36+0100\n"
 "Last-Translator: Goran Simović <simovic@mailup.net>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -12,27 +12,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 
+#: radioview_frequencyradio.cpp:384
+#, kde-format
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: radioview_frequencyradio.cpp:382
+#, kde-format
+msgid "%1 kHz"
+msgstr "%1 kHz"
+
+#: radioview.cpp:61
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:178
+#, kde-format
+msgid "10 min"
+msgstr "10 min"
+
+#: radioview.cpp:193
+#, kde-format
+msgid "120 min"
+msgstr "120 min"
+
+#: radioview.cpp:181
+#, kde-format
+msgid "15 min"
+msgstr "15 min"
+
+#: radioview.cpp:184
+#, kde-format
+msgid "30 min"
+msgstr "30 min"
+
+#: radioview.cpp:175
+#, kde-format
+msgid "5 min"
+msgstr "5 min"
+
+#: radioview.cpp:187
+#, kde-format
+msgid "60 min"
+msgstr "60 min"
+
+#: radioview.cpp:190
+#, kde-format
+msgid "90 min"
+msgstr "90 min"
+
+#: radioview.cpp:410
+#, fuzzy, kde-format
+msgid "<no preset defined>"
+msgstr "stanica nije odredjena"
+
+#: radioview_frequencyradio.cpp:60
+#, kde-format
+msgid "AM"
+msgstr "AM"
+
 #: displaycfg.cpp:40
 #, fuzzy, kde-format
 msgid "Active text:"
 msgstr "Aktivan tekst"
-
-#: displaycfg.cpp:41
-#, fuzzy, kde-format
-msgid "Inactive text:"
-msgstr "Neaktivan tekst"
 
 #: displaycfg.cpp:42
 #, fuzzy, kde-format
 msgid "Background color:"
 msgstr "Boja pozadine"
 
-#: displaycfg.cpp:43
+#: radioview_frequencyseeker.cpp:81
 #, fuzzy, kde-format
-#| msgid "Display"
-msgctxt "Font used for the display"
-msgid "Display font:"
-msgstr "Ekran"
+msgid "Change frequency"
+msgstr "Promena frekvencije"
+
+#: radioview_volume.cpp:57
+#, fuzzy, kde-format
+msgid "Change volume"
+msgstr "Promeni jačinu zvuka"
 
 #: nosizefontrequester.cpp:37
 #, kde-format
@@ -46,11 +105,134 @@ msgctxt "@info:tooltip"
 msgid "Click to select a font"
 msgstr ""
 
+#: radioview.cpp:237
+#, kde-format
+msgid "Configure KRadio"
+msgstr "KRadio konfigurisanje"
+
+#: radioview_frequencyseeker.cpp:79
+#, fuzzy, kde-format
+msgid "Decrement frequency"
+msgstr "Smanjenje frekvencije"
+
+#: radioview.cpp:716
+#, kde-format
+msgid "Display"
+msgstr "Ekran"
+
+#: radioview.cpp:717
+#, kde-format
+msgid "Display Configuration"
+msgstr "Konfiguracija ekrana"
+
+#: displaycfg.cpp:43
+#, fuzzy, kde-format
+msgctxt "Font used for the display"
+msgid "Display font:"
+msgstr "Ekran"
+
+#: radioview_frequencyradio.cpp:61
+#, kde-format
+msgid "FM"
+msgstr "FM"
+
+#: radioview_frequencyradio.cpp:135 radioview_frequencyradio.cpp:136
+#, kde-format
+msgid "Frequency Display"
+msgstr "Prikaz frekvencije"
+
+#: radioview.cpp:243
+#, kde-format
+msgid "Help about KRadio and KDE"
+msgstr "Pomoć za KRadio i KDE"
+
+#: displaycfg.cpp:41
+#, fuzzy, kde-format
+msgid "Inactive text:"
+msgstr "Neaktivan tekst"
+
+#: radioview_frequencyseeker.cpp:80
+#, fuzzy, kde-format
+msgid "Increment frequency"
+msgstr "Povećanje frekvencije"
+
+#: radioview.cpp:66
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:63
+#, kde-format
+msgid "NET"
+msgstr "NET"
+
+#: radioview.cpp:161
+#, kde-format
+msgid "Pause KRadio"
+msgstr "Pauza Kradio"
+
+#: radioview.cpp:623
+#, kde-format
+msgid "Pause playback"
+msgstr "Pauziraj reprodukciju"
+
+#: radioview.cpp:238
+#, fuzzy, kde-format
+msgid "Power on/off"
+msgstr "Uključi/Isključi"
+
+#: radioview.cpp:239
+#, fuzzy, kde-format
+msgid "Quit KRadio application"
+msgstr "Napusti KRadio program"
+
+#: radioview_frequencyradio.cpp:62
+#, kde-format
+msgid "RDS"
+msgstr "RDS"
+
+#: radioview.cpp:76
+#, kde-format
+msgid "Radio Display"
+msgstr "Radio ekran"
+
+#: radioview.cpp:619
+#, kde-format
+msgid "Resume playback"
+msgstr "Nastavi reprodukciju"
+
+#: radioview_frequencyseeker.cpp:78
+#, fuzzy, kde-format
+msgid "Search for next radio station"
+msgstr "Traži sledeću radio stanicu"
+
+#: radioview_frequencyseeker.cpp:77
+#, fuzzy, kde-format
+msgid "Search for previous radio station"
+msgstr "Traži prethodnu radio stanicu"
+
 #: nosizefontrequester.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Font"
 msgstr ""
+
+#: radioview.cpp:244
+#, fuzzy, kde-format
+msgid "Select a radio station"
+msgstr "Izaberi Radio stanicu"
+
+#: radioview.cpp:242
+#, fuzzy, kde-format
+msgid "Show/hide plugins"
+msgstr "Pokaži/Sakrij priključak"
 
 #: radioview.cpp:57
 #, fuzzy, kde-format
@@ -64,88 +246,10 @@ msgctxt "@title"
 msgid "Standard Radio Display"
 msgstr "Standardan ekran za KRadio"
 
-#: radioview.cpp:61
-#, kde-format
-msgctxt "@info:credit"
-msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
-
-#: radioview.cpp:65
-#, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
-msgstr ""
-
-#: radioview.cpp:66
-#, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
-msgstr ""
-
-#: radioview.cpp:76
-#, kde-format
-msgid "Radio Display"
-msgstr "Radio ekran"
-
-#: radioview.cpp:161
-#, kde-format
-msgid "Pause KRadio"
-msgstr "Pauza Kradio"
-
 #: radioview.cpp:166
 #, kde-format
 msgid "Start Recording"
 msgstr "Start snimanja"
-
-#: radioview.cpp:175
-#, kde-format
-msgid "5 min"
-msgstr "5 min"
-
-#: radioview.cpp:178
-#, kde-format
-msgid "10 min"
-msgstr "10 min"
-
-#: radioview.cpp:181
-#, kde-format
-msgid "15 min"
-msgstr "15 min"
-
-#: radioview.cpp:184
-#, kde-format
-msgid "30 min"
-msgstr "30 min"
-
-#: radioview.cpp:187
-#, kde-format
-msgid "60 min"
-msgstr "60 min"
-
-#: radioview.cpp:190
-#, kde-format
-msgid "90 min"
-msgstr "90 min"
-
-#: radioview.cpp:193
-#, kde-format
-msgid "120 min"
-msgstr "120 min"
-
-#: radioview.cpp:237
-#, kde-format
-msgid "Configure KRadio"
-msgstr "KRadio konfigurisanje"
-
-#: radioview.cpp:238
-#, fuzzy, kde-format
-msgid "Power on/off"
-msgstr "Uključi/Isključi"
-
-#: radioview.cpp:239
-#, fuzzy, kde-format
-msgid "Quit KRadio application"
-msgstr "Napusti KRadio program"
 
 #: radioview.cpp:240
 #, fuzzy, kde-format
@@ -157,121 +261,10 @@ msgstr "Pokreni/Zaustavi snimanje"
 msgid "Start/stop sleep countdown"
 msgstr "Pokreni/Zaustavi tajmer"
 
-#: radioview.cpp:242
-#, fuzzy, kde-format
-msgid "Show/hide plugins"
-msgstr "Pokaži/Sakrij priključak"
-
-#: radioview.cpp:243
-#, kde-format
-msgid "Help about KRadio and KDE"
-msgstr "Pomoć za KRadio i KDE"
-
-#: radioview.cpp:244
-#, fuzzy, kde-format
-msgid "Select a radio station"
-msgstr "Izaberi Radio stanicu"
-
-#: radioview.cpp:417
-#, fuzzy, kde-format
-msgid "<no preset defined>"
-msgstr "stanica nije odredjena"
-
-#: radioview.cpp:573 radioview.cpp:643
+#: radioview.cpp:566 radioview.cpp:636
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Stop snimanja od %1"
-
-#: radioview.cpp:626
-#, kde-format
-msgid "Resume playback"
-msgstr "Nastavi reprodukciju"
-
-#: radioview.cpp:630
-#, kde-format
-msgid "Pause playback"
-msgstr "Pauziraj reprodukciju"
-
-#: radioview.cpp:723
-#, kde-format
-msgid "Display"
-msgstr "Ekran"
-
-#: radioview.cpp:724
-#, kde-format
-msgid "Display Configuration"
-msgstr "Konfiguracija ekrana"
-
-#: radioview_frequencyradio.cpp:60
-#, kde-format
-msgid "AM"
-msgstr "AM"
-
-#: radioview_frequencyradio.cpp:61
-#, kde-format
-msgid "FM"
-msgstr "FM"
-
-#: radioview_frequencyradio.cpp:62
-#, kde-format
-msgid "RDS"
-msgstr "RDS"
-
-#: radioview_frequencyradio.cpp:63
-#, kde-format
-msgid "NET"
-msgstr "NET"
-
-#: radioview_frequencyradio.cpp:135 radioview_frequencyradio.cpp:136
-#, kde-format
-msgid "Frequency Display"
-msgstr "Prikaz frekvencije"
-
-#: radioview_frequencyradio.cpp:377
-#, kde-format
-msgid "%1 kHz"
-msgstr "%1 kHz"
-
-#: radioview_frequencyradio.cpp:379
-#, kde-format
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: radioview_frequencyseeker.cpp:77
-#, fuzzy, kde-format
-msgid "Search for previous radio station"
-msgstr "Traži prethodnu radio stanicu"
-
-#: radioview_frequencyseeker.cpp:78
-#, fuzzy, kde-format
-msgid "Search for next radio station"
-msgstr "Traži sledeću radio stanicu"
-
-#: radioview_frequencyseeker.cpp:79
-#, fuzzy, kde-format
-msgid "Decrement frequency"
-msgstr "Smanjenje frekvencije"
-
-#: radioview_frequencyseeker.cpp:80
-#, fuzzy, kde-format
-msgid "Increment frequency"
-msgstr "Povećanje frekvencije"
-
-#: radioview_frequencyseeker.cpp:81
-#, fuzzy, kde-format
-msgid "Change frequency"
-msgstr "Promena frekvencije"
-
-#: radioview_volume.cpp:57
-#, fuzzy, kde-format
-msgid "Change volume"
-msgstr "Promeni jačinu zvuka"
-
-#: rc.cpp:1
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Goran Simović"
 
 #: rc.cpp:2
 #, kde-format
@@ -279,12 +272,11 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "simović@mailup.net"
 
-#~ msgid "RadioView_SeekInterface"
-#~ msgstr "Radio_PretragaInterfejs"
-
-#, fuzzy
-#~ msgid "Search previous station"
-#~ msgstr "traži predhodnu stanicu"
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Goran Simović"
 
 #, fuzzy
 #~ msgid "Decrease frequency by 0.05 MHz"
@@ -298,6 +290,13 @@ msgstr "simović@mailup.net"
 #~ msgid "Increase frequency by 0.05 MHz"
 #~ msgstr "povećanje frek. za 0.05 MHz"
 
+#~ msgid "RadioView_SeekInterface"
+#~ msgstr "Radio_PretragaInterfejs"
+
 #, fuzzy
 #~ msgid "Search next station"
 #~ msgstr "traži sledeću stanicu"
+
+#, fuzzy
+#~ msgid "Search previous station"
+#~ msgstr "traži predhodnu stanicu"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -17,24 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: quickbar.cpp:44
-#, fuzzy, kde-format
-#| msgid "Quickbar"
-msgctxt "@title"
-msgid "Quickbar"
-msgstr "Quickbar"
-
-#: quickbar.cpp:46
-#, fuzzy, kde-format
-#| msgid "Radio Station Quick Selection Toolbar"
-msgctxt "@title"
-msgid "Radio Station Quick Selection Toolbar"
-msgstr "Barra de Herramientas para Selección Rápida de Emisoras de Radio"
-
 #: quickbar.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: quickbar.cpp:352
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar"
+msgstr "Quickbar"
+
+#: quickbar.cpp:352
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar, %1"
+msgstr "Quickbar"
+
+#: quickbar.cpp:53
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
 msgstr ""
 
 #: quickbar.cpp:52
@@ -43,19 +45,14 @@ msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: quickbar.cpp:53
-#, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
-msgstr ""
-
-#: quickbar.cpp:63
-#, kde-format
-msgid "Quickbar Plugin"
-msgstr "Plugin Quickbar"
-
 #: quickbar.cpp:152
 #, kde-format
+msgid "Quickbar"
+msgstr "Quickbar"
+
+#: quickbar.cpp:44
+#, fuzzy, kde-format
+msgctxt "@title"
 msgid "Quickbar"
 msgstr "Quickbar"
 
@@ -64,27 +61,28 @@ msgstr "Quickbar"
 msgid "Quickbar Configuration"
 msgstr "Configuración Quickbar"
 
-#: quickbar.cpp:355
-#, fuzzy, kde-format
-msgid "KRadio4 Quickbar, %1"
-msgstr "Quickbar"
-
-#: quickbar.cpp:355
-#, fuzzy, kde-format
-msgid "KRadio4 Quickbar"
-msgstr "Quickbar"
-
-#: rc.cpp:1
+#: quickbar.cpp:63
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Sergio Ahumada Navea"
+msgid "Quickbar Plugin"
+msgstr "Plugin Quickbar"
+
+#: quickbar.cpp:46
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Radio Station Quick Selection Toolbar"
+msgstr "Barra de Herramientas para Selección Rápida de Emisoras de Radio"
 
 #: rc.cpp:2
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahumada@gmail.com"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergio Ahumada Navea"
 
 #~ msgid "contentsDragEnterEvent accepted"
 #~ msgstr "contentsDragEnterEvent acetpado"

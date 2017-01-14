@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_shortcuts\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-05-08 16:45+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-22 22:36+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -17,46 +17,15 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: rc.cpp:1
+#: shortcuts.cpp:96
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Pavel Fric"
+msgid "Decrease Frequency"
+msgstr "Snížit kmitočet"
 
-#: rc.cpp:2
+#: shortcuts.cpp:94
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "pavelfric@seznam.cz"
-
-#: shortcuts.cpp:50
-#, fuzzy, kde-format
-#| msgid "Shortcuts"
-msgctxt "@title"
-msgid "Shortcuts"
-msgstr "Klávesové zkratky"
-
-#: shortcuts.cpp:52
-#, fuzzy, kde-format
-#| msgid "Shortcuts Support"
-msgctxt "@title"
-msgid "Shortcuts Support"
-msgstr "Podpora zkratek"
-
-#: shortcuts.cpp:67 shortcuts.cpp:213
-#, kde-format
-msgid "Shortcuts Plugin"
-msgstr "Přídavný modul pro zkratky"
-
-#: shortcuts.cpp:75
-#, kde-format
-msgid "Standard Actions"
-msgstr "Standardní činnosti"
-
-#: shortcuts.cpp:76
-#, kde-format
-msgid "Station Actions"
-msgstr "Akce týkající se stanice"
+msgid "Decrease volume"
+msgstr "Snížit hlasitost"
 
 #: shortcuts.cpp:78
 #, kde-format
@@ -108,60 +77,45 @@ msgstr "Číslice 8"
 msgid "Digit 9"
 msgstr "Číslice 9"
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:95
 #, kde-format
-msgid "Power on"
-msgstr "Zapnout"
-
-#: shortcuts.cpp:89
-#, kde-format
-msgid "Power off"
-msgstr "Vypnout"
-
-#: shortcuts.cpp:90
-#, kde-format
-msgid "Pause"
-msgstr "Pozastavit"
-
-#: shortcuts.cpp:91
-#, kde-format
-msgid "Start recording"
-msgstr "Začít nahrávání"
-
-#: shortcuts.cpp:92
-#, kde-format
-msgid "Stop recording"
-msgstr "Zastavit nahrávání"
+msgid "Increase Frequency"
+msgstr "Zvýšit kmitočet"
 
 #: shortcuts.cpp:93
 #, kde-format
 msgid "Increase volume"
 msgstr "Zvýšit hlasitost"
 
-#: shortcuts.cpp:94
-#, kde-format
-msgid "Decrease volume"
-msgstr "Snížit hlasitost"
-
-#: shortcuts.cpp:95
-#, kde-format
-msgid "Increase Frequency"
-msgstr "Zvýšit kmitočet"
-
-#: shortcuts.cpp:96
-#, kde-format
-msgid "Decrease Frequency"
-msgstr "Snížit kmitočet"
-
 #: shortcuts.cpp:97
 #, kde-format
 msgid "Next station"
 msgstr "Následující stanice"
 
+#: shortcuts.cpp:90
+#, kde-format
+msgid "Pause"
+msgstr "Pozastavit"
+
+#: shortcuts.cpp:89
+#, kde-format
+msgid "Power off"
+msgstr "Vypnout"
+
+#: shortcuts.cpp:88
+#, kde-format
+msgid "Power on"
+msgstr "Zapnout"
+
 #: shortcuts.cpp:98
 #, kde-format
 msgid "Previous station"
 msgstr "Předchozí stanice"
+
+#: shortcuts.cpp:102
+#, kde-format
+msgid "Quit KRadio"
+msgstr "Ukončit"
 
 #: shortcuts.cpp:99
 #, kde-format
@@ -173,17 +127,61 @@ msgstr "Hledat následující stanici"
 msgid "Search previous station"
 msgstr "Hledat předchozí vysílací stanici"
 
+#: shortcuts.cpp:212
+#, kde-format
+msgid "Shortcuts"
+msgstr "Klávesové zkratky"
+
+#: shortcuts.cpp:50
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Shortcuts"
+msgstr "Klávesové zkratky"
+
+#: shortcuts.cpp:67 shortcuts.cpp:213
+#, kde-format
+msgid "Shortcuts Plugin"
+msgstr "Přídavný modul pro zkratky"
+
+#: shortcuts.cpp:52
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Shortcuts Support"
+msgstr "Podpora zkratek"
+
 #: shortcuts.cpp:101
 #, kde-format
 msgid "Sleep"
 msgstr "Zapnout režim spánku"
 
-#: shortcuts.cpp:102
+#: shortcuts.cpp:75
 #, kde-format
-msgid "Quit KRadio"
-msgstr "Ukončit"
+msgid "Standard Actions"
+msgstr "Standardní činnosti"
 
-#: shortcuts.cpp:212
+#: shortcuts.cpp:91
 #, kde-format
-msgid "Shortcuts"
-msgstr "Klávesové zkratky"
+msgid "Start recording"
+msgstr "Začít nahrávání"
+
+#: shortcuts.cpp:76
+#, kde-format
+msgid "Station Actions"
+msgstr "Akce týkající se stanice"
+
+#: shortcuts.cpp:92
+#, kde-format
+msgid "Stop recording"
+msgstr "Zastavit nahrávání"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "pavelfric@seznam.cz"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Pavel Fric"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2015-12-25 16:03+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,71 +20,67 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: errorlog.cpp:42
+#: errorlog.cpp:81
 #, kde-format
-msgctxt "@title"
-msgid "Error Logging Window"
-msgstr "Finestra del log degli errori"
+msgid "Debugging"
+msgstr "Debugging"
 
 #: errorlog.cpp:57
 #, kde-format
 msgid "Error Logger"
 msgstr "Registro degli errori"
 
-#: errorlog.cpp:61 errorlog.cpp:70
+#: errorlog.cpp:42
 #, kde-format
-msgid "KRadio Logger"
-msgstr "Logger di KRadio"
-
-#: errorlog.cpp:67
-#, kde-format
-msgid "Save &as"
-msgstr "Salva &come"
-
-#: errorlog.cpp:72
-#, kde-format
-msgid "Information"
-msgstr "Informazione"
-
-#: errorlog.cpp:73 errorlog.cpp:76 errorlog.cpp:79 errorlog.cpp:82
-#, kde-format
-msgid "KRadio4 Version %1 logging started"
-msgstr "Logging di KRadio4 versione %1 avviato"
-
-#: errorlog.cpp:75
-#, kde-format
-msgid "Warnings"
-msgstr "Avvisi"
+msgctxt "@title"
+msgid "Error Logging Window"
+msgstr "Finestra del log degli errori"
 
 #: errorlog.cpp:78
 #, kde-format
 msgid "Errors"
 msgstr "Errori"
 
-#: errorlog.cpp:81
+#: errorlog.cpp:72
 #, kde-format
-msgid "Debugging"
-msgstr "Debugging"
+msgid "Information"
+msgstr "Informazione"
 
-#: errorlog.cpp:200
+#: errorlog.cpp:61 errorlog.cpp:70
+#, kde-format
+msgid "KRadio Logger"
+msgstr "Logger di KRadio"
+
+#: errorlog.cpp:73 errorlog.cpp:76 errorlog.cpp:79 errorlog.cpp:82
+#, kde-format
+msgid "KRadio4 Version %1 logging started"
+msgstr "Logging di KRadio4 versione %1 avviato"
+
+#: errorlog.cpp:199
 #, kde-format
 msgid "Log Files"
 msgstr "File di log"
 
-#: errorlog.cpp:200
+#: errorlog.cpp:67
+#, kde-format
+msgid "Save &as"
+msgstr "Salva &come"
+
+#: errorlog.cpp:199
 #, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Salva i dati di log di KRadio"
 
-#: errorlog.cpp:223
+#: errorlog.cpp:75
 #, kde-format
-msgid "error writing to temporary file %1"
-msgstr "errore durante la scrittura nel file temporaneo %1"
+msgid "Warnings"
+msgstr "Avvisi"
 
-#: errorlog.cpp:232
+#: rc.cpp:2
 #, kde-format
-msgid "error uploading preset file %1"
-msgstr "errore durante l'invio del file di preimpostazione %1"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "luigi.toscano@tiscali.it,"
 
 #: rc.cpp:1
 #, kde-format
@@ -92,8 +88,12 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luigi Toscano,Giovanni Scafora"
 
-#: rc.cpp:2
+#: errorlog.cpp:231
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "luigi.toscano@tiscali.it,"
+msgid "error uploading preset file %1"
+msgstr "errore durante l'invio del file di preimpostazione %1"
+
+#: errorlog.cpp:222
+#, kde-format
+msgid "error writing to temporary file %1"
+msgstr "errore durante la scrittura nel file temporaneo %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_internetradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-05-08 16:45+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2010-01-08 09:08+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,40 +17,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: decoder_thread.cpp:138
+#. i18n: file: internetradio-configuration-ui.ui:22
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
+#. i18n: file: internetradio-configuration-ui.ui:99
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:175
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:22
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
+#. i18n: file: internetradio-configuration-ui.ui:99
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:175
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
+#: rc.cpp:3 rc.cpp:15 rc.cpp:33 rc.cpp:47 rc.cpp:59 rc.cpp:77
 #, kde-format
-msgid "opening stream %1"
-msgstr "opna straum %1"
+msgid " kB"
+msgstr ""
 
-#: decoder_thread.cpp:142
-#, fuzzy, kde-format
-msgid "Failed to open %1. Trying next stream in play list."
-msgstr "tókst ekki að opna %1. Reyni við næsta straum í spilunarlista."
-
-#: decoder_thread.cpp:147
+#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
+#. i18n: file: internetradio-configuration-ui.ui:197
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
+#. i18n: file: internetradio-configuration-ui.ui:197
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#: rc.cpp:9 rc.cpp:39 rc.cpp:53 rc.cpp:83
 #, kde-format
-msgid "Could not open any input stream of %1."
-msgstr "Gat ekki opnað neinn inntaksstraum úr %1."
+msgid " s"
+msgstr ""
+
+#: playlist_handler.cpp:288
+#, kde-format
+msgid "%1 does not contain any usable radio stream"
+msgstr "%1 inniheldur engan nothæfan útvarpsstraum"
 
 #: decoder_thread.cpp:262
 #, fuzzy, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: villa við afkóðun pakka. Hendi pakkanum\n"
-
-#: decoder_thread.cpp:338 decoder_thread.cpp:341
-#, kde-format
-msgid "internal stream, not stored (%1)"
-msgstr "innri straumur, ekki geymdur (%1)"
-
-#: decoder_thread.cpp:354
-#, kde-format
-msgid "Failed allocating AVFrame."
-msgstr ""
-
-#: decoder_thread.cpp:626 decoder_thread.cpp:629
-#, fuzzy, kde-format
-msgid "Could not open stream %1"
-msgstr "Get ekki opnað straum %1"
 
 #: decoder_thread.cpp:701 decoder_thread.cpp:704
 #, kde-format
@@ -62,56 +67,99 @@ msgstr ""
 msgid "Autodetected format: %1 (score %2)"
 msgstr ""
 
-#: decoder_thread.cpp:734 decoder_thread.cpp:737
+#: decoder_thread.cpp:1083
 #, kde-format
-msgid "Could not find stream information in %1"
-msgstr "Fann engar straumupplýsingar í %1"
-
-#: decoder_thread.cpp:802 decoder_thread.cpp:805
-#, kde-format
-msgid "Could not find an audio stream in %1"
-msgstr "Fann engan hljóðstraum í %1"
+msgid "Cannot use libav sample format id %1"
+msgstr ""
 
 #: decoder_thread.cpp:825 decoder_thread.cpp:828
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Fann ekki afkóðunarlykla (codec) fyrir %1"
 
-#: decoder_thread.cpp:843 decoder_thread.cpp:846
+#: decoder_thread.cpp:802 decoder_thread.cpp:805
 #, kde-format
-msgid "Opening codec for %1 failed"
-msgstr "Mistókst að opna afkóðunarlykla (codec) fyrir %1"
+msgid "Could not find an audio stream in %1"
+msgstr "Fann engan hljóðstraum í %1"
 
-#: decoder_thread.cpp:871
+#: decoder_thread.cpp:734 decoder_thread.cpp:737
 #, kde-format
-msgid "Unknown channel layout for %1"
+msgid "Could not find stream information in %1"
+msgstr "Fann engar straumupplýsingar í %1"
+
+#: decoder_thread.cpp:147
+#, kde-format
+msgid "Could not open any input stream of %1."
+msgstr "Gat ekki opnað neinn inntaksstraum úr %1."
+
+#: decoder_thread.cpp:626 decoder_thread.cpp:629
+#, fuzzy, kde-format
+msgid "Could not open stream %1"
+msgstr "Get ekki opnað straum %1"
+
+#: decoder_thread.cpp:354
+#, kde-format
+msgid "Failed allocating AVFrame."
 msgstr ""
 
-#: decoder_thread.cpp:976 decoder_thread.cpp:979
-#, kde-format
-msgid "cannot open MMS stream %1"
-msgstr "gat ekki opnað MMS straum %1"
+#: playlist_handler.cpp:139 playlist_handler.cpp:170
+#, fuzzy, kde-format
+msgid "Failed to load playlist %1: %2"
+msgstr "næ í spilunarlistann %1"
 
-#: decoder_thread.cpp:1077
+#: decoder_thread.cpp:142
+#, fuzzy, kde-format
+msgid "Failed to open %1. Trying next stream in play list."
+msgstr "tókst ekki að opna %1. Reyni við næsta straum í spilunarlista."
+
+#: playlist_handler.cpp:95
+#, fuzzy, kde-format
+msgid "Failed to start any stream of %1"
+msgstr "Gat ekki opnað neinn inntaksstraum úr %1."
+
+#: playlist_handler.cpp:142
 #, kde-format
-msgid "Not yet implemented: libav sample format id %1"
+msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
 msgstr ""
 
-#: decoder_thread.cpp:1083
+#. i18n: file: internetradio-configuration-ui.ui:125
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:21 rc.cpp:65
 #, kde-format
-msgid "Cannot use libav sample format id %1"
+msgid "Input buffer size:"
 msgstr ""
 
-#: icy_http_handler.cpp:86
+#: internetradio.cpp:654
 #, kde-format
-msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
+msgid "Internet Radio"
+msgstr "Internet-útvarp"
+
+#: internetradio.cpp:44
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Internet Radio"
+msgstr "Internet-útvarp"
+
+#: internetradio.cpp:655
+#, kde-format
+msgid "Internet Radio Options"
+msgstr "Valkostir internet-útvarps"
+
+#: internetradio.cpp:62
+#, kde-format
+msgid "Internet Radio Plugin"
+msgstr "Internetútvarps-íforrit"
+
+#: internetradio.cpp:1145
+#, kde-format
+msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
 msgstr ""
 
-#: icy_http_handler.cpp:104
+#: icy_http_handler.cpp:449
 #, kde-format
 msgid ""
-"Internet Radio Plugin (ICY http handler): Failed to start stream download of "
-"%1: KIO::get returned NULL pointer"
+"Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
+"%2"
 msgstr ""
 
 #: icy_http_handler.cpp:124
@@ -121,35 +169,27 @@ msgid ""
 "%1: %2"
 msgstr "tókst ekki að ná í %1"
 
-#: icy_http_handler.cpp:447
+#: icy_http_handler.cpp:104
 #, kde-format
 msgid ""
-"Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
-"%2"
+"Internet Radio Plugin (ICY http handler): Failed to start stream download of "
+"%1: KIO::get returned NULL pointer"
 msgstr ""
 
-#: icy_http_handler.cpp:455
+#: icy_http_handler.cpp:457
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
 
-#: internetradio.cpp:44
-#, fuzzy, kde-format
-#| msgid "Internet Radio"
-msgctxt "@title"
-msgid "Internet Radio"
-msgstr "Internet-útvarp"
-
-#: internetradio.cpp:46
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "Pseudo radio device for Internet radio stream support"
-msgstr "Gervi-útvarpstæki til stuðnings við internet-útvarpsstrauma"
-
-#: internetradio.cpp:62
+#: icy_http_handler.cpp:86
 #, kde-format
-msgid "Internet Radio Plugin"
-msgstr "Internetútvarps-íforrit"
+msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
+msgstr ""
+
+#: playlist_handler.cpp:179
+#, fuzzy, kde-format
+msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
+msgstr "tókst ekki að ná í %1"
 
 #: internetradio.cpp:86
 #, fuzzy, kde-format
@@ -161,45 +201,101 @@ msgstr "Internetútvarps-íforrit"
 msgid "Internet radio station decoder / pseudo device"
 msgstr "Afkóðari/gervitæki fyrir internetútvarpsstöðvar"
 
-#: internetradio.cpp:654
-#, kde-format
-msgid "Internet Radio"
-msgstr "Internet-útvarp"
+#. i18n: file: internetradio-configuration-ui.ui:155
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:30 rc.cpp:74
+#, fuzzy, kde-format
+msgid "Mute playback channel on power off:"
+msgstr "Þagga niður ljóðblöndunarrás þegar slökkt er"
 
-#: internetradio.cpp:655
+#: decoder_thread.cpp:1077
 #, kde-format
-msgid "Internet Radio Options"
-msgstr "Valkostir internet-útvarps"
-
-#: internetradio.cpp:1145
-#, kde-format
-msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
+msgid "Not yet implemented: libav sample format id %1"
 msgstr ""
 
-#: playlist_handler.cpp:95
-#, fuzzy, kde-format
-msgid "Failed to start any stream of %1"
-msgstr "Gat ekki opnað neinn inntaksstraum úr %1."
-
-#: playlist_handler.cpp:139 playlist_handler.cpp:170
-#, fuzzy, kde-format
-msgid "Failed to load playlist %1: %2"
-msgstr "næ í spilunarlistann %1"
-
-#: playlist_handler.cpp:142
+#: decoder_thread.cpp:843 decoder_thread.cpp:846
 #, kde-format
-msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
+msgid "Opening codec for %1 failed"
+msgstr "Mistókst að opna afkóðunarlykla (codec) fyrir %1"
+
+#. i18n: file: internetradio-configuration-ui.ui:41
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:6 rc.cpp:50
+#, kde-format
+msgid "PCM output buffer size:"
 msgstr ""
 
-#: playlist_handler.cpp:179
+#. i18n: file: internetradio-configuration-ui.ui:89
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:12 rc.cpp:56
 #, fuzzy, kde-format
-msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
-msgstr "tókst ekki að ná í %1"
+msgid "Playback mixer channel:"
+msgstr "Hljóðblöndunarrás fyrir afspilun"
 
-#: playlist_handler.cpp:288
+#. i18n: file: internetradio-configuration-ui.ui:115
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:18 rc.cpp:62
+#, fuzzy, kde-format
+msgid "Playback mixer device:"
+msgstr "Hljóðblöndunartæki fyrir afspilun"
+
+#: internetradio.cpp:46
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Pseudo radio device for Internet radio stream support"
+msgstr "Gervi-útvarpstæki til stuðnings við internet-útvarpsstrauma"
+
+#: stream_input_buffer.cpp:72
 #, kde-format
-msgid "%1 does not contain any usable radio stream"
-msgstr "%1 inniheldur engan nothæfan útvarpsstraum"
+msgid "This should never happen: inconsistency in buffer locking / buffer size"
+msgstr ""
+
+#: decoder_thread.cpp:871
+#, kde-format
+msgid "Unknown channel layout for %1"
+msgstr ""
+
+#. i18n: file: internetradio-configuration-ui.ui:213
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:42 rc.cpp:86
+#, kde-format
+msgid "Watchdog: reconnect after:"
+msgstr ""
+
+#: rc.cpp:44
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: rc.cpp:43
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: decoder_thread.cpp:976 decoder_thread.cpp:979
+#, kde-format
+msgid "cannot open MMS stream %1"
+msgstr "gat ekki opnað MMS straum %1"
+
+#. i18n: file: internetradio-configuration-ui.ui:194
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#: rc.cpp:36 rc.cpp:80
+#, kde-format
+msgctxt "disabled watchdog"
+msgid "disabled"
+msgstr ""
+
+#: playlist_handler.cpp:589
+#, fuzzy, kde-format
+msgid "error while reading XSPF file: %1"
+msgstr "villa við lestur á asx skrá"
+
+#: playlist_handler.cpp:537
+#, fuzzy, kde-format
+msgid "error while reading asx file: %1"
+msgstr "villa við lestur á asx skrá"
 
 #: playlist_handler.cpp:391 playlist_handler.cpp:450
 #, kde-format
@@ -211,136 +307,29 @@ msgstr ""
 msgid "failed to write temporary file to store playlist data"
 msgstr ""
 
-#: playlist_handler.cpp:537
-#, fuzzy, kde-format
-msgid "error while reading asx file: %1"
-msgstr "villa við lestur á asx skrá"
-
-#: playlist_handler.cpp:589
-#, fuzzy, kde-format
-msgid "error while reading XSPF file: %1"
-msgstr "villa við lestur á asx skrá"
-
-#. i18n: file: internetradio-configuration-ui.ui:31
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:3 rc.cpp:47
+#: decoder_thread.cpp:338 decoder_thread.cpp:341
 #, kde-format
-msgid "Input buffer size:"
-msgstr ""
+msgid "internal stream, not stored (%1)"
+msgstr "innri straumur, ekki geymdur (%1)"
 
-#. i18n: file: internetradio-configuration-ui.ui:41
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:73
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:250
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
-#. i18n: file: internetradio-configuration-ui.ui:41
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:73
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:250
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
-#: rc.cpp:6 rc.cpp:12 rc.cpp:39 rc.cpp:50 rc.cpp:56 rc.cpp:83
-#, kde-format
-msgid " kB"
-msgstr ""
-
-#. i18n: file: internetradio-configuration-ui.ui:63
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:9 rc.cpp:53
-#, kde-format
-msgid "PCM output buffer size:"
-msgstr ""
-
-#. i18n: file: internetradio-configuration-ui.ui:98
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:15 rc.cpp:59
-#, kde-format
-msgid "libffmpeg: stream info analysis time:"
-msgstr ""
-
-#. i18n: file: internetradio-configuration-ui.ui:108
-#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#: rc.cpp:18 rc.cpp:62
-#, kde-format
-msgctxt "disabled watchdog"
-msgid "disabled"
-msgstr ""
-
-#. i18n: file: internetradio-configuration-ui.ui:111
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#. i18n: file: internetradio-configuration-ui.ui:281
-#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
-#. i18n: file: internetradio-configuration-ui.ui:111
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#. i18n: file: internetradio-configuration-ui.ui:281
-#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
-#: rc.cpp:21 rc.cpp:42 rc.cpp:65 rc.cpp:86
-#, kde-format
-msgid " s"
-msgstr ""
-
-#. i18n: file: internetradio-configuration-ui.ui:133
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:24 rc.cpp:68
-#, kde-format
-msgid "Watchdog: reconnect after:"
-msgstr ""
-
-#. i18n: file: internetradio-configuration-ui.ui:149
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:27 rc.cpp:71
-#, fuzzy, kde-format
-msgid "Playback mixer device:"
-msgstr "Hljóðblöndunartæki fyrir afspilun"
-
-#. i18n: file: internetradio-configuration-ui.ui:175
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:30 rc.cpp:74
-#, fuzzy, kde-format
-msgid "Playback mixer channel:"
-msgstr "Hljóðblöndunarrás fyrir afspilun"
-
-#. i18n: file: internetradio-configuration-ui.ui:217
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:33 rc.cpp:77
-#, fuzzy, kde-format
-msgid "Mute playback channel on power off:"
-msgstr "Þagga niður ljóðblöndunarrás þegar slökkt er"
-
-#. i18n: file: internetradio-configuration-ui.ui:240
+#. i18n: file: internetradio-configuration-ui.ui:145
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:36 rc.cpp:80
+#: rc.cpp:27 rc.cpp:71
 #, kde-format
 msgid "libffmpeg: format probe size:"
 msgstr ""
 
-#: rc.cpp:43
+#. i18n: file: internetradio-configuration-ui.ui:135
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:24 rc.cpp:68
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
+msgid "libffmpeg: stream info analysis time:"
 msgstr ""
 
-#: rc.cpp:44
+#: decoder_thread.cpp:138
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: stream_input_buffer.cpp:72
-#, kde-format
-msgid "This should never happen: inconsistency in buffer locking / buffer size"
-msgstr ""
-
-#~ msgid "SetupDialogGeneral"
-#~ msgstr "SetupDialogGeneral"
-
-#~ msgid "test"
-#~ msgstr "prófa"
-
-#, fuzzy
-#~ msgid "cannot open MMS  %1"
-#~ msgstr "gat ekki opnað MMS straum %1"
+msgid "opening stream %1"
+msgstr "opna straum %1"
 
 #~ msgid ""
 #~ "I'm sorry, but I'd to kill the ffmpeg decoder thread. It might be a good "
@@ -348,3 +337,13 @@ msgstr ""
 #~ msgstr ""
 #~ "Því miður, en það þyrfti að drepa ffmpeg afkóðunarþráðinn. Það gæti verið "
 #~ "góð hugmynd að endurræsa KRadio"
+
+#~ msgid "SetupDialogGeneral"
+#~ msgstr "SetupDialogGeneral"
+
+#, fuzzy
+#~ msgid "cannot open MMS  %1"
+#~ msgstr "gat ekki opnað MMS straum %1"
+
+#~ msgid "test"
+#~ msgstr "prófa"

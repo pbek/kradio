@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2011-02-06 05:09+0200\n"
 "Last-Translator: turgay\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -18,24 +18,26 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: quickbar.cpp:44
-#, fuzzy, kde-format
-#| msgid "Quickbar"
-msgctxt "@title"
-msgid "Quickbar"
-msgstr "Hızlı bar"
-
-#: quickbar.cpp:46
-#, fuzzy, kde-format
-#| msgid "Radio Station Quick Selection Toolbar"
-msgctxt "@title"
-msgid "Radio Station Quick Selection Toolbar"
-msgstr "Radyo İstasyonu Hızlı Seçim Araç Çubuğu"
-
 #: quickbar.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: quickbar.cpp:352
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar"
+msgstr "Hızlı bar"
+
+#: quickbar.cpp:352
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar, %1"
+msgstr "Hızlı bar"
+
+#: quickbar.cpp:53
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
 msgstr ""
 
 #: quickbar.cpp:52
@@ -44,19 +46,14 @@ msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: quickbar.cpp:53
-#, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
-msgstr ""
-
-#: quickbar.cpp:63
-#, kde-format
-msgid "Quickbar Plugin"
-msgstr "Hızlı bar Eklentisi"
-
 #: quickbar.cpp:152
 #, kde-format
+msgid "Quickbar"
+msgstr "Hızlı bar"
+
+#: quickbar.cpp:44
+#, fuzzy, kde-format
+msgctxt "@title"
 msgid "Quickbar"
 msgstr "Hızlı bar"
 
@@ -65,24 +62,25 @@ msgstr "Hızlı bar"
 msgid "Quickbar Configuration"
 msgstr "Hızlı bar Yapılandırma"
 
-#: quickbar.cpp:355
-#, fuzzy, kde-format
-msgid "KRadio4 Quickbar, %1"
-msgstr "Hızlı bar"
-
-#: quickbar.cpp:355
-#, fuzzy, kde-format
-msgid "KRadio4 Quickbar"
-msgstr "Hızlı bar"
-
-#: rc.cpp:1
+#: quickbar.cpp:63
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
+msgid "Quickbar Plugin"
+msgstr "Hızlı bar Eklentisi"
+
+#: quickbar.cpp:46
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Radio Station Quick Selection Toolbar"
+msgstr "Radyo İstasyonu Hızlı Seçim Araç Çubuğu"
 
 #: rc.cpp:2
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
+msgstr ""
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
 msgstr ""

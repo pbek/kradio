@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2011-01-11 23:02+0200\n"
 "Last-Translator: Sergio Ahumada Navea <sahumada@gmail.com>\n"
 "Language-Team: Sergio Ahumada Navea <sahumada@gmail.com>\n"
@@ -17,163 +17,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. i18n: file: streaming-configuration-ui.ui:26
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: rc.cpp:3 rc.cpp:80
+#: streaming-job.cpp:172 streaming-job.cpp:179 streaming-job.cpp:260
 #, kde-format
-msgid "URL Properties"
-msgstr ""
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
 
-#. i18n: file: streaming-configuration-ui.ui:42
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:6 rc.cpp:83
-#, kde-format
-msgid "Stereo"
-msgstr "Estéreo"
-
-#. i18n: file: streaming-configuration-ui.ui:47
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
-#: rc.cpp:9 rc.cpp:86
-#, kde-format
-msgid "Mono"
-msgstr "Mono"
-
-#. i18n: file: streaming-configuration-ui.ui:55
-#. i18n: ectx: property (text), widget (QLabel, lableBits)
-#: rc.cpp:12 rc.cpp:89
-#, kde-format
-msgid "Sample bits:"
-msgstr ""
-
-#. i18n: file: streaming-configuration-ui.ui:71
-#. i18n: ectx: property (text), widget (QLabel, lableChannels)
-#: rc.cpp:15 rc.cpp:92
-#, fuzzy, kde-format
-msgid "Channels:"
-msgstr "Canales"
-
-#. i18n: file: streaming-configuration-ui.ui:81
-#. i18n: ectx: property (text), widget (QLabel, lableEndianness)
-#: rc.cpp:18 rc.cpp:95
-#, fuzzy, kde-format
-msgid "Endianness:"
-msgstr "Canales"
-
-#. i18n: file: streaming-configuration-ui.ui:98
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
-#: rc.cpp:21 rc.cpp:98
-#, kde-format
-msgid "Little Endian"
-msgstr ""
-
-#. i18n: file: streaming-configuration-ui.ui:103
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
-#: rc.cpp:24 rc.cpp:101
-#, kde-format
-msgid "Big Endian"
-msgstr ""
-
-#. i18n: file: streaming-configuration-ui.ui:118
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:27 rc.cpp:104
-#, kde-format
-msgid "48000"
-msgstr "48000"
-
-#. i18n: file: streaming-configuration-ui.ui:123
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:30 rc.cpp:107
-#, kde-format
-msgid "44100"
-msgstr "441000"
-
-#. i18n: file: streaming-configuration-ui.ui:128
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:33 rc.cpp:110
-#, kde-format
-msgid "32000"
-msgstr "32000"
-
-#. i18n: file: streaming-configuration-ui.ui:133
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
-#: rc.cpp:36 rc.cpp:113
-#, kde-format
-msgid "22050"
-msgstr "22050"
-
-#. i18n: file: streaming-configuration-ui.ui:138
+#. i18n: file: streaming-configuration-ui.ui:102
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
 #: rc.cpp:39 rc.cpp:116
 #, kde-format
 msgid "11025"
 msgstr "11025"
 
-#. i18n: file: streaming-configuration-ui.ui:153
+#. i18n: file: streaming-configuration-ui.ui:111
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
 #: rc.cpp:42 rc.cpp:119
 #, kde-format
 msgid "16"
 msgstr "16"
 
-#. i18n: file: streaming-configuration-ui.ui:158
+#. i18n: file: streaming-configuration-ui.ui:97
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:36 rc.cpp:113
+#, kde-format
+msgid "22050"
+msgstr "22050"
+
+#. i18n: file: streaming-configuration-ui.ui:92
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:33 rc.cpp:110
+#, kde-format
+msgid "32000"
+msgstr "32000"
+
+#. i18n: file: streaming-configuration-ui.ui:87
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:30 rc.cpp:107
+#, kde-format
+msgid "44100"
+msgstr "441000"
+
+#. i18n: file: streaming-configuration-ui.ui:82
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbRate)
+#: rc.cpp:27 rc.cpp:104
+#, kde-format
+msgid "48000"
+msgstr "48000"
+
+#. i18n: file: streaming-configuration-ui.ui:116
 #. i18n: ectx: property (text), item, widget (KComboBox, m_cbBits)
 #: rc.cpp:45 rc.cpp:122
 #, kde-format
 msgid "8"
 msgstr "8"
 
-#. i18n: file: streaming-configuration-ui.ui:173
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbFormat)
-#: rc.cpp:48 rc.cpp:125
-#, kde-format
-msgid "Raw"
-msgstr ""
-
-#. i18n: file: streaming-configuration-ui.ui:187
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, m_sbBufferSize)
-#: rc.cpp:51 rc.cpp:128
-#, kde-format
-msgid "kB"
-msgstr "kB"
-
-#. i18n: file: streaming-configuration-ui.ui:218
-#. i18n: ectx: property (text), widget (QLabel, labelRate_2)
-#: rc.cpp:54 rc.cpp:131
-#, fuzzy, kde-format
-msgid "Buffer size:"
-msgstr "Tamaño del Buffer"
-
-#. i18n: file: streaming-configuration-ui.ui:234
-#. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
-#: rc.cpp:57 rc.cpp:134
-#, fuzzy, kde-format
-msgid "Format:"
-msgstr "Formato"
-
-#. i18n: file: streaming-configuration-ui.ui:250
-#. i18n: ectx: property (text), widget (QLabel, labelRate)
-#: rc.cpp:60 rc.cpp:137
-#, kde-format
-msgid "Sample rate:"
-msgstr ""
-
-#. i18n: file: streaming-configuration-ui.ui:267
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:63 rc.cpp:140
-#, kde-format
-msgid "Signed"
-msgstr ""
-
-#. i18n: file: streaming-configuration-ui.ui:272
-#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
-#: rc.cpp:66 rc.cpp:143
-#, kde-format
-msgid "Unsigned"
-msgstr ""
-
-#. i18n: file: streaming-configuration-ui.ui:369
+#. i18n: file: streaming-configuration-ui.ui:558
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:69 rc.cpp:146
+#: rc.cpp:75 rc.cpp:152
 #, kde-format
 msgid ""
 "<p>The streaming plugin will present itself to the rest of KRadio as a "
@@ -183,40 +83,132 @@ msgid ""
 "is particularly useful if you have a <b>PVR radio card</b>.</p>"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:398
+#. i18n: file: streaming-configuration-ui.ui:73
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
+#: rc.cpp:24 rc.cpp:101
+#, kde-format
+msgid "Big Endian"
+msgstr ""
+
+#. i18n: file: streaming-configuration-ui.ui:158
+#. i18n: ectx: property (text), widget (QLabel, labelRate_2)
+#: rc.cpp:54 rc.cpp:131
+#, fuzzy, kde-format
+msgid "Buffer size:"
+msgstr "Tamaño del Buffer"
+
+#. i18n: file: streaming-configuration-ui.ui:292
 #. i18n: ectx: attribute (title), widget (QWidget, CaptureURLs)
-#: rc.cpp:72 rc.cpp:149
+#: rc.cpp:69 rc.cpp:146
 #, kde-format
 msgid "Capture URLs"
 msgstr ""
 
-#. i18n: file: streaming-configuration-ui.ui:531
+#. i18n: file: streaming-configuration-ui.ui:47
+#. i18n: ectx: property (text), widget (QLabel, lableChannels)
+#: rc.cpp:15 rc.cpp:92
+#, fuzzy, kde-format
+msgid "Channels:"
+msgstr "Canales"
+
+#. i18n: file: streaming-configuration-ui.ui:57
+#. i18n: ectx: property (text), widget (QLabel, lableEndianness)
+#: rc.cpp:18 rc.cpp:95
+#, fuzzy, kde-format
+msgid "Endianness:"
+msgstr "Canales"
+
+#: streaming-job.cpp:450
+#, kde-format
+msgid "Error: %1 (%2)"
+msgstr "Error: %1 (%2)"
+
+#. i18n: file: streaming-configuration-ui.ui:168
+#. i18n: ectx: property (text), widget (QLabel, labelRate_2_2)
+#: rc.cpp:57 rc.cpp:134
+#, fuzzy, kde-format
+msgid "Format:"
+msgstr "Formato"
+
+#: streaming.cpp:53
+#, kde-format
+msgid "KRadio Streaming Plugin"
+msgstr ""
+
+#. i18n: file: streaming-configuration-ui.ui:68
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbEndianness)
+#: rc.cpp:21 rc.cpp:98
+#, kde-format
+msgid "Little Endian"
+msgstr ""
+
+#. i18n: file: streaming-configuration-ui.ui:29
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
+#: rc.cpp:9 rc.cpp:86
+#, kde-format
+msgid "Mono"
+msgstr "Mono"
+
+#. i18n: file: streaming-configuration-ui.ui:422
 #. i18n: ectx: attribute (title), widget (QWidget, PlaybackURLs)
-#: rc.cpp:75 rc.cpp:152
+#: rc.cpp:72 rc.cpp:149
 #, kde-format
 msgid "Playback URLs"
 msgstr ""
 
-#: rc.cpp:76
+#. i18n: file: streaming-configuration-ui.ui:125
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbFormat)
+#: rc.cpp:48 rc.cpp:125
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
+msgid "Raw"
 msgstr ""
 
-#: rc.cpp:77
+#. i18n: file: streaming-configuration-ui.ui:37
+#. i18n: ectx: property (text), widget (QLabel, lableBits)
+#: rc.cpp:12 rc.cpp:89
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
+msgid "Sample bits:"
 msgstr ""
 
-#: streaming-configuration.cpp:83
+#. i18n: file: streaming-configuration-ui.ui:178
+#. i18n: ectx: property (text), widget (QLabel, labelRate)
+#: rc.cpp:60 rc.cpp:137
 #, kde-format
-msgid "URL"
-msgstr "URL"
+msgid "Sample rate:"
+msgstr ""
 
-#: streaming-configuration.cpp:326 streaming-configuration.cpp:380
+#. i18n: file: streaming-configuration-ui.ui:189
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
+#: rc.cpp:63 rc.cpp:140
 #, kde-format
-msgid "new channel"
+msgid "Signed"
+msgstr ""
+
+#. i18n: file: streaming-configuration-ui.ui:24
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbChannels)
+#: rc.cpp:6 rc.cpp:83
+#, kde-format
+msgid "Stereo"
+msgstr "Estéreo"
+
+#: streaming.cpp:191
+#, kde-format
+msgid "Streaming"
+msgstr ""
+
+#: streaming.cpp:454
+#, kde-format
+msgid "Streaming Device %1"
+msgstr ""
+
+#: streaming.cpp:460 streaming.cpp:465 streaming.cpp:470 streaming.cpp:475
+#, kde-format
+msgid "Streaming Device %1, %2: %3"
+msgstr ""
+
+#: streaming.cpp:192
+#, kde-format
+msgid "Streaming Device Options"
 msgstr ""
 
 #: streaming.cpp:36
@@ -225,40 +217,41 @@ msgctxt "@title"
 msgid "Streaming Support"
 msgstr ""
 
-#: streaming.cpp:53
-#, kde-format
-msgid "KRadio Streaming Plugin"
-msgstr ""
-
-#: streaming.cpp:187
-#, kde-format
-msgid "Streaming"
-msgstr ""
-
-#: streaming.cpp:188
-#, kde-format
-msgid "Streaming Device Options"
-msgstr ""
-
-#: streaming.cpp:417
-#, kde-format
-msgid "internal stream, not stored (%1)"
-msgstr ""
-
-#: streaming.cpp:427
+#: streaming.cpp:431
 #, kde-format
 msgid ""
 "StreamingDevice %1::notifySoundStreamData: Playback Clients skipped %2 bytes"
 msgstr ""
 
-#: streaming.cpp:450
+#: streaming-configuration.cpp:83
 #, kde-format
-msgid "Streaming Device %1"
+msgid "URL"
+msgstr "URL"
+
+#. i18n: file: streaming-configuration-ui.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: rc.cpp:3 rc.cpp:80
+#, kde-format
+msgid "URL Properties"
 msgstr ""
 
-#: streaming.cpp:456 streaming.cpp:461 streaming.cpp:466 streaming.cpp:471
+#. i18n: file: streaming-configuration-ui.ui:194
+#. i18n: ectx: property (text), item, widget (KComboBox, m_cbSign)
+#: rc.cpp:66 rc.cpp:143
 #, kde-format
-msgid "Streaming Device %1, %2: %3"
+msgid "Unsigned"
+msgstr ""
+
+#: rc.cpp:77
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: rc.cpp:76
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
 msgstr ""
 
 #: streaming-job.cpp:143 streaming-job.cpp:222
@@ -266,10 +259,27 @@ msgstr ""
 msgid "error %1 (%2)"
 msgstr "error %1 (%2)"
 
-#: streaming-job.cpp:172 streaming-job.cpp:179 streaming-job.cpp:260
+#: streaming-job.cpp:344 streaming-job.cpp:395
 #, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgid "error no %1"
+msgstr ""
+
+#: streaming.cpp:421
+#, kde-format
+msgid "internal stream, not stored (%1)"
+msgstr ""
+
+#. i18n: file: streaming-configuration-ui.ui:133
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, m_sbBufferSize)
+#: rc.cpp:51 rc.cpp:128
+#, kde-format
+msgid "kB"
+msgstr "kB"
+
+#: streaming-configuration.cpp:326 streaming-configuration.cpp:380
+#, kde-format
+msgid "new channel"
+msgstr ""
 
 #: streaming-job.cpp:300
 #, kde-format
@@ -278,22 +288,12 @@ msgid_plural "skipped %1 bytes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: streaming-job.cpp:344 streaming-job.cpp:395
-#, kde-format
-msgid "error no %1"
-msgstr ""
-
 #: streaming-job.cpp:357 streaming-job.cpp:380
 #, kde-format
 msgid "skipped %1 write"
 msgid_plural "skipped %1 writes"
 msgstr[0] ""
 msgstr[1] ""
-
-#: streaming-job.cpp:450
-#, kde-format
-msgid "Error: %1 (%2)"
-msgstr "Error: %1 (%2)"
 
 #~ msgid "No."
 #~ msgstr "Nro."

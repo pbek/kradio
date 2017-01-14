@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-05-08 16:45+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2009-11-11 10:15-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -21,46 +21,15 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Language: pt_BR\n"
 
-#: rc.cpp:1
+#: shortcuts.cpp:96
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Márcio Moraes"
+msgid "Decrease Frequency"
+msgstr "Diminuir frequência"
 
-#: rc.cpp:2
+#: shortcuts.cpp:94
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "marciopanto@gmail.com"
-
-#: shortcuts.cpp:50
-#, fuzzy, kde-format
-#| msgid "Shortcuts"
-msgctxt "@title"
-msgid "Shortcuts"
-msgstr "Teclas de atalho"
-
-#: shortcuts.cpp:52
-#, fuzzy, kde-format
-#| msgid "Shortcuts Support"
-msgctxt "@title"
-msgid "Shortcuts Support"
-msgstr "Suporte a teclas de atalho"
-
-#: shortcuts.cpp:67 shortcuts.cpp:213
-#, kde-format
-msgid "Shortcuts Plugin"
-msgstr "Plug-in de teclas de atalho"
-
-#: shortcuts.cpp:75
-#, kde-format
-msgid "Standard Actions"
-msgstr "Ações padrão"
-
-#: shortcuts.cpp:76
-#, kde-format
-msgid "Station Actions"
-msgstr "Ação da estação"
+msgid "Decrease volume"
+msgstr "Diminuir volume"
 
 #: shortcuts.cpp:78
 #, kde-format
@@ -112,60 +81,45 @@ msgstr "Digito 8"
 msgid "Digit 9"
 msgstr "Digito 9"
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:95
 #, kde-format
-msgid "Power on"
-msgstr "Ligar"
-
-#: shortcuts.cpp:89
-#, kde-format
-msgid "Power off"
-msgstr "Desligar"
-
-#: shortcuts.cpp:90
-#, kde-format
-msgid "Pause"
-msgstr "Pausar"
-
-#: shortcuts.cpp:91
-#, kde-format
-msgid "Start recording"
-msgstr "Iniciar a gravação"
-
-#: shortcuts.cpp:92
-#, kde-format
-msgid "Stop recording"
-msgstr "Parar a gravação"
+msgid "Increase Frequency"
+msgstr "Aumentar frequência"
 
 #: shortcuts.cpp:93
 #, kde-format
 msgid "Increase volume"
 msgstr "Aumentar volume"
 
-#: shortcuts.cpp:94
-#, kde-format
-msgid "Decrease volume"
-msgstr "Diminuir volume"
-
-#: shortcuts.cpp:95
-#, kde-format
-msgid "Increase Frequency"
-msgstr "Aumentar frequência"
-
-#: shortcuts.cpp:96
-#, kde-format
-msgid "Decrease Frequency"
-msgstr "Diminuir frequência"
-
 #: shortcuts.cpp:97
 #, kde-format
 msgid "Next station"
 msgstr "Próxima estação"
 
+#: shortcuts.cpp:90
+#, kde-format
+msgid "Pause"
+msgstr "Pausar"
+
+#: shortcuts.cpp:89
+#, kde-format
+msgid "Power off"
+msgstr "Desligar"
+
+#: shortcuts.cpp:88
+#, kde-format
+msgid "Power on"
+msgstr "Ligar"
+
 #: shortcuts.cpp:98
 #, kde-format
 msgid "Previous station"
 msgstr "Estação anterior"
+
+#: shortcuts.cpp:102
+#, kde-format
+msgid "Quit KRadio"
+msgstr "Sair"
 
 #: shortcuts.cpp:99
 #, kde-format
@@ -177,17 +131,61 @@ msgstr "Pesquisar próxima estação"
 msgid "Search previous station"
 msgstr "Pesquisar estação anterior"
 
+#: shortcuts.cpp:212
+#, kde-format
+msgid "Shortcuts"
+msgstr "Teclas de atalho"
+
+#: shortcuts.cpp:50
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Shortcuts"
+msgstr "Teclas de atalho"
+
+#: shortcuts.cpp:67 shortcuts.cpp:213
+#, kde-format
+msgid "Shortcuts Plugin"
+msgstr "Plug-in de teclas de atalho"
+
+#: shortcuts.cpp:52
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Shortcuts Support"
+msgstr "Suporte a teclas de atalho"
+
 #: shortcuts.cpp:101
 #, kde-format
 msgid "Sleep"
 msgstr "Modo hibernação"
 
-#: shortcuts.cpp:102
+#: shortcuts.cpp:75
 #, kde-format
-msgid "Quit KRadio"
-msgstr "Sair"
+msgid "Standard Actions"
+msgstr "Ações padrão"
 
-#: shortcuts.cpp:212
+#: shortcuts.cpp:91
 #, kde-format
-msgid "Shortcuts"
-msgstr "Teclas de atalho"
+msgid "Start recording"
+msgstr "Iniciar a gravação"
+
+#: shortcuts.cpp:76
+#, kde-format
+msgid "Station Actions"
+msgstr "Ação da estação"
+
+#: shortcuts.cpp:92
+#, kde-format
+msgid "Stop recording"
+msgstr "Parar a gravação"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "marciopanto@gmail.com"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Márcio Moraes"

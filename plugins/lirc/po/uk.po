@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-18 19:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,6 +17,257 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: lircsupport.cpp:198
+#, kde-format
+msgid ""
+"%1 does not exist. File was created with KRadio's default .lircrc proposal"
+msgstr "%1 не існує. Було створено типовий файл .lircrc для KRadio"
+
+#: lircsupport.cpp:52
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte"
+msgstr ""
+
+#: lirc-configuration.cpp:127 lirc-configuration.cpp:128
+#, kde-format
+msgid "<do not care>"
+msgstr "<байдуже>"
+
+#: lirc-configuration.cpp:95
+#, kde-format
+msgid "Action"
+msgstr "Дія"
+
+#: lirc-configuration.cpp:97
+#, kde-format
+msgid "Alternative LIRC String"
+msgstr "Альтернативний рядок LIRC"
+
+#: lirc-configuration.cpp:60
+#, kde-format
+msgid "Decrease Volume"
+msgstr "Зменшити гучність"
+
+#: lirc-configuration.cpp:277
+#, kde-format
+msgid "Double click on the entries to change the assignments"
+msgstr "Для зміни прив'язки двічі клацніть на пункті мишею"
+
+#: lirc-configuration.cpp:65
+#, kde-format
+msgid "Enable Sleep Countdown"
+msgstr "Увімкнути таймер вимкнення"
+
+#: lirc-configuration.cpp:270
+#, kde-format
+msgid ""
+"Enter the key string of your remote or just press the button on your remote "
+"control"
+msgstr "Введіть ключовий рядок вашого ПДК або просто натисніть кнопку на ньому"
+
+#: lircsupport.cpp:201
+#, kde-format
+msgid "Failed to copy %1 to %2"
+msgstr "Не вдалося скопіювати %1 до %2"
+
+#: lirc-configuration.cpp:59
+#, kde-format
+msgid "Increase Volume"
+msgstr "Збільшити гучність"
+
+#: lircsupport.cpp:103
+#, kde-format
+msgid "Initializing KRadio LIRC plugin failed"
+msgstr "Не вдалося ініціалізувати модуль LIRC KRadio"
+
+#: lircsupport.cpp:161 lircsupport.cpp:162
+#, kde-format
+msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
+msgstr ""
+"Спроба запуску модуля LIRC KRadio завершилася невдало. Не вдалося прочитати "
+"файл налаштувань %1"
+
+#: lircsupport.cpp:112
+#, kde-format
+msgid "Initializing KRadio LIRC plugin successful"
+msgstr "Модуль LIRC KRadio вдало запущено"
+
+#: lircsupport.cpp:48
+#, kde-format
+msgctxt "@title"
+msgid "LIRC"
+msgstr ""
+
+#: lircsupport.cpp:65 lircsupport.cpp:492
+#, kde-format
+msgid "LIRC Plugin"
+msgstr "Модуль ДК (LIRC)"
+
+#: lirc-configuration.cpp:96
+#, kde-format
+msgid "LIRC String"
+msgstr "Рядок LIRC"
+
+#: lircsupport.cpp:491
+#, kde-format
+msgid "LIRC Support"
+msgstr "Підтримка LIRC"
+
+#. i18n: file: lirc-configuration-ui.ui:102
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:15 rc.cpp:32
+#, kde-format
+msgid "LIRC configuration file:"
+msgstr "Файл налаштування LIRC:"
+
+#: lircsupport.cpp:50
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Linux Infrared Control (LIRC) Support"
+msgstr "Підтримка ПДК у Linux (LIRC)"
+
+#: lircsupport.cpp:138
+#, kde-format
+msgid ""
+"LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
+"not have a button/remote associated.\n"
+"This will most probably lead to problems. Please use \"button=*\" and "
+"\"remote=*\" as wildcard for all buttons/remotes"
+msgstr ""
+"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio немає "
+"прив’язки до кнопок/пристрою дистанційного керування.\n"
+"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
+"\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
+
+#: lircsupport.cpp:145
+#, kde-format
+msgid ""
+"LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
+"incomplete button/remote associated.\n"
+"This will most probably lead to problems. Please use \"button=*\" and "
+"\"remote=*\" as wildcard for all buttons/remotes"
+msgstr ""
+"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio має "
+"недостатню прив’язку до кнопок/пристрою дистанційного керування.\n"
+"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
+"\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
+
+#: lircsupport.cpp:56
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: lirc-configuration.cpp:61
+#, kde-format
+msgid "Next Channel"
+msgstr "Наступна станція"
+
+#: lirc-configuration.cpp:56
+#, kde-format
+msgid "Pause"
+msgstr "Призупинити"
+
+#: lircsupport.cpp:157
+#, kde-format
+msgid "Please setup your .lircrc file %1 correctly."
+msgstr "Будь ласка коректно налаштуйте ваш файл .lircrc %1."
+
+#: lirc-configuration.cpp:55
+#, kde-format
+msgid "Power Off"
+msgstr "Вимкнути"
+
+#: lirc-configuration.cpp:54
+#, kde-format
+msgid "Power On"
+msgstr "Увімкнути"
+
+#. i18n: file: lirc-configuration-ui.ui:51
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:3 rc.cpp:20
+#, kde-format
+msgid "Power off .lircrc mode:"
+msgstr "Режим вимикання .lircrc:"
+
+#. i18n: file: lirc-configuration-ui.ui:58
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:6 rc.cpp:23
+#, kde-format
+msgid "Power on .lircrc mode:"
+msgstr "Режим вмикання .lircrc:"
+
+#: lirc-configuration.cpp:62
+#, kde-format
+msgid "Previous Channel"
+msgstr "Попередня станція"
+
+#: lirc-configuration.cpp:66
+#, kde-format
+msgid "Quit KRadio"
+msgstr "Вийти з KRadio"
+
+#: lircsupport.cpp:253
+#, kde-format
+msgid ""
+"Reading from LIRC socket failed. Disabling LIRC functionalities until the "
+"next start of KRadio"
+msgstr ""
+"Читання з сокету LIRC не вдалося. Вимкнено функції LIRC до наступного "
+"запуску KRadio."
+
+#: lirc-configuration.cpp:63
+#, kde-format
+msgid "Search Next Channel"
+msgstr "Пошук наступної станції"
+
+#: lirc-configuration.cpp:64
+#, kde-format
+msgid "Search Previous Channel"
+msgstr "Пошук попередньої станції"
+
+#: lirc-configuration.cpp:57
+#, kde-format
+msgid "Start Recording"
+msgstr "Почати запис"
+
+#: lirc-configuration.cpp:58
+#, kde-format
+msgid "Stop Recording"
+msgstr "Зупинити запис"
+
+#. i18n: file: lirc-configuration-ui.ui:68
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:9 rc.cpp:26
+#, kde-format
+msgid "Synchronize .lircrc modes at runtime:"
+msgstr "Синхронізувати режими .lircrc під час виконання:"
+
+#. i18n: file: lirc-configuration-ui.ui:75
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:12 rc.cpp:29
+#, kde-format
+msgid "Synchronize .lircrc modes at startup:"
+msgstr "Синхронізувати режими .lircrc під час запуску:"
+
+#: lircsupport.cpp:156
+#, kde-format
+msgid "There is no entry for KRadio in your .lircrc files %1."
+msgstr "У жодному з ваших файлів .lircrc %1 немає згадки про KRadio."
+
+#: rc.cpp:17
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: rc.cpp:16
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
 
 #: lirc-configuration.cpp:44
 #, kde-format
@@ -68,133 +319,6 @@ msgstr "вісім"
 msgid "digit 9"
 msgstr "дев'ять"
 
-#: lirc-configuration.cpp:54
-#, kde-format
-msgid "Power On"
-msgstr "Увімкнути"
-
-#: lirc-configuration.cpp:55
-#, kde-format
-msgid "Power Off"
-msgstr "Вимкнути"
-
-#: lirc-configuration.cpp:56
-#, kde-format
-msgid "Pause"
-msgstr "Призупинити"
-
-#: lirc-configuration.cpp:57
-#, kde-format
-msgid "Start Recording"
-msgstr "Почати запис"
-
-#: lirc-configuration.cpp:58
-#, kde-format
-msgid "Stop Recording"
-msgstr "Зупинити запис"
-
-#: lirc-configuration.cpp:59
-#, kde-format
-msgid "Increase Volume"
-msgstr "Збільшити гучність"
-
-#: lirc-configuration.cpp:60
-#, kde-format
-msgid "Decrease Volume"
-msgstr "Зменшити гучність"
-
-#: lirc-configuration.cpp:61
-#, kde-format
-msgid "Next Channel"
-msgstr "Наступна станція"
-
-#: lirc-configuration.cpp:62
-#, kde-format
-msgid "Previous Channel"
-msgstr "Попередня станція"
-
-#: lirc-configuration.cpp:63
-#, kde-format
-msgid "Search Next Channel"
-msgstr "Пошук наступної станції"
-
-#: lirc-configuration.cpp:64
-#, kde-format
-msgid "Search Previous Channel"
-msgstr "Пошук попередньої станції"
-
-#: lirc-configuration.cpp:65
-#, kde-format
-msgid "Enable Sleep Countdown"
-msgstr "Увімкнути таймер вимкнення"
-
-#: lirc-configuration.cpp:66
-#, kde-format
-msgid "Quit KRadio"
-msgstr "Вийти з KRadio"
-
-#: lirc-configuration.cpp:95
-#, kde-format
-msgid "Action"
-msgstr "Дія"
-
-#: lirc-configuration.cpp:96
-#, kde-format
-msgid "LIRC String"
-msgstr "Рядок LIRC"
-
-#: lirc-configuration.cpp:97
-#, kde-format
-msgid "Alternative LIRC String"
-msgstr "Альтернативний рядок LIRC"
-
-#: lirc-configuration.cpp:127 lirc-configuration.cpp:128
-#, kde-format
-msgid "<do not care>"
-msgstr "<байдуже>"
-
-#: lirc-configuration.cpp:270
-#, kde-format
-msgid ""
-"Enter the key string of your remote or just press the button on your remote "
-"control"
-msgstr "Введіть ключовий рядок вашого ПДК або просто натисніть кнопку на ньому"
-
-#: lirc-configuration.cpp:277
-#, kde-format
-msgid "Double click on the entries to change the assignments"
-msgstr "Для зміни прив'язки двічі клацніть на пункті мишею"
-
-#: lircsupport.cpp:48
-#, kde-format
-msgctxt "@title"
-msgid "LIRC"
-msgstr ""
-
-#: lircsupport.cpp:50
-#, fuzzy, kde-format
-#| msgid "Linux Infrared Control (LIRC) Support"
-msgctxt "@title"
-msgid "Linux Infrared Control (LIRC) Support"
-msgstr "Підтримка ПДК у Linux (LIRC)"
-
-#: lircsupport.cpp:52
-#, kde-format
-msgctxt "@info:credit"
-msgid "(c) 2002-2005 Martin Witte"
-msgstr ""
-
-#: lircsupport.cpp:56
-#, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
-msgstr ""
-
-#: lircsupport.cpp:65 lircsupport.cpp:492
-#, kde-format
-msgid "LIRC Plugin"
-msgstr "Модуль ДК (LIRC)"
-
 #: lircsupport.cpp:93
 #, kde-format
 msgid "initializing KRadio LIRC plugin"
@@ -210,136 +334,11 @@ msgstr ""
 "сокетів, не завадять роботі: зазвичай, у таких випадках просто не запущено "
 "фонову службу LIRC."
 
-#: lircsupport.cpp:103
-#, kde-format
-msgid "Initializing KRadio LIRC plugin failed"
-msgstr "Не вдалося ініціалізувати модуль LIRC KRadio"
-
-#: lircsupport.cpp:112
-#, kde-format
-msgid "Initializing KRadio LIRC plugin successful"
-msgstr "Модуль LIRC KRadio вдало запущено"
-
-#: lircsupport.cpp:138
-#, kde-format
-msgid ""
-"LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio does "
-"not have a button/remote associated.\n"
-"This will most probably lead to problems. Please use \"button=*\" and "
-"\"remote=*\" as wildcard for all buttons/remotes"
-msgstr ""
-"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio немає "
-"прив’язки до кнопок/пристрою дистанційного керування.\n"
-"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
-"\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
-
-#: lircsupport.cpp:145
-#, kde-format
-msgid ""
-"LircSupport::LIRC_init_config: In %1 an LIRC Config Entry for KRadio has an "
-"incomplete button/remote associated.\n"
-"This will most probably lead to problems. Please use \"button=*\" and "
-"\"remote=*\" as wildcard for all buttons/remotes"
-msgstr ""
-"LircSupport::LIRC_init_config: у %1 запис налаштування LIRC для KRadio має "
-"недостатню прив’язку до кнопок/пристрою дистанційного керування.\n"
-"Ймовірно, це може призвести до проблем. Будь ласка, вкажіть запис вигляду "
-"\"button=*\" і \"remote=*\" для всіх кнопок/пристроїв дистанційного керування"
-
-#: lircsupport.cpp:156
-#, kde-format
-msgid "There is no entry for KRadio in your .lircrc files %1."
-msgstr "У жодному з ваших файлів .lircrc %1 немає згадки про KRadio."
-
-#: lircsupport.cpp:157
-#, kde-format
-msgid "Please setup your .lircrc file %1 correctly."
-msgstr "Будь ласка коректно налаштуйте ваш файл .lircrc %1."
-
-#: lircsupport.cpp:161 lircsupport.cpp:162
-#, kde-format
-msgid "Initializing KRadio LIRC plugin failed. Could not read config file %1"
-msgstr ""
-"Спроба запуску модуля LIRC KRadio завершилася невдало. Не вдалося прочитати "
-"файл налаштувань %1"
-
-#: lircsupport.cpp:198
-#, kde-format
-msgid ""
-"%1 does not exist. File was created with KRadio's default .lircrc proposal"
-msgstr "%1 не існує. Було створено типовий файл .lircrc для KRadio"
-
-#: lircsupport.cpp:201
-#, kde-format
-msgid "Failed to copy %1 to %2"
-msgstr "Не вдалося скопіювати %1 до %2"
-
-#: lircsupport.cpp:253
-#, kde-format
-msgid ""
-"Reading from LIRC socket failed. Disabling LIRC functionalities until the "
-"next start of KRadio"
-msgstr ""
-"Читання з сокету LIRC не вдалося. Вимкнено функції LIRC до наступного "
-"запуску KRadio."
-
-#: lircsupport.cpp:491
-#, kde-format
-msgid "LIRC Support"
-msgstr "Підтримка LIRC"
-
-#. i18n: file: lirc-configuration-ui.ui:58
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:3 rc.cpp:20
-#, kde-format
-msgid "Power off .lircrc mode:"
-msgstr "Режим вимикання .lircrc:"
-
-#. i18n: file: lirc-configuration-ui.ui:65
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:6 rc.cpp:23
-#, kde-format
-msgid "Power on .lircrc mode:"
-msgstr "Режим вмикання .lircrc:"
-
-#. i18n: file: lirc-configuration-ui.ui:82
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:9 rc.cpp:26
-#, kde-format
-msgid "Synchronize .lircrc modes at runtime:"
-msgstr "Синхронізувати режими .lircrc під час виконання:"
-
-#. i18n: file: lirc-configuration-ui.ui:89
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:12 rc.cpp:29
-#, kde-format
-msgid "Synchronize .lircrc modes at startup:"
-msgstr "Синхронізувати режими .lircrc під час запуску:"
-
-#. i18n: file: lirc-configuration-ui.ui:116
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:15 rc.cpp:32
-#, kde-format
-msgid "LIRC configuration file:"
-msgstr "Файл налаштування LIRC:"
-
-#: rc.cpp:16
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Юрій Чорноіван"
-
-#: rc.cpp:17
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "yurchor@ukr.net"
-
-#~ msgid "textLabel1"
-#~ msgstr "textLabel1"
+#~ msgid "LIRCConfigurationUI"
+#~ msgstr "LIRCConfigurationUI"
 
 #~ msgid "failed to read file %1"
 #~ msgstr "не вдалося прочитати файл %1"
 
-#~ msgid "LIRCConfigurationUI"
-#~ msgstr "LIRCConfigurationUI"
+#~ msgid "textLabel1"
+#~ msgstr "textLabel1"

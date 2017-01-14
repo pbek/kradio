@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-18 18:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,106 +17,10 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: docking-configuration.cpp:110
+#: docking.cpp:315
 #, kde-format
-msgid "Mouse click on tray icon:"
-msgstr "Клацання кнопкою на піктограмі лотка:"
-
-#: docking-configuration.cpp:111 docking-configuration.cpp:116
-#, kde-format
-msgctxt "Mouse button"
-msgid "Left:"
-msgstr "Ліва:"
-
-#: docking-configuration.cpp:112 docking-configuration.cpp:117
-#, kde-format
-msgctxt "Mouse button"
-msgid "Right:"
-msgstr "Права:"
-
-#: docking-configuration.cpp:113 docking-configuration.cpp:118
-#, kde-format
-msgctxt "Mouse button"
-msgid "Middle:"
-msgstr "Середня:"
-
-#: docking-configuration.cpp:115
-#, kde-format
-msgid "Mouse double-click on tray icon:"
-msgstr "Подвійне клацання на піктограмі лотка:"
-
-#: docking-configuration.cpp:120
-#, kde-format
-msgid "Mouse wheel action on tray icon:"
-msgstr "Дія прокручування коліщатка на піктограмі лотка:"
-
-#: docking-configuration.cpp:126 docking-configuration.cpp:136
-#, kde-format
-msgid "No Action"
-msgstr "Жодних дій"
-
-#: docking-configuration.cpp:127
-#, kde-format
-msgid "Show/Hide Windows"
-msgstr "Показати/Сховати вікна"
-
-#: docking-configuration.cpp:128
-#, kde-format
-msgid "Power On/Off"
-msgstr "Увімкнути/вимкнути"
-
-#: docking-configuration.cpp:129
-#, kde-format
-msgid "Pause/Play"
-msgstr "Пауза/Відтворення"
-
-#: docking-configuration.cpp:130 docking.cpp:291
-#, kde-format
-msgid "Recording"
-msgstr "Запис"
-
-#: docking-configuration.cpp:131
-#, kde-format
-msgid "System Tray Menu"
-msgstr "Меню системного лотка"
-
-#: docking-configuration.cpp:132
-#, kde-format
-msgid "GUI-Plugin Menu"
-msgstr "Меню графічних модулів"
-
-#: docking-configuration.cpp:133
-#, kde-format
-msgid "Configuration"
-msgstr "Налаштування"
-
-#: docking-configuration.cpp:137
-#, kde-format
-msgid "Change Station"
-msgstr "Змінити станцію"
-
-#: docking-configuration.cpp:138
-#, kde-format
-msgid "Change Volume"
-msgstr "Змінити гучність"
-
-#: docking-configuration.cpp:139
-#, kde-format
-msgid "Change Frequency"
-msgstr "Змінити частоту"
-
-#: docking.cpp:45
-#, kde-format
-msgctxt "@title"
-msgid "Docking Menu"
-msgstr ""
-
-#: docking.cpp:47
-#, fuzzy, kde-format
-#| msgid "System Tray Icon/Menu"
-msgctxt "@title"
-msgid "System Tray Icon/Menu"
-msgstr "Піктограма або меню системного лотка"
+msgid "&Quit"
+msgstr "Ви&йти"
 
 #: docking.cpp:49
 #, kde-format
@@ -124,11 +28,46 @@ msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: docking.cpp:53
+#: docking.cpp:496
 #, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
+msgid "<no alarm pending>"
+msgstr "<Розклад порожній>"
+
+#: docking-configuration.cpp:135
+#, kde-format
+msgid "Change Frequency"
+msgstr "Змінити частоту"
+
+#: docking-configuration.cpp:133
+#, kde-format
+msgid "Change Station"
+msgstr "Змінити станцію"
+
+#: docking-configuration.cpp:134
+#, kde-format
+msgid "Change Volume"
+msgstr "Змінити гучність"
+
+#: docking-configuration.cpp:129
+#, kde-format
+msgid "Configuration"
+msgstr "Налаштування"
+
+#: docking.cpp:45
+#, kde-format
+msgctxt "@title"
+msgid "Docking Menu"
 msgstr ""
+
+#: docking-configuration.cpp:128
+#, kde-format
+msgid "GUI-Plugin Menu"
+msgstr "Меню графічних модулів"
+
+#: docking.cpp:485
+#, kde-format
+msgid "KRadio: %1"
+msgstr "KRadio: %1"
 
 #: docking.cpp:54
 #, kde-format
@@ -136,20 +75,89 @@ msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: docking.cpp:66
+#: docking-configuration.cpp:107 docking-configuration.cpp:112
 #, kde-format
-msgid "System Tray Plugin"
-msgstr "Модуль системного лотка"
+msgctxt "Mouse button"
+msgid "Left:"
+msgstr "Ліва:"
 
-#: docking.cpp:251
+#: docking.cpp:53
 #, kde-format
-msgid "System Tray Icon"
-msgstr "Піктограма системного лотка"
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
 
-#: docking.cpp:252
+#: docking-configuration.cpp:109 docking-configuration.cpp:114
 #, kde-format
-msgid "System Tray Icon Configuration"
-msgstr "Налаштування поведінки піктограми лотка"
+msgctxt "Mouse button"
+msgid "Middle:"
+msgstr "Середня:"
+
+#: docking-configuration.cpp:106
+#, kde-format
+msgid "Mouse click on tray icon:"
+msgstr "Клацання кнопкою на піктограмі лотка:"
+
+#: docking-configuration.cpp:111
+#, kde-format
+msgid "Mouse double-click on tray icon:"
+msgstr "Подвійне клацання на піктограмі лотка:"
+
+#: docking-configuration.cpp:116
+#, kde-format
+msgid "Mouse wheel action on tray icon:"
+msgstr "Дія прокручування коліщатка на піктограмі лотка:"
+
+#: docking-configuration.cpp:122 docking-configuration.cpp:132
+#, kde-format
+msgid "No Action"
+msgstr "Жодних дій"
+
+#: docking.cpp:296
+#, kde-format
+msgid "Pause Radio"
+msgstr "Призупинити"
+
+#: docking.cpp:916
+#, kde-format
+msgid "Pause playback"
+msgstr "Призупинити відтворення"
+
+#: docking-configuration.cpp:125
+#, kde-format
+msgid "Pause/Play"
+msgstr "Пауза/Відтворення"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power Off"
+msgstr "Вимкнути"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power On"
+msgstr "Увімкнути"
+
+#: docking-configuration.cpp:124
+#, kde-format
+msgid "Power On/Off"
+msgstr "Увімкнути/вимкнути"
+
+#: docking-configuration.cpp:126 docking.cpp:291
+#, kde-format
+msgid "Recording"
+msgstr "Запис"
+
+#: docking.cpp:912
+#, kde-format
+msgid "Resume playback"
+msgstr "Відновити відтворення"
+
+#: docking-configuration.cpp:108 docking-configuration.cpp:113
+#, kde-format
+msgctxt "Mouse button"
+msgid "Right:"
+msgstr "Права:"
 
 #: docking.cpp:281
 #, kde-format
@@ -161,80 +169,67 @@ msgstr "Шукати наступну станцію"
 msgid "Search Previous Station"
 msgstr "Шукати попередню станцію"
 
-#: docking.cpp:296
-#, kde-format
-msgid "Pause Radio"
-msgstr "Призупинити"
-
 #: docking.cpp:307
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Показати/сховати"
 
-#: docking.cpp:315
+#: docking-configuration.cpp:123
 #, kde-format
-msgid "&Quit"
-msgstr "Ви&йти"
+msgid "Show/Hide Windows"
+msgstr "Показати/Сховати вікна"
 
-#: docking.cpp:440
-#, kde-format
-msgid "Stop Sleep Countdown (running until %1)"
-msgstr "Зупинити таймер вимкнення (працювати до %1)"
-
-#: docking.cpp:443 docking.cpp:452 docking.cpp:460
-#, kde-format
-msgid "Start Sleep Countdown"
-msgstr "Запустити таймер вимкнення"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power Off"
-msgstr "Вимкнути"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power On"
-msgstr "Увімкнути"
-
-#: docking.cpp:483 docking.cpp:501
-#, kde-format
-msgid "invalid station"
-msgstr "Некоректна станція"
-
-#: docking.cpp:484
-#, kde-format
-msgid "KRadio: %1"
-msgstr "KRadio: %1"
-
-#: docking.cpp:493
-#, kde-format
-msgid "next alarm: %1"
-msgstr "наступна дія: %1"
-
-#: docking.cpp:495
-#, kde-format
-msgid "<no alarm pending>"
-msgstr "<Розклад порожній>"
-
-#: docking.cpp:761 docking.cpp:864 docking.cpp:922
-#, kde-format
-msgid "Stop Recording of %1"
-msgstr "Зупинити запис %1"
-
-#: docking.cpp:850
+#: docking.cpp:858
 #, kde-format
 msgid "Start Recording"
 msgstr "Почати запис"
 
-#: docking.cpp:904
+#: docking.cpp:444 docking.cpp:453 docking.cpp:461
 #, kde-format
-msgid "Resume playback"
-msgstr "Відновити відтворення"
+msgid "Start Sleep Countdown"
+msgstr "Запустити таймер вимкнення"
 
-#: docking.cpp:908
+#: docking.cpp:769 docking.cpp:872 docking.cpp:930
 #, kde-format
-msgid "Pause playback"
-msgstr "Призупинити відтворення"
+msgid "Stop Recording of %1"
+msgstr "Зупинити запис %1"
+
+#: docking.cpp:441
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Зупинити таймер вимкнення (працювати до %1)"
+
+#: docking.cpp:251
+#, kde-format
+msgid "System Tray Icon"
+msgstr "Піктограма системного лотка"
+
+#: docking.cpp:252
+#, kde-format
+msgid "System Tray Icon Configuration"
+msgstr "Налаштування поведінки піктограми лотка"
+
+#: docking.cpp:47
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "System Tray Icon/Menu"
+msgstr "Піктограма або меню системного лотка"
+
+#: docking-configuration.cpp:127
+#, kde-format
+msgid "System Tray Menu"
+msgstr "Меню системного лотка"
+
+#: docking.cpp:66
+#, kde-format
+msgid "System Tray Plugin"
+msgstr "Модуль системного лотка"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
 
 #: rc.cpp:1
 #, kde-format
@@ -242,11 +237,21 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: rc.cpp:2
+#: docking.cpp:484 docking.cpp:502
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "yurchor@ukr.net"
+msgid "invalid station"
+msgstr "Некоректна станція"
+
+#: docking.cpp:494
+#, kde-format
+msgid "next alarm: %1"
+msgstr "наступна дія: %1"
+
+#~ msgid "Show/Hide all GUI Elements"
+#~ msgstr "Показати/сховати всі вікна"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Піктограма/Меню лотка для KRadio"
 
 #~ msgctxt "Mouse button"
 #~ msgid "XButton1:"
@@ -255,9 +260,3 @@ msgstr "yurchor@ukr.net"
 #~ msgctxt "Mouse button"
 #~ msgid "XButton2:"
 #~ msgstr "X-кнопка 2:"
-
-#~ msgid "System Tray Icon/Menu for KRadio"
-#~ msgstr "Піктограма/Меню лотка для KRadio"
-
-#~ msgid "Show/Hide all GUI Elements"
-#~ msgstr "Показати/сховати всі вікна"

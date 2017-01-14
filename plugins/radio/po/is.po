@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2009-06-27 13:53+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -17,79 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: radio-configuration.cpp:75
-#, fuzzy, kde-format
-msgctxt "Sound mode"
-msgid "<do not care>"
-msgstr "<skiptir ekki máli>"
+#. i18n: file: radio-configuration-ui.ui:110
+#. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:25 rc.cpp:106
+#, no-c-format, kde-format
+msgid " %"
+msgstr " %"
 
-#: radio-configuration.cpp:76
-#, fuzzy, kde-format
-msgctxt "Sound mode, monophonic"
-msgid "Mono"
-msgstr "Mónó"
-
-#: radio-configuration.cpp:77
-#, fuzzy, kde-format
-msgctxt "Sound mode, stereophonic"
-msgid "Stereo"
-msgstr "Steríó"
-
-#: radio-configuration.cpp:80
-#, fuzzy, kde-format
-msgid "Load and replace presets"
-msgstr "hlaða inn + skipta út forstillingum"
-
-#: radio-configuration.cpp:81
-#, fuzzy, kde-format
-msgid "Load and add presets"
-msgstr "hlaða inn + bæta við forstillingum"
-
-#: radio-configuration.cpp:422
+#. i18n: file: radio-configuration-ui.ui:345
+#. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
+#: rc.cpp:64 rc.cpp:145
 #, kde-format
-msgid "Image Selection"
-msgstr "Val á mynd"
-
-#: radio-configuration.cpp:427
-#, kde-format
-msgid "ignoring non-local image"
-msgstr "hunsa myndir sem ekki eru á þessari tölvu"
-
-#: radio-configuration.cpp:543 radio-configuration.cpp:565
-#, kde-format
-msgid "KRadio Preset Files"
-msgstr "KRadio forstillingaskrár"
-
-#: radio-configuration.cpp:543
-#, kde-format
-msgid "Select Preset File"
-msgstr "Velja forstillingaskrá"
-
-#: radio-configuration.cpp:565
-#, fuzzy, kde-format
-msgid "Save Preset File"
-msgstr "Geyma forstillingaskrá"
-
-#: radio-configuration.cpp:611
-#, fuzzy, kde-format
-msgid "found %1 new station"
-msgid_plural "found %1 new stations"
-msgstr[0] "fann %1 nýjar stöðvar"
-msgstr[1] "fann %1 nýjar stöðvar"
-
-#: radio-configuration.cpp:613
-#, fuzzy, kde-format
-msgid "have now %1 station"
-msgid_plural "have now %1 stations"
-msgstr[0] "hef núna %1 stöðvar"
-msgstr[1] "hef núna %1 stöðvar"
-
-#: radio.cpp:41
-#, fuzzy, kde-format
-#| msgid "Central Radio Device Multiplexer"
-msgctxt "@title"
-msgid "Central Radio Device Multiplexer"
-msgstr "Miðlægur afþáttari (multiplexer) fyrir útvarpstæki"
+msgid "&Now"
+msgstr "&Strax"
 
 #: radio.cpp:43
 #, kde-format
@@ -97,222 +37,13 @@ msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: radio.cpp:47
-#, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
-msgstr ""
-
-#: radio.cpp:48
-#, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
-msgstr ""
-
-#: radio.cpp:57
-#, kde-format
-msgid "Radio Multiplexer Plugin"
-msgstr "Afþáttaraíforrit (multiplexer plugin) fyrir útvarp"
-
-#: radio.cpp:152
-#, kde-format
-msgid "Radio Stations"
-msgstr "Útvarpsstöðvar"
-
-#: radio.cpp:153
-#, kde-format
-msgid "Setup Radio Stations"
-msgstr "Setja upp útvarpsstöðvar"
-
-#: radio.cpp:194
-#, kde-format
-msgid "Could not find a plugin for radio station %1"
-msgstr "Fann ekkert íforrit fyrir útvarpsstöðina %1"
-
-#: radio.cpp:389
+#: radio-configuration.cpp:78
 #, fuzzy, kde-format
-msgctxt "Unknown description"
-msgid "unknown"
-msgstr "óþekkt"
+msgctxt "Sound mode"
+msgid "<do not care>"
+msgstr "<skiptir ekki máli>"
 
-#. i18n: file: radio-configuration-ui.ui:21
-#. i18n: ectx: attribute (title), widget (QWidget, stations)
-#: rc.cpp:3 rc.cpp:84
-#, kde-format
-msgid "Station &Presets"
-msgstr "Forstillingar útvar&psstöðva"
-
-#. i18n: file: radio-configuration-ui.ui:104
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
-#. i18n: file: radio-configuration-ui.ui:107
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
-#. i18n: file: radio-configuration-ui.ui:104
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
-#. i18n: file: radio-configuration-ui.ui:107
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
-#: rc.cpp:6 rc.cpp:9 rc.cpp:87 rc.cpp:90
-#, fuzzy, kde-format
-msgid "Search stations"
-msgstr "Leita að útvarps&stöðvum"
-
-#. i18n: file: radio-configuration-ui.ui:123
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
-#. i18n: file: radio-configuration-ui.ui:126
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
-#. i18n: file: radio-configuration-ui.ui:123
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
-#. i18n: file: radio-configuration-ui.ui:126
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
-#: rc.cpp:12 rc.cpp:15 rc.cpp:93 rc.cpp:96
-#, fuzzy, kde-format
-msgid "Load presets"
-msgstr "hlaða inn + bæta við forstillingum"
-
-#. i18n: file: radio-configuration-ui.ui:142
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
-#. i18n: file: radio-configuration-ui.ui:145
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
-#. i18n: file: radio-configuration-ui.ui:142
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
-#. i18n: file: radio-configuration-ui.ui:145
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
-#: rc.cpp:18 rc.cpp:21 rc.cpp:99 rc.cpp:102
-#, kde-format
-msgid "Save presets as..."
-msgstr ""
-
-#. i18n: file: radio-configuration-ui.ui:184
-#. i18n: ectx: property (text), widget (QLabel, labelStationName)
-#: rc.cpp:24 rc.cpp:105
-#, fuzzy, kde-format
-msgid "Name:"
-msgstr "Heiti"
-
-#. i18n: file: radio-configuration-ui.ui:208
-#. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
-#: rc.cpp:27 rc.cpp:108
-#, fuzzy, kde-format
-msgid "Short name:"
-msgstr "Stutt nafn"
-
-#. i18n: file: radio-configuration-ui.ui:232
-#. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
-#: rc.cpp:30 rc.cpp:111
-#, fuzzy, kde-format
-msgid "Pixmap file:"
-msgstr "Pixmap myndskrá"
-
-#. i18n: file: radio-configuration-ui.ui:285
-#. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
-#: rc.cpp:33 rc.cpp:114
-#, kde-format
-msgid ""
-"<p>Select if you want to force the tuner to stereo/mono mode. <i>Please be "
-"aware, that some drivers might ignore this flag without saying they will "
-"ignore it.</i></p>"
-msgstr ""
-
-#. i18n: file: radio-configuration-ui.ui:298
-#. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:36 rc.cpp:117
-#, kde-format
-msgid "The volume that is used when the station is tuned"
-msgstr "Hljóðstyrkur sem notaður er á meðan stöðvar eru stilltar"
-
-#. i18n: file: radio-configuration-ui.ui:301
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:39 rc.cpp:120
-#, fuzzy, kde-format
-#| msgid "unchanged"
-msgctxt "unchanged volume"
-msgid "unchanged"
-msgstr "óbreytt"
-
-#. i18n: file: radio-configuration-ui.ui:304
-#. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:43 rc.cpp:124
-#, no-c-format, kde-format
-msgid " %"
-msgstr " %"
-
-#. i18n: file: radio-configuration-ui.ui:317
-#. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
-#: rc.cpp:46 rc.cpp:127
-#, fuzzy, kde-format
-msgid "Stereo mode:"
-msgstr "Steríó hamur"
-
-#. i18n: file: radio-configuration-ui.ui:327
-#. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
-#: rc.cpp:49 rc.cpp:130
-#, fuzzy, kde-format
-msgid "Volume preset:"
-msgstr "Forstillingar á hljóði"
-
-#. i18n: file: radio-configuration-ui.ui:374
-#. i18n: ectx: attribute (title), widget (QWidget, About)
-#: rc.cpp:52 rc.cpp:133
-#, fuzzy, kde-format
-msgid "Preset &File"
-msgstr "Geyma forstillingaskrá"
-
-#. i18n: file: radio-configuration-ui.ui:383
-#. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
-#: rc.cpp:55 rc.cpp:136
-#, fuzzy, kde-format
-msgid "Personal preset file:"
-msgstr "Persónuleg forstillingaskrá"
-
-#. i18n: file: radio-configuration-ui.ui:398
-#. i18n: ectx: property (text), widget (QLabel, labelCity)
-#: rc.cpp:58 rc.cpp:139
-#, fuzzy, kde-format
-msgid "City:"
-msgstr "Borg"
-
-#. i18n: file: radio-configuration-ui.ui:411
-#. i18n: ectx: property (text), widget (QLabel, labelCountry)
-#: rc.cpp:61 rc.cpp:142
-#, fuzzy, kde-format
-msgid "Country:"
-msgstr "Land"
-
-#. i18n: file: radio-configuration-ui.ui:442
-#. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
-#: rc.cpp:64 rc.cpp:145
-#, kde-format
-msgid "&Now"
-msgstr "&Strax"
-
-#. i18n: file: radio-configuration-ui.ui:451
-#. i18n: ectx: property (text), widget (QLabel, labelComment)
-#: rc.cpp:67 rc.cpp:148
-#, fuzzy, kde-format
-msgid "Comment:"
-msgstr "Athugasemd"
-
-#. i18n: file: radio-configuration-ui.ui:464
-#. i18n: ectx: property (text), widget (QLabel, labelMedia)
-#: rc.cpp:70 rc.cpp:151
-#, fuzzy, kde-format
-msgid "Media:"
-msgstr "Miðill"
-
-#. i18n: file: radio-configuration-ui.ui:474
-#. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
-#: rc.cpp:73 rc.cpp:154
-#, fuzzy, kde-format
-msgid "Maintainer:"
-msgstr "Umsjónarmaður"
-
-#. i18n: file: radio-configuration-ui.ui:487
-#. i18n: ectx: property (text), widget (QLabel, labelLastChange)
-#: rc.cpp:76 rc.cpp:157
-#, fuzzy, kde-format
-msgid "Last change:"
-msgstr "Síðasta breyting"
-
-#. i18n: file: radio-configuration-ui.ui:521
+#. i18n: file: radio-configuration-ui.ui:424
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:79 rc.cpp:160
 #, kde-format
@@ -324,11 +55,239 @@ msgstr ""
 "stillingaskrá þessarar útvarpsstöðvar inn sem framlag til KRadio "
 "verkefnisins.</p>"
 
-#: rc.cpp:80
+#. i18n: file: radio-configuration-ui.ui:97
+#. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
+#: rc.cpp:15 rc.cpp:96
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Sveinn í Felli"
+msgid ""
+"<p>Select if you want to force the tuner to stereo/mono mode. <i>Please be "
+"aware, that some drivers might ignore this flag without saying they will "
+"ignore it.</i></p>"
+msgstr ""
+
+#: radio.cpp:41
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Central Radio Device Multiplexer"
+msgstr "Miðlægur afþáttari (multiplexer) fyrir útvarpstæki"
+
+#. i18n: file: radio-configuration-ui.ui:301
+#. i18n: ectx: property (text), widget (QLabel, labelCity)
+#: rc.cpp:58 rc.cpp:139
+#, fuzzy, kde-format
+msgid "City:"
+msgstr "Borg"
+
+#. i18n: file: radio-configuration-ui.ui:354
+#. i18n: ectx: property (text), widget (QLabel, labelComment)
+#: rc.cpp:67 rc.cpp:148
+#, fuzzy, kde-format
+msgid "Comment:"
+msgstr "Athugasemd"
+
+#: radio.cpp:194
+#, kde-format
+msgid "Could not find a plugin for radio station %1"
+msgstr "Fann ekkert íforrit fyrir útvarpsstöðina %1"
+
+#. i18n: file: radio-configuration-ui.ui:314
+#. i18n: ectx: property (text), widget (QLabel, labelCountry)
+#: rc.cpp:61 rc.cpp:142
+#, fuzzy, kde-format
+msgid "Country:"
+msgstr "Land"
+
+#: radio-configuration.cpp:66
+#, kde-format
+msgid "Image Selection"
+msgstr "Val á mynd"
+
+#: radio-configuration.cpp:528 radio-configuration.cpp:550
+#, kde-format
+msgid "KRadio Preset Files"
+msgstr "KRadio forstillingaskrár"
+
+#: radio.cpp:48
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#. i18n: file: radio-configuration-ui.ui:390
+#. i18n: ectx: property (text), widget (QLabel, labelLastChange)
+#: rc.cpp:76 rc.cpp:157
+#, fuzzy, kde-format
+msgid "Last change:"
+msgstr "Síðasta breyting"
+
+#: radio-configuration.cpp:84
+#, fuzzy, kde-format
+msgid "Load and add presets"
+msgstr "hlaða inn + bæta við forstillingum"
+
+#: radio-configuration.cpp:83
+#, fuzzy, kde-format
+msgid "Load and replace presets"
+msgstr "hlaða inn + skipta út forstillingum"
+
+#. i18n: file: radio-configuration-ui.ui:251
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:254
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:251
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:254
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#: rc.cpp:40 rc.cpp:43 rc.cpp:121 rc.cpp:124
+#, fuzzy, kde-format
+msgid "Load presets"
+msgstr "hlaða inn + bæta við forstillingum"
+
+#. i18n: file: radio-configuration-ui.ui:377
+#. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
+#: rc.cpp:73 rc.cpp:154
+#, fuzzy, kde-format
+msgid "Maintainer:"
+msgstr "Umsjónarmaður"
+
+#: radio.cpp:47
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#. i18n: file: radio-configuration-ui.ui:367
+#. i18n: ectx: property (text), widget (QLabel, labelMedia)
+#: rc.cpp:70 rc.cpp:151
+#, fuzzy, kde-format
+msgid "Media:"
+msgstr "Miðill"
+
+#: radio-configuration.cpp:79
+#, fuzzy, kde-format
+msgctxt "Sound mode, monophonic"
+msgid "Mono"
+msgstr "Mónó"
+
+#. i18n: file: radio-configuration-ui.ui:42
+#. i18n: ectx: property (text), widget (QLabel, labelStationName)
+#: rc.cpp:6 rc.cpp:87
+#, fuzzy, kde-format
+msgid "Name:"
+msgstr "Heiti"
+
+#. i18n: file: radio-configuration-ui.ui:286
+#. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
+#: rc.cpp:55 rc.cpp:136
+#, fuzzy, kde-format
+msgid "Personal preset file:"
+msgstr "Persónuleg forstillingaskrá"
+
+#. i18n: file: radio-configuration-ui.ui:76
+#. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
+#: rc.cpp:12 rc.cpp:93
+#, fuzzy, kde-format
+msgid "Pixmap file:"
+msgstr "Pixmap myndskrá"
+
+#. i18n: file: radio-configuration-ui.ui:280
+#. i18n: ectx: attribute (title), widget (QWidget, About)
+#: rc.cpp:52 rc.cpp:133
+#, fuzzy, kde-format
+msgid "Preset &File"
+msgstr "Geyma forstillingaskrá"
+
+#: radio.cpp:57
+#, kde-format
+msgid "Radio Multiplexer Plugin"
+msgstr "Afþáttaraíforrit (multiplexer plugin) fyrir útvarp"
+
+#: radio.cpp:152
+#, kde-format
+msgid "Radio Stations"
+msgstr "Útvarpsstöðvar"
+
+#: radio-configuration.cpp:550
+#, fuzzy, kde-format
+msgid "Save Preset File"
+msgstr "Geyma forstillingaskrá"
+
+#. i18n: file: radio-configuration-ui.ui:264
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:267
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:264
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:267
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#: rc.cpp:46 rc.cpp:49 rc.cpp:127 rc.cpp:130
+#, kde-format
+msgid "Save presets as..."
+msgstr ""
+
+#. i18n: file: radio-configuration-ui.ui:238
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:241
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:238
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:241
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#: rc.cpp:34 rc.cpp:37 rc.cpp:115 rc.cpp:118
+#, fuzzy, kde-format
+msgid "Search stations"
+msgstr "Leita að útvarps&stöðvum"
+
+#: radio-configuration.cpp:528
+#, kde-format
+msgid "Select Preset File"
+msgstr "Velja forstillingaskrá"
+
+#: radio.cpp:153
+#, kde-format
+msgid "Setup Radio Stations"
+msgstr "Setja upp útvarpsstöðvar"
+
+#. i18n: file: radio-configuration-ui.ui:59
+#. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
+#: rc.cpp:9 rc.cpp:90
+#, fuzzy, kde-format
+msgid "Short name:"
+msgstr "Stutt nafn"
+
+#. i18n: file: radio-configuration-ui.ui:21
+#. i18n: ectx: attribute (title), widget (QWidget, stations)
+#: rc.cpp:3 rc.cpp:84
+#, kde-format
+msgid "Station &Presets"
+msgstr "Forstillingar útvar&psstöðva"
+
+#: radio-configuration.cpp:80
+#, fuzzy, kde-format
+msgctxt "Sound mode, stereophonic"
+msgid "Stereo"
+msgstr "Steríó"
+
+#. i18n: file: radio-configuration-ui.ui:123
+#. i18n: ectx: property (text), widget (QLabel, labelStereoMode)
+#: rc.cpp:28 rc.cpp:109
+#, fuzzy, kde-format
+msgid "Stereo mode:"
+msgstr "Steríó hamur"
+
+#. i18n: file: radio-configuration-ui.ui:104
+#. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:18 rc.cpp:99
+#, kde-format
+msgid "The volume that is used when the station is tuned"
+msgstr "Hljóðstyrkur sem notaður er á meðan stöðvar eru stilltar"
+
+#. i18n: file: radio-configuration-ui.ui:133
+#. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
+#: rc.cpp:31 rc.cpp:112
+#, fuzzy, kde-format
+msgid "Volume preset:"
+msgstr "Forstillingar á hljóði"
 
 #: rc.cpp:81
 #, kde-format
@@ -336,15 +295,39 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sveinki@nett.is"
 
-#, fuzzy
-#~ msgid "<do not care>"
-#~ msgstr "<skiptir ekki máli>"
+#: rc.cpp:80
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sveinn í Felli"
 
-#~ msgid "Mono"
-#~ msgstr "Mónó"
+#: radio-configuration.cpp:596
+#, fuzzy, kde-format
+msgid "found %1 new station"
+msgid_plural "found %1 new stations"
+msgstr[0] "fann %1 nýjar stöðvar"
+msgstr[1] "fann %1 nýjar stöðvar"
 
-#~ msgid "Stereo"
-#~ msgstr "Steríó"
+#: radio-configuration.cpp:598
+#, fuzzy, kde-format
+msgid "have now %1 station"
+msgid_plural "have now %1 stations"
+msgstr[0] "hef núna %1 stöðvar"
+msgstr[1] "hef núna %1 stöðvar"
+
+#. i18n: file: radio-configuration-ui.ui:107
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:21 rc.cpp:102
+#, fuzzy, kde-format
+msgctxt "unchanged volume"
+msgid "unchanged"
+msgstr "óbreytt"
+
+#: radio.cpp:389
+#, fuzzy, kde-format
+msgctxt "Unknown description"
+msgid "unknown"
+msgstr "óþekkt"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -373,14 +356,27 @@ msgstr "sveinki@nett.is"
 #~ "\">Athugaðu að sumir kortareklar gætu hunsað þetta flagg - án þess að "
 #~ "tilkynna um að þeir sleppi því.</span></p></body></html>"
 
-#~ msgid "Stations"
-#~ msgstr "Stöðvar"
+#, fuzzy
+#~ msgid "<do not care>"
+#~ msgstr "<skiptir ekki máli>"
+
+#~ msgid "Additional &Information"
+#~ msgstr "V&iðbótarupplýsingar"
 
 #~ msgid "Load"
 #~ msgstr "Hlaða inn"
 
+#~ msgid "Mono"
+#~ msgstr "Mónó"
+
 #~ msgid "Save As"
 #~ msgstr "Vista sem"
 
-#~ msgid "Additional &Information"
-#~ msgstr "V&iðbótarupplýsingar"
+#~ msgid "Stations"
+#~ msgstr "Stöðvar"
+
+#~ msgid "Stereo"
+#~ msgstr "Steríó"
+
+#~ msgid "ignoring non-local image"
+#~ msgstr "hunsa myndir sem ekki eru á þessari tölvu"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_quickbar\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2009-06-27 13:34+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -17,24 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: quickbar.cpp:44
-#, fuzzy, kde-format
-#| msgid "Quickbar"
-msgctxt "@title"
-msgid "Quickbar"
-msgstr "Skyndivallisti"
-
-#: quickbar.cpp:46
-#, fuzzy, kde-format
-#| msgid "Radio Station Quick Selection Toolbar"
-msgctxt "@title"
-msgid "Radio Station Quick Selection Toolbar"
-msgstr "Skyndivallisti útvarpsstöðva"
-
 #: quickbar.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: quickbar.cpp:352
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar"
+msgstr "Skyndivallisti"
+
+#: quickbar.cpp:352
+#, fuzzy, kde-format
+msgid "KRadio4 Quickbar, %1"
+msgstr "Skyndivallisti"
+
+#: quickbar.cpp:53
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
 msgstr ""
 
 #: quickbar.cpp:52
@@ -43,19 +45,14 @@ msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: quickbar.cpp:53
-#, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
-msgstr ""
-
-#: quickbar.cpp:63
-#, kde-format
-msgid "Quickbar Plugin"
-msgstr "Íforrit skyndivallista"
-
 #: quickbar.cpp:152
 #, kde-format
+msgid "Quickbar"
+msgstr "Skyndivallisti"
+
+#: quickbar.cpp:44
+#, fuzzy, kde-format
+msgctxt "@title"
 msgid "Quickbar"
 msgstr "Skyndivallisti"
 
@@ -64,27 +61,28 @@ msgstr "Skyndivallisti"
 msgid "Quickbar Configuration"
 msgstr "Stillingar skyndivallista"
 
-#: quickbar.cpp:355
-#, fuzzy, kde-format
-msgid "KRadio4 Quickbar, %1"
-msgstr "Skyndivallisti"
-
-#: quickbar.cpp:355
-#, fuzzy, kde-format
-msgid "KRadio4 Quickbar"
-msgstr "Skyndivallisti"
-
-#: rc.cpp:1
+#: quickbar.cpp:63
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Sveinn í Felli"
+msgid "Quickbar Plugin"
+msgstr "Íforrit skyndivallista"
+
+#: quickbar.cpp:46
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Radio Station Quick Selection Toolbar"
+msgstr "Skyndivallisti útvarpsstöðva"
 
 #: rc.cpp:2
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sveinki@nett.is"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sveinn í Felli"
 
 #~ msgid "contentsDragEnterEvent accepted"
 #~ msgstr "contentsDragEnterEvent samþykkt"

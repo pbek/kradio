@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2015-12-25 16:14+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,29 +20,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: quickbar.cpp:44
-#, kde-format
-msgctxt "@title"
-msgid "Quickbar"
-msgstr "Barra veloce"
-
-#: quickbar.cpp:46
-#, kde-format
-msgctxt "@title"
-msgid "Radio Station Quick Selection Toolbar"
-msgstr "Barra di selezione rapida delle stazioni radio"
-
 #: quickbar.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr "(c) 2002-2005 Martin Witte, Klas Kalass"
 
-#: quickbar.cpp:52
+#: quickbar.cpp:352
 #, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
-msgstr "Martin Witte"
+msgid "KRadio4 Quickbar"
+msgstr "Barra veloce di KRadio4"
+
+#: quickbar.cpp:352
+#, kde-format
+msgid "KRadio4 Quickbar, %1"
+msgstr "Barra veloce di KRadio4, %1"
 
 #: quickbar.cpp:53
 #, kde-format
@@ -50,13 +42,20 @@ msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr "Klas Kalass"
 
-#: quickbar.cpp:63
+#: quickbar.cpp:52
 #, kde-format
-msgid "Quickbar Plugin"
-msgstr "Estensione barra veloce"
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr "Martin Witte"
 
 #: quickbar.cpp:152
 #, kde-format
+msgid "Quickbar"
+msgstr "Barra veloce"
+
+#: quickbar.cpp:44
+#, kde-format
+msgctxt "@title"
 msgid "Quickbar"
 msgstr "Barra veloce"
 
@@ -65,27 +64,28 @@ msgstr "Barra veloce"
 msgid "Quickbar Configuration"
 msgstr "Configurazione della barra veloce"
 
-#: quickbar.cpp:355
+#: quickbar.cpp:63
 #, kde-format
-msgid "KRadio4 Quickbar, %1"
-msgstr "Barra veloce di KRadio4, %1"
+msgid "Quickbar Plugin"
+msgstr "Estensione barra veloce"
 
-#: quickbar.cpp:355
+#: quickbar.cpp:46
 #, kde-format
-msgid "KRadio4 Quickbar"
-msgstr "Barra veloce di KRadio4"
-
-#: rc.cpp:1
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Luigi Toscano,Giovanni Scafora"
+msgctxt "@title"
+msgid "Radio Station Quick Selection Toolbar"
+msgstr "Barra di selezione rapida delle stazioni radio"
 
 #: rc.cpp:2
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luigi Toscano,Giovanni Scafora"
 
 #~ msgid "contentsDragEnterEvent accepted"
 #~ msgstr "contentsDragEnterEvent accettato"

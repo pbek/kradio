@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: internetradio (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-05-08 16:45+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2013-02-10 14:38+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -14,40 +14,45 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: decoder_thread.cpp:138
+#. i18n: file: internetradio-configuration-ui.ui:22
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
+#. i18n: file: internetradio-configuration-ui.ui:99
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:175
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:22
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
+#. i18n: file: internetradio-configuration-ui.ui:99
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
+#. i18n: file: internetradio-configuration-ui.ui:175
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
+#: rc.cpp:3 rc.cpp:15 rc.cpp:33 rc.cpp:47 rc.cpp:59 rc.cpp:77
 #, kde-format
-msgid "opening stream %1"
-msgstr "otvaranje strima %1"
+msgid " kB"
+msgstr "␣kB"
 
-#: decoder_thread.cpp:142
-#, fuzzy, kde-format
-msgid "Failed to open %1. Trying next stream in play list."
-msgstr "neuspelo otvaranje %1. Probajte sledeći strim sa plej liste."
-
-#: decoder_thread.cpp:147
+#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
+#. i18n: file: internetradio-configuration-ui.ui:197
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#. i18n: file: internetradio-configuration-ui.ui:76
+#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
+#. i18n: file: internetradio-configuration-ui.ui:197
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#: rc.cpp:9 rc.cpp:39 rc.cpp:53 rc.cpp:83
 #, kde-format
-msgid "Could not open any input stream of %1."
-msgstr "Nije moguće otvoriti bilo koji ulazni strim %1"
+msgid " s"
+msgstr "␣s"
+
+#: playlist_handler.cpp:288
+#, kde-format
+msgid "%1 does not contain any usable radio stream"
+msgstr "%1 ne sadrži nikakav upotrebljiv radio strim"
 
 #: decoder_thread.cpp:262
 #, kde-format
 msgid "%1: error decoding packet. Discarding packet"
 msgstr "%1: greška u dekodiranju paketa. Odbačen paket"
-
-#: decoder_thread.cpp:338 decoder_thread.cpp:341
-#, kde-format
-msgid "internal stream, not stored (%1)"
-msgstr "interni strim, nesačuvano (%1)"
-
-#: decoder_thread.cpp:354
-#, kde-format
-msgid "Failed allocating AVFrame."
-msgstr "Neuspela dodela ACFrame."
-
-#: decoder_thread.cpp:626 decoder_thread.cpp:629
-#, fuzzy, kde-format
-msgid "Could not open stream %1"
-msgstr "Nije moguće otvoriti strim %1"
 
 #: decoder_thread.cpp:701 decoder_thread.cpp:704
 #, kde-format
@@ -59,59 +64,103 @@ msgstr "Autodetekcija strima nije uspela za %1"
 msgid "Autodetected format: %1 (score %2)"
 msgstr "Autodektovani format: %1 (skor %2)"
 
-#: decoder_thread.cpp:734 decoder_thread.cpp:737
+#: decoder_thread.cpp:1083
 #, kde-format
-msgid "Could not find stream information in %1"
-msgstr "Nije moguće pronaći strim informaciju u %1"
-
-#: decoder_thread.cpp:802 decoder_thread.cpp:805
-#, kde-format
-msgid "Could not find an audio stream in %1"
-msgstr "Nije moguće pronaći audio strim u %1"
+msgid "Cannot use libav sample format id %1"
+msgstr "Ne mogu koristiti libav format id %1"
 
 #: decoder_thread.cpp:825 decoder_thread.cpp:828
 #, kde-format
 msgid "Could not find a codec for %1"
 msgstr "Nije moguće pronaći kodek za %1"
 
-#: decoder_thread.cpp:843 decoder_thread.cpp:846
+#: decoder_thread.cpp:802 decoder_thread.cpp:805
 #, kde-format
-msgid "Opening codec for %1 failed"
-msgstr "Otvaranje kodeka za %1 neuspelo"
+msgid "Could not find an audio stream in %1"
+msgstr "Nije moguće pronaći audio strim u %1"
 
-#: decoder_thread.cpp:871
+#: decoder_thread.cpp:734 decoder_thread.cpp:737
 #, kde-format
-msgid "Unknown channel layout for %1"
-msgstr ""
+msgid "Could not find stream information in %1"
+msgstr "Nije moguće pronaći strim informaciju u %1"
 
-#: decoder_thread.cpp:976 decoder_thread.cpp:979
+#: decoder_thread.cpp:147
 #, kde-format
-msgid "cannot open MMS stream %1"
-msgstr "ne mogu otvoriti MMS strim %1"
+msgid "Could not open any input stream of %1."
+msgstr "Nije moguće otvoriti bilo koji ulazni strim %1"
 
-#: decoder_thread.cpp:1077
+#: decoder_thread.cpp:626 decoder_thread.cpp:629
 #, fuzzy, kde-format
-msgid "Not yet implemented: libav sample format id %1"
-msgstr "Ne mogu koristiti libav format id %1"
+msgid "Could not open stream %1"
+msgstr "Nije moguće otvoriti strim %1"
 
-#: decoder_thread.cpp:1083
+#: decoder_thread.cpp:354
 #, kde-format
-msgid "Cannot use libav sample format id %1"
-msgstr "Ne mogu koristiti libav format id %1"
+msgid "Failed allocating AVFrame."
+msgstr "Neuspela dodela ACFrame."
 
-#: icy_http_handler.cpp:86
+#: playlist_handler.cpp:139 playlist_handler.cpp:170
 #, kde-format
-msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
-msgstr "Internet radio priključak (ICY http handler): otvaranje strima %1"
+msgid "Failed to load playlist %1: %2"
+msgstr "Neuspelo učitavanje plejliste %1: %2"
 
-#: icy_http_handler.cpp:104
+#: decoder_thread.cpp:142
+#, fuzzy, kde-format
+msgid "Failed to open %1. Trying next stream in play list."
+msgstr "neuspelo otvaranje %1. Probajte sledeći strim sa plej liste."
+
+#: playlist_handler.cpp:95
+#, kde-format
+msgid "Failed to start any stream of %1"
+msgstr "Neuspeo početak bilo kog strima %1"
+
+#: playlist_handler.cpp:142
+#, kde-format
+msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
+msgstr ""
+"Neuspeo početak preuzimanja plejliste  %1: KIO::get returned NULL pointer"
+
+#. i18n: file: internetradio-configuration-ui.ui:125
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:21 rc.cpp:65
+#, fuzzy, kde-format
+msgid "Input buffer size:"
+msgstr "Veličina ulaznog bafera"
+
+#: internetradio.cpp:654
+#, kde-format
+msgid "Internet Radio"
+msgstr "Internet radio"
+
+#: internetradio.cpp:44
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Internet Radio"
+msgstr "Internet radio"
+
+#: internetradio.cpp:655
+#, kde-format
+msgid "Internet Radio Options"
+msgstr "Opcije za internet radio"
+
+#: internetradio.cpp:62
+#, kde-format
+msgid "Internet Radio Plugin"
+msgstr "Internet radio priključak"
+
+#: internetradio.cpp:1145
+#, kde-format
+msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
+msgstr "Internet radio priključak (%1): strim podaci tajm-aut (>= %2 s)"
+
+#: icy_http_handler.cpp:449
 #, kde-format
 msgid ""
-"Internet Radio Plugin (ICY http handler): Failed to start stream download of "
-"%1: KIO::get returned NULL pointer"
+"Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
+"%2"
 msgstr ""
-"Internet radio priključak (ICY http handler): Neuspeo početak preuzimanja "
-"strima  %1: KIO::get returned NULL pointer"
+"Internet radio priključak (ICY http handler): Neuspelo učitavanje podataka "
+"za strim  %1: %2"
 
 #: icy_http_handler.cpp:124
 #, kde-format
@@ -122,38 +171,31 @@ msgstr ""
 "Internet radio priključak (ICY http handler): Neuspeo početak preuzmanja "
 "strima  %1: %2"
 
-#: icy_http_handler.cpp:447
+#: icy_http_handler.cpp:104
 #, kde-format
 msgid ""
-"Internet Radio Plugin (ICY http handler): Failed to load stream data for %1: "
-"%2"
+"Internet Radio Plugin (ICY http handler): Failed to start stream download of "
+"%1: KIO::get returned NULL pointer"
 msgstr ""
-"Internet radio priključak (ICY http handler): Neuspelo učitavanje podataka "
-"za strim  %1: %2"
+"Internet radio priključak (ICY http handler): Neuspeo početak preuzimanja "
+"strima  %1: KIO::get returned NULL pointer"
 
-#: icy_http_handler.cpp:455
+#: icy_http_handler.cpp:457
 #, kde-format
 msgid "Internet Radio Plugin (ICY http handler): HTTP error %1 for stream %2"
 msgstr ""
 "Internet radio priključak (ICY http handler): HTTP greška %1 za strim %2"
 
-#: internetradio.cpp:44
-#, fuzzy, kde-format
-#| msgid "Internet Radio"
-msgctxt "@title"
-msgid "Internet Radio"
-msgstr "Internet radio"
-
-#: internetradio.cpp:46
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "Pseudo radio device for Internet radio stream support"
-msgstr "Pseudo radio uredjaj za podršku radio strima"
-
-#: internetradio.cpp:62
+#: icy_http_handler.cpp:86
 #, kde-format
-msgid "Internet Radio Plugin"
-msgstr "Internet radio priključak"
+msgid "Internet Radio Plugin (ICY http handler): opening stream %1"
+msgstr "Internet radio priključak (ICY http handler): otvaranje strima %1"
+
+#: playlist_handler.cpp:179
+#, kde-format
+msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
+msgstr ""
+"Internet radio priključak (sekundant plejliste): HTTP greška %1 za strim %2"
 
 #: internetradio.cpp:86
 #, kde-format
@@ -165,47 +207,103 @@ msgstr "Internet radio priključak:␣"
 msgid "Internet radio station decoder / pseudo device"
 msgstr "Internet radio stanica dekoder / pseudo uredjaj"
 
-#: internetradio.cpp:654
-#, kde-format
-msgid "Internet Radio"
-msgstr "Internet radio"
+#. i18n: file: internetradio-configuration-ui.ui:155
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:30 rc.cpp:74
+#, fuzzy, kde-format
+msgid "Mute playback channel on power off:"
+msgstr "Isključi zvuk na kanalu reprodukcije na izlazu"
 
-#: internetradio.cpp:655
-#, kde-format
-msgid "Internet Radio Options"
-msgstr "Opcije za internet radio"
+#: decoder_thread.cpp:1077
+#, fuzzy, kde-format
+msgid "Not yet implemented: libav sample format id %1"
+msgstr "Ne mogu koristiti libav format id %1"
 
-#: internetradio.cpp:1145
+#: decoder_thread.cpp:843 decoder_thread.cpp:846
 #, kde-format
-msgid "Internet Radio Plugin (%1): stream data timeout (>= %2 s)"
-msgstr "Internet radio priključak (%1): strim podaci tajm-aut (>= %2 s)"
+msgid "Opening codec for %1 failed"
+msgstr "Otvaranje kodeka za %1 neuspelo"
 
-#: playlist_handler.cpp:95
-#, kde-format
-msgid "Failed to start any stream of %1"
-msgstr "Neuspeo početak bilo kog strima %1"
+#. i18n: file: internetradio-configuration-ui.ui:41
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:6 rc.cpp:50
+#, fuzzy, kde-format
+msgid "PCM output buffer size:"
+msgstr "PCM veličina odlaznog bafera"
 
-#: playlist_handler.cpp:139 playlist_handler.cpp:170
-#, kde-format
-msgid "Failed to load playlist %1: %2"
-msgstr "Neuspelo učitavanje plejliste %1: %2"
+#. i18n: file: internetradio-configuration-ui.ui:89
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
+#: rc.cpp:12 rc.cpp:56
+#, fuzzy, kde-format
+msgid "Playback mixer channel:"
+msgstr "Kanal miksera reprodukcije"
 
-#: playlist_handler.cpp:142
-#, kde-format
-msgid "Failed to start playlist download of %1: KIO::get returned NULL pointer"
+#. i18n: file: internetradio-configuration-ui.ui:115
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:18 rc.cpp:62
+#, fuzzy, kde-format
+msgid "Playback mixer device:"
+msgstr "Mikser reprodukcije"
+
+#: internetradio.cpp:46
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Pseudo radio device for Internet radio stream support"
+msgstr "Pseudo radio uredjaj za podršku radio strima"
+
+#: stream_input_buffer.cpp:72
+#, fuzzy, kde-format
+msgid "This should never happen: inconsistency in buffer locking / buffer size"
 msgstr ""
-"Neuspeo početak preuzimanja plejliste  %1: KIO::get returned NULL pointer"
+"Ovo nikada nije trebalo da se dogodi: nedoslednost u bafer zaključavanju / "
+"veličini bafera!"
 
-#: playlist_handler.cpp:179
+#: decoder_thread.cpp:871
 #, kde-format
-msgid "Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2"
+msgid "Unknown channel layout for %1"
 msgstr ""
-"Internet radio priključak (sekundant plejliste): HTTP greška %1 za strim %2"
 
-#: playlist_handler.cpp:288
+#. i18n: file: internetradio-configuration-ui.ui:213
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:42 rc.cpp:86
+#, fuzzy, kde-format
+msgid "Watchdog: reconnect after:"
+msgstr "Nadzornik: Ponovno povezivanje posle"
+
+#: rc.cpp:44
 #, kde-format
-msgid "%1 does not contain any usable radio stream"
-msgstr "%1 ne sadrži nikakav upotrebljiv radio strim"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: rc.cpp:43
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: decoder_thread.cpp:976 decoder_thread.cpp:979
+#, kde-format
+msgid "cannot open MMS stream %1"
+msgstr "ne mogu otvoriti MMS strim %1"
+
+#. i18n: file: internetradio-configuration-ui.ui:194
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
+#: rc.cpp:36 rc.cpp:80
+#, fuzzy, kde-format
+msgctxt "disabled watchdog"
+msgid "disabled"
+msgstr "onemogućeno"
+
+#: playlist_handler.cpp:589
+#, fuzzy, kde-format
+msgid "error while reading XSPF file: %1"
+msgstr "greška tokom čitanja asx fajla:␣"
+
+#: playlist_handler.cpp:537
+#, fuzzy, kde-format
+msgid "error while reading asx file: %1"
+msgstr "greška tokom čitanja asx fajla:␣"
 
 #: playlist_handler.cpp:391 playlist_handler.cpp:450
 #, kde-format
@@ -219,135 +317,35 @@ msgid "failed to write temporary file to store playlist data"
 msgstr ""
 "neuspelo upisivanje privremenog fajla za skladištenje podataka plej liste"
 
-#: playlist_handler.cpp:537
-#, fuzzy, kde-format
-msgid "error while reading asx file: %1"
-msgstr "greška tokom čitanja asx fajla:␣"
-
-#: playlist_handler.cpp:589
-#, fuzzy, kde-format
-msgid "error while reading XSPF file: %1"
-msgstr "greška tokom čitanja asx fajla:␣"
-
-#. i18n: file: internetradio-configuration-ui.ui:31
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:3 rc.cpp:47
-#, fuzzy, kde-format
-msgid "Input buffer size:"
-msgstr "Veličina ulaznog bafera"
-
-#. i18n: file: internetradio-configuration-ui.ui:41
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:73
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:250
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
-#. i18n: file: internetradio-configuration-ui.ui:41
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamInputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:73
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxStreamOutputBufferSize)
-#. i18n: file: internetradio-configuration-ui.ui:250
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxProbeSize)
-#: rc.cpp:6 rc.cpp:12 rc.cpp:39 rc.cpp:50 rc.cpp:56 rc.cpp:83
+#: decoder_thread.cpp:338 decoder_thread.cpp:341
 #, kde-format
-msgid " kB"
-msgstr "␣kB"
+msgid "internal stream, not stored (%1)"
+msgstr "interni strim, nesačuvano (%1)"
 
-#. i18n: file: internetradio-configuration-ui.ui:63
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:9 rc.cpp:53
-#, fuzzy, kde-format
-msgid "PCM output buffer size:"
-msgstr "PCM veličina odlaznog bafera"
-
-#. i18n: file: internetradio-configuration-ui.ui:98
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:15 rc.cpp:59
-#, fuzzy, kde-format
-msgid "libffmpeg: stream info analysis time:"
-msgstr "libffmpeg: analiza vremena za strim"
-
-#. i18n: file: internetradio-configuration-ui.ui:108
-#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#: rc.cpp:18 rc.cpp:62
-#, fuzzy, kde-format
-#| msgid "disabled"
-msgctxt "disabled watchdog"
-msgid "disabled"
-msgstr "onemogućeno"
-
-#. i18n: file: internetradio-configuration-ui.ui:111
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#. i18n: file: internetradio-configuration-ui.ui:281
-#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
-#. i18n: file: internetradio-configuration-ui.ui:111
-#. i18n: ectx: property (suffix), widget (KIntSpinBox, spinboxWatchdogTimeout)
-#. i18n: file: internetradio-configuration-ui.ui:281
-#. i18n: ectx: property (suffix), widget (KDoubleNumInput, spinboxAnalysisTime)
-#: rc.cpp:21 rc.cpp:42 rc.cpp:65 rc.cpp:86
-#, kde-format
-msgid " s"
-msgstr "␣s"
-
-#. i18n: file: internetradio-configuration-ui.ui:133
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:24 rc.cpp:68
-#, fuzzy, kde-format
-msgid "Watchdog: reconnect after:"
-msgstr "Nadzornik: Ponovno povezivanje posle"
-
-#. i18n: file: internetradio-configuration-ui.ui:149
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:27 rc.cpp:71
-#, fuzzy, kde-format
-msgid "Playback mixer device:"
-msgstr "Mikser reprodukcije"
-
-#. i18n: file: internetradio-configuration-ui.ui:175
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
-#: rc.cpp:30 rc.cpp:74
-#, fuzzy, kde-format
-msgid "Playback mixer channel:"
-msgstr "Kanal miksera reprodukcije"
-
-#. i18n: file: internetradio-configuration-ui.ui:217
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:33 rc.cpp:77
-#, fuzzy, kde-format
-msgid "Mute playback channel on power off:"
-msgstr "Isključi zvuk na kanalu reprodukcije na izlazu"
-
-#. i18n: file: internetradio-configuration-ui.ui:240
+#. i18n: file: internetradio-configuration-ui.ui:145
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:36 rc.cpp:80
+#: rc.cpp:27 rc.cpp:71
 #, fuzzy, kde-format
 msgid "libffmpeg: format probe size:"
 msgstr "libffmpeg: proba veličine formata"
 
-#: rc.cpp:43
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
-
-#: rc.cpp:44
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: stream_input_buffer.cpp:72
+#. i18n: file: internetradio-configuration-ui.ui:135
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:24 rc.cpp:68
 #, fuzzy, kde-format
-msgid "This should never happen: inconsistency in buffer locking / buffer size"
-msgstr ""
-"Ovo nikada nije trebalo da se dogodi: nedoslednost u bafer zaključavanju / "
-"veličini bafera!"
+msgid "libffmpeg: stream info analysis time:"
+msgstr "libffmpeg: analiza vremena za strim"
+
+#: decoder_thread.cpp:138
+#, kde-format
+msgid "opening stream %1"
+msgstr "otvaranje strima %1"
 
 #~ msgid "SetupDialogGeneral"
 #~ msgstr "DijalogOpštegPodešavanja"
 
-#~ msgid "test"
-#~ msgstr "test"
-
 #~ msgid "cannot open MMS  %1"
 #~ msgstr "ne mogu otvoriti MMS %1"
+
+#~ msgid "test"
+#~ msgstr "test"

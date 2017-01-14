@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-05-08 16:45+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2015-12-25 16:06+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,44 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: rc.cpp:1
+#: shortcuts.cpp:96
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Luigi Toscano,Giovanni Scafora"
+msgid "Decrease Frequency"
+msgstr "Diminuisci la frequenza"
 
-#: rc.cpp:2
+#: shortcuts.cpp:94
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
-
-#: shortcuts.cpp:50
-#, kde-format
-msgctxt "@title"
-msgid "Shortcuts"
-msgstr "Scorciatoie"
-
-#: shortcuts.cpp:52
-#, kde-format
-msgctxt "@title"
-msgid "Shortcuts Support"
-msgstr "Supporto per le scorciatoie"
-
-#: shortcuts.cpp:67 shortcuts.cpp:213
-#, kde-format
-msgid "Shortcuts Plugin"
-msgstr "Estensione delle scorciatoie"
-
-#: shortcuts.cpp:75
-#, kde-format
-msgid "Standard Actions"
-msgstr "Azioni standard"
-
-#: shortcuts.cpp:76
-#, kde-format
-msgid "Station Actions"
-msgstr "Azioni delle stazioni"
+msgid "Decrease volume"
+msgstr "Diminuisci il volume"
 
 #: shortcuts.cpp:78
 #, kde-format
@@ -109,60 +80,45 @@ msgstr "Cifra 8"
 msgid "Digit 9"
 msgstr "Cifra 9"
 
-#: shortcuts.cpp:88
+#: shortcuts.cpp:95
 #, kde-format
-msgid "Power on"
-msgstr "Accendi"
-
-#: shortcuts.cpp:89
-#, kde-format
-msgid "Power off"
-msgstr "Spegni"
-
-#: shortcuts.cpp:90
-#, kde-format
-msgid "Pause"
-msgstr "Pausa"
-
-#: shortcuts.cpp:91
-#, kde-format
-msgid "Start recording"
-msgstr "Avvia la registrazione"
-
-#: shortcuts.cpp:92
-#, kde-format
-msgid "Stop recording"
-msgstr "Ferma la registrazione"
+msgid "Increase Frequency"
+msgstr "Aumenta la frequenza"
 
 #: shortcuts.cpp:93
 #, kde-format
 msgid "Increase volume"
 msgstr "Aumenta il volume"
 
-#: shortcuts.cpp:94
-#, kde-format
-msgid "Decrease volume"
-msgstr "Diminuisci il volume"
-
-#: shortcuts.cpp:95
-#, kde-format
-msgid "Increase Frequency"
-msgstr "Aumenta la frequenza"
-
-#: shortcuts.cpp:96
-#, kde-format
-msgid "Decrease Frequency"
-msgstr "Diminuisci la frequenza"
-
 #: shortcuts.cpp:97
 #, kde-format
 msgid "Next station"
 msgstr "Stazione successiva"
 
+#: shortcuts.cpp:90
+#, kde-format
+msgid "Pause"
+msgstr "Pausa"
+
+#: shortcuts.cpp:89
+#, kde-format
+msgid "Power off"
+msgstr "Spegni"
+
+#: shortcuts.cpp:88
+#, kde-format
+msgid "Power on"
+msgstr "Accendi"
+
 #: shortcuts.cpp:98
 #, kde-format
 msgid "Previous station"
 msgstr "Stazione precedente"
+
+#: shortcuts.cpp:102
+#, kde-format
+msgid "Quit KRadio"
+msgstr "Esci da KRadio"
 
 #: shortcuts.cpp:99
 #, kde-format
@@ -174,17 +130,61 @@ msgstr "Ricerca della stazione successiva"
 msgid "Search previous station"
 msgstr "Ricerca della stazione precedente"
 
+#: shortcuts.cpp:212
+#, kde-format
+msgid "Shortcuts"
+msgstr "Scorciatoie"
+
+#: shortcuts.cpp:50
+#, kde-format
+msgctxt "@title"
+msgid "Shortcuts"
+msgstr "Scorciatoie"
+
+#: shortcuts.cpp:67 shortcuts.cpp:213
+#, kde-format
+msgid "Shortcuts Plugin"
+msgstr "Estensione delle scorciatoie"
+
+#: shortcuts.cpp:52
+#, kde-format
+msgctxt "@title"
+msgid "Shortcuts Support"
+msgstr "Supporto per le scorciatoie"
+
 #: shortcuts.cpp:101
 #, kde-format
 msgid "Sleep"
 msgstr "Sospensione"
 
-#: shortcuts.cpp:102
+#: shortcuts.cpp:75
 #, kde-format
-msgid "Quit KRadio"
-msgstr "Esci da KRadio"
+msgid "Standard Actions"
+msgstr "Azioni standard"
 
-#: shortcuts.cpp:212
+#: shortcuts.cpp:91
 #, kde-format
-msgid "Shortcuts"
-msgstr "Scorciatoie"
+msgid "Start recording"
+msgstr "Avvia la registrazione"
+
+#: shortcuts.cpp:76
+#, kde-format
+msgid "Station Actions"
+msgstr "Azioni delle stazioni"
+
+#: shortcuts.cpp:92
+#, kde-format
+msgid "Stop recording"
+msgstr "Ferma la registrazione"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "luigi.toscano@tiscali.it,giovanni@archlinux.org"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luigi Toscano,Giovanni Scafora"

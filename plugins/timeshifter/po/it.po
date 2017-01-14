@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2015-12-25 17:56+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -20,62 +20,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#. i18n: file: timeshifter-configuration-ui.ui:54
+#. i18n: file: timeshifter-configuration-ui.ui:59
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
-#: rc.cpp:3 rc.cpp:20
+#: rc.cpp:9 rc.cpp:26
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#. i18n: file: timeshifter-configuration-ui.ui:73
+#. i18n: file: timeshifter-configuration-ui.ui:49
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:6 rc.cpp:23
 #, kde-format
 msgid "Maximum file size:"
 msgstr "Dimensione massima del file:"
 
-#. i18n: file: timeshifter-configuration-ui.ui:83
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:9 rc.cpp:26
-#, kde-format
-msgid "Playback mixer device:"
-msgstr "Dispositivo mixer di riproduzione:"
-
-#. i18n: file: timeshifter-configuration-ui.ui:93
-#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
-#: rc.cpp:12 rc.cpp:29
-#, kde-format
-msgid "Temporary file:"
-msgstr "File temporaneo:"
-
-#. i18n: file: timeshifter-configuration-ui.ui:106
+#. i18n: file: timeshifter-configuration-ui.ui:91
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:15 rc.cpp:32
 #, kde-format
 msgid "Playback mixer channel:"
 msgstr "Canale mixer di riproduzione:"
 
-#: rc.cpp:16
+#. i18n: file: timeshifter-configuration-ui.ui:78
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:29
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Luigi Toscano,Giovanni Scafora"
-
-#: rc.cpp:17
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "luigi.toscano@tiscali.it,"
-
-#: timeshifter-configuration.cpp:146
-#, kde-format
-msgid "any ( * )"
-msgstr "tutti ( * )"
+msgid "Playback mixer device:"
+msgstr "Dispositivo mixer di riproduzione:"
 
 #: timeshifter-configuration.cpp:150
 #, kde-format
 msgid "Select TimeShifter Temporary File"
 msgstr "Seleziona il file temporaneo per l'ascolto in differita"
+
+#. i18n: file: timeshifter-configuration-ui.ui:17
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:3 rc.cpp:20
+#, kde-format
+msgid "Temporary file:"
+msgstr "File temporaneo:"
+
+#: timeshifter.cpp:222
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr "Spostamento del tempo di %1 (%2)"
 
 #: timeshifter.cpp:32
 #, kde-format
@@ -88,6 +76,13 @@ msgstr "Supporto per l'ascolto in differita"
 msgid "TimeShifter Plugin"
 msgstr "Estensione per l'ascolto in differita"
 
+#: timeshifter.cpp:568
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr ""
+"TimeShifter::notifySoundStreamData: i client hanno ignorato %1 byte e sono "
+"andati persi"
+
 #: timeshifter.cpp:140
 #, kde-format
 msgid "Timeshifter"
@@ -98,17 +93,22 @@ msgstr "Ascolto in differita"
 msgid "Timeshifter Options"
 msgstr "Opzioni dell'ascolto in differita"
 
-#: timeshifter.cpp:222
+#: rc.cpp:17
 #, kde-format
-msgid "Time shift of %1 (%2)"
-msgstr "Spostamento del tempo di %1 (%2)"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "luigi.toscano@tiscali.it,"
 
-#: timeshifter.cpp:568
+#: rc.cpp:16
 #, kde-format
-msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
-msgstr ""
-"TimeShifter::notifySoundStreamData: i client hanno ignorato %1 byte e sono "
-"andati persi"
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luigi Toscano,Giovanni Scafora"
+
+#: timeshifter-configuration.cpp:146
+#, kde-format
+msgid "any ( * )"
+msgstr "tutti ( * )"
 
 #: timeshifter.cpp:648
 #, kde-format

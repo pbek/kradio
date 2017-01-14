@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-18 20:46+0400\n"
 "Last-Translator: Алексей Кузнецов <aleksejj-dmitrijevich-kuznecov@ya.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,107 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: docking-configuration.cpp:110
+#: docking.cpp:315
 #, kde-format
-msgid "Mouse click on tray icon:"
-msgstr "Щелчок мышью по иконке в лотке:"
-
-#: docking-configuration.cpp:111 docking-configuration.cpp:116
-#, kde-format
-msgctxt "Mouse button"
-msgid "Left:"
-msgstr "Левая кнопка:"
-
-#: docking-configuration.cpp:112 docking-configuration.cpp:117
-#, kde-format
-msgctxt "Mouse button"
-msgid "Right:"
-msgstr "Правая кнопка:"
-
-#: docking-configuration.cpp:113 docking-configuration.cpp:118
-#, kde-format
-msgctxt "Mouse button"
-msgid "Middle:"
-msgstr "Средняя кнопка:"
-
-#: docking-configuration.cpp:115
-#, kde-format
-msgid "Mouse double-click on tray icon:"
-msgstr "Двойной щелчок мышью по иконке в лотке:"
-
-#: docking-configuration.cpp:120
-#, kde-format
-msgid "Mouse wheel action on tray icon:"
-msgstr "Колесо мыши:"
-
-#: docking-configuration.cpp:126 docking-configuration.cpp:136
-#, kde-format
-msgid "No Action"
-msgstr "Ничего не делать"
-
-#: docking-configuration.cpp:127
-#, kde-format
-msgid "Show/Hide Windows"
-msgstr "Показать/скрыть окна"
-
-#: docking-configuration.cpp:128
-#, kde-format
-msgid "Power On/Off"
-msgstr "Включить/выключить"
-
-#: docking-configuration.cpp:129
-#, kde-format
-msgid "Pause/Play"
-msgstr "Приостановить / продолжить"
-
-#: docking-configuration.cpp:130 docking.cpp:291
-#, kde-format
-msgid "Recording"
-msgstr "Запись"
-
-#: docking-configuration.cpp:131
-#, kde-format
-msgid "System Tray Menu"
-msgstr "Пиктограмма в системном лотке"
-
-#: docking-configuration.cpp:132
-#, kde-format
-msgid "GUI-Plugin Menu"
-msgstr "Выбор окон"
-
-#: docking-configuration.cpp:133
-#, kde-format
-msgid "Configuration"
-msgstr "Конфигурация меню лотка"
-
-#: docking-configuration.cpp:137
-#, kde-format
-msgid "Change Station"
-msgstr "Сменить станцию"
-
-#: docking-configuration.cpp:138
-#, kde-format
-msgid "Change Volume"
-msgstr "Изменить громкость"
-
-#: docking-configuration.cpp:139
-#, kde-format
-msgid "Change Frequency"
-msgstr "Изменить частоту"
-
-#: docking.cpp:45
-#, fuzzy, kde-format
-#| msgid "Docking Menu"
-msgctxt "@title"
-msgid "Docking Menu"
-msgstr "Меню лотка"
-
-#: docking.cpp:47
-#, fuzzy, kde-format
-#| msgid "System Tray Icon/Menu"
-msgctxt "@title"
-msgid "System Tray Icon/Menu"
-msgstr "Пиктограмма/меню в системном лотке"
+msgid "&Quit"
+msgstr "В&ыход"
 
 #: docking.cpp:49
 #, kde-format
@@ -127,11 +30,46 @@ msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: docking.cpp:53
+#: docking.cpp:496
 #, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
-msgstr ""
+msgid "<no alarm pending>"
+msgstr "<Расписание пусто>"
+
+#: docking-configuration.cpp:135
+#, kde-format
+msgid "Change Frequency"
+msgstr "Изменить частоту"
+
+#: docking-configuration.cpp:133
+#, kde-format
+msgid "Change Station"
+msgstr "Сменить станцию"
+
+#: docking-configuration.cpp:134
+#, kde-format
+msgid "Change Volume"
+msgstr "Изменить громкость"
+
+#: docking-configuration.cpp:129
+#, kde-format
+msgid "Configuration"
+msgstr "Конфигурация меню лотка"
+
+#: docking.cpp:45
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Docking Menu"
+msgstr "Меню лотка"
+
+#: docking-configuration.cpp:128
+#, kde-format
+msgid "GUI-Plugin Menu"
+msgstr "Выбор окон"
+
+#: docking.cpp:485
+#, kde-format
+msgid "KRadio: %1"
+msgstr "Радиоприёмник KDE: %1"
 
 #: docking.cpp:54
 #, kde-format
@@ -139,20 +77,89 @@ msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: docking.cpp:66
+#: docking-configuration.cpp:107 docking-configuration.cpp:112
 #, kde-format
-msgid "System Tray Plugin"
-msgstr "Модуль значка в системном лотке"
+msgctxt "Mouse button"
+msgid "Left:"
+msgstr "Левая кнопка:"
 
-#: docking.cpp:251
+#: docking.cpp:53
 #, kde-format
-msgid "System Tray Icon"
-msgstr "Пиктограмма в системном лотке"
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
 
-#: docking.cpp:252
+#: docking-configuration.cpp:109 docking-configuration.cpp:114
 #, kde-format
-msgid "System Tray Icon Configuration"
-msgstr "Настройка значка в системном лотке"
+msgctxt "Mouse button"
+msgid "Middle:"
+msgstr "Средняя кнопка:"
+
+#: docking-configuration.cpp:106
+#, kde-format
+msgid "Mouse click on tray icon:"
+msgstr "Щелчок мышью по иконке в лотке:"
+
+#: docking-configuration.cpp:111
+#, kde-format
+msgid "Mouse double-click on tray icon:"
+msgstr "Двойной щелчок мышью по иконке в лотке:"
+
+#: docking-configuration.cpp:116
+#, kde-format
+msgid "Mouse wheel action on tray icon:"
+msgstr "Колесо мыши:"
+
+#: docking-configuration.cpp:122 docking-configuration.cpp:132
+#, kde-format
+msgid "No Action"
+msgstr "Ничего не делать"
+
+#: docking.cpp:296
+#, kde-format
+msgid "Pause Radio"
+msgstr "Приостановить"
+
+#: docking.cpp:916
+#, kde-format
+msgid "Pause playback"
+msgstr "Приостановить воспроизведение"
+
+#: docking-configuration.cpp:125
+#, kde-format
+msgid "Pause/Play"
+msgstr "Приостановить / продолжить"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power Off"
+msgstr "Выключить"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power On"
+msgstr "Включить"
+
+#: docking-configuration.cpp:124
+#, kde-format
+msgid "Power On/Off"
+msgstr "Включить/выключить"
+
+#: docking-configuration.cpp:126 docking.cpp:291
+#, kde-format
+msgid "Recording"
+msgstr "Запись"
+
+#: docking.cpp:912
+#, kde-format
+msgid "Resume playback"
+msgstr "Возобновить воспроизведение"
+
+#: docking-configuration.cpp:108 docking-configuration.cpp:113
+#, kde-format
+msgctxt "Mouse button"
+msgid "Right:"
+msgstr "Правая кнопка:"
 
 #: docking.cpp:281
 #, kde-format
@@ -164,80 +171,67 @@ msgstr "Искать следующую станцию"
 msgid "Search Previous Station"
 msgstr "Искать предыдущую станцию"
 
-#: docking.cpp:296
-#, kde-format
-msgid "Pause Radio"
-msgstr "Приостановить"
-
 #: docking.cpp:307
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Показать/скрыть"
 
-#: docking.cpp:315
+#: docking-configuration.cpp:123
 #, kde-format
-msgid "&Quit"
-msgstr "В&ыход"
+msgid "Show/Hide Windows"
+msgstr "Показать/скрыть окна"
 
-#: docking.cpp:440
-#, kde-format
-msgid "Stop Sleep Countdown (running until %1)"
-msgstr "Остановить таймер отключения (установлено на %1)"
-
-#: docking.cpp:443 docking.cpp:452 docking.cpp:460
-#, kde-format
-msgid "Start Sleep Countdown"
-msgstr "Запустить таймер отключения"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power Off"
-msgstr "Выключить"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power On"
-msgstr "Включить"
-
-#: docking.cpp:483 docking.cpp:501
-#, kde-format
-msgid "invalid station"
-msgstr "Неверная станция"
-
-#: docking.cpp:484
-#, kde-format
-msgid "KRadio: %1"
-msgstr "Радиоприёмник KDE: %1"
-
-#: docking.cpp:493
-#, kde-format
-msgid "next alarm: %1"
-msgstr "След. действие: %1"
-
-#: docking.cpp:495
-#, kde-format
-msgid "<no alarm pending>"
-msgstr "<Расписание пусто>"
-
-#: docking.cpp:761 docking.cpp:864 docking.cpp:922
-#, kde-format
-msgid "Stop Recording of %1"
-msgstr "Остановить запись %1"
-
-#: docking.cpp:850
+#: docking.cpp:858
 #, kde-format
 msgid "Start Recording"
 msgstr "Начать запись"
 
-#: docking.cpp:904
+#: docking.cpp:444 docking.cpp:453 docking.cpp:461
 #, kde-format
-msgid "Resume playback"
-msgstr "Возобновить воспроизведение"
+msgid "Start Sleep Countdown"
+msgstr "Запустить таймер отключения"
 
-#: docking.cpp:908
+#: docking.cpp:769 docking.cpp:872 docking.cpp:930
 #, kde-format
-msgid "Pause playback"
-msgstr "Приостановить воспроизведение"
+msgid "Stop Recording of %1"
+msgstr "Остановить запись %1"
+
+#: docking.cpp:441
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Остановить таймер отключения (установлено на %1)"
+
+#: docking.cpp:251
+#, kde-format
+msgid "System Tray Icon"
+msgstr "Пиктограмма в системном лотке"
+
+#: docking.cpp:252
+#, kde-format
+msgid "System Tray Icon Configuration"
+msgstr "Настройка значка в системном лотке"
+
+#: docking.cpp:47
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "System Tray Icon/Menu"
+msgstr "Пиктограмма/меню в системном лотке"
+
+#: docking-configuration.cpp:127
+#, kde-format
+msgid "System Tray Menu"
+msgstr "Пиктограмма в системном лотке"
+
+#: docking.cpp:66
+#, kde-format
+msgid "System Tray Plugin"
+msgstr "Модуль значка в системном лотке"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Alexey.Kouznetsov@GMail.com"
 
 #: rc.cpp:1
 #, kde-format
@@ -245,11 +239,24 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: rc.cpp:2
+#: docking.cpp:484 docking.cpp:502
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "Alexey.Kouznetsov@GMail.com"
+msgid "invalid station"
+msgstr "Неверная станция"
+
+#: docking.cpp:494
+#, kde-format
+msgid "next alarm: %1"
+msgstr "След. действие: %1"
+
+#~ msgid "Docking Plugin"
+#~ msgstr "Модуль системного лотка"
+
+#~ msgid "Show/Hide all GUI Elements"
+#~ msgstr "Показать/скрыть все окна"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Значок и меню в системном лотке"
 
 #~ msgctxt "Mouse button"
 #~ msgid "XButton1:"
@@ -259,21 +266,12 @@ msgstr "Alexey.Kouznetsov@GMail.com"
 #~ msgid "XButton2:"
 #~ msgstr "Доп. кнопка 2:"
 
-#~ msgid "System Tray Icon/Menu for KRadio"
-#~ msgstr "Значок и меню в системном лотке"
-
-#~ msgid "Show/Hide all GUI Elements"
-#~ msgstr "Показать/скрыть все окна"
-
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Алексей Кузнецов"
-
 #~ msgid ""
 #~ "_: EMAIL OF TRANSLATORS\n"
 #~ "Your emails"
 #~ msgstr "Alexey.Kouznetsov@GMail.com"
 
-#~ msgid "Docking Plugin"
-#~ msgstr "Модуль системного лотка"
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Алексей Кузнецов"

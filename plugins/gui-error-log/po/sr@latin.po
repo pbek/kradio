@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gui-error-log (plugins)\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2013-02-10 14:39+0100\n"
 "Last-Translator: Ernst Martin Witte <emw@nocabal.de>\n"
 "Language-Team: trunk <kde-i18n-doc@kde.org>\n"
@@ -14,71 +14,67 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: errorlog.cpp:42
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "Error Logging Window"
-msgstr "Prozor logova sa greškama za KRadio"
+#: errorlog.cpp:81
+#, kde-format
+msgid "Debugging"
+msgstr "Otklanjanje grešaka"
 
 #: errorlog.cpp:57
 #, kde-format
 msgid "Error Logger"
 msgstr "Logove grešaka"
 
-#: errorlog.cpp:61 errorlog.cpp:70
-#, kde-format
-msgid "KRadio Logger"
-msgstr "Kradio logovi"
-
-#: errorlog.cpp:67
-#, kde-format
-msgid "Save &as"
-msgstr "Sačuvaj & као"
-
-#: errorlog.cpp:72
-#, kde-format
-msgid "Information"
-msgstr "Informacije"
-
-#: errorlog.cpp:73 errorlog.cpp:76 errorlog.cpp:79 errorlog.cpp:82
-#, kde-format
-msgid "KRadio4 Version %1 logging started"
-msgstr "KRadio4 verzija %1 beleženje počelo"
-
-#: errorlog.cpp:75
-#, kde-format
-msgid "Warnings"
-msgstr "Upozorenja"
+#: errorlog.cpp:42
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Error Logging Window"
+msgstr "Prozor logova sa greškama za KRadio"
 
 #: errorlog.cpp:78
 #, kde-format
 msgid "Errors"
 msgstr "Greške"
 
-#: errorlog.cpp:81
+#: errorlog.cpp:72
 #, kde-format
-msgid "Debugging"
-msgstr "Otklanjanje grešaka"
+msgid "Information"
+msgstr "Informacije"
 
-#: errorlog.cpp:200
+#: errorlog.cpp:61 errorlog.cpp:70
+#, kde-format
+msgid "KRadio Logger"
+msgstr "Kradio logovi"
+
+#: errorlog.cpp:73 errorlog.cpp:76 errorlog.cpp:79 errorlog.cpp:82
+#, kde-format
+msgid "KRadio4 Version %1 logging started"
+msgstr "KRadio4 verzija %1 beleženje počelo"
+
+#: errorlog.cpp:199
 #, kde-format
 msgid "Log Files"
 msgstr "Log fajlovi"
 
-#: errorlog.cpp:200
+#: errorlog.cpp:67
+#, kde-format
+msgid "Save &as"
+msgstr "Sačuvaj & као"
+
+#: errorlog.cpp:199
 #, fuzzy, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Sačuvaj KRadio podatke logovanja kao ..."
 
-#: errorlog.cpp:223
-#, fuzzy, kde-format
-msgid "error writing to temporary file %1"
-msgstr "greška kod pisanja privremenog fajla %1"
-
-#: errorlog.cpp:232
+#: errorlog.cpp:75
 #, kde-format
-msgid "error uploading preset file %1"
-msgstr "greška kod otpremanja fajla sa stanicama %1"
+msgid "Warnings"
+msgstr "Upozorenja"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #: rc.cpp:1
 #, kde-format
@@ -86,8 +82,12 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:2
+#: errorlog.cpp:231
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgid "error uploading preset file %1"
+msgstr "greška kod otpremanja fajla sa stanicama %1"
+
+#: errorlog.cpp:222
+#, fuzzy, kde-format
+msgid "error writing to temporary file %1"
+msgstr "greška kod pisanja privremenog fajla %1"

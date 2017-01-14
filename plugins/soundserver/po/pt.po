@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2006-11-19 17:22+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -18,18 +18,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
-
-#: rc.cpp:1
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
-
-#: rc.cpp:2
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
 
 #: soundserver.cpp:32
 #, fuzzy, kde-format
@@ -42,6 +30,18 @@ msgstr "incializando o servidor de som do KRadio"
 msgid "Sound Server Plugin"
 msgstr "Extensão Servidor de Som"
 
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
 #: soundserver.cpp:48
 #, fuzzy, kde-format
 msgid "initializing KRadio sound server"
@@ -51,11 +51,11 @@ msgstr "incializando o servidor de som do KRadio"
 #~ msgstr "Servidor de Som"
 
 #~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Hélio \"RoadRunner\" Guilherme"
-
-#~ msgid ""
 #~ "_: EMAIL OF TRANSLATORS\n"
 #~ "Your emails"
 #~ msgstr "helio.guilherme@bluebottle.com"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Hélio \"RoadRunner\" Guilherme"

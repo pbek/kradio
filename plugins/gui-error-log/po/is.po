@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_gui_error_log\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2009-06-15 14:01+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,71 +17,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: errorlog.cpp:42
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "Error Logging Window"
-msgstr "Villuskráningargluggi fyrir KRadio"
+#: errorlog.cpp:81
+#, kde-format
+msgid "Debugging"
+msgstr "Aflúsun"
 
 #: errorlog.cpp:57
 #, kde-format
 msgid "Error Logger"
 msgstr "Villuskráning"
 
-#: errorlog.cpp:61 errorlog.cpp:70
-#, kde-format
-msgid "KRadio Logger"
-msgstr "Annálsskráning fyrir KRadio"
-
-#: errorlog.cpp:67
-#, kde-format
-msgid "Save &as"
-msgstr "Vist&a sem"
-
-#: errorlog.cpp:72
-#, kde-format
-msgid "Information"
-msgstr "Upplýsingar"
-
-#: errorlog.cpp:73 errorlog.cpp:76 errorlog.cpp:79 errorlog.cpp:82
-#, kde-format
-msgid "KRadio4 Version %1 logging started"
-msgstr "Skráning annáls fyrir KRadio4 útgáfu %1 er hafin"
-
-#: errorlog.cpp:75
-#, kde-format
-msgid "Warnings"
-msgstr "Aðvaranir"
+#: errorlog.cpp:42
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Error Logging Window"
+msgstr "Villuskráningargluggi fyrir KRadio"
 
 #: errorlog.cpp:78
 #, kde-format
 msgid "Errors"
 msgstr "Villur"
 
-#: errorlog.cpp:81
+#: errorlog.cpp:72
 #, kde-format
-msgid "Debugging"
-msgstr "Aflúsun"
+msgid "Information"
+msgstr "Upplýsingar"
 
-#: errorlog.cpp:200
+#: errorlog.cpp:61 errorlog.cpp:70
+#, kde-format
+msgid "KRadio Logger"
+msgstr "Annálsskráning fyrir KRadio"
+
+#: errorlog.cpp:73 errorlog.cpp:76 errorlog.cpp:79 errorlog.cpp:82
+#, kde-format
+msgid "KRadio4 Version %1 logging started"
+msgstr "Skráning annáls fyrir KRadio4 útgáfu %1 er hafin"
+
+#: errorlog.cpp:199
 #, kde-format
 msgid "Log Files"
 msgstr "Annálaskrár"
 
-#: errorlog.cpp:200
+#: errorlog.cpp:67
+#, kde-format
+msgid "Save &as"
+msgstr "Vist&a sem"
+
+#: errorlog.cpp:199
 #, fuzzy, kde-format
 msgid "Save KRadio Logging Data"
 msgstr "Vista annálsgögn KRadio sem..."
 
-#: errorlog.cpp:223
-#, fuzzy, kde-format
-msgid "error writing to temporary file %1"
-msgstr "villa við að skrifa í bráðabirgðaskrána %1"
-
-#: errorlog.cpp:232
+#: errorlog.cpp:75
 #, kde-format
-msgid "error uploading preset file %1"
-msgstr "villa við upphleðslu forstillingaskrár %1"
+msgid "Warnings"
+msgstr "Aðvaranir"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #: rc.cpp:1
 #, kde-format
@@ -89,8 +85,12 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: rc.cpp:2
+#: errorlog.cpp:231
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgid "error uploading preset file %1"
+msgstr "villa við upphleðslu forstillingaskrár %1"
+
+#: errorlog.cpp:222
+#, fuzzy, kde-format
+msgid "error writing to temporary file %1"
+msgstr "villa við að skrifa í bráðabirgðaskrána %1"

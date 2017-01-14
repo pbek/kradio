@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_timeshifter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2010-01-08 10:17+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,66 +17,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#. i18n: file: timeshifter-configuration-ui.ui:54
+#. i18n: file: timeshifter-configuration-ui.ui:59
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
-#: rc.cpp:3 rc.cpp:20
+#: rc.cpp:9 rc.cpp:26
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#. i18n: file: timeshifter-configuration-ui.ui:73
+#. i18n: file: timeshifter-configuration-ui.ui:49
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:6 rc.cpp:23
 #, fuzzy, kde-format
 msgid "Maximum file size:"
 msgstr "Hámarks skráastærð"
 
-#. i18n: file: timeshifter-configuration-ui.ui:83
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:9 rc.cpp:26
-#, fuzzy, kde-format
-msgid "Playback mixer device:"
-msgstr "Hljóðblöndunartæki fyrir afspilun"
-
-#. i18n: file: timeshifter-configuration-ui.ui:93
-#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
-#: rc.cpp:12 rc.cpp:29
-#, fuzzy, kde-format
-msgid "Temporary file:"
-msgstr "Bráðabirgðaskrá"
-
-#. i18n: file: timeshifter-configuration-ui.ui:106
+#. i18n: file: timeshifter-configuration-ui.ui:91
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:15 rc.cpp:32
 #, fuzzy, kde-format
 msgid "Playback mixer channel:"
 msgstr "Hljóðblöndunarrás fyrir afspilun"
 
-#: rc.cpp:16
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
-
-#: rc.cpp:17
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: timeshifter-configuration.cpp:146
-#, kde-format
-msgid "any ( * )"
-msgstr "eitthvað ( * )"
+#. i18n: file: timeshifter-configuration-ui.ui:78
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:29
+#, fuzzy, kde-format
+msgid "Playback mixer device:"
+msgstr "Hljóðblöndunartæki fyrir afspilun"
 
 #: timeshifter-configuration.cpp:150
 #, kde-format
 msgid "Select TimeShifter Temporary File"
 msgstr "Veldu bráðabirgðaskrá fyrir tímahliðrun"
 
+#. i18n: file: timeshifter-configuration-ui.ui:17
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:3 rc.cpp:20
+#, fuzzy, kde-format
+msgid "Temporary file:"
+msgstr "Bráðabirgðaskrá"
+
+#: timeshifter.cpp:222
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr "Tímahliðrun á %1 (%2)"
+
 #: timeshifter.cpp:32
 #, fuzzy, kde-format
-#| msgid "TimeShift Support"
 msgctxt "@title"
 msgid "TimeShift Support"
 msgstr "Stuðningur við tímahliðrun"
@@ -85,6 +72,12 @@ msgstr "Stuðningur við tímahliðrun"
 #, kde-format
 msgid "TimeShifter Plugin"
 msgstr "Tímahliðrunar-íforrit"
+
+#: timeshifter.cpp:568
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr ""
+"TimeShifter::notifySoundStreamData: forrit steppti %1 bætum. Gögn töpuðust"
 
 #: timeshifter.cpp:140
 #, kde-format
@@ -96,16 +89,22 @@ msgstr "Tímahliðrun"
 msgid "Timeshifter Options"
 msgstr "Valmöguleikar tímahliðrunar"
 
-#: timeshifter.cpp:222
+#: rc.cpp:17
 #, kde-format
-msgid "Time shift of %1 (%2)"
-msgstr "Tímahliðrun á %1 (%2)"
-
-#: timeshifter.cpp:568
-#, kde-format
-msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
-"TimeShifter::notifySoundStreamData: forrit steppti %1 bætum. Gögn töpuðust"
+
+#: rc.cpp:16
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: timeshifter-configuration.cpp:146
+#, kde-format
+msgid "any ( * )"
+msgstr "eitthvað ( * )"
 
 #: timeshifter.cpp:648
 #, kde-format

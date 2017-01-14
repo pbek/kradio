@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_radio\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-26 08:44+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -19,81 +19,19 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: radio-configuration.cpp:75
-#, kde-format
-msgctxt "Sound mode"
-msgid "<do not care>"
-msgstr "<nestarat se>"
+#. i18n: file: radio-configuration-ui.ui:110
+#. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:25 rc.cpp:106
+#, no-c-format, kde-format
+msgid " %"
+msgstr " %"
 
-#: radio-configuration.cpp:76
+#. i18n: file: radio-configuration-ui.ui:345
+#. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
+#: rc.cpp:64 rc.cpp:145
 #, kde-format
-msgctxt "Sound mode, monophonic"
-msgid "Mono"
-msgstr "Mono"
-
-#: radio-configuration.cpp:77
-#, kde-format
-msgctxt "Sound mode, stereophonic"
-msgid "Stereo"
-msgstr "Stereo"
-
-#: radio-configuration.cpp:80
-#, kde-format
-msgid "Load and replace presets"
-msgstr "Nahrát a nahradit přednastavení"
-
-#: radio-configuration.cpp:81
-#, kde-format
-msgid "Load and add presets"
-msgstr "Nahrát a přidat přednastavení"
-
-#: radio-configuration.cpp:422
-#, kde-format
-msgid "Image Selection"
-msgstr "Výběr symbolu"
-
-#: radio-configuration.cpp:427
-#, kde-format
-msgid "ignoring non-local image"
-msgstr "Ignorovat symboly, které nejsou místní"
-
-#: radio-configuration.cpp:543 radio-configuration.cpp:565
-#, kde-format
-msgid "KRadio Preset Files"
-msgstr "Soubory s přednastaveními vysílacích stanic pro KRadio"
-
-#: radio-configuration.cpp:543
-#, kde-format
-msgid "Select Preset File"
-msgstr "Vybrat soubor s přednastavením vysílacích stanic"
-
-#: radio-configuration.cpp:565
-#, kde-format
-msgid "Save Preset File"
-msgstr "Uložit soubor s přednastaveními"
-
-#: radio-configuration.cpp:611
-#, kde-format
-msgid "found %1 new station"
-msgid_plural "found %1 new stations"
-msgstr[0] "Byla nalezena %1 nová vysílací stanice"
-msgstr[1] "Byly nalezeny %1 nové vysílací stanice"
-msgstr[2] "Bylo nalezeno %1 nových vysílacích stanic"
-
-#: radio-configuration.cpp:613
-#, kde-format
-msgid "have now %1 station"
-msgid_plural "have now %1 stations"
-msgstr[0] "Po ruce je %1 nova vysílací stanice"
-msgstr[1] "Po ruce jsou %1 nové vysílací stanice"
-msgstr[2] "Po ruce je %1 nových vysílacích stanic"
-
-#: radio.cpp:41
-#, fuzzy, kde-format
-#| msgid "Central Radio Device Multiplexer"
-msgctxt "@title"
-msgid "Central Radio Device Multiplexer"
-msgstr "Ústřední zařízení rozhlasového multiplexu"
+msgid "&Now"
+msgstr "&Nyní"
 
 #: radio.cpp:43
 #, kde-format
@@ -101,17 +39,167 @@ msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: radio.cpp:47
+#: radio-configuration.cpp:78
 #, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
+msgctxt "Sound mode"
+msgid "<do not care>"
+msgstr "<nestarat se>"
+
+#. i18n: file: radio-configuration-ui.ui:424
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:79 rc.cpp:160
+#, kde-format
+msgid ""
+"<p align=\"center\">Click on the link below to contribute this station "
+"preset file to the kradio project.</p>"
 msgstr ""
+"<p align=\"center\">Klepněte na následující odkaz , abyste tímto "
+"přednastavením s vysílací stanicí přispěli projektu KRradio.</p>"
+
+#. i18n: file: radio-configuration-ui.ui:97
+#. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
+#: rc.cpp:15 rc.cpp:96
+#, kde-format
+msgid ""
+"<p>Select if you want to force the tuner to stereo/mono mode. <i>Please be "
+"aware, that some drivers might ignore this flag without saying they will "
+"ignore it.</i></p>"
+msgstr ""
+"<p>Vyberte, pokud si chcete vynutit, aby byl tuner v režimu stereo/mono. "
+"<i>Buďte si, prosím, vědom, že některé ovladače mohou tento příznak "
+"přehlížet, aniž by vás uvědomily o tom, že si jej nebudou všímat.</i></p>"
+
+#: radio.cpp:41
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Central Radio Device Multiplexer"
+msgstr "Ústřední zařízení rozhlasového multiplexu"
+
+#. i18n: file: radio-configuration-ui.ui:301
+#. i18n: ectx: property (text), widget (QLabel, labelCity)
+#: rc.cpp:58 rc.cpp:139
+#, kde-format
+msgid "City:"
+msgstr "Město:"
+
+#. i18n: file: radio-configuration-ui.ui:354
+#. i18n: ectx: property (text), widget (QLabel, labelComment)
+#: rc.cpp:67 rc.cpp:148
+#, kde-format
+msgid "Comment:"
+msgstr "Poznámka:"
+
+#: radio.cpp:194
+#, kde-format
+msgid "Could not find a plugin for radio station %1"
+msgstr "Nepodařilo se najít přídavný modul pro rozhlasovou stanici %1"
+
+#. i18n: file: radio-configuration-ui.ui:314
+#. i18n: ectx: property (text), widget (QLabel, labelCountry)
+#: rc.cpp:61 rc.cpp:142
+#, kde-format
+msgid "Country:"
+msgstr "Země:"
+
+#: radio-configuration.cpp:66
+#, kde-format
+msgid "Image Selection"
+msgstr "Výběr symbolu"
+
+#: radio-configuration.cpp:528 radio-configuration.cpp:550
+#, kde-format
+msgid "KRadio Preset Files"
+msgstr "Soubory s přednastaveními vysílacích stanic pro KRadio"
 
 #: radio.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
+
+#. i18n: file: radio-configuration-ui.ui:390
+#. i18n: ectx: property (text), widget (QLabel, labelLastChange)
+#: rc.cpp:76 rc.cpp:157
+#, kde-format
+msgid "Last change:"
+msgstr "Poslední změna:"
+
+#: radio-configuration.cpp:84
+#, kde-format
+msgid "Load and add presets"
+msgstr "Nahrát a přidat přednastavení"
+
+#: radio-configuration.cpp:83
+#, kde-format
+msgid "Load and replace presets"
+msgstr "Nahrát a nahradit přednastavení"
+
+#. i18n: file: radio-configuration-ui.ui:251
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:254
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:251
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
+#. i18n: file: radio-configuration-ui.ui:254
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
+#: rc.cpp:40 rc.cpp:43 rc.cpp:121 rc.cpp:124
+#, kde-format
+msgid "Load presets"
+msgstr "Nahrát přednastavení"
+
+#. i18n: file: radio-configuration-ui.ui:377
+#. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
+#: rc.cpp:73 rc.cpp:154
+#, kde-format
+msgid "Maintainer:"
+msgstr "Údržbář:"
+
+#: radio.cpp:47
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#. i18n: file: radio-configuration-ui.ui:367
+#. i18n: ectx: property (text), widget (QLabel, labelMedia)
+#: rc.cpp:70 rc.cpp:151
+#, kde-format
+msgid "Media:"
+msgstr "Média:"
+
+#: radio-configuration.cpp:79
+#, kde-format
+msgctxt "Sound mode, monophonic"
+msgid "Mono"
+msgstr "Mono"
+
+#. i18n: file: radio-configuration-ui.ui:42
+#. i18n: ectx: property (text), widget (QLabel, labelStationName)
+#: rc.cpp:6 rc.cpp:87
+#, kde-format
+msgid "Name:"
+msgstr "Název:"
+
+#. i18n: file: radio-configuration-ui.ui:286
+#. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
+#: rc.cpp:55 rc.cpp:136
+#, kde-format
+msgid "Personal preset file:"
+msgstr "Osobní soubor s přednastavením:"
+
+#. i18n: file: radio-configuration-ui.ui:76
+#. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
+#: rc.cpp:12 rc.cpp:93
+#, kde-format
+msgid "Pixmap file:"
+msgstr "Soubor s obrázkem:"
+
+#. i18n: file: radio-configuration-ui.ui:280
+#. i18n: ectx: attribute (title), widget (QWidget, About)
+#: rc.cpp:52 rc.cpp:133
+#, kde-format
+msgid "Preset &File"
+msgstr "&Soubor s přednastavením"
 
 #: radio.cpp:57
 #, kde-format
@@ -123,21 +211,53 @@ msgstr "Přídavný modul pro zařízení rozhlasového multiplexu"
 msgid "Radio Stations"
 msgstr "Rozhlasové vysílací stanice"
 
+#: radio-configuration.cpp:550
+#, kde-format
+msgid "Save Preset File"
+msgstr "Uložit soubor s přednastaveními"
+
+#. i18n: file: radio-configuration-ui.ui:264
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:267
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:264
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
+#. i18n: file: radio-configuration-ui.ui:267
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
+#: rc.cpp:46 rc.cpp:49 rc.cpp:127 rc.cpp:130
+#, kde-format
+msgid "Save presets as..."
+msgstr "Uložit přednastavení jako..."
+
+#. i18n: file: radio-configuration-ui.ui:238
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:241
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:238
+#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
+#. i18n: file: radio-configuration-ui.ui:241
+#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
+#: rc.cpp:34 rc.cpp:37 rc.cpp:115 rc.cpp:118
+#, kde-format
+msgid "Search stations"
+msgstr "Hledat vysílací stanice"
+
+#: radio-configuration.cpp:528
+#, kde-format
+msgid "Select Preset File"
+msgstr "Vybrat soubor s přednastavením vysílacích stanic"
+
 #: radio.cpp:153
 #, kde-format
 msgid "Setup Radio Stations"
 msgstr "Nastavit rozhlasové vysílací stanice"
 
-#: radio.cpp:194
+#. i18n: file: radio-configuration-ui.ui:59
+#. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
+#: rc.cpp:9 rc.cpp:90
 #, kde-format
-msgid "Could not find a plugin for radio station %1"
-msgstr "Nepodařilo se najít přídavný modul pro rozhlasovou stanici %1"
-
-#: radio.cpp:389
-#, kde-format
-msgctxt "Unknown description"
-msgid "unknown"
-msgstr "neznámý"
+msgid "Short name:"
+msgstr "Zkrácený název:"
 
 #. i18n: file: radio-configuration-ui.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, stations)
@@ -146,195 +266,32 @@ msgstr "neznámý"
 msgid "Station &Presets"
 msgstr "Přednastavení pro &vysílací stanice"
 
-#. i18n: file: radio-configuration-ui.ui:104
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
-#. i18n: file: radio-configuration-ui.ui:107
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
-#. i18n: file: radio-configuration-ui.ui:104
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonSearchStations)
-#. i18n: file: radio-configuration-ui.ui:107
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonSearchStations)
-#: rc.cpp:6 rc.cpp:9 rc.cpp:87 rc.cpp:90
+#: radio-configuration.cpp:80
 #, kde-format
-msgid "Search stations"
-msgstr "Hledat vysílací stanice"
+msgctxt "Sound mode, stereophonic"
+msgid "Stereo"
+msgstr "Stereo"
 
 #. i18n: file: radio-configuration-ui.ui:123
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
-#. i18n: file: radio-configuration-ui.ui:126
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
-#. i18n: file: radio-configuration-ui.ui:123
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonLoadPresets)
-#. i18n: file: radio-configuration-ui.ui:126
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonLoadPresets)
-#: rc.cpp:12 rc.cpp:15 rc.cpp:93 rc.cpp:96
-#, kde-format
-msgid "Load presets"
-msgstr "Nahrát přednastavení"
-
-#. i18n: file: radio-configuration-ui.ui:142
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
-#. i18n: file: radio-configuration-ui.ui:145
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
-#. i18n: file: radio-configuration-ui.ui:142
-#. i18n: ectx: property (toolTip), widget (KPushButton, buttonStorePresets)
-#. i18n: file: radio-configuration-ui.ui:145
-#. i18n: ectx: property (whatsThis), widget (KPushButton, buttonStorePresets)
-#: rc.cpp:18 rc.cpp:21 rc.cpp:99 rc.cpp:102
-#, kde-format
-msgid "Save presets as..."
-msgstr "Uložit přednastavení jako..."
-
-#. i18n: file: radio-configuration-ui.ui:184
-#. i18n: ectx: property (text), widget (QLabel, labelStationName)
-#: rc.cpp:24 rc.cpp:105
-#, kde-format
-msgid "Name:"
-msgstr "Název:"
-
-#. i18n: file: radio-configuration-ui.ui:208
-#. i18n: ectx: property (text), widget (QLabel, labelStationShortName)
-#: rc.cpp:27 rc.cpp:108
-#, kde-format
-msgid "Short name:"
-msgstr "Zkrácený název:"
-
-#. i18n: file: radio-configuration-ui.ui:232
-#. i18n: ectx: property (text), widget (QLabel, labelPixmapFile)
-#: rc.cpp:30 rc.cpp:111
-#, kde-format
-msgid "Pixmap file:"
-msgstr "Soubor s obrázkem:"
-
-#. i18n: file: radio-configuration-ui.ui:285
-#. i18n: ectx: property (toolTip), widget (KComboBox, comboStereoMode)
-#: rc.cpp:33 rc.cpp:114
-#, kde-format
-msgid ""
-"<p>Select if you want to force the tuner to stereo/mono mode. <i>Please be "
-"aware, that some drivers might ignore this flag without saying they will "
-"ignore it.</i></p>"
-msgstr ""
-"<p>Vyberte, pokud si chcete vynutit, aby byl tuner v režimu stereo/mono. "
-"<i>Buďte si, prosím, vědom, že některé ovladače mohou tento příznak "
-"přehlížet, aniž by vás uvědomily o tom, že si jej nebudou všímat.</i></p>"
-
-#. i18n: file: radio-configuration-ui.ui:298
-#. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:36 rc.cpp:117
-#, kde-format
-msgid "The volume that is used when the station is tuned"
-msgstr "Hlasitost používaná při ladění vysílací stanice"
-
-#. i18n: file: radio-configuration-ui.ui:301
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:39 rc.cpp:120
-#, fuzzy, kde-format
-#| msgid "unchanged"
-msgctxt "unchanged volume"
-msgid "unchanged"
-msgstr "nezměněno"
-
-#. i18n: file: radio-configuration-ui.ui:304
-#. i18n: ectx: property (suffix), widget (QSpinBox, editVolumePreset)
-#: rc.cpp:43 rc.cpp:124
-#, no-c-format, kde-format
-msgid " %"
-msgstr " %"
-
-#. i18n: file: radio-configuration-ui.ui:317
-#. i18n: ectx: property (text), widget (QLabel, labelStationShortName_2)
-#: rc.cpp:46 rc.cpp:127
+#. i18n: ectx: property (text), widget (QLabel, labelStereoMode)
+#: rc.cpp:28 rc.cpp:109
 #, kde-format
 msgid "Stereo mode:"
 msgstr "Režim sterea:"
 
-#. i18n: file: radio-configuration-ui.ui:327
+#. i18n: file: radio-configuration-ui.ui:104
+#. i18n: ectx: property (toolTip), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:18 rc.cpp:99
+#, kde-format
+msgid "The volume that is used when the station is tuned"
+msgstr "Hlasitost používaná při ladění vysílací stanice"
+
+#. i18n: file: radio-configuration-ui.ui:133
 #. i18n: ectx: property (text), widget (QLabel, labelVolumePreset)
-#: rc.cpp:49 rc.cpp:130
+#: rc.cpp:31 rc.cpp:112
 #, kde-format
 msgid "Volume preset:"
 msgstr "Přednastavení hlasitosti:"
-
-#. i18n: file: radio-configuration-ui.ui:374
-#. i18n: ectx: attribute (title), widget (QWidget, About)
-#: rc.cpp:52 rc.cpp:133
-#, kde-format
-msgid "Preset &File"
-msgstr "&Soubor s přednastavením"
-
-#. i18n: file: radio-configuration-ui.ui:383
-#. i18n: ectx: property (text), widget (QLabel, editLabelPresetFile)
-#: rc.cpp:55 rc.cpp:136
-#, kde-format
-msgid "Personal preset file:"
-msgstr "Osobní soubor s přednastavením:"
-
-#. i18n: file: radio-configuration-ui.ui:398
-#. i18n: ectx: property (text), widget (QLabel, labelCity)
-#: rc.cpp:58 rc.cpp:139
-#, kde-format
-msgid "City:"
-msgstr "Město:"
-
-#. i18n: file: radio-configuration-ui.ui:411
-#. i18n: ectx: property (text), widget (QLabel, labelCountry)
-#: rc.cpp:61 rc.cpp:142
-#, kde-format
-msgid "Country:"
-msgstr "Země:"
-
-#. i18n: file: radio-configuration-ui.ui:442
-#. i18n: ectx: property (text), widget (KPushButton, buttonLastChangeNow)
-#: rc.cpp:64 rc.cpp:145
-#, kde-format
-msgid "&Now"
-msgstr "&Nyní"
-
-#. i18n: file: radio-configuration-ui.ui:451
-#. i18n: ectx: property (text), widget (QLabel, labelComment)
-#: rc.cpp:67 rc.cpp:148
-#, kde-format
-msgid "Comment:"
-msgstr "Poznámka:"
-
-#. i18n: file: radio-configuration-ui.ui:464
-#. i18n: ectx: property (text), widget (QLabel, labelMedia)
-#: rc.cpp:70 rc.cpp:151
-#, kde-format
-msgid "Media:"
-msgstr "Média:"
-
-#. i18n: file: radio-configuration-ui.ui:474
-#. i18n: ectx: property (text), widget (QLabel, labelMaintainer)
-#: rc.cpp:73 rc.cpp:154
-#, kde-format
-msgid "Maintainer:"
-msgstr "Údržbář:"
-
-#. i18n: file: radio-configuration-ui.ui:487
-#. i18n: ectx: property (text), widget (QLabel, labelLastChange)
-#: rc.cpp:76 rc.cpp:157
-#, kde-format
-msgid "Last change:"
-msgstr "Poslední změna:"
-
-#. i18n: file: radio-configuration-ui.ui:521
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:79 rc.cpp:160
-#, kde-format
-msgid ""
-"<p align=\"center\">Click on the link below to contribute this station "
-"preset file to the kradio project.</p>"
-msgstr ""
-"<p align=\"center\">Klepněte na následující odkaz , abyste tímto "
-"přednastavením s vysílací stanicí přispěli projektu KRradio.</p>"
-
-#: rc.cpp:80
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Pavel Fric"
 
 #: rc.cpp:81
 #, kde-format
@@ -342,14 +299,41 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "fripohled.blogspot.com"
 
-#~ msgid "<do not care>"
-#~ msgstr "<nestarat se>"
+#: rc.cpp:80
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Pavel Fric"
 
-#~ msgid "Mono"
-#~ msgstr "Mono"
+#: radio-configuration.cpp:596
+#, kde-format
+msgid "found %1 new station"
+msgid_plural "found %1 new stations"
+msgstr[0] "Byla nalezena %1 nová vysílací stanice"
+msgstr[1] "Byly nalezeny %1 nové vysílací stanice"
+msgstr[2] "Bylo nalezeno %1 nových vysílacích stanic"
 
-#~ msgid "Stereo"
-#~ msgstr "Stereo"
+#: radio-configuration.cpp:598
+#, kde-format
+msgid "have now %1 station"
+msgid_plural "have now %1 stations"
+msgstr[0] "Po ruce je %1 nova vysílací stanice"
+msgstr[1] "Po ruce jsou %1 nové vysílací stanice"
+msgstr[2] "Po ruce je %1 nových vysílacích stanic"
+
+#. i18n: file: radio-configuration-ui.ui:107
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, editVolumePreset)
+#: rc.cpp:21 rc.cpp:102
+#, fuzzy, kde-format
+msgctxt "unchanged volume"
+msgid "unchanged"
+msgstr "nezměněno"
+
+#: radio.cpp:389
+#, kde-format
+msgctxt "Unknown description"
+msgid "unknown"
+msgstr "neznámý"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -378,14 +362,26 @@ msgstr "fripohled.blogspot.com"
 #~ "font-style:italic;\">Může se ale stát, že některé ovladače budou toto "
 #~ "nastavení pomíjet, aniž by vás o tom uvědomily.</span></p></body></html>"
 
-#~ msgid "Stations"
-#~ msgstr "Vysílací stanice"
+#~ msgid "<do not care>"
+#~ msgstr "<nestarat se>"
+
+#~ msgid "Additional &Information"
+#~ msgstr "Doplňkové &informace"
 
 #~ msgid "Load"
 #~ msgstr "Nahrát"
 
+#~ msgid "Mono"
+#~ msgstr "Mono"
+
 #~ msgid "Save As"
 #~ msgstr "Uložit jako"
 
-#~ msgid "Additional &Information"
-#~ msgstr "Doplňkové &informace"
+#~ msgid "Stations"
+#~ msgstr "Vysílací stanice"
+
+#~ msgid "Stereo"
+#~ msgstr "Stereo"
+
+#~ msgid "ignoring non-local image"
+#~ msgstr "Ignorovat symboly, které nejsou místní"

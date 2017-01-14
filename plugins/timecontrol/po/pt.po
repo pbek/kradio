@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2006-11-19 18:17+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#. i18n: file: timecontrol-configuration-ui.ui:19
-#. i18n: ectx: property (text), widget (QLabel, labelSleep)
-#: rc.cpp:3 rc.cpp:64
-#, fuzzy, kde-format
-msgid "Sleep countdown:"
-msgstr "contagem decrescente para dormir"
+#. i18n: file: timecontrol-configuration-ui.ui:189
+#. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
+#: rc.cpp:31 rc.cpp:92
+#, no-c-format, kde-format
+msgid " %"
+msgstr " %"
 
 #. i18n: file: timecontrol-configuration-ui.ui:29
 #. i18n: ectx: property (suffix), widget (QSpinBox, editSleep)
@@ -33,91 +33,24 @@ msgstr "contagem decrescente para dormir"
 msgid " min"
 msgstr " min"
 
-#. i18n: file: timecontrol-configuration-ui.ui:48
-#. i18n: ectx: property (text), widget (QCheckBox, cbSuspendOnSleep)
-#: rc.cpp:9 rc.cpp:70
+#: timecontrol-configuration.cpp:156 timecontrol-configuration.cpp:337
 #, kde-format
-msgid "Suspend computer on sleep"
+msgctxt "disabled alarm"
+msgid "%1 (disabled)"
 msgstr ""
 
-#. i18n: file: timecontrol-configuration-ui.ui:93
-#. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
-#: rc.cpp:12 rc.cpp:73
-#, fuzzy, kde-format
-msgid "Alarms:"
-msgstr "Alarmes"
-
-#. i18n: file: timecontrol-configuration-ui.ui:137
-#. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
-#: rc.cpp:15 rc.cpp:76
-#, fuzzy, kde-format
-msgid "Date:"
-msgstr "Data"
-
-#. i18n: file: timecontrol-configuration-ui.ui:153
-#. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
-#: rc.cpp:18 rc.cpp:79
+#: timecontrol.cpp:51
 #, kde-format
-msgid "dd.MM.yyyy"
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#. i18n: file: timecontrol-configuration-ui.ui:164
-#. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
-#: rc.cpp:21 rc.cpp:82
+#: timecontrol-configuration.cpp:226
 #, fuzzy, kde-format
-msgid "Time:"
-msgstr "Hora"
+msgid "<do not change>"
+msgstr "<não alterar>"
 
-#. i18n: file: timecontrol-configuration-ui.ui:180
-#. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
-#: rc.cpp:24 rc.cpp:85
-#, kde-format
-msgid "HH:mm:ss"
-msgstr ""
-
-#. i18n: file: timecontrol-configuration-ui.ui:191
-#. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
-#: rc.cpp:27 rc.cpp:88
-#, fuzzy, kde-format
-msgid "Volume:"
-msgstr "Volume"
-
-#. i18n: file: timecontrol-configuration-ui.ui:207
-#. i18n: ectx: property (suffix), widget (QSpinBox, editAlarmVolume)
-#: rc.cpp:31 rc.cpp:92
-#, no-c-format, kde-format
-msgid " %"
-msgstr " %"
-
-#. i18n: file: timecontrol-configuration-ui.ui:248
-#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
-#: rc.cpp:34 rc.cpp:95
-#, kde-format
-msgid "Daily/weekly"
-msgstr ""
-
-#. i18n: file: timecontrol-configuration-ui.ui:255
-#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
-#: rc.cpp:37 rc.cpp:98
-#, fuzzy, kde-format
-msgid "Enabled"
-msgstr "activado"
-
-#. i18n: file: timecontrol-configuration-ui.ui:262
-#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
-#: rc.cpp:40 rc.cpp:101
-#, kde-format
-msgid "Active weekdays:"
-msgstr ""
-
-#. i18n: file: timecontrol-configuration-ui.ui:271
-#. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
-#: rc.cpp:43 rc.cpp:104
-#, fuzzy, kde-format
-msgid "Radio station:"
-msgstr "Estação de Rádio"
-
-#. i18n: file: timecontrol-configuration-ui.ui:287
+#. i18n: file: timecontrol-configuration-ui.ui:273
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplate)
 #: rc.cpp:47 rc.cpp:108
 #, no-c-format, kde-format
@@ -129,89 +62,57 @@ msgid ""
 "second, <b>%%</b>: literal %)</i></p>"
 msgstr ""
 
-#. i18n: file: timecontrol-configuration-ui.ui:318
+#. i18n: file: timecontrol-configuration-ui.ui:244
+#. i18n: ectx: property (text), widget (QLabel, labelActiveWeekdays)
+#: rc.cpp:40 rc.cpp:101
+#, kde-format
+msgid "Active weekdays:"
+msgstr ""
+
+#: timecontrol.cpp:319
+#, kde-format
+msgid "Alarms"
+msgstr "Alarmes"
+
+#: timecontrol.cpp:47
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Alarms"
+msgstr "Alarmes"
+
+#. i18n: file: timecontrol-configuration-ui.ui:93
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmList)
+#: rc.cpp:12 rc.cpp:73
+#, fuzzy, kde-format
+msgid "Alarms:"
+msgstr "Alarmes"
+
+#. i18n: file: timecontrol-configuration-ui.ui:230
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmDaily)
+#: rc.cpp:34 rc.cpp:95
+#, kde-format
+msgid "Daily/weekly"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:137
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmDate)
+#: rc.cpp:15 rc.cpp:76
+#, fuzzy, kde-format
+msgid "Date:"
+msgstr "Data"
+
+#. i18n: file: timecontrol-configuration-ui.ui:237
+#. i18n: ectx: property (text), widget (QCheckBox, checkboxAlarmEnable)
+#: rc.cpp:37 rc.cpp:98
+#, fuzzy, kde-format
+msgid "Enabled"
+msgstr "activado"
+
+#. i18n: file: timecontrol-configuration-ui.ui:297
 #. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateFilename)
 #: rc.cpp:50 rc.cpp:111
 #, kde-format
 msgid "Filename:"
-msgstr ""
-
-#. i18n: file: timecontrol-configuration-ui.ui:325
-#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Title)
-#: rc.cpp:53 rc.cpp:114
-#, kde-format
-msgid "ID3 title:"
-msgstr ""
-
-#. i18n: file: timecontrol-configuration-ui.ui:332
-#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Artist)
-#: rc.cpp:56 rc.cpp:117
-#, kde-format
-msgid "ID3 artist:"
-msgstr ""
-
-#. i18n: file: timecontrol-configuration-ui.ui:339
-#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Genre)
-#: rc.cpp:59 rc.cpp:120
-#, kde-format
-msgid "ID3 genre:"
-msgstr ""
-
-#: rc.cpp:60
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
-
-#: rc.cpp:61
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: timecontrol-configuration.cpp:64
-#, kde-format
-msgid "Start Playing"
-msgstr "Iniciar Reprodução"
-
-#: timecontrol-configuration.cpp:65
-#, kde-format
-msgid "Stop Playing"
-msgstr "Parar Reprodução"
-
-#: timecontrol-configuration.cpp:66
-#, kde-format
-msgid "Start Recording"
-msgstr "Iniciar Gravação"
-
-#: timecontrol-configuration.cpp:67
-#, kde-format
-msgid "Stop Recording"
-msgstr "Parar Gravação"
-
-#: timecontrol-configuration.cpp:70
-#, fuzzy, kde-format
-msgid "unchanged"
-msgstr "<não alterar>"
-
-#: timecontrol-configuration.cpp:72
-#, kde-format
-msgid "Monday"
-msgstr ""
-
-#: timecontrol-configuration.cpp:73
-#, kde-format
-msgid "Tuesday"
-msgstr ""
-
-#: timecontrol-configuration.cpp:74
-#, kde-format
-msgid "Wednesday"
-msgstr ""
-
-#: timecontrol-configuration.cpp:75
-#, kde-format
-msgid "Thursday"
 msgstr ""
 
 #: timecontrol-configuration.cpp:76
@@ -219,56 +120,32 @@ msgstr ""
 msgid "Friday"
 msgstr ""
 
-#: timecontrol-configuration.cpp:77
+#. i18n: file: timecontrol-configuration-ui.ui:168
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, editAlarmTime)
+#: rc.cpp:24 rc.cpp:85
 #, kde-format
-msgid "Saturday"
+msgid "HH:mm:ss"
 msgstr ""
 
-#: timecontrol-configuration.cpp:78
+#. i18n: file: timecontrol-configuration-ui.ui:311
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Artist)
+#: rc.cpp:56 rc.cpp:117
 #, kde-format
-msgid "Sunday"
+msgid "ID3 artist:"
 msgstr ""
 
-#: timecontrol-configuration.cpp:156 timecontrol-configuration.cpp:337
+#. i18n: file: timecontrol-configuration-ui.ui:318
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Genre)
+#: rc.cpp:59 rc.cpp:120
 #, kde-format
-msgctxt "disabled alarm"
-msgid "%1 (disabled)"
+msgid "ID3 genre:"
 msgstr ""
 
-#: timecontrol-configuration.cpp:226
-#, fuzzy, kde-format
-msgid "<do not change>"
-msgstr "<não alterar>"
-
-#: timecontrol.cpp:47
-#, fuzzy, kde-format
-#| msgid "Alarms"
-msgctxt "@title"
-msgid "Alarms"
-msgstr "Alarmes"
-
-#: timecontrol.cpp:49
-#, fuzzy, kde-format
-#| msgid "Time Control and Alarm Functions"
-msgctxt "@title"
-msgid "Time Control and Alarm Functions"
-msgstr "Extensão de Controlo de Tempo e Funções de Alarme"
-
-#: timecontrol.cpp:51
+#. i18n: file: timecontrol-configuration-ui.ui:304
+#. i18n: ectx: property (text), widget (QLabel, labelRecordingTemplateID3Title)
+#: rc.cpp:53 rc.cpp:114
 #, kde-format
-msgctxt "@info:credit"
-msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
-
-#: timecontrol.cpp:52
-#, kde-format
-msgid "Provides alarms and sleep countdown."
-msgstr ""
-
-#: timecontrol.cpp:55
-#, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
+msgid "ID3 title:"
 msgstr ""
 
 #: timecontrol.cpp:56
@@ -277,30 +154,151 @@ msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: timecontrol.cpp:66
-#, fuzzy, kde-format
-msgid "Time Control Plugin"
-msgstr "Extensão de controlo de tempo"
-
-#: timecontrol.cpp:319
+#: timecontrol.cpp:55
 #, kde-format
-msgid "Alarms"
-msgstr "Alarmes"
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: timecontrol-configuration.cpp:72
+#, kde-format
+msgid "Monday"
+msgstr ""
+
+#: timecontrol.cpp:52
+#, kde-format
+msgid "Provides alarms and sleep countdown."
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:253
+#. i18n: ectx: property (text), widget (QLabel, labelStationSelection)
+#: rc.cpp:43 rc.cpp:104
+#, fuzzy, kde-format
+msgid "Radio station:"
+msgstr "Estação de Rádio"
+
+#: timecontrol-configuration.cpp:77
+#, kde-format
+msgid "Saturday"
+msgstr ""
 
 #: timecontrol.cpp:320
 #, kde-format
 msgid "Setup Alarms"
 msgstr "Configurar alertas"
 
-#~ msgid "daily"
-#~ msgstr "diário"
+#. i18n: file: timecontrol-configuration-ui.ui:19
+#. i18n: ectx: property (text), widget (QLabel, labelSleep)
+#: rc.cpp:3 rc.cpp:64
+#, fuzzy, kde-format
+msgid "Sleep countdown:"
+msgstr "contagem decrescente para dormir"
+
+#: timecontrol-configuration.cpp:64
+#, kde-format
+msgid "Start Playing"
+msgstr "Iniciar Reprodução"
+
+#: timecontrol-configuration.cpp:66
+#, kde-format
+msgid "Start Recording"
+msgstr "Iniciar Gravação"
+
+#: timecontrol-configuration.cpp:65
+#, kde-format
+msgid "Stop Playing"
+msgstr "Parar Reprodução"
+
+#: timecontrol-configuration.cpp:67
+#, kde-format
+msgid "Stop Recording"
+msgstr "Parar Gravação"
+
+#: timecontrol-configuration.cpp:78
+#, kde-format
+msgid "Sunday"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:48
+#. i18n: ectx: property (text), widget (QCheckBox, cbSuspendOnSleep)
+#: rc.cpp:9 rc.cpp:70
+#, kde-format
+msgid "Suspend computer on sleep"
+msgstr ""
+
+#: timecontrol-configuration.cpp:75
+#, kde-format
+msgid "Thursday"
+msgstr ""
+
+#: timecontrol.cpp:66
+#, fuzzy, kde-format
+msgid "Time Control Plugin"
+msgstr "Extensão de controlo de tempo"
+
+#: timecontrol.cpp:49
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Time Control and Alarm Functions"
+msgstr "Extensão de Controlo de Tempo e Funções de Alarme"
+
+#. i18n: file: timecontrol-configuration-ui.ui:158
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmTime)
+#: rc.cpp:21 rc.cpp:82
+#, fuzzy, kde-format
+msgid "Time:"
+msgstr "Hora"
+
+#: timecontrol-configuration.cpp:73
+#, kde-format
+msgid "Tuesday"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:179
+#. i18n: ectx: property (text), widget (QLabel, labelAlarmVolume)
+#: rc.cpp:27 rc.cpp:88
+#, fuzzy, kde-format
+msgid "Volume:"
+msgstr "Volume"
+
+#: timecontrol-configuration.cpp:74
+#, kde-format
+msgid "Wednesday"
+msgstr ""
+
+#: rc.cpp:61
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: rc.cpp:60
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#. i18n: file: timecontrol-configuration-ui.ui:147
+#. i18n: ectx: property (displayFormat), widget (QDateEdit, editAlarmDate)
+#: rc.cpp:18 rc.cpp:79
+#, kde-format
+msgid "dd.MM.yyyy"
+msgstr ""
+
+#: timecontrol-configuration.cpp:70
+#, fuzzy, kde-format
+msgid "unchanged"
+msgstr "<não alterar>"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "helio.guilherme@bluebottle.com"
 
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"
 #~ "Your names"
 #~ msgstr "Hélio \"RoadRunner\" Guilherme"
 
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr "helio.guilherme@bluebottle.com"
+#~ msgid "daily"
+#~ msgstr "diário"

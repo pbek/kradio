@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-18 15:23+0200\n"
 "Last-Translator: Ernst Martin Witte <emw-kradio@nocabal.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -18,24 +18,26 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: quickbar.cpp:44
-#, fuzzy, kde-format
-#| msgid "Quickbar"
-msgctxt "@title"
-msgid "Quickbar"
-msgstr "Kurzwahlfenster"
-
-#: quickbar.cpp:46
-#, fuzzy, kde-format
-#| msgid "Radio Station Quick Selection Toolbar"
-msgctxt "@title"
-msgid "Radio Station Quick Selection Toolbar"
-msgstr "Senderkurzwahlfenster"
-
 #: quickbar.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: quickbar.cpp:352
+#, kde-format
+msgid "KRadio4 Quickbar"
+msgstr "KRadio4 Kurzwahlfenster"
+
+#: quickbar.cpp:352
+#, kde-format
+msgid "KRadio4 Quickbar, %1"
+msgstr "KRadio4 Kurzwahlfenster, %1"
+
+#: quickbar.cpp:53
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
 msgstr ""
 
 #: quickbar.cpp:52
@@ -44,19 +46,14 @@ msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: quickbar.cpp:53
-#, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
-msgstr ""
-
-#: quickbar.cpp:63
-#, kde-format
-msgid "Quickbar Plugin"
-msgstr "Schnellauswahlfenster"
-
 #: quickbar.cpp:152
 #, kde-format
+msgid "Quickbar"
+msgstr "Kurzwahlfenster"
+
+#: quickbar.cpp:44
+#, fuzzy, kde-format
+msgctxt "@title"
 msgid "Quickbar"
 msgstr "Kurzwahlfenster"
 
@@ -65,27 +62,28 @@ msgstr "Kurzwahlfenster"
 msgid "Quickbar Configuration"
 msgstr "Konfiguration des Kurzwahlfensters"
 
-#: quickbar.cpp:355
+#: quickbar.cpp:63
 #, kde-format
-msgid "KRadio4 Quickbar, %1"
-msgstr "KRadio4 Kurzwahlfenster, %1"
+msgid "Quickbar Plugin"
+msgstr "Schnellauswahlfenster"
 
-#: quickbar.cpp:355
-#, kde-format
-msgid "KRadio4 Quickbar"
-msgstr "KRadio4 Kurzwahlfenster"
-
-#: rc.cpp:1
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Ernst Martin Witte"
+#: quickbar.cpp:46
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Radio Station Quick Selection Toolbar"
+msgstr "Senderkurzwahlfenster"
 
 #: rc.cpp:2
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emw@nocabal.de"
+
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ernst Martin Witte"
 
 #~ msgid "contentsDragEnterEvent accepted"
 #~ msgstr "contentsDragEnterEvent angenommen"

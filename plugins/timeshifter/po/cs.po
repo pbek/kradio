@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kradio4_plugin_timeshifter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-24 12:03+0200\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-22 22:45+0200\n"
 "Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -17,66 +17,53 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#. i18n: file: timeshifter-configuration-ui.ui:54
+#. i18n: file: timeshifter-configuration-ui.ui:59
 #. i18n: ectx: property (suffix), widget (QSpinBox, editTempFileSize)
-#: rc.cpp:3 rc.cpp:20
+#: rc.cpp:9 rc.cpp:26
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#. i18n: file: timeshifter-configuration-ui.ui:73
+#. i18n: file: timeshifter-configuration-ui.ui:49
 #. i18n: ectx: property (text), widget (QLabel, labelTempFileSize)
 #: rc.cpp:6 rc.cpp:23
 #, kde-format
 msgid "Maximum file size:"
 msgstr "Největší možná velikost souboru:"
 
-#. i18n: file: timeshifter-configuration-ui.ui:83
-#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
-#: rc.cpp:9 rc.cpp:26
-#, kde-format
-msgid "Playback mixer device:"
-msgstr "Směšovací zařízení pro přehrávání:"
-
-#. i18n: file: timeshifter-configuration-ui.ui:93
-#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
-#: rc.cpp:12 rc.cpp:29
-#, kde-format
-msgid "Temporary file:"
-msgstr "Dočasný soubor:"
-
-#. i18n: file: timeshifter-configuration-ui.ui:106
+#. i18n: file: timeshifter-configuration-ui.ui:91
 #. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerChannel)
 #: rc.cpp:15 rc.cpp:32
 #, kde-format
 msgid "Playback mixer channel:"
 msgstr "Směšovací kanál pro přehrávání:"
 
-#: rc.cpp:16
+#. i18n: file: timeshifter-configuration-ui.ui:78
+#. i18n: ectx: property (text), widget (QLabel, labelPlaybackMixerDevice)
+#: rc.cpp:12 rc.cpp:29
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
-
-#: rc.cpp:17
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: timeshifter-configuration.cpp:146
-#, kde-format
-msgid "any ( * )"
-msgstr "Jakýkoli ( * )"
+msgid "Playback mixer device:"
+msgstr "Směšovací zařízení pro přehrávání:"
 
 #: timeshifter-configuration.cpp:150
 #, kde-format
 msgid "Select TimeShifter Temporary File"
 msgstr "Vybrat dočasný soubor pro časově posunuté přehrávání"
 
+#. i18n: file: timeshifter-configuration-ui.ui:17
+#. i18n: ectx: property (text), widget (QLabel, labelTempFile)
+#: rc.cpp:3 rc.cpp:20
+#, kde-format
+msgid "Temporary file:"
+msgstr "Dočasný soubor:"
+
+#: timeshifter.cpp:222
+#, kde-format
+msgid "Time shift of %1 (%2)"
+msgstr "Časově posunuté přehrávání %1 (%2)"
+
 #: timeshifter.cpp:32
 #, fuzzy, kde-format
-#| msgid "TimeShift Support"
 msgctxt "@title"
 msgid "TimeShift Support"
 msgstr "Podpora pro časově posunuté přehrávání"
@@ -85,6 +72,13 @@ msgstr "Podpora pro časově posunuté přehrávání"
 #, kde-format
 msgid "TimeShifter Plugin"
 msgstr "Přídavný modul pro časově posunuté přehrávání"
+
+#: timeshifter.cpp:568
+#, kde-format
+msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgstr ""
+"TimeShifter::notifySoundStreamData: %1 bytů zvukových dat bylo přeskočeno a "
+"je ztraceno"
 
 #: timeshifter.cpp:140
 #, kde-format
@@ -96,17 +90,22 @@ msgstr "Časově posunuté přehrávání"
 msgid "Timeshifter Options"
 msgstr "Volby pro časově posunuté přehrávání"
 
-#: timeshifter.cpp:222
+#: rc.cpp:17
 #, kde-format
-msgid "Time shift of %1 (%2)"
-msgstr "Časově posunuté přehrávání %1 (%2)"
-
-#: timeshifter.cpp:568
-#, kde-format
-msgid "TimeShifter::notifySoundStreamData: clients skipped %1 bytes. Data Lost"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
-"TimeShifter::notifySoundStreamData: %1 bytů zvukových dat bylo přeskočeno a "
-"je ztraceno"
+
+#: rc.cpp:16
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: timeshifter-configuration.cpp:146
+#, kde-format
+msgid "any ( * )"
+msgstr "Jakýkoli ( * )"
 
 #: timeshifter.cpp:648
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2006-11-19 16:15+0000\n"
 "Last-Translator: Helio Guilherme <helio.guilherme@bluebottle.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -19,27 +19,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
+#: radioview_frequencyradio.cpp:384
+#, kde-format
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: radioview_frequencyradio.cpp:382
+#, kde-format
+msgid "%1 kHz"
+msgstr "%1 kHz"
+
+#: radioview.cpp:61
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:178
+#, kde-format
+msgid "10 min"
+msgstr "10 min"
+
+#: radioview.cpp:193
+#, fuzzy, kde-format
+msgid "120 min"
+msgstr "10 min"
+
+#: radioview.cpp:181
+#, kde-format
+msgid "15 min"
+msgstr "15 min"
+
+#: radioview.cpp:184
+#, kde-format
+msgid "30 min"
+msgstr "30 min"
+
+#: radioview.cpp:175
+#, kde-format
+msgid "5 min"
+msgstr "5 min"
+
+#: radioview.cpp:187
+#, kde-format
+msgid "60 min"
+msgstr "60 min"
+
+#: radioview.cpp:190
+#, fuzzy, kde-format
+msgid "90 min"
+msgstr "10 min"
+
+#: radioview.cpp:410
+#, fuzzy, kde-format
+msgid "<no preset defined>"
+msgstr "nenhuma prédefinição activa"
+
+#: radioview_frequencyradio.cpp:60
+#, kde-format
+msgid "AM"
+msgstr "AM"
+
 #: displaycfg.cpp:40
 #, fuzzy, kde-format
 msgid "Active text:"
 msgstr "Texto activo"
-
-#: displaycfg.cpp:41
-#, fuzzy, kde-format
-msgid "Inactive text:"
-msgstr "Texto inactivo"
 
 #: displaycfg.cpp:42
 #, fuzzy, kde-format
 msgid "Background color:"
 msgstr "Cor do fundo"
 
-#: displaycfg.cpp:43
+#: radioview_frequencyseeker.cpp:81
 #, fuzzy, kde-format
-#| msgid "Display"
-msgctxt "Font used for the display"
-msgid "Display font:"
-msgstr "Écran"
+msgid "Change frequency"
+msgstr "Alterar Frequência"
+
+#: radioview_volume.cpp:57
+#, fuzzy, kde-format
+msgid "Change volume"
+msgstr "Alterar Volume"
 
 #: nosizefontrequester.cpp:37
 #, kde-format
@@ -53,11 +112,134 @@ msgctxt "@info:tooltip"
 msgid "Click to select a font"
 msgstr ""
 
+#: radioview.cpp:237
+#, kde-format
+msgid "Configure KRadio"
+msgstr "Configurar KRadio"
+
+#: radioview_frequencyseeker.cpp:79
+#, fuzzy, kde-format
+msgid "Decrement frequency"
+msgstr "Decrementar Frequência "
+
+#: radioview.cpp:716
+#, kde-format
+msgid "Display"
+msgstr "Écran"
+
+#: radioview.cpp:717
+#, kde-format
+msgid "Display Configuration"
+msgstr "Configuração do Écran"
+
+#: displaycfg.cpp:43
+#, fuzzy, kde-format
+msgctxt "Font used for the display"
+msgid "Display font:"
+msgstr "Écran"
+
+#: radioview_frequencyradio.cpp:61
+#, kde-format
+msgid "FM"
+msgstr "FM"
+
+#: radioview_frequencyradio.cpp:135 radioview_frequencyradio.cpp:136
+#, kde-format
+msgid "Frequency Display"
+msgstr "Écran das Frequências"
+
+#: radioview.cpp:243
+#, kde-format
+msgid "Help about KRadio and KDE"
+msgstr ""
+
+#: displaycfg.cpp:41
+#, fuzzy, kde-format
+msgid "Inactive text:"
+msgstr "Texto inactivo"
+
+#: radioview_frequencyseeker.cpp:80
+#, fuzzy, kde-format
+msgid "Increment frequency"
+msgstr "Incrementar Frequência"
+
+#: radioview.cpp:66
+#, kde-format
+msgctxt "@info:credit"
+msgid "Klas Kalass"
+msgstr ""
+
+#: radioview.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
+
+#: radioview_frequencyradio.cpp:63
+#, kde-format
+msgid "NET"
+msgstr ""
+
+#: radioview.cpp:161
+#, kde-format
+msgid "Pause KRadio"
+msgstr "Pausar KRadio"
+
+#: radioview.cpp:623
+#, kde-format
+msgid "Pause playback"
+msgstr ""
+
+#: radioview.cpp:238
+#, fuzzy, kde-format
+msgid "Power on/off"
+msgstr "Ligar/Desligar"
+
+#: radioview.cpp:239
+#, fuzzy, kde-format
+msgid "Quit KRadio application"
+msgstr "Sair do KRadio"
+
+#: radioview_frequencyradio.cpp:62
+#, kde-format
+msgid "RDS"
+msgstr ""
+
+#: radioview.cpp:76
+#, kde-format
+msgid "Radio Display"
+msgstr "Écran do Rádio"
+
+#: radioview.cpp:619
+#, kde-format
+msgid "Resume playback"
+msgstr ""
+
+#: radioview_frequencyseeker.cpp:78
+#, fuzzy, kde-format
+msgid "Search for next radio station"
+msgstr "Procurar Estação de Rádio Seguinte"
+
+#: radioview_frequencyseeker.cpp:77
+#, fuzzy, kde-format
+msgid "Search for previous radio station"
+msgstr "Procurar Estação de Rádio Anterior"
+
 #: nosizefontrequester.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Font"
 msgstr ""
+
+#: radioview.cpp:244
+#, fuzzy, kde-format
+msgid "Select a radio station"
+msgstr "Seleccionar uma Estação de Rádio"
+
+#: radioview.cpp:242
+#, fuzzy, kde-format
+msgid "Show/hide plugins"
+msgstr "Mostrar/Esconder Extensões"
 
 #: radioview.cpp:57
 #, fuzzy, kde-format
@@ -71,88 +253,10 @@ msgctxt "@title"
 msgid "Standard Radio Display"
 msgstr "Écran Normal do KRadio"
 
-#: radioview.cpp:61
-#, kde-format
-msgctxt "@info:credit"
-msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
-msgstr ""
-
-#: radioview.cpp:65
-#, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
-msgstr ""
-
-#: radioview.cpp:66
-#, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
-msgstr ""
-
-#: radioview.cpp:76
-#, kde-format
-msgid "Radio Display"
-msgstr "Écran do Rádio"
-
-#: radioview.cpp:161
-#, kde-format
-msgid "Pause KRadio"
-msgstr "Pausar KRadio"
-
 #: radioview.cpp:166
 #, kde-format
 msgid "Start Recording"
 msgstr "Iniciar Gravação"
-
-#: radioview.cpp:175
-#, kde-format
-msgid "5 min"
-msgstr "5 min"
-
-#: radioview.cpp:178
-#, kde-format
-msgid "10 min"
-msgstr "10 min"
-
-#: radioview.cpp:181
-#, kde-format
-msgid "15 min"
-msgstr "15 min"
-
-#: radioview.cpp:184
-#, kde-format
-msgid "30 min"
-msgstr "30 min"
-
-#: radioview.cpp:187
-#, kde-format
-msgid "60 min"
-msgstr "60 min"
-
-#: radioview.cpp:190
-#, fuzzy, kde-format
-msgid "90 min"
-msgstr "10 min"
-
-#: radioview.cpp:193
-#, fuzzy, kde-format
-msgid "120 min"
-msgstr "10 min"
-
-#: radioview.cpp:237
-#, kde-format
-msgid "Configure KRadio"
-msgstr "Configurar KRadio"
-
-#: radioview.cpp:238
-#, fuzzy, kde-format
-msgid "Power on/off"
-msgstr "Ligar/Desligar"
-
-#: radioview.cpp:239
-#, fuzzy, kde-format
-msgid "Quit KRadio application"
-msgstr "Sair do KRadio"
 
 #: radioview.cpp:240
 #, fuzzy, kde-format
@@ -164,121 +268,10 @@ msgstr "Iniciar/Parar Gravação"
 msgid "Start/stop sleep countdown"
 msgstr "Iniciar/Parar Contagem Decrescente para Dormir"
 
-#: radioview.cpp:242
-#, fuzzy, kde-format
-msgid "Show/hide plugins"
-msgstr "Mostrar/Esconder Extensões"
-
-#: radioview.cpp:243
-#, kde-format
-msgid "Help about KRadio and KDE"
-msgstr ""
-
-#: radioview.cpp:244
-#, fuzzy, kde-format
-msgid "Select a radio station"
-msgstr "Seleccionar uma Estação de Rádio"
-
-#: radioview.cpp:417
-#, fuzzy, kde-format
-msgid "<no preset defined>"
-msgstr "nenhuma prédefinição activa"
-
-#: radioview.cpp:573 radioview.cpp:643
+#: radioview.cpp:566 radioview.cpp:636
 #, kde-format
 msgid "Stop Recording of %1"
 msgstr "Parar a Gravação de %1"
-
-#: radioview.cpp:626
-#, kde-format
-msgid "Resume playback"
-msgstr ""
-
-#: radioview.cpp:630
-#, kde-format
-msgid "Pause playback"
-msgstr ""
-
-#: radioview.cpp:723
-#, kde-format
-msgid "Display"
-msgstr "Écran"
-
-#: radioview.cpp:724
-#, kde-format
-msgid "Display Configuration"
-msgstr "Configuração do Écran"
-
-#: radioview_frequencyradio.cpp:60
-#, kde-format
-msgid "AM"
-msgstr "AM"
-
-#: radioview_frequencyradio.cpp:61
-#, kde-format
-msgid "FM"
-msgstr "FM"
-
-#: radioview_frequencyradio.cpp:62
-#, kde-format
-msgid "RDS"
-msgstr ""
-
-#: radioview_frequencyradio.cpp:63
-#, kde-format
-msgid "NET"
-msgstr ""
-
-#: radioview_frequencyradio.cpp:135 radioview_frequencyradio.cpp:136
-#, kde-format
-msgid "Frequency Display"
-msgstr "Écran das Frequências"
-
-#: radioview_frequencyradio.cpp:377
-#, kde-format
-msgid "%1 kHz"
-msgstr "%1 kHz"
-
-#: radioview_frequencyradio.cpp:379
-#, kde-format
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: radioview_frequencyseeker.cpp:77
-#, fuzzy, kde-format
-msgid "Search for previous radio station"
-msgstr "Procurar Estação de Rádio Anterior"
-
-#: radioview_frequencyseeker.cpp:78
-#, fuzzy, kde-format
-msgid "Search for next radio station"
-msgstr "Procurar Estação de Rádio Seguinte"
-
-#: radioview_frequencyseeker.cpp:79
-#, fuzzy, kde-format
-msgid "Decrement frequency"
-msgstr "Decrementar Frequência "
-
-#: radioview_frequencyseeker.cpp:80
-#, fuzzy, kde-format
-msgid "Increment frequency"
-msgstr "Incrementar Frequência"
-
-#: radioview_frequencyseeker.cpp:81
-#, fuzzy, kde-format
-msgid "Change frequency"
-msgstr "Alterar Frequência"
-
-#: radioview_volume.cpp:57
-#, fuzzy, kde-format
-msgid "Change volume"
-msgstr "Alterar Volume"
-
-#: rc.cpp:1
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
 
 #: rc.cpp:2
 #, kde-format
@@ -286,16 +279,21 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#~ msgid "RadioView_SeekInterface"
-#~ msgstr "RadioView_SeekInterface"
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
 
-#, fuzzy
-#~ msgid "Search previous station"
-#~ msgstr "procurar estação anterior"
+#~ msgid "Common"
+#~ msgstr "Comum"
 
 #, fuzzy
 #~ msgid "Decrease frequency by 0.05 MHz"
 #~ msgstr "decrementar frequência em 0.05 MHz"
+
+#~ msgid "Display Colors"
+#~ msgstr "Cores do écran"
 
 #, fuzzy
 #~ msgctxt "Frequency"
@@ -306,25 +304,26 @@ msgstr ""
 #~ msgid "Increase frequency by 0.05 MHz"
 #~ msgstr "incrementar frequência em 0.05 MHz"
 
+#~ msgid "RadioView_SeekInterface"
+#~ msgstr "RadioView_SeekInterface"
+
 #, fuzzy
 #~ msgid "Search next station"
 #~ msgstr "procurar estação seguinte"
 
-#~ msgid "Display Colors"
-#~ msgstr "Cores do écran"
-
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Hélio \"RoadRunner\" Guilherme"
+#, fuzzy
+#~ msgid "Search previous station"
+#~ msgstr "procurar estação anterior"
 
 #~ msgid ""
 #~ "_: EMAIL OF TRANSLATORS\n"
 #~ "Your emails"
 #~ msgstr "helio.guilherme@bluebottle.com"
 
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Hélio \"RoadRunner\" Guilherme"
+
 #~ msgid "set Toolbar-Flag for Display"
 #~ msgstr "activar o indicador de barra de ferramentas para o Écran"
-
-#~ msgid "Common"
-#~ msgstr "Comum"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2012-08-14 16:00+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -18,105 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: docking-configuration.cpp:110
-#, fuzzy, kde-format
-msgid "Mouse click on tray icon:"
-msgstr "Kliknutie na Tray ikonu"
-
-#: docking-configuration.cpp:111 docking-configuration.cpp:116
-#, fuzzy, kde-format
-msgctxt "Mouse button"
-msgid "Left:"
-msgstr "Vľavo"
-
-#: docking-configuration.cpp:112 docking-configuration.cpp:117
-#, fuzzy, kde-format
-msgctxt "Mouse button"
-msgid "Right:"
-msgstr "Vpravo"
-
-#: docking-configuration.cpp:113 docking-configuration.cpp:118
-#, fuzzy, kde-format
-msgctxt "Mouse button"
-msgid "Middle:"
-msgstr "Stred"
-
-#: docking-configuration.cpp:115
-#, fuzzy, kde-format
-msgid "Mouse double-click on tray icon:"
-msgstr "Dvojklik na Tray ikonu"
-
-#: docking-configuration.cpp:120
-#, fuzzy, kde-format
-msgid "Mouse wheel action on tray icon:"
-msgstr "Akcia kolieska na Tray ikonu"
-
-#: docking-configuration.cpp:126 docking-configuration.cpp:136
+#: docking.cpp:315
 #, kde-format
-msgid "No Action"
-msgstr "Žiadna akcia"
-
-#: docking-configuration.cpp:127
-#, kde-format
-msgid "Show/Hide Windows"
-msgstr "Zobraziť/Skryť okná"
-
-#: docking-configuration.cpp:128
-#, kde-format
-msgid "Power On/Off"
-msgstr "Zapnúť/Vypnúť"
-
-#: docking-configuration.cpp:129
-#, kde-format
-msgid "Pause/Play"
-msgstr "Pozastaviť/Hrať"
-
-#: docking-configuration.cpp:130 docking.cpp:291
-#, kde-format
-msgid "Recording"
-msgstr "Nahrávanie"
-
-#: docking-configuration.cpp:131
-#, kde-format
-msgid "System Tray Menu"
-msgstr "Ponuka System Tray"
-
-#: docking-configuration.cpp:132
-#, kde-format
-msgid "GUI-Plugin Menu"
-msgstr "GUI-Ponuka pluginu"
-
-#: docking-configuration.cpp:133
-#, kde-format
-msgid "Configuration"
-msgstr "Nastavenie"
-
-#: docking-configuration.cpp:137
-#, kde-format
-msgid "Change Station"
-msgstr "Zmeniť stanicu"
-
-#: docking-configuration.cpp:138
-#, kde-format
-msgid "Change Volume"
-msgstr "Zmeniť hlasitosť"
-
-#: docking-configuration.cpp:139
-#, kde-format
-msgid "Change Frequency"
-msgstr "Zmeniť frekvenciu"
-
-#: docking.cpp:45
-#, kde-format
-msgctxt "@title"
-msgid "Docking Menu"
-msgstr ""
-
-#: docking.cpp:47
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "System Tray Icon/Menu"
-msgstr "Ikona v systémovej časti panelu"
+msgid "&Quit"
+msgstr "&Koniec"
 
 #: docking.cpp:49
 #, kde-format
@@ -124,11 +29,46 @@ msgctxt "@info:credit"
 msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: docking.cpp:53
+#: docking.cpp:496
 #, kde-format
-msgctxt "@info:credit"
-msgid "Martin Witte"
+msgid "<no alarm pending>"
+msgstr "<alarm neaktívny>"
+
+#: docking-configuration.cpp:135
+#, kde-format
+msgid "Change Frequency"
+msgstr "Zmeniť frekvenciu"
+
+#: docking-configuration.cpp:133
+#, kde-format
+msgid "Change Station"
+msgstr "Zmeniť stanicu"
+
+#: docking-configuration.cpp:134
+#, kde-format
+msgid "Change Volume"
+msgstr "Zmeniť hlasitosť"
+
+#: docking-configuration.cpp:129
+#, kde-format
+msgid "Configuration"
+msgstr "Nastavenie"
+
+#: docking.cpp:45
+#, kde-format
+msgctxt "@title"
+msgid "Docking Menu"
 msgstr ""
+
+#: docking-configuration.cpp:128
+#, kde-format
+msgid "GUI-Plugin Menu"
+msgstr "GUI-Ponuka pluginu"
+
+#: docking.cpp:485
+#, kde-format
+msgid "KRadio: %1"
+msgstr "KRadio: %1"
 
 #: docking.cpp:54
 #, kde-format
@@ -136,20 +76,89 @@ msgctxt "@info:credit"
 msgid "Klas Kalass"
 msgstr ""
 
-#: docking.cpp:66
-#, kde-format
-msgid "System Tray Plugin"
-msgstr "Plugin System Tray"
+#: docking-configuration.cpp:107 docking-configuration.cpp:112
+#, fuzzy, kde-format
+msgctxt "Mouse button"
+msgid "Left:"
+msgstr "Vľavo"
 
-#: docking.cpp:251
+#: docking.cpp:53
 #, kde-format
-msgid "System Tray Icon"
-msgstr "Ikona v systémovej časti panelu"
+msgctxt "@info:credit"
+msgid "Martin Witte"
+msgstr ""
 
-#: docking.cpp:252
+#: docking-configuration.cpp:109 docking-configuration.cpp:114
+#, fuzzy, kde-format
+msgctxt "Mouse button"
+msgid "Middle:"
+msgstr "Stred"
+
+#: docking-configuration.cpp:106
+#, fuzzy, kde-format
+msgid "Mouse click on tray icon:"
+msgstr "Kliknutie na Tray ikonu"
+
+#: docking-configuration.cpp:111
+#, fuzzy, kde-format
+msgid "Mouse double-click on tray icon:"
+msgstr "Dvojklik na Tray ikonu"
+
+#: docking-configuration.cpp:116
+#, fuzzy, kde-format
+msgid "Mouse wheel action on tray icon:"
+msgstr "Akcia kolieska na Tray ikonu"
+
+#: docking-configuration.cpp:122 docking-configuration.cpp:132
 #, kde-format
-msgid "System Tray Icon Configuration"
-msgstr "Nastavenie ikony System Tray"
+msgid "No Action"
+msgstr "Žiadna akcia"
+
+#: docking.cpp:296
+#, kde-format
+msgid "Pause Radio"
+msgstr "Pozastaviť rádio"
+
+#: docking.cpp:916
+#, kde-format
+msgid "Pause playback"
+msgstr "Pozastaviť prehrávanie"
+
+#: docking-configuration.cpp:125
+#, kde-format
+msgid "Pause/Play"
+msgstr "Pozastaviť/Hrať"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power Off"
+msgstr "Vypnúť"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power On"
+msgstr "Zapnúť"
+
+#: docking-configuration.cpp:124
+#, kde-format
+msgid "Power On/Off"
+msgstr "Zapnúť/Vypnúť"
+
+#: docking-configuration.cpp:126 docking.cpp:291
+#, kde-format
+msgid "Recording"
+msgstr "Nahrávanie"
+
+#: docking.cpp:912
+#, kde-format
+msgid "Resume playback"
+msgstr "Pokračovať v prehrávaní"
+
+#: docking-configuration.cpp:108 docking-configuration.cpp:113
+#, fuzzy, kde-format
+msgctxt "Mouse button"
+msgid "Right:"
+msgstr "Vpravo"
 
 #: docking.cpp:281
 #, kde-format
@@ -161,80 +170,67 @@ msgstr "Hľadať nasledovnú stanicu"
 msgid "Search Previous Station"
 msgstr "Hľadať predošlú stanicu"
 
-#: docking.cpp:296
-#, kde-format
-msgid "Pause Radio"
-msgstr "Pozastaviť rádio"
-
 #: docking.cpp:307
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Zobraziť/Skryť pluginy"
 
-#: docking.cpp:315
+#: docking-configuration.cpp:123
 #, kde-format
-msgid "&Quit"
-msgstr "&Koniec"
+msgid "Show/Hide Windows"
+msgstr "Zobraziť/Skryť okná"
 
-#: docking.cpp:440
-#, kde-format
-msgid "Stop Sleep Countdown (running until %1)"
-msgstr "Zastaviť odpočet uspania (beží do %1)"
-
-#: docking.cpp:443 docking.cpp:452 docking.cpp:460
-#, kde-format
-msgid "Start Sleep Countdown"
-msgstr "Spustiť odpočet uspania"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power Off"
-msgstr "Vypnúť"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power On"
-msgstr "Zapnúť"
-
-#: docking.cpp:483 docking.cpp:501
-#, kde-format
-msgid "invalid station"
-msgstr "neplatná stanica"
-
-#: docking.cpp:484
-#, kde-format
-msgid "KRadio: %1"
-msgstr "KRadio: %1"
-
-#: docking.cpp:493
-#, kde-format
-msgid "next alarm: %1"
-msgstr "ďalší alarm: %1"
-
-#: docking.cpp:495
-#, kde-format
-msgid "<no alarm pending>"
-msgstr "<alarm neaktívny>"
-
-#: docking.cpp:761 docking.cpp:864 docking.cpp:922
-#, kde-format
-msgid "Stop Recording of %1"
-msgstr "Zastaviť nahrávanie %1"
-
-#: docking.cpp:850
+#: docking.cpp:858
 #, kde-format
 msgid "Start Recording"
 msgstr "Spustiť nahrávanie"
 
-#: docking.cpp:904
+#: docking.cpp:444 docking.cpp:453 docking.cpp:461
 #, kde-format
-msgid "Resume playback"
-msgstr "Pokračovať v prehrávaní"
+msgid "Start Sleep Countdown"
+msgstr "Spustiť odpočet uspania"
 
-#: docking.cpp:908
+#: docking.cpp:769 docking.cpp:872 docking.cpp:930
 #, kde-format
-msgid "Pause playback"
-msgstr "Pozastaviť prehrávanie"
+msgid "Stop Recording of %1"
+msgstr "Zastaviť nahrávanie %1"
+
+#: docking.cpp:441
+#, kde-format
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Zastaviť odpočet uspania (beží do %1)"
+
+#: docking.cpp:251
+#, kde-format
+msgid "System Tray Icon"
+msgstr "Ikona v systémovej časti panelu"
+
+#: docking.cpp:252
+#, kde-format
+msgid "System Tray Icon Configuration"
+msgstr "Nastavenie ikony System Tray"
+
+#: docking.cpp:47
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "System Tray Icon/Menu"
+msgstr "Ikona v systémovej časti panelu"
+
+#: docking-configuration.cpp:127
+#, kde-format
+msgid "System Tray Menu"
+msgstr "Ponuka System Tray"
+
+#: docking.cpp:66
+#, kde-format
+msgid "System Tray Plugin"
+msgstr "Plugin System Tray"
+
+#: rc.cpp:2
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
 
 #: rc.cpp:1
 #, kde-format
@@ -242,11 +238,18 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Roman Paholík"
 
-#: rc.cpp:2
+#: docking.cpp:484 docking.cpp:502
 #, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "wizzardsk@gmail.com"
+msgid "invalid station"
+msgstr "neplatná stanica"
+
+#: docking.cpp:494
+#, kde-format
+msgid "next alarm: %1"
+msgstr "ďalší alarm: %1"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Ikona System Tray/Menu pre KRadio"
 
 #, fuzzy
 #~ msgctxt "Mouse button"
@@ -257,6 +260,3 @@ msgstr "wizzardsk@gmail.com"
 #~ msgctxt "Mouse button"
 #~ msgid "XButton2:"
 #~ msgstr "XButton2"
-
-#~ msgid "System Tray Icon/Menu for KRadio"
-#~ msgstr "Ikona System Tray/Menu pre KRadio"

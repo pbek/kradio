@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-01-11 00:34+0100\n"
+"POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2009-11-07 23:36-0300\n"
 "Last-Translator: Márcio Moraes <marciopanto@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-doc@kde.org>\n"
@@ -20,93 +20,41 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Language: pt_BR\n"
 
-#: docking-configuration.cpp:110
-#, fuzzy, kde-format
-msgid "Mouse click on tray icon:"
-msgstr "Clique com o botão esquerdo do mouse na bandeja"
-
-#: docking-configuration.cpp:111 docking-configuration.cpp:116
+#: docking.cpp:315
 #, kde-format
-msgctxt "Mouse button"
-msgid "Left:"
+msgid "&Quit"
+msgstr "&Sair"
+
+#: docking.cpp:49
+#, kde-format
+msgctxt "@info:credit"
+msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
 msgstr ""
 
-#: docking-configuration.cpp:112 docking-configuration.cpp:117
+#: docking.cpp:496
 #, kde-format
-msgctxt "Mouse button"
-msgid "Right:"
-msgstr ""
+msgid "<no alarm pending>"
+msgstr "<nenhum alarme pendente>"
 
-#: docking-configuration.cpp:113 docking-configuration.cpp:118
+#: docking-configuration.cpp:135
 #, kde-format
-msgctxt "Mouse button"
-msgid "Middle:"
-msgstr ""
-
-#: docking-configuration.cpp:115
-#, fuzzy, kde-format
-msgid "Mouse double-click on tray icon:"
-msgstr "Clique com o botão esquerdo do mouse na bandeja"
-
-#: docking-configuration.cpp:120
-#, fuzzy, kde-format
-msgid "Mouse wheel action on tray icon:"
-msgstr "Clique com o botão esquerdo do mouse na bandeja"
-
-#: docking-configuration.cpp:126 docking-configuration.cpp:136
-#, kde-format
-msgid "No Action"
-msgstr ""
-
-#: docking-configuration.cpp:127
-#, fuzzy, kde-format
-msgid "Show/Hide Windows"
-msgstr "Mostrar/Ocultar plug-ins"
-
-#: docking-configuration.cpp:128
-#, kde-format
-msgid "Power On/Off"
-msgstr "Ligar/Desligar"
-
-#: docking-configuration.cpp:129
-#, fuzzy, kde-format
-msgid "Pause/Play"
-msgstr "Pausar reprodução"
-
-#: docking-configuration.cpp:130 docking.cpp:291
-#, kde-format
-msgid "Recording"
-msgstr "Gravando"
-
-#: docking-configuration.cpp:131
-#, fuzzy, kde-format
-msgid "System Tray Menu"
-msgstr "Ícone da bandeja do sistema"
-
-#: docking-configuration.cpp:132
-#, kde-format
-msgid "GUI-Plugin Menu"
+msgid "Change Frequency"
 msgstr ""
 
 #: docking-configuration.cpp:133
 #, fuzzy, kde-format
-msgid "Configuration"
-msgstr "Configuração do ícone da bandeja do sistema"
-
-#: docking-configuration.cpp:137
-#, fuzzy, kde-format
 msgid "Change Station"
 msgstr "Pesquisar próxima estação"
 
-#: docking-configuration.cpp:138
+#: docking-configuration.cpp:134
 #, kde-format
 msgid "Change Volume"
 msgstr ""
 
-#: docking-configuration.cpp:139
-#, kde-format
-msgid "Change Frequency"
-msgstr ""
+#: docking-configuration.cpp:129
+#, fuzzy, kde-format
+msgid "Configuration"
+msgstr "Configuração do ícone da bandeja do sistema"
 
 #: docking.cpp:45
 #, kde-format
@@ -114,16 +62,26 @@ msgctxt "@title"
 msgid "Docking Menu"
 msgstr ""
 
-#: docking.cpp:47
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "System Tray Icon/Menu"
-msgstr "Ícone da bandeja do sistema"
+#: docking-configuration.cpp:128
+#, kde-format
+msgid "GUI-Plugin Menu"
+msgstr ""
 
-#: docking.cpp:49
+#: docking.cpp:485
+#, kde-format
+msgid "KRadio: %1"
+msgstr "KRadio: %1"
+
+#: docking.cpp:54
 #, kde-format
 msgctxt "@info:credit"
-msgid "(c) 2002-2005 Martin Witte, Klas Kalass"
+msgid "Klas Kalass"
+msgstr ""
+
+#: docking-configuration.cpp:107 docking-configuration.cpp:112
+#, kde-format
+msgctxt "Mouse button"
+msgid "Left:"
 msgstr ""
 
 #: docking.cpp:53
@@ -132,26 +90,77 @@ msgctxt "@info:credit"
 msgid "Martin Witte"
 msgstr ""
 
-#: docking.cpp:54
+#: docking-configuration.cpp:109 docking-configuration.cpp:114
 #, kde-format
-msgctxt "@info:credit"
-msgid "Klas Kalass"
+msgctxt "Mouse button"
+msgid "Middle:"
 msgstr ""
 
-#: docking.cpp:66
-#, kde-format
-msgid "System Tray Plugin"
-msgstr "Plug-in da bandeja do sistema"
+#: docking-configuration.cpp:106
+#, fuzzy, kde-format
+msgid "Mouse click on tray icon:"
+msgstr "Clique com o botão esquerdo do mouse na bandeja"
 
-#: docking.cpp:251
-#, kde-format
-msgid "System Tray Icon"
-msgstr "Ícone da bandeja do sistema"
+#: docking-configuration.cpp:111
+#, fuzzy, kde-format
+msgid "Mouse double-click on tray icon:"
+msgstr "Clique com o botão esquerdo do mouse na bandeja"
 
-#: docking.cpp:252
+#: docking-configuration.cpp:116
+#, fuzzy, kde-format
+msgid "Mouse wheel action on tray icon:"
+msgstr "Clique com o botão esquerdo do mouse na bandeja"
+
+#: docking-configuration.cpp:122 docking-configuration.cpp:132
 #, kde-format
-msgid "System Tray Icon Configuration"
-msgstr "Configuração do ícone da bandeja do sistema"
+msgid "No Action"
+msgstr ""
+
+#: docking.cpp:296
+#, kde-format
+msgid "Pause Radio"
+msgstr "Pausar rádio"
+
+#: docking.cpp:916
+#, kde-format
+msgid "Pause playback"
+msgstr "Pausar reprodução"
+
+#: docking-configuration.cpp:125
+#, fuzzy, kde-format
+msgid "Pause/Play"
+msgstr "Pausar reprodução"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power Off"
+msgstr "Desligar"
+
+#: docking.cpp:469
+#, kde-format
+msgid "Power On"
+msgstr "Ligar"
+
+#: docking-configuration.cpp:124
+#, kde-format
+msgid "Power On/Off"
+msgstr "Ligar/Desligar"
+
+#: docking-configuration.cpp:126 docking.cpp:291
+#, kde-format
+msgid "Recording"
+msgstr "Gravando"
+
+#: docking.cpp:912
+#, kde-format
+msgid "Resume playback"
+msgstr "Continuar reprodução"
+
+#: docking-configuration.cpp:108 docking-configuration.cpp:113
+#, kde-format
+msgctxt "Mouse button"
+msgid "Right:"
+msgstr ""
 
 #: docking.cpp:281
 #, kde-format
@@ -163,86 +172,61 @@ msgstr "Pesquisar próxima estação"
 msgid "Search Previous Station"
 msgstr "Pesquisar estação anterior"
 
-#: docking.cpp:296
-#, kde-format
-msgid "Pause Radio"
-msgstr "Pausar rádio"
-
 #: docking.cpp:307
 #, kde-format
 msgid "Show/Hide Plugins"
 msgstr "Mostrar/Ocultar plug-ins"
 
-#: docking.cpp:315
-#, kde-format
-msgid "&Quit"
-msgstr "&Sair"
+#: docking-configuration.cpp:123
+#, fuzzy, kde-format
+msgid "Show/Hide Windows"
+msgstr "Mostrar/Ocultar plug-ins"
 
-#: docking.cpp:440
-#, kde-format
-msgid "Stop Sleep Countdown (running until %1)"
-msgstr "Parar contagem regressiva (executar até %1)"
-
-#: docking.cpp:443 docking.cpp:452 docking.cpp:460
-#, kde-format
-msgid "Start Sleep Countdown"
-msgstr "Iniciar contagem regressiva"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power Off"
-msgstr "Desligar"
-
-#: docking.cpp:468
-#, kde-format
-msgid "Power On"
-msgstr "Ligar"
-
-#: docking.cpp:483 docking.cpp:501
-#, kde-format
-msgid "invalid station"
-msgstr "Estação inválida"
-
-#: docking.cpp:484
-#, kde-format
-msgid "KRadio: %1"
-msgstr "KRadio: %1"
-
-#: docking.cpp:493
-#, kde-format
-msgid "next alarm: %1"
-msgstr "Próximo alarme: %1"
-
-#: docking.cpp:495
-#, kde-format
-msgid "<no alarm pending>"
-msgstr "<nenhum alarme pendente>"
-
-#: docking.cpp:761 docking.cpp:864 docking.cpp:922
-#, kde-format
-msgid "Stop Recording of %1"
-msgstr "Parar a gravação de %1"
-
-#: docking.cpp:850
+#: docking.cpp:858
 #, kde-format
 msgid "Start Recording"
 msgstr "Iniciar a gravação"
 
-#: docking.cpp:904
+#: docking.cpp:444 docking.cpp:453 docking.cpp:461
 #, kde-format
-msgid "Resume playback"
-msgstr "Continuar reprodução"
+msgid "Start Sleep Countdown"
+msgstr "Iniciar contagem regressiva"
 
-#: docking.cpp:908
+#: docking.cpp:769 docking.cpp:872 docking.cpp:930
 #, kde-format
-msgid "Pause playback"
-msgstr "Pausar reprodução"
+msgid "Stop Recording of %1"
+msgstr "Parar a gravação de %1"
 
-#: rc.cpp:1
+#: docking.cpp:441
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Márcio Moraes"
+msgid "Stop Sleep Countdown (running until %1)"
+msgstr "Parar contagem regressiva (executar até %1)"
+
+#: docking.cpp:251
+#, kde-format
+msgid "System Tray Icon"
+msgstr "Ícone da bandeja do sistema"
+
+#: docking.cpp:252
+#, kde-format
+msgid "System Tray Icon Configuration"
+msgstr "Configuração do ícone da bandeja do sistema"
+
+#: docking.cpp:47
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "System Tray Icon/Menu"
+msgstr "Ícone da bandeja do sistema"
+
+#: docking-configuration.cpp:127
+#, fuzzy, kde-format
+msgid "System Tray Menu"
+msgstr "Ícone da bandeja do sistema"
+
+#: docking.cpp:66
+#, kde-format
+msgid "System Tray Plugin"
+msgstr "Plug-in da bandeja do sistema"
 
 #: rc.cpp:2
 #, kde-format
@@ -250,8 +234,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "marciopanto@gmail.com"
 
-#~ msgid "System Tray Icon/Menu for KRadio"
-#~ msgstr "Menu/Ícone da bandeja do sistema para o KRadio"
+#: rc.cpp:1
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Márcio Moraes"
+
+#: docking.cpp:484 docking.cpp:502
+#, kde-format
+msgid "invalid station"
+msgstr "Estação inválida"
+
+#: docking.cpp:494
+#, kde-format
+msgid "next alarm: %1"
+msgstr "Próximo alarme: %1"
 
 #~ msgid "Show/Hide all GUI Elements"
 #~ msgstr "Mostrar/Ocultar todos os elementos gráficos"
+
+#~ msgid "System Tray Icon/Menu for KRadio"
+#~ msgstr "Menu/Ícone da bandeja do sistema para o KRadio"
