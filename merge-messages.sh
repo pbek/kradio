@@ -11,13 +11,9 @@ for cat in $catalogs; do
     catdir=$(dirname "$cat")
     pots=`find "$catdir" -maxdepth 1 -a -name "*.pot"`
     for pot in $pots ; do
-        echo "merging $pot into $cat"
-        test -e $cat || cat $pot | sed 's/charset=CHARSET/charset=UTF-8/; s/^#, fuzzy/#/' > $cat
         if test -e $cat ; then 
+            echo "merging $pot into $cat"
             msgmerge --previous --update -q $cat $pot || exit -1
-        else
-            msgmerge --previous --update -q -o $cat.new $cat $pot || exit -1
-            mv $cat.new $cat
         fi
     done
 done
