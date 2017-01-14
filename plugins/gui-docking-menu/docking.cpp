@@ -427,6 +427,7 @@ bool RadioDocking::noticeNextAlarmChanged(const Alarm *a)
 {
     const QString newTitle = generateAlarmTitle(a);
     if (newTitle != m_cachedNextAlarmString) {
+        m_cachedNextAlarmString = newTitle;
         buildContextMenu();
     }
     return true;
