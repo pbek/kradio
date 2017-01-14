@@ -502,7 +502,7 @@ bool RadioDocking::noticeStationChanged (const RadioStation &rs, int /*idx*/)
     const QString s = rs.isValid() ? rs.longName() : i18n("invalid station");
 
     const QString &rt = queryRDSRadioText();
-    QString tooltip = rt;
+    QString tooltip = s;
     if (!rt.isEmpty()) {
         tooltip += QString::fromLatin1("\n") + rt;
     }
