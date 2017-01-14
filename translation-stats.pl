@@ -16,12 +16,15 @@ my $STATE_BAD       = 3;
 
 
 my @allpo;
+my @allpot;
 sub collectfiles {
   push @allpo, $File::Find::name if -f && /\.po$/;
+  push @allpot, $File::Find::name if -f && /\.pot$/;
 }
 File::Find::find(\&collectfiles, '.');
 
 my %langs = ();
+my $msg_total = 0;
 
 foreach my $po(@allpo) {
     my $lang = $po;
@@ -29,6 +32,10 @@ foreach my $po(@allpo) {
     $lang =~ s:\.po$::;
     my %res = analyze_po($po);
     $langs{$lang}{$po} = \%res;
+}
+foreach my $pot(@allpot) {
+    my %pot = analyze_po($pot);
+    $msg_total += $pot{total};
 }
 
 
@@ -45,6 +52,9 @@ while (my ($lang, $pofiles) = each(%langs)) {
         $not_translated += $po{untranslated};
     }
     my $translated     = $total - $fuzzy - $not_translated;
+    if ($total < $msg_total) {
+        $total = $msg_total;
+    }
     $stats{$lang} = {  total           => $total,
                        fuzzy           => $fuzzy,
                        translated      => $translated,
