@@ -118,7 +118,8 @@ IF(WITH_FFMPEG)
     ENDIF(NOT LIBAVCODEC_VERSION LESS 53.42.0)
 
 
-    find_package(Libmms 0.5)
+    set(LIBMMS_MIN_VERSION 0.5)
+    find_package(Libmms ${LIBMMS_MIN_VERSION})
 
     IF ( NOT Libmms_FOUND OR NOT LIBAVFORMAT_FOUND )
         SET(WITH_FFMPEG OFF
@@ -148,7 +149,7 @@ ELSE(WITH_FFMPEG)
 ENDIF(WITH_FFMPEG)
 
 MACRO_LOG_FEATURE(LIBAVFORMAT_FOUND "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org")
-MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms:// by libmms >= ${LIBMMS_MIN_VERSION}"  "https://launchpad.net/libmms")
+MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms:// by libmms"  "https://launchpad.net/libmms" FALSE "${LIBMMS_MIN_VERSION}")
 MACRO_LOG_FEATURE(WITH_FFMPEG       "Internet radio support"  "Internet radio requires both libffmpeg and libmms" "")
 
 ###############################################################################
