@@ -1448,8 +1448,7 @@ float AlsaSoundDevice::readCaptureMixerVolume(const QString &channel) const
 
 bool AlsaSoundDevice::writePlaybackMixerVolume (const QString &channel, float &vol, bool muted)
 {
-    if (vol > 1.0) vol = 1.0;
-    if (vol < 0) vol = 0.0;
+    vol = qBound<float>(0, vol, 1);
 
     // do we have soft playback volume? 
     // ... Then we do not need to write any device below

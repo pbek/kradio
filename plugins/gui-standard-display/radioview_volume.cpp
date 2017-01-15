@@ -118,8 +118,7 @@ void RadioViewVolume::slotVolumeChanged(int val)
 
 int RadioViewVolume::getSlider4Volume(float volume)
 {
-    if (volume >= 1) volume = 1;
-    if (volume < 0)  volume = 0;
+    volume = qBound<float>(0, volume, 1);
     return SLIDER_MINVAL + (int)rint(SLIDER_RANGE * volume);
 }
 

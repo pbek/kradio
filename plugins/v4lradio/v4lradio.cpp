@@ -485,8 +485,7 @@ bool V4LRadio::setTreble (SoundStreamID id, float t)
     if (id != m_SoundStreamSourceID)
         return false;
 
-    if (t > 1.0) t = 1.0;
-    if (t < 0)   t = 0.0;
+    t = qBound<float>(0, t, 1);
     if ((int)rint(m_treble*65535) != (int)rint(t*65535)) {
         m_treble = t;
         writeAudioInfo();
@@ -501,8 +500,7 @@ bool V4LRadio::setBass (SoundStreamID id, float b)
     if (id != m_SoundStreamSourceID)
         return false;
 
-    if (b > 1.0) b = 1.0;
-    if (b < 0)   b = 0.0;
+    b = qBound<float>(0, b, 1);
     if ((int)rint(m_bass*65535) != (int)rint(b*65535)) {
         m_bass = b;
         writeAudioInfo();
@@ -518,8 +516,7 @@ bool V4LRadio::setBalance (SoundStreamID id, float b)
     if (id != m_SoundStreamSourceID)
         return false;
 
-    if (b > +1.0) b = +1.0;
-    if (b < -1.0) b = -1.0;
+    b = qBound<float>(-1.0, b, +1.0);
     if ((int)rint(m_balance*32767) != (int)rint(b*32767)) {
         m_balance = b;
         writeAudioInfo();
@@ -531,8 +528,7 @@ bool V4LRadio::setBalance (SoundStreamID id, float b)
 
 bool V4LRadio::setDeviceVolume (float v)
 {
-    if (v > 1.0) v = 1.0;
-    if (v < 0)   v = 0;
+    v = qBound<float>(0, v, 1);
     if ((int)rint(m_deviceVolume*65535) != (int)rint(v*65535)) {
         m_deviceVolume = v;
         writeAudioInfo();
