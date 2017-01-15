@@ -832,9 +832,6 @@ msgstr "invio del file di preimpostazione %1 in corso: "
 #~ msgid "&Discard"
 #~ msgstr "&Scarta"
 
-#~ msgid "&Ok"
-#~ msgstr "&Ok"
-
 #~ msgid "&Thanks To"
 #~ msgstr "&Ringraziamenti"
 
@@ -872,23 +869,6 @@ msgstr "invio del file di preimpostazione %1 in corso: "
 #~ "estensioni, ad esempio quando avete più di una scheda audio e/o più "
 #~ "istanze dell'estensione ALSA.</p></body></html>"
 
-#~ msgid ""
-#~ "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE "
-#~ "%3</html>"
-#~ msgstr ""
-#~ "<html><font size=\"5\">%1</font><br /><b>Versione %2</b><br />Stai usando "
-#~ "KDE %3</html>"
-
-#~ msgid "<p align=\"right\">nothing here</p>"
-#~ msgstr "<p align=\"right\">nulla qui</p>"
-
-#~ msgid ""
-#~ "<qt>No information available.<br />The supplied KAboutData object does "
-#~ "not exist.</qt>"
-#~ msgstr ""
-#~ "<qt>Nessuna informazione disponibile.<br />L'oggetto KAboutData fornito "
-#~ "non esiste.</qt>"
-
 #~ msgid "A&uthor"
 #~ msgstr "A&utore"
 
@@ -897,9 +877,6 @@ msgstr "invio del file di preimpostazione %1 in corso: "
 
 #~ msgid "About KRadio Components"
 #~ msgstr "Informazioni sui componenti di KRadio"
-
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+Z"
 
 #~ msgid "Error: Cannot create instance \"%1\" of unknown class %2."
 #~ msgstr ""
@@ -953,29 +930,5 @@ msgstr "invio del file di preimpostazione %1 in corso: "
 #~ msgid "Plugin Classes"
 #~ msgstr "Classi delle estensioni"
 
-#~ msgid "PluginManagerConfigurationUI"
-#~ msgstr "PluginManagerConfigurationUI"
-
-#~ msgid "StationSelectorUI"
-#~ msgstr "StationSelectorUI"
-
 #~ msgid "T&ranslation"
 #~ msgstr "T&raduzione"
-
-#~ msgid "canDecode = true"
-#~ msgstr "canDecode = true"
-
-#~ msgid "contentsDragEnterEvent accepted"
-#~ msgstr "contentsDragEnterEvent accettato"
-
-#~ msgid "contentsDragEnterEvent rejected"
-#~ msgstr "contentsDragEnterEvent rifiutato"
-
-#~ msgid "dragEnterEvent accepted"
-#~ msgstr "dragEnterEvent accettato"
-
-#~ msgid "dragEnterEvent rejected"
-#~ msgstr "dragEnterEvent rifiutato"
-
-#~ msgid "saveState"
-#~ msgstr "saveState"
