@@ -19,6 +19,7 @@
 #include <kaboutdata.h>
 #include <QFile>
 #include <QSet>
+#include <QScopedPointer>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
@@ -1974,20 +1975,11 @@ QList<AlsaSoundDeviceMetaData> AlsaSoundDevice::getPCMDeviceDescriptions(const Q
         return descriptions[filter];
 
     for (void **current_hint = hints; *current_hint; ++current_hint) {
-        char *name  = snd_device_name_get_hint(*current_hint, "NAME");
-        char *descr = snd_device_name_get_hint(*current_hint, "DESC");
-        char *dir   = snd_device_name_get_hint(*current_hint, "IOID");
-        if (!dir || filter == dir) {
-            descriptions[filter].append(AlsaSoundDeviceMetaData(QString::fromLatin1(name), QString::fromLatin1(descr)));
-        }
-        if (name != NULL) {
-            free(name);
-        }
-        if (descr != NULL) {
-            free(descr);
-        }
-        if (dir != NULL) {
-            free(dir);
+        const QScopedPointer<char, QScopedPointerPodDeleter> dir(snd_device_name_get_hint(*current_hint, "IOID"));
+        if (!dir || filter == dir.data()) {
+            const QScopedPointer<char, QScopedPointerPodDeleter> name(snd_device_name_get_hint(*current_hint, "NAME"));
+            const QScopedPointer<char, QScopedPointerPodDeleter> descr(snd_device_name_get_hint(*current_hint, "DESC"));
+            descriptions[filter].append(AlsaSoundDeviceMetaData(QString::fromLatin1(name.data()), QString::fromLatin1(descr.data())));
         }
     }
     snd_device_name_free_hint(hints);
