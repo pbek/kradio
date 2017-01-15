@@ -493,7 +493,7 @@ void PluginManager::restoreState (KConfig *c)
     n = cfggrp.readEntry("plugins", 0);
     KProgressDialog  *progress = NULL;
     if (m_showProgressBar) {
-        progress = new KProgressDialog(NULL, NULL, i18n("Starting Plugins"));
+        progress = new KProgressDialog(NULL, i18n("Starting Plugins"));
         progress->setMinimumWidth(400);
         progress->setAllowCancel(false);
         progress->show();
@@ -513,7 +513,7 @@ void PluginManager::restoreState (KConfig *c)
         unused_classes.removeAll(class_name);
 
         if (m_showProgressBar)
-            progress->QWidget::setWindowTitle(i18n("Creating Plugin %1", class_name));
+            progress->setLabelText(i18n("Creating Plugin %1", class_name));
         if (class_name.length() && object_name.length())
             m_instanceManager->CreatePlugin(this, object_id, class_name, object_name);
         if (m_showProgressBar)
@@ -547,7 +547,7 @@ void PluginManager::restoreState (KConfig *c)
             QString cls;
             foreach (cls, unused_classes) {
                 if (m_showProgressBar)
-                    progress->QWidget::setWindowTitle(i18n("Creating Plugin %1", cls));
+                    progress->setLabelText(i18n("Creating Plugin %1", cls));
 
                 m_instanceManager->CreatePlugin(this, generateRandomID(70), cls, cls);
 
@@ -568,7 +568,7 @@ void PluginManager::restoreState (KConfig *c)
     for (PluginIterator it = m_plugins.begin(); it != m_plugins.end(); ++it, ++idx) {
         BlockProfiler profile_plugin("PluginManager::restoreState - " + (*it)->pluginClassName().toLatin1());
         if (m_showProgressBar)
-            progress->QWidget::setWindowTitle(i18n("Initializing Plugin %1", (*it)->pluginClassName()));
+            progress->setLabelText(i18n("Initializing Plugin %1", (*it)->pluginClassName()));
 
         restorePluginInstanceState (*it, c);
 
