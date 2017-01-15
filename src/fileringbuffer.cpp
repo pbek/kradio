@@ -44,7 +44,7 @@ FileRingBuffer::~FileRingBuffer()
         unlink (QFile::encodeName(m_FileName).constData());
     }
     m_File   = NULL;
-    m_FileName = QString::null;
+    m_FileName.clear();
     m_MaxSize  = 0;
     m_RealSize = 0;
     m_FillSize = 0;

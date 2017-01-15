@@ -46,7 +46,7 @@ TimeShifter::TimeShifter (const QString &instanceID, const QString &name)
     : PluginBase(instanceID, name, i18n("TimeShifter Plugin")),
       m_TempFileName("/tmp/" + KUser().loginName() + "-kradio-timeshifter-tempfile"),
       m_TempFileMaxSize(256*1024*1024),
-      m_PlaybackMixerID(QString::null),
+      m_PlaybackMixerID(),
       m_PlaybackMixerChannel("PCM"),
       m_StreamPaused(false),
       m_orgVolume(0.0),

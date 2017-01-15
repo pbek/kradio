@@ -60,8 +60,8 @@ void OSSSoundConfiguration::slotCancel()
 {
     if (m_dirty) {
         m_ignore_gui_updates = true;
-        editDSPDevice     ->setURL    (m_SoundDevice ?  m_SoundDevice->getDSPDeviceName()   : QString::null);
-        editMixerDevice   ->setURL    (m_SoundDevice ?  m_SoundDevice->getMixerDeviceName() : QString::null);
+        editDSPDevice     ->setURL    (m_SoundDevice ?  m_SoundDevice->getDSPDeviceName()   : QString());
+        editMixerDevice   ->setURL    (m_SoundDevice ?  m_SoundDevice->getMixerDeviceName() : QString());
         editBufferSize    ->setValue  (m_SoundDevice ?  m_SoundDevice->getBufferSize()/1024 : 4);
         chkDisablePlayback->setChecked(m_SoundDevice ? !m_SoundDevice->isPlaybackEnabled()  : false);
         chkDisableCapture ->setChecked(m_SoundDevice ? !m_SoundDevice->isCaptureEnabled()   : false);

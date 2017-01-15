@@ -353,7 +353,7 @@ void IcyHttpHandler::handleMetaData(const QByteArray &data, bool complete)
                         }
                     } else {
                         value      = metaString;
-                        metaString = QString::null;
+                        metaString = QString();
                         break;
                     }
                 }

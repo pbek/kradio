@@ -31,11 +31,11 @@ AlsaSoundDeviceMetaData::AlsaSoundDeviceMetaData(const QString &name, const QStr
     if (descrlines.size() > 1) {
         QStringList devDescrList   = descrlines[0].trimmed().split(",");
         m_cardDescription          = devDescrList[0].trimmed();
-        m_deviceDescription        = devDescrList.size() > 1 ? devDescrList[1].trimmed() : QString::null;
+        m_deviceDescription        = devDescrList.size() > 1 ? devDescrList[1].trimmed() : QString();
         m_deviceVerboseDescription = descrlines[1].trimmed();
     } else {
-        m_cardDescription          = QString::null;
-        m_deviceDescription        = QString::null;
+        m_cardDescription          = QString();
+        m_deviceDescription        = QString();
         m_deviceVerboseDescription = descrlines[0].trimmed();
     }
 

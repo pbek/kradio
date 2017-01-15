@@ -224,7 +224,7 @@ bool TimeControlConfiguration::noticeStationsChanged(const StationList &sl)
     comboStationSelection->clear();
     stationIDs.clear();
     comboStationSelection->addItem(i18n("<do not change>"));
-    stationIDs.push_back(QString::null);
+    stationIDs.push_back(QString());
 
     for (StationList::const_iterator i = sl.begin(); i != sl.end(); ++i) {
         comboStationSelection->addItem(KIcon((*i)->iconName()),

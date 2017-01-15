@@ -190,7 +190,7 @@ ANSWERS:
     virtual bool supportsCapture()  const  { return false; }
 
     virtual const QString &getSoundStreamClientID() const;
-    virtual       QString  getSoundStreamClientDescription() const { return QString::null; }
+    virtual       QString  getSoundStreamClientDescription() const { return QString(); }
 
     virtual QMap<QString, ISoundStreamClient *> getPlaybackClients() const;
     virtual QMap<QString, QString>              getPlaybackClientDescriptions() const;

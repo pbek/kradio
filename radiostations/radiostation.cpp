@@ -51,10 +51,10 @@ RadioStation::RadioStation(RegisterStationClass, const QString &classname)
 }
 
 RadioStation::RadioStation()
-    : m_name(QString::null),
-      m_shortName(QString::null),
+    : m_name(),
+      m_shortName(),
       m_initialVolume(-1),
-      m_iconName(QString::null),
+      m_iconName(),
       m_stereoMode(STATION_STEREO_DONTCARE)
 {
     generateNewStationID();
@@ -193,7 +193,7 @@ QString RadioStation::getProperty(const QString &pn) const
                 break;
         }
     } else {
-        return QString::null;
+        return QString();
     }
 }
 

@@ -25,7 +25,7 @@ MultiBuffer::MultiBuffer(size_t n_buffers, size_t buffersize)
       m_currentReadBuffer(m_nBuffers-1), // during wait4read, this will be incremented to 0
       m_currentWriteBuffer(0),
       m_readLock(n_buffers),
-      m_errorString(QString::null),
+      m_errorString(),
       m_error(false)
 {
     m_readLock.acquire(m_nBuffers);
@@ -127,5 +127,5 @@ char *MultiBuffer::getCurrentReadBuffer(size_t &buffer_fill) const
 void MultiBuffer::resetError()
 {
     m_error = false;
-    m_errorString = QString::null;
+    m_errorString.clear();
 }

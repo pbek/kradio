@@ -20,8 +20,8 @@
 #include <kconfiggroup.h>
 
 AlsaConfigMixerSetting::AlsaConfigMixerSetting()
- : m_mixerName(QString::null),
-   m_name(QString::null),
+ : m_mixerName(),
+   m_name(),
    m_use(false),
    m_active(false),
    m_volume(-1)

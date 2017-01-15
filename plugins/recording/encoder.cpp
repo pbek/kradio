@@ -37,7 +37,7 @@ RecordingEncoding::RecordingEncoding(QObject *parent,            SoundStreamID s
       m_RadioStation(rs ? rs->copy() : NULL),
       m_SoundStreamID(ssid),
       m_error(false),
-      m_errorString(QString::null),
+      m_errorString(),
       m_done(false),
       m_InputBuffers(m_config.m_EncodeBufferCount < 3 ? 3 : m_config.m_EncodeBufferCount,
                      m_config.m_EncodeBufferSize < 4096 ? 4096 : m_config.m_EncodeBufferSize),

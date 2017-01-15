@@ -94,7 +94,7 @@ public :
 
 
 protected :
-    virtual void                       createConfigDialog(const QString &title = QString::null);
+    virtual void                       createConfigDialog(const QString &title = QString());
 
     virtual KPageWidgetItem           *addConfigurationPage (PluginBase *forWhom,
                                                              const ConfigPageInfo    &info);

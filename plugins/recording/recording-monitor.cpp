@@ -213,7 +213,7 @@ void RecordingMonitor::slotStartStopRecording()
 
 bool RecordingMonitor::noticeSoundStreamCreated(SoundStreamID id)
 {
-    QString tmp = QString::null;
+    QString tmp;
     querySoundStreamDescription(id, tmp);
 
     int idx = m_comboSoundStreamSelector->count();
@@ -254,7 +254,7 @@ bool RecordingMonitor::noticeSoundStreamChanged(SoundStreamID id)
 {
     if (m_SoundStreamID2idx.contains(id)) {
         int idx = m_SoundStreamID2idx[id];
-        QString tmp = QString::null;
+        QString tmp;
         querySoundStreamDescription(id, tmp);
         m_comboSoundStreamSelector->setItemText(idx, tmp);
         if (idx == m_comboSoundStreamSelector->currentIndex()) {

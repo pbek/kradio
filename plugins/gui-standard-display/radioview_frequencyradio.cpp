@@ -134,7 +134,7 @@ ConfigPageInfo RadioViewFrequencyRadio::createConfigurationPage()
     return ConfigPageInfo (a,
                            i18n("Frequency Display"),
                            i18n("Frequency Display"),
-                           QString::null
+                           QString()
                            );
 }
 

@@ -39,7 +39,7 @@ struct SoundStreamConfig
 {
     SoundStreamConfig()
         : m_ActiveMode(false),
-          m_Channel(QString::null),
+          m_Channel(),
           m_Volume(-1),
           m_Muted(false)
        {}

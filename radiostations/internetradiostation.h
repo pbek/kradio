@@ -33,7 +33,7 @@ public:
     InternetRadioStation(KUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
     InternetRadioStation(const QString &name, const QString &shortName, KUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
     InternetRadioStation(const InternetRadioStation &);
-    InternetRadioStation(RegisterStationClass, const QString &classname = QString::null);
+    InternetRadioStation(RegisterStationClass, const QString &classname = QString());
     ~InternetRadioStation();
 
     const KUrl     &url() const                       { return m_url; }

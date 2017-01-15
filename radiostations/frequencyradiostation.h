@@ -37,7 +37,7 @@ public:
     FrequencyRadioStation (float frequency);
     FrequencyRadioStation (const QString &name, const QString &shortName, float frequency);
     FrequencyRadioStation (const FrequencyRadioStation &);
-    FrequencyRadioStation (RegisterStationClass, const QString &classname = QString::null);
+    FrequencyRadioStation (RegisterStationClass, const QString &classname = QString());
     ~FrequencyRadioStation();
 
             float      frequency    () const          { return m_frequency; }
