@@ -36,6 +36,10 @@ extern "C" {
   #include <libavutil/opt.h>
 }
 
+#ifndef AV_INPUT_BUFFER_PADDING_SIZE /* LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56, 60, 100) */
+# define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
+#endif
+
 
 InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_parent,
                                            const InternetRadioStation &rs,
@@ -558,7 +562,7 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
 void InternetRadioDecoder::initIOCallbacks(void *opaque, int(*read_packet_func)(void *, uint8_t *, int ))
 {
     // paranoia padding: 4x requirement
-    unsigned char *ioBuffer = reinterpret_cast<unsigned char*>(av_malloc(DEFAULT_MMS_BUFFER_SIZE + 4 * FF_INPUT_BUFFER_PADDING_SIZE));
+    unsigned char *ioBuffer = reinterpret_cast<unsigned char*>(av_malloc(DEFAULT_MMS_BUFFER_SIZE + 4 * AV_INPUT_BUFFER_PADDING_SIZE));
     
 #if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
 
