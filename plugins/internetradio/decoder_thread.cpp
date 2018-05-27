@@ -210,8 +210,8 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
 
 #if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
         uint8_t *tmpBuf[2]        = { tmp_resample_output_buffer, NULL };
-        int      resampleLineSize = sizeof(tmp_resample_output_buffer) / m_soundFormat.m_Channels;
         #ifdef HAVE_LIBAVRESAMPLE
+            int resampleLineSize = sizeof(tmp_resample_output_buffer) / m_soundFormat.m_Channels;
             int ret = avresample_convert(m_resample_context, 
                                          tmpBuf, resampleLineSize, m_decoded_frame->nb_samples, 
                                          m_decoded_frame->extended_data, lineSize, m_decoded_frame->nb_samples
