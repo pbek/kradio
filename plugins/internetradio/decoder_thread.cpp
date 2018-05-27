@@ -417,8 +417,12 @@ void InternetRadioDecoder::run()
 #endif
             }
 
+#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55, 16, 0) // in ffmpeg >= 2.1
+            av_packet_unref(&pkt);
+#else
             av_free_packet(&pkt);
             memset(&pkt, 0, sizeof(pkt));
+#endif
         //         printf ("waiting for next packet\n");
         }
 
