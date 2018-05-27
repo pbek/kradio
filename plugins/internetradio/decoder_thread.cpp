@@ -40,6 +40,14 @@ extern "C" {
 # define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
 #endif
 
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(57, 4, 0) // checked: AVStream::codecpar in ffmpeg >= 3.1
+# define CODECPAR(stream) ((stream)->codecpar)
+# define CODECPAR_SAMPLE_FMT(stream) ((stream)->codecpar->format)
+#else
+# define CODECPAR(stream) ((stream)->codec)
+# define CODECPAR_SAMPLE_FMT(stream) ((stream)->codec->sample_fmt)
+#endif
+
 
 InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_parent,
                                            const InternetRadioStation &rs,
@@ -776,10 +784,10 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
 //     dump_format(m_av_pFormatCtx, 0, stream.toUtf8(), false);
 
     for (unsigned int i = 0; i < m_av_pFormatCtx->nb_streams; i++) {
-        int rate = m_av_pFormatCtx->streams[i]->codec->sample_rate;
-        int ch   = m_av_pFormatCtx->streams[i]->codec->channels;
-        int fmt  = m_av_pFormatCtx->streams[i]->codec->sample_fmt;
-        int type = m_av_pFormatCtx->streams[i]->codec->codec_type;
+        int rate = CODECPAR(m_av_pFormatCtx->streams[i])->sample_rate;
+        int ch   = CODECPAR(m_av_pFormatCtx->streams[i])->channels;
+        int fmt  = CODECPAR_SAMPLE_FMT(m_av_pFormatCtx->streams[i]);
+        int type = CODECPAR(m_av_pFormatCtx->streams[i])->codec_type;
         log(ThreadLogging::LogDebug, QString::fromLatin1("stream[%1]: codec_type = %2, channels = %3, sample rate = %4, format-id = %5").arg(i).arg(type).arg(ch).arg(rate).arg(fmt));
     }
 
@@ -867,7 +875,7 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
 #endif
     uint64_t chLayout = m_av_aCodecCtx->channel_layout;
     if (!chLayout) {
-        switch(m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels) {
+        switch(CODECPAR(m_av_pFormatCtx->streams[m_av_audioStream])->channels) {
             case 1:
                 chLayout = AV_CH_LAYOUT_MONO;
                 break;
@@ -887,10 +895,10 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
         av_opt_set_int       (m_resample_context, "in_sample_rate",     m_av_aCodecCtx->sample_rate,    0);
         av_opt_set_int       (m_resample_context, "out_sample_rate",    m_av_aCodecCtx->sample_rate,    0);
 #ifdef HAVE_LIBAVRESAMPLE
-        av_opt_set_int       (m_resample_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
+        av_opt_set_int       (m_resample_context, "in_sample_fmt",      CODECPAR_SAMPLE_FMT(m_av_pFormatCtx->streams[m_av_audioStream]), 0);
         av_opt_set_int       (m_resample_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
 #elif defined HAVE_LIBSWRESAMPLE
-        av_opt_set_sample_fmt(m_resample_context, "in_sample_fmt",      m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt, 0);
+        av_opt_set_sample_fmt(m_resample_context, "in_sample_fmt",      CODECPAR_SAMPLE_FMT(m_av_pFormatCtx->streams[m_av_audioStream]), 0);
         av_opt_set_sample_fmt(m_resample_context, "out_sample_fmt",     AV_SAMPLE_FMT_S16,              0);
 #endif
 
@@ -1034,11 +1042,11 @@ void InternetRadioDecoder::updateSoundFormat()
         m_av_audioStream                 >= 0                &&
         (int)m_av_pFormatCtx->nb_streams >  m_av_audioStream &&
         m_av_pFormatCtx->streams[m_av_audioStream]      &&
-        m_av_pFormatCtx->streams[m_av_audioStream]->codec
+        CODECPAR(m_av_pFormatCtx->streams[m_av_audioStream])
     ) {
-        int  rate = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_rate;
-        int  ch   = m_av_pFormatCtx->streams[m_av_audioStream]->codec->channels;
-        int  fmt  = m_av_pFormatCtx->streams[m_av_audioStream]->codec->sample_fmt;
+        int  rate = CODECPAR(m_av_pFormatCtx->streams[m_av_audioStream])->sample_rate;
+        int  ch   = CODECPAR(m_av_pFormatCtx->streams[m_av_audioStream])->channels;
+        int  fmt  = CODECPAR_SAMPLE_FMT(m_av_pFormatCtx->streams[m_av_audioStream]);
 #if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
         fmt       = AV_SAMPLE_FMT_S16;
 #endif
