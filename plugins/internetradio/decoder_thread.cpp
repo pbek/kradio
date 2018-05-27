@@ -42,7 +42,7 @@ extern "C" {
 
 #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(57, 4, 0) // checked: AVStream::codecpar in ffmpeg >= 3.1
 # define CODECPAR(stream) ((stream)->codecpar)
-# define CODECPAR_SAMPLE_FMT(stream) ((stream)->codecpar->format)
+# define CODECPAR_SAMPLE_FMT(stream) ((AVSampleFormat) (stream)->codecpar->format)
 #else
 # define CODECPAR(stream) ((stream)->codec)
 # define CODECPAR_SAMPLE_FMT(stream) ((stream)->codec->sample_fmt)
