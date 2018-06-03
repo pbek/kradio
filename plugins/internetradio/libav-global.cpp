@@ -21,27 +21,30 @@ extern "C" {
 
 #include "libav-global.h"
 
-QSharedPointer<LibAVGlobal> LibAVGlobal::m_instance(NULL);
+#include <kglobal.h>
 
-
-LibAVGlobal::LibAVGlobal()
+struct LibAVGlobalStruct
 {
-    av_register_all();
-    avformat_network_init();
-}
-
-
-LibAVGlobal::~LibAVGlobal()
-{
-    avformat_network_deinit();
-}
-
-
-LibAVGlobal *LibAVGlobal::instance()
-{
-    if (!m_instance) {
-        m_instance = QSharedPointer<LibAVGlobal>(new LibAVGlobal());
+    LibAVGlobalStruct()
+    {
+        av_register_all();
+        avformat_network_init();
     }
-    return m_instance.data();
+
+    ~LibAVGlobalStruct()
+    {
+        avformat_network_deinit();
+    }
+};
+
+K_GLOBAL_STATIC(LibAVGlobalStruct, libavinit)
+
+namespace LibAVGlobal {
+
+void ensureInitDone()
+{
+    Q_UNUSED(*libavinit);
+}
+
 }
 

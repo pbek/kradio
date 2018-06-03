@@ -18,23 +18,10 @@
 #ifndef KRADIO_LIBAV_GLOBAL_H
 #define KRADIO_LIBAV_GLOBAL_H
 
-#include <QSharedPointer>
+namespace LibAVGlobal {
 
-class LibAVGlobal
-{
-protected:
-    LibAVGlobal();
+void ensureInitDone();
 
-public:
-    ~LibAVGlobal();
-
-    static LibAVGlobal *instance();
-
-    static void         ensureInitDone() { instance(); }
-
-protected:
-
-    static  QSharedPointer<LibAVGlobal> m_instance;
 };
 
 
