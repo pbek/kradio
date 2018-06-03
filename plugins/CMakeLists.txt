@@ -86,14 +86,12 @@ IF(WITH_FFMPEG)
     pkg_check_modules(LIBSWRESAMPLE libswresample)
     IF(LIBSWRESAMPLE_FOUND)
         SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBSWRESAMPLE_LIBRARIES}   )
-        add_definitions( -DHAVE_LIBSWRESAMPLE )
     ENDIF(LIBSWRESAMPLE_FOUND)
 
 
     pkg_check_modules(LIBAVRESAMPLE libavresample)
     IF(LIBAVRESAMPLE_FOUND)
         SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBAVRESAMPLE_LIBRARIES}   )
-        add_definitions( -DHAVE_LIBAVRESAMPLE )
     ENDIF(LIBAVRESAMPLE_FOUND)
 
     IF(NOT LIBAVCODEC_VERSION LESS 53.42.0)
@@ -123,8 +121,6 @@ IF (WITH_FFMPEG)
     message(STATUS "       FFMPEG_LIBRARIES    = ${FFMPEG_LIBRARIES}")
     message(STATUS "       Libmms_INCLUDE_DIRS = ${Libmms_INCLUDE_DIRS}")
     message(STATUS "       Libmms_LIBRARIES    = ${Libmms_LIBRARIES}")
-
-    add_definitions( -D__STDC_CONSTANT_MACROS )
 ELSE(WITH_FFMPEG)
     message(STATUS "   Compiling without Internet Radio Stations (libffmpeg, libmms) support")
 ENDIF(WITH_FFMPEG)
