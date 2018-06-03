@@ -16,9 +16,7 @@
  ***************************************************************************/
 
 extern "C" {
-    #ifdef HAVE_FFMPEG
-        #include <libavformat/avformat.h>
-    #endif
+    #include <libavformat/avformat.h>
 }
 
 #include "libav-global.h"

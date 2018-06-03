@@ -37,10 +37,8 @@
 #include "icy_http_handler.h"
 
 extern "C" {
-#ifdef HAVE_FFMPEG
     #include <libavformat/avformat.h>
     #include <libavutil/dict.h>
-#endif
 #ifdef HAVE_LIBAVRESAMPLE
     #include <libavresample/avresample.h>
 #elif defined(HAVE_LIBSWRESAMPLE)

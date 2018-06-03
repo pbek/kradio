@@ -124,7 +124,7 @@ IF (WITH_FFMPEG)
     message(STATUS "       Libmms_INCLUDE_DIRS = ${Libmms_INCLUDE_DIRS}")
     message(STATUS "       Libmms_LIBRARIES    = ${Libmms_LIBRARIES}")
 
-    add_definitions( -DHAVE_FFMPEG -D__STDC_CONSTANT_MACROS )
+    add_definitions( -D__STDC_CONSTANT_MACROS )
 ELSE(WITH_FFMPEG)
     message(STATUS "   Compiling without Internet Radio Stations (libffmpeg, libmms) support")
 ENDIF(WITH_FFMPEG)
