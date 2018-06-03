@@ -76,25 +76,10 @@ IF(WITH_FFMPEG)
 
     pkg_check_modules(LIBAVFORMAT libavformat)
     pkg_check_modules(LIBAVCODEC  libavcodec)
-    IF(LIBAVFORMAT_FOUND)
-        SET(HAVE_AVFORMAT_INC ON)
-        SET(HAVE_AVFORMAT_LIB ON)
 
-        SET(FFMPEG_LIBRARY_DIRS ${FFMPEG_LIBRARY_DIRS} ${LIBAVFORMAT_LIBRARY_DIRS} ${LIBAVCODEC_LIBRARY_DIRS} )
-        SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBAVFORMAT_LIBRARIES}    ${LIBAVCODEC_LIBRARIES}    )
-        SET(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} ${LIBAVFORMAT_INCLUDE_DIRS} ${LIBAVCODEC_INCLUDE_DIRS} )
-
-    ELSE(LIBAVFORMAT_FOUND)
-        CHECK_INCLUDE_FILE_CXX(ffmpeg/avformat.h            HAVE_AVFORMAT_OLD_INC)
-        CHECK_INCLUDE_FILE_CXX(libavformat/avformat.h       HAVE_AVFORMAT_INC)
-        CHECK_LIBRARY_EXISTS(avformat av_open_input_file "" HAVE_AVFORMAT_LIB)
-        IF (HAVE_AVFORMAT_OLD_INC OR HAVE_AVFORMAT_INC)
-            IF (HAVE_AVFORMAT_LIB)
-                SET(LIBAVFORMAT_FOUND ON)
-                SET(FFMPEG_LIBRARIES    "avutil" "avformat" ${FFMPEG_LIBRARIES})
-            ENDIF(HAVE_AVFORMAT_LIB)
-        ENDIF(HAVE_AVFORMAT_OLD_INC OR HAVE_AVFORMAT_INC)
-    ENDIF(LIBAVFORMAT_FOUND)
+    SET(FFMPEG_LIBRARY_DIRS ${FFMPEG_LIBRARY_DIRS} ${LIBAVFORMAT_LIBRARY_DIRS} ${LIBAVCODEC_LIBRARY_DIRS} )
+    SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBAVFORMAT_LIBRARIES}    ${LIBAVCODEC_LIBRARIES}    )
+    SET(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} ${LIBAVFORMAT_INCLUDE_DIRS} ${LIBAVCODEC_INCLUDE_DIRS} )
 
 
 
@@ -139,16 +124,12 @@ IF (WITH_FFMPEG)
     message(STATUS "       Libmms_INCLUDE_DIRS = ${Libmms_INCLUDE_DIRS}")
     message(STATUS "       Libmms_LIBRARIES    = ${Libmms_LIBRARIES}")
 
-    IF(HAVE_AVFORMAT_OLD_INC)
-        add_definitions( -DHAVE_FFMPEG_OLD )
-    ELSE(HAVE_AVFORMAT_OLD_INC)
-        add_definitions( -DHAVE_FFMPEG -D__STDC_CONSTANT_MACROS )
-    ENDIF(HAVE_AVFORMAT_OLD_INC)
+    add_definitions( -DHAVE_FFMPEG -D__STDC_CONSTANT_MACROS )
 ELSE(WITH_FFMPEG)
     message(STATUS "   Compiling without Internet Radio Stations (libffmpeg, libmms) support")
 ENDIF(WITH_FFMPEG)
 
-MACRO_LOG_FEATURE(LIBAVFORMAT_FOUND "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org")
+MACRO_LOG_FEATURE(LIBAVFORMAT_FOUND "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org" FALSE "0.5.0")
 MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms:// by libmms"  "https://launchpad.net/libmms" FALSE "${LIBMMS_MIN_VERSION}")
 MACRO_LOG_FEATURE(WITH_FFMPEG       "Internet radio support"  "Internet radio requires both libffmpeg and libmms" "")
 

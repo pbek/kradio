@@ -46,9 +46,6 @@ extern "C" {
 #elif defined(HAVE_LIBSWRESAMPLE)
     #include <libswresample/swresample.h>
 #endif
-#ifdef HAVE_FFMPEG_OLD
-    #include <ffmpeg/avformat.h>
-#endif
 }
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
