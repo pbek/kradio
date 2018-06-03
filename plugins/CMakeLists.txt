@@ -70,40 +70,32 @@ MACRO_LOG_FEATURE(WITH_LIRC "LIRC support" "Support for remote controls via LIRC
 option(WITH_FFMPEG "Compile with Internet Radio Stations support (libavformat/libffmpeg, libmms)" ON)
 
 IF(WITH_FFMPEG)
-    SET (FFMPEG_LIBRARY_DIRS  "")
-    SET (FFMPEG_INCLUDE_DIRS  "")
-    SET (FFMPEG_LIBRARIES     "")
+    set(ffmpeg_components AVFORMAT AVCODEC)
+    find_package(FFmpeg COMPONENTS ${ffmpeg_components} SWRESAMPLE)
+    IF(NOT FFMPEG_FOUND)
+        unset(FFMPEG_LIBRARIES CACHE)
+        unset(FFMPEG_INCLUDE_DIRS CACHE)
+        unset(FFMPEG_DEFINITIONS CACHE)
+        find_package(FFmpeg COMPONENTS ${ffmpeg_components} AVRESAMPLE)
+    ENDIF(NOT FFMPEG_FOUND)
 
-    pkg_check_modules(LIBAVFORMAT libavformat>=53.24.0)
-    pkg_check_modules(LIBAVCODEC  libavcodec>=52.42.0)
-
-    SET(FFMPEG_LIBRARY_DIRS ${FFMPEG_LIBRARY_DIRS} ${LIBAVFORMAT_LIBRARY_DIRS} ${LIBAVCODEC_LIBRARY_DIRS} )
-    SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBAVFORMAT_LIBRARIES}    ${LIBAVCODEC_LIBRARIES}    )
-    SET(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} ${LIBAVFORMAT_INCLUDE_DIRS} ${LIBAVCODEC_INCLUDE_DIRS} )
-
-
-
-    pkg_check_modules(LIBSWRESAMPLE libswresample)
-    IF(LIBSWRESAMPLE_FOUND)
-        SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBSWRESAMPLE_LIBRARIES}   )
-    ENDIF(LIBSWRESAMPLE_FOUND)
-
-
-    pkg_check_modules(LIBAVRESAMPLE libavresample)
-    IF(LIBAVRESAMPLE_FOUND)
-        SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    ${LIBAVRESAMPLE_LIBRARIES}   )
-    ENDIF(LIBAVRESAMPLE_FOUND)
+    IF(AVFORMAT_VERSION VERSION_LESS 53.24.0)
+       ERROR(FATAL_ERROR "libavformat ${AVFORMAT_FOUND} found, 53.24.0 required")
+    ENDIF(AVFORMAT_VERSION VERSION_LESS 53.24.0)
+    IF(AVCODEC_VERSION VERSION_LESS 52.42.0)
+       ERROR(FATAL_ERROR "libavcodec ${AVCODEC_VERSION} found, 52.42.0 required")
+    ENDIF(AVCODEC_VERSION VERSION_LESS 52.42.0)
 
 
     set(LIBMMS_MIN_VERSION 0.5)
     find_package(Libmms ${LIBMMS_MIN_VERSION})
 
-    IF ( NOT Libmms_FOUND OR NOT LIBAVFORMAT_FOUND OR NOT LIBAVCODEC_FOUND OR NOT ( LIBSWRESAMPLE_FOUND OR LIBAVRESAMPLE_FOUND ) )
+    IF ( NOT Libmms_FOUND OR NOT FFMPEG_FOUND )
         SET(WITH_FFMPEG OFF
             CACHE BOOL "libffmpeg and/or libmms files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: libffmpeg and/or libmms files could not be found on this system. Compiling without Internet Radio Stations support")
-    ENDIF( NOT Libmms_FOUND OR NOT LIBAVFORMAT_FOUND OR NOT LIBAVCODEC_FOUND OR NOT ( LIBSWRESAMPLE_FOUND OR LIBAVRESAMPLE_FOUND ) )
+    ENDIF( NOT Libmms_FOUND OR NOT FFMPEG_FOUND )
 
 ENDIF(WITH_FFMPEG)
 
@@ -111,7 +103,6 @@ ENDIF(WITH_FFMPEG)
 IF (WITH_FFMPEG)
     message(STATUS "   Compiling with Internet Radio Stations (libavformat/libffmpeg, libmms) support")
     message(STATUS "       FFMPEG_INCLUDE_DIRS = ${FFMPEG_INCLUDE_DIRS}")
-    message(STATUS "       FFMPEG_LIBRARY_DIRS = ${FFMPEG_LIBRARY_DIRS}")
     message(STATUS "       FFMPEG_LIBRARIES    = ${FFMPEG_LIBRARIES}")
     message(STATUS "       Libmms_INCLUDE_DIRS = ${Libmms_INCLUDE_DIRS}")
     message(STATUS "       Libmms_LIBRARIES    = ${Libmms_LIBRARIES}")
@@ -119,7 +110,7 @@ ELSE(WITH_FFMPEG)
     message(STATUS "   Compiling without Internet Radio Stations (libffmpeg, libmms) support")
 ENDIF(WITH_FFMPEG)
 
-MACRO_LOG_FEATURE(LIBAVFORMAT_FOUND "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org" FALSE "0.9.0")
+MACRO_LOG_FEATURE(FFMPEG_FOUND      "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org" FALSE "0.9.0")
 MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms:// by libmms"  "https://launchpad.net/libmms" FALSE "${LIBMMS_MIN_VERSION}")
 MACRO_LOG_FEATURE(WITH_FFMPEG       "Internet radio support"  "Internet radio requires both libffmpeg and libmms" "")
 

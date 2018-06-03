@@ -24,6 +24,7 @@
 # Copyright (c) 2006, Matthias Kretz, <kretz@kde.org>
 # Copyright (c) 2008, Alexander Neundorf, <neundorf@kde.org>
 # Copyright (c) 2011, Michael Jansen, <kde@michael-jansen.biz>
+# Copyright (c) 2018, Pino Toscano <toscano.pino@tiscali.it>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -125,6 +126,8 @@ if (NOT FFMPEG_LIBRARIES)
   find_component(AVUTIL   libavutil   avutil   libavutil/avutil.h)
   find_component(SWSCALE  libswscale  swscale  libswscale/swscale.h)
   find_component(POSTPROCESS libpostproc postproc libpostproc/postprocess.h)
+  find_component(SWRESAMPLE libswresample swresample libswresample/swresample.h)
+  find_component(AVRESAMPLE libavresample avresample libavresample/avresample.h)
 
   # Check if the required components were found and add their stuff to the FFMPEG_* vars.
   foreach (_component ${FFmpeg_FIND_COMPONENTS})
@@ -155,7 +158,7 @@ if (NOT FFMPEG_LIBRARIES)
 endif ()
 
 # Now set the noncached _FOUND vars for the components.
-foreach (_component AVCODEC AVDEVICE AVFORMAT AVUTIL POSTPROCESS SWSCALE)
+foreach (_component AVCODEC AVDEVICE AVFORMAT AVUTIL POSTPROCESS SWSCALE SWRESAMPLE AVRESAMPLE)
   set_component_found(${_component})
 endforeach ()
 
