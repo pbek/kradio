@@ -70,12 +70,8 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
     m_av_audioStream      (-1),
     m_av_aCodecCtx        (NULL),
     m_av_aCodec           (NULL),
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
     m_av_byteio_contextPtr(NULL),
-#endif
-#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     m_decoded_frame       (NULL),
-#endif
 #if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
     m_resample_context    (NULL),
 #endif
@@ -179,11 +175,8 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
     char *output_buf             = NULL;
     int   generated_output_bytes = 0;
           processed_input_bytes  = 0;
-#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
     int   got_frame              = 0;
-#endif
 
-#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55, 28, 1) // libav commit: https://gitorious.org/libav/libav/commit/d7b3ee9a3a03ab88d61a5895fbdbc6689f4dd671
     av_frame_unref(m_decoded_frame);
 #else
@@ -231,25 +224,6 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
 #endif
     }
 
-#elif  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(52, 72, 2) // checked: avcodec_decode_audio3 in ffmpeg >= 0.6
-    DECLARE_ALIGNED(16, char, output_buf_data)[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
-    output_buf             = output_buf_data;
-    generated_output_bytes = sizeof(output_buf_data);
-
-    processed_input_bytes  = avcodec_decode_audio3(m_av_aCodecCtx,
-                                                   (int16_t *)output_buf,
-                                                   &generated_output_bytes,
-                                                   &pkt);
-#else
-    DECLARE_ALIGNED(16, char, output_buf_data)[(AVCODEC_MAX_AUDIO_FRAME_SIZE * 3) / 2];
-    output_buf             = output_buf_data;
-    generated_output_bytes = sizeof(output_buf_data);
-    processed_input_bytes  = avcodec_decode_audio2(m_av_aCodecCtx,
-                                                   (int16_t *)output_buf,
-                                                   &generated_output_bytes,
-                                                   pkt.data,
-                                                   pkt.size);
-#endif
 
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
@@ -355,7 +329,6 @@ void InternetRadioDecoder::run()
 
         AVPacket    pkt;
 
-#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
 #if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55, 28, 1) // libav commit: https://gitorious.org/libav/libav/commit/d7b3ee9a3a03ab88d61a5895fbdbc6689f4dd671
         m_decoded_frame = av_frame_alloc();
 #else
@@ -365,7 +338,6 @@ void InternetRadioDecoder::run()
             m_error = true;
             log(ThreadLogging::LogError, i18n("Failed allocating AVFrame."));
         }
-#endif
 
         m_startTime = time(NULL);
 
@@ -436,10 +408,8 @@ void InternetRadioDecoder::run()
 
         //     printf ("closing stream\n");
         closeAVStream();
-#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 42, 0) // checked: avcodec_decode_audio4 in ffmpeg >= 0.9
         av_free(m_decoded_frame);
         m_decoded_frame = NULL;
-#endif
     }
 
 #ifdef DEBUG_DUMP_DECODER_STREAMS
@@ -575,8 +545,6 @@ void InternetRadioDecoder::initIOCallbacks(void *opaque, int(*read_packet_func)(
 {
     // paranoia padding: 4x requirement
     unsigned char *ioBuffer = reinterpret_cast<unsigned char*>(av_malloc(DEFAULT_MMS_BUFFER_SIZE + 4 * AV_INPUT_BUFFER_PADDING_SIZE));
-    
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
 
     m_av_byteio_contextPtr = avio_alloc_context(ioBuffer,
                                                 DEFAULT_MMS_BUFFER_SIZE,
@@ -587,20 +555,6 @@ void InternetRadioDecoder::initIOCallbacks(void *opaque, int(*read_packet_func)(
                                                 NULL
                                                );
     m_av_byteio_contextPtr->seekable = 0;
-
-#else
-
-    init_put_byte(&m_av_byteio_context,
-                  ioBuffer,
-                  DEFAULT_MMS_BUFFER_SIZE,            // sizeof(m_mms_buffer),
-                  false,
-                  opaque,
-                  &read_packet_func,
-                  NULL,
-                  NULL
-                 );
-
-#endif
 }
 
 
@@ -608,18 +562,11 @@ void InternetRadioDecoder::initIOCallbacks(void *opaque, int(*read_packet_func)(
 void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &stream, bool warningsNotErrors, bool use_io_context)
 {
     
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
 //     AVDictionary  *av_params = NULL;
     //av_dict_set(&av_params, "key", "value", 0);
-#else
-    AVFormatParameters av_params;
-    memset(&av_params, 0, sizeof(av_params));
-    av_params.prealloced_context = 1;
-#endif
 
     int err = -1;
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
     if (use_io_context) {
         m_av_pFormatCtx->pb = m_av_byteio_contextPtr;
     }
@@ -629,13 +576,6 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
         m_av_pFormatCtx        = NULL;
         m_av_pFormatCtx_opened = false;
     }
-#else
-    if (use_io_context) {
-        err = av_open_input_stream(&m_av_pFormatCtx, &m_av_byteio_context, stream.toUtf8().constData(), iformat, &av_params);
-    } else {
-        err = av_open_input_file  (&m_av_pFormatCtx, stream.toUtf8().constData(), iformat, 0, &av_params);
-    }
-#endif
 
     if (err != 0) {
         if (warningsNotErrors) {
@@ -649,9 +589,7 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
         m_av_pFormatCtx_opened = true;
     }
 
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
 //     av_dict_free(&av_params);
-#endif
 }
 
 
@@ -740,11 +678,7 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
 {
     // Retrieve stream information
     int err = -1;
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 111, 0) // checked: avformat_find_stream_info in ffmpeg >= 0.7.8
     err = avformat_find_stream_info(m_av_pFormatCtx, NULL);
-#else
-    err = av_find_stream_info(m_av_pFormatCtx);
-#endif
     if (err < 0) {
         if (warningsNotErrors) {
             log(ThreadLogging::LogWarning, i18n("Could not find stream information in %1", stream));
@@ -791,7 +725,6 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
         log(ThreadLogging::LogDebug, QString::fromLatin1("stream[%1]: codec_type = %2, channels = %3, sample rate = %4, format-id = %5").arg(i).arg(type).arg(ch).arg(rate).arg(fmt));
     }
 
-#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 122, 0) // checked: av_find_best_stream in ffmpeg >= 0.7
     m_av_audioStream = av_find_best_stream(
         m_av_pFormatCtx,
         AVMEDIA_TYPE_AUDIO,
@@ -800,18 +733,6 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
         &m_av_aCodec,
         0
     );
-#else // LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 122, 0)
-    m_av_audioStream = -1;
-    for (unsigned int i = 0; i < m_av_pFormatCtx->nb_streams; i++) {
-#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(50, 15, 1) // checked: AVMEDIA_TYPE_AUDIO in ffmpeg >= 0.6
-        if (m_av_pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO) { // take last stream
-#else
-        if (m_av_pFormatCtx->streams[i]->codec->codec_type == CODEC_TYPE_AUDIO) { // take last stream
-#endif
-            m_av_audioStream = i;
-        }
-    }
-#endif // LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 122, 0)
 
     if (m_av_audioStream == -1) {
         if (warningsNotErrors) {
@@ -847,13 +768,9 @@ bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErro
         return false;
     }
 
-#if  LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(52, 123, 0) // checked: avcodec_open2 in ffmpeg >= 0.7.8
     AVDictionary *codecOpts = NULL;
     av_dict_set(&codecOpts, "threads", "auto", 0);
     int err = avcodec_open2(m_av_aCodecCtx, m_av_aCodec, &codecOpts);
-#else
-    int err = avcodec_open(m_av_aCodecCtx, m_av_aCodec);
-#endif
     if (err < 0) {
         if (warningsNotErrors) {
             log(ThreadLogging::LogWarning, i18n("Opening codec for %1 failed", stream));
@@ -1069,7 +986,6 @@ void InternetRadioDecoder::updateSoundFormat()
                 issigned = true;
                 isplanar = false;
                 break;
-#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(50, 15, 1) // checked: first in ffmpeg >= 0.9
             case AV_SAMPLE_FMT_U8P:
                 bits     = 8;
                 issigned = false;
@@ -1093,7 +1009,6 @@ void InternetRadioDecoder::updateSoundFormat()
                 log(ThreadLogging::LogError, i18n("Not yet implemented: libav sample format id %1", fmt));
                 closeAVStream();
                 return;
-#endif
             default:
                 m_error = true;
                 log(ThreadLogging::LogError, i18n("Cannot use libav sample format id %1", fmt));
@@ -1107,7 +1022,6 @@ void InternetRadioDecoder::updateSoundFormat()
 
 void InternetRadioDecoder::freeAVIOContext()
 {
-#if  LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(52, 110, 0) // checked: avformat_open_input in ffmpeg >= 0.7
     if (m_av_byteio_contextPtr) {
         if (m_av_byteio_contextPtr->buffer) {
             av_free(m_av_byteio_contextPtr->buffer);
@@ -1116,12 +1030,6 @@ void InternetRadioDecoder::freeAVIOContext()
         av_free(m_av_byteio_contextPtr);
         m_av_byteio_contextPtr = NULL;
     }
-#else
-    if (m_av_byteio_context.buffer) {
-        av_free(m_av_byteio_context.buffer);
-        m_av_byteio_context.buffer = NULL;
-    }
-#endif
     if (m_av_pFormatCtx) {
         m_av_pFormatCtx->pb = NULL;
     }

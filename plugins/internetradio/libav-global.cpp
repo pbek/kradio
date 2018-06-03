@@ -27,17 +27,13 @@ QSharedPointer<LibAVGlobal> LibAVGlobal::m_instance(NULL);
 LibAVGlobal::LibAVGlobal()
 {
     av_register_all();
-#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
     avformat_network_init();
-#endif
 }
 
 
 LibAVGlobal::~LibAVGlobal()
 {
-#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(53, 24, 0)
     avformat_network_deinit();
-#endif
 }
 
 
