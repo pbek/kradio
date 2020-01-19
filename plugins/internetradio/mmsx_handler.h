@@ -19,7 +19,7 @@
 #define KRADIO_MMSX_HANDLER_H
 
 #include <QSharedPointer>
-#include <kurl.h>
+#include <QtCore/QUrl>
 
 #include "stream_reader.h"
 
@@ -32,23 +32,23 @@ public:
     MMSXHandler();
     ~MMSXHandler();
 
-    void                        startStreamDownload(KUrl url, const QString &metaDataEncoding);
-    void                        stopStreamDownload();
+    void                        startStreamDownload(QUrl url, const QString &metaDataEncoding) override;
+    void                        stopStreamDownload() override;
 
-    KIO::MetaData               getConnectionMetaData() const { return m_connectionMetaData; }
-
-public slots:
-    virtual void                slotStreamContinue() {} // currently not supported
-    virtual void                slotStreamPause()    {}
+    KIO::MetaData               getConnectionMetaData() const override { return m_connectionMetaData; }
 
 public slots:
+    virtual void                slotStreamContinue() override {} // currently not supported
+    virtual void                slotStreamPause()    override {}
 
-    void    proxyError   (KUrl url)                                      { emit sigError(url);               }
-    void    proxyFinished(KUrl url)                                      { emit sigFinished(url);            }
-    void    proxyStarted (KUrl url)                                      { emit sigStarted(url);             }
-    void    proxyConnectionEstablished(KUrl url, KIO::MetaData metaData) { m_connectionMetaData = metaData; emit sigConnectionEstablished(url, metaData); }
+public slots:
 
-    void    proxyUrlChanged(KUrl url)                                    { emit sigUrlChanged(url);          }
+    void    proxyError   (QUrl url)                                      { emit sigError(url);               }
+    void    proxyFinished(QUrl url)                                      { emit sigFinished(url);            }
+    void    proxyStarted (QUrl url)                                      { emit sigStarted(url);             }
+    void    proxyConnectionEstablished(QUrl url, KIO::MetaData metaData) { m_connectionMetaData = metaData; emit sigConnectionEstablished(url, metaData); }
+
+    void    proxyUrlChanged(QUrl url)                                    { emit sigUrlChanged(url);          }
     void    proxyContentType(QString contentType)                        { emit sigContentType(contentType); }
 
     void    proxyStreamData    (QByteArray data)                         { emit sigStreamData(data);         }
@@ -57,7 +57,7 @@ public slots:
 
 protected:
 
-    KUrl                        m_streamUrl;
+    QUrl                        m_streamUrl;
     KIO::MetaData               m_connectionMetaData;
     MMSXHandlerThread          *m_mmsxThread;
 };

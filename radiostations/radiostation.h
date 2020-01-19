@@ -18,11 +18,13 @@
 #ifndef KRADIO_RADIOSTATION_H
 #define KRADIO_RADIOSTATION_H
 
-#include <QString>
-#include <QStringList>
-#include <QMap>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
+#include <QtCore/QMap>
 
 #include <klocalizedstring.h>
+
+#include "kradio-def.h"
 
 /**
   *@author Martin Witte, Klas Kalass
@@ -64,10 +66,13 @@ class RadioStationConfig;
 
 enum StationStereoMode { STATION_STEREO_ON, STATION_STEREO_OFF, STATION_STEREO_DONTCARE };
 
-class KDE_EXPORT RadioStation
+class KRADIO5_EXPORT RadioStation
 {
 protected:
     RadioStation (RegisterStationClass, const QString &classname);
+    
+    RadioStation & operator = (const RadioStation &) = default;
+    
 public:
     RadioStation ();
     RadioStation (const QString &name, const QString &shortName);
@@ -148,25 +153,25 @@ private:
 
 
 
-class KDE_EXPORT UndefinedRadioStation : public RadioStation
+class KRADIO5_EXPORT UndefinedRadioStation : public RadioStation
 {
 public:
     UndefinedRadioStation (RegisterStationClass) : RadioStation (registerStationClass, getClassName()) {}
 
-    virtual QString       longName()    const { return i18nc("Unknown station long name", "unknown"); }
-    virtual QString       description() const { return i18nc("Unknown station description", "unknown"); }
-    virtual bool          isValid()     const { return false; }
-    virtual RadioStation *copy()        const { return new UndefinedRadioStation(*this); }
-    virtual RadioStation *copyNewID()   const { RadioStation *x = new UndefinedRadioStation(*this); x->generateNewStationID(); return x;  }
-    virtual int           compare(const RadioStation &s) const;
+    virtual QString       longName()    const override { return i18nc("Unknown station long name", "unknown"); }
+    virtual QString       description() const override { return i18nc("Unknown station description", "unknown"); }
+    virtual bool          isValid()     const override { return false; }
+    virtual RadioStation *copy()        const override { return new UndefinedRadioStation(*this); }
+    virtual RadioStation *copyNewID()   const override { RadioStation *x = new UndefinedRadioStation(*this); x->generateNewStationID(); return x;  }
+    virtual int           compare(const RadioStation &s) const override;
 
-    virtual QString       getClassName()        const { return QString::fromLatin1("UndefinedRadioStation"); }
-    virtual QString       getClassDescription() const { return QString::fromLatin1("UndefinedRadioStation"); }
-    virtual bool          isClassUserVisible()  const { return false; }
-    virtual RadioStationConfig *createEditor() const;
+    virtual QString       getClassName()        const override { return QString::fromLatin1("UndefinedRadioStation"); }
+    virtual QString       getClassDescription() const override { return QString::fromLatin1("UndefinedRadioStation"); }
+    virtual bool          isClassUserVisible()  const override { return false; }
+    virtual RadioStationConfig *createEditor() const override;
 };
 
 
-extern KDE_EXPORT const UndefinedRadioStation undefinedRadioStation;
+extern KRADIO5_EXPORT const UndefinedRadioStation undefinedRadioStation;
 
 #endif

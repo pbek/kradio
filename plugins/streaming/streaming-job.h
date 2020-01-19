@@ -34,16 +34,16 @@ class StreamingJob : public QObject
 Q_OBJECT
 public:
     StreamingJob();
-    StreamingJob(const KUrl &_URL, const SoundFormat &_SoundFormat, size_t _bufferSize);
+    StreamingJob(const QUrl &_URL, const SoundFormat &_SoundFormat, size_t _bufferSize);
     StreamingJob(const StreamingJob &c);
 
     virtual ~StreamingJob();
 
-    const KUrl        &getURL()         const { return m_URL; }
+    const QUrl        &getURL()         const { return m_URL; }
     const SoundFormat &getSoundFormat() const { return m_SoundFormat; }
     int                getBufferSize()  const { return m_BufferSize; }
 
-    void setURL(const KUrl &);
+    void setURL(const QUrl &);
     void setSoundFormat(const SoundFormat &);
     void setBufferSize(size_t buffer_size);
 
@@ -71,10 +71,10 @@ protected slots:
 
 signals:
 
-    void   logStreamError  (const KUrl &url, const QString &s);
-    void   logStreamWarning(const KUrl &url, const QString &s);
-    void   logStreamInfo   (const KUrl &url, const QString &s);
-    void   logStreamDebug  (const KUrl &url, const QString &s);
+    void   logStreamError  (const QUrl &url, const QString &s);
+    void   logStreamWarning(const QUrl &url, const QString &s);
+    void   logStreamInfo   (const QUrl &url, const QString &s);
+    void   logStreamDebug  (const QUrl &url, const QString &s);
 
 protected:
 
@@ -82,7 +82,7 @@ protected:
     bool   startPutJob();
 
 
-    KUrl              m_URL;
+    QUrl              m_URL;
     SoundFormat       m_SoundFormat;
 
     size_t            m_BufferSize;

@@ -26,9 +26,8 @@
 #include <QSlider>
 #include <QCheckBox>
 
-#include <knuminput.h>
+
 #include <klocalizedstring.h>
-#include <ktabwidget.h>
 
 #include "gui_list_helper.h"
 #include "internetradio-configuration.h"
@@ -211,4 +210,3 @@ void InternetRadioConfiguration::slotCancel()
 
 
 
-#include "internetradio-configuration.moc"

@@ -18,8 +18,6 @@
 #ifndef KRADIO_V4LRADIO_RDS_DECODER_0A_H
 #define KRADIO_V4LRADIO_RDS_DECODER_0A_H
 
-#include <kdemacros.h>
-
 #include "rds_type_decoder.h"
 
 #include <QString>
@@ -32,13 +30,13 @@
 
 enum RDS_0A_State { RDS_0A_WAIT4GRP, RDS_0A_COMPLETE };
 
-class KDE_EXPORT RDS_Type0A_Decoder : public RDSTypeDecoder
+class KRADIO5_EXPORT RDS_Type0A_Decoder : public RDSTypeDecoder
 {
 public:
     RDS_Type0A_Decoder();
 
-    virtual void addGroup(const RDSGroup &g);
-    virtual bool isComplete() const;
+    virtual void addGroup(const RDSGroup &g) override;
+    virtual bool isComplete() const override;
 
     const QString &getStationName() const;
 

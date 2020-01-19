@@ -19,13 +19,14 @@
 #define KRADIO_SOUNDFORMAT_H
 
 #include <endian.h>
-#include <QString>
+#include <QtCore/QString>
 
-#include <kdemacros.h>
+#include "kradio-def.h"
+
 
 class KConfigGroup;
 
-struct KDE_EXPORT SoundFormat {
+struct KRADIO5_EXPORT SoundFormat {
     unsigned     m_SampleRate;
     unsigned     m_Channels;
     unsigned     m_SampleBits;

@@ -19,15 +19,14 @@ extern "C" {
     #include <libavformat/avformat.h>
 }
 
+#include <QGlobalStatic>
 #include "libav-global.h"
 
-#include <kglobal.h>
 
 struct LibAVGlobalStruct
 {
     LibAVGlobalStruct()
     {
-        av_register_all();
         avformat_network_init();
     }
 
@@ -35,9 +34,10 @@ struct LibAVGlobalStruct
     {
         avformat_network_deinit();
     }
-};
+}; // LibAVGlobalStruct
 
-K_GLOBAL_STATIC(LibAVGlobalStruct, libavinit)
+
+Q_GLOBAL_STATIC(LibAVGlobalStruct, libavinit);
 
 namespace LibAVGlobal {
 

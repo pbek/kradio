@@ -28,25 +28,23 @@
 
 #include <math.h>
 
-#include <QListWidget>
-#include <QDateTimeEdit>
-#include <QLineEdit>
-#include <QLabel>
-#include <QSpinBox>
-#include <QPushButton>
-#include <QMenu>
-#include <QStackedWidget>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QDateTimeEdit>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QFileDialog>
+#include <QtGui/QIcon>
+#include <QtGui/QImageReader>
+#include <QtCore/QStandardPaths>
 
-#include <kfiledialog.h>
-#include <kstandarddirs.h>
 #include <kurllabel.h>
 #include <kurlrequester.h>
 #include <klocalizedstring.h>
-#include <kdemacros.h>
 #include <ktoolinvocation.h>
-#include <kglobal.h>
-#include <kicon.h>
-#include <kimageio.h>
 
 RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &logger)
     : QWidget(parent),
@@ -58,21 +56,26 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
 {
     setupUi(this);
 
-    QString defaultPresetDir = KGlobal::dirs()->saveLocation("data", "kradio4");
+    QString defaultPresetDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
-    editPresetFile->setStartDir(defaultPresetDir);
+    editPresetFile->setStartDir(QUrl(defaultPresetDir));
 
-    editPixmapFile->fileDialog()->setMimeFilter(KImageIO::mimeTypes(KImageIO::Reading));
-    editPixmapFile->fileDialog()->setCaption(i18n("Image Selection"));
+    QList<QByteArray>   mimetypes_bytearray = QImageReader::supportedMimeTypes();
+    QStringList         mimetypes_qstring;
+    for(const auto & item : mimetypes_bytearray) {
+        mimetypes_qstring.append(QString::fromLocal8Bit(item));
+    }
+    editPixmapFile->setMimeTypeFilters(mimetypes_qstring);
+    editPixmapFile->setWindowTitle(i18n("Image Selection"));
 
     // icon settings does not work any more in .ui files in KDE4, don't know why/how
-    buttonNewStation      ->setIcon(KIcon("document-new"));
-    buttonDeleteStation   ->setIcon(KIcon("edit-delete"));
-    buttonStationUp       ->setIcon(KIcon("arrow-up"));
-    buttonStationDown     ->setIcon(KIcon("arrow-down"));
-    buttonSearchStations  ->setIcon(KIcon("edit-find"));
-    buttonLoadPresets     ->setIcon(KIcon("document-open"));
-    buttonStorePresets    ->setIcon(KIcon("document-save-as"));
+    buttonNewStation      ->setIcon(QIcon("document-new"));
+    buttonDeleteStation   ->setIcon(QIcon("edit-delete"));
+    buttonStationUp       ->setIcon(QIcon("arrow-up"));
+    buttonStationDown     ->setIcon(QIcon("arrow-down"));
+    buttonSearchStations  ->setIcon(QIcon("edit-find"));
+    buttonLoadPresets     ->setIcon(QIcon("document-open"));
+    buttonStorePresets    ->setIcon(QIcon("document-save-as"));
 
     comboStereoMode->clear();
     comboStereoMode->addItem(i18nc("Sound mode", "<do not care>"),        (int)STATION_STEREO_DONTCARE);
@@ -80,8 +83,8 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     comboStereoMode->addItem(i18nc("Sound mode, stereophonic", "Stereo"), (int)STATION_STEREO_ON);
 
     m_loadPopup = new QMenu(buttonLoadPresets);
-    m_loadPopup->addAction(KIcon("document-open"), i18n("Load and replace presets"), this, SLOT(slotLoadPresets()));
-    m_loadPopup->addAction(KIcon("list-add"),      i18n("Load and add presets"),     this, SLOT(slotAddPresets ()));
+    m_loadPopup->addAction(QIcon("document-open"), i18n("Load and replace presets"), this, SLOT(slotLoadPresets()));
+    m_loadPopup->addAction(QIcon("list-add"),      i18n("Load and add presets"),     this, SLOT(slotAddPresets ()));
     buttonLoadPresets->setMenu(m_loadPopup);
 
     QObject::connect(listStations, SIGNAL(sigCurrentStationChanged(int)),
@@ -231,7 +234,7 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 bool RadioConfiguration::noticePresetFileChanged(const QString &f)
 {
     m_ignoreChanges = true;
-    editPresetFile->setUrl(f);
+    editPresetFile->setUrl(QUrl(f));
     m_ignoreChanges = false;
     return true;
 }
@@ -525,7 +528,7 @@ void RadioConfiguration::slotAddPresets()
 
 void RadioConfiguration::loadPresets(bool add)
 {
-    const KUrl::List urls = KFileDialog::getOpenUrls(KUrl(KStandardDirs::installPath("data") + "kradio4/presets"), "*.krp|" + i18n("KRadio Preset Files"), this, i18n("Select Preset File"));
+  const QList<QUrl> urls = QFileDialog::getOpenFileUrls(this, i18n("Select Preset File"), QUrl(QStandardPaths::locate(QStandardPaths::AppDataLocation, "presets")), i18n("KRadio Preset Files") + " (*.krp)");
 
     if (!urls.isEmpty()) {
         slotSetDirty();
@@ -533,7 +536,7 @@ void RadioConfiguration::loadPresets(bool add)
         if (add) {
             sl_all = m_stations;
         }
-        KUrl url;
+        QUrl url;
         foreach (url, urls) {
             StationList sl;
             if (sl.readXML(url, m_logger)) {
@@ -547,7 +550,7 @@ void RadioConfiguration::loadPresets(bool add)
 
 void RadioConfiguration::slotStorePresets()
 {
-    const KUrl url = KFileDialog::getSaveUrl(KUrl(), "*.krp|" + i18n("KRadio Preset Files"), this, i18n("Save Preset File"), KFileDialog::ConfirmOverwrite);
+    const QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Save Preset File"), QUrl(), i18n("KRadio Preset Files") + " (*.krp)");
 
     if (url.isValid()) {
         editPresetFile->setUrl(url);
@@ -618,7 +621,7 @@ void RadioConfiguration::slotOK()
         i.comment    = editComment->text();
 
         sendStations(m_stations);
-        sendPresetFile(editPresetFile->url().pathOrUrl());
+        sendPresetFile(editPresetFile->url().toString());
         m_dirty = false;
     }
 }
@@ -641,4 +644,3 @@ void RadioConfiguration::slotSetDirty()
 }
 
 
-#include "radio-configuration.moc"

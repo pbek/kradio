@@ -23,7 +23,6 @@
 
 #include <klocalizedstring.h>
 #include <kurlrequester.h>
-#include <kdemacros.h>
 
 #include <lirc/lirc_client.h>
 
@@ -201,7 +200,7 @@ void LIRCConfiguration::slotCancel()
 
         if (m_LIRC) {
 
-            edLIRCConfigurationFile->setStartDir(m_LIRC->getLIRCConfigurationFile());
+            edLIRCConfigurationFile->setStartDir(QUrl(m_LIRC->getLIRCConfigurationFile()));
             readLIRCConfigurationFile();
 
             const QMap<LIRC_Actions, QString> &actions     = m_LIRC->getActions();
@@ -285,4 +284,3 @@ void LIRCConfiguration::slotSetDirty()
     }
 }
 
-#include "lirc-configuration.moc"

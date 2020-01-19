@@ -12,7 +12,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
-    <widget class="KTabWidget" name="ktabwidget">
+    <widget class="QTabWidget" name="ktabwidget">
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -37,7 +37,7 @@
        <item row="0" column="1">
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="KPushButton" name="btnNewPluginInstance">
+          <widget class="QPushButton" name="btnNewPluginInstance">
            <property name="maximumSize">
             <size>
              <width>26</width>
@@ -53,7 +53,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="btnRenamePluginInstance">
+          <widget class="QPushButton" name="btnRenamePluginInstance">
            <property name="maximumSize">
             <size>
              <width>26</width>
@@ -69,7 +69,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="btnRemovePluginInstance">
+          <widget class="QPushButton" name="btnRemovePluginInstance">
            <property name="maximumSize">
             <size>
              <width>26</width>
@@ -150,7 +150,7 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="KPushButton" name="btnAddLibrary">
+          <widget class="QPushButton" name="btnAddLibrary">
            <property name="maximumSize">
             <size>
              <width>26</width>
@@ -169,7 +169,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="btnRemoveLibrary">
+          <widget class="QPushButton" name="btnRemoveLibrary">
            <property name="maximumSize">
             <size>
              <width>26</width>
@@ -273,20 +273,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
-   <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ktabwidget.h</header>
-   <container>1</container>
+   <header>KUrlRequester</header>
   </customwidget>
  </customwidgets>
  <resources/>

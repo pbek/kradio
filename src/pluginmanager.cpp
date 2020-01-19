@@ -27,14 +27,15 @@
 #include "stationselection_interfaces.h"
 
 
-#include <kicon.h>
-#include <kpagedialog.h>
+#include <QtGui/QIcon>
+#include <QtWidgets/QProgressDialog>
+
+#include <KSharedConfig>
+#include <KPageDialog>
 #include <klocalizedstring.h>
 #include <kconfig.h>
-#include <kprogressdialog.h>
-#include <kwindowsystem.h>
+#include <KWindowSystem>
 #include <kmessagebox.h>
-#include <kglobal.h>
 
 #include <QProgressBar>
 #include <QLayout>
@@ -173,7 +174,7 @@ void PluginManager::setConfigPageNameEtc(PluginBase *p)
             }
             config_page->setName  (itemName);
             config_page->setHeader(pageHeader);
-            config_page->setIcon  (KIcon(info.iconName));
+            config_page->setIcon  (QIcon(info.iconName));
         }
     }
 }
@@ -382,7 +383,7 @@ KPageWidgetItem *PluginManager::addConfigurationPage (const ConfigPageInfo &info
 
     // insert into config dialog
     KPageWidgetItem *item = m_configDialog->addPage(f, info.itemName);
-    item->setIcon(KIcon(info.iconName));
+    item->setIcon(QIcon(info.iconName));
 
     return item;
 }
@@ -491,13 +492,17 @@ void PluginManager::restoreState (KConfig *c)
     QList<QString> unused_classes = plugin_classes.keys();
 
     n = cfggrp.readEntry("plugins", 0);
-    KProgressDialog  *progress = NULL;
+    QProgressDialog  *progress = NULL;
     if (m_showProgressBar) {
-        progress = new KProgressDialog(NULL, i18n("Starting Plugins"));
+        progress = new QProgressDialog(i18n("Starting Plugins"), 
+                                       "no-cancel-delme-placeholder",
+                                       0, 
+                                       2 * n,
+                                       nullptr
+                                     );
         progress->setMinimumWidth(400);
-        progress->setAllowCancel(false);
+        progress->setCancelButton(nullptr);
         progress->show();
-        progress->progressBar()->setRange(0, 2*n);
     }
 
     // restore previously present instances
@@ -517,7 +522,7 @@ void PluginManager::restoreState (KConfig *c)
         if (class_name.length() && object_name.length())
             m_instanceManager->CreatePlugin(this, object_id, class_name, object_name);
         if (m_showProgressBar)
-            progress->progressBar()->setValue(i);
+            progress->setValue(i);
     }
 
     // create instances of so far unused plugin classes
@@ -542,8 +547,10 @@ void PluginManager::restoreState (KConfig *c)
 
             int idx = n + 1;
             n += unused_classes.count();
-            if (m_showProgressBar)
-                progress->progressBar()->setRange(0, 2*n);
+            if (m_showProgressBar) {
+                progress->setMinimum(0);
+                progress->setMaximum(2*n);
+            }
             QString cls;
             foreach (cls, unused_classes) {
                 if (m_showProgressBar)
@@ -552,7 +559,7 @@ void PluginManager::restoreState (KConfig *c)
                 m_instanceManager->CreatePlugin(this, generateRandomID(70), cls, cls);
 
                 if (m_showProgressBar)
-                    progress->progressBar()->setValue(idx++);
+                    progress->setValue(idx++);
             }
             getConfigDialog()->show();
         }
@@ -573,7 +580,7 @@ void PluginManager::restoreState (KConfig *c)
         restorePluginInstanceState (*it, c);
 
         if (m_showProgressBar)
-            progress->progressBar()->setValue(idx+1);
+            progress->setValue(idx+1);
     }
     if (m_showProgressBar)
         delete progress;
@@ -644,9 +651,11 @@ PluginConfigurationDialog *PluginManager::getConfigDialog()
 void PluginManager::slotConfigOK()
 {
     emit sigConfigOK();
-    if (m_instanceManager)
-        m_instanceManager->saveState(KGlobal::config().data());
-}
+    if (m_instanceManager) {
+        const auto cfgPtr = KSharedConfig::openConfig();
+        m_instanceManager->saveState(cfgPtr.data());
+    }
+} // PluginManager::slotConfigOK()
 
 
 void  PluginManager::startPlugins()
@@ -763,4 +772,3 @@ bool PluginManager::pluginHasDefaultName(PluginBase *p)
 }
 
 
-#include "pluginmanager.moc"

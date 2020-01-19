@@ -16,10 +16,10 @@
  ***************************************************************************/
 
 #include <kurlrequester.h>
-#include <knuminput.h>
+
 #include <kcombobox.h>
 #include <klocalizedstring.h>
-#include <kicon.h>
+#include <QtGui/QIcon>
 
 #include "streaming-configuration.h"
 #include "streaming.h"
@@ -198,14 +198,14 @@ StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice
 {
     setupUi(this);
 
-    m_pbNewCaptureURL    ->setIcon(KIcon("document-new"));
-    m_pbNewPlaybackURL   ->setIcon(KIcon("document-new"));
-    m_pbDeleteCaptureURL ->setIcon(KIcon("edit-delete"));
-    m_pbDeletePlaybackURL->setIcon(KIcon("edit-delete"));
-    m_pbUpCaptureURL     ->setIcon(KIcon("arrow-up"));
-    m_pbUpPlaybackURL    ->setIcon(KIcon("arrow-up"));
-    m_pbDownCaptureURL   ->setIcon(KIcon("arrow-down"));
-    m_pbDownPlaybackURL  ->setIcon(KIcon("arrow-down"));
+    m_pbNewCaptureURL    ->setIcon(QIcon("document-new"));
+    m_pbNewPlaybackURL   ->setIcon(QIcon("document-new"));
+    m_pbDeleteCaptureURL ->setIcon(QIcon("edit-delete"));
+    m_pbDeletePlaybackURL->setIcon(QIcon("edit-delete"));
+    m_pbUpCaptureURL     ->setIcon(QIcon("arrow-up"));
+    m_pbUpPlaybackURL    ->setIcon(QIcon("arrow-up"));
+    m_pbDownCaptureURL   ->setIcon(QIcon("arrow-down"));
+    m_pbDownPlaybackURL  ->setIcon(QIcon("arrow-down"));
 
     m_PlaybackModel = new StreamingConfigurationModel(m_ListPlaybackURLs);
     m_ListPlaybackURLs->setModel(m_PlaybackModel);
@@ -261,7 +261,7 @@ void StreamingConfiguration::slotOK()
         const QString device = index.data(StreamingConfigurationModel::DeviceRole).toString();
         const SoundFormat sf = index.data(StreamingConfigurationModel::SoundFormatRole).value<SoundFormat>();
         const int buffer_size = index.data(StreamingConfigurationModel::BufferSizeRole).toInt();
-        m_StreamingDevice->addPlaybackStream(device, sf, buffer_size, i == rows - 1);
+        m_StreamingDevice->addPlaybackStream(QUrl(device), sf, buffer_size, i == rows - 1);
     }
 
     rows = m_CaptureModel->rowCount();
@@ -270,7 +270,7 @@ void StreamingConfiguration::slotOK()
         const QString device = index.data(StreamingConfigurationModel::DeviceRole).toString();
         const SoundFormat sf = index.data(StreamingConfigurationModel::SoundFormatRole).value<SoundFormat>();
         const int buffer_size = index.data(StreamingConfigurationModel::BufferSizeRole).toInt();
-        m_StreamingDevice->addCaptureStream(device, sf, buffer_size, i == rows - 1);
+        m_StreamingDevice->addCaptureStream(QUrl(device), sf, buffer_size, i == rows - 1);
     }
 
     m_dirty = false;
@@ -290,9 +290,9 @@ void StreamingConfiguration::slotCancel()
     for (int i = 0; i < playbackChannels.size(); ++i) {
         SoundFormat sf;
         size_t      buffer_size;
-        KUrl        url;
+        QUrl        url;
         m_StreamingDevice->getPlaybackStreamOptions(playbackChannels[i], url, sf, buffer_size);
-        m_PlaybackModel->addDevice(url.pathOrUrl(), sf, buffer_size);
+        m_PlaybackModel->addDevice(url.toString(), sf, buffer_size);
     }
 
     m_CaptureModel->clear();
@@ -300,9 +300,9 @@ void StreamingConfiguration::slotCancel()
     for (int i = 0; i < captureChannels.size(); ++i) {
         SoundFormat sf;
         size_t      buffer_size;
-        KUrl        url;
+        QUrl        url;
         m_StreamingDevice->getCaptureStreamOptions(captureChannels[i], url, sf, buffer_size);
-        m_CaptureModel->addDevice(url.pathOrUrl(), sf, buffer_size);
+        m_CaptureModel->addDevice(url.toString(), sf, buffer_size);
     }
     slotTabChanged(ktabwidget->currentIndex());
 
@@ -631,4 +631,3 @@ void StreamingConfiguration::getStreamOptions(SoundFormat &sf, int &BufferSize) 
     }
 }
 
-#include "streaming-configuration.moc"

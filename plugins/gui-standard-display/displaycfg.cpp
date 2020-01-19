@@ -119,4 +119,3 @@ void DisplayConfiguration::slotSetDirty()
 }
 
 
-#include "displaycfg.moc"

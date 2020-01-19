@@ -69,12 +69,12 @@ public:
     LircSupport(const QString &instanceID, const QString &name);
     ~LircSupport();
 
-    virtual bool    connectI    (Interface *);
-    virtual bool    disconnectI (Interface *);
+    virtual bool    connectI    (Interface *) override;
+    virtual bool    disconnectI (Interface *) override;
 
-    virtual void    startPlugin();
+    virtual void    startPlugin() override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("LircSupport"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("LircSupport"); }
 
 
     virtual void                               setActions(const QMap<LIRC_Actions, QString> &actions, const QMap<LIRC_Actions, QString> &alt_actions);
@@ -95,45 +95,45 @@ public:
     // PluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
 
 
     // IRadioClient methods
 
 RECEIVERS:
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }
-    bool noticeStationsChanged(const StationList &/*sl*/)         { return false; }
-    bool noticePresetFileChanged(const QString &/*f*/)            { return false; }
+    bool noticePowerChanged(bool on) override;
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) override { return false; }
+    bool noticeStationsChanged(const StationList &/*sl*/)         override { return false; }
+    bool noticePresetFileChanged(const QString &/*f*/)            override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)           { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)        { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)           override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)        override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/)  { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/)  { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/)  override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/)  override { return false; }
 
     // ITimeControlClient
 
 RECEIVERS:
-    bool noticeAlarmsChanged(const AlarmVector &)      { return false; }
-    bool noticeAlarm(const Alarm &)                    { return false; }
-    bool noticeNextAlarmChanged(const Alarm *)         { return false; }
-    bool noticeCountdownStarted(const QDateTime &/*end*/) { return false; }
-    bool noticeCountdownStopped()                      { return false; }
-    bool noticeCountdownZero()                         { return false; }
-    bool noticeCountdownSecondsChanged(int /*n*/, bool /*resumeOnSuspend*/)      { return false; }
+    bool noticeAlarmsChanged(const AlarmVector &)         override { return false; }
+    bool noticeAlarm(const Alarm &)                       override { return false; }
+    bool noticeNextAlarmChanged(const Alarm *)            override { return false; }
+    bool noticeCountdownStarted(const QDateTime &/*end*/) override { return false; }
+    bool noticeCountdownStopped()                         override { return false; }
+    bool noticeCountdownZero()                            override { return false; }
+    bool noticeCountdownSecondsChanged(int /*n*/, bool /*resumeOnSuspend*/)  override     { return false; }
 
     // IRadioDevicePoolClient
 
 RECEIVERS:
-    bool noticeActiveDeviceChanged(IRadioDevice *)           { return false; }
-    bool noticeDevicesChanged(const QList<IRadioDevice*> &)  { return false; }
-    bool noticeDeviceDescriptionChanged(const QString &)     { return false; }
+    bool noticeActiveDeviceChanged(IRadioDevice *)           override { return false; }
+    bool noticeDevicesChanged(const QList<IRadioDevice*> &)  override { return false; }
+    bool noticeDeviceDescriptionChanged(const QString &)     override { return false; }
 
 
 protected:

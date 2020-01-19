@@ -29,7 +29,7 @@ MMSXHandler::~MMSXHandler()
 }
 
 
-void MMSXHandler::startStreamDownload(KUrl url, const QString &/*metaDataEncoding*/)
+void MMSXHandler::startStreamDownload(QUrl url, const QString &/*metaDataEncoding*/)
 {
     stopStreamDownload();
     m_streamUrl  = url;

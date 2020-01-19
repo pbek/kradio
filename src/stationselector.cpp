@@ -17,8 +17,8 @@
 
 using namespace std;
 
-#include <kpushbutton.h>
-#include <kicon.h>
+#include <QtWidgets/QPushButton>
+#include <QtGui/QIcon>
 #include <algorithm>
 
 #include "stationlist.h"
@@ -36,8 +36,8 @@ StationSelector::StationSelector (QWidget *parent)
     m_ui = new Ui_StationSelectorUI();
     m_ui->setupUi(this);
 
-    m_ui->buttonToRight->setIcon(KIcon(QApplication::isRightToLeft() ? "arrow-left" : "arrow-right"));
-    m_ui->buttonToLeft->setIcon(KIcon(QApplication::isRightToLeft() ? "arrow-right" : "arrow-left"));
+    m_ui->buttonToRight->setIcon(QIcon(QApplication::isRightToLeft() ? "arrow-left" : "arrow-right"));
+    m_ui->buttonToLeft->setIcon(QIcon(QApplication::isRightToLeft() ? "arrow-right" : "arrow-left"));
 
     QObject::connect(m_ui->buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
     QObject::connect(m_ui->buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
@@ -237,4 +237,3 @@ void StationSelector::slotSetDirty()
     }
 }
 
-#include "stationselector.moc"

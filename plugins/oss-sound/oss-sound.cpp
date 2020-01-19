@@ -18,7 +18,7 @@
 #include "oss-sound.h"
 
 #include <klocalizedstring.h>
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/soundcard.h>
@@ -40,7 +40,7 @@ static KAboutData aboutData()
                      ki18nc("@title Open Sound System", "OSS"),
                      KRADIO_VERSION,
                      ki18nc("@title", "Open Sound System (OSS) Support"),
-                     KAboutData::License_GPL,
+                     KAboutLicense::LicenseKey::GPL,
                      ki18nc("@info:credit", "(c) 2004 Martin Witte"),
                      KLocalizedString(),
                      "http://sourceforge.net/projects/kradio",
@@ -991,4 +991,3 @@ QString OSSSoundDevice::getSoundStreamClientDescription() const
 
 
 
-#include "oss-sound.moc"

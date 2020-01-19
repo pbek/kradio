@@ -18,7 +18,8 @@
 #ifndef KRADIO_V4LRADIO_RDS_GROUP_H
 #define KRADIO_V4LRADIO_RDS_GROUP_H
 
-#include <kdemacros.h>
+#include "kradio-def.h"
+
 
 #define RDS_BLK_A          0
 #define RDS_BLK_B          1
@@ -71,7 +72,7 @@ enum RDSGroupType {
     GROUP_TYPE_COUNT
 };
 
-class KDE_EXPORT RDSGroup
+class KRADIO5_EXPORT RDSGroup
 {
 public:
     RDSGroup();

@@ -26,10 +26,10 @@
 #include <QPushButton>
 #include <QFile>
 
-#include <kfiledialog.h>
-#include <knuminput.h>
+#include <QtWidgets/QFileDialog>
+
 #include <klocalizedstring.h>
-#include <kicon.h>
+#include <QtGui/QIcon>
 
 #include "gui_list_helper.h"
 #include "timeshifter-configuration.h"
@@ -48,7 +48,7 @@ TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter
     m_PlaybackMixerHelper  .setList(comboPlaybackMixerDevice );
     m_PlaybackChannelHelper.setList(comboPlaybackMixerChannel);
 
-    buttonSelectTempFile->setIcon(KIcon("document-open"));
+    buttonSelectTempFile->setIcon(QIcon("document-open"));
 
     QObject::connect(buttonSelectTempFile, SIGNAL(clicked()),
                      this, SLOT(selectTempFile()));
@@ -142,17 +142,21 @@ bool TimeShifterConfiguration::setPlaybackMixer(const QString &mixer_id, const Q
 
 void TimeShifterConfiguration::selectTempFile()
 {
-    KFileDialog fd(KUrl("/tmp/"),
-                   i18n("any ( * )"),
-                   this);
+    QFileDialog fd(this, 
+                   i18n("Select TimeShifter Temporary File"),
+                   "/tmp/",
+                   i18n("any ( * )")
+                  );
     fd.setModal(true);
-    fd.setMode(KFile::File);
-    fd.setCaption (i18n("Select TimeShifter Temporary File"));
+    fd.setFileMode(QFileDialog::AnyFile);
 
     if (fd.exec() == QDialog::Accepted) {
-        editTempFile->setText(fd.selectedFile());
-    }
-}
+        const QStringList flist = fd.selectedFiles();
+        if (flist.size() >= 1) {
+            editTempFile->setText(flist[0]);
+        } // if list len >= 1
+    } // if accepted
+} // TimeShifterConfiguration::selectTempFile
 
 
 void TimeShifterConfiguration::slotComboPlaybackMixerSelected(int /*idx*/)
@@ -204,4 +208,3 @@ void TimeShifterConfiguration::slotUpdateConfig()
     slotCancel();
 }
 
-#include "timeshifter-configuration.moc"

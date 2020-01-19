@@ -264,4 +264,3 @@ bool StandardScanDialog::noticeRDSStationNameChanged(const QString &)
     return true;
 }
 
-#include "standardscandialog.moc"

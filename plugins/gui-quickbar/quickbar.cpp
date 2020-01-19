@@ -21,10 +21,9 @@
 #include <QDropEvent>
 
 #include <klocalizedstring.h>
-#include <kglobal.h>
 #include <kconfiggroup.h>
-#include <kaboutdata.h>
-#include <kicon.h>
+#include <KAboutData>
+#include <QtGui/QIcon>
 
 #include "station-drag-object.h"
 #include "stationlist.h"
@@ -40,17 +39,16 @@
 static KAboutData aboutData()
 {
     KAboutData about("QuickBar",
-                     PROJECT_NAME,
-                     ki18nc("@title", "Quickbar"),
+                     i18nc("@title", "Quickbar"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Radio Station Quick Selection Toolbar"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
-                     KLocalizedString(),
+                     i18nc("@title", "Radio Station Quick Selection Toolbar"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Klas Kalass"),  NULL, "klas.kalass@gmx.de");
     return about;
 }
 
@@ -268,7 +266,7 @@ void QuickBar::rebuildGUI()
         m_buttons.append(b);
         b->setCheckable(true);
         if (rs.iconName().length()) {
-            b->setIcon(KIcon(rs.iconName()));
+            b->setIcon(QIcon(rs.iconName()));
         } else {
             b->setText(m_showShortName ? rs.shortName() : rs.name());
         }
@@ -377,4 +375,3 @@ void QuickBar::dropEvent(QDropEvent* event)
 }
 
 
-#include "quickbar.moc"

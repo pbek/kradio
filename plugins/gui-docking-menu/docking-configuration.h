@@ -18,7 +18,7 @@
 #ifndef KRADIO_DOCKING_CONFIGURATION_H
 #define KRADIO_DOCKING_CONFIGURATION_H
 
-#include <QMap>
+#include <QtCore/QMap>
 
 #include "stationselector.h"
 #include "docking.h"
@@ -43,6 +43,10 @@ protected slots:
     void slotDoubleClickActionChanged(Qt::MouseButton btn, SystrayClickAction action);
     void slotWheelActionChanged      (SystrayWheelAction action);
     void languageChange();
+    
+protected:
+    void   changeEvent(QEvent *event) override;
+    
 
 protected:
     RadioDocking                       *m_docking;

@@ -18,13 +18,11 @@
 #ifndef KRADIO_V4LRADIO_RDS_DECODER_H
 #define KRADIO_V4LRADIO_RDS_DECODER_H
 
-#include <kdemacros.h>
-
 #include "rds_group.h"
 #include "rds_type_0a_decoder.h"
 #include "rds_type_2ab_decoder.h"
 
-class KDE_EXPORT RDSDecoder
+class KRADIO5_EXPORT RDSDecoder
 {
 public:
     RDSDecoder(RDSGroup *rds_group_decoder);

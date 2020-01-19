@@ -19,16 +19,16 @@
 #define KRADIO_SOUND_METADATA_H
 
 #include <time.h>
-#include <kurl.h>
+#include <QtCore/QUrl>
 
-class KDE_EXPORT SoundMetaData
+class KRADIO5_EXPORT SoundMetaData
 {
 public:
-    SoundMetaData (quint64 pos, time_t rel_ts, time_t abs_ts, const KUrl &url = KUrl())
+    SoundMetaData (quint64 pos, time_t rel_ts, time_t abs_ts, const QUrl &url = QUrl())
         : m_DataPosition(pos), m_relativeTimestamp(rel_ts), m_absoluteTimestamp(abs_ts), m_URL(url) {}
 
     quint64  position()  const { return m_DataPosition; }
-    KUrl     url()       const { return m_URL; }
+    QUrl     url()       const { return m_URL; }
     time_t   relativeTimestamp() const { return m_relativeTimestamp; }
     time_t   absoluteTimestamp() const { return m_absoluteTimestamp; }
 
@@ -36,7 +36,7 @@ protected:
     quint64  m_DataPosition;
     time_t   m_relativeTimestamp;
     time_t   m_absoluteTimestamp;
-    KUrl     m_URL;
+    QUrl     m_URL;
 };
 
 

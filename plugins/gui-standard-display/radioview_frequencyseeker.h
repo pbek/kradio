@@ -36,26 +36,26 @@ public:
     RadioViewFrequencySeeker(QWidget *parent, const QString &name);
     ~RadioViewFrequencySeeker();
 
-    float getUsability(Interface *) const;
+    float getUsability(Interface *) const override;
 
 // Interface
 
-    bool connectI   (Interface *);
-    bool disconnectI(Interface *);
+    bool connectI   (Interface *) override;
+    bool disconnectI(Interface *) override;
 
 // ISeekRadioClient
 RECEIVERS:
-    bool noticeSeekStarted (bool up);
-    bool noticeSeekStopped ();
-    bool noticeSeekFinished (const RadioStation &s, bool goodQuality);
-    bool noticeProgress (float ) { return false; }
+    bool noticeSeekStarted (bool up) override;
+    bool noticeSeekStopped () override;
+    bool noticeSeekFinished (const RadioStation &s, bool goodQuality) override;
+    bool noticeProgress (float )  override { return false; }
 
 // IFrequencyRadioClient
 RECEIVERS:
-    bool noticeFrequencyChanged(float f, const FrequencyRadioStation *s);
-    bool noticeMinMaxFrequencyChanged(float min, float max);
-    bool noticeDeviceMinMaxFrequencyChanged(float min, float max);
-    bool noticeScanStepChanged(float s);
+    bool noticeFrequencyChanged(float f, const FrequencyRadioStation *s) override;
+    bool noticeMinMaxFrequencyChanged(float min, float max) override;
+    bool noticeDeviceMinMaxFrequencyChanged(float min, float max) override;
+    bool noticeScanStepChanged(float s) override;
 
 // own stuff ;)
 

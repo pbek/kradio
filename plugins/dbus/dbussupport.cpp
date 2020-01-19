@@ -32,14 +32,13 @@
 
 static KAboutData aboutData()
 {
-    KAboutData about("DBusSupport",
-                     PROJECT_NAME,
-                     ki18nc("@title", "D-Bus"),
-                     KRADIO_VERSION,
-                     ki18nc("@title", "D-Bus Support"),
-                     KAboutData::License_GPL,
-                     KLocalizedString(),
-                     KLocalizedString(),
+    KAboutData about(QStringLiteral("DBusSupport"),
+                     i18nc("@title", "D-Bus"),
+                     QStringLiteral(KRADIO_VERSION),
+                     i18nc("@title", "D-Bus Support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     NULL,
+		     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;
@@ -397,5 +396,4 @@ int DBusSupport::getStationsCount() const
 }
 
 
-#include "dbussupport.moc"
 

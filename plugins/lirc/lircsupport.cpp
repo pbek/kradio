@@ -25,8 +25,8 @@
 #include <QDir>
 #include <QApplication>
 
-#include <kaboutdata.h>
-#include <kstandarddirs.h>
+#include <KAboutData>
+#include <QStandardPaths>
 
 #include "errorlog_interfaces.h"
 #include "radiodevice_interfaces.h"
@@ -44,16 +44,15 @@
 static KAboutData aboutData()
 {
     KAboutData about("LircSupport",
-                     PROJECT_NAME,
-                     ki18nc("@title", "LIRC"),
+                     i18nc("@title", "LIRC"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Linux Infrared Control (LIRC) Support"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte"),
-                     KLocalizedString(),
+                     i18nc("@title", "Linux Infrared Control (LIRC) Support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2005 Martin Witte"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
     return about;
 }
 
@@ -196,7 +195,7 @@ void LircSupport::checkLIRCConfigurationFile(const QString &fname)
 {
     if (!QFile::exists(fname)) {
         logWarning(i18n("%1 does not exist. File was created with KRadio's default .lircrc proposal", fname));
-        QString default_lircrc_filename = KStandardDirs::locate("data", "kradio4/default-dot-lircrc");
+        QString default_lircrc_filename = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kradio4/default-dot-lircrc");
         if (!QFile::copy(default_lircrc_filename, fname)) {
             logError(i18n("Failed to copy %1 to %2", default_lircrc_filename, fname));
         }
@@ -759,4 +758,3 @@ bool LircSupport::noticePowerChanged(bool on)
 }
 
 
-#include "lircsupport.moc"

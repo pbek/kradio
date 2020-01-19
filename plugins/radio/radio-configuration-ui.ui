@@ -192,28 +192,28 @@
        <item row="0" column="1">
         <layout class="QVBoxLayout" name="_2">
          <item>
-          <widget class="KPushButton" name="buttonNewStation">
+          <widget class="QPushButton" name="buttonNewStation">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="buttonDeleteStation">
+          <widget class="QPushButton" name="buttonDeleteStation">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="buttonStationUp">
+          <widget class="QPushButton" name="buttonStationUp">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="buttonStationDown">
+          <widget class="QPushButton" name="buttonStationDown">
            <property name="text">
             <string/>
            </property>
@@ -233,7 +233,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="KPushButton" name="buttonSearchStations">
+          <widget class="QPushButton" name="buttonSearchStations">
            <property name="toolTip">
             <string>Search stations</string>
            </property>
@@ -246,7 +246,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="buttonLoadPresets">
+          <widget class="QPushButton" name="buttonLoadPresets">
            <property name="toolTip">
             <string>Load presets</string>
            </property>
@@ -259,7 +259,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KPushButton" name="buttonStorePresets">
+          <widget class="QPushButton" name="buttonStorePresets">
            <property name="toolTip">
             <string>Save presets as...</string>
            </property>
@@ -334,7 +334,7 @@
             </widget>
            </item>
            <item>
-            <widget class="KPushButton" name="buttonLastChangeNow">
+            <widget class="QPushButton" name="buttonLastChangeNow">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -477,14 +477,9 @@
    <header>kurllabel.h</header>
   </customwidget>
   <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
-   <header>kurlrequester.h</header>
+   <header>KUrlRequester</header>
   </customwidget>
   <customwidget>
    <class>RadioStationListView</class>

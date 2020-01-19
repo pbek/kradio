@@ -26,7 +26,7 @@
 #ifndef KRADIO_SOUNDSTREAMCLIENT_INTERFACES_H
 #define KRADIO_SOUNDSTREAMCLIENT_INTERFACES_H
 
-#include <QMap>
+#include <QtCore/QMap>
 
 #include "interfaces.h"
 #include "soundformat.h"
@@ -51,8 +51,8 @@ friend class ISoundStreamClient;
 public:
     IF_CON_DESTRUCTOR(ISoundStreamServer, -1)
 
-    virtual void noticeConnectedI(cmplInterface *i, bool valid);
-    virtual void noticeDisconnectedI(cmplInterface *i, bool valid);
+    virtual void noticeConnectedI   (cmplInterface *i, bool valid) override;
+    virtual void noticeDisconnectedI(cmplInterface *i, bool valid) override;
 
     virtual QMap<QString, ISoundStreamClient *> getPlaybackClients() const;
     virtual QMap<QString, QString>              getPlaybackClientDescriptions() const;
@@ -172,8 +172,8 @@ public:
     virtual void noticeConnectedSoundClient   (thisInterface *i, bool valid);
     virtual void noticeDisconnectedSoundClient(thisInterface *i, bool valid);
 
-    virtual void noticeConnectedI   (cmplInterface *i, bool valid);
-    virtual void noticeDisconnectedI(cmplInterface *i, bool valid);
+    virtual void noticeConnectedI   (cmplInterface *i, bool valid) override;
+    virtual void noticeDisconnectedI(cmplInterface *i, bool valid) override;
 
 // some rarely implemented functions are not pure virtual for convenience
 

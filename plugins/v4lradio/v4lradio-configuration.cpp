@@ -21,20 +21,19 @@
 #include <linux/soundcard.h>
 #include <math.h>
 
-#include <QSpinBox>
-#include <QLineEdit>
-#include <QLabel>
-#include <QFile>
-#include <QPushButton>
-#include <QSlider>
-#include <QCheckBox>
-#include <QButtonGroup>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QLabel>
+#include <QtCore/QFile>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QButtonGroup>
 
-#include <kfiledialog.h>
-#include <knuminput.h>
-#include <klocalizedstring.h>
-#include <ktabwidget.h>
-#include <kicon.h>
+#include <QtWidgets/QFileDialog>
+
+#include <KLocalizedString>
+#include <QtGui/QIcon>
 
 #include "gui_list_helper.h"
 #include "v4lradio-configuration.h"
@@ -69,7 +68,7 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
     m_PlaybackChannelHelper.setList(comboPlaybackMixerChannel);
     m_CaptureChannelHelper .setList(comboCaptureMixerChannel);
 
-    buttonSelectRadioDevice->setIcon(KIcon("document-open"));
+    buttonSelectRadioDevice->setIcon(QIcon("document-open"));
 
     deviceMessage->setCloseButtonVisible(false);
 
@@ -305,28 +304,32 @@ bool V4LRadioConfiguration::noticeCapabilitiesChanged(const V4LCaps &c)
 
     labelDeviceVolume ->setEnabled(c.hasVolume);
     editDeviceVolume  ->setEnabled(c.hasVolume);
-    editDeviceVolume  ->setRange(0, 1, qMax(0.01f, c.volumeStep()), false);
+    editDeviceVolume  ->setRange(0, 1);
+    editDeviceVolume  ->setSingleStep(qMax(0.01f, c.volumeStep()));
     sliderDeviceVolume->setMinimum(0);
     sliderDeviceVolume->setMaximum(c.maxVolume - c.minVolume);
     sliderDeviceVolume->setEnabled(c.hasVolume);
 
     labelTreble ->setEnabled(c.hasTreble);
     editTreble  ->setEnabled(c.hasTreble);
-    editTreble  ->setRange(0, 1, qMax(0.01f, c.trebleStep()), false);
+    editTreble  ->setRange(0, 1);
+    editTreble  ->setSingleStep(qMax(0.01f, c.trebleStep()));
     sliderTreble->setMinimum(c.minTreble);
     sliderTreble->setMaximum(c.maxTreble);
     sliderTreble->setEnabled(c.hasTreble);
 
     labelBass ->setEnabled(c.hasBass);
     editBass  ->setEnabled(c.hasBass);
-    editBass  ->setRange(0, 1, qMax(0.01f, c.bassStep()), false);
+    editBass  ->setRange(0, 1);
+    editBass  ->setSingleStep(qMax(0.01f, c.bassStep()));
     sliderBass->setMinimum(c.minBass);
     sliderBass->setMaximum(c.maxBass);
     sliderBass->setEnabled(c.hasBass);
 
     labelBalance ->setEnabled(c.hasBalance);
     editBalance  ->setEnabled(c.hasBalance);
-    editBalance  ->setRange(-1, 1, qMax(0.01f, c.balanceStep()), false);
+    editBalance  ->setRange(-1, 1);
+    editBalance  ->setSingleStep(qMax(0.01f, c.balanceStep()));
     sliderBalance->setMinimum(c.minBalance);
     sliderBalance->setMaximum(c.maxBalance);
     sliderBalance->setEnabled(c.hasBalance);
@@ -554,7 +557,7 @@ bool V4LRadioConfiguration::noticeSoundStreamCreated(SoundStreamID id)
 
 void V4LRadioConfiguration::selectRadioDevice()
 {
-    const QString fileName = KFileDialog::getOpenFileName(KUrl("/dev/"), i18n("any ( * )"), this, i18n("Select Radio Device"));
+    const QString fileName = QFileDialog::getOpenFileName(this, i18n("Select Radio Device"), "/dev/", i18n("any ( * )"));
 
     if (!fileName.isEmpty()) {
         m_cbRadioDevice->setEditText(fileName);
@@ -699,7 +702,7 @@ void V4LRadioConfiguration::guiMaxFrequencyChanged(int v)
     editMinFrequency->setMaximum(v);
 }
 
-void V4LRadioConfiguration::slotDeviceVolumeChanged (double v) // for KDoubleNumInput, 0.0..1.0
+void V4LRadioConfiguration::slotDeviceVolumeChanged (double v) // for QDoubleSpinBox, 0.0..1.0
 {
     if (m_ignoreGUIChanges) return;
     ++m_myControlChange;
@@ -707,7 +710,7 @@ void V4LRadioConfiguration::slotDeviceVolumeChanged (double v) // for KDoubleNum
     --m_myControlChange;
 }
 
-void V4LRadioConfiguration::slotTrebleChanged (double t) // for KDoubleNumInput, 0.0..1.0
+void V4LRadioConfiguration::slotTrebleChanged (double t) // for QDoubleSpinBox, 0.0..1.0
 {
     if (m_ignoreGUIChanges) return;
     ++m_myControlChange;
@@ -715,7 +718,7 @@ void V4LRadioConfiguration::slotTrebleChanged (double t) // for KDoubleNumInput,
     --m_myControlChange;
 }
 
-void V4LRadioConfiguration::slotBassChanged   (double b) // for KDoubleNumInput, 0.0..1.0
+void V4LRadioConfiguration::slotBassChanged   (double b) // for QDoubleSpinBox, 0.0..1.0
 {
     if (m_ignoreGUIChanges) return;
     ++m_myControlChange;
@@ -723,7 +726,7 @@ void V4LRadioConfiguration::slotBassChanged   (double b) // for KDoubleNumInput,
     --m_myControlChange;
 }
 
-void V4LRadioConfiguration::slotBalanceChanged(double b) // for KDoubleNumInput, -1.0..1.0
+void V4LRadioConfiguration::slotBalanceChanged(double b) // for QDoubleSpinBox, -1.0..1.0
 {
     if (m_ignoreGUIChanges) return;
     ++m_myControlChange;
@@ -783,4 +786,3 @@ void V4LRadioConfiguration::populateDeviceComboBox()
 }
 
 
-#include "v4lradio-configuration.moc"

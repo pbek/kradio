@@ -18,11 +18,10 @@
 #ifndef KRADIO_INTERFACES_H
 #define KRADIO_INTERFACES_H
 
-#include <QList>
-#include <QMap>
+#include <QtCore/QList>
+#include <QtCore/QMap>
 #include <typeinfo>
-
-#include <kdemacros.h>
+#include "kradio-def.h"
 
 /*
 /////////////////////////////////////////////////////////////////////////////
@@ -303,7 +302,7 @@
 // connect/disconnect methods to one single function in case of multiple
 // inheritance
 
-class KDE_EXPORT Interface
+class KRADIO5_EXPORT Interface
 {
 public:
     Interface () {}
@@ -321,7 +320,7 @@ public:
 /////////////////////////////////////////////////////////////////////////////
 
 template <class thisIF, class cmplIF>
-class KDE_EXPORT InterfaceBase : virtual public Interface
+class KRADIO5_EXPORT InterfaceBase : virtual public Interface
 {
 private:
     typedef InterfaceBase<thisIF, cmplIF>  thisClass;
@@ -349,8 +348,8 @@ public :
     virtual ~InterfaceBase ();
 
     // duplicate connects will add no more entries to connection list
-    virtual bool     connectI   (Interface *i);
-    virtual bool     disconnectI(Interface *i);
+    virtual bool     connectI   (Interface *i) override;
+    virtual bool     disconnectI(Interface *i) override;
 
 protected:
     virtual void     disconnectAllI();
@@ -403,7 +402,7 @@ private:
 #define INTERFACE(xIF, xcmplIF) \
     class xIF; \
     class xcmplIF; \
-    class KDE_EXPORT xIF : public InterfaceBase<xIF, xcmplIF> \
+    class KRADIO5_EXPORT xIF : public InterfaceBase<xIF, xcmplIF> \
 
 #define IF_CON_DESTRUCTOR(IF, n) \
     IF() : BaseClass((n)) {} \
@@ -434,6 +433,9 @@ private:
 #define IF_SENDER(decl) \
         virtual int decl const;
 
+#define IF_SENDER_OVR(decl) \
+        virtual int decl const override;
+
 #define IF_SEND_MESSAGE(call) \
         int ____n = 0; \
         foreach (cmplInterface *__i, iConnections)  {   \
@@ -460,6 +462,9 @@ private:
 
 #define IF_QUERY(decl) \
         virtual decl const;
+
+#define IF_QUERY_OVR(decl) \
+        virtual decl const override;
 
 #define IF_SEND_QUERY(call, default) \
         IFConstIterator it = iConnections.begin(); \
@@ -518,16 +523,16 @@ private: \
 
 
 #define INLINE_IMPL_DEF_noticeConnectedI(BaseClass) \
-    virtual void noticeConnectedI    (BaseClass::cmplInterface *i, bool pointer_valid) { BaseClass::noticeConnectedI    (i, pointer_valid); }
+    virtual void noticeConnectedI    (BaseClass::cmplInterface *i, bool pointer_valid) override { BaseClass::noticeConnectedI    (i, pointer_valid); }
 
 #define INLINE_IMPL_DEF_noticeConnectI(BaseClass) \
-    virtual void noticeConnectI      (BaseClass::cmplInterface *i, bool pointer_valid) { BaseClass::noticeConnectI      (i, pointer_valid); }
+    virtual void noticeConnectI      (BaseClass::cmplInterface *i, bool pointer_valid) override { BaseClass::noticeConnectI      (i, pointer_valid); }
 
 #define INLINE_IMPL_DEF_noticeDisconnectedI(BaseClass) \
-    virtual void noticeDisconnectedI (BaseClass::cmplInterface *i, bool pointer_valid) { BaseClass::noticeDisconnectedI (i, pointer_valid); }
+    virtual void noticeDisconnectedI (BaseClass::cmplInterface *i, bool pointer_valid) override { BaseClass::noticeDisconnectedI (i, pointer_valid); }
 
 #define INLINE_IMPL_DEF_noticeDisconnectI(BaseClass) \
-    virtual void noticeDisconnectI   (BaseClass::cmplInterface *i, bool pointer_valid) { BaseClass::noticeDisconnectI   (i, pointer_valid); }
+    virtual void noticeDisconnectI   (BaseClass::cmplInterface *i, bool pointer_valid) override { BaseClass::noticeDisconnectI   (i, pointer_valid); }
 
 
 /////////////////////////////////////////////////////////////////////////////

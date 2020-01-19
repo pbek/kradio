@@ -52,166 +52,166 @@ public:
     V4LRadio (const QString &instanceID, const QString &name);
     virtual ~V4LRadio ();
 
-    virtual bool connectI (Interface *);
-    virtual bool disconnectI (Interface *);
+    virtual bool connectI    (Interface *) override;
+    virtual bool disconnectI (Interface *) override;
 
-    virtual QString   pluginClassName() const { return QString::fromLatin1("V4LRadio"); }
+    virtual QString   pluginClassName() const override { return QString::fromLatin1("V4LRadio"); }
 
-    QList<DeviceInfo> getDeviceProposals(const QString &devdir = QString::fromLatin1("/dev/")) const;
+    QList<DeviceInfo> getDeviceProposals(const QString &devdir = QString::fromLatin1("/dev/")) const override;
 
     // PluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
-    virtual void   startPlugin();
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
+    virtual void   startPlugin  ()                           override;
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage()        override;
 
     // IRadioDevice methods
 
 
 RECEIVERS:
-    virtual bool setPower(bool p);
-    virtual bool powerOn();
-    virtual bool powerOff();
-    virtual bool activateStation(const RadioStation &rs);
+    virtual bool setPower(bool p) override;
+    virtual bool powerOn () override;
+    virtual bool powerOff() override;
+    virtual bool activateStation(const RadioStation &rs) override;
 
 ANSWERS:
-    virtual bool                   isPowerOn() const;
-    virtual bool                   isPowerOff() const;
-    virtual const RadioStation  &  getCurrentStation() const;
-    virtual const QString       &  getDescription() const;
-    virtual SoundStreamID          getCurrentSoundStreamSinkID() const;
-    virtual SoundStreamID          getCurrentSoundStreamSourceID() const;
+    virtual bool                   isPowerOn () const override;
+    virtual bool                   isPowerOff() const override;
+    virtual const RadioStation  &  getCurrentStation() const override;
+    virtual const QString       &  getDescription   () const override;
+    virtual SoundStreamID          getCurrentSoundStreamSinkID  () const override;
+    virtual SoundStreamID          getCurrentSoundStreamSourceID() const override;
 
-    virtual bool                   getRDSState      () const;
-    virtual const QString       &  getRDSRadioText  () const;
-    virtual const QString       &  getRDSStationName() const;
+    virtual bool                   getRDSState      () const override;
+    virtual const QString       &  getRDSRadioText  () const override;
+    virtual const QString       &  getRDSStationName() const override;
 
     // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool /*on*/)                         { return false; }
-    bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged(bool /*on*/)                          override { return false; }
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) override { return false; }
+    bool noticeStationsChanged(const StationList &sl)             override;
+    bool noticePresetFileChanged(const QString &/*f*/)            override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)       { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)           override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)        override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged(SoundStreamID /*id*/)   { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged(SoundStreamID /*id*/)   override { return false; }
 
     // ISeekRadio
 
 RECEIVERS:
-    virtual bool toBeginning();
-    virtual bool toEnd();
-    virtual bool startSeek (bool up);
-    virtual bool startSeekUp();
-    virtual bool startSeekDown();
-    virtual bool stopSeek();
+    virtual bool toBeginning  () override;
+    virtual bool toEnd        () override;
+    virtual bool startSeek    (bool up) override;
+    virtual bool startSeekUp  () override;
+    virtual bool startSeekDown() override;
+    virtual bool stopSeek     () override;
 
 ANSWERS:
-    virtual bool  isSeekRunning() const;
-    virtual bool  isSeekUpRunning() const;
-    virtual bool  isSeekDownRunning() const;
-    virtual float getProgress () const;
+    virtual bool  isSeekRunning    () const override;
+    virtual bool  isSeekUpRunning  () const override;
+    virtual bool  isSeekDownRunning() const override;
+    virtual float getProgress      () const override;
 
 
     // IFrequencyRadio
 
 RECEIVERS:
-    virtual bool setFrequency(float f, const FrequencyRadioStation *s);
-    virtual bool setMinFrequency(float mf);
-    virtual bool setMaxFrequency(float mf);
-    virtual bool setScanStep(float s);
+    virtual bool setFrequency   (float f, const FrequencyRadioStation *s) override;
+    virtual bool setMinFrequency(float mf) override;
+    virtual bool setMaxFrequency(float mf) override;
+    virtual bool setScanStep    (float s)  override;
 
 ANSWERS:
-    virtual float getFrequency()           const;
-    virtual float getMinFrequency()        const;
-    virtual float getMinDeviceFrequency()  const;
-    virtual float getMaxFrequency()        const;
-    virtual float getMaxDeviceFrequency()  const;
-    virtual float getScanStep()            const;
+    virtual float getFrequency()           const override;
+    virtual float getMinFrequency()        const override;
+    virtual float getMinDeviceFrequency()  const override;
+    virtual float getMaxFrequency()        const override;
+    virtual float getMaxDeviceFrequency()  const override;
+    virtual float getScanStep()            const override;
 
 
     // ISoundStreamClient: mixer functions
 
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-    void noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
+    void noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
 
-    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
-    bool noticeCaptureChannelsChanged (const QString & /*client_id*/, const QStringList &/*channels*/);
+    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/) override;
+    bool noticeCaptureChannelsChanged (const QString & /*client_id*/, const QStringList &/*channels*/) override;
 
-    bool setTreble          (SoundStreamID, float v);
-    bool setBass            (SoundStreamID, float v);
-    bool setBalance         (SoundStreamID, float v);
-    bool muteSource         (SoundStreamID, bool mute = true);
-    bool unmuteSource       (SoundStreamID, bool unmute = true);
-    bool setSignalMinQuality(SoundStreamID, float q);
-    bool setStereoMode      (SoundStreamID, StationStereoMode m);
+    bool setTreble          (SoundStreamID, float v) override;
+    bool setBass            (SoundStreamID, float v) override;
+    bool setBalance         (SoundStreamID, float v) override;
+    bool muteSource         (SoundStreamID, bool  mute   = true) override;
+    bool unmuteSource       (SoundStreamID, bool  unmute = true) override;
+    bool setSignalMinQuality(SoundStreamID, float q) override;
+    bool setStereoMode      (SoundStreamID, StationStereoMode m) override;
 
-    bool getTreble          (SoundStreamID, float &v) const;
-    bool getBass            (SoundStreamID, float &v) const;
-    bool getBalance         (SoundStreamID, float &b) const;
-    bool getSignalQuality   (SoundStreamID, float &q) const;
-    bool getSignalMinQuality(SoundStreamID, float &q) const;
-    bool hasGoodQuality     (SoundStreamID, bool &) const;
-    bool isStereo           (SoundStreamID, bool &s) const;
-    bool isSourceMuted      (SoundStreamID, bool &m) const;
+    bool getTreble          (SoundStreamID, float &v) const override;
+    bool getBass            (SoundStreamID, float &v) const override;
+    bool getBalance         (SoundStreamID, float &b) const override;
+    bool getSignalQuality   (SoundStreamID, float &q) const override;
+    bool getSignalMinQuality(SoundStreamID, float &q) const override;
+    bool hasGoodQuality     (SoundStreamID, bool  &)  const override;
+    bool isStereo           (SoundStreamID, bool  &s) const override;
+    bool isSourceMuted      (SoundStreamID, bool  &m) const override;
 
     // ISoundStreamClient: generic stream handling (broadcasts)
 
 RECEIVERS:
 
-    bool getSoundStreamDescription  (SoundStreamID id, QString &descr) const;
-    bool getSoundStreamRadioStation (SoundStreamID id, const RadioStation *&rs) const;
-    bool enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list) const;
+    bool getSoundStreamDescription  (SoundStreamID id, QString &descr)          const override;
+    bool getSoundStreamRadioStation (SoundStreamID id, const RadioStation *&rs) const override;
+    bool enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list)        const override;
 
-    bool noticeSoundStreamClosed          (SoundStreamID id);
-    bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID);
-    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID);
+    bool noticeSoundStreamClosed          (SoundStreamID id)                         override;
+    bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID) override;
+    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID) override;
 
 //     bool stopCapture(SoundStreamID id); // if active playback also call stopPlayback
 
     // if the radio is powered off, we will handle the volume by changing m_defaultPlaybackVolume
-    bool       setPlaybackVolume(SoundStreamID id, float volume);
-    bool       getPlaybackVolume(SoundStreamID id, float &volume) const;
+    bool       setPlaybackVolume(SoundStreamID id, float volume)        override;
+    bool       getPlaybackVolume(SoundStreamID id, float &volume) const override;
 
 
     // IV4LCfg
 RECEIVERS:
-    bool  setRadioDevice  (const QString &s);
-    bool  setPlaybackMixer(QString soundStreamClientID, QString ch, bool force = false);
-    bool  setCaptureMixer (QString soundStreamClientID, QString ch, bool force = false);
-    bool  setDeviceVolume (float v);
-    bool  setActivePlayback(bool a, bool muteCaptureChannelPlayback);
-    bool  setMuteOnPowerOff(bool a);
-    bool  setForceRDSEnabled(bool a);
-    bool  setDeviceProbeAtStartup(bool a);
-    bool  setVolumeZeroOnPowerOff(bool a);
-    bool  setV4LVersionOverride(V4LVersion vo);
+    bool  setRadioDevice  (const QString &s) override;
+    bool  setPlaybackMixer(QString soundStreamClientID, QString ch, bool force = false) override;
+    bool  setCaptureMixer (QString soundStreamClientID, QString ch, bool force = false) override;
+    bool  setDeviceVolume (float v) override;
+    bool  setActivePlayback (bool a, bool muteCaptureChannelPlayback) override;
+    bool  setMuteOnPowerOff (bool a) override;
+    bool  setForceRDSEnabled(bool a) override;
+    bool  setDeviceProbeAtStartup(bool a) override;
+    bool  setVolumeZeroOnPowerOff(bool a) override;
+    bool  setV4LVersionOverride(V4LVersion vo) override;
 
 ANSWERS:
-    const QString &getRadioDevice         () const { return m_radioDev; }
-    const QString &getPlaybackMixerID     () const { return m_PlaybackMixerID; }
-    const QString &getCaptureMixerID      () const { return m_CaptureMixerID; }
-    const QString &getPlaybackMixerChannel() const { return m_PlaybackMixerChannel; }
-    const QString &getCaptureMixerChannel () const { return m_CaptureMixerChannel; }
-    float          getDeviceVolume        () const;
-    V4LCaps        getCapabilities      (const QString &dev) const;
+    const QString &getRadioDevice         () const override { return m_radioDev; }
+    const QString &getPlaybackMixerID     () const override { return m_PlaybackMixerID; }
+    const QString &getCaptureMixerID      () const override { return m_CaptureMixerID; }
+    const QString &getPlaybackMixerChannel() const override { return m_PlaybackMixerChannel; }
+    const QString &getCaptureMixerChannel () const override { return m_CaptureMixerChannel; }
+    float          getDeviceVolume        () const override;
+    V4LCaps        getCapabilities      (const QString &dev) const override;
 
-    bool           getActivePlayback(bool & muteCaptureChannelPlayback) const { muteCaptureChannelPlayback = m_ActivePlaybackMuteCaptureChannelPlayback; return m_ActivePlayback; }
-    bool           getMuteOnPowerOff()                                  const { return m_MuteOnPowerOff; }
-    bool           getForceRDSEnabled()                                 const { return m_RDSForceEnabled; }
-    bool           getDeviceProbeAtStartup()                            const { return m_deviceProbeAtStartup; }
-    bool           getVolumeZeroOnPowerOff()                            const { return m_VolumeZeroOnPowerOff; }
-    V4LVersion     getV4LVersionOverride()                              const { return m_V4L_version_override; }
+    bool           getActivePlayback(bool & muteCaptureChannelPlayback) const override { muteCaptureChannelPlayback = m_ActivePlaybackMuteCaptureChannelPlayback; return m_ActivePlayback; }
+    bool           getMuteOnPowerOff()                                  const override { return m_MuteOnPowerOff; }
+    bool           getForceRDSEnabled()                                 const override { return m_RDSForceEnabled; }
+    bool           getDeviceProbeAtStartup()                            const override { return m_deviceProbeAtStartup; }
+    bool           getVolumeZeroOnPowerOff()                            const override { return m_VolumeZeroOnPowerOff; }
+    V4LVersion     getV4LVersionOverride()                              const override { return m_V4L_version_override; }
 
     // anything else
 

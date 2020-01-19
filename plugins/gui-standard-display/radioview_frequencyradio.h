@@ -19,10 +19,9 @@
 #define KRADIO_RADIOVIEW_FREQUENCYRADIO_H
 
 #include <QTimer>
-
-#include <kurl.h>
-#include <QPen>
-#include <QBrush>
+#include <QtCore/QUrl>
+#include <QtGui/QPen>
+#include <QtGui/QBrush>
 
 #include "radiodevice_interfaces.h"
 #include "frequencyradio_interfaces.h"
@@ -68,62 +67,62 @@ public:
     RadioViewFrequencyRadio(QWidget *parent, const QString &name);
     ~RadioViewFrequencyRadio();
 
-    float getUsability (Interface *) const;
+    float getUsability (Interface *) const override;
 
-    virtual void   saveState   (      KConfigGroup &) const;
-    virtual void   restoreState(const KConfigGroup &);
+    virtual void   saveState   (      KConfigGroup &) const override;
+    virtual void   restoreState(const KConfigGroup &)       override;
 
-    ConfigPageInfo createConfigurationPage();
+    ConfigPageInfo createConfigurationPage() override;
 
 // Interface
 
-    bool connectI   (Interface *);
-    bool disconnectI(Interface *);
+    bool connectI   (Interface *) override;
+    bool disconnectI(Interface *) override;
 
 // IDisplayCfg
 
 RECEIVERS:
-    bool  setDisplayColors(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd);
-    bool  setDisplayFont (const QFont &f);
+    bool  setDisplayColors(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd) override;
+    bool  setDisplayFont  (const QFont &f) override;
 
 ANSWERS:
-    const QColor   &getDisplayActiveColor()   const { return m_colorActiveText; }
-    const QColor   &getDisplayInactiveColor() const { return m_colorInactiveText; }
-    const QColor   &getDisplayBkgndColor()    const { return m_colorButton; }
-    const QFont    &getDisplayFont()          const { return m_font; }
+    const QColor   &getDisplayActiveColor()   const override { return m_colorActiveText; }
+    const QColor   &getDisplayInactiveColor() const override { return m_colorInactiveText; }
+    const QColor   &getDisplayBkgndColor()    const override { return m_colorButton; }
+    const QFont    &getDisplayFont()          const override { return m_font; }
 
 // IRadioDeviceClient
 RECEIVERS:
-    bool noticePowerChanged         (bool  on,             const IRadioDevice *sender = NULL);
-    bool noticeStationChanged       (const RadioStation &, const IRadioDevice *sender = NULL);
-    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice *sender = NULL);
+    bool noticePowerChanged         (bool  on,             const IRadioDevice *sender = NULL) override;
+    bool noticeStationChanged       (const RadioStation &, const IRadioDevice *sender = NULL) override;
+    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice *sender = NULL) override;
 
-    bool noticeRDSStateChanged      (bool  enabled,        const IRadioDevice *sender = NULL);
-    bool noticeRDSRadioTextChanged  (const QString &s,     const IRadioDevice *sender = NULL);
-    bool noticeRDSStationNameChanged(const QString &s,     const IRadioDevice *sender = NULL);
+    bool noticeRDSStateChanged      (bool  enabled,        const IRadioDevice *sender = NULL) override;
+    bool noticeRDSRadioTextChanged  (const QString &s,     const IRadioDevice *sender = NULL) override;
+    bool noticeRDSStationNameChanged(const QString &s,     const IRadioDevice *sender = NULL) override;
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
 
 // ISoundStreamClient
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
 
-    bool noticeSignalQualityChanged(SoundStreamID id, float q);
-    bool noticeSignalQualityChanged(SoundStreamID /*id*/, bool  /*q*/) { return false; }
-    bool noticeStereoChanged(SoundStreamID id, bool  s);
+    bool noticeSignalQualityChanged(SoundStreamID id,     float q    ) override;
+    bool noticeSignalQualityChanged(SoundStreamID /*id*/, bool  /*q*/) override { return false; }
+    bool noticeStereoChanged(SoundStreamID id, bool  s)                override;
 
 // IFrequencyRadioClient
 RECEIVERS:
-    bool noticeFrequencyChanged(float f, const FrequencyRadioStation *s);
-    bool noticeMinMaxFrequencyChanged(float min, float max);
-    bool noticeDeviceMinMaxFrequencyChanged(float min, float max);
-    bool noticeScanStepChanged(float s);
+    bool noticeFrequencyChanged            (float f,   const FrequencyRadioStation *s) override;
+    bool noticeMinMaxFrequencyChanged      (float min, float max) override;
+    bool noticeDeviceMinMaxFrequencyChanged(float min, float max) override;
+    bool noticeScanStepChanged             (float s)              override;
 
 
 // IInternetRadioClient
 RECEIVERS:
-    bool noticeURLChanged(const KUrl &url, const InternetRadioStation *irs);
+    bool noticeURLChanged(const QUrl &url, const InternetRadioStation *irs) override;
 
 // own stuff ;)
 
@@ -133,9 +132,9 @@ protected:
     INLINE_IMPL_DEF_noticeConnectedI(IInternetRadioClient);
     INLINE_IMPL_DEF_noticeConnectedI(IDisplayCfg);
 
-    void paintEvent(QPaintEvent *e);
-    void resizeEvent(QResizeEvent *e);
-    bool event(QEvent *e);
+    void paintEvent (QPaintEvent  *e) override;
+    void resizeEvent(QResizeEvent *e) override;
+    bool event      (QEvent       *e) override;
 
 //     void updateRadioTextRing();
 
@@ -152,7 +151,7 @@ protected:
     bool     m_valid;
 
     float    m_frequency;
-    KUrl     m_url;
+    QUrl     m_url;
     QString  m_station_name;
 
     float    m_quality;

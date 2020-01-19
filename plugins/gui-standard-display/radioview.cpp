@@ -26,13 +26,11 @@
 #include <QApplication>
 #include <QMenu>
 
-#include <kcmdlineargs.h>
 #include <kcombobox.h>
-#include <kicon.h>
+#include <QtGui/QIcon>
 #include <klocalizedstring.h>
-#include <kwindowsystem.h>
+#include <KWindowSystem>
 #include <kconfiggroup.h>
-#include <kmenu.h>
 
 #include "radiodevice_interfaces.h"
 #include "radiostation.h"
@@ -46,24 +44,22 @@
 #include "radioview_frequencyseeker.h"
 #include "radioview-configuration.h"
 
-//#include <kaboutdata.h>
 
 ///////////////////////////////////////////////////////////////////////
 
 static KAboutData aboutData()
 {
     KAboutData about("RadioView",
-                     PROJECT_NAME,
-                     ki18nc("@title", "Standard Display"),
+                     i18nc("@title", "Standard Display"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Standard Radio Display"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
-                     KLocalizedString(),
+                     i18nc("@title", "Standard Radio Display"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Klas Kalass"),  NULL, "klas.kalass@gmx.de");
     return about;
 }
 
@@ -87,7 +83,7 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     currentDevice(NULL),
     m_RecordingMenu(NULL),
     m_recordingDefaultMenuItem(NULL),
-    m_helpMenu(NULL, KCmdLineArgs::aboutData())
+  m_helpMenu(NULL, KAboutData::applicationData())
 {
     for (int i = 0; i < clsClassMAX; ++i)
         maxUsability[i] = 0;
@@ -158,12 +154,12 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     l06->addWidget (btnHelp);
 
     m_pauseMenu     = new QMenu(this);
-    m_pauseMenuItem = m_pauseMenu->addAction(KIcon("media-playback-pause"), i18n("Pause KRadio"));
+    m_pauseMenuItem = m_pauseMenu->addAction(QIcon("media-playback-pause"), i18n("Pause KRadio"));
     QObject::connect(m_pauseMenuItem, SIGNAL(triggered()), this, SLOT(slotPause()));
     btnPower->setMenu(m_pauseMenu);
 
     m_RecordingMenu            = new QMenu(btnRecording);
-    m_recordingDefaultMenuItem = m_RecordingMenu->addAction(KIcon("media-record"), i18n("Start Recording"));
+    m_recordingDefaultMenuItem = m_RecordingMenu->addAction(QIcon("media-record"), i18n("Start Recording"));
     QObject::connect(m_RecordingMenu,            SIGNAL(triggered(QAction *)), this, SLOT(slotRecordingMenu(QAction *)));
     QObject::connect(m_recordingDefaultMenuItem, SIGNAL(triggered()),          this, SLOT(slotStartDefaultRecording()));
     btnRecording->setMenu(m_RecordingMenu);
@@ -199,13 +195,13 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
 
     // ICONS
 
-    btnPower    ->setIcon(KIcon("media-playback-start"));
-    btnRecording->setIcon(KIcon("media-record"));
-    btnConfigure->setIcon(KIcon("configure"));
-    btnQuit     ->setIcon(KIcon("application-exit"));
-    btnSnooze   ->setIcon(KIcon("kradio_zzz"));
-    btnPlugins  ->setIcon(KIcon("preferences-plugin"));
-    btnHelp     ->setIcon(KIcon("help-about"));
+    btnPower    ->setIcon(QIcon("media-playback-start"));
+    btnRecording->setIcon(QIcon("media-record"));
+    btnConfigure->setIcon(QIcon("configure"));
+    btnQuit     ->setIcon(QIcon("application-exit"));
+    btnSnooze   ->setIcon(QIcon("kradio_zzz"));
+    btnPlugins  ->setIcon(QIcon("preferences-plugin"));
+    btnHelp     ->setIcon(QIcon("help-about"));
     btnHelp     ->setMenu(m_helpMenu.menu());
 
     widgetStacks[clsRadioSound]  ->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,              QSizePolicy::Preferred));
@@ -376,7 +372,7 @@ void RadioView::selectTopWidgets()
 
 bool RadioView::noticePowerChanged(bool on)
 {
-    btnPower->setIcon(KIcon( on ? "media-playback-stop" : "media-playback-start"));
+    btnPower->setIcon(QIcon( on ? "media-playback-stop" : "media-playback-start"));
     btnPower->setChecked(on);
     if (on) {
         btnPower->setMenu(m_pauseMenu);
@@ -563,7 +559,7 @@ bool RadioView::startRecordingWithFormat(
 
     QString descr;
     querySoundStreamDescription(id, descr);
-    QAction *a = m_RecordingMenu->addAction(KIcon("media-record"), i18n("Stop Recording of %1", descr));
+    QAction *a = m_RecordingMenu->addAction(QIcon("media-record"), i18n("Stop Recording of %1", descr));
     a->setData(QVariant::fromValue(id));
     m_StreamID2MenuID.insert(id, a);
     btnRecording->setChecked(true);
@@ -617,11 +613,11 @@ void RadioView::updatePauseMenuItem(bool run_query, bool known_pause_state)
     }
     if (known_pause_state) {
         m_pauseMenuItem->setText(i18n("Resume playback"));
-        m_pauseMenuItem->setIcon(KIcon("media-playback-start"));
+        m_pauseMenuItem->setIcon(QIcon("media-playback-start"));
     }
     else {
         m_pauseMenuItem->setText(i18n("Pause playback"));
-        m_pauseMenuItem->setIcon(KIcon("media-playback-pause"));
+        m_pauseMenuItem->setIcon(QIcon("media-playback-pause"));
     }
 }
 
@@ -632,7 +628,7 @@ bool RadioView::noticeSoundStreamChanged(SoundStreamID id)
         QAction *a = m_StreamID2MenuID[id];
         QString descr;
         querySoundStreamDescription(id, descr);
-        a->setIcon(KIcon("media-record"));
+        a->setIcon(QIcon("media-record"));
         a->setText(i18n("Stop Recording of %1", descr));
         return true;
     }
@@ -730,7 +726,7 @@ void RadioView::addConfigurationTabFor(RadioViewElement *e, RadioViewConfigurati
     if (inf.page) {
 
         if (inf.iconName.length()) {
-            c->addElementTab(inf.page, KIcon(inf.iconName), inf.itemName);
+            c->addElementTab(inf.page, QIcon(inf.iconName), inf.itemName);
         } else {
             c->addElementTab(inf.page, inf.itemName);
         }
@@ -933,4 +929,3 @@ void RadioView::slotUpdateRecordingMenu()
 
 
 
-#include "radioview.moc"

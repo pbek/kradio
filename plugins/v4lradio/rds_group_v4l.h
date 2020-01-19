@@ -33,9 +33,9 @@ public:
     RDSGroupV4L();
     virtual ~RDSGroupV4L();
 
-    virtual int  addRawData(const unsigned char *rawdata, int size);
-    virtual bool isComplete() const;
-    virtual void clear();
+    virtual int  addRawData(const unsigned char *rawdata, int size) override;
+    virtual bool isComplete() const override;
+    virtual void clear() override;
 
 protected:
     RDSV4LGroupState  m_state;

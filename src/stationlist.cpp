@@ -26,9 +26,11 @@
 #include <QMessageBox>
 #include <QTextCodec>
 #include <QXmlStreamWriter>
-#include <kio/netaccess.h>
-#include <ktemporaryfile.h>
+#include <QTemporaryFile>
 #include <klocalizedstring.h>
+
+#include "kio_get_wrapper.h"
+#include "kio_put_wrapper.h"
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -193,66 +195,41 @@ bool StationList::readXML (const QXmlInputSource &xmlInp, const IErrorLogClient 
 }
 
 
-bool StationList::readXML (const KUrl &url, const IErrorLogClient &logger, bool enableMessageBox)
+bool StationList::readXML (const QUrl &url, const IErrorLogClient &logger, bool enableMessageBox)
 {
-    QString tmpfile;
-    if (!KIO::NetAccess::download(url, tmpfile, NULL)) {
+    kio_get_wrapper_t  rxJob(url, 2ull * 1024ull * 1024ull);
+    rxJob.exec();
+    
+    if (!rxJob.ok()) {
         if (enableMessageBox) {
             logger.logError("StationList::readXML: " +
-                            i18n("error downloading preset file %1", url.pathOrUrl()));
+                            i18n("error downloading preset file %1", url.toString()));
             QMessageBox::warning(NULL, "KRadio",
-                                 i18n("Download of the station preset file at %1 failed.", url.pathOrUrl()));
+                                 i18n("Download of the station preset file at %1 failed.", url.toString()));
         } else {
             logger.logWarning("StationList::readXML: " +
-                              i18n("error downloading preset file %1", url.pathOrUrl()));
+                              i18n("error downloading preset file %1", url.toString()));
         }
         return false;
     }
-
-    logger.logDebug("StationList::readXML: " +
-             i18n("temporary file: %1", tmpfile));
-
-    QFile presetFile (tmpfile);
-
-    if (! presetFile.open(QFile::ReadOnly)) {
-        logger.logError("StationList::readXML: " +
-                 i18n("error opening preset file %1", tmpfile));
-        if (enableMessageBox) {
-            QMessageBox::warning(NULL, "KRadio",
-                                 i18n("Opening of the station preset file at %1 failed.",
-                                      tmpfile));
-        }
-        return false;
-    }
-
-    // make sure that qtextstream is gone when we close presetFile
-    QString xmlData;
-    {
-        QTextStream ins(&presetFile);
-        ins.setCodec(QTextCodec::codecForLocale());
-        xmlData = ins.readAll();
-    }
-
-    presetFile.reset();
 
     bool retval = false;
+    
+    const QString xmlData = QString::fromLocal8Bit(rxJob.data());
 
     // preset file written with kradio <= 0.2.x
     if (xmlData.indexOf("<format>") < 0) {
         logger.logInfo(i18n("Old Preset File Format detected"));
-        QXmlInputSource tmp;
-        tmp.setData(xmlData);
-        retval = readXML(tmp, logger, enableMessageBox);
+        QXmlInputSource xmlInput;
+        xmlInput.setData(xmlData);
+        retval = readXML(xmlInput, logger, enableMessageBox);
     }
     // preset file written with kradio >= 0.3.0
     else {
-        QXmlInputSource tmp(&presetFile);
-        retval = readXML(tmp, logger, enableMessageBox);
+        QTextStream     txtStream(rxJob.data());
+        QXmlInputSource xmlInput (txtStream.device());
+        retval = readXML(xmlInput, logger, enableMessageBox);
     }
-
-    presetFile.close();
-
-    KIO::NetAccess::removeTempFile(tmpfile);
 
     return retval;
 }
@@ -310,9 +287,9 @@ QString StationList::writeXML (const IErrorLogClient &/*logger*/) const
 }
 
 
-bool StationList::writeXML (const KUrl &url, const IErrorLogClient &logger, bool enableMessageBox) const
+bool StationList::writeXML (const QUrl &url, const IErrorLogClient &logger, bool enableMessageBox) const
 {
-    KTemporaryFile tmpFile;
+    QTemporaryFile tmpFile;
     tmpFile.setAutoRemove(true);
     if (tmpFile.open()) {
         QString tmpFileName = tmpFile.fileName();
@@ -339,18 +316,24 @@ bool StationList::writeXML (const KUrl &url, const IErrorLogClient &logger, bool
 
         if (count() < 1) {
             logger.logWarning("StationList::writeXML: " +
-                              i18n("uploading preset file %1: ", url.pathOrUrl()));
+                              i18n("uploading preset file %1: ", url.toString()));
             logger.logWarning("StationList::writeXML: " +
                               i18n("something strange happened, station list has only %1 entries. Writing station preset file skipped", count()));
         } else {
-
-            if (!KIO::NetAccess::upload(tmpFileName, url, NULL)) {
+            tmpFile.open();            
+            
+            const QByteArray tmpFileData = tmpFile.readAll();
+            tmpFile.close();
+            
+            kio_put_wrapper_t  kio_put_wrapper(url, tmpFileData);
+            
+            if (!kio_put_wrapper.ok()) {
                 logger.logError("StationList::writeXML: " +
-                                i18n("error uploading preset file %1", url.pathOrUrl()));
+                                i18n("error uploading preset file %1", url.toString()));
 
                 if (enableMessageBox) {
                     QMessageBox::warning(NULL, "KRadio",
-                                         i18n("Upload of station preset file to %1 failed.", url.pathOrUrl()));
+                                         i18n("Upload of station preset file to %1 failed.", url.toString()));
                 }
                 return false;
             }
@@ -361,7 +344,9 @@ bool StationList::writeXML (const KUrl &url, const IErrorLogClient &logger, bool
         QMessageBox::warning(NULL, "KRadio", i18n("error creating temporary file"));
         return false;
     }
-}
+    
+    return false;
+} // StationList::writeXML
 
 
 bool StationList::operator == (const StationList &x) const

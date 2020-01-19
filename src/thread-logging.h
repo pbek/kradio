@@ -25,7 +25,7 @@
 #include <errorlog_interfaces.h>
 
 // logging in thread
-class KDE_EXPORT ThreadLogging
+class KRADIO5_EXPORT ThreadLogging
 {
 public:
 
@@ -49,7 +49,7 @@ private:
 
 
 // receiving logs outside the thread
-class KDE_EXPORT ThreadLoggingClient
+class KRADIO5_EXPORT ThreadLoggingClient
 {
 public:
     ThreadLoggingClient();

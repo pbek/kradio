@@ -25,7 +25,7 @@
 #include <QMutex>
 #include <QMutexLocker>
 
-#include <kurl.h>
+#include <QtCore/QUrl>
 
 #include "soundformat.h"
 #include "sound_metadata.h"
@@ -92,9 +92,9 @@ public:
     InternetRadioDecoder(QObject                    *event_parent,
                          const InternetRadioStation &station,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                         const KUrl::List           &playlist,
+                         const QUrl::List           &playlist,
 #else
-                         const KUrl                 &currentStreamUrl,
+                         const QUrl                 &currentStreamUrl,
                          StreamInputBuffer          *input_buffer,
                          QString                     contentType,
 #endif
@@ -185,8 +185,8 @@ protected:
     time_t                m_startTime;
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    KUrl::List            m_playListURLs;
-    KUrl                  m_playURL;
+    QUrl::List            m_playListURLs;
+    QUrl                  m_playURL;
 #endif
 
     // output buffers
@@ -197,7 +197,7 @@ protected:
     size_t                m_maxSingleBufferSize;
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    KUrl                  m_inputUrl;
+    QUrl                  m_inputUrl;
     StreamInputBuffer    *m_streamInputBuffer;
     QString               m_contentType;
 #endif
@@ -234,9 +234,9 @@ public:
     DecoderThread(QObject                    *parent,
                   const InternetRadioStation &station,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                  const KUrl::List           &playlist,
+                  const QUrl::List           &playlist,
 #else
-                  const KUrl                 &currentStreamUrl,
+                  const QUrl                 &currentStreamUrl,
                   StreamReader               *streamReader,
 //                   StreamInputBuffer          *input_buffer,
 #endif
@@ -249,7 +249,7 @@ public:
                  );
     virtual ~DecoderThread();
 
-    void                  run();
+    void                  run() override;
 
     InternetRadioDecoder *decoder() const { return m_decoder; }
 
@@ -264,9 +264,9 @@ protected:
 
     InternetRadioDecoder *m_decoder;
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    KUrl::List            m_playlist;
+    QUrl::List            m_playlist;
 #else
-    KUrl                  m_currentStreamUrl;
+    QUrl                  m_currentStreamUrl;
     StreamInputBuffer    *m_streamInputBuffer;
     QString               m_contentType;
 #endif

@@ -18,8 +18,7 @@
 #include "mprissupport.h"
 
 #include <QApplication>
-#include <KDE/KAboutData>
-#include <KDE/KCmdLineArgs>
+#include <KAboutData>
 
 MPRISRoot::MPRISRoot(MPRISSupport *parent)
     : QDBusAbstractAdaptor(parent)
@@ -70,12 +69,12 @@ bool MPRISRoot::HasTrackList() const
 
 QString MPRISRoot::Identity() const
 {
-    return KCmdLineArgs::aboutData()->programName();
+  return KAboutData::applicationData().componentName();
 }
 
 QString MPRISRoot::DesktopEntry() const
 {
-    return KCmdLineArgs::aboutData()->appName();
+    return KAboutData::applicationData().componentName();
 }
 
 QStringList MPRISRoot::SupportedUriSchemes() const
@@ -88,4 +87,3 @@ QStringList MPRISRoot::SupportedMimeTypes() const
     return QStringList();
 }
 
-#include <mprisroot.moc>

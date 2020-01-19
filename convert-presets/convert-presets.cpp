@@ -1,11 +1,13 @@
-#include <QCoreApplication>
-#include <QString>
-#include <QTextStream>
-#include <QFile>
-#include <klocalizedstring.h>
-#include <kaboutdata.h>
-#include <kcmdlineargs.h>
-#include <QRegExp>
+#include <QtCore/QCoreApplication>
+#include <QtCore/QString>
+#include <QtCore/QTextStream>
+#include <QtCore/QFile>
+#include <QtCore/QRegExp>
+#include <QtCore/QCommandLineParser>
+#include <QtCore/QtGlobal>
+
+#include <KLocalizedString>
+#include <KAboutData>
 #include <time.h>
 #include <sys/fcntl.h>
 #include <unistd.h>
@@ -140,8 +142,8 @@ bool convertFile(const QString &file)
     outs << xmlData;
 
     if (presetFile.error() != QFile::NoError) {
-        fprintf(stderr, "error writing preset file %s (%s)\n",
-                        qPrintable(file), qPrintable(presetFile.error()));
+        fprintf(stderr, "error writing preset file %s\n",
+                        qPrintable(file));
         return false;
     }
 
@@ -153,34 +155,41 @@ static const char *description = "convert-presets";
 
 int main(int argc, char *argv[])
 {
-    KAboutData aboutData("kradio4-convert-presets", "kradio4-convert-presets", ki18n("kradio4-convert-presets"),
-                         KRADIO_VERSION, ki18n(description), KAboutData::License_GPL,
-                         ki18n("(c) 2003-2010 Martin Witte"),
-                         KLocalizedString(),
+    QCoreApplication app(argc, argv);
+    
+    KAboutData aboutData(QStringLiteral("kradio5-convert-presets"),
+			 i18n("kradio5-convert-presets"),
+                         QStringLiteral(KRADIO_VERSION),
+			 i18n(description),
+			 KAboutLicense::LicenseKey::GPL,
+                         i18n("(c) 2003-2020 Martin Witte"),
+                         NULL,
                          "http://sourceforge.net/projects/kradio");
-    aboutData.addAuthor(ki18n("Martin Witte"),  KLocalizedString(), "emw-kradio@nocabal.de");
+    aboutData.addAuthor(i18n("Martin Witte"),  NULL, "emw-kradio@nocabal.de");
 
-    KCmdLineArgs::init( argc, argv, &aboutData );
+    KAboutData::setApplicationData(aboutData);
 
-    KCmdLineOptions options;
-    options.add("q", ki18n("quiet mode - no informational output"), 0);
-    options.add("+[preset files]", ki18n("preset files to convert"));
-    KCmdLineArgs::addCmdLineOptions( options );
+    QCommandLineParser cmdLineParser;
+    QCommandLineOption optionQuiet("q", i18n("quiet mode - no informational output"));
+    cmdLineParser.addHelpOption();
+    cmdLineParser.addVersionOption();
+    cmdLineParser.addOption(optionQuiet);
+    cmdLineParser.addPositionalArgument("files", i18n("preset files to convert"), "[preset files...]");
+    
+    cmdLineParser.process(app);
 
-    QCoreApplication app(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
+    QStringList  filenames = cmdLineParser.positionalArguments();
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-
-    for (int i = 0; i < args->count(); ++i) {
-        const QString x = args->arg(i);
-        if (! convertFile(x)) {
+    for (const auto & fname : filenames) {
+        if (! convertFile(fname)) {
             return -1;
-        } else {
-            if (! args->isSet("q"))
-                fprintf(stdout, "%s: ok\n", qPrintable(x));
+        }
+	else {
+	  if (!cmdLineParser.isSet(optionQuiet))
+	    fprintf(stdout, "%s: ok\n", qPrintable(fname));
         }
     }
-    if (args->count() == 0) {
+    if (filenames.size() == 0) {
         fprintf(stderr, "no input\n");
         return -1;
     }

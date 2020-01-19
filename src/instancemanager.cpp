@@ -16,15 +16,14 @@
  ***************************************************************************/
 
 #include <kmessagebox.h>
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <klocalizedstring.h>
 #include <kpluginloader.h>
 #include <kconfig.h>
-#include <kstandarddirs.h>
-#include <kdebug.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <KSharedConfig>
 
+#include <QDebug>
+#include <QLocale>
 #include <QCoreApplication>
 
 #include "instancemanager.h"
@@ -62,8 +61,7 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
         factory = QSharedPointer<KRadioPluginFactoryBase>(ff->create<KRadioPluginFactoryBase>());
         if (factory) {
             foreach (const KAboutData &about, factory->components()) {
-                KGlobal::locale()->insertCatalog(about.catalogName());
-                plugins.insert(about.appName(), about.shortDescription());
+                plugins.insert(about.componentName(), about.shortDescription());
             }
         } else {
             KMessageBox::error(NULL,
@@ -101,7 +99,8 @@ InstanceManager::~InstanceManager()
 void InstanceManager::saveState()
 {
     IErrorLogClient::staticLogDebug("InstanceManager::saveState()");
-    saveState(&*KGlobal::config());
+    const auto cfgPtr = KSharedConfig::openConfig();
+    saveState(cfgPtr.data());
 }
 
 void InstanceManager::saveState (KConfig *c)
@@ -136,7 +135,8 @@ void InstanceManager::restoreState (KConfig *c)
     KConfigGroup global_group = c->group("Global");
     KConfigGroup plugin_group = c->group("Plugin Libraries");
 
-    QStringList new_libs = KGlobal::dirs()->findAllResources("lib", "kradio4/plugins/*.so");
+    // FIXME: KF5 porting: this might be wrong...
+    QStringList new_libs = QStandardPaths::locateAll(QStandardPaths::ApplicationsLocation, "kradio4/plugins/*.so");
 
     int n_libs = plugin_group.readEntry("count", 0);
 
@@ -244,7 +244,7 @@ void InstanceManager::LoadLibrary (const QString &library)
             m_PluginInfos.insert(it.key(), PluginClassInfo (it.key(), *it, libinfo.factory));
         }
     } else {
-        kDebug()  << QDateTime::currentDateTime().toString(Qt::ISODate)
+        qDebug()  << QDateTime::currentDateTime().toString(Qt::ISODate)
                   << " Error: Loading Library" << library << "failed:" << libinfo.errorString;
     }
 
@@ -289,11 +289,11 @@ PluginBase *InstanceManager::CreatePlugin (PluginManager *manager, const QString
     if (m_PluginInfos.contains(class_name)) {
         retval = m_PluginInfos[class_name].CreateInstance(instanceID, object_name);
         if (!retval) {
-            kDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
+            qDebug() << QDateTime::currentDateTime().toString(Qt::ISODate)
                      << " Error: Creation of instance" << object_name << "of class" << class_name << "failed.";
         }
     } else {
-        kDebug()     << QDateTime::currentDateTime().toString(Qt::ISODate)
+        qDebug()     << QDateTime::currentDateTime().toString(Qt::ISODate)
                      << " Error: Cannot create instance" << object_name << "of unknown class" << class_name << ".";
     }
 
@@ -332,5 +332,3 @@ void  InstanceManager::slotAboutToQuit()
         m_quitting = false;
     }
 }
-
-#include "instancemanager.moc"

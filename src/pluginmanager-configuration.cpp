@@ -21,17 +21,15 @@
 #include "pluginsmodel.h"
 #include "pluginsdelegate.h"
 
-#include <kpushbutton.h>
-#include <kurlrequester.h>
-#include <kinputdialog.h>
-#include <kmessagebox.h>
-#include <kstandarddirs.h>
-#include <kdemacros.h>
-#include <kapplication.h>
-#include <kicon.h>
+#include <KUrlRequester>
+#include <KSharedConfig>
+#include <KMessageBox>
 
-#include <QCheckBox>
-#include <QStandardItemModel>
+#include <QtWidgets/QInputDialog>
+#include <QtWidgets/QCheckBox>
+#include <QtGui/QStandardItemModel>
+#include <QtGui/QIcon>
+#include <QtCore/QStandardPaths>
 
 
 #include "id-generator.h"
@@ -44,14 +42,15 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
 {
     setupUi(this);
     // temporary fix to set icons. it does not work propertly in .ui files any more in KDE4
-    btnRemovePluginInstance->setIcon(KIcon("edit-delete"));
-    btnNewPluginInstance   ->setIcon(KIcon("document-new"));
-    btnRenamePluginInstance->setIcon(KIcon("edit-rename"));
-    btnRemoveLibrary       ->setIcon(KIcon("edit-delete"));
-    btnAddLibrary          ->setIcon(KIcon("document-new"));
+    btnRemovePluginInstance->setIcon(QIcon("edit-delete"));
+    btnNewPluginInstance   ->setIcon(QIcon("document-new"));
+    btnRenamePluginInstance->setIcon(QIcon("edit-rename"));
+    btnRemoveLibrary       ->setIcon(QIcon("edit-delete"));
+    btnAddLibrary          ->setIcon(QIcon("document-new"));
 
-    QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio4/plugins";
-    editPluginLibrary->setStartDir(defaultPluginDir);
+    // FIXME: KF5 port: how to get KStandardDirs::installPath ("lib") + "kradio4/plugins";
+    QString defaultPluginDir = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, "kradio4/plugins");
+    editPluginLibrary->setStartDir(QUrl(defaultPluginDir));
     editPluginLibrary->setMode(editPluginLibrary->mode() | KFile::LocalOnly);
 
     m_pluginsModel = new PluginsModel(listPlugins);
@@ -163,8 +162,8 @@ void PluginManagerConfiguration::slotCancel()
 void PluginManagerConfiguration::slotAddLibrary()
 {
     slotSetDirty();
-    KUrl url = editPluginLibrary->url();
-    if (m_instanceManager && url.pathOrUrl().length()) {
+    QUrl url = editPluginLibrary->url();
+    if (m_instanceManager && url.toString().length()) {
         if (!url.isLocalFile()) {
             return;  // shouldn't happen, the url requester takes care
                      // of that
@@ -203,16 +202,18 @@ void PluginManagerConfiguration::slotNewPluginInstance()
         ++default_object_id;
     }
 
-    bool ok = false;
-    const QString object_name = KInputDialog::getText(i18n("Enter Plugin Instance Name"),
+    bool          ok          = false;
+    const QString object_name = QInputDialog::getText(this,
+                                                      i18n("Enter Plugin Instance Name"),
                                                       i18n("Instance name:"),
+                                                      QLineEdit::Normal,
                                                       class_name + QString::number(default_object_id),
                                                       &ok);
     if (ok && !object_name.isEmpty()) {
         PluginBase *p = m_instanceManager->CreatePlugin(m_PluginManager, generateRandomID(70), class_name, object_name);
 
-        KConfig *cfg = kapp->sessionConfig();
-        m_PluginManager->restorePluginInstanceState (p, cfg);
+        const auto cfgPtr = KSharedConfig::openConfig();
+        m_PluginManager->restorePluginInstanceState (p, cfgPtr.data());
         p->startPlugin();
     }
 }
@@ -262,4 +263,3 @@ void PluginManagerConfiguration::slotSetDirty()
 }
 
 
-#include "pluginmanager-configuration.moc"

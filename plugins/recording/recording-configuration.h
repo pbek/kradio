@@ -84,14 +84,14 @@ public :
 
 // IRecCfgClient
 
-    bool noticeEncoderBufferChanged     (size_t BufferSize, size_t BufferCount);
-    bool noticeSoundFormatChanged       (const SoundFormat &sf);
-    bool noticeMP3QualityChanged        (int   q);
-    bool noticeOggQualityChanged        (float q);
-    bool noticeRecordingDirectoryChanged(const QString &dir, const recordingTemplate_t &templ);
-    bool noticeOutputFormatChanged      (RecordingConfig::OutputFormat of);
-    bool noticePreRecordingChanged      (bool enable, int seconds);
-    bool noticeRecordingConfigChanged   (const RecordingConfig &cfg);
+    bool noticeEncoderBufferChanged     (size_t BufferSize, size_t BufferCount) override;
+    bool noticeSoundFormatChanged       (const SoundFormat &sf) override;
+    bool noticeMP3QualityChanged        (int   q) override;
+    bool noticeOggQualityChanged        (float q) override;
+    bool noticeRecordingDirectoryChanged(const QString &dir, const recordingTemplate_t &templ) override;
+    bool noticeOutputFormatChanged      (RecordingConfig::OutputFormat of) override;
+    bool noticePreRecordingChanged      (bool enable, int seconds)   override;
+    bool noticeRecordingConfigChanged   (const RecordingConfig &cfg) override;
 
 protected slots:
 

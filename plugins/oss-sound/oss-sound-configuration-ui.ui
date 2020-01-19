@@ -67,7 +67,7 @@
                         <string>Buffer Size</string>
                     </property>
                 </widget>
-                <widget class="KIntSpinBox" row="2" column="1">
+                <widget class="QSpinBox" row="2" column="1">
                     <property name="name">
                         <cstring>editBufferSize</cstring>
                     </property>
@@ -124,6 +124,5 @@
     <includehint>kpushbutton.h</includehint>
     <includehint>kurlrequester.h</includehint>
     <includehint>kpushbutton.h</includehint>
-    <includehint>knuminput.h</includehint>
 </includehints>
 </UI>

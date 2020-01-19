@@ -26,7 +26,7 @@ public:
     StyledItemDelegateLirc(QObject *parent = 0);
     ~StyledItemDelegateLirc();
 
-    virtual QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    virtual QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
     void stopEditing();
 

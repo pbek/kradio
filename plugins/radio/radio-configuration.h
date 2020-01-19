@@ -36,30 +36,30 @@ public :
     RadioConfiguration (QWidget *parent, const IErrorLogClient &m_logger);
     ~RadioConfiguration ();
 
-    bool connectI (Interface *i);
-    bool disconnectI (Interface *i);
+    bool connectI    (Interface *i) override;
+    bool disconnectI (Interface *i) override;
 
     // IRadioDevicePoolClient
 
 RECEIVERS:
-    bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
-    bool noticeDevicesChanged(const QList<IRadioDevice*> &);
-    bool noticeDeviceDescriptionChanged(const QString &);
+    bool noticeActiveDeviceChanged(IRadioDevice *) override  { return false; }
+    bool noticeDevicesChanged(const QList<IRadioDevice*> &) override;
+    bool noticeDeviceDescriptionChanged(const QString &) override;
 
     // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool /*on*/)                          { return false; }  // don't care
-    bool noticeStationChanged (const RadioStation &, int /*idx*/) { return false; }  // don't care
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &f);
+    bool noticePowerChanged(bool /*on*/)                          override { return false; }  // don't care
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) override { return false; }  // don't care
+    bool noticeStationsChanged(const StationList &sl)             override;
+    bool noticePresetFileChanged(const QString &f)                override;
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)           { return false; }  // don't care
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        { return false; }  // don't care
-    bool noticeRDSStationNameChanged(const QString &/*s*/)        { return false; }  // don't care
+    bool noticeRDSStateChanged      (bool  /*enabled*/)           override { return false; }  // don't care
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        override { return false; }  // don't care
+    bool noticeRDSStationNameChanged(const QString &/*s*/)        override { return false; }  // don't care
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/)  { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/)  { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/)  override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/)  override { return false; }
 
 protected:
 

@@ -18,7 +18,7 @@
 #ifndef KRADIO_ERRORLOG_H
 #define KRADIO_ERRORLOG_H
 
-#include <kpagedialog.h>
+#include <KPageDialog>
 #include <QMutex>
 
 #include "errorlog_interfaces.h"
@@ -35,52 +35,52 @@ public:
     ErrorLog(const QString &instanceID, const QString &name);
     ~ErrorLog();
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("ErrorLog"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("ErrorLog"); }
 
-    virtual bool connectI (Interface *);
-    virtual bool disconnectI (Interface *);
+    virtual bool connectI (Interface *)    override;
+    virtual bool disconnectI (Interface *) override;
 
 // WidgetPluginBase
 
-    virtual void   saveState (KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
-    virtual void   restoreState (const KConfigGroup &g, bool b) { WidgetPluginBase::restoreState(g, b); }
+    virtual void   saveState (KConfigGroup &) const    override;
+    virtual void   restoreState (const KConfigGroup &) override;
+    virtual void   restoreState (const KConfigGroup &g, bool b) override { WidgetPluginBase::restoreState(g, b); }
 
 public slots:
-    virtual void     toggleShown () { WidgetPluginBase::pToggleShown(); }
+    virtual void     toggleShown () override { WidgetPluginBase::pToggleShown(); }
 
 public:
-    virtual void     setVisible(bool v);
+    virtual void     setVisible(bool v) override;
 
 protected:
-                  QWidget *getWidget()       { return this; }
-            const QWidget *getWidget() const { return this; }
+                  QWidget *getWidget()       override { return this; }
+            const QWidget *getWidget() const override { return this; }
 
-    virtual void showEvent(QShowEvent *);
-    virtual void hideEvent(QHideEvent *);
+    virtual void showEvent(QShowEvent *) override;
+    virtual void hideEvent(QHideEvent *) override;
 
     struct Page {
-        QMutex mutex;
-        KTextEdit *edit;
-        KPageWidgetItem *item;
+        QMutex            mutex;
+        KTextEdit       * edit;
+        KPageWidgetItem * item;
     };
 
-    void setTextEditPage(const QString &title, const KIcon &icon, Page *page);
+    void setTextEditPage(const QString &title, const QIcon &icon, Page *page);
     void logToPage(Page &page, const QString &text, bool showUp = false);
 
 // IErrorLog
 
 RECEIVERS:
-    bool logError  (const QString &);
-    bool logWarning(const QString &);
-    bool logInfo   (const QString &);
-    bool logDebug  (const QString &);
+    bool logError  (const QString &) override;
+    bool logWarning(const QString &) override;
+    bool logInfo   (const QString &) override;
+    bool logDebug  (const QString &) override;
 
 // KDialogBase
 
 protected slots:
 
-    void slotUser1();
+    void slotSaveAs();
 
 protected:
 

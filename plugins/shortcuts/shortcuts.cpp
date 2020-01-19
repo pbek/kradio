@@ -20,14 +20,13 @@
 
 #include <QSocketNotifier>
 #include <QTimer>
-#include <QApplication>
+#include <QtWidgets/QApplication>
+#include <QtGui/QIcon>
+#include <QtWidgets/QAction>
 
-#include <kaboutdata.h>
-#include <kstandarddirs.h>
-#include <kshortcutseditor.h>
-#include <kaction.h>
-#include <kglobalaccel.h>
-#include <kicon.h>
+#include <KAboutData>
+#include <KShortcutsEditor>
+#include <KGlobalAccel>
 
 #include "errorlog_interfaces.h"
 #include "radiodevice_interfaces.h"
@@ -46,13 +45,12 @@
 static KAboutData aboutData()
 {
     KAboutData about("Shortcuts",
-                     PROJECT_NAME,
-                     ki18nc("@title", "Shortcuts"),
+                     i18nc("@title", "Shortcuts"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Shortcuts Support"),
-                     KAboutData::License_GPL,
-                     KLocalizedString(),
-                     KLocalizedString(),
+                     i18nc("@title", "Shortcuts Support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     NULL,
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;
@@ -75,31 +73,31 @@ Shortcuts::Shortcuts(const QString &instanceID, const QString &name)
     m_stdActions        = new KActionCategory(i18n("Standard Actions"), m_stdCollection);
     m_stationActions    = new KActionCategory(i18n("Station Actions"),  m_stationCollection);
 
-    addAction(i18n("Digit 0"),                 SHORTCUT_DIGIT_0,          Qt::Key_0);
-    addAction(i18n("Digit 1"),                 SHORTCUT_DIGIT_1,          Qt::Key_1);
-    addAction(i18n("Digit 2"),                 SHORTCUT_DIGIT_2,          Qt::Key_2);
-    addAction(i18n("Digit 3"),                 SHORTCUT_DIGIT_3,          Qt::Key_3);
-    addAction(i18n("Digit 4"),                 SHORTCUT_DIGIT_4,          Qt::Key_4);
-    addAction(i18n("Digit 5"),                 SHORTCUT_DIGIT_5,          Qt::Key_5);
-    addAction(i18n("Digit 6"),                 SHORTCUT_DIGIT_6,          Qt::Key_6);
-    addAction(i18n("Digit 7"),                 SHORTCUT_DIGIT_7,          Qt::Key_7);
-    addAction(i18n("Digit 8"),                 SHORTCUT_DIGIT_8,          Qt::Key_8);
-    addAction(i18n("Digit 9"),                 SHORTCUT_DIGIT_9,          Qt::Key_9);
-    addAction(i18n("Power on"),                SHORTCUT_POWER_ON,         Qt::Key_P);
-    addAction(i18n("Power off"),               SHORTCUT_POWER_OFF,        Qt::Key_P | Qt::CTRL);
-    addAction(i18n("Pause"),                   SHORTCUT_PAUSE,            Qt::Key_Space);
-    addAction(i18n("Start recording"),         SHORTCUT_RECORD_START,     Qt::Key_R);
-    addAction(i18n("Stop recording"),          SHORTCUT_RECORD_STOP,      Qt::Key_R | Qt::CTRL);
-    addAction(i18n("Increase volume"),         SHORTCUT_VOLUME_INC,       Qt::Key_Up);
-    addAction(i18n("Decrease volume"),         SHORTCUT_VOLUME_DEC,       Qt::Key_Down);
-    addAction(i18n("Increase Frequency"),      SHORTCUT_FREQ_INC,         Qt::Key_Right | Qt::SHIFT);
-    addAction(i18n("Decrease Frequency"),      SHORTCUT_FREQ_DEC,         Qt::Key_Left  | Qt::SHIFT);
-    addAction(i18n("Next station"),            SHORTCUT_STATION_NEXT,     Qt::Key_Right);
-    addAction(i18n("Previous station"),        SHORTCUT_STATION_PREV,     Qt::Key_Left);
-    addAction(i18n("Search next station"),     SHORTCUT_SEARCH_NEXT,      Qt::Key_Right | Qt::CTRL);
-    addAction(i18n("Search previous station"), SHORTCUT_SEARCH_PREV,      Qt::Key_Left  | Qt::CTRL);
-    addAction(i18n("Sleep"),                   SHORTCUT_SLEEP,            Qt::Key_Z | Qt::CTRL);
-    addAction(i18n("Quit KRadio"),             SHORTCUT_APPLICATION_QUIT, Qt::Key_Q | Qt::CTRL);
+    addAction(i18n("Digit 0"),                 SHORTCUT_DIGIT_0,          QKeySequence(Qt::Key_0));
+    addAction(i18n("Digit 1"),                 SHORTCUT_DIGIT_1,          QKeySequence(Qt::Key_1));
+    addAction(i18n("Digit 2"),                 SHORTCUT_DIGIT_2,          QKeySequence(Qt::Key_2));
+    addAction(i18n("Digit 3"),                 SHORTCUT_DIGIT_3,          QKeySequence(Qt::Key_3));
+    addAction(i18n("Digit 4"),                 SHORTCUT_DIGIT_4,          QKeySequence(Qt::Key_4));
+    addAction(i18n("Digit 5"),                 SHORTCUT_DIGIT_5,          QKeySequence(Qt::Key_5));
+    addAction(i18n("Digit 6"),                 SHORTCUT_DIGIT_6,          QKeySequence(Qt::Key_6));
+    addAction(i18n("Digit 7"),                 SHORTCUT_DIGIT_7,          QKeySequence(Qt::Key_7));
+    addAction(i18n("Digit 8"),                 SHORTCUT_DIGIT_8,          QKeySequence(Qt::Key_8));
+    addAction(i18n("Digit 9"),                 SHORTCUT_DIGIT_9,          QKeySequence(Qt::Key_9));
+    addAction(i18n("Power on"),                SHORTCUT_POWER_ON,         QKeySequence(Qt::Key_P));
+    addAction(i18n("Power off"),               SHORTCUT_POWER_OFF,        QKeySequence(Qt::Key_P,     Qt::CTRL));
+    addAction(i18n("Pause"),                   SHORTCUT_PAUSE,            QKeySequence(Qt::Key_Space));
+    addAction(i18n("Start recording"),         SHORTCUT_RECORD_START,     QKeySequence(Qt::Key_R));
+    addAction(i18n("Stop recording"),          SHORTCUT_RECORD_STOP,      QKeySequence(Qt::Key_R,     Qt::CTRL));
+    addAction(i18n("Increase volume"),         SHORTCUT_VOLUME_INC,       QKeySequence(Qt::Key_Up));
+    addAction(i18n("Decrease volume"),         SHORTCUT_VOLUME_DEC,       QKeySequence(Qt::Key_Down));
+    addAction(i18n("Increase Frequency"),      SHORTCUT_FREQ_INC,         QKeySequence(Qt::Key_Right, Qt::SHIFT));
+    addAction(i18n("Decrease Frequency"),      SHORTCUT_FREQ_DEC,         QKeySequence(Qt::Key_Left,  Qt::SHIFT));
+    addAction(i18n("Next station"),            SHORTCUT_STATION_NEXT,     QKeySequence(Qt::Key_Right));
+    addAction(i18n("Previous station"),        SHORTCUT_STATION_PREV,     QKeySequence(Qt::Key_Left));
+    addAction(i18n("Search next station"),     SHORTCUT_SEARCH_NEXT,      QKeySequence(Qt::Key_Right, Qt::CTRL));
+    addAction(i18n("Search previous station"), SHORTCUT_SEARCH_PREV,      QKeySequence(Qt::Key_Left,  Qt::CTRL));
+    addAction(i18n("Sleep"),                   SHORTCUT_SLEEP,            QKeySequence(Qt::Key_Z,     Qt::CTRL));
+    addAction(i18n("Quit KRadio"),             SHORTCUT_APPLICATION_QUIT, QKeySequence(Qt::Key_Q,     Qt::CTRL));
 
     QObject::connect(m_stdCollection,     SIGNAL(actionTriggered(QAction *)), this, SLOT(slotActionTriggered (QAction *)));
     QObject::connect(m_stationCollection, SIGNAL(actionTriggered(QAction *)), this, SLOT(slotStationTriggered(QAction *)));
@@ -136,13 +134,13 @@ Shortcuts::~Shortcuts()
 }
 
 
-void Shortcuts::addAction(const QString &name, ShortcutID id, int key)
+void Shortcuts::addAction(const QString &name, ShortcutID id, const QKeySequence & keyseq)
 {
-    KAction *a = m_stdActions->addAction(name);
+    QAction *a = m_stdActions->addAction(name);
     a->setData          ((int)id);
     a->setText          (name);
-    a->setShortcut      (KShortcut(key));
-    a->setGlobalShortcut(KShortcut());
+    a->setShortcut      (QKeySequence(keyseq));
+    KGlobalAccel::setGlobalShortcut(a, QKeySequence());
 }
 
 
@@ -455,10 +453,10 @@ void Shortcuts::slotStationTriggered(QAction *a)
 
 bool Shortcuts::noticeStationsChanged(const StationList &sl)
 {
-    QMap<QString, KAction *> oldActions;
+    QMap<QString, QAction *> oldActions;
     QAction *_a = NULL;
     foreach(_a, m_stationCollection->actions()) {
-        KAction *a = dynamic_cast<KAction*>(_a);
+        QAction *a = dynamic_cast<QAction*>(_a);
         if (a) {
             m_stationCollection->takeAction(a);
             QString strdata = a->data().toString();
@@ -473,20 +471,20 @@ bool Shortcuts::noticeStationsChanged(const StationList &sl)
         const RadioStation *s  = *it;
         const QString      &id = s->stationID();
 
-        KAction *a = NULL;
+        QAction *a = NULL;
         if (oldActions.contains(id)) {
             a = oldActions[id];
             m_stationActions->addAction(id, a);
             oldActions.remove(id);
         } else {
-            KAction *_a = m_stationActions->addAction(id);
-            _a->setGlobalShortcut(KShortcut());
+            QAction *_a = m_stationActions->addAction(id);
+            KGlobalAccel::setGlobalShortcut(_a, QKeySequence());
             a = _a;
         }
         a->setData(id);
         a->setText(QString().sprintf("%02i) ", idx) + s->name());
         if (s->iconName().length()) {
-            a->setIcon(KIcon(s->iconName()));
+            a->setIcon(QIcon(s->iconName()));
         }
     }
     qDeleteAll(oldActions);
@@ -495,4 +493,3 @@ bool Shortcuts::noticeStationsChanged(const StationList &sl)
     return true;
 }
 
-#include "shortcuts.moc"

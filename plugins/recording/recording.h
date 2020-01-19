@@ -47,10 +47,10 @@ public:
     Recording(const QString &instanceID, const QString &name);
     ~Recording();
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("Recording"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("Recording"); }
 
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
+    virtual bool   connectI   (Interface *i) override;
+    virtual bool   disconnectI(Interface *i) override;
 
 
     bool isRecording () const;
@@ -59,68 +59,68 @@ public:
     // PluginBase
 
 public:
-    virtual void   saveState   (      KConfigGroup &) const;
-    virtual void   restoreState(const KConfigGroup &);
+    virtual void   saveState   (      KConfigGroup &) const override;
+    virtual void   restoreState(const KConfigGroup &)       override;
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
 
 
 // IRadioClient
 RECEIVERS:
-    bool noticePowerChanged(bool /*on*/)                               { return false; }
-    bool noticeStationChanged (const RadioStation &, int /*idx*/)      { return false; }
-    bool noticeStationsChanged(const StationList &/*sl*/)              { return false; }
-    bool noticePresetFileChanged(const QString &/*f*/)                 { return false; }
-    bool noticeRDSStateChanged      (bool  /*enabled*/)                { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)             { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)             { return false; }
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) { return false; }
+    bool noticePowerChanged(bool /*on*/)                               override { return false; }
+    bool noticeStationChanged (const RadioStation &, int /*idx*/)      override { return false; }
+    bool noticeStationsChanged(const StationList &/*sl*/)              override { return false; }
+    bool noticePresetFileChanged(const QString &/*f*/)                 override { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)                override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)             override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)             override { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) override { return false; }
 
 
 protected:
 
 // IRecCfg
 
-    bool   setEncoderBuffer     (size_t BufferSize, size_t BufferCount);
-    bool   setSoundFormat       (const SoundFormat &sf);
-    bool   setMP3Quality        (int q);
-    bool   setOggQuality        (float q);
-    bool   setRecordingDirectory(const QString &dir, const recordingTemplate_t &templ);
-    bool   setOutputFormat      (RecordingConfig::OutputFormat of);
-    bool   setPreRecording      (bool enable, int seconds);
-    bool   setRecordingConfig   (const RecordingConfig &cfg);
+    bool   setEncoderBuffer     (size_t BufferSize, size_t BufferCount) override;
+    bool   setSoundFormat       (const SoundFormat &sf) override;
+    bool   setMP3Quality        (int q)   override;
+    bool   setOggQuality        (float q) override;
+    bool   setRecordingDirectory(const QString &dir, const recordingTemplate_t &templ) override;
+    bool   setOutputFormat      (RecordingConfig::OutputFormat of) override;
+    bool   setPreRecording      (bool enable, int seconds)         override;
+    bool   setRecordingConfig   (const RecordingConfig &cfg)       override;
 
-    void                           getEncoderBuffer(size_t &BufferSize, size_t &BufferCount) const;
-    const SoundFormat             &getSoundFormat () const;
-    int                            getMP3Quality () const;
-    float                          getOggQuality () const;
-    void                           getRecordingDirectory(QString &dir, recordingTemplate_t &templ) const;
-    RecordingConfig::OutputFormat  getOutputFormat() const;
-    bool                           getPreRecording(int &seconds) const;
-    const RecordingConfig         &getRecordingConfig() const;
+    void                           getEncoderBuffer(size_t &BufferSize, size_t &BufferCount) const override;
+    const SoundFormat             &getSoundFormat () const override;
+    int                            getMP3Quality () const override;
+    float                          getOggQuality () const override;
+    void                           getRecordingDirectory(QString &dir, recordingTemplate_t &templ) const override;
+    RecordingConfig::OutputFormat  getOutputFormat() const override;
+    bool                           getPreRecording(int &seconds) const override;
+    const RecordingConfig         &getRecordingConfig() const override;
 
 // ISoundStreamClient
 
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
 
-    bool startPlayback(SoundStreamID id);
-    bool stopPlayback(SoundStreamID id);
+    bool startPlayback(SoundStreamID id) override;
+    bool stopPlayback(SoundStreamID id)  override;
 
-    bool startRecording(SoundStreamID id, const recordingTemplate_t &templ);
-    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const recordingTemplate_t &templ);
-    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
-    bool stopRecording(SoundStreamID id);
-    bool isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
+    bool startRecording(SoundStreamID id, const recordingTemplate_t &templ) override;
+    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const recordingTemplate_t &templ) override;
+    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md) override;
+    bool stopRecording(SoundStreamID id) override;
+    bool isRecordingRunning(SoundStreamID id, bool &b, SoundFormat &sf) const override;
 
-    bool getSoundStreamDescription(SoundStreamID id, QString &descr)           const;
-    bool getSoundStreamRadioStation(SoundStreamID id, const RadioStation *&rs) const;
+    bool getSoundStreamDescription(SoundStreamID id, QString &descr)           const override;
+    bool getSoundStreamRadioStation(SoundStreamID id, const RadioStation *&rs) const override;
 
-    bool noticeSoundStreamClosed(SoundStreamID id);
-    bool noticeSoundStreamChanged(SoundStreamID id);
+    bool noticeSoundStreamClosed(SoundStreamID id)  override;
+    bool noticeSoundStreamChanged(SoundStreamID id) override;
 
-    bool enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list) const;
+    bool enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list) const override;
 
 protected:
 
@@ -130,7 +130,7 @@ protected:
 
 protected slots:
 
-    bool event(QEvent *e);
+    bool event(QEvent *e) override;
 
 protected:
 

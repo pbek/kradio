@@ -18,16 +18,15 @@
 #ifndef _KRADIO_LIBKRADIO_GUI_GUI_LIST_HELPER_H_
 #define _KRADIO_LIBKRADIO_GUI_GUI_LIST_HELPER_H_
 
-#include <kdemacros.h>
+#include <QtCore/QMap>
+#include <QtCore/QList>
+#include <QtCore/QString>
+#include <QtCore/QObject>
+#include <QtCore/QVariant>
 
-#include <QMap>
-#include <QList>
-#include <QString>
-#include <QObject>
-#include <QVariant>
-#include <QObject>
+#include "kradio-def.h"
 
-class KDE_EXPORT GUIListHelperQObjectBase : public QObject
+class KRADIO5_EXPORT GUIListHelperQObjectBase : public QObject
 {
 Q_OBJECT
 
@@ -51,7 +50,7 @@ signals:
 };
 
 
-template <class TLIST, class TID> class KDE_EXPORT GUIListHelper : public GUIListHelperQObjectBase
+template <class TLIST, class TID> class KRADIO5_EXPORT GUIListHelper : public GUIListHelperQObjectBase
 {
 public:
     enum SORT_KEY { SORT_BY_ID, SORT_BY_DESCR, SORT_NONE };
@@ -75,9 +74,9 @@ public:
 
 public:
 
-    virtual void  slotOK();
-    virtual void  slotCancel();
-    virtual void  slotUserSelection();
+    virtual void  slotOK()            override;
+    virtual void  slotCancel()        override;
+    virtual void  slotUserSelection() override;
 
 protected:
     void          setData(const QMap<TID, QString> &data);  // only updates list elements, no setting/update of current element

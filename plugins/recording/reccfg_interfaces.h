@@ -95,8 +95,8 @@ QUERIES:
     IF_QUERY   (   const RecordingConfig         &queryRecordingConfig()                                   )
 
 RECEIVERS:
-    virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/);
-    virtual void noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/);
+    virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/) override;
+    virtual void noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/) override;
 };
 
 #endif

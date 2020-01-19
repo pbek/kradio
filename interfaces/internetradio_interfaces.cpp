@@ -19,23 +19,23 @@
 #include "internetradio_interfaces.h"
 #include "radiostation.h"
 
-#include <kurl.h>
+#include <QtCore/QUrl>
 
 
 // IInternetRadio
 
-IF_IMPL_SENDER  (  IInternetRadio::notifyURLChanged(const KUrl &u, const InternetRadioStation *irs),
+IF_IMPL_SENDER  (  IInternetRadio::notifyURLChanged(const QUrl &u, const InternetRadioStation *irs),
                    noticeURLChanged(u, irs)                            )
 
 // IInternetRadioClient
 
-IF_IMPL_SENDER  (  IInternetRadioClient::sendURL(const KUrl &url, const InternetRadioStation *irs),
+IF_IMPL_SENDER  (  IInternetRadioClient::sendURL(const QUrl &url, const InternetRadioStation *irs),
                    setURL(url, irs)                                    )
 
 
-static KUrl emptyURL;
+static QUrl emptyURL;
 
-IF_IMPL_QUERY   (  const KUrl &IInternetRadioClient::queryURL(),
+IF_IMPL_QUERY   (  const QUrl &IInternetRadioClient::queryURL(),
                    getURL(),
                    emptyURL                                       )
 

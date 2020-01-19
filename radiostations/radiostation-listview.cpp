@@ -317,7 +317,7 @@ RadioStationListView::RadioStationListView(QWidget *parent, const char *name)
 
     m_model = new RadioStationModel(this);
     setModel(m_model);
-    header()->setResizeMode(0, QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
 }
 
 
@@ -432,4 +432,3 @@ void RadioStationListView::currentChanged(const QModelIndex &current, const QMod
     emit sigCurrentStationChanged(current.row());
 }
 
-#include "radiostation-listview.moc"

@@ -21,7 +21,7 @@
 #include <QToolButton>
 
 #include <klocalizedstring.h>
-#include <kicon.h>
+#include <QtGui/QIcon>
 
 #include "radioview_frequencyseeker.h"
 
@@ -50,10 +50,10 @@ RadioViewFrequencySeeker::RadioViewFrequencySeeker(QWidget *parent, const QStrin
     m_btnSearchRight->setCheckable(true);
     m_sldFrequency  ->setPageStep(1);
 
-    m_btnSearchLeft ->setIcon(KIcon("media-skip-backward"));
-    m_btnSearchRight->setIcon(KIcon("media-skip-forward"));
-    m_btnStepLeft   ->setIcon(KIcon("media-seek-backward"));
-    m_btnStepRight  ->setIcon(KIcon("media-seek-forward"));
+    m_btnSearchLeft ->setIcon(QIcon("media-skip-backward"));
+    m_btnSearchRight->setIcon(QIcon("media-skip-forward"));
+    m_btnStepLeft   ->setIcon(QIcon("media-seek-backward"));
+    m_btnStepRight  ->setIcon(QIcon("media-seek-forward"));
 
     l->addWidget (m_btnSearchLeft);
     l->addWidget (m_btnStepLeft);
@@ -251,4 +251,3 @@ void RadioViewFrequencySeeker::slotStepDown()
 }
 
 
-#include "radioview_frequencyseeker.moc"

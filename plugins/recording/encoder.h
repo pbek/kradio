@@ -32,10 +32,10 @@ class BufferSoundMetaData : public SoundMetaData
 {
 public:
     BufferSoundMetaData()
-        : SoundMetaData(0, 0, 0, KUrl()), m_BufferPosition(0) {}
+        : SoundMetaData(0, 0, 0, QUrl()), m_BufferPosition(0) {}
     BufferSoundMetaData(const SoundMetaData &md, size_t bufferpos)
         : SoundMetaData(md), m_BufferPosition(bufferpos) {}
-    BufferSoundMetaData(quint64 pos, time_t rel, time_t abs, const KUrl &url, size_t bufferpos)
+    BufferSoundMetaData(quint64 pos, time_t rel, time_t abs, const QUrl &url, size_t bufferpos)
         : SoundMetaData(pos, rel, abs, url), m_BufferPosition(bufferpos) {}
 
     size_t bufferPosition() const { return m_BufferPosition; }
@@ -51,7 +51,7 @@ public:
     RecordingEncoding(QObject *parent, SoundStreamID id, const RecordingConfig &cfg, const RadioStation *rs, const QString &filename);
     virtual ~RecordingEncoding();
 
-    void run();
+    void run() override;
 
     char              *lockInputBuffer(size_t &bufferSize);    // bytes we whish to write, returns number of bytes available
     void               unlockInputBuffer(size_t bufferSize, const SoundMetaData &md);   // bytes we actually wrote
@@ -89,7 +89,7 @@ protected:
     time_t             m_InputStartTime;
     quint64            m_InputStartPosition;
 
-    KUrl               m_outputURL;
+    QUrl               m_outputURL;
 };
 
 

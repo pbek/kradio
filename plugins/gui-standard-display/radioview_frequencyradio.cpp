@@ -20,11 +20,11 @@
 #include <QPixmap>
 #include <QBitmap>
 #include <QResizeEvent>
+#include <QLocale>
 
 #include <math.h>
 
 #include <kconfiggroup.h>
-#include <kglobal.h>
 
 #ifdef KRADIO_ENABLE_FIXMES
     #warning "FIXME: port kimageeffect stuff"
@@ -357,7 +357,7 @@ bool RadioViewFrequencyRadio::noticeStereoChanged(SoundStreamID id, bool  s)
 
 // IInternetRadioClient
 
-bool RadioViewFrequencyRadio::noticeURLChanged(const KUrl &url, const InternetRadioStation *irs)
+bool RadioViewFrequencyRadio::noticeURLChanged(const QUrl &url, const InternetRadioStation *irs)
 {
     m_url          = url;
     m_station_name = "";
@@ -379,9 +379,9 @@ bool RadioViewFrequencyRadio::noticeFrequencyChanged(float f, const FrequencyRad
     }
     if (m_frequency > 0) {
         if (m_frequency < 10) {
-            m_text_frequency = i18n("%1 kHz", KGlobal::locale()->formatNumber((int)(m_frequency * 1000), 0));
+            m_text_frequency = i18n("%1 kHz", QLocale().toString(m_frequency * 1000, 0));
         } else {
-            m_text_frequency = i18n("%1 MHz", KGlobal::locale()->formatNumber(m_frequency, 2));
+            m_text_frequency = i18n("%1 MHz", QLocale().toString(m_frequency, 2));
         }
     } else {
         m_text_frequency = QString();
@@ -753,4 +753,3 @@ void RadioViewFrequencyRadio::paintRadioTextVisualBuffer(QPainter &paint)
 
 
 
-#include "radioview_frequencyradio.moc"

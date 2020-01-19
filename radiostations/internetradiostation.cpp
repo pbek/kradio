@@ -39,7 +39,7 @@ InternetRadioStation::InternetRadioStation()
 {
 }
 
-InternetRadioStation::InternetRadioStation(const KUrl &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding)
+InternetRadioStation::InternetRadioStation(const QUrl &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding)
     : RadioStation(),
       m_url(url),
       m_decoderClass(decoder_class),
@@ -50,7 +50,7 @@ InternetRadioStation::InternetRadioStation(const KUrl &url, const QString &decod
 
 InternetRadioStation::InternetRadioStation(const QString &name,
                                            const QString &shortName,
-                                           const KUrl    &url,
+                                           const QUrl    &url,
                                            const QString &decoder_class,
                                            const QString &playlist_class,
                                            const QString &meta_data_encoding)
@@ -112,8 +112,8 @@ int InternetRadioStation::compare(const RadioStation &_s) const
     if (!s)
         return (typeid(this).name() > typeid(&_s).name()) ? 1 : -1;
 
-    QString thisurl = m_url.url(KUrl::RemoveTrailingSlash);    // -1: remove trailing '/'
-    QString thaturl = s->m_url.url(KUrl::RemoveTrailingSlash);
+    QString thisurl = m_url.url(QUrl::StripTrailingSlash);    // -1: remove trailing '/'
+    QString thaturl = s->m_url.url(QUrl::StripTrailingSlash);
 
     // empty urls are never identical
     if (thisurl.length () == 0)
@@ -163,7 +163,7 @@ QString InternetRadioStation::longName() const
 
 QString InternetRadioStation::description() const
 {
-    return m_url.pathOrUrl();
+    return m_url.toString();
 }
 
 
@@ -171,7 +171,7 @@ bool InternetRadioStation::setProperty(const QString &pn, const QString &val)
 {
     bool retval = false;
     if (pn == QLatin1String(StationUrlElement)) {
-        m_url  = val;
+        m_url  = QUrl(val);
         retval = true;
     } else if (pn == QLatin1String(StationDecoderClassElement)) {
         m_decoderClass     = val;
@@ -191,7 +191,7 @@ bool InternetRadioStation::setProperty(const QString &pn, const QString &val)
 QString InternetRadioStation::getProperty(const QString &pn) const
 {
     if (pn == QLatin1String(StationUrlElement)) {
-        return m_url.pathOrUrl();
+        return m_url.toString();
     } else if (pn == QLatin1String(StationDecoderClassElement)) {
         return m_decoderClass;
     } else if (pn == QLatin1String(StationPlaylistClassElement)) {

@@ -26,7 +26,7 @@ extern "C" {
 }
 
 
-MMSXHandlerThread::MMSXHandlerThread(KUrl url, MMSXHandler *parent)
+MMSXHandlerThread::MMSXHandlerThread(QUrl url, MMSXHandler *parent)
   : m_url(url),
     m_parent(parent)
 {
@@ -37,11 +37,11 @@ void MMSXHandlerThread::run()
 {
     MMSXWrapper mmsx(m_url);
     m_mmsx = &mmsx;
-    QObject::connect(&mmsx, SIGNAL(sigError(KUrl)),                               m_parent, SLOT(proxyError(KUrl)),                               Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigFinished(KUrl)),                            m_parent, SLOT(proxyFinished(KUrl)),                            Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigStarted(KUrl)),                             m_parent, SLOT(proxyStarted(KUrl)),                             Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigConnectionEstablished(KUrl,KIO::MetaData)), m_parent, SLOT(proxyConnectionEstablished(KUrl,KIO::MetaData)), Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigUrlChanged(KUrl)),                          m_parent, SLOT(proxyUrlChanged(KUrl)),                          Qt::QueuedConnection);
+    QObject::connect(&mmsx, SIGNAL(sigError(QUrl)),                               m_parent, SLOT(proxyError(QUrl)),                               Qt::QueuedConnection);
+    QObject::connect(&mmsx, SIGNAL(sigFinished(QUrl)),                            m_parent, SLOT(proxyFinished(QUrl)),                            Qt::QueuedConnection);
+    QObject::connect(&mmsx, SIGNAL(sigStarted(QUrl)),                             m_parent, SLOT(proxyStarted(QUrl)),                             Qt::QueuedConnection);
+    QObject::connect(&mmsx, SIGNAL(sigConnectionEstablished(QUrl,KIO::MetaData)), m_parent, SLOT(proxyConnectionEstablished(QUrl,KIO::MetaData)), Qt::QueuedConnection);
+    QObject::connect(&mmsx, SIGNAL(sigUrlChanged(QUrl)),                          m_parent, SLOT(proxyUrlChanged(QUrl)),                          Qt::QueuedConnection);
     QObject::connect(&mmsx, SIGNAL(sigContentType(QString)),                      m_parent, SLOT(proxyContentType(QString)),                      Qt::QueuedConnection);
     QObject::connect(&mmsx, SIGNAL(sigStreamData(QByteArray)),                    m_parent, SLOT(proxyStreamData(QByteArray)),                    Qt::QueuedConnection);
     QObject::connect(&mmsx, SIGNAL(sigMetaDataUpdate(KIO::MetaData)),             m_parent, SLOT(proxyMetaDataUpdate(KIO::MetaData)),             Qt::QueuedConnection);
@@ -62,7 +62,7 @@ void MMSXHandlerThread::stop()
 }
 
 
-MMSXWrapper::MMSXWrapper(KUrl url)
+MMSXWrapper::MMSXWrapper(QUrl url)
   : m_url(url),
     m_mms_stream(NULL),
     m_stopRequested(false),
@@ -84,7 +84,7 @@ void MMSXWrapper::run()
     char buffer[buffer_size];
 
     emit sigUrlChanged(m_url);
-    m_mms_stream = mmsx_connect(NULL, NULL, m_url.pathOrUrl().toUtf8().constData(), 1);
+    m_mms_stream = mmsx_connect(NULL, NULL, m_url.toString().toUtf8().constData(), 1);
     if (!m_mms_stream) {
         m_error = true;
         emit sigError(m_url);

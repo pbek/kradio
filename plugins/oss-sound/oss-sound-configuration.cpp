@@ -18,7 +18,7 @@
 #include <qcheckbox.h>
 
 #include <kurlrequester.h>
-#include <knuminput.h>
+
 
 #include "oss-sound-configuration.h"
 #include "oss-sound.h"
@@ -83,4 +83,3 @@ void OSSSoundConfiguration::slotSetDirty()
     }
 }
 
-#include "oss-sound-configuration.moc"

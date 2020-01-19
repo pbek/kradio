@@ -19,12 +19,13 @@
 #include <errorlog_interfaces.h>
 
 #include <klocalizedstring.h>
-#include <ktemporaryfile.h>
 #include <kencodingprober.h>
 #include <kconfiggroup.h>
 #include <kconfig.h>
-#include <QXmlStreamReader>
-#include <QTextCodec>
+
+#include <QtCore/QXmlStreamReader>
+#include <QtCore/QTextCodec>
+#include <QtCore/QTemporaryFile>
 
 #include <math.h>
 
@@ -126,7 +127,7 @@ void PlaylistHandler::loadPlaylistStartJob()
     m_playlistData   .clear();
     m_currentPlaylist.clear();
     IErrorLogClient::staticLogDebug(QString::fromLatin1("Internet Radio Plugin (Playlist handler): loading playlist %1").arg(m_currentStation.url().url()));
-    QString protocol = m_currentStation.url().protocol();
+    QString protocol = m_currentStation.url().scheme();
     // protocol mms / mmsx can only be plain streams and cannot be interpreted by KDE
     // also if playlist class is set to "" (none) we skip the playlist download
     if (!protocol.startsWith("mms") && m_currentStation.playlistClass() != "") {
@@ -136,10 +137,10 @@ void PlaylistHandler::loadPlaylistStartJob()
             QObject::connect(m_playlistJob, SIGNAL(result(KJob *)),                         this, SLOT(slotPlaylistLoadDone(KJob *)));
             m_playlistJob->start();
             if (m_playlistJob->error()) {
-                setError(i18n("Failed to load playlist %1: %2", m_currentStation.url().pathOrUrl(), m_playlistJob->errorString()));
+                setError(i18n("Failed to load playlist %1: %2", m_currentStation.url().toString(), m_playlistJob->errorString()));
             }
         } else {
-            setError(i18n("Failed to start playlist download of %1: KIO::get returned NULL pointer", m_currentStation.url().pathOrUrl()));
+            setError(i18n("Failed to start playlist download of %1: KIO::get returned NULL pointer", m_currentStation.url().toString()));
         }
     } else {
         interpretePlaylistData(QByteArray());
@@ -167,7 +168,7 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
     bool local_error = false;
     if (job == m_playlistJob) {
         if (m_playlistData.size() == 0 && m_playlistJob->error()) {
-            setError(i18n("Failed to load playlist %1: %2", m_currentStation.url().pathOrUrl(), m_playlistJob->errorString()));
+            setError(i18n("Failed to load playlist %1: %2", m_currentStation.url().toString(), m_playlistJob->errorString()));
             local_error = true;
         } else {
             KIO::MetaData md = m_playlistJob->metaData();
@@ -176,7 +177,7 @@ void PlaylistHandler::slotPlaylistLoadDone(KJob *job)
             if (it != it_end) {
                 int http_response_code = (*it).toInt();
                 if ((http_response_code < 200 || http_response_code >= 300) && http_response_code != 304 && http_response_code != 0) {  // skip 304 NOT MODIFIED http response codes
-                    setError(i18n("Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2", http_response_code, m_currentStation.url().pathOrUrl()));
+                    setError(i18n("Internet Radio Plugin (Playlist handler): HTTP error %1 for stream %2", http_response_code, m_currentStation.url().toString()));
                     local_error = true;
                 }
             }
@@ -285,14 +286,14 @@ void PlaylistHandler::interpretePlaylistData(const QByteArray &a)
         m_currentPlaylist.append(m_currentStation.url());
     }
     if (!m_currentPlaylist.size()) {
-        setError(i18n("%1 does not contain any usable radio stream", m_currentStation.url().pathOrUrl()));
+        setError(i18n("%1 does not contain any usable radio stream", m_currentStation.url().toString()));
     } else {
         playlistSuccessfullyLoaded();
     }
 
 /*    logDebug("Playlist:");
-    foreach (KUrl url, m_currentPlaylist) {
-        logDebug(url.pathOrUrl());
+    foreach (QUrl url, m_currentPlaylist) {
+        logDebug(url.toString());
     }*/
 }
 
@@ -302,7 +303,7 @@ void PlaylistHandler::playlistSuccessfullyLoaded()
     m_randStreamIdxOffset      = 0; //rint((m_currentPlaylist.size() - 1) * (float)rand() / (float)RAND_MAX);
     m_currentStreamIdx         = 0;
     m_currentStreamRetriesLeft = m_maxStreamRetries;
-    emit sigPlaylistLoaded(m_currentPlaylist);
+    Q_EMIT sigPlaylistLoaded(m_currentPlaylist);
 }
 
 
@@ -321,10 +322,10 @@ void PlaylistHandler::interpretePlaylistM3U(const QByteArray &playlistData)
     foreach (QString line, lines) {
         QString t = line.trimmed();
         if (t.length() > 5 && !t.startsWith("#")) {
-            m_currentPlaylist.append(t);
+            m_currentPlaylist.append(QUrl(t));
         }
     }
-}
+} // PlaylistHandler::interpretePlaylistM3U
 
 
 bool PlaylistHandler::isTextual(const QByteArray &playlistData)
@@ -385,7 +386,7 @@ void PlaylistHandler::interpretePlaylistWMV(const QByteArray &playlistData, bool
         return;
     }
 
-    KTemporaryFile tmpFile;
+    QTemporaryFile tmpFile(this);
     tmpFile.setAutoRemove(true);
     if (!tmpFile.open()) {
         setError(i18n("failed to create temporary file to store playlist data"));
@@ -423,9 +424,9 @@ void PlaylistHandler::interpretePlaylistWMV(const QByteArray &playlistData, bool
         for (unsigned int i = 0; i <= entries; ++i) {
             QString url = cfggrp.readEntry(key_lc_map[QString("ref%1").arg(i)], QString());
             if (url.length()) {
-                KUrl tmp = url;
-                tmp.setProtocol("mms");
-                m_currentPlaylist.append(tmp.url());
+                QUrl tmp(url);
+                tmp.setScheme("mms");
+                m_currentPlaylist.append(tmp);
             }
         }
     }
@@ -444,7 +445,7 @@ void PlaylistHandler::interpretePlaylistPLS(const QByteArray &playlistData, bool
         return;
     }
 
-    KTemporaryFile tmpFile;
+    QTemporaryFile tmpFile(this);
     tmpFile.setAutoRemove(true);
     if (!tmpFile.open()) {
         setError(i18n("failed to create temporary file to store playlist data"));
@@ -482,7 +483,7 @@ void PlaylistHandler::interpretePlaylistPLS(const QByteArray &playlistData, bool
         for (unsigned int i = 0; i <= entries; ++i) {
             QString url = cfggrp.readEntry(key_lc_map[QString("file%1").arg(i)], QString());
             if (url.length()) {
-                m_currentPlaylist.append(url);
+                m_currentPlaylist.append(QUrl(url));
             }
         }
     }
@@ -516,7 +517,7 @@ void PlaylistHandler::interpretePlaylistASX(const QByteArray &rawData, bool prob
                 QXmlStreamAttribute  attr;
                 foreach(attr, attrs) {
                     if(attr.name().toString().toLower() == "href") {
-                        m_currentPlaylist.append(attr.value().toString());
+                        m_currentPlaylist.append(QUrl(attr.value().toString()));
                     }
                 }
             }
@@ -577,7 +578,7 @@ void PlaylistHandler::interpretePlaylistXSPF(const QByteArray &rawData, bool pro
             break;
         case QXmlStreamReader::Characters:
             if (inLocation) {
-                m_currentPlaylist.append(reader.text().toString());
+                m_currentPlaylist.append(QUrl(reader.text().toString()));
             }
             break;
         default:

@@ -26,8 +26,8 @@ public:
     PluginsDelegate(QObject *parent = 0);
     ~PluginsDelegate();
 
-    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    virtual void  paint   (QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 #endif

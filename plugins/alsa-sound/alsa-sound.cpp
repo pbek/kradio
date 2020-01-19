@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include <klocalizedstring.h>
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <QFile>
 #include <QSet>
 #include <QScopedPointer>
@@ -43,16 +43,15 @@
 static KAboutData aboutData()
 {
     KAboutData about("AlsaSoundDevice",
-                     PROJECT_NAME,
-                     ki18nc("@title", "ALSA Sound"),
+                     i18nc("@title", "ALSA Sound"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Advanced Linux Sound Architecture (ALSA) Support"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2005 Martin Witte"),
-                     KLocalizedString(),
+                     i18nc("@title", "Advanced Linux Sound Architecture (ALSA) Support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2005-2020 Martin Witte"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
     return about;
 }
 
@@ -716,7 +715,17 @@ void AlsaSoundDevice::slotPollCapture()
             time_t cur_time = time(NULL);
             size_t consumed_size = SIZE_T_DONT_CARE;
 
-            notifySoundStreamData(m_CaptureStreamID, m_CaptureFormat, buffer, size, consumed_size, SoundMetaData(m_CapturePos, cur_time - m_CaptureStartTime, cur_time, i18n("internal stream, not stored (%1)", dev)));
+            notifySoundStreamData(m_CaptureStreamID,
+				  m_CaptureFormat,
+				  buffer,
+				  size,
+				  consumed_size,
+				  SoundMetaData(m_CapturePos,
+						cur_time - m_CaptureStartTime,
+						cur_time,
+						QUrl(i18n("internal stream, not stored (%1)", dev))
+						)
+				  );
 
             if (consumed_size == SIZE_T_DONT_CARE)
                 consumed_size = size;
@@ -2072,4 +2081,3 @@ QString AlsaSoundDevice::extractMixerNameFromPCMDevice(const QString &devString)
 
 
 
-#include "alsa-sound.moc"

@@ -18,14 +18,14 @@
 #ifndef KRADIO_RADIOVIEW_CONFIGURATION_H
 #define KRADIO_RADIOVIEW_CONFIGURATION_H
 
-#include <ktabwidget.h>
+#include <QtWidgets/QTabWidget>
 
-class RadioViewConfiguration : public KTabWidget
+class RadioViewConfiguration : public QTabWidget
 {
 Q_OBJECT
 public :
     RadioViewConfiguration(QWidget *parent = NULL);
-    ~RadioViewConfiguration();
+    virtual ~RadioViewConfiguration();
 
     int  addElementTab    (QWidget *page, const QString &label);
     int  addElementTab    (QWidget *page, const QIcon &icon, const QString &label);

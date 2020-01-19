@@ -42,45 +42,45 @@ public:
     RecordingMonitor(const QString &instanceID, const QString &name);
     virtual ~RecordingMonitor();
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("RecordingMonitor"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("RecordingMonitor"); }
 
     // WidgetPluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
-    virtual void   restoreState (const KConfigGroup &g, bool b) { WidgetPluginBase::restoreState(g, b); }
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
+    virtual void   restoreState (const KConfigGroup &g, bool b) override { WidgetPluginBase::restoreState(g, b); }
 
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
+    virtual bool   connectI   (Interface *i) override;
+    virtual bool   disconnectI(Interface *i) override;
 
     // ISoundStreamClient
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
 
-    bool noticeSoundStreamCreated(SoundStreamID id);
-    bool noticeSoundStreamClosed (SoundStreamID id);
-    bool noticeSoundStreamChanged(SoundStreamID id);
+    bool noticeSoundStreamCreated(SoundStreamID id) override;
+    bool noticeSoundStreamClosed (SoundStreamID id) override;
+    bool noticeSoundStreamChanged(SoundStreamID id) override;
 
-    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const recordingTemplate_t &templ);
-    bool stopRecording(SoundStreamID id);
+    bool startRecordingWithFormat(SoundStreamID id, const SoundFormat &sf, SoundFormat &real_format, const recordingTemplate_t &templ) override;
+    bool stopRecording(SoundStreamID id) override;
 
-    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
+    bool noticeSoundStreamData(SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md) override;
 
 // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
-    bool noticeStationsChanged(const StationList &/*sl*/)        { return false; }
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged(bool on) override;
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) override { return false; }
+    bool noticeStationsChanged(const StationList &/*sl*/)         override { return false; }
+    bool noticePresetFileChanged(const QString &/*f*/)            override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)       { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)           override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)        override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) override { return false; }
 
 protected:
     INLINE_IMPL_DEF_noticeConnectedI(IErrorLogClient);
@@ -88,24 +88,24 @@ protected:
 
 public slots:
 
-    virtual void    toggleShown() { WidgetPluginBase::pToggleShown(); }
+    virtual void    toggleShown() override { WidgetPluginBase::pToggleShown(); }
 
     virtual void    slotStartStopRecording();
 
     virtual void    slotStreamSelected(int idx);
 
 public:
-    virtual void    setVisible(bool v);
+    virtual void    setVisible(bool v) override;
 
 protected:
 
     virtual void    updateRecordingButton();
 
-    virtual void    showEvent(QShowEvent *);
-    virtual void    hideEvent(QHideEvent *);
+    virtual void    showEvent(QShowEvent *) override;
+    virtual void    hideEvent(QHideEvent *) override;
 
-    const QWidget  *getWidget() const { return this; }
-          QWidget  *getWidget()       { return this; }
+    const QWidget  *getWidget() const override { return this; }
+          QWidget  *getWidget()       override { return this; }
 
 
 protected:

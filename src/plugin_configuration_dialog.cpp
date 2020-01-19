@@ -31,11 +31,10 @@ PluginConfigurationDialog::PluginConfigurationDialog(
   m_Caption(caption)
 {
     KPageDialog::setFaceType        (KPageDialog::List);
-    KPageDialog::setCaption         (m_Caption);
+    KPageDialog::setWindowTitle     (m_Caption);
     KPageDialog::setObjectName      (name);
     KPageDialog::setModal           (false);
-    KPageDialog::setButtons         (KDialog::Apply | KDialog::Ok | KDialog::Cancel);
-    KPageDialog::showButtonSeparator(true);
+    KPageDialog::setStandardButtons (QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Apply);
 }
 
 
@@ -70,7 +69,7 @@ void PluginConfigurationDialog::setVisible(bool v)
 void PluginConfigurationDialog::showEvent(QShowEvent *e)
 {
     KPageDialog::showEvent(e);
-    KPageDialog::setCaption(m_Caption);
+    KPageDialog::setWindowTitle(m_Caption);
     WidgetPluginBase::pShowEvent(e);
 }
 
@@ -80,5 +79,3 @@ void PluginConfigurationDialog::hideEvent(QHideEvent *e)
     KPageDialog::hideEvent(e);
     WidgetPluginBase::pHideEvent(e);
 }
-
-#include "plugin_configuration_dialog.moc"

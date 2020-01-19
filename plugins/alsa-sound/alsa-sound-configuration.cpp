@@ -21,9 +21,8 @@
 #include <QScrollArea>
 
 #include <kurlrequester.h>
-#include <knuminput.h>
+
 #include <kcombobox.h>
-#include <ktabwidget.h>
 #include <klocalizedstring.h>
 
 #include "alsa-mixer-element.h"
@@ -525,4 +524,3 @@ void AlsaSoundConfiguration::slotCaptureBufferSizeChanged ()
 }
 
 
-#include "alsa-sound-configuration.moc"

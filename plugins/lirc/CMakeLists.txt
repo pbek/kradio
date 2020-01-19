@@ -1,5 +1,28 @@
-project(kradio4_plugin_lirc)
-add_definitions( -DPROJECT_NAME="${PROJECT_NAME}" )
+project(kradio5_plugin_lirc)
+
+# Locate extra-cmake-modules version 0.0.11 and make it a required package
+find_package(ECM 5.10.0 REQUIRED NO_MODULE)
+
+include(CheckIncludeFileCXX)
+include(CheckLibraryExists)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(FeatureSummary)
+
+########################################################################
+#       KDE/QT Libs                                                    #
+########################################################################
+
+# Locate Qt5, make it required package and use QtWidgets and QtCore modules
+find_package(Qt5 REQUIRED COMPONENTS Widgets Core Multimedia )
+
+# Locate KF5, make it required package and use KF5KDELibs4Support and KF5CoreAddons modules
+find_package(KF5 REQUIRED COMPONENTS  CoreAddons XmlGui I18n KIO)
+
+###############################################################################
+
+add_definitions( -DPROJECT_NAME="${PROJECT_NAME}" -DTRANSLATION_DOMAIN="${PROJECT_NAME}" )
 
 ADD_SUBDIRECTORY(po)
 
@@ -15,7 +38,7 @@ FILE(GLOB kradio_plugin_lirc_UIs
     ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
 )
 
-kde4_add_ui_files(kradio_plugin_lirc_sources
+ki18n_wrap_ui(kradio_plugin_lirc_sources
     ${kradio_plugin_lirc_UIs}
 )
 
@@ -23,16 +46,22 @@ kde4_add_ui_files(kradio_plugin_lirc_sources
 string(REGEX REPLACE "-Wl,--no-undefined" "" CMAKE_MODULE_LINKER_FLAGS ${CMAKE_MODULE_LINKER_FLAGS})
 
 
-kde4_add_plugin(kradio4_plugin_lirc
+add_library(kradio5_plugin_lirc MODULE
     ${kradio_plugin_lirc_sources}
 )
 
-TARGET_LINK_LIBRARIES(kradio4_plugin_lirc
-  ${KDE4_KDEUI_LIBS}
-  ${LircClient_LIBRARIES}
+TARGET_LINK_LIBRARIES(kradio5_plugin_lirc
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::Multimedia
+    KF5::XmlGui
+    KF5::CoreAddons
+    KF5::KIOWidgets
+    KF5::I18n
+    ${LircClient_LIBRARIES}
 )
 
-INSTALL(TARGETS kradio4_plugin_lirc ${INSTALL_TARGETS_DEFAULT_ARGS})
+INSTALL(TARGETS kradio5_plugin_lirc ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-INSTALL(FILES default-dot-lircrc DESTINATION ${DATA_INSTALL_DIR}/kradio4 )
+INSTALL(FILES default-dot-lircrc DESTINATION ${DATA_INSTALL_DIR}/kradio5 )
 

@@ -30,7 +30,7 @@
 
 class RadioStation;
 class FrequencyRadioStation;
-class KUrl;
+class QUrl;
 
 INTERFACE(IFrequencyRadio, IFrequencyRadioClient)
 {
@@ -85,8 +85,8 @@ QUERIES:
     IF_QUERY   (  float queryScanStep()                                          )
 
 RECEIVERS:
-    virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);
-    virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid);
+    virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid) override;
+    virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid) override;
 };
 
 

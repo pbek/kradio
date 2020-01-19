@@ -36,20 +36,20 @@ public :
     InternetRadioConfiguration (QWidget *parent, SoundStreamID id);
     ~InternetRadioConfiguration ();
 
-    bool connectI    (Interface *i);
-    bool disconnectI (Interface *i);
+    bool connectI    (Interface *i) override;
+    bool disconnectI (Interface *i) override;
 
-    void noticeConnectedSoundClient   (ISoundStreamClient::thisInterface *i, bool pointer_valid);
-    void noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid);
+    void noticeConnectedSoundClient   (ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
+    void noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
 
 // ISoundStreamClient
 
 RECEIVERS:
 
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
 
-    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
-    bool noticeSoundStreamCreated(SoundStreamID /*id*/);
+    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/) override;
+    bool noticeSoundStreamCreated(SoundStreamID /*id*/) override;
 
 
 public slots:

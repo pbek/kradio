@@ -37,17 +37,17 @@ public :
     TimeShifterConfiguration (QWidget *parent, TimeShifter *shifter);
     ~TimeShifterConfiguration ();
 
-    bool connectI (Interface *i);
-    bool disconnectI (Interface *i);
+    bool connectI    (Interface *i) override;
+    bool disconnectI (Interface *i) override;
 
-    void noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid);
-    void noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid);
+    void noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
+    void noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
 
 // ISoundStreamClient
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
+    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/) override;
 
 protected:
 

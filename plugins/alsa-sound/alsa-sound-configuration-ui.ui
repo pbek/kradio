@@ -84,7 +84,7 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="KIntSpinBox" name="editPlaybackBufferSize">
+           <widget class="QSpinBox" name="editPlaybackBufferSize">
             <property name="suffix">
              <string> kB</string>
             </property>
@@ -167,7 +167,7 @@
            </widget>
           </item>
           <item row="8" column="1">
-           <widget class="KIntSpinBox" name="editPlaybackBufferChunkSize">
+           <widget class="QSpinBox" name="editPlaybackBufferChunkSize">
             <property name="suffix">
              <string> kB</string>
             </property>
@@ -186,7 +186,7 @@
            </widget>
           </item>
           <item row="12" column="1">
-           <widget class="KIntSpinBox" name="editPlaybackWorkaroundSleep">
+           <widget class="QSpinBox" name="editPlaybackWorkaroundSleep">
             <property name="specialValueText">
              <string comment="disabled blocking i/o workaround">disabled</string>
             </property>
@@ -335,7 +335,7 @@
            </widget>
           </item>
           <item row="2" column="1" colspan="2">
-           <widget class="KIntSpinBox" name="editCaptureBufferSize">
+           <widget class="QSpinBox" name="editCaptureBufferSize">
             <property name="suffix">
              <string> kB</string>
             </property>
@@ -374,7 +374,7 @@
            </widget>
           </item>
           <item row="4" column="1" colspan="2">
-           <widget class="KIntSpinBox" name="editCaptureBufferChunkSize">
+           <widget class="QSpinBox" name="editCaptureBufferChunkSize">
             <property name="suffix">
              <string> kB</string>
             </property>
@@ -403,7 +403,7 @@
            </widget>
           </item>
           <item row="21" column="1" colspan="2">
-           <widget class="KIntSpinBox" name="editCaptureWorkaroundSleep">
+           <widget class="QSpinBox" name="editCaptureWorkaroundSleep">
             <property name="specialValueText">
              <string comment="disabled blocking i/o workaround">disabled</string>
             </property>
@@ -682,9 +682,9 @@
    <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
+   <class>QDoubleSpinBox</class>
+   <extends>QAbstractSpinBox</extends>
+   <header>QtWidgets/QDoubleSpinBox</header>
   </customwidget>
  </customwidgets>
  <tabstops>

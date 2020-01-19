@@ -31,7 +31,7 @@
 // Kopenhagener Wellenplan:   9kHz
 #define STATION_FREQ_INTERVAL_AM   0.009
 
-class KDE_EXPORT FrequencyRadioStation : public RadioStation  {
+class KRADIO5_EXPORT FrequencyRadioStation : public RadioStation  {
 public:
     FrequencyRadioStation ();
     FrequencyRadioStation (float frequency);
@@ -40,36 +40,38 @@ public:
     FrequencyRadioStation (RegisterStationClass, const QString &classname = QString());
     ~FrequencyRadioStation();
 
+    FrequencyRadioStation & operator = (const FrequencyRadioStation &) = default;
+
             float      frequency    () const          { return m_frequency; }
             void       setFrequency (float frequency) { m_frequency = frequency; }
 
-    virtual QString    longName()    const;
-    virtual QString    description() const;
-    virtual bool       isValid ()    const;
+    virtual QString    longName()    const override;
+    virtual QString    description() const override;
+    virtual bool       isValid ()    const override;
 
     /*  = 0 : "this" is same as "s", i.e. approximately same frequency
         > 0 : this.frequency > s.frequency
         < 0 : this.frequency < s.frequency
         other class than FrequencyRadioStation: compare typeid(.).name()
     */
-    virtual int    compare (const RadioStation &s) const;
+    virtual int    compare (const RadioStation &s) const override;
 
     /** returns an exact copy of this station */
-    virtual RadioStation *copy() const;
-    virtual RadioStation *copyNewID() const;
+    virtual RadioStation *copy()      const override;
+    virtual RadioStation *copyNewID() const override;
 
-    virtual RadioStationConfig *createEditor() const;
+    virtual RadioStationConfig *createEditor() const override;
 
     // for XML-Parsing/Export
-    virtual bool        setProperty(const QString &property_name, const QString &val);
-    virtual QString     getProperty(const QString &property_name) const;
-    virtual QStringList getPropertyNames() const;
-    virtual QString     getClassName()        const { return QString::fromLatin1("FrequencyRadioStation"); }
-    virtual QString     getClassDescription() const { return i18n("AM/FM Radio Station"); }
-    virtual bool        isClassUserVisible()  const { return true; }
+    virtual bool        setProperty(const QString &property_name, const QString &val) override;
+    virtual QString     getProperty(const QString &property_name) const               override;
+    virtual QStringList getPropertyNames() const                                      override;
+    virtual QString     getClassName()        const override { return QString::fromLatin1("FrequencyRadioStation"); }
+    virtual QString     getClassDescription() const override { return i18n("AM/FM Radio Station"); }
+    virtual bool        isClassUserVisible()  const override { return true; }
 
     virtual bool        frequencyMatches(const FrequencyRadioStation &x) const;
-    virtual bool        operator == (const RadioStation &x) const;
+    virtual bool        operator == (const RadioStation &x) const override;
 
 protected:
 

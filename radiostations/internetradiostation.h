@@ -21,23 +21,25 @@
 #include "radiostation.h"
 
 // KDE includes
-#include <kurl.h>
+#include <QtCore/QUrl>
 
 /**
  * @author Klas Kalass, Ernst Martin Witte
  */
 
-class KDE_EXPORT InternetRadioStation : public RadioStation  {
+class KRADIO5_EXPORT InternetRadioStation : public RadioStation  {
 public:
     InternetRadioStation();
-    InternetRadioStation(KUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
-    InternetRadioStation(const QString &name, const QString &shortName, KUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
+    InternetRadioStation(QUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
+    InternetRadioStation(const QString &name, const QString &shortName, QUrl const &url, const QString &decoder_class, const QString &playlist_class, const QString &meta_data_encoding = "auto");
     InternetRadioStation(const InternetRadioStation &);
     InternetRadioStation(RegisterStationClass, const QString &classname = QString());
-    ~InternetRadioStation();
+    virtual ~InternetRadioStation();
+    
+    InternetRadioStation & operator = (const InternetRadioStation &) = default;
 
-    const KUrl     &url() const                       { return m_url; }
-    void            setUrl(KUrl const &url)           { m_url = url;  }
+    const QUrl     &url() const                       { return m_url; }
+    void            setUrl(QUrl const &url)           { m_url = url;  }
 
     const QString  &decoderClass    () const              { return m_decoderClass;     }
     const QString  &playlistClass   () const              { return m_playlistClass;    }
@@ -46,35 +48,35 @@ public:
     void            setPlaylistClass   (const QString &c) { m_playlistClass = c;       }
     void            setMetaDataEncoding(const QString &c) { m_metaDataEncoding = c;    }
 
-    virtual QString longName() const;
-    virtual QString description() const;
-    virtual bool    isValid () const;
+    virtual QString longName()    const override;
+    virtual QString description() const override;
+    virtual bool    isValid ()    const override;
 
     /*  = 0 : this.url == s.url
         > 0 : this.url >  s.url
         < 0 : this.url <  s.url
         other class than InternetRadioStation: compare typeid(.).name()
     */
-    virtual int     compare (const RadioStation &s) const;
+    virtual int     compare (const RadioStation &s) const override;
 
     /** returns an exact copy of this station */
-    virtual RadioStation *copy() const;
-    virtual RadioStation *copyNewID() const;
+    virtual RadioStation *copy()      const override;
+    virtual RadioStation *copyNewID() const override;
 
-    virtual RadioStationConfig *createEditor() const;
+    virtual RadioStationConfig *createEditor() const override;
 
     // for XML-Parsing/Export
-    virtual bool        setProperty(const QString &property_name, const QString &val);
-    virtual QString     getProperty(const QString &property_name) const;
-    virtual QStringList getPropertyNames() const;
-    virtual QString     getClassName()        const { return QString::fromLatin1("InternetRadioStation"); }
-    virtual QString     getClassDescription() const { return i18n("Internet Radio Station"); }
-    virtual bool        isClassUserVisible()  const { return true; }
+    virtual bool        setProperty(const QString &property_name, const QString &val) override;
+    virtual QString     getProperty(const QString &property_name) const               override;
+    virtual QStringList getPropertyNames() const override;
+    virtual QString     getClassName()        const override { return QString::fromLatin1("InternetRadioStation"); }
+    virtual QString     getClassDescription() const override { return i18n("Internet Radio Station"); }
+    virtual bool        isClassUserVisible()  const override { return true; }
 
-    virtual bool operator == (const RadioStation &x) const;
+    virtual bool operator == (const RadioStation &x) const override;
 
 protected:
-    KUrl    m_url;
+    QUrl    m_url;
     QString m_decoderClass;
     QString m_playlistClass;
     QString m_metaDataEncoding;

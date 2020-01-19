@@ -40,8 +40,8 @@
 #include <QDirIterator>
 
 #include <kconfiggroup.h>
-#include <kaboutdata.h>
-#include <klocalizedstring.h>
+#include <KAboutData>
+#include <KLocalizedString>
 
 #include "stationlist.h"
 #include "v4lradio.h"
@@ -58,17 +58,16 @@ struct _lrvol { unsigned char l, r; short dummy; };
 static KAboutData aboutData()
 {
     KAboutData about("V4LRadio",
-                     PROJECT_NAME,
-                     ki18nc("@title", "V4L/V4L2"),
+                     i18nc("@title", "V4L/V4L2"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Support for V4L(2) Radio Devices"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
-                     KLocalizedString(),
+                     i18nc("@title", "Support for V4L(2) Radio Devices"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Klas Kalass"),  NULL, "klas.kalass@gmx.de");
     return about;
 }
 
@@ -1653,11 +1652,19 @@ V4LCaps V4LRadio::readV4LCaps(const QString &device) const
             if (c.v4l_version_support[V4L_Version1]) {
                 break;
             }
+            c = v4l_caps[V4L_Version2];
+            if (c.v4l_version_support[V4L_Version2]) {
+                break;
+            }
+            c = V4LCaps();
+	    break;
         case V4L_Version2:
             c = v4l_caps[V4L_Version2];
             if (c.v4l_version_support[V4L_Version2]) {
                 break;
             }
+            c = V4LCaps();
+            break;
         default:
             c = V4LCaps();
             break;
@@ -1965,9 +1972,8 @@ bool V4LRadio::updateAudioInfo(bool write) const
         }
 
         if (r) {
-            KLocalizedString msg = write ? ki18n("error updating radio audio info (write): %1") : ki18n("error updating radio audio info (read): %1");
-            logError("V4LRadio::updateAudioInfo: " +
-                     msg.subs(QString::number(r)).toString());
+  	    const QString msg = write ? i18n("error updating radio audio info (write): %1", r) : i18n("error updating radio audio info (read): %1", r);
+	    logError("V4LRadio::updateAudioInfo: " + msg);
             return false;
         }
     }
@@ -2329,4 +2335,3 @@ void V4LRadio::slotEmulateRDS()
 
 
 
-#include "v4lradio.moc"

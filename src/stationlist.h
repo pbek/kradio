@@ -24,7 +24,7 @@
 #include <QList>
 
 class RadioStation;
-class KUrl;
+class QUrl;
 
 /*
 
@@ -103,7 +103,7 @@ class QXmlInputSource;
  * @author Ernst Martin Witte, Klas Kalass
  */
  
-class KDE_EXPORT StationList  {
+class KRADIO5_EXPORT StationList  {
 public:
     StationList();
     StationList(const StationList &sl);
@@ -153,10 +153,10 @@ public:
     // xml in/out
 
     bool    readXML (const QXmlInputSource &xmlInp, const IErrorLogClient &logger, bool enableMessageBox = true);
-    bool    readXML (const KUrl &url,    const IErrorLogClient &logger, bool enableMessageBox = true);
+    bool    readXML (const QUrl &url,    const IErrorLogClient &logger, bool enableMessageBox = true);
 
     QString writeXML (const IErrorLogClient &logger) const;
-    bool    writeXML (const KUrl &url, const IErrorLogClient &logger, bool enableMessageBox = true) const;
+    bool    writeXML (const QUrl &url, const IErrorLogClient &logger, bool enableMessageBox = true) const;
 
 
     bool operator == (const StationList &x) const;

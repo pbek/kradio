@@ -58,50 +58,50 @@ public:
     // PluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
-    virtual void   startPlugin();
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
+    virtual void   startPlugin() override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("Radio"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("Radio"); }
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
-    virtual void aboutToQuit();
+    virtual void aboutToQuit() override;
 
     // IRadio methods
 
 RECEIVERS:
-    bool powerOn()        { return sendPowerOn()  > 0; }
-    bool powerOff()       { return sendPowerOff() > 0; }
-    bool activateStation(const RadioStation &rs);
-    bool activateStation(int index);
-    bool setStations(const StationList &sl);
-    bool setPresetFile(const QString &presetFile);
+    bool powerOn()   override      { return sendPowerOn()  > 0; }
+    bool powerOff()  override      { return sendPowerOff() > 0; }
+    bool activateStation(const RadioStation &rs) override;
+    bool activateStation(int index) override;
+    bool setStations(const StationList &sl) override;
+    bool setPresetFile(const QString &presetFile) override;
 
 ANSWERS:
-    bool                   isPowerOn() const { return queryIsPowerOn(); }
-    bool                   isPowerOff() const { return queryIsPowerOff(); }
-    const RadioStation  &  getCurrentStation() const { return queryCurrentStation(); }
-    int                    getStationIdx(const RadioStation &) const;
-    int                    getCurrentStationIdx() const;
-    const StationList   &  getStations() const { return m_stationList; }
-    const QString       &  getPresetFile() const { return m_presetFile; }
+    bool                   isPowerOn () const override { return queryIsPowerOn(); }
+    bool                   isPowerOff() const override { return queryIsPowerOff(); }
+    const RadioStation  &  getCurrentStation() const override { return queryCurrentStation(); }
+    int                    getStationIdx(const RadioStation &) const override;
+    int                    getCurrentStationIdx() const override;
+    const StationList   &  getStations  () const override { return m_stationList; }
+    const QString       &  getPresetFile() const override { return m_presetFile; }
 
-    bool                   getRDSState      () const;
-    const QString       &  getRDSRadioText  () const;
-    const QString       &  getRDSStationName() const;
+    bool                   getRDSState      () const override;
+    const QString       &  getRDSRadioText  () const override;
+    const QString       &  getRDSStationName() const override;
 
-    SoundStreamID          getCurrentSoundStreamSourceID() const;
-    SoundStreamID          getCurrentSoundStreamSinkID()   const;
+    SoundStreamID          getCurrentSoundStreamSourceID() const override;
+    SoundStreamID          getCurrentSoundStreamSinkID()   const override;
 
 
 public:
-    bool connectI    (Interface *i);
-    bool disconnectI (Interface *i);
+    bool connectI    (Interface *i) override;
+    bool disconnectI (Interface *i) override;
 
-    virtual void noticeConnectedI   (IRadioDevice *i, bool pointer_valid);
-    virtual void noticeDisconnectI  (IRadioDevice *i, bool pointer_valid);
-    virtual void noticeDisconnectedI(IRadioDevice *i, bool pointer_valid);
+    virtual void noticeConnectedI   (IRadioDevice *i, bool pointer_valid) override;
+    virtual void noticeDisconnectI  (IRadioDevice *i, bool pointer_valid) override;
+    virtual void noticeDisconnectedI(IRadioDevice *i, bool pointer_valid) override;
 
     INLINE_IMPL_DEF_noticeConnectedI(IRadio);
     INLINE_IMPL_DEF_noticeConnectedI(IRadioDevicePool);
@@ -124,12 +124,12 @@ public:
     // IRadioDevicePool methods
 
 RECEIVERS:
-    bool                           setActiveDevice(IRadioDevice *rd, bool keepPower = true);
+    bool                           setActiveDevice(IRadioDevice *rd, bool keepPower = true) override;
 
 ANSWERS:
-    IRadioDevice                 * getActiveDevice() const;
-    const QList<IRadioDevice*>   & getDevices() const;
-    const QString                & getDeviceDescription() const;
+    IRadioDevice                 * getActiveDevice     () const override;
+    const QList<IRadioDevice*>   & getDevices          () const override;
+    const QString                & getDeviceDescription() const override;
 
 
 
@@ -137,45 +137,45 @@ ANSWERS:
     // to provide "1-of-N" functionality
 
 SENDERS:
-    IF_SENDER  (  sendPowerOn()                                      )
-    IF_SENDER  (  sendPowerOff()                                     )
-    IF_SENDER  (  sendActivateStation (const RadioStation &rs)       )
+    IF_SENDER_OVR  (  sendPowerOn()                                      )
+    IF_SENDER_OVR  (  sendPowerOff()                                     )
+    IF_SENDER_OVR  (  sendActivateStation (const RadioStation &rs)       )
 
 QUERIES:
-    IF_QUERY   (  bool                   queryIsPowerOn()            )
-    IF_QUERY   (  bool                   queryIsPowerOff()           )
-    IF_QUERY   (  const RadioStation  &  queryCurrentStation()       )
-    IF_QUERY   (  const QString       &  queryDescription()          )
+    IF_QUERY_OVR   (  bool                   queryIsPowerOn()            )
+    IF_QUERY_OVR   (  bool                   queryIsPowerOff()           )
+    IF_QUERY_OVR   (  const RadioStation  &  queryCurrentStation()       )
+    IF_QUERY_OVR   (  const QString       &  queryDescription()          )
 
-    IF_QUERY   (  bool                   queryRDSState ()            )
-    IF_QUERY   (  const QString       &  queryRDSRadioText()         )
-    IF_QUERY   (  const QString       &  queryRDSStationName()       )
+    IF_QUERY_OVR   (  bool                   queryRDSState ()            )
+    IF_QUERY_OVR   (  const QString       &  queryRDSRadioText()         )
+    IF_QUERY_OVR   (  const QString       &  queryRDSStationName()       )
 
-    IF_QUERY   (  SoundStreamID          queryCurrentSoundStreamSourceID() )
-    IF_QUERY   (  SoundStreamID          queryCurrentSoundStreamSinkID()   )
+    IF_QUERY_OVR   (  SoundStreamID          queryCurrentSoundStreamSourceID() )
+    IF_QUERY_OVR   (  SoundStreamID          queryCurrentSoundStreamSinkID()   )
 
 RECEIVERS:
-    virtual bool noticePowerChanged         (bool  on,               const IRadioDevice *sender = NULL);
-    virtual bool noticeStationChanged       (const RadioStation &rs, const IRadioDevice *sender = NULL);
-    virtual bool noticeDescriptionChanged   (const QString &,        const IRadioDevice *sender = NULL);
+    virtual bool noticePowerChanged         (bool  on,               const IRadioDevice *sender = NULL) override;
+    virtual bool noticeStationChanged       (const RadioStation &rs, const IRadioDevice *sender = NULL) override;
+    virtual bool noticeDescriptionChanged   (const QString &,        const IRadioDevice *sender = NULL) override;
 
-    virtual bool noticeRDSStateChanged      (bool  enabled,          const IRadioDevice *sender = NULL);
-    virtual bool noticeRDSRadioTextChanged  (const QString &s,       const IRadioDevice *sender = NULL);
-    virtual bool noticeRDSStationNameChanged(const QString &s,       const IRadioDevice *sender = NULL);
+    virtual bool noticeRDSStateChanged      (bool  enabled,          const IRadioDevice *sender = NULL) override;
+    virtual bool noticeRDSRadioTextChanged  (const QString &s,       const IRadioDevice *sender = NULL) override;
+    virtual bool noticeRDSStationNameChanged(const QString &s,       const IRadioDevice *sender = NULL) override;
 
-    virtual bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID id, const IRadioDevice *sender = NULL);
-    virtual bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID id, const IRadioDevice *sender = NULL);
+    virtual bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID id, const IRadioDevice *sender = NULL) override;
+    virtual bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID id, const IRadioDevice *sender = NULL) override;
 
     // ITimeControlClient
 
 RECEIVERS:
-    bool noticeAlarmsChanged(const AlarmVector &)        { return false; } // ignore
-    bool noticeAlarm(const Alarm &);
-    bool noticeNextAlarmChanged(const Alarm *)           { return false; } // ignore
-    bool noticeCountdownStarted(const QDateTime &/*end*/){ return false; } // ignore
-    bool noticeCountdownStopped()                        { return false; } // ignore
-    bool noticeCountdownZero();
-    bool noticeCountdownSecondsChanged(int /*n*/, bool /*resumeOnSuspend*/) { return false; } // ignore
+    bool noticeAlarmsChanged(const AlarmVector &)         override { return false; } // ignore
+    bool noticeAlarm(const Alarm &)                       override;
+    bool noticeNextAlarmChanged(const Alarm *)            override { return false; } // ignore
+    bool noticeCountdownStarted(const QDateTime &/*end*/) override { return false; } // ignore
+    bool noticeCountdownStopped()                         override { return false; } // ignore
+    bool noticeCountdownZero()                            override;
+    bool noticeCountdownSecondsChanged(int /*n*/, bool /*resumeOnSuspend*/) override { return false; } // ignore
 
     // ISoundStreamClient
 

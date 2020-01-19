@@ -33,10 +33,10 @@ public:
     TimeShifter (const QString &instanceID, const QString &name);
     virtual ~TimeShifter ();
 
-    virtual bool connectI (Interface *);
-    virtual bool disconnectI (Interface *);
+    virtual bool connectI    (Interface *) override;
+    virtual bool disconnectI (Interface *) override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("TimeShifter"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("TimeShifter"); }
 
     // config
 
@@ -51,10 +51,10 @@ public:
     // PluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
 protected:
 
@@ -67,37 +67,37 @@ protected:
     void skipPacketInRingBuffer();
 
     // SoundStreamClient
-    void noticeConnectedI          (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI          (ISoundStreamServer *s, bool pointer_valid) override;
 
     bool startCaptureWithFormat    (SoundStreamID      id,
                                     const SoundFormat &proposed_format,
                                     SoundFormat       &real_format,
-                                    bool               force_format);
-    bool stopCapture               (SoundStreamID id);
-    bool noticeSoundStreamClosed   (SoundStreamID id);
-    bool startPlayback             (SoundStreamID id);
-    bool stopPlayback              (SoundStreamID id);
-    bool pausePlayback             (SoundStreamID id);
-    bool resumePlayback            (SoundStreamID id);
-    bool noticeSoundStreamData     (SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md);
-    bool noticeReadyForPlaybackData(SoundStreamID id, size_t size);
+                                    bool               force_format) override;
+    bool stopCapture               (SoundStreamID id) override;
+    bool noticeSoundStreamClosed   (SoundStreamID id) override;
+    bool startPlayback             (SoundStreamID id) override;
+    bool stopPlayback              (SoundStreamID id) override;
+    bool pausePlayback             (SoundStreamID id) override;
+    bool resumePlayback            (SoundStreamID id) override;
+    bool noticeSoundStreamData     (SoundStreamID id, const SoundFormat &sf, const char *data, size_t size, size_t &consumed_size, const SoundMetaData &md) override;
+    bool noticeReadyForPlaybackData(SoundStreamID id, size_t size) override;
 
-    bool getSoundStreamDescription(SoundStreamID id, QString &descr) const;
-    bool getSoundStreamRadioStation(SoundStreamID id, const RadioStation *&rs) const;
-    bool isPlaybackPaused(SoundStreamID id, bool &b) const;
+    bool getSoundStreamDescription(SoundStreamID id, QString &descr) const override;
+    bool getSoundStreamRadioStation(SoundStreamID id, const RadioStation *&rs) const override;
+    bool isPlaybackPaused(SoundStreamID id, bool &b) const override;
 
 
-    bool getSignalQuality   (SoundStreamID, float &q) const;
-    bool hasGoodQuality     (SoundStreamID, bool &)   const;
-    bool isStereo           (SoundStreamID, bool &s)  const;
+    bool getSignalQuality   (SoundStreamID, float &q) const override;
+    bool hasGoodQuality     (SoundStreamID, bool &)   const override;
+    bool isStereo           (SoundStreamID, bool &s)  const override;
 
 
     // ISoundStreamClient: mixer functions
 RECEIVERS:
-    void noticeConnectedSoundClient       (ISoundStreamClient::thisInterface *i, bool pointer_valid);
-    bool noticePlaybackChannelsChanged    (const QString & client_id, const QStringList &/*channels*/);
-    bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID);
-    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID);
+    void noticeConnectedSoundClient       (ISoundStreamClient::thisInterface *i, bool pointer_valid)   override;
+    bool noticePlaybackChannelsChanged    (const QString & client_id, const QStringList &/*channels*/) override;
+    bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID) override;
+    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID) override;
 
 signals:
 

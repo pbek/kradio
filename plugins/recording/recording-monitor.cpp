@@ -24,26 +24,25 @@
 #include <QCheckBox>
 #include <QDialogButtonBox>
 
+#include <KFormat>
 #include <kcombobox.h>
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
-#include <kaboutdata.h>
-#include <kglobal.h>
-#include <kicon.h>
+#include <KAboutData>
+#include <QtGui/QIcon>
 
 KAboutData aboutDataRecordingMonitor()
 {
     KAboutData about("RecordingMonitor",
-                     PROJECT_NAME,
-                     ki18nc("@title", "Recording Monitor"),
+                     i18nc("@title", "Recording Monitor"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Recording Monitor Plugin"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte"),
-                     KLocalizedString(),
+                     i18nc("@title", "Recording Monitor Plugin"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2005 Martin Witte"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
     return about;
 }
 
@@ -293,7 +292,7 @@ bool RecordingMonitor::noticeSoundStreamData(SoundStreamID id,
     SoundStreamID y = m_idx2SoundStreamID[cidx];
     if (y == x) {
 
-        m_labelFileName->setText(md.url().pathOrUrl());
+        m_labelFileName->setText(md.url().toString());
 
         double B = (double)md.position() + (double)size;
 
@@ -318,7 +317,7 @@ bool RecordingMonitor::noticeSoundStreamData(SoundStreamID id,
         }
 
         QString str_size;
-        str_size = KGlobal::locale()->formatByteSize(B);
+        str_size = KFormat().formatByteSize(B);
         m_labelSize->setText(str_size);
 
         m_labelRate->setText(i18n("%1 Hz", sf.m_SampleRate));
@@ -392,14 +391,13 @@ void RecordingMonitor::updateRecordingButton()
 {
     if (m_currentStream.isValid()) {
         m_btnStartStop->setText(!m_recording ? i18n("&Record") : i18n("&Stop Recording"));
-        m_btnStartStop->setIcon(KIcon(!m_recording ? "media-record" : "media-playback-stop"));
+        m_btnStartStop->setIcon(QIcon(!m_recording ? "media-record" : "media-playback-stop"));
         m_btnStartStop->setEnabled(true);
     } else {
         m_btnStartStop->setText(i18n("&Record"));
-        m_btnStartStop->setIcon(KIcon("media-record"));
+        m_btnStartStop->setIcon(QIcon("media-record"));
         m_btnStartStop->setEnabled(false);
     }
 }
 
 
-#include "recording-monitor.moc"

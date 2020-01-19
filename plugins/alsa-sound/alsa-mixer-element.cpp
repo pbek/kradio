@@ -17,7 +17,7 @@
 
 #include "alsa-mixer-element.h"
 
-#include <knuminput.h>
+
 
 #include <math.h>
 
@@ -135,4 +135,3 @@ void QAlsaMixerElement::slotResetDirty()
     m_dirty = false;
 }
 
-#include "alsa-mixer-element.moc"

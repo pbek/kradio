@@ -17,7 +17,7 @@
 #ifndef KRADIO_PLUGIN_CONFIGURATION_DIALOG
 #define KRADIO_PLUGIN_CONFIGURATION_DIALOG
 
-#include <kpagedialog.h>
+#include <KPageDialog>
 #include "widgetpluginbase.h"
 
 
@@ -40,11 +40,11 @@ public:
 
     // PluginBase
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("PluginConfigurationDialog"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("PluginConfigurationDialog"); }
 
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
-    virtual void   restoreState (const KConfigGroup &c, bool b) { WidgetPluginBase::restoreState(c,b); }
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
+    virtual void   restoreState (const KConfigGroup &c, bool b) override { WidgetPluginBase::restoreState(c,b); }
 
 
 
@@ -53,16 +53,16 @@ protected :
     // WidgetPluginBase
 
 public slots:
-    virtual void toggleShown() { WidgetPluginBase::pToggleShown(); }
-    virtual void cancel() { reject(); }
+    virtual void toggleShown() override { WidgetPluginBase::pToggleShown(); }
+    virtual void cancel()               { reject(); }
 
     // QWidget overrides
 public:
-    virtual void setVisible(bool v);
+    virtual void setVisible(bool v) override;
 
 protected:
-    virtual void showEvent(QShowEvent *);
-    virtual void hideEvent(QHideEvent *);
+    virtual void showEvent(QShowEvent *) override;
+    virtual void hideEvent(QHideEvent *) override;
 
 //     virtual       QWidget *getWidget()         { return this; }
 //     virtual const QWidget *getWidget() const   { return this; }

@@ -20,6 +20,7 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QLayout>
+#include <QEvent>
 
 #include <klocalizedstring.h>
 #include <kseparator.h>
@@ -99,21 +100,28 @@ DockingConfiguration::~DockingConfiguration ()
 }
 
 
+void DockingConfiguration::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange) {
+        languageChange();
+    }
+    StationSelector::changeEvent(event);
+} // changeEvent
+
+
 void DockingConfiguration::languageChange()
 {
-    StationSelector::languageChange();
-
-    m_labelClickModeCaption                 -> setText(i18n( "Mouse click on tray icon:"        ) );
+    m_labelClickModeCaption                 -> setText(i18n ( "Mouse click on tray icon:"        ) );
     m_labelClickMode      [Qt::LeftButton]  -> setText(i18nc( "Mouse button", "Left:"     ) );
     m_labelClickMode      [Qt::RightButton] -> setText(i18nc( "Mouse button", "Right:"    ) );
     m_labelClickMode      [Qt::MidButton]   -> setText(i18nc( "Mouse button", "Middle:"   ) );
 
-    m_labelDoubleClickModeCaption           -> setText(i18n( "Mouse double-click on tray icon:" ) );
+    m_labelDoubleClickModeCaption           -> setText(i18n ( "Mouse double-click on tray icon:" ) );
     m_labelDoubleClickMode[Qt::LeftButton]  -> setText(i18nc( "Mouse button", "Left:"     ) );
     m_labelDoubleClickMode[Qt::RightButton] -> setText(i18nc( "Mouse button", "Right:"    ) );
     m_labelDoubleClickMode[Qt::MidButton]   -> setText(i18nc( "Mouse button", "Middle:"   ) );
 
-    m_labelWheelMode                        -> setText(i18n( "Mouse wheel action on tray icon:" ) );
+    m_labelWheelMode                        -> setText(i18n ( "Mouse wheel action on tray icon:" ) );
 
     QList<QComboBox*>  allCombos = m_comboClickMode.values();
     allCombos.append(m_comboDoubleClickMode.values());
@@ -217,4 +225,3 @@ void DockingConfiguration::slotSetDirty()
 }
 
 
-#include "docking-configuration.moc"

@@ -30,11 +30,11 @@ public:
     RecordingEncodingMP3(QObject *parent, SoundStreamID id, const RecordingConfig &cfg, const RadioStation *rs, const QString &filename);
     virtual ~RecordingEncodingMP3();
 
-    bool               openOutput(const QString &outputFile);
-    void               closeOutput();
+    bool               openOutput(const QString &outputFile) override;
+    void               closeOutput() override;
 
 protected:
-    void               encode(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size);
+    void               encode(const char *_buffer, size_t buffer_size, char *&export_buffer, size_t &export_buffer_size) override;
 
 #ifdef HAVE_LAME
     unsigned char     *m_MP3Buffer;

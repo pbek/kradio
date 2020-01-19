@@ -94,8 +94,8 @@ QUERIES:
     IF_QUERY   (    QDateTime           queryCountdownEnd ()         )
 
 RECEIVERS:
-    virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/);
-    virtual void noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/);
+    virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/) override;
+    virtual void noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/) override;
 };
 
 

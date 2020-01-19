@@ -54,18 +54,6 @@ Alarm::Alarm ()
 }
 
 
-Alarm::Alarm (const Alarm &a)
-   : m_time              (a.m_time),
-     m_daily             (a.m_daily),
-     m_weekdayMask       (a.m_weekdayMask),
-     m_enabled           (a.m_enabled),
-     m_stationID         (a.m_stationID),
-     m_volumePreset      (a.m_volumePreset),
-     m_type              (a.m_type),
-     m_recordingTemplate (a.m_recordingTemplate),
-     m_ID                (a.m_ID)
-{
-}
 
 
 Alarm::~Alarm()

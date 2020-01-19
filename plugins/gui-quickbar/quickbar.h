@@ -43,43 +43,43 @@ public:
     QuickBar(const QString &instanceID, const QString &name);
     ~QuickBar();
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("QuickBar"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("QuickBar"); }
 
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
+    virtual bool   connectI(Interface *i)    override;
+    virtual bool   disconnectI(Interface *i) override;
 
     // IStationSelection
 
 RECEIVERS:
-    bool setStationSelection(const QStringList &sl);
+    bool setStationSelection(const QStringList &sl) override;
 
 ANSWERS:
-    const QStringList & getStationSelection () const { return m_stationIDs; }
+    const QStringList & getStationSelection () const override { return m_stationIDs; }
 
 
     // PluginBase
 
 public:
-    virtual void   saveState   (KConfigGroup &) const;
-    virtual void   restoreState(const KConfigGroup &);
-    virtual void   restoreState(const KConfigGroup &g, bool b) { WidgetPluginBase::restoreState(g, b); }
+    virtual void   saveState   (KConfigGroup &) const override;
+    virtual void   restoreState(const KConfigGroup &) override;
+    virtual void   restoreState(const KConfigGroup &g, bool b) override { WidgetPluginBase::restoreState(g, b); }
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
     // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int idx);
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged(bool on)                             override;
+    bool noticeStationChanged (const RadioStation &, int idx)    override;
+    bool noticeStationsChanged(const StationList &sl)            override;
+    bool noticePresetFileChanged(const QString &/*f*/)           override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)       { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)          override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)       override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) override { return false; }
 
     // button/station Management
 
@@ -97,28 +97,28 @@ protected:
     void    autoSetCaption();
 
 
-    void    dragEnterEvent(QDragEnterEvent* event);
-    void    dropEvent(QDropEvent* event);
+    void    dragEnterEvent(QDragEnterEvent* event) override;
+    void    dropEvent(QDropEvent* event) override;
 
     // KDE/QT
 
 public slots:
 
-    virtual void    toggleShown() { WidgetPluginBase::pToggleShown(); }
+    virtual void    toggleShown() override { WidgetPluginBase::pToggleShown(); }
     virtual void    setGeometry (const QRect &r);
     virtual void    setGeometry (int x, int y, int w, int h);
 
 public:
-    virtual void     setVisible(bool v);
+    virtual void     setVisible(bool v) override;
 
 protected:
     void    rebuildGUI();
-    void    showEvent(QShowEvent *);
-    void    hideEvent(QHideEvent *);
-    void    resizeEvent(QResizeEvent *);
+    void    showEvent(QShowEvent *) override;
+    void    hideEvent(QHideEvent *) override;
+    void    resizeEvent(QResizeEvent *) override;
 
-    const QWidget *getWidget() const { return this; }
-          QWidget *getWidget()       { return this; }
+    const QWidget *getWidget() const override { return this; }
+          QWidget *getWidget()       override { return this; }
 
 protected :
 

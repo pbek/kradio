@@ -38,88 +38,88 @@ public:
     StreamingDevice (const QString &instanceID, const QString &name);
     virtual ~StreamingDevice ();
 
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
+    virtual bool   connectI   (Interface *i) override;
+    virtual bool   disconnectI(Interface *i) override;
 
-    bool getPlaybackStreamOptions(const QString &channel, KUrl &url, SoundFormat &sf, size_t &buffer_size) const;
-    bool getCaptureStreamOptions (const QString &channel, KUrl &url, SoundFormat &sf, size_t &buffer_size) const;
+    bool getPlaybackStreamOptions(const QString &channel, QUrl &url, SoundFormat &sf, size_t &buffer_size) const;
+    bool getCaptureStreamOptions (const QString &channel, QUrl &url, SoundFormat &sf, size_t &buffer_size) const;
 
     void resetPlaybackStreams(bool notification_enabled = true);
     void resetCaptureStreams(bool notification_enabled = true);
-    void addPlaybackStream(const KUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled = true);
-    void addCaptureStream (const KUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled = true);
+    void addPlaybackStream(const QUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled = true);
+    void addCaptureStream (const QUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled = true);
 
     // PluginBase
 
 public:
-    virtual void   saveState   (      KConfigGroup &) const;
-    virtual void   restoreState(const KConfigGroup &);
+    virtual void   saveState   (      KConfigGroup &) const override;
+    virtual void   restoreState(const KConfigGroup &)       override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("StreamingDevice"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("StreamingDevice"); }
 
     virtual void setName(const QString &n);
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
     // ISoundStreamClient: direct device access
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
     INLINE_IMPL_DEF_noticeConnectedI (IErrorLogClient);
 
-    bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately);
-    bool prepareCapture(SoundStreamID id,  const QString &channel);
-    bool releasePlayback(SoundStreamID id);
-    bool releaseCapture(SoundStreamID id);
+    bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately) override;
+    bool prepareCapture (SoundStreamID id, const QString &channel) override;
+    bool releasePlayback(SoundStreamID id) override;
+    bool releaseCapture (SoundStreamID id) override;
 
 ANSWERS:
-    bool supportsPlayback() const;
-    bool supportsCapture()  const;
+    bool supportsPlayback() const override;
+    bool supportsCapture()  const override;
 
-    QString getSoundStreamClientDescription() const;
+    QString getSoundStreamClientDescription() const override;
 
     // ISoundStreamClient: mixer access
 
 protected:
 
 ANSWERS:
-    const QStringList &getPlaybackChannels() const;
-    const QStringList &getCaptureChannels() const;
+    const QStringList &getPlaybackChannels() const override;
+    const QStringList &getCaptureChannels () const override;
 
     // ISoundStreamClient: generic broadcasts
 
 RECEIVERS:
-    bool startPlayback(SoundStreamID id);
-    bool pausePlayback(SoundStreamID id);
-    bool resumePlayback(SoundStreamID id);
-    bool stopPlayback(SoundStreamID id);
-    bool isPlaybackRunning(SoundStreamID id, bool &b) const;
+    bool startPlayback (SoundStreamID id) override;
+    bool pausePlayback (SoundStreamID id) override;
+    bool resumePlayback(SoundStreamID id) override;
+    bool stopPlayback  (SoundStreamID id) override;
+    bool isPlaybackRunning(SoundStreamID id, bool &b) const override;
 
     bool startCaptureWithFormat(SoundStreamID      id,
                                 const SoundFormat &proposed_format,
                                 SoundFormat       &real_format,
-                                bool               force_format);
-    bool stopCapture(SoundStreamID id);
-    bool isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
+                                bool               force_format) override;
+    bool stopCapture     (SoundStreamID id) override;
+    bool isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const override;
 
-    bool noticeSoundStreamClosed(SoundStreamID id);
-    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID);
-    bool noticeSoundStreamSinkRedirected(SoundStreamID oldID, SoundStreamID newID);
+    bool noticeSoundStreamClosed          (SoundStreamID id)                         override;
+    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID) override;
+    bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID) override;
 
-    bool noticeReadyForPlaybackData(SoundStreamID id, size_t size);
+    bool noticeReadyForPlaybackData(SoundStreamID id, size_t size) override;
 
     bool noticeSoundStreamData(SoundStreamID id,
                                const SoundFormat &,
                                const char *data, size_t size, size_t &consumed_size,
                                const SoundMetaData &md
-                              );
+                              ) override;
 
 public slots:
 
-    void   logStreamError  (const KUrl &url, const QString &s);
-    void   logStreamWarning(const KUrl &url, const QString &s);
-    void   logStreamInfo   (const KUrl &url, const QString &s);
-    void   logStreamDebug  (const KUrl &url, const QString &s);
+    void   logStreamError  (const QUrl &url, const QString &s);
+    void   logStreamWarning(const QUrl &url, const QString &s);
+    void   logStreamInfo   (const QUrl &url, const QString &s);
+    void   logStreamDebug  (const QUrl &url, const QString &s);
 
 signals:
 
@@ -130,10 +130,10 @@ protected:
     QStringList     m_PlaybackChannelStringList,
                     m_CaptureChannelStringList;
 
-    QList<KUrl>     m_PlaybackChannelList,
+    QList<QUrl>     m_PlaybackChannelList,
                     m_CaptureChannelList;
 
-    QMap<KUrl, StreamingJob*>
+    QMap<QUrl, StreamingJob*>
                     m_PlaybackChannelJobs,
                     m_CaptureChannelJobs;
 

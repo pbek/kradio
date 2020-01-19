@@ -18,12 +18,12 @@
 #include "widgetpluginbase.h"
 #include "pluginmanager.h"
 
-#include <kwindowsystem.h>
-#include <kwindowinfo.h>
+#include <KWindowSystem>
+#include <KWindowInfo>
 #include <QWidget>
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
-#include <kicon.h>
+#include <QtGui/QIcon>
 
 WidgetPluginBase::WidgetPluginBase(QWidget *myself, const QString &instanceID, const QString &name, const QString &description)
   : PluginBase(instanceID, name, description),
@@ -283,11 +283,11 @@ void WidgetPluginBase::updateHideShowAction(bool show)
     }
     if (!show) {
         m_HideShowAction.setText(i18n("Show %1", menuitem));
-        m_HideShowAction.setIcon(KIcon("kradio_show"));
+        m_HideShowAction.setIcon(QIcon("kradio_show"));
     }
     else {
         m_HideShowAction.setText(i18n("Hide %1", menuitem));
-        m_HideShowAction.setIcon(KIcon("kradio_hide"));
+        m_HideShowAction.setIcon(QIcon("kradio_hide"));
     }
     notifyManager (show);
 }

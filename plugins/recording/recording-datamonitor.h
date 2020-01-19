@@ -43,7 +43,7 @@ public:
 
 protected:
 
-    void paintEvent(QPaintEvent *e);
+    void paintEvent(QPaintEvent *e) override;
     void internalDrawContents(QPainter &painter, bool repaintAll);
     void setUpdateMode(PaintEventUpdateOptions opt);
     void update(PaintEventUpdateOptions opt);

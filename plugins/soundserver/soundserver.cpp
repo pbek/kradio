@@ -26,13 +26,12 @@
 static KAboutData aboutData()
 {
     KAboutData about("SoundServer",
-                     PROJECT_NAME,
-                     KLocalizedString(),
+                     NULL,
                      KRADIO_VERSION,
-                     ki18nc("@title", "KRadio internal sound server"),
-                     KAboutData::License_GPL,
-                     KLocalizedString(),
-                     KLocalizedString(),
+                     i18nc("@title", "KRadio internal sound server"),
+                     KAboutLicense::LicenseKey::GPL,
+                     NULL,
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;

@@ -395,4 +395,3 @@ void RecordingDataMonitor::update(PaintEventUpdateOptions opt)
 }
 
 
-#include "recording-datamonitor.moc"

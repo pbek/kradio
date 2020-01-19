@@ -1,9 +1,26 @@
-project(kradio4plugins)
+project(kradio5plugins)
 
 find_package(PkgConfig)
 
+# Locate extra-cmake-modules version 0.0.11 and make it a required package
+find_package(ECM 5.10.0 REQUIRED NO_MODULE)
+
 include(CheckIncludeFileCXX)
 include(CheckLibraryExists)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(FeatureSummary)
+
+########################################################################
+#       KDE/QT Libs                                                    #
+########################################################################
+
+# Locate Qt5, make it required package and use QtWidgets and QtCore modules
+find_package(Qt5 REQUIRED COMPONENTS Widgets Core Multimedia )
+
+# Locate KF5, make it required package and use KF5KDELibs4Support and KF5CoreAddons modules
+find_package(KF5 REQUIRED COMPONENTS  CoreAddons XmlGui I18n KIO)
 
 ###############################################################################
 
@@ -33,7 +50,8 @@ ELSE(WITH_ALSA)
 ENDIF(WITH_ALSA)
 
 
-MACRO_LOG_FEATURE(WITH_ALSA "ALSA support" "Support for ALSA Sound Devices" "http://www.alsa-project.org")
+
+add_feature_info("Alsa Support" WITH_ALSA "Support for ALSA Sound Devices" "http://www.alsa-project.org")
 
 ###############################################################################
 
@@ -60,7 +78,7 @@ ELSE(WITH_LIRC)
     message(STATUS "   Compiling without LIRC support")
 ENDIF(WITH_LIRC)
 
-MACRO_LOG_FEATURE(WITH_LIRC "LIRC support" "Support for remote controls via LIRC interfaces" "http://www.lirc.org")
+add_feature_info("LIRC support" WITH_LIRC "Support for remote controls via LIRC interfaces" "http://www.lirc.org")
 
 ###############################################################################
 
@@ -79,12 +97,12 @@ IF(WITH_FFMPEG)
         find_package(FFmpeg COMPONENTS ${ffmpeg_components} AVRESAMPLE)
     ENDIF(NOT FFMPEG_FOUND)
 
-    IF(AVFORMAT_VERSION VERSION_LESS 53.24.0)
-       ERROR(FATAL_ERROR "libavformat ${AVFORMAT_FOUND} found, 53.24.0 required")
-    ENDIF(AVFORMAT_VERSION VERSION_LESS 53.24.0)
-    IF(AVCODEC_VERSION VERSION_LESS 52.42.0)
-       ERROR(FATAL_ERROR "libavcodec ${AVCODEC_VERSION} found, 52.42.0 required")
-    ENDIF(AVCODEC_VERSION VERSION_LESS 52.42.0)
+    IF(AVFORMAT_VERSION VERSION_LESS 58.12.100)
+       ERROR(FATAL_ERROR "libavformat ${AVFORMAT_FOUND} found, 58.12.100 required")
+    ENDIF(AVFORMAT_VERSION VERSION_LESS 58.12.100)
+    IF(AVCODEC_VERSION VERSION_LESS 58.18.100)
+       ERROR(FATAL_ERROR "libavcodec ${AVCODEC_VERSION} found, 58.18.100 required")
+    ENDIF(AVCODEC_VERSION VERSION_LESS 58.18.100)
 
 
     set(LIBMMS_MIN_VERSION 0.5)
@@ -110,12 +128,14 @@ ELSE(WITH_FFMPEG)
     message(STATUS "   Compiling without Internet Radio Stations (libffmpeg, libmms) support")
 ENDIF(WITH_FFMPEG)
 
-MACRO_LOG_FEATURE(FFMPEG_FOUND      "FFMPEG support"          "Support for internet radio by libffmpeg" "http://ffmpeg.org" FALSE "0.9.0")
-MACRO_LOG_FEATURE(LIBMMS_FOUND      "MMS protocol support"    "Support internet radio protocol mms:// by libmms"  "https://launchpad.net/libmms" FALSE "${LIBMMS_MIN_VERSION}")
-MACRO_LOG_FEATURE(WITH_FFMPEG       "Internet radio support"  "Internet radio requires both libffmpeg and libmms" "")
+add_feature_info("FFMPEG support"          FFMPEG_FOUND      "Support for internet radio by libffmpeg" "http://ffmpeg.org" FALSE "0.9.0")
+add_feature_info("MMS protocol support"    LIBMMS_FOUND      "Support internet radio protocol mms:// by libmms"  "https://launchpad.net/libmms" FALSE "${LIBMMS_MIN_VERSION}")
+add_feature_info("Internet radio support"  WITH_FFMPEG       "Internet radio requires both libffmpeg and libmms" "")
 
 ###############################################################################
 
+
+feature_summary(WHAT ALL)
 
 
 ADD_SUBDIRECTORY(radio)

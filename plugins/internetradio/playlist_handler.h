@@ -18,7 +18,7 @@
 #ifndef KRADIO_PLAYLIST_HANDLER_H
 #define KRADIO_PLAYLIST_HANDLER_H
 
-#include <kurl.h>
+#include <QtCore/QUrl>
 
 #include <kio/job.h>
 #include <kio/jobclasses.h>
@@ -34,11 +34,11 @@ public:
     ~PlaylistHandler();
 
     bool        hadError()         const { return m_error; }
-    KUrl        currentStreamUrl() const { return m_currentStreamUrl; }
+    QUrl        currentStreamUrl() const { return m_currentStreamUrl; }
 
 signals:
-    void        sigPlaylistLoaded(KUrl::List  streamList);
-    void        sigStreamSelected(KUrl stream);
+    void        sigPlaylistLoaded(const QList<QUrl> &streamList);
+    void        sigStreamSelected(QUrl stream);
     void        sigEOL();
     void        sigError(QString errorMsg);
 
@@ -75,8 +75,8 @@ protected:
 
 protected:
     InternetRadioStation        m_currentStation;
-    KUrl::List                  m_currentPlaylist;
-    KUrl                        m_currentStreamUrl;
+    QList<QUrl>                 m_currentPlaylist;
+    QUrl                        m_currentStreamUrl;
     int                         m_currentStreamIdx;
     int                         m_maxStreamRetries;
     int                         m_currentStreamRetriesLeft;

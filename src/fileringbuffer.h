@@ -18,11 +18,12 @@
 #ifndef _KRADIO_FILE_RING_BUFFER_H
 #define _KRADIO_FILE_RING_BUFFER_H
 
-#include <kdemacros.h>
-#include <QString>
+#include <QtCore/QString>
 #include <stdio.h>
 
-class KDE_EXPORT FileRingBuffer
+#include "kradio-def.h"
+
+class KRADIO5_EXPORT FileRingBuffer
 {
 public:
     FileRingBuffer(const QString &filename, quint64 max_size);

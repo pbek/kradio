@@ -20,8 +20,7 @@
 
 #include <QFile>
 
-#include <kio/jobclasses.h>
-#include <kio/netaccess.h>
+#include <KIO/MetaData>
 #include <kio/job.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -52,9 +51,9 @@ extern "C" {
 InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_parent,
                                            const InternetRadioStation &rs,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                                           const KUrl::List           &playlist,
+                                           const QUrl::List           &playlist,
 #else
-                                           const KUrl                 &currentStreamUrl,
+                                           const QUrl                 &currentStreamUrl,
                                            StreamInputBuffer          *streamInputBuffer,
                                            QString                     contentType,
 #endif
@@ -94,7 +93,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_playListURLs  (playlist),
 #endif
-/*    m_inputURL      (m_RadioStation.pathOrUrl()),*/
+/*    m_inputURL      (m_RadioStation.toString()),*/
     m_bufferCountSemaphore(max_buffers),
     m_maxBufferCount      (max_buffers),
     m_maxSingleBufferSize (max_singleBufferSize),
@@ -143,16 +142,16 @@ void InternetRadioDecoder::selectStreamFromPlaylist()
     for (int i = 0; !m_decoderOpened && i < n; ++i) {
         m_playURL = m_playListURLs[(start_play_idx + i) % n];
         for (int j = 0; j < retries && !m_decoderOpened; ++j) {
-            log(ThreadLogging::LogDebug, i18n("opening stream %1", m_playURL.pathOrUrl()));
-            openAVStream(m_playURL.pathOrUrl(), true);
+            log(ThreadLogging::LogDebug, i18n("opening stream %1", m_playURL.toString()));
+            openAVStream(m_playURL.toString(), true);
         }
         if (!m_decoderOpened) {
-            log(ThreadLogging::LogWarning, i18n("Failed to open %1. Trying next stream in play list.", m_playURL.pathOrUrl()));
+            log(ThreadLogging::LogWarning, i18n("Failed to open %1. Trying next stream in play list.", m_playURL.toString()));
         }
     }
     if (!m_decoderOpened) {
         m_error = true;
-        log(ThreadLogging::LogError, i18n("Could not open any input stream of %1.", m_RadioStation.url().pathOrUrl()));
+        log(ThreadLogging::LogError, i18n("Could not open any input stream of %1.", m_RadioStation.url().toString()));
     }
 }
 #endif
@@ -247,9 +246,9 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
         /* if error, skip frame */
         log(ThreadLogging::LogWarning, i18n("%1: error decoding packet. Discarding packet",
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                         m_playURL.pathOrUrl()
+                         m_playURL.toString()
 #else
-                         m_inputUrl.pathOrUrl()
+                         m_inputUrl.toString()
 #endif
                         ));
         return false;
@@ -264,7 +263,7 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
         SoundMetaData  md(m_decodedSize,
                           cur_time - m_startTime,
                           cur_time,
-                          m_i18nInternalStream
+                          QUrl(m_i18nInternalStream)
                          );
 
         if (!m_soundFormat.isValid()) {
@@ -321,10 +320,10 @@ void InternetRadioDecoder::run()
 
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
         selectStreamFromPlaylist();
-        m_i18nInternalStream = i18n("internal stream, not stored (%1)", m_playURL.pathOrUrl());
+        m_i18nInternalStream = i18n("internal stream, not stored (%1)", m_playURL.toString());
 #else
-        openAVStream(m_inputUrl.pathOrUrl(), false);
-        m_i18nInternalStream = i18n("internal stream, not stored (%1)", m_inputUrl.pathOrUrl());
+        openAVStream(m_inputUrl.toString(), false);
+        m_i18nInternalStream = i18n("internal stream, not stored (%1)", m_inputUrl.toString());
 #endif
 
         AVPacket    pkt;
@@ -579,10 +578,10 @@ void InternetRadioDecoder::open_av_input(AVInputFormat *iformat, const QString &
 
     if (err != 0) {
         if (warningsNotErrors) {
-            log(ThreadLogging::LogWarning, i18n("Could not open stream %1", stream)); //m_inputUrl.pathOrUrl()));
+            log(ThreadLogging::LogWarning, i18n("Could not open stream %1", stream)); //m_inputUrl.toString()));
         } else {
             m_error = true;
-            log(ThreadLogging::LogError, i18n("Could not open stream %1", m_inputUrl.pathOrUrl()));
+            log(ThreadLogging::LogError, i18n("Could not open stream %1", m_inputUrl.toString()));
         }
         closeAVStream();
     } else {
@@ -639,7 +638,7 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 //         printf("probe data size = %i\n", probeData.size());
 
         if (!err) {
-            const QByteArray path = QFile::encodeName(m_inputUrl.pathOrUrl());
+            const QByteArray path = QFile::encodeName(m_inputUrl.toString());
             
 #if  (LIBAVFORMAT_VERSION_MAJOR > 55) // ffmpeg commit 5482780a3b6ef0a8934cf29aa7e2f1ef7ccb701e
             AVProbeData pd = { path.constData(), (unsigned char*)probeData.data(), probeData.size(), NULL };
@@ -652,10 +651,10 @@ AVInputFormat *InternetRadioDecoder::getInputFormat(const QString &fallbackForma
 
         if (!iformat) {
             if (warningsNotErrors) {
-                log(ThreadLogging::LogWarning, i18n("Autodetect of stream type failed for %1", m_inputUrl.pathOrUrl()));
+                log(ThreadLogging::LogWarning, i18n("Autodetect of stream type failed for %1", m_inputUrl.toString()));
             } else {
                 m_error = true;
-                log(ThreadLogging::LogError, i18n("Autodetect of stream type failed for %1", m_inputUrl.pathOrUrl()));
+                log(ThreadLogging::LogError, i18n("Autodetect of stream type failed for %1", m_inputUrl.toString()));
             }
             closeAVStream();
         } else {
@@ -894,13 +893,13 @@ void InternetRadioDecoder::openAVStream(const QString &stream, bool warningsNotE
     AVInputFormat   *iformat = getInputFormat("", warningsNotErrors);
 
     if (iformat) { // format setup / detection worked well ==> open stream
-        open_av_input(iformat, m_inputUrl.pathOrUrl(), warningsNotErrors, /* use_io_context = */ true);
+        open_av_input(iformat, m_inputUrl.toString(), warningsNotErrors, /* use_io_context = */ true);
     }
 #else // INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD defined below
 
 
     // load asf stream
-    KUrl  streamUrl = stream;
+    QUrl  streamUrl = stream;
     if (streamUrl.protocol().startsWith("mms")) {
         m_is_mms_stream = true;
         m_mms_stream = mmsx_connect(NULL, NULL, stream.toUtf8().constData(), 1);
@@ -1155,9 +1154,9 @@ static int InternetRadioDecoder_readInputBuffer(void *opaque, uint8_t *buffer, i
 DecoderThread::DecoderThread(QObject *parent,
                              const InternetRadioStation &rs,
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-                             const KUrl::List           &playlist,
+                             const QUrl::List           &playlist,
 #else
-                             const KUrl                 &currentStreamUrl,
+                             const QUrl                 &currentStreamUrl,
                              StreamReader               *streamReader,
 //                              StreamInputBuffer          *streamInputBuffer,
 #endif

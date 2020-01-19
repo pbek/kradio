@@ -34,7 +34,7 @@ public:
     AlsaThread (AlsaSoundDevice *parent, bool playback_not_capture, snd_pcm_t *handle, const SoundFormat &sf);
     ~AlsaThread();
 
-    void                  run();
+    void                  run() override;
 
     bool                  error()       const { return m_error; }
     void                  resetError();

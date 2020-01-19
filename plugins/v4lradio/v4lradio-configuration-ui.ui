@@ -652,7 +652,7 @@
           </layout>
          </item>
          <item>
-          <widget class="KDoubleNumInput" name="editDeviceVolume">
+          <widget class="QDoubleSpinBox" name="editDeviceVolume">
            <property name="maxValue" stdset="0">
             <number>1</number>
            </property>
@@ -722,7 +722,7 @@
           </layout>
          </item>
          <item>
-          <widget class="KDoubleNumInput" name="editTreble">
+          <widget class="QDoubleSpinBox" name="editTreble">
            <property name="maxValue" stdset="0">
             <number>1</number>
            </property>
@@ -792,7 +792,7 @@
           </layout>
          </item>
          <item>
-          <widget class="KDoubleNumInput" name="editBass">
+          <widget class="QDoubleSpinBox" name="editBass">
            <property name="maxValue" stdset="0">
             <number>1</number>
            </property>
@@ -861,7 +861,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="KDoubleNumInput" name="editBalance">
+          <widget class="QDoubleSpinBox" name="editBalance">
            <property name="minValue" stdset="0">
             <number>-1</number>
            </property>
@@ -880,9 +880,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KDoubleNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
+   <class>QDoubleSpinBox</class>
+   <extends>QAbstractSpinBox</extends>
+   <header>QtWidgets/QDoubleSpinBox</header>
   </customwidget>
   <customwidget>
    <class>KComboBox</class>

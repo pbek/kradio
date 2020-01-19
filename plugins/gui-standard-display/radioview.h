@@ -33,7 +33,6 @@ class KComboBox;
 
 class QStackedWidget;
 class QToolButton;
-class QTabWidget;
 class RadioViewConfiguration;
 
 class RadioView : public QWidget,
@@ -49,26 +48,26 @@ public:
     RadioView(const QString &instanceID, const QString &name);
     virtual ~RadioView();
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("RadioView"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("RadioView"); }
 
     // WidgetPluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
-    virtual void   restoreState (const KConfigGroup &g, bool b) { WidgetPluginBase::restoreState(g, b); }
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
+    virtual void   restoreState (const KConfigGroup &g, bool b) override { WidgetPluginBase::restoreState(g, b); }
 
 
 protected:
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
+    virtual bool   connectI   (Interface *i)  override;
+    virtual bool   disconnectI(Interface *i)  override;
 
-    virtual bool   setManager (PluginManager *);
-    virtual void   unsetManager ();
+    virtual bool   setManager (PluginManager *) override;
+    virtual void   unsetManager () override;
 
-    virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown);
+    virtual void   noticeWidgetPluginShown(WidgetPluginBase *p, bool shown) override;
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
 public slots:
     // connects destroy-msg with remove-function
@@ -82,50 +81,50 @@ protected:
     // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int idx);
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged(bool on) override;
+    bool noticeStationChanged (const RadioStation &, int idx) override;
+    bool noticeStationsChanged(const StationList &sl) override;
+    bool noticePresetFileChanged(const QString &/*f*/)           override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)       { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)          override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)       override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID id);
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID id);
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID id) override;
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID id) override;
 
     // IRadioDevicePoolClient
 
 RECEIVERS:
-    bool noticeActiveDeviceChanged(IRadioDevice *rd);
-    bool noticeDevicesChanged(const QList<IRadioDevice*> &)  { return false; }
-    bool noticeDeviceDescriptionChanged(const QString &) { return false; }
+    bool noticeActiveDeviceChanged     (IRadioDevice *rd)             override;
+    bool noticeDevicesChanged          (const QList<IRadioDevice*> &) override { return false; }
+    bool noticeDeviceDescriptionChanged(const QString &)              override { return false; }
 
     // ISoundStreamClient
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
 
     bool startRecordingWithFormat(SoundStreamID /*id*/,
                       const SoundFormat &/*proposed_format*/,
                       SoundFormat       &/*real_format*/,
-                      const recordingTemplate_t     &/*filenameTemplate*/);
-    bool stopRecording(SoundStreamID /*id*/);
-    bool pausePlayback(SoundStreamID /*id*/);
-    bool resumePlayback(SoundStreamID /*id*/);
+                      const recordingTemplate_t     &/*filenameTemplate*/) override;
+    bool stopRecording (SoundStreamID /*id*/) override;
+    bool pausePlayback (SoundStreamID /*id*/) override;
+    bool resumePlayback(SoundStreamID /*id*/) override;
 
-    bool noticeSoundStreamChanged(SoundStreamID id);
+    bool noticeSoundStreamChanged(SoundStreamID id) override;
 
     // ITimeControlClient
 
 RECEIVERS:
-    bool noticeAlarmsChanged(const AlarmVector &)     { return false; }
-    bool noticeAlarm(const Alarm &)                   { return false; }
-    bool noticeNextAlarmChanged(const Alarm *)        { return false; }
-    bool noticeCountdownStarted(const QDateTime &end);
-    bool noticeCountdownStopped();
-    bool noticeCountdownZero();
-    bool noticeCountdownSecondsChanged(int /*n*/, bool /*suspendOnSleep*/) { return false; }
+    bool noticeAlarmsChanged(const AlarmVector &)     override { return false; }
+    bool noticeAlarm(const Alarm &)                   override { return false; }
+    bool noticeNextAlarmChanged(const Alarm *)        override { return false; }
+    bool noticeCountdownStarted(const QDateTime &end) override;
+    bool noticeCountdownStopped() override;
+    bool noticeCountdownZero()    override;
+    bool noticeCountdownSecondsChanged(int /*n*/, bool /*suspendOnSleep*/) override { return false; }
 
 protected slots:
 
@@ -144,11 +143,11 @@ protected slots:
 
 public slots:
 
-    virtual void    toggleShown() { WidgetPluginBase::pToggleShown(); }
+    virtual void    toggleShown() override { WidgetPluginBase::pToggleShown(); }
     virtual void    slotUpdateRecordingMenu();
 
 public:
-    virtual void     setVisible(bool v);
+    virtual void     setVisible(bool v) override;
 
 protected:
     INLINE_IMPL_DEF_noticeConnectedI(IErrorLogClient);
@@ -156,14 +155,14 @@ protected:
     INLINE_IMPL_DEF_noticeConnectedI(IRadioDevicePoolClient);
     INLINE_IMPL_DEF_noticeConnectedI(ITimeControlClient);
 
-    virtual void showEvent(QShowEvent *);
-    virtual void hideEvent(QHideEvent *);
+    virtual void showEvent(QShowEvent *) override;
+    virtual void hideEvent(QHideEvent *) override;
 
     virtual void autoSetCaption();
     virtual void updatePauseMenuItem(bool run_query, bool known_pause_state);
 
-    const QWidget *getWidget() const { return this; }
-          QWidget *getWidget()       { return this; }
+    const QWidget *getWidget() const override { return this; }
+          QWidget *getWidget()       override { return this; }
 
     void    addConfigurationTabFor(RadioViewElement *, RadioViewConfiguration *);
     void    addCommonConfigurationTab(RadioViewConfiguration *);

@@ -18,11 +18,9 @@
 #ifndef KRADIO_V4LRADIO_RDS_DECODER_2AB_H
 #define KRADIO_V4LRADIO_RDS_DECODER_2AB_H
 
-#include <kdemacros.h>
-
 #include "rds_type_decoder.h"
 
-#include <QString>
+#include <QtCore/QString>
 
 #define rds_max(a,b)  ((a) > (b) ? (a) : (b))
 
@@ -39,13 +37,13 @@
 
 enum RDS_2AB_State { RDS_2AB_WAIT4GRP, RDS_2AB_COMPLETE };
 
-class KDE_EXPORT RDS_Type2AB_Decoder : public RDSTypeDecoder
+class KRADIO5_EXPORT RDS_Type2AB_Decoder : public RDSTypeDecoder
 {
 public:
     RDS_Type2AB_Decoder(bool type_A_not_B);
 
-    virtual void addGroup(const RDSGroup &g);
-    virtual bool isComplete() const;
+    virtual void addGroup(const RDSGroup &g) override;
+    virtual bool isComplete() const override;
 
     const QString &getRadioText() const;
 

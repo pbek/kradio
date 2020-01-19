@@ -31,4 +31,3 @@ RadioViewElement::~RadioViewElement()
 
 
 
-#include "radioview_element.moc"

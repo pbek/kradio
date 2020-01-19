@@ -16,7 +16,8 @@
 
 #include "nosizefontrequester.h"
 
-#include <kdialog.h>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
 #include <kfontchooser.h>
 #include <klocalizedstring.h>
 
@@ -66,20 +67,31 @@ QFont NoSizeFontRequester::font() const
 
 void NoSizeFontRequester::slotButtonClicked()
 {
-    KDialog diag(this);
-    diag.setButtons(KDialog::Ok | KDialog::Cancel);
-    diag.setCaption(i18nc("@title:window", "Select Font"));
-    KFontChooser *chooser = new KFontChooser(&diag, KFontChooser::NoDisplayFlags);
+    QDialog          diag(this);
+    
+    QDialogButtonBox *btns    = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &diag);
+    KFontChooser     *chooser = new KFontChooser    (&diag, KFontChooser::NoDisplayFlags);
+    QVBoxLayout      *vlayout = new QVBoxLayout;
+    
+    vlayout->addWidget(chooser);
+    vlayout->addWidget(btns);
+    connect(btns, &QDialogButtonBox::accepted, &diag, &QDialog::accept);
+    connect(btns, &QDialogButtonBox::rejected, &diag, &QDialog::reject);
+    
+    diag.setWindowTitle(i18nc("@title:window", "Select Font"));
+    
     chooser->enableColumn(KFontChooser::SizeList, false);
     chooser->setFont(m_font);
-    diag.setMainWidget(chooser);
+    
+    diag.setLayout(vlayout);
+    
     if (diag.exec() == QDialog::Rejected) {
         return;
     }
 
     m_font = chooser->font();
     updateText();
-    emit fontSelected(m_font);
+    Q_EMIT fontSelected(m_font);
 }
 
 

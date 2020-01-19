@@ -44,8 +44,8 @@ public:
 	UndefinedRadioStationConfig (QWidget *parent);
 	~UndefinedRadioStationConfig();
 
-    virtual void setStationData   (const RadioStation &rs);
-    virtual void storeStationData (RadioStation &rs);
+    virtual void setStationData   (const RadioStation &rs) override;
+    virtual void storeStationData (RadioStation &rs)       override;
 };
 
 
@@ -59,8 +59,8 @@ public:
 	FrequencyRadioStationConfig (QWidget *parent);
 	~FrequencyRadioStationConfig();
 
-    virtual void setStationData   (const RadioStation &rs);
-    virtual void storeStationData (RadioStation &rs);
+    virtual void setStationData   (const RadioStation &rs) override;
+    virtual void storeStationData (RadioStation &rs)       override;
 
 protected slots:
 	virtual void slotValueChanged(int);
@@ -80,8 +80,8 @@ public:
     InternetRadioStationConfig (QWidget *parent);
     ~InternetRadioStationConfig();
 
-    virtual void setStationData   (const RadioStation &rs);
-    virtual void storeStationData (RadioStation &rs);
+    virtual void setStationData   (const RadioStation &rs) override;
+    virtual void storeStationData (RadioStation &rs)       override;
     
 protected:
     void         initCodecList() const;

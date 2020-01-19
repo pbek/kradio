@@ -36,7 +36,7 @@ class QMenu;
 class InstanceManager;
 
 
-class KDE_EXPORT PluginManager : public QObject
+class KRADIO5_EXPORT PluginManager : public QObject
 {
 Q_OBJECT
 public :

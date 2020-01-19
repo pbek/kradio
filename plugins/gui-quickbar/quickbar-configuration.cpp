@@ -32,4 +32,3 @@ QuickbarConfiguration::~QuickbarConfiguration ()
 
 
 
-#include "quickbar-configuration.moc"

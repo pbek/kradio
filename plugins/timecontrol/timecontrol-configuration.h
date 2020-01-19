@@ -34,32 +34,32 @@ public :
     TimeControlConfiguration (QWidget *parent);
     ~TimeControlConfiguration ();
 
-    bool connectI (Interface *i);
-    bool disconnectI (Interface *i);
+    bool connectI    (Interface *i) override;
+    bool disconnectI (Interface *i) override;
 
 // ITimeControlClient
 
-    bool noticeAlarmsChanged(const AlarmVector &sl);
-    bool noticeAlarm(const Alarm &);
-    bool noticeNextAlarmChanged(const Alarm *);
-    bool noticeCountdownStarted(const QDateTime &end);
-    bool noticeCountdownStopped();
-    bool noticeCountdownZero();
-    bool noticeCountdownSecondsChanged(int n, bool suspendOnSleep);
+    bool noticeAlarmsChanged   (const AlarmVector &sl) override;
+    bool noticeAlarm           (const Alarm &) override;
+    bool noticeNextAlarmChanged(const Alarm *) override;
+    bool noticeCountdownStarted(const QDateTime &end) override;
+    bool noticeCountdownStopped() override;
+    bool noticeCountdownZero   () override;
+    bool noticeCountdownSecondsChanged(int n, bool suspendOnSleep) override;
 
 // IRadioClient
 
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int idx);
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged(bool on) override;
+    bool noticeStationChanged (const RadioStation &, int idx) override;
+    bool noticeStationsChanged(const StationList &sl) override;
+    bool noticePresetFileChanged(const QString &/*f*/)           override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)       { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)          override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)       override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) override { return false; }
 
 protected slots:
 

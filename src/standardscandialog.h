@@ -29,18 +29,18 @@
 class QPushButton;
 class Ui_StandardScanDialogUI;
 
-class KDE_EXPORT StandardScanDialog : public QDialog,
-                                      public ISeekRadioClient,
-                                      public IRadioClient,
-                                      public IErrorLogClient
+class KRADIO5_EXPORT StandardScanDialog : public QDialog,
+                                          public ISeekRadioClient,
+                                          public IRadioClient,
+                                          public IErrorLogClient
 {
 Q_OBJECT
 public:
     StandardScanDialog(QWidget *parent);
     ~StandardScanDialog();
 
-    bool connectI (Interface *i);
-    bool disconnectI (Interface *i);
+    bool connectI    (Interface *i) override;
+    bool disconnectI (Interface *i) override;
 
     void start();
     void stop();
@@ -50,25 +50,25 @@ public:
 // ISeekRadioClient
 
 RECEIVERS:
-    bool noticeSeekStarted (bool up);
-    bool noticeSeekStopped ();
-    bool noticeSeekFinished (const RadioStation &s, bool goodQuality);
-    bool noticeProgress (float f);
+    bool noticeSeekStarted (bool up) override;
+    bool noticeSeekStopped ()        override;
+    bool noticeSeekFinished (const RadioStation &s, bool goodQuality) override;
+    bool noticeProgress (float f)    override;
 
 // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
-    bool noticeStationsChanged(const StationList &/*sl*/)        { return false; }
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged(bool on) override;
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) override { return false; }
+    bool noticeStationsChanged(const StationList &/*sl*/)         override { return false; }
+    bool noticePresetFileChanged(const QString &/*f*/)            override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }  // don't care
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       { return false; }  // don't care
-    bool noticeRDSStationNameChanged(const QString &/*s*/);
+    bool noticeRDSStateChanged      (bool  /*enabled*/)           override{ return false; }  // don't care
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        override{ return false; }  // don't care
+    bool noticeRDSStationNameChanged(const QString &/*s*/)        override;
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) override { return false; }
 
 protected slots:
 

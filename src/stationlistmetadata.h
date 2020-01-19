@@ -23,12 +23,14 @@
 #include <QString>
 #include <QDateTime>
 
+#include "kradio-def.h"
+
 /**
  * Meta Data about a stationlist
  * @author  Martin Witte
  */
 
-class KDE_EXPORT StationListMetaData  {
+class KRADIO5_EXPORT StationListMetaData  {
 public:
     QString    maintainer;
     QDateTime  lastChange;

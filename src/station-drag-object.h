@@ -18,13 +18,13 @@
 #ifndef KRADIO_STATION_DRAG_OBJECT_H
 #define KRADIO_STATION_DRAG_OBJECT_H
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
-#include <kdemacros.h>
+#include "kradio-def.h"
 
 class QMimeData;
 
-class KDE_EXPORT StationDragObject
+class KRADIO5_EXPORT StationDragObject
 {
 public:
     static void encode(QMimeData *data, const QStringList &stationIDs);

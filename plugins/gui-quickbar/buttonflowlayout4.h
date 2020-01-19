@@ -50,17 +50,17 @@ public:
     ButtonFlowLayout4(int spacing = -1);
     ~ButtonFlowLayout4();
 
-    void             addItem(QLayoutItem *item);
-    Qt::Orientations expandingDirections() const;
-    bool             hasHeightForWidth() const;
-    int              heightForWidth(int) const;
-    int              count() const;
-    QLayoutItem     *itemAt(int index) const;
-    QSize            minimumSize() const;
-    QSize            minimumSize(const QSize &s) const;
-    void             setGeometry(const QRect &rect);
-    QSize            sizeHint() const;
-    QLayoutItem     *takeAt(int index);
+    void             addItem            (QLayoutItem *item)        override;
+    Qt::Orientations expandingDirections()                   const override;
+    bool             hasHeightForWidth  ()                   const override;
+    int              heightForWidth     (int)                const override;
+    int              count()                                 const override;
+    QLayoutItem     *itemAt             (int          index) const override;
+    QSize            minimumSize        ()                   const override;
+    QSize            minimumSize        (const QSize &s)     const;
+    void             setGeometry        (const QRect &rect)        override;
+    QSize            sizeHint           ()                   const override;
+    QLayoutItem     *takeAt             (int index)                override;
 
 private:
     int              doLayout(const QRect &rect, bool testOnly) const;

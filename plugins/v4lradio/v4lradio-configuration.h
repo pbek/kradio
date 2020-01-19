@@ -18,7 +18,7 @@
 #ifndef KRADIO_V4LRADIO_CONFIGURATION_H
 #define KRADIO_V4LRADIO_CONFIGURATION_H
 
-#include <QWidget>
+#include <QtWidgets/QWidget>
 
 #include "radiodevice_interfaces.h"
 #include "frequencyradio_interfaces.h"
@@ -43,67 +43,67 @@ public :
     V4LRadioConfiguration (QWidget *parent, SoundStreamID id);
     ~V4LRadioConfiguration ();
 
-    bool connectI (Interface *i);
-    bool disconnectI (Interface *i);
+    bool connectI    (Interface *i) override;
+    bool disconnectI (Interface *i) override;
 
-    void noticeConnectedSoundClient   (ISoundStreamClient::thisInterface *i, bool pointer_valid);
-    void noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid);
+    void noticeConnectedSoundClient   (ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
+    void noticeDisconnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
 
 // IV4LCfgClient
 
 RECEIVERS:
-    void noticeConnectedI    (IV4LCfg *cfg, bool pointer_valid);
-    void noticeDisconnectedI (IV4LCfg *cfg, bool pointer_valid);
+    void noticeConnectedI    (IV4LCfg *cfg, bool pointer_valid) override;
+    void noticeDisconnectedI (IV4LCfg *cfg, bool pointer_valid) override;
 
-    bool noticeRadioDeviceChanged(const QString &s);
+    bool noticeRadioDeviceChanged(const QString &s) override;
 
-    bool noticePlaybackMixerChanged(const QString &soundStreamClientID, const QString &Channel);
-    bool noticeCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel);
+    bool noticePlaybackMixerChanged(const QString &soundStreamClientID, const QString &Channel) override;
+    bool noticeCaptureMixerChanged (const QString &soundStreamClientID, const QString &Channel) override;
 
-    bool noticeDeviceVolumeChanged(float v);
-    bool noticeCapabilitiesChanged(const V4LCaps &c);
-    bool noticeActivePlaybackChanged(bool a, bool muteCaptureChannelPlayback);
-    bool noticeMuteOnPowerOffChanged(bool a);
-    bool noticeForceRDSEnabledChanged(bool a);
-    bool noticeDeviceProbeAtStartupChanged(bool e);
-    bool noticeVolumeZeroOnPowerOffChanged(bool a);
-    bool noticeV4LVersionOverrideChanged(V4LVersion vo);
+    bool noticeDeviceVolumeChanged        (float          v)  override;
+    bool noticeCapabilitiesChanged        (const V4LCaps &c)  override;
+    bool noticeActivePlaybackChanged      (bool           a, bool muteCaptureChannelPlayback) override;
+    bool noticeMuteOnPowerOffChanged      (bool           a)  override;
+    bool noticeForceRDSEnabledChanged     (bool           a)  override;
+    bool noticeDeviceProbeAtStartupChanged(bool           e)  override;
+    bool noticeVolumeZeroOnPowerOffChanged(bool           a)  override;
+    bool noticeV4LVersionOverrideChanged  (V4LVersion     vo) override;
 
 // IRadioDeviceClient
 
 RECEIVERS:
-    bool noticePowerChanged         (bool  /*on*/,         const IRadioDevice */*sender*/) { return false; }
-    bool noticeStationChanged       (const RadioStation &, const IRadioDevice */*sender*/) { return false; }
-    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice *sender = NULL);
+    bool noticePowerChanged         (bool  /*on*/,         const IRadioDevice */*sender*/)    override { return false; }
+    bool noticeStationChanged       (const RadioStation &, const IRadioDevice */*sender*/)    override { return false; }
+    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice *sender = NULL) override;
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/,    const IRadioDevice */*sender*/) { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/, const IRadioDevice */*sender*/) { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/, const IRadioDevice */*sender*/) { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/,    const IRadioDevice */*sender*/) override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/, const IRadioDevice */*sender*/) override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
 
 // IFrequencyRadioClient
 
 RECEIVERS:
-    bool noticeFrequencyChanged(float f, const FrequencyRadioStation *s);
-    bool noticeMinMaxFrequencyChanged(float min, float max);
-    bool noticeDeviceMinMaxFrequencyChanged(float min, float max);
-    bool noticeScanStepChanged(float s);
+    bool noticeFrequencyChanged            (float f, const FrequencyRadioStation *s) override;
+    bool noticeMinMaxFrequencyChanged      (float min, float max) override;
+    bool noticeDeviceMinMaxFrequencyChanged(float min, float max) override;
+    bool noticeScanStepChanged             (float s)              override;
 
 // ISoundStreamClient
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
 
-    bool noticeTrebleChanged          (SoundStreamID id, float t);
-    bool noticeBassChanged            (SoundStreamID id, float b);
-    bool noticeBalanceChanged         (SoundStreamID id, float b);
-    bool noticeSignalMinQualityChanged(SoundStreamID id, float q);
+    bool noticeTrebleChanged          (SoundStreamID id, float t) override;
+    bool noticeBassChanged            (SoundStreamID id, float b) override;
+    bool noticeBalanceChanged         (SoundStreamID id, float b) override;
+    bool noticeSignalMinQualityChanged(SoundStreamID id, float q) override;
 
-    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
-    bool noticeCaptureChannelsChanged (const QString & /*client_id*/, const QStringList &/*channels*/);
-    bool noticeSoundStreamCreated     (SoundStreamID /*id*/);
+    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/) override;
+    bool noticeCaptureChannelsChanged (const QString & /*client_id*/, const QStringList &/*channels*/) override;
+    bool noticeSoundStreamCreated     (SoundStreamID /*id*/) override;
 
 
 protected:
@@ -114,7 +114,7 @@ protected:
     INLINE_IMPL_DEF_noticeDisconnectedI(IRadioDeviceClient);
     INLINE_IMPL_DEF_noticeDisconnectedI(ISoundStreamClient);
 
-    bool                             eventFilter(QObject *o, QEvent *e);
+    bool                             eventFilter(QObject *o, QEvent *e) override;
     void                             populateDeviceComboBox();
 
 protected slots:
@@ -134,10 +134,10 @@ protected slots:
     void guiMinFrequencyChanged(int v);
     void guiMaxFrequencyChanged(int v);
 
-    void slotDeviceVolumeChanged (double v); // for KDoubleNumInput,  0.0..1.0
-    void slotTrebleChanged (double t);       // for KDoubleNumInput,  0.0..1.0
-    void slotBassChanged   (double b);       // for KDoubleNumInput,  0.0..1.0
-    void slotBalanceChanged(double b);       // for KDoubleNumInput, -1.0..1.0
+    void slotDeviceVolumeChanged (double v); // for QDoubleSpinBox,  0.0..1.0
+    void slotTrebleChanged (double t);       // for QDoubleSpinBox,  0.0..1.0
+    void slotBassChanged   (double b);       // for QDoubleSpinBox,  0.0..1.0
+    void slotBalanceChanged(double b);       // for QDoubleSpinBox, -1.0..1.0
 
     void slotDeviceVolumeChanged (int v);    // for slider, 0..65535
     void slotTrebleChanged (int t);          // for slider, 0..65535

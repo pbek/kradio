@@ -17,7 +17,7 @@
 
 #include "seekhelper.h"
 
-#include <kdebug.h>
+#include <QtCore/QDebug>
 
 SeekHelper::SeekHelper(ISeekRadio &parent)
   : m_state(off),

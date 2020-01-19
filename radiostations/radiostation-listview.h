@@ -23,10 +23,12 @@
 
 #include <kconfiggroup.h>
 
+#include "kradio-def.h"
+
 class RadioStation;
 class StationList;
 
-class KDE_EXPORT RadioStationModel : public QAbstractItemModel
+class KRADIO5_EXPORT RadioStationModel : public QAbstractItemModel
 {
 Q_OBJECT
 public:
@@ -44,19 +46,19 @@ public:
     RadioStationModel(QObject *parent=0);
     virtual ~RadioStationModel();
 
-    virtual int columnCount(const QModelIndex &parent = QModelIndex()) const;
-    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    virtual bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
-    virtual Qt::ItemFlags flags(const QModelIndex &index) const;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    virtual QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const;
-    virtual bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
-    QMimeData *mimeData(const QModelIndexList &indexes) const;
-    virtual QStringList mimeTypes() const;
-    virtual QModelIndex parent(const QModelIndex &index) const;
-    virtual bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
-    virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    virtual Qt::DropActions supportedDropActions() const;
+    virtual int           columnCount(const QModelIndex &parent = QModelIndex())     const override;
+    virtual QVariant      data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    virtual bool          dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) override;
+    virtual Qt::ItemFlags flags(const QModelIndex &index) const override;
+    virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    virtual QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
+    virtual bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
+    QMimeData *mimeData(const QModelIndexList &indexes) const override;
+    virtual QStringList mimeTypes() const override;
+    virtual QModelIndex parent(const QModelIndex &index) const override;
+    virtual bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
+    virtual int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    virtual Qt::DropActions supportedDropActions() const override;
 
     void setStation(int idx, const RadioStation &, int nr);
     void setStations(const StationList &);
@@ -69,7 +71,7 @@ private:
     QVector<RS> m_stations;
 };
 
-class KDE_EXPORT RadioStationListView : public QTreeView
+class KRADIO5_EXPORT RadioStationListView : public QTreeView
 {
 Q_OBJECT
 public:
@@ -97,8 +99,8 @@ public:
 
 protected:
 
-    virtual void dragMoveEvent(QDragMoveEvent *event);
-    virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous);
+    virtual void dragMoveEvent(QDragMoveEvent *event) override;
+    virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous) override;
 
 protected slots:
 

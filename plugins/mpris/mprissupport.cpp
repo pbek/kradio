@@ -15,8 +15,7 @@
  ***************************************************************************/
 
 #include <QDBusConnection>
-#include <KDE/KAboutData>
-#include <KDE/KCmdLineArgs>
+#include <KAboutData>
 
 #include <unistd.h>
 
@@ -38,16 +37,15 @@
 static KAboutData aboutData()
 {
     KAboutData about("MPRISSupport",
-                     PROJECT_NAME,
-                     ki18nc("@title", "MPRIS"),
+                     i18nc("@title", "MPRIS"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "MPRIS Support"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2014 Pino Toscano"),
-                     KLocalizedString(),
+                     i18nc("@title", "MPRIS Support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2014 Pino Toscano"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Pino Toscano"), KLocalizedString(), "toscano.pino@tiscali.it");
+    about.addAuthor(i18nc("@info:credit", "Pino Toscano"), NULL, "toscano.pino@tiscali.it");
     return about;
 }
 
@@ -72,7 +70,7 @@ void MPRISSupport::startPlugin()
         QDBusConnection dbus = QDBusConnection::sessionBus();
 
         QString mpris2Name = QString::fromLatin1("org.mpris.MediaPlayer2.%1.instance%2")
-                             .arg(KCmdLineArgs::aboutData()->appName())
+                             .arg(KAboutData::applicationData().componentName())
                              .arg(getpid());
 
         bool success = dbus.registerService(mpris2Name);
@@ -242,7 +240,7 @@ void MPRISSupport::setVolume(double vol)
 
 static QString makeTrackId(const RadioStation &rs)
 {
-    return QString::fromLatin1("/net/sourceforge/") + KCmdLineArgs::aboutData()->appName() + "/id-" + rs.stationID();
+  return QString::fromLatin1("/net/sourceforge/") + KAboutData::applicationData().componentName() + "/id-" + rs.stationID();
 }
 
 QVariantMap MPRISSupport::mprisMetadata() const
@@ -269,7 +267,7 @@ QVariantMap MPRISSupport::mprisMetadata() const
     const QString className = rs.getClassName();
     if (className == QLatin1String("InternetRadioStation")) {
         const InternetRadioStation *ir = static_cast<const InternetRadioStation *>(&rs);
-        metaData["xesam:url"] = ir->url().prettyUrl();
+        metaData["xesam:url"] = ir->url().toDisplayString();
     } else if (className == QLatin1String("FrequencyRadioStation")) {
         const FrequencyRadioStation *fr = static_cast<const FrequencyRadioStation *>(&rs);
         metaData["kradio:frequency"] = fr->frequency();
@@ -332,4 +330,3 @@ void MPRISSupport::playPause()
     }
 }
 
-#include <mprissupport.moc>

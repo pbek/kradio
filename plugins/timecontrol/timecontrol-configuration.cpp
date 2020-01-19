@@ -28,7 +28,7 @@ using std::sort;
 #include <QPushButton>
 
 #include <klocalizedstring.h>
-#include <kicon.h>
+#include <QtGui/QIcon>
 
 #include "stationlist.h"
 #include "alarm.h"
@@ -58,13 +58,13 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
 {
     setupUi(this);
 
-    buttonAlarmNew   ->setIcon(KIcon("document-new"));
-    buttonDeleteAlarm->setIcon(KIcon("edit-delete"));
+    buttonAlarmNew   ->setIcon(QIcon("document-new"));
+    buttonDeleteAlarm->setIcon(QIcon("edit-delete"));
 
-    comboAlarmType->insertItem(Alarm::StartPlaying,   KIcon("kradio_muteoff"), i18n("Start Playing"));
-    comboAlarmType->insertItem(Alarm::StopPlaying,    KIcon("kradio_muteon"),  i18n("Stop Playing"));
-    comboAlarmType->insertItem(Alarm::StartRecording, KIcon("media-record"),   i18n("Start Recording"));
-    comboAlarmType->insertItem(Alarm::StopRecording,  KIcon("kradio_muteon"),  i18n("Stop Recording"));
+    comboAlarmType->insertItem(Alarm::StartPlaying,   QIcon("kradio_muteoff"), i18n("Start Playing"));
+    comboAlarmType->insertItem(Alarm::StopPlaying,    QIcon("kradio_muteon"),  i18n("Stop Playing"));
+    comboAlarmType->insertItem(Alarm::StartRecording, QIcon("media-record"),   i18n("Start Recording"));
+    comboAlarmType->insertItem(Alarm::StopRecording,  QIcon("kradio_muteon"),  i18n("Stop Recording"));
 
     editAlarmDate->setCalendarPopup(true);
     editAlarmVolume->setSpecialValueText(i18n("unchanged"));
@@ -227,7 +227,7 @@ bool TimeControlConfiguration::noticeStationsChanged(const StationList &sl)
     stationIDs.push_back(QString());
 
     for (StationList::const_iterator i = sl.begin(); i != sl.end(); ++i) {
-        comboStationSelection->addItem(KIcon((*i)->iconName()),
+        comboStationSelection->addItem(QIcon((*i)->iconName()),
                                        (*i)->longName());
         stationIDs.push_back((*i)->stationID());
     }
@@ -543,4 +543,3 @@ void TimeControlConfiguration::slotSetDirty()
 }
 
 
-#include "timecontrol-configuration.moc"

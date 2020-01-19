@@ -18,10 +18,11 @@
 #ifndef KRADIO_SOUNDSTREAMID_H
 #define KRADIO_SOUNDSTREAMID_H
 
-#include <kdemacros.h>
-#include <QMetaType>
+#include <QtCore/QMetaType>
 
-class KDE_EXPORT SoundStreamID {
+#include "kradio-def.h"
+
+class KRADIO5_EXPORT SoundStreamID {
 
     SoundStreamID(int _id, int _phys_id);
 public:

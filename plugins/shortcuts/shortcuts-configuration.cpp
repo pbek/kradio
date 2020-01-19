@@ -39,4 +39,3 @@ void ShortcutsConfiguration::slotCancel()
     undoChanges();
 }
 
-#include "shortcuts-configuration.moc"

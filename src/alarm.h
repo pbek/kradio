@@ -21,8 +21,6 @@
 #include <QDateTime>
 #include <QVector>
 
-#include <kdemacros.h>
-
 #include "recording_template.h"
 
 /**
@@ -31,7 +29,7 @@
 
 
 
-class KDE_EXPORT Alarm
+class KRADIO5_EXPORT Alarm
 {
 public:
 
@@ -57,8 +55,10 @@ protected:
 public:
     Alarm();
     Alarm(const QDateTime &time, bool daily, bool enabled);
-    Alarm(const Alarm &);
     ~Alarm();
+    
+    Alarm              (const Alarm &) = default;
+    Alarm & operator = (const Alarm &) = default;
 
     bool           isEnabled() const                       { return m_enabled;             }
     bool           isDaily() const                         { return m_daily;               }

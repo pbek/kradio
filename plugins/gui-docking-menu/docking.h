@@ -18,8 +18,8 @@
 #ifndef KRADIO_DOCKING_H
 #define KRADIO_DOCKING_H
 
-#include <ksystemtrayicon.h>
-#include <kmenu.h>
+#include <QtWidgets/QSystemTrayIcon>
+#include <QMenu>
 #include <khelpmenu.h>
 
 
@@ -34,7 +34,7 @@
 enum SystrayClickAction { staShowHide = 0, staPowerOnOff = 1, staPause, staRecord, staSystrayMenu, staGuiPluginsMenu, staConfigDialog, staNone };
 enum SystrayWheelAction { swaChangeStation = 0, swaChangeVolume, swaChangeFrequency, swaNone };
 
-class RadioDocking : public KSystemTrayIcon,
+class RadioDocking : public QSystemTrayIcon,
                      public PluginBase,
                      public IRadioClient,
                      public ITimeControlClient,
@@ -47,78 +47,78 @@ public:
     RadioDocking (const QString &instanceID, const QString &name);
     virtual ~RadioDocking();
 
-    virtual bool connectI (Interface *);
-    virtual bool disconnectI (Interface *);
+    virtual bool connectI (Interface *)    override;
+    virtual bool disconnectI (Interface *) override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("RadioDocking"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("RadioDocking"); }
 
 
     // PluginBase
 
 public:
-    virtual void   saveState   (      KConfigGroup &) const;
-    virtual void   restoreState(const KConfigGroup &);
+    virtual void   saveState   (      KConfigGroup &) const override;
+    virtual void   restoreState(const KConfigGroup &)       override;
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
 
     // IStationSelection
 
 RECEIVERS:
-    bool setStationSelection(const QStringList &sl);
+    bool setStationSelection(const QStringList &sl) override;
 
 ANSWERS:
-    const QStringList & getStationSelection () const { return m_stationIDs; }
+    const QStringList & getStationSelection () const override { return m_stationIDs; }
 
 
     // IRadioDevicePoolClient
 
 RECEIVERS:
-    bool noticeActiveDeviceChanged(IRadioDevice *)  { return false; }
-    bool noticeDevicesChanged(const QList<IRadioDevice*> &)  { return false; }
-    bool noticeDeviceDescriptionChanged(const QString &) { return false; }
+    bool noticeActiveDeviceChanged     (IRadioDevice *)               override { return false; }
+    bool noticeDevicesChanged          (const QList<IRadioDevice*> &) override { return false; }
+    bool noticeDeviceDescriptionChanged(const QString &)              override { return false; }
 
     // ITimeControlClient
 
 RECEIVERS:
-    bool noticeAlarmsChanged(const AlarmVector &)   { return false; }
-    bool noticeAlarm(const Alarm &)                 { return false; }
-    bool noticeNextAlarmChanged(const Alarm *);
-    bool noticeCountdownStarted(const QDateTime &/*end*/);
-    bool noticeCountdownStopped();
-    bool noticeCountdownZero();
-    bool noticeCountdownSecondsChanged(int n, bool suspendOnSleep);
+    bool noticeAlarmsChanged(const AlarmVector &)   override { return false; }
+    bool noticeAlarm(const Alarm &)                 override { return false; }
+    bool noticeNextAlarmChanged(const Alarm *) override;
+    bool noticeCountdownStarted(const QDateTime &/*end*/) override;
+    bool noticeCountdownStopped() override;
+    bool noticeCountdownZero   () override;
+    bool noticeCountdownSecondsChanged(int n, bool suspendOnSleep) override;
 
 
     // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged (const RadioStation &, int idx);
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged     (bool  on)                       override;
+    bool noticeStationChanged   (const RadioStation &, int idx)  override;
+    bool noticeStationsChanged  (const StationList  &sl)         override;
+    bool noticePresetFileChanged(const QString      &/*f*/)      override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/);
-    bool noticeRDSStationNameChanged(const QString &/*s*/)       { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)          override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       override;
+    bool noticeRDSStationNameChanged(const QString &/*s*/)       override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) override { return false; }
 
     // ISoundStreamClient
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
 
     bool startRecordingWithFormat(SoundStreamID      /*id*/,
                                   const SoundFormat &/*proposed_format*/,
                                   SoundFormat       &/*real_format*/,
-                                  const recordingTemplate_t  & /*template*/);
-    bool stopRecording (SoundStreamID /*id*/);
-    bool pausePlayback (SoundStreamID /*id*/);
-    bool resumePlayback(SoundStreamID /*id*/);
+                                  const recordingTemplate_t  & /*template*/) override;
+    bool stopRecording (SoundStreamID /*id*/) override;
+    bool pausePlayback (SoundStreamID /*id*/) override;
+    bool resumePlayback(SoundStreamID /*id*/) override;
 
-    bool noticeSoundStreamChanged(SoundStreamID id);
+    bool noticeSoundStreamChanged(SoundStreamID id) override;
 
 protected:
 
@@ -148,7 +148,7 @@ protected slots:
 //     void    slotUpdateRecordingMenu();
 
 protected:
-    bool    event(QEvent *e);
+    bool    event(QEvent *e) override;
     bool    handleClickAction(SystrayClickAction clickAction);
     bool    handleWheelAction(SystrayWheelAction wheelAction, int wheelDir);
 
@@ -177,7 +177,7 @@ signals:
 
 protected:
 
-    QPointer<KMenu>                            m_menu;
+    QPointer<QMenu>                            m_menu;
     QMenu                                     *m_recordingMenu;
     KHelpMenu                                  m_helpMenu;
     QStringList                                m_stationIDs;

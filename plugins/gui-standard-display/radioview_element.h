@@ -38,8 +38,8 @@ public:
     RadioViewElement (QWidget *parent, const QString &name, RadioViewClass myClass);
     virtual ~RadioViewElement();
 
-    virtual bool connectI   (Interface *) { return false; }   // default behaviour, please overwrite in derived class
-    virtual bool disconnectI(Interface *) { return false; }   // default behaviour, please overwrite in derived class
+    virtual bool connectI   (Interface *)  override { return false; }   // default behaviour, please overwrite in derived class
+    virtual bool disconnectI(Interface *)  override { return false; }   // default behaviour, please overwrite in derived class
 
     virtual float getUsability (Interface *) const { return 0.00; } // 0 <= Usability <= 1, used to decide wich Element to use
                                                             // should be overwritten ;)

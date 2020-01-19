@@ -18,7 +18,7 @@
 #include <QList>
 
 #include <kconfiggroup.h>
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <klocalizedstring.h>
 
 #include <unistd.h>
@@ -40,13 +40,12 @@
 static KAboutData aboutData()
 {
     KAboutData about("InternetRadio",
-                     PROJECT_NAME,
-                     ki18nc("@title", "Internet Radio"),
+                     i18nc("@title", "Internet Radio"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Pseudo radio device for Internet radio stream support"),
-                     KAboutData::License_GPL,
-                     KLocalizedString(),
-                     KLocalizedString(),
+                     i18nc("@title", "Pseudo radio device for Internet radio stream support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     NULL,
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;
@@ -90,8 +89,8 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
 
     QObject::connect(&m_playlistHandler, SIGNAL(sigEOL()),                      this, SLOT(slotPlaylistEOL()));
     QObject::connect(&m_playlistHandler, SIGNAL(sigError(QString)),             this, SLOT(slotPlaylistError(QString)));
-    QObject::connect(&m_playlistHandler, SIGNAL(sigPlaylistLoaded(KUrl::List)), this, SLOT(slotPlaylistLoaded(KUrl::List)));
-    QObject::connect(&m_playlistHandler, SIGNAL(sigStreamSelected(KUrl)),       this, SLOT(slotPlaylistStreamSelected(KUrl)));
+    QObject::connect(&m_playlistHandler, SIGNAL(sigPlaylistLoaded(const QList<QUrl>&)), this, SLOT(slotPlaylistLoaded(const QList<QUrl>&)));
+    QObject::connect(&m_playlistHandler, SIGNAL(sigStreamSelected(QUrl)),       this, SLOT(slotPlaylistStreamSelected(QUrl)));
     QObject::connect(&m_watchdogTimer,   SIGNAL(timeout()),                     this, SLOT(slotWatchdogTimeout()));
 }
 
@@ -620,7 +619,7 @@ void   InternetRadio::restoreState (const KConfigGroup &config)
     emit sigWatchdogSettingsChanged(m_watchdogTimeout);
     emit sigDecoderSettingsChanged (m_maxStreamProbeSize, m_maxStreamAnalyzeTime);
 
-    setURL(config.readEntry("URL", KUrl()), NULL);
+    setURL(config.readEntry("URL", QUrl()), NULL);
     m_restorePowerOn = config.readEntry ("PowerOn", false);
 
     if (isPowerOff())
@@ -667,7 +666,7 @@ bool InternetRadio::noticeStationsChanged(const StationList &sl)
             m_currentStation = *irs;
             notifyStationChanged(m_currentStation);
         } else {
-            KUrl oldurl = m_currentStation.url();
+            QUrl oldurl = m_currentStation.url();
             m_currentStation = *irs;
             m_currentStation.setUrl(oldurl);
             notifyStationChanged(m_currentStation);
@@ -696,7 +695,7 @@ void InternetRadio::radio_init()
 
 
 
-void InternetRadio::slotPlaylistLoaded(KUrl::List playlist)
+void InternetRadio::slotPlaylistLoaded(const QList<QUrl> & playlist)
 {
     m_currentPlaylist = playlist;
 #ifdef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
@@ -707,7 +706,7 @@ void InternetRadio::slotPlaylistLoaded(KUrl::List playlist)
 }
 
 
-void InternetRadio::slotPlaylistStreamSelected(KUrl stream)
+void InternetRadio::slotPlaylistStreamSelected(QUrl stream)
 {
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     stopStreamReader();
@@ -731,20 +730,20 @@ void InternetRadio::slotPlaylistEOL()
 
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-void InternetRadio::startStreamReader(KUrl stream)
+void InternetRadio::startStreamReader(QUrl stream)
 {
     stopStreamReader();
-    if (stream.protocol().startsWith("mms")) {
+    if (stream.scheme().startsWith("mms")) {
         m_streamReader = new MMSXHandler();
     } else {
         m_streamReader = new IcyHttpHandler();
     }
     connect(m_streamReader, SIGNAL(sigMetaDataUpdate(KIO::MetaData)),             this, SLOT(slotMetaDataUpdate(KIO::MetaData)));
-    connect(m_streamReader, SIGNAL(sigError(KUrl)),                               this, SLOT(slotStreamError(KUrl)));
-    connect(m_streamReader, SIGNAL(sigFinished(KUrl)),                            this, SLOT(slotStreamFinished(KUrl)));
-    connect(m_streamReader, SIGNAL(sigStarted(KUrl)),                             this, SLOT(slotStreamStarted(KUrl)));
-    connect(m_streamReader, SIGNAL(sigUrlChanged(KUrl)),                          this, SLOT(slotInputStreamUrlChanged(KUrl)));
-    connect(m_streamReader, SIGNAL(sigConnectionEstablished(KUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(KUrl,KIO::MetaData)));
+    connect(m_streamReader, SIGNAL(sigError(QUrl)),                               this, SLOT(slotStreamError(QUrl)));
+    connect(m_streamReader, SIGNAL(sigFinished(QUrl)),                            this, SLOT(slotStreamFinished(QUrl)));
+    connect(m_streamReader, SIGNAL(sigStarted(QUrl)),                             this, SLOT(slotStreamStarted(QUrl)));
+    connect(m_streamReader, SIGNAL(sigUrlChanged(QUrl)),                          this, SLOT(slotInputStreamUrlChanged(QUrl)));
+    connect(m_streamReader, SIGNAL(sigConnectionEstablished(QUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(QUrl,KIO::MetaData)));
 
     connect(m_streamReader, SIGNAL(sigStreamData(QByteArray)),                    this, SLOT(slotWatchdogData(QByteArray)));
 
@@ -1011,9 +1010,9 @@ void InternetRadio::freeAllBuffers()
 
 
 
-bool InternetRadio::setURL(const KUrl &url, const InternetRadioStation *rs)
+bool InternetRadio::setURL(const QUrl &url, const InternetRadioStation *rs)
 {
-    KUrl oldurl = m_currentStation.url();
+    QUrl oldurl = m_currentStation.url();
 
     if (rs) {
         m_currentStation = *rs;
@@ -1050,7 +1049,7 @@ bool InternetRadio::setURL(const KUrl &url, const InternetRadioStation *rs)
     return true;
 }
 
-const KUrl &InternetRadio::getURL() const
+const QUrl &InternetRadio::getURL() const
 {
     return m_currentStation.url();
 }
@@ -1142,7 +1141,7 @@ void InternetRadio::slotWatchdogTimeout()
 {
     if (isPowerOn() && !m_watchdogHandlerInService) {
         m_watchdogHandlerInService = true;
-        logWarning(i18n("Internet Radio Plugin (%1): stream data timeout (>= %2 s)", m_playlistHandler.currentStreamUrl().pathOrUrl(), m_watchdogTimeout));
+        logWarning(i18n("Internet Radio Plugin (%1): stream data timeout (>= %2 s)", m_playlistHandler.currentStreamUrl().toString(), m_watchdogTimeout));
         m_playlistHandler.selectNextStream(false, false, false);
         m_watchdogHandlerInService = false;
     }
@@ -1153,13 +1152,13 @@ void InternetRadio::slotWatchdogTimeout()
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
 
 
-void InternetRadio::slotStreamError(KUrl /*url*/)
+void InternetRadio::slotStreamError(QUrl /*url*/)
 {
     m_playlistHandler.selectNextStream(true, true);
 }
 
 
-void InternetRadio::slotStreamFinished(KUrl /*url*/)
+void InternetRadio::slotStreamFinished(QUrl /*url*/)
 {
     if (m_watchdogTimeout) {
         slotWatchdogTimeout();
@@ -1169,19 +1168,19 @@ void InternetRadio::slotStreamFinished(KUrl /*url*/)
 }
 
 
-void InternetRadio::slotStreamStarted(KUrl /*url*/)
+void InternetRadio::slotStreamStarted(QUrl /*url*/)
 {
     // currently ignored
 }
 
 
-void InternetRadio::slotStreamConnectionEstablished(KUrl /*url*/, KIO::MetaData /*metaData*/)
+void InternetRadio::slotStreamConnectionEstablished(QUrl /*url*/, KIO::MetaData /*metaData*/)
 {
     startDecoderThread();
 }
 
 
-void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
+void    InternetRadio::slotInputStreamUrlChanged(QUrl /*url*/)
 {
     // currently ignored
 }
@@ -1209,7 +1208,7 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //
 //             // start download job
 //             stopStreamDownload();
-//             logDebug(i18n("opening stream %1", m_currentStreamUrl.pathOrUrl()));
+//             logDebug(i18n("opening stream %1", m_currentStreamUrl.toString()));
 //
 //             m_streamJob = KIO::get(m_currentStreamUrl, KIO::NoReload, KIO::HideProgressInfo);
 //             if (m_streamJob) {
@@ -1217,11 +1216,11 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //                 QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
 //                 m_streamJob->start();
 //                 if (m_streamJob->error()) {
-//                     logError(i18n("Failed to start stream download of %1: %2", m_currentStreamUrl.pathOrUrl(), m_streamJob->errorString()));
+//                     logError(i18n("Failed to start stream download of %1: %2", m_currentStreamUrl.toString(), m_streamJob->errorString()));
 //                     stopStreamDownload();
 //                 }
 //             } else {
-//                 logError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer", m_currentStreamUrl.pathOrUrl()));
+//                 logError(i18n("Failed to start stream download of %1: KIO::get returned NULL pointer", m_currentStreamUrl.toString()));
 //                 stopStreamDownload();
 //             }
 //         } else {
@@ -1271,7 +1270,7 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 //     if (m_streamJob == job) {
 //         bool err = false;
 //         if (m_streamJob->error()) {
-//             logError(i18n("Failed to load stream data for %1: %2", m_currentStreamUrl.pathOrUrl(), m_streamJob->errorString()));
+//             logError(i18n("Failed to load stream data for %1: %2", m_currentStreamUrl.toString(), m_streamJob->errorString()));
 //             err = true;
 //         }
 //         stopStreamDownload();
@@ -1286,4 +1285,3 @@ void    InternetRadio::slotInputStreamUrlChanged(KUrl /*url*/)
 #endif
 
 
-#include "internetradio.moc"

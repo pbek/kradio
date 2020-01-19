@@ -33,28 +33,28 @@ PluginsDelegate::~PluginsDelegate()
 {
 }
 
-void PluginsDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+void PluginsDelegate::paint(QPainter *painter, const QStyleOptionViewItem &p_option, const QModelIndex &index) const
 {
-    QStyleOptionViewItemV4 optionV4 = option;
-    initStyleOption(&optionV4, index);
+    QStyleOptionViewItem option = p_option;
+    initStyleOption(&option, index);
 
-    QStyle *style = optionV4.widget ? optionV4.widget->style() : QApplication::style();
+    QStyle *style = option.widget ? option.widget->style() : QApplication::style();
 
     QTextDocument doc;
-    doc.setHtml(optionV4.text);
+    doc.setHtml(option.text);
     doc.setDocumentMargin(0);
-    doc.setDefaultFont(optionV4.font);
+    doc.setDefaultFont(option.font);
 
-    optionV4.text = QString();
-    style->drawControl(QStyle::CE_ItemViewItem, &optionV4, painter);
+    option.text = QString();
+    style->drawControl(QStyle::CE_ItemViewItem, &option, painter);
 
     QAbstractTextDocumentLayout::PaintContext ctx;
-    if (optionV4.state & QStyle::State_Selected)
-        ctx.palette.setColor(QPalette::Text, optionV4.palette.color(QPalette::Active, QPalette::HighlightedText));
+    if (option.state & QStyle::State_Selected)
+        ctx.palette.setColor(QPalette::Text, option.palette.color(QPalette::Active, QPalette::HighlightedText));
     else
-        ctx.palette.setColor(QPalette::Text, optionV4.palette.color(QPalette::Active, QPalette::Text));
+        ctx.palette.setColor(QPalette::Text, option.palette.color(QPalette::Active, QPalette::Text));
 
-    QRect textRect = style->subElementRect(QStyle::SE_ItemViewItemText, &optionV4);
+    QRect textRect = style->subElementRect(QStyle::SE_ItemViewItemText, &option);
     textRect.setWidth(textRect.width() - 2 * MARGIN);
     textRect.translate(MARGIN, MARGIN + (textRect.height() - 2 * MARGIN - doc.size().height()) / 2);
     painter->save();
@@ -64,18 +64,18 @@ void PluginsDelegate::paint(QPainter *painter, const QStyleOptionViewItem &optio
     painter->restore();
 }
 
-QSize PluginsDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
+QSize PluginsDelegate::sizeHint(const QStyleOptionViewItem &p_option, const QModelIndex &index) const
 {
-    QStyleOptionViewItemV4 optionV4 = option;
-    initStyleOption(&optionV4, index);
+    QStyleOptionViewItem option = p_option;
+    initStyleOption(&option, index);
 
     QSize ret;
 
     QTextDocument doc;
-    doc.setHtml(optionV4.text);
+    doc.setHtml(option.text);
     doc.setDocumentMargin(0);
-    doc.setDefaultFont(optionV4.font);
-    doc.setTextWidth(optionV4.rect.width());
+    doc.setDefaultFont(option.font);
+    doc.setTextWidth(option.rect.width());
     const QSize docSize = QSize(doc.idealWidth(), doc.size().height());
     ret = docSize;
 

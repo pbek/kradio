@@ -50,104 +50,104 @@ public:
     InternetRadio (const QString &instanceID, const QString &name);
     virtual ~InternetRadio ();
 
-    virtual bool connectI   (Interface *);
-    virtual bool disconnectI(Interface *);
+    virtual bool connectI   (Interface *) override;
+    virtual bool disconnectI(Interface *) override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("InternetRadio"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("InternetRadio"); }
 
     // PluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
-    virtual void   startPlugin();
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
+    virtual void   startPlugin() override;
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
     // IRadioDevice methods
 
 RECEIVERS:
-    virtual bool setPower(bool p);
-    virtual bool powerOn();
-    virtual bool powerOff();
-    virtual bool activateStation(const RadioStation &rs);
+    virtual bool setPower(bool p) override;
+    virtual bool powerOn ()       override;
+    virtual bool powerOff()       override;
+    virtual bool activateStation(const RadioStation &rs) override;
 
 ANSWERS:
-    virtual bool                   isPowerOn() const;
-    virtual bool                   isPowerOff() const;
-    virtual const RadioStation  &  getCurrentStation() const;
-    virtual const QString       &  getDescription() const;
-    virtual SoundStreamID          getCurrentSoundStreamSinkID() const;
-    virtual SoundStreamID          getCurrentSoundStreamSourceID() const;
+    virtual bool                   isPowerOn () const override;
+    virtual bool                   isPowerOff() const override;
+    virtual const RadioStation  &  getCurrentStation() const override;
+    virtual const QString       &  getDescription()    const override;
+    virtual SoundStreamID          getCurrentSoundStreamSinkID  () const override;
+    virtual SoundStreamID          getCurrentSoundStreamSourceID() const override;
 
-    virtual bool                   getRDSState      () const;
-    virtual const QString       &  getRDSRadioText  () const;
-    virtual const QString       &  getRDSStationName() const;
+    virtual bool                   getRDSState      () const override;
+    virtual const QString       &  getRDSRadioText  () const override;
+    virtual const QString       &  getRDSStationName() const override;
 
     // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool /*on*/)                         { return false; }
-    bool noticeStationChanged (const RadioStation &, int /*idx*/){ return false; }
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &/*f*/)           { return false; }
+    bool noticePowerChanged(bool /*on*/)                          override { return false; }
+    bool noticeStationChanged (const RadioStation &, int /*idx*/) override { return false; }
+    bool noticeStationsChanged(const StationList &sl)             override;
+    bool noticePresetFileChanged(const QString &/*f*/)            override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)          { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)       { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/)       { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/)           override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/)        override { return false; }
 
-    bool noticeCurrentSoundStreamSinkIDChanged(SoundStreamID /*id*/)   { return false; }
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/) override { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/) override { return false; }
 
     // IInternetRadio
 
 RECEIVERS:
-    bool setURL(const KUrl &url, const InternetRadioStation *rs);
+    bool setURL(const QUrl &url, const InternetRadioStation *rs) override;
 
 ANSWERS:
-    const KUrl &getURL() const;
+    const QUrl &getURL() const override;
 
     // ISoundStreamClient: mixer functions
 
 RECEIVERS:
-    void noticeConnectedI          (ISoundStreamServer                *s, bool pointer_valid);
-    void noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid);
+    void noticeConnectedI          (ISoundStreamServer                *s, bool pointer_valid) override;
+    void noticeConnectedSoundClient(ISoundStreamClient::thisInterface *i, bool pointer_valid) override;
 
 
-    bool noticeReadyForPlaybackData(SoundStreamID id, size_t free_size);
+    bool noticeReadyForPlaybackData(SoundStreamID id, size_t free_size) override;
 
-    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/);
+    bool noticePlaybackChannelsChanged(const QString & /*client_id*/, const QStringList &/*channels*/) override;
 
-    bool startCaptureWithFormat(SoundStreamID id, const SoundFormat &proposed_format, SoundFormat &real_format, bool force_format);
+    bool startCaptureWithFormat(SoundStreamID id, const SoundFormat &proposed_format, SoundFormat &real_format, bool force_format) override;
 
-    bool muteSource   (SoundStreamID, bool mute   = true);
-    bool unmuteSource (SoundStreamID, bool unmute = true);
+    bool muteSource   (SoundStreamID, bool mute   = true) override;
+    bool unmuteSource (SoundStreamID, bool unmute = true) override;
 
-    bool getSignalQuality(SoundStreamID, float &q) const;
-    bool hasGoodQuality(SoundStreamID, bool &) const;
-    bool isStereo(SoundStreamID, bool &s) const;
-    bool isSourceMuted(SoundStreamID, bool &m) const;
+    bool getSignalQuality(SoundStreamID, float &q) const override;
+    bool hasGoodQuality  (SoundStreamID, bool &)   const override;
+    bool isStereo        (SoundStreamID, bool &s)  const override;
+    bool isSourceMuted   (SoundStreamID, bool &m)  const override;
 
     // ISoundStreamClient: generic stream handling (broadcasts)
 
 RECEIVERS:
 
-    bool getSoundStreamDescription(SoundStreamID id, QString &descr) const;
-    bool getSoundStreamRadioStation(SoundStreamID id, const RadioStation *&rs) const;
-    bool enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list) const;
+    bool getSoundStreamDescription  (SoundStreamID id, QString &descr)          const override;
+    bool getSoundStreamRadioStation (SoundStreamID id, const RadioStation *&rs) const override;
+    bool enumerateSourceSoundStreams(QMap<QString, SoundStreamID> &list)        const override;
 
-    bool noticeSoundStreamSinkRedirected(SoundStreamID oldID, SoundStreamID newID);
-    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID);
-    bool noticeSoundStreamClosed(SoundStreamID id);
+    bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID) override;
+    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID) override;
+    bool noticeSoundStreamClosed          (SoundStreamID id)                         override;
 
 
     // if the radio is powered off, we will handle the volume by changing m_defaultPlaybackVolume
-    bool       setPlaybackVolume(SoundStreamID id, float volume);
-    bool       getPlaybackVolume(SoundStreamID id, float &volume) const;
+    bool       setPlaybackVolume(SoundStreamID id, float volume)        override;
+    bool       getPlaybackVolume(SoundStreamID id, float &volume) const override;
 
 // pure virtual members of ThreadLoggingClient
 protected:
-    IErrorLogClient    *getErrorLogClient();
+    IErrorLogClient    *getErrorLogClient() override;
 
     // anything else
 public:
@@ -162,8 +162,8 @@ protected slots:
     void    slotDecoderSettingsChanged    (int probe_size, double analysis_time);
 
     // playlist handling via PlaylistHandler object
-    void    slotPlaylistLoaded(KUrl::List playlist);
-    void    slotPlaylistStreamSelected(KUrl stream);
+    void    slotPlaylistLoaded(const QList<QUrl> & playlist);
+    void    slotPlaylistStreamSelected(QUrl stream);
     void    slotPlaylistError(QString errorMsg);
     void    slotPlaylistEOL();
 
@@ -196,11 +196,11 @@ protected slots:
     void    slotWatchdogTimeout();
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    void    slotInputStreamUrlChanged(KUrl url);
-    void    slotStreamError   (KUrl url);
-    void    slotStreamFinished(KUrl url);
-    void    slotStreamStarted (KUrl url);
-    void    slotStreamConnectionEstablished(KUrl url, KIO::MetaData metaData);
+    void    slotInputStreamUrlChanged(QUrl url);
+    void    slotStreamError   (QUrl url);
+    void    slotStreamFinished(QUrl url);
+    void    slotStreamStarted (QUrl url);
+    void    slotStreamConnectionEstablished(QUrl url, KIO::MetaData metaData);
 #endif
 
 protected:
@@ -208,7 +208,7 @@ protected:
     void    stopDecoderThread();
 
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
-    void    startStreamReader(KUrl stream);
+    void    startStreamReader(QUrl stream);
     void    stopStreamReader();
 #endif
 
@@ -226,7 +226,7 @@ protected:
     DecoderThread                *m_decoderThread;
 
     InternetRadioStation          m_currentStation;
-    KUrl::List                    m_currentPlaylist;
+    QList<QUrl>                   m_currentPlaylist;
     PlaylistHandler               m_playlistHandler;
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     StreamReader                 *m_streamReader;

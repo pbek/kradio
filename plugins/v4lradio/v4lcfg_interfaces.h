@@ -55,6 +55,8 @@ struct V4LCaps
     V4LCaps();
     V4LCaps(const V4LCaps &);
 
+    V4LCaps & operator = (const V4LCaps &) = default;
+
     float  volumeStep()  const { return 1.0 / (float)(maxVolume  - minVolume); }
     float  trebleStep()  const { return 1.0 / (float)(maxTreble  - minTreble); }
     float  bassStep()    const { return 1.0 / (float)(maxBass    - minBass); }
@@ -207,8 +209,8 @@ QUERIES:
     IF_QUERY   (   QList<DeviceInfo> queryDeviceProposals(const QString &devdir = "/dev/") )
 
 RECEIVERS:
-    virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/);
-    virtual void noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/);
+    virtual void noticeConnectedI    (cmplInterface *, bool /*pointer_valid*/) override;
+    virtual void noticeDisconnectedI (cmplInterface *, bool /*pointer_valid*/) override;
 };
 
 #endif

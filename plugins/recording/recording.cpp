@@ -30,7 +30,7 @@
 #include <QEvent>
 
 #include <kconfig.h>
-#include <kaboutdata.h>
+#include <KAboutData>
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -39,16 +39,15 @@
 static KAboutData aboutDataRecording()
 {
     KAboutData about("Recording",
-                     PROJECT_NAME,
-                     ki18nc("@title", "Recording"),
+                     i18nc("@title", "Recording"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Recording Plugin"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte"),
-                     KLocalizedString(),
+                     i18nc("@title", "Recording Plugin"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2020 Martin Witte"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
     return about;
 }
 
@@ -722,4 +721,3 @@ bool Recording::noticeSoundStreamClosed(SoundStreamID id)
 }
 
 
-#include "recording.moc"

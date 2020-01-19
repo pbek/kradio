@@ -19,7 +19,7 @@
 #define KRADIO_ICY_HTTP_HANDLER_H
 
 #include <QSharedPointer>
-#include <kurl.h>
+#include <QtCore/QUrl>
 #include <kio/job.h>
 #include <kio/jobclasses.h>
 #include <kencodingprober.h>
@@ -41,14 +41,14 @@ public:
     IcyHttpHandler();
     ~IcyHttpHandler();
 
-    void                        startStreamDownload(KUrl url, const QString &metaDataEncoding);
-    void                        stopStreamDownload() { stopStreamDownload(true); }
+    void                        startStreamDownload(QUrl url, const QString &metaDataEncoding) override;
+    void                        stopStreamDownload()  override { stopStreamDownload(true); }
 
-    KIO::MetaData               getConnectionMetaData() const { return m_connectionMetaData; }
+    KIO::MetaData               getConnectionMetaData() const override { return m_connectionMetaData; }
 
 public slots:
-    void                        slotStreamContinue();
-    void                        slotStreamPause();
+    void                        slotStreamContinue() override;
+    void                        slotStreamPause()    override;
 
 protected slots:
     void                        slotStreamData(KIO::Job *job, QByteArray data);
@@ -56,7 +56,7 @@ protected slots:
 
 protected:
     void                        stopStreamDownload(bool emitSigFinished);
-    void                        setupStreamJob(const KUrl &url, const QString &metaDataEncoding);
+    void                        setupStreamJob(const QUrl &url, const QString &metaDataEncoding);
     void                        startStreamJob();
 
     QMap<QString, QString>      splitExtractHttpHeaderKeys(const QString &httpHeader);
@@ -74,7 +74,7 @@ protected:
     size_t                      m_metaRest;
     QByteArray                  m_metaData;
 
-    KUrl                        m_streamUrl;
+    QUrl                        m_streamUrl;
     KIO::TransferJob           *m_streamJob;
     KIO::MetaData               m_connectionMetaData;
 

@@ -29,16 +29,16 @@ public:
     SoundServer(const QString &instanceID, const QString &name);
     ~SoundServer();
 
-    virtual bool connectI (Interface *);
-    virtual bool disconnectI (Interface *);
+    virtual bool connectI    (Interface *) override;
+    virtual bool disconnectI (Interface *) override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("SoundServer"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("SoundServer"); }
 
     // PluginBase
 
 public:
-    virtual void   saveState   (      KConfigGroup &) const;
-    virtual void   restoreState(const KConfigGroup &);
+    virtual void   saveState   (      KConfigGroup &) const override;
+    virtual void   restoreState(const KConfigGroup &)       override;
 };
 
 #endif

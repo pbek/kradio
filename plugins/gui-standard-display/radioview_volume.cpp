@@ -142,4 +142,3 @@ void RadioViewVolume::slotStepDown()
 }
 
 
-#include "radioview_volume.moc"

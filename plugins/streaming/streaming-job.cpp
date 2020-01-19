@@ -20,7 +20,7 @@
 #include <QFile>
 #include <QSocketNotifier>
 #include <QIODevice>
-#include <kurl.h>
+#include <QtCore/QUrl>
 #include <kio/job.h>
 
 #include <unistd.h>
@@ -47,7 +47,7 @@ StreamingJob::StreamingJob()
 {
 }
 
-StreamingJob::StreamingJob(const KUrl &_URL, const SoundFormat &_SoundFormat, size_t _bufferSize)
+StreamingJob::StreamingJob(const QUrl &_URL, const SoundFormat &_SoundFormat, size_t _bufferSize)
   : QObject(),
     m_URL(_URL),
     m_SoundFormat(_SoundFormat),
@@ -96,7 +96,7 @@ StreamingJob::~StreamingJob()
 }
 
 
-void StreamingJob::setURL(const KUrl &url)
+void StreamingJob::setURL(const QUrl &url)
 {
     if (m_URL != url) {
         m_URL = url;
@@ -136,7 +136,7 @@ void StreamingJob::setBufferSize(size_t buffer_size)
 bool StreamingJob::startPutJob()
 {
     if (m_URL.isLocalFile()) {
-        m_File = new QFile(m_URL.pathOrUrl());
+        m_File = new QFile(m_URL.toString());
         m_File->open(QIODevice::WriteOnly | QIODevice::Append);
         int ret = fcntl(m_File->handle(), F_SETFL, O_APPEND | O_NONBLOCK | O_DIRECT);
         if (ret < 0) {
@@ -213,7 +213,7 @@ bool StreamingJob::stopPlayback()
 bool StreamingJob::startGetJob()
 {
     if (m_URL.isLocalFile()) {
-        m_File = new QFile(m_URL.pathOrUrl());
+        m_File = new QFile(m_URL.toString());
         m_File->open(QIODevice::ReadOnly);
         int fileno = m_File->handle();
         int ret = fcntl(fileno, F_SETFL, O_NONBLOCK);
@@ -451,5 +451,4 @@ void   StreamingJob::slotIOJobResult (KIO::Job *job)
     }
 }
 
-#include "streaming-job.moc"
 

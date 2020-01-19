@@ -19,7 +19,7 @@
 #define KRADIO_STREAM_READER_H
 
 #include <QSharedPointer>
-#include <kurl.h>
+#include <QtCore/QUrl>
 
 #include <kio/jobclasses.h>
 
@@ -31,7 +31,7 @@ public:
     StreamReader();
     virtual ~StreamReader();
 
-    virtual void                startStreamDownload(KUrl url, const QString &metaDataEncoding) = 0;
+    virtual void                startStreamDownload(QUrl url, const QString &metaDataEncoding) = 0;
     virtual void                stopStreamDownload()          = 0;
 
     virtual KIO::MetaData       getConnectionMetaData() const = 0;
@@ -41,13 +41,13 @@ public slots:
     virtual void                slotStreamPause()    = 0;
 
 signals:
-    void                        sigError   (KUrl url);
+    void                        sigError   (QUrl url);
     // if an error occurred (sigError), sigFinished should not be emitted
-    void                        sigFinished(KUrl url);
-    void                        sigStarted (KUrl url);
-    void                        sigConnectionEstablished(KUrl url, KIO::MetaData metaData);
+    void                        sigFinished(QUrl url);
+    void                        sigStarted (QUrl url);
+    void                        sigConnectionEstablished(QUrl url, KIO::MetaData metaData);
 
-    void                        sigUrlChanged(KUrl url);
+    void                        sigUrlChanged(QUrl url);
     void                        sigContentType(QString contentType);
 
     void                        sigStreamData    (QByteArray data);

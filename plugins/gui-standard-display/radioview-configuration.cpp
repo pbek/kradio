@@ -18,7 +18,7 @@
 #include "radioview-configuration.h"
 
 RadioViewConfiguration::RadioViewConfiguration(QWidget *parent)
-	: KTabWidget (parent),
+	: QTabWidget (parent),
       m_dirty(true)
 {
     checkTabBar();
@@ -32,7 +32,7 @@ RadioViewConfiguration::~RadioViewConfiguration()
 
 int RadioViewConfiguration::addElementTab    (QWidget *page, const QString &label)
 {
-    int r = KTabWidget::addTab(page, label);
+    int r = QTabWidget::addTab(page, label);
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
@@ -43,7 +43,7 @@ int RadioViewConfiguration::addElementTab    (QWidget *page, const QString &labe
 
 int RadioViewConfiguration::addElementTab    (QWidget *page, const QIcon &icon, const QString &label)
 {
-    int r = KTabWidget::addTab(page, icon, label);
+    int r = QTabWidget::addTab(page, icon, label);
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
@@ -54,7 +54,7 @@ int RadioViewConfiguration::addElementTab    (QWidget *page, const QIcon &icon, 
 
 int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QString &label)
 {
-    int r = KTabWidget::insertTab(index, page, label);
+    int r = QTabWidget::insertTab(index, page, label);
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
@@ -65,7 +65,7 @@ int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QS
 
 int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QIcon &icon, const QString &label)
 {
-    int r = KTabWidget::insertTab(index, page, icon, label);
+    int r = QTabWidget::insertTab(index, page, icon, label);
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
@@ -80,7 +80,7 @@ void RadioViewConfiguration::removeElementTab(int index)
     QObject::disconnect(this,  SIGNAL(sigOK()),     w,    SLOT(slotOK()));
     QObject::disconnect(this,  SIGNAL(sigCancel()), w,    SLOT(slotCancel()));
     QObject::disconnect(w,     SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
-    KTabWidget::removeTab(index);
+    QTabWidget::removeTab(index);
     checkTabBar();
 }
 
@@ -89,7 +89,7 @@ void RadioViewConfiguration::removeElementTab(int index)
 void RadioViewConfiguration::slotOK()
 {
     if (m_dirty) {
-        emit sigOK();
+        Q_EMIT sigOK();
         m_dirty = false;
     }
 }
@@ -97,7 +97,7 @@ void RadioViewConfiguration::slotOK()
 void RadioViewConfiguration::slotCancel()
 {
     if (m_dirty) {
-        emit sigCancel();
+        Q_EMIT sigCancel();
         m_dirty = false;
     }
 }
@@ -111,9 +111,8 @@ void RadioViewConfiguration::slotSetDirty()
 void RadioViewConfiguration::checkTabBar()
 {
     const bool onePage = count() < 2;
-    setTabBarHidden(onePage);
+    setTabBarAutoHide(true);
     setDocumentMode(onePage);
 }
 
 
-#include "radioview-configuration.moc"

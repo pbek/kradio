@@ -24,7 +24,6 @@
 
 #include <kurlrequester.h>
 #include <kcombobox.h>
-#include <ktabwidget.h>
 
 
 RecordingConfiguration::RecordingConfiguration (QWidget *parent)
@@ -90,7 +89,7 @@ void RecordingConfiguration::setGUIBuffers(const RecordingConfig &c)
 
 void RecordingConfiguration::setGUIDirectories(const RecordingConfig &c)
 {
-    editDirectory        ->setUrl(c.m_Directory);
+    editDirectory        ->setUrl (QUrl(c.m_Directory));
     editFilenameTemplate ->setText(c.m_template.filename);
     editID3TitleTemplate ->setText(c.m_template.id3Title);
     editID3ArtistTemplate->setText(c.m_template.id3Artist);
@@ -177,7 +176,7 @@ void RecordingConfiguration::storeConfig()
     c.m_EncodeBufferSize  = editBufferSize->value() * 1024;
     c.m_EncodeBufferCount = editBufferCount->value();
 
-    c.m_Directory          = editDirectory->url().pathOrUrl();
+    c.m_Directory          = editDirectory->url().toString();
     c.m_template.filename  = editFilenameTemplate ->text();
     c.m_template.id3Title  = editID3TitleTemplate ->text();
     c.m_template.id3Artist = editID3ArtistTemplate->text();
@@ -424,4 +423,3 @@ void RecordingConfiguration::slotSetDirty()
 }
 
 
-#include "recording-configuration.moc"

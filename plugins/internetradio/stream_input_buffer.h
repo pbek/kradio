@@ -24,7 +24,7 @@
 #include <QMutex>
 #include <QMutexLocker>
 
-#include <kurl.h>
+#include <QtCore/QUrl>
 
 
 class StreamInputBuffer : public QObject

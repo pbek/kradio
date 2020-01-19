@@ -26,13 +26,12 @@
 static KAboutData aboutData()
 {
     KAboutData about("TimeShifter",
-                     PROJECT_NAME,
-                     KLocalizedString(),
+                     NULL,
                      KRADIO_VERSION,
-                     ki18nc("@title", "TimeShift Support"),
-                     KAboutData::License_GPL,
-                     KLocalizedString(),
-                     KLocalizedString(),
+                     i18nc("@title", "TimeShift Support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     NULL,
+		     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;
@@ -287,9 +286,9 @@ template<class T> static void addToBuffer(char *&buffer, const T &data)
     buffer += sizeof(T);
 }
 
-static void addToBuffer(char *&buffer, const KUrl &url)
+static void addToBuffer(char *&buffer, const QUrl &url)
 {
-    QByteArray data = url.pathOrUrl().toUtf8();
+    QByteArray data = url.toString().toUtf8();
     size_t size = data.size();
     addToBuffer(buffer, size);
     memcpy(buffer, data.data(), size);
@@ -302,18 +301,18 @@ template<class T> static void readFromBuffer(const char *&buffer, T &data)
     buffer += sizeof(T);
 }
 
-static void readFromBuffer(const char *&buffer, KUrl &url)
+static void readFromBuffer(const char *&buffer, QUrl &url)
 {
     size_t size = 0;
     readFromBuffer(buffer, size);
     QByteArray data(buffer, size);
     buffer += size;
-    url = KUrl(data);
+    url = QUrl(data);
 }
 
-static size_t my_sizeof(const KUrl &url)
+static size_t my_sizeof(const QUrl &url)
 {
-    return sizeof(size_t) + url.pathOrUrl().toUtf8().size();
+    return sizeof(size_t) + url.toString().toUtf8().size();
 }
 
 size_t TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffer, size_t buffer_size)
@@ -326,7 +325,7 @@ size_t TimeShifter::writeMetaDataToBuffer(const SoundMetaData &md, char *buffer,
     quint64    pos      = md.position();
     time_t     abs      = md.absoluteTimestamp();
     time_t     rel      = md.relativeTimestamp();
-    KUrl       url      = md.url();
+    QUrl       url      = md.url();
     size_t     req_size = sizeof(req_size) + sizeof(pos) + sizeof(abs) + sizeof(rel) + my_sizeof(url);
     if (req_size <= buffer_size) {
         addToBuffer(buffer, req_size);
@@ -389,7 +388,7 @@ size_t TimeShifter::readMetaDataFromBuffer(SoundMetaData &md, const char *buffer
     quint64  pos = 0;
     time_t   abs = 0;
     time_t   rel = 0;
-    KUrl     url;
+    QUrl     url;
     if (buffer_size >= sizeof(req_size)) {
         readFromBuffer(buffer, req_size);
         if (req_size > sizeof(req_size)) {
@@ -645,7 +644,7 @@ void TimeShifter::setTempFile(const QString &filename, quint64  s)
 {
     m_RingBuffer.clear();
     m_RingBuffer.resize(m_TempFileName = filename, m_TempFileMaxSize = s);
-    m_PlaybackMetaData = SoundMetaData(0,0,0, i18n("internal stream, not stored"));
+    m_PlaybackMetaData = SoundMetaData(0,0,0, QUrl(i18n("internal stream, not stored")));
     m_PlaybackDataLeftInBuffer = 0;
     if (m_RingBuffer.error()) {
         logError(m_RingBuffer.errorString());
@@ -754,4 +753,3 @@ bool TimeShifter::isStereo           (SoundStreamID, bool &s)  const
 
 
 
-#include "timeshifter.moc"

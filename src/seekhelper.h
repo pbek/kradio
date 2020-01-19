@@ -21,11 +21,10 @@
 #include "radiodevice_interfaces.h"
 #include "seekradio_interfaces.h"
 #include "soundstreamclient_interfaces.h"
-#include <kdemacros.h>
 
 
-class KDE_EXPORT SeekHelper : public IRadioDeviceClient,
-                              public ISoundStreamClient
+class KRADIO5_EXPORT SeekHelper : public IRadioDeviceClient,
+                                  public ISoundStreamClient
 {
 public:
     typedef enum { off, searchWorse, searchBest } state_t;
@@ -34,8 +33,8 @@ public:
     SeekHelper(ISeekRadio &parent);
     virtual ~SeekHelper();
 
-    virtual bool     connectI   (Interface *i);
-    virtual bool     disconnectI(Interface *i);
+    virtual bool     connectI   (Interface *i) override;
+    virtual bool     disconnectI(Interface *i) override;
 
     virtual void start(const SoundStreamID &id, direction_t dir);
     virtual void step();
@@ -48,16 +47,16 @@ public:
 
 // IRadioDeviceClient
 RECEIVERS:
-    bool noticePowerChanged         (bool  /*on*/,         const IRadioDevice */*sender*/) { return false; }
-    bool noticeStationChanged       (const RadioStation &, const IRadioDevice */*sender*/) { return false; }
-    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice */*sender*/) { return false; }
+    bool noticePowerChanged         (bool  /*on*/,         const IRadioDevice */*sender*/) override { return false; }
+    bool noticeStationChanged       (const RadioStation &, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice */*sender*/) override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/,    const IRadioDevice */*sender*/) { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/, const IRadioDevice */*sender*/) { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/, const IRadioDevice */*sender*/) { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/,    const IRadioDevice */*sender*/) override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/, const IRadioDevice */*sender*/) override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
 
 protected:
 

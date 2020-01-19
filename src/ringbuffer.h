@@ -19,10 +19,11 @@
 #define _KRADIO_RING_BUFFER_H
 
 #include <sys/types.h>
-#include <kdemacros.h>
 #include <QSemaphore>
 
-class KDE_EXPORT RingBuffer
+#include "kradio-def.h"
+
+class KRADIO5_EXPORT RingBuffer
 {
 public:
     RingBuffer(size_t size, bool synchronized = false);

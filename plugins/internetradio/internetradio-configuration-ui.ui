@@ -17,7 +17,7 @@
       <widget class="QComboBox" name="comboPlaybackMixerChannel"/>
      </item>
      <item row="8" column="1">
-      <widget class="KIntSpinBox" name="spinboxProbeSize">
+      <widget class="QSpinBox" name="spinboxProbeSize">
        <property name="suffix">
         <string> kB</string>
        </property>
@@ -59,7 +59,7 @@
       </spacer>
      </item>
      <item row="9" column="1">
-      <widget class="KDoubleNumInput" name="spinboxAnalysisTime">
+      <widget class="QDoubleSpinBox" name="spinboxAnalysisTime">
        <property name="value">
         <double>0.800000000000000</double>
        </property>
@@ -78,9 +78,6 @@
        <property name="decimals">
         <number>1</number>
        </property>
-       <property name="sliderEnabled">
-        <bool>false</bool>
-       </property>
       </widget>
      </item>
      <item row="1" column="0">
@@ -94,7 +91,7 @@
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="KIntSpinBox" name="spinboxStreamInputBufferSize">
+      <widget class="QSpinBox" name="spinboxStreamInputBufferSize">
        <property name="suffix">
         <string> kB</string>
        </property>
@@ -170,7 +167,7 @@
       <widget class="QComboBox" name="comboPlaybackMixerDevice"/>
      </item>
      <item row="4" column="1">
-      <widget class="KIntSpinBox" name="spinboxStreamOutputBufferSize">
+      <widget class="QSpinBox" name="spinboxStreamOutputBufferSize">
        <property name="suffix">
         <string> kB</string>
        </property>
@@ -189,7 +186,7 @@
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="KIntSpinBox" name="spinboxWatchdogTimeout">
+      <widget class="QSpinBox" name="spinboxWatchdogTimeout">
        <property name="specialValueText">
         <string comment="disabled watchdog">disabled</string>
        </property>
@@ -223,14 +220,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KDoubleNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
+   <class>QDoubleSpinBox</class>
+   <extends>QAbstractSpinBox</extends>
+   <header>QtWidgets/QDoubleSpinBox</header>
   </customwidget>
  </customwidgets>
  <tabstops>

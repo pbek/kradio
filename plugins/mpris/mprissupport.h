@@ -33,12 +33,12 @@ public:
     MPRISSupport(const QString &instanceID, const QString &name);
     ~MPRISSupport();
 
-    virtual bool connectI (Interface *);
-    virtual bool disconnectI (Interface *);
+    virtual bool connectI    (Interface *) override;
+    virtual bool disconnectI (Interface *) override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("MPRISSupport"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("MPRISSupport"); }
 
-    virtual void           startPlugin();
+    virtual void           startPlugin() override;
 
     // PluginBase
 
@@ -46,33 +46,33 @@ RECEIVERS:
     INLINE_IMPL_DEF_noticeConnectedI(IErrorLogClient);
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
 
 
     // IRadioClient methods
 
 RECEIVERS:
     INLINE_IMPL_DEF_noticeConnectedI(IRadioClient);
-    bool noticePowerChanged(bool on);
-    bool noticeStationChanged(const RadioStation &rs, int idx);
-    bool noticeStationsChanged(const StationList &sl);
-    bool noticePresetFileChanged(const QString &f);
+    bool noticePowerChanged(bool on) override;
+    bool noticeStationChanged(const RadioStation &rs, int idx) override;
+    bool noticeStationsChanged(const StationList &sl) override;
+    bool noticePresetFileChanged(const QString &f) override;
 
-    bool noticeRDSStateChanged(bool enabled);
-    bool noticeRDSRadioTextChanged(const QString &s);
-    bool noticeRDSStationNameChanged(const QString &s);
+    bool noticeRDSStateChanged(bool enabled)           override;
+    bool noticeRDSRadioTextChanged(const QString &s)   override;
+    bool noticeRDSStationNameChanged(const QString &s) override;
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID id);
-    bool noticeCurrentSoundStreamSinkIDChanged(SoundStreamID id);
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID id) override;
+    bool noticeCurrentSoundStreamSinkIDChanged(SoundStreamID id)   override;
 
 
     // ISoundStreamClient methods
 
 RECEIVERS:
-    void noticeConnectedI(ISoundStreamServer *s, bool pointer_valid);
-    bool noticePlaybackVolumeChanged(SoundStreamID id, float volume);
-    bool noticeSoundStreamChanged(SoundStreamID id);
+    void noticeConnectedI(ISoundStreamServer *s, bool pointer_valid) override;
+    bool noticePlaybackVolumeChanged(SoundStreamID id, float volume) override;
+    bool noticeSoundStreamChanged(SoundStreamID id) override;
 
 
 

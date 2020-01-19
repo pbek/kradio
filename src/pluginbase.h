@@ -20,7 +20,7 @@
 #ifndef KRADIO_PLUGINS_INTERFACES_H
 #define KRADIO_PLUGINS_INTERFACES_H
 
-#include <kaboutdata.h>
+#include <KAboutData>
 
 #include "errorlog_interfaces.h"
 #include <QString>
@@ -29,6 +29,12 @@
 #include <kpluginfactory.h>
 
 #include <kconfiggroup.h>
+
+
+#include "kradio-def.h"
+
+
+
 
 class PluginManager;
 class PluginBase;
@@ -77,7 +83,7 @@ struct ConfigPageInfo
 };
 
 
-class KDE_EXPORT PluginBase : public IErrorLogClient
+class KRADIO5_EXPORT PluginBase : public IErrorLogClient
 {
 friend class PluginManager;
 public :
@@ -136,7 +142,7 @@ protected :
 };
 
 
-class KDE_EXPORT KRadioPluginFactoryBase : public QObject
+class KRADIO5_EXPORT KRadioPluginFactoryBase : public QObject
 {
 Q_OBJECT
 public:
@@ -160,11 +166,11 @@ class class_name ## PluginFactory : public KRadioPluginFactoryBase  \
 public:                                                             \
     class_name ## PluginFactory(QObject *, const QVariantList &)    \
     {                                                               \
-        Q_ASSERT(aboutData.appName() == QLatin1String(#class_name)); \
+        Q_ASSERT(aboutData.componentName() == QLatin1String(#class_name)); \
         registerComponent(aboutData);                               \
     }                                                               \
                                                                     \
-    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) \
+    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name)  override \
     {                                                               \
         if (type == QLatin1String(#class_name)) {                   \
             return new class_name(instanceID, object_name);         \
@@ -183,13 +189,13 @@ class class_name1 ## PluginFactory : public KRadioPluginFactoryBase  \
 public:                                                              \
     class_name1 ## PluginFactory(QObject *, const QVariantList &)    \
     {                                                                \
-        Q_ASSERT(aboutData1.appName() == QLatin1String(#class_name1)); \
-        Q_ASSERT(aboutData2.appName() == QLatin1String(#class_name2)); \
+        Q_ASSERT(aboutData1.componentName() == QLatin1String(#class_name1)); \
+        Q_ASSERT(aboutData2.componentName() == QLatin1String(#class_name2)); \
         registerComponent(aboutData1);                               \
         registerComponent(aboutData2);                               \
     }                                                                \
                                                                      \
-    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name) \
+    virtual PluginBase *create(const QString &type, const QString &instanceID, const QString &object_name)  override \
     {                                                                \
         if (type == QLatin1String(#class_name1)) {                   \
             return new class_name1(instanceID, object_name);         \

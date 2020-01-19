@@ -18,8 +18,8 @@
 #include "streaming.h"
 
 #include <klocalizedstring.h>
-#include <kaboutdata.h>
-#include <kurl.h>
+#include <KAboutData>
+#include <QtCore/QUrl>
 
 #include "streaming-job.h"
 #include "streaming-configuration.h"
@@ -30,13 +30,12 @@
 static KAboutData aboutData()
 {
     KAboutData about("StreamingDevice",
-                     PROJECT_NAME,
-                     KLocalizedString(),
+                     NULL,
                      KRADIO_VERSION,
-                     ki18nc("@title", "Streaming Support"),
-                     KAboutData::License_GPL,
-                     KLocalizedString(),
-                     KLocalizedString(),
+                     i18nc("@title", "Streaming Support"),
+                     KAboutLicense::LicenseKey::GPL,
+                     NULL,
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;
@@ -109,7 +108,7 @@ void StreamingDevice::saveState (KConfigGroup &c) const
 
     c.writeEntry("playback-channels", m_PlaybackChannelList.size());
     for (int i = 0; i < m_PlaybackChannelList.size(); ++i) {
-        KUrl                url =  m_PlaybackChannelList[i];
+        QUrl                url =  m_PlaybackChannelList[i];
         const StreamingJob *j   = *m_PlaybackChannelJobs.find(url);
         const QString num       = QString::number(i);
 
@@ -124,7 +123,7 @@ void StreamingDevice::saveState (KConfigGroup &c) const
 
     c.writeEntry("capture-channels", m_CaptureChannelList.size());
     for (int i = 0; i < m_CaptureChannelList.size(); ++i) {
-        KUrl                url =  m_CaptureChannelList[i];
+        QUrl                url =  m_CaptureChannelList[i];
         const StreamingJob *j   = *m_CaptureChannelJobs.find(url);
         const QString num       = QString::number(i);
 
@@ -150,7 +149,7 @@ void StreamingDevice::restoreState (const KConfigGroup &c)
         SoundFormat sf;
         const QString num = QString::number(i);
         sf.restoreConfig("playback-channel-" + num, c);
-        KUrl    url         = c.readEntry("playback-channel-" + num + "-url", KUrl());
+        QUrl    url         = c.readEntry("playback-channel-" + num + "-url", QUrl());
         size_t  buffer_size = c.readEntry("playback-channel-" + num + "-buffer-size", (quint64)32*1024);
 
         if (url.isValid()) {
@@ -163,7 +162,7 @@ void StreamingDevice::restoreState (const KConfigGroup &c)
         SoundFormat sf;
         const QString num = QString::number(i);
         sf.restoreConfig("capture-channel-" + num, c);
-        KUrl    url         = c.readEntry("capture-channel-" + num + "-url", KUrl());
+        QUrl    url         = c.readEntry("capture-channel-" + num + "-url", QUrl());
         size_t  buffer_size = c.readEntry("capture-channel-" + num + "-buffer-size", (quint64)32*1024);
 
         if (url.isValid()) {
@@ -172,9 +171,9 @@ void StreamingDevice::restoreState (const KConfigGroup &c)
     }
 
     if (!m_CaptureChannelList.size()) {
-        addCaptureStream(KUrl("/dev/video24"), SoundFormat(48000, 2, 16, true, BYTE_ORDER, "raw"), 32768);
-        addCaptureStream(KUrl("/dev/video32"), SoundFormat(48000, 2, 16, true, BYTE_ORDER, "raw"), 32768);
-        addCaptureStream(KUrl("/dev/urandom"), SoundFormat(48000, 2, 16, true, BYTE_ORDER, "raw"), 32768);
+        addCaptureStream(QUrl("/dev/video24"), SoundFormat(48000, 2, 16, true, BYTE_ORDER, "raw"), 32768);
+        addCaptureStream(QUrl("/dev/video32"), SoundFormat(48000, 2, 16, true, BYTE_ORDER, "raw"), 32768);
+        addCaptureStream(QUrl("/dev/urandom"), SoundFormat(48000, 2, 16, true, BYTE_ORDER, "raw"), 32768);
     }
 
     // must be last. noticeSoundClientConnected will be called by this.
@@ -197,7 +196,7 @@ ConfigPageInfo  StreamingDevice::createConfigurationPage()
 
 bool StreamingDevice::preparePlayback(SoundStreamID id, const QString &channel, bool /*active_mode*/, bool start_immediately)
 {
-    if (id.isValid() && m_PlaybackChannelJobs.contains(channel)) {
+    if (id.isValid() && m_PlaybackChannelJobs.contains(QUrl(channel))) {
         m_AllPlaybackStreams.insert(id, channel);
         if (start_immediately)
             startPlayback(id);
@@ -210,7 +209,7 @@ bool StreamingDevice::preparePlayback(SoundStreamID id, const QString &channel, 
 bool StreamingDevice::prepareCapture(SoundStreamID id, const QString &channel)
 {
 //     logDebug(QString("StreamingDevice::prepareCapture: SoundStream: %1, channel: %2").arg(id.getID()).arg(channel));
-    if (id.isValid() && m_CaptureChannelJobs.contains(channel)) {
+    if (id.isValid() && m_CaptureChannelJobs.contains(QUrl(channel))) {
         m_AllCaptureStreams.insert(id, channel);
         return true;
     }
@@ -256,7 +255,7 @@ bool StreamingDevice::startPlayback(SoundStreamID id)
 {
     if (id.isValid() && m_AllPlaybackStreams.contains(id)) {
         m_EnabledPlaybackStreams.insert(id, m_AllPlaybackStreams[id]);
-        StreamingJob *x = *m_PlaybackChannelJobs.find(m_AllPlaybackStreams[id]);
+        StreamingJob *x = *m_PlaybackChannelJobs.find(QUrl(m_AllPlaybackStreams[id]));
         x->startPlayback();
         return true;
     } else {
@@ -281,7 +280,7 @@ bool StreamingDevice::resumePlayback(SoundStreamID /*id*/)
 bool StreamingDevice::stopPlayback(SoundStreamID id)
 {
     if (id.isValid() && m_EnabledPlaybackStreams.contains(id)) {
-        StreamingJob *x = *m_PlaybackChannelJobs.find(m_AllPlaybackStreams[id]);
+        StreamingJob *x = *m_PlaybackChannelJobs.find(QUrl(m_AllPlaybackStreams[id]));
         if (x->stopPlayback()) {
             m_EnabledPlaybackStreams.remove(id);
         }
@@ -310,7 +309,7 @@ bool StreamingDevice::startCaptureWithFormat(SoundStreamID      id,
 //     logDebug(QString("StreamingDevice::startCaptureWithFormat: SoundStream: %1").arg(id.getID()));
     if (id.isValid() && m_AllCaptureStreams.contains(id)) {
         m_EnabledCaptureStreams.insert(id, m_AllCaptureStreams[id]);
-        StreamingJob *x = *m_CaptureChannelJobs.find(m_AllCaptureStreams[id]);
+        StreamingJob *x = *m_CaptureChannelJobs.find(QUrl(m_AllCaptureStreams[id]));
         x->startCapture(proposed_format, real_format, force_format);
         return true;
     } else {
@@ -322,7 +321,7 @@ bool StreamingDevice::startCaptureWithFormat(SoundStreamID      id,
 bool StreamingDevice::stopCapture(SoundStreamID id)
 {
     if (id.isValid() && m_EnabledCaptureStreams.contains(id)) {
-        StreamingJob *x = *m_CaptureChannelJobs.find(m_AllCaptureStreams[id]);
+        StreamingJob *x = *m_CaptureChannelJobs.find(QUrl(m_AllCaptureStreams[id]));
         if (x->stopCapture()) {
             m_EnabledCaptureStreams.remove(id);
         }
@@ -336,7 +335,7 @@ bool StreamingDevice::stopCapture(SoundStreamID id)
 bool StreamingDevice::isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const
 {
     if (id.isValid() && m_EnabledCaptureStreams.contains(id)) {
-        StreamingJob *x = *m_CaptureChannelJobs.find(m_AllCaptureStreams[id]);
+        StreamingJob *x = *m_CaptureChannelJobs.find(QUrl(m_AllCaptureStreams[id]));
         sf = x->getSoundFormat();
         b  = true;
         return true;
@@ -399,7 +398,7 @@ bool StreamingDevice::noticeSoundStreamData(SoundStreamID id,
                                             )
 {
     if (id.isValid() && m_EnabledPlaybackStreams.contains(id)) {
-        StreamingJob *x = *m_CaptureChannelJobs.find(m_AllCaptureStreams[id]);
+        StreamingJob *x = *m_CaptureChannelJobs.find(QUrl(m_AllCaptureStreams[id]));
         x->playData(data, size, consumed_size);
         return true;
     }
@@ -412,13 +411,13 @@ bool StreamingDevice::noticeReadyForPlaybackData(SoundStreamID id, size_t free_s
 {
     if (!id.isValid() || !m_AllCaptureStreams.contains(id))
         return false;
-    StreamingJob *x = *m_CaptureChannelJobs.find(m_AllCaptureStreams[id]);
+    StreamingJob *x = *m_CaptureChannelJobs.find(QUrl(m_AllCaptureStreams[id]));
 
     while (x->hasRecordedData() && free_size > 0) {
         const char   *buffer        = NULL;
         size_t        size          = SIZE_T_DONT_CARE;
         size_t        consumed_size = SIZE_T_DONT_CARE;
-        SoundMetaData meta_data(0,0,0, i18n("internal stream, not stored (%1)", m_AllCaptureStreams[id]));
+        SoundMetaData meta_data(0, 0, 0, QUrl(i18n("internal stream, not stored (%1)", m_AllCaptureStreams[id])));
         x->lockData(buffer, size, meta_data); // get pointer to data and meta-data content
         if (size > free_size)
             size = free_size;
@@ -455,31 +454,31 @@ QString StreamingDevice::getSoundStreamClientDescription() const
 }
 
 
-void   StreamingDevice::logStreamError(const KUrl &url, const QString &s)
+void   StreamingDevice::logStreamError(const QUrl &url, const QString &s)
 {
-    logError(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
+    logError(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.toString(), s));
 }
 
-void   StreamingDevice::logStreamWarning(const KUrl &url, const QString &s)
+void   StreamingDevice::logStreamWarning(const QUrl &url, const QString &s)
 {
-    logWarning(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
+    logWarning(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.toString(), s));
 }
 
-void   StreamingDevice::logStreamInfo(const KUrl &url, const QString &s)
+void   StreamingDevice::logStreamInfo(const QUrl &url, const QString &s)
 {
-    logInfo(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
+    logInfo(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.toString(), s));
 }
 
-void   StreamingDevice::logStreamDebug(const KUrl &url, const QString &s)
+void   StreamingDevice::logStreamDebug(const QUrl &url, const QString &s)
 {
-    logDebug(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.pathOrUrl(), s));
+    logDebug(i18n("Streaming Device %1, %2: %3", PluginBase::name(), url.toString(), s));
 }
 
 
-bool StreamingDevice::getPlaybackStreamOptions(const QString &channel, KUrl &url, SoundFormat &sf, size_t &buffer_size) const
+bool StreamingDevice::getPlaybackStreamOptions(const QString &channel, QUrl &url, SoundFormat &sf, size_t &buffer_size) const
 {
-    if (m_PlaybackChannelJobs.contains(channel)) {
-        const StreamingJob *j = *m_PlaybackChannelJobs.find(channel);
+    if (m_PlaybackChannelJobs.contains(QUrl(channel))) {
+        const StreamingJob *j = *m_PlaybackChannelJobs.find(QUrl(channel));
         url = j->getURL();
         sf  = j->getSoundFormat();
         buffer_size = j->getBufferSize();
@@ -489,10 +488,10 @@ bool StreamingDevice::getPlaybackStreamOptions(const QString &channel, KUrl &url
 }
 
 
-bool StreamingDevice::getCaptureStreamOptions(const QString &channel, KUrl &url, SoundFormat &sf, size_t &buffer_size) const
+bool StreamingDevice::getCaptureStreamOptions(const QString &channel, QUrl &url, SoundFormat &sf, size_t &buffer_size) const
 {
-    if (m_CaptureChannelJobs.contains(channel)) {
-        const StreamingJob *j = *m_CaptureChannelJobs.find(channel);
+    if (m_CaptureChannelJobs.contains(QUrl(channel))) {
+        const StreamingJob *j = *m_CaptureChannelJobs.find(QUrl(channel));
         url = j->getURL();
         sf  = j->getSoundFormat();
         buffer_size = j->getBufferSize();
@@ -543,20 +542,20 @@ void StreamingDevice::resetCaptureStreams(bool notification_enabled)
 }
 
 
-void StreamingDevice::addPlaybackStream(const KUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
+void StreamingDevice::addPlaybackStream(const QUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
 {
     StreamingJob *x = new StreamingJob(url, sf, buffer_size);
-    connect(x,    SIGNAL(logStreamError  (const KUrl &, const QString &)),
-            this, SLOT  (logStreamError  (const KUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamWarning(const KUrl &, const QString &)),
-            this, SLOT  (logStreamWarning(const KUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamInfo   (const KUrl &, const QString &)),
-            this, SLOT  (logStreamInfo   (const KUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamDebug  (const KUrl &, const QString &)),
-            this, SLOT  (logStreamDebug  (const KUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamError  (const QUrl &, const QString &)),
+            this, SLOT  (logStreamError  (const QUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamWarning(const QUrl &, const QString &)),
+            this, SLOT  (logStreamWarning(const QUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamInfo   (const QUrl &, const QString &)),
+            this, SLOT  (logStreamInfo   (const QUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamDebug  (const QUrl &, const QString &)),
+            this, SLOT  (logStreamDebug  (const QUrl &, const QString &)));
 
     m_PlaybackChannelList      .append(url);
-    m_PlaybackChannelStringList.append(url.pathOrUrl());
+    m_PlaybackChannelStringList.append(url.toString());
     m_PlaybackChannelJobs      .insert(url, x);
     if (notification_enabled) {
         notifyPlaybackChannelsChanged(m_SoundStreamClientID, m_PlaybackChannelStringList);
@@ -564,20 +563,20 @@ void StreamingDevice::addPlaybackStream(const KUrl &url, const SoundFormat &sf, 
 }
 
 
-void StreamingDevice::addCaptureStream (const KUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
+void StreamingDevice::addCaptureStream (const QUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
 {
     StreamingJob *x = new StreamingJob(url, sf, buffer_size);
-    connect(x,    SIGNAL(logStreamError  (const KUrl &, const QString &)),
-            this, SLOT  (logStreamError  (const KUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamWarning(const KUrl &, const QString &)),
-            this, SLOT  (logStreamWarning(const KUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamInfo   (const KUrl &, const QString &)),
-            this, SLOT  (logStreamInfo   (const KUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamDebug  (const KUrl &, const QString &)),
-            this, SLOT  (logStreamDebug  (const KUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamError  (const QUrl &, const QString &)),
+            this, SLOT  (logStreamError  (const QUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamWarning(const QUrl &, const QString &)),
+            this, SLOT  (logStreamWarning(const QUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamInfo   (const QUrl &, const QString &)),
+            this, SLOT  (logStreamInfo   (const QUrl &, const QString &)));
+    connect(x,    SIGNAL(logStreamDebug  (const QUrl &, const QString &)),
+            this, SLOT  (logStreamDebug  (const QUrl &, const QString &)));
 
     m_CaptureChannelList      .append(url);
-    m_CaptureChannelStringList.append(url.pathOrUrl());
+    m_CaptureChannelStringList.append(url.toString());
     m_CaptureChannelJobs      .insert(url, x);
     if (notification_enabled) {
         notifyCaptureChannelsChanged(m_SoundStreamClientID, m_CaptureChannelStringList);
@@ -594,4 +593,3 @@ void StreamingDevice::setName(const QString &n)
 
 
 
-#include "streaming.moc"

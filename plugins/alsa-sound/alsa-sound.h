@@ -100,8 +100,8 @@ public:
     AlsaSoundDevice (const QString &instanceID, const QString &name);
     virtual ~AlsaSoundDevice ();
 
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
+    virtual bool   connectI(Interface *i)    override;
+    virtual bool   disconnectI(Interface *i) override;
 
 
 public:
@@ -117,29 +117,29 @@ public:
     // PluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("AlsaSoundDevice"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("AlsaSoundDevice"); }
 
     virtual void setName(const QString &n);
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
     // ISoundStreamClient: direct device access
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-    bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately);
-    bool prepareCapture(SoundStreamID id, const QString &channel);
-    bool releasePlayback(SoundStreamID id);
-    bool releaseCapture(SoundStreamID id);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
+    bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately) override;
+    bool prepareCapture (SoundStreamID id, const QString &channel) override;
+    bool releasePlayback(SoundStreamID id) override;
+    bool releaseCapture (SoundStreamID id) override;
 
 ANSWERS:
-    bool supportsPlayback() const;
-    bool supportsCapture()  const;
+    bool supportsPlayback() const override;
+    bool supportsCapture()  const override;
 
-    QString getSoundStreamClientDescription() const;
+    QString getSoundStreamClientDescription() const override;
 
     // ISoundStreamClient: mixer access
 
@@ -158,48 +158,48 @@ public:
                                   bool           capture_enabled);
 
 ANSWERS:
-    const QStringList &getPlaybackChannels() const;
-    const QStringList &getCaptureChannels() const;
+    const QStringList &getPlaybackChannels() const override;
+    const QStringList &getCaptureChannels () const override;
 
 RECEIVERS:
-    bool setPlaybackVolume    (SoundStreamID id, float volume);
-    bool setCaptureVolume     (SoundStreamID id,  float volume);
-    bool getPlaybackVolume    (SoundStreamID id, float &volume) const;
-    bool getCaptureVolume     (SoundStreamID id,  float &volume) const;
+    bool setPlaybackVolume    (SoundStreamID id, float volume)        override;
+    bool setCaptureVolume     (SoundStreamID id, float volume)        override;
+    bool getPlaybackVolume    (SoundStreamID id, float &volume) const override;
+    bool getCaptureVolume     (SoundStreamID id, float &volume) const override;
 
-    bool muteSink             (SoundStreamID id, bool mute);
-    bool unmuteSink           (SoundStreamID id, bool unmute);
-    bool isSinkMuted          (SoundStreamID id, bool &m) const;
-    bool muteSourcePlayback   (SoundStreamID id, bool mute);
-    bool unmuteSourcePlayback (SoundStreamID id, bool unmute);
-    bool isSourcePlaybackMuted(SoundStreamID id, bool &m) const;
+    bool muteSink             (SoundStreamID id, bool mute)     override;
+    bool unmuteSink           (SoundStreamID id, bool unmute)   override;
+    bool isSinkMuted          (SoundStreamID id, bool &m) const override;
+    bool muteSourcePlayback   (SoundStreamID id, bool mute)     override;
+    bool unmuteSourcePlayback (SoundStreamID id, bool unmute)   override;
+    bool isSourcePlaybackMuted(SoundStreamID id, bool &m) const override;
 
 
     // ISoundStreamClient: generic broadcasts
 
 RECEIVERS:
-    bool startPlayback(SoundStreamID id);
-    bool pausePlayback(SoundStreamID id);
-    bool resumePlayback(SoundStreamID id);
-    bool stopPlayback(SoundStreamID id);
-    bool isPlaybackRunning(SoundStreamID id, bool &b) const;
+    bool startPlayback    (SoundStreamID id) override;
+    bool pausePlayback    (SoundStreamID id) override;
+    bool resumePlayback   (SoundStreamID id) override;
+    bool stopPlayback     (SoundStreamID id) override;
+    bool isPlaybackRunning(SoundStreamID id, bool &b) const override;
 
     bool startCaptureWithFormat(SoundStreamID      id,
                       const SoundFormat &proposed_format,
                       SoundFormat       &real_format,
-                      bool               force_format);
-    bool stopCapture(SoundStreamID id);
-    bool isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const;
+                      bool               force_format) override;
+    bool stopCapture     (SoundStreamID id) override;
+    bool isCaptureRunning(SoundStreamID id, bool &b, SoundFormat &sf) const override;
 
-    bool noticeSoundStreamClosed(SoundStreamID id);
-    bool noticeSoundStreamSinkRedirected(SoundStreamID oldID, SoundStreamID newID);
-    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID);
+    bool noticeSoundStreamClosed          (SoundStreamID id) override;
+    bool noticeSoundStreamSinkRedirected  (SoundStreamID oldID, SoundStreamID newID) override;
+    bool noticeSoundStreamSourceRedirected(SoundStreamID oldID, SoundStreamID newID) override;
 
     bool noticeSoundStreamData(SoundStreamID id,
                                const SoundFormat &,
                                const char *data, size_t size, size_t &consumed_size,
                                const SoundMetaData &md
-                              );
+                              ) override;
 
 
     // Config Access
@@ -241,7 +241,7 @@ RECEIVERS:
 
 // pure virtual members of ThreadLoggingClient
 protected:
-    IErrorLogClient    *getErrorLogClient();
+    IErrorLogClient    *getErrorLogClient() override;
 
 protected slots:
 

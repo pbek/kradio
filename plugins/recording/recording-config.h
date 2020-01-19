@@ -52,6 +52,9 @@ public:
     void     getSoundFileInfo(SF_INFO &info, bool input);
 
     void     checkFormatSettings();
+    
+    
+    RecordingConfig & operator = (const RecordingConfig &) = default;
 
 public:
     size_t              m_EncodeBufferSize;

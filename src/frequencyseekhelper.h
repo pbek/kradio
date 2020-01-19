@@ -22,13 +22,12 @@
 //#include "radiodevice_interfaces.h"
 #include "frequencyradio_interfaces.h"
 #include "seekhelper.h"
-#include <kdemacros.h>
 
 class QTimer;
 
-class KDE_EXPORT FrequencySeekHelper : public QObject,
-                                       public SeekHelper,
-                                       public IFrequencyRadioClient
+class KRADIO5_EXPORT FrequencySeekHelper : public QObject,
+                                           public SeekHelper,
+                                           public IFrequencyRadioClient
 {
 Q_OBJECT
 public:
@@ -38,32 +37,32 @@ public:
 
 // IFrequencyRadioClient
 RECEIVERS:
-    bool noticeFrequencyChanged(float /*f*/, const FrequencyRadioStation */*s*/)  { return false; }
-    bool noticeMinMaxFrequencyChanged(float /*min*/, float /*max*/)      { return false; }
-    bool noticeDeviceMinMaxFrequencyChanged(float /*min*/, float /*max*/){ return false; }
-    bool noticeScanStepChanged(float /*s*/)                              { return false; }
+    bool noticeFrequencyChanged(float /*f*/, const FrequencyRadioStation */*s*/) override { return false; }
+    bool noticeMinMaxFrequencyChanged(float /*min*/, float /*max*/)              override { return false; }
+    bool noticeDeviceMinMaxFrequencyChanged(float /*min*/, float /*max*/)        override { return false; }
+    bool noticeScanStepChanged(float /*s*/)                                      override { return false; }
 
 public:
 
-    virtual bool     connectI   (Interface *i);
-    virtual bool     disconnectI(Interface *i);
+    virtual bool     connectI   (Interface *i) override;
+    virtual bool     disconnectI(Interface *i) override;
 
-    virtual void     start(const SoundStreamID &, direction_t dir);
+    virtual void     start(const SoundStreamID &, direction_t dir) override;
 
 public slots:
 
-    virtual void step() { SeekHelper::step(); }
+    virtual void step() override { SeekHelper::step(); }
 
 protected:
-    virtual void abort();
-    virtual bool isGood() const;
-    virtual bool isBetter() const;
-    virtual bool isWorse() const;
-    virtual bool bestFound() const;
-    virtual void getData();
-    virtual void rememberBest();
-    virtual bool nextSeekStep();
-    virtual void applyBest();
+    virtual void abort       ()       override;
+    virtual bool isGood      () const override;
+    virtual bool isBetter    () const override;
+    virtual bool isWorse     () const override;
+    virtual bool bestFound   () const override;
+    virtual void getData     ()       override;
+    virtual void rememberBest()       override;
+    virtual bool nextSeekStep()       override;
+    virtual void applyBest   ()       override;
 
 protected:
     QTimer  *m_timer;

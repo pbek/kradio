@@ -15,12 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QLocale>
+
 #include "frequencyradiostation.h"
 #include <typeinfo>
 #include "radiostation-config.h"
-#include <klocale.h>
 #include <klocalizedstring.h>
-#include <kglobal.h>
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -132,9 +132,9 @@ QString FrequencyRadioStation::description() const
     float   cf = frequency();
     QString f;
     if (cf >= 10)
-        f = i18n("%1 MHz", KGlobal::locale()->formatNumber(cf, 2));
+        f = i18n("%1 MHz", QLocale().toString(cf, 2));
     else
-        f = i18n("%1 kHz", KGlobal::locale()->formatNumber(cf * 1000, 0));
+        f = i18n("%1 kHz", QLocale().toString(cf * 1000, 0));
 
     return f;
 }

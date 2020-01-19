@@ -234,5 +234,3 @@ void InternetRadioStationConfig::initCodecList() const
     }
 }
 
-
-#include "radiostation-config.moc"

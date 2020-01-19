@@ -22,9 +22,9 @@
 
 #include <QFile>
 
-#include <kstandarddirs.h>
-#include <kurl.h>
-#include <kaboutdata.h>
+#include <QStandardPaths>
+#include <QtCore/QUrl>
+#include <KAboutData>
 #include <kconfig.h>
 
 #include "debug-profiler.h"
@@ -35,17 +35,16 @@
 static KAboutData aboutData()
 {
     KAboutData about("Radio",
-                     PROJECT_NAME,
-                     KLocalizedString(),
+                     NULL,
                      KRADIO_VERSION,
-                     ki18nc("@title", "Central Radio Device Multiplexer"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
-                     KLocalizedString(),
+                     i18nc("@title", "Central Radio Device Multiplexer"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Klas Kalass"),  NULL, "klas.kalass@gmx.de");
     return about;
 }
 
@@ -56,7 +55,7 @@ KRADIO_EXPORT_PLUGIN(Radio, aboutData())
 Radio::Radio(const QString &instanceID, const QString &name)
   : PluginBase(instanceID, name, i18n("Radio Multiplexer Plugin")),
     IRadioDeviceClient(-1),
-    m_presetFile(KStandardDirs::locateLocal("data", "kradio4/stations.krp")),
+    m_presetFile(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "stations.krp"),
     m_activeDevice (NULL)
 {
 }
@@ -100,7 +99,7 @@ void Radio::saveState (KConfigGroup &config) const
     PluginBase::saveState(config);
 
     config.writeEntry("presetfile", m_presetFile);
-    m_stationList.writeXML(m_presetFile, *this);
+    m_stationList.writeXML(QUrl(m_presetFile), *this);
 
     if (m_activeDevice) {
         config.writeEntry("active_device", m_activeDevice->getRadioDeviceID());
@@ -116,12 +115,12 @@ void Radio::restoreState (const KConfigGroup &config)
 
     bool first_restore = false;
     if (m_presetFile.isEmpty()) {
-        m_presetFile = KStandardDirs::locateLocal("data", "kradio4/stations.krp");
+        m_presetFile = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "stations.krp";
         first_restore = true;
     }
 
     if (!first_restore || QFile::exists(m_presetFile)) {
-        m_stationList.readXML(KUrl(m_presetFile), *this, /*enable-messagebox*/ !first_restore);
+        m_stationList.readXML(QUrl(m_presetFile), *this, /*enable-messagebox*/ !first_restore);
     }
 
     notifyStationsChanged(m_stationList);

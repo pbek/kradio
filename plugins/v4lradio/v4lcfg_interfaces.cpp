@@ -67,7 +67,6 @@ V4LCaps::V4LCaps(const V4LCaps &c)
     for (int i = 0; i < V4L_Version_COUNT; ++i) {
         v4l_version_support[i] = c.v4l_version_support[i];
     }
-
 }
 
 

@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <kconfig.h>
 #include <solid/powermanagement.h>
 
@@ -43,17 +43,16 @@ static const char AlarmRecordingTemplateElement[] = "recordingTemplate";
 static KAboutData aboutData()
 {
     KAboutData about("TimeControl",
-                     PROJECT_NAME,
-                     ki18nc("@title", "Alarms"),
+                     i18nc("@title", "Alarms"),
                      KRADIO_VERSION,
-                     ki18nc("@title", "Time Control and Alarm Functions"),
-                     KAboutData::License_GPL,
-                     ki18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
-                     ki18n("Provides alarms and sleep countdown."),
+                     i18nc("@title", "Time Control and Alarm Functions"),
+                     KAboutLicense::LicenseKey::GPL,
+                     i18nc("@info:credit", "(c) 2002-2005 Martin Witte, Klas Kalass"),
+                     i18n("Provides alarms and sleep countdown."),
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Martin Witte"), KLocalizedString(), "emw-kradio@nocabal.de");
-    about.addAuthor(ki18nc("@info:credit", "Klas Kalass"), KLocalizedString(), "klas.kalass@gmx.de");
+    about.addAuthor(i18nc("@info:credit", "Martin Witte"), NULL, "emw-kradio@nocabal.de");
+    about.addAuthor(i18nc("@info:credit", "Klas Kalass" ), NULL, "klas.kalass@gmx.de");
     return about;
 }
 
@@ -330,4 +329,3 @@ void TimeControl::slotResumingFromSuspend()
 }
 
 
-#include "timecontrol.moc"

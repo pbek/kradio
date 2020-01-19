@@ -18,11 +18,12 @@
 #ifndef KRADIO_MULTIBUFFER_H
 #define KRADIO_MULTIBUFFER_H
 
-#include <QSemaphore>
-#include <QString>
-#include <kdemacros.h>
+#include <QtCore/QSemaphore>
+#include <QtCore/QString>
 
-class KDE_EXPORT MultiBuffer
+#include "kradio-def.h"
+
+class KRADIO5_EXPORT MultiBuffer
 {
 public:
     MultiBuffer(size_t n_buffers, size_t buffersize);

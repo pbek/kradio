@@ -20,7 +20,6 @@
 
 #include <QByteArray>
 #include <QMap>
-#include <kdemacros.h>
 
 #ifdef KRADIO_ENABLE_PROFILERS
 
@@ -38,7 +37,7 @@ static __inline__ unsigned long long int rdtsc()
 }
 #endif
 
-class KDE_EXPORT Profiler
+class KRADIO5_EXPORT Profiler
 {
 public:
     Profiler();
@@ -75,26 +74,26 @@ protected:
 };
 
 
-class KDE_EXPORT TimeProfiler : public Profiler
+class KRADIO5_EXPORT TimeProfiler : public Profiler
 {
 protected:
     long long getCounter() const { return rdtsc(); }
 };
 
 
-class KDE_EXPORT MemProfiler : public Profiler
+class KRADIO5_EXPORT MemProfiler : public Profiler
 {
 protected:
     long long getCounter() const;
 };
 
 
-extern KDE_EXPORT TimeProfiler global_time_profiler;
-extern KDE_EXPORT MemProfiler  global_mem_profiler;
+extern KRADIO5_EXPORT TimeProfiler global_time_profiler;
+extern KRADIO5_EXPORT MemProfiler  global_mem_profiler;
 
 
 
-class KDE_EXPORT BlockProfiler
+class KRADIO5_EXPORT BlockProfiler
 {
 public:
     BlockProfiler(const QByteArray &descr);

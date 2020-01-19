@@ -28,7 +28,7 @@ class AlsaSoundBaseModel : public QAbstractListModel
 public:
     AlsaSoundBaseModel(QObject *parent = 0) : QAbstractListModel(parent) {}
 
-    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const
+    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override
     {
         if (index.column() != 0 || index.row() < 0 || index.row() >= m_list.count())
             return QVariant();
@@ -43,7 +43,7 @@ public:
         return QVariant();
     }
 
-    virtual int rowCount(const QModelIndex &parent = QModelIndex()) const
+    virtual int rowCount(const QModelIndex &parent = QModelIndex()) const override
     {
         return parent.isValid() ? 0 : m_list.count();
     }
@@ -76,7 +76,7 @@ public:
     AlsaSoundBaseDeviceModel(QObject *parent = 0) : AlsaSoundBaseModel<AlsaSoundDeviceMetaData>(parent) {}
 
 protected:
-    virtual QString customDisplay(const AlsaSoundDeviceMetaData &item) const
+    virtual QString customDisplay(const AlsaSoundDeviceMetaData &item) const override
     {
         QString res = item.cardDescription();
         if (res.length()) res += ", ";
@@ -84,7 +84,7 @@ protected:
         return res;
     }
 
-    virtual QString customData(const AlsaSoundDeviceMetaData &item) const
+    virtual QString customData(const AlsaSoundDeviceMetaData &item) const override
     {
         return item.pcmDeviceName();
     }
@@ -97,12 +97,12 @@ public:
     AlsaSoundBaseMixerModel(QObject *parent = 0) : AlsaSoundBaseModel<AlsaMixerMetaData>(parent) {}
 
 protected:
-    virtual QString customDisplay(const AlsaMixerMetaData &item) const
+    virtual QString customDisplay(const AlsaMixerMetaData &item) const override
     {
         return item.cardDescription();
     }
 
-    virtual QString customData(const AlsaMixerMetaData &item) const
+    virtual QString customData(const AlsaMixerMetaData &item) const override
     {
         return item.mixerCardName();
     }
@@ -115,7 +115,7 @@ public:
     AlsaSoundPlaybackDeviceModel(QObject *parent = 0) : AlsaSoundBaseDeviceModel(parent) {}
 
 protected:
-    virtual QList<AlsaSoundDeviceMetaData> doReload() const
+    virtual QList<AlsaSoundDeviceMetaData> doReload() const override
     {
         return AlsaSoundDevice::getPCMPlaybackDeviceDescriptions();
     }
@@ -128,7 +128,7 @@ public:
     AlsaSoundCaptureDeviceModel(QObject *parent = 0) : AlsaSoundBaseDeviceModel(parent) {}
 
 protected:
-    virtual QList<AlsaSoundDeviceMetaData> doReload() const
+    virtual QList<AlsaSoundDeviceMetaData> doReload() const override
     {
         return AlsaSoundDevice::getPCMCaptureDeviceDescriptions();
     }
@@ -141,7 +141,7 @@ public:
     AlsaSoundPlaybackMixerModel(QObject *parent = 0) : AlsaSoundBaseMixerModel(parent) {}
 
 protected:
-    virtual QList<AlsaMixerMetaData> doReload() const
+    virtual QList<AlsaMixerMetaData> doReload() const override
     {
         return AlsaSoundDevice::getPlaybackMixerDescriptions();
     }
@@ -154,7 +154,7 @@ public:
     AlsaSoundCaptureMixerModel(QObject *parent = 0) : AlsaSoundBaseMixerModel(parent) {}
 
 protected:
-    virtual QList<AlsaMixerMetaData> doReload() const
+    virtual QList<AlsaMixerMetaData> doReload() const override
     {
         return AlsaSoundDevice::getCaptureMixerDescriptions();
     }

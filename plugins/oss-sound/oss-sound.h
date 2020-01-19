@@ -64,8 +64,8 @@ public:
     OSSSoundDevice (const QString &name);
     virtual ~OSSSoundDevice ();
 
-    virtual bool   connectI(Interface *i);
-    virtual bool   disconnectI(Interface *i);
+    virtual bool   connectI   (Interface *i) override;
+    virtual bool   disconnectI(Interface *i) override;
 
     // PluginBase
 
@@ -80,7 +80,7 @@ public:
     // ISoundStreamClient: direct device access
 
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
     bool preparePlayback(SoundStreamID id, const QString &channel, bool active_mode, bool start_immediately);
     bool prepareCapture(SoundStreamID id,  const QString &channel);
     bool releasePlayback(SoundStreamID id);

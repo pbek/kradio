@@ -1,5 +1,28 @@
-project(kradio4_plugin_recording)
-add_definitions( -DPROJECT_NAME="${PROJECT_NAME}" )
+project(kradio5_plugin_recording)
+
+# Locate extra-cmake-modules version 0.0.11 and make it a required package
+find_package(ECM 5.10.0 REQUIRED NO_MODULE)
+
+include(CheckIncludeFileCXX)
+include(CheckLibraryExists)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(FeatureSummary)
+
+########################################################################
+#       KDE/QT Libs                                                    #
+########################################################################
+
+# Locate Qt5, make it required package and use QtWidgets and QtCore modules
+find_package(Qt5 REQUIRED COMPONENTS Widgets Core Multimedia )
+
+# Locate KF5, make it required package and use KF5KDELibs4Support and KF5CoreAddons modules
+find_package(KF5 REQUIRED COMPONENTS  CoreAddons XmlGui I18n KIO)
+
+###############################################################################
+
+add_definitions( -DPROJECT_NAME="${PROJECT_NAME}" -DTRANSLATION_DOMAIN="${PROJECT_NAME}" )
 
 include(CheckIncludeFile)
 
@@ -12,29 +35,31 @@ option(WITH_LAME       "Compile with mp3/lame   support" ON)
 ###############################################################################
 
 IF(WITH_OGG_VORBIS)
-    find_package(OggVorbis)
-    IF(NOT OGGVORBIS_FOUND OR NOT HAVE_LIBVORBISENC2)
+    pkg_check_modules(PKG_OGG       ogg)
+    pkg_check_modules(PKG_VORBIS    vorbis)
+    pkg_check_modules(PKG_VORBISENC vorbisenc)
+    IF(NOT PKG_OGG_FOUND OR NOT PKG_VORBIS_FOUND OR NOT PKG_VORBISENC_FOUND)
 
         SET(WITH_OGG_VORBIS OFF
             CACHE BOOL "ogg/vorbis files could not be found on this system. Forcing this option to OFF"
             FORCE)
         MESSAGE("WARNING: ogg/vorbis files could not be found on this system. Compiling without ogg/vorbis support")
 
-    ENDIF(NOT OGGVORBIS_FOUND OR NOT HAVE_LIBVORBISENC2)
+    ENDIF(NOT PKG_OGG_FOUND OR NOT PKG_VORBIS_FOUND OR NOT PKG_VORBISENC_FOUND)
 ENDIF(WITH_OGG_VORBIS)
 
 
 IF (WITH_OGG_VORBIS)
-    message(STATUS "   Compiling with ogg/vorbis support")
+    message(STATUS "   xCompiling with ogg/vorbis support")
     add_definitions( -DHAVE_OGG )
-    include_directories(${OGGVORBIS_INCLUDE_DIR} ${VORBIS_INCLUDE_DIR})
-    set(LIB_OGG ${OGGVORBIS_LIBRARIES})
+    include_directories(${PKG_VORBISENC_INCLUDE_DIRS} ${PKG_VORBIS_INCLUDE_DIRS} ${PKG_OGG_INCLUDE_DIRS})
+    set(LIB_OGG ${PKG_OGG_LIBRARY_DIRS} ${PKG_VORBISENC_LIBRARY_DIRS} ${PKG_VORBIS_LIBRARY_DIRS})
 ELSE(WITH_OGG_VORBIS)
-    message(STATUS "   Compiling without ogg/vorbis support")
+    message(STATUS "   xCompiling without ogg/vorbis support")
     set(LIB_OGG "")
 ENDIF(WITH_OGG_VORBIS)
 
-MACRO_LOG_FEATURE(WITH_OGG_VORBIS "ogg/vorbis support"  "Support for audio compression format ogg/vorbis" "http://www.vorbis.com") 
+add_feature_info("ogg/vorbis support"  WITH_OGG_VORBIS "Support for audio compression format ogg/vorbis" "http://www.vorbis.com") 
 
 ###############################################################################
 
@@ -62,7 +87,7 @@ ELSE(WITH_LAME)
     set(LIB_LAME "")
 ENDIF(WITH_LAME)
 
-MACRO_LOG_FEATURE(WITH_LAME "mp3/lame support"  "Support for audio compression format .mp3 via lame" "http://lame.sourceforge.net") 
+add_feature_info("mp3/lame support"  WITH_LAME "Support for audio compression format .mp3 via lame" "http://lame.sourceforge.net") 
 
 ###############################################################################
 
@@ -73,7 +98,7 @@ SET(WITH_LIBSNDFILE ${Sndfile_FOUND})
 
 include_directories(${Sndfile_INCLUDE_DIRS})
 
-MACRO_LOG_FEATURE(WITH_LIBSNDFILE "libsndfile generic sound file support"  "Support for some standard audio formats (e.g. .wav)" "http://www.mega-nerd.com/libsndfile" TRUE)
+add_feature_info("libsndfile generic sound file support"  WITH_LIBSNDFILE "Support for some standard audio formats (e.g. .wav)" "http://www.mega-nerd.com/libsndfile" TRUE)
 
 ###############################################################################
 
@@ -86,7 +111,7 @@ FILE(GLOB kradio_plugin_recording_UIs
     ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
 )
 
-kde4_add_ui_files(kradio_plugin_recording_sources
+ki18n_wrap_ui(kradio_plugin_recording_sources
     ${kradio_plugin_recording_UIs}
 )
 
@@ -94,16 +119,22 @@ kde4_add_ui_files(kradio_plugin_recording_sources
 string(REGEX REPLACE "-Wl,--no-undefined" "" CMAKE_MODULE_LINKER_FLAGS ${CMAKE_MODULE_LINKER_FLAGS})
 
 
-kde4_add_plugin(kradio4_plugin_recording
+add_library(kradio5_plugin_recording MODULE
     ${kradio_plugin_recording_sources}
 )
 
-TARGET_LINK_LIBRARIES(kradio4_plugin_recording
-  ${KDE4_KDEUI_LIBS}
-  ${LIB_OGG}
-  ${LIB_LAME}
-  ${Sndfile_LIBRARIES}
+TARGET_LINK_LIBRARIES(kradio5_plugin_recording
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::Multimedia
+    KF5::XmlGui
+    KF5::CoreAddons
+    KF5::KIOWidgets
+    KF5::I18n
+    ${LIB_OGG}
+    ${LIB_LAME}
+    ${Sndfile_LIBRARIES}
 )
 
-INSTALL(TARGETS kradio4_plugin_recording ${INSTALL_TARGETS_DEFAULT_ARGS})
+INSTALL(TARGETS kradio5_plugin_recording ${INSTALL_TARGETS_DEFAULT_ARGS})
 

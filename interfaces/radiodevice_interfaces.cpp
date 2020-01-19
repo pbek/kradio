@@ -20,7 +20,7 @@
 #include "radiostation.h"
 #include "id-generator.h"
 
-#include <kurl.h>
+#include <QtCore/QUrl>
 #include <kconfiggroup.h>
 
 // IRadioDevice

@@ -50,37 +50,37 @@ public:
     TimeControl (const QString &instanceID, const QString &name);
     ~TimeControl();
 
-    virtual QString pluginClassName() const { return QString::fromLatin1("TimeControl"); }
+    virtual QString pluginClassName() const override { return QString::fromLatin1("TimeControl"); }
 
-    virtual bool   connectI (Interface *i);
-    virtual bool   disconnectI (Interface *i);
+    virtual bool   connectI    (Interface *i) override;
+    virtual bool   disconnectI (Interface *i) override;
 
     // PluginBase
 
 public:
-    virtual void   saveState    (      KConfigGroup &) const;
-    virtual void   restoreState (const KConfigGroup &);
+    virtual void   saveState    (      KConfigGroup &) const override;
+    virtual void   restoreState (const KConfigGroup &)       override;
     
     virtual void   updateTimers ();
 
-    virtual ConfigPageInfo  createConfigurationPage();
+    virtual ConfigPageInfo  createConfigurationPage() override;
 
 
     // ITimeControl Interface methods
 
 RECEIVERS:
-    bool setAlarms(const AlarmVector &sl);
-    bool setCountdownSeconds(int n, bool suspendOnSleep);
-    bool startCountdown();
-    bool stopCountdown();
+    bool setAlarms(const AlarmVector &sl) override;
+    bool setCountdownSeconds(int n, bool suspendOnSleep) override;
+    bool startCountdown() override;
+    bool stopCountdown () override;
 
 ANSWERS:
-    QDateTime           getNextAlarmTime () const;
-    const Alarm*        getNextAlarm () const;
-    const AlarmVector & getAlarms () const { return m_alarms; }
-    int                 getCountdownSeconds () const { return m_countdownSeconds; }
-    bool                getSuspendOnSleep () const { return m_suspendOnSleep; }
-    QDateTime           getCountdownEnd () const;
+    QDateTime           getNextAlarmTime    () const override;
+    const Alarm*        getNextAlarm        () const override;
+    const AlarmVector & getAlarms           () const override { return m_alarms; }
+    int                 getCountdownSeconds () const override { return m_countdownSeconds; }
+    bool                getSuspendOnSleep   () const override { return m_suspendOnSleep; }
+    QDateTime           getCountdownEnd     () const override;
 
 
     // slots for receiving timeout messages of timers

@@ -26,15 +26,15 @@
 class QWidget;
 class KConfigGroup;
 
-class KDE_EXPORT WidgetPluginBase : public PluginBase
+class KRADIO5_EXPORT WidgetPluginBase : public PluginBase
 {
 public :
     WidgetPluginBase(QWidget *myself, const QString &instanceID, const QString &name, const QString &description);
 
-    virtual void     saveState    (      KConfigGroup &) const;
-    virtual void     restoreState (const KConfigGroup &);
+    virtual void     saveState    (      KConfigGroup &) const override;
+    virtual void     restoreState (const KConfigGroup &)       override;
     virtual void     restoreState (const KConfigGroup &, bool showByDefault);
-    virtual void     startPlugin();
+    virtual void     startPlugin() override;
 
     virtual       QWidget *getWidget()       { return m_myself; }
     virtual const QWidget *getWidget() const { return m_myself; }

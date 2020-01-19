@@ -22,7 +22,7 @@
 #include "radiostation.h"
 #include "stationlist.h"
 
-class KDE_EXPORT StationListXmlHandler : public QXmlDefaultHandler
+class KRADIO5_EXPORT StationListXmlHandler : public QXmlDefaultHandler
 {
 protected:
     QStringList           m_status;
@@ -37,12 +37,12 @@ protected:
 public :
     StationListXmlHandler (const IErrorLogClient &logger);
     virtual ~StationListXmlHandler ();
-    bool startDocument ();
+    bool startDocument () override;
     bool startElement (const QString &ns, const QString &localname,
-                       const QString& qname, const QXmlAttributes &);
+                       const QString& qname, const QXmlAttributes &) override;
     bool endElement   (const QString &ns, const QString &localname,
-                       const QString &qname);
-    bool characters   (const QString &ch);
+                       const QString &qname) override;
+    bool characters   (const QString &ch) override;
 
     const StationList          &getStations() const { return m_stations; }
 

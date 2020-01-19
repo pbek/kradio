@@ -40,30 +40,30 @@ public:
     RadioViewVolume(QWidget *parent, const QString &name);
     ~RadioViewVolume();
 
-    float getUsability(Interface *) const;
+    float getUsability(Interface *) const override;
 
 // Interface
 
-    bool connectI   (Interface *);
-    bool disconnectI(Interface *);
+    bool connectI   (Interface *) override;
+    bool disconnectI(Interface *) override;
 
 // IRadioDeviceClient
 RECEIVERS:
-    bool noticePowerChanged         (bool  /*on*/,         const IRadioDevice */*sender*/) { return false; }
-    bool noticeStationChanged       (const RadioStation &, const IRadioDevice */*sender*/) { return false; }
-    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice */*sender*/) { return false; }
+    bool noticePowerChanged         (bool  /*on*/,         const IRadioDevice */*sender*/) override { return false; }
+    bool noticeStationChanged       (const RadioStation &, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeDescriptionChanged   (const QString &,      const IRadioDevice */*sender*/) override { return false; }
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/,    const IRadioDevice */*sender*/) { return false; }
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/, const IRadioDevice */*sender*/) { return false; }
-    bool noticeRDSStationNameChanged(const QString &/*s*/, const IRadioDevice */*sender*/) { return false; }
+    bool noticeRDSStateChanged      (bool  /*enabled*/,    const IRadioDevice */*sender*/) override { return false; }
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeRDSStationNameChanged(const QString &/*s*/, const IRadioDevice */*sender*/) override { return false; }
 
-    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
-    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) { return false; }
+    bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
+    bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/, const IRadioDevice */*sender*/) override { return false; }
 
 // ISoundStreamClient
 RECEIVERS:
-    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid);
-    bool noticePlaybackVolumeChanged(SoundStreamID id, float v);
+    void noticeConnectedI (ISoundStreamServer *s, bool pointer_valid) override;
+    bool noticePlaybackVolumeChanged(SoundStreamID id, float v) override;
 
 // own stuff
 protected slots:

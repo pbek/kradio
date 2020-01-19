@@ -1,23 +1,33 @@
-project(kradio4)
+project(kradio5 CXX)
 
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-if(POLICY CMP0059)
-    cmake_policy(SET CMP0059 OLD)
-endif()
-if(POLICY CMP0064)
-    cmake_policy(SET CMP0064 OLD)
-endif()
+cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
+cmake_policy(SET CMP0063 NEW)
+cmake_policy(SET CMP0071 NEW)
+cmake_policy(SET CMP0054 NEW)
+
+ENABLE_LANGUAGE(C CXX)
+
+# Locate extra-cmake-modules version 0.0.11 and make it a required package
+find_package(ECM 5.10.0 REQUIRED NO_MODULE)
+
+# Set value of CMAKE_MODULE_PATH variable where cmake will search for modules
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+
+# include KF5 directories
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(FeatureSummary)
+include(ECMInstallIcons)
+
+include (FindPkgConfig)
+include (FindBoost)
 
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-find_package(KDE4 4.7.0 REQUIRED)
-find_package(Qt4 REQUIRED)
-include (KDE4Defaults)
-include (MacroLibrary)
+SET(KRADIO_VERSION "5.0.0")
 
-SET(KRADIO_VERSION "4.0.8")
-
-MESSAGE(STATUS "Compiling KRadio4-${KRADIO_VERSION}")
+MESSAGE(STATUS "Compiling KRadio5-${KRADIO_VERSION}")
 
 
 
@@ -25,10 +35,17 @@ MESSAGE(STATUS "Compiling KRadio4-${KRADIO_VERSION}")
 #       Check if libboost is available                                 #
 ########################################################################
 
+find_package( Boost 1.55.0 REQUIRED)
 
-find_package( Boost 1.20 REQUIRED)
-# find_package( Boost 1.xx COMPONENTS regex REQUIRED)
+########################################################################
+#       KDE/QT Libs                                                    #
+########################################################################
 
+# Locate Qt5, make it required package and use QtWidgets and QtCore modules
+find_package(Qt5 REQUIRED COMPONENTS Widgets Core Multimedia )
+
+# Locate KF5, make it required package and use KF5KDELibs4Support and KF5CoreAddons modules
+find_package(KF5 REQUIRED COMPONENTS  CoreAddons XmlGui I18n KIO WindowSystem WidgetsAddons)
 
 
 ########################################################################
@@ -43,13 +60,14 @@ include(MacroProcessPoFiles)
 
 ADD_DEFINITIONS (
     -DKRADIO_VERSION="${KRADIO_VERSION}"
-    ${KDE4_DEFINITIONS}
     -DQT_STRICT_ITERATORS
     -DQT_NO_CAST_FROM_BYTEARRAY
     -DQT_USE_QSTRINGBUILDER
     -DQT_USE_FAST_OPERATOR_PLUS
     -DQT_NO_URL_CAST_FROM_STRING
     -DQT_NO_CAST_TO_ASCII
+    -Wall
+    -Wextra    
 )
 
 option(WITH_KRADIO_FIXMES "Enable FIXME warnings" OFF)
@@ -63,8 +81,6 @@ if(WITH_KRADIO_PROFILERS)
 endif()
 
 INCLUDE_DIRECTORIES(
-    ${KDE4_INCLUDES}
-    ${QT_INCLUDES}
     ${Boost_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/src
@@ -73,7 +89,7 @@ INCLUDE_DIRECTORIES(
 )
 
 SET(INSTALL_TARGETS_DEFAULT_ARGS RUNTIME DESTINATION "${BIN_INSTALL_DIR}"
-                                 LIBRARY DESTINATION "${LIB_INSTALL_DIR}/kradio4/plugins"
+                                 LIBRARY DESTINATION "${LIB_INSTALL_DIR}/kradio5/plugins"
 )
 
 
@@ -81,7 +97,6 @@ SET(INSTALL_TARGETS_DEFAULT_ARGS RUNTIME DESTINATION "${BIN_INSTALL_DIR}"
 
 
 ADD_SUBDIRECTORY(icons)
-#ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
 ADD_SUBDIRECTORY(presets)
 ADD_SUBDIRECTORY(po)
@@ -104,34 +119,41 @@ file(GLOB kradio_main_sources
 )
 
 
-file(GLOB kradio4_UIs
+file(GLOB kradio5_UIs
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.ui
     ${CMAKE_CURRENT_SOURCE_DIR}/radiostations/*.ui
     ${CMAKE_CURRENT_SOURCE_DIR}/interfaces/*.ui
 )
 
-kde4_add_ui_files(kradio_main_sources
-    ${kradio4_UIs}
+ki18n_wrap_ui(kradio_main_sources
+    ${kradio5_UIs}
 )
 
-kde4_add_executable(kradio4
+add_executable(kradio5
     ${kradio_interfaces_sources}
     ${kradio_radiostation_sources}
     ${kradio_main_sources}
 )
 
-SET_TARGET_PROPERTIES(kradio4
+SET_TARGET_PROPERTIES(kradio5
     PROPERTIES
     LINK_FLAGS    " -Wl,--export-dynamic "
 )
 
-TARGET_LINK_LIBRARIES(kradio4
-  ${KDE4_KDEUI_LIBS}
-  ${QT_QTXML_LIBRARY}
-  ${KDE4_KIO_LIBRARY}
+TARGET_LINK_LIBRARIES(kradio5
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::Multimedia
+    KF5::XmlGui
+    KF5::CoreAddons
+    KF5::KIOWidgets
+    KF5::KIOCore
+    KF5::WidgetsAddons
+    KF5::I18n
+    KF5::WindowSystem
 )
 
-INSTALL(TARGETS kradio4 ${INSTALL_TARGETS_DEFAULT_ARGS})
+INSTALL(TARGETS kradio5 ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 SET(documentation_files
     README
@@ -145,14 +167,14 @@ SET(documentation_files
 
 INSTALL(
 	FILES       ${documentation_files}
-    DESTINATION ${SHARE_INSTALL_PREFIX}/doc/kradio4/
+    DESTINATION ${SHARE_INSTALL_PREFIX}/doc/kradio5/
 )
 
 INSTALL(
-    FILES       kradio4.desktop
+    FILES       kradio5.desktop
     DESTINATION ${XDG_APPS_INSTALL_DIR}
 )
 
 
-MACRO_DISPLAY_FEATURE_LOG()
+feature_summary(WHAT ALL)
 

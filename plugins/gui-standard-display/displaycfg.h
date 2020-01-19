@@ -34,14 +34,14 @@ public:
 
 // Interface
 
-    bool connectI (Interface *i) { return IDisplayCfgClient::connectI(i); }
-    bool disconnectI (Interface *i)  { return IDisplayCfgClient::disconnectI(i); }
+    bool connectI (Interface *i)    override { return IDisplayCfgClient::connectI(i); }
+    bool disconnectI (Interface *i) override { return IDisplayCfgClient::disconnectI(i); }
 
 // IDisplayCfgClient
 
 RECEIVERS:
-    bool noticeDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd);
-    bool noticeDisplayFontChanged(const QFont &f);
+    bool noticeDisplayColorsChanged(const QColor &activeColor, const QColor &inactiveColor, const QColor &bkgnd) override;
+    bool noticeDisplayFontChanged(const QFont &f) override;
 
 
 public slots:

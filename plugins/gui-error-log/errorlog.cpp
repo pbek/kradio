@@ -17,32 +17,36 @@
 
 #include "errorlog.h"
 
-#include <QDateTime>
-#include <QLayout>
-#include <QTextCodec>
-#include <QTextStream>
-#include <QTextDocument>
+#include <QtWidgets/QLayout>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QFileDialog>
 
-#include <ktextedit.h>
-#include <klocalizedstring.h>
-#include <kicon.h>
-#include <kfiledialog.h>
-#include <kurl.h>
-#include <ktemporaryfile.h>
-#include <kio/netaccess.h>
+#include <QtCore/QDateTime>
+#include <QtCore/QTextCodec>
+#include <QtCore/QTextStream>
+#include <QtCore/QUrl>
+#include <QtCore/QTemporaryFile>
+
+#include <QtGui/QTextDocument>
+#include <QtGui/QIcon>
+
+
+#include <KTextEdit>
+#include <KLocalizedString>
+
+#include "kio_put_wrapper.h"
 
 ///////////////////////////////////////////////////////////////////////
 
 static KAboutData aboutData()
 {
     KAboutData about("ErrorLog",
-                     PROJECT_NAME,
-                     KLocalizedString(),
+                     NULL,
                      KRADIO_VERSION,
-                     ki18nc("@title", "Error Logging Window"),
-                     KAboutData::License_GPL,
-                     KLocalizedString(),
-                     KLocalizedString(),
+                     i18nc("@title", "Error Logging Window"),
+                     KAboutLicense::LicenseKey::GPL,
+                     NULL,
+                     NULL,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;
@@ -58,30 +62,30 @@ ErrorLog::ErrorLog(const QString &instanceID, const QString &name)
        init_done(false)
 {
     setFaceType        (KPageDialog::List);
-    setCaption         (i18n("KRadio Logger"));
+    setWindowTitle     (i18n("KRadio Logger"));
     setObjectName      (name);
     setModal           (false);
-    setButtons         (KDialog::Close | KDialog::User1);
-    setDefaultButton   (KDialog::Close);
-    showButtonSeparator(true);
-    setButtonGuiItem(KDialog::User1, KGuiItem(i18n("Save &as"), KIcon("document-save-as")));
-
+    setStandardButtons (QDialogButtonBox::Close);
+    buttonBox()->button(QDialogButtonBox::Close)->setDefault(true);
+    
+    QPushButton *saveAsButton = new QPushButton(QIcon("document-save-as"), i18n("Save &as"));
+    buttonBox()->addButton(saveAsButton, QDialogButtonBox::InvalidRole);
 
     setWindowTitle(i18n("KRadio Logger"));
 
-    setTextEditPage(i18n("Information"), KIcon("dialog-information"), &m_pageInfo);
+    setTextEditPage(i18n("Information"), QIcon("dialog-information"), &m_pageInfo);
     logInfo(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    setTextEditPage(i18n("Warnings"), KIcon("dialog-warning"), &m_pageWarnings);
+    setTextEditPage(i18n("Warnings"), QIcon("dialog-warning"), &m_pageWarnings);
     logWarning(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    setTextEditPage(i18n("Errors"), KIcon("dialog-error"), &m_pageErrors);
+    setTextEditPage(i18n("Errors"), QIcon("dialog-error"), &m_pageErrors);
     logError(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    setTextEditPage(i18n("Debugging"), KIcon("system-search"), &m_pageDebug);
+    setTextEditPage(i18n("Debugging"), QIcon("system-search"), &m_pageDebug);
     logDebug(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    QObject::connect(this, SIGNAL(user1Clicked()), this, SLOT(slotUser1()));
+    QObject::connect(saveAsButton, &QPushButton::clicked, this, &ErrorLog::slotSaveAs);
 
     init_done = true;
 }
@@ -92,7 +96,7 @@ ErrorLog::~ErrorLog()
 }
 
 
-void ErrorLog::setTextEditPage(const QString &title, const KIcon &icon, Page *page)
+void ErrorLog::setTextEditPage(const QString &title, const QIcon &icon, Page *page)
 {
     QWidget     *frame = new QWidget(this);
     QGridLayout *linfo = new QGridLayout(frame);
@@ -109,7 +113,7 @@ void ErrorLog::setTextEditPage(const QString &title, const KIcon &icon, Page *pa
 
 void ErrorLog::logToPage(Page &page, const QString &text, bool showUp)
 {
-    const QString escaped = Qt::escape(text);
+    const QString escaped = text.toHtmlEscaped();
     const QString msg = "<i>" + QDateTime::currentDateTime().toString(Qt::ISODate) + "</i> " + escaped + "\n";
     QMutexLocker lock(&page.mutex);
     page.edit->append(msg);
@@ -194,12 +198,12 @@ bool ErrorLog::logDebug   (const QString &s)
 
 
 // store Log Data
-void ErrorLog::slotUser1()
+void ErrorLog::slotSaveAs()
 {
-    const KUrl url = KFileDialog::getSaveUrl(KUrl(), "*.log|" + i18n("Log Files") + " (*.log)", this, i18n("Save KRadio Logging Data"), KFileDialog::ConfirmOverwrite);
+    const QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Save KRadio Logging Data"), QUrl(), i18n("Log Files") + " (*.log)");
 
     if (url.isValid()) {
-        KTemporaryFile tmpFile;
+        QTemporaryFile tmpFile(this);
         tmpFile.setAutoRemove(true);
         if (tmpFile.open()) {
             QString filename = tmpFile.fileName();
@@ -225,10 +229,17 @@ void ErrorLog::slotUser1()
 
             // close hopefully flushes buffers ;)
             tmpFile.close();
-
-            if (!KIO::NetAccess::upload(filename, url, this)) {
+            
+            tmpFile.open();            
+            
+            const QByteArray tmpFileData = tmpFile.readAll();
+            tmpFile.close();
+            
+            kio_put_wrapper_t  kio_put_wrapper(url, tmpFileData);
+            
+            if (!kio_put_wrapper.ok()) {
                 logError("ErrorLogger: " +
-                        i18n("error uploading preset file %1", url.pathOrUrl()));
+                        i18n("error uploading preset file %1", url.toString()));
             }
         }
     }
@@ -237,4 +248,3 @@ void ErrorLog::slotUser1()
 }
 
 
-#include "errorlog.moc"

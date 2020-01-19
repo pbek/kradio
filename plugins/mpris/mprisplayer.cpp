@@ -216,4 +216,3 @@ bool MPRISPlayer::CanControl() const
 }
 
 
-#include <mprisplayer.moc>

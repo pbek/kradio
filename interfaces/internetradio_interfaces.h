@@ -30,7 +30,7 @@
 
 class InternetRadioStation;
 class FrequencyRadioStation;
-class KUrl;
+class QUrl;
 
 INTERFACE(IInternetRadio, IInternetRadioClient)
 {
@@ -38,13 +38,13 @@ public :
     IF_CON_DESTRUCTOR(IInternetRadio, -1)
 
 RECEIVERS:
-    IF_RECEIVER(  setURL(const KUrl &url, const InternetRadioStation *irs)          )
+    IF_RECEIVER(  setURL(const QUrl &url, const InternetRadioStation *irs)          )
 
 SENDERS:
-    IF_SENDER  (  notifyURLChanged(const KUrl &u, const InternetRadioStation *irs)  )
+    IF_SENDER  (  notifyURLChanged(const QUrl &u, const InternetRadioStation *irs)  )
 
 ANSWERS:
-    IF_ANSWER  (  const KUrl &          getURL() const                              );
+    IF_ANSWER  (  const QUrl &          getURL() const                              );
 };
 
 
@@ -57,17 +57,17 @@ public :
 
 
 SENDERS:
-    IF_SENDER  (  sendURL(const KUrl &url, const InternetRadioStation *irs)           )
+    IF_SENDER  (  sendURL(const QUrl &url, const InternetRadioStation *irs)           )
 
 RECEIVERS:
-    IF_RECEIVER(  noticeURLChanged(const KUrl &url, const InternetRadioStation *irs)  )
+    IF_RECEIVER(  noticeURLChanged(const QUrl &url, const InternetRadioStation *irs)  )
 
 QUERIES:
-    IF_QUERY   (  const KUrl &queryURL()                                              )
+    IF_QUERY   (  const QUrl &queryURL()                                              )
 
 RECEIVERS:
-    virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid);
-    virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid);
+    virtual void noticeConnectedI    (cmplInterface *, bool pointer_valid) override;
+    virtual void noticeDisconnectedI (cmplInterface *, bool pointer_valid) override;
 };
 
 

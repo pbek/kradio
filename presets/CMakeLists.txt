@@ -13,5 +13,5 @@ SCAN_DIRS("${CMAKE_CURRENT_SOURCE_DIR}" "." presets_dirs)
 
 FOREACH(dir IN LISTS presets_dirs)
     FILE(GLOB presets ${dir}/*.krp)
-    INSTALL(FILES ${presets} DESTINATION ${DATA_INSTALL_DIR}/kradio4/presets/${dir})
+    INSTALL(FILES ${presets} DESTINATION ${DATA_INSTALL_DIR}/kradio5/presets/${dir})
 ENDFOREACH(dir IN LISTS presets_dirs)
