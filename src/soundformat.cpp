@@ -657,34 +657,34 @@ void SoundFormat::scaleSamples(char *_src, float scale, size_t n_frames) const
 
 
 template<typename dstT, typename storageT, int c_bits, unsigned int c_endianness, bool do_scale>
-inline void minMaxAvgMagnitudePerChannel(const char *src, size_t channels, size_t n_frames, dstT *vmin, dstT *vmax, dstT *vavg, int var_bits = 0, int var_sampleSize = 0)
+inline void minMaxAvgMagnitudePerChannel(const char *src, size_t channels, size_t n_frames, SoundFormat::minMaxAvgPerChannel_t<dstT> *minMaxAvg, int var_bits = 0, int var_sampleSize = 0)
 {
     size_t n_samples = n_frames * channels;
     for (size_t ch = 0; ch < channels; ++ch) {
         dstT     v    = readSample<dstT, storageT, c_bits, c_endianness, do_scale>(src, var_bits, var_sampleSize);
         dstT     absV = v < 0 ? -v : v;
-        vmin[ch] = absV;
-        vmax[ch] = absV;
-        vavg[ch] = absV;
+        minMaxAvg[ch].min = absV;
+        minMaxAvg[ch].max = absV;
+        minMaxAvg[ch].avg = absV;
     }
     size_t ch = 0;
     for (size_t i = channels; i < n_samples; ++i) {
         dstT     v    = readSample<dstT, storageT, c_bits, c_endianness, do_scale>(src, var_bits, var_sampleSize);
         dstT     absV = v < 0 ? -v : v;
-        vmin[ch]  = std::min(vmin[ch], absV);
-        vmax[ch]  = std::max(vmax[ch], absV);
-        vavg[ch] += absV;
+        minMaxAvg[ch].min  = std::min(minMaxAvg[ch].min, absV);
+        minMaxAvg[ch].max  = std::max(minMaxAvg[ch].max, absV);
+        minMaxAvg[ch].avg += absV;
         if (++ch >= channels) {
             ch -= channels;
         }
     }
     for (size_t ch = 0; ch < channels; ++ch) {
-        vavg[ch] /= n_frames;
+        minMaxAvg[ch].avg /= n_frames;
     }
 }
 
 
-void SoundFormat::minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames, double *vmin, double *vmax, double *vavg) const
+void SoundFormat::minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames, minMaxAvgPerChannel_t<double> *minMaxAvg) const
 {
-    resolveVariableEndiannessSignednessAndBits(::minMaxAvgMagnitudePerChannel, double, m_SampleBits, sampleSize(), m_IsSigned, m_Endianness, false, src, m_Channels, n_frames, vmin, vmax, vavg);
+    resolveVariableEndiannessSignednessAndBits(::minMaxAvgMagnitudePerChannel, double, m_SampleBits, sampleSize(), m_IsSigned, m_Endianness, false, src, m_Channels, n_frames, minMaxAvg);
 }

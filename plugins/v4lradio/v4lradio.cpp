@@ -1409,7 +1409,7 @@ ConfigPageInfo V4LRadio::createConfigurationPage()
     return ConfigPageInfo (v4lconf,
                            i18n("V4L Radio"),
                            i18n("V4L Radio Options"),
-                           "kradio_v4l"
+                           "kradio5_v4l"
                           );
 }
 
@@ -1472,13 +1472,10 @@ void V4LRadio::radio_done()
 
 
 
-static QString extractNameBuffer(const char *buffer, int buffer_size)
+static QString extractNameBuffer(const char *buffer, int /*buffer_size*/)
 {
-    char    tmp_buffer[buffer_size + 1];
-    memcpy(tmp_buffer, buffer, buffer_size);
-    tmp_buffer[buffer_size] = 0;
-    QString res = tmp_buffer;
-    return res;
+    QByteArray deepCopy(buffer);
+    return QString::fromLocal8Bit(deepCopy);
 }
 
 

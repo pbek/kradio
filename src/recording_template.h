@@ -77,7 +77,7 @@ struct recordingTemplate_t
                                      ? config.readEntry(compatFNameField, defaultFName)
                                      : defaultFName;
         filename  = config.readEntry(prefix + "_filename",  compatFilename);
-        id3Title  = config.readEntry(prefix + "_id3Title",  i18n("%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"));
+        id3Title  = config.readEntry(prefix + "_id3Title",  i18n("%s, %m/%d/%Y, %H:%M:%S, kradio5 recording"));
         id3Artist = config.readEntry(prefix + "_id3Artist", "%s");
         id3Genre  = config.readEntry(prefix + "_id3Genre",  "");
     }

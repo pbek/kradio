@@ -2,7 +2,7 @@
 
 $EXTRACTRC    *.rc *.ui *.kcfg >> rc.cpp
 #$PREPARETIPS   > tips.cpp
-$XGETTEXT     *.cpp *.h -o $podir/kradio4_plugin_soundserver.pot
+$XGETTEXT     *.cpp *.h -o $podir/kradio5_plugin_soundserver.pot
 
 
 rm -f rc.cpp tips.cpp

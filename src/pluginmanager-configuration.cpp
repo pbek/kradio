@@ -48,8 +48,8 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     btnRemoveLibrary       ->setIcon(QIcon("edit-delete"));
     btnAddLibrary          ->setIcon(QIcon("document-new"));
 
-    // FIXME: KF5 port: how to get KStandardDirs::installPath ("lib") + "kradio4/plugins";
-    QString defaultPluginDir = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, "kradio4/plugins");
+    // FIXME: KF5 port: how to get KStandardDirs::installPath ("lib") + "kradio5/plugins";
+    QString defaultPluginDir = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, "kradio5/plugins");
     editPluginLibrary->setStartDir(QUrl(defaultPluginDir));
     editPluginLibrary->setMode(editPluginLibrary->mode() | KFile::LocalOnly);
 

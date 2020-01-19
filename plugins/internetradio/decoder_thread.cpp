@@ -187,7 +187,8 @@ bool InternetRadioDecoder::decodePacket(AVPacket &pkt, int &processed_input_byte
                                                   &pkt);
 
 #if defined(HAVE_LIBAVRESAMPLE) || defined (HAVE_LIBSWRESAMPLE)
-    DECLARE_ALIGNED(32, uint8_t, tmp_resample_output_buffer)[m_decoded_frame->nb_samples * m_soundFormat.frameSize() + 64];
+    std::vector<uint8_t>  raw_resample_output_buffer(m_decoded_frame->nb_samples * m_soundFormat.frameSize() + 2 * 64);
+    uint8_t             * tmp_resample_output_buffer = (uint8_t*)((((ptrdiff_t(raw_resample_output_buffer.data()) - 1) >> 5) + 1) << 5); // align to 32 bytes
 #endif
     if (processed_input_bytes > 0 && got_frame) {
         /* if a frame has been decoded, output it */
@@ -432,11 +433,11 @@ void InternetRadioDecoder::pushBuffer(const char *_data, size_t dataSize, const 
     sf.m_IsPlanar  = false;
 
     const char *data = _data;
-    char        convBuf[dataSize];
+    std::vector<char>  convBuf(dataSize);
     if (orgSF.m_IsPlanar) {
-        data = convBuf;
+        data = convBuf.data();
         size_t nFrames = dataSize / orgSF.frameSize();
-        orgSF.convertNonInterleavedToInterleaved(_data, convBuf, nFrames);
+        orgSF.convertNonInterleavedToInterleaved(_data, convBuf.data(), nFrames);
     }
 
     bool    foundBuffer       = false;
@@ -751,10 +752,11 @@ bool InternetRadioDecoder::retrieveStreamInformation(const QString &stream, bool
 
 bool InternetRadioDecoder::openCodec(const QString &stream, bool warningsNotErrors)
 {
-    m_av_aCodecCtx = m_av_pFormatCtx->streams[m_av_audioStream]->codec;
+    AVStream *avstream = m_av_pFormatCtx->streams[m_av_audioStream];
+    m_av_aCodecCtx = avstream->codec;
 
     if (!m_av_aCodec) {
-        m_av_aCodec = avcodec_find_decoder(m_av_aCodecCtx->codec_id);
+        m_av_aCodec = avcodec_find_decoder(avstream->codecpar->codec_id);
     }
     if (!m_av_aCodec) {
         if (warningsNotErrors) {

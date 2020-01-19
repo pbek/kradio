@@ -34,7 +34,7 @@ WidgetPluginBase::WidgetPluginBase(QWidget *myself, const QString &instanceID, c
     m_ignoreHideShow(false),
     m_geoCacheValid(false)
 {
-    KWindowSystem::setMainWindow(getWidget(), 0);
+    KWindowSystem::setMainWindow(getWidget()->window()->windowHandle(), 0);
 }
 
 
@@ -256,7 +256,7 @@ void WidgetPluginBase::startPlugin()
 
     QWidget *w = getWidget();
     if (w) {
-        KWindowSystem::setMainWindow(w, 0);
+        KWindowSystem::setMainWindow(w->window()->windowHandle(), 0);
         m_geoRestoreFlag = true;
         if (!m_restoreShow) {
             m_ignoreHideShow = true;
@@ -283,11 +283,11 @@ void WidgetPluginBase::updateHideShowAction(bool show)
     }
     if (!show) {
         m_HideShowAction.setText(i18n("Show %1", menuitem));
-        m_HideShowAction.setIcon(QIcon("kradio_show"));
+        m_HideShowAction.setIcon(QIcon("kradio5_show"));
     }
     else {
         m_HideShowAction.setText(i18n("Hide %1", menuitem));
-        m_HideShowAction.setIcon(QIcon("kradio_hide"));
+        m_HideShowAction.setIcon(QIcon("kradio5_hide"));
     }
     notifyManager (show);
 }

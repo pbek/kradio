@@ -275,7 +275,7 @@ void RadioDocking::buildContextMenu()
 
     m_alarmID  = m_menu->addSection (m_cachedNextAlarmString);
 
-    m_sleepID  = m_menu->addAction(QIcon("kradio_zzz"), "sleep-dummy");
+    m_sleepID  = m_menu->addAction(QIcon("kradio5_zzz"), "sleep-dummy");
     m_seekfwID = m_menu->addAction(QIcon("media-seek-forward"),  i18n("Search Next Station"));
     m_seekbwID = m_menu->addAction(QIcon("media-seek-backward"), i18n("Search Previous Station"));
     QObject::connect(m_sleepID,  SIGNAL(triggered()), this, SLOT(slotSleepCountdown()));
@@ -435,10 +435,10 @@ bool RadioDocking::noticeNextAlarmChanged(const Alarm *a)
 bool RadioDocking::noticeCountdownStarted(const QDateTime &end)
 {
     if (end.isValid()) {
-        m_sleepID->setIcon(QIcon("kradio_zzz"));
+        m_sleepID->setIcon(QIcon("kradio5_zzz"));
         m_sleepID->setText(i18n("Stop Sleep Countdown (running until %1)", end.toString()));
     } else {
-        m_sleepID->setIcon(QIcon("kradio_zzz"));
+        m_sleepID->setIcon(QIcon("kradio5_zzz"));
         m_sleepID->setText(i18n("Start Sleep Countdown"));
     }
     return true;
@@ -447,7 +447,7 @@ bool RadioDocking::noticeCountdownStarted(const QDateTime &end)
 
 bool RadioDocking::noticeCountdownStopped()
 {
-    m_sleepID->setIcon(QIcon("kradio_zzz"));
+    m_sleepID->setIcon(QIcon("kradio5_zzz"));
     m_sleepID->setText(i18n("Start Sleep Countdown"));
     return true;
 }
@@ -455,7 +455,7 @@ bool RadioDocking::noticeCountdownStopped()
 
 bool RadioDocking::noticeCountdownZero()
 {
-    m_sleepID->setIcon(QIcon("kradio_zzz"));
+    m_sleepID->setIcon(QIcon("kradio5_zzz"));
     m_sleepID->setText(i18n("Start Sleep Countdown"));
     return true;
 }
@@ -834,13 +834,13 @@ void RadioDocking::updateTrayIcon(bool run_query_rec, bool run_query_pause, bool
         queryIsRecordingRunning(sink_id, recording, sf);
     }
     if (paused) {
-        setIcon(QIcon("kradio4_plus_pause"));
+        setIcon(QIcon("kradio5_plus_pause"));
     } else if (recording) {
-        setIcon(QIcon("kradio4_plus_record"));
+        setIcon(QIcon("kradio5_plus_record"));
     } else if (running) {
-        setIcon(QIcon("kradio4_plus_play"));
+        setIcon(QIcon("kradio5_plus_play"));
     } else {
-        setIcon(QIcon("kradio4"));
+        setIcon(QIcon("kradio5"));
     }
 }
 

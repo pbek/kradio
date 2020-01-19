@@ -199,7 +199,7 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     btnRecording->setIcon(QIcon("media-record"));
     btnConfigure->setIcon(QIcon("configure"));
     btnQuit     ->setIcon(QIcon("application-exit"));
-    btnSnooze   ->setIcon(QIcon("kradio_zzz"));
+    btnSnooze   ->setIcon(QIcon("kradio5_zzz"));
     btnPlugins  ->setIcon(QIcon("preferences-plugin"));
     btnHelp     ->setIcon(QIcon("help-about"));
     btnHelp     ->setMenu(m_helpMenu.menu());

@@ -61,10 +61,10 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     buttonAlarmNew   ->setIcon(QIcon("document-new"));
     buttonDeleteAlarm->setIcon(QIcon("edit-delete"));
 
-    comboAlarmType->insertItem(Alarm::StartPlaying,   QIcon("kradio_muteoff"), i18n("Start Playing"));
-    comboAlarmType->insertItem(Alarm::StopPlaying,    QIcon("kradio_muteon"),  i18n("Stop Playing"));
+    comboAlarmType->insertItem(Alarm::StartPlaying,   QIcon("kradio5_muteoff"), i18n("Start Playing"));
+    comboAlarmType->insertItem(Alarm::StopPlaying,    QIcon("kradio5_muteon"),  i18n("Stop Playing"));
     comboAlarmType->insertItem(Alarm::StartRecording, QIcon("media-record"),   i18n("Start Recording"));
-    comboAlarmType->insertItem(Alarm::StopRecording,  QIcon("kradio_muteon"),  i18n("Stop Recording"));
+    comboAlarmType->insertItem(Alarm::StopRecording,  QIcon("kradio5_muteon"),  i18n("Stop Recording"));
 
     editAlarmDate->setCalendarPopup(true);
     editAlarmVolume->setSpecialValueText(i18n("unchanged"));

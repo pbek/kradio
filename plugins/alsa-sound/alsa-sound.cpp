@@ -274,7 +274,7 @@ ConfigPageInfo  AlsaSoundDevice::createConfigurationPage()
     return ConfigPageInfo (conf,
                            i18n("ALSA Sound"),
                            i18n("ALSA Sound Device Options"),
-                           "kradio_alsa2");
+                           "kradio5_alsa2");
 }
 
 

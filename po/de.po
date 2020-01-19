@@ -1,4 +1,4 @@
-# translation of kradio4-svn.po.de.po to German
+# translation of kradio5-svn.po.de.po to German
 # translation of de.po to
 # This file is put in the public domain.
 #
@@ -7,7 +7,7 @@
 # Frederik Schwarzer <schwarzerf@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: kradio4-svn.po.de\n"
+"Project-Id-Version: kradio5-svn.po.de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2017-01-14 20:03+0100\n"
 "PO-Revision-Date: 2014-09-18 17:40+0200\n"
@@ -59,8 +59,8 @@ msgstr "%1, %2"
 
 #: src/recording_template.h:80
 #, kde-format
-msgid "%s, %m/%d/%Y, %H:%M:%S, kradio4 recording"
-msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio4-Aufnahme"
+msgid "%s, %m/%d/%Y, %H:%M:%S, kradio5 recording"
+msgstr "%s, %m/%d/%Y, %H:%M:%S, kradio5-Aufnahme"
 
 #: src/standardscandialog.cpp:46 src/standardscandialog.cpp:109
 #, kde-format

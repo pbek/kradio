@@ -193,7 +193,7 @@ ConfigPageInfo  OSSSoundDevice::createConfigurationPage()
     return ConfigPageInfo (conf,
                            i18n("OSS Sound"),
                            i18n("OSS Sound Device Options"),
-                           "kradio_oss");
+                           "kradio5_oss");
 }
 
 

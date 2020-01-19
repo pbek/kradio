@@ -4,7 +4,7 @@
 Version:   4.0.8
 %define    rel2 release
 %define    rel %{version}
-Name:      kradio4
+Name:      kradio5
 License:   GPLv2
 Summary:   V4L/V4L2-Radio Application for KDE4
 Release:   %{rel}%{?dist}
@@ -144,7 +144,7 @@ rm -rf %{buildroot}
 - Added BR alsa-lib-devel.
 
 * Fri Mar 27 2009 Paulo Roma <roma@lcg.ufrj.br> - 4.0-0.1.r778.20090322
-- Updated to kradio4-snapshot-2009-03-22-r778.
+- Updated to kradio5-snapshot-2009-03-22-r778.
 - Rewritten spec file.
 
 * Wed Jun 11 2008 Paulo Roma <roma@lcg.ufrj.br> - r497.20061112-4

@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     QApplication         app(argc, argv);
 
-    KAboutData           aboutData(QStringLiteral("kradio4"),
+    KAboutData           aboutData(QStringLiteral("kradio5"),
 				   i18n("KRadio4"),
 				   QStringLiteral(KRADIO_VERSION),
 				   i18n("A versatile KDE AM/FM/Internet radio application"),

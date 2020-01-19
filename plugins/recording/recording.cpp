@@ -143,7 +143,7 @@ ConfigPageInfo  Recording::createConfigurationPage()
     return ConfigPageInfo(c,
                           i18n("Recording"),
                           i18n("Recording"),
-                          "kradio_record"
+                          "kradio5_record"
                          );
 }
 

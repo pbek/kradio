@@ -14,7 +14,7 @@
 
 # Please submit bugfixes or comments via https://sourceforge.net/tracker/?group_id=45668
 #
-Name:          kradio4
+Name:          kradio5
 Summary:       AM/FM/INternet Radio Application for KDE 4.x
 Version: 4.0.8
 Release:       1.opensuse
@@ -70,14 +70,14 @@ Authors:
 
 %files -f %name.lang
 %defattr(-,root,root,-)
-%{_datadir}/pixmaps/kradio4.png
+%{_datadir}/pixmaps/kradio5.png
 %{_docdir}/%{name}
 %exclude %{_docdir}/%{name}/INSTALL
 %{_kde4_bindir}/*
-%{_kde4_libdir}/kradio4
-%{_kde4_appsdir}/kradio4
+%{_kde4_libdir}/kradio5
+%{_kde4_appsdir}/kradio5
 %{_kde4_iconsdir}/*
-%{_kde4_applicationsdir}/kradio4.desktop
+%{_kde4_applicationsdir}/kradio5.desktop
 
 %prep
 %setup -q 
@@ -90,10 +90,10 @@ Authors:
 %make_install
 mkdir %{buildroot}/%{_docdir}
 mv %{buildroot}/%{_docdir}/../%{name} %{buildroot}/%{_docdir}/%{name}
-%suse_update_desktop_file -G "KDE Radio Tuner" kradio4 AudioVideo Tuner
+%suse_update_desktop_file -G "KDE Radio Tuner" kradio5 AudioVideo Tuner
 %kde_post_install
 %fdupes %{buildroot}
-%find_lang kradio4 --all-name
+%find_lang kradio5 --all-name
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig

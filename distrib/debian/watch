@@ -5,4 +5,4 @@
 version=3
 
 opts=versionmangle=s/-/_/g;s/_rc(\d)/.9$1/;s/_beta(\d)/.8$1/;s/^(\d+\.\d+\.\d+)$/$1\.99/,filenamemangle=s/.*filename=(.*)/$1/,downloadurlmangle=s/.*filename=(.*)/http:\/\/dfn.dl.sourceforge.net\/sourceforge\/kradio\/$1/    \
-    http://kradio.sourceforge.net/download.html http://sourceforge.net/project/downloading.php\?group_id=45668\&filename=kradio4-(\d.*)\.tar\.gz
+    http://kradio.sourceforge.net/download.html http://sourceforge.net/project/downloading.php\?group_id=45668\&filename=kradio5-(\d.*)\.tar\.gz

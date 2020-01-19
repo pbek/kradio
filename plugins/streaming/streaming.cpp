@@ -189,7 +189,7 @@ ConfigPageInfo  StreamingDevice::createConfigurationPage()
     return ConfigPageInfo (conf,
                            i18n("Streaming"),
                            i18n("Streaming Device Options"),
-                           "kradio_streaming"
+                           "kradio5_streaming"
                           );
 }
 

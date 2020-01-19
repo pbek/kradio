@@ -150,7 +150,7 @@ ConfigPageInfo Radio::createConfigurationPage()
         conf,
         i18n("Radio Stations"),
         i18n("Setup Radio Stations"),
-        "kradio4"
+        "kradio5"
     );
 }
 

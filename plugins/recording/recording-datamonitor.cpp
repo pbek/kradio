@@ -367,13 +367,11 @@ bool RecordingDataMonitor::noticeSoundStreamData(SoundStreamID /*id*/,
 //         bias = -m_maxValue;
     }
 
-    double  minMag[m_channels];
-    double  maxMag[m_channels];
-    double  avgMag[m_channels];
-    sf.minMaxAvgMagnitudePerChannel(data, nFrames, minMag, maxMag, avgMag);
+    std::vector<SoundFormat::minMaxAvgPerChannel_t<double> >  minMaxAvg(m_channels);
+    sf.minMaxAvgMagnitudePerChannel(data, nFrames, minMaxAvg.data());
     for (int ch = 0; ch < m_channels; ++ch) {
-        m_channelsAvg[ch] = avgMag[ch];
-        m_channelsMax[ch] = maxMag[ch];
+        m_channelsAvg[ch] = minMaxAvg[ch].avg;
+        m_channelsMax[ch] = minMaxAvg[ch].max;
     }
 
     update(m_maxValue != old_max ? updateAllForced : updatePartially);

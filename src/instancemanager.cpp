@@ -136,7 +136,7 @@ void InstanceManager::restoreState (KConfig *c)
     KConfigGroup plugin_group = c->group("Plugin Libraries");
 
     // FIXME: KF5 porting: this might be wrong...
-    QStringList new_libs = QStandardPaths::locateAll(QStandardPaths::ApplicationsLocation, "kradio4/plugins/*.so");
+    QStringList new_libs = QStandardPaths::locateAll(QStandardPaths::ApplicationsLocation, "kradio5/plugins/*.so");
 
     int n_libs = plugin_group.readEntry("count", 0);
 

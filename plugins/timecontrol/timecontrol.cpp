@@ -317,7 +317,7 @@ ConfigPageInfo TimeControl::createConfigurationPage()
     return ConfigPageInfo (conf,
                            i18n("Alarms"),
                            i18n("Setup Alarms"),
-                           "kradio_kalarm"
+                           "kradio5_kalarm"
                           );
 }
 

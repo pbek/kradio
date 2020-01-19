@@ -195,7 +195,7 @@ void LircSupport::checkLIRCConfigurationFile(const QString &fname)
 {
     if (!QFile::exists(fname)) {
         logWarning(i18n("%1 does not exist. File was created with KRadio's default .lircrc proposal", fname));
-        QString default_lircrc_filename = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kradio4/default-dot-lircrc");
+        QString default_lircrc_filename = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kradio5/default-dot-lircrc");
         if (!QFile::copy(default_lircrc_filename, fname)) {
             logError(i18n("Failed to copy %1 to %2", default_lircrc_filename, fname));
         }

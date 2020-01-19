@@ -35,7 +35,7 @@
 **
 ****************************************************************************/
 
-/** extended by Martin Witte for kradio4 **/
+/** extended by Martin Witte for kradio5 **/
 
 
 #include "buttonflowlayout4.h"

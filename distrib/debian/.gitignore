@@ -1,8 +1,9 @@
 *.log
 stamp-*
-kradio4
+kradio5
 files
-kradio4.postinst.debhelper
-kradio4.postrm.debhelper
-kradio4.substvars
-kradio4.dsc
+kradio5.postinst.debhelper
+kradio5.postrm.debhelper
+kradio5.substvars
+kradio5.dsc
+.debhelper

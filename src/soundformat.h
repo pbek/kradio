@@ -111,9 +111,24 @@ struct KRADIO5_EXPORT SoundFormat {
     void     convertFloatNonInterleavedToSamples(const float **src, char   *dst, size_t n_frames) const;
 
     void     convertNonInterleavedToInterleaved (const char   *src, char   *dst, size_t n_frames) const;
+    
+    template<typename T>
+    struct minMaxAvgPerChannel_t
+    {
+        T min;
+        T max;
+        T avg;
+        
+        minMaxAvgPerChannel_t()
+           : min( std::numeric_limits<T>::max()),
+             max(-std::numeric_limits<T>::min()),
+             avg(0)
+        {} // default CTOR
+    }; // minMaxAvgPerChannel_t
+    
 
     void     scaleSamples    (char *_src, float scale, size_t n_frames) const;
-    void     minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames, double *vmin, double *vmax, double *vavg) const;
+    void     minMaxAvgMagnitudePerChannel(const char *src, size_t n_frames, minMaxAvgPerChannel_t<double> *minMaxAvg) const;
 
     bool     isValid() const { return m_SampleRate > 1000 && m_Channels > 0 && m_SampleBits >= 8; }
 

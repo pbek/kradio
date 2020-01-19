@@ -132,7 +132,7 @@ void PluginManager::updateWidgetPluginMenuItem(WidgetPluginBase *b, QMenu *menu,
     QString text = (shown ? i18n("Hide %1") : i18n("Show %1", name);
 
     menu->changeItem(map[b],
-                     QIconSet(SmallIconSet(!shown ? "kradio_show" : "kradio_hide")),
+                     QIconSet(SmallIconSet(!shown ? "kradio5_show" : "kradio5_hide")),
                      text);
 }
 */
