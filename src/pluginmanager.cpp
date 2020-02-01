@@ -378,7 +378,7 @@ KPageWidgetItem *PluginManager::addConfigurationPage (const ConfigPageInfo &info
 
     // make sure, that config page receives ok, apply and cancel signals
     QObject::connect(this,           SIGNAL(sigConfigOK()),   info.page, SLOT(slotOK()));
-    QObject::connect(m_configDialog, SIGNAL(rejected()),      info.page, SLOT(slotCancel()));
+    QObject::connect(m_configDialog, SIGNAL(sigCancel()),     info.page, SLOT(slotCancel()));
 
     // insert into config dialog
     KPageWidgetItem *item = m_configDialog->addPage(f, info.itemName);
@@ -402,7 +402,7 @@ void PluginManager::createConfigDialog(const QString &title)
     m_configDialog = cfg;
     m_configDialog->PluginBase::setName(m_configDialog->pluginClassName());
 
-    QObject::connect(m_configDialog, &QDialog::accepted, this, &PluginManager::slotConfigOK);
+    QObject::connect(m_configDialog, &PluginConfigurationDialog::sigAccept, this, &PluginManager::slotConfigOK);
 
     insertPlugin(cfg);
 

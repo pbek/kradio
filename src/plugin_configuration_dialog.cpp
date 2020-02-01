@@ -19,6 +19,7 @@
 #include <kconfig.h>
 #include <klocalizedstring.h>
 #include <QLayout>
+#include <QPushButton>
 
 PluginConfigurationDialog::PluginConfigurationDialog(
         const QString         &instanceID,
@@ -35,7 +36,13 @@ PluginConfigurationDialog::PluginConfigurationDialog(
     KPageDialog::setObjectName      (name);
     KPageDialog::setModal           (false);
     KPageDialog::setStandardButtons (QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Apply);
-}
+    
+    QObject::connect(this->buttonBox()->button(QDialogButtonBox::Ok),     &QPushButton::clicked,  this, &PluginConfigurationDialog::sigAccept);
+    QObject::connect(this->buttonBox()->button(QDialogButtonBox::Apply),  &QPushButton::clicked,  this, &PluginConfigurationDialog::sigAccept);
+    QObject::connect(this->buttonBox()->button(QDialogButtonBox::Cancel), &QPushButton::clicked,  this, &PluginConfigurationDialog::sigCancel);
+    QObject::connect(this,                                                &QDialog    ::accepted, this, &PluginConfigurationDialog::sigAccept);
+    QObject::connect(this,                                                &QDialog    ::rejected, this, &PluginConfigurationDialog::sigCancel);
+} // CTOR
 
 
 // PluginBase
