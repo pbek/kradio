@@ -24,6 +24,7 @@
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
 #include <QtGui/QIcon>
+#include <QtGui/QWindow>
 
 WidgetPluginBase::WidgetPluginBase(QWidget *myself, const QString &instanceID, const QString &name, const QString &description)
   : PluginBase(instanceID, name, description),
@@ -34,8 +35,12 @@ WidgetPluginBase::WidgetPluginBase(QWidget *myself, const QString &instanceID, c
     m_ignoreHideShow(false),
     m_geoCacheValid(false)
 {
-    KWindowSystem::setMainWindow(getWidget()->window()->windowHandle(), 0);
-}
+    auto     widget = getWidget();
+    widget->setAttribute(Qt::WA_NativeWindow, true);
+    auto     window = widget->window();
+    auto     handle = window->windowHandle();
+    KWindowSystem::setMainWindow(handle, 0);
+} // CTOR
 
 
 void WidgetPluginBase::notifyManager(bool shown)
