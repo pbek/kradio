@@ -288,11 +288,11 @@ void WidgetPluginBase::updateHideShowAction(bool show)
     }
     if (!show) {
         m_HideShowAction.setText(i18n("Show %1", menuitem));
-        m_HideShowAction.setIcon(QIcon("kradio5_show"));
+        m_HideShowAction.setIcon(QIcon::fromTheme("kradio5_show"));
     }
     else {
         m_HideShowAction.setText(i18n("Hide %1", menuitem));
-        m_HideShowAction.setIcon(QIcon("kradio5_hide"));
+        m_HideShowAction.setIcon(QIcon::fromTheme("kradio5_hide"));
     }
     notifyManager (show);
 }

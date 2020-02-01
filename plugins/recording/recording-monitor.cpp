@@ -391,11 +391,11 @@ void RecordingMonitor::updateRecordingButton()
 {
     if (m_currentStream.isValid()) {
         m_btnStartStop->setText(!m_recording ? i18n("&Record") : i18n("&Stop Recording"));
-        m_btnStartStop->setIcon(QIcon(!m_recording ? "media-record" : "media-playback-stop"));
+        m_btnStartStop->setIcon(QIcon::fromTheme(!m_recording ? "media-record" : "media-playback-stop"));
         m_btnStartStop->setEnabled(true);
     } else {
         m_btnStartStop->setText(i18n("&Record"));
-        m_btnStartStop->setIcon(QIcon("media-record"));
+        m_btnStartStop->setIcon(QIcon::fromTheme("media-record"));
         m_btnStartStop->setEnabled(false);
     }
 }

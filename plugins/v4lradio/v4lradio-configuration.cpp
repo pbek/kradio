@@ -68,7 +68,7 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
     m_PlaybackChannelHelper.setList(comboPlaybackMixerChannel);
     m_CaptureChannelHelper .setList(comboCaptureMixerChannel);
 
-    buttonSelectRadioDevice->setIcon(QIcon("document-open"));
+    buttonSelectRadioDevice->setIcon(QIcon::fromTheme("document-open"));
 
     deviceMessage->setCloseButtonVisible(false);
 

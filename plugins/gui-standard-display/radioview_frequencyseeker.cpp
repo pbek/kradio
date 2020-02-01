@@ -50,10 +50,10 @@ RadioViewFrequencySeeker::RadioViewFrequencySeeker(QWidget *parent, const QStrin
     m_btnSearchRight->setCheckable(true);
     m_sldFrequency  ->setPageStep(1);
 
-    m_btnSearchLeft ->setIcon(QIcon("media-skip-backward"));
-    m_btnSearchRight->setIcon(QIcon("media-skip-forward"));
-    m_btnStepLeft   ->setIcon(QIcon("media-seek-backward"));
-    m_btnStepRight  ->setIcon(QIcon("media-seek-forward"));
+    m_btnSearchLeft ->setIcon(QIcon::fromTheme("media-skip-backward"));
+    m_btnSearchRight->setIcon(QIcon::fromTheme("media-skip-forward"));
+    m_btnStepLeft   ->setIcon(QIcon::fromTheme("media-seek-backward"));
+    m_btnStepRight  ->setIcon(QIcon::fromTheme("media-seek-forward"));
 
     l->addWidget (m_btnSearchLeft);
     l->addWidget (m_btnStepLeft);

@@ -25,6 +25,7 @@
 #include <QGridLayout>
 #include <QApplication>
 #include <QMenu>
+#include <QDebug>
 
 #include <kcombobox.h>
 #include <QtGui/QIcon>
@@ -155,12 +156,12 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     l06->addWidget (btnHelp);
 
     m_pauseMenu     = new QMenu(this);
-    m_pauseMenuItem = m_pauseMenu->addAction(QIcon("media-playback-pause"), i18n("Pause KRadio"));
+    m_pauseMenuItem = m_pauseMenu->addAction(QIcon::fromTheme("media-playback-pause"), i18n("Pause KRadio"));
     QObject::connect(m_pauseMenuItem, SIGNAL(triggered()), this, SLOT(slotPause()));
     btnPower->setMenu(m_pauseMenu);
 
     m_RecordingMenu            = new QMenu(btnRecording);
-    m_recordingDefaultMenuItem = m_RecordingMenu->addAction(QIcon("media-record"), i18n("Start Recording"));
+    m_recordingDefaultMenuItem = m_RecordingMenu->addAction(QIcon::fromTheme("media-record"), i18n("Start Recording"));
     QObject::connect(m_RecordingMenu,            SIGNAL(triggered(QAction *)), this, SLOT(slotRecordingMenu(QAction *)));
     QObject::connect(m_recordingDefaultMenuItem, SIGNAL(triggered()),          this, SLOT(slotStartDefaultRecording()));
     btnRecording->setMenu(m_RecordingMenu);
@@ -194,15 +195,18 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
 //     btnSnooze->setPopupDelay(200);
 
 
+    
+    
     // ICONS
+    
 
-    btnPower    ->setIcon(QIcon("media-playback-start"));
-    btnRecording->setIcon(QIcon("media-record"));
-    btnConfigure->setIcon(QIcon("configure"));
-    btnQuit     ->setIcon(QIcon("application-exit"));
-    btnSnooze   ->setIcon(QIcon("kradio5_zzz"));
-    btnPlugins  ->setIcon(QIcon("preferences-plugin"));
-    btnHelp     ->setIcon(QIcon("help-about"));
+    btnPower    ->setIcon(QIcon::fromTheme("media-playback-start"));
+    btnRecording->setIcon(QIcon::fromTheme("media-record"));
+    btnConfigure->setIcon(QIcon::fromTheme("configure"));
+    btnQuit     ->setIcon(QIcon::fromTheme("application-exit"));
+    btnSnooze   ->setIcon(QIcon::fromTheme("kradio5_zzz"));
+    btnPlugins  ->setIcon(QIcon::fromTheme("preferences-plugin"));
+    btnHelp     ->setIcon(QIcon::fromTheme("help-about"));
     btnHelp     ->setMenu(m_helpMenu.menu());
 
     widgetStacks[clsRadioSound]  ->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,              QSizePolicy::Preferred));
@@ -373,7 +377,7 @@ void RadioView::selectTopWidgets()
 
 bool RadioView::noticePowerChanged(bool on)
 {
-    btnPower->setIcon(QIcon( on ? "media-playback-stop" : "media-playback-start"));
+    btnPower->setIcon(QIcon::fromTheme( on ? "media-playback-stop" : "media-playback-start"));
     btnPower->setChecked(on);
     if (on) {
         btnPower->setMenu(m_pauseMenu);
@@ -560,7 +564,7 @@ bool RadioView::startRecordingWithFormat(
 
     QString descr;
     querySoundStreamDescription(id, descr);
-    QAction *a = m_RecordingMenu->addAction(QIcon("media-record"), i18n("Stop Recording of %1", descr));
+    QAction *a = m_RecordingMenu->addAction(QIcon::fromTheme("media-record"), i18n("Stop Recording of %1", descr));
     a->setData(QVariant::fromValue(id));
     m_StreamID2MenuID.insert(id, a);
     btnRecording->setChecked(true);
@@ -614,11 +618,11 @@ void RadioView::updatePauseMenuItem(bool run_query, bool known_pause_state)
     }
     if (known_pause_state) {
         m_pauseMenuItem->setText(i18n("Resume playback"));
-        m_pauseMenuItem->setIcon(QIcon("media-playback-start"));
+        m_pauseMenuItem->setIcon(QIcon::fromTheme("media-playback-start"));
     }
     else {
         m_pauseMenuItem->setText(i18n("Pause playback"));
-        m_pauseMenuItem->setIcon(QIcon("media-playback-pause"));
+        m_pauseMenuItem->setIcon(QIcon::fromTheme("media-playback-pause"));
     }
 }
 
@@ -629,7 +633,7 @@ bool RadioView::noticeSoundStreamChanged(SoundStreamID id)
         QAction *a = m_StreamID2MenuID[id];
         QString descr;
         querySoundStreamDescription(id, descr);
-        a->setIcon(QIcon("media-record"));
+        a->setIcon(QIcon::fromTheme("media-record"));
         a->setText(i18n("Stop Recording of %1", descr));
         return true;
     }
@@ -727,7 +731,7 @@ void RadioView::addConfigurationTabFor(RadioViewElement *e, RadioViewConfigurati
     if (inf.page) {
 
         if (inf.iconName.length()) {
-            c->addElementTab(inf.page, QIcon(inf.iconName), inf.itemName);
+            c->addElementTab(inf.page, QIcon::fromTheme(inf.iconName), inf.itemName);
         } else {
             c->addElementTab(inf.page, inf.itemName);
         }

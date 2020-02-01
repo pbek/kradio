@@ -69,21 +69,21 @@ ErrorLog::ErrorLog(const QString &instanceID, const QString &name)
     setStandardButtons (QDialogButtonBox::Close);
     buttonBox()->button(QDialogButtonBox::Close)->setDefault(true);
     
-    QPushButton *saveAsButton = new QPushButton(QIcon("document-save-as"), i18n("Save &as"));
+    QPushButton *saveAsButton = new QPushButton(QIcon::fromTheme("document-save-as"), i18n("Save &as"));
     buttonBox()->addButton(saveAsButton, QDialogButtonBox::InvalidRole);
 
     setWindowTitle(i18n("KRadio Logger"));
 
-    setTextEditPage(i18n("Information"), QIcon("dialog-information"), &m_pageInfo);
+    setTextEditPage(i18n("Information"), QIcon::fromTheme("dialog-information"), &m_pageInfo);
     logInfo(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    setTextEditPage(i18n("Warnings"), QIcon("dialog-warning"), &m_pageWarnings);
+    setTextEditPage(i18n("Warnings"), QIcon::fromTheme("dialog-warning"), &m_pageWarnings);
     logWarning(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    setTextEditPage(i18n("Errors"), QIcon("dialog-error"), &m_pageErrors);
+    setTextEditPage(i18n("Errors"), QIcon::fromTheme("dialog-error"), &m_pageErrors);
     logError(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
-    setTextEditPage(i18n("Debugging"), QIcon("system-search"), &m_pageDebug);
+    setTextEditPage(i18n("Debugging"), QIcon::fromTheme("system-search"), &m_pageDebug);
     logDebug(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
     QObject::connect(saveAsButton, &QPushButton::clicked, this, &ErrorLog::slotSaveAs);

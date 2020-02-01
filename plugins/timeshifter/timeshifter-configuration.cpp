@@ -48,7 +48,7 @@ TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter
     m_PlaybackMixerHelper  .setList(comboPlaybackMixerDevice );
     m_PlaybackChannelHelper.setList(comboPlaybackMixerChannel);
 
-    buttonSelectTempFile->setIcon(QIcon("document-open"));
+    buttonSelectTempFile->setIcon(QIcon::fromTheme("document-open"));
 
     QObject::connect(buttonSelectTempFile, SIGNAL(clicked()),
                      this, SLOT(selectTempFile()));

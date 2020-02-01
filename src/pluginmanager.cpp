@@ -174,7 +174,7 @@ void PluginManager::setConfigPageNameEtc(PluginBase *p)
             }
             config_page->setName  (itemName);
             config_page->setHeader(pageHeader);
-            config_page->setIcon  (QIcon(info.iconName));
+            config_page->setIcon  (QIcon::fromTheme(info.iconName));
         }
     }
 }
@@ -378,11 +378,11 @@ KPageWidgetItem *PluginManager::addConfigurationPage (const ConfigPageInfo &info
 
     // make sure, that config page receives ok, apply and cancel signals
     QObject::connect(this,           SIGNAL(sigConfigOK()),   info.page, SLOT(slotOK()));
-    QObject::connect(m_configDialog, SIGNAL(rejected),        info.page, SLOT(slotCancel()));
+    QObject::connect(m_configDialog, SIGNAL(rejected()),      info.page, SLOT(slotCancel()));
 
     // insert into config dialog
     KPageWidgetItem *item = m_configDialog->addPage(f, info.itemName);
-    item->setIcon(QIcon(info.iconName));
+    item->setIcon(QIcon::fromTheme(info.iconName));
 
     return item;
 }

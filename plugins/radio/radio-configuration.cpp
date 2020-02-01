@@ -69,13 +69,13 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     editPixmapFile->setWindowTitle(i18n("Image Selection"));
 
     // icon settings does not work any more in .ui files in KDE4, don't know why/how
-    buttonNewStation      ->setIcon(QIcon("document-new"));
-    buttonDeleteStation   ->setIcon(QIcon("edit-delete"));
-    buttonStationUp       ->setIcon(QIcon("arrow-up"));
-    buttonStationDown     ->setIcon(QIcon("arrow-down"));
-    buttonSearchStations  ->setIcon(QIcon("edit-find"));
-    buttonLoadPresets     ->setIcon(QIcon("document-open"));
-    buttonStorePresets    ->setIcon(QIcon("document-save-as"));
+    buttonNewStation      ->setIcon(QIcon::fromTheme("document-new"));
+    buttonDeleteStation   ->setIcon(QIcon::fromTheme("edit-delete"));
+    buttonStationUp       ->setIcon(QIcon::fromTheme("arrow-up"));
+    buttonStationDown     ->setIcon(QIcon::fromTheme("arrow-down"));
+    buttonSearchStations  ->setIcon(QIcon::fromTheme("edit-find"));
+    buttonLoadPresets     ->setIcon(QIcon::fromTheme("document-open"));
+    buttonStorePresets    ->setIcon(QIcon::fromTheme("document-save-as"));
 
     comboStereoMode->clear();
     comboStereoMode->addItem(i18nc("Sound mode", "<do not care>"),        (int)STATION_STEREO_DONTCARE);
@@ -83,8 +83,8 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     comboStereoMode->addItem(i18nc("Sound mode, stereophonic", "Stereo"), (int)STATION_STEREO_ON);
 
     m_loadPopup = new QMenu(buttonLoadPresets);
-    m_loadPopup->addAction(QIcon("document-open"), i18n("Load and replace presets"), this, SLOT(slotLoadPresets()));
-    m_loadPopup->addAction(QIcon("list-add"),      i18n("Load and add presets"),     this, SLOT(slotAddPresets ()));
+    m_loadPopup->addAction(QIcon::fromTheme("document-open"), i18n("Load and replace presets"), this, SLOT(slotLoadPresets()));
+    m_loadPopup->addAction(QIcon::fromTheme("list-add"),      i18n("Load and add presets"),     this, SLOT(slotAddPresets ()));
     buttonLoadPresets->setMenu(m_loadPopup);
 
     QObject::connect(listStations, SIGNAL(sigCurrentStationChanged(int)),

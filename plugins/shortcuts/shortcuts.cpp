@@ -485,7 +485,7 @@ bool Shortcuts::noticeStationsChanged(const StationList &sl)
         a->setData(id);
         a->setText(QString().sprintf("%02i) ", idx) + s->name());
         if (s->iconName().length()) {
-            a->setIcon(QIcon(s->iconName()));
+            a->setIcon(QIcon::fromTheme(s->iconName()));
         }
     }
     qDeleteAll(oldActions);

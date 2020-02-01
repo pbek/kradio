@@ -45,11 +45,11 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
 {
     setupUi(this);
     // temporary fix to set icons. it does not work propertly in .ui files any more in KDE4
-    btnRemovePluginInstance->setIcon(QIcon("edit-delete"));
-    btnNewPluginInstance   ->setIcon(QIcon("document-new"));
-    btnRenamePluginInstance->setIcon(QIcon("edit-rename"));
-    btnRemoveLibrary       ->setIcon(QIcon("edit-delete"));
-    btnAddLibrary          ->setIcon(QIcon("document-new"));
+    btnRemovePluginInstance->setIcon(QIcon::fromTheme("edit-delete"));
+    btnNewPluginInstance   ->setIcon(QIcon::fromTheme("document-new"));
+    btnRenamePluginInstance->setIcon(QIcon::fromTheme("edit-rename"));
+    btnRemoveLibrary       ->setIcon(QIcon::fromTheme("edit-delete"));
+    btnAddLibrary          ->setIcon(QIcon::fromTheme("document-new"));
 
     QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio5/plugins";
     // KF5: Not yet clear how to obtain library paths ... the following does not work yet:

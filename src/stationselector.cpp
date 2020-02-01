@@ -36,8 +36,8 @@ StationSelector::StationSelector (QWidget *parent)
     m_ui = new Ui_StationSelectorUI();
     m_ui->setupUi(this);
 
-    m_ui->buttonToRight->setIcon(QIcon(QApplication::isRightToLeft() ? "arrow-left" : "arrow-right"));
-    m_ui->buttonToLeft->setIcon(QIcon(QApplication::isRightToLeft() ? "arrow-right" : "arrow-left"));
+    m_ui->buttonToRight->setIcon(QIcon::fromTheme(QApplication::isRightToLeft() ? "arrow-left" : "arrow-right"));
+    m_ui->buttonToLeft->setIcon (QIcon::fromTheme(QApplication::isRightToLeft() ? "arrow-right" : "arrow-left"));
 
     QObject::connect(m_ui->buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
     QObject::connect(m_ui->buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));

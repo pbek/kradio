@@ -198,14 +198,14 @@ StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice
 {
     setupUi(this);
 
-    m_pbNewCaptureURL    ->setIcon(QIcon("document-new"));
-    m_pbNewPlaybackURL   ->setIcon(QIcon("document-new"));
-    m_pbDeleteCaptureURL ->setIcon(QIcon("edit-delete"));
-    m_pbDeletePlaybackURL->setIcon(QIcon("edit-delete"));
-    m_pbUpCaptureURL     ->setIcon(QIcon("arrow-up"));
-    m_pbUpPlaybackURL    ->setIcon(QIcon("arrow-up"));
-    m_pbDownCaptureURL   ->setIcon(QIcon("arrow-down"));
-    m_pbDownPlaybackURL  ->setIcon(QIcon("arrow-down"));
+    m_pbNewCaptureURL    ->setIcon(QIcon::fromTheme("document-new"));
+    m_pbNewPlaybackURL   ->setIcon(QIcon::fromTheme("document-new"));
+    m_pbDeleteCaptureURL ->setIcon(QIcon::fromTheme("edit-delete"));
+    m_pbDeletePlaybackURL->setIcon(QIcon::fromTheme("edit-delete"));
+    m_pbUpCaptureURL     ->setIcon(QIcon::fromTheme("arrow-up"));
+    m_pbUpPlaybackURL    ->setIcon(QIcon::fromTheme("arrow-up"));
+    m_pbDownCaptureURL   ->setIcon(QIcon::fromTheme("arrow-down"));
+    m_pbDownPlaybackURL  ->setIcon(QIcon::fromTheme("arrow-down"));
 
     m_PlaybackModel = new StreamingConfigurationModel(m_ListPlaybackURLs);
     m_ListPlaybackURLs->setModel(m_PlaybackModel);
