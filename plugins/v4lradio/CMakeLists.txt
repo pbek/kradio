@@ -59,6 +59,8 @@ TARGET_LINK_LIBRARIES(kradio5_plugin_v4lradio
     KF5::I18n
 )
 
+SET(CMAKE_INSTALL_RPATH                              "${LIB_INSTALL_DIR}/kradio5/plugins")
+SET(INSTALL_TARGETS_DEFAULT_ARGS LIBRARY DESTINATION "${CMAKE_INSTALL_RPATH}")
 INSTALL(TARGETS kradio5_plugin_v4lradio ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ###############################################################################

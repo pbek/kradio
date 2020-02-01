@@ -56,6 +56,7 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(AlsaSoundDevice, aboutData())
+#include "alsa-sound.moc"
 
 /////////////////////////////////////////////////////////////////////////////
 

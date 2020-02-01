@@ -57,6 +57,8 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(LircSupport, aboutData())
+#include "lircsupport.moc"
+
 
 /////////////////////////////////////////////////////////////////////////////
 

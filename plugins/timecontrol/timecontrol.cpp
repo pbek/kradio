@@ -57,6 +57,7 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(TimeControl, aboutData())
+#include "timecontrol.moc"
 
 ///////////////////////////////////////////////////////////////////////
 

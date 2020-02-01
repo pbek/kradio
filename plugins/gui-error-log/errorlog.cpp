@@ -53,6 +53,7 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(ErrorLog, aboutData())
+#include "errorlog.moc"
 
 /////////////////////////////////////////////////////////////////////////////
 

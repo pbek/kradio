@@ -44,8 +44,8 @@ find_package( Boost 1.55.0 REQUIRED)
 # Locate Qt5, make it required package and use QtWidgets and QtCore modules
 find_package(Qt5 REQUIRED COMPONENTS Widgets Core Multimedia )
 
-# Locate KF5, make it required package and use KF5KDELibs4Support and KF5CoreAddons modules
-find_package(KF5 REQUIRED COMPONENTS  CoreAddons XmlGui I18n KIO WindowSystem WidgetsAddons)
+# Locate KF5, make it required package 
+find_package(KF5 REQUIRED COMPONENTS  CoreAddons XmlGui I18n KIO WindowSystem WidgetsAddons KDELibs4Support )
 
 
 ########################################################################
@@ -88,9 +88,7 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_CURRENT_SOURCE_DIR}/radiostations
 )
 
-SET(INSTALL_TARGETS_DEFAULT_ARGS RUNTIME DESTINATION "${BIN_INSTALL_DIR}"
-                                 LIBRARY DESTINATION "${LIB_INSTALL_DIR}/kradio5/plugins"
-)
+SET(INSTALL_TARGETS_DEFAULT_ARGS LIBRARY DESTINATION "${LIB_INSTALL_DIR}/kradio5/plugins")
 
 
 
@@ -151,9 +149,10 @@ TARGET_LINK_LIBRARIES(kradio5
     KF5::WidgetsAddons
     KF5::I18n
     KF5::WindowSystem
+    KF5::KDELibs4Support
 )
 
-INSTALL(TARGETS kradio5 ${INSTALL_TARGETS_DEFAULT_ARGS})
+INSTALL(TARGETS kradio5)
 
 SET(documentation_files
     README

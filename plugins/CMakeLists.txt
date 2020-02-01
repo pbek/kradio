@@ -137,7 +137,6 @@ add_feature_info("Internet radio support"  WITH_FFMPEG       "Internet radio req
 
 feature_summary(WHAT ALL)
 
-
 ADD_SUBDIRECTORY(radio)
 IF(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     ADD_SUBDIRECTORY(v4lradio)

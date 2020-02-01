@@ -50,6 +50,8 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(MPRISSupport, aboutData())
+#include "mprissupport.moc"
+
 
 /////////////////////////////////////////////////////////////////////////////
 

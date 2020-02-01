@@ -55,6 +55,7 @@ KRADIO_EXPORT_PLUGIN2(
     Recording,           aboutDataRecording(),
     RecordingMonitor,    aboutDataRecordingMonitor()
 )
+#include "recording.moc"
 
 ///////////////////////////////////////////////////////////////////////
 

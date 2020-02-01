@@ -54,6 +54,8 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(RadioDocking, aboutData())
+#include "docking.moc"
+
 
 /////////////////////////////////////////////////////////////////////////////
 

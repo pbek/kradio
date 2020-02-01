@@ -163,6 +163,7 @@ private:
 #define KRADIO_EXPORT_PLUGIN(class_name, aboutData)                 \
 class class_name ## PluginFactory : public KRadioPluginFactoryBase  \
 {                                                                   \
+Q_OBJECT  							    \
 public:                                                             \
     class_name ## PluginFactory(QObject *, const QVariantList &)    \
     {                                                               \
@@ -186,6 +187,7 @@ K_EXPORT_PLUGIN(class_name ## Plugin)
 #define KRADIO_EXPORT_PLUGIN2(class_name1, aboutData1, class_name2, aboutData2) \
 class class_name1 ## PluginFactory : public KRadioPluginFactoryBase  \
 {                                                                    \
+Q_OBJECT							     \
 public:                                                              \
     class_name1 ## PluginFactory(QObject *, const QVariantList &)    \
     {                                                                \

@@ -38,6 +38,7 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(TimeShifter, aboutData())
+#include "timeshifter.moc"
 
 ///////////////////////////////////////////////////////////////////////
 

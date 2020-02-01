@@ -52,6 +52,8 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(InternetRadio, aboutData())
+#include "internetradio.moc"
+
 
 ///////////////////////////////////////////////////////////////////////
 

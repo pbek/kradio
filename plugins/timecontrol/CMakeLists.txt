@@ -60,5 +60,7 @@ TARGET_LINK_LIBRARIES(kradio5_plugin_timecontrol
     KF5::KDELibs4Support
 )
 
+SET(CMAKE_INSTALL_RPATH                              "${LIB_INSTALL_DIR}/kradio5/plugins")
+SET(INSTALL_TARGETS_DEFAULT_ARGS LIBRARY DESTINATION "${CMAKE_INSTALL_RPATH}")
 INSTALL(TARGETS kradio5_plugin_timecontrol ${INSTALL_TARGETS_DEFAULT_ARGS})
 

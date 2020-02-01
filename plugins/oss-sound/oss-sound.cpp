@@ -50,6 +50,7 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(OSSSoundDevice, aboutData())
+#include "oss-sound.moc"
 
 /////////////////////////////////////////////////////////////////////////////
 

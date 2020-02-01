@@ -42,6 +42,7 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(StreamingDevice, aboutData())
+#include "streaming.moc"
 
 /////////////////////////////////////////////////////////////////////////////
 

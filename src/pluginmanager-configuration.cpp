@@ -31,6 +31,9 @@
 #include <QtGui/QIcon>
 #include <QtCore/QStandardPaths>
 
+// backward compatibility from KDELibs4Support
+#include <kstandarddirs.h>
+
 
 #include "id-generator.h"
 
@@ -48,8 +51,9 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     btnRemoveLibrary       ->setIcon(QIcon("edit-delete"));
     btnAddLibrary          ->setIcon(QIcon("document-new"));
 
-    // FIXME: KF5 port: how to get KStandardDirs::installPath ("lib") + "kradio5/plugins";
-    QString defaultPluginDir = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, "kradio5/plugins");
+    QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio4/plugins";
+    // KF5: Not yet clear how to obtain library paths ... the following does not work yet:
+    // QString defaultPluginDir = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, "kradio5/plugins");
     editPluginLibrary->setStartDir(QUrl(defaultPluginDir));
     editPluginLibrary->setMode(editPluginLibrary->mode() | KFile::LocalOnly);
 

@@ -45,6 +45,8 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(DBusSupport, aboutData())
+#include "dbussupport.moc"
+
 
 /////////////////////////////////////////////////////////////////////////////
 

@@ -53,6 +53,8 @@ static KAboutData aboutData()
 }
 
 KRADIO_EXPORT_PLUGIN(QuickBar, aboutData())
+#include "quickbar.moc"
+
 
 /////////////////////////////////////////////////////////////////////////////
 
