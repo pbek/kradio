@@ -92,10 +92,10 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
 
 //     m_menuRebuildWorkaroundTimer.setInterval(100);
 //     m_menuRebuildWorkaroundTimer.setSingleShot(true);
-//     QObject::connect(&m_menuRebuildWorkaroundTimer, SIGNAL(timeout()), this, SLOT(buildContextMenu()));
+//     QObject::connect(&m_menuRebuildWorkaroundTimer, &QTimer::timeout, this, &RadioDocking::buildContextMenu);
 
-    QObject::connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-                     this, SLOT(slotActivated(QSystemTrayIcon::ActivationReason)));
+    QObject::connect(this, &RadioDocking::activated,
+                     this, &RadioDocking::slotActivated);
 
 
     m_menu = new QMenu();
@@ -114,7 +114,7 @@ RadioDocking::RadioDocking(const QString &instanceID, const QString &name)
 
 //     m_WorkaroundRecordingMenuUpdate.setInterval(100);
 //     m_WorkaroundRecordingMenuUpdate.setSingleShot(true);
-//     QObject::connect(&m_WorkaroundRecordingMenuUpdate, SIGNAL(timeout()), this, SLOT(slotUpdateRecordingMenu()));
+//     QObject::connect(&m_WorkaroundRecordingMenuUpdate, &QTimer::timeout, this, &RadioDocking::slotUpdateRecordingMenu);
 }
 
 RadioDocking::~RadioDocking()
@@ -239,12 +239,12 @@ ConfigPageInfo RadioDocking::createConfigurationPage()
     DockingConfiguration *conf = new DockingConfiguration(this, NULL);
     connectI (conf);
 
-    QObject::connect(this, SIGNAL(sigClickActionChanged      (Qt::MouseButton, SystrayClickAction)),
-                     conf, SLOT(slotClickActionChanged       (Qt::MouseButton, SystrayClickAction)));
-    QObject::connect(this, SIGNAL(sigDoubleClickActionChanged(Qt::MouseButton, SystrayClickAction)),
-                     conf, SLOT(slotDoubleClickActionChanged (Qt::MouseButton, SystrayClickAction)));
-    QObject::connect(this, SIGNAL(sigWheelActionChanged      (SystrayWheelAction)),
-                     conf, SLOT(slotWheelActionChanged       (SystrayWheelAction)));
+    QObject::connect(this, &RadioDocking::sigClickActionChanged,
+                     conf, &DockingConfiguration::slotClickActionChanged);
+    QObject::connect(this, &RadioDocking::sigDoubleClickActionChanged,
+                     conf, &DockingConfiguration::slotDoubleClickActionChanged);
+    QObject::connect(this, &RadioDocking::sigWheelActionChanged,
+                     conf, &DockingConfiguration::slotWheelActionChanged);
 
     return ConfigPageInfo(
         conf,
@@ -280,9 +280,9 @@ void RadioDocking::buildContextMenu()
     m_sleepID  = m_menu->addAction(QIcon("kradio5_zzz"), "sleep-dummy");
     m_seekfwID = m_menu->addAction(QIcon("media-seek-forward"),  i18n("Search Next Station"));
     m_seekbwID = m_menu->addAction(QIcon("media-seek-backward"), i18n("Search Previous Station"));
-    QObject::connect(m_sleepID,  SIGNAL(triggered()), this, SLOT(slotSleepCountdown()));
-    QObject::connect(m_seekfwID, SIGNAL(triggered()), this, SLOT(slotSeekFwd()));
-    QObject::connect(m_seekbwID, SIGNAL(triggered()), this, SLOT(slotSeekBkwd()));
+    QObject::connect(m_sleepID,  &QAction::triggered, this, &RadioDocking::slotSleepCountdown);
+    QObject::connect(m_seekfwID, &QAction::triggered, this, &RadioDocking::slotSeekFwd);
+    QObject::connect(m_seekbwID, &QAction::triggered, this, &RadioDocking::slotSeekBkwd);
     noticeCountdownStarted(queryCountdownEnd());
 
     // recording menu
@@ -294,8 +294,8 @@ void RadioDocking::buildContextMenu()
 
     m_powerID = m_menu->addAction(QIcon("media-playback-start"), "power-dummy");
     m_pauseID = m_menu->addAction(QIcon("media-playback-pause"), i18n("Pause Radio"));
-    QObject::connect(m_powerID,  SIGNAL(triggered()), this, SLOT(slotPower()));
-    QObject::connect(m_pauseID,  SIGNAL(triggered()), this, SLOT(slotPause()));
+    QObject::connect(m_powerID,  &QAction::triggered, this, &RadioDocking::slotPower);
+    QObject::connect(m_pauseID,  &QAction::triggered, this, &RadioDocking::slotPause);
     noticePowerChanged(queryIsPowerOn());
 
     m_menu->addSeparator();
@@ -313,7 +313,7 @@ void RadioDocking::buildContextMenu()
 
     m_menu->addSeparator();
     m_quitID = m_menu->addAction( QIcon("application-exit"), i18n("&Quit" ));
-    QObject::connect(m_quitID, SIGNAL(triggered()), qApp, SLOT(quit()) );
+    QObject::connect(m_quitID, &QAction::triggered, qApp, &QApplication::quit);
 }
 
 
@@ -323,8 +323,8 @@ void RadioDocking::buildStationList(const StationList &sl, QAction *before)
     if (!m_stationsActionGroup) {
         m_stationsActionGroup = new QActionGroup(this);
         m_stationsActionGroup->setExclusive(true);
-        QObject::connect(m_stationsActionGroup, SIGNAL(triggered(QAction*)),
-                         this,                  SLOT(slotMenuItemActivated(QAction*)));
+        QObject::connect(m_stationsActionGroup, &QActionGroup::triggered,
+                         this,                  &RadioDocking::slotMenuItemActivated);
     }
     const QList<QAction *> actions = m_stationsActionGroup->actions();
     foreach (QAction *a, actions) {
@@ -854,8 +854,8 @@ void RadioDocking::buildRecordingMenu()
     QMenu *m = new QMenu(m_menu);
 
     m_recordingID = m->addAction(QIcon("media-record"), i18n("Start Recording"));
-    QObject::connect(m_recordingID, SIGNAL(triggered()),          this, SLOT(slotStartDefaultRecording()));
-    QObject::connect(m,             SIGNAL(triggered(QAction *)), this, SLOT(slotRecordingMenu(QAction *)));
+    QObject::connect(m_recordingID, &QAction::triggered,  this, &RadioDocking::slotStartDefaultRecording);
+    QObject::connect(m,             &QMenu  ::triggered,  this, &RadioDocking::slotRecordingMenu);
     SoundStreamID currentSinkID = queryCurrentSoundStreamSinkID();
 
     QMap<QString, SoundStreamID>     ::const_iterator end = streams.constEnd();

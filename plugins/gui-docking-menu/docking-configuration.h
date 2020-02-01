@@ -33,15 +33,16 @@ public :
     DockingConfiguration (RadioDocking *docking, QWidget *parent);
     ~DockingConfiguration ();
 
+    void slotClickActionChanged      (Qt::MouseButton btn, SystrayClickAction action);
+    void slotDoubleClickActionChanged(Qt::MouseButton btn, SystrayClickAction action);
+    void slotWheelActionChanged      (SystrayWheelAction action);
+    
 protected slots:
 
     void slotOK();
     void slotCancel();
     void slotSetDirty();
 
-    void slotClickActionChanged      (Qt::MouseButton btn, SystrayClickAction action);
-    void slotDoubleClickActionChanged(Qt::MouseButton btn, SystrayClickAction action);
-    void slotWheelActionChanged      (SystrayWheelAction action);
     void languageChange();
     
 protected:

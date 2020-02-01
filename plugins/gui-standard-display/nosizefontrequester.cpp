@@ -37,7 +37,7 @@ NoSizeFontRequester::NoSizeFontRequester(QWidget *parent)
 
     QPushButton *button = new QPushButton(i18nc("@action:button Choose font", "Choose..."), this);
     button->setToolTip(i18nc("@info:tooltip", "Click to select a font"));
-    connect(button, SIGNAL(clicked()), SLOT(slotButtonClicked()));
+    QObject::connect(button, &QPushButton::clicked, this, &NoSizeFontRequester::slotButtonClicked);
     layout->addWidget(button);
 
     setFocusProxy(button);

@@ -50,43 +50,39 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
     m_captureMixerModel = new AlsaSoundCaptureMixerModel(m_comboCaptureMixerCard);
     m_comboCaptureMixerCard->setModel(m_captureMixerModel);
 
-    QObject::connect(m_comboPlaybackDevice,         SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
-    QObject::connect(m_comboPlaybackMixerCard,      SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
-    QObject::connect(m_comboCaptureDevice,          SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
-    QObject::connect(m_comboCaptureMixerCard,       SIGNAL(activated(int)),           this, SLOT(slotSetDirty()));
-    QObject::connect(chkDisablePlayback,            SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
-    QObject::connect(chkDisableCapture,             SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
-    QObject::connect(cbEnableSoftVolume,            SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
-    QObject::connect(sbSoftVolumeCorrection,        SIGNAL(valueChanged(double)),     this, SLOT(slotSetDirty()));
+    QObject::connect(m_comboPlaybackDevice,         QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_comboPlaybackMixerCard,      QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_comboCaptureDevice,          QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_comboCaptureMixerCard,       QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(chkDisablePlayback,            &QCheckBox      ::toggled,                            this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(chkDisableCapture,             &QCheckBox      ::toggled,                            this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(cbEnableSoftVolume,            &QCheckBox      ::toggled,                            this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(sbSoftVolumeCorrection,        QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, &AlsaSoundConfiguration::slotSetDirty);
 
-    QObject::connect(editPlaybackBufferSize,        SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
-    QObject::connect(editPlaybackBufferChunkSize,   SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
-    QObject::connect(editCaptureBufferSize,         SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
-    QObject::connect(editCaptureBufferChunkSize,    SIGNAL(valueChanged(int)),        this, SLOT(slotSetDirty()));
-    QObject::connect(chkNonBlockingPlayback,        SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
-    QObject::connect(chkNonBlockingCapture,         SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
+    QObject::connect(editPlaybackBufferSize,        QOverload<int>::of(&QSpinBox ::valueChanged),         this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(editPlaybackBufferChunkSize,   QOverload<int>::of(&QSpinBox ::valueChanged),         this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(editCaptureBufferSize,         QOverload<int>::of(&QSpinBox ::valueChanged),         this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(editCaptureBufferChunkSize,    QOverload<int>::of(&QSpinBox ::valueChanged),         this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(chkNonBlockingPlayback,        &QCheckBox::toggled,                                  this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(chkNonBlockingCapture,         &QCheckBox::toggled,                                  this, &AlsaSoundConfiguration::slotSetDirty);
 
-    QObject::connect(editPlaybackBufferSize,        SIGNAL(editingFinished()),        this, SLOT(slotPlaybackBufferSizeChanged()));
-    QObject::connect(editCaptureBufferSize,         SIGNAL(editingFinished()),        this, SLOT(slotCaptureBufferSizeChanged()));
+    QObject::connect(editPlaybackBufferSize,        &QSpinBox ::editingFinished,                          this, &AlsaSoundConfiguration::slotPlaybackBufferSizeChanged);
+    QObject::connect(editCaptureBufferSize,         &QSpinBox ::editingFinished,                          this, &AlsaSoundConfiguration::slotCaptureBufferSizeChanged);
 
-    QObject::connect(cbEnableCaptureFormatOverride, SIGNAL(toggled(bool)),            this, SLOT(slotSetDirty()));
-    QObject::connect(m_cbRate,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
-    QObject::connect(m_cbBits,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
-    QObject::connect(m_cbSign,                      SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
-    QObject::connect(m_cbEndianness,                SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
-    QObject::connect(m_cbChannels,                  SIGNAL(currentIndexChanged(int)), this, SLOT(slotSetDirty()));
+    QObject::connect(cbEnableCaptureFormatOverride, &QCheckBox::toggled,                                  this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_cbRate,                      QOverload<int>::of(&KComboBox::currentIndexChanged),  this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_cbBits,                      QOverload<int>::of(&KComboBox::currentIndexChanged),  this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_cbSign,                      QOverload<int>::of(&KComboBox::currentIndexChanged),  this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_cbEndianness,                QOverload<int>::of(&KComboBox::currentIndexChanged),  this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(m_cbChannels,                  QOverload<int>::of(&KComboBox::currentIndexChanged),  this, &AlsaSoundConfiguration::slotSetDirty);
 
-    QObject::connect(editPlaybackWorkaroundSleep,   SIGNAL(editingFinished()),        this, SLOT(slotSetDirty()));
-    QObject::connect(editCaptureWorkaroundSleep,    SIGNAL(editingFinished()),        this, SLOT(slotSetDirty()));
+    QObject::connect(editPlaybackWorkaroundSleep,   &QSpinBox  ::editingFinished,                         this, &AlsaSoundConfiguration::slotSetDirty);
+    QObject::connect(editCaptureWorkaroundSleep,    &QSpinBox  ::editingFinished,                         this, &AlsaSoundConfiguration::slotSetDirty);
 
-    QObject::connect(m_comboPlaybackDevice,    SIGNAL(activated(int)),
-                     this,                     SLOT  (slotPlaybackDeviceSelected(int)));
-    QObject::connect(m_comboPlaybackMixerCard, SIGNAL(activated(int)),
-                     this,                     SLOT  (slotPlaybackMixerSelected(int)));
-    QObject::connect(m_comboCaptureDevice,     SIGNAL(activated(int)),
-                     this,                     SLOT  (slotCaptureDeviceSelected (int)));
-    QObject::connect(m_comboCaptureMixerCard,  SIGNAL(activated(int)),
-                     this,                     SLOT  (slotCaptureMixerSelected (int)));
+    QObject::connect(m_comboPlaybackDevice,         QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotPlaybackDeviceSelected);
+    QObject::connect(m_comboPlaybackMixerCard,      QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotPlaybackMixerSelected);
+    QObject::connect(m_comboCaptureDevice,          QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotCaptureDeviceSelected);
+    QObject::connect(m_comboCaptureMixerCard,       QOverload<int>::of(&QComboBox::activated),            this, &AlsaSoundConfiguration::slotCaptureMixerSelected);
 
     slotCheckSoundDevices();
 
@@ -96,7 +92,7 @@ AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice
     m_soundDevicesCheckTimer.setInterval(10000);
     m_soundDevicesCheckTimer.setSingleShot(false);
     m_soundDevicesCheckTimer.start();
-    QObject::connect(&m_soundDevicesCheckTimer, SIGNAL(timeout()), this, SLOT(slotCheckSoundDevices()));
+    QObject::connect(&m_soundDevicesCheckTimer, &QTimer::timeout, this, &AlsaSoundConfiguration::slotCheckSoundDevices);
 }
 
 
@@ -207,7 +203,7 @@ void AlsaSoundConfiguration::slotCaptureMixerSelected (int comboIdx)
 //         int col = idx % cols;
         m_groupMixerFrameLayout->addWidget(e, idx / cols, idx % cols);
 //         IErrorLogClient::staticLogDebug(i18n("row = %1, col = %2", row, col));
-        QObject::connect(e, SIGNAL(sigDirty()), this, SLOT(slotSetDirty()));
+        QObject::connect(e, &QAlsaMixerElement::sigDirty, this, &AlsaSoundConfiguration::slotSetDirty);
         m_MixerElements.insert(*it, e);
     }
     restoreCaptureMixerSettings();

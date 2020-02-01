@@ -32,6 +32,10 @@ public :
     int  insertElementTab (int index, QWidget *page, const QString &label);
     int  insertElementTab (int index, QWidget *page, const QIcon &icon, const QString &label);
     void removeElementTab (int index);
+    
+protected:
+    
+    void connectElementTab(QWidget *page);
 
 public slots:
 

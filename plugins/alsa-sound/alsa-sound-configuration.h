@@ -63,15 +63,14 @@ public :
     AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice *);
     ~AlsaSoundConfiguration ();
 
+    void slotUpdateConfig();
+    
 protected slots:
 
     void slotOK();
     void slotCancel();
-
     void slotSetDirty();
-
-    void slotUpdateConfig();
-
+    
     void slotPlaybackDeviceSelected(int comboIdx);
     void slotPlaybackMixerSelected (int comboIdx);
     void slotCaptureDeviceSelected (int comboIdx);

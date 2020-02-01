@@ -18,7 +18,6 @@
 #include "alsa-mixer-element.h"
 
 
-
 #include <math.h>
 
 QAlsaMixerElement::QAlsaMixerElement(QWidget *parent, const QString &label, bool has_switch, bool has_volume)
@@ -33,34 +32,29 @@ QAlsaMixerElement::QAlsaMixerElement(QWidget *parent, const QString &label, bool
     setLabel(label);
     setVolume(0);
 
-    QObject::connect(m_spinboxVolume, SIGNAL(valueChanged(int)),
-                     this,            SLOT  (slotSpinboxValueChanged(int)));
-    QObject::connect(m_sliderVolume,  SIGNAL(valueChanged(int)),
-                     this,            SLOT  (slotSliderValueChanged(int)));
+    QObject::connect    (m_spinboxVolume,    QOverload<int>::of(&QSpinBox::valueChanged), this,             &QAlsaMixerElement::slotSpinboxValueChanged);
+    QObject::connect    (m_sliderVolume,     &QSlider ::valueChanged,                     this,             &QAlsaMixerElement::slotSliderValueChanged);
 
     if (m_HasVolume) {
-        QObject::connect(m_checkboxOverride, SIGNAL(toggled(bool)),
-                         m_spinboxVolume,    SLOT  (setEnabled(bool)));
-        QObject::connect(m_checkboxOverride, SIGNAL(toggled(bool)),
-                         m_sliderVolume,     SLOT  (setEnabled(bool)));
+        QObject::connect(m_checkboxOverride, &QCheckBox::toggled,     m_spinboxVolume,  &QSpinBox         ::setEnabled);
+        QObject::connect(m_checkboxOverride, &QCheckBox::toggled,     m_sliderVolume,   &QSlider          ::setEnabled);
     } else {
         m_spinboxVolume->hide();
-        m_sliderVolume->hide();
+        m_sliderVolume ->hide();
     }
     if (m_HasSwitch) {
-        QObject::connect(m_checkboxOverride, SIGNAL(toggled(bool)),
-                         m_checkboxActive,   SLOT  (setEnabled(bool)));
+        QObject::connect(m_checkboxOverride, &QCheckBox::toggled,     m_checkboxActive, &QCheckBox        ::setEnabled);
     } else {
         //m_checkboxActive->hide();
         m_checkboxActive->setEnabled(false);
         m_checkboxActive->setChecked(true);
     }
 
-    connect(m_checkboxOverride, SIGNAL(toggled(bool)),     this, SLOT(slotSetDirty()));
-    connect(m_checkboxActive,   SIGNAL(toggled(bool)),     this, SLOT(slotSetDirty()));
-    connect(m_spinboxVolume,    SIGNAL(valueChanged(int)), this, SLOT(slotSetDirty()));
-    connect(m_sliderVolume,     SIGNAL(valueChanged(int)), this, SLOT(slotSetDirty()));
-}
+    connect(m_checkboxOverride, &QCheckBox::toggled,                          this, &QAlsaMixerElement::slotSetDirty);
+    connect(m_checkboxActive,   &QCheckBox::toggled,                          this, &QAlsaMixerElement::slotSetDirty);
+    connect(m_spinboxVolume,    QOverload<int>::of(&QSpinBox ::valueChanged), this, &QAlsaMixerElement::slotSetDirty);
+    connect(m_sliderVolume,     &QSlider  ::valueChanged,                     this, &QAlsaMixerElement::slotSetDirty);
+} // CTOR
 
 
 QAlsaMixerElement::~QAlsaMixerElement()

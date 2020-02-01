@@ -82,12 +82,12 @@ DockingConfiguration::DockingConfiguration (RadioDocking *docking, QWidget *pare
     mainLay->addLayout(layoutWheel);
 
     foreach (QComboBox *combo, m_comboClickMode) {
-        connect(combo,  SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
+        connect(combo,         QOverload<int>::of(&QComboBox::activated), this, &DockingConfiguration::slotSetDirty);
     }
     foreach (QComboBox *combo, m_comboDoubleClickMode) {
-        connect(combo,  SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
+        connect(combo,         QOverload<int>::of(&QComboBox::activated), this, &DockingConfiguration::slotSetDirty);
     }
-    connect(m_comboWheelMode,                        SIGNAL(activated( int )), this, SLOT(slotSetDirty()));
+    connect(m_comboWheelMode,  QOverload<int>::of(&QComboBox::activated), this, &DockingConfiguration::slotSetDirty);
 
     languageChange();
     m_dirty=true;

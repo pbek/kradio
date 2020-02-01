@@ -55,10 +55,10 @@ DisplayConfiguration::DisplayConfiguration(QWidget *parent)
     gl->addWidget (m_fontChooser,        3, 1);
     gl->addItem   (new QSpacerItem(10, 5, QSizePolicy::Fixed, QSizePolicy::Expanding), 4, 0);
 
-    connect(m_btnActive,   SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
-    connect(m_btnInactive, SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
-    connect(m_btnBkgnd,    SIGNAL(changed(const QColor &)),     this, SLOT(slotSetDirty()));
-    connect(m_fontChooser, SIGNAL(fontSelected(const QFont &)), this, SLOT(slotSetDirty()));
+    connect(m_btnActive,   &KColorButton       ::changed,      this, &DisplayConfiguration::slotSetDirty);
+    connect(m_btnInactive, &KColorButton       ::changed,      this, &DisplayConfiguration::slotSetDirty);
+    connect(m_btnBkgnd,    &KColorButton       ::changed,      this, &DisplayConfiguration::slotSetDirty);
+    connect(m_fontChooser, &NoSizeFontRequester::fontSelected, this, &DisplayConfiguration::slotSetDirty);
 
 }
 

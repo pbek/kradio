@@ -65,7 +65,7 @@ QuickBar::QuickBar(const QString &instanceID, const QString &name)
     m_showShortName(true),
     m_ignoreNoticeActivation(false)
 {
-    QObject::connect(&m_mapper, SIGNAL(mapped(const QString &)), this, SLOT(buttonToggled(const QString &)));
+    QObject::connect(&m_mapper, QOverload<const QString &>::of(&QSignalMapper::mapped), this, &QuickBar::buttonToggled);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     autoSetCaption();
@@ -279,7 +279,7 @@ void QuickBar::rebuildGUI()
         b->show();
 
         m_mapper.setMapping(b, stationID);
-        QObject::connect(b, SIGNAL(toggled(bool)), &m_mapper, SLOT(map()));
+        QObject::connect(b, &QToolButton::toggled, &m_mapper, QOverload<>::of(&QSignalMapper::map));
     }
 
     // activate correct button

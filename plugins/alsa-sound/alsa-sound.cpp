@@ -109,8 +109,8 @@ AlsaSoundDevice::AlsaSoundDevice(const QString &instanceID, const QString &name)
       m_i18nLogPrefixCapture(i18n("AlsaPlugin(capture thread on %1): ", m_CaptureDeviceName))
 
 {
-    QObject::connect(&m_PlaybackPollingTimer, SIGNAL(timeout()), this, SLOT(slotPollPlayback()));
-    QObject::connect(&m_CapturePollingTimer,  SIGNAL(timeout()), this, SLOT(slotPollCapture()));
+    QObject::connect(&m_PlaybackPollingTimer, &QTimer::timeout, this, &AlsaSoundDevice::slotPollPlayback);
+    QObject::connect(&m_CapturePollingTimer,  &QTimer::timeout, this, &AlsaSoundDevice::slotPollCapture);
 }
 
 
@@ -271,7 +271,7 @@ void AlsaSoundDevice::restoreState (const KConfigGroup &c)
 ConfigPageInfo  AlsaSoundDevice::createConfigurationPage()
 {
     AlsaSoundConfiguration *conf = new AlsaSoundConfiguration(NULL, this);
-    QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
+    QObject::connect(this, &AlsaSoundDevice::sigUpdateConfig, conf, &AlsaSoundConfiguration::slotUpdateConfig);
     return ConfigPageInfo (conf,
                            i18n("ALSA Sound"),
                            i18n("ALSA Sound Device Options"),
@@ -790,7 +790,7 @@ bool AlsaSoundDevice::openPlaybackDevice(const SoundFormat &format, bool reopen)
             m_playbackThread->setLatency(m_workaroundSleepPlaybackMilliSeconds * 1000);
             m_playbackThread->start();
             m_PlaybackPollingTimer.start(40); // polling still necessary, however mainly for pushing sound around and getting volume
-	    QObject::connect(m_playbackThread, SIGNAL(sigRequestPlaybackData()), this, SLOT(slotPollPlayback()), Qt::QueuedConnection);
+            QObject::connect(m_playbackThread, &AlsaThread::sigRequestPlaybackData, this, &AlsaSoundDevice::slotPollPlayback, Qt::QueuedConnection);
         } else {
             m_PlaybackPollingTimer.start(m_PlaybackLatency);
         }
@@ -854,7 +854,7 @@ bool AlsaSoundDevice::openCaptureDevice(const SoundFormat &format, bool reopen)
             m_captureThread->setLatency(m_workaroundSleepCaptureMilliSeconds * 1000);
             m_captureThread->start();
             m_CapturePollingTimer.start(40); // polling still necessary, however mainly for pushing sound around and getting volume
-	    QObject::connect(m_captureThread, SIGNAL(sigCaptureDataAvailable()), this, SLOT(slotPollCapture()), Qt::QueuedConnection);
+            QObject::connect(m_captureThread, &AlsaThread::sigCaptureDataAvailable, this, &AlsaSoundDevice::slotPollCapture, Qt::QueuedConnection);
         } else {
             m_CapturePollingTimer.start(m_CaptureLatency);
         }

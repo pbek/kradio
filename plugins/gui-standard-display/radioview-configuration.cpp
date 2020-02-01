@@ -30,13 +30,19 @@ RadioViewConfiguration::~RadioViewConfiguration()
 }
 
 
-int RadioViewConfiguration::addElementTab    (QWidget *page, const QString &label)
+void RadioViewConfiguration::connectElementTab(QWidget *page)
 {
-    int r = QTabWidget::addTab(page, label);
     QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
     QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
     QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
     checkTabBar();
+} // connectElementTab
+
+
+int RadioViewConfiguration::addElementTab    (QWidget *page, const QString &label)
+{
+    int r = QTabWidget::addTab(page, label);
+    connectElementTab(page);
     return r;
 }
 
@@ -44,10 +50,7 @@ int RadioViewConfiguration::addElementTab    (QWidget *page, const QString &labe
 int RadioViewConfiguration::addElementTab    (QWidget *page, const QIcon &icon, const QString &label)
 {
     int r = QTabWidget::addTab(page, icon, label);
-    QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
-    QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
-    QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
-    checkTabBar();
+    connectElementTab(page);
     return r;
 }
 
@@ -55,10 +58,7 @@ int RadioViewConfiguration::addElementTab    (QWidget *page, const QIcon &icon, 
 int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QString &label)
 {
     int r = QTabWidget::insertTab(index, page, label);
-    QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
-    QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
-    QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
-    checkTabBar();
+    connectElementTab(page);
     return r;
 }
 
@@ -66,10 +66,7 @@ int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QS
 int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QIcon &icon, const QString &label)
 {
     int r = QTabWidget::insertTab(index, page, icon, label);
-    QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
-    QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
-    QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
-    checkTabBar();
+    connectElementTab(page);
     return r;
 }
 
