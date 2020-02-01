@@ -66,7 +66,7 @@ void DBusSupport::startPlugin()
     if (m_manager) {
         new KradioAdaptor(this);
         QDBusConnection dbus = QDBusConnection::sessionBus();
-        QString object_path = QString("/KRadio4/%1").arg(m_manager->instanceName());
+        QString object_path = QString("/KRadio5/%1").arg(m_manager->instanceName());
         object_path.replace(" ", "");
         logDebug("DBus Object Path: " + object_path);
         dbus.registerObject(object_path, this);

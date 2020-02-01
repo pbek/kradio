@@ -272,24 +272,24 @@ msgstr "FileRingbuffer::resize: не можу записати тимчасов�
 #: src/instancemanager.cpp:171
 #, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
 "Знайдено лише %1 бібліотеку. Очікувалося, що їх кількість не менша за 5. "
-"Будь ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення "
+"Будь ласка, перевірте каталог встановлення KRadio5 і те, чи належні значення "
 "мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
 msgstr[1] ""
 "Знайдено лише %1 бібліотеки. Очікувалося, що їх кількість не менша за 5. "
-"Будь ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення "
+"Будь ласка, перевірте каталог встановлення KRadio5 і те, чи належні значення "
 "мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
 msgstr[2] ""
 "Знайдено лише %1 бібліотек. Очікувалося, що їх кількість не менша за 5. Будь "
-"ласка, перевірте каталог встановлення KRadio4 і те, чи належні значення "
+"ласка, перевірте каталог встановлення KRadio5 і те, чи належні значення "
 "мають змінні середовища KDEDIR, KDEDIRS і KDEHOME.\n"
 
 #: src/main.cpp:46
@@ -364,13 +364,13 @@ msgstr "Налаштування KRadio"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
-msgstr "KRadio4"
+msgid "KRadio5"
+msgstr "KRadio5"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "Помилка встановлення KRadio4"
+msgid "KRadio5 Installation Error"
+msgstr "Помилка встановлення KRadio5"
 
 #: src/main.cpp:45
 #, kde-format

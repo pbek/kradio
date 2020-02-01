@@ -273,22 +273,22 @@ msgstr "FileRingbuffer::resize: Не могу записать временны�
 #: src/instancemanager.cpp:171
 #, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
 "Найдено лишь %1 библиотек, ожидалось не менее пяти. Проверьте каталог "
-"установки KRadio4 и переменные окружения  KDEDIR, KDEDIRS и KDEHOME.\n"
+"установки KRadio5 и переменные окружения  KDEDIR, KDEDIRS и KDEHOME.\n"
 msgstr[1] ""
 "Найдено лишь %1 библиотек, ожидалось не менее пяти. Проверьте каталог "
-"установки KRadio4 и переменные окружения  KDEDIR, KDEDIRS и KDEHOME.\n"
+"установки KRadio5 и переменные окружения  KDEDIR, KDEDIRS и KDEHOME.\n"
 msgstr[2] ""
 "Найдено лишь %1 библиотек, ожидалось не менее пяти. Проверьте каталог "
-"установки KRadio4 и переменные окружения  KDEDIR, KDEDIRS и KDEHOME.\n"
+"установки KRadio5 и переменные окружения  KDEDIR, KDEDIRS и KDEHOME.\n"
 
 #: src/main.cpp:46
 #, kde-format
@@ -363,13 +363,13 @@ msgstr "Настройка KRadio"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
+msgid "KRadio5"
 msgstr "Радиоприёмник KDE"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "Ошибка установки KRadio4"
+msgid "KRadio5 Installation Error"
+msgstr "Ошибка установки KRadio5"
 
 #: src/main.cpp:45
 #, kde-format

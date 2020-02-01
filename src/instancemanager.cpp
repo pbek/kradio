@@ -183,14 +183,14 @@ void InstanceManager::restoreState (KConfig *c)
     if (m_PluginLibraries.size() < 5) {
         KMessageBox::error(NULL,
                            i18np("Found only %1 library. Expected a minimum of 5. Please check "
-                                 "the KRadio4 installation directory and the environment variables "
+                                 "the KRadio5 installation directory and the environment variables "
                                  "KDEDIR, KDEDIRS and KDEHOME.\n",
                                  "Found only %1 libraries. Expected a minimum of 5. Please check "
-                                 "the KRadio4 installation directory and the environment variables "
+                                 "the KRadio5 installation directory and the environment variables "
                                  "KDEDIR, KDEDIRS and KDEHOME.\n",
                                  m_PluginLibraries.size()
                                  ),
-                           i18n("KRadio4 Installation Error"));
+                           i18n("KRadio5 Installation Error"));
         m_quitting = true;
         return;
     }

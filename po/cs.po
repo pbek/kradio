@@ -273,24 +273,24 @@ msgstr "FileRingbuffer::resize: Zápis do dočasného souboru %1 selhal."
 #: src/instancemanager.cpp:171
 #, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
 "Byla nalezena pouze %1 knihovna. Očekávaný nejmenší počet je 5. Prověřte, "
-"prosím, adresář s instalací KRadio4 a proměnné prostředí KDEDIR, KDEDIRS a "
+"prosím, adresář s instalací KRadio5 a proměnné prostředí KDEDIR, KDEDIRS a "
 "KDEHOME.\n"
 msgstr[1] ""
 "Byly nalezeny pouze %1 knihovny. Očekávaný nejmenší počet je 5. Prověřte, "
-"prosím, adresář s instalací KRadio4 a proměnné prostředí KDEDIR, KDEDIRS a "
+"prosím, adresář s instalací KRadio5 a proměnné prostředí KDEDIR, KDEDIRS a "
 "KDEHOME.\n"
 msgstr[2] ""
 "Bylo nalezeno pouze %1 knihoven. Očekávaný nejmenší počet je 5. Prověřte, "
-"prosím, adresář s instalací KRadio4 a proměnné prostředí KDEDIR, KDEDIRS a "
+"prosím, adresář s instalací KRadio5 a proměnné prostředí KDEDIR, KDEDIRS a "
 "KDEHOME.\n"
 
 #: src/main.cpp:46
@@ -365,13 +365,13 @@ msgstr "Nastavení programu KRadio"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
-msgstr "KRadio4"
+msgid "KRadio5"
+msgstr "KRadio5"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "Chyba při instalaci KRadio4"
+msgid "KRadio5 Installation Error"
+msgstr "Chyba při instalaci KRadio5"
 
 #: src/main.cpp:45
 #, kde-format

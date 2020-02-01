@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     QApplication         app(argc, argv);
 
     KAboutData           aboutData(QStringLiteral("kradio5"),
-				   i18n("KRadio4"),
+				   i18n("KRadio5"),
 				   QStringLiteral(KRADIO_VERSION),
 				   i18n("A versatile KDE AM/FM/Internet radio application"),
 				   KAboutLicense::LicenseKey::GPL,
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     
     QApplication::setQuitOnLastWindowClosed(false);
 
-    IErrorLogClient::staticLogInfo(QString("KRadio4 Version %1 is starting").arg(KRADIO_VERSION));
+    IErrorLogClient::staticLogInfo(QString("KRadio5 Version %1 is starting").arg(KRADIO_VERSION));
 
     BlockProfiler  profiler_manager("main::InstanceManager");
 

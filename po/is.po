@@ -268,20 +268,20 @@ msgstr "FileRingbuffer::resize: Skrifun í bráðabirgðaskrá %1 mistókst. "
 #: src/instancemanager.cpp:171
 #, fuzzy, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
 "Fann einungis %1 skráasöfn (libraries). Vænti minnst 5. Endilega athugaðu "
-"með uppsetningarmöppu KRadio4 og umhverfisbreyturnar KDEDIR, KDEDIRS og "
+"með uppsetningarmöppu KRadio5 og umhverfisbreyturnar KDEDIR, KDEDIRS og "
 "KDEHOME.\n"
 msgstr[1] ""
 "Fann einungis %1 skráasöfn (libraries). Vænti minnst 5. Endilega athugaðu "
-"með uppsetningarmöppu KRadio4 og umhverfisbreyturnar KDEDIR, KDEDIRS og "
+"með uppsetningarmöppu KRadio5 og umhverfisbreyturnar KDEDIR, KDEDIRS og "
 "KDEHOME.\n"
 
 #: src/main.cpp:46
@@ -356,13 +356,13 @@ msgstr "Stillingar KRadio"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
-msgstr "KRadio4"
+msgid "KRadio5"
+msgstr "KRadio5"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "Villa við uppsetningu KRadio4"
+msgid "KRadio5 Installation Error"
+msgstr "Villa við uppsetningu KRadio5"
 
 #: src/main.cpp:45
 #, kde-format

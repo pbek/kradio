@@ -277,23 +277,23 @@ msgstr ""
 #: src/instancemanager.cpp:171
 #, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
-"KRadio4 hat nur %1 Plugin-Bibliothek gefunden. Erwartet wurden aber "
+"KRadio5 hat nur %1 Plugin-Bibliothek gefunden. Erwartet wurden aber "
 "mindestens 5. Bitte überprüfen Sie, ob das Installationsverzeichnis von "
-"KRadio4 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie "
+"KRadio5 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie "
 "bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und "
 "KDEHOME.\n"
 msgstr[1] ""
-"KRadio4 hat nur %1 Plugin-Bibliotheken gefunden. Erwartet wurden aber "
+"KRadio5 hat nur %1 Plugin-Bibliotheken gefunden. Erwartet wurden aber "
 "mindestens 5. Bitte überprüfen Sie, ob das Installationsverzeichnis von "
-"KRadio4 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie "
+"KRadio5 mit dem KDE4-Installationsverzeichnis identisch ist und setzen Sie "
 "bitte ggf. passende Werte für die Umgebungsvariablen KDEDIR, KDEDIRS und "
 "KDEHOME.\n"
 
@@ -370,13 +370,13 @@ msgstr "KRadio-Konfiguration"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
-msgstr "KRadio4"
+msgid "KRadio5"
+msgstr "KRadio5"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "Fehler in der KRadio4-Installation"
+msgid "KRadio5 Installation Error"
+msgstr "Fehler in der KRadio5-Installation"
 
 #: src/main.cpp:45
 #, kde-format

@@ -261,11 +261,11 @@ msgstr ""
 #: src/instancemanager.cpp:171
 #, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
@@ -273,7 +273,7 @@ msgstr[1] ""
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
+msgid "KRadio5 Installation Error"
 msgstr ""
 
 #: src/instancemanager.cpp:204
@@ -288,7 +288,7 @@ msgstr ""
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
+msgid "KRadio5"
 msgstr ""
 
 #: src/main.cpp:35

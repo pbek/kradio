@@ -267,20 +267,20 @@ msgstr "FileRingbuffer::resize: Escritura a archivo temporal %1 fallida. "
 #: src/instancemanager.cpp:171
 #, fuzzy, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
 "Se han encontrado sólo %1 bibliotecas. Se esperaba un mínimo de 5. Favor "
-"revisar el directorio de instalación de KRadio4 y las variables de ambiente "
+"revisar el directorio de instalación de KRadio5 y las variables de ambiente "
 "KDEDIR, KDEDIRS y KDEHOME.\n"
 msgstr[1] ""
 "Se han encontrado sólo %1 bibliotecas. Se esperaba un mínimo de 5. Favor "
-"revisar el directorio de instalación de KRadio4 y las variables de ambiente "
+"revisar el directorio de instalación de KRadio5 y las variables de ambiente "
 "KDEDIR, KDEDIRS y KDEHOME.\n"
 
 #: src/main.cpp:46
@@ -355,13 +355,13 @@ msgstr "Configuración de KRadio"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
-msgstr "KRadio4"
+msgid "KRadio5"
+msgstr "KRadio5"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "Error en la Instalación de KRadio4"
+msgid "KRadio5 Installation Error"
+msgstr "Error en la Instalación de KRadio5"
 
 #: src/main.cpp:45
 #, kde-format

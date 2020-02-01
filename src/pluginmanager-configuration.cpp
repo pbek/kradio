@@ -51,7 +51,7 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     btnRemoveLibrary       ->setIcon(QIcon("edit-delete"));
     btnAddLibrary          ->setIcon(QIcon("document-new"));
 
-    QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio4/plugins";
+    QString defaultPluginDir = KStandardDirs::installPath ("lib") + "kradio5/plugins";
     // KF5: Not yet clear how to obtain library paths ... the following does not work yet:
     // QString defaultPluginDir = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, "kradio5/plugins");
     editPluginLibrary->setStartDir(QUrl(defaultPluginDir));

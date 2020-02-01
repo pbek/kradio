@@ -230,8 +230,8 @@ void Shortcuts::updateShortcutsEditor(ShortcutsConfiguration *c)
 {
     if (c) {
         c->clearCollections();
-        c->addCollection(m_stdActions    ->collection(), "KRadio4");
-        c->addCollection(m_stationActions->collection(), "KRadio4");
+        c->addCollection(m_stdActions    ->collection(), "KRadio5");
+        c->addCollection(m_stationActions->collection(), "KRadio5");
     }
 }
 

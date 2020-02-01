@@ -75,16 +75,16 @@ ErrorLog::ErrorLog(const QString &instanceID, const QString &name)
     setWindowTitle(i18n("KRadio Logger"));
 
     setTextEditPage(i18n("Information"), QIcon("dialog-information"), &m_pageInfo);
-    logInfo(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
+    logInfo(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
     setTextEditPage(i18n("Warnings"), QIcon("dialog-warning"), &m_pageWarnings);
-    logWarning(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
+    logWarning(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
     setTextEditPage(i18n("Errors"), QIcon("dialog-error"), &m_pageErrors);
-    logError(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
+    logError(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
     setTextEditPage(i18n("Debugging"), QIcon("system-search"), &m_pageDebug);
-    logDebug(i18n("KRadio4 Version %1 logging started", QString(KRADIO_VERSION)));
+    logDebug(i18n("KRadio5 Version %1 logging started", QString(KRADIO_VERSION)));
 
     QObject::connect(saveAsButton, &QPushButton::clicked, this, &ErrorLog::slotSaveAs);
 

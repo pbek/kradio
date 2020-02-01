@@ -349,7 +349,7 @@ void QuickBar::resizeEvent (QResizeEvent *e)
 void QuickBar::autoSetCaption()
 {
     const RadioStation &rs = queryCurrentStation();
-    const QString caption = queryIsPowerOn() && rs.isValid() ? i18n("KRadio4 Quickbar, %1", rs.longName()) : i18n("KRadio4 Quickbar");
+    const QString caption = queryIsPowerOn() && rs.isValid() ? i18n("KRadio5 Quickbar, %1", rs.longName()) : i18n("KRadio5 Quickbar");
     setWindowTitle(caption);
 }
 

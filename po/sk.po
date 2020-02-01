@@ -263,22 +263,22 @@ msgstr "FileRingbuffer::resize: Zápis do tmpfile %1 zlyhal. "
 #: src/instancemanager.cpp:171
 #, fuzzy, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
 "Našlo sa iba %1 knižníc. Očakáva sa minimálne 5. Prosím skontrolujte "
-"inštalačný adresár KRadio4 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
+"inštalačný adresár KRadio5 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
 msgstr[1] ""
 "Našlo sa iba %1 knižníc. Očakáva sa minimálne 5. Prosím skontrolujte "
-"inštalačný adresár KRadio4 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
+"inštalačný adresár KRadio5 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
 msgstr[2] ""
 "Našlo sa iba %1 knižníc. Očakáva sa minimálne 5. Prosím skontrolujte "
-"inštalačný adresár KRadio4 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
+"inštalačný adresár KRadio5 a premenné prostredia KDEDIR, KDEDIRS a KDEHOME.\n"
 
 #: src/main.cpp:46
 #, kde-format
@@ -352,13 +352,13 @@ msgstr "Nastavenie KRadio"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
-msgstr "KRadio4"
+msgid "KRadio5"
+msgstr "KRadio5"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "Chyba inštalácie KRadio4"
+msgid "KRadio5 Installation Error"
+msgstr "Chyba inštalácie KRadio5"
 
 #: src/main.cpp:45
 #, kde-format

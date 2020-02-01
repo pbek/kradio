@@ -35,7 +35,7 @@
 **
 ****************************************************************************/
 
-/** extended by Martin Witte for kradio4 **/
+/** extended by Martin Witte for kradio5 **/
 
 #ifndef BUTTONFLOWLAYOUT4_H
 #define BUTTONFLOWLAYOUT4_H

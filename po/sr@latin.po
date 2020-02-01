@@ -259,19 +259,19 @@ msgstr "FileRingbuffer::resize: Ne mogu pisati u tmp fajl %1.␣"
 #: src/instancemanager.cpp:171
 #, fuzzy, kde-format
 msgid ""
-"Found only %1 library. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 library. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgid_plural ""
-"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio4 "
+"Found only %1 libraries. Expected a minimum of 5. Please check the KRadio5 "
 "installation directory and the environment variables KDEDIR, KDEDIRS and "
 "KDEHOME.\n"
 msgstr[0] ""
 "Pronadjeno samo %1 biblioteke. Očekivani minimum je 5. Molimo proverite "
-"KRadio4 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.\n"
+"KRadio5 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.\n"
 msgstr[1] ""
 "Pronadjeno samo %1 biblioteke. Očekivani minimum je 5. Molimo proverite "
-"KRadio4 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.\n"
+"KRadio5 instalacioni direktorijum i varijable  KDEDIR, KDEDIRS and KDEHOME.\n"
 
 #: src/main.cpp:46
 #, kde-format
@@ -345,13 +345,13 @@ msgstr "KRadio konfiguracija"
 
 #: src/main.cpp:33
 #, kde-format
-msgid "KRadio4"
-msgstr "KRadio4"
+msgid "KRadio5"
+msgstr "KRadio5"
 
 #: src/instancemanager.cpp:179
 #, kde-format
-msgid "KRadio4 Installation Error"
-msgstr "KRadio4 instalaciona greška"
+msgid "KRadio5 Installation Error"
+msgstr "KRadio5 instalaciona greška"
 
 #: src/main.cpp:45
 #, kde-format
