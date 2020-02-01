@@ -5,6 +5,7 @@ For 5.0.0
 * Check if plugin translations are loaded properly
     see https://api.kde.org/frameworks/ki18n/html/prg_guide.html#link_cat
     add std plugin headers, each with #define TRANSLATION_DOMAIN "foolib"
+* Check changes of dialog buttons: cfg dialog: apply button clicked seems not to trigger accept (role)
 
 =========
 
