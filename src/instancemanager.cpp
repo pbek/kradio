@@ -33,6 +33,9 @@
 
 #include "debug-profiler.h"
 
+#include "kglobal.h"
+#include "kstandarddirs.h"
+
 /////////////////////////////////////////////////////////////////////////////
 //// PluginLibraryInfo
 
@@ -137,20 +140,8 @@ void InstanceManager::restoreState (KConfig *c)
     KConfigGroup plugin_group = c->group("Plugin Libraries");
 
     // FIXME: KF5 porting: this might be wrong...
-    QStringList new_libs;
-    QStringList libPaths = QCoreApplication::libraryPaths();
-    libPaths.append("/home/urmel/kradio-git/install-debug/lib/x86_64-linux-gnu");
-    for (const auto & path : libPaths) {
-        const QDir testDir(path + "/kradio5/plugins");
-	const auto soFiles = testDir.entryList(QStringList({"kradio5_plugin_*.so"}));
-	
-	printf("testing libPath %s\n", qPrintable(testDir.path()));
-	for (const auto soFile: soFiles) {
-	  const auto fullSoFile = testDir.path() + "/" + soFile;
-	  printf("    %s\n", qPrintable(fullSoFile));
-	  new_libs.append(fullSoFile);
-	}	
-    }
+    // QStringList new_libs = QStandardPaths::locateAll(QStandardPaths::ApplicationsLocation, "kradio5/plugins/*.so");
+    QStringList new_libs = KGlobal::dirs()->findAllResources("lib", "kradio5/plugins/*.so");
 
     int n_libs = plugin_group.readEntry("count", 0);
 
