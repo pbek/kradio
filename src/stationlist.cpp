@@ -203,12 +203,12 @@ bool StationList::readXML (const QUrl &url, const IErrorLogClient &logger, bool 
     if (!rxJob.ok()) {
         if (enableMessageBox) {
             logger.logError("StationList::readXML: " +
-                            i18n("error downloading preset file %1", url.toString()));
+                            i18n("error downloading preset file %1: %2", url.toString(), rxJob.errorString()));
             QMessageBox::warning(NULL, "KRadio",
-                                 i18n("Download of the station preset file at %1 failed.", url.toString()));
+                                 i18n("Download of the station preset file at %1 failed: %2", url.toString(), rxJob.errorString()));
         } else {
             logger.logWarning("StationList::readXML: " +
-                              i18n("error downloading preset file %1", url.toString()));
+                              i18n("error downloading preset file %1: %2", url.toString(), rxJob.errorString()));
         }
         return false;
     }
@@ -325,15 +325,17 @@ bool StationList::writeXML (const QUrl &url, const IErrorLogClient &logger, bool
             const QByteArray tmpFileData = tmpFile.readAll();
             tmpFile.close();
             
-            kio_put_wrapper_t  kio_put_wrapper(url, tmpFileData);
+            kio_put_wrapper_t kio_put_wrapper(url, tmpFileData, KIO::Overwrite | KIO::HideProgressInfo | KIO::NoPrivilegeExecution);
+            
+            kio_put_wrapper.exec();
             
             if (!kio_put_wrapper.ok()) {
                 logger.logError("StationList::writeXML: " +
-                                i18n("error uploading preset file %1", url.toString()));
+                                i18n("error uploading preset file %1: %2", url.toString(), kio_put_wrapper.errorString()));
 
                 if (enableMessageBox) {
                     QMessageBox::warning(NULL, "KRadio",
-                                         i18n("Upload of station preset file to %1 failed.", url.toString()));
+                                         i18n("Upload of station preset file to %1 failed: %2", url.toString(), kio_put_wrapper.errorString()));
                 }
                 return false;
             }

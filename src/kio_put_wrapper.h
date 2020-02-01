@@ -42,12 +42,13 @@ protected:
     int                 m_error;
     QString             m_errorString;
     KIO::TransferJob  * m_txJob;
+    const KIO::JobFlags m_jobFlags;
     
     size_t              m_dataTransferred;
     
 public:
     
-    kio_put_wrapper_t(const QUrl & url, const QByteArray & data);
+    kio_put_wrapper_t(const QUrl & url, const QByteArray & data, const KIO::JobFlags);
     kio_put_wrapper_t(const kio_put_wrapper_t &) = delete;
     
     ~kio_put_wrapper_t();

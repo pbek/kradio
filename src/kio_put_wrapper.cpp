@@ -18,13 +18,14 @@
 #include "kio_put_wrapper.h"
 
 kio_put_wrapper_t::
-kio_put_wrapper_t(const QUrl & url, const QByteArray &data)
+kio_put_wrapper_t(const QUrl & url, const QByteArray &data, const KIO::JobFlags jobFlags)
   : m_url            (url),
     m_data           (data),
     m_ok             (false),
     m_error          (0),
     m_errorString    (""),
     m_txJob          (nullptr),
+    m_jobFlags       (jobFlags),
     m_dataTransferred(0)
 {} // CTOR
     
@@ -43,7 +44,7 @@ bool
 kio_put_wrapper_t::
 exec()
 {
-    m_txJob = KIO::put(m_url, -1);
+    m_txJob = KIO::put(m_url, -1, m_jobFlags);
     
     m_dataTransferred = 0;    
     connect(m_txJob, &KIO::TransferJob::dataReq, this, &kio_put_wrapper_t::slotDataReq);

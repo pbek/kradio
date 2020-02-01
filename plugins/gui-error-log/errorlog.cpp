@@ -236,11 +236,13 @@ void ErrorLog::slotSaveAs()
             const QByteArray tmpFileData = tmpFile.readAll();
             tmpFile.close();
             
-            kio_put_wrapper_t  kio_put_wrapper(url, tmpFileData);
+            kio_put_wrapper_t  kio_put_wrapper(url, tmpFileData, KIO::Overwrite | KIO::NoPrivilegeExecution);
+            
+            kio_put_wrapper.exec();
             
             if (!kio_put_wrapper.ok()) {
                 logError("ErrorLogger: " +
-                        i18n("error uploading preset file %1", url.toString()));
+                        i18n("error uploading preset file %1: %2", url.toString(), kio_put_wrapper.errorString()));
             }
         }
     }
