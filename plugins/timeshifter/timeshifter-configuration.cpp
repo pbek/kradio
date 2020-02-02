@@ -50,15 +50,12 @@ TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter
 
     buttonSelectTempFile->setIcon(QIcon::fromTheme("document-open"));
 
-    QObject::connect(buttonSelectTempFile, SIGNAL(clicked()),
-                     this, SLOT(selectTempFile()));
-    QObject::connect(comboPlaybackMixerDevice, SIGNAL(activated(int)),
-                     this, SLOT(slotComboPlaybackMixerSelected(int)));
-
-    connect(editTempFile,              SIGNAL(textChanged(const QString&)), this, SLOT(slotSetDirty()));
-    connect(editTempFileSize,          SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
-    connect(&m_PlaybackMixerHelper,    SIGNAL(sigDirtyChanged(bool)),       this, SLOT(slotSetDirty()));
-    connect(&m_PlaybackChannelHelper,  SIGNAL(sigDirtyChanged(bool)),       this, SLOT(slotSetDirty()));
+    QObject::connect(buttonSelectTempFile,     &QPushButton::clicked,                       this, &TimeShifterConfiguration::selectTempFile);
+    QObject::connect(comboPlaybackMixerDevice, QOverload<int>::of(&QComboBox::activated),   this, &TimeShifterConfiguration::slotComboPlaybackMixerSelected);
+    QObject::connect(editTempFile,             &QLineEdit::textChanged,                     this, &TimeShifterConfiguration::slotSetDirty);
+    QObject::connect(editTempFileSize,         QOverload<int>::of(&QSpinBox::valueChanged), this, &TimeShifterConfiguration::slotSetDirty);
+    QObject::connect(&m_PlaybackMixerHelper,   &StringListHelper::sigDirtyChanged,          this, &TimeShifterConfiguration::slotSetDirty);
+    QObject::connect(&m_PlaybackChannelHelper, &StringListHelper::sigDirtyChanged,          this, &TimeShifterConfiguration::slotSetDirty);
     slotCancel();
 }
 

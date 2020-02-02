@@ -37,14 +37,14 @@ void MMSXHandlerThread::run()
 {
     MMSXWrapper mmsx(m_url);
     m_mmsx = &mmsx;
-    QObject::connect(&mmsx, SIGNAL(sigError(QUrl)),                               m_parent, SLOT(proxyError(QUrl)),                               Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigFinished(QUrl)),                            m_parent, SLOT(proxyFinished(QUrl)),                            Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigStarted(QUrl)),                             m_parent, SLOT(proxyStarted(QUrl)),                             Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigConnectionEstablished(QUrl,KIO::MetaData)), m_parent, SLOT(proxyConnectionEstablished(QUrl,KIO::MetaData)), Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigUrlChanged(QUrl)),                          m_parent, SLOT(proxyUrlChanged(QUrl)),                          Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigContentType(QString)),                      m_parent, SLOT(proxyContentType(QString)),                      Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigStreamData(QByteArray)),                    m_parent, SLOT(proxyStreamData(QByteArray)),                    Qt::QueuedConnection);
-    QObject::connect(&mmsx, SIGNAL(sigMetaDataUpdate(KIO::MetaData)),             m_parent, SLOT(proxyMetaDataUpdate(KIO::MetaData)),             Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigError,                 m_parent, &MMSXHandler::proxyError,                 Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigFinished,              m_parent, &MMSXHandler::proxyFinished,              Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigStarted,               m_parent, &MMSXHandler::proxyStarted,               Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigConnectionEstablished, m_parent, &MMSXHandler::proxyConnectionEstablished, Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigUrlChanged,            m_parent, &MMSXHandler::proxyUrlChanged,            Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigContentType,           m_parent, &MMSXHandler::proxyContentType,           Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigStreamData,            m_parent, &MMSXHandler::proxyStreamData,            Qt::QueuedConnection);
+    QObject::connect(&mmsx, &MMSXWrapper::sigMetaDataUpdate,        m_parent, &MMSXHandler::proxyMetaDataUpdate,        Qt::QueuedConnection);
 
     mmsx.run();
 

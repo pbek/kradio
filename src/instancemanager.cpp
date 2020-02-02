@@ -26,6 +26,7 @@
 #include <QLocale>
 #include <QCoreApplication>
 #include <QDir>
+#include <QApplication>
 
 #include "instancemanager.h"
 #include "errorlog_interfaces.h"
@@ -90,7 +91,7 @@ InstanceManager::InstanceManager()
     m_quitting(false)
 {
     //m_Instances.setAutoDelete(true);
-    connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slotAboutToQuit()));
+    connect(qApp, &QApplication::aboutToQuit, this, &InstanceManager::slotAboutToQuit);
 }
 
 

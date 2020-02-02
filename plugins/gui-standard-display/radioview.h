@@ -143,7 +143,6 @@ protected slots:
 
 public slots:
 
-    virtual void    toggleShown() override { WidgetPluginBase::pToggleShown(); }
     virtual void    slotUpdateRecordingMenu();
 
 public:
@@ -184,8 +183,8 @@ protected:
 
     QMap<QObject*, QObject*>       m_elementConfigPages;
 
-    QStackedWidget                *widgetStacks[clsClassMAX];
-    float                          maxUsability[clsClassMAX];
+    std::array<QStackedWidget *, clsClassMAX>  m_widgetStacks;
+    std::array<float,            clsClassMAX>  m_maxUsability;
 
     IRadioDevice                  *currentDevice;
 

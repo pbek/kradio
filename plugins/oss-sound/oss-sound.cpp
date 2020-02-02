@@ -79,7 +79,7 @@ OSSSoundDevice::OSSSoundDevice(const QString &name)
       m_EnablePlayback(true),
       m_EnableCapture(true)
 {
-    QObject::connect(&m_PollingTimer, SIGNAL(timeout()), this, SLOT(slotPoll()));
+    QObject::connect(&m_PollingTimer, &QTimer::timeout, this, &OSSSoundDevice::slotPoll);
 }
 
 
@@ -190,7 +190,7 @@ void OSSSoundDevice::setMixerDeviceName(const QString &dev_name)
 ConfigPageInfo  OSSSoundDevice::createConfigurationPage()
 {
     OSSSoundConfiguration *conf = new OSSSoundConfiguration(NULL, this);
-    QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
+    QObject::connect(this, &OSSSoundDevice::sigUpdateConfig, conf, &OSSSoundConfiguration::slotUpdateConfig);
     return ConfigPageInfo (conf,
                            i18n("OSS Sound"),
                            i18n("OSS Sound Device Options"),

@@ -26,14 +26,25 @@
 #include <QtGui/QIcon>
 #include <QtGui/QWindow>
 
+
+void 
+widgetPluginHelper_t::
+slotToggleShown()
+{
+    m_parent->toggleShown();
+} // toggleShown
+
+
+
 WidgetPluginBase::WidgetPluginBase(QWidget *myself, const QString &instanceID, const QString &name, const QString &description)
   : PluginBase(instanceID, name, description),
-    m_myself(myself),
+    m_toggleHelper  (this),
+    m_myself        (myself),
     m_HideShowAction(myself),
-    m_restoreShow(false),
+    m_restoreShow   (false),
     m_geoRestoreFlag(false),
     m_ignoreHideShow(false),
-    m_geoCacheValid(false)
+    m_geoCacheValid (false)
 {
     auto     widget = getWidget();
     widget->setAttribute(Qt::WA_NativeWindow, true);
@@ -83,7 +94,7 @@ void WidgetPluginBase::pSetVisible(bool v)
 }
 
 
-void WidgetPluginBase::pToggleShown()
+void WidgetPluginBase::toggleShown()
 {
     QWidget *w = getWidget();
     if (!w) return;
@@ -94,7 +105,8 @@ void WidgetPluginBase::pToggleShown()
     } else {
         w->hide();
     }
-}
+} // toggleShown
+
 
 // this function is not a hook, it really shows the widget
 void WidgetPluginBase::showOnOrgDesktop()
@@ -257,7 +269,7 @@ void WidgetPluginBase::startPlugin()
 {
     PluginBase::startPlugin();
 
-    QObject::connect(&m_HideShowAction, SIGNAL(triggered()), m_myself, SLOT(toggleShown()));
+    QObject::connect(&m_HideShowAction, &QAction::triggered, &m_toggleHelper, &widgetPluginHelper_t::slotToggleShown);
 
     QWidget *w = getWidget();
     if (w) {

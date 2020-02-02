@@ -135,8 +135,9 @@ GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, SORT_KEY skey)
     m_alternativeDirty(false),
     m_ignoreGUIChange(false)
 {
-    if (list)
-        QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
+    if (list) {
+        QObject::connect(list, QOverload<int>::of(&TLIST::activated), this, &GUIListHelper::slotUserSelection);
+    }
 }
 
 
@@ -148,8 +149,9 @@ GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, const QMap<TID, QString> &
     m_alternativeDirty(false),
     m_ignoreGUIChange(false)
 {
-    if (list)
-        QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
+    if (list) {
+        QObject::connect(list, QOverload<int>::of(&TLIST::activated), this, &GUIListHelper::slotUserSelection);
+    }
     setData(data);
 }
 
@@ -161,8 +163,9 @@ GUIListHelper<TLIST, TID>::GUIListHelper(TLIST *list, const QList<QString> &data
     m_alternativeDirty(false),
     m_ignoreGUIChange(false)
 {
-    if (list)
-        QObject::connect(list, SIGNAL(activated(int)), this, SLOT(slotUserSelection()));
+    if (list) {
+        QObject::connect(list, QOverload<int>::of(&TLIST::activated), this, &GUIListHelper::slotUserSelection);
+    }
     setData(data);
 }
 

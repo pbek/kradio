@@ -63,11 +63,11 @@ public:
 
 protected slots:
 
-    void   slotReadData  (KIO::Job *job, const QByteArray &data);
-    void   slotReadData  (int fileno);
-    void   slotWriteData (KIO::Job *job, QByteArray &data);
-    void   slotWriteData (int fileno);
-    void   slotIOJobResult (KIO::Job *job);
+    void   slotReadDataFromJob  (KIO::Job *job, const QByteArray &data);
+    void   slotReadDataFromFile (int fileno);
+    void   slotWriteDataToJob   (KIO::Job *job, QByteArray &data);
+    void   slotWriteDataToFile  (int fileno);
+    void   slotIOJobResult      (KJob *job);
 
 signals:
 

@@ -117,7 +117,7 @@ InternetRadioDecoder::InternetRadioDecoder(QObject                    *event_par
     m_debugMetaStream    = fopen("/tmp/kradio-debug-meta-stream",    "w");
 #endif
 
-    QObject::connect(this, SIGNAL(sigSelfTrigger()), this, SLOT(run()), Qt::QueuedConnection);
+    QObject::connect(this, &InternetRadioDecoder::sigSelfTrigger, this, &InternetRadioDecoder::run, Qt::QueuedConnection);
     emit sigSelfTrigger();
 }
 
@@ -1186,9 +1186,9 @@ DecoderThread::DecoderThread(QObject *parent,
 {
 #ifndef INET_RADIO_STREAM_HANDLING_BY_DECODER_THREAD
     m_streamInputBuffer = new StreamInputBuffer(input_buffer_size);
-    QObject::connect(streamReader,        SIGNAL(sigStreamData(QByteArray)), m_streamInputBuffer, SLOT(slotWriteInputBuffer(QByteArray)));
-    QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferFull()),      streamReader,        SLOT(slotStreamPause()));
-    QObject::connect(m_streamInputBuffer, SIGNAL(sigInputBufferNotFull()),   streamReader,        SLOT(slotStreamContinue()));
+    QObject::connect(streamReader,        &StreamReader     ::sigStreamData,         m_streamInputBuffer, &StreamInputBuffer::slotWriteInputBuffer);
+    QObject::connect(m_streamInputBuffer, &StreamInputBuffer::sigInputBufferFull,    streamReader,        &StreamReader::slotStreamPause);
+    QObject::connect(m_streamInputBuffer, &StreamInputBuffer::sigInputBufferNotFull, streamReader,        &StreamReader::slotStreamContinue);
     KIO::MetaData md = streamReader->getConnectionMetaData();
     if (md.contains("content-type")) {
         m_contentType = md["content-type"];

@@ -39,15 +39,15 @@ StandardScanDialog::StandardScanDialog(QWidget *parent)
 {
     m_Wait4RDSTimeout.setInterval(2000); // wait at max 2 sec on RDS signal
     m_Wait4RDSTimeout.setSingleShot(true);
-    QObject::connect(&m_Wait4RDSTimeout, SIGNAL(timeout()), this, SLOT(slotWait4RDSTimeout()));
+    QObject::connect(&m_Wait4RDSTimeout, &QTimer::timeout, this, &StandardScanDialog::slotWait4RDSTimeout);
 
     m_ui = new Ui_StandardScanDialogUI();
     m_ui->setupUi(this);
     m_buttonStartStop = m_ui->buttons->addButton(i18n("&Start"), QDialogButtonBox::ActionRole);
-    QObject::connect(m_ui->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(slotOk()));
-    QObject::connect(m_buttonStartStop, SIGNAL(clicked()), this, SLOT(slotStartStop()));
-    QObject::connect(m_ui->buttons->button(QDialogButtonBox::Discard), SIGNAL(clicked()), this, SLOT(slotDiscard()));
-}
+    QObject::connect(m_ui->buttons->button(QDialogButtonBox::Ok),      &QPushButton::clicked, this, &StandardScanDialog::slotOk);
+    QObject::connect(m_buttonStartStop,                                &QPushButton::clicked, this, &StandardScanDialog::slotStartStop);
+    QObject::connect(m_ui->buttons->button(QDialogButtonBox::Discard), &QPushButton::clicked, this, &StandardScanDialog::slotDiscard);
+} // CTOR
 
 
 StandardScanDialog::~StandardScanDialog()

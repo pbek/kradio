@@ -20,8 +20,8 @@ StyledItemDelegateLirc::StyledItemDelegateLirc(QObject *parent)
     : QStyledItemDelegate(parent)
     , m_lastEditor(0)
 {
-    connect(this, SIGNAL(closeEditor(QWidget*,QAbstractItemDelegate::EndEditHint)),
-            this, SLOT(slotEditorClosed(QWidget*,QAbstractItemDelegate::EndEditHint)));
+    QObject::connect(this, &StyledItemDelegateLirc::closeEditor,
+                     this, &StyledItemDelegateLirc::slotEditorClosed);
 }
 
 StyledItemDelegateLirc::~StyledItemDelegateLirc()

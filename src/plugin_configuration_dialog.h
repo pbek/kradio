@@ -53,7 +53,6 @@ protected :
     // WidgetPluginBase
 
 public slots:
-    virtual void toggleShown() override { WidgetPluginBase::pToggleShown(); }
     virtual void cancel()               { reject(); }
     
 Q_SIGNALS:

@@ -99,17 +99,16 @@ LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
     m_delegate = new StyledItemDelegateLirc(m_ActionList);
     m_ActionList->setItemDelegate(m_delegate);
 
-    connect(m_model,           SIGNAL(itemChanged(QStandardItem*)),       this, SLOT(slotSetDirty()));
-    connect(comboPowerOffMode, SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
-    connect(comboPowerOnMode,  SIGNAL(currentIndexChanged(int)),          this, SLOT(slotSetDirty()));
-    connect(cbSyncAtRuntime,   SIGNAL(toggled(bool)),                     this, SLOT(slotSetDirty()));
-    connect(cbSyncAtStartup,   SIGNAL(toggled(bool)),                     this, SLOT(slotSetDirty()));
-    connect(m_delegate, SIGNAL(startedRenaming(QModelIndex)), this, SLOT(slotRenamingStarted(QModelIndex)));
-    connect(m_delegate, SIGNAL(closeEditor(QWidget*,QAbstractItemDelegate::EndEditHint)),
-            this, SLOT(slotRenamingStopped()));
+    connect(m_model,                 &QStandardItemModel::itemChanged,                     this, &LIRCConfiguration::slotSetDirty);
+    connect(comboPowerOffMode,       QOverload<int>::of(&QComboBox::currentIndexChanged),  this, &LIRCConfiguration::slotSetDirty);
+    connect(comboPowerOnMode,        QOverload<int>::of(&QComboBox::currentIndexChanged),  this, &LIRCConfiguration::slotSetDirty);
+    connect(cbSyncAtRuntime,         &QCheckBox::toggled,                                  this, &LIRCConfiguration::slotSetDirty);
+    connect(cbSyncAtStartup,         &QCheckBox::toggled,                                  this, &LIRCConfiguration::slotSetDirty);
+    connect(m_delegate,              &StyledItemDelegateLirc::startedRenaming,             this, &LIRCConfiguration::slotRenamingStarted);
+    connect(m_delegate,              &StyledItemDelegateLirc::closeEditor,                 this, &LIRCConfiguration::slotRenamingStopped);
 
-    connect(edLIRCConfigurationFile, SIGNAL(textChanged(const QString &)), this, SLOT(readLIRCConfigurationFile()));
-    connect(edLIRCConfigurationFile, SIGNAL(textChanged(const QString &)), this, SLOT(slotSetDirty()));
+    connect(edLIRCConfigurationFile, &KUrlRequester::textChanged,                          this, &LIRCConfiguration::readLIRCConfigurationFile);
+    connect(edLIRCConfigurationFile, &KUrlRequester::textChanged,                          this, &LIRCConfiguration::slotSetDirty);
     slotRenamingStopped();
     slotCancel();
 }

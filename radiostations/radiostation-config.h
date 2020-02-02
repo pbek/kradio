@@ -19,15 +19,16 @@
 #define KRADIO_RADIOSTATION_CONFIG_H
 
 #include <QWidget>
+#include "kradio-def.h"
 
 class RadioStation;
 
-class RadioStationConfig : public QWidget
+class KRADIO5_EXPORT RadioStationConfig : public QWidget
 {
 Q_OBJECT
 public:
 	RadioStationConfig(QWidget *parent);
-    ~RadioStationConfig();
+    virtual ~RadioStationConfig();
 
     virtual void setStationData   (const RadioStation &rs) = 0;
     virtual void storeStationData (RadioStation &rs) = 0;
@@ -37,7 +38,7 @@ signals:
 };
 
 
-class UndefinedRadioStationConfig : public RadioStationConfig
+class KRADIO5_EXPORT UndefinedRadioStationConfig : public RadioStationConfig
 {
 Q_OBJECT
 public:
@@ -52,7 +53,7 @@ public:
 
 class QSpinBox;
 
-class FrequencyRadioStationConfig : public RadioStationConfig
+class KRADIO5_EXPORT FrequencyRadioStationConfig : public RadioStationConfig
 {
 Q_OBJECT
 public:
@@ -73,7 +74,7 @@ protected:
 
 class KUrlRequester;
 class KComboBox;
-class InternetRadioStationConfig : public RadioStationConfig
+class KRADIO5_EXPORT InternetRadioStationConfig : public RadioStationConfig
 {
 Q_OBJECT
 public:

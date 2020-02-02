@@ -75,7 +75,7 @@ FrequencyRadioStationConfig::FrequencyRadioStationConfig (QWidget *parent)
     m_editFrequency->setSingleStep(10);
     vl->addWidget (m_editFrequency);
 
-    connect (m_editFrequency, SIGNAL(valueChanged(int)), this, SLOT(slotValueChanged(int)));
+    QObject::connect (m_editFrequency, QOverload<int>::of(&QSpinBox::valueChanged), this, &FrequencyRadioStationConfig::slotValueChanged);
 }
 
 FrequencyRadioStationConfig::~FrequencyRadioStationConfig()
@@ -153,10 +153,10 @@ InternetRadioStationConfig::InternetRadioStationConfig (QWidget *parent)
     initCodecList();
 
 
-    connect (m_editUrl,               SIGNAL(textChanged(const QString& )), this, SLOT(slotUrlChanged(const QString &)));
-    connect (m_comboDecoderClass,     SIGNAL(currentIndexChanged(int)),     this, SLOT(slotDecoderClassChanged(int)));
-    connect (m_comboPlaylistClass,    SIGNAL(currentIndexChanged(int)),     this, SLOT(slotPlaylistClassChanged(int)));
-    connect (m_comboMetaDataEncoding, SIGNAL(currentIndexChanged(int)),     this, SLOT(slotMetadataEncodingChanged(int)));
+    connect (m_editUrl,               &KUrlRequester::textChanged,                          this, &InternetRadioStationConfig::slotUrlChanged);
+    connect (m_comboDecoderClass,     QOverload<int>::of(&QComboBox::currentIndexChanged),  this, &InternetRadioStationConfig::slotDecoderClassChanged);
+    connect (m_comboPlaylistClass,    QOverload<int>::of(&QComboBox::currentIndexChanged),  this, &InternetRadioStationConfig::slotPlaylistClassChanged);
+    connect (m_comboMetaDataEncoding, QOverload<int>::of(&QComboBox::currentIndexChanged),  this, &InternetRadioStationConfig::slotMetadataEncodingChanged);
 }
 
 InternetRadioStationConfig::~InternetRadioStationConfig()

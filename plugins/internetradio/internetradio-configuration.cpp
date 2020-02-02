@@ -51,8 +51,7 @@ InternetRadioConfiguration::InternetRadioConfiguration (QWidget *parent, SoundSt
     m_PlaybackMixerHelper  .setList(comboPlaybackMixerDevice);
     m_PlaybackChannelHelper.setList(comboPlaybackMixerChannel);
 
-    QObject::connect(comboPlaybackMixerDevice, SIGNAL(activated(int)),
-                     this, SLOT(slotComboPlaybackMixerSelected(int)));
+    QObject::connect(comboPlaybackMixerDevice, QOverload<int>::of(&QComboBox::activated), this, &InternetRadioConfiguration::slotComboPlaybackMixerSelected);
 
 }
 

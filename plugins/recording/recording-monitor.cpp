@@ -81,8 +81,8 @@ RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &nam
     QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
     QPushButton *close = buttonBox->addButton(QDialogButtonBox::Close);
     m_btnStartStop = buttonBox->addButton(i18n("&Record"), QDialogButtonBox::ActionRole);
-    QObject::connect(close, SIGNAL(clicked()), this, SLOT(hide()));
-    QObject::connect(m_btnStartStop, SIGNAL(clicked()), this, SLOT(slotStartStopRecording()));
+    QObject::connect(close,          &QPushButton::clicked, this, &RecordingMonitor::hide);
+    QObject::connect(m_btnStartStop, &QPushButton::clicked, this, &RecordingMonitor::slotStartStopRecording);
 
     m_dataMonitor = new RecordingDataMonitor(this);
     m_dataMonitor->setEnabled(false);
@@ -92,7 +92,7 @@ RecordingMonitor::RecordingMonitor(const QString &instanceID, const QString &nam
 
 
     m_comboSoundStreamSelector->addItem(i18n("nothing"));
-    QObject::connect(m_comboSoundStreamSelector, SIGNAL(activated(int)), this, SLOT(slotStreamSelected(int)));
+    QObject::connect(m_comboSoundStreamSelector, QOverload<int>::of(&QComboBox::activated), this, &RecordingMonitor::slotStreamSelected);
 
     updateRecordingButton();
     slotStreamSelected(0);

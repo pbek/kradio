@@ -61,19 +61,17 @@ PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, Instance
     listPlugins->setModel(m_pluginsModel);
     listPlugins->setItemDelegate(new PluginsDelegate(listPlugins));
 
-    QObject::connect(btnAddLibrary,           SIGNAL(clicked()),     this, SLOT(slotAddLibrary()));
-    QObject::connect(btnRemoveLibrary,        SIGNAL(clicked()),     this, SLOT(slotRemoveLibrary()));
-    QObject::connect(btnNewPluginInstance,    SIGNAL(clicked()),     this, SLOT(slotNewPluginInstance()));
-    QObject::connect(btnRenamePluginInstance, SIGNAL(clicked()),     this, SLOT(slotRenamePluginInstance()));
-    QObject::connect(btnRemovePluginInstance, SIGNAL(clicked()),     this, SLOT(slotRemovePluginInstance()));
-    QObject::connect(cbShowProgressBar,       SIGNAL(toggled(bool)), this, SLOT(slotSetDirty()));
+    QObject::connect(btnAddLibrary,           &QPushButton::clicked,  this, &PluginManagerConfiguration::slotAddLibrary);
+    QObject::connect(btnRemoveLibrary,        &QPushButton::clicked,  this, &PluginManagerConfiguration::slotRemoveLibrary);
+    QObject::connect(btnNewPluginInstance,    &QPushButton::clicked,  this, &PluginManagerConfiguration::slotNewPluginInstance);
+    QObject::connect(btnRenamePluginInstance, &QPushButton::clicked,  this, &PluginManagerConfiguration::slotRenamePluginInstance);
+    QObject::connect(btnRemovePluginInstance, &QPushButton::clicked,  this, &PluginManagerConfiguration::slotRemovePluginInstance);
+    QObject::connect(cbShowProgressBar,       &QPushButton::toggled,  this, &PluginManagerConfiguration::slotSetDirty);
+    QObject::connect(rbAutoLoadYes,           &QRadioButton::clicked, this, &PluginManagerConfiguration::slotSetDirty);
+    QObject::connect(rbAutoLoadNo,            &QRadioButton::clicked, this, &PluginManagerConfiguration::slotSetDirty);
+    QObject::connect(rbAutoLoadAsk,           &QRadioButton::clicked, this, &PluginManagerConfiguration::slotSetDirty);
 
-    QObject::connect(rbAutoLoadYes,           SIGNAL(clicked(bool)), this, SLOT(slotSetDirty()));
-    QObject::connect(rbAutoLoadNo,            SIGNAL(clicked(bool)), this, SLOT(slotSetDirty()));
-    QObject::connect(rbAutoLoadAsk,           SIGNAL(clicked(bool)), this, SLOT(slotSetDirty()));
-
-    QObject::connect(listPlugins->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
-                     this, SLOT(slotCurrentChanged(QModelIndex,QModelIndex)));
+    QObject::connect(listPlugins->selectionModel(), &QItemSelectionModel::currentChanged, this, &PluginManagerConfiguration::slotCurrentChanged);
 
 
     // will directly call noticePluginLibrariesChanged()

@@ -36,19 +36,15 @@ StationSelector::StationSelector (QWidget *parent)
     m_ui = new Ui_StationSelectorUI();
     m_ui->setupUi(this);
 
-    m_ui->buttonToRight->setIcon(QIcon::fromTheme(QApplication::isRightToLeft() ? "arrow-left" : "arrow-right"));
-    m_ui->buttonToLeft->setIcon (QIcon::fromTheme(QApplication::isRightToLeft() ? "arrow-right" : "arrow-left"));
+    m_ui->buttonToRight->setIcon(QIcon::fromTheme(QApplication::isRightToLeft() ? "arrow-left"  : "arrow-right"));
+    m_ui->buttonToLeft ->setIcon(QIcon::fromTheme(QApplication::isRightToLeft() ? "arrow-right" : "arrow-left"));
 
-    QObject::connect(m_ui->buttonToLeft,  SIGNAL(clicked()), this, SLOT(slotButtonToLeft()));
-    QObject::connect(m_ui->buttonToRight, SIGNAL(clicked()), this, SLOT(slotButtonToRight()));
-    QObject::connect(m_ui->listAvailable->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-                     this, SLOT(slotSetDirty()));
-    QObject::connect(m_ui->listAvailable->model(), SIGNAL(rowsRemoved(QModelIndex,int,int)),
-                     this, SLOT(slotSetDirty()));
-    QObject::connect(m_ui->listSelected->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-                     this, SLOT(slotSetDirty()));
-    QObject::connect(m_ui->listSelected->model(), SIGNAL(rowsRemoved(QModelIndex,int,int)),
-                     this, SLOT(slotSetDirty()));
+    QObject::connect(m_ui->buttonToLeft,           &QPushButton       ::clicked,      this, &StationSelector::slotButtonToLeft);
+    QObject::connect(m_ui->buttonToRight,          &QPushButton       ::clicked,      this, &StationSelector::slotButtonToRight);
+    QObject::connect(m_ui->listAvailable->model(), &QAbstractItemModel::rowsInserted, this, &StationSelector::slotSetDirty);
+    QObject::connect(m_ui->listAvailable->model(), &QAbstractItemModel::rowsRemoved,  this, &StationSelector::slotSetDirty);
+    QObject::connect(m_ui->listSelected ->model(), &QAbstractItemModel::rowsInserted, this, &StationSelector::slotSetDirty);
+    QObject::connect(m_ui->listSelected ->model(), &QAbstractItemModel::rowsRemoved,  this, &StationSelector::slotSetDirty);
 
     m_ui->listSelected->setSelectionMode(QAbstractItemView::ExtendedSelection);
     m_ui->listAvailable->setSelectionMode(QAbstractItemView::ExtendedSelection);

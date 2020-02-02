@@ -135,10 +135,10 @@ V4LRadio::V4LRadio(const QString &instanceID, const QString &name)
     m_RDS_emulate_pos = 0;
     m_RDS_emulate_timer.setInterval(21); // 26 bits/block / 1187.5 bits/s = 21.89 ms / block
     m_RDS_emulate_timer.setSingleShot(false);
-    QObject::connect (&m_RDS_emulate_timer, SIGNAL(timeout()), this, SLOT(slotEmulateRDS()));
+    QObject::connect (&m_RDS_emulate_timer, &QTimer::timeout, this, &V4LRadio::slotEmulateRDS);
 #endif
 
-    QObject::connect (&m_pollTimer, SIGNAL(timeout()), this, SLOT(poll()));
+    QObject::connect (&m_pollTimer, &QTimer::timeout, this, &V4LRadio::poll);
     m_pollTimer.setSingleShot(false);
     m_pollTimer.setInterval(333);
 
@@ -1447,7 +1447,7 @@ void V4LRadio::radio_init()
 
     m_RDS_notify = new QSocketNotifier(m_radio_fd, QSocketNotifier::Read, this);
     if (m_RDS_notify)
-        QObject::connect(m_RDS_notify, SIGNAL(activated(int)), this, SLOT(slotRDSData(int)));
+        QObject::connect(m_RDS_notify, &QSocketNotifier::activated, this, &V4LRadio::slotRDSData);
 
     // restore frequency
     FrequencyRadioStation cur = m_currentStation;

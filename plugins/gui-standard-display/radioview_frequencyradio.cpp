@@ -78,7 +78,7 @@ RadioViewFrequencyRadio::RadioViewFrequencyRadio(QWidget *parent, const QString 
 
     m_RadioTextTimer.setInterval(100);
     m_RadioTextTimer.setSingleShot(false);
-    QObject::connect(&m_RadioTextTimer, SIGNAL(timeout()), this, SLOT(slotRadioTextTimer()));
+    QObject::connect(&m_RadioTextTimer, &QTimer::timeout, this, &RadioViewFrequencyRadio::slotRadioTextTimer);
 }
 
 

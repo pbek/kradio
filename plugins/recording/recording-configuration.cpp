@@ -35,28 +35,25 @@ RecordingConfiguration::RecordingConfiguration (QWidget *parent)
 
     editDirectory->setMode(KFile::Directory | KFile::ExistingOnly);
 
-    QObject::connect(editFileFormat, SIGNAL(activated(int)),
-                     this,           SLOT(slotFormatSelectionChanged()));
-    QObject::connect(editBits,       SIGNAL(activated(int)),
-                     this,           SLOT(slotFormatSelectionChanged()));
-
-    connect(editRate,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
-    connect(editBits,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
-    connect(editSign,                     SIGNAL(activated(int)),               SLOT(slotSetDirty()));
-    connect(editEndianness,               SIGNAL(activated(int)),               SLOT(slotSetDirty()));
-    connect(editChannels,                 SIGNAL(activated(int)),               SLOT(slotSetDirty()));
-    connect(editFileFormat,               SIGNAL(activated(int)),               SLOT(slotSetDirty()));
-    connect(editMP3Quality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
-    connect(editOggQuality,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
-    connect(editDirectory,                SIGNAL(textChanged(const QString &)), SLOT(slotSetDirty()));
-    connect(editBufferSize,               SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
-    connect(editBufferCount,              SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
-    connect(m_spinboxPreRecordingSeconds, SIGNAL(valueChanged(int)),            SLOT(slotSetDirty()));
-    connect(m_checkboxPreRecordingEnable, SIGNAL(toggled(bool)),                SLOT(slotSetDirty()));
-    connect(editFilenameTemplate,         SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
-    connect(editID3TitleTemplate,         SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
-    connect(editID3ArtistTemplate,        SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
-    connect(editID3GenreTemplate,         SIGNAL(textEdited(const QString &)),  SLOT(slotSetDirty()));
+    QObject::connect(editRate,                     QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editBits,                     QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotFormatSelectionChanged);
+    QObject::connect(editBits,                     QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editSign,                     QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editEndianness,               QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editChannels,                 QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editFileFormat,               QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotFormatSelectionChanged);
+    QObject::connect(editFileFormat,               QOverload<int>::of(&KComboBox::activated),    this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editMP3Quality,               QOverload<int>::of(&QSpinBox::valueChanged),  this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editOggQuality,               QOverload<int>::of(&QSpinBox::valueChanged),  this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editDirectory,                &KUrlRequester::textChanged,                  this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editBufferSize,               QOverload<int>::of(&QSpinBox::valueChanged),  this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editBufferCount,              QOverload<int>::of(&QSpinBox::valueChanged),  this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(m_spinboxPreRecordingSeconds, QOverload<int>::of(&QSpinBox::valueChanged),  this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(m_checkboxPreRecordingEnable, &QCheckBox::toggled,                          this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editFilenameTemplate,         &QLineEdit::textEdited,                       this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editID3TitleTemplate,         &QLineEdit::textEdited,                       this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editID3ArtistTemplate,        &QLineEdit::textEdited,                       this, &RecordingConfiguration::slotSetDirty);
+    QObject::connect(editID3GenreTemplate,         &QLineEdit::textEdited,                       this, &RecordingConfiguration::slotSetDirty);
 
 // attention: remove items with higher index first ;-) otherwise indexes are not valid
 #ifndef HAVE_OGG

@@ -74,7 +74,7 @@ LircSupport::LircSupport(const QString &instanceID, const QString &name)
       m_ignorePowerOnOff(false)
 {
     m_kbdTimer = new QTimer (this);
-    QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
+    QObject::connect (m_kbdTimer, &QTimer::timeout, this, &LircSupport::slotKbdTimedOut);
 
     m_addIndex = 0;
 
@@ -107,8 +107,9 @@ void LircSupport::LIRC_init_fd()
         fprintf (stderr, "%s\n", qPrintable(warnMsg));
     } else {
         m_lirc_notify = new QSocketNotifier(m_fd_lirc, QSocketNotifier::Read, this);
-        if (m_lirc_notify)
-            QObject::connect(m_lirc_notify, SIGNAL(activated(int)), this, SLOT(slotLIRC(int)));
+        if (m_lirc_notify) {
+            QObject::connect(m_lirc_notify, &QSocketNotifier::activated, this, &LircSupport::slotLIRC);
+        }
 
         QString       dbgMsg = i18n("Initializing KRadio LIRC plugin successful");
         logDebug      (dbgMsg);
@@ -485,9 +486,8 @@ void   LircSupport::restoreState (const KConfigGroup &c)
 ConfigPageInfo LircSupport::createConfigurationPage()
 {
     LIRCConfiguration *conf = new LIRCConfiguration(NULL, this);
-    QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
-    QObject::connect(this, SIGNAL(sigRawLIRCSignal(const QString &, int, bool &)),
-                     conf, SLOT  (slotRawLIRCSignal(const QString &, int, bool &)));
+    QObject::connect(this, &LircSupport::sigUpdateConfig,  conf, &LIRCConfiguration::slotUpdateConfig);
+    QObject::connect(this, &LircSupport::sigRawLIRCSignal, conf, &LIRCConfiguration::slotRawLIRCSignal);
     return ConfigPageInfo (conf,
                            i18n("LIRC Support"),
                            i18n("LIRC Plugin"),

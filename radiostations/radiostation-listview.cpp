@@ -312,8 +312,7 @@ RadioStationListView::RadioStationListView(QWidget *parent, const char *name)
     viewport()->setAcceptDrops(true);
     setDropIndicatorShown(true);
 
-    QObject::connect(this, SIGNAL(doubleClicked(QModelIndex)),
-                     this, SLOT(slotStationActivation(QModelIndex)));
+    QObject::connect(this, &RadioStationListView::doubleClicked, this, &RadioStationListView::slotStationActivation);
 
     m_model = new RadioStationModel(this);
     setModel(m_model);

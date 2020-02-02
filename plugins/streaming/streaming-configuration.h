@@ -92,14 +92,12 @@ public :
     StreamingConfiguration (QWidget *parent, StreamingDevice *streamer);
     ~StreamingConfiguration ();
 
+    void slotUpdateConfig();
+    
 protected slots:
 
     virtual void slotOK()     override;
     virtual void slotCancel() override;
-
-    void slotUpdateConfig();
-
-
 
     void slotNewPlaybackChannel();
     void slotDeletePlaybackChannel();

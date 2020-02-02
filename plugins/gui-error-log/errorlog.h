@@ -46,9 +46,6 @@ public:
     virtual void   restoreState (const KConfigGroup &) override;
     virtual void   restoreState (const KConfigGroup &g, bool b) override { WidgetPluginBase::restoreState(g, b); }
 
-public slots:
-    virtual void     toggleShown () override { WidgetPluginBase::pToggleShown(); }
-
 public:
     virtual void     setVisible(bool v) override;
 

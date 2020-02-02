@@ -64,6 +64,8 @@ protected slots:
     virtual void slotOK    () override;
     virtual void slotCancel() override;
     void         slotSetDirty();
+    
+public:
     void         slotUpdateConfig();
 
 protected:

@@ -23,7 +23,7 @@ FrequencySeekHelper::FrequencySeekHelper(ISeekRadio &parent)
 {
     m_timer = new QTimer(this);
     m_timer->setSingleShot(true);
-    QObject::connect (m_timer, SIGNAL(timeout()), this, SLOT(step()));
+    QObject::connect (m_timer, &QTimer::timeout, this, &FrequencySeekHelper::step);
 }
 
 

@@ -135,7 +135,7 @@ void   TimeShifter::restoreState (const KConfigGroup &config)
 ConfigPageInfo  TimeShifter::createConfigurationPage()
 {
     TimeShifterConfiguration *conf = new TimeShifterConfiguration(NULL, this);
-    QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
+    QObject::connect(this, &TimeShifter::sigUpdateConfig, conf, &TimeShifterConfiguration::slotUpdateConfig);
     return ConfigPageInfo (conf,
                            i18n("Timeshifter"),
                            i18n("Timeshifter Options"),

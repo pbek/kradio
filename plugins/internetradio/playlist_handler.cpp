@@ -111,8 +111,8 @@ void PlaylistHandler::setError(QString errorMsg)
 void PlaylistHandler::loadPlaylistStopJob()
 {
     if (m_playlistJob) {
-        QObject::disconnect(m_playlistJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotPlaylistData(KIO::Job *, const QByteArray &)));
-        QObject::disconnect(m_playlistJob, SIGNAL(result(KJob *)),                         this, SLOT(slotPlaylistLoadDone(KJob *)));
+        QObject::disconnect(m_playlistJob, &KIO::TransferJob::data,   this, &PlaylistHandler::slotPlaylistData);
+        QObject::disconnect(m_playlistJob, &KIO::TransferJob::result, this, &PlaylistHandler::slotPlaylistLoadDone);
         m_playlistJob->kill();
         m_playlistJob = NULL;
     }
@@ -133,8 +133,8 @@ void PlaylistHandler::loadPlaylistStartJob()
     if (!protocol.startsWith("mms") && m_currentStation.playlistClass() != "") {
         m_playlistJob = KIO::get(m_currentStation.url(), KIO::NoReload, KIO::HideProgressInfo);
         if (m_playlistJob) {
-            QObject::connect(m_playlistJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotPlaylistData(KIO::Job *, const QByteArray &)));
-            QObject::connect(m_playlistJob, SIGNAL(result(KJob *)),                         this, SLOT(slotPlaylistLoadDone(KJob *)));
+            QObject::connect(m_playlistJob, &KIO::TransferJob::data,   this, &PlaylistHandler::slotPlaylistData);
+            QObject::connect(m_playlistJob, &KIO::TransferJob::result, this, &PlaylistHandler::slotPlaylistLoadDone);
             m_playlistJob->start();
             if (m_playlistJob->error()) {
                 setError(i18n("Failed to load playlist %1: %2", m_currentStation.url().toString(), m_playlistJob->errorString()));

@@ -98,8 +98,9 @@ void IcyHttpHandler::setupStreamJob(const QUrl &url, const QString &metaDataEnco
 
         m_streamJob->addMetaData("PropagateHttpHeader", "true");
 
-        QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
-        QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
+        QObject::connect(m_streamJob, &KIO::TransferJob::data,   this, &IcyHttpHandler::slotStreamData);
+        QObject::connect(m_streamJob, &KIO::TransferJob::result, this, &IcyHttpHandler::slotStreamDone);
+        
     } else {
         IErrorLogClient::staticLogError(i18n("Internet Radio Plugin (ICY http handler): Failed to start stream download of %1: KIO::get returned NULL pointer", m_streamUrl.toString()));
         stopStreamDownload(false);
@@ -153,8 +154,8 @@ void IcyHttpHandler::startStreamDownload(QUrl url, const QString &metaDataEncodi
 void IcyHttpHandler::stopStreamDownload(bool emitSigFinished)
 {
     if (m_streamJob) {
-        QObject::disconnect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
-        QObject::disconnect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
+        QObject::disconnect(m_streamJob, &KIO::TransferJob::data,   this, &IcyHttpHandler::slotStreamData);
+        QObject::disconnect(m_streamJob, &KIO::TransferJob::result, this, &IcyHttpHandler::slotStreamDone);
         m_streamJob->kill(); // stop and delete
         m_streamJob = NULL;
         if (emitSigFinished) {

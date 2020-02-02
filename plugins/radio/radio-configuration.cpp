@@ -83,54 +83,39 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
     comboStereoMode->addItem(i18nc("Sound mode, stereophonic", "Stereo"), (int)STATION_STEREO_ON);
 
     m_loadPopup = new QMenu(buttonLoadPresets);
-    m_loadPopup->addAction(QIcon::fromTheme("document-open"), i18n("Load and replace presets"), this, SLOT(slotLoadPresets()));
-    m_loadPopup->addAction(QIcon::fromTheme("list-add"),      i18n("Load and add presets"),     this, SLOT(slotAddPresets ()));
+    m_loadPopup->addAction(QIcon::fromTheme("document-open"), i18n("Load and replace presets"), this, &RadioConfiguration::slotLoadPresets);
+    m_loadPopup->addAction(QIcon::fromTheme("list-add"),      i18n("Load and add presets"),     this, &RadioConfiguration::slotAddPresets);
     buttonLoadPresets->setMenu(m_loadPopup);
 
-    QObject::connect(listStations, SIGNAL(sigCurrentStationChanged(int)),
-                     this, SLOT(slotStationSelectionChanged(int)));
-    QObject::connect(buttonNewStation, SIGNAL(clicked()),
-                     this, SLOT(slotNewStation()));
-    QObject::connect(buttonDeleteStation, SIGNAL(clicked()),
-                     this, SLOT(slotDeleteStation()));
-    QObject::connect(editPixmapFile, SIGNAL(textChanged(const QString &)),
-                     this, SLOT(slotPixmapChanged(const QString &)));
-    QObject::connect(editStationName, SIGNAL(textChanged(const QString &)),
-                     this, SLOT(slotStationNameChanged(const QString &)));
-    QObject::connect(editStationShortName, SIGNAL(textChanged(const QString &)),
-                     this, SLOT(slotStationShortNameChanged(const QString &)));
-    QObject::connect(editVolumePreset, SIGNAL(valueChanged(int)),
-                     this, SLOT(slotVolumePresetChanged(int)));
-    QObject::connect(comboStereoMode, SIGNAL(currentIndexChanged(int)),
-                     this, SLOT(slotStereoModeChanged(int)));
-    QObject::connect(buttonStationUp, SIGNAL(clicked()),
-                     this, SLOT(slotStationUp()));
-    QObject::connect(buttonStationDown, SIGNAL(clicked()),
-                     this, SLOT(slotStationDown()));
-    QObject::connect(listStations, SIGNAL(sigStationActivated(int)),
-                     this, SLOT(slotActivateStation( int )));
-    QObject::connect(buttonStorePresets, SIGNAL(clicked()),
-                     this, SLOT(slotStorePresets()));
-    QObject::connect(buttonLastChangeNow, SIGNAL(clicked()),
-                     this, SLOT(slotLastChangeNow()));
+    QObject::connect(listStations,         &RadioStationListView::sigCurrentStationChanged,     this, &RadioConfiguration::slotStationSelectionChanged);
+    QObject::connect(listStations,         &RadioStationListView::sigStationActivated,          this, &RadioConfiguration::slotActivateStation);
+    QObject::connect(buttonNewStation,     &QPushButton  ::clicked,                             this, QOverload<>::of(&RadioConfiguration::slotNewStation));
+    QObject::connect(buttonDeleteStation,  &QPushButton  ::clicked,                             this, &RadioConfiguration::slotDeleteStation);
+    QObject::connect(editPixmapFile,       &KUrlRequester::textChanged,                         this, &RadioConfiguration::slotPixmapChanged);
+    QObject::connect(editStationName,      &QLineEdit    ::textChanged,                         this, &RadioConfiguration::slotStationNameChanged);
+    QObject::connect(editStationShortName, &QLineEdit    ::textChanged,                         this, &RadioConfiguration::slotStationShortNameChanged);
+    QObject::connect(editVolumePreset,     QOverload<int>::of(&QSpinBox ::valueChanged),        this, &RadioConfiguration::slotVolumePresetChanged);
+    QObject::connect(comboStereoMode,      QOverload<int>::of(&QComboBox::currentIndexChanged), this, &RadioConfiguration::slotStereoModeChanged);
+    QObject::connect(buttonStationUp,      &QPushButton  ::clicked,                             this, &RadioConfiguration::slotStationUp);
+    QObject::connect(buttonStationDown,    &QPushButton  ::clicked,                             this, &RadioConfiguration::slotStationDown);
+    QObject::connect(buttonStorePresets,   &QPushButton  ::clicked,                             this, &RadioConfiguration::slotStorePresets);
+    QObject::connect(buttonLastChangeNow,  &QPushButton  ::clicked,                             this, &RadioConfiguration::slotLastChangeNow);
 
-    connect(editMaintainer, SIGNAL(textChanged(const QString &)),       SLOT(slotSetDirty()));
-    connect(editLastChange, SIGNAL(dateTimeChanged(const QDateTime &)), SLOT(slotSetDirty()));
-    connect(editCountry,    SIGNAL(textChanged(const QString &)),       SLOT(slotSetDirty()));
-    connect(editCity,       SIGNAL(textChanged(const QString &)),       SLOT(slotSetDirty()));
-    connect(editMedia,      SIGNAL(textChanged(const QString &)),       SLOT(slotSetDirty()));
-    connect(editComment,    SIGNAL(textChanged(const QString &)),       SLOT(slotSetDirty()));
-    connect(editPresetFile, SIGNAL(textChanged(const QString &)),       SLOT(slotSetDirty()));
+    QObject::connect(editMaintainer,       &QLineEdit    ::textChanged,                         this, &RadioConfiguration::slotSetDirty);
+    QObject::connect(editLastChange,       &QDateTimeEdit::dateTimeChanged,                     this, &RadioConfiguration::slotSetDirty);
+    QObject::connect(editCountry,          &QLineEdit    ::textChanged,                         this, &RadioConfiguration::slotSetDirty);
+    QObject::connect(editCity,             &QLineEdit    ::textChanged,                         this, &RadioConfiguration::slotSetDirty);
+    QObject::connect(editMedia,            &QLineEdit    ::textChanged,                         this, &RadioConfiguration::slotSetDirty);
+    QObject::connect(editComment,          &QLineEdit    ::textChanged,                         this, &RadioConfiguration::slotSetDirty);
+    QObject::connect(editPresetFile,       &KUrlRequester::textChanged,                         this, &RadioConfiguration::slotSetDirty);
 
     mailLabel->setText("emw-kradio-presets@nocabal.de");
     mailLabel->setUrl ("emw-kradio-presets@nocabal.de");
-    QObject::connect(mailLabel, SIGNAL(leftClickedUrl(const QString &)),
-                     this, SLOT(slotSendPresetsByMail(const QString &)));
+    QObject::connect(mailLabel,            QOverload<const QString &>::of(&KUrlLabel::leftClickedUrl),  this, &RadioConfiguration::slotSendPresetsByMail);
 
     m_devicePopup = new QMenu(buttonSearchStations);
     buttonSearchStations->setMenu(m_devicePopup);
-    QObject::connect(m_devicePopup, SIGNAL(triggered(QAction*)),
-                     this, SLOT(slotSearchStations(QAction*)));
+    QObject::connect(m_devicePopup,        &QMenu::triggered,                                   this, &RadioConfiguration::slotSearchStations);
 
 
 
@@ -146,7 +131,7 @@ RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &
             a->setData(classname);
         }
     }
-    QObject::connect(m_stationTypeMenu, SIGNAL(triggered(QAction *)), this, SLOT(slotNewStation(QAction *)));
+    QObject::connect(m_stationTypeMenu,    QOverload<QAction*>::of(&QMenu::triggered),          this, QOverload<QAction*>::of(&RadioConfiguration::slotNewStation));
     buttonNewStation->setMenu(m_stationTypeMenu);
 }
 
@@ -280,8 +265,7 @@ void RadioConfiguration::slotStationSelectionChanged(int idx)
         if (!c) {
             c = s->createEditor();
             if (c) {
-                QObject::connect(c, SIGNAL(changed(RadioStationConfig*)),
-                                 this, SLOT(slotStationEditorChanged(RadioStationConfig*)));
+                QObject::connect(c, &RadioStationConfig::changed, this, &RadioConfiguration::slotStationEditorChanged);
                 m_stationEditors.insert(s->getClassName(), c);
                 stackStationEdit->addWidget(c);
             }

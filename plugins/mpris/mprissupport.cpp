@@ -79,19 +79,13 @@ void MPRISSupport::startPlugin()
         if (success) {
             QDBusAbstractAdaptor *rootAdaptor = new MPRISRoot(this);
             Q_UNUSED(rootAdaptor);
-            QDBusAbstractAdaptor *playerAdaptor = new MPRISPlayer(this);
-            connect(this, SIGNAL(powerChanged(bool)),
-                    playerAdaptor, SLOT(slotPowerChanged(bool)));
-            connect(this, SIGNAL(RDSStateChanged(bool)),
-                    playerAdaptor, SLOT(slotRDSStateChanged(bool)));
-            connect(this, SIGNAL(RDSRadioTextChanged(QString)),
-                    playerAdaptor, SLOT(slotRDSRadioTextChanged(QString)));
-            connect(this, SIGNAL(RDSStationNameChanged(QString)),
-                    playerAdaptor, SLOT(slotRDSStationNameChanged(QString)));
-            connect(this, SIGNAL(volumeChanged(double)),
-                    playerAdaptor, SLOT(slotVolumeChanged(double)));
-            connect(this, SIGNAL(currentStreamChanged()),
-                    playerAdaptor, SLOT(slotCurrentStreamChanged()));
+            MPRISPlayer *playerAdaptor = new MPRISPlayer(this);
+            connect(this, &MPRISSupport::powerChanged,           playerAdaptor, &MPRISPlayer::slotPowerChanged);
+            connect(this, &MPRISSupport::RDSStateChanged,        playerAdaptor, &MPRISPlayer::slotRDSStateChanged);
+            connect(this, &MPRISSupport::RDSRadioTextChanged,    playerAdaptor, &MPRISPlayer::slotRDSRadioTextChanged);
+            connect(this, &MPRISSupport::RDSStationNameChanged,  playerAdaptor, &MPRISPlayer::slotRDSStationNameChanged);
+            connect(this, &MPRISSupport::volumeChanged,          playerAdaptor, &MPRISPlayer::slotVolumeChanged);
+            connect(this, &MPRISSupport::currentStreamChanged,   playerAdaptor, &MPRISPlayer::slotCurrentStreamChanged);
             dbus.registerObject("/org/mpris/MediaPlayer2", this);
         } else {
             logError("MPRISSupport: cannot register: " + mpris2Name);

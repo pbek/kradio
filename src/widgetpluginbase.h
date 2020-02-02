@@ -25,9 +25,30 @@
 
 class QWidget;
 class KConfigGroup;
+class WidgetPluginBase;
+
+
+class KRADIO5_EXPORT widgetPluginHelper_t : public QObject
+{
+Q_OBJECT
+protected:
+    WidgetPluginBase  *m_parent;
+    
+public:
+    widgetPluginHelper_t(WidgetPluginBase *parent)
+        : m_parent(parent)
+    {} // CTOR
+    
+public Q_SLOTS:
+    void slotToggleShown();
+    
+}; // widgetPluginHelper_t
+
 
 class KRADIO5_EXPORT WidgetPluginBase : public PluginBase
 {
+protected:
+    
 public :
     WidgetPluginBase(QWidget *myself, const QString &instanceID, const QString &name, const QString &description);
 
@@ -48,13 +69,14 @@ public :
     virtual void           showOnOrgDesktop();
 
 protected:
-    virtual void toggleShown()    = 0; // must be implemented as protected SLOT in the widget plugin!
+    friend  class widgetPluginHelper_t;
+    
+    virtual void toggleShown();
     virtual void setVisible(bool) = 0; // this QWidget method must be intercepted
 
     virtual void pShow ();
     virtual void pHide ();
     virtual void pSetVisible(bool v);
-    virtual void pToggleShown ();
 
     virtual void showEvent(QShowEvent *) = 0;
     virtual void pShowEvent(QShowEvent *);
@@ -67,22 +89,23 @@ protected:
 
 
 protected:
-    QWidget            *m_myself;
-    QAction             m_HideShowAction;
-    bool                m_restoreShow;
-    bool                m_geoRestoreFlag;
-    bool                m_ignoreHideShow;
+    widgetPluginHelper_t  m_toggleHelper;
+    QWidget              *m_myself;
+    QAction               m_HideShowAction;
+    bool                  m_restoreShow;
+    bool                  m_geoRestoreFlag;
+    bool                  m_ignoreHideShow;
 
     // temporary data
-    mutable bool        m_geoCacheValid;
-    mutable bool        m_saveMinimized;
-    mutable bool        m_saveMaximized;
-    mutable bool        m_saveSticky;
-    mutable int         m_saveDesktop;
-    mutable QRect       m_saveGeometry;
+    mutable bool          m_geoCacheValid;
+    mutable bool          m_saveMinimized;
+    mutable bool          m_saveMaximized;
+    mutable bool          m_saveSticky;
+    mutable int           m_saveDesktop;
+    mutable QRect         m_saveGeometry;
 
 
-};
+}; // WidgetPluginBase
 
 
 

@@ -186,7 +186,7 @@ void StreamingDevice::restoreState (const KConfigGroup &c)
 ConfigPageInfo  StreamingDevice::createConfigurationPage()
 {
     StreamingConfiguration *conf = new StreamingConfiguration(NULL, this);
-    QObject::connect(this, SIGNAL(sigUpdateConfig()), conf, SLOT(slotUpdateConfig()));
+    QObject::connect(this, &StreamingDevice::sigUpdateConfig, conf, &StreamingConfiguration::slotUpdateConfig);
     return ConfigPageInfo (conf,
                            i18n("Streaming"),
                            i18n("Streaming Device Options"),
@@ -546,14 +546,10 @@ void StreamingDevice::resetCaptureStreams(bool notification_enabled)
 void StreamingDevice::addPlaybackStream(const QUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
 {
     StreamingJob *x = new StreamingJob(url, sf, buffer_size);
-    connect(x,    SIGNAL(logStreamError  (const QUrl &, const QString &)),
-            this, SLOT  (logStreamError  (const QUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamWarning(const QUrl &, const QString &)),
-            this, SLOT  (logStreamWarning(const QUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamInfo   (const QUrl &, const QString &)),
-            this, SLOT  (logStreamInfo   (const QUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamDebug  (const QUrl &, const QString &)),
-            this, SLOT  (logStreamDebug  (const QUrl &, const QString &)));
+    connect(x,    &StreamingJob::logStreamError,   this, &StreamingDevice::logStreamError);
+    connect(x,    &StreamingJob::logStreamWarning, this, &StreamingDevice::logStreamWarning);
+    connect(x,    &StreamingJob::logStreamInfo,    this, &StreamingDevice::logStreamInfo);
+    connect(x,    &StreamingJob::logStreamDebug,   this, &StreamingDevice::logStreamDebug);
 
     m_PlaybackChannelList      .append(url);
     m_PlaybackChannelStringList.append(url.toString());
@@ -567,14 +563,10 @@ void StreamingDevice::addPlaybackStream(const QUrl &url, const SoundFormat &sf, 
 void StreamingDevice::addCaptureStream (const QUrl &url, const SoundFormat &sf, size_t buffer_size, bool notification_enabled)
 {
     StreamingJob *x = new StreamingJob(url, sf, buffer_size);
-    connect(x,    SIGNAL(logStreamError  (const QUrl &, const QString &)),
-            this, SLOT  (logStreamError  (const QUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamWarning(const QUrl &, const QString &)),
-            this, SLOT  (logStreamWarning(const QUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamInfo   (const QUrl &, const QString &)),
-            this, SLOT  (logStreamInfo   (const QUrl &, const QString &)));
-    connect(x,    SIGNAL(logStreamDebug  (const QUrl &, const QString &)),
-            this, SLOT  (logStreamDebug  (const QUrl &, const QString &)));
+    connect(x,    &StreamingJob::logStreamError,    this, &StreamingDevice::logStreamError);
+    connect(x,    &StreamingJob::logStreamWarning,  this, &StreamingDevice::logStreamWarning);
+    connect(x,    &StreamingJob::logStreamInfo,     this, &StreamingDevice::logStreamInfo);
+    connect(x,    &StreamingJob::logStreamDebug,    this, &StreamingDevice::logStreamDebug);
 
     m_CaptureChannelList      .append(url);
     m_CaptureChannelStringList.append(url.toString());

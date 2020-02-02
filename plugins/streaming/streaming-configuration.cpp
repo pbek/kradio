@@ -211,32 +211,30 @@ StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice
     m_ListPlaybackURLs->setModel(m_PlaybackModel);
     m_CaptureModel = new StreamingConfigurationModel(m_ListCaptureURLs);
     m_ListCaptureURLs->setModel(m_CaptureModel);
+    
+    connect(m_pbNewPlaybackURL,                   &QPushButton        ::clicked,        this, &StreamingConfiguration::slotNewPlaybackChannel);
+    connect(m_pbDeletePlaybackURL,                &QPushButton        ::clicked,        this, &StreamingConfiguration::slotDeletePlaybackChannel);
+    connect(m_pbUpPlaybackURL,                    &QPushButton        ::clicked,        this, &StreamingConfiguration::slotUpPlaybackChannel);
+    connect(m_pbDownPlaybackURL,                  &QPushButton        ::clicked,        this, &StreamingConfiguration::slotDownPlaybackChannel);
+    connect(m_ListPlaybackURLs->selectionModel(), &QItemSelectionModel::currentChanged, this, &StreamingConfiguration::slotPlaybackSelectionChanged);
+    connect(m_PlaybackModel,                      &QAbstractItemModel ::dataChanged,    this, &StreamingConfiguration::slotSetDirty);
 
-    connect(m_pbNewPlaybackURL,    SIGNAL(clicked()), this, SLOT(slotNewPlaybackChannel()));
-    connect(m_pbDeletePlaybackURL, SIGNAL(clicked()), this, SLOT(slotDeletePlaybackChannel()));
-    connect(m_pbUpPlaybackURL,     SIGNAL(clicked()), this, SLOT(slotUpPlaybackChannel()));
-    connect(m_pbDownPlaybackURL,   SIGNAL(clicked()), this, SLOT(slotDownPlaybackChannel()));
-    connect(m_ListPlaybackURLs->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
-            this, SLOT(slotPlaybackSelectionChanged()));
-    connect(m_PlaybackModel,       SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(slotSetDirty()));
+    connect(m_pbNewCaptureURL,                    &QPushButton        ::clicked,        this, &StreamingConfiguration::slotNewCaptureChannel);
+    connect(m_pbDeleteCaptureURL,                 &QPushButton        ::clicked,        this, &StreamingConfiguration::slotDeleteCaptureChannel);
+    connect(m_pbUpCaptureURL,                     &QPushButton        ::clicked,        this, &StreamingConfiguration::slotUpCaptureChannel);
+    connect(m_pbDownCaptureURL,                   &QPushButton        ::clicked,        this, &StreamingConfiguration::slotDownCaptureChannel);
+    connect(m_ListCaptureURLs->selectionModel(),  &QItemSelectionModel::currentChanged, this, &StreamingConfiguration::slotCaptureSelectionChanged);
+    connect(m_CaptureModel,                       &QAbstractItemModel ::dataChanged,    this, &StreamingConfiguration::slotSetDirty);
 
-    connect(m_pbNewCaptureURL,     SIGNAL(clicked()), this, SLOT(slotNewCaptureChannel()));
-    connect(m_pbDeleteCaptureURL,  SIGNAL(clicked()), this, SLOT(slotDeleteCaptureChannel()));
-    connect(m_pbUpCaptureURL,      SIGNAL(clicked()), this, SLOT(slotUpCaptureChannel()));
-    connect(m_pbDownCaptureURL,    SIGNAL(clicked()), this, SLOT(slotDownCaptureChannel()));
-    connect(m_ListCaptureURLs->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
-            this, SLOT(slotCaptureSelectionChanged()));
-    connect(m_CaptureModel,        SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(slotSetDirty()));
+    connect(m_cbBits,                      QOverload<int>::of(&QComboBox::activated),   this, &StreamingConfiguration::slotUpdateSoundFormat);
+    connect(m_cbChannels,                  QOverload<int>::of(&QComboBox::activated),   this, &StreamingConfiguration::slotUpdateSoundFormat);
+    connect(m_cbEndianness,                QOverload<int>::of(&QComboBox::activated),   this, &StreamingConfiguration::slotUpdateSoundFormat);
+    connect(m_cbFormat,                    QOverload<int>::of(&QComboBox::activated),   this, &StreamingConfiguration::slotUpdateSoundFormat);
+    connect(m_cbRate,                      QOverload<int>::of(&QComboBox::activated),   this, &StreamingConfiguration::slotUpdateSoundFormat);
+    connect(m_cbSign,                      QOverload<int>::of(&QComboBox::activated),   this, &StreamingConfiguration::slotUpdateSoundFormat);
+    connect(m_sbBufferSize,                QOverload<int>::of(&QSpinBox::valueChanged), this, &StreamingConfiguration::slotUpdateSoundFormat);
 
-    connect(m_cbBits,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
-    connect(m_cbChannels,   SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
-    connect(m_cbEndianness, SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
-    connect(m_cbFormat,     SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
-    connect(m_cbRate,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
-    connect(m_cbSign,       SIGNAL(activated(int)),    this, SLOT(slotUpdateSoundFormat()));
-    connect(m_sbBufferSize, SIGNAL(valueChanged(int)), this, SLOT(slotUpdateSoundFormat()));
-
-    connect(ktabwidget,     SIGNAL(currentChanged(int)), this, SLOT(slotTabChanged(int)));
+    connect(ktabwidget,                    &QTabWidget::currentChanged,                 this, &StreamingConfiguration::slotTabChanged);
 
     slotCancel();
 }

@@ -143,17 +143,15 @@ bool StreamingJob::startPutJob()
             emit logStreamWarning(m_URL, i18n("error %1 (%2)", strerror(errno), errno));
         }
         m_SocketNotifier = new QSocketNotifier(m_File->handle(), QSocketNotifier::Write);
-        connect(m_SocketNotifier, SIGNAL(activated(int)), this, SLOT(slotWriteData(int)));
+        QObject::connect(m_SocketNotifier, &QSocketNotifier::activated, this, &StreamingJob::slotWriteDataToFile);
         m_SocketNotifier->setEnabled(false);
     } else {
         m_KIO_Job = KIO::put(m_URL, -1, KIO::Overwrite);
         if (!m_KIO_Job)
             return false;
         m_KIO_Job->setAsyncDataEnabled(true);
-        connect (m_KIO_Job, SIGNAL(dataReq(KIO::Job *, QByteArray &)),
-                 this,      SLOT(slotWriteData  (KIO::Job *, QByteArray &)));
-        connect (m_KIO_Job, SIGNAL(result(KIO::Job *)),
-                 this,      SLOT(slotIOJobResult(KIO::Job *)));
+        QObject::connect (m_KIO_Job, &KIO::TransferJob::dataReq, this, &StreamingJob::slotWriteDataToJob);
+        QObject::connect (m_KIO_Job, &KIO::TransferJob::result,  this, &StreamingJob::slotIOJobResult);
     }
     return true;
 }
@@ -222,17 +220,15 @@ bool StreamingJob::startGetJob()
             emit logStreamWarning(m_URL, i18n("error %1 (%2)", strerror(errno), err));
         }
         m_SocketNotifier = new QSocketNotifier(m_File->handle(), QSocketNotifier::Read);
-        connect(m_SocketNotifier, SIGNAL(activated(int)), this, SLOT(slotReadData(int)));
+        QObject::connect(m_SocketNotifier, &QSocketNotifier::activated, this, &StreamingJob::slotReadDataFromFile);
         m_SocketNotifier->setEnabled(true);
     } else {
         m_KIO_Job = KIO::get(m_URL, KIO::NoReload, KIO::DefaultFlags);
         if (!m_KIO_Job)
             return false;
         m_KIO_Job->setAsyncDataEnabled(true);
-        connect (m_KIO_Job, SIGNAL(data(KIO::Job *, const QByteArray &)),
-                 this,      SLOT(slotReadData(KIO::Job *, const QByteArray &)));
-        connect (m_KIO_Job, SIGNAL(result(KIO::Job *)),
-                 this,      SLOT(slotIOJobResult(KIO::Job *)));
+        connect (m_KIO_Job, &KIO::TransferJob::data,   this, &StreamingJob::slotReadDataFromJob);
+        connect (m_KIO_Job, &KIO::TransferJob::result, this, &StreamingJob::slotIOJobResult);
     }
     return true;
 }
@@ -292,7 +288,7 @@ bool StreamingJob::stopCapture()
 }
 
 
-void   StreamingJob::slotReadData  (KIO::Job */*job*/, const QByteArray &data)
+void   StreamingJob::slotReadDataFromJob  (KIO::Job */*job*/, const QByteArray &data)
 {
     qint64 free = m_Buffer.getFreeSize();
     if (free < data.size()) {
@@ -314,7 +310,7 @@ void   StreamingJob::slotReadData  (KIO::Job */*job*/, const QByteArray &data)
 
 
 
-void   StreamingJob::slotReadData  (int fileno)
+void   StreamingJob::slotReadDataFromFile  (int fileno)
 {
     size_t free = m_Buffer.getFreeSize();
     if (free == 0) {
@@ -349,7 +345,7 @@ void   StreamingJob::slotReadData  (int fileno)
 }
 
 
-void   StreamingJob::slotWriteData (KIO::Job */*job*/, QByteArray &)
+void   StreamingJob::slotWriteDataToJob (KIO::Job */*job*/, QByteArray &)
 {
     size_t size = m_Buffer.getFillSize();
     if (size) {
@@ -371,7 +367,7 @@ void   StreamingJob::slotWriteData (KIO::Job */*job*/, QByteArray &)
     }
 }
 
-void   StreamingJob::slotWriteData (int fileno)
+void   StreamingJob::slotWriteDataToFile (int fileno)
 {
     m_SocketNotifier->setEnabled(false);
     size_t size = m_Buffer.getFillSize();
@@ -444,7 +440,7 @@ void StreamingJob::removeData(size_t size)
     }
 }
 
-void   StreamingJob::slotIOJobResult (KIO::Job *job)
+void   StreamingJob::slotIOJobResult (KJob *job)
 {
     if (job && job->error()) {
         emit logStreamError(m_URL, i18n("Error: %1 (%2)", job->errorString(), job->error()));

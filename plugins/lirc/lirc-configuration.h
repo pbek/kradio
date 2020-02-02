@@ -33,14 +33,15 @@ public :
     LIRCConfiguration (QWidget *parent, LircSupport *);
     ~LIRCConfiguration ();
 
+    void slotUpdateConfig();
+    void slotRawLIRCSignal(const QString &val, int repeat_counter, bool &consumed);
+    
 protected slots:
 
     virtual void slotOK()     override;
     virtual void slotCancel() override;
     void slotSetDirty();
 
-    void slotUpdateConfig();
-    void slotRawLIRCSignal(const QString &val, int repeat_counter, bool &consumed);
 
     void slotRenamingStarted(const QModelIndex &index);
     void slotRenamingStopped();

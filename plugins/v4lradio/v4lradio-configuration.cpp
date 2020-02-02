@@ -72,42 +72,27 @@ V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssi
 
     deviceMessage->setCloseButtonVisible(false);
 
-    QObject::connect(buttonSelectRadioDevice, SIGNAL(clicked()),
-                     this, SLOT(selectRadioDevice()));
-//     m_cbRadioDevice->installEventFilter(this);
-    QObject::connect(editMinFrequency, SIGNAL(valueChanged(int)),
-                     this, SLOT(guiMinFrequencyChanged(int)));
-    QObject::connect(editMaxFrequency, SIGNAL(valueChanged(int)),
-                     this, SLOT(guiMaxFrequencyChanged(int)));
+    QObject::connect(buttonSelectRadioDevice, &QPushButton::clicked,                                this, &V4LRadioConfiguration::selectRadioDevice);
+//     m_cbRadioDevice->installEventFilter(this); 
+    QObject::connect(editMinFrequency,        QOverload<int>::of(&QSpinBox::valueChanged),          this, &V4LRadioConfiguration::guiMinFrequencyChanged);
+    QObject::connect(editMaxFrequency,        QOverload<int>::of(&QSpinBox::valueChanged),          this, &V4LRadioConfiguration::guiMaxFrequencyChanged);
+    
+    QObject::connect(editDeviceVolume,        QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, QOverload<double>::of(&V4LRadioConfiguration::slotDeviceVolumeChanged));
+    QObject::connect(editTreble,              QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, QOverload<double>::of(&V4LRadioConfiguration::slotTrebleChanged));
+    QObject::connect(editBass,                QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, QOverload<double>::of(&V4LRadioConfiguration::slotBassChanged));
+    QObject::connect(editBalance,             QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, QOverload<double>::of(&V4LRadioConfiguration::slotBalanceChanged));
 
-    QObject::connect(editDeviceVolume, SIGNAL(valueChanged(double)),
-                     this, SLOT(slotDeviceVolumeChanged(double)));
-    QObject::connect(editTreble, SIGNAL(valueChanged(double)),
-                     this, SLOT(slotTrebleChanged(double)));
-    QObject::connect(editBass, SIGNAL(valueChanged(double)),
-                     this, SLOT(slotBassChanged(double)));
-    QObject::connect(editBalance, SIGNAL(valueChanged(double)),
-                     this, SLOT(slotBalanceChanged(double)));
+    QObject::connect(sliderDeviceVolume,      &QSlider::valueChanged,                               this, QOverload<int>    ::of(&V4LRadioConfiguration::slotDeviceVolumeChanged));
+    QObject::connect(sliderTreble,            &QSlider::valueChanged,                               this, QOverload<int>    ::of(&V4LRadioConfiguration::slotTrebleChanged));
+    QObject::connect(sliderBass,              &QSlider::valueChanged,                               this, QOverload<int>    ::of(&V4LRadioConfiguration::slotBassChanged));
+    QObject::connect(sliderBalance,           &QSlider::valueChanged,                               this, QOverload<int>    ::of(&V4LRadioConfiguration::slotBalanceChanged));
 
-    QObject::connect(sliderDeviceVolume, SIGNAL(valueChanged(int)),
-                     this, SLOT(slotDeviceVolumeChanged(int)));
-    QObject::connect(sliderTreble, SIGNAL(valueChanged(int)),
-                     this, SLOT(slotTrebleChanged(int)));
-    QObject::connect(sliderBass, SIGNAL(valueChanged(int)),
-                     this, SLOT(slotBassChanged(int)));
-    QObject::connect(sliderBalance, SIGNAL(valueChanged(int)),
-                     this, SLOT(slotBalanceChanged(int)));
+    QObject::connect(comboPlaybackMixerDevice, QOverload<int>::of(&QComboBox::activated),           this, &V4LRadioConfiguration::slotComboPlaybackMixerSelected);
+    QObject::connect(comboCaptureMixerDevice,  QOverload<int>::of(&QComboBox::activated),           this, &V4LRadioConfiguration::slotComboCaptureMixerSelected);
 
-    QObject::connect(comboPlaybackMixerDevice, SIGNAL(activated(int)),
-                     this, SLOT(slotComboPlaybackMixerSelected(int)));
-    QObject::connect(comboCaptureMixerDevice, SIGNAL(activated(int)),
-                     this, SLOT(slotComboCaptureMixerSelected(int)));
+    QObject::connect(m_cbRadioDevice,          &QComboBox::editTextChanged,                         this, &V4LRadioConfiguration::slotEditRadioDeviceChanged);
 
-    QObject::connect(m_cbRadioDevice, SIGNAL(editTextChanged(QString)),
-                     this, SLOT(slotEditRadioDeviceChanged()));
-
-    QObject::connect(m_cbRadioDevice, SIGNAL(currentIndexChanged(int)),
-                     this, SLOT(slotRadioDeviceIndexChanged(int)));
+    QObject::connect(m_cbRadioDevice,          QOverload<int>::of(&QComboBox::currentIndexChanged), this, &V4LRadioConfiguration::slotRadioDeviceIndexChanged);
 
     sliderBalance->installEventFilter(this);
 }

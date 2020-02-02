@@ -104,7 +104,6 @@ protected:
 
 public slots:
 
-    virtual void    toggleShown() override { WidgetPluginBase::pToggleShown(); }
     virtual void    setGeometry (const QRect &r);
     virtual void    setGeometry (int x, int y, int w, int h);
 

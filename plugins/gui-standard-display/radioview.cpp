@@ -88,13 +88,13 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
   m_helpMenu(NULL, KAboutData::applicationData())
 {
     for (int i = 0; i < clsClassMAX; ++i)
-        maxUsability[i] = 0;
+        m_maxUsability[i] = 0;
 
     QHBoxLayout *l01 = new QHBoxLayout(this);
     l01->setMargin(1);
     l01->setSpacing(0);
-    widgetStacks[clsRadioSound] = new QStackedWidget (this);
-    l01->addWidget(widgetStacks[clsRadioSound]);
+    m_widgetStacks[clsRadioSound] = new QStackedWidget (this);
+    l01->addWidget(m_widgetStacks[clsRadioSound]);
 
     QVBoxLayout *l02 = new QVBoxLayout();
     l02->setSpacing(0);
@@ -114,10 +114,10 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     QVBoxLayout *l05 = new QVBoxLayout();
     l03->addLayout(l05);
 
-    widgetStacks[clsRadioDisplay] = new QStackedWidget (this);
-    l05->addWidget(widgetStacks[clsRadioDisplay]);
-    widgetStacks[clsRadioSeek] = new QStackedWidget(this);
-    l05->addWidget(widgetStacks[clsRadioSeek]);
+    m_widgetStacks[clsRadioDisplay] = new QStackedWidget (this);
+    l05->addWidget(m_widgetStacks[clsRadioDisplay]);
+    m_widgetStacks[clsRadioSeek] = new QStackedWidget(this);
+    l05->addWidget(m_widgetStacks[clsRadioSeek]);
 
     QGridLayout *l04 = new QGridLayout ();
     l04->setMargin(0);
@@ -157,17 +157,17 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
 
     m_pauseMenu     = new QMenu(this);
     m_pauseMenuItem = m_pauseMenu->addAction(QIcon::fromTheme("media-playback-pause"), i18n("Pause KRadio"));
-    QObject::connect(m_pauseMenuItem, SIGNAL(triggered()), this, SLOT(slotPause()));
+    QObject::connect(m_pauseMenuItem, &QAction::triggered, this, &RadioView::slotPause);
     btnPower->setMenu(m_pauseMenu);
 
     m_RecordingMenu            = new QMenu(btnRecording);
     m_recordingDefaultMenuItem = m_RecordingMenu->addAction(QIcon::fromTheme("media-record"), i18n("Start Recording"));
-    QObject::connect(m_RecordingMenu,            SIGNAL(triggered(QAction *)), this, SLOT(slotRecordingMenu(QAction *)));
-    QObject::connect(m_recordingDefaultMenuItem, SIGNAL(triggered()),          this, SLOT(slotStartDefaultRecording()));
+    QObject::connect(m_RecordingMenu,            &QMenu::triggered,   this, &RadioView::slotRecordingMenu);
+    QObject::connect(m_recordingDefaultMenuItem, &QAction::triggered, this, &RadioView::slotStartDefaultRecording);
     btnRecording->setMenu(m_RecordingMenu);
 
     m_SnoozeMenu   = new QMenu(btnSnooze);
-    QObject::connect(m_SnoozeMenu, SIGNAL(triggered(QAction*)), this, SLOT(slotSnooze(QAction*)));
+    QObject::connect(m_SnoozeMenu, QOverload<QAction*>::of(&QMenu::triggered), this, QOverload<QAction*>::of(&RadioView::slotSnooze));
 
     QAction *a = NULL;
     a = m_SnoozeMenu->addAction(i18n("5 min"));
@@ -209,29 +209,21 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
     btnHelp     ->setIcon(QIcon::fromTheme("help-about"));
     btnHelp     ->setMenu(m_helpMenu.menu());
 
-    widgetStacks[clsRadioSound]  ->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,              QSizePolicy::Preferred));
-    //widgetStacks[clsRadioDisplay]->setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding));
-    widgetStacks[clsRadioSeek]   ->setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding,   QSizePolicy::Fixed));
+    m_widgetStacks[clsRadioSound]->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,              QSizePolicy::Preferred));
+    //m_widgetStacks[clsRadioDisplay]->setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding));
+    m_widgetStacks[clsRadioSeek] ->setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding,   QSizePolicy::Fixed));
     comboStations                ->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,          QSizePolicy::Fixed));
     comboStations->setMinimumHeight(28);
 
 
-    QObject::connect(btnPower,      SIGNAL(toggled(bool)),
-                     this,          SLOT(slotPower(bool)));
-    QObject::connect(btnQuit,       SIGNAL(clicked()),
-                     qApp,          SLOT(quit()));
-    QObject::connect(btnConfigure,  SIGNAL(toggled(bool)),
-                     this,          SLOT(slotConfigure(bool)));
-    QObject::connect(btnRecording,  SIGNAL(clicked()),
-                     this,          SLOT(slotRecord()));
-    QObject::connect(btnSnooze,     SIGNAL(toggled(bool)),
-                     this,          SLOT(slotSnooze(bool)));
-    QObject::connect(comboStations, SIGNAL(activated(int)),
-                     this,          SLOT(slotComboStationSelected(int)));
-    QObject::connect(btnPlugins,    SIGNAL(clicked()),
-                     btnPlugins,    SLOT(showMenu()));
-    QObject::connect(btnHelp,       SIGNAL(clicked()),
-                     btnHelp,       SLOT(showMenu()));
+    QObject::connect(btnPower,      &QToolButton::toggled,                     this,          &RadioView   ::slotPower);
+    QObject::connect(btnQuit,       &QToolButton::clicked,                     qApp,          &QApplication::quit);
+    QObject::connect(btnConfigure,  &QToolButton::toggled,                     this,          &RadioView   ::slotConfigure);
+    QObject::connect(btnRecording,  &QToolButton::clicked,                     this,          &RadioView   ::slotRecord);
+    QObject::connect(btnSnooze,     &QToolButton::toggled,                     this,          QOverload<bool>::of(&RadioView::slotSnooze));
+    QObject::connect(comboStations, QOverload<int>::of(&QComboBox::activated), this,          &RadioView   ::slotComboStationSelected);
+    QObject::connect(btnPlugins,    &QToolButton::clicked,                     btnPlugins,    &QToolButton ::showMenu);
+    QObject::connect(btnHelp,       &QToolButton::clicked,                     btnHelp,       &QToolButton ::showMenu);
 
     // tooltips
 
@@ -253,12 +245,18 @@ RadioView::RadioView(const QString &instanceID, const QString &name)
 
     m_WorkaroundRecordingMenuUpdate.setInterval(100);
     m_WorkaroundRecordingMenuUpdate.setSingleShot(true);
-    QObject::connect(&m_WorkaroundRecordingMenuUpdate, SIGNAL(timeout()), this, SLOT(slotUpdateRecordingMenu()));
+    QObject::connect(&m_WorkaroundRecordingMenuUpdate, &QTimer::timeout, this, &RadioView::slotUpdateRecordingMenu);
 }
 
 
 RadioView::~RadioView ()
 {
+    for (auto &stack : m_widgetStacks) {
+        for (size_t idxWidget = 0; idxWidget < (size_t)stack->count(); ++idxWidget) {
+            QWidget *widget = stack->widget(idxWidget);
+            removeElement(widget);
+        }
+    }
     qDeleteAll(m_elementConfigPages);
     m_elementConfigPages.clear();
 
@@ -281,10 +279,9 @@ bool RadioView::addElement (RadioViewElement *e)
         return false;
 
 
-    QObject::connect(e,    SIGNAL(destroyed(QObject*)),
-                     this, SLOT(removeElement(QObject*)));
+    QObject::connect(e, &QObject::destroyed, this, &RadioView::removeElement);
     m_elementConfigPages.insert(e, NULL);
-    widgetStacks[cls]->addWidget(e);
+    m_widgetStacks[cls]->addWidget(e);
 
     // connect Element with device, disconnect doesn't matter (comp. removeElement)
     // other devices follow if currentDevice changes
@@ -306,12 +303,11 @@ bool RadioView::removeElement (QObject *_e)
     if (!_e)
         return false;
 
-    QObject::disconnect(_e,   SIGNAL(destroyed(QObject*)),
-                        this, SLOT(removeElement(QObject*)));
+    QObject::disconnect(_e,   &QObject::destroyed, this, &RadioView::removeElement);
 
     if (m_elementConfigPages.contains(_e)) {
         delete m_elementConfigPages[_e];
-        m_elementConfigPages[_e] = NULL;
+        m_elementConfigPages[_e] = nullptr;
     }
 //     ElementCfgListIterator it;
 //
@@ -330,7 +326,7 @@ bool RadioView::removeElement (QObject *_e)
             e->disconnectI(currentDevice);
 
         RadioViewClass cls = e->getClass();
-        widgetStacks[cls]->removeWidget(e);
+        m_widgetStacks[cls]->removeWidget(e);
     //     elements.remove(e);
     }
 
@@ -344,7 +340,7 @@ bool RadioView::removeElement (QObject *_e)
 void RadioView::selectTopWidgets()
 {
     for (int i = 0; i < clsClassMAX; ++i)
-        maxUsability[i] = 0;
+        m_maxUsability[i] = 0;
 
     QObject *o = NULL;
     foreach(o, m_elementConfigPages.keys()) {
@@ -352,10 +348,10 @@ void RadioView::selectTopWidgets()
         if (e) {
             RadioViewClass   cls = e->getClass();
             float u = e->getUsability(currentDevice);
-            if (u > maxUsability[cls]) {
-                maxUsability[cls] = u;
+            if (u > m_maxUsability[cls]) {
+                m_maxUsability[cls] = u;
                 e->setEnabled(true);
-                widgetStacks[cls]->setCurrentWidget(e);
+                m_widgetStacks[cls]->setCurrentWidget(e);
             }
             else if (u <= 0) {
                 e->setEnabled(false);
@@ -363,10 +359,10 @@ void RadioView::selectTopWidgets()
         }
     }
     for (int cls = 0; cls < clsClassMAX; ++cls) {
-        if (maxUsability[cls] <= 0) {
-            widgetStacks[cls]->setEnabled(false);
+        if (m_maxUsability[cls] <= 0) {
+            m_widgetStacks[cls]->setEnabled(false);
         } else {
-            widgetStacks[cls]->setEnabled(true);
+            m_widgetStacks[cls]->setEnabled(true);
         }
     }
     // adjustLayout!?
@@ -709,8 +705,7 @@ ConfigPageInfo RadioView::createConfigurationPage()
         }
     }
 
-    QObject::connect(m_ConfigPage, SIGNAL(destroyed(QObject *)),
-                     this,         SLOT(slotConfigPageDeleted(QObject *)));
+    QObject::disconnect(m_ConfigPage, &QObject::destroyed, this, &RadioView::slotConfigPageDeleted);
 
     return ConfigPageInfo(
         m_ConfigPage,

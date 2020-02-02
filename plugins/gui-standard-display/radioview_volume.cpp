@@ -45,8 +45,7 @@ RadioViewVolume::RadioViewVolume(QWidget *parent, const QString &name)
     m_slider->setPageStep(SLIDER_RANGE/10);
     m_slider->setValue(getSlider4Volume(v));
 
-    QObject::connect(m_slider, SIGNAL(valueChanged(int)),
-                     this,       SLOT(slotVolumeChanged(int)));
+    QObject::connect(m_slider, &QSlider::valueChanged, this, &RadioViewVolume::slotVolumeChanged);
 
     QHBoxLayout *l = new QHBoxLayout(this);
     l->setSpacing(0);

@@ -29,11 +29,11 @@ OSSSoundConfiguration::OSSSoundConfiguration (QWidget *parent, OSSSoundDevice *d
    m_dirty(true),
    m_ignore_gui_updates(false)
 {
-    connect(editDSPDevice,      SIGNAL(textChanged(const QString &)), this, SLOT(slotSetDirty()));
-    connect(editMixerDevice,    SIGNAL(textChanged(const QString &)), this, SLOT(slotSetDirty()));
-    connect(editBufferSize,     SIGNAL(valueChanged(int)),            this, SLOT(slotSetDirty()));
-    connect(chkDisablePlayback, SIGNAL(toggled(bool)),                this, SLOT(slotSetDirty()));
-    connect(chkDisableCapture,  SIGNAL(toggled(bool)),                this, SLOT(slotSetDirty()));
+    connect(editDSPDevice,      &KUrlRequester::textChanged,                 this, &OSSSoundConfiguration::slotSetDirty);
+    connect(editMixerDevice,    &KUrlRequester::textChanged,                 this, &OSSSoundConfiguration::slotSetDirty);
+    connect(editBufferSize,     QOverload<int>::of(&QSpinBox::valueChanged), this, &OSSSoundConfiguration::slotSetDirty);
+    connect(chkDisablePlayback, &QCheckBox::toggled,                         this, &OSSSoundConfiguration::slotSetDirty);
+    connect(chkDisableCapture,  &QCheckBox::toggled,                         this, &OSSSoundConfiguration::slotSetDirty);
     slotCancel();
 }
 

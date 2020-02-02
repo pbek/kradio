@@ -88,8 +88,6 @@ protected:
 
 public slots:
 
-    virtual void    toggleShown() override { WidgetPluginBase::pToggleShown(); }
-
     virtual void    slotStartStopRecording();
 
     virtual void    slotStreamSelected(int idx);

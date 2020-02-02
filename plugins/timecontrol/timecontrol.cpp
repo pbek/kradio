@@ -70,10 +70,10 @@ TimeControl::TimeControl (const QString &instanceID, const QString &n)
       m_alarmTimer(this),
       m_countdownTimer(this)
 {
-    QObject::connect(&m_alarmTimer,     SIGNAL(timeout()), this, SLOT(slotQTimerAlarmTimeout()));
-    QObject::connect(&m_countdownTimer, SIGNAL(timeout()), this, SLOT(slotQTimerCountdownTimeout()));
+    QObject::connect(&m_alarmTimer,     &QTimer::timeout, this, &TimeControl::slotQTimerAlarmTimeout);
+    QObject::connect(&m_countdownTimer, &QTimer::timeout, this, &TimeControl::slotQTimerCountdownTimeout);
     
-    QObject::connect(Solid::PowerManagement::notifier(), SIGNAL(resumingFromSuspend()), this, SLOT(slotResumingFromSuspend()));
+    QObject::connect(Solid::PowerManagement::notifier(), &Solid::PowerManagement::Notifier::resumingFromSuspend, this, &TimeControl::slotResumingFromSuspend);
 }
 
 

@@ -61,16 +61,11 @@ RadioViewFrequencySeeker::RadioViewFrequencySeeker(QWidget *parent, const QStrin
     l->addWidget (m_btnStepRight);
     l->addWidget (m_btnSearchRight);
 
-    QObject::connect(m_sldFrequency,   SIGNAL(valueChanged(int)),
-                     this,               SLOT(slotSliderChanged(int)));
-    QObject::connect(m_btnSearchLeft,  SIGNAL(toggled(bool)),
-                     this,               SLOT(slotSearchLeft(bool)));
-    QObject::connect(m_btnSearchRight, SIGNAL(toggled(bool)),
-                     this,               SLOT(slotSearchRight(bool)));
-    QObject::connect(m_btnStepLeft,    SIGNAL(clicked()),
-                     this,               SLOT(slotStepDown()));
-    QObject::connect(m_btnStepRight,   SIGNAL(clicked()),
-                     this,               SLOT(slotStepUp()));
+    QObject::connect(m_sldFrequency,   &QSlider    ::valueChanged, this,  &RadioViewFrequencySeeker::slotSliderChanged);
+    QObject::connect(m_btnSearchLeft,  &QToolButton::toggled,      this,  &RadioViewFrequencySeeker::slotSearchLeft);
+    QObject::connect(m_btnSearchRight, &QToolButton::toggled,      this,  &RadioViewFrequencySeeker::slotSearchRight);
+    QObject::connect(m_btnStepLeft,    &QToolButton::clicked,      this,  &RadioViewFrequencySeeker::slotStepDown);
+    QObject::connect(m_btnStepRight,   &QToolButton::clicked,      this,  &RadioViewFrequencySeeker::slotStepUp);
 
     // Tooltips
 

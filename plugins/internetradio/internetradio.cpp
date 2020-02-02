@@ -89,12 +89,12 @@ InternetRadio::InternetRadio(const QString &instanceID, const QString &name)
     m_SoundStreamSinkID   = createNewSoundStream(false);
     m_SoundStreamSourceID = m_SoundStreamSinkID;
 
-    QObject::connect(&m_playlistHandler, SIGNAL(sigEOL()),                      this, SLOT(slotPlaylistEOL()));
-    QObject::connect(&m_playlistHandler, SIGNAL(sigError(QString)),             this, SLOT(slotPlaylistError(QString)));
-    QObject::connect(&m_playlistHandler, SIGNAL(sigPlaylistLoaded(const QList<QUrl>&)), this, SLOT(slotPlaylistLoaded(const QList<QUrl>&)));
-    QObject::connect(&m_playlistHandler, SIGNAL(sigStreamSelected(QUrl)),       this, SLOT(slotPlaylistStreamSelected(QUrl)));
-    QObject::connect(&m_watchdogTimer,   SIGNAL(timeout()),                     this, SLOT(slotWatchdogTimeout()));
-}
+    QObject::connect(&m_playlistHandler, &PlaylistHandler::sigEOL,            this, &InternetRadio::slotPlaylistEOL);
+    QObject::connect(&m_playlistHandler, &PlaylistHandler::sigError,          this, &InternetRadio::slotPlaylistError);
+    QObject::connect(&m_playlistHandler, &PlaylistHandler::sigPlaylistLoaded, this, &InternetRadio::slotPlaylistLoaded);
+    QObject::connect(&m_playlistHandler, &PlaylistHandler::sigStreamSelected, this, &InternetRadio::slotPlaylistStreamSelected);
+    QObject::connect(&m_watchdogTimer,   &QTimer         ::timeout,           this, &InternetRadio::slotWatchdogTimeout);
+} // InternetRadio CTOR
 
 
 InternetRadio::~InternetRadio()
@@ -639,17 +639,15 @@ ConfigPageInfo InternetRadio::createConfigurationPage()
 {
     InternetRadioConfiguration *conf = new InternetRadioConfiguration(NULL, m_SoundStreamSourceID);
 
-    QObject::connect(this, SIGNAL(sigNotifyPlaybackMixerChanged (const QString &, const QString &, bool, bool)),
-                     conf, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool, bool)));
-    QObject::connect(this, SIGNAL(sigBufferSettingsChanged  (int,int)),    conf, SLOT(slotBufferSettingsChanged  (int,int)));
-    QObject::connect(this, SIGNAL(sigWatchdogSettingsChanged(int)),        conf, SLOT(slotWatchdogSettingsChanged(int)));
-    QObject::connect(this, SIGNAL(sigDecoderSettingsChanged (int,double)), conf, SLOT(slotDecoderSettingsChanged (int,double)));
+    QObject::connect(this, &InternetRadio::sigNotifyPlaybackMixerChanged, conf, &InternetRadioConfiguration::slotNoticePlaybackMixerChanged);
+    QObject::connect(this, &InternetRadio::sigBufferSettingsChanged,      conf, &InternetRadioConfiguration::slotBufferSettingsChanged);
+    QObject::connect(this, &InternetRadio::sigWatchdogSettingsChanged,    conf, &InternetRadioConfiguration::slotWatchdogSettingsChanged);
+    QObject::connect(this, &InternetRadio::sigDecoderSettingsChanged,     conf, &InternetRadioConfiguration::slotDecoderSettingsChanged);
 
-    QObject::connect(conf, SIGNAL(sigPlaybackMixerChanged       (const QString &, const QString &, bool, bool)),
-                     this, SLOT  (slotNoticePlaybackMixerChanged(const QString &, const QString &, bool, bool)));
-    QObject::connect(conf, SIGNAL(sigBufferSettingsChanged  (int,int)),    this, SLOT(slotBufferSettingsChanged  (int,int)));
-    QObject::connect(conf, SIGNAL(sigWatchdogSettingsChanged(int)),        this, SLOT(slotWatchdogSettingsChanged(int)));
-    QObject::connect(conf, SIGNAL(sigDecoderSettingsChanged (int,double)), this, SLOT(slotDecoderSettingsChanged (int,double)));
+    QObject::connect(conf, &InternetRadioConfiguration::sigPlaybackMixerChanged,    this, &InternetRadio::slotNoticePlaybackMixerChanged);
+    QObject::connect(conf, &InternetRadioConfiguration::sigBufferSettingsChanged,   this, &InternetRadio::slotBufferSettingsChanged);
+    QObject::connect(conf, &InternetRadioConfiguration::sigWatchdogSettingsChanged, this, &InternetRadio::slotWatchdogSettingsChanged);
+    QObject::connect(conf, &InternetRadioConfiguration::sigDecoderSettingsChanged,  this, &InternetRadio::slotDecoderSettingsChanged);
 
     return ConfigPageInfo (conf,
                            i18n("Internet Radio"),
@@ -740,14 +738,13 @@ void InternetRadio::startStreamReader(QUrl stream)
     } else {
         m_streamReader = new IcyHttpHandler();
     }
-    connect(m_streamReader, SIGNAL(sigMetaDataUpdate(KIO::MetaData)),             this, SLOT(slotMetaDataUpdate(KIO::MetaData)));
-    connect(m_streamReader, SIGNAL(sigError(QUrl)),                               this, SLOT(slotStreamError(QUrl)));
-    connect(m_streamReader, SIGNAL(sigFinished(QUrl)),                            this, SLOT(slotStreamFinished(QUrl)));
-    connect(m_streamReader, SIGNAL(sigStarted(QUrl)),                             this, SLOT(slotStreamStarted(QUrl)));
-    connect(m_streamReader, SIGNAL(sigUrlChanged(QUrl)),                          this, SLOT(slotInputStreamUrlChanged(QUrl)));
-    connect(m_streamReader, SIGNAL(sigConnectionEstablished(QUrl,KIO::MetaData)), this, SLOT(slotStreamConnectionEstablished(QUrl,KIO::MetaData)));
-
-    connect(m_streamReader, SIGNAL(sigStreamData(QByteArray)),                    this, SLOT(slotWatchdogData(QByteArray)));
+    connect(m_streamReader, &StreamReader::sigMetaDataUpdate,        this, &InternetRadio::slotMetaDataUpdate);
+    connect(m_streamReader, &StreamReader::sigError,                 this, &InternetRadio::slotStreamError);
+    connect(m_streamReader, &StreamReader::sigFinished,              this, &InternetRadio::slotStreamFinished);
+    connect(m_streamReader, &StreamReader::sigStarted,               this, &InternetRadio::slotStreamStarted);
+    connect(m_streamReader, &StreamReader::sigUrlChanged,            this, &InternetRadio::slotInputStreamUrlChanged);
+    connect(m_streamReader, &StreamReader::sigConnectionEstablished, this, &InternetRadio::slotStreamConnectionEstablished);
+    connect(m_streamReader, &StreamReader::sigStreamData,            this, &InternetRadio::slotWatchdogData);
 
     m_streamReader->startStreamDownload(stream, m_currentStation.metaDataEncoding());
 }
@@ -787,8 +784,7 @@ void InternetRadio::startDecoderThread()
                                         m_maxStreamAnalyzeTime,
                                         m_maxStreamRetries
                                        );
-    QObject::connect(m_decoderThread, SIGNAL(finished()),   this, SLOT(slotDecoderThreadFinished()));
-    QObject::connect(m_decoderThread, SIGNAL(terminated()), this, SLOT(slotDecoderThreadFinished()));
+    QObject::connect(m_decoderThread, &DecoderThread::finished,   this, &InternetRadio::slotDecoderThreadFinished);
     m_decoderThread->start();
 }
 
@@ -1080,7 +1076,7 @@ bool InternetRadio::startCaptureWithFormat(SoundStreamID      id,
 
     for (int i = 0; i < 100 && isPowerOn() && !(m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->initDone()); ++i) {
         QEventLoop loop;
-        QTimer::singleShot(200, &loop, SLOT(quit()));
+        QTimer::singleShot(200, &loop, &QEventLoop::quit);
         loop.exec();
     } // wait max 20 secs*/
     if (m_decoderThread && m_decoderThread->decoder() && m_decoderThread->decoder()->initDone()) {
@@ -1214,8 +1210,8 @@ void    InternetRadio::slotInputStreamUrlChanged(QUrl /*url*/)
 //
 //             m_streamJob = KIO::get(m_currentStreamUrl, KIO::NoReload, KIO::HideProgressInfo);
 //             if (m_streamJob) {
-//                 QObject::connect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
-//                 QObject::connect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
+//                 QObject::connect(m_streamJob, &KIO::TransferJob::data,   this, &InternetRadio::slotStreamData);
+//                 QObject::connect(m_streamJob, &KIO::TransferJob::result, this, &InternetRadio::slotStreamDone);
 //                 m_streamJob->start();
 //                 if (m_streamJob->error()) {
 //                     logError(i18n("Failed to start stream download of %1: %2", m_currentStreamUrl.toString(), m_streamJob->errorString()));
@@ -1236,8 +1232,8 @@ void    InternetRadio::slotInputStreamUrlChanged(QUrl /*url*/)
 // void InternetRadio::stopStreamDownload()
 // {
 //     if (m_streamJob) {
-//         QObject::disconnect(m_streamJob, SIGNAL(data  (KIO::Job *, const QByteArray &)), this, SLOT(slotStreamData(KIO::Job *, const QByteArray &)));
-//         QObject::disconnect(m_streamJob, SIGNAL(result(KJob *)),                         this, SLOT(slotStreamDone(KJob *)));
+//         QObject::disconnect(m_streamJob, &KIO::TransferJob::data,   this, &InternetRadio::slotStreamData);
+//         QObject::disconnect(m_streamJob, &KIO::TransferJob::result, this, &InternetRadio::slotStreamDone);
 //         m_streamJob->kill();
 //         m_streamJob = NULL;
 //     }

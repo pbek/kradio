@@ -114,9 +114,6 @@ void PluginManager::addWidgetPluginMenuItems(QMenu *menu) const
 
         //QAction *action = b->getHideShowAction();
         menu->addAction(b->getHideShowAction());
-        /*int id = menu->insertItem("dummy", b->getWidget(), SLOT(toggleShown()));
-        map.insert(b, id);
-        updateWidgetPluginMenuItem(b, menu, map, b->isReallyVisible());*/
     }
 }
 
@@ -377,8 +374,8 @@ KPageWidgetItem *PluginManager::addConfigurationPage (const ConfigPageInfo &info
     }
 
     // make sure, that config page receives ok, apply and cancel signals
-    QObject::connect(this,           SIGNAL(sigConfigOK()),   info.page, SLOT(slotOK()));
-    QObject::connect(m_configDialog, SIGNAL(sigCancel()),     info.page, SLOT(slotCancel()));
+    QObject::connect(this,           &PluginManager            ::sigConfigOK, info.page, &PluginConfigPageBase::slotOK);
+    QObject::connect(m_configDialog, &PluginConfigurationDialog::sigCancel,   info.page, &PluginConfigPageBase::slotCancel);
 
     // insert into config dialog
     KPageWidgetItem *item = m_configDialog->addPage(f, info.itemName);
@@ -692,9 +689,9 @@ void PluginManager::updatePluginHideShowMenu()
     }
     m_widgetPluginHideShowMenu->clear();
     QAction *a = NULL;
-    a = m_widgetPluginHideShowMenu->addAction(i18nc("Show all widget plugins", "Show all"),       this, SLOT(slotShowAllWidgetPlugins()));
-    a = m_widgetPluginHideShowMenu->addAction(i18nc("Hide all widget plugins", "Hide all"),       this, SLOT(slotHideAllWidgetPlugins()));
-    a = m_widgetPluginHideShowMenu->addAction(i18nc("Restore all widget plugins", "Restore all"), this, SLOT(slotRestoreAllWidgetPlugins()));
+    a = m_widgetPluginHideShowMenu->addAction(i18nc("Show all widget plugins", "Show all"),       this, &PluginManager::slotShowAllWidgetPlugins);
+    a = m_widgetPluginHideShowMenu->addAction(i18nc("Hide all widget plugins", "Hide all"),       this, &PluginManager::slotHideAllWidgetPlugins);
+    a = m_widgetPluginHideShowMenu->addAction(i18nc("Restore all widget plugins", "Restore all"), this, &PluginManager::slotRestoreAllWidgetPlugins);
     a->setToolTip(i18n("Restore state before last hide-all activation"));
     m_widgetPluginHideShowMenu->addSeparator();
     addWidgetPluginMenuItems(m_widgetPluginHideShowMenu);

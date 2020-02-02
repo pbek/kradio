@@ -65,6 +65,7 @@ public Q_SLOTS:
     void OpenUri(const QString &Uri);
 
 private Q_SLOTS:
+    friend class MPRISSupport;
     void slotPowerChanged(bool on);
     void slotRDSStateChanged(bool enabled);
     void slotRDSRadioTextChanged(const QString &s);

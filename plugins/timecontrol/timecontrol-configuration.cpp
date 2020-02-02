@@ -79,39 +79,39 @@ TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
     listWeekdays->addItem(i18n("Sunday"));
 
 
-    QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotDailyChanged(bool)));
-    QObject::connect(listWeekdays,          SIGNAL(itemSelectionChanged()),      this, SLOT(slotWeekdaysChanged()));
-    QObject::connect(checkboxAlarmEnable,   SIGNAL(toggled(bool)),               this, SLOT(slotEnabledChanged(bool)));
-    QObject::connect(comboStationSelection, SIGNAL(highlighted(int)),            this, SLOT(slotStationChanged(int)));
-    QObject::connect(listAlarms,            SIGNAL(currentRowChanged(int)),      this, SLOT(slotAlarmSelectChanged(int)));
-    QObject::connect(editAlarmDate,         SIGNAL(dateChanged(const QDate &)),  this, SLOT(slotDateChanged(const QDate &)));
-    QObject::connect(editAlarmTime,         SIGNAL(timeChanged(const QTime &)),  this, SLOT(slotTimeChanged(const QTime &)));
-    QObject::connect(editAlarmVolume,       SIGNAL(valueChanged(int)),           this, SLOT(slotVolumeChanged(int)));
-    QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotNewAlarm()));
-    QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotDeleteAlarm()));
-    QObject::connect(comboAlarmType,        SIGNAL(highlighted(int)),            this, SLOT(slotAlarmTypeChanged(int)));
-    QObject::connect(editRecordingTemplateFileName,  SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateFilenameChanged (const QString &)));
-    QObject::connect(editRecordingTemplateID3Title,  SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateID3TitleChanged (const QString &)));
-    QObject::connect(editRecordingTemplateID3Artist, SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateID3ArtistChanged(const QString &)));
-    QObject::connect(editRecordingTemplateID3Genre,  SIGNAL(textEdited(const QString &)), this, SLOT(slotRecordingTemplateID3GenreChanged (const QString &)));
+    QObject::connect(checkboxAlarmDaily,             &QCheckBox  ::toggled,                        this, &TimeControlConfiguration::slotDailyChanged);
+    QObject::connect(listWeekdays,                   &QListWidget::itemSelectionChanged,           this, &TimeControlConfiguration::slotWeekdaysChanged);
+    QObject::connect(checkboxAlarmEnable,            &QCheckBox  ::toggled,                        this, &TimeControlConfiguration::slotEnabledChanged);
+    QObject::connect(comboStationSelection,          QOverload<int>::of(&QComboBox::highlighted),  this, &TimeControlConfiguration::slotStationChanged);
+    QObject::connect(listAlarms,                     &QListWidget::currentRowChanged,              this, &TimeControlConfiguration::slotAlarmSelectChanged);
+    QObject::connect(editAlarmDate,                  &QDateEdit  ::dateChanged,                    this, &TimeControlConfiguration::slotDateChanged);
+    QObject::connect(editAlarmTime,                  &QTimeEdit  ::timeChanged,                    this, &TimeControlConfiguration::slotTimeChanged);
+    QObject::connect(editAlarmVolume,                QOverload<int>::of(&QSpinBox ::valueChanged), this, &TimeControlConfiguration::slotVolumeChanged);
+    QObject::connect(buttonAlarmNew,                 &QPushButton::clicked,                        this, &TimeControlConfiguration::slotNewAlarm);
+    QObject::connect(buttonDeleteAlarm,              &QPushButton::clicked,                        this, &TimeControlConfiguration::slotDeleteAlarm);
+    QObject::connect(comboAlarmType,                 QOverload<int>::of(&QComboBox::highlighted),  this, &TimeControlConfiguration::slotAlarmTypeChanged);
+    QObject::connect(editRecordingTemplateFileName,  &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotRecordingTemplateFilenameChanged);
+    QObject::connect(editRecordingTemplateID3Title,  &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotRecordingTemplateID3TitleChanged);
+    QObject::connect(editRecordingTemplateID3Artist, &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotRecordingTemplateID3ArtistChanged);
+    QObject::connect(editRecordingTemplateID3Genre,  &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotRecordingTemplateID3GenreChanged);
 
 
-    QObject::connect(checkboxAlarmDaily,    SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
-    QObject::connect(listWeekdays,          SIGNAL(itemSelectionChanged()),      this, SLOT(slotSetDirty()));
-    QObject::connect(checkboxAlarmEnable,   SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
-    QObject::connect(comboStationSelection, SIGNAL(activated(int)),              this, SLOT(slotSetDirty()));
-    QObject::connect(editAlarmDate,         SIGNAL(dateChanged(const QDate &)),  this, SLOT(slotSetDirty()));
-    QObject::connect(editAlarmTime,         SIGNAL(timeChanged(const QTime &)),  this, SLOT(slotSetDirty()));
-    QObject::connect(editAlarmVolume,       SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
-    QObject::connect(buttonAlarmNew,        SIGNAL(clicked()),                   this, SLOT(slotSetDirty()));
-    QObject::connect(buttonDeleteAlarm,     SIGNAL(clicked()),                   this, SLOT(slotSetDirty()));
-    QObject::connect(comboAlarmType,        SIGNAL(activated(int)),              this, SLOT(slotSetDirty()));
-    QObject::connect(editSleep,             SIGNAL(valueChanged(int)),           this, SLOT(slotSetDirty()));
-    QObject::connect(cbSuspendOnSleep,      SIGNAL(toggled(bool)),               this, SLOT(slotSetDirty()));
-    QObject::connect(editRecordingTemplateFileName,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
-    QObject::connect(editRecordingTemplateID3Title,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
-    QObject::connect(editRecordingTemplateID3Artist, SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
-    QObject::connect(editRecordingTemplateID3Genre,  SIGNAL(textEdited(const QString &)), this, SLOT(slotSetDirty()));
+    QObject::connect(checkboxAlarmDaily,             &QCheckBox  ::toggled,                        this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(listWeekdays,                   &QListWidget::itemSelectionChanged,           this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(checkboxAlarmEnable,            &QCheckBox  ::toggled,                        this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(comboStationSelection,          QOverload<int>::of(&QComboBox::activated),    this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editAlarmDate,                  &QDateEdit  ::dateChanged,                    this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editAlarmTime,                  &QTimeEdit  ::timeChanged,                    this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editAlarmVolume,                QOverload<int>::of(&QSpinBox ::valueChanged), this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(buttonAlarmNew,                 &QPushButton::clicked,                        this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(buttonDeleteAlarm,              &QPushButton::clicked,                        this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(comboAlarmType,                 QOverload<int>::of(&QComboBox::activated),    this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editSleep,                      QOverload<int>::of(&QSpinBox ::valueChanged), this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(cbSuspendOnSleep,               &QCheckBox  ::toggled,                        this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editRecordingTemplateFileName,  &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editRecordingTemplateID3Title,  &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editRecordingTemplateID3Artist, &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotSetDirty);
+    QObject::connect(editRecordingTemplateID3Genre,  &QLineEdit::textEdited,                       this, &TimeControlConfiguration::slotSetDirty);
 }
 
 TimeControlConfiguration::~TimeControlConfiguration ()
