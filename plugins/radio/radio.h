@@ -73,8 +73,8 @@ public:
 RECEIVERS:
     bool powerOn()   override      { return sendPowerOn()  > 0; }
     bool powerOff()  override      { return sendPowerOff() > 0; }
-    bool activateStation(const RadioStation &rs) override;
-    bool activateStation(int index) override;
+    bool activateStation(const RadioStation &rs)      override;
+    bool activateStation(int index)                   override;
     bool setStations  (const StationList &sl)         override;
     bool setPresetFile(const QUrl        &presetFile) override;
 

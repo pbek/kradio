@@ -154,7 +154,7 @@ protected:
     QList<ShortcutsConfiguration*>   m_ShortcutsEditors;
 
 
-};
+}; // Shortcuts
 
 
 

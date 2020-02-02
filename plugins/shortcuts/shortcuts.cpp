@@ -23,6 +23,7 @@
 #include <QtWidgets/QApplication>
 #include <QtGui/QIcon>
 #include <QtWidgets/QAction>
+#include <QDebug>
 
 #include <KAboutData>
 #include <KShortcutsEditor>
@@ -49,8 +50,8 @@ static KAboutData aboutData()
                      KRADIO_VERSION,
                      i18nc("@title", "Shortcuts Support"),
                      KAboutLicense::LicenseKey::GPL,
-                     NULL,
-                     NULL,
+                     nullptr,
+                     nullptr,
                      "http://sourceforge.net/projects/kradio",
                      "emw-kradio@nocabal.de");
     return about;
@@ -64,15 +65,19 @@ KRADIO_EXPORT_PLUGIN(Shortcuts, aboutData())
 
 Shortcuts::Shortcuts(const QString &instanceID, const QString &name)
     : PluginBase(instanceID, name, i18n("Shortcuts Plugin")),
-      m_stdCollection    (NULL),
-      m_stationCollection(NULL),
-      m_stdActions       (NULL),
-      m_stationActions   (NULL)
+      m_stdCollection    (nullptr),
+      m_stationCollection(nullptr),
+      m_stdActions       (nullptr),
+      m_stationActions   (nullptr)
 {
     m_stdCollection     = new KActionCollection(this);
     m_stationCollection = new KActionCollection(this);
     m_stdActions        = new KActionCategory(i18n("Standard Actions"), m_stdCollection);
     m_stationActions    = new KActionCategory(i18n("Station Actions"),  m_stationCollection);
+    
+    QObject::connect(m_stdCollection,     &KActionCollection::actionTriggered, this, &Shortcuts::slotActionTriggered);
+    QObject::connect(m_stationCollection, &KActionCollection::actionTriggered, this, &Shortcuts::slotStationTriggered);
+
 
     addAction(i18n("Digit 0"),                 SHORTCUT_DIGIT_0,          QKeySequence(Qt::Key_0));
     addAction(i18n("Digit 1"),                 SHORTCUT_DIGIT_1,          QKeySequence(Qt::Key_1));
@@ -85,30 +90,27 @@ Shortcuts::Shortcuts(const QString &instanceID, const QString &name)
     addAction(i18n("Digit 8"),                 SHORTCUT_DIGIT_8,          QKeySequence(Qt::Key_8));
     addAction(i18n("Digit 9"),                 SHORTCUT_DIGIT_9,          QKeySequence(Qt::Key_9));
     addAction(i18n("Power on"),                SHORTCUT_POWER_ON,         QKeySequence(Qt::Key_P));
-    addAction(i18n("Power off"),               SHORTCUT_POWER_OFF,        QKeySequence(Qt::Key_P,     Qt::CTRL));
+    addAction(i18n("Power off"),               SHORTCUT_POWER_OFF,        QKeySequence(Qt::CTRL + Qt::Key_P));
     addAction(i18n("Pause"),                   SHORTCUT_PAUSE,            QKeySequence(Qt::Key_Space));
     addAction(i18n("Start recording"),         SHORTCUT_RECORD_START,     QKeySequence(Qt::Key_R));
-    addAction(i18n("Stop recording"),          SHORTCUT_RECORD_STOP,      QKeySequence(Qt::Key_R,     Qt::CTRL));
+    addAction(i18n("Stop recording"),          SHORTCUT_RECORD_STOP,      QKeySequence(Qt::CTRL + Qt::Key_R));
     addAction(i18n("Increase volume"),         SHORTCUT_VOLUME_INC,       QKeySequence(Qt::Key_Up));
     addAction(i18n("Decrease volume"),         SHORTCUT_VOLUME_DEC,       QKeySequence(Qt::Key_Down));
-    addAction(i18n("Increase Frequency"),      SHORTCUT_FREQ_INC,         QKeySequence(Qt::Key_Right, Qt::SHIFT));
-    addAction(i18n("Decrease Frequency"),      SHORTCUT_FREQ_DEC,         QKeySequence(Qt::Key_Left,  Qt::SHIFT));
+    addAction(i18n("Increase Frequency"),      SHORTCUT_FREQ_INC,         QKeySequence(Qt::SHIFT + Qt::Key_Right));
+    addAction(i18n("Decrease Frequency"),      SHORTCUT_FREQ_DEC,         QKeySequence(Qt::SHIFT + Qt::Key_Left));
     addAction(i18n("Next station"),            SHORTCUT_STATION_NEXT,     QKeySequence(Qt::Key_Right));
     addAction(i18n("Previous station"),        SHORTCUT_STATION_PREV,     QKeySequence(Qt::Key_Left));
-    addAction(i18n("Search next station"),     SHORTCUT_SEARCH_NEXT,      QKeySequence(Qt::Key_Right, Qt::CTRL));
-    addAction(i18n("Search previous station"), SHORTCUT_SEARCH_PREV,      QKeySequence(Qt::Key_Left,  Qt::CTRL));
-    addAction(i18n("Sleep"),                   SHORTCUT_SLEEP,            QKeySequence(Qt::Key_Z,     Qt::CTRL));
-    addAction(i18n("Quit KRadio"),             SHORTCUT_APPLICATION_QUIT, QKeySequence(Qt::Key_Q,     Qt::CTRL));
-
-    QObject::connect(m_stdCollection,     SIGNAL(actionTriggered(QAction *)), this, SLOT(slotActionTriggered (QAction *)));
-    QObject::connect(m_stationCollection, SIGNAL(actionTriggered(QAction *)), this, SLOT(slotStationTriggered(QAction *)));
+    addAction(i18n("Search next station"),     SHORTCUT_SEARCH_NEXT,      QKeySequence(Qt::CTRL + Qt::Key_Right));
+    addAction(i18n("Search previous station"), SHORTCUT_SEARCH_PREV,      QKeySequence(Qt::CTRL + Qt::Key_Left));
+    addAction(i18n("Sleep"),                   SHORTCUT_SLEEP,            QKeySequence(Qt::CTRL + Qt::Key_Z));
+    addAction(i18n("Quit KRadio"),             SHORTCUT_APPLICATION_QUIT, QKeySequence::Quit);
 
     m_kbdTimer = new QTimer (this);
-    QObject::connect (m_kbdTimer, SIGNAL(timeout()), this, SLOT(slotKbdTimedOut()));
+    QObject::connect (m_kbdTimer, &QTimer::timeout, this, &Shortcuts::slotKbdTimedOut);
 
     m_addIndex = 0;
 
-}
+} // CTOR
 
 
 Shortcuts::~Shortcuts()
@@ -118,31 +120,34 @@ Shortcuts::~Shortcuts()
     }
     if (m_stationActions) {
         delete m_stationActions;
-        m_stationActions = NULL;
+        m_stationActions = nullptr;
     }
     if (m_stdActions) {
         delete m_stdActions;
-        m_stdActions = NULL;
+        m_stdActions = nullptr;
     }
     if (m_stdCollection) {
         delete m_stdCollection;
-        m_stdCollection = NULL;
+        m_stdCollection = nullptr;
     }
     if (m_stationCollection) {
         delete m_stationCollection;
-        m_stationCollection = NULL;
+        m_stationCollection = nullptr;
     }
-}
+} // DTOR
 
 
 void Shortcuts::addAction(const QString &name, ShortcutID id, const QKeySequence & keyseq)
 {
     QAction *a = m_stdActions->addAction(name);
-    a->setData          ((int)id);
-    a->setText          (name);
-    a->setShortcut      (QKeySequence(keyseq));
+    a->setData           ((int)id);
+    a->setText           (name);
+    a->setShortcut       (keyseq);
+    m_stdActions->collection()->setDefaultShortcut(a, keyseq);
+    a->setShortcutContext(Qt::WidgetWithChildrenShortcut);
+    a->setEnabled        (true);
     KGlobalAccel::setGlobalShortcut(a, QKeySequence());
-}
+} // addAction
 
 
 
@@ -150,14 +155,14 @@ void Shortcuts::slotKbdTimedOut()
 {
     activateStation (m_addIndex);
     m_addIndex = 0;
-}
+} // slotKbdTimedOut
 
 
 void Shortcuts::activateStation (int i)
 {
     if (! sendActivateStation(i - 1))
         sendActivateStation( (i + 9) % 10);
-}
+} // activateStation
 
 
 bool Shortcuts::connectI (Interface *i)
@@ -168,7 +173,7 @@ bool Shortcuts::connectI (Interface *i)
     bool d = PluginBase::connectI(i);
     bool e = ISoundStreamClient::connectI(i);
     return a || b || c || d || e;
-}
+} // connectI
 
 
 bool Shortcuts::disconnectI (Interface *i)
@@ -179,7 +184,7 @@ bool Shortcuts::disconnectI (Interface *i)
     bool d = PluginBase::disconnectI(i);
     bool e = ISoundStreamClient::disconnectI(i);
     return a || b || c || d || e;
-}
+} // disconnectI
 
 
 
@@ -189,7 +194,9 @@ void   Shortcuts::saveState (KConfigGroup &c) const
 
     m_stdActions    ->collection()->writeSettings(&c);
     m_stationActions->collection()->writeSettings(&c);
-}
+} // saveState
+
+
 
 void   Shortcuts::restoreState (const KConfigGroup &c)
 {
@@ -197,13 +204,14 @@ void   Shortcuts::restoreState (const KConfigGroup &c)
 
     m_stdActions    ->collection()->readSettings(const_cast<KConfigGroup*>(&c));
     m_stationActions->collection()->readSettings(const_cast<KConfigGroup*>(&c));
-}
+} // restoreState
+
 
 
 ConfigPageInfo Shortcuts::createConfigurationPage()
 {
     ShortcutsConfiguration *tmp = new ShortcutsConfiguration();
-    QObject::connect(tmp, SIGNAL(destroyed(QObject *)), this, SLOT(slotConfigPageDestroyed(QObject *)));
+    QObject::connect(tmp, &QObject::destroyed, this, &Shortcuts::slotConfigPageDestroyed);
     m_ShortcutsEditors.append(tmp);
     updateShortcutsEditor(tmp);
 
@@ -212,7 +220,9 @@ ConfigPageInfo Shortcuts::createConfigurationPage()
                            i18n("Shortcuts Plugin"),
                            "preferences-desktop-keyboard"
                           );
-}
+} // createConfigurationPage
+
+
 
 void Shortcuts::slotConfigPageDestroyed(QObject *o)
 {
@@ -224,7 +234,9 @@ void Shortcuts::slotConfigPageDestroyed(QObject *o)
     if (o && m_ShortcutsEditors.contains(scc)) {
         m_ShortcutsEditors.removeAll(scc);
     }
-}
+} // slotConfigPageDestroyed
+
+
 
 void Shortcuts::updateShortcutsEditor(ShortcutsConfiguration *c)
 {
@@ -232,16 +244,27 @@ void Shortcuts::updateShortcutsEditor(ShortcutsConfiguration *c)
         c->editor()->clearCollections();
         c->editor()->addCollection(m_stdActions    ->collection(), "KRadio5");
         c->editor()->addCollection(m_stationActions->collection(), "KRadio5");
+//         qDebug() << "number of standard shortcuts: " << m_stdActions    ->collection()->count();
+//         qDebug() << "number of station shortcuts:  " << m_stationActions->collection()->count();
+//         for (const auto & x : m_stdActions->collection()->actions()) {
+//             qDebug() << "Shortcut: " << x->text() << " = " << x->shortcut().toString();
+//         }
+//         for (const auto & x : m_stationActions->collection()->actions()) {
+//             qDebug() << "Shortcut: " << x->text() << " = " << x->shortcut().toString();
+//         }
     }
-}
+} // updateShortcutsEditor
+
 
 void Shortcuts::updateShortcutsEditors()
 {
-    ShortcutsConfiguration *sce = NULL;
+    ShortcutsConfiguration *sce = nullptr;
     foreach(sce, m_ShortcutsEditors) {
         updateShortcutsEditor(sce);
     }
-}
+} // updateShortcutsEditors
+
+
 
 void Shortcuts::slotActionTriggered(QAction *a)
 {
@@ -404,7 +427,9 @@ void Shortcuts::slotActionTriggered(QAction *a)
             m_kbdTimer->start(250);
         }
     }
-}
+} // slotActionTriggered
+
+
 
 
 void Shortcuts::noticePluginsAdded(const PluginList &l)
@@ -416,9 +441,11 @@ void Shortcuts::noticePluginsAdded(const PluginList &l)
             QWidget *widget = w->getWidget();
             m_stdCollection    ->addAssociatedWidget(widget);
             m_stationCollection->addAssociatedWidget(widget);
-        }
-    }
-}
+        } // if plugin is widget
+
+    } // foreach plugin
+} // noticePluginsAdded
+
 
 
 void Shortcuts::slotStationTriggered(QAction *a)
@@ -449,7 +476,8 @@ void Shortcuts::slotStationTriggered(QAction *a)
             sendPowerOn();
         }
     }
-}
+} // slotStationTriggered
+
 
 
 bool Shortcuts::noticeStationsChanged(const StationList &sl)
@@ -492,5 +520,5 @@ bool Shortcuts::noticeStationsChanged(const StationList &sl)
     updateShortcutsEditors();
 
     return true;
-}
+} // noticeStationsChanged
 
