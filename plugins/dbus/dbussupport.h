@@ -60,7 +60,7 @@ RECEIVERS:
     bool noticePowerChanged(bool on)                                    override { emit powerChanged(on);           return false; }
     bool noticeStationChanged (const RadioStation &, int idx)           override { emit currentStationChanged(idx); return false; }
     bool noticeStationsChanged(const StationList &/*sl*/)               override { return false; }
-    bool noticePresetFileChanged(const QString &/*f*/)                  override { return false; }
+    bool noticePresetFileChanged(const QUrl &/*f*/)                     override { return false; }
 
     bool noticeRDSStateChanged      (bool  enabled)                     override { emit RDSStateChanged(enabled); return false; }
     bool noticeRDSRadioTextChanged  (const QString &s)                  override { emit RDSRadioTextChanged(s);   return false; }

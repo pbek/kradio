@@ -52,7 +52,7 @@ public :
     bool noticePowerChanged(bool on) override;
     bool noticeStationChanged (const RadioStation &, int idx) override;
     bool noticeStationsChanged(const StationList &sl) override;
-    bool noticePresetFileChanged(const QString &/*f*/)           override { return false; }
+    bool noticePresetFileChanged(const QUrl &/*f*/)              override { return false; }
 
     bool noticeRDSStateChanged      (bool  /*enabled*/)          override { return false; }
     bool noticeRDSRadioTextChanged  (const QString &/*s*/)       override { return false; }

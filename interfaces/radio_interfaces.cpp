@@ -19,6 +19,11 @@
 #include "stationlist.h"
 #include "radiostation.h"
 
+#include <QUrl>
+
+static QString emptyString;
+static QUrl    emptyUrl;
+
 // IRadio
 
 IF_IMPL_SENDER  (  IRadio::notifyPowerChanged(bool on),
@@ -27,7 +32,7 @@ IF_IMPL_SENDER  (  IRadio::notifyStationChanged (const RadioStation &s, int idx)
                    noticeStationChanged (s, idx)                                  );
 IF_IMPL_SENDER  (  IRadio::notifyStationsChanged(const StationList &sl),
                    noticeStationsChanged(sl)                                      );
-IF_IMPL_SENDER  (  IRadio::notifyPresetFileChanged(const QString &f),
+IF_IMPL_SENDER  (  IRadio::notifyPresetFileChanged(const QUrl &f),
                    noticePresetFileChanged(f)                                     );
 IF_IMPL_SENDER  (  IRadio::notifyCurrentSoundStreamSinkIDChanged(SoundStreamID id),
                    noticeCurrentSoundStreamSinkIDChanged(id)                      );
@@ -53,7 +58,7 @@ IF_IMPL_SENDER  (  IRadioClient::sendActivateStation(int index),
                    activateStation(index)                         );
 IF_IMPL_SENDER  (  IRadioClient::sendStations(const StationList &sl),
                    setStations(sl)                                );
-IF_IMPL_SENDER  (  IRadioClient::sendPresetFile(const QString &f),
+IF_IMPL_SENDER  (  IRadioClient::sendPresetFile(const QUrl &f),
                    setPresetFile(f)                               );
 
 IF_IMPL_QUERY   (  bool IRadioClient::queryIsPowerOn(),
@@ -86,10 +91,9 @@ IF_IMPL_QUERY   (  const StationList &  IRadioClient::queryStations(),
                    emptyStationList
                 );
 
-static QString emptyString;
-IF_IMPL_QUERY   (  const QString &  IRadioClient::queryPresetFile(),
+IF_IMPL_QUERY   (  const QUrl &  IRadioClient::queryPresetFile(),
                    getPresetFile(),
-                   emptyString
+                   emptyUrl
                 );
 
 IF_IMPL_QUERY   (  SoundStreamID IRadioClient::queryCurrentSoundStreamSourceID(),

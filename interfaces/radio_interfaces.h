@@ -45,15 +45,15 @@ RECEIVERS:
     IF_RECEIVER(  powerOn()                                      )
     IF_RECEIVER(  powerOff()                                     )
     IF_RECEIVER(  activateStation(const RadioStation &rs)        )
-    IF_RECEIVER(  activateStation(int index)                     )
-    IF_RECEIVER(  setStations(const StationList &sl)             )
-    IF_RECEIVER(  setPresetFile(const QString &f)                )
+    IF_RECEIVER(  activateStation(int                 index)     )
+    IF_RECEIVER(  setStations    (const StationList  &sl)        )
+    IF_RECEIVER(  setPresetFile  (const QUrl         &f)         )
 
 SENDERS:
     IF_SENDER  (  notifyPowerChanged(bool on)                            )
     IF_SENDER  (  notifyStationChanged (const RadioStation &, int idx)   )
     IF_SENDER  (  notifyStationsChanged(const StationList &sl)           )
-    IF_SENDER  (  notifyPresetFileChanged(const QString &sl)             )
+    IF_SENDER  (  notifyPresetFileChanged(const QUrl &sl)             )
     IF_SENDER  (  notifyCurrentSoundStreamSinkIDChanged(SoundStreamID id)  )
     IF_SENDER  (  notifyCurrentSoundStreamSourceIDChanged(SoundStreamID id))
 
@@ -68,7 +68,7 @@ ANSWERS:
     IF_ANSWER  (  int                    getStationIdx(const RadioStation &rs) const )
     IF_ANSWER  (  int                    getCurrentStationIdx() const    )
     IF_ANSWER  (  const StationList   &  getStations() const             )
-    IF_ANSWER  (  const QString       &  getPresetFile() const           )
+    IF_ANSWER  (  const QUrl          &  getPresetFile() const           )
 
     IF_ANSWER  (  bool                   getRDSState () const            )
     IF_ANSWER  (  const QString       &  getRDSRadioText() const         )
@@ -93,13 +93,13 @@ SENDERS:
     IF_SENDER  (  sendActivateStation(const RadioStation &rs)                     )
     IF_SENDER  (  sendActivateStation(int index)                                  )
     IF_SENDER  (  sendStations(const StationList &sl)                             )
-    IF_SENDER  (  sendPresetFile(const QString &f)                                )
+    IF_SENDER  (  sendPresetFile(const QUrl &f)                                )
 
 RECEIVERS:
     IF_RECEIVER(  noticePowerChanged(bool on)                                     )
     IF_RECEIVER(  noticeStationChanged (const RadioStation &, int idx)            )
     IF_RECEIVER(  noticeStationsChanged(const StationList &sl)                    )
-    IF_RECEIVER(  noticePresetFileChanged(const QString &f)                       )
+    IF_RECEIVER(  noticePresetFileChanged(const QUrl &f)                          )
     IF_RECEIVER(  noticeCurrentSoundStreamSinkIDChanged(SoundStreamID id)         )
     IF_RECEIVER(  noticeCurrentSoundStreamSourceIDChanged(SoundStreamID id)       )
 
@@ -115,7 +115,7 @@ QUERIES:
     IF_QUERY   (  int                    queryStationIdx(const RadioStation &rs)  )
     IF_QUERY   (  int                    queryCurrentStationIdx()                 )
     IF_QUERY   (  const StationList   &  queryStations()                          )
-    IF_QUERY   (  const QString       &  queryPresetFile()                        )
+    IF_QUERY   (  const QUrl          &  queryPresetFile()                        )
 
     IF_QUERY   (  bool                   queryRDSState ()                         )
     IF_QUERY   (  const QString       &  queryRDSRadioText()                      )

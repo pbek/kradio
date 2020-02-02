@@ -231,10 +231,10 @@ bool RadioConfiguration::noticeStationsChanged(const StationList &sl)
 }
 
 
-bool RadioConfiguration::noticePresetFileChanged(const QString &f)
+bool RadioConfiguration::noticePresetFileChanged(const QUrl &f)
 {
     m_ignoreChanges = true;
-    editPresetFile->setUrl(QUrl(f));
+    editPresetFile->setUrl(f);
     m_ignoreChanges = false;
     return true;
 }
@@ -528,7 +528,11 @@ void RadioConfiguration::slotAddPresets()
 
 void RadioConfiguration::loadPresets(bool add)
 {
-  const QList<QUrl> urls = QFileDialog::getOpenFileUrls(this, i18n("Select Preset File"), QUrl(QStandardPaths::locate(QStandardPaths::AppDataLocation, "presets")), i18n("KRadio Preset Files") + " (*.krp)");
+    const QList<QUrl> urls = QFileDialog::getOpenFileUrls(this, 
+                                                          i18n("Select Preset File"), 
+                                                          QUrl(QStandardPaths::locate(QStandardPaths::AppDataLocation, "presets")), 
+                                                          i18n("KRadio Preset Files") + " (*.krp)"
+                                                         );
 
     if (!urls.isEmpty()) {
         slotSetDirty();
@@ -545,18 +549,22 @@ void RadioConfiguration::loadPresets(bool add)
         }
         noticeStationsChanged(sl_all);
     }
-}
+} // loadPresets
 
 
 void RadioConfiguration::slotStorePresets()
 {
-    const QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Save Preset File"), QUrl(), i18n("KRadio Preset Files") + " (*.krp)");
+    const QUrl url = QFileDialog::getSaveFileUrl(this, 
+                                                 i18n("Save Preset File"), 
+                                                 QUrl(), 
+                                                 i18n("KRadio Preset Files") + " (*.krp)"
+                                                );
 
     if (url.isValid()) {
         editPresetFile->setUrl(url);
         m_stations.writeXML(url, m_logger);
     }
-}
+} // slotStorePresets
 
 
 void RadioConfiguration::slotLastChangeNow()
@@ -568,16 +576,20 @@ void RadioConfiguration::slotLastChangeNow()
 
 void RadioConfiguration::slotSendPresetsByMail( const QString &url )
 {
-    QString preset_file = queryPresetFile();
+    QUrl    preset_file = queryPresetFile();
 
-    QString country = m_stations.metaData().country;
-    QString city    = m_stations.metaData().city;
-    QString location = city + "/" + country;
+    QString country     = m_stations.metaData().country;
+    QString city        = m_stations.metaData().city;
+    QString location    = city + "/" + country;
 
-    KToolInvocation::invokeMailer(url, QString(), QString(),
-                                  "station preset file for " + location,
-                                  QString(), QString(),
-                                  QStringList() << preset_file);
+    KToolInvocation::invokeMailer(url,                                    // to:
+                                  QString(),                              // cc:
+                                  QString(),                              // bcc:
+                                  "station preset file for " + location,  // subject
+                                  QString(),                              // body
+                                  QString(),                              // message file
+                                  QStringList() << preset_file.toString() // attach URLs
+                                 );
 }
 
 
@@ -621,10 +633,11 @@ void RadioConfiguration::slotOK()
         i.comment    = editComment->text();
 
         sendStations(m_stations);
-        sendPresetFile(editPresetFile->url().toString());
+        const QUrl &presetFile = editPresetFile->url();
+        sendPresetFile(presetFile);
         m_dirty = false;
     }
-}
+} // slotOK
 
 void RadioConfiguration::slotCancel()
 {

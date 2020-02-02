@@ -75,8 +75,8 @@ RECEIVERS:
     bool powerOff()  override      { return sendPowerOff() > 0; }
     bool activateStation(const RadioStation &rs) override;
     bool activateStation(int index) override;
-    bool setStations(const StationList &sl) override;
-    bool setPresetFile(const QString &presetFile) override;
+    bool setStations  (const StationList &sl)         override;
+    bool setPresetFile(const QUrl        &presetFile) override;
 
 ANSWERS:
     bool                   isPowerOn () const override { return queryIsPowerOn(); }
@@ -85,7 +85,7 @@ ANSWERS:
     int                    getStationIdx(const RadioStation &) const override;
     int                    getCurrentStationIdx() const override;
     const StationList   &  getStations  () const override { return m_stationList; }
-    const QString       &  getPresetFile() const override { return m_presetFile; }
+    const QUrl          &  getPresetFile() const override { return m_presetFile; }
 
     bool                   getRDSState      () const override;
     const QString       &  getRDSRadioText  () const override;
@@ -185,7 +185,7 @@ RECEIVERS:
 
 protected:
 
-    QString        m_presetFile;
+    QUrl           m_presetFile;
     StationList    m_stationList;
     IRadioDevice  *m_activeDevice;
     QString        m_startup_LastActiveDeviceID;

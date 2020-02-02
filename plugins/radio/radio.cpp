@@ -78,7 +78,7 @@ bool Radio::connectI    (Interface *i)
     // no "return IA::connectI() | return IB::connnectI to
     // prevent "early termination" optimization in boolean expressions
     return a || b || c || d || e;
-}
+} // connectI
 
 
 bool Radio::disconnectI (Interface *i)
@@ -92,7 +92,7 @@ bool Radio::disconnectI (Interface *i)
     // no "return IA::disconnectI() | return IB::disconnnectI to
     // prevent "early termination" optimization in boolean expressions
     return a || b || c || d || e;
-}
+} // disconnectI
 
 
 void Radio::saveState (KConfigGroup &config) const
@@ -105,23 +105,23 @@ void Radio::saveState (KConfigGroup &config) const
     if (m_activeDevice) {
         config.writeEntry("active_device", m_activeDevice->getRadioDeviceID());
     }
-}
+} // saveState
 
 
 void Radio::restoreState (const KConfigGroup &config)
 {
     PluginBase::restoreState(config);
 
-    m_presetFile = config.readEntry("presetfile", QString());
+    m_presetFile = config.readEntry("presetfile", QUrl());
 
     bool first_restore = false;
     if (m_presetFile.isEmpty()) {
-        m_presetFile = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "stations.krp";
+        m_presetFile = QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "stations.krp");
         first_restore = true;
     }
 
-    if (!first_restore || QFile::exists(m_presetFile)) {
-        m_stationList.readXML(QUrl(m_presetFile), *this, /*enable-messagebox*/ !first_restore);
+    if (!first_restore || (m_presetFile.isLocalFile() && QFile::exists(m_presetFile.toLocalFile()))) {
+        m_stationList.readXML(m_presetFile, *this, /*enable-messagebox*/ !first_restore);
     }
 
     notifyStationsChanged(m_stationList);
@@ -129,7 +129,7 @@ void Radio::restoreState (const KConfigGroup &config)
 
     m_startup_LastActiveDeviceID = config.readEntry("active_device", "");
 
-}
+} // restoreState
 
 
 void Radio::startPlugin()
@@ -153,7 +153,7 @@ ConfigPageInfo Radio::createConfigurationPage()
         i18n("Setup Radio Stations"),
         "kradio5"
     );
-}
+} // createConfigurationPage
 
 
 /* IRadio Interface Methods
@@ -217,7 +217,7 @@ bool Radio::setStations(const StationList &sl)
     return true;
 }
 
-bool Radio::setPresetFile(const QString &presetFile)
+bool Radio::setPresetFile(const QUrl &presetFile)
 {
     if (m_presetFile != presetFile) {
         m_presetFile = presetFile;

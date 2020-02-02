@@ -49,14 +49,14 @@ RECEIVERS:
     // IRadioClient
 
 RECEIVERS:
-    bool noticePowerChanged(bool /*on*/)                          override { return false; }  // don't care
-    bool noticeStationChanged (const RadioStation &, int /*idx*/) override { return false; }  // don't care
-    bool noticeStationsChanged(const StationList &sl)             override;
-    bool noticePresetFileChanged(const QString &f)                override;
+    bool noticePowerChanged(bool /*on*/)                            override { return false; }  // don't care
+    bool noticeStationChanged   (const RadioStation &, int /*idx*/) override { return false; }  // don't care
+    bool noticeStationsChanged  (const StationList  & sl)           override;
+    bool noticePresetFileChanged(const QUrl         & f)            override;
 
-    bool noticeRDSStateChanged      (bool  /*enabled*/)           override { return false; }  // don't care
-    bool noticeRDSRadioTextChanged  (const QString &/*s*/)        override { return false; }  // don't care
-    bool noticeRDSStationNameChanged(const QString &/*s*/)        override { return false; }  // don't care
+    bool noticeRDSStateChanged      (bool  /*enabled*/)             override { return false; }  // don't care
+    bool noticeRDSRadioTextChanged  (const QString &/*s*/)          override { return false; }  // don't care
+    bool noticeRDSStationNameChanged(const QString &/*s*/)          override { return false; }  // don't care
 
     bool noticeCurrentSoundStreamSourceIDChanged(SoundStreamID /*id*/)  override { return false; }
     bool noticeCurrentSoundStreamSinkIDChanged  (SoundStreamID /*id*/)  override { return false; }

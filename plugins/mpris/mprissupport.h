@@ -57,7 +57,7 @@ RECEIVERS:
     bool noticePowerChanged(bool on) override;
     bool noticeStationChanged(const RadioStation &rs, int idx) override;
     bool noticeStationsChanged(const StationList &sl) override;
-    bool noticePresetFileChanged(const QString &f) override;
+    bool noticePresetFileChanged(const QUrl &f) override;
 
     bool noticeRDSStateChanged(bool enabled)           override;
     bool noticeRDSRadioTextChanged(const QString &s)   override;

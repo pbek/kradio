@@ -147,7 +147,7 @@ bool MPRISSupport::noticeStationsChanged(const StationList &)
     return false;
 }
 
-bool MPRISSupport::noticePresetFileChanged(const QString &)
+bool MPRISSupport::noticePresetFileChanged(const QUrl &)
 {
     return false;
 }
