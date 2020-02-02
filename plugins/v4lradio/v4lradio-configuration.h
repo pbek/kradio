@@ -27,11 +27,12 @@
 
 #include "ui_v4lradio-configuration-ui.h"
 #include "v4lcfg_interfaces.h"
+#include "pluginbase_config_page.h"
 
 class V4LRadio;
 class QComboBox;
 
-class V4LRadioConfiguration : public QWidget,
+class V4LRadioConfiguration : public PluginConfigPageBase,
                               public Ui_V4LRadioConfigurationUI,
                               public IV4LCfgClient,
                               public IFrequencyRadioClient,
@@ -128,8 +129,8 @@ protected slots:
     void updatePlaybackMixerChannelAlternatives();
     void updateCaptureMixerChannelAlternatives();
 
-    void slotOK();
-    void slotCancel();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
 
     void guiMinFrequencyChanged(int v);
     void guiMaxFrequencyChanged(int v);

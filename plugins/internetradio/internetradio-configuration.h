@@ -24,10 +24,11 @@
 #include "gui_list_helper.h"
 
 #include "ui_internetradio-configuration-ui.h"
+#include "pluginbase_config_page.h"
 
 class QComboBox;
 
-class InternetRadioConfiguration : public QWidget,
+class InternetRadioConfiguration : public PluginConfigPageBase,
                                    public Ui_InternetRadioConfigurationUI,
                                    public ISoundStreamClient
 {
@@ -63,8 +64,8 @@ protected slots:
     void slotComboPlaybackMixerSelected(int idx);
     void updatePlaybackMixerChannelAlternatives();
 
-    void slotOK();
-    void slotCancel();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
 
 signals:
 

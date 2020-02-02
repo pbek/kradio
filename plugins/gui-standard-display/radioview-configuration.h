@@ -19,29 +19,35 @@
 #define KRADIO_RADIOVIEW_CONFIGURATION_H
 
 #include <QtWidgets/QTabWidget>
+#include "pluginbase_config_page.h"
 
-class RadioViewConfiguration : public QTabWidget
+class RadioViewConfiguration : public PluginConfigPageBase
 {
 Q_OBJECT
+protected:
+    
+    QTabWidget   * m_tabWidget;
+    bool           m_dirty;
+    
 public :
     RadioViewConfiguration(QWidget *parent = NULL);
     virtual ~RadioViewConfiguration();
 
-    int  addElementTab    (QWidget *page, const QString &label);
-    int  addElementTab    (QWidget *page, const QIcon &icon, const QString &label);
-    int  insertElementTab (int index, QWidget *page, const QString &label);
-    int  insertElementTab (int index, QWidget *page, const QIcon &icon, const QString &label);
+    int  addElementTab    (           PluginConfigPageBase *page,                    const QString &label);
+    int  addElementTab    (           PluginConfigPageBase *page, const QIcon &icon, const QString &label);
+    int  insertElementTab (int index, PluginConfigPageBase *page,                    const QString &label);
+    int  insertElementTab (int index, PluginConfigPageBase *page, const QIcon &icon, const QString &label);
     void removeElementTab (int index);
     
 protected:
     
-    void connectElementTab(QWidget *page);
+    void connectElementTab(PluginConfigPageBase *page);
 
 public slots:
 
-    void slotOK();
-    void slotCancel();
-    void slotSetDirty();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
+    void         slotSetDirty();
 
 signals:
 
@@ -51,8 +57,8 @@ signals:
 protected:
     void checkTabBar();
 
-    bool m_dirty;
-};
+}; // RadioViewConfiguration
+
 
 
 

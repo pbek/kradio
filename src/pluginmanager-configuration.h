@@ -19,6 +19,7 @@
 #define KRADIO_PLUGINMANAGER_CONFIGURATION_H
 
 #include "ui_pluginmanager-configuration-ui.h"
+#include "pluginbase_config_page.h"
 
 class QWidget;
 class InstanceManager;
@@ -26,7 +27,7 @@ class PluginManager;
 class PluginBase;
 class PluginsModel;
 
-class PluginManagerConfiguration : public QWidget,
+class PluginManagerConfiguration : public PluginConfigPageBase,
                                    public Ui_PluginManagerConfigurationUI
 {
 Q_OBJECT
@@ -41,9 +42,9 @@ public :
 
 public slots:
 
-    void slotOK();
-    void slotCancel();
-    void slotSetDirty();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
+    void         slotSetDirty();
 
 protected slots:
 

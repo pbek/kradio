@@ -20,11 +20,12 @@
 
 #include "ui_lirc-configuration-ui.h"
 #include "lircsupport.h"
+#include "pluginbase_config_page.h"
 
 class QStandardItemModel;
 class StyledItemDelegateLirc;
 
-class LIRCConfiguration : public QWidget,
+class LIRCConfiguration : public PluginConfigPageBase,
                           public Ui_LIRCConfigurationUI
 {
 Q_OBJECT
@@ -34,8 +35,8 @@ public :
 
 protected slots:
 
-    void slotOK();
-    void slotCancel();
+    virtual void slotOK()     override;
+    virtual void slotCancel() override;
     void slotSetDirty();
 
     void slotUpdateConfig();

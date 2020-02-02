@@ -298,7 +298,7 @@ bool RadioView::addElement (RadioViewElement *e)
     selectTopWidgets();
 
     return true;
-}
+} // addElement
 
 
 bool RadioView::removeElement (QObject *_e)
@@ -737,10 +737,10 @@ void RadioView::addConfigurationTabFor(RadioViewElement *e, RadioViewConfigurati
         }
 
         m_elementConfigPages.insert(e, inf.page);
-        QObject::connect(inf.page, SIGNAL(destroyed(QObject *)),
-                         this,     SLOT(slotElementConfigPageDeleted(QObject *)));
+        QObject::connect(inf.page, &QObject::destroyed,
+                         this,     &RadioView::slotElementConfigPageDeleted);
     }
-}
+} // addConfigurationTabFor
 
 
 void RadioView::addCommonConfigurationTab(RadioViewConfiguration */*c*/)

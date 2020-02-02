@@ -35,7 +35,7 @@
 #include "errorlog_interfaces.h"
 
 InternetRadioConfiguration::InternetRadioConfiguration (QWidget *parent, SoundStreamID ssid)
-  : QWidget(parent),
+  : PluginConfigPageBase(parent),
     m_SoundStreamID(ssid),
     m_ignoreGUIChanges(false),
     m_PlaybackMixerHelper  (NULL, StringListHelper::SORT_BY_DESCR),

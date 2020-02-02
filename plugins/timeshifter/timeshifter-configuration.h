@@ -25,10 +25,11 @@
 #include "gui_list_helper.h"
 
 #include "ui_timeshifter-configuration-ui.h"
+#include "pluginbase_config_page.h"
 
 class TimeShifter;
 
-class TimeShifterConfiguration : public QWidget,
+class TimeShifterConfiguration : public PluginConfigPageBase,
                                  public Ui_TimeShifterConfigurationUI,
                                  public ISoundStreamClient
 {
@@ -60,10 +61,10 @@ protected slots:
     void slotComboPlaybackMixerSelected(int idx);
     void updatePlaybackMixerChannelAlternatives();
     
-    void slotOK();
-    void slotCancel();
-    void slotSetDirty();
-    void slotUpdateConfig();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
+    void         slotSetDirty();
+    void         slotUpdateConfig();
 
 protected:
 

@@ -16,11 +16,16 @@
  ***************************************************************************/
 
 #include "shortcuts-configuration.h"
+#include <QLayout>
 
 ShortcutsConfiguration::ShortcutsConfiguration()
-    : KShortcutsEditor(NULL)
+    : PluginConfigPageBase(nullptr)
 {
-}
+    m_shortCutsEditor = new KShortcutsEditor(this);
+    setLayout(new QHBoxLayout());
+    layout()->setMargin(0);
+    layout()->addWidget(m_shortCutsEditor);
+} // CTOR
 
 
 ShortcutsConfiguration::~ShortcutsConfiguration()
@@ -30,12 +35,13 @@ ShortcutsConfiguration::~ShortcutsConfiguration()
 
 void ShortcutsConfiguration::slotOK()
 {
-    save();
-    commit();
-}
+    m_shortCutsEditor->save();
+    m_shortCutsEditor->commit();
+} // slotOK
+
 
 void ShortcutsConfiguration::slotCancel()
 {
-    undoChanges();
-}
+    m_shortCutsEditor->undoChanges();
+} // slotCancel
 

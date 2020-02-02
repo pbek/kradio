@@ -23,6 +23,7 @@
 #include "recording-config.h"
 #include "reccfg_interfaces.h"
 #include "ui_recording-configuration-ui.h"
+#include "pluginbase_config_page.h"
 
 #define RATE_48000_IDX      0
 #define RATE_44100_IDX      1
@@ -73,7 +74,7 @@
 
 
 
-class RecordingConfiguration : public QWidget,
+class RecordingConfiguration : public PluginConfigPageBase,
                                public Ui_RecordingConfigurationUI,
                                public IRecCfgClient
 {
@@ -95,8 +96,8 @@ public :
 
 protected slots:
 
-    void slotOK();
-    void slotCancel();
+    virtual void slotOK()     override;
+    virtual void slotCancel() override;
     void slotSetDirty();
 
     void slotFormatSelectionChanged();

@@ -27,7 +27,7 @@
 
 
 RecordingConfiguration::RecordingConfiguration (QWidget *parent)
-    : QWidget(parent),
+    : PluginConfigPageBase(parent),
       m_dirty(true),
       m_ignore_gui_updates(false)
 {

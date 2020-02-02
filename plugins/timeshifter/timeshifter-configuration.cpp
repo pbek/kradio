@@ -36,7 +36,7 @@
 #include "timeshifter.h"
 
 TimeShifterConfiguration::TimeShifterConfiguration (QWidget *parent, TimeShifter *shifter)
-  : QWidget(parent),
+  : PluginConfigPageBase(parent),
     m_ignoreGUIChanges(false),
     m_myControlChange(0),
     m_PlaybackMixerHelper  (NULL, StringListHelper::SORT_BY_DESCR),

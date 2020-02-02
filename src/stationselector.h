@@ -24,12 +24,13 @@
 #include "radio_interfaces.h"
 #include "stationselection_interfaces.h"
 #include "stationlist.h"
+#include "pluginbase_config_page.h"
 
 class RadioStationListView;
 class Ui_StationSelectorUI;
 class KConfigGroup;
 
-class KRADIO5_EXPORT StationSelector : public QWidget,
+class KRADIO5_EXPORT StationSelector : public PluginConfigPageBase,
                                        public IRadioClient,
                                        public IStationSelectionClient
 {
@@ -69,13 +70,11 @@ protected slots:
     void slotButtonToLeft();
     void slotButtonToRight();
 
-    void slotOK();
-    void slotCancel();
-    void slotSetDirty();
+    virtual void slotOK()     override;
+    virtual void slotCancel() override;
+    
+    void         slotSetDirty();
 
-signals:
-
-    void sigDirty();
 
 protected:
 

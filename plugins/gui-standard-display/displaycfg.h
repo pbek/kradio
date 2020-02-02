@@ -19,12 +19,12 @@
 #define KRADIO_DISPLAYCFG_H
 
 #include "displaycfg_interfaces.h"
-#include <QWidget>
+#include "pluginbase_config_page.h"
 
 class KColorButton;
 class NoSizeFontRequester;
 
-class DisplayConfiguration : public QWidget,
+class DisplayConfiguration : public PluginConfigPageBase,
                              public IDisplayCfgClient
 {
 Q_OBJECT
@@ -46,13 +46,9 @@ RECEIVERS:
 
 public slots:
 
-    void slotOK();
-    void slotCancel();
+    virtual void slotOK()     override;
+    virtual void slotCancel() override;
     void slotSetDirty();
-
-signals:
-
-    void sigDirty();
 
 protected:
     KColorButton *m_btnActive;

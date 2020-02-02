@@ -191,7 +191,7 @@ void StreamingConfigurationModel::editIndex(const QModelIndex &index, const Soun
 
 
 StreamingConfiguration::StreamingConfiguration (QWidget *parent, StreamingDevice *streamer)
- : QWidget(parent),
+ : PluginConfigPageBase(parent),
    m_ignore_updates(false),
    m_dirty(true),
    m_StreamingDevice(streamer)

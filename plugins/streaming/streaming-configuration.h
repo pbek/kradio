@@ -20,6 +20,7 @@
 
 #include "ui_streaming-configuration-ui.h"
 #include "streaming.h"
+#include "pluginbase_config_page.h"
 
 
 #include <QAbstractItemModel>
@@ -83,7 +84,7 @@ private:
 };
 
 
-class StreamingConfiguration : public QWidget,
+class StreamingConfiguration : public PluginConfigPageBase,
                                public Ui_StreamingConfigurationUI
 {
 Q_OBJECT
@@ -93,8 +94,8 @@ public :
 
 protected slots:
 
-    void slotOK();
-    void slotCancel();
+    virtual void slotOK()     override;
+    virtual void slotCancel() override;
 
     void slotUpdateConfig();
 

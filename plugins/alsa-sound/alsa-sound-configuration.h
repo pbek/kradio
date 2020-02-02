@@ -23,6 +23,7 @@
 #include "ui_alsa-sound-configuration-ui.h"
 #include "alsa-sound.h"
 #include "alsa-config-mixer-setting.h"
+#include "pluginbase_config_page.h"
 
 
 #define RATE_48000_IDX      0
@@ -55,7 +56,7 @@ class AlsaSoundPlaybackMixerModel;
 class AlsaSoundCaptureDeviceModel;
 class AlsaSoundCaptureMixerModel;
 
-class AlsaSoundConfiguration : public QWidget,
+class AlsaSoundConfiguration : public PluginConfigPageBase,
                                public Ui_AlsaSoundConfigurationUI
 {
 Q_OBJECT
@@ -67,9 +68,9 @@ public :
     
 protected slots:
 
-    void slotOK();
-    void slotCancel();
-    void slotSetDirty();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
+    void         slotSetDirty();
     
     void slotPlaybackDeviceSelected(int comboIdx);
     void slotPlaybackMixerSelected (int comboIdx);

@@ -39,9 +39,9 @@ public :
     
 protected slots:
 
-    void slotOK();
-    void slotCancel();
-    void slotSetDirty();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
+    void         slotSetDirty();
 
     void languageChange();
     

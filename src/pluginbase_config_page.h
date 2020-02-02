@@ -1,8 +1,8 @@
 /***************************************************************************
-                     shortcuts-configuration.h  -  description
+                          pluginbase_config_page.h  -  description
                              -------------------
-    begin                : Mon Feb 8 2009
-    copyright            : (C) 2009 by Martin Witte
+    begin                : Mon Feb 02 2020
+    copyright            : (C) 2020 by Martin Witte
     email                : emw-kradio@nocabal.de
  ***************************************************************************/
 
@@ -15,38 +15,38 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KRADIO_SHORTCUTS_CONFIGURATION_H
-#define KRADIO_SHORTCUTS_CONFIGURATION_H
+/////////////////////////////////////////////////////////////////////////////
 
-#include <kshortcutseditor.h>
-#include "pluginbase_config_page.h"
+#ifndef KRADIO_PLUGIN_BASE_CONFIG_PAGE_BASE_H__
+#define KRADIO_PLUGIN_BASE_CONFIG_PAGE_BASE_H__
 
-class ShortcutsConfiguration : public PluginConfigPageBase
+#include <QWidget>
+#include "kradio-def.h"
+
+class KRADIO5_EXPORT PluginConfigPageBase : public QWidget
 {
 Q_OBJECT
-protected:
-    
-    KShortcutsEditor  *m_shortCutsEditor;
-    
 public:
-    ShortcutsConfiguration();
-    virtual ~ShortcutsConfiguration();
+    
+    PluginConfigPageBase(QWidget         * parent = nullptr, 
+                         Qt::WindowFlags   f      = Qt::WindowFlags());
+    
+    virtual 
+    ~PluginConfigPageBase();
+    
+public Q_SLOTS:
+    
+    virtual void slotOK()       = 0;    
+    virtual void slotCancel()   = 0;
     
     
-    inline 
-    KShortcutsEditor *
-    editor() const { 
-        return m_shortCutsEditor;         
-    } // editor()
+Q_SIGNALS:
     
-
-protected slots:
-
-    virtual void slotOK    () override;
-    virtual void slotCancel() override;
+    void sigDirty();
     
-}; // ShortcutsConfiguration 
+};  // PluginConfigPageBase
 
 
 
-#endif
+
+#endif // KRADIO_PLUGIN_BASE_CONFIG_PAGE_BASE_H__

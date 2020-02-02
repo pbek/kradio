@@ -32,7 +32,7 @@
 
 
 AlsaSoundConfiguration::AlsaSoundConfiguration (QWidget *parent, AlsaSoundDevice *dev)
- : QWidget(parent),
+ : PluginConfigPageBase(parent),
    m_SoundDevice (dev),
    m_groupMixerFrame(NULL),
    m_groupMixerFrameLayout(NULL),

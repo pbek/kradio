@@ -47,7 +47,7 @@
 #include <ktoolinvocation.h>
 
 RadioConfiguration::RadioConfiguration (QWidget *parent, const IErrorLogClient &logger)
-    : QWidget(parent),
+    : PluginConfigPageBase(parent),
       Ui_RadioConfigurationUI(),
       m_ignoreChanges(false),
       m_devicePopup(NULL),

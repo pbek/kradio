@@ -40,7 +40,7 @@
 #include "v4lradio.h"
 
 V4LRadioConfiguration::V4LRadioConfiguration (QWidget *parent, SoundStreamID ssid)
-  : QWidget(parent),
+  : PluginConfigPageBase(parent),
     m_SoundStreamID(ssid),
     m_ignoreGUIChanges(false),
     m_myControlChange(0),

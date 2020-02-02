@@ -145,7 +145,7 @@ void Radio::startPlugin()
 
 ConfigPageInfo Radio::createConfigurationPage()
 {
-    RadioConfiguration *conf = new RadioConfiguration (NULL, *this);
+    RadioConfiguration *conf = new RadioConfiguration (nullptr, *this);
     connectI (conf);
     return ConfigPageInfo(
         conf,

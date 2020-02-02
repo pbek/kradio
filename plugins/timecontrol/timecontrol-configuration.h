@@ -20,11 +20,12 @@
 #include "radio_interfaces.h"
 #include "timecontrol_interfaces.h"
 #include "ui_timecontrol-configuration-ui.h"
+#include "pluginbase_config_page.h"
 
 class TimeControl;
 class QWidget;
 
-class TimeControlConfiguration : public QWidget,
+class TimeControlConfiguration : public PluginConfigPageBase,
                                  public Ui_TimeControlConfigurationUI,
                                  public ITimeControlClient,
                                  public IRadioClient
@@ -80,8 +81,8 @@ protected slots:
     void slotNewAlarm();
     void slotDeleteAlarm();
 
-    void slotOK();
-    void slotCancel();
+    virtual void slotOK()     override;
+    virtual void slotCancel() override;
     void slotSetDirty();
 
 protected:
@@ -95,6 +96,6 @@ protected:
     QBrush           m_enabledAlarmTextForeground;
     QBrush           m_disabledAlarmTextForeground;
     bool             m_defaultAlarmTextForegroundValid;
-};
+}; // TimeControlConfiguration
 
 #endif

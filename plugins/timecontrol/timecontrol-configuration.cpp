@@ -36,6 +36,7 @@ using std::sort;
 #include "radiostation.h"
 
 #include "timecontrol-configuration.h"
+#include "pluginbase_config_page.h"
 
 class DateTimeCmp
 {
@@ -47,7 +48,7 @@ public:
 };
 
 TimeControlConfiguration::TimeControlConfiguration (QWidget *parent)
-    : QWidget(parent),
+    : PluginConfigPageBase(parent),
       ITimeControlClient(),
       IRadioClient(),
       ignoreChanges(false),

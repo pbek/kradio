@@ -26,6 +26,7 @@
 #include <QString>
 #include <QObject>
 #include <QList>
+#include <QWidget>
 #include <kpluginfactory.h>
 
 #include <kconfiggroup.h>
@@ -62,25 +63,27 @@ typedef QList<PluginBase*>::const_iterator   PluginConstIterator;
 
 
 class WidgetPluginBase;
+class PluginConfigPageBase;
+
 
 struct ConfigPageInfo
 {
     ConfigPageInfo () : page(NULL) {}
-    ConfigPageInfo (QWidget *p,
-                    const QString &in,
-                    const QString &ph,
-                    const QString &icon)
+    ConfigPageInfo (PluginConfigPageBase * p,
+                    const QString        & in,
+                    const QString        & ph,
+                    const QString        & icon)
       : page (p),
         itemName(in),
         pageHeader(ph),
         iconName(icon)
     {}
 
-    QWidget  *page;
-    QString   itemName;
-    QString   pageHeader;
-    QString   iconName;
-};
+    PluginConfigPageBase  * page;
+    QString                 itemName;
+    QString                 pageHeader;
+    QString                 iconName;
+}; // ConfigPageInfo
 
 
 class KRADIO5_EXPORT PluginBase : public IErrorLogClient

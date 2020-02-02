@@ -22,11 +22,12 @@
 #include "stationlist.h"
 #include "radiodevicepool_interfaces.h"
 #include "ui_radio-configuration-ui.h"
+#include "pluginbase_config_page.h"
 
 class RadioStationConfig;
 
 
-class RadioConfiguration : public QWidget,
+class RadioConfiguration : public PluginConfigPageBase,
                            public Ui_RadioConfigurationUI,
                            public IRadioClient,
                            public IRadioDevicePoolClient
@@ -88,9 +89,9 @@ protected slots:
 
     void slotSearchStations(QAction *a);
 
-    void slotOK();
-    void slotCancel();
-    void slotSetDirty();
+    virtual void slotOK    () override;
+    virtual void slotCancel() override;
+    void         slotSetDirty();
 
     void loadPresets(bool add);
 

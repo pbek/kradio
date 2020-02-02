@@ -31,7 +31,7 @@
 #include "styleditemdelegate_lirc.h"
 
 LIRCConfiguration::LIRCConfiguration (QWidget *parent, LircSupport *dev)
- : QWidget(parent),
+ : PluginConfigPageBase(parent),
    m_LIRC (dev),
    m_dirty(true),
    m_ignore_gui_updates(false)

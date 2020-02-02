@@ -16,70 +16,75 @@
  ***************************************************************************/
 
 #include "radioview-configuration.h"
+#include <QLayout>
 
 RadioViewConfiguration::RadioViewConfiguration(QWidget *parent)
-	: QTabWidget (parent),
+	: PluginConfigPageBase(parent),
       m_dirty(true)
 {
+    m_tabWidget = new QTabWidget(this);
+    setLayout(new QHBoxLayout());
+    layout()->setMargin(0);
+    layout()->addWidget(m_tabWidget);
     checkTabBar();
-}
+} // CTOR
 
 
 RadioViewConfiguration::~RadioViewConfiguration()
 {
-}
+} // DTOR
 
 
-void RadioViewConfiguration::connectElementTab(QWidget *page)
+void RadioViewConfiguration::connectElementTab(PluginConfigPageBase *page)
 {
-    QObject::connect(this,  SIGNAL(sigOK()),     page, SLOT(slotOK()));
-    QObject::connect(this,  SIGNAL(sigCancel()), page, SLOT(slotCancel()));
-    QObject::connect(page,  SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
+    QObject::connect(this,  &RadioViewConfiguration::sigOK,     page, &PluginConfigPageBase  ::slotOK);
+    QObject::connect(this,  &RadioViewConfiguration::sigCancel, page, &PluginConfigPageBase  ::slotCancel);
+    QObject::connect(page,  &PluginConfigPageBase  ::sigDirty,  this, &RadioViewConfiguration::slotSetDirty);
     checkTabBar();
 } // connectElementTab
 
 
-int RadioViewConfiguration::addElementTab    (QWidget *page, const QString &label)
+int RadioViewConfiguration::addElementTab    (PluginConfigPageBase *page, const QString &label)
 {
-    int r = QTabWidget::addTab(page, label);
+    int r = m_tabWidget->addTab(page, label);
     connectElementTab(page);
     return r;
-}
+} // addElementTab
 
 
-int RadioViewConfiguration::addElementTab    (QWidget *page, const QIcon &icon, const QString &label)
+int RadioViewConfiguration::addElementTab    (PluginConfigPageBase *page, const QIcon &icon, const QString &label)
 {
-    int r = QTabWidget::addTab(page, icon, label);
+    int r = m_tabWidget->addTab(page, icon, label);
     connectElementTab(page);
     return r;
-}
+} // addElementTab
 
 
-int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QString &label)
+int RadioViewConfiguration::insertElementTab (int index, PluginConfigPageBase *page, const QString &label)
 {
-    int r = QTabWidget::insertTab(index, page, label);
+    int r = m_tabWidget->insertTab(index, page, label);
     connectElementTab(page);
     return r;
-}
+} // insertElementTab
 
 
-int RadioViewConfiguration::insertElementTab (int index, QWidget *page, const QIcon &icon, const QString &label)
+int RadioViewConfiguration::insertElementTab (int index, PluginConfigPageBase *page, const QIcon &icon, const QString &label)
 {
-    int r = QTabWidget::insertTab(index, page, icon, label);
+    int r = m_tabWidget->insertTab(index, page, icon, label);
     connectElementTab(page);
     return r;
-}
+} // insertElementTab
 
 
 void RadioViewConfiguration::removeElementTab(int index)
 {
-    QWidget *w = widget(index);
-    QObject::disconnect(this,  SIGNAL(sigOK()),     w,    SLOT(slotOK()));
-    QObject::disconnect(this,  SIGNAL(sigCancel()), w,    SLOT(slotCancel()));
-    QObject::disconnect(w,     SIGNAL(sigDirty()),  this, SLOT(slotSetDirty()));
-    QTabWidget::removeTab(index);
+    PluginConfigPageBase *page = static_cast<PluginConfigPageBase*>(m_tabWidget->widget(index));
+    QObject::disconnect(this,  &RadioViewConfiguration::sigOK,     page, &PluginConfigPageBase  ::slotOK);
+    QObject::disconnect(this,  &RadioViewConfiguration::sigCancel, page, &PluginConfigPageBase  ::slotCancel);
+    QObject::disconnect(page,  &PluginConfigPageBase  ::sigDirty,  this, &RadioViewConfiguration::slotSetDirty);
+    m_tabWidget->removeTab(index);
     checkTabBar();
-}
+} // removeElementTab
 
 
 
@@ -89,7 +94,8 @@ void RadioViewConfiguration::slotOK()
         Q_EMIT sigOK();
         m_dirty = false;
     }
-}
+} // slotOK
+
 
 void RadioViewConfiguration::slotCancel()
 {
@@ -97,19 +103,21 @@ void RadioViewConfiguration::slotCancel()
         Q_EMIT sigCancel();
         m_dirty = false;
     }
-}
+} // slotCancel
+
+
 
 void RadioViewConfiguration::slotSetDirty()
 {
     m_dirty = true;
-}
+} // slotSetDirty
 
 
 void RadioViewConfiguration::checkTabBar()
 {
-    const bool onePage = count() < 2;
-    setTabBarAutoHide(true);
-    setDocumentMode(onePage);
-}
+    const bool onePage = m_tabWidget->count() < 2;
+    m_tabWidget->setTabBarAutoHide(true);
+    m_tabWidget->setDocumentMode(onePage);
+} // checkTabBar
 
 

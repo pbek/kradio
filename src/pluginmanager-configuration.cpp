@@ -38,7 +38,7 @@
 #include "id-generator.h"
 
 PluginManagerConfiguration::PluginManagerConfiguration(QWidget *parent, InstanceManager *im, PluginManager *pm)
-  : QWidget(parent),
+  : PluginConfigPageBase(parent),
     m_instanceManager(im),
     m_PluginManager(pm),
     m_dirty(true)

@@ -30,7 +30,7 @@ using namespace std;
 #include <ui_stationselector-ui.h>
 
 StationSelector::StationSelector (QWidget *parent)
-    : QWidget(parent),
+    : PluginConfigPageBase(parent),
       m_dirty(true)
 {
     m_ui = new Ui_StationSelectorUI();
