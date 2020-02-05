@@ -16,7 +16,7 @@
 #
 Name:          kradio5
 Summary:       AM/FM/INternet Radio Application for KDE 4.x
-Version: 4.0.8
+Version: 5.0.0_beta1
 Release:       1.opensuse
 Group:         Hardware/Radio
 License:       GPL-2.0+
