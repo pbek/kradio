@@ -23,8 +23,8 @@ jobs:
       run: make install
     - run: find ./build
     - name: Tar build files
-      run: tar -cvfj build.tar.bz2 ./build
+      run: tar -cvf build.tar ./build && gzip build.tar
     - uses: actions/upload-artifact@v2
       with:
         name: build
-        path: build.tar.bz2
+        path: build.tar.gz
