@@ -22,3 +22,7 @@ jobs:
     - name: Run make install
       run: make install
     - run: find ./build
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: ./build
