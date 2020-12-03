@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
-      run: sudo apt -y --fix-missing install extra-cmake-modules libboost-dev qtmultimedia5-dev
+      run: sudo apt update && sudo apt -y --fix-missing install extra-cmake-modules libboost-dev qtmultimedia5-dev
     - name: Run cmake
       run: cmake .
     - name: Run make
