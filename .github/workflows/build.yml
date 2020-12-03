@@ -21,3 +21,4 @@ jobs:
       run: make
     - name: Run make install
       run: make install
+    - run: find ./build
