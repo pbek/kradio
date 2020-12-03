@@ -16,6 +16,8 @@ jobs:
     - name: Install dependencies
       run: sudo apt update && sudo apt -y --fix-missing install extra-cmake-modules libboost-dev qtmultimedia5-dev libkf5plasma-dev gettext libkf5xmlgui-dev libkf5kdelibs4support-dev ffmpeg libavcodec-dev libavformat-dev libavdevice-dev libavutil-dev libswscale-dev libpostproc-dev libswresample-dev libasound2-dev liblirc-dev libogg-dev libvorbis-dev libsndfile1-dev libmp3lame-dev
     - name: Run cmake
-      run: cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RELEASE
+      run: mkdir build && cmake -DCMAKE_INSTALL_PREFIX=./build -DCMAKE_BUILD_TYPE=RELEASE
     - name: Run make
       run: make
+    - name: Run make install
+      run: make install
