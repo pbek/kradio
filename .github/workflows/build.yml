@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
-      run: sudo apt update && sudo apt -y --fix-missing install extra-cmake-modules libboost-dev qtmultimedia5-dev libkf5plasma-dev gettext libkf5xmlgui-dev libkf5kdelibs4support-dev ffmpeg libavcodec-dev libavformat-dev libavdevice-dev libavutil-dev libswscale-dev libpostproc-dev libswresample-dev libasound2-dev liblirc-dev libogg-dev libvorbis-dev libsndfile1-dev libmp3lame-dev libmms-dev
+      run: sudo apt update && sudo apt -y --fix-missing install extra-cmake-modules libboost-dev qtmultimedia5-dev libkf5plasma-dev gettext libkf5xmlgui-dev libkf5kdelibs4support-dev ffmpeg libavcodec-dev libavformat-dev libavdevice-dev libavutil-dev libswscale-dev libpostproc-dev libswresample-dev libasound2-dev liblirc-dev libogg-dev libvorbis-dev libsndfile1-dev libmp3lame-dev libmms-dev appstream
     - name: Run cmake
       run: mkdir build && cmake -DCMAKE_INSTALL_PREFIX=./build -DCMAKE_BUILD_TYPE=RELEASE
     - name: Run make
