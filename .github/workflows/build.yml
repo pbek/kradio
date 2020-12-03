@@ -13,7 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: configure
+    - name: Install dependencies
+      run: apt -y install extra-cmake-modules libboost-dev
+    - name: Run cmake
       run: cmake .
-    - name: make
+    - name: Run make
       run: make
