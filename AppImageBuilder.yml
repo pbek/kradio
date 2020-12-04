@@ -17,7 +17,9 @@ AppDir:
     allow_unauthenticated: true
     sources:
     - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal main restricted
+      key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
     - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal-updates main restricted
+      key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
     - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal universe
     include:
     - frameworkintegration
@@ -73,10 +75,7 @@ AppDir:
     - liblz4-1
     - libmms0
     - libmount1
-    - libnvidia-gl-455
     - libpcre3
-    - libqt5pdf5
-    - libqt5pdfwidgets5
     - libqt5quickcontrols2-5
     - libsm6
     - libsystemd0
