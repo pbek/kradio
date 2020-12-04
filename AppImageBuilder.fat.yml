@@ -23,7 +23,75 @@ AppDir:
     - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal universe
     include:
     - breeze-icon-theme
+    - frameworkintegration
+    - kde-style-breeze
+    - kimageformat-plugins
+    - libapparmor1
     - libasound2-plugins
+    - libavcodec-extra58
+    - libavformat58
+    - libbz2-1.0
+    - libcanberra-pulse
+    - libcodec2-0.9
+    - libexpat1
+    - libfam0
+    - libhogweed5
+    - libjpeg-turbo8
+    - libkf5archive5
+    - libkf5attica5
+    - libkf5auth5
+    - libkf5bookmarks5
+    - libkf5codecs5
+    - libkf5completion5
+    - libkf5configcore5
+    - libkf5configgui5
+    - libkf5configwidgets5
+    - libkf5coreaddons5
+    - libkf5crash5
+    - libkf5dbusaddons5
+    - libkf5globalaccel5
+    - libkf5guiaddons5
+    - libkf5i18n5
+    - libkf5iconthemes5
+    - libkf5itemviews5
+    - libkf5jobwidgets5
+    - libkf5kdelibs4support5
+    - libkf5kiocore5
+    - libkf5kiofilewidgets5
+    - libkf5kiogui5
+    - libkf5kiowidgets5
+    - libkf5notifications5
+    - libkf5parts5
+    - libkf5service5
+    - libkf5solid5
+    - libkf5sonnetcore5
+    - libkf5sonnetui5
+    - libkf5style5
+    - libkf5textwidgets5
+    - libkf5waylandclient5
+    - libkf5widgetsaddons5
+    - libkf5windowsystem5
+    - libkf5xmlgui5
+    - liblirc-client0
+    - liblz4-1
+    - libmms0
+    - libmount1
+    - libpcre3
+    - libqt5quickcontrols2-5
+    - libsm6
+    - libsystemd0
+    - libx264-155
+    - libxau6
+    - libxcb-render-util0
+    - libxcb-sync1
+    - libxcb-xinerama0
+    - libxcb-xkb1
+    - libxdmcp6
+    - libxext6
+    - libxfixes3
+    - libxrender1
+    - plasma-integration
+    - qt5-image-formats-plugins
     exclude: []
   files:
     exclude:
