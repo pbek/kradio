@@ -18,6 +18,7 @@ AppDir:
     sources:
     - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal main restricted
     - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal-updates main restricted
+    - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal universe
     include:
     - frameworkintegration
     - kde-style-breeze
