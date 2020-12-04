@@ -63,13 +63,48 @@ jobs:
     - name: Bundle AppImage
       run: appimage-builder --skip-test
     - run: find ./AppDir/ && ls -al .
-    - name: Tar build files
-      run: tar -cvf kradio5.tar ./AppDir
-    - uses: actions/upload-artifact@v2
+#    - name: Tar build files
+#      run: tar -cvf kradio5.tar ./AppDir
+#    - uses: actions/upload-artifact@v2
+#      with:
+#        name: kradio5
+#        path: kradio5.tar
+#    - uses: actions/upload-artifact@v2
+#      with:
+#        name: kradio5-latest-x86_64.AppImage
+#        path: kradio5-latest-x86_64.AppImage
+    - name: Set Env
+      run: |
+        export VERSION=$(egrep -o "KRADIO_VERSION \"[0-9.beta\-]+" CMakeLists.txt | cut -b 17-)
+        export TAG=v${VERSION}.${GITHUB_RUN_ID}.${GITHUB_RUN_NUMBER}
+        #export TAG=v${VERSION}
+#        export RELEASE_TEXT=$(grep -Pzo "## ${VERSION}\n(\n|.)+?\n##" ../CHANGELOG.md | sed '$ d')
+        echo "VERSION=${VERSION}" >> $GITHUB_ENV
+        echo "TAG=${TAG}" >> $GITHUB_ENV
+        # add multiline release text
+#        echo "RELEASE_TEXT<<EOF" >> $GITHUB_ENV
+#        echo "${RELEASE_TEXT}" >> $GITHUB_ENV
+#        echo "EOF" >> $GITHUB_ENV
+    - name: Printenv
+      run: |
+        echo "VERSION=${VERSION}"
+        echo "TAG=${TAG}"
+#        echo "RELEASE_TEXT=${RELEASE_TEXT}"
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: kradio5
-        path: kradio5.tar
-    - uses: actions/upload-artifact@v2
+        tag_name: ${{ env.TAG }}
+        release_name: Release v${{ env.VERSION }}
+#        body: ${{ env.RELEASE_TEXT }}
+    - name: Release AppImage for Linux
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: kradio5-latest-x86_64.AppImage
-        path: kradio5-latest-x86_64.AppImage
+        upload_url: ${{ needs.create_release.outputs.upload_url }}
+        asset_path: kradio5-latest-x86_64.AppImage
+        asset_name: kradio5-latest-x86_64.AppImage
+        asset_content_type: application/vnd.appimage
