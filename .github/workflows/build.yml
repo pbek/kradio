@@ -7,19 +7,18 @@ on:
     branches: [ master ]
 
 jobs:
-  build-snap:
-#    runs-on: ubuntu-latest
-    runs-on: ubuntu-18.04
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install Snapcraft
-      uses: samuelmeuli/action-snapcraft@v1
-      with:
-        use_lxd: true
-        # `snapcraft export-login --snaps kradio --channels edge,stable -`, token valid for one year
-#        snapcraft_token: ${{ secrets.SNAP_TOKEN_GH }}
-    - name: Build for Snapcraft
-      run: sg lxd -c 'snapcraft --use-lxd' && ls
+#  build-snap:
+#    runs-on: ubuntu-18.04
+#    steps:
+#    - uses: actions/checkout@v2
+#    - name: Install Snapcraft
+#      uses: samuelmeuli/action-snapcraft@v1
+#      with:
+#        use_lxd: true
+#        # `snapcraft export-login --snaps kradio --channels edge,stable -`, token valid for one year
+##        snapcraft_token: ${{ secrets.SNAP_TOKEN_GH }}
+#    - name: Build for Snapcraft
+#      run: sg lxd -c 'snapcraft --use-lxd' && ls
 #  build-tar:
 #    runs-on: ubuntu-latest
 #    steps:
@@ -39,3 +38,22 @@ jobs:
 #      with:
 #        name: kradio5
 #        path: kradio5.tar
+  build-appimage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: sudo apt update && sudo apt -y --fix-missing install extra-cmake-modules libboost-dev qtmultimedia5-dev libkf5plasma-dev gettext libkf5xmlgui-dev libkf5kdelibs4support-dev ffmpeg libavcodec-dev libavformat-dev libavdevice-dev libavutil-dev libswscale-dev libpostproc-dev libswresample-dev libasound2-dev liblirc-dev libogg-dev libvorbis-dev libsndfile1-dev libmp3lame-dev libmms-dev appstream
+    - name: Run cmake
+      run: mkdir build && cmake -DCMAKE_INSTALL_PREFIX=./build -DCMAKE_BUILD_TYPE=RELEASE
+    - name: Run make
+      run: make
+    - name: Run make install
+      run: make install
+    - run: find ./build
+    - name: Tar build files
+      run: tar -cvf kradio5.tar ./build/*
+    - uses: actions/upload-artifact@v2
+      with:
+        name: kradio5
+        path: kradio5.tar
