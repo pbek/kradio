@@ -62,7 +62,7 @@ jobs:
       run: appimage-builder --skip-test
     - run: find ./AppDir/ && ls -al .
     - name: Tar build files
-      run: tar -cvf kradio5.tar ./AppDir/*
+      run: tar -cvf kradio5.tar ./AppDir
     - uses: actions/upload-artifact@v2
       with:
         name: kradio5
