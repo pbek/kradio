@@ -22,6 +22,7 @@ AppDir:
       key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
     - sourceline: deb http://at.archive.ubuntu.com/ubuntu/ focal universe
     include:
+      - breeze-icon-theme
 #    - frameworkintegration
 #    - kde-style-breeze
 #    - kimageformat-plugins
@@ -51,7 +52,7 @@ AppDir:
 #    - libkf5globalaccel5
 #    - libkf5guiaddons5
 #    - libkf5i18n5
-    - libkf5iconthemes5
+#    - libkf5iconthemes5
 #    - libkf5itemviews5
 #    - libkf5jobwidgets5
 #    - libkf5kdelibs4support5
