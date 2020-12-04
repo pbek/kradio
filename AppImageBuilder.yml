@@ -5,13 +5,13 @@ AppDir:
   app_info:
     id: org.kde.kradio5
     name: kradio5
-    icon: share/icons/hicolor/64x64/apps/kradio5.svg
+    icon: usr/share/icons/hicolor/64x64/apps/kradio5.svg
     version: latest
-    exec: bin/kradio5
+    exec: usr/bin/kradio5
     exec_args: $@
   runtime:
     env:
-      APPDIR_LIBRARY_PATH: $APPDIR/usr/lib/x86_64-linux-gnu:$APPDIR/usr/lib/x86_64-linux-gnu/libcanberra-0.30:$APPDIR/lib/x86_64-linux-gnu:$APPDIR/home/omega/Downloads/build/AppDir/lib/x86_64-linux-gnu/kradio5/plugins:$APPDIR/usr/lib/x86_64-linux-gnu/pulseaudio:$APPDIR/usr/lib/x86_64-linux-gnu/alsa-lib
+      APPDIR_LIBRARY_PATH: $APPDIR/usr/lib/x86_64-linux-gnu:$APPDIR/usr/lib/x86_64-linux-gnu/libcanberra-0.30:$APPDIR/usr/lib/x86_64-linux-gnu/kradio5/plugins:$APPDIR/usr/lib/x86_64-linux-gnu/pulseaudio:$APPDIR/usr/lib/x86_64-linux-gnu/alsa-lib
   apt:
     arch: amd64
     allow_unauthenticated: true
