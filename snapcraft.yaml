@@ -1,0 +1,78 @@
+name: kradio
+version: 5.0.0-beta1
+summary: Radio streaming
+grade: stable
+confinement: strict
+base: core18
+description: |
+  Radio streaming
+apps:
+  kradio:
+    command: kf5-launch kradio
+    plugs:
+      - kde-frameworks-5-plug
+      - home
+      - x11
+      - opengl
+      - network
+      - network-bind
+      - unity7
+      - pulseaudio
+      - desktop
+      - desktop-legacy
+    common-id: org.kde.kradio.desktop
+#    desktop: "usr/share/applications/org.kde.kradio.desktop"
+    desktop: "usr/share/applications/kradio.desktop"
+slots:
+  session-dbus-interface:
+    interface: dbus
+    name: org.kde.kradio
+    bus: session
+plugs:
+  kde-frameworks-5-plug:
+    content: kde-frameworks-5-core18-all
+    interface: content
+    default-provider: kde-frameworks-5-core18
+    target: kf5 # target directory where the content is mounted i.e. $SNAP/kf5/
+parts:
+  kradio:
+    build-snaps:
+      - kde-frameworks-5-core18-sdk
+    after:
+      - kde-frameworks-5-env
+    plugin: cmake
+    source: .
+    configflags:
+      - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
+      - "-DCMAKE_BUILD_TYPE=RELEASE"
+      - "-DKDE_SKIP_TEST_SETTINGS=ON"
+#    parse-info: [usr/share/metainfo/org.kde.kradio.appdata.xml]
+    build-packages:
+      - extra-cmake-modules
+      - libboost-dev
+      - qtmultimedia5-dev
+      - libkf5plasma-dev
+      - gettext
+      - libkf5xmlgui-dev
+      - libkf5kdelibs4support-dev
+      - ffmpeg
+      - libavcodec-dev
+      - libavformat-dev
+      - libavdevice-dev
+      - libavutil-dev
+      - libswscale-dev
+      - libpostproc-dev
+      - libswresample-dev
+      - libasound2-dev
+      - liblirc-dev
+      - libogg-dev
+      - libvorbis-dev
+      - libsndfile1-dev
+      - libmp3lame-dev
+      - libmms-dev
+      - appstream
+      - build-essential
+  kde-frameworks-5-env:
+    plugin: dump
+    source: https://github.com/apachelogger/kf5-snap-env.git
