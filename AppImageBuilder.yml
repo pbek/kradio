@@ -51,7 +51,7 @@ AppDir:
 #    - libkf5globalaccel5
 #    - libkf5guiaddons5
 #    - libkf5i18n5
-#    - libkf5iconthemes5
+    - libkf5iconthemes5
 #    - libkf5itemviews5
 #    - libkf5jobwidgets5
 #    - libkf5kdelibs4support5
@@ -73,7 +73,7 @@ AppDir:
 #    - libkf5xmlgui5
 #    - liblirc-client0
 #    - liblz4-1
-    - libmms0
+#    - libmms0
 #    - libmount1
 #    - libpcre3
 #    - libqt5quickcontrols2-5
