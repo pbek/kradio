@@ -74,7 +74,7 @@ PluginLibraryInfo::PluginLibraryInfo (const QString &lib_name)
                                i18n("Plugin Library Load Error"));
             loader.unload();
         }
-    } else if (!lib_name.startWith("/tmp/.mount_kradio")) {
+    } else if (!lib_name.startsWith("/tmp/.mount_kradio")) {
         errorString = loader.errorString();
             KMessageBox::error(NULL,
                                i18n("Library %1:\n%2", lib_name, errorString),
