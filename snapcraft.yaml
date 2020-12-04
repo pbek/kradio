@@ -41,12 +41,12 @@ parts:
     after:
       - kde-frameworks-5-env
     plugin: cmake
-    source: .
+    source: ./
     configflags:
-      - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+#      - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
       - "-DCMAKE_INSTALL_PREFIX=/usr"
       - "-DCMAKE_BUILD_TYPE=RELEASE"
-      - "-DKDE_SKIP_TEST_SETTINGS=ON"
+#      - "-DKDE_SKIP_TEST_SETTINGS=ON"
 #    parse-info: [usr/share/metainfo/org.kde.kradio.appdata.xml]
     build-packages:
       - extra-cmake-modules

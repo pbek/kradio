@@ -152,7 +152,11 @@ TARGET_LINK_LIBRARIES(kradio5
     KF5::KDELibs4Support
 )
 
-INSTALL(TARGETS kradio5)
+INSTALL(
+    TARGETS kradio5
+    RUNTIME DESTINATION bin
+    DESTINATION ${INSTALL_BIN_PATH}
+)
 
 SET(documentation_files
     README

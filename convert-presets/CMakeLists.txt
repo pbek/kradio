@@ -25,5 +25,9 @@ TARGET_LINK_LIBRARIES(kradio5-convert-presets
     KF5::I18n
 )
 
-INSTALL(TARGETS kradio5-convert-presets ${INSTALL_TARGETS_DEFAULT_ARGS})
+INSTALL(
+    TARGETS kradio5-convert-presets
+    RUNTIME DESTINATION bin
+    ${INSTALL_TARGETS_DEFAULT_ARGS}
+)
 
