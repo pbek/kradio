@@ -23,7 +23,7 @@ jobs:
       run: make install
     - run: find ./build
     - name: Tar build files
-      run: tar -cvf kradio5.tar ./build
+      run: tar -cvf kradio5.tar ./build/*
     - uses: actions/upload-artifact@v2
       with:
         name: kradio5
