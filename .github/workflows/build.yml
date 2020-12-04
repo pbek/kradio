@@ -54,8 +54,8 @@ jobs:
       run: make install DESTDIR=AppDir
     - run: find ./AppDir
     - name: Bundle AppImage
-      run: appimage-builder --skip-test --skip-appimage
-    - run: find ./AppDir
+      run: appimage-builder --skip-test
+    - run: find ./AppDir/ && ls -al .
     - name: Tar build files
       run: tar -cvf kradio5.tar ./AppDir/*
     - uses: actions/upload-artifact@v2
