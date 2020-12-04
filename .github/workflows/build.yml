@@ -56,7 +56,9 @@ jobs:
     - name: Bundle AppImage
       run: appimage-builder --skip-test --skip-appimage
     - run: find ./AppDir
-#    - uses: actions/upload-artifact@v2
-#      with:
-#        name: kradio5
-#        path: kradio5.tar
+    - name: Tar build files
+      run: tar -cvf kradio5.tar ./AppDir/*
+    - uses: actions/upload-artifact@v2
+      with:
+        name: kradio5
+        path: kradio5.tar
