@@ -5,7 +5,7 @@ AppDir:
   app_info:
     id: org.kde.kradio5
     name: kradio5
-    icon: hicolor/64x64/apps/kradio5.svg
+    icon: kradio5
     version: latest
     exec: usr/bin/kradio5
     exec_args: $@
