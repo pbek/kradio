@@ -52,11 +52,13 @@ jobs:
         sudo wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage -O /usr/local/bin/appimagetool
         sudo chmod +x /usr/local/bin/appimagetool
     - name: Run cmake
-      run: mkdir build && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RELEASE
+      run: cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RELEASE
     - name: Run make
       run: make
     - name: Run make install
       run: make install DESTDIR=AppDir
+    - name: Move desktop file
+      run: mv AppDir/usr/share/applications/kradio5.desktop AppDir/usr/share/applications/org.kde.kradio5.desktop
     - run: find ./AppDir
     - name: Bundle AppImage
       run: appimage-builder --skip-test
