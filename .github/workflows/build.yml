@@ -16,7 +16,7 @@ jobs:
       with:
         use_lxd: true
         # `snapcraft export-login --snaps kradio --channels edge,stable -`, token valid for one year
-        snapcraft_token: ${{ secrets.SNAP_TOKEN_GH }}
+#        snapcraft_token: ${{ secrets.SNAP_TOKEN_GH }}
     - name: Build for Snapcraft
       run: sg lxd -c 'snapcraft --use-lxd' && ls
 #  build-tar:
