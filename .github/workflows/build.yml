@@ -67,3 +67,7 @@ jobs:
       with:
         name: kradio5
         path: kradio5.tar
+    - uses: actions/upload-artifact@v2
+      with:
+        name: kradio5-latest-x86_64.AppImage
+        path: kradio5-latest-x86_64.AppImage
