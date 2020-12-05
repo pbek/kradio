@@ -42,7 +42,10 @@ jobs:
       run: mv AppDir/usr/share/applications/kradio5.desktop AppDir/usr/share/applications/org.kde.kradio5.desktop
 #    - run: find ./AppDir
     - name: Bundle AppImage
-      run: appimage-builder --skip-test
+#      run: appimage-builder --skip-test
+      run: |
+        appimagetool deploy ./AppDir/usr/share/applications/*.desktop
+        appimagetool ./AppDir # turn AppDir into AppImage
 #    - run: find ./AppDir/ && ls -al .
 #    - name: Create AppDir archive
 #      run: tar -cvf kradio5.tar ./AppDir
@@ -92,7 +95,11 @@ jobs:
         asset_name: kradio5-latest-x86_64.AppImage
         asset_content_type: application/vnd.appimage
     - name: Bundle fat AppImage
-      run: mv AppImageBuilder.fat.yml AppImageBuilder.yml && appimage-builder --skip-test
+      run: |
+        mv AppImageBuilder.fat.yml AppImageBuilder.yml
+        # appimage-builder --skip-test
+        appimagetool deploy ./AppDir/usr/share/applications/*.desktop
+        appimagetool ./AppDir # turn AppDir into AppImage
     - name: Release fat AppImage for Linux
       uses: actions/upload-release-asset@v1
       env:
