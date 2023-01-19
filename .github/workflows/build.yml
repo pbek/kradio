@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: sudo apt update && sudo apt -y --fix-missing install extra-cmake-modules libboost-dev qtmultimedia5-dev libkf5plasma-dev gettext libkf5xmlgui-dev libkf5kdelibs4support-dev ffmpeg libavcodec-dev libavformat-dev libavdevice-dev libavutil-dev libswscale-dev libpostproc-dev libswresample-dev libasound2-dev liblirc-dev libogg-dev libvorbis-dev libsndfile1-dev libmp3lame-dev libmms-dev appstream
     - name: Install appimage-builder
-      run: pip3 install appimage-builder
+      run: sudo -H pip3 install appimage-builder
     - name: Install appimagetool
       run: |
         sudo apt install -y python3-pip python3-setuptools patchelf desktop-file-utils libgdk-pixbuf2.0-dev fakeroot
